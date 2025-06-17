@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -46,7 +46,7 @@ setup(
+@@ -71,7 +71,7 @@ setup(
          "visidata.desktop",
      ],
      data_files=[

@@ -1,8 +1,10 @@
 COMMENT=	console-based multitool to explore and arrange tabular data
 
-MODPY_DISTV=	3.1.1
-DISTNAME=	visidata-${MODPY_DISTV}
-REVISION=	1
+MODPY_DISTV=	3.2
+GH_ACCOUNT=	saulpw
+GH_PROJECT=	visidata
+GH_TAGNAME=	v${MODPY_DISTV}
+#DISTNAME=	visidata-${MODPY_DISTV}
 
 CATEGORIES=	math textproc
 
@@ -14,15 +16,15 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+#MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-dateutil \
 		devel/py-importlib-metadata
 
 # tests are available but not included in the standard pypi download
-NO_TEST=	Yes
+#NO_TEST=	Yes
+PORTHOME=	${WRKDIR}
 
 .include <bsd.port.mk>

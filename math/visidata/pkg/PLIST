@@ -287,6 +287,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}g
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}google.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}gsheets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}gsheets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}helloworld.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}helloworld.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}live_search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}live_search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/${MODPY_PYCACHE}liveupdate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -304,6 +306,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/experimental/digit_autoedit.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/gdrive.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/google.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/gsheets.py
+lib/python${MODPY_VERSION}/site-packages/visidata/experimental/helloworld.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/live_search.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/liveupdate.py
 lib/python${MODPY_VERSION}/site-packages/visidata/experimental/mark.py
@@ -359,8 +362,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}go_co
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}go_col.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}graph_seaborn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}graph_seaborn.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}helloworld.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}helloworld.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}graph_zoom_y.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}graph_zoom_y.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}hint_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}hint_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}incr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -385,6 +388,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}procm
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}procmgr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}random_sample.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}random_sample.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}rank.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}rank.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/features/${MODPY_PYCACHE}reload_every.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -438,7 +443,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/features/fill.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/freeze.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/go_col.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/graph_seaborn.py
-lib/python${MODPY_VERSION}/site-packages/visidata/features/helloworld.py
+lib/python${MODPY_VERSION}/site-packages/visidata/features/graph_zoom_y.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/hint_types.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/incr.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/join.py
@@ -451,6 +456,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/features/open_syspaste.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/ping.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/procmgr.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/random_sample.py
+lib/python${MODPY_VERSION}/site-packages/visidata/features/rank.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/regex.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/reload_every.py
 lib/python${MODPY_VERSION}/site-packages/visidata/features/rename_col_cascade.py
@@ -475,6 +481,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/fuzzymatch.py
 lib/python${MODPY_VERSION}/site-packages/visidata/graph.py
 lib/python${MODPY_VERSION}/site-packages/visidata/guide.py
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/
+lib/python${MODPY_VERSION}/site-packages/visidata/guides/AggregatorsSheet.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/ClipboardGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/ColumnsGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/CommandsSheet.md
@@ -494,6 +501,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/guides/SelectionGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/SlideGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/SplitpaneGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/TypesSheet.md
+lib/python${MODPY_VERSION}/site-packages/visidata/guides/WindowFunctionGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/guides/XsvGuide.md
 lib/python${MODPY_VERSION}/site-packages/visidata/help.py
 lib/python${MODPY_VERSION}/site-packages/visidata/hint.py
@@ -586,6 +594,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}png.${
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}png.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}postgres.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}postgres.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}psv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}psv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}rec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}rec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -668,6 +678,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/pcap.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/pdf.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/png.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/postgres.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/psv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/rec.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/s3.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/sas.py
@@ -783,7 +794,10 @@ lib/python${MODPY_VERSION}/site-packages/visidata/undo.py
 lib/python${MODPY_VERSION}/site-packages/visidata/utils.py
 lib/python${MODPY_VERSION}/site-packages/visidata/vdobj.py
 lib/python${MODPY_VERSION}/site-packages/visidata/vendor/
+lib/python${MODPY_VERSION}/site-packages/visidata/vendor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/visidata/vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/visidata/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/vendor/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/vendor/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/vendor/appdirs.py
