@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12814,7 +12814,7 @@ if test -z "$GCC"; then
+@@ -13668,7 +13668,7 @@ if test -z "$GCC"; then
  		;;
          *)
                  DEBUG="-g"
@@ -10,10 +10,10 @@ Index: configure
                  PROFILE="-g -p"
  		;;
          esac
-@@ -12837,8 +12837,8 @@ else
+@@ -13691,8 +13691,8 @@ else
  		;;
          *)
-                 DEBUG="-g -Wall -fsigned-char"
+                 DEBUG="-g -Wall -Wextra -fsigned-char"
 -                CFLAGS="-O2 -fsigned-char"
 -                PROFILE="-O2 -g -pg -fsigned-char"
 +                CFLAGS="-fsigned-char"

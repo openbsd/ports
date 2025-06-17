@@ -1,10 +1,10 @@
 COMMENT=	Ogg bitstream library
 
-VERSION=	1.3.5
+VERSION=	1.3.6
 DISTNAME=	libogg-${VERSION}
 CATEGORIES=    	audio
 HOMEPAGE=	https://www.xiph.org/ogg/
-SHARED_LIBS=	ogg	6.2	# 8.5
+SHARED_LIBS=	ogg	6.2	# 8.6
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
