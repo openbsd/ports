@@ -78,8 +78,8 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              "${DAILY_SCRIPT}" no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -293,7 +293,7 @@ main () {
-         php_ver_ret=$?
+@@ -296,7 +296,7 @@ main () {
+         status_run 'Clearing caches' 'php artisan optimize:clear'
  
          # Restore composer files if user installed plugins
 -        git checkout --quiet -- composer.json composer.lock

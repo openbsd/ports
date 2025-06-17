@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	25.4.0
+GH_TAGNAME=	25.6.0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
@@ -59,13 +59,15 @@ R +=	s,/usr/local,${LOCALBASE},g
 
 post-extract:
 	mv ${WRKDIR}/vendor ${WRKSRC}/
+	[ -e ${WRKSRC}/resources/definitions/config_definitions.json ]
 	perl -pi \
 	    -e 's,"/usr/bin/snmp,"/usr/local/bin/snmp,;' \
 	    -e 's,"/bin/ping,"/sbin/ping,;' \
 	    -e 's,"/usr/bin/(mtr|nmap|nfdump|ipmitool|virsh|dot|sfdp),"/usr/local/bin/\1,;' \
 	    -e 's,"/usr/lib/nagios/plugins,"/usr/local/libexec/nagios/plugins,;' \
-	    ${WRKSRC}/misc/config_definitions.json
+	    ${WRKSRC}/resources/definitions/config_definitions.json
 	find ${WRKSRC} -type f -exec perl -pi -e '$R' {} +
+	[ -e ${WRKSRC}/dist/librenms.cron ]
 	sed -i \
 	    -e 's, librenms *, _librenms ,' \
 	    -e 's, php *, ${MODPHP_BIN} ,' \

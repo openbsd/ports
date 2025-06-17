@@ -1,7 +1,7 @@
 Index: .env.example
 --- .env.example.orig
 +++ .env.example
-@@ -1,8 +1,14 @@
+@@ -1,11 +1,17 @@
 -APP_KEY=
 +#APP_KEY=base64:xxx  << insert this from "php artisan key:generate"
  
@@ -22,3 +22,6 @@ Index: .env.example
 +
 +LIBRENMS_USER=_librenms
 +LIBRENMS_GROUP=_librenms
+ 
+ APP_LOCALE=en
+ APP_FALLBACK_LOCALE=en
