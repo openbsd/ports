@@ -1,7 +1,7 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
 MODPY_DISTV =		0.20.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		uvloop-${MODPY_DISTV}
 PKGNAME =		py-uvloop-${MODPY_DISTV}
 
@@ -18,8 +18,11 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 WANTLIB +=		pthread uv
 
-CFLAGS =		-I${LOCALBASE}/include
+CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS =		-L${LOCALBASE}/lib
+
+# don't override opt level in CFLAGS
+MAKE_ENV =		UVLOOP_OPT_CFLAGS=
 
 BUILD_DEPENDS =		lang/cython
 
