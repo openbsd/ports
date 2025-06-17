@@ -1,0 +1,3 @@
+reop (reasonable expectation of privacy) is a utility that creates and
+verifies cryptographic signatures. It supports both asymmetric and
+symmetric encryption.
