@@ -3,23 +3,31 @@ Index: GNUmakefile
 +++ GNUmakefile
 @@ -21,10 +21,10 @@ HASH=\#
  
- PREFIX     ?= /usr/local
- BIN_PATH    = $(PREFIX)/bin
--HELPER_PATH = $(PREFIX)/lib/afl
-+HELPER_PATH = $(PREFIX)/libexec/afl
- DOC_PATH    = $(PREFIX)/share/doc/afl
- MISC_PATH   = $(PREFIX)/share/afl
--MAN_PATH    = $(PREFIX)/share/man/man8
-+MAN_PATH    = $(PREFIX)/man/man8
+ PREFIX      ?= /usr/local
+ BIN_PATH     = $(PREFIX)/bin
+-HELPER_PATH  = $(PREFIX)/lib/afl
++HELPER_PATH  = $(PREFIX)/libexec/afl
+ DOC_PATH     = $(PREFIX)/share/doc/afl
+ MISC_PATH    = $(PREFIX)/share/afl
+-MAN_PATH     = $(PREFIX)/share/man/man8
++MAN_PATH     = $(PREFIX)/man/man8
+ INCLUDE_PATH = $(PREFIX)/include/afl
  
  PROGNAME    = afl
- VERSION     = $(shell grep '^$(HASH)define VERSION ' ../config.h | cut -d '"' -f2)
-@@ -319,7 +319,7 @@ ifdef TEST_MMAP
+@@ -332,7 +332,7 @@ ifdef TEST_MMAP
  endif
  
  .PHONY: all
--all:	test_x86 test_shm test_python ready $(PROGS) afl-as llvm gcc_plugin test_build all_done
-+all:	test_x86 test_shm test_python ready $(PROGS) afl-as llvm
+-all:	test_x86 test_shm test_python ready $(PROGS) llvm gcc_plugin test_build all_done
++all:	test_x86 test_shm test_python ready $(PROGS) llvm
  	-$(MAKE) -C utils/aflpp_driver
  	@echo
  	@echo
+@@ -698,7 +698,6 @@ endif
+ distrib: all
+ 	-$(MAKE) -j$(nproc) -f GNUmakefile.llvm
+ ifneq "$(SYS)" "Darwin"
+-	-$(MAKE) -f GNUmakefile.gcc_plugin
+ 	-$(MAKE) -C utils/libdislocator
+ 	-$(MAKE) -C utils/libtokencap
+ endif

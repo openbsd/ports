@@ -24,10 +24,35 @@ bin/afl-plot
 bin/afl-system-config
 @bin bin/afl-tmin
 bin/afl-whatsup
+include/afl/
+include/afl/afl-fuzz.h
+include/afl/afl-mutations.h
+include/afl/afl-persistent-replay.h
+include/afl/afl-prealloc.h
+include/afl/afl-record-compat.h
+include/afl/alloc-inl.h
+include/afl/android-ashmem.h
+include/afl/cmplog.h
+include/afl/common.h
+include/afl/config.h
+include/afl/coverage-32.h
+include/afl/coverage-64.h
+include/afl/debug.h
+include/afl/envs.h
+include/afl/forkserver.h
+include/afl/hash.h
+include/afl/list.h
+include/afl/sharedmem.h
+include/afl/snapshot-inl.h
+include/afl/t1ha.h
+include/afl/t1ha0_ia32aes_b.h
+include/afl/t1ha_bits.h
+include/afl/t1ha_selfcheck.h
+include/afl/types.h
+include/afl/xxhash.h
 libexec/afl/
 @so libexec/afl/SanitizerCoverageLTO.so
 @so libexec/afl/SanitizerCoveragePCGUARD.so
-@bin libexec/afl/afl-as
 libexec/afl/afl-compiler-rt-32.o
 libexec/afl/afl-compiler-rt-64.o
 libexec/afl/afl-compiler-rt.o
@@ -37,7 +62,6 @@ libexec/afl/afl-compiler-rt.o
 libexec/afl/afl-llvm-rt-lto-32.o
 libexec/afl/afl-llvm-rt-lto-64.o
 libexec/afl/afl-llvm-rt-lto.o
-libexec/afl/as
 @so libexec/afl/cmplog-instructions-pass.so
 @so libexec/afl/cmplog-routines-pass.so
 @so libexec/afl/cmplog-switches-pass.so
@@ -50,7 +74,6 @@ libexec/afl/dynamic_list.txt
 @so libexec/afl/split-switches-pass.so
 @man man/man8/afl-addseeds.8
 @man man/man8/afl-analyze.8
-@man man/man8/afl-as.8
 @man man/man8/afl-c++.8
 @man man/man8/afl-cc.8
 @man man/man8/afl-clang-fast++.8
@@ -105,6 +128,7 @@ share/afl/dictionaries/jpeg2000.dict
 share/afl/dictionaries/js.dict
 share/afl/dictionaries/json.dict
 share/afl/dictionaries/jsonnet.dict
+share/afl/dictionaries/jsonschema.dict
 share/afl/dictionaries/markdown.dict
 share/afl/dictionaries/math.dict
 share/afl/dictionaries/mathml.dict
@@ -127,6 +151,7 @@ share/afl/dictionaries/riff.dict
 share/afl/dictionaries/rss.dict
 share/afl/dictionaries/rst.dict
 share/afl/dictionaries/rtf.dict
+share/afl/dictionaries/ruby.dict
 share/afl/dictionaries/sas.dict
 share/afl/dictionaries/spss.dict
 share/afl/dictionaries/sql.dict
@@ -254,6 +279,7 @@ share/doc/afl/README.llvm.md
 share/doc/afl/README.lto.md
 share/doc/afl/README.md
 share/doc/afl/README.persistent_mode.md
+share/doc/afl/SAND.md
 share/doc/afl/afl-fuzz_approach.md
 share/doc/afl/best_practices.md
 share/doc/afl/custom_mutators.md
