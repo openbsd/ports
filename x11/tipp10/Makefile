@@ -1,6 +1,6 @@
 COMMENT =	intelligent touch typing tutor
 
-V =		3.3.3
+V =		3.3.4
 DISTNAME =	tipp10-v${V}
 PKGNAME =	tipp10-${V}
 CATEGORIES =	x11 education
