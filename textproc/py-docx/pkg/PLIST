@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}api.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}blkcntnr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}blkcntnr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}types.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/docx/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/api.py
 lib/python${MODPY_VERSION}/site-packages/docx/blkcntnr.py
+lib/python${MODPY_VERSION}/site-packages/docx/comments.py
 lib/python${MODPY_VERSION}/site-packages/docx/dml/
 lib/python${MODPY_VERSION}/site-packages/docx/dml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docx/dml/${MODPY_PYCACHE}/
@@ -158,6 +161,8 @@ lib/python${MODPY_VERSION}/site-packages/docx/oxml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}coreprops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}coreprops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -188,6 +193,7 @@ lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}table.${MODPY
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}xmlchemy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/${MODPY_PYCACHE}xmlchemy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docx/oxml/comments.py
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/coreprops.py
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/document.py
 lib/python${MODPY_VERSION}/site-packages/docx/oxml/drawing.py
@@ -232,6 +238,8 @@ lib/python${MODPY_VERSION}/site-packages/docx/parts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}hdrftr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -246,6 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}story.${MODP
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}story.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}styles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docx/parts/${MODPY_PYCACHE}styles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docx/parts/comments.py
 lib/python${MODPY_VERSION}/site-packages/docx/parts/document.py
 lib/python${MODPY_VERSION}/site-packages/docx/parts/hdrftr.py
 lib/python${MODPY_VERSION}/site-packages/docx/parts/image.py
@@ -274,6 +283,7 @@ lib/python${MODPY_VERSION}/site-packages/docx/styles/style.py
 lib/python${MODPY_VERSION}/site-packages/docx/styles/styles.py
 lib/python${MODPY_VERSION}/site-packages/docx/table.py
 lib/python${MODPY_VERSION}/site-packages/docx/templates/
+lib/python${MODPY_VERSION}/site-packages/docx/templates/default-comments.xml
 lib/python${MODPY_VERSION}/site-packages/docx/templates/default-docx-template/
 lib/python${MODPY_VERSION}/site-packages/docx/templates/default-docx-template/[Content_Types].xml
 lib/python${MODPY_VERSION}/site-packages/docx/templates/default-docx-template/_rels/
