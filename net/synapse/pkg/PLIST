@@ -279,6 +279,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}tracer.$
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}tracer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}user_directory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}user_directory.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}user_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}user_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}voip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}voip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/config/${MODPY_PYCACHE}workers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -327,6 +329,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/config/third_party_event_rules.
 lib/python${MODPY_VERSION}/site-packages/synapse/config/tls.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/tracer.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/user_directory.py
+lib/python${MODPY_VERSION}/site-packages/synapse/config/user_types.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/voip.py
 lib/python${MODPY_VERSION}/site-packages/synapse/config/workers.py
 lib/python${MODPY_VERSION}/site-packages/synapse/crypto/
@@ -747,11 +750,17 @@ lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}account_validity_callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}account_validity_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}media_repository_callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}media_repository_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}ratelimit_callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}ratelimit_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}spamchecker_callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}spamchecker_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}third_party_event_rules_callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/${MODPY_PYCACHE}third_party_event_rules_callbacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/account_validity_callbacks.py
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/media_repository_callbacks.py
+lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/ratelimit_callbacks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/spamchecker_callbacks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/callbacks/third_party_event_rules_callbacks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/module_api/errors.py
@@ -1327,6 +1336,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}backgro
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}background_updates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}invite_rule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}invite_rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/${MODPY_PYCACHE}prepare_database.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1545,6 +1556,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/_base.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/postgres.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/sqlite.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/invite_rule.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/keys.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/prepare_database.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/push_rule.py
