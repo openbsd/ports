@@ -158,7 +158,6 @@
      SUBDIR += py-snuggs
      SUBDIR += py-sympy
      SUBDIR += py-tables
-     SUBDIR += py2-numpy
      SUBDIR += qhull
      SUBDIR += qrupdate
      SUBDIR += rocq

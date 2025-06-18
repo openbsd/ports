@@ -130,7 +130,6 @@
      SUBDIR += freeorion
      SUBDIR += freeserf
      SUBDIR += freesynd
-     SUBDIR += fretsonfire
      SUBDIR += frotz
      SUBDIR += frozen-bubble
      SUBDIR += fs2open
@@ -218,7 +217,6 @@
      SUBDIR += moria
      SUBDIR += multimc
      SUBDIR += mvdsv
-     SUBDIR += mysticmine
      SUBDIR += naev
      SUBDIR += nanosaur
      SUBDIR += nanosaur2
