@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -101,6 +101,7 @@ tracker3_dep = dependency('tracker-sparql-3.0', requir
+@@ -102,6 +102,7 @@ tracker3_dep = dependency('tracker-sparql-3.0', requir
  tracker3_testutils_dep = dependency('tracker-testutils-3.0', required: false)
  
  lua_pkg = [

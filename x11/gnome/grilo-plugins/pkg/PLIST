@@ -13,7 +13,6 @@
 @so lib/grilo-${API}/libgrlmetadatastore.so
 @so lib/grilo-${API}/libgrlopticalmedia.so
 @so lib/grilo-${API}/libgrlpodcasts.so
-@so lib/grilo-${API}/libgrlraitv.so
 @so lib/grilo-${API}/libgrlshoutcast.so
 @so lib/grilo-${API}/libgrlthetvdb.so
 @so lib/grilo-${API}/libgrltmdb.so
@@ -22,16 +21,15 @@ lib/pkgconfig/grilo-plugins-${API}.pc
 share/grilo-plugins/
 share/grilo-plugins/grl-lua-factory/
 share/grilo-plugins/grl-lua-factory/grl-acoustid.lua
-share/grilo-plugins/grl-lua-factory/grl-appletrailers.gresource
-share/grilo-plugins/grl-lua-factory/grl-appletrailers.lua
-share/grilo-plugins/grl-lua-factory/grl-euronews.gresource
-share/grilo-plugins/grl-lua-factory/grl-euronews.lua
 share/grilo-plugins/grl-lua-factory/grl-guardianvideos.gresource
 share/grilo-plugins/grl-lua-factory/grl-guardianvideos.lua
+share/grilo-plugins/grl-lua-factory/grl-iptv.gresource
+share/grilo-plugins/grl-lua-factory/grl-iptv.lua
 share/grilo-plugins/grl-lua-factory/grl-itunes-podcast.gresource
 share/grilo-plugins/grl-lua-factory/grl-itunes-podcast.lua
 share/grilo-plugins/grl-lua-factory/grl-lastfm-cover.lua
 share/grilo-plugins/grl-lua-factory/grl-musicbrainz-coverart.lua
+share/grilo-plugins/grl-lua-factory/grl-opensubtitles.lua
 share/grilo-plugins/grl-lua-factory/grl-radiofrance.gresource
 share/grilo-plugins/grl-lua-factory/grl-radiofrance.lua
 share/grilo-plugins/grl-lua-factory/grl-steam-store.lua
@@ -81,6 +79,12 @@ share/help/eu/examples/example-tmdb.c
 share/help/eu/grilo-plugins/
 share/help/eu/grilo-plugins/grilo-plugins.xml
 share/help/eu/grilo-plugins/legal.xml
+share/help/fr/
+share/help/fr/examples/
+share/help/fr/examples/example-tmdb.c
+share/help/fr/grilo-plugins/
+share/help/fr/grilo-plugins/grilo-plugins.xml
+share/help/fr/grilo-plugins/legal.xml
 share/help/gl/
 share/help/gl/examples/
 share/help/gl/examples/example-tmdb.c
@@ -111,6 +115,12 @@ share/help/pt_BR/examples/example-tmdb.c
 share/help/pt_BR/grilo-plugins/
 share/help/pt_BR/grilo-plugins/grilo-plugins.xml
 share/help/pt_BR/grilo-plugins/legal.xml
+share/help/ru/
+share/help/ru/examples/
+share/help/ru/examples/example-tmdb.c
+share/help/ru/grilo-plugins/
+share/help/ru/grilo-plugins/grilo-plugins.xml
+share/help/ru/grilo-plugins/legal.xml
 share/help/sv/
 share/help/sv/examples/
 share/help/sv/examples/example-tmdb.c
@@ -138,17 +148,20 @@ share/locale/en_GB/LC_MESSAGES/grilo-plugins.mo
 share/locale/eo/LC_MESSAGES/grilo-plugins.mo
 share/locale/es/LC_MESSAGES/grilo-plugins.mo
 share/locale/eu/LC_MESSAGES/grilo-plugins.mo
+share/locale/fa/LC_MESSAGES/grilo-plugins.mo
 share/locale/fi/LC_MESSAGES/grilo-plugins.mo
 share/locale/fr/LC_MESSAGES/grilo-plugins.mo
 share/locale/fur/LC_MESSAGES/grilo-plugins.mo
 share/locale/gl/LC_MESSAGES/grilo-plugins.mo
 share/locale/he/LC_MESSAGES/grilo-plugins.mo
+share/locale/hi/LC_MESSAGES/grilo-plugins.mo
 share/locale/hr/LC_MESSAGES/grilo-plugins.mo
 share/locale/hu/LC_MESSAGES/grilo-plugins.mo
 share/locale/id/LC_MESSAGES/grilo-plugins.mo
 share/locale/it/LC_MESSAGES/grilo-plugins.mo
 share/locale/ja/LC_MESSAGES/grilo-plugins.mo
 share/locale/ka/LC_MESSAGES/grilo-plugins.mo
+share/locale/kab/LC_MESSAGES/grilo-plugins.mo
 share/locale/ko/LC_MESSAGES/grilo-plugins.mo
 share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
@@ -169,6 +182,7 @@ share/locale/sl/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr@latin/LC_MESSAGES/grilo-plugins.mo
 share/locale/sv/LC_MESSAGES/grilo-plugins.mo
+share/locale/th/LC_MESSAGES/grilo-plugins.mo
 share/locale/tr/LC_MESSAGES/grilo-plugins.mo
 share/locale/uk/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/grilo-plugins.mo

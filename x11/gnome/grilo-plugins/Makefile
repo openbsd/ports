@@ -3,8 +3,7 @@
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.16
-REVISION=	2
+GNOME_VERSION=	0.3.17
 
 API=		0.3
 SUBST_VARS=	API
@@ -17,14 +16,17 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODLUA_WANTLIB} archive avahi-client avahi-glib dmapsharing-4.0
 WANTLIB += gio-2.0 glib-2.0 goa-1.0 gobject-2.0 gom-1.0 grilo-0.3
 WANTLIB += grlnet-0.3 grlpls-0.3 gstreamer-1.0 intl json-glib-1.0
-WANTLIB += mediaart-2.0 oauth sqlite3 tinysparql-3.0 totem-plparser
-WANTLIB += totem-plparser-mini xml2
+WANTLIB += mediaart-2.0 oauth rest-1.0 sqlite3 tinysparql-3.0
+WANTLIB += totem-plparser totem-plparser-mini xml2
 
 MODULES=	devel/meson \
 		lang/lua \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gperf
+
+# for tests
+BUILD_DEPENDS=	x11/gnome/localsearch
 
 LIB_DEPENDS=	net/avahi,-glib \
 		x11/gnome/gom \
