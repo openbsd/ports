@@ -46,7 +46,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def warn_param_mismatched_alignment : Warning<
    "passing %0-byte aligned argument to %1-byte aligned parameter %2%select{| of %4}3 may result in an unaligned pointer access">,
    InGroup<DiagGroup<"align-mismatch">>;
-@@ -8673,7 +8673,7 @@ def err_typecheck_convert_pointer_int : Error<
+@@ -8677,7 +8677,7 @@ def err_typecheck_convert_pointer_int : Error<
    "; remove &}3">;
  def ext_typecheck_convert_pointer_int : ExtWarn<
    err_typecheck_convert_pointer_int.Summary>,
@@ -55,7 +55,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def err_typecheck_convert_int_pointer : Error<
    "incompatible integer to pointer conversion "
    "%select{%diff{assigning to $ from $|assigning to different types}0,1"
-@@ -8693,7 +8693,7 @@ def err_typecheck_convert_int_pointer : Error<
+@@ -8697,7 +8697,7 @@ def err_typecheck_convert_int_pointer : Error<
    "; remove &}3">;
  def ext_typecheck_convert_int_pointer : ExtWarn<
    err_typecheck_convert_int_pointer.Summary>,
@@ -64,7 +64,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def ext_typecheck_convert_pointer_void_func : Extension<
    "%select{%diff{assigning to $ from $|assigning to different types}0,1"
    "|%diff{passing $ to parameter of type $|"
-@@ -8734,7 +8734,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
+@@ -8738,7 +8738,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
    "|%diff{casting $ to type $|casting between types}0,1}2"
    " converts between pointers to integer types %select{with different sign|"
    "where one is of the unique plain 'char' type and the other is not}3">,
@@ -73,7 +73,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def err_typecheck_convert_incompatible_pointer_sign :
    Error<ext_typecheck_convert_incompatible_pointer_sign.Summary>;
  def ext_typecheck_convert_incompatible_pointer : ExtWarn<
-@@ -8791,7 +8791,7 @@ def err_typecheck_convert_incompatible_function_pointe
+@@ -8795,7 +8795,7 @@ def err_typecheck_convert_incompatible_function_pointe
    "; remove &}3">;
  def ext_typecheck_convert_incompatible_function_pointer : ExtWarn<
    err_typecheck_convert_incompatible_function_pointer.Summary>,
@@ -82,7 +82,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  def warn_typecheck_convert_incompatible_function_pointer_strict : Warning<
    err_typecheck_convert_incompatible_function_pointer.Summary>,
    InGroup<DiagGroup<"incompatible-function-pointer-types-strict">>, DefaultIgnore;
-@@ -10412,6 +10412,9 @@ def err_os_log_argument_too_big : Error<
+@@ -10416,6 +10416,9 @@ def err_os_log_argument_too_big : Error<
  def warn_os_log_format_narg : Error<
   "os_log() '%%n' format specifier is not allowed">, DefaultError;
  
@@ -92,7 +92,7 @@ Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
  // Statements.
  def err_continue_not_in_loop : Error<
    "'continue' statement not in loop statement">;
-@@ -10764,7 +10767,7 @@ def warn_receiver_forward_class : Warning<
+@@ -10768,7 +10771,7 @@ def warn_receiver_forward_class : Warning<
  def note_method_sent_forward_class : Note<"method %0 is used for the forward class">;
  def ext_missing_type_specifier : ExtWarn<
    "type specifier missing, defaults to 'int'; ISO C99 and later do not support "
