@@ -1,0 +1,13 @@
+@bin bin/cassette
+share/appdata/
+share/appdata/io.github.Rirusha.Cassette.appdata.xml
+share/applications/io.github.Rirusha.Cassette.desktop
+share/glib-2.0/schemas/io.github.Rirusha.Cassette.gschema.xml
+share/icons/hicolor/scalable/apps/io.github.Rirusha.Cassette.svg
+share/icons/hicolor/symbolic/apps/io.github.Rirusha.Cassette-symbolic.svg
+share/locale/be/LC_MESSAGES/cassette.mo
+share/locale/es/LC_MESSAGES/cassette.mo
+share/locale/ru/LC_MESSAGES/cassette.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag glib-compile-schemas
+@tag update-desktop-database
