@@ -11,5 +11,3 @@ lib/pkgconfig/libnghttp2.pc
 @comment @man man/man1/nghttpx.1
 share/doc/nghttp2/
 share/doc/nghttp2/README.rst
-share/nghttp2/
-share/nghttp2/fetch-ocsp-response
