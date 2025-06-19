@@ -1,9 +1,8 @@
 COMMENT =		Python charting and plotting API
 
-MODPY_DISTV =		3.9.4
+MODPY_DISTV =		3.10.3
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		graphics devel math
 
@@ -26,11 +25,12 @@ MODPY_PYBUILD =		mesonpy
 MODPY_TEST_LINK_SO =	Yes
 MODPY_TEST_LINK_SRC =	${WRKSRC}/lib
 
+MODPY_TEST_DIR =	${WRKINST}${MODPY_SITEPKG}
+
 BUILD_DEPENDS =	devel/py-certifi>=2020.06.20 \
-		devel/py-pybind11>=2.6 \
+		devel/py-pybind11>=2.13.2 \
 		devel/py-setuptools_scm \
 		math/qhull \
-		math/py-numpy>=1.25 \
 		textproc/py-sphinx
 
 RUN_DEPENDS=	devel/py-tz \
@@ -39,13 +39,15 @@ RUN_DEPENDS=	devel/py-tz \
 		devel/py-parsing>=2.3.1 \
 		devel/py-gobject3 \
 		math/py-contourpy>=1.0.1 \
-		math/py-numpy>=1.25 \
+		math/py-numpy>=1.23 \
 		graphics/py-Pillow>=8.0.0 \
 		graphics/py-cairo \
 		graphics/py-cycler>=0.10 \
 		print/py-fonttools>=4.22.0 \
 		sysutils/py-packaging>=20.0 \
 		${MODPY_TKINTER_DEPENDS}
+
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
