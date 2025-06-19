@@ -19,11 +19,13 @@ share/doc/icingadb/doc/
 share/doc/icingadb/doc/01-About.md
 share/doc/icingadb/doc/02-Installation.md
 share/doc/icingadb/doc/02-Installation.md.d/
+share/doc/icingadb/doc/02-Installation.md.d/For-Container.md
 share/doc/icingadb/doc/02-Installation.md.d/From-Source.md
 share/doc/icingadb/doc/03-Configuration.md
 share/doc/icingadb/doc/04-Upgrading.md
 share/doc/icingadb/doc/05-Distributed-Setups.md
 share/doc/icingadb/doc/06-Migration.md
+share/doc/icingadb/doc/07-Operations.md
 share/doc/icingadb/doc/TRADEMARKS.md
 share/doc/icingadb/doc/icingadb-migration.example.yml
 share/doc/icingadb/doc/images/
@@ -54,6 +56,7 @@ share/examples/icingadb/schema/mysql/upgrades/1.0.0.sql
 share/examples/icingadb/schema/mysql/upgrades/1.1.1.sql
 share/examples/icingadb/schema/mysql/upgrades/1.2.0.sql
 share/examples/icingadb/schema/mysql/upgrades/1.2.1.sql
+share/examples/icingadb/schema/mysql/upgrades/1.4.0.sql
 share/examples/icingadb/schema/mysql/upgrades/optional/
 share/examples/icingadb/schema/mysql/upgrades/optional/1.2.0-history.sql
 share/examples/icingadb/schema/pgsql/
@@ -62,5 +65,6 @@ share/examples/icingadb/schema/pgsql/upgrades/
 share/examples/icingadb/schema/pgsql/upgrades/1.1.1.sql
 share/examples/icingadb/schema/pgsql/upgrades/1.2.0.sql
 share/examples/icingadb/schema/pgsql/upgrades/1.2.1.sql
+share/examples/icingadb/schema/pgsql/upgrades/1.4.0.sql
 share/examples/icingadb/schema/pgsql/upgrades/optional/
 share/examples/icingadb/schema/pgsql/upgrades/optional/1.2-0-history.sql
