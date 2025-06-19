@@ -55,7 +55,6 @@ SUBST_VARS +=	ERL_${_n:S/_VSN//}
 
 COMPILER=	base-clang ports-gcc
 
-
 UPDATE_PLIST_ARGS+= -i MAJ_V
 ERLANG_V= 	erlang${MAJ_V}
 SUBST_VARS+=	ERLANG_V MAJ_V V
@@ -82,13 +81,8 @@ pre-configure:
 		     ${WRKSRC}/erts/etc/common/erlc.c \
 		     ${WRKSRC}/erts/etc/common/escript.c \
 		     ${WRKSRC}/erts/etc/common/typer.c
-.if ${MAJ_V} == 25
-	${SUBST_CMD} ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl
-.else
 	${SUBST_CMD} ${WRKSRC}/lib/dialyzer/src/dialyzer_cplt.erl
-.endif
 	if [ -f ${WRKSRC}/lib/wx/configure.ac ]; then ${SUBST_CMD} ${WRKSRC}/lib/wx/configure.ac ; fi;
-
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar && \
