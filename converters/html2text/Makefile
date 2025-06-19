@@ -1,6 +1,6 @@
 COMMENT=	advanced HTML-to-text converter
 
-V=		2.2.3
+V=		2.3.0
 DISTNAME=	html2text-$V
 SITES=		https://github.com/grobian/html2text/releases/download/v$V/
 
