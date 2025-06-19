@@ -1,9 +1,8 @@
 COMMENT=	let your Python tests travel through time
 
-MODPY_DISTV=	1.5.1
+MODPY_DISTV=	1.5.2
 DISTNAME=	freezegun-${MODPY_DISTV}
 PKGNAME=	py-freezegun-${MODPY_DISTV}
-REVISION=	1
 
 HOMEPAGE=	https://github.com/spulec/freezegun
 
@@ -13,9 +12,8 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-dateutil
 
