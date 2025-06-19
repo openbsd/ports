@@ -1,6 +1,6 @@
 COMMENT=	library for manipulating PNG images
 
-VERSION=	1.6.48
+VERSION=	1.6.49
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
 CATEGORIES=	graphics
