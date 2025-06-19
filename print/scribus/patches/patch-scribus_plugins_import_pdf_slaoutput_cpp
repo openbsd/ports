@@ -3,6 +3,15 @@ https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe521
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
 +++ scribus/plugins/import/pdf/slaoutput.cpp
+@@ -580,7 +580,7 @@ bool SlaOutputDev::handleWidgetAnnot(Annot* annota, do
+ 		FormWidget *fm = m_formWidgets->getWidget(i);
+ 		if (!fm)
+ 			continue;
+-		AnnotWidget *ano = fm->getWidgetAnnotation();
++		AnnotWidget *ano = fm->getWidgetAnnotation().get();
+ 		if (!ano)
+ 			continue;
+ 		if (ano != (AnnotWidget*) annota)
 @@ -2791,7 +2791,7 @@ void SlaOutputDev::beginMarkedContent(const char *name
  	{
  		if (dictRef->isNull())
