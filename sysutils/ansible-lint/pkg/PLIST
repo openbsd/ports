@@ -51,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}text.${MODP
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,6 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}fix
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/text.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/transformer.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/types.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/utils.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/version.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/yaml_utils.py
