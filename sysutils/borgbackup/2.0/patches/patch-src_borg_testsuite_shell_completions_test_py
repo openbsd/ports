@@ -1,12 +1,12 @@
 Index: src/borg/testsuite/shell_completions_test.py
 --- src/borg/testsuite/shell_completions_test.py.orig
 +++ src/borg/testsuite/shell_completions_test.py
-@@ -2,7 +2,7 @@ import os
- import subprocess
+@@ -3,7 +3,7 @@ from pathlib import Path
+ 
  import pytest
  
--SHELL_COMPLETIONS_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "scripts", "shell_completions")
-+SHELL_COMPLETIONS_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "scripts", "shell_completions")
+-SHELL_COMPLETIONS_DIR = Path(__file__).parent / ".." / ".." / ".." / "scripts" / "shell_completions"
++SHELL_COMPLETIONS_DIR = Path(__file__).parent / ".." / ".." / ".." / ".." / "scripts" / "shell_completions"
  
  
  def test_bash_completion_is_valid():

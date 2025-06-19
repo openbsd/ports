@@ -3,7 +3,7 @@
 USE_NOEXECONLY=		Yes
 .endif
 
-MODPY_DISTV =		2.0.0b17
+MODPY_DISTV =		2.0.0b18
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
 EPOCH =			0
 
