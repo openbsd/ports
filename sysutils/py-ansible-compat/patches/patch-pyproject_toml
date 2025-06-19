@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -349,7 +349,7 @@ disable = [
+ ]
+ 
+ [tool.pytest.ini_options]
+-addopts = "-p no:pytest_cov --durations=10 --durations-min=1.0 --failed-first --instafail"
++addopts = "-p no:pytest_cov --durations=10 --durations-min=1.0 --failed-first"
+ # ensure we treat warnings as error
+ filterwarnings = [
+   "error",

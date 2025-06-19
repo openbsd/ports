@@ -1,9 +1,8 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_DISTV=	25.1.4
+MODPY_DISTV=	25.6.0
 DISTNAME=	ansible_compat-${MODPY_DISTV}
 PKGNAME=	py-ansible-compat-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
