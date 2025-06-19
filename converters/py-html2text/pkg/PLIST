@@ -20,6 +20,8 @@ lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}__main__.${MO
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}elements.${MO
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/html2text/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html2text/_typing.py
+lib/python${MODPY_VERSION}/site-packages/html2text/_version.py
 lib/python${MODPY_VERSION}/site-packages/html2text/cli.py
 lib/python${MODPY_VERSION}/site-packages/html2text/config.py
 lib/python${MODPY_VERSION}/site-packages/html2text/elements.py
