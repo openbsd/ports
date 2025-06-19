@@ -1,15 +1,15 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -9,6 +9,7 @@ LT_INIT([disable-static])
- m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+@@ -10,6 +10,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
  
+ AC_PROG_CC
  AC_PROG_CXX
 +AS_IF([test -n "$LD" && $LD -v | grep -q GNU >/dev/null 2>/dev/null], [with_gnu_ld=yes], [with_gnu_ld=no])
  AM_CONDITIONAL([WITH_GNU_LD], [test "$with_gnu_ld" = yes])
  
  saved_CPPFLAGS="$CPPFLAGS"
-@@ -142,13 +143,13 @@ PKG_CHECK_MODULES([libxxhash], [libxxhash >= 0.7], [ha
+@@ -143,13 +144,13 @@ PKG_CHECK_MODULES([libxxhash], [libxxhash >= 0.7], [ha
  PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
  PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([tinyxml2], [tinyxml2 >= 8])
@@ -25,7 +25,7 @@ Index: configure.ac
  AM_CONDITIONAL([HAVE_ESEDB], [test "$have_esedb" = 1])
  AM_CONDITIONAL([HAVE_PAM], [test "$have_pamheader" = yes])
  AM_CONDITIONAL([HAVE_OLECF], [test "$have_olecf" = 1])
-@@ -160,7 +161,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise])
+@@ -161,7 +162,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise])
  AC_SEARCH_LIBS([crypt], [crypt], [crypt_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([dlopen], [dl], [dl_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([ns_initparse], [resolv], [resolv_LIBS="$LIBS"; LIBS=""])
