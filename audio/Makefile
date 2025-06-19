@@ -15,6 +15,7 @@
      SUBDIR += calf
      SUBDIR += cantata
      SUBDIR += caps-plugins
+     SUBDIR += cassette
      SUBDIR += cd-discid
      SUBDIR += cdparanoia
      SUBDIR += celt
