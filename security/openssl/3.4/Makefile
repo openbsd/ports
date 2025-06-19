@@ -9,13 +9,16 @@ PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.4v0,<3.5v0
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
 SHLIBVER=	32.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
-WANTLIB=	c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
+WANTLIB=	c pthread
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
@@ -23,7 +26,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=/etc/ssl \
-			no-threads no-rc5 no-ssl3 \
+			no-rc5 no-ssl3 \
 			no-devcryptoeng \
 			shared
 
