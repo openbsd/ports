@@ -26,7 +26,7 @@ MODULES=	devel/meson \
 BUILD_DEPENDS=	devel/gperf
 
 # for tests
-BUILD_DEPENDS=	x11/gnome/localsearch
+BUILD_DEPENDS +=	x11/gnome/localsearch
 
 LIB_DEPENDS=	net/avahi,-glib \
 		x11/gnome/gom \
