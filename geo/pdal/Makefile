@@ -1,11 +1,11 @@
 COMMENT =	translator library for point cloud formats
 
-V =	2.8.4
+V =	2.9.0
 DISTNAME =	PDAL-${V}-src
 PKGNAME =	pdal-${V}
 EXTRACT_SUFX =	.tar.bz2
 
-SHARED_LIBS +=  pdalcpp 4.1 # 16.0 from PDAL_SOLIB defines in cmake/libraries.cmake
+SHARED_LIBS +=  pdalcpp 5.0 # 19.0 from PDAL_SOLIB defines in cmake/libraries.cmake
 
 CATEGORIES =	geo devel textproc
 
@@ -31,8 +31,6 @@ WANTLIB +=	c crypto curl execinfo gdal geotiff m proj pq pthread
 WANTLIB +=	ssl xml2 z zstd
 WANTLIB += ${COMPILER_LIBCXX}
 
-CONFIGURE_ARGS +=	-DWITH_TESTS=OFF
-#BUILD_DEPENDS +=	devel/gtest
-# pgpointcloudtest fails but that's the only one (needs running psql on /tmp/.s.PGSQL.5432)
+BUILD_DEPENDS +=	devel/gtest
 
 .include <bsd.port.mk>
