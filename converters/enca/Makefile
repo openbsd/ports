@@ -1,19 +1,20 @@
 COMMENT=		detect character set and encoding of text files
 
 DISTNAME=		enca-1.19
-SHARED_LIBS +=  enca                 0.0      # 5.1
 CATEGORIES=		converters textproc
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://cihar.com/software/enca/
+SHARED_LIBS +=  enca                 0.0      # 5.1
+
+# https://github.com/nijel/enca
+HOMEPAGE=		https://cihar.com/software/enca/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m recode
 
-SITES=			http://dl.cihar.com/enca/
-
+SITES=			https://dl.cihar.com/enca/
 
 BUILD_DEPENDS=		converters/p5-Unicode-Map8
 LIB_DEPENDS=		converters/recode
