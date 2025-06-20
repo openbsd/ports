@@ -1,5 +1,6 @@
 # see patch-js_src_old-configure_in (appends to LDFLAGS/DSO_LDOPTS)
 USE_WXNEEDED =		Yes
+USE_NOBTCFI =		Yes
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,6 +14,7 @@ SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
 SUBST_VARS +=		SO_VERSION
 
 V =			${MOZILLA_VERSION}.11.0
+REVISION =		0
 DISTNAME =		firefox-${V}esr.source
 PKGNAME-main =		spidermonkey${MOZILLA_VERSION}-${V}
 PKGNAME-js =		js${MOZILLA_VERSION}-${V}
@@ -91,10 +93,11 @@ CONFIGURE_ENV =		LIBS=-lncurses \
 CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 BUILD_DEPENDS +=	devel/m4
 
+# use the ld wrapper for nobtcfi wxneeded etc
+CONFIGURE_ENV +=	LDFLAGS="--ld-path=${WRKDIR}/bin/ld"
+
 MAKE_ENV =		SHELL=/bin/sh \
 			SO_VERSION=${SO_VERSION}
-
-NO_TEST =		Yes
 
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
@@ -106,5 +109,8 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/libjs_static.ajs
 	${INSTALL_PROGRAM} ${WRKBUILD}/dist/bin/js ${PREFIX}/bin/js${MOZILLA_VERSION}
+
+do-test:
+	${MODPY_BIN} ${WRKSRC}/jit-test/jit_test.py --show-cmd ${WRKBUILD}/dist/bin/js
 
 .include <bsd.port.mk>
