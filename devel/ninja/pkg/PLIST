@@ -6,7 +6,6 @@ share/doc/ninja/
 share/doc/ninja/manual.asciidoc
 share/ninja/
 share/ninja/measure.py
-share/ninja/ninja-mode.el
 share/ninja/ninja.vim
 share/ninja/ninja_syntax.py
 share/ninja/write_fake_manifests.py
