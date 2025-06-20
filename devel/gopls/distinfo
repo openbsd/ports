@@ -126,8 +126,8 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.28.0.mod) = ITpDcwQj6lN3hICR97ldkNid
 SHA256 (go_modules/golang.org/x/tools/@v/v0.29.0.mod) = K+5LRycZnysT9qo47JLo07sPTn1QokPHYwRrwFlBsTc=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = QoVxoQqrdYamfaLJN16K5IDe+NL6Ed6Mb/8oppa5WR8=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.1-0.20250521210010-423c5afcceff.mod) = QoVxoQqrdYamfaLJN16K5IDe+NL6Ed6Mb/8oppa5WR8=
-SHA256 (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610180157-87f68886ec5f.mod) = W+aW+I+6h3adORL4evboAIWOhbpLOwtZmHCSZJIRSp4=
-SHA256 (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610180157-87f68886ec5f.zip) = hP84MhcTYp7IuUV4sbitwJijz/8/9m5i1vze+50jjZU=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610205101-c26dd3ba555e.mod) = W+aW+I+6h3adORL4evboAIWOhbpLOwtZmHCSZJIRSp4=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610205101-c26dd3ba555e.zip) = ShEtVh/yejsI3i1RPFj5+pj0OE+ZAXY1UPWpzZ3MJJ4=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = gw7Xjc0+mSfEEuJkEjAwhEd0nVE9MQJNJ24kQ7IBZgk=
 SHA256 (go_modules/golang.org/x/vuln/@v/v1.1.4.mod) = QOX6Mprb/X2tJHZGW6NA0lMbTTNkC4LIHDSskPNsvSo=
 SHA256 (go_modules/golang.org/x/vuln/@v/v1.1.4.zip) = EV/3b7qPc7JxBusuWePzBpb09/qu7VVHG1tlw5lLUD0=
@@ -144,7 +144,7 @@ SHA256 (go_modules/mvdan.cc/gofumpt/@v/v0.7.0.mod) = cCrVIfX4E5midPsZf9oqL9d738g
 SHA256 (go_modules/mvdan.cc/gofumpt/@v/v0.7.0.zip) = JE8XLrMNizpBOQWugyNyIFQaX6vPKIVdtV8FOBnEvEE=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.6.0.mod) = cqcfs0cFrWosmavtoChrZ2zJWHF3rngsNaHJou4LeG8=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.6.0.zip) = Xyw/U7+tq62VIkEvLqUkEvNinxF1OHfbl1+OI9whVV8=
-SHA256 (gopls-v0.19.0.zip) = cCzJyZ2tpUoJ/TfLw/iZKegqqSHpFO+kvVVcwQvMNLM=
+SHA256 (gopls-v0.19.1.zip) = 77vJVXwm1R7bq9Z05OqqjKiB5QhVSjWv/GCfOxMusNE=
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.mod) = 43
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.zip) = 397057
 SIZE (go_modules/github.com/fatih/camelcase/@v/v1.0.0.mod) = 34
@@ -273,8 +273,8 @@ SIZE (go_modules/golang.org/x/tools/@v/v0.28.0.mod) = 342
 SIZE (go_modules/golang.org/x/tools/@v/v0.29.0.mod) = 342
 SIZE (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.33.1-0.20250521210010-423c5afcceff.mod) = 301
-SIZE (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610180157-87f68886ec5f.mod) = 301
-SIZE (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610180157-87f68886ec5f.zip) = 3667022
+SIZE (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610205101-c26dd3ba555e.mod) = 301
+SIZE (go_modules/golang.org/x/tools/@v/v0.34.1-0.20250610205101-c26dd3ba555e.zip) = 3667022
 SIZE (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = 211
 SIZE (go_modules/golang.org/x/vuln/@v/v1.1.4.mod) = 387
 SIZE (go_modules/golang.org/x/vuln/@v/v1.1.4.zip) = 853384
@@ -291,4 +291,4 @@ SIZE (go_modules/mvdan.cc/gofumpt/@v/v0.7.0.mod) = 356
 SIZE (go_modules/mvdan.cc/gofumpt/@v/v0.7.0.zip) = 125545
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.6.0.mod) = 264
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.6.0.zip) = 34425
-SIZE (gopls-v0.19.0.zip) = 2270410
+SIZE (gopls-v0.19.1.zip) = 2270401

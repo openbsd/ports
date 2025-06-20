@@ -23,7 +23,7 @@ MODGO_MODULES =	\
 	golang.org/x/telemetry		 v0.0.0-20250417124945-06ef541f3fa3 \
 	golang.org/x/term		 v0.22.0 \
 	golang.org/x/text		 v0.26.0 \
-	golang.org/x/tools		 v0.34.1-0.20250610180157-87f68886ec5f \
+	golang.org/x/tools		 v0.34.1-0.20250610205101-c26dd3ba555e \
 	golang.org/x/vuln		 v1.1.4 \
 	golang.org/x/xerrors		 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
