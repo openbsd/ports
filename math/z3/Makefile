@@ -17,7 +17,7 @@ MAINTAINER =	Kirill A. Korinsky <kirill@korins.ky>
 PERMIT_PACKAGE =	Yes
 
 # C++20
-COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang ports-clang
 
 MODULES =	devel/cmake \
 		lang/python
