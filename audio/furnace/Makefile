@@ -5,7 +5,7 @@ BROKEN-i386 =	asm tries to use %eax which is not available
 
 COMMENT =	multi-system chiptune tracker
 
-DIST_TUPLE =	github tildearrow furnace v0.6.8.2 .
+DIST_TUPLE =	github tildearrow furnace v0.6.8.3 .
 DIST_TUPLE +=	github superctr adpcm 7736b178f4fb722d594c6ebdfc1ddf1af2ec81f7 extern/adpcm
 
 CATEGORIES =	audio
