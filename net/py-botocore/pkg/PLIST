@@ -142,6 +142,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/aiops/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/2020-08-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/2020-08-01/endpoint-rule-set-1.json
@@ -1838,6 +1844,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/2022-07-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/2022-07-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/2022-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/2022-07-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mpa/2022-07-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mq/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mq/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mq/2017-11-27/endpoint-rule-set-1.json
@@ -2383,6 +2395,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securityhub/2018-10-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/securitylake/2018-05-10/
