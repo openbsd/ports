@@ -1,6 +1,6 @@
 COMMENT =	solve algebraic, geometric, combinatorial problems
 
-V =		1.6.10
+V =		1.6.12
 GH_ACCOUNT =	4ti2
 GH_PROJECT =	4ti2
 GH_TAGNAME =	Release_${V:S/./_/g}
@@ -27,8 +27,8 @@ COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =		devel/glpk \
 			devel/gmp,-cxx
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.17
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--disable-static \
