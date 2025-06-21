@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1727 2025/06/21 13:29:03 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1728 2025/06/21 21:33:43 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -627,6 +627,7 @@ my $stem_extensions = {
 # 7.8
 	'coq' => 'rocq',
 	'totem' => 'showtime',
+	'py-numpy' => 'py3-numpy',
 };
 
 my $obsolete_reason = {};
@@ -1264,7 +1265,6 @@ setup_obsolete_reason(
 	3 => 'gnome-dictionary',
 	3 => 'gnome-photos',
 	3 => 'tsung',
-	3 => 'py-numpy',
 	3 => 'mysticmine',
 	3 => 'fretsonfire',
 	3 => 'py-lpsolve',

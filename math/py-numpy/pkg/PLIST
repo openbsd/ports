@@ -1,4 +1,6 @@
 @pkgpath math/py-numpy,python3
+@pkgpath math/py-numpy
+@pkgpath math/py2-numpy
 @comment bin/f2py3
 @comment bin/f2py
 bin/numpy-config
