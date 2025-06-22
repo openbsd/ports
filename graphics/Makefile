@@ -286,9 +286,7 @@
      SUBDIR += py-termcolor
      SUBDIR += py-tifffile
      SUBDIR += py-wand
-     SUBDIR += py2-Pillow
      SUBDIR += py2-cairo
-     SUBDIR += py2-opengl
      SUBDIR += qiv
      SUBDIR += qr-code-generator
      SUBDIR += quesoglc
