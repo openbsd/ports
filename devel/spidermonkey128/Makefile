@@ -14,6 +14,7 @@ SUBST_VARS +=		SO_VERSION
 V =			${MOZILLA_VERSION}.11.0
 REVISION =		1
 DISTNAME =		firefox-${V}esr.source
+DIST_SUBDIR =		mozilla
 PKGNAME-main =		spidermonkey${MOZILLA_VERSION}-${V}
 PKGNAME-js =		js${MOZILLA_VERSION}-${V}
 EPOCH =			1
