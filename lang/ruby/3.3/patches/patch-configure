@@ -1,5 +1,7 @@
 Set correct shared library name.
 
+Don't use -A -n flags to strip (broken by default due to ports infrastructure).
+
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
@@ -15,6 +17,15 @@ Index: configure
  do :
  
  
+@@ -31464,7 +31464,7 @@ main (void)
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"
+ then :
+-  if "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
++  if false # "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
+ then :
+ 
+             { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
 @@ -32012,7 +32012,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :

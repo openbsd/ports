@@ -1,5 +1,7 @@
 Using -mbranch-protection=standard to build with BTI support on aarch64.
 
+Don't use -A -n flags to strip (broken by default due to ports infrastructure).
+
 Set correct shared library name.
 
 Override the arch setting to remove OpenBSD version from it,
@@ -17,6 +19,15 @@ Index: configure
  do :
  
                  # Try these flags in the _prepended_ position - i.e. we want to try building a program
+@@ -31731,7 +31731,7 @@ main (void)
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"
+ then :
+-  if "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
++  if false # "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
+ then :
+ 
+             { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
 @@ -32280,7 +32280,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
