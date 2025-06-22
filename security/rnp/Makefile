@@ -2,8 +2,8 @@ COMMENT =	high performance C++ OpenPGP library and tools
 
 GH_ACCOUNT =	rnpgp
 GH_PROJECT =	rnp
-GH_TAGNAME =	v0.17.1
-SHARED_LIBS =	rnp 0.3
+GH_TAGNAME =	v0.18.0
+SHARED_LIBS =	rnp 0.4
 
 # upstream extracted libsexpp to a separate repo via submodule, need to use released tarball
 SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
