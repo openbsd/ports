@@ -1,4 +1,5 @@
 @pkgpath graphics/py-opengl,python3
+@pkgpath graphics/py2-opengl
 lib/python${MODPY_VERSION}/site-packages/OpenGL/
 lib/python${MODPY_VERSION}/site-packages/OpenGL/AGL/
 lib/python${MODPY_VERSION}/site-packages/OpenGL/AGL/__init__.py

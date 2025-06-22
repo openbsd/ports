@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1728 2025/06/21 21:33:43 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1729 2025/06/22 12:28:32 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -628,6 +628,8 @@ my $stem_extensions = {
 	'coq' => 'rocq',
 	'totem' => 'showtime',
 	'py-numpy' => 'py3-numpy',
+	'py-Pillow' => 'py3-Pillow',
+	'py-opengl' => 'py3-opengl',
 };
 
 my $obsolete_reason = {};
