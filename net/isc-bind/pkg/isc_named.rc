@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/sbin/named"
-daemon_flags="-t ${LOCALSTATEDIR}/named -u _bind -U 4"
+daemon_flags="-t ${LOCALSTATEDIR}/named -u _bind"
 
 . /etc/rc.d/rc.subr
 
