@@ -27,6 +27,14 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
+.if ${MACHINE_ARCH} == aarch64
+MODCLANG_VERSION =	16
+USE_LLD =		ports
+CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/
+CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
+.else
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+.endif
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -61,7 +69,6 @@ MOZILLA_USE_SYSTEM_AV1 =Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 # LTO eats too much RAM on riscv64
 .if ${MACHINE_ARCH} != riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
