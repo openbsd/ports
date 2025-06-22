@@ -37,6 +37,7 @@ include/i2pd/Log.h
 include/i2pd/MatchedDestination.h
 include/i2pd/NTCP2.h
 include/i2pd/NetDbRequests.h
+include/i2pd/PostQuantum.h
 include/i2pd/Profiling.h
 include/i2pd/Queue.h
 include/i2pd/Reseed.h
@@ -161,12 +162,6 @@ share/examples/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt 
 @owner
 @group
-share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
-@owner
-@group
 share/examples/i2pd/certificates/reseed/i2p-reseed_at_mk16.de.crt
 @owner _i2pd
 @group _i2pd
@@ -207,6 +202,12 @@ share/examples/i2pd/certificates/reseed/reseed_at_diva.exchange.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/reseed_at_diva.exchange.crt 
+@owner
+@group
+share/examples/i2pd/certificates/reseed/unixeno_at_cubicchaos.net.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/unixeno_at_cubicchaos.net.crt
 @owner
 @group
 share/examples/i2pd/i2pd.conf
