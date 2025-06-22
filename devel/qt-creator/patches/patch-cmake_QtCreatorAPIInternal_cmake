@@ -1,7 +1,7 @@
 Index: cmake/QtCreatorAPIInternal.cmake
 --- cmake/QtCreatorAPIInternal.cmake.orig
 +++ cmake/QtCreatorAPIInternal.cmake
-@@ -197,7 +197,7 @@ endfunction()
+@@ -183,7 +183,7 @@ endfunction()
  
  function(qtc_add_link_flags_no_undefined target)
    # needs CheckLinkerFlags
