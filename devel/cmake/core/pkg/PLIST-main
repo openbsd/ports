@@ -315,6 +315,7 @@ share/cmake/Modules/Compiler/GNU-ASM.cmake
 share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/GNU-C-FeatureTests.cmake
 share/cmake/Modules/Compiler/GNU-C.cmake
+share/cmake/Modules/Compiler/GNU-CXX-CXXImportStd.cmake
 share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/GNU-CXX-FeatureTests.cmake
 share/cmake/Modules/Compiler/GNU-CXX.cmake
