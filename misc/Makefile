@@ -92,6 +92,7 @@
      SUBDIR += posixtestsuite
      SUBDIR += py-aiomcache
      SUBDIR += py-babelfish
+     SUBDIR += py-coherent.licensed
      SUBDIR += py-imdb
      SUBDIR += py-jdcal
      SUBDIR += py-memcached
