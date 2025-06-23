@@ -30,7 +30,7 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
-REVISION-plasma =	5
+REVISION-plasma =	6
 
 MULTI_PACKAGES +=	-main \
 			-games \
