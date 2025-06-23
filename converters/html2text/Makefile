@@ -1,7 +1,7 @@
 COMMENT=	advanced HTML-to-text converter
 
 V=		2.3.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	html2text-$V
 SITES=		https://github.com/grobian/html2text/releases/download/v$V/
 
@@ -13,13 +13,15 @@ HOMEPAGE=	https://github.com/grobian/html2text
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-
 WANTLIB += c iconv m ${COMPILER_LIBCXX}
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 COMPILER=	base-clang ports-gcc base-gcc
 LIB_DEPENDS=	converters/libiconv
 
 CONFIGURE_STYLE= gnu
+
 # don't allow picking up curl (added post-2.3.0); if changing then
 # pledge will need to be adapted.
 CONFIGURE_ARGS=	--without-libcurl
