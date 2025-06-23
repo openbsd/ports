@@ -11,7 +11,6 @@ share/doc/haproxy/DeviceAtlas-device-detection.txt
 share/doc/haproxy/SOCKS4.protocol.txt
 share/doc/haproxy/SPOE.txt
 share/doc/haproxy/WURFL-device-detection.txt
-share/doc/haproxy/architecture.txt
 share/doc/haproxy/configuration.txt
 share/doc/haproxy/cookie-options.txt
 share/doc/haproxy/intro.txt
@@ -28,10 +27,13 @@ share/doc/haproxy/seamless_reload.txt
 share/examples/haproxy/
 share/examples/haproxy/basic-config-edge.cfg
 share/examples/haproxy/content-sw-sample.cfg
+share/examples/haproxy/games.cfg
 share/examples/haproxy/haproxy.cfg
 @sample ${SYSCONFDIR}/haproxy/haproxy.cfg
+share/examples/haproxy/mptcp.cfg
 share/examples/haproxy/option-http_proxy.cfg
 share/examples/haproxy/quick-test.cfg
 share/examples/haproxy/socks4.cfg
+share/examples/haproxy/traces.cfg
 share/examples/haproxy/transparent_proxy.cfg
 share/examples/haproxy/wurfl-example.cfg

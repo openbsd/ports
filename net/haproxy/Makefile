@@ -1,6 +1,6 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-3.0.10
+DISTNAME =	haproxy-3.2.1
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
@@ -12,7 +12,7 @@ WANTLIB +=	c crypto pcre2-8 pcre2-posix pthread ssl z
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-SITES =		${HOMEPAGE}/download/3.0/src/
+SITES =		${HOMEPAGE}/download/3.2/src/
 
 USE_GMAKE =	Yes
 MAKE_FLAGS +=	CPU_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
