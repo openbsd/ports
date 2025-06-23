@@ -1,0 +1,40 @@
+Index: html2text.cpp
+--- html2text.cpp.orig
++++ html2text.cpp
+@@ -18,9 +18,11 @@
+  * GNU General Public License in the file COPYING for more details.
+  */
+ 
++#include <err.h>
+ #include <iostream>
+ #include <string.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ #include "html.h"
+ #include "HTMLControl.h"
+@@ -187,6 +189,14 @@ main(int argc, char **argv)
+ 		exit(1);
+ 	}
+ 
++	if (strcmp(output_file_name, "-") == 0) {
++		if (pledge("stdio rpath", NULL) == -1)
++			err(1, "pledge");
++	} else {
++		if (pledge("stdio rpath wpath cpath", NULL) == -1)
++			err(1, "pledge");
++	}
++
+ 	/* historical default used to be ISO-8859-1, auto is not a valid
+ 	 * encoding, but handled in iconvstream */
+ 	if (from_encoding == NULL)
+@@ -236,6 +246,9 @@ main(int argc, char **argv)
+ 			<< std::endl;
+ 		exit(1);
+ 	}
++
++	if (pledge("stdio rpath", NULL) == -1)
++		err(1, "pledge");
+ 
+ 	if (!is.os_isatty() && !explicit_rendering_req) {
+ 		/* disable "weird" chars unless explicitly requested, #64 */
