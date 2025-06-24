@@ -1,2 +1,0 @@
-@pkgpath editors/vim,gtk
-@pkgpath editors/vim,gtk2,-main

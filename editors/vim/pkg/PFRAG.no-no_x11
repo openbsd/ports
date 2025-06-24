@@ -1,0 +1,162 @@
+bin/eview
+bin/evim
+bin/gview
+bin/gvim
+bin/gvimdiff
+bin/gvimtutor
+bin/rgview
+bin/rgvim
+@man man/da.ISO8859-1/man1/gview.1
+@man man/da.ISO8859-1/man1/gvim.1
+@man man/da.ISO8859-1/man1/gvimdiff.1
+@man man/da.ISO8859-1/man1/rgview.1
+@man man/da.ISO8859-1/man1/rgvim.1
+@man man/da.UTF-8/man1/gview.1
+@man man/da.UTF-8/man1/gvim.1
+@man man/da.UTF-8/man1/gvimdiff.1
+@man man/da.UTF-8/man1/rgview.1
+@man man/da.UTF-8/man1/rgvim.1
+@man man/da/man1/gview.1
+@man man/da/man1/gvim.1
+@man man/da/man1/gvimdiff.1
+@man man/da/man1/rgview.1
+@man man/da/man1/rgvim.1
+@man man/de.ISO8859-1/man1/gview.1
+@man man/de.ISO8859-1/man1/gvim.1
+@man man/de.ISO8859-1/man1/rgview.1
+@man man/de.ISO8859-1/man1/rgvim.1
+@man man/de.UTF-8/man1/gview.1
+@man man/de.UTF-8/man1/gvim.1
+@man man/de.UTF-8/man1/rgview.1
+@man man/de.UTF-8/man1/rgvim.1
+@man man/de/man1/gview.1
+@man man/de/man1/gvim.1
+@man man/de/man1/rgview.1
+@man man/de/man1/rgvim.1
+@man man/fr.ISO8859-1/man1/eview.1
+@man man/fr.ISO8859-1/man1/evim.1
+@man man/fr.ISO8859-1/man1/gview.1
+@man man/fr.ISO8859-1/man1/gvim.1
+@man man/fr.ISO8859-1/man1/gvimdiff.1
+@man man/fr.ISO8859-1/man1/rgview.1
+@man man/fr.ISO8859-1/man1/rgvim.1
+@man man/fr.UTF-8/man1/eview.1
+@man man/fr.UTF-8/man1/evim.1
+@man man/fr.UTF-8/man1/gview.1
+@man man/fr.UTF-8/man1/gvim.1
+@man man/fr.UTF-8/man1/gvimdiff.1
+@man man/fr.UTF-8/man1/rgview.1
+@man man/fr.UTF-8/man1/rgvim.1
+@man man/fr/man1/eview.1
+@man man/fr/man1/evim.1
+@man man/fr/man1/gview.1
+@man man/fr/man1/gvim.1
+@man man/fr/man1/gvimdiff.1
+@man man/fr/man1/rgview.1
+@man man/fr/man1/rgvim.1
+@man man/it.ISO8859-1/man1/eview.1
+@man man/it.ISO8859-1/man1/evim.1
+@man man/it.ISO8859-1/man1/gview.1
+@man man/it.ISO8859-1/man1/gvim.1
+@man man/it.ISO8859-1/man1/gvimdiff.1
+@man man/it.ISO8859-1/man1/rgview.1
+@man man/it.ISO8859-1/man1/rgvim.1
+@man man/it.UTF-8/man1/eview.1
+@man man/it.UTF-8/man1/evim.1
+@man man/it.UTF-8/man1/gview.1
+@man man/it.UTF-8/man1/gvim.1
+@man man/it.UTF-8/man1/gvimdiff.1
+@man man/it.UTF-8/man1/rgview.1
+@man man/it.UTF-8/man1/rgvim.1
+@man man/it/man1/eview.1
+@man man/it/man1/evim.1
+@man man/it/man1/gview.1
+@man man/it/man1/gvim.1
+@man man/it/man1/gvimdiff.1
+@man man/it/man1/rgview.1
+@man man/it/man1/rgvim.1
+@man man/ja/man1/eview.1
+@man man/ja/man1/evim.1
+@man man/ja/man1/gview.1
+@man man/ja/man1/gvim.1
+@man man/ja/man1/gvimdiff.1
+@man man/ja/man1/rgview.1
+@man man/ja/man1/rgvim.1
+@man man/man1/eview.1
+@man man/man1/evim.1
+@man man/man1/gview.1
+@man man/man1/gvim.1
+@man man/man1/gvimdiff.1
+@man man/man1/rgview.1
+@man man/man1/rgvim.1
+@man man/pl.ISO8859-2/man1/eview.1
+@man man/pl.ISO8859-2/man1/evim.1
+@man man/pl.ISO8859-2/man1/gview.1
+@man man/pl.ISO8859-2/man1/gvim.1
+@man man/pl.ISO8859-2/man1/gvimdiff.1
+@man man/pl.ISO8859-2/man1/rgview.1
+@man man/pl.ISO8859-2/man1/rgvim.1
+@man man/pl.UTF-8/man1/eview.1
+@man man/pl.UTF-8/man1/evim.1
+@man man/pl.UTF-8/man1/gview.1
+@man man/pl.UTF-8/man1/gvim.1
+@man man/pl.UTF-8/man1/gvimdiff.1
+@man man/pl.UTF-8/man1/rgview.1
+@man man/pl.UTF-8/man1/rgvim.1
+@man man/pl/man1/eview.1
+@man man/pl/man1/evim.1
+@man man/pl/man1/gview.1
+@man man/pl/man1/gvim.1
+@man man/pl/man1/gvimdiff.1
+@man man/pl/man1/rgview.1
+@man man/pl/man1/rgvim.1
+@man man/ru.KOI8-R/man1/eview.1
+@man man/ru.KOI8-R/man1/evim.1
+@man man/ru.KOI8-R/man1/gview.1
+@man man/ru.KOI8-R/man1/gvim.1
+@man man/ru.KOI8-R/man1/gvimdiff.1
+@man man/ru.KOI8-R/man1/rgview.1
+@man man/ru.KOI8-R/man1/rgvim.1
+@man man/ru.UTF-8/man1/eview.1
+@man man/ru.UTF-8/man1/evim.1
+@man man/ru.UTF-8/man1/gview.1
+@man man/ru.UTF-8/man1/gvim.1
+@man man/ru.UTF-8/man1/gvimdiff.1
+@man man/ru.UTF-8/man1/rgview.1
+@man man/ru.UTF-8/man1/rgvim.1
+@man man/tr.ISO8859-9/man1/eview.1
+@man man/tr.ISO8859-9/man1/evim.1
+@man man/tr.ISO8859-9/man1/gview.1
+@man man/tr.ISO8859-9/man1/gvim.1
+@man man/tr.ISO8859-9/man1/gvimdiff.1
+@man man/tr.ISO8859-9/man1/rgview.1
+@man man/tr.ISO8859-9/man1/rgvim.1
+@man man/tr.UTF-8/man1/eview.1
+@man man/tr.UTF-8/man1/evim.1
+@man man/tr.UTF-8/man1/gview.1
+@man man/tr.UTF-8/man1/gvim.1
+@man man/tr.UTF-8/man1/gvimdiff.1
+@man man/tr.UTF-8/man1/rgview.1
+@man man/tr.UTF-8/man1/rgvim.1
+@man man/tr/man1/eview.1
+@man man/tr/man1/evim.1
+@man man/tr/man1/gview.1
+@man man/tr/man1/gvim.1
+@man man/tr/man1/gvimdiff.1
+@man man/tr/man1/rgview.1
+@man man/tr/man1/rgvim.1
+share/applications/gvim.desktop
+share/applications/vim.desktop
+share/icons/hicolor/48x48/apps/gvim.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
+share/icons/locolor/16x16/apps/gvim.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
+share/icons/locolor/32x32/apps/gvim.png
+share/pixmaps/
+share/pixmaps/vim.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/locolor

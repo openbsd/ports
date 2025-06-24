@@ -1,9 +1,8 @@
-COMMENT-main=	vi clone, many additional features
-COMMENT-lang=	vi clone, NLS subpackage
+COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; it usually works best if you
 # use a gui flavour rather than no_x11
-V=		9.1.1418
+V=		9.1.1478
 VS=		${V:C/\.0+/./}
 
 GH_PROJECT=	vim
@@ -12,8 +11,6 @@ GH_TAGNAME=	v$V
 DIST_TUPLE+=	github vim colorschemes	7506b51cb70b74338d55850e62be0608a9e12cd1 .
 
 PKGNAME=	vim-${VS}
-FULLPKGNAME-lang= vim-lang-${VS}
-FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 
@@ -30,11 +27,8 @@ COMPILER_LANGS=	c
 
 WANTLIB +=	c curses iconv intl m sodium
 
-LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		devel/gettext,-runtime \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		security/libsodium
-
-MULTI_PACKAGES=	-main -lang
 
 # UI flavours (pick one only)
 FLAVORS+=	gtk3 no_x11
@@ -43,14 +37,7 @@ FLAVORS+=	lua perl python3 ruby
 # bump deps if changing (RUN_DEPENDS in dependent ports picks this up)
 FLAVOR?=	gtk3
 
-DEBUG_PACKAGES=	-main
-
-.include <bsd.port.arch.mk>
-.if ${FLAVOR:Mno_x11}
-# knock out -lang on non-gui builds so that -lang includes manpages
-# for the gui parts without having to flavour it
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
-.endif
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
@@ -123,11 +110,6 @@ WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11 or gtk3"
 .endif
 
-RUN_DEPENDS-lang=	editors/vim,-main
-PKG_ARCH-lang=		*
-LIB_DEPENDS-lang=
-WANTLIB-lang=
-
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
@@ -169,6 +151,8 @@ post-install:
 
 RUN_DEPENDS+= devel/desktop-file-utils
 RUN_DEPENDS+= x11/gtk+4,-guic
+.else
+	rm -f ${PREFIX}/man/{*/,}man1/{evim,gview,gvim,gvimdiff,rgviee,rgvim}.1
 .endif
 
 .include <bsd.port.mk>
