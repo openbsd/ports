@@ -201,8 +201,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqB
 SHA256 (go_modules/github.com/urfave/cli-docs/v3/@v/v3.0.0-alpha6.mod) = gMw8G1SeqVjUru96VtkdgZGMtAajbcZhLhSDrK8xEx0=
 SHA256 (go_modules/github.com/urfave/cli-docs/v3/@v/v3.0.0-alpha6.zip) = 8wFNX/YvzOtJ0cx//fe7fhXHb7jhoz71BTuAPkCoXJ4=
 SHA256 (go_modules/github.com/urfave/cli/v3/@v/v3.0.0-alpha9.2.mod) = RTO0r0qrGRKQrBeqZUHfzr5k0qucIICltxnfXmnbsCA=
-SHA256 (go_modules/github.com/urfave/cli/v3/@v/v3.3.3.mod) = VJbfJQRgg72ETVMj/IC125aGt0bUTAdn8I4jSjnenDo=
-SHA256 (go_modules/github.com/urfave/cli/v3/@v/v3.3.3.zip) = 4+QUtmISxGF0QZ6wKLj9yTRJ5w4IiblMAzFReOEPZMI=
+SHA256 (go_modules/github.com/urfave/cli/v3/@v/v3.3.8.mod) = VJbfJQRgg72ETVMj/IC125aGt0bUTAdn8I4jSjnenDo=
+SHA256 (go_modules/github.com/urfave/cli/v3/@v/v3.3.8.zip) = cvdwfYalFmVcrU5V56jw0Xx+6CTyPkBgeztNE5jFPkM=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.mod) = HOHMUJiJtzjB9j2/zFrVIs62MnLZ3v9u73SZ7TAaoSU=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.zip) = GahsJiOyDMmGh73diePwI9sMpRyLyeOLmtnFblt9EQ0=
 SHA256 (go_modules/github.com/xo/terminfo/@v/v0.0.0-20220910002029-abceb7e1c41e.mod) = cZ1TOX9e56KopHsGrNndrgY8vj1srzjt7KR3wtH+LM4=
@@ -325,7 +325,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (tea-v0.10.0.zip) = y/4m2TF7NayoDqurpn7UV4BAzU0GvThZEr00QhGXm40=
+SHA256 (tea-v0.10.1.zip) = tfe0/iTPqJPhyij4wW3g+IHirWT4rjZOmoSUihxh70M=
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/code.gitea.io/gitea-vet/@v/v0.2.3.mod) = 103
@@ -529,8 +529,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/urfave/cli-docs/v3/@v/v3.0.0-alpha6.mod) = 380
 SIZE (go_modules/github.com/urfave/cli-docs/v3/@v/v3.0.0-alpha6.zip) = 21988
 SIZE (go_modules/github.com/urfave/cli/v3/@v/v3.0.0-alpha9.2.mod) = 232
-SIZE (go_modules/github.com/urfave/cli/v3/@v/v3.3.3.mod) = 233
-SIZE (go_modules/github.com/urfave/cli/v3/@v/v3.3.3.zip) = 176835
+SIZE (go_modules/github.com/urfave/cli/v3/@v/v3.3.8.mod) = 233
+SIZE (go_modules/github.com/urfave/cli/v3/@v/v3.3.8.zip) = 177267
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.mod) = 203
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.zip) = 11274
 SIZE (go_modules/github.com/xo/terminfo/@v/v0.0.0-20220910002029-abceb7e1c41e.mod) = 100
@@ -653,4 +653,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (tea-v0.10.0.zip) = 822770
+SIZE (tea-v0.10.1.zip) = 822778

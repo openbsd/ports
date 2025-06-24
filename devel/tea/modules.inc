@@ -86,7 +86,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx		 v0.5.2 \
 	github.com/stretchr/testify		 v1.10.0 \
 	github.com/urfave/cli-docs/v3		 v3.0.0-alpha6 \
-	github.com/urfave/cli/v3		 v3.3.3 \
+	github.com/urfave/cli/v3		 v3.3.8 \
 	github.com/xanzy/ssh-agent		 v0.3.3 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	github.com/yuin/goldmark		 v1.7.8 \
