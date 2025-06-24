@@ -1,5 +1,8 @@
 COMMENT =		Python charting and plotting API
 
+# ../src/_backend_agg_wrapper.cpp:253:17: error: non-constant-expression cannot be narrowed from type 'unsigned int' to 'long' in initializer list [-Wc++11-narrowing]
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 MODPY_DISTV =		3.10.3
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
