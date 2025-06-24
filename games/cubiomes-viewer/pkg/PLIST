@@ -1,0 +1,7 @@
+@bin bin/cubiomes-viewer
+share/applications/com.github.cubitect.cubiomes-viewer.desktop
+share/metainfo/
+share/metainfo/com.github.cubitect.cubiomes-viewer.metainfo.xml
+share/pixmaps/
+share/pixmaps/cubiomes-viewer.svg
+@tag update-desktop-database
