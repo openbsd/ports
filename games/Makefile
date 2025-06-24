@@ -74,6 +74,7 @@
      SUBDIR += cromagrally
      SUBDIR += crossfire-client
      SUBDIR += csmash
+     SUBDIR += cubiomes-viewer
      SUBDIR += dangerdeep
      SUBDIR += dd2
      SUBDIR += defendguin
