@@ -6,7 +6,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
 GH_TAGNAME =	v0.15.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://alacritty.org/
 
@@ -25,8 +25,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 BUILD_DEPENDS =	textproc/scdoc
 
 LIB_DEPENDS =	x11/xkbcommon
-
-USE_NOBTCFI-aarch64 =	Yes
 
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	cc libc
