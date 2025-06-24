@@ -1,13 +1,15 @@
 COMMENT=	advanced HTML-to-text converter
 
 V=		2.3.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	html2text-$V
-SITES=		https://github.com/grobian/html2text/releases/download/v$V/
 
 CATEGORIES=	converters textproc
 
-HOMEPAGE=	https://github.com/grobian/html2text
+HOMEPAGE=	https://gitlab.com/grobian/html2text
+# gitlab is the main source, but release artefacts (e.g. the .tar.gz file)
+# don't have a predictable url format, so use github for fetching
+SITES=		https://github.com/grobian/html2text/releases/download/v$V/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
