@@ -1,7 +1,10 @@
 @bin bin/pebble
 @bin bin/pebble-challtestsrv
-@bin bin/pebble-client
+@man man/man1/pebble-challtestsrv.1
+@man man/man1/pebble.1
 share/doc/pebble/
+share/doc/pebble/CODE_OF_CONDUCT.md
+share/doc/pebble/LICENSE
 share/doc/pebble/README.md
 share/examples/pebble/
 share/examples/pebble/test/
@@ -15,4 +18,7 @@ share/examples/pebble/test/certs/pebble.minica.key.pem
 share/examples/pebble/test/certs/pebble.minica.pem
 share/examples/pebble/test/chisel2.py
 share/examples/pebble/test/config/
+share/examples/pebble/test/config/load-generator-config.json
+share/examples/pebble/test/config/pebble-config-external-account-bindings.json
 share/examples/pebble/test/config/pebble-config.json
+share/examples/pebble/test/requirements.txt
