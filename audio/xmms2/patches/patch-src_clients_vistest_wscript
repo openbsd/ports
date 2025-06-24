@@ -1,0 +1,12 @@
+Index: src/clients/vistest/wscript
+--- src/clients/vistest/wscript.orig
++++ src/clients/vistest/wscript
+@@ -53,7 +53,7 @@ def configure(conf):
+ 
+     conf.check_cc(lib="m", uselib_store="math", mandatory=False)
+ 
+-    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc',
++    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc vorbis ogg',
+             args='--cflags --libs', mandatory=False)
+ 
+     if conf.check_cfg(package='libvisual-0.4', uselib_store='visual',

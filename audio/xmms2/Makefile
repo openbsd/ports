@@ -1,13 +1,9 @@
-# ld: error: undefined symbol: vorbis_info_init
-# maybe an update to 0.9.5 fixes this...
-BROKEN =		does not build with pkgconf
-
 COMMENT =		audio player daemon with library management
 
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		19
+REVISION =		20
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
