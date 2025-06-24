@@ -2,6 +2,7 @@ COMMENT =	simple, modern and secure file encryption tool
 
 MODGO_MODNAME =	filippo.io/age
 MODGO_VERSION =	v1.2.1
+REVISION =	0
 
 DISTNAME =	age-${MODGO_VERSION}
 
@@ -18,7 +19,7 @@ WANTLIB += c pthread
 
 MODULES =	lang/go
 
-MODGO_FLAGS +=	-ldflags="-X main.Version=${MODGO_VERSION}"
+MODGO_LDFLAGS =	-X main.Version=${MODGO_VERSION}
 
 pre-install:
 	${INSTALL_MAN} ${WRKDIR}/${MODGO_MODNAME}/doc/*.1 \
