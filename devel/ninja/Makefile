@@ -7,13 +7,18 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.13.0
+GH_TAGNAME =		v1.11.1
+# chromium (at least as of 20250218) fails with 1.12.0/1.12.1:
+# In file included from ../../net/dns/dns_config_service_posix.cc:44:
+# ../../sandbox/policy/switches.h:12:10: fatal error: 'services/screen_ai/buildflags/buildflags.h' file not found
+# qt6/qtwebengine and iridium had similar build issues with 1.13.0
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ninja-build.org/
 
-EPOCH =			0
+EPOCH =			1
 
 # Apache License v2.0
 PERMIT_PACKAGE =	Yes
@@ -28,10 +33,6 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	configure.py \
 			misc/ninja_syntax.py \
 			src/browse.py
-
-# After 1.12.x, tests require building with cmake, but we can't do that due
-# to a loop (cmake->jsoncpp->meson->ninja).
-NO_TEST =		Yes
 
 # Not strictly required, but will be used if available.  Included as a build
 # dependency to ensure consistent builds.
@@ -51,11 +52,18 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ninja
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${WRKSRC}/misc/bash-completion ${PREFIX}/share/bash-completion/completions/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/ninja-mode.el ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja.vim ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja_syntax.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/write_fake_manifests.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/measure.py ${PREFIX}/share/ninja
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/zsh/site-functions/_ninja
+
+# if updating to 1.12.x+, don't be tempted to switch the ninja build to cmake
+# to get tests working - loop: cmake -> jsoncpp -> meson -> ninja -> cmake
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./ninja ninja_test \
+	&& ./ninja_test --gtest_filter=MyTest.Name
 
 .include <bsd.port.mk>
