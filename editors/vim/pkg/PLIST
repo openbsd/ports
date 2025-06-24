@@ -1,7 +1,14 @@
 @conflict vim-lang-*
 @pkgpath editors/vim,-lang
-!%%no_x11%%
+${GUI_ONLY}bin/eview
+${GUI_ONLY}bin/evim
 bin/ex
+${GUI_ONLY}bin/gview
+${GUI_ONLY}bin/gvim
+${GUI_ONLY}bin/gvimdiff
+${GUI_ONLY}bin/gvimtutor
+${GUI_ONLY}bin/rgview
+${GUI_ONLY}bin/rgvim
 bin/rview
 bin/rvim
 bin/view
@@ -13,6 +20,11 @@ man/da/
 man/da.ISO8859-1/
 man/da.ISO8859-1/man1/
 @man man/da.ISO8859-1/man1/ex.1
+${GUI_ONLY}@man man/da.ISO8859-1/man1/gview.1
+${GUI_ONLY}@man man/da.ISO8859-1/man1/gvim.1
+${GUI_ONLY}@man man/da.ISO8859-1/man1/gvimdiff.1
+${GUI_ONLY}@man man/da.ISO8859-1/man1/rgview.1
+${GUI_ONLY}@man man/da.ISO8859-1/man1/rgvim.1
 @man man/da.ISO8859-1/man1/rview.1
 @man man/da.ISO8859-1/man1/rvim.1
 @man man/da.ISO8859-1/man1/view.1
@@ -22,6 +34,11 @@ man/da.ISO8859-1/man1/
 man/da.UTF-8/
 man/da.UTF-8/man1/
 @man man/da.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/da.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/da.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/da.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/da.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/da.UTF-8/man1/rgvim.1
 @man man/da.UTF-8/man1/rview.1
 @man man/da.UTF-8/man1/rvim.1
 @man man/da.UTF-8/man1/view.1
@@ -30,6 +47,11 @@ man/da.UTF-8/man1/
 @man man/da.UTF-8/man1/vimtutor.1
 man/da/man1/
 @man man/da/man1/ex.1
+${GUI_ONLY}@man man/da/man1/gview.1
+${GUI_ONLY}@man man/da/man1/gvim.1
+${GUI_ONLY}@man man/da/man1/gvimdiff.1
+${GUI_ONLY}@man man/da/man1/rgview.1
+${GUI_ONLY}@man man/da/man1/rgvim.1
 @man man/da/man1/rview.1
 @man man/da/man1/rvim.1
 @man man/da/man1/view.1
@@ -40,6 +62,10 @@ man/de/
 man/de.ISO8859-1/
 man/de.ISO8859-1/man1/
 @man man/de.ISO8859-1/man1/ex.1
+${GUI_ONLY}@man man/de.ISO8859-1/man1/gview.1
+${GUI_ONLY}@man man/de.ISO8859-1/man1/gvim.1
+${GUI_ONLY}@man man/de.ISO8859-1/man1/rgview.1
+${GUI_ONLY}@man man/de.ISO8859-1/man1/rgvim.1
 @man man/de.ISO8859-1/man1/rview.1
 @man man/de.ISO8859-1/man1/rvim.1
 @man man/de.ISO8859-1/man1/view.1
@@ -47,12 +73,20 @@ man/de.ISO8859-1/man1/
 man/de.UTF-8/
 man/de.UTF-8/man1/
 @man man/de.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/de.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/de.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/de.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/de.UTF-8/man1/rgvim.1
 @man man/de.UTF-8/man1/rview.1
 @man man/de.UTF-8/man1/rvim.1
 @man man/de.UTF-8/man1/view.1
 @man man/de.UTF-8/man1/vim.1
 man/de/man1/
 @man man/de/man1/ex.1
+${GUI_ONLY}@man man/de/man1/gview.1
+${GUI_ONLY}@man man/de/man1/gvim.1
+${GUI_ONLY}@man man/de/man1/rgview.1
+${GUI_ONLY}@man man/de/man1/rgvim.1
 @man man/de/man1/rview.1
 @man man/de/man1/rvim.1
 @man man/de/man1/view.1
@@ -60,7 +94,14 @@ man/de/man1/
 man/fr/
 man/fr.ISO8859-1/
 man/fr.ISO8859-1/man1/
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/eview.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/evim.1
 @man man/fr.ISO8859-1/man1/ex.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/gview.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/gvim.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/gvimdiff.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/rgview.1
+${GUI_ONLY}@man man/fr.ISO8859-1/man1/rgvim.1
 @man man/fr.ISO8859-1/man1/rview.1
 @man man/fr.ISO8859-1/man1/rvim.1
 @man man/fr.ISO8859-1/man1/view.1
@@ -70,7 +111,14 @@ man/fr.ISO8859-1/man1/
 @man man/fr.ISO8859-1/man1/xxd.1
 man/fr.UTF-8/
 man/fr.UTF-8/man1/
+${GUI_ONLY}@man man/fr.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/evim.1
 @man man/fr.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/fr.UTF-8/man1/rgvim.1
 @man man/fr.UTF-8/man1/rview.1
 @man man/fr.UTF-8/man1/rvim.1
 @man man/fr.UTF-8/man1/view.1
@@ -79,7 +127,14 @@ man/fr.UTF-8/man1/
 @man man/fr.UTF-8/man1/vimtutor.1
 @man man/fr.UTF-8/man1/xxd.1
 man/fr/man1/
+${GUI_ONLY}@man man/fr/man1/eview.1
+${GUI_ONLY}@man man/fr/man1/evim.1
 @man man/fr/man1/ex.1
+${GUI_ONLY}@man man/fr/man1/gview.1
+${GUI_ONLY}@man man/fr/man1/gvim.1
+${GUI_ONLY}@man man/fr/man1/gvimdiff.1
+${GUI_ONLY}@man man/fr/man1/rgview.1
+${GUI_ONLY}@man man/fr/man1/rgvim.1
 @man man/fr/man1/rview.1
 @man man/fr/man1/rvim.1
 @man man/fr/man1/view.1
@@ -90,7 +145,14 @@ man/fr/man1/
 man/it/
 man/it.ISO8859-1/
 man/it.ISO8859-1/man1/
+${GUI_ONLY}@man man/it.ISO8859-1/man1/eview.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/evim.1
 @man man/it.ISO8859-1/man1/ex.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/gview.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/gvim.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/gvimdiff.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/rgview.1
+${GUI_ONLY}@man man/it.ISO8859-1/man1/rgvim.1
 @man man/it.ISO8859-1/man1/rview.1
 @man man/it.ISO8859-1/man1/rvim.1
 @man man/it.ISO8859-1/man1/view.1
@@ -100,7 +162,14 @@ man/it.ISO8859-1/man1/
 @man man/it.ISO8859-1/man1/xxd.1
 man/it.UTF-8/
 man/it.UTF-8/man1/
+${GUI_ONLY}@man man/it.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/it.UTF-8/man1/evim.1
 @man man/it.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/it.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/it.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/it.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/it.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/it.UTF-8/man1/rgvim.1
 @man man/it.UTF-8/man1/rview.1
 @man man/it.UTF-8/man1/rvim.1
 @man man/it.UTF-8/man1/view.1
@@ -109,7 +178,14 @@ man/it.UTF-8/man1/
 @man man/it.UTF-8/man1/vimtutor.1
 @man man/it.UTF-8/man1/xxd.1
 man/it/man1/
+${GUI_ONLY}@man man/it/man1/eview.1
+${GUI_ONLY}@man man/it/man1/evim.1
 @man man/it/man1/ex.1
+${GUI_ONLY}@man man/it/man1/gview.1
+${GUI_ONLY}@man man/it/man1/gvim.1
+${GUI_ONLY}@man man/it/man1/gvimdiff.1
+${GUI_ONLY}@man man/it/man1/rgview.1
+${GUI_ONLY}@man man/it/man1/rgvim.1
 @man man/it/man1/rview.1
 @man man/it/man1/rvim.1
 @man man/it/man1/view.1
@@ -119,7 +195,14 @@ man/it/man1/
 @man man/it/man1/xxd.1
 man/ja/
 man/ja/man1/
+${GUI_ONLY}@man man/ja/man1/eview.1
+${GUI_ONLY}@man man/ja/man1/evim.1
 @man man/ja/man1/ex.1
+${GUI_ONLY}@man man/ja/man1/gview.1
+${GUI_ONLY}@man man/ja/man1/gvim.1
+${GUI_ONLY}@man man/ja/man1/gvimdiff.1
+${GUI_ONLY}@man man/ja/man1/rgview.1
+${GUI_ONLY}@man man/ja/man1/rgvim.1
 @man man/ja/man1/rview.1
 @man man/ja/man1/rvim.1
 @man man/ja/man1/view.1
@@ -127,7 +210,14 @@ man/ja/man1/
 @man man/ja/man1/vimdiff.1
 @man man/ja/man1/vimtutor.1
 @man man/ja/man1/xxd.1
+${GUI_ONLY}@man man/man1/eview.1
+${GUI_ONLY}@man man/man1/evim.1
 @man man/man1/ex.1
+${GUI_ONLY}@man man/man1/gview.1
+${GUI_ONLY}@man man/man1/gvim.1
+${GUI_ONLY}@man man/man1/gvimdiff.1
+${GUI_ONLY}@man man/man1/rgview.1
+${GUI_ONLY}@man man/man1/rgvim.1
 @man man/man1/rview.1
 @man man/man1/rvim.1
 @man man/man1/view.1
@@ -138,7 +228,14 @@ man/ja/man1/
 man/pl/
 man/pl.ISO8859-2/
 man/pl.ISO8859-2/man1/
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/eview.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/evim.1
 @man man/pl.ISO8859-2/man1/ex.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/gview.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/gvim.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/gvimdiff.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/rgview.1
+${GUI_ONLY}@man man/pl.ISO8859-2/man1/rgvim.1
 @man man/pl.ISO8859-2/man1/rview.1
 @man man/pl.ISO8859-2/man1/rvim.1
 @man man/pl.ISO8859-2/man1/view.1
@@ -148,7 +245,14 @@ man/pl.ISO8859-2/man1/
 @man man/pl.ISO8859-2/man1/xxd.1
 man/pl.UTF-8/
 man/pl.UTF-8/man1/
+${GUI_ONLY}@man man/pl.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/evim.1
 @man man/pl.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/pl.UTF-8/man1/rgvim.1
 @man man/pl.UTF-8/man1/rview.1
 @man man/pl.UTF-8/man1/rvim.1
 @man man/pl.UTF-8/man1/view.1
@@ -157,7 +261,14 @@ man/pl.UTF-8/man1/
 @man man/pl.UTF-8/man1/vimtutor.1
 @man man/pl.UTF-8/man1/xxd.1
 man/pl/man1/
+${GUI_ONLY}@man man/pl/man1/eview.1
+${GUI_ONLY}@man man/pl/man1/evim.1
 @man man/pl/man1/ex.1
+${GUI_ONLY}@man man/pl/man1/gview.1
+${GUI_ONLY}@man man/pl/man1/gvim.1
+${GUI_ONLY}@man man/pl/man1/gvimdiff.1
+${GUI_ONLY}@man man/pl/man1/rgview.1
+${GUI_ONLY}@man man/pl/man1/rgvim.1
 @man man/pl/man1/rview.1
 @man man/pl/man1/rvim.1
 @man man/pl/man1/view.1
@@ -167,7 +278,14 @@ man/pl/man1/
 @man man/pl/man1/xxd.1
 man/ru.KOI8-R/
 man/ru.KOI8-R/man1/
+${GUI_ONLY}@man man/ru.KOI8-R/man1/eview.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/evim.1
 @man man/ru.KOI8-R/man1/ex.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/gview.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/gvim.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/gvimdiff.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/rgview.1
+${GUI_ONLY}@man man/ru.KOI8-R/man1/rgvim.1
 @man man/ru.KOI8-R/man1/rview.1
 @man man/ru.KOI8-R/man1/rvim.1
 @man man/ru.KOI8-R/man1/view.1
@@ -177,7 +295,14 @@ man/ru.KOI8-R/man1/
 @man man/ru.KOI8-R/man1/xxd.1
 man/ru.UTF-8/
 man/ru.UTF-8/man1/
+${GUI_ONLY}@man man/ru.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/evim.1
 @man man/ru.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/ru.UTF-8/man1/rgvim.1
 @man man/ru.UTF-8/man1/rview.1
 @man man/ru.UTF-8/man1/rvim.1
 @man man/ru.UTF-8/man1/view.1
@@ -188,7 +313,14 @@ man/ru.UTF-8/man1/
 man/tr/
 man/tr.ISO8859-9/
 man/tr.ISO8859-9/man1/
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/eview.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/evim.1
 @man man/tr.ISO8859-9/man1/ex.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/gview.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/gvim.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/gvimdiff.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/rgview.1
+${GUI_ONLY}@man man/tr.ISO8859-9/man1/rgvim.1
 @man man/tr.ISO8859-9/man1/rview.1
 @man man/tr.ISO8859-9/man1/rvim.1
 @man man/tr.ISO8859-9/man1/view.1
@@ -197,7 +329,14 @@ man/tr.ISO8859-9/man1/
 @man man/tr.ISO8859-9/man1/vimtutor.1
 man/tr.UTF-8/
 man/tr.UTF-8/man1/
+${GUI_ONLY}@man man/tr.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/evim.1
 @man man/tr.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/tr.UTF-8/man1/rgvim.1
 @man man/tr.UTF-8/man1/rview.1
 @man man/tr.UTF-8/man1/rvim.1
 @man man/tr.UTF-8/man1/view.1
@@ -205,13 +344,30 @@ man/tr.UTF-8/man1/
 @man man/tr.UTF-8/man1/vimdiff.1
 @man man/tr.UTF-8/man1/vimtutor.1
 man/tr/man1/
+${GUI_ONLY}@man man/tr/man1/eview.1
+${GUI_ONLY}@man man/tr/man1/evim.1
 @man man/tr/man1/ex.1
+${GUI_ONLY}@man man/tr/man1/gview.1
+${GUI_ONLY}@man man/tr/man1/gvim.1
+${GUI_ONLY}@man man/tr/man1/gvimdiff.1
+${GUI_ONLY}@man man/tr/man1/rgview.1
+${GUI_ONLY}@man man/tr/man1/rgvim.1
 @man man/tr/man1/rview.1
 @man man/tr/man1/rvim.1
 @man man/tr/man1/view.1
 @man man/tr/man1/vim.1
 @man man/tr/man1/vimdiff.1
 @man man/tr/man1/vimtutor.1
+${GUI_ONLY}share/applications/gvim.desktop
+share/applications/vim.desktop
+share/icons/hicolor/48x48/apps/gvim.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
+share/icons/locolor/16x16/apps/gvim.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
+share/icons/locolor/32x32/apps/gvim.png
 share/vim/
 share/vim/${P}/
 share/vim/${P}/LICENSE
@@ -2660,3 +2816,6 @@ share/vim/vimfiles/
 share/vim/vimfiles/doc/
 share/vim/vimfiles/syntax/
 share/vim/vimfiles/syntax/openbsd.vim
+${GUI_ONLY}@tag update-desktop-database
+${GUI_ONLY}@tag gtk-update-icon-cache %D/share/icons/hicolor
+${GUI_ONLY}@tag gtk-update-icon-cache %D/share/icons/locolor

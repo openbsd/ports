@@ -1,20 +1,18 @@
 COMMENT=	vi clone with many additional features
 
-# careful with PLISTs if updating; it usually works best if you
-# use a gui flavour rather than no_x11
+# careful with PLISTs if updating; normally use a gui flavour, not no_x11
 V=		9.1.1478
-VS=		${V:C/\.0+/./}
+REVISION=	0
 
-GH_PROJECT=	vim
-GH_ACCOUNT=	vim
-GH_TAGNAME=	v$V
-DIST_TUPLE+=	github vim colorschemes	7506b51cb70b74338d55850e62be0608a9e12cd1 .
+DIST_TUPLE=	\
+	github vim vim v$V . \
+	github vim colorschemes	7506b51cb70b74338d55850e62be0608a9e12cd1 .
 
-PKGNAME=	vim-${VS}
-P=		vim${V:R:S/.//}
+PKGNAME=	vim-${V:C/\.0+/./}
 CATEGORIES=	editors
 
 HOMEPAGE=	https://www.vim.org/
+WRKSRC=		${WRKDIST}/src
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -94,6 +92,11 @@ WANTLIB+=	${MODRUBY_WANTLIB}
 _GUISET+=	ok
 CONFIGURE_ARGS+= --disable-gui \
 		--without-x
+GUI_ONLY=	"@comment "
+.else
+GUI_ONLY=	""
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 .endif
 
 .if ${FLAVOR:Mgtk3}
@@ -107,15 +110,16 @@ WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 .endif
 
 .if "${_GUISET}" != ok
-ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11 or gtk3"
+ERRORS=	"Fatal: You must select one (and only one) GUI interface: no_x11 or gtk3"
 .endif
 
-WRKSRC=		${WRKDIST}/src
-SUBST_VARS=	P
-
-.if ${P} != vim91
-ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
+.if ${V:R} == 9.1
+P=	vim91
+.else
+ERRORS=	"Fatal: new major version; update editors/vim-spell and this check"
 .endif
+
+SUBST_VARS=	P GUI_ONLY
 
 do-gen:
 	cd ${WRKSRC}; ${AUTOCONF_ENV} autoconf
@@ -141,18 +145,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/${P}/colors/legacy
 	${INSTALL_DATA} ${WRKDIR}/colorschemes-*/legacy_colors/* \
 		${PREFIX}/share/vim/${P}/colors/legacy
-
-.if !${FLAVOR:Mno_x11}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_DATA} ${WRKDIST}/runtime/gvim.desktop \
-		${PREFIX}/share/applications/gvim.desktop
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKDIST}/runtime/vim48x48.png ${PREFIX}/share/pixmaps/vim.png
-
-RUN_DEPENDS+= devel/desktop-file-utils
-RUN_DEPENDS+= x11/gtk+4,-guic
-.else
-	rm -f ${PREFIX}/man/{*/,}man1/{evim,gview,gvim,gvimdiff,rgviee,rgvim}.1
+.if ${FLAVOR:Mno_x11}
+	rm -f ${PREFIX}/man/{*/,}man1/{e,g,rg}{view,vim,vimdiff}.1
 .endif
 
 .include <bsd.port.mk>
