@@ -1,19 +1,19 @@
--Option USE_SNDIO
+-Fix version number
 -Install static lib as well
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -26,6 +26,8 @@ option(PM_USE_STATIC_RUNTIME 
-        "Use MSVC static runtime. Only applies when BUILD_SHARED_LIBS is OFF"
-        ON)
+@@ -12,7 +12,7 @@ cmake_policy(SET CMP0091 NEW) # enables MSVC_RUNTIME_L
+ # Versions are now in the form x.y.z
+ # Changed 1.0 to 2.0 because API is extended with virtual ports:
+ set(SOVERSION "2")
+-set(VERSION "2.0.4")
++set(VERSION "2.0.6")
  
-+option(USE_SNDIO "Use sndio backend" OFF)
-+
- # MSVCRT_DLL is used to construct the MSVC_RUNTIME_LIBRARY property
- #  (see pm_common/CMakeLists.txt and pm_test/CMakeLists.txt)
- if(PM_USE_STATIC_RUNTIME AND NOT BUILD_SHARED_LIBS)
-@@ -117,7 +119,7 @@ if(BUILD_JAVA_NATIVE_INTERFACE)
+ project(portmidi VERSION "${VERSION}"
+                  DESCRIPTION "Cross-Platform MIDI IO")
+@@ -112,7 +112,7 @@ if(BUILD_JAVA_NATIVE_INTERFACE)
  endif(BUILD_JAVA_NATIVE_INTERFACE)
  
  # Install the libraries and headers (Linux and Mac OS X command line)
