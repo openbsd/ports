@@ -54,17 +54,17 @@ MODGO_MODULES =	\
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
 	github.com/xyproto/randomstring		 v1.0.5 \
 	github.com/yuin/goldmark		 v1.4.13 \
-	golang.org/x/crypto			 v0.38.0 \
-	golang.org/x/image			 v0.27.0 \
-	golang.org/x/mod			 v0.17.0 \
-	golang.org/x/net			 v0.40.0 \
+	golang.org/x/crypto			 v0.39.0 \
+	golang.org/x/image			 v0.28.0 \
+	golang.org/x/mod			 v0.25.0 \
+	golang.org/x/net			 v0.41.0 \
 	golang.org/x/oauth2			 v0.30.0 \
-	golang.org/x/sync			 v0.14.0 \
+	golang.org/x/sync			 v0.15.0 \
 	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
 	golang.org/x/term			 v0.32.0 \
-	golang.org/x/text			 v0.25.0 \
-	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/text			 v0.26.0 \
+	golang.org/x/tools			 v0.33.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.5 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
@@ -84,8 +84,10 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.31.0 \
 	golang.org/x/crypto			 v0.32.0 \
 	golang.org/x/crypto			 v0.36.0 \
+	golang.org/x/crypto			 v0.38.0 \
 	golang.org/x/mod			 v0.12.0 \
 	golang.org/x/mod			 v0.15.0 \
+	golang.org/x/mod			 v0.17.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod			 v0.8.0 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
@@ -141,6 +143,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.1.12 \
 	golang.org/x/tools			 v0.13.0 \
+	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	google.golang.org/protobuf		 v1.33.0 \
