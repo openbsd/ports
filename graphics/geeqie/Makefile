@@ -27,7 +27,7 @@ MODULES=		devel/meson
 
 # vim is needed for xxd
 BUILD_DEPENDS=		devel/gettext,-tools \
-			editors/vim,-main
+			editors/vim
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			graphics/ImageMagick \

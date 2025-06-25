@@ -16,7 +16,7 @@ WANTLIB += c crypto json-c ssl util uv websockets z
 
 MODULES=	devel/cmake
 # vim is needed for xxd
-BUILD_DEPENDS=	editors/vim,-main
+BUILD_DEPENDS=	editors/vim
 LIB_DEPENDS=	www/libwebsockets \
 		devel/json-c
 

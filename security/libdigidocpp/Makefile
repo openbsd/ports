@@ -29,7 +29,7 @@ WANTLIB +=		xmlsec1 xmlsec1-openssl xslt z
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/boost \
-			editors/vim,-main
+			editors/vim
 
 LIB_DEPENDS =		archivers/minizip \
 			devel/libtool,-ltdl \
