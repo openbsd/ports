@@ -1,0 +1,15 @@
+fix 'show kernel mbuf' command on -current after mbuf.h,v r1.266
+
+from upstream
+Index: stats.c
+--- stats.c.orig
++++ stats.c
+@@ -782,7 +782,7 @@ mbpr(void)
+ 
+ 	memset(&seen, 0, sizeof(seen));
+ 
+-	 if (nmbtypes != MBSTAT_COUNT) {
++	 if (nmbtypes != MT_NTYPES) {
+ 		printf("%% mbpr: unexpected change to mbstat; check source\n");
+ 		return;
+ 	}
