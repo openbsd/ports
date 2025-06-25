@@ -202,7 +202,10 @@ share/gtk-doc/html/colord/right.png
 share/gtk-doc/html/colord/style.css
 share/gtk-doc/html/colord/up-insensitive.png
 share/gtk-doc/html/colord/up.png
+share/locale/ar/LC_MESSAGES/colord.mo
 share/locale/as/LC_MESSAGES/colord.mo
+share/locale/be/LC_MESSAGES/colord.mo
+share/locale/bg/LC_MESSAGES/colord.mo
 share/locale/bn_IN/LC_MESSAGES/colord.mo
 share/locale/ca/LC_MESSAGES/colord.mo
 share/locale/cs/LC_MESSAGES/colord.mo
@@ -257,6 +260,8 @@ share/locale/tr/LC_MESSAGES/colord.mo
 share/locale/uk/LC_MESSAGES/colord.mo
 share/locale/zh_CN/LC_MESSAGES/colord.mo
 share/locale/zh_TW/LC_MESSAGES/colord.mo
+share/metainfo/
+share/metainfo/org.freedesktop.colord.metainfo.xml
 share/polkit-1/actions/org.freedesktop.color.policy
 share/vala/vapi/colord.deps
 share/vala/vapi/colord.vapi

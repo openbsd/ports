@@ -19,7 +19,7 @@ Index: src/cd-main.c
  	GPtrArray		*sensors;
  	GPtrArray		*plugins;
  	GMainLoop		*loop;
-@@ -1617,8 +1619,8 @@ cd_main_icc_store_added_cb (CdIccStore *icc_store,
+@@ -1618,8 +1620,8 @@ cd_main_icc_store_added_cb (CdIccStore *icc_store,
  	/* create profile */
  	profile = cd_profile_new ();
  	filename = cd_icc_get_filename (icc);
@@ -30,7 +30,7 @@ Index: src/cd-main.c
  		cd_profile_set_is_system_wide (profile, TRUE);
  
  	/* parse the profile name */
-@@ -1904,8 +1906,10 @@ cd_main_on_name_acquired_cb (GDBusConnection *connecti
+@@ -1905,8 +1907,10 @@ cd_main_on_name_acquired_cb (GDBusConnection *connecti
  		cd_main_add_disk_device (priv, device_id);
  	}
  
@@ -41,7 +41,7 @@ Index: src/cd-main.c
  
  	/* coldplug plugin devices */
  	cd_main_plugin_phase (priv, CD_PLUGIN_PHASE_COLDPLUG);
-@@ -1935,6 +1939,7 @@ cd_main_on_name_lost_cb (GDBusConnection *connection,
+@@ -1936,6 +1940,7 @@ cd_main_on_name_lost_cb (GDBusConnection *connection,
  	g_main_loop_quit (priv->loop);
  }
  
@@ -49,7 +49,7 @@ Index: src/cd-main.c
  
  static void
  cd_main_client_sensor_added_cb (CdSensorClient *sensor_client_,
-@@ -1966,6 +1971,7 @@ cd_main_client_sensor_removed_cb (CdSensorClient *sens
+@@ -1967,6 +1972,7 @@ cd_main_client_sensor_removed_cb (CdSensorClient *sens
  				       NULL);
  	g_ptr_array_remove (priv->sensors, sensor);
  }
@@ -57,7 +57,7 @@ Index: src/cd-main.c
  
  static gboolean
  cd_main_timed_exit_cb (gpointer user_data)
-@@ -2389,6 +2395,7 @@ main (int argc, char *argv[])
+@@ -2390,6 +2396,7 @@ main (int argc, char *argv[])
  	priv->devices_array = cd_device_array_new ();
  	priv->profiles_array = cd_profile_array_new ();
  	priv->sensors = g_ptr_array_new_with_free_func ((GDestroyNotify) g_object_unref);
@@ -65,7 +65,7 @@ Index: src/cd-main.c
  	priv->sensor_client = cd_sensor_client_new ();
  	g_signal_connect (priv->sensor_client, "sensor-added",
  			  G_CALLBACK (cd_main_client_sensor_added_cb),
-@@ -2396,11 +2403,12 @@ main (int argc, char *argv[])
+@@ -2397,11 +2404,12 @@ main (int argc, char *argv[])
  	g_signal_connect (priv->sensor_client, "sensor-removed",
  			  G_CALLBACK (cd_main_client_sensor_removed_cb),
  			  priv);
@@ -79,7 +79,7 @@ Index: src/cd-main.c
  				  &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load mapping database: %s",
-@@ -2411,7 +2419,7 @@ main (int argc, char *argv[])
+@@ -2412,7 +2420,7 @@ main (int argc, char *argv[])
  	/* connect to the device db */
  	priv->device_db = cd_device_db_new ();
  	ret = cd_device_db_load (priv->device_db,
@@ -88,7 +88,7 @@ Index: src/cd-main.c
  				 &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load device database: %s",
-@@ -2422,7 +2430,7 @@ main (int argc, char *argv[])
+@@ -2423,7 +2431,7 @@ main (int argc, char *argv[])
  	/* connect to the profile db */
  	priv->profile_db = cd_profile_db_new ();
  	ret = cd_profile_db_load (priv->profile_db,
@@ -97,7 +97,7 @@ Index: src/cd-main.c
  				  &error);
  	if (!ret) {
  		g_warning ("CdMain: failed to load profile database: %s",
-@@ -2518,8 +2526,10 @@ out:
+@@ -2519,8 +2527,10 @@ out:
  			g_ptr_array_unref (priv->sensors);
  		if (priv->plugins != NULL)
  			g_ptr_array_unref (priv->plugins);

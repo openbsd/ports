@@ -2,8 +2,7 @@ COMMENT=		device color profile management daemon
 
 GH_ACCOUNT=		hughsie
 GH_PROJECT=		colord
-GH_TAGNAME=		1.4.7
-REVISION=		1
+GH_TAGNAME=		1.4.8
 
 SHARED_LIBS += colordprivate             2.0 # 2.0.5
 SHARED_LIBS += colord                    2.0 # 2.0.5
