@@ -1,0 +1,13 @@
+fix build with libc++ 19
+Index: lib/Unicode.hh
+--- lib/Unicode.hh.orig
++++ lib/Unicode.hh
+@@ -37,7 +37,7 @@ namespace bt
+   /*
+    * Unicode character type.
+    */
+-  typedef unsigned int Uchar;
++  typedef char32_t Uchar;
+ 
+   /*
+    * Unicode string type.

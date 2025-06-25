@@ -1,7 +1,7 @@
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
 DISTNAME=		blackbox-0.70.1
-REVISION =		12
+REVISION =		13
 CATEGORIES=		x11
 
 HOMEPAGE=		https://blackboxwm.sourceforge.net/
