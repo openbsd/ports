@@ -1,0 +1,13 @@
+Unbreak with libcxx19
+Index: src/backends/R/rserver/rcallbacks.cpp
+--- src/backends/R/rserver/rcallbacks.cpp.orig
++++ src/backends/R/rserver/rcallbacks.cpp
+@@ -3,6 +3,8 @@
+     SPDX-FileCopyrightText: 2009 Alexander Rieder <alexanderrieder@gmail.com>
+ */
+ 
++#define R_NO_REMAP 1
++
+ #include "rcallbacks.h"
+ 
+ #include "rserver.h"
