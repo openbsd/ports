@@ -7,9 +7,3 @@ LuaJIT Support
 
 Some Neovim plugins now require LuaJIT. Those plugins won't work on
 architectures that have no LuaJIT support.
-
-Why is the Escape Key Not Working Right?
-========================================
-
-If you use Neovim under tmux, you are likely being bitten by a libtermkey bug.
-Read the libtermkey package README for a workaround.
