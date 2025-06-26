@@ -12,6 +12,9 @@ HOMEPAGE=	https://frozenlist.readthedocs.io/
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
