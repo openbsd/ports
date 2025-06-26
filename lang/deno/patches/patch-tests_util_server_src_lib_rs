@@ -9,6 +9,7 @@ Index: tests/util/server/src/lib.rs
  pub fn target_dir() -> PathRef {
 -  let current_exe = std::env::current_exe().unwrap();
 +  let current_exe = PathBuf::from("${WRKSRC}/target/release/deno");
-   let target_dir = current_exe.parent().unwrap().parent().unwrap();
+-  let target_dir = current_exe.parent().unwrap().parent().unwrap();
++  let target_dir = current_exe.parent().unwrap();
    PathRef::new(target_dir)
  }

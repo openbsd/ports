@@ -1,0 +1,12 @@
+Index: modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/x86_att/curve25519/curve25519_x25519base.S
+--- modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/x86_att/curve25519/curve25519_x25519base.S.orig
++++ modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/x86_att/curve25519/curve25519_x25519base.S
+@@ -2263,7 +2263,7 @@ curve25519_x25519base_midloop:
+ // text section, which gives position-independent code with simple PC-relative
+ // addressing. However it could be put in a separate section via something like
+ //
+-// .section .rodata
++.section .rodata
+ // ****************************************************************************
+ 
+ // 2^254 * G and (2^254 + 8) * G in extended-projective coordinates

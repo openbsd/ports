@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.3.6
+VERSION =		2.3.7
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -23,6 +23,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/cargo lang/clang
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
+
+MODCARGO_CRATES_UPDATE += aws-lc-rs aws-lc-sys
 
 MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \
@@ -46,6 +48,8 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 MODCARGO_BUILD_ARGS +=	-vv
 
 MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
+
+MODCARGO_TEST_ARGS +=	--no-fail-fast
 
 MAKE_ENV =		${MODCARGO_ENV}
 
@@ -81,7 +85,7 @@ V8_CARGO_V =		137.1.0
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
 
-SUBST_VARS +=		WRKBUILD
+SUBST_VARS +=		WRKBUILD WRKSRC
 
 post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}

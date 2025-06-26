@@ -1,0 +1,36 @@
+Enable read-only section
+
+Index: modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/arm/curve25519/curve25519_x25519base_byte.S
+--- modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/arm/curve25519/curve25519_x25519base_byte.S.orig
++++ modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/arm/curve25519/curve25519_x25519base_byte.S
+@@ -594,8 +594,10 @@ S2N_BN_SYMBOL(curve25519_x25519base_byte):
+         ldr     x0, [scalar]
+         ands    xzr, x0, #8
+ 
+-        adr     x10, curve25519_x25519base_byte_edwards25519_0g
+-        adr     x11, curve25519_x25519base_byte_edwards25519_8g
++        adrp    x10, curve25519_x25519base_byte_edwards25519_0g
++        add     x10, x10, :lo12:curve25519_x25519base_byte_edwards25519_0g
++        adrp    x11, curve25519_x25519base_byte_edwards25519_8g
++        add     x11, x11, :lo12:curve25519_x25519base_byte_edwards25519_8g
+         ldp     x0, x1, [x10]
+         ldp     x2, x3, [x11]
+         csel    x0, x0, x2, eq
+@@ -651,7 +653,8 @@ S2N_BN_SYMBOL(curve25519_x25519base_byte):
+ // l >= 9 case cannot arise on the last iteration.
+ 
+         mov     i, 4
+-        adr     tab, curve25519_x25519base_byte_edwards25519_gtable
++        adrp    tab, curve25519_x25519base_byte_edwards25519_gtable
++        add     tab, tab, :lo12:curve25519_x25519base_byte_edwards25519_gtable
+         mov     bias, xzr
+ 
+ // Start of the main loop, repeated 63 times for i = 4, 8, ..., 252
+@@ -2105,6 +2108,7 @@ curve25519_x25519base_byte_invmidloop:
+ 
+ // 2^254 * G and (2^254 + 8) * G in extended-projective coordinates
+ // but with Z = 1 assumed and hence left out, so they are (X,Y,T) only.
++.section .rodata
+ 
+ curve25519_x25519base_byte_edwards25519_0g:
+ 
