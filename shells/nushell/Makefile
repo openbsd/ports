@@ -13,6 +13,10 @@ CATEGORIES =		shells
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# C1x
+COMPILER =		base-clang ports-gcc
+COMILER_LANGS =		c
+
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 
