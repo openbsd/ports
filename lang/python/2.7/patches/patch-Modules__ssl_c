@@ -3,6 +3,8 @@ what python's lock protects
 
 #2: ERR_get_state is no longer used in OpenSSL 3.0 or libressl as of 20240303
 
+#3, #4: Drop CRYPTO_THREADID noops
+
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
 +++ Modules/_ssl.c
@@ -24,3 +26,31 @@ Index: Modules/_ssl.c
      ERR_clear_error();
  
      PySSL_BEGIN_ALLOW_THREADS
+@@ -4078,15 +4080,7 @@ static PyMethodDef PySSL_methods[] = {
+ 
+ static PyThread_type_lock *_ssl_locks = NULL;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10000000
+-/* use new CRYPTO_THREADID API. */
+-static void
+-_ssl_threadid_callback(CRYPTO_THREADID *id)
+-{
+-    CRYPTO_THREADID_set_numeric(id,
+-                                (unsigned long)PyThread_get_thread_ident());
+-}
+-#else
++#if OPENSSL_VERSION_NUMBER < 0x10000000
+ /* deprecated CRYPTO_set_id_callback() API. */
+ static unsigned long
+ _ssl_thread_id_function (void) {
+@@ -4146,9 +4140,7 @@ static int _setup_ssl_threads(void) {
+             }
+         }
+         CRYPTO_set_locking_callback(_ssl_thread_locking_function);
+-#if OPENSSL_VERSION_NUMBER >= 0x10000000
+-        CRYPTO_THREADID_set_callback(_ssl_threadid_callback);
+-#else
++#if OPENSSL_VERSION_NUMBER < 0x10000000
+         CRYPTO_set_id_callback(_ssl_thread_id_function);
+ #endif
+     }
