@@ -327,9 +327,17 @@ MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .endif
 
 .if ${MODPY_PYBUILD:L} != no
+.  if ! ${BUILD_DEPENDS:Mmisc/py-coherent.licensed}
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	(grep -A8 '^requires' ${WRKSRC}/pyproject.toml | \
+	grep -q 'coherent.licensed'); then \
+	    (echo; echo '*** Port may need BUILD_DEPENDS=misc/py-coherent.licensed'; \
+		echo ) >> ${WRKDIR}/.modpy-warn; \
+	fi
+.  endif
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm} && ! ${BUILD_DEPENDS:Mdevel/py-setuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
-	(grep -A3 '^requires' ${WRKSRC}/pyproject.toml | \
+	(grep -A8 '^requires' ${WRKSRC}/pyproject.toml | \
 	grep -q 'setuptools[-_]scm'); then \
 	    (echo; echo '*** Port may need MODPY_PYBUILD=setuptools_scm'; \
 	        grep -H -e ^build-backend -e '^requires.*setuptools' \
