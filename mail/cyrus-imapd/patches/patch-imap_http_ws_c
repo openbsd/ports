@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: imap/http_ws.c
+--- imap/http_ws.c.orig
++++ imap/http_ws.c
+@@ -390,7 +390,7 @@ static void on_frame_recv_start_cb(wslay_event_context
+                                    void *user_data __attribute__((unused)))
+ {
+     xsyslog(LOG_DEBUG, "WS frame start",
+-            "opcode=<%s>, rsv=<0x%x>, fin=<0x%x>, length=<%ld>",
++            "opcode=<%s>, rsv=<0x%x>, fin=<0x%x>, length=<%lld>",
+            wslay_opcode_as_str(arg->opcode), arg->rsv, arg->fin, arg->payload_length);
+ }
+ 

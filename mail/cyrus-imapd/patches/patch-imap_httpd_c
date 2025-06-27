@@ -1,0 +1,13 @@
+Index: imap/httpd.c
+--- imap/httpd.c.orig
++++ imap/httpd.c
+@@ -1286,7 +1286,9 @@ static void _shutdown_tls(struct http_connection *conn
+ 
+ static int tls_init(int client_auth, struct buf *serverinfo)
+ {
++#ifndef LIBRESSL_VERSION_NUMBER
+     buf_printf(serverinfo, " OpenSSL/%s", OPENSSL_FULL_VERSION_STR);
++#endif
+ 
+     if (!tls_enabled()) return HTTP_UNAVAILABLE;
+ 

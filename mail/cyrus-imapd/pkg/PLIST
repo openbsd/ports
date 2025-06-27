@@ -320,7 +320,6 @@ share/doc/cyrus-imapd/html/imap/developer/API/cyrusdb.html
 share/doc/cyrus-imapd/html/imap/developer/API/cyrusdb2.html
 share/doc/cyrus-imapd/html/imap/developer/API/index-api.html
 share/doc/cyrus-imapd/html/imap/developer/API/mailbox-api.html
-share/doc/cyrus-imapd/html/imap/developer/ancient-releasing.html
 share/doc/cyrus-imapd/html/imap/developer/compiling.html
 share/doc/cyrus-imapd/html/imap/developer/coverage.html
 share/doc/cyrus-imapd/html/imap/developer/cyrusworks.html
@@ -526,6 +525,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/x/
@@ -538,6 +538,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0-beta1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0-beta2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.12/x/3.12.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.13/x/
@@ -620,6 +621,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.5.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/x/
