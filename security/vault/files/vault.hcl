@@ -16,7 +16,3 @@ storage "raft" {
   path            = "/var/vault/storage/"
   #node_id         = "hostname"
 }
-
-reporting {
-  disable_product_usage_reporting = true
-}
