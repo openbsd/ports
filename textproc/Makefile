@@ -409,6 +409,7 @@
      SUBDIR += py-charset-normalizer
      SUBDIR += py-colored
      SUBDIR += py-coloredlogs
+     SUBDIR += py-columnar
      SUBDIR += py-commonmark
      SUBDIR += py-confuse
      SUBDIR += py-cson
