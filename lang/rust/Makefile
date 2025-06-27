@@ -12,15 +12,15 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.87.0
+V =			1.88.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.86.0
-BV-amd64 =		1.87.0
+BV-aarch64 =		1.87.0
+BV-amd64 =		1.88.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.86.0
-BV-sparc64 =		1.86.0
+BV-riscv64 =		1.87.0
+BV-sparc64 =		1.87.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -108,6 +108,7 @@ LIBRUST_REHASH +=	panic_unwind
 LIBRUST_REHASH +=	proc_macro
 LIBRUST_REHASH +=	rustc_demangle
 LIBRUST_REHASH +=	rustc_driver
+LIBRUST_REHASH +=	rustc_literal_escaper
 LIBRUST_REHASH +=	rustc_std_workspace_alloc
 LIBRUST_REHASH +=	rustc_std_workspace_core
 LIBRUST_REHASH +=	rustc_std_workspace_std
@@ -179,11 +180,16 @@ TEST_DEPENDS +=		devel/git \
 			sysutils/ggrep
 
 # - disable vendor checksum checks
+# - patch openssl-sys using sed
 # - SUBSTR cargo testsuite
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
+	sed -i -e "/ => ('.', '.'),/h" \
+		-e "/ => ('.', '.', '.'),/h" \
+		-e "/_ => version_error(),/{g; s/(.*) =>/_ =>/; }" \
+		"${WRKSRC}/vendor/openssl-sys"*"/build/main.rs"
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/crates/cargo-test-support/src/paths.rs
 
 # - check datasize limit before configuring (and building)

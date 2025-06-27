@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1924,6 +1924,25 @@ pub mod parse {
+@@ -1927,6 +1927,25 @@ pub mod parse {
      }
  }
  
@@ -30,13 +30,15 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      CodegenOptions, CodegenOptionsTargetModifiers, CG_OPTIONS, cgopts, "C", "codegen",
  
-@@ -2102,9 +2121,9 @@ options! {
+@@ -2111,11 +2130,11 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),
 -    branch_protection: Option<BranchProtection> = (None, parse_branch_protection, [TRACKED],
 +    branch_protection: Option<BranchProtection> = (DEFAULT_BRANCH_PROTECTION, parse_branch_protection, [TRACKED],
          "set options for branch target identification and pointer authentication on AArch64"),
+     build_sdylib_interface: bool = (false, parse_bool, [UNTRACKED],
+         "whether the stable interface is being built"),
 -    cf_protection: CFProtection = (CFProtection::None, parse_cfprotection, [TRACKED],
 +    cf_protection: CFProtection = (DEFAULT_CF_PROTECTION, parse_cfprotection, [TRACKED],
          "instrument control-flow architecture protection"),
