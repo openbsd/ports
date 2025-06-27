@@ -1,0 +1,13 @@
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -231,6 +231,9 @@ my %WriteMakefileArgs = (
+     "IPC::Run" => 0,
+     "Test::More" => 0
+   },
++  "EXE_FILES" => [
++    "script/cpansign",
++  ],
+   "CONFIGURE_REQUIRES" => {
+     "ExtUtils::MakeMaker" => "6.36"
+   },
