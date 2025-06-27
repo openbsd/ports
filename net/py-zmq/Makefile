@@ -27,11 +27,11 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
-MAKE_ENV =		LC_CTYPE=en_US.UTF-8
-MODPY_PYTEST_ARGS =	build/lib.*
+MODPY_TEST_LINK_SO =	Yes
 
 # ulimit -n 1024
-TEST_DEPENDS =		math/py-numpy \
+TEST_DEPENDS =		devel/py-test-asyncio \
+			math/py-numpy \
 			www/py-tornado
 
 .include <bsd.port.mk>
