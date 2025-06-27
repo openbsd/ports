@@ -1,7 +1,7 @@
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			4.0.1
-REVISION=		0
+REVISION=		1
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1916528.tgz
