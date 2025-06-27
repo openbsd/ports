@@ -3,7 +3,7 @@ Add arm64 BTI instructions.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1067,6 +1067,54 @@ if test "$nettle_cv_asm_x86_gnu_property" = yes; then
+@@ -1077,6 +1077,54 @@ if test "$nettle_cv_asm_x86_gnu_property" = yes; then
  	.popsection'
  fi
  
