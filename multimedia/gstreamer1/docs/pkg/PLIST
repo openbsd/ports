@@ -3464,6 +3464,11 @@ share/gtk-doc/html/GStreamer-${API}/vulkan-wayland/index.html
 share/gtk-doc/html/GStreamer-${API}/vulkan-wayland/vulkan/
 share/gtk-doc/html/GStreamer-${API}/vulkan-wayland/vulkan/wayland/
 share/gtk-doc/html/GStreamer-${API}/vulkan-wayland/vulkan/wayland/gstvkdisplay_wayland.html
+share/gtk-doc/html/GStreamer-${API}/vulkan-xcb/
+share/gtk-doc/html/GStreamer-${API}/vulkan-xcb/index.html
+share/gtk-doc/html/GStreamer-${API}/vulkan-xcb/vulkan/
+share/gtk-doc/html/GStreamer-${API}/vulkan-xcb/vulkan/xcb/
+share/gtk-doc/html/GStreamer-${API}/vulkan-xcb/vulkan/xcb/gstvkdisplay_xcb.html
 share/gtk-doc/html/GStreamer-${API}/vulkan/index.html
 share/gtk-doc/html/GStreamer-${API}/vulkan/vulkancolorconvert.html
 share/gtk-doc/html/GStreamer-${API}/vulkan/vulkandownload.html

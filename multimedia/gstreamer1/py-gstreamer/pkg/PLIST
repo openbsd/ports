@@ -2,11 +2,13 @@
 @so lib/gstreamer-${API}/libgstpython.so
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstAnalytics.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstApp.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstAudio.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstPbutils.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstVideo.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gst.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstAnalytics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstApp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstAudio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstPbutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstVideo.${MODPY_PYC_MAGIC_TAG}pyc
