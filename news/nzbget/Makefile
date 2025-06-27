@@ -1,7 +1,7 @@
 COMMENT =	binary newsreader supporting NZB files
 
-DIST_TUPLE +=	github nzbgetcom nzbget v25.0 .
-DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.2.0-nzbget-20250213 par2cmdline-turbo
+DIST_TUPLE +=	github nzbgetcom nzbget v25.1 .
+DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.3.0 par2cmdline-turbo
 
 CATEGORIES =	news
 
