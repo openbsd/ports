@@ -2,6 +2,8 @@ Work with copies of homedir and username since the storage returned by
 getpwuid() is unmapped by the getpwnam() call in ssh_path_expand_tilde()
 so later accesses result in segfaults.
 
+https://gitlab.com/libssh/libssh-mirror/-/merge_requests/628
+
 Index: tests/unittests/torture_config.c
 --- tests/unittests/torture_config.c.orig
 +++ tests/unittests/torture_config.c
