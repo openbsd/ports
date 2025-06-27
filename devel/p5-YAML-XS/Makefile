@@ -2,8 +2,8 @@ COMMENT =	YAML Serialization using XS and libyaml
 
 MODULES =	cpan
 
-V =		0.89
-DISTNAME =	YAML-LibYAML-$V
+V =		0.904.0
+DISTNAME =	YAML-LibYAML-v$V
 PKGNAME =	p5-YAML-XS-$V
 CATEGORIES =	devel
 
