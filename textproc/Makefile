@@ -53,6 +53,7 @@
      SUBDIR += docbook2mdoc
      SUBDIR += docbook2x
      SUBDIR += doclifter
+     SUBDIR += docsible
      SUBDIR += docx2txt
      SUBDIR += ebook-tools
      SUBDIR += enchant
