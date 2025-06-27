@@ -4,7 +4,7 @@ COMMENT=	tool to check the quality of a DNS zone
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-V=		7.2.0
+V=		8.0.0
 DISTNAME=	Zonemaster-CLI-v$V
 PKGNAME=	zonemaster-$V
 CATEGORIES=	net
@@ -25,9 +25,9 @@ RUN_DEPENDS=	devel/p5-Readonly \
 		converters/p5-JSON-XS \
 		devel/p5-libintl \
 		devel/p5-Try-Tiny \
-		net/p5-Zonemaster/ldns>=4.1.0 \
-		net/p5-Zonemaster/engine>=7.0.0
+		net/p5-Zonemaster/ldns>=5.0.0 \
+		net/p5-Zonemaster/engine>=8.0.0
 TEST_DEPENDS=	devel/p5-Test-Differences
-#		textproc/p5-JSON-Validator
+# needs textproc/p5-JSON-Validator, not ported
 
 .include <bsd.port.mk>

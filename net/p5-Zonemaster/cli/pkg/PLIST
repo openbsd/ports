@@ -1,5 +1,7 @@
 bin/zonemaster-cli
+${P5SITE}/Zonemaster/CLI/
 ${P5SITE}/Zonemaster/CLI.pm
+${P5SITE}/Zonemaster/CLI/TestCaseSet.pm
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/GNUmakefile
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/
@@ -26,3 +28,4 @@ ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/Zonemaster-CLI.mo
 @man man/man1/zonemaster-cli.1
 @man man/man3p/Zonemaster::CLI.3p
+@man man/man3p/Zonemaster::CLI::TestCaseSet.3p
