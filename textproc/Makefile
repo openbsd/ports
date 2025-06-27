@@ -527,6 +527,7 @@
      SUBDIR += py-yaml
      SUBDIR += py-yamlloader
      SUBDIR += py-yamlordereddictloader
+     SUBDIR += pymarkdownlnt
      SUBDIR += qpdfview
      SUBDIR += qxlsx
      SUBDIR += rapidjson
