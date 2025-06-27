@@ -687,6 +687,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/z
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/zh-Hant.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/zh.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/zu.py
+lib/python${MODPY_VERSION}/site-packages/dateparser/data/dateparser_tz_cache.pkl
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/languages_info.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/date.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/date_parser.py

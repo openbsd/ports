@@ -1,10 +1,9 @@
 COMMENT=	parse dates from HTML pages
 
-MODPY_DISTV=	1.2.1
+MODPY_DISTV=	1.2.2
 DISTNAME=	dateparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
 
 HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 
