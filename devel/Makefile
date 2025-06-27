@@ -1358,6 +1358,7 @@
      SUBDIR += py-anytree
      SUBDIR += py-apipkg
      SUBDIR += py-appdirs
+     SUBDIR += py-application_properties
      SUBDIR += py-argcomplete
      SUBDIR += py-argh
      SUBDIR += py-arrow
