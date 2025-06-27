@@ -1,0 +1,8 @@
+Command-line tool written in Python for linting Markdown files.
+
+It comes with 46 out-of-the-box rules to check Markdown files, 44 of which are
+modified versions of the rules provided by the Markdown Lint project.
+
+Please note that while the project mostly refers to itself as "PyMarkdown",
+the port name follows the pypi package name, "markdownlint" to distinguish from
+existing projects with similar names: "Python-Markdown", "pymarkdown".
