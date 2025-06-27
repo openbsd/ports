@@ -5,7 +5,7 @@ uses pthread functions whether or not pthread was linked.
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -69,6 +69,13 @@ if (MINGW AND Threads_FOUND)
+@@ -56,6 +56,13 @@ if (MINGW AND Threads_FOUND)
    )
  endif()
  
