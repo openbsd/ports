@@ -1,7 +1,7 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-PKGNAME=	rdapper-1.12
+PKGNAME=	rdapper-1.13
 DISTNAME=	App-${PKGNAME}
 CATEGORIES=	net
 PKG_ARCH=	*
