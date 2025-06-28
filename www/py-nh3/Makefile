@@ -1,10 +1,13 @@
 COMMENT =		Python bindings for the ammonia html sanitizer
 
-MODPY_DISTV =	0.2.12
+MODPY_DISTV =		0.2.12
 DISTNAME =		nh3-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
