@@ -1,9 +1,8 @@
 COMMENT =		deal pysol cards
 
-MODPY_DISTV =		0.18.1
+MODPY_DISTV =		0.24.0
 DISTNAME =		pysol_cards-${MODPY_DISTV}
 PKGNAME =		pysol-cards-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		games
 
