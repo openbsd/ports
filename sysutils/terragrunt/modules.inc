@@ -433,7 +433,7 @@ MODGO_MODULES =	\
 	github.com/gruntwork-io/boilerplate								 v0.6.3 \
 	github.com/gruntwork-io/go-commons								 v0.17.2 \
 	github.com/gruntwork-io/terragrunt-engine-go							 v0.0.15 \
-	github.com/gruntwork-io/terratest								 v0.49.0 \
+	github.com/gruntwork-io/terratest								 v0.50.0 \
 	github.com/hashicorp/aws-sdk-go-base								 v0.6.0 \
 	github.com/hashicorp/consul									 v0.0.0-20171026175957-610f3c86a089 \
 	github.com/hashicorp/errwrap									 v1.1.0 \
@@ -515,7 +515,7 @@ MODGO_MODULES =	\
 	github.com/kr/pty										 v1.1.1 \
 	github.com/kr/text										 v0.2.0 \
 	github.com/kylelemons/godebug									 v1.1.0 \
-	github.com/labstack/echo/v4									 v4.13.3 \
+	github.com/labstack/echo/v4									 v4.13.4 \
 	github.com/labstack/gommon									 v0.4.2 \
 	github.com/lib/pq										 v1.10.9 \
 	github.com/likexian/gokit									 v0.20.15 \

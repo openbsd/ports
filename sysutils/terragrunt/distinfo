@@ -1838,8 +1838,8 @@ SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.mod) 
 SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.zip) = llSXHUfEoRWO66iEtk+xysqIE4OAi3urfSXftz79X6s=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = AzyWVIfqU3LsgjZ+j63irQRkCHKLyePBriikc5NmG1U=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = ehFFmg2Sz0RsZjgm0dfh0ET7kV7Bj9eJN+oyq3xp3h4=
-SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.mod) = sR+382blI26NGlULhaf1aXuqukwaeBxdJ2lUxRHpP7w=
-SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.zip) = MJ7JzRQpGc0tx6wmfVRms0zVBwTTqgAdAHvQ1WE/B84=
+SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.50.0.mod) = 3DtzHCJ+3M58PRhIwVHOzUuK/Jx70aGycfcV3qwmmDE=
+SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.50.0.zip) = wNiPNeJvFL1YN1AcSY9WiBECjIrwMnXezhvXvnUu8yo=
 SHA256 (go_modules/github.com/hashicorp/aws-sdk-go-base/@v/v0.6.0.mod) = BPXLCsm2+X9M26aAqyC78Cza5uTnQf6HAI8qCKbz1Pk=
 SHA256 (go_modules/github.com/hashicorp/aws-sdk-go-base/@v/v0.6.0.zip) = QxeY6cMSnMwKrAOvhdwMq0XMk+R0qRJiyfvZvKMrDfc=
 SHA256 (go_modules/github.com/hashicorp/consul/@v/v0.0.0-20171026175957-610f3c86a089.mod) = 5aosDDwWSd0nB6Be0IYiXMSETVRLZZaBqomEjGRN+J4=
@@ -2073,8 +2073,8 @@ SHA256 (go_modules/github.com/kr/text/@v/v0.2.0.zip) = No6zGPkaW2e+kFxHAyq1wxodS
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v0.0.0-20170820004349-d65d576e9348.mod) = 7/nRMre5Lc4Gh1hWGKDQzFynBz1pqx0Ybkas0FcSZ20=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = FgWHHolTMaOfWVJVnrvJEijYa4EANU+Fe1YoZuyluxM=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 270M6ML0kyuwNwTXMCayGvEr1o1bj0eY2/EKSHorbRM=
-SHA256 (go_modules/github.com/labstack/echo/v4/@v/v4.13.3.mod) = NhoYkXyikVY20AHv/kUQPqwbcVMxgkdJMkPEJuJRqkM=
-SHA256 (go_modules/github.com/labstack/echo/v4/@v/v4.13.3.zip) = qUwMzPQMoqRowK0LH7zdOiPJKgHCq9aDtdYYqfOSK1A=
+SHA256 (go_modules/github.com/labstack/echo/v4/@v/v4.13.4.mod) = e8ztHzrmiO3Toim/ptDWyIuB/7c5ryZPmyYYQo9RfDA=
+SHA256 (go_modules/github.com/labstack/echo/v4/@v/v4.13.4.zip) = 7TiiNUUIcIeW7UFTiiXoL16h5ifr5HW9gfBtv2sPPv0=
 SHA256 (go_modules/github.com/labstack/gommon/@v/v0.4.2.mod) = hzasIAgC/vjlgqSuyBi2XCIkT5ykJzqDjSNGQODt4ps=
 SHA256 (go_modules/github.com/labstack/gommon/@v/v0.4.2.zip) = /z9m4GdLTpqHqTy4Rh985EdsZmf7SOHJMT05EQuOH+g=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.10.9.mod) = lMFIhoiyuYIqluE3XjIAKmUswa7nFSD2v6h77I63nAY=
@@ -3706,7 +3706,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.81.10.zip) = ek9Gvi5wSmLP+aWMrnimehR8vkZCZwBInlEo7a1WzbU=
+SHA256 (terragrunt-v0.82.3.zip) = WIa/cjXeQeC5ROEvVONTd5CxOsUAXwxPXPEX7ux71Vk=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -5547,8 +5547,8 @@ SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.mod) = 
 SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.zip) = 29231
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = 6850
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = 6838
-SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.mod) = 11739
-SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.zip) = 4290239
+SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.50.0.mod) = 11742
+SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.50.0.zip) = 4301458
 SIZE (go_modules/github.com/hashicorp/aws-sdk-go-base/@v/v0.6.0.mod) = 226
 SIZE (go_modules/github.com/hashicorp/aws-sdk-go-base/@v/v0.6.0.zip) = 40186
 SIZE (go_modules/github.com/hashicorp/consul/@v/v0.0.0-20171026175957-610f3c86a089.mod) = 35
@@ -5782,8 +5782,8 @@ SIZE (go_modules/github.com/kr/text/@v/v0.2.0.zip) = 12607
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v0.0.0-20170820004349-d65d576e9348.mod) = 37
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = 46
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 25634
-SIZE (go_modules/github.com/labstack/echo/v4/@v/v4.13.3.mod) = 627
-SIZE (go_modules/github.com/labstack/echo/v4/@v/v4.13.3.zip) = 452024
+SIZE (go_modules/github.com/labstack/echo/v4/@v/v4.13.4.mod) = 630
+SIZE (go_modules/github.com/labstack/echo/v4/@v/v4.13.4.zip) = 453170
 SIZE (go_modules/github.com/labstack/gommon/@v/v0.4.2.mod) = 446
 SIZE (go_modules/github.com/labstack/gommon/@v/v0.4.2.zip) = 19567
 SIZE (go_modules/github.com/lib/pq/@v/v1.10.9.mod) = 34
@@ -7415,4 +7415,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.81.10.zip) = 9351691
+SIZE (terragrunt-v0.82.3.zip) = 9381583
