@@ -7,7 +7,7 @@ PKGNAME=	mruby-zest-20210207
 GH_ACCOUNT=	mruby-zest
 GH_PROJECT=	mruby-zest-build
 GH_COMMIT=	f1eeda675f6bbda1d2f9f1454ec0d84e0632e603
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	x11
 

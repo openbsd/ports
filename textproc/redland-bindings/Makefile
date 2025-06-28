@@ -7,7 +7,7 @@ DISTNAME=		redland-bindings-$V
 PKGNAME-main=		p5-librdf-$V
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-librdf-$V
 REVISION=		7
-REVISION-ruby=		8
+REVISION-ruby=		9
 
 HOMEPAGE=		https://librdf.org/bindings/
 

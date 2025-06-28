@@ -2,6 +2,7 @@ COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.1
 DISTNAME=	autocutsel-$V
+REVISION=	0
 
 CATEGORIES=	x11
 

@@ -7,6 +7,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	rushsteve1
 GH_PROJECT =	trash-d
 GH_TAGNAME =	19
+REVISION =	0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

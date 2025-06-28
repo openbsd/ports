@@ -3,6 +3,7 @@ BROKEN=		fail to configure: fatal error: 'QtCore' file not found
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-88.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 

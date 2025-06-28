@@ -2,6 +2,7 @@ COMMENT =		state machine compiler
 
 DISTNAME =		ragel-6.10
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://www.colm.net/open-source/ragel/
 

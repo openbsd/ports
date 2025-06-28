@@ -12,6 +12,7 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
+REVISION-ruby=	0
 
 CATEGORIES=	net
 

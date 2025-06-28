@@ -1,7 +1,7 @@
 COMMENT =		extension language for CSS
 
 DISTNAME =		sass-3.4.22
-REVISION =		8
+REVISION =		9
 CATEGORIES =		www devel
 
 HOMEPAGE =		http://sass-lang.com
