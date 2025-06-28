@@ -2,7 +2,9 @@ PKG_ARCH=		*
 
 COMMENT=		base icon theme for GNOME
 
-DIST_TUPLE=		gnome GNOME adwaita-icon-theme 48.1 .
+GNOME_PROJECT=		adwaita-icon-theme
+GNOME_VERSION=		48.1
+REVISION=		0
 
 CATEGORIES=		x11
 
