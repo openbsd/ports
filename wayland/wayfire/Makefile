@@ -5,6 +5,7 @@ GH_ACCOUNT =	WayfireWM
 GH_PROJECT =	wayfire
 GH_COMMIT =	3d3f426f7de8a24117f6c1d33c8dead1bc80b7e9
 DISTNAME =	wayfire-${V}
+REVISION =	0
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland

@@ -4,6 +4,7 @@ GH_ACCOUNT =	clangen
 GH_PROJECT =	musikcube
 GH_TAGNAME =	3.0.4
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://musikcube.com/
 

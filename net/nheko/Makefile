@@ -3,7 +3,7 @@ COMMENT =	desktop client for Matrix
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
 GH_TAGNAME =	v0.12.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	net
 

@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
-REVISION=	2
+REVISION=	3
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
 SITES=		https://github.com/Warzone2100/warzone2100/releases/download/$V/

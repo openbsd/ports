@@ -6,7 +6,7 @@ SHARED_LIBS +=  matrix_client	3.0
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
 GH_TAGNAME =	v0.10.0
-REVISION =	2
+REVISION =	3
 
 # MIT
 PERMIT_PACKAGE =	Yes
