@@ -1,0 +1,16 @@
+# gosnowflake token cache imprementation considers only linux, windows and
+# darwin; allow file-based secure storage manager for OpenBSD
+# introduced in https://github.com/snowflakedb/gosnowflake/pull/1327
+
+Index: vendor/github.com/snowflakedb/gosnowflake/secure_storage_manager.go
+--- vendor/github.com/snowflakedb/gosnowflake/secure_storage_manager.go.orig
++++ vendor/github.com/snowflakedb/gosnowflake/secure_storage_manager.go
+@@ -95,7 +95,7 @@ var credentialsStorage = newSecureStorageManager()
+ 
+ func newSecureStorageManager() secureStorageManager {
+ 	switch runtime.GOOS {
+-	case "linux":
++	case "linux", "openbsd":
+ 		ssm, err := newFileBasedSecureStorageManager()
+ 		if err != nil {
+ 			logger.Debugf("failed to create credentials cache dir. %v", err)
