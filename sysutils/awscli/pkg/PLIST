@@ -865,6 +865,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-dep
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-domain-name.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-integration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-route.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-routing-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-vpc-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-access-log-settings.rst
@@ -877,6 +878,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-dom
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-integration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-route-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-route.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-routing-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/delete-vpc-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/export-api.rst
@@ -894,12 +896,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-integr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-integrations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-routes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-routing-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-stages.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-vpc-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/get-vpc-links.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/import-api.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/list-routing-rules.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/put-routing-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/reimport-api.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/untag-resource.rst
@@ -4522,6 +4527,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-p
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-without-plaintext.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-mac.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-random.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-rotation-status.rst
@@ -4547,6 +4553,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-custom-key-store.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/update-key-description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/verify-mac.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/verify.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lakeformation/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lakeformation/add-lf-tags-to-resource.rst
