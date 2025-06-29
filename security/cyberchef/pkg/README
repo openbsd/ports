@@ -1,0 +1,18 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+httpd(8) configuration
+======================
+
+CyberChef compresses assets, so the "gzip-static" option may be worthwhile;
+see httpd.conf(5).
+
+Example /etc/httpd.conf
+-----------------------
+
+server "example.com" {
+	listen on * port 80
+	root "/cyberchef"
+	gzip-static
+}
