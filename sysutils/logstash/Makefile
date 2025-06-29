@@ -1,7 +1,7 @@
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			8.17.4
+V =			9.0.1
 DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://artifacts.elastic.co/downloads/logstash/
 
 MODULES =		java
-MODJAVA_VER =		17
+MODJAVA_VER =		21
 
 RUN_DEPENDS =		java/javaPathHelper \
 			lang/jruby \
@@ -58,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/{CONTRIBUTORS,LICENSE.txt,NOTICE.TXT} \
 		 ${PREFIX}/share/doc/logstash/
 	${INSTALL_DATA} ${WRKSRC}/config/* ${PREFIX}/share/examples/logstash/
-	cp -R ${WRKSRC}/{lib,logstash-*,modules,tools,vendor} ${LOGSTASH_HOME}
+	cp -R ${WRKSRC}/{lib,logstash-*,vendor} ${LOGSTASH_HOME}
 	${INSTALL_DATA} ${FILESDIR}/filebeat.yml \
 		${PREFIX}/share/examples/logstash/filebeat.yml
 	cd ${PREFIX}/logstash && \

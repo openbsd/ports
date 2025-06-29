@@ -1,7 +1,7 @@
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options
-@@ -33,6 +33,9 @@
+@@ -29,6 +29,9 @@
  
  ## basic
  
