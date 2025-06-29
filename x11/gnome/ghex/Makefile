@@ -1,9 +1,9 @@
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		46.2
+GNOME_VERSION=		46.3
 
-SHARED_LIBS += gtkhex-4                  0.0 # 1.8.0
+SHARED_LIBS += gtkhex-4                  0.0 # 1.8.1
 
 CATEGORIES=		sysutils editors
 
