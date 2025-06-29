@@ -33,6 +33,7 @@
      SUBDIR += crowdsec
      SUBDIR += crowdsec-firewall-bouncer
      SUBDIR += cvechecker
+     SUBDIR += cyberchef
      SUBDIR += cyrus-sasl-xoauth2
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
