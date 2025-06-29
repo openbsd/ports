@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		9.4.12.0
+V =		10.0.0.1
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -23,7 +23,7 @@ SITES.gem =	${SITE_RUBYGEMS}
 
 MODULES =	java gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/jffi/jni/libffi
-MODJAVA_VER =	17+
+MODJAVA_VER =	21+
 MODJAVA_BUILD =	ant
 USE_GMAKE =	Yes
 
