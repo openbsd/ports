@@ -602,6 +602,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/runtime-path
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/runtime-path_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/sequence_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/sequence_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/serialize-structs_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/serialize-structs_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/serialize_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/serialize_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/set_rkt.dep
@@ -1011,6 +1013,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/shar
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/share-search_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/shared-body_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/shared-body_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/shell_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/shell_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/small-scheme_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/small-scheme_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/so-search_rkt.dep
@@ -1963,6 +1967,7 @@ share/racket/collects/racket/private/set-types.rkt
 share/racket/collects/racket/private/set.rkt
 share/racket/collects/racket/private/share-search.rkt
 share/racket/collects/racket/private/shared-body.rkt
+share/racket/collects/racket/private/shell.rkt
 share/racket/collects/racket/private/small-scheme.rkt
 share/racket/collects/racket/private/so-search.rkt
 share/racket/collects/racket/private/sort.rkt
@@ -2020,6 +2025,7 @@ share/racket/collects/racket/rerequire.rkt
 share/racket/collects/racket/runtime-config.rkt
 share/racket/collects/racket/runtime-path.rkt
 share/racket/collects/racket/sequence.rkt
+share/racket/collects/racket/serialize-structs.rkt
 share/racket/collects/racket/serialize.rkt
 share/racket/collects/racket/set.rkt
 share/racket/collects/racket/shared.rkt

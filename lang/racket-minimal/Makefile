@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			8.15
+V =			8.17
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX}
 DISTFILES.boot = 	racket-openbsd-2${EXTRACT_SUFX}
@@ -28,13 +28,11 @@ SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 		http://pre-release.racket-lang.org/installers/ \
 		http://pre.racket-lang.org/release/installers/ \
 		http://pre.racket-lang.org/installers/ \
-		https://download.tuxfamily.org/jod/lang/racket/ \
-		ftp://download.tuxfamily.org/jod/lang/racket/ \
 		https://users.cs.utah.edu/plt/snapshots/current/installers/ \
 		http://plt.eecs.northwestern.edu/snapshots/current/installers/
 
-SITES.boot =	https://download.tuxfamily.org/jod/lang/racket/ \
-		ftp://download.tuxfamily.org/jod/lang/racket/
+SITES.boot =	http://jfch.sdf.org/distfiles/
+
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		archivers/lz4 \
