@@ -1,5 +1,5 @@
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.5.0
+DISTNAME=	R-4.5.1
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
