@@ -92,7 +92,9 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 BUILD_DEPENDS +=	devel/m4
 
 # use the ld wrapper for nobtcfi
-CONFIGURE_ENV +=	LDFLAGS="--ld-path=${WRKDIR}/bin/ld"
+LDFLAGS_base-clang =	--ld-path=${WRKDIR}/bin/ld
+LDFLAGS +=		${LDFLAGS_${CHOSEN_COMPILER}}
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 
 MAKE_ENV =		SHELL=/bin/sh \
 			SO_VERSION=${SO_VERSION}
