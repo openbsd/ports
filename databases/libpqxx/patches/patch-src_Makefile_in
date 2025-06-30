@@ -1,9 +1,9 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -399,7 +399,7 @@ libpqxx_la_SOURCES = \
- 	util.cxx \
- 	version.cxx
+@@ -384,7 +384,7 @@ libpqxx_la_SOURCES = \
+ 	version.cxx \
+ 	wait.cxx
  
 -libpqxx_version = -release $(PQXX_ABI)
 +#libpqxx_version = -release $(PQXX_ABI)

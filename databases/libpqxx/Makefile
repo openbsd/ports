@@ -2,14 +2,13 @@ COMMENT=	C++ client API for PostgreSQL
 
 GH_ACCOUNT=	jtv
 GH_PROJECT=	libpqxx
-GH_TAGNAME=	6.4.7
-REVISION=	0
+GH_TAGNAME=	7.10.1
 
 CATEGORIES=	databases devel
 
-SHARED_LIBS =	pqxx                 3.0      # .0.0
+SHARED_LIBS =	pqxx                 4.0      # .0.0
 
-HOMEPAGE=	http://pqxx.org/development/libpqxx/
+HOMEPAGE=	https://pqxx.org/development/libpqxx/
 
 # 3-clause BSDL
 PERMIT_PACKAGE=	Yes
