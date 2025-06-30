@@ -1,29 +1,25 @@
-SDL_GetBasePath() doesn't work?
-Add OpenBSD and correct path search.
-
 Index: source/Files.cpp
 --- source/Files.cpp.orig
 +++ source/Files.cpp
-@@ -101,12 +101,11 @@ void Files::Init(const char * const *argv)
+@@ -88,11 +88,10 @@ void Files::Init(const char * const *argv)
  	{
  		// Find the path to the resource directory. This will depend on the
  		// operating system, and can be overridden by a command line argument.
--		char *str = SDL_GetBasePath();
-+		char str[] = "/usr/local/share/endless-sky";
- 		if(!str)
+-		char *basePath = SDL_GetBasePath();
++		char basePath[] = "/usr/local/share/endless-sky";
+ 		if(!basePath)
  			throw runtime_error("Unable to get path to resource directory!");
+ 		resources = basePath;
+-		SDL_free(basePath);
  
- 		resources = str;
--		SDL_free(str);
- 	}
- #if defined _WIN32
- 	FixWindowsSlashes(resources);
-@@ -118,7 +117,7 @@ void Files::Init(const char * const *argv)
- 	// the executable, but are under the same prefix (/usr or /usr/local).
- 	static const string LOCAL_PATH = "/usr/local/";
- 	static const string STANDARD_PATH = "/usr/";
--	static const string RESOURCE_PATH = "share/games/endless-sky/";
-+	static const string RESOURCE_PATH = "share/endless-sky/";
- 	if(!resources.compare(0, LOCAL_PATH.length(), LOCAL_PATH))
- 		resources = LOCAL_PATH + RESOURCE_PATH;
- 	else if(!resources.compare(0, STANDARD_PATH.length(), STANDARD_PATH))
+ 		if(Exists(resources))
+ 			resources = filesystem::canonical(resources);
+@@ -102,7 +101,7 @@ void Files::Init(const char * const *argv)
+ 		// the executable, but are under the same prefix (/usr or /usr/local).
+ 		static const filesystem::path LOCAL_PATH = "/usr/local/";
+ 		static const filesystem::path STANDARD_PATH = "/usr/";
+-		static const filesystem::path RESOURCE_PATH = "share/games/endless-sky/";
++		static const filesystem::path RESOURCE_PATH = "share/endless-sky/";
+ 
+ 		const auto IsParent = [](const auto parent, const auto child) -> bool {
+ 			if(distance(child.begin(), child.end()) < distance(parent.begin(), parent.end()))

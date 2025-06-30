@@ -3,7 +3,7 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
-GH_TAGNAME =	v0.10.6
+GH_TAGNAME =	v0.10.12
 
 HOMEPAGE =	https://endless-sky.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,12 +13,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 c jpeg m mad openal
-WANTLIB += png uuid
+WANTLIB += png uuid z
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
-MODULES =	devel/scons
+MODULES =	devel/cmake
+
+BUILD_DEPENDS =	devel/catch2 \
+		devel/ninja
 
 LIB_DEPENDS =	audio/libmad \
 		audio/openal \
@@ -39,7 +42,7 @@ NO_TEST =	Yes
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/source/Files.cpp
 
-# Don't bother with SConstruct, install the manual page ourselves.
+# Don't bother with CMake, install the manual page ourselves.
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/endless-sky.6 ${PREFIX}/man/man6
 
