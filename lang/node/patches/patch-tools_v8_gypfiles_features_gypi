@@ -1,7 +1,7 @@
 Index: tools/v8_gypfiles/features.gypi
 --- tools/v8_gypfiles/features.gypi.orig
 +++ tools/v8_gypfiles/features.gypi
-@@ -331,7 +331,10 @@
+@@ -336,7 +336,10 @@
      'v8_advanced_bigint_algorithms%': 1,
  
      # Enable 256-bit long vector re-vectorization pass in WASM compilation pipeline.
@@ -13,7 +13,7 @@ Index: tools/v8_gypfiles/features.gypi
    },
  
    'target_defaults': {
-@@ -546,6 +549,9 @@
+@@ -554,6 +557,9 @@
        }],
        ['v8_enable_wasm_simd256_revec==1', {
          'defines': ['V8_ENABLE_WASM_SIMD256_REVEC',],

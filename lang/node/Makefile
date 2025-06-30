@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v22.16.0
+NODE_VERSION =		v22.17.0
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
 DIST_TUPLE =		github qbit node-pledge 1.1.3 \
@@ -13,7 +13,6 @@ DIST_TUPLE =		github qbit node-pledge 1.1.3 \
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		1
 
 CATEGORIES =		lang devel
 
@@ -65,7 +64,7 @@ SUBST_VARS +=		EOPENSSL_LIB
 
 # uses a wide range of OpenSSL API and only really supports boring/openssl
 LIB_DEPENDS +=		archivers/brotli \
-			devel/libuv \
+			devel/libuv>=1.51.0p0 \
 			net/libcares \
 			security/openssl/${OPENSSL_VSN} \
 			textproc/icu4c \
