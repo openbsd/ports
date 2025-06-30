@@ -1,0 +1,24 @@
+include/Iir.h
+include/iir/
+include/iir/Biquad.h
+include/iir/Butterworth.h
+include/iir/Cascade.h
+include/iir/ChebyshevI.h
+include/iir/ChebyshevII.h
+include/iir/Common.h
+include/iir/Custom.h
+include/iir/Layout.h
+include/iir/MathSupplement.h
+include/iir/PoleFilter.h
+include/iir/RBJ.h
+include/iir/State.h
+include/iir/Types.h
+lib/cmake/
+lib/cmake/iir/
+lib/cmake/iir/iirConfig.cmake
+lib/cmake/iir/iirConfigVersion.cmake
+lib/cmake/iir/iirTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/iir/iirTargets.cmake
+@lib lib/libiir.so.${LIBiir_VERSION}
+@static-lib lib/libiir_static.a
+lib/pkgconfig/iir.pc
