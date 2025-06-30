@@ -1,6 +1,7 @@
 COMMENT-main =	multimedia transformations framework
 COMMENT-gpl2 =	GPLv2-licensed modules for mlt
 V =		7.32.0
+REVISION =	0
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}
@@ -25,7 +26,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 X11 avcodec avdevice avfilter
 WANTLIB-main += avformat avutil c ebur128 exif fftw3 fontconfig freetype
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 harfbuzz intl jack
-WANTLIB-main += m pango-1.0 pangoft2-1.0 sox swresample swscale vorbis
+WANTLIB-main += m pango-1.0 pangoft2-1.0 sox_ng swresample swscale vorbis
 WANTLIB-main += vorbisfile xml2
 
 WANTLIB-gpl2 += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Svg Qt5Widgets

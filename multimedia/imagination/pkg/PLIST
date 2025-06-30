@@ -1,20 +1,20 @@
 @bin bin/imagination
 lib/imagination/
-lib/imagination/bar_wipe.so
-lib/imagination/barn_door_wipe.so
-lib/imagination/bow_tie_wipe.so
-lib/imagination/box_wipe.so
-lib/imagination/clock_wipe.so
-lib/imagination/diagonal_wipe.so
-lib/imagination/ellipse_wipe.so
-lib/imagination/four_box_wipe.so
-lib/imagination/insert.so
-lib/imagination/misc.so
-lib/imagination/misc_diagonal_wipe.so
-lib/imagination/misc_shape_wipe.so
-lib/imagination/push_wipe.so
-lib/imagination/rochade.so
-lib/imagination/wave.so
+@so lib/imagination/bar_wipe.so
+@so lib/imagination/barn_door_wipe.so
+@so lib/imagination/bow_tie_wipe.so
+@so lib/imagination/box_wipe.so
+@so lib/imagination/clock_wipe.so
+@so lib/imagination/diagonal_wipe.so
+@so lib/imagination/ellipse_wipe.so
+@so lib/imagination/four_box_wipe.so
+@so lib/imagination/insert.so
+@so lib/imagination/misc.so
+@so lib/imagination/misc_diagonal_wipe.so
+@so lib/imagination/misc_shape_wipe.so
+@so lib/imagination/push_wipe.so
+@so lib/imagination/rochade.so
+@so lib/imagination/wave.so
 share/applications/imagination.desktop
 share/icons/hicolor/16x16/apps/imagination.png
 share/icons/hicolor/24x24/apps/imagination.png
