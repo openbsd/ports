@@ -2,18 +2,33 @@
 @pkgpath audio/sox,mp3,vorbis
 @pkgpath audio/sox,vorbis
 bin/play
+bin/play_ng
 bin/rec
-@bin bin/sox
+bin/rec_ng
+bin/sox
+@bin bin/sox_ng
 bin/soxi
+bin/soxi_ng
 include/sox.h
+include/sox_ng.h
 @static-lib lib/libsox.a
 lib/libsox.la
-@lib lib/libsox.so.${LIBsox_VERSION}
+@static-lib lib/libsox_ng.a
+lib/libsox_ng.la
+@lib lib/libsox_ng.so.${LIBsox_ng_VERSION}
 lib/pkgconfig/sox.pc
+lib/pkgconfig/sox_ng.pc
 @man man/man1/play.1
+@man man/man1/play_ng.1
 @man man/man1/rec.1
+@man man/man1/rec_ng.1
 @man man/man1/sox.1
+@man man/man1/sox_ng.1
 @man man/man1/soxi.1
+@man man/man1/soxi_ng.1
 @man man/man3/libsox.3
+@man man/man3/libsox_ng.3
 @man man/man7/soxeffect.7
+@man man/man7/soxeffect_ng.7
 @man man/man7/soxformat.7
+@man man/man7/soxformat_ng.7

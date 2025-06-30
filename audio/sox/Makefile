@@ -1,11 +1,9 @@
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-V=		14.4.2pl20210509
-# see AC_INIT in ${WRKSRC}/configure.ac
-GIT_V=		14.4.3git
-DISTNAME=	sox-${V}
-SHARED_LIBS +=	sox 4.1 # 3.0
-REVISION=	2
+V=		14.4.4
+DISTNAME=	sox_ng-${V}
+PKGNAME=	sox-${V}
+SHARED_LIBS +=  sox_ng                    0.0 # 3.0
 
 CATEGORIES=	audio
 HOMEPAGE=	https://sox.sourceforge.net/
@@ -14,18 +12,13 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m z sndio
-WANTLIB += FLAC gsm mad id3tag mp3lame ogg
+WANTLIB += c crypto m pthread sndio z
+WANTLIB += FLAC gsm mad mpg123 id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
-WANTLIB += opusfile twolame wavpack
+WANTLIB += opus opusfile twolame wavpack
 WANTLIB += png
 
-GITWEB_URL=	https://sourceforge.net/code-snapshots/git
-GIT_COMMIT=	42b3557e13e0fe01a83465b672d89faddbe65f49
-
-# mirror git checkout as tarball for latest fixes until new release.
-# see dist: target and `make dist' to generate tarball.
-SITES=		https://messagemode2.com/source/
+SITES=		https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-$V/
 
 # see CONFIGURE_ARGS below
 LIB_DEPENDS=			\
@@ -45,10 +38,12 @@ LIB_DEPENDS=			\
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--datarootdir=${LOCALBASE}      \
 	--enable-largefile			\
+	--enable-replace			\
 	--enable-symlinks			\
 	--without-libltdl			\
 	--disable-openmp			\
-	--with-distro=OpenBSD
+	--with-distro=OpenBSD			\
+	--without-sunaudio
 
 # Sound drivers
 CONFIGURE_ARGS+=		\
@@ -56,7 +51,7 @@ CONFIGURE_ARGS+=		\
 	--disable-oss		\
 	--disable-alsa		\
 	--disable-coreaudio	\
-	--disable-pulseaudio	\
+	--without-pulseaudio	\
 	--disable-waveaudio	\
 	--disable-sunaudio	\
 	--enable-sndio
@@ -85,33 +80,13 @@ CONFIGURE_ARGS+=			\
 	--without-ladspa
 
 CONFIGURE_ENV= \
-	CPPFLAGS="-I${LOCALBASE}/include" \
+	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/opus" \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
-# requires: autoconf-2.69, automake-1.16, devel/libtool, textproc/groff and
-# devel/autoconf-archive
-dist:
-	ftp -o /tmp/sox-code-${GIT_COMMIT}.zip \
-		${GITWEB_URL}/s/so/sox/code.git/sox-code-${GIT_COMMIT}.zip; \
-	t=`mktemp -d /tmp/sox.XXXXXXXXXX`; \
-	f=$$t/sox-code-${GIT_COMMIT}/${DISTNAME}.tar.gz; \
-	ac_v=2.69; \
-	am_v=1.16; \
-	cd $$t; \
-	unzip /tmp/sox-code-${GIT_COMMIT}.zip; \
-	cd sox-code-${GIT_COMMIT}; \
-	echo "EXTRA_DIST += libsox.sym" >> ./src/Makefile.am; \
-	sed -ie "s/${GIT_V}/${V}/g" ./configure.ac; \
-	env -i AUTOCONF_VERSION=$$ac_v AUTOMAKE_VERSION=$$am_v \
-		autoreconf-$$ac_v -i && \
-		./configure &&  \
-		${MAKE_PROGRAM} dist; \
-	scp $$f train:source/; \
-	cd -; rm -rf $$t; rm -f /tmp/sox-code-${GIT_COMMIT}.zip;
+post-install:
+	rm -f ${PREFIX}/lib/libsox.so
 
 do-test:
-	@cd ${WRKSRC}/src && ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		-f ${MAKE_FILE} extras
 	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
 
 .include <bsd.port.mk>
