@@ -1,13 +1,10 @@
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-VERSION =		5.6.0
+VERSION =		5.8.1
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
-REVISION =		0
 
 HOMEPAGE =		http://www.wavpack.com/
-
-MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 SHARED_LIBS +=		wavpack		0.3	# 3.1
 
