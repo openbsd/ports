@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT =	create type safe go from SQL
 
 MODGO_MODNAME =	github.com/sqlc-dev/sqlc
-MODGO_VERSION =	v1.24.0
+MODGO_VERSION =	v1.29.0
 HOMEPAGE =	https://sqlc.dev/
 PORTROACH =	site:https://github.com/sqlc-dev/sqlc/releases/
 
