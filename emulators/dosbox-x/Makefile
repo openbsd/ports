@@ -2,10 +2,9 @@ BROKEN-sparc64= error:union MMX_reg has no member named uwa
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
-VERSION=	2024.03.01
-DISTNAME=	dosbox-x-v${VERSION}
-PKGNAME=	dosbox-x-${VERSION}
-REVISION=	0
+VERSION=	2025.05.03
+DISTNAME=	dosbox-x-${VERSION}
+
 CATEGORIES=	games x11 emulators
 
 GH_ACCOUNT=	joncampbell123
@@ -61,9 +60,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/README.debugger ${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/README.joystick ${PREFIX}/share/doc/dosbox
-	${INSTALL_DATA} ${WRKSRC}/README.keyboard-layout-handling ${PREFIX}/share/doc/dosbox
+	${INSTALL_DATA} ${WRKSRC}/README.keyboard-layout-handling \
+		${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/dosbox
-	${INSTALL_DATA} ${WRKSRC}/README.source-code-description ${PREFIX}/share/doc/dosbox
+	${INSTALL_DATA} ${WRKSRC}/README.source-code-description \
+		${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/README.video ${PREFIX}/share/doc/dosbox
 	${INSTALL_DATA} ${WRKSRC}/README.xbrz ${PREFIX}/share/doc/dosbox
 
