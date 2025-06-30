@@ -63,6 +63,7 @@
      SUBDIR += hydrogen
      SUBDIR += id3ed
      SUBDIR += id3lib
+     SUBDIR += iir1
      SUBDIR += jack
      SUBDIR += keyfinder-cli
      SUBDIR += ladspa
