@@ -1,6 +1,6 @@
 COMMENT =	GIS WMTS/TMS tile caching server
 
-MODPY_DISTV =	4.1.2
+MODPY_DISTV =	5.0.0
 DISTNAME =		mapproxy-${MODPY_DISTV}
 
 CATEGORIES =	geo www
