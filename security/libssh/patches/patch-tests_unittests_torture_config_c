@@ -3,6 +3,7 @@ getpwuid() is unmapped by the getpwnam() call in ssh_path_expand_tilde()
 so later accesses result in segfaults.
 
 https://gitlab.com/libssh/libssh-mirror/-/merge_requests/628
+https://gitlab.com/libssh/libssh-mirror/-/commit/ccb8cf88c8e6078c536e7beb4f461ed19d197c31
 
 Index: tests/unittests/torture_config.c
 --- tests/unittests/torture_config.c.orig
