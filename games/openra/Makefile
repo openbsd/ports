@@ -1,6 +1,6 @@
 COMMENT =		open-source real-time strategy game engine
 V =			20210321
-REVISION =		1
+REVISION =		2
 DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net

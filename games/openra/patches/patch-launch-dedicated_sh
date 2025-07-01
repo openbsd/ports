@@ -6,7 +6,7 @@ Index: launch-dedicated.sh
  
  while true; do
 -     mono --debug bin/OpenRA.Server.exe Engine.EngineDir=".." Game.Mod="$Mod" \
-+     mono --debug ${PREFIX}/share/openra/OpenRA.Server.exe Engine.EngineDir=".." Game.Mod="$Mod" \
++     mono --debug ${PREFIX}/share/openra/OpenRA.Server.exe Game.Mod="$Mod" \
       Server.Name="$Name" \
       Server.ListenPort="$ListenPort" \
       Server.AdvertiseOnline="$AdvertiseOnline" \
