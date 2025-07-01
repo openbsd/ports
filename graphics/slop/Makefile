@@ -4,9 +4,7 @@ ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	slop
-GH_TAGNAME =	v7.6
-
-REVISION =	0
+GH_TAGNAME =	v7.7
 
 COMMENT =	query for a selection and print to stdout (select operation)
 CATEGORIES =	graphics x11
