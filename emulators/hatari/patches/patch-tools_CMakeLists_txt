@@ -5,7 +5,7 @@ missing.
 Index: tools/CMakeLists.txt
 --- tools/CMakeLists.txt.orig
 +++ tools/CMakeLists.txt
-@@ -9,7 +9,6 @@ endif(PYTHONINTERP_FOUND)
+@@ -9,7 +9,6 @@ endif(Python_Interpreter_FOUND)
  
  install(PROGRAMS atari-convert-dir.py DESTINATION ${BINDIR} RENAME atari-convert-dir)
  install(PROGRAMS hatari-prg-args.sh DESTINATION ${BINDIR} RENAME hatari-prg-args)

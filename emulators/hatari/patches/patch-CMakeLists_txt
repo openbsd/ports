@@ -4,7 +4,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -155,11 +155,6 @@ if(CapsImage_FOUND)
+@@ -150,11 +150,6 @@ if(CapsImage_FOUND)
  	set(HAVE_CAPSIMAGE 1)
  endif(CapsImage_FOUND)
  
@@ -16,13 +16,13 @@ Index: CMakeLists.txt
  find_package(Capstone)
  if(Capstone_FOUND)
  	set(CMAKE_REQUIRED_INCLUDES ${CAPSTONE_INCLUDE_DIR})
-@@ -372,22 +367,6 @@ if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
+@@ -378,22 +373,6 @@ if(Python_Interpreter_FOUND AND Python_VERSION_MAJOR L
  	message("Note: Hatari needs at least Python 3 ... ignoring older version")
- 	unset(PYTHONINTERP_FOUND)
+ 	unset(Python_Interpreter_FOUND)
  endif()
 -set(PYTHON_GTK_FOUND 0)
--if(PYTHONINTERP_FOUND)
--	execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "\
+-if(Python_Interpreter_FOUND)
+-	execute_process(COMMAND ${Python_EXECUTABLE} -c "\
 -import gi\n\
 -gi.require_version('Gtk', '3.0')\n\
 -from gi.repository import Gtk\n\
@@ -35,7 +35,7 @@ Index: CMakeLists.txt
 -		set(PYTHON_GTK_FOUND 1)
 -		add_subdirectory(python-ui)
 -	endif()
--endif(PYTHONINTERP_FOUND)
+-endif(Python_Interpreter_FOUND)
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)

@@ -2,14 +2,12 @@ ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		2.5.0
-DISTNAME =	hatari-${V}
+DISTNAME =	hatari-2.6.0
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
 
 CATEGORIES =	emulators
 
-HOMEPAGE =	https://hatari.tuxfamily.org/
+HOMEPAGE =	https://www.hatari-emu.org/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -19,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ICE SDL2 SM X11 Xext c capstone m png portmidi readline
 WANTLIB += z
 
-SITES =		https://download.tuxfamily.org/hatari/$V/
+SITES =		https://framagit.org/hatari/releases/-/raw/main/v2.6/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
