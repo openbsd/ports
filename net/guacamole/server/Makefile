@@ -1,4 +1,8 @@
 # 1.5.4 needs posix timers
+# 1.6.0 drops that again, but forked server exits on connect
+# for some reason (nothing in debug logs); possibly related to patches
+# dropping pthread_rwlockattr_setpshared(..., PTHREAD_PROCESS_SHARED)
+# that we don't support
 V=		1.5.3
 
 SITES=		${SITE_APACHE:=guacamole/$V/source/}
