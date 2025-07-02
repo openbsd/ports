@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.15.4
+V =			5.16.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -60,10 +60,6 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/tl-expected \
 			net/tdlib/tde2e
 
-# libtgvoip got disabled in 5.14.0, so Opus is no longer linked, but configure
-# still picks it up.
-BUILD_DEPENDS +=	audio/opus
-
 LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
 			audio/rnnoise \
@@ -97,8 +93,7 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
 
 # disable unported/unwanted components
-CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
-			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
 
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
