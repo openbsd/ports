@@ -1,8 +1,8 @@
 Index: components/signin/public/base/signin_switches.h
 --- components/signin/public/base/signin_switches.h.orig
 +++ components/signin/public/base/signin_switches.h
-@@ -55,7 +55,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kUseHostedDomainForManagementCheckOnSignin);
+@@ -58,7 +58,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kFullscreenSignInPromoUseDate);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

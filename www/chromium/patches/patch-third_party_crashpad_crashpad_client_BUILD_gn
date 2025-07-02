@@ -1,7 +1,7 @@
 Index: third_party/crashpad/crashpad/client/BUILD.gn
 --- third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -134,6 +134,13 @@ static_library("common") {
+@@ -148,6 +148,13 @@ static_library("common") {
    if (crashpad_is_win) {
      sources += [ "crash_report_database_win.cc" ]
    }

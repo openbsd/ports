@@ -10,7 +10,7 @@ Index: chrome/browser/net/system_network_context_manager.h
    class GssapiLibraryLoadObserver
        : public network::mojom::GssapiLibraryLoadObserver {
     public:
-@@ -279,7 +279,7 @@ class SystemNetworkContextManager {
+@@ -281,7 +281,7 @@ class SystemNetworkContextManager {
    std::unique_ptr<NetworkAnnotationMonitor> network_annotation_monitor_;
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

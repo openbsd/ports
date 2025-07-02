@@ -1,7 +1,7 @@
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -126,7 +126,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+@@ -129,7 +129,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kWaylandSessionManagement);
  #endif  // BUILDFLAG(IS_OZONE)
  
