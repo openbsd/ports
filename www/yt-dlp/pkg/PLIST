@@ -920,8 +920,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}japand
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}japandiet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jeuxvideo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jeuxvideo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jiocinema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jiocinema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jiosaavn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jiosaavn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}jixie.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1596,6 +1594,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sample
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}samplefocus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sapo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sapo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sauceplus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sauceplus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sbs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sbs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}sbscokr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2573,7 +2573,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/izlesene.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/jamendo.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/japandiet.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/jeuxvideo.py
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/jiocinema.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/jiosaavn.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/jixie.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/joj.py
@@ -2911,6 +2910,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/safari.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/saitosan.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/samplefocus.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/sapo.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/sauceplus.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/sbs.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/sbscokr.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/screen9.py
