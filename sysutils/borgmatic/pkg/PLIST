@@ -164,6 +164,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}recreate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}recreate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rename.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rename.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}repo_create.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}repo_create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}repo_delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -201,6 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/passcommand.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/pattern.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/prune.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/recreate.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/rename.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/repo_create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/repo_delete.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/repo_info.py
