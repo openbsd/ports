@@ -66,7 +66,7 @@ MODGO_MODULES =	\
 	github.com/cloudflare/cfssl							 v0.0.0-20180223231731-4e2dcbde5004 \
 	github.com/cncf/xds/go								 v0.0.0-20250326154945-ae57f3c0d45f \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.6.5 \
+	github.com/compose-spec/compose-go/v2						 v2.7.1 \
 	github.com/containerd/accelerated-container-image				 v1.3.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
 	github.com/containerd/cgroups/v3						 v3.0.5 \
@@ -105,10 +105,10 @@ MODGO_MODULES =	\
 	github.com/distribution/reference						 v0.6.0 \
 	github.com/dlclark/regexp2							 v1.11.0 \
 	github.com/docker/buildx							 v0.25.0 \
-	github.com/docker/cli								 v28.2.2+incompatible \
+	github.com/docker/cli								 v28.3.0+incompatible \
 	github.com/docker/cli-docs-tool							 v0.10.0 \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v28.2.2+incompatible \
+	github.com/docker/docker							 v28.3.0+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.9.3 \
 	github.com/docker/go								 v1.5.1-1.0.20160303222718-d30aec9fd63c \
 	github.com/docker/go-connections						 v0.5.0 \
@@ -419,7 +419,9 @@ MODGO_MODFILES =	\
 	github.com/creack/pty						 v1.1.9 \
 	github.com/davecgh/go-spew					 v1.1.0 \
 	github.com/distribution/reference				 v0.5.0 \
+	github.com/docker/cli						 v28.2.2+incompatible \
 	github.com/docker/distribution					 v2.7.1+incompatible \
+	github.com/docker/docker					 v28.2.2+incompatible \
 	github.com/docker/go-connections				 v0.4.0 \
 	github.com/docker/go-metrics					 v0.0.0-20180209012529-399ea8c73916 \
 	github.com/fsnotify/fsnotify					 v1.4.7 \
