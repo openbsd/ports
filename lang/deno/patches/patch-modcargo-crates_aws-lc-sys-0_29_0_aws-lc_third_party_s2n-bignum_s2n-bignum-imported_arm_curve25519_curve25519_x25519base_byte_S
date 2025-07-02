@@ -1,4 +1,4 @@
-Enable read-only section
+Fix XONLY
 
 Index: modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/arm/curve25519/curve25519_x25519base_byte.S
 --- modcargo-crates/aws-lc-sys-0.29.0/aws-lc/third_party/s2n-bignum/s2n-bignum-imported/arm/curve25519/curve25519_x25519base_byte.S.orig

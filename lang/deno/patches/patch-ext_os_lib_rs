@@ -1,7 +1,7 @@
 Index: ext/os/lib.rs
 --- ext/os/lib.rs.orig
 +++ ext/os/lib.rs
-@@ -3,6 +3,7 @@
+@@ -3,10 +3,10 @@
  use std::collections::HashMap;
  use std::collections::HashSet;
  use std::env;
@@ -9,13 +9,17 @@ Index: ext/os/lib.rs
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
  use std::sync::Arc;
-@@ -116,7 +117,8 @@ pub enum OsError {
- #[op2(stack_trace)]
+-
+ use deno_core::op2;
+ use deno_core::v8;
+ use deno_core::OpState;
+@@ -116,7 +116,8 @@ pub enum OsError {
+ #[op2]
  #[string]
- fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {
+ fn op_exec_path() -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
 +  let current_exe
 +    = env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
-   state
-     .borrow_mut::<PermissionsContainer>()
-     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
+   // normalize path so it doesn't include '.' or '..' components
+   let path = normalize_path(current_exe);
+ 
