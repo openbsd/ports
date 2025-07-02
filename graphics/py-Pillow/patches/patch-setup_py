@@ -1,9 +1,10 @@
 hunk 1: allow finding X libs
 
 hunk 2: find_library_file (which comes from distutils via setuptools)
-doesn't search for .so.X.Y extensions, only .so or .a, so is unable to
-locate libtiff since graphics/tiff stopped building the static library.
-patch to workaround.
+has a hardcoded 'shared_lib_extension = ".so"' and only searches for the
+full filename, so it misses OpenBSD-style libfoo.so.X.Y unless there's
+also a static library with a matching name (but that was removed in an
+update of graphics/tiff). Patch to workaround.
 
 Index: setup.py
 --- setup.py.orig
