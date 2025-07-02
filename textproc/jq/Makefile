@@ -1,6 +1,6 @@
 COMMENT =		lightweight and flexible command-line JSON processor
 
-V =			1.8.0
+V =			1.8.1
 DISTNAME =		jq-$V
 
 SHARED_LIBS +=	jq                        2.2 # 1.4
