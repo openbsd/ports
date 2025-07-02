@@ -1,7 +1,7 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-PKGNAME=	rdapper-1.13
+PKGNAME=	rdapper-1.14
 DISTNAME=	App-${PKGNAME}
 CATEGORIES=	net
 PKG_ARCH=	*
@@ -10,6 +10,7 @@ PKG_ARCH=	*
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	converters/p5-JSON \
+		converters/p5-Net-IDN-Encode \
 		net/p5-Net-ASN \
 		net/p5-Net-DNS \
 		net/p5-Net-IP \
