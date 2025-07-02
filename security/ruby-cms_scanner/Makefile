@@ -8,7 +8,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-
 MODULES =	lang/ruby
 WANTLIB =	crypto ssl ${MODRUBY_WANTLIB}
 NO_TEST =	Yes

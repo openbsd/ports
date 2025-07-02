@@ -5,7 +5,7 @@ Remove pessimistic version restriction on nokogiri dependency.
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -170,7 +170,7 @@ dependencies:
+@@ -176,7 +176,7 @@ dependencies:
      - - "<"
        - !ruby/object:Gem::Version
          version: 1.4.0
