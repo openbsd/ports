@@ -27,12 +27,14 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_element_description.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_element_description.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_entity_lookup.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_entity_lookup.o
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_parser.c
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_parser.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_parser_context.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_parser_context.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_push_parser.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html4_sax_push_parser.o
-${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/libxml2_backwards_compat.c
-${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/libxml2_backwards_compat.o
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/libxml2_polyfill.c
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/libxml2_polyfill.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/nokogiri.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/nokogiri.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/nokogiri.o
@@ -176,6 +178,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/parser.y
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/parser_extras.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/selector_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/tokenizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/tokenizer.rex
@@ -201,6 +204,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/parser_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/push_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/document.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/document_fragment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/node.rb
@@ -265,10 +269,10 @@ ${GEM_LIB}/gems/${DISTNAME}/patches/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Remove-script-macro-support.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Update-entities-to-remove-handling-of-ssi.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-libxml2.la-is-in-top_builddir.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0009-allow-wildcard-namespaces.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0010-update-config.guess-and-config.sub-for-libxml2.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0011-rip-out-libxml2-s-libc_single_threaded-support.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0019-xpath-Use-separate-static-hash-table-for-standard-fu.patch
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0001-update-config.guess-and-config.sub-for-libxslt.patch
 ${GEM_LIB}/gems/${DISTNAME}/ports/

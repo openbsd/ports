@@ -1,11 +1,10 @@
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.16.5
-REVISION=		0
+DISTNAME=		nokogiri-1.18.8
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://nokogiri.org/
+HOMEPAGE=		https://nokogiri.org/
 
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
