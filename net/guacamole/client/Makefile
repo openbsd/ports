@@ -2,6 +2,9 @@ SITES=		${SITE_APACHE:=guacamole/$V/binary/}
 DISTNAME=	guacamole-$V
 DISTFILES=	guacamole-$V.war
 
+# unlikely to move to v10 until at least 2.0.0 (major API changes)
+RUN_DEPENDS=	www/tomcat/v9
+
 COMMENT-main=	clientless remote desktop gateway, web application
 COMMENT-duo=	Guacamole extension for Duo authentication
 COMMENT-header=	Guacamole extension for HTTP header authentication
@@ -36,8 +39,6 @@ SITES.multi=	https://
 DISTFILES.multi+= {${liburl}/}${libjar}${libver}.jar
 LIBS+=		${libjar}${libver}.jar ${libjar}.jar
 .endfor
-
-RUN_DEPENDS=	www/tomcat/v9
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

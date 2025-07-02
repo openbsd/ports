@@ -14,6 +14,7 @@ share/doc/guacamole-auth-jdbc/mysql/schema/upgrade/upgrade-pre-0.9.7.sql
 share/doc/guacamole-auth-jdbc/mysql/schema/upgrade/upgrade-pre-0.9.8.sql
 share/doc/guacamole-auth-jdbc/mysql/schema/upgrade/upgrade-pre-0.9.9.sql
 share/doc/guacamole-auth-jdbc/mysql/schema/upgrade/upgrade-pre-1.0.0.sql
+share/doc/guacamole-auth-jdbc/mysql/schema/upgrade/upgrade-pre-1.6.0.sql
 share/doc/guacamole-auth-jdbc/postgresql/
 share/doc/guacamole-auth-jdbc/postgresql/schema/
 share/doc/guacamole-auth-jdbc/postgresql/schema/001-create-schema.sql
@@ -27,12 +28,14 @@ share/doc/guacamole-auth-jdbc/postgresql/schema/upgrade/upgrade-pre-0.9.7.sql
 share/doc/guacamole-auth-jdbc/postgresql/schema/upgrade/upgrade-pre-0.9.8.sql
 share/doc/guacamole-auth-jdbc/postgresql/schema/upgrade/upgrade-pre-0.9.9.sql
 share/doc/guacamole-auth-jdbc/postgresql/schema/upgrade/upgrade-pre-1.0.0.sql
+share/doc/guacamole-auth-jdbc/postgresql/schema/upgrade/upgrade-pre-1.6.0.sql
 share/doc/guacamole-auth-jdbc/sqlserver/
 share/doc/guacamole-auth-jdbc/sqlserver/schema/
 share/doc/guacamole-auth-jdbc/sqlserver/schema/001-create-schema.sql
 share/doc/guacamole-auth-jdbc/sqlserver/schema/002-create-admin-user.sql
 share/doc/guacamole-auth-jdbc/sqlserver/schema/upgrade/
 share/doc/guacamole-auth-jdbc/sqlserver/schema/upgrade/upgrade-pre-1.0.0.sql
+share/doc/guacamole-auth-jdbc/sqlserver/schema/upgrade/upgrade-pre-1.6.0.sql
 share/guacamole/extensions/
 share/guacamole/extensions/guacamole-auth-jdbc-mysql.jar
 share/guacamole/extensions/guacamole-auth-jdbc-postgresql.jar
