@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			137.0.7151.119
+V=			138.0.7204.96
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -255,7 +255,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
 		enable_nacl=false \
-		enable_reading_list=false \
 		enable_remoting=false \
 		enable_reporting=false \
 		enable_service_discovery=false \

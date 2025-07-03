@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/core/paint/paint_layer.cc
 --- third_party/blink/renderer/core/paint/paint_layer.cc.orig
 +++ third_party/blink/renderer/core/paint/paint_layer.cc
-@@ -124,7 +124,7 @@ namespace blink {
+@@ -125,7 +125,7 @@ namespace blink {
  
  namespace {
  

@@ -1,7 +1,7 @@
 Index: components/signin/public/base/signin_switches.cc
 --- components/signin/public/base/signin_switches.cc.orig
 +++ components/signin/public/base/signin_switches.cc
-@@ -61,7 +61,7 @@ BASE_FEATURE(kUseHostedDomainForManagementCheckOnSigni
+@@ -63,7 +63,7 @@ BASE_FEATURE(kFullscreenSignInPromoUseDate,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

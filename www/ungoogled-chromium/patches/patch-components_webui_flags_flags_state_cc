@@ -1,7 +1,7 @@
 Index: components/webui/flags/flags_state.cc
 --- components/webui/flags/flags_state.cc.orig
 +++ components/webui/flags/flags_state.cc
-@@ -792,7 +792,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+@@ -791,7 +791,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsWin;
  #elif BUILDFLAG(IS_CHROMEOS)
    return kOsCrOS;

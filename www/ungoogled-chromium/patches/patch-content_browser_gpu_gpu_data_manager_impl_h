@@ -8,5 +8,5 @@ Index: content/browser/gpu/gpu_data_manager_impl.h
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    bool IsGpuMemoryBufferNV12Supported();
-   void SetGpuMemoryBufferNV12Supported(bool supported);
  #endif  // BUILDFLAG(IS_LINUX)
+ 

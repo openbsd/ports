@@ -1,7 +1,7 @@
 Index: chrome/browser/regional_capabilities/regional_capabilities_service_client.cc
 --- chrome/browser/regional_capabilities/regional_capabilities_service_client.cc.orig
 +++ chrome/browser/regional_capabilities/regional_capabilities_service_client.cc
-@@ -107,7 +107,7 @@ void RegionalCapabilitiesServiceClient::FetchCountryId
+@@ -133,7 +133,7 @@ void RegionalCapabilitiesServiceClient::FetchCountryId
        base::android::AttachCurrentThread(),
        reinterpret_cast<intptr_t>(heap_callback.release()));
  }

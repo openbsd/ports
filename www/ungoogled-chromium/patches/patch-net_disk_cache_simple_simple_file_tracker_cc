@@ -1,7 +1,7 @@
 Index: net/disk_cache/simple/simple_file_tracker.cc
 --- net/disk_cache/simple/simple_file_tracker.cc.orig
 +++ net/disk_cache/simple/simple_file_tracker.cc
-@@ -37,7 +37,17 @@ bool SimpleFileTracker::TrackedFiles::InLRUList() cons
+@@ -36,7 +36,17 @@ bool SimpleFileTracker::TrackedFiles::InLRUList() cons
  }
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)

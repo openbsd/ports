@@ -1,7 +1,7 @@
 Index: chrome/browser/new_tab_page/new_tab_page_util.cc
 --- chrome/browser/new_tab_page/new_tab_page_util.cc.orig
 +++ chrome/browser/new_tab_page/new_tab_page_util.cc
-@@ -28,7 +28,7 @@ bool IsOsSupportedForCart() {
+@@ -29,7 +29,7 @@ bool IsOsSupportedForCart() {
  }
  
  bool IsOsSupportedForDrive() {
