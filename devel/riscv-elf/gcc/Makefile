@@ -6,7 +6,7 @@ COMMENT=	gcc for riscv-elf cross-development
 VERSION=	12.2.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SUBST_VARS+=	VERSION
 
