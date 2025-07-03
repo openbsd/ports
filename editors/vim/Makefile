@@ -2,7 +2,7 @@ COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 V=		9.1.1478
-REVISION=	1
+REVISION=	2
 
 DIST_TUPLE=	\
 	github vim vim v$V . \
@@ -58,6 +58,7 @@ MAKE_FLAGS+= STRIP=:
 .if ${FLAVOR:Mlua}
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.3
+MODLUA_SA=	Yes
 CONFIGURE_ENV+=	vi_cv_path_plain_lua=${MODLUA_BIN}
 CONFIGURE_ARGS+= --enable-luainterp \
 		--with-lua-prefix=${LOCALBASE}
