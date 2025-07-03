@@ -641,7 +641,6 @@ lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_directory.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_env.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_ets_queue.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_file.beam
-lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_file_handle.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_flru.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_leaderboard.beam
 lib/rabbitmq/plugins/${RABBIT_RA}/ebin/ra_lib.beam
@@ -875,6 +874,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ssl.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_coordinator.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_sac_coordinator.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_sac_coordinator_v4.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sysmon_handler.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sysmon_minder.beam
@@ -1326,6 +1326,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/prefs.js
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/sammy-0.7.6.js
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/sammy-0.7.6.min.js
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/theme-switcher.js
+lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/title.js
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/404.ejs
 lib/rabbitmq/plugins/rabbitmq_management-${V}/priv/www/js/tmpl/add-binding.ejs
@@ -1611,6 +1612,7 @@ lib/rabbitmq/plugins/rabbitmq_stomp-${V}/priv/schema/
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/priv/schema/rabbitmq_stomp.schema
 lib/rabbitmq/plugins/rabbitmq_stream-${V}/
 lib/rabbitmq/plugins/rabbitmq_stream-${V}/ebin/
+lib/rabbitmq/plugins/rabbitmq_stream-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ActivateStreamConsumerCommand.beam
 lib/rabbitmq/plugins/rabbitmq_stream-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.AddSuperStreamCommand.beam
 lib/rabbitmq/plugins/rabbitmq_stream-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.DeleteSuperStreamCommand.beam
 lib/rabbitmq/plugins/rabbitmq_stream-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ListStreamConnectionsCommand.beam
