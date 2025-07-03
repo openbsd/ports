@@ -1,6 +1,6 @@
 COMMENT =	module signature file manipulation
 
-DISTNAME =	Module-Signature-0.92
+DISTNAME =	Module-Signature-0.93
 
 CATEGORIES =	security
 
@@ -28,7 +28,7 @@ PKG_ARCH =		*
 # together with the source.  It just ensures that the port works fine.
 GNUPGHOME =		${WRKDIR}/gnupg
 CONFIGURE_ENV =		GNUPGHOME=${GNUPGHOME}
-MAKE_ENV =		GNUPGHOME=${GNUPGHOME} TEST_SIGNATURE=0
+MAKE_ENV =		GNUPGHOME=${GNUPGHOME} TEST_SIGNATURE=1
 
 pre-configure:
 	mkdir -p -m 0700 -- ${GNUPGHOME}
