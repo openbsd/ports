@@ -1,0 +1,14 @@
+fix build with libc++ 19
+tools/eml2mbox.cpp:18:13: error: use of undeclared identifier 'time'
+
+Index: tools/eml2mbox.cpp
+--- tools/eml2mbox.cpp.orig
++++ tools/eml2mbox.cpp
+@@ -6,6 +6,7 @@
+ #include <cstdlib>
+ #include <cstring>
+ #include <memory>
++#include <time.h>
+ #include <libHX/io.h>
+ #include <libHX/scope.hpp>
+ #include <libHX/string.h>

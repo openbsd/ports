@@ -5,6 +5,7 @@ COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
 V=		2.46
+REVISION=	0
 
 # required for mime.types
 MAILCAP_V=	2-1-54
