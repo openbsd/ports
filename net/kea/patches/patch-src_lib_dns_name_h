@@ -1,0 +1,18 @@
+Fix build with libc++ 19.1.7
+https://github.com/isc-projects/kea/commit/d4878ebec89ed1f869940e67cff8f8fe657b2ee4
+
+/usr/include/c++/v1/string:820:42: error: implicit instantiation of undefined template 'std::char
+_traits<unsigned char>'
+
+Index: src/lib/dns/name.h
+--- src/lib/dns/name.h.orig
++++ src/lib/dns/name.h
+@@ -232,7 +232,7 @@ class Name {
+     //@{
+ private:
+     /// \brief Name data string
+-    typedef std::basic_string<uint8_t> NameString;
++    typedef std::vector<uint8_t> NameString;
+     /// \brief Name offsets type
+     typedef std::vector<uint8_t> NameOffsets;
+ 
