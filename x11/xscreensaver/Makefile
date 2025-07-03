@@ -8,7 +8,7 @@ COMMENT=	screen saver and locker for the X Window System
 #
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
-DISTNAME=	xscreensaver-6.10
+DISTNAME=	xscreensaver-6.11
 
 CATEGORIES=	x11
 
@@ -21,7 +21,7 @@ WANTLIB += EGL GL GLU ICE SM X11 Xext Xft Xi Xinerama Xrandr Xrender
 WANTLIB += Xt Xxf86vm atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 gle glib-2.0 gmodule-2.0 gobject-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pthread util xml2
+WANTLIB += pthread util wayland-client wayland-server xml2
 
 SITES=		${HOMEPAGE}
 
@@ -34,13 +34,15 @@ MODULES=	textproc/intltool
 RUN_DEPENDS=	devel/desktop-file-utils
 
 LIB_DEPENDS=	graphics/gle \
+		wayland/wayland \
 		x11/gtk+3
 
 # ${FILESDIR}/migrate-xscreensaver-config.sh needs xsltproc
 BUILD_DEPENDS+=	textproc/libxslt
 
 # see pre-configure
-BUILD_DEPENDS+=	devel/xdg-utils
+BUILD_DEPENDS+=	devel/xdg-utils \
+		wayland/wayland-protocols
 RUN_DEPENDS+=	devel/xdg-utils
 
 USE_GMAKE=	Yes
