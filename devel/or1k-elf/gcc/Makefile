@@ -5,6 +5,7 @@ COMMENT=	gcc for or1k-elf cross-development
 VERSION=	12.3.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	or1k-elf-gcc-${VERSION}
+REVISION=	0
 
 SUBST_VARS+=	VERSION
 
