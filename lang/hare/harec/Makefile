@@ -1,8 +1,6 @@
 DISTNAME =	harec-${V}
 DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
-REVISION =	0
-
 WANTLIB += c m
 
 # C11
@@ -25,6 +23,9 @@ CONFIGURE_ENV =		AS="gas"
 
 do-gen:
 	cp ${WRKSRC}/configs/openbsd.mk ${WRKSRC}/config.mk
+.if ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Mriscv64}
+	sed -i "s/x86_64/$$(arch -s)/g" ${WRKSRC}/config.mk
+.endif
 
 TEST_TARGET =	check
 
