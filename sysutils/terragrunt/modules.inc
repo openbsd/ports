@@ -256,7 +256,7 @@ MODGO_MODULES =	\
 	github.com/aws/aws-sdk-go-v2/service/lambda							 v1.69.0 \
 	github.com/aws/aws-sdk-go-v2/service/rds							 v1.91.0 \
 	github.com/aws/aws-sdk-go-v2/service/route53							 v1.46.2 \
-	github.com/aws/aws-sdk-go-v2/service/s3								 v1.81.0 \
+	github.com/aws/aws-sdk-go-v2/service/s3								 v1.82.0 \
 	github.com/aws/aws-sdk-go-v2/service/secretsmanager						 v1.34.6 \
 	github.com/aws/aws-sdk-go-v2/service/sns							 v1.33.6 \
 	github.com/aws/aws-sdk-go-v2/service/sqs							 v1.37.1 \
@@ -287,11 +287,11 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash									 v1.1.0 \
 	github.com/cespare/xxhash/v2									 v2.3.0 \
 	github.com/charmbracelet/bubbles								 v0.21.0 \
-	github.com/charmbracelet/bubbletea								 v1.3.4 \
+	github.com/charmbracelet/bubbletea								 v1.3.5 \
 	github.com/charmbracelet/colorprofile								 v0.3.0 \
 	github.com/charmbracelet/glamour								 v0.8.0 \
 	github.com/charmbracelet/harmonica								 v0.2.0 \
-	github.com/charmbracelet/lipgloss								 v1.1.0 \
+	github.com/charmbracelet/lipgloss								 v1.1.1-0.20250404203927-76690c660834 \
 	github.com/charmbracelet/x/ansi									 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf								 v0.0.13 \
 	github.com/charmbracelet/x/exp/golden								 v0.0.0-20241011142426-46044092ad91 \
@@ -429,7 +429,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/go-grpc-middleware							 v1.0.0 \
 	github.com/grpc-ecosystem/go-grpc-prometheus							 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway								 v1.16.0 \
-	github.com/grpc-ecosystem/grpc-gateway/v2							 v2.27.0 \
+	github.com/grpc-ecosystem/grpc-gateway/v2							 v2.27.1 \
 	github.com/gruntwork-io/boilerplate								 v0.6.3 \
 	github.com/gruntwork-io/go-commons								 v0.17.2 \
 	github.com/gruntwork-io/terragrunt-engine-go							 v0.0.15 \
@@ -638,6 +638,10 @@ MODGO_MODULES =	\
 	github.com/terraform-linters/tflint-plugin-sdk							 v0.22.0 \
 	github.com/terraform-linters/tflint-ruleset-terraform						 v0.10.0 \
 	github.com/texttheater/golang-levenshtein							 v1.0.1 \
+	github.com/tidwall/gjson									 v1.18.0 \
+	github.com/tidwall/match									 v1.1.1 \
+	github.com/tidwall/pretty									 v1.2.1 \
+	github.com/tidwall/sjson									 v1.2.5 \
 	github.com/tmc/grpc-websocket-proxy								 v0.0.0-20171017195756-830351dc03c6 \
 	github.com/tmccombs/hcl2json									 v0.6.4 \
 	github.com/tombuildsstuff/giovanni								 v0.15.1 \
@@ -654,6 +658,7 @@ MODGO_MODULES =	\
 	github.com/vmihailenco/msgpack/v5								 v5.4.1 \
 	github.com/vmihailenco/tagparser								 v0.1.1 \
 	github.com/vmihailenco/tagparser/v2								 v2.0.0 \
+	github.com/w!i2!l/jsondiff									 v0.7.0 \
 	github.com/wk8/go-ordered-map/v2								 v2.1.8 \
 	github.com/xanzy/ssh-agent									 v0.2.1 \
 	github.com/xeipuuv/gojsonpointer								 v0.0.0-20190905194746-02993c407bfb \
@@ -676,18 +681,18 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/contrib/detectors/gcp							 v1.36.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc			 v0.61.0 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp					 v0.61.0 \
-	go.opentelemetry.io/otel									 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc				 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp				 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace						 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc					 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp					 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric						 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/stdout/stdouttrace						 v1.36.0 \
-	go.opentelemetry.io/otel/metric									 v1.36.0 \
-	go.opentelemetry.io/otel/sdk									 v1.36.0 \
-	go.opentelemetry.io/otel/sdk/metric								 v1.36.0 \
-	go.opentelemetry.io/otel/trace									 v1.36.0 \
+	go.opentelemetry.io/otel									 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc				 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp				 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace						 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc					 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp					 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric						 v1.37.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdouttrace						 v1.37.0 \
+	go.opentelemetry.io/otel/metric									 v1.37.0 \
+	go.opentelemetry.io/otel/sdk									 v1.37.0 \
+	go.opentelemetry.io/otel/sdk/metric								 v1.37.0 \
+	go.opentelemetry.io/otel/trace									 v1.37.0 \
 	go.opentelemetry.io/proto/otlp									 v1.7.0 \
 	go.uber.org/atomic										 v1.3.2 \
 	go.uber.org/goleak										 v1.3.0 \
@@ -1527,9 +1532,11 @@ MODGO_MODFILES =	\
 	github.com/census-instrumentation/opencensus-proto					 v0.3.0 \
 	github.com/cespare/xxhash/v2								 v2.1.1 \
 	github.com/cespare/xxhash/v2								 v2.2.0 \
+	github.com/charmbracelet/bubbletea							 v1.3.4 \
 	github.com/charmbracelet/colorprofile							 v0.2.3-0.20250311203215-f60798e515dc \
 	github.com/charmbracelet/lipgloss							 v0.12.1 \
 	github.com/charmbracelet/lipgloss							 v1.0.0 \
+	github.com/charmbracelet/lipgloss							 v1.1.0 \
 	github.com/charmbracelet/x/ansi								 v0.1.4 \
 	github.com/charmbracelet/x/cellbuf							 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240715153702-9ba8adf781c4 \
@@ -1949,6 +1956,8 @@ MODGO_MODFILES =	\
 	github.com/terraform-linters/tflint-plugin-sdk						 v0.18.0 \
 	github.com/terraform-linters/tflint-plugin-sdk						 v0.21.0 \
 	github.com/terraform-linters/tflint-ruleset-terraform					 v0.5.0 \
+	github.com/tidwall/gjson								 v1.14.2 \
+	github.com/tidwall/pretty								 v1.2.0 \
 	github.com/tmccombs/hcl2json								 v0.3.3 \
 	github.com/ulikunitz/xz									 v0.5.10 \
 	github.com/ulikunitz/xz									 v0.5.8 \
@@ -2009,28 +2018,33 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel								 v1.31.0 \
 	go.opentelemetry.io/otel								 v1.32.0 \
 	go.opentelemetry.io/otel								 v1.35.0 \
+	go.opentelemetry.io/otel								 v1.36.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric					 v1.36.0 \
 	go.opentelemetry.io/otel/metric								 v1.22.0 \
 	go.opentelemetry.io/otel/metric								 v1.24.0 \
 	go.opentelemetry.io/otel/metric								 v1.29.0 \
 	go.opentelemetry.io/otel/metric								 v1.31.0 \
 	go.opentelemetry.io/otel/metric								 v1.35.0 \
+	go.opentelemetry.io/otel/metric								 v1.36.0 \
 	go.opentelemetry.io/otel/sdk								 v1.29.0 \
 	go.opentelemetry.io/otel/sdk								 v1.31.0 \
 	go.opentelemetry.io/otel/sdk								 v1.35.0 \
+	go.opentelemetry.io/otel/sdk								 v1.36.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.29.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.31.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.35.0 \
+	go.opentelemetry.io/otel/sdk/metric							 v1.36.0 \
 	go.opentelemetry.io/otel/trace								 v1.22.0 \
 	go.opentelemetry.io/otel/trace								 v1.24.0 \
 	go.opentelemetry.io/otel/trace								 v1.29.0 \
 	go.opentelemetry.io/otel/trace								 v1.31.0 \
 	go.opentelemetry.io/otel/trace								 v1.32.0 \
 	go.opentelemetry.io/otel/trace								 v1.35.0 \
+	go.opentelemetry.io/otel/trace								 v1.36.0 \
 	go.opentelemetry.io/proto/otlp								 v0.15.0 \
 	go.opentelemetry.io/proto/otlp								 v0.19.0 \
 	go.opentelemetry.io/proto/otlp								 v0.7.0 \
 	go.opentelemetry.io/proto/otlp								 v1.0.0 \
-	go.opentelemetry.io/proto/otlp								 v1.6.0 \
 	golang.org/x/crypto									 v0.0.0-20180904163835-0709b304e793 \
 	golang.org/x/crypto									 v0.0.0-20190219172222-a4c6cb3142f2 \
 	golang.org/x/crypto									 v0.0.0-20190222235706-ffb98f73852f \
@@ -2781,7 +2795,6 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250425173222-7b384671a197 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250505200425-f936aa4a68b2 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250512202823-5a2f75b736a9 \
-	google.golang.org/genproto/googleapis/api						 v0.0.0-20250519155744-55703ea1f237 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250528174236-200df99c418a \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20230711160842-782d3b101e98 \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20230822172742-b8732ec3820d \
