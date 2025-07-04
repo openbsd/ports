@@ -1,6 +1,10 @@
 ${GEM_BIN}/puma${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pumactl${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_EXTENSIONS_DIR}/gem_make.out
+${GEM_EXTENSIONS_DIR}/mkmf.log
+${GEM_EXTENSIONS_DIR}/puma/
+@so ${GEM_EXTENSIONS_DIR}/puma/puma_http11.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/History.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -18,9 +22,13 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/images/
 ${GEM_LIB}/gems/${DISTNAME}/docs/images/puma-connection-flow-no-reactor.png
 ${GEM_LIB}/gems/${DISTNAME}/docs/images/puma-connection-flow.png
 ${GEM_LIB}/gems/${DISTNAME}/docs/images/puma-general-arch.png
+${GEM_LIB}/gems/${DISTNAME}/docs/java_options.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/README.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/
+@rcscript ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/README.md
+@rcscript ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/puma
+@rcscript ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/puma.conf
 ${GEM_LIB}/gems/${DISTNAME}/docs/kubernetes.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/nginx.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/plugins.md
@@ -31,6 +39,32 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/stats.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/systemd.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/testing_benchmarks_local_files.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/testing_test_rackup_ci_files.md
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/.sitearchdir.-.puma.time
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/PumaHttp11Service.java
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/ext_help.h
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser.c
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser.h
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser.java.rl
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser.o
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser.rl
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/http11_parser_common.rl
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/mini_ssl.c
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/mini_ssl.o
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/no_ssl/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/no_ssl/PumaHttp11Service.java
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/jruby/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/jruby/puma/
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/jruby/puma/Http11.java
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/jruby/puma/Http11Parser.java
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/org/jruby/puma/MiniSSL.java
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/puma_http11.c
+${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/puma_http11.o
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/puma_http11/puma_http11.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma.rb
