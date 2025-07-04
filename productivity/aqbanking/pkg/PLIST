@@ -2,6 +2,7 @@
 bin/aqbanking-config
 @bin bin/aqebics-tool
 @bin bin/aqhbci-tool4
+@bin bin/aqofxconnect-tool
 @bin bin/aqpaypal-tool
 include/aqbanking6/
 include/aqbanking6/aqbanking/
@@ -56,13 +57,14 @@ lib/aqbanking/plugins/44/imexporters/xmldb.xml
 lib/aqbanking/plugins/44/imexporters/yellownet.xml
 lib/aqbanking/plugins/44/providers/
 lib/aqbanking/plugins/44/providers/aqebics.xml
+lib/aqbanking/plugins/44/providers/aqgivve.xml
 lib/aqbanking/plugins/44/providers/aqhbci.xml
 lib/aqbanking/plugins/44/providers/aqnone.xml
 lib/aqbanking/plugins/44/providers/aqofxconnect.xml
 lib/aqbanking/plugins/44/providers/aqpaypal.xml
-lib/cmake/aqbanking-6.5/
-lib/cmake/aqbanking-6.5/aqbanking-config-version.cmake
-lib/cmake/aqbanking-6.5/aqbanking-config.cmake
+lib/cmake/aqbanking-6.6/
+lib/cmake/aqbanking-6.6/aqbanking-config-version.cmake
+lib/cmake/aqbanking-6.6/aqbanking-config.cmake
 @static-lib lib/libaqbanking.a
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}
@@ -84,6 +86,10 @@ share/aqbanking/backends/aqebics/dialogs/
 share/aqbanking/backends/aqebics/dialogs/dlg_edituser.dlg
 share/aqbanking/backends/aqebics/dialogs/dlg_newkeyfile.dlg
 share/aqbanking/backends/aqebics/dialogs/dlg_user_special.dlg
+share/aqbanking/backends/aqgivve/
+share/aqbanking/backends/aqgivve/dialogs/
+share/aqbanking/backends/aqgivve/dialogs/dlg_cardselect.dlg
+share/aqbanking/backends/aqgivve/dialogs/dlg_edituser.dlg
 share/aqbanking/backends/aqhbci/
 share/aqbanking/backends/aqhbci/dialogs/
 share/aqbanking/backends/aqhbci/dialogs/chipcard.png
@@ -145,6 +151,7 @@ share/aqbanking/imexporters/csv/profiles/aqmoney1.conf
 share/aqbanking/imexporters/csv/profiles/aqmoney2.conf
 share/aqbanking/imexporters/csv/profiles/bankaustria.conf
 share/aqbanking/imexporters/csv/profiles/cli-transfers.conf
+share/aqbanking/imexporters/csv/profiles/comdirect-prices.conf
 share/aqbanking/imexporters/csv/profiles/comdirect.conf
 share/aqbanking/imexporters/csv/profiles/consors-tagesgeld.conf
 share/aqbanking/imexporters/csv/profiles/default.conf
@@ -192,6 +199,8 @@ share/aqbanking/imexporters/q43/profiles/default.conf
 share/aqbanking/imexporters/sepa/
 share/aqbanking/imexporters/sepa/profiles/
 share/aqbanking/imexporters/sepa/profiles/001_001_02.conf
+share/aqbanking/imexporters/sepa/profiles/001_001_03.conf
+share/aqbanking/imexporters/sepa/profiles/001_001_09.conf
 share/aqbanking/imexporters/sepa/profiles/001_002_03.conf
 share/aqbanking/imexporters/sepa/profiles/001_003_03.conf
 share/aqbanking/imexporters/sepa/profiles/008_001_01.conf
@@ -210,20 +219,24 @@ share/aqbanking/imexporters/swift/profiles/swiftmt942.conf
 share/aqbanking/imexporters/xml/
 share/aqbanking/imexporters/xml/data/
 share/aqbanking/imexporters/xml/data/camt_052_001_02.xml
+share/aqbanking/imexporters/xml/data/camt_053_001_02.xml
 share/aqbanking/imexporters/xml/data/camt_053_001_04.xml
 share/aqbanking/imexporters/xml/data/ofx1.xml
 share/aqbanking/imexporters/xml/data/ofx2.xml
 share/aqbanking/imexporters/xml/data/pain_001_001_03.xml
+share/aqbanking/imexporters/xml/data/pain_001_001_09.xml
 share/aqbanking/imexporters/xml/data/pain_001_003_03.xml
 share/aqbanking/imexporters/xml/data/pain_008_001_02.xml
 share/aqbanking/imexporters/xml/data/pain_008_003_02.xml
 share/aqbanking/imexporters/xml/profiles/
 share/aqbanking/imexporters/xml/profiles/camt_052_001_02.conf
+share/aqbanking/imexporters/xml/profiles/camt_053_001_02.conf
 share/aqbanking/imexporters/xml/profiles/camt_053_001_04.conf
 share/aqbanking/imexporters/xml/profiles/default.conf
 share/aqbanking/imexporters/xml/profiles/ofx1.conf
 share/aqbanking/imexporters/xml/profiles/ofx2.conf
 share/aqbanking/imexporters/xml/profiles/pain_001_001_03.conf
+share/aqbanking/imexporters/xml/profiles/pain_001_001_09.conf
 share/aqbanking/imexporters/xml/profiles/pain_001_003_03.conf
 share/aqbanking/imexporters/xml/profiles/pain_008_001_02.conf
 share/aqbanking/imexporters/xml/profiles/pain_008_003_02.conf
