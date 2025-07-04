@@ -1,13 +1,12 @@
 COMMENT =	linter for YAML files
 
-MODPY_DISTV =	1.35.1
+MODPY_DISTV =	1.37.1
 DISTNAME =	yamllint-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+HOMEPAGE =	https://github.com/adrienverge/yamllint
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
