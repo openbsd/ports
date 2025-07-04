@@ -1,0 +1,8 @@
+include/libaec.h
+include/szlib.h
+@static-lib lib/libaec.a
+lib/libaec.la
+@lib lib/libaec.so.${LIBaec_VERSION}
+@static-lib lib/libsz.a
+lib/libsz.la
+@lib lib/libsz.so.${LIBsz_VERSION}
