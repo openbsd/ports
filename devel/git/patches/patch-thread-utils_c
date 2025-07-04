@@ -1,5 +1,3 @@
-Use sysconf(_SC_NPROCESSORS_ONLN) to properly omit disabled smt cores.
-
 Cap the maximum number of detected cores to 4; on many-cpu systems, kernel
 locking takes significant cpu time. This could be revised as SMT in OpenBSD
 improves, and the value can be overridden in /etc/gitconfig if needed e.g.
@@ -14,30 +12,21 @@ improves, and the value can be overridden in /etc/gitconfig if needed e.g.
 Index: thread-utils.c
 --- thread-utils.c.orig
 +++ thread-utils.c
-@@ -24,10 +24,12 @@ int online_cpus(void)
- 	return 1;
- #else
- #ifdef _SC_NPROCESSORS_ONLN
-+#define     MIN(a,b) (((a)<(b))?(a):(b))
- 	long ncpus;
--#endif
- 
--#ifdef GIT_WINDOWS_NATIVE
-+	if ((ncpus = (long)sysconf(_SC_NPROCESSORS_ONLN)) > 0)
-+		return MIN((int)ncpus, 4);
-+#elif defined(GIT_WINDOWS_NATIVE)
- 	SYSTEM_INFO info;
- 	GetSystemInfo(&info);
- 
-@@ -55,11 +57,6 @@ int online_cpus(void)
- 	if (!sysctl(mib, 2, &cpucount, &len, NULL, 0))
- 		return cpucount;
- #endif /* defined(HAVE_BSD_SYSCTL) && defined(HW_NCPU) */
--
--#ifdef _SC_NPROCESSORS_ONLN
--	if ((ncpus = (long)sysconf(_SC_NPROCESSORS_ONLN)) > 0)
--		return (int)ncpus;
--#endif
- 
- 	return 1;
+@@ -18,6 +18,8 @@
+ #  endif
  #endif
+ 
++#define MIN(a,b) (((a)<(b))?(a):(b))
++
+ int online_cpus(void)
+ {
+ #ifdef NO_PTHREADS
+@@ -53,7 +55,7 @@ int online_cpus(void)
+ #  endif /* HW_AVAILCPU */
+ 	len = sizeof(cpucount);
+ 	if (!sysctl(mib, 2, &cpucount, &len, NULL, 0))
+-		return cpucount;
++		return MIN(cpucount, 4);
+ #endif /* defined(HAVE_BSD_SYSCTL) && defined(HW_NCPU) */
+ 
+ #ifdef _SC_NPROCESSORS_ONLN

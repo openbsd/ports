@@ -64,6 +64,7 @@ libexec/git/git-cvsserver
 @bin libexec/git/git-diff
 @bin libexec/git/git-diff-files
 @bin libexec/git/git-diff-index
+@bin libexec/git/git-diff-pairs
 @bin libexec/git/git-diff-tree
 @bin libexec/git/git-difftool
 libexec/git/git-difftool--helper
@@ -259,6 +260,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-diagnose.1
 @man man/man1/git-diff-files.1
 @man man/man1/git-diff-index.1
+@man man/man1/git-diff-pairs.1
 @man man/man1/git-diff-tree.1
 @man man/man1/git-diff.1
 @man man/man1/git-difftool.1
@@ -414,6 +416,9 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gittutorial-2.7
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/git
 share/doc/pkg-readmes/${PKGSTEM}
 share/emacs/
 share/emacs/site-lisp/
@@ -455,6 +460,7 @@ share/locale/de/LC_MESSAGES/git.mo
 share/locale/el/LC_MESSAGES/git.mo
 share/locale/es/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
+share/locale/ga/LC_MESSAGES/git.mo
 share/locale/id/LC_MESSAGES/git.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/

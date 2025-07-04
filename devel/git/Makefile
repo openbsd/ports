@@ -2,8 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.49.0
-REVISION =	2
+V =		2.50.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -37,9 +36,6 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 MULTI_PACKAGES =	-main -svn -x11
 
 WANTLIB-main =		c crypto curl expat iconv intl pthread ssl z
-# for curl
-WANTLIB-main +=		nghttp2
-
 
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/got,-gitwrapper \

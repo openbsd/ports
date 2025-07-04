@@ -1,3 +1,6 @@
+cap the number of cpus detected by git to 4; on many-cpu systems, significant
+cpu time is accounted to spinlocks when running various operations on OpenBSD
+
 Index: preload-index.c
 --- preload-index.c.orig
 +++ preload-index.c
