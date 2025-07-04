@@ -1848,6 +1848,7 @@
      SUBDIR += ruby-get_process_mem
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
+     SUBDIR += ruby-google-protobuf
      SUBDIR += ruby-highline
      SUBDIR += ruby-hitimes
      SUBDIR += ruby-hocon
