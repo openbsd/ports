@@ -1,7 +1,9 @@
+bin/opcua-dump
 ${P5ARCH}/
 ${P5ARCH}/OPCUA/
 ${P5ARCH}/OPCUA/Open62541/
 ${P5ARCH}/OPCUA/Open62541.pm
+${P5ARCH}/OPCUA/Open62541/Client.pm
 ${P5ARCH}/OPCUA/Open62541/Constant.pm
 ${P5ARCH}/OPCUA/Open62541/Constant.pod
 ${P5ARCH}/OPCUA/Open62541/Test/
@@ -13,7 +15,9 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/OPCUA/
 ${P5ARCH}/auto/OPCUA/Open62541/
 @so ${P5ARCH}/auto/OPCUA/Open62541/Open62541.so
+@man man/man1/opcua-dump.1
 @man man/man3p/OPCUA::Open62541.3p
+@man man/man3p/OPCUA::Open62541::Client.3p
 @man man/man3p/OPCUA::Open62541::Constant.3p
 @man man/man3p/OPCUA::Open62541::Test::CA.3p
 @man man/man3p/OPCUA::Open62541::Test::Client.3p
