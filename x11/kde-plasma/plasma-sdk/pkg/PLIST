@@ -4,25 +4,19 @@
 @bin bin/plasmaengineexplorer
 @bin bin/plasmathemeexplorer
 @bin bin/plasmoidviewer
-lib/qt6/plugins/ktexteditor/
-@so lib/qt6/plugins/ktexteditor/iconexplorerplugin.so
+lib/qt6/plugins/kf6/ktexteditor/
+@so lib/qt6/plugins/kf6/ktexteditor/iconexplorerplugin.so
 @man man/man1/kqml.1
 @man man/man1/plasmaengineexplorer.1
 @man man/man1/plasmoidviewer.1
 share/applications/org.kde.iconexplorer.desktop
+share/applications/org.kde.plasma.lookandfeelexplorer.desktop
 share/applications/org.kde.plasma.themeexplorer.desktop
 share/applications/org.kde.plasmaengineexplorer.desktop
 share/applications/org.kde.plasmoidviewer.desktop
 share/icons/hicolor/scalable/apps/org.kde.iconexplorer.svg
 share/kpackage/
 share/kpackage/genericqml/
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/FormField.qml
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/MetadataEditor.qml
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/main.qml
-share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/metadata.json
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/
 share/kpackage/genericqml/org.kde.plasma.themeexplorer/contents/code/
@@ -472,7 +466,6 @@ share/locale/zh_TW/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/zh_TW/LC_MESSAGES/plasmoidviewer.mo
 share/metainfo/
 share/metainfo/org.kde.plasma.iconexplorer.appdata.xml
-share/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 share/metainfo/org.kde.plasmaengineexplorer.appdata.xml

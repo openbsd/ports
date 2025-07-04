@@ -1,7 +1,9 @@
 lib/qt6/qml/org/kde/plasma/
 lib/qt6/qml/org/kde/plasma/private/
 lib/qt6/qml/org/kde/plasma/private/nanoshell/
+lib/qt6/qml/org/kde/plasma/private/nanoshell/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/plasma/private/nanoshell/libplasmananoshellprivateplugin.so
+lib/qt6/qml/org/kde/plasma/private/nanoshell/plasmananoshellprivateplugin.qmltypes
 lib/qt6/qml/org/kde/plasma/private/nanoshell/qml/
 lib/qt6/qml/org/kde/plasma/private/nanoshell/qml/StartupFeedback.qml
 lib/qt6/qml/org/kde/plasma/private/nanoshell/qmldir

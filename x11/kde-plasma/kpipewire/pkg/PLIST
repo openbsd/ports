@@ -23,9 +23,9 @@ lib/cmake/KPipeWire/KPipeWireTargets.cmake
 @lib lib/libKPipeWireDmaBuf.so.${LIBKPipeWireDmaBuf_VERSION}
 @lib lib/libKPipeWireRecord.so.${LIBKPipeWireRecord_VERSION}
 lib/qt6/qml/org/kde/pipewire/
-lib/qt6/qml/org/kde/pipewire/KPipeWireDeclarative.qmltypes
+lib/qt6/qml/org/kde/pipewire/KPipeWire.qmltypes
 lib/qt6/qml/org/kde/pipewire/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/pipewire/libKPipeWireDeclarative.so
+@so lib/qt6/qml/org/kde/pipewire/libKPipeWireplugin.so
 lib/qt6/qml/org/kde/pipewire/monitor/
 lib/qt6/qml/org/kde/pipewire/monitor/KPipeWireMonitorDeclarative.qmltypes
 lib/qt6/qml/org/kde/pipewire/monitor/kde-qmlmodule.version
@@ -33,9 +33,9 @@ lib/qt6/qml/org/kde/pipewire/monitor/kde-qmlmodule.version
 lib/qt6/qml/org/kde/pipewire/monitor/qmldir
 lib/qt6/qml/org/kde/pipewire/qmldir
 lib/qt6/qml/org/kde/pipewire/record/
-lib/qt6/qml/org/kde/pipewire/record/KPipeWireRecordDeclarative.qmltypes
+lib/qt6/qml/org/kde/pipewire/record/KPipeWireRecord.qmltypes
 lib/qt6/qml/org/kde/pipewire/record/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/pipewire/record/libKPipeWireRecordDeclarative.so
+@so lib/qt6/qml/org/kde/pipewire/record/libKPipeWireRecordplugin.so
 lib/qt6/qml/org/kde/pipewire/record/qmldir
 share/locale/ar/LC_MESSAGES/kpipewire6.mo
 share/locale/ast/LC_MESSAGES/kpipewire6.mo

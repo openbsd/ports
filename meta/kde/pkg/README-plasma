@@ -163,7 +163,6 @@ Not yet ported Plasma applications/plugins
  - plasma-integration
  - plasma-mobile
  - plasma-nm
- - plasma-pa
  - plasma-remotecontrollers
  - plasma-systemmonitor
  - plasma-thunderbolt
@@ -176,7 +175,7 @@ Cheat sheet
 ===========
 # Replace plasmashell and kwin
 $ plasmashell --replace
-$ kwin --replace
+$ kwin_{x11,wayland} --replace
 
 Support
 =======

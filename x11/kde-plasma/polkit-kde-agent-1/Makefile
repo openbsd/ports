@@ -4,10 +4,10 @@ DISTNAME =	polkit-kde-agent-1-${VERSION}
 PKGNAME =	polkit-kde-agent-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6DBusAddons
-WANTLIB += KF6I18n KF6I18nQml KF6WindowSystem Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Widgets X11 c m polkit-qt6-agent-1
-WANTLIB += polkit-qt6-core-1
+WANTLIB += KF6I18n KF6I18nQml KF6Notifications KF6WindowSystem
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Widgets X11 c m polkit-qt6-agent-1 polkit-qt6-core-1
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
@@ -17,6 +17,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
+		devel/kf6/knotifications \
 		devel/kf6/ki18n \
 		devel/kf6/kwindowsystem \
 		x11/polkit-qt \

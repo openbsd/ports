@@ -88,6 +88,7 @@ lib/qt6/qml/org/kde/breeze/impl/SliderGroove.qml
 lib/qt6/qml/org/kde/breeze/impl/SliderHandle.qml
 lib/qt6/qml/org/kde/breeze/impl/SmallBoxShadow.qml
 lib/qt6/qml/org/kde/breeze/impl/SpinBoxIndicator.qml
+lib/qt6/qml/org/kde/breeze/impl/StandardRectangle.qml
 lib/qt6/qml/org/kde/breeze/impl/SwitchIndicator.qml
 lib/qt6/qml/org/kde/breeze/impl/TextEditBackground.qml
 lib/qt6/qml/org/kde/breeze/impl/Theme.qml

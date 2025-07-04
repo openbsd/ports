@@ -1,10 +1,11 @@
 @lib lib/libplasma-volume.so.${LIBplasma-volume_VERSION}
 @so lib/qt6/plugins/kf6/kded/audioshortcutsservice.so
 lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/applets/
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.volume.so
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so
-lib/qt6/qml/org/kde/plasma/
 lib/qt6/qml/org/kde/plasma/private/
 lib/qt6/qml/org/kde/plasma/private/volume/
 lib/qt6/qml/org/kde/plasma/private/volume/PulseObjectFilterModel.qml
@@ -177,22 +178,5 @@ share/locale/zh_CN/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
-share/metainfo/
-share/metainfo/org.kde.plasma.volume.appdata.xml
-share/plasma/
-share/plasma/plasmoids/
-share/plasma/plasmoids/org.kde.plasma.volume/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/config/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/DeviceListItem.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/HorizontalStackView.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ListItemBase.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/SmallToolButton.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/VolumeSlider.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.volume/metadata.json
 @tag update-desktop-database
 share/qlogging-categories6/plasmapa.categories

@@ -16,6 +16,7 @@ lib/qt6/plugins/kf6/krunner/kcms/
 @so lib/qt6/plugins/kf6/krunner/kcms/kcm_krunner_dictionary.so
 @so lib/qt6/plugins/kf6/krunner/kcms/kcm_krunner_spellcheck.so
 @so lib/qt6/plugins/kf6/krunner/krunner_charrunner.so
+@so lib/qt6/plugins/kf6/krunner/krunner_colors.so
 @so lib/qt6/plugins/kf6/krunner/krunner_dictionary.so
 @so lib/qt6/plugins/kf6/krunner/krunner_katesessions.so
 @so lib/qt6/plugins/kf6/krunner/krunner_konsoleprofiles.so
@@ -31,8 +32,6 @@ lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/applets/
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.comic.so
 @so lib/qt6/plugins/plasma/applets/org.kde.plasma.grouping.so
-@so lib/qt6/plugins/plasma/applets/org.kde.plasma.private.grouping.so
-@so lib/qt6/plugins/plasma/applets/org.kde.plasma.weather.so
 lib/qt6/plugins/plasmacalendarplugins/
 lib/qt6/plugins/plasmacalendarplugins/alternatecalendar/
 @so lib/qt6/plugins/plasmacalendarplugins/alternatecalendar.so
@@ -191,6 +190,7 @@ share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ar/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ar/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ar/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -297,6 +297,7 @@ share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/bg/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/bg/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/bg/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -346,6 +347,7 @@ share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ca/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ca/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ca/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -378,6 +380,7 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -474,6 +477,7 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/de/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/de/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/de/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/de/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/de/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/de/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/de/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -592,6 +596,7 @@ share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/es/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/es/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/es/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/es/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/es/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/es/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/es/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -652,6 +657,7 @@ share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/eu/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/eu/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/eu/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -684,6 +690,7 @@ share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/fi/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/fi/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/fi/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -716,6 +723,7 @@ share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/fr/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/fr/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/fr/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -764,6 +772,7 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/gl/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/gl/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/gl/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -796,6 +805,7 @@ share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/he/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/he/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/he/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/he/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/he/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/he/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/he/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -874,6 +884,7 @@ share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/hu/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/hu/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -906,6 +917,7 @@ share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ia/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ia/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ia/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -967,6 +979,7 @@ share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/is/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/is/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/is/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/is/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/is/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/is/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/is/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -999,6 +1012,7 @@ share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/it/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/it/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/it/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/it/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/it/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/it/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/it/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1063,6 +1077,7 @@ share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ka/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ka/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ka/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1127,6 +1142,7 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ko/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ko/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ko/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1203,6 +1219,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/lv/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/lv/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/lv/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1321,6 +1338,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/nl/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/nl/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/nl/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1406,6 +1424,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/pl/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/pl/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1469,6 +1488,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1533,6 +1553,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ru/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ru/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1629,6 +1650,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/sl/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/sl/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/sl/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1769,6 +1791,7 @@ share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/sv/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/sv/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/sv/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1860,6 +1883,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/tr/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/tr/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/tr/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1908,6 +1932,7 @@ share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/uk/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/uk/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/uk/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1983,6 +2008,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -2015,6 +2041,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -2029,7 +2056,6 @@ share/metainfo/org.kde.plasma.addons.katesessions.appdata.xml
 share/metainfo/org.kde.plasma.binaryclock.appdata.xml
 share/metainfo/org.kde.plasma.calculator.appdata.xml
 share/metainfo/org.kde.plasma.colorpicker.appdata.xml
-share/metainfo/org.kde.plasma.comic.appdata.xml
 share/metainfo/org.kde.plasma.diskquota.appdata.xml
 share/metainfo/org.kde.plasma.fifteenpuzzle.appdata.xml
 share/metainfo/org.kde.plasma.fuzzyclock.appdata.xml
@@ -2087,21 +2113,6 @@ share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/configGeneral.qml
 share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/logic.js
 share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.colorpicker/metadata.json
-share/plasma/plasmoids/org.kde.plasma.comic/
-share/plasma/plasmoids/org.kde.plasma.comic/contents/
-share/plasma/plasmoids/org.kde.plasma.comic/contents/config/
-share/plasma/plasmoids/org.kde.plasma.comic/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/ButtonBar.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/ComicBottomInfo.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/ComicCentralView.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/FullViewWidget.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/ImageWidget.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/configAdvanced.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/configAppearance.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/configGeneral.qml
-share/plasma/plasmoids/org.kde.plasma.comic/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.comic/metadata.json
 share/plasma/plasmoids/org.kde.plasma.diskquota/
 share/plasma/plasmoids/org.kde.plasma.diskquota/contents/
 share/plasma/plasmoids/org.kde.plasma.diskquota/contents/ui/
@@ -2132,7 +2143,15 @@ share/plasma/plasmoids/org.kde.plasma.fuzzyclock/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.fuzzyclock/metadata.json
 share/plasma/plasmoids/org.kde.plasma.grouping/
 share/plasma/plasmoids/org.kde.plasma.grouping/contents/
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/applet/
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/applet/CompactApplet.qml
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/config/
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/config/config.qml
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.grouping/contents/ui/
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/ui/items/
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/ui/items/AbstractItem.qml
+share/plasma/plasmoids/org.kde.plasma.grouping/contents/ui/items/PlasmoidItem.qml
 share/plasma/plasmoids/org.kde.plasma.grouping/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.grouping/metadata.json
 share/plasma/plasmoids/org.kde.plasma.keyboardindicator/
@@ -2171,19 +2190,6 @@ share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/ShortcutMenuItem.qml
 share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/configAppearance.qml
 share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.notes/metadata.json
-share/plasma/plasmoids/org.kde.plasma.private.grouping/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/applet/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/applet/CompactApplet.qml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/config/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/ui/items/
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/ui/items/AbstractItem.qml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/ui/items/PlasmoidItem.qml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.private.grouping/metadata.json
 share/plasma/plasmoids/org.kde.plasma.quicklaunch/
 share/plasma/plasmoids/org.kde.plasma.quicklaunch/contents/
 share/plasma/plasmoids/org.kde.plasma.quicklaunch/contents/config/
@@ -2295,3 +2301,4 @@ share/plasma/wallpapers/org.kde.potd/contents/ui/main.qml
 share/plasma/wallpapers/org.kde.potd/metadata.json
 share/polkit-1/actions/org.kde.kameleonhelper.policy
 share/qlogging-categories6/kdeplasma-addons.categories
+share/qlogging-categories6/kdeplasma-addons.renamecategories

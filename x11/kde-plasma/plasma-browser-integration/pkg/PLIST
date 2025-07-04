@@ -1,4 +1,7 @@
 @bin bin/plasma-browser-integration-host
+lib/librewolf/
+lib/librewolf/native-messaging-hosts/
+lib/librewolf/native-messaging-hosts/org.kde.plasma.browser_integration.json
 lib/mozilla/
 lib/mozilla/native-messaging-hosts/
 lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json

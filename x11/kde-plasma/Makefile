@@ -4,6 +4,7 @@
      # ports that need Qt5 and Qt6 build
      SUBDIR += oxygen
 
+     SUBDIR += aurorae
      SUBDIR += breeze
      SUBDIR += plasma-activities
      SUBDIR += plasma-activities-stats
@@ -39,6 +40,7 @@
      SUBDIR += plasma-integration
      SUBDIR += plasma-sdk
      SUBDIR += kwin
+     SUBDIR += kwin-x11
      SUBDIR += plasma-workspace
      SUBDIR += kde-cli-tools
      SUBDIR += powerdevil
@@ -60,7 +62,6 @@
     # SUBDIR +=plasma-firewall
     # SUBDIR +=plasma-mobile
     # SUBDIR +=plasma-nm
-    # SUBDIR +=plasma-pa
     # SUBDIR +=plasma-systemmonitor
     # SUBDIR +=plasma-thunderbolt
     # SUBDIR +=plasma-vault

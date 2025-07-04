@@ -1,6 +1,5 @@
-COMMENT =		window manager for KDE Plasma Desktops
+COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -19,14 +18,14 @@ WANTLIB += KScreenLocker KWaylandClient PlasmaActivities Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Sensors Qt6Svg Qt6UiTools Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml SM X11 Xext Xi c canberra display-info drm eis
+WANTLIB += Qt6Xml SM X11 Xext c canberra display-info drm eis
 WANTLIB += epoll-shim epoxy fontconfig freetype gbm input kdecorations3
 WANTLIB += kdecorations3private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
 WANTLIB += udev wayland-client wayland-cursor wayland-server xcb
-WANTLIB += xcb-composite xcb-cursor xcb-damage xcb-dri3 xcb-glx
-WANTLIB += xcb-icccm xcb-keysyms xcb-present xcb-randr xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
-WANTLIB += xcb-xinput xcb-xkb xcvt xkbcommon xkbcommon-x11
+WANTLIB += xcb-composite xcb-cursor xcb-dri3 xcb-icccm xcb-keysyms
+WANTLIB += xcb-present xcb-randr xcb-render xcb-res xcb-shape
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
+WANTLIB += xcvt xkbcommon
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -37,15 +36,17 @@ MODULES +=	lang/python
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		misc/hwdata \
 		wayland/xwayland \
-		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/breeze>=${VERSION} \
+		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
 		wayland/xwayland \
+		x11/kde-plasma/aurorae>=${VERSION} \
+		x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kpipewire>=${VERSION} \
-		x11/kde-plasma/breeze>=${VERSION}
+		x11/kde-plasma/kwin-x11>=${VERSION}
 
 LIB_DEPENDS =	audio/libcanberra \
 		devel/epoll-shim \

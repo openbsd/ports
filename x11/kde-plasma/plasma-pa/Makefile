@@ -9,8 +9,8 @@ MODKDE_DOCS = Yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6PulseAudioQt KF6StatusNotifierItem
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Plasma Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Widgets canberra gio-2.0 glib-2.0 gobject-2.0 intl
 WANTLIB += m pulse pulse-mainloop-glib
 
@@ -38,6 +38,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kglobalaccel \
 		devel/kf6/ki18n \
 		devel/kf6/kstatusnotifieritem \
+		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/qt6/qtdeclarative \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
