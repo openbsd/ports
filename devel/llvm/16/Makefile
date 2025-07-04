@@ -4,7 +4,7 @@ LLVM_PKGSPEC =	>=16,<17
 ONLY_FOR_ARCHS =	aarch64
 
 REVISION-main =		34
-REVISION-lldb =		12
+REVISION-lldb =		13
 REVISION-python =	5
 
 SHARED_LIBS +=	LTO		0.0 \
