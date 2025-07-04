@@ -1987,6 +1987,7 @@
      SUBDIR += utfcpp
      SUBDIR += uthash
      SUBDIR += uuid
+     SUBDIR += uv
      SUBDIR += valgrind
      SUBDIR += vanessa
      SUBDIR += vim-command-t
