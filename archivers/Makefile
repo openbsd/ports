@@ -25,6 +25,7 @@
      SUBDIR += laszip
      SUBDIR += lha
      SUBDIR += lhasa
+     SUBDIR += libaec
      SUBDIR += libarchive
      SUBDIR += libdeflate
      SUBDIR += libmpq
