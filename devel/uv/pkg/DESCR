@@ -1,0 +1,4 @@
+uv is a Rust-based tool that replaces pip, pip-tools, pipx, poetry,
+pyenv, twine, virtualenv, and more. It installs and manages Python
+dependencies, environments, versions, scripts, tools, and lockfiles
+with speed and simplicity.
