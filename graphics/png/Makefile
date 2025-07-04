@@ -1,6 +1,7 @@
 COMMENT=	library for manipulating PNG images
 
 VERSION=	1.6.49
+REVISION=	0
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
 CATEGORIES=	graphics
@@ -25,6 +26,8 @@ CONFIGURE_STYLE=gnu
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "powerpc64"
 CONFIGURE_ARGS+=	--enable-hardware-optimizations
+.else
+CONFIGURE_ARGS+=	--disable-hardware-optimizations
 .endif
 
 # Enable VSX to prevent #error "This code requires VSX..." in
