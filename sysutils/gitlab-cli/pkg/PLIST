@@ -35,6 +35,7 @@
 @man man/man1/glab-cluster-agent-list.1
 @man man/man1/glab-cluster-agent-update-kubeconfig.1
 @man man/man1/glab-cluster-agent.1
+@man man/man1/glab-cluster-graph.1
 @man man/man1/glab-cluster.1
 @man man/man1/glab-completion.1
 @man man/man1/glab-config-edit.1
@@ -117,6 +118,7 @@
 @man man/man1/glab-repo-publish.1
 @man man/man1/glab-repo-search.1
 @man man/man1/glab-repo-transfer.1
+@man man/man1/glab-repo-update.1
 @man man/man1/glab-repo-view.1
 @man man/man1/glab-repo.1
 @man man/man1/glab-schedule-create.1
