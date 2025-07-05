@@ -1,10 +1,9 @@
 COMMENT =		non-backtracking regular expression engine
-V =			2024-07-02
+V =			2025-06-26b
 DISTNAME =		re2-${V}
 PKGNAME =		re2-${V:S/-//g}
-REVISION =		1
 
-SHARED_LIBS =		re2	2.0
+SHARED_LIBS =		re2	2.1
 
 CATEGORIES =		textproc devel
 
