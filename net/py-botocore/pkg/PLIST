@@ -285,6 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-3
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/endpoint-rule-set-1.json
@@ -321,6 +322,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/b2bi/2022-06-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/b2bi/2022-06-23/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/b2bi/2022-06-23/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/b2bi/2022-06-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/b2bi/2022-06-23/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup-gateway/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup-gateway/2021-01-01/
@@ -1941,6 +1943,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-0
 lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/2024-08-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/2024-08-20/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/2024-08-20/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/2024-08-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/odb/2024-08-20/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/2022-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/2022-11-28/endpoint-rule-set-1.json
