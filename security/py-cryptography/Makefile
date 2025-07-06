@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_DISTV=	44.0.3
+MODPY_DISTV=	45.0.5
 DISTNAME=	cryptography-${MODPY_DISTV}
 DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -41,9 +41,6 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 
 MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml
 MODCARGO_CARGOLOCK= ${WRKSRC}/Cargo.lock
-
-post-install:
-	rm -r ${WRKINST}${MODPY_SITEPKG}/rust
 
 .include "crates.inc"
 
