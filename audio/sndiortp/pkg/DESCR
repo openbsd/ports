@@ -1,0 +1,6 @@
+The sndiortp utility can record audio from a sndio(7) audio device and send it
+on the network over RTP. Similarly it can receive audio streams over RTP and
+play the result on the device.
+
+This utility is mainly intended to test RTP capable audio equipment but
+it may also be used to broadcast audio over a fast local area network.
