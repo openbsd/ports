@@ -36,6 +36,9 @@ BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION}
 
+BUILD_DEPENDS +=	wayland/plasma-wayland-protocols \
+			wayland/wayland-protocols
+
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
 		wayland/xwayland \
