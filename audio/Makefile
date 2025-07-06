@@ -231,6 +231,7 @@
      SUBDIR += sidplay
      SUBDIR += siren
      SUBDIR += snack
+     SUBDIR += sndiortp
      SUBDIR += solfege
      SUBDIR += sonata
      SUBDIR += sound-theme-freedesktop
