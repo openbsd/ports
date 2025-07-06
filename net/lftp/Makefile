@@ -1,9 +1,10 @@
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-4.9.3
+REVISION=	0
 CATEGORIES=	net
 
-HOMEPAGE=	https://lftp.tech/
+HOMEPAGE=	https://lftp.yar.ru/
 
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
