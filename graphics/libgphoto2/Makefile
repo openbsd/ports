@@ -1,9 +1,8 @@
 COMMENT=		digital camera library
 
-VERSION=		2.5.31
+VERSION=		2.5.32
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
-REVISION=		1
 
 GPHOTO2_PORT_API=	0.12.2
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -20,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto curl exif expat fontconfig
+WANTLIB += ${COMPILER_LIBCXX} Lerc c crypto curl exif expat fontconfig
 WANTLIB += freetype gd iconv intl jpeg ltdl lzma m nghttp2 nghttp3
 WANTLIB += ngtcp2 ngtcp2_crypto_quictls png sharpyuv ssl tiff
 WANTLIB += usb usb-1.0 webp xml2 z zstd
