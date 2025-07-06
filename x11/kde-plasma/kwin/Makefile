@@ -1,5 +1,6 @@
 COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -36,6 +37,7 @@ MODULES +=	lang/python
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		misc/hwdata \
 		wayland/xwayland \
+		x11/kde-plasma/aurorae>=${VERSION} \
 		x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION}
