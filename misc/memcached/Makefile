@@ -1,8 +1,9 @@
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.6.22
+DISTNAME=	memcached-1.6.38
 CATEGORIES=	misc
 
+# https://github.com/memcached/memcached
 HOMEPAGE=	https://www.memcached.org/
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -16,7 +17,7 @@ WANTLIB += c crypto event pthread ssl event_core
 FLAVOR?=
 FLAVORS=	sasl
 
-SITES=			http://memcached.org/files/
+SITES=		https://memcached.org/files/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -25,8 +26,8 @@ CONFIGURE_ARGS=		--disable-coverage \
 			--disable-docs \
 			--disable-werror \
 			--enable-tls
+# binary.t very slow on some systems (after printing "# Some chunked item tests")
 TEST_TARGET=		test
-TEST_DEPENDS=		devel/p5-Test-MockSleep
 LIB_DEPENDS=		devel/libevent2
 
 .if ${FLAVOR:Msasl}
