@@ -1,9 +1,8 @@
 COMMENT =	ruby wrapper for comrak rust crate
 
-DISTNAME =	commonmarker-2.0.2.1
+DISTNAME =	commonmarker-2.3.1
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
-REVISION =	0
 
 # MIT License
 PERMIT_PACKAGE =	Yes

@@ -25,7 +25,7 @@ SHA256 (cargo/clap_builder-4.5.23.tar.gz) = MFgvxjIzDfK9Jod73gwfRHDVfFgrvAcDdq/N
 SHA256 (cargo/clap_derive-4.5.18.tar.gz) = Ssagx7Gp6aUYY2H2ffobiCE1cvQn+5qwOO+yvYxYLas=
 SHA256 (cargo/clap_lex-0.7.4.tar.gz) = 9GrRRHmiUQPyg8DxAAWWHPCG2NxCIFu0TEasVjR13KY=
 SHA256 (cargo/colorchoice-1.0.3.tar.gz) = W2PKqaqTl+LZSAqbE2c4VseNisEjKIUmw314OfKoaZA=
-SHA256 (cargo/comrak-0.33.0.tar.gz) = Ob/yy7gBAnccpivSN1vG9mEdwUkzc0QLI6oIoVVThwg=
+SHA256 (cargo/comrak-0.39.1.tar.gz) = L++rlRdx/Dvu7Qdzzmak97cGJz/GxMlbCN0WFXRKvPU=
 SHA256 (cargo/crc32fast-1.4.2.tar.gz) = qXdp2U3auUPkUQ0TgVAWmidYte8+sZGp7miN4+I+97M=
 SHA256 (cargo/darling-0.20.10.tar.gz) = b2O4bIqIJqSbjCHwii0HM47sjZAFQPhjDcdihL6AKYk=
 SHA256 (cargo/darling_core-0.20.10.tar.gz) = lRM4YagDKq6ggocQMvWBXrnpjO8D+pFqtFAFE5lN+eU=
@@ -74,8 +74,8 @@ SHA256 (cargo/prettyplease-0.2.25.tar.gz) = ZNHsiFxk0EV9Vk207CmbLa4/nAKAi4rZw6CJ
 SHA256 (cargo/proc-macro2-1.0.92.tar.gz) = N9NUSz8nSMVOFHZV7bUCV1LiMDFFta77PD6ix4uXO7A=
 SHA256 (cargo/quick-xml-0.32.0.tar.gz) = HTpuWDi2Dg6Pp6Q/Iq3lSaN9Yfi9vmNtDXgWGR3pacI=
 SHA256 (cargo/quote-1.0.38.tar.gz) = Dk3Mqq+JUU9UbGk93BQPcp+VjCR5GKEzgMzMYHg5Gsw=
-SHA256 (cargo/rb-sys-0.9.106.tar.gz) = F7bv28jBoiy4tdfq0CN8FsNiye9vvcCeLRBAYVsPTNA=
-SHA256 (cargo/rb-sys-build-0.9.106.tar.gz) = 4diMUeUvhjal78JOxZhwVuZOSKke0qGvlstVZGhswQ8=
+SHA256 (cargo/rb-sys-0.9.114.tar.gz) = tBtOXYcSA8POfHvQ8nOQ+27uSU75xIIqFRhUYQ5WLwU=
+SHA256 (cargo/rb-sys-build-0.9.114.tar.gz) = 3iDDzCholYvfjq50MeZ5fLPOKfzdW62pUjHEw8Fn5wE=
 SHA256 (cargo/rb-sys-env-0.1.2.tar.gz) = o1gCZ58HNgRUtBil0XNciXFr3gHTWxVg/JU8FBWgs7s=
 SHA256 (cargo/rctree-0.6.0.tar.gz) = 4D54ZqvsEQGGn/qOLINVxMJBnQIU7ODMPkKOW5Tepuk=
 SHA256 (cargo/regex-1.11.1.tar.gz) = tUTvG06sXcLbM+pjYGrp/8+sJsFBaigGrgv19WsgEZE=
@@ -129,7 +129,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SHA256 (commonmarker-2.0.2.1.gem) = hAtYgizufovBtc/RylT9Pxq6SQZQ2QezxR45Kk4DcyQ=
+SHA256 (commonmarker-2.3.1.gem) = iUPvBzGkIFdlsauPJaepufYqyyiwBUx9YPBnIKI8rcc=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anstream-0.6.18.tar.gz) = 29681
@@ -157,7 +157,7 @@ SIZE (cargo/clap_builder-4.5.23.tar.gz) = 164180
 SIZE (cargo/clap_derive-4.5.18.tar.gz) = 30131
 SIZE (cargo/clap_lex-0.7.4.tar.gz) = 12858
 SIZE (cargo/colorchoice-1.0.3.tar.gz) = 7923
-SIZE (cargo/comrak-0.33.0.tar.gz) = 162247
+SIZE (cargo/comrak-0.39.1.tar.gz) = 178985
 SIZE (cargo/crc32fast-1.4.2.tar.gz) = 38491
 SIZE (cargo/darling-0.20.10.tar.gz) = 32031
 SIZE (cargo/darling_core-0.20.10.tar.gz) = 65015
@@ -206,8 +206,8 @@ SIZE (cargo/prettyplease-0.2.25.tar.gz) = 58681
 SIZE (cargo/proc-macro2-1.0.92.tar.gz) = 52353
 SIZE (cargo/quick-xml-0.32.0.tar.gz) = 184149
 SIZE (cargo/quote-1.0.38.tar.gz) = 31252
-SIZE (cargo/rb-sys-0.9.106.tar.gz) = 23836
-SIZE (cargo/rb-sys-build-0.9.106.tar.gz) = 21649
+SIZE (cargo/rb-sys-0.9.114.tar.gz) = 28493
+SIZE (cargo/rb-sys-build-0.9.114.tar.gz) = 24283
 SIZE (cargo/rb-sys-env-0.1.2.tar.gz) = 9203
 SIZE (cargo/rctree-0.6.0.tar.gz) = 8312
 SIZE (cargo/regex-1.11.1.tar.gz) = 254170
@@ -261,4 +261,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
-SIZE (commonmarker-2.0.2.1.gem) = 31232
+SIZE (commonmarker-2.3.1.gem) = 31744
