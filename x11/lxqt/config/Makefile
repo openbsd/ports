@@ -1,4 +1,5 @@
 COMMENT =	tools to configure LXQt and the underlying operating system
+REVISION =	0
 
 NAME =		lxqt-config
 
