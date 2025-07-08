@@ -3,20 +3,20 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	128.12.0esr
+MOZILLA_VERSION =	140.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
+PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//:S/b/beta/}
 
 # XXX badly formed debug in libxul ?
 DWZ = :
 
 HOMEPAGE =	https://www.thunderbird.net/
 
-SO_VERSION =	38.0
+SO_VERSION =	39.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
