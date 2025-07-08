@@ -1,7 +1,6 @@
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-3.2
-REVISION =	4
+PKGNAME =	golly-3.4
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math

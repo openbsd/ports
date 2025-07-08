@@ -1,7 +1,7 @@
 Index: gui-wx/wxpython.cpp
 --- gui-wx/wxpython.cpp.orig
 +++ gui-wx/wxpython.cpp
-@@ -237,6 +237,8 @@ static void GetPythonExceptions()
+@@ -236,6 +236,8 @@ static void GetPythonExceptions()
      Py_XDECREF(exmod);
  }
  
@@ -10,7 +10,7 @@ Index: gui-wx/wxpython.cpp
  // handle for Python lib
  static wxDllType pythondll = NULL;
  
-@@ -246,15 +248,37 @@ static void FreePythonLib()
+@@ -245,15 +247,37 @@ static void FreePythonLib()
          wxDynamicLibrary::Unload(pythondll);
          pythondll = NULL;
      }

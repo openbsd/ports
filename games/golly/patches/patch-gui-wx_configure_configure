@@ -43,36 +43,10 @@ Index: gui-wx/configure/configure
  fi
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
-@@ -5793,7 +5777,7 @@ $as_echo "will be automatically detected" >&6; }
-                 else
-                     TOOLKIT="$withval"
- 
--                                        if test "$TOOLKIT" != "gtk1" -a "$TOOLKIT" != "gtk2" -a \
-+                                        if test "$TOOLKIT" != "gtk1" -a "$TOOLKIT" != "gtk2" -a "$TOOLKIT" != "gtk3" -a \
-                             "$TOOLKIT" != "msw" -a "$TOOLKIT" != "motif" -a \
-                             "$TOOLKIT" != "x11" -a "$TOOLKIT" != "mac" -a \
-                             "$TOOLKIT" != "mgl" -a "$TOOLKIT" != "dfb" ; then
-@@ -6268,6 +6252,7 @@ $as_echo_n "checking which wxWidgets toolkit was selec
- 
-             WX_GTKPORT1=$(expr "$WX_SELECTEDCONFIG" : ".*gtk1.*")
-             WX_GTKPORT2=$(expr "$WX_SELECTEDCONFIG" : ".*gtk2.*")
-+            WX_GTKPORT3=$(expr "$WX_SELECTEDCONFIG" : ".*gtk3.*")
-             WX_MSWPORT=$(expr "$WX_SELECTEDCONFIG" : ".*msw.*")
-             WX_MOTIFPORT=$(expr "$WX_SELECTEDCONFIG" : ".*motif.*")
-             WX_OSXCOCOAPORT=$(expr "$WX_SELECTEDCONFIG" : ".*osx_cocoa.*")
-@@ -6279,6 +6264,7 @@ $as_echo_n "checking which wxWidgets toolkit was selec
-             WX_PORT="unknown"
-             if test "$WX_GTKPORT1" != "0"; then WX_PORT="gtk1"; fi
-             if test "$WX_GTKPORT2" != "0"; then WX_PORT="gtk2"; fi
-+            if test "$WX_GTKPORT3" != "0"; then WX_PORT="gtk3"; fi
-             if test "$WX_MSWPORT" != "0"; then WX_PORT="msw"; fi
-             if test "$WX_MOTIFPORT" != "0"; then WX_PORT="motif"; fi
-             if test "$WX_OSXCOCOAPORT" != "0"; then WX_PORT="osx_cocoa"; fi
-@@ -6353,9 +6339,6 @@ $as_echo "$WX_PORT" >&6; }
-                                 if test "$DEBUG" = "1"; then
-             CXXFLAGS="$CXXFLAGS -g -O0"
+@@ -6335,8 +6319,6 @@ $as_echo "$WX_PORT" >&6; }
              CFLAGS="$CFLAGS -g -O0"
--        else
+         elif test "$DEBUG" = "0"; then
+             BUILD="release"
 -            CXXFLAGS="$CXXFLAGS -O2"
 -            CFLAGS="$CFLAGS -O2"
          fi

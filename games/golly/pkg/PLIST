@@ -61,15 +61,10 @@ share/golly/Help/images/about.gif
 share/golly/Help/images/blend0.png
 share/golly/Help/images/blend1.png
 share/golly/Help/images/clips.png
-share/golly/Help/images/hex.png
-share/golly/Help/images/layers.png
-share/golly/Help/images/lifeviewer.png
-share/golly/Help/images/theme.png
 share/golly/Help/images/transforms.png
 share/golly/Help/index.html
 share/golly/Help/intro.html
 share/golly/Help/layer.html
-share/golly/Help/lifeviewer.html
 share/golly/Help/lua.html
 share/golly/Help/mouse.html
 share/golly/Help/overlay.html
@@ -100,6 +95,7 @@ share/golly/Patterns/Generations/What-a-mess.mcl
 share/golly/Patterns/HashLife/
 share/golly/Patterns/HashLife/broken-lines.mc
 share/golly/Patterns/HashLife/catacryst.mc
+share/golly/Patterns/HashLife/demonoid-c512-hashlife-friendly.mc.gz
 share/golly/Patterns/HashLife/gotts-dots.mc
 share/golly/Patterns/HashLife/hashlife-oddity1.mc
 share/golly/Patterns/HashLife/hashlife-oddity2.mc
@@ -172,6 +168,7 @@ share/golly/Patterns/Life/Breeders/
 share/golly/Patterns/Life/Breeders/LWSS-breeder.rle
 share/golly/Patterns/Life/Breeders/breeder.lif
 share/golly/Patterns/Life/Breeders/c4-diag-switch-engines.rle
+share/golly/Patterns/Life/Breeders/one-cell-thick-quadratic-growth-2596x1.rle
 share/golly/Patterns/Life/Breeders/p100-H-channel-breeder.rle
 share/golly/Patterns/Life/Breeders/p90-rake-factory.rle
 share/golly/Patterns/Life/Breeders/pi-blink-breeder1.rle
@@ -189,9 +186,11 @@ share/golly/Patterns/Life/Guns/7-in-a-row-Cordership-V-gun.rle
 share/golly/Patterns/Life/Guns/Cordership-gun-p784.rle
 share/golly/Patterns/Life/Guns/golly-ticker.rle
 share/golly/Patterns/Life/Guns/gun-p165mwss.rle
+share/golly/Patterns/Life/Guns/infinite-Corderships-gun.rle.gz
 share/golly/Patterns/Life/Guns/loafer-gun-p210.rle
 share/golly/Patterns/Life/Guns/p59-gun-with-Snark-reflectors.rle
 share/golly/Patterns/Life/Guns/p690-PT-Cordership-gun.rle
+share/golly/Patterns/Life/Guns/period-52-glider-gun.rle
 share/golly/Patterns/Life/Guns/pseudo-p34-gun.rle
 share/golly/Patterns/Life/Guns/vacuum-cleaner.rle
 share/golly/Patterns/Life/Methuselahs/
@@ -254,7 +253,7 @@ share/golly/Patterns/Life/Rakes/2c5-engineless-rake-p185.rle
 share/golly/Patterns/Life/Rakes/2c5-spaceship-rake-p240.rle
 share/golly/Patterns/Life/Rakes/basic-rakes.rle
 share/golly/Patterns/Life/Rakes/c2-Cordership-rake.rle
-share/golly/Patterns/Life/Rakes/c3-forward-rake-p333.rle
+share/golly/Patterns/Life/Rakes/c3-forward-rake-p159.rle
 share/golly/Patterns/Life/Rakes/c4-sideways-rake.rle
 share/golly/Patterns/Life/Rakes/c5-adjustable-rake.rle
 share/golly/Patterns/Life/Rakes/forward-LWSS-rake-p90.rle
@@ -275,6 +274,7 @@ share/golly/Patterns/Life/Signal-Circuitry/heisenburp-30.rle
 share/golly/Patterns/Life/Signal-Circuitry/heisenburp-46-natural.rle
 share/golly/Patterns/Life/Signal-Circuitry/heisenburp-46.rle
 share/golly/Patterns/Life/Signal-Circuitry/high-bandwidth-telegraph.rle.gz
+share/golly/Patterns/Life/Signal-Circuitry/loafer-mwss-signal-loop.rle.gz
 share/golly/Patterns/Life/Signal-Circuitry/p30-racetrack.rle
 share/golly/Patterns/Life/Signal-Circuitry/p46racetrack.rle
 share/golly/Patterns/Life/Signal-Circuitry/reflectors.rle
@@ -368,6 +368,10 @@ share/golly/Patterns/Other-Rules/Ed-rep.rle
 share/golly/Patterns/Other-Rules/HPP-demo-small.rle
 share/golly/Patterns/Other-Rules/HPP-demo.rle
 share/golly/Patterns/Other-Rules/Langtons-Ant.rle
+share/golly/Patterns/Other-Rules/NoTimeAtAll-demo.zip
+share/golly/Patterns/Other-Rules/animated-pixel-art-sample.zip
+share/golly/Patterns/Other-Rules/b2ein-spaceships-and-rakes.rle
+share/golly/Patterns/Other-Rules/dragon-curve-generator.zip
 share/golly/Patterns/Other-Rules/factorize-84.zip
 share/golly/Patterns/Other-Rules/golly-ants.rle
 share/golly/Patterns/Other-Rules/life-on-the-edge.rle
@@ -406,8 +410,11 @@ share/golly/Patterns/Self-Rep/Codd/tape-reader-demo.rle
 share/golly/Patterns/Self-Rep/Devore/
 share/golly/Patterns/Self-Rep/Devore/Devore-body.rle
 share/golly/Patterns/Self-Rep/Devore/Devore-rep.rle
+share/golly/Patterns/Self-Rep/Devore/Mahler-rep.zip
 share/golly/Patterns/Self-Rep/Devore/crossover.rle
 share/golly/Patterns/Self-Rep/Devore/discriminator.rle
+share/golly/Patterns/Self-Rep/Flow6/
+share/golly/Patterns/Self-Rep/Flow6/Flow6.zip
 share/golly/Patterns/Self-Rep/JvN/
 share/golly/Patterns/Self-Rep/JvN/Boustrophedon-replicator.rle
 share/golly/Patterns/Self-Rep/JvN/CY_Lee_computer.zip
@@ -424,6 +431,7 @@ share/golly/Patterns/Self-Rep/JvN/counter-demo.rle
 share/golly/Patterns/Self-Rep/JvN/golly-constructor.rle
 share/golly/Patterns/Self-Rep/JvN/partial-constructor.mc.gz
 share/golly/Patterns/Self-Rep/JvN/read-arm-demo.rle
+share/golly/Patterns/Self-Rep/JvN/small-JvN-self-replicator.rle
 share/golly/Patterns/Self-Rep/JvN/sphinx-midpoint.mc.gz
 share/golly/Patterns/Self-Rep/JvN/sphinx-spark.mc.gz
 share/golly/Patterns/Self-Rep/JvN/sphinx.mc.gz
@@ -516,7 +524,9 @@ share/golly/Rules/Worm-complement.rule
 share/golly/Rules/Worm-shared.rule
 share/golly/Scripts/
 share/golly/Scripts/Lua/
+share/golly/Scripts/Lua/1D.lua
 share/golly/Scripts/Lua/3D.lua
+share/golly/Scripts/Lua/Margolus.lua
 share/golly/Scripts/Lua/breakout.lua
 share/golly/Scripts/Lua/bricklayer.lua
 share/golly/Scripts/Lua/browse-patterns.lua
@@ -528,6 +538,7 @@ share/golly/Scripts/Lua/flood-fill.lua
 share/golly/Scripts/Lua/giffer.lua
 share/golly/Scripts/Lua/goto.lua
 share/golly/Scripts/Lua/gplus/
+share/golly/Scripts/Lua/gplus/NewCA.lua
 share/golly/Scripts/Lua/gplus/guns.lua
 share/golly/Scripts/Lua/gplus/init.lua
 share/golly/Scripts/Lua/gplus/objects.lua
@@ -538,14 +549,11 @@ share/golly/Scripts/Lua/heisenburp.lua
 share/golly/Scripts/Lua/hexgrid.lua
 share/golly/Scripts/Lua/invert.lua
 share/golly/Scripts/Lua/life-integer-gun30.lua
-share/golly/Scripts/Lua/lifeviewer.lua
 share/golly/Scripts/Lua/make-torus.lua
 share/golly/Scripts/Lua/metafier.lua
 share/golly/Scripts/Lua/move-object.lua
 share/golly/Scripts/Lua/move-selection.lua
 share/golly/Scripts/Lua/oplus/
-share/golly/Scripts/Lua/oplus/images/
-share/golly/Scripts/Lua/oplus/images/lifeviewer.png
 share/golly/Scripts/Lua/oplus/init.lua
 share/golly/Scripts/Lua/oplus/sounds/
 share/golly/Scripts/Lua/oplus/sounds/README.txt
@@ -555,9 +563,11 @@ share/golly/Scripts/Lua/p1100-MWSS-gun.lua
 share/golly/Scripts/Lua/pd-glider.lua
 share/golly/Scripts/Lua/pop-plot.lua
 share/golly/Scripts/Lua/shift.lua
+share/golly/Scripts/Lua/showinviewer.lua
 share/golly/Scripts/Lua/slide-show.lua
 share/golly/Scripts/Lua/tile-with-clip.lua
 share/golly/Scripts/Lua/tile.lua
+share/golly/Scripts/Lua/toChangeState.lua
 share/golly/Scripts/Lua/toLife.lua
 share/golly/Scripts/Lua/toLifeHistory.lua
 share/golly/Scripts/Python/
