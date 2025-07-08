@@ -2,9 +2,11 @@ lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/METADATA.toml
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/_common.pyi
+lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/_version.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/easter.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/parser/
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/parser/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/parser/_parser.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/parser/isoparser.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/py.typed
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/relativedelta.pyi
@@ -13,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tz/
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tz/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tz/_common.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tz/tz.pyi
+lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tz/win.pyi
+lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/tzwin.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/utils.pyi
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/zoneinfo/
 lib/python${MODPY_VERSION}/site-packages/dateutil-stubs/zoneinfo/__init__.pyi
