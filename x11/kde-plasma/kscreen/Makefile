@@ -14,7 +14,9 @@ WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Sensors
 WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml X11 X11-xcb Xext
 WANTLIB += Xi c m wayland-client wayland-cursor xcb xcb-util xkbcommon
 
-BUILD_DEPENDS =	devel/kf6/kcmutils
+BUILD_DEPENDS =	devel/kf6/kcmutils \
+		wayland/plasma-wayland-protocols \
+		wayland/wayland-protocols
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
