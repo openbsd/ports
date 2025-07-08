@@ -8,7 +8,7 @@ COMMENT=	screen saver and locker for the X Window System
 #
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
-DISTNAME=	xscreensaver-6.11
+DISTNAME=	xscreensaver-6.12
 
 CATEGORIES=	x11
 
@@ -30,6 +30,10 @@ COMPILER_LANGS=	c
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	textproc/intltool
+
+# tar: Unable to link file xscreensaver-6.12/driver/wayland-dpy.c to itself
+BUILD_DEPENDS=	archivers/gtar
+TAR=		gtar
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
