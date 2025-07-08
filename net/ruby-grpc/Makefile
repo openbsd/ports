@@ -14,7 +14,8 @@ MODULES =		lang/ruby
 
 WANTLIB += ${COMPILER_LIBCXX} grpc
 
-BUILD_DEPENDS =		net/ruby-googleapis-common-protos-types,${MODRUBY_FLAVOR}
+BUILD_DEPENDS =		net/ruby-googleapis-common-protos-types,${MODRUBY_FLAVOR} \
+			devel/ruby-google-protobuf,${MODRUBY_FLAVOR}
 LIB_DEPENDS =		net/grpc
 
 CONFIGURE_STYLE =	ruby gem ext
