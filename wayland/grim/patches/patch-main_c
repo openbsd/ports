@@ -1,7 +1,7 @@
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -9,8 +9,16 @@
+@@ -8,8 +8,16 @@
  #include <string.h>
  #include <time.h>
  #include <unistd.h>
@@ -19,7 +19,7 @@ Index: main.c
  #include "buffer.h"
  #include "grim.h"
  #include "output-layout.h"
-@@ -211,7 +219,7 @@ static bool default_filename(char *filename, size_t n,
+@@ -427,7 +435,7 @@ static bool default_filename(char *filename, size_t n,
  	}
  	assert(ext != NULL);
  	char tmpstr[32];

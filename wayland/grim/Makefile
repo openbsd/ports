@@ -1,9 +1,9 @@
 COMMENT =	grab images from a Wayland compositor
 
-V =		1.4.1
-DISTNAME =	grim-${V}
-SITES =		https://git.sr.ht/~emersion/grim/
-DISTFILES =     grim-{archive/}v${V}${EXTRACT_SUFX}
+V =		1.5.0
+DISTNAME =	grim-v$V
+PKGNAME =	grim-$V
+SITES =		https://gitlab.freedesktop.org/emersion/grim/-/archive/v${V}/
 
 CATEGORIES =	wayland
 
