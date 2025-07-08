@@ -1,12 +1,12 @@
 COMMENT =	test vectors from Project Wycheproof
 
 # No releases
-VERSION =	20250520
+VERSION =	20250702
 DISTNAME =	wycheproof-testvectors-${VERSION}
 
 GH_ACCOUNT =	C2SP
 GH_PROJECT =	wycheproof
-GH_COMMIT =	4a6c2bf5dc4c0b67c770233ad33961ee653996a0
+GH_COMMIT =	9ff10ee70b61f3ab08210ff7bb0352fcec4ea03e
 
 CATEGORIES =	security devel
 
