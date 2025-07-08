@@ -1,7 +1,7 @@
 Index: cmd/anubis/main.go
 --- cmd/anubis/main.go.orig
 +++ cmd/anubis/main.go
-@@ -37,6 +37,31 @@ import (
+@@ -40,6 +40,31 @@ import (
  	"github.com/prometheus/client_golang/prometheus/promhttp"
  )
  
@@ -33,7 +33,7 @@ Index: cmd/anubis/main.go
  var (
  	basePrefix               = flag.String("base-prefix", "", "base prefix (root URL) the application is served under e.g. /myapp")
  	bind                     = flag.String("bind", ":8923", "network address to bind HTTP to")
-@@ -335,6 +360,32 @@ func main() {
+@@ -413,6 +438,32 @@ func main() {
  			log.Printf("cannot shut down: %v", err)
  		}
  	}()

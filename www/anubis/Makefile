@@ -1,6 +1,6 @@
 COMMENT=	proof-of-work proxy to protect web resources from scrapers
 
-V=		1.19.1
+V=		1.20.0
 DISTNAME=	anubis-src-vendor-npm-$V
 PKGNAME=	anubis-$V
 
@@ -8,8 +8,6 @@ CATEGORIES=	www
 
 HOMEPAGE=	https://anubis.techaro.lol/
 SITES=		https://github.com/TecharoHQ/anubis/releases/download/v$V/
-
-MAINTAINER=	Christoph Liebender <christoph@liebender.dev>
 
 EPOCH=		0
 
