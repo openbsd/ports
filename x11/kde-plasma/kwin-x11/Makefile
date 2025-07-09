@@ -32,14 +32,16 @@ MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		misc/hwdata \
-		wayland/xwayland \
 		x11/kde-plasma/aurorae>=${VERSION} \
 		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION}
 
-BUILD_DEPENDS +=	wayland/plasma-wayland-protocols \
-			wayland/wayland-protocols
+# wayland includes and protocols
+BUILD_DEPENDS +=	wayland/libinput-openbsd \
+			wayland/plasma-wayland-protocols \
+			wayland/wayland-protocols \
+			wayland/xwayland
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
