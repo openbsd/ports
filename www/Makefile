@@ -160,6 +160,7 @@
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-DOM
+     SUBDIR += p5-CSS-Inliner
      SUBDIR += p5-CSS-Minifier
      SUBDIR += p5-CSS-Minifier-XS
      SUBDIR += p5-CSS-Squish
@@ -256,6 +257,7 @@
      SUBDIR += p5-HTML-PopupTreeSelect
      SUBDIR += p5-HTML-PrettyPrinter
      SUBDIR += p5-HTML-Prototype
+     SUBDIR += p5-HTML-Query
      SUBDIR += p5-HTML-Quoted
      SUBDIR += p5-HTML-ResolveLink
      SUBDIR += p5-HTML-RewriteAttributes
