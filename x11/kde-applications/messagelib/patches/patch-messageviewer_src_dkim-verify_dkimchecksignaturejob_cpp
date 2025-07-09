@@ -1,0 +1,58 @@
+Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
+--- messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp.orig
++++ messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
+@@ -19,8 +19,12 @@
+ #include <QRegularExpression>
+ 
+ #include <openssl/bn.h>
++#ifdef LIBRESSL_VERSION_NUMBER
++#include <openssl/x509.h>
++#else
+ #include <openssl/core_names.h>
+ #include <openssl/decoder.h>
++#endif
+ #include <openssl/err.h>
+ #include <openssl/evp.h>
+ #include <openssl/rsa.h>
+@@ -510,6 +514,7 @@ using EVPPKeyPtr = std::unique_ptr<EVP_PKEY, decltype(
+ EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+ {
+     EVP_PKEY *pubKey = nullptr;
++#ifndef LIBRESSL_VERSION_NUMBER
+     std::unique_ptr<OSSL_DECODER_CTX, decltype(&OSSL_DECODER_CTX_free)> decoderCtx(
+         OSSL_DECODER_CTX_new_for_pkey(&pubKey, "DER", nullptr, "RSA", EVP_PKEY_PUBLIC_KEY, nullptr, nullptr),
+         OSSL_DECODER_CTX_free);
+@@ -517,10 +522,16 @@ EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to create OSSL_DECODER_CTX";
+         return {nullptr, EVP_PKEY_free};
+     }
++#endif
+ 
+     const auto rawDer = QByteArray::fromBase64(der);
++#ifdef LIBRESSL_VERSION_NUMBER
++    const unsigned char *p = reinterpret_cast<const unsigned char *>(rawDer.constData());
++    if ((pubKey = d2i_PUBKEY(nullptr, &p, rawDer.size())) == nullptr) {    
++#else
+     std::unique_ptr<BIO, decltype(&BIO_free)> pubKeyBio(BIO_new_mem_buf(rawDer.constData(), rawDer.size()), BIO_free);
+     if (!OSSL_DECODER_from_bio(decoderCtx.get(), pubKeyBio.get())) {
++#endif
+         // No need to free pubKey, it's initialized by this function only on success
+         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to decode public key:" << ERR_error_string(ERR_get_error(), nullptr);
+         return {nullptr, EVP_PKEY_free};
+@@ -575,11 +586,16 @@ std::optional<bool> doVerifySignature(EVP_PKEY *key, c
+ 
+ uint64_t getKeyE(EVP_PKEY *key)
+ {
++#ifdef LIBRESSL_VERSION_NUMBER
++    const RSA *rsa = EVP_PKEY_get0_RSA(key);
++    return BN_get_word(RSA_get0_e(rsa));
++#else
+     BIGNUM *bne = nullptr;
+     EVP_PKEY_get_bn_param(key, OSSL_PKEY_PARAM_RSA_E, &bne);
+     const uint64_t size = BN_get_word(bne);
+     BN_free(bne);
+     return size;
++#endif
+ }
+ 
+ void DKIMCheckSignatureJob::verifyRSASignature()

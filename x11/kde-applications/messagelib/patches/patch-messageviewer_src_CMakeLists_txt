@@ -1,0 +1,12 @@
+Index: messageviewer/src/CMakeLists.txt
+--- messageviewer/src/CMakeLists.txt.orig
++++ messageviewer/src/CMakeLists.txt
+@@ -425,7 +425,7 @@ target_link_libraries(KPim6MessageViewer
+     Qt::PrintSupport
+     KF6::Notifications
+     KF6::TextAddonsWidgets
+-    OpenSSL::SSL
++    crypto
+ )
+ 
+ if(TARGET KF6::TextEditTextToSpeech)

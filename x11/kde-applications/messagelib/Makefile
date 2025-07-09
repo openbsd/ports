@@ -2,10 +2,12 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
+REVISION =	0
+
 SHARED_LIBS +=	KPim6MessageComposer      2.0 # 0.0
 SHARED_LIBS +=	KPim6MessageCore          2.0 # 0.0
 SHARED_LIBS +=	KPim6MessageList          2.0 # 0.0
-SHARED_LIBS +=	KPim6MessageViewer        2.0 # 0.0
+SHARED_LIBS +=	KPim6MessageViewer        3.0 # 0.0
 SHARED_LIBS +=	KPim6MimeTreeParser       2.0 # 0.0
 SHARED_LIBS +=	KPim6TemplateParser       1.0 # 0.0
 SHARED_LIBS +=	KPim6WebEngineViewer      2.0 # 0.0
@@ -29,10 +31,9 @@ WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml assuan gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Widgets Qt6Xml assuan crypto gpgme gpgmepp m qgpgmeqt6
 
 WANTLIB += lib/inotify/inotify
-WANTLIB += lib/eopenssl33/crypto lib/eopenssl33/ssl
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -91,13 +92,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-LIB_DEPENDS +=	security/openssl/3.3
-
 TEST_IS_INTERACTIVE =	X11
 
-CONFIGURE_ENV	= OPENSSL_ROOT_DIR=${LOCALBASE}/lib/eopenssl33
-
-CXXFLAGS =	-I${LOCALBASE}/include/inotify/ -I${LOCALBASE}/include/eopenssl33
-LDFLAGS =	-L${LOCALBASE}/lib/eopenssl33 -Wl,-rpath,${LOCALBASE}/lib/eopenssl33
+CXXFLAGS =	-I${LOCALBASE}/include/inotify/
 
 .include <bsd.port.mk>
