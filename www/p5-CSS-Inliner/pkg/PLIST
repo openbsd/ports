@@ -1,0 +1,8 @@
+${P5SITE}/CSS/
+${P5SITE}/CSS/Inliner/
+${P5SITE}/CSS/Inliner.pm
+${P5SITE}/CSS/Inliner/Parser.pm
+${P5SITE}/CSS/Inliner/TreeBuilder.pm
+@man man/man3p/CSS::Inliner.3p
+@man man/man3p/CSS::Inliner::Parser.3p
+@man man/man3p/CSS::Inliner::TreeBuilder.3p

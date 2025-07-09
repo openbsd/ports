@@ -1,0 +1,4 @@
+Library for converting CSS style blocks into inline styles in an HTML document. 
+Specifically this is intended for the ease of generating HTML emails. This is 
+useful as certain email clients don't support top level <style> declarations 
+despite it being 2017.
