@@ -1,0 +1,187 @@
+${P5SITE}/Badger/
+${P5SITE}/Badger.pm
+${P5SITE}/Badger/App.pm
+${P5SITE}/Badger/Apps.pm
+${P5SITE}/Badger/Base.pm
+${P5SITE}/Badger/Class/
+${P5SITE}/Badger/Class.pm
+${P5SITE}/Badger/Class/Config.pm
+${P5SITE}/Badger/Class/Methods.pm
+${P5SITE}/Badger/Class/Vars.pm
+${P5SITE}/Badger/Codec/
+${P5SITE}/Badger/Codec.pm
+${P5SITE}/Badger/Codec/Base64.pm
+${P5SITE}/Badger/Codec/Chain.pm
+${P5SITE}/Badger/Codec/Encode.pm
+${P5SITE}/Badger/Codec/Encoding.pm
+${P5SITE}/Badger/Codec/HTML.pm
+${P5SITE}/Badger/Codec/JSON.pm
+${P5SITE}/Badger/Codec/Storable.pm
+${P5SITE}/Badger/Codec/TT.pm
+${P5SITE}/Badger/Codec/Timestamp.pm
+${P5SITE}/Badger/Codec/URI.pm
+${P5SITE}/Badger/Codec/URL.pm
+${P5SITE}/Badger/Codec/Unicode.pm
+${P5SITE}/Badger/Codec/YAML.pm
+${P5SITE}/Badger/Codecs.pm
+${P5SITE}/Badger/Comparable.pm
+${P5SITE}/Badger/Config/
+${P5SITE}/Badger/Config.pm
+${P5SITE}/Badger/Config/Filesystem.pm
+${P5SITE}/Badger/Config/Item.pm
+${P5SITE}/Badger/Config/Schema.pm
+${P5SITE}/Badger/Constants.pm
+${P5SITE}/Badger/Data/
+${P5SITE}/Badger/Data.pm
+${P5SITE}/Badger/Data/Facet/
+${P5SITE}/Badger/Data/Facet.pm
+${P5SITE}/Badger/Data/Facet/Class.pm
+${P5SITE}/Badger/Data/Facet/List/
+${P5SITE}/Badger/Data/Facet/List.pm
+${P5SITE}/Badger/Data/Facet/List/MaxSize.pm
+${P5SITE}/Badger/Data/Facet/List/MinSize.pm
+${P5SITE}/Badger/Data/Facet/List/Size.pm
+${P5SITE}/Badger/Data/Facet/Number/
+${P5SITE}/Badger/Data/Facet/Number.pm
+${P5SITE}/Badger/Data/Facet/Number/Max.pm
+${P5SITE}/Badger/Data/Facet/Number/Min.pm
+${P5SITE}/Badger/Data/Facet/Text/
+${P5SITE}/Badger/Data/Facet/Text.pm
+${P5SITE}/Badger/Data/Facet/Text/Length.pm
+${P5SITE}/Badger/Data/Facet/Text/MaxLength.pm
+${P5SITE}/Badger/Data/Facet/Text/MinLength.pm
+${P5SITE}/Badger/Data/Facet/Text/Pattern.pm
+${P5SITE}/Badger/Data/Facet/Text/Whitespace.pm
+${P5SITE}/Badger/Data/Facet/tmp
+${P5SITE}/Badger/Data/Facets.pm
+${P5SITE}/Badger/Data/Type/
+${P5SITE}/Badger/Data/Type.pm
+${P5SITE}/Badger/Data/Type/Class.pm
+${P5SITE}/Badger/Data/Type/Number.pm
+${P5SITE}/Badger/Data/Type/Simple.pm
+${P5SITE}/Badger/Data/Type/Text.pm
+${P5SITE}/Badger/Data/Types.pm
+${P5SITE}/Badger/Date.pm
+${P5SITE}/Badger/Debug.pm
+${P5SITE}/Badger/Duration.pm
+${P5SITE}/Badger/Exception.pm
+${P5SITE}/Badger/Exporter.pm
+${P5SITE}/Badger/Factory/
+${P5SITE}/Badger/Factory.pm
+${P5SITE}/Badger/Factory/Class.pm
+${P5SITE}/Badger/Filesystem/
+${P5SITE}/Badger/Filesystem.pm
+${P5SITE}/Badger/Filesystem/Base.pm
+${P5SITE}/Badger/Filesystem/Directory.pm
+${P5SITE}/Badger/Filesystem/File.pm
+${P5SITE}/Badger/Filesystem/Path.pm
+${P5SITE}/Badger/Filesystem/Universal.pm
+${P5SITE}/Badger/Filesystem/Virtual.pm
+${P5SITE}/Badger/Filesystem/Visitor.pm
+${P5SITE}/Badger/Filter.pm
+${P5SITE}/Badger/Hub/
+${P5SITE}/Badger/Hub.pm
+${P5SITE}/Badger/Hub/Badger.pm
+${P5SITE}/Badger/Log/
+${P5SITE}/Badger/Log.pm
+${P5SITE}/Badger/Log/File.pm
+${P5SITE}/Badger/Logic.pm
+${P5SITE}/Badger/Mixin.pm
+${P5SITE}/Badger/Modules.pm
+${P5SITE}/Badger/Period.pm
+${P5SITE}/Badger/Progress.pm
+${P5SITE}/Badger/Prototype.pm
+${P5SITE}/Badger/Rainbow.pm
+${P5SITE}/Badger/Reporter/
+${P5SITE}/Badger/Reporter.pm
+${P5SITE}/Badger/Reporter/App.pm
+${P5SITE}/Badger/Test/
+${P5SITE}/Badger/Test.pm
+${P5SITE}/Badger/Test/Manager.pm
+${P5SITE}/Badger/Timestamp.pm
+${P5SITE}/Badger/URL.pm
+${P5SITE}/Badger/Utils.pm
+${P5SITE}/Badger/Workplace.pm
+${P5SITE}/Badger/Workspace.pm
+@man man/man3p/Badger.3p
+@man man/man3p/Badger::App.3p
+@man man/man3p/Badger::Apps.3p
+@man man/man3p/Badger::Base.3p
+@man man/man3p/Badger::Class.3p
+@man man/man3p/Badger::Class::Config.3p
+@man man/man3p/Badger::Class::Methods.3p
+@man man/man3p/Badger::Class::Vars.3p
+@man man/man3p/Badger::Codec.3p
+@man man/man3p/Badger::Codec::Base64.3p
+@man man/man3p/Badger::Codec::Chain.3p
+@man man/man3p/Badger::Codec::Encode.3p
+@man man/man3p/Badger::Codec::Encoding.3p
+@man man/man3p/Badger::Codec::HTML.3p
+@man man/man3p/Badger::Codec::JSON.3p
+@man man/man3p/Badger::Codec::Storable.3p
+@man man/man3p/Badger::Codec::TT.3p
+@man man/man3p/Badger::Codec::Timestamp.3p
+@man man/man3p/Badger::Codec::URI.3p
+@man man/man3p/Badger::Codec::URL.3p
+@man man/man3p/Badger::Codec::Unicode.3p
+@man man/man3p/Badger::Codec::YAML.3p
+@man man/man3p/Badger::Codecs.3p
+@man man/man3p/Badger::Comparable.3p
+@man man/man3p/Badger::Config.3p
+@man man/man3p/Badger::Config::Filesystem.3p
+@man man/man3p/Badger::Constants.3p
+@man man/man3p/Badger::Data.3p
+@man man/man3p/Badger::Data::Facet.3p
+@man man/man3p/Badger::Data::Facet::Class.3p
+@man man/man3p/Badger::Data::Facet::List.3p
+@man man/man3p/Badger::Data::Facet::List::MaxSize.3p
+@man man/man3p/Badger::Data::Facet::List::MinSize.3p
+@man man/man3p/Badger::Data::Facet::List::Size.3p
+@man man/man3p/Badger::Data::Facet::Number.3p
+@man man/man3p/Badger::Data::Facet::Number::Max.3p
+@man man/man3p/Badger::Data::Facet::Number::Min.3p
+@man man/man3p/Badger::Data::Facet::Text.3p
+@man man/man3p/Badger::Data::Facet::Text::Length.3p
+@man man/man3p/Badger::Data::Facet::Text::MaxLength.3p
+@man man/man3p/Badger::Data::Facet::Text::MinLength.3p
+@man man/man3p/Badger::Data::Facet::Text::Pattern.3p
+@man man/man3p/Badger::Data::Facet::Text::Whitespace.3p
+@man man/man3p/Badger::Data::Facets.3p
+@man man/man3p/Badger::Data::Type.3p
+@man man/man3p/Badger::Data::Type::Class.3p
+@man man/man3p/Badger::Data::Type::Number.3p
+@man man/man3p/Badger::Data::Type::Simple.3p
+@man man/man3p/Badger::Data::Type::Text.3p
+@man man/man3p/Badger::Data::Types.3p
+@man man/man3p/Badger::Date.3p
+@man man/man3p/Badger::Debug.3p
+@man man/man3p/Badger::Duration.3p
+@man man/man3p/Badger::Exception.3p
+@man man/man3p/Badger::Exporter.3p
+@man man/man3p/Badger::Factory.3p
+@man man/man3p/Badger::Factory::Class.3p
+@man man/man3p/Badger::Filesystem.3p
+@man man/man3p/Badger::Filesystem::Base.3p
+@man man/man3p/Badger::Filesystem::Directory.3p
+@man man/man3p/Badger::Filesystem::File.3p
+@man man/man3p/Badger::Filesystem::Path.3p
+@man man/man3p/Badger::Filesystem::Virtual.3p
+@man man/man3p/Badger::Filesystem::Visitor.3p
+@man man/man3p/Badger::Filter.3p
+@man man/man3p/Badger::Hub.3p
+@man man/man3p/Badger::Hub::Badger.3p
+@man man/man3p/Badger::Log.3p
+@man man/man3p/Badger::Log::File.3p
+@man man/man3p/Badger::Logic.3p
+@man man/man3p/Badger::Mixin.3p
+@man man/man3p/Badger::Modules.3p
+@man man/man3p/Badger::Period.3p
+@man man/man3p/Badger::Prototype.3p
+@man man/man3p/Badger::Rainbow.3p
+@man man/man3p/Badger::Test.3p
+@man man/man3p/Badger::Test::Manager.3p
+@man man/man3p/Badger::Timestamp.3p
+@man man/man3p/Badger::URL.3p
+@man man/man3p/Badger::Utils.3p
+@man man/man3p/Badger::Workplace.3p
+@man man/man3p/Badger::Workspace.3p
