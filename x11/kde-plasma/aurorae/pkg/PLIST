@@ -1,3 +1,4 @@
+@conflict kwin-<6.4.0
 lib/cmake/Aurorae/
 lib/cmake/Aurorae/AuroraeConfig.cmake
 lib/cmake/Aurorae/AuroraeConfigVersion.cmake
