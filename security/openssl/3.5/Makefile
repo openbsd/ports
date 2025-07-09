@@ -12,6 +12,8 @@ PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.5v0,<3.6v0
 EPOCH=		0
 
+REVISION=	0
+
 SHLIBVER=	37.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
