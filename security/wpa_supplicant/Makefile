@@ -1,7 +1,7 @@
 COMMENT=	IEEE 802.1X supplicant
 
 DISTNAME=	wpa_supplicant-2.9
-REVISION=	6
+REVISION=	7
 CATEGORIES=	security net
 
 HOMEPAGE=	https://w1.fi/wpa_supplicant/
@@ -28,10 +28,10 @@ FLAVOR?=
 CFLAGS+=	-I${LOCALBASE}/include/PCSC
 
 .if ${FLAVOR:Mopenssl}
-LIB_DEPENDS +=	security/openssl/3.3
-CFLAGS +=	-Wno-deprecated-declarations -I${LOCALBASE}/include/eopenssl33
-LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl33 -L${LOCALBASE}/lib/eopenssl33
-WANTLIB +=	lib/eopenssl33/crypto lib/eopenssl33/ssl
+LIB_DEPENDS +=	security/openssl/3.5
+CFLAGS +=	-Wno-deprecated-declarations -I${LOCALBASE}/include/eopenssl35
+LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl35 -L${LOCALBASE}/lib/eopenssl35
+WANTLIB +=	lib/eopenssl35/crypto lib/eopenssl35/ssl
 .else
 WANTLIB +=	crypto ssl
 .endif
