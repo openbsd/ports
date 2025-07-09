@@ -529,6 +529,7 @@
      SUBDIR += p5-B-Hooks-OP-Check
      SUBDIR += p5-B-Keywords
      SUBDIR += p5-B-Utils
+     SUBDIR += p5-Badger
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-arc4random
@@ -832,6 +833,7 @@
      SUBDIR += p5-Hash-AutoHash-Args
      SUBDIR += p5-Hash-Flatten
      SUBDIR += p5-Hash-Merge
+     SUBDIR += p5-Hash-Merge-Extra
      SUBDIR += p5-Hash-Merge-Simple
      SUBDIR += p5-Hash-MultiValue
      SUBDIR += p5-Hash-NoRef
