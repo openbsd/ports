@@ -1,7 +1,7 @@
 Index: sbin/rt-test-dependencies.in
 --- sbin/rt-test-dependencies.in.orig
 +++ sbin/rt-test-dependencies.in
-@@ -237,7 +237,7 @@ sub read_deps {
+@@ -236,7 +236,7 @@ sub read_deps {
      };
  
      my ($vol, $dir, $path) = File::Spec->splitpath( $script_path );
