@@ -670,8 +670,10 @@
      SUBDIR += ruby-connection_pool
      SUBDIR += ruby-eventmachine,ruby33
      SUBDIR += ruby-eventmachine,ruby34
-     SUBDIR += ruby-googleapis-common-protos-types
-     SUBDIR += ruby-grpc
+     SUBDIR += ruby-googleapis-common-protos-types,ruby33
+     SUBDIR += ruby-googleapis-common-protos-types,ruby34
+     SUBDIR += ruby-grpc,ruby33
+     SUBDIR += ruby-grpc,ruby34
      SUBDIR += ruby-msgpack,ruby33
      SUBDIR += ruby-msgpack,ruby34
      SUBDIR += ruby-net-telnet
