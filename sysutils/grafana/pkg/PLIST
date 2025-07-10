@@ -6247,6 +6247,7 @@ share/grafana/public/app/plugins/panel/geomap/utils/measure.ts
 share/grafana/public/app/plugins/panel/geomap/utils/selection.ts
 share/grafana/public/app/plugins/panel/geomap/utils/tooltip.ts
 share/grafana/public/app/plugins/panel/geomap/utils/uiUtils.tsx
+share/grafana/public/app/plugins/panel/geomap/utils/utils.test.ts
 share/grafana/public/app/plugins/panel/geomap/utils/utils.ts
 share/grafana/public/app/plugins/panel/geomap/view.ts
 share/grafana/public/app/plugins/panel/gettingstarted/
@@ -6777,8 +6778,6 @@ share/grafana/public/build/2741.6b13adf55d86cf38bb14.js
 share/grafana/public/build/2741.6b13adf55d86cf38bb14.js.map
 share/grafana/public/build/2745.9f335470deb2a63b6115.js
 share/grafana/public/build/2745.9f335470deb2a63b6115.js.map
-share/grafana/public/build/2886.ddde44bec1c94b446736.js
-share/grafana/public/build/2886.ddde44bec1c94b446736.js.map
 share/grafana/public/build/2962.85c9dc0cca68efab5e0c.js
 share/grafana/public/build/2962.85c9dc0cca68efab5e0c.js.map
 share/grafana/public/build/2975.e15b9f6f306a350281ff.js
@@ -6911,8 +6910,8 @@ share/grafana/public/build/5683.b8552408670da358f8f5.js
 share/grafana/public/build/5683.b8552408670da358f8f5.js.map
 share/grafana/public/build/5786.c45dfaf9e1d969472e5e.js
 share/grafana/public/build/5786.c45dfaf9e1d969472e5e.js.map
-share/grafana/public/build/5906.1270334bc6dbfd79e5c8.js
-share/grafana/public/build/5906.1270334bc6dbfd79e5c8.js.map
+share/grafana/public/build/5906.1d8fa6d2e1a474fcd896.js
+share/grafana/public/build/5906.1d8fa6d2e1a474fcd896.js.map
 share/grafana/public/build/5995.d045fef574e7f15f1a53.js
 share/grafana/public/build/5995.d045fef574e7f15f1a53.js.map
 share/grafana/public/build/5e493d758066ba82f810.wasm
@@ -6920,6 +6919,8 @@ share/grafana/public/build/6018.befdd11bf701ea71f7bf.js
 share/grafana/public/build/6018.befdd11bf701ea71f7bf.js.map
 share/grafana/public/build/6029.0549a3fcb50e73c4b256.js
 share/grafana/public/build/6029.0549a3fcb50e73c4b256.js.map
+share/grafana/public/build/6117.6d122eb5b7935b5ca200.js
+share/grafana/public/build/6117.6d122eb5b7935b5ca200.js.map
 share/grafana/public/build/6185.2a7c893c6b3f2f0dadb8.js
 share/grafana/public/build/6185.2a7c893c6b3f2f0dadb8.js.map
 share/grafana/public/build/630.16d7a7c29f8a21016a64.js
@@ -7020,8 +7021,8 @@ share/grafana/public/build/8477.e51a71aaaba035ba2657.js
 share/grafana/public/build/8477.e51a71aaaba035ba2657.js.map
 share/grafana/public/build/8494.659892f00c9d15ae441a.js
 share/grafana/public/build/8494.659892f00c9d15ae441a.js.map
-share/grafana/public/build/8501.7ee342f9fee7ef26b7d1.js
-share/grafana/public/build/8501.7ee342f9fee7ef26b7d1.js.map
+share/grafana/public/build/8501.2be0b941b7a377de2389.js
+share/grafana/public/build/8501.2be0b941b7a377de2389.js.map
 share/grafana/public/build/8542.317c15ed57f68fcf0c97.js
 share/grafana/public/build/8542.317c15ed57f68fcf0c97.js.map
 share/grafana/public/build/8566.5c8f392bb383ab92eed0.js
@@ -7103,8 +7104,8 @@ share/grafana/public/build/AdminSettings.4a06ece9ce56b53a359d.js
 share/grafana/public/build/AdminSettings.4a06ece9ce56b53a359d.js.map
 share/grafana/public/build/AlertGroups.3bdc6fd07fa63898b90d.js
 share/grafana/public/build/AlertGroups.3bdc6fd07fa63898b90d.js.map
-share/grafana/public/build/AlertRuleListIndex.88b5b15ba7586afb66cd.js
-share/grafana/public/build/AlertRuleListIndex.88b5b15ba7586afb66cd.js.map
+share/grafana/public/build/AlertRuleListIndex.9d780dd5270ffff5de13.js
+share/grafana/public/build/AlertRuleListIndex.9d780dd5270ffff5de13.js.map
 share/grafana/public/build/AlertingDisabled.aa3891ea9e3526709880.js
 share/grafana/public/build/AlertingDisabled.aa3891ea9e3526709880.js.map
 share/grafana/public/build/AlertingHome.e8e9ddd47c69abcf30fa.js
@@ -7280,8 +7281,8 @@ share/grafana/public/build/debugPanel.683ccff1174889eb3a34.js.map
 share/grafana/public/build/elasticsearchPlugin.ad3b9393f3e44e211322.js
 share/grafana/public/build/explore-feature-toggle-page.94fbcff58dd470914c5b.js
 share/grafana/public/build/explore-feature-toggle-page.94fbcff58dd470914c5b.js.map
-share/grafana/public/build/explore.98521868061c8c15cd25.js
-share/grafana/public/build/explore.98521868061c8c15cd25.js.map
+share/grafana/public/build/explore.be5d40c3dd11b8bbe212.js
+share/grafana/public/build/explore.be5d40c3dd11b8bbe212.js.map
 share/grafana/public/build/flamegraphPanel.1b206258cb8952ce1103.js
 share/grafana/public/build/flamegraphPanel.1b206258cb8952ce1103.js.map
 share/grafana/public/build/geomapPanel.53f0235781bb2379d131.js
@@ -7335,8 +7336,8 @@ share/grafana/public/build/opentsdbPlugin.8b506475b22b994376d9.js.map
 share/grafana/public/build/pieChartPanel.da8d17b4d958e795a32a.js
 share/grafana/public/build/pieChartPanel.da8d17b4d958e795a32a.js.map
 share/grafana/public/build/prometheusPlugin.581d56d94acfc77b158b.js
-share/grafana/public/build/runtime.2490afc54c88b0127af5.js
-share/grafana/public/build/runtime.2490afc54c88b0127af5.js.map
+share/grafana/public/build/runtime.eaecbcac1e77eb5b714e.js
+share/grafana/public/build/runtime.eaecbcac1e77eb5b714e.js.map
 share/grafana/public/build/sql-query-editor.1c2ff498b54ac1b82556.js
 share/grafana/public/build/sql-query-editor.1c2ff498b54ac1b82556.js.map
 share/grafana/public/build/stateTimelinePanel.772f8350ce5762503324.js
