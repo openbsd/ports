@@ -123,6 +123,7 @@
      SUBDIR += p5-Statistics-Contingency
      SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari
+     SUBDIR += pari-data
      SUBDIR += pcalc
      SUBDIR += plplot
      SUBDIR += prover9
