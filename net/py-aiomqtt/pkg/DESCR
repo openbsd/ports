@@ -1,0 +1,15 @@
+aiomqtt is an idiomatic asyncio MQTT client for Python. It supports MQTT
+versions 3.1, 3.1.1 and 5.0 via paho-mqtt, handles disconnection gracefully,
+is fully type-hinted, and client code is simple (callbacks are not needed):
+
+Publish:
+
+async with Client("test.mosquitto.org") as client:
+    await client.publish("temperature/outside", payload=28.4)
+
+Subscribe:
+
+async with Client("test.mosquitto.org") as client:
+    await client.subscribe("temperature/#")
+    async for message in client.messages:
+        print(message.payload)
