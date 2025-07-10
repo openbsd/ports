@@ -1,4 +1,5 @@
 https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
+(and local changes for FoFiTrueType::make())
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
@@ -33,6 +34,21 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	const double *textMat = nullptr;
  	double m11, m12, m21, m22, fontSize;
  	SplashCoord mat[4] = { 1.0, 0.0, 0.0, 1.0 };
+@@ -3040,12 +3044,12 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 			if (!fileName.empty())
+ 				ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
+ 			else
+-				ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size(), fontLoc->fontNum);
++				ff = FoFiTrueType::make(std::span(fontsrc->buf), fontLoc->fontNum);
+ #else
+ 			if (!fileName.empty())
+ 				ff = FoFiTrueType::load(fileName.c_str());
+ 			else
+-				ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
++				ff = FoFiTrueType::make(std::spam(fontsrc->buf));
+ #endif
+ 			if (ff)
+ 			{
 @@ -3055,10 +3059,20 @@ void SlaOutputDev::updateFont(GfxState *state)
  			}
  			else
@@ -107,7 +123,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			codeToGID = nullptr;
  			n = 0;
  			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
-@@ -3129,6 +3172,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3129,25 +3172,36 @@ void SlaOutputDev::updateFont(GfxState *state)
  					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(*codeToGID));
  				}
  			}
@@ -115,7 +131,17 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			else
  			{
  #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
-@@ -3144,10 +3188,20 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 				if (!fileName.empty())
+ 					ff = FoFiTrueType::load(fileName.c_str(), fontLoc->fontNum);
+ 				else
+-					ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size(), fontLoc->fontNum);
++					ff = FoFiTrueType::make(std::span(fontsrc->buf), fontLoc->fontNum);
+ #else
+ 				if (!fileName.empty())
+ 					ff = FoFiTrueType::load(fileName.c_str());
+ 				else
+-					ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
++					ff = FoFiTrueType::make(std::span(fontsrc->buf));
  #endif
  				if (! ff)
  					goto err2;
