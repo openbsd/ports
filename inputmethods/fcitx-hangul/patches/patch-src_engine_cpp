@@ -1,0 +1,78 @@
+https://github.com/fcitx/fcitx5-hangul/pull/14
+
+Index: src/engine.cpp
+--- src/engine.cpp.orig
++++ src/engine.cpp
+@@ -44,6 +44,14 @@ std::string ustringToUTF8(const UString &ustr) {
+     return result;
+ }
+ 
++UString ucsToUString(const ucschar *str) {
++    UString result;
++    while (*str) {
++        result += *str++;
++    }
++    return result;
++}
++
+ static std::string subUTF8String(const std::string &str, int p1, int p2) {
+     int limit;
+     int pos;
+@@ -131,7 +139,7 @@ class HangulState : public InputContextProperty { (pub
+ 
+         auto hic_preedit = hangul_ic_get_preedit_string(context_.get());
+         UString preedit = preedit_;
+-        preedit.append(UString(hic_preedit));
++        preedit.append(ucsToUString(hic_preedit));
+         if (!preedit.empty()) {
+             auto utf8 = ustringToUTF8(preedit);
+             if (*engine_->config().wordCommit || *engine_->config().hanjaMode) {
+@@ -356,10 +364,8 @@ class HangulState : public InputContextProperty { (pub
+                 const ucschar *hic_preedit;
+ 
+                 hic_preedit = hangul_ic_get_preedit_string(context_.get());
+-                if (hic_preedit != nullptr && hic_preedit[0] != 0) {
+-                    preedit_.append(UString(str));
+-                } else {
+-                    preedit_.append(UString(str));
++                preedit_.append(ucsToUString(str));
++                if (hic_preedit == nullptr || hic_preedit[0] == 0) {
+                     if (!preedit_.empty()) {
+                         auto commit = ustringToUTF8(preedit_);
+                         if (!commit.empty()) {
+@@ -370,7 +376,7 @@ class HangulState : public InputContextProperty { (pub
+                 }
+             } else {
+                 if (str != nullptr && str[0] != 0) {
+-                    auto commit = ustringToUTF8(str);
++                    auto commit = ustringToUTF8(ucsToUString(str));
+                     if (!commit.empty()) {
+                         ic_->commitString(commit);
+                     }
+@@ -408,7 +414,7 @@ class HangulState : public InputContextProperty { (pub
+ 
+         auto str = hangul_ic_flush(context_.get());
+ 
+-        preedit_ += str;
++        preedit_ += ucsToUString(str);
+ 
+         if (preedit_.empty())
+             return;
+@@ -430,7 +436,7 @@ class HangulState : public InputContextProperty { (pub
+         std::string pre1 = ustringToUTF8(preedit_);
+         std::string pre2;
+         if (hic_preedit) {
+-            pre2 = ustringToUTF8(hic_preedit);
++            pre2 = ustringToUTF8(ucsToUString(hic_preedit));
+         }
+ 
+         if (!pre1.empty() || !pre2.empty()) {
+@@ -493,7 +499,7 @@ class HangulState : public InputContextProperty { (pub
+ 
+         key_len = fcitx::utf8::length(std::string(key));
+         preedit_len = preedit_.size();
+-        hic_preedit_len = UString(hic_preedit).size();
++        hic_preedit_len = ucsToUString(hic_preedit).size();
+ 
+         bool surrounding = false;
+         if (lastLookupMethod_ == LOOKUP_METHOD_PREFIX) {

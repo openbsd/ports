@@ -2,6 +2,7 @@ COMMENT =	Hangul wrapper for fcitx5
 
 DISTNAME =	fcitx5-hangul-5.1.5
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods korean
 

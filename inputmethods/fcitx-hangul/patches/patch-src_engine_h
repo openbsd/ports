@@ -1,0 +1,16 @@
+https://github.com/fcitx/fcitx5-hangul/pull/14
+
+Index: src/engine.h
+--- src/engine.h.orig
++++ src/engine.h
+@@ -85,7 +85,9 @@ typedef enum _LookupMethod {
+ 
+ class HangulState;
+ 
+-using UString = std::basic_string<uint32_t>;
++using UString = std::basic_string<char32_t>;
++
++UString ucsToUString(const ucschar *c);
+ 
+ class HangulEngine : public InputMethodEngine {
+ public:
