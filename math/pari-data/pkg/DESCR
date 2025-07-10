@@ -1,0 +1,15 @@
+Optional packages endowing PARI with extra capabilities.
+
+- elldata: PARI version of the Elliptic curve data by J. E. Cremona,
+  <http://www.maths.nott.ac.uk/personal/jec/ftp/data>, for use with
+  ellsearch, ellidentity and ellgenerators.
+
+- galdata: data needed by polgalois for degrees 8,9,10 and 11
+
+- galpol: PARI package of the GALPOL database of polynomials defining
+  Galois extensions of the rationals, accessed by galoisgetpol.
+
+- nftables: repackaging of the historical 'megrez' number field tables
+
+- seadata: needed by ellap for large primes. These polynomials were
+  extracted from the ECHIDNA databases and computed by David R. Kohel.
