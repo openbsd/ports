@@ -1,277 +1,186 @@
 bin/a2x
-bin/a2x.py
 bin/asciidoc
-bin/asciidoc.py
-lib/python${MODPY_VERSION}/site-packages/asciidocapi.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/asciidoc-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/__main__.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/__metadata__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__metadata__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}__metadata__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}a2x.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}a2x.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}asciidoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}asciidoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}attrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}attrs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/a2x.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/api.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/asciidoc.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/attrs.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/blocks/table.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/collections.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/message.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/plugin.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/asciidoc.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/dblatex/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/dblatex/asciidoc-dblatex.sty
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/dblatex/asciidoc-dblatex.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/dblatex/dblatex-readme.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/asciidoc-docbook-xsl.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/chunked.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/common.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/epub.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/fo.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/htmlhelp.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/manpage.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/text.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook-xsl/xhtml.xsl
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook45.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/docbook5.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/${MODPY_PYCACHE}unwraplatex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/${MODPY_PYCACHE}unwraplatex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/${MODPY_PYCACHE}code-filter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/${MODPY_PYCACHE}code-filter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/code-filter-readme.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/code-filter-test.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/code-filter.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/code/code-filter.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/${MODPY_PYCACHE}graphviz2png.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/${MODPY_PYCACHE}graphviz2png.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/asciidoc-graphviz-sample.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/graphviz-filter.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/graphviz/graphviz2png.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/${MODPY_PYCACHE}latex2img.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/${MODPY_PYCACHE}latex2img.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/latex-filter.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/latex/latex2img.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/${MODPY_PYCACHE}music2png.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/${MODPY_PYCACHE}music2png.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/music-filter-test.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/music-filter.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/music/music2png.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/source/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/source/source-highlight-filter-test.txt
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/source/source-highlight-filter.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/filters/unwraplatex.py
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/help.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/html4.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/html5.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/1.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/10.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/11.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/12.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/13.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/14.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/15.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/2.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/3.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/4.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/5.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/6.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/7.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/8.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/callouts/9.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/caution.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/example.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/home.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/important.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/next.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/note.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/prev.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/tip.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/up.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/icons/warning.png
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/ASCIIMathML.js
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/LaTeXMathML.js
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/asciidoc.js
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/slidy.js
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/javascripts/toc.js
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-ca.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-cs.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-de.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-el.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-en.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-es.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-fi.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-fr.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-hu.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-id.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-it.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-ja.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-nl.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-pl.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-pt-BR.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-ro.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-ru.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-sv.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-uk.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/lang-zh-CN.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/latex.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/slidy.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/asciidoc.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/docbook-xsl.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/pygments.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/slidy.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/toc2.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/stylesheets/xhtml11-quirks.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/text.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/themes/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/themes/flask/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/themes/flask/flask.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/themes/volnitsky/
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/themes/volnitsky/volnitsky.css
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/xhtml11-quirks.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/resources/xhtml11.conf
+lib/python${MODPY_VERSION}/site-packages/asciidoc/utils.py
 @man man/man1/a2x.1
 @man man/man1/asciidoc.1
 @man man/man1/testasciidoc.1
-share/doc/asciidoc/
-share/doc/asciidoc/BUGS.txt
-share/doc/asciidoc/CHANGELOG.txt
-share/doc/asciidoc/INSTALL.txt
-share/doc/asciidoc/README.asciidoc
-share/doc/asciidoc/dblatex
-share/doc/asciidoc/doc/
-share/doc/asciidoc/doc/a2x.1
-share/doc/asciidoc/doc/a2x.1.txt
-share/doc/asciidoc/doc/article-docinfo.xml
-share/doc/asciidoc/doc/article.txt
-share/doc/asciidoc/doc/asciidoc.1
-share/doc/asciidoc/doc/asciidoc.1.txt
-share/doc/asciidoc/doc/asciidoc.conf
-share/doc/asciidoc/doc/asciidoc.dict
-share/doc/asciidoc/doc/asciidoc.txt
-share/doc/asciidoc/doc/asciidocapi.txt
-share/doc/asciidoc/doc/asciimathml.txt
-share/doc/asciidoc/doc/book-multi.txt
-share/doc/asciidoc/doc/book.txt
-share/doc/asciidoc/doc/customers.csv
-share/doc/asciidoc/doc/epub-notes.txt
-share/doc/asciidoc/doc/faq.txt
-share/doc/asciidoc/doc/latex-backend.txt
-share/doc/asciidoc/doc/latex-bugs.txt
-share/doc/asciidoc/doc/latex-filter.txt
-share/doc/asciidoc/doc/latexmath.txt
-share/doc/asciidoc/doc/latexmathml.txt
-share/doc/asciidoc/doc/music-filter.txt
-share/doc/asciidoc/doc/publishing-ebooks-with-asciidoc.txt
-share/doc/asciidoc/doc/slidy-example.txt
-share/doc/asciidoc/doc/slidy.txt
-share/doc/asciidoc/doc/source-highlight-filter.txt
-share/doc/asciidoc/doc/testasciidoc.1
-share/doc/asciidoc/doc/testasciidoc.1.txt
-share/doc/asciidoc/doc/testasciidoc.txt
-share/doc/asciidoc/docbook-xsl
-share/doc/asciidoc/images
-share/doc/asciidoc/javascripts
-share/doc/asciidoc/stylesheets
-share/doc/asciidoc/website/
-share/doc/asciidoc/website/README-website.txt
-share/doc/asciidoc/website/asciidoc-website.dict
-share/doc/asciidoc/website/customers.csv
-share/doc/asciidoc/website/favicon.ico
-share/doc/asciidoc/website/index.txt
-share/doc/asciidoc/website/layout1.conf
-share/doc/asciidoc/website/layout1.css
-share/doc/asciidoc/website/layout2.conf
-share/doc/asciidoc/website/layout2.css
-share/doc/asciidoc/website/newlists.txt
-share/doc/asciidoc/website/newtables.txt
-share/doc/asciidoc/website/plugins.txt
-share/doc/asciidoc/website/support.txt
-share/doc/asciidoc/website/version83.txt
-share/examples/asciidoc/
-@sample ${SYSCONFDIR}/asciidoc/
-share/examples/asciidoc/asciidoc.conf
-@sample ${SYSCONFDIR}/asciidoc/asciidoc.conf
-share/examples/asciidoc/dblatex/
-@sample ${SYSCONFDIR}/asciidoc/dblatex/
-share/examples/asciidoc/dblatex/asciidoc-dblatex.sty
-@sample ${SYSCONFDIR}/asciidoc/dblatex/asciidoc-dblatex.sty
-share/examples/asciidoc/dblatex/asciidoc-dblatex.xsl
-@sample ${SYSCONFDIR}/asciidoc/dblatex/asciidoc-dblatex.xsl
-share/examples/asciidoc/docbook-xsl/
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/
-share/examples/asciidoc/docbook-xsl/chunked.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/chunked.xsl
-share/examples/asciidoc/docbook-xsl/common.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/common.xsl
-share/examples/asciidoc/docbook-xsl/epub.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/epub.xsl
-share/examples/asciidoc/docbook-xsl/fo.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/fo.xsl
-share/examples/asciidoc/docbook-xsl/htmlhelp.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/htmlhelp.xsl
-share/examples/asciidoc/docbook-xsl/manpage.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/manpage.xsl
-share/examples/asciidoc/docbook-xsl/text.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/text.xsl
-share/examples/asciidoc/docbook-xsl/xhtml.xsl
-@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/xhtml.xsl
-share/examples/asciidoc/docbook45.conf
-@sample ${SYSCONFDIR}/asciidoc/docbook45.conf
-share/examples/asciidoc/docbook5.conf
-@sample ${SYSCONFDIR}/asciidoc/docbook5.conf
-share/examples/asciidoc/filters/
-@sample ${SYSCONFDIR}/asciidoc/filters/
-share/examples/asciidoc/filters/code/
-@sample ${SYSCONFDIR}/asciidoc/filters/code/
-share/examples/asciidoc/filters/code/code-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.conf
-share/examples/asciidoc/filters/code/code-filter.py
-@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.py
-share/examples/asciidoc/filters/graphviz/
-@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/
-share/examples/asciidoc/filters/graphviz/graphviz-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/graphviz-filter.conf
-share/examples/asciidoc/filters/graphviz/graphviz2png.py
-@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/graphviz2png.py
-share/examples/asciidoc/filters/latex/
-@sample ${SYSCONFDIR}/asciidoc/filters/latex/
-share/examples/asciidoc/filters/latex/latex-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/latex/latex-filter.conf
-share/examples/asciidoc/filters/latex/latex2img.py
-@sample ${SYSCONFDIR}/asciidoc/filters/latex/latex2img.py
-share/examples/asciidoc/filters/music/
-@sample ${SYSCONFDIR}/asciidoc/filters/music/
-share/examples/asciidoc/filters/music/music-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/music/music-filter.conf
-share/examples/asciidoc/filters/music/music2png.py
-@sample ${SYSCONFDIR}/asciidoc/filters/music/music2png.py
-share/examples/asciidoc/filters/source/
-@sample ${SYSCONFDIR}/asciidoc/filters/source/
-share/examples/asciidoc/filters/source/source-highlight-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/source/source-highlight-filter.conf
-share/examples/asciidoc/filters/unwraplatex.py
-@sample ${SYSCONFDIR}/asciidoc/unwraplatex.py
-share/examples/asciidoc/help.conf
-@sample ${SYSCONFDIR}/asciidoc/help.conf
-share/examples/asciidoc/html4.conf
-@sample ${SYSCONFDIR}/asciidoc/html4.conf
-share/examples/asciidoc/html5.conf
-@sample ${SYSCONFDIR}/asciidoc/html5.conf
-share/examples/asciidoc/images/
-@sample ${SYSCONFDIR}/asciidoc/images/
-share/examples/asciidoc/images/icons/
-@sample ${SYSCONFDIR}/asciidoc/images/icons/
-share/examples/asciidoc/images/icons/README
-@sample ${SYSCONFDIR}/asciidoc/images/icons/README
-share/examples/asciidoc/images/icons/callouts/
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/
-share/examples/asciidoc/images/icons/callouts/1.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/1.png
-share/examples/asciidoc/images/icons/callouts/10.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/10.png
-share/examples/asciidoc/images/icons/callouts/11.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/11.png
-share/examples/asciidoc/images/icons/callouts/12.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/12.png
-share/examples/asciidoc/images/icons/callouts/13.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/13.png
-share/examples/asciidoc/images/icons/callouts/14.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/14.png
-share/examples/asciidoc/images/icons/callouts/15.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/15.png
-share/examples/asciidoc/images/icons/callouts/2.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/2.png
-share/examples/asciidoc/images/icons/callouts/3.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/3.png
-share/examples/asciidoc/images/icons/callouts/4.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/4.png
-share/examples/asciidoc/images/icons/callouts/5.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/5.png
-share/examples/asciidoc/images/icons/callouts/6.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/6.png
-share/examples/asciidoc/images/icons/callouts/7.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/7.png
-share/examples/asciidoc/images/icons/callouts/8.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/8.png
-share/examples/asciidoc/images/icons/callouts/9.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/9.png
-share/examples/asciidoc/images/icons/caution.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/caution.png
-share/examples/asciidoc/images/icons/example.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/example.png
-share/examples/asciidoc/images/icons/home.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/home.png
-share/examples/asciidoc/images/icons/important.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/important.png
-share/examples/asciidoc/images/icons/next.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/next.png
-share/examples/asciidoc/images/icons/note.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/note.png
-share/examples/asciidoc/images/icons/prev.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/prev.png
-share/examples/asciidoc/images/icons/tip.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/tip.png
-share/examples/asciidoc/images/icons/up.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/up.png
-share/examples/asciidoc/images/icons/warning.png
-@sample ${SYSCONFDIR}/asciidoc/images/icons/warning.png
-share/examples/asciidoc/javascripts/
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/
-share/examples/asciidoc/javascripts/ASCIIMathML.js
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/ASCIIMathML.js
-share/examples/asciidoc/javascripts/LaTeXMathML.js
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/LaTeXMathML.js
-share/examples/asciidoc/javascripts/asciidoc.js
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/asciidoc.js
-share/examples/asciidoc/javascripts/slidy.js
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/slidy.js
-share/examples/asciidoc/javascripts/toc.js
-@sample ${SYSCONFDIR}/asciidoc/images/javascripts/toc.js
-share/examples/asciidoc/lang-ca.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-ca.conf
-share/examples/asciidoc/lang-cs.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-cs.conf
-share/examples/asciidoc/lang-de.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-de.conf
-share/examples/asciidoc/lang-el.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-el.conf
-share/examples/asciidoc/lang-en.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-en.conf
-share/examples/asciidoc/lang-es.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-es.conf
-share/examples/asciidoc/lang-fi.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-fi.conf
-share/examples/asciidoc/lang-fr.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-fr.conf
-share/examples/asciidoc/lang-hu.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-hu.conf
-share/examples/asciidoc/lang-id.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-id.conf
-share/examples/asciidoc/lang-it.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-it.conf
-share/examples/asciidoc/lang-ja.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-ja.conf
-share/examples/asciidoc/lang-nl.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-nl.conf
-share/examples/asciidoc/lang-pl.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-pl.conf
-share/examples/asciidoc/lang-pt-BR.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-pt-BR.conf
-share/examples/asciidoc/lang-ro.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-ro.conf
-share/examples/asciidoc/lang-ru.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-ru.conf
-share/examples/asciidoc/lang-sv.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-sv.conf
-share/examples/asciidoc/lang-uk.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-uk.conf
-share/examples/asciidoc/lang-zh-CN.conf
-@sample ${SYSCONFDIR}/asciidoc/lang-zh-CN.conf
-share/examples/asciidoc/latex.conf
-@sample ${SYSCONFDIR}/asciidoc/latex.conf
-share/examples/asciidoc/slidy.conf
-@sample ${SYSCONFDIR}/asciidoc/slidy.conf
-share/examples/asciidoc/stylesheets/
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/
-share/examples/asciidoc/stylesheets/asciidoc.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/asciidoc.css
-share/examples/asciidoc/stylesheets/docbook-xsl.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/docbook-xsl.css
-share/examples/asciidoc/stylesheets/pygments.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/pygments.css
-share/examples/asciidoc/stylesheets/slidy.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/slidy.css
-share/examples/asciidoc/stylesheets/toc2.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/toc2.css
-share/examples/asciidoc/stylesheets/xhtml11-quirks.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-quirks.css
-share/examples/asciidoc/text.conf
-@sample ${SYSCONFDIR}/asciidoc/text.conf
-share/examples/asciidoc/themes/
-@sample ${SYSCONFDIR}/asciidoc/themes/
-share/examples/asciidoc/themes/flask/
-@sample ${SYSCONFDIR}/asciidoc/themes/flask/
-share/examples/asciidoc/themes/flask/flask.css
-@sample ${SYSCONFDIR}/asciidoc/themes/flask/flask.css
-share/examples/asciidoc/themes/volnitsky/
-@sample ${SYSCONFDIR}/asciidoc/themes/volnitsky/
-share/examples/asciidoc/themes/volnitsky/volnitsky.css
-@sample ${SYSCONFDIR}/asciidoc/themes/volnitsky/volnitsky.css
-share/examples/asciidoc/xhtml11-quirks.conf
-@sample ${SYSCONFDIR}/asciidoc/xhtml11-quirks.conf
-share/examples/asciidoc/xhtml11.conf
-@sample ${SYSCONFDIR}/asciidoc/xhtml11.conf

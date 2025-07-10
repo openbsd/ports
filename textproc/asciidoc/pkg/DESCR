@@ -6,3 +6,11 @@ EPUB, man page.
 AsciiDoc is highly configurable: both the AsciiDoc source file syntax
 and the backend output markups (which can be almost any type of
 SGML/XML markup) can be customized and extended by the user.
+
+This package provides AsciiDoc.py, a legacy processor for an older
+rendition of the AsciiDoc syntax. As such, it will not properly handle
+the language that is being described by AsciiDoc specification,
+however some software depends on this toolchain.
+
+For the most common processor for the current version of the language,
+see the asciidoctor package.

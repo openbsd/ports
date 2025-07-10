@@ -1,21 +1,22 @@
 COMMENT=	text document format for writing documents and man pages
 
-V=		9.0.4
-DISTNAME=	asciidoc-${V}
-REVISION=	3
+MODPY_DISTV=	10.2.1
+DISTNAME=	asciidoc-${MODPY_DISTV}
 
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	https://github.com/asciidoc/asciidoc-py3
+# https://github.com/asciidoc/asciidoc-py3
+HOMEPAGE=	https://asciidoc-py.github.io/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://github.com/asciidoc/asciidoc-py3/releases/download/${V}/
+SITES=		https://github.com/asciidoc/asciidoc-py3/releases/download/${MODPY_DISTV}/
 
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	textproc/docbook-xsl
 
@@ -24,25 +25,12 @@ RUN_DEPENDS=	textproc/docbook-xsl \
 
 PKG_ARCH=	*
 USE_GMAKE=	Yes
-NO_TEST=	Yes
-
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
-
-CONFIGURE_STYLE=gnu
-
-INSTALL_TARGET=	install docs
+TEST_DEPENDS=	devel/py-test-mock
 
 pre-configure:
-	sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/doc/testasciidoc.1.txt
+	sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/doc/testasciidoc.*
 
 post-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG} \
-		${PREFIX}/share/doc/asciidoc
-	${INSTALL_DATA} ${WRKSRC}/asciidocapi.py \
-		${WRKINST}${MODPY_SITEPKG}/asciidocapi.py
-.for d in dblatex docbook-xsl images javascripts stylesheets
-	rm -r ${PREFIX}/share/doc/asciidoc/$d
-	ln -s ${SYSCONFDIR}/asciidoc/$d ${PREFIX}/share/doc/asciidoc/$d
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
