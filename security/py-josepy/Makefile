@@ -2,7 +2,7 @@ COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel
 
-MODPY_DISTV=	2.0.0
+MODPY_DISTV=	2.1.0
 DISTNAME=	josepy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
