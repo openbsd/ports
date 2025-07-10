@@ -822,6 +822,12 @@ go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global2_fail.go
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global3_fail.go
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global4_fail.go
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global5.go
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm/
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm/asm.s
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm/main.go
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm2_fail/
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm2_fail/asm.s
+go/src/cmd/cgo/internal/testsanitizers/testdata/asan_global_asm2_fail/main.go
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_linkerx/
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_linkerx/main.go
 go/src/cmd/cgo/internal/testsanitizers/testdata/asan_linkerx/p/
@@ -3225,6 +3231,7 @@ go/src/cmd/go/testdata/script/test_match_only_subtests.txt
 go/src/cmd/go/testdata/script/test_match_only_subtests_parallel.txt
 go/src/cmd/go/testdata/script/test_match_only_tests.txt
 go/src/cmd/go/testdata/script/test_minus_n.txt
+go/src/cmd/go/testdata/script/test_multivcs.txt
 go/src/cmd/go/testdata/script/test_n_cover_std.txt
 go/src/cmd/go/testdata/script/test_no_run_example.txt
 go/src/cmd/go/testdata/script/test_no_tests.txt
@@ -14697,6 +14704,8 @@ go/test/fixedbugs/issue7310.go
 go/test/fixedbugs/issue7316.go
 go/test/fixedbugs/issue7346.go
 go/test/fixedbugs/issue7366.go
+go/test/fixedbugs/issue73748a.go
+go/test/fixedbugs/issue73748b.go
 go/test/fixedbugs/issue7405.go
 go/test/fixedbugs/issue7419.go
 go/test/fixedbugs/issue7525.go
