@@ -87,9 +87,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32green.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32paused.ico
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_osx_clicked.tiff
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_osx_idle.tiff
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_osx_pause.tiff
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_macos_clicked.tiff
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_macos_idle.tiff
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd_macos_pause.tiff
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/README.txt
@@ -404,6 +404,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}interne
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}internetspeed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}lang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}lang.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}macosmenu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}macosmenu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}newsunpack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -418,8 +420,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}nzbqueu
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}nzbqueue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}nzbstuff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}nzbstuff.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}osxmenu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}osxmenu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}panic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}panic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}par2file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -468,6 +468,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/happyeyeballs.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/interface.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/internetspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/lang.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/macosmenu.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/misc.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newsunpack.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newswrapper.py
@@ -475,7 +476,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/notifier.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbparser.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbqueue.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbstuff.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/osxmenu.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/panic.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/par2file.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/postproc.py
