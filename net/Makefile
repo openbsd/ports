@@ -566,6 +566,7 @@
      SUBDIR += py-IOSXR
      SUBDIR += py-IP
      SUBDIR += py-aiodns
+     SUBDIR += py-aiomqtt
      SUBDIR += py-amqp
      SUBDIR += py-anyio
      SUBDIR += py-apprise
