@@ -1,0 +1,58 @@
+Fix build with poppler-25.07.
+
+Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+--- src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp.orig
++++ src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+@@ -318,7 +318,7 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+ #endif
+     char **enc;
+     const char *name;
+-    FoFiType1C *ff1c;
++    std::unique_ptr<FoFiType1C> ff1c;
+     std::optional<FreeTypeFontFace> font_face;
+     std::vector<int> codeToGID;
+     bool substitute = false;
+@@ -429,7 +429,7 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                 FoFiTrueType *ff;
+ #endif
+                 if (!font_data.empty()) {
+-                    ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
++                    ff = FoFiTrueType::make(std::span(font_data), 0);
+                 } else {
+                     ff = FoFiTrueType::load(fileName.c_str(), 0);
+                 }
+@@ -459,7 +459,7 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+             FoFiTrueType *ff;
+ #endif
+             if (!font_data.empty()) {
+-                ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
++                ff = FoFiTrueType::make(std::span(font_data), 0);
+             } else {
+                 ff = FoFiTrueType::load(fileName.c_str(), 0);
+             }
+@@ -493,7 +493,7 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+         case fontCIDType0C:
+             if (!useCIDs) {
+                 if (!font_data.empty()) {
+-                    ff1c = FoFiType1C::make((fontchar)font_data.data(), font_data.size());
++                    ff1c = FoFiType1C::make(std::span(font_data));
+                 } else {
+                     ff1c = FoFiType1C::load(fileName.c_str());
+                 }
+@@ -506,7 +506,6 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                     codeToGID.insert(codeToGID.begin(), src, src + n);
+                     gfree(src);
+ #endif
+-                    delete ff1c;
+                 }
+             }
+ 
+@@ -542,7 +541,7 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                     FoFiTrueType *ff;
+ #endif
+                     if (!font_data.empty()) {
+-                        ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
++                        ff = FoFiTrueType::make(std::span(font_data), 0);
+                     } else {
+                         ff = FoFiTrueType::load(fileName.c_str(), 0);
+                     }
