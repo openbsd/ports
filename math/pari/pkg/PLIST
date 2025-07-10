@@ -1,5 +1,5 @@
 bin/gp
-@bin bin/gp-2.15
+@bin bin/gp-2.17
 bin/gphelp
 bin/tex2mail
 include/pari/
@@ -21,12 +21,11 @@ include/pari/paripriv.h
 include/pari/paristio.h
 include/pari/parisys.h
 include/pari/paritune.h
-@comment lib/libpari.a
 @lib lib/libpari-gmp.so.${LIBpari-gmp_VERSION}
 @so lib/libpari.so
 lib/pari/
 lib/pari/pari.cfg
-@man man/man1/gp-2.15.1
+@man man/man1/gp-2.17.1
 @man man/man1/gp.1
 @man man/man1/gphelp.1
 @man man/man1/pari.1

@@ -1,11 +1,10 @@
-COMMENT=	number theory-oriented computer algebra system
+COMMENT=		number theory-oriented computer algebra system
 
-V=		2.15.5
+V=		2.17.2
 DISTNAME=	pari-$V
 CATEGORIES=	math
-REVISION=	1
 
-SHARED_LIBS +=		pari-gmp		0.0	# 2.15.4
+SHARED_LIBS +=		pari-gmp		1.0	# 2.17.2
 
 HOMEPAGE=	https://pari.math.u-bordeaux.fr/
 

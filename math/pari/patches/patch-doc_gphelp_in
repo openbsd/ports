@@ -3,7 +3,7 @@ Fix path so gphelp will work.
 Index: doc/gphelp.in
 --- doc/gphelp.in.orig
 +++ doc/gphelp.in
-@@ -134,7 +134,7 @@ sub get_docdir {
+@@ -136,7 +136,7 @@ sub get_docdir {
        $d =~ s,doc/\.\./doc,doc,;
      }
    }
