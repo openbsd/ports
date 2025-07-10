@@ -1,12 +1,11 @@
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
 MODPY_DISTV =	8.0.0
-DISTNAME =	offlineimap-${MODPY_DISTV}pl20231218
+DISTNAME =	offlineimap-${MODPY_DISTV}pl20240826
 
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap3
-GH_COMMIT =	d29a4dc459401f8a78e347cb0f8ae7670add0975
-REVISION =	3
+GH_COMMIT =	db347452273bb0f1b1a8ea952f6fb46cf95fedbf
 
 CATEGORIES=	mail
 
@@ -15,22 +14,19 @@ HOMEPAGE=	https://www.offlineimap.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-NO_TEST=	Yes
-
 MODULES=	lang/python
-
 MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	textproc/asciidoc \
-		devel/py-rfc6555 \
 		mail/py-imaplib2 \
-		security/py-keyring \
 		sysutils/py-distro
 
 RUN_DEPENDS=	devel/py-rfc6555 \
 		mail/py-imaplib2 \
 		sysutils/py-distro \
 		security/py-keyring
+
+NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 
