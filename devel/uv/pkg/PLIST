@@ -1,4 +1,5 @@
 @bin bin/uv
+bin/uvx
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/uv

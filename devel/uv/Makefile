@@ -5,7 +5,7 @@ COMMENT =		Python package and project manager
 
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
-GH_TAGNAME =		0.7.19
+GH_TAGNAME =		0.7.20
 
 ASYNC_ZIP =		c909fda63fcafe4af496a07bfda28a5aae97e58d
 PUBGRUB =		06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
@@ -51,9 +51,8 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
-	# uvx binary fails (wants path to self). could possibly be replaced
-	# by an 'exec /path/to/uv tool run "$@"' wrapper.
-	#${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uvx ${PREFIX}/bin/
+	# uvx is a shell script to exec 'uv tool run'
+	${SUBST_CMD} -m 755 -c ${FILESDIR}/uvx ${PREFIX}/bin/uvx
 
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/bash-completion/completions \
