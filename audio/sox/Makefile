@@ -5,6 +5,8 @@ DISTNAME=	sox_ng-${V}
 PKGNAME=	sox-${V}
 SHARED_LIBS +=  sox_ng                    0.0 # 3.0
 
+REVISION=	0
+
 CATEGORIES=	audio
 HOMEPAGE=	https://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
@@ -12,7 +14,7 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto m pthread sndio z
+WANTLIB += c m pthread sndio z
 WANTLIB += FLAC gsm mad mpg123 id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
 WANTLIB += opus opusfile twolame wavpack
@@ -47,14 +49,14 @@ CONFIGURE_ARGS=	--datarootdir=${LOCALBASE}      \
 
 # Sound drivers
 CONFIGURE_ARGS+=		\
-	--disable-ao		\
-	--disable-oss		\
-	--disable-alsa		\
-	--disable-coreaudio	\
+	--without-ao		\
+	--without-oss		\
+	--without-alsa		\
+	--without-coreaudio	\
 	--without-pulseaudio	\
-	--disable-waveaudio	\
-	--disable-sunaudio	\
-	--enable-sndio
+	--without-waveaudio	\
+	--without-sunaudio	\
+	--with-sndio
 
 # Additional file formats
 CONFIGURE_ARGS+=			\
@@ -62,21 +64,18 @@ CONFIGURE_ARGS+=			\
 	--with-lame			\
 	--with-mad			\
 	--without-magic			\
-	--without-opencore-amrnb	\
-	--without-opencore-amrwb	\
+	--without-amrnb			\
+	--without-amrwb			\
 	--with-png			\
 	--with-twolame			\
-	--enable-formats=no		\
-	--disable-amrnb			\
-	--disable-amrwb			\
-	--enable-flac			\
-	--enable-gsm			\
-	--enable-lpc10			\
-	--enable-mp3			\
-	--enable-oggvorbis		\
-	--enable-opus			\
-	--enable-sndfile		\
-	--enable-wavpack		\
+	--with-flac			\
+	--with-gsm			\
+	--with-lpc10			\
+	--with-mp3			\
+	--with-oggvorbis		\
+	--with-opus			\
+	--with-sndfile			\
+	--with-wavpack			\
 	--without-ladspa
 
 CONFIGURE_ENV= \
