@@ -52,7 +52,7 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
 	# uvx is a shell script to exec 'uv tool run'
-	${SUBST_CMD} -m 755 -c ${FILESDIR}/uvx ${PREFIX}/bin/uvx
+	${SUBST_PROGRAM} ${FILESDIR}/uvx ${PREFIX}/bin/uvx
 
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/bash-completion/completions \
