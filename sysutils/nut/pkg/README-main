@@ -66,24 +66,41 @@ USB: Use "usbdevs -vd" (as root) to identify the specific controller
 (/dev/usbXX) and ugen (/dev/ugenXX) device nodes, then adjust permissions
 to allow _ups to have write access (e.g. chmod g+w and chgrp _ups).
 
-Special notice for APC USB devices
-----------------------------------
-Some APC USB devices are reported to only work with NUT if the device is
-attached to ugen(4). Normally these devices attach to upd(4) to provide
-system power sensors (see "sysctl hw.sensors"). If you are having problems
-using such a device with NUT, you may need to prevent this attachment.
- 
-The option with fewest side-effects is to add the following entries to
-the table in /sys/dev/usb/usb_quirks.c and build a new kernel:
+Special notice for USB devices
+------------------------------
+Some USB devices (especially APC ones) are reported to only work with
+NUT if the device is attached to ugen(4). Normally these devices attach
+to upd(4) to provide system power sensors (see "sysctl hw.sensors").
+In some cases, where a device is attached to a device driver other than
+ugen(4), for example upd or uhid, it cannot also be used with NUT.
 
-{ USB_VENDOR_APC, USB_PRODUCT_APC_UPS, ANY, { UQ_BAD_HID }},
-{ USB_VENDOR_APC, USB_PRODUCT_APC_UPS5G, ANY, { UQ_BAD_HID }},
+Preventing the attachment is possible but requires kernel changes.
 
-Alternatively, if you do not use a USB keyboard/mouse, you could simply
-disable the upd and uhidev drivers. The following line creates a new kernel
-with the relevant changes:
+If you do not use a USB keyboard/mouse, you can simply disable the upd
+and uhidev drivers. Use the bsd.re-config(5) mechanism by adding the
+following lines to /etc/bsd.re-config
 
-  printf 'disable uhidev\ndisable upd\nquit\n' | config -e -o /bsd.no-uhid /bsd
+  disable uhidev
+  disable upd
+
+and run /usr/libexec/reorder_kernel. Or, as a one-off, you can patch an
+existing kernel using config(8) with the same 'disable' commands, or
+boot into UKC ("boot -c") and enter the disable commands.
+
+With a USB keyboard/mouse, you will need to target the UPS device id.
+Fetch kernel sources if you don't already have them, add the device to
+the usbd_quirk_entry table in /sys/dev/usb/usb_quirks.c, and build a
+new kernel. Either use an existing ID from /sys/dev/usb/usbdevs (these
+are for devices which are known to have problems sharing upd and NUT):
+
+  { USB_VENDOR_APC, USB_PRODUCT_APC_UPS, ANY, { UQ_BAD_HID }},
+  { USB_VENDOR_APC, USB_PRODUCT_APC_UPS5G, ANY, { UQ_BAD_HID }},
+
+or add it numerically, e.g.
+
+  { 0x051d, 0x0003, ANY, { UQ_BAD_HID }},
+
+Then follow the usual steps to build a kernel.
 
 Starting the daemons
 --------------------

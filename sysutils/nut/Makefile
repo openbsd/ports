@@ -8,6 +8,8 @@ DISTNAME=	nut-${V:C/-rc.*//}
 PKGNAME=	nut-${V:S/-rc/rc/}
 SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
+REVISION-main=	0
+
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
