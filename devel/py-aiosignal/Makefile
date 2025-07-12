@@ -1,7 +1,6 @@
 COMMENT=	manage callbacks in asyncio projects
 
-MODPY_DISTV=	1.3.2
-REVISION=	0
+MODPY_DISTV=	1.4.0
 DISTNAME=	aiosignal-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -18,6 +17,7 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-frozenlist
-TEST_DEPENDS=	devel/py-test-asyncio
+TEST_DEPENDS=	devel/py-test-asyncio \
+		devel/py-test-cov
 
 .include <bsd.port.mk>
