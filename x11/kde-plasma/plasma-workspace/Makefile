@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  colorcorrect              1.0 # 0.0
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
@@ -44,10 +45,12 @@ MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
 MODKDE_DOCS = Yes
 
-BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
+BUILD_DEPENDS =	devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
-		x11/xdotool \
-		devel/kf6/kquickcharts
+		x11/kde-plasma/kpipewire>=${VERSION} \
+		x11/kde-plasma/kwin>=${VERSION} \
+		x11/qt6/qtlocation \
+		x11/xdotool
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kquickcharts \
@@ -56,7 +59,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/coreutils \
 		x11/dbus,-suid \
 		x11/kde-plasma/kpipewire>=${VERSION} \
-		x11/kde-plasma/kwin>=${VERSION}
+		x11/kde-plasma/kwin>=${VERSION} \
+		x11/qt6/qtlocation
 
 LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/attica \
