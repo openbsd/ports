@@ -4,6 +4,7 @@ V=		14.4.4
 DISTNAME=	sox_ng-${V}
 PKGNAME=	sox-${V}
 SHARED_LIBS +=  sox_ng                    0.0 # 3.0
+REVISION =	0
 
 REVISION=	0
 
@@ -14,7 +15,7 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m pthread sndio z
+WANTLIB += ao c m pthread sndio z
 WANTLIB += FLAC gsm mad mpg123 id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
 WANTLIB += opus opusfile twolame wavpack
@@ -26,6 +27,7 @@ SITES=		https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-$V/
 LIB_DEPENDS=			\
 	audio/flac		\
 	audio/gsm		\
+	audio/libao		\
 	audio/libmad		\
 	audio/libid3tag		\
 	audio/lame		\
