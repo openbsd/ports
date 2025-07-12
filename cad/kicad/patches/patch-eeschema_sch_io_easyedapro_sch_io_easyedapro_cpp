@@ -1,0 +1,33 @@
+Index: eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp
+--- eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp.orig
++++ eeschema/sch_io/easyedapro/sch_io_easyedapro.cpp
+@@ -104,6 +104,29 @@ int SCH_IO_EASYEDAPRO::GetModifyHash() const
+     return 0;
+ }
+ 
++// Explicitly define char traits for wxUniChar since it is not standard
++template<>
++struct nlohmann::detail::char_traits<wxUniChar> : std::char_traits<char32_t>
++{
++    using char_type = wxUniChar;
++    using int_type = uint32_t;
++
++    // Redefine to_int_type function
++    static int_type to_int_type(char_type c) noexcept
++    {
++        return static_cast<int_type>(c);
++    }
++
++    static char_type to_char_type(int_type i) noexcept
++    {
++        return static_cast<char_type>(i);
++    }
++
++    static constexpr int_type eof() noexcept
++    {
++        return ~0U;
++    }
++};
+ 
+ static LIB_SYMBOL* loadSymbol( nlohmann::json project, const wxString& aLibraryPath,
+                                const wxString& aAliasName, const std::map<std::string, UTF8>* aProperties )
