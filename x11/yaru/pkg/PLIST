@@ -6832,6 +6832,7 @@ share/icons/Yaru/16x16/apps/calendar.png
 share/icons/Yaru/16x16/apps/camera-app.png
 share/icons/Yaru/16x16/apps/cheese.png
 share/icons/Yaru/16x16/apps/clock-app.png
+share/icons/Yaru/16x16/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/16x16/apps/configurator-app.png
 share/icons/Yaru/16x16/apps/cpu-x.png
 share/icons/Yaru/16x16/apps/dconf-editor.png
@@ -6947,6 +6948,7 @@ share/icons/Yaru/16x16/apps/org.gnome.Maps.png
 share/icons/Yaru/16x16/apps/org.gnome.Mines.png
 share/icons/Yaru/16x16/apps/org.gnome.Music.png
 share/icons/Yaru/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru/16x16/apps/org.gnome.Papers.png
 share/icons/Yaru/16x16/apps/org.gnome.Photos.png
 share/icons/Yaru/16x16/apps/org.gnome.PowerStats.png
 share/icons/Yaru/16x16/apps/org.gnome.Rhythmbox.png
@@ -6984,6 +6986,7 @@ share/icons/Yaru/16x16/apps/org.gnome.gedit.png
 share/icons/Yaru/16x16/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru/16x16/apps/packages-app.png
+share/icons/Yaru/16x16/apps/papers.png
 share/icons/Yaru/16x16/apps/passwords-app.png
 share/icons/Yaru/16x16/apps/podcasts-app.png
 share/icons/Yaru/16x16/apps/power-statistics.png
@@ -8239,6 +8242,7 @@ share/icons/Yaru/16x16@2x/apps/calendar.png
 share/icons/Yaru/16x16@2x/apps/camera-app.png
 share/icons/Yaru/16x16@2x/apps/cheese.png
 share/icons/Yaru/16x16@2x/apps/clock-app.png
+share/icons/Yaru/16x16@2x/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/16x16@2x/apps/configurator-app.png
 share/icons/Yaru/16x16@2x/apps/cpu-x.png
 share/icons/Yaru/16x16@2x/apps/dconf-editor.png
@@ -8354,6 +8358,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.Maps.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Mines.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Music.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.Papers.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Rhythmbox.png
@@ -8391,6 +8396,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.gedit.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru/16x16@2x/apps/packages-app.png
+share/icons/Yaru/16x16@2x/apps/papers.png
 share/icons/Yaru/16x16@2x/apps/passwords-app.png
 share/icons/Yaru/16x16@2x/apps/podcasts-app.png
 share/icons/Yaru/16x16@2x/apps/power-statistics.png
@@ -10400,6 +10406,7 @@ share/icons/Yaru/24x24/apps/calendar.png
 share/icons/Yaru/24x24/apps/camera-app.png
 share/icons/Yaru/24x24/apps/cheese.png
 share/icons/Yaru/24x24/apps/clock-app.png
+share/icons/Yaru/24x24/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/24x24/apps/configurator-app.png
 share/icons/Yaru/24x24/apps/cpu-x.png
 share/icons/Yaru/24x24/apps/dconf-editor.png
@@ -10515,6 +10522,7 @@ share/icons/Yaru/24x24/apps/org.gnome.Maps.png
 share/icons/Yaru/24x24/apps/org.gnome.Mines.png
 share/icons/Yaru/24x24/apps/org.gnome.Music.png
 share/icons/Yaru/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru/24x24/apps/org.gnome.Papers.png
 share/icons/Yaru/24x24/apps/org.gnome.Photos.png
 share/icons/Yaru/24x24/apps/org.gnome.PowerStats.png
 share/icons/Yaru/24x24/apps/org.gnome.Rhythmbox.png
@@ -10552,6 +10560,7 @@ share/icons/Yaru/24x24/apps/org.gnome.gedit.png
 share/icons/Yaru/24x24/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru/24x24/apps/packages-app.png
+share/icons/Yaru/24x24/apps/papers.png
 share/icons/Yaru/24x24/apps/passwords-app.png
 share/icons/Yaru/24x24/apps/podcasts-app.png
 share/icons/Yaru/24x24/apps/power-statistics.png
@@ -11717,6 +11726,7 @@ share/icons/Yaru/24x24@2x/apps/calendar.png
 share/icons/Yaru/24x24@2x/apps/camera-app.png
 share/icons/Yaru/24x24@2x/apps/cheese.png
 share/icons/Yaru/24x24@2x/apps/clock-app.png
+share/icons/Yaru/24x24@2x/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/24x24@2x/apps/configurator-app.png
 share/icons/Yaru/24x24@2x/apps/cpu-x.png
 share/icons/Yaru/24x24@2x/apps/dconf-editor.png
@@ -11832,6 +11842,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.Maps.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Mines.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Music.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.Papers.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Rhythmbox.png
@@ -11869,6 +11880,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.gedit.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru/24x24@2x/apps/packages-app.png
+share/icons/Yaru/24x24@2x/apps/papers.png
 share/icons/Yaru/24x24@2x/apps/passwords-app.png
 share/icons/Yaru/24x24@2x/apps/podcasts-app.png
 share/icons/Yaru/24x24@2x/apps/power-statistics.png
@@ -12648,6 +12660,7 @@ share/icons/Yaru/256x256/apps/calendar.png
 share/icons/Yaru/256x256/apps/camera-app.png
 share/icons/Yaru/256x256/apps/cheese.png
 share/icons/Yaru/256x256/apps/clock-app.png
+share/icons/Yaru/256x256/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/256x256/apps/configurator-app.png
 share/icons/Yaru/256x256/apps/cpu-x.png
 share/icons/Yaru/256x256/apps/dconf-editor.png
@@ -12763,6 +12776,7 @@ share/icons/Yaru/256x256/apps/org.gnome.Maps.png
 share/icons/Yaru/256x256/apps/org.gnome.Mines.png
 share/icons/Yaru/256x256/apps/org.gnome.Music.png
 share/icons/Yaru/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru/256x256/apps/org.gnome.Papers.png
 share/icons/Yaru/256x256/apps/org.gnome.Photos.png
 share/icons/Yaru/256x256/apps/org.gnome.PowerStats.png
 share/icons/Yaru/256x256/apps/org.gnome.Rhythmbox.png
@@ -12800,6 +12814,7 @@ share/icons/Yaru/256x256/apps/org.gnome.gedit.png
 share/icons/Yaru/256x256/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru/256x256/apps/packages-app.png
+share/icons/Yaru/256x256/apps/papers.png
 share/icons/Yaru/256x256/apps/passwords-app.png
 share/icons/Yaru/256x256/apps/podcasts-app.png
 share/icons/Yaru/256x256/apps/power-statistics.png
@@ -13579,6 +13594,7 @@ share/icons/Yaru/256x256@2x/apps/calendar.png
 share/icons/Yaru/256x256@2x/apps/camera-app.png
 share/icons/Yaru/256x256@2x/apps/cheese.png
 share/icons/Yaru/256x256@2x/apps/clock-app.png
+share/icons/Yaru/256x256@2x/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/256x256@2x/apps/configurator-app.png
 share/icons/Yaru/256x256@2x/apps/cpu-x.png
 share/icons/Yaru/256x256@2x/apps/dconf-editor.png
@@ -13694,6 +13710,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.Maps.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Mines.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Music.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.Papers.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Rhythmbox.png
@@ -13731,6 +13748,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.gedit.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru/256x256@2x/apps/packages-app.png
+share/icons/Yaru/256x256@2x/apps/papers.png
 share/icons/Yaru/256x256@2x/apps/passwords-app.png
 share/icons/Yaru/256x256@2x/apps/podcasts-app.png
 share/icons/Yaru/256x256@2x/apps/power-statistics.png
@@ -14510,6 +14528,7 @@ share/icons/Yaru/32x32/apps/calendar.png
 share/icons/Yaru/32x32/apps/camera-app.png
 share/icons/Yaru/32x32/apps/cheese.png
 share/icons/Yaru/32x32/apps/clock-app.png
+share/icons/Yaru/32x32/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/32x32/apps/configurator-app.png
 share/icons/Yaru/32x32/apps/cpu-x.png
 share/icons/Yaru/32x32/apps/dconf-editor.png
@@ -14625,6 +14644,7 @@ share/icons/Yaru/32x32/apps/org.gnome.Maps.png
 share/icons/Yaru/32x32/apps/org.gnome.Mines.png
 share/icons/Yaru/32x32/apps/org.gnome.Music.png
 share/icons/Yaru/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru/32x32/apps/org.gnome.Papers.png
 share/icons/Yaru/32x32/apps/org.gnome.Photos.png
 share/icons/Yaru/32x32/apps/org.gnome.PowerStats.png
 share/icons/Yaru/32x32/apps/org.gnome.Rhythmbox.png
@@ -14662,6 +14682,7 @@ share/icons/Yaru/32x32/apps/org.gnome.gedit.png
 share/icons/Yaru/32x32/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru/32x32/apps/packages-app.png
+share/icons/Yaru/32x32/apps/papers.png
 share/icons/Yaru/32x32/apps/passwords-app.png
 share/icons/Yaru/32x32/apps/podcasts-app.png
 share/icons/Yaru/32x32/apps/power-statistics.png
@@ -15441,6 +15462,7 @@ share/icons/Yaru/32x32@2x/apps/calendar.png
 share/icons/Yaru/32x32@2x/apps/camera-app.png
 share/icons/Yaru/32x32@2x/apps/cheese.png
 share/icons/Yaru/32x32@2x/apps/clock-app.png
+share/icons/Yaru/32x32@2x/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/32x32@2x/apps/configurator-app.png
 share/icons/Yaru/32x32@2x/apps/cpu-x.png
 share/icons/Yaru/32x32@2x/apps/dconf-editor.png
@@ -15556,6 +15578,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.Maps.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Mines.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Music.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.Papers.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Rhythmbox.png
@@ -15593,6 +15616,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.gedit.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru/32x32@2x/apps/packages-app.png
+share/icons/Yaru/32x32@2x/apps/papers.png
 share/icons/Yaru/32x32@2x/apps/passwords-app.png
 share/icons/Yaru/32x32@2x/apps/podcasts-app.png
 share/icons/Yaru/32x32@2x/apps/power-statistics.png
@@ -16372,6 +16396,7 @@ share/icons/Yaru/48x48/apps/calendar.png
 share/icons/Yaru/48x48/apps/camera-app.png
 share/icons/Yaru/48x48/apps/cheese.png
 share/icons/Yaru/48x48/apps/clock-app.png
+share/icons/Yaru/48x48/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/48x48/apps/configurator-app.png
 share/icons/Yaru/48x48/apps/cpu-x.png
 share/icons/Yaru/48x48/apps/dconf-editor.png
@@ -16487,6 +16512,7 @@ share/icons/Yaru/48x48/apps/org.gnome.Maps.png
 share/icons/Yaru/48x48/apps/org.gnome.Mines.png
 share/icons/Yaru/48x48/apps/org.gnome.Music.png
 share/icons/Yaru/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru/48x48/apps/org.gnome.Papers.png
 share/icons/Yaru/48x48/apps/org.gnome.Photos.png
 share/icons/Yaru/48x48/apps/org.gnome.PowerStats.png
 share/icons/Yaru/48x48/apps/org.gnome.Rhythmbox.png
@@ -16524,6 +16550,7 @@ share/icons/Yaru/48x48/apps/org.gnome.gedit.png
 share/icons/Yaru/48x48/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru/48x48/apps/packages-app.png
+share/icons/Yaru/48x48/apps/papers.png
 share/icons/Yaru/48x48/apps/passwords-app.png
 share/icons/Yaru/48x48/apps/podcasts-app.png
 share/icons/Yaru/48x48/apps/power-statistics.png
@@ -17303,6 +17330,7 @@ share/icons/Yaru/48x48@2x/apps/calendar.png
 share/icons/Yaru/48x48@2x/apps/camera-app.png
 share/icons/Yaru/48x48@2x/apps/cheese.png
 share/icons/Yaru/48x48@2x/apps/clock-app.png
+share/icons/Yaru/48x48@2x/apps/com.mattjakeman.ExtensionManager.png
 share/icons/Yaru/48x48@2x/apps/configurator-app.png
 share/icons/Yaru/48x48@2x/apps/cpu-x.png
 share/icons/Yaru/48x48@2x/apps/dconf-editor.png
@@ -17418,6 +17446,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.Maps.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Mines.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Music.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.Papers.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Rhythmbox.png
@@ -17455,6 +17484,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.gedit.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.seahorse.Application.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru/48x48@2x/apps/packages-app.png
+share/icons/Yaru/48x48@2x/apps/papers.png
 share/icons/Yaru/48x48@2x/apps/passwords-app.png
 share/icons/Yaru/48x48@2x/apps/podcasts-app.png
 share/icons/Yaru/48x48@2x/apps/power-statistics.png
@@ -18464,8 +18494,17 @@ share/icons/Yaru/scalable/actions/annotations-squiggly-symbolic.svg
 share/icons/Yaru/scalable/actions/annotations-text-symbolic.svg
 share/icons/Yaru/scalable/actions/application-exit-rtl-symbolic.svg
 share/icons/Yaru/scalable/actions/application-exit-symbolic.svg
+share/icons/Yaru/scalable/actions/apply-crop-symbolic.svg
 share/icons/Yaru/scalable/actions/appointment-new-symbolic.svg
 share/icons/Yaru/scalable/actions/appointment-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-16to9-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-3to2-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-4to3-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-5to4-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-free-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-original-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-square-symbolic.svg
+share/icons/Yaru/scalable/actions/aspect-ratio-symbolic.svg
 share/icons/Yaru/scalable/actions/background-selected-symbolic.svg
 share/icons/Yaru/scalable/actions/bookmark-new-symbolic.svg
 share/icons/Yaru/scalable/actions/brisk_system-log-out-symbolic.svg
@@ -18478,6 +18517,7 @@ share/icons/Yaru/scalable/actions/cameras-symbolic.svg
 share/icons/Yaru/scalable/actions/carousel-arrow-next-symbolic.svg
 share/icons/Yaru/scalable/actions/carousel-arrow-previous-symbolic.svg
 share/icons/Yaru/scalable/actions/chat-message-new-symbolic.svg
+share/icons/Yaru/scalable/actions/check-plain-symbolic.svg
 share/icons/Yaru/scalable/actions/color-select-symbolic.svg
 share/icons/Yaru/scalable/actions/configure-symbolic.svg
 share/icons/Yaru/scalable/actions/contact-new-symbolic.svg
@@ -18510,6 +18550,8 @@ share/icons/Yaru/scalable/actions/edit-cut-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-delete-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-find-replace-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-find-symbolic.svg
+share/icons/Yaru/scalable/actions/edit-mirror-horizontally-symbolic.svg
+share/icons/Yaru/scalable/actions/edit-mirror-vertically-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-paste-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-redo-rtl-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-redo-symbolic-rtl.svg
@@ -18597,6 +18639,7 @@ share/icons/Yaru/scalable/actions/help-about-symbolic.svg
 share/icons/Yaru/scalable/actions/image-adjust-color-symbolic.svg
 share/icons/Yaru/scalable/actions/image-auto-adjust-symbolic.svg
 share/icons/Yaru/scalable/actions/image-crop-symbolic.svg
+share/icons/Yaru/scalable/actions/image-round-symbolic.svg
 share/icons/Yaru/scalable/actions/image-zoom-in-symbolic.svg
 share/icons/Yaru/scalable/actions/image-zoom-out-symbolic.svg
 share/icons/Yaru/scalable/actions/insert-image-symbolic.svg
@@ -18657,6 +18700,7 @@ share/icons/Yaru/scalable/actions/media-skip-forward-rtl-symbolic.svg
 share/icons/Yaru/scalable/actions/media-skip-forward-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/media-skip-forward-symbolic.svg
 share/icons/Yaru/scalable/actions/media-view-subtitles-symbolic.svg
+share/icons/Yaru/scalable/actions/minus-large-symbolic.svg
 share/icons/Yaru/scalable/actions/mouse-test-click-symbolic.svg
 share/icons/Yaru/scalable/actions/mouse-test-scroll-symbolic.svg
 share/icons/Yaru/scalable/actions/multimedia-equalizer-symbolic.svg
@@ -18673,6 +18717,9 @@ share/icons/Yaru/scalable/actions/one-tag-symbolic.svg
 share/icons/Yaru/scalable/actions/open-menu-symbolic.svg
 share/icons/Yaru/scalable/actions/org.gnome.Lollypop-equalizer-symbolic.svg
 share/icons/Yaru/scalable/actions/outline-symbolic.svg
+share/icons/Yaru/scalable/actions/page-orientation-landscape-symbolic.svg
+share/icons/Yaru/scalable/actions/page-orientation-portrait-symbolic.svg
+share/icons/Yaru/scalable/actions/plus-large-symbolic.svg
 share/icons/Yaru/scalable/actions/power-saving-symbolic.svg
 share/icons/Yaru/scalable/actions/process-stop-symbolic.svg
 share/icons/Yaru/scalable/actions/qr-code-symbolic.svg
@@ -18707,6 +18754,10 @@ share/icons/Yaru/scalable/actions/system-shutdown-symbolic.svg
 share/icons/Yaru/scalable/actions/system-update-symbolic.svg
 share/icons/Yaru/scalable/actions/tag-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/tag-symbolic.svg
+share/icons/Yaru/scalable/actions/text-highlight-symbolic.svg
+share/icons/Yaru/scalable/actions/text-squiggly-symbolic.svg
+share/icons/Yaru/scalable/actions/text-strikethrough-symbolic.svg
+share/icons/Yaru/scalable/actions/text-underline-symbolic.svg
 share/icons/Yaru/scalable/actions/tools-check-spelling-symbolic.svg
 share/icons/Yaru/scalable/actions/value-decrease-symbolic.svg
 share/icons/Yaru/scalable/actions/value-increase-symbolic.svg
@@ -18749,6 +18800,7 @@ share/icons/Yaru/scalable/actions/zoom-fit-best-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-in-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-original-symbolic.svg
 share/icons/Yaru/scalable/actions/zoom-out-symbolic.svg
+share/icons/Yaru/scalable/actions/zoom-toggle-symbolic.svg
 share/icons/Yaru/scalable/apps/
 share/icons/Yaru/scalable/apps/accessories-calculator-symbolic.svg
 share/icons/Yaru/scalable/apps/accessories-camera-symbolic.svg
@@ -18887,10 +18939,12 @@ share/icons/Yaru/scalable/apps/org.gnome.Lollypop-suggestions-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Lollypop-tag-list-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Lollypop-tag-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Lollypop-unplayed-albums-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.Loupe-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Mahjongg-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Maps-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Mines-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Music-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.Papers-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Photos-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.PowerStats-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Rhythmbox-symbolic.svg
@@ -18929,6 +18983,7 @@ share/icons/Yaru/scalable/apps/org.gnome.gedit-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.seahorse.Application-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.tweaks-symbolic.svg
 share/icons/Yaru/scalable/apps/packages-app-symbolic.svg
+share/icons/Yaru/scalable/apps/papers-symbolic.svg
 share/icons/Yaru/scalable/apps/passwords-app-symbolic.svg
 share/icons/Yaru/scalable/apps/podcasts-app-symbolic.svg
 share/icons/Yaru/scalable/apps/power-statistics-symbolic.svg
@@ -19024,9 +19079,14 @@ share/icons/Yaru/scalable/categories/applications-multimedia-symbolic.svg
 share/icons/Yaru/scalable/categories/applications-office-symbolic.svg
 share/icons/Yaru/scalable/categories/applications-other-symbolic.svg
 share/icons/Yaru/scalable/categories/applications-science-symbolic.svg
+share/icons/Yaru/scalable/categories/applications-symbolic.svg
 share/icons/Yaru/scalable/categories/applications-utilities-symbolic.svg
 share/icons/Yaru/scalable/categories/audio-input-microphone-symbolic.svg
 share/icons/Yaru/scalable/categories/bolt-symbolic.svg
+share/icons/Yaru/scalable/categories/caffeine-infinite-timer-symbolic.svg
+share/icons/Yaru/scalable/categories/caffeine-long-timer-symbolic.svg
+share/icons/Yaru/scalable/categories/caffeine-medium-timer-symbolic.svg
+share/icons/Yaru/scalable/categories/caffeine-short-timer-symbolic.svg
 share/icons/Yaru/scalable/categories/calendar-month-symbolic.svg
 share/icons/Yaru/scalable/categories/calendar-today-symbolic.svg
 share/icons/Yaru/scalable/categories/calendar-week-symbolic.svg
@@ -19038,6 +19098,7 @@ share/icons/Yaru/scalable/categories/characters-latin-symbolic.svg
 share/icons/Yaru/scalable/categories/characters-math-symbolic.svg
 share/icons/Yaru/scalable/categories/characters-picture-symbolic.svg
 share/icons/Yaru/scalable/categories/characters-punctuation-symbolic.svg
+share/icons/Yaru/scalable/categories/chat-bubble-text-symbolic.svg
 share/icons/Yaru/scalable/categories/credentials-preferences-symbolic.svg
 share/icons/Yaru/scalable/categories/diagnostics-symbolic.svg
 share/icons/Yaru/scalable/categories/document-page-setup-symbolic.svg
@@ -19056,7 +19117,10 @@ share/icons/Yaru/scalable/categories/ephy-permission-generic-symbolic.svg
 share/icons/Yaru/scalable/categories/ephy-permission-location-symbolic.svg
 share/icons/Yaru/scalable/categories/ephy-permission-microphone-symbolic.svg
 share/icons/Yaru/scalable/categories/ephy-permission-notifications-symbolic.svg
+share/icons/Yaru/scalable/categories/general-symbolic.svg
 share/icons/Yaru/scalable/categories/goa-panel-symbolic.svg
+share/icons/Yaru/scalable/categories/grid-large-symbolic.svg
+share/icons/Yaru/scalable/categories/infinity-symbolic.svg
 share/icons/Yaru/scalable/categories/location-symbolic.svg
 share/icons/Yaru/scalable/categories/lock-symbolic.svg
 share/icons/Yaru/scalable/categories/multitasking-symbolic.svg
@@ -19584,6 +19648,8 @@ share/icons/Yaru/scalable/status/microphone-sensitivity-high-symbolic.svg
 share/icons/Yaru/scalable/status/microphone-sensitivity-low-symbolic.svg
 share/icons/Yaru/scalable/status/microphone-sensitivity-medium-symbolic.svg
 share/icons/Yaru/scalable/status/microphone-sensitivity-muted-symbolic.svg
+share/icons/Yaru/scalable/status/my-caffeine-off-symbolic.svg
+share/icons/Yaru/scalable/status/my-caffeine-on-symbolic.svg
 share/icons/Yaru/scalable/status/network-cellular-2g-symbolic.svg
 share/icons/Yaru/scalable/status/network-cellular-3g-symbolic.svg
 share/icons/Yaru/scalable/status/network-cellular-4g-symbolic.svg
@@ -19764,7 +19830,10 @@ share/icons/Yaru/scalable/time/playback-speed-symbolic.svg
 share/icons/Yaru/scalable/time/snapshots-alt-symbolic.svg
 share/icons/Yaru/scalable/time/stopwatch-symbolic.svg
 share/icons/Yaru/scalable/time/timer-alt-symbolic.svg
+share/icons/Yaru/scalable/time/timer-long-symbolic.svg
+share/icons/Yaru/scalable/time/timer-medium-symbolic.svg
 share/icons/Yaru/scalable/time/timer-sand-symbolic.svg
+share/icons/Yaru/scalable/time/timer-short-symbolic.svg
 share/icons/Yaru/scalable/time/timer-symbolic.svg
 share/icons/Yaru/scalable/time/today-alt-symbolic.svg
 share/icons/Yaru/scalable/time/today-symbolic.svg
