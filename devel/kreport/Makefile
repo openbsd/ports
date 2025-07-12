@@ -2,7 +2,7 @@ COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0
 DISTNAME =	kreport-${VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -37,8 +37,7 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kwidgetsaddons \
 			devel/kproperty>=3.2.0 \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtwebengine
+			x11/qt5/qtdeclarative
 
 CONFIGURE_ARGS =	-DBUILD_TESTING=Yes \
 			-DBUILD_EXAMPLES=Yes
