@@ -25,6 +25,7 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kwindowsystem>=${MODKF6_VERSION} \
+		devel/gettext,-runtime \
 		x11/gnome/libsecret \
 		devel/glib2 \
 		security/libgcrypt \
