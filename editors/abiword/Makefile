@@ -10,7 +10,7 @@ WRKDIST=	${WRKDIR}/AbiWord-542cb5c8aa0a97efd033f78d29f706d1fbae74e7
 
 VERSION=	3.0.6.0.20241101
 DISTNAME=	abiword-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  abiword-3.1-test          0.0 # 0.0
 

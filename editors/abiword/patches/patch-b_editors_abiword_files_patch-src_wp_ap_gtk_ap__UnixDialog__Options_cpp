@@ -1,0 +1,27 @@
+fix build with libc++ 19 (From FreeBSD)
+
+As noted in the libc++ 19 release notes [1], std::char_traits<> is now
+only provided for char, char8_t, char16_t, char32_t and wchar_t, and any
+instantiation for other types will fail.
+
+This can be fixed by defining `UT_UCS4Char` as `char32_t` instead of
+`gunichar`, and patching up a few places where those types are mixed
+indiscriminately.
+
+[1] https://libcxx.llvm.org/ReleaseNotes/19.html#deprecations-and-removals
+
+Index: b/editors/abiword/files/patch-src_wp_ap_gtk_ap__UnixDialog__Options.cpp
+--- b/editors/abiword/files/patch-src_wp_ap_gtk_ap__UnixDialog__Options.cpp.orig
++++ b/editors/abiword/files/patch-src_wp_ap_gtk_ap__UnixDialog__Options.cpp
+@@ -0,0 +1,11 @@
++--- src/wp/ap/gtk/ap_UnixDialog_Options.cpp.orig	2021-07-03 15:46:07 UTC
+++++ src/wp/ap/gtk/ap_UnixDialog_Options.cpp
++@@ -959,7 +959,7 @@ void AP_UnixDialog_Options::_setupSmartQuotesCombos(  
++ 		wszDisplayString[1] = (gunichar)'O';
++ 		wszDisplayString[2] = XAP_EncodingManager::smartQuoteStyles[i].rightQuote;
++ 		wszDisplayString[3] = (gunichar)0;
++-        gchar* szDisplayStringUTF8 = g_ucs4_to_utf8 ( wszDisplayString, -1, NULL, NULL, NULL );
+++        gchar* szDisplayStringUTF8 = g_ucs4_to_utf8 ( reinterpret_cast<const gunichar*>(wszDisplayString), -1, NULL, NULL, NULL );
++ 		XAP_appendComboBoxTextAndInt(combo, szDisplayStringUTF8, i);
++         g_free ( szDisplayStringUTF8 );
++ 	}

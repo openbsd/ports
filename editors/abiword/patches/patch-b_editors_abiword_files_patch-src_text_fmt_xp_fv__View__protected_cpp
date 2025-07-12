@@ -1,0 +1,27 @@
+fix build with libc++ 19 (From FreeBSD)
+
+As noted in the libc++ 19 release notes [1], std::char_traits<> is now
+only provided for char, char8_t, char16_t, char32_t and wchar_t, and any
+instantiation for other types will fail.
+
+This can be fixed by defining `UT_UCS4Char` as `char32_t` instead of
+`gunichar`, and patching up a few places where those types are mixed
+indiscriminately.
+
+[1] https://libcxx.llvm.org/ReleaseNotes/19.html#deprecations-and-removals
+
+Index: b/editors/abiword/files/patch-src_text_fmt_xp_fv__View__protected.cpp
+--- b/editors/abiword/files/patch-src_text_fmt_xp_fv__View__protected.cpp.orig
++++ b/editors/abiword/files/patch-src_text_fmt_xp_fv__View__protected.cpp
+@@ -0,0 +1,11 @@
++--- src/text/fmt/xp/fv_View_protected.cpp.orig	2021-07-03 15:46:07 UTC
+++++ src/text/fmt/xp/fv_View_protected.cpp
++@@ -5752,7 +5752,7 @@ UT_UCSChar * FV_View::_lookupSuggestion(fl_BlockLayout
++ 		UT_uint32 len = iLength;
++ 		for (UT_uint32 ldex=0; ldex < len && ldex < INPUTWORDLEN; ldex++)
++ 		{
++-			stMisspelledWord += *pWord == UCS_RQUOTE ? '\'' : *pWord;
+++			stMisspelledWord += *pWord == UCS_RQUOTE ? U'\'' : *pWord;
++ 			++pWord;
++ 		}
++ 
