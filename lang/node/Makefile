@@ -13,6 +13,7 @@ DIST_TUPLE =		github qbit node-pledge 1.1.3 \
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		lang devel
 
@@ -71,7 +72,7 @@ LIB_DEPENDS +=		archivers/brotli \
 			www/nghttp2 \
 			www/nghttp3
 
-OPENSSL_VSN =		3.3
+OPENSSL_VSN =		3.5
 EOPENSSL_VSN =		eopenssl${OPENSSL_VSN:C/\.//}
 EOPENSSL_LIB =		${LOCALBASE}/lib/${EOPENSSL_VSN}
 EOPENSSL_INC =		${LOCALBASE}/include/${EOPENSSL_VSN}
