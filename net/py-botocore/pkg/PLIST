@@ -1221,6 +1221,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/freetier/2023-09-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/freetier/2023-09-07/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/freetier/2023-09-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/freetier/2023-09-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/freetier/2023-09-07/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/fsx/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/fsx/2018-03-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/fsx/2018-03-01/endpoint-rule-set-1.json
