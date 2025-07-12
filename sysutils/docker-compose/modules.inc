@@ -105,10 +105,10 @@ MODGO_MODULES =	\
 	github.com/distribution/reference						 v0.6.0 \
 	github.com/dlclark/regexp2							 v1.11.0 \
 	github.com/docker/buildx							 v0.25.0 \
-	github.com/docker/cli								 v28.3.0+incompatible \
+	github.com/docker/cli								 v28.3.1+incompatible \
 	github.com/docker/cli-docs-tool							 v0.10.0 \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v28.3.0+incompatible \
+	github.com/docker/docker							 v28.3.1+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.9.3 \
 	github.com/docker/go								 v1.5.1-1.0.20160303222718-d30aec9fd63c \
 	github.com/docker/go-connections						 v0.5.0 \
@@ -142,7 +142,7 @@ MODGO_MODULES =	\
 	github.com/go-sql-driver/mysql							 v1.3.0 \
 	github.com/go-stack/stack							 v1.8.0 \
 	github.com/go-task/slim-sprig/v3						 v3.0.0 \
-	github.com/go-viper/mapstructure/v2						 v2.0.0 \
+	github.com/go-viper/mapstructure/v2						 v2.3.0 \
 	github.com/godbus/dbus/v5							 v5.1.0 \
 	github.com/gofrs/flock								 v0.12.1 \
 	github.com/gogo/protobuf							 v1.3.2 \
@@ -221,7 +221,7 @@ MODGO_MODULES =	\
 	github.com/mitchellh/go-wordwrap						 v0.0.0-20150314170334-ad45545899c7 \
 	github.com/mitchellh/hashstructure/v2						 v2.0.2 \
 	github.com/mitchellh/mapstructure						 v1.5.0 \
-	github.com/moby/buildkit							 v0.23.1 \
+	github.com/moby/buildkit							 v0.23.2 \
 	github.com/moby/docker-image-spec						 v1.3.1 \
 	github.com/moby/go-archive							 v0.1.0 \
 	github.com/moby/locker								 v1.0.1 \
@@ -300,7 +300,7 @@ MODGO_MODULES =	\
 	github.com/tilt-dev/fsnotify							 v1.4.8-0.20220602155310-fff9c274a375 \
 	github.com/tonistiigi/dchapes-mode						 v0.0.0-20250318174251-73d941a28323 \
 	github.com/tonistiigi/fsutil							 v0.0.0-20250605211040-586307ad452f \
-	github.com/tonistiigi/go-actions-cache						 v0.0.0-20250611155157-388a2ec8cdf8 \
+	github.com/tonistiigi/go-actions-cache						 v0.0.0-20250626083717-378c5ed1ddd9 \
 	github.com/tonistiigi/go-archvariant						 v1.0.0 \
 	github.com/tonistiigi/go-csvvalue						 v0.0.0-20240814133006-030d3b2625d0 \
 	github.com/tonistiigi/jaeger-ui-rest						 v0.0.0-20250408171107-3dd17559e117 \
@@ -434,6 +434,7 @@ MODGO_MODFILES =	\
 	github.com/go-openapi/jsonpointer				 v0.19.6 \
 	github.com/go-openapi/jsonreference				 v0.20.1 \
 	github.com/go-openapi/swag					 v0.22.3 \
+	github.com/go-viper/mapstructure/v2				 v2.0.0 \
 	github.com/gogo/protobuf					 v1.0.0 \
 	github.com/gogo/protobuf					 v1.1.1 \
 	github.com/golang/protobuf					 v1.2.0 \
