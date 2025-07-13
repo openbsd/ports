@@ -1,7 +1,6 @@
 Fix build with libc++19, backport of
 https://gcc.gnu.org/cgit/gcc/patch/?id=a995fded34fe488153b06bb41e026277f01efded
 
-Fix build with libc++19, backport of
 Index: gcc/system.h
 --- gcc/system.h.orig
 +++ gcc/system.h
