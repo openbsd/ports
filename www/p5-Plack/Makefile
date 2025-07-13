@@ -3,6 +3,7 @@ COMMENT =		interface between perl web frameworks and web servers
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Plack-1.0051
+REVISION =		0
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
@@ -28,9 +29,9 @@ RUN_DEPENDS =	devel/p5-Devel-StackTrace>=1.23 \
 		www/p5-WWW-Form-UrlEncoded>=0.23
 
 # Not required, but make it more useful
-RUN_DEPENDS +=	www/fcgi \
-		www/p5-libwww>=5.814 \
+RUN_DEPENDS +=	www/p5-libwww>=5.814 \
 		www/p5-CGI-Compile \
+		www/p5-FCGI \
 		www/p5-FCGI-ProcManager
 
 TEST_DEPENDS = devel/p5-Log-Dispatch>=2.25 \
