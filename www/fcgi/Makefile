@@ -4,6 +4,7 @@ GH_ACCOUNT=	FastCGI-Archives
 GH_PROJECT=	fcgi2
 GH_TAGNAME=	2.4.6
 PKGNAME=	fcgi-${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES=	www
 SHARED_LIBS +=	fcgi                 0.1      # .0.0
@@ -17,8 +18,6 @@ HOMEPAGE=	https://fastcgi-archives.github.io/
 # disclaimed in individual files". Also see analysis at
 # http://www.fastcgi.com/archives/fastcgi-developers/2010-June/000559.html
 PERMIT_PACKAGE=	Yes
-
-RUN_DEPENDS=	www/p5-FCGI
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
