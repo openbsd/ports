@@ -4,7 +4,7 @@ bool                            _findDialogInTable(XAP_Dialog_Id id, UT_sint32 *
 Index: src/af/util/xp/ut_types.h
 --- src/af/util/xp/ut_types.h.orig
 +++ src/af/util/xp/ut_types.h
-@@ -94,7 +94,7 @@ typedef UT_uint8 UT_Confidence_t;
+@@ -96,7 +96,7 @@ typedef UT_uint8 UT_Confidence_t;
  
  #include "ut_export.h" // ABI_EXPORT is defined in there.
  
