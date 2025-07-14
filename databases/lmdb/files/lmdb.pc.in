@@ -8,4 +8,5 @@ Description: Lightning memory-mapped database: key-value data store
 URL: https://www.symas.com/symas-embedded-database-lmdb
 Version: ${VERSION}
 Libs: -L${libdir} -llmdb
+Libs.private: -lpthread
 Cflags: -I${includedir}
