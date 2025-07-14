@@ -75,3 +75,12 @@ Index: build/make/configure.sh
        enable_feature gcc
        setup_gnu_toolchain
        ;;
+@@ -1591,8 +1591,6 @@ EOF
+   if enabled optimizations; then
+     if enabled rvct; then
+       enabled small && check_add_cflags -Ospace || check_add_cflags -Otime
+-    else
+-      enabled small && check_add_cflags -O2 ||  check_add_cflags -O3
+     fi
+   fi
+ 

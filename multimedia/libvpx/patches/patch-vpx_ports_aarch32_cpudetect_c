@@ -1,4 +1,4 @@
-Allow ARM CPU runtime detection code to build on OpenBSD.
+Add ARM CPU feature detection support for OpenBSD.
 
 Index: vpx_ports/aarch32_cpudetect.c
 --- vpx_ports/aarch32_cpudetect.c.orig
