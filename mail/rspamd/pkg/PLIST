@@ -17,6 +17,8 @@ lib/rspamd/
 @man man/man1/rspamc.1
 @man man/man8/rspamd.8
 share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/rspamd
+@sample /etc/login.conf.d/rspamd
 share/examples/rspamd/
 share/examples/rspamd/actions.conf
 @sample ${ETC}/rspamd/actions.conf
