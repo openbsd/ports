@@ -256,16 +256,16 @@ GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 .PHONY: adastrap
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
-	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
-	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${ADA_PACKAGE}
-	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${GCC_PACKAGE}
-	cd ${WRKDIR}/prepare/bootstrap && tar xzf ${GXX_PACKAGE}
-	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
-	rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-openbsd*/$V/include-fixed
+	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${ADA_PACKAGE}
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GCC_PACKAGE}
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GXX_PACKAGE}
+	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
+	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-openbsd*/$V/include-fixed
 	for f in \
 	    `ldd ${WRKDIR}/prepare/bootstrap/libexec/gcc/*-openbsd*/$V/cc1 | \
 	    awk '$$3 == "rlib" { print $$7 }'`; do \
-		cp $$f ${WRKDIR}/prepare/bootstrap/system-libs/; \
+		${_PBUILD} cp $$f ${WRKDIR}/prepare/bootstrap/system-libs/; \
 	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-		xz -T0 > ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}}
+		xz -T0 | ${_PFETCH} tee ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}} > /dev/null
