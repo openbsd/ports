@@ -1,25 +1,21 @@
 Index: ext/os/lib.rs
 --- ext/os/lib.rs.orig
 +++ ext/os/lib.rs
-@@ -3,10 +3,10 @@
+@@ -3,6 +3,7 @@
  use std::collections::HashMap;
  use std::collections::HashSet;
  use std::env;
 +use std::path::PathBuf;
+ use std::sync::Arc;
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
- use std::sync::Arc;
--
- use deno_core::op2;
- use deno_core::v8;
- use deno_core::OpState;
-@@ -116,7 +116,8 @@ pub enum OsError {
+@@ -116,7 +117,8 @@ pub enum OsError {
  #[op2]
  #[string]
  fn op_exec_path() -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
-+  let current_exe
-+    = env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
++  let current_exe =
++    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
    // normalize path so it doesn't include '.' or '..' components
    let path = normalize_path(current_exe);
  

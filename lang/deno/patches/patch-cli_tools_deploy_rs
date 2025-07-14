@@ -1,0 +1,29 @@
+Index: cli/tools/deploy.rs
+--- cli/tools/deploy.rs.orig
++++ cli/tools/deploy.rs
+@@ -63,23 +63,10 @@ pub async fn deploy(mut flags: Flags) -> Result<i32, A
+     .map_err(ResolveUrlOrPathError::UrlParse)?
+   };
+ 
+-  let mut worker = worker_factory
+-    .create_custom_worker(
+-      WorkerExecutionMode::Deploy,
+-      specifier,
+-      vec![],
+-      PermissionsContainer::allow_all(
+-        factory.permission_desc_parser()?.clone(),
+-      ),
+-      vec![ops::deploy::deno_deploy::init()],
+-      Default::default(),
+-      None,
+-    )
+-    .await?;
+-
+-  Ok(worker.run().await?)
++  Ok(0)
+ }
+ 
++#[cfg(not(target_os="openbsd"))]
+ pub fn get_token_entry() -> Result<keyring::Entry, keyring::Error> {
+   keyring::Entry::new("Deno Deploy Token", "Deno Deploy")
+ }

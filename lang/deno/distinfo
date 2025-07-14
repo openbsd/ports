@@ -146,7 +146,7 @@ SHA256 (cargo/data-url-0.3.1.tar.gz) = XCl6HHS3GuKd8Aw+It2VNIIdYOua9aAZKCP6Ks6nD
 SHA256 (cargo/debug-ignore-1.0.5.tar.gz) = /+ftHZP0VTAD4gtimr6QheHoGxQpUg+Jf4+IYLxt/CE=
 SHA256 (cargo/debugid-0.8.0.tar.gz) = vvVS5vWI5EYJj2ukDYmsFGyMe2Sq3oPAUe4Au10rwY0=
 SHA256 (cargo/deno-tower-lsp-macros-0.11.3.tar.gz) = +SIbmfHMfDlWhrny1WUsWFVmapKCyNWmj6vUsdSZT6k=
-SHA256 (cargo/deno_ast-0.48.0.tar.gz) = D4g72Ork38gBnZJew90EtjS2r5NGpRaKzCWdVfX1Ah0=
+SHA256 (cargo/deno_ast-0.48.1.tar.gz) = DO0J/biITilxbMBpHoUQ+cZVdiu7naMRHazAou9uiWA=
 SHA256 (cargo/deno_cache_dir-0.23.0.tar.gz) = eCXaBVHmcKJwo6ILkvigv/631hIPqGtk5dqpabjdGhA=
 SHA256 (cargo/deno_core-0.352.0.tar.gz) = 95xJZ1pDVgaPTfrmUT9+AJfh7oVIwJimj1u/mpMzDFE=
 SHA256 (cargo/deno_core_icudata-0.74.0.tar.gz) = /k3MthR7s/O6DHpI6ZO/65mdLC5HqBut7oDis3DI1pU=
@@ -585,7 +585,7 @@ SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5p
 SHA256 (cargo/scrypt-0.11.0.tar.gz) = BRajhYZsCTaPC1vNHK/zNmqs55D81G4rsDJpe7Fy/R8=
 SHA256 (cargo/sec1-0.7.3.tar.gz) = 0+l6Vl92IzpgA/n1xUvh2cW9+j7M+xiUafEexJAcR9w=
 SHA256 (cargo/security-framework-2.10.0.tar.gz) = dwRS43ytk+ClDVq8OZDSvDUcNtAyj4bO/sLy+yBurvY=
-SHA256 (cargo/security-framework-sys-2.10.0.tar.gz) = QfPMRjwO+X4Rw0YanTeHQS0w6OfrkHx5GAxKV798BO8=
+SHA256 (cargo/security-framework-sys-2.14.0.tar.gz) = SdsjHVahkEkctK7alSfxrUU0WvULCFFiKnrbjAOwHDI=
 SHA256 (cargo/semver-0.9.0.tar.gz) = HX657ywYZhkCzEflNfm8UbeKzSVNpx03XC9nINmkBAM=
 SHA256 (cargo/semver-1.0.25.tar.gz) = 953+LShbBIiBbzDnAKdDjFpz2Ba1t9OscvvEiw0YXgM=
 SHA256 (cargo/semver-parser-0.7.0.tar.gz) = OIod8lPsoIVQvvbHI5LP58MJFL9B31Jptoy9b/j1cKM=
@@ -857,7 +857,7 @@ SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+Gft
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
 SHA256 (cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (cargo/zune-jpeg-0.4.13.tar.gz) = FgmUGGALTY8ChiL3P/bj3qq9/zMPuaKhMd6nge6LB2g=
-SHA256 (deno-2.4.0.tar.gz) = UxA5t7JzGPQm28DGuJKNll3DmhHWSUxjQu3NBaK/tPc=
+SHA256 (deno-2.4.1.tar.gz) = q9N4Iw2BnuutsBzTzHfyn7jb4BNvZohmgWo6BeT5Qwg=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -1006,7 +1006,7 @@ SIZE (cargo/data-url-0.3.1.tar.gz) = 21109
 SIZE (cargo/debug-ignore-1.0.5.tar.gz) = 12016
 SIZE (cargo/debugid-0.8.0.tar.gz) = 12757
 SIZE (cargo/deno-tower-lsp-macros-0.11.3.tar.gz) = 3540
-SIZE (cargo/deno_ast-0.48.0.tar.gz) = 100165
+SIZE (cargo/deno_ast-0.48.1.tar.gz) = 94209
 SIZE (cargo/deno_cache_dir-0.23.0.tar.gz) = 46696
 SIZE (cargo/deno_core-0.352.0.tar.gz) = 303319
 SIZE (cargo/deno_core_icudata-0.74.0.tar.gz) = 4581089
@@ -1445,7 +1445,7 @@ SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/scrypt-0.11.0.tar.gz) = 13440
 SIZE (cargo/sec1-0.7.3.tar.gz) = 17979
 SIZE (cargo/security-framework-2.10.0.tar.gz) = 79723
-SIZE (cargo/security-framework-sys-2.10.0.tar.gz) = 18676
+SIZE (cargo/security-framework-sys-2.14.0.tar.gz) = 20537
 SIZE (cargo/semver-0.9.0.tar.gz) = 17344
 SIZE (cargo/semver-1.0.25.tar.gz) = 31291
 SIZE (cargo/semver-parser-0.7.0.tar.gz) = 10268
@@ -1717,4 +1717,4 @@ SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
 SIZE (cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (cargo/zune-jpeg-0.4.13.tar.gz) = 62999
-SIZE (deno-2.4.0.tar.gz) = 35325819
+SIZE (deno-2.4.1.tar.gz) = 35343638

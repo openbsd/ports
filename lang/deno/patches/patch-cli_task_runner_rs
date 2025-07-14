@@ -34,7 +34,7 @@ Index: cli/task_runner.rs
    }
  }
  
-@@ -393,7 +398,8 @@ impl ShellCommand for NpmPackageBinCommand {
+@@ -399,7 +404,8 @@ impl ShellCommand for NpmPackageBinCommand {
      args.extend(context.args);
      let executable_command = deno_task_shell::ExecutableCommand::new(
        "deno".to_string(),
@@ -44,7 +44,7 @@ Index: cli/task_runner.rs
      );
      executable_command.execute(ShellCommandContext { args, ..context })
    }
-@@ -420,7 +426,8 @@ impl ShellCommand for NodeModulesFileRunCommand {
+@@ -426,7 +432,8 @@ impl ShellCommand for NodeModulesFileRunCommand {
      args.extend(context.args);
      let executable_command = deno_task_shell::ExecutableCommand::new(
        "deno".to_string(),
