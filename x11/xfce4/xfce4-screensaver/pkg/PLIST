@@ -9,7 +9,6 @@ libexec/xfce4-screensaver/
 @mode
 @group
 @bin libexec/xfce4-screensaver-dialog
-@bin libexec/xfce4-screensaver-gl-helper
 @bin libexec/xfce4-screensaver/floaters
 @bin libexec/xfce4-screensaver/popsquares
 @bin libexec/xfce4-screensaver/slideshow
@@ -21,8 +20,14 @@ share/applications/screensavers/xfce-floaters.desktop
 share/applications/screensavers/xfce-personal-slideshow.desktop
 share/applications/screensavers/xfce-popsquares.desktop
 share/applications/xfce4-screensaver-preferences.desktop
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.xfce.ScreenSaver.service
+share/desktop-directories/
 share/desktop-directories/xfce4-screensaver.directory
+share/doc/xfce4-screensaver-4.20.0/
+share/doc/xfce4-screensaver-4.20.0/docbook.css
+share/doc/xfce4-screensaver-4.20.0/xfce4-screensaver.html
 share/examples/xfce4-screensaver/
 share/examples/xfce4-screensaver/xdg/
 share/examples/xfce4-screensaver/xdg/autostart/
@@ -44,6 +49,8 @@ share/locale/cs/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/da/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/de/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/el/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/en_CA/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-screensaver.mo
@@ -56,7 +63,11 @@ share/locale/gl/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/he/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/hr/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/hu/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/hy_AM/
+share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/hye/
+share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/id/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/is/LC_MESSAGES/xfce4-screensaver.mo
@@ -72,6 +83,7 @@ share/locale/oc/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/pl/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/pt/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/ro/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/ru/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/sk/LC_MESSAGES/xfce4-screensaver.mo
 share/locale/sl/LC_MESSAGES/xfce4-screensaver.mo
