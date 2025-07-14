@@ -1,0 +1,33 @@
+Index: qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h
+--- qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h.orig
++++ qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/MathExtras.h
+@@ -40,11 +40,6 @@
+ #include <ieeefp.h>
+ #endif
+ 
+-#if OS(OPENBSD)
+-#include <sys/types.h>
+-#include <machine/ieee.h>
+-#endif
+-
+ #if COMPILER(MSVC)
+ #if OS(WINCE)
+ #include <stdlib.h>
+@@ -95,17 +90,6 @@ inline bool isinf(double x) { return !finite(x) && !is
+ #endif
+ #ifndef signbit
+ inline bool signbit(double x) { return copysign(1.0, x) < 0; }
+-#endif
+-
+-#endif
+-
+-#if OS(OPENBSD)
+-
+-#ifndef isfinite
+-inline bool isfinite(double x) { return finite(x); }
+-#endif
+-#ifndef signbit
+-inline bool signbit(double x) { struct ieee_double *p = (struct ieee_double *)&x; return p->dbl_sign; }
+ #endif
+ 
+ #endif
