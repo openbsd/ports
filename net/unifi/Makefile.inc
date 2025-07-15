@@ -118,12 +118,7 @@ do-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
-.if ${V:M5.6*}
-	printf '#!/bin/ksh\nexec ${LOCALBASE}/bin/mongod $$(echo $$* | sed -e s/--nohttpinterface//)\n' > ${WRKDIR}/mongod
-	${INSTALL_SCRIPT} ${WRKDIR}/mongod ${INSTDIR}/bin/mongod
-.else
 	ln -fs ${LOCALBASE}/bin/mongod ${INSTDIR}/bin/mongod
-.endif
 	ln -s /var/log/unifi ${INSTDIR}/logs
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	find ${INSTDIR} -type f -exec chmod ${SHAREMODE} {} +
