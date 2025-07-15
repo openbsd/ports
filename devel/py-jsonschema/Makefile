@@ -1,6 +1,6 @@
 COMMENT=	implementation of JSON Schema validation for Python
 
-MODPY_DISTV=	4.23.0
+MODPY_DISTV=	4.24.0
 DISTNAME=	jsonschema-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
