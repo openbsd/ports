@@ -1,12 +1,20 @@
 Index: src/watch.c
 --- src/watch.c.orig
 +++ src/watch.c
-@@ -111,7 +111,7 @@ static void __attribute__ ((__noreturn__))
+@@ -47,6 +47,7 @@
+ #include <locale.h>
+ #include <signal.h>
+ #include <sys/ioctl.h>
++#include <sys/stat.h>
+ #include <sys/time.h>
+ #include <sys/wait.h>
+ #include <termios.h>
+@@ -136,7 +137,7 @@ static void __attribute__ ((__noreturn__)) usage(FILE 
  	fputs(USAGE_SEPARATOR, out);
  	fputs(USAGE_HELP, out);
  	fputs(_(" -v, --version  output version information and exit\n"), out);
 -	fprintf(out, USAGE_MAN_TAIL("watch(1)"));
 +	fprintf(out, USAGE_MAN_TAIL("gnuwatch(1)"));
  
- 	exit(out == stderr ? EXIT_FAILURE : EXIT_SUCCESS);
+ 	exit(out == stderr ? 1 : EXIT_SUCCESS);
  }

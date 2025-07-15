@@ -1,6 +1,6 @@
 COMMENT=	GNU watch command
 
-DISTNAME=	procps-ng-4.0.4
+DISTNAME=	procps-ng-4.0.5
 PKGNAME=	${DISTNAME:S/procps-ng/gnuwatch/}
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	misc
@@ -14,16 +14,14 @@ WANTLIB=	curses c
 
 SITES=		${SITE_SOURCEFORGE:=procps-ng/}
 
-NO_TEST=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ncurses \
 		--disable-nls \
-		--disable-dependency-tracking
-# workaround lack of ncurses pkgconfig files
-CONFIGURE_ENV=	NCURSES_CFLAGS=-I/usr/include \
-		NCURSES_LIBS=-lncurses \
-		NCURSES_VERSION=0
+		--disable-dependency-tracking \
+		--disable-pidwait
 ALL_TARGET=	src/watch
+USE_GMAKE=	Yes
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/watch ${PREFIX}/bin/gnuwatch
