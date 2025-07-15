@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL LLVM Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject crypto dbus-1 double-conversion
-WANTLIB += drm drm_amdgpu drm_intel elf epoll-shim epoxy execinfo
+WANTLIB += drm drm_amdgpu elf epoll-shim epoxy execinfo
 WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp
 WANTLIB += gnutls gobject-2.0 gpg-error graphite2 gthread-2.0
@@ -29,6 +29,10 @@ WANTLIB += ssl tasn1 unistring wayland-client wayland-cursor wayland-egl
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr
 WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xkbcommon xshmfence
 WANTLIB += z zstd
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB += drm_intel
+.endif
 
 SITES=			https://www.aquamaniac.de/rdm/attachments/download/529/
 
