@@ -4,7 +4,8 @@ GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
 GH_TAGNAME =		v2.4.2
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
+
 EPOCH =			2
 
 SHARED_LIBS +=  OpenColorIO               5.0 # 1.1.1
