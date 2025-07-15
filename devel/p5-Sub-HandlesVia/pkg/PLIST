@@ -1,22 +1,78 @@
 ${P5SITE}/Sub/
 ${P5SITE}/Sub/HandlesVia/
 ${P5SITE}/Sub/HandlesVia.pm
+${P5SITE}/Sub/HandlesVia/CodeGenerator.pm
+${P5SITE}/Sub/HandlesVia/CodeGenerator.pm.mite.pm
+${P5SITE}/Sub/HandlesVia/Declare.pm
 ${P5SITE}/Sub/HandlesVia/Handler.pm
+${P5SITE}/Sub/HandlesVia/Handler.pm.mite.pm
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary.pm
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Array.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Array.pod
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Blessed.pm
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Bool.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Bool.pod
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Code.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Code.pod
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Counter.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Counter.pod
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Enum.pm
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Hash.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Hash.pod
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Number.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Number.pod
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/Scalar.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/Scalar.pod
 ${P5SITE}/Sub/HandlesVia/HandlerLibrary/String.pm
+${P5SITE}/Sub/HandlesVia/HandlerLibrary/String.pod
+${P5SITE}/Sub/HandlesVia/Manual/
+${P5SITE}/Sub/HandlesVia/Manual/Advanced.pod
+${P5SITE}/Sub/HandlesVia/Manual/Comparison.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithClassTiny.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithGeneric.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithMite.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithMoo.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithMoose.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithMouse.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithObjectPad.pod
+${P5SITE}/Sub/HandlesVia/Mite.pm
 ${P5SITE}/Sub/HandlesVia/Toolkit/
 ${P5SITE}/Sub/HandlesVia/Toolkit.pm
+${P5SITE}/Sub/HandlesVia/Toolkit.pm.mite.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Mite.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Mite.pm.mite.pm
 ${P5SITE}/Sub/HandlesVia/Toolkit/Moo.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Moo.pm.mite.pm
 ${P5SITE}/Sub/HandlesVia/Toolkit/Moose.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Moose.pm.mite.pm
 ${P5SITE}/Sub/HandlesVia/Toolkit/Mouse.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Mouse.pm.mite.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/ObjectPad.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/ObjectPad.pm.mite.pm
 ${P5SITE}/Sub/HandlesVia/Toolkit/Plain.pm
+${P5SITE}/Sub/HandlesVia/Toolkit/Plain.pm.mite.pm
 @man man/man3p/Sub::HandlesVia.3p
+@man man/man3p/Sub::HandlesVia::CodeGenerator.3p
+@man man/man3p/Sub::HandlesVia::Declare.3p
+@man man/man3p/Sub::HandlesVia::Handler.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Array.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Blessed.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Bool.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Code.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Counter.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Enum.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Hash.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Number.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::Scalar.3p
+@man man/man3p/Sub::HandlesVia::HandlerLibrary::String.3p
+@man man/man3p/Sub::HandlesVia::Manual::Advanced.3p
+@man man/man3p/Sub::HandlesVia::Manual::Comparison.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithClassTiny.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithGeneric.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithMite.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithMoo.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithMoose.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithMouse.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithObjectPad.3p
 @man man/man3p/Sub::HandlesVia::Toolkit.3p
