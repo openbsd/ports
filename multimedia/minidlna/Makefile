@@ -6,9 +6,12 @@ COMMENT=		lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 COMMIT=			edebefe5725138402e43412c7bb10c3eb54a1b25
 DIST_TUPLE=		github	klemensn	minidlna ${COMMIT}	.
 PKGNAME=		minidlna-1.3.3
-REVISION=		3
+REVISION=		4
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+# due to ffmpeg's libavcodec
+USE_NOBTCFI-amd64=	Yes
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CATEGORIES=		multimedia
 
