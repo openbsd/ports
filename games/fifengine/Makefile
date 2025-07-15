@@ -1,3 +1,5 @@
+BROKEN =	consumers fail at runtime in a way that suggests that fifengine is broken; tests fail in a similar way
+
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-i386 =	out of memory when compiling fifePYTHON_wrap.cxx (not every time but most)
