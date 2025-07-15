@@ -1,7 +1,7 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		6.14
+V=		7.1
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -20,10 +20,10 @@ HOMEPAGE=	https://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-COMMONLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv \
-		idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
+WANTLIB-main=	${COMPILER_LIBCXX} c crypto execinfo gmp gnutls hogweed \
+		iconv idn2 intl m nettle p11-kit pthread ssl tasn1 tdb unistring
 
-SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/}/
+SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/g}/
 
 # C++17
 COMPILER=	base-clang ports-gcc
@@ -44,8 +44,6 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group
-
-WANTLIB-main +=	${COMMONLIB} crypto tdb
 
 LIB_DEPENDS-main += \
 		databases/tdb \
@@ -129,19 +127,17 @@ CONFIGURE_ARGS+= --with-krb5-config=no
 .if ${BUILD_PACKAGES:M-ldap}
 EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
-LIB_DEPENDS-ldap=   databases/openldap \
-		    security/gnutls
-WANTLIB-ldap +=     ${COMMONLIB} crypto lber ldap sasl2 ssl
+LIB_DEPENDS-ldap=   databases/openldap
+WANTLIB-ldap=	${COMPILER_LIBCXX} c crypto execinfo lber ldap \
+		m nettle sasl2 ssl
 
 post-install:
-	rm -rf ${WRKINST}/var/squid
+	rmdir ${WRKINST}/var/squid{/run/squid,/run,/logs,/cache,}
 	cd ${PREFIX}/share/examples/squid; \
 	    rm -f mime.conf squid.conf cachemgr.conf errorpage.css msntauth.conf
-	# remove unwanted auth helpers; msnt_multi_domain needs Authen::Smb
-	# (not ported), others are risky (typically accessing master.passwd
-	# which needs root).
-.for i in basic_msnt_multi_domain_auth basic_getpwnam_auth basic_pam_auth basic_sasl_auth
-	rm -f ${PREFIX}/libexec/squid/$i ${PREFIX}/man/man8/$i.8
+	# remove unwanted auth helpers
+.for i in basic_getpwnam_auth basic_sasl_auth
+	cd ${PREFIX}; rm libexec/squid/$i man/man8/$i.8
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
 	cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt

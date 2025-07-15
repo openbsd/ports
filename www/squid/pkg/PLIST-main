@@ -11,8 +11,6 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/run/squid/*
 @rcscript ${RCDIR}/squid
 %%krb5%%
-@bin bin/purge
-@bin bin/squidclient
 libexec/squid/
 libexec/squid/basic_db_auth
 @bin libexec/squid/basic_fake_auth
@@ -21,7 +19,6 @@ libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
 @bin libexec/squid/basic_smb_auth
 libexec/squid/basic_smb_auth.sh
-@bin libexec/squid/cachemgr.cgi
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
 @bin libexec/squid/ext_file_userip_acl
@@ -40,13 +37,10 @@ libexec/squid/storeid_file_rewrite
 @bin libexec/squid/url_fake_rewrite
 libexec/squid/url_fake_rewrite.sh
 libexec/squid/url_lfs_rewrite
-@man man/man1/purge.1
-@man man/man1/squidclient.1
 @man man/man8/basic_db_auth.8
 @man man/man8/basic_ncsa_auth.8
 @man man/man8/basic_pop3_auth.8
 @man man/man8/basic_radius_auth.8
-@man man/man8/cachemgr.cgi.8
 @man man/man8/digest_file_auth.8
 @man man/man8/ext_file_userip_acl.8
 @man man/man8/ext_sql_session_acl.8
@@ -65,8 +59,6 @@ share/examples/login.conf.d/squid
 @sample /etc/login.conf.d/squid
 share/examples/squid/
 @sample ${SYSCONFDIR}/
-share/examples/squid/cachemgr.conf.default
-@sample ${SYSCONFDIR}/cachemgr.conf
 @mode 775
 @owner _squid
 @group _squid
