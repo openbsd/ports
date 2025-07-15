@@ -21,6 +21,7 @@ MODPY_PI=	Yes
 # to a cffi-based implementation
 MODPY_TEST_LINK_SO= Yes
 
+BUILD_DEPENDS=	devel/py-cffi
 LIB_DEPENDS=	databases/lmdb
 MAKE_ENV=	LMDB_INCLUDEDIR=${LOCALBASE}/include \
 		LMDB_LIBDIR=${LOCALBASE}/lib \
