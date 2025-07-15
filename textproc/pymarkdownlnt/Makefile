@@ -1,6 +1,6 @@
 COMMENT =		markdown linter
 
-MODPY_DISTV =		0.9.30
+MODPY_DISTV =		0.9.31
 DISTNAME =		pymarkdownlnt-${MODPY_DISTV}
 
 CATEGORIES =		textproc
@@ -10,10 +10,8 @@ HOMEPAGE =		https://github.com/jackdewinter/pymarkdown
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
-
+MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-application_properties \

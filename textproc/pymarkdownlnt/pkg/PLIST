@@ -2,6 +2,7 @@
 bin/pymarkdown
 bin/pymarkdownlnt
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/.external-package
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}/
@@ -21,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}file_scan_he
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}file_scan_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}my_application_properties_facade.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}my_application_properties_facade.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}return_code_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}return_code_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -302,6 +305,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/list_block_pre_l
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/list_block_processor.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/list_block_starts_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/main.py
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/my_application_properties_facade.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}/
