@@ -1,10 +1,9 @@
 COMMENT=	test asyncio code with pytest
 
-MODPY_DISTV=	0.25.3
+MODPY_DISTV=	1.0.0
 DISTNAME=	pytest_asyncio-${MODPY_DISTV}
 PKGNAME=	py-test-asyncio-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
