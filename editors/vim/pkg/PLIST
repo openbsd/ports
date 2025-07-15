@@ -784,6 +784,7 @@ share/vim/${P}/doc/vim2html.pl
 share/vim/${P}/doc/vim9.txt
 share/vim/${P}/doc/vim9class.txt
 share/vim/${P}/doc/visual.txt
+share/vim/${P}/doc/wayland.txt
 share/vim/${P}/doc/windows.txt
 share/vim/${P}/doc/workshop.txt
 share/vim/${P}/evim.vim
@@ -813,6 +814,7 @@ share/vim/${P}/ftplugin/astro.vim
 share/vim/${P}/ftplugin/asy.vim
 share/vim/${P}/ftplugin/autohotkey.vim
 share/vim/${P}/ftplugin/automake.vim
+share/vim/${P}/ftplugin/autopkgtest.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
@@ -892,6 +894,7 @@ share/vim/${P}/ftplugin/exports.vim
 share/vim/${P}/ftplugin/falcon.vim
 share/vim/${P}/ftplugin/fennel.vim
 share/vim/${P}/ftplugin/fetchmail.vim
+share/vim/${P}/ftplugin/fga.vim
 share/vim/${P}/ftplugin/fish.vim
 share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/forth.vim
@@ -1056,6 +1059,7 @@ share/vim/${P}/ftplugin/pdf.vim
 share/vim/${P}/ftplugin/perl.vim
 share/vim/${P}/ftplugin/php.vim
 share/vim/${P}/ftplugin/pinfo.vim
+share/vim/${P}/ftplugin/pkl.vim
 share/vim/${P}/ftplugin/plaintex.vim
 share/vim/${P}/ftplugin/plsql.vim
 share/vim/${P}/ftplugin/pod.vim
@@ -1162,6 +1166,7 @@ share/vim/${P}/ftplugin/toml.vim
 share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim
 share/vim/${P}/ftplugin/tutor.vim
+share/vim/${P}/ftplugin/twig.vim
 share/vim/${P}/ftplugin/typescript.vim
 share/vim/${P}/ftplugin/typescriptreact.vim
 share/vim/${P}/ftplugin/typst.vim
@@ -1866,7 +1871,6 @@ share/vim/${P}/pack/dist/opt/netrw/autoload/netrw.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/fs.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/msg.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/os.vim
-share/vim/${P}/pack/dist/opt/netrw/autoload/netrwSettings.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw_gitignore.vim
 share/vim/${P}/pack/dist/opt/netrw/doc/
 share/vim/${P}/pack/dist/opt/netrw/doc/netrw.txt
@@ -1998,6 +2002,7 @@ share/vim/${P}/syntax/autodoc.vim
 share/vim/${P}/syntax/autohotkey.vim
 share/vim/${P}/syntax/autoit.vim
 share/vim/${P}/syntax/automake.vim
+share/vim/${P}/syntax/autopkgtest.vim
 share/vim/${P}/syntax/ave.vim
 share/vim/${P}/syntax/avra.vim
 share/vim/${P}/syntax/awk.vim
@@ -2534,6 +2539,7 @@ share/vim/${P}/syntax/shared/context-data-context.vim
 share/vim/${P}/syntax/shared/context-data-interfaces.vim
 share/vim/${P}/syntax/shared/context-data-metafun.vim
 share/vim/${P}/syntax/shared/context-data-tex.vim
+share/vim/${P}/syntax/shared/debarchitectures.vim
 share/vim/${P}/syntax/shared/debversions.vim
 share/vim/${P}/syntax/shared/hgcommitDiff.vim
 share/vim/${P}/syntax/shared/typescriptcommon.vim
@@ -2807,6 +2813,7 @@ share/vim/${P}/tutor/tutor1.zh
 share/vim/${P}/tutor/tutor1.zh_cn
 share/vim/${P}/tutor/tutor1.zh_tw
 share/vim/${P}/tutor/tutor2
+share/vim/${P}/tutor/tutor2.fr
 share/vim/${P}/tutor/tutor2.gl
 share/vim/${P}/tutor/tutor2.it
 share/vim/${P}/tutor/tutor2.ru
