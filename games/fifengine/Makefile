@@ -7,8 +7,7 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_COMMIT =	be64c707dea6b3250bd4355bf5c825d25920087d
-DISTNAME =	fifengine-0.4.2
-REVISION =	8
+DISTNAME =	fifengine-0.4.2pl20220725
 
 CATEGORIES =	games
 
@@ -17,13 +16,12 @@ HOMEPAGE =	https://www.fifengine.net/
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLEW SDL2 SDL2_image SDL2_ttf boost_filesystem-mt
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += GL GLEW SDL2 SDL2_image SDL2_ttf boost_atomic-mt boost_filesystem-mt
 WANTLIB += boost_system-mt fifechan fifechan_opengl fifechan_sdl
-WANTLIB += m openal png pthread ${MODPY_WANTLIB} tinyxml vorbis
-WANTLIB += vorbisfile z
+WANTLIB += m openal png tinyxml vorbis vorbisfile z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
@@ -40,12 +38,17 @@ LIB_DEPENDS =		audio/libvorbis \
 RUN_DEPENDS =		devel/py-future \
 			textproc/py-yaml
 
-CONFIGURE_ARGS += 	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
+CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-Wno-dev
-
-NO_TEST =		Yes
 
 post-install:
 	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}
+
+# doesn't run all that much, and some of what's there needs X (so no
+# good with PORTS_PRIVSEP), but what does run anyway seems to fail
+# in the same way that consumers (e.g. unknown-horizons) fails.
+do-test:
+	cd ${WRKSRC}; rm -rf build; ln -s ${WRKBUILD} build
+	cd ${WRKSRC}; ${MODPY_BIN} ./run_tests.py -a
 
 .include <bsd.port.mk>
