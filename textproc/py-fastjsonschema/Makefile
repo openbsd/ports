@@ -1,20 +1,21 @@
-COMMENT =		fast Python implementation of JSON schema
+COMMENT=	fast Python implementation of JSON schema
 
-MODPY_DISTV =	2.19.0
-DISTNAME =		fastjsonschema-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		2
+MODPY_DISTV=	2.21.1
+DISTNAME=	fastjsonschema-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
+
+# https://github.com/horejsek/python-fastjsonschema
+HOMEPAGE=	https://horejsek.github.io/python-fastjsonschema/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-TEST_DEPENDS =		devel/py-test-benchmark
+TEST_DEPENDS=	devel/py-test-benchmark
 
 .include <bsd.port.mk>
