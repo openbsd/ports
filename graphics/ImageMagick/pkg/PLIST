@@ -166,20 +166,6 @@ lib/libMagickCore-6.Q16.la
 @lib lib/libMagickCore-6.Q16.so.${LIBMagickCore-6.Q16_VERSION}
 lib/libMagickWand-6.Q16.la
 @lib lib/libMagickWand-6.Q16.so.${LIBMagickWand-6.Q16_VERSION}
-lib/perl5/
-lib/perl5/${MACHINE_ARCH}-openbsd/
-lib/perl5/${MACHINE_ARCH}-openbsd/Image/
-lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick/
-lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick.pm
-lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick/Q16.pm
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/.packlist
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/
-@so lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/Q16.so
-lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/autosplit.ix
-lib/perl5/${MACHINE_ARCH}-openbsd/perllocal.pod
 lib/pkgconfig/ImageMagick++-6.Q16.pc
 lib/pkgconfig/ImageMagick++.pc
 lib/pkgconfig/ImageMagick-6.Q16.pc
@@ -192,6 +178,17 @@ lib/pkgconfig/MagickWand-6.Q16.pc
 lib/pkgconfig/MagickWand.pc
 lib/pkgconfig/Wand-6.Q16.pc
 lib/pkgconfig/Wand.pc
+${P5ARCH}/
+${P5ARCH}/Image/
+${P5ARCH}/Image/Magick/
+${P5ARCH}/Image/Magick.pm
+${P5ARCH}/Image/Magick/Q16.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Image/
+${P5ARCH}/auto/Image/Magick/
+${P5ARCH}/auto/Image/Magick/Q16/
+@so ${P5ARCH}/auto/Image/Magick/Q16/Q16.so
+${P5ARCH}/auto/Image/Magick/Q16/autosplit.ix
 @man man/man1/ImageMagick.1
 @man man/man1/Magick++-config.1
 @man man/man1/Magick-config.1
@@ -209,8 +206,8 @@ lib/pkgconfig/Wand.pc
 @man man/man1/mogrify.1
 @man man/man1/montage.1
 @man man/man1/stream.1
-@man man/man3/Image::Magick.3p
-@man man/man3/Image::Magick::Q16.3p
+@man man/man3p/Image::Magick.3p
+@man man/man3p/Image::Magick::Q16.3p
 share/ImageMagick/
 share/ImageMagick/english.xml
 share/ImageMagick/francais.xml
@@ -448,8 +445,9 @@ share/doc/ImageMagick/www/api/version.html
 share/doc/ImageMagick/www/api/wand-view.html
 share/doc/ImageMagick/www/architecture.html
 share/doc/ImageMagick/www/assets/
-share/doc/ImageMagick/www/assets/magick.css
-share/doc/ImageMagick/www/assets/magick.js
+share/doc/ImageMagick/www/assets/bootstrap.bundle.min.js
+share/doc/ImageMagick/www/assets/bootstrap.min.css
+share/doc/ImageMagick/www/assets/color-modes.js
 share/doc/ImageMagick/www/changelog.html
 share/doc/ImageMagick/www/cipher.html
 share/doc/ImageMagick/www/cite.html
@@ -571,6 +569,8 @@ share/examples/ImageMagick/type-dejavu.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-dejavu.xml
 share/examples/ImageMagick/type-ghostscript.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-ghostscript.xml
+share/examples/ImageMagick/type-urw-base35-type1.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-urw-base35-type1.xml
 share/examples/ImageMagick/type-urw-base35.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-urw-base35.xml
 share/examples/ImageMagick/type-windows.xml

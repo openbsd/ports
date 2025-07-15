@@ -3,7 +3,7 @@ BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 COMMENT=	image processing tools
 
 VER=		6.9.13
-DASHVER=	16
+DASHVER=	26
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	ImageMagick-${VER}.${DASHVER}
 PORTROACH=	site:https://imagemagick.org/archive/releases/ limit:6.*
@@ -30,7 +30,9 @@ WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
 WANTLIB += perl png raw_r tiff webp webpdemux webpmux x265 xcb
 WANTLIB += xml2 z zstd
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
+MODULES=	perl
+TEST_TARGET=	check
 
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz \
@@ -52,7 +54,7 @@ ALL_TARGET=	all perl-build
 
 CONFIGURE_STYLE= autoconf
 LIBTOOL_FLAGS=	--tag=disable-static
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.72
 USE_GMAKE=	Yes
 CONFIGURE_ARGS=	--without-gcc-arch \
 		--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
