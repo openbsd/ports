@@ -1,6 +1,6 @@
 COMMENT =	themeable window decoration for KWin
 DISTNAME =	aurorae-${VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
@@ -12,7 +12,10 @@ WANTLIB += m
 
 MODKDE_TRANSLATIONS = Yes
 
-RUN_DEPENDS =	devel/kf6/ksvg
+BUILD_DEPENDS =	devel/kf6/knewstuff
+
+RUN_DEPENDS =	devel/kf6/ksvg \
+		devel/kf6/knewstuff
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
