@@ -2,11 +2,9 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 
 COMMENT=	use a JPL ephemeris to predict planet positions
 
-MODPY_DISTV =	2.22
-
+MODPY_DISTV =	2.23
 DISTNAME=	jplephem-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	astro
 
@@ -17,6 +15,7 @@ SITES.jpl=	https://naif.jpl.nasa.gov/pub/naif/generic_kernels/
 .for d f in \
 	spk/planets/a_old_versions de405.bsp \
 	spk/planets/a_old_versions de421.bsp \
+	spk/planets de442s.bsp \
 	pck moon_pa_de421_1900-2050.bpc
 DISTFILES.jpl += {$d/}$f
 TESTFILES += $f
