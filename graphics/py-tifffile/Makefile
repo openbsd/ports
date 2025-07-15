@@ -1,9 +1,8 @@
 COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 
-MODPY_DISTV=	2025.3.30
+MODPY_DISTV=	2025.6.11
 DISTNAME=	tifffile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -13,10 +12,14 @@ HOMEPAGE=	https://github.com/cgohlke/tifffile
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	math/py-numpy
+FIX_CRLF_FILES=	tests/test_tifffile.py
+
+pre-test:
+	# avoids creating large files in /tmp
+	mkdir -p ${WRKSRC}/tests/_tmp
 
 .include <bsd.port.mk>

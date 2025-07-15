@@ -1,0 +1,12 @@
+Index: tests/test_tifffile.py
+--- tests/test_tifffile.py.orig
++++ tests/test_tifffile.py
+@@ -224,7 +224,7 @@ def skip(key: str, default: bool) -> bool:
+ 
+ 
+ # skip tests requiring large memory
+-SKIP_LARGE = skip('SKIP_LARGE', sys.maxsize < 2**32)
++SKIP_LARGE = skip('SKIP_LARGE', True)
+ SKIP_EXTENDED = skip('SKIP_EXTENDED', False)
+ # skip public files
+ SKIP_PUBLIC = skip('SKIP_PUBLIC', not os.path.exists(PUBLIC_DIR))
