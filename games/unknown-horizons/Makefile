@@ -1,17 +1,18 @@
+BROKEN =	fifengine doesn't load correctly (cannot import name 'AudioSpaceCoordinate' from 'fife.fife'), probably a fifengine problem
+
 COMMENT =	economic historical real-time strategy game
 
+# upstream moving to godot (https://github.com/unknown-horizons/godot-port/)
+# but it's not ready yet (they're looking for help, see repo README)
 MODPY_DISTV =	2019.1
-DISTNAME =		${GH_PROJECT}-${MODPY_DISTV}
-PKGNAME =		unknown-horizons-${MODPY_DISTV}
-REVISION =	6
-
 GH_ACCOUNT =	unknown-horizons
 GH_PROJECT =	unknown-horizons
 GH_COMMIT =	e50348da5ed3044957b56525d8e9816b8815d3f1
+DISTNAME =	unknown-horizons-${MODPY_DISTV}pl20231221
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://www.unknown-horizons.org/
+HOMEPAGE =	https://unknown-horizons.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -38,8 +39,9 @@ TEST_DEPENDS =		devel/py-greenlet \
 			textproc/py-polib \
 			textproc/py-yaml
 
-#https://github.com/unknown-horizons/unknown-horizons/issues/2938
-NO_TEST = 		Yes
+# didn't catch up with pytest 4.0 changes
+# https://github.com/unknown-horizons/unknown-horizons/issues/2938
+NO_TEST =		Yes
 
 post-install:
 .for i in actionsets.json atlas.sql tilesets.json
