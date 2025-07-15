@@ -1,0 +1,19 @@
+Can't substitute a FILE object to std{out,err} if FILE is an opaque.
+
+Index: source/build/src/baselayer.cpp
+--- source/build/src/baselayer.cpp.orig
++++ source/build/src/baselayer.cpp
+@@ -589,9 +589,11 @@ void maybe_redirect_outputs(void)
+     if (fp)
+     {
+         setvbuf(fp, 0, _IONBF, 0);
+-        *stdout = *fp;
+-        *stderr = *fp;
+     }
++
++    fp = freopen("stdout.txt", "w", stderr);
++    if (fp)
++        setvbuf(fp, 0, _IONBF, 0);
+ #endif
+ }
+ 
