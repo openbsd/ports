@@ -1,10 +1,8 @@
 COMMENT=	calculation library for CRCs and checksums
 
-MODPY_DISTV=	1.3.0
-
+MODPY_DISTV=	1.3.1
 DISTNAME=	crccheck-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,11 +12,7 @@ HOMEPAGE=	https://sourceforge.net/projects/crccheck/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
-
-# not in pypi sdist
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
