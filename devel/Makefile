@@ -1068,6 +1068,7 @@
      SUBDIR += p5-Return-Value
      SUBDIR += p5-Role-Basic
      SUBDIR += p5-Role-Tiny
+     SUBDIR += p5-Role-Hooks
      SUBDIR += p5-SDL
      SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Notify
