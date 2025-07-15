@@ -1,6 +1,6 @@
 COMMENT=	let your Python tests travel through time
 
-MODPY_DISTV=	1.5.2
+MODPY_DISTV=	1.5.3
 DISTNAME=	freezegun-${MODPY_DISTV}
 PKGNAME=	py-freezegun-${MODPY_DISTV}
 
