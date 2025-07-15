@@ -162,6 +162,15 @@ lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject/alembic.ini
 lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject/env.py
 lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject/pyproject.toml.mako
 lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject/script.py.mako
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/README
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/alembic.ini.mako
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/env.py
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/pyproject.toml.mako
+lib/python${MODPY_VERSION}/site-packages/alembic/templates/pyproject_async/script.py.mako
 lib/python${MODPY_VERSION}/site-packages/alembic/testing/
 lib/python${MODPY_VERSION}/site-packages/alembic/testing/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/alembic/testing/${MODPY_PYCACHE}/

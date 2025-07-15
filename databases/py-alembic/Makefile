@@ -1,6 +1,6 @@
 COMMENT=	database migration tool for sqlalchemy
 
-MODPY_DISTV=	1.16.2
+MODPY_DISTV=	1.16.4
 DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -19,5 +19,6 @@ MODPY_PI=	Yes
 RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/py-typing-extensions \
 		www/py-mako
+TEST_DEPENDS=	textproc/py-black
 
 .include <bsd.port.mk>
