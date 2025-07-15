@@ -1,6 +1,6 @@
 COMMENT=	JSON schema meta-schemas and vocabularies
 
-MODPY_DISTV=	2024.10.1
+MODPY_DISTV=	2025.4.1
 DISTNAME=	jsonschema_specifications-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
