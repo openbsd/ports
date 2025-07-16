@@ -1,6 +1,6 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.10
+VERSION =	5.2.11
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
@@ -54,7 +54,7 @@ WANTLIB += Qt5Network Qt5PrintSupport Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SDL2 SM X11 Xext Xi bz2 c exiv2
 WANTLIB += fftw3 fontconfig freetype fribidi gif glib-2.0 gobject-2.0
 WANTLIB += gsl gslcblas harfbuzz heif intl jpeg json-c jxl jxl_threads
-WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler poppler-qt5
+WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler-qt5
 WANTLIB += quazip1-qt5 tiff turbojpeg unibreak webp webpdemux
 WANTLIB += webpmux z
 
@@ -115,7 +115,6 @@ LIB_DEPENDS =		archivers/bzip2 \
 			math/imath \
 			multimedia/libheif \
 			multimedia/mlt7 \
-			print/poppler \
 			print/poppler,-qt5 \
 			textproc/libunibreak \
 			x11/kde-applications/libkdcraw \
