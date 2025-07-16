@@ -4,7 +4,7 @@ GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
 GH_TAGNAME =	6.3.5
 DISTNAME =	hcxtools-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -14,15 +14,15 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += 	c curl z
-WANTLIB +=	lib/eopenssl33/crypto lib/eopenssl33/ssl
+WANTLIB +=	lib/eopenssl35/crypto lib/eopenssl35/ssl
 LIB_DEPENDS +=	net/curl \
-		security/openssl/3.3
+		security/openssl/3.5
 
 USE_GMAKE =	Yes
 ALL_TARGET =
 
-CFLAGS +=       -I${LOCALBASE}/include/eopenssl33
-LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl33 -L${LOCALBASE}/lib/eopenssl33
+CFLAGS +=       -I${LOCALBASE}/include/eopenssl35
+LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl35 -L${LOCALBASE}/lib/eopenssl35
 
 MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${LIBS}"
