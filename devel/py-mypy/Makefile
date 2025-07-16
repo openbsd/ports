@@ -3,6 +3,7 @@ COMMENT=	optional static type checker for Python
 # check textproc/py-charset-normalizer, it often has excessively tight
 # version checks for mypy
 MODPY_DISTV=	1.17.0
+REVISION=	0
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -29,10 +30,14 @@ BUILD_DEPENDS=	devel/py-types-psutil \
 		devel/py-types-setuptools \
 		devel/py-typing-extensions \
 		devel/py-mypy-extensions
+
 RUN_DEPENDS=	devel/py-typing-extensions \
-		devel/py-mypy-extensions
+		devel/py-mypy-extensions \
+		devel/py-pathspec
+
 # some tests want network access
 PORTHOME=	${WRKDIR}
+
 TEST_DEPENDS=	devel/py-attrs \
 		devel/py-test-cov \
 		devel/py-test-xdist \
