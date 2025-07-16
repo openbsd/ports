@@ -1,8 +1,8 @@
 Index: helix-loader/src/grammar.rs
 --- helix-loader/src/grammar.rs.orig
 +++ helix-loader/src/grammar.rs
-@@ -85,11 +85,24 @@ pub fn get_language(name: &str) -> Result<Language> {
-     Ok(language)
+@@ -78,11 +78,24 @@ pub fn get_language(name: &str) -> Result<Option<Gramm
+     Ok(Some(grammar))
  }
  
 +#[cfg(not(target_os = "openbsd"))]
