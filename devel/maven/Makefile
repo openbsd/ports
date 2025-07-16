@@ -1,6 +1,6 @@
 COMMENT=	software project management and comprehension tool
 
-V=		3.9.10
+V=		3.9.11
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
