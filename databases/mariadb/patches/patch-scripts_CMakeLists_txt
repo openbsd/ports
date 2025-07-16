@@ -1,7 +1,7 @@
 Index: scripts/CMakeLists.txt
 --- scripts/CMakeLists.txt.orig
 +++ scripts/CMakeLists.txt
-@@ -186,25 +186,14 @@ ENDIF(UNIX)
+@@ -185,25 +185,14 @@ ENDIF(UNIX)
  # i.e. makes access relative the current directory. This matches
  # the documentation, so better not change this.
  

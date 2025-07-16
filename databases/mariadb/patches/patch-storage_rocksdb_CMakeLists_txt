@@ -1,3 +1,8 @@
+- MDEV-37001 Enable building RocksDB on non-Linux aarch64 OSes
+  fadfd9ea282078a00bd39dc3b0fa30e6fe72e19e 
+- Rocksdb: Add missing getauxval() test for Linux
+  6d684b64d57c94899126ceb2bedf1725e016dfaa
+
 Index: storage/rocksdb/CMakeLists.txt
 --- storage/rocksdb/CMakeLists.txt.orig
 +++ storage/rocksdb/CMakeLists.txt
@@ -5,14 +10,14 @@ Index: storage/rocksdb/CMakeLists.txt
    ADD_DEFINITIONS(-DHAVE_SCHED_GETCPU=1 -DROCKSDB_SCHED_GETCPU_PRESENT)
  ENDIF()
  
-+CHECK_FUNCTION_EXISTS(getauxval "sys/auvx.h" HAVE_AUXV_GETAUXVAL)
++CHECK_FUNCTION_EXISTS(getauxval  HAVE_AUXV_GETAUXVAL)
 +if(HAVE_AUXV_GETAUXVAL)
-+  add_definitions(-DROCKSDB_AUXV_GETAUXVAL_PRESENT)
++  ADD_DEFINITIONS(-DROCKSDB_AUXV_GETAUXVAL_PRESENT)
 +endif()
 +
-+CHECK_FUNCTION_EXISTS(elf_aux_info "sys/auxv.h" HAVE_AUXV_ELF_AUX_INFO)
++CHECK_FUNCTION_EXISTS(elf_aux_info  HAVE_AUXV_ELF_AUX_INFO)
 +if(HAVE_AUXV_ELF_AUX_INFO)
-+  add_definitions(-DROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
++  ADD_DEFINITIONS(-DROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
 +endif()
 +
  IF(WITH_VALGRIND)

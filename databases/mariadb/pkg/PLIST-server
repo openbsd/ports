@@ -276,6 +276,7 @@ include/mysql/server/private/my_tracker.h
 include/mysql/server/private/my_tree.h
 include/mysql/server/private/my_uctype.h
 include/mysql/server/private/my_user.h
+include/mysql/server/private/my_virtual_mem.h
 include/mysql/server/private/myisam.h
 include/mysql/server/private/myisamchk.h
 include/mysql/server/private/myisammrg.h

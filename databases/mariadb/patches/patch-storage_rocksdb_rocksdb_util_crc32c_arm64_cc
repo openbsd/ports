@@ -1,11 +1,3 @@
-- Check for sys/auxv.h
-  https://github.com/facebook/rocksdb/commit/8bbd76edbfd0c187960aae31d107a9a0fa71472c
-- Fix RocksDB SIGILL error on Raspberry PI 4
-  https://github.com/facebook/rocksdb/commit/29f7bbef995bdf83098963799c66af742e95373f
-- Fix compilation on Apple Silicon
-  https://github.com/facebook/rocksdb/commit/ee4bd4780b321ddb5f92a0f4eb956f2a2ebd60dc
-- Adding ARM AT_HWCAP support for FreeBSD
-  https://github.com/facebook/rocksdb/commit/93c6c18cf9731f47b386dd445dc13363423c507e
 - Add elf_aux_info() support for OpenBSD
   https://github.com/facebook/rocksdb/pull/12967
 
@@ -14,171 +6,53 @@ https://jira.mariadb.org/browse/MDEV-29875
 Index: storage/rocksdb/rocksdb/util/crc32c_arm64.cc
 --- storage/rocksdb/rocksdb/util/crc32c_arm64.cc.orig
 +++ storage/rocksdb/rocksdb/util/crc32c_arm64.cc
-@@ -5,13 +5,21 @@
- 
- #include "util/crc32c_arm64.h"
- 
--#if defined(__linux__) && defined(HAVE_ARM64_CRC)
-+#if defined(HAVE_ARM64_CRC)
- 
-+#if defined(__linux__)
+@@ -10,16 +10,16 @@
+ #if defined(__linux__)
  #include <asm/hwcap.h>
-+#endif
+ #endif
+-#ifdef ROCKSDB_AUXV_GETAUXVAL_PRESENT
 +#if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT) || \
 +    defined(ROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
  #include <sys/auxv.h>
+-#endif
  #ifndef HWCAP_CRC32
  #define HWCAP_CRC32 (1 << 7)
  #endif
-+#ifndef HWCAP_PMULL
-+#define HWCAP_PMULL (1 << 4)
-+#endif
-+#endif
- 
- #ifdef HAVE_ARM64_CRYPTO
- /* unfolding to compute 8 * 3 = 24 bytes parallelly */
-@@ -33,18 +41,52 @@
-   } while (0)
+ #ifndef HWCAP_PMULL
+ #define HWCAP_PMULL (1 << 4)
+ #endif
+-#if defined(__APPLE__)
++#elif defined(__APPLE__)
+ #include <sys/sysctl.h>
  #endif
  
-+extern bool pmull_runtime_flag;
-+
+@@ -46,11 +46,12 @@
+ extern bool pmull_runtime_flag;
+ 
  uint32_t crc32c_runtime_check(void) {
--  uint64_t auxv = getauxval(AT_HWCAP);
+-#if !defined(__APPLE__)
 +#if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT) || \
 +    defined(ROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
-+  uint64_t auxv = 0;
-+#if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT)
-+  auxv = getauxval(AT_HWCAP);
+   uint64_t auxv = 0;
+ #if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT)
+   auxv = getauxval(AT_HWCAP);
+-#elif defined(__FreeBSD__)
 +#elif defined(ROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
-+  elf_aux_info(AT_HWCAP, &auxv, sizeof(auxv));
-+#endif
+   elf_aux_info(AT_HWCAP, &auxv, sizeof(auxv));
+ #endif
    return (auxv & HWCAP_CRC32) != 0;
-+#else
-+  return 0;
-+#endif
+@@ -63,11 +64,12 @@ uint32_t crc32c_runtime_check(void) {
  }
  
--uint32_t crc32c_arm64(uint32_t crc, unsigned char const *data,
--                             unsigned len) {
-+bool crc32c_pmull_runtime_check(void) {
+ bool crc32c_pmull_runtime_check(void) {
+-#if !defined(__APPLE__)
 +#if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT) || \
 +    defined(ROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
-+  uint64_t auxv = 0;
-+#if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT)
-+  auxv = getauxval(AT_HWCAP);
+   uint64_t auxv = 0;
+ #if defined(ROCKSDB_AUXV_GETAUXVAL_PRESENT)
+   auxv = getauxval(AT_HWCAP);
+-#elif defined(__FreeBSD__)
 +#elif defined(ROCKSDB_AUXV_ELF_AUX_INFO_PRESENT)
-+  elf_aux_info(AT_HWCAP, &auxv, sizeof(auxv));
-+#endif
-+  return (auxv & HWCAP_PMULL) != 0;
-+#else
-+  return false;
-+#endif
-+}
-+
-+uint32_t
-+crc32c_arm64(uint32_t crc, unsigned char const *data, size_t len) {
-   const uint8_t *buf8;
-   const uint64_t *buf64 = (uint64_t *)data;
-   int length = (int)len;
-   crc ^= 0xffffffff;
- 
-+  /*
-+   * Pmull runtime check here.
-+   * Raspberry Pi supports crc32 but doesn't support pmull.
-+   * Skip Crc32c Parallel computation if no crypto extension available.
-+   */
-+  if (pmull_runtime_flag) {
-+/* Macro (HAVE_ARM64_CRYPTO) is used for compiling check  */
- #ifdef HAVE_ARM64_CRYPTO
- /* Crc32c Parallel computation
-  *   Algorithm comes from Intel whitepaper:
-@@ -55,51 +97,53 @@ uint32_t crc32c_arm64(uint32_t crc, unsigned char cons
-  *   One Block: 42(BLK_LENGTH) * 8(step length: crc32c_u64) bytes
-  */
- #define BLK_LENGTH 42
--  while (length >= 1024) {
--    uint64_t t0, t1;
--    uint32_t crc0 = 0, crc1 = 0, crc2 = 0;
-+    while (length >= 1024) {
-+      uint64_t t0, t1;
-+      uint32_t crc0 = 0, crc1 = 0, crc2 = 0;
- 
--    /* Parallel Param:
--     *   k0 = CRC32(x ^ (42 * 8 * 8 * 2 - 1));
--     *   k1 = CRC32(x ^ (42 * 8 * 8 - 1));
--     */
--    uint32_t k0 = 0xe417f38a, k1 = 0x8f158014;
-+      /* Parallel Param:
-+       *   k0 = CRC32(x ^ (42 * 8 * 8 * 2 - 1));
-+       *   k1 = CRC32(x ^ (42 * 8 * 8 - 1));
-+       */
-+      uint32_t k0 = 0xe417f38a, k1 = 0x8f158014;
- 
--    /* Prefetch data for following block to avoid cache miss */
--    PREF1KL1((uint8_t *)buf64, 1024);
-+      /* Prefetch data for following block to avoid cache miss */
-+      PREF1KL1((uint8_t *)buf64, 1024);
- 
--    /* First 8 byte for better pipelining */
--    crc0 = crc32c_u64(crc, *buf64++);
-+      /* First 8 byte for better pipelining */
-+      crc0 = crc32c_u64(crc, *buf64++);
- 
--    /* 3 blocks crc32c parallel computation
--     * Macro unfolding to compute parallelly
--     * 168 * 6 = 1008 (bytes)
--     */
--    CRC32C7X24BYTES(0);
--    CRC32C7X24BYTES(1);
--    CRC32C7X24BYTES(2);
--    CRC32C7X24BYTES(3);
--    CRC32C7X24BYTES(4);
--    CRC32C7X24BYTES(5);
--    buf64 += (BLK_LENGTH * 3);
-+      /* 3 blocks crc32c parallel computation
-+       * Macro unfolding to compute parallelly
-+       * 168 * 6 = 1008 (bytes)
-+       */
-+      CRC32C7X24BYTES(0);
-+      CRC32C7X24BYTES(1);
-+      CRC32C7X24BYTES(2);
-+      CRC32C7X24BYTES(3);
-+      CRC32C7X24BYTES(4);
-+      CRC32C7X24BYTES(5);
-+      buf64 += (BLK_LENGTH * 3);
- 
--    /* Last 8 bytes */
--    crc = crc32c_u64(crc2, *buf64++);
-+      /* Last 8 bytes */
-+      crc = crc32c_u64(crc2, *buf64++);
- 
--    t0 = (uint64_t)vmull_p64(crc0, k0);
--    t1 = (uint64_t)vmull_p64(crc1, k1);
-+      t0 = (uint64_t)vmull_p64(crc0, k0);
-+      t1 = (uint64_t)vmull_p64(crc1, k1);
- 
--    /* Merge (crc0, crc1, crc2) -> crc */
--    crc1 = crc32c_u64(0, t1);
--    crc ^= crc1;
--    crc0 = crc32c_u64(0, t0);
--    crc ^= crc0;
-+      /* Merge (crc0, crc1, crc2) -> crc */
-+      crc1 = crc32c_u64(0, t1);
-+      crc ^= crc1;
-+      crc0 = crc32c_u64(0, t0);
-+      crc ^= crc0;
- 
--    length -= 1024;
--  }
-+      length -= 1024;
-+    }
- 
--  if (length == 0) return crc ^ (0xffffffffU);
-+    if (length == 0) return crc ^ (0xffffffffU);
+   elf_aux_info(AT_HWCAP, &auxv, sizeof(auxv));
  #endif
-+  }  // if Pmull runtime check here
-+
-   buf8 = (const uint8_t *)buf64;
-   while (length >= 8) {
-     crc = crc32c_u64(crc, *(const uint64_t *)buf8);
+   return (auxv & HWCAP_PMULL) != 0;
