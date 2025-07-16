@@ -1,0 +1,33 @@
+Hard code the W^X code path on OpenBSD since actually
+selecting this at run-time isn't so straightforward.
+
+Index: libpolyml/osmemunix.cpp
+--- libpolyml/osmemunix.cpp.orig
++++ libpolyml/osmemunix.cpp
+@@ -159,6 +159,9 @@ bool OSMem::Initialise(enum _MemUsage usage)
+ {
+     memUsage = usage;
+     pageSize = getpagesize();
++#ifdef __OpenBSD__
++	wxFix = WXFixDualArea;
++#else
+     if (usage != UsageExecutableCode)
+         wxFix = WXFixNone;
+     else
+@@ -177,7 +180,7 @@ bool OSMem::Initialise(enum _MemUsage usage)
+ #endif
+         if (test == MAP_FAILED)
+         {
+-            if (errno != ENOTSUP && errno != EACCES) // Fails with ENOTSUPP on OpenBSD and EACCES in SELinux.
++            if (errno != ENOTSUP && errno != EACCES) // Fails with ENOTSUP on OpenBSD and EACCES in SELinux.
+                 return false;
+             // Check that read-write works.
+             test = mmap(0, pageSize, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
+@@ -188,6 +191,7 @@ bool OSMem::Initialise(enum _MemUsage usage)
+         if (test != MAP_FAILED)
+             munmap(FIXTYPE test, pageSize);
+     }
++#endif
+ 
+     if (wxFix == WXFixDualArea)
+     {
