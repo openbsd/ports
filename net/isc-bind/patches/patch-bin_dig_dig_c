@@ -13,7 +13,7 @@ Index: bin/dig/dig.c
  
  #include <isc/attributes.h>
  #include <isc/dir.h>
-@@ -3385,6 +3386,15 @@ dig_setup(int argc, char **argv) {
+@@ -3408,6 +3409,15 @@ dig_setup(int argc, char **argv) {
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -29,7 +29,7 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -3413,6 +3423,25 @@ dig_query_setup(bool is_batchfile, bool config_only, i
+@@ -3436,6 +3446,25 @@ dig_query_setup(bool is_batchfile, bool config_only, i
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
