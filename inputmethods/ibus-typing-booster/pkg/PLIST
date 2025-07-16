@@ -363,6 +363,9 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}emoji_picker.${MODPY_PYC_MAGIC_
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}get_clipboard_gtk4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}get_clipboard_gtk4.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}get_clipboard_gtk4.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}hunspell_suggest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}hunspell_suggest.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}hunspell_suggest.${MODPY_PYC_MAGIC_TAG}pyc
@@ -404,6 +407,7 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabstatistics.${MODPY_PYC_MAGIC
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabstatistics.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/emoji_picker.py
 share/ibus-typing-booster/engine/factory.py
+share/ibus-typing-booster/engine/get_clipboard_gtk4.py
 share/ibus-typing-booster/engine/hunspell_suggest.py
 share/ibus-typing-booster/engine/hunspell_table.py
 share/ibus-typing-booster/engine/itb_active_window.py
