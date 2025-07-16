@@ -3,7 +3,7 @@ cwebp.c:186:47: error: no member named 'cross_color_transform_bits' in 'struct W
 Index: examples/cwebp.c
 --- examples/cwebp.c.orig
 +++ examples/cwebp.c
-@@ -182,9 +182,9 @@ static void PrintFullLosslessInfo(const WebPAuxStats* 
+@@ -184,9 +184,9 @@ static void PrintFullLosslessInfo(const WebPAuxStats* 
    if (stats->lossless_features & 1) {
      fprintf(stderr, " prediction=%d", stats->transform_bits);
    }
