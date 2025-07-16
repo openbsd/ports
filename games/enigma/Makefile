@@ -3,7 +3,7 @@ COMMENT=	Oxyd/Rock'n'Roll clone
 V=		1.30
 PKGNAME=	enigma-${V}
 DISTNAME=	Enigma-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games x11
 

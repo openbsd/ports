@@ -1,0 +1,29 @@
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -313,21 +313,25 @@ void Application::init(int argc, char **argv)
+     if (ap.redirect) {
+         FILE *newfp;
+         newfp = std::freopen((userStdPath + "/Output.log").c_str(), "w", stdout);
++#if 0	/* can't substitute a FILE object for stdout if FILE is an opaque. */
+         if ( newfp == NULL ) {  // This happens on NT
+             newfp = fopen((userStdPath + "/Output.log").c_str(), "w");
+             if (newfp) {  // in case stdout is a macro
+                 *stdout = *newfp;
+             }
+         }
++#endif
+         setvbuf(stdout, NULL, _IOLBF, BUFSIZ);   // Line buffered
+ 
+         newfp = std::freopen((userStdPath + "/Error.log").c_str(), "w", stderr);
++#if 0	/* can't substitute a FILE object for stdout if FILE is an opaque. */
+         if ( newfp == NULL ) {  // This happens on NT
+             newfp = fopen((userStdPath + "/Error.log").c_str(), "w");
+             if (newfp) {  // in case stderr is a macro
+                 *stderr = *newfp;
+             }
+         }
++#endif
+         setbuf(stderr, NULL);   // No buffering
+     }
+ 
