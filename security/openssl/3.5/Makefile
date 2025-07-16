@@ -1,3 +1,9 @@
+# XXX Don't use security/openssl/X in other ports unless there's a big problem
+# or a specific reason why not to use LibreSSL with that port - it is easy to
+# create runtime library conflicts. In those special cases, please add comments
+# to the port explaining why OpenSSL is needed instead of LibreSSL and discuss
+# such a change on ports/ICB.
+
 # static link, need bump on update:
 # mail/postfix/stable security/sslscan sysutils/borgbackup/2.0
 
@@ -12,7 +18,7 @@ PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.5v0,<3.6v0
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
 SHLIBVER=	37.0
 SHARED_LIBS=	crypto ${SHLIBVER} \

@@ -1,6 +1,12 @@
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=3.5v0,<3.6v0
+@pkgpath security/openssl/1.0.2
+@pkgpath security/openssl/1.1
+@pkgpath security/openssl/3.0
+@pkgpath security/openssl/3.1
+@pkgpath security/openssl/3.2
+@pkgpath security/openssl/3.3
 @pkgpath security/openssl/3.4
 bin/c_rehash35
 @bin bin/${EOPENSSL_V}
