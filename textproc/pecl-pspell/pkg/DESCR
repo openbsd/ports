@@ -1,0 +1,2 @@
+pecl-pspell provides a PHP extension allowing access to the pspell spelling
+checker, which was removed from PHP core in 8.4.

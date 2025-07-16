@@ -1,0 +1,4 @@
+@so lib/php-${MODPHP_VERSION}/modules/pspell.so
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
