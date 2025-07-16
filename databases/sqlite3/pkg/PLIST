@@ -37,6 +37,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/SQLITE_SERIALIZE_NOCOPY.3
 @man man/man3/SQLITE_SESSION_CONFIG_STRMSIZE.3
 @man man/man3/SQLITE_SESSION_OBJCONFIG_SIZE.3
+@man man/man3/SQLITE_SETLK_BLOCK_ON_CONNECT.3
 @man man/man3/SQLITE_SHM_NLOCK.3
 @man man/man3/SQLITE_SHM_UNLOCK.3
 @man man/man3/SQLITE_STATUS_MEMORY_USED.3
@@ -160,6 +161,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_session.3
 @man man/man3/sqlite3_set_authorizer.3
 @man man/man3/sqlite3_set_last_insert_rowid.3
+@man man/man3/sqlite3_setlk_timeout.3
 @man man/man3/sqlite3_sleep.3
 @man man/man3/sqlite3_snapshot.3
 @man man/man3/sqlite3_snapshot_cmp.3
@@ -243,7 +245,6 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3changeset_op.3
 @man man/man3/sqlite3changeset_pk.3
 @man man/man3/sqlite3changeset_start.3
-@man man/man3/sqlite3changeset_upgrade.3
 @man man/man3/sqlite3rebaser_configure.3
 @man man/man3/sqlite3rebaser_create.3
 @man man/man3/sqlite3rebaser_delete.3
