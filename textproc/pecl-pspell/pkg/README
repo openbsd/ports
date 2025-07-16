@@ -1,0 +1,13 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+If running PHP inside a chroot jail (as is usual on OpenBSD), you will need
+to copy dictionaries and other support files into the chroot.
+
+# mkdir -p /var/www/usr/local/lib/aspell /var/www/usr/local/share/aspell
+# cp /usr/local/lib/aspell/* /var/www/usr/local/lib/aspell/
+# cp /usr/local/share/aspell/* /var/www/usr/local/share/aspell/
+
+These files are rarely updated frequently so a one-off copy is likely to
+be good enough.
