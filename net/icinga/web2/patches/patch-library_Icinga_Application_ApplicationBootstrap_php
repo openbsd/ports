@@ -1,4 +1,12 @@
-Use /var/www/etc/icingaweb2.
+hunks 1,2: Use /var/www/etc/icingaweb2.
+hunks 3,4:
+
+From 67ff0546c0dfb9f620f3f685cf2248017e501e76 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Alexander=20Aleksandrovi=C4=8D=20Klimov?=
+ <alexander.klimov@icinga.com>
+Date: Mon, 5 May 2025 17:58:28 +0200
+Subject: [PATCH] Disable deprecation warnings unless ICINGAWEB_ENVIRONMENT is
+ set to "dev" (#5359)
 
 Index: library/Icinga/Application/ApplicationBootstrap.php
 --- library/Icinga/Application/ApplicationBootstrap.php.orig
@@ -25,3 +33,20 @@ Index: library/Icinga/Application/ApplicationBootstrap.php
              }
          }
  
+@@ -568,7 +568,7 @@ abstract class ApplicationBootstrap
+      */
+     protected function setupErrorHandling()
+     {
+-        error_reporting(E_ALL | E_STRICT);
++        error_reporting(getenv('ICINGAWEB_ENVIRONMENT') === 'dev' ? E_ALL : E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+         ini_set('display_startup_errors', 1);
+         ini_set('display_errors', 1);
+         set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+@@ -579,7 +579,6 @@ abstract class ApplicationBootstrap
+             switch ($errno) {
+                 case E_NOTICE:
+                 case E_WARNING:
+-                case E_STRICT:
+                 case E_RECOVERABLE_ERROR:
+                     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+             }
