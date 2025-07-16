@@ -1,0 +1,26 @@
+Use __fpending() instead of accessing FILE object internal.
+
+Index: Snow/io.c
+--- Snow/io.c.orig
++++ Snow/io.c
+@@ -60,6 +60,11 @@
+ #endif
+ #define max(a,b) ((a)>(b)? (a) : (b))
+ 
++#ifdef __OpenBSD__
++#include <stdio_ext.h>
++#  define READ_DATA_PENDING(fp) __fpending(fp)
++#else
++
+ #ifdef _STDIO_USES_IOSTREAM  /* GNU libc */
+ #  if defined(_IO_STDIO_H) || defined (linux)
+ #    define READ_DATA_PENDING(fp) (max(0,(fp)->_IO_read_end - (fp)->_IO_read_ptr))
+@@ -76,6 +81,8 @@
+ #  else 
+ #    define READ_DATA_PENDING(fp) (fp->_cnt)
+ #  endif
++#endif
++
+ #endif
+ 
+ 

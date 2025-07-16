@@ -1,7 +1,20 @@
+Use functions from stdio_ext.h instead of using inside FILE object
+
 Index: src/formats.c
 --- src/formats.c.orig
 +++ src/formats.c
-@@ -392,7 +392,7 @@ static FILE * xfopen(char const * identifier, char con
+@@ -33,6 +33,10 @@
+   #include <io.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++  #include <stdio_ext.h>
++#endif
++
+ #if HAVE_MAGIC
+   #include <magic.h>
+ #endif
+@@ -392,7 +396,7 @@ static FILE * xfopen(char const * identifier, char con
    else if (is_url(identifier)) {
      FILE * f = NULL;
  #ifdef HAVE_POPEN
@@ -10,3 +23,23 @@ Index: src/formats.c
      char * command = lsx_malloc(strlen(command_format) + strlen(identifier));
      sprintf(command, command_format, identifier);
      f = popen(command, POPEN_MODE);
+@@ -410,6 +414,11 @@ static FILE * xfopen(char const * identifier, char con
+  * Works by resetting the FILE buffer pointer */
+ static void UNUSED rewind_pipe(FILE * fp)
+ {
++#ifdef __OpenBSD__
++  size_t sz;
++  if (__freadptr(fp, &sz) != NULL && sz >= PIPE_AUTO_DETECT_SIZE)
++    __freadptrinc(fp, -PIPE_AUTO_DETECT_SIZE);
++#else
+ /* _FSTDIO is for Torek stdio (i.e. most BSD-derived libc's)
+  * In theory, we no longer need to check _NEWLIB_VERSION or __APPLE__ */
+ #if defined _FSTDIO || defined _NEWLIB_VERSION || defined __APPLE__
+@@ -427,6 +436,7 @@ static void UNUSED rewind_pipe(FILE * fp)
+    * or add support for your compiler in the lines above.
+    * Test with cat monkey.wav | ./sox --info - */
+ # define NO_REWIND_PIPE
++#endif
+ #endif
+   (void)fp;
+ }

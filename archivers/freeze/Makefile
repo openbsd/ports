@@ -9,7 +9,7 @@ SITES=		http://www.arcane-labs.net/download/OpenBSD/
 PERMIT_PACKAGE=		No
 PERMIT_DISTFILES=	No
 
-REVISION =	2
+REVISION =	3
 WANTLIB=	c
 
 CONFIGURE_STYLE= gnu dest

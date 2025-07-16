@@ -1,0 +1,45 @@
+Use __freadahead instead of accessing internal FILE
+
+Index: ckucmd.c
+--- ckucmd.c.orig
++++ ckucmd.c
+@@ -212,6 +212,10 @@ modules would have to be changed...
+ #include <io.h>
+ #endif /* OS2 */
+ 
++#ifdef __OpenBSD__
++#include <stdio_ext.h>
++#endif
++
+ #ifdef OSK
+ #define cc ccount			/* OS-9/68K compiler bug */
+ #endif /* OSK */
+@@ -7328,7 +7332,9 @@ cmdgetc(timelimit) int timelimit; {	/* Get a character
+ #ifndef USE_FILE_CNT
+ #ifndef USE_FILE__CNT
+ #ifdef BSD44				/* {Free,Open,Net}BSD, BSDI */
++#ifndef __OpenBSD__			/* recent OpenBSD hides __sFILE */
+ #define USE_FILE_R
++#endif
+ #endif /* BSD44 */
+ #endif /* USE_FILE__CNT */
+ #endif /* USE_FILE_CNT */
+@@ -7362,6 +7368,9 @@ cmdconchk() {
+ #ifdef OS2
+     x = conchk();			/* Check device-driver buffer */
+     if (x < 0) x = 0;
++#elif defined(__OpenBSD__)
++    x = __freadahead(stdin);
++    if (x < 0) x = 0;
+ #else /* OS2 */
+ #ifdef CMD_CONINC			/* See cmdgetc() */
+     x = conchk();			/* Check device-driver buffer */
+@@ -7395,7 +7404,7 @@ cmdconchk() {
+     if (x == 0) x = conchk();
+     if (x < 0) x = 0;
+ #else  /* USE_FILE_CNT */
+-#ifdef USE_FILE_R			/* FreeBSD, OpenBSD, etc */
++#ifdef USE_FILE_R			/* FreeBSD, etc */
+     debug(F101,"cmdconchk stdin->_r","",stdin->_r);
+     x = stdin->_r;
+     if (x == 0) x = conchk();

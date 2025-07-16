@@ -4,7 +4,7 @@ PKGNAME =		kermit-9.0.302
 DISTNAME =		cku302
 CATEGORIES =		comms
 HOMEPAGE =		https://www.kermitproject.org/
-REVISION =		0
+REVISION =		1
 
 # THE C-KERMIT 9.0 LICENSE (Revised 3-Clause BSD License)
 PERMIT_PACKAGE =	Yes

@@ -1,5 +1,8 @@
---- sys/sys.h.orig	Fri Jun 30 06:56:38 1995
-+++ sys/sys.h	Sun Dec  8 15:57:59 2013
+Use __freadahead() instead of accessing inside FILE object.
+
+Index: sys/sys.h
+--- sys/sys.h.orig
++++ sys/sys.h
 @@ -23,6 +23,11 @@
   *   terminal control: {USE_SGTTY,  USE_TERMIO, USE_TERMIOS}
   */
@@ -12,12 +15,15 @@
  #if defined(sunos) \
   || defined(pureBSD43) \
   || defined(ultrix) \
-@@ -69,7 +74,7 @@
+@@ -69,7 +74,10 @@
  #define READYCC(fp)	(fp->_egptr - fp->_gptr)
  #endif
  #else
 -#if defined(bsdi) || defined(__FreeBSD__)
-+#if defined(bsdi) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#ifdef __OpenBSD__
++#include <stdio_ext.h>
++#define READYCC(fp)	__freadahead(fp)
++#elif defined(bsdi) || defined(__FreeBSD__)
  #define READYCC(fp)	(fp->_r)
  #else
  #define READYCC(fp)	(fp->_cnt)

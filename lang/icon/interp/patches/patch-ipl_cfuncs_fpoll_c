@@ -1,0 +1,27 @@
+Use __freadahead() instead of accessing inside FILE object.
+
+Index: ipl/cfuncs/fpoll.c
+--- ipl/cfuncs/fpoll.c.orig
++++ ipl/cfuncs/fpoll.c
+@@ -32,6 +32,9 @@
+ #include <string.h>	/* for memset call from FD_ZERO (solaris gcc) */
+ #include <sys/types.h>
+ #include <sys/time.h>
++#if defined(__OpenBSD__)
++#include <stdio_ext.h>
++#endif
+ 
+ #include "icall.h"
+ 
+@@ -60,7 +63,10 @@ int fpoll(int argc, descriptor *argv)	/*: await data f
+ 
+    /* check for data already in buffer */
+    /* there's no legal way to do this in C; we cheat */
+-#if defined(__GLIBC__) && defined(_STDIO_USES_IOSTREAM)	/* new GCC library */
++#if defined(__OpenBSD__)
++   if (__freadahead(f) > 0)
++      RetArg(1);
++#elif defined(__GLIBC__) && defined(_STDIO_USES_IOSTREAM)	/* new GCC library */
+    if (f->_IO_read_ptr < f->_IO_read_end)
+       RetArg(1);
+ #elif defined(__GLIBC__)				/* old GCC library */

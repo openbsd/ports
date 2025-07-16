@@ -6,11 +6,12 @@ DISTNAME =	icon-v951src
 CATEGORIES =	lang
 SITES = 	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTFILES =	icon-v951src.tgz
+REVISION=	0
 
 MULTI_PACKAGES =	-main #-compiler
 
 PKGNAME-main =		icon-interp-${VERSION}
-REVISION-main =		0
+REVISION-main =		1
 
 # Public domain
 PERMIT_PACKAGE =	Yes

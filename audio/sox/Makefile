@@ -5,7 +5,7 @@ DISTNAME=	sox_ng-${V}
 PKGNAME=	sox-${V}
 SHARED_LIBS +=  sox_ng                    0.0 # 3.0
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio
 HOMEPAGE=	https://sox.sourceforge.net/

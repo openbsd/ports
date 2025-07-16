@@ -5,7 +5,7 @@ COMMENT=	Scheme interpreter with Tk interface
 
 STK_VERSION=	4.0.1
 DISTNAME=	STk-${STK_VERSION}
-REVISION=	19
+REVISION=	20
 CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
