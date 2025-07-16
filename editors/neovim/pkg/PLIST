@@ -252,7 +252,6 @@ share/nvim/runtime/doc/
 share/nvim/runtime/doc/api.txt
 share/nvim/runtime/doc/arabic.txt
 share/nvim/runtime/doc/autocmd.txt
-share/nvim/runtime/doc/builtin.txt
 share/nvim/runtime/doc/change.txt
 share/nvim/runtime/doc/channel.txt
 share/nvim/runtime/doc/cmdline.txt
@@ -270,7 +269,6 @@ share/nvim/runtime/doc/diff.txt
 share/nvim/runtime/doc/digraph.txt
 share/nvim/runtime/doc/editing.txt
 share/nvim/runtime/doc/editorconfig.txt
-share/nvim/runtime/doc/eval.txt
 share/nvim/runtime/doc/faq.txt
 share/nvim/runtime/doc/filetype.txt
 share/nvim/runtime/doc/fold.txt
@@ -380,6 +378,8 @@ share/nvim/runtime/doc/various.txt
 share/nvim/runtime/doc/vi_diff.txt
 share/nvim/runtime/doc/vietnamese.txt
 share/nvim/runtime/doc/vim_diff.txt
+share/nvim/runtime/doc/vimeval.txt
+share/nvim/runtime/doc/vimfn.txt
 share/nvim/runtime/doc/visual.txt
 share/nvim/runtime/doc/vvars.txt
 share/nvim/runtime/doc/windows.txt
@@ -2103,6 +2103,8 @@ share/nvim/runtime/tutor/
 share/nvim/runtime/tutor/en/
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
+share/nvim/runtime/tutor/en/vim-02-beginner.tutor
+share/nvim/runtime/tutor/en/vim-02-beginner.tutor.json
 share/nvim/runtime/tutor/ja/
 share/nvim/runtime/tutor/ja/vim-01-beginner.tutor
 share/nvim/runtime/tutor/ja/vim-01-beginner.tutor.json

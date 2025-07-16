@@ -11,8 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.11.2 .
-REVISION =	0
+DIST_TUPLE =	github neovim neovim v0.11.3 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -28,17 +27,17 @@ DIST_TUPLE +=	github LuaJIT LuaJIT 538a82133ad6fddfd0ca64de167c4aca3bc1a2da \
 		${STATIC_DEPS_WRKSRC}/luajit
 DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.13 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
-DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.23.4 \
+DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.24.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_c
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.3.0 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.4.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_lua
-DIST_TUPLE +=	github neovim tree-sitter-vim v0.5.0 \
+DIST_TUPLE +=	github neovim tree-sitter-vim v0.7.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vim
-DIST_TUPLE +=	github neovim tree-sitter-vimdoc v3.0.1 \
+DIST_TUPLE +=	github neovim tree-sitter-vimdoc v4.0.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vimdoc
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.5.1 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.6.2 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_query
-DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.4.1 \
+DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.5.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_markdown
 
 # Neovim: Apache 2.0 + Vim License
