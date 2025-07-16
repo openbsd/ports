@@ -1,6 +1,6 @@
 COMMENT=		graphical front-end to GDB
 
-V=			1.11
+V=			2.5
 PKGNAME=		seergdb-$V
 
 GH_ACCOUNT=		epasveer
@@ -12,15 +12,17 @@ CATEGORIES=		devel
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB+=		${COMPILER_LIBCXX} c m
-WANTLIB+=		Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Charts
-
-LIB_DEPENDS=		x11/qt5/qtcharts
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6PrintSupport Qt6Svg Qt6Widgets
+WANTLIB += c m
 
 RUN_DEPENDS=		devel/gdb
 
 MODULES=		devel/cmake \
-			x11/qt5
+			x11/qt6
+
+LIB_DEPENDS = 		x11/qt6/qtcharts \
+			x11/qt6/qtsvg
 
 WRKSRC=			${WRKDIST}/src
 
