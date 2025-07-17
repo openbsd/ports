@@ -2,7 +2,7 @@ COMMENT=		RTSP server library based on GStreamer
 
 DISTNAME=		gst-rtsp-server-${V}
 
-SHARED_LIBS += gstrtspserver-1.0         0.1 # 0.2603.0
+SHARED_LIBS += gstrtspserver-1.0         0.1 # 0.2604.0
 
 SITES=			${SITE_GST:=gst-rtsp-server/}
 
