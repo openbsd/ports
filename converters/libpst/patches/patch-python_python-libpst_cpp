@@ -1,0 +1,16 @@
+__sFILE is not exposed on OpenBSD
+
+Index: python/python-libpst.cpp
+--- python/python-libpst.cpp.orig
++++ python/python-libpst.cpp
+@@ -7,6 +7,10 @@
+ // #include <boost/python/docstring_options.hpp>
+ // #include <iostream>
+ 
++#ifdef __OpenBSD__
++struct __sFILE { long dummy; };
++#endif
++
+ extern "C" {
+     #include "libpst.h"
+     #include "timeconv.h"

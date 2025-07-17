@@ -4,8 +4,7 @@ COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
 DISTNAME=		libpst-0.6.76
-REVISION-main=		1
-REVISION-python=	4
+REVISION=		5
 
 SHARED_LIBS +=  pst                  3.0      # 5.17
 
