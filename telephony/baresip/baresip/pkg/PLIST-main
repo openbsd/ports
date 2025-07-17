@@ -69,6 +69,7 @@ lib/baresip/modules/
 @so lib/baresip/modules/x11.so
 @lib lib/libbaresip.so.${LIBbaresip_VERSION}
 lib/pkgconfig/libbaresip.pc
+share/applications/
 share/baresip/
 share/baresip/autoanswer.wav
 share/baresip/busy.wav
