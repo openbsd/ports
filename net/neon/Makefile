@@ -1,9 +1,8 @@
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.32.5
-REVISION=		2
+DISTNAME=		neon-0.34.2
 
-SHARED_LIBS +=  neon                 31.3     # 32.1
+SHARED_LIBS +=  neon                 31.4     # 34.2
 
 CATEGORIES=		net www devel
 
@@ -16,7 +15,7 @@ WANTLIB += crypto expat iconv intl m proxy pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SITES=			${HOMEPAGE}
+SITES=			https://notroj.github.io/neon/
 
 BUILD_DEPENDS=		textproc/xmlto
 

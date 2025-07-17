@@ -1,0 +1,11 @@
+Index: test/utils.c
+--- test/utils.c.orig
++++ test/utils.c
+@@ -29,6 +29,7 @@
+ #include <fcntl.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#include <sys/socket.h>
+ 
+ #include "ne_session.h"
+ 

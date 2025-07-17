@@ -52,7 +52,9 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_forget_auth.3
 @man man/man3/ne_get_error.3
 @man man/man3/ne_get_request_flag.3
+@man man/man3/ne_get_request_target.3
 @man man/man3/ne_get_response_header.3
+@man man/man3/ne_get_response_location.3
 @man man/man3/ne_get_scheme.3
 @man man/man3/ne_get_server_hostport.3
 @man man/man3/ne_get_session_flag.3
@@ -72,6 +74,8 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_print_request_header.3
 @man man/man3/ne_qtoken.3
 @man man/man3/ne_realloc.3
+@man man/man3/ne_redirect_location.3
+@man man/man3/ne_redirect_register.3
 @man man/man3/ne_request_create.3
 @man man/man3/ne_request_destroy.3
 @man man/man3/ne_request_dispatch.3
@@ -88,6 +92,7 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_set_read_timeout.3
 @man man/man3/ne_set_request_body_buffer.3
 @man man/man3/ne_set_request_body_fd.3
+@man man/man3/ne_set_request_body_provider.3
 @man man/man3/ne_set_request_flag.3
 @man man/man3/ne_set_server_auth.3
 @man man/man3/ne_set_session_flag.3
@@ -112,7 +117,9 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_ssl_clicert_owner.3
 @man man/man3/ne_ssl_clicert_read.3
 @man man/man3/ne_ssl_dname_cmp.3
+@man man/man3/ne_ssl_proto_name.3
 @man man/man3/ne_ssl_readable_dname.3
+@man man/man3/ne_ssl_set_protovers.3
 @man man/man3/ne_ssl_set_verify.3
 @man man/man3/ne_ssl_trust_cert.3
 @man man/man3/ne_ssl_trust_default_ca.3
@@ -133,6 +140,7 @@ share/doc/neon/html/
 share/doc/neon/html/api.html
 share/doc/neon/html/biblio.html
 share/doc/neon/html/compliance.html
+share/doc/neon/html/example.html
 share/doc/neon/html/features.html
 share/doc/neon/html/index.html
 share/doc/neon/html/intro.html
@@ -157,10 +165,12 @@ share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
 share/doc/neon/html/refparam.html
 share/doc/neon/html/refproxy.html
+share/doc/neon/html/refred.html
 share/doc/neon/html/refreq.html
 share/doc/neon/html/refreqbody.html
 share/doc/neon/html/refreqflags.html
 share/doc/neon/html/refreqhdr.html
+share/doc/neon/html/refreqtarget.html
 share/doc/neon/html/refresolve.html
 share/doc/neon/html/refresphdr.html
 share/doc/neon/html/refsess.html
@@ -171,6 +181,8 @@ share/doc/neon/html/refsslca.html
 share/doc/neon/html/refsslcert2.html
 share/doc/neon/html/refsslcertio.html
 share/doc/neon/html/refssldname.html
+share/doc/neon/html/refsslproto.html
+share/doc/neon/html/refsslvers.html
 share/doc/neon/html/refsslvfy.html
 share/doc/neon/html/refstatus.html
 share/doc/neon/html/reftok.html
@@ -194,6 +206,11 @@ share/neon/macros/
 share/neon/macros/.gitignore
 share/neon/macros/ChangeLog
 share/neon/macros/ld-version-script.m4
+share/neon/macros/libtool.m4
+share/neon/macros/ltoptions.m4
+share/neon/macros/ltsugar.m4
+share/neon/macros/ltversion.m4
+share/neon/macros/lt~obsolete.m4
 share/neon/macros/neon-test.m4
 share/neon/macros/neon-xml-parser.m4
 share/neon/macros/neon.m4

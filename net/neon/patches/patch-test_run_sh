@@ -1,0 +1,13 @@
+don't exit tests after first failure
+
+Index: test/run.sh
+--- test/run.sh.orig
++++ test/run.sh
+@@ -25,7 +25,6 @@ for f in $*; do
+     else
+ 	RETVAL=$?
+         echo ' -->>>' "$f failed => ${RETVAL}"
+-        break
+     fi
+ done
+ 
