@@ -1,0 +1,13 @@
+Index: kmymoney/kmymoney.cpp
+--- kmymoney/kmymoney.cpp.orig
++++ kmymoney/kmymoney.cpp
+@@ -1038,7 +1038,8 @@ KMyMoneyApp::KMyMoneyApp(QWidget* parent)
+      * 3) in a separate, minimal test case, loading libsqlite3 explicitly
+      *  with QLibrary::ExportExternalSymbolsHint makes libsqlcipher non-functional
+     */
+-    sqlite3_key(nullptr, nullptr, 0);
++    // XXX Stupid call ends with a segmentation fault
++    // sqlite3_key(nullptr, nullptr, 0);
+ #endif
+ 
+     // preset the pointer because we need it during the course of this constructor

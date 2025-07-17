@@ -1,51 +1,63 @@
 USE_WXNEEDED =	Yes
 
-COMMENT =	accounting for KDE 5
+COMMENT =	personal finance manager
 
-V =		5.1.3
+V =		5.2.0
 DISTNAME =	kmymoney-${V}
-REVISION =	10
 
 CATEGORIES =	productivity x11
 
 HOMEPAGE =	https://kmymoney.org
 
-SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.2
-SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.2
-SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.2
-SHARED_LIBS +=  kmm_models                0.0 # 5.1.2
-SHARED_LIBS +=  kmm_mymoney               1.0 # 5.1.2
-SHARED_LIBS +=  kmm_payeeidentifier       0.0 # 5.1.0
-SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.2
-SHARED_LIBS +=  kmm_printer               0.0 # 5.1.2
-SHARED_LIBS +=  kmm_settings              0.0 # 5.1.2
-SHARED_LIBS +=  kmm_widgets               1.0 # 5.1.2
+SHARED_LIBS +=  kmm_csvimportercore       1.0 # 5.2.0
+SHARED_LIBS +=  kmm_icons                 1.0 # 5.2.0
+SHARED_LIBS +=  kmm_menus                 1.0 # 5.2.0
+SHARED_LIBS +=  kmm_models                1.0 # 5.2.0
+SHARED_LIBS +=  kmm_mymoney               2.0 # 5.2.0
+SHARED_LIBS +=  kmm_payeeidentifier       1.0 # 5.1.0
+SHARED_LIBS +=  kmm_plugin                1.0 # 5.2.0
+SHARED_LIBS +=  kmm_printer               1.0 # 5.2.0
+SHARED_LIBS +=  kmm_settings              1.0 # 5.2.0
+SHARED_LIBS +=  kmm_widgets               2.0 # 5.2.0
+
+SHARED_LIBS +=	kmm_base_dialogs          0.0 # 0.0
+SHARED_LIBS +=	kmm_base_widgets          0.0 # 0.0
+SHARED_LIBS +=	kmm_extended_dialogs      0.0 # 0.0
+SHARED_LIBS +=	kmm_gpgfile               0.0 # 0.0
+SHARED_LIBS +=	kmm_keychain              0.0 # 0.0
+SHARED_LIBS +=	kmm_menuactionexchanger   0.0 # 0.0
+SHARED_LIBS +=	kmm_selections            0.0 # 0.0
+SHARED_LIBS +=	kmm_templates             0.0 # 0.0
+SHARED_LIBS +=	kmm_webconnect            0.0 # 0.0
+SHARED_LIBS +=	kmm_wizard                0.0 # 0.0
+SHARED_LIBS +=	kmm_yesno                 0.0 # 0.0
+SHARED_LIBS +=	onlinetask_interfaces     0.0 # 0.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SITES =		${SITE_KDE:=stable/kmymoney/${V}/src/}
+SITES =		${SITE_KDE:=stable/kmymoney/${V}/}
+EXTRACT_SUFX =	.tar.xz
 
-WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Holidays KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIONTLM KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
-WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
-WANTLIB += sqlcipher
+WANTLIB += ${COMPILER_LIBCXX} GL KChart6 KF6Archive KF6Bookmarks
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
+WANTLIB += KF6Holidays KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6Core5Compat Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Sql Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml alkimia6 assuan c db db_cxx gmp gpgme
+WANTLIB += gpgmepp ical icalss icalvcal icudata icui18n icuuc
+WANTLIB += m ofx ${MODPY_WANTLIB} qgpgmeqt6 sqlcipher
 
 MODULES =		lang/python \
-			devel/kf5
+			devel/kf6
 
 CONFIGURE_STYLE =	cmake
 
@@ -53,7 +65,7 @@ BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			misc/shared-mime-info \
 			textproc/libical,-glib \
-			x11/qt5/qtsensors
+			x11/qt6/qtsensors
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/p5-Finance-Quote \
@@ -65,52 +77,51 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			www/woob \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		databases/sqlcipher \
+LIB_DEPENDS =		databases/db/v4 \
+			databases/sqlcipher \
 			devel/gmp \
-			devel/gwenhywfar \
-			devel/kf5/kactivities \
-			devel/kf5/karchive \
-			devel/kf5/kauth \
-			devel/kf5/kbookmarks \
-			devel/kf5/kcmutils \
-			devel/kf5/kcodecs \
-			devel/kf5/kcompletion \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kholidays \
-			devel/kf5/ki18n \
-			devel/kf5/kiconthemes \
-			devel/kf5/kio \
-			devel/kf5/kitemmodels \
-			devel/kf5/kitemviews \
-			devel/kf5/kjobwidgets \
-			devel/kf5/knotifications \
-			devel/kf5/kservice \
-			devel/kf5/ktextwidgets \
-			devel/kf5/kwallet \
-			devel/kf5/kwidgetsaddons  \
-			devel/kf5/kwindowsystem \
-			devel/kf5/kxmlgui \
-			devel/kf5/solid \
-			devel/kf5/sonnet \
+			devel/kf6/karchive \
+			devel/kf6/kbookmarks \
+			devel/kf6/kcmutils \
+			devel/kf6/kcodecs \
+			devel/kf6/kcolorscheme \
+			devel/kf6/kcompletion \
+			devel/kf6/kconfig \
+			devel/kf6/kconfigwidgets \
+			devel/kf6/kcoreaddons \
+			devel/kf6/kguiaddons \
+			devel/kf6/kholidays \
+			devel/kf6/ki18n \
+			devel/kf6/kio \
+			devel/kf6/kitemmodels \
+			devel/kf6/kitemviews \
+			devel/kf6/kjobwidgets \
+			devel/kf6/knotifications \
+			devel/kf6/kservice \
+			devel/kf6/ktextwidgets \
+			devel/kf6/kwidgetsaddons  \
+			devel/kf6/kxmlgui \
+			devel/kf6/solid \
+			devel/kf6/sonnet \
 			devel/libofx \
-			graphics/kdiagram \
-			productivity/aqbanking \
-			productivity/libalkimia>=8.0 \
+			graphics/kdiagram-qt6 \
+			productivity/libalkimia>=8.2 \
 			security/gpgme,-qt \
 			security/libassuan \
 			textproc/icu4c \
 			textproc/libical \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtlocation \
-			x11/qt5/qtwebchannel \
-			x11/qt5/qtwebengine
+			x11/qt6/qt5compat \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtpositioning \
+			x11/qt6/qtwebchannel \
+			x11/qt6/qtwebengine
 
 CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
-			-DENABLE_WEBENGINE=ON \
-			-DOPT_KF5_COMPONENTS=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
 
 TEST_IS_INTERACTIVE =	X11
 
