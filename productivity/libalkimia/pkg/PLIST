@@ -1,36 +1,43 @@
-@bin bin/onlinequoteseditor5
+@bin bin/onlinequoteseditor6
 include/alkimia/
-include/alkimia/Qt5/
-include/alkimia/Qt5/alkimia/
-include/alkimia/Qt5/alkimia/alk_export.h
-include/alkimia/Qt5/alkimia/alkcompany.h
-include/alkimia/Qt5/alkimia/alkonlinequote.h
-include/alkimia/Qt5/alkimia/alkonlinequotesource.h
-include/alkimia/Qt5/alkimia/alkonlinequotesprofile.h
-include/alkimia/Qt5/alkimia/alkonlinequotesprofilemanager.h
-include/alkimia/Qt5/alkimia/alkonlinequoteswidget.h
-include/alkimia/Qt5/alkimia/alkvalue.h
-include/alkimia/Qt5/alkimia/alkversion.h
-include/alkimia/Qt5/alkimia/alkwebpage.h
-lib/cmake/LibAlkimia5-8.1/
-lib/cmake/LibAlkimia5-8.1/FindGMP.cmake
-lib/cmake/LibAlkimia5-8.1/LibAlkimia5Config.cmake
-lib/cmake/LibAlkimia5-8.1/LibAlkimia5ConfigVersion.cmake
-lib/cmake/LibAlkimia5-8.1/LibAlkimia5Targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/LibAlkimia5-8.1/LibAlkimia5Targets.cmake
-@lib lib/libalkimia5.so.${LIBalkimia5_VERSION}
-lib/pkgconfig/libalkimia5.pc
-lib/qt5/qml/org/kde/alkimia/
-@so lib/qt5/qml/org/kde/alkimia/libqmlalkimia.so
-lib/qt5/qml/org/kde/alkimia/qmldir
-share/applications/org.kde.onlinequoteseditor5.desktop
-share/icons/hicolor/128x128/apps/onlinequoteseditor5.png
-share/icons/hicolor/16x16/apps/onlinequoteseditor5.png
-share/icons/hicolor/22x22/apps/onlinequoteseditor5.png
-share/icons/hicolor/32x32/apps/onlinequoteseditor5.png
-share/icons/hicolor/48x48/apps/onlinequoteseditor5.png
-share/icons/hicolor/64x64/apps/onlinequoteseditor5.png
-share/icons/hicolor/scalable/apps/onlinequoteseditor5.svgz
+include/alkimia/Qt6/
+include/alkimia/Qt6/alkimia/
+include/alkimia/Qt6/alkimia/alk_export.h
+include/alkimia/Qt6/alkimia/alkcompany.h
+include/alkimia/Qt6/alkimia/alkdom.h
+include/alkimia/Qt6/alkimia/alkenvironment.h
+include/alkimia/Qt6/alkimia/alknewstuffengine.h
+include/alkimia/Qt6/alkimia/alknewstuffentry.h
+include/alkimia/Qt6/alkimia/alknewstuffstore.h
+include/alkimia/Qt6/alkimia/alkonlinequote.h
+include/alkimia/Qt6/alkimia/alkonlinequotesource.h
+include/alkimia/Qt6/alkimia/alkonlinequotesprofile.h
+include/alkimia/Qt6/alkimia/alkonlinequotesprofilemanager.h
+include/alkimia/Qt6/alkimia/alkonlinequoteswidget.h
+include/alkimia/Qt6/alkimia/alkvalue.h
+include/alkimia/Qt6/alkimia/alkversion.h
+include/alkimia/Qt6/alkimia/alkwebpage.h
+include/alkimia/Qt6/alkimia/alkwebview.h
+lib/cmake/LibAlkimia6-8.2/
+lib/cmake/LibAlkimia6-8.2/FindGMP.cmake
+lib/cmake/LibAlkimia6-8.2/LibAlkimia6Config.cmake
+lib/cmake/LibAlkimia6-8.2/LibAlkimia6ConfigVersion.cmake
+lib/cmake/LibAlkimia6-8.2/LibAlkimia6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibAlkimia6-8.2/LibAlkimia6Targets.cmake
+@lib lib/libalkimia6.so.${LIBalkimia6_VERSION}
+lib/pkgconfig/libalkimia6.pc
+lib/qt6/qml/org/kde/alkimia6/
+@so lib/qt6/qml/org/kde/alkimia6/libqmlalkimia6.so
+lib/qt6/qml/org/kde/alkimia6/qmldir
+share/applications/org.kde.onlinequoteseditor6.desktop
+share/gdb/auto-load/usr/local/lib/libalkimia6.so.8.2.0-gdb.py
+share/icons/hicolor/128x128/apps/onlinequoteseditor6.png
+share/icons/hicolor/16x16/apps/onlinequoteseditor6.png
+share/icons/hicolor/22x22/apps/onlinequoteseditor6.png
+share/icons/hicolor/32x32/apps/onlinequoteseditor6.png
+share/icons/hicolor/48x48/apps/onlinequoteseditor6.png
+share/icons/hicolor/64x64/apps/onlinequoteseditor6.png
+share/icons/hicolor/scalable/apps/onlinequoteseditor6.svgz
 share/knsrcfiles/
 share/knsrcfiles/alkimia-quotes.knsrc
 share/knsrcfiles/kmymoney-quotes.knsrc
@@ -59,6 +66,10 @@ share/locale/en_GB/LC_MESSAGES/alkimia.mo
 share/locale/en_GB/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/eo/LC_MESSAGES/alkimia.mo
+share/locale/eo/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/eo/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/eo/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/es/LC_MESSAGES/alkimia.mo
 share/locale/es/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/es/LC_MESSAGES/plasma_applet_onlinequote.mo
@@ -68,6 +79,8 @@ share/locale/et/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/et/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/fi/LC_MESSAGES/alkimia.mo
+share/locale/fi/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/fi/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/fr/LC_MESSAGES/alkimia.mo
 share/locale/fr/LC_MESSAGES/onlinequoteseditor.mo
@@ -101,6 +114,10 @@ share/locale/ko/LC_MESSAGES/alkimia.mo
 share/locale/ko/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/nb/LC_MESSAGES/alkimia.mo
+share/locale/nb/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/nb/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/nb/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/nl/LC_MESSAGES/alkimia.mo
 share/locale/nl/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_onlinequote.mo
@@ -154,5 +171,5 @@ share/locale/zh_TW/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/metainfo/
-share/metainfo/org.kde.onlinequoteseditor5.appdata.xml
+share/metainfo/org.kde.onlinequoteseditor6.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

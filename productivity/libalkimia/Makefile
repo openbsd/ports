@@ -4,21 +4,20 @@ COMMENT =	KDE financial data handling library
 
 CATEGORIES =	productivity x11
 
-V =		8.1.2
+V =		8.2.0
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
 
-SHARED_LIBS =  alkimia5  2.0 # 8.0.4
+SHARED_LIBS +=	alkimia6                  0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c gmp m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Codecs KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c gmp m
 
 HOMEPAGE =	https://community.kde.org/Alkimia/libalkimia
 
@@ -28,44 +27,43 @@ EXTRACT_SUFX =	.tar.xz
 # LGPLv2.1+
 PERMIT_PACKAGE = Yes
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/gmp,-cxx \
-		x11/qt5/qtquickcontrols
+		devel/gmp,-cxx
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gmp,-cxx \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/gmp \
-		devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+		devel/kf6/attica \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/knewstuff \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 # Build plasma applets
-CONFIGURE_ARGS =	-DBUILD_APPLETS=OFF
+CONFIGURE_ARGS +=	-DBUILD_APPLETS=OFF
+
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
