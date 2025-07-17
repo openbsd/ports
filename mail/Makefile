@@ -206,7 +206,6 @@
      SUBDIR += rcube-dovecot_ident
      SUBDIR += rcube-html5-notifier
      SUBDIR += rcube-ldapAliasSync
-     SUBDIR += rcube-markasjunk2
      SUBDIR += rcube-sieverules
      SUBDIR += rcube-yubikey-plugin
      SUBDIR += relaydb
