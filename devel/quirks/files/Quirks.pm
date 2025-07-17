@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1730 2025/07/17 09:14:52 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1731 2025/07/17 09:18:40 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1271,6 +1271,7 @@ setup_obsolete_reason(
 	3 => 'fretsonfire',
 	3 => 'py-lpsolve',
 	12 => 'rcube-markasjunk2',
+	12 => 'rcube-sieverules',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1306,7 +1307,7 @@ my $obsolete_message = {
 	9 => "removed, needs a port maintainer",
 	10 => "other OS suggested, or see https://docs.gotosocial.org/en/latest/advanced/builds/nowasm/",
 	11 => "no longer packageable",
-	12 => "use the markasjunk plugin distributed with roundcube instead",
+	12 => "use the alternative plugin distributed with roundcube instead (markasjunk, managesieve)",
 	13 => "has a dependency on obsolete software",
 	15 => "use rspamd's internal milter support instead",
 	27 => "requires GUdev",
