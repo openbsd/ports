@@ -1,10 +1,7 @@
 @conflict py-augeas-*
 @pkgpath sysutils/py-augeas,python3
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}augeas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}augeas.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/_augeas${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/augeas/
-lib/python${MODPY_VERSION}/site-packages/augeas.py
 lib/python${MODPY_VERSION}/site-packages/augeas/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,11 +17,3 @@ lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/test/
-lib/python${MODPY_VERSION}/site-packages/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}test_augeas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}test_augeas.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/test/test_augeas.py
