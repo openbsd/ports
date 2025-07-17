@@ -1,0 +1,23 @@
+Don't load workspace-local helix configurations. This might enable
+code execution when running helix in an untrusted repository.
+
+See: https://github.com/helix-editor/helix/issues/2697
+
+Index: helix-term/src/config.rs
+--- helix-term/src/config.rs.orig
++++ helix-term/src/config.rs
+@@ -58,12 +58,11 @@ impl Display for ConfigLoadError {
+ impl Config {
+     pub fn load(
+         global: Result<String, ConfigLoadError>,
+-        local: Result<String, ConfigLoadError>,
++        _local: Result<String, ConfigLoadError>,
+     ) -> Result<Config, ConfigLoadError> {
+         let global_config: Result<ConfigRaw, ConfigLoadError> =
+             global.and_then(|file| toml::from_str(&file).map_err(ConfigLoadError::BadConfig));
+-        let local_config: Result<ConfigRaw, ConfigLoadError> =
+-            local.and_then(|file| toml::from_str(&file).map_err(ConfigLoadError::BadConfig));
++        let local_config: Result<ConfigRaw, ConfigLoadError> = Err(ConfigLoadError::default());
+         let res = match (global_config, local_config) {
+             (Ok(global), Ok(local)) => {
+                 let mut keys = keymap::default();

@@ -2,6 +2,7 @@ COMMENT =	modal text editor
 
 VER =		25.07
 DISTNAME =	helix-${VER}
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -27,8 +28,8 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cargo
 
-CONFIGURE_STYLE =       cargo
-SEPARATE_BUILD =        Yes
+CONFIGURE_STYLE =	cargo
+SEPARATE_BUILD =	Yes
 
 pre-extract:
 	@mkdir -p ${WRKDIST}
