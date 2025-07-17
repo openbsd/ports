@@ -494,6 +494,8 @@ icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/Behavior/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/Behavior/FlattenedObjectVarsTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/CustomvarFlatTest.php
+icinga-web2/modules/icingadb/test/php/library/Icingadb/ProvidedHook/
+icinga-web2/modules/icingadb/test/php/library/Icingadb/ProvidedHook/IcingaHealthTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/PerfdataSetTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/PerfdataTest.php
