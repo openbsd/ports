@@ -1,6 +1,6 @@
 COMMENT=		automatically create timetables
 
-DISTNAME=		fet-5.42.3
+DISTNAME=		fet-7.2.5
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		https://www.lalescu.ro/liviu/fet/
@@ -8,15 +8,17 @@ HOMEPAGE=		https://www.lalescu.ro/liviu/fet/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets c m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Widgets c m
 
-SITES=			${HOMEPAGE}/download/ \
-			https://timetabling.de/download/
+SITES=			https://lalescu.ro/liviu/fet/download/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/qmake \
-			x11/qt5
+			x11/qt6
+
+CONFIGURE_ENV +=	LC_ALL=en_US.UTF-8
+MAKE_ENV +=		LC_ALL=en_US.UTF-8
 
 PORTHOME=		${WRKDIR}
 
