@@ -1,3 +1,2 @@
-lib/gstreamer-${API}/
 @so lib/gstreamer-${API}/libgstgtk4.so
 lib/pkgconfig/gstgtk4.pc

@@ -1,10 +1,10 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -157,3 +157,51 @@ gst-tag = { package = "gstreamer-tag", git = "https://
- gst-utils = { package = "gstreamer-utils", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
- gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
- gst-webrtc = { package = "gstreamer-webrtc", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
+@@ -168,3 +168,52 @@ gst-tag = { package = "gstreamer-tag", git = "https://
+ gst-utils = { package = "gstreamer-utils", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
+ gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
+ gst-webrtc = { package = "gstreamer-webrtc", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
 +
 +[patch."https://gitlab.freedesktop.org/gstreamer/gstreamer-rs"]
 +gstreamer = {path = "../gstreamer-rs/gstreamer" }
@@ -25,6 +25,7 @@ Index: Cargo.toml
 +gstreamer-gl-egl = {path = "../gstreamer-rs/gstreamer-gl/egl" }
 +gstreamer-gl-wayland = {path = "../gstreamer-rs/gstreamer-gl/wayland" }
 +gstreamer-gl-x11 = {path = "../gstreamer-rs/gstreamer-gl/x11" }
++gstreamer-analytics = {path = "../gstreamer-rs/gstreamer-analytics" }
 +
 +[patch."https://github.com/gtk-rs/gtk-rs-core"]
 +glib = {path = "../gtk-rs-core/glib" }
