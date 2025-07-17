@@ -42,4 +42,9 @@ post-install:
 	cd ${WRKSRC}/macros && \
 		tar cf - . | (cd ${PREFIX}/share/neon/macros; tar xf -)
 
+TEST_DEPENDS=	security/openssl/3.5
+TEST_FLAGS=	-C ${WRKSRC}/test OPENSSL=eopenssl35
+pre-test:
+	@ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
+
 .include <bsd.port.mk>

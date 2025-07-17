@@ -1,0 +1,15 @@
+allow overriding path; tests use -rand $filename (easily changed) but
+also use ${ENV::xxx} in openssl.cnf which is harder to patch around
+
+Index: test/makekeys.sh
+--- test/makekeys.sh.orig
++++ test/makekeys.sh
+@@ -3,7 +3,7 @@
+ 
+ srcdir=${1-.}
+ 
+-OPENSSL=@OPENSSL@
++OPENSSL=${OPENSSL=@OPENSSL@}
+ CONF=${srcdir}/openssl.conf
+ REQ="${OPENSSL} req -config ${CONF}"
+ CA="${OPENSSL} ca -config ${CONF} -batch"
