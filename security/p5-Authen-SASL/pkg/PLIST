@@ -13,7 +13,9 @@ ${P5SITE}/Authen/SASL/Perl/DIGEST_MD5.pm
 ${P5SITE}/Authen/SASL/Perl/EXTERNAL.pm
 ${P5SITE}/Authen/SASL/Perl/GSSAPI.pm
 ${P5SITE}/Authen/SASL/Perl/LOGIN.pm
+${P5SITE}/Authen/SASL/Perl/OAUTHBEARER.pm
 ${P5SITE}/Authen/SASL/Perl/PLAIN.pm
+${P5SITE}/Authen/SASL/Perl/XOAUTH2.pm
 @man man/man3p/Authen::SASL.3p
 @man man/man3p/Authen::SASL::Perl.3p
 @man man/man3p/Authen::SASL::Perl::ANONYMOUS.3p
@@ -22,4 +24,6 @@ ${P5SITE}/Authen/SASL/Perl/PLAIN.pm
 @man man/man3p/Authen::SASL::Perl::EXTERNAL.3p
 @man man/man3p/Authen::SASL::Perl::GSSAPI.3p
 @man man/man3p/Authen::SASL::Perl::LOGIN.3p
+@man man/man3p/Authen::SASL::Perl::OAUTHBEARER.3p
 @man man/man3p/Authen::SASL::Perl::PLAIN.3p
+@man man/man3p/Authen::SASL::Perl::XOAUTH2.3p

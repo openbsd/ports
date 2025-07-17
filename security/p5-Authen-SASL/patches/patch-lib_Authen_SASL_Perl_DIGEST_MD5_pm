@@ -1,0 +1,36 @@
+From 82e12b25963bd9d156a9006c9a0929f459b8536a Mon Sep 17 00:00:00 2001
+From: Robert Rothenberg <rrwo@cpan.org>
+Date: Thu, 10 Jul 2025 21:05:29 +0100
+Subject: [PATCH] Generate cnonce and nonce from system randomness
+
+https://github.com/gbarr/perl-authen-sasl/pull/22
+
+Index: lib/Authen/SASL/Perl/DIGEST_MD5.pm
+--- lib/Authen/SASL/Perl/DIGEST_MD5.pm.orig
++++ lib/Authen/SASL/Perl/DIGEST_MD5.pm
+@@ -10,6 +10,7 @@ $Authen::SASL::Perl::DIGEST_MD5::VERSION = '2.1800';
+ use strict;
+ use warnings;
+ use vars qw(@ISA $CNONCE $NONCE);
++use Crypt::URandom qw(urandom);
+ use Digest::MD5 qw(md5_hex md5);
+ use Digest::HMAC_MD5 qw(hmac_md5);
+ 
+@@ -201,7 +202,7 @@ sub server_start {
+ 
+   $self->{need_step} = 1;
+   $self->{error}     = undef;
+-  $self->{nonce}     = md5_hex($NONCE || join (":", $$, time, rand));
++  $self->{nonce}     = $NONCE? md5_hex($NONCE) : unpack('H32',urandom(16));
+ 
+   $self->init_sec_layer;
+ 
+@@ -260,7 +261,7 @@ sub client_step {   # $self, $server_sasl_credentials
+ 
+   my %response = (
+     nonce        => $sparams{'nonce'},
+-    cnonce       => md5_hex($CNONCE || join (":", $$, time, rand)),
++    cnonce       => $CNONCE? md5_hex($CNONCE) : unpack('H32',urandom(16)),
+     'digest-uri' => $self->service . '/' . $self->host,
+     # calc how often the server nonce has been seen; server expects "00000001"
+     nc           => sprintf("%08d",     ++$self->{nonce_counts}{$sparams{'nonce'}}),
