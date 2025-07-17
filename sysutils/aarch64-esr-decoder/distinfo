@@ -1,4 +1,4 @@
-SHA256 (aarch64-esr-decoder-0.2.3pl20250703-a73b24ca.tar.gz) = +dWz6gkITpFpLjd+liAGKBo/d3O7jvyzFnipwkzP+gg=
+SHA256 (aarch64-esr-decoder-0.2.4.tar.gz) = W+wuCWeS/0fQAXlKiMb0UXh1tFibr3dJN2AmGYn1Md4=
 SHA256 (cargo/bit_field-0.10.2.tar.gz) = 3IJxhpY+WSNghD+1ukuXPhRYQSZsE1f3GAxDUm8uW2E=
 SHA256 (cargo/proc-macro2-1.0.95.tar.gz) = ArPl5oo6GgKq0+xJCpgAfLwTw3y+hKPNe45AbXbn93g=
 SHA256 (cargo/quote-1.0.40.tar.gz) = GIXAOVcNwA3LT/CHqJ4YX9VrriNN3H8FapRb82RnJI0=
@@ -6,7 +6,7 @@ SHA256 (cargo/syn-2.0.104.tar.gz) = F7b3BZY0GM25knSC+jBLxWLs4v3U9hYITFC3AjtDWkA=
 SHA256 (cargo/thiserror-2.0.12.tar.gz) = VnuKLa5YYxT3vip1LsdHQzKVnGRg4CveMNcCpm1Ihwg=
 SHA256 (cargo/thiserror-impl-2.0.12.tar.gz) = f3z0K0UH2OoyISBllnLPG527k/jy1Oz9blE1D/Wxeh0=
 SHA256 (cargo/unicode-ident-1.0.18.tar.gz) = Wl85QEpdpQcSpMHuzyXpDdYrYTUCt+kl/U5NGbXJZRI=
-SIZE (aarch64-esr-decoder-0.2.3pl20250703-a73b24ca.tar.gz) = 68784
+SIZE (aarch64-esr-decoder-0.2.4.tar.gz) = 68762
 SIZE (cargo/bit_field-0.10.2.tar.gz) = 10568
 SIZE (cargo/proc-macro2-1.0.95.tar.gz) = 51820
 SIZE (cargo/quote-1.0.40.tar.gz) = 31063
