@@ -11,7 +11,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
 WANTLIB += Qt6Widgets c m
 
-SITES=			https://lalescu.ro/liviu/fet/download/
+SITES=			https://lalescu.ro/liviu/fet/download/ \
+			https://lalescu.ro/liviu/fet/download/old/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/qmake \
