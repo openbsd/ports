@@ -1,9 +1,8 @@
 COMMENT =		lightweight extensible message format
 
-MODPY_DISTV =		0.6.3
+MODPY_DISTV =		0.8.0
 DISTNAME=		lxmf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		net devel
 
@@ -11,7 +10,7 @@ HOMEPAGE =		https://github.com/markqvist/LXMF
 
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
-# MIT
+# custom, see LICENSE
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
