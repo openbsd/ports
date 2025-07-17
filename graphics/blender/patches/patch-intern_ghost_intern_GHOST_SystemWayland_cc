@@ -1,7 +1,7 @@
 Index: intern/ghost/intern/GHOST_SystemWayland.cc
 --- intern/ghost/intern/GHOST_SystemWayland.cc.orig
 +++ intern/ghost/intern/GHOST_SystemWayland.cc
-@@ -2599,7 +2599,11 @@ static wl_buffer *ghost_wl_buffer_create_for_image(wl_
+@@ -2628,7 +2628,11 @@ static wl_buffer *ghost_wl_buffer_create_for_image(wl_
    if (fd >= 0) {
      const int32_t buffer_stride = size_xy[0] * ghost_wl_shm_format_as_size(format);
      const int32_t buffer_size = buffer_stride * size_xy[1];

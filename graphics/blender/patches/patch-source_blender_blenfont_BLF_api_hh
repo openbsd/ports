@@ -12,5 +12,5 @@ Index: source/blender/blenfont/BLF_api.hh
 -#define BLF_DEFAULT_MONOSPACED_FONT "DejaVuSansMono.woff2"
 +#define BLF_DEFAULT_MONOSPACED_FONT "DejaVuSansMono.ttf"
  
- struct ColorManagedDisplay;
  struct ListBase;
+ struct ResultBLF;
