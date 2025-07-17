@@ -2,9 +2,9 @@ COMMENT=	roundcube plugin: add HTML5 notifications for new mail
 
 GH_ACCOUNT=	stremlau
 GH_PROJECT=	html5_notifier
-GH_TAGNAME=	v0.6.4
+GH_COMMIT=	5d85947e16ea9cac4544c59666fe0ff13ba2a44a
+DISTNAME=	html5_notifier-0.6.4pl20230628
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	mail www
 
