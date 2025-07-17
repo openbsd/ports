@@ -1,9 +1,8 @@
 COMMENT =		cryptography-based networking stack
 
-MODPY_DISTV =		0.9.3
+MODPY_DISTV =		1.0.0
 DISTNAME=		rns-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		net devel
 
@@ -11,7 +10,7 @@ HOMEPAGE =		https://reticulum.network/
 
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
-# MIT
+# custom, see LICENSE
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
