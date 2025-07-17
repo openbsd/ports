@@ -1,8 +1,17 @@
-bin/gensite
 bin/txt2tags
-@man man/man1/txt2tags.1
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}txt2tags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}txt2tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/txt2tags-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/txt2tags.py
 share/doc/txt2tags/
-share/doc/txt2tags/README
 @comment share/doc/txt2tags/manpage-ca.man
 @comment share/doc/txt2tags/manpage-de.man
 @comment share/doc/txt2tags/manpage-es.man
@@ -13,16 +22,17 @@ share/doc/txt2tags/README
 @comment share/doc/txt2tags/manpage-zh.man
 @comment share/doc/txt2tags/manpage.man
 @comment share/doc/txt2tags/manpage.t2t
-share/doc/txt2tags/txt2tags-quickref.pdf
-share/doc/txt2tags/userguide.pdf
+share/doc/txt2tags/CHANGELOG.md
+share/doc/txt2tags/README.md
+share/doc/txt2tags/TODO.md
+share/doc/txt2tags/markup.html
+share/doc/txt2tags/userguide.html
 share/examples/txt2tags/
 share/examples/txt2tags/css/
+share/examples/txt2tags/css/build
 share/examples/txt2tags/css/color.css
-share/examples/txt2tags/css/color.html
 share/examples/txt2tags/css/modern.css
-share/examples/txt2tags/css/modern.html
 share/examples/txt2tags/css/tech.css
-share/examples/txt2tags/css/tech.html
 share/examples/txt2tags/img/
 share/examples/txt2tags/img/madeinbr.png
 share/examples/txt2tags/img/old-poweredby-1.png
@@ -39,35 +49,23 @@ share/examples/txt2tags/module/
 share/examples/txt2tags/module/README
 share/examples/txt2tags/module/module-body.py
 share/examples/txt2tags/module/module-full.py
-share/examples/txt2tags/sample-slides-80x25.art
 share/examples/txt2tags/sample.adoc
-share/examples/txt2tags/sample.art
 share/examples/txt2tags/sample.creole
+share/examples/txt2tags/sample.ctx
 share/examples/txt2tags/sample.dbk
 share/examples/txt2tags/sample.doku
 share/examples/txt2tags/sample.gwiki
 share/examples/txt2tags/sample.html
 share/examples/txt2tags/sample.lout
 share/examples/txt2tags/sample.man
+share/examples/txt2tags/sample.md
 share/examples/txt2tags/sample.mgp
 share/examples/txt2tags/sample.moin
-share/examples/txt2tags/sample.pm6
 share/examples/txt2tags/sample.pmw
 share/examples/txt2tags/sample.sgml
 share/examples/txt2tags/sample.t2t
 share/examples/txt2tags/sample.tex
 share/examples/txt2tags/sample.txt
 share/examples/txt2tags/sample.wiki
-share/examples/txt2tags/sample.xhtml
-@sample share/examples/txt2tags/txt2tagsrc
 share/examples/txt2tags/txt2tagsrc.dist
-share/locale/de/LC_MESSAGES/txt2tags.mo
-share/locale/es/LC_MESSAGES/txt2tags.mo
-share/locale/eu/LC_MESSAGES/txt2tags.mo
-share/locale/fi/LC_MESSAGES/txt2tags.mo
-share/locale/fr/LC_MESSAGES/txt2tags.mo
-share/locale/hu/LC_MESSAGES/txt2tags.mo
-share/locale/it/LC_MESSAGES/txt2tags.mo
-share/locale/pt_BR/LC_MESSAGES/txt2tags.mo
-share/locale/uk/LC_MESSAGES/txt2tags.mo
-share/locale/zh_CN/LC_MESSAGES/txt2tags.mo
+@sample share/examples/txt2tags/txt2tagsrc
