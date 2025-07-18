@@ -1,11 +1,12 @@
---- src/clients/lib/xmmsclient/wscript.orig	Thu Oct 20 21:26:08 2011
-+++ src/clients/lib/xmmsclient/wscript	Tue May  8 01:12:42 2012
-@@ -31,7 +31,7 @@ def build(bld):
+Index: src/clients/lib/xmmsclient/wscript
+--- src/clients/lib/xmmsclient/wscript.orig
++++ src/clients/lib/xmmsclient/wscript
+@@ -36,7 +36,7 @@ def build(bld):
          source = source,
          uselib = 'socket time',
          use = 'xmmsipc xmmssocket xmmsutils xmmstypes xmmsvisualization',
--        vnum = '6.0.0'
-+        vnum = '${LIBxmmsclient_VERSION}'
-         )
- 
-     tool.add_install_flag(bld, obj)
+-        vnum = '6.0.0',
++        vnum = '${LIBxmmsclient_VERSION}',
+         defines = [
+             'XMMSC_LOG_DOMAIN="xmmsclient"',
+             "HAVE_SEMTIMEDOP=%d" % int(bld.env.have_semtimedop),

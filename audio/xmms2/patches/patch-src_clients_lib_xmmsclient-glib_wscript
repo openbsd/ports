@@ -1,11 +1,12 @@
---- src/clients/lib/xmmsclient-glib/wscript.orig	Thu Oct 20 21:26:08 2011
-+++ src/clients/lib/xmmsclient-glib/wscript	Tue May  8 01:11:50 2012
+Index: src/clients/lib/xmmsclient-glib/wscript
+--- src/clients/lib/xmmsclient-glib/wscript.orig
++++ src/clients/lib/xmmsclient-glib/wscript
 @@ -7,7 +7,7 @@ def build(bld):
          source = 'xmmsclient-glib.c',
          uselib = 'glib2',
-         use = 'xmmsclient',
--        vnum = '1.0.0'
-+        vnum = '${LIBxmmsclient-glib_VERSION}'
+         use = 'xmmsclient xmmsc-glib',
+-        vnum = '1.0.0',
++        vnum = '${LIBxmmsclient-glib_VERSION}',
+         defines = 'G_LOG_DOMAIN="xmmsclient-glib"'
          )
  
-     tool.add_install_flag(bld, obj)

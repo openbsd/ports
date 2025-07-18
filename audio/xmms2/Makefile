@@ -1,14 +1,12 @@
 COMMENT =		audio player daemon with library management
 
-V =			0.8
-DISTNAME =		xmms2-${V}DrO_o
-PKGNAME =		xmms2-${V}
-REVISION =		20
+V =			0.9.5
+DISTNAME =		xmms2-${V}
 
-SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
-SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
-SHARED_LIBS +=		xmmsclient-glib		1.0 # 1.0.0
-SHARED_LIBS +=		xmmsclient		2.0 # 6.0.0
+SHARED_LIBS +=		xmmsclient++		3.0 # 4.0.0
+SHARED_LIBS +=		xmmsclient++-glib	2.0 # 1.0.0
+SHARED_LIBS +=		xmmsclient-glib		2.0 # 1.0.0
+SHARED_LIBS +=		xmmsclient		3.0 # 6.0.0
 
 CATEGORIES =		audio
 
@@ -19,38 +17,41 @@ PORTROACH =		site:https://github.com/xmms2/xmms2-devel/releases/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC ao avahi-client avahi-common
-WANTLIB += avahi-glib avcodec avutil c curl ffi gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 intl jack m mpg123
-WANTLIB += ogg opus pcre2-8 perl python2.7 readline sndfile sqlite3
-WANTLIB += swresample vorbis vorbisenc vorbisfile xml2 z
+WANTLIB += avahi-glib avcodec c curl fluidsynth gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 intl jack m mpg123 ogg opus
+WANTLIB += opusfile perl readline sndfile util vorbisfile xml2
 
-SITES =			${SITE_SOURCEFORGE:=xmms2/}
+SITES =		https://github.com/xmms2/xmms2-devel/releases/download/${V}/
+EXTRACT_SUFX =	.tar.xz
 
 MODPERL_REGEN_PPPORT =	src/clients/lib/perl/ppport.h
 
-EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python \
 			perl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =		Yes
 
 BUILD_DEPENDS =		devel/boost \
+			lang/cython \
 			textproc/p5-Pod-Parser
 
-LIB_DEPENDS =		devel/glib2 \
-			databases/sqlite3 \
-			graphics/ffmpeg \
-			audio/libao \
+LIB_DEPENDS =		audio/flac \
+			audio/fluidsynth \
 			audio/jack \
-			textproc/libxml \
-			net/curl \
+			audio/libao \
+			audio/libogg \
+			audio/libsndfile \
+			audio/libvorbis \
 			audio/mpg123 \
+			audio/opusfile \
+			devel/glib2 \
+			graphics/ffmpeg \
 			net/avahi,-glib \
-			audio/libsndfile
+			net/curl \
+			textproc/libxml
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
 			src/clients/lib/xmmsclient++-glib/wscript \
@@ -69,9 +70,8 @@ do-configure:
 		--mandir=${PREFIX}/man \
 		--conf-prefix=${PREFIX} \
 		--with-default-output-plugin=ao \
-		--no-cython \
 		--disable-shmvis-server \
-		--without-optionals=medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby \
+		--without-optionals=medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby,sqlite2s4,migrate-collections \
 		--without-plugins=airplay,alsa,cdda,coreaudio,faad,gme,ices,mac,mad,mms,modplug,musepack,nms,ofa,oss,pulse,samba,sid,speex,sun,tremor,vocoder,waveout,wavpack
 
 post-configure:

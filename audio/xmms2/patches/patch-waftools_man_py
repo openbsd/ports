@@ -1,13 +1,14 @@
 Bypass the gzip function that compress man files.
 
---- waftools/man.py.orig	Thu Oct 20 21:26:08 2011
-+++ waftools/man.py	Tue May  8 12:50:16 2012
-@@ -24,11 +24,11 @@ def gzip_func(task):
+Index: waftools/man.py
+--- waftools/man.py.orig
++++ waftools/man.py
+@@ -29,11 +29,12 @@ def gzip_func(task):
          if outf:
              outf.close()
  
 -Task.task_factory('man', gzip_func, color='BLUE')
--
+ 
  @feature('man')
  @before_method('process_source')
  def process_man(self):
@@ -16,12 +17,10 @@ Bypass the gzip function that compress man files.
      source = self.to_nodes(getattr(self, 'source', []))
      self.source = []
  
-@@ -43,13 +43,7 @@ def process_man(self):
-         if not s:
-             raise Errors.BuildError('cannot determine man section from filename')
+@@ -50,11 +51,7 @@ def process_man(self):
  
--        out = self.path.find_or_declare(node.name + '.gz')
--
+         out = self.path.find_or_declare(node.name + '.gz')
+ 
 -        tsk = self.create_task('man')
 -        tsk.set_inputs(node)
 -        tsk.set_outputs(out)

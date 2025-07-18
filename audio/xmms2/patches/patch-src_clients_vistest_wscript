@@ -8,5 +8,5 @@ Index: src/clients/vistest/wscript
 -    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc',
 +    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc vorbis ogg',
              args='--cflags --libs', mandatory=False)
- 
-     if conf.check_cfg(package='libvisual-0.4', uselib_store='visual',
+     conf.check_cfg(package='vorbis', uselib_store='vorbis',
+             args='--cflags --libs', mandatory=False)

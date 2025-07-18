@@ -1,5 +1,6 @@
---- src/clients/lib/xmmsclient++/wscript.orig	Thu Oct 20 21:26:08 2011
-+++ src/clients/lib/xmmsclient++/wscript	Tue May  8 01:11:05 2012
+Index: src/clients/lib/xmmsclient++/wscript
+--- src/clients/lib/xmmsclient++/wscript.orig
++++ src/clients/lib/xmmsclient++/wscript
 @@ -28,7 +28,7 @@ def build(bld):
          includes = '../../../.. ../../../include ../../../includepriv',
          uselib = 'BOOST socket',

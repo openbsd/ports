@@ -1,4 +1,4 @@
-bin/nyxmms2
+@bin bin/s4
 @bin bin/xmms2
 @bin bin/xmms2-et
 @bin bin/xmms2-find-avahi
@@ -21,11 +21,14 @@ include/xmms2/xmms/xmms_streamtype.h
 include/xmms2/xmms/xmms_util.h
 include/xmms2/xmms/xmms_xformplugin.h
 include/xmms2/xmmsc/
+include/xmms2/xmmsc/xmmsc-glib.h
 include/xmms2/xmmsc/xmmsc_compiler.h
 include/xmms2/xmmsc/xmmsc_errorcodes.h
 include/xmms2/xmmsc/xmmsc_idnumbers.h
+include/xmms2/xmmsc/xmmsc_idnumbers_extra.h
 include/xmms2/xmmsc/xmmsc_ipc_msg.h
 include/xmms2/xmmsc/xmmsc_ipc_transport.h
+include/xmms2/xmmsc/xmmsc_log.h
 include/xmms2/xmmsc/xmmsc_sockets.h
 include/xmms2/xmmsc/xmmsc_stdbool.h
 include/xmms2/xmmsc/xmmsc_stdint.h
@@ -37,11 +40,13 @@ include/xmms2/xmmsc/xmmsc_visualization.h
 include/xmms2/xmmsc/xmmsv.h
 include/xmms2/xmmsc/xmmsv_bitbuffer.h
 include/xmms2/xmmsc/xmmsv_build.h
+include/xmms2/xmmsc/xmmsv_c2c.h
 include/xmms2/xmmsc/xmmsv_coll.h
 include/xmms2/xmmsc/xmmsv_deprecated.h
 include/xmms2/xmmsc/xmmsv_dict.h
 include/xmms2/xmmsc/xmmsv_general.h
 include/xmms2/xmmsc/xmmsv_list.h
+include/xmms2/xmmsc/xmmsv_service.h
 include/xmms2/xmmsc/xmmsv_util.h
 include/xmms2/xmmsclient/
 include/xmms2/xmmsclient/xmmsclient++/
@@ -76,9 +81,9 @@ include/xmms2/xmmsclient/xmmsclient.h
 @lib lib/libxmmsclient++-glib.so.${LIBxmmsclient++-glib_VERSION}
 @comment lib/libxmmsclient++.so
 @comment lib/libxmmsclient++.so.2
-@lib lib/libxmmsclient++.so.${LIBxmmsclient++_VERSION}
 @comment lib/libxmmsclient-glib.so
 @comment lib/libxmmsclient-glib.so.1
+@lib lib/libxmmsclient++.so.${LIBxmmsclient++_VERSION}
 @lib lib/libxmmsclient-glib.so.${LIBxmmsclient-glib_VERSION}
 @comment lib/libxmmsclient.so
 @comment lib/libxmmsclient.so.2
@@ -95,9 +100,14 @@ lib/python${MODPY_VERSION}/site-packages/xmmsclient/consts.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/glib.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/propdict.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/qt3.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/samples/
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/samples/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/samples/scwatch.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/samples/service.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/service.py
 lib/python${MODPY_VERSION}/site-packages/xmmsclient/sync.py
-@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsapi.so
-@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsvalue.so
+@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsapi.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsvalue.${MODPY_PYC_MAGIC_TAG}so
 lib/xmms2/
 @so lib/xmms2/libxmms_ao.so
 @so lib/xmms2/libxmms_apefile.so
@@ -108,9 +118,9 @@ lib/xmms2/
 @so lib/xmms2/libxmms_curl.so
 @so lib/xmms2/libxmms_daap.so
 @so lib/xmms2/libxmms_diskwrite.so
-@so lib/xmms2/libxmms_equalizer.so
 @so lib/xmms2/libxmms_file.so
 @so lib/xmms2/libxmms_flac.so
+@so lib/xmms2/libxmms_fluidsynth.so
 @so lib/xmms2/libxmms_flv.so
 @so lib/xmms2/libxmms_gvfs.so
 @so lib/xmms2/libxmms_html.so
@@ -119,13 +129,15 @@ lib/xmms2/
 @so lib/xmms2/libxmms_jack.so
 @so lib/xmms2/libxmms_karaoke.so
 @so lib/xmms2/libxmms_m3u.so
+@so lib/xmms2/libxmms_mid1.so
+@so lib/xmms2/libxmms_midsquash.so
 @so lib/xmms2/libxmms_mp4.so
 @so lib/xmms2/libxmms_mpg123.so
 @so lib/xmms2/libxmms_normalize.so
 @so lib/xmms2/libxmms_null.so
 @so lib/xmms2/libxmms_nulstripper.so
+@so lib/xmms2/libxmms_opus.so
 @so lib/xmms2/libxmms_pls.so
-@so lib/xmms2/libxmms_replaygain.so
 @so lib/xmms2/libxmms_rss.so
 @so lib/xmms2/libxmms_sndfile.so
 @so lib/xmms2/libxmms_tta.so

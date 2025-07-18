@@ -1,0 +1,12 @@
+Index: src/plugins/asf/libasf/asf.c
+--- src/plugins/asf/libasf/asf.c.orig
++++ src/plugins/asf/libasf/asf.c
+@@ -34,7 +34,7 @@ asf_fileio_read_cb(void *stream, void *buffer, int siz
+ 	int ret;
+ 
+ 	ret = fread(buffer, 1, size, stream);
+-	if (!ret && !feof(stream))
++	if (!ret && !feof((FILE*)stream))
+ 		return -1;
+ 
+ 	return ret;
