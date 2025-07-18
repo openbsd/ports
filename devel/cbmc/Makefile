@@ -2,13 +2,12 @@ COMMENT =	Bounded Model Checker for C and C++ programs
 
 GH_ACCOUNT =	diffblue
 GH_PROJECT =	cbmc
-GH_TAGNAME =	cbmc-5.5
+GH_TAGNAME =	cbmc-6.7.1
 PKGNAME =	${GH_TAGNAME}
-REVISION =	5
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.cprover.org/cbmc/
+HOMEPAGE =	https://www.cprover.org/cbmc/
 
 MAINTAINER =	Mages Simon <mages.simon@googlemail.com>
 
@@ -21,7 +20,7 @@ DISTFILES =	${GH_DISTFILE}
 DISTFILES.ex =	minisat2_2.2.1.orig.tar.gz
 SITES.ex =	${SITE_DEBIAN:=main/m/minisat2/}
 
-# C++11
+# C++17
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/bison
@@ -36,21 +35,26 @@ MAKE_FLAGS =	CC="${CC}" \
 
 WRKSRC =	${WRKDIST}/src
 
+BIN_LIST =	cbmc crangler goto-analyzer goto-cc goto-diff goto-harness \
+		goto-inspect goto-instrument goto-synthesizer
+
 post-extract:
 	mv ${WRKDIR}/minisat2-2.2.1 ${WRKDIST}/minisat-2.2.1
 	cd ${WRKDIST}/minisat-2.2.1; \
 	patch -z .bak -p1 < ../scripts/minisat-2.2.1-patch
 
 do-install:
-.for i in goto-analyzer goto-cc goto-diff goto-instrument cbmc
+.for i in ${BIN_LIST}
 	${INSTALL_PROGRAM} ${WRKBUILD}/${i}/${i} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKDIST}/doc/man/${i}.1 ${PREFIX}/man/man1/
 .endfor
-	${INSTALL_MAN} ${WRKDIST}/doc/man/cbmc.1 ${PREFIX}/man/man1/
 	cd ${WRKDIST}/doc/ && find . -type d -exec ${INSTALL_DATA_DIR} \
 		${PREFIX}/share/doc/cbmc/{} \;
 	cd ${WRKDIST}/doc/ && find . -type f -exec ${INSTALL_DATA} \
 		${WRKDIST}/doc/{} ${PREFIX}/share/doc/cbmc/{} \;
-	rm ${PREFIX}/share/doc/cbmc/man/cbmc.1
-	rmdir ${PREFIX}/share/doc/cbmc/man/
+	rm -rf ${PREFIX}/share/doc/cbmc/man/
+
+do-test:
+	cd ${WRKDIST}/regression/ && ${GMAKE} ${TEST_TARGET}
 
 .include <bsd.port.mk>
