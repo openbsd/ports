@@ -1,10 +1,10 @@
 Index: src/qmapshack/gis/CGisListWks.cpp
 --- src/qmapshack/gis/CGisListWks.cpp.orig
 +++ src/qmapshack/gis/CGisListWks.cpp
-@@ -20,7 +20,7 @@
- 
- #include "canvas/CCanvas.h"
+@@ -21,7 +21,7 @@
  #include "CMainWindow.h"
+ #include "canvas/CCanvas.h"
+ #include "gis/fit2/CFit2Project.h"
 -#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
 +#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined (Q_OS_OPENBSD)
  #include "device/CDeviceWatcherLinux.h"

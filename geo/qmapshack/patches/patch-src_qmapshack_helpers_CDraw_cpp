@@ -1,7 +1,7 @@
 Index: src/qmapshack/helpers/CDraw.cpp
 --- src/qmapshack/helpers/CDraw.cpp.orig
 +++ src/qmapshack/helpers/CDraw.cpp
-@@ -25,6 +25,7 @@
+@@ -24,6 +24,7 @@
  #include <QPainterPath>
  #include <QPointF>
  #include <QtMath>

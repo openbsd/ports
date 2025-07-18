@@ -1,11 +1,11 @@
 Index: src/qmaptool/helpers/CDraw.cpp
 --- src/qmaptool/helpers/CDraw.cpp.orig
 +++ src/qmaptool/helpers/CDraw.cpp
-@@ -25,6 +25,7 @@
+@@ -24,6 +24,7 @@
  #include <QPainterPath>
  #include <QPointF>
  #include <QtMath>
 +#include <QPainterPath>
  
- QPen CDraw::penBorderBlue(QColor(10, 10, 150, 220), 2);
- QPen CDraw::penBorderGray(Qt::lightGray, 2);
+ #include "canvas/CCanvas.h"
+ 

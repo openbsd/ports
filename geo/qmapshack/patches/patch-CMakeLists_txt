@@ -1,14 +1,22 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -162,10 +162,6 @@ if(${Qt5Widgets_VERSION} VERSION_LESS 5.8.0)
-     message( SEND_ERROR "You need at least Qt5.8 or newer.")
- endif()
+@@ -144,7 +144,7 @@ if(MSVC)
+ endif(MSVC)
  
--if(${PROJ_VERSION} VERSION_LESS 7.2.1)
--    message( SEND_ERROR "You need at least PROJ 7.2.1 or newer.")
+ if(UNIX)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -lm")
++    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -lm")
+     add_definitions(-Wall -Wpedantic -Wno-switch -Wno-strict-aliasing)
+ 
+     # Use ASAN for development versions
+@@ -202,9 +202,6 @@ qt_standard_project_setup(
+     I18N_TRANSLATED_LANGUAGES ca cs de es fr it nl ru
+ )
+ 
+-if(${PROJ_VERSION} VERSION_LESS 8.0.0)
+-    message( SEND_ERROR "You need at least PROJ 8.0.0 or newer.")
 -endif()
--
- if(USE_QT5DBus)
-     find_package(Qt5DBus REQUIRED)
-     if(Qt5DBus_FOUND)
+ 
+ if(USE_QT6DBus)
+     find_package(Qt6DBus REQUIRED)

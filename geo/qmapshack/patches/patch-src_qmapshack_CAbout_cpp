@@ -1,12 +1,12 @@
 Index: src/qmapshack/CAbout.cpp
 --- src/qmapshack/CAbout.cpp.orig
 +++ src/qmapshack/CAbout.cpp
-@@ -48,7 +48,7 @@ CAbout::CAbout(QWidget* parent)
-         labelRoutinoVersion->setText(tr("%1 (API V%2)").arg(Routino_Version).arg(Routino_APIVersion));
-     }
+@@ -46,7 +46,7 @@ CAbout::CAbout(QWidget* parent) : QDialog(parent) {
+     labelRoutinoVersion->setText(tr("%1 (API V%2)").arg(Routino_Version).arg(Routino_APIVersion));
+   }
  
 -#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
 +#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined (Q_OS_OPENBSD)
-     #if defined (HAVE_DBUS)
-     labelNoDBus->setText("");
-     #else
+ #if defined(HAVE_DBUS)
+   labelNoDBus->setText("");
+ #else

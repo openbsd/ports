@@ -1,12 +1,21 @@
 Index: src/qmapshack/setup/IAppSetup.cpp
 --- src/qmapshack/setup/IAppSetup.cpp.orig
 +++ src/qmapshack/setup/IAppSetup.cpp
-@@ -36,7 +36,7 @@ IAppSetup* IAppSetup::getPlatformInstance()
-     {
+@@ -23,7 +23,7 @@
+ #include "CCommandProcessor.h"
  #if defined(Q_OS_MAC)
-         instance = new CAppSetupMac();
+ #include "setup/CAppSetupMac.h"
 -#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__)
-+#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__) || defined (Q_OS_OPENBSD)
-         instance = new CAppSetupLinux();
- #elif defined (Q_OS_WIN32)
-         instance = new CAppSetupWin();
++#elif defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__)
+ #include "setup/CAppSetupLinux.h"
+ #elif defined(Q_OS_WIN32)
+ #include "setup/CAppSetupWin.h"
+@@ -37,7 +37,7 @@ IAppSetup* IAppSetup::getPlatformInstance() {
+   if (nullptr == instance) {
+ #if defined(Q_OS_MAC)
+     instance = new CAppSetupMac();
+-#elif defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__)
++#elif defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD) || defined(Q_OS_FREEBSD) || defined(__FreeBSD_kernel__) || defined(__GNU__)
+     instance = new CAppSetupLinux();
+ #elif defined(Q_OS_WIN32)
+     instance = new CAppSetupWin();
