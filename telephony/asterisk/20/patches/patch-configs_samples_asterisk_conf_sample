@@ -12,7 +12,7 @@ Index: configs/samples/asterisk.conf.sample
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be
-@@ -137,8 +137,8 @@ documentation_language = en_US	; Set the language you 
+@@ -145,8 +145,8 @@ documentation_language = en_US	; Set the language you 
                  ; Default: no
  
  ; Changing the following lines may compromise your security.

@@ -232,6 +232,7 @@ include/asterisk/utils.h
 include/asterisk/uuid.h
 include/asterisk/vector.h
 include/asterisk/version.h
+include/asterisk/websocket_client.h
 include/asterisk/xml.h
 include/asterisk/xmldoc.h
 include/asterisk/xmpp.h
@@ -544,6 +545,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_stun_monitor.so
 @so lib/asterisk/modules/res_timing_pthread.so
 @so lib/asterisk/modules/res_tonedetect.so
+@so lib/asterisk/modules/res_websocket_client.so
 @so lib/asterisk/modules/res_xmpp.so
 @comment lib/libasteriskpj.so
 @lib lib/libasteriskpj.so.${LIBasteriskpj_VERSION}
@@ -761,6 +763,7 @@ share/examples/asterisk/default/unistim.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
+share/examples/asterisk/default/websocket_client.conf
 share/examples/asterisk/default/xmpp.conf
 share/examples/asterisk/sip_to_pjsip/
 share/examples/asterisk/sip_to_pjsip/astconfigparser.py
