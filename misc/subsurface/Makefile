@@ -1,7 +1,7 @@
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	5
+REVISION =	6
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
@@ -12,12 +12,9 @@ HOMEPAGE =	https://subsurface-divelog.org
 # The content of mobile-widgets/qml/icons/ is Apache 2, but not installed.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates Qt5Concurrent
-WANTLIB += Qt5Core Qt5Gui Qt5Location Qt5Network Qt5Positioning
-WANTLIB += Qt5PositioningQuick Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets c crypto curl git2 m
-WANTLIB += sqlite3 ssh2 ssl usb-1.0 xml2 xslt zip
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Svg Qt5Widgets c crypto curl git2 m sqlite3 ssh2
+WANTLIB += ssl usb-1.0 xml2 zip
 
 SITES =		https://subsurface-divelog.org/downloads/
 EXTRACT_SUFX =	.tgz
@@ -43,19 +40,22 @@ LIB_DEPENDS =	archivers/libzip \
 		net/curl \
 		security/libssh2 \
 		textproc/libxml \
-		x11/grantlee-qt5 \
 		x11/qt5/qtbase \
-		x11/qt5/qtsvg \
-		x11/qt5/qtwebengine
+		x11/qt5/qtsvg
 
 USE_GMAKE =	Yes
 
-CONFIGURE_ARGS +=	-DNO_DOCS:Bool=ON \
-			-DUSE_WEBENGINE=ON \
-			-DBTSUPPORT:Bool=OFF
+# Disable the built-in facebook, user manual and printing support which require
+# qt5-webkit/qt5-webengine
+CONFIGURE_ARGS +=	-DNO_DOCS=ON \
+			-DUSE_WEBENGINE=OFF \
+			-DFBSUPPORT=OFF \
+			-DBTSUPPORT=OFF \
+			-DNO_PRINTING=ON \
+			-DNO_USERMANUAL=ON
 
 # many "undefined reference to `dc_*" when tests are enabled
-CONFIGURE_ARGS +=	-DMAKE_TESTS:Bool=OFF
+CONFIGURE_ARGS +=	-DMAKE_TESTS=OFF
 NO_TEST =		Yes
 
 post-extract:
