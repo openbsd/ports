@@ -5,6 +5,7 @@ COMMENT =	Magical shell history
 
 DISTNAME =	atuin-${V}
 V = 		18.7.1
+REVISION =	0
 
 DIST_TUPLE +=	github atuinsh atuin v${V} .
 
@@ -12,7 +13,7 @@ CATEGORIES =	shells
 
 HOMEPAGE =	https://atuin.sh/
 
-MAINTAINER =	Sebastien Marie <semarie@kapouey.eu.org>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
