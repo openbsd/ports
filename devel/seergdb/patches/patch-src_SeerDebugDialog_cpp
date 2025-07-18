@@ -1,0 +1,14 @@
+https://github.com/epasveer/seer/pull/337
+
+Index: src/SeerDebugDialog.cpp
+--- src/SeerDebugDialog.cpp.orig
++++ src/SeerDebugDialog.cpp
+@@ -431,7 +431,7 @@ void SeerDebugDialog::handleLoadBreakpointsFilenameToo
+ 
+ void SeerDebugDialog::handleLoadCoreFilenameToolButton () {
+ 
+-    QString name = QFileDialog::getOpenFileName(this, "Select a core file to debug.", coreFilename(), "Core Files (core core.*)", nullptr, QFileDialog::DontUseNativeDialog);
++    QString name = QFileDialog::getOpenFileName(this, "Select a core file to debug.", coreFilename(), "Core Files (core core.* *.core)", nullptr, QFileDialog::DontUseNativeDialog);
+ 
+     if (name != "") {
+         setCoreFilename(name);

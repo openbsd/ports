@@ -2,6 +2,7 @@ COMMENT=		graphical front-end to GDB
 
 V=			2.5
 PKGNAME=		seergdb-$V
+REVISION=		0
 
 GH_ACCOUNT=		epasveer
 GH_PROJECT=		seer
