@@ -1,8 +1,7 @@
 Make sure Exec points to the correct place.
-
-Index: dooble.desktop
---- dooble.desktop.orig
-+++ dooble.desktop
+Index: Distributions/dooble.desktop
+--- Distributions/dooble.desktop.orig
++++ Distributions/dooble.desktop
 @@ -3,7 +3,7 @@
  [Desktop Entry]
  Categories=Network;WebBrowser;

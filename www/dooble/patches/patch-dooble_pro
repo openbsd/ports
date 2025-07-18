@@ -3,26 +3,39 @@ Remove -O3 and -Werror.
 Index: dooble.pro
 --- dooble.pro.orig
 +++ dooble.pro
-@@ -305,13 +305,12 @@ versionAtLeast(QT_VERSION, 6.0.0) {
- QMAKE_LFLAGS += /entry:mainCRTStartup
- }
+@@ -9,8 +9,9 @@ macx {
+ CONVERT_DICT = ""
  } else {
+ versionAtLeast(QT_VERSION, 6.0.0) {
+-freebsd-* {
++openbsd-* {
+ CONVERT_DICT = "/usr/local/libexec/qt6/qwebengine_convert_dict"
++CONVERT_DICT = "${LOCALBASE}/lib/qt6/libexec/qwebengine_convert_dict"
+ } else:win32 {
+ qtPrepareTool(CONVERT_DICT, qwebengine_convert_dict)
+ } else {
+@@ -262,14 +263,12 @@ TEMPLATE	= app
+ 
+ QMAKE_CLEAN     += Dooble
+ 
+-freebsd-* {
++freebsd-*|openbsd-* {
+ # Enable only if FreeBSD's Qt and WebEngine versions differ.
+ DEFINES -= DOOBLE_FREEBSD_WEBENGINE_MISMATCH
 -QMAKE_CXXFLAGS_RELEASE += -O3 \
-+QMAKE_CXXFLAGS_RELEASE += \
-                           -Wall \
- 			  -Warray-bounds=2 \
+-                          -Wall \
++QMAKE_CXXFLAGS_RELEASE += -Wall \
                            -Wcast-align \
                            -Wcast-qual \
-                           -Wdouble-promotion \
 -                          -Werror \
                            -Wextra \
-                           -Wformat-overflow=2 \
-                           -Wformat-security \
-@@ -342,7 +341,6 @@ QMAKE_CXXFLAGS_RELEASE += -Wl,-z,relro \
- versionAtLeast(QT_VERSION, 6.0.0) {
- QMAKE_CXXFLAGS_RELEASE += -Wno-int-in-bool-context
- }
+                           -Wformat=2 \
+                           -Wold-style-cast \
+@@ -285,7 +284,6 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -fwrapv \
+                           -pedantic \
+                           -std=c++17
 -QMAKE_CXXFLAGS_RELEASE -= -O2
- }
- 
- QMAKE_DISTCLEAN += -r qtwebengine_dictionaries \
+ } else:macx {
+ QMAKE_APPLE_DEVICE_ARCHS = arm64 x86_64
+ QMAKE_CXXFLAGS_RELEASE += -O3 \
