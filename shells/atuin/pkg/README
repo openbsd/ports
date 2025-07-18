@@ -1,0 +1,8 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Once the binary is installed, the shell plugin requires installing.
+
+See https://docs.atuin.sh/guide/installation/#installing-the-shell-plugin
+for details.

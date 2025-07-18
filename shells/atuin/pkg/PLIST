@@ -1,0 +1,2 @@
+@bin bin/atuin
+share/doc/pkg-readmes/${PKGSTEM}
