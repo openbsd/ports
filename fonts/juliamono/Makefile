@@ -1,6 +1,6 @@
 COMMENT =	typeface carefully crafted & designed for computer screens
 
-V =		0.053
+V =		0.060
 DISTNAME =	JuliaMono
 PKGNAME =	juliamono-$V
 
@@ -23,8 +23,7 @@ WRKDIST =	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/juliamono
-	ls ${WRKSRC}/*.ttf | grep -v Latin | \
-		xargs -I{} ${INSTALL_DATA} {} ${PREFIX}/share/fonts/juliamono
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/share/fonts/juliamono
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/juliamono
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/juliamono
 
