@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += atuin
      SUBDIR += bash
      SUBDIR += bash-completion
      SUBDIR += dash
