@@ -1,9 +1,10 @@
 @pkgpath math/py-scikit-learn,python3
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/sklearn/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/__init__.py
@@ -974,6 +975,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/nump
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/numpy/_typing.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/numpy/fft.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/numpy/linalg.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/py.typed
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}/
@@ -983,12 +985,15 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torc
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}_aliases.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}fft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}fft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}linalg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/${MODPY_PYCACHE}linalg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/_aliases.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/_info.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/_typing.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/fft.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_compat/torch/linalg.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/externals/array_api_extra/
@@ -2102,6 +2107,8 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_chunking
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_chunking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_encode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_encode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_estimator_html_repr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_estimator_html_repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_indexing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_indexing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/${MODPY_PYCACHE}_mask.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2175,6 +2182,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_chunking.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_cython_blas.pxd
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_cython_blas.pyx
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_encode.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_estimator_html_repr.py
 @so lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.pxd
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/_fast_dict.pyx
@@ -2307,6 +2315,8 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_encode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_estimator_checks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_estimator_checks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_estimator_html_repr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_estimator_html_repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_extmath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_extmath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/${MODPY_PYCACHE}test_fast_dict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2379,6 +2389,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_cython_blas.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_deprecation.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_encode.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_estimator_checks.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_estimator_html_repr.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_extmath.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_fast_dict.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/utils/tests/test_fixes.py
