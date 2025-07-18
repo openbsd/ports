@@ -1,0 +1,27 @@
+Index: ac/qt6.m4
+--- ac/qt6.m4.orig
++++ ac/qt6.m4
+@@ -5,6 +5,8 @@ dnl
+ qt_min_ver=6.2.0
+ 
+ check_qt6() {
++# Force Qt6 compilation test to succeed
++am_cv_qt6_compilation=1
+   AC_ARG_WITH(qmake6,
+     AS_HELP_STRING([--with-qmake6=prog],[use prog instead of looking for qmake6]),
+     [ QMAKE6="$with_qmake6" ],)
+@@ -23,11 +25,11 @@ check_qt6() {
+   fi
+ 
+   QMAKE_SPEC=""
+-  if "$QMAKE6" -query 2>&5 | grep -F -q "QMAKE_XSPEC:linux-g++"; then
++  if "$QMAKE6" -query 2>&5 | grep -F -q "QMAKE_XSPEC:openbsd"; then
+     if test x"$COMPILER_TYPE" = xclang; then
+-      QMAKE_SPEC="-spec linux-clang"
++      QMAKE_SPEC="-spec openbsd-clang"
+     else
+-      QMAKE_SPEC="-spec linux-g++"
++      QMAKE_SPEC="-spec openbsd-g++"
+     fi
+   fi
+ 

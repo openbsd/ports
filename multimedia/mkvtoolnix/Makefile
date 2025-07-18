@@ -1,9 +1,6 @@
-BROKEN=		fail to configure: fatal error: 'QtCore' file not found
-
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-88.0
-REVISION=	1
+DISTNAME=	mkvtoolnix-93.0
 
 CATEGORIES=	multimedia x11
 
@@ -14,7 +11,7 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC GL Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += ${COMPILER_LIBCXX} FLAC Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Svg Qt6Widgets boost_filesystem
 WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
 WANTLIB += m matroska ogg pugixml vorbis z
@@ -72,12 +69,24 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--with-qmake6=${MODQT6_QMAKE}
 
 MAKE_ENV+=	V=1
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT6_LIBDIR}
+
+CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR}
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtCore
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtConcurrent
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtDBus
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtGui
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtMultimedia
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtNetwork
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtSvg
+CXXFLAGS+=	-I/usr/local/include/X11/qt6/QtWidgets
+
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+LDFLAGS+=	-lQt6Concurrent -lQt6Core -lQt6DBus -lQt6Gui
+LDFLAGS+=	-lQt6Multimedia -lQt6Network -lQt6Svg -lQt6Widgets
 
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt6/bin/lconvert" \
 		QMAKE6="${MODQT6_QMAKE}" \
-		CPPFLAGS="${CPPFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PANDOC=
 
