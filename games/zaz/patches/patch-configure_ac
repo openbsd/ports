@@ -1,12 +1,12 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -10,11 +10,11 @@ AM_PROG_CC_STDC
+@@ -9,11 +9,11 @@ AM_PROG_CC_STDC
  AC_HEADER_STDC
  AC_PROG_RANLIB
  
--PKG_CHECK_MODULES(ZAZ, [sdl vorbisfile theoraenc theoradec])
-+PKG_CHECK_MODULES(ZAZ, [sdl vorbisfile vorbis ogg theoraenc theoradec])
+-PKG_CHECK_MODULES(ZAZ, [sdl vorbis vorbisfile theoraenc theoradec])
++PKG_CHECK_MODULES(ZAZ, [sdl vorbis vorbisfile vorbis ogg theoraenc theoradec])
  PKG_CHECK_MODULES(FTGL, ftgl >= 2.1.3)
  
  AC_CHECK_LIB(SDL_image, IMG_Load, [], AC_MSG_ERROR(no SDL_image found))

@@ -1,6 +1,5 @@
 COMMENT =	Zuma-like arcade game
-DISTNAME =	zaz-1.0.0
-REVISION =	8
+DISTNAME =	zaz-1.0.1
 CATEGORIES =	games
 
 HOMEPAGE =	https://zaz.sourceforge.net/
@@ -15,7 +14,6 @@ WANTLIB += m ogg theoradec theoraenc vorbis vorbisenc vorbisfile
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-EXTRACT_SUFX =	.tar.bz2
 SITES =		${SITE_SOURCEFORGE:=zaz/}
 
 LIB_DEPENDS =	audio/libvorbis \
