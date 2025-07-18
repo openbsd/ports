@@ -6,7 +6,7 @@ This removes the -o root -g bin, so it can succeed as a regular user.
 Index: lib/rubygems/ext/builder.rb
 --- lib/rubygems/ext/builder.rb.orig
 +++ lib/rubygems/ext/builder.rb
-@@ -41,6 +41,12 @@ class Gem::Ext::Builder
+@@ -40,6 +40,12 @@ class Gem::Ext::Builder
        env << format("sitelibdir=%s", sitedir)
      end
  
