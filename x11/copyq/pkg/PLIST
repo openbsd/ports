@@ -30,6 +30,7 @@ share/copyq/themes/tooltip.css
 share/copyq/themes/wine.ini
 share/copyq/translations/
 share/copyq/translations/copyq_ar.qm
+share/copyq/translations/copyq_ca.qm
 share/copyq/translations/copyq_cs.qm
 share/copyq/translations/copyq_da.qm
 share/copyq/translations/copyq_de.qm
@@ -38,6 +39,7 @@ share/copyq/translations/copyq_es.qm
 share/copyq/translations/copyq_fa.qm
 share/copyq/translations/copyq_fi.qm
 share/copyq/translations/copyq_fr.qm
+share/copyq/translations/copyq_he.qm
 share/copyq/translations/copyq_hr.qm
 share/copyq/translations/copyq_hu.qm
 share/copyq/translations/copyq_id.qm
