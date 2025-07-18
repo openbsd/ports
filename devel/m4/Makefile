@@ -1,10 +1,9 @@
 COMMENT=	GNU m4
 
-DISTNAME=	m4-1.4.19
+DISTNAME=	m4-1.4.20
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=m4/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/m4/
 

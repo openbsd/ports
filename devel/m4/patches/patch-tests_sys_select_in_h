@@ -3,7 +3,7 @@ Our <sys/select.h> has definition of 'sigset_t'.
 Index: tests/sys_select.in.h
 --- tests/sys_select.in.h.orig
 +++ tests/sys_select.in.h
-@@ -111,7 +111,7 @@
+@@ -125,7 +125,7 @@
     undeclared error occurs in <pthread.h>.
     Do this after the include_next (for the sake of OpenBSD 5.0) but before
     the split double-inclusion guard (for the sake of Solaris).  */
