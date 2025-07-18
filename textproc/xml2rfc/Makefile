@@ -1,12 +1,12 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-# XXX wrong ver upstream
-MODPY_DISTV=	3.25.0
 GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
-GH_TAGNAME=	v3.26.0
-#${MODPY_DISTV}
-REVISION=	0
+GH_TAGNAME=	v3.30.0
+#GH_TAGNAME=	v${MODPY_DISTV}
+# bad version numbers in tags;
+# https://github.com/ietf-tools/xml2rfc/issues/1264
+MODPY_DISTV=	3.29.0
 
 CATEGORIES=	textproc
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	sysutils/py-platformdirs \
 		www/py-requests \
 		devel/py-wcwidth
 
-TEST_DEPENDS+=	devel/py-decorator \
+TEST_DEPENDS=	devel/py-decorator \
 		print/py-pypdf \
 		print/weasyprint \
 		textproc/py-dict2xml \
@@ -40,8 +40,8 @@ TEST_DEPENDS+=	devel/py-decorator \
 
 # tests also need network access
 PORTHOME=	${WRKDIR}
-pre-test:
-	# hiding pkg_resources DeprecationWarnings
+xpre-test:
+	# hide pkg_resources DeprecationWarnings
 	@ (echo '[pytest]'; \
 	echo 'filterwarnings = ignore:.*pkg_resources.*:DeprecationWarning') \
 	> ${WRKSRC}/pytest.ini

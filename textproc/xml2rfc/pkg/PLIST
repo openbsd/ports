@@ -1,14 +1,14 @@
 @pkgpath textproc/xml2rfc,no_x11
 bin/xml2rfc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/xml2rfc-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/xml2rfc-3.29.0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xml2rfc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,8 +54,6 @@ lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v2.rnc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v2.rng
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v3.rnc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v3.rng
-lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v3compat.dtd
-lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/v3compat.rnc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/xml2rfc-v3-emacs-nxml.rnc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/xml2rfc.css
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/data/xml2rfc.js
@@ -93,6 +91,8 @@ lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}fonts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}fonts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}name.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}postal.${M
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}unicode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/${MODPY_PYCACHE}unicode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/date.py
+lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/file.py
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/fonts.py
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/name.py
 lib/python${MODPY_VERSION}/site-packages/xml2rfc/util/num.py
