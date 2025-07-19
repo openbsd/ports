@@ -1,0 +1,12 @@
+Index: src/texmaker.cpp
+--- src/texmaker.cpp.orig
++++ src/texmaker.cpp
+@@ -990,7 +990,7 @@ translationList.append(QString("en"));
+ #ifdef USB_VERSION
+ QDir transdir(QCoreApplication::applicationDirPath());
+ #else
+-QDir transdir(PREFIX"/share/texmaker");
++QDir transdir(PREFIX"/share/hunspell/");
+ #endif
+ 
+ #endif

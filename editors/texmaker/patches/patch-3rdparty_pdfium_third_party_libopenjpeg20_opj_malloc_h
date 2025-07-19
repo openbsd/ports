@@ -1,6 +1,6 @@
-Index: pdfium/third_party/libopenjpeg20/opj_malloc.h
---- pdfium/third_party/libopenjpeg20/opj_malloc.h.orig
-+++ pdfium/third_party/libopenjpeg20/opj_malloc.h
+Index: 3rdparty/pdfium/third_party/libopenjpeg20/opj_malloc.h
+--- 3rdparty/pdfium/third_party/libopenjpeg20/opj_malloc.h.orig
++++ 3rdparty/pdfium/third_party/libopenjpeg20/opj_malloc.h
 @@ -98,7 +98,7 @@ Allocate memory aligned to a 16 byte boundary
  #else /* Not _WIN32 */
  	#if defined(__sun)

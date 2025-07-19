@@ -1,0 +1,12 @@
+Index: 3rdparty/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
+--- 3rdparty/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp.orig
++++ 3rdparty/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
+@@ -425,6 +425,8 @@ const FX_CHAR* g_FontFolders[] = {
+ #if _FXM_PLATFORM_ == _FXM_PLATFORM_LINUX_
+     "/usr/share/fonts", "/usr/share/X11/fonts/Type1",
+     "/usr/share/X11/fonts/TTF", "/usr/local/share/fonts",
++    "${X11BASE}/lib/X11/fonts/Type1",
++    "${X11BASE}/lib/X11/fonts/TTF", "/usr/local/share/fonts",
+ #elif _FXM_PLATFORM_ == _FXM_PLATFORM_APPLE_
+     "~/Library/Fonts", "/Library/Fonts", "/System/Library/Fonts",
+ #elif _FXM_PLATFORM_ == _FXM_PLATFORM_ANDROID_

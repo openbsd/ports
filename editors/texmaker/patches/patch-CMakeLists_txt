@@ -1,0 +1,120 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -38,6 +38,8 @@ elseif (WIN32)
+ elseif (APPLE)
+     set(INSTALL_DIR ${CMAKE_SOURCE_DIR}/deploy/macos)
+ endif()
++# Allow INSTALL_DIR to be overridden via command line
++set(INSTALL_DIR ${DEFAULT_INSTALL_DIR} CACHE PATH "Installation directory for Texmaker")
+ ################## RESOURCES ########################
+ if (UNIX AND NOT APPLE)
+ set(UTILITIES_FILES
+@@ -388,6 +390,20 @@ set(CMAKE_AUTORCC ON)
+ 
+ find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core Core5Compat Network PrintSupport Qml Widgets Xml LinguistTools)
+ 
++option(USE_SYSTEM_HUNSPELL "Use system-installed Hunspell instead of bundled version" OFF)
++
++if(USE_SYSTEM_HUNSPELL)
++    # Find system Hunspell
++    find_package(PkgConfig REQUIRED)
++    pkg_check_modules(HUNSPELL REQUIRED hunspell)
++
++    if(HUNSPELL_FOUND)
++        message(STATUS "Using system Hunspell: ${HUNSPELL_VERSION}")
++    else()
++        message(FATAL_ERROR "System Hunspell not found")
++    endif()
++endif()
++
+ qt_standard_project_setup()
+ 
+ if (UNIX AND NOT APPLE)
+@@ -414,9 +430,34 @@ elseif (APPLE)
+         3rdparty/pdfium/core/fxge/apple/fx_quartz_device.cpp
+ 	)
+ endif()
++# Hunspell sources (only if not using system version)
++if(NOT USE_SYSTEM_HUNSPELL)
++    set(HUNSPELL_SOURCES
++3rdparty/hunspell/affentry.cxx 3rdparty/hunspell/affentry.hxx
++3rdparty/hunspell/affixmgr.cxx 3rdparty/hunspell/affixmgr.hxx
++3rdparty/hunspell/atypes.hxx
++3rdparty/hunspell/baseaffix.hxx
++3rdparty/hunspell/csutil.cxx 3rdparty/hunspell/csutil.hxx
++3rdparty/hunspell/filemgr.cxx 3rdparty/hunspell/filemgr.hxx
++3rdparty/hunspell/hashmgr.cxx 3rdparty/hunspell/hashmgr.hxx
++3rdparty/hunspell/htypes.hxx
++3rdparty/hunspell/hunspell.cxx 3rdparty/hunspell/hunspell.h 3rdparty/hunspell/hunspell.hxx
++3rdparty/hunspell/hunvisapi.h
++3rdparty/hunspell/hunzip.cxx 3rdparty/hunspell/hunzip.hxx
++3rdparty/hunspell/langnum.hxx
++3rdparty/hunspell/phonet.cxx 3rdparty/hunspell/phonet.hxx
++3rdparty/hunspell/replist.cxx 3rdparty/hunspell/replist.hxx
++3rdparty/hunspell/suggestmgr.cxx 3rdparty/hunspell/suggestmgr.hxx
++3rdparty/hunspell/utf_info.hxx
++3rdparty/hunspell/w_char.hxx
++    )
++else()
++    set(HUNSPELL_SOURCES "")
++endif()
+ 
+ set(texmaker_SRCS
+ ${texmaker_SRCS_PLATFORM}
++${HUNSPELL_SOURCES}
+ 3rdparty/encodingprober/CharDistribution.cpp 3rdparty/encodingprober/CharDistribution.h
+ 3rdparty/encodingprober/ChineseGroupProber.cpp 3rdparty/encodingprober/ChineseGroupProber.h
+ 3rdparty/encodingprober/JapaneseGroupProber.cpp 3rdparty/encodingprober/JapaneseGroupProber.h
+@@ -448,23 +489,6 @@ ${texmaker_SRCS_PLATFORM}
+ 3rdparty/encodingprober/nsSJISProber.cpp 3rdparty/encodingprober/nsSJISProber.h
+ 3rdparty/encodingprober/nsUniversalDetector.cpp 3rdparty/encodingprober/nsUniversalDetector.h
+ 3rdparty/encodingprober/qencodingprober.cpp 3rdparty/encodingprober/qencodingprober.h
+-3rdparty/hunspell/affentry.cxx 3rdparty/hunspell/affentry.hxx
+-3rdparty/hunspell/affixmgr.cxx 3rdparty/hunspell/affixmgr.hxx
+-3rdparty/hunspell/atypes.hxx
+-3rdparty/hunspell/baseaffix.hxx
+-3rdparty/hunspell/csutil.cxx 3rdparty/hunspell/csutil.hxx
+-3rdparty/hunspell/filemgr.cxx 3rdparty/hunspell/filemgr.hxx
+-3rdparty/hunspell/hashmgr.cxx 3rdparty/hunspell/hashmgr.hxx
+-3rdparty/hunspell/htypes.hxx
+-3rdparty/hunspell/hunspell.cxx 3rdparty/hunspell/hunspell.h 3rdparty/hunspell/hunspell.hxx
+-3rdparty/hunspell/hunvisapi.h
+-3rdparty/hunspell/hunzip.cxx 3rdparty/hunspell/hunzip.hxx
+-3rdparty/hunspell/langnum.hxx
+-3rdparty/hunspell/phonet.cxx 3rdparty/hunspell/phonet.hxx
+-3rdparty/hunspell/replist.cxx 3rdparty/hunspell/replist.hxx
+-3rdparty/hunspell/suggestmgr.cxx 3rdparty/hunspell/suggestmgr.hxx
+-3rdparty/hunspell/utf_info.hxx
+-3rdparty/hunspell/w_char.hxx
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt.cpp 3rdparty/pdfium/core/fdrm/crypto/fx_crypt.h
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt_aes.cpp
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt_sha.cpp
+@@ -1288,6 +1312,14 @@ set(TEXMAKER_INCLUDE_DIRECTORIES
+ )
+ 
+ 
++if(USE_SYSTEM_HUNSPELL)
++    target_include_directories(${PROJECT_NAME} PRIVATE ${HUNSPELL_INCLUDE_DIRS})
++    target_link_libraries(${PROJECT_NAME} PRIVATE ${HUNSPELL_LIBRARIES})
++    target_compile_options(${PROJECT_NAME} PRIVATE ${HUNSPELL_CFLAGS_OTHER})
++else()
++    target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/3rdparty/hunspell)
++endif()
++
+ target_include_directories( ${PROJECT_NAME} PUBLIC ${TEXMAKER_INCLUDE_DIRECTORIES})
+ 
+ target_compile_definitions(${PROJECT_NAME} PRIVATE
+@@ -1342,10 +1374,10 @@ if (${COMPILEUSB} STREQUAL "yes")
+ endif()
+ set(PREFIX ${INSTALL_DIR})
+ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+-  set(CMAKE_INSTALL_PREFIX ${PREFIX} CACHE PATH "..." FORCE)
++  set(CMAKE_INSTALL_PREFIX ${LOCALBASE} CACHE PATH "..." FORCE)
+ endif()
+ target_compile_definitions(${PROJECT_NAME} PRIVATE
+-    PREFIX=\"${PREFIX}\"
++    PREFIX=\"${LOCALBASE}\"
+     )
+ if (${AUTHORIZELINUXQSTYLES} STREQUAL "yes")
+ target_compile_definitions(${PROJECT_NAME} PRIVATE

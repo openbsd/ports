@@ -1,0 +1,13 @@
+Index: 3rdparty/pdfium/core/fxcrt/fx_system.h
+--- 3rdparty/pdfium/core/fxcrt/fx_system.h.orig
++++ 3rdparty/pdfium/core/fxcrt/fx_system.h
+@@ -43,6 +43,9 @@
+ #elif defined(__linux__)
+ #define _FX_OS_ _FX_LINUX_DESKTOP_
+ #define _FXM_PLATFORM_ _FXM_PLATFORM_LINUX_
++#elif defined(__OpenBSD__)
++#define _FX_OS_ _FX_LINUX_DESKTOP_
++#define _FXM_PLATFORM_ _FXM_PLATFORM_LINUX_
+ #elif defined(__APPLE__)
+ #define _FX_OS_ _FX_MACOSX_
+ #define _FXM_PLATFORM_ _FXM_PLATFORM_APPLE_
