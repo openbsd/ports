@@ -4,9 +4,11 @@ MODPY_DISTV =		2.4.2
 DISTNAME =		qtpy-${MODPY_DISTV}
 PKGNAME =		py-qtpy-${MODPY_DISTV}
 CATEGORIES =		x11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
