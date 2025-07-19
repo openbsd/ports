@@ -1807,7 +1807,6 @@
      SUBDIR += qbs
      SUBDIR += qcoro
      SUBDIR += qgit
-     SUBDIR += qjson
      SUBDIR += qp
      SUBDIR += qt-creator
      SUBDIR += quilt
