@@ -1,9 +1,8 @@
 COMMENT =		widgets and components for PyQt/PySide
 
-MODPY_DISTV =		0.7.3
+MODPY_DISTV =		0.7.5
 DISTNAME =		superqt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		x11
 
