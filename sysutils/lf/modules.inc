@@ -10,14 +10,14 @@ MODGO_MODULES =	\
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	golang.org/x/crypto			 v0.23.0 \
-	golang.org/x/mod			 v0.17.0 \
+	golang.org/x/mod			 v0.25.0 \
 	golang.org/x/net			 v0.25.0 \
-	golang.org/x/sync			 v0.13.0 \
-	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/sync			 v0.15.0 \
+	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.31.0 \
-	golang.org/x/text			 v0.24.0 \
-	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/term			 v0.32.0 \
+	golang.org/x/text			 v0.26.0 \
+	golang.org/x/tools			 v0.33.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7
 
 MODGO_MODFILES =	\
@@ -29,6 +29,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto	 v0.19.0 \
 	golang.org/x/mod	 v0.12.0 \
 	golang.org/x/mod	 v0.15.0 \
+	golang.org/x/mod	 v0.17.0 \
 	golang.org/x/mod	 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod	 v0.8.0 \
 	golang.org/x/net	 v0.0.0-20190620200207-3b0461eec859 \
@@ -80,5 +81,6 @@ MODGO_MODFILES =	\
 	golang.org/x/tools	 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools	 v0.1.12 \
 	golang.org/x/tools	 v0.13.0 \
+	golang.org/x/tools	 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/tools	 v0.6.0
 
