@@ -67,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}paginate.${MOD
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}paginate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -370,6 +372,18 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/2024-02-28/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/2024-02-28/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/2024-02-28/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/2024-02-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/2024-02-28/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-data-automation/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-data-automation-runtime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-data-automation-runtime/2024-06-13/
@@ -1700,6 +1714,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mailmanager/2023-10-17/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mailmanager/2023-10-17/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mailmanager/2023-10-17/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mailmanager/2023-10-17/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mailmanager/2023-10-17/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain-query/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/managedblockchain-query/2023-05-04/
@@ -2215,6 +2230,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/repostspace/2022-05-13/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/repostspace/2022-05-13/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/repostspace/2022-05-13/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/repostspace/2022-05-13/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/repostspace/2022-05-13/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/endpoint-rule-set-1.json
@@ -2326,6 +2342,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/s3tables/2018-05-10/endpo
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3tables/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3tables/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3tables/2018-05-10/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/2025-07-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/2025-07-15/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/2025-07-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/2025-07-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3vectors/2025-07-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sagemaker-a2i-runtime/2019-11-07/
@@ -2839,6 +2861,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/model.py
 lib/python${MODPY_VERSION}/site-packages/botocore/monitoring.py
 lib/python${MODPY_VERSION}/site-packages/botocore/paginate.py
 lib/python${MODPY_VERSION}/site-packages/botocore/parsers.py
+lib/python${MODPY_VERSION}/site-packages/botocore/plugin.py
 lib/python${MODPY_VERSION}/site-packages/botocore/regions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/response.py
 lib/python${MODPY_VERSION}/site-packages/botocore/retries/
