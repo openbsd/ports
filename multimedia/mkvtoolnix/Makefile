@@ -87,6 +87,7 @@ LDFLAGS+=	-lQt6Multimedia -lQt6Network -lQt6Svg -lQt6Widgets
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt6/bin/lconvert" \
 		QMAKE6="${MODQT6_QMAKE}" \
 		CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PANDOC=
 
