@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1732 2025/07/17 09:31:08 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1733 2025/07/19 06:40:09 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1273,6 +1273,7 @@ setup_obsolete_reason(
 	12 => 'rcube-markasjunk2',
 	12 => 'rcube-sieverules',
 	3 => 'rcube-yubikey-plugin',
+	3 => 'qjson',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
