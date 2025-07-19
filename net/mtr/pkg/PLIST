@@ -7,4 +7,6 @@
 @mode 4555
 @bin sbin/mtr-packet
 @mode
+share/bash-completion/
+share/bash-completion/completions/
 share/bash-completion/completions/mtr

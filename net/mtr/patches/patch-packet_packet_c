@@ -9,14 +9,29 @@ Index: packet/packet.c
  
  #ifdef HAVE_LIBCAP
  #include <sys/capability.h>
-@@ -43,11 +44,19 @@ int drop_elevated_permissions(
- #ifdef HAVE_LIBCAP
-     cap_t cap;
- #endif
-+    struct passwd *pw;
+@@ -97,6 +98,14 @@ void drop_excess_capabilities() {
+         }
+     }
  
++#ifdef __OpenBSD__
++    /* no filesystem visibility */
++    if (unveil("/", "") == -1)
++        return -1;
++    if (unveil(NULL, NULL) == -1)
++        return -1;
++#endif
++
+     // Update the process's capabilities to match 'wanted_cap'
+     if(cap_set_proc(wanted_cap)) {
+         goto pcap_error;
+@@ -121,10 +130,19 @@ static
+ int drop_elevated_permissions(
+     void)
+ {
 -    /*  Drop any suid permissions granted  */
 -    if (setgid(getgid()) || setuid(getuid())) {
++    struct passwd *pw;
++
 +    if ((pw = getpwnam("_mtr")) == NULL) {
          return -1;
      }
@@ -31,17 +46,3 @@ Index: packet/packet.c
  
      if (geteuid() != getuid() || getegid() != getgid()) {
          return -1;
-@@ -68,6 +77,13 @@ int drop_elevated_permissions(
-     if (cap_set_proc(cap)) {
-         return -1;
-     }
-+#endif
-+#ifdef __OpenBSD__
-+    /* no filesystem visibility */
-+    if (unveil("/", "") == -1)
-+        return -1;
-+    if (unveil(NULL, NULL) == -1)
-+        return -1;
- #endif
- 
-     return 0;
