@@ -1,13 +1,19 @@
 @bin bin/cassette
-share/appdata/
-share/appdata/io.github.Rirusha.Cassette.appdata.xml
-share/applications/io.github.Rirusha.Cassette.desktop
-share/glib-2.0/schemas/io.github.Rirusha.Cassette.gschema.xml
-share/icons/hicolor/scalable/apps/io.github.Rirusha.Cassette.svg
-share/icons/hicolor/symbolic/apps/io.github.Rirusha.Cassette-symbolic.svg
+share/applications/space.rirusha.Cassette.desktop
+share/glib-2.0/schemas/space.rirusha.Cassette.gschema.xml
+share/icons/hicolor/scalable/apps/space.rirusha.Cassette.svg
+share/icons/hicolor/symbolic/apps/space.rirusha.Cassette-symbolic.svg
 share/locale/be/LC_MESSAGES/cassette.mo
+share/locale/de/LC_MESSAGES/cassette.mo
 share/locale/es/LC_MESSAGES/cassette.mo
+share/locale/pt/LC_MESSAGES/cassette.mo
+share/locale/pt_BR/LC_MESSAGES/cassette.mo
 share/locale/ru/LC_MESSAGES/cassette.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-desktop-database
+share/locale/sl/LC_MESSAGES/cassette.mo
+share/locale/sv/LC_MESSAGES/cassette.mo
+share/locale/tr/LC_MESSAGES/cassette.mo
+share/locale/zh_CN/LC_MESSAGES/cassette.mo
+share/metainfo/space.rirusha.Cassette.metainfo.xml

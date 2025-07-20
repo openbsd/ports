@@ -1,7 +1,7 @@
 COMMENT =		unofficial Yandex Music client
 
-DIST_TUPLE =		gnome	Rirusha	Cassette	ver-0.2.0	.
-WRKDIST =		${WRKDIR}/${DISTNAME:S/-/-ver-/}
+DIST_TUPLE =		gnome	Rirusha	Cassette	v0.2.1	.
+WRKDIST =		${WRKDIR}/${DISTNAME:S/-/-v/}
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		audio x11
