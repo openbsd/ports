@@ -1,5 +1,5 @@
 COMMENT =		fast and smart SONOS controller
-DIST_TUPLE =		github	janbar	noson-app	5.6.10	.
+DIST_TUPLE =		github	janbar	noson-app	5.6.13	.
 CATEGORIES =		audio net
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
