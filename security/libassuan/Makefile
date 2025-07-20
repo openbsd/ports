@@ -1,6 +1,7 @@
 COMMENT=		IPC library used by GnuPG and gpgme
 
 DISTNAME=		libassuan-2.5.5
+REVISION=		0
 
 SHARED_LIBS +=  assuan            2.1      # 8.1
 
@@ -11,7 +12,7 @@ HOMEPAGE=		https://www.gnupg.org/software/libassuan/index.html
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += gpg-error iconv intl
+WANTLIB += gpg-error iconv intl pthread
 
 SITES=			${SITE_GNUPG:=libassuan/}
 EXTRACT_SUFX=		.tar.bz2

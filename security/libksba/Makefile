@@ -1,6 +1,8 @@
 COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.6.7
+REVISION =	0
+
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 2.0	# 22.4
@@ -18,7 +20,7 @@ EXTRACT_SUFX = 		.tar.bz2
 
 LIB_DEPENDS = 		devel/gettext,-runtime \
 			security/libgpg-error
-WANTLIB += gpg-error iconv intl
+WANTLIB += gpg-error iconv intl pthread
 
 CONFIGURE_STYLE = 	gnu
 
