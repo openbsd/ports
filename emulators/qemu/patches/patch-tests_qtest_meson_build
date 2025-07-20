@@ -1,14 +1,14 @@
 Index: tests/qtest/meson.build
 --- tests/qtest/meson.build.orig
 +++ tests/qtest/meson.build
-@@ -362,14 +362,6 @@ qtests = {
-   'netdev-socket': files('netdev-socket.c', '../unit/socket-helpers.c'),
+@@ -385,14 +385,6 @@ qtests = {
+   'ast2700-smc-test': files('aspeed-smc-utils.c', 'ast2700-smc-test.c'),
  }
  
 -if vnc.found()
 -  gvnc = dependency('gvnc-1.0', method: 'pkg-config', required: false)
 -  if gvnc.found()
--    qtests += {'vnc-display-test': [gvnc]}
+-    qtests += {'vnc-display-test': [gvnc, keymap_targets]}
 -    qtests_generic += [ 'vnc-display-test' ]
 -  endif
 -endif

@@ -1,11 +1,12 @@
 - revert retguard bug workaround
+- support for libnfs API v2
 - localstatedir does not belong under prefix
-- Remove hardcoding of optimization
+- remove hardcoding of optimization
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -673,8 +673,7 @@ hardening_flags = [
+@@ -702,8 +702,7 @@ hardening_flags = [
  #
  # NB2: This clashes with the "retguard" extension of OpenBSD's Clang
  # https://gitlab.com/qemu-project/qemu/-/issues/2278
@@ -15,7 +16,16 @@ Index: meson.build
                 name: '-fzero-call-used-regs=used-gpr',
                 args: ['-O2', '-fzero-call-used-regs=used-gpr'])
      hardening_flags += '-fzero-call-used-regs=used-gpr'
-@@ -2376,7 +2375,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -1154,7 +1153,7 @@ endif
+ 
+ libnfs = not_found
+ if not get_option('libnfs').auto() or have_block
+-  libnfs = dependency('libnfs', version: ['>=1.9.3', '<6.0.0'],
++  libnfs = dependency('libnfs', version: '>=1.9.3',
+                       required: get_option('libnfs'),
+                       method: 'pkg-config')
+ endif
+@@ -2412,7 +2411,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -24,7 +34,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4564,9 +4563,6 @@ if have_rust
+@@ -4584,9 +4583,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
