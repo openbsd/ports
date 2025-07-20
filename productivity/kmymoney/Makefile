@@ -4,6 +4,7 @@ COMMENT =	personal finance manager
 
 V =		5.2.0
 DISTNAME =	kmymoney-${V}
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -54,7 +55,7 @@ WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Sql Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml alkimia6 assuan c db db_cxx gmp gpgme
 WANTLIB += gpgmepp ical icalss icalvcal icudata icui18n icuuc
-WANTLIB += m ofx ${MODPY_WANTLIB} qgpgmeqt6 sqlcipher
+WANTLIB += m qt6keychain ofx ${MODPY_WANTLIB} qgpgmeqt6 sqlcipher
 
 MODULES =		lang/python \
 			devel/kf6
@@ -106,6 +107,7 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/libofx \
 			graphics/kdiagram-qt6 \
 			productivity/libalkimia>=8.2 \
+			security/qtkeychain,qt6 \
 			security/gpgme,-qt \
 			security/libassuan \
 			textproc/icu4c \
