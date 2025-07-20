@@ -1,8 +1,8 @@
 COMMENT =		multi language server websocket proxy for jupyterlab server
 
-MODPY_DISTV =		2.2.5
-DISTNAME =		jupyter-lsp-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:S/-/_/}
+MODPY_DISTV =		2.2.6
+DISTNAME =		jupyter_lsp-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
