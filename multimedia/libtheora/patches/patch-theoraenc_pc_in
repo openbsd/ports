@@ -7,8 +7,8 @@ Index: theoraenc.pc.in
  Name: theora
  Description: Theora video codec (encoder)
  Version: @VERSION@
--Requires: theoradec, ogg >= 1.1
-+Requires.private: theoradec, ogg >= 1.1
+-Requires: theoradec, ogg >= @THEORA_LIBOGG_REQ_VERSION@
++Requires.private: theoradec, ogg >= @THEORA_LIBOGG_REQ_VERSION@
  Conflicts:
  Libs: -L${libdir} -ltheoraenc
  Cflags: -I${includedir}
