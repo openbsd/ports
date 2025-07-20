@@ -6,11 +6,7 @@
 @bin bin/faad
 include/faad.h
 include/neaacdec.h
-@static-lib lib/libfaad.a
-lib/libfaad.la
 @lib lib/libfaad.so.${LIBfaad_VERSION}
-@static-lib lib/libfaad_drm.a
-lib/libfaad_drm.la
 @lib lib/libfaad_drm.so.${LIBfaad_drm_VERSION}
 lib/pkgconfig/faad2.pc
 @man man/man1/faad.1
