@@ -306,7 +306,7 @@ SHA256 (cargo/zerofrom-derive-0.1.4.tar.gz) = Dqe0o2N+qGac7fDx/Vwoahfz3pe43Vpwps
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
 SHA256 (cargo/zlib-rs-0.5.0.tar.gz) = houSjXlJ4Jry9ght/B4Bk2BkzHqBklO85lDU4qLWO6g=
-SHA256 (helix-25.07-source.tar.xz) = IvA36MS772e3qm2zRIBj+HAEFZ/eapzmhAgpY7/rpOU=
+SHA256 (helix-25.07.1-source.tar.xz) = LQzyZKx3+MJThqY24rOgmiPexVVWjMmlspJ/hDIvVE4=
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -615,4 +615,4 @@ SIZE (cargo/zerofrom-derive-0.1.4.tar.gz) = 8232
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zlib-rs-0.5.0.tar.gz) = 191547
-SIZE (helix-25.07-source.tar.xz) = 170085700
+SIZE (helix-25.07.1-source.tar.xz) = 170088608
