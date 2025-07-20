@@ -1,11 +1,13 @@
 COMMENT=	library for encoding and decoding .avif files
 
-DIST_TUPLE+=	github AOMediaCodec libavif v1.1.1 .
+DIST_TUPLE+=	github AOMediaCodec libavif v1.3.0 .
 DIST_TUPLE+=	github lemenkov libyuv \
-		a6a2ec654b1be1166b376476a7555c89eca0c275 ext/libyuv
+		4db2af62dab48895226be6b52737247e898ebe36 ext/libyuv
+DIST_TUPLE+=	github kmurray libargparse \
+		ee74d1b53bd680748af14e737378de57e2a0a954 ext/libargparse
 CATEGORIES=	graphics
 
-SHARED_LIBS=	avif	7.1
+SHARED_LIBS=	avif	8.0
 
 HOMEPAGE=	https://github.com/AOMediaCodec/libavif
 

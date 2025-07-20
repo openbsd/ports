@@ -1,0 +1,12 @@
+Index: ext/libyuv/include/libyuv/cpu_id.h
+--- ext/libyuv/include/libyuv/cpu_id.h.orig
++++ ext/libyuv/include/libyuv/cpu_id.h
+@@ -95,7 +95,7 @@ int MipsCpuCaps(const char* cpuinfo_name);
+ LIBYUV_API
+ int RiscvCpuCaps(const char* cpuinfo_name);
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ // On Linux, parse AArch64 features from getauxval(AT_HWCAP{,2}).
+ LIBYUV_API
+ int AArch64CpuCaps(unsigned long hwcap, unsigned long hwcap2);

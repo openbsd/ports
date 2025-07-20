@@ -1,5 +1,6 @@
 @bin bin/avifdec
 @bin bin/avifenc
+@bin bin/avifgainmaputil
 include/avif/
 include/avif/avif.h
 include/avif/avif_cxx.h
