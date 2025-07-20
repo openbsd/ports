@@ -28,8 +28,7 @@ MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	devel/py-types-psutil \
 		devel/py-types-setuptools \
-		devel/py-typing-extensions \
-		devel/py-mypy-extensions
+		${RUN_DEPENDS}
 
 RUN_DEPENDS=	devel/py-typing-extensions \
 		devel/py-mypy-extensions \
