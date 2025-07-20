@@ -1,3 +1,6 @@
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
+
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
 V =			0.21.2
