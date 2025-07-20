@@ -1,7 +1,10 @@
 @conflict netbsd-iscsi-<=20111006p3
+@bin bin/iscsi-discard
 @bin bin/iscsi-inq
 @bin bin/iscsi-ls
+@bin bin/iscsi-md5sum
 @bin bin/iscsi-perf
+@bin bin/iscsi-pr
 @bin bin/iscsi-readcapacity16
 @bin bin/iscsi-swp
 include/iscsi/
@@ -13,5 +16,6 @@ lib/libiscsi.la
 lib/pkgconfig/libiscsi.pc
 @man man/man1/iscsi-inq.1
 @man man/man1/iscsi-ls.1
+@man man/man1/iscsi-md5sum.1
 @man man/man1/iscsi-swp.1
 @man man/man1/iscsi-test-cu.1

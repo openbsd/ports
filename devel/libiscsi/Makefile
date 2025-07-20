@@ -1,12 +1,12 @@
 COMMENT=	client-side library to implement the iSCSI protocol
 
+DISTNAME=	libiscsi-1.20.0
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libiscsi
-GH_TAGNAME=	1.19.0
-REVISION=	0
+GH_COMMIT=	b8d9fbf5e3120dde1a95ca7d873117f4e911b86c
 CATEGORIES=	devel net
 
-SHARED_LIBS=	iscsi	2.0
+SHARED_LIBS=	iscsi	2.1
 
 HOMEPAGE=	https://github.com/sahlberg/libiscsi
 
@@ -17,9 +17,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= 	autoreconf
 
 CONFIGURE_ARGS+=	--disable-werror
