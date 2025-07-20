@@ -7,6 +7,7 @@ DISTNAME =		notmuch-$V
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 PKGNAME-mutt =		notmuch-mutt-${V}
+REVISION =		0
 
 SHARED_LIBS +=		notmuch	1.2
 
@@ -21,7 +22,7 @@ MULTI_PACKAGES =	-main -emacs -mutt
 DEBUG_PACKAGES =	-main
 
 WANTLIB-main +=		${COMPILER_LIBCXX} c glib-2.0 gmime-3.0 gobject-2.0
-WANTLIB-main +=		talloc xapian z
+WANTLIB-main +=		pthread talloc xapian z
 
 SITES =			${HOMEPAGE}releases/
 
