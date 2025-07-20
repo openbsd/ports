@@ -1,6 +1,6 @@
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_DISTV =		7.4.3
+MODPY_DISTV =		7.4.4
 DISTNAME =		notebook-${MODPY_DISTV}
 PKGNAME =		jupyter-notebook-${MODPY_DISTV}
 
