@@ -2,7 +2,7 @@ COMMENT=		library for tracking application startup
 
 GNOME_PROJECT=		startup-notification
 GNOME_VERSION=		0.12
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		devel
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.freedesktop.org/wiki/Software/startup-notification
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 X11-xcb Xau Xdmcp xcb xcb-util
+WANTLIB += X11 X11-xcb Xau Xdmcp xcb xcb-util pthread
 
 MODULES=		x11/gnome
 
