@@ -18,7 +18,6 @@ SHA256 (cargo/base64-0.22.1.tar.gz) = crMlTxYlGoOBqhLkDjxNLwGZ+MZQj77LnZH1deD7uM
 SHA256 (cargo/bitflags-2.9.1.tar.gz) = G45WmF7GLRfpwQAdyJyI7NfcCOR+ul7Hwpx7Xu7N6Wc=
 SHA256 (cargo/bumpalo-3.19.0.tar.gz) = RsXkG1e4u6QqBGdtgcuJ6e6OhZoaZvgKWnLhy3azTUM=
 SHA256 (cargo/by_address-1.2.1.tar.gz) = ZPo8hWtxLbZhLAGfFHVuZOS86hMzemsztpYzOp6qLQY=
-SHA256 (cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (cargo/cast-0.3.0.tar.gz) = N7KmcqLLEpouQcELEiS7No+fN6Kxa2ElmBOL79ezfrU=
 SHA256 (cargo/cc-1.2.27.tar.gz) = 1IeqBxtfZNpvGaPoSONXiUS3Ju5aSFS4IXLwKqh2v9w=
 SHA256 (cargo/cfg-if-1.0.1.tar.gz) = lVVXi8nldxTIEqH4Tk/FtNIfywY0kMYk3gGfdGTJEmg=
@@ -38,7 +37,6 @@ SHA256 (cargo/crossbeam-deque-0.8.6.tar.gz) = ndERt7f31VtywKauNhZg7lhTya9z9ww8Lv
 SHA256 (cargo/crossbeam-epoch-0.9.18.tar.gz) = W4KsSjwsqcNGCWTwIOFALt1XU0EddzeqOcNxStG1Qg4=
 SHA256 (cargo/crossbeam-utils-0.8.21.tar.gz) = 0KXEAN8oNLgKTDMns6rTpMTNTeBikGOWKwMjVpdQaig=
 SHA256 (cargo/crunchy-0.2.4.tar.gz) = Rg++6cLC8zkz1yBjCmoLrDO6cFPbU0T6yFjUuJUtd9U=
-SHA256 (cargo/datetime-0.5.2.tar.gz) = RMP3p38+V/7fgOCRNvLYd36/YhIHMG9tltYQrwSDVLw=
 SHA256 (cargo/deranged-0.4.0.tar.gz) = nJ5qEcqCJEUWhLwNfVp62/jy/WiHJhoc/DwEMvnUBo4=
 SHA256 (cargo/dirs-6.0.0.tar.gz) = w+iqlNdRQSKEgClafQ5/62ILGlrZ8SvEC+YkEeOMzk4=
 SHA256 (cargo/dirs-sys-0.5.0.tar.gz) = 4BozZtJ+6YkAIkUu5hsrY6Z+bxP1iQC2Uf9WZfC7H6s=
@@ -126,7 +124,6 @@ SHA256 (cargo/quote-1.0.40.tar.gz) = GIXAOVcNwA3LT/CHqJ4YX9VrriNN3H8FapRb82RnJI0
 SHA256 (cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
 SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
-SHA256 (cargo/redox_syscall-0.1.57.tar.gz) = QcwPfk1dRUTohhYGooW7CNPnBxLMx9K4TXwMz69LBc4=
 SHA256 (cargo/redox_syscall-0.5.13.tar.gz) = DQS30O5rSgIHoKetsQTSPssLR9a+rnFS0Po0tpKyn9Y=
 SHA256 (cargo/redox_users-0.5.0.tar.gz) = 3W+dPUe90q1pRcUBWiJuxhVdC839j3zSn4a3H43pnSs=
 SHA256 (cargo/regex-1.11.1.tar.gz) = tUTvG06sXcLbM+pjYGrp/8+sJsFBaigGrgv19WsgEZE=
@@ -187,10 +184,7 @@ SHA256 (cargo/wasm-bindgen-macro-0.2.100.tar.gz) = f+Y/xtCe03kr0Il7MU9T3o4WVowrP
 SHA256 (cargo/wasm-bindgen-macro-support-0.2.100.tar.gz) = iuh+pAyfaJ/CPyCZZbb7ipmtaa7rAjFAi+JJIGBDld4=
 SHA256 (cargo/wasm-bindgen-shared-0.2.100.tar.gz) = GgXXO5M6hH1szN2o+DiiL/EBrZv5PjNoTznB9fDuzj0=
 SHA256 (cargo/web-sys-0.3.77.tar.gz) = M7bdLvkYbx8gcuQJ6ZzSKpdTMaazWRsSx2Tg5Vxg1dI=
-SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk=
-SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.9.tar.gz) = zyIck+E6MNeT92RaDndixV0WnbsKSWcZGKIxnSibELs=
-SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/windows-core-0.61.2.tar.gz) = wP3T3bkGEMdjiqKzo6spBPueXNvsxkPds2RyEngcSuM=
 SHA256 (cargo/windows-implement-0.60.0.tar.gz) = pH/d0TrwgpDmf0rKv0tFn2R1UnGPaDp7QV0pCsdEqDY=
 SHA256 (cargo/windows-interface-0.59.1.tar.gz) = vZIRtp+NzfqBe/0UvxyXyRiK+jb0dQEw/N8/QA7Kn6g=
@@ -228,8 +222,7 @@ SHA256 (cargo/zerofrom-derive-0.1.6.tar.gz) = 1x5dbgarCQxnteRJk+wWty3LqrxSbbiDo2
 SHA256 (cargo/zerotrie-0.2.2.tar.gz) = NvC71HhYP3ntrZeLQHkU9hspcvWvb6CJaGAWvo+a9ZU=
 SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pRCg=
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
-SHA256 (cargo/zoneinfo_compiled-0.5.1.tar.gz) = ZPvr5l6JlTD0O9dgsj/ajxQRGPTbSZUrApmMvQkHpd4=
-SHA256 (eza-0.22.1.tar.gz) = FI6vo+Xq5L3d2Mx7LmZvwXhT1D+8yPmF3eCyK1g1eRY=
+SHA256 (eza-0.23.0.tar.gz) = EZlz1YrvdJD2xVP4GM/eFCmY9ekyBfU/lJgaljG1AxA=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -250,7 +243,6 @@ SIZE (cargo/base64-0.22.1.tar.gz) = 81597
 SIZE (cargo/bitflags-2.9.1.tar.gz) = 47913
 SIZE (cargo/bumpalo-3.19.0.tar.gz) = 96414
 SIZE (cargo/by_address-1.2.1.tar.gz) = 8437
-SIZE (cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (cargo/cast-0.3.0.tar.gz) = 11452
 SIZE (cargo/cc-1.2.27.tar.gz) = 107070
 SIZE (cargo/cfg-if-1.0.1.tar.gz) = 8683
@@ -270,7 +262,6 @@ SIZE (cargo/crossbeam-deque-0.8.6.tar.gz) = 22471
 SIZE (cargo/crossbeam-epoch-0.9.18.tar.gz) = 46875
 SIZE (cargo/crossbeam-utils-0.8.21.tar.gz) = 42691
 SIZE (cargo/crunchy-0.2.4.tar.gz) = 3887
-SIZE (cargo/datetime-0.5.2.tar.gz) = 113732
 SIZE (cargo/deranged-0.4.0.tar.gz) = 23235
 SIZE (cargo/dirs-6.0.0.tar.gz) = 14190
 SIZE (cargo/dirs-sys-0.5.0.tar.gz) = 10157
@@ -358,7 +349,6 @@ SIZE (cargo/quote-1.0.40.tar.gz) = 31063
 SIZE (cargo/r-efi-5.3.0.tar.gz) = 64532
 SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
-SIZE (cargo/redox_syscall-0.1.57.tar.gz) = 17087
 SIZE (cargo/redox_syscall-0.5.13.tar.gz) = 29489
 SIZE (cargo/redox_users-0.5.0.tar.gz) = 15586
 SIZE (cargo/regex-1.11.1.tar.gz) = 254170
@@ -419,10 +409,7 @@ SIZE (cargo/wasm-bindgen-macro-0.2.100.tar.gz) = 9663
 SIZE (cargo/wasm-bindgen-macro-support-0.2.100.tar.gz) = 26243
 SIZE (cargo/wasm-bindgen-shared-0.2.100.tar.gz) = 8570
 SIZE (cargo/web-sys-0.3.77.tar.gz) = 638246
-SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
-SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.9.tar.gz) = 12464
-SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/windows-core-0.61.2.tar.gz) = 36771
 SIZE (cargo/windows-implement-0.60.0.tar.gz) = 15073
 SIZE (cargo/windows-interface-0.59.1.tar.gz) = 11735
@@ -460,5 +447,4 @@ SIZE (cargo/zerofrom-derive-0.1.6.tar.gz) = 8305
 SIZE (cargo/zerotrie-0.2.2.tar.gz) = 74423
 SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
-SIZE (cargo/zoneinfo_compiled-0.5.1.tar.gz) = 8837
-SIZE (eza-0.22.1.tar.gz) = 1428927
+SIZE (eza-0.23.0.tar.gz) = 1428877
