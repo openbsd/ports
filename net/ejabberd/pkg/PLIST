@@ -141,6 +141,12 @@ lib/ejabberd/ejabberd-${V}/ebin/mod_announce.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_mnesia.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_sql.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam_dump.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam_files.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam_filter.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam_opt.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_antispam_rtbl.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast_mnesia.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast_opt.beam
@@ -260,6 +266,8 @@ lib/ejabberd/ejabberd-${V}/ebin/mod_proxy65_stream.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub_mnesia.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub_opt.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub_serverinfo.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub_serverinfo_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_pubsub_sql.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_push.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_push_keepalive.beam
@@ -347,6 +355,7 @@ lib/ejabberd/ejabberd-${V}/include/eldap.hrl
 lib/ejabberd/ejabberd-${V}/include/http_bind.hrl
 lib/ejabberd/ejabberd-${V}/include/logger.hrl
 lib/ejabberd/ejabberd-${V}/include/mod_announce.hrl
+lib/ejabberd/ejabberd-${V}/include/mod_antispam.hrl
 lib/ejabberd/ejabberd-${V}/include/mod_caps.hrl
 lib/ejabberd/ejabberd-${V}/include/mod_last.hrl
 lib/ejabberd/ejabberd-${V}/include/mod_mam.hrl
@@ -784,6 +793,7 @@ lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/rfc3921.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/rfc6120.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/rfc6121.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/scram.beam
+lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/unifiedpush.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xdata_codec.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0004.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0012.beam
@@ -866,6 +876,7 @@ lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0430.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0440.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0480.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0484.beam
+lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0485.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp.app
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_codec.beam

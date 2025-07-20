@@ -1,6 +1,6 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
-V =			25.04
+V =			25.07
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
 CATEGORIES =		net
