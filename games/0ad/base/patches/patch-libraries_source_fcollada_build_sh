@@ -1,7 +1,7 @@
 Index: libraries/source/fcollada/build.sh
 --- libraries/source/fcollada/build.sh.orig
 +++ libraries/source/fcollada/build.sh
-@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
+@@ -7,6 +7,7 @@ cd "$(dirname "$0")"
  
  PV=28209
  LIB_VERSION=${PV}
@@ -9,12 +9,3 @@ Index: libraries/source/fcollada/build.sh
  
  fetch()
  {
-@@ -42,7 +43,7 @@ fi
- 
- # unpack
- rm -Rf fcollada-${PV}
--tar xf fcollada-${PV}.tar.xz
-+$TAR xf fcollada-${PV}.tar.xz
- 
- # build
- (

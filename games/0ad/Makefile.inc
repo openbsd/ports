@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 CATEGORIES = 		games
 
-V ?= 			0.27.0
+V ?= 			0.27.1
 
 HOMEPAGE = 		https://play0ad.com/
 
