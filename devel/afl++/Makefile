@@ -4,6 +4,7 @@ COMMENT=	improved version of afl
 GH_ACCOUNT =	AFLplusplus
 GH_PROJECT =	AFLplusplus
 GH_TAGNAME =	v4.32c
+REVISION =	0
 PKGNAME =	afl++-${GH_TAGNAME:S/v//}
 CATEGORIES=	devel
 
@@ -13,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} c m
+WANTLIB =		${COMPILER_LIBCXX} c m z
 USE_GMAKE=		Yes
 
 MODULES =		lang/clang
