@@ -3,6 +3,7 @@ COMMENT =		Jupyter Qt console
 MODPY_DISTV =		5.6.1
 DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		shells
 
@@ -23,7 +24,7 @@ RUN_DEPENDS =		devel/py-ipykernel>=4.1 \
 			devel/py-traitlets>=5.2.2 \
 			sysutils/py-packaging \
 			textproc/py-pygments \
-			x11/py-qt5 \
+			x11/py-qt6 \
 			x11/py-qtpy>=2.4.0
 
 # XXX: needs qtbot fixture from pytest-qt
