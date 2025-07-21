@@ -21,6 +21,7 @@
 
 #include <stdio.h>
 #include "gstsndio.h"
+#include "sndiodeviceprovider.h"
 
 GST_DEBUG_CATEGORY (gst_sndio_debug);
 #define GST_CAT_DEFAULT gst_sndio_debug
@@ -40,6 +41,9 @@ plugin_init (GstPlugin * plugin)
   /* prefer sndiosink over pulsesink (GST_RANK_PRIMARY + 10) */
   if (!gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY + 20,
           gst_sndiosink_get_type()))
+    return FALSE;
+  if (!gst_device_provider_register (plugin, "sndiodeviceprovider", GST_RANK_PRIMARY + 20,
+          gst_sndio_device_provider_get_type()))
     return FALSE;
   return TRUE;
 }

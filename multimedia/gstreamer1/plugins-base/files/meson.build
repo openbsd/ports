@@ -1,5 +1,7 @@
 sndio_sources = [
   'gstsndio.c',
+  'sndiodevice.c',
+  'sndiodeviceprovider.c',
   'sndiosink.c',
   'sndiosrc.c',
 ]
