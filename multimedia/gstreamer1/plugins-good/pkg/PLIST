@@ -58,6 +58,7 @@
 @so lib/gstreamer-${API}/libgsttaglib.so
 @so lib/gstreamer-${API}/libgsttwolame.so
 @so lib/gstreamer-${API}/libgstudp.so
+@so lib/gstreamer-${API}/libgstvideo4linux2.so
 @so lib/gstreamer-${API}/libgstvideobox.so
 @so lib/gstreamer-${API}/libgstvideocrop.so
 @so lib/gstreamer-${API}/libgstvideofilter.so
