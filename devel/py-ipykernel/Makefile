@@ -1,11 +1,8 @@
 COMMENT =		IPython kernel for Jupyter
 
-MODPY_DISTV =	6.29.5
+MODPY_DISTV =		6.30.0
 DISTNAME =		ipykernel-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
-
-PORTROACH=		limit:^6
 
 CATEGORIES =		devel
 
@@ -27,16 +24,16 @@ BUILD_DEPENDS =		devel/ipython \
 
 RUN_DEPENDS =		devel/py-comm>=0.1.1 \
 			devel/py-debugpy>=1.6.5 \
-			devel/py-jupyter_client>=6.1.12 \
+			devel/py-jupyter_client>=8.0.0 \
 			devel/py-jupyter_core>=5.1 \
-			devel/py-nest-asyncio \
+			devel/py-nest-asyncio>=1.4 \
 			devel/py-traitlets>=5.4.0 \
 			devel/ipython>=7.23.1 \
 			graphics/py-matplotlib-inline>=0.1 \
-			net/py-zmq>=24v0 \
+			net/py-zmq>=25v0 \
 			sysutils/py-packaging \
-			sysutils/py-psutil \
-			www/py-tornado>=6.1
+			sysutils/py-psutil>=5.7 \
+			www/py-tornado>=6.2
 
 # needs ipyparallel
 TEST_DEPENDS =		devel/pre-commit \

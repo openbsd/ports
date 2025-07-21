@@ -1,5 +1,5 @@
-@pkgpath devel/py-ipykernel,python3
 @conflict py-ipykernel-*
+@pkgpath devel/py-ipykernel,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ipykernel_launcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ipykernel_launcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/
