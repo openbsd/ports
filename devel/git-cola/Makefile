@@ -1,8 +1,8 @@
 COMMENT=	python powered git gui
 
-MODPY_DISTV=	4.8.2
-REVISION=	2
-DISTNAME=	git-cola-${MODPY_DISTV}
+MODPY_DISTV=	4.13.0
+DISTNAME=	git_cola-${MODPY_DISTV}
+PKGNAME=	${DISTNAME:S/_/-/}
 
 CATEGORIES=	devel x11
 
@@ -12,22 +12,16 @@ HOMEPAGE=	https://git-cola.github.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools_scm
+
 MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
-BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/git \
+RUN_DEPENDS=	devel/git \
 		devel/git,-x11 \
-		textproc/xxdiff \
-		x11/py-qt5 \
-		x11/py-qtpy
-
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/git \
-		devel/git,-x11 \
+		textproc/py-polib \
 		textproc/xxdiff \
 		x11/gtk+4,-guic \
-		x11/py-qt5 \
+		x11/py-qt6 \
 		x11/py-qtpy
 
 TEST_DEPENDS=	devel/py-mock

@@ -95,6 +95,11 @@ lib/python${MODPY_VERSION}/site-packages/cola/cmds.py
 lib/python${MODPY_VERSION}/site-packages/cola/compat.py
 lib/python${MODPY_VERSION}/site-packages/cola/core.py
 lib/python${MODPY_VERSION}/site-packages/cola/dag.py
+lib/python${MODPY_VERSION}/site-packages/cola/data/
+lib/python${MODPY_VERSION}/site-packages/cola/data/hotkeys.html
+lib/python${MODPY_VERSION}/site-packages/cola/data/hotkeys_de.html
+lib/python${MODPY_VERSION}/site-packages/cola/data/hotkeys_zh_CN.html
+lib/python${MODPY_VERSION}/site-packages/cola/data/hotkeys_zh_TW.html
 lib/python${MODPY_VERSION}/site-packages/cola/decorators.py
 lib/python${MODPY_VERSION}/site-packages/cola/diffparse.py
 lib/python${MODPY_VERSION}/site-packages/cola/difftool.py
@@ -443,19 +448,5 @@ lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/RECOR
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_DISTV}.dist-info/top_level.txt
-share/applications/git-cola-folder-handler.desktop
-share/applications/git-cola.desktop
-share/applications/git-dag.desktop
-share/doc/git-cola/
-share/doc/git-cola/hotkeys.html
-share/doc/git-cola/hotkeys_de.html
-share/doc/git-cola/hotkeys_zh_CN.html
-share/doc/git-cola/hotkeys_zh_TW.html
-@tag update-desktop-database
-share/icons/hicolor/scalable/apps/git-cola.svg
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/
-share/metainfo/git-cola.appdata.xml
-share/metainfo/git-dag.appdata.xml
