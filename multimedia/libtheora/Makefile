@@ -11,6 +11,8 @@ SHARED_LIBS=	theora		4.0 \
 		theoradec	2.0 \
 		theoraenc	2.1
 
+EPOCH=		0
+
 HOMEPAGE=	https://www.theora.org/
 
 # BSD
