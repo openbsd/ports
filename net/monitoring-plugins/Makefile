@@ -9,6 +9,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.4.0
+REVISION=	1
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -20,7 +21,7 @@ PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -31,7 +32,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl pthread
+WANTLIB=	c crypto iconv intl pthread
 
 COMPILER=	base-clang ports-gcc base-gcc
 COMPILER_LANGS=	c
@@ -40,7 +41,8 @@ SITES=		https://www.monitoring-plugins.org/download/
 
 LIB_DEPENDS=	devel/gettext,-runtime
 
-WANTLIB-main=	${WANTLIB} crypto curl m nghttp2 ssl uriparser z
+WANTLIB-main=	${WANTLIB} curl m nghttp2 ssl uriparser z \
+		nghttp3 ngtcp2 ngtcp2_crypto_quictls
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		net/curl \
@@ -101,7 +103,6 @@ RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 LIB_DEPENDS-radius=	net/radcli
 WANTLIB-radius+=	${WANTLIB} gmp gnutls hogweed idn2 nettle
 WANTLIB-radius+=	p11-kit radcli tasn1 unistring
-WANTLIB-radius+=	brotlidec brotlienc z zstd
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}
