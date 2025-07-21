@@ -1,6 +1,7 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.9.10
+REVISION=		0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -15,8 +16,8 @@ PERMIT_PACKAGE=		Yes
 FLAVORS=		h3
 FLAVOR?=
 
-WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} cdb curses crypto edit lmdb m \
-			fstrm nghttp2 pthread sodium 
+WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} c cdb curses \
+			crypto edit lmdb m fstrm nghttp2 pthread sodium 
 
 SITES=			https://downloads.powerdns.com/releases/
 
