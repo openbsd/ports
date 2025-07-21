@@ -3,6 +3,7 @@ COMMENT =		widgets and components for PyQt/PySide
 MODPY_DISTV =		0.7.5
 DISTNAME =		superqt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		x11
 
@@ -20,6 +21,7 @@ MODPY_PYBUILD =		hatch-vcs
 
 RUN_DEPENDS =		devel/py-typing-extensions \
 			textproc/py-pygments \
+			x11/py-qt6 \
 			x11/py-qtpy
 
 NO_TEST =		Yes
