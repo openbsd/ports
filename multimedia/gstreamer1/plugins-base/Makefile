@@ -1,7 +1,7 @@
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gsttag-1.0                7.3 # 0.2604.0
 SHARED_LIBS += gstfft-1.0                7.3 # 0.2604.0

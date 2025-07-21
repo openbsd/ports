@@ -197,7 +197,7 @@ gst_sndiosrc_class_init (GstSndioSrcClass * klass)
   gobject_class->set_property = gst_sndiosrc_set_property;
 
   gst_element_class_set_static_metadata (gstelement_class,
-      "Audio src (sndio)", "Src/Audio",
+      "Audio src (sndio)", "Source/Audio",
       "Input from a sound card via sndio",
       "Jacob Meuser <jakemsr@sdf.lonestar.org>");
 
