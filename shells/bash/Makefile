@@ -1,6 +1,7 @@
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.2.37
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -17,7 +18,7 @@ PATCHFILES.p +=	bash52-$i
 .endfor
 
 LIB_DEPENDS=	devel/gettext,-runtime
-WANTLIB=	c curses iconv intl
+WANTLIB=	c curses iconv intl pthread
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

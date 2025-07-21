@@ -1,6 +1,7 @@
 COMMENT=	GNU make
 
 DISTNAME=	make-4.4.1
+REVISION=	0
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=make/}
@@ -13,7 +14,7 @@ LIB_DEPENDS=	devel/gettext,-runtime
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl
+WANTLIB=	c iconv intl pthread
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

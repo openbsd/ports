@@ -2,7 +2,7 @@ COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
 PKGNAME=		${DISTNAME}
-REVISION =		11
+REVISION =		12
 SHARED_LIBS +=	ast                  3.0      # .2.1
 CATEGORIES=		devel
 
@@ -11,8 +11,8 @@ HOMEPAGE=		https://eterm.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE Imlib2 SM X11 X11-xcb Xext freetype m pcre xcb
-WANTLIB += xcb-shm z
+WANTLIB += ICE Imlib2 SM X11 X11-xcb Xext freetype m pcre pthread
+WANTLIB += xcb xcb-shm z
 
 SITES=			http://www.eterm.org/download/
 

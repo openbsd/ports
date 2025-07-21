@@ -4,7 +4,7 @@ DISTNAME=	tar-1.35
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -15,7 +15,7 @@ SITES=		${SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.xz
 
 # fake WANTLIB to ensure updates occur for major changes in base even for static
-WANTLIB=	c
+WANTLIB=	c pthread
 
 # only force dependencies for compressors that have a single-letter option
 RUN_DEPENDS=	archivers/bzip2 archivers/xz

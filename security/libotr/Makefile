@@ -2,7 +2,7 @@ COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.1.1
 CATEGORIES=	security
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  otr                  4.1      # 6.0
 
@@ -15,7 +15,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c gcrypt gpg-error iconv intl
+WANTLIB =  c gcrypt gpg-error iconv intl pthread
 
 LIB_DEPENDS=	security/libgcrypt
 

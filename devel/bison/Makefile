@@ -1,6 +1,7 @@
 COMMENT=	GNU parser generator
 
 DISTNAME=	bison-3.8.2
+REVISION=	0
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
@@ -10,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/bison/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl m
+WANTLIB=	c iconv intl m pthread
 
 LIB_DEPENDS=	devel/gettext,-runtime
 BUILD_DEPENDS=	devel/gettext,-tools \

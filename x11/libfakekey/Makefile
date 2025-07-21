@@ -1,6 +1,7 @@
 COMMENT =	library for converting characters to X key-presses
 
 DISTNAME =	libfakekey-0.3
+REVISION =	0
 
 SHARED_LIBS =	fakekey	0.0 # 0.1
 
@@ -11,7 +12,7 @@ HOMEPAGE =	https://git.yoctoproject.org/libfakekey/
 # LGPLv2+
 PERMIT_PACKAGE =Yes
 
-WANTLIB += X11 Xext Xi Xtst xcb
+WANTLIB += X11 Xext Xi Xtst pthread xcb
 
 SITES =		https://git.yoctoproject.org/libfakekey/snapshot/
 

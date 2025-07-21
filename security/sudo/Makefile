@@ -7,8 +7,8 @@ CATEGORIES=	security
 
 PKGNAME-main=	sudo-${V:S/p/./}
 PKGNAME-python=	sudo-python-${V:S/p/./}
-REVISION-main=	0
-REVISION-python=0
+REVISION-main=	1
+REVISION-python=1
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
 
@@ -49,7 +49,7 @@ WANTLIB=		util crypto
 .if ${FLAVOR:Mgettext}
 CONFIGURE_ARGS +=	--enable-nls=${LOCALBASE}
 LIB_DEPENDS+=		devel/gettext,-runtime
-WANTLIB+=		iconv intl
+WANTLIB+=		iconv intl pthread
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif

@@ -1,6 +1,7 @@
 COMMENT=		GNU dbm
 
 DISTNAME=		gdbm-1.24
+REVISION=		0
 
 CATEGORIES=		databases
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		devel/gettext,-runtime
 
-WANTLIB=		c curses iconv intl readline
+WANTLIB=		c curses iconv intl pthread readline
 
 CONFIGURE_STYLE=	gnu
 

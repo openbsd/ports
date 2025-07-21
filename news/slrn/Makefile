@@ -2,7 +2,7 @@ COMMENT=	SLang-based newsreader
 
 PKGNAME=	slrn-1.0.3
 DISTNAME=	${PKGNAME}a
-REVISION=	0
+REVISION=	1
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 CATEGORIES=	news
@@ -14,7 +14,7 @@ HOMEPAGE=	https://slrn.info/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto iconv intl m ssl slang
+WANTLIB=	c crypto iconv intl m pthread ssl slang
 
 SITES=		https://jedsoft.org/releases/slrn/ \
 		https://jedsoft.org/releases/slrn/old/

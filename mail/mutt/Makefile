@@ -1,6 +1,7 @@
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-2.2.14
+REVISION=	0
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -12,7 +13,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto curses iconv idn2 intl qdbm ssl unistring z
+WANTLIB+=	c crypto curses iconv idn2 intl pthread qdbm ssl unistring z
 
 SITES=		http://ftp.mutt.org/pub/mutt/ \
 		https://ftp.osuosl.org/pub/mutt/ \

@@ -1,6 +1,7 @@
 COMMENT=	GNU versions of the diff utilities
 
 VERSION=	3.11
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
@@ -10,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/diffutils/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl sigsegv
+WANTLIB += c iconv intl pthread sigsegv
 
 SITES=		${SITE_GNU:=diffutils/}
 

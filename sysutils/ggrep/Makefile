@@ -1,6 +1,7 @@
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-3.11
+REVISION=	0
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
@@ -15,7 +16,7 @@ SITES=		${SITE_GNU:=grep/}
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/gettext,-runtime devel/pcre2
-WANTLIB=	c iconv intl pcre2-8
+WANTLIB=	c iconv intl pcre2-8 pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g

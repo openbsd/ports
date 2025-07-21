@@ -2,7 +2,7 @@ COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.4
 CATEGORIES=	x11
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://openbox.org/wiki/Obconf
 
@@ -13,8 +13,8 @@ WANTLIB =  ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz intl m obrender obt
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 rsvg-2
-WANTLIB += startup-notification-1 xml2 z
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pthread
+WANTLIB += rsvg-2 startup-notification-1 xml2 z
 
 SITES=		http://openbox.org/dist/obconf/
 

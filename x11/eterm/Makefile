@@ -5,7 +5,7 @@ V=		0.9.6
 DISTNAME=	Eterm-$V
 # also see below
 PKGNAME=	eterm-$V
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=  Eterm                1.0      # unknown
 CATEGORIES=	x11
 
@@ -18,7 +18,7 @@ SITES=		${HOMEPAGE}/download/ \
 		${SITE_SOURCEFORGE:=eterm/}
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb XRes Xext ast c freetype
-WANTLIB += iconv m pcre util xcb xcb-shm z
+WANTLIB += iconv m pcre pthread util xcb xcb-shm z
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/libast \

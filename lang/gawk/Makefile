@@ -2,6 +2,7 @@ COMMENT=	GNU awk
 
 V=		5.1.0
 DISTNAME=	gawk-$V
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
 SITES=		${SITE_GNU:=gawk/}
@@ -12,7 +13,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses gmp iconv intl m mpfr readline sigsegv
+WANTLIB += c curses gmp iconv intl m mpfr pthread readline sigsegv
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

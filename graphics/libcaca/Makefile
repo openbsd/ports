@@ -3,7 +3,7 @@ COMMENT=		color ascii art library
 V=			0.99.beta20
 DISTNAME=		libcaca-${V}
 PKGNAME=		${DISTNAME:S/beta//}
-REVISION =		0
+REVISION =		1
 SHARED_LIBS +=	caca	2.0 # .0.99
 CATEGORIES=		graphics
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 # LGPLv2.1/Do What The Fuck You Want To Public License
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c curses m z
+WANTLIB=		c curses m pthread z
 
 SITES=		https://github.com/cacalabs/libcaca/releases/download/v${V}/
 
