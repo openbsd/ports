@@ -2,6 +2,7 @@ COMMENT-main =	GnuPG Made Easy
 COMMENT-qt =	Qt bindings for GPGme
 
 VERSION =	1.24.3
+REVISION-main =	0
 DISTNAME =	gpgme-${VERSION}
 PKGNAME-main =	gpgme-${VERSION}
 PKGNAME-qt =	gpgme-qt-${VERSION}
@@ -21,7 +22,7 @@ EXTRACT_SUFX =	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =	assuan gpg-error iconv intl
-WANTLIB-main =	${WANTLIB} c m
+WANTLIB-main =	${WANTLIB} c m pthread
 WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} b2 Qt6Core double-conversion
 WANTLIB-qt +=	execinfo glib-2.0 gpgme gthread-2.0 icudata icui18n icuuc
 WANTLIB-qt +=	m pcre2-8 pcre2-16 z zstd

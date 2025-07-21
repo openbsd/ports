@@ -5,7 +5,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${MODPY_DISTV}
 DISTNAME =		libpwquality-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
@@ -16,7 +16,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crack iconv intl z
+WANTLIB =  c crack iconv intl pthread z
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

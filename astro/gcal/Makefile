@@ -2,7 +2,7 @@ COMMENT =		calculate and print calendars
 
 DISTNAME =		gcal-4.1
 CATEGORIES =		astro
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.gnu.org/software/gcal/
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
@@ -16,7 +16,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		converters/libunistring \
 			devel/gettext,-runtime
 
-WANTLIB += c curses iconv intl m unistring
+WANTLIB =  c curses iconv intl m pthread unistring
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-easc \

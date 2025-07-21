@@ -4,6 +4,7 @@ V =			2.10.3
 DISTNAME =		cracklib-${V}
 SHARED_LIBS =		crack	0.5	# 11.0
 CATEGORIES =		security
+REVISION =		0
 
 HOMEPAGE =		https://sourceforge.net/projects/cracklib/
 
@@ -12,7 +13,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c iconv intl z
+WANTLIB =  c iconv intl pthread z
 
 SITES =		https://github.com/cracklib/cracklib/releases/download/v${V}/
 

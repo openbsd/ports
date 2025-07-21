@@ -11,7 +11,7 @@ COMMENT =	program matching and transformation engine
 GH_ACCOUNT =	coccinelle
 GH_PROJECT =	coccinelle
 GH_TAGNAME =	1.1.1
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	devel
 
@@ -20,7 +20,7 @@ HOMEPAGE =	https://coccinelle.gitlabpages.inria.fr/website/
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pcre
+WANTLIB =  c m pcre pthread
 
 MODULES =	lang/ocaml \
 		lang/python

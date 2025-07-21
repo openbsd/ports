@@ -1,7 +1,7 @@
 COMMENT =		collection of tools for translating from BibTeX to HTML
 
 DISTNAME =		bibtex2html-1.99
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		textproc
 HOMEPAGE =		https://www.lri.fr/~filliatr/bibtex2html/
@@ -9,7 +9,7 @@ HOMEPAGE =		https://www.lri.fr/~filliatr/bibtex2html/
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c m
+WANTLIB =  c m pthread
 
 SITES =			https://www.lri.fr/~filliatr/ftp/bibtex2html/
 

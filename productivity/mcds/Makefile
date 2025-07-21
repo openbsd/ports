@@ -3,7 +3,7 @@ COMMENT =		tty-based CardDav search tool
 V =			1.6
 DISTNAME =		mcds-${V}
 CATEGORIES =		productivity
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 
@@ -11,7 +11,8 @@ MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB =		assuan c curl gpg-error gpgme iconv intl xml2
+
+WANTLIB =  assuan c curl gpg-error gpgme iconv intl pthread xml2
 
 SITES =			https://github.com/t-brown/mcds/releases/download/v${V}/
 

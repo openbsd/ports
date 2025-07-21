@@ -1,6 +1,7 @@
 COMMENT =	firewall knock operator
 
 DISTNAME =	fwknop-2.6.11
+REVISION =	0
 
 SHARED_LIBS +=	fko	0.0 # 3.0
 
@@ -11,7 +12,7 @@ HOMEPAGE =	https://www.cipherdyne.org/fwknop/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += assuan c gpg-error gpgme iconv intl pcap
+WANTLIB =  assuan c gpg-error gpgme iconv intl pcap pthread
 
 SITES =			https://www.cipherdyne.org/fwknop/download/
 
