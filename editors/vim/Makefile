@@ -2,6 +2,7 @@ COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 V=		9.1.1552
+REVISION=	0
 
 DIST_TUPLE=	\
 	github vim vim v$V . \
@@ -44,7 +45,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+= --with-tlib="curses" \
 		--disable-canberra \
 		--enable-multibyte \
-		--enable-cscope
+		--enable-cscope \
+		--without-wayland
 
 # not directly usable with CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION= 2.71
