@@ -1,0 +1,4 @@
+Fx is a dual-purpose command-line tool tailored for JSON, providing both
+a terminal-based JSON viewer and a JSON processing utility. While the JSON
+viewer is crafted in Go and functions without external dependencies,
+the JSON processing tool is developed in JS, compatible with Node.js and Deno.
