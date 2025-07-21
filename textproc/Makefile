@@ -66,6 +66,7 @@
      SUBDIR += foliate
      SUBDIR += fragistics
      SUBDIR += fstrcmp
+     SUBDIR += fx
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += gi-docgen
