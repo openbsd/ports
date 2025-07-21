@@ -5,13 +5,14 @@ DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
 SHARED_LIBS +=  confuse              3.0      # 3.0
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://github.com/martinh/libconfuse
 
 # ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		iconv intl
+WANTLIB=  iconv intl pthread
 
 SITES=		https://github.com/martinh/libconfuse/releases/download/v${V}/
 

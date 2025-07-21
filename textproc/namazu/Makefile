@@ -1,6 +1,6 @@
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.21
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS+=	nmz 0.1	# .8.3
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.namazu.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl m
+WANTLIB=  c iconv intl m pthread
 
 SITES=		${HOMEPAGE}stable/
 

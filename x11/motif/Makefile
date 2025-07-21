@@ -1,7 +1,7 @@
 COMMENT=	Motif toolkit
 
 DISTNAME=	motif-2.3.8
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  Xm                   6.1      # 4.4
 SHARED_LIBS +=  Mrm                  4.1      # 4.4
@@ -15,8 +15,8 @@ SITES=		${SITE_SOURCEFORGE:=motif/}
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xft Xmu Xrender Xt c expat fontconfig \
-		freetype iconv jpeg m png xcb z
+WANTLIB=  ICE SM X11 Xext Xft Xmu Xrender Xt c expat fontconfig freetype
+WANTLIB+= iconv jpeg m png pthread xcb z
 
 LIB_DEPENDS=	converters/libiconv \
 		graphics/jpeg \

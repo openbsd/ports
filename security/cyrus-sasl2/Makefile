@@ -1,11 +1,11 @@
 # XXX merge this patch and rid of the dot.la files?
-https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
+# https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 V=			2.1.28
 DISTNAME=		cyrus-sasl-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  sasl2                3.1      # 3.0
 SHARED_LIBS +=	anonymous                 0.0 # 3.0
@@ -87,7 +87,7 @@ WANTLIB += heimdal/lib/heimsqlite
 LIB_DEPENDS +=		databases/openldap
 CONFIGURE_ARGS +=	--with-ldap=${LOCALBASE} \
 			--enable-ldapdb
-WANTLIB += lber ldap ssl
+WANTLIB += lber ldap pthread ssl
 .else
 CONFIGURE_ARGS +=	--without-ldap
 .endif
@@ -111,7 +111,7 @@ CONFIGURE_ARGS +=	--without-mysql
 .if ${FLAVOR:Mpgsql}
 LIB_DEPENDS +=		databases/postgresql
 CFLAGS +=		-I${LOCALBASE}/include/postgresql
-WANTLIB += m pq ssl
+WANTLIB += m pq pthread ssl
 .else
 CONFIGURE_ARGS +=	--without-pgsql
 .endif

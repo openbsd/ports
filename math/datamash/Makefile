@@ -1,7 +1,7 @@
 COMMENT=	perform basic numeric, textual and statistical operations
 
 DISTNAME=	datamash-1.8
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE=	Yes
 FIX_EXTRACT_PERMISSIONS= Yes
 
 # uses pledge()
-WANTLIB=	c m iconv intl
+
+WANTLIB=  c iconv intl m pthread
 LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=gnu

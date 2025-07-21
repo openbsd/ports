@@ -6,6 +6,9 @@ MODGO_VERSION =		v0.10.1
 DISTNAME =		tea-${MODGO_VERSION}
 WRKDIST =		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 
+WANTLIB =  pthread
+REVISION =		0
+
 CATEGORIES =		devel
 
 HOMEPAGE =		https://gitea.com/gitea/tea

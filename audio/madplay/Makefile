@@ -1,7 +1,7 @@
 COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
-REVISION=	9
+REVISION=	10
 CATEGORIES=	audio
 HOMEPAGE=	https://mad.sourceforge.net/
 
@@ -16,7 +16,8 @@ SITES=		ftp://ftp.mars.org/pub/mpeg/ \
 LIB_DEPENDS=	audio/libid3tag \
 		audio/libmad \
 		devel/gettext,-runtime
-WANTLIB=	c iconv id3tag intl m mad sndio z
+
+WANTLIB=  c iconv id3tag intl m mad pthread sndio z
 
 SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION=2.59

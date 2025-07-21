@@ -1,7 +1,7 @@
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-REVISION=	18
+REVISION=	19
 
 SHARED_LIBS=	Xbae 4.60
 
@@ -12,8 +12,8 @@ HOMEPAGE=	https://xbae.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xpm Xrender Xt expat fontconfig
-WANTLIB += freetype iconv jpeg m png xcb z
+WANTLIB =  ICE SM X11 Xext Xft Xm Xmu Xpm Xrender Xt expat fontconfig
+WANTLIB += freetype iconv jpeg m png pthread xcb z
 
 SITES=		${SITE_SOURCEFORGE:=xbae/}
 

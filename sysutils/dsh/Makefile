@@ -2,7 +2,7 @@ COMMENT=	dancers shell or distributed shell
 
 DISTNAME =	dsh-0.25.10
 CATEGORIES=	sysutils net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
 SITES=		http://www.netfort.gr.jp/~dancer/software/downloads/
@@ -10,7 +10,7 @@ SITES=		http://www.netfort.gr.jp/~dancer/software/downloads/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c dshconfig iconv intl
+WANTLIB =  c dshconfig iconv intl pthread
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libdshconfig

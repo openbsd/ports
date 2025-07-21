@@ -1,7 +1,7 @@
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.15.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	archivers
 
@@ -12,7 +12,7 @@ SITES=		${SITE_GNU:=sharutils/}
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl
+WANTLIB =  c iconv intl pthread
 
 LIB_DEPENDS=	devel/gettext,-runtime
 

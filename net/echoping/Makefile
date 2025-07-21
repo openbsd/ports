@@ -3,7 +3,7 @@ COMMENT=	test performance of remote TCP/UDP services
 VER=		6_0_2
 DISTNAME=	echoping-RELEASE_${VER}
 PKGNAME=	echoping-${VER:S/_/./g}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 SITES=	https://framagit.org/bortzmeyer/echoping/-/archive/RELEASE_${VER}/
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/bortzmeyer/echoping
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto iconv intl m popt ssl
+WANTLIB =  c crypto iconv intl m popt pthread ssl
 
 NO_TEST=		Yes
 

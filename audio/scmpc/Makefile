@@ -1,14 +1,14 @@
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
 DISTNAME=		scmpc-0.4.1
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://cmende.github.io/scmpc/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c confuse curl glib-2.0 iconv intl mpdclient
+WANTLIB =  c confuse curl glib-2.0 iconv intl mpdclient pthread
 
 SITES=			https://bitbucket.org/cmende/scmpc/downloads/
 

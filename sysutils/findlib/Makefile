@@ -1,7 +1,7 @@
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.9.6
-REVISION=	2
+REVISION=	3
 
 SITES=		http://download.camlcity.org/download/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES+=	lang/ocaml x11/tk
 
-WANTLIB +=	c m
+WANTLIB =  c m pthread
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS= -no-custom \

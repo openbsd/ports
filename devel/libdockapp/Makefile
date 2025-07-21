@@ -3,13 +3,14 @@ COMMENT=		dockapp-making standard library for Window Maker
 DISTNAME=		libdockapp-0.7.3
 SHARED_LIBS=		dockapp              2.0      # .1.0
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.dockapps.net/libdockapp/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 Xext Xpm xcb
+WANTLIB=  X11 Xext Xpm pthread xcb
 
 SITES=			https://www.dockapps.net/download/
 

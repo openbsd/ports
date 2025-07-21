@@ -1,6 +1,7 @@
 COMMENT =	easy to use graphical editor
 
 DISTNAME =	cooledit-3.17.28
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -13,7 +14,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	X11 c iconv intl util xcb
+WANTLIB =  X11 c iconv intl pthread util xcb
 
 SITES =		https://www.ibiblio.org/pub/Linux/apps/editors/X/cooledit/
 

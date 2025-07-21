@@ -1,6 +1,6 @@
 COMMENT=	split mp3/ogg files without decoding
 DISTNAME=	mp3splt-2.6.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
@@ -9,7 +9,7 @@ HOMEPAGE=	https://mp3splt.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c mp3splt
+WANTLIB=  c mp3splt pthread
 
 SITES=		${SITE_SOURCEFORGE:=mp3splt/}
 

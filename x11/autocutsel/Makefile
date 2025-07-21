@@ -2,7 +2,7 @@ COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.1
 DISTNAME=	autocutsel-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -13,8 +13,7 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
-WANTLIB += xcb
+WANTLIB =  ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c pthread xcb
 
 SITES=		https://github.com/sigmike/autocutsel/releases/download/$V/
 

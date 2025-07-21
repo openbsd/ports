@@ -2,14 +2,14 @@ COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.62
 CATEGORIES=		misc
 SITES=			${SITE_SOURCEFORGE:=lifelines/}
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://lifelines.sourceforge.net/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses iconv intl m
+WANTLIB =  c curses iconv intl m pthread
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		YACC="bison -y" \

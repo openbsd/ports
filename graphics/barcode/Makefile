@@ -2,12 +2,12 @@ COMMENT=		convert text strings to printed bars
 
 DISTNAME=		barcode-0.99
 CATEGORIES=		graphics
-REVISION=		2
+REVISION=		3
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c iconv intl m paper
+WANTLIB =  c iconv intl m paper pthread
 
 SITES=			${SITE_GNU:=barcode/}
 
