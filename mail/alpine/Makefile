@@ -11,10 +11,12 @@ PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
 PKGNAME-imap=		imap-uw-${V}
 PKGNAME-mailutil=	mailutil-uw-${V}
-REVISION-main=		2
-REVISION-c-client=	0
-REVISION-imap=		0
-REVISION-mailutil=	0
+# pico/pilot PKGNAMEs have different version numbers, so REVISION are
+# set separately below (and shouldn't get removed when alpine is updated).
+REVISION-main=		3
+REVISION-c-client=	1
+REVISION-imap=		1
+REVISION-mailutil=	1
 
 # grep "PICO version" ${WRKSRC}/pico/pico.h
 PICO_V=			5.09
@@ -53,12 +55,9 @@ SITES=			https://alpineapp.email/alpine/release/src/ \
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-WANTLIB += c crypto iconv intl curses ssl
+WANTLIB += c crypto iconv intl curses pthread ssl
 
-WANTLIB-main=		${WANTLIB} pthread
 WANTLIB-c-client=	crypto ssl
-WANTLIB-pico=		${WANTLIB} pthread
-WANTLIB-pilot=		${WANTLIB} pthread
 
 LIB_DEPENDS=		devel/gettext,-runtime
 LIB_DEPENDS-c-client=
