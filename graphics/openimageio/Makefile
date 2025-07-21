@@ -5,11 +5,11 @@ COMMENT =		library for reading and writing images
 
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
-GH_TAGNAME =		v3.0.6.1
+GH_TAGNAME =		v3.0.8.1
 PKGNAME =		${DISTNAME:L}
 
-SHARED_LIBS +=		OpenImageIO		17.0
-SHARED_LIBS +=		OpenImageIO_Util	11.0
+SHARED_LIBS +=		OpenImageIO		18.0
+SHARED_LIBS +=		OpenImageIO_Util	11.1
 
 CATEGORIES =		graphics devel
 
