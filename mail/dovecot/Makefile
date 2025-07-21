@@ -12,6 +12,7 @@ V_MAJOR=	2.3
 V_DOVECOT=	2.3.21.1
 EPOCH=		0
 REVISION=	1
+REVISION-postgresql=	2
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -45,7 +46,7 @@ WANTLIB-server=	bz2 c crypto expat exttextcat-2.0 iconv icudata icui18n \
 		icuuc lz4 lzma m pthread sodium sqlite3 ssl stemmer z zstd
 WANTLIB-ldap=	pthread crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
 WANTLIB-mysql=	crypto m mariadb pthread ssl z
-WANTLIB-postgresql= crypto m pq ssl
+WANTLIB-postgresql= crypto m pq pthread ssl
 
 .for i in ${MULTI_PACKAGES:N-main}
 # subpackages aren't flavoured, so overwrite the default name/path
