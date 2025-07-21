@@ -2,6 +2,7 @@ COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
 MODPY_DISTV =		7.0.3
+REVISION-main =		0
 DISTNAME =		mercurial-${MODPY_DISTV}
 CATEGORIES =		devel
 
@@ -31,6 +32,7 @@ RUN_DEPENDS =		devel/libgit2/py-git2
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 
+WANTLIB-main =		c
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
 
