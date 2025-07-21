@@ -1,6 +1,7 @@
 COMMENT=	list-like structure implementing MutableSequence
 
 MODPY_DISTV=	1.6.0
+REVISION=	0
 DISTNAME=	frozenlist-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -11,6 +12,8 @@ HOMEPAGE=	https://frozenlist.readthedocs.io/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} m
 
 # C++
 COMPILER=	base-clang ports-gcc
