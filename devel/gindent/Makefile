@@ -2,7 +2,7 @@ COMMENT=	GNU utility to indent C source files
 
 DISTNAME=	indent-2.2.10
 PKGNAME=	g${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.gnu.org/software/indent/
@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.gnu.org/software/indent/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c
+WANTLIB += c pthread
 
 SITES=		${SITE_GNU:=indent/}
 

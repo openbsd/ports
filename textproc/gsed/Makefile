@@ -5,7 +5,7 @@ PKGNAME=		g${DISTNAME}
 CATEGORIES=		textproc
 SITES=			${SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.gnu.org/software/sed/
 
@@ -14,7 +14,7 @@ MAINTAINER=		Armin Wolfermann <armin@wolfermann.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c iconv intl
+WANTLIB=		c iconv intl pthread
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

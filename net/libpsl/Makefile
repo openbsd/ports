@@ -2,7 +2,7 @@ COMMENT =		public suffix list library
 
 V =			0.21.1
 DISTNAME =		libpsl-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		psl	1.2	# 8.3
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/rockdaboot/libpsl/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c iconv idn2 intl unistring
+WANTLIB += c iconv idn2 intl pthread unistring
 
 SITES =			${HOMEPAGE}/releases/download/${V}/
 

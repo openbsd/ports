@@ -3,7 +3,7 @@ PORTROACH=	ignore:1
 COMMENT=	European Molecular Biology Open Software Suite
 
 DISTNAME=	EMBOSS-6.0.1
-REVISION=	5
+REVISION=	6
 SHARED_LIBS +=  eplplot                 0.0   # .5.7
 SHARED_LIBS +=  ajax                    1.0   # .6.0
 SHARED_LIBS +=  ajaxg                   1.0   # .6.0
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 SITES=		https://distfiles.sigtrap.nl/
 
-WANTLIB += X11 c m xcb
+WANTLIB += X11 c m xcb pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --without-java \

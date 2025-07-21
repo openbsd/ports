@@ -1,7 +1,7 @@
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-7.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		print
 
@@ -10,7 +10,7 @@ HOMEPAGE =		https://www.gnu.org/software/texinfo/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c iconv intl curses unistring
+WANTLIB += c iconv intl curses pthread unistring
 
 SITES =			${SITE_GNU:=texinfo/}
 

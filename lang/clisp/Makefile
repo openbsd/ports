@@ -3,14 +3,14 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
-REVISION =		6
+REVISION =		7
 CATEGORIES=		lang
 HOMEPAGE=		https://clisp.sourceforge.io/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  avcall c callback iconv intl m curses readline sigsegv
+WANTLIB =  avcall c callback iconv intl m curses pthread readline sigsegv
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libsigsegv \

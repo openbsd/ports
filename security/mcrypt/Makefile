@@ -1,7 +1,7 @@
 COMMENT =	extendable encryption program that supports many ciphers
 
 DISTNAME =		mcrypt-2.6.8
-REVISION =		7
+REVISION =		8
 CATEGORIES =		security
 
 HOMEPAGE =		https://mcrypt.sourceforge.net/
@@ -11,7 +11,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c iconv intl ltdl mcrypt mhash z
+WANTLIB =		c iconv intl ltdl mcrypt mhash pthread z
 
 SITES =			${SITE_SOURCEFORGE:=mcrypt/}
 

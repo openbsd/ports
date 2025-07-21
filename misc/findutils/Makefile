@@ -2,13 +2,14 @@ COMMENT=	finds and then operates on files
 
 DISTNAME=	findutils-4.10.0
 CATEGORIES=	misc
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/findutils/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl m
+WANTLIB=	c iconv intl m pthread
 
 SITES=		${SITE_GNU:=findutils/}
 EXTRACT_SUFX=	.tar.xz

@@ -3,7 +3,7 @@ COMMENT=	lightweight regexp matching library with additional features
 DISTNAME=		tre-0.8.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://laurikari.net/tre/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 SHARED_LIBS +=	tre                  7.0      # 5.0
 
-WANTLIB=		c iconv intl
+WANTLIB=		c iconv intl pthread
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

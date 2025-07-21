@@ -4,6 +4,7 @@ DISTNAME=	cpio-2.15
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/cpio/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +15,7 @@ SITES=		${SITE_GNU:=cpio/}
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	devel/gettext,-runtime
-WANTLIB=	c iconv intl
+WANTLIB=	c iconv intl pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix="g" \

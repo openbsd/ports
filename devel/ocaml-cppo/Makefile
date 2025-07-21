@@ -4,13 +4,13 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	cppo
 GH_TAGNAME =	v1.6.6
-REVISION =	8
+REVISION =	9
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD
 PERMIT_PACKAGE = Yes
 
-WANTLIB =	c m
+WANTLIB =	c m pthread
 
 MODULES =	lang/ocaml
 

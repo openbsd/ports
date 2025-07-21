@@ -8,7 +8,7 @@ SHARED_LIBS=	vanessa_socket			1.0	# 3.0
 
 SITES=		${SITE_VANESSA:=vanessa_socket/${VERSION}/}
 
-WANTLIB=  c iconv intl popt vanessa_logger>=1.0
+WANTLIB=  c iconv intl popt vanessa_logger>=1.0 pthread
 
 LIB_DEPENDS=	vanessa_logger->=0.0.10:devel/vanessa/logger \
 		devel/popt

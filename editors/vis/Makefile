@@ -1,4 +1,5 @@
 COMMENT =		vi-like editor with sam-style structural regex support
+REVISION =		0
 
 DIST_TUPLE =		github martanne vis      v0.9	.
 DIST_TUPLE +=		github martanne vis-test v0.5	test
@@ -10,7 +11,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
+WANTLIB += c curses iconv intl m pthread termkey tre ${MODLUA_WANTLIB}
 
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3

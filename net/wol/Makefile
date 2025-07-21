@@ -1,7 +1,7 @@
 COMMENT=		Wake On Lan client
 
 DISTNAME=		wol-0.7.1
-REVISION=		6
+REVISION=		7
 CATEGORIES=		net
 
 HOMEPAGE=		https://ahh.sourceforge.net/wol/
@@ -9,7 +9,7 @@ HOMEPAGE=		https://ahh.sourceforge.net/wol/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl
+WANTLIB += c iconv intl pthread
 
 SITES=			${SITE_SOURCEFORGE:=ahh/}
 

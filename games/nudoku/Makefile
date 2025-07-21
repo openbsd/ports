@@ -3,6 +3,7 @@ COMMENT =	ncurses based sudoku game
 GH_ACCOUNT =	jubalh
 GH_PROJECT =	nudoku
 GH_TAGNAME =	5.0.0
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -11,7 +12,7 @@ HOMEPAGE =	https://jubalh.github.io/nudoku/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c curses iconv intl
+WANTLIB +=	c curses iconv intl pthread
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

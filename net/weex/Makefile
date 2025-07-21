@@ -10,7 +10,7 @@ HOMEPAGE=		https://weex.sourceforge.net
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c crypto iconv intl ssl
+WANTLIB=		c crypto iconv intl ssl pthread
 
 SITES=			${SITE_SOURCEFORGE:=weex/}
 DISTFILES=		weex_${VERSION}.tar.gz

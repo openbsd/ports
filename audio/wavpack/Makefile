@@ -3,6 +3,7 @@ COMMENT =		audio codec for lossless, lossy and hybrid compression
 VERSION =		5.8.1
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		http://www.wavpack.com/
 
@@ -11,7 +12,7 @@ SHARED_LIBS +=		wavpack		0.3	# 3.1
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c crypto iconv m
+WANTLIB =		c crypto iconv m pthread
 
 SITES =	https://github.com/dbry/wavpack/releases/download/${VERSION}/
 EXTRACT_SUFX =		.tar.xz
