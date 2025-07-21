@@ -1,7 +1,7 @@
 Index: src/check-symbols.py
 --- src/check-symbols.py.orig
 +++ src/check-symbols.py
-@@ -62,7 +62,7 @@ for soname in [
+@@ -63,7 +63,7 @@ for soname in [
      "harfbuzz-gobject",
      "harfbuzz-cairo",
  ]:
