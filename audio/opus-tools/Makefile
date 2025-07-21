@@ -2,6 +2,7 @@ COMMENT=	encode, inspect, and decode Opus files
 
 DISTNAME=	opus-tools-0.2
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	https://opus-codec.org/
 
@@ -17,7 +18,9 @@ LIB_DEPENDS=	audio/flac \
 		audio/libopusenc \
 		audio/opus \
 		audio/opusfile
-WANTLIB=	FLAC c crypto m ogg opus opusenc opusfile opusurl sndio ssl
+
+WANTLIB=  FLAC c crypto m ogg opus opusenc opusfile opusurl pthread
+WANTLIB+= sndio ssl
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu

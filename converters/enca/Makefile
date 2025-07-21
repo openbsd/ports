@@ -2,7 +2,7 @@ COMMENT=		detect character set and encoding of text files
 
 DISTNAME=		enca-1.19
 CATEGORIES=		converters textproc
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  enca                 0.0      # 5.1
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://cihar.com/software/enca/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c iconv intl m recode
+WANTLIB =  c iconv intl m pthread recode
 
 SITES=			https://dl.cihar.com/enca/
 

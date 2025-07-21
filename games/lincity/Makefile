@@ -3,11 +3,12 @@ COMMENT=		Rich city simulation game for X
 DISTNAME=		lincity-1.13.1
 CATEGORIES=		games
 HOMEPAGE=		https://lincity.sourceforge.net/
-REVISION=		3
+REVISION=		4
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
-WANTLIB += ICE SM X11 Xext c iconv intl m png xcb z
+
+WANTLIB =  ICE SM X11 Xext c iconv intl m png pthread xcb z
 
 SITES=			${SITE_SOURCEFORGE:=lincity/}
 

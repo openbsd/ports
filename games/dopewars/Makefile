@@ -1,6 +1,7 @@
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.6.2
+REVISION=	0
 CATEGORIES=	games
 SITES=		${SITE_SOURCEFORGE:=dopewars/}
 
@@ -9,7 +10,7 @@ HOMEPAGE=	https://dopewars.sourceforge.io/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curl curses glib-2.0 iconv intl
+WANTLIB += c curl curses glib-2.0 iconv intl pthread
 
 LIB_DEPENDS+=   devel/glib2 \
 		net/curl

@@ -1,7 +1,7 @@
 COMMENT =		solitaire games
 
 DISTNAME =		ace-1.4
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  cards                     0.0 # 1.0
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.delorie.com/store/ace/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 c m png xcb z
+WANTLIB =  X11 c m png pthread xcb z
 
 SITES =			http://www.delorie.com/store/ace/
 

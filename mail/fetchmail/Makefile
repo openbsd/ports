@@ -2,6 +2,7 @@ COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.4.39
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	mail
 SITES=		${SITE_SOURCEFORGE:=fetchmail/}
@@ -11,7 +12,7 @@ HOMEPAGE=	https://www.fetchmail.info/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto iconv intl ssl
+WANTLIB =  c crypto iconv intl pthread ssl
 
 MODULES=		lang/python
 

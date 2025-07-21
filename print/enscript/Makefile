@@ -1,8 +1,8 @@
 COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.6
-CATEGORIES=     	print
-REVISION=		2
+CATEGORIES=		print
+REVISION=		3
 
 HOMEPAGE=		https://www.gnu.org/software/enscript/
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE=	Yes
 SITES=			${SITE_GNU:=enscript/}
 
 LIB_DEPENDS=		devel/gettext,-runtime
-WANTLIB=		c iconv intl m
+
+WANTLIB=  c iconv intl m pthread
 
 CONFIGURE_STYLE=	gnu
 

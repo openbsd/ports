@@ -1,7 +1,7 @@
 COMMENT=		info viewer with lynx-style navigation
 
 DISTNAME=		pinfo-0.6.9
-REVISION=		2
+REVISION=		3
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
@@ -13,7 +13,8 @@ SITES=	https://alioth-archive.debian.org/releases/pinfo/pinfo/pinfo-0.6.9/ \
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c curses iconv intl readline 
+
+WANTLIB=  c curses iconv intl pthread readline
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

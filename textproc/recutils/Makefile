@@ -1,6 +1,7 @@
 COMMENT =	tools to access human-editable plaintext record files
 
 DISTNAME =	recutils-1.9
+REVISION =	0
 
 SHARED_LIBS +=  rec                       1.0 # 1.0
 
@@ -11,7 +12,7 @@ HOMEPAGE =	https://www.gnu.org/software/recutils/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c gcrypt gpg-error iconv intl m readline
+WANTLIB =  c gcrypt gpg-error iconv intl m pthread readline
 
 SITES =			${SITE_GNU:=recutils/}
 

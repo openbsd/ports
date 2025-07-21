@@ -3,7 +3,7 @@ COMMENT=		GNU make debugger
 V=			1.6
 PKGNAME=		remake-${V}
 DISTNAME=		remake-4.3+dbg-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -13,7 +13,7 @@ SITES=			${SITE_SOURCEFORGE:=bashdb/}
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+= c iconv intl readline
+WANTLIB=  c iconv intl pthread readline
 
 LIB_DEPENDS=		converters/libiconv \
 			devel/gettext,-runtime

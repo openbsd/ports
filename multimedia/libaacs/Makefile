@@ -2,6 +2,7 @@ COMMENT =		AACS support library for Blu-ray playback
 
 V =			0.11.1
 DISTNAME =		libaacs-${V}
+REVISION =		0
 
 CATEGORIES =		multimedia
 
@@ -13,7 +14,7 @@ EXTRACT_SUFX =		.tar.bz2
 # LGPL v2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c gcrypt gpg-error iconv intl
+WANTLIB =  c gcrypt gpg-error iconv intl pthread
 
 SHARED_LIBS +=		aacs	3.1	# 5.1
 

@@ -1,7 +1,7 @@
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.4.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 
 HOMEPAGE=		https://sarg.sourceforge.net/
@@ -9,14 +9,14 @@ HOMEPAGE=		https://sarg.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += bz2 c execinfo gd iconv intl lzma m pcre z
+WANTLIB += bz2 c execinfo gd iconv intl lzma m pcre pthread z
 
 SITES=			${SITE_SOURCEFORGE:=sarg/}
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/gettext,-runtime \
 			devel/pcre \
- 			graphics/gd
+			graphics/gd
 
 CFLAGS+=		-fcommon
 

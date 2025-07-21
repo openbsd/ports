@@ -1,7 +1,7 @@
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4
-REVISION=	7
+REVISION=	8
 SHARED_LIBS=	wmf		8.0	\
 		wmf-0.2		8.0	\
 		wmflite		7.1	\
@@ -14,7 +14,7 @@ HOMEPAGE=	https://wvware.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	X11 c expat freetype m xcb z jpeg png Xau Xdmcp
+WANTLIB =  X11 Xau Xdmcp c expat freetype jpeg m png pthread xcb z
 
 SITES=		${SITE_SOURCEFORGE:=wvware/}
 

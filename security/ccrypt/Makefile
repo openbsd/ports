@@ -3,7 +3,7 @@ PORTROACH=	skipv:1.11.mac-x86_64
 COMMENT=	encrypt and decrypt AES files and streams
 
 V=		1.11
-REVISION=	3
+REVISION=	4
 DISTNAME=	ccrypt-${V}
 CATEGORIES=	security
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://ccrypt.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=  c iconv intl
+WANTLIB=  c iconv intl pthread
 
 SITES=		${HOMEPAGE}/download/${V}/ \
 		${SITE_SOURCEFORGE:=ccrypt/}
