@@ -88,11 +88,6 @@ TEST_DEPENDS += devel/dejagnu \
 		devel/autogen \
 		${BUILD_PKGPATH},-libs>=8,<9
 
-SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-SITES.strap =	https://distfiles.stumpf.co/ \
-		https://spacehopper.org/mirrors/ \
-		https://distfiles.bsdfrog.org/
-
 LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada

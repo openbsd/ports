@@ -39,7 +39,11 @@ DESCR-dlang ?=	${PORTSDIR}/lang/gcc/DESCR-dlang
 
 HOMEPAGE?=	https://gcc.gnu.org/
 
-DIST_SUBDIR=gcc
+DIST_SUBDIR=	gcc
+SITES?=		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+SITES.strap?=	https://distfiles.stumpf.co/ \
+		https://spacehopper.org/mirrors/ \
+		https://distfiles.bsdfrog.org/
 
 # do not include OSREV
 CONFIG=${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
