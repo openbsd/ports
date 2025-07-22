@@ -3,6 +3,7 @@ COMMENT=	Google WebP image format conversion tool
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
 GH_TAGNAME=	v1.6.0
+REVISION=	0
 CATEGORIES=	graphics
 
 SHARED_LIBS +=  sharpyuv             0.1      # 0.0
@@ -16,7 +17,10 @@ HOMEPAGE=	https://developers.google.com/speed/webp/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c gif jpeg lzma m png pthread tiff z zstd
+WANTLIB=	${COMPILER_LIBCXX} Lerc c gif jpeg lzma m png pthread \
+		tiff z zstd
+
+COMPILER=	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	graphics/giflib \
 		graphics/jpeg \
