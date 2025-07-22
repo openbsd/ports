@@ -3,7 +3,7 @@ COMMENT =		complete front-end for MPlayer and MPV
 CATEGORIES =		multimedia x11
 GH_ACCOUNT =     	smplayer-dev
 GH_PROJECT =     	smplayer
-GH_TAGNAME =     	v24.5.0
+GH_TAGNAME =     	v25.6.0
 
 HOMEPAGE =		https://www.smplayer.info/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		${COMPILER_LIBCXX}
 WANTLIB += 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += 		Qt5Xml X11 Xext c m pthread z
+WANTLIB += 		Qt5Qml Qt5Xml X11 Xext c m pthread z
 
 MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
