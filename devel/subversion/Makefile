@@ -8,6 +8,7 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 VERSION=		1.14.5
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
+REVISION-main=		0
 PKGNAME-perl=		p5-SVN-${VERSION}
 PKGNAME-python=		py3-subversion-${VERSION}
 REVISION-python=	0
@@ -66,7 +67,8 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/gettext,-runtime \
 		security/cyrus-sasl2
 
-WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 c db sasl2>=2 serf-1>=1.0 ssl sqlite3
+WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 c db sasl2>=2 serf-1>=1.0 \
+		crypto ssl sqlite3
 RUN_DEPENDS-main=
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
