@@ -3,6 +3,7 @@ BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 COMMENT=		API for accessing scanners, backends
 
 V=			1.4.0
+REVISION=		0
 DISTNAME=		backends-${V}
 PKGNAME=		sane-${DISTNAME}
 
@@ -77,7 +78,7 @@ CONFIGURE_ARGS +=	--without-avahi
 
 .if ${FLAVOR:Msnmp}
 LIB_DEPENDS +=		net/net-snmp
-WANTLIB += crypto netsnmp
+WANTLIB += crypto netsnmp ssl
 CONFIGURE_ARGS +=	--with-snmp
 .else
 CONFIGURE_ARGS +=	--without-snmp

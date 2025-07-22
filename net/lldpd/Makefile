@@ -1,7 +1,7 @@
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 DISTNAME=	lldpd-1.0.19
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	lldpctl                   2.3 # 13.0
 
@@ -47,7 +47,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-snmp
 LIB_DEPENDS+=		net/net-snmp
 WANTLIB += netsnmp netsnmpagent netsnmpmibs
-WANTLIB += crypto kvm m perl
+WANTLIB += crypto kvm m perl ssl
 .endif
 
 post-extract:

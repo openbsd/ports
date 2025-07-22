@@ -1,7 +1,7 @@
 COMMENT=		tool to monitor interface bandwidth usage
 
 DISTNAME=		ifstat-1.1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		net
 
 HOMEPAGE=		http://gael.roualland.free.fr/ifstat/
@@ -24,7 +24,7 @@ FLAVOR?=
 WANTLIB +=		netsnmp
 LIB_DEPENDS=		net/net-snmp
 CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}
-WANTLIB+=		crypto m
+WANTLIB+=		crypto m ssl
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
