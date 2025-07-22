@@ -1,7 +1,7 @@
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	telephony
 SITES=		${HOMEPAGE}downloads/spandsp/
 
@@ -14,7 +14,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2/GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c jpeg lzma m pthread tiff z zstd
+WANTLIB=	${COMPILER_LIBCXX} Lerc c jpeg lzma m pthread tiff z zstd
+
+COMPILER=	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS+=	graphics/tiff
 

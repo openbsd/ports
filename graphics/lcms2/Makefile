@@ -3,7 +3,7 @@ COMMENT =		color management library
 DISTNAME =		lcms2-2.16
 CATEGORIES =		graphics
 SITES =			${SITE_SOURCEFORGE:=lcms/}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  lcms2                2.0      # 2.16
 
@@ -12,7 +12,9 @@ HOMEPAGE =		https://www.littlecms.com/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c jpeg lzma m pthread tiff z zstd
+WANTLIB =  ${COMPILER_LIBCXX} Lerc c jpeg lzma m pthread tiff z zstd
+
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	graphics/tiff
 
