@@ -1,24 +1,29 @@
 MODGO_MODULES =	\
+	github.com/alecthomas/assert/v2		 v2.11.0 \
+	github.com/alecthomas/chroma/v2		 v2.15.0 \
+	github.com/alecthomas/repr		 v0.4.0 \
 	github.com/antonmedv/clipboard		 v1.0.1 \
 	github.com/atotto/clipboard		 v0.1.4 \
 	github.com/aymanbagabas/go-osc52/v2	 v2.0.1 \
+	github.com/aymanbagabas/go-udiff	 v0.2.0 \
 	github.com/charmbracelet/bubbles	 v0.18.0 \
-	github.com/charmbracelet/bubbletea	 v0.26.5 \
+	github.com/charmbracelet/bubbletea	 v1.3.2 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
-	github.com/charmbracelet/lipgloss	 v0.11.0 \
-	github.com/charmbracelet/x/ansi		 v0.1.2 \
-	github.com/charmbracelet/x/input	 v0.1.2 \
-	github.com/charmbracelet/x/term		 v0.1.1 \
-	github.com/charmbracelet/x/windows	 v0.1.2 \
+	github.com/charmbracelet/lipgloss	 v1.0.0 \
+	github.com/charmbracelet/x/ansi		 v0.8.0 \
+	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
+	github.com/charmbracelet/x/term		 v0.2.1 \
 	github.com/containerd/console		 v1.0.4-0.20230313162750-1ae8d489ac81 \
+	github.com/dlclark/regexp2		 v1.11.4 \
 	github.com/dustin/go-humanize		 v1.0.1 \
 	github.com/erikgeiser/coninput		 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/expr-lang/expr		 v1.16.9 \
+	github.com/hexops/gotextdiff		 v1.0.3 \
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-isatty		 v0.0.20 \
 	github.com/mattn/go-localereader	 v0.0.1 \
-	github.com/mattn/go-runewidth		 v0.0.15 \
+	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/muesli/ansi			 v0.0.0-20230316100256-276c6243b2f6 \
 	github.com/muesli/cancelreader		 v0.2.2 \
 	github.com/muesli/reflow		 v0.3.0 \
@@ -26,11 +31,9 @@ MODGO_MODULES =	\
 	github.com/nfnt/resize			 v0.0.0-20180221191011-83c6a9932646 \
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/sahilm/fuzzy			 v0.1.1 \
-	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
-	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/mod			 v0.17.0 \
-	golang.org/x/sync			 v0.7.0 \
-	golang.org/x/sys			 v0.21.0 \
+	golang.org/x/sync			 v0.11.0 \
+	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/term			 v0.6.0 \
 	golang.org/x/text			 v0.16.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d
@@ -38,22 +41,21 @@ MODGO_MODULES =	\
 MODGO_MODFILES =	\
 	github.com/charmbracelet/bubbletea	 v0.25.0 \
 	github.com/charmbracelet/lipgloss	 v0.9.1 \
-	github.com/charmbracelet/x/ansi		 v0.1.0 \
-	github.com/charmbracelet/x/ansi		 v0.1.1 \
-	github.com/charmbracelet/x/input	 v0.1.0 \
-	github.com/charmbracelet/x/windows	 v0.1.0 \
+	github.com/charmbracelet/x/ansi		 v0.4.2 \
 	github.com/mattn/go-isatty		 v0.0.18 \
 	github.com/mattn/go-runewidth		 v0.0.14 \
+	github.com/mattn/go-runewidth		 v0.0.15 \
 	github.com/muesli/ansi			 v0.0.0-20211018074035-2e021307bc4b \
 	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/rivo/uniseg			 v0.4.6 \
 	github.com/sahilm/fuzzy			 v0.1.1-0.20230530133925-c48e322e2a8f \
 	golang.org/x/sync			 v0.1.0 \
+	golang.org/x/sync			 v0.7.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
 	golang.org/x/sys			 v0.12.0 \
 	golang.org/x/sys			 v0.19.0 \
-	golang.org/x/sys			 v0.20.0 \
+	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/sys			 v0.7.0 \
 	golang.org/x/text			 v0.3.8

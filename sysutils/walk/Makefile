@@ -1,7 +1,7 @@
 COMMENT =	terminal file manager
 
 MODGO_MODNAME = github.com/antonmedv/walk
-MODGO_VERSION = v1.12.0
+MODGO_VERSION = v1.13.0
 
 DISTNAME =	walk-${MODGO_VERSION}
 
