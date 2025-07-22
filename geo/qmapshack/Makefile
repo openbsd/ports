@@ -18,7 +18,7 @@ WANTLIB += Qt6Gui Qt6Help Qt6Network Qt6OpenGL Qt6OpenGLWidgets
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
 WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Sql Qt6UiTools Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += bz2 c gdal jpeg m proj routino z
+WANTLIB += bz2 c gdal jpeg m proj quazip1-qt6 routino z
 
 MODULES =		devel/cmake x11/qt6
 
@@ -26,6 +26,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		archivers/bzip2 \
+			archivers/quazip,qt6 \
 			devel/proj \
 			geo/gdal,-main \
 			geo/routino \
