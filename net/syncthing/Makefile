@@ -28,6 +28,8 @@ MODGO_TYPE =		bin
 # so we package only these binaries.
 ST_CMDS =	syncthing stdiscosrv strelaysrv
 
+MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
+
 # If at any point quic is busted for our in-tree go version, then you can
 # temporarily add `-tags noquic` to at least get syncthing building (albeit
 # without quic support obviously). When you do that, some more tests will fail.
