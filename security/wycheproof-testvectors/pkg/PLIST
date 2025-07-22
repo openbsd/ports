@@ -362,6 +362,15 @@ share/wycheproof/testvectors_v1/hmac_sha512_test.json
 share/wycheproof/testvectors_v1/hmac_sm3_test.json
 share/wycheproof/testvectors_v1/kmac128_no_customization_test.json
 share/wycheproof/testvectors_v1/kmac256_no_customization_test.json
+share/wycheproof/testvectors_v1/mldsa_44_sign_noseed_test.json
+share/wycheproof/testvectors_v1/mldsa_44_sign_seed_test.json
+share/wycheproof/testvectors_v1/mldsa_44_verify_test.json
+share/wycheproof/testvectors_v1/mldsa_65_noseed_sign_test.json
+share/wycheproof/testvectors_v1/mldsa_65_seed_sign_test.json
+share/wycheproof/testvectors_v1/mldsa_65_verify_test.json
+share/wycheproof/testvectors_v1/mldsa_87_sign_noseed_test.json
+share/wycheproof/testvectors_v1/mldsa_87_sign_seed_test.json
+share/wycheproof/testvectors_v1/mldsa_87_verify_test.json
 share/wycheproof/testvectors_v1/mlkem_test.json
 share/wycheproof/testvectors_v1/morus1280_test.json
 share/wycheproof/testvectors_v1/morus640_test.json
