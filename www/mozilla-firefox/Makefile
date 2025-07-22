@@ -3,14 +3,14 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	140.0.4
+MOZILLA_VERSION =	141.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	152.0
+SO_VERSION =	153.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
@@ -85,13 +85,6 @@ COMMENT_FFVPX ?=
 COMMENT_FFVPX =		@comment # needs a trailing space
 .endif
 SUBST_VARS +=		COMMENT_FFVPX
-
-# vendored copy of dav1d needs patching to avoid these (or changing to the ports
-# version, which already has relevant patches).
-USE_NOBTCFI-aarch64 =	Yes
-.if ${MACHINE_ARCH} == aarch64
-USE_NOEXECONLY =	Yes
-.endif
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
