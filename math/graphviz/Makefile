@@ -7,6 +7,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
 REVISION-main=	0
+REVISION-tcl=	0
 
 MULTI_PACKAGES=	-main -tcl
 
@@ -53,7 +54,7 @@ WANTLIB-main += poppler-glib rsvg-2 unistring xml2
 
 # "extra" libtclXX: tcldot is built against Tcl headers
 WANTLIB-tcl += ${WANTLIB} ${MODTCL_WANTLIB}
-WANTLIB-tcl += cdt cgraph gvc pathplan xdot
+WANTLIB-tcl += Lerc cdt cgraph gvc pathplan xdot
 
 COMPILER=	base-clang ports-gcc
 

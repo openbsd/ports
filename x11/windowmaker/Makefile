@@ -2,7 +2,7 @@ COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 
 V =			0.96.0
-REVISION-main=		0
+REVISION-main=		1
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
@@ -21,7 +21,7 @@ MAINTAINER=		Michael <michi+openbsd@dataswamp.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 XRes Xext Xft Xinerama
+WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SM X11 XRes Xext Xft Xinerama
 WANTLIB += Xmu Xpm Xrandr Xrender Xt c expat ffi fontconfig freetype
 WANTLIB += fribidi gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 harfbuzz iconv intl jpeg kvm lzma m pango-1.0

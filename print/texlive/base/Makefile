@@ -6,6 +6,8 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
+REVISION-main =		0
+
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
@@ -22,7 +24,7 @@ SHARED_LIBS +=		ptexenc		6.1 # 5.6
 SHARED_LIBS +=		synctex		3.1 # 2.0
 SHARED_LIBS +=		texlua53        0.1 # 8.6
 
-WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB-main += ${COMPILER_LIBCXX} Lerc ICE SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB-main += Xmu Xpm Xrender Xt c cairo expat fontconfig freetype
 WANTLIB-main += gd glib-2.0 graphite2 harfbuzz iconv icudata icui18n
 WANTLIB-main += icuio icuuc intl jpeg kpathsea lzma m paper pcre2-8
