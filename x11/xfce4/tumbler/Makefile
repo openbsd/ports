@@ -1,6 +1,7 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
+REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 1.0
 
@@ -19,6 +20,7 @@ WANTLIB += speex ssl swresample swscale theoradec theoraenc tiff
 WANTLIB += unibreak va va-drm va-x11 vidstab vorbis vorbisenc
 WANTLIB += vpx x264 x265 xcb xcb-dri3 xcb-render xcb-shm xfce4util
 WANTLIB += xml2 xvidcore z zimg zstd
+WANTLIB += graphite2 sharpyuv webp webpmux
 
 COMPILER =		base-clang ports-gcc base-gcc
 
