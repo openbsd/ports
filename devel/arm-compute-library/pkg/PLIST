@@ -518,6 +518,7 @@ include/arm_compute/runtime/experimental/operators/CpuAdd.h
 include/arm_compute/runtime/experimental/operators/CpuDepthwiseConv2d.h
 include/arm_compute/runtime/experimental/operators/CpuDequantize.h
 include/arm_compute/runtime/experimental/operators/CpuElementwise.h
+include/arm_compute/runtime/experimental/operators/CpuFullyConnected.h
 include/arm_compute/runtime/experimental/operators/CpuGEMMLowp.h
 include/arm_compute/runtime/experimental/operators/CpuGemm.h
 include/arm_compute/runtime/experimental/operators/CpuGemmConv2d.h
