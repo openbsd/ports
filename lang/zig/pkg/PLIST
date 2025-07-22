@@ -5483,6 +5483,7 @@ lib/zig/libc/include/loongarch64-linux-gnusf/bits/wordsize.h
 lib/zig/libc/include/loongarch64-linux-gnusf/fpu_control.h
 lib/zig/libc/include/loongarch64-linux-gnusf/gnu/
 lib/zig/libc/include/loongarch64-linux-gnusf/gnu/lib-names.h
+lib/zig/libc/include/loongarch64-linux-gnusf/gnu/stubs-lp64s.h
 lib/zig/libc/include/loongarch64-linux-gnusf/gnu/stubs.h
 lib/zig/libc/include/loongarch64-linux-gnusf/ieee754.h
 lib/zig/libc/include/loongarch64-linux-gnusf/sys/
