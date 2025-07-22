@@ -1,13 +1,14 @@
 COMMENT =		refactoring library
 
-MODPY_DISTV =	1.13.0
+MODPY_DISTV =		1.14.0
 DISTNAME =		rope-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/python-rope/rope
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
