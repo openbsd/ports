@@ -1,7 +1,7 @@
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	6
+REVISION =	7
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
@@ -12,9 +12,11 @@ HOMEPAGE =	https://subsurface-divelog.org
 # The content of mobile-widgets/qml/icons/ is Apache 2, but not installed.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Svg Qt5Widgets c crypto curl git2 m sqlite3 ssh2
-WANTLIB += ssl usb-1.0 xml2 zip
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Location
+WANTLIB += Qt5Network Qt5Positioning Qt5PositioningQuick Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets
+WANTLIB += c crypto curl git2 m sqlite3 ssh2 ssl usb-1.0 xml2
+WANTLIB += xslt zip
 
 SITES =		https://subsurface-divelog.org/downloads/
 EXTRACT_SUFX =	.tgz
@@ -40,7 +42,10 @@ LIB_DEPENDS =	archivers/libzip \
 		net/curl \
 		security/libssh2 \
 		textproc/libxml \
+		textproc/libxslt \
 		x11/qt5/qtbase \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtlocation \
 		x11/qt5/qtsvg
 
 USE_GMAKE =	Yes
