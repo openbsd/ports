@@ -39,12 +39,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.socket
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.socket
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility
-lib/${MOZILLA_PROJECT}/browser/features/
-lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}/browser/features/pictureinpicture@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}/browser/features/webcompat-reporter@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}/browser/features/webcompat@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/omni.ja
 lib/${MOZILLA_PROJECT}/defaults/
 lib/${MOZILLA_PROJECT}/defaults/pref/
@@ -60,7 +54,6 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
 @lib lib/${MOZILLA_PROJECT}/libgkcodecs.so.${LIBgkcodecs_VERSION}
-@lib lib/${MOZILLA_PROJECT}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}

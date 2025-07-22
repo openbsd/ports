@@ -1,7 +1,7 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-MOZILLA_VERSION =	128.12.0esr
+MOZILLA_VERSION =	140.1.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
@@ -10,8 +10,8 @@ MOZILLA_DIST =		firefox
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	11.0
-MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3 ipcclientcerts
+SO_VERSION =	12.0
+MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
 
 CATEGORIES =	www
 
@@ -27,6 +27,7 @@ COMPILER =	ports-clang
 .if ${MACHINE_ARCH} == aarch64
 MODCLANG_VERSION =	16
 USE_LLD =		ports
+CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/
 CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
 .else
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
@@ -64,10 +65,10 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 
+MOZILLA_USE_SYSTEM_AV1 =Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 # LTO eats too much RAM on riscv64
 .if ${MACHINE_ARCH} != riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
@@ -97,7 +98,7 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop \
+	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# make sure TwemojiMozilla.ttf is found
