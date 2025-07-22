@@ -1,0 +1,11 @@
+Index: rigs/dummy/rot_pstrotator.c
+--- rigs/dummy/rot_pstrotator.c.orig
++++ rigs/dummy/rot_pstrotator.c
+@@ -21,6 +21,7 @@
+ #include <stdlib.h>
+ #include <string.h>  /* String function definitions */
+ #include <math.h>
++#include <sys/socket.h>
+ #include <sys/time.h>
+ #include <errno.h>
+ 

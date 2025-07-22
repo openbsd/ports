@@ -1,6 +1,6 @@
 lib/tcl${MODTCL_VERSION}/
 lib/tcl${MODTCL_VERSION}/Hamlib/
-@so lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl-4.4.so
+@so lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl-4.6.so
 lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl.la
 @so lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl.so
 lib/tcl${MODTCL_VERSION}/Hamlib/pkgIndex.tcl

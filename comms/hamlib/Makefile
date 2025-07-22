@@ -1,21 +1,17 @@
 COMMENT-main=	radio/rotator control library
-COMMENT-python=	python bindings for hamlib
-COMMENT-tcl=	tcl bindings for hamlib
+COMMENT-python=	Python bindings for hamlib
+COMMENT-tcl=	Tcl bindings for hamlib
 
-VERSION=	4.4
+VERSION=	4.6.4
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
-REVISION-main=	1
-REVISION-python=3
-REVISION-tcl=	1
-
 MULTI_PACKAGES=	-main -python -tcl
 
-SHARED_LIBS +=	hamlib               4.0      # 4.4
-SHARED_LIBS +=	hamlib++             4.0      # 4.4
+SHARED_LIBS +=	hamlib               5.0      # 4.6
+SHARED_LIBS +=	hamlib++             4.0      # 4.6
 
-HOMEPAGE=	https://hamlib.sourceforge.net/
+HOMEPAGE=	https://hamlib.github.io/
 
 MODULES=	lang/python \
 		lang/tcl
@@ -23,7 +19,7 @@ MODULES=	lang/python \
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -47,11 +43,9 @@ RUN_DEPENDS-main=
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
-SITES=			${SITE_SOURCEFORGE:=hamlib/}
+SITES=			https://github.com/Hamlib/Hamlib/releases/download/${VERSION}/
 
-CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-cxx-binding \
 			--with-perl-binding \

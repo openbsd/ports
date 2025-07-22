@@ -3,16 +3,22 @@
 @bin bin/rigctl
 @bin bin/rigctlcom
 @bin bin/rigctld
+@bin bin/rigctlsync
+@bin bin/rigctltcp
+@bin bin/rigfreqwalk
 @bin bin/rigmem
 @bin bin/rigsmtr
 @bin bin/rigswr
 @bin bin/rigtestlibusb
+@bin bin/rigtestmcast
+@bin bin/rigtestmcastrx
 @bin bin/rotctl
 @bin bin/rotctld
 include/hamlib/
 include/hamlib/ampclass.h
 include/hamlib/amplifier.h
 include/hamlib/amplist.h
+include/hamlib/multicast.h
 include/hamlib/rig.h
 include/hamlib/rig_dll.h
 include/hamlib/rigclass.h
@@ -35,6 +41,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/
 @man man/man1/rigctl.1
 @man man/man1/rigctlcom.1
 @man man/man1/rigctld.1
+@man man/man1/rigctlsync.1
 @man man/man1/rigmem.1
 @man man/man1/rigsmtr.1
 @man man/man1/rigswr.1
@@ -43,15 +50,16 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/
 @man man/man7/hamlib-primer.7
 @man man/man7/hamlib-utilities.7
 @man man/man7/hamlib.7
+share/aclocal/
 share/aclocal/hamlib.m4
 share/doc/hamlib/
 share/doc/hamlib/COPYING
 share/doc/hamlib/COPYING.LIB
 share/doc/hamlib/ChangeLog
 share/doc/hamlib/LICENSE
-share/doc/hamlib/README
 share/doc/hamlib/README.betatester
 share/doc/hamlib/README.developer
+share/doc/hamlib/README.md
 share/doc/hamlib/examples/
 share/doc/hamlib/examples/perltest.pl
 share/doc/hamlib/examples/py3test.py
