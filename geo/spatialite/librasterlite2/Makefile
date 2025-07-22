@@ -1,6 +1,6 @@
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite2
-REVISION =	2
+REVISION =	3
 DISTNAME =	${PROJECT}-1.1.0-beta1
 PKGNAME =	${DISTNAME:S/-beta/beta/}
 SHARED_LIBS +=	rasterlite2 0.0 # 1.0
@@ -16,7 +16,7 @@ LIB_DEPENDS +=	geo/spatialite/libspatialite>=5.0.0 \
 		graphics/libwebp \
 		devel/geotiff
 
-WANTLIB += X11 Xext Xrender c cairo crypto curl expat fontconfig
+WANTLIB += Lerc X11 Xext Xrender c cairo crypto curl expat fontconfig
 WANTLIB += freetype freexl geos geos_c geotiff gif iconv jpeg lzma m
 WANTLIB += nghttp2 pixman-1 png proj pthread spatialite sqlite3
 WANTLIB += ssl ${COMPILER_LIBCXX} tiff webp xcb xcb-render xcb-shm xml2 z

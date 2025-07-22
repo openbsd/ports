@@ -2,7 +2,7 @@ COMMENT =	CLI tools for spatialite
 PROJECT =	spatialite-tools
 DISTNAME =	${PROJECT}-5.1.0a
 PKGNAME =	${DISTNAME:S/a$/pl0/}
-REVISION =	0
+REVISION =	1
 
 LIB_DEPENDS +=	converters/libiconv \
 		databases/sqlite3 \
@@ -10,7 +10,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		geo/spatialite/readosm
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c curses expat freexl geos geos_c iconv lzma m proj pthread
+WANTLIB += Lerc c curses expat freexl geos geos_c iconv lzma m proj pthread
 WANTLIB += readline readosm spatialite sqlite3 xml2 z
 WANTLIB += crypto curl jpeg nghttp2 ssl tiff zstd bz2 minizip rttopo
 WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls
