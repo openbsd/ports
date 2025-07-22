@@ -8,7 +8,7 @@ V =		VERSION_8.61
 DIST_TUPLE =	gitlab nicolasfella signond \
 		c8ad98249af541514ff7a81634d3295e712f1a39 .
 DISTNAME =	signond-${V:S/VERSION_//}pl0
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -21,12 +21,13 @@ SHARED_LIBS +=  signon-qt5                0.0 # 1.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Xml c m
+WANTLIB += Qt5Sql Qt5Xml c m proxy
 
 MODULES =	x11/qt5 \
 		devel/qmake
 
 BUILD_DEPENDS =	devel/doxygen>=1.10.0
+LIB_DEPENDS =	net/libproxy
 
 WRKDIST =	${WRKDIR}/signond-c8ad98249af541514ff7a81634d3295e712f1a39
 
