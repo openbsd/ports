@@ -34,7 +34,8 @@ MODULES =		lang/python \
 
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		devel/boost \
+BUILD_DEPENDS =		devel/bison \
+			devel/boost \
 			lang/cython \
 			textproc/p5-Pod-Parser
 
