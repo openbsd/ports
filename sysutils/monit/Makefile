@@ -1,6 +1,7 @@
 COMMENT=	monitoring and managing daemons utility
 
 DISTNAME=	monit-5.35.2
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -11,7 +12,7 @@ MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 # AGPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto m kvm pthread ssl z
+WANTLIB += c crypto execinfo m kvm pthread ssl z
 
 SITES=		${HOMEPAGE}/dist/
 

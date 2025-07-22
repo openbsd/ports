@@ -2,6 +2,7 @@ COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
 VERSION =		4.98.2
+REVISION-main =		0
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -17,7 +18,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		c m
-WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre2-8 ssl
+WANTLIB-main =		${cWANTLIB} crypto execinfo iconv perl pcre2-8 ssl
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre2-8
 
 SITES =			https://ftp.exim.org/pub/exim/exim4/ \
