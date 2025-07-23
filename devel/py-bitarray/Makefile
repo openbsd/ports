@@ -1,6 +1,6 @@
 COMMENT=	efficiently handle arrays of Booleans
 
-MODPY_DISTV=	3.5.1
+MODPY_DISTV=	3.5.2
 DISTNAME=	bitarray-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
