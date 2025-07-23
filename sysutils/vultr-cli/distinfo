@@ -49,7 +49,8 @@ SHA256 (go_modules/github.com/go-logr/logr/@v/v1.4.2.zip) = n4km/abe5h5oUiQhlj1Y
 SHA256 (go_modules/github.com/go-logr/stdr/@v/v1.2.2.mod) = CBIWD3dHTY2/aSt8qu5/1VCESMcF2bVLWjSWrERGjCw=
 SHA256 (go_modules/github.com/go-logr/stdr/@v/v1.2.2.zip) = ndaJO/cAGYSFrmmWQLSbwe+8bHOzfLV5KgR24f2Pf+8=
 SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.mod) = U5P+Nk8aIAxqhO4se/cn8CyeCx+ETKE7GIypJfRxiwg=
-SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.zip) = u8ChoWM8DpAklQpZXk4F4Or/Ak3gb7gxindk8FZgB90=
+SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.3.0.mod) = U5P+Nk8aIAxqhO4se/cn8CyeCx+ETKE7GIypJfRxiwg=
+SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.3.0.zip) = 2Kz7hWsJ94Enfomt3/R4FAfD15UDZLSXSDrtSD3C8QU=
 SHA256 (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.mod) = URfiu4bxzHzHSJ+fJYD6F7LvHjoKNGv2TtgGPKe4dmM=
 SHA256 (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.zip) = snA06PwBNidUPhrQmM/GUynyiW3z2lzzJmzJFm+T86U=
 SHA256 (go_modules/github.com/google/go-cmp/@v/v0.5.2.mod) = QDarVjaqQr0xMpbNO/y0yIkSdgxWqeZlWuQi2HZ8gNo=
@@ -70,8 +71,8 @@ SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = XwLShnLRvA
 SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 6fPc/LMxcrpJm0+OiIFpJS1/HgcgghghJKbiBTUj998=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v1.6.3.mod) = rYQvNloINL+Kq7jOEJhd63mR2vRcxsWsBwX0sOrk+wU=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v1.6.3.zip) = 66sxNuUyetF2BkhfYzwtAzxh6tuEOy82KbbWXW+7FAA=
-SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = EIAKwHT/lU7l7L5Rczj0E3MKQqLEfBzYGrZQ0b08VPg=
-SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = Kfo2VavQp8kfOh6xhtMJ7CS1gK+xDTmjzfqM3g6Z4Kk=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.8.mod) = CZ/yuI4u1k9yIvhKjXy/fnJyYdTRgTOKaBhP6fYNxJw=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.8.zip) = niwXXkrzfN/roo7YklCtH9aR7aD6sWf6+pkoIiZGtx4=
 SHA256 (go_modules/github.com/inconshreveable/mousetrap/@v/v1.1.0.mod) = HBsVkRqooL1c0PZnDsI9EIZJbzYV/fUzBq/ytHbOm+E=
 SHA256 (go_modules/github.com/inconshreveable/mousetrap/@v/v1.1.0.zip) = UmZ03mJNfbEIz+dlPvEQzN/Ze8hQJiVCJIFVZ5KO0kM=
 SHA256 (go_modules/github.com/kr/fs/@v/v0.1.0.mod) = tbztWH7emUmijxpGAxPEmwj1cVuYgNu1eXgyf4WC78A=
@@ -126,8 +127,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = rxpdyzMazno/n8G1
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqBGx05F9SdxOGEHNdW8o8MTxWTkzw=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = iy2Lx4td7xBjYIZ6gq2CxaTp3pNULwogcIe7ODhPVb8=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = FC2z3SMo50TBV+hc8ykdAnATt5+SpFmE+GD+OLwPH40=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.20.0.mod) = kKHY+ZZY/j9aV6heNTHb7KT7s5Bl2ivu/tow2spScwc=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.20.0.zip) = PQJbH2EpX+lHE0VBISXGwqf+DfytukdSMbltmzj3tM4=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.21.1.mod) = 3UMuGMycmb/RpC8W3zbbz5pzlWX4ogeBAVC9dDZOco8=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.21.1.zip) = uGOkfo1GcEVCPYPfgiUiWdDdv7Gy03IDsvwOvAk7MSE=
 SHA256 (go_modules/go.opencensus.io/@v/v0.24.0.mod) = DcnMxmCtIc66/9VI8sxu+ieJHGi0+8H4o4k7APGs7JY=
 SHA256 (go_modules/go.opencensus.io/@v/v0.24.0.zip) = IDp2fX+OfB6+VYgiCtFo0eFbFK5wpjbefKmkqIp+DQw=
 SHA256 (go_modules/go.opentelemetry.io/contrib/detectors/gcp/@v/v1.29.0.mod) = E/J+QSz0mhNWtkfLqD0XrNo7yrdjX6hkoLuo1Tbu2v4=
@@ -193,7 +194,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.zip) = 9VVoTlxdrMKFDd2zRf7xuPk/VGtyaFWJeJ2m0rBicQ4=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (vultr-cli-v3.5.0.zip) = VgFaPI6WWsHiMiVUozSiFsoVAYRsqUaoGn55Vp90fRg=
+SHA256 (vultr-cli-v3.6.0.zip) = lmov7oFVpc1mkG0lceMu3FFdbQPEsN9bnV4+V4mvvFU=
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.mod) = 434
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.zip) = 195942
 SIZE (go_modules/cloud.google.com/go/@v/v0.116.0.mod) = 1782
@@ -245,7 +246,8 @@ SIZE (go_modules/github.com/go-logr/logr/@v/v1.4.2.zip) = 90503
 SIZE (go_modules/github.com/go-logr/stdr/@v/v1.2.2.mod) = 80
 SIZE (go_modules/github.com/go-logr/stdr/@v/v1.2.2.zip) = 12533
 SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.mod) = 52
-SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.zip) = 49964
+SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.3.0.mod) = 52
+SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.3.0.zip) = 51640
 SIZE (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.mod) = 36
 SIZE (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.zip) = 39744
 SIZE (go_modules/github.com/google/go-cmp/@v/v0.5.2.mod) = 105
@@ -266,8 +268,8 @@ SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = 50
 SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 9586
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v1.6.3.mod) = 314
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v1.6.3.zip) = 39280
-SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = 341
-SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = 32348
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.8.mod) = 341
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.8.zip) = 33384
 SIZE (go_modules/github.com/inconshreveable/mousetrap/@v/v1.1.0.mod) = 53
 SIZE (go_modules/github.com/inconshreveable/mousetrap/@v/v1.1.0.zip) = 6350
 SIZE (go_modules/github.com/kr/fs/@v/v0.1.0.mod) = 26
@@ -322,8 +324,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = 266
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = 17070
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.20.0.mod) = 256
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.20.0.zip) = 133654
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.21.1.mod) = 256
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.21.1.zip) = 136166
 SIZE (go_modules/go.opencensus.io/@v/v0.24.0.mod) = 300
 SIZE (go_modules/go.opencensus.io/@v/v0.24.0.zip) = 310262
 SIZE (go_modules/go.opentelemetry.io/contrib/detectors/gcp/@v/v1.29.0.mod) = 799
@@ -389,4 +391,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.zip) = 42835
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (vultr-cli-v3.5.0.zip) = 172976
+SIZE (vultr-cli-v3.6.0.zip) = 178333

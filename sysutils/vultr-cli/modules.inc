@@ -23,7 +23,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify								 v1.8.0 \
 	github.com/go-logr/logr									 v1.4.2 \
 	github.com/go-logr/stdr									 v1.2.2 \
-	github.com/go-viper/mapstructure/v2							 v2.2.1 \
+	github.com/go-viper/mapstructure/v2							 v2.3.0 \
 	github.com/golang/groupcache								 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/google/go-cmp								 v0.6.0 \
 	github.com/google/go-querystring							 v1.1.0 \
@@ -33,7 +33,7 @@ MODGO_MODULES =	\
 	github.com/googleapis/gax-go/v2								 v2.14.1 \
 	github.com/hashicorp/go-cleanhttp							 v0.5.2 \
 	github.com/hashicorp/go-hclog								 v1.6.3 \
-	github.com/hashicorp/go-retryablehttp							 v0.7.7 \
+	github.com/hashicorp/go-retryablehttp							 v0.7.8 \
 	github.com/inconshreveable/mousetrap							 v1.1.0 \
 	github.com/kr/fs									 v0.1.0 \
 	github.com/kr/pretty									 v0.3.1 \
@@ -57,7 +57,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.1.0 \
 	github.com/stretchr/testify								 v1.10.0 \
 	github.com/subosito/gotenv								 v1.6.0 \
-	github.com/vultr/govultr/v3								 v3.20.0 \
+	github.com/vultr/govultr/v3								 v3.21.1 \
 	go.opencensus.io									 v0.24.0 \
 	go.opentelemetry.io/contrib/detectors/gcp						 v1.29.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc		 v0.54.0 \
@@ -91,6 +91,7 @@ MODGO_MODULES =	\
 MODGO_MODFILES =	\
 	cloud.google.com/go/compute/metadata	 v0.3.0 \
 	github.com/davecgh/go-spew		 v1.1.0 \
+	github.com/go-viper/mapstructure/v2	 v2.2.1 \
 	github.com/google/go-cmp		 v0.5.2 \
 	github.com/google/go-cmp		 v0.5.9 \
 	github.com/kr/pretty			 v0.2.1 \
