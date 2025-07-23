@@ -5,6 +5,7 @@ GH_ACCOUNT =		wxMaxima-developers
 GH_PROJECT =		wxmaxima
 GH_TAGNAME =		Version-$V
 PKGNAME =		wxMaxima-$V
+REVISION =		0
 
 CATEGORIES =		math
 
