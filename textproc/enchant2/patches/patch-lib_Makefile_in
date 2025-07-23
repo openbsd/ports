@@ -1,12 +1,12 @@
 Index: lib/Makefile.in
 --- lib/Makefile.in.orig
 +++ lib/Makefile.in
-@@ -1437,7 +1437,7 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
+@@ -1446,7 +1446,7 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
  	mv $@.tmp $@
  
  enchant.html: enchant.5
 -	groff -mandoc -Thtml $< > $@
 +	mandoc -Thtml $< > $@
  
- loc:
+ loc-local:
  	$(CLOC) $(ALL_SOURCE_FILES)
