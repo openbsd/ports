@@ -14,12 +14,12 @@ SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 # changes look (because they often are not)."
 GH_ACCOUNT =	LuaJIT
 GH_PROJECT =	LuaJIT
-GH_COMMIT =	eec7a8016c3381b949b5d84583800d05897fa960
-
-COMMENT =	just-in-time compiler for Lua
+GH_COMMIT =	871db2c84ecefd70a850e03a6c340214a81739f0
 # epoch time of the commit; easiest found in ${WRKSRC}/.relver of the
 # git-archive tar
-V =		2.1.1744318430
+V =		2.1.1753364724
+
+COMMENT =	just-in-time compiler for Lua
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
