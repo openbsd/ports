@@ -1,10 +1,9 @@
 COMMENT =	python client for consul
 
-MODPY_DISTV =	1.5.5
+MODPY_DISTV =	1.6.0
 
 DISTNAME =	py_consul-${MODPY_DISTV}
 PKGNAME =	py-consul-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
