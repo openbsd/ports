@@ -1,4 +1,4 @@
-SHA256 (fx-37.0.1.zip) = 6g3j+j1HjebjOTVi5SR8vxvi+riBuNqMQUs5BtFYOCI=
+SHA256 (fx-38.0.0.zip) = rBGQYtzZ4lGGMn5Zw9ePXjxuJiUt6NQ/3HFjHZBw9PY=
 SHA256 (go_modules/github.com/!make!now!just/heredoc/@v/v1.0.0.mod) = 3B2EuzNucehpa5me7KXAvVzWtAhwpM3HGtEYhz4BAUo=
 SHA256 (go_modules/github.com/!make!now!just/heredoc/@v/v1.0.0.zip) = Bir+bhGqPDrAA10IkHuA1eW3VjkFYDOR7ndL2kQKvxY=
 SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.1.mod) = 3P7TMlRlZszr37RIQcjXt8hl9U6r/hmEpsxErLXW7YQ=
@@ -136,7 +136,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.mod) = w7EbqaB3X/m8bxHbtYoeSMweaLr
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6z1BHnp4b73sDTkf0=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (fx-37.0.1.zip) = 2722996
+SIZE (fx-38.0.0.zip) = 2723159
 SIZE (go_modules/github.com/!make!now!just/heredoc/@v/v1.0.0.mod) = 47
 SIZE (go_modules/github.com/!make!now!just/heredoc/@v/v1.0.0.zip) = 5490
 SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.1.mod) = 49
