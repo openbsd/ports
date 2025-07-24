@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL backup & restore tool
 
-V =			2.55.1
+V =			2.56.0
 DISTNAME =		pgbackrest-${V}
 
 CATEGORIES = 		databases
