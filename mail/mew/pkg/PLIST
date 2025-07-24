@@ -157,6 +157,8 @@ share/emacs/site-lisp/mew-nntp.el
 share/emacs/site-lisp/mew-nntp.elc
 share/emacs/site-lisp/mew-nntp2.el
 share/emacs/site-lisp/mew-nntp2.elc
+share/emacs/site-lisp/mew-oauth2.el
+share/emacs/site-lisp/mew-oauth2.elc
 share/emacs/site-lisp/mew-passwd.el
 share/emacs/site-lisp/mew-passwd.elc
 share/emacs/site-lisp/mew-pgp.el
