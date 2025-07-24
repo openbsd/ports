@@ -82,7 +82,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kEnableHistorySyncOptinName[] = "History Sync Opt-in";
  const char kEnableHistorySyncOptinDescription[] =
      "Enables the History Sync Opt-in screen on Desktop platforms. The screen "
-@@ -5844,7 +5844,7 @@ const char kTranslateOpenSettingsDescription[] =
+@@ -5851,7 +5851,7 @@ const char kTranslateOpenSettingsDescription[] =
      "Add an option to the translate bubble menu to open language settings.";
  #endif
  
@@ -91,7 +91,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kWasmTtsComponentUpdaterEnabledName[] =
      "Enable Wasm TTS Extension Component";
  const char kWasmTtsComponentUpdaterEnabledDescription[] =
-@@ -7875,7 +7875,7 @@ const char kTetheringExperimentalFunctionalityDescript
+@@ -7882,7 +7882,7 @@ const char kTetheringExperimentalFunctionalityDescript
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -100,7 +100,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kGetAllScreensMediaName[] = "GetAllScreensMedia API";
  const char kGetAllScreensMediaDescription[] =
      "When enabled, the getAllScreensMedia API for capturing multiple screens "
-@@ -8104,7 +8104,7 @@ const char kEnableArmHwdrmDescription[] = "Enable HW b
+@@ -8111,7 +8111,7 @@ const char kEnableArmHwdrmDescription[] = "Enable HW b
  
  // Linux -----------------------------------------------------------------------
  
@@ -109,7 +109,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -8154,6 +8154,18 @@ const char kWaylandUiScalingDescription[] =
+@@ -8161,6 +8161,18 @@ const char kWaylandUiScalingDescription[] =
      "Enable experimental support for text scaling in the Wayland backend "
      "backed by full UI scaling. Requires #wayland-per-window-scaling to be "
      "enabled too.";
@@ -128,7 +128,7 @@ Index: chrome/browser/flag_descriptions.cc
  #endif  // BUILDFLAG(IS_LINUX)
  
  // Random platform combinations -----------------------------------------------
-@@ -8166,7 +8178,7 @@ const char kZeroCopyVideoCaptureDescription[] =
+@@ -8173,7 +8185,7 @@ const char kZeroCopyVideoCaptureDescription[] =
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -137,7 +137,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kFollowingFeedSidepanelName[] = "Following feed in the sidepanel";
  const char kFollowingFeedSidepanelDescription[] =
      "Enables the following feed in the sidepanel.";
-@@ -8209,7 +8221,7 @@ const char kGroupPromoPrototypeName[] = "Group Promo P
+@@ -8216,7 +8228,7 @@ const char kGroupPromoPrototypeName[] = "Group Promo P
  const char kGroupPromoPrototypeDescription[] =
      "Enables prototype for group promo.";
  
@@ -146,7 +146,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kEnableNetworkServiceSandboxName[] =
      "Enable the network service sandbox.";
  const char kEnableNetworkServiceSandboxDescription[] =
-@@ -8230,7 +8242,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -8237,7 +8249,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -155,7 +155,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(ENABLE_PRINTING)
  const char kCupsIppPrintingBackendName[] = "CUPS IPP Printing Backend";
  const char kCupsIppPrintingBackendDescription[] =
-@@ -8373,7 +8385,7 @@ const char kElementCaptureDescription[] =
+@@ -8380,7 +8392,7 @@ const char kElementCaptureDescription[] =
      "media track into a track capturing just a specific DOM element.";
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -164,7 +164,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kUIDebugToolsName[] = "Debugging tools for UI";
  const char kUIDebugToolsDescription[] =
      "Enables additional keyboard shortcuts to help debugging.";
-@@ -8424,7 +8436,7 @@ const char kComposeUpfrontInputModesDescription[] =
+@@ -8431,7 +8443,7 @@ const char kComposeUpfrontInputModesDescription[] =
      "Enables upfront input modes in the Compose dialog";
  #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
@@ -173,7 +173,7 @@ Index: chrome/browser/flag_descriptions.cc
  const char kThirdPartyProfileManagementName[] =
      "Third party profile management";
  const char kThirdPartyProfileManagementDescription[] =
-@@ -8542,7 +8554,7 @@ const char kSupervisedUserBlockInterstitialV3Name[] =
+@@ -8549,7 +8561,7 @@ const char kSupervisedUserBlockInterstitialV3Name[] =
  const char kSupervisedUserBlockInterstitialV3Description[] =
      "Enables URL filter interstitial V3 for Family Link users.";
  
