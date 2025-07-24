@@ -1,10 +1,9 @@
 COMMENT =		resolve abstract dependencies into concrete ones
 
-MODPY_DISTV =	1.0.1
+MODPY_DISTV =		1.2.0
 DISTNAME =		resolvelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
 
 HOMEPAGE =		https://github.com/sarugaku/resolvelib
 
