@@ -3,6 +3,7 @@ COMMENT =		pygments theme using jupyterlab CSS variables
 MODPY_DISTV =		0.3.0
 DISTNAME =		jupyterlab_pygments-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -18,7 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-nodejs-version
+BUILD_DEPENDS =		devel/py-hatch-jupyter-builder \
+			devel/py-hatch-nodejs-version
 
 RUN_DEPENDS =		textproc/py-pygments
 
