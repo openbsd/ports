@@ -22,6 +22,7 @@ COMMENT-xslt=		nginx XSLT filter module
 
 VERSION=	1.28.0
 REVISION=	1
+REVISION-njs=		2
 REVISION-passenger=	2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
@@ -58,7 +59,7 @@ DIST_TUPLE=	\
 	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
 	github vision5 ngx_devel_kit v0.3.3 ngx_devel_kit \
 	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
-	github nginx njs 0.8.10 njs \
+	github nginx njs 0.9.1 njs \
 	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
 	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module \
 	github owasp-modsecurity ModSecurity-nginx v1.0.3 ModSecurity-nginx

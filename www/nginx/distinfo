@@ -6,7 +6,7 @@ SHA256 (nbs-system-naxsi-d714f1636ea49a9a9f4f06dba14aee003e970834.tar.gz) = 2+IX
 SHA256 (nginx-1.20.1-chroot.patch) = SS1TB0j8N4/dn5pUTGT6WvkN3aAUuKz5+R0Nt+MG0gk=
 SHA256 (nginx-1.28.0.tar.gz) = xrXGsIbA3508o/9eCEwdDvkJ5gOCecccHD6YX1dv92o=
 SHA256 (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = ZXpA2rODS1enIREzlD1OqWwpWcv3NOUXH4eUOgOAmqg=
-SHA256 (nginx-njs-0.8.10.tar.gz) = C+S915GEzUP1WgN35ZEH/d/u8z5U+XyJCJTw/nJijSY=
+SHA256 (nginx-njs-0.9.1.tar.gz) = YTZe6mnGhi/IpbXfUxUDrklJn2vNWvkySWuEhQooJKQ=
 SHA256 (openresty-headers-more-nginx-module-v0.34.tar.gz) = DA0s7SzolbP0XrKyMM2QUIqyp3MpnxU94UpD5EwSCbM=
 SHA256 (openresty-lua-nginx-module-v0.10.11.tar.gz) = wPuR/P0cbn3sNMpkgm74H/66/e9hdNJURnY284BWZiY=
 SHA256 (owasp-modsecurity-ModSecurity-nginx-v1.0.3.tar.gz) = MqQiVmFsxnTcokyGVDlzkK3/FbiIt363TgaH8CPIdRs=
@@ -19,7 +19,7 @@ SIZE (nbs-system-naxsi-d714f1636ea49a9a9f4f06dba14aee003e970834.tar.gz) = 237272
 SIZE (nginx-1.20.1-chroot.patch) = 8783
 SIZE (nginx-1.28.0.tar.gz) = 1280111
 SIZE (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa444f6c3702e50.tar.gz) = 6159
-SIZE (nginx-njs-0.8.10.tar.gz) = 942446
+SIZE (nginx-njs-0.9.1.tar.gz) = 966480
 SIZE (openresty-headers-more-nginx-module-v0.34.tar.gz) = 28827
 SIZE (openresty-lua-nginx-module-v0.10.11.tar.gz) = 616653
 SIZE (owasp-modsecurity-ModSecurity-nginx-v1.0.3.tar.gz) = 34063
