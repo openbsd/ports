@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_DISTV =		2.18.7
+MODPY_DISTV =		2.19.0
 DISTNAME =		ansible_core-${MODPY_DISTV}
 PKGNAME =		ansible-core-${MODPY_DISTV}
 
@@ -38,6 +38,7 @@ TEST_DEPENDS =		devel/py-mock \
 			devel/py-tz \
 			security/py-cryptodome \
 			security/py-cryptography \
+			security/py-paramiko \
 			security/py-passlib
 
 TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
