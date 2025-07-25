@@ -1,5 +1,5 @@
 COMMENT =		non-backtracking regular expression engine
-V =			2025-06-26b
+V =			2025-07-22
 DISTNAME =		re2-${V}
 PKGNAME =		re2-${V:S/-//g}
 
