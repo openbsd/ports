@@ -9,6 +9,8 @@ PKG_ARCH=	*
 # BSD
 PERMIT_PACKAGE=	Yes
 
+BUILD_DEPENDS=	devel/p5-File-ShareDir-Install
+
 RUN_DEPENDS=	converters/p5-JSON \
 		converters/p5-Net-IDN-Encode \
 		devel/p5-Locale-Maketext-Gettext \
