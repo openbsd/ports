@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.16.4
+V =			5.16.5
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -81,7 +81,8 @@ LIB_DEPENDS =		archivers/lz4 \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kimageformats \
-			x11/gtk+4,-guic
+			x11/gtk+4,-guic \
+			x11/qt6/qtimageformats
 
 # opt-out since 5.15, requires more bundled stuff like fcitx5-qt, hime, nimf
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
