@@ -2,6 +2,7 @@ COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
 DISTNAME =		knot-3.4.5
+REVISION =		0
 
 SHARED_LIBS +=  dnssec               4.0      # 9.0
 SHARED_LIBS +=  knot                 11.0     # 15.0
@@ -41,6 +42,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
 			--enable-quic=embedded \
+			--disable-dbus \
 			--disable-dnstap \
 			--disable-maxminddb
 
