@@ -2,7 +2,7 @@ COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
 GNOME_PROJECT=		gtkglarea
 GNOME_VERSION=		2.0.1
-REVISION=		13
+REVISION=		14
 
 SHARED_LIBS +=  gtkgl-2.0      0.0               # .1.1
 
@@ -20,6 +20,7 @@ WANTLIB += xcb xcb-shm z Xau Xdmcp jpeg
 WANTLIB += X11-xcb Xxf86vm drm ffi glapi graphite2 gthread-2.0
 WANTLIB += harfbuzz pthread ${COMPILER_LIBCXX} xcb-dri2 xcb-glx xcb-render
 WANTLIB += fribidi xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
+WANTLIB += LLVM drm_amdgpu elf pciaccess xcb-randr
 
 COMPILER =		base-clang ports-gcc base-gcc
 
