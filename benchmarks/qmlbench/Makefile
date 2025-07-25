@@ -3,7 +3,7 @@ COMMENT =	QML and QtQuick benchmark tool
 # YYYYMMDD
 COMMIT_DATE =	20241908
 DISTNAME =	qmlbench-0.${COMMIT_DATE}
-REVISION =	0
+REVISION =	1
 
 KDE_COMMIT =	5cf6dc79bb9f246f910739f8d5596a7567f66668
 DIST_TUPLE +=	kde qt/qt-labs qmlbench ${KDE_COMMIT} .
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Quick3D
 WANTLIB += Qt6Quick3DRuntimeRender Qt6Quick3DUtils Qt6ShaderTools
-WANTLIB += c m
+WANTLIB += c m Qt6QmlMeta Qt6QmlWorkerScript
 
 MODULES =	devel/cmake \
 		x11/qt6
