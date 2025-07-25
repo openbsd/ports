@@ -2,6 +2,7 @@ COMMENT =		C++ library implementing a BitTorrent client
 
 V =			2.0.11
 DISTNAME =		libtorrent-rasterbar-${V}
+REVISION =		0
 
 SHARED_LIBS +=		torrent-rasterbar 10.0
 
@@ -14,8 +15,8 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}-mt crypto
-WANTLIB += m ssl
+WANTLIB += ${COMPILER_LIBCXX} boost_container-mt boost_graph-mt
+WANTLIB += boost_python${MODPY_MAJORMINOR}-mt crypto m ssl
 
 SITES =			https://github.com/arvidn/libtorrent/releases/download/v${V}/
 
