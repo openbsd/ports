@@ -1,6 +1,7 @@
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.6
+REVISION=	0
 
 CATEGORIES=	comms net
 
@@ -9,12 +10,13 @@ HOMEPAGE=	http://syncterm.bbsdev.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-# C11
+# C11, but also it's linked using c++ as a linker driver
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
+
+WANTLIB +=	${COMPILER_LIBCXX} c curses m ossaudio pthread util
 
 # sdl2 is dlopen()'d
-WANTLIB +=	SDL2 c curses m ossaudio pthread util
+WANTLIB +=	SDL2
 
 SITES=		${SITE_SOURCEFORGE:=syncterm/}
 EXTRACT_SUFX=	-src.tgz
