@@ -1,6 +1,6 @@
 COMMENT=		MATE system monitor
 
-REVISION=		1
+REVISION=		2
 
 MATE_PROJECT=		mate-system-monitor
 MATE_VERSION=		1.28.1
@@ -22,7 +22,7 @@ WANTLIB += pcre2-8 pixman-1 png rsvg-2 sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 WANTLIB += execinfo jpeg Xdmcp
 WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon
+WANTLIB += wayland-egl xkbcommon croco-0.6
 
 COMPILER =		base-clang ports-gcc base-gcc
 

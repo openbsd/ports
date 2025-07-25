@@ -1,6 +1,6 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		1
+REVISION=		2
 
 COMMENT=		image viewer for the MATE desktop
 
@@ -27,7 +27,7 @@ WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16
 WANTLIB += djvulibre jbig raw_r Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX} execinfo heif
 WANTLIB += atspi dbus-1 epoll-shim sharpyuv wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon
+WANTLIB += wayland-egl xkbcommon croco-0.6
 
 MODULES=		devel/dconf \
 			x11/gnome

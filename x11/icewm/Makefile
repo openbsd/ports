@@ -6,6 +6,7 @@ COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	https://ice-wm.org/
 
@@ -20,7 +21,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += harfbuzz iconv intl jpeg lzma m mp3lame mpg123 ogg
 WANTLIB += opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z croco-0.6
 
 COMPILER=	base-clang ports-gcc base-gcc
 
