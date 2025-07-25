@@ -1,9 +1,10 @@
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
-GH_ACCOUNT = 		nzjrs
-GH_PROJECT = 		osm-gps-map
+GH_ACCOUNT =		nzjrs
+GH_PROJECT =		osm-gps-map
 GH_COMMIT =		2396aa6cb2da877847049e7f4243a7d196f9862e
 DISTNAME =		osm-gps-map-1.2.1pre0
+REVISION =		0
 
 CATEGORIES=		geo x11
 
@@ -14,15 +15,16 @@ HOMEPAGE=		https://nzjrs.github.io/osm-gps-map/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gtk-3 harfbuzz iconv intl m nghttp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
-WANTLIB += pthread soup-3.0 sqlite3 xcb xcb-render xcb-shm z
-WANTLIB += Xau Xdmcp brotlicommon brotlidec ${COMPILER_LIBCXX} execinfo
-WANTLIB += fribidi idn2 jpeg psl unistring
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += brotlicommon brotlidec cairo cairo-gobject dbus-1 epoll-shim
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gtk-3 harfbuzz iconv idn2 intl jpeg m nghttp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png psl
+WANTLIB += soup-3.0 sqlite3 unistring wayland-client wayland-cursor
+WANTLIB += wayland-egl xcb xcb-render xcb-shm xkbcommon z
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
