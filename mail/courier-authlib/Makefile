@@ -5,6 +5,7 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.72.3
+REVISION-userdb=	0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -104,7 +105,7 @@ LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
 			databases/postgresql
 
 WANTLIB-userdb=		c courierauthcommon courierauth \
-			gdbm>=3 iconv intl
+			gdbm>=3 iconv intl pthread
 LIB_DEPENDS-userdb=	${BUILD_PKGPATH} \
 			databases/gdbm
 
