@@ -1,6 +1,7 @@
 COMMENT =	KDE image editing components
 
 DISTNAME =	kquickimageeditor-0.4.0
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
@@ -13,7 +14,7 @@ HOMEPAGE =	https://invent.kde.org/libraries/kquickimageeditor/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick m
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick m Qt6QmlMeta Qt6QmlWorkerScript
 
 MODULES =	devel/kf6
 
