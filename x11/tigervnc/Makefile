@@ -2,7 +2,8 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.14.1
+GH_TAGNAME=	v1.15.0
+REVISION=	0
 
 XORG_V=		21.1.13
 
@@ -23,11 +24,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst avcodec
-WANTLIB += avutil brotlidec brotlienc c fltk fltk_images
+WANTLIB += avutil c fltk fltk_images
 WANTLIB += fontconfig fontenc freetype gmp gnutls hogweed
 WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit
-WANTLIB += pixman-1 swscale tasn1 unistring xcb xshmfence
-WANTLIB += z zstd
+WANTLIB += pixman-1 swscale tasn1 unistring xcvt xshmfence z
 
 SITES.x=	https://www.x.org/releases/individual/xserver/
 

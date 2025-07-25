@@ -1,6 +1,7 @@
 COMMENT=		C++ library to create, manipulate and render SVG files
 
 DISTNAME=		wxsvg-1.5.25
+REVISION=		0
 EPOCH=			0
 CATEGORIES=		x11 graphics
 SITES=			${SITE_SOURCEFORGE:=wxsvg/}
@@ -32,7 +33,8 @@ WANTLIB += usbhid vorbis vorbisenc vpx wayland-client wayland-cursor
 WANTLIB += wayland-egl wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
 WANTLIB += wx_gtk3u_xrc-3.2 x264 x265 xcb xcb-render xcb-shm xkbcommon
-WANTLIB += xml2 xvidcore z zstd
+WANTLIB += xml2 xvidcore z zstd Lerc X11-xcb drm sharpyuv va va-drm
+WANTLIB += va-x11 webp webpmux xcb-dri3
 
 COMPILER=		base-clang ports-gcc base-gcc
 
