@@ -1,7 +1,7 @@
 COMMENT =	multilingual text processing library
 
 DISTNAME =	m17n-lib-${M17N_V}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  m17n-core            0.0      # 4.2
 SHARED_LIBS +=  m17n                 0.0      # 4.2
@@ -14,6 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xft Xmu Xpm Xrender Xt anthy
 WANTLIB += anthydic c expat fontconfig freetype fribidi gd iconv intl
 WANTLIB += jpeg lzma m otf png pthread tiff webp xcb xml2 z zstd
+WANTLIB += Lerc sharpyuv
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/libotf \
