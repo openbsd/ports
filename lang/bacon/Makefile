@@ -4,7 +4,7 @@ BROKEN-sparc64 =	SIGBUS bacon binary
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-5.0.2pre20241122
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 
@@ -16,7 +16,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
-WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m
+WANTLIB += Xft Xinerama Xrender c fltk fltk_images fontconfig m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
