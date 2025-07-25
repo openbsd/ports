@@ -1,6 +1,6 @@
 COMMENT =	solve algebraic, geometric, combinatorial problems
 
-V =		1.6.12
+V =		1.6.13
 GH_ACCOUNT =	4ti2
 GH_PROJECT =	4ti2
 GH_TAGNAME =	Release_${V:S/./_/g}
