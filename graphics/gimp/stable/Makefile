@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.38
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	2
+REVISION =	3
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -28,7 +28,7 @@ WANTLIB += ICE Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3 OpenEXRCore-3_3
 WANTLIB += OpenEXRUtil-3_3 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt aa aom atk-1.0 avahi-client avahi-common babl-0.1
-WANTLIB += bz2 c cairo cairo-gobject crypto cups curses
+WANTLIB += bz2 c cairo crypto cups curses
 WANTLIB += dbus-1 de265 execinfo exiv2 expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gexiv2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
@@ -39,6 +39,8 @@ WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv deflate
 WANTLIB += INIReader inih jxl_cms Lerc
+WANTLIB += croco-0.6 curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += openh264
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
