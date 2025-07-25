@@ -5,7 +5,7 @@ V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gkrellm.srcbox.net/
@@ -35,8 +35,8 @@ WANTLIB-client += ${WANTLIB}
 WANTLIB-client += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 cairo crypto fontconfig
 WANTLIB-client += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gobject-2.0
-WANTLIB-client += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-client += ssl z
+WANTLIB-client += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB-client += pangoft2-1.0 ssl
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

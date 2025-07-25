@@ -31,6 +31,7 @@ PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
 REVISION =		4
+REVISION-nut =		5
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -83,7 +84,7 @@ RUN_DEPENDS-memcachec =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut
 RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
-WANTLIB-nut =		crypto pthread ssl upsclient
+WANTLIB-nut =		crypto kvm pthread ssl upsclient
 
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
 WANTLIB-riemann =	gmp gnutls hogweed intl iconv idn2 nettle \
