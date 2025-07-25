@@ -3,13 +3,13 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2024.0.1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
-REVISION =	1
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  huginbase                 8.0
@@ -28,8 +28,8 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLU Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3
-WANTLIB += X11 boost_filesystem-mt boost_system-mt c epoxy exiv2
+WANTLIB += GL GLU Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3 X11
+WANTLIB += boost_atomic-mt boost_filesystem-mt boost_system-mt c epoxy exiv2
 WANTLIB += fftw3 flann flann_cpp jpeg lcms2 lz4 m pano13 png sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
