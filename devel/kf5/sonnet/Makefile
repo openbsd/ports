@@ -3,13 +3,15 @@ COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet
 
 DISTNAME =		sonnet-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5SonnetCore		7.0
 SHARED_LIBS +=		KF5SonnetUi		6.0
-WANTLIB-main += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB-main += Qt5QmlModels Qt5Quick Qt5Widgets c m
-WANTLIB-aspell += ${COMPILER_LIBCXX} KF5SonnetCore aspell m
-WANTLIB-hunspell += ${COMPILER_LIBCXX} KF5SonnetCore hunspell-1.7 m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core
+WANTLIB-main += ${WANTLIB} Qt5Gui Qt5Network Qt5Qml
+WANTLIB-main += ${WANTLIB} Qt5QmlModels Qt5Quick Qt5Widgets c m
+WANTLIB-aspell += ${WANTLIB} KF5SonnetCore aspell m
+WANTLIB-hunspell += ${WANTLIB} KF5SonnetCore hunspell-1.7 m
 
 
 
