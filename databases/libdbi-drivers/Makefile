@@ -1,5 +1,5 @@
 V =			0.9.0
-REVISION =		7
+REVISION =		8
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite3 =	sqlite3 driver for libdbi
@@ -41,7 +41,7 @@ LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =
 
-WANTLIB-pgsql =		m pq dbi crypto ssl
+WANTLIB-pgsql =		m pq pthread dbi crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql \
 			databases/libdbi
 RUN_DEPENDS-pgsql =
