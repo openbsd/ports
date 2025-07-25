@@ -2,6 +2,7 @@ COMMENT =		convert between ASN.1 encodings and text
 
 MODGO_MODNAME =		github.com/google/der-ascii
 MODGO_VERSION =		v0.6.0
+REVISION =		0
 
 DISTNAME =		der-ascii-0.6.0
 EPOCH =			0
@@ -14,6 +15,8 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c pthread
 
 MODULES =		lang/go
 
