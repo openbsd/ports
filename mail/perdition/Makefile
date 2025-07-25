@@ -9,7 +9,7 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail
 
@@ -57,7 +57,7 @@ COMPILER_LANGS =	c
 
 .include <bsd.port.arch.mk>
 
-cWANTLIB=		lib/db4/db>=4 vanessa_logger>=1.0
+cWANTLIB=		lib/db4/db>=4 pthread vanessa_logger>=1.0
 cLIB_DEPENDS+=		databases/db/v4 \
 			vanessa_logger->=0.0.10:devel/vanessa/logger
 
