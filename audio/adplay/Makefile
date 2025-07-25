@@ -2,7 +2,7 @@ COMMENT =	console-based OPL2 audio player
 
 V =		1.8.1
 DISTNAME =	adplay-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio
 
@@ -12,11 +12,10 @@ HOMEPAGE =	https://adplug.github.io/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} SDL2 adplug binio c m samplerate
-WANTLIB +=	sndio usbhid X11 Xcursor Xext Xfixes Xi Xinerama
-WANTLIB +=	Xrandr Xrender Xss Xxf86vm xcb
+WANTLIB +=	sndio usbhid X11 Xcursor Xext Xfixes Xi
+WANTLIB +=	Xrandr Xrender Xss xcb iconv
 
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 SITES =		https://github.com/adplug/adplay-unix/releases/download/v${V}/
 

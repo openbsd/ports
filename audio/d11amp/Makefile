@@ -1,6 +1,7 @@
 COMMENT=	simple MP3 player
 
 V=		0.61
+REVISION=	0
 DISTNAME=	d11amp_${V}
 PKGNAME=	d11amp-${V}
 EXTRACT_SUFX=	.tar.bz2
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cairo cairo-gobject gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 graphene-1.0 gtk-4 harfbuzz intl m mpg123
-WANTLIB += pango-1.0 pangocairo-1.0 portaudio pthread zip
+WANTLIB += pango-1.0 pangocairo-1.0 portaudio pthread vulkan zip
 
 SITES=		https://www.dettus.net/d11amp/
 

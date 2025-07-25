@@ -1,5 +1,5 @@
 COMMENT=	Bauer stereophonic-to-binaural DSP
-REVISION=	5
+REVISION=	6
 
 DISTNAME=	libbs2b-3.1.0
 
@@ -12,7 +12,8 @@ HOMEPAGE=	https://bs2b.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC c m ogg sndfile ${COMPILER_LIBCXX} vorbis vorbisenc opus
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += FLAC c m mp3lame mpg123 ogg sndfile vorbis vorbisenc opus
 
 COMPILER =	base-clang ports-gcc base-gcc
 
