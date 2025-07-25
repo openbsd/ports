@@ -3,7 +3,7 @@ COMMENT =	open source video transcoder
 V =		1.6.1
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -26,6 +26,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png postproc
 WANTLIB += speex ssl swresample swscale theoradec theoraenc turbojpeg
 WANTLIB += udfread unibreak vidstab vorbis vorbisenc vpx x264 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 xvidcore z zimg
+WANTLIB += X11-xcb drm epoll-shim sharpyuv va va-drm va-x11 wayland-client
+WANTLIB += wayland-cursor wayland-egl webp webpmux xcb-dri3 xkbcommon
 
 SITES =		https://github.com/HandBrake/HandBrake/releases/download/${V}/
 

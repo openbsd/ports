@@ -3,7 +3,7 @@ COMMENT =	japanese libkkc engine for ibus
 VERSION =	20220105
 DISTNAME =	ibus-kkc
 PKGNAME =	ibus-kkc-${VERSION}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	ueno
 GH_PROJECT =	ibus-kkc
@@ -24,6 +24,8 @@ WANTLIB =	${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gobject-2.0 graphite2 gtk-3 harfbuzz ibus-1.0 iconv \
 		intl json-glib-1.0 kkc marisa pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre2-8 png
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			lang/vala

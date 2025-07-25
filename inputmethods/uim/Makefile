@@ -9,6 +9,7 @@ DISTNAME=		uim-$V
 PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
 PKGNAME-gtk3=		uim-gtk3-$V
+REVISION-gtk3=		0
 
 SITES=			https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -63,6 +64,8 @@ WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre2-8 pixman-1 png pthread uim uim-custom fribidi
 WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z epoxy atspi dbus-1
 WANTLIB-gtk3 += Xau Xdmcp jpeg
+WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB-gtk3 += xkbcommon
 
 LIB_DEPENDS-gtk3=	inputmethods/uim \
 			x11/gtk+3

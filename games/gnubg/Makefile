@@ -3,7 +3,7 @@ COMMENT =		GNU Backgammon
 V =			1.07.001
 DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		games x11
 
@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += GL GLU X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
-WANTLIB += canberra-gtk3 crypto curl curses dbus-1 drm epoxy execinfo
+WANTLIB += canberra-gtk3 crypto curl curses dbus-1 drm epoxy
 WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg
@@ -25,6 +25,9 @@ WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png readline sqlite3 ssl util vorbis vorbisfile xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-xfixes xshmfence z
+WANTLIB += LLVM drm_amdgpu elf epoll-shim pciaccess
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb-randr
+WANTLIB += xkbcommon
 
 SITES =			https://ftp.gnu.org/gnu/gnubg/
 

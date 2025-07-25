@@ -2,7 +2,7 @@ COMMENT=		GNOME Docking Library
 
 GNOME_PROJECT=		gdl
 GNOME_VERSION=		3.40.0
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  gdl-3                3.1      # 5.9
 
@@ -16,6 +16,8 @@ WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz iconv
 WANTLIB += intl jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png xcb xcb-render xcb-shm xml2 z Xau Xdmcp
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		x11/gnome
 

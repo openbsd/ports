@@ -5,7 +5,7 @@ COMMENT=		text widget that extends the GTK3 GtkTextView widget
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		3.24.11
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=	gtksourceview-3.0    3.5      # .9.0
 CATEGORIES=		x11
@@ -22,10 +22,12 @@ WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo
 WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl lzma m
+WANTLIB += graphite2 gtk-3 harfbuzz iconv intl lzma m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread xcb xcb-render xcb-shm xml2 z fribidi ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp jpeg execinfo
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		x11/gnome
 

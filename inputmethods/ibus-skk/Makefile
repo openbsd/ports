@@ -2,7 +2,7 @@ COMMENT =		japanese skk input engine for ibus
 
 V =			1.4.3
 DISTNAME =		ibus-skk-${V}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		inputmethods japanese
 
@@ -19,6 +19,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz ibus-1.0
 WANTLIB += iconv intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png skk xcb xcb-render xcb-shm
 WANTLIB += xkbcommon z Xau Xdmcp execinfo jpeg
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl
 
 SITES =	https://github.com/ueno/ibus-skk/releases/download/ibus-skk-${V}/
 EXTRACT_SUFX =		.tar.xz

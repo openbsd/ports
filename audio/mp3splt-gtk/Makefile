@@ -1,7 +1,7 @@
 COMMENT=	graphical mp3/ogg file splitter
 
 DISTNAME=	mp3splt-gtk-0.9.2
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	audio
 
@@ -18,6 +18,8 @@ WANTLIB += gobject-2.0 graphite2 gstreamer-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl ltdl m mp3splt pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 pcre
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 SITES=		${SITE_SOURCEFORGE:=mp3splt/}
 

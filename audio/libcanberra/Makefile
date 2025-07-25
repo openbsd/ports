@@ -6,7 +6,7 @@ DISTNAME=	libcanberra-${V}
 EXTRACT_SUFX=	.tar.xz
 
 REVISION-main=	7
-REVISION-gtk3=	12
+REVISION-gtk3=	14
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -38,6 +38,8 @@ WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gtk3 += gthread-2.0 gtk-3 harfbuzz iconv intl jpeg pango-1.0
 WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb
 WANTLIB-gtk3 += xcb-render xcb-shm z
+WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB-gtk3 += xkbcommon
 
 COMPILER =		base-clang ports-gcc base-gcc
 

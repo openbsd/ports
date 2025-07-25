@@ -3,7 +3,7 @@ COMMENT=	gtk+3 spelling checker
 DISTNAME=	gtkspell3-3.0.10
 EXTRACT_SUFX=	.tar.xz
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  gtkspell3-3          0.3      # 2.0
 
@@ -24,6 +24,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z Xau Xdmcp c++ c++abi execinfo jpeg
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 SITES=		${SITE_SOURCEFORGE:=gtkspell/}
 
