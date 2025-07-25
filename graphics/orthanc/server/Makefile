@@ -2,7 +2,7 @@ COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.12.7
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
@@ -17,7 +17,8 @@ WANTLIB += c civetweb cmr crypto curl dcmdata dcmdsig dcmect dcmfg
 WANTLIB += dcmimage dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap
 WANTLIB += dcmpstat dcmqrdb dcmrt dcmseg dcmsr dcmtkcharls dcmtls
 WANTLIB += dcmtract dcmwlm dcmxml i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
-WANTLIB += lua5.1 m oficonv oflog ofstd png protobuf pugixml sqlite3 ssl uuid z
+WANTLIB += ${MODLUA_WANTLIB} m oficonv oflog ofstd png protobuf pugixml
+WANTLIB += sqlite3 ssl uuid z boost_random-mt
 
 # c++11
 COMPILER =		base-clang ports-gcc
