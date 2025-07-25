@@ -1,7 +1,7 @@
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		22
+REVISION=		23
 
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
@@ -24,6 +24,7 @@ WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm deflate
 WANTLIB += c drm expat glapi glut iconv jasper jpeg lcms m mng
 WANTLIB += png sndio tiff usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
+WANTLIB += LLVM Lerc drm_amdgpu elf pciaccess
 
 COMPILER =		base-clang ports-gcc base-gcc
 
