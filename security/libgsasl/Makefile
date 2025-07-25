@@ -4,14 +4,14 @@ DISTNAME=	libgsasl-1.10.0
 CATEGORIES=	security
 HOMEPAGE=	https://www.gnu.org/software/gsasl/
 SITES=		${SITE_GNU:=gsasl/}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gsasl 0.1 # 17.0
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	gcrypt gpg-error iconv idn intl
+WANTLIB+=	gcrypt gpg-error iconv idn intl pthread
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/libidn \
 		security/libgcrypt
