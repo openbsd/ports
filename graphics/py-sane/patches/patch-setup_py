@@ -1,13 +1,13 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -1,7 +1,8 @@
- import setuptools
- 
- sane = setuptools.Extension('_sane',
--                 include_dirs=[],
-+                 include_dirs=[ '${LOCALBASE}/include' ],
-+                 library_dirs=['${LOCALBASE}/lib'],
-                  libraries=['sane'],
-                  define_macros=[],
-                  extra_compile_args=[],
+@@ -3,7 +3,8 @@ from setuptools import Extension, setup
+ ext_modules = [
+     Extension(
+         "_sane",
+-        include_dirs=[],
++        include_dirs=['${LOCALBASE}/include'],
++        library_dirs=['${LOCALBASE}/lib'],
+         libraries=["sane"],
+         define_macros=[],
+         extra_compile_args=[],
