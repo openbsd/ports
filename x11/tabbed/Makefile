@@ -1,6 +1,7 @@
 COMMENT=		simple generic tabbed frontend
 
 DISTNAME=		tabbed-0.8
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -11,7 +12,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 c
+WANTLIB=		X11 Xft c fontconfig
 
 SITES=			http://dl.suckless.org/tools/
 
