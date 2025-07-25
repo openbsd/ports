@@ -2,7 +2,7 @@ COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
 V=			3.1.8
-REVISION-utils=		0
+REVISION=		1
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
@@ -85,9 +85,10 @@ LIB_DEPENDS=		devel/libidn2 \
 			mail/courier-unicode>=2.1 \
 			devel/pcre2
 
-WANTLIB =		c courier-unicode iconv idn2 pcre2-8
+WANTLIB =		c courier-unicode iconv idn2 pcre2-8 unistring
 
-WANTLIB-main=		${WANTLIB} gdbm m ${COMPILER_LIBCXX} pcre2-8 courierauth
+WANTLIB-main=		${WANTLIB} ${COMPILER_LIBCXX} \
+			courierauth gdbm intl m pcre2-8
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/gdbm \
 			mail/courier-authlib
