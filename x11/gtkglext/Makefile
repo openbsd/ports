@@ -1,7 +1,11 @@
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0.20191219
-REVISION=	1
+REVISION=	2
+
+C=		ad95fbab68398f81d7a5c895276903b0695887e2
+DIST_TUPLE=	gnome Archive gtkglext $C .
+WRKDIST=	${WRKDIR}/gtkglext-$C
 
 CATEGORIES=	x11 graphics devel
 
@@ -21,13 +25,8 @@ WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z Xau Xdmcp jpeg
+WANTLIB += LLVM drm_amdgpu elf pciaccess xcb-randr
 WANTLIB += ${COMPILER_LIBCXX}
-
-# https://gitlab.gnome.org/Archive/gtkglext/merge_requests/1
-GIT_COMMIT=	ad95fbab68398f81d7a5c895276903b0695887e2
-DISTFILES=	gtkglext-${GIT_COMMIT}${EXTRACT_SUFX}
-WRKDIST=	${WRKDIR}/gtkglext-${GIT_COMMIT}
-SITES=	https://gitlab.gnome.org/Archive/gtkglext/-/archive/${GIT_COMMIT}/
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		textproc/gtk-doc
