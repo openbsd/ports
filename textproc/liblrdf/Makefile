@@ -2,7 +2,7 @@ COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		7
+REVISION =		8
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
@@ -12,8 +12,9 @@ HOMEPAGE =		https://github.com/swh/LRDF/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  crypto curl iconv intl lzma m nghttp2 pthread raptor2 ssl
-WANTLIB += xml2 xslt yajl z
+WANTLIB += crypto curl iconv icudata icuuc lzma m nghttp2 nghttp3
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls pthread raptor2 ssl xml2
+WANTLIB += xslt yajl z
 
 SITES =			https://spacehopper.org/mirrors/
 BUILD_DEPENDS =		audio/ladspa
@@ -28,6 +29,6 @@ CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-TEST_DEPENDS =	audio/swh-plugins
+TEST_DEPENDS =		audio/swh-plugins
 
 .include <bsd.port.mk>
