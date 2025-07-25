@@ -5,11 +5,12 @@ COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.59
+REVISION=		0
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
 
-CATEGORIES=    		math x11
+CATEGORIES=		math x11
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common bz2 c cairo
-WANTLIB += cairo-gobject dbus-1 epoll-shim epoxy expat
+WANTLIB += cairo-gobject croco-0.6 dbus-1 epoll-shim epoxy expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz iconv
