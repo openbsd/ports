@@ -3,7 +3,7 @@ COMMENT =		font rendering library for OpenGL applications
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
 PKGNAME =		ftgl-$Vrc5
-REVISION =		11
+REVISION =		12
 EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
@@ -13,10 +13,11 @@ HOMEPAGE =		https://ftgl.wiki.sourceforge.net
 # MIT license or the GNU LGPL, at your option.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xmu Xt Xxf86vm drm
+WANTLIB += GL GLU ICE SM X11 Xext Xfixes Xmu Xt Xxf86vm drm
 WANTLIB += freetype m ${COMPILER_LIBCXX} xcb xcb-glx z expat
 WANTLIB += X11-xcb glapi pthread xcb-dri2
 WANTLIB += Xau Xdmcp xcb-dri3 xcb-present xcb-shm xcb-sync xcb-xfixes xshmfence
+WANTLIB += LLVM drm_amdgpu elf pciaccess xcb-randr
 
 COMPILER =		base-clang ports-gcc base-gcc
 
