@@ -2,6 +2,7 @@ COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
 DISTNAME =	fcitx5-chinese-addons-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
 WANTLIB += Fcitx5Utils GL IMECore IMEPinyin IMETable Qt6Concurrent
 WANTLIB += Qt6Core Qt6Gui Qt6Widgets boost_container-mt boost_iostreams-mt
-WANTLIB += boost_json-mt boost_regex-mt c m opencc
+WANTLIB += boost_json-mt boost_regex-mt c m opencc boost_random-mt boost_system-mt
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
 EXTRACT_SUFX =		.tar.zst

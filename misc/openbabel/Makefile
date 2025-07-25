@@ -1,7 +1,7 @@
 COMMENT=	chemistry file translation program
 
 V=		3.1.1
-REVISION=	3
+REVISION=	4
 DISTNAME=	openbabel-${V}
 
 CATEGORIES=	misc
@@ -19,7 +19,7 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
-WANTLIB+=	c cairo m xml2 z
+WANTLIB+=	c cairo m xml2 z boost_random-mt boost_system-mt
 
 SITES=		https://github.com/openbabel/openbabel/releases/download/openbabel-${V:S/./-/g}/
 EXTRACT_SUFX=	-source.tar.bz2
