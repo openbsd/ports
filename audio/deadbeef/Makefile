@@ -1,6 +1,6 @@
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-1.9.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
@@ -24,7 +24,7 @@ WANTLIB += sndfile speex ssl swresample theoradec theoraenc va
 WANTLIB += va-drm va-x11 vorbis vorbisenc vorbisfile vpx wavpack
 WANTLIB += wayland-client wayland-cursor wayland-egl x264 x265
 WANTLIB += xcb xcb-dri3 xcb-render xcb-shm xkbcommon xml2 xvidcore
-WANTLIB += z zip zstd
+WANTLIB += z zip zstd sharpyuv webp webpmux
 
 COMPILER =		base-clang ports-gcc
 
