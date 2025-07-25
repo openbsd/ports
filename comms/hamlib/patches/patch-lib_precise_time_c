@@ -1,3 +1,12 @@
+Add missing header and move variable so that they're usable from the
+x86-only fallback code. This undoes part of
+https://github.com/Hamlib/Hamlib/commit/d20a2358606bec98e232be0a7dbbfacafe98b2ab
+
+Tweak #ifdef check to use the default code path on Unix/Linux. We don't
+implement all the features specified by _POSIX_TIMERS, but we do
+implement clock_gettime(CLOCK_MONOTONIC) as required by POSIX 2008.
+
+
 Index: lib/precise_time.c
 --- lib/precise_time.c.orig
 +++ lib/precise_time.c
