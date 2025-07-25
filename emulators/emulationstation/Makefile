@@ -1,6 +1,11 @@
 COMMENT =		flexible keyboardless emulator frontend
 
+GH_ACCOUNT =		Aloshi
+GH_PROJECT =		EmulationStation
+GH_COMMIT =		646bede3d9ec0acf0ae378415edac136774a66c5
+
 DISTNAME =		emulationstation-2.0.1a
+REVISION =		4
 
 CATEGORIES =		emulators
 
@@ -10,13 +15,9 @@ HOMEPAGE =		http://www.emulationstation.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL2 boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_thread-mt
 WANTLIB += boost_locale-mt boost_system-mt c curl freeimage freetype
 WANTLIB += m pthread ${COMPILER_LIBCXX}
-
-GH_ACCOUNT =		Aloshi
-GH_PROJECT =		EmulationStation
-GH_COMMIT =		646bede3d9ec0acf0ae378415edac136774a66c5
-REVISION =		3
 
 MODULES =		devel/cmake
 
