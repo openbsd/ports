@@ -2,7 +2,7 @@ COMMENT=	C library to validate an Yubikey OTP against API servers
 
 YK_PROJECT=	yubico-c-client
 DISTNAME=	ykclient-2.15
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=	ykclient             0.0      # 9.0
 
@@ -10,7 +10,8 @@ CATEGORIES=	security devel
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-WANTLIB =  c crypto curl iconv intl nghttp2 pthread ssl z
+WANTLIB += c crypto curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += pthread ssl z
 
 CONFIGURE_STYLE=	gnu
 
