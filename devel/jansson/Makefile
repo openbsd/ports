@@ -1,6 +1,6 @@
 COMMENT =		library for manipulating JSON data
 
-V = 			2.14
+V =			2.14.1
 DISTNAME =		jansson-${V}
 
 SHARED_LIBS =		jansson 4.2
