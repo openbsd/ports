@@ -2,6 +2,7 @@ COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			5.2.10
+REVISION=		0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -20,10 +21,12 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc
 
-WANTLIB=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB+=		gdbm iconv intl idn2 m pcre2-8 ${COMPILER_LIBCXX}
-WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB-pop3+=		iconv intl idn2 m pcre2-8 ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c courier-unicode courierauth courierauthcommon courierauthsasl
+WANTLIB += iconv idn2 m unistring
+
+WANTLIB-main=		${WANTLIB} gdbm intl pcre2-8 ssl crypto
+WANTLIB-pop3=		${WANTLIB}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
@@ -99,8 +102,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			mail/courier-unicode>=2.1
 
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
-
-WANTLIB-main=		${WANTLIB} ssl crypto
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/pop3d-ssl.dist etc/courier/pop3d.dist \
