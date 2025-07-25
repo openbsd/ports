@@ -1,6 +1,6 @@
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
-REVISION =	9
+REVISION =	10
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama audiofile c fltk fontconfig
 WANTLIB += m mad mxml ogg portaudio pthread ${COMPILER_LIBCXX} vorbis vorbisenc
-WANTLIB += vorbisfile z Xcursor Xfixes
+WANTLIB += vorbisfile z Xcursor Xfixes Xrender
 
 SITES =		${SITE_SOURCEFORGE:=hypermammut/}
 
