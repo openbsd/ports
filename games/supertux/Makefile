@@ -3,7 +3,7 @@ COMMENT =		jump 'n' run game
 V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt
 WANTLIB += c curl freetype m ogg openal physfs png vorbis vorbisfile
-WANTLIB += z
+WANTLIB += z boost_atomic-mt boost_chrono-mt boost_thread-mt
 
 SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 
