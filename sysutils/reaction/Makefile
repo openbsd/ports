@@ -2,6 +2,7 @@ COMMENT =	scan logs and take action
 
 MODGO_MODNAME =	framagit.org/ppom/reaction
 MODGO_VERSION =	v1.4.1
+REVISION =	0
 DISTNAME =	reaction-${MODGO_VERSION}
 
 CATEGORIES =	sysutils
@@ -9,6 +10,8 @@ HOMEPAGE =	https://reaction.ppom.me
 
 # AGPL-3.0
 PERMIT_PACKAGE =	yes
+
+WANTLIB += c pthread
 
 MODULES =		lang/go
 
