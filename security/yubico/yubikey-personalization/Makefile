@@ -2,7 +2,7 @@ COMMENT=	library and tools to program YubiKeys
 
 YK_PROJECT=	yubikey-personalization
 DISTNAME=	ykpers-1.20.0
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	ykpers-1                  0.8 # 20.0
 
@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-WANTLIB += c json-c pthread usb-1.0 yubikey
+WANTLIB += c json-c m pthread usb-1.0 yubikey
 
 LIB_DEPENDS=	devel/json-c \
 		devel/libusb1>=1.0.9p1 \
