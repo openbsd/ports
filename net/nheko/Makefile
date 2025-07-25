@@ -3,7 +3,7 @@ COMMENT =	desktop client for Matrix
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
 GH_TAGNAME =	v0.12.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	net
 
@@ -16,6 +16,7 @@ WANTLIB += Qt6Svg Qt6Widgets c cmark coeurl crypto fmt glib-2.0
 WANTLIB += gobject-2.0 gstbase-1.0 gstgl-1.0 gstreamer-1.0 gstsdp-1.0
 WANTLIB += gstvideo-1.0 gstwebrtc-1.0 intl kdsingleapplication-qt6
 WANTLIB += lmdb m matrix_client olm qt6keychain spdlog ssl xkbcommon
+WANTLIB += Qt6QmlMeta Qt6QmlWorkerScript
 
 MODULES =	devel/cmake \
 		x11/qt6
