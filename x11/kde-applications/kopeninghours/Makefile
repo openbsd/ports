@@ -1,20 +1,22 @@
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
+REVISION =	0
 CATEGORIES =	devel geo
 
 SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1
 
-WANTLIB += ${COMPILER_LIBCXX} KF6Holidays KF6I18n Qt6Core Qt6Network
-WANTLIB += Qt6Qml intl m ${MODPY_WANTLIB}  util
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += KF6Holidays KF6I18n Qt6Core Qt6Network Qt6Qml boost_container-mt
+WANTLIB += boost_graph-mt boost_python312-mt intl m util
 
 MODKDE_TRANSLATIONS = yes
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/bison \
-		devel/boost
+BUILD_DEPENDS =	devel/bison
 
-LIB_DEPENDS =	devel/gettext,-runtime \
+LIB_DEPENDS =	devel/boost \
+		devel/gettext,-runtime \
 		devel/kf6/kholidays \
 		devel/kf6/ki18n \
 		x11/qt6/qtdeclarative \
