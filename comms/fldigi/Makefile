@@ -3,7 +3,7 @@ COMMENT=	soundcard-based software modem for Amateur Radio use
 # skip alpha-test versions (x.x.x.x format version numbers)
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
 DISTNAME=	fldigi-4.0.18
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	comms hamradio
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c fltk
 WANTLIB += fltk_images fontconfig hamlib iconv intl jpeg m png
 WANTLIB += portaudio pthread samplerate sndfile ${COMPILER_LIBCXX} z
+WANTLIB += Xrender
 
 SITES=		${SITE_SOURCEFORGE:=fldigi/}
 

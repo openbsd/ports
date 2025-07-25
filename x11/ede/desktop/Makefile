@@ -1,12 +1,13 @@
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
-REVISION =		13
+REVISION =		14
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama Xpm c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
 WANTLIB += fontconfig jpeg m nghttp2 png pthread ssl
 WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} xkbfile z
+WANTLIB += Xrender
 
 COMPILER =		base-clang ports-gcc base-gcc
 

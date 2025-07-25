@@ -1,7 +1,7 @@
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		9
+REVISION =		10
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui
@@ -10,6 +10,7 @@ SHARED_LIBS +=		$l	${API_VER}
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c dbus-1
 WANTLIB += fltk fltk_images fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
+WANTLIB += Xrender
 
 COMPILER =		base-clang ports-gcc base-gcc
 
