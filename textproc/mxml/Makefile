@@ -4,6 +4,7 @@ COMMENT=	minimal XML library
 # 3.x and 4.x both have API changes breaking existing ports
 # 4.x requires C99 (n.b. base-gcc archs)
 V=		2.12
+REVISION=	0
 DISTNAME=	mxml-$V
 CATEGORIES=	textproc
 
@@ -14,7 +15,7 @@ HOMEPAGE=	https://www.msweet.org/mxml/
 # LGPLv2 with exceptions
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+WANTLIB=	c z
 
 SITES=		https://github.com/michaelrsweet/mxml/releases/download/v$V/
 

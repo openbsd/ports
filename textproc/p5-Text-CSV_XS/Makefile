@@ -1,6 +1,7 @@
 COMMENT =	Comma-Separated Values manipulation routines
 
 DISTNAME =	Text-CSV_XS-1.60
+REVISION =	0
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tgz
 
@@ -11,6 +12,6 @@ MODULES =	cpan
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	perl
+WANTLIB =	c perl
 
 .include <bsd.port.mk>
