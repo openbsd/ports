@@ -2,6 +2,7 @@ COMMENT =	SPF-aware greylisting filter for the OpenSMTPD daemon
 
 FILTER_NAME =	spfgreylist
 V =		1.0.0
+REVISION =	0
 
 MODGO_MODNAME =	github.com/poolpOrg/filter-${FILTER_NAME}
 MODGO_VERSION =	v${V}
