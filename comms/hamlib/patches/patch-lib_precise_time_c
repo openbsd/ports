@@ -9,14 +9,18 @@ Index: lib/precise_time.c
  #include <sys/time.h>
  
  #if 0
-@@ -46,13 +47,12 @@ double monotonic_seconds()
+@@ -46,13 +47,14 @@ double monotonic_seconds()
  #define NANOS_PER_SECF 1000000000.0
  #define USECS_PER_SEC 1000000
  
 +static int showme = 0;
  
- #if _POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK)
- // If we have it, use clock_gettime and CLOCK_MONOTONIC.
+-#if _POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK)
+-// If we have it, use clock_gettime and CLOCK_MONOTONIC.
++#if (_POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK)) || _POSIX_VERSION >= 200809L
++// If we have it, use clock_gettime and CLOCK_MONOTONIC. clock_gettime
++// with mandatory support for CLOCK_MONOTONIC has been moved to Base
++// with POSIX Issue 7
  
  #include <time.h>
 -
