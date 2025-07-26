@@ -1,6 +1,6 @@
 COMMENT =	object oriented Authentication-Results headers
 
-DISTNAME =	Mail-AuthenticationResults-2.20231031
+DISTNAME =	Mail-AuthenticationResults-2.20250709
 
 CATEGORIES =	mail
 
