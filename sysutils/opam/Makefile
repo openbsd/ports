@@ -4,7 +4,7 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.3.0
+V =			2.4.1
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
 
@@ -12,7 +12,7 @@ SITES =			https://github.com/ocaml/opam/releases/download/${V}/
 
 HOMEPAGE =		https://opam.ocaml.org/
 
-MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
+MAINTAINER =		Sebastien Marie <semarie@kapouay.eu.org>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
@@ -27,7 +27,6 @@ BUILD_DEPENDS =		lang/ocaml \
 RUN_DEPENDS =		archivers/unzip \
 			archivers/bzip2 \
 			archivers/gtar \
-			devel/gpatch \
 			devel/gmake \
 			net/curl
 
@@ -44,8 +43,6 @@ CONFIGURE_ARGS =	--with-vendored-deps
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
 
-ALL_TARGET =		lib-ext all
-INSTALL_TARGET =	install
 TEST_TARGET =		tests
 
 docdir =		${PREFIX}/share/doc/opam

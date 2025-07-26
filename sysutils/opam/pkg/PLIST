@@ -5,12 +5,14 @@
 @man man/man1/opam-admin-add-hashes.1
 @man man/man1/opam-admin-cache.1
 @man man/man1/opam-admin-check.1
+@man man/man1/opam-admin-compare-versions.1
 @man man/man1/opam-admin-filter.1
 @man man/man1/opam-admin-help.1
 @man man/man1/opam-admin-index.1
 @man man/man1/opam-admin-lint.1
 @man man/man1/opam-admin-list.1
 @man man/man1/opam-admin-make.1
+@man man/man1/opam-admin-migrate-extrafiles.1
 @man man/man1/opam-admin-update-extrafiles.1
 @man man/man1/opam-admin-upgrade.1
 @man man/man1/opam-admin.1
@@ -51,7 +53,6 @@ share/doc/opam/depexts-plugins
 share/doc/opam/depopts-and-features
 share/doc/opam/pages/
 share/doc/opam/pages/About.md
-share/doc/opam/pages/Distribution.md
 share/doc/opam/pages/External_solvers.md
 share/doc/opam/pages/FAQ.md
 share/doc/opam/pages/Install.md

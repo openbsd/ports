@@ -11,13 +11,13 @@ MODOPAM_WITH_TEST ?=	No
 
 # Add sysutils/opam to BUILD_DEPENDS, and net/rsync to copying local repositories.
 .if ${MODOPAM_BUILDDEP:L} == "yes"
-BUILD_DEPENDS +=	sysutils/opam>=2.3 \
+BUILD_DEPENDS +=	sysutils/opam>=2.4 \
 			net/rsync
 .endif
 
 # Default location of opam binary (provided by sysutils/opam).
-# Uses --cli=2.3 to stick with 2.3 options even if opam is upgraded.
-MODOPAM_OPAM_BIN ?=	${LOCALBASE}/bin/opam --cli=2.3
+# Uses --cli=2.4 to stick with 2.4 options even if opam is upgraded.
+MODOPAM_OPAM_BIN ?=	${LOCALBASE}/bin/opam --cli=2.4
 
 # Default path for OPAMROOT.
 MODOPAM_OPAMROOT ?=	${WRKDIR}/modopam-opamroot
@@ -83,13 +83,14 @@ MODOPAM_REPO_COMMIT ?=	master
 MODOPAM_REPO_URL ?=	https://github.com/ocaml/opam-repository/archive/${MODOPAM_REPO_COMMIT}.tar.gz
 
 # Name of the default switch.
-_MODOPAM_SWITCH ?=	default
+_MODOPAM_SWITCH ?=	ocaml-system
 
 # internal variable. opam init is called several times.
 _MODOPAM_OPAM_INIT_ARGS = \
 	--reinit \
 	--no-setup \
 	--no-opamrc \
+	--compiler=${_MODOPAM_SWITCH} \
 	--kind=local
 
 # internal variable. opam pin add is called several times.
@@ -169,6 +170,10 @@ modopam-repository: patch
 		--root=${_MODOPAM_GEN_DIR}/opamroot \
 		${_MODOPAM_OPAM_INIT_ARGS} \
 		${_MODOPAM_GEN_DIR}/${MODOPAM_REPO_NAME}
+
+	cd ${_MODOPAM_GEN_DIR} && ${MODOPAM_OPAM_RUN} switch create \
+		${_MODOPAM_SWITCH} \
+		--root=${_MODOPAM_GEN_DIR}/opamroot
 
 	cd ${_MODOPAM_GEN_DIR} && ${MODOPAM_OPAM_RUN} pin add \
 		--root=${_MODOPAM_GEN_DIR}/opamroot \
