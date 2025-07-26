@@ -37,12 +37,14 @@ ${P5SITE}/Specio/Library/Structured/Dict.pm
 ${P5SITE}/Specio/Library/Structured/Map.pm
 ${P5SITE}/Specio/Library/Structured/Tuple.pm
 ${P5SITE}/Specio/OO.pm
+${P5SITE}/Specio/PP.pm
 ${P5SITE}/Specio/PartialDump.pm
 ${P5SITE}/Specio/Registry.pm
 ${P5SITE}/Specio/Role/
 ${P5SITE}/Specio/Role/Inlinable.pm
 ${P5SITE}/Specio/Subs.pm
 ${P5SITE}/Specio/TypeChecks.pm
+${P5SITE}/Specio/XS.pm
 ${P5SITE}/Test/
 ${P5SITE}/Test/Specio.pm
 @man man/man3p/Specio.3p

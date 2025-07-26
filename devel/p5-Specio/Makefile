@@ -1,6 +1,6 @@
 COMMENT =	type constraints and coercions for Perl
 
-DISTNAME =	Specio-0.50
+DISTNAME =	Specio-0.51
 CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
@@ -19,7 +19,8 @@ RUN_DEPENDS =		devel/p5-Clone \
 			devel/p5-Ref-Util \
 			devel/p5-Role-Tiny>=1.003003 \
 			devel/p5-Sub-Quote \
-			devel/p5-Try-Tiny
+			devel/p5-Try-Tiny \
+			devel/p5-Clone-Choose
 TEST_DEPENDS =		devel/p5-Moo \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Needs \
