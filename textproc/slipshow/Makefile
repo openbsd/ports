@@ -1,16 +1,13 @@
 # build only on ocaml native (and it simplifies packaging)
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
-# aarch64:
-# cc: error: unsupported option '-mpopcnt' for target 'aarch64-unknown-openbsd7.7' 
-# i386:
 # - slipshow -> ppx_blob -> ppxlib -> sexplib0
 # unmet availability conditions: 'arch != "arm32" & arch != "x86_32"'
-NOT_FOR_ARCHS =		aarch64 i386
+NOT_FOR_ARCHS =		i386
 
 COMMENT =		compiler from markdown to slipshow
 
-V =			0.1.0
+V =			0.4.1
 DISTNAME =		slipshow-${V}
 EXTRACT_SUFX =		.tbz
 HOMEPAGE =		https://github.com/panglesd/slipshow
@@ -27,15 +24,11 @@ WANTLIB += c crypto m pthread ssl ev
 MODULES +=		sysutils/opam \
 			lang/ocaml
 
-MODOPAM_REPO_COMMIT =	862a7640b194b6ef60dc2d24341920e48dd021fe
-MODOPAM_REPO_NAME =	slipshow-opam-20250307
+MODOPAM_REPO_COMMIT =	7642f16f78138f8b24bab572ff0f42bc412927c2
+MODOPAM_REPO_NAME =	slipshow-opam-20250717
 MODOPAM_PACKAGES =	slipshow.${V}
 
 SITES =			https://github.com/panglesd/slipshow/releases/download/v${V}/
-
-# https://github.com/panglesd/brr.git#bindings-window-inner-size
-COMMIT.brr =		1de3a5c774360b97f413090c181afebc94bff569
-DIST_TUPLE +=		github panglesd brr ${COMMIT.brr} brr
 
 SITES.opamrepo =	https://kapouay.eu.org/pub/opam/
 DISTFILES.opamrepo =	${MODOPAM_REPO_NAME}.tar.gz
@@ -48,6 +41,9 @@ LIB_DEPENDS +=		devel/libev
 CONFIGURE_STYLE +=	opam
 
 SEPARATE_BUILD =	Yes
+
+post-patch:
+	sed -i 's/v${V}/${V}/' ${WRKSRC}/dune-project
 
 post-install:
 	rm -rf -- ${PREFIX}/lib/ocaml/slipshow
