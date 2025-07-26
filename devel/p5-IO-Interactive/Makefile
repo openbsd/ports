@@ -1,6 +1,6 @@
 COMMENT =	utilities for interactive I/O
 
-DISTNAME =	IO-Interactive-1.025
+DISTNAME =	IO-Interactive-1.027
 
 CATEGORIES =	devel
 
