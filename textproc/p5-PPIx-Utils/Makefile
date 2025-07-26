@@ -1,6 +1,6 @@
 COMMENT =	utility functions for PPI
 
-DISTNAME =	PPIx-Utils-0.003
+DISTNAME =	PPIx-Utils-0.004
 
 CATEGORIES =	textproc
 
