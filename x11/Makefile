@@ -235,6 +235,7 @@
      SUBDIR += peksystray
      SUBDIR += pekwm
      SUBDIR += picom
+     SUBDIR += picom-config
      SUBDIR += pidgin-guifications
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
