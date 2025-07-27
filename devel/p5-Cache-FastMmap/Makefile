@@ -1,7 +1,7 @@
 COMMENT=	fast shared data cache using memory mapped files
 
 MODULES=	cpan
-DISTNAME =	Cache-FastMmap-1.58
+DISTNAME =	Cache-FastMmap-1.60
 CATEGORIES=	devel
 
 # perl
