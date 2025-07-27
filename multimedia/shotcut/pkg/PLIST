@@ -12,6 +12,7 @@ share/shotcut/filter-sets/
 share/shotcut/filter-sets/Glow Intensity
 share/shotcut/filter-sets/Obscure With Blur
 share/shotcut/filter-sets/Obscure With Mosaic
+share/shotcut/filter-sets/Soft Focus
 share/shotcut/filter-sets/Text Simple with Gradient Back
 share/shotcut/qml/
 share/shotcut/qml/export-chapters/
@@ -28,6 +29,8 @@ share/shotcut/qml/export-edl/mlt2edl.js
 share/shotcut/qml/export-edl/package.json
 share/shotcut/qml/export-edl/rebuild.sh
 share/shotcut/qml/export-edl/test-node.js
+share/shotcut/qml/extensions/
+share/shotcut/qml/extensions/whispermodel.qml
 share/shotcut/qml/filters/
 share/shotcut/qml/filters/alpha_adjust/
 share/shotcut/qml/filters/alpha_adjust/icon.webp
@@ -106,6 +109,7 @@ share/shotcut/qml/filters/audio_matrix_ms/meta.qml
 share/shotcut/qml/filters/audio_matrix_ms/ui.qml
 share/shotcut/qml/filters/audio_mono/
 share/shotcut/qml/filters/audio_mono/meta.qml
+share/shotcut/qml/filters/audio_mono/ui.qml
 share/shotcut/qml/filters/audio_mute/
 share/shotcut/qml/filters/audio_mute/meta.qml
 share/shotcut/qml/filters/audio_mute/ui.qml
@@ -462,6 +466,10 @@ share/shotcut/qml/filters/opacity/icon.webp
 share/shotcut/qml/filters/opacity/meta.qml
 share/shotcut/qml/filters/opacity/meta_movit.qml
 share/shotcut/qml/filters/opacity/ui.qml
+share/shotcut/qml/filters/outline/
+share/shotcut/qml/filters/outline/icon.webp
+share/shotcut/qml/filters/outline/meta.qml
+share/shotcut/qml/filters/outline/ui.qml
 share/shotcut/qml/filters/pillar_echo/
 share/shotcut/qml/filters/pillar_echo/icon.webp
 share/shotcut/qml/filters/pillar_echo/meta.qml
@@ -633,6 +641,7 @@ share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
 share/shotcut/qml/modules/Shotcut/Controls/Button.qml
+share/shotcut/qml/modules/Shotcut/Controls/ChannelMask.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
 share/shotcut/qml/modules/Shotcut/Controls/ComboBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/CurveComboBox.qml
@@ -708,6 +717,7 @@ share/shotcut/translations/shotcut_et.qm
 share/shotcut/translations/shotcut_eu.qm
 share/shotcut/translations/shotcut_fi.qm
 share/shotcut/translations/shotcut_fr.qm
+share/shotcut/translations/shotcut_fr_CA.qm
 share/shotcut/translations/shotcut_ga.qm
 share/shotcut/translations/shotcut_gd.qm
 share/shotcut/translations/shotcut_gl.qm
@@ -716,6 +726,7 @@ share/shotcut/translations/shotcut_hu.qm
 share/shotcut/translations/shotcut_it.qm
 share/shotcut/translations/shotcut_ja.qm
 share/shotcut/translations/shotcut_ko.qm
+share/shotcut/translations/shotcut_lt.qm
 share/shotcut/translations/shotcut_nb.qm
 share/shotcut/translations/shotcut_ne.qm
 share/shotcut/translations/shotcut_nl.qm
