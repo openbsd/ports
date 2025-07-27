@@ -1,7 +1,7 @@
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -22,7 +22,7 @@ if(ENABLE_MAN OR ENABLE_DOC)
+@@ -24,7 +24,7 @@ if(ENABLE_MAN OR ENABLE_DOC)
  
    # docs languages
    set(AUTOGEN_LANG de en fr it ja pl sr)

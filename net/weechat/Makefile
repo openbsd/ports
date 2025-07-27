@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.6.3
+V=		4.7.0
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -12,11 +12,11 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
-REVISION-ruby=	0
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.weechat.org/
+
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3
@@ -24,7 +24,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += aspell c cjson curl curses gcrypt gnutls iconv intl
 WANTLIB-main += m perl pthread z zstd
-WANTLIB-lua += ${MODLUA_WANTLIB} m
+WANTLIB-lua += ${MODLUA_WANTLIB}
 WANTLIB-python += ${MODPY_WANTLIB}
 WANTLIB-tcl += ${MODTCL_WANTLIB}
 # uses link libruby*.so
@@ -44,7 +44,7 @@ MODULES=	devel/cmake \
 		lang/ruby \
 		lang/tcl
 
-MODTCL_VERSION =	8.6
+MODTCL_VERSION=	8.6
 
 MODLUA_RUNDEP=	No
 MODPY_RUNDEP=	No
