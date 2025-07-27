@@ -1,0 +1,18 @@
+include/AdwaitaQt6/
+include/AdwaitaQt6/adwaita.h
+include/AdwaitaQt6/adwaitacolors.h
+include/AdwaitaQt6/adwaitaqt_export.h
+include/AdwaitaQt6/adwaitarenderer.h
+lib/cmake/
+lib/cmake/AdwaitaQt6/
+lib/cmake/AdwaitaQt6/AdwaitaQt6Config.cmake
+lib/cmake/AdwaitaQt6/AdwaitaQt6ConfigVersion.cmake
+lib/cmake/AdwaitaQt6/AdwaitaQt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/AdwaitaQt6/AdwaitaQt6Targets.cmake
+@lib lib/libadwaitaqt6.so.${LIBadwaitaqt6_VERSION}
+@lib lib/libadwaitaqt6priv.so.${LIBadwaitaqt6priv_VERSION}
+lib/pkgconfig/adwaita-qt6.pc
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/styles/
+@so lib/qt6/plugins/styles/adwaita.so
