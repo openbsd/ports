@@ -5,6 +5,7 @@
      SUBDIR += Xdialog
      SUBDIR += abclock
      SUBDIR += adwaita-qt
+     SUBDIR += adwaita-qt,qt6
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += agar
