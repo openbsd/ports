@@ -29,7 +29,7 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
-REVISION-plasma =	0
+REVISION-plasma =	1
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -374,6 +374,7 @@ RUN_DEPENDS-plasma += \
 		x11/kde-plasma/ksystemstats \
 		x11/kde-plasma/kwayland \
 		x11/kde-plasma/kwin \
+		x11/kde-plasma/kwin-x11 \
 		x11/kde-plasma/kwrited \
 		x11/kde-plasma/layer-shell-qt \
 		x11/kde-plasma/libkscreen \
