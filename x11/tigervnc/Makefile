@@ -2,7 +2,7 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.15.0
+GH_TAGNAME=	v1.14.1
 REVISION=	0
 
 XORG_V=		21.1.13
