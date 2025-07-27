@@ -1,6 +1,15 @@
---- Makefile.orig	Wed Dec 30 18:04:01 2009
-+++ Makefile	Mon Mar 15 21:31:54 2010
-@@ -31,11 +31,13 @@ OBJECTS := src/xmms2-scrobbler.o \
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,6 +5,7 @@ PREFIX ?= /usr/local
+ VERSION := 0.4.0
+ TARBALL := xmms2-scrobbler-$(VERSION).tar.gz
+ 
++LIBS := -lm
+ XMMS_CFLAGS := `pkg-config xmms2-client --cflags`
+ XMMS_LDFLAGS := `pkg-config xmms2-client --libs`
+ CURL_CFLAGS := `pkg-config libcurl --cflags`
+@@ -31,11 +32,13 @@ OBJECTS := src/xmms2-scrobbler.o \
  all: $(BINARY)
  
  install: $(BINARY)
@@ -13,7 +22,7 @@
  
  $(BINARY): $(OBJECTS) bin
 -	$(QUIET_LINK)$(CC) $(LDFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(OBJECTS) -o $@
-+	$(QUIET_LINK)$(CC) $(LDFLAGS) $(CFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(OBJECTS) -o $@
++	$(QUIET_LINK)$(CC) $(LDFLAGS) $(CFLAGS) $(LIBS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(OBJECTS) -o $@
  
  src/%.o : src/%.c
  	$(QUIET_CC)$(CC) $(CFLAGS) $(XMMS_CFLAGS) $(CURL_CFLAGS) $(ENDIAN_CFLAGS) -o $@ -c $<

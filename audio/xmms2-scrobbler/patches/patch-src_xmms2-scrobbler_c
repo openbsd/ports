@@ -1,0 +1,40 @@
+Index: src/xmms2-scrobbler.c
+--- src/xmms2-scrobbler.c.orig
++++ src/xmms2-scrobbler.c
+@@ -299,13 +299,15 @@ do_handshake (Server *server)
+ 	memcpy (hashed, server->hashed_password, 32);
+ 
+ 	/* append the timestamp */
+-	snprintf (&hashed[32], sizeof (hashed) - 32, "%lu", timestamp);
++	snprintf (&hashed[32], sizeof (hashed) - 32, "%lld",
++		  (long long)timestamp);
+ 
+ 	pos = snprintf (post_data, sizeof (post_data),
+ 	                "%s/"
+ 	                "?hs=true&p=" PROTOCOL "&c=" CLIENT_ID
+-	                "&v=" VERSION "&u=%s&t=%lu&a=",
+-	                server->handshake_url, server->user, timestamp);
++	                "&v=" VERSION "&u=%s&t=%lld&a=",
++	                server->handshake_url, server->user,
++	                 (long long)timestamp);
+ 
+ 	/* hash the hashed password and timestamp and append the hex string
+ 	 * to 'post_data'.
+@@ -532,7 +534,7 @@ submit_to_profile (xmmsv_t *val)
+ static int
+ on_medialib_get_info2 (xmmsv_t *val, void *udata)
+ {
+-	bool reset_current_id = XPOINTER_TO_INT (udata);
++	bool reset_current_id = (int)(intptr_t)(udata);
+ 
+ 	seconds_played += time (NULL) - last_unpause;
+ 	fprintf (stderr, "submitting: seconds_played %i\n", seconds_played);
+@@ -570,7 +572,7 @@ maybe_submit_to_profile (bool reset_current_id)
+ 	mediainfo_result = xmmsc_medialib_get_info (conn, current_id);
+ 	xmmsc_result_notifier_set (mediainfo_result,
+ 	                           on_medialib_get_info2,
+-	                           XINT_TO_POINTER (reset_current_id));
++	                           (void*)(intptr_t)(reset_current_id));
+ 	xmmsc_result_unref (mediainfo_result);
+ }
+ 

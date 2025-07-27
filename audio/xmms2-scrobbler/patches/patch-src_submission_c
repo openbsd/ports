@@ -1,0 +1,30 @@
+Index: src/submission.c
+--- src/submission.c.orig
++++ src/submission.c
+@@ -22,6 +22,7 @@
+  */
+ 
+ #include <stdlib.h>
++#include <stdio.h>
+ #include "submission.h"
+ 
+ Submission *
+@@ -118,7 +119,8 @@ profile_submission_new (xmmsv_t *dict, uint32_t second
+ 		return NULL;
+ 
+ 	if (seconds_played < 240 && seconds_played < (val_i / 2000)) {
+-		fprintf (stderr, "seconds_played FAIL: %u\n", seconds_played);
++		fprintf (stderr, "seconds_played FAIL: %lld\n",
++			 (long long)seconds_played);
+ 		return NULL;
+ 	}
+ 
+@@ -147,7 +149,7 @@ profile_submission_new (xmmsv_t *dict, uint32_t second
+ 	strbuf_append_encoded (sb, (const uint8_t *) title);
+ 
+ 	/* timestamp */
+-	sprintf (buf32, "%lu", started_playing);
++	sprintf (buf32, "%lld", started_playing);
+ 	strbuf_append (sb, "&i[0]=");
+ 	strbuf_append (sb, buf32);
+ 
