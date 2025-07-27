@@ -5,10 +5,13 @@ COMMENT =	video editor
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 GH_TAGNAME =	v25.07.26
+REVISION =	0
 
 CATEGORIES =	multimedia
 
 HOMEPAGE =	https://www.shotcut.org/
+
+MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
