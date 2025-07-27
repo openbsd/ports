@@ -37,6 +37,7 @@ include/bash/include/memalloc.h
 include/bash/include/ocache.h
 include/bash/include/posixdir.h
 include/bash/include/posixjmp.h
+include/bash/include/posixselect.h
 include/bash/include/posixstat.h
 include/bash/include/posixtime.h
 include/bash/include/posixwait.h
@@ -46,8 +47,10 @@ include/bash/include/shtty.h
 include/bash/include/stat-time.h
 include/bash/include/stdc.h
 include/bash/include/systimes.h
+include/bash/include/timer.h
 include/bash/include/typemax.h
 include/bash/include/unionwait.h
+include/bash/include/unlocked-io.h
 include/bash/jobs.h
 include/bash/make_cmd.h
 include/bash/pathnames.h
@@ -69,15 +72,18 @@ lib/bash/Makefile.inc
 lib/bash/Makefile.sample
 @bin lib/bash/accept
 @bin lib/bash/basename
+@bin lib/bash/chmod
 @bin lib/bash/csv
 @bin lib/bash/cut
 @bin lib/bash/dirname
 @bin lib/bash/dsv
 @bin lib/bash/fdflags
 @bin lib/bash/finfo
+@bin lib/bash/fltexpr
 @bin lib/bash/getconf
 @bin lib/bash/head
 @bin lib/bash/id
+@bin lib/bash/kv
 @bin lib/bash/ln
 lib/bash/loadables.h
 @bin lib/bash/logname
@@ -97,6 +103,7 @@ lib/bash/loadables.h
 @bin lib/bash/sleep
 @bin lib/bash/stat
 @bin lib/bash/strftime
+@bin lib/bash/strptime
 @bin lib/bash/sync
 @bin lib/bash/tee
 @bin lib/bash/truefalse
@@ -141,6 +148,7 @@ share/locale/hu/LC_MESSAGES/bash.mo
 share/locale/id/LC_MESSAGES/bash.mo
 share/locale/it/LC_MESSAGES/bash.mo
 share/locale/ja/LC_MESSAGES/bash.mo
+share/locale/ka/LC_MESSAGES/bash.mo
 share/locale/ko/LC_MESSAGES/bash.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -154,6 +162,9 @@ share/locale/ro/LC_MESSAGES/bash.mo
 share/locale/ru/LC_MESSAGES/bash.mo
 share/locale/sk/LC_MESSAGES/bash.mo
 share/locale/sl/LC_MESSAGES/bash.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/bash.mo
 share/locale/sr/LC_MESSAGES/bash.mo
 share/locale/sv/LC_MESSAGES/bash.mo
 share/locale/tr/LC_MESSAGES/bash.mo
