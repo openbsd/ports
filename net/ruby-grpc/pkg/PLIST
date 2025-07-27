@@ -133,6 +133,7 @@ ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/channel_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/client_auth_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/client_server_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/compression_options_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/core_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/debug_message_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/error_sanity_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/src/ruby/spec/errors_spec.rb

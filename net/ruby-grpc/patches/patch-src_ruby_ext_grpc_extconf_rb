@@ -1,7 +1,7 @@
 Index: src/ruby/ext/grpc/extconf.rb
 --- src/ruby/ext/grpc/extconf.rb.orig
 +++ src/ruby/ext/grpc/extconf.rb
-@@ -122,30 +122,11 @@ ENV['BUILDDIR'] = output_dir
+@@ -124,30 +124,11 @@ ENV['BUILDDIR'] = output_dir
  strip_tool = RbConfig::CONFIG['STRIP']
  strip_tool += ' -x' if apple_toolchain
  
@@ -32,7 +32,7 @@ Index: src/ruby/ext/grpc/extconf.rb
  def have_ruby_abi_version()
    return true if RUBY_ENGINE == 'truffleruby'
    # ruby_abi_version is only available in development versions: https://github.com/ruby/ruby/pull/6231
-@@ -175,13 +156,12 @@ def ext_export_filename()
+@@ -177,13 +158,12 @@ def ext_export_filename()
  end
  
  ext_export_file = File.join(grpc_root, 'src', 'ruby', 'ext', 'grpc', ext_export_filename())
