@@ -1909,9 +1909,9 @@ lib/rabbitmq/sbin/vmware-rabbitmq
 @man man/man8/rabbitmq-streams.8
 @man man/man8/rabbitmq-upgrade.8
 @man man/man8/rabbitmqctl.8
-share/bash-completions/
-share/bash-completions/completions/
-share/bash-completions/completions/rabbitmq
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/rabbitmq
 share/doc/rabbitmq/
 share/doc/rabbitmq/INSTALL
 share/doc/rabbitmq/LICENSE

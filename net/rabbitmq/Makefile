@@ -4,6 +4,7 @@ V =		4.1.2
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -95,7 +96,7 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/rabbitmq \
-	    ${PREFIX}/share/bash-completions/completions \
+	    ${PREFIX}/share/bash-completion/completions \
 	    ${PREFIX}/share/zsh/site-functions
 	cd ${WRKBUILD}/deps/rabbit/docs && \
 	    ${INSTALL_DATA} *.8 ${PREFIX}/man/man8/ && \
@@ -110,7 +111,7 @@ post-install:
 	sed -i 's,/usr/lib/rabbitmq/bin/rabbitmqctl,${PREFIX}/bin/rabbitmqctl,g' \
 	    ${PREFIX}/autocomplete/bash_autocomplete.sh
 	mv ${PREFIX}/autocomplete/bash_autocomplete.sh \
-	    ${PREFIX}/share/bash-completions/completions/rabbitmq
+	    ${PREFIX}/share/bash-completion/completions/rabbitmq
 	mv ${PREFIX}/autocomplete/zsh_autocomplete.sh \
 	    ${PREFIX}/share/zsh/site-functions/_rabbitmq
 	rm -r ${PREFIX}/autocomplete
