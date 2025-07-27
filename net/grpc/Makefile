@@ -3,23 +3,23 @@
 
 COMMENT =	HTTP/2-based RPC framework
 
-V =		1.73.1
+V =		1.74.0
 DISTNAME =	grpc-${V}
 
 DIST_TUPLE +=	github grpc grpc v${V} .
 
 SHARED_LIBS +=	address_sorting           0.0 # 0.0
 SHARED_LIBS +=	gpr                       1.0 # 0.0
-SHARED_LIBS +=	grpc++                    1.1 # 0.0
+SHARED_LIBS +=	grpc++                    1.2 # 0.0
 SHARED_LIBS +=	grpc++_alts               1.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
 SHARED_LIBS +=	grpc++_reflection         1.0 # 0.0
-SHARED_LIBS +=	grpc++_unsecure           1.1 # 0.0
-SHARED_LIBS +=	grpc                      2.0 # 0.0
-SHARED_LIBS +=	grpc_authorization_provider 2.0 # 0.0
+SHARED_LIBS +=	grpc++_unsecure           1.2 # 0.0
+SHARED_LIBS +=	grpc                      3.0 # 0.0
+SHARED_LIBS +=	grpc_authorization_provider 3.0 # 0.0
 SHARED_LIBS +=	grpc_plugin_support       1.0 # 0.0
-SHARED_LIBS +=	grpc_unsecure             2.0 # 0.0
-SHARED_LIBS +=	grpcpp_channelz           1.0 # 0.0
+SHARED_LIBS +=	grpc_unsecure             3.0 # 0.0
+SHARED_LIBS +=	grpcpp_channelz           2.0 # 0.0
 SHARED_LIBS +=	upb_base_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_json_lib              1.0 # 0.0
 SHARED_LIBS +=	upb_mem_lib               0.1 # 0.0
@@ -31,7 +31,7 @@ SHARED_LIBS +=	utf8_range_lib            0.0 # 0.0
 SHARED_LIBS +=	upb_hash_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_lex_lib               0.0 # 0.0
 SHARED_LIBS +=	upb_mini_table_lib        0.0 # 0.0
-SHARED_LIBS +=	upb_reflection_lib        0.0 # 0.0
+SHARED_LIBS +=	upb_reflection_lib        0.1 # 0.0
 
 CATEGORIES =	net devel
 
