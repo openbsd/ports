@@ -1,6 +1,6 @@
 COMMENT =	test file attributes
 
-DISTNAME =	Test-File-1.994
+DISTNAME =	Test-File-1.995
 
 CATEGORIES =	devel
 
