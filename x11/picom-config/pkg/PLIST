@@ -1,0 +1,46 @@
+@pkgpath x11/lxqt/compton-conf
+@bin bin/picom-conf
+share/applications/picom_conf.desktop
+share/metainfo/
+share/metainfo/picom_conf.appdata.xml
+share/picom-conf/
+share/picom-conf/picom.conf.example
+share/picom-conf/translations/
+share/picom-conf/translations/picom-conf_arn.qm
+share/picom-conf/translations/picom-conf_ast.qm
+share/picom-conf/translations/picom-conf_be.qm
+share/picom-conf/translations/picom-conf_ca.qm
+share/picom-conf/translations/picom-conf_cs.qm
+share/picom-conf/translations/picom-conf_cy.qm
+share/picom-conf/translations/picom-conf_da.qm
+share/picom-conf/translations/picom-conf_de.qm
+share/picom-conf/translations/picom-conf_el.qm
+share/picom-conf/translations/picom-conf_en_GB.qm
+share/picom-conf/translations/picom-conf_es.qm
+share/picom-conf/translations/picom-conf_et.qm
+share/picom-conf/translations/picom-conf_eu.qm
+share/picom-conf/translations/picom-conf_fi.qm
+share/picom-conf/translations/picom-conf_fil.qm
+share/picom-conf/translations/picom-conf_fr.qm
+share/picom-conf/translations/picom-conf_gl.qm
+share/picom-conf/translations/picom-conf_he.qm
+share/picom-conf/translations/picom-conf_hi.qm
+share/picom-conf/translations/picom-conf_hu.qm
+share/picom-conf/translations/picom-conf_id.qm
+share/picom-conf/translations/picom-conf_it.qm
+share/picom-conf/translations/picom-conf_ja.qm
+share/picom-conf/translations/picom-conf_ko.qm
+share/picom-conf/translations/picom-conf_lt.qm
+share/picom-conf/translations/picom-conf_lv.qm
+share/picom-conf/translations/picom-conf_nb_NO.qm
+share/picom-conf/translations/picom-conf_nl.qm
+share/picom-conf/translations/picom-conf_pl.qm
+share/picom-conf/translations/picom-conf_pt.qm
+share/picom-conf/translations/picom-conf_pt_BR.qm
+share/picom-conf/translations/picom-conf_ru.qm
+share/picom-conf/translations/picom-conf_sk_SK.qm
+share/picom-conf/translations/picom-conf_tr.qm
+share/picom-conf/translations/picom-conf_uk.qm
+share/picom-conf/translations/picom-conf_vi.qm
+share/picom-conf/translations/picom-conf_zh_CN.qm
+@tag update-desktop-database
