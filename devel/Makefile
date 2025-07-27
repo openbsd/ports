@@ -1809,6 +1809,7 @@
      SUBDIR += qgit
      SUBDIR += qp
      SUBDIR += qt-creator
+     SUBDIR += qtilitools
      SUBDIR += quilt
      SUBDIR += quirks
      SUBDIR += radare2
