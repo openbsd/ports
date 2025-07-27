@@ -1,6 +1,6 @@
 COMMENT =	bringing loggers and listeners together
 
-DISTNAME =	Log-Any-1.717
+DISTNAME =	Log-Any-1.718
 
 CATEGORIES =	devel
 
