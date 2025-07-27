@@ -1,0 +1,10 @@
+bin/qtls-translate
+share/cmake/
+share/cmake/qtilitools/
+share/cmake/qtilitools/QtilitoolsConfig.cmake
+share/cmake/qtilitools/QtilitoolsConfigVersion.cmake
+share/cmake/qtilitools/modules/
+share/cmake/qtilitools/modules/AppStream.cmake
+share/cmake/qtilitools/modules/QtAppResources.cmake
+share/cmake/qtilitools/modules/Translate.cmake
+share/cmake/qtilitools/modules/TranslateDesktop.pl
