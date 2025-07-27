@@ -2,6 +2,6 @@ share/doc/font-awesome/
 share/doc/font-awesome/LICENSE.txt
 share/fonts/
 @fontdir share/fonts/font-awesome/
-share/fonts/font-awesome/Font Awesome 6 Brands-Regular-400.otf
-share/fonts/font-awesome/Font Awesome 6 Free-Regular-400.otf
-share/fonts/font-awesome/Font Awesome 6 Free-Solid-900.otf
+share/fonts/font-awesome/Font Awesome 7 Brands-Regular-400.otf
+share/fonts/font-awesome/Font Awesome 7 Free-Regular-400.otf
+share/fonts/font-awesome/Font Awesome 7 Free-Solid-900.otf
