@@ -82,6 +82,8 @@ share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa2048.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa512.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/mldsa65-1.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/mldsa65-2.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/p256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-2.pem
