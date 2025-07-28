@@ -1,6 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-93.0
+DISTNAME=	mkvtoolnix-94.0
 
 CATEGORIES=	multimedia x11
 
@@ -39,10 +39,11 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/docbook-xsl \
 		textproc/nlohmann-json
 
-LIB_DEPENDS=	devel/boost \
-		audio/flac \
+LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
+		converters/libiconv \
+		devel/boost \
 		devel/fmt \
 		devel/gettext,-runtime \
 		devel/gmp \
