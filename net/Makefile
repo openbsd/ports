@@ -226,6 +226,7 @@
      SUBDIR += libnet
      SUBDIR += libnice
      SUBDIR += libnids
+     SUBDIR += libnpupnp
      SUBDIR += liboauth
      SUBDIR += libomemo-c
      SUBDIR += liboping
