@@ -18,6 +18,7 @@ PATCHFILES.p +=	bash53-$i
 .endfor
 
 LIB_DEPENDS=	devel/gettext,-runtime
+BUILD_DEPENDS=	devel/gettext,-tools
 WANTLIB=	c curses iconv intl m pthread
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
