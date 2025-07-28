@@ -6,6 +6,7 @@ MODPY_DISTV =		3.14.0
 DISTNAME =		h5py-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION = 		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
