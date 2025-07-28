@@ -1,5 +1,5 @@
-@pkgpath math/py-bottleneck,python3
 @conflict py-bottleneck-*
+@pkgpath math/py-bottleneck,python3
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -13,6 +13,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}_pytesttester.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/_pytesttester.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/_version.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/
@@ -25,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}be
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/autotimeit.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/bench.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/bench_detailed.py
+lib/python${MODPY_VERSION}/site-packages/bottleneck/conftest.py
 @so lib/python${MODPY_VERSION}/site-packages/bottleneck/move.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/bottleneck/nonreduce.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/bottleneck/nonreduce_axis.${MODPY_PYC_MAGIC_TAG}so
