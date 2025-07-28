@@ -2,6 +2,7 @@ COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
 MODPY_DISTV =	8.0.0
 DISTNAME =	offlineimap-${MODPY_DISTV}pl20240826
+REVISION =	0
 
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap3
