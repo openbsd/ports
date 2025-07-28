@@ -2,15 +2,17 @@ COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Crypt-CBC-3.04
+DISTNAME =	Crypt-CBC-3.07
 CATEGORIES=	security
 
 RUN_DEPENDS=	security/p5-Crypt-DES \
 		security/p5-Crypt-Blowfish \
 		security/p5-Crypt-PBKDF2 \
 		security/p5-Crypt-Rijndael \
+		security/p5-Crypt-URandom \
 		security/p5-CryptX
-TEST_DEPENDS=	security/p5-Crypt-Blowfish_PP \
+TEST_DEPENDS=	math/p5-Math-Int128 \
+		security/p5-Crypt-Blowfish_PP \
 		security/p5-Crypt-IDEA
 
 # Perl
