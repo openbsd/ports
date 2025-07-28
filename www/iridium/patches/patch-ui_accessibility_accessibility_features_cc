@@ -1,7 +1,7 @@
 Index: ui/accessibility/accessibility_features.cc
 --- ui/accessibility/accessibility_features.cc.orig
 +++ ui/accessibility/accessibility_features.cc
-@@ -473,7 +473,7 @@ bool IsBlockRootWindowAccessibleNameChangeEventEnabled
+@@ -524,7 +524,7 @@ bool IsBlockRootWindowAccessibleNameChangeEventEnabled
  }
  #endif  // BUILDFLAG(IS_MAC)
  

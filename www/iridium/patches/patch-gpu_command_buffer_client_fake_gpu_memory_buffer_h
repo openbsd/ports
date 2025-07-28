@@ -1,9 +1,9 @@
-Index: media/video/fake_gpu_memory_buffer.h
---- media/video/fake_gpu_memory_buffer.h.orig
-+++ media/video/fake_gpu_memory_buffer.h
+Index: gpu/command_buffer/client/fake_gpu_memory_buffer.h
+--- gpu/command_buffer/client/fake_gpu_memory_buffer.h.orig
++++ gpu/command_buffer/client/fake_gpu_memory_buffer.h
 @@ -12,7 +12,7 @@
  
- namespace media {
+ namespace gpu {
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

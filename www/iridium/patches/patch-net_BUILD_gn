@@ -10,7 +10,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1334,6 +1334,19 @@ component("net") {
+@@ -1341,6 +1341,19 @@ component("net") {
      ]
    }
  
@@ -30,7 +30,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1497,7 +1510,7 @@ component("net") {
+@@ -1504,7 +1517,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -39,7 +39,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2207,7 +2220,7 @@ static_library("test_support") {
+@@ -2211,7 +2224,7 @@ static_library("test_support") {
      ]
    }
  
@@ -48,7 +48,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3030,14 +3043,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3038,14 +3051,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -65,7 +65,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3135,6 +3148,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3143,6 +3156,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -76,7 +76,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3200,7 +3217,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3208,7 +3225,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -85,7 +85,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3339,7 +3356,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3346,7 +3363,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

@@ -63,7 +63,7 @@ Index: media/audio/sndio/audio_manager_sndio.cc
 +}
 +
 +#if defined(USE_SNDIO)
-+const char* AudioManagerSndio::GetName() {
++const std::string_view AudioManagerSndio::GetName() {
 +  return "SNDIO";
 +}
 +#endif
