@@ -1,6 +1,6 @@
 COMMENT =		character art facsimile generator
 DISTNAME =		chafa-1.16.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  	chafa                     5.0 # 10.0
 
@@ -20,7 +20,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz hwy iconv intl jpeg
 WANTLIB += jxl jxl_cms jxl_threads lcms2 lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pcre2-8 pixman-1 png pthread rsvg-2 sharpyuv tiff webp webpdemux
 WANTLIB += xcb xcb-render xcb-shm xml2 z zstd
-WANTLIB += Lerc fribidi graphite2 pangoft2-1.0 croco-0.6
+WANTLIB += Lerc fribidi graphite2 pangoft2-1.0
 
 SITES =			https://hpjansson.org/chafa/releases/
 EXTRACT_SUFX =		.tar.xz

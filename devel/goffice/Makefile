@@ -2,7 +2,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.59
-REVISION=	0
+REVISION=	1
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -28,7 +28,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gs gsf-1 gtk-3 harfbuzz iconv intl jpeg lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png rsvg-2
 WANTLIB += spectre wayland-client wayland-cursor wayland-egl xcb
-WANTLIB += xcb-render xcb-shm xkbcommon xml2 xslt z croco-0.6
+WANTLIB += xcb-render xcb-shm xkbcommon xml2 xslt z
 
 MODULES=		x11/gnome
 

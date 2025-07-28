@@ -1,7 +1,7 @@
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-3.0.4
-REVISION=	1
+REVISION=	2
 
 EXTRACT_SUFX=	.tar.bz2
 SITES=		${SITE_SOURCEFORGE:=grisbi/}
@@ -24,7 +24,7 @@ WANTLIB += gobject-2.0 goffice-0.10 graphite2 gs gsf-1 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lzma m ofx osp pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png rsvg-2 spectre xcb xcb-render
 WANTLIB += xcb-shm xkbcommon xml2 xslt z
-WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl croco-0.6
+WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -9,7 +9,7 @@ CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
-REVISION-main=	6
+REVISION-main=	7
 
 USE_NOBTCFI=	Yes
 
@@ -77,7 +77,7 @@ WANTLIB-main += wayland-cursor wayland-egl webp webpmux x264 x265 xcb
 WANTLIB-main += xcb-composite xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms
 WANTLIB-main += xcb-present xcb-randr xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB-main += xcb-xv xkbcommon xml2 xshmfence xvidcore z zstd
-WANTLIB-main += LLVM croco-0.6 drm_amdgpu elf pciaccess
+WANTLIB-main += LLVM drm_amdgpu elf pciaccess
 
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2

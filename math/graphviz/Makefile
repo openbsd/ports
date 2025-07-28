@@ -6,7 +6,7 @@ DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
-REVISION-main=	0
+REVISION-main=	1
 REVISION-tcl=	0
 
 MULTI_PACKAGES=	-main -tcl
@@ -48,7 +48,7 @@ WANTLIB += z zstd
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
-WANTLIB-main += c croco-0.6 gc gdk-x11-2.0 gdk_pixbuf-2.0 gmp guile-2.2
+WANTLIB-main += c gc gdk-x11-2.0 gdk_pixbuf-2.0 gmp guile-2.2
 WANTLIB-main += lcms2 openjp2 perl poppler poppler-glib rsvg-2 unistring
 WANTLIB-main += xml2
 
