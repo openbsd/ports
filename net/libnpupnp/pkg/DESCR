@@ -1,0 +1,3 @@
+libpnupnp is a C++ reimplementation of the venerable libupnp, a.k.a. Portable
+UPnP* library. Most of the API is unchanged, except where libupnp exposed its
+internal XML ixml library DOM objects.

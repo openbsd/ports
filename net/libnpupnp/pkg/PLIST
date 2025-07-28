@@ -1,0 +1,10 @@
+include/npupnp/
+include/npupnp/UpnpGlobal.h
+include/npupnp/netif.h
+include/npupnp/upnp.h
+include/npupnp/upnpconfig.h
+include/npupnp/upnpdebug.h
+include/npupnp/upnpdescription.h
+include/npupnp/upnptools.h
+@lib lib/libnpupnp.so.${LIBnpupnp_VERSION}
+lib/pkgconfig/libnpupnp.pc
