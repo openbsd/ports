@@ -1,0 +1,13 @@
+mandir and CDE prefix don't differ in our case. -- from pkgsrc
+
+Index: doc/Makefile.am
+--- doc/Makefile.am.orig
++++ doc/Makefile.am
+@@ -23,5 +23,5 @@ SUBDIRS += ja_JP.UTF-8
+ endif
+ 
+ install-data-hook:
+-	$(RM) $(DESTDIR)$(CDE_INSTALLATION_TOP)/man
+-	cd $(DESTDIR)$(CDE_INSTALLATION_TOP)/ && $(LN_S) $(mandir) man
++	-if [ $(CDE_INSTALLATION_TOP)/man != $(mandir) ];then \
++		cd $(DESTDIR)$(CDE_INSTALLATION_TOP) && $(LN_S) $(mandir) man; fi

@@ -1,0 +1,12 @@
+Index: programs/dtmail/include/DtMail/DtMailTypes.h
+--- programs/dtmail/include/DtMail/DtMailTypes.h.orig
++++ programs/dtmail/include/DtMail/DtMailTypes.h
+@@ -57,7 +57,7 @@
+ #define DTMAIL_DEFAULT_CREATE_MODE_MAILGROUP	0660
+ #define DTMAIL_DEFAULT_CREATE_UMASK	0177
+ #define DTMAIL_DEFAULT_CREATE_UMASK_MAILGROUP	0117
+-#define DTMAIL_DEFAULT_CREATE_MAILGROUP	"mail"
++#define DTMAIL_DEFAULT_CREATE_MAILGROUP	"wheel"
+ #define DTMAIL_DEFAULT_OPEN_MODE        O_RDWR
+ 
+ 
