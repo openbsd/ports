@@ -1,4 +1,5 @@
 COMMENT =	file manager and desktop icon manager
+REVISION =	0
 
 NAME =		pcmanfm-qt
 
@@ -18,6 +19,7 @@ LIB_DEPENDS =	x11/kde-plasma/layer-shell-qt \
 BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/oxygen-icons \
 		x11/gtk+4,-guic
 
 post-install:
