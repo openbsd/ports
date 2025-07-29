@@ -3,7 +3,7 @@ Use the correct number of cpus when hw.smt=0
 Index: src/hotspot/os/bsd/os_bsd.cpp
 --- src/hotspot/os/bsd/os_bsd.cpp.orig
 +++ src/hotspot/os/bsd/os_bsd.cpp
-@@ -294,7 +294,11 @@ void os::Bsd::initialize_system_info() {
+@@ -296,7 +296,11 @@ void os::Bsd::initialize_system_info() {
  
    // get processors count via hw.ncpus sysctl
    mib[0] = CTL_HW;
