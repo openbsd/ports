@@ -208,7 +208,6 @@
      SUBDIR += micropolis
      SUBDIR += mightymike
      SUBDIR += minecraft
-     SUBDIR += minetest
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
      SUBDIR += moon-buggy
