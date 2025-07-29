@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1734 2025/07/29 05:30:32 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1735 2025/07/29 14:00:52 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -631,6 +631,7 @@ my $stem_extensions = {
 	'py-Pillow' => 'py3-Pillow',
 	'py-opengl' => 'py3-opengl',
 	'compton-conf' => 'picom-config',
+	'minetest' => 'luanti',
 };
 
 my $obsolete_reason = {};
