@@ -1,7 +1,6 @@
      SUBDIR =
 # Base
      SUBDIR += libqtxdg
-     SUBDIR += build-tools
      SUBDIR += build-tools2
      SUBDIR += libsysstat
 # PcmanFM-qt
@@ -27,7 +26,6 @@
      SUBDIR += themes
 # Related Releases
      SUBDIR += lximage-qt
-     SUBDIR += compton-conf
      SUBDIR += obconf-qt
      SUBDIR += pavucontrol-qt
      SUBDIR += qterminal
