@@ -1,6 +1,6 @@
 COMMENT=	addons for openHAB
 
-V=		4.3.5
+V=		4.3.6
 DISTNAME=	openhab-addons-${V}
 
 CATEGORIES=	misc
