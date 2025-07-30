@@ -336,8 +336,7 @@
      SUBDIR += viewnior
      SUBDIR += vigra
      SUBDIR += volk
-     # Unhook until cad/freecad is imported
-     #SUBDIR += vtk
+     SUBDIR += vtk
      SUBDIR += vulkan-headers
      SUBDIR += vulkan-loader
      SUBDIR += vulkan-tools
