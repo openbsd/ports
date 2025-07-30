@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1644 2025/03/02 13:16:48 landry Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1645 2025/07/30 12:06:30 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2828,7 +2828,7 @@ _post-extract-finalize:
 .if !target(do-extract)
 do-extract:
 # What EXTRACT normally does:
-	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
+	@PATH=${PORTPATH}; set -e; set -o pipefail; cd ${WRKDIR}; \
 	for archive in ${EXTRACT_ONLY}; do \
 		case $$archive in \
 		${EXTRACT_CASES} \
