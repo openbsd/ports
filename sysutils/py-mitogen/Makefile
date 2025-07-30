@@ -1,6 +1,6 @@
 COMMENT=	write distributed self-replicating programs in Python
 
-MODPY_DISTV=	0.3.24
+MODPY_DISTV=	0.3.25
 DISTNAME=	mitogen-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
