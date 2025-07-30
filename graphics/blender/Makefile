@@ -7,6 +7,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 VERSION =	4.5.0
+REVISION =	0
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
 
