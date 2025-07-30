@@ -5,6 +5,7 @@ ${P5SITE}/DBIx/Connector/Driver/
 ${P5SITE}/DBIx/Connector/Driver.pm
 ${P5SITE}/DBIx/Connector/Driver/Firebird.pm
 ${P5SITE}/DBIx/Connector/Driver/MSSQL.pm
+${P5SITE}/DBIx/Connector/Driver/MariaDB.pm
 ${P5SITE}/DBIx/Connector/Driver/Oracle.pm
 ${P5SITE}/DBIx/Connector/Driver/Pg.pm
 ${P5SITE}/DBIx/Connector/Driver/SQLite.pm
@@ -13,6 +14,7 @@ ${P5SITE}/DBIx/Connector/Driver/mysql.pm
 @man man/man3p/DBIx::Connector::Driver.3p
 @man man/man3p/DBIx::Connector::Driver::Firebird.3p
 @man man/man3p/DBIx::Connector::Driver::MSSQL.3p
+@man man/man3p/DBIx::Connector::Driver::MariaDB.3p
 @man man/man3p/DBIx::Connector::Driver::Oracle.3p
 @man man/man3p/DBIx::Connector::Driver::Pg.3p
 @man man/man3p/DBIx::Connector::Driver::SQLite.3p
