@@ -1,0 +1,19 @@
+Index: meson/cdb/meson.build
+--- meson/cdb/meson.build.orig
++++ meson/cdb/meson.build
+@@ -1,13 +1,9 @@
+ opt_cdb = get_option('cdb')
+-dep_cdb = dependency('libcdb', required: opt_cdb)
++dep_cdb = dependency('libcdb', required: false)
+ 
+ if opt_cdb.allowed()
+   if not dep_cdb.found()
+-    if cxx.has_header('cdb.h', required: false)
+-      if cxx.has_function('cdb_find', args: ['-lcdb'])
+-        dep_cdb = declare_dependency(link_args: ['-lcdb'])
+-      endif
+-    endif
++    dep_cdb = declare_dependency(link_args: ['-L/usr/local/lib', '-lcdb'], include_directories: ['/usr/local/include'])
+   endif
+ endif
+ 
