@@ -25,6 +25,7 @@ eboringssl/include/openssl/cast.h
 eboringssl/include/openssl/chacha.h
 eboringssl/include/openssl/cipher.h
 eboringssl/include/openssl/cmac.h
+eboringssl/include/openssl/cms.h
 eboringssl/include/openssl/conf.h
 eboringssl/include/openssl/cpu.h
 eboringssl/include/openssl/crypto.h
@@ -86,6 +87,7 @@ eboringssl/include/openssl/rsa.h
 eboringssl/include/openssl/safestack.h
 eboringssl/include/openssl/service_indicator.h
 eboringssl/include/openssl/sha.h
+eboringssl/include/openssl/sha2.h
 eboringssl/include/openssl/siphash.h
 eboringssl/include/openssl/slhdsa.h
 eboringssl/include/openssl/span.h
@@ -103,6 +105,7 @@ eboringssl/include/openssl/x509.h
 eboringssl/include/openssl/x509_vfy.h
 eboringssl/include/openssl/x509v3.h
 eboringssl/include/openssl/x509v3_errors.h
+eboringssl/include/openssl/xwing.h
 eboringssl/lib/
 eboringssl/lib/cmake/
 eboringssl/lib/cmake/OpenSSL/
