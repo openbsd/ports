@@ -96,11 +96,13 @@
      SUBDIR += py-imdb
      SUBDIR += py-jdcal
      SUBDIR += py-memcached
+     SUBDIR += py-remind
      SUBDIR += py-yfinance
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind
      SUBDIR += remindcal
+     SUBDIR += remind-caldav
      SUBDIR += rlwrap
      SUBDIR += rocrail
      SUBDIR += screen
