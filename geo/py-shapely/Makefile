@@ -1,11 +1,10 @@
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_DISTV =	2.1.0
+MODPY_DISTV =	2.1.1
 GH_TAGNAME =	${MODPY_DISTV}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
 PKGNAME =	py-shapely-${MODPY_DISTV:S/.post/pl/}
-REVISION =	0
 
 CATEGORIES =	geo
 
