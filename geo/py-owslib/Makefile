@@ -1,6 +1,6 @@
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_DISTV =	0.34.0
+MODPY_DISTV =	0.34.1
 DISTNAME =		owslib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
