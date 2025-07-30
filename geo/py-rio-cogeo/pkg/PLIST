@@ -1,5 +1,5 @@
-@pkgpath geo/py-rio-cogeo,python3
 @conflict py-rio-cogeo-*
+@pkgpath geo/py-rio-cogeo,python3
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo/
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_DISTV}.dist-info/METADATA
