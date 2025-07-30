@@ -1,6 +1,7 @@
 COMMENT =	Wayland utils
 
-DISTNAME =	wayland-utils-1.0.0
+V = 		1.2.0
+DISTNAME =	wayland-utils-${V}
 
 CATEGORIES =	wayland
 
@@ -11,7 +12,7 @@ WANTLIB += c wayland-client
 # MIT
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://wayland.freedesktop.org/releases/
+SITES =			https://gitlab.freedesktop.org/wayland/wayland-utils/-/releases/${V}/downloads/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson
