@@ -1,5 +1,5 @@
 COMMENT =	X11 Cursors themes generator
-DISTNAME =	xcursorgen-1.0.8
+DISTNAME =	xcursorgen-1.0.9
 CATEGORIES =	x11
 EPOCH =	0
 
@@ -16,8 +16,7 @@ WANTLIB += X11 Xcursor c png
 
 SITES =		${SITE_XORG:=app/}
 
-SEPARATE_BUILD = 	Yes
-CONFIGURE_STYLE =	gnu
+MODULES =	devel/meson
 
 NO_TEST =		Yes
 
