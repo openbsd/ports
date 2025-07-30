@@ -1,0 +1,3 @@
+Python library to convert between Remind and iCalendar. Can be used stand alone
+(provided rem2ics and ics2rem tools) as well as integrated as a CalDAV client
+or server.
