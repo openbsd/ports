@@ -1,10 +1,9 @@
 COMMENT=	Python wrapper for ERFA
 
-MODPY_DISTV=	2.0.1.3
+MODPY_DISTV=	2.0.1.5
 
 DISTNAME=	pyerfa-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
 
 CATEGORIES=	astro
 
