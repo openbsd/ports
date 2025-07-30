@@ -1,6 +1,6 @@
 COMMENT=	integration platform for home automation
 
-V=		4.3.5
+V=		4.3.6
 DISTNAME=	openhab-${V}
 
 CATEGORIES=	misc
