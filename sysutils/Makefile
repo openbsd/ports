@@ -8,6 +8,7 @@
      SUBDIR += ansible
      SUBDIR += ansible-core
      SUBDIR += ansible-lint
+     SUBDIR += ansible-runner
      SUBDIR += apachetop
      SUBDIR += apcd
      SUBDIR += apcupsd
