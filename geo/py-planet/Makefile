@@ -1,9 +1,8 @@
 COMMENT=	client library and CLI for Planet's public API
 
-MODPY_DISTV=	2.13.1
+MODPY_DISTV=	2.22.1
 DISTNAME=	planet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	geo
 
