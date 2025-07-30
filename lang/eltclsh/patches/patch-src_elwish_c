@@ -1,7 +1,7 @@
 Index: src/elwish.c
 --- src/elwish.c.orig
 +++ src/elwish.c
-@@ -73,8 +73,6 @@ elWishAppInit(Tcl_Interp *interp)
+@@ -68,8 +68,6 @@ elWishAppInit(Tcl_Interp *interp)
     /* change the rc file */
     Tcl_SetVar(interp, "tcl_rcFileName", "~/.elwishrc", TCL_GLOBAL_ONLY);
  

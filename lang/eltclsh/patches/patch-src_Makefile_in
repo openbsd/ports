@@ -3,7 +3,7 @@ Find Tcl includes
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -397,7 +397,7 @@ AM_CPPFLAGS = ${TCL_INCLUDE_SPEC} -DELTCLSH_DATA='"${d
+@@ -398,7 +398,7 @@ AM_CPPFLAGS = ${TCL_INCLUDE_SPEC} -DELTCLSH_DATA='"${d
  	-DELTCLSH_VERSION='"${PACKAGE_VERSION}"'
  eltclsh_LDFLAGS = ${RUNTIME_PATH}
  eltclsh_LDADD = libcommon.la ${TCL_LIB_SPEC}

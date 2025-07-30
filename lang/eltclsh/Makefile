@@ -1,6 +1,6 @@
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
-DISTNAME =	eltclsh-1.19
+DISTNAME =	eltclsh-1.20
 CATEGORIES =	lang x11
 
 SITES =		https://www.openrobots.org/distfiles/eltclsh/

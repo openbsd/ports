@@ -3,16 +3,16 @@ Adjust for OpenBSD-specific Tcl package path layout.
 Index: src/loop.c
 --- src/loop.c.orig
 +++ src/loop.c
-@@ -54,7 +54,7 @@ elTclshLoop(int argc, char **argv, ElTclAppInitProc ap
- #endif /* TCL_VERSION */
+@@ -49,7 +49,7 @@ void
+ elTclshLoop(int argc, const char * const *argv, ElTclAppInitProc appInitProc)
  {
     Tcl_Interp *interp;
 -   Tcl_Obj *resultPtr, *obj;
 +   Tcl_Obj *resultPtr;
- #if TCL_MAJOR_VERSION >= 8 && TCL_MINOR_VERSION >= 4
-    const
- #endif
-@@ -103,12 +103,14 @@ elTclshLoop(int argc, char **argv, ElTclAppInitProc ap
+    const char *fileName, *args;
+    char buffer[1000], *bytes;
+    int code, tty;
+@@ -96,12 +96,14 @@ elTclshLoop(int argc, const char * const *argv, ElTclA
     }
  
     /* configure standard path for packages */
