@@ -839,6 +839,7 @@ zabbix/include/classes/api/services/CHaNode.php
 zabbix/include/classes/api/services/CHistory.php
 zabbix/include/classes/api/services/CHost.php
 zabbix/include/classes/api/services/CHostBase.php
+zabbix/include/classes/api/services/CHostDashboard.php
 zabbix/include/classes/api/services/CHostGeneral.php
 zabbix/include/classes/api/services/CHostGroup.php
 zabbix/include/classes/api/services/CHostInterface.php
