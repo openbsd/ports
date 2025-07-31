@@ -1,9 +1,8 @@
 COMMENT=	binary visual display editor, based on vi
 
-DISTNAME=	bvi-1.4.2
+DISTNAME=	bvi-1.5.0
 CATEGORIES=	editors
 HOMEPAGE=	https://bvi.sourceforge.net/
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
