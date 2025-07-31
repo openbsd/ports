@@ -1,6 +1,7 @@
-COMMENT=        build tool for java applications
+COMMENT=	build tool for java applications
 
 DISTNAME=	apache-ant-1.10.15
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	https://ant.apache.org/
@@ -15,7 +16,7 @@ SITES=		${SITE_APACHE:=ant/binaries/} \
 EXTRACT_SUFX=	-bin.tar.bz2
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 
 RUN_DEPENDS=	java/javaPathHelper
 
