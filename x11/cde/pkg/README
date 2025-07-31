@@ -9,19 +9,12 @@ Entries for your hostname (NOT just localhost) must be registered in /etc/hosts.
 e.g.,
 127.0.0.1	localhost myhost myhost.domain.com
 
-The following lines must be added to the corresponding configuration files:
-
-* /etc/inetd.conf
+Then configure /etc/inetd.conf:
+    # cat <<'EOF' >>/etc/inetd.conf
 dtspcd		stream	tcp	nowait	root	${TRUEPREFIX}/bin/dtspcd		dtspcd
 cmsd/2-5	dgram	rpc/udp	wait	root	${TRUEPREFIX}/bin/rpc.cmsd		rpc.cmsd
 ttdbserver/1	stream	rpc/tcp	wait	root	${TRUEPREFIX}/bin/rpc.ttdbserver	rpc.ttdbserver
-
-* /etc/rpc - /!\ upgrading to a new OpenBSD release will overwrite this file!
-cmsd		100068	dtcalendar
-ttdbserver	100083	ttooltalk
-
-* /etc/services - /!\ upgrading to a new OpenBSD release will overwrite this file!
-dtspc		6112/tcp			# CDE Subprocess Control Service
+EOF
 
 Most configuration files can be found under ${TRUEPREFIX}/config and will be
 overwritten by subsequent updates. To change a configuration, its file must be

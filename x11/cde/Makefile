@@ -54,8 +54,7 @@ AUTORECONF=		./autogen.sh
 AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.18
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 # Our ksh(1) might be enought but considering the KSH found at configure time is
 # propagated to most installed scripts, let's not take any chances.
