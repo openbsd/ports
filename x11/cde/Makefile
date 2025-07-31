@@ -79,6 +79,9 @@ post-patch:
 		sed -i "s,/usr/dt,${PREFIX},g" $${p} ;\
 	done
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc/cde,examples}/
 	mv ${WRKINST}/etc/cde ${PREFIX}/share/examples/
