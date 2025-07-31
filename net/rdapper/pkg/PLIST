@@ -7,6 +7,9 @@ ${P5SITE}/auto/
 ${P5SITE}/auto/share/
 ${P5SITE}/auto/share/module/
 ${P5SITE}/auto/share/module/App-rdapper/
+${P5SITE}/auto/share/module/App-rdapper/de/
+${P5SITE}/auto/share/module/App-rdapper/de/LC_MESSAGES/
+${P5SITE}/auto/share/module/App-rdapper/de/LC_MESSAGES/rdapper.po
 ${P5SITE}/auto/share/module/App-rdapper/en/
 ${P5SITE}/auto/share/module/App-rdapper/en/LC_MESSAGES/
 ${P5SITE}/auto/share/module/App-rdapper/en/LC_MESSAGES/rdapper.mo
@@ -15,6 +18,10 @@ ${P5SITE}/auto/share/module/App-rdapper/fr/
 ${P5SITE}/auto/share/module/App-rdapper/fr/LC_MESSAGES/
 ${P5SITE}/auto/share/module/App-rdapper/fr/LC_MESSAGES/rdapper.mo
 ${P5SITE}/auto/share/module/App-rdapper/fr/LC_MESSAGES/rdapper.po
+${P5SITE}/auto/share/module/App-rdapper/pt/
+${P5SITE}/auto/share/module/App-rdapper/pt/LC_MESSAGES/
+${P5SITE}/auto/share/module/App-rdapper/pt/LC_MESSAGES/rdapper.mo
+${P5SITE}/auto/share/module/App-rdapper/pt/LC_MESSAGES/rdapper.po
 ${P5SITE}/auto/share/module/App-rdapper/rdapper.pot
 @man man/man3p/App::rdapper.3p
 @man man/man3p/App::rdapper::l10n.3p
