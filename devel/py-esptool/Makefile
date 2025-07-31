@@ -1,9 +1,9 @@
 COMMENT=	ESP8266 and ESP32 ROM bootloader communication tool
 
-MODPY_DISTV=	4.8.1
+MODPY_DISTV=	4.9.0
+# v5+ requires new deps (including rich_click, not in ports)
 DISTNAME=	esptool-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 HOMEPAGE=	https://github.com/espressif/esptool
