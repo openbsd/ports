@@ -1,6 +1,6 @@
 COMMENT =	UNIX pager optimized for tabular data
 
-DIST_TUPLE =	github okbob pspg 5.8.11 .
+DIST_TUPLE =	github okbob pspg 5.8.12 .
 
 CATEGORIES =	databases
 
@@ -19,7 +19,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS =	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.72
 
 NO_TEST =		Yes
 
