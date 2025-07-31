@@ -23,6 +23,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/awk
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/batchfile
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bbcbasic
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bibtex
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bicep
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/biml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bpf
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/brainfuck
@@ -275,6 +276,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/awk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/batchfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bbcbasic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bibtex.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bicep.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/biml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bpf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/brainfuck.rb
