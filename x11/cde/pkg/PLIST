@@ -5444,7 +5444,7 @@ bin/dthelptag
 @bin bin/dtlogin
 bin/dtlp
 bin/dtlpsetup
-@mode 2755
+@mode 0000
 @bin bin/dtmail
 @mode
 @bin bin/dtmailpr
