@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.46
-REVISION=	1
+V=		2.47
 
 # required for mime.types
 MAILCAP_V=	2-1-54
@@ -17,7 +16,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	275a7d1b2969c37cc0a9e70ffc6a0217395119a4
+GH_COMMIT=	e4156fb0be5d6416a2855f3e2e5dc03d217d6730
 
 SITES.a=	https://pagure.io/mailcap/archive/r${MAILCAP_V}/
 DISTFILES.a=	mailcap-r${MAILCAP_V}.tar.gz
