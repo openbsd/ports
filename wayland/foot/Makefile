@@ -1,10 +1,10 @@
 COMMENT = 	fast, lightweight and minimalistic Wayland terminal emulator
 
 DISTNAME =	foot-${V}
-V =		1.22.3
+V =		1.23.1
 
 SITES =		https://codeberg.org/dnkl/foot/archive/
-DISTFILES =     foot-{}${V}${EXTRACT_SUFX}
+DISTFILES =	foot-{}${V}${EXTRACT_SUFX}
 
 CATEGORIES =	wayland
 
@@ -15,10 +15,10 @@ WRKDIST =	${WRKDIR}/foot
 # MIT
 PERMIT_PACKAGE = yes
 
-COMPILER =      base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-MODULES =       devel/meson
+MODULES =	devel/meson
 
 WANTLIB =	c epoll-shim fcft fontconfig m pixman-1
 WANTLIB +=	pthread stdthreads utf8proc wayland-client wayland-cursor
@@ -38,7 +38,7 @@ LIB_DEPENDS =	devel/libstdthreads \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-CONFIGURE_ENV = CPPFLAGS=-I${LOCALBASE}/include/libutf8proc
+CONFIGURE_ENV =	CPPFLAGS=-I${LOCALBASE}/include/libutf8proc
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
