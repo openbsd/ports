@@ -1,9 +1,8 @@
 COMMENT=	library to sanitize/validate paths
 
-MODPY_DISTV=	3.2.3
+MODPY_DISTV=	3.3.1
 DISTNAME=	pathvalidate-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
