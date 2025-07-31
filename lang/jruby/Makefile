@@ -10,6 +10,8 @@ CATEGORIES =	lang lang/ruby
 DISTFILES.jffi =jffi-1.3.10.tar.gz
 DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
 
+REVISION =	0
+
 HOMEPAGE =	http://www.jruby.org/
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
