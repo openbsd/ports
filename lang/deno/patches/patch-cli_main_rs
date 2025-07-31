@@ -4,7 +4,7 @@ In addition, disable the generation of a stacktrace URL
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -135,9 +135,10 @@ async fn run_subcommand(
+@@ -136,9 +136,10 @@ async fn run_subcommand(
        );
        tools::bundle::bundle(flags, bundle_flags).await
      }),
@@ -18,7 +18,7 @@ Index: cli/main.rs
      DenoSubcommand::Doc(doc_flags) => {
        spawn_subcommand(async { tools::doc::doc(flags, doc_flags).await })
      }
-@@ -524,7 +525,7 @@ pub fn main() {
+@@ -523,7 +524,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  
@@ -27,7 +27,7 @@ Index: cli/main.rs
  
    init_logging(None, None);
  
-@@ -622,6 +623,7 @@ async fn resolve_flags_and_init(
+@@ -621,6 +622,7 @@ async fn resolve_flags_and_init(
  
    // Tunnel is initialized before OTEL since
    // OTEL data is submitted via the tunnel.
@@ -35,7 +35,7 @@ Index: cli/main.rs
    if let Some(host) = flags
      .connected
      .clone()
-@@ -831,6 +833,7 @@ fn wait_for_start(
+@@ -834,6 +836,7 @@ fn wait_for_start(
    })
  }
  
@@ -43,7 +43,7 @@ Index: cli/main.rs
  async fn auth_tunnel() -> Result<String, deno_core::anyhow::Error> {
    let mut child = tokio::process::Command::new(env::current_exe()?)
      .args(["deploy", "tunnel-login"])
-@@ -845,6 +848,7 @@ async fn auth_tunnel() -> Result<String, deno_core::an
+@@ -848,6 +851,7 @@ async fn auth_tunnel() -> Result<String, deno_core::an
  }
  
  #[allow(clippy::print_stderr)]

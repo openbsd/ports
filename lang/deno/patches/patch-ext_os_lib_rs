@@ -1,7 +1,7 @@
 Index: ext/os/lib.rs
 --- ext/os/lib.rs.orig
 +++ ext/os/lib.rs
-@@ -3,6 +3,7 @@
+@@ -4,6 +4,7 @@ use std::borrow::Cow;
  use std::collections::HashMap;
  use std::collections::HashSet;
  use std::env;
@@ -17,5 +17,5 @@ Index: ext/os/lib.rs
 +  let current_exe =
 +    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
    // normalize path so it doesn't include '.' or '..' components
-   let path = normalize_path(current_exe);
+   let path = normalize_path(Cow::Owned(current_exe));
  
