@@ -1,11 +1,11 @@
 COMMENT=	pdf swiss army knife
 
 V=		3.3.3
-REVISION=	0
-# https://www.bouncycastle.org/latest_releases.html
-BC=		174
+REVISION=	1
+# https://www.bouncycastle.org/download/bouncy-castle-java/
+BC=		1.81
 # https://commons.apache.org/proper/commons-lang/
-CL3=		3.13.0
+CL3=		3.18.0
 DISTNAME=	pdftk-v$V
 PKGNAME=	pdftk-$V
 EXTRACT_ONLY=	pdftk-v$V.tar.gz \
@@ -21,13 +21,13 @@ PERMIT_PACKAGE=	Yes
 HOMEPAGE=	https://gitlab.com/pdftk-java/
 
 SITES=		https://gitlab.com/pdftk-java/pdftk/-/archive/v$V/
+SITES.bc=	https://repo1.maven.org/maven2/org/bouncycastle/bcprov-jdk18on/${BC}/
+DISTFILES.bc=	bcprov-jdk18on-${BC}.jar
 SITES.comm=	${SITE_APACHE:=commons/lang/binaries/}
 DISTFILES.comm=	commons-lang3-${CL3}-bin.tar.gz
-SITES.bc=	https://www.bouncycastle.org/download/
-DISTFILES.bc=	bcprov-jdk18on-${BC}.jar
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 MODJAVA_BUILD=	ant
 MODJAVA_BUILD_TARGET_NAME= jar
 
@@ -42,11 +42,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pdftk
 	cd ${WRKSRC}; ${INSTALL_DATA} build/jar/pdftk.jar lib/bcprov.jar lib/commons-lang3.jar ${PREFIX}/share/pdftk
 	$(INSTALL_MAN) $(WRKDIST)/pdftk.1 $(PREFIX)/man/man1
-	$(SUBST_CMD) -m 755 -c $(FILESDIR)/pdftk $(PREFIX)/bin/pdftk
+	$(SUBST_PROGRAM) $(FILESDIR)/pdftk $(PREFIX)/bin/pdftk
 
 # tests require additional dependencies (at least: junit, system-rules, jacoco)
 NO_TEST=	Yes
-#do-test:
-#	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/ant -lib /path/to/libs test-run
 
 .include <bsd.port.mk>
