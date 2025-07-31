@@ -5,7 +5,7 @@ make sure rpath is set in the resulting binary for libinotify.so
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -42,7 +42,7 @@ xkb = dependency('xkbcommon')
+@@ -40,7 +40,7 @@ xkb = dependency('xkbcommon')
  fontconfig = dependency('fontconfig')
  freetype = dependency('freetype2')
  threads = dependency('threads')
@@ -13,20 +13,20 @@ Index: meson.build
 +# rt = cc.find_library('rt')
  m = cc.find_library('m')
  
- # optional dependencies: file formats support
-@@ -263,7 +263,7 @@ executable(
-   dependencies: [
-     # runtime
-     m,
--    rt,
-+    # rt,
-     threads,
-     wlcln,
-     epoll,
-@@ -287,5 +287,6 @@ executable(
-     raw,
-     webp, webp_demux,
-   ],
-+  install_rpath : '${LOCALBASE}/lib/inotify',
-   install: true
+ # wayland support
+@@ -333,7 +333,7 @@ executable(
+     dependencies: [
+         # runtime
+         m,
+-        rt,
++        # rt,
+         threads,
+         wlcln,
+         epoll,
+@@ -359,5 +359,6 @@ executable(
+         webp,
+         webp_demux,
+     ],
++    install_rpath : '/usr/local/lib/inotify',
+     install: true,
  )
