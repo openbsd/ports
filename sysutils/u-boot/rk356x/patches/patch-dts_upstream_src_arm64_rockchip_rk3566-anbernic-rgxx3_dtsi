@@ -1,0 +1,12 @@
+Index: dts/upstream/src/arm64/rockchip/rk3566-anbernic-rgxx3.dtsi
+--- dts/upstream/src/arm64/rockchip/rk3566-anbernic-rgxx3.dtsi.orig
++++ dts/upstream/src/arm64/rockchip/rk3566-anbernic-rgxx3.dtsi
+@@ -13,7 +13,7 @@
+ 	chassis-type = "handset";
+ 
+ 	chosen: chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	adc_keys: adc-keys {

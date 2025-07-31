@@ -1,0 +1,12 @@
+Index: dts/upstream/src/arm64/rockchip/rk3568-rock-3a.dts
+--- dts/upstream/src/arm64/rockchip/rk3568-rock-3a.dts.orig
++++ dts/upstream/src/arm64/rockchip/rk3568-rock-3a.dts
+@@ -19,7 +19,7 @@
+ 	};
+ 
+ 	chosen: chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	hdmi-con {
