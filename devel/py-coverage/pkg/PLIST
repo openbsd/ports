@@ -65,6 +65,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}numbits.${MODP
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}numbits.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}patch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}patch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}phystokens.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}phystokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/coverage/misc.py
 lib/python${MODPY_VERSION}/site-packages/coverage/multiproc.py
 lib/python${MODPY_VERSION}/site-packages/coverage/numbits.py
 lib/python${MODPY_VERSION}/site-packages/coverage/parser.py
+lib/python${MODPY_VERSION}/site-packages/coverage/patch.py
 lib/python${MODPY_VERSION}/site-packages/coverage/phystokens.py
 lib/python${MODPY_VERSION}/site-packages/coverage/plugin.py
 lib/python${MODPY_VERSION}/site-packages/coverage/plugin_support.py
