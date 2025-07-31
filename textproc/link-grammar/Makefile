@@ -8,6 +8,7 @@ COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
 REVISION-python =	0
+REVISION-java =	0
 
 VERSION =		5.12.5
 DISTNAME =		link-grammar-${VERSION}
@@ -94,7 +95,7 @@ CONFIGURE_ARGS =	--enable-perl-bindings \
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
 # sync with devel/apache-ant
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings
