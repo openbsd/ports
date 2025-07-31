@@ -1,7 +1,7 @@
 COMMENT=	BCrypt library for Java
 
 DISTNAME=	jBCrypt-0.4
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	security
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://www.mindrot.org/files/jBCrypt/
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 MODJAVA_BUILD=	ant
 
 # JUnit tests exist but unsure how to handle non-ascii chars (or run them in
