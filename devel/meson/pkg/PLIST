@@ -765,7 +765,6 @@ share/meson/tools/cmake2meson.py
 share/meson/tools/copy_files.py
 share/meson/tools/dircondenser.py
 share/meson/tools/regenerate_docs.py
-share/meson/tools/run_with_cov.py
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/com.mesonbuild.install.policy
