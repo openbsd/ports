@@ -1,13 +1,13 @@
 COMMENT =	expressive monospaced font family
 
 CATEGORIES =	fonts
-MODFONT_VERSION =	1.3.0
+MODFONT_VERSION =	1.4.0
 MODFONT_FAMILY =	intel-one-mono
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/intel/intel-one-mono/releases/download/V$V/
+SITES =		https://github.com/intel/intel-one-mono/releases/download/V${MODFONT_VERSION}/
 
 DISTFILES =	otf.zip \
 		ttf.zip
