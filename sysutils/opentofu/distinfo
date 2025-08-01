@@ -1443,10 +1443,10 @@ SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/comm
 SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/@v/v1.0.588.zip) = LGGrL5xOtKV58T7A+cJIOXaIn9H5tupkhUKfHNxLv8Y=
 SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms/@v/v1.0.194.mod) = z0hzq4WTQk6IJ8ZP3pQUI9Dk689jaqYkkP3RGk6eXWA=
 SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms/@v/v1.0.194.zip) = VqNloRxpVAD6HDxIeS9FofU++7ZFqOuLOL4rMc/y5jw=
-SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.588.mod) = GMX9FUvvOjxoKJ2B6e85tu3PL6WmwwaZZ6DZwu5TadY=
-SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.588.zip) = FYdTbk8fZIypRxLJxJkYvt1dcbIBEWmaAYXAh5hILyA=
-SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233.mod) = mY2v+PEAKt0ZxxTRVogYDhCJgMUdqDalqOnRR3ymWWQ=
-SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233.zip) = KebqSmFceEOyh1ttlbMHmokjBH42W7V6AITzP8SsdUA=
+SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.587-0.20230206000712-97469a3dcd4e.mod) = GMX9FUvvOjxoKJ2B6e85tu3PL6WmwwaZZ6DZwu5TadY=
+SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.587-0.20230206000712-97469a3dcd4e.zip) = urJv8LcphH/DMKgX0wpkdguvz8rHZ84M7Oo85SiW8w4=
+SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233-0.20210823002710-8078545fa058.mod) = mY2v+PEAKt0ZxxTRVogYDhCJgMUdqDalqOnRR3ymWWQ=
+SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233-0.20210823002710-8078545fa058.zip) = CagQA1Ynb7jxDoGEoxGcDBgXrxm6YCOdc1ncx0QjaOQ=
 SHA256 (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.7.29.mod) = 50dK1lvDAEaeCbTduKVXpEm8iNoHHoQ9lKKoMUGa+dU=
 SHA256 (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.7.29.zip) = GTGg4JtuejlYxM85fp/YfxZS7s9tEyQwPvP3gKbor4s=
 SHA256 (go_modules/github.com/thanhpk/randstr/@v/v1.0.4.mod) = AMRKsewAvi62jS4WM9r2JAgcEgwSlVjpdlAw/6H3i00=
@@ -2383,7 +2383,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (opentofu-v1.10.3.zip) = 8f0IRe0hnBbj4aqTT+kEiPtmIfN1Iesrx189+80QMPA=
+SHA256 (opentofu-v1.10.4.zip) = gNYl73/mmabRQnalvigcmLt1HQmtGE5BnhmzMVE659M=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3829,10 +3829,10 @@ SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
 SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/@v/v1.0.588.zip) = 48010
 SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms/@v/v1.0.194.mod) = 77
 SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/kms/@v/v1.0.194.zip) = 25819
-SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.588.mod) = 159
-SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.588.zip) = 13323
-SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233.mod) = 77
-SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233.zip) = 14794
+SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.587-0.20230206000712-97469a3dcd4e.mod) = 159
+SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts/@v/v1.0.587-0.20230206000712-97469a3dcd4e.zip) = 13683
+SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233-0.20210823002710-8078545fa058.mod) = 77
+SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/@v/v1.0.233-0.20210823002710-8078545fa058.zip) = 15154
 SIZE (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.7.29.mod) = 437
 SIZE (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.7.29.zip) = 241895
 SIZE (go_modules/github.com/thanhpk/randstr/@v/v1.0.4.mod) = 34
@@ -4769,4 +4769,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (opentofu-v1.10.3.zip) = 6749780
+SIZE (opentofu-v1.10.4.zip) = 6751054
