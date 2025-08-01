@@ -690,7 +690,7 @@
      SUBDIR += serf
      SUBDIR += si
      SUBDIR += sic
-     SUBDIR += signond
+     SUBDIR += signond-qt6
      SUBDIR += silc-client
      SUBDIR += silc-server
      SUBDIR += silc-server,operops
