@@ -110,11 +110,13 @@ lib/node_modules/typescript/lib/lib.esnext.collection.d.ts
 lib/node_modules/typescript/lib/lib.esnext.d.ts
 lib/node_modules/typescript/lib/lib.esnext.decorators.d.ts
 lib/node_modules/typescript/lib/lib.esnext.disposable.d.ts
+lib/node_modules/typescript/lib/lib.esnext.error.d.ts
 lib/node_modules/typescript/lib/lib.esnext.float16.d.ts
 lib/node_modules/typescript/lib/lib.esnext.full.d.ts
 lib/node_modules/typescript/lib/lib.esnext.intl.d.ts
 lib/node_modules/typescript/lib/lib.esnext.iterator.d.ts
 lib/node_modules/typescript/lib/lib.esnext.promise.d.ts
+lib/node_modules/typescript/lib/lib.esnext.sharedmemory.d.ts
 lib/node_modules/typescript/lib/lib.scripthost.d.ts
 lib/node_modules/typescript/lib/lib.webworker.asynciterable.d.ts
 lib/node_modules/typescript/lib/lib.webworker.d.ts
