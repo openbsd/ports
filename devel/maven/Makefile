@@ -1,6 +1,7 @@
 COMMENT=	software project management and comprehension tool
 
 V=		3.9.11
+REVISION=	0
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
@@ -18,7 +19,7 @@ SITES=		${SITE_APACHE:=maven/maven-3/${V}/binaries/} \
 EXTRACT_SUFX=	-bin.tar.gz
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
