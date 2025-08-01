@@ -255,7 +255,6 @@
      SUBDIR += pim-data-exporter
      SUBDIR += pim-sieve-editor
      SUBDIR += pimcommon
-     SUBDIR += signon-kwallet-extension
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta

@@ -30,6 +30,8 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 REVISION-plasma =	1
+REVISION-development =	0
+REVISION-main =	0
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -325,7 +327,6 @@ RUN_DEPENDS-development += \
 
 RUN_DEPENDS-development += \
 	x11/kde-applications/okteta \
-	x11/kde-applications/signon-kwallet-extension \
 	x11/kde-applications/kaccounts-providers
 
 # Not yet ported
