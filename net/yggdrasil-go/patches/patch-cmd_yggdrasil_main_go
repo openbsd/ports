@@ -1,0 +1,41 @@
+Pledge full filesystem read for Go's resolv.conf polling
+
+sys/kern/kern_pledge.c r1.329 removed the unveil bypass for "dns",
+so "rpath" is needed for Go's DNS to stat(2) it.
+
+Since current "/ rwc" and "cpath" with the new "rpath" amount to full
+read access, there is no point in unveiling anymore.
+
+Index: cmd/yggdrasil/main.go
+--- cmd/yggdrasil/main.go.orig
++++ cmd/yggdrasil/main.go
+@@ -41,20 +41,6 @@ type node struct {
+ 
+ // The main function is responsible for configuring and starting Yggdrasil.
+ func main() {
+-	// Not all operations are coverable with pledge(2), so immediately
+-	// limit file system access with unveil(2), effectively preventing
+-	// "proc exec" promises right from the start:
+-	//
+-	// - read arbitrary config file
+-	// - create/write arbitrary log file
+-	// - read/write/chmod/remove admin socket, if at all
+-	if err := protect.Unveil("/", "rwc"); err != nil {
+-		panic(fmt.Sprintf("unveil: / rwc: %v", err))
+-	}
+-	if err := protect.UnveilBlock(); err != nil {
+-		panic(fmt.Sprintf("unveil: %v", err))
+-	}
+-
+ 	genconf := flag.Bool("genconf", false, "print a new config to stdout")
+ 	useconf := flag.Bool("useconf", false, "read HJSON/JSON config from stdin")
+ 	useconffile := flag.String("useconffile", "", "read HJSON/JSON config from specified file path")
+@@ -319,7 +305,7 @@ func main() {
+ 	//
+ 	// Peers, InterfacePeers, Listen can be UNIX sockets;
+ 	// Go's net.Listen.Close() deletes files on shutdown.
+-	promises := []string{"stdio", "cpath", "inet", "unix", "dns"}
++	promises := []string{"stdio", "rpath", "cpath", "inet", "unix", "dns"}
+ 	if len(cfg.MulticastInterfaces) > 0 {
+ 		promises = append(promises, "mcast")
+ 	}
