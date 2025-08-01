@@ -1,7 +1,6 @@
 COMMENT =		monitor the progress of data through a pipeline
 
-DISTNAME =		pv-1.9.0
-REVISION =		0
+DISTNAME =		pv-1.9.34
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.ivarch.com/programs/pv.shtml
@@ -11,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 SITES =			https://www.ivarch.com/programs/sources/
 
-WANTLIB =		c iconv intl m pthread
+WANTLIB =		c curses iconv intl m pthread
 
 CONFIGURE_STYLE =	gnu
 
