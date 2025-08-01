@@ -4,6 +4,7 @@
 @bin bin/cpicomp
 @bin bin/cpidcomp
 @bin bin/fnt2psf
+@bin bin/fnt2vfont
 @bin bin/fnts2fon
 @bin bin/fon2fnts
 @bin bin/mda2psf
@@ -31,9 +32,12 @@
 @bin bin/raw2psf
 @bin bin/txt2psf
 @bin bin/txt2vfont
+@bin bin/vfont2bdf
+@bin bin/vfont2fnt
 @bin bin/vfont2ppm
 @bin bin/vfont2psf
 @bin bin/vfont2txt
+@bin bin/vfontxform
 @bin bin/wof2psf
 @bin bin/wyse2psf
 @bin bin/zx2psf
@@ -47,6 +51,7 @@ lib/libpsf.la
 @man man/man1/cpicomp.1
 @man man/man1/cpidcomp.1
 @man man/man1/fnt2psf.1
+@man man/man1/fnt2vfont.1
 @man man/man1/fnts2fon.1
 @man man/man1/fon2fnts.1
 @man man/man1/mda2psf.1
@@ -72,9 +77,12 @@ lib/libpsf.la
 @man man/man1/raw2psf.1
 @man man/man1/txt2psf.1
 @man man/man1/txt2vfont.1
+@man man/man1/vfont2bdf.1
+@man man/man1/vfont2fnt.1
 @man man/man1/vfont2ppm.1
 @man man/man1/vfont2psf.1
 @man man/man1/vfont2txt.1
+@man man/man1/vfontxform.1
 @man man/man1/wof2psf.1
 @man man/man1/wyse2psf.1
 @man man/man1/zx2psf.1

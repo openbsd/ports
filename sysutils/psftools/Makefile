@@ -2,8 +2,8 @@ PORTROACH =	ignore:1
 
 COMMENT =	conversion tools for .PSF fonts
 
-DISTNAME =	psftools-1.1.1
-SHARED_LIBS +=	psf	0.1	# 1.2
+DISTNAME =	psftools-1.1.2
+SHARED_LIBS +=	psf	0.2	# 1.2
 
 CATEGORIES =	sysutils
 
