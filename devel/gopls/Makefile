@@ -1,7 +1,7 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.19.1
+MODGO_VERSION =	v0.20.0
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
@@ -24,12 +24,13 @@ MODGO_LDFLAGS +=	-X main.version=${MODGO_VERSION}
 DOCDIR =	${PREFIX}/share/doc/gopls
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}/doc/design
-	${INSTALL_DATA_DIR} ${DOCDIR}/doc/features
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOCDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/doc/design
-	${INSTALL_DATA} ${WRKSRC}/doc/features/*.md ${DOCDIR}/doc/features
+	${INSTALL_DATA_DIR} ${DOCDIR}/design \
+		${DOCDIR}/editor \
+		${DOCDIR}/features
+	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/design
+	${INSTALL_DATA} ${WRKSRC}/doc/editor/*.md ${DOCDIR}/editor
+	${INSTALL_DATA} ${WRKSRC}/doc/features/*.md ${DOCDIR}/features
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
