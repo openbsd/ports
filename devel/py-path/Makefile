@@ -15,6 +15,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
+BUILD_DEPENDS=	misc/py-coherent.licensed
 TEST_DEPENDS=	devel/py-appdirs \
 		devel/py-more-itertools
 
