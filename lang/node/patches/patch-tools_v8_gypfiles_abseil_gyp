@@ -3,8 +3,9 @@ https://github.com/nodejs/node/issues/58569#issuecomment-2956492437
 Index: tools/v8_gypfiles/abseil.gyp
 --- tools/v8_gypfiles/abseil.gyp.orig
 +++ tools/v8_gypfiles/abseil.gyp
-@@ -1,4 +1,8 @@
+@@ -1,5 +1,9 @@
  {
+   'includes': ['toolchain.gypi'],
 +  'variables': {
 +    'V8_ROOT': '../../deps/v8',
 +  },

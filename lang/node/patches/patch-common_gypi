@@ -11,7 +11,7 @@ Index: common.gypi
      # Turn on SipHash for hash seed generation, addresses HashWick
      'v8_use_siphash': 'true',
  
-@@ -195,7 +198,6 @@
+@@ -196,7 +199,6 @@
              }],
            ],
          },
@@ -19,7 +19,7 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -523,8 +525,10 @@
+@@ -524,8 +526,10 @@
              'standalone_static_library': 1,
            }],
            ['OS=="openbsd"', {
@@ -32,7 +32,7 @@ Index: common.gypi
            }],
            ['_toolset=="host"', {
              'conditions': [
-@@ -541,7 +545,7 @@
+@@ -542,7 +546,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'host_arch=="ppc64" and OS not in "aix os400"', {
@@ -41,7 +41,7 @@ Index: common.gypi
                  'ldflags': [ '-m64' ],
                }],
                [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -565,7 +569,7 @@
+@@ -566,7 +570,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'target_arch=="ppc64" and OS not in "aix os400"', {

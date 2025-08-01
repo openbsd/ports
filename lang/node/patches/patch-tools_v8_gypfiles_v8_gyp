@@ -7,7 +7,7 @@ from "0.0" if llvm (clang) is detected.
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
-@@ -294,6 +294,9 @@
+@@ -298,6 +298,9 @@
              '<(icu_gyp_path):icuuc',
            ],
          }],
@@ -17,7 +17,7 @@ Index: tools/v8_gypfiles/v8.gyp
        ],
      },  # v8_initializers_slow
      {
-@@ -702,7 +705,7 @@
+@@ -706,7 +709,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -26,7 +26,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -745,7 +748,7 @@
+@@ -749,7 +752,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -35,7 +35,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -1166,7 +1169,7 @@
+@@ -1170,7 +1173,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -44,7 +44,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1194,7 +1197,7 @@
+@@ -1198,7 +1201,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -53,7 +53,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1247,7 +1250,7 @@
+@@ -1251,7 +1254,7 @@
            'conditions': [
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -62,7 +62,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1343,7 +1346,7 @@
+@@ -1347,7 +1350,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
@@ -71,7 +71,7 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
-@@ -1809,6 +1812,9 @@
+@@ -1813,6 +1816,9 @@
          '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
        ],
        'conditions': [
