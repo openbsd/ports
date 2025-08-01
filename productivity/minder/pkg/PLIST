@@ -2,12 +2,7 @@
 bin/minder
 share/applications/com.github.phase1geo.minder.desktop
 share/glib-2.0/schemas/com.github.phase1geo.minder.gschema.xml
-share/icons/hicolor/128x128/apps/com.github.phase1geo.minder.svg
-share/icons/hicolor/16x16/apps/com.github.phase1geo.minder.svg
-share/icons/hicolor/24x24/apps/com.github.phase1geo.minder.svg
-share/icons/hicolor/32x32/apps/com.github.phase1geo.minder.svg
-share/icons/hicolor/48x48/apps/com.github.phase1geo.minder.svg
-share/icons/hicolor/64x64/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/scalable/apps/com.github.phase1geo.minder.svg
 share/locale/cs/LC_MESSAGES/com.github.phase1geo.minder.mo
 share/locale/de/LC_MESSAGES/com.github.phase1geo.minder.mo
 share/locale/es/LC_MESSAGES/com.github.phase1geo.minder.mo
@@ -26,7 +21,8 @@ share/minder/gtksourceview-4/
 share/minder/gtksourceview-4/language-specs/
 share/minder/gtksourceview-4/language-specs/com.github.phase1geo.minder-markdown.lang
 share/minder/gtksourceview-4/styles/
-share/minder/gtksourceview-4/styles/com.github.phase1geo.minder.xml
+share/minder/gtksourceview-4/styles/com.github.phase1geo.minder.color.xml
+share/minder/gtksourceview-4/styles/com.github.phase1geo.minder.none.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
