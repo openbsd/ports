@@ -1,14 +1,12 @@
 Index: contrib/scripts/safe_asterisk
 --- contrib/scripts/safe_asterisk.orig
 +++ contrib/scripts/safe_asterisk
-@@ -6,21 +6,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
- ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
+@@ -7,20 +7,21 @@ ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
  
  CLIARGS="$*"			# Grab any args passed to safe_asterisk
--TTY=9				# TTY (if you want one) for Asterisk to run on
+ #TTY=9				# TTY (if you want one) for Asterisk to run on
 -CONSOLE=yes			# Whether or not you want a console
 -#NOTIFY=root@localhost		# Who to notify about crashes
-+TTY=				# TTY (if you want one) for Asterisk to run on
 +CONSOLE=no			# Whether or not you want a console
 +NOTIFY=root			# Who to notify about crashes
  #EXEC=/path/to/somescript	# Run this command if Asterisk crashes
@@ -25,11 +23,11 @@ Index: contrib/scripts/safe_asterisk
  # comment this line out to have this script _not_ kill all mpg123 processes when
  # asterisk exits
 -KILLALLMPG123=1
-+# KILLALLMPG123=1
++#KILLALLMPG123=1
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -48,6 +49,19 @@ message() {
+@@ -50,6 +51,19 @@ message() {
  	fi
  }
  
@@ -49,7 +47,7 @@ Index: contrib/scripts/safe_asterisk
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
  VERSION=`"${ASTSBINDIR}/asterisk" -nrx 'core show version' 2>/dev/null`
-@@ -81,7 +95,7 @@ else
+@@ -83,7 +97,7 @@ else
  			fi
  		fi
  		SYSCTL_MAXFILES="fs.file-max"
@@ -58,7 +56,7 @@ Index: contrib/scripts/safe_asterisk
  		SYSCTL_MAXFILES="kern.maxfiles"
  	fi
  
-@@ -92,8 +106,10 @@ else
+@@ -94,8 +108,10 @@ else
  		fi
  	fi
  
