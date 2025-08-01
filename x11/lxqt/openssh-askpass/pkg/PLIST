@@ -27,6 +27,8 @@ share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_hu.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_id.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_it.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ja.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ka.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_kab.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ko.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_lg.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_lt.qm
@@ -44,3 +46,4 @@ share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_tr.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_uk.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_vi.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_zh_CN.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_zh_TW.qm

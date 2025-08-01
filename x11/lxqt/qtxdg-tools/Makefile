@@ -1,6 +1,6 @@
 COMMENT =	libqtxdg user tools
 
-VERSION =	4.1.0
+VERSION =	4.2.0
 
 NAME =		qtxdg-tools
 
@@ -10,7 +10,5 @@ WANTLIB += glib-2.0 gobject-2.0 m
 
 LIB_DEPENDS =	x11/qt6/qtsvg \
 		x11/lxqt/libqtxdg
-
-BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 .include <bsd.port.mk>

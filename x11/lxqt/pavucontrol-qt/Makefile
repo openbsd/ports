@@ -7,8 +7,6 @@ WANTLIB += intl m pulse pulse-mainloop-glib
 
 LIB_DEPENDS =	audio/pulseaudio
 
-BUILD_DEPENDS =	x11/lxqt/build-tools2
-
 RUN_DEPENDS =	devel/desktop-file-utils
 
 .include <bsd.port.mk>

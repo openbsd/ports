@@ -1,7 +1,7 @@
 Index: src/xdgiconloader/xdgiconloader.cpp
 --- src/xdgiconloader/xdgiconloader.cpp.orig
 +++ src/xdgiconloader/xdgiconloader.cpp
-@@ -564,7 +564,7 @@ QThemeIconInfo XdgIconLoader::loadIcon(const QString &
+@@ -568,7 +568,7 @@ QThemeIconInfo XdgIconLoader::loadIcon(const QString &
              auto unthemedInfo = unthemedFallback(name, QIcon::themeSearchPaths());
              if (unthemedInfo.entries.empty()) {
                  /* Freedesktop standard says to look in /usr/share/pixmaps last */

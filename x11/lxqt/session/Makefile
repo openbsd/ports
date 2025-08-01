@@ -7,12 +7,13 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets Qt6Xdg Qt6XdgIconLoader
 WANTLIB += Qt6Xml SM X11 Xext c gio-2.0 glib-2.0 gobject-2.0 lxqt
 WANTLIB += m
 
-LIB_DEPENDS =	x11/lxqt/liblxqt \
-		x11/kde-plasma/layer-shell-qt
+LIB_DEPENDS =	devel/kf6/kwindowsystem \
+		x11/kde-plasma/layer-shell-qt \
+		x11/lxqt/liblxqt \
+		x11/lxqt/libqtxdg \
+		x11/qt6/qtsvg
 
 BUILD_DEPENDS =	x11/lxqt/qtxdg-tools \
-		x11/lxqt/libqtxdg>=4.0 \
-		x11/lxqt/build-tools2 \
 		devel/xdg-user-dirs
 
 RUN_DEPENDS =	x11/lxqt/qtxdg-tools \

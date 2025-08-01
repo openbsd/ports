@@ -24,7 +24,7 @@ Index: lxqt-session/src/lxqtmodman.cpp
  #include "log.h"
  
  #include <KWindowSystem>
-@@ -425,6 +433,22 @@ void LXQtModuleManager::resetCrashReport()
+@@ -442,6 +450,22 @@ void LXQtModuleManager::resetCrashReport()
  
  void lxqt_setenv(const char *env, const QByteArray &value)
  {
@@ -47,7 +47,7 @@ Index: lxqt-session/src/lxqtmodman.cpp
      wordexp_t p;
  
      switch (wordexp(value.constData(), &p, 0))
-@@ -448,6 +472,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
+@@ -465,6 +489,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
      }
      qCWarning(SESSION) << "Error expanding environment variable" << env << "=" << value;
      qputenv(env, value);

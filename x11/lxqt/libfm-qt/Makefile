@@ -2,7 +2,7 @@ COMMENT =	qt binding for libfm
 
 NAME =		libfm-qt
 
-SHARED_LIBS +=  fm-qt6	0.0
+SHARED_LIBS +=  fm-qt6	0.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets exif
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 intl m menu-cache
@@ -17,8 +17,7 @@ LIB_DEPENDS =	x11/qt6/qtbase \
 		x11/menu-cache \
 		graphics/libexif
 
-BUILD_DEPENDS =	x11/lxqt/build-tools2 \
-		x11/lxqt/menu-data
+BUILD_DEPENDS +=	x11/lxqt/menu-data
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		x11/lxqt/menu-data

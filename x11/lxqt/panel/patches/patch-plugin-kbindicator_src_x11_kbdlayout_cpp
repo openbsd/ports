@@ -1,7 +1,7 @@
 Index: plugin-kbindicator/src/x11/kbdlayout.cpp
 --- plugin-kbindicator/src/x11/kbdlayout.cpp.orig
 +++ plugin-kbindicator/src/x11/kbdlayout.cpp
-@@ -245,10 +245,10 @@ class X11Kbd: public QAbstractNativeEventFilter (priva
+@@ -244,10 +244,10 @@ class X11Kbd: public QAbstractNativeEventFilter (priva
          static LangInfo def{QStringLiteral("Unknown"), QStringLiteral("??"), QStringLiteral("None")};
          static QHash<QString, LangInfo> names;
          if (names.empty()){

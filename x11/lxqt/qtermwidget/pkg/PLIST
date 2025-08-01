@@ -66,6 +66,7 @@ share/qtermwidget6/translations/qtermwidget_da.qm
 share/qtermwidget6/translations/qtermwidget_de.qm
 share/qtermwidget6/translations/qtermwidget_de_CH.qm
 share/qtermwidget6/translations/qtermwidget_el.qm
+share/qtermwidget6/translations/qtermwidget_en_GB.qm
 share/qtermwidget6/translations/qtermwidget_es.qm
 share/qtermwidget6/translations/qtermwidget_et.qm
 share/qtermwidget6/translations/qtermwidget_fi.qm
@@ -76,6 +77,8 @@ share/qtermwidget6/translations/qtermwidget_hr.qm
 share/qtermwidget6/translations/qtermwidget_hu.qm
 share/qtermwidget6/translations/qtermwidget_it.qm
 share/qtermwidget6/translations/qtermwidget_ja.qm
+share/qtermwidget6/translations/qtermwidget_ka.qm
+share/qtermwidget6/translations/qtermwidget_kab.qm
 share/qtermwidget6/translations/qtermwidget_ko.qm
 share/qtermwidget6/translations/qtermwidget_lg.qm
 share/qtermwidget6/translations/qtermwidget_lt.qm

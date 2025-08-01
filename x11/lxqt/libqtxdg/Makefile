@@ -1,6 +1,6 @@
 COMMENT =	qt implementation of freedesktop.org xdg specs
 
-VERSION =	4.1.0
+VERSION =	4.2.0
 
 NAME =		libqtxdg
 
@@ -11,8 +11,6 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Svg
 WANTLIB += Qt6Widgets Qt6Xml gio-2.0 glib-2.0 gobject-2.0 m
 
 LIB_DEPENDS =		x11/qt6/qtsvg
-
-BUILD_DEPENDS =		x11/lxqt/build-tools2
 
 XDG_PATH =		${PREFIX}/share/examples/${PKGNAME:C/-[0-9].*//}/xdg/
 CONFIGURE_ARGS +=	-DQTXDG_DEFAPPS_CONF_INSTALL_DIR:PATH=${XDG_PATH}

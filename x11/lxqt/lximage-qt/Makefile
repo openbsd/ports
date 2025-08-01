@@ -12,10 +12,10 @@ WANTLIB += xcb-record xcb-render xcb-render-util xcb-res xcb-screensaver
 WANTLIB += xcb-shape xcb-shm xcb-sync xcb-util xcb-xf86dri xcb-xfixes
 WANTLIB += xcb-xinerama xcb-xinput xcb-xkb xcb-xtest xcb-xv xcb-xvmc
 
-LIB_DEPENDS =	x11/qt6/qtsvg \
-		x11/lxqt/libfm-qt
-
-BUILD_DEPENDS =	x11/lxqt/build-tools2
+LIB_DEPENDS =	graphics/libexif \
+		x11/lxqt/libfm-qt \
+		x11/menu-cache \
+		x11/qt6/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

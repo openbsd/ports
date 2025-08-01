@@ -11,10 +11,15 @@ WANTLIB += intl m obrender obt pango-1.0 pangoft2-1.0 pangoxft-1.0
 WANTLIB += rsvg-2 xml2
 
 MODULES +=	x11/qt6 devel/cmake
-LIB_DEPENDS =	x11/qt6/qtbase \
-		x11/openbox
 
-BUILD_DEPENDS =	x11/lxqt/build-tools2
+LIB_DEPENDS =	devel/harfbuzz \
+		devel/pango \
+		graphics/cairo \
+		graphics/gdk-pixbuf2 \
+		graphics/imlib2 \
+		textproc/libxml \
+		x11/gnome/librsvg \
+		x11/openbox
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

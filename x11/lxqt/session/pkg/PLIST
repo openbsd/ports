@@ -54,6 +54,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-confi
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_id.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_ja.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_ka.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_ko.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_lg.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_lt.qm
@@ -87,6 +88,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_cy.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_da.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_de.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_el.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_en_GB.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_es.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_et.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_fi.qm
@@ -98,6 +100,8 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_hu.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_id.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_ja.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_ka.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_kab.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_kk.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_ko.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_lg.qm
@@ -129,6 +133,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_cy.q
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_da.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_de.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_el.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_en_GB.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_eo.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_es.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_es_UY.qm
@@ -145,6 +150,8 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ia.q
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_id.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ja.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ka.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_kab.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_kk.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ko.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_lg.qm

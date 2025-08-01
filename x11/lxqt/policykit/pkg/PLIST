@@ -20,6 +20,7 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cy.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_da.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_en_GB.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_et.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fi.qm
@@ -31,6 +32,8 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hu.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ka.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_kab.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ko.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lg.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
@@ -47,3 +50,4 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_tr.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_uk.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_vi.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_zh_CN.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_zh_TW.qm

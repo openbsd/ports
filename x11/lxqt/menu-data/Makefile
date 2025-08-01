@@ -1,9 +1,6 @@
 COMMENT =	menu files for LXQt panel
-REVISION =	0
 
 NAME =		lxqt-menu-data
-
-BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 # doesn't work
 CONFIGURE_ARGS=-DLXQT_ETC_XDG_DIR:PATH=${PREFIX}/share/examples/${NAME}

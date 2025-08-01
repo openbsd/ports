@@ -1,5 +1,4 @@
 COMMENT =	file manager and desktop icon manager
-REVISION =	0
 
 NAME =		pcmanfm-qt
 
@@ -13,10 +12,10 @@ WANTLIB += xcb-screensaver xcb-shape xcb-shm xcb-sync xcb-util
 WANTLIB += xcb-xf86dri xcb-xfixes xcb-xinerama xcb-xinput xcb-xkb
 WANTLIB += xcb-xtest xcb-xv xcb-xvmc
 
-LIB_DEPENDS =	x11/kde-plasma/layer-shell-qt \
-		x11/lxqt/libfm-qt
-
-BUILD_DEPENDS =	x11/lxqt/build-tools2
+LIB_DEPENDS =	graphics/libexif \
+		x11/kde-plasma/layer-shell-qt \
+		x11/lxqt/libfm-qt \
+		x11/menu-cache
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/oxygen-icons \

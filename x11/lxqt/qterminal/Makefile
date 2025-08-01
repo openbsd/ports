@@ -9,8 +9,6 @@ LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.1 \
 		x11/kde-plasma/layer-shell-qt \
 		audio/libcanberra
 
-BUILD_DEPENDS =	x11/lxqt/build-tools2
-
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 

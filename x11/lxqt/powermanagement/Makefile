@@ -12,9 +12,8 @@ LIB_DEPENDS =	devel/kf6/kidletime \
 		devel/kf6/solid \
 		x11/lxqt/globalkeys \
 		x11/lxqt/liblxqt \
+		x11/lxqt/libqtxdg \
 		x11/qt6/qtsvg
-
-BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/upower \
