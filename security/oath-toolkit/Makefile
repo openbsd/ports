@@ -1,7 +1,7 @@
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
 
-V=		2.6.12
+V=		2.6.13
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
@@ -11,6 +11,7 @@ SHARED_LIBS +=  pskc                      0.1 # 0.1
 
 CATEGORIES=	security devel
 
+# https://codeberg.org/oath-toolkit/oath-toolkit
 HOMEPAGE=	http://www.nongnu.org/oath-toolkit/
 SITES=		${SITE_SAVANNAH:=oath-toolkit/}
 
