@@ -1,0 +1,25 @@
+Prevent picking up include/vista.h from databases/qdbm which breaks the build
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -67,7 +67,7 @@ dnl locations of libs/includes if not in 'standard' pl
+ dnl linux (/usr/...).  We build these up based on where X11 is, and
+ dnl other things as we go along.
+ EXTRA_LIBS=""
+-EXTRA_INCS=""
++EXTRA_INCS="-I${LOCALBASE}/include"
+ 
+ # pam currently only works on netbsd (9.2 tested) and linux
+ supports_pam=no
+@@ -577,8 +577,8 @@ dnl shouldn't be modified.  It suggests that you creat
+ dnl variable and presumably add those to your Makefile.am files.  We
+ dnl have 192 of these currently, so... The user will just have to
+ dnl deal, or modify them here directly.
+-CPPFLAGS="${CPPFLAGS} ${SOURCE_CPP_DEFINES} ${CPP_COMPILER_FLAGS}"
+-CFLAGS="${CFLAGS} ${C_COMPILER_FLAGS} ${EXTRA_INCS} ${PTHREAD_CFLAGS}"
++CPPFLAGS="${SOURCE_CPP_DEFINES} ${CPP_COMPILER_FLAGS}"
++CFLAGS="${CFLAGS} ${C_COMPILER_FLAGS} ${EXTRA_INCS} ${PTHREAD_CFLAGS} ${CPPFLAGS}"
+ CXXFLAGS="${CXXFLAGS} ${CXX_COMPILER_FLAGS} ${EXTRA_INCS} ${PTHREAD_CFLAGS}"
+ LIBS="${EXTRA_LIBS} ${LIBS} ${PTHREAD_LIBS}"
+ 

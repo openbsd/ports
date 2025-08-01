@@ -1,6 +1,6 @@
 COMMENT=		Common Desktop Environment
 
-DISTNAME=		cde-2.5.2
+DISTNAME=		cde-2.5.2.0.20250613
 
 CATEGORIES=		x11
 
@@ -23,11 +23,12 @@ SHARED_LIBS +=  DtMmdb               0.0      # .2.1
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
+#SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
+SITES=			https://distfiles.bsdfrog.org/
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
-WANTLIB += freetype iconv jpeg m png tcl86 util xcb z
+WANTLIB += freetype iconv jpeg lmdb m png tcl86 util xcb z
 
 MODULES=		lang/tcl
 
@@ -44,6 +45,7 @@ PORTHOME=		${WRKDIR}
 BUILD_DEPENDS=		textproc/opensp
 
 LIB_DEPENDS=		${MODTCL_LIB_DEPENDS} \
+			databases/lmdb \
 			x11/motif
 
 PREFIX=			${LOCALBASE}/dt
@@ -78,6 +80,7 @@ post-patch:
 	for p in `find ${WRKSRC} -type f | xargs grep -l '/usr/dt'`; do \
 		sed -i "s,/usr/dt,${PREFIX},g" $${p} ;\
 	done
+	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl

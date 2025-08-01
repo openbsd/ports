@@ -6851,6 +6851,6 @@ share/palettes/desc.es_ES.UTF-8
 share/palettes/desc.fr_FR.UTF-8
 share/palettes/desc.it_IT.UTF-8
 @sample ${SYSCONFDIR}/dt/
-@sample ${SYSCONFDIR}/dt/config
+@sample ${SYSCONFDIR}/dt/config/
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}
