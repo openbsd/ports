@@ -1,6 +1,6 @@
 COMMENT =	compatibility module providing Lua 5.3 style APIs
 
-V =		0.13
+V =		0.14.4
 DISTNAME =	lua-compat53-${V}
 
 GH_ACCOUNT =	keplerproject
