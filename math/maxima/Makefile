@@ -1,9 +1,8 @@
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.46.0
+VERSION=		5.48.0
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
-REVISION=		0
 
 HOMEPAGE=		https://maxima.sourceforge.net/
 
@@ -27,6 +26,7 @@ SUBST_VARS=		VERSION
 MAKE_FLAGS =		MAKEINFO="${LOCALBASE}/bin/gtexi2any" \
 			TEXI2DVI="${LOCALBASE}/bin/gtexi2dvi"
 
+CONFIGURE_ENV +=	MAKEINFO="${LOCALBASE}/bin/gtexi2any"
 CONFIGURE_ARGS+=	--enable-ecl
 CONFIGURE_STYLE=	gnu
 
