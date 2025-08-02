@@ -3,11 +3,9 @@
 USE_NOEXECONLY=		Yes
 .endif
 
-MODPY_DISTV =		2.0.0b18
+MODPY_DISTV =		2.0.0b19
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
 EPOCH =			0
-
-REVISION =		2
 
 # OpenSSL used for EVP_aes_256_ocb. It is linked statically to avoid conflicting
 # with shared libcrypto from the base OS pulled in via dependencies.
