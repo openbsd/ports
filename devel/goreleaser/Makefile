@@ -1,7 +1,7 @@
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser/v2
-MODGO_VERSION =	v2.11.0
+MODGO_VERSION =	v2.11.2
 
 DISTNAME =	goreleaser-${MODGO_VERSION}
 
@@ -22,21 +22,19 @@ MODULES =	lang/go
 MODGO_LDFLAGS =	-X main.version=${MODGO_VERSION:S/v//}
 
 # Generate shells completion
-post-build:
+pre-install:
 	${MODGO_WORKSPACE}/bin/goreleaser completion bash > ${WRKSRC}/completion.bash
 	${MODGO_WORKSPACE}/bin/goreleaser completion fish > ${WRKSRC}/completion.fish
 	${MODGO_WORKSPACE}/bin/goreleaser completion zsh > ${WRKSRC}/completion.zsh
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/ \
+		${PREFIX}/share/fish/vendor_completions.d/ \
+		${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion.bash \
 		${PREFIX}/share/bash-completion/completions/goreleaser
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completion.fish \
 		${PREFIX}/share/fish/vendor_completions.d/goreleaser.fish
-
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion.zsh \
 		${PREFIX}/share/zsh/site-functions/_goreleaser
 
