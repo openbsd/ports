@@ -1,8 +1,8 @@
 COMMENT =	free Software LHA implementation
 
-DISTNAME =	lhasa-0.4.0
+DISTNAME =	lhasa-0.5.0
 
-SHARED_LIBS +=	lhasa	0.0	# 0.0
+SHARED_LIBS +=	lhasa	1.0	# 1.0
 
 CATEGORIES =	archivers
 
