@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
@@ -38,7 +39,6 @@ WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpg-error gpgme gpgmepp
 WANTLIB += m qgpgmeqt6 qt6keychain
-
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes

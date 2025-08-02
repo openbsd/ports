@@ -1,9 +1,9 @@
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
-@comment @bin bin/akonadi_followupreminder_agent
+@bin bin/akonadi_followupreminder_agent
 @bin bin/akonadi_mailfilter_agent
-@comment @bin bin/akonadi_mailmerge_agent
-@comment @bin bin/akonadi_sendlater_agent
+@bin bin/akonadi_mailmerge_agent
+@bin bin/akonadi_sendlater_agent
 @bin bin/akonadi_unifiedmailbox_agent
 @bin bin/kmail
 @bin bin/kmail-refresh-settings
@@ -12,8 +12,8 @@
 @lib lib/libmailfilteragentprivate.so.${LIBmailfilteragentprivate_VERSION}
 @so lib/qt6/plugins/kmailpart.so
 @so lib/qt6/plugins/pim6/akonadi/config/archivemailagentconfig.so
-@comment @so lib/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
-@comment @so lib/qt6/plugins/pim6/akonadi/config/sendlateragentconfig.so
+@so lib/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
+@so lib/qt6/plugins/pim6/akonadi/config/sendlateragentconfig.so
 lib/qt6/plugins/pim6/kcms/kmail/
 @so lib/qt6/plugins/pim6/kcms/kmail/kcm_kmail_accounts.so
 @so lib/qt6/plugins/pim6/kcms/kmail/kcm_kmail_appearance.so

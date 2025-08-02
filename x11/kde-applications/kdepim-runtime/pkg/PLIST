@@ -5,11 +5,11 @@
 @bin bin/akonadi_ews_resource
 @bin bin/akonadi_ewsmta_resource
 @bin bin/akonadi_google_resource
-@comment @bin bin/akonadi_ical_resource
+@bin bin/akonadi_ical_resource
 @bin bin/akonadi_icaldir_resource
 @bin bin/akonadi_imap_resource
 @bin bin/akonadi_maildir_resource
-@comment @bin bin/akonadi_maildispatcher_agent
+@bin bin/akonadi_maildispatcher_agent
 @bin bin/akonadi_mbox_resource
 @bin bin/akonadi_migration_agent
 @bin bin/akonadi_mixedmaildir_resource

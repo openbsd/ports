@@ -1,6 +1,7 @@
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org
 

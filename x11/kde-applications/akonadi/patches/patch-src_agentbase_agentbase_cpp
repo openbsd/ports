@@ -1,0 +1,18 @@
+QNetworkInformation::Reachability is not available on OpenBSD, stop using it
+and fallback to the default one.
+
+Index: src/agentbase/agentbase.cpp
+--- src/agentbase/agentbase.cpp.orig
++++ src/agentbase/agentbase.cpp
+@@ -901,7 +901,10 @@ void AgentBase::setNeedsNetwork(bool needsNetwork)
+     }
+ 
+     d->mNeedsNetwork = needsNetwork;
+-    QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability);
++    if (!QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability)) {
++         // Fallback
++         QNetworkInformation::loadDefaultBackend();
++    }
+     connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, [d](auto reachability) {
+         d->slotNetworkStatusChange(reachability == QNetworkInformation::Reachability::Online);
+     });
