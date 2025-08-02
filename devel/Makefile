@@ -227,6 +227,7 @@
      SUBDIR += hub
      SUBDIR += iaito
      SUBDIR += id-utils
+     SUBDIR += illumos-os-tests
      SUBDIR += imake
      SUBDIR += imake-cf
      SUBDIR += immer
