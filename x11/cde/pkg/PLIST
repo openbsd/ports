@@ -1,4 +1,5 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/calendar
+@extraunexec rm -rf ${LOCALSTATEDIR}/dt
 app-defaults/
 app-defaults/C/
 app-defaults/C/Dt
