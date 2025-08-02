@@ -2,7 +2,7 @@ COMMENT =	Fasttracker II inspired MOD tracker
 
 GH_ACCOUNT =	milkytracker
 GH_PROJECT =	MilkyTracker
-GH_TAGNAME =	v1.05.01
+GH_TAGNAME =	v1.06
 
 PKGNAME =	${DISTNAME:L}
 
@@ -33,6 +33,8 @@ LIB_DEPENDS =	archivers/lhasa \
 		devel/sdl2
 
 CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
+
+CXXFLAGS +=	-Wno-narrowing
 
 NO_TEST =	Yes
 
