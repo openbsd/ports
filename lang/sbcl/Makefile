@@ -83,7 +83,6 @@ EXTRA_PARAMS +=		--without-sb-thread
 
 # libsbcl.so is not available everywhere
 LIBSBCL-${MACHINE_ARCH} ?=	No
-LIBSBCL-aarch64 =	Yes
 LIBSBCL-amd64 =		Yes
 
 SUBST_VARS +=		COMMENT_libsbcl
