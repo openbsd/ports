@@ -13,13 +13,10 @@ share/locale/an/LC_MESSAGES/poedit.mo
 share/locale/ar/LC_MESSAGES/poedit.mo
 share/locale/az/LC_MESSAGES/poedit.mo
 share/locale/be/LC_MESSAGES/poedit.mo
-share/locale/be@latin/LC_MESSAGES/poedit.mo
 share/locale/bg/LC_MESSAGES/poedit.mo
 share/locale/bs/LC_MESSAGES/poedit.mo
 share/locale/ca/LC_MESSAGES/poedit.mo
 share/locale/ckb/LC_MESSAGES/poedit.mo
-share/locale/co/
-share/locale/co/LC_MESSAGES/
 share/locale/co/LC_MESSAGES/poedit.mo
 share/locale/cs/LC_MESSAGES/poedit.mo
 share/locale/da/LC_MESSAGES/poedit.mo
@@ -64,10 +61,12 @@ share/locale/sk/LC_MESSAGES/poedit.mo
 share/locale/sl/LC_MESSAGES/poedit.mo
 share/locale/sq/LC_MESSAGES/poedit.mo
 share/locale/sr/LC_MESSAGES/poedit.mo
+share/locale/sr@latin/LC_MESSAGES/poedit.mo
 share/locale/sv/LC_MESSAGES/poedit.mo
 share/locale/tg/LC_MESSAGES/poedit.mo
 share/locale/th/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
+share/locale/ug/LC_MESSAGES/poedit.mo
 share/locale/uk/LC_MESSAGES/poedit.mo
 share/locale/uz/LC_MESSAGES/poedit.mo
 share/locale/vi/LC_MESSAGES/poedit.mo
@@ -83,7 +82,6 @@ share/poedit/icons/CrowdinLogo.png
 share/poedit/icons/CrowdinLogoDark.png
 share/poedit/icons/DownvoteTemplate.png
 share/poedit/icons/ExtractorsGNUgettext.png
-share/poedit/icons/ItemBookmarkTemplate.png
 share/poedit/icons/ItemCommentTemplate.png
 share/poedit/icons/LocalazyLogo.png
 share/poedit/icons/StatusError.png
