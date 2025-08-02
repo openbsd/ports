@@ -1,6 +1,10 @@
 @bin bin/cflow
 @info info/cflow.info
 @man man/man1/cflow.1
+share/cflow/
+share/cflow/1.8/
+share/cflow/1.8/c11.cfo
+share/cflow/1.8/gcc.cfo
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/cflow-mode.el
@@ -16,6 +20,7 @@ share/locale/id/LC_MESSAGES/cflow.mo
 share/locale/nl/LC_MESSAGES/cflow.mo
 share/locale/pl/LC_MESSAGES/cflow.mo
 share/locale/pt_BR/LC_MESSAGES/cflow.mo
+share/locale/ro/LC_MESSAGES/cflow.mo
 share/locale/sr/LC_MESSAGES/cflow.mo
 share/locale/sv/LC_MESSAGES/cflow.mo
 share/locale/uk/LC_MESSAGES/cflow.mo
