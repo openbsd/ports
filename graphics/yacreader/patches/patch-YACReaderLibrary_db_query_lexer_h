@@ -1,0 +1,14 @@
+Index: YACReaderLibrary/db/query_lexer.h
+--- YACReaderLibrary/db/query_lexer.h.orig
++++ YACReaderLibrary/db/query_lexer.h
+@@ -3,6 +3,10 @@
+ 
+ #include <string>
+ 
++/* thanks, sys/types.h */
++#undef major
++#undef minor
++
+ class Token
+ {
+ public:
