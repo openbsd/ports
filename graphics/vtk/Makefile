@@ -129,8 +129,8 @@ CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DVTK_MODULE_USE_EXTERNAL_VTK_token=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-CXXFLAGS +=		-I${X11BASE}/include \
-			-L${LOCALBASE}/lib
+CXXFLAGS +=		-I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 # Some tests require an active X11 display to work. When using
 # PORTS_PRIVSEP=Yes, the following can be used:
