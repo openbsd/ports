@@ -1,6 +1,6 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_DISTV =		11.5.0
+MODPY_DISTV =		11.6.0
 DISTNAME =		libvirt-python-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
 
