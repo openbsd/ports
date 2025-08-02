@@ -35,12 +35,10 @@ MODULES=		lang/tcl
 MODTCL_VERSION=		8.6
 
 USE_GMAKE=		Yes
+USE_GROFF=		Yes
 
 # XXX error: `programs/dtdocbook/doc_utils/.libs/NodeParser' does not exist.
 USE_LIBTOOL=		gnu
-
-# XXX "dtterm.ti", line 1, terminal 'dtterm': /cde-2.5.2_writes_to_HOME/.terminfo: permission denied (errno 2)
-PORTHOME=		${WRKDIR}
 
 BUILD_DEPENDS=		textproc/opensp
 
@@ -72,6 +70,8 @@ CONFIGURE_ARGS=		--with-tcl=${MODTCL_LIBDIR} \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
+FAKE_FLAGS=		TERMINFO="${DESTDIR}${TRUEPREFIX}/share/terminfo"
+
 # not pre-configure to prevent running configure twice (configure.ac timestamp change)
 post-patch:
 	for p in `find ${WRKSRC} -type f | xargs grep -l '/usr/bin/X11'`; do \
@@ -84,6 +84,9 @@ post-patch:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl
+
+pre-install:
+	mkdir -p ${PREFIX}/share/terminfo
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc/cde,examples}/

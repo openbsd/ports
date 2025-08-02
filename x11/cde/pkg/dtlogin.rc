@@ -1,0 +1,8 @@
+#!/bin/ksh
+#
+
+daemon="${TRUEPREFIX}/bin/dtlogin -daemon"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

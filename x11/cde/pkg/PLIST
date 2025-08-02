@@ -1,5 +1,6 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/calendar
 @extraunexec rm -rf ${LOCALSTATEDIR}/dt
+@rcscript ${RCDIR}/dtlogin
 app-defaults/
 app-defaults/C/
 app-defaults/C/Dt
@@ -5441,7 +5442,7 @@ bin/dthelptag
 @bin bin/dticon
 @bin bin/dtimsstart
 @bin bin/dtinfo
-@bin bin/dtksh
+@shell bin/dtksh
 @bin bin/dtlogin
 bin/dtlp
 bin/dtlpsetup
@@ -6851,6 +6852,9 @@ share/palettes/desc.en_US.UTF-8
 share/palettes/desc.es_ES.UTF-8
 share/palettes/desc.fr_FR.UTF-8
 share/palettes/desc.it_IT.UTF-8
+share/terminfo/
+share/terminfo/d/
+share/terminfo/d/dtterm
 @sample ${SYSCONFDIR}/dt/
 @sample ${SYSCONFDIR}/dt/config/
 @cwd ${LOCALBASE}
