@@ -194,6 +194,7 @@
      # utilities
      SUBDIR += ark
      SUBDIR += filelight
+     SUBDIR += itinerary
      SUBDIR += kbackup
      SUBDIR += kcalc
      SUBDIR += kcharselect

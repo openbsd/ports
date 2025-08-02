@@ -30,8 +30,9 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 REVISION-plasma =	1
-REVISION-development =	0
-REVISION-main =	0
+REVISION-development =	1
+REVISION-main =		1
+REVISION-utils =	0
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -248,6 +249,7 @@ RUN_DEPENDS-utils = \
 	x11/kde-applications/kcharselect \
 	x11/kde-applications/kdebugsettings \
 	x11/kde-applications/kdf \
+	x11/kde-applications/itinerary \
 	x11/kde-applications/kgpg \
 	x11/kde-applications/kteatime \
 	x11/kde-applications/ktimer \
