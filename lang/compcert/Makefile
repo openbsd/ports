@@ -14,11 +14,13 @@ GH_PROJECT =		CompCert
 GH_COMMIT =		76f7feabd0d549a12ca139d6af953c4c30e814cc
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		7
+REVISION =		8
+
+CATEGORIES =		lang
 
 HOMEPAGE =		https://compcert.org/
 
-CATEGORIES =		lang
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # INRIA Non-Commercial License Agreement.
 PERMIT_PACKAGE =	Yes
