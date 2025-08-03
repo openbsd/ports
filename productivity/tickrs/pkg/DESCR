@@ -1,0 +1,5 @@
+Realtime ticker data plotted in your terminal. Built with Rust.
+
+Price data is sourced from Yahoo! Finance.
+
+The 'ticker codes' can be found by searching https://finance.yahoo.com

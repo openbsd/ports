@@ -1,0 +1,3 @@
+@bin bin/tickrs
+share/examples/tickrs/
+share/examples/tickrs/config.yml.sample

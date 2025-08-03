@@ -1,0 +1,15 @@
+- avoid "static-curl" feature (in default features)
+- avoid "static-ssl" feature
+
+Index: api/Cargo.toml
+--- api/Cargo.toml.orig
++++ api/Cargo.toml
+@@ -11,7 +11,7 @@ repository = "https://github.com/tarkah/tickrs"
+ anyhow = "1.0"
+ futures = "0.3"
+ http = "0.2"
+-isahc = { version = "1.7", features = ["static-ssl"] }
++isahc = { version = "1.7", default-features = false, features = ["http2", "text-decoding"] }
+ serde = { version = "1.0", features = ["derive"] }
+ serde_json = "1.0"
+ serde_urlencoded = "0.7"
