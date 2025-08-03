@@ -1,16 +1,17 @@
 COMMENT =	check the integrity of PNG files
-DISTNAME = 	pngcheck-3.0.3
+
+GH_ACCOUNT =	pnggroup
+GH_PROJECT =	pngcheck
+GH_TAGNAME =	v4.0.0
 
 CATEGORIES = 	graphics sysutils
 
-HOMEPAGE = 	http://www.libpng.org/pub/png/apps/pngcheck.html
+HOMEPAGE = 	https://www.libpng.org/pub/png/apps/pngcheck.html
 
 # MIT for pngcheck, GPL for extra utilities
 PERMIT_PACKAGE = Yes
 
 WANTLIB = 	c z
-
-SITES = 	http://www.libpng.org/pub/png/src/
 
 NO_TEST = 	Yes
 
