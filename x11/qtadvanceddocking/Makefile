@@ -1,12 +1,12 @@
 
 COMMENT =	advanced docking system for Qt
 
-V =		4.3.1
+V =		4.4.0
 DISTNAME =	qtadvanceddocking-${V}
 
 DIST_TUPLE =	github githubuser0xFFFF Qt-Advanced-Docking-System ${V} .
 
-SHARED_LIBS +=  qt6advanceddocking        0.0 # 0.0
+SHARED_LIBS +=	qtadvanceddocking-qt6     0.0 # 0.0
 
 CATEGORIES =	x11 devel
 
@@ -22,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets m xcb
 MODULES =		devel/cmake \
 			x11/qt6
 
-WRKSRC =		${WRKDIR}/Qt-Advanced-Docking-System-4.3.1
+WRKDIST =		${WRKDIR}/Qt-Advanced-Docking-System-${V}
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
