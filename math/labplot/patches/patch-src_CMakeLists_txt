@@ -1,6 +1,19 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
+@@ -547,9 +547,9 @@ target_include_directories(labplotbackendlib PUBLIC ${
+ target_include_directories(labplotlib PUBLIC ${FRONTEND_DIR}/widgets) # so that the MOC finds numberSpinbox.h
+ 
+ # add system QADS include path
+-if(qt${QT_VERSION_MAJOR}advanceddocking_FOUND)
+-    get_target_property(QADS_INCLUDES ads::qt${QT_VERSION_MAJOR}advanceddocking INTERFACE_INCLUDE_DIRECTORIES)
+-    get_target_property(QADS_LIBRARIES ads::qt${QT_VERSION_MAJOR}advanceddocking INTERFACE_LINK_LIBRARIES)
++if(qtadvanceddocking-qt${QT_VERSION_MAJOR}_FOUND)
++    get_target_property(QADS_INCLUDES ads::qtadvanceddocking-qt${QT_VERSION_MAJOR} INTERFACE_INCLUDE_DIRECTORIES)
++    get_target_property(QADS_LIBRARIES ads::qtadvanceddocking-qt${QT_VERSION_MAJOR} INTERFACE_LINK_LIBRARIES)
+     message(STATUS "QADS Found: ${QADS_LIBRARIES}, ${QADS_INCLUDES}")
+     target_include_directories(labplotbackendlib PUBLIC ${QADS_INCLUDES})
+     target_include_directories(labplotlib PUBLIC ${QADS_INCLUDES})
 @@ -566,7 +566,7 @@ endif()
  if(NOT ICONV_LIBRARIES)
      set(ICONV_LIBRARIES "")
@@ -10,6 +23,24 @@ Index: src/CMakeLists.txt
      set(TURN_OFF_AS_NEEDED "-Wl,--no-as-needed")
      set(TURN_ON_AS_NEEDED "-Wl,--as-needed")
  endif()
+@@ -605,7 +605,7 @@ target_link_libraries(labplotbackendlib
+     ${LIBCERF_LIBRARIES}
+     ${MATIO_LIBRARIES}
+     ${READSTAT_LIBRARIES}
+-    ads::qt${QT_VERSION_MAJOR}advanceddocking
++    ads::qtadvanceddocking-qt${QT_VERSION_MAJOR}
+ )
+ target_link_libraries(labplotlib
+     Qt${QT_MAJOR_VERSION}::Sql
+@@ -624,7 +624,7 @@ target_link_libraries(labplotlib
+     KF${KF_MAJOR_VERSION}::Archive    # KFilterDev
+     KF${KF_MAJOR_VERSION}::TextWidgets    # KTextEdit
+     ${Poppler_LIBRARIES}
+-    ads::qt${QT_VERSION_MAJOR}advanceddocking
++    ads::qtadvanceddocking-qt${QT_VERSION_MAJOR}
+ )
+ 
+ if(Qt${QT_MAJOR_VERSION}SerialPort_FOUND)
 @@ -688,6 +688,7 @@ if(ENABLE_XLSX)
      if(QXLSX_FOUND)
          target_include_directories(labplotbackendlib PUBLIC ${QXLSX_INCLUDE_DIR})

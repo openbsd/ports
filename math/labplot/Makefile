@@ -29,7 +29,7 @@ WANTLIB += KF6WidgetsAddons KF6XmlGui QXlsxQt6 Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6SerialPort Qt6Sql
 WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c cantorlibs cerf cfitsio
 WANTLIB += fftw3 gsl gslcblas hdf5 lz4 m markdown matio netcdf
-WANTLIB += poppler poppler-qt6 qt6advanceddocking spectre xcb
+WANTLIB += poppler poppler-qt6 qtadvanceddocking-qt6 spectre xcb
 WANTLIB += z zstd
 
 SITES =		https://download.kde.org/stable/labplot/
@@ -87,7 +87,7 @@ LIB_DEPENDS =	archivers/lz4 \
 		x11/kde-applications/cantor \
 		x11/qt6/qtserialport \
 		x11/qt6/qtsvg \
-		x11/qtadvanceddocking
+		x11/qtadvanceddocking>=4.4.0
 
 # OPTIONAL packages
 LIB_DEPENDS +=	devel/kf6/syntax-highlighting \
@@ -124,6 +124,6 @@ TEST_IS_INTERACTIVE =	X11
 
 pre-configure:
 	# use system dependencies
-	rm -rf ${WRKSRC}/src/3rdparty/{cmake,kdmactouchbar,liborigin,QXlsx}
+	rm -rf ${WRKSRC}/src/3rdparty/{Qt-Advanced-Docking-System,cmake,kdmactouchbar,liborigin,QXlsx}
 
 .include <bsd.port.mk>
