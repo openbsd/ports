@@ -1,9 +1,9 @@
 COMMENT=		Foreign Function Interface
 
-V=			3.5.1
+V=			3.5.2
 DISTNAME=		libffi-$V
 
-SHARED_LIBS +=  ffi                  2.3      # 10.0
+SHARED_LIBS +=  ffi                  2.4      # 10.0
 
 CATEGORIES=		devel
 
