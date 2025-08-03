@@ -1,5 +1,6 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
+REVISION =	0
 CATEGORIES =	x11 graphics
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
@@ -24,7 +25,7 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 LIB_DEPENDS =	databases/futuresql \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
-		devel/qcoro,qt6 \
+		devel/qcoro \
 		x11/qt6/qtdeclarative \
 		devel/kf6/kcrash \
 		x11/qt6/qtsvg

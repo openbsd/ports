@@ -1,5 +1,6 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -50,7 +51,7 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kguiaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/qcoro,qt6 \
+		devel/qcoro \
 		sysutils/libudev-openbsd \
 		wayland/wayland \
 		x11/kde-plasma/libkscreen>=${VERSION} \

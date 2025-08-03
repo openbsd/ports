@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1735 2025/07/29 14:00:52 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1736 2025/08/03 13:56:55 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -632,6 +632,7 @@ my $stem_extensions = {
 	'py-opengl' => 'py3-opengl',
 	'compton-conf' => 'picom-config',
 	'minetest' => 'luanti',
+	'qcoro-qt6' => 'qcoro',
 };
 
 my $obsolete_reason = {};

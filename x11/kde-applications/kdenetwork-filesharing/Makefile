@@ -1,5 +1,6 @@
 COMMENT =	KDE Filesharing via Samba
 DISTNAME =	kdenetwork-filesharing-${VERSION}
+REVISION =	0
 CATEGORIES =	devel
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6Completion KF6ConfigCore
@@ -13,7 +14,7 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/qcoro,qt6
+BUILD_DEPENDS =	devel/qcoro
 
 RUN_DEPENDS =	net/samba \
 		x11/dbus,-suid

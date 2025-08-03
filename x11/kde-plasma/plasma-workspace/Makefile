@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	1
 REVISION =	0
 
 SHARED_LIBS +=  colorcorrect              1.0 # 0.0
@@ -108,7 +109,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
-		devel/qcoro,qt6 \
+		devel/qcoro \
 		math/libqalculate \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \

@@ -1,6 +1,7 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity net
 
@@ -55,7 +56,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/libmtp \
-		devel/qcoro,qt6 \
+		devel/qcoro \
 		graphics/openexr \
 		math/imath \
 		multimedia/phonon,qt6 \
