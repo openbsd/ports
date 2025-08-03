@@ -15,3 +15,12 @@ Index: scribus/CMakeLists.txt
  #endif()
  
  link_directories(
+@@ -293,7 +294,7 @@ target_link_libraries(${EXE_NAME} PRIVATE
+ )
+ 
+ #if(WANT_QTADS)
+-  target_link_libraries(${EXE_NAME} PUBLIC qt6advanceddocking)
++  target_link_libraries(${EXE_NAME} PUBLIC qtadvanceddocking-qt6)
+ #endif()
+ 
+ if(WITH_TESTS)

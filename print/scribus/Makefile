@@ -3,20 +3,19 @@ DPB_PROPERTIES=	parallel
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.7.0
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} GL Qt6Core5Compat
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6PrintSupport Qt6Svg
-WANTLIB += Qt6Widgets Qt6Xml c cairo cups execinfo fontconfig
-WANTLIB += freetype harfbuzz harfbuzz-icu hunspell-1.7 icudata
-WANTLIB += icuuc jpeg lcms2 m png podofo poppler tiff util xml2
-WANTLIB += z harfbuzz-subset
-WANTLIB += qt6advanceddocking
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
+WANTLIB += Qt6Network Qt6PrintSupport Qt6Svg Qt6Widgets Qt6Xml
+WANTLIB += c cairo cups execinfo fontconfig freetype harfbuzz
+WANTLIB += harfbuzz-icu harfbuzz-subset hunspell-1.7 icudata icuuc
+WANTLIB += jpeg lcms2 m png podofo poppler python3.12 qtadvanceddocking-qt6
+WANTLIB += tiff util xml2 z
 
 SITES=		${SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
@@ -46,7 +45,7 @@ LIB_DEPENDS=	graphics/lcms2 \
 		graphics/jpeg \
 		x11/qt6/qt5compat \
 		x11/qt6/qtsvg \
-		x11/qtadvanceddocking \
+		x11/qtadvanceddocking>=4.4.0 \
 		${MODPY_LIB_DEPENDS}
 
 CXXFLAGS+=	-D CMS_NO_REGISTER_KEYWORD

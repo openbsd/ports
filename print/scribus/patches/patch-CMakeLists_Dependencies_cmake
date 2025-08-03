@@ -7,6 +7,6 @@ Index: CMakeLists_Dependencies.cmake
  endif()
  
  #if(WANT_QTADS)
-+	find_package(qt6advanceddocking)
++	find_package(qtadvanceddocking-qt6)
    set(HAVE_QTADS ON)
  #endif()
