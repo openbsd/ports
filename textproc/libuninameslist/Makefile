@@ -1,11 +1,11 @@
 COMMENT =	library of Unicode names and annotation data
 
-V =		20230916
+V =		20240910
 DISTNAME =	libuninameslist-dist-$V
 PKGNAME =	${DISTNAME:S/-dist//}
 
-SHARED_LIBS +=	uninameslist	0.2	# 1.14
-SHARED_LIBS +=  uninameslist-fr	0.0 	# 1.6
+SHARED_LIBS +=	uninameslist	0.2	# 1.15
+SHARED_LIBS +=  uninameslist-fr	0.0 	# 1.7
 
 CATEGORIES =	textproc
 
