@@ -51,6 +51,7 @@
      SUBDIR += tdl
      SUBDIR += teapot
      SUBDIR += thinkingrock
+     SUBDIR += tickrs
      SUBDIR += timewarrior
      SUBDIR += topydo
      SUBDIR += tudu
