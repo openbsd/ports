@@ -3,16 +3,16 @@ Simple OpenBSD build fix
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -17,7 +17,7 @@ wev: wev.c shm.c xdg-shell-protocol.h xdg-shell-protoc
+@@ -25,7 +25,7 @@ wev: wev.c shm.c xdg-shell-protocol.c wayland-tablet-p
  	$(CC) $(CFLAGS) \
  		-g -std=c11 -I. \
- 		-o wev wev.c shm.c xdg-shell-protocol.c \
+ 		-o wev wev.c shm.c xdg-shell-protocol.c wayland-tablet-protocol.c \
 -		$(LIBS) -lrt
 +		$(LIBS)
  
  wev.1: wev.1.scd
  	$(SCDOC) < wev.1.scd > wev.1
-@@ -33,8 +33,8 @@ DESTDIR?=
+@@ -41,8 +41,8 @@ DESTDIR?=
  install: wev
  	mkdir -p $(DESTDIR)$(BINDIR)
  	mkdir -p $(DESTDIR)$(MANDIR)/man1
@@ -22,4 +22,4 @@ Index: Makefile
 +	install -c -m644 wev.1 $(DESTDIR)$(MANDIR)/man1/wev.1
  
  clean:
- 	rm -f wev wev.1 xdg-shell-protocol.h xdg-shell-protocol.c
+ 	rm -f wev wev.1 xdg-shell-protocol.h xdg-shell-protocol.c wayland-tablet-protocol.h wayland-tablet-protocol.c

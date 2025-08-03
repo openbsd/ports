@@ -1,6 +1,6 @@
 COMMENT =	utility to show Wayland events
 
-V =		1.0.0
+V =		1.1.0
 DISTNAME =	wev-${V}
 
 CATEGORIES =	wayland
@@ -9,7 +9,7 @@ HOMEPAGE =	https://git.sr.ht/~sircmpwn/wev
 SITES =		https://git.sr.ht/~sircmpwn/wev/
 DISTFILES =	wev-{archive/}${V}${EXTRACT_SUFX}
 
-WANTLIB =	epoll-shim ffi wayland-client xkbcommon c
+WANTLIB =	wayland-client xkbcommon m c
 
 # MIT
 PERMIT_PACKAGE = Yes
