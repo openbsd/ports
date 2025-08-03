@@ -1,6 +1,6 @@
 COMMENT =	dynamic menu for sway and wlroots based Wayland compositors
 
-V =		0.1.9
+V =		0.2.0
 DISTNAME =	wmenu-${V}
 SITES =		https://codeberg.org/adnano/wmenu/
 DISTFILES =     wmenu-{archive/}${V}${EXTRACT_SUFX}
