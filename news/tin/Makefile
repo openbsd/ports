@@ -2,7 +2,7 @@ COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.6
-PATCHLEVEL=	3
+PATCHLEVEL=	4
 CATEGORIES=	news
 
 SITES=		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.tin.org/
 # vms/vms.c
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c>=58.2 iconv icuuc intl curses pcre z
+WANTLIB=		c>=58.2 curses iconv icui18n icuuc idn2 intl pcre z
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69
@@ -48,6 +48,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS+=	devel/pcre \
 		devel/gettext,-runtime \
+		devel/libidn2 \
 		textproc/icu4c
 
 ALL_TARGET=	build
