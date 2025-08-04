@@ -1,0 +1,14 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -395,10 +395,6 @@ endif()
+ 
+ # handle rpath correctly
+ if( VVENC_ENABLE_INSTALL )
+-  if( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )
+-    set( CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install" CACHE PATH "Standard install prefix" FORCE )
+-  endif()
+-
+   # use GNU install dirs
+   include( GNUInstallDirs )
+   

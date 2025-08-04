@@ -1,0 +1,31 @@
+COMMENT=	Versatile Video Coding (VVC) encoder
+
+DISTNAME=	vvenc-1.13.1
+GH_ACCOUNT=	fraunhoferhhi
+GH_PROJECT=	vvenc
+GH_COMMIT=	76ea3ea21e76abf0ce1093b29ad145b5755007f8
+CATEGORIES=	multimedia
+
+SHARED_LIBS=	vvenc	0.0
+
+MAINTAINER=	Brad Smith <brad@comstyle.com>
+
+# BSD
+PERMIT_PACKAGE=	Yes
+
+WANTLIB=	${COMPILER_LIBCXX} c m pthread
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+MODULES=	devel/cmake
+
+BUILD_DEPENDS+=	textproc/nlohmann-json
+
+COMPILER=	base-clang ports-gcc
+
+CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=ON \
+		-DVVENC_ENABLE_ARM_SIMD_SVE=TRUE \
+		-DVVENC_ENABLE_ARM_SIMD_SVE2=TRUE \
+		-DVVENC_ENABLE_THIRDPARTY_JSON=SYSTEM
+
+.include <bsd.port.mk>

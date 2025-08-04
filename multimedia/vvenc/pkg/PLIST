@@ -1,0 +1,14 @@
+@bin bin/vvencapp
+include/vvenc/
+include/vvenc/version.h
+include/vvenc/vvenc.h
+include/vvenc/vvencCfg.h
+include/vvenc/vvencDecl.h
+lib/cmake/
+lib/cmake/vvenc/
+lib/cmake/vvenc/vvencConfig.cmake
+lib/cmake/vvenc/vvencConfigVersion.cmake
+lib/cmake/vvenc/vvencTargets-shared${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/vvenc/vvencTargets-shared.cmake
+@lib lib/libvvenc.so.${LIBvvenc_VERSION}
+lib/pkgconfig/libvvenc.pc
