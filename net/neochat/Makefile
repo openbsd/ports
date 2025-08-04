@@ -1,7 +1,7 @@
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_GEAR_VERSION}
 CATEGORIES=	net
-REVISION =	0
+REVISION =	1
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -66,7 +66,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/syntax-highlighting \
 		devel/kf6/kiconthemes \
 		devel/olm \
-		devel/qcoro,qt6 \
+		devel/qcoro \
 		security/qtkeychain,qt6 \
 		textproc/icu4c \
 		textproc/cmark \
