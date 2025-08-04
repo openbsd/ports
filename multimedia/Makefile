@@ -82,6 +82,7 @@
      SUBDIR += synfigstudio
      SUBDIR += upplay
      SUBDIR += vitunes
+     SUBDIR += vvenc
      SUBDIR += x264
      SUBDIR += x265
      SUBDIR += xine-lib
