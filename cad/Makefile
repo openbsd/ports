@@ -2,6 +2,7 @@
      SUBDIR += abc
      SUBDIR += coil64
      SUBDIR += dxf2gcode
+     SUBDIR += freecad
      SUBDIR += fritzing
      SUBDIR += geda-gaf
      SUBDIR += gerbv
