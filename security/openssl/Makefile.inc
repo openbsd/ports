@@ -23,8 +23,4 @@ EOPENSSL_V?=	eopenssl${V:R:S/.//}
 SUBST_VARS+=	EOPENSSL_V
 .endif
 
-.if ${V:M1*}
-SITES?=		https://github.com/openssl/openssl/releases/download/OpenSSL_${V:S/./_/g}/
-.else
 SITES?=		https://github.com/openssl/openssl/releases/download/openssl-$V/
-.endif
