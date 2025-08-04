@@ -1,7 +1,7 @@
 Index: render.c
 --- render.c.orig
 +++ render.c
-@@ -6,7 +6,9 @@
+@@ -7,7 +7,9 @@
  #include "swaylock.h"
  #include "log.h"
  
@@ -9,5 +9,5 @@ Index: render.c
  #define M_PI 3.14159265358979323846
 +#endif
  const float TYPE_INDICATOR_RANGE = M_PI / 3.0f;
- const float TYPE_INDICATOR_BORDER_THICKNESS = M_PI / 128.0f;
  
+ static void set_color_for_state(cairo_t *cairo, struct swaylock_state *state,

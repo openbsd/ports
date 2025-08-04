@@ -1,8 +1,8 @@
 COMMENT =	screen locker for Wayland
 
-DISTNAME =	swaylock-1.8.2
-REVISION =	0
-SITES =		https://github.com/swaywm/swaylock/releases/download/v1.8.2/
+V =		1.8.3
+DISTNAME =	swaylock-${V}
+SITES =		https://github.com/swaywm/swaylock/releases/download/v${V}/
 
 CATEGORIES =	wayland
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =	graphics/gdk-pixbuf2 \
 		graphics/cairo \
 		wayland/wayland
 
-WANTLIB =	c cairo gdk_pixbuf-2.0 gobject-2.0 wayland-client xkbcommon
+WANTLIB =	c cairo gdk_pixbuf-2.0 gobject-2.0 m wayland-client xkbcommon
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
