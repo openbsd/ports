@@ -1,0 +1,11 @@
+Index: tests/src/Mod/Measure/CMakeLists.txt
+--- tests/src/Mod/Measure/CMakeLists.txt.orig
++++ tests/src/Mod/Measure/CMakeLists.txt
+@@ -10,6 +10,7 @@ target_include_directories(Measure_tests_run SYSTEM PU
+ target_link_directories(Measure_tests_run PUBLIC ${OCC_LIBRARY_DIR})
+ 
+ target_link_libraries(Measure_tests_run
++    gtest
+     gtest_main
+     ${Google_Tests_LIBS}
+     Measure

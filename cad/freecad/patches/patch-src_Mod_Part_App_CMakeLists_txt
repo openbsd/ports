@@ -1,0 +1,11 @@
+Index: src/Mod/Part/App/CMakeLists.txt
+--- src/Mod/Part/App/CMakeLists.txt.orig
++++ src/Mod/Part/App/CMakeLists.txt
+@@ -26,6 +26,7 @@ set(Part_LIBS
+     ${OCC_DEBUG_LIBRARIES}
+     FreeCADApp
+     Materials
++    -L${X11BASE}/lib
+ )
+ 
+ if(FREETYPE_FOUND)

@@ -1,0 +1,21 @@
+OpenMPI is only needed if devel/med was compiled with support for it.
+
+Index: cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake
+--- cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake.orig
++++ cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake
+@@ -111,15 +111,6 @@ macro(SetupSalomeSMESH)
+                 if(NOT HDF5_FOUND)
+                     message( FATAL_ERROR "hdf5.h was not found.")
+                 endif()
+-
+-                # Med Fichier can require MPI
+-                pkg_search_module(OPENMPI ompi-cxx)
+-                add_compile_options(${OPENMPI_CFLAGS})
+-                link_directories(${OPENMPI_LIBRARY_DIRS})
+-                link_libraries(${OPENMPI_LIBRARIES})
+-                if(NOT OPENMPI_FOUND)
+-                    message( WARNING "ompi-cxx was not found. Check for error above.")
+-                endif()
+             endif()
+             set(SMESH_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src/3rdParty/salomesmesh/inc)
+ 

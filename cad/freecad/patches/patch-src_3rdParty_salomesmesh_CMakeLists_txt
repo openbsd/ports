@@ -1,0 +1,11 @@
+Index: src/3rdParty/salomesmesh/CMakeLists.txt
+--- src/3rdParty/salomesmesh/CMakeLists.txt.orig
++++ src/3rdParty/salomesmesh/CMakeLists.txt
+@@ -135,6 +135,7 @@ else(MSVC)
+             ${NGLIB_LIBRARIES}
+             ${OCC_LIBRARIES}
+             ${OCC_OCAF_LIBRARIES}
++            -L${X11BASE}/lib
+         )
+         ADD_DEFINITIONS(${NETGEN_DEFINITIONS})
+     else(BUILD_FEM_NETGEN)

@@ -1,0 +1,11 @@
+Index: tests/src/Mod/Points/CMakeLists.txt
+--- tests/src/Mod/Points/CMakeLists.txt.orig
++++ tests/src/Mod/Points/CMakeLists.txt
+@@ -8,6 +8,7 @@ target_include_directories(Points_tests_run SYSTEM PUB
+ target_link_directories(Points_tests_run PUBLIC ${OCC_LIBRARY_DIR})
+ 
+ target_link_libraries(Points_tests_run
++    gtest
+     gtest_main
+     ${Google_Tests_LIBS}
+     Points

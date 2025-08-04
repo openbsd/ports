@@ -1,0 +1,157 @@
+See https://github.com/FreeCAD/FreeCAD/issues/18170
+and https://github.com/FreeCAD/FreeCAD/issues/18168
+
+Index: src/Mod/Material/App/Exceptions.cpp
+--- src/Mod/Material/App/Exceptions.cpp.orig
++++ src/Mod/Material/App/Exceptions.cpp
+@@ -0,0 +1,150 @@
++#include "Exceptions.h"
++
++namespace Materials
++{
++
++Uninitialized::Uninitialized() {}
++
++Uninitialized::Uninitialized(const char* msg) {
++    this->setMessage(msg);
++}
++
++Uninitialized::Uninitialized(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++Uninitialized::~Uninitialized() noexcept = default;
++
++ModelNotFound::ModelNotFound() {}
++
++ModelNotFound::ModelNotFound(const char* msg) {
++    this->setMessage(msg);
++}
++
++ModelNotFound::ModelNotFound(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++ModelNotFound::~ModelNotFound() noexcept = default;
++
++InvalidMaterialType::InvalidMaterialType() {}
++
++InvalidMaterialType::InvalidMaterialType(const char* msg) {
++    this->setMessage(msg);
++}
++
++InvalidMaterialType::InvalidMaterialType(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++InvalidMaterialType::~InvalidMaterialType() noexcept = default;
++
++MaterialNotFound::MaterialNotFound() {}
++
++MaterialNotFound::MaterialNotFound(const char* msg) {
++    this->setMessage(msg);
++}
++
++MaterialNotFound::MaterialNotFound(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++MaterialNotFound::~MaterialNotFound() noexcept = default;
++
++MaterialExists::MaterialExists() {}
++
++MaterialExists::MaterialExists(const char* msg) {
++    this->setMessage(msg);
++}
++
++MaterialExists::MaterialExists(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++MaterialExists::~MaterialExists() noexcept = default;
++
++MaterialReadError::MaterialReadError() {}
++
++MaterialReadError::MaterialReadError(const char* msg) {
++    this->setMessage(msg);
++}
++
++MaterialReadError::MaterialReadError(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++MaterialReadError::~MaterialReadError() noexcept = default;
++
++PropertyNotFound::PropertyNotFound() {}
++
++PropertyNotFound::PropertyNotFound(const char* msg) {
++    this->setMessage(msg);
++}
++
++PropertyNotFound::PropertyNotFound(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++PropertyNotFound::~PropertyNotFound() noexcept = default;
++
++LibraryNotFound::LibraryNotFound() {}
++
++LibraryNotFound::LibraryNotFound(const char* msg) {
++    this->setMessage(msg);
++}
++
++LibraryNotFound::LibraryNotFound(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++LibraryNotFound::~LibraryNotFound() noexcept = default;
++
++InvalidModel::InvalidModel() {}
++
++InvalidModel::InvalidModel(const char* msg) {
++    this->setMessage(msg);
++}
++
++InvalidModel::InvalidModel(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++InvalidModel::~InvalidModel() noexcept = default;
++
++InvalidIndex::InvalidIndex() {}
++
++InvalidIndex::InvalidIndex(char* msg) {
++    this->setMessage(msg);
++}
++
++InvalidIndex::InvalidIndex(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++InvalidIndex::~InvalidIndex() noexcept = default;
++
++UnknownValueType::UnknownValueType() {}
++
++UnknownValueType::UnknownValueType(char* msg) {
++    this->setMessage(msg);
++}
++
++UnknownValueType::UnknownValueType(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++UnknownValueType::~UnknownValueType() noexcept = default;
++
++DeleteError::DeleteError() {}
++
++DeleteError::DeleteError(char* msg) {
++    this->setMessage(msg);
++}
++
++DeleteError::DeleteError(const QString& msg) {
++    this->setMessage(msg.toStdString().c_str());
++}
++
++DeleteError::~DeleteError() noexcept = default;
++
++}  // namespace Materials

@@ -1,0 +1,28 @@
+This patch has been merged upstream. Drop next update.
+Commit: c8b1ea28364ef185ef61d2ca20230e92bb475b89
+
+Index: src/XDGData/CMakeLists.txt
+--- src/XDGData/CMakeLists.txt.orig
++++ src/XDGData/CMakeLists.txt
+@@ -34,7 +34,20 @@ install(
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mime/packages
+ )
+ 
++configure_file(
++    FreeCAD.thumbnailer.in
++    ${CMAKE_BINARY_DIR}/FreeCAD.thumbnailer
++)
+ install(
+-    FILES FreeCAD.thumbnailer
++    FILES ${CMAKE_BINARY_DIR}/FreeCAD.thumbnailer
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/thumbnailers
++)
++
++configure_file(
++    ${CMAKE_SOURCE_DIR}/src/Tools/freecad-thumbnailer.in
++    ${CMAKE_BINARY_DIR}/freecad-thumbnailer
++)
++install(
++    PROGRAMS ${CMAKE_BINARY_DIR}/freecad-thumbnailer
++    TYPE BIN
+ )

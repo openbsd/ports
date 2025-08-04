@@ -1,0 +1,11 @@
+This patch has been merged upstream. Drop next update.
+Commit: c8b1ea28364ef185ef61d2ca20230e92bb475b89
+
+Index: src/XDGData/FreeCAD.thumbnailer.in
+--- src/XDGData/FreeCAD.thumbnailer.in.orig
++++ src/XDGData/FreeCAD.thumbnailer.in
+@@ -0,0 +1,4 @@
++[Thumbnailer Entry]
++TryExec=@CMAKE_INSTALL_BINDIR@/freecad-thumbnailer
++Exec=@CMAKE_INSTALL_BINDIR@/freecad-thumbnailer -s %s %i %o
++MimeType=application/x-extension-fcstd;

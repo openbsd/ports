@@ -1,0 +1,15 @@
+This patch has been merged upstream. Drop next update.
+Commit: d9e731ca94abc14808ebeed208617116f6d5ea4a
+
+Index: src/Mod/ReverseEngineering/App/SurfaceTriangulation.cpp
+--- src/Mod/ReverseEngineering/App/SurfaceTriangulation.cpp.orig
++++ src/Mod/ReverseEngineering/App/SurfaceTriangulation.cpp
+@@ -40,7 +40,7 @@
+ #include <pcl/common/io.h>
+ #include <pcl/features/normal_3d.h>
+ #include <pcl/pcl_config.h>
+-#include <pcl/point_traits.h>
++#include <pcl/type_traits.h>
+ #include <pcl/point_types.h>
+ #include <pcl/surface/ear_clipping.h>
+ #include <pcl/surface/gp3.h>

@@ -1,0 +1,14 @@
+See https://github.com/FreeCAD/FreeCAD/issues/18170
+and https://github.com/FreeCAD/FreeCAD/issues/18168
+
+Index: src/Mod/Material/App/CMakeLists.txt
+--- src/Mod/Material/App/CMakeLists.txt.orig
++++ src/Mod/Material/App/CMakeLists.txt
+@@ -58,6 +58,7 @@ generate_from_xml(ModelPy)
+ generate_from_xml(UUIDsPy)
+ 
+ SET(Python_SRCS
++    Exceptions.cpp
+     Exceptions.h
+     Array2DPy.xml
+     Array2DPyImp.cpp
