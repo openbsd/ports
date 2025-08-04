@@ -1,3 +1,5 @@
+BROKEN-riscv64 =	graphics/vtk and cad/freecad considered too heavy for riscv64
+
 DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit

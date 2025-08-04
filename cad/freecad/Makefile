@@ -1,3 +1,5 @@
+BROKEN-riscv64 =	graphics/vtk and cad/freecad considered too heavy for riscv64
+
 COMMENT =		general purpose parametric 3D CAD modeler
 
 V =			1.0.1
