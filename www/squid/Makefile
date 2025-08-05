@@ -2,6 +2,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
 V=		7.1
+REVISION=	0
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -9,7 +10,7 @@ DPB_PROPERTIES=	parallel
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap= squid-ldap-$V
 FULLPKGPATH-ldap= ${PKGPATH},-ldap
-RUN_DEPENDS-ldap += squid-$Vv0:www/squid
+RUN_DEPENDS-ldap += squid-$Vv${EPOCH}:www/squid
 
 EPOCH=		0
 CATEGORIES=	www
@@ -40,6 +41,7 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
 		--disable-ecap \
 		--disable-esi \
+		--disable-eui \
 		--disable-shared
 
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
