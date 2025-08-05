@@ -1124,6 +1124,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}bdiff.${
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}bdiff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}charencode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}charencode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}deltas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}deltas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}mpatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}mpatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}osutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1133,6 +1135,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/pure/${MODPY_PYCACHE}parsers.
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/base85.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/bdiff.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/charencode.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/pure/deltas.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/mpatch.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/osutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pure/parsers.py
@@ -1152,6 +1155,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}concurrency_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}concurrency_checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1173,6 +1178,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}r
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}sidedata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}sidedata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/concurrency_checker.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/config.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/constants.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/debug.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/deltas.py
@@ -1557,6 +1563,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}cboruti
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}cborutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}compression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}compression.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}dag_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}dag_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}dateutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}dateutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}hashutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1577,6 +1585,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}urlutil
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}urlutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/cborutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/compression.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/dag_util.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/dateutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/hashutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/memorytop.py

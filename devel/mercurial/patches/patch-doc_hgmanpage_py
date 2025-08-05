@@ -1,0 +1,22 @@
+Index: doc/hgmanpage.py
+--- doc/hgmanpage.py.orig
++++ doc/hgmanpage.py
+@@ -45,16 +45,14 @@ __docformat__ = 'reStructuredText'
+ 
+ import re
+ 
++# frontend,
+ from docutils import (
+     languages,
+     nodes,
+     writers,
+ )
+ 
+-try:
+-    import roman
+-except ImportError:
+-    from docutils.utils import roman
++from docutils.utils._roman_numerals import RomanNumeral
+ 
+ FIELD_LIST_INDENT = 7
+ DEFINITION_LIST_INDENT = 7
