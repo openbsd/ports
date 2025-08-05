@@ -1,13 +1,13 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		3.8.1
+V=		3.8.2
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
-REVISION=	1
 
+# https://github.com/ice-wm/icewm
 HOMEPAGE=	https://ice-wm.org/
 
 # LGPLv2 only
@@ -29,6 +29,7 @@ SITES=		https://github.com/ice-wm/icewm/releases/download/${V}/
 
 BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/asciidoc
+USE_GMAKE=	Yes
 
 LIB_DEPENDS=	audio/libao \
 		audio/libsndfile \
@@ -58,9 +59,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 TEST_ENV=	FAKED_MODE=True
-
-# make: don't know how to make %.html: (prerequisite of: icewm.html)
-USE_GMAKE=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/icewm.adoc
