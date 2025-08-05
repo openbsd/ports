@@ -1,7 +1,6 @@
 COMMENT =		public domain implementation of the lzip data compressor
 
-DISTNAME =		pdlzip-1.13
-REVISION =		0
+DISTNAME =		pdlzip-1.14
 
 HOMEPAGE =		https://lzip.nongnu.org/pdlzip.html
 SITES =			${SITE_SAVANNAH:=lzip/pdlzip/}
@@ -10,5 +9,7 @@ SITES =			${SITE_SAVANNAH:=lzip/pdlzip/}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
+
+USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
