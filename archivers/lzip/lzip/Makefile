@@ -1,7 +1,6 @@
 COMMENT =		lossless data compressor
 
-DISTNAME =		lzip-1.24.1
-REVISION =		0
+DISTNAME =		lzip-1.25
 
 HOMEPAGE =		https://lzip.nongnu.org/lzip.html
 
@@ -11,5 +10,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
