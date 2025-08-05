@@ -11,6 +11,7 @@
      SUBDIR += dgen-sdl,debugger
      SUBDIR += dolphin
      SUBDIR += dosbox
+     SUBDIR += dosbox-staging
      SUBDIR += dosbox-x
      SUBDIR += dynagen
      SUBDIR += dynamips
