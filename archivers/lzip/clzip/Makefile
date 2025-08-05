@@ -1,7 +1,6 @@
 COMMENT =		C implementation of lzip
 
-DISTNAME =		clzip-1.14
-REVISION =		0
+DISTNAME =		clzip-1.15
 
 HOMEPAGE =		https://lzip.nongnu.org/clzip.html
 SITES =			${SITE_SAVANNAH:=lzip/clzip/}
@@ -10,5 +9,7 @@ SITES =			${SITE_SAVANNAH:=lzip/clzip/}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
+
+USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
