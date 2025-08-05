@@ -1,12 +1,11 @@
 COMMENT =	time-series datastore for metrics, events, and analytics
 
-MODUI_VERSION =	v2.7.1
-MODGO_VERSION =	v2.7.3
+MODUI_VERSION =	v2.7.12
+MODGO_VERSION =	v2.7.12
 MODGO_MODNAME =	github.com/influxdata/influxdb/v2
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	influxdb
 GH_TAGNAME =	${MODGO_VERSION}
-REVISION =	1
 
 HOMEPAGE =	https://influxdata.com
 
@@ -28,8 +27,8 @@ WANTLIB +=	${MODCARGO_WANTLIB}
 COMPILER =		base-clang ports-gcc
 MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
-MODCARGO_CARGOTOML =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/Cargo.toml
-MODCARGO_TARGET_DIR =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/target
+MODCARGO_CARGOTOML =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.196.1/libflux/Cargo.toml
+MODCARGO_TARGET_DIR =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.196.1/libflux/target
 
 .if ${MACHINE_ARCH} != "sparc64"
 # needed to make sure unwind* symbols are found
@@ -73,10 +72,6 @@ pre-build:
 	# generates ${WRKSRC}/static/static_gen.go to bundle the web ui assets in the final influxd binary
 	# taken from ${WRKSRC}/GNUMakefile
 	cd ${WRKSRC} && ${MODGO_CMD} generate ${MODGO_FLAGS} ./static
-	# hack to fix build with rust 1.72
-	sed -ie 12d ${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/flux/src/lib.rs
-	# hack to fix build with rust 1.78, cf https://github.com/influxdata/flux/issues/5479
-	sed -ie '/feature = "strict",/s/warnings,//' ${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/flux-core/src/lib.rs
 
 do-configure:
 	${MODCARGO_configure}
