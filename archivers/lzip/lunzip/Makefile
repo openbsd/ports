@@ -1,7 +1,6 @@
 COMMENT =		decompressor written in C for lzip files
 
-DISTNAME =		lunzip-1.14
-REVISION =		0
+DISTNAME =		lunzip-1.15
 
 HOMEPAGE =		https://lzip.nongnu.org/lunzip.html
 SITES =			${SITE_SAVANNAH:=lzip/lunzip/}
@@ -13,5 +12,7 @@ WANTLIB =		c
 
 # All other lzip ports use .tar.lz by default.
 EXTRACT_SUFX =		.tar.gz
+
+USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
