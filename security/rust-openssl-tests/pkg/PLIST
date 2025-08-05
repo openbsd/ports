@@ -11235,6 +11235,16 @@ share/rust-openssl-tests/modcargo-crates/${VER_winapi-x86_64-pc-windows-gnu}/lib
 @static-lib share/rust-openssl-tests/modcargo-crates/${VER_winapi-x86_64-pc-windows-gnu}/lib/libwinapi_xpsprint.a
 share/rust-openssl-tests/modcargo-crates/${VER_winapi-x86_64-pc-windows-gnu}/src/
 share/rust-openssl-tests/modcargo-crates/${VER_winapi-x86_64-pc-windows-gnu}/src/lib.rs
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/.cargo-checksum.json
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/Cargo.lock
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/Cargo.toml
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/Cargo.toml.orig
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/license-apache-2.0
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/license-mit
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/readme.md
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/src/
+share/rust-openssl-tests/modcargo-crates/${VER_windows-link}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/windows-sys-0.59.0/
 share/rust-openssl-tests/modcargo-crates/windows-sys-0.59.0/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/windows-sys-0.59.0/Cargo.toml
@@ -12252,7 +12262,7 @@ share/rust-openssl-tests/modcargo-crates/windows-targets-0.52.6/src/
 share/rust-openssl-tests/modcargo-crates/windows-targets-0.52.6/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows-targets}/
 share/rust-openssl-tests/modcargo-crates/${VER_windows-targets}/.cargo-checksum.json
-share/rust-openssl-tests/modcargo-crates/windows-targets-0.53.2/Cargo.lock
+share/rust-openssl-tests/modcargo-crates/windows-targets-0.53.3/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_windows-targets}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows-targets}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows-targets}/license-apache-2.0
@@ -12522,6 +12532,7 @@ share/rust-openssl-tests/openssl-sys/src/bio.rs
 share/rust-openssl-tests/openssl-sys/src/bn.rs
 share/rust-openssl-tests/openssl-sys/src/cms.rs
 share/rust-openssl-tests/openssl-sys/src/crypto.rs
+share/rust-openssl-tests/openssl-sys/src/dsa.rs
 share/rust-openssl-tests/openssl-sys/src/dtls1.rs
 share/rust-openssl-tests/openssl-sys/src/ec.rs
 share/rust-openssl-tests/openssl-sys/src/err.rs
