@@ -1,7 +1,7 @@
 COMMENT =	terminal user interface for Jujutsu
 
 MODGO_MODNAME =	github.com/idursun/jjui
-MODGO_VERSION =	v0.9.0
+MODGO_VERSION =	v0.9.1
 
 DISTNAME =	jjui-${MODGO_VERSION}
 
