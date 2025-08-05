@@ -1,8 +1,7 @@
 COMMENT=	pager/text-based web browser
 
-DIST_TUPLE=	srht rkta w3m 32193d61e3938518c0d454022d165b236f26f153 .
-PKGNAME=	w3m-0.5.3pl20250306
-REVISION=	0
+DIST_TUPLE=	srht rkta w3m v0.5.4 .
+WRKDIST=	${WRKDIR}/w3m-v0.5.4
 
 CATEGORIES=	www
 
@@ -27,7 +26,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 FLAVORS=	image
 FLAVOR?=
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-xface \
 		--with-termlib=curses \
 		--with-gc=${LOCALBASE}
