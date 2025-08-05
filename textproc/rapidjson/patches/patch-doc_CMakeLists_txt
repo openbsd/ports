@@ -1,0 +1,13 @@
+don't pick up doxygen, it generates a bunch of extra files
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ find_package(Doxygen)
+ 
+-IF(NOT DOXYGEN_FOUND)
++IF(TRUE OR NOT DOXYGEN_FOUND)
+     MESSAGE(STATUS "No Doxygen found. Documentation won't be built")
+ ELSE()
+     file(GLOB SOURCES ${CMAKE_CURRENT_LIST_DIR}/../include/*)
