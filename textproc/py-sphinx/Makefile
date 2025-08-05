@@ -33,7 +33,7 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-sphinxcontrib/websupport \
 		www/py-jinja2 \
 		textproc/py-pygments \
-		textproc/py-docutils<0.22 \
+		textproc/py-docutils<0.23 \
 		textproc/py-snowballstemmer \
 		devel/py-babel \
 		textproc/py-alabaster \
