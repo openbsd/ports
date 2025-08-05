@@ -1,14 +1,13 @@
 COMMENT=	utilities to manipulate ext2 filesystems
 
-DISTNAME=	e2fsprogs-1.47.1
-REVISION=	0
+DISTNAME=	e2fsprogs-1.47.3
 
 CATEGORIES=	sysutils devel
 
 SHARED_LIBS=	blkid		0.1 \
 		com_err		21.1 \
 		e2p		3.3 \
-		ext2fs		5.1 \
+		ext2fs		5.2 \
 		ss		3.3 \
 		uuid		14.1
 
