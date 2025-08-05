@@ -1,12 +1,13 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2024.3.5
+V=			2025.2
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
-REVISION =		0
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
+
+MAINTAINER=		Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://download.jetbrains.com/python/
 
 MODULES=		java
-MODJAVA_VER=		17
+MODJAVA_VER=		21
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
