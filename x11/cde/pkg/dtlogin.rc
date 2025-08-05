@@ -1,5 +1,4 @@
 #!/bin/ksh
-#
 
 daemon="${TRUEPREFIX}/bin/dtlogin -daemon"
 

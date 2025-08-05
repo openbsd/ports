@@ -35,6 +35,8 @@ MODULES=		lang/tcl
 MODTCL_VERSION=		8.6
 
 USE_GMAKE=		Yes
+# some tbl(7) constructs that result in a mangled display with mandoc(1);
+# e.g., dtsdldtd(4)
 USE_GROFF=		Yes
 
 # XXX error: `programs/dtdocbook/doc_utils/.libs/NodeParser' does not exist.
