@@ -12,7 +12,7 @@ Index: mpi/longlong.h
  #  define udiv_qrnnd(q, r, n1, n0, d) \
    do { UDItype __r;							\
 @@ -195,6 +196,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
- extern UDItype __udiv_qrnnd ();
+ extern UDItype __udiv_qrnnd (UDItype *, UDItype, UDItype, UDItype);
  #  define UDIV_TIME 220
  # endif /* !LONGLONG_STANDALONE */
 +#endif /* 0 */

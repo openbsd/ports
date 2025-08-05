@@ -4,7 +4,7 @@
 Index: cipher/Makefile.in
 --- cipher/Makefile.in.orig
 +++ cipher/Makefile.in
-@@ -666,7 +666,7 @@ EXTRA_libcipher_la_SOURCES = \
+@@ -667,7 +667,7 @@ EXTRA_libcipher_la_SOURCES = \
  @ENABLE_INSTRUMENTATION_MUNGING_TRUE@	-e 's/-fcoverage[=,\-][=,a-z,A-Z,0-9,\,,\-]*//g'
  
  @ENABLE_PPC_VCRYPTO_EXTRA_CFLAGS_FALSE@ppc_vcrypto_cflags = 
