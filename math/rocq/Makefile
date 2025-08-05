@@ -1,3 +1,6 @@
+# Unconditionally attempts to build .cmxs files
+ONLY_FOR_ARCHS=		${OCAML_NATIVE_DYNLINK_ARCHS}
+
 COMMENT=		proof assistant based on a typed lambda calculus
 
 # XXX: needs dune 3.8.3+ for rocq 9+
