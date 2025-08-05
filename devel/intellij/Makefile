@@ -1,21 +1,22 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2024.3.5
-DIST_VER=		243.26053.27
+V=			2025.2
+DIST_VER=		252.23892.409
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
-REVISION =		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
 
+MAINTAINER=		Kirill A. Korinsky <kirill@korins.ky>
+
 # Apache v2.0
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 SITES=			https://download.jetbrains.com/idea/
 
 MODULES=		java
-MODJAVA_VER=		17
+MODJAVA_VER=		21
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
@@ -44,6 +45,10 @@ do-install:
 	find ${IJ}/lib ${IJ}/plugins -name '*.exe' -delete
 	find ${IJ}/lib ${IJ}/plugins -type d -empty -delete
 
+	@rm ${IJ}/plugins/fullLine/full-line-native-server-linux-x86_64.zip
+.for PLUGIN in aarch64-unknown-linux x86_64-unknown-linux
+	@rm -rf ${IJ}/plugins/platform-ijent-impl/ijent-${PLUGIN}-musl-release
+.endfor
 .for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
 	@rm -rf ${IJ}/plugins/cwm-plugin/quiche-native/${PLUGIN}
 .endfor
