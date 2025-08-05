@@ -35,7 +35,7 @@ CONFIGURE_ARGS +=	--disable-gprof \
 USE_GMAKE =	Yes
 
 post-install:
-	@rm ${PREFIX}/info/bfd.info	# Installed by devel/gdb
+	@rm ${PREFIX}/info/bfd.info
 	@rm -rf ${PREFIX}/*-unknown-openbsd${OSREV}
 
 .include <bsd.port.mk>
