@@ -1,3 +1,5 @@
+BROKEN-riscv64=	fails to link to libpython on riscv64
+
 COMMENT=	concrete syntax tree with AST-like properties for Python
 
 MODPY_DISTV=	1.6.0
