@@ -1,0 +1,18 @@
+Fix duplicate symbols issues.
+
+Index: src/pet/pet-stubs.c
+--- src/pet/pet-stubs.c.orig
++++ src/pet/pet-stubs.c
+@@ -163,11 +163,4 @@ int parallel_cable_cpu_resources_init(void)
+ {
+     return -1;
+ }
+-int rsuser_cmdline_options_init(void)
+-{
+-    return -1;
+-}
+-int rsuser_resources_init(void)
+-{
+-    return -1;
+-}
++

@@ -15,7 +15,7 @@ Index: configure.ac
  VICE_LDFLAGS=""
  
  dnl Avoid "ar: `u' modifier ignored since `D' is the default (see `U')" warning
-@@ -2186,8 +2183,6 @@ if test x"$is_unix_x11" = "xyes" -o x"$is_unix_macosx"
+@@ -2224,8 +2221,6 @@ if test x"$is_unix_x11" = "xyes" -o x"$is_unix_macosx"
                                           LIBS="-lsocket $LIBS"],,)
      AC_CHECK_LIB(bsd, gethostbyname,[ NETPLAY_LIBS="-lbsd $NETPLAY_LIBS";
                                        LIBS="-lbsd $LIBS"],,)
@@ -24,7 +24,7 @@ Index: configure.ac
      AC_CHECK_LIB(inet, gethostbyname,[ NETPLAY_LIBS="-linet $NETPLAY_LIBS";
                                         LIBS="-linet $LIBS"],,)
  
-@@ -2675,12 +2670,7 @@ if test x"$with_lame" = "xyes" ; then
+@@ -2713,12 +2708,7 @@ if test x"$with_lame" = "xyes" ; then
    CFLAGS="$old_CFLAGS"
  fi
  

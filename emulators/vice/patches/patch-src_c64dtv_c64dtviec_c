@@ -1,0 +1,17 @@
+Fix duplicate symbols issues.
+
+Index: src/c64dtv/c64dtviec.c
+--- src/c64dtv/c64dtviec.c.orig
++++ src/c64dtv/c64dtviec.c
+@@ -113,11 +113,3 @@ void plus4tcbm_update_pc(uint8_t byte, unsigned int dn
+ {
+ }
+ 
+-void parallel_cable_drive_write(int port, uint8_t data, int handshake, unsigned int dnr)
+-{
+-}
+-
+-uint8_t parallel_cable_drive_read(int port, int handshake)
+-{
+-    return 0;
+-}

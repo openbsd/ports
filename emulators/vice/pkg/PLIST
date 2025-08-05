@@ -47,6 +47,7 @@ share/vice/C128/kernalfi
 share/vice/C128/kernalfr
 share/vice/C128/kernalit
 share/vice/C128/kernalno
+share/vice/C128/lemon64.vpl
 share/vice/C128/palette.vpl
 share/vice/C128/palette_6569R1_v1r.vpl
 share/vice/C128/palette_6569R5_v1r.vpl
@@ -95,6 +96,7 @@ share/vice/C64/kernal-901227-02.bin
 share/vice/C64/kernal-901227-03.bin
 share/vice/C64/kernal-901246-01.bin
 share/vice/C64/kernal-906145-02.bin
+share/vice/C64/lemon64.vpl
 share/vice/C64/palette.vpl
 share/vice/C64/palette_6569R1_v1r.vpl
 share/vice/C64/palette_6569R5_v1r.vpl
@@ -110,8 +112,10 @@ share/vice/C64/pepto-palold.vpl
 share/vice/C64/pixcen.vpl
 share/vice/C64/ptoing.vpl
 share/vice/C64/rgb.vpl
+share/vice/C64/sdl_joymap_keyrah_v3.vjm
 share/vice/C64/sdl_joymap_ps3.vjm
 share/vice/C64/sdl_joymap_thec64.vjm
+share/vice/C64/sdl_joymap_xbox360.vjm
 share/vice/C64/sdl_keyrah.vkm
 share/vice/C64/sdl_keyrah_combian.vkm
 share/vice/C64/sdl_keyrah_de.vkm
@@ -326,6 +330,7 @@ share/vice/SCPU64/deekay.vpl
 share/vice/SCPU64/default.vrs
 share/vice/SCPU64/frodo.vpl
 share/vice/SCPU64/godot.vpl
+share/vice/SCPU64/lemon64.vpl
 share/vice/SCPU64/palette.vpl
 share/vice/SCPU64/palette_6569R1_v1r.vpl
 share/vice/SCPU64/palette_6569R5_v1r.vpl
@@ -378,10 +383,13 @@ share/vice/VIC20/kernal.901486-07.bin
 share/vice/VIC20/mike-ntsc.vpl
 share/vice/VIC20/mike-pal.vpl
 share/vice/VIC20/sdl_pos.vkm
+share/vice/VIC20/sdl_pos_de.vkm
 share/vice/VIC20/sdl_pos_fi.vkm
 share/vice/VIC20/sdl_pos_fr.vkm
+share/vice/VIC20/sdl_pos_uk.vkm
 share/vice/VIC20/sdl_sym.vkm
 share/vice/VIC20/sdl_sym_de.vkm
+share/vice/VIC20/sdl_sym_uk.vkm
 share/vice/VIC20/vice.vpl
 share/vice/common/
 share/vice/common/C128_1024.svg
@@ -423,6 +431,13 @@ share/vice/common/PET_256.svg
 share/vice/common/PET_32.png
 share/vice/common/PET_48.png
 share/vice/common/PET_64.png
+share/vice/common/PetMe.ttf
+share/vice/common/PetMe128.ttf
+share/vice/common/PetMe1282Y.ttf
+share/vice/common/PetMe2X.ttf
+share/vice/common/PetMe2Y.ttf
+share/vice/common/PetMe64.ttf
+share/vice/common/PetMe642Y.ttf
 share/vice/common/Plus4_1024.svg
 share/vice/common/Plus4_16.png
 share/vice/common/Plus4_24.png

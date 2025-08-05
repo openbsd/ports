@@ -1,0 +1,17 @@
+Fix duplicate symbols issues.
+
+Index: src/cbm2/cbm2-stubs.c
+--- src/cbm2/cbm2-stubs.c.orig
++++ src/cbm2/cbm2-stubs.c
+@@ -71,11 +71,3 @@ int parallel_cable_cpu_resources_init(void)
+     return -1;
+ }
+ 
+-int rsuser_cmdline_options_init(void)
+-{
+-    return -1;
+-}
+-int rsuser_resources_init(void)
+-{
+-    return -1;
+-}

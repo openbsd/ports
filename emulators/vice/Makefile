@@ -1,6 +1,6 @@
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-3.8
+DISTNAME =		vice-3.9
 
 CATEGORIES =		emulators
 
