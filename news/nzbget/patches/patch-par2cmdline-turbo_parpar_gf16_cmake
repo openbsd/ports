@@ -1,0 +1,14 @@
+Forcefully disable RVV code on riscv64.
+
+Index: par2cmdline-turbo/parpar/gf16.cmake
+--- par2cmdline-turbo/parpar/gf16.cmake.orig
++++ par2cmdline-turbo/parpar/gf16.cmake
+@@ -165,7 +165,7 @@ if(NOT MSVC OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+     
+     if(IS_RISCV64)
+         CHECK_CXX_COMPILER_FLAG("-march=rv64gcv" COMPILER_SUPPORTS_RVV)
+-        if(COMPILER_SUPPORTS_RVV)
++        if(FALSE)
+             set_source_files_properties(${LIB_DIR}/gf_add_rvv.c PROPERTIES COMPILE_OPTIONS -march=rv64gcv)
+             set_source_files_properties(${LIB_DIR}/gf16_cksum_rvv.c PROPERTIES COMPILE_OPTIONS -march=rv64gcv)
+             set_source_files_properties(${LIB_DIR}/gf16_shuffle128_rvv.c PROPERTIES COMPILE_OPTIONS -march=rv64gcv)
