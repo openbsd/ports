@@ -2,8 +2,8 @@
 | Running ${PKGSTEM} on OpenBSD
 +------------------------------------------------------------------------------
 
-CDE Configuration
-=================
+Configuring CDE
+===============
 
 Entries for your hostname (NOT just localhost) must be registered in /etc/hosts.
 e.g.,
@@ -11,7 +11,7 @@ e.g.,
 
 Then configure /etc/inetd.conf:
     # cat <<'EOF' >>/etc/inetd.conf
-dtspcd		stream	tcp	nowait	root	${TRUEPREFIX}/bin/dtspcd		dtspcd
+dtspc		stream	tcp	nowait	root	${TRUEPREFIX}/bin/dtspcd		dtspcd
 cmsd/2-5	dgram	rpc/udp	wait	root	${TRUEPREFIX}/bin/rpc.cmsd		rpc.cmsd
 ttdbserver/1	stream	rpc/tcp	wait	root	${TRUEPREFIX}/bin/rpc.ttdbserver	rpc.ttdbserver
 EOF

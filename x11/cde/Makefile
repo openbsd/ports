@@ -65,6 +65,8 @@ RUN_DEPENDS +=		shells/ksh93
 CONFIGURE_ENV +=	ac_cv_path_KSH=${LOCALBASE}/bin/ksh93
 
 CONFIGURE_ARGS=		--with-tcl=${MODTCL_LIBDIR} \
+			--with-utmp-file=/var/run/utmp \
+			--with-wtmp-file=/var/log/wtmp \
 			--enable-german \
 			--enable-italian \
 			--enable-french \
