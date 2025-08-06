@@ -1,18 +1,40 @@
-QNetworkInformation::Reachability is not available on OpenBSD, stop using it
-and fallback to the default one.
+Check if QNetworkInformation::loadBackendByFeatures is successful otherwise
+avoid nullptr access
 
 Index: src/agentbase/agentbase.cpp
 --- src/agentbase/agentbase.cpp.orig
 +++ src/agentbase/agentbase.cpp
-@@ -901,7 +901,10 @@ void AgentBase::setNeedsNetwork(bool needsNetwork)
+@@ -720,7 +720,7 @@ void AgentBasePrivate::slotNetworkStatusChange(bool is
+ 
+ void AgentBasePrivate::slotResumedFromSuspend()
+ {
+-    if (mNeedsNetwork) {
++    if (mNeedsNetwork && QNetworkInformation::instance()) {
+         slotNetworkStatusChange(QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online);
+     }
+ }
+@@ -901,10 +901,11 @@ void AgentBase::setNeedsNetwork(bool needsNetwork)
      }
  
      d->mNeedsNetwork = needsNetwork;
 -    QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability);
-+    if (!QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability)) {
-+         // Fallback
-+         QNetworkInformation::loadDefaultBackend();
+-    connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, [d](auto reachability) {
+-        d->slotNetworkStatusChange(reachability == QNetworkInformation::Reachability::Online);
+-    });
++    if (QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability)) {
++         connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, [d](auto reachability) {
++                 d->slotNetworkStatusChange(reachability == QNetworkInformation::Reachability::Online);
++                 });
 +    }
-     connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, [d](auto reachability) {
-         d->slotNetworkStatusChange(reachability == QNetworkInformation::Reachability::Online);
-     });
+ }
+ 
+ void AgentBase::setOnline(bool state)
+@@ -947,7 +948,7 @@ void AgentBase::setTemporaryOffline(int makeOnlineInSe
+ void AgentBase::setOnlineInternal(bool state)
+ {
+     Q_D(AgentBase);
+-    if (state && d->mNeedsNetwork) {
++    if (state && d->mNeedsNetwork && QNetworkInformation::instance()) {
+         if (QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
+             // Don't go online if the resource needs network but there is none
+             state = false;

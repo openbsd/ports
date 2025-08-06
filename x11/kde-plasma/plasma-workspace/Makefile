@@ -1,6 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  colorcorrect              1.0 # 0.0
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0

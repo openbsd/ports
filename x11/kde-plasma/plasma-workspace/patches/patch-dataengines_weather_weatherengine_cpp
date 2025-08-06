@@ -4,15 +4,43 @@ and fallback to the default one.
 Index: dataengines/weather/weatherengine.cpp
 --- dataengines/weather/weatherengine.cpp.orig
 +++ dataengines/weather/weatherengine.cpp
-@@ -25,7 +25,10 @@ WeatherEngine::WeatherEngine(QObject *parent)
+@@ -25,8 +25,9 @@ WeatherEngine::WeatherEngine(QObject *parent)
      // Globally notify all plugins to remove their sources (and unload plugin)
      connect(this, &Plasma5Support::DataEngine::sourceRemoved, this, &WeatherEngine::removeIonSource);
  
 -    QNetworkInformation::load(QNetworkInformation::Feature::Reachability);
-+    if (!QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability)) {
-+         // Fallback
-+         QNetworkInformation::loadDefaultBackend();
+-    connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, &WeatherEngine::onOnlineStateChanged);
++    if (QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability)) {
++         connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, &WeatherEngine::onOnlineStateChanged);
 +    }
-     connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, &WeatherEngine::onOnlineStateChanged);
  
      // Get the list of available plugins but don't load them
+     connect(KSycoca::self(), &KSycoca::databaseChanged, this, &WeatherEngine::updateIonList);
+@@ -124,8 +125,11 @@ bool WeatherEngine::sourceRequestEvent(const QString &
+     // is down. when it comes up again, then it will be refreshed
+     ion->connectSource(source, this);
+ 
+-    qCDebug(WEATHER) << "sourceRequestEvent(): Network is: " << QNetworkInformation::instance()->reachability();
+-    if (QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
++    if (QNetworkInformation::instance())
++        qCDebug(WEATHER) << "sourceRequestEvent(): Network is: " << QNetworkInformation::instance()->reachability();
++
++    if (QNetworkInformation::instance() &&
++        QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
+         setData(source, Data());
+         return true;
+     }
+@@ -143,8 +147,11 @@ bool WeatherEngine::sourceRequestEvent(const QString &
+  */
+ bool WeatherEngine::updateSourceEvent(const QString &source)
+ {
+-    qCDebug(WEATHER) << "updateSourceEvent(): Network is: " << QNetworkInformation::instance()->reachability();
+-    if (QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
++    if (QNetworkInformation::instance())
++        qCDebug(WEATHER) << "updateSourceEvent(): Network is: " << QNetworkInformation::instance()->reachability();
++
++    if (QNetworkInformation::instance() &&
++        QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
+         return false;
+     }
+ 
