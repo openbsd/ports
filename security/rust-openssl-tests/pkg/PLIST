@@ -12532,6 +12532,7 @@ share/rust-openssl-tests/openssl-sys/src/bio.rs
 share/rust-openssl-tests/openssl-sys/src/bn.rs
 share/rust-openssl-tests/openssl-sys/src/cms.rs
 share/rust-openssl-tests/openssl-sys/src/crypto.rs
+share/rust-openssl-tests/openssl-sys/src/dh.rs
 share/rust-openssl-tests/openssl-sys/src/dsa.rs
 share/rust-openssl-tests/openssl-sys/src/dtls1.rs
 share/rust-openssl-tests/openssl-sys/src/ec.rs
