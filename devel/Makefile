@@ -55,6 +55,7 @@
      SUBDIR += boost
      SUBDIR += boxed-cpp
      SUBDIR += bpython
+     SUBDIR += bstring
      SUBDIR += bullet
      SUBDIR += c2ffi
      SUBDIR += cabal-bundler
