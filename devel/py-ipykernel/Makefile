@@ -1,6 +1,6 @@
 COMMENT =		IPython kernel for Jupyter
 
-MODPY_DISTV =		6.30.0
+MODPY_DISTV =		6.30.1
 DISTNAME =		ipykernel-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
