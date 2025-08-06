@@ -233,7 +233,7 @@ MODGO_MODULES =	\
 	google.golang.org/appengine					 v1.6.7 \
 	google.golang.org/genproto					 v0.0.0-20210630183607-d20f26d13c79 \
 	google.golang.org/grpc						 v1.44.0 \
-	google.golang.org/protobuf					 v1.30.0 \
+	google.golang.org/protobuf					 v1.33.0 \
 	gopkg.in/check.v1						 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/ini.v1							 v1.51.0 \
 	gopkg.in/square/go-jose.v2					 v2.3.1 \
@@ -343,7 +343,6 @@ MODGO_MODFILES =	\
 	golang.org/x/xerrors			 v0.0.0-20191011141410-1b5146add898 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	golang.org/x/xerrors			 v0.0.0-20200804184101-5ec99f83aff1 \
-	google.golang.org/protobuf		 v1.26.0-rc.1 \
 	google.golang.org/protobuf		 v1.27.1 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v2			 v2.2.2 \

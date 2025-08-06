@@ -1,6 +1,6 @@
 COMMENT =	CLI to query influxdb v2 databases
 
-MODGO_VERSION=	v2.7.3
+MODGO_VERSION=	v2.7.5
 MODGO_MODNAME=	github.com/influxdata/influx-cli/v2
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	influx-cli

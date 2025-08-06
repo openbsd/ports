@@ -567,10 +567,9 @@ SHA256 (go_modules/google.golang.org/genproto/@v/v0.0.0-20210630183607-d20f26d13
 SHA256 (go_modules/google.golang.org/genproto/@v/v0.0.0-20210630183607-d20f26d13c79.zip) = LFI1yYDLGdgDB8RAApOIFXAN/G7tshLk3pvn4W+CXlk=
 SHA256 (go_modules/google.golang.org/grpc/@v/v1.44.0.mod) = wBLCX+IQ7a8GcSWbly0F2aW3mU6aUnMax7FLIyaamS0=
 SHA256 (go_modules/google.golang.org/grpc/@v/v1.44.0.zip) = e8lT6UAzZMQh927ElWzK4QcYR7u7/mHE7LEbCy/RNqk=
-SHA256 (go_modules/google.golang.org/protobuf/@v/v1.26.0-rc.1.mod) = ssT+Gmb/W+brfAxTiPCA0IghwyesXPl13uUdiw+0np8=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.27.1.mod) = COwuIPOO/LZRRigABp7OSJHiUqJhAH+p1aGxV/UW7l8=
-SHA256 (go_modules/google.golang.org/protobuf/@v/v1.30.0.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
-SHA256 (go_modules/google.golang.org/protobuf/@v/v1.30.0.zip) = j7g7TW6JjHWo0wXdRtRruXXQp+urHgBCrN8l4yc9UOQ=
+SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 0QBqpYC5zHyvLh+hwgBeOauHM8Qc5oUcH7wX+YBY5Vw=
+SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = LMHJjhKQMAm9S/DV6TikIcoviK6HsPxQAEssdZix/SQ=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.zip) = AEU3yxnb5FlU7BYF8zFwX2aFzMJn7d1CicHrJ1E6uBc=
@@ -588,7 +587,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.3.0.mod) = 48EubyIXCmVaLyb8f9sOq8zk+edJeDM+KeufRACQi3E=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.4.3.mod) = IzCGio9Jb2MGa5JWVqegfK+ghXaM0KRpHe33a8eqWdw=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.4.3.zip) = vdIWSQc3ts0P4mVfV0QVYGE29WAzzJ+VydB3wCJ6pxw=
-SHA256 (influx-cli-2.7.3.zip) = K0xdnBZRMo5z9B0k10hlI6ttS5Z803bbwza2LByD9aQ=
+SHA256 (influx-cli-2.7.5.zip) = INZq6qSBOOM3Ii/IMWYxFnxewgKscAkJQVYJYpgdYbs=
 SIZE (go_modules/cloud.google.com/go/@v/v0.82.0.mod) = 734
 SIZE (go_modules/cloud.google.com/go/@v/v0.82.0.zip) = 2321642
 SIZE (go_modules/cloud.google.com/go/bigquery/@v/v1.8.0.mod) = 639
@@ -1158,10 +1157,9 @@ SIZE (go_modules/google.golang.org/genproto/@v/v0.0.0-20210630183607-d20f26d13c7
 SIZE (go_modules/google.golang.org/genproto/@v/v0.0.0-20210630183607-d20f26d13c79.zip) = 12655820
 SIZE (go_modules/google.golang.org/grpc/@v/v1.44.0.mod) = 705
 SIZE (go_modules/google.golang.org/grpc/@v/v1.44.0.zip) = 1755026
-SIZE (go_modules/google.golang.org/protobuf/@v/v1.26.0-rc.1.mod) = 83
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.27.1.mod) = 123
-SIZE (go_modules/google.golang.org/protobuf/@v/v1.30.0.mod) = 124
-SIZE (go_modules/google.golang.org/protobuf/@v/v1.30.0.zip) = 1599051
+SIZE (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 201
+SIZE (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = 1813552
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 25
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.mod) = 25
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20190902080502-41f04d3bba15.zip) = 41481
@@ -1179,4 +1177,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.3.0.mod) = 411
 SIZE (go_modules/honnef.co/go/tools/@v/v0.4.3.mod) = 274
 SIZE (go_modules/honnef.co/go/tools/@v/v0.4.3.zip) = 783548
-SIZE (influx-cli-2.7.3.zip) = 861128
+SIZE (influx-cli-2.7.5.zip) = 862738
