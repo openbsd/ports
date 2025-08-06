@@ -97,8 +97,6 @@
 @man man/man1/jj-workspace-update-stale.1
 @man man/man1/jj-workspace.1
 @man man/man1/jj.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/jj
 share/fish/vendor_completions.d/jj.fish
 share/zsh/site-functions/_jj
