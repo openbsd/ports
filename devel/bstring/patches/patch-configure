@@ -1,0 +1,42 @@
+undefined symbol to libc functions.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15054,36 +15054,7 @@ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+ 
+ _ax_ldflags=$LDFLAGS
+-LDFLAGS="-Wl,--no-undefined $LDFLAGS"
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if linker accepts '-Wl,--no-undefined'" >&5
+-printf %s "checking if linker accepts '-Wl,--no-undefined'... " >&6; }
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-int main(int,char**){return 0;}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"
+-then :
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
+ 	     LDFLAGS=$_ax_ldflags
+-	     case " $LDFLAGS " in #(
+-  *[\ \	]-Wl,--no-undefined[\ \	]*) :
+-     ;; #(
+-  *) :
+-    LDFLAGS="$LDFLAGS -Wl,--no-undefined" ;; #(
+-  *) :
+-     ;;
+-esac
+-
+-else case e in #(
+-  e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-	     LDFLAGS=$_ax_ldflags
+-	      ;;
+-esac
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
+-    conftest$ac_exeext conftest.$ac_ext
+ 
+ 
+ # Libtool versioning

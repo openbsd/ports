@@ -1,0 +1,7 @@
+The bstring library is an attempt to provide improved string processing
+functionality to the C language. At the heart of the bstring library (Bstrlib
+for short) is the management of bstrings which are a significant improvement
+over NULL terminated char buffers.
+
+This is a fork of Paul Hsieh's Better String Library:
+https://bstring.sourceforge.net/
