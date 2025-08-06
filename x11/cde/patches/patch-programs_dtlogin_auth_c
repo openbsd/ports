@@ -1,0 +1,71 @@
+Index: programs/dtlogin/auth.c
+--- programs/dtlogin/auth.c.orig
++++ programs/dtlogin/auth.c
+@@ -328,6 +328,24 @@ CleanUpFileName (char *src, char *dst, int len)
+ static char authdir1[] = "authdir";
+ static char authdir2[] = "authfiles";
+ 
++static uid_t
++x11uid (void)
++{
++    uid_t authuid = getuid(); 
++
++#if defined __OpenBSD__
++    struct passwd *x11;
++    x11 = getpwnam("_x11");
++    if (x11 == NULL) {
++        Debug ("Can't find _x11 user\n");
++    } else {
++        authuid = x11->pw_uid;
++    }
++#endif
++
++    return authuid;
++}    
++
+ static int
+ MakeServerAuthFile (struct display *d)
+ {
+@@ -340,6 +358,7 @@ MakeServerAuthFile (struct display *d)
+     char    cleanname[NAMELEN];
+     int r;
+     struct stat	statb;
++    uid_t x11 = x11uid();
+ 
+     if (d->clientAuthFile && *d->clientAuthFile)
+ 	len = strlen (d->clientAuthFile) + 1;
+@@ -361,8 +380,8 @@ MakeServerAuthFile (struct display *d)
+ 	sprintf (d->authFile, "%s/%s", authDir, authdir1);
+ 	r = stat(d->authFile, &statb);
+ 	if (r == 0) {
+-	    if (statb.st_uid != 0) {
+-		if(-1 == chown(d->authFile, 0, statb.st_gid)) {
++	    if (statb.st_uid != x11) {
++		if(-1 == chown(d->authFile, x11, statb.st_gid)) {
+                     perror(strerror(errno));
+                     return FALSE;
+                 }
+@@ -376,6 +395,7 @@ MakeServerAuthFile (struct display *d)
+ 	} else {
+ 	    if (errno == ENOENT)
+ 		r = mkdir(d->authFile, 0700);
++		chown (d->authFile, x11, -1);
+ 	    if (r < 0) {
+ 		free (d->authFile);
+ 		d->authFile = NULL;
+@@ -384,6 +404,7 @@ MakeServerAuthFile (struct display *d)
+ 	}
+ 	sprintf (d->authFile, "%s/%s/%s", authDir, authdir1, authdir2);
+ 	r = mkdir(d->authFile, 0700);
++	chown (d->authFile, x11, -1);
+ 	if (r < 0  &&  errno != EEXIST) {
+ 	    free (d->authFile);
+ 	    d->authFile = NULL;
+@@ -442,6 +463,7 @@ SaveServerAuthorizations (struct display *d, Xauth **a
+ 		}
+     	}
+ 	fclose (auth_file);
++	chown (d->authFile, x11uid(), -1);
+     }
+     return ret;
+ }
