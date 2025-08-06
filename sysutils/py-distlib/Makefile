@@ -18,7 +18,6 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 # various networks tests fail with PORTS_PRIVSEP
-MODPY_PYTEST=	Yes
 PORTHOME=	${WRKDIR}
 
 .include <bsd.port.mk>
