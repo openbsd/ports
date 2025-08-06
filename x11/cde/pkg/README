@@ -2,8 +2,8 @@
 | Running ${PKGSTEM} on OpenBSD
 +------------------------------------------------------------------------------
 
-Configuring CDE
-===============
+System Configuration
+====================
 
 Entries for your hostname (NOT just localhost) must be registered in /etc/hosts.
 e.g.,
@@ -13,25 +13,46 @@ Then configure /etc/inetd.conf:
     # cat <<'EOF' >>/etc/inetd.conf
 dtspc		stream	tcp	nowait	root	${TRUEPREFIX}/bin/dtspcd		dtspcd
 cmsd/2-5	dgram	rpc/udp	wait	root	${TRUEPREFIX}/bin/rpc.cmsd		rpc.cmsd
-ttdbserver/1	stream	rpc/tcp	wait	root	${TRUEPREFIX}/bin/rpc.ttdbserver	rpc.ttdbserver
+# only enable if CDE messaging nor file-name mapping is required which should
+# not be the case on OpenBSD
+#ttdbserver/1	stream	rpc/tcp	wait	root	${TRUEPREFIX}/bin/rpc.ttdbserver	rpc.ttdbserver
 EOF
 
 Most configuration files can be found under ${TRUEPREFIX}/config and will be
 overwritten by subsequent updates. To change a configuration, its file must be
 copied to ${SYSCONFDIR}/dt/config for edition.
 
-Running CDE
-===========
-
 portmap(8) and inetd(8) must be enabled and running:
     # rcctl enable portmap inetd && rcctl start portmap inetd
 
-The easiest way to login and start CDE is by using xenodm(1):
+Starting the Common Desktop Environment
+=======================================
+
+The prefered way to login and start CDE is by using xenodm(1):
     # rcctl enable xenodm && rcctl start xenodm
-Create the following link for your user before logging in:
-    $ ln -s /usr/local/dt/bin/Xsession ~/.xsession
+Then configure .xsession for you user:
+    $ echo "${TRUEPREFIX}/dt/bin/Xsession" >>~/.xsession
+
+Alternatively, you can use startx(1) from the glass console:
+    $ startx ${TRUEPREFIX}/dt/bin/Xsession
+or
+    $ echo "${TRUEPREFIX}/dt/bin/Xsession" >>~/.xinitrc
+    $ startx
+
+The CDE login service is also provided as another alternative:
+    # rcctl enable dtlogin && rcctl start dtlogin
+
+User Configuration
+==================
 
 To cope with the non default installation PREFIX, add the following to your
 shell profile:
 export PATH=${PATH}:${TRUEPREFIX}/bin
 export MANPATH=:${TRUEPREFIX}/man
+
+To automatically source your .profile when opening a terminal in CDE, uncomment
+the last line in your user's .dtprofile file:
+DTSOURCEPROFILE=true
+
+In this package, dtmail(1) execution is disabled: it's setgid "mail" and works
+with messages under /var/spool/messages which goes against OpenBSD defaults.
