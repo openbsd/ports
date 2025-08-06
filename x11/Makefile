@@ -36,6 +36,7 @@
      SUBDIR += bspwm
      SUBDIR += bwidget
      SUBDIR += byzi
+     SUBDIR += cde
      SUBDIR += cegui
      SUBDIR += chicago95-theme
      SUBDIR += clipmenu
