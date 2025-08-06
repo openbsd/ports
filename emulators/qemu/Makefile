@@ -39,6 +39,7 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/meson \
 		devel/ninja \
+		devel/py-distlib \
 		shells/bash \
 		textproc/py-sphinx \
 		textproc/py-sphinx_rtd_theme
