@@ -1,0 +1,14 @@
+Avoid explicit optimization overriding CXXFLAGS
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -620,7 +620,7 @@ if(NOT MSVC)
+   set(CMAKE_CXX_FLAGS_DEBUG
+       "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -DDEBUG -Wall ${M32_FLAG} ${CXX_EXTRA}")
+   set(CMAKE_CXX_FLAGS_RELEASE
+-      "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG ${M32_FLAG} ${CXX_EXTRA}")
++      "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG ${M32_FLAG} ${CXX_EXTRA}")
+   if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang$" AND CMAKE_LTO)
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -flto=${CMAKE_LTO}")
+   elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_LTO)

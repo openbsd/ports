@@ -1,0 +1,11 @@
+Index: src/include/duckdb/common/platform.hpp
+--- src/include/duckdb/common/platform.hpp.orig
++++ src/include/duckdb/common/platform.hpp
+@@ -19,7 +19,6 @@
+ #else
+ #if !defined(_GNU_SOURCE)
+ #define _GNU_SOURCE
+-#include <features.h>
+ #ifndef __USE_GNU
+ #define __MUSL__
+ #endif
