@@ -1,4 +1,5 @@
 @pkgpath devel/py-setuptools_scm,python3
+bin/setuptools-scm
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_DISTV}.dist-info/METADATA
@@ -18,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__main__
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_entrypoints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,6 +31,8 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_log.${M
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_modify_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_modify_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_node_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_node_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_overrides.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_overrides.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_run_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}version.
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 @comment lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}win_py31_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_cli.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_config.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_entrypoints.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/
@@ -90,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/setuptools.
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/toml.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_log.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_modify_version.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_node_utils.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_overrides.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_run_cmd.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_types.py
@@ -100,5 +107,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/git.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/hg.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/hg_git.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/integration.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/py.typed
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/scm_workdir.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/version.py

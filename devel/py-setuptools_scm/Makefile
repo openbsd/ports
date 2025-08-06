@@ -1,10 +1,9 @@
 COMMENT=	plugin to manage your versions by scm tags
 
-MODPY_DISTV=	8.3.1
+MODPY_DISTV=	9.0.2
 DISTNAME=	setuptools_scm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -23,7 +22,8 @@ PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/git \
 		devel/mercurial \
-		devel/py-pip
+		devel/py-pip \
+		devel/py-test-timeout
 
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
