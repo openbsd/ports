@@ -1,6 +1,6 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.2.4
+V=			4.3.0
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
@@ -17,8 +17,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common c crack db event_core gcrypt
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv iniparser rpcsvc
+WANTLIB += avahi-client avahi-common bstring c crack db event_core
+WANTLIB += gcrypt gio-2.0 glib-2.0 gobject-2.0 iconv iniparser
+WANTLIB += rpcsvc
 
 SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
@@ -33,6 +34,7 @@ BUILD_DEPENDS=		textproc/pandoc
 BUILD_DEPENDS +=	textproc/unicode/ucd
 
 LIB_DEPENDS=		databases/db/v4 \
+			devel/bstring \
 			devel/glib2 \
 			devel/iniparser \
 			devel/libevent2 \
@@ -46,7 +48,7 @@ RUN_DEPENDS=		net/avahi
 RUN_DEPENDS +=		net/p5-Net-DBus
 
 CONFIGURE_ARGS=		-Dwith-acls=false \
-			-Dwith-cnid-mysql-backend=false \
+			-Dwith-cnid-backends=dbd,last \
 			-Dwith-dtrace=false \
 			-Dwith-gssapi=false \
 			-Dwith-kerberos=false \
@@ -60,7 +62,7 @@ CONFIGURE_ARGS=		-Dwith-acls=false \
 			-Dwith-init-hooks=false \
 			-Dwith-docs=man
 
-# needs x11/gnome/tracker3
+# needs x11/gnome/localsearch
 CONFIGURE_ARGS +=	-Dwith-spotlight=false
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
