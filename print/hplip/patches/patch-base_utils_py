@@ -175,7 +175,7 @@ Index: base/utils.py
  
      log.debug("Requied groups list =[%s]"%exp_grp_list)
  
-@@ -2664,6 +2661,8 @@ def readAuthType():
+@@ -2665,6 +2662,8 @@ def readAuthType():
              authType = 'sudo'
          else:
              authType = 'su'

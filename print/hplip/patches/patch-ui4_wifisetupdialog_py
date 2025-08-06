@@ -12,7 +12,7 @@ Index: ui4/wifisetupdialog.py
  
                  if self.dev is not None:
                      self.dev.close()
-@@ -929,7 +929,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+@@ -933,7 +933,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
  
  
      def showIOError(self, e):
