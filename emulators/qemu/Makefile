@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 riscv64
 DPB_PROPERTIES=	parallel
 
 USE_NOBTCFI=	Yes
