@@ -5,6 +5,7 @@
      SUBDIR += bbolt
      SUBDIR += citus
      SUBDIR += db
+     SUBDIR += duckdb
      SUBDIR += evolution-data-server
      SUBDIR += freetds
      SUBDIR += futuresql
