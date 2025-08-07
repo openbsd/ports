@@ -30,7 +30,7 @@ DIST_SUBDIR ?=		libgdx
 # C++
 COMPILER ?=		base-clang ports-gcc base-gcc
 MODULES ?=		java
-MODJAVA_VER ?=		1.8
+MODJAVA_VER ?=		11
 MODJAVA_BUILD ?=	ant
 MODJAVA_BUILD_FILE ?=	build-linux64.xml
 BUILD_DEPENDS ?=	devel/apache-ant \
