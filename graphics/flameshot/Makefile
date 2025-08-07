@@ -3,8 +3,7 @@ CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	flameshot-org
 GH_PROJECT =	flameshot
-GH_TAGNAME =	v12.1.0
-REVISION =	0
+GH_TAGNAME =	v13.0.1
 
 HOMEPAGE =	https://flameshot.org/
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
@@ -23,7 +22,8 @@ LIB_DEPENDS =	x11/qt5/qtsvg
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-CONFIGURE_ARGS +=	-DENABLE_CACHE=OFF
+CONFIGURE_ARGS +=	-DENABLE_CACHE=OFF \
+			-Wno-dev
 
 NO_TEST =	Yes
 
