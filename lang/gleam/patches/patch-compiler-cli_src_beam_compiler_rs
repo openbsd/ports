@@ -1,16 +1,26 @@
 Index: compiler-cli/src/beam_compiler.rs
 --- compiler-cli/src/beam_compiler.rs.orig
 +++ compiler-cli/src/beam_compiler.rs
-@@ -59,7 +59,7 @@ impl BeamCompiler {
+@@ -1,8 +1,7 @@
+ use gleam_core::{
+-    Result,
+     error::{Error, ShellCommandFailureReason},
+     io::{FileSystemWriter, Stdio},
+-    paths,
++    paths, Result,
+ };
+ 
+ use crate::fs::get_os;
+@@ -59,7 +58,7 @@ impl BeamCompiler {
          tracing::debug!(args=?args, "call_beam_compiler");
  
-         writeln!(inner.stdin, "{}.", args).map_err(|e| Error::ShellCommand {
+         writeln!(inner.stdin, "{args}.").map_err(|e| Error::ShellCommand {
 -            program: "escript".into(),
 +            program: "escript${MODERL_VERSION}".into(),
              reason: ShellCommandFailureReason::IoError(e.kind()),
          })?;
  
-@@ -73,7 +73,7 @@ impl BeamCompiler {
+@@ -73,7 +72,7 @@ impl BeamCompiler {
                  }
                  "gleam-compile-result-error" => {
                      return Err(Error::ShellCommand {
@@ -19,7 +29,7 @@ Index: compiler-cli/src/beam_compiler.rs
                          reason: ShellCommandFailureReason::Unknown,
                      });
                  }
-@@ -93,7 +93,7 @@ impl BeamCompiler {
+@@ -93,7 +92,7 @@ impl BeamCompiler {
  
          // if we get here, stdout got closed before we got an "ok" or "err".
          Err(Error::ShellCommand {
@@ -28,7 +38,7 @@ Index: compiler-cli/src/beam_compiler.rs
              reason: ShellCommandFailureReason::Unknown,
          })
      }
-@@ -112,18 +112,18 @@ impl BeamCompiler {
+@@ -112,18 +111,18 @@ impl BeamCompiler {
  
          tracing::trace!(escript_path=?escript_path, "spawn_beam_compiler");
  
