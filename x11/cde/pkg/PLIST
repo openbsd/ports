@@ -1,5 +1,5 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/calendar
-@extraunexec rm -rf ${LOCALSTATEDIR}/dt
+@extraunexec rm -rf ${LOCALSTATEDIR}/dt/*
 @rcscript ${RCDIR}/dtlogin
 app-defaults/
 app-defaults/C/
@@ -6855,6 +6855,7 @@ share/palettes/desc.it_IT.UTF-8
 share/terminfo/
 share/terminfo/d/
 share/terminfo/d/dtterm
+@sample ${LOCALSTATEDIR}/dt/
 @sample ${SYSCONFDIR}/dt/
 @sample ${SYSCONFDIR}/dt/config/
 @cwd ${LOCALBASE}
