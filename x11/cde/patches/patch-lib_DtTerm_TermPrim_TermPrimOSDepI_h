@@ -1,0 +1,14 @@
+Index: lib/DtTerm/TermPrim/TermPrimOSDepI.h
+--- lib/DtTerm/TermPrim/TermPrimOSDepI.h.orig
++++ lib/DtTerm/TermPrim/TermPrimOSDepI.h
+@@ -70,6 +70,10 @@
+ # define USE_TCSENDBREAK	/* use tiocbreak()		*/
+ #endif /* LINUX */
+ 
++#ifdef  __OpenBSD__
++# define USE_TIOCCONS            /* use tioccons for -C          */
++#endif
++
+ #ifdef  CSRG_BASED
+ # define HAS_SETEUID             /* seteuid available            */
+ # define HAS_SETREUID            /* setreuid available           */

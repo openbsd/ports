@@ -6800,6 +6800,16 @@ share/doc/cde/README.md
 share/examples/
 share/examples/cde/
 @sample ${SYSCONFDIR}/cde/
+share/examples/cde/dt/
+@sample ${SYSCONFDIR}/dt/
+share/examples/cde/dt/config/
+@sample ${SYSCONFDIR}/dt/config/
+share/examples/cde/dt/config/C/
+@sample ${SYSCONFDIR}/dt/config/C/
+share/examples/cde/dt/config/C/Xresources.d/
+@sample ${SYSCONFDIR}/dt/config/C/Xresources.d/
+share/examples/cde/dt/config/C/Xresources.d/9999.session
+@sample ${SYSCONFDIR}/dt/config/C/Xresources.d/9999.session
 share/examples/cde/fontaliases/
 @sample ${SYSCONFDIR}/cde/fontaliases/
 share/examples/cde/fontaliases/fonts.alias
@@ -6856,7 +6866,5 @@ share/terminfo/
 share/terminfo/d/
 share/terminfo/d/dtterm
 @sample ${LOCALSTATEDIR}/dt/
-@sample ${SYSCONFDIR}/dt/
-@sample ${SYSCONFDIR}/dt/config/
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}

@@ -1,7 +1,7 @@
 COMMENT=		Common Desktop Environment
 
 DISTNAME=		cde-2.5.2.0.20250613
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -99,6 +99,10 @@ post-install:
 .for d in CONTRIBUTORS COPYING HISTORY README.md
 	mv ${PREFIX}/${d} ${PREFIX}/share/doc/cde/
 .endfor
+	${INSTALL_DATA_DIR} \
+		${PREFIX}/share/examples/cde/dt/config/C/Xresources.d
+	${INSTALL_DATA} ${FILESDIR}/9999.session \
+		${PREFIX}/share/examples/cde/dt/config/C/Xresources.d/
 
 # cde will create this
 	rm -rf ${WRKINST}/var/spool/calendar
