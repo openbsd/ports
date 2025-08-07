@@ -1,4 +1,4 @@
-https://gitlab.gnome.org/GNOME/glib/-/issues/3495
+https://gitlab.gnome.org/GNOME/glib/-/merge_requests/4731
 
 Index: gio/glocalfile.c
 --- gio/glocalfile.c.orig
