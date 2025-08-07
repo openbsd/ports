@@ -62,7 +62,7 @@ Key bindings for workspace switching
 
 This configuration will allow switching workspace using:
 - Ctrl+left|right to circulate over workspaces (e.g., Ctrl+right)
-- Windows|option+[1-4] to switch to a specific workspace (e.g., Windows+2)
+- Windows|command+[1-4] to switch to a specific workspace (e.g., Windows+2)
 
     $ cp ${PREFIX}/config/C/sys.dtwmrc ~/.dt/dtwmrc
 
