@@ -1,0 +1,16 @@
+Use a subset of ${PORTPATH} to prevent reference to build dir in dtlogin.
+
+Index: programs/dtlogin/Makefile.am
+--- programs/dtlogin/Makefile.am.orig
++++ programs/dtlogin/Makefile.am
+@@ -5,8 +5,8 @@ bin_PROGRAMS = dtlogin dtgreet dtchooser
+ XDMDIR = $(CDE_LOGFILES_TOP)
+ 
+ DEF_SERVER = $(XBINDIR)/X
+-DEF_USER_PATH = $(PATH):$(XBINDIR)
+-DEF_SYSTEM_PATH = $(PATH):$(XBINDIR)
++DEF_USER_PATH = /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:$(XBINDIR)
++DEF_SYSTEM_PATH = /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:$(XBINDIR)
+ 
+ DEF_BM_PATH = $(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B
+ DEF_PM_PATH = $(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/%L/%B:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_CONFIGURATION_TOP)/appconfig/icons/C/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/%L/%B:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.pm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B%M.bm:$(CDE_INSTALLATION_TOP)/appconfig/icons/C/%B

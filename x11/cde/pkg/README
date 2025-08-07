@@ -56,3 +56,20 @@ DTSOURCEPROFILE=true
 
 In this package, dtmail(1) execution is disabled: it's setgid "mail" and works
 with messages under /var/spool/messages which goes against OpenBSD defaults.
+
+Key bindings for workspace switching
+------------------------------------
+
+This configuration will allow switching workspace using:
+- Ctrl+left|right to circulate over workspaces (e.g., Ctrl+right)
+- Windows|option+[1-4] to switch to a specific workspace (e.g., Windows+2)
+
+    $ cp ${PREFIX}/config/C/sys.dtwmrc ~/.dt/dtwmrc
+
+Then add the following lines to the XXX section of ~/.dt/dtwmrc:
+    Ctrl<Key>Right root|window|icon f.next_workspace
+    Ctrl<Key>Left root|window|icon f.prev_workspace
+    Mod4<Key>1 root|window|icon f.goto_workspace "ws0"
+    Mod4<Key>2 root|window|icon f.goto_workspace "ws1"
+    Mod4<Key>3 root|window|icon f.goto_workspace "ws2"
+    Mod4<Key>4 root|window|icon f.goto_workspace "ws3"

@@ -1,7 +1,7 @@
 COMMENT=		Common Desktop Environment
 
 DISTNAME=		cde-2.5.2.0.20250613
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -88,7 +88,8 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl
+	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl \
+		${WRKSRC}/programs/dtlogin/Makefile.am
 
 pre-install:
 	mkdir -p ${PREFIX}/share/terminfo
