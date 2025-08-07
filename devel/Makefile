@@ -1933,6 +1933,7 @@
      SUBDIR += sdl2-net
      SUBDIR += sdl2-pango
      SUBDIR += sdl2-ttf
+     SUBDIR += sdl3
      SUBDIR += sdlmm
      SUBDIR += seergdb
      SUBDIR += selene
