@@ -1,10 +1,13 @@
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.48.0
+VERSION=		5.48.1
 DISTNAME=		maxima-${VERSION}
+
 CATEGORIES=		math
 
 HOMEPAGE=		https://maxima.sourceforge.net/
+
+MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
