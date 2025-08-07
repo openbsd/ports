@@ -59,7 +59,7 @@ AUTOMAKE_VERSION=	1.18
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
-# Our ksh(1) might be enought but considering the KSH found at configure time is
+# Our ksh(1) might be enough but considering the KSH found at configure time is
 # propagated to most installed scripts, let's not take any chances.
 BUILD_DEPENDS +=	shells/ksh93
 RUN_DEPENDS +=		shells/ksh93
