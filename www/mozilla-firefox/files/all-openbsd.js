@@ -10,4 +10,3 @@ pref("browser.newtabpage.enabled", false);
 pref("browser.startup.homepage", "about:blank");
 pref("network.trr.mode", 5);
 pref("media.webrtc.hw.h264.enabled", true);
-pref("dom.ipc.forkserver.enable", false);
