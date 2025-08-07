@@ -14,12 +14,13 @@ USE_NOEXECONLY =	Yes
 USE_NOBTCFI =		Yes
 
 GHC_VERSION =		9.8.3
+REVISION =		0
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		9.8.3.20250316
+BIN_VER =		9.8.3.20250724
 
 # lang/python needed to bootstrap hadrian.
 MODULES =		lang/python
