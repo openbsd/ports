@@ -1,0 +1,21 @@
+Index: gtk/gtkprintoperation-unix.c
+--- gtk/gtkprintoperation-unix.c.orig
++++ gtk/gtkprintoperation-unix.c
+@@ -210,7 +210,7 @@ has_flatpak (const char *app_id,
+   int status;
+ 
+   if (!g_spawn_sync (NULL,
+-                     (char **)(const char *[]) { "/usr/bin/flatpak", "info", app_id, branch, NULL },
++                     (char **)(const char *[]) { "${LOCALBASE}/bin/flatpak", "info", app_id, branch, NULL },
+                      NULL,
+                      G_SPAWN_DEFAULT,
+                      NULL, NULL,
+@@ -237,7 +237,7 @@ get_preview_command (GdkScreen *screen)
+           g_free (preview_cmd);
+           preview_cmd = g_strdup ("flatpak run --command=papers-previewer --file-forwarding org.gnome.Papers --print-settings @@ %s %f @@");
+         }
+-      else if (g_file_test ("/usr/bin/papers-previewer", G_FILE_TEST_IS_EXECUTABLE))
++      else if (g_file_test ("${LOCALBASE}/bin/papers-previewer", G_FILE_TEST_IS_EXECUTABLE))
+         {
+           g_free (preview_cmd);
+           preview_cmd = g_strdup ("papers-previewer --unlink-tempfile --print-settings %s %f");

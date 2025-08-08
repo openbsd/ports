@@ -6,15 +6,15 @@ COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		3.24.49
+GNOME_VERSION=		3.24.50
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gdk-3                     2201.1 # 0.2417.32
-SHARED_LIBS += gtk-3                     2201.0 # 0.2417.32
+SHARED_LIBS += gdk-3                     2201.1 # 0.2418.32
+SHARED_LIBS += gtk-3                     2201.0 # 0.2418.32
 SHARED_LIBS += gailutil-3                0.0 # 0.0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -81,6 +81,9 @@ CONFIGURE_ARGS=		-Dprint_backends="cups,file,lpr" \
 
 # !!! Disable colord until proven useful
 CONFIGURE_ARGS +=	-Dcolord=no
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/gtk/gtkprintoperation-unix.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+3
