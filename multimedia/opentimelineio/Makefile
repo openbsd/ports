@@ -2,6 +2,7 @@ COMMENT =	editorial timeline API and interchange format
 
 V =		0.17.0
 DISTNAME =	opentimelineio-${V}
+REVISION =	0
 
 DIST_TUPLE +=	github AcademySoftwareFoundation OpenTimelineIO v${V} .
 

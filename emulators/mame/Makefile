@@ -11,6 +11,7 @@ GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
 CATEGORIES =	emulators
+REVISION =	0
 
 HOMEPAGE =	https://mamedev.org/
 

@@ -1,7 +1,7 @@
 COMMENT=	chemistry file translation program
 
 V=		3.1.1
-REVISION=	4
+REVISION=	5
 DISTNAME=	openbabel-${V}
 
 CATEGORIES=	misc
