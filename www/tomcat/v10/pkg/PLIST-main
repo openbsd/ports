@@ -142,6 +142,7 @@ tomcat/webapps/host-manager/css/
 tomcat/webapps/host-manager/css/manager.css
 tomcat/webapps/host-manager/images/
 tomcat/webapps/host-manager/images/asf-logo.svg
+tomcat/webapps/host-manager/images/favicon.ico
 tomcat/webapps/host-manager/images/tomcat.svg
 tomcat/webapps/host-manager/index.jsp
 tomcat/webapps/manager/
@@ -162,6 +163,7 @@ tomcat/webapps/manager/css/
 tomcat/webapps/manager/css/manager.css
 tomcat/webapps/manager/images/
 tomcat/webapps/manager/images/asf-logo.svg
+tomcat/webapps/manager/images/favicon.ico
 tomcat/webapps/manager/images/tomcat.svg
 tomcat/webapps/manager/index.jsp
 tomcat/webapps/manager/status.xsd
