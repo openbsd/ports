@@ -21,7 +21,6 @@ lib/baresip/modules/
 @so lib/baresip/modules/ctrl_tcp.so
 @so lib/baresip/modules/debug_cmd.so
 @so lib/baresip/modules/dtls_srtp.so
-@so lib/baresip/modules/ebuacip.so
 @so lib/baresip/modules/echo.so
 @so lib/baresip/modules/fakevideo.so
 @so lib/baresip/modules/g711.so
