@@ -1,7 +1,7 @@
 COMMENT =		SVG/COLR-based open source emoji fonts
 
 MODFONT_FAMILY =	openmoji
-MODFONT_VERSION =	15.1.0
+MODFONT_VERSION =	16.0.0
 
 DIST_TUPLE =		github hfg-gmuend openmoji ${MODFONT_VERSION} .
 
