@@ -2,9 +2,8 @@ COMMENT=	fast JSON parser/generator for C++ with SAX/DOM style API
 
 GH_ACCOUNT=	Tencent
 GH_PROJECT=	rapidjson
-GH_COMMIT=	f9d53419e912910fd8fa57d5705fa41425428c35
-DISTNAME=	rapidjson-1.1.0.20230928
-REVISION=	2
+GH_COMMIT=	24b5e7a8b27f42fa16b96fc70aade9106cf7102f
+DISTNAME=	rapidjson-1.1.0.20250205
 
 CATEGORIES=	textproc devel
 
