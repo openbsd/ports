@@ -2116,6 +2116,7 @@ webapps/docs/api/org/apache/tomcat/websocket/PojoClassHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/PojoHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/ReadBufferOverflowException.html
 webapps/docs/api/org/apache/tomcat/websocket/Transformation.html
+webapps/docs/api/org/apache/tomcat/websocket/TransformationBuilder.html
 webapps/docs/api/org/apache/tomcat/websocket/TransformationFactory.html
 webapps/docs/api/org/apache/tomcat/websocket/TransformationResult.html
 webapps/docs/api/org/apache/tomcat/websocket/Util.DecoderMatch.html
