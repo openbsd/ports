@@ -11,6 +11,8 @@ GH_TAGNAME=	Audacity-3.7.5
 DISTNAME=	${GH_TAGNAME:L}
 CATEGORIES=	audio
 
+REVISION=	0
+
 HOMEPAGE=	https://www.audacityteam.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
