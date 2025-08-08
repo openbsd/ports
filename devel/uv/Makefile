@@ -5,7 +5,7 @@ COMMENT =		Python package and project manager
 
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
-GH_TAGNAME =		0.8.3
+GH_TAGNAME =		0.8.5
 
 ASYNC_ZIP =		c909fda63fcafe4af496a07bfda28a5aae97e58d
 PUBGRUB =		06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
