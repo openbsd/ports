@@ -1,6 +1,8 @@
 COMMENT-main =		like Prometheus, but for logs
 COMMENT-promtail =	tails log files and pushes them to Loki
 
+BROKEN-i386 =	vendor/modernc.org/sqlite/lib/defs.go:13:35: undefined: sqlite3_index_constraint etc.
+
 GH_ACCOUNT =	grafana
 GH_PROJECT =	loki
 GH_TAGNAME =	v3.5.3
