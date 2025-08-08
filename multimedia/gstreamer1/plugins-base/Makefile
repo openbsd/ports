@@ -1,20 +1,19 @@
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
-REVISION=		1
 
-SHARED_LIBS += gsttag-1.0                7.3 # 0.2604.0
-SHARED_LIBS += gstfft-1.0                7.3 # 0.2604.0
-SHARED_LIBS += gstvideo-1.0              7.3 # 0.2604.0
-SHARED_LIBS += gstaudio-1.0              7.3 # 0.2604.0
-SHARED_LIBS += gstrtp-1.0                7.3 # 0.2604.0
-SHARED_LIBS += gstpbutils-1.0            7.3 # 0.2604.0
-SHARED_LIBS += gstsdp-1.0                7.3 # 0.2604.0
-SHARED_LIBS += gstrtsp-1.0               7.3 # 0.2604.0
-SHARED_LIBS += gstriff-1.0               7.3 # 0.2604.0
-SHARED_LIBS += gstapp-1.0                7.3 # 0.2604.0
-SHARED_LIBS += gstallocators-1.0         6.3 # 0.2604.0
-SHARED_LIBS += gstgl-1.0                 6.3 # 0.2604.0
+SHARED_LIBS += gsttag-1.0                7.3 # 0.2605.0
+SHARED_LIBS += gstfft-1.0                7.3 # 0.2605.0
+SHARED_LIBS += gstvideo-1.0              7.3 # 0.2605.0
+SHARED_LIBS += gstaudio-1.0              7.3 # 0.2605.0
+SHARED_LIBS += gstrtp-1.0                7.3 # 0.2605.0
+SHARED_LIBS += gstpbutils-1.0            7.3 # 0.2605.0
+SHARED_LIBS += gstsdp-1.0                7.3 # 0.2605.0
+SHARED_LIBS += gstrtsp-1.0               7.3 # 0.2605.0
+SHARED_LIBS += gstriff-1.0               7.3 # 0.2605.0
+SHARED_LIBS += gstapp-1.0                7.3 # 0.2605.0
+SHARED_LIBS += gstallocators-1.0         6.3 # 0.2605.0
+SHARED_LIBS += gstgl-1.0                 6.3 # 0.2605.0
 
 SITES=			${SITE_GST:=gst-plugins-base/}
 
