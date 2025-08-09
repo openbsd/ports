@@ -1,26 +1,25 @@
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.1.12
+V=			3.2.0
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
-REVISION=		2
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# /!\ see symlinks creation in post-install (LIBImath-3_1_VERSION is used)
-.for solib in Imath PyImath_Python3_12
-SHARED_LIBS +=  ${solib}     2.0 # 28
-SHARED_LIBS +=  ${solib}-3_1 2.0 # 28
-.endfor
+# /!\ see symlinks creation in post-install (LIBImath-3_2_VERSION is used)
+SHARED_LIBS +=	Imath			0.0 # 0.0
+SHARED_LIBS +=	Imath-3_2		0.0 # 0.0
+SHARED_LIBS +=	PyImath			0.0 # 0.0
+SHARED_LIBS +=	PyImath_Python3_12-3_2	0.0 # 0.0
 
 CATEGORIES=		math graphics devel
 
 # BSD-3-Clause
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += boost_python${MODPY_VERSION:C/\.//g}-mt intl m util
+WANTLIB += ${COMPILER_LIBCXX} boost_container-mt boost_graph-mt
+WANTLIB += boost_python${MODPY_VERSION:C/\.//g}-mt m
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -47,8 +46,9 @@ post-install:
 	cd ${PREFIX}/lib && \
 		for i in *.so; do \
 			test -h $$i && lib=$${i#lib} && lib=$${lib%.so} && \
-			ln -sf lib$${lib}-3_1.so.${LIBImath-3_1_VERSION} \
-			$$i.${LIBImath-3_1_VERSION} && rm $$i ; \
+			f="$$(readlink $$i)" && \
+			ln -sf $${f:##*/}.${LIBImath-3_2_VERSION} \
+			lib$${lib}.so.${LIBImath-3_2_VERSION} && rm $$i ;\
 		done
 
 .include <bsd.port.mk>
