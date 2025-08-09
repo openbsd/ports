@@ -16,6 +16,9 @@ share/doc/luanti/texture_packs.md
 share/doc/luanti/world_format.md
 share/icons/hicolor/128x128/apps/luanti.png
 share/icons/hicolor/scalable/apps/luanti.svg
+share/locale/bar/
+share/locale/bar/LC_MESSAGES/
+share/locale/bar/LC_MESSAGES/luanti.mo
 share/locale/be/LC_MESSAGES/luanti.mo
 share/locale/bg/LC_MESSAGES/luanti.mo
 share/locale/br/LC_MESSAGES/luanti.mo
@@ -51,6 +54,7 @@ share/locale/jbo/LC_MESSAGES/luanti.mo
 share/locale/jv/
 share/locale/jv/LC_MESSAGES/
 share/locale/jv/LC_MESSAGES/luanti.mo
+share/locale/kab/LC_MESSAGES/luanti.mo
 share/locale/kk/LC_MESSAGES/luanti.mo
 share/locale/ko/LC_MESSAGES/luanti.mo
 share/locale/kv/
@@ -77,6 +81,7 @@ share/locale/ro/LC_MESSAGES/luanti.mo
 share/locale/ru/LC_MESSAGES/luanti.mo
 share/locale/sk/LC_MESSAGES/luanti.mo
 share/locale/sl/LC_MESSAGES/luanti.mo
+share/locale/sr/LC_MESSAGES/luanti.mo
 share/locale/sr_Cyrl/
 share/locale/sr_Cyrl/LC_MESSAGES/
 share/locale/sr_Cyrl/LC_MESSAGES/luanti.mo
@@ -594,6 +599,8 @@ share/luanti/games/devtest/mods/testentities/init.lua
 share/luanti/games/devtest/mods/testentities/mod.conf
 share/luanti/games/devtest/mods/testentities/models/
 share/luanti/games/devtest/mods/testentities/models/LICENSE.txt
+share/luanti/games/devtest/mods/testentities/models/testentities_cool_guy.png
+share/luanti/games/devtest/mods/testentities/models/testentities_cool_guy.x
 share/luanti/games/devtest/mods/testentities/models/testentities_lava_flan.png
 share/luanti/games/devtest/mods/testentities/models/testentities_lava_flan.x
 share/luanti/games/devtest/mods/testentities/models/testentities_sam.b3d
