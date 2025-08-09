@@ -1,7 +1,6 @@
 COMMENT =	multilingual text processing library
 
-DISTNAME =	m17n-lib-${M17N_V}
-REVISION =	4
+DISTNAME =	m17n-lib-1.8.6
 
 SHARED_LIBS +=  m17n-core            0.0      # 4.2
 SHARED_LIBS +=  m17n                 0.0      # 4.2
@@ -24,13 +23,15 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		textproc/libxml
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		inputmethods/anthy \
 		textproc/ispell \
-		misc/m17n/db=${M17N_V}
+		misc/m17n/db
 
-RUN_DEPENDS =	misc/m17n/db=${M17N_V}
+RUN_DEPENDS =	misc/m17n/db
 
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS}"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS}" \
+		ac_cv_prog_INTLBISON=
 LIBTOOL_FLAGS =	--tag=disable-static
 SEPARATE_BUILD = Yes
 

@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -22570,7 +22570,7 @@ fi
+ if test "x$HAVE_FREETYPE" = "xyes"
+ then :
+   CPPFLAGS="$CPPFLAGS $FREETYPE_CFLAGS";
+-   FREETYPE_LD_FLAGS=FREETYPE_LIBS;
++   FREETYPE_LD_FLAGS=${FREETYPE_LIBS};
+ 
+ printf "%s\n" "#define HAVE_FREETYPE 1" >>confdefs.h
+ 

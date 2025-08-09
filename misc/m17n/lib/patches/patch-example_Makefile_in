@@ -3,7 +3,7 @@
 Index: example/Makefile.in
 --- example/Makefile.in.orig
 +++ example/Makefile.in
-@@ -500,7 +500,7 @@ m17n_conv_SOURCES = mconv.c
+@@ -514,7 +514,7 @@ m17n_conv_SOURCES = mconv.c
  m17n_conv_LDADD = ${common_ldflags}
  X_LD_FLAGS = ${X_PRE_LIBS} ${X_LIBS} @XAW_LD_FLAGS@ @X11_LD_FLAGS@ ${X_EXTRA_LIBS}
  m17n_edit_SOURCES = medit.c

@@ -1,7 +1,7 @@
 COMMENT =	database for multilingual text processing library
 
-DISTNAME =	m17n-db-${M17N_V}
-GLIBC =		glibc-2.28
+DISTNAME =	m17n-db-1.8.10
+GLIBC =		glibc-2.41
 
 DISTFILES.glibc=${GLIBC}${EXTRACT_SUFX}
 

@@ -4,7 +4,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -566,7 +566,7 @@ libm17n_core_la_SOURCES = \
+@@ -577,7 +577,7 @@ libm17n_core_la_SOURCES = \
  	textprop.h textprop.c \
  	mtext-lbrk.c mtext-wseg.c
  
@@ -13,12 +13,12 @@ Index: src/Makefile.in
  libm17n_core_la_LDFLAGS = -export-dynamic ${VINFO}
  libm17n_la_SOURCES = \
  	charset.h charset.c \
-@@ -576,7 +576,7 @@ libm17n_la_SOURCES = \
+@@ -587,7 +587,7 @@ libm17n_la_SOURCES = \
  	mlocale.h locale.c \
  	m17n.h m17n.c
  
--libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
-+libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la
+-libm17n_la_LIBADD = libm17n-core.la -ldl
++libm17n_la_LIBADD = libm17n-core.la
  libm17n_la_LDFLAGS = -export-dynamic ${VINFO}
  FLT_SOURCES = \
  	internal-flt.h \
