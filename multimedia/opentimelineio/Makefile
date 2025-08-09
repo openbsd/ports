@@ -2,7 +2,7 @@ COMMENT =	editorial timeline API and interchange format
 
 V =		0.17.0
 DISTNAME =	opentimelineio-${V}
-REVISION =	0
+REVISION =	1
 
 DIST_TUPLE +=	github AcademySoftwareFoundation OpenTimelineIO v${V} .
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://opentimeline.io/
 # Apache-2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Imath-3_1 m
+WANTLIB += ${COMPILER_LIBCXX} Imath-3_2 m
 
 # C++17
 COMPILER =		base-clang ports-gcc

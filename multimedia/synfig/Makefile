@@ -6,7 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.3
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -17,7 +17,7 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_3 IlmThread-3_3 Imath-3_2
 WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_3
 WANTLIB += OpenEXRCore-3_3 OpenEXRUtil-3_3 SM X11 Xext Xt aom
 WANTLIB += avcodec avformat avutil bz2 c crypto dav1d sharpyuv djvulibre

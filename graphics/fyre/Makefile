@@ -1,6 +1,6 @@
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		29
+REVISION=		30
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -9,7 +9,7 @@ HOMEPAGE=		http://fyre.navi.cx/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Iex-3_3
-WANTLIB += IlmThread-3_3 Imath-3_1 X11 Xcomposite Xcursor Xdamage
+WANTLIB += IlmThread-3_3 Imath-3_2 X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 intl m pango-1.0

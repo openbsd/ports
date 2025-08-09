@@ -11,6 +11,9 @@ PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
 
+REVISION-main=		0
+REVISION-tools=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # /!\ see symlinks creation in post-install (LIBOpenEXR-3_2_VERSION is used)
@@ -37,12 +40,12 @@ MODULES=		devel/cmake
 CXXFLAGS +=		-mxgot
 .endif
 
-WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_1 deflate m
+WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_2 deflate m
 
 LIB_DEPENDS-main=	archivers/libdeflate \
 			math/imath
 
-WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_3 IlmThread-3_3 Imath-3_2
 WANTLIB-tools += OpenEXR-3_3 OpenEXRCore-3_3 c m
 
 LIB_DEPENDS-tools=	${BASE_PKGPATH}

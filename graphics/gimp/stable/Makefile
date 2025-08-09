@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.38
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	4
+REVISION =	5
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -24,7 +24,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
-WANTLIB += ICE Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3 OpenEXRCore-3_3
+WANTLIB += ICE Iex-3_3 IlmThread-3_3 Imath-3_2 OpenEXR-3_3 OpenEXRCore-3_3
 WANTLIB += OpenEXRUtil-3_3 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt aa aom atk-1.0 avahi-client avahi-common babl-0.1

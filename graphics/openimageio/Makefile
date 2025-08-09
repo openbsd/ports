@@ -7,6 +7,7 @@ GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
 GH_TAGNAME =		v3.0.8.1
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO		18.0
 SHARED_LIBS +=		OpenImageIO_Util	11.1
@@ -18,7 +19,7 @@ HOMEPAGE =		https://sites.google.com/site/openimageio/home
 # Apache 2.0 / BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_3 IlmThread-3_3 Imath-3_2
 WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 Qt6Core Qt6Gui
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
 WANTLIB += avutil bz2 c freetype gif heif jpeg jxl jxl_threads

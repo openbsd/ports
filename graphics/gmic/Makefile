@@ -6,7 +6,7 @@ COMMENT = 	image processing framework
 
 V = 3.0.2
 DISTNAME = 	gmic-$V
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  gmic 1.0 # 1
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 c m z
 WANTLIB += GraphicsMagick GraphicsMagick++ Iex-3_3
-WANTLIB += IlmThread-3_3 Imath-3_1 curl fftw3 fftw3_threads
+WANTLIB += IlmThread-3_3 Imath-3_2 curl fftw3 fftw3_threads
 WANTLIB += jpeg png tiff OpenEXR-3_3 OpenEXRCore-3_3 OpenEXRUtil-3_3
 
 WANTLIB += opencv_calib3d opencv_core opencv_dnn opencv_features2d

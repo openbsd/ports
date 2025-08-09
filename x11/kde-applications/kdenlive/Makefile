@@ -4,8 +4,9 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_1 KF6Archive KF6Attica
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_2 KF6Archive KF6Attica
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6GuiAddons

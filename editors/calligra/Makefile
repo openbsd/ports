@@ -3,6 +3,7 @@ COMMENT =	KDE office suite
 HOMEPAGE =	https://www.calligra.org
 
 DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -54,7 +55,7 @@ PERMIT_PACKAGE =	Yes
 
 DPB_PROPERTIES =	parallel
 
-WANTLIB += ${COMPILER_LIBCXX} GL Imath-3_1 KChart6 KF6Archive
+WANTLIB += ${COMPILER_LIBCXX} GL Imath-3_2 KChart6 KF6Archive
 WANTLIB += KF6Bookmarks KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets

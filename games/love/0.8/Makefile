@@ -1,8 +1,8 @@
 VERSION =		0.8.0
 USE_LUAJIT =		No
-REVISION =		17
+REVISION =		18
 
-WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_3 IlmThread-3_3 Imath-3_2
 WANTLIB += OpenEXR-3_3 OpenEXRCore-3_3 OpenEXRUtil-3_3 SDL X11
 WANTLIB += X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm c drm expat freetype
 WANTLIB += glapi iconv jasper jpeg lcms m mng modplug mpg123
