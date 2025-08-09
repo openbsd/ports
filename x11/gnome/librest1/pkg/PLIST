@@ -6,6 +6,7 @@ include/rest-1.0/rest-extras/flickr-proxy-call.h
 include/rest-1.0/rest-extras/flickr-proxy.h
 include/rest-1.0/rest-extras/lastfm-proxy-call.h
 include/rest-1.0/rest-extras/lastfm-proxy.h
+include/rest-1.0/rest-extras/rest-extras.h
 include/rest-1.0/rest-extras/youtube-proxy.h
 include/rest-1.0/rest/rest-enum-types.h
 include/rest-1.0/rest/rest-oauth2-proxy-call.h
@@ -26,7 +27,6 @@ lib/girepository-1.0/RestExtras-1.0.typelib
 @lib lib/librest-extras-1.0.so.${LIBrest-extras-1.0_VERSION}
 lib/pkgconfig/rest-1.0.pc
 lib/pkgconfig/rest-extras-1.0.pc
-share/applications/
 share/applications/org.gnome.RestDemo.desktop
 share/doc/librest-1.0/
 share/doc/librest-1.0/RedHatDisplay-Black.woff
@@ -80,6 +80,7 @@ share/doc/librest-1.0/ctor.Proxy.new.html
 share/doc/librest-1.0/ctor.Proxy.new_with_authentication.html
 share/doc/librest-1.0/ctor.XmlParser.new.html
 share/doc/librest-1.0/enum.MemoryUse.html
+share/doc/librest-1.0/error.OAuth2Error.html
 share/doc/librest-1.0/error.ProxyCallError.html
 share/doc/librest-1.0/error.ProxyError.html
 share/doc/librest-1.0/fonts.css
@@ -184,6 +185,8 @@ share/doc/librest-1.0/method.XmlNode.ref.html
 share/doc/librest-1.0/method.XmlNode.set_content.html
 share/doc/librest-1.0/method.XmlNode.unref.html
 share/doc/librest-1.0/method.XmlParser.parse_from_data.html
+share/doc/librest-1.0/migration.html
+share/doc/librest-1.0/opensearch.xml
 share/doc/librest-1.0/property.OAuth2Proxy.access-token.html
 share/doc/librest-1.0/property.OAuth2Proxy.auth-url.html
 share/doc/librest-1.0/property.OAuth2Proxy.client-id.html
@@ -221,4 +224,8 @@ share/doc/librest-1.0/vfunc.ProxyCall.prepare.html
 share/doc/librest-1.0/vfunc.ProxyCall.serialize_params.html
 share/gir-1.0/Rest-1.0.gir
 share/gir-1.0/RestExtras-1.0.gir
+share/vala/vapi/rest-1.0.deps
+share/vala/vapi/rest-1.0.vapi
+share/vala/vapi/rest-extras-1.0.deps
+share/vala/vapi/rest-extras-1.0.vapi
 @tag update-desktop-database
