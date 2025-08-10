@@ -61,6 +61,11 @@ COMPILER ?= base-clang ports-gcc
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 .endif
 
+# Detected locale "C" with character encoding "US-ASCII", which is not UTF-8.
+# Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+CONFIGURE_ENV +=	LC_CTYPE=C.UTF-8
+MAKE_ENV +=		LC_CTYPE=C.UTF-8
+
 .include "Makefile.version"
 
 MODQT6_VERSION =	${QT6_VERSION}
