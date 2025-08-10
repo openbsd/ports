@@ -3,7 +3,6 @@ COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet
 
 DISTNAME =		sonnet-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=  KF6SonnetCore             0.0 # 0.0
 SHARED_LIBS +=  KF6SonnetUi               0.0 # 0.0

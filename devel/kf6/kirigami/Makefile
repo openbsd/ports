@@ -1,3 +1,4 @@
+SHARED_LIBS +=	KirigamiTemplates         0.0 # 0.0
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami-${VERSION}
 

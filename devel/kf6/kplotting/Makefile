@@ -1,6 +1,5 @@
 COMMENT =	KDE data plotting framework
 DISTNAME =	kplotting-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Plotting               0.0 # 0.0
 

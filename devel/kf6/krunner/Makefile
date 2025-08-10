@@ -4,12 +4,14 @@ DISTNAME =	krunner-${VERSION}
 SHARED_LIBS +=  KF6Runner                 0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6I18n
-WANTLIB += KF6ItemModels Qt6Core Qt6DBus Qt6Gui m
+WANTLIB += KF6ItemModels KF6WindowSystem Qt6Core Qt6DBus Qt6Gui
+WANTLIB += X11 m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		archivers/gtar
 
 LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
+		devel/kf6/kwindowsystem>=${MODKF6_VERSION} \
 		devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
 		devel/kf6/kitemmodels>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION}
