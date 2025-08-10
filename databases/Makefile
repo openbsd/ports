@@ -42,7 +42,6 @@
      SUBDIR += mongo-tools
      SUBDIR += mongodb
      SUBDIR += mydumper
-     SUBDIR += mysql-utilities
      SUBDIR += mysql-zrm
      SUBDIR += mysql2pgsql
      SUBDIR += openldap
