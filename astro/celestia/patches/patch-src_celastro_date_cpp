@@ -1,0 +1,12 @@
+Index: src/celastro/date.cpp
+--- src/celastro/date.cpp.orig
++++ src/celastro/date.cpp
+@@ -201,7 +201,7 @@ Date::toString(const std::locale& loc, Format format) 
+     cal_time.tm_sec = (int)seconds;
+     cal_time.tm_wday = wday;
+     cal_time.tm_gmtoff = utc_offset;
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     // tm_zone is a non-const string field on the Mac and FreeBSD (why?)
+     cal_time.tm_zone = const_cast<char*>(tzname.c_str());
+ #else

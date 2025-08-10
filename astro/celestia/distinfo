@@ -1,2 +1,4 @@
-SHA256 (Celestia-1.6.4.tar.gz) = 11GHFRadH0n7tORw/lkx1UEE5RDUAEj7qyrQeHDEyy0=
-SIZE (Celestia-1.6.4.tar.gz) = 50065276
+SHA256 (CelestiaProject-Celestia-0d39898255bdbda249c08cd10c3c507a4798c7bc.tar.gz) = py9pwJ7QV7AZnoeRODjUT0NLqtbJW/2hpdcrdbuQv5Q=
+SHA256 (OpenSpace-Spice-711ffdb91865c48018ba2efef963ed645ed2557b.tar.gz) = Q40HkYZAtABJBONOUJtzxarA04f8YMjCT37eNs5rI14=
+SIZE (CelestiaProject-Celestia-0d39898255bdbda249c08cd10c3c507a4798c7bc.tar.gz) = 4542387
+SIZE (OpenSpace-Spice-711ffdb91865c48018ba2efef963ed645ed2557b.tar.gz) = 7612304

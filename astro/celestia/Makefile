@@ -1,67 +1,60 @@
-COMMENT=		free space simulator and planetarium
+COMMENT=		real-time 3D visualization of space
 
-GH_ACCOUNT=		CelestiaProject
-GH_PROJECT=		Celestia
-GH_TAGNAME=		1.6.4
-PKGNAME=		celestia-${GH_TAGNAME}
-REVISION=		0
+DIST_TUPLE=		github CelestiaProject Celestia 0d39898255bdbda249c08cd10c3c507a4798c7bc .
+# submodule for Spice until we have a port
+DIST_TUPLE +=		github OpenSpace Spice 711ffdb91865c48018ba2efef963ed645ed2557b thirdparty/Spice
+
+PKGNAME=		celestia-1.7.0.pre20250726
+
+SHARED_LIBS +=	celestia                  0.0 # 0.0
+SHARED_LIBS +=	spice                     0.0 # unknown
 
 CATEGORIES=		astro x11
 
-HOMEPAGE=		https://celestia.space/
+HOMEPAGE=		https://celestiaproject.space/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU X11 X11-xcb Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xxf86vm atk-1.0 c cairo drm expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
-WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 harfbuzz iconv intl jpeg
-WANTLIB += lua5.1 m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png theora xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB += xcb-present xcb-randr xcb-render xcb-shm xcb-sync
-WANTLIB += xcb-xfixes xshmfence z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Widgets avcodec avformat avif avutil c epoxy fmt
+WANTLIB += freetype intl jpeg m png swscale z
+WANTLIB += ${MODLUA_WANTLIB}
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
+MODULES=		devel/cmake \
+			lang/lua \
+			x11/qt6
 
-MODULES=		lang/lua
+BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/gperf
 
-USE_GMAKE=		Yes
-
-BUILD_DEPENDS=		devel/gettext,-tools
-
-LIB_DEPENDS=		multimedia/libtheora \
-			x11/gtkglext \
+LIB_DEPENDS=		devel/fmt \
+			graphics/ffmpeg \
+			graphics/libavif \
 			${MODLUA_LIB_DEPENDS}
 
-RUN_DEPENDS=		devel/desktop-file-utils
+RUN_DEPENDS=		astro/celestia-data \
+			devel/desktop-file-utils
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
-
-CONFIGURE_STYLE=	autoreconf
-
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lGL" \
-			LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
-			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
-
-CONFIGURE_ARGS=		--with-gtk \
-			--with-lua \
-			--enable-cairo \
-			--enable-theora
+CONFIGURE_ARGS=		-DENABLE_SPICE=ON \
+			-DENABLE_SDL=OFF \
+			-DENABLE_QT5=OFF \
+			-DENABLE_QT6=ON \
+			-DENABLE_GLUT=ON \
+			-DENABLE_FFMPEG=ON \
+			-DENABLE_NLS=ON \
+			-DENABLE_LIBAVIF=ON
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/celestia/celestiacore.cpp
+	${SUBST_CMD} ${WRKSRC}/thirdparty/Spice/CMakeLists.txt
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/models/*.3ds \
-		${PREFIX}/share/celestia/models
+	${INSTALL_PROGRAM} \
+		${WRKBUILD}/thirdparty/Spice/libspice.so.${LIBspice_VERSION} \
+		${PREFIX}/lib/
 
 .include <bsd.port.mk>

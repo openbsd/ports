@@ -1,0 +1,11 @@
+Index: src/celestia/qt6/data/CMakeLists.txt
+--- src/celestia/qt6/data/CMakeLists.txt.orig
++++ src/celestia/qt6/data/CMakeLists.txt
+@@ -18,6 +18,6 @@ install(
+ )
+ install(
+   FILES celestia-qt6.1
+-  DESTINATION "${CMAKE_INSTALL_DATADIR}/man/man1"
++  DESTINATION "${CMAKE_INSTALL_DATADIR}/man1"
+   COMPONENT qt6gui
+ )

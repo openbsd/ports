@@ -1,0 +1,11 @@
+Index: thirdparty/Spice/CMakeLists.txt
+--- thirdparty/Spice/CMakeLists.txt.orig
++++ thirdparty/Spice/CMakeLists.txt
+@@ -47,6 +47,7 @@ else ()
+ endif ()
+ set_target_properties(spice PROPERTIES POSITION_INDEPENDENT_CODE 1)
+ set_target_properties(spice PROPERTIES C_STANDARD 90)
++set_target_properties(spice PROPERTIES SOVERSION ${LIBspice_VERSION})
+ target_include_directories(spice PUBLIC "${INCLUDE_PATH}")
+ 
+ if (WIN32)

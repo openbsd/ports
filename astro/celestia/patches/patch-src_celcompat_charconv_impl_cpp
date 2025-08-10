@@ -1,0 +1,35 @@
+Index: src/celcompat/charconv_impl.cpp
+--- src/celcompat/charconv_impl.cpp.orig
++++ src/celcompat/charconv_impl.cpp
+@@ -170,19 +170,31 @@ write_buffer(const char* first, const char* last, char
+ inline void
+ parse_value(const char* start, char** end, float& value)
+ {
++#ifndef __OpenBSD__
+     value = strtof_l(start, end, numberParsingLocale);
++#else
++    value = strtof(start, end);
++#endif
+ }
+ 
+ inline void
+ parse_value(const char* start, char** end, double& value)
+ {
++#ifndef __OpenBSD__
+     value = strtod_l(start, end, numberParsingLocale);
++#else
++    value = strtod(start, end);
++#endif
+ }
+ 
+ inline void
+ parse_value(const char* start, char** end, long double& value)
+ {
++#ifndef __OpenBSD__
+     value = strtold_l(start, end, numberParsingLocale);
++#else
++    value = strtold(start, end);
++#endif
+ }
+ 
+ template<typename T>
