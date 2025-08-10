@@ -72,7 +72,7 @@ MODGO_MODULES =	\
 	github.com/containerd/cgroups/v3						 v3.0.5 \
 	github.com/containerd/console							 v1.0.5 \
 	github.com/containerd/containerd/api						 v1.9.0 \
-	github.com/containerd/containerd/v2						 v2.1.3 \
+	github.com/containerd/containerd/v2						 v2.1.4 \
 	github.com/containerd/continuity						 v0.4.5 \
 	github.com/containerd/errdefs							 v1.0.0 \
 	github.com/containerd/errdefs/pkg						 v0.3.0 \
@@ -105,13 +105,13 @@ MODGO_MODULES =	\
 	github.com/distribution/reference						 v0.6.0 \
 	github.com/dlclark/regexp2							 v1.11.0 \
 	github.com/docker/buildx							 v0.26.1 \
-	github.com/docker/cli								 v28.3.2+incompatible \
+	github.com/docker/cli								 v28.3.3+incompatible \
 	github.com/docker/cli-docs-tool							 v0.10.0 \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v28.3.2+incompatible \
+	github.com/docker/docker							 v28.3.3+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.9.3 \
 	github.com/docker/go								 v1.5.1-1.0.20160303222718-d30aec9fd63c \
-	github.com/docker/go-connections						 v0.5.0 \
+	github.com/docker/go-connections						 v0.6.0 \
 	github.com/docker/go-events							 v0.0.0-20190806004212-e31b211e4f1c \
 	github.com/docker/go-metrics							 v0.0.1 \
 	github.com/docker/go-units							 v0.5.0 \
@@ -353,7 +353,7 @@ MODGO_MODULES =	\
 	golang.org/x/net								 v0.40.0 \
 	golang.org/x/oauth2								 v0.30.0 \
 	golang.org/x/sync								 v0.16.0 \
-	golang.org/x/sys								 v0.34.0 \
+	golang.org/x/sys								 v0.35.0 \
 	golang.org/x/term								 v0.32.0 \
 	golang.org/x/text								 v0.25.0 \
 	golang.org/x/time								 v0.11.0 \
@@ -399,7 +399,7 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	cloud.google.com/go/compute/metadata						 v0.3.0 \
-	github.com/!microsoft/go-winio							 v0.4.14 \
+	github.com/!microsoft/go-winio							 v0.4.21 \
 	github.com/!microsoft/go-winio							 v0.5.2 \
 	github.com/!microsoft/go-winio							 v0.6.0 \
 	github.com/alecthomas/units							 v0.0.0-20151022065526-2efee857e7cf \
@@ -409,6 +409,7 @@ MODGO_MODFILES =	\
 	github.com/compose-spec/compose-go/v2						 v2.7.2-0.20250703132301-891fce532a51 \
 	github.com/containerd/console							 v1.0.4 \
 	github.com/containerd/containerd/v2						 v2.1.1 \
+	github.com/containerd/containerd/v2						 v2.1.3 \
 	github.com/containerd/continuity						 v0.4.1 \
 	github.com/containerd/errdefs							 v0.3.0 \
 	github.com/containerd/ttrpc							 v1.2.5 \
@@ -422,9 +423,12 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew							 v1.1.0 \
 	github.com/distribution/reference						 v0.5.0 \
 	github.com/docker/cli								 v28.2.2+incompatible \
+	github.com/docker/cli								 v28.3.2+incompatible \
 	github.com/docker/distribution							 v2.7.1+incompatible \
 	github.com/docker/docker							 v28.2.2+incompatible \
+	github.com/docker/docker							 v28.3.2+incompatible \
 	github.com/docker/go-connections						 v0.4.0 \
+	github.com/docker/go-connections						 v0.5.0 \
 	github.com/docker/go-metrics							 v0.0.0-20180209012529-399ea8c73916 \
 	github.com/fsnotify/fsnotify							 v1.4.7 \
 	github.com/fsnotify/fsnotify							 v1.5.1 \
