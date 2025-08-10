@@ -29,6 +29,7 @@ MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_CARGOTOML =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.196.1/libflux/Cargo.toml
 MODCARGO_TARGET_DIR =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.196.1/libflux/target
+MODCARGO_RUSTFLAGS =	--cap-lints=warn
 
 .if ${MACHINE_ARCH} != "sparc64"
 # needed to make sure unwind* symbols are found
