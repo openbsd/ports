@@ -29,8 +29,10 @@ MODULES=		devel/cmake \
 			lang/lua \
 			x11/qt6
 
-BUILD_DEPENDS=		devel/gettext,-tools \
-			devel/gperf
+BUILD_DEPENDS=		devel/boost \
+			devel/gettext,-tools \
+			devel/gperf \
+			math/eigen3
 
 LIB_DEPENDS=		devel/fmt \
 			graphics/ffmpeg \
