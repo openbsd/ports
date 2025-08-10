@@ -2,7 +2,7 @@ COMMENT =	SVG vector drawing application
 
 VERSION =	1.4.2
 DISTNAME =	inkscape-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -83,6 +83,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		print/transfig \
 		textproc/py-cssselect \
 		textproc/py-lxml \
+		textproc/py-tinycss2 \
 		www/py-requests \
 		x11/gtk+4,-guic
 
