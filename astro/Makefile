@@ -2,6 +2,7 @@
      SUBDIR += ansiweather
      SUBDIR += calcmysky
      SUBDIR += celestia
+     SUBDIR += celestia-data
      SUBDIR += dgpsip
      SUBDIR += gcal
      SUBDIR += gnuastro
