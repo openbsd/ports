@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/RECO
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qstylizer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}/
