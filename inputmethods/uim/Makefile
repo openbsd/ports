@@ -9,7 +9,9 @@ DISTNAME=		uim-$V
 PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
 PKGNAME-gtk3=		uim-gtk3-$V
-REVISION-gtk3=		0
+
+REVISION-main=		0
+REVISION-gtk3=		1
 
 SITES=			https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -55,7 +57,7 @@ WANTLIB-gtk += Xau Xdmcp jpeg
 LIB_DEPENDS-gtk=	inputmethods/uim \
 			x11/gtk+2
 
-WANTLIB-gtk3 += ${WANTLIB} ${COMPILER_LIBCXX} execinfo
+WANTLIB-gtk3 += ${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-gtk3 += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB-gtk3 += expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
