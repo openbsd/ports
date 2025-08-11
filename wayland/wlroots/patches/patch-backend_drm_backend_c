@@ -1,0 +1,49 @@
+Index: backend/drm/backend.c
+--- backend/drm/backend.c.orig
++++ backend/drm/backend.c
+@@ -10,6 +10,7 @@
+ #include <wlr/backend/session.h>
+ #include <wlr/interfaces/wlr_output.h>
+ #include <wlr/util/log.h>
++#include <sys/event.h>
+ #include <xf86drm.h>
+ #include "backend/drm/drm.h"
+ #include "backend/drm/fb.h"
+@@ -167,6 +168,8 @@ static void handle_parent_destroy(struct wl_listener *
+ 
+ struct wlr_backend *wlr_drm_backend_create(struct wlr_session *session,
+ 		struct wlr_device *dev, struct wlr_backend *parent) {
++	int kq;
++	struct kevent kev;
+ 	assert(session && dev);
+ 	assert(!parent || wlr_backend_is_drm(parent));
+ 
+@@ -267,6 +270,28 @@ struct wlr_backend *wlr_drm_backend_create(struct wlr_
+ 	drm->session_destroy.notify = handle_session_destroy;
+ 	wl_signal_add(&session->events.destroy, &drm->session_destroy);
+ 
++	if ((kq = kqueue()) <= 0)
++		goto continue_without_kqueue;
++
++	EV_SET(&kev, dev->fd, EVFILT_DEVICE, EV_ADD | EV_ENABLE | EV_CLEAR,
++	       NOTE_CHANGE, 0, NULL);
++
++	if (kevent(kq, &kev, 1, NULL, 0, NULL) < 0) {
++		close(kq);
++		goto continue_without_kqueue;
++	}
++
++	drm->drm_kevent = wl_event_loop_add_fd(session->event_loop, kq,
++		WL_EVENT_READABLE, handle_drm_kevent, drm);
++	if (!drm->drm_kevent) {
++		wlr_log(WLR_ERROR, "Failed to create DRM kevent source");
++		close(kq);
++		goto continue_without_kqueue;
++	}
++	drm->kq = kq;
++	wlr_log(WLR_INFO, "DRM kevent source added");
++
++continue_without_kqueue:
+ 	return &drm->backend;
+ 
+ error_mgpu_renderer:

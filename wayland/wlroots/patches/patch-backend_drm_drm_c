@@ -1,0 +1,40 @@
+Index: backend/drm/drm.c
+--- backend/drm/drm.c.orig
++++ backend/drm/drm.c
+@@ -9,6 +9,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <strings.h>
++#include <sys/event.h>
+ #include <time.h>
+ #include <wayland-server-core.h>
+ #include <wayland-util.h>
+@@ -375,6 +376,9 @@ void finish_drm_resources(struct wlr_drm_backend *drm)
+ 		return;
+ 	}
+ 
++	if (drm->kq)
++		close(drm->kq);
++
+ 	if (drm->iface->finish != NULL) {
+ 		drm->iface->finish(drm);
+ 	}
+@@ -2113,6 +2117,18 @@ int handle_drm_event(int fd, uint32_t mask, void *data
+ 		wlr_log(WLR_ERROR, "drmHandleEvent failed");
+ 		wlr_backend_destroy(&drm->backend);
+ 	}
++	return 1;
++}
++
++int handle_drm_kevent(int fd, uint32_t mask, void *data) {
++	struct kevent kev;
++	struct wlr_drm_backend *drm = data;
++
++	if ((kevent(fd, NULL, 0, &kev, 1, NULL)) && kev.fflags & NOTE_CHANGE) {
++		wlr_log(WLR_INFO, "DRM hotplug detected");
++		scan_drm_connectors(drm, NULL);
++	}
++
+ 	return 1;
+ }
+ 
