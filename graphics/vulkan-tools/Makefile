@@ -5,6 +5,7 @@ PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
