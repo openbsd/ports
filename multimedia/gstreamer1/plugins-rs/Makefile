@@ -1,13 +1,13 @@
 COMMENT=		GStreamer bindings for Rust
 
-V=			0.14.0
+V=			0.14.1
 DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
-WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-8511071f6518e6df5dcadf8b113a43addd7ea1fe
+WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-126f022fe119dd79ad70290b08d303fddc441a16
 
 # see patch-Cargo_toml;
 # grep git+https Cargo.lock | sort -u
-DIST_TUPLE +=		fdo gstreamer gstreamer-rs ef17224f7a88b01d788c7ebc81a85d10df5f09a1 ../gstreamer-rs
-DIST_TUPLE +=		github gtk-rs gtk-rs-core a93a100230de5eb68850af90a96961c34d2b917b ../gtk-rs-core
+DIST_TUPLE +=		fdo gstreamer gstreamer-rs eaa9ac89d0942d6cec828c22349176f6d64d8d8a ../gstreamer-rs
+DIST_TUPLE +=		github gtk-rs gtk-rs-core e6bef5df6c364e02ed0f02b304027559b53b3c57 ../gtk-rs-core
 DIST_TUPLE +=		github gtk-rs gtk4-rs 416aa3ae63fc33ff6436ab1fe26ffbdbe47e8976 ../gtk4-rs
 DIST_TUPLE +=		github rust-av ffv1 bd9eabfc14c9ad53c37b32279e276619f4390ab8 ../ffv1
 DIST_TUPLE +=		github rust-av flavors 833508af656d298c269f2397c8541a084264d992 ../flavors
