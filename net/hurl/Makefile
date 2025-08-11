@@ -2,7 +2,7 @@ COMMENT =		CLI for HTTP requests
 
 GH_ACCOUNT =		Orange-OpenSource
 GH_PROJECT =		hurl
-GH_TAGNAME =		6.1.1
+GH_TAGNAME =		7.0.0
 
 CATEGORIES =		net
 
@@ -20,6 +20,11 @@ LIB_DEPENDS =		net/curl \
 			textproc/libxml
 
 CONFIGURE_STYLE =	cargo
+
+# libclang.so
+MODULES +=		lang/clang
+MODCARGO_ENV +=		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
+			LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 MODCARGO_INSTALL_TARGET_PATHS = ./packages/hurl ./packages/hurlfmt
 
