@@ -9,7 +9,7 @@ DISTNAME=		dbus-${V}
 EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
 
-REVISION-main=		0
+REVISION-main=		1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
