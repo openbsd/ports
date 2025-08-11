@@ -1,0 +1,11 @@
+--- dts/upstream/src/arm64/rockchip/rk3566-radxa-zero-3.dtsi.orig	Sun Aug  3 21:44:24 2025
++++ dts/upstream/src/arm64/rockchip/rk3566-radxa-zero-3.dtsi	Sun Aug  3 21:44:36 2025
+@@ -7,7 +7,7 @@
+ 
+ / {
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	hdmi-con {

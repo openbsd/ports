@@ -1,4 +1,5 @@
 VERSION=	2025.07
+REVISION=	0
 
 SOC=		rk356x
 
@@ -15,6 +16,7 @@ BOARDS=\
 	quartz64-b-rk3566 \
 	radxa-cm3-io-rk3566 \
 	radxa-e25-rk3568 \
+	radxa-zero-3-rk3566 \
 	rock-3a-rk3568 \
 	soquartz-blade-rk3566 \
 	soquartz-cm4-rk3566 \
