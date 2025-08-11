@@ -3,6 +3,8 @@
 USE_WXNEEDED =	Yes
 USE_NOBTCFI =	Yes
 
+BROKEN-i386 =	ld.lld: error: relocation R_386_32 cannot be used against local symbol; recompile with -fPIC
+
 COMMENT =	modern continuation of DOSBox
 
 V =		0.82.2
