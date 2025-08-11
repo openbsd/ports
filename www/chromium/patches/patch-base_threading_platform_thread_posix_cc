@@ -39,7 +39,7 @@ Index: base/threading/platform_thread_posix.cc
    NOTIMPLEMENTED();
 +// avoid pledge(2) violation
 +#elif BUILDFLAG(IS_BSD)
-+   NOTIMPLEMENTED();
++  NOTIMPLEMENTED();
  #else
    if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint)) {
      return;

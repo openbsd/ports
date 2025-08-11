@@ -19,7 +19,7 @@ Index: chrome/browser/global_features.cc
    whats_new_registry_ = CreateWhatsNewRegistry();
  #endif
  
-@@ -120,7 +120,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -119,7 +119,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  

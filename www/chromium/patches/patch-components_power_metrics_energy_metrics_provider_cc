@@ -6,7 +6,7 @@ Index: components/power_metrics/energy_metrics_provider.cc
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #include "components/power_metrics/energy_metrics_provider_linux.h"
 +#elif BUILDFLAG(IS_BSD)
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  #endif  // BUILDFLAG(IS_WIN)
  
  namespace power_metrics {

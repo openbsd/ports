@@ -37,7 +37,7 @@ Index: chrome/browser/browser_process_impl.cc
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore) !=
        "basic") {
-@@ -1720,7 +1720,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1716,7 +1716,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

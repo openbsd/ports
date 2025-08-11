@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			138.0.7204.183
+V=			139.0.7258.66
 
 DISTNAME=		chromium-${V}
 
@@ -148,8 +148,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		openh264 \
 		opus
 
-GN_ARGS=	enable_nacl=false \
-		is_official_build=true \
+GN_ARGS=	is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=true \

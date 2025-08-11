@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc
 --- chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc.orig
 +++ chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc
-@@ -94,7 +94,7 @@ void ManagedProfileRequiredPage::CommandReceived(const
+@@ -95,7 +95,7 @@ void ManagedProfileRequiredPage::CommandReceived(const
  
    switch (cmd) {
      case security_interstitials::CMD_DONT_PROCEED:
