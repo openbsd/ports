@@ -1,6 +1,6 @@
 COMMENT=	display new entries in system logfiles since last run
 
-V=		1.3.23
+V=		1.4.6
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
