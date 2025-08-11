@@ -66,8 +66,10 @@ share/aclocal/ax_c_var_func.m4
 share/aclocal/ax_cache_size.m4
 share/aclocal/ax_caolan_check_package.m4
 share/aclocal/ax_caolan_search_package.m4
+share/aclocal/ax_cc_attrcommon.m4
 share/aclocal/ax_cc_for_build.m4
 share/aclocal/ax_cc_maxopt.m4
+share/aclocal/ax_cc_tentdef.m4
 share/aclocal/ax_cf_ebcdic.m4
 share/aclocal/ax_cflags_aix_option.m4
 share/aclocal/ax_cflags_force_c89.m4
@@ -337,7 +339,9 @@ share/aclocal/ax_func_memmove.m4
 share/aclocal/ax_func_mkdir.m4
 share/aclocal/ax_func_posix_memalign.m4
 share/aclocal/ax_func_snprintf.m4
+share/aclocal/ax_func_which_gethostbyaddr_r.m4
 share/aclocal/ax_func_which_gethostbyname_r.m4
+share/aclocal/ax_func_which_gethostent_r.m4
 share/aclocal/ax_func_which_getservbyname_r.m4
 share/aclocal/ax_gcc_archflag.m4
 share/aclocal/ax_gcc_builtin.m4
