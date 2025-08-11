@@ -112,10 +112,13 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}websockets_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}websockets_impl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}websockets_sansio_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}websockets_sansio_impl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}wsproto_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}wsproto_impl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/auto.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/websockets_impl.py
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/wsproto_impl.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/py.typed
 lib/python${MODPY_VERSION}/site-packages/uvicorn/server.py

@@ -1,6 +1,6 @@
 COMMENT=	ASGI web server for Python
 
-MODPY_DISTV=	0.34.3
+MODPY_DISTV=	0.35.0
 DISTNAME=	uvicorn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,8 +22,10 @@ RUN_DEPENDS=	devel/py-click \
 		www/py-httptools \
 		www/py-httpx
 
-TEST_DEPENDS=	devel/py-test-xdist \
+TEST_DEPENDS=	devel/py-test-mock \
+		devel/py-test-xdist \
 		net/py-websockets \
-		net/py-wsproto
+		net/py-wsproto \
+		security/py-trustme
 
 .include <bsd.port.mk>
