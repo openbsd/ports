@@ -1,17 +1,20 @@
 # Backend only supports amd64 and i386
 ONLY_FOR_ARCHS =	amd64 i386
 
+BROKEN =	bootstrap needs updating
+
 # No BT CFI yet.
 USE_NOBTCFI =	Yes
 
 V =		2.109.0
 BOOTSTRAP =	2.109.0
 COMMENT =	reference compiler for the D programming language
-DISTFILES =		dmd-${V}{v${V}}.tar.gz
-DISTFILES.boot= 	dmd-${BOOTSTRAP}-bootstrap.tar.gz
-DISTFILES.phobos = 	phobos-${V}{v${V}}.tar.gz
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
+
+DISTFILES =		dmd-${V}{v${V}}.tar.gz
+DISTFILES.boot =	dmd-${BOOTSTRAP}-bootstrap.tar.gz
+DISTFILES.phobos =	phobos-${V}{v${V}}.tar.gz
 
 HOMEPAGE =	https://dlang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
