@@ -163,6 +163,7 @@
      SUBDIR += iucode-tool
      SUBDIR += iwatch
      SUBDIR += jefferson
+     SUBDIR += just
      SUBDIR += kitd
      SUBDIR += kopia
      SUBDIR += krename
