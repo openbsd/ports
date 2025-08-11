@@ -1,5 +1,6 @@
 @pkgpath math/fftw3,float
 @bin bin/fftwf-wisdom
+lib/cmake/fftw3f/
 lib/cmake/fftw3f/FFTW3fConfig.cmake
 lib/cmake/fftw3f/FFTW3fConfigVersion.cmake
 lib/cmake/fftw3f/FFTW3LibraryDepends.cmake

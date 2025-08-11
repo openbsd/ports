@@ -14,7 +14,7 @@ SHARED_LIBS=	fftw3	7.1 \
 		fftw3f_threads	1.2
 CATEGORIES=	math
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-common=	0
 
 HOMEPAGE=	https://www.fftw.org/
