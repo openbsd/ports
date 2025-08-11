@@ -2,6 +2,7 @@ COMMENT =	read and manage your digital comic collection
 
 V =		9.15.0
 DISTNAME =	yacreader-${V}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -12,10 +13,11 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets c m poppler-qt5
-WANTLIB += unarr
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
+WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Svg Qt6Widgets
+WANTLIB += c m poppler-qt6 unarr
 
 SITES = 	https://github.com/YACReader/yacreader/releases/download/${V}/
 
@@ -24,14 +26,15 @@ EXTRACT_SUFX =		-src.tar.xz
 # C++11
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/qmake x11/qt5
+MODULES =		devel/qmake x11/qt6
 
 BUILD_DEPENDS =		archivers/xz
 LIB_DEPENDS =		archivers/unarr \
-			print/poppler,-qt5 \
-			x11/qt5/qtquickcontrols2 \
-			x11/qt5/qtmultimedia \
-			x11/qt5/qtsvg
+			print/poppler,-qt6 \
+			x11/qt6/qt5compat \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtmultimedia \
+			x11/qt6/qtsvg
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
