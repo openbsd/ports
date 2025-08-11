@@ -1,0 +1,8 @@
+@bin bin/just
+share/examples/just/
+share/examples/just/cross-platform.just
+share/examples/just/keybase.just
+share/examples/just/kitchen-sink.just
+share/examples/just/powershell.just
+share/examples/just/pre-commit.just
+share/examples/just/screenshot.just
