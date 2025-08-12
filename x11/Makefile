@@ -261,6 +261,7 @@
      SUBDIR += py-xcbgen
      SUBDIR += py-xlib
      SUBDIR += qdirstat
+     SUBDIR += qt-color-widgets
      SUBDIR += qt5
      SUBDIR += qt5ct
      SUBDIR += qt6
