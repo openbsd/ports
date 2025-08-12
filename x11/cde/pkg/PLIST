@@ -1,4 +1,3 @@
-@extraunexec rm -rf ${LOCALSTATEDIR}/spool/calendar
 @extraunexec rm -rf ${LOCALSTATEDIR}/dt/*
 @rcscript ${RCDIR}/dtlogin
 app-defaults/
@@ -6866,5 +6865,6 @@ share/terminfo/
 share/terminfo/d/
 share/terminfo/d/dtterm
 @sample ${LOCALSTATEDIR}/dt/
+@sample ${LOCALSTATEDIR}/spool/calendar/
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}
