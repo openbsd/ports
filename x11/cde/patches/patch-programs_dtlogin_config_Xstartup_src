@@ -1,0 +1,9 @@
+Index: programs/dtlogin/config/Xstartup.src
+--- programs/dtlogin/config/Xstartup.src.orig
++++ programs/dtlogin/config/Xstartup.src
+@@ -78,4 +78,4 @@ utmp_flag=UTMP_FLAG
+ utmp_flag=''
+ #endif
+ 
+-exec SESSREG -a $wtmp_flag $utmp_flag -l $DISPLAY $USER
++exec SESSREG -a $wtmp_flag $utmp_flag -l $DISPLAY -x CDE_INSTALLATION_TOP/config/Xservers $USER

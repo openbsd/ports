@@ -1,12 +1,7 @@
 #!/bin/ksh
 
-# XXX should be -daemon and rc_bg should be dropped but:
-# ttyslot: Inappropriate ioctl for device
-# maybe in programs/dtlogin/daemon.c?
-daemon="${TRUEPREFIX}/bin/dtlogin -no-daemon"
+daemon="${TRUEPREFIX}/bin/dtlogin -daemon"
 
 . /etc/rc.d/rc.subr
-
-rc_bg=YES
 
 rc_cmd $1
