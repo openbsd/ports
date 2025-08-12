@@ -368,6 +368,7 @@
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt
+     SUBDIR += sequoia-sq
      SUBDIR += shash
      SUBDIR += shash,static
      SUBDIR += smtpscan
