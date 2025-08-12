@@ -98,6 +98,3 @@ share/u-boot/rockpro64-rk3399/u-boot-rockchip.bin
 @comment share/u-boot/rockpro64-rk3399/u-boot.bin
 @comment share/u-boot/rockpro64-rk3399/u-boot.img
 share/u-boot/rockpro64-rk3399/u-boot.itb
-share/u-boot/rpi_arm64/
-@comment share/u-boot/rpi_arm64/u-boot
-share/u-boot/rpi_arm64/u-boot.bin

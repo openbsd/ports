@@ -1,0 +1,5 @@
+@conflict u-boot-aarch64-<2021.10p11
+share/u-boot/
+share/u-boot/rpi_arm64/
+@comment share/u-boot/rpi_arm64/u-boot
+share/u-boot/rpi_arm64/u-boot.bin

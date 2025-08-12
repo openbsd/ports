@@ -4,6 +4,7 @@
      SUBDIR += riscv64
      SUBDIR += rk356x
      SUBDIR += rk3588
+     SUBDIR += rpi
      SUBDIR += sun50i
      SUBDIR += sunxi
 

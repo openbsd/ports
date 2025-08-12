@@ -1,5 +1,5 @@
 VERSION=	2021.10
-REVISION=	10
+REVISION=	11
 
 SOC=		aarch64
 
@@ -17,8 +17,7 @@ BOARDS=\
 	rock960-rk3399 \
 	rock-pi-4-rk3399 \
 	rock-pi-n10-rk3399pro \
-	rockpro64-rk3399 \
-	rpi_arm64
+	rockpro64-rk3399
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
 		devel/py-elftools \
