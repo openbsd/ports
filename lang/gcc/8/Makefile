@@ -232,7 +232,7 @@ post-extract:
 		${WRKDIR}/bootstrap/include/c++/*/*/bits/c++config.h
 .endif
 	-chmod 644 ${WRKDIR}/bootstrap/system-libs/lib*.so* # XXX
-	-cp `ls /usr/lib/libc.so.* | sort -t . -V | tail -1` ${WRKDIR}/bootstrap/system-libs/libc.so.* # XXX
+	-cp `ls /usr/lib/libc.so.* | sort -t . -V | tail -2` ${WRKDIR}/bootstrap/system-libs/libc.so.* # XXX
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}
