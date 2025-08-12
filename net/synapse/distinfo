@@ -214,7 +214,7 @@ SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8
 SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pRCg=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
-SHA256 (synapse-1.135.0.tar.gz) = mHLDPOFEmbNmJTMfc7ZpWsZ/FuC4Zf4VSaacaeeo954=
+SHA256 (synapse-1.135.2.tar.gz) = wd9GFx2MAlx9LPMLl8X9hu3dR1GcviUhx2tNppkZQFc=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -431,4 +431,4 @@ SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
-SIZE (synapse-1.135.0.tar.gz) = 9056065
+SIZE (synapse-1.135.2.tar.gz) = 9076454
