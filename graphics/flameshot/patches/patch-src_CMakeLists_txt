@@ -3,6 +3,15 @@ Install manpage to correct location
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
+@@ -220,7 +220,7 @@ if (USE_KDSINGLEAPPLICATION)
+ 
+   target_link_libraries(
+           flameshot
+-          kdsingleapplication
++          KDAB::kdsingleapplication
+   )
+ endif()
+ 
 @@ -362,7 +362,7 @@ if (UNIX)
  
      # Install man pages
