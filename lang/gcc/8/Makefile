@@ -26,12 +26,14 @@ FULL_PKGVERSION = $V
 REVISION = 28
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
-ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-$V-4.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-2.tar.xz
-ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
+
+# old bootstraps for archs where ada is currently disabled
+#ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
+#ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
@@ -63,9 +65,9 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
-SUPDISTFILES.strap =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
-		${ADASTRAP-i386} ${ADASTRAP-mips64} ${ADASTRAP-powerpc} \
-		${ADASTRAP-sparc64}
+.for _arch in ${ONLY_FOR_ARCHS-ada}
+SUPDISTFILES.strap += ${ADASTRAP-${_arch}}
+.endfor
 EXTRACT_ONLY =	${DISTNAME}.tar.xz
 
 BUILD_DEPENDS +=	devel/bison
