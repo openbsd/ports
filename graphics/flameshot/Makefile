@@ -1,3 +1,5 @@
+BROKEN =	tries to fetch from internet; Qt6 migration missed
+
 COMMENT =	powerful yet simple to use screenshot software
 CATEGORIES =	graphics x11
 
