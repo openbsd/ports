@@ -60,6 +60,7 @@
      SUBDIR += c2ffi
      SUBDIR += cabal-bundler
      SUBDIR += cabal-install
+     SUBDIR += capnproto
      SUBDIR += capstone
      SUBDIR += cargo-audit
      SUBDIR += cargo-c
