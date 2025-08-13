@@ -1,12 +1,12 @@
 COMMENT=		library to handle keyboard descriptions
 
-V=			1.10.0
+V=			1.11.0
 DIST_TUPLE=		github xkbcommon libxkbcommon xkbcommon-${V} .
 PKGNAME=		libxkbcommon-${V}
 
-SHARED_LIBS += xkbcommon                 3.2 # 0.10.0
-SHARED_LIBS += xkbcommon-x11             2.3 # 0.10.0
-SHARED_LIBS += xkbregistry               1.2 # 0.10.0
+SHARED_LIBS += xkbcommon                 4.0 # 0.11.0
+SHARED_LIBS += xkbcommon-x11             2.3 # 0.11.0
+SHARED_LIBS += xkbregistry               1.2 # 0.11.0
 
 CATEGORIES=		x11 inputmethods
 
@@ -19,8 +19,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-#EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson
 

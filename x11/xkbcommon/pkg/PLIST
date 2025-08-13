@@ -16,9 +16,11 @@ lib/pkgconfig/xkbregistry.pc
 libexec/xkbcommon/
 @bin libexec/xkbcommon/xkbcli-compile-compose
 @bin libexec/xkbcommon/xkbcli-compile-keymap
+@bin libexec/xkbcommon/xkbcli-dump-keymap
 @bin libexec/xkbcommon/xkbcli-dump-keymap-wayland
 @bin libexec/xkbcommon/xkbcli-dump-keymap-x11
 @bin libexec/xkbcommon/xkbcli-how-to-type
+@bin libexec/xkbcommon/xkbcli-interactive
 @bin libexec/xkbcommon/xkbcli-interactive-wayland
 @bin libexec/xkbcommon/xkbcli-interactive-x11
 @bin libexec/xkbcommon/xkbcli-list
