@@ -4313,6 +4313,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_lazycell}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_lazycell}/src/serde_impl.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.cargo-checksum.json
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/.editorconfig
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.git-blame-ignore-revs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.gitignore
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.release-plz.toml
@@ -4335,6 +4336,21 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/x86_64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/macros.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/bionic/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/bionic/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/bionic/sys/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/bionic/sys/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/bionic/sys/socket.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/can/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/can.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/can/j1939.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/can/raw.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/linux/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/linux_uapi/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/new/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/primitives.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/psp.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/sgx.rs
@@ -4421,6 +4437,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/cygwin/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/b32.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/b64.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/bsd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/native.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/haiku/x86_64.rs
