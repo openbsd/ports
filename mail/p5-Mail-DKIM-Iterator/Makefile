@@ -1,6 +1,6 @@
 COMMENT =	iterative DKIM validation of records or signing of mails
 
-DISTNAME =	Mail-DKIM-Iterator-1.010
+DISTNAME =	Mail-DKIM-Iterator-1.011
 
 CATEGORIES =	mail
 
