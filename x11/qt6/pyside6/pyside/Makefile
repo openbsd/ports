@@ -1,3 +1,5 @@
+DPB_PROPERTIES =	parallel
+
 COMMENT =		Python Qt bindings for Qt 6
 PKGNAME =		pyside6-${VERSION}
 
