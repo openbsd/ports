@@ -1,6 +1,6 @@
 COMMENT =		file identification library
 
-MODPY_DISTV =		2.6.12
+MODPY_DISTV =		2.6.13
 DISTNAME =		identify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
