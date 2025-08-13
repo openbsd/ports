@@ -13,12 +13,13 @@ PERMIT_PACKAGE=	Yes
 SITES=		${SITE_GNU:=bash/}
 SITES.p=	${SITE_GNU:=bash/bash-5.3-patches/}
 DIST_SUBDIR=	bash
+# 5.3 was re-rolled
+DISTFILES=	bash-5.3-0{bash-5.3}.tar.gz
 .for i in 001 002 003
 PATCHFILES.p +=	bash53-$i
 .endfor
 
 LIB_DEPENDS=	devel/gettext,-runtime
-BUILD_DEPENDS=	devel/gettext,-tools
 WANTLIB=	c curses iconv intl m pthread
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
