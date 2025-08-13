@@ -60,6 +60,7 @@ libexec/robsd/util.sh
 @man man/man8/robsd-rescue.8
 @man man/man8/robsd-stat.8
 @man man/man8/robsd-step.8
+@man man/man8/robsd-wait.8
 @man man/man8/robsd.8
 sbin/robsd
 sbin/robsd-clean
