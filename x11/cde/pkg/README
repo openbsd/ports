@@ -2,6 +2,9 @@
 | Running ${PKGSTEM} on OpenBSD
 +------------------------------------------------------------------------------
 
+Useful configuration tips are available in the Common Desktop Environment wiki:
+https://sourceforge.net/p/cdesktopenv/wiki/Home/
+
 System Configuration
 ====================
 
