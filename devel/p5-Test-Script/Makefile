@@ -1,7 +1,6 @@
 COMMENT =	cross-platform basic tests for scripts
 
-DISTNAME =	Test-Script-1.29
-REVISION =	0
+DISTNAME =	Test-Script-1.31
 
 CATEGORIES =	devel
 
