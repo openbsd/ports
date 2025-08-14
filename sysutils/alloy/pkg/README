@@ -1,0 +1,19 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Migrating from promtail
+=======================
+
+Grafana has deprecated promtail which entered long term support in February
+2025. End of life will occur on March 2, 2026.
+
+See Grafana's documentation for details on migrating your promtail config
+here: https://grafana.com/docs/alloy/latest/set-up/migrate/from-promtail/
+
+Quickstart:
+
+1. Convert your promtail config using:
+   alloy convert --source-format=promtail --output=<OUTPUT_CONFIG_PATH> <INPUT_CONFIG_PATH>
+   Note: alloy.rc is configured to read from /etc/alloy/config.alloy
+2. Run a promtail config in alloy using the --config.format=promtail flag

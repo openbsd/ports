@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/alloy"
+daemon_user="_loki"
+daemon_flags="run --storage.path /var/alloy /etc/alloy/config.alloy"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
