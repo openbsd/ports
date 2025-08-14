@@ -5,7 +5,7 @@ GH_ACCOUNT =	WayfireWM
 GH_PROJECT =	wayfire
 GH_COMMIT =	3d3f426f7de8a24117f6c1d33c8dead1bc80b7e9
 DISTNAME =	wayfire-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland
@@ -24,7 +24,7 @@ DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch caa156921c6be1dff9c2ccd851330c96de79
 #EXTRACT_SUFX =	.tar.xz
 HOMEPAGE =	https://wayfire.org
 
-MODULES =	devel/meson
+MODULES =	devel/meson wayland/wlroots
 BUILD_DEPENDS =	graphics/glm \
 		devel/cmake/core \
 		textproc/nlohmann-json \
@@ -46,12 +46,11 @@ LIB_DEPENDS =	devel/pango \
 		wayland/libinput-openbsd \
 		wayland/wayland \
 		wayland/wf-config \
-		wayland/wlroots>=0.18 \
 		x11/xkbcommon
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GLESv2 c cairo evdev execinfo
 WANTLIB += gobject-2.0 input jpeg m pango-1.0 pangocairo-1.0 pixman-1
-WANTLIB += png wayland-client wayland-server wf-config wlroots-0.18 xcb xkbcommon
+WANTLIB += png wayland-client wayland-server wf-config xcb xkbcommon
 WANTLIB += lib/inotify/inotify
 
 # hack for gbm getting -I/usr/local/lib and failing build in wf-touch ?
