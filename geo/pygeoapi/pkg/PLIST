@@ -194,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mongo
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mongo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_elastic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_elastic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_postgresql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_postgresql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_proxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_tippecanoe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -206,8 +208,6 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}oracl
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}oracle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}parquet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}parquet.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}rasterio_.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}rasterio_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sensorthings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -216,6 +216,8 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}senso
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sensorthings_edr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}socrata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}socrata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}tile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -245,17 +247,18 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/hateoas.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mapscript_.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mongo.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_elastic.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_postgresql.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_proxy.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_tippecanoe.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/ogr.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/opensearch_.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/oracle.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/parquet.py
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/postgresql.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/rasterio_.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/sensorthings.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/sensorthings_edr.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/socrata.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/sql.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/tile.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/tinydb_.py
