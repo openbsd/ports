@@ -20,15 +20,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	{ADIVB, ydivb, Pb, opBytes{0xf6, 06}},
  	{ADIVL, ydivl, Px, opBytes{0xf7, 06}},
  	{ADIVPD, yxm, Pe, opBytes{0x5e}},
-@@ -1096,6 +1101,7 @@ var optab =
- 	{ADPPD, yxshuf, Pq, opBytes{0x3a, 0x41, 0}},
- 	{ADPPS, yxshuf, Pq, opBytes{0x3a, 0x40, 0}},
- 	{AEMMS, ynone, Pm, opBytes{0x77}},
-+	{AENDBR64, ynone, Pf3, opBytes{0x1e, 0xfa}},
- 	{AEXTRACTPS, yextractps, Pq, opBytes{0x3a, 0x17, 0}},
- 	{AENTER, nil, 0, opBytes{}}, // botch
- 	{AFXRSTOR, ysvrs_mo, Pm, opBytes{0xae, 01, 0xae, 01}},
-@@ -1858,7 +1864,8 @@ func spadjop(ctxt *obj.Link, l, q obj.As) obj.As {
+@@ -1859,7 +1864,8 @@ func spadjop(ctxt *obj.Link, l, q obj.As) obj.As {
  // or end on a 32 byte boundary by inserting NOPs before the jumps.
  func isJump(p *obj.Prog) bool {
  	return p.To.Target() != nil || p.As == obj.AJMP || p.As == obj.ACALL ||
@@ -38,18 +30,18 @@ Index: src/cmd/internal/obj/x86/asm6.go
  }
  
  // lookForJCC returns the first real instruction starting from p, if that instruction is a conditional
-@@ -2053,6 +2060,24 @@ func requireAlignment(a int64, ctxt *obj.Link, cursym 
+@@ -2054,6 +2060,24 @@ func requireAlignment(a int64, ctxt *obj.Link, cursym 
  	return true
  }
  
 +var runtimeEntryPoints = map[string]struct{}{
-+	"runtime.(*_panic).start": {},
-+	"runtime.deferproc": {},
-+	"runtime.deferprocStack": {},
-+	"runtime.mcall": {},
-+	"runtime.morestack": {},
++	"runtime.(*_panic).start":  {},
++	"runtime.deferproc":        {},
++	"runtime.deferprocStack":   {},
++	"runtime.mcall":            {},
++	"runtime.morestack":        {},
 +	"runtime.morestack_noctxt": {},
-+	"runtime.mstart1": {},
++	"runtime.mstart1":          {},
 +}
 +
 +func isRuntimeEntryPoint(s *obj.LSym) bool {
@@ -63,7 +55,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.ProgAlloc) {
  	if ctxt.Retpoline && ctxt.Arch.Family == sys.I386 {
  		ctxt.Diag("-spectre=ret not supported on 386")
-@@ -2069,6 +2094,7 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+@@ -2070,6 +2094,7 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
  		ctxt.Diag("x86 tables not initialized, call x86.instinit first")
  	}
  
@@ -71,7 +63,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	for p := s.Func().Text; p != nil; p = p.Link {
  		if p.To.Type == obj.TYPE_BRANCH && p.To.Target() == nil {
  			p.To.SetTarget(p)
-@@ -2101,6 +2127,19 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+@@ -2102,6 +2127,19 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
  			p.To.Reg = 0
  			p.To.Offset = 0
  		}
@@ -91,7 +83,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	}
  
  	var count int64 // rough count of number of instructions
-@@ -4885,7 +4924,11 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
+@@ -4886,7 +4924,11 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
  					// LEAQ -16(SP), BP
  					ab.Put(bpduff1)
  				}

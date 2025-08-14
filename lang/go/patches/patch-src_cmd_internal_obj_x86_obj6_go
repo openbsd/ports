@@ -1,7 +1,7 @@
 Index: src/cmd/internal/obj/x86/obj6.go
 --- src/cmd/internal/obj/x86/obj6.go.orig
 +++ src/cmd/internal/obj/x86/obj6.go
-@@ -602,13 +602,19 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -605,13 +605,19 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  	}
  
  	p := cursym.Func().Text
@@ -22,7 +22,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		if q.As == obj.ACALL || q.As == obj.ADUFFCOPY || q.As == obj.ADUFFZERO {
  			hasCall = true
  			break
-@@ -617,7 +623,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -620,7 +626,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  
  	var bpsize int
  	if ctxt.Arch.Family == sys.AMD64 &&
@@ -31,7 +31,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		!(autoffset == 0 && !hasCall) { // (2) below
  		// Make room to save a base pointer.
  		// There are 2 cases we must avoid:
-@@ -626,15 +632,15 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -629,15 +635,15 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  		// 2) Frameless leaf functions
  		bpsize = ctxt.Arch.PtrSize
  		autoffset += int32(bpsize)
@@ -51,7 +51,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  
  	// TODO(rsc): Remove.
  	if ctxt.Arch.Family == sys.I386 && cursym.Func().Locals < 0 {
-@@ -642,7 +648,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -645,7 +651,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  	}
  
  	// TODO(rsc): Remove 'ctxt.Arch.Family == sys.AMD64 &&'.
@@ -60,7 +60,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		leaf := true
  	LeafSearch:
  		for q := p; q != nil; q = q.Link {
-@@ -664,7 +670,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -667,7 +673,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  		}
  
  		if leaf {
@@ -69,7 +69,7 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		}
  	}
  
-@@ -676,10 +682,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+@@ -679,10 +685,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
  	}
  
  	var regg int16
@@ -82,18 +82,17 @@ Index: src/cmd/internal/obj/x86/obj6.go
  		// Load G register for the wrapper code
  		p, regg = loadG(ctxt, cursym, p, newprog)
  	}
-@@ -1048,6 +1054,10 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
+@@ -1051,6 +1057,9 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
  		tmp = int16(REGENTRYTMP0)
  	}
  
-+
 +	// Jump back to here after morestack returns.
 +	startPred := cursym.Func().Text
 +
  	if ctxt.Flag_maymorestack != "" {
  		p = cursym.Func().SpillRegisterArgs(p, newprog)
  
-@@ -1078,10 +1088,8 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
+@@ -1081,10 +1090,8 @@ func stacksplit(ctxt *obj.Link, cursym *obj.LSym, p *o
  		}
  
  		p = cursym.Func().UnspillRegisterArgs(p, newprog)

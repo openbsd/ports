@@ -1,7 +1,7 @@
 Index: src/cmd/internal/sys/arch.go
 --- src/cmd/internal/sys/arch.go.orig
 +++ src/cmd/internal/sys/arch.go
-@@ -103,7 +103,7 @@ var ArchAMD64 = &Arch{
+@@ -104,7 +104,7 @@ var ArchAMD64 = &Arch{
  	MinLC:          1,
  	Alignment:      1,
  	CanMergeLoads:  true,
@@ -10,7 +10,7 @@ Index: src/cmd/internal/sys/arch.go
  	HasLR:          false,
  	FixedFrameSize: 0,
  }
-@@ -130,7 +130,7 @@ var ArchARM64 = &Arch{
+@@ -131,7 +131,7 @@ var ArchARM64 = &Arch{
  	MinLC:          4,
  	Alignment:      1,
  	CanMergeLoads:  true,

@@ -9,11 +9,3 @@ Index: src/cmd/internal/obj/x86/anames.go
  	"DIVB",
  	"DIVL",
  	"DIVPD",
-@@ -210,6 +211,7 @@ var Anames = []string{
- 	"DPPD",
- 	"DPPS",
- 	"EMMS",
-+	"ENDBR64",
- 	"ENTER",
- 	"EXTRACTPS",
- 	"F2XM1",
