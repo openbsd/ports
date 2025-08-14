@@ -1,10 +1,10 @@
 COMMENT =	EDID and DisplayID library
 
-V = 		0.2.0
+V = 		0.3.0
 DISTNAME = 	libdisplay-info-$V
 CATEGORIES = 	sysutils
 
-SHARED_LIBS += display-info              0.1 # 0.2.0
+SHARED_LIBS += display-info              1.0 # 0.3.0
 
 # MIT
 PERMIT_PACKAGE = Yes
