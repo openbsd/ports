@@ -1,7 +1,7 @@
 Index: gas/Makefile.in
 --- gas/Makefile.in.orig
 +++ gas/Makefile.in
-@@ -1662,7 +1662,7 @@ cgen.@OBJEXT@: cgen.c cgen.h cgen-desc.h subsegs.h \
+@@ -2150,7 +2150,7 @@ cgen.@OBJEXT@: cgen.c cgen.h cgen-desc.h subsegs.h \
  .PHONY: install-exec-local install-data-local
  .PHONY: install-exec-bindir install-exec-tooldir
  
