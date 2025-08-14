@@ -1,8 +1,8 @@
 COMMENT =	modular Wayland compositor library
 
-V =		0.18.2
+V =		${MODWLROOTS_VERSION}.2
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
 
@@ -15,7 +15,9 @@ PERMIT_PACKAGE = Yes
 
 SHARED_LIBS +=  wlroots-0.18 0.0 # 0.0
 
-MODULES =	devel/meson
+MODULES =	devel/meson wayland/wlroots
+
+MODWLROOTS_LIBDEP =	No
 
 WANTLIB +=	EGL GLESv2 drm gbm m pixman-1
 WANTLIB +=	display-info lcms2 liftoff udev
