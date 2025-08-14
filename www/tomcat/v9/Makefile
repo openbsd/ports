@@ -5,7 +5,7 @@ MODJAVA_VER=	11+
 VER=		9.0.108
 
 # keep until 7.8
-# jdk version changed in 7.7-current and tomcat is updated in snapshots
+# MODJAVA_VER changed in 7.7-current and tomcat is updated in snapshots
 REVISION=	0
 
 .include <bsd.port.mk>
