@@ -3,7 +3,7 @@ COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-qt6=	Qt6 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		25.07.0
+V=		25.08.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,8 +13,8 @@ PKGNAME-qt6=	poppler-qt6-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              93.0     # 151.0
-SHARED_LIBS +=	poppler-glib         19.16    # 8.30
+SHARED_LIBS +=	poppler              94.0     # 152.0
+SHARED_LIBS +=	poppler-glib         19.17    # 8.30
 SHARED_LIBS +=	poppler-qt5          9.2      # 1.39
 SHARED_LIBS +=	poppler-qt6          2.2      # 3.11
 SHARED_LIBS +=	poppler-cpp          19.1     # 2.1
