@@ -1,6 +1,5 @@
-Index: src/arm64/qcom/x1e80100.dtsi
---- src/arm64/qcom/x1e80100.dtsi.orig
-+++ src/arm64/qcom/x1e80100.dtsi
+--- src/arm64/qcom/x1e80100.dtsi.orig	Thu Aug 14 21:08:50 2025
++++ src/arm64/qcom/x1e80100.dtsi	Thu Aug 14 21:09:14 2025
 @@ -71,8 +71,8 @@
  			reg = <0x0 0x0>;
  			enable-method = "psci";
@@ -173,7 +172,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
 +
 +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
 +
-+			iommus = <&apps_smmu 0xa0 0x0>;
++			iommus = <&apps_smmu 0x1a0 0x0>;
 +
 +			clock-names = "core_clk",
 +				      "bus_aggr_clk",
