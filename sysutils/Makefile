@@ -2,6 +2,7 @@
      SUBDIR += aarch64-esr-decoder
      SUBDIR += accountsservice
      SUBDIR += alertmanager
+     SUBDIR += alloy
      SUBDIR += amazon-ecs-cli
      SUBDIR += amazon-ssm-agent
      SUBDIR += anacron
