@@ -2,4 +2,3 @@
 @pkgpath telephony/asterisk/19,-lua
 @so lib/asterisk/modules/pbx_lua.so
 share/examples/asterisk/default/extensions.lua
-@sample ${SYSCONFDIR}/asterisk/extensions.lua

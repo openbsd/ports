@@ -2,4 +2,3 @@
 @conflict asterisk-<16.9.0p0
 @so lib/asterisk/modules/pbx_lua.so
 share/examples/asterisk/default/extensions.lua
-@sample ${SYSCONFDIR}/asterisk/extensions.lua
