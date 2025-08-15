@@ -1,12 +1,11 @@
 COMMENT =	SPIRV-Headers
 
-V =		1.4.304.0
+V =		1.4.321.0
 DISTNAME =	spirv-headers-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Headers
 GH_TAGNAME =	vulkan-sdk-${V}
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	devel graphics
 

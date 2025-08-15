@@ -1,9 +1,8 @@
 COMMENT =	Vulkan Utility Libraries
 
-V =		1.4.304.0
+V =		1.4.321.0
 PKGNAME =	vulkan-utility-libraries-${V}
 DIST_TUPLE =	github KhronosGroup Vulkan-Utility-Libraries vulkan-sdk-${V} .
-REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -11,7 +10,7 @@ HOMEPAGE =	https://www.khronos.org/vulkan/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
 # C++17
 COMPILER =	base-clang ports-gcc

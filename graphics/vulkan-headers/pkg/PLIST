@@ -8,6 +8,8 @@ include/vk_video/vulkan_video_codec_h264std_encode.h
 include/vk_video/vulkan_video_codec_h265std.h
 include/vk_video/vulkan_video_codec_h265std_decode.h
 include/vk_video/vulkan_video_codec_h265std_encode.h
+include/vk_video/vulkan_video_codec_vp9std.h
+include/vk_video/vulkan_video_codec_vp9std_decode.h
 include/vk_video/vulkan_video_codecs_common.h
 include/vulkan/
 include/vulkan/vk_icd.h
@@ -32,6 +34,7 @@ include/vulkan/vulkan_hpp_macros.hpp
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
+include/vulkan/vulkan_ohos.h
 include/vulkan/vulkan_raii.hpp
 include/vulkan/vulkan_screen.h
 include/vulkan/vulkan_shared.hpp
@@ -39,6 +42,7 @@ include/vulkan/vulkan_static_assertions.hpp
 include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_to_string.hpp
 include/vulkan/vulkan_vi.h
+include/vulkan/vulkan_video.cppm
 include/vulkan/vulkan_video.hpp
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h
@@ -52,6 +56,7 @@ share/cmake/VulkanHeaders/VulkanHeadersConfigVersion.cmake
 share/vulkan/
 share/vulkan/registry/
 share/vulkan/registry/apiconventions.py
+share/vulkan/registry/base_generator.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/parse_dependency.py
@@ -66,3 +71,4 @@ share/vulkan/registry/validusage.json
 share/vulkan/registry/video.xml
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py
+share/vulkan/registry/vulkan_object.py

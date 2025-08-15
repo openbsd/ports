@@ -19,7 +19,7 @@ include/glslang/SPIRV/Logger.h
 include/glslang/SPIRV/SPVRemapper.h
 include/glslang/SPIRV/SpvTools.h
 include/glslang/SPIRV/disassemble.h
-include/glslang/SPIRV/spirv.hpp
+include/glslang/SPIRV/spirv.hpp11
 include/glslang/build_info.h
 lib/cmake/
 lib/cmake/glslang/
