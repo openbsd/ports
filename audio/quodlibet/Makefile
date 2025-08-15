@@ -18,6 +18,8 @@ MODULES=	lang/python
 MODPY_ADJ_FILES= *py
 MODPY_PYBUILD=	setuptools
 
+BUILD_DEPENDS=	devel/gettext,-tools
+
 RUN_DEPENDS=	audio/py-musicbrainzngs \
 		audio/py-mutagen \
 		devel/py-gobject3 \
@@ -33,19 +35,12 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 		multimedia/xine-lib \
 		x11/gtk+4,-guic
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/gettext,-runtime \
-		devel/gettext,-tools
-
 post-install:
 	mv ${PREFIX}/share/man/man1/* ${PREFIX}/man/man1/
 	rmdir ${PREFIX}/share/man{/man1,}
 
 # fails with PORTS_PRIVSEP
 TEST_IS_INTERACTIVE= x11
-
-# for distutils, used by setup.py
-TEST_DEPENDS=	devel/py-setuptools
 
 do-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./setup.py test
