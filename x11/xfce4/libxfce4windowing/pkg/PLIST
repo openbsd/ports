@@ -72,6 +72,7 @@ share/gtk-doc/html/libxfce4windowingui/right.png
 share/gtk-doc/html/libxfce4windowingui/style.css
 share/gtk-doc/html/libxfce4windowingui/up-insensitive.png
 share/gtk-doc/html/libxfce4windowingui/up.png
+share/locale/ar/LC_MESSAGES/libxfce4windowing.mo
 share/locale/ast/LC_MESSAGES/libxfce4windowing.mo
 share/locale/bg/LC_MESSAGES/libxfce4windowing.mo
 share/locale/ca/LC_MESSAGES/libxfce4windowing.mo
