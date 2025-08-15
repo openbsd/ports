@@ -152,18 +152,18 @@ SHA256 (cargo/debugid-0.8.0.tar.gz) = vvVS5vWI5EYJj2ukDYmsFGyMe2Sq3oPAUe4Au10rwY
 SHA256 (cargo/deno-tower-lsp-macros-0.11.3.tar.gz) = +SIbmfHMfDlWhrny1WUsWFVmapKCyNWmj6vUsdSZT6k=
 SHA256 (cargo/deno_ast-0.49.0.tar.gz) = JBWMz33vOMAP0lP9G0jIxiByFAeP5Jn0cWh2P6JEW/I=
 SHA256 (cargo/deno_cache_dir-0.24.0.tar.gz) = OSU41x4M6dsxYwIRYJW4rO9Nc0qOI2DRYwjKfcMtzcM=
-SHA256 (cargo/deno_core-0.354.0.tar.gz) = DP4yyUv26BP8LKQyl/S4ifTkiTbKGaE+O0QDWDGvwrE=
+SHA256 (cargo/deno_core-0.355.0.tar.gz) = d10v3oCi7DEW0XlwOzg0apMbuWJvSoJhSNX+hjHKsp8=
 SHA256 (cargo/deno_core_icudata-0.74.0.tar.gz) = /k3MthR7s/O6DHpI6ZO/65mdLC5HqBut7oDis3DI1pU=
 SHA256 (cargo/deno_doc-0.181.0.tar.gz) = Z8pWISeoRIkDgeiGgYAAWMWXrd/2IQngL3UZSgRYw4E=
 SHA256 (cargo/deno_error-0.7.0.tar.gz) = 3eYL0VOIaWQjTFAS09nK94gofyjYH7JKiEQ2kEEB7xA=
 SHA256 (cargo/deno_error_macro-0.7.0.tar.gz) = QJ8mV4W9lG0wBnVpVar0Cw5N6yV1Lq5qmQr+VKMc/YM=
-SHA256 (cargo/deno_graph-0.98.0.tar.gz) = CYWznLF4xoKMACmxHFRLndWW6UJLSwdq0VagHMczFO4=
+SHA256 (cargo/deno_graph-0.98.1.tar.gz) = 1U3a6ey7P7FVploB0Wm5SnIZYZsvQd5lRYxKqMeNQSM=
 SHA256 (cargo/deno_lint-0.77.0.tar.gz) = UMFj37yyATtGZhMLzlF+SUiRENr2VdNE4yGa6wmBCGg=
-SHA256 (cargo/deno_lockfile-0.31.1.tar.gz) = wgUcKuz9fyh8Kv3O5Q2eKsG48Yc7ri05NNmi4nYtfGY=
+SHA256 (cargo/deno_lockfile-0.31.2.tar.gz) = WvsgtEpEhCF49B+jtxPCsVFgYlkLXMoq15Ly1nhrx08=
 SHA256 (cargo/deno_media_type-0.2.9.tar.gz) = 8OwNrancWsRzO0F1029qFQt91o+rRts1yx7wDdc2ass=
 SHA256 (cargo/deno_native_certs-0.3.0.tar.gz) = yGdgPSpd/qMfVc7Ou1clVMqjlUN3htBY+qmigUyNbrk=
 SHA256 (cargo/deno_npm-0.36.0.tar.gz) = aI+TyxPbInoBO/1cWXMjVFhhURWTT8N84ucmIMmTRSY=
-SHA256 (cargo/deno_ops-0.230.0.tar.gz) = N9XAps5VeSHebyyE7b9hgxaRmmhQvhAYzimgiZv13ao=
+SHA256 (cargo/deno_ops-0.231.0.tar.gz) = nKUwdyu8vJrTia17zYZiOy7FVfaKLQYtI8wAiRXL54E=
 SHA256 (cargo/deno_panic-0.1.0.tar.gz) = Ayxcj0PxQCJz9M0coTOTGz2glPoWdAa23sWHWYLhiWk=
 SHA256 (cargo/deno_path_util-0.6.1.tar.gz) = v+ApNpZLKRBxm9SIhB9uiENJNgETx6v29MayjKnNehk=
 SHA256 (cargo/deno_semver-0.9.0.tar.gz) = JiW3EHzD9hpGKIbV+nfCPgY8H9FbkOPV7iZG6fYXjVU=
@@ -171,7 +171,7 @@ SHA256 (cargo/deno_task_shell-0.26.0.tar.gz) = jsnFifcz2g9d/fR11EzQHiCHQlg5pVFiU
 SHA256 (cargo/deno_terminal-0.1.1.tar.gz) = fmM31Ofzdfi5hkCadvvuz6S9ihND5jNVcprkvvoFjq8=
 SHA256 (cargo/deno_terminal-0.2.2.tar.gz) = I/ccJwCeAUHe3TFfHfo+uwpspKzOfAgPrFdupBWkZfY=
 SHA256 (cargo/deno_tower_lsp-0.4.3.tar.gz) = Z9oyWM54U2jGkbIG0A1BCfjurSTaBgOrxw4EsEhxo98=
-SHA256 (cargo/deno_tunnel-0.7.0.tar.gz) = OGSIwjzaPW9E1PpVk6RTRgMpArvVvwWOSAd7hftVD5k=
+SHA256 (cargo/deno_tunnel-0.8.0.tar.gz) = y+RdrLbg0qZGsioS/qgbovcSggL57pFgJ4K5II2hI7k=
 SHA256 (cargo/deno_unsync-0.4.4.tar.gz) = Z0KnJOi+yzcqdMZQoa77iSSluBB/fXWzhIdj6iSyeoc=
 SHA256 (cargo/deno_whoami-0.1.0.tar.gz) = 515MqpK5iifwnGcdE5mu4PWXCqSRuaWYUjqsAAohkuM=
 SHA256 (cargo/denokv_proto-0.12.0.tar.gz) = ZFz9W97DPS5cQYjqKns0jsoTlYr6THahFQTZqg78pYk=
@@ -284,7 +284,6 @@ SHA256 (cargo/getrandom-0.3.3.tar.gz) = JhReVj5U8srcR3VT8exe5lCwCGLwpYvNEsvcXw6i
 SHA256 (cargo/ghash-0.5.1.tar.gz) = 8NikNizLKcsLJlJT+wonKPWSiV7mhU/ZvBPy/9omb/E=
 SHA256 (cargo/gimli-0.31.1.tar.gz) = B+KO24CQDBnCjxBy8uiuyn+gayPNQWnO/hr1qjJgeD8=
 SHA256 (cargo/gl_generator-0.14.0.tar.gz) = GpXfwjorSpovWrQdGU+L/aPKvsQq9OOfCMM56yoMEk0=
-SHA256 (cargo/glibc_version-0.1.2.tar.gz) = gD/3Y18atOLAZLaKDGDakX09GNyNCGEw9onWLOTxwz4=
 SHA256 (cargo/glob-0.3.1.tar.gz) = 0vq8+9yH9HWDN8pTX7QabXAbZWk844KH2FbRZ0VR7Js=
 SHA256 (cargo/globset-0.4.14.tar.gz) = V9o7m1uFvWbzEJP4xAi5CnRDFnJUJGZJfcvf3AIDS+E=
 SHA256 (cargo/glow-0.16.0.tar.gz) = xeXqYNcEEBYci/XaP9/qoccu0sFfi7udGf46T60IXwg=
@@ -313,7 +312,6 @@ SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
 SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
 SHA256 (cargo/hexf-parse-0.2.1.tar.gz) = 36aGKDrW3QafEF5asJGwTGKFDT5M9dZ9660ZM/VQI98=
-SHA256 (cargo/hickory-client-0.25.0-alpha.4.tar.gz) = g1Ntq5oVmytc8sIMR+zxiM7jUxb5a+Ao5j6OE0DSck0=
 SHA256 (cargo/hickory-proto-0.25.0-alpha.4.tar.gz) = 0GPAaS7maaptJhmIqhnKVRDxzEDk8hECT1DIiEmaNdc=
 SHA256 (cargo/hickory-resolver-0.25.0-alpha.4.tar.gz) = Qrw1LkQS+2V+eV95tO/PK9YLWe5coBh/NVQZTNEQeic=
 SHA256 (cargo/hickory-server-0.25.0-alpha.4.tar.gz) = qnFU6QXVyKecFUJ4geR5srp0nFVBKATw3IdyOlMeRb0=
@@ -562,6 +560,7 @@ SHA256 (cargo/raw-window-handle-0.6.1.tar.gz) = jMO8vbHd/BHnAOYpaOa0zJx1u0ZkZK0o
 SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
+SHA256 (cargo/redox_syscall-0.5.13.tar.gz) = DQS30O5rSgIHoKetsQTSPssLR9a+rnFS0Po0tpKyn9Y=
 SHA256 (cargo/redox_users-0.4.5.tar.gz) = vSg9llHu2ksqg6Q8HJGyZsQP127NOaUKjGMK5p3HKJE=
 SHA256 (cargo/ref-cast-1.0.22.tar.gz) = xIRtTFDRchsaO++K92kk7vINXnI2RzM3mMG1GbOpRz8=
 SHA256 (cargo/ref-cast-impl-1.0.22.tar.gz) = X920+NmbCi66/GWoemmnuYdeSxrh8A2yZdMA738ovMw=
@@ -624,7 +623,7 @@ SHA256 (cargo/serde_derive-1.0.219.tar.gz) = WwJ2z38sczZfcVfIEjwhzZpQ+72ER1evKMo
 SHA256 (cargo/serde_json-1.0.140.tar.gz) = IAaLbpbcbJvSPgHfiCfmx+Hy/d1DwhgQOCgDwTa5k3M=
 SHA256 (cargo/serde_repr-0.1.19.tar.gz) = bGRFG6JPx6ai1g/HXdnIPJCQOxkCjU7/NeiPwehlZOk=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
-SHA256 (cargo/serde_v8-0.263.0.tar.gz) = hMUttmEs3OIpd9O0dXlmoLkqU7MdhAhZ7cR4wB5Hm90=
+SHA256 (cargo/serde_v8-0.264.0.tar.gz) = w0cHcS84Fec+HIMZu6BuW8EFu2X+gS6i5yef+5BfYxI=
 SHA256 (cargo/serdect-0.2.0.tar.gz) = qE8UoZ6aAUu59FEkiNmCmmjgTsq/+w+ZBM0azpRZgXc=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
 SHA256 (cargo/sha1_smol-1.0.0.tar.gz) = rhpHGGwDoyF3BC5V28X9Wu6QC44AaajXD7qWqTdc0BI=
@@ -817,7 +816,7 @@ SHA256 (cargo/wgpu-types-24.0.0.tar.gz) = UKwETA52wDoDeOd4asUF0BCoc2ZeLVE4Pc/43S
 SHA256 (cargo/which-4.4.2.tar.gz) = h7okQZogeM0rDy7eJpG2xm2OR4Nto7bbgmXrrUevv8c=
 SHA256 (cargo/which-6.0.1.tar.gz) = ghHk9YorKAWt+++8B7q4KVj8keODYzmxq3rjJGXc4Nc=
 SHA256 (cargo/which-8.0.0.tar.gz) = 0/q7lTEGw8juqDBuQ5NwDXZXVhy0MSJXGxcrv7fHuh0=
-SHA256 (cargo/whoami-1.5.1.tar.gz) = pEq0n61jToj1W/j5uzq9LyfXIEFyoRLHyZh+AcHJTqk=
+SHA256 (cargo/whoami-1.6.0.tar.gz) = aZTRMRirSSw8gMH4GShxgVklTFPEcr+c42+NrkrdAqc=
 SHA256 (cargo/wide-0.7.33.tar.gz) = DOXajstivNjsi36hn2mlEnXpEpm+WU6lzG73gZ4WzQM=
 SHA256 (cargo/widestring-1.1.0.tar.gz) = chnTa26siT+oHoTr4GSF59y7YWF3RpsULfFPH03rExE=
 SHA256 (cargo/win32job-2.0.0.tar.gz) = Wysb9VfZR4R6MOtz95qmzbPq884C9elZlDj3eJamKzw=
@@ -888,7 +887,7 @@ SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+Gft
 SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juhjve6ecG7tuhojc=
 SHA256 (cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (cargo/zune-jpeg-0.4.13.tar.gz) = FgmUGGALTY8ChiL3P/bj3qq9/zMPuaKhMd6nge6LB2g=
-SHA256 (deno-2.4.3.tar.gz) = wmRLMgSu0HAbujxuJpByUbLYmrc4c9tkS073tDZHBAs=
+SHA256 (deno-2.4.4.tar.gz) = UDGVc1Xnd6wbpbWkFguoAfaTxt/HfFjWIvbWBCLQe+M=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -1043,18 +1042,18 @@ SIZE (cargo/debugid-0.8.0.tar.gz) = 12757
 SIZE (cargo/deno-tower-lsp-macros-0.11.3.tar.gz) = 3540
 SIZE (cargo/deno_ast-0.49.0.tar.gz) = 94102
 SIZE (cargo/deno_cache_dir-0.24.0.tar.gz) = 46695
-SIZE (cargo/deno_core-0.354.0.tar.gz) = 304130
+SIZE (cargo/deno_core-0.355.0.tar.gz) = 304131
 SIZE (cargo/deno_core_icudata-0.74.0.tar.gz) = 4581089
 SIZE (cargo/deno_doc-0.181.0.tar.gz) = 419151
 SIZE (cargo/deno_error-0.7.0.tar.gz) = 11475
 SIZE (cargo/deno_error_macro-0.7.0.tar.gz) = 5155
-SIZE (cargo/deno_graph-0.98.0.tar.gz) = 4630310
+SIZE (cargo/deno_graph-0.98.1.tar.gz) = 4630342
 SIZE (cargo/deno_lint-0.77.0.tar.gz) = 242818
-SIZE (cargo/deno_lockfile-0.31.1.tar.gz) = 76799
+SIZE (cargo/deno_lockfile-0.31.2.tar.gz) = 76356
 SIZE (cargo/deno_media_type-0.2.9.tar.gz) = 13699
 SIZE (cargo/deno_native_certs-0.3.0.tar.gz) = 7544
 SIZE (cargo/deno_npm-0.36.0.tar.gz) = 84232
-SIZE (cargo/deno_ops-0.230.0.tar.gz) = 84669
+SIZE (cargo/deno_ops-0.231.0.tar.gz) = 84727
 SIZE (cargo/deno_panic-0.1.0.tar.gz) = 4713892
 SIZE (cargo/deno_path_util-0.6.1.tar.gz) = 16960
 SIZE (cargo/deno_semver-0.9.0.tar.gz) = 29872
@@ -1062,7 +1061,7 @@ SIZE (cargo/deno_task_shell-0.26.0.tar.gz) = 59132
 SIZE (cargo/deno_terminal-0.1.1.tar.gz) = 4489
 SIZE (cargo/deno_terminal-0.2.2.tar.gz) = 5241
 SIZE (cargo/deno_tower_lsp-0.4.3.tar.gz) = 66102
-SIZE (cargo/deno_tunnel-0.7.0.tar.gz) = 20835
+SIZE (cargo/deno_tunnel-0.8.0.tar.gz) = 21018
 SIZE (cargo/deno_unsync-0.4.4.tar.gz) = 17546
 SIZE (cargo/deno_whoami-0.1.0.tar.gz) = 3032
 SIZE (cargo/denokv_proto-0.12.0.tar.gz) = 27802
@@ -1175,7 +1174,6 @@ SIZE (cargo/getrandom-0.3.3.tar.gz) = 49493
 SIZE (cargo/ghash-0.5.1.tar.gz) = 9482
 SIZE (cargo/gimli-0.31.1.tar.gz) = 279515
 SIZE (cargo/gl_generator-0.14.0.tar.gz) = 22330
-SIZE (cargo/glibc_version-0.1.2.tar.gz) = 2180
 SIZE (cargo/glob-0.3.1.tar.gz) = 18880
 SIZE (cargo/globset-0.4.14.tar.gz) = 25090
 SIZE (cargo/glow-0.16.0.tar.gz) = 162118
@@ -1204,7 +1202,6 @@ SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
 SIZE (cargo/hex-0.4.3.tar.gz) = 13299
 SIZE (cargo/hexf-parse-0.2.1.tar.gz) = 4662
-SIZE (cargo/hickory-client-0.25.0-alpha.4.tar.gz) = 26643
 SIZE (cargo/hickory-proto-0.25.0-alpha.4.tar.gz) = 404818
 SIZE (cargo/hickory-resolver-0.25.0-alpha.4.tar.gz) = 90213
 SIZE (cargo/hickory-server-0.25.0-alpha.4.tar.gz) = 87232
@@ -1453,6 +1450,7 @@ SIZE (cargo/raw-window-handle-0.6.1.tar.gz) = 19274
 SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
+SIZE (cargo/redox_syscall-0.5.13.tar.gz) = 29489
 SIZE (cargo/redox_users-0.4.5.tar.gz) = 15514
 SIZE (cargo/ref-cast-1.0.22.tar.gz) = 12664
 SIZE (cargo/ref-cast-impl-1.0.22.tar.gz) = 9306
@@ -1515,7 +1513,7 @@ SIZE (cargo/serde_derive-1.0.219.tar.gz) = 57798
 SIZE (cargo/serde_json-1.0.140.tar.gz) = 154852
 SIZE (cargo/serde_repr-0.1.19.tar.gz) = 9997
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
-SIZE (cargo/serde_v8-0.263.0.tar.gz) = 34971
+SIZE (cargo/serde_v8-0.264.0.tar.gz) = 34973
 SIZE (cargo/serdect-0.2.0.tar.gz) = 11691
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
 SIZE (cargo/sha1_smol-1.0.0.tar.gz) = 9782
@@ -1708,7 +1706,7 @@ SIZE (cargo/wgpu-types-24.0.0.tar.gz) = 71072
 SIZE (cargo/which-4.4.2.tar.gz) = 15953
 SIZE (cargo/which-6.0.1.tar.gz) = 16542
 SIZE (cargo/which-8.0.0.tar.gz) = 26209
-SIZE (cargo/whoami-1.5.1.tar.gz) = 24026
+SIZE (cargo/whoami-1.6.0.tar.gz) = 24691
 SIZE (cargo/wide-0.7.33.tar.gz) = 99792
 SIZE (cargo/widestring-1.1.0.tar.gz) = 85046
 SIZE (cargo/win32job-2.0.0.tar.gz) = 10887
@@ -1779,4 +1777,4 @@ SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
 SIZE (cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (cargo/zune-jpeg-0.4.13.tar.gz) = 62999
-SIZE (deno-2.4.3.tar.gz) = 35370203
+SIZE (deno-2.4.4.tar.gz) = 37380803
