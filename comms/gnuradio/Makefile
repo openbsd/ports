@@ -51,8 +51,8 @@ MODULES =	devel/cmake \
 		lang/python \
 		x11/qt5
 
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		devel/cppunit \
+BUILD_DEPENDS =	devel/cppunit \
+		devel/py-cheetah \
 		devel/py-click \
 		devel/py-click-plugins \
 		devel/py-gobject3 \
@@ -60,9 +60,13 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-pybind11 \
 		devel/py-six \
 		devel/xdg-utils \
+		graphics/py-matplotlib \
+		math/py-networkx \
 		graphics/py-pyqtgraph \
 		math/py-numpy \
+		math/py-scipy \
 		net/cppzmq \
+		textproc/py-lxml \
 		textproc/py-yaml \
 		textproc/xmlto \
 		www/py-mako \
