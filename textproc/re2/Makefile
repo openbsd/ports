@@ -1,5 +1,5 @@
 COMMENT =		non-backtracking regular expression engine
-V =			2025-07-22
+V =			2025-08-12
 DISTNAME =		re2-${V}
 PKGNAME =		re2-${V:S/-//g}
 
@@ -39,7 +39,7 @@ WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal m
 
-# C++11
+# C++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
