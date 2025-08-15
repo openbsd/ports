@@ -1,6 +1,6 @@
 COMMENT=		kubectl authentication plugin for GKE
 
-V=			28.2.0
+V=			33.1.1
 PKGNAME=		gke-gcloud-auth-plugin-${V}
 
 CATEGORIES=		sysutils net
@@ -33,7 +33,7 @@ LDFLAGS +=		-s -w
 
 # git checkout the corresponding tag then:
 # cd cloud-provider-gcp && bash ./tools/workspace-status.sh | grep gitVersion | cut -d ' ' -f2
-LDFLAGS +=		-X k8s.io/component-base/version.gitVersion=v1.28.2-alpha+66f44aab0946c059f047a52f694b980e7de3b557
+LDFLAGS +=		-X k8s.io/component-base/version.gitVersion=v1.33.1+64bba5886a47ce757f4b6e9d5409a7ce58e13df1
 
 do-build:
 	cd ${WRKSRC}/cmd/gke-gcloud-auth-plugin && \
