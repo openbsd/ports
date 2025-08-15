@@ -6,6 +6,7 @@ COMMENT =		general purpose parametric 3D CAD modeler
 
 V =			1.0.1
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 GH_ACCOUNT =		FreeCAD
 GH_PROJECT =		FreeCAD
@@ -153,6 +154,8 @@ pre-configure:
 		${WRKSRC}/tests/CMakeLists.txt
 
 post-install:
+	ln -s ${LOCALBASE}/lib/freecad/bin/FreeCAD ${PREFIX}/bin/FreeCAD
+	ln -s ${LOCALBASE}/lib/freecad/bin/FreeCADCmd ${PREFIX}/bin/FreeCADCmd
 	ln -s ${LOCALBASE}/lib/freecad/bin/FreeCAD ${PREFIX}/bin/freecad
 	ln -s ${LOCALBASE}/lib/freecad/bin/FreeCADCmd ${PREFIX}/bin/freecad-cmd
 	${MODPY_COMPILEALL} \

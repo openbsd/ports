@@ -1,3 +1,5 @@
+bin/FreeCAD
+bin/FreeCADCmd
 bin/freecad
 bin/freecad-cmd
 lib/freecad/
