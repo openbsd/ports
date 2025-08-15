@@ -71,13 +71,13 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.106
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.115
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.36
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.37
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -155,7 +155,6 @@ AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib	\
 		--enable-official-branding	\
 		--enable-optimize="${CFLAGS}"	\
-		--disable-tests			\
 		--disable-updater
 
 # firefox >= 46 defaults to gtk+3
