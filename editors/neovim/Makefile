@@ -66,10 +66,12 @@ MODULES =		devel/cmake \
 # https://luajit.org/extensions.html
 MODLUA_VERSION =	5.1
 
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/gperf \
+BUILD_DEPENDS =		devel/gperf \
+			devel/libmpack/lua \
+			devel/libmpack/main \
 			devel/lpeg \
-			devel/lua-bitop
+			devel/lua-bitop \
+			devel/lua-compat53
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libuv \
