@@ -23,7 +23,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=		devel/appstream \
+			devel/gsettings-desktop-schemas \
 			www/sassc
 
 # src/kgx-tab.c, src/kgx-terminal.c, meson.build

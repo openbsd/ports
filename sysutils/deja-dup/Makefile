@@ -21,6 +21,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
+BUILD_DEPENDS=		devel/appstream
+
 RUN_DEPENDS=		devel/py-gobject3 \
 			sysutils/duplicity \
 			x11/gnome/gvfs

@@ -22,7 +22,8 @@ MODULES=		devel/dconf \
 # c++11
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS=		devel/catch2
+BUILD_DEPENDS=		devel/appstream \
+			devel/catch2
 
 LIB_DEPENDS=		devel/libgtop2 \
 			x11/gnome/libadwaita \

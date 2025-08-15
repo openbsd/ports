@@ -16,10 +16,12 @@ EXTRACT_SUFX=	.tar.xz
 
 MODULES=	textproc/intltool
 
+BUILD_DEPENDS=	devel/appstream-glib
 LIB_DEPENDS=	x11/gtk+3
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+
 .include <bsd.port.mk>

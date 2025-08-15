@@ -16,7 +16,8 @@ MODULES =		devel/dconf \
 
 LIB_DEPENDS =		devel/glib2
 
-BUILD_DEPENDS =		x11/gnome/gjs \
+BUILD_DEPENDS =		devel/appstream \
+			x11/gnome/gjs \
 			x11/gnome/libadwaita
 
 RUN_DEPENDS =		fonts/noto/emoji \

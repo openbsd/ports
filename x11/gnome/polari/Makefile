@@ -25,7 +25,10 @@ LIB_DEPENDS=		net/telepathy/telepathy-glib \
 			x11/gnome/gjs \
 			x11/gnome/tinysparql
 
-BUILD_DEPENDS=		x11/gnome/libadwaita # to pull up x11/gtk+4,-guic
+BUILD_DEPENDS=		devel/appstream
+
+BUILD_DEPENDS +=	x11/gnome/libadwaita # to pull up x11/gtk+4,-guic
+
 RUN_DEPENDS=		x11/gnome/libadwaita
 
 # src/application.js

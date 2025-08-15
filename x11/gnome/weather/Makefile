@@ -15,7 +15,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		geo/geoclue2 \
+BUILD_DEPENDS=		devel/appstream \
+			geo/geoclue2 \
 			x11/gnome/gjs \
 			x11/gnome/libadwaita \
 			x11/gnome/libgweather4

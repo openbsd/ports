@@ -28,7 +28,8 @@ MODCLANG_COMPILER_LINKS=No
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
-BUILD_DEPENDS=		devel/ectags \
+BUILD_DEPENDS=		devel/appstream \
+			devel/ectags \
 			textproc/py-sphinx
 
 RUN_DEPENDS=		devel/ectags

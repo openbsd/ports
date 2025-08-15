@@ -27,6 +27,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache yelp
 
+BUILD_DEPENDS=		devel/appstream-glib
+
 LIB_DEPENDS=		audio/id3lib \
 			audio/libid3tag \
 			audio/speex \

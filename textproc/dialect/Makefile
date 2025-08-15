@@ -15,7 +15,8 @@ MODULES =		devel/dconf \
 			devel/meson \
 			lang/python
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		devel/appstream \
+			devel/gettext,-tools \
 			devel/glib2 \
 			devel/gobject-introspection \
 			devel/libsoup3 \

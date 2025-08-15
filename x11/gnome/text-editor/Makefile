@@ -23,6 +23,8 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
 
+BUILD_DEPENDS=		devel/appstream
+
 LIB_DEPENDS=		editors/editorconfig-core-c \
 			textproc/libspelling \
 			x11/gnome/libadwaita \

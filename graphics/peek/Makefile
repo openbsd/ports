@@ -18,7 +18,8 @@ RUN_DEPENDS =	graphics/ffmpeg \
 		x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
-BUILD_DEPENDS =	devel/gettext,-tools \
+BUILD_DEPENDS =	devel/appstream-glib \
+		devel/gettext,-tools \
 		lang/vala
 
 LIB_DEPENDS =	x11/keybinder3

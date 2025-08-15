@@ -25,6 +25,8 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection gtk-update-icon-cache vala
 
+BUILD_DEPENDS=		devel/appstream
+
 LIB_DEPENDS=		graphics/libqrencode \
 			net/telepathy/folks \
 			sysutils/flatpak/libportal \

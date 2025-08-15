@@ -20,4 +20,6 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache vala
 
+BUILD_DEPENDS=		devel/appstream
+
 .include <bsd.port.mk>

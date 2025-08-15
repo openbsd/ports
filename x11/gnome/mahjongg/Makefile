@@ -15,7 +15,8 @@ MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-BUILD_DEPENDS =		devel/gsettings-desktop-schemas
+BUILD_DEPENDS =		devel/appstream \
+			devel/gsettings-desktop-schemas
 
 RUN_DEPENDS =		devel/gsettings-desktop-schemas
 

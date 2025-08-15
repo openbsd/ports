@@ -16,6 +16,8 @@ MODULES =		devel/dconf \
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gsound gtk-3 intl m rsvg-2
 
+BUILD_DEPENDS=		devel/appstream-glib
+
 MODGNOME_LDFLAGS =	-L${X11BASE}/lib
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala yelp
 

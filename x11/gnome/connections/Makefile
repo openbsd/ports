@@ -21,6 +21,8 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection yelp \
 			gtk-update-icon-cache shared-mime-info vala
 
+BUILD_DEPENDS=		devel/appstream
+
 LIB_DEPENDS=		x11/freerdp \
 			x11/gnome/libsecret \
 			x11/gtk-vnc \

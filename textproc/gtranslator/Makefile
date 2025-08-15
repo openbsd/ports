@@ -19,7 +19,8 @@ MODULES=		devel/dconf \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=		devel/appstream \
+			devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 LIB_DEPENDS=		devel/gettext,-tools \

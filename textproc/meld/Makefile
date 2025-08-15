@@ -20,7 +20,8 @@ MODPY_ADJ_FILES=	bin/meld
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
-BUILD_DEPENDS=		devel/py-gobject3 \
+BUILD_DEPENDS=		devel/appstream-glib \
+			devel/py-gobject3 \
 			x11/gtk+3 \
 			x11/gtksourceview4
 

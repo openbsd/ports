@@ -28,6 +28,8 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache yelp
 
+BUILD_DEPENDS=		devel/appstream-glib
+
 LIB_DEPENDS=		www/webkitgtk4,webkitgtk41
 
 # for convenience

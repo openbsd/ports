@@ -24,6 +24,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
+BUILD_DEPENDS=		devel/appstream
+
 LIB_DEPENDS=		x11/gnome/libadwaita
 
 # don't rebuild the gettext crate

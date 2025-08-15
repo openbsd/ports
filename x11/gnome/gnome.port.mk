@@ -47,10 +47,6 @@ USE_GMAKE ?=		Yes
 .  endif
 .endif
 
-.if defined(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/appstream-glib}
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/appstream-util;
-.endif
-
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 .  if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
 # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
