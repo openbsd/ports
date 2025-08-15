@@ -11,8 +11,8 @@ Index: services/on_device_model/on_device_model_service.h
 +
  namespace on_device_model {
  
- class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -44,7 +48,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+ inline constexpr base::TimeDelta kDefaultModelIdleTimeout = base::Minutes(5);
+@@ -46,7 +50,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
    // Must be called in the service's process after the run loop finished.
    [[nodiscard]] static bool Shutdown();
  

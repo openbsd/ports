@@ -5,7 +5,7 @@ Index: base/process/process_metrics_freebsd.cc
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  
  #include <stddef.h>
 +#include <sys/types.h>

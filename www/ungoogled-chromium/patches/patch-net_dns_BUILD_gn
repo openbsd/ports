@@ -17,8 +17,8 @@ Index: net/dns/BUILD.gn
 +    "//printing/buildflags",
    ]
  
-   allow_circular_includes_from = [
-@@ -450,9 +451,9 @@ source_set("tests") {
+   if (enable_mdns) {
+@@ -454,9 +455,9 @@ source_set("tests") {
  
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]

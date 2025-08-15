@@ -1,6 +1,15 @@
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig
 +++ base/trace_event/process_memory_dump.cc
+@@ -47,7 +47,7 @@
+ #include <Psapi.h>
+ #endif
+ 
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ #include <tuple>
+ 
+ #include "base/notreached.h"
 @@ -119,7 +119,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
  #if BUILDFLAG(IS_WIN)
    auto vec =

@@ -37,7 +37,7 @@ Index: chrome/browser/enterprise/browser_management/browser_management_service.c
  void BrowserManagementService::SetBrowserManagementIconForTesting(
      const gfx::Image& management_icon) {
    CHECK_IS_TEST();
-@@ -171,7 +171,7 @@ void BrowserManagementService::SetManagementIconForBro
+@@ -183,7 +183,7 @@ void BrowserManagementService::SetManagementIconForBro
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  void BrowserManagementService::OnPolicyStatusChanged() {

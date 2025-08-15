@@ -46,7 +46,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
        chrome::CreateDesktopShortcutForActiveWebContents(browser_);
  #else
        web_app::CreateWebAppFromCurrentWebContents(
-@@ -1014,7 +1014,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -1017,7 +1017,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
      case IDC_CHROME_WHATS_NEW:
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -55,7 +55,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
        ShowChromeWhatsNew(browser_);
        break;
  #else
-@@ -1391,7 +1391,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1394,7 +1394,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
  #endif

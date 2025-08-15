@@ -1,7 +1,7 @@
 Index: components/signin/public/base/signin_switches.cc
 --- components/signin/public/base/signin_switches.cc.orig
 +++ components/signin/public/base/signin_switches.cc
-@@ -63,7 +63,7 @@ BASE_FEATURE(kFullscreenSignInPromoUseDate,
+@@ -59,7 +59,7 @@ BASE_FEATURE(kMakeAccountsAvailableInIdentityManager,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  
@@ -10,3 +10,12 @@ Index: components/signin/public/base/signin_switches.cc
  // Enables the History Sync Opt-in on Desktop.
  BASE_FEATURE(kEnableHistorySyncOptin,
               "EnableHistorySyncOptin",
+@@ -239,7 +239,7 @@ BASE_FEATURE(kDeferWebSigninTrackerCreation,
+              "DeferWebSigninTrackerCreation",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kSignInPromoMaterialNextUI,
+              "SignInPromoMaterialNextUI",
+              base::FEATURE_DISABLED_BY_DEFAULT);
