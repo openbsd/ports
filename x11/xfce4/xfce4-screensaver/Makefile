@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
-REVISION =	0
+XFCE_VERSION =	4.20.1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
