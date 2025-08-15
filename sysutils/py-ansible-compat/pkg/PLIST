@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}compatibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}compatibility.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +33,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}schema.$
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/_version.py
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/compatibility.py
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/config.py
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/constants.py
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/errors.py
@@ -42,3 +47,4 @@ lib/python${MODPY_VERSION}/site-packages/ansible_compat/py.typed
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/runtime.py
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/schema.py
 lib/python${MODPY_VERSION}/site-packages/ansible_compat/types.py
+lib/python${MODPY_VERSION}/site-packages/ansible_compat/utils.py

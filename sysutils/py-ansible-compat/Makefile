@@ -1,6 +1,6 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_DISTV=	25.6.0
+MODPY_DISTV=	25.8.1
 DISTNAME=	ansible_compat-${MODPY_DISTV}
 PKGNAME=	py-ansible-compat-${MODPY_DISTV}
 
@@ -23,5 +23,8 @@ PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-flaky \
 		devel/py-test-mock
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
