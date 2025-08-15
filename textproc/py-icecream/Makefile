@@ -1,6 +1,6 @@
 COMMENT=	print() replacement that can handle data structures
 
-MODPY_DISTV=	2.1.5
+MODPY_DISTV=	2.1.6
 DISTNAME=	icecream-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
