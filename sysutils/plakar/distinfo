@@ -102,9 +102,8 @@ SHA256 (go_modules/github.com/cockroachdb/pebble/v2/@v/v2.0.3.zip) = SNZNh8lOzLH
 SHA256 (go_modules/github.com/cockroachdb/redact/@v/v1.1.5.mod) = qE4qYRsxLkR9g5/NyS+qiP2hqiFy7OZVx355VDTxHAM=
 SHA256 (go_modules/github.com/cockroachdb/redact/@v/v1.1.6.mod) = qE4qYRsxLkR9g5/NyS+qiP2hqiFy7OZVx355VDTxHAM=
 SHA256 (go_modules/github.com/cockroachdb/redact/@v/v1.1.6.zip) = AY7MtfucpS1D7J6vITU50BwfK5Tg6CJAbr+y6TIe9s8=
-SHA256 (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20240612210725-f4de07ae6964.mod) = oJ5i0B3mVpBheWwjX0oTy/Y/lNeFXP41GD0lzq85Fv4=
-SHA256 (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250327203710-2932b022f6df.mod) = oJ5i0B3mVpBheWwjX0oTy/Y/lNeFXP41GD0lzq85Fv4=
-SHA256 (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250327203710-2932b022f6df.zip) = H4UKChbn/GzZMZUcYidwi3zE701EDrMe4XNz+CC+N+E=
+SHA256 (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250624142022-d6e517c1d961.mod) = oJ5i0B3mVpBheWwjX0oTy/Y/lNeFXP41GD0lzq85Fv4=
+SHA256 (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250624142022-d6e517c1d961.zip) = 4hVmov60DwAK3oycagqZAZCOPz/BrDhw328zyb+10+E=
 SHA256 (go_modules/github.com/cockroachdb/tokenbucket/@v/v0.0.0-20230807174530-cc333fc44b06.mod) = ph+WpCnChc2eH4QatePL6JmWBV+MInIeyBi9K1LRDAY=
 SHA256 (go_modules/github.com/cockroachdb/tokenbucket/@v/v0.0.0-20230807174530-cc333fc44b06.zip) = FQ8+jltRXAiGzaCAnwm11Rc9fyww6y8sYEXCrrIYOqM=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 6rBwW8ShjdMVwnpOPbqPIKnhIwZfogYzlmMytczPdzE=
@@ -727,9 +726,8 @@ SIZE (go_modules/github.com/cockroachdb/pebble/v2/@v/v2.0.3.zip) = 5858175
 SIZE (go_modules/github.com/cockroachdb/redact/@v/v1.1.5.mod) = 46
 SIZE (go_modules/github.com/cockroachdb/redact/@v/v1.1.6.mod) = 46
 SIZE (go_modules/github.com/cockroachdb/redact/@v/v1.1.6.zip) = 72546
-SIZE (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20240612210725-f4de07ae6964.mod) = 349
-SIZE (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250327203710-2932b022f6df.mod) = 349
-SIZE (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250327203710-2932b022f6df.zip) = 54222
+SIZE (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250624142022-d6e517c1d961.mod) = 349
+SIZE (go_modules/github.com/cockroachdb/swiss/@v/v0.0.0-20250624142022-d6e517c1d961.zip) = 54267
 SIZE (go_modules/github.com/cockroachdb/tokenbucket/@v/v0.0.0-20230807174530-cc333fc44b06.mod) = 51
 SIZE (go_modules/github.com/cockroachdb/tokenbucket/@v/v0.0.0-20230807174530-cc333fc44b06.zip) = 9253
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
