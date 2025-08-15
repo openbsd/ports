@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			6.0.2
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -23,7 +24,6 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
 # tdesktop:		GPLv3 with OpenSSL exception
-# GSL:			MIT
 # cld3:			Apache 2.0
 # libprisma:		MIT
 # minizip:		zlib
@@ -56,6 +56,7 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
 			devel/fmt \
 			devel/gobject-introspection \
+			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
 			devel/tl-expected \
 			net/tdlib/tde2e
@@ -108,9 +109,6 @@ NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls
 
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
-
-# tdesktop 4.9.5 forced bundled GSL due to libstdc++ and CMake bugs
-NEEDED_BUNDLES +=	GSL
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
