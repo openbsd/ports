@@ -1,9 +1,8 @@
 COMMENT =		fully featured HTTP client library
 
-MODPY_DISTV =		0.27.0
+MODPY_DISTV =		0.28.1
 DISTNAME =		httpx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		www
 

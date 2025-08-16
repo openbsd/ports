@@ -20,8 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_auth.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_client.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}_content.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +48,6 @@ lib/python${MODPY_VERSION}/site-packages/httpx/__version__.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_api.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_auth.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_client.py
-lib/python${MODPY_VERSION}/site-packages/httpx/_compat.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_config.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_content.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_decoders.py
