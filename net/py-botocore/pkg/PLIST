@@ -367,6 +367,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-pricing-calculator/20
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-pricing-calculator/2024-06-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-pricing-calculator/2024-06-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-pricing-calculator/2024-06-19/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/2024-11-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/2024-11-14/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/2024-11-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/2024-11-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-recommended-actions/2024-11-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent-runtime/
@@ -379,6 +385,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agent/2023-06-05/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock-agentcore-control/2023-06-05/
@@ -2010,6 +2017,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/osis/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/osis/2022-01-01/
@@ -2035,6 +2043,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/20
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/
@@ -2476,6 +2485,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-14/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-14/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/servicediscovery/2017-03-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/
