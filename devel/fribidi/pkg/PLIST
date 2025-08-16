@@ -1,5 +1,4 @@
 @bin bin/fribidi
-bin/fribidi-config
 include/fribidi/
 include/fribidi/fribidi-arabic.h
 include/fribidi/fribidi-begindecls.h

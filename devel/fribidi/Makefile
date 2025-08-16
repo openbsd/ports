@@ -1,10 +1,10 @@
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
 V=			1.0.16
-
 GH_PROJECT=		fribidi
 GH_ACCOUNT=		fribidi
 GH_TAGNAME=		v${V}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -21,16 +21,11 @@ MODULES=		devel/meson
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-USE_GMAKE=		Yes
-
 # needs c2man
 CONFIGURE_ARGS=		-Ddocs=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${V}
-
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/fribidi-config ${PREFIX}/bin
 
 .include <bsd.port.mk>
