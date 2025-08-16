@@ -2018,6 +2018,7 @@
      SUBDIR += yarn
      SUBDIR += yasm
      SUBDIR += yder
+     SUBDIR += yyjson
      SUBDIR += z80ex
      SUBDIR += zeal
      SUBDIR += zmac
