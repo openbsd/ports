@@ -3,6 +3,7 @@ COMMENT=	client library and CLI for Planet's public API
 MODPY_DISTV=	2.22.1
 DISTNAME=	planet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	geo
 
@@ -15,7 +16,7 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-click \
 		geo/py-geojson \
-		www/py-httpx<0.28.0 \
+		www/py-httpx>=0.28.0 \
 		devel/py-jsonschema \
 		www/py-jwt \
 		devel/py-tqdm \
