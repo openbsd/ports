@@ -1,0 +1,7 @@
+include/yyjson.h
+lib/cmake/
+lib/cmake/yyjson/
+lib/cmake/yyjson/yyjson-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/yyjson/yyjson-config.cmake
+@lib lib/libyyjson.so.${LIByyjson_VERSION}
+lib/pkgconfig/yyjson.pc
