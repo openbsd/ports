@@ -1,6 +1,6 @@
 COMMENT =		Jupyterlab computational environment
 
-MODPY_DISTV =		4.4.5
+MODPY_DISTV =		4.4.6
 DISTNAME =		jupyterlab-${MODPY_DISTV}
 
 CATEGORIES =		www devel
@@ -32,7 +32,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			sysutils/py-packaging \
 			x11/gtk+4,-guic \
-			www/py-httpx>=0.25.0 \
+			www/py-httpx>=0.25.0,<1 \
 			www/py-jinja2>=3.0.3 \
 			www/py-tornado>=6.2.0
 
