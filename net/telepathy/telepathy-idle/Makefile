@@ -13,6 +13,8 @@ MODULES=		lang/python
 
 MODPY_RUNDEP=		No
 
+USE_GMAKE=		Yes
+
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/py-twisted \
 			textproc/libxslt

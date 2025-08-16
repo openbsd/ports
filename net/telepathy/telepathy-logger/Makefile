@@ -20,6 +20,8 @@ MODULES=	devel/dconf \
 
 MODPY_RUNDEP=	No
 
+USE_GMAKE=	Yes
+
 BUILD_DEPENDS=	devel/gobject-introspection \
 		devel/py-twisted \
 		textproc/libxslt

@@ -18,6 +18,8 @@ MODULES=		devel/dconf \
 
 MODPY_RUNDEP=		No
 
+USE_GMAKE=		Yes
+
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
 

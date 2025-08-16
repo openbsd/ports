@@ -38,9 +38,7 @@ MODULES=	devel/meson \
 		x11/qt6
 MODPY_ADJ_FILES=filters/*.py filters/rclepub
 
-BUILD_DEPENDS=		devel/cmake/core \
-			devel/gmake \
-			devel/py-setuptools \
+BUILD_DEPENDS=		devel/py-setuptools \
 			textproc/aspell/core
 
 LIB_DEPENDS-main=	databases/xapian-core \
@@ -61,12 +59,7 @@ LIB_DEPENDS-gui=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 
 CONFIGURE_ENV=		QMAKE="${MODQT_QMAKE}"
 MAKE_ENV=		MAKE_JOBS=${MAKE_JOBS} \
-			MAKE=gmake \
 			QMAKE="${MODQT_QMAKE}"
-
-# #CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-#       export QMAKE=qmake6
-#       export MAKE="gmake"
 
 CONFIGURE_ARGS=		-Dpython-aspell=false \
 			-Dpython-chm=false \

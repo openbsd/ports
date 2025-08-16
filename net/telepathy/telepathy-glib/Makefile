@@ -18,6 +18,8 @@ MODPY_RUNDEP=           No
 # https://bugs.freedesktop.org/show_bug.cgi?id=76495
 MODPY_ADJ_FILES=	tests/all-errors-documented.py
 
+USE_GMAKE=		Yes
+
 BUILD_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 			lang/vala \
 			textproc/libxslt
@@ -25,6 +27,5 @@ LIB_DEPENDS=		x11/dbus-glib
 
 CONFIGURE_ARGS+=	--enable-introspection \
 			--enable-vala-bindings
-#CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
 
 .include <bsd.port.mk>

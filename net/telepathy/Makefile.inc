@@ -18,6 +18,4 @@ PERMIT_PACKAGE?=	Yes
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-USE_GMAKE?=	Yes
-
 CONFIGURE_STYLE?=gnu

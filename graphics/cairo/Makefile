@@ -30,8 +30,6 @@ WANTLIB += z
 MODULES=		devel/meson \
 			x11/gnome
 
-USE_GMAKE=		Yes
-
 LIB_DEPENDS=		archivers/lzo2 \
 			devel/glib2 \
 			graphics/png

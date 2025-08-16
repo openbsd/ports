@@ -24,8 +24,6 @@ LIB_DEPENDS=		devel/libgit2/libgit2
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3
 
-USE_GMAKE=		Yes
-
 WANTLIB += gio-2.0 git2 glib-2.0 gobject-2.0
 
 .include <bsd.port.mk>
