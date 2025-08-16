@@ -1,7 +1,7 @@
 COMMENT =		fast, correct Python JSON library
 
 MODPY_DISTV =		3.10.7
-REVISION =		2
+REVISION =		3
 DISTNAME =		orjson-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,6 +18,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
+
+WANTLIB +=		${MODCARGO_WANTLIB}
 
 TEST_DEPENDS =		devel/py-tz \
 			math/py-numpy
