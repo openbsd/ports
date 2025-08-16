@@ -3,6 +3,7 @@ COMMENT =		library to edit command lines as they are typed in
 V =			8.2.13
 DISTNAME =		readline-${V}
 PKGNAME =		readline-${V}
+REVISION =		0
 
 LIBV =			3.0
 SHARED_LIBS +=		ehistory ${LIBV}
