@@ -19,56 +19,56 @@
 lib/mef/
 @comment lib/mef/libmef_8bits.a
 @comment lib/mef/libmef_8bits.la
-lib/mef/libmef_8bits.so
+@so lib/mef/libmef_8bits.so
 @comment lib/mef/libmef_jajp.a
 @comment lib/mef/libmef_jajp.la
-lib/mef/libmef_jajp.so
+@so lib/mef/libmef_jajp.so
 @comment lib/mef/libmef_kokr.a
 @comment lib/mef/libmef_kokr.la
-lib/mef/libmef_kokr.so
+@so lib/mef/libmef_kokr.so
 @comment lib/mef/libmef_zh.a
 @comment lib/mef/libmef_zh.la
-lib/mef/libmef_zh.so
+@so lib/mef/libmef_zh.so
 lib/mlterm/
 @comment lib/mlterm/libathena.a
 @comment lib/mlterm/libathena.la
-lib/mlterm/libathena.so
+@so lib/mlterm/libathena.so
 @comment lib/mlterm/libim-kbd-fb.a
 @comment lib/mlterm/libim-kbd-fb.la
-lib/mlterm/libim-kbd-fb.so
+@so lib/mlterm/libim-kbd-fb.so
 @comment lib/mlterm/libim-kbd.a
 @comment lib/mlterm/libim-kbd.la
-lib/mlterm/libim-kbd.so
+@so lib/mlterm/libim-kbd.so
 @comment lib/mlterm/libim-skk-fb.a
 @comment lib/mlterm/libim-skk-fb.la
-lib/mlterm/libim-skk-fb.so
+@so lib/mlterm/libim-skk-fb.so
 @comment lib/mlterm/libim-skk.a
 @comment lib/mlterm/libim-skk.la
-lib/mlterm/libim-skk.so
+@so lib/mlterm/libim-skk.so
 @comment lib/mlterm/libmotif.a
 @comment lib/mlterm/libmotif.la
-lib/mlterm/libmotif.so
+@so lib/mlterm/libmotif.so
 @comment lib/mlterm/libmozmodern.a
 @comment lib/mlterm/libmozmodern.la
-lib/mlterm/libmozmodern.so
+@so lib/mlterm/libmozmodern.so
 @comment lib/mlterm/libnext.a
 @comment lib/mlterm/libnext.la
-lib/mlterm/libnext.so
+@so lib/mlterm/libnext.so
 @comment lib/mlterm/libotl.a
 @comment lib/mlterm/libotl.la
-lib/mlterm/libotl.so
+@so lib/mlterm/libotl.so
 @comment lib/mlterm/libpixmap_engine.a
 @comment lib/mlterm/libpixmap_engine.la
-lib/mlterm/libpixmap_engine.so
+@so lib/mlterm/libpixmap_engine.so
 @comment lib/mlterm/libsample.a
 @comment lib/mlterm/libsample.la
-lib/mlterm/libsample.so
+@so lib/mlterm/libsample.so
 @comment lib/mlterm/libtype_cairo.a
 @comment lib/mlterm/libtype_cairo.la
-lib/mlterm/libtype_cairo.so
+@so lib/mlterm/libtype_cairo.so
 @comment lib/mlterm/libtype_xft.a
 @comment lib/mlterm/libtype_xft.la
-lib/mlterm/libtype_xft.so
+@so lib/mlterm/libtype_xft.so
 libexec/mlterm/
 @bin libexec/mlterm/mlconfig
 @bin libexec/mlterm/mlimgloader
