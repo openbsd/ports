@@ -2,15 +2,14 @@ COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 V=		0.83
-REVISION=	0
+REVISION=	1
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
 CATEGORIES=	net security
 
-HOMEPAGE=	https://www.chiark.greenend.org.uk/~sgtatham/putty/
-SITES=		https://the.earth.li/~sgtatham/putty/$V/ \
-		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-$V/
+HOMEPAGE=	https://putty.software/
+SITES=		https://the.earth.li/~sgtatham/putty/$V/
 
 # BSD
 PERMIT_PACKAGE=	Yes
