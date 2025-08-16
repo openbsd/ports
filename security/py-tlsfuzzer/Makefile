@@ -1,14 +1,13 @@
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_DISTV =		20250516
+MODPY_DISTV =		20250804
 DISTNAME =		tlsfuzzer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		0
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
-GH_COMMIT =		10c7b03fec80c7b21a7ebd2fe052efe5bcedd08b
+GH_COMMIT =		c5dccbd86636368f764e3ace6427ba734fb083b9
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
