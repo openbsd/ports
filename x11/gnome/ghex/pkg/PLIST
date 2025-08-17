@@ -8,6 +8,7 @@ lib/girepository-1.0/Hex-4.typelib
 @lib lib/libgtkhex-4.so.${LIBgtkhex-4_VERSION}
 lib/pkgconfig/gtkhex-4.pc
 share/applications/org.gnome.GHex.desktop
+share/dbus-1/services/org.gnome.GHex.service
 share/gir-1.0/Hex-4.gir
 share/glib-2.0/schemas/org.gnome.GHex.gschema.xml
 share/help/
@@ -323,12 +324,14 @@ share/locale/fur/LC_MESSAGES/ghex.mo
 share/locale/ga/LC_MESSAGES/ghex.mo
 share/locale/gl/LC_MESSAGES/ghex.mo
 share/locale/he/LC_MESSAGES/ghex.mo
+share/locale/hi/LC_MESSAGES/ghex.mo
 share/locale/hr/LC_MESSAGES/ghex.mo
 share/locale/hu/LC_MESSAGES/ghex.mo
 share/locale/id/LC_MESSAGES/ghex.mo
 share/locale/ie/LC_MESSAGES/ghex.mo
 share/locale/it/LC_MESSAGES/ghex.mo
 share/locale/ja/LC_MESSAGES/ghex.mo
+share/locale/ka/LC_MESSAGES/ghex.mo
 share/locale/ko/LC_MESSAGES/ghex.mo
 share/locale/lt/LC_MESSAGES/ghex.mo
 share/locale/lv/LC_MESSAGES/ghex.mo
@@ -360,7 +363,7 @@ share/locale/vi/LC_MESSAGES/ghex.mo
 share/locale/wa/LC_MESSAGES/ghex.mo
 share/locale/zh_CN/LC_MESSAGES/ghex.mo
 share/locale/zh_TW/LC_MESSAGES/ghex.mo
-share/metainfo/org.gnome.GHex.appdata.xml
+share/metainfo/org.gnome.GHex.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
