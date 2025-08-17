@@ -1,37 +1,49 @@
+@bin bin/tv_combo
+@bin bin/tv_ctrlpt
+@bin bin/tv_device
 include/upnp/
-include/upnp/ActionComplete.h
-include/upnp/ActionRequest.h
 include/upnp/Callback.h
-include/upnp/Discovery.h
-include/upnp/Event.h
-include/upnp/EventSubscribe.h
-include/upnp/ExtraHeaders.h
-include/upnp/FileInfo.h
-include/upnp/StateVarComplete.h
-include/upnp/StateVarRequest.h
-include/upnp/SubscriptionRequest.h
-include/upnp/TemplateInclude.h
-include/upnp/TemplateSource.h
-include/upnp/TemplateUndef.h
+include/upnp/UpnpActionComplete.h
+include/upnp/UpnpActionRequest.h
+include/upnp/UpnpDiscovery.h
+include/upnp/UpnpEvent.h
+include/upnp/UpnpEventSubscribe.h
+include/upnp/UpnpExtraHeaders.h
+include/upnp/UpnpFileInfo.h
 include/upnp/UpnpGlobal.h
 include/upnp/UpnpInet.h
 include/upnp/UpnpIntTypes.h
+include/upnp/UpnpStateVarComplete.h
+include/upnp/UpnpStateVarRequest.h
 include/upnp/UpnpStdInt.h
 include/upnp/UpnpString.h
+include/upnp/UpnpSubscriptionRequest.h
 include/upnp/UpnpUniStd.h
-include/upnp/ithread.h
 include/upnp/ixml.h
 include/upnp/ixmldebug.h
 include/upnp/list.h
-include/upnp/poison.h
 include/upnp/upnp.h
 include/upnp/upnpconfig.h
-include/upnp/upnpdebug.h
 include/upnp/upnptools.h
+lib/cmake/
+lib/cmake/IXML/
+lib/cmake/IXML/IXML${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/IXML/IXML.cmake
+lib/cmake/IXML/IXMLConfig.cmake
+lib/cmake/IXML/IXMLConfigVersion.cmake
+lib/cmake/UPNP/
+lib/cmake/UPNP/UPNP${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/UPNP/UPNP.cmake
+lib/cmake/UPNP/UPNPConfig.cmake
+lib/cmake/UPNP/UPNPConfigVersion.cmake
 @static-lib lib/libixml.a
-lib/libixml.la
 @lib lib/libixml.so.${LIBixml_VERSION}
 @static-lib lib/libupnp.a
-lib/libupnp.la
 @lib lib/libupnp.so.${LIBupnp_VERSION}
 lib/pkgconfig/libupnp.pc
+share/upnp/
+share/upnp/tvcombodesc.xml
+share/upnp/tvcontrolSCPD.xml
+share/upnp/tvdevicedesc.xml
+share/upnp/tvdevicepres.html
+share/upnp/tvpictureSCPD.xml
