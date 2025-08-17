@@ -5,7 +5,7 @@ COMMENT =	HTTP/2-based RPC framework
 
 V =		1.74.1
 DISTNAME =	grpc-${V}
-REVISION =	0
+REVISION =	1
 
 DIST_TUPLE +=	github grpc grpc v${V} .
 

@@ -1,0 +1,17 @@
+Fix hardcoded maximum sockaddr structs. It can be larger in OpenBSD, i.e.
+sizeof(struct sockaddr_storage) = 256.
+Index: src/core/lib/iomgr/resolve_address.h
+--- src/core/lib/iomgr/resolve_address.h.orig
++++ src/core/lib/iomgr/resolve_address.h
+@@ -32,7 +32,11 @@
+ #include "src/core/util/orphanable.h"
+ #include "src/core/util/time.h"
+ 
++#if defined (GPR_OPENBSD)
++#define GRPC_MAX_SOCKADDR_SIZE 256
++#else
+ #define GRPC_MAX_SOCKADDR_SIZE 128
++#endif
+ 
+ namespace grpc_core {
+ extern const char* kDefaultSecurePort;

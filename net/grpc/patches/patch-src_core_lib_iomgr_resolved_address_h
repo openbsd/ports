@@ -1,0 +1,18 @@
+Fix hardcoded maximum sockaddr structs. It can be larger in OpenBSD, i.e.
+sizeof(struct sockaddr_storage) = 256.
+
+Index: src/core/lib/iomgr/resolved_address.h
+--- src/core/lib/iomgr/resolved_address.h.orig
++++ src/core/lib/iomgr/resolved_address.h
+@@ -28,7 +28,11 @@
+ #include <sys/socket.h>
+ #endif
+ 
++#if defined(GPR_OPENBSD)
++#define GRPC_MAX_SOCKADDR_SIZE  256
++#else
+ #define GRPC_MAX_SOCKADDR_SIZE 128
++#endif
+ 
+ struct grpc_resolved_address {
+   char addr[GRPC_MAX_SOCKADDR_SIZE];
