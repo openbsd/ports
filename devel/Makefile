@@ -276,6 +276,7 @@
      SUBDIR += libbfio
      SUBDIR += libbgcode
      SUBDIR += libbinio
+     SUBDIR += libbson
      SUBDIR += libcdada
      SUBDIR += libcoap
      SUBDIR += libconfig
