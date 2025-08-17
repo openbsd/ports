@@ -2274,7 +2274,7 @@ share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_HK/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/metainfo/
-share/metainfo/org.gnome.Dia.appdata.xml
+share/metainfo/org.gnome.Dia.metainfo.xml
 share/thumbnailers/org.gnome.Dia.thumbnailer
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
