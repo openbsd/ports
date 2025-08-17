@@ -1,6 +1,7 @@
 COMMENT =	KDE 6 library for extracting text and metadata
 
 DISTNAME =	kfilemetadata-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6FileMetaData           0.0 # 0.0
 
