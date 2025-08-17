@@ -1,0 +1,16 @@
+bodge to allow building from a git-archive.
+
+pbr requires an sdist or a git checkout (complete with .git dir),
+but no sdist is available on pypi, and we can't use a git checkout
+in ports.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -3,6 +3,4 @@ from setuptools import find_packages, setup
+ 
+ setup(
+     packages=find_packages(),
+-    pbr=True,
+-    setup_requires=['pbr'],
+ )
