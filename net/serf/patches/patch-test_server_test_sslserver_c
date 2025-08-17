@@ -1,7 +1,7 @@
 Index: test/server/test_sslserver.c
 --- test/server/test_sslserver.c.orig
 +++ test/server/test_sslserver.c
-@@ -228,7 +228,7 @@ init_ssl_context(serv_ctx_t *serv_ctx,
+@@ -239,7 +239,7 @@ init_ssl_context(serv_ctx_t *serv_ctx,
      /* Init OpenSSL globally */
      if (!init_done)
      {

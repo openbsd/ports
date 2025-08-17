@@ -1,7 +1,7 @@
 Index: buckets/ssl_buckets.c
 --- buckets/ssl_buckets.c.orig
 +++ buckets/ssl_buckets.c
-@@ -1156,7 +1156,7 @@ static void init_ssl_libraries(void)
+@@ -1186,7 +1186,7 @@ static void init_ssl_libraries(void)
          }
  #endif
  
