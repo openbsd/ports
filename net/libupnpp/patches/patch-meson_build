@@ -1,0 +1,25 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -106,10 +106,10 @@ cfile = configure_file(
+ 
+ 
+ libupnpp = library(
+-  'libupnpp',
++  'upnpp',
+   libupnpp_sources,
+   gnu_symbol_visibility: 'hidden',
+-  name_prefix: '',
++  name_prefix: 'lib',
+   version: meson.project_version(),
+   soversion: host_machine.system() == 'windows' ? '' : libupnpp_soversion,
+   include_directories: libupnpp_incdir,
+@@ -122,6 +122,8 @@ pkg = import('pkgconfig')
+ pkg.generate(
+   libupnpp,
+   description: 'Another SDK for UPnP Devices',
++  filebase: 'libupnpp',
++  name: 'libupnpp',
+ )
+ 
+ install_headers(

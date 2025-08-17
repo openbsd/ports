@@ -1,11 +1,10 @@
 include/libupnpp/
 include/libupnpp/base64.hxx
-include/libupnpp/conf_post.h
-include/libupnpp/config.h
 include/libupnpp/control/
 include/libupnpp/control/avtransport.hxx
 include/libupnpp/control/cdircontent.hxx
 include/libupnpp/control/cdirectory.hxx
+include/libupnpp/control/conman.hxx
 include/libupnpp/control/description.hxx
 include/libupnpp/control/device.hxx
 include/libupnpp/control/discovery.hxx
@@ -25,14 +24,15 @@ include/libupnpp/control/service.hxx
 include/libupnpp/control/typedservice.hxx
 include/libupnpp/device/
 include/libupnpp/device/device.hxx
+include/libupnpp/device/service.hxx
 include/libupnpp/device/vdir.hxx
 include/libupnpp/log.h
 include/libupnpp/log.hxx
 include/libupnpp/soaphelp.hxx
 include/libupnpp/upnpavutils.hxx
+include/libupnpp/upnperrcodes.hxx
+include/libupnpp/upnppexports.hxx
 include/libupnpp/upnpplib.hxx
 include/libupnpp/upnpputils.hxx
-lib/libupnpp.a
-lib/libupnpp.la
 @lib lib/libupnpp.so.${LIBupnpp_VERSION}
 lib/pkgconfig/libupnpp.pc
