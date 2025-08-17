@@ -47,8 +47,6 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/third_party/utf8_range/utf8_ra
 ${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/third_party/utf8_range/utf8_range_neon.inc
 ${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/third_party/utf8_range/utf8_range_sse.inc
 ${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/utf8_range.o
-${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/wrap_memcpy.c
-${GEM_LIB}/gems/${DISTNAME}/ext/google/protobuf_c/wrap_memcpy.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/google/
 ${GEM_LIB}/gems/${DISTNAME}/lib/google/protobuf/
