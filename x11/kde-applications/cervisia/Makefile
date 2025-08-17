@@ -1,4 +1,5 @@
 COMMENT =	CVS GUI for KDE
+VERSION =	25.04.3
 DISTNAME =	cervisia-${VERSION}
 CATEGORIES =	devel
 
