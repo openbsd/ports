@@ -1125,17 +1125,11 @@ share/doc/HTML/uk/kdebugdialog5/index.docbook
 share/examples/kdelibs4support/
 share/examples/kdelibs4support/xdg/
 share/examples/kdelibs4support/xdg/colors/
-@sample ${SYSCONFDIR}/xdg/colors/
 share/examples/kdelibs4support/xdg/colors/40.colors
-@sample ${SYSCONFDIR}/xdg/colors/40.colors
 share/examples/kdelibs4support/xdg/colors/Oxygen.colors
-@sample ${SYSCONFDIR}/xdg/colors/Oxygen.colors
 share/examples/kdelibs4support/xdg/colors/Rainbow.colors
-@sample ${SYSCONFDIR}/xdg/colors/Rainbow.colors
 share/examples/kdelibs4support/xdg/colors/Royal.colors
-@sample ${SYSCONFDIR}/xdg/colors/Royal.colors
 share/examples/kdelibs4support/xdg/colors/Web.colors
-@sample ${SYSCONFDIR}/xdg/colors/Web.colors
 share/examples/kdelibs4support/xdg/kdebug.areas
 @sample ${SYSCONFDIR}/xdg/kdebug.areas
 share/examples/kdelibs4support/xdg/kdebugrc
