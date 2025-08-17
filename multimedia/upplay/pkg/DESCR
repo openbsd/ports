@@ -1,5 +1,4 @@
-upplay is a desktop UPnP audio Control Point for Linux/Unix and MS
-Windows.
+upplay is a desktop UPnP audio Control Point
 
 upplay does not play music, it controls a Media Renderer which may
 be running on the same host or anywhere else.

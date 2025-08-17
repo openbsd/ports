@@ -1,8 +1,8 @@
-COMMENT =		UPnP audio control point
-
-DISTNAME =		upplay-1.3.3
-REVISION =		2
 USE_NOBTCFI =		Yes
+USE_WXNEEDED =		Yes
+
+COMMENT =		UPnP audio control point
+DISTNAME =		upplay-1.9.7
 
 CATEGORIES =		multimedia net
 
@@ -10,29 +10,29 @@ HOMEPAGE =		https://www.lesbonscomptes.com/upplay/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
+SITES =			https://www.lesbonscomptes.com/upplay/downloads/
+
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets c jsoncpp m upnpp
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets c jsoncpp m upnpp
 
-SITES =			https://www.lesbonscomptes.com/upplay/downloads/
-
-# C++11
-COMPILER =		base-clang ports-gcc
-
-USE_WXNEEDED =		Yes
 MODULES =		devel/qmake \
-			x11/qt5
+			x11/qt6
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
+
 LIB_DEPENDS =		devel/jsoncpp \
-			net/libupnpp>=0.17.1 \
-			x11/qt5/qtwebkit
+			net/libupnpp \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtpositioning \
+			x11/qt6/qtwebchannel \
+			x11/qt6/qtwebengine
 
 NO_TEST =		Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/upplay.pro
 
 .include <bsd.port.mk>
