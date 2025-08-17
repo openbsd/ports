@@ -2,8 +2,7 @@ COMMENT=	tools for the MongoDB database
 
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
-GH_TAGNAME=	100.9.4
-#PKGNAME=	mongo-tools-${GH_TAGNAME:S/r//}
+GH_TAGNAME=	100.12.2
 
 CATEGORIES=	databases
 
