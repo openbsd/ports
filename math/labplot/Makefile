@@ -1,6 +1,6 @@
 COMMENT =	data visualization and analysis software
 
-DISTNAME =	labplot-2.12.0
+DISTNAME =	labplot-2.12.1
 
 CATEGORIES =	math x11
 
@@ -12,7 +12,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 USE_NOBTCFI =	Yes
 USE_NOBTCFI-aarch64 =	Yes# fortran
 
-SHARED_LIBS +=	labplot                   0.0 # 0.0
+SHARED_LIBS +=	labplot                   0.1 # 0.0
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
@@ -29,8 +29,7 @@ WANTLIB += KF6WidgetsAddons KF6XmlGui QXlsxQt6 Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6SerialPort Qt6Sql
 WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c cantorlibs cerf cfitsio
 WANTLIB += fftw3 gsl gslcblas hdf5 lz4 m markdown matio netcdf
-WANTLIB += poppler poppler-qt6 qtadvanceddocking-qt6 spectre xcb
-WANTLIB += z zstd
+WANTLIB += poppler-qt6 qtadvanceddocking-qt6 spectre xcb z zstd
 
 SITES =		https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
@@ -124,6 +123,7 @@ TEST_IS_INTERACTIVE =	X11
 
 pre-configure:
 	# use system dependencies
-	rm -rf ${WRKSRC}/src/3rdparty/{Qt-Advanced-Docking-System,cmake,kdmactouchbar,liborigin,QXlsx}
+	rm -rf ${WRKSRC}/src/3rdparty/{Qt-Advanced-Docking-System,cmake}
+	rm -rf ${WRKSRC}/src/3rdparty/{kdmactouchbar,liborigin,QXlsx}
 
 .include <bsd.port.mk>
