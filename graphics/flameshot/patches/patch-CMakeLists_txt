@@ -18,17 +18,3 @@ Index: CMakeLists.txt
      FetchContent_Declare(
          qtColorWidgets
          GIT_REPOSITORY https://gitlab.com/mattbas/Qt-Color-Widgets.git
-@@ -111,8 +115,12 @@ if (USE_KDSINGLEAPPLICATION)
-   set(KDSingleApplication_EXAMPLES OFF CACHE BOOL "Don't build the examples")
-   set(KDSingleApplication_STATIC ON CACHE BOOL "Build static versions of the libraries")
- 
-+  find_package(KDSingleApplication-qt6)
-+
-+  if(KDSingleApplication-qt6_FOUND)
-+    message(STATUS "Found system KDSingleApplication package")
-   # Check if KDSingleApplication is available locally
--  if(EXISTS "${CMAKE_SOURCE_DIR}/external/KDSingleApplication/CMakeLists.txt")
-+  elseif(EXISTS "${CMAKE_SOURCE_DIR}/external/KDSingleApplication/CMakeLists.txt")
-     add_subdirectory("${CMAKE_SOURCE_DIR}/external/KDSingleApplication")
-   else()
-     FetchContent_Declare(
