@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1738 2025/08/13 09:21:09 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1739 2025/08/17 06:46:08 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -633,6 +633,8 @@ my $stem_extensions = {
 	'compton-conf' => 'picom-config',
 	'minetest' => 'luanti',
 	'qcoro-qt6' => 'qcoro',
+	'libaccounts-qt6' => 'libaccounts-qt',
+	'kdsoap-qt6' => 'kdsoap-qt',
 };
 
 my $obsolete_reason = {};
