@@ -1,7 +1,7 @@
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kontact.kde.org
 
@@ -57,7 +57,7 @@ LIB_DEPENDS =		archivers/xz \
 			devel/kf6/kitemmodels \
 			devel/kf6/kwidgetsaddons \
 			devel/kf6/kxmlgui \
-			net/libaccounts-qt,qt6 \
+			net/libaccounts-qt \
 			textproc/libxml \
 			x11/kde-applications/kf6-kaccounts-integration>=${VERSION}
 

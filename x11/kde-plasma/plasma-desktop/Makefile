@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -75,7 +76,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/sonnet \
 		devel/sdl2 \
 		inputmethods/ibus \
-		net/libaccounts-qt,qt6 \
+		net/libaccounts-qt \
 		textproc/icu4c \
 		x11/kde-applications/kf6-kaccounts-integration \
 		x11/kde-plasma/libksysguard>=${VERSION} \

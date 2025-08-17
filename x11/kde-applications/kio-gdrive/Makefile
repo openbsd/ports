@@ -1,6 +1,7 @@
 COMMENT =	KIO Slave to access Google Drive
 DISTNAME =	kio-gdrive-${VERSION}
 CATEGORIES =	www x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
@@ -25,7 +26,7 @@ LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kjobwidgets \
 		devel/kf6/purpose \
 		devel/kf6/solid \
-		net/libaccounts-qt,qt6 \
+		net/libaccounts-qt \
 		x11/kde-applications/kf6-kaccounts-integration>=${VERSION} \
 		x11/kde-applications/libkgapi>=${VERSION}
 

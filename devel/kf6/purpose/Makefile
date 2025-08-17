@@ -1,5 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Purpose                0.0 # 0.0
 SHARED_LIBS +=  KF6PurposeWidgets         0.0 # 0.0
@@ -33,7 +34,7 @@ LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/solid>=${MODKF6_VERSION} \
 		x11/qt6/qtdeclarative
 
-LIB_DEPENDS +=	net/libaccounts-qt,qt6 \
+LIB_DEPENDS +=	net/libaccounts-qt \
 		x11/kde-applications/kf6-kaccounts-integration
 
 # sucks
