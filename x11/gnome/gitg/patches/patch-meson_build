@@ -1,0 +1,16 @@
+From c66e8ed30c25f85d86010c5f17186beb09e3de8c Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Sun, 19 Jan 2025 21:29:37 +0100
+Subject: [PATCH] Remove libdazzle dependency
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -135,7 +135,6 @@ libgit2_glib_dep = dependency('libgit2-glib-1.0', vers
+ libpeas_dep = dependency('libpeas-1.0')
+ libsecret_dep = dependency('libsecret-1')
+ libxml_dep = dependency('libxml-2.0', version: '>= 2.9.0')
+-libdazzle_dep = dependency('libdazzle-1.0')
+ json_glib_dependency = dependency('json-glib-1.0')
+ gpgme_dependency = dependency('gpgme')
+ 

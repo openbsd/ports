@@ -1,0 +1,16 @@
+From c66e8ed30c25f85d86010c5f17186beb09e3de8c Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Sun, 19 Jan 2025 21:29:37 +0100
+Subject: [PATCH] Remove libdazzle dependency
+
+Index: libgitg/meson.build
+--- libgitg/meson.build.orig
++++ libgitg/meson.build
+@@ -13,7 +13,6 @@ common_deps = [
+   glib_dep,
+   gtk_dep,
+   libgit2_glib_dep,
+-  libdazzle_dep,
+   gpgme_dependency,
+ ]
+ 

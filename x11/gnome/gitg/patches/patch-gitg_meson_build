@@ -1,0 +1,16 @@
+From c66e8ed30c25f85d86010c5f17186beb09e3de8c Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Sun, 19 Jan 2025 21:29:37 +0100
+Subject: [PATCH] Remove libdazzle dependency
+
+Index: gitg/meson.build
+--- gitg/meson.build.orig
++++ gitg/meson.build
+@@ -71,7 +71,6 @@ deps = [
+   gspell_dep,
+   libgitg_ext_dep,
+   libpeas_dep,
+-  libdazzle_dep,
+   json_glib_dependency,
+   valac.find_library ('posix'),
+ ]
