@@ -26,6 +26,6 @@ LIB_DEPENDS =		devel/kf6/kcolorscheme \
 			x11/qt6/qtdeclarative
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/qqc2-desktop-style
+			devel/kf6/qqc2-desktop-style
 
 .include <bsd.port.mk>
