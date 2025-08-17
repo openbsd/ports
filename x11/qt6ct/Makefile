@@ -1,7 +1,7 @@
 COMMENT =		Qt6 configuration tool
 
 DIST_TUPLE =		github	ilya-fedin	qt6ct	0.10	.
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 
