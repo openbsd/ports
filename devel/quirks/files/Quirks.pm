@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1739 2025/08/17 06:46:08 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1740 2025/08/17 07:55:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1281,6 +1281,7 @@ setup_obsolete_reason(
 	3 => 'qjson',
 	3 => 'mysql-utilities',
 	5 => 'cdk',
+	5 => 'libdazzle',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
