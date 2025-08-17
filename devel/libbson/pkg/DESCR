@@ -1,0 +1,6 @@
+BSON ("Binary JSON") is a binary-encoded serialization of JSON-like
+documents. It is the native document format of MongoDB.
+
+libbson is a library providing useful routines related to building,
+parsing, and iterating BSON documents. It can be used as a base for
+high-performance C extensions to higher level languages.
