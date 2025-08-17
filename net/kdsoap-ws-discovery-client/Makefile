@@ -1,6 +1,7 @@
 COMMENT =	KDSoap WS-Discovery client
 
 DISTNAME =	kdsoap-ws-discovery-client-0.4.0
+REVISION =	0
 
 CATEGORIES =	net devel
 
@@ -23,7 +24,7 @@ BUILD_DEPENDS =		devel/boost
 
 BUILD_DEPENDS +=	devel/kf6/extra-cmake-modules
 
-LIB_DEPENDS =		net/kdsoap,qt6
+LIB_DEPENDS =		net/kdsoap
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \

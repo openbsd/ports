@@ -1,7 +1,7 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	productivity net
 
@@ -60,7 +60,7 @@ LIB_DEPENDS =	audio/taglib \
 		graphics/openexr \
 		math/imath \
 		multimedia/phonon,qt6 \
-		net/kdsoap,qt6 \
+		net/kdsoap \
 		net/kdsoap-ws-discovery-client \
 		net/samba \
 		security/libssh \
