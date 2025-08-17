@@ -1654,6 +1654,7 @@
      SUBDIR += py-regex
      SUBDIR += py-rencode
      SUBDIR += py-resolvelib
+     SUBDIR += py-retry2
      SUBDIR += py-rfc3339-validator
      SUBDIR += py-rfc3986-validator
      SUBDIR += py-rfc6555
