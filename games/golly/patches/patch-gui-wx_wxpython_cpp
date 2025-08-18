@@ -1,8 +1,8 @@
 Index: gui-wx/wxpython.cpp
 --- gui-wx/wxpython.cpp.orig
 +++ gui-wx/wxpython.cpp
-@@ -236,6 +236,8 @@ static void GetPythonExceptions()
-     Py_XDECREF(exmod);
+@@ -158,6 +158,8 @@ extern "C" {
+     PyObject *G_Py_None = NULL;
  }
  
 +// handle for libutil
@@ -10,11 +10,11 @@ Index: gui-wx/wxpython.cpp
  // handle for Python lib
  static wxDllType pythondll = NULL;
  
-@@ -245,15 +247,37 @@ static void FreePythonLib()
+@@ -167,16 +169,38 @@ static void FreePythonLib()
          wxDynamicLibrary::Unload(pythondll);
          pythondll = NULL;
      }
-+    
++
 +    if ( libutildll ) {
 +        wxDynamicLibrary::Unload(libutildll);
 +        libutildll = NULL;
@@ -28,9 +28,10 @@ Index: gui-wx/wxpython.cpp
      // load the Python library
      wxDynamicLibrary dynlib;
      
-     // don't log errors in here
-     wxLogNull noLog;
-+    
+     // if dynlib.Load fails then only see the detailed log error if GollyPrefs sets debug_level=2
+     wxLogNull* noLog = new wxLogNull();
+     if (debuglevel == 2) delete noLog;
++
 +    // Load libutil first, needed for openpty() and forkpty() symbols
 +    if ( !dynlibUtil.Load(wxT("libutil.so"), wxDL_NOW | wxDL_VERBATIM | wxDL_GLOBAL) ) {
 +        return false;
@@ -45,6 +46,6 @@ Index: gui-wx/wxpython.cpp
 +        Warning(_("Oh dear, libutil is not loaded!"));
 +        return false;
 +    }
-     
-     // wxDL_GLOBAL corresponds to RTLD_GLOBAL on Linux (ignored on Windows) and
-     // is needed to avoid an ImportError when importing some modules (eg. time)
+ 
+     // the prompt message for loading the Python library
+     wxString prompt = _(

@@ -1,0 +1,53 @@
+Index: gui-wx/makefile-gtk
+--- gui-wx/makefile-gtk.orig
++++ gui-wx/makefile-gtk
+@@ -43,31 +43,22 @@ GUIFILES = makefile-gtk makefile-mac makefile-win loca
+ LUAFILES = $(LUADIR)/*.h $(LUADIR)/*.c $(LUADIR)/*.hpp $(LUADIR)/Makefile $(LUADIR)/ReadMe.html
+ SOUNDFILES = $(SOUNDDIR)/*.h $(SOUNDDIR)/*.c
+ 
+-LUALIB = $(LUADIR)/liblua.a -ldl
++LUALIB = $(LUADIR)/liblua.a
+ 
+-CXXC = g++
++CXXC = c++
+ CXXFLAGS := -DVERSION=$(APP_VERSION) -DGOLLYDIR="$(GOLLYDIR)" \
+     -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -I$(BASEDIR) \
+-    -O3 -Wall -Wno-non-virtual-dtor -fno-strict-aliasing $(CXXFLAGS)
++    -Wall -Wno-non-virtual-dtor -fno-strict-aliasing $(CXXFLAGS)
+ LDFLAGS := -Wl,--as-needed -Wl,-rpath,'$$ORIGIN/$(RPATHSTR)' $(LDFLAGS)
+ 
+-# For sound support
+-ifdef ENABLE_SOUND
+-    CXXFLAGS += -DENABLE_SOUND
+-    SOUND_INCLUDE = -I$(SOUNDDIR)
+-    ### SOUND_LINK = /usr/local/lib/libSDL2.a -lrt
+-    ### above loads SDL2 lib statically (but requires building SDL2 from source)
+-    SOUND_LINK = -lSDL2
+-endif
+-
+ # For Python script support
+-PYTHON_INCLUDE = -I`$(PYTHON) -c "import distutils.sysconfig as s; print(s.get_python_inc())"`
++PYTHON_INCLUDE = -I`$(PYTHON) -c "import sysconfig as s; print(s.get_path('include'))"`
+ # we don't want to link against a specific library: PYTHON_LINK = -lpython2.3
+ # following generates "-Xlinker -export-dynamic" but doesn't seem to be needed
+-# PYTHON_LINK = `python -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('LINKFORSHARED')"`
++# PYTHON_LINK = `python -c "import sysconfig; print sysconfig.get_config_var('LINKFORSHARED')"`
+ PYTHON_LINK =
+ # the following determines the filename for the python dynamic library (e.g. libpython3.8.so)
+-PYTHON_SHLIB = `$(PYTHON) -c "import distutils.sysconfig as s; print(s.get_config_var('LDLIBRARY'))"`
++PYTHON_SHLIB = `$(PYTHON) -c "import sysconfig as s; print(s.get_config_var('LDLIBRARY'))"`
+ PYTHON_PREFS = -DPYTHON_SHLIB="$(PYTHON_SHLIB)"
+ 
+ # default settings for zlib support, so clear these to build without zlib
+@@ -296,6 +287,11 @@ bindist: all
+ 	find $(DIRNAME) -name '.[^.]*' -delete
+ 	find $(DIRNAME)/Scripts/Python -name '*.pyc' -delete
+ 	tar -cf - ./$(DIRNAME) | gzip > $(DIRNAME).tar.gz
++
++install: all
++	install $(EXEFILES) $(PREFIX)/bin
++	mkdir $(PREFIX)/share/golly
++	cp -rp $(DOCFILES) $(SHAREDFILES) $(PREFIX)/share/golly
+                                           
+ # Packaging a portable distribution.
+ # We need to copy the necessary shared libraries.
