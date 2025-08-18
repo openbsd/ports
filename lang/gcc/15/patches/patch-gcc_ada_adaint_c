@@ -1,0 +1,16 @@
+Index: gcc/ada/adaint.c
+--- gcc/ada/adaint.c.orig
++++ gcc/ada/adaint.c
+@@ -3714,6 +3714,12 @@ void __gnat_killprocesstree (int pid, int sig_num)
+   */
+ }
+ 
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ #ifdef __cplusplus
+ }
+ #endif

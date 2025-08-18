@@ -1,0 +1,3 @@
+@info info/libitm.info
+@static-lib lib/libitm.a
+lib/libitm.spec

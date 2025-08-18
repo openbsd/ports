@@ -1,0 +1,2 @@
+lib/libquadmath.la
+@lib lib/libquadmath.so.${LIBquadmath_VERSION}

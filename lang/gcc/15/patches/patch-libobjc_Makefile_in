@@ -1,0 +1,26 @@
+Index: libobjc/Makefile.in
+--- libobjc/Makefile.in.orig
++++ libobjc/Makefile.in
+@@ -259,18 +259,20 @@ install-html:
+ install-pdf:
+ install-info:
+ 
++include $(top_srcdir)/../libversions
++
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+ 
+ libobjc$(libsuffix).la: $(OBJS)
+ 	$(LIBTOOL_LINK) $(CC) -o $@ $(OBJS) \
+ 		-Wc,-shared-libgcc -rpath $(toolexeclibdir) \
+-		-version-info $(LIBOBJC_VERSION) $(extra_ldflags_libobjc) \
++		$(LIBobjc_LTVERSION) $(extra_ldflags_libobjc) \
+ 		$(LTLDFLAGS)
+ 
+ libobjc_gc$(libsuffix).la: $(OBJS_GC)
+ 	$(LIBTOOL_LINK) $(CC) -o $@ $(OBJS_GC) $(OBJC_BOEHM_GC_LIBS) \
+ 		-Wc,-shared-libgcc -rpath $(toolexeclibdir) \
+-		-version-info $(LIBOBJC_GC_VERSION) $(extra_ldflags_libobjc) \
++		$(LIBobjc_gc_LTVERSION) $(extra_ldflags_libobjc) \
+ 		$(LTLDFLAGS)
+ 
+ info:

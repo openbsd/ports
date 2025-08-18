@@ -1,0 +1,12 @@
+Index: gcc/c/c-decl.cc
+--- gcc/c/c-decl.cc.orig
++++ gcc/c/c-decl.cc
+@@ -6719,6 +6719,8 @@ warn_variable_length_array (tree name, tree size)
+ 	pedwarn_c90 (input_location, OPT_Wvla, "ISO C90 forbids variable "
+ 		     "length array");
+     }
++    if (warn_variable_decl)
++      warning (OPT_Wvariable_decl, "variable-sized array %qE", name);
+ }
+ 
+ /* Returns the smallest location != UNKNOWN_LOCATION in LOCATIONS,

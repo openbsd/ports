@@ -1,0 +1,12 @@
+Index: libgcc/config/arm/unwind-arm.h
+--- libgcc/config/arm/unwind-arm.h.orig
++++ libgcc/config/arm/unwind-arm.h
+@@ -74,7 +74,7 @@ static inline _Unwind_Ptr _Unwind_gnu_Find_got (_Unwin
+       tmp += _Unwind_gnu_Find_got (ptr);
+       tmp = *(_Unwind_Word *) tmp;
+ #elif (defined(linux) && !defined(__uClinux__)) || defined(__NetBSD__) \
+-    || defined(__FreeBSD__) || defined(__fuchsia__)
++    || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__fuchsia__)
+       /* Pc-relative indirect.  */
+ #define _GLIBCXX_OVERRIDE_TTYPE_ENCODING (DW_EH_PE_pcrel | DW_EH_PE_indirect)
+       tmp += ptr;

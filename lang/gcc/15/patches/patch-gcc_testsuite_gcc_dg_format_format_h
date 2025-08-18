@@ -1,0 +1,17 @@
+Index: gcc/testsuite/gcc.dg/format/format.h
+--- gcc/testsuite/gcc.dg/format/format.h.orig
++++ gcc/testsuite/gcc.dg/format/format.h
+@@ -35,11 +35,13 @@
+ #include <stdarg.h>
+ #include <stddef.h>
+ 
++#ifndef _WINT_T_DEFINED_
+ #ifndef _WINT_T
+ #ifndef __WINT_TYPE__
+ #define __WINT_TYPE__ unsigned int
+ #endif
+ typedef __WINT_TYPE__ wint_t;
++#endif
+ #endif
+ 
+ #ifdef _WIN64

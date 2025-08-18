@@ -1,0 +1,22 @@
+Index: libquadmath/Makefile.in
+--- libquadmath/Makefile.in.orig
++++ libquadmath/Makefile.in
+@@ -451,6 +451,9 @@ toolexeclibdir = @toolexeclibdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
++
++include $(top_srcdir)/../libversions
++
+ AUTOMAKE_OPTIONS = foreign info-in-builddir
+ @BUILD_LIBQUADMATH_TRUE@ACLOCAL_AMFLAGS = -I .. -I ../config
+ @BUILD_LIBQUADMATH_TRUE@AM_CPPFLAGS = -I $(top_srcdir)/../include
+@@ -466,7 +469,7 @@ AUTOMAKE_OPTIONS = foreign info-in-builddir
+ @BUILD_LIBQUADMATH_TRUE@libquadmath_la_LIBADD = 
+ @BUILD_LIBQUADMATH_TRUE@@ENABLE_DARWIN_AT_RPATH_TRUE@libquadmath_darwin_rpath = -Wc,-nodefaultrpaths \
+ @BUILD_LIBQUADMATH_TRUE@@ENABLE_DARWIN_AT_RPATH_TRUE@	-Wl,-rpath,@loader_path
+-@BUILD_LIBQUADMATH_TRUE@libquadmath_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` \
++@BUILD_LIBQUADMATH_TRUE@libquadmath_la_LDFLAGS = $(LIBquadmath_LTVERSION) \
+ @BUILD_LIBQUADMATH_TRUE@	$(version_arg) $(lt_host_flags) $(LIBM) $(libquadmath_darwin_rpath)
+ 
+ @BUILD_LIBQUADMATH_TRUE@libquadmath_la_DEPENDENCIES = $(version_dep) $(libquadmath_la_LIBADD)

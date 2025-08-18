@@ -1,0 +1,21 @@
+Index: gcc/ada/s-oscons-tmplt.c
+--- gcc/ada/s-oscons-tmplt.c.orig
++++ gcc/ada/s-oscons-tmplt.c
+@@ -160,7 +160,7 @@ pragma Style_Checks ("N");
+ #endif
+ 
+ #if defined (__linux__) || defined (__ANDROID__) || defined (__QNX__) \
+-  || defined (__rtems__) || defined (__GNU__)
++  || defined (__rtems__) || defined (__GNU__) || defined (__OpenBSD__)
+ # include <pthread.h>
+ # include <signal.h>
+ #endif
+@@ -1998,7 +1998,7 @@ CNS(CLOCK_RT_Ada, "")
+ #endif
+ 
+ #if defined (__APPLE__) || defined (__ANDROID__) || defined (DUMMY) \
+-  || defined (__FreeBSD__) || defined (__linux__) \
++  || defined (__FreeBSD__) || defined (__OpenBSD__) || defined (__linux__) \
+   || defined (__QNX__) || defined (__rtems__) || defined (__GNU__)
+ 
+ /*

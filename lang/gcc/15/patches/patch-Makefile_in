@@ -1,0 +1,291 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -2898,7 +2898,7 @@ install:
+ 	@: $(MAKE); $(unstage)
+ 	@r=`${PWD_COMMAND}`; export r; \
+ 	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+-	$(MAKE) $(RECURSE_FLAGS_TO_PASS) installdirs install-host install-target
++	$(MAKE) $(RECURSE_FLAGS_TO_PASS) -j1 installdirs install-host install-target
+ 
+ .PHONY: install-host-nogcc
+ install-host-nogcc:  \
+@@ -3222,7 +3222,7 @@ configure-build-libiberty: 
+ 	esac; \
+ 	module_srcdir=libiberty; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3279,7 +3279,7 @@ configure-build-bison: 
+ 	esac; \
+ 	module_srcdir=bison; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3336,7 +3336,7 @@ configure-build-flex: 
+ 	esac; \
+ 	module_srcdir=flex; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3393,7 +3393,7 @@ configure-build-m4: 
+ 	esac; \
+ 	module_srcdir=m4; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3450,7 +3450,7 @@ configure-build-texinfo: 
+ 	esac; \
+ 	module_srcdir=texinfo; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3507,7 +3507,7 @@ configure-build-fixincludes: 
+ 	esac; \
+ 	module_srcdir=fixincludes; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -3564,7 +3564,7 @@ configure-build-libcpp: 
+ 	esac; \
+ 	module_srcdir=libcpp; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
+@@ -45191,7 +45191,7 @@ configure-target-libstdc++-v3: 
+ 	esac; \
+ 	module_srcdir=libstdc++-v3; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -46461,7 +46461,7 @@ configure-target-libsanitizer: 
+ 	esac; \
+ 	module_srcdir=libsanitizer; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -47731,7 +47731,7 @@ configure-target-libvtv: 
+ 	esac; \
+ 	module_srcdir=libvtv; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -49002,7 +49002,7 @@ configure-target-libssp: 
+ 	esac; \
+ 	module_srcdir=libssp; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -49487,7 +49487,7 @@ configure-target-newlib: 
+ 	esac; \
+ 	module_srcdir=newlib; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -49971,7 +49971,7 @@ configure-target-libgcc: 
+ 	esac; \
+ 	module_srcdir=libgcc; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -51203,7 +51203,7 @@ configure-target-libbacktrace: 
+ 	esac; \
+ 	module_srcdir=libbacktrace; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -52474,7 +52474,7 @@ configure-target-libquadmath: 
+ 	esac; \
+ 	module_srcdir=libquadmath; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -52959,7 +52959,7 @@ configure-target-libgfortran: 
+ 	esac; \
+ 	module_srcdir=libgfortran; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -53444,7 +53444,7 @@ configure-target-libobjc: 
+ 	esac; \
+ 	module_srcdir=libobjc; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -53896,7 +53896,7 @@ configure-target-libgo: 
+ 	esac; \
+ 	module_srcdir=libgo; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -54380,7 +54380,7 @@ configure-target-libphobos: 
+ 	esac; \
+ 	module_srcdir=libphobos; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -55651,7 +55651,7 @@ configure-target-libtermcap: 
+ 	esac; \
+ 	module_srcdir=libtermcap; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -56071,7 +56071,7 @@ configure-target-winsup: 
+ 	esac; \
+ 	module_srcdir=winsup; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -56556,7 +56556,7 @@ configure-target-libgloss: 
+ 	esac; \
+ 	module_srcdir=libgloss; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -57036,7 +57036,7 @@ configure-target-libffi: 
+ 	esac; \
+ 	module_srcdir=libffi; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -57510,7 +57510,7 @@ configure-target-zlib: 
+ 	esac; \
+ 	module_srcdir=zlib; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -58781,7 +58781,7 @@ configure-target-rda: 
+ 	esac; \
+ 	module_srcdir=rda; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -59266,7 +59266,7 @@ configure-target-libada: 
+ 	esac; \
+ 	module_srcdir=libada; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -59751,7 +59751,7 @@ configure-target-libgm2: 
+ 	esac; \
+ 	module_srcdir=libgm2; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -60235,7 +60235,7 @@ configure-target-libgomp: 
+ 	esac; \
+ 	module_srcdir=libgomp; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -61506,7 +61506,7 @@ configure-target-libitm: 
+ 	esac; \
+ 	module_srcdir=libitm; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -61990,7 +61990,7 @@ configure-target-libatomic: 
+ 	esac; \
+ 	module_srcdir=libatomic; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
+@@ -63261,7 +63261,7 @@ configure-target-libgrust: 
+ 	esac; \
+ 	module_srcdir=libgrust; \
+ 	rm -f no-such-file || : ; \
+-	CONFIG_SITE=no-such-file $(SHELL) \
++	$(SHELL) \
+ 	  $$s/$$module_srcdir/configure \
+ 	  --srcdir=$${topdir}/$$module_srcdir \
+ 	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \

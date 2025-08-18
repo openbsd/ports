@@ -1,0 +1,12 @@
+Index: gcc/gcc.cc
+--- gcc/gcc.cc.orig
++++ gcc/gcc.cc
+@@ -1052,7 +1052,7 @@ proper position among the other output files.  */
+ #else
+ #define LD_PIE_SPEC ""
+ #endif
+-#define LINK_PIE_SPEC "%{static|shared|r:;" PIE_SPEC ":" LD_PIE_SPEC "} "
++#define LINK_PIE_SPEC "%{pie:-pie} %{p|pg|nopie:-nopie} "
+ #endif
+ 
+ #ifndef LINK_BUILDID_SPEC

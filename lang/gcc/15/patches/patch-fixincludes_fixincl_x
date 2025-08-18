@@ -1,0 +1,17 @@
+Index: fixincludes/fixincl.x
+--- fixincludes/fixincl.x.orig
++++ fixincludes/fixincl.x
+@@ -7885,11 +7885,11 @@ static const char* apzSolaris_Complex_CxxPatch[] = { s
+     "-e", "/#if[ \t]*!defined(__cplusplus)/c\\\n\
+ #ifdef\t__cplusplus\\\n\
+ extern \"C\" {\\\n\
+-#endif",
++#endif\\\n",
+     "-e", "/#endif[ \t]*\\/\\* !defined(__cplusplus) \\*\\//c\\\n\
+ #ifdef\t__cplusplus\\\n\
+ }\\\n\
+-#endif",
++#endif\\\n",
+     (char*)NULL };
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * * *

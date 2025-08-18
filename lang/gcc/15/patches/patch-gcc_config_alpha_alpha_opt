@@ -1,0 +1,14 @@
+Index: gcc/config/alpha/alpha.opt
+--- gcc/config/alpha/alpha.opt.orig
++++ gcc/config/alpha/alpha.opt
+@@ -38,6 +38,10 @@ mieee
+ Target RejectNegative Mask(IEEE)
+ Emit IEEE-conformant code, without inexact exceptions.
+ 
++mno-ieee
++Target Report RejectNegative InverseMask(IEEE)
++Emit non-IEEE-conformant code
++
+ mieee-with-inexact
+ Target RejectNegative Mask(IEEE_WITH_INEXACT)
+ 

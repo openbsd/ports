@@ -1,0 +1,36 @@
+Index: libcc1/Makefile.in
+--- libcc1/Makefile.in.orig
++++ libcc1/Makefile.in
+@@ -403,6 +403,8 @@ cc1libdir = $(libdir)/$(libsuffix)
+ shared_source = callbacks.cc callbacks.hh connection.cc connection.hh \
+     marshall.cc marshall.hh rpc.hh status.hh
+ 
++include $(top_srcdir)/../libversions
++
+ marshall_cxx_source = marshall-cp.hh
+ libcc1plugin_la_LDFLAGS = -module -export-symbols $(srcdir)/libcc1plugin.sym
+ libcc1plugin_la_SOURCES = libcc1plugin.cc context.cc context.hh \
+@@ -413,6 +415,7 @@ libcc1plugin_la_LIBADD = $(libiberty)
+ libcc1plugin_la_DEPENDENCIES = $(libiberty_dep)
+ libcc1plugin_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
++	$(LIBcc1plugin_LTVERSION) \
+ 	$(CXXFLAGS) $(libcc1plugin_la_LDFLAGS) $(LTLDFLAGS) -o $@
+ 
+ libcp1plugin_la_LDFLAGS = -module -export-symbols $(srcdir)/libcp1plugin.sym
+@@ -424,6 +427,7 @@ libcp1plugin_la_LIBADD = $(libiberty)
+ libcp1plugin_la_DEPENDENCIES = $(libiberty_dep)
+ libcp1plugin_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
++	$(LIBcp1plugin_LTVERSION) \
+ 	$(CXXFLAGS) $(libcp1plugin_la_LDFLAGS) $(LTLDFLAGS) -o $@
+ 
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+@@ -436,6 +440,7 @@ libcc1_la_LIBADD = $(libiberty)
+ libcc1_la_DEPENDENCIES = $(libiberty_dep)
+ libcc1_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
++	$(LIBcc1_LTVERSION) \
+ 	$(CXXFLAGS) $(libcc1_la_LDFLAGS) $(LTLDFLAGS) -o $@
+ 
+ all: cc1plugin-config.h

@@ -1,0 +1,26 @@
+Index: libffi/Makefile.in
+--- libffi/Makefile.in.orig
++++ libffi/Makefile.in
+@@ -597,7 +597,8 @@ AM_CFLAGS = -Wall -g -fexceptions $(CET_FLAGS) $(am__a
+ @LIBFFI_BUILD_VERSIONED_SHLIB_FALSE@libffi_version_dep = 
+ @LIBFFI_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBFFI_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_dep = libffi.map
+ @LIBFFI_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBFFI_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_dep = libffi.map-sun
+-libffi_version_info = -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++include $(top_srcdir)/../libversions
++libffi_version_info = $(LIBffi_LTVERSION)
+ @ENABLE_DARWIN_AT_RPATH_TRUE@libffi_darwin_rpath = -Wl,-rpath,@loader_path
+ libffi_la_LDFLAGS = -no-undefined $(libffi_version_info) \
+ 	$(libffi_version_script) $(LTLDFLAGS) $(AM_LTLDFLAGS) \
+@@ -1626,9 +1627,9 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(toolexeclibdir)" "$(DESTDIR)$(infodir)" "$(DESTDIR)$(pkgconfigdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: install-recursive
+-install-exec: install-exec-recursive
+-install-data: install-data-recursive
++install:
++install-exec:
++install-data:
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am

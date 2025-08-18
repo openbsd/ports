@@ -1,0 +1,16 @@
+Index: libgcc/config/rs6000/t-openbsd
+--- libgcc/config/rs6000/t-openbsd.orig
++++ libgcc/config/rs6000/t-openbsd
+@@ -0,0 +1,12 @@
++# already added in libgcc/config/rs6000/t-ppccomm
++# LIB2ADD = $(srcdir)/config/rs6000/tramp.S
++
++LIB2ADD_ST += \
++	$(srcdir)/config/rs6000/crtsavfpr.S \
++	$(srcdir)/config/rs6000/crtresfpr.S \
++	$(srcdir)/config/rs6000/crtsavgpr.S \
++	$(srcdir)/config/rs6000/crtresgpr.S \
++	$(srcdir)/config/rs6000/crtresxfpr.S \
++	$(srcdir)/config/rs6000/crtresxgpr.S \
++	$(srcdir)/config/rs6000/crtsavevr.S \
++	$(srcdir)/config/rs6000/crtrestvr.S

@@ -1,0 +1,12 @@
+Index: gcc/c-family/c.opt
+--- gcc/c-family/c.opt.orig
++++ gcc/c-family/c.opt
+@@ -1235,7 +1235,7 @@ C ObjC C++ ObjC++ Var(warn_pointer_arith) Warning Lang
+ Warn about function pointer arithmetic.
+ 
+ Wpointer-sign
+-C ObjC Var(warn_pointer_sign) Warning LangEnabledBy(C ObjC,Wall || Wpedantic)
++C ObjC Var(warn_pointer_sign) Warning LangEnabledBy(C ObjC,Wpedantic)
+ Warn when a pointer differs in signedness in an assignment.
+ 
+ Wpointer-compare

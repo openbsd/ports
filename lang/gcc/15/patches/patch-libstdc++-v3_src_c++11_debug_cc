@@ -1,0 +1,21 @@
+Index: libstdc++-v3/src/c++11/debug.cc
+--- libstdc++-v3/src/c++11/debug.cc.orig
++++ libstdc++-v3/src/c++11/debug.cc
+@@ -775,7 +775,7 @@ namespace
+   print_address(PrintContext& ctx, const char* fmt, const void* address)
+   {
+     char buf[128];
+-    int written = __builtin_sprintf(buf, fmt, address);
++    int written = __builtin_snprintf(buf, sizeof buf, fmt, address);
+     print_word(ctx, buf, written);
+   }
+ 
+@@ -787,7 +787,7 @@ namespace
+   print_integer(PrintContext& ctx, long integer)
+   {
+     char buf[64];
+-    int written = __builtin_sprintf(buf, "%ld", integer);
++    int written = __builtin_snprintf(buf, sizeof buf, "%ld", integer);
+     print_word(ctx, buf, written);
+   }
+ 

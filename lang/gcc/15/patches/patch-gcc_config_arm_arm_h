@@ -1,0 +1,12 @@
+Index: gcc/config/arm/arm.h
+--- gcc/config/arm/arm.h.orig
++++ gcc/config/arm/arm.h
+@@ -2508,7 +2508,7 @@ extern const char *arm_target_mode (int argc, const ch
+ 
+ /* -mcpu=native handling only makes sense with compiler running on
+    an ARM chip.  */
+-#if defined(__arm__)
++#if defined(__arm__) && (defined(__linux__) || defined(__FreeBSD__))
+ extern const char *host_detect_local_cpu (int argc, const char **argv);
+ #define HAVE_LOCAL_CPU_DETECT
+ # define MCPU_MTUNE_NATIVE_FUNCTIONS			\

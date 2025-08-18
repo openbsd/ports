@@ -1,0 +1,13 @@
+Index: libgo/Makefile.in
+--- libgo/Makefile.in.orig
++++ libgo/Makefile.in
+@@ -1009,7 +1009,8 @@ GOCOMPILE = $(GOC) $(DEFAULT_INCLUDES) $(INCLUDES) $(A
+ LTGOCOMPILE = $(LIBTOOL) --tag GO --mode=compile $(GOC) $(INCLUDES) \
+ 	$(AM_GOCFLAGS) $(GOCFLAGS)
+ 
+-GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) \
++include $(top_srcdir)/../libversions
++GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) $(LIBgo_LTVERSION) \
+ 	$(OPT_LDFLAGS) $(SECTION_LDFLAGS) $(AM_GOCFLAGS) $(LTLDFLAGS) -o $@
+ 
+ 

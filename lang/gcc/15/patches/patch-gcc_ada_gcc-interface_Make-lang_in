@@ -1,0 +1,32 @@
+Index: gcc/ada/gcc-interface/Make-lang.in
+--- gcc/ada/gcc-interface/Make-lang.in.orig
++++ gcc/ada/gcc-interface/Make-lang.in
+@@ -1001,7 +1001,7 @@ gnat-install-tools:
+ 	-if [ -f gnat1$(exeext) ] ; \
+ 	then \
+ 	  for tool in $(ADA_TOOLS) ; do \
+-	    install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	    install_name=$$tool$(exeext); \
+ 	    $(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	    if [ -f $$tool-cross$(exeext) ] ; \
+ 	    then \
+@@ -1034,7 +1034,7 @@ ada.install-plugin:
+ 
+ ada.uninstall:
+ 	for tool in $(ADA_TOOLS) ; do \
+-	  install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	  install_name=$$tool$(exeext); \
+ 	  -$(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	done
+ 	-$(RM) $(DESTDIR)$(tooldir)/bin/gnatdll$(exeext)
+@@ -1102,8 +1102,8 @@ lang_checks_parallelized += check-gnat
+ # For description see the check_$lang_parallelize comment in gcc/Makefile.in.
+ check_gnat_parallelize = 1000
+ 
+-check-ada: check-acats check-gnat
+-check-ada-subtargets: check-acats-subtargets check-gnat-subtargets
++check-ada: check-gnat
++check-ada-subtargets: check-gnat-subtargets
+ 
+ # No ada-specific selftests
+ selftest-ada:

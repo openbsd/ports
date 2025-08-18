@@ -1,0 +1,21 @@
+Index: libiberty/cp-demangle.c
+--- libiberty/cp-demangle.c.orig
++++ libiberty/cp-demangle.c
+@@ -4618,7 +4618,7 @@ static inline void
+ d_append_num (struct d_print_info *dpi, int l)
+ {
+   char buf[25];
+-  sprintf (buf,"%d", l);
++  snprintf (buf, 25, "%d", l);
+   d_append_string (dpi, buf);
+ }
+ 
+@@ -7002,7 +7002,7 @@ __cxa_demangle (const char *mangled_name, char *output
+     {
+       if (strlen (demangled) < *length)
+ 	{
+-	  strcpy (output_buffer, demangled);
++	  strlcpy (output_buffer, demangled, *length);
+ 	  free (demangled);
+ 	  demangled = output_buffer;
+ 	}
