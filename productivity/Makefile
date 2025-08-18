@@ -1,7 +1,6 @@
      SUBDIR =
      SUBDIR += aqbanking
      SUBDIR += baikal
-     SUBDIR += bruce
      SUBDIR += calcurse
      SUBDIR += davical
      SUBDIR += deskzilla
