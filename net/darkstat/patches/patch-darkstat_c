@@ -1,13 +1,15 @@
-Re-instate the chroot by default code.
+Re-instate the chroot by default code and support multiple -l.
 
 Index: darkstat.c
 --- darkstat.c.orig
 +++ darkstat.c
-@@ -134,16 +134,44 @@ const char *opt_privdrop_user = NULL;
+@@ -133,17 +133,45 @@ static void cb_base(const char *arg) { opt_base = arg;
+ static const char *opt_privdrop_user = NULL;
  static void cb_user(const char *arg) { opt_privdrop_user = arg; }
  
- const char *opt_daylog_fn = NULL;
+-static const char *opt_daylog_fn = NULL;
 -static void cb_daylog(const char *arg) { opt_daylog_fn = arg; }
++const char *opt_daylog_fn = NULL;
 +static void cb_daylog(const char *arg)
 +{
 +   if (opt_chroot_dir == NULL)
@@ -17,8 +19,9 @@ Index: darkstat.c
 +      opt_daylog_fn = arg;
 +}
  
- const char *import_fn = NULL;
+-static const char *import_fn = NULL;
 -static void cb_import(const char *arg) { import_fn = arg; }
++const char *import_fn = NULL;
 +static void cb_import(const char *arg)
 +{
 +   if (opt_chroot_dir == NULL)
@@ -28,8 +31,9 @@ Index: darkstat.c
 +      import_fn = arg;
 +}
  
- const char *export_fn = NULL;
+-static const char *export_fn = NULL;
 -static void cb_export(const char *arg) { export_fn = arg; }
++const char *export_fn = NULL;
 +static void cb_export(const char *arg)
 +{
 +   if ((opt_chroot_dir == NULL) && (opt_capfile == NULL))
@@ -52,6 +56,15 @@ Index: darkstat.c
  
  unsigned int opt_hosts_max = 1000;
  static void cb_hosts_max(const char *arg)
+@@ -193,7 +221,7 @@ static struct cmdline_arg cmdline_args[] = {
+    {"-r",             "capfile",         cb_capfile,      0},
+    {"-p",             "port",            cb_port,         0},
+    {"-b",             "bindaddr",        cb_bindaddr,    -1},
+-   {"-l",             "network/netmask", cb_local,        0},
++   {"-l",             "network/netmask", cb_local,       -1},
+    {"--base",         "path",            cb_base,         0},
+    {"--local-only",   NULL,              cb_local_only,   0},
+    {"--snaplen",      "bytes",           cb_snaplen,      0},
 @@ -306,7 +334,9 @@ static void parse_cmdline(const int argc, char * const
     if (opt_want_syslog)
        openlog("darkstat", LOG_NDELAY | LOG_PID, LOG_DAEMON);

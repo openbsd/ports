@@ -22,6 +22,6 @@ Index: conv.c
 -      verbosef("no --chroot dir specified, darkstat will not chroot()");
 -   } else {
 +   if (chroot_dir != NULL) {
-       tzset(); /* read /etc/localtime before we chroot */
-       if (chdir(chroot_dir) == -1)
-          err(1, "chdir(\"%s\") failed", chroot_dir);
+       /* Read /etc/localtime before we chroot. This works on FreeBSD but not
+        * on Linux / with glibc (as of 2.22) */
+       tzset();

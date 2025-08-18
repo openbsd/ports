@@ -1,12 +1,10 @@
 COMMENT=		network statistics gatherer with graphs
 
-PORTROACH=		site:https://github.com/emikulic/darkstat/archive/
+GH_ACCOUNT=		emikulic
+GH_PROJECT=		darkstat
+GH_TAGNAME=		3.0.721
 
-DISTNAME=		darkstat-3.0.719
 CATEGORIES=		net www
-SITES=			${HOMEPAGE}
-EXTRACT_SUFX=		.tar.bz2
-REVISION=		3
 
 HOMEPAGE=		https://unix4lyfe.org/darkstat/
 
