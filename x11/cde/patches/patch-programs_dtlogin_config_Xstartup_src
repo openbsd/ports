@@ -1,9 +1,27 @@
+Matches /etc/X11/xenodm/TakeConsole
+
 Index: programs/dtlogin/config/Xstartup.src
 --- programs/dtlogin/config/Xstartup.src.orig
 +++ programs/dtlogin/config/Xstartup.src
-@@ -78,4 +78,4 @@ utmp_flag=UTMP_FLAG
+@@ -56,6 +56,12 @@ then
+ #if defined (__OpenBSD__)
+         /sbin/chown $USER /dev/$ITE
+         /bin/chgrp $USER_GID /dev/$ITE
++        if [ -c /dev/dri/card0 ]; then
++            chown $USER:$USER_GID /dev/dri/card0
++        fi
++        if [ -c /dev/dri/renderD128 ]; then
++            chown $USER:$USER_GID /dev/dri/renderD128
++        fi
+ #elif defined (__FreeBSD__) || defined(__NetBSD__)
+         /usr/sbin/chown $USER /dev/$ITE
+         /usr/bin/chgrp $USER_GID /dev/$ITE
+@@ -78,4 +84,8 @@ utmp_flag=UTMP_FLAG
  utmp_flag=''
  #endif
  
--exec SESSREG -a $wtmp_flag $utmp_flag -l $DISPLAY $USER
++#if defined (__OpenBSD__)
 +exec SESSREG -a $wtmp_flag $utmp_flag -l $DISPLAY -x CDE_INSTALLATION_TOP/config/Xservers $USER
++#else
+ exec SESSREG -a $wtmp_flag $utmp_flag -l $DISPLAY $USER
++#endif

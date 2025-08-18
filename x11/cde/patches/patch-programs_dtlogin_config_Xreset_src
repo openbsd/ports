@@ -1,9 +1,32 @@
+Matches /etc/X11/xenodm/TakeConsole
+
 Index: programs/dtlogin/config/Xreset.src
 --- programs/dtlogin/config/Xreset.src.orig
 +++ programs/dtlogin/config/Xreset.src
-@@ -87,4 +87,4 @@ utmp_flag=UTMP_FLAG
+@@ -55,6 +55,17 @@ then
+   then
+         chown root /dev/$ITE
+         chgrp $ROOT_GID  /dev/$ITE
++#if defined (__OpenBSD__)
++        chmod 622 /dev/$ITE
++        if [ -c /dev/dri/card0 ]
++        then
++            chown root:$ROOT_GID /dev/dri/card0
++        fi
++        if [ -c /dev/dri/renderD128 ]
++        then
++            chown root:$ROOT_GID /dev/dri/renderD128
++        fi
++#endif
+   fi
+ fi
+ 
+@@ -87,4 +98,8 @@ utmp_flag=UTMP_FLAG
  utmp_flag=''
  #endif
  
--SESSREG -d $wtmp_flag $utmp_flag -l $DISPLAY $USER
++#if defined (__OpenBSD__)
 +SESSREG -d $wtmp_flag $utmp_flag -l $DISPLAY -x CDE_INSTALLATION_TOP/config/Xservers $USER
++#else
+ SESSREG -d $wtmp_flag $utmp_flag -l $DISPLAY $USER
++#endif
