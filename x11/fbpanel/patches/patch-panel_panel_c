@@ -1,0 +1,12 @@
+Index: panel/panel.c
+--- panel/panel.c.orig
++++ panel/panel.c
+@@ -933,7 +933,7 @@ ensure_profile()
+     {
+         return;
+     }
+-    cmd = g_strdup_printf("%s %s", LIBEXECDIR "/fbpanel/make_profile",
++    cmd = g_strdup_printf("%s %s", LIBEXECDIR "/make_profile",
+         profile);
+     g_spawn_command_line_sync(cmd, NULL, NULL, NULL, NULL);
+     g_free(cmd);

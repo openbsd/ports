@@ -1,0 +1,21 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ target_include_directories(fbpanel SYSTEM PRIVATE ${X1
+ target_link_libraries     (fbpanel        PRIVATE -lm ${X11_LIBRARIES} ${MODULES_LIBRARIES} -Wl,--export-dynamic)
+ 
+ # make a list of fbpanel plugins
+-set(PLUGINS battery batterytext cpu deskno genmon image mem2 meter pager space tclock volume chart dclock deskno2 icons launchbar mem menu net separator taskbar tray user wincmd)
++set(PLUGINS batterytext deskno genmon image mem2 meter pager space tclock dclock deskno2 icons launchbar mem menu net separator taskbar tray user wincmd)
+ 
+ foreach(PLUGIN ${PLUGINS})
+     file(GLOB PLUGIN_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} plugins/${PLUGIN}/*.c)
+@@ -74,7 +74,7 @@ foreach(PLUGIN ${PLUGINS})
+ endforeach()
+ set(DOCS CHANGELOG.md COPYING CREDITS INSTALL.md README.md)
+ foreach(DOC ${DOCS})
+-    install(FILES "${PROJECT_SOURCE_DIR}/${DOC}" DESTINATION "${CMAKE_INSTALL_DOCDIR}-${CMAKE_PROJECT_VERSION}")
++    install(FILES "${PROJECT_SOURCE_DIR}/${DOC}" DESTINATION "${CMAKE_INSTALL_DOCDIR}")
+ endforeach()
+ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}.1" DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")
+ install(DIRECTORY "${PROJECT_SOURCE_DIR}/data/images" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}" PATTERN "Makefile" EXCLUDE)

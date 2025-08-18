@@ -12,6 +12,15 @@ Index: exec/make_profile.in
  
  umask 0077
  # new profile directory
+@@ -6,7 +6,7 @@ npdir=~/.config/fbpanel
+ # old profile directory
+ opdir=~/.fbpanel
+ # system profile directory
+-spdir=@datadir@
++spdir=@datadir@/config
+ # if profile name was not set, use  'default'
+ profile=${1:-default}
+ 
 @@ -42,24 +42,24 @@ fi
  # Creates new profile using system profile as template
  # $1 - system profile name
@@ -23,7 +32,7 @@ Index: exec/make_profile.in
  
      local browser terminal filer
 -    for browser in x-www-browser firefox opera; do
-+    for browser in firefox chrome iridium midori epiphany xombrero ; do
++    for browser in firefox chrome iridium epiphany ; do
          if which $browser 2> /dev/null > /dev/null; then
              opt="$opt -e s/x-www-browser/$browser/"
              break
