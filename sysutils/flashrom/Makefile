@@ -1,16 +1,18 @@
 COMMENT=	flash ROM programmer for BIOS etc
 
-V=		1.2
+SHARED_LIBS +=  flashrom                  0.0 # 0.0
+
+V=		1.6.0
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 # portroach finds flashrom-1.0 but ignores flashrom-v1.0.1+
 PORTROACH=	limit:^v?(1\.[1-9]|[2-9])
-REVISION=	1
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://www.flashrom.org/
+SITES=		https://download.flashrom.org/releases/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -20,31 +22,32 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB=	c ftdi1 usb-1.0 z
+WANTLIB=	c crypto ftdi1 usb-1.0
 
-SITES=		https://download.flashrom.org/releases/
-
+MODULES=	devel/meson
+BUILD_DEPENDS=	devel/cmocka \
+		textproc/py-sphinx
 LIB_DEPENDS=	devel/libftdi1 \
 		devel/libusb1
-MAKE_FLAGS+=	WARNERROR=no
-FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 
+# needs a .git directory
+CONFIGURE_ARGS += -Dgenerate_authors_list=disabled
+
+# for pciutils
 USE_GMAKE=	Yes
-NO_TEST=	Yes
+FIX_EXTRACT_PERMISSIONS= Yes
 
-.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386
-# a patched pciutils libpci.a is needed (see patches/patchpci-*)
-BUILD_DEPENDS=	sysutils/pciutils:patch
+# a patched pciutils libpci.a is needed (see patches/patchpci-*);
+# also depend on normal libpci for pkg-config files
+BUILD_DEPENDS+=	sysutils/pciutils \
+		sysutils/pciutils:patch
 MAKE_FLAGS+=	LDFLAGS="-L./pciutils/lib"
 PATCH_LIST=	patchpci-* patch-*
 
 pre-patch:
 	mv ${WRKDIR}/sysutils/pciutils/pciutils-* ${WRKSRC}/pciutils
 
-do-configure:
+pre-configure:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pciutils CC="${CC}" OPT="${CFLAGS}"
-.else
-MAKE_FLAGS+=	CONFIG_ENABLE_LIBPCI_PROGRAMMERS=no
-.endif
 
 .include <bsd.port.mk>

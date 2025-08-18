@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -154,7 +154,7 @@ libpci     = dependency('libpci', required : group_pci
+ libusb1    = dependency('libusb-1.0', required : group_usb)
+ libftdi1   = dependency('libftdi1', required : group_ftdi)
+ libjaylink = dependency('libjaylink', required : group_jlink, version : '>=0.3.0')
+-libcrypto = dependency('libcrypto', required : get_option('rpmc'), version : '>=3.0.0')
++libcrypto = dependency('libcrypto', required : get_option('rpmc'), version : '>=2.0.0')
+ 
+ # ECAM is supported in libpci after 3.13.0
+ if libpci.version().version_compare('>=3.13.0')

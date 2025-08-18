@@ -3,9 +3,10 @@ Emulate smaller writes by doing read/modify/write.
 
 http://marc.info/?l=openbsd-ports&m=127780030728045&w=2
 
---- pciutils/lib/obsd-device.c.orig	Sat May 21 22:41:31 2016
-+++ pciutils/lib/obsd-device.c	Sat May 21 22:41:34 2016
-@@ -109,19 +109,31 @@ obsd_write(struct pci_dev *d, int pos, byte *buf, int 
+Index: pciutils/lib/obsd-device.c
+--- pciutils/lib/obsd-device.c.orig
++++ pciutils/lib/obsd-device.c
+@@ -111,19 +111,31 @@ obsd_write(struct pci_dev *d, int pos, byte *buf, int 
    pi.pi_sel.pc_dev = d->dev;
    pi.pi_sel.pc_func = d->func;
  
