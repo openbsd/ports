@@ -1,6 +1,7 @@
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
+@bin bin/zathura-sandbox
 include/zathura/
 include/zathura/document.h
 include/zathura/links.h
@@ -40,7 +41,6 @@ share/locale/es_CL/LC_MESSAGES/zathura.mo
 share/locale/et/LC_MESSAGES/zathura.mo
 share/locale/fr/LC_MESSAGES/zathura.mo
 share/locale/he/LC_MESSAGES/zathura.mo
-share/locale/hr/LC_MESSAGES/zathura.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
 share/locale/id_ID/LC_MESSAGES/zathura.mo
