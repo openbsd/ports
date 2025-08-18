@@ -6,7 +6,7 @@ COMMENT =		general purpose parametric 3D CAD modeler
 
 V =			1.0.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		FreeCAD
 GH_PROJECT =		FreeCAD
@@ -41,14 +41,11 @@ WANTLIB += pcl_common pcl_features pcl_filters pcl_kdtree pcl_ml
 WANTLIB += pcl_octree pcl_sample_consensus pcl_search pcl_segmentation
 WANTLIB += pcl_surface pyside6.abi3 python3.12 shiboken6.abi3
 WANTLIB += vtkCommonCore vtkCommonDataModel vtkCommonExecutionModel
-WANTLIB += vtkCommonMath vtkCommonMisc vtkCommonSystem vtkCommonTransforms
+WANTLIB += vtkCommonMath vtkCommonMisc vtkCommonTransforms
 WANTLIB += vtkFiltersCellGrid vtkFiltersCore vtkFiltersExtraction
-WANTLIB += vtkFiltersGeneral vtkFiltersGeometry vtkFiltersHybrid
-WANTLIB += vtkFiltersHyperTree vtkFiltersModeling vtkFiltersParallel
-WANTLIB += vtkFiltersParallelDIY2 vtkFiltersSources vtkFiltersTexture
+WANTLIB += vtkFiltersGeneral vtkFiltersGeometry vtkFiltersSources
 WANTLIB += vtkFiltersVerdict vtkIOCellGrid vtkIOCore vtkIOImage
-WANTLIB += vtkIOLegacy vtkIOXML vtkIOXMLParser vtkImagingCore
-WANTLIB += vtkInteractionStyle vtkParallelCore vtkParallelDIY
+WANTLIB += vtkIOLegacy vtkIOXML vtkIOXMLParser vtkImagingCore vtkInteractionStyle
 WANTLIB += vtkRenderingCore vtkRenderingFreeType vtkRenderingHyperTreeGrid
 WANTLIB += vtkRenderingOpenGL2 vtkRenderingUI vtkglad vtkkissfft
 WANTLIB += vtksys vtktoken xerces-c yaml-cpp z
