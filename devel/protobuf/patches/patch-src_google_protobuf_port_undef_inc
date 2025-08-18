@@ -1,7 +1,7 @@
 Index: src/google/protobuf/port_undef.inc
 --- src/google/protobuf/port_undef.inc.orig
 +++ src/google/protobuf/port_undef.inc
-@@ -154,7 +154,7 @@
+@@ -155,7 +155,7 @@
  #pragma pop_macro("GID_MAX")
  #endif  // defined(ANDROID) || defined(__ANDROID__)
  

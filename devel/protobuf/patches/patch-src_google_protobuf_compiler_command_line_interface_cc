@@ -1,7 +1,7 @@
 Index: src/google/protobuf/compiler/command_line_interface.cc
 --- src/google/protobuf/compiler/command_line_interface.cc.orig
 +++ src/google/protobuf/compiler/command_line_interface.cc
-@@ -222,6 +222,11 @@ bool GetProtocAbsolutePath(std::string* path) {
+@@ -232,6 +232,11 @@ bool GetProtocAbsolutePath(std::string* path) {
    if (sysctl(mib, 4, &buffer, &len, nullptr, 0) != 0) {
      len = 0;
    }

@@ -2,6 +2,8 @@ bin/protoc
 @bin bin/protoc-${PROTOC_VERSION}
 bin/protoc-gen-upb
 @bin bin/protoc-gen-upb-${PROTOC_VERSION}
+bin/protoc-gen-upb_minitable
+@bin bin/protoc-gen-upb_minitable-${PROTOC_VERSION}
 bin/protoc-gen-upbdefs
 @bin bin/protoc-gen-upbdefs-${PROTOC_VERSION}
 include/google/
@@ -31,7 +33,6 @@ include/google/protobuf/compiler/csharp/csharp_generator.h
 include/google/protobuf/compiler/csharp/names.h
 include/google/protobuf/compiler/importer.h
 include/google/protobuf/compiler/java/
-include/google/protobuf/compiler/java/context.h
 include/google/protobuf/compiler/java/doc_comment.h
 include/google/protobuf/compiler/java/generator.h
 include/google/protobuf/compiler/java/helpers.h
@@ -176,6 +177,7 @@ include/google/protobuf/util/
 include/google/protobuf/util/delimited_message_util.h
 include/google/protobuf/util/field_comparator.h
 include/google/protobuf/util/field_mask_util.h
+include/google/protobuf/util/internal_timeval.h
 include/google/protobuf/util/json_util.h
 include/google/protobuf/util/message_differencer.h
 include/google/protobuf/util/time_util.h
@@ -269,6 +271,7 @@ include/upb/mini_table/sub.h
 include/upb/port/
 include/upb/port/atomic.h
 include/upb/port/def.inc
+include/upb/port/sanitizers.h
 include/upb/port/undef.inc
 include/upb/port/vsnprintf_compat.h
 include/upb/reflection/
@@ -318,12 +321,18 @@ include/upb/util/required_fields.h
 include/upb/wire/
 include/upb/wire/byte_size.h
 include/upb/wire/decode.h
+include/upb/wire/decode_fast/
+include/upb/wire/decode_fast/combinations.h
+include/upb/wire/decode_fast/data.h
+include/upb/wire/decode_fast/select.h
 include/upb/wire/encode.h
 include/upb/wire/eps_copy_input_stream.h
 include/upb/wire/internal/
-include/upb/wire/internal/decode_fast.h
+include/upb/wire/internal/decoder.h
+include/upb/wire/internal/reader.h
 include/upb/wire/reader.h
 include/upb/wire/types.h
+include/upb/wire/writer.h
 include/utf8_range.h
 include/utf8_validity.h
 lib/cmake/protobuf/
