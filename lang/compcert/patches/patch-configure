@@ -1,7 +1,5 @@
 Add configuration support for macppc and aarch64 on OpenBSD
 
-Add support for BTCFI
-
 Index: configure
 --- configure.orig
 +++ configure
@@ -30,7 +28,7 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -264,7 +266,7 @@ fi
+@@ -265,7 +267,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -39,7 +37,7 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -296,6 +298,11 @@ if test "$arch" = "powerpc"; then
+@@ -297,6 +299,11 @@ if test "$arch" = "powerpc"; then
          system="diab"
          responsefile="diab"
          ;;
@@ -51,32 +49,16 @@ Index: configure
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-U__GNUC__ -E"
-@@ -351,7 +358,7 @@ if test "$arch" = "x86" -a "$bitsize" = "64"; then
-         casm="${toolprefix}cc"
-         casm_options="-m64 -c"
-         clinker="${toolprefix}cc"
--        clinker_options="-m64"
-+        clinker_options="-m64 -z nobtcfi"
-         cprepro="${toolprefix}cc"
-         cprepro_options="-m64 -U__GNUC__ -U__SIZEOF_INT128__ -E"
-         system="bsd"
-@@ -416,6 +423,11 @@ if test "$arch" = "aarch64"; then
+@@ -424,6 +431,12 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-U__GNUC__ -E"
-         system="linux";;
+         system="linux"
++        pic_supported=true
++        ;;
 +    bsd)
 +        abi="standard"
 +        cprepro_options="-std=c99 -U__GNUC__ -E"
 +        system="bsd"
-+        ;;
+         pic_supported=true
+         ;;
      macos|macosx)
-         abi="apple"
-         casm="${toolprefix}cc"
-@@ -477,6 +489,7 @@ testfun:
-   .file 1 "testfun.c"
-   .loc 1 1
-   .cfi_startproc
-+    endbr64
-   .cfi_adjust_cfa_offset 16
-   .cfi_endproc
- EOF
