@@ -13,6 +13,7 @@ PKGNAME-utils=	mapserver-utils-${V:S/-//}
 PKGNAME-php=	php-mapscript-${V:S/-//}
 PKGNAME-perl=	p5-mapscript-${V:S/-//}
 PKGNAME-python=	py3-mapscript-${V:S/-//}
+REVISION=	0
 
 SHARED_LIBS +=	mapserver 8.0
 
@@ -27,12 +28,12 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 SITES=		http://download.osgeo.org/mapserver/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
-MODPY_SETUPTOOLS=	Yes
+MODPY_RUNDEP =	No
 MODPY_DISTV=	${V:C/-beta.//:C/-rc.//}
 CONFIGURE_STYLE=cmake
 
@@ -46,7 +47,6 @@ RUN_DEPENDS-utils =	# empty
 
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 BUILD_DEPENDS +=	devel/py-pip
-BUILD_DEPENDS +=	devel/py-wheel
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
@@ -86,6 +86,8 @@ PREFIX-main=	${VARBASE}/www
 
 SUBST_VARS+=	PREFIX-main VARBASE
 
+# avoid warning about pip cache
+PORTHOME=	${WRKDIR}
 post-extract:
 	rm -f ${WRKSRC}/cmake/Find{Freetype,PostgreSQL,ICONV}.cmake
 
