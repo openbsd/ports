@@ -1,6 +1,3 @@
-# gcc -iquote
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
-
 COMMENT=	MPEG-2 and MPEG-4 AAC decoder
 
 V=		2.11.2
@@ -8,7 +5,7 @@ GH_ACCOUNT=	knik0
 GH_PROJECT=	faad2
 GH_TAGNAME=	${V}
 PKGNAME=	faad-${V}
-CATEGORIES=    	audio
+CATEGORIES=	audio
 
 SHARED_LIBS=	faad		4.0 \
 		faad_drm	0.0
