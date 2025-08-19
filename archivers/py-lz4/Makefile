@@ -1,9 +1,8 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_DISTV =		4.4.3
+MODPY_DISTV =		4.4.4
 DISTNAME =		lz4-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		archivers
 
