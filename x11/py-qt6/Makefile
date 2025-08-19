@@ -3,6 +3,7 @@ COMMENT=	Python bindings for Qt6
 MODPY_DISTV=	6.8.0
 DISTNAME=	PyQt6-${MODPY_DISTV}
 PKGNAME=	py-qt6-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -58,13 +59,14 @@ MODPY_PI=	Yes
 # https://www.riverbankcomputing.com/static/Docs/PyQt6/installation.html#building-pyqt6
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= ${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS =	--verbose --confirm-license --pep484-pyi
+CONFIGURE_ARGS=	--no-make --verbose --confirm-license --pep484-pyi
 
 MAKE_FLAGS=	-C build \
 		CC=${CC} \
 		CXX=${CXX} \
 		COPTS="${CFLAGS}" \
-		CXXOPTS="${CXXFLAGS}"
+		CXXOPTS="${CXXFLAGS}" \
+		MAKE_JOBS=${MAKE_JOBS}
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 

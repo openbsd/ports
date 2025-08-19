@@ -6,38 +6,71 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/INSTALLE
 lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/RECORD
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtBluetooth${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtBluetooth.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtCore${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtCore.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtDBus${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtDBus.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtDesigner${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtDesigner.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtGui${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtGui.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtHelp${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtHelp.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtMultimedia${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtMultimedia.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtMultimediaWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtMultimediaWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtNetwork${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtNetwork.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtNfc${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtNfc.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGL${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGL.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGLWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGLWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdf${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdf.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdfWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdfWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPositioning${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPositioning.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPrintSupport${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPrintSupport.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQml${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQml.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick3D${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick3D.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtRemoteObjects${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtRemoteObjects.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSensors${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSensors.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSerialPort${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSerialPort.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSpatialAudio${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSpatialAudio.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSql${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSql.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSvg${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSvg.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSvgWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtSvgWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtTest${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtTest.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtTextToSpeech${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtTextToSpeech.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWebChannel${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWebChannel.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWebSockets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWebSockets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtXml${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtXml.pyi
 lib/python${MODPY_VERSION}/site-packages/PyQt6/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtBluetooth/
@@ -839,6 +872,8 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/lupdate/source_file.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/lupdate/translation_file.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/lupdate/translations.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/lupdate/user.py
+lib/python${MODPY_VERSION}/site-packages/PyQt6/py.typed
+lib/python${MODPY_VERSION}/site-packages/PyQt6/sip.pyi
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/Compiler/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/Compiler/__init__.py
