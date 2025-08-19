@@ -1,0 +1,14 @@
+we don't have qsort_r
+
+Index: make_cffi.py
+--- make_cffi.py.orig
++++ make_cffi.py
+@@ -168,7 +168,7 @@ def normalize_output(output):
+ # variant.
+ define_macros = []
+ for tag in packaging.tags.platform_tags():
+-    if tag.startswith("musllinux_1_1_"):
++    if tag.startswith("musllinux_1_1_") or tag.startswith("openbsd"):
+         define_macros.append(("ZDICT_QSORT", "ZDICT_QSORT_C90"))
+ 
+ 
