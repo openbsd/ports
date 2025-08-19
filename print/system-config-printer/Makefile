@@ -14,7 +14,8 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+
+MODPY_PYBUILD=		setuptools
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			print/cups,-libs \
