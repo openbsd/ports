@@ -1,7 +1,7 @@
 Index: Nagstamon/Config.py
 --- Nagstamon/Config.py.orig
 +++ Nagstamon/Config.py
-@@ -789,17 +789,17 @@ class Config(object):
+@@ -784,17 +784,17 @@ class Config(object):
          else:
              # the Linux settings
              defaultactions = {"RDP": Action(name="RDP", description="Connect via RDP.",
