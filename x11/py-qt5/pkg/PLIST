@@ -1,5 +1,5 @@
-@pkgpath x11/py-qt5,python3
 @conflict py-qt5-*
+@pkgpath x11/py-qt5,python3
 @pkgpath x11/py-qt5,-main
 bin/pylupdate5
 bin/pyrcc5

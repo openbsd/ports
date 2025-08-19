@@ -3,7 +3,7 @@ COMMENT=	Python bindings for Qt5
 MODPY_DISTV=	5.15.11
 DISTNAME=	PyQt5-${MODPY_DISTV}
 PKGNAME=	py-qt5-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -59,13 +59,14 @@ MODPY_PI=	Yes
 # https://www.riverbankcomputing.com/static/Docs/PyQt5/installation.html#building-pyqt5
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= ${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS =	--verbose --confirm-license
+CONFIGURE_ARGS=	--no-make --verbose --confirm-license
 
 MAKE_FLAGS=	-C build \
 		CC=${CC} \
 		CXX=${CXX} \
 		COPTS="${CFLAGS}" \
-		CXXOPTS="${CXXFLAGS}"
+		CXXOPTS="${CXXFLAGS}" \
+		MAKE_JOBS=${MAKE_JOBS}
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
