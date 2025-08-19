@@ -22,6 +22,7 @@ COMMENT-xslt=		nginx XSLT filter module
 
 VERSION=	1.28.0
 REVISION=	1
+REVISION-mailproxy=	2
 REVISION-njs=		2
 REVISION-passenger=	2
 DISTNAME=	nginx-${VERSION}
