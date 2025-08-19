@@ -3,7 +3,7 @@ XXX Disable document portal (needs fuse3).
 Index: document-portal/meson.build
 --- document-portal/meson.build.orig
 +++ document-portal/meson.build
-@@ -61,14 +61,14 @@ xdg_document_portal_sources = [
+@@ -59,14 +59,14 @@ xdg_document_portal_sources = [
    permission_store_built_sources,
  ]
  

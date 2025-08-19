@@ -1,0 +1,49 @@
+XXX No support for memfd_create nor F_*_SEALS in fcntl(2).
+
+Index: src/xdp-sealed-fd.c
+--- src/xdp-sealed-fd.c.orig
++++ src/xdp-sealed-fd.c
+@@ -80,6 +80,7 @@ xdp_sealed_fd_new_take_memfd (int      memfd,
+ 
+   g_return_val_if_fail (fd != -1, NULL);
+ 
++#ifndef __OpenBSD__
+   seals = fcntl (fd, F_GET_SEALS);
+   if (seals == -1)
+    {
+@@ -106,6 +107,7 @@ xdp_sealed_fd_new_take_memfd (int      memfd,
+                    "fcntl F_ADD_SEALS: %s", g_strerror (saved_errno));
+       return NULL;
+     }
++#endif
+ 
+   sealed_fd = g_object_new (XDP_TYPE_SEALED_FD, NULL);
+   sealed_fd->fd = g_steal_fd (&fd);
+@@ -127,7 +129,11 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
+ 
+   g_return_val_if_fail (bytes != NULL, NULL);
+ 
++#ifndef __OpenBSD__
+   fd = memfd_create ("xdp-sealed-fd", MFD_ALLOW_SEALING);
++#else
++  fd = shm_open ("xdp-sealed-fd", O_RDWR, 0600);
++#endif
+   if (fd == -1)
+     {
+       int saved_errno;
+@@ -181,6 +187,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
+       return NULL;
+     }
+ 
++#ifndef __OpenBSD__
+   if (fcntl (fd, F_ADD_SEALS, REQUIRED_SEALS) == -1)
+     {
+       saved_errno = errno;
+@@ -190,6 +197,7 @@ xdp_sealed_fd_new_from_bytes (GBytes  *bytes,
+                    "fcntl F_ADD_SEALS: %s", g_strerror (saved_errno));
+       return NULL;
+     }
++#endif
+ 
+   sealed_fd = g_object_new (XDP_TYPE_SEALED_FD, NULL);
+   sealed_fd->fd = g_steal_fd (&fd);

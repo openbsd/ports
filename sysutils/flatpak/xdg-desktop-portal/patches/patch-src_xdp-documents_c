@@ -1,11 +1,11 @@
 XXX Needs fuse3.
 
-Index: src/documents.c
---- src/documents.c.orig
-+++ src/documents.c
-@@ -57,6 +57,10 @@ register_document (const char *uri,
-                    DocumentFlags flags,
-                    GError **error)
+Index: src/xdp-documents.c
+--- src/xdp-documents.c.orig
++++ src/xdp-documents.c
+@@ -73,6 +73,10 @@ xdp_register_document (const char        *uri,
+                        XdpDocumentFlags   flags,
+                        GError           **error)
  {
 +#if defined(__OpenBSD__)
 +  g_warning("%s: unsupported on OpenBSD", __FUNCTION__);
@@ -14,7 +14,7 @@ Index: src/documents.c
    g_autofree char *doc_id = NULL;
    g_auto(GStrv) doc_ids = NULL;
    g_autofree char *path = NULL;
-@@ -199,6 +203,7 @@ register_document (const char *uri,
+@@ -215,6 +219,7 @@ xdp_register_document (const char        *uri,
  
    doc_path = g_build_filename (documents_mountpoint, doc_id, basename, NULL);
    return g_filename_to_uri (doc_path, NULL, NULL);

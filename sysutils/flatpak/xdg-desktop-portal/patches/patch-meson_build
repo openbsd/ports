@@ -3,12 +3,12 @@ XXX No fuse3 on OpenBSD.
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -102,7 +102,7 @@ glib_dep = dependency('glib-2.0', version: '>= 2.66')
+@@ -110,7 +110,7 @@ glib_dep = dependency('glib-2.0', version: '>= 2.72')
  gio_dep = dependency('gio-2.0')
  gio_unix_dep = dependency('gio-unix-2.0')
  json_glib_dep = dependency('json-glib-1.0')
 -fuse3_dep = dependency('fuse3', version: '>= 3.10.0')
 +fuse3_dep = dependency('fuse3', version: '>= 3.10.0', required: false)
  gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0')
- geoclue_dep = dependency('libgeoclue-2.0',
-                          version: '>= 2.5.2',
+ gst_pbutils_dep = dependency('gstreamer-pbutils-1.0')
+ geoclue_dep = dependency(

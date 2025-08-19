@@ -1,7 +1,7 @@
 Index: document-portal/permission-db.c
 --- document-portal/permission-db.c.orig
 +++ document-portal/permission-db.c
-@@ -255,7 +255,11 @@ is_on_nfs (const char *path)
+@@ -257,7 +257,11 @@ is_on_nfs (const char *path)
    if (statfs_result != 0)
      return FALSE;
  

@@ -1,0 +1,25 @@
+XXX No support for Flatpak on OpenBSD (patch from FreeBSD).
+
+Index: src/xdp-app-info-flatpak.c
+--- src/xdp-app-info-flatpak.c.orig
++++ src/xdp-app-info-flatpak.c
+@@ -643,6 +643,11 @@ static int
+ open_flatpak_info (int      pid,
+                    GError **error)
+ {
++#ifdef __OpenBSD__
++  g_set_error (error, XDP_APP_INFO_ERROR, XDP_APP_INFO_ERROR_WRONG_APP_KIND,
++                           "Certainly not a flatpak");
++  return -1;
++#else
+   g_autofree char *root_path = NULL;
+   g_autofd int root_fd = -1;
+   g_autofd int info_fd = -1;
+@@ -695,6 +700,7 @@ open_flatpak_info (int      pid,
+     }
+ 
+   return g_steal_fd (&info_fd);
++#endif
+ }
+ 
+ gboolean

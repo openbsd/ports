@@ -1,0 +1,23 @@
+XXX No /proc filesystem on OpenBSD.
+
+Index: src/xdp-app-info.c
+--- src/xdp-app-info.c.orig
++++ src/xdp-app-info.c
+@@ -512,6 +512,9 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
+                               gboolean     *writable_out,
+                               GError      **error)
+ {
++#ifdef __OpenBSD__
++  return NULL;
++#else
+   XdpAppInfoPrivate *priv = xdp_app_info_get_instance_private (app_info);
+   g_autofree char *proc_path = NULL;
+   int fd_flags;
+@@ -676,6 +679,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo   *app_info,
+     *writable_out = writable;
+ 
+   return g_steal_pointer (&path);
++#endif
+ }
+ 
+ gboolean

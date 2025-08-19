@@ -2,9 +2,8 @@ PORTROACH ?=		limitw:1,even
 
 COMMENT=		portal frontend service for desktop containment frameworks
 
-V=			1.18.4
+V=			1.20.3
 DISTNAME=		xdg-desktop-portal-${V}
-REVISION=		0
 
 CATEGORIES=		x11
 
@@ -13,8 +12,8 @@ HOMEPAGE=		https://flatpak.github.io/xdg-desktop-portal/
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += json-glib-1.0 pipewire-0.3
+WANTLIB += c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 intl json-glib-1.0 pipewire-0.3
 
 SITES=			https://github.com/flatpak/xdg-desktop-portal/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
@@ -35,21 +34,24 @@ BUILD_DEPENDS +=	sysutils/flatpak/libportal
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/gdk-pixbuf2 \
+			multimedia/gstreamer1/plugins-base \
 			multimedia/pipewire/pipewire,-libs
 
 RUN_DEPENDS=		geo/geoclue2 \
 			multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dflatpak-interfaces=disabled \
+			-Dgudev=disabled \
 			-Dsystemd=disabled \
-			-Dsandboxed-image-validation=false
+			-Dsandboxed-image-validation=disabled \
+			-Dsandboxed-sound-validation=disabled
 
 # needs dbusmock
-CONFIGURE_ARGS +=	-Dpytest=disabled
+CONFIGURE_ARGS +=	-Dtests=disabled
 
 # XXX needs org.freedesktop.portal.Flatpak.xml
-#BUILD_DEPENDS +=	textproc/xmlto
-CONFIGURE_ARGS +=	-Ddocbook-docs=disabled
+#BUILD_DEPENDS +=	textproc/py-sphinx
+CONFIGURE_ARGS +=	-Ddocumentation=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
