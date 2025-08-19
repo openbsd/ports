@@ -23,7 +23,112 @@ Index: SConstruct
          cryptoLibName = "crypto"
          sslLinkDependencies = ["crypto", "dl"]
 -        if conf.env.TargetOSIs('freebsd'):
-+        if conf.env.TargetOSIs('freebsd') or conf.env.TargetOSIs('openbsd'):
++        if conf.env.TargetOSIs('freebsd', 'openbsd'):
              sslLinkDependencies = ["crypto"]
  
          if conf.env.TargetOSIs('windows'):
+@@ -3467,8 +3468,7 @@ def doConfigure(myenv):
+ 
+         def maybeIssueDarwinSSLAdvice(env):
+             if env.TargetOSIs('macOS'):
+-                advice = textwrap.dedent(
+-                    """\
++                advice = textwrap.dedent("""\
+                     NOTE: Recent versions of macOS no longer ship headers for the system OpenSSL libraries.
+                     NOTE: Either build without the --ssl flag, or describe how to find OpenSSL.
+                     NOTE: Set the include path for the OpenSSL headers with the CPPPATH SCons variable.
+@@ -3476,7 +3476,7 @@ def doConfigure(myenv):
+                     NOTE: If you are using HomeBrew, and have installed OpenSSL, this might look like:
+                     \tscons CPPPATH=/usr/local/opt/openssl/include LIBPATH=/usr/local/opt/openssl/lib ...
+                     NOTE: Consult the output of 'brew info openssl' for details on the correct paths."""
+-                )
++                                         )
+                 print(advice)
+                 brew = env.WhereIs('brew')
+                 if brew:
+@@ -3485,11 +3485,10 @@ def doConfigure(myenv):
+                         # we could give a better message here, but brew info's machine readable output
+                         # doesn't seem to include the whole 'caveats' section.
+                         message = subprocess.check_output([brew, "info", "openssl"]).decode('utf-8')
+-                        advice = textwrap.dedent(
+-                            """\
++                        advice = textwrap.dedent("""\
+                             NOTE: HomeBrew installed to {0} appears to have OpenSSL installed.
+                             NOTE: Consult the output from '{0} info openssl' to determine CPPPATH and LIBPATH."""
+-                        ).format(brew, message)
++                                                 ).format(brew, message)
+ 
+                         print(advice)
+                     except:
+@@ -3497,29 +3496,32 @@ def doConfigure(myenv):
+ 
+         if not conf.CheckLibWithHeader(
+                 cryptoLibName,
+-                ["openssl/crypto.h"],
++            ["openssl/crypto.h"],
+                 "C",
+-                "SSLeay_version(0);",
+-                autoadd=True):
++                call="SSLeay_version(0);",
++                autoadd=True,
++        ):
+             maybeIssueDarwinSSLAdvice(conf.env)
+             conf.env.ConfError("Couldn't find OpenSSL crypto.h header and library")
+ 
+         def CheckLibSSL(context):
+-            res = SCons.Conftest.CheckLib(context,
+-                     libs=[sslLibName],
+-                     extra_libs=sslLinkDependencies,
+-                     header='#include "openssl/ssl.h"',
+-                     language="C",
+-                     call="SSL_version(NULL);",
+-                     autoadd=True)
++            res = SCons.Conftest.CheckLib(
++                context,
++                libs=[sslLibName],
++                extra_libs=sslLinkDependencies,
++                header='#include "openssl/ssl.h"',
++                language="C",
++                call="SSL_version(NULL);",
++                autoadd=True,
++            )
+             context.did_show_result = 1
+             return not res
+ 
+         conf.AddTest("CheckLibSSL", CheckLibSSL)
+ 
+         if not conf.CheckLibSSL():
+-           maybeIssueDarwinSSLAdvice(conf.env)
+-           conf.env.ConfError("Couldn't find OpenSSL ssl.h header and library")
++            maybeIssueDarwinSSLAdvice(conf.env)
++            conf.env.ConfError("Couldn't find OpenSSL ssl.h header and library")
+ 
+         def CheckLinkSSL(context):
+             test_body = """
+@@ -3550,18 +3552,20 @@ def doConfigure(myenv):
+             conf.env.ConfError("SSL is enabled, but is unavailable")
+ 
+         if conf.CheckDeclaration(
+-            "FIPS_mode_set",
+-            includes="""
++                "FIPS_mode_set",
++                includes="""
+                 #include <openssl/crypto.h>
+                 #include <openssl/evp.h>
+-            """):
++            """,
++        ):
+             conf.env.SetConfigHeaderDefine('MONGO_CONFIG_HAVE_FIPS_MODE_SET')
+ 
+         if conf.CheckDeclaration(
+-            "d2i_ASN1_SEQUENCE_ANY",
+-            includes="""
++                "d2i_ASN1_SEQUENCE_ANY",
++                includes="""
+                 #include <openssl/asn1.h>
+-            """):
++            """,
++        ):
+             conf.env.SetConfigHeaderDefine('MONGO_CONFIG_HAVE_ASN1_ANY_DEFINITIONS')
+ 
+         def CheckOpenSSL_EC_DH(context):
