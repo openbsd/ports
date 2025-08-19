@@ -1,6 +1,9 @@
 COMMENT =	OpenTelemetry Collector for metrics and logs
 
-V =	1.10.0
+# github.com/grafana/alloy uses too much ram to build on 32-bit
+ONLY_FOR_ARCHS = aarch64 amd64 riscv64
+
+V =		1.10.0
 DISTNAME =	alloy+vendor-${V}
 WRKDIST =	${WRKDIR}/alloy-${V}
 EXTRACT_SUFX =	.tar.zst
