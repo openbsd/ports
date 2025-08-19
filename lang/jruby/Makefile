@@ -3,14 +3,12 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		10.0.1.0
+V =		10.0.2.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES.jffi =jffi-1.3.10.tar.gz
 DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
-
-REVISION =	0
 
 HOMEPAGE =	http://www.jruby.org/
 
