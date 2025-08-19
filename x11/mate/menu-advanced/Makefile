@@ -4,7 +4,7 @@ GH_COMMIT=		61a995e25948015a4f6d86e12cf6141a3b729ce7
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		mate-menu
 DISTNAME=		mate-menu-advanced-20.04.1
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		x11
 
@@ -18,7 +18,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		gtk-update-icon-cache \
 			gobject-introspection
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/py-distutils-extra
