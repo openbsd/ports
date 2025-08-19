@@ -4,6 +4,8 @@ with forkserver enabled, setproctitle butchers argv, which would prevent
 content processes to find their actual binary. cache binaryPath before
 setproctitle is called to work around it.
 
+https://phabricator.services.mozilla.com/D258832
+
 Index: ipc/glue/ForkServer.cpp
 --- ipc/glue/ForkServer.cpp.orig
 +++ ipc/glue/ForkServer.cpp
@@ -19,10 +21,10 @@ Index: ipc/glue/ForkServer.cpp
  #include <algorithm>
  
  namespace mozilla {
-@@ -200,6 +205,13 @@ static void ForkedChildProcessInit(int aExecFd, int* a
-   // Initialize passed file handles.
-   geckoargs::SetPassedFileHandles(std::move(args.mFiles));
- 
+@@ -74,6 +79,13 @@ ForkServer::ForkServer(int* aArgc, char*** aArgv) : mA
+  */
+ static void ForkServerPreload(int& aArgc, char** aArgv) {
+   Omnijar::ChildProcessInit(aArgc, aArgv);
 +#if defined(XP_OPENBSD)
 +  char binaryPath[MAXPATHLEN];
 +  nsresult rv = mozilla::BinaryPath::Get(binaryPath);
@@ -30,6 +32,6 @@ Index: ipc/glue/ForkServer.cpp
 +    errx(1, "failed to cache binary path ?");
 +  }
 +#endif
-   // Change argc & argv of main() with the arguments passing
-   // through IPC.
-   char** argv = new char*[args.mArgs.size() + 1];
+ }
+ 
+ /**

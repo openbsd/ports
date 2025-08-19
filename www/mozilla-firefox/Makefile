@@ -3,15 +3,14 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-REVISION =	0
-MOZILLA_VERSION =	141.0.3
+MOZILLA_VERSION =	142.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	153.0
+SO_VERSION =	154.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
@@ -50,9 +49,6 @@ BUILD_DEPENDS +=	devel/py-setuptools
 # uses pledge()
 WANTLIB += Xrandr Xtst
 
-# Regression tests are too hard to adapt to run here
-NO_TEST =	Yes
-
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
@@ -86,6 +82,23 @@ COMMENT_FFVPX ?=
 COMMENT_FFVPX =		@comment # needs a trailing space
 .endif
 SUBST_VARS +=		COMMENT_FFVPX
+
+TEST_IS_INTERACTIVE =	x11
+# needs /etc/firefox for pledge/unveil configs
+TEST_DEPENDS =		${BUILD_PKGPATH}
+# those env vars allows to reuse the virtualenv created by the build instead of creating another one
+TEST_ENV +=		PATH=/bin:/usr/bin MOZ_OBJDIR=${WRKBUILD} MOZ_AUTOMATION=1 HOME=${WRKSRC}
+pre-test:
+	@if grep -q ${WRKOBJDIR} /etc/${MOZILLA_PROJECT}/unveil.content; then \
+		return 0 ; \
+	else \
+		echo 'WARNING: ${WRKOBJDIR} r should be added to /etc/${MOZILLA_PROJECT}/unveil.content'; \
+		return 1 ; \
+	fi
+
+do-test:
+	cd ${WRKSRC} && \
+		${SETENV} ${TEST_ENV} ${WRKSRC}/.mozbuild/srcdirs/${MOZILLA_PROJECT}-*/_virtualenvs/build/bin/python ./mach xpcshell-test --sequential --keep-going ; \
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
