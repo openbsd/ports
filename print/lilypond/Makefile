@@ -64,13 +64,12 @@ WANTLIB-main=		c fontconfig freetype gc glib-2.0 gobject-2.0 \
 			pangoft2-1.0 pthread \
 			${COMPILER_LIBCXX}
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS-main=	devel/gettext,-runtime \
 			lang/guile2 \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
-BUILD_DEPENDS= 		print/fontforge \
+BUILD_DEPENDS=		print/fontforge \
 			print/t1utils \
 			print/texlive/texmf \
 			devel/bison \
