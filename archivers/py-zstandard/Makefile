@@ -1,7 +1,7 @@
 COMMENT=	Python bindings to the Zstandard compression library
 
 MODPY_DISTV=	0.24.0
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	zstandard-${MODPY_DISTV}
 PKGNAME=	py-zstandard-${MODPY_DISTV}
@@ -16,6 +16,8 @@ MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-cffi \
 		sysutils/py-packaging
+
+CFLAGS += -DZDICT_QSORT=ZDICT_QSORT_C90
 
 MODPY_TEST_LINK_SO= Yes
 
