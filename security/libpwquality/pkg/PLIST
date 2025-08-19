@@ -38,8 +38,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libpwquality.mo
 share/locale/fi/LC_MESSAGES/libpwquality.mo
 share/locale/fr/LC_MESSAGES/libpwquality.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/libpwquality.mo
 share/locale/gu/LC_MESSAGES/libpwquality.mo
 share/locale/he/LC_MESSAGES/libpwquality.mo
@@ -48,8 +46,6 @@ share/locale/hu/LC_MESSAGES/libpwquality.mo
 share/locale/id/LC_MESSAGES/libpwquality.mo
 share/locale/it/LC_MESSAGES/libpwquality.mo
 share/locale/ja/LC_MESSAGES/libpwquality.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libpwquality.mo
 share/locale/kk/LC_MESSAGES/libpwquality.mo
 share/locale/km/
@@ -67,8 +63,6 @@ share/locale/pl/LC_MESSAGES/libpwquality.mo
 share/locale/pt/LC_MESSAGES/libpwquality.mo
 share/locale/pt_BR/LC_MESSAGES/libpwquality.mo
 share/locale/ru/LC_MESSAGES/libpwquality.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/libpwquality.mo
 share/locale/sk/LC_MESSAGES/libpwquality.mo
 share/locale/sq/LC_MESSAGES/libpwquality.mo
