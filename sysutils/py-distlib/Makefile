@@ -1,9 +1,8 @@
 COMMENT=	distribution utilities
 
-MODPY_DISTV=	0.3.9
+MODPY_DISTV=	0.4.0
 DISTNAME=	distlib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
