@@ -13,7 +13,6 @@ COMMENT-mailproxy=	nginx mail proxy module
 COMMENT-modsecurity=	nginx module for ModSecurity
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-njs=		nginx javascript scripting module
-COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-perl=		nginx perl scripting module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
@@ -24,7 +23,6 @@ VERSION=	1.28.0
 REVISION=	1
 REVISION-mailproxy=	2
 REVISION-njs=		2
-REVISION-passenger=	2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -39,14 +37,11 @@ PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
 PKGNAME-modsecurity=	nginx-modsecurity-${VERSION}
 PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-njs=		nginx-njs-${VERSION}
-PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 PKGNAME-stream=		nginx-stream-${VERSION}
 PKGNAME-xslt=		nginx-xslt-${VERSION}
-
-ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
 SITES=	https://nginx.org/download/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
@@ -75,14 +70,12 @@ HOMEPAGE-lua=		https://github.com/openresty/lua-nginx-module
 HOMEPAGE-modsecurity=	https://github.com/owasp-modsecurity/ModSecurity-nginx
 HOMEPAGE-naxsi=		https://github.com/wargio/naxsi
 HOMEPAGE-njs=		https://github.com/nginx/njs
-HOMEPAGE-passenger=	https://www.phusionpassenger.com/
 HOMEPAGE-rtmp=		https://github.com/arut/nginx-rtmp-module
 HOMEPAGE-securelink=	https://github.com/nginx-modules/ngx_http_hmac_secure_link_module
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # nginx, cache_purge, geoip2, headers_more, ldap_auth, njs, rtmp: BSD-like
-# passenger: MIT
 # securelink: unlicensed
 # naxsi: GPLv3
 # modsecurity: Apache2
@@ -92,11 +85,11 @@ MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
 
 MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
 			-image_filter -ldap_auth -lua -mailproxy \
-			-modsecurity -njs -passenger -rtmp \
+			-modsecurity -njs -rtmp \
 			-securelink -stream -xslt
 
 FLAVOR ?=
-PSEUDO_FLAVORS =	no_lua no_modsecurity no_njs no_passenger
+PSEUDO_FLAVORS =	no_lua no_modsecurity no_njs
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -113,7 +106,6 @@ WANTLIB-mailproxy=
 WANTLIB-modsecurity=	modsecurity
 WANTLIB-naxsi=
 WANTLIB-njs=		exslt m xml2 xslt
-WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
 WANTLIB-perl=		c m perl
 WANTLIB-rtmp=
 WANTLIB-securelink=	crypto
@@ -142,8 +134,6 @@ RUN_DEPENDS-main=	# blank (override default)
 RUN_DEPENDS-lua=	${RUN_DEPENDS} \
 			${_MODLUA_RUN_DEPENDS} \
 			devel/pcre
-RUN_DEPENDS-passenger=	${RUN_DEPENDS} \
-			ruby*-passenger-*:www/ruby-passenger
 
 NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
@@ -176,14 +166,6 @@ CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/lua-nginx-module
 CONFIGURE_ENV+=		MODSECURITY_INC=${LOCALBASE}/include/modsecurity \
 			MODSECURITY_LIB=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/ModSecurity-nginx
-.endif
-
-.if ${BUILD_PACKAGES:M-passenger}
-MODULES+=		lang/ruby
-MODRUBY_BUILDDEP=	No
-MODRUBY_RUNDEP=		No
-BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
-CONFIGURE_ARGS+=	--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
 .endif
 
 .if ${BUILD_PACKAGES:M-rtmp}
