@@ -1,4 +1,5 @@
 COMMENT =		ruby web application server/nginx module
+BROKEN =		doesn't work with libc++19
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
 BROKEN-hppa =		rake fails when linking PassengerHelperAgent
 
