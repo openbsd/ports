@@ -18,6 +18,8 @@ WANTLIB += xml2 xpm-pixbuf xslt
 MODULES=		devel/meson \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/appstream
+
 LIB_DEPENDS=		graphics/graphene \
 			graphics/xpm-pixbuf \
 			print/poppler \
