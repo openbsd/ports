@@ -1,3 +1,5 @@
+XXX push upstream
+
 Index: sysdeps/openbsd/sysinfo.c
 --- sysdeps/openbsd/sysinfo.c.orig
 +++ sysdeps/openbsd/sysinfo.c

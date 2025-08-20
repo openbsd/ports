@@ -1,4 +1,4 @@
-Matches what FreeBSD does.
+XXX push upstream: matches what FreeBSD does.
 
 Index: sysdeps/openbsd/glibtop_server.h
 --- sysdeps/openbsd/glibtop_server.h.orig

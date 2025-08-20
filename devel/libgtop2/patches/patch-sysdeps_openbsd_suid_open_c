@@ -1,0 +1,46 @@
+XXX push upstream
+
+Index: sysdeps/openbsd/suid_open.c
+--- sysdeps/openbsd/suid_open.c.orig
++++ sysdeps/openbsd/suid_open.c
+@@ -59,9 +59,7 @@ glibtop_open_p (glibtop *server, const char *program_n
+ 		const unsigned flags)
+ {
+ 	char errbuf[_POSIX2_LINE_MAX];
+-#ifdef LIBGTOP_ENABLE_DEBUG
+-	fprintf (stderr, "DEBUG (%d): glibtop_open_p ()\n", getpid ());
+-#endif
++	glibtop_debug ("glibtop_open_p ()");
+ 
+ 	/* !!! WE ARE ROOT HERE - CHANGE WITH CAUTION !!! */
+ 	server->machine->uid = getuid ();
+@@ -69,18 +67,28 @@ glibtop_open_p (glibtop *server, const char *program_n
+ 	server->machine->gid = getgid ();
+ 	server->machine->egid = getegid ();
+ 	/* Setup machine-specific data */
+-	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, errbuf);
++	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
++	/* kern.allowkmem sysctl(2) is not set, fallback to a limited subset of
++	   kvm(3) operations; kvm_nlist(3) will not be usable but most other 
++	   processes and system information will and this is enough for
++	   day-to-day usage of libgtop */
++	if (server->machine->kd == NULL)
++		server->machine->kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, errbuf);
+ 
+ 	if (server->machine->kd == NULL)
+ 		glibtop_error_io_r (server, "kvm_openfiles");
+ 
+ 	/* Drop priviledges. */
+ 
++	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
++
+ 	if (setreuid (server->machine->euid, server->machine->uid))
+ 		_exit (1);
+ 
+ 	if (setregid (server->machine->egid, server->machine->gid))
+ 		_exit (1);
++
++	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
+ 
+ 	/* !!! END OF SUID ROOT PART !!! */
+ 

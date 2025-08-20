@@ -1,0 +1,17 @@
+From ba9a67d4ae967dd8c7bd4aaec49197d5569ff717 Mon Sep 17 00:00:00 2001
+From: Adam Sampson <ats@offog.org>
+Date: Sun, 13 Jul 2025 03:35:48 +0100
+Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
+
+Index: examples/sysinfo.c
+--- examples/sysinfo.c.orig
++++ examples/sysinfo.c
+@@ -40,7 +40,7 @@ main (int argc, char *argv [])
+    model = g_hash_table_lookup (sysinfo->cpuinfo [1].values, "model name");
+ 
+    printf ("\nProcessor Model: %s\n", g_strdup (model));
+-   printf ("Number of Cores: %lu\n\n", sysinfo->ncpu);
++   printf ("Number of Cores: %" G_GUINT64_FORMAT "\n\n", sysinfo->ncpu);
+ 
+    glibtop_close ();
+ 

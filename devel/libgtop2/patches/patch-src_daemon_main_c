@@ -1,0 +1,66 @@
+From ba9a67d4ae967dd8c7bd4aaec49197d5569ff717 Mon Sep 17 00:00:00 2001
+From: Adam Sampson <ats@offog.org>
+Date: Sun, 13 Jul 2025 03:35:48 +0100
+Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
+
+From 1842273e84012b53820947f2321365065b8a6a7b Mon Sep 17 00:00:00 2001
+From: Robert Roth <robert.roth.off@gmail.com>
+Date: Thu, 9 Jan 2025 08:43:03 +0200
+Subject: [PATCH] Add explicit cast as an attempt to fix abi check failure
+
+Index: src/daemon/main.c
+--- src/daemon/main.c.orig
++++ src/daemon/main.c
+@@ -58,8 +58,8 @@ handle_parent_connection (int s)
+     while (do_read (s, cmnd, sizeof (glibtop_command))) {
+ 	if (enable_debug)
+ 	    syslog_message (LOG_DEBUG,
+-			    "Parent (%d) received command %lu from client.",
+-			    getpid (), cmnd->command);
++			    "Parent (%" G_GINT64_FORMAT ") received command %" G_GUINT64_FORMAT " from client.",
++			    (gint64)getpid (), cmnd->command);
+ 
+ 	memset (resp, 0, sizeof (glibtop_response));
+ 
+@@ -68,20 +68,20 @@ handle_parent_connection (int s)
+ 	if (cmnd->data_size) {
+ 	    if (cmnd->data_size >= BUFSIZ) {
+ 	        syslog_message (LOG_WARNING,
+-				"Client sent %lu bytes, but buffer is %lu",
++				"Client sent %" G_GUINT64_FORMAT " bytes, but buffer is %lu",
+ 				cmnd->data_size, (unsigned long)BUFSIZ);
+ 	        return;
+ 	    }
+ 
+ 	    if (enable_debug)
+-		syslog_message (LOG_DEBUG, "Client has %lu bytes of data.",
++		syslog_message (LOG_DEBUG, "Client has %" G_GUINT64_FORMAT " bytes of data.",
+ 				cmnd->data_size);
+ 
+ 	    do_read (s, parameter, cmnd->data_size);
+ 	} else if (cmnd->size) {
+ 	    if (cmnd->size >= BUFSIZ) {
+ 	        syslog_message (LOG_WARNING,
+-				"Client sent %lu bytes, but buffer is %lu",
++				"Client sent %" G_GUINT64_FORMAT " bytes, but buffer is %lu",
+ 				cmnd->size, (unsigned long)BUFSIZ);
+ 	        return;
+ 	    }
+@@ -227,7 +227,7 @@ handle_parent_connection (int s)
+ 	    break;
+ 	case GLIBTOP_CMND_FSUSAGE:
+ 	    glibtop_get_fsusage_l
+-		(server, &resp->u.data.fsusage, parameter);
++		(server, &resp->u.data.fsusage, (char*)parameter);
+ 	    do_output (s, resp, _offset_data (fsusage),
+ 		       0, NULL);
+ 	    break;
+@@ -251,7 +251,7 @@ handle_parent_connection (int s)
+ 		       0, NULL);
+ 	    break;
+ 	default:
+-	    syslog_message (LOG_ERR, "Parent received unknown command %lu.",
++	    syslog_message (LOG_ERR, "Parent received unknown command %" G_GUINT64_FORMAT ".",
+ 			    cmnd->command);
+ 	    break;
+ 	}

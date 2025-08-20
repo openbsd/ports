@@ -1,0 +1,26 @@
+From ba9a67d4ae967dd8c7bd4aaec49197d5569ff717 Mon Sep 17 00:00:00 2001
+From: Adam Sampson <ats@offog.org>
+Date: Sun, 13 Jul 2025 03:35:48 +0100
+Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
+
+Index: src/daemon/io.c
+--- src/daemon/io.c.orig
++++ src/daemon/io.c
+@@ -42,7 +42,7 @@ do_output (int s, glibtop_response *resp, off_t offset
+ 	}
+ 
+ 	if (resp->data_size) {
+-		glibtop_debug ("Writing %lu bytes of data.", resp->data_size);
++		glibtop_debug ("Writing %" G_GUINT64_FORMAT " bytes of data.", resp->data_size);
+ 
+ 		if (s == 0) {
+ 			if (write (1, data, resp->data_size) < 0)
+@@ -68,7 +68,7 @@ do_read (int s, void *ptr, size_t total_size)
+ 			nread = read (0, ptr, remaining);
+ 
+ 		if ((already_read == 0) && (nread == 0)) {
+-			glibtop_warn ("pid %d received eof.", getpid ());
++			glibtop_warn ("pid %" G_GINT64_FORMAT " received eof.", (gint64)getpid ());
+ 			return 0;
+ 		}
+ 

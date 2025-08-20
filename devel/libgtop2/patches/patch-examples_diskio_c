@@ -1,0 +1,20 @@
+From ba9a67d4ae967dd8c7bd4aaec49197d5569ff717 Mon Sep 17 00:00:00 2001
+From: Adam Sampson <ats@offog.org>
+Date: Sun, 13 Jul 2025 03:35:48 +0100
+Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
+
+Index: examples/diskio.c
+--- examples/diskio.c.orig
++++ examples/diskio.c
+@@ -17,7 +17,10 @@ static void show_diskio(pid_t pid)
+ 
+   printf("<%ld>\t", (long)pid);
+ 
+-  printf("flags: %08lx disk_rchar : %lu, disk_wchar : %lu, disk_read_bytes : %lu, disk_write_bytes : %lu\n", (unsigned long)io.flags, io.disk_rchar, io.disk_wchar, io.disk_rbytes, io.disk_wbytes);
++  printf("flags: %08" G_GUINT64_FORMAT ", disk_rchar : %" G_GUINT64_FORMAT
++         ", disk_wchar : %" G_GUINT64_FORMAT ", disk_read_bytes : %" G_GUINT64_FORMAT
++         ", disk_write_bytes : %" G_GUINT64_FORMAT "\n",
++         io.flags, io.disk_rchar, io.disk_wchar, io.disk_rbytes, io.disk_wbytes);
+ 
+ }
+ 

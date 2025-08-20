@@ -1,0 +1,16 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To access some system information, libgtop_server2 needs to read physical
+and/or kernel virtual memory.
+As mentioned in mem(4) and kmem(4):
+     Even with sufficient file system permissions, these devices can only be
+     opened when the securelevel(7) is insecure or when the kern.allowkmem
+     sysctl(2) variable is set.
+ 
+!!! Setting this sysctl(2) is strongly discouraged, unless for debugging !!!
+
+It is *NOT* mandatory for proper day-to-day usage of libgtop and will only yelp
+the following warning:
+    kvm_nlist: Bad file descriptor

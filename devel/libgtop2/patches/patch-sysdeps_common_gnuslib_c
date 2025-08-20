@@ -1,0 +1,17 @@
+XXX push upstream
+libgtop-daemon[]: Can't resolve 'foo.example.com': Undefined error: 0
+
+Index: sysdeps/common/gnuslib.c
+--- sysdeps/common/gnuslib.c.orig
++++ sysdeps/common/gnuslib.c
+@@ -207,7 +207,9 @@ glibtop_internet_addr (const char *host)
+ 	struct addrinfo *result;/* pointer to host info for remote host */
+ 	IN_ADDR numeric_addr;	/* host address */
+ 
+-	if (getaddrinfo (NULL, host, &hints, &result) == 0) {
++	memset (&hints, 0, sizeof hints);
++
++	if (getaddrinfo (host, NULL, &hints, &result) == 0) {
+ 		/* Take only the first address. */
+ 		struct sockaddr_in *res = (struct sockaddr_in *)result->ai_addr;
+ 		numeric_addr = res->sin_addr.s_addr;

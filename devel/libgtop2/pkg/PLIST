@@ -56,6 +56,7 @@ lib/pkgconfig/libgtop-2.0.pc
 @bin libexec/libgtop_server2
 @mode
 @group
+share/doc/pkg-readmes/${PKGSTEM}
 share/gir-1.0/GTop-2.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
