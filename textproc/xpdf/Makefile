@@ -2,7 +2,7 @@ COMMENT =		PDF viewer for X11
 DISTNAME =		xpdf-4.05
 CATEGORIES =		textproc x11
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.xpdfreader.com/
 SITES =			https://dl.xpdfreader.com/
@@ -10,6 +10,9 @@ SITES =			https://dl.xpdfreader.com/
 # GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6Network Qt6PrintSupport Qt6Widgets c cups fontconfig
+WANTLIB += freetype m paper png z
 
 MODULES =		devel/cmake \
 			x11/qt6
