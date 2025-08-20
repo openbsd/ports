@@ -435,6 +435,7 @@
      SUBDIR += py-browser-cookie3
      SUBDIR += py-cheroot
      SUBDIR += py-cookies
+     SUBDIR += py-fastapi
      SUBDIR += py-feedgenerator
      SUBDIR += py-flasgger
      SUBDIR += py-flask
@@ -497,6 +498,7 @@
      SUBDIR += py-respx
      SUBDIR += py-selenium
      SUBDIR += py-soupsieve
+     SUBDIR += py-starlette
      SUBDIR += py-spotipy
      SUBDIR += py-tempita
      SUBDIR += py-terminado
