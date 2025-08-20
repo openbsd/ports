@@ -16,6 +16,9 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
+BUILD_DEPENDS+=	security/py-keyring \
+		sysutils/py-psutil
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/py-keyring \
 		sysutils/py-psutil \
@@ -26,8 +29,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 NO_TEST=	Yes
 
 P=		${WRKINST}${MODPY_SITEPKG}${TRUEPREFIX}
-
-NO_TEST=		Yes
 
 post-install:
 	mv ${PREFIX}/bin/nagstamon{.py,}
