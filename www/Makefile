@@ -65,7 +65,6 @@
      SUBDIR += http_ping
      SUBDIR += httrack
      SUBDIR += hugo
-     SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
      SUBDIR += internetarchive
