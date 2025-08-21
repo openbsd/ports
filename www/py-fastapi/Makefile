@@ -23,7 +23,7 @@ RUN_DEPENDS =		devel/py-pydantic \
 			www/py-starlette
 
 TEST_DEPENDS =		devel/py-dirty-equals \
-			mail/py-email_validator \
 			textproc/py-orjson
+#			mail/py-email_validator
 
 .include <bsd.port.mk>
