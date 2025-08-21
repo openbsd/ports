@@ -3,7 +3,7 @@ COMMENT=	session and caching library with wsgi middleware
 MODPY_DISTV=	1.13.0
 DISTNAME=	Beaker-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www devel
 
@@ -24,7 +24,6 @@ TEST_DEPENDS=	databases/py-sqlalchemy \
 		databases/py-redis \
 		devel/py-coverage \
 		devel/py-mock \
-		devel/py-nose \
 		misc/py-memcached \
 		security/py-cryptography \
 		www/py-webtest
