@@ -209,7 +209,7 @@ do-install:
 	@${MODPY_INSTALL_TARGET}
 .  endif
 
-.  if !target(do-test) && (${MODPY_SETUPUTILS:L} == "yes"
+.  if !target(do-test) && (${MODPY_SETUPUTILS:L} == "yes")
 do-test:
 	@${MODPY_TEST_TARGET}
 .  endif
