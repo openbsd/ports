@@ -3,6 +3,7 @@ COMMENT =		cross-platform multimedia library
 V =			3.2.18
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 SHARED_LIBS +=  SDL3                      0.0 # 3.2.18
 
@@ -35,11 +36,13 @@ CONFIGURE_ARGS =	-DSDL_ALSA=OFF \
 			-DSDL_PIPEWIRE=OFF \
 			-DSDL_PULSEAUDIO=OFF \
 			-DSDL_SNDIO_SHARED=OFF \
-			-DSDL_TESTS=ON \
 			-DSDL_VULKAN=ON \
 			-DSDL_WAYLAND=ON \
 			-DSDL_WAYLAND_SHARED=OFF \
 			-DSDL_X11_SHARED=OFF
+
+# building tests adds build dependency on graphics/ffmpeg
+CONFIGURE_ARGS +=	-DSDL_TESTS=OFF
 
 CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 
