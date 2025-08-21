@@ -30,6 +30,7 @@ MODULES =	lang/python \
 
 BUILD_DEPENDS =	devel/py-setuptools \
 		textproc/py-sphinx \
+		textproc/py-sphinx_rtd_theme \
 		textproc/py-yaml
 
 RUN_DEPENDS =	textproc/py-yaml
