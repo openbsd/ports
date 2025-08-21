@@ -1,6 +1,6 @@
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2024.05.18
+V =			2025.06.03
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
@@ -18,7 +18,7 @@ EXTRACT_SUFX =		.tar.bz2
 # Public domain
 PERMIT_PACKAGE =	Yes
 
-# -std=c++2a
+# -std=c++2b
 COMPILER =		base-clang
 MAKE_ENV =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
