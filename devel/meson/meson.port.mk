@@ -1,4 +1,4 @@
-BUILD_DEPENDS +=	devel/meson>=1.8.3v0
+BUILD_DEPENDS +=	devel/meson>=1.8.4v0
 SEPARATE_BUILD ?=	Yes
 
 .if empty(CONFIGURE_STYLE)
