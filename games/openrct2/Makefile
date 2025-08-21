@@ -1,12 +1,12 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.4.12
-TITLE_V =	0.4.6
-OBJECTS_V =	1.4.6
+V =		0.4.24
+TITLE_V =	0.4.14
+OBJECTS_V =	1.7.1
 OPENSFX_V =	1.0.5
-OPENMSX_V =	1.5
-REPLAYS_V =	0.0.79
+OPENMSX_V =	1.6
+REPLAYS_V =	0.0.87
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTFILES =	openrct2-${V}{v${V}}.tar.gz
 DISTFILES.a = 	title-sequences-${TITLE_V}{title-sequences}.zip
