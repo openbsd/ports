@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -141,7 +141,7 @@ async-once-cell = "0.5.4"
+@@ -143,7 +143,7 @@ async-once-cell = "0.5.4"
  async-stream = "0.3"
  async-trait = "0.1.73"
  aws-lc-rs = { version = "1.0.0" }

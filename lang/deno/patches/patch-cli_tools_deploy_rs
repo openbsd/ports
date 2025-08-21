@@ -1,7 +1,7 @@
 Index: cli/tools/deploy.rs
 --- cli/tools/deploy.rs.orig
 +++ cli/tools/deploy.rs
-@@ -63,23 +63,10 @@ pub async fn deploy(mut flags: Flags) -> Result<i32, A
+@@ -56,23 +56,10 @@ pub async fn deploy(mut flags: Flags) -> Result<i32, A
      .map_err(ResolveUrlOrPathError::UrlParse)?
    };
  
