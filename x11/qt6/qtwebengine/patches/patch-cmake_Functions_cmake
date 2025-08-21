@@ -27,17 +27,7 @@ Index: cmake/Functions.cmake
          init_stack_vars=false
          is_component_build=false
          is_shared=true
-@@ -826,7 +827,8 @@ macro(append_build_type_setup)
-         use_allocator_shim=false
-         use_partition_alloc=true
-         use_partition_alloc_as_malloc=false
--        use_custom_libcxx=false
-+        use_custom_libcxx=true
-+        use_custom_libunwind=true
-         enable_rust=false # We do not yet support rust
-     )
-     if(${config} STREQUAL "Debug")
-@@ -879,7 +881,7 @@ macro(append_build_type_setup)
+@@ -879,7 +880,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
@@ -46,7 +36,7 @@ Index: cmake/Functions.cmake
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -962,7 +964,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -962,7 +963,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
@@ -55,7 +45,7 @@ Index: cmake/Functions.cmake
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -1000,7 +1002,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -1000,7 +1001,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -64,7 +54,7 @@ Index: cmake/Functions.cmake
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -1090,7 +1092,7 @@ macro(append_toolchain_setup)
+@@ -1090,7 +1091,7 @@ macro(append_toolchain_setup)
                  host_cpu="${cpu}"
              )
          endif()
@@ -73,7 +63,7 @@ Index: cmake/Functions.cmake
          get_gn_arch(cpu ${TEST_architecture_arch})
          list(APPEND gnArgArg
              custom_toolchain="${buildDir}/target_toolchain:target"
-@@ -1229,6 +1231,20 @@ function(add_gn_build_artifacts_to_target)
+@@ -1229,6 +1230,20 @@ function(add_gn_build_artifacts_to_target)
              set_target_properties(${arg_CMAKE_TARGET} PROPERTIES
                  LINK_DEPENDS ${arg_BUILDDIR}/${config}/${arch}/${arg_NINJA_STAMP}
              )
@@ -94,7 +84,7 @@ Index: cmake/Functions.cmake
              if(QT_IS_MACOS_UNIVERSAL)
                  add_intermediate_archive(${target} ${arg_BUILDDIR}/${config}/${arch} ${arg_COMPLETE_STATIC})
              elseif(IOS)
-@@ -1355,7 +1371,7 @@ endfunction()
+@@ -1355,7 +1370,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -103,7 +93,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1364,7 +1380,7 @@ function(check_for_ulimit)
+@@ -1364,7 +1379,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh

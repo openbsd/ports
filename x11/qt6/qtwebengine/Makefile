@@ -11,6 +11,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -159,9 +160,6 @@ post-patch:
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
-	# FIXME if we update base libcxx
-	cp /usr/include/c++/v1/__config_site \
-		${CHROMESRC}/third_party/libc++/src/include/__config_site
 
 pre-configure:
 	cd ${CHROMESRC}/third_party/ffmpeg && \
