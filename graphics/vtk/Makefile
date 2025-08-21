@@ -4,10 +4,9 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit
 
-V =			9.4.1
+V =			9.5.0
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
 
 .for LIB in vtkChartsCore vtkCommonColor vtkCommonComputationalGeometry \
 	vtkCommonCore vtkCommonDataModel vtkCommonExecutionModel vtkCommonMath \
@@ -26,24 +25,25 @@ REVISION =		2
 	vtkIOCesium3DTiles vtkIOChemistry vtkIOCityGML vtkIOCore vtkIOERF \
 	vtkIOEnSight vtkIOEngys vtkIOExodus vtkIOExport vtkIOExportGL2PS \
 	vtkIOExportPDF vtkIOFDS vtkIOFLUENTCFF vtkIOGeometry vtkIOHDF vtkIOIOSS \
-	vtkIOImage vtkIOImport vtkIOInfovis vtkIOLSDyna vtkIOLegacy vtkIOMINC \
-	vtkIOMotionFX vtkIOMovie vtkIONetCDF vtkIOOggTheora vtkIOPLY \
-	vtkIOParallel vtkIOParallelXML vtkIOSQL vtkIOSegY vtkIOTecplotTable \
-	vtkIOVeraOut vtkIOVideo vtkIOXML vtkIOXMLParser vtkImagingColor \
-	vtkImagingCore vtkImagingFourier vtkImagingGeneral vtkImagingHybrid \
-	vtkImagingMath vtkImagingMorphological vtkImagingSources \
-	vtkImagingStatistics vtkImagingStencil vtkInfovisCore vtkInfovisLayout \
-	vtkInteractionImage vtkInteractionStyle vtkInteractionWidgets \
-	vtkParallelCore vtkParallelDIY vtkRenderingAnnotation \
-	vtkRenderingCellGrid vtkRenderingContext2D vtkRenderingContextOpenGL2 \
-	vtkRenderingCore vtkRenderingFreeType vtkRenderingGL2PSOpenGL2 \
+	vtkIOImage vtkIOImport vtkIOInfovis vtkIOLANLX3D vtkIOLSDyna \
+	vtkIOLegacy vtkIOMINC vtkIOMotionFX vtkIOMovie vtkIONetCDF \
+	vtkIOOggTheora vtkIOPLY vtkIOParallel vtkIOParallelXML vtkIOSQL \
+	vtkIOSegY vtkIOTecplotTable vtkIOVeraOut vtkIOVideo vtkIOXML \
+	vtkIOXMLParser vtkImagingColor vtkImagingCore vtkImagingFourier \
+	vtkImagingGeneral vtkImagingHybrid vtkImagingMath \
+	vtkImagingMorphological vtkImagingSources vtkImagingStatistics \
+	vtkImagingStencil vtkInfovisCore vtkInfovisLayout vtkInteractionImage \
+	vtkInteractionStyle vtkInteractionWidgets vtkParallelCore \
+	vtkParallelDIY vtkRenderingAnnotation vtkRenderingCellGrid \
+	vtkRenderingContext2D vtkRenderingContextOpenGL2 vtkRenderingCore \
+	vtkRenderingFreeType vtkRenderingGL2PSOpenGL2 vtkRenderingGridAxes \
 	vtkRenderingHyperTreeGrid vtkRenderingImage vtkRenderingLICOpenGL2 \
 	vtkRenderingLOD vtkRenderingLabel vtkRenderingOpenGL2 \
 	vtkRenderingSceneGraph vtkRenderingUI vtkRenderingVolume \
 	vtkRenderingVolumeOpenGL2 vtkRenderingVtkJS vtkTestingCore \
 	vtkTestingRendering vtkViewsContext2D vtkViewsCore vtkViewsInfovis \
-	vtkexodusII vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken
-SHARED_LIBS += ${LIB} 1.0 # 0.0
+	vtkexodusII vtkfmt vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken
+SHARED_LIBS += ${LIB} 2.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
@@ -54,10 +54,10 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcursor Xfixes Xrender c cgns
-WANTLIB += double-conversion execinfo expat fmt freetype gl2ps
-WANTLIB += hdf5 hdf5_hl hpdf jpeg jsoncpp lz4 lzma m netcdf ogg
-WANTLIB += png proj pugixml sqlite3 theora theoradec theoraenc
-WANTLIB += tiff verdict xml2 z
+WANTLIB += double-conversion execinfo expat freetype gl2ps hdf5
+WANTLIB += hdf5_hl hpdf jpeg jsoncpp lz4 lzma m netcdf ogg png
+WANTLIB += proj pugixml sqlite3 theora theoradec theoraenc tiff
+WANTLIB += verdict xml2 z
 
 SITES =			https://www.vtk.org/files/release/${V:R}/
 
@@ -75,7 +75,6 @@ LIB_DEPENDS =		archivers/lz4 \
 			archivers/xz \
 			audio/libogg \
 			databases/sqlite3 \
-			devel/fmt \
 			devel/jsoncpp \
 			devel/proj \
 			graphics/jpeg \
@@ -97,6 +96,7 @@ LIB_DEPENDS =		archivers/lz4 \
 # pegtl: easy to port but https://gitlab.kitware.com/vtk/vtk/-/issues/18151
 # ioss: part of seacas suite and difficult to package
 # token: a vtk utility
+# fmt: newer version required (>=11.0.0)
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DVTK_FORBID_DOWNLOADS=ON \
 			-DVTK_LEGACY_REMOVE=ON \
@@ -117,6 +117,7 @@ CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DVTK_MODULE_USE_EXTERNAL_VTK_pegtl=OFF \
 			-DVTK_MODULE_USE_EXTERNAL_VTK_ioss=OFF \
 			-DVTK_MODULE_USE_EXTERNAL_VTK_token=OFF \
+			-DVTK_MODULE_USE_EXTERNAL_VTK_fmt=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 CXXFLAGS +=		-I${X11BASE}/include

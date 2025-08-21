@@ -242,6 +242,8 @@ include/vtk/vtkAxesTransformWidget.h
 include/vtk/vtkAxis.h
 include/vtk/vtkAxisActor.h
 include/vtk/vtkAxisActor2D.h
+include/vtk/vtkAxisAlignedReflectionFilter.h
+include/vtk/vtkAxisAlignedTransformFilter.h
 include/vtk/vtkAxisExtended.h
 include/vtk/vtkAxisFollower.h
 include/vtk/vtkBMPReader.h
@@ -302,6 +304,7 @@ include/vtk/vtkBorderWidget.h
 include/vtk/vtkBoundaryMeshQuality.h
 include/vtk/vtkBoundedPlanePointPlacer.h
 include/vtk/vtkBoundedPointSource.h
+include/vtk/vtkBoundedWidgetRepresentation.h
 include/vtk/vtkBoundingBox.h
 include/vtk/vtkBox.h
 include/vtk/vtkBoxClipDataSet.h
@@ -349,7 +352,6 @@ include/vtk/vtkCameraPathRepresentation.h
 include/vtk/vtkCameraPathWidget.h
 include/vtk/vtkCameraRepresentation.h
 include/vtk/vtkCameraWidget.h
-include/vtk/vtkCapsuleSource.h
 include/vtk/vtkCaptionActor2D.h
 include/vtk/vtkCaptionRepresentation.h
 include/vtk/vtkCaptionWidget.h
@@ -515,9 +517,7 @@ include/vtk/vtkCompositeIntArray.h
 include/vtk/vtkCompositeInterpolatedVelocityField.h
 include/vtk/vtkCompositeLongArray.h
 include/vtk/vtkCompositeLongLongArray.h
-include/vtk/vtkCompositeMapperHelper2.h
 include/vtk/vtkCompositePolyDataMapper.h
-include/vtk/vtkCompositePolyDataMapper2.h
 include/vtk/vtkCompositePolyDataMapperDelegator.h
 include/vtk/vtkCompositeShortArray.h
 include/vtk/vtkCompositeSignedCharArray.h
@@ -696,7 +696,6 @@ include/vtk/vtkDataObjectImplicitBackendInterface.h
 include/vtk/vtkDataObjectMeshCache.h
 include/vtk/vtkDataObjectReader.h
 include/vtk/vtkDataObjectToDataSetFilter.h
-include/vtk/vtkDataObjectToTable.h
 include/vtk/vtkDataObjectTree.h
 include/vtk/vtkDataObjectTreeInternals.h
 include/vtk/vtkDataObjectTreeIterator.h
@@ -855,6 +854,7 @@ include/vtk/vtkExplicitStructuredGridAlgorithm.h
 include/vtk/vtkExplicitStructuredGridCrop.h
 include/vtk/vtkExplicitStructuredGridSurfaceFilter.h
 include/vtk/vtkExplicitStructuredGridToUnstructuredGrid.h
+include/vtk/vtkExplodeDataSet.h
 include/vtk/vtkExporter.h
 include/vtk/vtkExprTkFunctionParser.h
 include/vtk/vtkExtentRCBPartitioner.h
@@ -913,6 +913,7 @@ include/vtk/vtkFXAAOptions.h
 include/vtk/vtkFacetReader.h
 include/vtk/vtkFacetWriter.h
 include/vtk/vtkFast2DLayoutStrategy.h
+include/vtk/vtkFastLabeledDataMapper.h
 include/vtk/vtkFastSplatter.h
 include/vtk/vtkFeatureEdges.h
 include/vtk/vtkFeatures.h
@@ -988,6 +989,7 @@ include/vtk/vtkFramebufferPass.h
 include/vtk/vtkFreeTypeLabelRenderStrategy.h
 include/vtk/vtkFreeTypeStringToImage.h
 include/vtk/vtkFreeTypeTools.h
+include/vtk/vtkFrustum.h
 include/vtk/vtkFrustumCoverageCuller.h
 include/vtk/vtkFrustumSelector.h
 include/vtk/vtkFrustumSource.h
@@ -1025,6 +1027,7 @@ include/vtk/vtkGeneralizedKernel.h
 include/vtk/vtkGenerateIds.h
 include/vtk/vtkGenerateIndexArray.h
 include/vtk/vtkGenerateProcessIds.h
+include/vtk/vtkGenerateRegionIds.h
 include/vtk/vtkGenerateTimeSteps.h
 include/vtk/vtkGenericAdaptorCell.h
 include/vtk/vtkGenericAttribute.h
@@ -1094,6 +1097,10 @@ include/vtk/vtkGraphWeightFilter.h
 include/vtk/vtkGraphWriter.h
 include/vtk/vtkGraphicsFactory.h
 include/vtk/vtkGreedyTerrainDecimation.h
+include/vtk/vtkGridAxesActor2D.h
+include/vtk/vtkGridAxesActor3D.h
+include/vtk/vtkGridAxesHelper.h
+include/vtk/vtkGridAxesPlaneActor2D.h
 include/vtk/vtkGridSynchronizedTemplates3D.h
 include/vtk/vtkGridTransform.h
 include/vtk/vtkGroupDataSetsFilter.h
@@ -1149,13 +1156,17 @@ include/vtk/vtkHyperTreeGridAlgorithm.h
 include/vtk/vtkHyperTreeGridAxisClip.h
 include/vtk/vtkHyperTreeGridAxisCut.h
 include/vtk/vtkHyperTreeGridAxisReflection.h
+include/vtk/vtkHyperTreeGridCellCenterStrategy.h
 include/vtk/vtkHyperTreeGridCellCenters.h
+include/vtk/vtkHyperTreeGridCellSizeStrategy.h
 include/vtk/vtkHyperTreeGridContour.h
 include/vtk/vtkHyperTreeGridDepthLimiter.h
 include/vtk/vtkHyperTreeGridEntry.h
 include/vtk/vtkHyperTreeGridEvaluateCoarse.h
 include/vtk/vtkHyperTreeGridExtractGhostCells.h
 include/vtk/vtkHyperTreeGridFeatureEdges.h
+include/vtk/vtkHyperTreeGridGenerateFieldStrategy.h
+include/vtk/vtkHyperTreeGridGenerateFields.h
 include/vtk/vtkHyperTreeGridGenerateGlobalIds.h
 include/vtk/vtkHyperTreeGridGenerateProcessIds.h
 include/vtk/vtkHyperTreeGridGeometricLocator.h
@@ -1194,6 +1205,8 @@ include/vtk/vtkHyperTreeGridThreshold.h
 include/vtk/vtkHyperTreeGridToDualGrid.h
 include/vtk/vtkHyperTreeGridToUnstructuredGrid.h
 include/vtk/vtkHyperTreeGridTools.h
+include/vtk/vtkHyperTreeGridTotalVisibleVolumeStrategy.h
+include/vtk/vtkHyperTreeGridValidCellStrategy.h
 include/vtk/vtkHyperTreeGridVisibleLeavesSize.h
 include/vtk/vtkIOAMRModule.h
 include/vtk/vtkIOAsynchronousModule.h
@@ -1220,6 +1233,7 @@ include/vtk/vtkIOIOSSModule.h
 include/vtk/vtkIOImageModule.h
 include/vtk/vtkIOImportModule.h
 include/vtk/vtkIOInfovisModule.h
+include/vtk/vtkIOLANLX3DModule.h
 include/vtk/vtkIOLSDynaModule.h
 include/vtk/vtkIOLegacyModule.h
 include/vtk/vtkIOMINCModule.h
@@ -1439,6 +1453,8 @@ include/vtk/vtkImplicitConeWidget.h
 include/vtk/vtkImplicitCylinderRepresentation.h
 include/vtk/vtkImplicitCylinderWidget.h
 include/vtk/vtkImplicitDataSet.h
+include/vtk/vtkImplicitFrustumRepresentation.h
+include/vtk/vtkImplicitFrustumWidget.h
 include/vtk/vtkImplicitFunction.h
 include/vtk/vtkImplicitFunctionCollection.h
 include/vtk/vtkImplicitFunctionToImageStencil.h
@@ -1516,6 +1532,9 @@ include/vtk/vtkInitialValueProblemSolver.h
 include/vtk/vtkInputStream.h
 include/vtk/vtkIntArray.h
 include/vtk/vtkIntegrateAttributes.h
+include/vtk/vtkIntegrationGaussianStrategy.h
+include/vtk/vtkIntegrationLinearStrategy.h
+include/vtk/vtkIntegrationStrategy.h
 include/vtk/vtkInteractionImageModule.h
 include/vtk/vtkInteractionStyleModule.h
 include/vtk/vtkInteractionWidgetsModule.h
@@ -1550,6 +1569,7 @@ include/vtk/vtkInterpolatingSubdivisionFilter.h
 include/vtk/vtkInterpolationKernel.h
 include/vtk/vtkIntersectionCounter.h
 include/vtk/vtkIntersectionPolyDataFilter.h
+include/vtk/vtkInvoker.h
 include/vtk/vtkIterativeClosestPointTransform.h
 include/vtk/vtkJPEGReader.h
 include/vtk/vtkJPEGWriter.h
@@ -1570,6 +1590,7 @@ include/vtk/vtkKdTree.h
 include/vtk/vtkKdTreePointLocator.h
 include/vtk/vtkKdTreeSelector.h
 include/vtk/vtkKochanekSpline.h
+include/vtk/vtkLANLX3DReader.h
 include/vtk/vtkLICNoiseHelper.h
 include/vtk/vtkLODActor.h
 include/vtk/vtkLODProp3D.h
@@ -1591,6 +1612,7 @@ include/vtk/vtkLabelSizeCalculator.h
 include/vtk/vtkLabeledContourMapper.h
 include/vtk/vtkLabeledContourPolyDataItem.h
 include/vtk/vtkLabeledDataMapper.h
+include/vtk/vtkLabeledDatatypeDefinitions.h
 include/vtk/vtkLabeledTreeMapDataMapper.h
 include/vtk/vtkLagrangeCurve.h
 include/vtk/vtkLagrangeHexahedron.h
@@ -1772,6 +1794,7 @@ include/vtk/vtkNIFTIImageReader.h
 include/vtk/vtkNIFTIImageWriter.h
 include/vtk/vtkNamedColors.h
 include/vtk/vtkNek5000Reader.h
+include/vtk/vtkNetCDFAccessor.h
 include/vtk/vtkNetCDFCAMReader.h
 include/vtk/vtkNetCDFCFReader.h
 include/vtk/vtkNetCDFCFWriter.h
@@ -1876,6 +1899,7 @@ include/vtk/vtkOpenGLSkybox.h
 include/vtk/vtkOpenGLSphereMapper.h
 include/vtk/vtkOpenGLState.h
 include/vtk/vtkOpenGLStickMapper.h
+include/vtk/vtkOpenGLSurfaceProbeVolumeMapper.h
 include/vtk/vtkOpenGLTextActor.h
 include/vtk/vtkOpenGLTextActor3D.h
 include/vtk/vtkOpenGLTextMapper.h
@@ -1919,6 +1943,7 @@ include/vtk/vtkOverlappingAMRLevelIdScalars.h
 include/vtk/vtkOverlayPass.h
 include/vtk/vtkOverrideInformation.h
 include/vtk/vtkOverrideInformationCollection.h
+include/vtk/vtkPAxisAlignedReflectionFilter.h
 include/vtk/vtkPBRIrradianceTexture.h
 include/vtk/vtkPBRLUTTexture.h
 include/vtk/vtkPBRPrefilterTexture.h
@@ -1926,7 +1951,6 @@ include/vtk/vtkPCAAnalysisFilter.h
 include/vtk/vtkPCACurvatureEstimation.h
 include/vtk/vtkPCANormalEstimation.h
 include/vtk/vtkPCAStatistics.h
-include/vtk/vtkPCellDataToPointData.h
 include/vtk/vtkPChacoReader.h
 include/vtk/vtkPComputeHistogram2DOutliers.h
 include/vtk/vtkPConvertToMultiBlockDataSet.h
@@ -2172,7 +2196,6 @@ include/vtk/vtkProbePolyhedron.h
 include/vtk/vtkProbeSelectedLocations.h
 include/vtk/vtkProcess.h
 include/vtk/vtkProcessGroup.h
-include/vtk/vtkProcessIdScalars.h
 include/vtk/vtkProcrustesAlignmentFilter.h
 include/vtk/vtkProgrammableAttributeDataFilter.h
 include/vtk/vtkProgrammableDataObjectSource.h
@@ -2273,6 +2296,7 @@ include/vtk/vtkReebGraph.h
 include/vtk/vtkReebGraphSimplificationMetric.h
 include/vtk/vtkReferenceCount.h
 include/vtk/vtkReflectionFilter.h
+include/vtk/vtkReflectionUtilities.h
 include/vtk/vtkRegressionTestImage.h
 include/vtk/vtkRegularPolygonSource.h
 include/vtk/vtkRemoveDuplicatePolys.h
@@ -2315,6 +2339,7 @@ include/vtk/vtkRenderingCoreEnums.h
 include/vtk/vtkRenderingCoreModule.h
 include/vtk/vtkRenderingFreeTypeModule.h
 include/vtk/vtkRenderingGL2PSOpenGL2Module.h
+include/vtk/vtkRenderingGridAxesModule.h
 include/vtk/vtkRenderingHyperTreeGridModule.h
 include/vtk/vtkRenderingImageModule.h
 include/vtk/vtkRenderingLICOpenGL2Module.h
@@ -2912,6 +2937,7 @@ include/vtk/vtkX3DExporter.h
 include/vtk/vtkX3DExporterFIWriter.h
 include/vtk/vtkX3DExporterWriter.h
 include/vtk/vtkX3DExporterXMLWriter.h
+include/vtk/vtkXArrayAccessor.h
 include/vtk/vtkXGMLReader.h
 include/vtk/vtkXMLCompositeDataReader.h
 include/vtk/vtkXMLCompositeDataSetWriterHelper.h
@@ -3042,12 +3068,19 @@ include/vtk/vtkdiy2/include/vtkdiy2/assigner.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/collection.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/communicator.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/constants.h
+include/vtk/vtkdiy2/include/vtkdiy2/coroutine/
+include/vtk/vtkdiy2/include/vtkdiy2/coroutine.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/coroutine/fiber.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/coroutine/sjlj.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/critical-resource.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/decomposition.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/
 include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/
 include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/kdtree-sampling.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/kdtree.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/load-balance-collective.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/load-balance-sampling.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/load-balance.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/algorithms/sort.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/block_traits.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/
@@ -3055,29 +3088,14 @@ include/vtk/vtkdiy2/include/vtkdiy2/detail/master/collectives.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/commands.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/communication.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/execution.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/detail/master/foreach_exchange.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/iexchange-collective.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/detail/master/iexchange-dud.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/master/iexchange.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/reduce/
 include/vtk/vtkdiy2/include/vtkdiy2/detail/reduce/all-to-all.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/detail/traits.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/dynamic-point.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/factory.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/chrono.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/color.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/compile.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/core.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/format-inl.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/format.cc
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/format.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/locale.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/ostream.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/posix.cc
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/posix.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/printf.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/ranges.h
-include/vtk/vtkdiy2/include/vtkdiy2/fmt/safe-duration-cast.h
 include/vtk/vtkdiy2/include/vtkdiy2/grid.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/io/
 include/vtk/vtkdiy2/include/vtkdiy2/io/block.hpp
@@ -3085,24 +3103,36 @@ include/vtk/vtkdiy2/include/vtkdiy2/io/bov.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/io/numpy.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/io/shared.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/io/utils.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/itlib/
-include/vtk/vtkdiy2/include/vtkdiy2/itlib/small_vector.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/link.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/log.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/master.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/
 include/vtk/vtkdiy2/include/vtkdiy2/mpi.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/collectives.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/collectives.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/communicator.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/communicator.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/mpi/constants.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/config.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/datatypes.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/datatypes.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/diy-mpi-export.h
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/environment.cpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/environment.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/io.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/io.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/mpi_cast.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/mpitypes.hpp.in
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/no-mpi.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/operations.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/operations.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/optional.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/point-to-point.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/point-to-point.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/request.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/request.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/status.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/status.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/mpi/window.cpp
 include/vtk/vtkdiy2/include/vtkdiy2/mpi/window.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/no-thread.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/partners/
@@ -3120,11 +3150,31 @@ include/vtk/vtkdiy2/include/vtkdiy2/resolve.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/serialization.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/stats.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/storage.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/thread/
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/chrono.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/color.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/compile.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/core.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/format-inl.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/format.cc
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/format.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/locale.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/os.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/ostream.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/posix.cc
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/posix.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/printf.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/ranges.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/fmt/safe-duration-cast.h
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/itlib/
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/itlib/small_vector.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/thread/
+include/vtk/vtkdiy2/include/vtkdiy2/thirdparty/thread/fast_mutex.h
 include/vtk/vtkdiy2/include/vtkdiy2/thread.hpp
-include/vtk/vtkdiy2/include/vtkdiy2/thread/fast_mutex.h
 include/vtk/vtkdiy2/include/vtkdiy2/time.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/types.hpp
+include/vtk/vtkdiy2/include/vtkdiy2/utils.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/version.hpp
 include/vtk/vtkdiy2/include/vtkdiy2/vertices.hpp
 include/vtk/vtkexodusII/
@@ -3139,14 +3189,30 @@ include/vtk/vtkfast_float.h
 include/vtk/vtkfast_float/vtkfast_float/
 include/vtk/vtkfast_float/vtkfast_float/ascii_number.h
 include/vtk/vtkfast_float/vtkfast_float/bigint.h
+include/vtk/vtkfast_float/vtkfast_float/constexpr_feature_detect.h
 include/vtk/vtkfast_float/vtkfast_float/decimal_to_binary.h
 include/vtk/vtkfast_float/vtkfast_float/digit_comparison.h
 include/vtk/vtkfast_float/vtkfast_float/fast_float.h
 include/vtk/vtkfast_float/vtkfast_float/fast_table.h
 include/vtk/vtkfast_float/vtkfast_float/float_common.h
 include/vtk/vtkfast_float/vtkfast_float/parse_number.h
-include/vtk/vtkfast_float/vtkfast_float/simple_decimal_conversion.h
 include/vtk/vtkfast_float/vtkfast_float/vtkfast_float_mangle.h
+include/vtk/vtkfmt/
+include/vtk/vtkfmt/vtkfmt/
+include/vtk/vtkfmt/vtkfmt/args.h
+include/vtk/vtkfmt/vtkfmt/base.h
+include/vtk/vtkfmt/vtkfmt/chrono.h
+include/vtk/vtkfmt/vtkfmt/color.h
+include/vtk/vtkfmt/vtkfmt/compile.h
+include/vtk/vtkfmt/vtkfmt/core.h
+include/vtk/vtkfmt/vtkfmt/format-inl.h
+include/vtk/vtkfmt/vtkfmt/format.h
+include/vtk/vtkfmt/vtkfmt/os.h
+include/vtk/vtkfmt/vtkfmt/ostream.h
+include/vtk/vtkfmt/vtkfmt/printf.h
+include/vtk/vtkfmt/vtkfmt/ranges.h
+include/vtk/vtkfmt/vtkfmt/std.h
+include/vtk/vtkfmt/vtkfmt/xchar.h
 include/vtk/vtkglad/
 include/vtk/vtkglad/include/
 include/vtk/vtkglad/include/EGL/
@@ -3166,6 +3232,8 @@ include/vtk/vtkioss/Ioss_BasisVariableType.h
 include/vtk/vtkioss/Ioss_Blob.h
 include/vtk/vtkioss/Ioss_BoundingBox.h
 include/vtk/vtkioss/Ioss_ChainGenerator.h
+include/vtk/vtkioss/Ioss_ChangeSet.h
+include/vtk/vtkioss/Ioss_ChangeSetFactory.h
 include/vtk/vtkioss/Ioss_CodeTypes.h
 include/vtk/vtkioss/Ioss_CommSet.h
 include/vtk/vtkioss/Ioss_Compare.h
@@ -3180,6 +3248,12 @@ include/vtk/vtkioss/Ioss_DataPool.h
 include/vtk/vtkioss/Ioss_DataSize.h
 include/vtk/vtkioss/Ioss_DatabaseIO.h
 include/vtk/vtkioss/Ioss_Doxygen.h
+include/vtk/vtkioss/Ioss_DynamicTopology.h
+include/vtk/vtkioss/Ioss_DynamicTopologyBroker.h
+include/vtk/vtkioss/Ioss_DynamicTopologyFileControl.h
+include/vtk/vtkioss/Ioss_DynamicTopologyNotifier.h
+include/vtk/vtkioss/Ioss_DynamicTopologyObserver.h
+include/vtk/vtkioss/Ioss_DynamicTopologyStateLocator.h
 include/vtk/vtkioss/Ioss_EdgeBlock.h
 include/vtk/vtkioss/Ioss_EdgeSet.h
 include/vtk/vtkioss/Ioss_ElementBlock.h
@@ -3234,6 +3308,7 @@ include/vtk/vtkioss/Ioss_Utils.h
 include/vtk/vtkioss/Ioss_VariableType.h
 include/vtk/vtkioss/Ioss_Version.h
 include/vtk/vtkioss/Ioss_ZoneConnectivity.h
+include/vtk/vtkioss/Ioss_use_fmt.h
 include/vtk/vtkioss/SEACASIoss_config.h
 include/vtk/vtkioss/bhopscotch_map.h
 include/vtk/vtkioss/bhopscotch_set.h
@@ -3312,6 +3387,7 @@ include/vtk/vtkioss/elements/Ioss_Wedge52.h
 include/vtk/vtkioss/elements/Ioss_Wedge6.h
 include/vtk/vtkioss/exodus/
 include/vtk/vtkioss/exodus/Ioex_BaseDatabaseIO.h
+include/vtk/vtkioss/exodus/Ioex_ChangeSet.h
 include/vtk/vtkioss/exodus/Ioex_DatabaseIO.h
 include/vtk/vtkioss/exodus/Ioex_IOFactory.h
 include/vtk/vtkioss/exodus/Ioex_Internals.h
@@ -3587,6 +3663,7 @@ lib/cmake/vtk/vtkTopologicalSort.cmake
 @lib lib/libvtkIOImage.so.${LIBvtkIOImage_VERSION}
 @lib lib/libvtkIOImport.so.${LIBvtkIOImport_VERSION}
 @lib lib/libvtkIOInfovis.so.${LIBvtkIOInfovis_VERSION}
+@lib lib/libvtkIOLANLX3D.so.${LIBvtkIOLANLX3D_VERSION}
 @lib lib/libvtkIOLSDyna.so.${LIBvtkIOLSDyna_VERSION}
 @lib lib/libvtkIOLegacy.so.${LIBvtkIOLegacy_VERSION}
 @lib lib/libvtkIOMINC.so.${LIBvtkIOMINC_VERSION}
@@ -3628,6 +3705,7 @@ lib/cmake/vtk/vtkTopologicalSort.cmake
 @lib lib/libvtkRenderingCore.so.${LIBvtkRenderingCore_VERSION}
 @lib lib/libvtkRenderingFreeType.so.${LIBvtkRenderingFreeType_VERSION}
 @lib lib/libvtkRenderingGL2PSOpenGL2.so.${LIBvtkRenderingGL2PSOpenGL2_VERSION}
+@lib lib/libvtkRenderingGridAxes.so.${LIBvtkRenderingGridAxes_VERSION}
 @lib lib/libvtkRenderingHyperTreeGrid.so.${LIBvtkRenderingHyperTreeGrid_VERSION}
 @lib lib/libvtkRenderingImage.so.${LIBvtkRenderingImage_VERSION}
 @lib lib/libvtkRenderingLICOpenGL2.so.${LIBvtkRenderingLICOpenGL2_VERSION}
@@ -3645,6 +3723,7 @@ lib/cmake/vtk/vtkTopologicalSort.cmake
 @lib lib/libvtkViewsCore.so.${LIBvtkViewsCore_VERSION}
 @lib lib/libvtkViewsInfovis.so.${LIBvtkViewsInfovis_VERSION}
 @lib lib/libvtkexodusII.so.${LIBvtkexodusII_VERSION}
+@lib lib/libvtkfmt.so.${LIBvtkfmt_VERSION}
 @lib lib/libvtkglad.so.${LIBvtkglad_VERSION}
 @lib lib/libvtkioss.so.${LIBvtkioss_VERSION}
 @lib lib/libvtkkissfft.so.${LIBvtkkissfft_VERSION}
@@ -3692,6 +3771,8 @@ share/licenses/VTK/vtkIOExport/
 share/licenses/VTK/vtkIOExport/LICENSE
 share/licenses/VTK/vtkIOInfovis/
 share/licenses/VTK/vtkIOInfovis/LICENSE
+share/licenses/VTK/vtkIOLANLX3D/
+share/licenses/VTK/vtkIOLANLX3D/LICENSE
 share/licenses/VTK/vtkIOMINC/
 share/licenses/VTK/vtkIOMINC/Copyright.txt
 share/licenses/VTK/vtkIONetCDF/
@@ -3727,6 +3808,8 @@ share/licenses/VTK/vtkexodusII/
 share/licenses/VTK/vtkexodusII/COPYRIGHT
 share/licenses/VTK/vtkfast_float/
 share/licenses/VTK/vtkfast_float/LICENSE-MIT
+share/licenses/VTK/vtkfmt/
+share/licenses/VTK/vtkfmt/LICENSE
 share/licenses/VTK/vtkglad/
 share/licenses/VTK/vtkglad/LICENSE
 share/licenses/VTK/vtkioss/
