@@ -3,7 +3,7 @@ COMMENT =	fetch ssh AuthorizedKeys from LDAP
 V =		8.0p1
 DISTNAME =	openssh-${V}-10
 PKGNAME =	ssh-ldap-helper-8.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security net
 EXTRACT_SUFX=	.el8.src.rpm

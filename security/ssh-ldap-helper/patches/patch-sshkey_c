@@ -19,15 +19,29 @@ Index: sshkey.c
  	/* Q != infinity */
  	if (EC_POINT_is_at_infinity(group, public))
  		goto out;
-@@ -3311,11 +3303,6 @@ sshkey_dump_ec_point(const EC_GROUP *group, const EC_P
- 	if ((x = BN_CTX_get(bnctx)) == NULL ||
- 	    (y = BN_CTX_get(bnctx)) == NULL) {
+@@ -3219,7 +3211,7 @@ sshkey_ec_validate_public(const EC_GROUP *group, const
+ 
+ 	/* log2(x) > log2(order)/2, log2(y) > log2(order)/2 */
+ 	if (EC_GROUP_get_order(group, order, bnctx) != 1 ||
+-	    EC_POINT_get_affine_coordinates_GFp(group, public,
++	    EC_POINT_get_affine_coordinates(group, public,
+ 	    x, y, bnctx) != 1) {
+ 		ret = SSH_ERR_LIBCRYPTO_ERROR;
+ 		goto out;
+@@ -3313,14 +3305,9 @@ sshkey_dump_ec_point(const EC_GROUP *group, const EC_P
  		fprintf(stderr, "%s: BN_CTX_get failed\n", __func__);
--		return;
--	}
+ 		return;
+ 	}
 -	if (EC_METHOD_get_field_type(EC_GROUP_method_of(group)) !=
 -	    NID_X9_62_prime_field) {
 -		fprintf(stderr, "%s: group is not a prime field\n", __func__);
+-		return;
+-	}
+-	if (EC_POINT_get_affine_coordinates_GFp(group, point, x, y,
++	if (EC_POINT_get_affine_coordinates(group, point, x, y,
+ 	    bnctx) != 1) {
+-		fprintf(stderr, "%s: EC_POINT_get_affine_coordinates_GFp\n",
++		fprintf(stderr, "%s: EC_POINT_get_affine_coordinates\n",
+ 		    __func__);
  		return;
  	}
- 	if (EC_POINT_get_affine_coordinates_GFp(group, point, x, y,
