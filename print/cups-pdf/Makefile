@@ -1,12 +1,13 @@
 COMMENT=		PDF backend for CUPS
 
-DISTNAME=		cups-pdf-3.0.1
+DISTNAME=		cups-pdf-3.0.2
 CATEGORIES=		print
-REVISION=		1
 
 HOMEPAGE=		http://www.cups-pdf.de/
 SITES=			${HOMEPAGE}src/
 DISTFILES=		${DISTNAME:S/pdf-/pdf_/}.tar.gz
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -16,7 +16,7 @@ Index: src/cups-pdf.h
    { "AnonUser", SEC_CONF|SEC_PPD, { "nobody" } },
 -  { "GhostScript", SEC_CONF|SEC_PPD, { "/usr/bin/gs" } },
 +  { "GhostScript", SEC_CONF|SEC_PPD, { "${LOCALBASE}/bin/gs" } },
-   { "GSCall", SEC_CONF|SEC_PPD, { "%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s" } },
+   { "GSCall", SEC_CONF|SEC_PPD, { "%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress %s" } },
 -  { "Grp", SEC_CONF|SEC_PPD, { "lp" } },
 +  { "Grp", SEC_CONF|SEC_PPD, { "_cups" } },
    { "GSTmp", SEC_CONF|SEC_PPD, { "TMPDIR=/var/tmp" } },
