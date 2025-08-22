@@ -1,6 +1,6 @@
 COMMENT =		backend for Jupyter web applications
 
-MODPY_DISTV =		2.16.0
+MODPY_DISTV =		2.17.0
 DISTNAME =		jupyter_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -26,7 +26,6 @@ RUN_DEPENDS =		devel/py-jupyter_client>=7.4.4 \
 			devel/py-jupyter_server_terminals>=0.4.4 \
 			devel/py-nbconvert>=6.4.4 \
 			devel/py-nbformat>=5.3.0 \
-			devel/py-overrides>=5.0 \
 			devel/py-send2trash>=1.8.2 \
 			devel/py-traitlets>=5.6.0 \
 			net/py-anyio>=3.1.0 \
