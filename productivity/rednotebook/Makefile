@@ -1,10 +1,9 @@
 COMMENT=		diary and journal application
 
-MODPY_DISTV=		2.37
+MODPY_DISTV=		2.39
 GH_TAGNAME=		v${MODPY_DISTV}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
-REVISION=		0
 
 CATEGORIES=		productivity
 
