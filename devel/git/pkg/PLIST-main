@@ -422,8 +422,6 @@ share/bash-completion/completions/git
 share/doc/pkg-readmes/${PKGSTEM}
 share/emacs/
 share/emacs/site-lisp/
-share/emacs/site-lisp/git-blame.el
-share/emacs/site-lisp/git.el
 share/git-core/
 share/git-core/templates/
 share/git-core/templates/description
@@ -431,7 +429,6 @@ share/git-core/templates/hooks/
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
 share/git-core/templates/hooks/fsmonitor-watchman.sample
-share/git-core/templates/hooks/post-receive-email.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample
 share/git-core/templates/hooks/pre-commit.sample
@@ -442,7 +439,6 @@ share/git-core/templates/hooks/pre-receive.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
 share/git-core/templates/hooks/push-to-checkout.sample
 share/git-core/templates/hooks/sendemail-validate.sample
-share/git-core/templates/hooks/setgitperms.perl
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude

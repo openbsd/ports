@@ -2,7 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.50.1
+V =		2.51.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -122,15 +122,8 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
-		${PREFIX}/share/emacs/site-lisp
 	cd ${WRKBUILD}/doc && \
 		pax -rw . ${PREFIX}/man
-	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
-		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
-	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/setgitperms.perl \
-		${PREFIX}/share/git-core/templates/hooks/setgitperms.perl
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
 	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/contrib/subtree \
 		${MAKE_FLAGS} install install-man

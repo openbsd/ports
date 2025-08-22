@@ -4,7 +4,7 @@ cpu time is accounted to spinlocks when running various operations on OpenBSD
 Index: preload-index.c
 --- preload-index.c.orig
 +++ preload-index.c
-@@ -124,6 +124,8 @@ void preload_index(struct index_state *index,
+@@ -127,6 +127,8 @@ void preload_index(struct index_state *index,
  	trace2_region_enter("index", "preload", NULL);
  
  	trace_performance_enter();
