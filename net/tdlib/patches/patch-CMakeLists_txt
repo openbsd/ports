@@ -3,7 +3,7 @@ hide default-on benchmarks behind new default-off flag
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -238,7 +238,7 @@ if (BUILD_TESTING)
+@@ -231,7 +231,7 @@ if (BUILD_TESTING)
    add_subdirectory(test)
  endif()
  
