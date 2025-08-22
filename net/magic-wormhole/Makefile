@@ -1,6 +1,6 @@
 COMMENT =		securely transfer data between computers
 
-DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.19.2	.
+DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.20.0	.
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -37,6 +37,7 @@ RUN_DEPENDS =		archivers/py-zipstream-ng \
 # XXX completes partially, needs unported
 # "magic-wormhole-transit-relay==0.1.2"
 # "magic-wormhole-mailbox-server==0.3.1"
+# devel/py-test-twisted
 TEST_DEPENDS =		devel/py-mock \
 			devel/py-txaio \
 			devel/pyflakes
