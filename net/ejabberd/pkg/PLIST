@@ -255,6 +255,8 @@ lib/ejabberd/ejabberd-${V}/ebin/mod_private_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_private_sql.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_privilege.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_privilege_opt.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_providers.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_providers_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_proxy65.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_proxy65_lib.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_proxy65_mnesia.beam
