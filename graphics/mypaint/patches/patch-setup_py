@@ -8,6 +8,10 @@ From: =?UTF-8?q?=C4=90o=C3=A0n=20Tr=E1=BA=A7n=20C=C3=B4ng=20Danh?=
 Date: Wed, 9 Nov 2022 11:24:33 +0700
 Subject: [PATCH] python: fix for Python 3.11
 
+#3:
+Unbreak with libc++19:
+don't set POSIX_C_SOURCE, this interferes with BSD_VISIBLE
+
 - python 3 always open in universal mode, U is default mode in 3.0,
   and removed in 3.11
 - mypaint doesn't use ld?n?gettext, so bind_textdomain_codeset isn't
@@ -35,3 +39,11 @@ Index: setup.py
              with open(targ, "w") as out_fp:
                  line = in_fp.readline().rstrip()
                  if line.startswith("#!"):
+@@ -867,7 +867,6 @@ def get_ext_modules():
+         '-Wall',
+         '-Wno-sign-compare',
+         '-Wno-write-strings',
+-        '-D_POSIX_C_SOURCE=200809L',
+         "-DNO_TESTS",  # FIXME: we're building against shared libmypaint now
+         '-g',  # always include symbols, for profiling
+     ]
