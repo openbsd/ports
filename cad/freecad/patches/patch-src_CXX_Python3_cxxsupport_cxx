@@ -1,0 +1,15 @@
+This patch has been merged upstream. Drop next update.
+Commit: 39ca75bac294a69504e1ea551e1615816e3aec06
+
+Index: src/CXX/Python3/cxxsupport.cxx
+--- src/CXX/Python3/cxxsupport.cxx.orig
++++ src/CXX/Python3/cxxsupport.cxx
+@@ -48,7 +48,7 @@ Py_ssize_t numeric_limits_max()
+ #if !defined(Py_LIMITED_API)
+ Py_UNICODE unicode_null_string[1] = { 0 };
+ #endif
+-Py_UCS4 ucs4_null_string[1] = { 0 };
++char32_t ucs4_null_string[1] = { 0 };
+ 
+ Type Object::type() const
+ {

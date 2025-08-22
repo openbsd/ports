@@ -4,19 +4,11 @@ DPB_PROPERTIES =	parallel parallel2
 
 COMMENT =		general purpose parametric 3D CAD modeler
 
-V =			1.0.1
-PKGNAME =		${DISTNAME:L}
-REVISION =		1
+V =			1.0.2
+DISTNAME =		freecad_source
+PKGNAME =		freecad-${V}
 
-GH_ACCOUNT =		FreeCAD
-GH_PROJECT =		FreeCAD
-GH_TAGNAME =		${V}
-
-DIST_TUPLE +=		github Ondsel-Development OndselSolver \
-			09d6175a2ba69e7016fcecc4f384946a2f84f92d \
-			src/3rdParty/OndselSolver
-
-SHARED_LIBS +=		OndselSolver              0.0 # 0.0
+SHARED_LIBS +=		OndselSolver              1.0 # 0.0
 
 CATEGORIES =		cad
 HOMEPAGE =		https://www.freecad.org/
@@ -50,11 +42,17 @@ WANTLIB += vtkRenderingCore vtkRenderingFreeType vtkRenderingHyperTreeGrid
 WANTLIB += vtkRenderingOpenGL2 vtkRenderingUI vtkglad vtkkissfft
 WANTLIB += vtksys vtktoken xerces-c yaml-cpp z
 
+SITES =			https://github.com/FreeCAD/FreeCAD/releases/download/${V}/
+
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt6
 
+# There are a few dependencies listed at configure time that are not required
+# by FreeCAD but that are picked up by the Find*.cmake modules of some of its
+# dependencies like vtk or pcl, e.g., flann, qhull, libusb1, utf8cpp, glslang,
+# shaderc or exprtk. Do not list these here.
 BUILD_DEPENDS =		cad/netgen-mesher \
 			devel/boost \
 			devel/gtest \
@@ -70,6 +68,8 @@ BUILD_DEPENDS =		cad/netgen-mesher \
 RUN_DEPENDS =		cad/netgen-mesher \
 			devel/desktop-file-utils \
 			devel/py-ply \
+			graphics/py-matplotlib \
+			graphics/py-pivy \
 			misc/shared-mime-info \
 			textproc/py-yaml \
 			x11/gtk+4,-guic
@@ -124,6 +124,7 @@ CONFIGURE_ARGS +=	-DFREECAD_USE_EXTERNAL_FMT=ON \
 			-DCMAKE_INSTALL_LIBDIR=${LOCALBASE}/lib/freecad/lib \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11 \
 			-DENABLE_DEVELOPER_TESTS=ON \
+			-DBUILD_SHARED_LIBS=ON \
 			-Wno-dev
 
 # Some tests require an active X11 display to work. When using
@@ -131,13 +132,14 @@ CONFIGURE_ARGS +=	-DFREECAD_USE_EXTERNAL_FMT=ON \
 # xhost +si:localuser:_pbuild; make test; xhost -si:localuser:_pbuild
 TEST_IS_INTERACTIVE =	X11
 
+WRKDIST =		${WRKDIR}
 PORTHOME =		${WRKDIR}
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Some tarballs bundle GSL and GTest, use GSL and GTest from ports:
-# post-extract:
-# 	rm -r ${WRKSRC}/src/3rdParty/GSL
-# 	rm -r ${WRKSRC}/tests/lib
+post-extract:
+	rm -r ${WRKSRC}/src/3rdParty/GSL
+	rm -r ${WRKSRC}/tests/lib
 
 # To generate src/Build/Version.h file:
 # 1. git clone --single-branch -b ${VERSION} https://github.com/FreeCAD/FreeCAD

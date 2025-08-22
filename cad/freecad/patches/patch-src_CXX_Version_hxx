@@ -1,0 +1,15 @@
+This patch has been merged upstream. Drop next update.
+Commit: 39ca75bac294a69504e1ea551e1615816e3aec06
+
+Index: src/CXX/Version.hxx
+--- src/CXX/Version.hxx.orig
++++ src/CXX/Version.hxx
+@@ -40,7 +40,7 @@
+ 
+ #define PYCXX_VERSION_MAJOR 7
+ #define PYCXX_VERSION_MINOR 1
+-#define PYCXX_VERSION_PATCH 9
++#define PYCXX_VERSION_PATCH 11
+ #define PYCXX_MAKEVERSION( major, minor, patch ) ((major<<16)|(minor<<8)|(patch))
+ #define PYCXX_VERSION PYCXX_MAKEVERSION( PYCXX_VERSION_MAJOR, PYCXX_VERSION_MINOR, PYCXX_VERSION_PATCH )
+ #endif
