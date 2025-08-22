@@ -2,6 +2,8 @@ WARNING: Calling get_html_theme_path is deprecated. If you are calling it to def
 [...]
 build finished with problems, 1 warning (with warnings treated as errors).
 
+https://github.com/OISF/suricata/pull/13742
+
 Index: doc/userguide/conf.py
 --- doc/userguide/conf.py.orig
 +++ doc/userguide/conf.py
