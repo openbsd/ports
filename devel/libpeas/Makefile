@@ -35,7 +35,7 @@ CONFIGURE_ARGS=		-Dglade_catalog=false\
 			-Dlua51=false \
 			-Dpython2=false
 
-# XXX
+# XXX unbreak at least audio/rhythmbox; should be fixed for GNOME 49.
 # https://gedit-text-editor.org/blog/2025-04-30-no-more-pythons-in-gedit.html
 # https://gitlab.gnome.org/GNOME/libpeas/-/issues/58
 CONFIGURE_ARGS +=	-Dpython3=false
