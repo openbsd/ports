@@ -1,6 +1,6 @@
 COMMENT =	reference implementation of JPEG-2000
 
-V =		4.2.4
+V =		4.2.8
 DISTNAME =	jasper-$V
 
 SHARED_LIBS =	jasper		6.1
@@ -8,6 +8,8 @@ SHARED_LIBS =	jasper		6.1
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.ece.uvic.ca/~frodo/jasper/
+
+MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
