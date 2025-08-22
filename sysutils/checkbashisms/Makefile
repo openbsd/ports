@@ -1,10 +1,10 @@
 COMMENT=		check shell scripts for bash-specific constructs
 
-V=			2.24.8
+V=			2.25.18
 DISTNAME=		devscripts_$V
 PKGNAME=		checkbashisms-$V
 EXTRACT_SUFX=		.tar.xz
-WRKDIST=		${WRKDIR}/devscripts
+WRKDIST=		${WRKDIR}/work/scripts
 CATEGORIES=		sysutils devel
 
 # GPLv2 only
@@ -17,8 +17,12 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/checkbashisms.pl \
+	sed -i "s/###VERSION###/${V}/g" ${WRKSRC}/checkbashisms.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/checkbashisms.pl \
 		${PREFIX}/bin/checkbashisms
-	${INSTALL_MAN} ${WRKSRC}/scripts/checkbashisms.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/checkbashisms.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
+	${INSTALL_DATA} ${WRKSRC}/checkbashisms.bash_completion \
+		${PREFIX}/share/bash-completion/completions/checkbashisms
 
 .include <bsd.port.mk>

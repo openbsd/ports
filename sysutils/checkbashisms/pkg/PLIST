@@ -1,2 +1,5 @@
 bin/checkbashisms
 @man man/man1/checkbashisms.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/checkbashisms
