@@ -1,6 +1,8 @@
 COMMENT=		GTK+-based electronic waveform viewer
 
-DISTNAME=		gtkwave-3.3.124
+V=			3.3.125
+DISTNAME=		gtkwave-gtk3-${V}
+PKGNAME=		gtkwave-${V}
 
 CATEGORIES=		cad
 
@@ -9,15 +11,17 @@ HOMEPAGE=		https://gtkwave.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z harfbuzz
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 bz2 c cairo cairo-gobject
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB += harfbuzz intl lzma m pango-1.0 pangocairo-1.0 z
 
 SITES=			${SITE_SOURCEFORGE:=gtkwave/}
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+MODULES =		devel/dconf
+
+USE_GMAKE =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -29,12 +33,13 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \
-			x11/gtk+2
+			x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-tcl \
 			--disable-mime-update \
-			--enable-fatlines
+			--enable-gtk3 \
+			--with-gsettings
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
