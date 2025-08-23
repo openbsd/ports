@@ -2782,7 +2782,8 @@ SHA256 (go_modules/golang.org/x/mod/@v/v0.21.0.mod) = 6+gZF0QRVCmfcyuKoJ8plSl1Lf
 SHA256 (go_modules/golang.org/x/mod/@v/v0.22.0.mod) = 6+gZF0QRVCmfcyuKoJ8plSl1LfKYVcpNcCaUbRu+zYI=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.24.0.mod) = H7itL3IBzXm/F4V4s1qurRcgyrK4z+o1uZsltgg58e8=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.26.0.mod) = QpxlEX6ybvSrHUEesRiC2d811HfNrv5yk5r5B2GqviU=
-SHA256 (go_modules/golang.org/x/mod/@v/v0.26.0.zip) = VZrgSxEuMECG3wMAzwvufOIUl8NsCIxGHWiJG1WQVgU=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.27.0.mod) = sg1sH0tGdC5q+CgycWA0aus+YiqxeArVG4Dh1nrf6Vs=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.27.0.zip) = GfskHUbkOX0xk7X6iZ4qnWK7XRxB9z0J0pwXw8DTlTw=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
@@ -3071,8 +3072,8 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/
 SHA256 (go_modules/golang.org/x/sys/@v/v0.7.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.8.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/telemetry/@v/v0.0.0-20240228155512-f48c80bd79b2.mod) = gEMD+LHDAkNrxEjGUXzz8yIWYR8cf/1ytS3yppVlpcY=
-SHA256 (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250710130107-8d8967aff50b.mod) = /7O34IE+U0hDqs/WSSXx4ObPsrcBqTAenREj3FlrGSw=
-SHA256 (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250710130107-8d8967aff50b.zip) = Bexw2+bvRsiB99fr5w/2HZ6ZjStLvb5v+WiHDvhsZ7k=
+SHA256 (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250807160809-1a19826ec488.mod) = Ci9SD6xtoaHTXG/naxqqOapMW3BKO5HI+UI9qvS3tg4=
+SHA256 (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250807160809-1a19826ec488.zip) = mCnAYXPvN9lwtHh55n2h0xyL82tuKc6oc4FbB5i7q3Q=
 SHA256 (go_modules/golang.org/x/term/@v/v0.0.0-20201117132131-f5c789dd3221.mod) = vpXkWnk4YOYeYLXUNzlG1zsl1uHULkRVqKze9sZl74Q=
 SHA256 (go_modules/golang.org/x/term/@v/v0.0.0-20201126162022-7de9c90e9dd1.mod) = TLqxT3cGdxsnHZlaGzzBMf5aJGqtx+5tG6bwvYlHgfo=
 SHA256 (go_modules/golang.org/x/term/@v/v0.0.0-20201210144234-2321bbc49cbf.mod) = TLqxT3cGdxsnHZlaGzzBMf5aJGqtx+5tG6bwvYlHgfo=
@@ -3218,9 +3219,9 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.26.0.mod) = L/wCTGvxTRRqy+FH+5gQTfO8
 SHA256 (go_modules/golang.org/x/tools/@v/v0.29.0.mod) = K+5LRycZnysT9qo47JLo07sPTn1QokPHYwRrwFlBsTc=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.3.0.mod) = vggr0axg3OieFugmUvAtEjYQnJXz/XbBZbUA2X6jmE4=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = QoVxoQqrdYamfaLJN16K5IDe+NL6Ed6Mb/8oppa5WR8=
-SHA256 (go_modules/golang.org/x/tools/@v/v0.34.0.mod) = W+aW+I+6h3adORL4evboAIWOhbpLOwtZmHCSZJIRSp4=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.35.0.mod) = MQSDbVyS8EbmQUnd0cQt8jeFX4plIKvZylN05VTtmdk=
-SHA256 (go_modules/golang.org/x/tools/@v/v0.35.0.zip) = bSOR2KmonlTHnN6vXndt/AeYOMkMOsSel/2RzyBgbpo=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.36.0.mod) = U3kuYjgn70C+jxrzbc8SeQ6CeAs9M7SwlE9Wo1hLxCk=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.36.0.zip) = hbSGAw6ZXNW01W3qkvJHsyv04K4v5oFrKdRRS1pD/sg=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = gw7Xjc0+mSfEEuJkEjAwhEd0nVE9MQJNJ24kQ7IBZgk=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.7.0.mod) = GBm3/A4aYzy5dbL3Tz4Rpkmy2tFdU8GAc+tJtodjVIU=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
@@ -3746,7 +3747,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.85.1.zip) = /SpnOTmq9t5ybc8w2kLqVXE9tZKW2HRtMM7LgNDpYbk=
+SHA256 (terragrunt-v0.86.0.zip) = zqkeTSQ1NU9TclbjJgo+1+44Sb95WnV4aUT2xmcz208=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -6531,7 +6532,8 @@ SIZE (go_modules/golang.org/x/mod/@v/v0.21.0.mod) = 86
 SIZE (go_modules/golang.org/x/mod/@v/v0.22.0.mod) = 86
 SIZE (go_modules/golang.org/x/mod/@v/v0.24.0.mod) = 86
 SIZE (go_modules/golang.org/x/mod/@v/v0.26.0.mod) = 86
-SIZE (go_modules/golang.org/x/mod/@v/v0.26.0.zip) = 172649
+SIZE (go_modules/golang.org/x/mod/@v/v0.27.0.mod) = 86
+SIZE (go_modules/golang.org/x/mod/@v/v0.27.0.zip) = 172649
 SIZE (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = 214
@@ -6820,8 +6822,8 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.7.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.8.0.mod) = 33
 SIZE (go_modules/golang.org/x/telemetry/@v/v0.0.0-20240228155512-f48c80bd79b2.mod) = 138
-SIZE (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250710130107-8d8967aff50b.mod) = 133
-SIZE (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250710130107-8d8967aff50b.zip) = 1016488
+SIZE (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250807160809-1a19826ec488.mod) = 133
+SIZE (go_modules/golang.org/x/telemetry/@v/v0.0.0-20250807160809-1a19826ec488.zip) = 1016709
 SIZE (go_modules/golang.org/x/term/@v/v0.0.0-20201117132131-f5c789dd3221.mod) = 95
 SIZE (go_modules/golang.org/x/term/@v/v0.0.0-20201126162022-7de9c90e9dd1.mod) = 95
 SIZE (go_modules/golang.org/x/term/@v/v0.0.0-20201210144234-2321bbc49cbf.mod) = 95
@@ -6967,9 +6969,9 @@ SIZE (go_modules/golang.org/x/tools/@v/v0.26.0.mod) = 341
 SIZE (go_modules/golang.org/x/tools/@v/v0.29.0.mod) = 342
 SIZE (go_modules/golang.org/x/tools/@v/v0.3.0.mod) = 211
 SIZE (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = 301
-SIZE (go_modules/golang.org/x/tools/@v/v0.34.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.35.0.mod) = 301
-SIZE (go_modules/golang.org/x/tools/@v/v0.35.0.zip) = 3549815
+SIZE (go_modules/golang.org/x/tools/@v/v0.36.0.mod) = 301
+SIZE (go_modules/golang.org/x/tools/@v/v0.36.0.zip) = 3553586
 SIZE (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = 211
 SIZE (go_modules/golang.org/x/tools/@v/v0.7.0.mod) = 211
 SIZE (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = 37
@@ -7495,4 +7497,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.85.1.zip) = 6791284
+SIZE (terragrunt-v0.86.0.zip) = 6792074
