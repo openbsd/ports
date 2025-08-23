@@ -21,4 +21,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/resultset.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/value.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/version_info.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
