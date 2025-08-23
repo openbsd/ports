@@ -3,7 +3,7 @@ BROKEN-i386 =	ld: error: [...] is incompatible with /usr/lib/crtbeginS.o
 
 COMMENT =	VAAPI driver for Intel HD 5000 (Gen8) or newer
 
-VERSION =	24.4.4
+VERSION =	25.2.6
 GH_ACCOUNT =	intel
 GH_PROJECT =	media-driver
 GH_TAGNAME =	intel-media-${VERSION}
@@ -25,7 +25,7 @@ MODULES =	devel/cmake
 
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	graphics/intel-gmmlib>=22.5.2
+LIB_DEPENDS =	graphics/intel-gmmlib>=22.8
 
 # XXX Unbundle googletest
 CONFIGURE_ARGS =	-DMEDIA_RUN_TEST_SUITE=ON
