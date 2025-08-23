@@ -2,14 +2,14 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	Intel Graphics Memory Management Library
 
-VERSION =	22.5.5
+VERSION =	22.8.1
 GH_ACCOUNT =	intel
 GH_PROJECT =	gmmlib
 GH_TAGNAME =	intel-gmmlib-${VERSION}
 
 DISTNAME =	${GH_TAGNAME}
 
-SHARED_LIBS +=  igdgmm                    0.0 # 0.0
+SHARED_LIBS +=  igdgmm                    0.1 # 0.0
 
 HOMEPAGE =	https://01.org/intel-media-for-linux
 
