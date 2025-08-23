@@ -356,6 +356,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/endpoint
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/2025-08-18/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/2025-08-18/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/2025-08-18/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/2025-08-18/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-dashboards/2025-08-18/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-data-exports/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-data-exports/2023-11-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bcm-data-exports/2023-11-26/endpoint-rule-set-1.json
