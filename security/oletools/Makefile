@@ -3,6 +3,7 @@ COMMENT =	python tools to analyze OLE files
 MODPY_DISTV =	0.60.2
 DISTNAME =	oletools-${MODPY_DISTV}
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -17,8 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =	setuptools
 
 # XXX: if easygui is imported, can uncomment olebrowse
 #      and ezhexviewer in PLIST
