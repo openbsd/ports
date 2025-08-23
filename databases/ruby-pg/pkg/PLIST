@@ -1,18 +1,16 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/BSDL
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Contributors.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/History.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/POSTGRES
 ${GEM_LIB}/gems/${DISTNAME}/README-OS_X.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README-Windows.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.ja.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/Rakefile.cross
 ${GEM_LIB}/gems/${DISTNAME}/certs/
 ${GEM_LIB}/gems/${DISTNAME}/certs/ged.pem
 ${GEM_LIB}/gems/${DISTNAME}/certs/kanis@comcard.de.pem
@@ -31,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/binary_decoder/date.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/binary_decoder/timestamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/binary_encoder/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/binary_encoder/timestamp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/cancel_connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/coder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
@@ -71,6 +70,7 @@ ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/lib/ruby/
 ${GEM_LIB}/gems/${DISTNAME}/misc/ruby-pg/lib/ruby/pg.rb
 ${GEM_LIB}/gems/${DISTNAME}/pg.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/
+${GEM_LIB}/gems/${DISTNAME}/rakelib/pg_gem_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/task_extension.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/
 ${GEM_LIB}/gems/${DISTNAME}/sample/array_insert.rb

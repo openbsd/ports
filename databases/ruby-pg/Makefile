@@ -1,6 +1,6 @@
 COMMENT =	PostgreSQL database interface for ruby
 
-DISTNAME =	pg-1.5.9
+DISTNAME =	pg-1.6.1
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
