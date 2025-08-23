@@ -84,7 +84,6 @@ include/SDL3/SDL_tray.h
 include/SDL3/SDL_version.h
 include/SDL3/SDL_video.h
 include/SDL3/SDL_vulkan.h
-lib/cmake/
 lib/cmake/SDL3/
 lib/cmake/SDL3/SDL3Config.cmake
 lib/cmake/SDL3/SDL3ConfigVersion.cmake

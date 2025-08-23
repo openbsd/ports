@@ -1,11 +1,10 @@
 COMMENT =		cross-platform multimedia library
 
-V =			3.2.18
+V =			3.2.20
 DISTNAME =		SDL3-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
 
-SHARED_LIBS +=  SDL3                      0.0 # 3.2.18
+SHARED_LIBS +=		SDL3                      0.0 # 3.2.18
 
 CATEGORIES =		devel
 HOMEPAGE =		https://libsdl.org/
