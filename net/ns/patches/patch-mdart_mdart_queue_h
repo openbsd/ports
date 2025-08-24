@@ -10,3 +10,25 @@ Index: mdart/mdart_queue.h
  
  
  
+@@ -56,10 +56,11 @@
+ //------------------------------------------------------------------------------
+ // Queue container
+ //------------------------------------------------------------------------------
+-typedef std::vector<Packet*> queue;
++typedef std::vector<Packet*> packet_queue;
+ 
+ 
+ 
++
+ //------------------------------------------------------------------------------
+ // Queue timer
+ //------------------------------------------------------------------------------
+@@ -113,7 +114,7 @@ class MDARTQueue : public Connector {
+ 		void		clear();
+ 		// Queue private functions
+ 		MDARTQueueTimer*	timer_;
+-		queue*		queue_;
++		packet_queue*		queue_;
+ //		Packet*		removeHead();
+ //		void			find(nsaddr_t dst, Packet*& p, Packet*& prev);
+ //		bool			findExpired(Packet*& p, Packet*& prev);

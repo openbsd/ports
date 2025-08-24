@@ -1,0 +1,93 @@
+Index: mdart/mdart_queue.cc
+--- mdart/mdart_queue.cc.orig
++++ mdart/mdart_queue.cc
+@@ -72,7 +72,7 @@ void MDARTQueueTimer::handle(Event*) {
+ // Queue
+ //------------------------------------------------------------------------------
+ MDARTQueue::MDARTQueue() {
+-	queue_ = new queue;
++	queue_ = new packet_queue;
+ 	timer_ = new MDARTQueueTimer(this); 
+ /*	head_		= tail_ = 0;
+ 	len_		= 0;
+@@ -114,7 +114,7 @@ Packet* MDARTQueue::deque() {
+ #ifdef DEBUG_QUEUE
+ 		fprintf(stdout, "%.9f\tMDARTQueue::deque()\n", CURRENT_TIME);
+ #endif
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	if (entry_ != queue_->end()) {
+ #ifdef DEBUG_QUEUE
+ 		fprintf(stdout, "\tfind\tdst=%d\n", HDR_IP(*entry_)->daddr());
+@@ -130,7 +130,7 @@ Packet* MDARTQueue::deque(nsaddr_t dst) {
+ #ifdef DEBUG_QUEUE
+ //			fprintf(stdout, "%.9f\tMDARTQueue::deque(%d)\n", CURRENT_TIME, dst);
+ #endif
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	while (entry_ != queue_->end()) {
+ #ifdef DEBUG_QUEUE
+ 		fprintf(stdout, "\t\tqueue packet to %d\n", dst);
+@@ -185,7 +185,7 @@ bool MDARTQueue::expired() {
+ #ifdef DEBUG_QUEUE
+ 	fprintf(stdout, "%.9f\tMDARTQueue::expired()\n",CURRENT_TIME);
+ #endif
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	while (entry_ != queue_->end()) {
+ 		if (HDR_CMN(*entry_)->ts_ <= CURRENT_TIME - MDART_QUEUE_TIMEOUT + MDART_DARQ_TIMEOUT) {
+ 			return true;
+@@ -200,12 +200,12 @@ void MDARTQueue::purge() {
+ 	fprintf(stdout, "%.9f\tMDARTQueue::purge()\n",CURRENT_TIME);
+ 	printQueue();
+ #endif
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	while (entry_ != queue_->end()) {
+ #ifdef DEBUG_QUEUE
+ 		fprintf(stdout, "\tchecking for %d\n", HDR_IP(*entry_)->daddr());
+ #endif
+-		queue::iterator nextEntry_ = entry_;
++		packet_queue::iterator nextEntry_ = entry_;
+ 		nextEntry_++;
+ 		if (HDR_CMN(*entry_)->ts_ <= CURRENT_TIME) {
+ #ifdef DEBUG_QUEUE
+@@ -230,7 +230,7 @@ void MDARTQueue::purge() {
+ //------------------------------------------------------------------------------
+ void MDARTQueue::printNumPacket(nsaddr_t dst){
+ 	int num = 0;
+-	queue::iterator entry_;
++	packet_queue::iterator entry_;
+ 	for(entry_ = queue_->begin(); entry_ != queue_->end(); entry_++) {
+ 		if (HDR_IP(*entry_)->daddr() == dst) {
+ 			num++;
+@@ -240,7 +240,7 @@ void MDARTQueue::printNumPacket(nsaddr_t dst){
+ }
+ 
+ void MDARTQueue::printQueue() {
+-	queue::iterator entry_;
++	packet_queue::iterator entry_;
+ 	fprintf(stdout, "\tMDARTQueue::printQueue()\n");
+ //	fprintf(stdout, "%.9f\tMDARTQueue::printQueue()\n", CURRENT_TIME);
+ 	for(entry_ = queue_->begin(); entry_ != queue_->end(); ++entry_) {
+@@ -258,7 +258,7 @@ void MDARTQueue::removeHead() {
+ 	fprintf(stdout, "%.9f\tMDARTQueue::removeHead()\n", CURRENT_TIME);
+ 	printQueue();
+ #endif
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	if (entry_ != queue_->end()) {
+ 		if(HDR_CMN(*entry_)->ts_ <= CURRENT_TIME) {
+ #ifdef DEBUG_QUEUE
+@@ -280,9 +280,9 @@ void MDARTQueue::removeHead() {
+ }
+ 
+ void MDARTQueue::clear() {
+-	queue::iterator entry_ = queue_->begin();
++	packet_queue::iterator entry_ = queue_->begin();
+ 	while (entry_ != queue_->end()) {
+-		queue::iterator nextEntry_ = entry_;
++		packet_queue::iterator nextEntry_ = entry_;
+ 		nextEntry_++;
+ 		queue_->erase(entry_);
+ 		delete (*entry_);

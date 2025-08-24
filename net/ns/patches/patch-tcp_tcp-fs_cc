@@ -1,0 +1,30 @@
+Index: tcp/tcp-fs.cc
+--- tcp/tcp-fs.cc.orig
++++ tcp/tcp-fs.cc
+@@ -65,7 +65,7 @@ TcpFsAgent::output_helper(Packet *pkt)
+ 	double now = Scheduler::instance().clock();
+ 	double idle_time = now - last_recv_time_;
+ 	double timeout = ((t_srtt_ >> 3) + t_rttvar_) * tcp_tick_ ;
+-	maxseq_ = max(maxseq_, highest_ack_);
++	maxseq_ = max((int)maxseq_, (int)highest_ack_);
+ 
+ 	/* 
+ 	 * if the connection has been idle (with no outstanding data) for long 
+@@ -172,7 +172,7 @@ TcpFsAgent::recv_newack_helper(Packet *pkt) 
+ 	else
+ 		ackcount = 1;
+ 	newack(pkt);
+-	maxseq_ = max(maxseq_, highest_ack_);
++	maxseq_ = max((int)maxseq_, (int)highest_ack_);
+ 	if (t_exact_srtt_ != 0) {
+ 		delta = tao - t_exact_srtt_;
+ 		if (delta < 0)
+@@ -208,7 +208,7 @@ NewRenoTcpFsAgent::partialnewack_helper(Packet* pkt)
+ {
+ 	partialnewack(pkt);
+ 	/* Do this because we may have retracted maxseq_ */
+-	maxseq_ = max(maxseq_, highest_ack_);
++	maxseq_ = max((int)maxseq_, (int)highest_ack_);
+ 	if (fs_mode_ && fast_loss_recov_) {
+ 		/* 
+ 		 * A partial new ack implies that more than one packet has been lost
