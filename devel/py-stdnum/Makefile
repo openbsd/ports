@@ -1,10 +1,10 @@
 COMMENT=		parse, validate and reformat standard numbers and codes
 
-MODPY_DISTV=	1.20
+MODPY_DISTV=		1.20
 DISTNAME=		python-stdnum-${MODPY_DISTV}
 PKGNAME=		py-stdnum-${MODPY_DISTV}
 CATEGORIES=		devel
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 
@@ -18,10 +18,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-TEST_DEPENDS=		devel/py-nose
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MODPY_BIN} \
-		${LOCALBASE}/bin/nosetests --cover-min-percentage=0 tests
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>
