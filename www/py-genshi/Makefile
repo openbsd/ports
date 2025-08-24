@@ -3,7 +3,7 @@ COMMENT=	toolkit for generation of output for the web
 MODPY_DISTV=	0.7.9
 DISTNAME=	Genshi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 
@@ -23,6 +23,8 @@ MODPY_PI=	Yes
 MODPY_PYTEST_ARGS=	genshi/
 
 CONFIGURE_ENV=	GENSHI_BUILD_SPEEDUP=1
+
+RUN_DEPENDS =	devel/py-six
 
 post-install:
 	cp -r ${WRKSRC}/doc ${PREFIX}/share/doc/py-genshi
