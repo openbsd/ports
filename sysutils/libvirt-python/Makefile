@@ -3,6 +3,7 @@ COMMENT =		libvirt virtualization API python bindings
 MODPY_DISTV =		11.6.0
 DISTNAME =		libvirt-python-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -23,8 +24,6 @@ MODPY_PYBUILD =		setuptools
 
 LIB_DEPENDS =		sysutils/libvirt
 
-TEST_DEPENDS =		devel/py-nose \
-			textproc/py-lxml \
-			${BASE_PKGPATH}=${MODPY_DISTV}
+TEST_DEPENDS =		textproc/py-lxml
 
 .include <bsd.port.mk>
