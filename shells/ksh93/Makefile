@@ -1,11 +1,14 @@
-COMMENT =		AT&T Korn Shell
+COMMENT-main =		AT&T Korn Shell
+COMMENT-libshell =	AT&T Korn Shell, dynamic libraries
 
 V =			1.0.10
 GH_ACCOUNT =		ksh93
 GH_PROJECT =		ksh
 GH_TAGNAME =		v${V}
-PKGNAME =		ksh93-$V
-EPOCH =			0
+PKGNAME-main =		ksh93-$V
+PKGNAME-libshell =	libshell-$V
+EPOCH-main =		0
+REVISION-main =		0
 
 SO_VERSION =		0.0
 
@@ -15,6 +18,8 @@ SHARED_LIBS +=  dll                       ${SO_VERSION} # 0.0
 SHARED_LIBS +=  shell                     ${SO_VERSION} # 0.0
 
 CATEGORIES =		shells
+
+MULTI_PACKAGES =	-main -libshell
 
 HOMEPAGE =		https://github.com/ksh93/ksh
 
@@ -40,7 +45,7 @@ do-build:
 		HOSTTYPE="${HOSTTYPE}"
 
 do-install:
-	${INSTALL_PROGRAM} ${AST_ARCH}/dyn/bin/ksh ${PREFIX}/bin/ksh93
+	${INSTALL_PROGRAM} ${AST_ARCH}/bin/ksh ${PREFIX}/bin/ksh93
 	cd ${PREFIX}/bin && ln ksh93 rksh93
 	${INSTALL_DATA} ${AST_ARCH}/lib/lib{ast,cmd,dll,shell}.a \
 		${PREFIX}/lib

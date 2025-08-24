@@ -1,0 +1,13 @@
+@pkgpath shells/ksh93
+@shell bin/ksh93
+@shell bin/rksh93
+@man man/man1/ksh93.1
+@man man/man1/rksh93.1
+share/examples/ksh93/
+share/examples/ksh93/autocd
+share/examples/ksh93/cd
+share/examples/ksh93/dirs
+share/examples/ksh93/man
+share/examples/ksh93/mcd
+share/examples/ksh93/popd
+share/examples/ksh93/pushd

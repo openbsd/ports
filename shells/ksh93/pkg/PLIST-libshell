@@ -1,6 +1,4 @@
 @conflict libast-*
-@shell bin/ksh93
-@shell bin/rksh93
 include/ast/
 include/ast/align.h
 include/ast/aso.h
@@ -109,14 +107,4 @@ include/ast/wordexp.h
 @lib lib/libdll.so.${LIBdll_VERSION}
 @static-lib lib/libshell.a
 @lib lib/libshell.so.${LIBshell_VERSION}
-@man man/man1/ksh93.1
-@man man/man1/rksh93.1
 @man man/man3/shell.3
-share/examples/ksh93/
-share/examples/ksh93/autocd
-share/examples/ksh93/cd
-share/examples/ksh93/dirs
-share/examples/ksh93/man
-share/examples/ksh93/mcd
-share/examples/ksh93/popd
-share/examples/ksh93/pushd
