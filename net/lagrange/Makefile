@@ -1,5 +1,5 @@
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.18.5
+VERSION =	1.18.8
 
 DISTNAME =	lagrange-${VERSION}
 
