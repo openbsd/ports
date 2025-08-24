@@ -1,0 +1,14 @@
+Fix build with libc++ 19, don't impede _BSD_VISIBLE by defining
+_POSIX_C_SOURCE
+
+Index: etc/cmake/compilers.cmake
+--- etc/cmake/compilers.cmake.orig
++++ etc/cmake/compilers.cmake
+@@ -6,7 +6,6 @@ include(CheckCCompilerFlag)
+ # See:
+ #  - https://pubs.opengroup.org/onlinepubs/007904875/functions/xsh_chap02_02.html
+ #  - https://www.gnu.org/software/libc/manual/html_node/Feature-Test-Macros.html
+-add_compile_definitions(_POSIX_C_SOURCE=200809L)
+ 
+ if(MSVC)
+   add_compile_options(/FS)

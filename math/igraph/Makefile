@@ -3,9 +3,9 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT = 	C graph library
 V =		0.10.15
 DISTNAME =	igraph-$V
-REVISION =	1
+REVISION =	2
 
-SHARED_LIBS =	igraph 5.0	# 0.0
+SHARED_LIBS =	igraph 5.0	# 1.0
 
 CATEGORIES =	math
 
