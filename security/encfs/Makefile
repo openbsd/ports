@@ -2,7 +2,7 @@ COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		security
 
@@ -17,22 +17,22 @@ SITES =			https://github.com/vgough/encfs/releases/download/v$V/
 
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/cmake \
-			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-MODPY_RUNDEP =		No
+MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/tinyxml2
 
 CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML=Off \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
+			-DCMAKE_DISABLE_FIND_PACKAGE_Git=On \
+			-DBUILD_UNIT_TESTS=Off
 
 CXXFLAGS+=		-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE
 
-TEST_TARGET =		unittests test/test
+
+# XXX: Python2
+# TEST_TARGET =		unittests test/test
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
 
