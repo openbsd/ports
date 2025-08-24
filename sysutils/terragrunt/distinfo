@@ -1602,6 +1602,8 @@ SHA256 (go_modules/github.com/go-test/deep/@v/v1.1.1.mod) = G6OmEM9AmuDGOeNnXH5H
 SHA256 (go_modules/github.com/go-test/deep/@v/v1.1.1.zip) = UoRLHMiz5OVhO++A8PiLAtc+2zxrJNWPFKIMdthsstw=
 SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.mod) = U5P+Nk8aIAxqhO4se/cn8CyeCx+ETKE7GIypJfRxiwg=
 SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.zip) = u8ChoWM8DpAklQpZXk4F4Or/Ak3gb7gxindk8FZgB90=
+SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = tcaxcq3Bh4zY5pC6kSOwpldTuss42H5taDrKE21DVXg=
+SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = DP5IbNY9Re1MtYY/8cvRSxXkuTgNy/gP8mmRtASfT98=
 SHA256 (go_modules/github.com/goccy/go-json/@v/v0.9.11.mod) = Nsw9yOaK2D89UE+PauTcD8ynhFM/oKlPvnpGKdqwu2w=
 SHA256 (go_modules/github.com/goccy/go-json/@v/v0.9.11.zip) = AYlw8KDXM3vSplg/G2i8yfn0gw3xTKHM8fICD/+bOts=
 SHA256 (go_modules/github.com/gofrs/flock/@v/v0.12.1.mod) = TCqWHuxAwco1qdGtidj/3UqFXE9LQrwttvj7W8OkzME=
@@ -3747,7 +3749,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.86.0.zip) = zqkeTSQ1NU9TclbjJgo+1+44Sb95WnV4aUT2xmcz208=
+SHA256 (terragrunt-v0.86.1.zip) = N9PIg9y/Ao0upXxQ1rpQhcCLscprq3ZhrpbcTUZxl0c=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -5352,6 +5354,8 @@ SIZE (go_modules/github.com/go-test/deep/@v/v1.1.1.mod) = 40
 SIZE (go_modules/github.com/go-test/deep/@v/v1.1.1.zip) = 17400
 SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.mod) = 52
 SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.2.1.zip) = 49964
+SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = 30
+SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = 50402
 SIZE (go_modules/github.com/goccy/go-json/@v/v0.9.11.mod) = 41
 SIZE (go_modules/github.com/goccy/go-json/@v/v0.9.11.zip) = 296784
 SIZE (go_modules/github.com/gofrs/flock/@v/v0.12.1.mod) = 370
@@ -7497,4 +7501,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.86.0.zip) = 6792074
+SIZE (terragrunt-v0.86.1.zip) = 6794832

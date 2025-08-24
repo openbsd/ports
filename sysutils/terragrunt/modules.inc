@@ -377,6 +377,7 @@ MODGO_MODULES =	\
 	github.com/go-stack/stack									 v1.8.0 \
 	github.com/go-test/deep										 v1.1.1 \
 	github.com/go-viper/mapstructure/v2								 v2.2.1 \
+	github.com/gobwas/glob										 v0.2.3 \
 	github.com/goccy/go-json									 v0.9.11 \
 	github.com/gofrs/flock										 v0.12.1 \
 	github.com/gofrs/uuid										 v3.3.0+incompatible \
