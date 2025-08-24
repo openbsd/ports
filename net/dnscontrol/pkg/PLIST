@@ -3,6 +3,7 @@ share/doc/dnscontrol/
 share/doc/dnscontrol/README.md
 share/doc/dnscontrol/index.md
 share/doc/dnscontrol/providers/
+share/doc/dnscontrol/providers/adguardhome.md
 share/doc/dnscontrol/providers/akamaiedgedns.md
 share/doc/dnscontrol/providers/autodns.md
 share/doc/dnscontrol/providers/axfrddns.md
@@ -23,6 +24,7 @@ share/doc/dnscontrol/providers/domainnameshop.md
 share/doc/dnscontrol/providers/dynadot.md
 share/doc/dnscontrol/providers/easyname.md
 share/doc/dnscontrol/providers/exoscale.md
+share/doc/dnscontrol/providers/fortigate.md
 share/doc/dnscontrol/providers/gandi_v5.md
 share/doc/dnscontrol/providers/gcloud.md
 share/doc/dnscontrol/providers/gcore.md
@@ -31,12 +33,13 @@ share/doc/dnscontrol/providers/hetzner.md
 share/doc/dnscontrol/providers/hexonet.md
 share/doc/dnscontrol/providers/hostingde.md
 share/doc/dnscontrol/providers/huaweicloud.md
+share/doc/dnscontrol/providers/index.md
 share/doc/dnscontrol/providers/internetbs.md
 share/doc/dnscontrol/providers/inwx.md
+share/doc/dnscontrol/providers/joker.md
 share/doc/dnscontrol/providers/linode.md
 share/doc/dnscontrol/providers/loopia.md
 share/doc/dnscontrol/providers/luadns.md
-share/doc/dnscontrol/providers/msdns.md
 share/doc/dnscontrol/providers/mythicbeasts.md
 share/doc/dnscontrol/providers/namecheap.md
 share/doc/dnscontrol/providers/namedotcom.md
