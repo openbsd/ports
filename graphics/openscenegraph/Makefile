@@ -68,7 +68,8 @@ LIB_DEPENDS =		devel/sdl \
 NO_TEST =		Yes
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_OpenCascade:Bool=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_DCMTK:Bool=Yes
+			-DCMAKE_DISABLE_FIND_PACKAGE_DCMTK:Bool=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Inventor:Bool=Yes
 
 # Fix build with OpenEXR>=3 (Imath split)
 CXXFLAGS +=		-I${LOCALBASE}/include/Imath
