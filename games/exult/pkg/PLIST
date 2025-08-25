@@ -3,13 +3,25 @@
 @bin bin/exult
 @bin bin/ipack
 @bin bin/mklink
+@bin bin/mockup
 @bin bin/rip
 @bin bin/shp2pcx
+@bin bin/smooth
 @bin bin/splitshp
 @bin bin/textpack
 @bin bin/u7voice2syx
 @bin bin/ucxt
 @bin bin/wuc
+lib/exult/
+@static-lib lib/exult/libsmooth_randomize.a
+lib/exult/libsmooth_randomize.la
+@so lib/exult/libsmooth_randomize.so
+@static-lib lib/exult/libsmooth_smooth.a
+lib/exult/libsmooth_smooth.la
+@so lib/exult/libsmooth_smooth.so
+@static-lib lib/exult/libsmooth_stream.a
+lib/exult/libsmooth_stream.la
+@so lib/exult/libsmooth_stream.so
 @man man/man1/expack.1
 @man man/man1/exult_studio.1
 @man man/man1/ipack.1
@@ -31,7 +43,13 @@ share/doc/exult/images/docs03.png
 share/doc/exult/images/docs04.png
 share/doc/exult/images/docs05.png
 share/doc/exult/images/docs06.png
+share/doc/exult/images/docs07.png
+share/doc/exult/images/docs08.png
+share/doc/exult/images/docs09.png
+share/doc/exult/images/docs10.png
+share/doc/exult/images/docs11.png
 share/doc/exult/images/exult_logo.gif
+share/doc/exult/images/exult_logo_nice.svg
 share/doc/exult/images/studio01.png
 share/doc/exult/images/studio02.png
 share/doc/exult/images/studio03.png
@@ -49,9 +67,6 @@ share/exult/
 share/exult/exult.flx
 share/exult/exult_bg.flx
 share/exult/exult_si.flx
-share/exult/icons/
-share/exult/icons/info.exult.exult.png
-share/exult/icons/info.exult.exult.svg
 share/exult/midisfx.flx
 share/exult/u7bgintrinsics.data
 share/exult/u7misc.data
@@ -59,3 +74,14 @@ share/exult/u7opcodes.data
 share/exult/u7sibetaintrinsics.data
 share/exult/u7siintrinsics.data
 @tag update-desktop-database
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/info.exult.exult.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/info.exult.exult.svg
+share/metainfo/
+share/metainfo/info.exult.exult.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
