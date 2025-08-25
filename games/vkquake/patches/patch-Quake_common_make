@@ -5,7 +5,9 @@ remove unsupported flags -fweb and -frename-registers
 Index: Quake/common.make
 --- Quake/common.make.orig
 +++ Quake/common.make
-@@ -1,16 +1,16 @@
+@@ -1,18 +1,18 @@
+ HOST_OS =$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
+ 
 -CC = gcc
 +CC = cc
  # HOST_CC is for bintoc which is run on the host OS, not
@@ -23,10 +25,10 @@ Index: Quake/common.make
  
 -CFLAGS += -MMD -Wall -Wno-trigraphs -Werror -std=gnu11
 +CFLAGS += -MMD -Wall -Wno-trigraphs -std=gnu11
- CFLAGS += -D_FILE_OFFSET_BITS=64 
- CFLAGS += $(CPUFLAGS)
- ifneq ($(DEBUG),0)
-@@ -19,10 +19,7 @@ CFLAGS += -g
+ ifneq ($(HOST_OS),darwin)
+ CFLAGS += -D_FILE_OFFSET_BITS=64
+ endif
+@@ -23,10 +23,7 @@ CFLAGS += -g
  DO_STRIP=
  else
  DFLAGS += -DNDEBUG
