@@ -1,12 +1,11 @@
 COMMENT =	turn-based, empire-building 4x strategy game
 
-V =		3.1-rc.2
+V =		3.1.0
 # libertinus version taken from cmake/FreecivInstall.cmake
 LIBERTINUS =	7.040
 
 DISTNAME =	Freeciv21-v${V}
 PKGNAME =	freeciv21-${V:S/-patch./pl/:S/-rc./rc/}
-REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/longturn/freeciv21
@@ -20,10 +19,9 @@ WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets SDL2 SDL2_mixer
 WANTLIB += c intl m readline sqlite3 z
 
 SITES =		https://github.com/longturn/freeciv21/releases/download/v${V}/
-EXTRACT_SUFX =	.zip
 
 SITES.font =	https://github.com/alerque/libertinus/releases/download/v${LIBERTINUS}/
-DISTFILES.font = Libertinus-${LIBERTINUS}${EXTRACT_SUFX}
+DISTFILES.font = Libertinus-${LIBERTINUS}.zip
 
 COMPILER =	base-clang ports-gcc
 
