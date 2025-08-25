@@ -553,6 +553,12 @@ include/mapnik/mapnik/xml_loader.hpp
 include/mapnik/mapnik/xml_node.hpp
 include/mapnik/mapnik/xml_tree.hpp
 include/mapnik/protozero/
+include/mapnik/protozero/basic_pbf_builder.hpp
+include/mapnik/protozero/basic_pbf_writer.hpp
+include/mapnik/protozero/buffer_fixed.hpp
+include/mapnik/protozero/buffer_string.hpp
+include/mapnik/protozero/buffer_tmpl.hpp
+include/mapnik/protozero/buffer_vector.hpp
 include/mapnik/protozero/byteswap.hpp
 include/mapnik/protozero/config.hpp
 include/mapnik/protozero/data_view.hpp
@@ -621,6 +627,7 @@ lib/mapnik/input/postgis.input
 lib/mapnik/input/raster.input
 lib/mapnik/input/shape.input
 lib/mapnik/input/sqlite.input
+lib/mapnik/input/tiles.input
 lib/mapnik/input/topojson.input
 lib/pkgconfig/libmapnik.pc
 lib/pkgconfig/libmapnikjson.pc
