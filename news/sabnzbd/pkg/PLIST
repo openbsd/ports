@@ -394,10 +394,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}encodin
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}get_addrinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}get_addrinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}getipaddress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}getipaddress.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}happyeyeballs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}happyeyeballs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}internetspeed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,8 +463,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/downloader.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/emailer.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/encoding.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/filesystem.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/get_addrinfo.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/getipaddress.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/happyeyeballs.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/interface.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/internetspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/lang.py

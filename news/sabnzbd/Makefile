@@ -1,6 +1,6 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			4.5.2
+VERSION =			4.5.3
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -42,7 +42,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				net/py-apprise \
 				net/py-portend \
 				net/py-socks \
-				news/py-sabctools>=8.2.5v0 \
+				news/py-sabctools>=8.2.6v0 \
 				security/py-cryptography \
 				textproc/py-chardet \
 				textproc/py-feedparser \
