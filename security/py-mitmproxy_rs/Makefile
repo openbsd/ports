@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Rust components used in mitmproxy
 
-MODPY_DISTV =		0.12.3
+MODPY_DISTV =		0.12.7
 DISTNAME =		mitmproxy_rs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} m pthread
 
-DIST_TUPLE +=		github cloudflare boringtun e3252d9c4f4c8fc628995330f45369effd4660a1 boringtun
+DIST_TUPLE +=		github cloudflare boringtun 2f3c85f5c4a601018c10b464b1ca890d9504bf6e boringtun
 
 MODULES =		lang/python
 MODPY_PI =		Yes
