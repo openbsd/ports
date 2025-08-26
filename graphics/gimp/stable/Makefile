@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.38
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	5
+REVISION =	6
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -39,7 +39,7 @@ WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv deflate
 WANTLIB += INIReader inih jxl_cms Lerc
-WANTLIB += curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += openh264
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

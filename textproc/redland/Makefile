@@ -9,8 +9,11 @@ DISTNAME=		redland-$V
 PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
+REVISION-main=		12
+REVISION-mysql=		12
+REVISION-pgsql=		12
 
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		textproc
 
@@ -25,7 +28,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto curl gcrypt gmp gpg-error iconv intl ltdl lzma m mpfr
 WANTLIB += nghttp2 pcre pthread raptor2 rasqal ssl uuid xml2 xslt yajl z
-WANTLIB += icudata icuuc nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += icudata icuuc nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c

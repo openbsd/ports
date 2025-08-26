@@ -8,7 +8,7 @@ DISTNAME=	nut-${V:C/-rc.*//}
 PKGNAME=	nut-${V:S/-rc/rc/}
 SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
-REVISION=	1
+REVISION=	2
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
@@ -31,7 +31,7 @@ COMPILER=	base-clang ports-gcc base-gcc
 COMMON +=	c crypto kvm pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb-1.0
 WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z \
-		nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+		nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB-snmp +=	${COMMON} m netsnmp ssl
 WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z

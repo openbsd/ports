@@ -6,6 +6,7 @@ CATEGORIES =	math devel
 V =		5.5.1
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
+REVISION =	0
 
 SHARED_LIBS +=  qalculate            9.0      # 26.3
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl curses ehistory ereadline
 WANTLIB += gmp iconv icudata icuuc intl lzma m mpfr nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls ssl xml2 z
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl ssl xml2 z
 
 COMPILER =	base-clang ports-gcc
 

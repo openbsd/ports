@@ -6,13 +6,13 @@ GH_PROJECT =		seafile
 GH_COMMIT =		5517d012bde196a7bab99a08db6580d52630862a
 DISTNAME =		seafile-daemon-9.0.6pl20240525
 EPOCH = 		0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		seafile 4.0
 
 WANTLIB += c crypto curl event_core event_extra event_pthreads
 WANTLIB += execinfo ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl jansson m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += iconv intl jansson m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += pcre2-8 pthread searpc sqlite3 ssl uuid websockets z
 WANTLIB += lib/inotify/inotify
 

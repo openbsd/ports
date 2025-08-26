@@ -1,5 +1,5 @@
 V =		0.24.0
-REVISION =	0
+REVISION =	1
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
 CATEGORIES =	graphics x11
@@ -18,7 +18,7 @@ WANTLIB += gegl-0.4 gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl jpeg json-glib-1.0
 WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png xcb xcb-render xcb-shm z
-WANTLIB += INIReader crypto curl inih nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += INIReader crypto curl inih nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += ssl
 
 SITES =		https://launchpad.net/dibuja/trunk/${V}/+download/

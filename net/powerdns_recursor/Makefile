@@ -4,6 +4,7 @@ V=			5.2.5
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB+=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} boost_atomic-mt
 WANTLIB+=		boost_context-mt boost_filesystem-mt boost_system-mt crypto
-WANTLIB+=		curl fstrm m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB+=		curl fstrm m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB+=		sodium ssl z
 
 SITES=			https://downloads.powerdns.com/releases/

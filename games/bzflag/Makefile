@@ -2,7 +2,7 @@ COMMENT=	graphical multiplayer 3D tank war game
 
 V=		2.4.22
 DISTNAME=	bzflag-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games x11
 SITES=		https://download.bzflag.org/bzflag/source/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE SDL2 SM X11 X11-xcb
 WANTLIB += Xau Xcursor Xdmcp Xext Xfixes Xi Xmu Xrandr Xrender
 WANTLIB += Xss Xt Xxf86vm c cares crypto curl curses drm expat
-WANTLIB += glapi m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += glapi m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += samplerate sndio ssl usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-randr xcb-shm xcb-sync xcb-xfixes xshmfence
 WANTLIB += z

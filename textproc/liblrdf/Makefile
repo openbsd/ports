@@ -2,7 +2,7 @@ COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		8
+REVISION =		9
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/swh/LRDF/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto curl iconv icudata icuuc lzma m nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls pthread raptor2 ssl xml2
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl pthread raptor2 ssl xml2
 WANTLIB += xslt yajl z
 
 SITES =			https://spacehopper.org/mirrors/

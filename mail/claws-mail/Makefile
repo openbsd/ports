@@ -4,7 +4,7 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 
 V=			4.3.1
-REVISION-main=		1
+REVISION-main=		2
 DISTNAME=		claws-mail-${V}
 
 CATEGORIES=		mail news
@@ -48,7 +48,7 @@ WANTLIB-main += bz2 c canberra canberra-gtk3 crypto curl db db_cxx
 WANTLIB-main += dbus-glib-1 enchant-2 etpan gmp gnutls gpg-error gpgme
 WANTLIB-main += gthread-2.0 gumbo hogweed ical icalss icalvcal icudata
 WANTLIB-main += icui18n icuuc idn2 ltdl lz4 lzma nettle nghttp2 nghttp3
-WANTLIB-main += ngtcp2 ngtcp2_crypto_quictls notify ogg p11-kit perl rsvg-2
+WANTLIB-main += ngtcp2 ngtcp2_crypto_libressl notify ogg p11-kit perl rsvg-2
 WANTLIB-main += sasl2 ssl startup-notification-1 tasn1 unistring
 WANTLIB-main += vorbis vorbisfile xcb-util xml2 zstd
 

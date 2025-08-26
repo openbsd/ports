@@ -1,5 +1,6 @@
 PHP_VERSION=	8.4.11
 AUTOCONF_VERSION= 2.72
+REVISION-curl=	0
 
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=

@@ -6,7 +6,7 @@ V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	math
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc base-gcc
 
 WANTLIB+=	${COMPILER_LIBCXX} blosc bz2 c crypto curl execinfo hdf5 hdf5_hl
-WANTLIB+=	iconv lz4 lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB+=	iconv lz4 lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB+=	pthread ssl snappy xml2 z zip zstd
 
 # curl is needed for DAP support

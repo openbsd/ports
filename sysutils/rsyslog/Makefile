@@ -13,7 +13,7 @@ PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -28,7 +28,7 @@ COMPILER_LANGS =	c
 WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl m nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
-WANTLIB-main +=		execinfo nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-main +=		execinfo nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
@@ -37,7 +37,7 @@ WANTLIB-normalize +=	estr fastjson lognorm pthread
 WANTLIB-pgsql +=	crypto m pq pthread ssl
 
 WANTLIB-elasticsearch +=	crypto curl m nghttp2 pthread ssl z
-WANTLIB-elasticsearch +=	nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-elasticsearch +=	nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 LIB_DEPENDS-main =	devel/libfastjson \
 			devel/libestr \

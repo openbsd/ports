@@ -6,6 +6,7 @@ COMMENT =		ncurses mpd client inspired by ncmpc
 GH_ACCOUNT =		ncmpcpp
 GH_PROJECT =		ncmpcpp
 GH_TAGNAME =		0.10.1
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -19,7 +20,7 @@ WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += curl curses ereadline icudata icui18n icuuc m mpdclient
 WANTLIB += nghttp2 ssl tag z boost_atomic-mt
-WANTLIB += iconv nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += iconv nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \

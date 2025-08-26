@@ -3,7 +3,7 @@ COMMENT =	console audio player
 DIST_TUPLE+=	gitlab tomaszg mocp fb0a63b564b40fa861204e2f804b696c6ee573da .
 PKGNAME =	moc-2.6alpha3
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
@@ -13,7 +13,7 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC X11 X11-xcb Xext Xfixes aom
 WANTLIB += avcodec avformat avutil bz2 c crypto curl curses dav1d
 WANTLIB += drm faad gsm iconv id3tag intl ltdl lzma m mad magic
 WANTLIB += modplug mp3lame mpcdec mpg123 nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls ogg opus popt samplerate sharpyuv
+WANTLIB += ngtcp2_crypto_libressl ogg opus popt samplerate sharpyuv
 WANTLIB += sndfile sndio speex ssl swresample tag tag_c theoradec
 WANTLIB += theoraenc va va-drm va-x11 vorbis vorbisenc vorbisfile
 WANTLIB += vpx wavpack webp webpmux x264 x265 xcb xcb-dri3 xml2

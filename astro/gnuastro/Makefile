@@ -3,7 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Lerc bz2 c cfitsio crypto curl git2
 WANTLIB += gsl gslcblas jpeg llhttp lzma m nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls pcre2-8 ssh2 ssl tiff wcs z zstd
+WANTLIB += ngtcp2_crypto_libressl pcre2-8 ssh2 ssl tiff wcs z zstd
 
 SITES =		${SITE_GNU:=gnuastro/}
 

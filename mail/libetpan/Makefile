@@ -3,7 +3,7 @@ COMMENT=	mail purpose library
 GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
 GH_TAGNAME=	1.9.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail devel
 
 SHARED_LIBS +=  etpan                18.2     # 24.0
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl z
-WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

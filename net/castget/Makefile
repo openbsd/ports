@@ -2,7 +2,7 @@ COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-2.0.1
 CATEGORIES=		net
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://castget.johndal.com/
 
@@ -16,7 +16,7 @@ MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls pcre2-8 pthread ssl xml2 z
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl pcre2-8 pthread ssl xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c

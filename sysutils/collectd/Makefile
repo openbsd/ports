@@ -30,8 +30,8 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION =		4
-REVISION-nut =		5
+REVISION =		5
+REVISION-nut =		6
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -118,7 +118,7 @@ LIB_DEPENDS +=	net/curl \
 		devel/libyajl
 
 WANTLIB += c crypto gpg-error kvm curl xml2 lzma m
-WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += pcap pthread ssl xml2 z statgrab gcrypt iconv intl
 WANTLIB += yajl
 

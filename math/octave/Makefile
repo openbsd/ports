@@ -4,7 +4,7 @@ VERSION =	10.1.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	octave		19.0
 SHARED_LIBS +=	octgui		13.0
@@ -32,7 +32,7 @@ WANTLIB += expat fftw3 fftw3_threads fftw3f fftw3f_threads fontconfig
 WANTLIB += freetype gl2ps glapi glib-2.0 glpk glut gmp graphite2
 WANTLIB += gthread-2.0 harfbuzz hdf5 iconv icudata icui18n icuuc
 WANTLIB += intl lapack lcms2 ltdl m mp3lame mpg123 nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls ogg opus pcre2-16
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl ogg opus pcre2-16
 WANTLIB += pcre2-8 png portaudio qhull_r qrupdate
 WANTLIB += sndfile sndio spqr ssl suitesparseconfig umfpack util
 WANTLIB += vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present

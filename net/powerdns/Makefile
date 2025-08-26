@@ -11,7 +11,7 @@ PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
-#REVISION-main=		0
+REVISION-main=		0
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
@@ -31,7 +31,7 @@ WANTLIB += crypto m pthread ssl ${COMPILER_LIBCXX}
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += boost_program_options-mt c curl nghttp2 sodium
 WANTLIB-main += sqlite3 yaml-cpp z
-WANTLIB-main += nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-main += nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 SITES=			https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>

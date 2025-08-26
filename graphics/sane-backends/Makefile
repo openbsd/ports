@@ -3,7 +3,7 @@ BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 COMMENT=		API for accessing scanners, backends
 
 V=			1.4.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		backends-${V}
 PKGNAME=		sane-${DISTNAME}
 
@@ -71,7 +71,7 @@ WANTLIB += X11 Xext Xrender avahi-client avahi-common cairo crypto
 WANTLIB += curl dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 intl lcms2 nghttp2 openjp2
 WANTLIB += pcre2-8 pixman-1 poppler poppler-glib ssl xcb xcb-render
-WANTLIB += xcb-shm Xau Xdmcp nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += xcb-shm Xau Xdmcp nghttp3 ngtcp2 ngtcp2_crypto_libressl
 .else
 CONFIGURE_ARGS +=	--without-avahi
 .endif

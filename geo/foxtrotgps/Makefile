@@ -1,7 +1,7 @@
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.2
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		geo x11
 
@@ -22,7 +22,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread sqlite3
 WANTLIB += ssl xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo jpeg
-WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 MODULES = 		devel/dconf \
 			lang/python \

@@ -3,6 +3,7 @@ COMMENT=		apache HTTP server
 V=			2.4.65
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
+REVISION=		0
 
 CATEGORIES=		www net
 
@@ -18,7 +19,7 @@ COMPILER_LANGS=		c
 
 WANTLIB += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
 WANTLIB += db expat iconv jansson lzma m nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls pcre2-8 pthread ssl
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl pcre2-8 pthread ssl
 WANTLIB += xml2 z
 
 SITES=			${SITE_APACHE:=httpd/}

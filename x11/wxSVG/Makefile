@@ -1,7 +1,7 @@
 COMMENT=		C++ library to create, manipulate and render SVG files
 
 DISTNAME=		wxsvg-1.5.25
-REVISION=		0
+REVISION=		1
 EPOCH=			0
 CATEGORIES=		x11 graphics
 SITES=			${SITE_SOURCEFORGE:=wxsvg/}
@@ -25,7 +25,7 @@ WANTLIB += execinfo exif expat ffi fontconfig freetype fribidi
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gsm gspell-1 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv icudata icuuc intl jpeg lzma m
-WANTLIB += mp3lame mspack nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += mp3lame mspack nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += notify ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-32 pcre2-8 pixman-1 png samplerate secret-1 sndio
 WANTLIB += speex ssl swresample swscale theoradec theoraenc tiff

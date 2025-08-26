@@ -6,6 +6,7 @@ V=		25.03
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
 WRKSRC=		${WRKDIR}/codeblocks_${V}
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -43,7 +44,7 @@ WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gspell-1 gthread-2.0 gtk-3 harfbuzz hunspell-1.7 iconv
 WANTLIB += icudata icuuc intl jpeg lzma Lerc m mspack nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls notify pango-1.0 pangocairo-1.0
+WANTLIB += ngtcp2 ngtcp2_crypto_libressl notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-32 pcre2-8 pixman-1 png samplerate
 WANTLIB += secret-1 sndio ssl tiff usbhid util wayland-client wayland-cursor
 WANTLIB += wayland-egl wx_baseu-3.2 wx_baseu_net-3.2

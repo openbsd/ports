@@ -1,7 +1,7 @@
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	27
+REVISION =	28
 
 SHARED_LIBS =	waei	0.0
 
@@ -21,7 +21,7 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m nghttp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread ssl xcb xcb-render xcb-shm z Xau Xdmcp
 WANTLIB += execinfo jpeg atspi dbus-1 epoll-shim nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls wayland-client wayland-cursor
+WANTLIB += ngtcp2_crypto_libressl wayland-client wayland-cursor
 WANTLIB += wayland-egl xkbcommon
 
 SITES =		${SITE_SOURCEFORGE:=gwaei/}

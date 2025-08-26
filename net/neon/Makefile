@@ -1,7 +1,7 @@
 COMMENT=		HTTP and WebDAV client library, with C interface
 
 DISTNAME=		neon-0.34.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  neon                 31.4     # 34.2
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://notroj.github.io/neon/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto curl duktape expat ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += gobject-2.0 iconv intl m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += pcre2-8 proxy pthread ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc

@@ -13,6 +13,7 @@ DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
+REVISION-main=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
@@ -72,7 +73,7 @@ BUILD_DEPENDS=	devel/cppunit \
 WANTLIB += ${COMPILER_LIBCXX} HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
 WANTLIB-main += ${WANTLIB} c cares crypto curl fmt icudata icuuc
-WANTLIB-main += lber ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-main += lber ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
 # Do not substitute MODULE_NAME

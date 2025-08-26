@@ -6,6 +6,7 @@ COMMENT=	fast FTP and SFTP GUI client with a lot of features
 V=		3.69.3
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
+REVISION=	0
 
 SHARED_LIBS+=	fzclient-commonui-private	5.2
 SHARED_LIBS+=	fzclient-private		11.0
@@ -28,7 +29,7 @@ WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
 WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv icudata icuuc idn idn2 intl jpeg lzma m mspack
-WANTLIB += nettle nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += nettle nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-32 pcre2-8 pixman-1 png pugixml samplerate secret-1
 WANTLIB += sndio sqlite3 ssl tasn1 tiff unistring usbhid wayland-client

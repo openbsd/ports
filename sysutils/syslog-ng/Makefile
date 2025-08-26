@@ -4,7 +4,7 @@ V =		3.38.1
 REL =		3.38.1
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =  c crypto curl dbi glib-2.0 gmodule-2.0 gthread-2.0 iconv intl
 WANTLIB += ivykis json-c m maxminddb nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls pcre pcre2-8 pthread ssl z
+WANTLIB += ngtcp2_crypto_libressl pcre pcre2-8 pthread ssl z
 
 SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 

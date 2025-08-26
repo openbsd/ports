@@ -1,7 +1,7 @@
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-5.1.0
-REVISION =	1
+REVISION =	2
 SHARED_LIBS =	spatialite 2.0 # 9.0
 
 CONFIGURE_ARGS +=	--enable-rttopo \
@@ -18,7 +18,7 @@ LIB_DEPENDS +=	converters/libiconv \
 WANTLIB += ${COMPILER_LIBCXX} Lerc bz2 crypto curl freexl geos
 WANTLIB += geos_c iconv jpeg lzma m minizip nghttp2 proj rttopo
 WANTLIB += sqlite3 ssl tiff xml2 z zstd
-WANTLIB += expat nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += expat nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
 COMPILER =		base-clang ports-gcc base-gcc
 
