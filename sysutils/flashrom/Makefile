@@ -7,7 +7,7 @@ DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.xz
 # portroach finds flashrom-1.0 but ignores flashrom-v1.0.1+
-PORTROACH=	limit:^v?(1\.[1-9]|[2-9])
+PORTROACH=	limit:^v(1\.[1-9]|[2-9])
 
 CATEGORIES=	sysutils
 
