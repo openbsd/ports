@@ -24,8 +24,6 @@ MODCARGO_FEATURES =	multi-user
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-BUILD_DEPENDS =		security/rust-ring
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/krill
 	${INSTALL_DATA} ${WRKSRC}/defaults/* \
