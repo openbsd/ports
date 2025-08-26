@@ -1,7 +1,8 @@
 COMMENT=	pager/text-based web browser
 
-DIST_TUPLE=	srht rkta w3m v0.5.4 .
-WRKDIST=	${WRKDIR}/w3m-v0.5.4
+V=		0.5.5
+DIST_TUPLE=	srht rkta w3m v$V .
+WRKDIST=	${WRKDIR}/w3m-v$V
 
 CATEGORIES=	www
 
