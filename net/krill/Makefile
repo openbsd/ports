@@ -1,11 +1,11 @@
-# ring-v0.16.20 does not support these archs
-NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS = sparc64
 
 COMMENT =	RPKI Certification Authority and Publication Server
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	krill
-GH_TAGNAME =	v0.14.6
+GH_TAGNAME =	v0.15.0
 
 HOMEPAGE =	https://nlnetlabs.nl/projects/routing/krill/
 CATEGORIES =	net
