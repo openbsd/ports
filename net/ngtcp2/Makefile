@@ -1,10 +1,10 @@
 COMMENT=	implementation of the RFC 9000 QUIC protocol
 
-V=		1.14.0
+V=		1.15.0
 DISTNAME=	ngtcp2-$V
 
-SHARED_LIBS+=	ngtcp2			4.1	# 20.0
-SHARED_LIBS+=	ngtcp2_crypto_quictls	0.2	# 5.0
+SHARED_LIBS+=	ngtcp2			5.0	# 21.0
+SHARED_LIBS+=	ngtcp2_crypto_libressl	0.0	# 5.0
 
 CATEGORIES=	net
 
@@ -22,7 +22,9 @@ SITES=		https://github.com/ngtcp2/ngtcp2/releases/download/v$V/
 SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS+=	--with-openssl
 
 .include <bsd.port.mk>

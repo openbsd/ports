@@ -6,10 +6,10 @@ include/ngtcp2/version.h
 @static-lib lib/libngtcp2.a
 lib/libngtcp2.la
 @lib lib/libngtcp2.so.${LIBngtcp2_VERSION}
-@static-lib lib/libngtcp2_crypto_quictls.a
-lib/libngtcp2_crypto_quictls.la
-@lib lib/libngtcp2_crypto_quictls.so.${LIBngtcp2_crypto_quictls_VERSION}
+@static-lib lib/libngtcp2_crypto_libressl.a
+lib/libngtcp2_crypto_libressl.la
+@lib lib/libngtcp2_crypto_libressl.so.${LIBngtcp2_crypto_libressl_VERSION}
 lib/pkgconfig/libngtcp2.pc
-lib/pkgconfig/libngtcp2_crypto_quictls.pc
+lib/pkgconfig/libngtcp2_crypto_libressl.pc
 share/doc/ngtcp2/
 share/doc/ngtcp2/README.rst

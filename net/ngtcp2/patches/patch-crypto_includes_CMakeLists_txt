@@ -1,0 +1,14 @@
+https://github.com/ngtcp2/ngtcp2/pull/1752
+
+Index: crypto/includes/CMakeLists.txt
+--- crypto/includes/CMakeLists.txt.orig
++++ crypto/includes/CMakeLists.txt
+@@ -25,7 +25,7 @@ install(FILES
+     ngtcp2/ngtcp2_crypto.h
+   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/ngtcp2")
+ 
+-if(HAVE_QUICTLS)
++if(HAVE_QUICTLS OR HAVE_LIBRESSL)
+   install(FILES
+       ngtcp2/ngtcp2_crypto_quictls.h
+       DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/ngtcp2")
