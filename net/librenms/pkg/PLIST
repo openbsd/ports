@@ -268,6 +268,8 @@ librenms/LibreNMS/Interfaces/Discovery/StorageDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/StpInstanceDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/StpPortDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/TransceiverDiscovery.php
+librenms/LibreNMS/Interfaces/Discovery/VlanDiscovery.php
+librenms/LibreNMS/Interfaces/Discovery/VlanPortDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/VminfoDiscovery.php
 librenms/LibreNMS/Interfaces/Exceptions/
 librenms/LibreNMS/Interfaces/Exceptions/UpgradeableException.php
@@ -356,6 +358,7 @@ librenms/LibreNMS/Modules/Storage.php
 librenms/LibreNMS/Modules/Stp.php
 librenms/LibreNMS/Modules/Transceivers.php
 librenms/LibreNMS/Modules/UcdDiskio.php
+librenms/LibreNMS/Modules/Vlans.php
 librenms/LibreNMS/Modules/Vminfo.php
 librenms/LibreNMS/Modules/Wireless.php
 librenms/LibreNMS/Modules/Xdsl.php
@@ -373,6 +376,8 @@ librenms/LibreNMS/OS/Alfo80hd.php
 librenms/LibreNMS/OS/Allied.php
 librenms/LibreNMS/OS/AllworxVoip.php
 librenms/LibreNMS/OS/Aos.php
+librenms/LibreNMS/OS/Aos6.php
+librenms/LibreNMS/OS/Aos7.php
 librenms/LibreNMS/OS/Apc.php
 librenms/LibreNMS/OS/ApexLynx.php
 librenms/LibreNMS/OS/ApexPlus.php
@@ -574,6 +579,7 @@ librenms/LibreNMS/OS/Traits/EntityMib.php
 librenms/LibreNMS/OS/Traits/FrogfootResources.php
 librenms/LibreNMS/OS/Traits/HostResources.php
 librenms/LibreNMS/OS/Traits/NetstatsPolling.php
+librenms/LibreNMS/OS/Traits/QBridgeMib.php
 librenms/LibreNMS/OS/Traits/ServerHardware.php
 librenms/LibreNMS/OS/Traits/UcdResources.php
 librenms/LibreNMS/OS/Traits/VminfoLibvirt.php
@@ -931,6 +937,7 @@ librenms/app/Console/Commands/PluginDisable.php
 librenms/app/Console/Commands/PluginEnable.php
 librenms/app/Console/Commands/PluginRemoveCommand.php
 librenms/app/Console/Commands/PortTune.php
+librenms/app/Console/Commands/ReleaseTag.php
 librenms/app/Console/Commands/ReportDevices.php
 librenms/app/Console/Commands/SchemaDumpCommand.php
 librenms/app/Console/Commands/SetConfigCommand.php
@@ -1836,10 +1843,12 @@ librenms/database/migrations/2025_06_11_025425_hr_device_table_add_status_defaul
 librenms/database/migrations/2025_06_11_173916_drop_alert_rule.php
 librenms/database/migrations/2025_06_19_165621_add_behavior_to_alert_schedule_table.php
 librenms/database/migrations/2025_06_25_001525_change_transceivers_table_string_limit.php
+librenms/database/migrations/2025_06_27_010101_ports_vlan_table_add_defaults.php
 librenms/database/migrations/2025_07_01_173854_hrdevice_default_values.php
 librenms/database/migrations/2025_07_01_175422_stp_change_root_cost_size.php
 librenms/database/migrations/2025_07_07_080514_change_hr_device_type.php
 librenms/database/migrations/2025_07_08_111910_change_stp_bridge_max_age_size.php
+librenms/database/migrations/2025_07_10_201918_update_vlans_table.php
 librenms/database/migrations/2025_07_29_025425_hr_device_table_add_type_default.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.sql
@@ -1876,8 +1885,8 @@ librenms/html/bandwidth-graph.php
 librenms/html/billing-graph.php
 librenms/html/build/
 librenms/html/build/assets/
-librenms/html/build/assets/app-D87epv4S.js
-librenms/html/build/assets/app-DtJPMVZ-.css
+librenms/html/build/assets/app-C5TY3GkM.css
+librenms/html/build/assets/app-Cpb2qJg2.js
 librenms/html/build/assets/glyphicons-halflings-regular-BKjkU69z.woff
 librenms/html/build/assets/glyphicons-halflings-regular-BUJKDMgK.eot
 librenms/html/build/assets/glyphicons-halflings-regular-CSehLiBc.svg
@@ -1900,7 +1909,6 @@ librenms/html/css/bootstrap/glyphicons-halflings-white.png
 librenms/html/css/bootstrap/glyphicons-halflings.png
 librenms/html/css/bootstrap4.min.css
 librenms/html/css/bootstrap4.min.css.map
-librenms/html/css/font-awesome.css
 librenms/html/css/fontawesome.min.css
 librenms/html/css/images/
 librenms/html/css/images/layers-2x.png
@@ -1954,7 +1962,6 @@ librenms/html/data.php
 librenms/html/favicon.ico
 librenms/html/fonts/
 librenms/html/fonts/DejaVuSans.ttf
-librenms/html/fonts/FontAwesome.otf
 librenms/html/fonts/glyphicons-halflings-regular.eot
 librenms/html/fonts/glyphicons-halflings-regular.svg
 librenms/html/fonts/glyphicons-halflings-regular.ttf
@@ -2174,6 +2181,7 @@ librenms/html/images/os/2n.svg
 librenms/html/images/os/3com.png
 librenms/html/images/os/4rf.png
 librenms/html/images/os/a10.png
+librenms/html/images/os/abb.svg
 librenms/html/images/os/accedian.png
 librenms/html/images/os/adtran.png
 librenms/html/images/os/adva.svg
@@ -3069,6 +3077,8 @@ librenms/includes/discovery/sensors/state/exa.inc.php
 librenms/includes/discovery/sensors/state/extendair.inc.php
 librenms/includes/discovery/sensors/state/fortigate.inc.php
 librenms/includes/discovery/sensors/state/fs-nmu.inc.php
+librenms/includes/discovery/sensors/state/grandstream-gxw.inc.php
+librenms/includes/discovery/sensors/state/grandstream-ht.inc.php
 librenms/includes/discovery/sensors/state/hp.inc.php
 librenms/includes/discovery/sensors/state/hpblmos.inc.php
 librenms/includes/discovery/sensors/state/ict-pdu.inc.php
@@ -3238,18 +3248,7 @@ librenms/includes/discovery/storage.inc.php
 librenms/includes/discovery/stp.inc.php
 librenms/includes/discovery/transceivers.inc.php
 librenms/includes/discovery/ucd-diskio.inc.php
-librenms/includes/discovery/vlans/
 librenms/includes/discovery/vlans.inc.php
-librenms/includes/discovery/vlans/aos6.inc.php
-librenms/includes/discovery/vlans/aos7.inc.php
-librenms/includes/discovery/vlans/arubaos-cx.inc.php
-librenms/includes/discovery/vlans/boss.inc.php
-librenms/includes/discovery/vlans/cisco-vtp.inc.php
-librenms/includes/discovery/vlans/jetstream.inc.php
-librenms/includes/discovery/vlans/junos.inc.php
-librenms/includes/discovery/vlans/q-bridge-mib.inc.php
-librenms/includes/discovery/vlans/routeros.inc.php
-librenms/includes/discovery/vlans/vrp.inc.php
 librenms/includes/discovery/vminfo.inc.php
 librenms/includes/discovery/vrf.inc.php
 librenms/includes/discovery/wireless.inc.php
@@ -6316,6 +6315,8 @@ librenms/mibs/a10/
 librenms/mibs/a10/A10-AX-MIB
 librenms/mibs/a10/A10-AX-NOTIFICATIONS
 librenms/mibs/a10/A10-COMMON-MIB
+librenms/mibs/abb/
+librenms/mibs/abb/ABB-MODULARUPS-MIB
 librenms/mibs/accedian/
 librenms/mibs/accedian/ACCEDIAN-SMI
 librenms/mibs/accedian/ACD-ALARM-MIB
@@ -8123,6 +8124,7 @@ librenms/mibs/endrun/SONOMA-MIB
 librenms/mibs/endrun/TEMPUSLXUNISON-MIB
 librenms/mibs/enlogic/
 librenms/mibs/enlogic/ENLOGIC-PDU-MIB
+librenms/mibs/enlogic/ENLOGIC-PDU2-MIB
 librenms/mibs/enterasys/
 librenms/mibs/enterasys/CT-BROADCAST-MIB
 librenms/mibs/enterasys/CT-CMMPHYS-MIB
@@ -8598,6 +8600,8 @@ librenms/mibs/glassway/NSCRTV-ROOT
 librenms/mibs/grandstream/
 librenms/mibs/grandstream/GRANDSTREAM-GWN-PRODUCTS-SWITCH-MIB
 librenms/mibs/grandstream/GRANDSTREAM-GWN-ROOT-MIB
+librenms/mibs/grandstream/GS-GXW42XX-MIB
+librenms/mibs/grandstream/GS-HT8XX-MIB
 librenms/mibs/greenbone/
 librenms/mibs/greenbone/GREENBONE-PRODUCT-MIB
 librenms/mibs/gude/
@@ -10060,6 +10064,7 @@ librenms/mibs/nortel/RAPID-SYSTEM-CONFIG-MIB
 librenms/mibs/nortel/RAPID-SYSTEM-STATISTICS-MIB
 librenms/mibs/nortel/RC-MLT-MIB
 librenms/mibs/nortel/RC-VLAN-MIB
+librenms/mibs/nortel/RC-VRF-MIB
 librenms/mibs/nortel/S5-CHASSIS-MIB
 librenms/mibs/nortel/S5-ROOT-MIB
 librenms/mibs/nortel/S5-TCS-MIB
@@ -11117,6 +11122,7 @@ librenms/mibs/wti/WTI-CONSOLE-MIB
 librenms/mibs/wti/WTI-MPC-MIB
 librenms/mibs/wti/WTI-POWER-MIB
 librenms/mibs/wut/
+librenms/mibs/wut/WebGraph-8xThermometer-US-MIB
 librenms/mibs/wut/WebGraph-Thermo-Hygro-Barometer-MIB
 librenms/mibs/wut/WebGraph-Thermo-Hygrometer-MIB
 librenms/mibs/wut/WebGraph-Thermo-Hygrometer-US-MIB
@@ -11204,6 +11210,7 @@ librenms/resources/definitions/config_definitions.json
 librenms/resources/definitions/macros.json
 librenms/resources/definitions/os_detection/
 librenms/resources/definitions/os_detection/3com.yaml
+librenms/resources/definitions/os_detection/abbups.yaml
 librenms/resources/definitions/os_detection/acano.yaml
 librenms/resources/definitions/os_detection/acos.yaml
 librenms/resources/definitions/os_detection/acs.yaml
@@ -11429,6 +11436,7 @@ librenms/resources/definitions/os_detection/endrun.yaml
 librenms/resources/definitions/os_detection/enexus.yaml
 librenms/resources/definitions/os_detection/engenius.yaml
 librenms/resources/definitions/os_detection/enlogic-pdu.yaml
+librenms/resources/definitions/os_detection/enlogic-pdu2.yaml
 librenms/resources/definitions/os_detection/enterasys.yaml
 librenms/resources/definitions/os_detection/epmp.yaml
 librenms/resources/definitions/os_detection/epson-projector.yaml
@@ -11512,6 +11520,7 @@ librenms/resources/definitions/os_detection/gepulsar.yaml
 librenms/resources/definitions/os_detection/gestetner.yaml
 librenms/resources/definitions/os_detection/gigavue.yaml
 librenms/resources/definitions/os_detection/gos.yaml
+librenms/resources/definitions/os_detection/grandstream-gxw.yaml
 librenms/resources/definitions/os_detection/grandstream-ht.yaml
 librenms/resources/definitions/os_detection/grandstream-sw.yaml
 librenms/resources/definitions/os_detection/gude-esb.yaml
@@ -11960,6 +11969,7 @@ librenms/resources/definitions/os_detection/zyxelusg.yaml
 librenms/resources/definitions/os_detection/zyxelwlc.yaml
 librenms/resources/definitions/os_discovery/
 librenms/resources/definitions/os_discovery/3com.yaml
+librenms/resources/definitions/os_discovery/abbups.yaml
 librenms/resources/definitions/os_discovery/acano.yaml
 librenms/resources/definitions/os_discovery/acos.yaml
 librenms/resources/definitions/os_discovery/acs.yaml
@@ -12149,6 +12159,7 @@ librenms/resources/definitions/os_discovery/eltex-olt.yaml
 librenms/resources/definitions/os_discovery/endrun.yaml
 librenms/resources/definitions/os_discovery/enexus.yaml
 librenms/resources/definitions/os_discovery/enlogic-pdu.yaml
+librenms/resources/definitions/os_discovery/enlogic-pdu2.yaml
 librenms/resources/definitions/os_discovery/enterasys.yaml
 librenms/resources/definitions/os_discovery/epmp.yaml
 librenms/resources/definitions/os_discovery/epson-scanner.yaml
@@ -12223,6 +12234,7 @@ librenms/resources/definitions/os_discovery/generex-ups.yaml
 librenms/resources/definitions/os_discovery/gepulsar.yaml
 librenms/resources/definitions/os_discovery/gestetner.yaml
 librenms/resources/definitions/os_discovery/gigavue.yaml
+librenms/resources/definitions/os_discovery/grandstream-gxw.yaml
 librenms/resources/definitions/os_discovery/grandstream-ht.yaml
 librenms/resources/definitions/os_discovery/grandstream-sw.yaml
 librenms/resources/definitions/os_discovery/gude-esb.yaml
@@ -12892,7 +12904,6 @@ librenms/resources/views/wireless-sensor/index.blade.php
 librenms/routes/
 librenms/routes/api.php
 librenms/routes/console.php
-librenms/routes/dev-console.php
 librenms/routes/web.php
 @mode 775
 @owner _librenms
@@ -24460,8 +24471,6 @@ librenms/vendor/webmozart/assert/src/Mixin.php
 librenms/vite.config.mjs
 @cwd ${LOCALBASE}
 bin/lnms
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/lnms
 share/doc/librenms/
 share/doc/librenms/API/
