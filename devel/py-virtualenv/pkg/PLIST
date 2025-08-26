@@ -99,6 +99,17 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/na.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/read_only.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/via_disk_folder.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/app_data/via_tempdir.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}file_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/${MODPY_PYCACHE}file_cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/cache.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/cache/file_cache.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/config/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/config/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv/config/${MODPY_PYCACHE}/
@@ -210,6 +221,8 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}ca
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}cached_py_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}discover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}discover.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_spec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -217,6 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/builtin.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/cached_py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/discover.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/py_spec.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/windows/
@@ -319,7 +333,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-25.0.1-py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-25.1.1-py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/pip-25.2-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-75.3.2-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/setuptools-80.9.0-py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv/seed/wheels/embed/wheel-0.45.1-py3-none-any.whl
