@@ -1,6 +1,6 @@
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.6
+DISTNAME=	pflogsumm-1.1.12
 CATEGORIES=	mail
 
 SITES=		http://jimsun.linxnet.com/downloads/
@@ -15,7 +15,8 @@ PERMIT_PACKAGE=	Yes
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/p5-Date-Calc>=5.3
+RUN_DEPENDS=	devel/p5-Date-Calc>=5.3 \
+		devel/p5-Config-Simple
 
 do-install:
 	cd ${WRKSRC}; \
