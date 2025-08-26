@@ -435,6 +435,8 @@ share/virt-manager/virtinst/devices/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}panic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}panic.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/devices/${MODPY_PYCACHE}pstore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/virt-manager/virtinst/devices/${MODPY_PYCACHE}pstore.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}redirdev.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}redirdev.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}rng.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -467,6 +469,7 @@ share/virt-manager/virtinst/devices/iommu.py
 share/virt-manager/virtinst/devices/memballoon.py
 share/virt-manager/virtinst/devices/memory.py
 share/virt-manager/virtinst/devices/panic.py
+share/virt-manager/virtinst/devices/pstore.py
 share/virt-manager/virtinst/devices/redirdev.py
 share/virt-manager/virtinst/devices/rng.py
 share/virt-manager/virtinst/devices/shmem.py

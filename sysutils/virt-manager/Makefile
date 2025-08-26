@@ -1,9 +1,8 @@
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-5.0.0
+DISTNAME=		virt-manager-5.1.0
 CATEGORIES=		sysutils x11
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 HOMEPAGE=		http://virt-manager.org/
 

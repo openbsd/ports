@@ -1,12 +1,12 @@
 Index: virtinst/buildconfig.py
 --- virtinst/buildconfig.py.orig
 +++ virtinst/buildconfig.py
-@@ -59,7 +59,7 @@ class _BuildConfig(object):
+@@ -56,7 +56,7 @@ class _BuildConfig:
          self.icon_dir = None
          self.gsettings_dir = None
          self.running_from_srcdir = _running_from_srcdir
 -        self._set_paths_by_prefix(_get_param("prefix", "/usr"))
 +        self._set_paths_by_prefix(_get_param("prefix", "${PREFIX}"))
  
- 
      def _set_paths_by_prefix(self, prefix):
+         self.prefix = prefix
