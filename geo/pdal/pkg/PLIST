@@ -116,6 +116,7 @@ include/pdal/filters/PlaneFitFilter.hpp
 include/pdal/filters/PoissonFilter.hpp
 include/pdal/filters/ProjPipelineFilter.hpp
 include/pdal/filters/RadialDensityFilter.hpp
+include/pdal/filters/RadiusAssignFilter.hpp
 include/pdal/filters/RandomizeFilter.hpp
 include/pdal/filters/RangeFilter.hpp
 include/pdal/filters/ReciprocityFilter.hpp
@@ -234,8 +235,6 @@ include/pdal/io/SbetReader.hpp
 include/pdal/io/SbetSmrmsgReader.hpp
 include/pdal/io/SbetWriter.hpp
 include/pdal/io/SlpkReader.hpp
-include/pdal/io/SpzReader.hpp
-include/pdal/io/SpzWriter.hpp
 include/pdal/io/StacReader.hpp
 include/pdal/io/TIndexReader.hpp
 include/pdal/io/TerrasolidReader.hpp
