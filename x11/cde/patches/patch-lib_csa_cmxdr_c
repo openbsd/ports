@@ -1,0 +1,15 @@
+OpenBSD doesn't have xdr_hyper, so use what is hopefully an equivalent type
+on ILP32 archs (time_t is long long on all OpenBSD platforms).
+
+Index: lib/csa/cmxdr.c
+--- lib/csa/cmxdr.c.orig
++++ lib/csa/cmxdr.c
+@@ -53,7 +53,7 @@ bool_t xdr_time_t(XDR *xdrs, time_t *objp);
+ # elif SIZEOF_LONG == SIZEOF_TIME_T
+ # define _xdr_time_t xdr_long
+ # elif SIZEOF_LONG_LONG == SIZEOF_TIME_T
+-# define _xdr_time_t xdr_hyper
++# define _xdr_time_t xdr_int64_t
+ # else
+ # error "Unknown time_t size"
+ # endif
