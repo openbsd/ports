@@ -54,8 +54,4 @@ CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 # https://github.com/mapnik/test-data
 # https://github.com/mapnik/test-data-visual
 
-# https://github.com/mapnik/mapnik/issues/4516
-post-extract:
-	find ${WRKSRC} -name '._*' | xargs rm -Rf
-
 .include <bsd.port.mk>
