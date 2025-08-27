@@ -11,7 +11,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -119,6 +119,12 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_minizip=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
 			-DQT_FEATURE_webengine_system_libpng=ON \
 			-DQT_FEATURE_webengine_system_zlib=ON
+
+.if ${MACHINE_ARCH} == "sparc64"
+CONFIGURE_ARGS +=	-DQT_FEATURE_stdlib_libcpp=OFF
+.else
+CONFIGURE_ARGS +=	-DQT_FEATURE_stdlib_libcpp=ON
+.endif
 
 # needs a modified ffmpeg to be usable (bug #831487), and even then
 # it is picky about codecs/version and system's can lead to unexpected
