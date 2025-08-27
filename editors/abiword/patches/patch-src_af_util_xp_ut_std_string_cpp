@@ -1,0 +1,12 @@
+Index: src/af/util/xp/ut_std_string.cpp
+--- src/af/util/xp/ut_std_string.cpp.orig
++++ src/af/util/xp/ut_std_string.cpp
+@@ -157,7 +157,7 @@ std::string UT_std_string_unicode(const UT_UCS4Char * 
+     }
+ 
+     GError *error = nullptr;
+-    gchar * utf8 = g_ucs4_to_utf8(unicode, len, nullptr, nullptr, &error);
++    gchar * utf8 = g_ucs4_to_utf8(reinterpret_cast<const gunichar *>(unicode), len, nullptr, nullptr, &error);
+     if (!utf8) {
+         UT_DEBUGMSG(("Error converting UCS4 to UTF8: %s\n", error->message));
+         g_error_free(error);

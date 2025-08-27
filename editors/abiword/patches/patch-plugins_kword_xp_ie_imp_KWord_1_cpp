@@ -1,0 +1,14 @@
+https://github.com/freebsd/freebsd-ports/commit/e6daa211c609bde6ed3fe00fd5ce675714371805
+
+Index: plugins/kword/xp/ie_imp_KWord_1.cpp
+--- plugins/kword/xp/ie_imp_KWord_1.cpp.orig
++++ plugins/kword/xp/ie_imp_KWord_1.cpp
+@@ -180,7 +180,7 @@ void IE_Imp_KWord_1::charData(const gchar *s, int len)
+ 	  m_charDataSeen[m_lenCharDataSeen++] = currentChar;
+ 	  if (m_lenCharDataSeen == m_lenCharDataExpected)
+ 	    {
+-	      buf += g_utf8_get_char(m_charDataSeen);
++	      buf += static_cast<UT_UCS4Char>(g_utf8_get_char(m_charDataSeen));
+ 	      m_lenCharDataSeen = 0;
+ 	    }
+ 	}

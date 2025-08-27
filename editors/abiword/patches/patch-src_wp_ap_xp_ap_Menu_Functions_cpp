@@ -1,0 +1,14 @@
+https://github.com/freebsd/freebsd-ports/commit/e6daa211c609bde6ed3fe00fd5ce675714371805
+
+Index: src/wp/ap/xp/ap_Menu_Functions.cpp
+--- src/wp/ap/xp/ap_Menu_Functions.cpp.orig
++++ src/wp/ap/xp/ap_Menu_Functions.cpp
+@@ -744,7 +744,7 @@ Defun_EV_GetMenuItemComputedLabel_Fn(ap_GetLabel_Sugge
+ 	UT_UCS4Char *p = pView->getContextSuggest(ndx);
+ 	gchar * c = nullptr;
+ 	if (p && *p) {
+-		c = g_ucs4_to_utf8(p, -1, nullptr, nullptr, nullptr);
++		c = g_ucs4_to_utf8(reinterpret_cast<const gunichar *>(p), -1, nullptr, nullptr, nullptr);
+ 	}
+ 	else if (ndx == 1)
+ 	{

@@ -1,9 +1,20 @@
+https://github.com/freebsd/freebsd-ports/commit/e6daa211c609bde6ed3fe00fd5ce675714371805
+
 src/af/xap/xp/xap_DialogFactory.h:89:73: error: 'nonnull' attribute is invalid for the implicit this argument
 bool                            _findDialogInTable(XAP_Dialog_Id id, UT_sint32 * pIndex) const ABI_NONNULL(1, 3);
 
 Index: src/af/util/xp/ut_types.h
 --- src/af/util/xp/ut_types.h.orig
 +++ src/af/util/xp/ut_types.h
+@@ -40,7 +40,7 @@
+ 
+ typedef uint8_t		UT_Byte;
+ 
+-typedef uint32_t        UT_UCS4Char;
++typedef char32_t        UT_UCS4Char;
+ typedef uint16_t        UT_UCS2Char;
+ typedef int32_t         UT_GrowBufElement;
+ 
 @@ -96,7 +96,7 @@ typedef UT_uint8 UT_Confidence_t;
  
  #include "ut_export.h" // ABI_EXPORT is defined in there.

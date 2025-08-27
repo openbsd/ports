@@ -1,0 +1,14 @@
+https://github.com/freebsd/freebsd-ports/commit/e6daa211c609bde6ed3fe00fd5ce675714371805
+
+Index: src/af/gr/xp/gr_CairoGraphics.cpp
+--- src/af/gr/xp/gr_CairoGraphics.cpp.orig
++++ src/af/gr/xp/gr_CairoGraphics.cpp
+@@ -535,7 +535,7 @@ bool GR_CairoGraphics::endPrint(void)
+ 
+ void GR_CairoGraphics::drawGlyph(UT_uint32 Char, UT_sint32 xoff, UT_sint32 yoff)
+ {
+-	drawChars(&Char, 0, 1, xoff, yoff, nullptr);
++	drawChars(reinterpret_cast<const UT_UCSChar*>(&Char), 0, 1, xoff, yoff, nullptr);
+ }
+ 
+ void GR_CairoGraphics::setColorSpace(GR_Graphics::ColorSpace /* c */)
