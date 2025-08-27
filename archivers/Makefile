@@ -71,6 +71,7 @@
      SUBDIR += py-zipstream-ng
      SUBDIR += py-zopfli
      SUBDIR += py-zstandard
+     SUBDIR += py-zstd
      SUBDIR += quazip
      SUBDIR += ripole
      SUBDIR += ruby-minitar
