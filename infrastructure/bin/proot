@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.75 2024/08/03 15:24:34 sthen Exp $
+# $OpenBSD: proot,v 1.76 2025/08/27 20:26:38 kirill Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -915,7 +915,7 @@ sub checkout_ports($state)
 {
 	$state->banner("Checking out ports tree",
 	    sub {
-	    	my @cvs = ("/usr/bin/cvs", "-z3", "-d", $state->{portscvs});
+	    	my @cvs = ("/usr/bin/cvs", "-f", "-z3", "-d", $state->{portscvs});
 		my $dir = $state->chroot($state->{PORTSDIR});
 		if (-d "$dir/CVS") {
 			$state->{portuser}->run_as(sub {
