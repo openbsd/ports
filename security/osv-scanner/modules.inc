@@ -302,7 +302,7 @@ MODGO_MODULES =	\
 	github.com/google/go-containerregistry						 v0.20.6 \
 	github.com/google/go-cpy							 v0.0.0-20211218193943-a9c933c06932 \
 	github.com/google/gofuzz							 v1.2.0 \
-	github.com/google/osv-scalibr							 v0.3.2-0.20250731235936-b4e2f64ac4bd \
+	github.com/google/osv-scalibr							 v0.3.2-0.20250812004447-f38f28e2746b \
 	github.com/google/pprof								 v0.0.0-20250403155104-27863c87afa6 \
 	github.com/google/renameio							 v0.1.0 \
 	github.com/google/shlex								 v0.0.0-20191202100458-e7afc7fbc510 \

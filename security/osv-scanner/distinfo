@@ -704,8 +704,8 @@ SHA256 (go_modules/github.com/google/go-cpy/@v/v0.0.0-20211218193943-a9c933c0693
 SHA256 (go_modules/github.com/google/go-cpy/@v/v0.0.0-20211218193943-a9c933c06932.zip) = yFVI1vlZ35QsYAQMi8lLnq7WwqI52qwhIYiSdMbEs3s=
 SHA256 (go_modules/github.com/google/gofuzz/@v/v1.2.0.mod) = +wCcAe4WW7qoXIXoo6eU6o6D+AcU1Bg0ZdyB2BG1RCc=
 SHA256 (go_modules/github.com/google/gofuzz/@v/v1.2.0.zip) = WUj0CvGSPY+Y3B1BkTEQMOQOAFf7JV3xnrwDYPL6rBY=
-SHA256 (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250731235936-b4e2f64ac4bd.mod) = JFFmyJxVWJNlwGhVnUwsOAe1yaBqwWJjaCpd3lrEJfA=
-SHA256 (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250731235936-b4e2f64ac4bd.zip) = Bfs1rVgPkB4ZnCi96TF5wRwZbACC4/NKjFR0f0mdajI=
+SHA256 (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250812004447-f38f28e2746b.mod) = JFFmyJxVWJNlwGhVnUwsOAe1yaBqwWJjaCpd3lrEJfA=
+SHA256 (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250812004447-f38f28e2746b.zip) = gSeQuR63KjeRWnuXfHq9F3zVvwN1pux+SKu8ay9bsmI=
 SHA256 (go_modules/github.com/google/pprof/@v/v0.0.0-20240227163752-401108e1b7e7.mod) = VLMx+CHr75nBcRhIIniL4N5sJUE6+szzjdlp1QmXw90=
 SHA256 (go_modules/github.com/google/pprof/@v/v0.0.0-20250317173921-a4b03ec1a45e.mod) = P/KD2vwMQ4Azyu5jvzI6hKGxj5/QgslXdkaqAStL+kw=
 SHA256 (go_modules/github.com/google/pprof/@v/v0.0.0-20250403155104-27863c87afa6.mod) = P/KD2vwMQ4Azyu5jvzI6hKGxj5/QgslXdkaqAStL+kw=
@@ -1553,7 +1553,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.0.0.mo
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.0.0.zip) = YdY0FRroeTI2l9yK5Y3kp1FBMXWIFcFVR7eHwivp/2Q=
 SHA256 (go_modules/www.velocidex.com/golang/regparser/@v/v0.0.0-20250203141505-31e704a67ef7.mod) = YFYdrANuIxWyZxCNao88+k2LGqVvLCBHSvHblkgW32U=
 SHA256 (go_modules/www.velocidex.com/golang/regparser/@v/v0.0.0-20250203141505-31e704a67ef7.zip) = g1MvuAzP6dMzqTP6n+1fMdHMcN4eQv2btl/mTGDnNP0=
-SHA256 (osv-scanner-2.2.1.zip) = 0kkmTLm/74PvY1Z0Zt1zIQMufnxEUyvpM/wSuSAVFjc=
+SHA256 (osv-scanner-2.2.2.zip) = XbumKuPX/sjx1h08sBG1T4uZSsa3qpozo/m+4Kvwpwo=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.zip) = 269497
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2260,8 +2260,8 @@ SIZE (go_modules/github.com/google/go-cpy/@v/v0.0.0-20211218193943-a9c933c06932.
 SIZE (go_modules/github.com/google/go-cpy/@v/v0.0.0-20211218193943-a9c933c06932.zip) = 11328
 SIZE (go_modules/github.com/google/gofuzz/@v/v1.2.0.mod) = 41
 SIZE (go_modules/github.com/google/gofuzz/@v/v1.2.0.zip) = 22166
-SIZE (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250731235936-b4e2f64ac4bd.mod) = 7928
-SIZE (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250731235936-b4e2f64ac4bd.zip) = 148707085
+SIZE (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250812004447-f38f28e2746b.mod) = 7928
+SIZE (go_modules/github.com/google/osv-scalibr/@v/v0.3.2-0.20250812004447-f38f28e2746b.zip) = 148711298
 SIZE (go_modules/github.com/google/pprof/@v/v0.0.0-20240227163752-401108e1b7e7.mod) = 596
 SIZE (go_modules/github.com/google/pprof/@v/v0.0.0-20250317173921-a4b03ec1a45e.mod) = 204
 SIZE (go_modules/github.com/google/pprof/@v/v0.0.0-20250403155104-27863c87afa6.mod) = 204
@@ -3109,4 +3109,4 @@ SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.0.0.mod)
 SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v1.0.0.zip) = 8466
 SIZE (go_modules/www.velocidex.com/golang/regparser/@v/v0.0.0-20250203141505-31e704a67ef7.mod) = 462
 SIZE (go_modules/www.velocidex.com/golang/regparser/@v/v0.0.0-20250203141505-31e704a67ef7.zip) = 302473
-SIZE (osv-scanner-2.2.1.zip) = 5234820
+SIZE (osv-scanner-2.2.2.zip) = 12527375
