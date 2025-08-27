@@ -1,5 +1,7 @@
 PHP_VERSION=	8.2.29
 AUTOCONF_VERSION= 2.72
+
+# keep above 7.7-stable
 REVISION-curl=	0
 
 DEFAULT_PHP=	Yes
