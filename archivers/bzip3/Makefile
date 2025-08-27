@@ -1,13 +1,13 @@
 COMMENT=	compress and decompress bzip3 files
 
-V=		1.5.1
+V=		1.5.3
 DISTNAME=	bzip3-${V}
 
 SHARED_LIBS +=  bzip3                1.0      # 0.0
 
 CATEGORIES=	archivers
 
-HOMEPAGE=	https://github.com/kspalaiologos/bzip3
+HOMEPAGE=	https://github.com/iczelia/bzip3
 
 # LGPLv3
 PERMIT_PACKAGE=	Yes
