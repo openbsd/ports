@@ -1,7 +1,7 @@
 COMMENT =	simple CalDAV calendar server
 
 MODPY_DISTV =	1.1.6
-REVISION =	12
+REVISION =	14
 DISTNAME =	Radicale-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
