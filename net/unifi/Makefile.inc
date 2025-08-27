@@ -48,7 +48,7 @@ PERMIT_PACKAGE =   https://www.ui.com/eula/
 PERMIT_DISTFILES = https://www.ui.com/eula/
 
 MODULES =	java
-MODJAVA_VER ?=	17
+MODJAVA_VER ?=	21
 
 # mongodb is amd64-only (and even if that weren't the case,
 # building snappy-java for i386 is even more of a pain than for amd64)
@@ -79,7 +79,7 @@ SUBST_VARS +=	VERSION LOG4J_V SNAPPY_S SNAPPY_V
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
 	@needpkgs=false; \
-	if ! [ -r ${LOCALBASE}/bin/mongo ]; then needpkgs=true; echo "- mongodb not installed"; fi; \
+	if ! [ -r ${LOCALBASE}/bin/mongod ]; then needpkgs=true; echo "- mongodb not installed"; fi; \
 	if ! [ -r ${LOCALBASE}/jdk-${MODJAVA_VER}*/bin/java ]; then needpkgs=true; echo "- jdk-${MODJAVA_VER} not installed"; fi; \
 	if $$needpkgs; then \
 	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
