@@ -4,7 +4,7 @@ CDNClient: Cope with longer manifest descriptions for some depots
 Index: steam/client/cdn.py
 --- steam/client/cdn.py.orig
 +++ steam/client/cdn.py
-@@ -836,6 +836,12 @@ class CDNClient(object):
+@@ -862,6 +862,12 @@ class CDNClient(object):
              else:
                  manifest_gid = depot_info.get('manifests', {}).get(branch)
  

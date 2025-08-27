@@ -1,11 +1,9 @@
 COMMENT =		module for interacting with various Steam features
 
-PKGNAME =		py-steam-1.4.4pl0
-REVISION =		3
-DIST_TUPLE +=		github rfht py-steam \
-			e26d2eb52c90dc2c07cc88ea910d59bf873d330d .
+PKGNAME =		py-steam-1.5.1
+DIST_TUPLE +=		github CFTools-Software-GmbH ValvePython-steam \
+			6e78b9c34141eaa3c00b785f12e02f47244df20c .
 CATEGORIES =		games
-HOMEPAGE =		https://github.com/ValvePython/steam
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -13,7 +11,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		converters/py-vdf \
+RUN_DEPENDS =		archivers/py-zstd \
+			converters/py-vdf \
 			devel/py-cachetools \
 			devel/py-gevent \
 			devel/py-gevent-eventemitter \
