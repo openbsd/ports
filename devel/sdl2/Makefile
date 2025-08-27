@@ -1,6 +1,6 @@
 COMMENT=	cross-platform multimedia library
 
-V=		2.32.6
+V=		2.32.8
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 
