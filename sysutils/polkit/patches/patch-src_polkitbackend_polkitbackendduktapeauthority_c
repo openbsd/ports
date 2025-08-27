@@ -1,15 +1,20 @@
-https://github.com/polkit-org/polkit/issues/544
+From 93ed9a0bb689916fe28cc5da317dbcb91ca989d2 Mon Sep 17 00:00:00 2001
+From: Vincent Mihalkovic <vmihalko@redhat.com>
+Date: Thu, 31 Jul 2025 12:00:43 +0200
+Subject: [PATCH] Fix polkitd startup assertion when built with --prefix=/usr/local
 
 Index: src/polkitbackend/polkitbackendduktapeauthority.c
 --- src/polkitbackend/polkitbackendduktapeauthority.c.orig
 +++ src/polkitbackend/polkitbackendduktapeauthority.c
-@@ -256,8 +256,7 @@ polkit_backend_common_js_authority_constructed (GObjec
-       authority->priv->rules_dirs = g_new0 (gchar *, 5);
+@@ -257,7 +257,10 @@ polkit_backend_common_js_authority_constructed (GObjec
        authority->priv->rules_dirs[0] = g_strdup (PACKAGE_SYSCONF_DIR "/polkit-1/rules.d");
        authority->priv->rules_dirs[1] = g_strdup ("/run/polkit-1/rules.d");
--      authority->priv->rules_dirs[2] = g_strdup ("/usr/local/share/polkit-1/rules.d");
+       authority->priv->rules_dirs[2] = g_strdup ("/usr/local/share/polkit-1/rules.d");
 -      authority->priv->rules_dirs[3] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
-+      authority->priv->rules_dirs[2] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
++      if (g_strcmp0 (PACKAGE_DATA_DIR, "/usr/local/share") != 0)
++        {
++          authority->priv->rules_dirs[3] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
++        }
      }
  
    setup_file_monitors (authority);
