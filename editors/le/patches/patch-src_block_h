@@ -1,0 +1,14 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/block.h
+--- src/block.h.orig
++++ src/block.h
+@@ -25,7 +25,7 @@ int   rInBlock(num line,num col);
+ 
+ static inline int InBlock(offs ptr,num line,num col)
+ {
+-   return((rblock && !hex) ? rInBlock(line,col) : InBlock(ptr));
++   return((rblock && !in_hex_mode) ? rInBlock(line,col) : InBlock(ptr));
+ }
+ 
+ void    Copy();

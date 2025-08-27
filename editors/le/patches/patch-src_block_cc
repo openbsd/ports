@@ -1,0 +1,32 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/block.cc
+--- src/block.cc.orig
++++ src/block.cc
+@@ -156,7 +156,7 @@ void    Copy()
+ 
+    PreUserEdit();
+ 
+-   if(buffer_mmapped || (hex && !insert))
++   if(buffer_mmapped || (in_hex_mode && !insert))
+    {
+       CopyBlockOver(BlockBegin,BlockEnd-BlockBegin);
+       return;
+@@ -457,7 +457,7 @@ int OptionallyConvertBlockNewLines(const char *bname)
+    TextPoint old=CurrentPos;
+ 
+    int block_size=BlockEnd-BlockBegin;
+-   if(buffer_mmapped || rblock || hex || block_size<EolSize)
++   if(buffer_mmapped || rblock || in_hex_mode || block_size<EolSize)
+       return 1;
+ 
+    num   dos_nl,unix_nl,mac_nl;
+@@ -554,7 +554,7 @@ void    Read()
+    }
+    MessageSync("Reading...");
+    PreUserEdit();
+-   if(buffer_mmapped || (hex && !insert))
++   if(buffer_mmapped || (in_hex_mode && !insert))
+       res=ReadBlockOver(fd,st.st_size,&act_read);
+    else
+       res=ReadBlock(fd,st.st_size,&act_read);

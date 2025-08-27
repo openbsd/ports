@@ -1,0 +1,14 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/loadsave.cc
+--- src/loadsave.cc.orig
++++ src/loadsave.cc
+@@ -402,7 +402,7 @@ int   LoadFile(char *name)
+ 	 if(old->offset!=-1)
+ 	 {
+ 	    CurrentPos=old->offset;
+-	    if(!hex)
++	    if(!in_hex_mode)
+ 	       SetStdCol();
+ 	 }
+ 	 else if(old->line!=-1 && old->col!=-1)

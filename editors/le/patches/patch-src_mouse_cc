@@ -1,0 +1,14 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/mouse.cc
+--- src/mouse.cc.orig
++++ src/mouse.cc
+@@ -41,7 +41,7 @@ bool InScrollBar(int line,int col)
+ 
+ void MoveToScreenLC(int line,int col)
+ {
+-   if(hex)
++   if(in_hex_mode)
+    {
+       ascii=0;
+       if(col<HexPos)

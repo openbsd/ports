@@ -1,0 +1,101 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/screen.cc
+--- src/screen.cc.orig
++++ src/screen.cc
+@@ -70,7 +70,7 @@ void  TestPosition()
+    if(ShowStatusLine==SHOW_BOTTOM && m>0)
+       m--;  // one message is over status.
+ 
+-   if(hex)
++   if(in_hex_mode)
+    {
+       if(ScreenTop&15)
+ 	 ScreenTop=ScreenTop&~15;
+@@ -181,12 +181,12 @@ void  SyncTextWin()
+    }
+    else if(flag&REDISPLAY_AFTER)
+    {
+-      line=hex ? (CurrentPos-ScreenTop)/16-1 : GetLine()-ScreenTop.Line()-1;
++      line=in_hex_mode ? (CurrentPos-ScreenTop)/16-1 : GetLine()-ScreenTop.Line()-1;
+       lim=TextWinHeight-m;
+    }
+    else if(flag&REDISPLAY_LINE)
+    {
+-      line=hex ? (CurrentPos-ScreenTop)/16-1 : GetLine()-ScreenTop.Line()-1;
++      line=in_hex_mode ? (CurrentPos-ScreenTop)/16-1 : GetLine()-ScreenTop.Line()-1;
+       lim =line+2;
+    }
+    if(flag&REDISPLAY_RANGE)
+@@ -197,7 +197,7 @@ void  SyncTextWin()
+ 	 lim=range_end;
+    }
+ 
+-   if(hex)
++   if(in_hex_mode)
+       ptr=(ScreenTop&~15)+16*line;
+    else
+       ptr=NextNLines(ScreenTop,line);
+@@ -248,7 +248,7 @@ void  SetCursor()
+       return;
+ 
+    ScrollBar(TRUE);
+-   if(hex)
++   if(in_hex_mode)
+    {
+       move((Offset()-ScreenTop.Offset())/16+TextWinY,
+           ((ascii?AsciiPos+(Offset()-ScreenTop.Offset())%16
+@@ -299,7 +299,7 @@ static void ClearMessageOnTextWin()
+       int m=message_sp;
+       message_sp=0;
+       Redisplay(TextWinHeight-m,
+-              hex?ScreenTop.Offset()+16*(TextWinHeight-m)
++              in_hex_mode?ScreenTop.Offset()+16*(TextWinHeight-m)
+                 :NextNLines(ScreenTop.Offset(),TextWinHeight-m),
+               TextWinHeight);
+       ScrollBar(false);
+@@ -407,7 +407,7 @@ void  StatusLine()
+       sprintf(name,"NewFile");
+ 
+ 
+-   if(hex)
++   if(in_hex_mode)
+       sprintf(status,"OctOffs:0%-11lo",(unsigned long)(Offset()));
+    else
+       sprintf(status,"Line=%-5lu Col=%-4lu",
+@@ -552,7 +552,7 @@ void  Redisplay(num line,offs ptr,num limit)
+    for(i=0; i<SYNTAX_COLORS; i++)
+       syntax[i]=find_attr(SYNTAX1+i);
+ 
+-   if(!hex)
++   if(!in_hex_mode)
+    {
+       if(!BolAt(ScreenTop))
+ 	 ScreenTop=TextPoint(ScreenTop.Line(),0);
+@@ -594,7 +594,7 @@ void  Redisplay(num line,offs ptr,num limit)
+    cchar_t *clwp;
+ #endif
+ 
+-   if(hex)
++   if(in_hex_mode)
+    {
+       /* here goes drawing the text in HEX mode */
+       rblock=0;
+@@ -693,7 +693,7 @@ void  Redisplay(num line,offs ptr,num limit)
+ #endif // USE_MULTIBYTE_CHARS
+       }
+    }
+-   else /* !hex */
++   else /* !in_hex_mode */
+    {
+       offs  next_line_ptr;
+ 
+@@ -927,7 +927,7 @@ void  RedisplayLine()
+ void  CenterView()
+ {
+    TestPosition();
+-   if(hex)
++   if(in_hex_mode)
+    {
+       if((Offset()-ScreenTop)/16 > TextWinHeight*2/3
+       || (Offset()-ScreenTop)/16 < TextWinHeight/3)

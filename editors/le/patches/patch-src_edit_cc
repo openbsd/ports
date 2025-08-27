@@ -1,0 +1,53 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/edit.cc
+--- src/edit.cc.orig
++++ src/edit.cc
+@@ -161,10 +161,10 @@ void    Edit()
+    while(1)
+    {
+       SeekStdCol();
+-      if(hex)
++      if(in_hex_mode)
+          flag|=REDISPLAY_LINE;
+ 
+-      if(!hex && !View && old_num_of_lines!=TextEnd.Line())
++      if(!in_hex_mode && !View && old_num_of_lines!=TextEnd.Line())
+       {
+          flag|=REDISPLAY_AFTER;
+          old_num_of_lines=TextEnd.Line();
+@@ -186,7 +186,7 @@ void    Edit()
+ 	 continue;
+       }
+ 
+-      if(hex)
++      if(in_hex_mode)
+       {
+          ShowMatchPos=0;
+          RedisplayLine();
+@@ -225,14 +225,14 @@ void    Edit()
+       if(StringTypedLen>1)
+ 	 continue;
+       key=(byte)(StringTyped[0]);
+-      if(hex && key=='\t')
++      if(in_hex_mode && key=='\t')
+       {
+ 	 ascii=!ascii;
+ 	 continue;
+       }
+       if(View)
+ 	 continue;
+-      if(!ascii && hex)
++      if(!ascii && in_hex_mode)
+       {
+ 	 if(key<0 || key>255)
+ 	    continue;
+@@ -288,7 +288,7 @@ void    Edit()
+ 	    SetStdCol();
+ 	    continue;
+ 	 }
+-	 if(hex)
++	 if(in_hex_mode)
+ 	 {
+ 	    if(insert)
+ 	    {

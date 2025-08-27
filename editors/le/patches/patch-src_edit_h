@@ -1,0 +1,16 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/edit.h
+--- src/edit.h.orig
++++ src/edit.h
+@@ -155,8 +155,8 @@ extern char Program[];
+ #define RUSS    1
+ #define GRAPH   2
+ 
+-#define hex     (editmode==HEXM)
+-#define Text    (editmode==TEXT && !buffer_mmapped)
++#define in_hex_mode  (editmode==HEXM)
++#define Text         (editmode==TEXT && !buffer_mmapped)
+ 
+ num   GetCol();
+ bool  EolAt(offs o);

@@ -1,0 +1,14 @@
+https://github.com/sergev/le-editor/commit/f5582ae199e4c4b80d32e4764715d630203b44f6
+
+Index: src/options.cc
+--- src/options.cc.orig
++++ src/options.cc
+@@ -588,7 +588,7 @@ void  CorrectParameters()
+ 
+    if(buffer)
+    {
+-     if(hex)
++     if(in_hex_mode)
+        ScreenTop=ScreenTop&~15;
+      if(TabSize!=OldTabSize)
+        TextPoint::OrFlags(COLUNDEFINED);
