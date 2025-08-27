@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -46,7 +46,7 @@ lazy_static = "1.0"
+@@ -47,7 +47,7 @@ lazy_static = "1.0"
  shellwords = "1.0"
  diesel = { version = "1.0.0", features = ["sqlite", "chrono"] }
  diesel_migrations = { version = "1.3.0", features = ["sqlite"] }
