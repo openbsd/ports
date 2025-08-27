@@ -55,13 +55,10 @@ problems.
 $ ulimit -n 1024
 $ mv /usr/local/share/unifi/data/db /usr/local/share/unifi/data/db.old
 $ mkdir /usr/local/share/unifi/data/db
-$ mongod --dbpath /usr/local/share/unifi/data/db --port 27117 \
-  --unixSocketPrefix /usr/local/share/unifi/run --logRotate reopen \
-  --logappend --logpath /usr/local/share/unifi/logs/mongod.log \
-  --pidfilepath /usr/local/share/unifi/run/mongod.pid \
+$ mongod --dbpath /usr/local/share/unifi/data/db \
   --wiredTigerEngineConfigString=cache_size=256M --bind_ip 127.0.0.1 &
-$ mongorestore --port=27117
-$ kill `cat /usr/local/share/unifi/run/mongod.pid`
+$ mongorestore
+$ pkill mongod
 $ exit
 
 and restart unifi:
