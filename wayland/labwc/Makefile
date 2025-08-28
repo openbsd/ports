@@ -2,8 +2,7 @@ COMMENT =	window-stacking Wayland compositor
 
 GH_ACCOUNT =	labwc
 GH_PROJECT =	labwc
-GH_TAGNAME =	0.8.4
-REVISION =	0
+GH_TAGNAME =	0.9.1
 
 CATEGORIES =	wayland
 
@@ -33,7 +32,7 @@ LIB_DEPENDS =	sysutils/libsfdo \
 
 WANTLIB += c cairo glib-2.0 gobject-2.0 input intl m pango-1.0
 WANTLIB += pangocairo-1.0 pixman-1 png rsvg-2 sfdo-basedir sfdo-desktop
-WANTLIB += sfdo-icon wayland-server xcb xkbcommon
+WANTLIB += sfdo-icon wayland-server xcb xcb-ewmh xkbcommon
 WANTLIB += xml2
 
 .include <bsd.port.mk>

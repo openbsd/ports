@@ -1,0 +1,18 @@
+move alacritty down and add havoc 
+
+Index: clients/lab-sensible-terminal
+--- clients/lab-sensible-terminal.orig
++++ clients/lab-sensible-terminal
+@@ -5,10 +5,11 @@
+ # without XWayland support
+ terminals="\
+ 	x-terminal-emulator \
+-	alacritty \
++	havoc \
+ 	foot \
+ 	kitty \
+ 	xfce4-terminal \
++	alacritty \
+ 	lxterminal \
+ 	qterminal \
+ 	mate-terminal \
