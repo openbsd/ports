@@ -1,8 +1,7 @@
 COMMENT =	modular Wayland compositor library
 
-V =		${MODWLROOTS_VERSION}.2
+V =		${MODWLROOTS_VERSION}.0
 EPOCH =		0
-REVISION =	1
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
 
@@ -13,7 +12,7 @@ HOMEPAGE =	https://gitlab.freedesktop.org/wlroots
 # MIT
 PERMIT_PACKAGE = Yes
 
-SHARED_LIBS +=  wlroots-0.18 0.0 # 0.0
+SHARED_LIBS +=  wlroots-0.19 0.0 # 0.0
 
 MODULES =	devel/meson wayland/wlroots
 
@@ -56,6 +55,9 @@ RUN_DEPENDS = \
 		graphics/ffmpeg \
 		graphics/png \
 		wayland/xwayland
+
+CONFIGURE_ARGS = \
+		-Dallocators=gbm
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 

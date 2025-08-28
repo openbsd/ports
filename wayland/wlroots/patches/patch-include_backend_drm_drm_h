@@ -1,7 +1,7 @@
 Index: include/backend/drm/drm.h
 --- include/backend/drm/drm.h.orig
 +++ include/backend/drm/drm.h
-@@ -85,6 +85,7 @@ struct wlr_drm_backend {
+@@ -92,6 +92,7 @@ struct wlr_drm_backend {
  	bool addfb2_modifiers;
  
  	int fd;
@@ -9,7 +9,7 @@ Index: include/backend/drm/drm.h
  	char *name;
  	struct wlr_device *dev;
  	struct liftoff_device *liftoff;
-@@ -96,6 +97,7 @@ struct wlr_drm_backend {
+@@ -103,6 +104,7 @@ struct wlr_drm_backend {
  	struct wlr_drm_plane *planes;
  
  	struct wl_event_source *drm_event;
@@ -17,9 +17,9 @@ Index: include/backend/drm/drm.h
  
  	struct wl_listener session_destroy;
  	struct wl_listener session_active;
-@@ -215,6 +217,7 @@ bool commit_drm_device(struct wlr_drm_backend *drm,
+@@ -226,6 +228,7 @@ void scan_drm_leases(struct wlr_drm_backend *drm);
+ bool commit_drm_device(struct wlr_drm_backend *drm,
  	const struct wlr_backend_output_state *states, size_t states_len, bool test_only);
- void restore_drm_device(struct wlr_drm_backend *drm);
  int handle_drm_event(int fd, uint32_t mask, void *data);
 +int handle_drm_kevent(int fd, uint32_t mask, void *data);
  void destroy_drm_connector(struct wlr_drm_connector *conn);

@@ -13,6 +13,7 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/backend/x11.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/config.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/
 include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/wlr_buffer.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/wlr_ext_image_capture_source_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/wlr_keyboard.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/wlr_output.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/interfaces/wlr_pointer.h
@@ -38,6 +39,7 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/render/wlr_texture.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_alpha_modifier_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_buffer.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_color_management_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_compositor.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_content_type_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_cursor.h
@@ -48,10 +50,12 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_data_device.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_drm.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_drm_lease_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_export_dmabuf_v1.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_ext_data_control_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_ext_foreign_toplevel_list_v1.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_ext_image_capture_source_v1.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_ext_image_copy_capture_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_foreign_toplevel_management_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_fractional_scale_v1.h
-include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_fullscreen_shell_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_gamma_control_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_idle_inhibit_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_idle_notify_v1.h
@@ -63,7 +67,6 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_keyboard_shortcuts_inhibit_v
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_layer_shell_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_linux_dmabuf_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_linux_drm_syncobj_v1.h
-include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_matrix.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_output.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_output_layer.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_output_layout.h
@@ -76,7 +79,6 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_pointer_gestures_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_presentation_time.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_primary_selection.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_primary_selection_v1.h
-include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_region.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_relative_pointer_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_scene.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_screencopy_v1.h
@@ -101,11 +103,14 @@ include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_virtual_pointer_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xcursor_manager.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_activation_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_decoration_v1.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_dialog_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_foreign_registry.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_foreign_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_foreign_v2.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_output_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_shell.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_system_bell_v1.h
+include/wlroots-${MODWLROOTS_VERSION}/wlr/types/wlr_xdg_toplevel_icon_v1.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/util/
 include/wlroots-${MODWLROOTS_VERSION}/wlr/util/addon.h
 include/wlroots-${MODWLROOTS_VERSION}/wlr/util/box.h

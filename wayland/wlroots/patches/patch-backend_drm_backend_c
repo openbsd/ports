@@ -1,7 +1,13 @@
 Index: backend/drm/backend.c
 --- backend/drm/backend.c.orig
 +++ backend/drm/backend.c
-@@ -10,6 +10,7 @@
+@@ -3,11 +3,13 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <wayland-server-core.h>
+ #include <wlr/backend/interface.h>
  #include <wlr/backend/session.h>
  #include <wlr/interfaces/wlr_output.h>
  #include <wlr/util/log.h>
@@ -9,7 +15,7 @@ Index: backend/drm/backend.c
  #include <xf86drm.h>
  #include "backend/drm/drm.h"
  #include "backend/drm/fb.h"
-@@ -167,6 +168,8 @@ static void handle_parent_destroy(struct wl_listener *
+@@ -207,6 +209,8 @@ static bool init_mgpu_renderer(struct wlr_drm_backend 
  
  struct wlr_backend *wlr_drm_backend_create(struct wlr_session *session,
  		struct wlr_device *dev, struct wlr_backend *parent) {
@@ -18,7 +24,7 @@ Index: backend/drm/backend.c
  	assert(session && dev);
  	assert(!parent || wlr_backend_is_drm(parent));
  
-@@ -267,6 +270,28 @@ struct wlr_backend *wlr_drm_backend_create(struct wlr_
+@@ -283,6 +287,28 @@ struct wlr_backend *wlr_drm_backend_create(struct wlr_
  	drm->session_destroy.notify = handle_session_destroy;
  	wl_signal_add(&session->events.destroy, &drm->session_destroy);
  

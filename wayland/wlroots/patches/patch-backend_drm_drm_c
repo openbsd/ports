@@ -1,7 +1,7 @@
 Index: backend/drm/drm.c
 --- backend/drm/drm.c.orig
 +++ backend/drm/drm.c
-@@ -9,6 +9,7 @@
+@@ -8,6 +8,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <strings.h>
@@ -19,7 +19,7 @@ Index: backend/drm/drm.c
  	if (drm->iface->finish != NULL) {
  		drm->iface->finish(drm);
  	}
-@@ -2113,6 +2117,18 @@ int handle_drm_event(int fd, uint32_t mask, void *data
+@@ -2050,6 +2054,18 @@ int handle_drm_event(int fd, uint32_t mask, void *data
  		wlr_log(WLR_ERROR, "drmHandleEvent failed");
  		wlr_backend_destroy(&drm->backend);
  	}
