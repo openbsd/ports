@@ -1,0 +1,13 @@
+https://gitlab.xfce.org/apps/xfdashboard/-/merge_requests/17
+
+Index: libxfdashboard/meson.build
+--- libxfdashboard/meson.build.orig
++++ libxfdashboard/meson.build
+@@ -240,6 +240,7 @@ libxfdashboard_deps = [
+   xcomposite,
+   xdamage,
+   xinerama,
++  libm,
+ ]
+ 
+ libxfdashboard = library(

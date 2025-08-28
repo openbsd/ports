@@ -1,0 +1,13 @@
+https://gitlab.xfce.org/apps/xfdashboard/-/merge_requests/17
+
+Index: settings/meson.build
+--- settings/meson.build.orig
++++ settings/meson.build
+@@ -28,6 +28,7 @@ executable(
+     libxfconf_settings_dep,
+     libxfdashboard_dep,
+     xfconf,
++    libm,
+   ],
+   install: true,
+   install_dir: get_option('prefix') / get_option('bindir'),

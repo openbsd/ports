@@ -1,0 +1,15 @@
+https://gitlab.xfce.org/apps/xfdashboard/-/merge_requests/17
+
+Index: libxfdashboard/meson.build
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -47,6 +47,8 @@ xcomposite = dependency('xcomposite', version: depende
+ xdamage = dependency('xdamage', version: dependency_versions['xdamage'], required: get_option('xdamage'))
+ xinerama = dependency('xinerama', version: dependency_versions['xinerama'], required: get_option('xinerama'))
+ 
++libm = cc.find_library('m', required: true)
++
+ feature_cflags = []
+ 
+ if clutter_gdk.found()
