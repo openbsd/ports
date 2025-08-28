@@ -9,14 +9,27 @@ share/raspberrypi-firmware/boot/bcm2708-rpi-cm.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-zero-w.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-zero.dtb
 share/raspberrypi-firmware/boot/bcm2709-rpi-2-b.dtb
+share/raspberrypi-firmware/boot/bcm2709-rpi-cm2.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-2-b.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-3-b-plus.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-3-b.dtb
+share/raspberrypi-firmware/boot/bcm2710-rpi-cm0.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-cm3.dtb
+share/raspberrypi-firmware/boot/bcm2710-rpi-zero-2-w.dtb
+share/raspberrypi-firmware/boot/bcm2710-rpi-zero-2.dtb
 share/raspberrypi-firmware/boot/bcm2711-rpi-4-b.dtb
 share/raspberrypi-firmware/boot/bcm2711-rpi-400.dtb
+share/raspberrypi-firmware/boot/bcm2711-rpi-cm4-io.dtb
 share/raspberrypi-firmware/boot/bcm2711-rpi-cm4.dtb
+share/raspberrypi-firmware/boot/bcm2711-rpi-cm4s.dtb
+share/raspberrypi-firmware/boot/bcm2712-d-rpi-5-b.dtb
 share/raspberrypi-firmware/boot/bcm2712-rpi-5-b.dtb
+share/raspberrypi-firmware/boot/bcm2712-rpi-500.dtb
+share/raspberrypi-firmware/boot/bcm2712-rpi-cm5-cm4io.dtb
+share/raspberrypi-firmware/boot/bcm2712-rpi-cm5-cm5io.dtb
+share/raspberrypi-firmware/boot/bcm2712-rpi-cm5l-cm4io.dtb
+share/raspberrypi-firmware/boot/bcm2712-rpi-cm5l-cm5io.dtb
+share/raspberrypi-firmware/boot/bcm2712d0-rpi-5-b.dtb
 share/raspberrypi-firmware/boot/bootcode.bin
 share/raspberrypi-firmware/boot/fixup.dat
 share/raspberrypi-firmware/boot/fixup4.dat
@@ -30,6 +43,7 @@ share/raspberrypi-firmware/boot/fixup_x.dat
 @comment share/raspberrypi-firmware/boot/kernel7.img
 @comment share/raspberrypi-firmware/boot/kernel7l.img
 @comment share/raspberrypi-firmware/boot/kernel8.img
+@comment share/raspberrypi-firmware/boot/kernel_2712.img
 share/raspberrypi-firmware/boot/overlays/
 share/raspberrypi-firmware/boot/overlays/README
 share/raspberrypi-firmware/boot/overlays/act-led.dtbo
