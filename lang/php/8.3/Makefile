@@ -1,4 +1,4 @@
-PHP_VERSION=	8.3.24
+PHP_VERSION=	8.3.25
 AUTOCONF_VERSION= 2.71
 
 # keep above 7.7-stable
