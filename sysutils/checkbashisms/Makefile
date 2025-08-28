@@ -1,10 +1,10 @@
 COMMENT=		check shell scripts for bash-specific constructs
 
-V=			2.25.18
+V=			2.25.19
 DISTNAME=		devscripts_$V
 PKGNAME=		checkbashisms-$V
 EXTRACT_SUFX=		.tar.xz
-WRKDIST=		${WRKDIR}/work/scripts
+WRKDIST=		${WRKDIR}/devscripts-$V/scripts
 CATEGORIES=		sysutils devel
 
 # GPLv2 only
