@@ -45,8 +45,10 @@ RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-utils =	# empty
 
-BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
-BUILD_DEPENDS +=	devel/py-pip
+BUILD_DEPENDS +=	databases/postgresql,-server \
+			devel/swig \
+			devel/py-pip \
+			devel/py-setuptools
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
