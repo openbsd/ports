@@ -126,12 +126,12 @@ SHA256 (cargo/security-framework-3.2.0.tar.gz) = JxcgQD9GygT3um9V1Dj4vYeNa4ygoQR
 SHA256 (cargo/security-framework-sys-2.14.0.tar.gz) = SdsjHVahkEkctK7alSfxrUU0WvULCFFiKnrbjAOwHDI=
 SHA256 (cargo/serde-1.0.219.tar.gz) = Xw4sbtZgYBm04p5p26upWxGFRBDlNH1SUAJFbbu3hrY=
 SHA256 (cargo/serde_derive-1.0.219.tar.gz) = WwJ2z38sczZfcVfIEjwhzZpQ+72ER1evKMofWSX8KgA=
-SHA256 (cargo/serde_json-1.0.141.tar.gz) = MLnv8h6+cYIWxuxk4dmsVwh6rRHvxk4yACvOSg1MA9M=
+SHA256 (cargo/serde_json-1.0.142.tar.gz) = Aw/tt4JgDcvW8C1Hm/DYF6w7tA1kR0W3adapa8Ovxac=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
 SHA256 (cargo/sha2-0.10.9.tar.gz) = p1B9gZdp0Bo2WrcHeUpAhDksgk9Up6anhi+MPQiSsoM=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
-SHA256 (cargo/slab-0.4.10.tar.gz) = BNwZc2FR81M20yUAesmRF41QShGYY6L8s3WM215SxQ0=
+SHA256 (cargo/slab-0.4.11.tar.gz) = eirkTvIP61emiyPYRoUPhhOUwuAtxCWlAJiujJAmdYk=
 SHA256 (cargo/smallvec-1.15.1.tar.gz) = Z7G3o7X+TxN2iHGEBF/PRcaekq9zS3qt3AX7d3tvvQM=
 SHA256 (cargo/socket2-0.5.10.tar.gz) = 4iN2q+01DXPdHNEZtX/8ytlbTlhafNpD4oYkXOI8Bng=
 SHA256 (cargo/socket2-0.6.0.tar.gz) = IzUEr0ZAdPnQZte1QWxfm4lKWGKmUG4wb3uBbN1vGAc=
@@ -146,7 +146,7 @@ SHA256 (cargo/thiserror-impl-2.0.12.tar.gz) = f3z0K0UH2OoyISBllnLPG527k/jy1Oz9bl
 SHA256 (cargo/tinystr-0.8.1.tar.gz) = XU9tEUXctXes94PU5gG8HXahMze7VOYjOt1YCwc0TIs=
 SHA256 (cargo/tinyvec-1.9.0.tar.gz) = CbNmHxfoZSTszUNxqwQpGU4NfACKu0X3p0lbFxlGPHE=
 SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBoBYdBTLyA=
-SHA256 (cargo/tokio-1.47.0.tar.gz) = Q4ZO1AC2BDpHV6JcemSo7950Gu15oFai+zSKQGcBuzU=
+SHA256 (cargo/tokio-1.47.1.tar.gz) = ieSa/a3ruHLTFFpWOLWesGkeoj5GykhAN8+rO3a5UDg=
 SHA256 (cargo/tokio-rustls-0.26.2.tar.gz) = jnJ7NqGg6LdMN2rCIR5AwsivCftAE8YNkQSVgQ8Ajps=
 SHA256 (cargo/tokio-util-0.7.15.tar.gz) = ZqU5qa1tXSgVENW9NoyXPWNsAtv4pnMAv7a5UGlq198=
 SHA256 (cargo/tower-0.5.2.tar.gz) = 0DmtkVnJi3Ds/VQLJXO5f39Sw+jZ+K1XokuRalNpdfk=
@@ -199,7 +199,7 @@ SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd
 SHA256 (cargo/zerotrie-0.2.2.tar.gz) = NvC71HhYP3ntrZeLQHkU9hspcvWvb6CJaGAWvo+a9ZU=
 SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pRCg=
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
-SHA256 (synapse-1.136.0.tar.gz) = uILUE6NXN4hruJryU3rgax5sZzSHN9MePbJepW/QS9s=
+SHA256 (synapse-1.137.0.tar.gz) = 46wrJTPy79YhEJN+MSSj+d8XQzpSn3gkgRhbfkxVVws=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -328,12 +328,12 @@ SIZE (cargo/security-framework-3.2.0.tar.gz) = 86095
 SIZE (cargo/security-framework-sys-2.14.0.tar.gz) = 20537
 SIZE (cargo/serde-1.0.219.tar.gz) = 78983
 SIZE (cargo/serde_derive-1.0.219.tar.gz) = 57798
-SIZE (cargo/serde_json-1.0.141.tar.gz) = 155322
+SIZE (cargo/serde_json-1.0.142.tar.gz) = 155363
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
 SIZE (cargo/sha2-0.10.9.tar.gz) = 29271
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
-SIZE (cargo/slab-0.4.10.tar.gz) = 17810
+SIZE (cargo/slab-0.4.11.tar.gz) = 18549
 SIZE (cargo/smallvec-1.15.1.tar.gz) = 38116
 SIZE (cargo/socket2-0.5.10.tar.gz) = 58169
 SIZE (cargo/socket2-0.6.0.tar.gz) = 57974
@@ -348,7 +348,7 @@ SIZE (cargo/thiserror-impl-2.0.12.tar.gz) = 21141
 SIZE (cargo/tinystr-0.8.1.tar.gz) = 23333
 SIZE (cargo/tinyvec-1.9.0.tar.gz) = 54137
 SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
-SIZE (cargo/tokio-1.47.0.tar.gz) = 828980
+SIZE (cargo/tokio-1.47.1.tar.gz) = 829790
 SIZE (cargo/tokio-rustls-0.26.2.tar.gz) = 31655
 SIZE (cargo/tokio-util-0.7.15.tar.gz) = 124255
 SIZE (cargo/tower-0.5.2.tar.gz) = 109417
@@ -401,4 +401,4 @@ SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerotrie-0.2.2.tar.gz) = 74423
 SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
-SIZE (synapse-1.136.0.tar.gz) = 9115501
+SIZE (synapse-1.137.0.tar.gz) = 9113083
