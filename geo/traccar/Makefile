@@ -1,5 +1,5 @@
 COMMENT =	modern GPS tracking platform
-V =		6.8.1
+V =		6.9.1
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
@@ -32,5 +32,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/traccar/
 	cp -r ${WRKSRC}/* ${PREFIX}/share/traccar/
 	rm ${PREFIX}/share/traccar/conf/traccar.xml.*
+
+post-install:
+	ln -s /var/db/traccar/override ${PREFIX}/share/traccar/
 
 .include <bsd.port.mk>
