@@ -1,24 +1,15 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -32,7 +32,6 @@ glm            = dependency('glm', required: false)
+@@ -41,7 +41,6 @@ glm            = dependency('glm', required: false)
  libinput       = dependency('libinput', version: '>=1.7.0')
  pixman         = dependency('pixman-1')
  xkbcommon      = dependency('xkbcommon')
--libdl          = meson.get_compiler('cpp').find_library('dl')
- json           = dependency('nlohmann_json', version: '>= 3.11.2')
+-libdl          = cpp.find_library('dl')
+ udev           = dependency('libudev')
+ json           = dependency('yyjson', required: false)
  
- # We're not to use system wlroots: So we'll use the subproject
-@@ -94,7 +93,7 @@ if get_option('use_system_wfconfig').disabled()
- 
- elif get_option('use_system_wfconfig').enabled()
- 	use_system_wfconfig = true
--	wfconfig = dependency('wf-config', version: ['>=0.10.0', '<0.11.0'], required: true)
-+	wfconfig = dependency('wf-config', version: ['>=0.9.0', '<0.10.0'], required: true)
- 
- elif get_option('use_system_wfconfig').auto()
- 	wfconfig = dependency('wf-config', version: ['>=0.10.0', '<0.11.0'], required: false)
-@@ -114,7 +113,7 @@ backtrace = meson.get_compiler('cpp').find_library('ex
+@@ -137,7 +136,7 @@ backtrace = cpp.find_library('execinfo', required: fal
  wfutils = subproject('wf-utils').get_variable('wfutils')
  wftouch = subproject('wf-touch').get_variable('wftouch')
  

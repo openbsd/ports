@@ -1,0 +1,12 @@
+Index: plugins/ipc-rules/ipc-input-methods.hpp
+--- plugins/ipc-rules/ipc-input-methods.hpp.orig
++++ plugins/ipc-rules/ipc-input-methods.hpp
+@@ -56,7 +56,7 @@ class ipc_rules_input_methods_t
+         for (auto& device : wf::get_core().get_input_devices())
+         {
+             wf::json_t d;
+-            d["id"]     = (intptr_t)device->get_wlr_handle();
++            d["id"]     = device->get_wlr_handle();
+             d["name"]   = nonull(device->get_wlr_handle()->name);
+             d["vendor"] = "unknown";
+             d["product"] = "unknown";

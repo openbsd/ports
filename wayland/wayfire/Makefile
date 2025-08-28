@@ -1,11 +1,9 @@
 COMMENT =	modular and extensible wayland compositor
 
-V =		0.9.0pl18
+V =		0.10.0
 GH_ACCOUNT =	WayfireWM
-GH_PROJECT =	wayfire
-GH_COMMIT =	3d3f426f7de8a24117f6c1d33c8dead1bc80b7e9
+
 DISTNAME =	wayfire-${V}
-REVISION =	1
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland
@@ -15,19 +13,17 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # git submodules when not building a release
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 08553c418f164bf5e84613d27447a32e380b75f0 subprojects/wf-utils
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch caa156921c6be1dff9c2ccd851330c96de7928bf subprojects/wf-touch
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 3ef27d1f76b5f3d1f34305bff12b3174e81727c2 subprojects/wf-utils
+DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch 093d8943df03cc8a2667990a065513c1bf2b57e0 subprojects/wf-touch
 
-#support for wlroots 0.18
-#https://github.com/WayfireWM/wayfire/pull/2452
-#SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
-#EXTRACT_SUFX =	.tar.xz
+SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
+
 HOMEPAGE =	https://wayfire.org
 
 MODULES =	devel/meson wayland/wlroots
 BUILD_DEPENDS =	graphics/glm \
 		devel/cmake/core \
-		textproc/nlohmann-json \
 		wayland/wayland-protocols
 
 # include/wayfire/touch/touch.hpp needs glm/vec2.hpp
@@ -41,6 +37,7 @@ CONFIGURE_ARGS =-Duse_system_wfconfig=enabled \
 
 LIB_DEPENDS =	devel/pango \
 		devel/libinotify \
+		devel/yyjson \
 		graphics/jpeg \
 		wayland/libevdev-openbsd \
 		wayland/libinput-openbsd \
@@ -51,6 +48,7 @@ LIB_DEPENDS =	devel/pango \
 WANTLIB += ${COMPILER_LIBCXX} EGL GLESv2 c cairo evdev execinfo
 WANTLIB += gobject-2.0 input jpeg m pango-1.0 pangocairo-1.0 pixman-1
 WANTLIB += png wayland-client wayland-server wf-config xcb xkbcommon
+WANTLIB += udev yyjson
 WANTLIB += lib/inotify/inotify
 
 # hack for gbm getting -I/usr/local/lib and failing build in wf-touch ?

@@ -25,10 +25,9 @@ include/wayfire/lexer/lexer.hpp
 include/wayfire/lexer/literal.hpp
 include/wayfire/lexer/symbol.hpp
 include/wayfire/matcher.hpp
-include/wayfire/nonstd/
+include/wayfire/nonstd/json.hpp
 include/wayfire/nonstd/observer_ptr.h
 include/wayfire/nonstd/reverse.hpp
-include/wayfire/nonstd/safe-list.hpp
 include/wayfire/nonstd/tracking-allocator.hpp
 include/wayfire/nonstd/wlroots-full.hpp
 include/wayfire/nonstd/wlroots.hpp
@@ -45,6 +44,8 @@ include/wayfire/parser/rule_parser.hpp
 include/wayfire/per-output-plugin.hpp
 include/wayfire/plugin.hpp
 include/wayfire/plugins/
+include/wayfire/plugins/animate/
+include/wayfire/plugins/animate/animate.hpp
 include/wayfire/plugins/blur/
 include/wayfire/plugins/blur/blur.hpp
 include/wayfire/plugins/common/
@@ -56,7 +57,6 @@ include/wayfire/plugins/common/move-drag-interface.hpp
 include/wayfire/plugins/common/preview-indication.hpp
 include/wayfire/plugins/common/shared-core-data.hpp
 include/wayfire/plugins/common/simple-text-node.hpp
-include/wayfire/plugins/common/simple-texture.hpp
 include/wayfire/plugins/common/util.hpp
 include/wayfire/plugins/common/workspace-wall.hpp
 include/wayfire/plugins/crossfade.hpp
@@ -75,6 +75,7 @@ include/wayfire/plugins/wobbly/
 include/wayfire/plugins/wobbly/wobbly-signal.hpp
 include/wayfire/region.hpp
 include/wayfire/render-manager.hpp
+include/wayfire/render.hpp
 include/wayfire/rule/
 include/wayfire/rule/lambda_rule.hpp
 include/wayfire/rule/rule.hpp
@@ -115,6 +116,8 @@ include/wayfire/workarea.hpp
 include/wayfire/workspace-set.hpp
 include/wayfire/workspace-stream.hpp
 @so lib/libwayfire-blur-base.so
+@static-lib lib/libwayfire-move-drag-interface.a
+@static-lib lib/libwayfire-workspace-wall.a
 @lib lib/libwf-utils.so.${LIBwf-utils_VERSION}
 @static-lib lib/libwftouch.a
 lib/pkgconfig/wayfire.pc
@@ -128,7 +131,6 @@ lib/wayfire/
 @so lib/wayfire/libcube.so
 @so lib/wayfire/libdecoration.so
 @so lib/wayfire/libdefault-config-backend.so
-@so lib/wayfire/libdemo-ipc.so
 @so lib/wayfire/libexpo.so
 @so lib/wayfire/libextra-gestures.so
 @so lib/wayfire/libfast-switcher.so
@@ -153,6 +155,7 @@ lib/wayfire/
 @so lib/wayfire/libsimple-tile.so
 @so lib/wayfire/libstipc.so
 @so lib/wayfire/libswitcher.so
+@so lib/wayfire/libvk-color-management.so
 @so lib/wayfire/libvswipe.so
 @so lib/wayfire/libvswitch.so
 @so lib/wayfire/libwayfire-shell.so
@@ -219,3 +222,5 @@ share/wayfire/protocols/unstable/
 share/wayfire/protocols/unstable/wayfire-shell-unstable-v2.xml
 share/wayland-sessions/
 share/wayland-sessions/wayfire.desktop
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/wayfire-portals.conf
