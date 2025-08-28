@@ -1,17 +1,18 @@
 COMMENT =	configuration files library for wayfire
 
-V =		0.9.0
+V =		0.10.0
+GH_ACCOUNT =	WayfireWM
+GH_PROJECT =	wf-config
+GH_TAGNAME =	v${V}
 DISTNAME =	wf-config-${V}
 
-SHARED_LIBS +=	wf-config 0.1 # 0.0
+SHARED_LIBS +=	wf-config 0.2 # 0.0
 CATEGORIES =	wayland
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE =Yes
 
-SITES =		https://github.com/WayfireWM/wf-config/releases/download/v${V}/
-EXTRACT_SUFX =	.tar.xz
 
 # C++17
 COMPILER =	base-clang ports-gcc

@@ -9,6 +9,8 @@ include/wayfire/config/option.hpp
 include/wayfire/config/section.hpp
 include/wayfire/config/types.hpp
 include/wayfire/config/xml.hpp
+include/wayfire/nonstd/
+include/wayfire/nonstd/safe-list.hpp
 include/wayfire/util/
 include/wayfire/util/duration.hpp
 include/wayfire/util/log.hpp
