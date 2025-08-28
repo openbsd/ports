@@ -2,7 +2,6 @@
 share/doc/stella/
 share/doc/stella/debugger.html
 share/doc/stella/graphics/
-share/doc/stella/graphics/Stella_icon.png
 share/doc/stella/graphics/cheat.png
 share/doc/stella/graphics/chucky_cheese.png
 share/doc/stella/graphics/circuit.png
@@ -44,6 +43,7 @@ share/doc/stella/graphics/navigation_buttons.png
 share/doc/stella/graphics/open_help.png
 share/doc/stella/graphics/options.png
 share/doc/stella/graphics/options_audio.png
+share/doc/stella/graphics/options_bezels.png
 share/doc/stella/graphics/options_developer.png
 share/doc/stella/graphics/options_developer_debugger.png
 share/doc/stella/graphics/options_developer_emulation.png
@@ -73,11 +73,11 @@ share/doc/stella/graphics/rominfo_1x_large.png
 share/doc/stella/graphics/rominfo_1x_small.png
 share/doc/stella/graphics/rominfo_2x_small.png
 share/doc/stella/graphics/secret_quest.png
-share/doc/stella/graphics/show_all.png
+share/doc/stella/graphics/select_random_rom.png
 share/doc/stella/graphics/show_current_dir.png
-share/doc/stella/graphics/show_roms.png
 share/doc/stella/graphics/show_sub_dirs.png
 share/doc/stella/graphics/space_invaders.png
+share/doc/stella/graphics/stella_icon.png
 share/doc/stella/graphics/timemachine.png
 share/doc/stella/index.html
 share/doc/stella/index_r77.html
