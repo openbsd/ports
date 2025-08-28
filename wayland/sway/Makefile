@@ -2,8 +2,7 @@ COMMENT =	i3-compatible Wayland compositor
 
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
-GH_TAGNAME =	1.10.1
-REVISION =	0
+GH_TAGNAME =	1.11
 
 CATEGORIES =	wayland
 

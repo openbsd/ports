@@ -17,5 +17,5 @@ Index: meson.build
 -rt = cc.find_library('rt')
 +rt = cc.find_library('rt', required: not is_openbsd)
  xcb_icccm = wlroots_features['xwayland'] ? dependency('xcb-icccm') : null_dep
- threads = dependency('threads') # for pthread_setschedparam
+ threads = dependency('threads') # for pthread_setschedparam and pthread_atfork
  
