@@ -1,8 +1,7 @@
 COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
-V=		9.1.1552
-REVISION=	0
+V=		9.1.1706
 
 DIST_TUPLE=	\
 	github vim vim v$V . \

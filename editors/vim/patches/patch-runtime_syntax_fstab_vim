@@ -6,7 +6,7 @@ our duid format in /etc/fstab
 Index: runtime/syntax/fstab.vim
 --- runtime/syntax/fstab.vim.orig
 +++ runtime/syntax/fstab.vim
-@@ -34,7 +34,7 @@ syn match fsOperator /[,=:#]/
+@@ -37,7 +37,7 @@ syn match fsOperator /[,=:#]/
  
  " Device
  syn cluster fsDeviceCluster contains=fsOperator,fsDeviceKeyword,fsDeviceError
@@ -15,7 +15,7 @@ Index: runtime/syntax/fstab.vim
  syn keyword fsDeviceKeyword contained none proc linproc tmpfs devpts devtmpfs sysfs usbfs tracefs overlay
  syn keyword fsDeviceKeyword contained LABEL nextgroup=fsDeviceLabel
  syn keyword fsDeviceKeyword contained UUID nextgroup=fsDeviceUUID
-@@ -221,7 +221,7 @@ syn match fsOptionsKeywords contained /\<\%(prjjquota\
+@@ -224,7 +224,7 @@ syn match fsOptionsKeywords contained /\<\%(prjjquota\
  syn keyword fsOptionsKeyWords contained gc_merge nogc_merge disable_roll_forward no_heap disable_ext_identify inline_xattr noinline_xattr inline_data noinline_data inline_dentry noinline_dentry flush_merge fastboot extent_cache noextent_cache data_flush offusrjquota offgrpjquota offprjjquota test_dummy_encryption checkpoint_merge nocheckpoint_merge compress_chksum compress_cache inlinecrypt atgc
  
  " Options: ffs

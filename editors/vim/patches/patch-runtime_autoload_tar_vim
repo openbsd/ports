@@ -1,7 +1,7 @@
 Index: runtime/autoload/tar.vim
 --- runtime/autoload/tar.vim.orig
 +++ runtime/autoload/tar.vim
-@@ -53,7 +53,7 @@ if !exists("g:tar_readoptions")
+@@ -54,7 +54,7 @@ if !exists("g:tar_readoptions")
   let g:tar_readoptions= "pxf"
  endif
  if !exists("g:tar_cmd")

@@ -428,6 +428,8 @@ share/vim/${P}/autoload/tutor.vim
 share/vim/${P}/autoload/typeset.vim
 share/vim/${P}/autoload/typst.vim
 share/vim/${P}/autoload/vimball.vim
+share/vim/${P}/autoload/vimcomplete.vim
+share/vim/${P}/autoload/vimgoto.vim
 share/vim/${P}/autoload/xml/
 share/vim/${P}/autoload/xml/html32.vim
 share/vim/${P}/autoload/xml/html401f.vim
@@ -577,6 +579,7 @@ share/vim/${P}/compiler/pbx.vim
 share/vim/${P}/compiler/perl.vim
 share/vim/${P}/compiler/perlcritic.vim
 share/vim/${P}/compiler/php.vim
+share/vim/${P}/compiler/phpstan.vim
 share/vim/${P}/compiler/pip_compile.vim
 share/vim/${P}/compiler/podchecker.vim
 share/vim/${P}/compiler/powershell.vim
@@ -1049,6 +1052,7 @@ share/vim/${P}/ftplugin/octave.vim
 share/vim/${P}/ftplugin/odin.vim
 share/vim/${P}/ftplugin/ondir.vim
 share/vim/${P}/ftplugin/opencl.vim
+share/vim/${P}/ftplugin/openscad.vim
 share/vim/${P}/ftplugin/openvpn.vim
 share/vim/${P}/ftplugin/org.vim
 share/vim/${P}/ftplugin/pamconf.vim
@@ -1170,6 +1174,7 @@ share/vim/${P}/ftplugin/twig.vim
 share/vim/${P}/ftplugin/typescript.vim
 share/vim/${P}/ftplugin/typescriptreact.vim
 share/vim/${P}/ftplugin/typst.vim
+share/vim/${P}/ftplugin/uc.vim
 share/vim/${P}/ftplugin/uci.vim
 share/vim/${P}/ftplugin/udevconf.vim
 share/vim/${P}/ftplugin/udevperm.vim
@@ -1837,7 +1842,6 @@ share/vim/${P}/pack/dist/opt/editorconfig/doc/editorconfig.txt
 share/vim/${P}/pack/dist/opt/editorconfig/doc/tags
 share/vim/${P}/pack/dist/opt/editorconfig/ftdetect/
 share/vim/${P}/pack/dist/opt/editorconfig/ftdetect/editorconfig.vim
-share/vim/${P}/pack/dist/opt/editorconfig/mkzip.sh
 share/vim/${P}/pack/dist/opt/editorconfig/plugin/
 share/vim/${P}/pack/dist/opt/editorconfig/plugin/editorconfig.vim
 share/vim/${P}/pack/dist/opt/helptoc/
@@ -1892,6 +1896,7 @@ share/vim/${P}/pack/dist/opt/termdebug/plugin/
 share/vim/${P}/pack/dist/opt/termdebug/plugin/termdebug.vim
 share/vim/${P}/plugin/
 share/vim/${P}/plugin/README.txt
+share/vim/${P}/plugin/colorresp.vim
 share/vim/${P}/plugin/getscriptPlugin.vim
 share/vim/${P}/plugin/gzip.vim
 share/vim/${P}/plugin/logiPat.vim
@@ -2027,6 +2032,7 @@ share/vim/${P}/syntax/cabal.vim
 share/vim/${P}/syntax/cabalconfig.vim
 share/vim/${P}/syntax/cabalproject.vim
 share/vim/${P}/syntax/calendar.vim
+share/vim/${P}/syntax/cangjie.vim
 share/vim/${P}/syntax/catalog.vim
 share/vim/${P}/syntax/cdl.vim
 share/vim/${P}/syntax/cdrdaoconf.vim
@@ -2809,7 +2815,6 @@ share/vim/${P}/tutor/tutor1.sv
 share/vim/${P}/tutor/tutor1.tr
 share/vim/${P}/tutor/tutor1.uk
 share/vim/${P}/tutor/tutor1.vi
-share/vim/${P}/tutor/tutor1.zh
 share/vim/${P}/tutor/tutor1.zh_cn
 share/vim/${P}/tutor/tutor1.zh_tw
 share/vim/${P}/tutor/tutor2
