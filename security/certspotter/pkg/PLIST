@@ -2,7 +2,6 @@
 @newuser _certspotter:896:896::Certspotter Daemon:/var/certspotter:/sbin/nologin
 @rcscript ${RCDIR}/certspotter
 @bin bin/certspotter
-@bin bin/submitct
 @mode 750
 @owner _certspotter
 @group _certspotter
@@ -11,7 +10,4 @@
 @mode
 @owner
 @group
-share/doc/certspotter/
-share/doc/certspotter/CHANGELOG.md
-share/doc/certspotter/README.md
 share/doc/pkg-readmes/${PKGSTEM}
