@@ -1,6 +1,6 @@
 COMMENT=		small tiling window manager
 
-V=			3.6.0
+V=			3.7.0
 DIST_TUPLE=		github conformal spectrwm SPECTRWM_${V:S/./_/g} /
 DISTNAME=		spectrwm-${V}
 
