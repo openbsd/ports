@@ -3,7 +3,7 @@ Avoid use of unitialized variable.  Fixes addhunk2 test with vm.malloc_conf=J.
 Index: src/rediff.c
 --- src/rediff.c.orig
 +++ src/rediff.c
-@@ -842,6 +842,7 @@ static int rediff (const char *original, const char *e
+@@ -874,6 +874,7 @@ static int rediff (const char *original, const char *e
  		newhunk->filepos = pos;
  		newhunk->line_in_diff = linenum;
  		newhunk->num_lines = 0;

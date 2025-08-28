@@ -1,0 +1,88 @@
+disable option using stdout reassignment, it doesn't work with our stdout
+macro / opaque FILE.
+
+src/filterdiff.c:1833:5: error: assignment to cast is illegal, lvalue casts are not supported
+ 1833 |                                 stdout = temp_output;
+      |                                 ^~~~~~ ~
+/usr/include/stdio.h:76:17: note: expanded from macro 'stdout'
+   76 | #define stdout  ((struct __sFILE *)__stdout)
+      |                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/filterdiff.c:1838:5: error: assignment to cast is illegal, lvalue casts are not supported
+ 1838 |                                 stdout = old_stdout;
+      |                                 ^~~~~~ ~
+/usr/include/stdio.h:76:17: note: expanded from macro 'stdout'
+   76 | #define stdout  ((struct __sFILE *)__stdout)
+      |                 ~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Index: src/filterdiff.c
+--- src/filterdiff.c.orig
++++ src/filterdiff.c
+@@ -1277,8 +1277,10 @@ const char * syntax_str =
+ "            don't show timestamps from output (filterdiff, patchview, grepdiff)\n"
+ "  --clean (filterdiff)\n"
+ "            remove all comments (non-diff lines) from output (filterdiff)\n"
++#if 0
+ "  --in-place (filterdiff)\n"
+ "            write output to the original input files (filterdiff)\n"
++#endif
+ "  -z, --decompress\n"
+ "            decompress .gz and .bz2 files\n"
+ "  -n, --line-number (lsdiff, grepdiff)\n"
+@@ -1548,7 +1550,9 @@ int main (int argc, char *argv[])
+ 			{"extended-regexp", 0, 0, 'E'},
+ 			{"empty-files-as-removed", 0, 0, 'E'},
+ 			{"file", 1, 0, 'f'},
++#if 0
+ 			{"in-place", 0, 0, 1000 + 'w'},
++#endif
+ 			{0, 0, 0, 0}
+ 		};
+ 		char *end;
+@@ -1769,6 +1773,7 @@ int main (int argc, char *argv[])
+ 		error (EXIT_FAILURE, 0, "can't use --verbose and "
+ 		       "--clean options simultaneously");
+ 
++#if 0
+ 	if (inplace_mode && unzip)
+ 		error (EXIT_FAILURE, 0,
+ 		       "--in-place and --decompress are mutually exclusive");
+@@ -1776,6 +1781,7 @@ int main (int argc, char *argv[])
+ 	if (inplace_mode && mode != mode_filter)
+ 		error (EXIT_FAILURE, 0,
+ 		       "--in-place only applies to filter mode");
++#endif
+ 
+ 	if (mode == mode_grep && !regex_file_specified) {
+ 		int err;
+@@ -1808,9 +1814,11 @@ int main (int argc, char *argv[])
+ 			print_patchnames = 0;
+ 	}
+ 
++#if 0
+ 	if (inplace_mode && optind == argc)
+ 		error (EXIT_FAILURE, 0,
+ 		       "--in-place cannot be used with standard input");
++#endif
+ 
+ 	if (optind == argc) {
+ 		f = convert_format (stdin, format);
+@@ -1826,6 +1834,7 @@ int main (int argc, char *argv[])
+ 
+ 			f = convert_format (f, format);
+ 
++#if 0
+ 			if (inplace_mode) {
+ 				/* Redirect stdout to temporary file for in-place processing */
+ 				FILE *temp_output = xtmpfile();
+@@ -1843,9 +1852,9 @@ int main (int argc, char *argv[])
+ 				}
+ 
+ 				fclose (temp_output);
+-			} else {
++			} else
++#endif
+ 				filterdiff (f, argv[i]);
+-			}
+ 
+ 			fclose (f);
+ 		}

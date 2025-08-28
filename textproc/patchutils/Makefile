@@ -1,7 +1,6 @@
 COMMENT=	small tools to operate on patch files
 
-DISTNAME=	patchutils-0.4.2
-REVISION=	0
+DISTNAME=	patchutils-0.4.3
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	textproc devel
