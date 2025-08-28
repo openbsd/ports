@@ -1,6 +1,6 @@
 COMMENT=	proof-of-work proxy to protect web resources from scrapers
 
-V=		1.21.0
+V=		1.21.3
 DISTNAME=	anubis-src-vendor-npm-$V
 PKGNAME=	anubis-$V
 
