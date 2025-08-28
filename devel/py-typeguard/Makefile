@@ -1,6 +1,6 @@
 COMMENT=	run-time type checker for Python
 
-MODPY_DISTV=	4.4.3
+MODPY_DISTV=	4.4.4
 DISTNAME=	typeguard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
