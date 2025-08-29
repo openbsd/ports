@@ -2,7 +2,7 @@ COMMENT =		accurate Nintendo Entertainment System emulator
 
 GH_ACCOUNT =		0ldsk00l
 GH_PROJECT =		nestopia
-GH_TAGNAME =		1.53.1
+GH_TAGNAME =		1.53.2
 
 .include <bsd.port.arch.mk>
 
