@@ -1,6 +1,6 @@
 COMMENT =	GTK3-based panel for wayfire
 
-V =		0.9.0
+V =		0.10.0
 DISTNAME =	wf-shell-${V}
 
 CATEGORIES =	wayland
