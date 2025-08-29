@@ -1,7 +1,7 @@
 PORTROACH=		limit:^8
 
 VERSION=		8.10.0
-REVISION=		0
+REVISION=		1
 
 RUN_DEPENDS+=		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \
 			devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR}>=1,<2 \
