@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1742 2025/08/18 12:22:03 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1743 2025/08/29 07:56:47 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1284,6 +1284,7 @@ setup_obsolete_reason(
 	5 => 'libdazzle',
 	5 => 'clutter-gst',
 	3 => 'bruce',
+	29 => 'icedtea-web',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
