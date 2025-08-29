@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  find_package(Capstone)
  if(Capstone_FOUND)
  	set(CMAKE_REQUIRED_INCLUDES ${CAPSTONE_INCLUDE_DIR})
-@@ -378,22 +373,6 @@ if(Python_Interpreter_FOUND AND Python_VERSION_MAJOR L
+@@ -383,22 +378,6 @@ if(Python_Interpreter_FOUND AND Python_VERSION_MAJOR L
  	message("Note: Hatari needs at least Python 3 ... ignoring older version")
  	unset(Python_Interpreter_FOUND)
  endif()
