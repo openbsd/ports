@@ -108,7 +108,9 @@ include/SFML/Window/Mouse.hpp
 include/SFML/Window/Sensor.hpp
 include/SFML/Window/Touch.hpp
 include/SFML/Window/VideoMode.hpp
+include/SFML/Window/Vulkan.hpp
 include/SFML/Window/Window.hpp
+include/SFML/Window/WindowBase.hpp
 include/SFML/Window/WindowHandle.hpp
 include/SFML/Window/WindowStyle.hpp
 lib/cmake/SFML/
@@ -128,6 +130,6 @@ lib/pkgconfig/sfml-graphics.pc
 lib/pkgconfig/sfml-network.pc
 lib/pkgconfig/sfml-system.pc
 lib/pkgconfig/sfml-window.pc
-share/SFML/
-share/SFML/license.md
-share/SFML/readme.md
+share/doc/SFML/
+share/doc/SFML/license.md
+share/doc/SFML/readme.md
