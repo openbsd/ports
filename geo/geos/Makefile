@@ -1,12 +1,12 @@
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.13.1
+DISTNAME=	geos-3.14.0
 
 CATEGORIES=	geo
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	geos	26.0 \
-		geos_c	4.9
+SHARED_LIBS=	geos	27.0 \
+		geos_c	4.10
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -21,7 +21,7 @@ WANTLIB=	c m ${COMPILER_LIBCXX}
 # cf https://trac.osgeo.org/geos/wiki/RFC7
 MODULES =	devel/cmake
 
-# uses C++11, cf https://trac.osgeo.org/geos/wiki/RFC5
+# uses C++17, cf https://trac.osgeo.org/geos/wiki/RFC5
 COMPILER =	base-clang ports-gcc
 
 # evertyhing except tests
