@@ -2,8 +2,7 @@ COMMENT =	ncurses based sudoku game
 
 GH_ACCOUNT =	jubalh
 GH_PROJECT =	nudoku
-GH_TAGNAME =	5.0.0
-REVISION =	0
+GH_TAGNAME =	6.0.0
 
 CATEGORIES =	games
 
