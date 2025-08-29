@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 SITES =		${SITE_SOURCEFORGE:=xye/}
 
-FIX_CRLF_FILES =	src/xsb_level.cpp
+FIX_CRLF_FILES =	src/xsb_level.cpp src/xye_script.cpp
 
 WANTLIB += SDL SDL_image SDL_ttf c m pthread ${COMPILER_LIBCXX}
 
