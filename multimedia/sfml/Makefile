@@ -1,16 +1,15 @@
 COMMENT =		simple and fast multimedia library
 
-V =			2.5.1
+V =			2.6.2
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
-REVISION =		0
 EXTRACT_SUFX =		.zip
 
-SHARED_LIBS +=  sfml-audio                2.0 # 2.1
-SHARED_LIBS +=  sfml-graphics             2.0 # 2.1
-SHARED_LIBS +=  sfml-network              2.0 # 2.1
-SHARED_LIBS +=  sfml-system               2.0 # 2.1
-SHARED_LIBS +=  sfml-window               2.0 # 2.1
+SHARED_LIBS +=  sfml-audio                3.0 # 2.1
+SHARED_LIBS +=  sfml-graphics             3.0 # 2.1
+SHARED_LIBS +=  sfml-network              3.0 # 2.1
+SHARED_LIBS +=  sfml-system               3.0 # 2.1
+SHARED_LIBS +=  sfml-window               3.0 # 2.1
 
 CATEGORIES =		multimedia
 
