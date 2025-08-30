@@ -676,6 +676,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudsearchdomain/2013-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudtrail-data/
@@ -744,6 +745,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-security/2018-05
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-security/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-security/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-security/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-security/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/2019-07-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/2019-07-18/endpoint-rule-set-1.json
@@ -1353,6 +1355,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/end
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/endpoint-rule-set-1.json
@@ -2004,20 +2007,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearchserverless/2021
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearchserverless/2021-11-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearchserverless/2021-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearchserverless/2021-11-01/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/endpoint-rule-set-1.json
