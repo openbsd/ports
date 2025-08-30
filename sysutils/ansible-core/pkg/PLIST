@@ -660,9 +660,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansibal
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_coverage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_coverage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_debugpy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_debugpy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_pydevd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/${MODPY_PYCACHE}_pydevd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/_coverage.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/_debugpy.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_extensions/_pydevd.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_loader.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_ansiballz/_respawn.py
