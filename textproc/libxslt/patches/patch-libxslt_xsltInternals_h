@@ -1,0 +1,94 @@
+https://gitlab.gnome.org/GNOME/libxslt/-/issues/144
+
+From f94e7e9796edeb6f3bedd3fdb1099e9b556aea21 Mon Sep 17 00:00:00 2001
+From: Daniel Cheng <dcheng@chromium.org>
+Date: Sat, 31 May 2025 00:15:24 -0700
+Subject: [PATCH] Use a dedicated node type to maintain the list of cached RVTs
+
+While evaluating a stylesheet, result value trees (result tree fragments
+in the XSLT spec) are represented as xmlDocs and cached on the transform
+context in a linked list, using xmlDoc's prev and next pointers to
+maintain the list.
+
+However, XPath evaluations can inadvertently traverse these links, which
+are an implementation detail and do not reflect the actual document
+structure. Using a dedicated node type avoids these unintended
+traversals.
+
+Index: libxslt/xsltInternals.h
+--- libxslt/xsltInternals.h.orig
++++ libxslt/xsltInternals.h
+@@ -1410,6 +1410,8 @@ struct _xsltStylePreComp {
+ 
+ #endif /* XSLT_REFACTORED */
+ 
++typedef struct _xsltRVTList xsltRVTList;
++typedef xsltRVTList *xsltRVTListPtr;
+ 
+ /*
+  * The in-memory structure corresponding to an XSLT Variable
+@@ -1427,7 +1429,7 @@ struct _xsltStackElem {
+     xmlNodePtr tree;		/* the sequence constructor if no eval
+ 				    string or the location */
+     xmlXPathObjectPtr value;	/* The value if computed */
+-    xmlDocPtr fragment;		/* The Result Tree Fragments (needed for XSLT 1.0)
++    xsltRVTListPtr fragment;	/* The Result Tree Fragments (needed for XSLT 1.0)
+ 				   which are bound to the variable's lifetime. */
+     int level;                  /* the depth in the tree;
+                                    -1 if persistent (e.g. a given xsl:with-param) */
+@@ -1639,10 +1641,16 @@ struct _xsltStylesheet {
+     unsigned long opCount;
+ };
+ 
++struct _xsltRVTList {
++  xmlDocPtr RVT;
++  xsltRVTListPtr prev;
++  xsltRVTListPtr next;
++};
++
+ typedef struct _xsltTransformCache xsltTransformCache;
+ typedef xsltTransformCache *xsltTransformCachePtr;
+ struct _xsltTransformCache {
+-    xmlDocPtr RVT;
++    xsltRVTListPtr rvtList;
+     int nbRVT;
+     xsltStackElemPtr stackItems;
+     int nbStackItems;
+@@ -1749,8 +1757,8 @@ struct _xsltTransformContext {
+      * handling of temporary Result Value Tree
+      * (XSLT 1.0 term: "Result Tree Fragment")
+      */
+-    xmlDocPtr       tmpRVT;		/* list of RVT without persistance */
+-    xmlDocPtr       persistRVT;		/* list of persistant RVTs */
++    xsltRVTListPtr  tmpRVTList;	        /* list of RVT without persistance */
++    xsltRVTListPtr  persistRVTList;     /* list of persistant RVTs */
+     int             ctxtflags;          /* context processing flags */
+ 
+     /*
+@@ -1783,7 +1791,7 @@ struct _xsltTransformContext {
+     xmlDocPtr initialContextDoc;
+     xsltTransformCachePtr cache;
+     void *contextVariable; /* the current variable item */
+-    xmlDocPtr localRVT; /* list of local tree fragments; will be freed when
++    xsltRVTListPtr localRVTList; /* list of local tree fragments; will be freed when
+ 			   the instruction which created the fragment
+                            exits */
+     xmlDocPtr localRVTBase; /* Obsolete */
+@@ -1932,8 +1940,11 @@ XSLTPUBFUN int XSLTCALL
+ XSLTPUBFUN void XSLTCALL
+ 			xsltFreeRVTs		(xsltTransformContextPtr ctxt);
+ XSLTPUBFUN void XSLTCALL
+-			xsltReleaseRVT		(xsltTransformContextPtr ctxt,
++			xsltReleaseRVT          (xsltTransformContextPtr ctxt,
+ 						 xmlDocPtr RVT);
++XSLTPUBFUN void XSLTCALL
++			xsltReleaseRVTList	(xsltTransformContextPtr ctxt,
++						 xsltRVTListPtr list);
+ /*
+  * Extra functions for Attribute Value Templates
+  */
+@@ -1992,4 +2003,3 @@ XSLTPUBFUN int XSLTCALL
+ #endif
+ 
+ #endif /* __XML_XSLT_H__ */
+-
