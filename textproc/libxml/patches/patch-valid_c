@@ -1,0 +1,17 @@
+From f1e1f13b766eb580a8dcc0c4e7a447346dfd862e Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Tue, 5 Aug 2025 22:26:27 +0200
+Subject: [PATCH] tree: Guard against atype corruption
+
+Index: valid.c
+--- valid.c.orig
++++ valid.c
+@@ -4296,7 +4296,7 @@ xmlValidateOneAttribute(xmlValidCtxtPtr ctxt, xmlDocPt
+ 	       attr->name, elem->name, NULL);
+ 	return(0);
+     }
+-    if (attr->atype == XML_ATTRIBUTE_ID)
++    if (attr->id != NULL)
+         xmlRemoveID(doc, attr);
+     attr->atype = attrDecl->atype;
+ 
