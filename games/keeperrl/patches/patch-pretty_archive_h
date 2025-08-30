@@ -1,7 +1,7 @@
 Index: pretty_archive.h
 --- pretty_archive.h.orig
 +++ pretty_archive.h
-@@ -450,7 +450,7 @@ namespace pretty_tuple_detail {
+@@ -460,7 +460,7 @@ namespace pretty_tuple_detail {
      struct serialize {
        template <class Archive, class ... Types> inline
        static void apply(Archive& ar1, std::tuple<Types...>& tuple) {
@@ -10,7 +10,7 @@ Index: pretty_archive.h
          ar1(std::get<Height - 1>(tuple));
        }
      };
-@@ -464,7 +464,7 @@ namespace pretty_tuple_detail {
+@@ -474,7 +474,7 @@ namespace pretty_tuple_detail {
  
  template <class ... Types> inline
  void serialize(PrettyInputArchive& ar, std::tuple<Types...>& tuple) {

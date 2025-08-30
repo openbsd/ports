@@ -72,6 +72,9 @@ share/keeperrl/data_free/game_config/storage_ids.txt
 share/keeperrl/data_free/game_config/technology.txt
 share/keeperrl/data_free/game_config/tile_gas_types.txt
 share/keeperrl/data_free/game_config/tiles.txt
+share/keeperrl/data_free/game_config/translations/
+share/keeperrl/data_free/game_config/translations/english.txt
+share/keeperrl/data_free/game_config/translations/polish.txt
 share/keeperrl/data_free/game_config/workshop_info.txt
 share/keeperrl/data_free/game_config/workshops_menu.txt
 share/keeperrl/data_free/game_config/world_maps.txt
@@ -187,6 +190,7 @@ share/keeperrl/data_free/ui/unlock_message.txt
 share/keeperrl/data_free/ui/yes_or_no.txt
 share/keeperrl/data_free/ui/yes_or_no_below.txt
 share/keeperrl/gdb_input.txt
+share/keeperrl/sentences.txt
 share/keeperrl/server/
 share/keeperrl/server/.gitignore
 share/keeperrl/server/db.php
