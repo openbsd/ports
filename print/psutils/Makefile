@@ -1,6 +1,6 @@
 COMMENT=	manipulate PDF and PostScript documents
 
-MODPY_DISTV=	3.3.11
+MODPY_DISTV=	3.3.12
 DISTNAME=	psutils-${MODPY_DISTV}
 
 CATEGORIES=	print
