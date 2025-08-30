@@ -2,7 +2,7 @@ COMMENT=		image metadata manipulation
 
 CATEGORIES=		graphics devel
 
-DIST_TUPLE=		github Exiv2 exiv2 v0.28.5 .
+DIST_TUPLE=		github Exiv2 exiv2 v0.28.6 .
 EPOCH=			0
 
 SHARED_LIBS +=  exiv2                13.0
