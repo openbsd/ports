@@ -56,7 +56,6 @@ lib/netatalk/
 @man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
 @man man/man1/afpstats.1
-@man man/man1/afptest.1
 @man man/man1/asip-status.1
 @man man/man1/dbd.1
 @man man/man1/fce_listen.1
