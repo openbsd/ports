@@ -1,6 +1,6 @@
 COMMENT =	launcher/menu program for wlroots based wayland compositors
 
-V =		1.4.1
+V =		1.5.1
 DISTNAME =	wofi-${V}
 
 CATEGORIES =	wayland
