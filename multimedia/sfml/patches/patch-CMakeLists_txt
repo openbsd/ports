@@ -1,0 +1,16 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -292,7 +292,11 @@ if(SFML_INSTALL_PKGCONFIG_FILES)
+     # this could be e.g. macports on mac or msys2 on windows etc.
+     set(SFML_PKGCONFIG_DIR "/${SFML_RELATIVE_INSTALL_LIBDIR}/pkgconfig")
+ 
+-    if(SFML_OS_FREEBSD OR SFML_OS_OPENBSD OR SFML_OS_NETBSD)
++    if(SFML_OS_OPENBSD)
++        set(SFML_PKGCONFIG_DIR "/lib/pkgconfig")
++    endif()
++
++    if(SFML_OS_FREEBSD OR SFML_OS_NETBSD)
+         set(SFML_PKGCONFIG_DIR "/libdata/pkgconfig")
+     endif()
+ 
