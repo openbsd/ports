@@ -7,10 +7,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-REVISION-python =	0
-REVISION-java =	0
-
-VERSION =		5.12.5
+VERSION =		5.12.6
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
@@ -26,9 +23,9 @@ HOMEPAGE =		https://opencog.github.io/link-grammar-website/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += curses hunspell-1.7 m pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += curses hunspell-1.7 m pcre2-8 sqlite3 ${COMPILER_LIBCXX}
 
-WANTLIB-main += ${WANTLIB} c perl pthread
+WANTLIB-main += ${WANTLIB} c perl pthread z
 
 WANTLIB-java += ${WANTLIB} link-grammar pthread
 

@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -13,13 +13,13 @@ AC_INIT([link-grammar],[5.12.5],[https://github.com/op
+@@ -13,13 +13,13 @@ AC_INIT([link-grammar],[5.12.6],[https://github.com/op
  AC_MSG_CHECKING([whether configure should try to set CFLAGS/CXXFLAGS])
  AS_IF([test "x${CFLAGS+set}" = "xset" || test "x${CXXFLAGS+set}" = "xset"], [
      enable_flags_setting=no
