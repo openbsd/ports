@@ -57,9 +57,6 @@ lib/python${MODPY_VERSION}/site-packages/boto3/data/glacier/2012-06-01/resources
 lib/python${MODPY_VERSION}/site-packages/boto3/data/iam/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/iam/2010-05-08/resources-1.json
-lib/python${MODPY_VERSION}/site-packages/boto3/data/opsworks/
-lib/python${MODPY_VERSION}/site-packages/boto3/data/opsworks/2013-02-18/
-lib/python${MODPY_VERSION}/site-packages/boto3/data/opsworks/2013-02-18/resources-1.json
 lib/python${MODPY_VERSION}/site-packages/boto3/data/s3/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/s3/2006-03-01/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/s3/2006-03-01/resources-1.json
