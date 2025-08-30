@@ -1,7 +1,7 @@
 COMMENT =	highlight mouse pointer using a dot
 GH_ACCOUNT =	swillner
 GH_PROJECT =	highlight-pointer
-GH_TAGNAME =	v1.1.3
+GH_TAGNAME =	v1.2
 CATEGORIES =	x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
