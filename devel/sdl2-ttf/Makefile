@@ -1,11 +1,10 @@
-V =		2.22.0
+V =		2.24.0
 COMMENT =	SDL2 TrueType fonts library
 DISTNAME =	SDL2_ttf-${V}
 PKGNAME =	sdl2-ttf-${V}
 CATEGORIES =	devel graphics fonts
-REVISION =	0
 
-SHARED_LIBS +=	SDL2_ttf		0.1 # 10.2
+SHARED_LIBS +=	SDL2_ttf		0.2 # 24.0
 
 HOMEPAGE =	https://www.libsdl.org/projects/SDL_ttf/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
