@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GL LLVM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xxf86vm aom aspell atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avif brotlicommon brotlidec brotlienc c cairo cairo-gobject
-WANTLIB += dav1d dbus-1 drm drm_amdgpu drm_intel elf enchant-2
+WANTLIB += dav1d dbus-1 drm drm_amdgpu elf enchant-2
 WANTLIB += epoll-shim epoxy execinfo expat ffi flite flite_cmu_grapheme_lang
 WANTLIB += flite_cmu_grapheme_lex flite_cmu_indic_lang flite_cmu_indic_lex
 WANTLIB += flite_cmu_time_awb flite_cmu_us_awb flite_cmu_us_kal
@@ -35,6 +35,10 @@ WANTLIB += wayland-server webkit2gtk-4.1 webp webpdemux webpmux
 WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-randr xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xkbcommon xml2 xshmfence xslt z
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB += drm_intel
+.endif
 
 COMPILER=	base-clang ports-gcc
 
