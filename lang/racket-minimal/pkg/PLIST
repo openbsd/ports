@@ -84,6 +84,8 @@ lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/pe
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/pe-rsrc_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/read-bstr_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/read-bstr_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/recompile-cache_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/recompile-cache_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/win-dll-list_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/win-dll-list_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/compiler/private/compiled/windlldir_rkt.dep
@@ -391,6 +393,8 @@ lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/metadat
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/metadata_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/migrate_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/migrate_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/missing-deps_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/missing-deps_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/mod-paths_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/mod-paths_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/network_rkt.dep
@@ -484,6 +488,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/control_rkt.
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/control_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/date_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/date_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/deprecation_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/deprecation_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/dict_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/dict_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/engine_rkt.dep
@@ -774,6 +780,10 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/contract/private/comp
 lib/racket/compiled/usr/local/share/racket/collects/racket/contract/private/compiled/vector-common_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/contract/private/compiled/vector_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/contract/private/compiled/vector_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/deprecation/
+lib/racket/compiled/usr/local/share/racket/collects/racket/deprecation/compiled/
+lib/racket/compiled/usr/local/share/racket/collects/racket/deprecation/compiled/transformer_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/deprecation/compiled/transformer_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/gui/
 lib/racket/compiled/usr/local/share/racket/collects/racket/gui/compiled/
 lib/racket/compiled/usr/local/share/racket/collects/racket/gui/compiled/dynamic_rkt.dep
@@ -1531,6 +1541,7 @@ share/racket/collects/compiler/private/macfw.rkt
 share/racket/collects/compiler/private/mach-o.rkt
 share/racket/collects/compiler/private/pe-rsrc.rkt
 share/racket/collects/compiler/private/read-bstr.rkt
+share/racket/collects/compiler/private/recompile-cache.rkt
 share/racket/collects/compiler/private/win-dll-list.rkt
 share/racket/collects/compiler/private/windlldir.rkt
 share/racket/collects/compiler/private/winsubsys.rkt
@@ -1687,6 +1698,7 @@ share/racket/collects/pkg/private/install.rkt
 share/racket/collects/pkg/private/lock.rkt
 share/racket/collects/pkg/private/metadata.rkt
 share/racket/collects/pkg/private/migrate.rkt
+share/racket/collects/pkg/private/missing-deps.rkt
 share/racket/collects/pkg/private/mod-paths.rkt
 share/racket/collects/pkg/private/network.rkt
 share/racket/collects/pkg/private/new.rkt
@@ -1801,6 +1813,9 @@ share/racket/collects/racket/contract/private/vector.rkt
 share/racket/collects/racket/contract/region.rkt
 share/racket/collects/racket/control.rkt
 share/racket/collects/racket/date.rkt
+share/racket/collects/racket/deprecation/
+share/racket/collects/racket/deprecation.rkt
+share/racket/collects/racket/deprecation/transformer.rkt
 share/racket/collects/racket/dict.rkt
 share/racket/collects/racket/engine.rkt
 share/racket/collects/racket/enter.rkt
