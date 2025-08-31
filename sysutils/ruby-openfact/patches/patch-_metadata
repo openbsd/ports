@@ -1,0 +1,26 @@
+Relax version requirement for the logger gem to use lang/ruby's bundle.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -223,16 +223,16 @@ dependencies:
+   name: logger
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+-        version: '1.7'
++        version: '1.6.4'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+-        version: '1.7'
++        version: '1.6.4'
+ - !ruby/object:Gem::Dependency
+   name: thor
+   requirement: !ruby/object:Gem::Requirement
