@@ -4,7 +4,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-6.0.6
+DISTNAME =		zeek-6.0.9
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broker                    4.0

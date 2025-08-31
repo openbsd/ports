@@ -452,6 +452,7 @@ include/zeek/analyzer/protocol/pia/
 include/zeek/analyzer/protocol/pia/PIA.h
 include/zeek/analyzer/protocol/pop3/
 include/zeek/analyzer/protocol/pop3/POP3.h
+include/zeek/analyzer/protocol/pop3/consts.bif.h
 include/zeek/analyzer/protocol/pop3/events.bif.h
 include/zeek/analyzer/protocol/radius/
 include/zeek/analyzer/protocol/radius/RADIUS.h
@@ -1466,7 +1467,6 @@ share/btest/data/pcaps/mysql/selects_with_new_proto.trace
 share/btest/data/pcaps/mysql/tls-12-amazon-rds.trace
 share/btest/data/pcaps/mysql/tls-13-amazon-rds.trace
 share/btest/data/pcaps/ncp.pcap
-share/btest/data/pcaps/negative-time.pcap
 share/btest/data/pcaps/nflog-http.pcap
 share/btest/data/pcaps/nfs/
 share/btest/data/pcaps/nfs/nfs_base.pcap
@@ -1483,7 +1483,10 @@ share/btest/data/pcaps/pbb.pcap
 share/btest/data/pcaps/pe/
 share/btest/data/pcaps/pe/pe-single.trace
 share/btest/data/pcaps/pe/pe.trace
+share/btest/data/pcaps/pop3/
 share/btest/data/pcaps/pop3-unknown-commands.pcap
+share/btest/data/pcaps/pop3/pop3.pcap
+share/btest/data/pcaps/pop3/redis-50-pings.pcap
 share/btest/data/pcaps/port4242.trace
 share/btest/data/pcaps/port4243.trace
 share/btest/data/pcaps/pppoe-over-qinq.pcap
@@ -1854,6 +1857,7 @@ share/zeek/base/bif/plugins/Zeek_NetBIOS.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_NetBIOS.functions.bif.zeek
 share/zeek/base/bif/plugins/Zeek_NoneWriter.none.bif.zeek
 share/zeek/base/bif/plugins/Zeek_PE.events.bif.zeek
+share/zeek/base/bif/plugins/Zeek_POP3.consts.bif.zeek
 share/zeek/base/bif/plugins/Zeek_POP3.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_RADIUS.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_RDP.events.bif.zeek
