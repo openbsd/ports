@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -535,7 +535,7 @@ calc.1: calc.man ${MK_SET}
+ calc.usage: calc.1
+ 	${Q} echo forming $@ from calc.1
+ 	${RM} -f $@
+-	${MAN} ./calc.1 > $@
++	${MAN} -l ./calc.1 > $@
+ 	${CHMOD} 0444 $@
+ 	${Q} echo $@ formed
+ 
