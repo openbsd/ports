@@ -13,6 +13,7 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			62321fd7128ab2650b459d4195781af8185e46b5	.
 PKGNAME =		tg_owt-0.0.0.20250601
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -48,13 +49,13 @@ WANTLIB += absl_flags_parse absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_flags_usage
 WANTLIB += absl_flags_usage_internal absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_log_severity absl_low_level_hash absl_malloc_internal
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_string_view
-WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_log_severity absl_malloc_internal absl_raw_hash_set
+WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
+WANTLIB += absl_str_format_internal absl_string_view absl_strings
+WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point avcodec avformat avutil crc32c
-WANTLIB += crypto jpeg m openh264 opus srtp2 ssl swresample swscale
+WANTLIB += crypto jpeg m openh264 opus ssl swresample swscale
 WANTLIB += vpx
 
 # C++20
@@ -115,6 +116,9 @@ post-extract:
 	# build-time by tg_owt and tdesktop
 	cd ${WRKSRC}/src/ && rm -r -- \
 	    sdk/{android,objc}/
+	# XXX hotpatch after abseil-cpp 20250814 update
+	grep -r -l -E '::N|onnull|ullable)' ${WRKSRC}/ | xargs \
+		sed -E -i 's/absl::N(onnull|ullable)<(.+)>/\2 absl_n\1/g'
 
 post-configure:
 	# remove more sources not needed to build tdesktop, they are however
