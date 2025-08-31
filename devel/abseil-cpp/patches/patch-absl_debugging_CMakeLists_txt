@@ -4,7 +4,7 @@ defaults to --exec-only.
 Index: absl/debugging/CMakeLists.txt
 --- absl/debugging/CMakeLists.txt.orig
 +++ absl/debugging/CMakeLists.txt
-@@ -92,6 +92,7 @@ absl_cc_library(
+@@ -93,6 +93,7 @@ absl_cc_library(
    PUBLIC
  )
  
@@ -12,7 +12,7 @@ Index: absl/debugging/CMakeLists.txt
  absl_cc_test(
    NAME
      symbolize_test
-@@ -114,6 +115,7 @@ absl_cc_test(
+@@ -115,6 +116,7 @@ absl_cc_test(
      absl::symbolize
      GTest::gmock
  )

@@ -27,7 +27,6 @@ include/absl/base/internal/iterator_traits.h
 include/absl/base/internal/iterator_traits_test_helper.h
 include/absl/base/internal/low_level_alloc.h
 include/absl/base/internal/low_level_scheduling.h
-include/absl/base/internal/nullability_deprecated.h
 include/absl/base/internal/per_thread_tls.h
 include/absl/base/internal/poison.h
 include/absl/base/internal/pretty_function.h
@@ -188,7 +187,6 @@ include/absl/hash/internal/
 include/absl/hash/internal/city.h
 include/absl/hash/internal/hash.h
 include/absl/hash/internal/hash_test.h
-include/absl/hash/internal/low_level_hash.h
 include/absl/hash/internal/spy_hash_state.h
 include/absl/hash/internal/weakly_mixed_integer.h
 include/absl/log/
@@ -247,9 +245,11 @@ include/absl/numeric/internal/
 include/absl/numeric/internal/bits.h
 include/absl/numeric/internal/representation.h
 include/absl/profiling/
+include/absl/profiling/hashtable.h
 include/absl/profiling/internal/
 include/absl/profiling/internal/exponential_biased.h
 include/absl/profiling/internal/periodic_sampler.h
+include/absl/profiling/internal/profile_builder.h
 include/absl/profiling/internal/sample_recorder.h
 include/absl/random/
 include/absl/random/bernoulli_distribution.h
@@ -402,6 +402,7 @@ include/absl/time/internal/cctz/include/cctz/civil_time_detail.h
 include/absl/time/internal/cctz/include/cctz/time_zone.h
 include/absl/time/internal/cctz/include/cctz/zone_info_source.h
 include/absl/time/internal/cctz/src/
+include/absl/time/internal/cctz/src/test_time_zone_names.h
 include/absl/time/internal/cctz/src/time_zone_fixed.h
 include/absl/time/internal/cctz/src/time_zone_if.h
 include/absl/time/internal/cctz/src/time_zone_impl.h
@@ -465,10 +466,12 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_graphcycles_internal.so.${LIBabsl_graphcycles_internal_VERSION}
 @lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
 @lib lib/libabsl_hash_generator_testing.so.${LIBabsl_hash_generator_testing_VERSION}
+@lib lib/libabsl_hashtable_profiler.so.${LIBabsl_hashtable_profiler_VERSION}
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
 @lib lib/libabsl_kernel_timeout_internal.so.${LIBabsl_kernel_timeout_internal_VERSION}
 @lib lib/libabsl_leak_check.so.${LIBabsl_leak_check_VERSION}
+@lib lib/libabsl_log_entry.so.${LIBabsl_log_entry_VERSION}
 @lib lib/libabsl_log_flags.so.${LIBabsl_log_flags_VERSION}
 @lib lib/libabsl_log_globals.so.${LIBabsl_log_globals_VERSION}
 @lib lib/libabsl_log_initialize.so.${LIBabsl_log_initialize_VERSION}
@@ -487,12 +490,12 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_log_internal_test_matchers.so.${LIBabsl_log_internal_test_matchers_VERSION}
 @lib lib/libabsl_log_severity.so.${LIBabsl_log_severity_VERSION}
 @lib lib/libabsl_log_sink.so.${LIBabsl_log_sink_VERSION}
-@lib lib/libabsl_low_level_hash.so.${LIBabsl_low_level_hash_VERSION}
 @lib lib/libabsl_malloc_internal.so.${LIBabsl_malloc_internal_VERSION}
 @lib lib/libabsl_per_thread_sem_test_common.so.${LIBabsl_per_thread_sem_test_common_VERSION}
 @lib lib/libabsl_periodic_sampler.so.${LIBabsl_periodic_sampler_VERSION}
 @lib lib/libabsl_poison.so.${LIBabsl_poison_VERSION}
 @lib lib/libabsl_pow10_helper.so.${LIBabsl_pow10_helper_VERSION}
+@lib lib/libabsl_profile_builder.so.${LIBabsl_profile_builder_VERSION}
 @lib lib/libabsl_random_distributions.so.${LIBabsl_random_distributions_VERSION}
 @lib lib/libabsl_random_internal_distribution_test_util.so.${LIBabsl_random_internal_distribution_test_util_VERSION}
 @lib lib/libabsl_random_internal_entropy_pool.so.${LIBabsl_random_internal_entropy_pool_VERSION}
@@ -622,6 +625,7 @@ lib/pkgconfig/absl_hash_testing.pc
 lib/pkgconfig/absl_hashtable_control_bytes.pc
 lib/pkgconfig/absl_hashtable_debug.pc
 lib/pkgconfig/absl_hashtable_debug_hooks.pc
+lib/pkgconfig/absl_hashtable_profiler.pc
 lib/pkgconfig/absl_hashtablez_sampler.pc
 lib/pkgconfig/absl_inlined_vector.pc
 lib/pkgconfig/absl_inlined_vector_internal.pc
@@ -663,7 +667,6 @@ lib/pkgconfig/absl_log_sink.pc
 lib/pkgconfig/absl_log_sink_registry.pc
 lib/pkgconfig/absl_log_streamer.pc
 lib/pkgconfig/absl_log_structured.pc
-lib/pkgconfig/absl_low_level_hash.pc
 lib/pkgconfig/absl_malloc_internal.pc
 lib/pkgconfig/absl_memory.pc
 lib/pkgconfig/absl_meta.pc
@@ -684,6 +687,7 @@ lib/pkgconfig/absl_poison.pc
 lib/pkgconfig/absl_pow10_helper.pc
 lib/pkgconfig/absl_prefetch.pc
 lib/pkgconfig/absl_pretty_function.pc
+lib/pkgconfig/absl_profile_builder.pc
 lib/pkgconfig/absl_random_bit_gen_ref.pc
 lib/pkgconfig/absl_random_distributions.pc
 lib/pkgconfig/absl_random_internal_distribution_caller.pc

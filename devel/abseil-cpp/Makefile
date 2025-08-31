@@ -3,7 +3,7 @@ BROKEN-sparc64 = is not a constant expression
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
-V =		20250512.1
+V =		20250814.0
 DISTNAME =	abseil-cpp-${V}
 
 HOMEPAGE =	https://abseil.io/
@@ -26,16 +26,16 @@ ABSL_LIBS = \
     flags_commandlineflag_internal flags_config flags_internal \
     flags_marshalling flags_parse flags_private_handle_accessor \
     flags_program_name flags_reflection flags_usage flags_usage_internal \
-    graphcycles_internal hash hash_generator_testing hashtablez_sampler int128 \
-    kernel_timeout_internal leak_check log_entry log_flags log_globals \
-    log_initialize log_internal_check_op log_internal_conditions \
-    log_internal_fnmatch log_internal_format log_internal_globals \
-    log_internal_log_sink_set log_internal_message \
+    graphcycles_internal hash hash_generator_testing hashtable_profiler \
+    hashtablez_sampler int128 kernel_timeout_internal leak_check log_entry \
+    log_flags log_globals log_initialize log_internal_check_op \
+    log_internal_conditions log_internal_fnmatch log_internal_format \
+    log_internal_globals log_internal_log_sink_set log_internal_message \
     log_internal_nullguard log_internal_proto \
     log_internal_structured_proto log_internal_test_actions \
     log_internal_test_helpers log_internal_test_matchers log_severity log_sink \
     low_level_hash malloc_internal per_thread_sem_test_common periodic_sampler \
-    poison pow10_helper random_distributions \
+    poison pow10_helper profile_builder random_distributions \
     random_internal_distribution_test_util random_internal_entropy_pool \
     random_internal_platform random_internal_pool_urbg random_internal_randen \
     random_internal_randen_hwaes random_internal_randen_hwaes_impl \
