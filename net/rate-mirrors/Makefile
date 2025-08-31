@@ -1,6 +1,6 @@
 COMMENT =		everyday-use client-side map-aware mirror ranking tool
 
-DIST_TUPLE +=		github westandskif rate-mirrors v0.20.0 .
+DIST_TUPLE +=		github westandskif rate-mirrors v0.22.0 .
 
 CATEGORIES =		net
 
