@@ -1,6 +1,6 @@
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.7.2
+VERSION=		2.8.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 
@@ -52,5 +52,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/geoclue2
 	mv ${WRKINST}${SYSCONFDIR}/{geoclue,xdg} \
 		${PREFIX}/share/examples/geoclue2
+	rm -r ${WRKINST}/usr/lib/sysusers.d
 
 .include <bsd.port.mk>
