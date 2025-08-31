@@ -1330,6 +1330,7 @@ share/btest/data/pcaps/http/100-continue.trace
 share/btest/data/pcaps/http/206_example_a.pcap
 share/btest/data/pcaps/http/206_example_b.pcap
 share/btest/data/pcaps/http/206_example_c.pcap
+share/btest/data/pcaps/http/basic-auth-with-colon.trace
 share/btest/data/pcaps/http/basic-auth-with-extra-space.trace
 share/btest/data/pcaps/http/bro.org-filtered.pcap
 share/btest/data/pcaps/http/bro.org.pcap
