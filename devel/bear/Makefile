@@ -3,7 +3,7 @@ COMMENT =	clang database generator
 V =		3.1.6
 DIST_TUPLE +=	github rizsotto Bear ${V} .
 DISTNAME =	bear-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -22,14 +22,14 @@ WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_globals absl_log_initialize
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
-WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_entropy_pool
+WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
+WANTLIB += absl_random_distributions absl_random_internal_entropy_pool
 WANTLIB += absl_random_internal_platform absl_random_internal_randen
 WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
 WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
@@ -40,7 +40,6 @@ WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c execinfo fmt gpr grpc grpc++
-WANTLIB += m protobuf spdlog utf8_range utf8_validity
 
 # C++17
 COMPILER = base-clang ports-gcc

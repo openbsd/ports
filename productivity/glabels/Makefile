@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		23
+REVISION =		24
 
 CATEGORIES =		productivity graphics
 
@@ -27,14 +27,14 @@ WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_globals absl_log_initialize
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
-WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_entropy_pool
+WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
+WANTLIB += absl_random_distributions absl_random_internal_entropy_pool
 WANTLIB += absl_random_internal_platform absl_random_internal_randen
 WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
 WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material

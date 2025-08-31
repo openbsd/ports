@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -29,12 +30,12 @@ WANTLIB += absl_base absl_city absl_civil_time absl_debugging_internal
 WANTLIB += absl_decode_rust_punycode absl_demangle_internal absl_demangle_rust
 WANTLIB += absl_examine_stack absl_graphcycles_internal absl_hash
 WANTLIB += absl_int128 absl_kernel_timeout_internal absl_leak_check
-WANTLIB += absl_log_globals absl_log_internal_check_op absl_log_internal_fnmatch
-WANTLIB += absl_log_internal_format absl_log_internal_globals
-WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
-WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
-WANTLIB += absl_log_internal_structured_proto absl_log_severity
-WANTLIB += absl_log_sink absl_low_level_hash absl_malloc_internal
+WANTLIB += absl_log_entry absl_log_globals absl_log_internal_check_op
+WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
+WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
+WANTLIB += absl_log_internal_message absl_log_internal_nullguard
+WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
+WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization

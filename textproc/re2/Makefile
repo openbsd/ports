@@ -2,8 +2,9 @@ COMMENT =		non-backtracking regular expression engine
 V =			2025-08-12
 DISTNAME =		re2-${V}
 PKGNAME =		re2-${V:S/-//g}
+REVISION =		0
 
-SHARED_LIBS =		re2	2.1
+SHARED_LIBS =		re2	3.0
 
 CATEGORIES =		textproc devel
 
@@ -25,19 +26,19 @@ WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_globals absl_log_internal_check_op
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_internal_check_op
 WANTLIB += absl_log_internal_conditions absl_log_internal_fnmatch
 WANTLIB += absl_log_internal_format absl_log_internal_globals
 WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
 WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
 WANTLIB += absl_log_internal_structured_proto absl_log_severity
-WANTLIB += absl_log_sink absl_low_level_hash absl_malloc_internal
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_strerror
-WANTLIB += absl_string_view absl_strings absl_strings_internal
-WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal m
+WANTLIB += absl_log_sink absl_malloc_internal absl_raw_hash_set
+WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
+WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
+WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
+WANTLIB += m
 
 # C++17
 COMPILER =		base-clang ports-gcc
