@@ -1,4 +1,5 @@
-@conflict ksh93-*
+@conflict ksh93-<1.0.10p0v0
+@conflict libshell-*
 bin/libast-config
 include/libast/
 include/libast.h
