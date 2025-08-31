@@ -1,13 +1,13 @@
-PORTROACH=		skipv:6.1.0,6.1.1,6.2.0,6.2.1
+PORTROACH=		skipv:6.2.0,6.2.1
 
 BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-6.0.9
+DISTNAME =		zeek-6.1.1
 
 SHARED_LIBS +=	binpac                    3.0
-SHARED_LIBS +=  broker                    4.0
+SHARED_LIBS +=  broker                    4.1
 
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=  caf_core                  4.0
@@ -29,7 +29,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 MODULES=		lang/python
 
-# c++11
+# c++17
 COMPILER=		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
