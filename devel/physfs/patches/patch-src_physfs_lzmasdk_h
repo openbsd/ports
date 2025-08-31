@@ -12,7 +12,7 @@ Index: src/physfs_lzmasdk.h
  
  EXTERN_C_BEGIN
  
-@@ -537,33 +538,9 @@ MY_CPU_LE_UNALIGN means that CPU is LITTLE ENDIAN and 
+@@ -540,33 +541,9 @@ MY_CPU_LE_UNALIGN means that CPU is LITTLE ENDIAN and 
  #define MY_CPU_IA64_LE
  #endif
  

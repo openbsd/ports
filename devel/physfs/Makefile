@@ -1,12 +1,13 @@
 COMMENT=	library to provide abstract access to various archives
 
-DISTNAME=	physfs-3.0.2
-REVISION=	0
-CATEGORIES=	devel
-SITES=		${HOMEPAGE}downloads/
-EXTRACT_SUFX=	.tar.bz2
+V=		3.2.0
+PKGNAME=	physfs-${V}
 
-SHARED_LIBS=	physfs		3.0
+DIST_TUPLE +=	github icculus physfs release-${V} .
+
+CATEGORIES=	devel
+
+SHARED_LIBS=	physfs		3.1
 
 HOMEPAGE=	https://icculus.org/physfs/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
@@ -14,10 +15,10 @@ MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 # ZLib
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c curses pthread readline z
+WANTLIB=	c curses pthread readline
 
 MODULES=	devel/cmake
 
-NO_TEST=	Yes
+WRKDIST=	${WRKDIR}/physfs-release-${V}
 
 .include <bsd.port.mk>

@@ -1,5 +1,9 @@
 @bin bin/test_physfs
 include/physfs.h
-lib/libphysfs.a
+lib/cmake/
+lib/cmake/PhysFS/
+lib/cmake/PhysFS/PhysFSConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PhysFS/PhysFSConfig.cmake
+@static-lib lib/libphysfs.a
 @lib lib/libphysfs.so.${LIBphysfs_VERSION}
 lib/pkgconfig/physfs.pc
