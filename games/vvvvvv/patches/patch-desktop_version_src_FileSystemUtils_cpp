@@ -4,34 +4,28 @@ Put data.zip in ~/.local/share/VVVVVV
 Index: desktop_version/src/FileSystemUtils.cpp
 --- desktop_version/src/FileSystemUtils.cpp.orig
 +++ desktop_version/src/FileSystemUtils.cpp
-@@ -1,3 +1,5 @@
-+/* This file has been changed to run on OpenBSD. */
-+
- #include <iostream>
- #include <iterator>
- #include <physfs.h>
-@@ -70,6 +72,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
- 	int retval;
- 	const char* pathSep = PHYSFS_getDirSeparator();
- 	char* basePath;
-+	char osDir[MAX_PATH - 8];	// "data.zip" has length of 8
+@@ -45,6 +45,7 @@ static bool isInit = false;
  
- 	PHYSFS_setAllocator(&allocator);
+ static const char* pathSep = NULL;
+ static char* basePath = NULL;
++static char osDir[MAX_PATH - 8];	// "data.zip" has length of 8
+ static char writeDir[MAX_PATH] = {'\0'};
+ static char saveDir[MAX_PATH] = {'\0'};
+ static char levelDir[MAX_PATH] = {'\0'};
+@@ -284,6 +285,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+     }
  
-@@ -146,6 +149,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
- 	}
+     basePath = SDL_GetBasePath();
++    PLATFORM_getOSDirectory(osDir, sizeof(osDir));
  
- 	basePath = SDL_GetBasePath();
-+	PLATFORM_getOSDirectory(osDir, sizeof(osDir));
- 
- 	if (basePath == NULL)
- 	{
-@@ -161,7 +165,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
- 	else
- 	{
- 		SDL_snprintf(output, sizeof(output), "%s%s",
--			basePath,
-+			osDir,
- 			"data.zip"
- 		);
- 	}
+     if (basePath == NULL)
+     {
+@@ -322,7 +324,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+     else
+     {
+         SDL_snprintf(output, sizeof(output), "%s%s",
+-            basePath,
++            osDir,
+             "data.zip"
+         );
+     }
