@@ -1,0 +1,14 @@
+fix build with sdl2-ttf 2.24.0
+
+Index: src/engine/video/text.h
+--- src/engine/video/text.h.orig
++++ src/engine/video/text.h
+@@ -28,7 +28,7 @@
+ 
+ #include <map>
+ 
+-typedef struct _TTF_Font TTF_Font;
++#include <SDL_ttf.h>
+ 
+ namespace vt_video
+ {
