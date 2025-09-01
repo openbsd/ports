@@ -3,7 +3,7 @@ COMMENT =		SoundFont2 software synthesizer
 # 2.5.x is expected to remove SDL2 support in favour of SDL3
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.4.4
+GH_TAGNAME =		v2.4.8
 
 SHARED_LIBS +=	fluidsynth           4.0      # 3.3 (grep LIB_VERSION CMakeLists.txt)
 
