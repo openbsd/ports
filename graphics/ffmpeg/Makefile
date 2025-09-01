@@ -1,8 +1,8 @@
 COMMENT=	audio/video converter and streamer
 
-V=		6.1.2
+# keep it synced with x11/mplayer
+V=		6.1.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	3
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
