@@ -5,4 +5,13 @@ SHLIB_V=	0.0
 OLD_SAMPLECONF=	Yes
 VERSION_SPEC=	>=18.0,<19.0
 
+REVISION-fax=	0
+REVISION-ldap=	0
+REVISION-lua=	0
+REVISION-main=	0
+REVISION-odbc=	0
+REVISION-pgsql=	0
+REVISION-snmp=	0
+REVISION-tds=	0
+
 .include <bsd.port.mk>
