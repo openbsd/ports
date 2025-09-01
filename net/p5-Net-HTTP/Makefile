@@ -1,6 +1,6 @@
 COMMENT =	Perl HTTP connection client
 
-DISTNAME =	Net-HTTP-6.23
+DISTNAME =	Net-HTTP-6.24
 
 CATEGORIES =	net
 
