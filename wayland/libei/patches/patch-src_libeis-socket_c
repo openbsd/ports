@@ -1,0 +1,15 @@
+Index: src/libeis-socket.c
+--- src/libeis-socket.c.orig
++++ src/libeis-socket.c
+@@ -189,7 +189,11 @@ eis_backend_socket_get_client_pid(struct eis_client* c
+ 		log_bug_client(eis, "Not a socket backend");
+ 		return -EINVAL;
+ 	}
++#ifdef __OpenBSD__
++	struct sockpeercred ucred;
++#else
+ 	struct ucred ucred;
++#endif
+ 	socklen_t len = sizeof(ucred);
+ 	int rc = getsockopt(source_get_fd(client->source), SOL_SOCKET, SO_PEERCRED, &ucred, &len);
+ 	if (rc < 0) {
