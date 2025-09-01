@@ -24,6 +24,7 @@ share/rlwrap/filters/listing
 share/rlwrap/filters/logger
 share/rlwrap/filters/logger.py
 share/rlwrap/filters/makefilter
+share/rlwrap/filters/nl_and_then_prompt.py
 share/rlwrap/filters/null
 share/rlwrap/filters/null.py
 share/rlwrap/filters/outfilter

@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -529,8 +529,8 @@ EXTRA_DIST = BUGS COPYING INSTALL README.md  src/rlwra
+@@ -538,8 +538,8 @@ EXTRA_DIST = BUGS COPYING INSTALL README.md  src/rlwra
  
  TESTS = test/testit
  SUBDIRS = doc src filters

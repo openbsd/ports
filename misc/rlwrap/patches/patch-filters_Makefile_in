@@ -1,16 +1,16 @@
 Index: filters/Makefile.in
 --- filters/Makefile.in.orig
 +++ filters/Makefile.in
-@@ -143,7 +143,7 @@ am__uninstall_files_from_dir = { \
-     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
-          $(am__cd) "$$dir" && rm -f $$files; }; \
+@@ -144,7 +144,7 @@ am__uninstall_files_from_dir = { \
+   || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+        $(am__cd) "$$dir" && echo $$files | $(am__xargs_n) 40 $(am__rm_f); }; \
    }
 -man3dir = $(mandir)/man3
 +man3dir = $(mandir)/man3p
  am__installdirs = "$(DESTDIR)$(man3dir)"
  NROFF = nroff
  MANS = $(man_MANS)
-@@ -253,7 +253,7 @@ target_alias = @target_alias@
+@@ -254,7 +254,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -19,7 +19,7 @@ Index: filters/Makefile.in
  all: all-am
  
  .SUFFIXES:
-@@ -494,8 +494,8 @@ uninstall-man: uninstall-man3
+@@ -495,8 +495,8 @@ uninstall-man: uninstall-man3
  
  # CLEANFILES = $(man_MANS)
  
