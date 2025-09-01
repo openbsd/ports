@@ -1,6 +1,6 @@
 COMMENT=	GSM audio codec library and converter
 
-V=		gsm-1.0-pl22
+V=		gsm-1.0-pl23
 DISTNAME=	${V:S/-pl/./}
 WRKDIST=	${WRKDIR}/${V}
 
