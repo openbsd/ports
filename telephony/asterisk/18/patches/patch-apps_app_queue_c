@@ -3,7 +3,7 @@ https://github.com/asterisk/asterisk/pull/1388
 Index: apps/app_queue.c
 --- apps/app_queue.c.orig
 +++ apps/app_queue.c
-@@ -4440,7 +4440,7 @@ static int say_position(struct queue_ent *qe, int ring
+@@ -4248,7 +4248,7 @@ static int say_position(struct queue_ent *qe, int ring
  	}
  
  	/* Only announce if the caller's queue position has improved since last time */
