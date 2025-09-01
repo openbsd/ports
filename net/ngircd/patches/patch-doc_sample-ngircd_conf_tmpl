@@ -1,7 +1,7 @@
 Index: doc/sample-ngircd.conf.tmpl
 --- doc/sample-ngircd.conf.tmpl.orig
 +++ doc/sample-ngircd.conf.tmpl
-@@ -77,14 +77,14 @@
+@@ -81,14 +81,14 @@
  	# Group ID under which the ngIRCd should run; you can use the name
  	# of the group or the numerical ID. ATTENTION: For this to work the
  	# server must have been started with root privileges!
@@ -18,7 +18,7 @@ Index: doc/sample-ngircd.conf.tmpl
  
  [Limits]
  	# Define some limits and timeouts for this ngIRCd instance. Default
-@@ -155,7 +155,7 @@
+@@ -159,7 +159,7 @@
  	# binary. By default ngIRCd won't use the chroot() feature.
  	# ATTENTION: For this to work the server must have been started
  	# with root privileges!
@@ -27,8 +27,8 @@ Index: doc/sample-ngircd.conf.tmpl
  
  	# Set this hostname for every client instead of the real one.
  	# Use %x to add the hashed value of the original hostname.
-@@ -267,7 +267,7 @@
- 	# So don't forget to remove the ";" above if this is the case ...
+@@ -282,7 +282,7 @@
+ 	;CRLFile = /etc/ssl/CA/crl.pem
  
  	# SSL Server Key Certificate
 -	;CertFile = :ETCDIR:/ssl/server-cert.pem
@@ -36,7 +36,7 @@ Index: doc/sample-ngircd.conf.tmpl
  
  	# Select cipher suites allowed for SSL/TLS connections. This defaults
  	# to HIGH:!aNULL:@STRENGTH (OpenSSL) or SECURE128 (GnuTLS).
-@@ -279,10 +279,10 @@
+@@ -294,10 +294,10 @@
  	;CipherList = SECURE128:-VERS-SSL3.0
  
  	# Diffie-Hellman parameters

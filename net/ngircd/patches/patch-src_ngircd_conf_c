@@ -1,7 +1,7 @@
 Index: src/ngircd/conf.c
 --- src/ngircd/conf.c.orig
 +++ src/ngircd/conf.c
-@@ -388,7 +388,7 @@ Conf_Test( void )
+@@ -399,7 +399,7 @@ Conf_Test( void )
  	printf("  MaxConnectionsIP = %d\n", Conf_MaxConnectionsIP);
  	printf("  MaxJoins = %d\n", Conf_MaxJoins > 0 ? Conf_MaxJoins : -1);
  	printf("  MaxNickLength = %u\n", Conf_MaxNickLength - 1);
@@ -10,7 +10,7 @@ Index: src/ngircd/conf.c
  	printf("  MaxListSize = %d\n", Conf_MaxListSize);
  	printf("  PingTimeout = %d\n", Conf_PingTimeout);
  	printf("  PongTimeout = %d\n", Conf_PongTimeout);
-@@ -758,7 +758,7 @@ Set_Defaults(bool InitServers)
+@@ -777,7 +777,7 @@ Set_Defaults(bool InitServers)
  	strlcat(Conf_HelpFile, HELP_FILE, sizeof(Conf_HelpFile));
  	strcpy(Conf_ServerPwd, "");
  	strlcpy(Conf_PidFile, PID_FILE, sizeof(Conf_PidFile));
@@ -19,7 +19,7 @@ Index: src/ngircd/conf.c
  
  	/* Limits */
  	Conf_ConnectRetry = 60;
-@@ -1506,7 +1506,7 @@ Handle_LIMITS(const char *File, int Line, char *Var, c
+@@ -1546,7 +1546,7 @@ Handle_LIMITS(const char *File, int Line, char *Var, c
  		return;
  	}
  	if (strcasecmp(Var, "MaxPenaltyTime") == 0) {
@@ -28,7 +28,7 @@ Index: src/ngircd/conf.c
  		if (Conf_MaxPenaltyTime < -1)
  			Conf_MaxPenaltyTime = -1;	/* "unlimited" */
  		return;
-@@ -2122,8 +2122,8 @@ Validate_Config(bool Configtest, bool Rehash)
+@@ -2202,8 +2202,8 @@ Validate_Config(bool Configtest, bool Rehash)
  
  	if (Conf_MaxPenaltyTime != -1)
  		Config_Error(LOG_WARNING,
@@ -37,5 +37,5 @@ Index: src/ngircd/conf.c
 +			     "Maximum penalty increase ('MaxPenaltyTime') is set to %lld, this is not recommended!",
 +			     (long long)Conf_MaxPenaltyTime);
  
- #ifdef DEBUG
- 	servers = servers_once = 0;
+ #ifdef HAVE_SETRLIMIT
+ 	if(getrlimit(RLIMIT_NOFILE, &rlim) == 0) {
