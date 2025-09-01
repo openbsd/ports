@@ -2,7 +2,7 @@ COMMENT =	 	estimate the musical key of an audio file
 
 GH_ACCOUNT =		EvanPurkhiser
 GH_PROJECT =		keyfinder-cli
-GH_TAGNAME =		v1.1.2
+GH_TAGNAME =		v1.1.4
 
 CATEGORIES =		audio
 
@@ -17,10 +17,12 @@ WANTLIB += keyfinder m swresample
 # C++11
 COMPILER =		base-clang ports-gcc
 
+MODULES =		devel/cmake
+
 LIB_DEPENDS =		audio/libkeyfinder \
 			graphics/ffmpeg
 
-MAKE_FLAGS =		MANDIR="${LOCALBASE}/man"
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1
 
 NO_TEST =		Yes
 
