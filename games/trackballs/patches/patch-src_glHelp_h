@@ -1,0 +1,18 @@
+use TTF_Font from SDL_ttf directly to fix build with sdl2-ttf 2.24.0,
+similar to https://github.com/vcmi/vcmi/pull/5222
+
+Index: src/glHelp.h
+--- src/glHelp.h.orig
++++ src/glHelp.h
+@@ -25,9 +25,10 @@
+ #include <GL/gl.h>
+ #include <GL/glext.h>
+ 
++#include <SDL_ttf.h>
++
+ #include "general.h"
+ 
+-typedef struct _TTF_Font TTF_Font;
+ typedef struct SDL_Surface SDL_Surface;
+ class Map;
+ class Game;

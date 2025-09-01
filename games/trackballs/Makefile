@@ -3,6 +3,7 @@ COMMENT =		marble game inspired by Marble Madness
 GH_PROJECT =		trackballs
 GH_ACCOUNT =		trackballs
 GH_TAGNAME =		v1.3.4
+REVISION =		0
 
 CATEGORIES =		games
 
