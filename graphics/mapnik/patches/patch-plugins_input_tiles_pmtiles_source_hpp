@@ -1,0 +1,14 @@
+fix build on 32-bits
+
+Index: plugins/input/tiles/pmtiles_source.hpp
+--- plugins/input/tiles/pmtiles_source.hpp.orig
++++ plugins/input/tiles/pmtiles_source.hpp
+@@ -522,7 +522,7 @@ class pmtiles_source : public tiles_source
+         }
+         else
+         {
+-            metadata = {data() + metadata_offset, metadata_length};
++            metadata = {data() + metadata_offset, static_cast<parameters::size_type>(metadata_length)};
+         }
+         boost::json::value json_value;
+         try
