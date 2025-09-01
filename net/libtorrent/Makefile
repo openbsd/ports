@@ -7,7 +7,7 @@ BROKEN-sh =		undefined references to __sync atomic ops
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.14.0
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
