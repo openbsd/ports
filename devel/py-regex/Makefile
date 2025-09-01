@@ -1,10 +1,9 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_DISTV=	2024.11.6
+MODPY_DISTV=	2025.8.29
 DISTNAME=	regex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://github.com/mrabarnett/mrab-regex
 
@@ -14,8 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
