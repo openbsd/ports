@@ -1,0 +1,15 @@
+backport https://github.com/vcmi/vcmi/pull/5222 to fix build with
+sdl2-ttf 2.24.0
+
+Index: client/renderSDL/CTrueTypeFont.cpp
+--- client/renderSDL/CTrueTypeFont.cpp.orig
++++ client/renderSDL/CTrueTypeFont.cpp
+@@ -19,8 +19,6 @@
+ #include "../../lib/json/JsonNode.h"
+ #include "../../lib/filesystem/Filesystem.h"
+ 
+-#include <SDL_ttf.h>
+-
+ std::pair<std::unique_ptr<ui8[]>, ui64> CTrueTypeFont::loadData(const JsonNode & config)
+ {
+ 	std::string filename = "Data/" + config["file"].String();

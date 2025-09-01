@@ -2,7 +2,7 @@ COMMENT =	HoMM3 engine rewrite
 
 CATEGORIES =	games
 
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://vcmi.eu/
 
