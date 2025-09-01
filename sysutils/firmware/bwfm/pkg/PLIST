@@ -24,6 +24,7 @@ firmware/brcmfmac43430-sdio.Hampoo-D2D3_Vi8A1.txt
 firmware/brcmfmac43430-sdio.MUR1DX.txt
 firmware/brcmfmac43430-sdio.bin
 firmware/brcmfmac43430-sdio.raspberrypi,3-model-b.txt
+firmware/brcmfmac43430-sdio.raspberrypi,model-zero-2-w.txt
 firmware/brcmfmac43430a0-sdio.ONDA-V80 PLUS.txt
 firmware/brcmfmac43430a0-sdio.bin
 firmware/brcmfmac43430a0-sdio.jumper-ezpad-mini3.txt
@@ -32,9 +33,13 @@ firmware/brcmfmac43436-sdio.raspberrypi,model-zero-2-w.clm_blob
 firmware/brcmfmac43436-sdio.raspberrypi,model-zero-2-w.txt
 firmware/brcmfmac43455-sdio.MINIX-NEO Z83-4.txt
 firmware/brcmfmac43455-sdio.bin
+firmware/brcmfmac43455-sdio.raspberrypi,3-model-a-plus.txt
 firmware/brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt
+firmware/brcmfmac43455-sdio.raspberrypi,4-compute-module.txt
 firmware/brcmfmac43455-sdio.raspberrypi,4-model-b.txt
+firmware/brcmfmac43455-sdio.raspberrypi,5-compute-module.txt
 firmware/brcmfmac43455-sdio.raspberrypi,5-model-b.txt
+firmware/brcmfmac43455-sdio.raspberrypi,500.txt
 firmware/brcmfmac43456-sdio.pine64,pinebook-pro.bin
 firmware/brcmfmac43456-sdio.pine64,pinebook-pro.txt
 firmware/brcmfmac43456-sdio.pine64,rockpro64-v2.1.bin
