@@ -1,6 +1,6 @@
 COMMENT=	create MusicBrainz DiscIDs from audio CDs
 
-DISTNAME=	libdiscid-0.6.4
+DISTNAME=	libdiscid-0.6.5
 
 CATEGORIES=	audio
 
