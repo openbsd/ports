@@ -230,6 +230,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_readers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_subsets.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/caching.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/class_table_inheritance.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/class_table_inheritance_constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_conflicts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_encryption.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_select.rb
@@ -272,6 +273,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/optimistic_locking_base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/paged_operations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_array_associations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_auto_constraint_validations.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_auto_validate_enums.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_eager_any_typed_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_row.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/pg_xmin_optimistic_locking.rb
