@@ -1,3 +1,4 @@
+BROKEN =	modern C++ issues in SFML/String.hpp
 BROKEN-sparc64 =	undefined reference to XRRConfigRotations, etc.
 
 COMMENT =	roguelite dungeon crawler game
