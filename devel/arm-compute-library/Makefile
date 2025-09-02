@@ -1,5 +1,7 @@
 ONLY_FOR_ARCHS =	aarch64
 
+DPB_PROPERTIES =	parallel
+
 COMMENT =	Arm compute library
 
 V =		52.3.0
@@ -13,7 +15,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 
-MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
+MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 
 GRAPH_SO_V =	2.7
 COMPUTE_SO_V =	4.3
