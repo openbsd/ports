@@ -38,7 +38,8 @@ MAKE_ENV =	CC="${CC}" \
 		CXX="${CXX}"
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} ${MODSCONS_FLAGS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} \
+		${MODSCONS_FLAGS} -j ${MAKE_JOBS}
 
 do-install:
 .for dir in arm_compute support utils
