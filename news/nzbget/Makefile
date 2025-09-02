@@ -1,8 +1,7 @@
 COMMENT =	binary newsreader supporting NZB files
 
-DIST_TUPLE +=	github nzbgetcom nzbget v25.2 .
-DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.3.0 par2cmdline-turbo
-REVISION =	0
+DIST_TUPLE +=	github nzbgetcom nzbget v25.3 .
+DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.3.0-20250808 par2cmdline-turbo
 
 CATEGORIES =	news
 
@@ -13,8 +12,9 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} boost_container-mt boost_json-mt
-WANTLIB +=	c crypto curses form m ssl xml2 z
+WANTLIB +=	${COMPILER_LIBCXX} boost_atomic-mt boost_container-mt
+WANTLIB +=	boost_filesystem-mt boost_json-mt boost_system-mt c
+WANTLIB +=	crypto curses form m ssl xml2 z
 
 # C++17
 COMPILER =	base-clang ports-gcc
