@@ -1,5 +1,6 @@
-fix build on 32-bits
+fix build on 32-bits, cf https://github.com/mapnik/mapnik/issues/4517
 
+https://github.com/mapnik/mapnik/commit/210c463230194a04104cce2126f558cb5bcdeb5c
 Index: plugins/input/tiles/pmtiles_source.hpp
 --- plugins/input/tiles/pmtiles_source.hpp.orig
 +++ plugins/input/tiles/pmtiles_source.hpp
@@ -8,7 +9,7 @@ Index: plugins/input/tiles/pmtiles_source.hpp
          else
          {
 -            metadata = {data() + metadata_offset, metadata_length};
-+            metadata = {data() + metadata_offset, static_cast<parameters::size_type>(metadata_length)};
++            metadata = {data() + metadata_offset, static_cast<std::size_t>(metadata_length)};
          }
          boost::json::value json_value;
          try
