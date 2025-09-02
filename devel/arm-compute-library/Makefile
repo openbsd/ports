@@ -39,9 +39,9 @@ MODULES =	devel/scons
 MAKE_ENV =	CC="${CC}" \
 		CXX="${CXX}"
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} \
-		${MODSCONS_FLAGS} -j ${MAKE_JOBS}
+# avoid setting scons.port.mk's default MODSCONS_ENV variables, which
+# break the build of this port
+MODSCONS_ENV =
 
 do-install:
 .for dir in arm_compute support utils
