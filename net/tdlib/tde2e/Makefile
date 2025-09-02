@@ -10,4 +10,7 @@ RUN_DEPENDS =		net/tdlib/tdlib>=1.8.49p0
 # Nothing else should use this.
 PERMIT_PACKAGE =	No
 
+CONFIGURE_ARGS +=	-DCCACHE_FOUND=OFF \
+			-DPHP_FOUND=OFF
+
 .include <bsd.port.mk>
