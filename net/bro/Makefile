@@ -5,6 +5,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-6.1.1
+REVISION =		0
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broker                    4.1
@@ -16,16 +17,15 @@ CATEGORIES=		net security
 
 HOMEPAGE=		https://www.zeek.org/
 
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += c crypto m maxminddb pcap pthread ssl z lib/libbind/bind
 
-SITES=			https://download.zeek.org/ \
-			https://old.zeek.org/downloads/
-
-FIX_EXTRACT_PERMISSIONS=Yes
+SITES =			https://download.zeek.org/
 
 MODULES=		lang/python
 
@@ -33,10 +33,6 @@ MODULES=		lang/python
 COMPILER=		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
-# XXX sparc64 and ports-clang don't go well together:
-# /tmp/sqlite3-1f089a.s:544060: Error: operation combines symbols in different segments
-# clang-13: error: assembler command failed with exit code 1 (use -v to see invocation)
-#ONLY_FOR_ARCHS=	${CLANG_ARCHS}
 
 MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/bin/stats-to-csv \
@@ -82,7 +78,8 @@ MODCMAKE_USE_SHARED_LIBS = No
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
 				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
 
-CONFIGURE_ARGS=		--prefix=${PREFIX} \
+CONFIGURE_ARGS =	--builddir=${WRKBUILD} \
+			--prefix=${PREFIX} \
 			--mandir=${PREFIX}/man \
 			--conf-files-dir=${SYSCONFDIR}/zeek \
 			--localstatedir=${LOCALSTATEDIR} \
@@ -91,6 +88,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-python=${MODPY_BIN} \
 			--binary-package \
 			-D CMAKE_VERBOSE_MAKEFILE=ON
+
+SEPARATE_BUILD =	Yes
 
 # XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
 # Need Flex version >= 2.6, found 2.5.39
@@ -111,8 +110,5 @@ post-install:
 
 # handled by exec-add / exec-delete; symlink changes according to spooldir
 	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
-
-# XXX InstallSymlink does not do the right think for that particular file
-	ln -sf ${TRUEPREFIX}/bin/zeek-wrapper ${PREFIX}/bin/bro
 
 .include <bsd.port.mk>

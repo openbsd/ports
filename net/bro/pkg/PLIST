@@ -4,7 +4,6 @@
 @bin bin/adtrace
 @bin bin/bifcl
 @bin bin/binpac
-bin/bro
 @bin bin/broker-benchmark
 bin/btest
 bin/btest-ask-update
