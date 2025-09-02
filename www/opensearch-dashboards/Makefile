@@ -1,6 +1,6 @@
 COMMENT =	visualization tool for data in OpenSearch
 
-V =		3.1.0
+V =		3.2.0
 DISTNAME =	opensearch-dashboards-$V-linux-x64
 PKGNAME =	opensearch-dashboards-$V
 
