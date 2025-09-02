@@ -1,4 +1,4 @@
-BROKEN = implicit instantiation of undefined template 'std::char_traits<unsigned int>'	
+BROKEN = implicit instantiation of undefined template 'std::char_traits<unsigned int>'
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-44-src
