@@ -1,5 +1,7 @@
 PORTROACH =	limitw:1,even
 
+BROKEN =	fails with newer libc++
+
 V =		4.4.29
 REVISION =	5
 
