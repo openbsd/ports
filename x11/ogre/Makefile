@@ -1,3 +1,4 @@
+BROKEN = implicit instantiation of undefined template 'std::char_traits<unsigned short>'
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
 # if unbreaking i386, games/vegastrike can be reenabled
