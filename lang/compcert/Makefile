@@ -7,14 +7,12 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		high assurance C compiler
 
-V =			3.15
+V =			3.16
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
-#GH_TAGNAME =		v${V}
-GH_COMMIT =		1373cbdff7316f17834850e29cf6794ea3b806be
+GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		10
 
 CATEGORIES =		lang
 

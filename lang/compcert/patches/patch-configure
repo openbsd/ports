@@ -28,7 +28,7 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -265,7 +267,7 @@ fi
+@@ -266,7 +268,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -37,7 +37,7 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -297,6 +299,11 @@ if test "$arch" = "powerpc"; then
+@@ -298,6 +300,11 @@ if test "$arch" = "powerpc"; then
          system="diab"
          responsefile="diab"
          ;;
@@ -49,7 +49,7 @@ Index: configure
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-U__GNUC__ -E"
-@@ -424,6 +431,12 @@ if test "$arch" = "aarch64"; then
+@@ -426,6 +433,12 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-U__GNUC__ -E"
          system="linux"
