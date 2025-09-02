@@ -1,0 +1,12 @@
+Index: src/third_party/mozjs/platform/x86_64/openbsd/build/js-confdefs.h
+--- src/third_party/mozjs/platform/x86_64/openbsd/build/js-confdefs.h.orig
++++ src/third_party/mozjs/platform/x86_64/openbsd/build/js-confdefs.h
+@@ -68,7 +68,7 @@
+ #define JS_PUNBOX64 1
+ #define JS_STANDALONE 1
+ #define JS_WITHOUT_NSPR 1
+-#define MALLOC_H <malloc.h>
++#define MALLOC_H <stdlib.h>
+ #define MALLOC_USABLE_SIZE_CONST_PTR 
+ #define MOZILLA_UAVERSION "128.0"
+ #define MOZILLA_VERSION "128.12.0"

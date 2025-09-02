@@ -1,0 +1,14 @@
+Index: src/mongo/platform/process_id.cpp
+--- src/mongo/platform/process_id.cpp.orig
++++ src/mongo/platform/process_id.cpp
+@@ -80,6 +80,10 @@ inline NativeProcessId getCurrentNativeThreadId() {
+ inline NativeProcessId getCurrentNativeThreadId() {
+     return pthread_getthreadid_np();
+ }
++#elif __OpenBSD__
++inline NativeProcessId getCurrentNativeThreadId() {
++    return getthrid();
++}
+ #else
+ inline NativeProcessId getCurrentNativeThreadId() {
+     return ::syscall(SYS_gettid);

@@ -1,0 +1,12 @@
+Index: src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine.cpp
+--- src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine.cpp.orig
++++ src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine.cpp
+@@ -177,7 +177,7 @@ std::string extractIdentFromPath(const boost::filesyst
+ 
+     // Remove the file extension and convert to generic form (i.e. replace "\" with "/"
+     // on windows, no-op on unix).
+-    return boost::filesystem::change_extension(identWithExtension, "").generic_string();
++    return boost::filesystem::path(identWithExtension).replace_extension("").generic_string();
+ }
+ 
+ bool WiredTigerFileVersion::shouldDowngrade(bool hasRecoveryTimestamp) {

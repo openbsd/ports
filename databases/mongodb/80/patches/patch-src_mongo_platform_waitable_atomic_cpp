@@ -1,0 +1,27 @@
+Index: src/mongo/platform/waitable_atomic.cpp
+--- src/mongo/platform/waitable_atomic.cpp.orig
++++ src/mongo/platform/waitable_atomic.cpp
+@@ -235,6 +235,23 @@ bool waitUntil(const void* uaddr,
+     return timeoutOverflow || errno != ETIMEDOUT;
+ }
+ 
++#elif defined(__OpenBSD__)
++
++void notifyOne(const void* uaddr) {
++}
++
++void notifyMany(const void* uaddr, int nToWake) {
++}
++
++void notifyAll(const void* uaddr) {
++}
++
++bool waitUntil(const void* uaddr,
++               uint32_t old,
++               boost::optional<system_clock::time_point> deadline) {
++    return true;
++}
++
+ #else
+ #error "Need an implementation of waitUntil(), notifyOne(), notifyMany(), notifyAll() for this OS"
+ #endif

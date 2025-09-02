@@ -1,0 +1,19 @@
+Index: src/mongo/util/net/socket_utils.cpp
+--- src/mongo/util/net/socket_utils.cpp.orig
++++ src/mongo/util/net/socket_utils.cpp
+@@ -225,6 +225,7 @@ void setSocketKeepAliveParams(int sock,
+     // steps, and we'll be able to get rid of this special case eventually.
+     windowsApplyMaxTcpKeepAlive(sock, severity, maxIdle, maxInterval);
+ #else  // _WIN32
++#if ! defined(__OpenBSD__)
+ #if defined(__APPLE__)
+     int idleOpt = TCP_KEEPALIVE;
+ #else
+@@ -236,6 +237,7 @@ void setSocketKeepAliveParams(int sock,
+     applyMax(sock, IPPROTO_TCP, idleOpt, iSec(maxIdle), "TCP_KEEPIDLE", severity);
+     applyMax(sock, IPPROTO_TCP, TCP_KEEPINTVL, iSec(maxInterval), "TCP_KEEPINTVL", severity);
+ #endif  // _WIN32
++#endif  // OpenBSD
+ }
+ 
+ std::string makeUnixSockPath(int port, StringData label) {

@@ -1,0 +1,12 @@
+Index: src/third_party/mozjs/extract/mozglue/misc/TimeStamp_posix.cpp
+--- src/third_party/mozjs/extract/mozglue/misc/TimeStamp_posix.cpp.orig
++++ src/third_party/mozjs/extract/mozglue/misc/TimeStamp_posix.cpp
+@@ -214,7 +214,7 @@ TimeStamp TimeStamp::Now(bool aHighResolution) {
+   return TimeStamp(ClockTimeNs(CLOCK_MONOTONIC));
+ }
+ 
+-#if defined(XP_LINUX) || defined(ANDROID)
++#if (defined(XP_LINUX) || defined(ANDROID)) && ! defined(__OpenBSD__)
+ 
+ // Calculates the amount of jiffies that have elapsed since boot and up to the
+ // starttime value of a specific process as found in its /proc/*/stat file.

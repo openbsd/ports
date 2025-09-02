@@ -1,0 +1,12 @@
+Index: src/third_party/libmongocrypt/dist/src/mongocrypt-util.c
+--- src/third_party/libmongocrypt/dist/src/mongocrypt-util.c.orig
++++ src/third_party/libmongocrypt/dist/src/mongocrypt-util.c
+@@ -78,7 +78,7 @@ current_module_result current_module_path(void) {
+         }
+         free(path);
+     }
+-#elif defined(_GNU_SOURCE) || defined(_DARWIN_C_SOURCE) || defined(__FreeBSD__)
++#elif defined(_GNU_SOURCE) || defined(_DARWIN_C_SOURCE) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     // Darwin/BSD/glibc define extensions for finding dynamic library info from
+     // the address of a symbol.
+     Dl_info info;

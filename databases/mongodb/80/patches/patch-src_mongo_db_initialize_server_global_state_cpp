@@ -1,0 +1,12 @@
+Index: src/mongo/db/initialize_server_global_state.cpp
+--- src/mongo/db/initialize_server_global_state.cpp.orig
++++ src/mongo/db/initialize_server_global_state.cpp
+@@ -332,7 +332,7 @@ bool checkAndMoveLogFile(const std::string& absoluteLo
+                                     << "\" should name a file, not a directory.");
+         }
+ 
+-        if (!serverGlobalParams.logAppend && boost::filesystem::is_regular(absoluteLogpath)) {
++        if (!serverGlobalParams.logAppend && boost::filesystem::is_regular_file(absoluteLogpath)) {
+             std::string renameTarget = absoluteLogpath + "." + terseCurrentTimeForFilename();
+             boost::system::error_code ec;
+             boost::filesystem::rename(absoluteLogpath, renameTarget, ec);

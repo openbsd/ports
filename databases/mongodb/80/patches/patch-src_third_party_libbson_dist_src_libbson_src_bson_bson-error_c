@@ -1,0 +1,12 @@
+Index: src/third_party/libbson/dist/src/libbson/src/bson/bson-error.c
+--- src/third_party/libbson/dist/src/libbson/src/bson/bson-error.c.orig
++++ src/third_party/libbson/dist/src/libbson/src/bson/bson-error.c
+@@ -166,7 +166,7 @@ bson_strerror_r (int err_code,                    /* I
+       // Could not obtain a valid `locale_t` object to satisfy `strerror_l`.
+       // Fallback to `bson_strncpy` below.
+    }
+-#elif defined(_GNU_SOURCE)
++#elif defined(_GNU_SOURCE)  || defined(__OpenBSD__)
+    // Unlikely, but continue supporting use of GNU extension in cases where the
+    // C Driver is being built without _XOPEN_SOURCE=700.
+    ret = strerror_r (err_code, buf, buflen);

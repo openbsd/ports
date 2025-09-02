@@ -1,0 +1,40 @@
+Index: src/third_party/mozjs/extract/mfbt/TaggedAnonymousMemory.cpp
+--- src/third_party/mozjs/extract/mfbt/TaggedAnonymousMemory.cpp.orig
++++ src/third_party/mozjs/extract/mfbt/TaggedAnonymousMemory.cpp
+@@ -4,13 +4,15 @@
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+-#ifdef XP_LINUX
++#if defined(XP_LINUX) || defined(__OpenBSD__)
+ 
+ #  include "mozilla/TaggedAnonymousMemory.h"
+ 
+ #  include <sys/types.h>
+ #  include <sys/mman.h>
++#if defined(XP_LINUX) && !defined(__OpenBSD__)
+ #  include <sys/prctl.h>
++#endif
+ #  include <sys/syscall.h>
+ #  include <unistd.h>
+ 
+@@ -31,9 +33,13 @@ namespace mozilla {
+ // Returns 0 for success and -1 (with errno) for error.
+ static int TagAnonymousMemoryAligned(const void* aPtr, size_t aLength,
+                                      const char* aTag) {
++#if defined(XP_LINUX) && !defined(__OpenBSD__)
+   return prctl(PR_SET_VMA, PR_SET_VMA_ANON_NAME,
+                reinterpret_cast<unsigned long>(aPtr), aLength,
+                reinterpret_cast<unsigned long>(aTag));
++#else
++  return -1;
++#endif
+ }
+ 
+ // On some architectures, it's possible for the page size to be larger
+@@ -80,4 +86,4 @@ void* MozTaggedAnonymousMmap(void* aAddr, size_t aLeng
+   return mapped;
+ }
+ 
+-#endif  // XP_LINUX
++#endif  // defined(XP_LINUX) || defined(__OpenBSD__)

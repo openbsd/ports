@@ -1,0 +1,19 @@
+Index: buildscripts/scons.py
+--- buildscripts/scons.py.orig
++++ buildscripts/scons.py
+@@ -18,15 +18,6 @@ SITE_TOOLS_DIR = os.path.join(MONGODB_ROOT, 'site_scon
+ 
+ sys.path = [SCONS_DIR, SITE_TOOLS_DIR] + sys.path
+ 
+-# pylint: disable=C0413
+-from mongo.pip_requirements import verify_requirements, MissingRequirements
+-
+-try:
+-    verify_requirements()
+-except MissingRequirements as ex:
+-    print(ex)
+-    sys.exit(1)
+-
+ try:
+     import SCons.Script
+ except ImportError as import_err:

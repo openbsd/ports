@@ -1,0 +1,12 @@
+Index: src/third_party/mozjs/extract/js/src/vm/ArrayBufferObject.cpp
+--- src/third_party/mozjs/extract/js/src/vm/ArrayBufferObject.cpp.orig
++++ src/third_party/mozjs/extract/js/src/vm/ArrayBufferObject.cpp
+@@ -278,7 +278,7 @@ bool js::ExtendBufferMapping(void* dataPointer, size_t
+   return true;
+ #elif defined(__wasi__)
+   return false;
+-#elif defined(XP_LINUX)
++#elif defined(XP_LINUX) && !defined(__OpenBSD__)
+   // Note this will not move memory (no MREMAP_MAYMOVE specified)
+   if (MAP_FAILED == mremap(dataPointer, mappedSize, newMappedSize, 0)) {
+     return false;

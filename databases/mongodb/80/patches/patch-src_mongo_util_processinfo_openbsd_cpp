@@ -1,0 +1,12 @@
+Index: src/mongo/util/processinfo_openbsd.cpp
+--- src/mongo/util/processinfo_openbsd.cpp.orig
++++ src/mongo/util/processinfo_openbsd.cpp
+@@ -93,7 +93,7 @@ template <>
+ int getSysctlByIDWithDefault<std::string>(const int* sysctlID,
+                                           const int idLen,
+                                           const std::string& defaultValue,
+-                                          string* result) {
++                                          std::string* result) {
+     char value[256] = {0};
+     size_t len = sizeof(value);
+     if (sysctl(sysctlID, idLen, &value, &len, NULL, 0) == -1) {

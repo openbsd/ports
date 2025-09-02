@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/mongod"
+daemon_flags="-f ${SYSCONFDIR}/mongodb.conf"
+daemon_user="_mongodb"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,12 @@
+Index: src/mongo/watchdog/watchdog.cpp
+--- src/mongo/watchdog/watchdog.cpp.orig
++++ src/mongo/watchdog/watchdog.cpp
+@@ -576,7 +576,7 @@ void checkFile(OperationContext* opCtx, const boost::f
+     std::string nowStr = now.toString();
+ 
+ // Apple does not support O_DIRECT, so instead we use fcntl to enable the F_NOCACHE flag later.
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+     int fd = open(file.generic_string().c_str(), O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+ #else
+     int fd = open(file.generic_string().c_str(), O_RDWR | O_CREAT | O_DIRECT, S_IRUSR | S_IWUSR);

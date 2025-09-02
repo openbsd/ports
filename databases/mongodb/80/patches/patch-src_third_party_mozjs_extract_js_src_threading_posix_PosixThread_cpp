@@ -1,0 +1,12 @@
+Index: src/third_party/mozjs/extract/js/src/threading/posix/PosixThread.cpp
+--- src/third_party/mozjs/extract/js/src/threading/posix/PosixThread.cpp.orig
++++ src/third_party/mozjs/extract/js/src/threading/posix/PosixThread.cpp
+@@ -125,7 +125,7 @@ void ThisThread::GetName(char* nameBuffer, size_t len)
+   MOZ_RELEASE_ASSERT(len >= 16);
+ 
+   int rv = -1;
+-#ifdef HAVE_PTHREAD_GETNAME_NP
++#if defined(HAVE_PTHREAD_GETNAME_NP) && ! defined(__OpenBSD__)
+   rv = pthread_getname_np(pthread_self(), nameBuffer, len);
+ #elif defined(HAVE_PTHREAD_GET_NAME_NP)
+   pthread_get_name_np(pthread_self(), nameBuffer, len);
