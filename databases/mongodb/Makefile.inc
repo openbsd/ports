@@ -51,7 +51,6 @@ MODSCONS_FLAGS += --opt=on \
 		  --allocator=system \
 		  --use-system-boost \
 		  --use-system-icu \
-		  --use-system-pcre \
 		  --use-system-snappy \
 		  --use-system-stemmer \
 		  --use-system-yaml \
@@ -61,9 +60,7 @@ MODSCONS_FLAGS += --opt=on \
 
 LIB_DEPENDS +=	archivers/snappy \
 		devel/boost \
-		devel/pcre \
 		devel/yaml-cpp \
-		sysutils/py-psutil \
 		textproc/libstemmer \
 		textproc/icu4c
 TEST_DEPENDS +=	databases/py-mongo
@@ -75,6 +72,7 @@ BUILD_DEPENDS += \
 		devel/py-cheetah \
 		devel/py-setuptools \
 		net/libbind \
+		sysutils/py-psutil \
 		textproc/py-yaml
 
 post-install:

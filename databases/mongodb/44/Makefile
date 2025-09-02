@@ -12,9 +12,11 @@ WANTLIB += pcre pcrecpp snappy ssl stemmer yaml-cpp z zstd
 MODSCONS_ENV +=	  PREFIX="${PREFIX}"
 MODSCONS_FLAGS += --disable-warnings-as-errors
 MODSCONS_FLAGS += --use-system-zstd
+MODSCONS_FLAGS += --use-system-pcre
 
 ALL_TARGET =	install-core
 LIB_DEPENDS =	archivers/zstd \
+		devel/pcre \
 		net/curl
 
 post-extract:
