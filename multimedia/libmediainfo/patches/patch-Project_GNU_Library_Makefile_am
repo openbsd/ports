@@ -1,0 +1,12 @@
+Index: Project/GNU/Library/Makefile.am
+--- Project/GNU/Library/Makefile.am.orig
++++ Project/GNU/Library/Makefile.am
+@@ -313,6 +313,8 @@ pkgconfig_DATA = libmediainfo.pc
+ 
+ AM_CXXFLAGS = -std=c++11
+ AM_CPPFLAGS = -I../../../Source -I../../../../ZenLib/Source
++# Do not pick up external fmt from ${prefix}/include
++AM_CPPFLAGS += -I../../../Source/ThirdParty
+ 
+ TESTS_DIR = test
+ 
