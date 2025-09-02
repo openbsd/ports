@@ -3,7 +3,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 # spyder 6.1.0 should have better support for Qt6, for now
 # stick to qt5 and qtwebengine. (See issue #20201).
 
-MODPY_DISTV =	6.0.7
+MODPY_DISTV =	6.0.8
 DISTNAME =	spyder-${MODPY_DISTV}
 PKGNAME =	spyder3-${MODPY_DISTV}
 

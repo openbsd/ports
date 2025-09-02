@@ -3,6 +3,7 @@ COMMENT=		kernels used by spyder on its ipython console
 MODPY_DISTV=	3.0.5
 DISTNAME=	spyder_kernels-${MODPY_DISTV}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/_/-/}
+REVISION=	0
 
 PORTROACH=	limit:^3
 
