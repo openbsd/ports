@@ -1,11 +1,8 @@
 COMMENT=	Python-based build system
 
-MODPY_DISTV=	4.6.0
-DISTNAME=	SCons-${MODPY_DISTV}
-PKGNAME=	${DISTNAME:L}
+MODPY_DISTV=	4.9.1
+DISTNAME=	scons-${MODPY_DISTV}
 CATEGORIES=	devel
-
-REVISION=	2
 
 HOMEPAGE=	https://www.scons.org/
 
@@ -17,5 +14,8 @@ MODPY_PI=		Yes
 MODPY_PYBUILD =		setuptools
 
 NO_TEST=	Yes
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
