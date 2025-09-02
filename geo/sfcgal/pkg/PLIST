@@ -6,7 +6,6 @@ bin/sfcgal-config
 @comment @bin bin/unit-test-SFCGAL
 include/SFCGAL/
 include/SFCGAL/Coordinate.h
-include/SFCGAL/Cylinder.h
 include/SFCGAL/Envelope.h
 include/SFCGAL/Exception.h
 include/SFCGAL/Geometry.h
@@ -25,7 +24,6 @@ include/SFCGAL/PreparedGeometry.h
 include/SFCGAL/Segment.h
 include/SFCGAL/Simplicity.h
 include/SFCGAL/Solid.h
-include/SFCGAL/Sphere.h
 include/SFCGAL/Surface.h
 include/SFCGAL/Transform.h
 include/SFCGAL/Triangle.h
@@ -137,6 +135,7 @@ include/SFCGAL/export.h
 include/SFCGAL/io/
 include/SFCGAL/io/GeometryStreams.h
 include/SFCGAL/io/OBJ.h
+include/SFCGAL/io/STL.h
 include/SFCGAL/io/ewkt.h
 include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h
@@ -144,6 +143,9 @@ include/SFCGAL/io/wkb.h
 include/SFCGAL/io/wkt.h
 include/SFCGAL/namespace.h
 include/SFCGAL/numeric.h
+include/SFCGAL/primitive3d/
+include/SFCGAL/primitive3d/Cylinder.h
+include/SFCGAL/primitive3d/Sphere.h
 include/SFCGAL/triangulate/
 include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h
