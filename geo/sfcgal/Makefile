@@ -1,9 +1,9 @@
 COMMENT =		CGAL wrapper implementing 2D/3D operations on OGC features
 
-V =			v2.1.0
+V =			v2.2.0
 DISTNAME =		SFCGAL-${V}
 PKGNAME =		${DISTNAME:L:S/v//}
-SHARED_LIBS +=	SFCGAL	0.0 # 0.0
+SHARED_LIBS +=	SFCGAL	0.1 # 0.0
 
 CATEGORIES =		geo math
 
