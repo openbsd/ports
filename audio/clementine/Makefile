@@ -6,7 +6,7 @@ GH_PROJECT =	Clementine
 GH_TAGNAME =	${VERSION}-44-g41bcdca7f
 PKGNAME =	clementine-${VERSION}
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio x11
 
@@ -28,13 +28,13 @@ WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
 WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash
 WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_globals absl_log_initialize
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_log_severity absl_log_sink
 WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_entropy_pool
 WANTLIB += absl_random_internal_platform absl_random_internal_randen
 WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
