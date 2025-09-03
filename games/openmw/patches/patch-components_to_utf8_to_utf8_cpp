@@ -1,0 +1,14 @@
+Fix build with libc++19; backported from openmw-0.49.0
+
+Index: components/to_utf8/to_utf8.cpp
+--- components/to_utf8/to_utf8.cpp.orig
++++ components/to_utf8/to_utf8.cpp
+@@ -52,7 +52,7 @@ namespace
+         return std::find_if(input.begin(), input.end(), [] (unsigned char v) { return v == 0 || v >= 128; });
+     }
+ 
+-    std::basic_string_view<signed char> getTranslationArray(FromType sourceEncoding)
++    std::span<const signed char> getTranslationArray(FromType sourceEncoding)
+     {
+         switch (sourceEncoding)
+         {

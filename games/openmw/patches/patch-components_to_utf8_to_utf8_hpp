@@ -1,0 +1,22 @@
+Fix build with libc++19; backported from openmw-0.49.0
+
+Index: components/to_utf8/to_utf8.hpp
+--- components/to_utf8/to_utf8.hpp.orig
++++ components/to_utf8/to_utf8.hpp
+@@ -3,6 +3,7 @@
+ 
+ #include <string>
+ #include <cstring>
++#include <span>
+ #include <vector>
+ #include <string_view>
+ 
+@@ -46,7 +47,7 @@ namespace ToUTF8
+             inline std::pair<std::size_t, bool> getLengthLegacyEnc(std::string_view input) const;
+             inline void copyFromArrayLegacyEnc(std::string_view::iterator& chp, std::string_view::iterator end, char* &out) const;
+ 
+-            const std::basic_string_view<signed char> mTranslationArray;
++            const std::span<const signed char> mTranslationArray;
+     };
+ 
+     class Utf8Encoder
