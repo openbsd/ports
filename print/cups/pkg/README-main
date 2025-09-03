@@ -16,8 +16,8 @@ Alternatively, adding and/or configuring CUPS printers can be done with
 lpadmin(8) (the foomatic tools may be needed as well, to create the
 corresponding PPD file see below).
 
-To be able to use CUPS printers from GTK+ applications, the gtk+2-cups,
-gtk+3-cups and/or gtk+4-cups package need to be installed.
+To be able to use CUPS printers from GTK+2 and GTK+3 applications, the
+gtk+2-cups and gtk+3-cups packages need to be installed.
 
 Printer drivers
 ===============

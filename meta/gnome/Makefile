@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		1
+REVISION-main=		2
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -19,7 +19,6 @@ MULTI_PACKAGES=		-main -extras
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
 # add gtk+3-cups so that gtkprint() can see native CUPS printers;
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
-RUN_DEPENDS-main +=	x11/gtk+4,-cups
 
 # we already depend on samba, libgdata and gnome-online-accounts
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,

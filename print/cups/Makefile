@@ -12,6 +12,8 @@ GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.12
 
+REVISION-main=		0
+
 SITES.github=		https://github.com/OpenPrinting/cups/commit/
 PATCHFILES.github=	5910c99b9211641e0691b2d418ee546af54c7a8c.diff \
 			ac85dcba38255a99a4452e069396f63a49ab3546.diff \
