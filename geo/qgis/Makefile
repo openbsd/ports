@@ -8,6 +8,7 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
+REVISION =	0
 DISTNAME =	qgis-3.44.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
@@ -131,12 +132,12 @@ WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
 WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash
 WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_log_globals absl_log_initialize
+WANTLIB += absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_format absl_log_internal_globals
 WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
 WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
-WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_log_severity absl_log_sink
 WANTLIB += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
 WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
 WANTLIB += absl_str_format_internal absl_strerror absl_string_view
