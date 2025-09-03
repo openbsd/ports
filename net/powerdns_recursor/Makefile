@@ -1,22 +1,24 @@
 COMMENT=		recursive nameserver
 
-V=			5.2.5
+V=			5.3.0
 DISTNAME=		pdns-recursor-${V}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 PKGNAME=		powerdns-recursor-${V}
-REVISION=		0
 
 CATEGORIES=		net
+
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS=		sparc64 
 
 HOMEPAGE=		https://www.powerdns.com/
 
 # GPLv2 only, OpenSSL exemption
 PERMIT_PACKAGE=		Yes
 
-WANTLIB+=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} boost_atomic-mt
-WANTLIB+=		boost_context-mt boost_filesystem-mt boost_system-mt crypto
-WANTLIB+=		curl fstrm m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
-WANTLIB+=		sodium ssl z
+WANTLIB+=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB+=		boost_context-mt boost_filesystem-mt crypto
+WANTLIB+=		curl fstrm m
+WANTLIB+=		sodium ssl
 
 SITES=			https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
@@ -32,43 +34,52 @@ LIB_DEPENDS=		devel/boost \
 			security/libsodium
 
 MODULES+=		devel/cargo
-MODCARGO_CARGOTOML=	${WRKSRC}/settings/rust/Cargo.toml
-MODCARGO_TARGET_DIR=	${WRKSRC}/settings/rust/target 
+MODCARGO_CARGOTOML=	${WRKSRC}/rec-rust-lib/rust/Cargo.toml
+MODCARGO_TARGET_DIR=	${WRKSRC}/rec-rust-lib/rust/target 
 MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mluajit}
+CONFIGURE_ARGS+=	-Dlua=luajit
+LIB_DEPENDS+=		lang/luajit
+WANTLIB+=		luajit-5.1
+.else
+CONFIGURE_ARGS+=	-Dlua=lua
 MODULES+=		lang/lua
 MODLUA_VERSION=		5.3
-MODLUA_SA=		Yes
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS}
 WANTLIB+=		${MODLUA_WANTLIB}
+.endif
 
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
+SUBST_VARS+=		BASESYSCONFDIR
 
-CONFIGURE_STYLE=	cargo autoreconf
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
-USE_GMAKE=		Yes
+MODULES+=		devel/meson
 
-CONFIGURE_ARGS+=	--disable-hardening \
-			--enable-dns-over-tls \
-			--enable-dnstap \
-			--with-lua=${MODLUA_DEP} \
-			--without-net-snmp \
-			--without-systemd
+pre-configure:
+			@${MODCARGO_configure}
 
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=	meson
+
+CONFIGURE_ARGS+=	-Dhardening=disabled \
+			-Ddns-over-tls=enabled \
+			-Ddnstap=enabled \
+			-Dlua=auto \
+			-Dsnmp=disabled \
+			-Dsystemd-service=disabled \
+			-Dlibcap=disabled
 
 MAKE_ENV+=		${MODCARGO_ENV}
 
-EXAMPLE_DIR=            ${PREFIX}/share/examples/pdns/
+EXAMPLE_DIR=		${PREFIX}/share/examples/pdns/
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	${INSTALL_DATA} ${FILESDIR}/recursor.conf ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/recursor.yml-dist ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/recursor.yml-dist ${EXAMPLE_DIR}
 
 .include "crates.inc"
 
