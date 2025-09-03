@@ -1,10 +1,9 @@
 USE_NOBTCFI-aarch64 =	Yes# fortran
 
-V =	3.5.3
+V =	3.6.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
-REVISION=	0
 
 HOMEPAGE=	http://www.postgis.net/
 
