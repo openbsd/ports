@@ -1,5 +1,6 @@
 COMMENT=		syntax checks for Puppet manifests and templates
 
+REVISION=		0
 DISTNAME=		puppet-syntax-4.1.1
 CATEGORIES=		sysutils
 
@@ -11,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		sysutils/ruby-puppet/7
+RUN_DEPENDS +=		sysutils/ruby-puppet/8
 
 CONFIGURE_STYLE=	ruby gem
 
