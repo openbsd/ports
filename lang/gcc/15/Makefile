@@ -1,8 +1,8 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-# BROKEN-mips64 = In function 'test_fn': cc1: internal compiler error: Segmentation fault
-# BROKEN-sparc64 = ICE during selftests
+BROKEN-mips64 = build/genautomata ... Segmentation fault
+BROKEN-sparc64 = ICE during selftests
 
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
