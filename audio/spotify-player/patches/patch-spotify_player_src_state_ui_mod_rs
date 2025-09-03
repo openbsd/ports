@@ -1,0 +1,36 @@
+commit 77af13b48b2a03e61fef1cffea899929057551dc (HEAD -> master, origin/master, origin/HEAD)
+Author: Dragonfly911117 <55215882+Dragonfly911117@users.noreply.github.com>
+Date:   Mon Sep 1 23:35:57 2025 +0800
+
+    Fix: Move `fuzzy_search_items` to `utils` to fix build issue with `fzf` feature (#823)
+
+
+Index: spotify_player/src/state/ui/mod.rs
+--- spotify_player/src/state/ui/mod.rs.orig
++++ spotify_player/src/state/ui/mod.rs
+@@ -97,25 +97,7 @@ impl UIState {
+     }
+ }
+ 
+-#[cfg(feature = "fzf")]
+-use fuzzy_matcher::skim::SkimMatcherV2;
+ use ratatui::layout::Rect;
+-
+-#[cfg(feature = "fzf")]
+-fn fuzzy_search_items<'a, T: std::fmt::Display>(items: &'a [T], query: &str) -> Vec<&'a T> {
+-    let matcher = SkimMatcherV2::default();
+-    let mut result = items
+-        .iter()
+-        .filter_map(|t| {
+-            matcher
+-                .fuzzy(&t.to_string(), query, false)
+-                .map(|(score, _)| (t, score))
+-        })
+-        .collect::<Vec<_>>();
+-
+-    result.sort_by(|(_, a), (_, b)| b.cmp(a));
+-    result.into_iter().map(|(t, _)| t).collect::<Vec<_>>()
+-}
+ 
+ impl Default for UIState {
+     fn default() -> Self {
