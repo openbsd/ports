@@ -250,9 +250,9 @@ ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
 GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 
-.PHONY: adastrap
+.PHONY: bootstrap
 
-adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
+bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
 	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GCC_PACKAGE}
@@ -265,4 +265,5 @@ adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
 		${_PBUILD} cp $$f ${WRKDIR}/prepare/bootstrap/system-libs/; \
 	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
-		xz -T0 | ${_PFETCH} tee ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}} > /dev/null
+		${_PBUILD} xz -T0 | \
+		${_PFETCH} tee ${FULLDISTDIR}/bootstrap-${MACHINE_ARCH}-${PKGNAME}.tar.xz > /dev/null
