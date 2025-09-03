@@ -1,0 +1,12 @@
+Index: gtk/print/gtkprintoperation-unix.c
+--- gtk/print/gtkprintoperation-unix.c.orig
++++ gtk/print/gtkprintoperation-unix.c
+@@ -242,7 +242,7 @@ get_preview_command (GdkDisplay *display)
+     {
+       if (has_flatpak ("org.gnome.Papers", "stable"))
+         g_set_str (&preview_cmd, g_strdup ("flatpak run --command=papers-previewer --file-forwarding org.gnome.Papers --print-settings @@ %s %f @@"));
+-      else if (g_file_test ("/usr/bin/papers-previewer", G_FILE_TEST_IS_EXECUTABLE))
++      else if (g_file_test ("${LOCALBASE}/bin/papers-previewer", G_FILE_TEST_IS_EXECUTABLE))
+         g_set_str (&preview_cmd, g_strdup ("papers-previewer --unlink-tempfile --print-settings %s %f"));
+     }
+ 

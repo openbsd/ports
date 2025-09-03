@@ -1,0 +1,67 @@
+XXX ../gtk-4.20.0/testsuite/gdk/colorstate.c:328:4: error: use of undeclared identifier 'gtk_test_init'; did you mean 'g_test_init'?
+
+XXX ld: error: undefined symbol: udmabuf_texture_from_texture
+
+Index: testsuite/gdk/colorstate.c
+--- testsuite/gdk/colorstate.c.orig
++++ testsuite/gdk/colorstate.c
+@@ -1,11 +1,11 @@
+ #include "config.h"
+ 
+-#include <gdk/gdk.h>
++#include <gtk/gtk.h>
+ #include <math.h>
+ 
+-#ifdef HAVE_DRM_FOURCC_H
+-#endif
++#ifdef HAVE_DMABUF
+ #include "udmabuf.h"
++#endif
+ 
+ typedef enum {
+   TEXTURE_METHOD_PLAIN,
+@@ -166,7 +166,7 @@ test_convert (gconstpointer testdata,
+                                         gdk_color_state_get_srgb ()));
+   if (method == TEXTURE_METHOD_DMABUF)
+     {
+-#ifdef HAVE_DRM_FOURCC_H
++#ifdef HAVE_DMABUF
+       texture = udmabuf_texture_from_texture (texture, &error);
+ #else
+       g_assert_not_reached ();
+@@ -233,7 +233,7 @@ test_convert_plain (gconstpointer testdata)
+   test_convert (testdata, TEXTURE_METHOD_PLAIN, 0.001, 0.001);
+ }
+ 
+-#ifdef HAVE_DRM_FOURCC_H
++#ifdef HAVE_DMABUF
+ static void
+ test_convert_dmabuf (gconstpointer testdata)
+ {
+@@ -343,7 +343,7 @@ main (int argc, char *argv[])
+       test_name = g_strdup_printf ("/colorstate/convert-plain/srgb/%s", cs_name);
+       g_test_add_data_func_full (test_name, gdk_color_state_ref (csi), test_convert_plain, (GDestroyNotify) gdk_color_state_unref);
+       g_free (test_name);
+-#ifdef HAVE_DRM_FOURCC_H
++#ifdef HAVE_DMABUF
+       test_name = g_strdup_printf ("/colorstate/convert-dmabuf/srgb/%s", cs_name);
+       g_test_add_data_func_full (test_name, gdk_color_state_ref (csi), test_convert_dmabuf, (GDestroyNotify) gdk_color_state_unref);
+       g_free (test_name);
+@@ -375,7 +375,7 @@ main (int argc, char *argv[])
+                   char *test_name = g_strdup_printf ("/colorstate/convert/plain/srgb/cicp/%u/%u/%u/0", primaries, tf, matrix);
+                   g_test_add_data_func_full (test_name, gdk_color_state_ref (color_state), test_convert_plain, (GDestroyNotify) gdk_color_state_unref);
+                   g_free (test_name);
+-#ifdef HAVE_DRM_FOURCC_H
++#ifdef HAVE_DMABUF
+                   test_name = g_strdup_printf ("/colorstate/convert/dmabuf/srgb/cicp/%u/%u/%u/0", primaries, tf, matrix);
+                   g_test_add_data_func_full (test_name, gdk_color_state_ref (color_state), test_convert_dmabuf, (GDestroyNotify) gdk_color_state_unref);
+                   g_free (test_name);
+@@ -391,7 +391,7 @@ main (int argc, char *argv[])
+                   char *test_name = g_strdup_printf ("/colorstate/convert/plain/srgb/cicp/%u/%u/%u/1", primaries, tf, matrix);
+                   g_test_add_data_func_full (test_name, gdk_color_state_ref (color_state), test_convert_plain, (GDestroyNotify) gdk_color_state_unref);
+                   g_free (test_name);
+-#ifdef HAVE_DRM_FOURCC_H
++#ifdef HAVE_DMABUF
+                   test_name = g_strdup_printf ("/colorstate/convert/dmabuf/srgb/cicp/%u/%u/%u/1", primaries, tf, matrix);
+                   g_test_add_data_func_full (test_name, gdk_color_state_ref (color_state), test_convert_dmabuf, (GDestroyNotify) gdk_color_state_unref);
+                   g_free (test_name);

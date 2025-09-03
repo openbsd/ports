@@ -1,23 +1,19 @@
 DPB_PROPERTIES=		parallel
 
 COMMENT-main=		multi-platform graphical toolkit
-COMMENT-cups=		gtk+4 CUPS print backend
 COMMENT-demos=		gtk+4 demo programs
 COMMENT-guic=		gtk+ icon theme caching utility
-COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.18.6
+GNOME_VERSION=		4.20.0
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
-PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
-PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.4 # 1.1800.6
+SHARED_LIBS += gtk-4                     5.5 # 1.2000.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -26,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=		-main -cups -demos -guic -media
+MULTI_PACKAGES=		-main -demos -guic
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -46,6 +42,10 @@ BUILD_DEPENDS=		devel/py-gobject3 \
 			wayland/wayland-protocols>=1.41p0 \
 			www/sassc
 
+# bash-completion
+BUILD_DEPENDS +=	shells/bash \
+			shells/bash-completion
+
 # needs BTN_LEFT
 BUILD_DEPENDS +=	wayland/libinput-openbsd
 
@@ -53,8 +53,13 @@ LIB_DEPENDS-main=	devel/pango \
 			graphics/gdk-pixbuf2 \
 			graphics/graphene \
 			graphics/vulkan-loader \
+			print/cups,-libs \
 			wayland/wayland \
 			x11/xkbcommon
+
+# gst-plugins-bad: gstplay-1.0
+LIB_DEPENDS-main +=	multimedia/gstreamer1/plugins-bad
+
 RUN_DEPENDS-main=	${RUN_DEPENDS}
 
 # convenient dependency to prevent hunting what needs what:
@@ -64,17 +69,13 @@ RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
 # uses pledge() and unveil()
 WANTLIB-main += X11 Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB-main += c cairo cairo-gobject cairo-script-interpreter epoxy
-WANTLIB-main += fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gmodule-2.0 gobject-2.0 graphene-1.0 harfbuzz harfbuzz-subset
-WANTLIB-main += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png
-WANTLIB-main += tiff vulkan wayland-client wayland-egl xkbcommon
-
-LIB_DEPENDS-cups=	print/cups,-libs \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-RUN_DEPENDS-cups=	# empty
-
-WANTLIB-cups += cairo cups gio-2.0 glib-2.0 gobject-2.0 gtk-4
+WANTLIB-main += c cairo cairo-gobject cairo-script-interpreter cups
+WANTLIB-main += epoxy fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gmodule-2.0 gobject-2.0 graphene-1.0 gstallocators-1.0
+WANTLIB-main += gstgl-1.0 gstplay-1.0 gstreamer-1.0 gstvideo-1.0 harfbuzz
+WANTLIB-main += harfbuzz-subset intl jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 png rsvg-2 tiff vulkan wayland-client
+WANTLIB-main += wayland-egl xkbcommon
 
 LIB_DEPENDS-demos=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-demos=	${RUN_DEPENDS}
@@ -89,20 +90,13 @@ RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 # uses pledge()
 WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 
-# gst-plugins-bad: gstplayer-1.0
-LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-
-WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 graphene-1.0 gstallocators-1.0
-WANTLIB-media += gstgl-1.0 gstplayer-1.0 gstreamer-1.0 gstvideo-1.0
-WANTLIB-media += gtk-4 m
-
 TEST_IS_INTERACTIVE=	x11
 # needs lib/gstreamer-1.0/libgstpipewire.so and the pipewire server
 TEST_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dman-pages=true
 # disable use of ifuncs to fix build with llvm 19
+
 CONFIGURE_ARGS+=	-Df16c=disabled
 
 .include <bsd.port.arch.mk>
@@ -115,6 +109,9 @@ CFLAGS +=		-Wno-error
 .if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/gtk/print/gtkprintoperation-unix.c
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/settings.ini ${PREFIX}/share/gtk-4.0/
