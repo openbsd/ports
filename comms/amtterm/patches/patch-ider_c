@@ -1,0 +1,25 @@
+Adapt to our SCSI stack.
+
+Index: ider.c
+--- ider.c.orig
++++ ider.c
+@@ -23,8 +23,18 @@
+ #include <string.h>
+ #include <stdbool.h>
+ #include <sys/types.h>
+-#include <scsi/scsi.h>
++#include <scsi/scsi_all.h>
++#include <scsi/cd.h>
++#include <scsi/scsi_disk.h>
+ #include "redir.h"
++
++/* SCSI compat defines */
++#ifndef ALLOW_MEDIUM_REMOVAL
++#define ALLOW_MEDIUM_REMOVAL PREVENT_ALLOW
++#endif
++#ifndef MODE_SENSE_10
++#define MODE_SENSE_10 MODE_SENSE_BIG
++#endif
+ 
+ static int ider_data_to_host(struct redir *r, unsigned char device,
+ 			     unsigned char *data, unsigned int data_len,

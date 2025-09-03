@@ -1,0 +1,91 @@
+Replace Linux-only signalfd code with portable sigaction(2).
+
+Index: amtider.c
+--- amtider.c.orig
++++ amtider.c
+@@ -29,7 +29,6 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+-#include <sys/signalfd.h>
+ #include <sys/mman.h>
+ 
+ #include "redir.h"
+@@ -63,12 +62,20 @@ static void state_ider(void *cb_data, enum redir_state
+     }
+ }
+ 
++static volatile sig_atomic_t got_signal;
++
++static void sighandler(int sig)
++{
++	got_signal = 1;
++}
++
+ static int redir_loop(struct redir *r)
+ {
+     struct timeval tv;
+     fd_set set;
+     sigset_t mask;
+-    int max_fd = r->sock, sfd;
++    int max_fd;
++    struct sigaction sa;
+     int interval = HEARTBEAT_INTERVAL * 4 / 1000;
+ 
+     sigemptyset(&mask);
+@@ -77,11 +84,18 @@ static int redir_loop(struct redir *r)
+ 
+     if (sigprocmask(SIG_BLOCK, &mask, NULL) == -1) {
+ 	perror("sigprocmask");
++ 	exit(1);
++    }
++
++    memset(&sa, 0, sizeof sa);
++    sigemptyset(&sa.sa_mask);
++    sa.sa_handler = sighandler;
++    if (sigaction(SIGINT, &sa, NULL) == -1) {
++	perror("sigaction(SIGINT)");
+ 	exit(1);
+     }
+-    sfd = signalfd(-1, &mask, 0);
+-    if (sfd < 0) {
+-	perror("signalfd");
++    if (sigaction(SIGQUIT, &sa, NULL) == -1) {
++	perror("sigaction(SIGQUIT)");
+ 	exit(1);
+     }
+ 
+@@ -93,16 +107,16 @@ static int redir_loop(struct redir *r)
+ 
+ 	FD_ZERO(&set);
+ 	FD_SET(r->sock, &set);
+-	if (sfd > 0) {
+-	    FD_SET(sfd, &set);
+-	    max_fd = sfd > r->sock? sfd : r->sock;
+-	}
++	max_fd = r->sock;
+ 	tv.tv_sec  = interval;
+ 	tv.tv_usec = 0;
+ 	switch (select(max_fd+1,&set,NULL,NULL,&tv)) {
+ 	case -1:
+-	    perror("select");
+-	    return -1;
++	    if (!got_signal) {
++		perror("select");
++		return -1;
++	    }
++	    break;
+ 	case 0:
+ 	    fprintf(stderr,"select: timeout\n");
+ 	    return -1;
+@@ -112,9 +126,7 @@ static int redir_loop(struct redir *r)
+ 	    if (-1 == redir_data(r))
+ 		return -1;
+ 	}
+-	if (FD_ISSET(sfd, &set)) {
+-	    close(sfd);
+-	    sfd = -1;
++	if (got_signal && interval != 2) {
+ 	    if (-1 == redir_ider_stop(r))
+ 		return -1;
+ 	    interval = 2;
