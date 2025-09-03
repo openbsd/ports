@@ -51,11 +51,11 @@ MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada
 
 .include <bsd.port.arch.mk>
 
-DISTNAME =   	gcc-${FULL_VERSION}
+DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
-SUPDISTFILES.boot =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
-		${ADASTRAP-i386} ${ADASTRAP-mips64} ${ADASTRAP-powerpc} \
-		${ADASTRAP-sparc64}
+.for _arch in ${ONLY_FOR_ARCHS-ada}
+SUPDISTFILES.strap += ${ADASTRAP-${_arch}}
+.endfor
 EXTRACT_ONLY =	${DISTFILES}
 
 BUILD_DEPENDS +=	devel/bison
@@ -79,14 +79,9 @@ TEST_DEPENDS += devel/dejagnu \
 		devel/autogen \
 		${BUILD_PKGPATH},-libs>=15,<16
 
-SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-SITES.boot =	https://distfiles.stumpf.co/ \
-		https://spacehopper.org/mirrors/ \
-		https://distfiles.bsdfrog.org/
-
 LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-ada}
-DISTFILES.boot += ${ADASTRAP-${MACHINE_ARCH}}
+DISTFILES.strap += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 CC = ${WRKDIR}/bin/egcc
 CXX = ${WRKDIR}/bin/eg++
@@ -124,10 +119,8 @@ MAKE_ENV += ${EXTRA_ENV}
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .elif ${MACHINE_ARCH:Mi386}
-MODULES +=			lang/clang
-MODCLANG_VERSION =		13
-MODCLANG_COMPILER_LINKS =	No
-USE_LLD =			ports
+USE_LLD = No
+# ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
