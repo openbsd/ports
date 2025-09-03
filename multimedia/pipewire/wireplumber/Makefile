@@ -1,9 +1,9 @@
 COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
-PW_VERSION=		0.5.10
+PW_VERSION=		0.5.11
 
-SHARED_LIBS += wireplumber-0.5           0.1 # 0.510.0
+SHARED_LIBS += wireplumber-0.5           0.1 # 0.511.0
 
 WANTLIB += ${MODLUA_WANTLIB} c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl m pipewire-0.3

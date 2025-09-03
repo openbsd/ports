@@ -54,6 +54,8 @@ lib/wireplumber-0.5/
 @so lib/wireplumber-0.5/libwireplumber-module-log-settings.so
 @so lib/wireplumber-0.5/libwireplumber-module-lua-scripting.so
 @so lib/wireplumber-0.5/libwireplumber-module-mixer-api.so
+@so lib/wireplumber-0.5/libwireplumber-module-modem-manager.so
+@so lib/wireplumber-0.5/libwireplumber-module-mpris.so
 @so lib/wireplumber-0.5/libwireplumber-module-portal-permissionstore.so
 @so lib/wireplumber-0.5/libwireplumber-module-reserve-device.so
 @so lib/wireplumber-0.5/libwireplumber-module-settings.so
@@ -155,6 +157,7 @@ share/wireplumber/scripts/device/autoswitch-bluetooth-profile.lua
 share/wireplumber/scripts/device/find-best-profile.lua
 share/wireplumber/scripts/device/find-best-routes.lua
 share/wireplumber/scripts/device/find-preferred-profile.lua
+share/wireplumber/scripts/device/find-voice-call-profile.lua
 share/wireplumber/scripts/device/select-profile.lua
 share/wireplumber/scripts/device/select-routes.lua
 share/wireplumber/scripts/device/state-profile.lua
@@ -178,6 +181,7 @@ share/wireplumber/scripts/linking/find-media-role-target.lua
 share/wireplumber/scripts/linking/find-user-target.lua.example
 share/wireplumber/scripts/linking/get-filter-from-target.lua
 share/wireplumber/scripts/linking/link-target.lua
+share/wireplumber/scripts/linking/mpris-pause.lua
 share/wireplumber/scripts/linking/prepare-link.lua
 share/wireplumber/scripts/linking/rescan-media-role-links.lua
 share/wireplumber/scripts/linking/rescan.lua
