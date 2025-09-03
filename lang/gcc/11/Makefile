@@ -21,7 +21,7 @@ FULL_PKGVERSION = $V
 REVISION = 18
 
 ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
-ADASTRAP-i386 = adastrap-i386-$V-3.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-3.tar.xz
 
