@@ -7,6 +7,7 @@ COMMENT-gui =		GUI to remove unnecessary/duplicate files
 PKGNAME-main =		czkawka-${GH_TAGNAME}
 PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
 
+# Kept at 9.0.0 for now: this is getting way too big for what it does
 GH_ACCOUNT =		qarmin
 GH_PROJECT =		czkawka
 GH_TAGNAME =		9.0.0
