@@ -266,4 +266,4 @@ bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
 	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
 		${_PBUILD} xz -T0 | \
-		${_PFETCH} tee ${FULLDISTDIR}/bootstrap-${MACHINE_ARCH}-${PKGNAME}.tar.xz > /dev/null
+		${_PFETCH} tee ${FULLDISTDIR}/${ADASTRAP-${MACHINE_ARCH}} > /dev/null
