@@ -24,12 +24,16 @@ Load balancing strategy
 -----------------------
 Note the load balancing strategy, controlled by 'lb_strategy'. It can be
 set to one of the following values:
-  - 'first' (always pick the fastest server in the list)
-  - 'p2' (randomly choose between the top two fastest servers)
-  - 'ph' (randomly choose between the top fastest half of all servers)
-  - 'random' (just pick any random server from the list)
+  - 'wp2' (default): Weighted Power of Two - selects the better
+    performing server from two random candidates based on real-time RTT
+    and success rates.
+  - 'p2': Randomly choose 1 of the fastest 2 servers by latency.
+  - 'ph': Randomly choose from fastest half of servers.
+  - 'p<n>': Randomly choose from fastest n servers (e.g., 'p3' for fastest 3).
+  - 'first': Always use the fastest server.
+  - 'random': Randomly choose from all servers.
 
-'p2' is the default option. For more information, see
+For more information, see
 https://github.com/jedisct1/dnscrypt-proxy/wiki/Load-Balancing-Options
 
 Logging

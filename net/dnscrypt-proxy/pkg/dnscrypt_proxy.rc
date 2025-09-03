@@ -8,7 +8,6 @@ daemon_flags="-config ${SYSCONFDIR}/dnscrypt-proxy.toml"
 pexp="${daemon}${daemon_flags:+ ${daemon_flags}}.*"
 
 rc_bg=YES
-rc_reload=NO
 
 rc_configtest() {
 	${daemon} ${daemon_flags} -check

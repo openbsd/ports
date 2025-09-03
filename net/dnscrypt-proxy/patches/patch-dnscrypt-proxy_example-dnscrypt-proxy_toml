@@ -1,7 +1,7 @@
 Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 --- dnscrypt-proxy/example-dnscrypt-proxy.toml.orig
 +++ dnscrypt-proxy/example-dnscrypt-proxy.toml
-@@ -52,7 +52,7 @@ max_clients = 250
+@@ -50,7 +50,7 @@ max_clients = 250
  ## Note (2): this feature is not compatible with systemd socket activation.
  ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
  
@@ -9,4 +9,4 @@ Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 +user_name = '_dnscrypt-proxy'
  
  
- ## Require servers (from remote sources) to satisfy specific properties
+ ###############################################################################

@@ -12,6 +12,7 @@ DNSCrypt and ODoH (Oblivious DoH), and features:
   Compatible with all DNS services
 - Time-based filtering, with a flexible weekly schedule
 - Transparent redirection of specific domains to specific resolvers
+- Optional hot-reloading of configuration files
 - DNS caching, to reduce latency and improve privacy
 - Local IPv6 blocking to reduce latency on IPv4-only networks
 - Load balancing: pick a set of resolvers, dnscrypt-proxy will
