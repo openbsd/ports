@@ -1,0 +1,56 @@
+Fix build with gtk+4 >=4.20.0
+
+Index: video/gtk4/src/sink/imp.rs
+--- video/gtk4/src/sink/imp.rs.orig
++++ video/gtk4/src/sink/imp.rs
+@@ -296,50 +296,6 @@ impl ElementImpl for PaintableSink {
+                         const GL_FORMATS: &[gst_video::VideoFormat] =
+                             &[gst_video::VideoFormat::Rgba, gst_video::VideoFormat::Rgb];
+                         const NON_GL_FORMATS: &[gst_video::VideoFormat] = &[
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Yuy2,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Yvyu,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Uyvy,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Vyuy,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Nv12,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Nv21,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Nv16,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Nv61,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Nv24,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P01010le,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P01010be,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P012Le,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P012Be,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P016Le,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::P016Be,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Yuv9,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Yvu9,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Y41b,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::I420,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Yv12,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Y42b,
+-                            #[cfg(feature = "gtk_v4_20")]
+-                            gst_video::VideoFormat::Y444,
+                             #[cfg(feature = "gtk_v4_14")]
+                             gst_video::VideoFormat::Bgrx,
+                             #[cfg(feature = "gtk_v4_14")]
