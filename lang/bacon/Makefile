@@ -3,8 +3,7 @@ BROKEN-sparc64 =	SIGBUS bacon binary
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-5.0.2pre20241122
-REVISION =		1
+DISTNAME =		bacon-5.0.2
 
 CATEGORIES =		lang
 
