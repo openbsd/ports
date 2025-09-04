@@ -61,7 +61,7 @@ WANTLIB-main += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_cod
 WANTLIB-main += absl_vlog_config_internal aom archive ass atk-1.0 atk-bridge-2.0
 WANTLIB-main += atspi avahi-client avahi-common avcodec avformat avutil
 WANTLIB-main += b2 bluray bz2 c cairo cairo-gobject cddb crypto dav1d
-WANTLIB-main += double-conversion drm drm_amdgpu drm_intel dvbpsi dvdnav
+WANTLIB-main += double-conversion drm drm_amdgpu dvbpsi dvdnav
 WANTLIB-main += dvdread ebml elf epoll-shim epoxy execinfo expat ffi
 WANTLIB-main += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
@@ -78,6 +78,10 @@ WANTLIB-main += wayland-egl webp webpmux x264 x265 xcb xcb-composite
 WANTLIB-main += xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
 WANTLIB-main += xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xkbcommon
 WANTLIB-main += xml2 xshmfence xvidcore z zstd
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB-main += drm_intel
+.endif
 
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
