@@ -60,6 +60,7 @@ intellij/lib/modules/intellij.grid.impl.jar
 intellij/lib/modules/intellij.grid.jar
 intellij/lib/modules/intellij.grid.types.jar
 intellij/lib/modules/intellij.ide.startup.importSettings.jar
+intellij/lib/modules/intellij.idea.customization.backend.jar
 intellij/lib/modules/intellij.idea.customization.base.jar
 intellij/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
 intellij/lib/modules/intellij.libraries.compose.foundation.desktop.jar
@@ -75,8 +76,10 @@ intellij/lib/modules/intellij.platform.bookmarks.frontend.jar
 intellij/lib/modules/intellij.platform.clouds.jar
 intellij/lib/modules/intellij.platform.collaborationTools.jar
 intellij/lib/modules/intellij.platform.compose.jar
+intellij/lib/modules/intellij.platform.compose.markdown.jar
 intellij/lib/modules/intellij.platform.coverage.agent.jar
 intellij/lib/modules/intellij.platform.coverage.jar
+intellij/lib/modules/intellij.platform.customization.min.jar
 intellij/lib/modules/intellij.platform.debugger.impl.backend.jar
 intellij/lib/modules/intellij.platform.debugger.impl.frontend.jar
 intellij/lib/modules/intellij.platform.diagnostic.freezeAnalyzer.jar
@@ -109,13 +112,16 @@ intellij/lib/modules/intellij.platform.jewel.markdown.extensions.autolink.jar
 intellij/lib/modules/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 intellij/lib/modules/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 intellij/lib/modules/intellij.platform.jewel.markdown.extensions.gfmTables.jar
+intellij/lib/modules/intellij.platform.jewel.markdown.extensions.images.jar
 intellij/lib/modules/intellij.platform.jewel.markdown.ideLafBridgeStyling.jar
 intellij/lib/modules/intellij.platform.jewel.ui.jar
 intellij/lib/modules/intellij.platform.kernel.backend.jar
 intellij/lib/modules/intellij.platform.kernel.impl.jar
+intellij/lib/modules/intellij.platform.lang.impl.backend.jar
 intellij/lib/modules/intellij.platform.lvcs.impl.jar
 intellij/lib/modules/intellij.platform.managed.cache.backend.jar
 intellij/lib/modules/intellij.platform.ml.impl.jar
+intellij/lib/modules/intellij.platform.ml.logs.jar
 intellij/lib/modules/intellij.platform.monolith.jar
 intellij/lib/modules/intellij.platform.navbar.backend.jar
 intellij/lib/modules/intellij.platform.navbar.frontend.jar
@@ -560,6 +566,7 @@ intellij/plugins/cwm-plugin/lib/modules/intellij.station.backend.split.jar
 intellij/plugins/cwm-plugin/lib/modules/intellij.terminal.backend.split.jar
 intellij/plugins/cwm-plugin/lib/modules/intellij.vcs.git.backend.split.jar
 intellij/plugins/cwm-plugin/lib/modules/intellij.vcs.git.frontend.split.jar
+intellij/plugins/cwm-plugin/lib/modules/intellij.xml.frontend.split.jar
 intellij/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
 intellij/plugins/cwm-plugin/lib/remote-controller-backend.jar
 intellij/plugins/cwm-plugin/lib/remote-controller.jar
@@ -602,7 +609,6 @@ intellij/plugins/fullLine/lib/clikt.jar
 intellij/plugins/fullLine/lib/fullLine.jar
 intellij/plugins/fullLine/lib/jgrapht.core.jar
 intellij/plugins/fullLine/lib/modules/
-intellij/plugins/fullLine/lib/modules/intellij.fullLine.core.completion.trigger.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.css.local.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.go.local.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.html.local.jar
@@ -617,6 +623,7 @@ intellij/plugins/fullLine/lib/modules/intellij.fullLine.rider.csharp.local.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.ruby.local.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.rust.local.jar
 intellij/plugins/fullLine/lib/modules/intellij.fullLine.terraform.local.jar
+intellij/plugins/fullLine/lib/modules/intellij.ml.llm.completion.trigger.model.jar
 intellij/plugins/fullLine/lib/modules/intellij.ml.llm.cpp.completion.jar
 intellij/plugins/fullLine/lib/modules/intellij.ml.llm.css.completion.jar
 intellij/plugins/fullLine/lib/modules/intellij.ml.llm.go.completion.jar
