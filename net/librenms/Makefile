@@ -4,6 +4,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	25.8.0
+REVISION=	0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0

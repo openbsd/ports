@@ -136,6 +136,28 @@ rm ${INSTDIR}/config.php
 
 Then open /install in a web browser (e.g. http://localhost/install).
 
+SNMP trap handling
+==================
+LibreNMS can receive notifications from Net-SNMP's snmptrapd and use these
+for alerts, updating port status, etc. Example configuration, showing use
+of doas to run LibreNMS' acceptor script as the correct user, and to load
+various MIBs so that OIDs are converted to textual strings (note that the
+directories specified are not parsed recursively, so you will need to add
+those for particular vendors you're interested in).
+
+# cat ${SYSCONFDIR}/snmp/snmptrapd.conf
+doNotRetainNotificationLogs yes
+authCommunity log,execute public
+traphandle default /usr/bin/doas -u _librenms /var/www/librenms/snmptrap.php
+
+# grep netsnmp /etc/doas.conf 
+permit keepenv nopass _netsnmp as _librenms cmd /var/www/librenms/snmptrap.php
+
+# grep -A3 netsnmp /etc/login.conf
+netsnmptrapd:\
+	:setenv=MIBDIRS=+/usr/local/share/snmp/mibs\c/var/www/librenms/mibs\c/var/www/librenms/mibs/hp\c/var/www/librenms/mibs/dell\c/var/www/librenms/mibs/cisco,MIBS=+ALL:\
+	:tc=daemon:
+
 Periodic tasks
 ==============
 Cron jobs are used to discover and poll hosts, send alerts, and carry out
