@@ -1,3 +1,5 @@
+DPB_PROPERTIES =	parallel
+
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
