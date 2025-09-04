@@ -3,7 +3,7 @@ avoid UB where mres is optimized away
 Index: mda/exmdb_local/exmdb_local.cpp
 --- mda/exmdb_local/exmdb_local.cpp.orig
 +++ mda/exmdb_local/exmdb_local.cpp
-@@ -274,6 +274,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
+@@ -275,6 +275,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
  		return delivery_status::no_user;
  	}
  	auto home_dir = mres.maildir.c_str();
