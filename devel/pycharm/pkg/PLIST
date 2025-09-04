@@ -27,7 +27,7 @@ pycharm/lib/annotations.jar
 pycharm/lib/app-client.jar
 pycharm/lib/app.jar
 pycharm/lib/bouncy-castle.jar
-pycharm/lib/build-marker-PC-252.23892.439
+pycharm/lib/build-marker-PC-252.25557.130
 pycharm/lib/eclipse.lsp4j.debug.jar
 pycharm/lib/eclipse.lsp4j.jar
 pycharm/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -70,6 +70,7 @@ pycharm/lib/modules/intellij.platform.bookmarks.frontend.jar
 pycharm/lib/modules/intellij.platform.clouds.jar
 pycharm/lib/modules/intellij.platform.collaborationTools.jar
 pycharm/lib/modules/intellij.platform.compose.jar
+pycharm/lib/modules/intellij.platform.compose.markdown.jar
 pycharm/lib/modules/intellij.platform.debugger.impl.backend.jar
 pycharm/lib/modules/intellij.platform.debugger.impl.frontend.jar
 pycharm/lib/modules/intellij.platform.diagnostic.freezeAnalyzer.jar
@@ -101,13 +102,16 @@ pycharm/lib/modules/intellij.platform.jewel.markdown.extensions.autolink.jar
 pycharm/lib/modules/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 pycharm/lib/modules/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 pycharm/lib/modules/intellij.platform.jewel.markdown.extensions.gfmTables.jar
+pycharm/lib/modules/intellij.platform.jewel.markdown.extensions.images.jar
 pycharm/lib/modules/intellij.platform.jewel.markdown.ideLafBridgeStyling.jar
 pycharm/lib/modules/intellij.platform.jewel.ui.jar
 pycharm/lib/modules/intellij.platform.kernel.backend.jar
 pycharm/lib/modules/intellij.platform.kernel.impl.jar
+pycharm/lib/modules/intellij.platform.lang.impl.backend.jar
 pycharm/lib/modules/intellij.platform.lvcs.impl.jar
 pycharm/lib/modules/intellij.platform.managed.cache.backend.jar
 pycharm/lib/modules/intellij.platform.ml.impl.jar
+pycharm/lib/modules/intellij.platform.ml.logs.jar
 pycharm/lib/modules/intellij.platform.monolith.jar
 pycharm/lib/modules/intellij.platform.navbar.backend.jar
 pycharm/lib/modules/intellij.platform.navbar.frontend.jar
@@ -253,6 +257,7 @@ pycharm/plugins/cwm-plugin/lib/modules/intellij.station.backend.split.jar
 pycharm/plugins/cwm-plugin/lib/modules/intellij.terminal.backend.split.jar
 pycharm/plugins/cwm-plugin/lib/modules/intellij.vcs.git.backend.split.jar
 pycharm/plugins/cwm-plugin/lib/modules/intellij.vcs.git.frontend.split.jar
+pycharm/plugins/cwm-plugin/lib/modules/intellij.xml.frontend.split.jar
 pycharm/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
 pycharm/plugins/cwm-plugin/lib/remote-controller-backend.jar
 pycharm/plugins/cwm-plugin/lib/remote-controller.jar
@@ -290,7 +295,6 @@ pycharm/plugins/fullLine/lib/clikt.jar
 pycharm/plugins/fullLine/lib/fullLine.jar
 pycharm/plugins/fullLine/lib/jgrapht.core.jar
 pycharm/plugins/fullLine/lib/modules/
-pycharm/plugins/fullLine/lib/modules/intellij.fullLine.core.completion.trigger.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.css.local.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.go.local.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.html.local.jar
@@ -305,6 +309,7 @@ pycharm/plugins/fullLine/lib/modules/intellij.fullLine.rider.csharp.local.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.ruby.local.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.rust.local.jar
 pycharm/plugins/fullLine/lib/modules/intellij.fullLine.terraform.local.jar
+pycharm/plugins/fullLine/lib/modules/intellij.ml.llm.completion.trigger.model.jar
 pycharm/plugins/fullLine/lib/modules/intellij.ml.llm.cpp.completion.jar
 pycharm/plugins/fullLine/lib/modules/intellij.ml.llm.css.completion.jar
 pycharm/plugins/fullLine/lib/modules/intellij.ml.llm.go.completion.jar
@@ -944,6 +949,7 @@ pycharm/plugins/properties/lib/properties.jar
 pycharm/plugins/pycharm-community-customization/
 pycharm/plugins/pycharm-community-customization-shared/
 pycharm/plugins/pycharm-community-customization-shared/lib/
+pycharm/plugins/pycharm-community-customization-shared/lib/io.github.z4kn4fein.semver.jvm.jar
 pycharm/plugins/pycharm-community-customization-shared/lib/modules/
 pycharm/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.whatsNew.jar
 pycharm/plugins/pycharm-community-customization-shared/lib/pycharm-community-customization-shared.jar
@@ -954,8 +960,8 @@ pycharm/plugins/pycharm-community-sharedIndexes-bundled/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-03e874896e21-d902c0275401.ijx
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-03e874896e21-d902c0275401.txt
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-79ce2b023f03-d902c0275401.ijx
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-79ce2b023f03-d902c0275401.txt
 pycharm/plugins/python-ce/
 pycharm/plugins/python-ce/helpers/
 pycharm/plugins/python-ce/helpers/.gitignore
@@ -1374,10 +1380,7 @@ pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/raster/const.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/raster/source.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/srs.pyi
-pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/
-pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/__init__.pyi
-pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/base.pyi
-pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/resources.pyi
+pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geometry.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geos/
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geos/__init__.pyi
@@ -1762,6 +1765,7 @@ pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/en
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/expressions.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/__init__.pyi
+pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/composite.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/files.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/generated.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/json.pyi
@@ -1775,6 +1779,7 @@ pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fu
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/__init__.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/comparison.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/datetime.pyi
+pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/json.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/math.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/mixins.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/text.pyi
@@ -1826,9 +1831,11 @@ pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/g
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/http.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/locale.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/security.pyi
+pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/py.typed
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/shortcuts.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/__init__.pyi
+pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/autoreload.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/__init__.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/base.pyi
@@ -1908,7 +1915,6 @@ pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/http.p
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/inspect.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/ipv6.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/itercompat.pyi
-pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/jslex.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/log.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/lorem_ipsum.pyi
 pycharm/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/module_loading.pyi
@@ -2687,6 +2693,9 @@ pycharm/plugins/python-ce/helpers/pycharm/teamcity/nose_report.py
 pycharm/plugins/python-ce/helpers/pycharm/teamcity/pylint_reporter.py
 pycharm/plugins/python-ce/helpers/pycharm/teamcity/pytest_plugin.py
 pycharm/plugins/python-ce/helpers/pycharm/teamcity/unittestpy.py
+pycharm/plugins/python-ce/helpers/pycharm_altair_backend/
+pycharm/plugins/python-ce/helpers/pycharm_altair_backend/__init__.py
+pycharm/plugins/python-ce/helpers/pycharm_altair_backend/sitecustomize.py
 pycharm/plugins/python-ce/helpers/pycharm_display/
 pycharm/plugins/python-ce/helpers/pycharm_display/datalore/
 pycharm/plugins/python-ce/helpers/pycharm_display/datalore/__init__.py
@@ -3193,6 +3202,12 @@ pycharm/plugins/python-ce/helpers/syspath.py
 pycharm/plugins/python-ce/helpers/testResources/
 pycharm/plugins/python-ce/helpers/testResources/.gitattributes
 pycharm/plugins/python-ce/helpers/testResources/__main__.py
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/rule.feature
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/steps/
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/steps/example_steps.py
+pycharm/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/steps/person_steps.py
 pycharm/plugins/python-ce/helpers/testResources/build.gradle.kts
 pycharm/plugins/python-ce/helpers/testResources/data/
 pycharm/plugins/python-ce/helpers/testResources/data/docstrings/
@@ -10612,11 +10627,12 @@ pycharm/plugins/python-ce/lib/frontend-split/
 pycharm/plugins/python-ce/lib/frontend-split/python-frontend.jar
 pycharm/plugins/python-ce/lib/io.github.z4kn4fein.semver.jvm.jar
 pycharm/plugins/python-ce/lib/jackson-dataformat-yaml.jar
-pycharm/plugins/python-ce/lib/jetbrains.ml.models.python.imports.ranking.model.jar
 pycharm/plugins/python-ce/lib/jsr305.jar
 pycharm/plugins/python-ce/lib/kaml.jar
 pycharm/plugins/python-ce/lib/libthrift.jar
 pycharm/plugins/python-ce/lib/ml-completion-prev-exprs-models.jar
+pycharm/plugins/python-ce/lib/modules/
+pycharm/plugins/python-ce/lib/modules/intellij.python.ml.features.jar
 pycharm/plugins/python-ce/lib/python-ce-frontend.jar
 pycharm/plugins/python-ce/lib/python-ce.jar
 pycharm/plugins/python-ce/lib/tuweni-toml.jar
