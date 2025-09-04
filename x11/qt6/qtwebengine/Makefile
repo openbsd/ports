@@ -11,7 +11,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -25,15 +25,13 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Designer Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickWidgets Qt6WebChannel Qt6WebChannelQuick Qt6Widgets
-WANTLIB += Qt6Xml X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xrandr Xrender Xtst c cbor crypto dbus-1 drm event
-WANTLIB += execinfo expat fido2 fontconfig freetype gbm glib-2.0
-WANTLIB += graphite2 harfbuzz harfbuzz-subset icudata icui18n
-WANTLIB += icuuc intl jpeg kvm lcms2 lzma m minizip nspr4 nss3
-WANTLIB += nssutil3 openh264 openjp2 opus pcre2-8 plc4 plds4 png
-WANTLIB += sharpyuv smime3 snappy sndio tiff usbhid util vpx webp
-WANTLIB += webpdemux webpmux xcb xkbcommon xkbfile xml2 xshmfence
-WANTLIB += xslt z
+WANTLIB += Qt6Xml X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr
+WANTLIB += Xrender Xtst c cbor crypto dbus-1 drm event execinfo
+WANTLIB += expat fido2 fontconfig freetype gbm harfbuzz harfbuzz-subset
+WANTLIB += icudata icui18n icuuc jpeg kvm lcms2 m minizip nspr4
+WANTLIB += nss3 nssutil3 openh264 openjp2 opus plc4 plds4 png
+WANTLIB += smime3 snappy sndio tiff usbhid util vpx webp webpdemux
+WANTLIB += webpmux xcb xkbcommon xkbfile xml2 xshmfence xslt z
 
 MODULES =	lang/python
 
