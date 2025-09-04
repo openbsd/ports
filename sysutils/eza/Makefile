@@ -2,7 +2,7 @@ COMMENT =		ls alternative written in Rust (fork of exa)
 
 GH_ACCOUNT =		eza-community
 GH_PROJECT =		eza
-GH_TAGNAME =		v0.23.0
+GH_TAGNAME =		v0.23.1
 
 HOMEPAGE =		https://eza.rocks/
 
