@@ -1,0 +1,13 @@
+Index: clang/lib/CodeGen/CGCall.cpp
+--- clang/lib/CodeGen/CGCall.cpp.orig
++++ clang/lib/CodeGen/CGCall.cpp
+@@ -2661,6 +2661,9 @@ void CodeGenModule::ConstructAttributeList(StringRef N
+     // handles these separately to set them based on the global defaults.
+     GetCPUAndFeaturesAttributes(CalleeInfo.getCalleeDecl(), FuncAttrs);
+ 
++    if (CodeGenOpts.ReturnProtector)
++      FuncAttrs.addAttribute("ret-protector");
++
+     // Windows hotpatching support
+     if (!MSHotPatchFunctions.empty()) {
+       bool IsHotPatched = llvm::binary_search(MSHotPatchFunctions, Name);

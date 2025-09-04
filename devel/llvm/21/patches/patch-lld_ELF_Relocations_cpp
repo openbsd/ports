@@ -1,0 +1,56 @@
+Index: lld/ELF/Relocations.cpp
+--- lld/ELF/Relocations.cpp.orig
++++ lld/ELF/Relocations.cpp
+@@ -786,6 +786,29 @@ void elf::reportUndefinedSymbols(Ctx &ctx) {
+       reportUndefinedSymbol(ctx, undef, i < 2);
+ }
+ 
++static void reportGNUWarning(Ctx &ctx, Symbol &sym, InputSectionBase &sec,
++                                 uint64_t offset) {
++  std::lock_guard<std::mutex> lock(ctx.relocMutex);
++  if (sym.gwarn) {
++    StringRef gnuWarning = gnuWarnings.lookup(sym.getName());
++    ELFSyncStream msg(ctx, DiagLevel::None);
++    // report first occurance only
++    sym.gwarn = false;
++    if (!gnuWarning.empty()) {
++      msg << sec.getSrcMsg(sym, offset);
++      msg << "(";
++      msg << sec.getObjMsg(offset);
++      msg << "): warning: ";
++      msg << gnuWarning;
++#if 0
++      warn(sec.getSrcMsg(sym, offset) + "(" + sec.getObjMsg(offset) +
++           "): warning: " + gnuWarning);
++#endif
++      Warn(ctx) << msg.str();
++    }
++  }
++}
++
+ // Report an undefined symbol if necessary.
+ // Returns true if the undefined symbol will produce an error message.
+ static bool maybeReportUndefined(Ctx &ctx, Undefined &sym,
+@@ -816,6 +839,13 @@ static bool maybeReportUndefined(Ctx &ctx, Undefined &
+   if (sym.discardedSecIdx != 0 && (sec.name == ".got2" || sec.name == ".toc"))
+     return false;
+ 
++#ifdef __OpenBSD__
++  // GCC (at least 8 and 11) can produce a ".gcc_except_table" with relocations
++  // to discarded sections on riscv64
++  if (sym.discardedSecIdx != 0 && sec.name == ".gcc_except_table")
++    return false;
++#endif
++
+   bool isWarning =
+       (ctx.arg.unresolvedSymbols == UnresolvedPolicy::Warn && canBeExternal) ||
+       ctx.arg.noinhibitExec;
+@@ -1516,6 +1546,8 @@ void RelocationScanner::scanOne(typename Relocs<RelTy>
+   uint64_t offset = getter.get(ctx, rel.r_offset);
+   if (offset == uint64_t(-1))
+     return;
++
++  reportGNUWarning(ctx, sym, *sec, rel.r_offset);
+ 
+   RelExpr expr =
+       ctx.target->getRelExpr(type, sym, sec->content().data() + offset);

@@ -1,0 +1,19 @@
+Index: llvm/lib/Target/Mips/Mips.h
+--- llvm/lib/Target/Mips/Mips.h.orig
++++ llvm/lib/Target/Mips/Mips.h
+@@ -41,6 +41,7 @@ class PassRegistry;
+ ModulePass *createMipsOs16Pass();
+ ModulePass *createMips16HardFloatPass();
+ 
++FunctionPass *createMipsLoongson2FBTBFix();
+ FunctionPass *createMipsModuleISelDagPass();
+ FunctionPass *createMipsOptimizePICCallPass();
+ FunctionPass *createMipsDelaySlotFillerPass();
+@@ -56,6 +57,7 @@ InstructionSelector *
+ createMipsInstructionSelector(const MipsTargetMachine &, const MipsSubtarget &,
+                               const MipsRegisterBankInfo &);
+ 
++void initializeMipsLoongson2FBTBFixPass(PassRegistry &);
+ void initializeMicroMipsSizeReducePass(PassRegistry &);
+ void initializeMipsAsmPrinterPass(PassRegistry &);
+ void initializeMipsBranchExpansionPass(PassRegistry &);

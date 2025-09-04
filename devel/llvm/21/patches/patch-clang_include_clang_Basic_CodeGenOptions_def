@@ -1,0 +1,13 @@
+Index: clang/include/clang/Basic/CodeGenOptions.def
+--- clang/include/clang/Basic/CodeGenOptions.def.orig
++++ clang/include/clang/Basic/CodeGenOptions.def
+@@ -374,6 +374,9 @@ VALUE_CODEGENOPT(SmallDataLimit, 32, 0, Benign)
+ /// The lower bound for a buffer to be considered for stack protection.
+ VALUE_CODEGENOPT(SSPBufferSize, 32, 0, Benign)
+ 
++/// Whether to use return protectors
++CODEGENOPT(ReturnProtector, 1, 0, Benign)
++
+ /// The kind of inlining to perform.
+ ENUM_CODEGENOPT(Inlining, InliningMethod, 2, NormalInlining, Benign)
+ 

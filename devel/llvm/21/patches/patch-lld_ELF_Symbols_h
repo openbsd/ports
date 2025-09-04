@@ -1,0 +1,31 @@
+Index: lld/ELF/Symbols.h
+--- lld/ELF/Symbols.h.orig
++++ lld/ELF/Symbols.h
+@@ -148,6 +148,9 @@ class Symbol { (public)
+   LLVM_PREFERRED_TYPE(bool)
+   uint8_t hasVersionSuffix : 1;
+ 
++  // True if the .gnu.warning.SYMBOL is set for the symbol
++  uint8_t gwarn : 1;
++
+   // Symbol visibility. This is the computed minimum visibility of all
+   // observed non-DSO symbols.
+   uint8_t visibility() const { return stOther & 3; }
+@@ -243,7 +246,7 @@ class Symbol { (public)
+          uint8_t stOther, uint8_t type)
+       : file(file), nameData(name.data()), nameSize(name.size()), type(type),
+         binding(binding), stOther(stOther), symbolKind(k), ltoCanOmit(false),
+-        archSpecificBit(false) {}
++        gwarn(false), archSpecificBit(false) {}
+ 
+   void overwrite(Symbol &sym, Kind k) const {
+     if (sym.traced)
+@@ -534,6 +537,8 @@ void reportDuplicate(Ctx &, const Symbol &sym, const I
+ void maybeWarnUnorderableSymbol(Ctx &, const Symbol *sym);
+ bool computeIsPreemptible(Ctx &, const Symbol &sym);
+ void parseVersionAndComputeIsPreemptible(Ctx &);
++
++extern llvm::DenseMap<StringRef, StringRef> gnuWarnings;
+ 
+ } // namespace lld::elf
+ 

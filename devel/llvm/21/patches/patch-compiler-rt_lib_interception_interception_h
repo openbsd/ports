@@ -1,0 +1,22 @@
+Index: compiler-rt/lib/interception/interception.h
+--- compiler-rt/lib/interception/interception.h.orig
++++ compiler-rt/lib/interception/interception.h
+@@ -19,7 +19,8 @@
+ 
+ #if !SANITIZER_LINUX && !SANITIZER_FREEBSD && !SANITIZER_APPLE &&    \
+     !SANITIZER_NETBSD && !SANITIZER_WINDOWS && !SANITIZER_FUCHSIA && \
+-    !SANITIZER_SOLARIS && !SANITIZER_HAIKU && !SANITIZER_AIX
++    !SANITIZER_SOLARIS && !SANITIZER_HAIKU && !SANITIZER_AIX &&      \
++    !SANITZER_OPENBSD
+ #  error "Interception doesn't work on this operating system."
+ #endif
+ 
+@@ -383,7 +384,7 @@ inline void DoesNotSupportStaticLinking() {}
+ #  define INTERCEPT_FUNCTION_VER(func, symver) INTERCEPT_FUNCTION_AIX(func)
+ 
+ #elif SANITIZER_LINUX || SANITIZER_FREEBSD || SANITIZER_NETBSD || \
+-    SANITIZER_SOLARIS || SANITIZER_HAIKU
++    SANITIZER_SOLARIS || SANITIZER_HAIKU || SANITZER_OPENBSD
+ 
+ #  include "interception_linux.h"
+ #  define INTERCEPT_FUNCTION(func) INTERCEPT_FUNCTION_LINUX_OR_FREEBSD(func)

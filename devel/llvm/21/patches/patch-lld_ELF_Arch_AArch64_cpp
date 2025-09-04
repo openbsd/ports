@@ -1,0 +1,29 @@
+Index: lld/ELF/Arch/AArch64.cpp
+--- lld/ELF/Arch/AArch64.cpp.orig
++++ lld/ELF/Arch/AArch64.cpp
+@@ -1086,7 +1086,11 @@ class AArch64BtiPac final : public AArch64 { (private)
+ } // namespace
+ 
+ AArch64BtiPac::AArch64BtiPac(Ctx &ctx) : AArch64(ctx) {
++#ifdef __OpenBSD__
++  btiHeader = true;
++#else
+   btiHeader = (ctx.arg.andFeatures & GNU_PROPERTY_AARCH64_FEATURE_1_BTI);
++#endif
+   // A BTI (Branch Target Indicator) Plt Entry is only required if the
+   // address of the PLT entry can be taken by the program, which permits an
+   // indirect jump to the PLT entry. This can happen when the address
+@@ -1309,9 +1313,13 @@ void elf::createTaggedSymbols(Ctx &ctx) {
+ }
+ 
+ void elf::setAArch64TargetInfo(Ctx &ctx) {
++#ifdef __OpenBSD__
++  ctx.target.reset(new AArch64BtiPac(ctx));
++#else
+   if ((ctx.arg.andFeatures & GNU_PROPERTY_AARCH64_FEATURE_1_BTI) ||
+       ctx.arg.zPacPlt)
+     ctx.target.reset(new AArch64BtiPac(ctx));
+   else
+     ctx.target.reset(new AArch64(ctx));
++#endif
+ }

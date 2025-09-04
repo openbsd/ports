@@ -1,0 +1,169 @@
+Index: lld/ELF/Driver.cpp
+--- lld/ELF/Driver.cpp.orig
++++ lld/ELF/Driver.cpp
+@@ -386,8 +386,6 @@ static void checkOptions(Ctx &ctx) {
+   }
+ 
+   if (ctx.arg.emachine != EM_AARCH64) {
+-    if (ctx.arg.executeOnly)
+-      ErrAlways(ctx) << "--execute-only is only supported on AArch64 targets";
+     if (ctx.arg.fixCortexA53Errata843419)
+       ErrAlways(ctx) << "--fix-cortex-a53-843419 is only supported on AArch64";
+     if (ctx.arg.zPacPlt)
+@@ -406,6 +404,22 @@ static void checkOptions(Ctx &ctx) {
+       ErrAlways(ctx) << "-z gcs only supported on AArch64";
+   }
+ 
++  if (ctx.arg.executeOnly) {
++    switch (ctx.arg.emachine) {
++    case EM_386:
++    case EM_AARCH64:
++    case EM_MIPS:
++    case EM_PPC:
++    case EM_PPC64:
++    case EM_RISCV:
++    case EM_SPARCV9:
++    case EM_X86_64:
++      break;
++    default:
++      error("-execute-only is not supported on this target");
++    }
++  }
++
+   if (ctx.arg.emachine != EM_AARCH64 && ctx.arg.emachine != EM_ARM &&
+       ctx.arg.zExecuteOnlyReport != ReportPolicy::None)
+     ErrAlways(ctx)
+@@ -1415,8 +1429,6 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+ 
+   ctx.e.errorHandlingScript = args.getLastArgValue(OPT_error_handling_script);
+ 
+-  ctx.arg.executeOnly =
+-      args.hasFlag(OPT_execute_only, OPT_no_execute_only, false);
+   ctx.arg.exportDynamic =
+       args.hasFlag(OPT_export_dynamic, OPT_no_export_dynamic, false) ||
+       args.hasArg(OPT_shared);
+@@ -1437,8 +1449,15 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+   ctx.arg.icf = getICF(args);
+   ctx.arg.ignoreDataAddressEquality =
+       args.hasArg(OPT_ignore_data_address_equality);
++#if defined(__OpenBSD__)
++  // Needed to allow preemption of protected symbols (e.g. memcpy) on at least i386.
+   ctx.arg.ignoreFunctionAddressEquality =
++      args.hasFlag(OPT_ignore_function_address_equality,
++                   OPT_no_ignore_function_address_equality, true);
++#else
++  ctx.arg.ignoreFunctionAddressEquality =
+       args.hasArg(OPT_ignore_function_address_equality);
++#endif
+   ctx.arg.init = args.getLastArgValue(OPT_init, "_init");
+   ctx.arg.ltoAAPipeline = args.getLastArgValue(OPT_lto_aa_pipeline);
+   ctx.arg.ltoCSProfileGenerate = args.hasArg(OPT_lto_cs_profile_generate);
+@@ -1507,7 +1526,12 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+   ctx.arg.outputFile = args.getLastArgValue(OPT_o);
+   if (auto *arg = args.getLastArg(OPT_package_metadata))
+     parsePackageMetadata(ctx, *arg);
++#ifdef __OpenBSD__
++  ctx.arg.pie = args.hasFlag(OPT_pie, OPT_no_pie,
++      !args.hasArg(OPT_shared) && !args.hasArg(OPT_relocatable));
++#else
+   ctx.arg.pie = args.hasFlag(OPT_pie, OPT_no_pie, false);
++#endif
+   ctx.arg.printIcfSections =
+       args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
+   ctx.arg.printGcSections =
+@@ -1593,7 +1617,11 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+   ctx.arg.trace = args.hasArg(OPT_trace);
+   ctx.arg.undefined = args::getStrings(args, OPT_undefined);
+   ctx.arg.undefinedVersion =
++#ifdef __OpenBSD__
++      args.hasFlag(OPT_undefined_version, OPT_no_undefined_version, true);
++#else
+       args.hasFlag(OPT_undefined_version, OPT_no_undefined_version, false);
++#endif
+   ctx.arg.unique = args.hasArg(OPT_unique);
+   ctx.arg.useAndroidRelrTags = args.hasFlag(
+       OPT_use_android_relr_tags, OPT_no_use_android_relr_tags, false);
+@@ -1838,9 +1866,9 @@ static void readConfigs(Ctx &ctx, opt::InputArgList &a
+                      << arg->getValue() << "'";
+     parallel::strategy = hardware_concurrency(threads);
+     ctx.arg.thinLTOJobs = v;
+-  } else if (parallel::strategy.compute_thread_count() > 16) {
+-    Log(ctx) << "set maximum concurrency to 16, specify --threads= to change";
+-    parallel::strategy = hardware_concurrency(16);
++  } else if (parallel::strategy.compute_thread_count() > 4) {
++    Log(ctx) << "set maximum concurrency to 4, specify --threads= to change";
++    parallel::strategy = hardware_concurrency(4);
+   }
+   if (auto *arg = args.getLastArg(OPT_thinlto_jobs_eq))
+     ctx.arg.thinLTOJobs = arg->getValue();
+@@ -2057,6 +2085,23 @@ static void setConfigs(Ctx &ctx, opt::InputArgList &ar
+       ErrAlways(ctx) << "cannot open --why-extract= file " << ctx.arg.whyExtract
+                      << ": " << e.message();
+   }
++
++  ctx.arg.executeOnly = false;
++#ifdef __OpenBSD__
++  switch (m) {
++  case EM_AARCH64:
++  case EM_MIPS:
++  case EM_PPC:
++  case EM_PPC64:
++  case EM_RISCV:
++  case EM_SPARCV9:
++  case EM_X86_64:
++    ctx.arg.executeOnly = true;
++    break;
++  }
++#endif
++  ctx.arg.executeOnly =
++      args.hasFlag(OPT_execute_only, OPT_no_execute_only, ctx.arg.executeOnly);
+ }
+ 
+ static bool isFormatBinary(Ctx &ctx, StringRef s) {
+@@ -2221,7 +2266,7 @@ void LinkerDriver::inferMachineType() {
+ }
+ 
+ // Parse -z max-page-size=<value>. The default value is defined by
+-// each target.
++// each target. Is set to 1 if given nmagic or omagic.
+ static uint64_t getMaxPageSize(Ctx &ctx, opt::InputArgList &args) {
+   uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
+                                        ctx.target->defaultMaxPageSize);
+@@ -2239,7 +2284,7 @@ static uint64_t getMaxPageSize(Ctx &ctx, opt::InputArg
+ }
+ 
+ // Parse -z common-page-size=<value>. The default value is defined by
+-// each target.
++// each target. Is set to 1 if given nmagic or omagic.
+ static uint64_t getCommonPageSize(Ctx &ctx, opt::InputArgList &args) {
+   uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
+                                        ctx.target->defaultCommonPageSize);
+@@ -2259,6 +2304,16 @@ static uint64_t getCommonPageSize(Ctx &ctx, opt::Input
+   return val;
+ }
+ 
++// Parse -z max-page-size=<value>. The default value is defined by
++// each target.
++static uint64_t getRealMaxPageSize(Ctx &ctx, opt::InputArgList &args) {
++  uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
++                                       ctx.target->defaultMaxPageSize);
++  if (!isPowerOf2_64(val))
++    error("max-page-size: value isn't a power of 2");
++  return val;
++}
++
+ // Parses --image-base option.
+ static std::optional<uint64_t> getImageBase(Ctx &ctx, opt::InputArgList &args) {
+   // Because we are using `ctx.arg.maxPageSize` here, this function has to be
+@@ -3414,6 +3469,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+   // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
+   // is limited to writing trap instructions on the last executable segment.
+   ctx.arg.commonPageSize = getCommonPageSize(ctx, args);
++  // textAlignPageSize is the alignment page size to use when aligning PT_LOAD
++  // sections. This is the same as maxPageSize except under -omagic, where data
++  // sections are non-aligned (maxPageSize set to 1) but text sections are aligned
++  // to the target page size.
++  ctx.arg.textAlignPageSize = ctx.arg.omagic ? getRealMaxPageSize(ctx, args) : ctx.arg.maxPageSize;
+ 
+   ctx.arg.imageBase = getImageBase(ctx, args);
+ 

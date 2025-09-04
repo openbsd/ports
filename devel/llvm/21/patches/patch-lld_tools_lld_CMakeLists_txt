@@ -1,0 +1,20 @@
+Index: lld/tools/lld/CMakeLists.txt
+--- lld/tools/lld/CMakeLists.txt.orig
++++ lld/tools/lld/CMakeLists.txt
+@@ -29,10 +29,15 @@ lld_target_link_libraries(lld
+   lldCommon
+   lldCOFF
+   lldELF
+-  lldMachO
+   lldMinGW
+   lldWasm
+   )
++
++if (LLD_ENABLE_MACHO)
++  target_link_libraries(lld  
++    lldMachO
++    )
++endif() 
+ 
+ if(NOT LLD_SYMLINKS_TO_CREATE)
+   set(LLD_SYMLINKS_TO_CREATE

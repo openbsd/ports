@@ -1,0 +1,15 @@
+Index: lld/ELF/SyntheticSections.h
+--- lld/ELF/SyntheticSections.h.orig
++++ lld/ELF/SyntheticSections.h
+@@ -1476,7 +1476,11 @@ void addVerneed(Ctx &, Symbol &ss);
+ // placed in it.
+ struct PhdrEntry {
+   PhdrEntry(Ctx &ctx, unsigned type, unsigned flags)
++#ifdef __OpenBSD__
++      : p_align(type == llvm::ELF::PT_LOAD ? ctx.arg.textAlignPageSize : 0),
++#else
+       : p_align(type == llvm::ELF::PT_LOAD ? ctx.arg.maxPageSize : 0),
++#endif
+         p_type(type), p_flags(flags) {}
+   void add(OutputSection *sec);
+ 

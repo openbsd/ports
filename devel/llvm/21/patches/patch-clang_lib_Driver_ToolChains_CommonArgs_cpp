@@ -1,0 +1,15 @@
+Index: clang/lib/Driver/ToolChains/CommonArgs.cpp
+--- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig
++++ clang/lib/Driver/ToolChains/CommonArgs.cpp
+@@ -3173,7 +3173,11 @@ bool tools::shouldRecordCommandLine(const ToolChain &T
+ 
+ void tools::renderCommonIntegerOverflowOptions(const ArgList &Args,
+                                                ArgStringList &CmdArgs) {
++#ifdef __OpenBSD__
++  bool use_fwrapv = true;
++#else
+   bool use_fwrapv = false;
++#endif
+   bool use_fwrapv_pointer = false;
+   for (const Arg *A : Args.filtered(
+            options::OPT_fstrict_overflow, options::OPT_fno_strict_overflow,

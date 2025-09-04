@@ -1,0 +1,155 @@
+Index: lld/ELF/Writer.cpp
+--- lld/ELF/Writer.cpp.orig
++++ lld/ELF/Writer.cpp
+@@ -252,6 +252,7 @@ void elf::addReservedSymbols(Ctx &ctx) {
+   };
+ 
+   ctx.sym.bss = add("__bss_start", 0);
++  ctx.sym.data = add("__data_start", 0);
+   ctx.sym.end1 = add("end", -1);
+   ctx.sym.end2 = add("_end", -1);
+   ctx.sym.etext1 = add("etext", -1);
+@@ -463,7 +464,7 @@ static bool shouldKeepInSymtab(Ctx &ctx, const Defined
+   // * --discard-locals is used.
+   // * The symbol is in a SHF_MERGE section, which is normally the reason for
+   //   the assembler keeping the .L symbol.
+-  if (sym.getName().starts_with(".L") &&
++  if ((sym.getName().starts_with(".L") || sym.getName().empty()) &&
+       (ctx.arg.discard == DiscardPolicy::Locals ||
+        (sym.section && (sym.section->flags & SHF_MERGE))))
+     return false;
+@@ -612,7 +613,11 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+   // However, if "-z now" is given, the lazy symbol resolution is
+   // disabled, which enables us to put it into RELRO.
+   if (sec == ctx.in.gotPlt->getParent())
++#ifndef __OpenBSD__
+     return ctx.arg.zNow;
++#else
++    return true;	/* kbind(2) means we can always put these in RELRO */
++#endif
+ 
+   if (ctx.in.relroPadding && sec == ctx.in.relroPadding->getParent())
+     return true;
+@@ -634,8 +639,11 @@ static bool isRelroSection(Ctx &ctx, const OutputSecti
+                      s == ".eh_frame" || s == ".fini_array" ||
+                      s == ".init_array" || s == ".preinit_array";
+ 
+-  bool abiSpecific =
++  bool abiSpecific = false;
++#ifdef __OpenBSD__
++  abiSpecific =
+       ctx.arg.osabi == ELFOSABI_OPENBSD && s == ".openbsd.randomdata";
++#endif
+ 
+   return abiAgnostic || abiSpecific;
+ }
+@@ -914,6 +922,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+     ctx.sym.bss->section = sbss ? sbss : findSection(ctx, ".bss");
+   }
+ 
++  if (ctx.sym.data)
++    ctx.sym.data->section = findSection(ctx, ".data");
++
+   // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
+   // be equal to the _gp symbol's value.
+   if (ctx.sym.mipsGp) {
+@@ -2451,34 +2462,22 @@ Writer<ELFT>::createPhdrs(Partition &part) {
+     addHdr(PT_GNU_EH_FRAME, part.ehFrameHdr->getParent()->getPhdrFlags())
+         ->add(part.ehFrameHdr->getParent());
+ 
+-  if (ctx.arg.osabi == ELFOSABI_OPENBSD) {
+-    // PT_OPENBSD_MUTABLE makes the dynamic linker fill the segment with
+-    // zero data, like bss, but it can be treated differently.
+-    if (OutputSection *cmd = findSection(ctx, ".openbsd.mutable", partNo))
+-      addHdr(PT_OPENBSD_MUTABLE, cmd->getPhdrFlags())->add(cmd);
++#ifdef __OpenBSD__
++  // PT_OPENBSD_MUTABLE makes the dynamic linker fill the segment with
++  // zero data, like bss, but it can be treated differently.
++  if (OutputSection *cmd = findSection(ctx, ".openbsd.mutable", partNo))
++    addHdr(PT_OPENBSD_MUTABLE, cmd->getPhdrFlags())->add(cmd);
+ 
+-    // PT_OPENBSD_RANDOMIZE makes the dynamic linker fill the segment
+-    // with random data.
+-    if (OutputSection *cmd = findSection(ctx, ".openbsd.randomdata", partNo))
+-      addHdr(PT_OPENBSD_RANDOMIZE, cmd->getPhdrFlags())->add(cmd);
++  // PT_OPENBSD_RANDOMIZE makes the dynamic linker fill the segment
++  // with random data.
++  if (OutputSection *cmd = findSection(ctx, ".openbsd.randomdata", partNo))
++    addHdr(PT_OPENBSD_RANDOMIZE, cmd->getPhdrFlags())->add(cmd);
+ 
+-    // PT_OPENBSD_SYSCALLS makes the kernel and dynamic linker register
+-    // system call sites.
+-    if (OutputSection *cmd = findSection(ctx, ".openbsd.syscalls", partNo))
+-      addHdr(PT_OPENBSD_SYSCALLS, cmd->getPhdrFlags())->add(cmd);
+-  }
++  // PT_OPENBSD_SYSCALLS makes the kernel and dynamic linker register
++  // system call sites.
++  if (OutputSection *cmd = findSection(ctx, ".openbsd.syscalls", partNo))
++    addHdr(PT_OPENBSD_SYSCALLS, cmd->getPhdrFlags())->add(cmd);
+ 
+-  if (ctx.arg.zGnustack != GnuStackKind::None) {
+-    // PT_GNU_STACK is a special section to tell the loader to make the
+-    // pages for the stack non-executable. If you really want an executable
+-    // stack, you can pass -z execstack, but that's not recommended for
+-    // security reasons.
+-    unsigned perm = PF_R | PF_W;
+-    if (ctx.arg.zGnustack == GnuStackKind::Exec)
+-      perm |= PF_X;
+-    addHdr(PT_GNU_STACK, perm)->p_memsz = ctx.arg.zStackSize;
+-  }
+-
+   // PT_OPENBSD_NOBTCFI is an OpenBSD-specific header to mark that the
+   // executable is expected to violate branch-target CFI checks.
+   if (ctx.arg.zNoBtCfi)
+@@ -2490,7 +2489,19 @@ Writer<ELFT>::createPhdrs(Partition &part) {
+   // OpenBSD.
+   if (ctx.arg.zWxneeded)
+     addHdr(PT_OPENBSD_WXNEEDED, PF_X);
++#endif
+ 
++  if (ctx.arg.zGnustack != GnuStackKind::None) {
++    // PT_GNU_STACK is a special section to tell the loader to make the
++    // pages for the stack non-executable. If you really want an executable
++    // stack, you can pass -z execstack, but that's not recommended for
++    // security reasons.
++    unsigned perm = PF_R | PF_W;
++    if (ctx.arg.zGnustack == GnuStackKind::Exec)
++      perm |= PF_X;
++    addHdr(PT_GNU_STACK, perm)->p_memsz = ctx.arg.zStackSize;
++  }
++
+   if (OutputSection *cmd = findSection(ctx, ".note.gnu.property", partNo))
+     addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
+ 
+@@ -2583,6 +2594,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+         };
+     }
+   };
++
++#ifndef __OpenBSD__
++  // On i386, produce binaries that are compatible with our W^X implementation
++  if (ctx.arg.emachine == EM_386) {
++    auto NXAlign = [](OutputSection *cmd) {
++      if (cmd && !cmd->addrExpr)
++        cmd->addrExpr = [=] {
++          return alignTo(ctx.script->getDot(), 0x20000000);
++        };
++    };
++
++    for (Partition &part : ctx.partitions) {
++      PhdrEntry *firstRW = nullptr;
++      for (auto &p : part.phdrs) {
++        if (p->p_type == PT_LOAD && (p->p_flags & PF_W)) {
++          firstRW = p;
++          break;
++        }
++      }
++
++      if (firstRW)
++        NXAlign(firstRW->firstSec);
++    }
++  }
++#endif
+ 
+   for (Partition &part : ctx.partitions) {
+     prev = nullptr;

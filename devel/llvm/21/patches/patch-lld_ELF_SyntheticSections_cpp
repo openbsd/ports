@@ -1,0 +1,27 @@
+Index: lld/ELF/SyntheticSections.cpp
+--- lld/ELF/SyntheticSections.cpp.orig
++++ lld/ELF/SyntheticSections.cpp
+@@ -2618,6 +2618,10 @@ PltSection::PltSection(Ctx &ctx)
+   if ((ctx.arg.emachine == EM_386 || ctx.arg.emachine == EM_X86_64) &&
+       (ctx.arg.andFeatures & GNU_PROPERTY_X86_FEATURE_1_IBT))
+     name = ".plt.sec";
++#ifdef __OpenBSD__
++  else if (ctx.arg.emachine == EM_X86_64)
++    name = ".plt.sec";
++#endif
+ 
+   // The PLT needs to be writable on SPARC as the dynamic linker will
+   // modify the instructions in the PLT entries.
+@@ -4970,6 +4974,12 @@ template <class ELFT> void elf::createSyntheticSection
+     ctx.in.gnuProperty = std::make_unique<GnuPropertySection>(ctx);
+     add(*ctx.in.gnuProperty);
+   }
++#ifdef __OpenBSD__
++  else if (ctx.arg.emachine == EM_X86_64) {
++    ctx.in.ibtPlt = std::make_unique<IBTPltSection>(ctx);
++    add(*ctx.in.ibtPlt);
++  }
++#endif
+ 
+   if (ctx.arg.debugNames) {
+     ctx.in.debugNames = std::make_unique<DebugNamesSection<ELFT>>(ctx);

@@ -1,0 +1,16 @@
+Index: lldb/source/Plugins/Process/CMakeLists.txt
+--- lldb/source/Plugins/Process/CMakeLists.txt.orig
++++ lldb/source/Plugins/Process/CMakeLists.txt
+@@ -16,6 +16,7 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "AIX")
+   add_subdirectory(AIX)
+   add_subdirectory(POSIX)
+ elseif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++  add_subdirectory(OpenBSD)
+   add_subdirectory(POSIX)
+ elseif (CMAKE_SYSTEM_NAME MATCHES "Windows")
+   add_subdirectory(Windows/Common)
+@@ -29,3 +30,4 @@ add_subdirectory(elf-core)
+ add_subdirectory(mach-core)
+ add_subdirectory(minidump)
+ add_subdirectory(FreeBSDKernel)
++add_subdirectory(OpenBSDKernel)
