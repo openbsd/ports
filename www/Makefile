@@ -53,6 +53,7 @@
      SUBDIR += geckodriver
      SUBDIR += gitea
      SUBDIR += goaccess
+     SUBDIR += goat
      SUBDIR += gumbo
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
