@@ -1,3 +1,5 @@
+BROKEN =	libc++ issues
+
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.8
 REVISION =	3
