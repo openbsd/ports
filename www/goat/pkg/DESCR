@@ -2,7 +2,7 @@ goat is a command-line client for AT Protocol ("Authenticated Transfer
 Protocol"). The AT Protocol is an open, decentralized network for building
 social applications, best known for its use by Bluesky.
 
-Most commands use public APIs are don't require authentication. Some commands,
+Most commands use public APIs and don't require authentication. Some commands,
 like creating records, require an atproto account. You can log in using an "app
 password" with `goat account login -u <handle> -p <app-password>`.
 

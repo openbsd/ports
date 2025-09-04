@@ -2,6 +2,7 @@ COMMENT =	Go AT protocol CLI tool
 
 MODGO_MODNAME =	github.com/bluesky-social/goat
 MODGO_VERSION =	v0.1.1
+REVISION =	0
 
 DISTNAME =	goat-${MODGO_VERSION:S/v//}
 
