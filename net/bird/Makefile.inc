@@ -5,13 +5,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 CATEGORIES=	net
 
-HOMEPAGE=	https://bird.network.cz/
+HOMEPAGE=	https://bird.nic.cz/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://bird.network.cz/download/ \
-		ftp://bird.network.cz/pub/bird/
+SITES=		https://bird.nic.cz/download/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
