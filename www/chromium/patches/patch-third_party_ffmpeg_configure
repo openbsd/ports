@@ -1,7 +1,7 @@
 Index: third_party/ffmpeg/configure
 --- third_party/ffmpeg/configure.orig
 +++ third_party/ffmpeg/configure
-@@ -6885,8 +6885,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+@@ -6914,8 +6914,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
          if enabled pthread_np_h; then
              hdrs="$hdrs pthread_np.h"
          fi

@@ -1,7 +1,7 @@
 Index: base/rand_util.h
 --- base/rand_util.h.orig
 +++ base/rand_util.h
-@@ -210,7 +210,7 @@ void RandomShuffle(Itr first, Itr last) {
+@@ -213,7 +213,7 @@ void RandomShuffle(Itr first, Itr last) {
    std::shuffle(first, last, RandomBitGenerator());
  }
  

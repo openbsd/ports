@@ -1,7 +1,7 @@
 Index: content/common/features.cc
 --- content/common/features.cc.orig
 +++ content/common/features.cc
-@@ -169,7 +169,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn,
+@@ -170,7 +170,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host

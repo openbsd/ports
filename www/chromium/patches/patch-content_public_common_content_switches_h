@@ -9,7 +9,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -261,7 +262,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+@@ -257,7 +258,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  CONTENT_EXPORT extern const char kPreventResizingContentsForTesting[];
  #endif
  

@@ -1,8 +1,8 @@
 Index: content/zygote/BUILD.gn
 --- content/zygote/BUILD.gn.orig
 +++ content/zygote/BUILD.gn
-@@ -5,7 +5,7 @@
- import("//build/config/nacl/config.gni")
+@@ -4,7 +4,7 @@
+ 
  import("//content/public/common/zygote/features.gni")
  
 -if (is_linux || is_chromeos) {

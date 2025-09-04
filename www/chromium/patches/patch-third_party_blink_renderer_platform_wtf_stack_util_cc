@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
 +#include <pthread_np.h>
 +#endif
 +
- namespace WTF {
+ namespace blink {
  
  size_t GetUnderestimatedStackSize() {
 @@ -71,6 +76,8 @@ size_t GetUnderestimatedStackSize() {

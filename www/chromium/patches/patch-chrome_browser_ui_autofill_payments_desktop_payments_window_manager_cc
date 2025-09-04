@@ -10,7 +10,7 @@ Index: chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc
    scoped_observation_.Observe(BrowserList::GetInstance());
  #endif  // BUILDFLAG(IS_LINUX)
  }
-@@ -144,7 +144,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
+@@ -151,7 +151,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
    }
  }
  

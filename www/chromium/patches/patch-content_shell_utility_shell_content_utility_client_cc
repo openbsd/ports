@@ -12,7 +12,7 @@ Index: content/shell/utility/shell_content_utility_client.cc
  
 @@ -192,7 +192,7 @@ void ShellContentUtilityClient::ExposeInterfacesToBrow
    binders->Add<mojom::PowerMonitorTest>(
-       base::BindRepeating(&PowerMonitorTestImpl::MakeSelfOwnedReceiver),
+       &PowerMonitorTestImpl::MakeSelfOwnedReceiver,
        base::SingleThreadTaskRunner::GetCurrentDefault());
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

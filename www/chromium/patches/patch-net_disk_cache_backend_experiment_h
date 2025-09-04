@@ -1,7 +1,7 @@
 Index: net/disk_cache/backend_experiment.h
 --- net/disk_cache/backend_experiment.h.orig
 +++ net/disk_cache/backend_experiment.h
-@@ -14,7 +14,7 @@ namespace disk_cache {
+@@ -15,7 +15,7 @@ namespace disk_cache {
  // default.
  constexpr bool IsSimpleBackendEnabledByDefaultPlatform() {
    return BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) ||

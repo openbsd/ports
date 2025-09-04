@@ -10,7 +10,7 @@ Index: ui/gfx/platform_font_skia.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -167,7 +167,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
+@@ -170,7 +170,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
    weight = system_font.GetWeight();
  #endif  // BUILDFLAG(IS_WIN)
  
