@@ -85,17 +85,12 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/qt6/qtwebchannel \
 		x11/xkbcommon
 
-# MAKE_JOBS is too invasive because it also affects the number of jobs
-# for ninja(1) and would slow everything down which we don't want.  We pass the
-# real number of make jobs via NINJA_JOBS to ninja(1) to CONFIGURE_ENV.
-NINJA_JOBS !!=	sysctl -n hw.ncpuonline
-
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
 # read by some Chromium code to determine which compiler to invoke when running
 # some configuration tests.
 CONFIGURE_ENV +=	LC_ALL=en_US.UTF-8 \
-			NINJAFLAGS="-j${NINJA_JOBS}" \
+			NINJAFLAGS="-j${MAKE_JOBS}" \
 			NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PATH=${WRKSRC}/bin:${LOCALBASE}/bin:${PATH}
 
