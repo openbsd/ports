@@ -214,6 +214,7 @@ share/doc/libvirt/html/drvch.html
 share/doc/libvirt/html/drvesx.html
 share/doc/libvirt/html/drvhyperv.html
 share/doc/libvirt/html/drvlxc.html
+share/doc/libvirt/html/drvnetwork.html
 share/doc/libvirt/html/drvnodedev.html
 share/doc/libvirt/html/drvopenvz.html
 share/doc/libvirt/html/drvqemu.html
