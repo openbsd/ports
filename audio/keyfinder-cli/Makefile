@@ -1,8 +1,8 @@
-COMMENT =	 	estimate the musical key of an audio file
+COMMENT =		estimate the musical key of an audio file
 
 GH_ACCOUNT =		EvanPurkhiser
 GH_PROJECT =		keyfinder-cli
-GH_TAGNAME =		v1.1.4
+GH_TAGNAME =		v1.1.5
 
 CATEGORIES =		audio
 
@@ -21,8 +21,6 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		audio/libkeyfinder \
 			graphics/ffmpeg
-
-CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1
 
 NO_TEST =		Yes
 
