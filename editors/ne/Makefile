@@ -1,16 +1,16 @@
 COMMENT =	nice console editor
-DISTNAME =	ne-3.3.3
 CATEGORIES =	editors
 
-HOMEPAGE =	http://ne.di.unimi.it/
+GH_ACCOUNT =	vigna
+GH_PROJECT =	ne
+GH_TAGNAME =	3.3.4
+
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m
-
-SITES =		http://ne.di.unimi.it/
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile
@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/macros/* ${PREFIX}/share/ne/macros
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ne
 	${INSTALL_DATA} \
-		${WRKSRC}/{README.md,COPYING,NEWS,CHANGES,doc/ne.{txt,pdf}} \
+		${WRKSRC}/{README.md,COPYING,NEWS,CHANGES,doc/ne.txt} \
 		${PREFIX}/share/doc/ne
 
 .include <bsd.port.mk>
