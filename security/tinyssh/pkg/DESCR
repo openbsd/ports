@@ -18,6 +18,9 @@ State-of-the-art crypto:
 ssh-ed25519, curve25519-sha256, chacha20-poly1305@openssh.com
 
 Postquantum crypto:
-sntrup761x25519-sha512@openssh.com, chacha20-poly1305@openssh.com
+sntrup761x25519-sha512@openssh.com
+
+Support for various older standards (ecdsa-sha2-nistp256,
+ecdh-sha2-nistp256, aes256-ctr, hmac-sha2-256) was removed in 2019.
 
 As of 20250501, it has 74260 words of code and is a beta release.

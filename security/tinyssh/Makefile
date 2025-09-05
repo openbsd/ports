@@ -4,6 +4,7 @@ COMMENT=	minimal SSH server implementation, run from inetd
 GH_ACCOUNT=	janmojzis
 GH_PROJECT=	tinyssh
 GH_TAGNAME=	20250501
+REVISION=	0
 DISTNAME=	tinyssh-0.0.${GH_TAGNAME}
 
 CATEGORIES=	security net
