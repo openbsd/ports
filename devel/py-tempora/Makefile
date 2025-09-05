@@ -15,6 +15,8 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
+BUILD_DEPENDS=	misc/py-coherent.licensed
+
 RUN_DEPENDS=	devel/py-jaraco-functools>=1.2.0
 
 TEST_DEPENDS=	devel/py-freezegun
