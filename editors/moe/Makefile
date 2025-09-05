@@ -1,5 +1,5 @@
 COMMENT =	powerful and user-friendly console text editor
-DISTNAME =	moe-1.14
+DISTNAME =	moe-1.15
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
 
@@ -16,6 +16,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 SITES =		${SITE_GNU:=moe/}
 
 CONFIGURE_STYLE =	simple
+
+USE_GMAKE =	Yes
 
 MAKE_FLAGS =	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
