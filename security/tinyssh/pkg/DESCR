@@ -1,0 +1,23 @@
+tinysshd is a minimalistic SSH server which implements only a subset
+of SSHv2 features.
+
+It supports only secure cryptography (minimum 128-bit security,
+protected against cache-timing attacks) and does not implement older
+crypto (such as RSA, DSA, HMAC-MD5, HMAC-SHA1, 3DES, RC4, ...)
+
+tinysshd doesn't implement unsafe features (such as password or
+hostbased authentication), nor does it have features like SSH1 protocol,
+compression, port forwarding, agent forwarding, X11 forwarding ...
+
+It does not listen to network sockets itself, and should be run
+from inetd, tcpserver or similar.
+
+tinysshd doesn't use dynamic memory allocation.
+
+State-of-the-art crypto:
+ssh-ed25519, curve25519-sha256, chacha20-poly1305@openssh.com
+
+Postquantum crypto:
+sntrup761x25519-sha512@openssh.com, chacha20-poly1305@openssh.com
+
+As of 20250501, it has 74260 words of code and is a beta release.

@@ -1,0 +1,8 @@
+@man man/man8/tinysshd-makekey.8
+@man man/man8/tinysshd-printkey.8
+@man man/man8/tinysshd.8
+@man man/man8/tinysshnoneauthd.8
+@bin sbin/tinysshd
+@bin sbin/tinysshd-makekey
+@bin sbin/tinysshd-printkey
+@bin sbin/tinysshnoneauthd
