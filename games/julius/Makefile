@@ -1,9 +1,8 @@
-V =		1.7.0
+V =		1.8.0
 COMMENT =	open source re-implementation of Caesar III game engine
 DISTNAME =	julius-${V}
 EXTRACT_SUFX =	-source.tar.gz
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	https://github.com/bvschaik/julius
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
