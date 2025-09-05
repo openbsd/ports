@@ -206,7 +206,6 @@ MODGO_MODULES =	\
 	github.com/cenkalti/backoff/v5								 v5.0.2 \
 	github.com/census-instrumentation/opencensus-proto					 v0.2.1 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
-	github.com/cheekybits/is								 v0.0.0-20150225183255-68e9c0620927 \
 	github.com/chzyer/logex									 v1.1.10 \
 	github.com/chzyer/readline								 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test									 v0.0.0-20180213035817-a1ea475d72b1 \
@@ -308,7 +307,6 @@ MODGO_MODULES =	\
 	github.com/mailru/easyjson								 v0.7.7 \
 	github.com/makeworld-the-better-one/dither/v2						 v2.4.0 \
 	github.com/marekm4/color-extractor							 v1.2.1 \
-	github.com/matryer/try									 v0.0.0-20161228173917-9ac251b645a2 \
 	github.com/mattn/go-colorable								 v0.1.13 \
 	github.com/mattn/go-isatty								 v0.0.20 \
 	github.com/mattn/go-runewidth								 v0.0.16 \
@@ -354,7 +352,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.5.0 \
 	github.com/stretchr/testify								 v1.10.0 \
 	github.com/tdewolff/argp								 v0.0.0-20250209172303-079abae893fb \
-	github.com/tdewolff/minify/v2								 v2.24.0 \
+	github.com/tdewolff/minify/v2								 v2.24.2 \
 	github.com/tdewolff/parse/v2								 v2.8.3 \
 	github.com/tdewolff/test								 v1.0.11 \
 	github.com/tetratelabs/wazero								 v1.9.0 \

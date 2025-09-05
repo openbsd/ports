@@ -484,8 +484,6 @@ SHA256 (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.
 SHA256 (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.zip) = s8CfPmNdR7QThpWlR9HyxxOPOCy+WotYZbZqjggjNGE=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = FFomzcfEnbVmAXuAfEmJ7n993rVpQj6cuZ+ZX6w2IdM=
-SHA256 (go_modules/github.com/cheekybits/is/@v/v0.0.0-20150225183255-68e9c0620927.mod) = wo1aGMOmDgJ++Tmy/juUYTaa7qDjgoEuKX1jE40yIGM=
-SHA256 (go_modules/github.com/cheekybits/is/@v/v0.0.0-20150225183255-68e9c0620927.zip) = 97+axbH8V071o3M4KQmvVQ7xp/ARgkaeqhLhjHxfx8s=
 SHA256 (go_modules/github.com/chzyer/logex/@v/v1.1.10.mod) = 99MQTqxMVnTcSEfPWxGTwuA70k/lISQ6NNcscJrYOjo=
 SHA256 (go_modules/github.com/chzyer/logex/@v/v1.1.10.zip) = LJR3HB4zWixYqWREs3aLjgApd0fWzn58FLqy6LOdkb0=
 SHA256 (go_modules/github.com/chzyer/readline/@v/v0.0.0-20180603132655-2972be24d48e.mod) = kAt5fFMfLfGC5DGolezTEJqs/t/d2rI6SPfAqdWnVlk=
@@ -789,8 +787,6 @@ SHA256 (go_modules/github.com/makeworld-the-better-one/dither/v2/@v/v2.4.0.mod) 
 SHA256 (go_modules/github.com/makeworld-the-better-one/dither/v2/@v/v2.4.0.zip) = ADTcoQwkqYPIuD3LbqIycjufkupyhRGJMiEFqJwsCak=
 SHA256 (go_modules/github.com/marekm4/color-extractor/@v/v1.2.1.mod) = 48bNf2J2Q7mOSp0jlWkziDpuBWXZAuLzXZpZu6aF12c=
 SHA256 (go_modules/github.com/marekm4/color-extractor/@v/v1.2.1.zip) = 1PP2lA7If3Bp5KSpP4qeIJHtY6IqmIqiQslPiPvVP8c=
-SHA256 (go_modules/github.com/matryer/try/@v/v0.0.0-20161228173917-9ac251b645a2.mod) = +lQkkRIwBSxVJNkPtoJri3Ba4U9qdmzdDHx0E+EhXNE=
-SHA256 (go_modules/github.com/matryer/try/@v/v0.0.0-20161228173917-9ac251b645a2.zip) = 8a+jakvQvwmhKQ86/vlUBY4zTWsnWq5qWR2NrSdvXi8=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.mod) = MBtO/MadpAuRzMjSzFjohZXorYcSrKAUA/EAhtlrGBM=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.13.mod) = 1nQ64urmVxYSLxK0LJ8/g6gFwK4yvTxVPUpvG8uSQ6U=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.13.zip) = CL4yLcxYSp/P3lyvDPh4tOEc2Y8lLjK8cE6SxaS6nRU=
@@ -915,8 +911,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = BeJs0GkoWjPPKvRv
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqBGx05F9SdxOGEHNdW8o8MTxWTkzw=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250209172303-079abae893fb.mod) = wEd8DHCV4iw6oC+UDkRmE421bhI/JkFSuBxhwhvdL0U=
 SHA256 (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250209172303-079abae893fb.zip) = oyrZzx3gZp9lV+davEzZlafZqbrFnROunt88pwBmjc4=
-SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.0.mod) = gxSsI+JvfTFE/B6DHQ0tiwk6w9NvktYwn+Ln7xL9oQo=
-SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.0.zip) = HZzDJIC/HnvUYW6Px6ERq+/lrKWsWkoHS7+qT3UBeJY=
+SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.2.mod) = WEMRw1KjNVCKTjIM5GnXxnFOPnjmrrfD/dTtiB3QUvw=
+SHA256 (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.2.zip) = 9kwOgohGLrdyMgsqyJdI7TIuHLBdTV2pTRmh4IHBkEA=
 SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.3.mod) = tlUXEpe2E8ieC/CmkPkhYX1cO0d7gYccyz7mjPHCbV8=
 SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.3.zip) = PwjtDuhIZHJcvwkNm0aPEVNJOuuzk20DX49AYESth9c=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 9EefOv0J+7kaIZNIpSIgfv+uc4muXaMR/YZv9IuGFus=
@@ -1530,7 +1526,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.149.0.zip) = em4dwDSF2ULmNSpm7mdHU/jogIZZMRih8K7dxQLQueA=
+SHA256 (hugo-v0.149.1.zip) = wGy3ixyHBlaRm7QdfjveOYEIad82lC+zd/DGiT0UTi8=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.19.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.20.0.mod) = 231
@@ -2017,8 +2013,6 @@ SIZE (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.mo
 SIZE (go_modules/github.com/census-instrumentation/opencensus-proto/@v/v0.2.1.zip) = 210929
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = 45
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = 17573
-SIZE (go_modules/github.com/cheekybits/is/@v/v0.0.0-20150225183255-68e9c0620927.mod) = 32
-SIZE (go_modules/github.com/cheekybits/is/@v/v0.0.0-20150225183255-68e9c0620927.zip) = 7535
 SIZE (go_modules/github.com/chzyer/logex/@v/v1.1.10.mod) = 31
 SIZE (go_modules/github.com/chzyer/logex/@v/v1.1.10.zip) = 5802
 SIZE (go_modules/github.com/chzyer/readline/@v/v0.0.0-20180603132655-2972be24d48e.mod) = 34
@@ -2322,8 +2316,6 @@ SIZE (go_modules/github.com/makeworld-the-better-one/dither/v2/@v/v2.4.0.mod) = 
 SIZE (go_modules/github.com/makeworld-the-better-one/dither/v2/@v/v2.4.0.zip) = 2189010
 SIZE (go_modules/github.com/marekm4/color-extractor/@v/v1.2.1.mod) = 51
 SIZE (go_modules/github.com/marekm4/color-extractor/@v/v1.2.1.zip) = 120363
-SIZE (go_modules/github.com/matryer/try/@v/v0.0.0-20161228173917-9ac251b645a2.mod) = 30
-SIZE (go_modules/github.com/matryer/try/@v/v0.0.0-20161228173917-9ac251b645a2.zip) = 4444
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.mod) = 160
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.13.mod) = 90
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.13.zip) = 13909
@@ -2448,8 +2440,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250209172303-079abae893fb.mod) = 257
 SIZE (go_modules/github.com/tdewolff/argp/@v/v0.0.0-20250209172303-079abae893fb.zip) = 24125
-SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.0.mod) = 595
-SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.0.zip) = 7869286
+SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.2.mod) = 463
+SIZE (go_modules/github.com/tdewolff/minify/v2/@v/v2.24.2.zip) = 7869260
 SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.3.mod) = 87
 SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.3.zip) = 148354
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 41
@@ -3063,4 +3055,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.149.0.zip) = 5755665
+SIZE (hugo-v0.149.1.zip) = 5756095
