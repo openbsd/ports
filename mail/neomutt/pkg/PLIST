@@ -84,6 +84,7 @@ share/neomutt/account-command/macos-keychain/
 share/neomutt/account-command/macos-keychain/README.md
 share/neomutt/account-command/macos-keychain/keychain.py
 share/neomutt/colorschemes/
+share/neomutt/colorschemes/ayu-dark-256.neomuttrc
 share/neomutt/colorschemes/neonwolf-256.neomuttrc
 share/neomutt/colorschemes/solarized-dark-256.neomuttrc
 share/neomutt/colorschemes/vombatidae.neomuttrc
