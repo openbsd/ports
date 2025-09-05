@@ -2,13 +2,13 @@ COMMENT =		inductance coil calculator
 
 GH_ACCOUNT =		radioacoustick
 GH_PROJECT =		Coil64
-GH_TAGNAME =		v2.2.34
+GH_TAGNAME =		v2.3.37
 
 CATEGORIES =		cad
 
 HOMEPAGE =		https://coil32.net/
 
-#GPLv3+
+# GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
