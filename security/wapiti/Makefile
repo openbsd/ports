@@ -1,9 +1,8 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_DISTV =	3.2.4
+MODPY_DISTV =	3.2.5
 DISTNAME =	wapiti3-${MODPY_DISTV}
 PKGNAME =	wapiti-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	security www
 
