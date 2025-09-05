@@ -1,6 +1,6 @@
 COMMENT=	Python implementation of json5
 
-MODPY_DISTV=	0.12.0
+MODPY_DISTV=	0.12.1
 DISTNAME=	json5-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
