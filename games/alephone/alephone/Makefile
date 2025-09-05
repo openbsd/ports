@@ -2,9 +2,9 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		open source game engine based on Marathon 2: Durandal
 
-DATE =			20240822
+DATE =			20250829
 DISTNAME =		AlephOne-${DATE}
-PKGNAME =		alephone-1.10
+PKGNAME =		alephone-1.11
 CATEGORIES =		games x11
 EXTRACT_SUFX =		.tar.bz2
 
@@ -19,23 +19,28 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			https://github.com/Aleph-One-Marathon/alephone/releases/download/release-${DATE}/
 
-WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_net
-WANTLIB += SDL2_ttf avcodec avformat avutil boost_filesystem boost_system
-WANTLIB += c curl m openal png sndfile swresample swscale z zzip
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_ttf
+WANTLIB += boost_filesystem c curl ebml m matroska openal png
+WANTLIB += sndfile vorbis vorbisenc vpx z zzip
 
 # GL GLU
 
 # C++17
 COMPILER =		base-clang ports-gcc
 
+BUILD_DEPENDS =		devel/asio
+
+# libyuv is missed
 LIB_DEPENDS =		archivers/zziplib \
 			audio/openal \
 			devel/boost \
-			devel/sdl2-net \
 			devel/sdl2-image \
 			devel/sdl2-ttf \
 			audio/libsndfile \
-			graphics/ffmpeg \
+			multimedia/libvpx \
+			multimedia/libmatroska \
+			textproc/libebml \
+			audio/libvorbis \
 			net/curl
 
 RUN_DEPENDS =		devel/desktop-file-utils \
