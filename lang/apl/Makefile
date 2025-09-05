@@ -1,12 +1,9 @@
-BROKEN =	libc++ issues
-
 COMMENT =	interpreter for the programming language APL
-DISTNAME =	apl-1.8
-REVISION =	3
+DISTNAME =	apl-1.9pl20250903
 CATEGORIES =	lang
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
-SHARED_LIBS +=	emacs                     0.1 # 0.1
+SHARED_LIBS +=	emacs                     1.0 # 1.0
 
 HOMEPAGE =	https://www.gnu.org/software/apl/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -30,7 +27,9 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 COMPILER =	base-clang ports-gcc
 CXXFLAGS_base-clang =	-std=c++14
 
-SITES =		${SITE_GNU:=apl/}
+# Go back to ${SITE_GNU:apl/} next release
+# This is a stopgap to deal with libc++19
+SITES =		https://github.com/ibara/ports/releases/download/v1.0/
 
 LIB_DEPENDS =	devel/pcre2 \
 		math/fftw3 \
@@ -43,7 +42,7 @@ CONFIGURE_ARGS +=	--without-sqlite3 \
 			--without-postgresql
 CONFIGURE_ENV +=	CXX_WERROR=no \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
 
 USE_GMAKE =	Yes
 

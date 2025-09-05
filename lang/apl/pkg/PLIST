@@ -3,9 +3,31 @@
 @bin bin/APserver
 @bin bin/Gtk_server
 @bin bin/apl
-@info info/apl.info
+@info info/apl-library.info
+@comment info/apl.info
 @info info/libapl.info
 lib/apl/
+lib/apl/doc/
+@info lib/apl/doc/DALY/
+@info lib/apl/doc/DALY/apl-library.info
+lib/apl/doc/DALY/apl-library.texi
+lib/apl/doc/DALY/apl-pkg-mgr.texi
+lib/apl/doc/DALY/apl_kbd.texi
+lib/apl/doc/DALY/arg_parser.texi
+lib/apl/doc/DALY/assert.texi
+lib/apl/doc/DALY/cfg.texi
+lib/apl/doc/DALY/cl.texi
+lib/apl/doc/DALY/date.texi
+lib/apl/doc/DALY/dom.texi
+lib/apl/doc/DALY/export.texi
+lib/apl/doc/DALY/fdl-1.3.texi
+lib/apl/doc/DALY/finance.texi
+lib/apl/doc/DALY/fmt.texi
+lib/apl/doc/DALY/html.texi
+lib/apl/doc/DALY/import.texi
+lib/apl/doc/DALY/lex.texi
+lib/apl/doc/DALY/lex1.texi
+lib/apl/doc/DALY/lpr.texi
 @static-lib lib/apl/lib_file_io.a
 lib/apl/lib_file_io.la
 @so lib/apl/lib_file_io.so
@@ -31,9 +53,24 @@ lib/apl/workspaces/
 lib/apl/workspaces/APL_CGI.apl
 lib/apl/workspaces/RUBIK.apl
 lib/apl/workspaces/SCRIPT.apl
+lib/apl/workspaces/Scalar2.apl
+lib/apl/workspaces/Scalar3.apl
 lib/apl/workspaces/ScalarBenchmark.apl
-lib/apl/workspaces/gnuplot.apl
+lib/apl/workspaces/Simple_SQL.apl
+lib/apl/workspaces/sudoku.apl
+lib/apl/workspaces/sudoku_DLX.apl
 lib/apl/wslib3/
+lib/apl/wslib3/DALY/
+lib/apl/wslib3/DALY/README.md
+lib/apl/wslib3/DALY/date.apl
+lib/apl/wslib3/DALY/fin.apl
+lib/apl/wslib3/DALY/fmt.apl
+lib/apl/wslib3/DALY/lex.apl
+lib/apl/wslib3/DALY/seq.apl
+lib/apl/wslib3/DALY/stack.apl
+lib/apl/wslib3/DALY/stat.apl
+lib/apl/wslib3/DALY/xml.apl
+lib/apl/wslib3/INVARIANTS.apl
 lib/apl/wslib3/meta.apl
 lib/apl/wslib4/
 lib/apl/wslib4/dummy.apl
@@ -47,7 +84,30 @@ lib/apl/wslib5/APLComponentFiles/LICENSE
 lib/apl/wslib5/APLComponentFiles/README.md
 lib/apl/wslib5/APLComponentFiles/README_FIRST.txt
 lib/apl/wslib5/APLComponentFiles/SQL_README.txt
+lib/apl/wslib5/ASSERT.apl
+lib/apl/wslib5/DALY/
+lib/apl/wslib5/DALY/README.md
+lib/apl/wslib5/DALY/aparse.apl
+lib/apl/wslib5/DALY/assert.apl
+lib/apl/wslib5/DALY/cfg.apl
+lib/apl/wslib5/DALY/cl.apl
+lib/apl/wslib5/DALY/dom.apl
+lib/apl/wslib5/DALY/export.apl
+lib/apl/wslib5/DALY/fin.apl
+lib/apl/wslib5/DALY/find_test_data.apl
+lib/apl/wslib5/DALY/from-ods.apl
+lib/apl/wslib5/DALY/import.apl
+lib/apl/wslib5/DALY/lpr.apl
+lib/apl/wslib5/DALY/parse_json.apl
+lib/apl/wslib5/DALY/pref.apl
+lib/apl/wslib5/DALY/prompt.apl
+lib/apl/wslib5/DALY/pw.apl
+lib/apl/wslib5/DALY/utf8.apl
+lib/apl/wslib5/DALY/utl.apl
+lib/apl/wslib5/DALY/wblg.apl
+lib/apl/wslib5/DALY/wsinit.apl
 lib/apl/wslib5/FILE_IO.apl
+lib/apl/wslib5/FILE_IO1.apl
 lib/apl/wslib5/HTML.apl
 lib/apl/wslib5/SQL.apl
 lib/apl/wslib5/iso-apl-cf/
@@ -60,18 +120,41 @@ lib/apl/wslib5/iso-apl-cf/iso_cf.apl
 lib/apl/wslib5/iso-apl-cf/perf.apl
 lib/apl/wslib5/iso-apl-cf/test.apl
 @man man/man1/apl.1
-share/doc/apl/
+@info share/doc/apl/
+share/doc/apl/APL-Communication-Cookbook.asciidoc
 share/doc/apl/APL-Communication-Cookbook.html
 share/doc/apl/APL-on-Macintosh.pdf
+share/doc/apl/APL1.png
+share/doc/apl/APL2.png
+share/doc/apl/APL3.png
+share/doc/apl/APL4.png
+share/doc/apl/APL5.png
 share/doc/apl/APL_keyboard.html
 share/doc/apl/APL_keyboard2.html
+share/doc/apl/GNU-APL-Designers-Guide.asciidoc
+share/doc/apl/GNU-APL-Designers-Guide.html
+share/doc/apl/GNU-APL-Memory-Management.asciidoc
 share/doc/apl/GNU-APL-Memory-Management.html
+share/doc/apl/GNU-APL-Performance.asciidoc
+share/doc/apl/GNU-APL-Performance.html
+share/doc/apl/GNU-APL-Troubleshooting.asciidoc
+share/doc/apl/GNU-APL-Troubleshooting.html
+share/doc/apl/LApack-primer.asciidoc
+share/doc/apl/LApack-primer.html
+share/doc/apl/MX_distributions.png
 share/doc/apl/PLOT_circle.png
 share/doc/apl/PLOT_zigzag.png
+share/doc/apl/Parallel-APL.asciidoc
+share/doc/apl/Parallel-APL.html
+share/doc/apl/Parallel-APL.pdf
+share/doc/apl/Quad-GTK.asciidoc
 share/doc/apl/Quad-GTK.html
 share/doc/apl/README
 share/doc/apl/README-1-prerequisites
 share/doc/apl/README-10-python
+share/doc/apl/README-11-bogus-compiler-warnings
+share/doc/apl/README-12-vpath-builds
+share/doc/apl/README-13-build-pitfalls
 share/doc/apl/README-2-configure
 share/doc/apl/README-3-keyboard
 share/doc/apl/README-4-compliance
@@ -83,15 +166,25 @@ share/doc/apl/README-9-post-installation
 share/doc/apl/SQL.apl
 share/doc/apl/apl.1
 share/doc/apl/apl.html
+@comment share/doc/apl/apl.info
 share/doc/apl/apl.texi
 share/doc/apl/apl_js.apache2
 share/doc/apl/apl_js.html
 share/doc/apl/glade-0.png
 share/doc/apl/glade-1.png
+share/doc/apl/glade-10.png
+share/doc/apl/glade-11.png
+share/doc/apl/glade-12.png
 share/doc/apl/glade-2.png
 share/doc/apl/glade-3.png
 share/doc/apl/glade-4.png
+share/doc/apl/glade-5.png
+share/doc/apl/glade-6.png
+share/doc/apl/glade-7.png
+share/doc/apl/glade-8.png
+share/doc/apl/glade-9.png
 share/doc/apl/libapl.html
+@info share/doc/apl/libapl.info
 share/doc/apl/libapl.texi
 share/doc/apl/wsock.js
 share/examples/apl/

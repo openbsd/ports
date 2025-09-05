@@ -9,22 +9,22 @@ Index: gnu-apl.d/preferences.in
 +# Color         ANSI (default)
  # Color 	CURSES
 -# Color 	No
-+  Color 	No
++Color 	No
  #
  # If you want to disable coloring initially, but switch to curses if the
  # command ]COLOR (or the equivalent but now obsolete command ]XTERM)
-@@ -241,8 +241,8 @@
+@@ -234,8 +234,8 @@
  #
  # The corresponding command line options are --SV and --noSV
  #
 -  SharedVars    Enabled	    (default)
 -# SharedVars    Disabled
 +# SharedVars    Enabled	    (default)
-+  SharedVars    Disabled
++SharedVars    Disabled
  
  
  ###############################################################################
-@@ -356,7 +356,7 @@ BACKUP_BEFORE_SAVE  yes
+@@ -360,7 +360,7 @@ BACKUP_BEFORE_SAVE  yes
  # a (small) positive number below. Note thsat the interpreter will always
  # exit if a large number of ^Ds (or EOFs) are read within a short while.
  #
