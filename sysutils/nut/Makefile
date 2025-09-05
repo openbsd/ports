@@ -3,22 +3,20 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.3
+V=		2.8.4
 DISTNAME=	nut-${V:C/-rc.*//}
 PKGNAME=	nut-${V:S/-rc/rc/}
 SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
-
-REVISION=	2
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
 PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
 
-SHARED_LIBS +=  upsclient            4.1      # .6.2
-SHARED_LIBS +=  nutclient            1.1      # .2.2
+SHARED_LIBS +=  upsclient            5.0      # .7.0
+SHARED_LIBS +=  nutclient            2.0      # .2.2
 SHARED_LIBS +=  nutclientstub        1.0      # .1.1
-SHARED_LIBS +=  nutscan              3.1      # .2.6
+SHARED_LIBS +=  nutscan              4.0      # .4.0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://networkupstools.org/

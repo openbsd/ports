@@ -1,7 +1,7 @@
 Index: conf/upsmon.conf.sample.in
 --- conf/upsmon.conf.sample.in.orig
 +++ conf/upsmon.conf.sample.in
-@@ -165,7 +165,7 @@ MINSUPPLIES 1
+@@ -170,7 +170,7 @@ MINSUPPLIES 1
  # Or use the old DOS 8.3 file name, like this:
  # SHUTDOWNCMD "C:\\PROGRA~1\\SOMECO~1.bat -first_arg -second_arg"
  

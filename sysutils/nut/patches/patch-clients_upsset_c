@@ -10,7 +10,7 @@ Index: clients/upsset.c
  
  	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
  
-@@ -1026,7 +1026,7 @@ static void check_conf(void)
+@@ -1029,7 +1029,7 @@ static void check_conf(void)
  	char	fn[NUT_PATH_MAX + 1];
  	PCONF_CTX_t	ctx;
  
