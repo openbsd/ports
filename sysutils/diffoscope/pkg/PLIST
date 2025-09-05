@@ -60,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}arsc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}arsc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}asar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}asar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}berkeley_db.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}berkeley_db.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -140,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}lz4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}lzip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}lzip.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}lzma.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}lzma.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}macho.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}macho.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}missing_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -198,6 +202,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uimage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uimage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uki.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uki.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}vmlinuz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}vmlinuz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -220,6 +226,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/android.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/apk.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/arsc.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/asar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/berkeley_db.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/binary.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/binwalk.py
@@ -260,6 +267,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/kbx.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/llvm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/lz4.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/lzip.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/lzma.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/macho.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/missing_file.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/mono.py
@@ -289,6 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/symlink.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/tar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/text.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/uimage.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/uki.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}/
