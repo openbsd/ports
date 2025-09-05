@@ -1,4 +1,5 @@
 Remove hardcoded optimization flags.
+Install data to the correct location.
 
 Index: Makefile
 --- Makefile.orig
@@ -6,17 +7,34 @@ Index: Makefile
 @@ -1,6 +1,6 @@
  include mandoc/Makefile.local
  
--CFLAGS = -g -O2 -Wall $(shell pkg-config --cflags zlib gl freetype2 glfw3)
-+CCFLAGS += -Wall $(shell pkg-config --cflags zlib gl freetype2 glfw3)
- LDFLAGS = -lm $(shell pkg-config --libs zlib gl freetype2 glfw3) ${LDADD}
+-CFLAGS = -g -O2 -Wall -Wno-maybe-uninitialized $(shell pkg-config --cflags zlib gl freetype2 glfw3)
++CCFLAGS = -Wall -Wno-maybe-uninitialized $(shell pkg-config --cflags zlib gl freetype2 glfw3)
+ LDFLAGS = -lm $(shell pkg-config --libs zlib gl freetype2 glfw3) ${LDADD} -lbz2
  
  LIBMAN_OBJS	 = mandoc/man.o \
-@@ -56,7 +56,7 @@ MANGL_SOURCES = mandoc/tree.c \
+@@ -57,7 +57,7 @@ MANGL_SOURCES = mandoc/tree.c \
  				main.c
  
- mangl: $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES)
+ mangl: $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) icon.h
 -	$(CC) $(CFLAGS) -o $@ $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) $(LDFLAGS)
-+	$(CC) $(CFLAGS) $(CCFLAGS) -o $@ $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) $(LDFLAGS)
++	$(CC) $(CCFLAGS) -o $@ $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) $(LDFLAGS)
  
  sanitizer: CFLAGS += -fsanitize=address
  sanitizer: mangl
+@@ -66,12 +66,12 @@ sanitizer: mangl
+ install: mangl
+ 	mkdir -p ${DESTDIR}${BINDIR}
+ 	mkdir -p ${DESTDIR}${MANDIR}/man1
+-	mkdir -p ${DESTDIR}/usr/share/icons/hicolor/scalable/apps/
+-	mkdir -p ${DESTDIR}/usr/share/applications/
++	mkdir -p ${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
++	mkdir -p ${DESTDIR}${PREFIX}/share/applications/
+ 	${INSTALL_PROGRAM} mangl ${DESTDIR}${BINDIR}
+ 	${INSTALL_MAN} mangl.1 ${DESTDIR}${MANDIR}/man1/
+-	${INSTALL_DATA} art/mangl.svg ${DESTDIR}/usr/share/icons/hicolor/scalable/apps/mangl.svg
+-	${INSTALL_DATA} mangl.desktop ${DESTDIR}/usr/share/applications/mangl.desktop
++	${INSTALL_DATA} art/mangl.svg ${DESTDIR}${PREFIX}/share/icons/hicolor/scalable/apps/mangl.svg
++	${INSTALL_DATA} mangl.desktop ${DESTDIR}${PREFIX}/share/applications/mangl.desktop
+ 
+ .PHONY: clean
+ clean:

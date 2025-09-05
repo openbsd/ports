@@ -1,2 +1,6 @@
 @bin bin/mangl
 @man man/man1/mangl.1
+share/applications/mangl.desktop
+share/icons/hicolor/scalable/apps/mangl.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
