@@ -1,31 +1,28 @@
-COMMENT =		asynchronous WebDriver client
+COMMENT=	asynchronous WebDriver client
 
-MODPY_DISTV =	24.4.0
+MODPY_DISTV=	25.4.0
+DISTNAME=	structlog-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =		structlog-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+CATEGORIES=	devel
 
-CATEGORIES =		devel
-
-HOMEPAGE =		https://www.structlog.org/
+HOMEPAGE=	https://www.structlog.org/
 
 # MIT or Apache-2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		hatch-vcs
+MODPY_PYBUILD=	hatch-vcs
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
 
 # This test requires pip -e .
-MODPY_PYTEST_ARGS =	--ignore tests/test_packaging.py
+MODPY_PYTEST_ARGS= --ignore tests/test_packaging.py
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
-
-TEST_DEPENDS =		devel/py-freezegun \
-			devel/py-pretend \
-			devel/py-simplejson \
-			devel/py-test-asyncio
+TEST_DEPENDS=	devel/py-freezegun \
+		devel/py-pretend \
+		devel/py-simplejson \
+		devel/py-test-asyncio
 
 .include <bsd.port.mk>
