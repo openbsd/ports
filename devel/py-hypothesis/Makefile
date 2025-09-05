@@ -1,10 +1,9 @@
 COMMENT=	library for property based testing
 
-MODPY_DISTV=	6.124.5
+MODPY_DISTV=	6.138.14
 DISTNAME=	hypothesis-${MODPY_DISTV}
 PKGNAME=	py-hypothesis-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://hypothesis.works/
 
