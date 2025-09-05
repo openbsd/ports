@@ -405,6 +405,7 @@
      SUBDIR += tcltls
      SUBDIR += tfsec
      SUBDIR += theharvester
+     SUBDIR += tinyssh
      SUBDIR += tls-attacker
      SUBDIR += towitoko
      SUBDIR += uacme
