@@ -1,6 +1,6 @@
 COMMENT=	test asyncio code with pytest
 
-MODPY_DISTV=	1.0.0
+MODPY_DISTV=	1.1.0
 DISTNAME=	pytest_asyncio-${MODPY_DISTV}
 PKGNAME=	py-test-asyncio-${MODPY_DISTV}
 CATEGORIES=	devel
@@ -9,8 +9,8 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 # most tests are ok without self-dep, but some require it to be
 # installed for pytest --asyncio-mode==strict to work
