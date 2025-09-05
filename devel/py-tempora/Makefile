@@ -1,9 +1,8 @@
 COMMENT=	objects and routines pertaining to date and time
 
-MODPY_DISTV=	5.8.0
+MODPY_DISTV=	5.8.1
 DISTNAME=	tempora-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
