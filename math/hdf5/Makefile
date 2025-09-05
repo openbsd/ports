@@ -3,19 +3,18 @@ ONLY_FOR_ARCHS =	${GCC49_ARCHS}
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
-V =			1.14.4.3
+V =			1.14.6
 DISTNAME =		hdf5-${V}
 GH_ACCOUNT =		HDFGroup
 GH_PROJECT =		hdf5
 GH_TAGNAME =		${DISTNAME:S/-/_/g}
-REVISION =		0
 
-SHARED_LIBS +=  hdf5			7.0	# 314.0
-SHARED_LIBS +=  hdf5_cpp		11.0	# 310.4
-SHARED_LIBS +=  hdf5_hl			6.0	# 310.4
-SHARED_LIBS +=  hdf5_hl_cpp		7.0	# 3104.
-SHARED_LIBS +=  hdf5_fortran		4.0	# 313.0
-SHARED_LIBS +=  hdf5hl_fortran		3.0	# 310.4
+SHARED_LIBS +=  hdf5			8.0	# 315.1
+SHARED_LIBS +=  hdf5_cpp		12.0	# 310.6
+SHARED_LIBS +=  hdf5_hl			7.0	# 310.6
+SHARED_LIBS +=  hdf5_hl_cpp		8.0	# 310.6
+SHARED_LIBS +=  hdf5_fortran		5.0	# 313.2
+SHARED_LIBS +=  hdf5hl_fortran		4.0	# 310.6
 
 CATEGORIES =		math
 
@@ -26,20 +25,22 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 # https://www.hdfgroup.org/ftp/HDF5/current/src/unpacked/COPYING
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m ${COMPILER_LIBCXX} z
+WANTLIB += c m ${COMPILER_LIBCXX} z aec sz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 # for h5fuse.sh
 RUN_DEPENDS +=		shells/bash
 
+LIB_DEPENDS +=		archivers/libaec
+
 MODULES	=		fortran
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-cxx \
 			--enable-fortran \
-			FC=egfortran \
-			--with-examplesdir=${PREFIX}/share/examples/hdf5
+			--with-szlib=${PREFIX}
+CONFIGURE_ENV =		FC=egfortran
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hdf5
