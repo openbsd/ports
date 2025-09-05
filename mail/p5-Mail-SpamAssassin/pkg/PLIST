@@ -46,7 +46,12 @@ ${P5SITE}/Mail/SpamAssassin/DBBasedAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/Dns.pm
 ${P5SITE}/Mail/SpamAssassin/DnsResolver.pm
 ${P5SITE}/Mail/SpamAssassin/GeoDB.pm
+${P5SITE}/Mail/SpamAssassin/HTML/
 ${P5SITE}/Mail/SpamAssassin/HTML.pm
+${P5SITE}/Mail/SpamAssassin/HTML/Color.pm
+${P5SITE}/Mail/SpamAssassin/Header/
+${P5SITE}/Mail/SpamAssassin/Header.pm
+${P5SITE}/Mail/SpamAssassin/Header/ParameterHeader.pm
 ${P5SITE}/Mail/SpamAssassin/Locales.pm
 ${P5SITE}/Mail/SpamAssassin/Locker/
 ${P5SITE}/Mail/SpamAssassin/Locker.pm
@@ -104,6 +109,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/PhishTag.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Phishing.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Pyzor.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Razor2.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Redirectors.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayCountry.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ReplaceTags.pm
@@ -174,6 +180,9 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Conf::SQL.3p
 @man man/man3p/Mail::SpamAssassin::DnsResolver.3p
 @man man/man3p/Mail::SpamAssassin::GeoDB.3p
+@man man/man3p/Mail::SpamAssassin::HTML::Color.3p
+@man man/man3p/Mail::SpamAssassin::Header.3p
+@man man/man3p/Mail::SpamAssassin::Header::ParameterHeader.3p
 @man man/man3p/Mail::SpamAssassin::Logger.3p
 @man man/man3p/Mail::SpamAssassin::Logger::File.3p
 @man man/man3p/Mail::SpamAssassin::Logger::Stderr.3p
@@ -204,6 +213,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::FreeMail.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::FromNameSpoof.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::HashBL.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::HeaderEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OLEVBMacro.3p
@@ -213,6 +223,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::Phishing.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Pyzor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Razor2.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Redirectors.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::RelayCountry.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::ReplaceTags.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::ResourceLimits.3p
@@ -228,6 +239,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::URIDetail.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::URILocalBL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::VBounce.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::WLBLEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::WelcomeListSubject.3p
 @man man/man3p/Mail::SpamAssassin::PluginHandler.3p
 @man man/man3p/Mail::SpamAssassin::Pyzor.3p
@@ -270,6 +282,9 @@ share/doc/SpamAssassin/sql/bayes_pg.sql
 share/doc/SpamAssassin/sql/decodeshorturl_mysql.sql
 share/doc/SpamAssassin/sql/decodeshorturl_pg.sql
 share/doc/SpamAssassin/sql/decodeshorturl_sqlite.sql
+share/doc/SpamAssassin/sql/redirectors_mysql.sql
+share/doc/SpamAssassin/sql/redirectors_pg.sql
+share/doc/SpamAssassin/sql/redirectors_sqlite.sql
 share/doc/SpamAssassin/sql/txrep_mysql.sql
 share/doc/SpamAssassin/sql/txrep_pg.sql
 share/doc/SpamAssassin/sql/txrep_sqlite.sql
@@ -303,6 +318,8 @@ share/examples/SpamAssassin/v400.pre
 @sample ${CONFDIR}/v400.pre
 share/examples/SpamAssassin/v401.pre
 @sample ${CONFDIR}/v401.pre
+share/examples/SpamAssassin/v402.pre
+@sample ${CONFDIR}/v402.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/10_hasbase.cf
@@ -343,6 +360,7 @@ share/spamassassin/25_replace.cf
 share/spamassassin/25_spf.cf
 share/spamassassin/25_textcat.cf
 share/spamassassin/25_uribl.cf
+share/spamassassin/25_url_redirectors.cf
 share/spamassassin/25_url_shortener.cf
 share/spamassassin/30_text_de.cf
 share/spamassassin/30_text_fr.cf

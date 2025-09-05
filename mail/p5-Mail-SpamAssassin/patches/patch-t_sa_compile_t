@@ -1,7 +1,7 @@
 Index: t/sa_compile.t
 --- t/sa_compile.t.orig
 +++ t/sa_compile.t
-@@ -10,8 +10,7 @@ use SATest; sa_t_init("sa_compile");
+@@ -12,8 +12,7 @@ use SATest; sa_t_init("sa_compile");
  
  use Config;
  
@@ -9,5 +9,5 @@ Index: t/sa_compile.t
 -$temp_binpath =~ s|^\Q$Config{siteprefixexp}\E/||;
 +my $temp_binpath = "bin";
  
- use Test::More;
- plan skip_all => "Long running tests disabled" unless conf_bool('run_long_tests');
+ my $RE2C_BIN = get_re2c_bin_from_sa_compile();
+ 
