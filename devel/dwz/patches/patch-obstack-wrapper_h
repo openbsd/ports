@@ -1,0 +1,14 @@
+Fix include invocation
+
+Index: obstack-wrapper.h
+--- obstack-wrapper.h.orig
++++ obstack-wrapper.h
+@@ -21,7 +21,7 @@
+    also nullify object.  Since that breaks obstack_free (obstack_ptr, NULL), a
+    new function obstack_destroy is added to support that functionaliy.  */
+ 
+-#include <obstack.h>
++#include "obstack.h"
+ 
+ /* Required definitions for obstack use.  */
+ #define obstack_chunk_alloc malloc

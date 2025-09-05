@@ -1,6 +1,6 @@
 COMMENT =	DWARF optimization and duplicate removal tool
-PKGNAME =	dwz-0.15
-XXHASH_V =	0.8.1
+PKGNAME =	dwz-0.16
+XXHASH_V =	0.8.3
 DISTFILES =	${PKGNAME}.tar.gz
 DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 

@@ -17,7 +17,7 @@ Index: Makefile
 -DWZ_VERSION := $(shell cat $(srcdir)/VERSION)
 -CFLAGS_VERSION = -DDWZ_VERSION='"$(DWZ_VERSION)"'
 -CFLAGS_COPYRIGHT = $(shell cat $(srcdir)/COPYRIGHT_YEARS)
--CFLAGS_COMMON = -Wall -W -D_FILE_OFFSET_BITS=64
+-CFLAGS_COMMON = -Wall -W -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE
 -XXH_PROG = "\#define XXH_INLINE_ALL 1\n\#include <xxhash.h>\n"
 -XXH_INLINE_ALL_WORKS = $(shell printf $(XXH_PROG) \
 -		| $(CC) -xc -c - -o /dev/null 2>/dev/null \

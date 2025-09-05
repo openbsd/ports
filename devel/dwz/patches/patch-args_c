@@ -3,7 +3,7 @@ Correctly get processors online.
 Index: args.c
 --- args.c.orig
 +++ args.c
-@@ -25,14 +25,15 @@
+@@ -26,14 +26,15 @@
  #include <stdio.h>
  #include <string.h>
  #include <stdlib.h>
@@ -21,7 +21,7 @@ Index: args.c
  #if DEVEL
  int tracing;
  int ignore_size;
-@@ -735,7 +736,7 @@ parse_args (int argc, char *argv[], bool *hardlink, co
+@@ -737,7 +738,7 @@ parse_args (int argc, char *argv[], bool *hardlink, co
  
    if (max_forks == -1)
      {

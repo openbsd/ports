@@ -6,7 +6,7 @@ xxhash is not a system header
 Index: dwz.c
 --- dwz.c.orig
 +++ dwz.c
-@@ -20,13 +20,13 @@
+@@ -21,13 +21,13 @@
  
  #include <assert.h>
  #include <errno.h>
@@ -21,12 +21,8 @@ Index: dwz.c
  #include <inttypes.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -36,10 +36,10 @@
- #include <sys/times.h>
+@@ -38,7 +38,7 @@
  #include <sys/wait.h>
- 
--#include <obstack.h>
-+#include "obstack.h"
  
  #include <gelf.h>
 -#include <xxhash.h>
@@ -34,7 +30,7 @@ Index: dwz.c
  
  #include "dwarf2.h"
  #include "hashtab.h"
-@@ -216,6 +216,29 @@ report_progress (void)
+@@ -213,6 +213,29 @@ report_progress (void)
  /* Where to longjmp on OOM.  */
  static jmp_buf oom_buf;
  
@@ -64,7 +60,7 @@ Index: dwz.c
  /* Handle OOM situation.  If handling more than one file, we might
     just fail to handle some large file due to OOM, but could very well
     handle other smaller files after it.  */
-@@ -13675,7 +13698,7 @@ fdopen_dso (int fd, const char *name)
+@@ -13777,7 +13800,7 @@ fdopen_dso (int fd, const char *name)
    int i;
    DSO *dso = NULL;
  
@@ -73,7 +69,7 @@ Index: dwz.c
    if (elf == NULL)
      {
        error (0, 0, "cannot open ELF file: %s", elf_errmsg (-1));
-@@ -13713,7 +13736,7 @@ fdopen_dso (int fd, const char *name)
+@@ -13815,7 +13838,7 @@ fdopen_dso (int fd, const char *name)
        goto error_out;
      }
  
@@ -82,7 +78,7 @@ Index: dwz.c
  
    memset (dso, 0, sizeof(DSO));
    dso->elf = elf;
-@@ -14210,7 +14233,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
+@@ -14312,7 +14335,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
        free (shstrtab);
        return 1;
      }
@@ -91,7 +87,7 @@ Index: dwz.c
    for (i = 0; i < ehdr.e_phnum; ++i)
      {
        GElf_Phdr *phdr, phdr_mem;
-@@ -14283,7 +14306,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
+@@ -14385,7 +14408,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
  	}
      }
  
@@ -100,7 +96,7 @@ Index: dwz.c
      {
        error (0, 0, "%s: elf_update failed", dso->filename);
        unlink (file);
-@@ -15902,7 +15925,7 @@ optimize_multifile (unsigned int *die_count)
+@@ -16004,7 +16027,7 @@ optimize_multifile (unsigned int *die_count)
        error (0, 0, "Could not create new ELF headers");
        goto fail;
      }
@@ -109,7 +105,7 @@ Index: dwz.c
  
    sha1_init_ctx (&ctx);
    for (i = 0; debug_sections[i].name; i++)
-@@ -15995,7 +16018,7 @@ optimize_multifile (unsigned int *die_count)
+@@ -16097,7 +16120,7 @@ optimize_multifile (unsigned int *die_count)
    data->d_off = 0;
    data->d_align = 1;
  
