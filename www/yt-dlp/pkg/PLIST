@@ -1988,6 +1988,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}veo.${
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}veo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vesti.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vesti.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vevo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vevo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vgtv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vgtv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}vh1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3097,6 +3099,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/varzesh3.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vbox7.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/veo.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vesti.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vevo.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vgtv.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vh1.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/vice.py
