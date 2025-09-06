@@ -1,9 +1,8 @@
 COMMENT =		modern and easy to use streamable zip file generator
-MODPY_DISTV =	1.8.0
+MODPY_DISTV =	1.9.0
 DISTNAME =		zipstream_ng-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 CATEGORIES =		archivers
-REVISION =		1
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

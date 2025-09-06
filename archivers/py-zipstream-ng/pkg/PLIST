@@ -5,10 +5,13 @@ lib/python${MODPY_VERSION}/site-packages/zipstream/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}ng.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}ng.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipstream/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zipstream/_async.py
 lib/python${MODPY_VERSION}/site-packages/zipstream/ng.py
 lib/python${MODPY_VERSION}/site-packages/zipstream/server.py
 lib/python${MODPY_VERSION}/site-packages/zipstream_ng-${MODPY_DISTV}.dist-info/
