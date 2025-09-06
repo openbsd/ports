@@ -49,6 +49,7 @@ include/ObjFW/OFData.h
 include/ObjFW/OFDatagramSocket.h
 include/ObjFW/OFDate.h
 include/ObjFW/OFDictionary.h
+include/ObjFW/OFEmbeddedIRIHandler.h
 include/ObjFW/OFEnumerationMutationException.h
 include/ObjFW/OFEnumerator.h
 include/ObjFW/OFException.h
@@ -71,8 +72,10 @@ include/ObjFW/OFHashAlreadyCalculatedException.h
 include/ObjFW/OFHashNotCalculatedException.h
 include/ObjFW/OFINICategory.h
 include/ObjFW/OFINIFile.h
+include/ObjFW/OFINISection.h
 include/ObjFW/OFIRI.h
 include/ObjFW/OFIRIHandler.h
+include/ObjFW/OFIndexSet.h
 include/ObjFW/OFInflate64Stream.h
 include/ObjFW/OFInflateStream.h
 include/ObjFW/OFInitializationFailedException.h
@@ -92,6 +95,7 @@ include/ObjFW/OFLOCDNSResourceRecord.h
 include/ObjFW/OFLinkItemFailedException.h
 include/ObjFW/OFList.h
 include/ObjFW/OFListenOnSocketFailedException.h
+include/ObjFW/OFLoadModuleFailedException.h
 include/ObjFW/OFLoadPluginFailedException.h
 include/ObjFW/OFLocale.h
 include/ObjFW/OFLockFailedException.h
@@ -105,12 +109,14 @@ include/ObjFW/OFMemoryStream.h
 include/ObjFW/OFMessagePackExtension.h
 include/ObjFW/OFMessagePackRepresentation.h
 include/ObjFW/OFMethodSignature.h
+include/ObjFW/OFModule.h
 include/ObjFW/OFMoveItemFailedException.h
 include/ObjFW/OFMutableArchiveEntry.h
 include/ObjFW/OFMutableArray.h
 include/ObjFW/OFMutableData.h
 include/ObjFW/OFMutableDictionary.h
 include/ObjFW/OFMutableIRI.h
+include/ObjFW/OFMutableIndexSet.h
 include/ObjFW/OFMutableLHAArchiveEntry.h
 include/ObjFW/OFMutablePair.h
 include/ObjFW/OFMutableSet.h
@@ -201,6 +207,7 @@ include/ObjFW/OFTriple.h
 include/ObjFW/OFTruncatedDataException.h
 include/ObjFW/OFUDPSocket.h
 include/ObjFW/OFUNIXDatagramSocket.h
+include/ObjFW/OFUNIXSequencedPacketSocket.h
 include/ObjFW/OFUNIXStreamSocket.h
 include/ObjFW/OFURIDNSResourceRecord.h
 include/ObjFW/OFUUID.h
@@ -214,6 +221,7 @@ include/ObjFW/OFUnsupportedVersionException.h
 include/ObjFW/OFValue.h
 include/ObjFW/OFWaitForConditionFailedException.h
 include/ObjFW/OFWriteFailedException.h
+include/ObjFW/OFX509Certificate.h
 include/ObjFW/OFXMLAttribute.h
 include/ObjFW/OFXMLCDATA.h
 include/ObjFW/OFXMLCharacters.h
@@ -242,6 +250,30 @@ include/ObjFW/platform/macOS/
 include/ObjFW/platform/macOS/OFAtomic.h
 include/ObjFW/platform/x86/
 include/ObjFW/platform/x86/OFAtomic.h
+include/ObjFWHID/
+include/ObjFWHID/OH8BitDoUltimate2CWirelessGamepad.h
+include/ObjFWHID/OHDualSenseGamepad.h
+include/ObjFWHID/OHDualShock4Gamepad.h
+include/ObjFWHID/OHExtendedGamepad.h
+include/ObjFWHID/OHExtendedN64Controller.h
+include/ObjFWHID/OHExtendedSNESGamepad.h
+include/ObjFWHID/OHGameController.h
+include/ObjFWHID/OHGameControllerAxis.h
+include/ObjFWHID/OHGameControllerButton.h
+include/ObjFWHID/OHGameControllerDirectionalPad.h
+include/ObjFWHID/OHGameControllerElement.h
+include/ObjFWHID/OHGameControllerProfile.h
+include/ObjFWHID/OHGamepad.h
+include/ObjFWHID/OHJoyConPair.h
+include/ObjFWHID/OHLeftJoyCon.h
+include/ObjFWHID/OHN64Controller.h
+include/ObjFWHID/OHNESGamepad.h
+include/ObjFWHID/OHRightJoyCon.h
+include/ObjFWHID/OHSNESGamepad.h
+include/ObjFWHID/OHStadiaGamepad.h
+include/ObjFWHID/OHSwitchProController.h
+include/ObjFWHID/OHXboxGamepad.h
+include/ObjFWHID/ObjFWHID.h
 include/ObjFWRT/
 include/ObjFWRT/ObjFWRT.h
 include/ObjFWTLS/
@@ -252,12 +284,22 @@ include/ObjFWTest/OTOrderedDictionary.h
 include/ObjFWTest/OTTestCase.h
 include/ObjFWTest/ObjFWTest.h
 @lib lib/libobjfw.so.${LIBobjfw_VERSION}
+@lib lib/libobjfwhid.so.${LIBobjfwhid_VERSION}
 @lib lib/libobjfwrt.so.${LIBobjfwrt_VERSION}
 @static-lib lib/libobjfwtest.a
 @lib lib/libobjfwtls.so.${LIBobjfwtls_VERSION}
 lib/objfw-config/
+lib/objfw-config/ObjFWHID.oc
 lib/objfw-config/ObjFWTLS.oc
 lib/objfw-config/ObjFWTest.oc
+@man man/man1/objfw-compile.1
+@man man/man1/objfw-config.1
+@man man/man1/objfw-embed.1
+@man man/man1/objfw-new.1
+@man man/man1/ofarc.1
+@man man/man1/ofdns.1
+@man man/man1/ofhash.1
+@man man/man1/ofhttp.1
 share/ofarc/
 share/ofarc/localization/
 share/ofarc/localization/de.json

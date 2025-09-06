@@ -1,12 +1,12 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.1.5
-REVISION =	0
+DISTNAME =	objfw-1.4.1
 
 # .objc_sel_* symbols are for string de-duplication and can be ignored.
-SHARED_LIBS +=	objfw		1.0
-SHARED_LIBS +=	objfwrt		1.0
-SHARED_LIBS +=	objfwtls	0.0
+SHARED_LIBS +=	objfw		1.1
+SHARED_LIBS +=	objfwrt		1.1
+SHARED_LIBS +=	objfwtls	0.1
+SHARED_LIBS +=	objfwhid	0.0
 
 CATEGORIES =	devel
 
@@ -33,5 +33,7 @@ MAKE_FLAGS +=	OBJFWRT_LIB_MAJOR=${LIBobjfwrt_VERSION:R}
 MAKE_FLAGS +=	OBJFWRT_LIB_MINOR=${LIBobjfwrt_VERSION:E}
 MAKE_FLAGS +=	OBJFWTLS_LIB_MAJOR=${LIBobjfwtls_VERSION:R}
 MAKE_FLAGS +=	OBJFWTLS_LIB_MINOR=${LIBobjfwtls_VERSION:E}
+MAKE_FLAGS +=	OBJFWHID_LIB_MAJOR=${LIBobjfwhid_VERSION:R}
+MAKE_FLAGS +=	OBJFWHID_LIB_MINOR=${LIBobjfwhid_VERSION:E}
 
 .include <bsd.port.mk>
