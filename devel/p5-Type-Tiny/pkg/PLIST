@@ -92,6 +92,9 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Type::Coercion::Union.3p
 @man man/man3p/Type::Library.3p
 @man man/man3p/Type::Params.3p
+@man man/man3p/Type::Params::Alternatives.3p
+@man man/man3p/Type::Params::Parameter.3p
+@man man/man3p/Type::Params::Signature.3p
 @man man/man3p/Type::Parser.3p
 @man man/man3p/Type::Registry.3p
 @man man/man3p/Type::Tie.3p
@@ -130,4 +133,12 @@ ${P5SITE}/Types/TypeTiny.pm
 @man man/man3p/Types::Common::Numeric.3p
 @man man/man3p/Types::Common::String.3p
 @man man/man3p/Types::Standard.3p
+@man man/man3p/Types::Standard::ArrayRef.3p
+@man man/man3p/Types::Standard::CycleTuple.3p
+@man man/man3p/Types::Standard::Dict.3p
+@man man/man3p/Types::Standard::HashRef.3p
+@man man/man3p/Types::Standard::Map.3p
+@man man/man3p/Types::Standard::ScalarRef.3p
+@man man/man3p/Types::Standard::StrMatch.3p
+@man man/man3p/Types::Standard::Tuple.3p
 @man man/man3p/Types::TypeTiny.3p
