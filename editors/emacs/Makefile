@@ -14,7 +14,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c curses execinfo gmp gnutls m pthread sqlite3 tree-sitter xml2 z
 
-SITES=			${SITE_GNU:=emacs/}
+#SITES=			https://alpha.gnu.org/gnu/emacs/pretest/
+SITES+=			${SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
