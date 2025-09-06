@@ -23,7 +23,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify								 v1.8.0 \
 	github.com/go-logr/logr									 v1.4.2 \
 	github.com/go-logr/stdr									 v1.2.2 \
-	github.com/go-viper/mapstructure/v2							 v2.3.0 \
+	github.com/go-viper/mapstructure/v2							 v2.4.0 \
 	github.com/golang/groupcache								 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/google/go-cmp								 v0.6.0 \
 	github.com/google/go-querystring							 v1.1.0 \
@@ -51,13 +51,13 @@ MODGO_MODULES =	\
 	github.com/sourcegraph/conc								 v0.3.0 \
 	github.com/spf13/afero									 v1.12.0 \
 	github.com/spf13/cast									 v1.7.1 \
-	github.com/spf13/cobra									 v1.9.1 \
-	github.com/spf13/pflag									 v1.0.6 \
+	github.com/spf13/cobra									 v1.10.1 \
+	github.com/spf13/pflag									 v1.0.9 \
 	github.com/spf13/viper									 v1.20.1 \
 	github.com/stretchr/objx								 v0.1.0 \
 	github.com/stretchr/testify								 v1.10.0 \
 	github.com/subosito/gotenv								 v1.6.0 \
-	github.com/vultr/govultr/v3								 v3.21.1 \
+	github.com/vultr/govultr/v3								 v3.23.0 \
 	go.opencensus.io									 v0.24.0 \
 	go.opentelemetry.io/contrib/detectors/gcp						 v1.29.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc		 v0.54.0 \
@@ -97,6 +97,7 @@ MODGO_MODFILES =	\
 	github.com/kr/pretty			 v0.2.1 \
 	github.com/kr/pretty			 v0.3.0 \
 	github.com/kr/text			 v0.1.0 \
+	github.com/spf13/pflag			 v1.0.6 \
 	github.com/stretchr/testify		 v1.3.0 \
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.5 \
