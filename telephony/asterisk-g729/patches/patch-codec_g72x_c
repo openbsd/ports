@@ -1,0 +1,96 @@
+From 19103066c460de6cb2d8257c558401607a9d7208 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jos=C3=A9=20Miguel=20Gon=C3=A7alves?=
+ <jose.goncalves@inov.pt>
+Date: Sat, 12 Oct 2024 09:52:25 +0100
+Subject: [PATCH] Call proper Bcg729 functions to release memory (#3)
+
+From 5024cb422cf58dbf0ae6e00f18092680e33391de Mon Sep 17 00:00:00 2001
+From: InterLinked1 <24227567+InterLinked1@users.noreply.github.com>
+Date: Mon, 25 Aug 2025 14:35:42 -0400
+Subject: [PATCH] codec_g72x.c: Convert lingering verbose to ast_debug.
+
+
+Index: codec_g72x.c
+--- codec_g72x.c.orig
++++ codec_g72x.c
+@@ -476,20 +476,9 @@ static struct ast_frame *lintog72x_frameout(struct ast
+     return ast_trans_frameout(pvt, datalen, samples);
+ }
+ 
+-static void g72x_destroy(struct ast_trans_pvt *pvt)
++static void g72x_print_debug_on_destroy(void)
+ {
+     int i;
+-    struct g72x_coder_pvt *state = pvt->pvt;
+-#if !G72X_BCG729
+-    ippsFree(state->coder);
+-    ippsFree(state->scratch_mem);
+-#else
+-#if G72X_ASTERISK >= 160
+-    ast_std_free(state->coder);
+-#else
+-    free(state->coder);
+-#endif
+-#endif
+     /* output the sizes of frames passed to decoder */
+     if (option_debug >= 1 && frame_sizes != NULL) {
+         ast_debug(1, G72X_CODEC " frames\n");
+@@ -501,6 +490,30 @@ static void g72x_destroy(struct ast_trans_pvt *pvt)
+     }
+ }
+ 
++static void g72xtolin_destroy(struct ast_trans_pvt *pvt)
++{
++    struct g72x_coder_pvt *state = pvt->pvt;
++#if !G72X_BCG729
++    ippsFree(state->coder);
++    ippsFree(state->scratch_mem);
++#else
++    closeBcg729DecoderChannel(state->coder);
++#endif
++    g72x_print_debug_on_destroy();
++}
++
++static void lintog72x_destroy(struct ast_trans_pvt *pvt)
++{
++    struct g72x_coder_pvt *state = pvt->pvt;
++#if !G72X_BCG729
++    ippsFree(state->coder);
++    ippsFree(state->scratch_mem);
++#else
++    closeBcg729EncoderChannel(state->coder);
++#endif
++    g72x_print_debug_on_destroy();
++}
++
+ static struct ast_translator g72xtolin = {
+     .name = G72X_CODEC "tolin",
+ #if G72X_CALLWEAVER
+@@ -515,7 +528,7 @@ static struct ast_translator g72xtolin = {
+ #endif
+     .newpvt = g72xtolin_new,
+     .framein = g72xtolin_framein,
+-    .destroy = g72x_destroy,
++    .destroy = g72xtolin_destroy,
+     .sample = g72xtolin_sample,
+ #if G72X_CALLWEAVER
+     .src_rate = 8000,
+@@ -542,7 +555,7 @@ static struct ast_translator lintog72x = {
+     .newpvt = lintog72x_new,
+     .framein = lintog72x_framein,
+     .frameout = lintog72x_frameout,
+-    .destroy = g72x_destroy,
++    .destroy = lintog72x_destroy,
+     .sample = lintog72x_sample,
+ #if G72X_CALLWEAVER
+     .src_rate = 8000,
+@@ -576,8 +589,7 @@ static struct ast_translator lintog72x = {
+             if (!strcasecmp(var->name, "sendrate")) {
+                 rate = atoi(var->value);
+                 if (rate == 53 || rate == 63) {
+-                    if (option_verbose > 2)
+-                        ast_verbose(VERBOSE_PREFIX_3 "G.723.1 setting sendrate to %d\n", rate);
++                    ast_debug(5, "G.723.1 setting sendrate to %d\n", rate);
+                     g723_sendrate = (rate == 63) ? G723_RATE_63 : G723_RATE_53;
+                 } else {
+                     ast_log(LOG_ERROR, "G.723.1 sendrate must be 53 or 63\n");

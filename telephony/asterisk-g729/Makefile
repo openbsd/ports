@@ -1,7 +1,7 @@
 COMMENT=	G.729a voice codec for Asterisk
 DISTNAME=	asterisk-g72x-1.4.4
 PKGNAME=	${DISTNAME:S/g72x/g729/}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
 SITES=		http://asterisk.hosting.lv/src/
@@ -13,7 +13,7 @@ HOMEPAGE=	http://asterisk.hosting.lv/
 PERMIT_DISTFILES=	tar contains non-compiled proprietary Intel code in ipp/ dir
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += bcg729
+WANTLIB += bcg729 c m
 
 NO_TEST=	Yes
 
@@ -38,10 +38,12 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 LIBTOOL_FLAGS=	--tag=disable-static
 AUTORECONF=	./autogen.sh
 
-# to build astconv (when fixed for ast13+ API):
-#post-build:
-#	cd ${WRKSRC}; ${MAKE_PROGRAM} astconv CPPFLAGS=-I${LOCALBASE}/include \
-#	    CFLAGS="${CFLAGS} -D_GNU_SOURCE -Wall -rdynamic" LDFLAGS=-lm
+post-build:
+	cd ${WRKSRC}; ${MAKE_PROGRAM} astconv CPPFLAGS=-I${LOCALBASE}/include \
+	    CFLAGS="${CFLAGS} -D_GNU_SOURCE -Wall -rdynamic" LDFLAGS=-lm
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/astconv ${PREFIX}/bin/astconv
 
 .include <bsd.port.arch.mk>
 
