@@ -21,7 +21,9 @@ share/examples/snmp_exporter/generator.yml
 @sample ${SYSCONFDIR}/snmp_exporter/generator.yml
 share/examples/snmp_exporter/mibs/
 @comment share/examples/snmp_exporter/mibs/.cisco_v2
+@comment share/examples/snmp_exporter/mibs/.cisco-device
 @comment share/examples/snmp_exporter/mibs/.cisco_imc
+@comment share/examples/snmp_exporter/mibs/.dell-network
 @comment share/examples/snmp_exporter/mibs/.dlink-mibs
 @comment share/examples/snmp_exporter/mibs/.do_not_remove
 @comment share/examples/snmp_exporter/mibs/.eltex-mes
@@ -33,6 +35,7 @@ share/examples/snmp_exporter/mibs/
 @comment share/examples/snmp_exporter/mibs/.sophos_xg
 @comment share/examples/snmp_exporter/mibs/.synology
 @comment share/examples/snmp_exporter/mibs/.tplinkddm
+@comment share/examples/snmp_exporter/mibs/.yamaha-rt
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-B100-MIB.txt
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-CERTS-MIB.txt
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-IPVS-MIB.txt
@@ -43,14 +46,35 @@ share/examples/snmp_exporter/mibs/ARISTA-ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SMI-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SW-IP-FORWARDING-MIB
 share/examples/snmp_exporter/mibs/BRIDGE-MIB.mib
+share/examples/snmp_exporter/mibs/CISCO-ENHANCED-IMAGE-MIB
+share/examples/snmp_exporter/mibs/CISCO-ENHANCED-MEMPOOL-MIB
+share/examples/snmp_exporter/mibs/CISCO-ENTITY-FRU-CONTROL-MIB
+share/examples/snmp_exporter/mibs/CISCO-ENTITY-SENSOR-MIB
+share/examples/snmp_exporter/mibs/CISCO-ENVMON-MIB
+share/examples/snmp_exporter/mibs/CISCO-FC-FE-MIB
+share/examples/snmp_exporter/mibs/CISCO-IF-EXTENSION-MIB
+share/examples/snmp_exporter/mibs/CISCO-IMAGE-MIB
+share/examples/snmp_exporter/mibs/CISCO-IMAGE-TC
+share/examples/snmp_exporter/mibs/CISCO-MEMORY-POOL-MIB
+share/examples/snmp_exporter/mibs/CISCO-NS-MIB
+share/examples/snmp_exporter/mibs/CISCO-PROCESS-MIB
+share/examples/snmp_exporter/mibs/CISCO-QOS-PIB-MIB
 share/examples/snmp_exporter/mibs/CISCO-QOS-PIB-MIB.mib
+share/examples/snmp_exporter/mibs/CISCO-SMI
 share/examples/snmp_exporter/mibs/CISCO-SMI.my
+share/examples/snmp_exporter/mibs/CISCO-ST-TC
+share/examples/snmp_exporter/mibs/CISCO-TC
 share/examples/snmp_exporter/mibs/CISCO-TC.my
 share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-FAULT-MIB.my
 share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-MIB.my
 share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-STORAGE-MIB.my
 share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-TC-MIB.my
+share/examples/snmp_exporter/mibs/CISCO-VSAN-MIB
+share/examples/snmp_exporter/mibs/CISCO-ZS-MIB
 share/examples/snmp_exporter/mibs/CyberPower.MIB
+share/examples/snmp_exporter/mibs/DELL-NETWORKING-CHASSIS-MIB.mib
+share/examples/snmp_exporter/mibs/DELL-NETWORKING-SMI.mib
+share/examples/snmp_exporter/mibs/DELL-NETWORKING-TC.mib
 share/examples/snmp_exporter/mibs/DLINK-ID-REC-MIB.mib
 share/examples/snmp_exporter/mibs/EAP-Client.MIB
 share/examples/snmp_exporter/mibs/EAP.MIB
@@ -62,6 +86,8 @@ share/examples/snmp_exporter/mibs/ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ENTITY-STATE-MIB
 share/examples/snmp_exporter/mibs/ENTITY-STATE-TC-MIB
 share/examples/snmp_exporter/mibs/FROGFOOT-RESOURCES-MIB
+share/examples/snmp_exporter/mibs/FServer-Std.MIB
+share/examples/snmp_exporter/mibs/FServer-Std.MIB.bak
 share/examples/snmp_exporter/mibs/Genmgmt.mib
 share/examples/snmp_exporter/mibs/HCNUM-TC
 share/examples/snmp_exporter/mibs/HOST-RESOURCES-MIB
@@ -101,7 +127,7 @@ share/examples/snmp_exporter/mibs/SNMP-FRAMEWORK-MIB
 share/examples/snmp_exporter/mibs/SNMPv2-MIB
 share/examples/snmp_exporter/mibs/SNMPv2-SMI
 share/examples/snmp_exporter/mibs/SNMPv2-TC
-share/examples/snmp_exporter/mibs/SOPHOS-XG-MIB20.txt
+share/examples/snmp_exporter/mibs/SOPHOS-XG-MIB20.mib
 share/examples/snmp_exporter/mibs/SYNOLOGY-DISK-MIB.txt
 share/examples/snmp_exporter/mibs/SYNOLOGY-EBOX-MIB.txt
 share/examples/snmp_exporter/mibs/SYNOLOGY-FLASHCACHE-MIB.txt
@@ -197,5 +223,13 @@ share/examples/snmp_exporter/mibs/token-ring-rmon-mib.MIB
 share/examples/snmp_exporter/mibs/tplink-ddmManage.mib
 share/examples/snmp_exporter/mibs/tplink-ddmStatus.mib
 share/examples/snmp_exporter/mibs/tplink-main.mib
+share/examples/snmp_exporter/mibs/yamaha-product.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt-firmware.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt-hardware.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt-interfaces.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt-ip.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt-switch.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-rt.mib.txt
+share/examples/snmp_exporter/mibs/yamaha-smi.mib.txt
 share/examples/snmp_exporter/snmp.yml
 @sample ${SYSCONFDIR}/snmp_exporter/snmp.yml
