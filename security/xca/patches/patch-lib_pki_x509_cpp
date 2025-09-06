@@ -1,0 +1,19 @@
+Index: lib/pki_x509.cpp
+--- lib/pki_x509.cpp.orig
++++ lib/pki_x509.cpp
+@@ -1227,11 +1227,12 @@ QList<int> pki_x509::ossl_verify() const
+ 	return errors;
+ }
+ 
+-QList<X509_PURPOSE *> pki_x509::purposes() const
++QList<const X509_PURPOSE *> pki_x509::purposes() const
+ {
+-	QList<X509_PURPOSE *> purposes;
++	QList<const X509_PURPOSE *> purposes;
+ 	for (int i = 0; i< X509_PURPOSE_get_count(); i++) {
+-		X509_PURPOSE *purp = X509_PURPOSE_get0(i);
++		const X509_PURPOSE *purp;
++		purp = X509_PURPOSE_get0(i);
+ 		int id = X509_PURPOSE_get_id(purp);
+ 		if (id == X509_PURPOSE_ANY)
+ 			continue;

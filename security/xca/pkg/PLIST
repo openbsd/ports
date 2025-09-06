@@ -1,7 +1,7 @@
 @ask-update xca-<2 .xdb format changes in XCA 2.x. Upgrade is automatic, but backup your old files.
 @bin bin/xca
 @man man/man1/xca.1
-share/applications/xca.desktop
+share/applications/de.hohnstaedt.xca.desktop
 share/bash-completion/completions/xca
 share/doc/xca/
 share/doc/xca/_sources/
@@ -12,6 +12,12 @@ share/doc/xca/_sources/changelog.rst.txt
 share/doc/xca/_sources/commandline.rst.txt
 share/doc/xca/_sources/common-actions.rst.txt
 share/doc/xca/_sources/database.rst.txt
+share/doc/xca/_sources/export-key-clp.rst.txt
+share/doc/xca/_sources/export-key.rst.txt
+share/doc/xca/_sources/export-request.rst.txt
+share/doc/xca/_sources/export-revocation.rst.txt
+share/doc/xca/_sources/export-x509-clp.rst.txt
+share/doc/xca/_sources/export-x509.rst.txt
 share/doc/xca/_sources/index.rst.txt
 share/doc/xca/_sources/introduction.rst.txt
 share/doc/xca/_sources/miscellaneous.rst.txt
@@ -45,6 +51,12 @@ share/doc/xca/changelog.html
 share/doc/xca/commandline.html
 share/doc/xca/common-actions.html
 share/doc/xca/database.html
+share/doc/xca/export-key-clp.html
+share/doc/xca/export-key.html
+share/doc/xca/export-request.html
+share/doc/xca/export-revocation.html
+share/doc/xca/export-x509-clp.html
+share/doc/xca/export-x509.html
 share/doc/xca/genindex.html
 share/doc/xca/index.html
 share/doc/xca/introduction.html
@@ -81,8 +93,6 @@ share/icons/hicolor/64x64/mimetypes/x-xca-template.png
 share/metainfo/
 share/metainfo/de.hohnstaedt.xca.metainfo.xml
 share/mime/packages/xca.xml
-share/pixmaps/
-share/pixmaps/xca-32x32.xpm
 share/xca/
 share/xca/CA.xca
 share/xca/TLS_client.xca
@@ -112,6 +122,7 @@ share/xca/i18n/
 share/xca/i18n/xca.qm
 share/xca/i18n/xca_bg.qm
 share/xca/i18n/xca_de.qm
+share/xca/i18n/xca_en.qm
 share/xca/i18n/xca_es.qm
 share/xca/i18n/xca_fa.qm
 share/xca/i18n/xca_fr.qm
@@ -119,6 +130,7 @@ share/xca/i18n/xca_hr.qm
 share/xca/i18n/xca_id.qm
 share/xca/i18n/xca_it.qm
 share/xca/i18n/xca_ja.qm
+share/xca/i18n/xca_ko.qm
 share/xca/i18n/xca_nl.qm
 share/xca/i18n/xca_pl.qm
 share/xca/i18n/xca_pt_BR.qm
