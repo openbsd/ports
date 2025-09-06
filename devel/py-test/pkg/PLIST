@@ -62,8 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python_api.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}python_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}raises.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}raises.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}recwarn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}recwarn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}reports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,6 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}timing.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}timing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}tmpdir.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}tmpdir.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}tracemalloc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}tracemalloc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}unittest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}unittest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}unraisableexception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -206,7 +208,7 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/pytester.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/pytester_assertions.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/python.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/python_api.py
-lib/python${MODPY_VERSION}/site-packages/_pytest/python_path.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/raises.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/recwarn.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/reports.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/runner.py
@@ -220,6 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/terminal.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/threadexception.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/timing.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/tmpdir.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/tracemalloc.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/unittest.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/unraisableexception.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/warning_types.py
