@@ -4,7 +4,7 @@ MODULES +=	lang/php
 DIST_SUBDIR ?=	pecl
 
 FLAVORS ?=	php82 php83 php84
-FLAVOR ?=	php82
+FLAVOR ?=	php83
 
 DIST_SUBDIR ?=	pecl
 
@@ -14,7 +14,7 @@ DIST_SUBDIR ?=	pecl
 # flavour PFRAG files.
 MODPECL_DEFAULTV ?= "@comment "
 MODPHP_VERSION = ${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
-.if ${FLAVOR} == php82
+.if ${FLAVOR} == php83
 MODPECL_DEFAULTV = ""
 .endif
 MODPHP_BUILDDEP = Yes
