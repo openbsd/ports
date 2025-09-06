@@ -1,21 +1,21 @@
-COMMENT=		PHP wrapper for pledge(2) and unveil(2)
+COMMENT=	PHP wrapper for pledge(2) and unveil(2)
 
-DISTNAME=		pledge-2.1.2
-REVISION=		2
+DISTNAME=	pledge-2.1.2
+REVISION=	3
 
-CATEGORIES=		www
+CATEGORIES=	www
 
-HOMEPAGE=		https://github.com/tvlooy/php-pledge
+HOMEPAGE=	https://github.com/tvlooy/php-pledge
 
-MAINTAINER=		Tom Van Looy <tom@ctors.net>
+MAINTAINER=	Tom Van Looy <tom@ctors.net>
 
 # PHP
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
-MODULES=		lang/php/pecl
+MODULES=	lang/php/pecl
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ SITES.sh=	https://spacehopper.org/mirrors/
 # to update: comment out DISTFILES.sh, update V, make makesum, make dist
 DISTFILES.sh=	${DISTNAME}-vendor.tar.xz
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
+REVISION=	0
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes

@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
+REVISION-mapi=	0
 
 V=		2.48
 

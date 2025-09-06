@@ -2,6 +2,7 @@ COMMENT=	EAS (Exchange ActiveSync) interface for grommunio
 
 V=		2.2
 DISTNAME=	grommunio-sync-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-sync

@@ -5,6 +5,7 @@ GH_PROJECT=	html5_notifier
 GH_COMMIT=	5d85947e16ea9cac4544c59666fe0ff13ba2a44a
 DISTNAME=	html5_notifier-0.6.4pl20230628
 PKGNAME=	rcube-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	mail www
 

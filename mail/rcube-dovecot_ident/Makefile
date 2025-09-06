@@ -5,7 +5,7 @@ GH_PROJECT=	dovecot_ident
 GH_COMMIT=	96197ef75bcf6b65d04e9aaf9e23db8114075d14
 DISTNAME=	dovecot_ident-2.2pl20230531
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www
 

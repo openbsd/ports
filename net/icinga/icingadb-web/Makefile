@@ -4,6 +4,7 @@ GH_PROJECT=	icingadb-web
 MODULE_NAME=	icingadb-web
 MODULE_VERSION=	v1.2.2
 MODULE_DEST=	${PREFIX}/icinga-web2/modules/icingadb
+REVISION=	0
 
 HOMEPAGE=	https://icinga.com/docs/icinga-db-web/
 

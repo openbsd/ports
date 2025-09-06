@@ -13,6 +13,7 @@ PKGNAME-utils=	mapserver-utils-${V:S/-//}
 PKGNAME-php=	php-mapscript-${V:S/-//}
 PKGNAME-perl=	p5-mapscript-${V:S/-//}
 PKGNAME-python=	py3-mapscript-${V:S/-//}
+REVISION-php=	1
 REVISION=	0
 
 SHARED_LIBS +=	mapserver 8.0

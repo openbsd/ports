@@ -8,6 +8,7 @@ GH_PROJECT =	FreshRSS
 GH_TAGNAME =	1.26.1
 
 PKGNAME =	freshrss-${GH_TAGNAME}
+REVISION =	0
 
 HOMEPAGE =	https://freshrss.org/
 

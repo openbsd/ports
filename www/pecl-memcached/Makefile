@@ -1,7 +1,7 @@
 COMMENT=	PHP interface to memcached via libmemcached
 
 DISTNAME=	memcached-3.3.0
-REVISION=	0
+REVISION=	1
 
 # PHP
 PERMIT_PACKAGE=	Yes

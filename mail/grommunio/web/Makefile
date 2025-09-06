@@ -2,6 +2,7 @@ COMMENT=	web user interface for grommunio
 
 V=		3.14
 DISTNAME=	grommunio-web-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web

@@ -3,6 +3,7 @@ COMMENT=	debug and development tools for PHP
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
 GH_TAGNAME=	3.4.5
+REVISION=	0
 
 CATEGORIES=	devel
 

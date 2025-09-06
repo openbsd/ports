@@ -1,7 +1,7 @@
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.67
 CATEGORIES=	www sysutils
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
 

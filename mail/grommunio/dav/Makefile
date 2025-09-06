@@ -2,6 +2,7 @@ COMMENT=	CalDAV and CardDAV interface for grommunio
 
 V=		1.5
 DISTNAME=	grommunio-dav-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-dav

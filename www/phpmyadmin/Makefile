@@ -6,6 +6,7 @@ PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
+REVISION=	0
 
 PORTROACH=	site:https://www.phpmyadmin.net/files/
 

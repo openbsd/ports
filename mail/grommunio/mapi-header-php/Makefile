@@ -2,6 +2,7 @@ COMMENT=	grommunio PHP MAPI headers
 
 V=		1.6
 DISTNAME=	grommunio-mapi-header-php-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	mapi-header-php

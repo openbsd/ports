@@ -8,7 +8,7 @@ UNIT_SHORTNAME=	${FLAVOR}
 MODULES=	lang/php
 
 FLAVORS=	php82 php83 php84
-FLAVOR?=	php82
+FLAVOR?=	php83
 MODPHP_VERSION=	${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
 MODPHP_BUILDDEP= Yes
 
