@@ -1,9 +1,9 @@
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20250718015231-e5c2cc44d815
+MODGO_VERSION =	v0.0.0-20250825044153-6c13807a7074
 
-R =		36
+R =	37
 DISTNAME =	lf-${R}
 
 CATEGORIES =	sysutils
@@ -15,16 +15,15 @@ MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB +=	c pthread
 
 MODGO_LDFLAGS +=	-X 'main.gVersion=r${R}'
 
-MODULES =		lang/go
+MODULES =	lang/go
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/lf ${PREFIX}/bin
+post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
@@ -33,4 +32,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lf.desktop ${PREFIX}/share/applications
 
 .include "modules.inc"
+
 .include <bsd.port.mk>
