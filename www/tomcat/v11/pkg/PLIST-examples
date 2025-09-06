@@ -1366,6 +1366,7 @@ webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
 webapps/docs/api/org/apache/juli/JsonFormatter.JSONFilter.html
 webapps/docs/api/org/apache/juli/JsonFormatter.html
+webapps/docs/api/org/apache/juli/LogUtil.html
 webapps/docs/api/org/apache/juli/OneLineFormatter.html
 webapps/docs/api/org/apache/juli/VerbatimFormatter.html
 webapps/docs/api/org/apache/juli/WebappProperties.html
@@ -1722,6 +1723,10 @@ webapps/docs/api/org/apache/tomcat/util/compat/JrePlatform.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/concurrent/
+webapps/docs/api/org/apache/tomcat/util/concurrent/KeyedReentrantReadWriteLock.html
+webapps/docs/api/org/apache/tomcat/util/concurrent/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/concurrent/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/
 webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
