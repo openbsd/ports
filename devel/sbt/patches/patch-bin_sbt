@@ -8,7 +8,7 @@ Index: bin/sbt
 -declare java_cmd=java
 +declare java_cmd=${JAVA_HOME:-$(javaPathHelper -h sbt)}/bin/java
  declare java_version
- declare init_sbt_version=1.11.5
+ declare init_sbt_version=1.11.6
  declare sbt_default_mem=1024
 @@ -581,7 +581,7 @@ run() {
  declare -ra noshare_opts=(-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy)
