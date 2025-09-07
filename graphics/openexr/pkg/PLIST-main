@@ -27,6 +27,7 @@ include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
 include/OpenEXR/ImfBoxAttribute.h
+include/OpenEXR/ImfBytesAttribute.h
 include/OpenEXR/ImfCRgbaFile.h
 include/OpenEXR/ImfChannelList.h
 include/OpenEXR/ImfChannelListAttribute.h
@@ -71,6 +72,7 @@ include/OpenEXR/ImfFrameBuffer.h
 include/OpenEXR/ImfFramesPerSecond.h
 include/OpenEXR/ImfGenericInputFile.h
 include/OpenEXR/ImfGenericOutputFile.h
+include/OpenEXR/ImfHTCompressor.h
 include/OpenEXR/ImfHeader.h
 include/OpenEXR/ImfHuf.h
 include/OpenEXR/ImfIDManifest.h
@@ -153,14 +155,14 @@ lib/cmake/OpenEXR/OpenEXRConfig.cmake
 lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake
 lib/cmake/OpenEXR/OpenEXRTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/OpenEXR/OpenEXRTargets.cmake
-@lib lib/libIex-3_3.so.${LIBIex-3_3_VERSION}
+@lib lib/libIex-3_4.so.${LIBIex-3_4_VERSION}
 @lib lib/libIex.so.${LIBIex_VERSION}
-@lib lib/libIlmThread-3_3.so.${LIBIlmThread-3_3_VERSION}
+@lib lib/libIlmThread-3_4.so.${LIBIlmThread-3_4_VERSION}
 @lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
-@lib lib/libOpenEXR-3_3.so.${LIBOpenEXR-3_3_VERSION}
+@lib lib/libOpenEXR-3_4.so.${LIBOpenEXR-3_4_VERSION}
 @lib lib/libOpenEXR.so.${LIBOpenEXR_VERSION}
-@lib lib/libOpenEXRCore-3_3.so.${LIBOpenEXRCore-3_3_VERSION}
+@lib lib/libOpenEXRCore-3_4.so.${LIBOpenEXRCore-3_4_VERSION}
 @lib lib/libOpenEXRCore.so.${LIBOpenEXRCore_VERSION}
-@lib lib/libOpenEXRUtil-3_3.so.${LIBOpenEXRUtil-3_3_VERSION}
+@lib lib/libOpenEXRUtil-3_4.so.${LIBOpenEXRUtil-3_4_VERSION}
 @lib lib/libOpenEXRUtil.so.${LIBOpenEXRUtil_VERSION}
 lib/pkgconfig/OpenEXR.pc

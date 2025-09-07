@@ -2,7 +2,7 @@ COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			3.3.5
+V=			3.4.0
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
@@ -11,15 +11,12 @@ PKGNAME-main=		OpenEXR-${V}
 PKGNAME-tools=		OpenEXR-tools-${V}
 PKGNAME-doc=		OpenEXR-doc-${V}
 
-REVISION-main=		0
-REVISION-tools=		0
-
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # /!\ see symlinks creation in post-install (LIBOpenEXR-3_2_VERSION is used)
 .for solib in Iex IlmThread OpenEXR OpenEXRCore OpenEXRUtil
 SHARED_LIBS +=  ${solib} 0.0 # 0.0
-SHARED_LIBS +=  ${solib}-3_3 0.0 # 0.0
+SHARED_LIBS +=  ${solib}-3_4 0.0 # 0.0
 .endfor
 
 CATEGORIES=		graphics
@@ -40,13 +37,14 @@ MODULES=		devel/cmake
 CXXFLAGS +=		-mxgot
 .endif
 
-WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_2 deflate m
+WANTLIB-main += ${COMPILER_LIBCXX} Imath-3_2 deflate m openjph
 
 LIB_DEPENDS-main=	archivers/libdeflate \
+			graphics/openjph \
 			math/imath
 
-WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_3 IlmThread-3_3 Imath-3_2
-WANTLIB-tools += OpenEXR-3_3 OpenEXRCore-3_3 c m
+WANTLIB-tools += ${COMPILER_LIBCXX} Iex-3_4 IlmThread-3_4 Imath-3_2
+WANTLIB-tools += OpenEXR-3_4 OpenEXRCore-3_4 OpenEXRUtil-3_4 c m
 
 LIB_DEPENDS-tools=	${BASE_PKGPATH}
 
@@ -66,8 +64,8 @@ post-install:
 	cd ${PREFIX}/lib && \
 		for i in *.so; do \
 			test -h $$i && lib=$${i#lib} && lib=$${lib%.so} && \
-			ln -sf lib$${lib}-3_3.so.${LIBOpenEXR-3_3_VERSION} \
-			$$i.${LIBOpenEXR-3_3_VERSION} && rm $$i ; \
+			ln -sf lib$${lib}-3_4.so.${LIBOpenEXR-3_4_VERSION} \
+			$$i.${LIBOpenEXR-3_4_VERSION} && rm $$i ; \
 		done
 
 .include <bsd.port.mk>
