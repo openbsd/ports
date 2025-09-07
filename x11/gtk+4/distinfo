@@ -1,2 +1,4 @@
 SHA256 (gtk-4.20.0.tar.xz) = eeUeYvfwz/MpBFabDOvJYpfQ6/r6begXIHPGnOA5Gpg=
+SHA256 (librsvg-librsvg-gtk-2.40.23.tar.gz) = ED5Ae/mbzqyQ85oEqnsVmb25jSIMwq/3VFTXQjD+KQU=
 SIZE (gtk-4.20.0.tar.xz) = 15762152
+SIZE (librsvg-librsvg-gtk-2.40.23.tar.gz) = 2049313

@@ -7,6 +7,13 @@ COMMENT-guic=		gtk+ icon theme caching utility
 GNOME_PROJECT=		gtk
 GNOME_VERSION=		4.20.0
 
+# gtk+4 wants librsvg 2.48+ (rust-only), but if not available it is prepared
+# to fallback to 2.40.23. there's no actual release of 2.40.23 yet, so use
+# a git-archive tar.gz to provide it for use by gtk's submodule build
+RSVG_VERSION=		2.40.23
+SITES.rsvg=		https://gitlab.gnome.org/GNOME/librsvg/-/archive/librsvg-gtk-${RSVG_VERSION}/
+DISTFILES.rsvg=		librsvg-librsvg-gtk-${RSVG_VERSION}.tar.gz
+
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
@@ -110,6 +117,11 @@ CFLAGS +=		-Wno-error
 CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
+.if !${PROPERTIES:Mrust}
+post-extract:
+	mv ${WRKDIR}/librsvg-librsvg-gtk-${RSVG_VERSION} ${WRKDIST}/subprojects/librsvg
+.endif
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gtk/print/gtkprintoperation-unix.c
 
@@ -119,5 +131,8 @@ post-install:
 	ln -sf gtk4-update-icon-cache ${PREFIX}/bin/gtk-update-icon-cache
 	ln -sf gtk4-update-icon-cache.1 \
 		${PREFIX}/man/man1/gtk-update-icon-cache.1
+.if !${PROPERTIES:Mrust}
+	rm -f ${PREFIX}/lib/librsvg-2.a
+.endif
 
 .include <bsd.port.mk>
