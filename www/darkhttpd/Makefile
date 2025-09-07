@@ -3,7 +3,7 @@ COMMENT=	simple and small webserver intended for ad-hoc usage
 CATEGORIES=	www
 GH_ACCOUNT=	emikulic
 GH_PROJECT=	darkhttpd
-GH_TAGNAME=	v1.16
+GH_TAGNAME=	v1.17
 
 MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
