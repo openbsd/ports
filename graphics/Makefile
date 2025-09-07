@@ -203,6 +203,7 @@
      SUBDIR += openexr
      SUBDIR += openimageio
      SUBDIR += openjp2
+     SUBDIR += openjph
      SUBDIR += openscenegraph
      SUBDIR += opensubdiv
      SUBDIR += openvdb
