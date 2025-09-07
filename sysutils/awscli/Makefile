@@ -1,6 +1,6 @@
 COMMENT=		universal command line environment for AWS
 
-MODPY_DISTV=		1.42.21
+MODPY_DISTV=		1.42.25
 DISTNAME=		awscli-${MODPY_DISTV}
 
 CATEGORIES=		sysutils
