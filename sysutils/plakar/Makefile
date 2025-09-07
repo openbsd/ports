@@ -4,9 +4,8 @@ NOT_FOR_ARCHS=	i386
 COMMENT=	distributed, versioned backups solution
 
 MODGO_MODNAME=	github.com/PlakarKorp/plakar
-MODGO_VERSION=	v1.0.2
+MODGO_VERSION=	v1.0.3
 DISTNAME=	plakar-${MODGO_VERSION}
-REVISION=	0
 
 # for patches
 WRKDIST=	${WRKDIR}/github.com/PlakarKorp/plakar@${MODGO_VERSION}
@@ -25,8 +24,10 @@ WANTLIB += c pthread
 MODULES=	lang/go
 
 post-install:
-	find ${WRKSRC}/cmd/plakar -iname \*.1 -exec \
-		${INSTALL_MAN} {} ${PREFIX}/man/man1 \;
+.for m in 1 5
+	find ${WRKSRC} -iname \*.${m} -exec \
+		${INSTALL_MAN} {} ${PREFIX}/man/man${m} \;
+.endfor
 
 .include "modules.inc"
 
