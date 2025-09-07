@@ -3,7 +3,7 @@ CATEGORIES =	graphics multimedia
 
 GH_ACCOUNT =	dyne
 GH_PROJECT =	frei0r
-GH_TAGNAME =	v2.3.3
+GH_TAGNAME =	v2.4.0
 
 DISTNAME =	frei0r-plugins-${GH_TAGNAME:S/v//}
 
