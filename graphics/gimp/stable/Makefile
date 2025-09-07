@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.38
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	6
+REVISION =	7
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -24,8 +24,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
-WANTLIB += ICE Iex-3_3 IlmThread-3_3 Imath-3_2 OpenEXR-3_3 OpenEXRCore-3_3
-WANTLIB += OpenEXRUtil-3_3 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += ICE Iex-3_4 IlmThread-3_4 Imath-3_2 OpenEXR-3_4 OpenEXRCore-3_4
+WANTLIB += OpenEXRUtil-3_4 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt aa aom atk-1.0 avahi-client avahi-common babl-0.1
 WANTLIB += bz2 c cairo crypto cups curses
@@ -38,7 +38,7 @@ WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 paper
 WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd sharpyuv deflate
-WANTLIB += INIReader inih jxl_cms Lerc
+WANTLIB += INIReader inih jxl_cms Lerc openjph
 WANTLIB += curl nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += openh264
 

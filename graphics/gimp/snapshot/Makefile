@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
 V=		3.0
 DISTNAME=	gimp-${V}.4
+REVISION=	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -24,7 +25,7 @@ HOMEPAGE=	https://www.gimp.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_3 OpenEXR-3_3 X11 Xcursor
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_4 OpenEXR-3_4 X11 Xcursor
 WANTLIB += Xext Xfixes Xmu Xpm aa appstream-glib archive babl-0.1
 WANTLIB += bz2 c cairo cfitsio execinfo fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gegl-0.4 gexiv2 gio-2.0 girepository-1.0

@@ -3,7 +3,7 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2024.0.1
-REVISION =	3
+REVISION =	4
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -28,7 +28,7 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLU Iex-3_3 IlmThread-3_3 Imath-3_2 OpenEXR-3_3 X11
+WANTLIB += GL GLU Iex-3_4 IlmThread-3_4 Imath-3_2 OpenEXR-3_4 X11
 WANTLIB += boost_atomic-mt boost_filesystem-mt boost_system-mt c epoxy exiv2
 WANTLIB += fftw3 flann flann_cpp jpeg lcms2 lz4 m pano13 png sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2

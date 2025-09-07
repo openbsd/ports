@@ -7,7 +7,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 VERSION =	4.5.0
-REVISION =	2
+REVISION =	3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
 
@@ -18,8 +18,8 @@ HOMEPAGE =	https://www.blender.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Alembic Iex-3_3 IlmThread-3_3 Imath-3_2
-WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 OpenImageIO
+WANTLIB += ${COMPILER_LIBCXX} Alembic Iex-3_4 IlmThread-3_4 Imath-3_2
+WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 OpenImageIO
 WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
 WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
 WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx jpeg

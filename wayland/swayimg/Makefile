@@ -6,6 +6,7 @@ COMMENT =	image display utility for Wayland
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
 GH_TAGNAME =	v4.5
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -17,7 +18,7 @@ COMPILER_LANGS =	c
 
 MODULES =	devel/meson
 
-WANTLIB =	OpenEXRCore-3_3 avif cairo epoll-shim exif fontconfig freetype
+WANTLIB =	OpenEXRCore-3_4 avif cairo epoll-shim exif fontconfig freetype
 WANTLIB +=	gif gobject-2.0 heif jpeg json-c jxl png raw rsvg-2 sixel tiff
 WANTLIB +=	wayland-client webp webpdemux xkbcommon
 WANTLIB +=	lib/inotify/inotify drm pthread c m

@@ -2,7 +2,7 @@ COMMENT =	advanced drawing and image manipulation
 
 VERSION =	5.2.11
 DISTNAME =	krita-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
@@ -46,11 +46,11 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_3 IlmThread-3_3 Imath-3_2
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_4 IlmThread-3_4 Imath-3_2
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5Crash KF5GuiAddons KF5I18n KF5ItemViews KF5KDcraw
-WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO OpenEXR-3_3
-WANTLIB += OpenEXRCore-3_3 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO OpenEXR-3_4
+WANTLIB += OpenEXRCore-3_4 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SDL2 SM X11 Xext Xi bz2 c exiv2
 WANTLIB += fftw3 fontconfig freetype fribidi gif glib-2.0 gobject-2.0
