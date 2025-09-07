@@ -1,9 +1,9 @@
 COMMENT=		string processing library
 
-V=			1.0.1
+V=			1.0.2
 DISTNAME=		bstring-${V}
 
-SHARED_LIBS +=  bstring              0.0      # 1.0
+SHARED_LIBS +=  bstring              0.0      # 2.0
 
 CATEGORIES=		devel
 
