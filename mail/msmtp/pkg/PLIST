@@ -26,6 +26,7 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/msmtp.mo
 share/locale/uk/LC_MESSAGES/msmtp.mo
+share/locale/zh_CN/LC_MESSAGES/msmtp.mo
 share/msmtp/
 share/msmtp/README.msmtpq
 share/msmtp/msmtpqueue/

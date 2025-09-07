@@ -1,8 +1,7 @@
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.8.27
+DISTNAME =		msmtp-1.8.31
 CATEGORIES =		mail
-REVISION =		0
 
 HOMEPAGE =		https://marlam.de/msmtp/
 
