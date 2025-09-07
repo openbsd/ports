@@ -4,7 +4,7 @@ DISTNAME =	facter-4.10.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =	0
+REVISION =	1
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -13,7 +13,7 @@ MODULES =		lang/ruby
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
-RUN_DEPENDS += devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15.5,<1.17 \
+RUN_DEPENDS += devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15.5 \
 		devel/ruby-hocon,${MODRUBY_FLAVOR}>=1.3,<2 \
 		devel/ruby-thor,${MODRUBY_FLAVOR}>=1.0.1,<1.3
 

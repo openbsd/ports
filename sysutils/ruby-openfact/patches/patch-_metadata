@@ -1,9 +1,30 @@
+Relax version requirement for the ffi gem to use newer versions.
 Relax version requirement for the logger gem to use lang/ruby's bundle.
 
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -223,16 +223,16 @@ dependencies:
+@@ -16,9 +16,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.15.5
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.17.0
+     - - "!="
+       - !ruby/object:Gem::Version
+         version: 1.16.0
+@@ -35,9 +32,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.15.5
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.17.0
+     - - "!="
+       - !ruby/object:Gem::Version
+         version: 1.16.0
+@@ -223,16 +217,16 @@ dependencies:
    name: logger
    requirement: !ruby/object:Gem::Requirement
      requirements:

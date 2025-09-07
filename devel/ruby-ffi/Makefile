@@ -1,6 +1,6 @@
 COMMENT =	cross-platform dynamic library loading for ruby
 
-DISTNAME =	ffi-1.15.5
+DISTNAME =	ffi-1.17.2
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/ffi/ffi
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 
-WANTLIB =	ffi
+WANTLIB =	c++abi ffi
 
 LIB_DEPENDS =	devel/libffi
 

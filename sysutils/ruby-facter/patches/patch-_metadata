@@ -1,0 +1,25 @@
+Relax version requirement for the ffi gem to use newer versions.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -17,9 +17,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.15.5
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.17.0
+     - - "!="
+       - !ruby/object:Gem::Version
+         version: 1.16.0
+@@ -36,9 +33,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.15.5
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.17.0
+     - - "!="
+       - !ruby/object:Gem::Version
+         version: 1.16.0
