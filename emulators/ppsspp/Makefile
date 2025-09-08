@@ -4,8 +4,7 @@ NOT_FOR_ARCHS =	${BE_ARCHS}
 COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
-V =		1.18.1
-REVISION =	0
+V =		1.19.3
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
 EXTRACT_SUFX =	.tar.xz

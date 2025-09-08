@@ -58,9 +58,11 @@ share/ppsspp/assets/font_atlas.meta
 share/ppsspp/assets/font_atlas.zim
 share/ppsspp/assets/gamecontrollerdb.txt
 share/ppsspp/assets/icon_regular_72.png
+share/ppsspp/assets/infra-dns.json
 share/ppsspp/assets/lang/
 share/ppsspp/assets/lang/ar_AE.ini
 share/ppsspp/assets/lang/az_AZ.ini
+share/ppsspp/assets/lang/be_BY.ini
 share/ppsspp/assets/lang/bg_BG.ini
 share/ppsspp/assets/lang/ca_ES.ini
 share/ppsspp/assets/lang/cz_CZ.ini
@@ -158,8 +160,10 @@ share/ppsspp/assets/shaders/videoAA.fsh
 share/ppsspp/assets/shaders/vignette.fsh
 share/ppsspp/assets/themes/
 share/ppsspp/assets/themes/1995.ini
+share/ppsspp/assets/themes/alpine.ini
 share/ppsspp/assets/themes/defaultthemes.ini
 share/ppsspp/assets/themes/slateforest.ini
+share/ppsspp/assets/themes/strawberry.ini
 share/ppsspp/assets/themes/vinewood.ini
 share/ppsspp/assets/ui_atlas.meta
 share/ppsspp/assets/ui_atlas.zim

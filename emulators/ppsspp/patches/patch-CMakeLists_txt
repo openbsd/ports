@@ -4,25 +4,24 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -423,13 +423,13 @@ if(NOT MSVC)
- 		endif()
- 	endif()
+@@ -1080,16 +1080,6 @@ add_library(cityhash STATIC
+ )
+ target_include_directories(cityhash PRIVATE ext/cityhash)
  
--	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -D_DEBUG")
-+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
- 	set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -Os -D_NDEBUG")
--	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -D_NDEBUG")
-+	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -D_NDEBUG")
- 	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
--	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -D_DEBUG")
-+	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
- 	set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -D_NDEBUG")
--	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -D_NDEBUG")
-+	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D_NDEBUG")
- 	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
- 
- 	# Enable checking printf-like format strings (also works for logging functions)
-@@ -1206,7 +1206,7 @@ else()
+-if(NOT MSVC)
+-	# These can be fast even for debug.
+-	target_compile_options(udis86 PRIVATE "-O2")
+-	target_compile_options(cityhash PRIVATE "-O2")
+-	if(NOT ZLIB_FOUND)
+-		target_compile_options(zlib PRIVATE "-O2")
+-	endif()
+-endif()
+-
+-
+ find_package(LIBZIP)
+ if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
+ 	include_directories(${LIBZIP_INCLUDE_DIRS})
+@@ -1233,7 +1223,7 @@ else()
  endif()
  
  # Arm platforms require at least libpng17.

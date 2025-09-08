@@ -3,7 +3,7 @@ Build with newer FFmpeg
 Index: Core/AVIDump.cpp
 --- Core/AVIDump.cpp.orig
 +++ Core/AVIDump.cpp
-@@ -93,7 +93,7 @@ bool AVIDump::Start(int w, int h)
+@@ -94,7 +94,7 @@ bool AVIDump::Start(int w, int h)
  
  bool AVIDump::CreateAVI() {
  #ifdef USE_FFMPEG
