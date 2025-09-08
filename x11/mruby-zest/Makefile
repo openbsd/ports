@@ -1,4 +1,5 @@
 BROKEN-arm=	build frozen for over 12 hours
+BROKEN-powerpc=	build frozen for over 20 hours
 
 COMMENT=	single window & tabbed version of the ZynAddSubFX interface
 
