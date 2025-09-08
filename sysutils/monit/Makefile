@@ -16,6 +16,10 @@ WANTLIB += c crypto execinfo m kvm pthread ssl z
 
 SITES=		${HOMEPAGE}/dist/
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 CONFIGURE_STYLE=gnu
 
 # Must specify C99 for base-gcc
