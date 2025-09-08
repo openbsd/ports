@@ -1,9 +1,9 @@
-COMMENT =	convert webp into gif/png
+COMMENT =	convert webp into gif/png/mp4
 CATEGORIES = 	graphics converters
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	unwebp
-GH_TAGNAME = 	2.10
+GH_TAGNAME = 	3.0
 GH_ACCOUNT = 	marcespie
 
 # BSD licence

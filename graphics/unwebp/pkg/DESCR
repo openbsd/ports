@@ -4,3 +4,6 @@ be read outside of a browser.
 
 Unsurprisingly, libwebp only offers support into webp, not for converting
 things back to gifs.
+
+Note that the conversion to mp4 needs ffmpeg as an (optional)
+run-time dependency
