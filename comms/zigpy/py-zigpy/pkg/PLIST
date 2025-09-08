@@ -68,8 +68,11 @@ lib/python${MODPY_VERSION}/site-packages/zigpy/backports/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}contextlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}contextlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zigpy/backports/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zigpy/backports/contextlib.py
 lib/python${MODPY_VERSION}/site-packages/zigpy/backports/enum.py
 lib/python${MODPY_VERSION}/site-packages/zigpy/backups.py
 lib/python${MODPY_VERSION}/site-packages/zigpy/config/
