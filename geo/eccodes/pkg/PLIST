@@ -1,0 +1,62 @@
+@bin bin/bufr_compare
+bin/bufr_compare_dir
+@bin bin/bufr_copy
+@bin bin/bufr_count
+@bin bin/bufr_dump
+bin/bufr_filter
+@bin bin/bufr_get
+@bin bin/bufr_index_build
+@bin bin/bufr_ls
+@bin bin/bufr_set
+@bin bin/codes_bufr_filter
+bin/codes_config
+@bin bin/codes_count
+@bin bin/codes_export_resource
+@bin bin/codes_info
+@bin bin/codes_parser
+@bin bin/codes_split_file
+@bin bin/grib2ppm
+@bin bin/grib_compare
+@bin bin/grib_copy
+@bin bin/grib_count
+@bin bin/grib_dump
+@bin bin/grib_filter
+@bin bin/grib_get
+@bin bin/grib_get_data
+@bin bin/grib_histogram
+@bin bin/grib_index_build
+@bin bin/grib_ls
+@bin bin/grib_set
+@bin bin/grib_to_netcdf
+@bin bin/gts_compare
+@bin bin/gts_copy
+@bin bin/gts_count
+@bin bin/gts_dump
+@bin bin/gts_filter
+@bin bin/gts_get
+@bin bin/gts_ls
+@bin bin/metar_compare
+@bin bin/metar_copy
+@bin bin/metar_dump
+@bin bin/metar_filter
+@bin bin/metar_get
+@bin bin/metar_ls
+include/eccodes.h
+include/eccodes.mod
+include/eccodes_config.h
+include/eccodes_ecbuild_config.h
+include/eccodes_version.h
+include/eccodes_windef.h
+include/grib_api.h
+include/grib_api.mod
+lib/cmake/eccodes/
+lib/cmake/eccodes/eccodes-config-version.cmake
+lib/cmake/eccodes/eccodes-config.cmake
+lib/cmake/eccodes/eccodes-import.cmake
+lib/cmake/eccodes/eccodes-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/eccodes/eccodes-targets.cmake
+@lib lib/libeccodes.so.${LIBeccodes_VERSION}
+@lib lib/libeccodes_f90.so.${LIBeccodes_f90_VERSION}
+@lib lib/libeccodes_memfs.so.${LIBeccodes_memfs_VERSION}
+lib/pkgconfig/eccodes.pc
+lib/pkgconfig/eccodes_f90.pc

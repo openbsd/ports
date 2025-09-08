@@ -1,0 +1,12 @@
+Index: cmake/compiler_flags/GNU_C.cmake
+--- cmake/compiler_flags/GNU_C.cmake.orig
++++ cmake/compiler_flags/GNU_C.cmake
+@@ -6,7 +6,7 @@
+ # granted to it by virtue of its status as an intergovernmental organisation
+ # nor does it submit to any jurisdiction.
+ 
+-set( CMAKE_C_FLAGS_RELEASE        "-O3 -DNDEBUG"    CACHE STRING "C compiler flags for Release builds"          FORCE )
++set( CMAKE_C_FLAGS_RELEASE        "-DNDEBUG"    CACHE STRING "C compiler flags for Release builds"          FORCE )
+ set( CMAKE_C_FLAGS_BIT            "-O2 -DNDEBUG"    CACHE STRING "C compiler flags for Bit-reproducible builds" FORCE )
+ set( CMAKE_C_FLAGS_DEBUG          "-O0 -g"          CACHE STRING "C compiler flags for Debug builds"            FORCE )
+ set( CMAKE_C_FLAGS_PRODUCTION     "-O2 -g"          CACHE STRING "C compiler flags for Production builds."      FORCE )
