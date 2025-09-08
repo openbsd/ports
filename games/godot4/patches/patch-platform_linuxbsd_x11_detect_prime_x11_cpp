@@ -7,6 +7,6 @@ Index: platform/linuxbsd/x11/detect_prime_x11.cpp
  
 +#define quick_exit(_n) _exit((_n))
 +
- struct vendor {
- 	const char *glxvendor = nullptr;
- 	int priority = 0;
+ int silent_error_handler(Display *display, XErrorEvent *error) {
+ 	static char message[1024];
+ 	XGetErrorText(display, error->error_code, message, sizeof(message));

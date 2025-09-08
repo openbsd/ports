@@ -1,0 +1,15 @@
+See:
+https://github.com/godotengine/godot/pull/110113
+
+Index: modules/camera/config.py
+--- modules/camera/config.py.orig
++++ modules/camera/config.py
+@@ -1,7 +1,7 @@
+ def can_build(env, platform):
+     import sys
+ 
+-    if sys.platform.startswith("freebsd"):
++    if sys.platform.startswith("freebsd") or sys.platform.startswith("openbsd"):
+         return False
+     return platform == "macos" or platform == "windows" or platform == "linuxbsd"
+ 

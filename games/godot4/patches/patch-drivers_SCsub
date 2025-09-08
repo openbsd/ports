@@ -3,9 +3,9 @@ add sndio driver
 Index: drivers/SCsub
 --- drivers/SCsub.orig
 +++ drivers/SCsub
-@@ -12,6 +12,7 @@ SConscript("windows/SCsub")
- SConscript("alsa/SCsub")
- SConscript("coreaudio/SCsub")
+@@ -17,6 +17,7 @@ SConscript("alsa/SCsub")
+ if env["platform"] == "ios" or env["platform"] == "macos":
+     SConscript("coreaudio/SCsub")
  SConscript("pulseaudio/SCsub")
 +SConscript("sndio/SCsub")
  if env["platform"] == "windows":

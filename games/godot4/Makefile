@@ -3,7 +3,7 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-V =		4.3
+V =		4.4.1
 PKGNAME =	godot4-${V}
 DIST_TUPLE +=	github godotengine godot ${V}-stable .
 DIST_TUPLE +=	github GodotSteam GodotSteam v4.3 godotsteam
@@ -20,14 +20,12 @@ PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -editor
 
-WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xau Xcursor Xdmcp Xext
-WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet
-WANTLIB-main += expat fontconfig freetype glib-2.0 glslang
-WANTLIB-main += glslang-default-resource-limits intl m mbedcrypto
-WANTLIB-main += mbedtls mbedx509 miniupnpc ogg pcre2-32 pcre2-8
-WANTLIB-main += sharpyuv sndio speechd steam_api theora theoradec vorbis
-WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
-
+WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xcursor Xext Xi Xinerama
+WANTLIB-main += Xrandr Xrender c dbus-1 enet fontconfig freetype glib-2.0
+WANTLIB-main += glslang glslang-default-resource-limits intl m mbedcrypto
+WANTLIB-main += mbedtls mbedx509 miniupnpc ogg pcre2-32 sndio speechd
+WANTLIB-main += steam_api theora theoradec vorbis vorbisfile webp wslay
+WANTLIB-main += xkbcommon zstd
 WANTLIB-editor = ${WANTLIB-main}
 
 # C++17

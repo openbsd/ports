@@ -6,16 +6,16 @@ Remove architecture from the program names
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -710,7 +710,7 @@ if env.msvc:
+@@ -722,7 +722,7 @@ if env.msvc:
          env.Append(LINKFLAGS=["/OPT:REF"])
      elif env["optimize"] == "debug" or env["optimize"] == "none":
          env.Append(CCFLAGS=["/Od"])
 -else:
 +elif False: # disable -g/-O/-s flags; we handle them ourselves
      if env["debug_symbols"]:
-         # Adding dwarf-4 explicitly makes stacktraces work with clang builds,
-         # otherwise addr2line doesn't understand them
-@@ -879,7 +879,6 @@ if env.dev_build:
+         if env["platform"] == "windows":
+             if methods.using_clang(env):
+@@ -908,7 +908,6 @@ if env.dev_build:
  if env["precision"] == "double":
      suffix += ".double"
  
