@@ -5,6 +5,7 @@ COMMENT =	mesh data abstration library
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
 GH_TAGNAME =	release-1.3.1
+REVISION =	0
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
 
@@ -33,7 +34,7 @@ BUILD_DEPENDS =	devel/gtest
 CXXFLAGS +=	-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
-WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf sqlite3 xml2 z
+WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf sqlite3 sz xml2 z
 
 post-extract:
 	rm ${WRKSRC}/cmake/FindSQLite3.cmake
