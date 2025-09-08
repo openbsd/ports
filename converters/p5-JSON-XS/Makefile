@@ -1,8 +1,7 @@
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
-DISTNAME =	JSON-XS-4.03
+DISTNAME =	JSON-XS-4.04
 EPOCH =		1
-REVISION =	0
 CPAN_AUTHOR =	MLEHMANN
 
 CATEGORIES =	converters

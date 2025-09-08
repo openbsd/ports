@@ -10,4 +10,4 @@ Index: XS.pm
 +no feature 'signatures';
  use common::sense;
  
- our $VERSION = '4.03';
+ our $VERSION = '4.04';
