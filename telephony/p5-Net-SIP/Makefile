@@ -1,6 +1,6 @@
 COMMENT =	perl framework for SIP
 
-DISTNAME =	Net-SIP-0.838
+DISTNAME =	Net-SIP-0.839
 
 CATEGORIES =	net telephony
 
