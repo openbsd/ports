@@ -2,15 +2,14 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.9.2
+V=		4.9.3
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	6
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		10.0 # 21.2
+SHARED_LIBS=	netcdf		11.0 # 23.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
@@ -21,25 +20,27 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-WANTLIB+=	${COMPILER_LIBCXX} blosc bz2 c crypto curl execinfo hdf5 hdf5_hl
-WANTLIB+=	iconv lz4 lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
-WANTLIB+=	pthread ssl snappy xml2 z zip zstd
+WANTLIB+=	${COMPILER_LIBCXX} aec blosc bz2 c crypto curl execinfo
+WANTLIB+=	hdf5 hdf5_hl iconv lz4 lzma m nghttp2 nghttp3 ngtcp2
+WANTLIB+=	ngtcp2_crypto_libressl pthread ssl snappy sz xml2 z zip zstd
 
 # curl is needed for DAP support
 LIB_DEPENDS=		archivers/blosc \
+			archivers/libaec \
 			archivers/libzip \
 			math/hdf5 \
 			net/curl \
 			textproc/libxml
 
-TEST_DEPENDS=		shells/bash \
+TEST_DEPENDS=		devel/libsigsegv \
+			shells/bash \
 			textproc/gdiff
 
 SITES=			https://downloads.unidata.ucar.edu/netcdf-c/$V/
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
-			CPPFLAGS="-I${LOCALBASE}/include -DH5_USE_110_API" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-doxygen \

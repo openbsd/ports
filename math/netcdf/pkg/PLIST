@@ -5,6 +5,36 @@ bin/nc-config
 @bin bin/ncgen
 @bin bin/ncgen3
 @bin bin/ocprint
+hdf5/
+hdf5/lib/
+hdf5/lib/plugin/
+@static-lib hdf5/lib/plugin/lib__nch5blosc.a
+hdf5/lib/plugin/lib__nch5blosc.la
+@so hdf5/lib/plugin/lib__nch5blosc.so
+@static-lib hdf5/lib/plugin/lib__nch5bzip2.a
+hdf5/lib/plugin/lib__nch5bzip2.la
+@so hdf5/lib/plugin/lib__nch5bzip2.so
+@static-lib hdf5/lib/plugin/lib__nch5deflate.a
+hdf5/lib/plugin/lib__nch5deflate.la
+@so hdf5/lib/plugin/lib__nch5deflate.so
+@static-lib hdf5/lib/plugin/lib__nch5fletcher32.a
+hdf5/lib/plugin/lib__nch5fletcher32.la
+@so hdf5/lib/plugin/lib__nch5fletcher32.so
+@static-lib hdf5/lib/plugin/lib__nch5shuffle.a
+hdf5/lib/plugin/lib__nch5shuffle.la
+@so hdf5/lib/plugin/lib__nch5shuffle.so
+@static-lib hdf5/lib/plugin/lib__nch5szip.a
+hdf5/lib/plugin/lib__nch5szip.la
+@so hdf5/lib/plugin/lib__nch5szip.so
+@static-lib hdf5/lib/plugin/lib__nch5zstd.a
+hdf5/lib/plugin/lib__nch5zstd.la
+@so hdf5/lib/plugin/lib__nch5zstd.so
+@static-lib hdf5/lib/plugin/lib__nczhdf5filters.a
+hdf5/lib/plugin/lib__nczhdf5filters.la
+@so hdf5/lib/plugin/lib__nczhdf5filters.so
+@static-lib hdf5/lib/plugin/lib__nczstdfilters.a
+hdf5/lib/plugin/lib__nczstdfilters.la
+@so hdf5/lib/plugin/lib__nczstdfilters.so
 include/netcdf.h
 include/netcdf_aux.h
 include/netcdf_dispatch.h
@@ -14,6 +44,7 @@ include/netcdf_filter_hdf5_build.h
 include/netcdf_json.h
 include/netcdf_mem.h
 include/netcdf_meta.h
+include/netcdf_proplist.h
 @static-lib lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.settings
