@@ -1,40 +1,33 @@
-COMMENT =	quickly rewrite git repository history
+COMMENT=	quickly rewrite git repository history
 
-V =		2.38.0
+MODPY_DISTV=	2.47.0
+DISTNAME=	git-filter-repo-${MODPY_DISTV}
 
-DISTNAME =	git-filter-repo-$V
-REVISION =	0
+CATEGORIES=	devel
 
-CATEGORIES =	devel
-
-HOMEPAGE =	https://github.com/newren/git-filter-repo/
+HOMEPAGE=	https://github.com/newren/git-filter-repo/
+SITES=		https://github.com/newren/git-filter-repo/releases/download/v${MODPY_DISTV}/
+EXTRACT_SUFX=	.tar.xz
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-SITES =		https://github.com/newren/git-filter-repo/releases/download/v$V/
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
 
-EXTRACT_SUFX =		.tar.xz
+# pypi tarball doesn't have docs, but tar.xz doesn't have files that
+# setuptools_scm can use to identify the version, so set it here
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${MODPY_DISTV}
 
-MODULES =		lang/python
-MODPY_BUILDDEP =	No
+RUN_DEPENDS=	devel/git
+TEST_DEPENDS=	devel/py-coverage
 
-RUN_DEPENDS =		devel/git
-TEST_DEPENDS =		devel/py-coverage
-
-NO_BUILD =		Yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/libexec/git
-	${INSTALL_SCRIPT} ${WRKSRC}/git-filter-repo ${PREFIX}/libexec/git
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/man1/git-filter-repo.1 \
 		${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
 	${INSTALL_DATA} ${WRKSRC}/Documentation/html/git-filter-repo.html \
 		${PREFIX}/share/doc/git
-	${INSTALL_DATA_DIR} ${DESTDIR}${MODPY_SITEPKG}
-	ln -s ${TRUEPREFIX}/libexec/git/git-filter-repo \
-		${DESTDIR}${MODPY_SITEPKG}/git_filter_repo.py
 
 do-test:
 	sed -i s,/bin/bash,/bin/sh, ${WRKSRC}/t/run_tests
