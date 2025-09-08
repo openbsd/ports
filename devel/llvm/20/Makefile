@@ -1,3 +1,6 @@
+# this is only used for lang/zig at the moment
+ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
+
 LLVM_MAJOR =	20
 LLVM_VERSION =	${LLVM_MAJOR}.1.8
 LLVM_PKGSPEC =	>=20,<21
