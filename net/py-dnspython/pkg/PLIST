@@ -14,6 +14,10 @@ lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_features.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_immutable_ctx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_immutable_ctx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_no_ssl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_no_ssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_tls_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_tls_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_trio_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_trio_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}asyncbackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,6 +26,10 @@ lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}asyncquery.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}asyncquery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}asyncresolver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}asyncresolver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}btree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}btree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}btreezone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}btreezone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}dnssec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}dnssec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}dnssectypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,10 +125,14 @@ lib/python${MODPY_VERSION}/site-packages/dns/_asyncio_backend.py
 lib/python${MODPY_VERSION}/site-packages/dns/_ddr.py
 lib/python${MODPY_VERSION}/site-packages/dns/_features.py
 lib/python${MODPY_VERSION}/site-packages/dns/_immutable_ctx.py
+lib/python${MODPY_VERSION}/site-packages/dns/_no_ssl.py
+lib/python${MODPY_VERSION}/site-packages/dns/_tls_util.py
 lib/python${MODPY_VERSION}/site-packages/dns/_trio_backend.py
 lib/python${MODPY_VERSION}/site-packages/dns/asyncbackend.py
 lib/python${MODPY_VERSION}/site-packages/dns/asyncquery.py
 lib/python${MODPY_VERSION}/site-packages/dns/asyncresolver.py
+lib/python${MODPY_VERSION}/site-packages/dns/btree.py
+lib/python${MODPY_VERSION}/site-packages/dns/btreezone.py
 lib/python${MODPY_VERSION}/site-packages/dns/dnssec.py
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/__init__.py
@@ -202,6 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DLV.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DNAME.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DNSKEY.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DS.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/DSYNC.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/EUI48.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/EUI64.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/GPOS.py
@@ -266,6 +279,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DNSKEY.
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DNSKEY.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DS.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DS.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DSYNC.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}DSYNC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}EUI48.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}EUI48.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}EUI64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -464,6 +479,7 @@ share/examples/${MODPY_PY_PREFIX}dnspython/e164.py
 share/examples/${MODPY_PY_PREFIX}dnspython/ecs.py
 share/examples/${MODPY_PY_PREFIX}dnspython/edns.py
 share/examples/${MODPY_PY_PREFIX}dnspython/edns_resolver.py
+share/examples/${MODPY_PY_PREFIX}dnspython/mx-typed.py
 share/examples/${MODPY_PY_PREFIX}dnspython/mx.py
 share/examples/${MODPY_PY_PREFIX}dnspython/name.py
 share/examples/${MODPY_PY_PREFIX}dnspython/query_specific.py
