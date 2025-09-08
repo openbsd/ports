@@ -35,3 +35,12 @@ gtk-print-preview-command = epdfview %f
 Note that by default, gnome-papers and evince will remove the temporary PDF
 preview file (/tmp/previewXXXXXX.pdf) when done, that might not be the case with
 other PDF viewers.
+
+Input Method
+============
+
+By default, GTK4 relies on the Wayland text protocol for input method support.
+For compositors without that protocol, you can manually set
+    GTK_IM_MODULE=simple
+to get back support for X11-style compose sequences and dead keys.
+Note that some Desktop environments might already override GTK4 defaults.
