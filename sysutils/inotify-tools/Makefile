@@ -4,11 +4,15 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	inotify-tools
 GH_PROJECT =	inotify-tools
 GH_TAGNAME =	4.23.9.0
+REVISION =	0
+
 SHARED_LIBS =	inotifytools 1.0 # 4.1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =		base-clang ports-gcc
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	gnu
