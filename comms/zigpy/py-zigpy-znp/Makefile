@@ -1,6 +1,6 @@
 COMMENT=	zigpy module and tools for TI CC2652/similar
 
-MODPY_DISTV=	0.14.0
+MODPY_DISTV=	0.14.1
 
 GH_ACCOUNT=	zigpy
 GH_PROJECT=	zigpy-znp
@@ -8,7 +8,6 @@ GH_TAGNAME=	v${MODPY_DISTV}
 
 DISTNAME=	zigpy-znp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	comms
 
