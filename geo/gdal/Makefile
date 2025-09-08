@@ -7,6 +7,7 @@ V =		3.11.3
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
+REVISION-main =	0
 
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
@@ -67,7 +68,7 @@ WANTLIB-main =		Lerc archive arrow arrow_acero arrow_dataset avif c crypto \
 			curl deflate expat freexl geos_c geotiff gif hdf5 iconv jpeg \
 			json-c jxl jxl_threads lzma lz4 m netcdf openjp2 parquet \
 			pcre2-8 png poppler pq proj pthread qhull_r spatialite \
-			sqlite3 ssl tiff xml2 webp z zstd SFCGAL \
+			sqlite3 ssl tiff xml2 webp z zstd SFCGAL aec sz \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
