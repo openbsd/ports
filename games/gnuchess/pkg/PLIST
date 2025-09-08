@@ -5,6 +5,8 @@ bin/gnuchessx
 @man man/man1/gnuchess.1
 share/doc/gnuchess/
 share/doc/gnuchess/README
+share/examples/gnuchess/
+share/examples/gnuchess/gnuchess.ini
 share/games/
 share/games/plugins/
 share/games/plugins/logos/
@@ -13,7 +15,6 @@ share/games/plugins/xboard/
 share/games/plugins/xboard/gnuchess.eng
 share/gnuchess/
 share/gnuchess/book.bin
-share/gnuchess/gnuchess.ini
 share/gnuchess/smallbook.bin
 share/locale/da/LC_MESSAGES/gnuchess.mo
 share/locale/de/LC_MESSAGES/gnuchess.mo

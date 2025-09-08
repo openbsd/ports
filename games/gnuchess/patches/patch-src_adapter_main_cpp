@@ -1,0 +1,23 @@
+Index: src/adapter/main.cpp
+--- src/adapter/main.cpp.orig
++++ src/adapter/main.cpp
+@@ -161,14 +161,16 @@ int main_adapter(int argc, char * argv[]) {
+ static void parse_option() {
+ 
+    const char * file_name;
+-   FILE * file;
++   FILE * file = NULL;
+    char line[256];
+    char * name, * value;
+ 
+    file_name = option_get_string("OptionFile");
+ 
+-   file = fopen(file_name,"r");
+-   if (file == NULL) my_fatal( "Can't open file \"%s\": %s - using defaults\n",file_name,strerror(errno));
++   if (file_name != NULL) {
++      file = fopen(file_name,"r");
++         if (file == NULL) my_fatal( "Can't open file \"%s\": %s - using defaults\n",file_name,strerror(errno));
++   }
+ 
+    // PolyGlot options (assumed first)
+ 
