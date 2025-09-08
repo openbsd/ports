@@ -1,6 +1,6 @@
 COMMENT=	simple GTK desktop news aggregator
 
-V=		1.16.1
+V=		1.16.3
 DISTNAME=	liferea-${V}
 
 CATEGORIES=	www news x11
@@ -14,27 +14,27 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GL LLVM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xxf86vm aom aspell atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avif brotlicommon brotlidec brotlienc c cairo cairo-gobject
-WANTLIB += dav1d dbus-1 drm drm_amdgpu elf enchant-2
-WANTLIB += epoll-shim epoxy execinfo expat ffi flite flite_cmu_grapheme_lang
+WANTLIB += dav1d dbus-1 drm drm_amdgpu elf enchant-2 epoll-shim
+WANTLIB += epoxy execinfo expat ffi flite flite_cmu_grapheme_lang
 WANTLIB += flite_cmu_grapheme_lex flite_cmu_indic_lang flite_cmu_indic_lex
 WANTLIB += flite_cmu_time_awb flite_cmu_us_awb flite_cmu_us_kal
 WANTLIB += flite_cmu_us_kal16 flite_cmu_us_rms flite_cmu_us_slt
 WANTLIB += flite_cmulex flite_usenglish fontconfig freetype fribidi
 WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gsttranscoder-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += harfbuzz-icu hwy hyphen iconv icudata icui18n icuuc
-WANTLIB += idn2 intl javascriptcoregtk-4.1 jpeg json-glib-1.0
-WANTLIB += jxl jxl_cms lcms2 lzma m nghttp2 orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-8 peas-2
-WANTLIB += pixman-1 png psl secret-1 sharpyuv sndio soup-3.0 sqlite3
-WANTLIB += tasn1 unistring wayland-client wayland-cursor wayland-egl
-WANTLIB += wayland-server webkit2gtk-4.1 webp webpdemux webpmux
-WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB += xcb-present xcb-randr xcb-render xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xkbcommon xml2 xshmfence xslt z
+WANTLIB += girepository-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gstallocators-1.0 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gsttranscoder-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB += gtk-3 harfbuzz harfbuzz-icu hwy hyphen iconv icudata
+WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.1 jpeg
+WANTLIB += json-glib-1.0 jxl jxl_cms lcms2 lzma m nghttp2 orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-8
+WANTLIB += peas-2 pixman-1 png psl secret-1 sharpyuv sndio soup-3.0
+WANTLIB += sqlite3 tasn1 unistring wayland-client wayland-cursor
+WANTLIB += wayland-egl wayland-server webkit2gtk-4.1 webp webpdemux
+WANTLIB += webpmux woff2common woff2dec xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-randr xcb-render xcb-shm xcb-sync
+WANTLIB += xcb-xfixes xkbcommon xml2 xshmfence xslt z
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 WANTLIB += drm_intel
