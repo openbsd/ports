@@ -1,6 +1,7 @@
 USE_NOBTCFI-aarch64 =	Yes# fortran
 
 V =	3.6.0
+REVISION =	0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -22,7 +23,7 @@ WANTLIB += Lerc aom arrow arrow_acero arrow_dataset avif dav1d parquet snappy th
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_serialization-mt boost_system-mt
 WANTLIB += boost_thread-mt boost_timer-mt boost_unit_test_framework-mt
-WANTLIB += SFCGAL gmp gmpxx mpfr
+WANTLIB += SFCGAL gmp gmpxx mpfr aec sz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
