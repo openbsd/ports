@@ -3,7 +3,7 @@ Use HMAC_Init_ex() instead of the deprecated HMAC_Init()
 Index: lib/https.c
 --- lib/https.c.orig
 +++ lib/https.c
-@@ -834,7 +834,7 @@ https_send(struct https_request *req, const char *meth
+@@ -977,7 +977,7 @@ https_send(struct https_request *req, const char *meth
          ctx.errstr = strerror(errno);
          return (HTTPS_ERR_LIB);
      }
