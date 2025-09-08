@@ -1,7 +1,7 @@
 Index: configure.inc
 --- configure.inc.orig
 +++ configure.inc
-@@ -1481,7 +1481,8 @@ eval \`awk -F. '{ printf "MAJOR=%d\n", \$1;
+@@ -1482,7 +1482,8 @@ eval \`awk -F. '{ printf "MAJOR=%d\n", \$1;
  shift
  
  LIBNAME=\$LIBRARY.so
@@ -10,16 +10,14 @@ Index: configure.inc
 +FULLNAME=\$LIBNAME.\$MAJOR
  
  case "\$ACTION" in
- make)   FLAGS="$AC_CFLAGS -shared"
-@@ -1490,18 +1491,13 @@ make)   FLAGS="$AC_CFLAGS -shared"
+ make)   FLAGS="$AC_CFLAGS $AC_LDFLAGS -shared"
+@@ -1491,20 +1492,11 @@ make)   FLAGS="$AC_CFLAGS $AC_LDFLAGS -shared"
  
  	rm -f \$LIBRARY \$LIBNAME \$LIBNAME.\$MAJOR
- 	if $AC_CC \$FLAGS \$VFLAGS -o \$FULLNAME "\$@"; then
--	    $PROG_LN_S \$FULLNAME \$LIBRARY
--	    $PROG_LN_S \$FULLNAME \$LIBNAME
--	    $PROG_LN_S \$FULLNAME \$LIBNAME.\$MAJOR
-+		echo "yes"
- 	fi
+ 	$AC_CC \$FLAGS \$VFLAGS -o \$FULLNAME "\$@" || exit \$?
+-	$PROG_LN_S \$FULLNAME \$LIBRARY
+-	$PROG_LN_S \$FULLNAME \$LIBNAME
+-	$PROG_LN_S \$FULLNAME \$LIBNAME.\$MAJOR
  	;;
  files)  echo "\$FULLNAME" "\$LIBNAME" "\$LIBNAME.\$MAJOR"
  	;;
@@ -27,7 +25,10 @@ Index: configure.inc
 -	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME.\$MAJOR
 -	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME
  EOF
--    test "$LDCONFIG" && echo '	'$LDCONFIG '"$1"' >> librarian.sh
+-    if [ "$LDCONFIG" -a -z "$CONTAINER" ]; then
+-	echo '	'$LDCONFIG '"$1"' >> librarian.sh
+-    fi
+-    
      cat >> librarian.sh << EOF
  	;;
  esac

@@ -1,6 +1,7 @@
---- markdown.3.orig	Wed Jan 18 21:42:06 2017
-+++ markdown.3	Thu Jan 26 18:11:47 2017
-@@ -131,7 +131,7 @@ and
+Index: markdown.3
+--- markdown.3.orig
++++ markdown.3
+@@ -135,7 +135,7 @@ and
  .Fn mkd_string
  functions return a MMIOT* on success, null on failure.
  .Sh SEE ALSO
