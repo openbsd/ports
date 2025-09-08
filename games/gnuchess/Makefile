@@ -1,3 +1,5 @@
+BROKEN=		post-build fails in dpb (or if stdin is redirected from /dev/null)
+
 COMMENT=	chess program
 
 DISTNAME=	gnuchess-6.3.0
