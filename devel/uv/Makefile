@@ -5,20 +5,18 @@ COMMENT =		Python package and project manager
 
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
-GH_TAGNAME =		0.8.12
+GH_TAGNAME =		0.8.15
 
 ASYNC_ZIP =		285e48742b74ab109887d62e1ae79e7c15fd4878
 PUBGRUB =		06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
-REQWEST_MIDDLEWARE =	ad8b9d332d1773fde8b4cd008486de5973e0a3f8
+REQWEST_MIDDLEWARE =	7650ed76215a962a96d94a79be71c27bffde7ab2
 TL =			6e25b2ee2513d75385101a8ff9f591ef51f314ec
-TOKIO_TAR =		f1488188f1d1b54a73eb0c42a8b8f4b9ee87d688
 
 DIST_TUPLE +=	github astral-sh rs-async-zip ${ASYNC_ZIP} ../rs-async-zip
 DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB} ../pubgrub
 DIST_TUPLE +=	github astral-sh reqwest-middleware ${REQWEST_MIDDLEWARE} \
 		../reqwest-middleware
 DIST_TUPLE +=	github astral-sh tl ${TL} ../tl
-DIST_TUPLE +=	github astral-sh tokio-tar ${TOKIO_TAR} ../tokio-tar
 
 CATEGORIES =		devel
 
