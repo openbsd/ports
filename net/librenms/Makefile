@@ -23,7 +23,6 @@ SITES.dep=	https://spacehopper.org/mirrors/
 MODULES=	lang/php \
 		lang/python
 MODPY_BUILDDEP= No
-MODPHP_VERSION=	8.3
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
