@@ -10,7 +10,6 @@
 include/gdk-pixbuf-2.0/
 include/gdk-pixbuf-2.0/gdk-pixbuf/
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
-include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h

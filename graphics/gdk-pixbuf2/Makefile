@@ -1,12 +1,11 @@
 COMMENT=		image data transformation library
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.42.12
-REVISION=		0
+GNOME_VERSION=		2.44.0
 
 CATEGORIES=		graphics
 
-SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4200.12
+SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4400.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -34,7 +33,11 @@ RUN_DEPENDS +=		misc/shared-mime-info
 
 MODGNOME_TOOLS=		docbook gobject-introspection shared-mime-info
 
-CONFIGURE_ARGS=		-Dinstalled_tests=false
+CONFIGURE_ARGS=		-Dinstalled_tests=false \
+			-Dglycin=disabled
+
+# XXX should not be needed
+CONFIGURE_ARGS +=	-Dandroid=disabled
 
 # XXX
 # bmp needed by games/eduke32 at build time
