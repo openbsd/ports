@@ -1,7 +1,7 @@
 Index: services/network/public/cpp/features.cc
 --- services/network/public/cpp/features.cc.orig
 +++ services/network/public/cpp/features.cc
-@@ -362,7 +362,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies,
+@@ -381,7 +381,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies,
  BASE_FEATURE(kDocumentIsolationPolicy,
               "DocumentIsolationPolicy",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

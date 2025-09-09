@@ -1,7 +1,7 @@
 Index: components/device_signals/core/common/signals_features.cc
 --- components/device_signals/core/common/signals_features.cc.orig
 +++ components/device_signals/core/common/signals_features.cc
-@@ -43,7 +43,7 @@ bool IsBrowserSignalsReportingEnabled() {
+@@ -55,7 +55,7 @@ bool IsDetectedAgentSignalCollectionEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

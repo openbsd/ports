@@ -1,7 +1,7 @@
 Index: components/os_crypt/sync/os_crypt.h
 --- components/os_crypt/sync/os_crypt.h.orig
 +++ components/os_crypt/sync/os_crypt.h
-@@ -23,7 +23,7 @@ class AppleKeychain;
+@@ -23,7 +23,7 @@ class Keychain;
  }
  #endif
  

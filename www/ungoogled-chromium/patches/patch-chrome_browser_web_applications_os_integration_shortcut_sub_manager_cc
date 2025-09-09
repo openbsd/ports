@@ -1,7 +1,7 @@
 Index: chrome/browser/web_applications/os_integration/shortcut_sub_manager.cc
 --- chrome/browser/web_applications/os_integration/shortcut_sub_manager.cc.orig
 +++ chrome/browser/web_applications/os_integration/shortcut_sub_manager.cc
-@@ -199,7 +199,7 @@ void ShortcutSubManager::Execute(
+@@ -198,7 +198,7 @@ void ShortcutSubManager::Execute(
      return;
    }
  

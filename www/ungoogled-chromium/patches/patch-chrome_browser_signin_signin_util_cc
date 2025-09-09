@@ -1,8 +1,8 @@
 Index: chrome/browser/signin/signin_util.cc
 --- chrome/browser/signin/signin_util.cc.orig
 +++ chrome/browser/signin/signin_util.cc
-@@ -315,7 +315,7 @@ SignedInState GetSignedInState(
-   return SignedInState::kSignedOut;
+@@ -340,7 +340,7 @@ std::string SignedInStateToString(SignedInState state)
+   }
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

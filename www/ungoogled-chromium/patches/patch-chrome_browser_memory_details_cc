@@ -1,7 +1,7 @@
 Index: chrome/browser/memory_details.cc
 --- chrome/browser/memory_details.cc.orig
 +++ chrome/browser/memory_details.cc
-@@ -335,7 +335,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -334,7 +334,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
            });
      }
  

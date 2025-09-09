@@ -10,7 +10,7 @@ Index: gpu/command_buffer/service/shared_context_state.cc
  #include "gpu/command_buffer/service/external_semaphore_pool.h"
  #endif
  
-@@ -302,7 +302,7 @@ SharedContextState::SharedContextState(
+@@ -304,7 +304,7 @@ SharedContextState::SharedContextState(
    if (gr_context_type_ == GrContextType::kVulkan) {
      if (vk_context_provider_) {
  #if BUILDFLAG(ENABLE_VULKAN) && \
@@ -19,7 +19,7 @@ Index: gpu/command_buffer/service/shared_context_state.cc
        external_semaphore_pool_ = std::make_unique<ExternalSemaphorePool>(this);
  #endif
        use_virtualized_gl_contexts_ = false;
-@@ -339,7 +339,7 @@ SharedContextState::~SharedContextState() {
+@@ -341,7 +341,7 @@ SharedContextState::~SharedContextState() {
    }
  
  #if BUILDFLAG(ENABLE_VULKAN) && \

@@ -42,5 +42,5 @@ Index: build/config/BUILDCONFIG.gn
 +is_freebsd = current_os == "freebsd"
 +is_bsd = current_os == "openbsd" || current_os == "freebsd"
  is_mac = current_os == "mac"
- is_nacl = current_os == "nacl"
- is_wasm = current_os == "emscripten"
+ 
+ # TODO(crbug.com/40511454): Remove is_nacl from all build files, then
