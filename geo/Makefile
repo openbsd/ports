@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += cdo
      SUBDIR += eccodes
      SUBDIR += foxtrotgps
      SUBDIR += garmindev
