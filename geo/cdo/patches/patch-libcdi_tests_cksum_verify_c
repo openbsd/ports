@@ -1,0 +1,12 @@
+Index: libcdi/tests/cksum_verify.c
+--- libcdi/tests/cksum_verify.c.orig
++++ libcdi/tests/cksum_verify.c
+@@ -29,7 +29,7 @@ main(void)
+     return EXIT_FAILURE;
+ 
+   /* this is supposed to be non-random */
+-  srand48(5L);
++  srand48_deterministic(5L);
+   init_block[7] = 15U;
+ 
+   /* repeat block and rotate */
