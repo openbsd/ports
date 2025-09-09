@@ -5,21 +5,21 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.14.1
+DISTNAME =	zig-0.15.1
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
 GH_COMMIT =	${ZIG_COMMIT}
 
-# see https://github.com/ziglang/zig/tree/0.14.1
-ZIG_VERSION =	0.14.1
-ZIG_COMMIT =	d03a147ea0a590ca711b3db07106effc559b0fc6
+# see https://github.com/ziglang/zig/tree/0.15.x
+ZIG_VERSION =	0.15.1
+ZIG_COMMIT =	3db960767d12b6214bcf43f1966a037c7a586a12
 
 CATEGORIES =	lang
 
 HOMEPAGE =	https://ziglang.org/
 
-MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
+MAINTAINER =	Brandon Mercer <bmercer@eutonian.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -33,7 +33,7 @@ MODULES +=		devel/cmake
 
 MODULES +=		lang/clang
 MODCLANG_LANGS =	c c++
-MODCLANG_VERSION =	19
+MODCLANG_VERSION =	20
 
 SEPARATE_BUILD =	Yes
 
