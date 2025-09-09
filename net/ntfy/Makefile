@@ -1,8 +1,7 @@
 COMMENT =	send push notifications to your phone or desktop
 
 MODGO_MODNAME =	heckel.io/ntfy/v2
-MODGO_VERSION =	v2.11.0
-REVISION =	0
+MODGO_VERSION =	v2.14.0
 
 DISTNAME =	ntfy-${MODGO_VERSION}
 
@@ -14,7 +13,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://ntfy.sh
 
-MAINTAINER =	Martin Reindl <martin@catai.org>
+MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
 
 # Apache-2.0/GPL-2.0
 PERMIT_PACKAGE =	Yes
@@ -41,8 +40,17 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/$i/* ${PREFIX}/share/examples/ntfy/
 .endfor
 
-# Maintainer convenience target for building the UI. Requires jq and esbuild.
-# index.html rename and config.js removal taken from upstream's Makefile.
+# Maintainer convenience target for building the UI. index.html rename and
+# config.js removal taken from upstream's Makefile. Set overrides for esbuild
+# to use our version, and for rollup to use wasm as there is no native support
+# for OpenBSD. Remove node_modules/rollup from package-lock.json because npm
+# overrides are a bit broken before 11.2.0 and we're currently at 10.9.3.
+#
+# Requires the following packages:
+# - esbuild
+# - jq
+# - node
+# - unzip
 dist: ${FULLDISTDIR}/${DISTNAME_ESC}${EXTRACT_SUFX}
 	@set -x; \
 	t=`mktemp -d /tmp/ntfy.XXXXXXXXXX`; \
@@ -51,7 +59,12 @@ dist: ${FULLDISTDIR}/${DISTNAME_ESC}${EXTRACT_SUFX}
 	cd $$t; \
 	unzip ${FULLDISTDIR}/${DISTNAME_ESC}${EXTRACT_SUFX}; \
 	cd ${MODGO_MODNAME_ESC}@${MODGO_VERSION}/web; \
-	jq '.packages["node_modules/vite"].dependencies.esbuild |= ">=0.24.0"' \
+	jq --arg esbuild_version $$(esbuild --version) '. += {overrides: { \
+	    esbuild: $$esbuild_version, \
+	    vite: {rollup: "npm:@rollup/wasm-node"}, \
+	    }}' package.json >package.json.tmp; \
+	mv package.json.tmp package.json; \
+	jq 'del(.packages["node_modules/rollup"])' \
 	    package-lock.json >package-lock.json.tmp; \
 	mv package-lock.json.tmp package-lock.json; \
 	npm install -dd --include=dev --cache=$$t/npm-cache; \
