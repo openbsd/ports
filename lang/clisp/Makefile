@@ -52,8 +52,9 @@ CFLAGS +=		-DSAFETY=2 -DNO_ASM
 
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--with-gmalloc
-CFLAGS +=		-fno-pie -nopie
+CFLAGS +=		-fno-pie
 LDFLAGS +=		-nopie
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS +=	--without-gmalloc
 .endif
