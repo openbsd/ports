@@ -1,6 +1,6 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.05.1
+VERSION =	10.06.0
 DISTNAME =	ghostpdl-${VERSION}
 PKGNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
@@ -82,7 +82,8 @@ CONFIGURE_ARGS +=	--disable-dbus
 CONFIGURE_ARGS +=	--with-x
 .endif
 
-CFLAGS +=	-DA4
+CFLAGS +=	-DA4 \
+		-I${X11BASE}/include
 
 # Needed to make the configure script detect libiconv
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
