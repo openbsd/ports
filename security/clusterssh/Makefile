@@ -1,6 +1,6 @@
 COMMENT=	secure concurrent multi-server terminal control
 
-V=		4.16
+V=		4.18
 DISTNAME=	App-ClusterSSH-$V
 PKGNAME=	clusterssh-${V:S/_/./}
 
@@ -13,7 +13,11 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_SOURCEFORGE:=clusterssh/}2.%20ClusterSSH%20Series%204/
+GH_PROJECT=	clusterssh
+GH_ACCOUNT=	duncs
+GH_TAGNAME=	v${V}
+
+WRKDIST=	${WRKDIR}/${DISTNAME}
 
 MODULES=	cpan
 PKG_ARCH=	*
