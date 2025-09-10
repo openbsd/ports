@@ -192,6 +192,7 @@ share/ibus-typing-booster/data/annotationsDerived/ar_SA.xml
 share/ibus-typing-booster/data/annotationsDerived/as.xml
 share/ibus-typing-booster/data/annotationsDerived/ast.xml
 share/ibus-typing-booster/data/annotationsDerived/az.xml
+share/ibus-typing-booster/data/annotationsDerived/ba.xml
 share/ibus-typing-booster/data/annotationsDerived/be.xml
 share/ibus-typing-booster/data/annotationsDerived/bew.xml
 share/ibus-typing-booster/data/annotationsDerived/bg.xml
@@ -311,6 +312,7 @@ share/ibus-typing-booster/data/annotationsDerived/sa.xml
 share/ibus-typing-booster/data/annotationsDerived/sat.xml
 share/ibus-typing-booster/data/annotationsDerived/sc.xml
 share/ibus-typing-booster/data/annotationsDerived/sd.xml
+share/ibus-typing-booster/data/annotationsDerived/shn.xml
 share/ibus-typing-booster/data/annotationsDerived/si.xml
 share/ibus-typing-booster/data/annotationsDerived/sk.xml
 share/ibus-typing-booster/data/annotationsDerived/sl.xml
@@ -325,6 +327,7 @@ share/ibus-typing-booster/data/annotationsDerived/su.xml
 share/ibus-typing-booster/data/annotationsDerived/sv.xml
 share/ibus-typing-booster/data/annotationsDerived/sw.xml
 share/ibus-typing-booster/data/annotationsDerived/sw_KE.xml
+share/ibus-typing-booster/data/annotationsDerived/syr.xml
 share/ibus-typing-booster/data/annotationsDerived/ta.xml
 share/ibus-typing-booster/data/annotationsDerived/te.xml
 share/ibus-typing-booster/data/annotationsDerived/tg.xml
@@ -385,6 +388,9 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_emoji.${MODPY_PYC_MAGIC_TAG
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_nltk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_nltk.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_nltk.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_ollama.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_ollama.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_ollama.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_pango.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_pango.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_pango.${MODPY_PYC_MAGIC_TAG}pyc
@@ -417,6 +423,7 @@ share/ibus-typing-booster/engine/hunspell_table.py
 share/ibus-typing-booster/engine/itb_active_window.py
 share/ibus-typing-booster/engine/itb_emoji.py
 share/ibus-typing-booster/engine/itb_nltk.py
+share/ibus-typing-booster/engine/itb_ollama.py
 share/ibus-typing-booster/engine/itb_pango.py
 share/ibus-typing-booster/engine/itb_sound.py
 share/ibus-typing-booster/engine/itb_util.py
