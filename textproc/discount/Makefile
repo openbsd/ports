@@ -1,6 +1,6 @@
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-3.0.1.1
+DISTNAME =		discount-3.0.1.2
 EXTRACT_SUFX =		.tar.bz2
 SHARED_LIBS =		markdown 1.0
 CATEGORIES =		textproc
