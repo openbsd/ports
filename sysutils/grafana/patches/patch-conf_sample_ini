@@ -23,9 +23,9 @@ Index: conf/sample.ini
 -;provisioning = conf/provisioning
 +provisioning = ${SYSCONFDIR}/grafana/provisioning
  
- #################################### Server ####################################
- [server]
-@@ -261,7 +261,7 @@
+ # Directories that are permitted to contain local repositories.
+ # This is a list. Each entry is delimited by a pipe (|). No leading or trailing spaces are supported.
+@@ -268,7 +268,7 @@
  # No ip addresses are being tracked, only simple counters to track
  # running instances, dashboard and error counts. It is very helpful to us.
  # Change this option to false to disable reporting.
@@ -34,7 +34,7 @@ Index: conf/sample.ini
  
  # The name of the distributor of the Grafana instance. Ex hosted-grafana, grafana-labs
  ;reporting_distributor = grafana-labs
-@@ -271,7 +271,7 @@
+@@ -278,7 +278,7 @@
  # in some UI views to notify that a grafana update exists.
  # This option does not cause any auto updates, nor send any information
  # only a GET request to https://grafana.com/api/grafana/versions/stable to get the latest version.
@@ -43,12 +43,12 @@ Index: conf/sample.ini
  
  # Set to false to disable all checks to https://grafana.com
  # for new versions of plugins. The check is used
-@@ -1089,7 +1089,7 @@
+@@ -1103,7 +1103,7 @@
  [log]
  # Either "console", "file", "syslog". Default is console and  file
  # Use space to separate multiple modes, e.g. "console file"
 -;mode = console file
 +mode = file
  
- # Either "debug", "info", "warn", "error", "critical", default is "info"
+ # Either "debug", "info", "warn", "error". Default is "info"
  ;level = info

@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	i386
 
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		11.6.4
+V =		12.1.1
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
@@ -36,12 +36,6 @@ WANTLIB +=	c pthread
 MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
 MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
-
-post-extract:
-	mv ${WRKDIR}/grafana-v${V}/public/build \
-		${WRKDIR}/grafana-${V}/public
-	cp -R ${WRKDIR}/grafana-v${V}/public/lib \
-		${WRKDIR}/grafana-${V}/public/
 
 do-build:
 	mkdir -p ${WRKDIR}/go/src/github.com/grafana
