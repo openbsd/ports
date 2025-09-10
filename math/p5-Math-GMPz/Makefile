@@ -1,7 +1,7 @@
 COMMENT =	perl interface to GMP integer functions
 
 MODULES =	cpan
-DISTNAME =	Math-GMPz-0.65
+DISTNAME =	Math-GMPz-0.67
 CATEGORIES =	math
 
 # Perl
