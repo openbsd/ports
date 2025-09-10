@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -13207,8 +13207,8 @@ DLL_EXT=""
+@@ -13373,8 +13373,8 @@ DLL_EXT=""
  SO_LIB_VERSION_SEPARATOR="."
  
  libname1="_SO_BASE)\$(GS_SOEXT)\$(DLL_EXT)"
@@ -12,7 +12,7 @@ Index: configure
  GS_SONAME="lib\$(GS${libname1}"
  GS_SONAME_MAJOR="lib\$(GS${libname2}"
  GS_SONAME_MAJOR_MINOR="lib\$(GS${libname3}"
-@@ -13320,11 +13320,11 @@ case $host in
+@@ -13486,11 +13486,11 @@ case $host in
      ;;
      *bsd*)
        DYNAMIC_CFLAGS="-fPIC $DYNAMIC_CFLAGS"
