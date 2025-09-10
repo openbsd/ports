@@ -2,9 +2,7 @@ COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
-GH_TAGNAME=		v4.6.0
-PKGNAME=		pdfpc-${GH_TAGNAME:S/v//:S/-/./:S/_/./}
-REVISION=		0
+GH_TAGNAME=		v4.7.0
 
 CATEGORIES=		textproc
 
