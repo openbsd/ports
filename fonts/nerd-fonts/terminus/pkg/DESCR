@@ -4,4 +4,5 @@ extra glyphs from popular 'iconic fonts' such as Font Awesome, Devicons,
 Octicons, and others. The font patcher utility is not included in this
 package.
 
-This package contains the terminus patched font.
+This package a patched version of the Terminus font, renamed Terminess
+to comply with the SIL Open Font License 'Reserved Font Name mechanism'.
