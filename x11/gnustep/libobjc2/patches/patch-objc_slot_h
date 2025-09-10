@@ -1,0 +1,14 @@
+Enable objc_method_cache_version on powerpc.
+
+Index: objc/slot.h
+--- objc/slot.h.orig
++++ objc/slot.h
+@@ -31,7 +31,7 @@ struct objc_slot2
+  * Caching is disabled on targets without native 64-bit atomics support such
+  * as PowerPC 32-bit.
+  */
+-#if defined(__powerpc__) && !defined(__powerpc64__)
++#if 0 && defined(__powerpc__) && !defined(__powerpc64__)
+ #else
+ OBJC_PUBLIC extern _Atomic(uint64_t) objc_method_cache_version;
+ #endif

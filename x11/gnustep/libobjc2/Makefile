@@ -9,6 +9,7 @@ GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
 DISTNAME =	libobjc2-${VERSION:S/_//}
 PKGNAME =	gnustep-${DISTNAME}
+REVISION =	0
 
 SHARED_LIBS +=	objc2	3.0
 SHARED_LIBS +=  objcxx	2.0

@@ -1,0 +1,14 @@
+Enable objc_method_cache_version on powerpc.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -188,7 +188,7 @@ add_compile_options($<$<STREQUAL:${CMAKE_SYSTEM_PROCES
+ # which is used in safe caching.
+ # You must also update the guard in objc/runtime.h, when updating
+ # this macro.
+-if (ARCHITECTURE STREQUAL "powerpc")
++if (OFF AND ARCHITECTURE STREQUAL "powerpc")
+ 	add_definitions(-DNO_SAFE_CACHING)
+ endif()
+ 
