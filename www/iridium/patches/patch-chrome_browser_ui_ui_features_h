@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.h
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -225,7 +225,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+@@ -292,7 +292,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

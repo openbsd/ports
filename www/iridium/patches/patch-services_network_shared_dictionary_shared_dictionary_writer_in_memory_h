@@ -9,4 +9,4 @@ Index: services/network/shared_dictionary/shared_dictionary_writer_in_memory.h
 +
  #include "base/component_export.h"
  #include "base/functional/callback.h"
- #include "crypto/secure_hash.h"
+ #include "crypto/hash.h"

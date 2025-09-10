@@ -1,7 +1,7 @@
 Index: third_party/perfetto/src/base/event_fd.cc
 --- third_party/perfetto/src/base/event_fd.cc.orig
 +++ third_party/perfetto/src/base/event_fd.cc
-@@ -24,7 +24,8 @@
+@@ -25,7 +25,8 @@
  #include <synchapi.h>
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_QNX)
  #include <unistd.h>
@@ -11,7 +11,7 @@ Index: third_party/perfetto/src/base/event_fd.cc
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/eventfd.h>
  #include <unistd.h>
-@@ -59,7 +60,8 @@ void EventFd::Clear() {
+@@ -60,7 +61,8 @@ void EventFd::Clear() {
      PERFETTO_DFATAL("EventFd::Clear()");
  }
  

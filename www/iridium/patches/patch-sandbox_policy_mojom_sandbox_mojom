@@ -1,7 +1,7 @@
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -74,6 +74,12 @@ enum Sandbox {
+@@ -71,6 +71,12 @@ enum Sandbox {
    // Minimally privileged sandbox on Fuchsia.
    [EnableIf=is_fuchsia] kVideoCapture,
  

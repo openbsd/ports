@@ -1,7 +1,7 @@
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2580,6 +2580,14 @@ source_set("browser") {
+@@ -2599,6 +2599,14 @@ source_set("browser") {
      ]
    }
  
@@ -16,7 +16,7 @@ Index: content/browser/BUILD.gn
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2628,6 +2636,15 @@ source_set("browser") {
+@@ -2647,6 +2655,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]

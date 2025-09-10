@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2025.07.138.1
+V=			2025.09.140
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -130,8 +130,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		openh264 \
 		opus
 
-GN_ARGS=	enable_nacl=false \
-		is_official_build=true \
+GN_ARGS=	is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=true \

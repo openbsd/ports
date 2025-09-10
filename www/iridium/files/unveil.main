@@ -35,6 +35,9 @@
 /usr/local/bin/xdg-open rx
 /usr/local/bin/xdg-settings rx
 
+# libexpat is required for file dialog
+/usr/lib r
+
 # misc. files and libraries
 /usr/local/lib r
 /usr/local/iridium rx
@@ -94,3 +97,5 @@
 
 # use this directory for downloading and uploading
 ~/Downloads rwc
+
+XDG_RUNTIME_DIR rwc

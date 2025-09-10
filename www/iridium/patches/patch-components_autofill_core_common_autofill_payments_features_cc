@@ -1,8 +1,8 @@
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -326,7 +326,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
- #endif  // BUILDFLAG(IS_ANDROID)
+@@ -345,7 +345,7 @@ BASE_FEATURE(kDisableAutofillStrikeSystem,
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX)

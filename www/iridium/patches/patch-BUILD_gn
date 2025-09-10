@@ -1,7 +1,7 @@
 Index: BUILD.gn
 --- BUILD.gn.orig
 +++ BUILD.gn
-@@ -71,7 +71,7 @@ declare_args() {
+@@ -68,7 +68,7 @@ declare_args() {
    root_extra_deps = []
  }
  
@@ -10,7 +10,7 @@ Index: BUILD.gn
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -103,7 +103,6 @@ group("gn_all") {
+@@ -101,7 +101,6 @@ group("gn_all") {
        "//codelabs",
        "//components:components_unittests",
        "//components/gwp_asan:gwp_asan_unittests",
@@ -18,7 +18,7 @@ Index: BUILD.gn
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -448,7 +447,7 @@ group("gn_all") {
+@@ -441,7 +440,7 @@ group("gn_all") {
        }
      }
  
@@ -27,7 +27,7 @@ Index: BUILD.gn
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -635,6 +634,15 @@ group("gn_all") {
+@@ -607,6 +606,15 @@ group("gn_all") {
        }
      }
  
@@ -43,7 +43,7 @@ Index: BUILD.gn
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
-@@ -683,7 +691,7 @@ group("gn_all") {
+@@ -655,7 +663,7 @@ group("gn_all") {
        }
      }
  
@@ -52,7 +52,7 @@ Index: BUILD.gn
        # The official builders use this binary from the default toolchain's
        # output directory after building in order to upload the symbols of that
        # binary. They build the binary like `ninja symupload` which requires the
-@@ -718,7 +726,7 @@ group("gn_all") {
+@@ -690,7 +698,7 @@ group("gn_all") {
        ]
      }
  
@@ -61,7 +61,7 @@ Index: BUILD.gn
        deps += [
          "//third_party/crashpad/crashpad:crashpad_tests",
          "//third_party/crashpad/crashpad/handler:crashpad_handler",
-@@ -1127,7 +1135,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1093,7 +1101,7 @@ if (use_blink && !is_cronet_build) {
        "//third_party/blink/public:all_blink",
      ]
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        deps += [
          ":chrome_wpt_tests",
          ":headless_shell_wpt",
-@@ -1274,7 +1282,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1246,7 +1254,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1288,7 +1296,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1260,7 +1268,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
@@ -88,7 +88,7 @@ Index: BUILD.gn
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1742,7 +1750,7 @@ group("chromium_builder_perf") {
+@@ -1714,7 +1722,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

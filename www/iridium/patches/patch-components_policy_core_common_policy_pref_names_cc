@@ -1,7 +1,7 @@
 Index: components/policy/core/common/policy_pref_names.cc
 --- components/policy/core/common/policy_pref_names.cc.orig
 +++ components/policy/core/common/policy_pref_names.cc
-@@ -191,7 +191,7 @@ const char kFloatingWorkspaceEnabled[] = "ash.floating
+@@ -199,7 +199,7 @@ const char kFloatingWorkspaceEnabled[] = "ash.floating
  // A boolean value indicating whether the built-in AI APIs are enabled.
  const char kBuiltInAIAPIsEnabled[] = "policy.built_in_ai_apis_enabled";
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

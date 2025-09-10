@@ -2,7 +2,7 @@ Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
 @@ -25,10 +25,15 @@
- #include "base/trace_event/base_tracing.h"
+ #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_MAC)

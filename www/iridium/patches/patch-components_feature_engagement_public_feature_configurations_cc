@@ -19,7 +19,7 @@ Index: components/feature_engagement/public/feature_configurations.cc
    if (kIPHPasswordsManagementBubbleAfterSaveFeature.name == feature->name) {
      FeatureConfig config;
      config.valid = true;
-@@ -1885,7 +1885,8 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
+@@ -1956,7 +1956,8 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

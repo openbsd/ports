@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/tabs/tab_dialog_manager.cc
 --- chrome/browser/ui/tabs/tab_dialog_manager.cc.orig
 +++ chrome/browser/ui/tabs/tab_dialog_manager.cc
-@@ -83,7 +83,7 @@ bool SupportsGlobalScreenCoordinates() {
+@@ -88,7 +88,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {

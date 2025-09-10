@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
 --- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
-@@ -531,7 +531,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
+@@ -564,7 +564,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
      Browser* browser,
      Profile* profile,
      const std::string& app_id) {
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
    WebAppProvider* provider = WebAppProvider::GetForWebApps(profile);
    CHECK(provider);
  
-@@ -760,7 +760,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
+@@ -793,7 +793,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
    }
  }
  

@@ -1,7 +1,7 @@
 Index: components/viz/service/gl/gpu_service_impl.cc
 --- components/viz/service/gl/gpu_service_impl.cc.orig
 +++ components/viz/service/gl/gpu_service_impl.cc
-@@ -515,7 +515,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
+@@ -501,7 +501,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
  
    mojo::Remote<mojom::GpuHost> gpu_host(std::move(pending_gpu_host));
  
@@ -10,7 +10,7 @@ Index: components/viz/service/gl/gpu_service_impl.cc
    gpu_extra_info_.is_gmb_nv12_supported = IsGMBNV12Supported();
  #endif
  
-@@ -1351,7 +1351,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
+@@ -1266,7 +1266,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
    return true;
  }
  
@@ -18,4 +18,4 @@ Index: components/viz/service/gl/gpu_service_impl.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  bool GpuServiceImpl::IsGMBNV12Supported() {
    CHECK(main_runner_->BelongsToCurrentThread());
-   auto buffer_format = gfx::BufferFormat::YUV_420_BIPLANAR;
+ 

@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.cc
  // Enables the feature to remove the last confirmation dialog when relaunching
  // to update Chrome.
  BASE_FEATURE(kFewerUpdateConfirmations,
-@@ -359,7 +359,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
+@@ -398,7 +398,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

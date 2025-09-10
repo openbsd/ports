@@ -50,14 +50,14 @@ Index: content/common/gpu_pre_sandbox_hook_bsd.cc
 +  }
 +}
 +
++}  // namespace
++
 +bool LoadLibrariesForGpu(
 +    const sandbox::policy::SandboxSeccompBPF::Options& options) {
 +  LoadVulkanLibraries();
 +
 +  return true;
 +}
-+
-+}  // namespace
 +
 +bool GpuPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
 +  if (!LoadLibrariesForGpu(options))

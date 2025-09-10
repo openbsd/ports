@@ -1,7 +1,7 @@
 Index: ui/gl/gl_fence.cc
 --- ui/gl/gl_fence.cc.orig
 +++ ui/gl/gl_fence.cc
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include "ui/gl/gl_surface_egl.h"
  #include "ui/gl/gl_version_info.h"
  

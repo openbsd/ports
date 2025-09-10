@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/signin/signin_view_controller.h
 --- chrome/browser/ui/signin/signin_view_controller.h.orig
 +++ chrome/browser/ui/signin/signin_view_controller.h
-@@ -150,7 +150,7 @@ class SigninViewController {
+@@ -169,7 +169,7 @@ class SigninViewController {
    void ShowModalSyncConfirmationDialog(bool is_signin_intercept,
                                         bool is_sync_promo);
  
