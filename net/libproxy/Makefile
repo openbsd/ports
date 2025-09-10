@@ -2,11 +2,11 @@ COMMENT=		library for automatic proxy configuration management
 
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
-GH_TAGNAME=		0.5.10
+GH_TAGNAME=		0.5.11
 
 CATEGORIES=		net
 
-SHARED_LIBS += proxy                     2.0 # 0.5.9
+SHARED_LIBS += proxy                     2.0 # 0.5.11
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
