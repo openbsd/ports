@@ -258,7 +258,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/logutils				 v1.0.0 \
 	github.com/hashicorp/mdns				 v1.0.4 \
 	github.com/hashicorp/memberlist				 v0.5.0 \
-	github.com/hashicorp/packer-plugin-sdk			 v0.6.2 \
+	github.com/hashicorp/packer-plugin-sdk			 v0.6.3 \
 	github.com/hashicorp/serf				 v0.10.1 \
 	github.com/hashicorp/vault/api				 v1.14.0 \
 	github.com/hashicorp/yamux				 v0.1.1 \
@@ -355,7 +355,7 @@ MODGO_MODULES =	\
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
 	github.com/ugorji/go					 v1.2.6 \
 	github.com/ugorji/go/codec				 v1.2.6 \
-	github.com/ulikunitz/xz					 v0.5.10 \
+	github.com/ulikunitz/xz					 v0.5.15 \
 	github.com/vmihailenco/msgpack/v5			 v5.3.5 \
 	github.com/vmihailenco/tagparser/v2			 v2.0.0 \
 	github.com/xanzy/ssh-agent				 v0.3.3 \
@@ -588,6 +588,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify				 v1.8.3 \
 	github.com/stretchr/testify				 v1.8.4 \
 	github.com/stretchr/testify				 v1.9.0 \
+	github.com/ulikunitz/xz					 v0.5.10 \
 	github.com/ulikunitz/xz					 v0.5.6 \
 	github.com/ulikunitz/xz					 v0.5.8 \
 	github.com/xeipuuv/gojsonpointer			 v0.0.0-20180127040702-4e3ac2762d5f \

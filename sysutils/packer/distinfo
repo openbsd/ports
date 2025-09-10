@@ -620,8 +620,8 @@ SHA256 (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.mod) = Qg+dMJAs/crFd7Q9pJ
 SHA256 (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.zip) = 99BPSExbOYAYOFrZVKkisNlNDLJjFXgL+ZW+3t4WZwQ=
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.5.0.mod) = LmBqB1WAKOWz56pJN/g8H1wSzrIyp0YEQOFaigz9r84=
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.5.0.zip) = pLSEoJOcOj9yY/tGPWXTANaUW90s8vvFny0NVcRJ8ks=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.2.mod) = 1Ouecj2GogNUTuAabw5MHB17VF0S+l3d40mVrvnQPGA=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.2.zip) = tSLwkLcc5zlBPY8jlPpO95qAy9QM9rmbeTuTWO4eemM=
+SHA256 (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.3.mod) = 1Ouecj2GogNUTuAabw5MHB17VF0S+l3d40mVrvnQPGA=
+SHA256 (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.3.zip) = JxhfGPgpaFPW3y2WdiNIms47KOF46WQGveGVf/Oby0Y=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.10.1.mod) = M5bMQLrgoLM9xDdIKWznRfgD/STglZt+ddFOiePPqa4=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.10.1.zip) = Zhtq1d9Jfc2g9YFgewA+QGRu+fPKCdEr3ux8s9Fq03A=
 SHA256 (go_modules/github.com/hashicorp/vault/api/@v/v1.14.0.mod) = Bd8bZH6IrAyWolNq+tTfY4nIMyqTHRDicPMh3fn/mWA=
@@ -888,7 +888,8 @@ SHA256 (go_modules/github.com/ugorji/go/@v/v1.2.6.zip) = xHjJ3K3InFuZjOyq+2D6wWd
 SHA256 (go_modules/github.com/ugorji/go/codec/@v/v1.2.6.mod) = QGSn9Bir+B5pG4RFbMvVMg4Ttdw04+pMkr/mnBtlcbs=
 SHA256 (go_modules/github.com/ugorji/go/codec/@v/v1.2.6.zip) = eTcm4jjsCuAC6LlGUznbWKyo2rnMlOvoNCwzkAY2txA=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
-SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.zip) = wZUTZo3cSboPlDRGSGGdR9HBuNV5Oaw3yMuQGMYUTMc=
+SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
+SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = yhgw+avGyZoAOtKPKxReoK8MmdV2nd/wjSPOBVlZ/RI=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.6.mod) = 10N/TA8REMegB+u90zFHaMYSEPONLMX0H+GHCJKltpg=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.8.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/vmihailenco/msgpack/v5/@v/v5.3.5.mod) = yRuzJwUTxqu2KNMY9No+BZZbqgjTwgNtXd45ihWu0ok=
@@ -1209,7 +1210,7 @@ SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod)
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (packer-v1.14.1.zip) = v/WU96ysPD0Vv1MqnDTg/NKUtDSf7vXAN6N09fRLwwQ=
+SHA256 (packer-v1.14.2.zip) = Kzkupvr/Tw9w6Mdm2zYvMPpCUfJ5wiXgu846Faz/ruQ=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = 1150
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.mod) = 1308
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.zip) = 304879
@@ -1832,8 +1833,8 @@ SIZE (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.mod) = 138
 SIZE (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.zip) = 14742
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.5.0.mod) = 731
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.5.0.zip) = 124490
-SIZE (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.2.mod) = 6239
-SIZE (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.2.zip) = 521240
+SIZE (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.3.mod) = 6239
+SIZE (go_modules/github.com/hashicorp/packer-plugin-sdk/@v/v0.6.3.zip) = 521107
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.10.1.mod) = 831
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.10.1.zip) = 556099
 SIZE (go_modules/github.com/hashicorp/vault/api/@v/v1.14.0.mod) = 1675
@@ -2100,7 +2101,8 @@ SIZE (go_modules/github.com/ugorji/go/@v/v1.2.6.zip) = 5612
 SIZE (go_modules/github.com/ugorji/go/codec/@v/v1.2.6.mod) = 80
 SIZE (go_modules/github.com/ugorji/go/codec/@v/v1.2.6.zip) = 342562
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = 40
-SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.zip) = 514051
+SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = 40
+SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = 4245181
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.6.mod) = 31
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.8.mod) = 40
 SIZE (go_modules/github.com/vmihailenco/msgpack/v5/@v/v5.3.5.mod) = 143
@@ -2421,4 +2423,4 @@ SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) =
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (packer-v1.14.1.zip) = 2973645
+SIZE (packer-v1.14.2.zip) = 2977590
