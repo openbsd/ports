@@ -161,3 +161,7 @@ share/locale/zh_TW/LC_MESSAGES/p11-kit.mo
 share/p11-kit/
 share/p11-kit/modules/
 share/p11-kit/modules/p11-kit-trust.module
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_p11-kit
+share/zsh/site-functions/_trust
