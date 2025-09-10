@@ -685,8 +685,6 @@ lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}loggers
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}loggers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}opentracing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}opentracing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}scopecontextmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/synapse/logging/${MODPY_PYCACHE}scopecontextmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/_remote.py
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/_terse_json.py
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/context.py
@@ -695,7 +693,6 @@ lib/python${MODPY_VERSION}/site-packages/synapse/logging/formatter.py
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/handlers.py
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/loggers.py
 lib/python${MODPY_VERSION}/site-packages/synapse/logging/opentracing.py
-lib/python${MODPY_VERSION}/site-packages/synapse/logging/scopecontextmanager.py
 lib/python${MODPY_VERSION}/site-packages/synapse/media/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/media/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/media/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
