@@ -1,6 +1,6 @@
 COMMENT=	Python HTTP client library
 
-MODPY_DISTV=	0.30.0
+MODPY_DISTV=	0.30.2
 DISTNAME=	httplib2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -19,6 +19,8 @@ TEST_DEPENDS=	devel/py-test-cov \
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+# needs py-test-forked (not ported) and net/py-socks
+MODPY_PYTEST_ARGS= --ignore tests/test_proxy.py
 
 post-install:
 	ln -sf /etc/ssl/cert.pem \
