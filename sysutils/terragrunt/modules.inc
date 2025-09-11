@@ -648,7 +648,7 @@ MODGO_MODULES =	\
 	github.com/tmccombs/hcl2json									 v0.6.4 \
 	github.com/tombuildsstuff/giovanni								 v0.15.1 \
 	github.com/ugorji/go										 v0.0.0-20180813092308-00b869d2f4a5 \
-	github.com/ulikunitz/xz										 v0.5.12 \
+	github.com/ulikunitz/xz										 v0.5.15 \
 	github.com/urfave/cli										 v1.22.16 \
 	github.com/urfave/cli/v2									 v2.27.7 \
 	github.com/valyala/bytebufferpool								 v1.0.0 \
@@ -1973,6 +1973,7 @@ MODGO_MODFILES =	\
 	github.com/tidwall/pretty								 v1.2.0 \
 	github.com/tmccombs/hcl2json								 v0.3.3 \
 	github.com/ulikunitz/xz									 v0.5.10 \
+	github.com/ulikunitz/xz									 v0.5.12 \
 	github.com/ulikunitz/xz									 v0.5.8 \
 	github.com/urfave/cli/v2								 v2.10.3 \
 	github.com/urfave/cli/v2								 v2.27.5 \

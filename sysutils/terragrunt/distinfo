@@ -2494,7 +2494,8 @@ SHA256 (go_modules/github.com/ugorji/go/@v/v0.0.0-20180813092308-00b869d2f4a5.mo
 SHA256 (go_modules/github.com/ugorji/go/@v/v0.0.0-20180813092308-00b869d2f4a5.zip) = f7IQhCjFMI0Z/l7JmLtvFtm6i43G1lTKSR6+C+sLbcg=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.12.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
-SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.12.zip) = DLoyaBQOfBEsMpsZzj1MjUdop4T+DIARK/p79DrOGko=
+SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
+SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = yhgw+avGyZoAOtKPKxReoK8MmdV2nd/wjSPOBVlZ/RI=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.8.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/urfave/cli/@v/v1.22.16.mod) = iqXNLqRj1GavBE3uJrAP0L+/gthPsF1ZnGQrkZ+v3tU=
 SHA256 (go_modules/github.com/urfave/cli/@v/v1.22.16.zip) = Lz65PxQKpATls1in0ajG/WxeuurSm3wkj8ofLpk2WWs=
@@ -3763,7 +3764,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.87.0.zip) = IYkrPTt0T0AGwNfXalSxG2ki1OwSNb2yZ9pYypvMzxQ=
+SHA256 (terragrunt-v0.87.1.zip) = Y+AicG4TdFJ6MeuGqv/gRJXYoqDv9GT6+NfkRLd2jTo=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -6260,7 +6261,8 @@ SIZE (go_modules/github.com/ugorji/go/@v/v0.0.0-20180813092308-00b869d2f4a5.mod)
 SIZE (go_modules/github.com/ugorji/go/@v/v0.0.0-20180813092308-00b869d2f4a5.zip) = 355151
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = 40
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.12.mod) = 40
-SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.12.zip) = 4240722
+SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = 40
+SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = 4245181
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.8.mod) = 40
 SIZE (go_modules/github.com/urfave/cli/@v/v1.22.16.mod) = 188
 SIZE (go_modules/github.com/urfave/cli/@v/v1.22.16.zip) = 111928
@@ -7529,4 +7531,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.87.0.zip) = 9059796
+SIZE (terragrunt-v0.87.1.zip) = 9141473
