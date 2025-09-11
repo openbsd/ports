@@ -1,7 +1,7 @@
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_DISTV =	1.4.3
-REVISION =	1
+REVISION =	2
 DISTNAME =	rasterio-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -35,7 +35,6 @@ RUN_DEPENDS =	geo/py-cligj>=0.5 \
 		devel/py-click \
 		devel/py-click-plugins \
 		math/py-numpy \
-		math/py-snuggs \
 		math/py-affine
 
 # test_read_no_band requires hdf5 support in GDAL
