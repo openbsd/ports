@@ -2,8 +2,7 @@ COMMENT =	Unicode support to C++ with simple and easy APIs
 
 GH_ACCOUNT =	contour-terminal
 GH_PROJECT =	libunicode
-GH_TAGNAME =	v0.4.0
-REVISION =	1
+GH_TAGNAME =	v0.6.0
 
 SHARED_LIBS  =	unicode		0.0 # 0.0
 SHARED_LIBS +=	unicode_loader	0.0 # 0.0
@@ -19,13 +18,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} c m
 
 # C++20
-COMPILER =		base-clang ports-gcc
+COMPILER =		base-clang
 
 MODULES =		devel/cmake \
 			lang/python
 
-BUILD_DEPENDS =		devel/fmt \
-			textproc/unicode/ucd
+BUILD_DEPENDS =		textproc/unicode/ucd
 
 CONFIGURE_STYLE =	cmake
 
