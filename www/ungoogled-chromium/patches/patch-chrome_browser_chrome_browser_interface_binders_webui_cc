@@ -49,7 +49,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui.cc
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -1190,7 +1190,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1191,7 +1191,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
