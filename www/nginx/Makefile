@@ -22,7 +22,7 @@ COMMENT-xslt=		nginx XSLT filter module
 VERSION=	1.28.0
 REVISION=	1
 REVISION-mailproxy=	2
-REVISION-njs=		2
+REVISION-njs=	3
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -106,6 +106,9 @@ WANTLIB-mailproxy=
 WANTLIB-modsecurity=	modsecurity
 WANTLIB-naxsi=
 WANTLIB-njs=		exslt m xml2 xslt
+# not recorded in DT_NEEDED for the njs-related modules, but
+# pcre2-8 functions are still used there
+WANTLIB-njs+=		pcre2-8
 WANTLIB-perl=		c m perl
 WANTLIB-rtmp=
 WANTLIB-securelink=	crypto
