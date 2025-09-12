@@ -1,0 +1,2 @@
+Hatchling plugin to read project dependencies from requirements.txt.
+Only a subset of pip's requirements.txt format is supported.
