@@ -1,8 +1,8 @@
 COMMENT=		Unicode character map for the GNOME project
-REVISION=		1
 
 # XXX keep in sync major with textproc/unicode/ucd
-DIST_TUPLE=		gnome GNOME gucharmap 16.0.2 .
+GNOME_PROJECT=		gucharmap
+GNOME_VERSION=		17.0.0
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0
 
