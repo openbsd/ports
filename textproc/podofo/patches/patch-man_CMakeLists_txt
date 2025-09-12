@@ -1,0 +1,10 @@
+Index: man/CMakeLists.txt
+--- man/CMakeLists.txt.orig
++++ man/CMakeLists.txt
+@@ -17,5 +17,5 @@ INSTALL(FILES
+   podofotxtextract.1
+   podofouncompress.1
+   podofoxmp.1
+-  DESTINATION ${MANDIR}man1
++  DESTINATION man/man1
+   )

@@ -1,47 +1,38 @@
 COMMENT=	library and tools to modify and parse PDF documents
 
-DISTNAME=	podofo-0.9.8
-REVISION=	0
+V =		0.10.5
+DIST_TUPLE +=	github podofo podofo ${V} .
+DISTNAME=	podofo-${V}
 
-SHARED_LIBS +=	podofo                    4.0 # 0.9.8
+SHARED_LIBS +=	podofo                    5.0 # 0.10.5
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	https://podofo.sourceforge.net/
+HOMEPAGE=	https://podofo.github.io/podofo/documentation/
 
 # GPLv2+ (tools) LGPLv2+ (lib)
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto fontconfig freetype idn
-WANTLIB += jpeg m png ssl tiff unistring z
-
-SITES=		${SITE_SOURCEFORGE:=podofo/}
+WANTLIB += jpeg m png ssl tiff xml2 z
 
 MODULES=	devel/cmake
 
 # C++
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS=	converters/libunistring \
-		devel/libidn \
+LIB_DEPENDS=	devel/libidn \
 		graphics/jpeg \
 		graphics/png \
-		graphics/tiff
+		graphics/tiff \
+		textproc/libxml
 
 # only for tests
-BUILD_DEPENDS=	devel/cppunit
+BUILD_DEPENDS=	devel/catch2
 
-CXXFLAGS =	-I${X11BASE}/include
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
-
-CONFIGURE_ARGS+=	-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
-			-DPODOFO_BUILD_SHARED=True \
-			-DPODOFO_BUILD_STATIC=True
-
-post-extract:
-	rm ${WRKSRC}/cmake/modules/FindZLIB.cmake
-
-do-test:
-	${WRKBUILD}/test/unit/podofo-test
+CONFIGURE_ARGS =	-DPODOFO_BUILD_TOOLS=True \
+			-DPODOFO_HAVE_JPEG_LIB=True \
+			-DPODOFO_HAVE_PNG_LIB=True \
+			-DPODOFO_HAVE_TIFF_LIB=True
 
 .include <bsd.port.mk>
