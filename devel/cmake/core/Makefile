@@ -1,8 +1,9 @@
 DPB_PROPERTIES =	parallel
 
 PKGNAME =	cmake-core-${VER}
-PKGNAME-core =	cmake-core-${VER}
+PKGNAME-main =	cmake-core-${VER}
 PKGNAME-help =	cmake-help-${VER}
+REVISION-main = 0
 
 COMMENT-main =	portable build system
 COMMENT-help =	files for CMake --help
