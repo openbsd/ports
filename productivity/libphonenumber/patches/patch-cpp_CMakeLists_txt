@@ -60,3 +60,12 @@ Index: cpp/CMakeLists.txt
  endif ()
  
  include_directories ("src")
+@@ -427,7 +400,7 @@ include_directories ("src")
+ # Collate dependencies
+ #----------------------------------------------------------------
+ 
+-set (LIBRARY_DEPS ${ICU_LIB} ${PROTOBUF_LIB} absl::node_hash_set absl::strings absl::synchronization)
++set (LIBRARY_DEPS ${ICU_LIB} ${PROTOBUF_LIB} absl::check absl::log absl::node_hash_set absl::strings absl::synchronization)
+ 
+ if (USE_BOOST)
+   list (APPEND LIBRARY_DEPS ${Boost_LIBRARIES})
