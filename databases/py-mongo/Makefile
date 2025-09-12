@@ -1,6 +1,7 @@
 COMMENT=	Python driver for mongodb
 
 MODPY_DISTV=	4.15.0
+REVISION=	0
 DISTNAME=	pymongo-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -18,6 +19,7 @@ MODPY_PI=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	hatchling
 BUILD_DEPENDS=	devel/py-hatch-requirements-txt
+RUN_DEPENDS=	net/py-dnspython
 TEST_DEPENDS=	devel/py-test-asyncio
 
 # unported dep
