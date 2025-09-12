@@ -23,6 +23,7 @@ share/examples/remind/ansitext
 share/examples/remind/astro
 share/examples/remind/defs.rem
 share/examples/remind/remind.vim
+share/examples/remind/tflag.rem
 share/pixmaps/
 share/pixmaps/tkremind.png
 share/remind/
