@@ -1,6 +1,6 @@
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_DISTV =		20250804
+MODPY_DISTV =		20250909
 DISTNAME =		tlsfuzzer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
