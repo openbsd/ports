@@ -1,10 +1,10 @@
 COMMENT =		Unicode Character Database (UCD)
 
 # XXX keep in sync major $V with x11/gnome/gucharmap
-V =			16.0.0
+V =			17.0.0
 UNICODE_DATA_NAME =	ucd
 
-SITES =			${UNICODE_SITES}/zipped/${V}/
+SITES =			${UNICODE_SITES}/${V}/ucd/
 DISTFILES =		UCD${EXTRACT_SUFX} \
 			Unihan${EXTRACT_SUFX}
 
