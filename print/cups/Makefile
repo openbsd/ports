@@ -10,18 +10,7 @@ COMMENT-libs=		CUPS libraries and headers
 VERSION=		${GH_TAGNAME:S/v//:S/op/./}
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
-GH_TAGNAME=		v2.4.12
-
-REVISION-main=		0
-
-SITES.github=		https://github.com/OpenPrinting/cups/commit/
-PATCHFILES.github=	5910c99b9211641e0691b2d418ee546af54c7a8c.diff \
-			ac85dcba38255a99a4452e069396f63a49ab3546.diff \
-			f6a2b50d49b4e471874aae807e4f2b28d3ac0063.diff \
-			e5642ac1c474d0c8317d14abc8b8dcd906de4689.diff \
-			3735a3edb11fe814b9a67e6a46f7a62af857168e.diff \
-			b876d8224b6400718540e0aaea44a787859e3a77.diff
-PATCH_DIST_STRIP=	-p1
+GH_TAGNAME=		v2.4.14
 
 CATEGORIES=		print sysutils
 
