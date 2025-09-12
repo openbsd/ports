@@ -1,8 +1,7 @@
 COMMENT =		ebook management application
 
-V =			5.44.0
+V =			8.0.1
 DISTNAME =		calibre-$V
-REVISION =		5
 
 CATEGORIES =		textproc
 
@@ -11,17 +10,17 @@ HOMEPAGE =		https://calibre-ebook.com/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets crypto fontconfig
-WANTLIB += freetype glib-2.0 gthread-2.0 hunspell-1.7 hyphen icudata
-WANTLIB += icui18n icuio icuuc intl m podofo stemmer z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets avcodec
+WANTLIB += avformat avutil crypto freetype hunspell-1.7 hyphen
+WANTLIB += icudata icui18n icuio icuuc m podofo ${MODPY_WANTLIB} stemmer
+WANTLIB += swresample uchardet xkbcommon
 
 SITES =		https://download.calibre-ebook.com/$V/
 PORTROACH =	site:https://github.com/kovidgoyal/calibre/archive/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/python \
-		x11/qt5
+		x11/qt6
 
 COMMON_DEPENDS =	databases/py-apsw>=3.35.4 \
 			devel/py-dateutil \
@@ -34,8 +33,9 @@ COMMON_DEPENDS =	databases/py-apsw>=3.35.4 \
 			net/py-dnspython \
 			net/py-msgpack \
 			net/py-zeroconf \
+			sysutils/py-xxhash \
 			print/poppler \
-			print/poppler,-qt5 \
+			print/poppler,-qt6 \
 			textproc/py-css-parser \
 			textproc/py-cssselect \
 			textproc/py-cssutils \
@@ -47,15 +47,17 @@ COMMON_DEPENDS =	databases/py-apsw>=3.35.4 \
 			www/py-beautifulsoup4 \
 			www/py-html5-parser \
 			www/py-mechanize \
-			www/py-qtwebengine \
-			x11/py-qt5
+			www/py-qt6webengine \
+			x11/py-qt6
 
-LIB_DEPENDS =		devel/gettext,-runtime \
+LIB_DEPENDS +=		graphics/ffmpeg \
 			textproc/hunspell \
 			textproc/hyphen \
 			textproc/icu4c \
 			textproc/libstemmer \
-			textproc/podofo
+			textproc/podofo>=0.10 \
+			textproc/uchardet \
+			x11/xkbcommon
 
 BUILD_DEPENDS =		${COMMON_DEPENDS} \
 			devel/py-qt-builder \
@@ -70,7 +72,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			print/poppler,-utils \
 			x11/gtk+4,-guic
 
-SUBST_VARS =		WRKDIR
+SUBST_VARS =		WRKDIR CC CXX
 
 LDFLAGS +=		-L${LOCALBASE}/lib
 

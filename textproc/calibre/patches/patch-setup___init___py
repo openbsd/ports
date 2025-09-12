@@ -1,7 +1,7 @@
 Index: setup/__init__.py
 --- setup/__init__.py.orig
 +++ setup/__init__.py
-@@ -24,7 +24,8 @@ ismacos = 'darwin' in sys.platform
+@@ -22,7 +22,8 @@ ismacos = 'darwin' in sys.platform
  isfreebsd = 'freebsd' in sys.platform
  isnetbsd = 'netbsd' in sys.platform
  isdragonflybsd = 'dragonfly' in sys.platform
@@ -10,4 +10,4 @@ Index: setup/__init__.py
 +isbsd = isnetbsd or isfreebsd or isopenbsd or isdragonflybsd
  ishaiku = 'haiku1' in sys.platform
  islinux = not ismacos and not iswindows and not isbsd and not ishaiku
- sys.setup_dir = os.path.dirname(os.path.abspath(__file__))
+ is_ci = os.environ.get('CI', '').lower() == 'true'

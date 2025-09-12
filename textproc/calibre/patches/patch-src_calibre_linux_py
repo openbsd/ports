@@ -1,7 +1,7 @@
 Index: src/calibre/linux.py
 --- src/calibre/linux.py.orig
 +++ src/calibre/linux.py
-@@ -776,19 +776,6 @@ class PostInstall:
+@@ -783,19 +783,6 @@ class PostInstall:
              self.setup_completion()
          if islinux or isbsd:
              self.setup_desktop_integration()
@@ -20,4 +20,4 @@ Index: src/calibre/linux.py
 -                    os.rmdir(config_dir)
  
          if warn is None and self.warnings:
-             self.info('\n\nThere were %d warnings\n'%len(self.warnings))
+             self.info(f'\n\nThere were {len(self.warnings)} warnings\n')

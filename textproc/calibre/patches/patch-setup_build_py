@@ -1,23 +1,18 @@
 Index: setup/build.py
 --- setup/build.py.orig
 +++ setup/build.py
-@@ -71,15 +71,7 @@ class Extension:
- 
-         self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
-         self.optional = d['options'] = kwargs.get('optional', False)
--        of = kwargs.get('optimize_level', None)
--        if of is None:
--            of = '/Ox' if iswindows else '-O3'
--        else:
--            flag = '/O%d' if iswindows else '-O%d'
--            of = flag % of
--        self.cflags.insert(0, of)
- 
--
- def lazy_load(name):
-     if name.startswith('!'):
-         name = name[1:]
-@@ -206,6 +198,8 @@ def init_env(debug=False, sanitize=False):
+@@ -256,8 +256,8 @@ def init_env(debug=False, sanitize=False, compiling_fo
+     platform_name = 'linux'
+     dest_ext = '.so'
+     if isunix:
+-        cc = os.environ.get('CC', 'gcc')
+-        cxx = os.environ.get('CXX', 'g++')
++        cc = os.environ.get('CC', '${CC}')
++        cxx = os.environ.get('CXX', '${CXX}')
+         debug = '-ggdb' if debug else ''
+         cflags = os.environ.get('OVERRIDE_CFLAGS',
+             f'-Wall -DNDEBUG {debug} -fno-strict-aliasing -pipe -O3')
+@@ -283,6 +283,8 @@ def init_env(debug=False, sanitize=False, compiling_fo
      if isbsd:
          cflags.append('-pthread')
          ldflags.append('-shared')

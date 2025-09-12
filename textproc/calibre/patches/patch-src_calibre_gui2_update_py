@@ -3,13 +3,13 @@
 Index: src/calibre/gui2/update.py
 --- src/calibre/gui2/update.py.orig
 +++ src/calibre/gui2/update.py
-@@ -32,6 +32,9 @@ def get_download_url():
+@@ -29,6 +29,9 @@ def get_download_url():
  
  
  def get_newest_version():
 +    return NO_CALIBRE_UPDATE
 +
 +def DISABLED_get_newest_version():
-     try:
-         icon_theme_name = json.loads(I('icon-theme.json', data=True))['name']
-     except Exception:
+     icon_theme_name = icon_resource_manager.user_theme_name
+     if icon_theme_name == 'default':
+         icon_theme_name = ''

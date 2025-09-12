@@ -6,7 +6,7 @@ supports OSX, Windows, and Linux SYSFS.
 Index: src/calibre/constants.py
 --- src/calibre/constants.py.orig
 +++ src/calibre/constants.py
-@@ -22,7 +22,8 @@ isnewosx  = ismacos and getattr(sys, 'new_app_bundle',
+@@ -28,7 +28,8 @@ isnewosx  = ismacos and getattr(sys, 'new_app_bundle',
  isfreebsd = 'freebsd' in _plat
  isnetbsd = 'netbsd' in _plat
  isdragonflybsd = 'dragonfly' in _plat
@@ -14,10 +14,10 @@ Index: src/calibre/constants.py
 +isopenbsd = 'openbsd' in _plat
 +isbsd = isfreebsd or isnetbsd or isdragonflybsd or isopenbsd
  ishaiku = 'haiku1' in _plat
- islinux   = not(iswindows or ismacos or isbsd or ishaiku)
+ islinux   = not (iswindows or ismacos or isbsd or ishaiku)
  isfrozen  = hasattr(sys, 'frozen')
-@@ -260,7 +261,7 @@ class ExtensionsImporter:
-             extra = ('winutil', 'wpd', 'winfonts', 'winsapi')
+@@ -280,7 +281,7 @@ class ExtensionsImporter:
+             extra = ('winutil', 'wpd', 'winfonts', 'wintoast')
          elif ismacos:
              extra = ('usbobserver', 'cocoa', 'libusb', 'libmtp')
 -        elif isfreebsd or ishaiku or islinux:

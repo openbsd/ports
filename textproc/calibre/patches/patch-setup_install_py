@@ -1,7 +1,7 @@
 Index: setup/install.py
 --- setup/install.py.orig
 +++ setup/install.py
-@@ -272,7 +272,7 @@ class Install(Develop):
+@@ -269,7 +269,7 @@ class Install(Develop):
              reldir = os.path.relpath(x[0], self.SRC)
              destdir = os.path.join(dest, reldir)
              for f in x[-1]:
