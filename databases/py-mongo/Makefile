@@ -1,9 +1,8 @@
 COMMENT=	Python driver for mongodb
 
-MODPY_DISTV=	4.7.3
+MODPY_DISTV=	4.15.0
 DISTNAME=	pymongo-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	1
 
 CATEGORIES=	databases devel
 
@@ -17,8 +16,9 @@ WANTLIB=	pthread ${MODPY_WANTLIB}
 MODPY_PI=	Yes
 
 MODULES=	lang/python
-
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
+BUILD_DEPENDS=	devel/py-hatch-requirements-txt
+TEST_DEPENDS=	devel/py-test-asyncio
 
 # unported dep
 MODPY_PYTEST_ARGS= --ignore test/mockupdb \
