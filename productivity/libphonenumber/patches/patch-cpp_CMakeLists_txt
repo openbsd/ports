@@ -4,6 +4,8 @@ phonenumbers/metadata.h [-w dupbuild=err]
 
 Also Eliminate -Werror to fix sparc64 build
 
+Fix build on i386
+
 Index: cpp/CMakeLists.txt
 --- cpp/CMakeLists.txt.orig
 +++ cpp/CMakeLists.txt
