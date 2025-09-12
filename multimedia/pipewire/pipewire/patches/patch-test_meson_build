@@ -1,7 +1,7 @@
 Index: test/meson.build
 --- test/meson.build.orig
 +++ test/meson.build
-@@ -79,7 +79,7 @@ test('test-loop',
+@@ -80,7 +80,7 @@ test('test-loop',
      executable('test-loop',
                 'test-loop.c',
                 include_directories: pwtest_inc,
