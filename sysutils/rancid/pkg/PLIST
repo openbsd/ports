@@ -86,6 +86,7 @@ lib/rancid/mrv.pm
 lib/rancid/nxos.pm
 lib/rancid/panos.pm
 lib/rancid/rancid.pm
+lib/rancid/rancidcontrib.pm
 lib/rancid/rbt.pm
 lib/rancid/routeros.pm
 lib/rancid/smc.pm
@@ -149,6 +150,7 @@ lib/rancid/wavesvros.pm
 @man man/man1/xirancid.1
 @man man/man1/xlogin.1
 @man man/man3/rancid.3
+@man man/man3/rancidcontrib.3
 @man man/man5/cloginrc.5
 @comment man/man5/lg.conf.5
 @man man/man5/rancid.conf.5

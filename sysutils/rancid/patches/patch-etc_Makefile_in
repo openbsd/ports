@@ -1,16 +1,16 @@
 Index: etc/Makefile.in
 --- etc/Makefile.in.orig
 +++ etc/Makefile.in
-@@ -70,7 +70,7 @@ am__make_running_with_option = \
-   test $$has_opt = yes
- am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+@@ -72,7 +72,7 @@ am__make_dryrun = (target_option=n; $(am__make_running
  am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+ am__rm_f = rm -f $(am__rm_f_notfound)
+ am__rm_rf = rm -rf $(am__rm_f_notfound)
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/examples/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -542,30 +542,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
+@@ -547,30 +547,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
  
  
  install-data-local: all

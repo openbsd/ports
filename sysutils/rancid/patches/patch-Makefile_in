@@ -1,16 +1,16 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -70,7 +70,7 @@ am__make_running_with_option = \
-   test $$has_opt = yes
- am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+@@ -72,7 +72,7 @@ am__make_dryrun = (target_option=n; $(am__make_running
  am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+ am__rm_f = rm -f $(am__rm_f_notfound)
+ am__rm_rf = rm -rf $(am__rm_f_notfound)
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -354,7 +354,7 @@ top_build_prefix = @top_build_prefix@
+@@ -361,7 +361,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
