@@ -2,7 +2,7 @@ COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.2
 DISTNAME =	krename-${VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils x11
 
@@ -34,7 +34,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	audio/taglib \
 		graphics/exiv2 \
-		textproc/podofo \
+		textproc/podofo>=0.10 \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

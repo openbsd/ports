@@ -1,0 +1,62 @@
+https://gitlab.archlinux.org/archlinux/packaging/packages/krename/-/blob/main/podofo-0.10.patch?ref_type=heads
+
+Index: cmake/modules/FindPoDoFo.cmake
+--- cmake/modules/FindPoDoFo.cmake.orig
++++ cmake/modules/FindPoDoFo.cmake
+@@ -36,16 +36,9 @@
+ # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-find_path(PoDoFo_INCLUDE_DIRS
+-  NAMES podofo/podofo.h
+-)
+-find_library(PoDoFo_LIBRARIES
+-  NAMES libpodofo podofo
+-)
++include(FindPkgConfig)
++pkg_search_module(PoDoFo libpodofo libpodofo-0)
+ 
+-include(FindPackageHandleStandardArgs)
+-find_package_handle_standard_args(PoDoFo DEFAULT_MSG PoDoFo_LIBRARIES PoDoFo_INCLUDE_DIRS)
+-
+ set(PoDoFo_DEFINITIONS)
+ if(PoDoFo_FOUND)
+   if(WIN32)
+@@ -61,17 +54,19 @@ if(PoDoFo_FOUND)
+     endif()
+   endif()
+ 
+-  # PoDoFo-0.9.5 unconditionally includes openssl/opensslconf.h in a public
+-  # header. The fix is in https://sourceforge.net/p/podofo/code/1830/ and will
+-  # hopefully be released soon with 0.9.6. Note that krename doesn't use
+-  # OpenSSL in any way.
+-  file(STRINGS "${PoDoFo_INCLUDE_DIRS}/podofo/base/podofo_config.h" PoDoFo_MAJOR_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_MAJOR[ \t]+[0-9]+$")
+-  file(STRINGS "${PoDoFo_INCLUDE_DIRS}/podofo/base/podofo_config.h" PoDoFo_MINOR_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_MINOR[ \t]+[0-9]+$")
+-  file(STRINGS "${PoDoFo_INCLUDE_DIRS}/podofo/base/podofo_config.h" PoDoFo_PATCH_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_PATCH[ \t]+[0-9]+$")
++  find_file(PoDoFo_CONFIG podofo_config.h PATHS ${PoDoFo_INCLUDE_DIRS} PATH_SUFFIXES auxiliary base)
++  file(STRINGS "${PoDoFo_CONFIG}" PoDoFo_MAJOR_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_MAJOR[ \t]+[0-9]+$")
++  file(STRINGS "${PoDoFo_CONFIG}" PoDoFo_MINOR_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_MINOR[ \t]+[0-9]+$")
++  file(STRINGS "${PoDoFo_CONFIG}" PoDoFo_PATCH_VER_LINE REGEX "^#define[ \t]+PODOFO_VERSION_PATCH[ \t]+[0-9]+$")
+   string(REGEX REPLACE "^#define[ \t]+PODOFO_VERSION_MAJOR[ \t]+([0-9]+)$" "\\1" PoDoFo_MAJOR_VER "${PoDoFo_MAJOR_VER_LINE}")
+   string(REGEX REPLACE "^#define[ \t]+PODOFO_VERSION_MINOR[ \t]+([0-9]+)$" "\\1" PoDoFo_MINOR_VER "${PoDoFo_MINOR_VER_LINE}")
+   string(REGEX REPLACE "^#define[ \t]+PODOFO_VERSION_PATCH[ \t]+([0-9]+)$" "\\1" PoDoFo_PATCH_VER "${PoDoFo_PATCH_VER_LINE}")
+   set(PoDoFo_VERSION "${PoDoFo_MAJOR_VER}.${PoDoFo_MINOR_VER}.${PoDoFo_PATCH_VER}")
++
++  # PoDoFo-0.9.5 unconditionally includes openssl/opensslconf.h in a public
++  # header. The fix is in https://sourceforge.net/p/podofo/code/1830/ and will
++  # hopefully be released soon with 0.9.6. Note that krename doesn't use
++  # OpenSSL in any way.
+   if(PoDoFo_VERSION VERSION_EQUAL "0.9.5")
+     find_package(OpenSSL)
+     if (OpenSSL_FOUND)
+@@ -82,6 +77,10 @@ if(PoDoFo_FOUND)
+       message("OpenSSL NOT found, which is required for this version of PoDofo (0.9.5)")
+     endif()
+   endif()
++endif()
++
++if(PoDoFo_VERSION VERSION_GREATER_EQUAL 0.10.0)
++  set(CMAKE_CXX_STANDARD 17)
+ endif()
+ 
+ mark_as_advanced(PoDoFo_INCLUDE_DIRS PoDoFo_LIBRARIES PoDoFo_DEFINITIONS)
