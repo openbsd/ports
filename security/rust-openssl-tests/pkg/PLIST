@@ -3641,6 +3641,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/flags.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/async_executor.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/command_runner.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/stderr.rs
@@ -12672,9 +12673,11 @@ share/rust-openssl-tests/openssl-sys/src/handwritten/cmac.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/cms.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/conf.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/crypto.rs
+share/rust-openssl-tests/openssl-sys/src/handwritten/decoder.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/dh.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/dsa.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/ec.rs
+share/rust-openssl-tests/openssl-sys/src/handwritten/encoder.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/err.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/evp.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/hmac.rs
