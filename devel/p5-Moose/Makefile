@@ -1,7 +1,7 @@
 COMMENT =	postmodern object system for Perl 5
 
 MODULES =	cpan
-DISTNAME =	Moose-2.2207
+DISTNAME =	Moose-2.4000
 CATEGORIES =	devel
 
 # Perl
@@ -50,6 +50,7 @@ TEST_DEPENDS +=	databases/p5-DBM-Deep \
 		devel/p5-Moo \
 		devel/p5-MooseX-MarkAsMethods \
 		devel/p5-PadWalker \
+		devel/p5-Specio \
 		devel/p5-SUPER \
 		devel/p5-Test-Deep \
 		devel/p5-Test-LeakTrace \
