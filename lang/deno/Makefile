@@ -7,7 +7,8 @@ DPB_PROPERTIES =	parallel
 USE_WXNEEDED =		Yes
 
 VERSION =		2.4.5
-HOMEPAGE =		https://deno.com/runtime
+HOMEPAGE =		https://deno.com
+REVISION =		0
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
