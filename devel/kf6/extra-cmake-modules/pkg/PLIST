@@ -223,6 +223,7 @@ share/doc/ECM/html/_sources/module/ECMCoverageOption.rst.txt
 share/doc/ECM/html/_sources/module/ECMCreateQmFromPoFiles.rst.txt
 share/doc/ECM/html/_sources/module/ECMDeprecationSettings.rst.txt
 share/doc/ECM/html/_sources/module/ECMEnableSanitizers.rst.txt
+share/doc/ECM/html/_sources/module/ECMFeatureSummary.rst.txt
 share/doc/ECM/html/_sources/module/ECMFindModuleHelpers.rst.txt
 share/doc/ECM/html/_sources/module/ECMFindQmlModule.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateDBusServiceFile.rst.txt
@@ -333,6 +334,7 @@ share/doc/ECM/html/module/ECMCoverageOption.html
 share/doc/ECM/html/module/ECMCreateQmFromPoFiles.html
 share/doc/ECM/html/module/ECMDeprecationSettings.html
 share/doc/ECM/html/module/ECMEnableSanitizers.html
+share/doc/ECM/html/module/ECMFeatureSummary.html
 share/doc/ECM/html/module/ECMFindModuleHelpers.html
 share/doc/ECM/html/module/ECMFindQmlModule.html
 share/doc/ECM/html/module/ECMGenerateDBusServiceFile.html

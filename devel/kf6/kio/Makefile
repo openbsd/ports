@@ -1,7 +1,7 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS +=  KF6KIOCore                0.1 # 0.0
+SHARED_LIBS +=  KF6KIOCore                1.0 # 0.0
 SHARED_LIBS +=  KF6KIOFileWidgets         0.0 # 0.0
 SHARED_LIBS +=  KF6KIOGui                 0.1 # 0.0
 SHARED_LIBS +=  KF6KIOWidgets             0.1 # 0.0

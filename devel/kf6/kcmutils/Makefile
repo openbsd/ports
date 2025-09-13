@@ -2,7 +2,7 @@ COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 
 SHARED_LIBS +=  KF6KCMUtils               0.0 # 0.0
-SHARED_LIBS +=  KF6KCMUtilsCore           0.0 # 0.0
+SHARED_LIBS +=  KF6KCMUtilsCore           0.1 # 0.0
 SHARED_LIBS +=  KF6KCMUtilsQuick          0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore

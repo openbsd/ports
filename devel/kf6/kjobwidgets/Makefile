@@ -1,7 +1,7 @@
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
 
-SHARED_LIBS +=  KF6JobWidgets             0.0 # 0.0
+SHARED_LIBS +=  KF6JobWidgets             0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Notifications
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Widgets

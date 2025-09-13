@@ -1,7 +1,7 @@
 COMMENT =	KDE components for handling SVGs
 DISTNAME =	ksvg-${VERSION}
 
-SHARED_LIBS +=  KF6Svg                    0.0 # 0.0
+SHARED_LIBS +=  KF6Svg                    0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6GuiAddons KirigamiPlatform Qt6Core
