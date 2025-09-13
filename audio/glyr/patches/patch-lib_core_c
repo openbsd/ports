@@ -1,0 +1,12 @@
+Index: lib/core.c
+--- lib/core.c.orig
++++ lib/core.c
+@@ -19,7 +19,7 @@
+  **************************************************************/
+ 
+ #include <errno.h>
+-#include <curl/multi.h>
++#include <curl/curl.h>
+ 
+ #include "stringlib.h"
+ #include "core.h"
