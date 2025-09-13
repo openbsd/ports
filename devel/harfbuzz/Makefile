@@ -3,7 +3,7 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			11.4.5
+V=			11.5.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
