@@ -1,6 +1,6 @@
 COMMENT=	test asyncio code with pytest
 
-MODPY_DISTV=	1.1.0
+MODPY_DISTV=	1.2.0
 DISTNAME=	pytest_asyncio-${MODPY_DISTV}
 PKGNAME=	py-test-asyncio-${MODPY_DISTV}
 CATEGORIES=	devel
