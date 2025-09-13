@@ -359,7 +359,7 @@ include/gnome-builder-48/libide/webkit/libide-webkit.h
 lib/gnome-builder/
 lib/gnome-builder/girepository-1.0/
 lib/gnome-builder/girepository-1.0/Ide-48.typelib
-lib/pkgconfig/gnome-builder-48.2.pc
+lib/pkgconfig/gnome-builder-48.3.pc
 @bin libexec/gnome-builder-clang
 @bin libexec/gnome-builder-git
 share/applications/org.gnome.Builder.desktop
