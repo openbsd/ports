@@ -7,9 +7,9 @@ Index: js/misc/loginManager.js
  
 +const ConsoleKitManagerIface = loadInterfaceXML('org.freedesktop.ConsoleKit.Manager');
 +const ConsoleKitSessionIface = loadInterfaceXML('org.freedesktop.ConsoleKit.Session');
-+
 +const ConsoleKitManager = Gio.DBusProxy.makeProxyWrapper(ConsoleKitManagerIface);
 +const ConsoleKitSession = Gio.DBusProxy.makeProxyWrapper(ConsoleKitSessionIface);
++
 +
  function haveSystemd() {
      return GLib.access('/run/systemd/seats', 0) >= 0;
@@ -23,7 +23,7 @@ Index: js/misc/loginManager.js
      } catch {
          return false;
      }
-@@ -83,7 +89,7 @@ export function getLoginManager() {
+@@ -83,12 +89,89 @@ export function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -32,8 +32,6 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -246,6 +252,87 @@ class LoginManagerSystemd extends Signals.EventEmitter
-     }
  }
  
 +class LoginManagerConsoleKit extends Signals.EventEmitter {
@@ -41,20 +39,16 @@ Index: js/misc/loginManager.js
 +        super();
 +
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
-+                                              'org.freedesktop.ConsoleKit',
-+                                              '/org/freedesktop/ConsoleKit/Manager');
++            'org.freedesktop.ConsoleKit',
++            '/org/freedesktop/ConsoleKit/Manager');
 +        this._proxy.connectSignal('PrepareForSleep',
-+                                  this._prepareForSleep.bind(this));
++            this._prepareForSleep.bind(this));
 +    }
 +
 +    getCurrentUserProxy() {
 +        // XXX not implemented in ConsoleKit
 +        return null;
 +    }
-+
-+    // Having this function is a bit of a hack since the Systemd and ConsoleKit
-+    // session objects have different interfaces - but in both cases there are
-+    // Lock/Unlock signals, and that's all we count upon at the moment.
 +
 +    async getCurrentSessionProxy() {
 +        if (this._currentSession)
@@ -78,7 +72,7 @@ Index: js/misc/loginManager.js
 +            const [result] = await this._proxy.CanSuspendAsync();
 +            needsAuth = result === 'challenge';
 +            canSuspend = needsAuth || result === 'yes';
-+        } catch (error) {
++        } catch {
 +            canSuspend = false;
 +            needsAuth = false;
 +        }
@@ -89,7 +83,7 @@ Index: js/misc/loginManager.js
 +        try {
 +            const [sessions] = await this._proxy.ListSessionsAsync();
 +            return sessions;
-+        } catch (e) {
++        } catch {
 +            return [];
 +        }
 +    }
@@ -115,12 +109,12 @@ Index: js/misc/loginManager.js
 +    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
 +        this.emit('prepare-for-sleep', aboutToSuspend);
 +    }
-+};
++}
 +
- class LoginManagerDummy extends Signals.EventEmitter  {
+ class LoginManagerSystemd extends Signals.EventEmitter {
      constructor() {
          super();
-@@ -271,16 +358,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+@@ -271,16 +354,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));
