@@ -15,6 +15,7 @@ lib/girepository-1.0/Template-1.0.typelib
 @lib lib/libtemplate_glib-1.0.so.${LIBtemplate_glib-1.0_VERSION}
 lib/pkgconfig/template-glib-1.0.pc
 share/gir-1.0/Template-1.0.gir
+share/locale/ar/LC_MESSAGES/template-glib.mo
 share/locale/ca/LC_MESSAGES/template-glib.mo
 share/locale/cs/LC_MESSAGES/template-glib.mo
 share/locale/da/LC_MESSAGES/template-glib.mo
