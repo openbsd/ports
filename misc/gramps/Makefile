@@ -1,8 +1,7 @@
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_DISTV =		5.2.4
+MODPY_DISTV =		6.0.4
 DISTNAME=		gramps-${MODPY_DISTV}
-REVISION=		0
 
 CATEGORIES=		misc x11
 
@@ -19,16 +18,21 @@ MODULES=		lang/python \
 MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-country \
 			devel/py-gobject3 \
-			devel/xdg-utils \
 			fonts/freefont-ttf \
+			geo/geocode-glib \
 			geo/osm-gps-map \
 			graphics/libgexiv2 \
 			graphics/py-Pillow \
+			graphics/py-cairo \
+			graphics/py-imagesize \
 			math/graphviz \
 			misc/shared-mime-info \
-			textproc/gtkspell3 \
+			textproc/gspell \
 			textproc/py-ICU \
+			textproc/py-orjson \
+			x11/gtk+3 \
 			x11/gtk+4,-guic
 
 NO_TEST=		Yes

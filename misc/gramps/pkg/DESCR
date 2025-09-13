@@ -1,9 +1,11 @@
-Gramps helps you track your family tree. It allows you to store, edit,
-and research genealogical data with your computer. Gramps attempts to
-provide all of the common capabilities of other genealogical programs,
-but, more importantly, to provide an additional capability of
-integration not common to these programs. This is the ability to input
-any bits and pieces of information directly into Gramps and
-rearrange/manipulate any/all data events in the entire data base (in any
-order or sequence) to assist the user in doing research, analysis and
+Gramps helps you track your family tree. It allows you to store, edit, and
+research genealogical data with your computer. Gramps attempts to provide all of
+the common capabilities of other genealogical programs, but, more importantly,
+to provide an additional capability of integration not common to these programs.
+This is the ability to input any bits and pieces of information directly into
+Gramps and rearrange/manipulate any/all data events in the entire data base (in
+any order or sequence) to assist the user in doing research, analysis and
 correlation with the potential of filling relationship gaps.
+
+Install the graphviz package to create graphs and run three reports.  Graphviz
+reports can create PDF files if ghostscript is installed.

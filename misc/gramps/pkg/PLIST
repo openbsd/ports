@@ -69,6 +69,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}sort.${MODPY
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}soundex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}soundex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}updatecallback.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}updatecallback.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}user.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -213,6 +215,14 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}utils.${M
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/base.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/bookmarks.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}conversion_21.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}conversion_21.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/conversion_21.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/dbconst.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/dummydb.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/exceptions.py
@@ -249,11 +259,14 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}_par
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}_paramfilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}_searchfilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}_searchfilter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}optimizer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}optimizer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_filterlist.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_filterparser.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_genericfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_paramfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_searchfilter.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/optimizer.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}/
@@ -281,6 +294,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasnoteregexbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasnotesubstrbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasnotesubstrbase.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasnotetypebase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasnotetypebase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasreferencecountbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hasreferencecountbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_hassourcebase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -322,6 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasldsbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasnotebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasnoteregexbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasnotesubstrbase.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasnotetypebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hasreferencecountbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hassourcebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_hassourcecountbase.py
@@ -362,6 +378,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MOD
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_hassource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -394,6 +412,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasi
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hasreferencecountof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hassource.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_hassourceidof.py
@@ -424,6 +443,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasdata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasdayofweek.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasdayofweek.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasevent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasevent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasgallery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasgallery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasidof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -434,6 +455,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_hassourcecount.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -461,11 +484,13 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasattr
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hascitation.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdata.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasdayofweek.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasevent.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasgallery.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hasreferencecountof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hassourcecount.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_hastag.py
@@ -513,6 +538,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_hasreltype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -535,8 +562,6 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_matchesfilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_matchessourceconfidence.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_matchessourceconfidence.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_memberbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_memberbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_motherhasidof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_motherhasidof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_motherhasnameof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -571,6 +596,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_haslds
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasreferencecountof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hasreltype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_hassourcecount.py
@@ -582,7 +608,6 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_isbook
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_isdescendantof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_matchesfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_matchessourceconfidence.py
-lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_memberbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_motherhasidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_motherhasnameof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_regexpchildname.py
@@ -747,6 +772,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasothergender.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasothergender.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_hasrelationship.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -881,6 +908,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasnic
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasothergender.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hasrelationship.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_hassoundexname.py
@@ -959,6 +987,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasplace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasplace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -997,6 +1027,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasnola
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasplace.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasreferencecountof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassourcecount.py
@@ -1076,12 +1107,16 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasnotematchingsubstringof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasnoteregexp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasnotetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasreferencecountof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasrepository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasrepository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasrepositorycallnumberref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hasrepositorycallnumberref.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hassource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hassource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hastag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_hastag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_matchesfilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1102,9 +1137,11 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasido
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasnote.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasnotematchingsubstringof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasnoteregexp.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasnotetype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasreferencecountof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrepository.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hasrepositorycallnumberref.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hassource.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_hastag.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_matchesfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_matchesrepositoryfilter.py
@@ -1145,6 +1182,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}datebase
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}datebase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}eventbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}eventbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}eventref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}eventref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}eventroletype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1161,6 +1200,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}genderst
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}genderstats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}grampstype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}grampstype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}json_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}json_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}ldsord.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}ldsord.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}ldsordbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1265,6 +1306,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/const.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/date.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/datebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/event.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/eventbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/eventref.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/eventroletype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/eventtype.py
@@ -1273,6 +1315,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/familyreltype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/gcalendar.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/genderstats.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/grampstype.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/json_utils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/ldsord.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/ldsordbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/location.py
@@ -1586,6 +1629,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/_simpledoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/_simpletable.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/sort.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/soundex.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/types.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/updatecallback.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/user.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/
@@ -3386,6 +3430,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}family.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}family.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}heatmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}heatmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}home.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}home.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}introduction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3396,6 +3442,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}multilang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}multilang.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}multiselect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}multiselect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}narrativeweb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}narrativeweb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}person.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3432,11 +3480,13 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/contact.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/download.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/event.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/family.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/heatmap.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/home.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/introduction.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/layout.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/media.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/multilang.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/multiselect.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/narrativeweb.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/person.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/place.py
@@ -3853,6 +3903,8 @@ share/gramps/images/hicolor/48x48/actions/gramps-zoom-out.png
 share/gramps/images/hicolor/scalable/
 share/gramps/images/hicolor/scalable/actions/
 share/gramps/images/hicolor/scalable/actions/add-parent-existing-family.svg
+share/gramps/images/hicolor/scalable/actions/format-text-subscript-symbolic.svg
+share/gramps/images/hicolor/scalable/actions/format-text-superscript-symbolic.svg
 share/gramps/images/hicolor/scalable/actions/geo-fixed-zoom.svg
 share/gramps/images/hicolor/scalable/actions/geo-free-zoom.svg
 share/gramps/images/hicolor/scalable/actions/geo-place-add.svg
@@ -4005,6 +4057,7 @@ share/locale/sl/LC_MESSAGES/gramps.mo
 share/locale/sq/LC_MESSAGES/gramps.mo
 share/locale/sr/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
+share/locale/ta/LC_MESSAGES/gramps.mo
 share/locale/tr/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
 share/locale/vi/LC_MESSAGES/gramps.mo
