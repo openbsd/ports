@@ -1,0 +1,2 @@
+Additional SPDX data files for license-scanner. Can be used by specifying
+--spdxPath when running license-scanner.
