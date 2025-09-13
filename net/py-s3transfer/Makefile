@@ -4,7 +4,7 @@
 
 COMMENT=		Amazon S3 transfer manager for Python
 
-MODPY_DISTV=		0.13.1
+MODPY_DISTV=		0.14.0
 DISTNAME=		s3transfer-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
