@@ -1896,7 +1896,6 @@
      SUBDIR += ruby-rbtree,ruby34
      SUBDIR += ruby-ref
      SUBDIR += ruby-regexp_parser
-     SUBDIR += ruby-rgen
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby-progressbar
      SUBDIR += ruby-safe_yaml
