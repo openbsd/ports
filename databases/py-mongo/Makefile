@@ -18,7 +18,8 @@ MODPY_PI=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	hatchling
-BUILD_DEPENDS=	devel/py-hatch-requirements-txt
+BUILD_DEPENDS=	devel/py-hatch-requirements-txt \
+		devel/py-setuptools
 RUN_DEPENDS=	net/py-dnspython
 TEST_DEPENDS=	devel/py-test-asyncio
 
