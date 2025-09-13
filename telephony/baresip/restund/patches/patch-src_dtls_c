@@ -1,0 +1,13 @@
+function removed from libre in https://github.com/baresip/re/pull/1407
+
+Index: src/dtls.c
+--- src/dtls.c.orig
++++ src/dtls.c
+@@ -52,7 +52,6 @@ static void conn_destructor(void *arg)
+ 
+ 	list_unlink(&conn->le);
+ 	tmr_cancel(&conn->tmr);
+-	dtls_set_handlers(conn->tlsc, NULL, NULL, NULL, NULL);
+ 	mem_deref(conn->tlsc);
+ }
+ 
