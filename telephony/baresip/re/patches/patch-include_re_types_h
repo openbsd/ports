@@ -1,0 +1,17 @@
+https://github.com/baresip/re/pull/1420/
+
+Index: include/re_types.h
+--- include/re_types.h.orig
++++ include/re_types.h
+@@ -221,6 +221,11 @@ typedef SSIZE_T ssize_t;
+ #define ENOSR 218
+ #endif
+ 
++/** Timer expired */
++#ifndef ETIME
++#define ETIME 219
++#endif
++
+ /** Key was rejected by service */
+ #ifndef EKEYREJECTED
+ #define EKEYREJECTED 129
