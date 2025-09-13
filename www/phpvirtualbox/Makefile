@@ -1,10 +1,9 @@
 COMMENT=		web-based VirtualBox front-end
 
-GH_ACCOUNT=		BartekSz95
+GH_ACCOUNT=		phpvirtualbox
 GH_PROJECT=		phpvirtualbox
-GH_TAGNAME=		v7.0-rc1
-PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/v//:S/-//}
-REVISION=		0
+GH_TAGNAME=		7.1-1
+PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
 
 CATEGORIES=		www sysutils
 

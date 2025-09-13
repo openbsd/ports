@@ -37,8 +37,14 @@ phpvirtualbox/endpoints/lib/language.php
 phpvirtualbox/endpoints/lib/utils.php
 phpvirtualbox/endpoints/lib/vboxServiceWrappers.php
 phpvirtualbox/endpoints/lib/vboxconnector.php
-phpvirtualbox/endpoints/lib/vboxweb-7.0.wsdl
-phpvirtualbox/endpoints/lib/vboxwebService-7.0.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-5.2.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-6.0.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-6.1.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-7.1.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-5.2.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-6.0.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-6.1.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-7.1.wsdl
 phpvirtualbox/endpoints/rdp.php
 phpvirtualbox/endpoints/screen.php
 phpvirtualbox/images/
