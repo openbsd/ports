@@ -2,7 +2,6 @@
 #
 
 BROKEN-mips64 = In function 'test_fn': cc1: internal compiler error: Segmentation fault
-BROKEN-sparc64 = ICE during selftests
 
 # tested: aarch64 amd64 arm hppa i386 powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
