@@ -213,6 +213,7 @@ ${P5SITE}/Image/ExifTool/SigmaRaw.pm
 ${P5SITE}/Image/ExifTool/Sony.pm
 ${P5SITE}/Image/ExifTool/SonyIDC.pm
 ${P5SITE}/Image/ExifTool/Stim.pm
+${P5SITE}/Image/ExifTool/TNEF.pm
 ${P5SITE}/Image/ExifTool/TagInfoXML.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
@@ -417,6 +418,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Sony.3p
 @man man/man3p/Image::ExifTool::SonyIDC.3p
 @man man/man3p/Image::ExifTool::Stim.3p
+@man man/man3p/Image::ExifTool::TNEF.3p
 @man man/man3p/Image::ExifTool::TagInfoXML.3p
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
