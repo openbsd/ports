@@ -1,8 +1,8 @@
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix2-20250404
+DISTNAME =		acpica-unix2-20250807
 # SITES needs updating; check -unix2 href in
 # https://www.intel.com/content/www/us/en/download/776307/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-a-dual-license.html
-SITES =			https://downloadmirror.intel.com/852046/
+SITES =			https://downloadmirror.intel.com/864112/
 PKGNAME =		${DISTNAME:S/-unix2//}
 
 FIX_EXTRACT_PERMISSIONS =	Yes
