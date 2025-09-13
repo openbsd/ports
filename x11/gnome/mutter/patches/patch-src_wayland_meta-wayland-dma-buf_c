@@ -1,18 +1,153 @@
-Needs DMA_BUF_SYNC_READ.
+Adapt changes https://gitlab.gnome.org/GNOME/mutter/-/commit/c4773089 
 
 Index: src/wayland/meta-wayland-dma-buf.c
 --- src/wayland/meta-wayland-dma-buf.c.orig
 +++ src/wayland/meta-wayland-dma-buf.c
-@@ -37,6 +37,7 @@
+@@ -39,7 +39,9 @@
  
- #include "wayland/meta-wayland-dma-buf.h"
- 
-+#if 0
  #include <drm_fourcc.h>
  #include <glib/gstdio.h>
++#ifdef __linux__
  #include <linux/dma-buf.h>
-@@ -2052,3 +2053,4 @@ static void
- meta_wayland_dma_buf_manager_init (MetaWaylandDmaBufManager *dma_buf)
++#endif
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -71,6 +73,26 @@
+ 
+ #define META_WAYLAND_DMA_BUF_MAX_FDS 4
+ 
++#ifndef __linux__
++/* From https://reviews.freebsd.org/D23085 */
++typedef uint64_t __u64;
++
++struct dma_buf_sync
++{
++  __u64 flags;
++};
++
++#define DMA_BUF_SYNC_READ  (1 << 0)
++#define DMA_BUF_SYNC_WRITE (2 << 0)
++#define DMA_BUF_SYNC_RW    (DMA_BUF_SYNC_READ | DMA_BUF_SYNC_WRITE)
++#define DMA_BUF_SYNC_START (0 << 2)
++#define DMA_BUF_SYNC_END   (1 << 2)
++#define DMA_BUF_SYNC_VALID_FLAGS_MASK \
++  (DMA_BUF_SYNC_RW | DMA_BUF_SYNC_END)
++#define DMA_BUF_BASE       'b'
++#define DMA_BUF_IOCTL_SYNC _IOW(DMA_BUF_BASE, 0, struct dma_buf_sync)
++#endif
++
+ /* Compatible with zwp_linux_dmabuf_feedback_v1.tranche_flags */
+ typedef enum _MetaWaylandDmaBufTrancheFlags
  {
+@@ -938,7 +960,9 @@ typedef struct _MetaWaylandDmaBufSource
+   gpointer user_data;
+ 
+   gpointer fd_tags[META_WAYLAND_DMA_BUF_MAX_FDS];
++#ifdef __linux__
+   int owned_sync_fd[META_WAYLAND_DMA_BUF_MAX_FDS];
++#endif
+ } MetaWaylandDmaBufSource;
+ 
+ static gboolean
+@@ -973,11 +997,13 @@ meta_wayland_dma_buf_source_dispatch (GSource     *bas
+   for (i = 0; i < META_WAYLAND_DMA_BUF_MAX_FDS; i++)
+     {
+       gpointer fd_tag = source->fd_tags[i];
+-      int fd;
+ 
+       if (!fd_tag)
+         continue;
+ 
++#ifdef __linux__
++      int fd;
++
+       fd = source->owned_sync_fd[i];
+       if (fd < 0)
+         fd = dma_buf->fds[i];
+@@ -987,10 +1013,19 @@ meta_wayland_dma_buf_source_dispatch (GSource     *bas
+           ready = FALSE;
+           continue;
+         }
++#else
++      if (!is_fd_readable (dma_buf->fds[i]))
++        {
++          ready = FALSE;
++          continue;
++        }
++#endif
+ 
+       g_source_remove_unix_fd (&source->base, fd_tag);
+       source->fd_tags[i] = NULL;
++#ifdef __linux__
+       g_clear_fd (&source->owned_sync_fd[i], NULL);
++#endif
+     }
+ 
+   if (!ready)
+@@ -1017,7 +1052,9 @@ meta_wayland_dma_buf_source_finalize (GSource *base)
+         {
+           g_source_remove_unix_fd (&source->base, fd_tag);
+           source->fd_tags[i] = NULL;
++#ifdef __linux__
+           g_clear_fd (&source->owned_sync_fd[i], NULL);
++#endif
+         }
+     }
+ 
+@@ -1035,7 +1072,6 @@ create_source (MetaWaylandBuffer               *buffer
+                gpointer                         user_data)
+ {
+   MetaWaylandDmaBufSource *source;
+-  int i;
+ 
+   source =
+     (MetaWaylandDmaBufSource *) g_source_new (&meta_wayland_dma_buf_source_funcs,
+@@ -1046,12 +1082,17 @@ create_source (MetaWaylandBuffer               *buffer
+   source->dispatch = dispatch;
+   source->user_data = user_data;
+ 
++#ifdef __linux__
++  int i;
++
+   for (i = 0; i < META_WAYLAND_DMA_BUF_MAX_FDS; i++)
+     source->owned_sync_fd[i] = -1;
++#endif
+ 
+   return source;
+ }
+ 
++#ifdef __linux__
+ static int
+ get_sync_file (int dma_buf_fd)
+ {
+@@ -1069,6 +1110,7 @@ get_sync_file (int dma_buf_fd)
+ 
+   return -1;
  }
 +#endif
+ 
+ /**
+  * meta_wayland_dma_buf_create_source:
+@@ -1109,9 +1151,11 @@ meta_wayland_dma_buf_create_source (MetaWaylandBuffer 
+       if (!source)
+         source = create_source (buffer, dispatch, user_data);
+ 
++#ifdef __linux__
+       source->owned_sync_fd[i] = get_sync_file (fd);
+       if (source->owned_sync_fd[i] >= 0)
+         fd = source->owned_sync_fd[i];
++#endif
+ 
+       source->fd_tags[i] = g_source_add_unix_fd (&source->base, fd, G_IO_IN);
+     }
+@@ -1150,7 +1194,9 @@ meta_wayland_drm_syncobj_create_source (MetaWaylandBuf
+     return NULL;
+ 
+   source->fd_tags[0] = g_source_add_unix_fd (&source->base, sync_fd, G_IO_IN);
++#ifdef __linux__
+   source->owned_sync_fd[0] = g_steal_fd (&sync_fd);
++#endif
+ 
+   return &source->base;
+ }

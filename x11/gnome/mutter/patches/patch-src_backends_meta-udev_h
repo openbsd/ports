@@ -5,7 +5,7 @@ Index: src/backends/meta-udev.h
  
  #pragma once
  
-+#ifdef HAVE_NATIVE_BACKEND
++#ifdef HAVE_LIBGUDEV
  #include <gudev/gudev.h>
  
  #include "backends/meta-backend-types.h"
@@ -13,4 +13,4 @@ Index: src/backends/meta-udev.h
  void meta_udev_resume (MetaUdev *udev);
  
  MetaUdev * meta_udev_new (MetaBackend *backend);
-+#endif /* HAVE_NATIVE_BACKEND */
++#endif /* HAVE_LIBGUDEV */

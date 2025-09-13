@@ -2,6 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		48.4
+REVISION=		0
 
 SHARED_LIBS += mutter-mtk-16             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-16            0.0 # 0.0.0
@@ -64,7 +65,7 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dprofiler=false \
 			-Dlogind=false
 
-# XXX needs libsystemd or libelogind
+# XXX needs logind and udev to be enabled
 CONFIGURE_ARGS +=	-Dnative_backend=false
 
 # XXX requires unported gnome-remote-desktop and libinput
