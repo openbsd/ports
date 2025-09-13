@@ -1,10 +1,10 @@
 COMMENT=		text widget that extends the GTK4 GtkTextView widget
 
 GNOME_PROJECT=		gtksourceview
-GNOME_VERSION=		5.16.0
+GNOME_VERSION=		5.18.0
 PKGNAME=		${GNOME_PROJECT}5-${GNOME_VERSION}
 
-SHARED_LIBS += gtksourceview-5           0.3 # 0.0.0
+SHARED_LIBS += gtksourceview-5           0.4 # 0.0.0
 
 CATEGORIES=		x11
 
@@ -13,12 +13,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
+WANTLIB += cairo fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 graphene-1.0 gtk-4 intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre2-8 xml2
+
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
-
-WANTLIB += cairo fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-4 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 xml2
 
 MODULES=		devel/meson \
 			x11/gnome
