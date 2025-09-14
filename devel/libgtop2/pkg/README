@@ -11,6 +11,6 @@ As mentioned in mem(4) and kmem(4):
  
 !!! Setting this sysctl(2) is strongly discouraged, unless for debugging !!!
 
-It is *NOT* mandatory for proper day-to-day usage of libgtop and will only yelp
+It is *NOT* mandatory for proper day-to-day usage of libgtop and will only yield
 the following warning:
     kvm_nlist: Bad file descriptor
