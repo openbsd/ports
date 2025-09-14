@@ -1,9 +1,9 @@
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
-.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == aarch64
 # uses too much ram for smaller archs
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 DPB_PROPERTIES =	parallel
-.endif
 
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
