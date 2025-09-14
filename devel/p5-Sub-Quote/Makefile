@@ -1,6 +1,6 @@
 COMMENT =	efficient generation of subroutines via string eval
 
-DISTNAME =	Sub-Quote-2.006008
+DISTNAME =	Sub-Quote-2.006009
 
 CATEGORIES =	devel
 
