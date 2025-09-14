@@ -740,17 +740,14 @@ share/doc/gnome-online-accounts/Goa-1.0/vfunc.PasswordBased.handle_get_password.
 share/doc/gnome-online-accounts/Goa-1.0/vfunc.Ticketing.get_details.html
 share/doc/gnome-online-accounts/Goa-1.0/vfunc.Ticketing.handle_get_ticket.html
 share/gir-1.0/Goa-1.0.gir
-share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
 share/icons/hicolor/scalable/apps/goa-account-exchange.svg
 share/icons/hicolor/scalable/apps/goa-account-fedora.svg
 share/icons/hicolor/scalable/apps/goa-account-google.svg
 share/icons/hicolor/scalable/apps/goa-account-ms365.svg
-share/icons/hicolor/scalable/apps/goa-account-msn.svg
 share/icons/hicolor/scalable/apps/goa-account-owncloud.svg
 share/icons/hicolor/scalable/apps/goa-account.svg
 share/icons/hicolor/symbolic/apps/goa-account-exchange-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-google-symbolic.svg
-share/icons/hicolor/symbolic/apps/goa-account-msn-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-owncloud-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-online-accounts.mo
@@ -836,5 +833,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts.mo
 share/vala/vapi/goa-1.0.deps
 share/vala/vapi/goa-1.0.vapi
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag glib-compile-schemas
 @tag update-desktop-database
