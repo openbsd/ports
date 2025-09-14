@@ -2,7 +2,7 @@ COMMENT =	graph data structures and algorithms
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Graph-0.9732
+DISTNAME =	Graph-0.9735
 CATEGORIES =	devel
 
 # Perl
