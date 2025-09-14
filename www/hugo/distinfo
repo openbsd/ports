@@ -1074,7 +1074,8 @@ SHA256 (go_modules/golang.org/x/mod/@v/v0.2.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx
 SHA256 (go_modules/golang.org/x/mod/@v/v0.21.0.mod) = 6+gZF0QRVCmfcyuKoJ8plSl1LfKYVcpNcCaUbRu+zYI=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.26.0.mod) = QpxlEX6ybvSrHUEesRiC2d811HfNrv5yk5r5B2GqviU=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.27.0.mod) = sg1sH0tGdC5q+CgycWA0aus+YiqxeArVG4Dh1nrf6Vs=
-SHA256 (go_modules/golang.org/x/mod/@v/v0.27.0.zip) = GfskHUbkOX0xk7X6iZ4qnWK7XRxB9z0J0pwXw8DTlTw=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.28.0.mod) = 38+W1muG8qNSfL+3oZSXBxPFGotQ99qnHyt+xoN9YjY=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.28.0.zip) = EDP7WZJ1SaFscAA2n21TS2UvzSAXRqfW2M/VIeGtheI=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
@@ -1526,7 +1527,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.149.1.zip) = wGy3ixyHBlaRm7QdfjveOYEIad82lC+zd/DGiT0UTi8=
+SHA256 (hugo-v0.150.0.zip) = SN0s0BxFCrIlNmbeCP7v6PEpUYH6kcS0bTG/myFsoiA=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.19.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.20.0.mod) = 231
@@ -2603,7 +2604,8 @@ SIZE (go_modules/golang.org/x/mod/@v/v0.2.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.21.0.mod) = 86
 SIZE (go_modules/golang.org/x/mod/@v/v0.26.0.mod) = 86
 SIZE (go_modules/golang.org/x/mod/@v/v0.27.0.mod) = 86
-SIZE (go_modules/golang.org/x/mod/@v/v0.27.0.zip) = 172649
+SIZE (go_modules/golang.org/x/mod/@v/v0.28.0.mod) = 86
+SIZE (go_modules/golang.org/x/mod/@v/v0.28.0.zip) = 172650
 SIZE (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = 214
@@ -3055,4 +3057,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.149.1.zip) = 5756095
+SIZE (hugo-v0.150.0.zip) = 5762017
