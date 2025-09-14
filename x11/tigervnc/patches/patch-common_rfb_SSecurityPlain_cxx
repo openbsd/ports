@@ -19,7 +19,7 @@ Index: common/rfb/SSecurityPlain.cxx
      if (users[i] == "%u") {
        struct passwd *pw = getpwnam(username);
        if (pw && pw->pw_uid == getuid())
-@@ -72,7 +72,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc) : SSec
+@@ -72,7 +72,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc_) : SSe
  {
  #ifdef WIN32
    valid = new WinPasswdValidator();
@@ -27,4 +27,4 @@ Index: common/rfb/SSecurityPlain.cxx
 +#elif !defined(__APPLE__) && !defined(__OpenBSD__)
    valid = new UnixPasswordValidator();
  #else
-   valid = NULL;
+   valid = nullptr;

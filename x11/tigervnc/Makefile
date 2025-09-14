@@ -2,10 +2,9 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.14.1
-REVISION=	0
+GH_TAGNAME=	v1.15.0
 
-XORG_V=		21.1.13
+XORG_V=		21.1.18
 
 # update the patch filename in the post-patch target if moving to a new
 # major branch of xorg-server
@@ -50,7 +49,8 @@ COMPILER=	base-clang
 CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
 		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
 		-DCMAKE_INSTALL_FULL_SYSCONFDIR="${TRUEPREFIX}/share/examples/tigervnc" \
-		-DINSTALL_SYSTEMD_UNITS=OFF
+		-DINSTALL_SYSTEMD_UNITS=OFF \
+		-DENABLE_PWQUALITY=OFF
 # ld: error: undefined symbol: vtable for rfb::UnixPasswordValidator
 # might need something more to enable nettle (sha/aes support) while pam is disabled?
 CONFIGURE_ARGS+= -DENABLE_NETTLE=OFF

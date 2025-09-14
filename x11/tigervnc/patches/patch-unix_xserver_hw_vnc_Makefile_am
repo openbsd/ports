@@ -1,7 +1,7 @@
 Index: unix/xserver/hw/vnc/Makefile.am
 --- unix/xserver/hw/vnc/Makefile.am.orig
 +++ unix/xserver/hw/vnc/Makefile.am
-@@ -55,7 +55,7 @@ Xvnc_LDADD = \
+@@ -60,7 +60,7 @@ Xvnc_LDADD = \
  	$(LOCAL_LIBS) \
  	$(XSERVER_SYS_LIBS) \
  	$(XVNC_SYS_LIBS) \
