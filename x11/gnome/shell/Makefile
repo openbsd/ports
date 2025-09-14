@@ -5,13 +5,12 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
-GNOME_VERSION=		48.4
-REVISION=		0
+GNOME_VERSION=		48.5
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
+WANTLIB += X11 Xext Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-4 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += gjs glib-2.0 gnome-autoar-0 gnome-desktop-4 gobject-2.0
 WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-16
