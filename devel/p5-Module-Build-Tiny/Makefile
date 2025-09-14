@@ -1,6 +1,6 @@
 COMMENT =	tiny replacement for Module::Build
 
-DISTNAME =	Module-Build-Tiny-0.051
+DISTNAME =	Module-Build-Tiny-0.052
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
