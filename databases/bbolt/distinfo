@@ -1,4 +1,4 @@
-SHA256 (bbolt-v1.4.2.zip) = hT2G+HQ+Z0at2immkulLaT3YlrXd/atFIA0oYvyn+C8=
+SHA256 (bbolt-v1.4.3.zip) = MRA3TtXmmEIA5jYLZIgxKAP7QVFv/1VrNQ0qGrql7LU=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = mtuqF/F9vjauRk2AYqy7+5z4U7/r7UJENag0orC+2RA=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -29,7 +29,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (bbolt-v1.4.2.zip) = 222212
+SIZE (bbolt-v1.4.3.zip) = 223684
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = 13136
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34

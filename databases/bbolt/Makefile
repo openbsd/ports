@@ -1,10 +1,10 @@
 COMMENT =		embedded key/value database for Go
 
 MODGO_MODNAME =		go.etcd.io/bbolt
-MODGO_VERSION =		v1.4.2
+MODGO_VERSION =		v1.4.3
 
 DISTNAME =		bbolt-${MODGO_VERSION}
-PKGNAME =		bbolt-1.4.2
+PKGNAME =		bbolt-1.4.3
 
 CATEGORIES =		databases
 
