@@ -5,7 +5,7 @@ For two, the define it sets is never used in the PolyML code.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19222,46 +19222,6 @@ rm -rf conftest*
+@@ -19414,46 +19414,6 @@ rm -rf conftest*
  fi
  
  

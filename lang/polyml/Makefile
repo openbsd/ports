@@ -5,13 +5,12 @@ COMMENT =	Poly/ML implementation of standard ML
 
 GH_ACCOUNT =	polyml
 GH_PROJECT =	polyml
-GH_TAGNAME =	v5.9.1
-REVISION =	0
+GH_TAGNAME =	v5.9.2
 
 USE_NOEXECONLY =	Yes
 USE_NOBTCFI =		Yes
 
-SHARED_LIBS +=	polyml		0.0 # 13.0
+SHARED_LIBS +=	polyml		1.0 # 16.0
 
 CATEGORIES =	lang
 
