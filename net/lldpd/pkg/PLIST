@@ -1,6 +1,7 @@
 @rcscript ${RCDIR}/lldpd
 include/lldp-const.h
 include/lldpctl.h
+include/lldpctl.hpp
 @static-lib lib/liblldpctl.a
 lib/liblldpctl.la
 @lib lib/liblldpctl.so.${LIBlldpctl_VERSION}
