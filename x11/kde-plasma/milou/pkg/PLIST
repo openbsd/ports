@@ -114,8 +114,6 @@ share/locale/zh_CN/LC_MESSAGES/milou.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/zh_TW/LC_MESSAGES/milou.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.milou.mo
-share/metainfo/
-share/metainfo/org.kde.milou.appdata.xml
 share/plasma/
 share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.milou/

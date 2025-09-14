@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes

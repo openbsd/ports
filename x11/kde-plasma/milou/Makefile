@@ -1,5 +1,6 @@
 COMMENT =	KDE5 Plasma Search and Launch
 DISTNAME =	milou-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =   milou    1.0 # 0.0
 

@@ -311,8 +311,6 @@ share/locale/zh_TW/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_demo.mo
-share/metainfo/
-share/metainfo/org.kde.oxygen.appdata.xml
 share/plasma/
 share/plasma/desktoptheme/
 share/plasma/desktoptheme/oxygen/

@@ -466,8 +466,6 @@ share/locale/zh_TW/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/zh_TW/LC_MESSAGES/plasmoidviewer.mo
 share/metainfo/
 share/metainfo/org.kde.plasma.iconexplorer.appdata.xml
-share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
-share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
 share/metainfo/org.kde.plasmoidviewer.appdata.xml
 share/plasma/shells/
