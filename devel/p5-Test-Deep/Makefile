@@ -1,6 +1,6 @@
 COMMENT =	extremely flexible deep comparison
 
-DISTNAME =	Test-Deep-1.204
+DISTNAME =	Test-Deep-1.205
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
