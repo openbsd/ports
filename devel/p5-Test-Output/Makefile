@@ -1,6 +1,6 @@
 COMMENT = 	utilities to test STDOUT and STDERR messages
 
-DISTNAME =	Test-Output-1.035
+DISTNAME =	Test-Output-1.036
 
 CATEGORIES =	devel
 
