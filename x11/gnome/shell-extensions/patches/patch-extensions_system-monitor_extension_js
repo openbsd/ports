@@ -3,11 +3,11 @@ https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/merge_requests/356
 Index: extensions/system-monitor/extension.js
 --- extensions/system-monitor/extension.js.orig
 +++ extensions/system-monitor/extension.js
-@@ -178,6 +178,7 @@ class SwapSection extends LoadStatSection {
+@@ -361,6 +361,7 @@ class Indicator extends PanelMenu.Button {
      }
  
-     _getLoadValue() {
+     constructor(settings) {
 +        GTop.glibtop_init();
-         const swap = new GTop.glibtop_swap();
-         GTop.glibtop_get_swap(swap);
+         super(0.5, _('System stats'));
  
+         this._settings = settings;
