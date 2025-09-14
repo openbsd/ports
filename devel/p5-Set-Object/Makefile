@@ -1,8 +1,8 @@
-COMMENT=	set of objects and strings
+COMMENT =	set of objects and strings
 
-MODULES=	cpan
-DISTNAME =	Set-Object-1.42
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Set-Object-1.43
+CATEGORIES =	devel
 
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes
