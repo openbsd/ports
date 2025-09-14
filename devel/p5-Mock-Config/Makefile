@@ -1,6 +1,6 @@
 COMMENT =		temporarily set Config or XSConfig values
 
-DISTNAME =		Mock-Config-0.04
+DISTNAME =		Mock-Config-0.05
 
 CATEGORIES =		devel
 
