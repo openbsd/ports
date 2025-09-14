@@ -23,5 +23,11 @@ if [ -f "${usermodmap}" ]; then
     xmodmap "${usermodmap}"
 fi
 
+# XDG_RUNTIME_DIR
+export XDG_RUNTIME_DIR=/var/run/user/`id -u`
+
+# update environment used for D-Bus session services
+dbus-update-activation-environment --all
+
 eval "${@}"
 exit
