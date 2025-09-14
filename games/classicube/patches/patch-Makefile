@@ -1,0 +1,14 @@
+honor CFLAGS
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,7 +5,7 @@ C_OBJECTS   = $(patsubst $(SOURCE_DIR)/%.c, $(BUILD_DI
+ 
+ OBJECTS = $(C_OBJECTS)
+ # Flags passed to the C compiler
+-CFLAGS  = -pipe -fno-math-errno -Werror -Wno-error=missing-braces -Wno-error=strict-aliasing
++CFLAGS  += -fno-math-errno -Werror -Wno-error=missing-braces -Wno-error=strict-aliasing
+ # Flags passed to the linker
+ LDFLAGS = -g -rdynamic
+ # Name of the main executable
