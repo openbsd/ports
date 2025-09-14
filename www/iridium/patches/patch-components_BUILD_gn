@@ -1,3 +1,5 @@
+iridium ninja build order fix
+
 Index: components/BUILD.gn
 --- components/BUILD.gn.orig
 +++ components/BUILD.gn
@@ -27,3 +29,23 @@ Index: components/BUILD.gn
      deps += [
        "//components/stability_report:unit_tests",
        "//components/webapps/isolated_web_apps:unit_tests",
+@@ -945,8 +944,7 @@ test("components_unittests") {
+   # No components should depend on Chrome.
+   # Since //chrome depends on //extensions, we also only assert_no_deps on
+   # extensions targets.
+-  assert_no_deps = [ "//chrome/*" ]
+-  assert_no_deps += disallowed_extension_deps_
++  assert_no_deps = disallowed_extension_deps_
+ 
+   if (is_ios) {
+     assert_no_deps += ios_assert_no_deps
+@@ -1263,8 +1261,7 @@ if (use_blink) {
+     # No components should depend on Chrome.
+     # Since //chrome depends on //extensions, we also only assert_no_deps on
+     # extensions targets.
+-    assert_no_deps = [ "//chrome/*" ]
+-    assert_no_deps += disallowed_extension_deps_
++    assert_no_deps = disallowed_extension_deps_
+ 
+     if (is_fuchsia) {
+       additional_manifest_fragments = [
