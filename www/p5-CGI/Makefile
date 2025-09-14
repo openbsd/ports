@@ -1,5 +1,5 @@
 COMMENT =	handle Common Gateway Interface requests and responses
-DISTNAME =	CGI-4.67
+DISTNAME =	CGI-4.70
 CATEGORIES =	www
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
