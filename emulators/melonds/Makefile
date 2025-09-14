@@ -1,8 +1,7 @@
 COMMENT =	Nintendo DS emulator
 
 PKGNAME =	melonds-$V
-V =		0.9.5
-REVISION =	0
+V =		1.0
 
 DIST_TUPLE +=	github melonDS-emu melonDS $V .
 
@@ -17,21 +16,27 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += EGL ICE Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5Widgets
-WANTLIB += SDL2 SM X11 Xext archive c glib-2.0 intl m slirp
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE Qt6Core Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets SDL2
+WANTLIB += SM X11 Xext archive c enet glib-2.0 intl m slirp zstd
+
+# dlopen'd
+WANTLIB += wayland-egl
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	archivers/libarchive \
 		devel/sdl2 \
+		net/enet \
 		net/libslirp \
-		x11/qt5/qtmultimedia
+		wayland/wayland \
+		x11/qt6/qtmultimedia
 BUILD_DEPENDS =	devel/kf6/extra-cmake-modules
 RUN_DEPENDS =	x11/gtk+4,-guic \
 		devel/desktop-file-utils
 
 
-CONFIGURE_ARGS +=	-DQt5_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5" \
+CONFIGURE_ARGS +=	-DQt6_DIR="${LOCALBASE}/lib/qt6/cmake/Qt6" \
+			-DUSE_SYSTEM_LIBSLIRP=ON \
 			-DBUILD_STATIC=OFF \
 			-DENABLE_JIT=OFF \
 			-DENABLE_LTO_RELEASE=ON \

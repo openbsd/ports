@@ -1,0 +1,12 @@
+Index: src/frontend/duckstation/gl/context_egl_wayland.cpp
+--- src/frontend/duckstation/gl/context_egl_wayland.cpp.orig
++++ src/frontend/duckstation/gl/context_egl_wayland.cpp
+@@ -4,7 +4,7 @@
+ Log_SetChannel(ContextEGLWayland);
+ 
+ namespace GL {
+-static const char* WAYLAND_EGL_MODNAME = "libwayland-egl.so.1";
++static const char* WAYLAND_EGL_MODNAME = "libwayland-egl.so";
+ 
+ ContextEGLWayland::ContextEGLWayland(const WindowInfo& wi) : ContextEGL(wi) {}
+ ContextEGLWayland::~ContextEGLWayland()
