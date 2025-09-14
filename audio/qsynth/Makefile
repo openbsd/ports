@@ -1,6 +1,7 @@
 COMMENT =		Qt GUI Interface for FluidSynth
 
 DISTNAME =		qsynth-0.9.13
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -14,12 +15,13 @@ PERMIT_PACKAGE =	Yes
 SITES =			${SITE_SOURCEFORGE:=qsynth/}
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Svg
-WANTLIB += Qt6Widgets c fluidsynth m
+WANTLIB += Qt6Widgets c fluidsynth m pipewire-0.3
 
 MODULES =		x11/qt6 \
 			devel/cmake
 
 LIB_DEPENDS +=		audio/fluidsynth>=2.3.2 \
+			multimedia/pipewire/pipewire,-libs \
 			x11/qt6/qtsvg
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
