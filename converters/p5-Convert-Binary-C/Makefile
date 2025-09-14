@@ -1,6 +1,6 @@
 COMMENT =		binary data conversion using C types
 
-DISTNAME =		Convert-Binary-C-0.85
+DISTNAME =		Convert-Binary-C-0.86
 CATEGORIES =		converters
 
 # perl
