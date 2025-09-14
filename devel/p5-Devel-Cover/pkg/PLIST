@@ -40,6 +40,7 @@ ${P5ARCH}/Devel/Cover/Report/Html_basic.pm
 ${P5ARCH}/Devel/Cover/Report/Html_minimal.pm
 ${P5ARCH}/Devel/Cover/Report/Html_subtle.pm
 ${P5ARCH}/Devel/Cover/Report/Json.pm
+${P5ARCH}/Devel/Cover/Report/Nvim.pm
 ${P5ARCH}/Devel/Cover/Report/Sort.pm
 ${P5ARCH}/Devel/Cover/Report/Text.pm
 ${P5ARCH}/Devel/Cover/Report/Text2.pm
@@ -90,6 +91,7 @@ ${P5ARCH}/auto/Devel/Cover/
 @man man/man3p/Devel::Cover::Report::Html_minimal.3p
 @man man/man3p/Devel::Cover::Report::Html_subtle.3p
 @man man/man3p/Devel::Cover::Report::Json.3p
+@man man/man3p/Devel::Cover::Report::Nvim.3p
 @man man/man3p/Devel::Cover::Report::Sort.3p
 @man man/man3p/Devel::Cover::Report::Text.3p
 @man man/man3p/Devel::Cover::Report::Text2.3p
