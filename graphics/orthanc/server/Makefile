@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.12.7
