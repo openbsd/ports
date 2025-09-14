@@ -266,10 +266,12 @@ share/doc/libshumate-1.0/method.Marker.animate_out.html
 share/doc/libshumate-1.0/method.Marker.animate_out_with_delay.html
 share/doc/libshumate-1.0/method.Marker.get_child.html
 share/doc/libshumate-1.0/method.Marker.get_draggable.html
+share/doc/libshumate-1.0/method.Marker.get_hotspot.html
 share/doc/libshumate-1.0/method.Marker.get_selectable.html
 share/doc/libshumate-1.0/method.Marker.is_selected.html
 share/doc/libshumate-1.0/method.Marker.set_child.html
 share/doc/libshumate-1.0/method.Marker.set_draggable.html
+share/doc/libshumate-1.0/method.Marker.set_hotspot.html
 share/doc/libshumate-1.0/method.Marker.set_selectable.html
 share/doc/libshumate-1.0/method.MarkerLayer.add_marker.html
 share/doc/libshumate-1.0/method.MarkerLayer.get_markers.html
@@ -320,13 +322,15 @@ share/doc/libshumate-1.0/method.SimpleMap.get_map_source.html
 share/doc/libshumate-1.0/method.SimpleMap.get_scale.html
 share/doc/libshumate-1.0/method.SimpleMap.get_show_zoom_buttons.html
 share/doc/libshumate-1.0/method.SimpleMap.get_viewport.html
-share/doc/libshumate-1.0/method.SimpleMap.insert_overlay_layer.html
+share/doc/libshumate-1.0/method.SimpleMap.insert_overlay_layer_above.html
+share/doc/libshumate-1.0/method.SimpleMap.insert_overlay_layer_behind.html
 share/doc/libshumate-1.0/method.SimpleMap.remove_overlay_layer.html
 share/doc/libshumate-1.0/method.SimpleMap.set_map_source.html
 share/doc/libshumate-1.0/method.SimpleMap.set_show_zoom_buttons.html
 share/doc/libshumate-1.0/method.SymbolEvent.get_feature_id.html
 share/doc/libshumate-1.0/method.SymbolEvent.get_keys.html
 share/doc/libshumate-1.0/method.SymbolEvent.get_layer.html
+share/doc/libshumate-1.0/method.SymbolEvent.get_n_press.html
 share/doc/libshumate-1.0/method.SymbolEvent.get_source_layer.html
 share/doc/libshumate-1.0/method.SymbolEvent.get_tag.html
 share/doc/libshumate-1.0/method.Tile.get_fade_in.html
@@ -386,6 +390,7 @@ share/doc/libshumate-1.0/method.Viewport.set_reference_map_source.html
 share/doc/libshumate-1.0/method.Viewport.set_rotation.html
 share/doc/libshumate-1.0/method.Viewport.set_zoom_level.html
 share/doc/libshumate-1.0/method.Viewport.widget_coords_to_location.html
+share/doc/libshumate-1.0/opensearch.xml
 share/doc/libshumate-1.0/property.Compass.viewport.html
 share/doc/libshumate-1.0/property.DataSource.max-zoom-level.html
 share/doc/libshumate-1.0/property.DataSource.min-zoom-level.html
@@ -419,6 +424,8 @@ share/doc/libshumate-1.0/property.MapSource.projection.html
 share/doc/libshumate-1.0/property.MapSource.tile-size.html
 share/doc/libshumate-1.0/property.Marker.child.html
 share/doc/libshumate-1.0/property.Marker.selectable.html
+share/doc/libshumate-1.0/property.Marker.x-hotspot.html
+share/doc/libshumate-1.0/property.Marker.y-hotspot.html
 share/doc/libshumate-1.0/property.MarkerLayer.selection-mode.html
 share/doc/libshumate-1.0/property.PathLayer.closed.html
 share/doc/libshumate-1.0/property.PathLayer.fill-color.html
@@ -432,6 +439,7 @@ share/doc/libshumate-1.0/property.RasterRenderer.data-source.html
 share/doc/libshumate-1.0/property.Scale.max-width.html
 share/doc/libshumate-1.0/property.Scale.unit.html
 share/doc/libshumate-1.0/property.Scale.viewport.html
+share/doc/libshumate-1.0/property.SimpleMap.base-map-layer.html
 share/doc/libshumate-1.0/property.SimpleMap.compass.html
 share/doc/libshumate-1.0/property.SimpleMap.license.html
 share/doc/libshumate-1.0/property.SimpleMap.map-source.html
@@ -441,6 +449,7 @@ share/doc/libshumate-1.0/property.SimpleMap.show-zoom-buttons.html
 share/doc/libshumate-1.0/property.SimpleMap.viewport.html
 share/doc/libshumate-1.0/property.SymbolEvent.feature-id.html
 share/doc/libshumate-1.0/property.SymbolEvent.layer.html
+share/doc/libshumate-1.0/property.SymbolEvent.n-press.html
 share/doc/libshumate-1.0/property.SymbolEvent.source-layer.html
 share/doc/libshumate-1.0/property.Tile.fade-in.html
 share/doc/libshumate-1.0/property.Tile.paintable.html
@@ -467,7 +476,9 @@ share/doc/libshumate-1.0/property.Viewport.zoom-level.html
 share/doc/libshumate-1.0/search.js
 share/doc/libshumate-1.0/signal.DataSource.received-data.html
 share/doc/libshumate-1.0/signal.Map.animation-completed.html
+share/doc/libshumate-1.0/signal.MapLayer.map-loaded.html
 share/doc/libshumate-1.0/signal.MapLayer.symbol-clicked.html
+share/doc/libshumate-1.0/signal.MapLayer.tile-error.html
 share/doc/libshumate-1.0/signal.MarkerLayer.marker-selected.html
 share/doc/libshumate-1.0/signal.MarkerLayer.marker-unselected.html
 share/doc/libshumate-1.0/signal.SimpleMap.symbol-clicked.html
@@ -536,6 +547,7 @@ share/locale/sr/LC_MESSAGES/shumate1.mo
 share/locale/sv/LC_MESSAGES/shumate1.mo
 share/locale/tr/LC_MESSAGES/shumate1.mo
 share/locale/uk/LC_MESSAGES/shumate1.mo
+share/locale/uz/LC_MESSAGES/shumate1.mo
 share/locale/zh_CN/LC_MESSAGES/shumate1.mo
 share/locale/zh_TW/LC_MESSAGES/shumate1.mo
 share/vala/vapi/shumate-1.0.deps
