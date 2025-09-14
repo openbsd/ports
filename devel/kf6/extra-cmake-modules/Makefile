@@ -1,5 +1,6 @@
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
+REVISION =	0
 
 PKG_ARCH =	*
 
@@ -7,10 +8,9 @@ MODULES =	lang/python
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =		textproc/py-sphinx \
-			x11/qt5/qttools,-main
+			x11/qt6/qttools
 
-CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \
-			-DQCollectionGenerator_EXECUTABLE=${LOCALBASE}/lib/qt5/bin/qcollectiongenerator
+CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON
 
 # use depleted
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
