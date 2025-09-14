@@ -1,5 +1,8 @@
 COMMENT =	API and tools for decoding and encoding GRIB and BUFR
 
+# "ecCodes only supports 64 bit platforms"
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
+
 DISTNAME =	eccodes-2.44.66-Source
 EXTRACT_SUFX =	-PRE-RELEASE.tar.gz
 PKGNAME =	eccodes-2.44pre66
