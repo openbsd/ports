@@ -15,15 +15,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curl gnutls jansson microhttpd orcania pthread yder z
 
-MODULES =		devel/cmake
+MODULES =	devel/cmake
 
-LIB_DEPENDS +=		devel/jansson \
-			devel/orcania \
-			devel/yder>=1.4.20 \
-			net/curl \
-			security/gnutls \
-			www/libmicrohttpd
+LIB_DEPENDS +=	devel/jansson \
+		devel/orcania \
+		devel/yder>=1.4.20 \
+		net/curl \
+		security/gnutls \
+		www/libmicrohttpd
 
-NO_TEST =		Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
