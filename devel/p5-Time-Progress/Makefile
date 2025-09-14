@@ -1,6 +1,6 @@
 COMMENT =	elapsed and estimated finish time reporting
 
-DISTNAME =	Time-Progress-2.14
+DISTNAME =	Time-Progress-2.15
 CATEGORIES =	devel
 
 # Perl
