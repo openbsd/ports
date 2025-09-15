@@ -1,6 +1,7 @@
 COMMENT =		Atari 2600 VCS emulator
 
 V =			7.0
+REVISION =		0
 DISTNAME =		stella-$V
 CATEGORIES =		emulators
 EXTRACT_SUFX =		-src.tar.xz
@@ -32,6 +33,8 @@ CONFIGURE_ARGS +=	--with-libpng-prefix=${LOCALBASE}/lib
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 DOCSBASE =		${WRKDIST}/docs
 HTMLDOCS =		${DOCSBASE}/*.html
