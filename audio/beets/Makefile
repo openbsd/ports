@@ -1,6 +1,6 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_DISTV=	2.3.1
+MODPY_DISTV=	2.4.0
 DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
 
@@ -23,6 +23,7 @@ RUN_DEPENDS+=	textproc/py-confuse \
 		math/py-numpy \
 		sysutils/py-platformdirs \
 		textproc/py-yaml \
+		devel/py-typing-extensions \
 		textproc/py-unidecode \
 		www/py-beautifulsoup4 \
 		textproc/py-langdetect \
