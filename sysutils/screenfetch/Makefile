@@ -3,8 +3,7 @@ PKGNAME =	${DISTNAME:L}
 
 GH_ACCOUNT =	KittyKatt
 GH_PROJECT =	screenFetch
-GH_TAGNAME =	v3.9.1
-REVISION =	0
+GH_TAGNAME =	v3.9.9
 
 CATEGORIES =	sysutils misc
 
