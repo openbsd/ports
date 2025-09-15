@@ -1,3 +1,6 @@
+# 0.16+ is under graphics/gexiv2
+PORTROACH=		limit:^0\.14
+
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.14.6
