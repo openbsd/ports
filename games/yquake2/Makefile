@@ -1,6 +1,6 @@
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		8.51
+V=		8.60
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
