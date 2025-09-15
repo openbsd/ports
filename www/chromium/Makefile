@@ -1,6 +1,8 @@
 BROKEN-i386 =		v8/src/compiler/turboshaft/int64-lowering-reducer.h:295:24: error: call to member function 'Word32Constant' is ambiguous (but will probably run out of memory linking under DPB even if fixed)
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
+PORTROACH=		ignore:1
+
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2

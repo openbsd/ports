@@ -2,6 +2,8 @@ BROKEN-i386 =		v8/src/compiler/turboshaft/int64-lowering-reducer.h:295:24: error
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-riscv64 =	Unknown current CPU: riscv64
 
+PORTROACH=		ignore:1
+
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
