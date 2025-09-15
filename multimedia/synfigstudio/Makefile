@@ -7,7 +7,7 @@ COMMENT =		2D animation software studio
 V =			1.5.3
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  synfigapp                 3.0 # 0.0
 
@@ -62,5 +62,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-update-mimedb
 
 SUBST_VARS +=		API_V
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
