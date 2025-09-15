@@ -1,12 +1,11 @@
 COMMENT =	Lua module for conversion between markup formats
 
-V =		0.5.0
+V =		0.6.0
 PKGNAME =	lua-lunamark-${V}
-REVISION =	0
 
 GH_ACCOUNT =	jgm
 GH_PROJECT =	lunamark
-GH_TAGNAME =	${V}
+GH_TAGNAME =	${V}-1
 
 CATEGORIES =	textproc
 
