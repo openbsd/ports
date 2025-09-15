@@ -4,7 +4,7 @@ BUG: https://bugzilla.samba.org/show_bug.cgi?id=9890
 Index: buildtools/wafsamba/samba_conftests.py
 --- buildtools/wafsamba/samba_conftests.py.orig
 +++ buildtools/wafsamba/samba_conftests.py
-@@ -40,9 +40,9 @@ def check(self, *k, **kw):
+@@ -42,9 +42,9 @@ def check(self, *k, **kw):
      def add_options_dir(dirs, env):
          for x in dirs:
               if not x in env.CPPPATH:
