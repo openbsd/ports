@@ -1,8 +1,7 @@
 COMMENT =	encoder/decoder implementation for DEC SIXEL graphics
 
-V =		1.8.6
+V =		1.8.7
 DISTNAME =	libsixel-$V
-REVISION =	0
 
 SHARED_LIBS +=	sixel	1.0	# 1.6
 
