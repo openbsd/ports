@@ -1,7 +1,6 @@
 COMMENT=	perform basic numeric, textual and statistical operations
 
-DISTNAME=	datamash-1.8
-REVISION=	2
+DISTNAME=	datamash-1.9
 
 CATEGORIES=	math
 
