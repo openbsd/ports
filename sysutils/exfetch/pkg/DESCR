@@ -1,0 +1,4 @@
+Exfetch is a simple shell-extensible sysfetch that's:
+- Predictable, consistent output across systems
+- Extensible via shell scripting and flags
+- No auto-detection "magic" - you control the output
