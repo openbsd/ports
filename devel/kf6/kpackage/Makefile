@@ -1,5 +1,6 @@
 COMMENT =	installation and loading of content packages in KDE
 DISTNAME =	kpackage-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Package                0.0 # 0.0
 
