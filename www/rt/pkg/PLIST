@@ -1396,6 +1396,10 @@ share/examples/rt/upgrade/5.9.7/schema.Pg
 @sample ${SYSCONFDIR}/rt/upgrade/5.9.7/schema.Pg
 share/examples/rt/upgrade/5.9.7/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/5.9.7/schema.mysql
+share/examples/rt/upgrade/6.0.1/
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.1/
+share/examples/rt/upgrade/6.0.1/content
+@sample ${SYSCONFDIR}/rt/upgrade/6.0.1/content
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1425,6 +1429,7 @@ share/examples/rt/upgrade/upgrade-sla
 share/examples/rt/upgrade/vulnerable-passwords
 @sample ${SYSCONFDIR}/rt/upgrade/vulnerable-passwords
 share/rt/
+share/rt/fonts/
 share/rt/html/
 share/rt/html/Admin/
 share/rt/html/Admin/Actions/
@@ -2377,6 +2382,7 @@ share/rt/html/Ticket/Widgets/Display/Times
 share/rt/html/Ticket/Widgets/Update/
 share/rt/html/Ticket/Widgets/Update/Basics
 share/rt/html/Ticket/Widgets/Update/CustomFieldCustomGroupings
+share/rt/html/Ticket/Widgets/Update/Dates
 share/rt/html/Ticket/Widgets/Update/Description
 share/rt/html/Ticket/Widgets/Update/Message
 share/rt/html/Ticket/Widgets/Update/PreviewScrips
@@ -2512,7 +2518,6 @@ share/rt/po/nn.po
 share/rt/po/pl.po
 share/rt/po/pt.po
 share/rt/po/pt_BR.po
-share/rt/po/pt_PT.po
 share/rt/po/rt.pot
 share/rt/po/ru.po
 share/rt/po/sk.po
