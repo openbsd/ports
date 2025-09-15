@@ -2,7 +2,7 @@ PKG_ARCH =	*
 
 COMMENT =	EPUB validator
 
-V =		5.2.1
+V =		5.3.0
 DISTNAME =	epubcheck-$V
 
 CATEGORIES =	textproc
