@@ -56,6 +56,7 @@ ${P5SITE}/DateTime/TimeZone/America/Chicago.pm
 ${P5SITE}/DateTime/TimeZone/America/Chihuahua.pm
 ${P5SITE}/DateTime/TimeZone/America/Ciudad_Juarez.pm
 ${P5SITE}/DateTime/TimeZone/America/Costa_Rica.pm
+${P5SITE}/DateTime/TimeZone/America/Coyhaique.pm
 ${P5SITE}/DateTime/TimeZone/America/Cuiaba.pm
 ${P5SITE}/DateTime/TimeZone/America/Danmarkshavn.pm
 ${P5SITE}/DateTime/TimeZone/America/Dawson.pm
@@ -170,7 +171,6 @@ ${P5SITE}/DateTime/TimeZone/Asia/Barnaul.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Beirut.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Bishkek.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Chita.pm
-${P5SITE}/DateTime/TimeZone/Asia/Choibalsan.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Colombo.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Damascus.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Dhaka.pm
@@ -252,12 +252,7 @@ ${P5SITE}/DateTime/TimeZone/Australia/Lord_Howe.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Melbourne.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Perth.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Sydney.pm
-${P5SITE}/DateTime/TimeZone/CET.pm
-${P5SITE}/DateTime/TimeZone/CST6CDT.pm
 ${P5SITE}/DateTime/TimeZone/Catalog.pm
-${P5SITE}/DateTime/TimeZone/EET.pm
-${P5SITE}/DateTime/TimeZone/EST.pm
-${P5SITE}/DateTime/TimeZone/EST5EDT.pm
 ${P5SITE}/DateTime/TimeZone/Europe/
 ${P5SITE}/DateTime/TimeZone/Europe/Andorra.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Astrakhan.pm
@@ -298,7 +293,6 @@ ${P5SITE}/DateTime/TimeZone/Europe/Volgograd.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Warsaw.pm
 ${P5SITE}/DateTime/TimeZone/Europe/Zurich.pm
 ${P5SITE}/DateTime/TimeZone/Floating.pm
-${P5SITE}/DateTime/TimeZone/HST.pm
 ${P5SITE}/DateTime/TimeZone/Indian/
 ${P5SITE}/DateTime/TimeZone/Indian/Chagos.pm
 ${P5SITE}/DateTime/TimeZone/Indian/Maldives.pm
@@ -308,9 +302,6 @@ ${P5SITE}/DateTime/TimeZone/Local.pm
 ${P5SITE}/DateTime/TimeZone/Local/Android.pm
 ${P5SITE}/DateTime/TimeZone/Local/Unix.pm
 ${P5SITE}/DateTime/TimeZone/Local/VMS.pm
-${P5SITE}/DateTime/TimeZone/MET.pm
-${P5SITE}/DateTime/TimeZone/MST.pm
-${P5SITE}/DateTime/TimeZone/MST7MDT.pm
 ${P5SITE}/DateTime/TimeZone/OffsetOnly.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/
 ${P5SITE}/DateTime/TimeZone/OlsonDB.pm
@@ -318,7 +309,6 @@ ${P5SITE}/DateTime/TimeZone/OlsonDB/Change.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Observance.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Rule.pm
 ${P5SITE}/DateTime/TimeZone/OlsonDB/Zone.pm
-${P5SITE}/DateTime/TimeZone/PST8PDT.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/
 ${P5SITE}/DateTime/TimeZone/Pacific/Apia.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Auckland.pm
@@ -351,7 +341,6 @@ ${P5SITE}/DateTime/TimeZone/Pacific/Tahiti.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Tarawa.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Tongatapu.pm
 ${P5SITE}/DateTime/TimeZone/UTC.pm
-${P5SITE}/DateTime/TimeZone/WET.pm
 @man man/man3p/DateTime::TimeZone.3p
 @man man/man3p/DateTime::TimeZone::Catalog.3p
 @man man/man3p/DateTime::TimeZone::Floating.3p
