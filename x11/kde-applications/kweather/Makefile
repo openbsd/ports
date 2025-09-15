@@ -1,6 +1,7 @@
 COMMENT =	weather application for Plasma Mobile
 DISTNAME =	kweather-${VERSION}
 CATEGORIES =	x11 geo
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6I18nQml KF6Notifications KWeatherCore
