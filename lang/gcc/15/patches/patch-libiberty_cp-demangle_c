@@ -1,12 +1,25 @@
+Avoid using sprintf and strcpy: aside from their unsafety they trigger ld(1)
+warnings, leading to broken feature detection when linking test
+programs with libestdc++.
+
 Index: libiberty/cp-demangle.c
 --- libiberty/cp-demangle.c.orig
 +++ libiberty/cp-demangle.c
+@@ -2832,7 +2832,7 @@ cplus_demangle_type (struct d_info *di)
+ 					      &cplus_demangle_builtin_types[34],
+ 					      arg, suffix);
+ 	    d_advance (di, 1);
+-	    sprintf (buf, "%d", arg);
++	    snprintf (buf, sizeof buf, "%d", arg);
+ 	    di->expansion += ret->u.s_extended_builtin.type->len
+ 			     + strlen (buf) + (suffix != 0);
+ 	    break;
 @@ -4618,7 +4618,7 @@ static inline void
  d_append_num (struct d_print_info *dpi, int l)
  {
    char buf[25];
 -  sprintf (buf,"%d", l);
-+  snprintf (buf, 25, "%d", l);
++  snprintf (buf, sizeof buf, "%d", l);
    d_append_string (dpi, buf);
  }
  

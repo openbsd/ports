@@ -1,3 +1,7 @@
+Avoid using sprintf: aside from its unsafety it triggers ld(1)
+warnings, leading to broken feature detection when linking test
+programs with libestdc++.
+
 Index: libstdc++-v3/src/c++11/debug.cc
 --- libstdc++-v3/src/c++11/debug.cc.orig
 +++ libstdc++-v3/src/c++11/debug.cc
@@ -19,3 +23,30 @@ Index: libstdc++-v3/src/c++11/debug.cc
      print_word(ctx, buf, written);
    }
  
+@@ -1170,7 +1170,7 @@ namespace
+ 
+     PrintContext& ctx = *static_cast<PrintContext*>(data);
+ 
+-    int written = __builtin_sprintf(buf, "%p ", (void*)pc);
++    int written = __builtin_snprintf(buf, sizeof buf, "%p ", (void*)pc);
+     print_word(ctx, buf, written);
+ 
+     int ret = 0;
+@@ -1198,7 +1198,7 @@ namespace
+ 
+ 	if (lineno)
+ 	  {
+-	    written = __builtin_sprintf(buf, ":%u\n", lineno);
++	    written = __builtin_snprintf(buf, sizeof buf, ":%u\n", lineno);
+ 	    print_word(ctx, buf, written);
+ 	  }
+ 	else
+@@ -1221,7 +1221,7 @@ namespace
+     if (errnum > 0)
+       {
+ 	char buf[64];
+-	int written = __builtin_sprintf(buf, " (errno=%d)\n", errnum);
++	int written = __builtin_snprintf(buf, sizeof buf, " (errno=%d)\n", errnum);
+ 	print_word(ctx, buf, written);
+       }
+     else
