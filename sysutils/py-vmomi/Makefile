@@ -1,10 +1,12 @@
 COMMENT =		python SDK for the VMware vSphere API
 
-MODPY_DISTV =	8.0.2.0.1
+GH_ACCOUNT =		vmware
+GH_PROJECT =		pyvmomi
+MODPY_DISTV =		9.0.0.0
+GH_TAGNAME =		v${MODPY_DISTV}
 
 DISTNAME =		pyvmomi-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -17,15 +19,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-six \
-			www/py-requests
-
 TEST_DEPENDS =		devel/py-mock \
-			devel/py-testtools \
-			devel/py-tox \
 			www/py-vcrpy
 
 .include <bsd.port.mk>
