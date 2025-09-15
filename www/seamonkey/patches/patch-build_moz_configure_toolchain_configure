@@ -17,7 +17,7 @@ Index: build/moz.configure/toolchain.configure
      if info.language == 'C++':
          if info.type == 'clang' and info.language_version != cxx14_version:
              flags.append('-std=gnu++14')
-@@ -1334,7 +1334,7 @@ set_define('_LIBCPP_HIDE_FROM_ABI', libcxx_override_vi
+@@ -1332,7 +1332,7 @@ set_define('_LIBCPP_HIDE_FROM_ABI', libcxx_override_vi
  @depends(target, check_build_environment)
  def visibility_flags(target, env):
      if target.os != 'WINNT':
