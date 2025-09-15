@@ -24,6 +24,7 @@
      SUBDIR += catdoc
      SUBDIR += catfish
      SUBDIR += cdiff
+     SUBDIR += check-jsonschema
      SUBDIR += chordpro
      SUBDIR += clit
      SUBDIR += clo++
@@ -487,6 +488,7 @@
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
      SUBDIR += py-referencing
+     SUBDIR += py-regress
      SUBDIR += py-roman-numerals
      SUBDIR += py-rst2ansi
      SUBDIR += py-ruamel.yaml
