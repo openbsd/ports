@@ -2,7 +2,7 @@ COMMENT=	tool for manipulating IPv6 addresses
 
 GH_ACCOUNT=	pbiering
 GH_PROJECT=	ipv6calc
-GH_TAGNAME=	4.3.2
+GH_TAGNAME=	4.4.0
 
 CATEGORIES=	net
 
@@ -22,7 +22,8 @@ FAKE_FLAGS=	DESTDIR=${WRKINST}/ datadir=${PREFIX}/share
 
 TEST_TARGET=	test
 TEST_DEPENDS=	shells/bash \
-		security/p5-Digest-SHA1
+		security/p5-Digest-SHA1 \
+		www/p5-HTML-Parser
 
 pre-test:
 	sed -i 's,^#!/bin/sh,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/*/test*.sh
