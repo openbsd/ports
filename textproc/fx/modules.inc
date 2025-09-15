@@ -7,11 +7,11 @@ MODGO_MODULES =	\
 	github.com/aymanbagabas/go-udiff	 v0.2.0 \
 	github.com/bits-and-blooms/bitset	 v1.22.0 \
 	github.com/charmbracelet/bubbles	 v0.21.0 \
-	github.com/charmbracelet/bubbletea	 v1.3.5 \
+	github.com/charmbracelet/bubbletea	 v1.3.6 \
 	github.com/charmbracelet/colorprofile	 v0.3.1 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
 	github.com/charmbracelet/lipgloss	 v1.1.0 \
-	github.com/charmbracelet/x/ansi		 v0.9.3 \
+	github.com/charmbracelet/x/ansi		 v0.10.1 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241011142426-46044092ad91 \
 	github.com/charmbracelet/x/exp/teatest	 v0.0.0-20231025135604-4a717d4fb812 \
@@ -20,13 +20,13 @@ MODGO_MODULES =	\
 	github.com/containerd/console		 v1.0.4-0.20230313162750-1ae8d489ac81 \
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/dlclark/regexp2		 v1.11.5 \
-	github.com/dop251/goja			 v0.0.0-20250531102226-cb187b08699c \
+	github.com/dop251/goja			 v0.0.0-20250630131328-58d95d85e994 \
 	github.com/dop251/goja_nodejs		 v0.0.0-20211022123610-8dd9abb0616d \
 	github.com/dustin/go-humanize		 v1.0.1 \
 	github.com/erikgeiser/coninput		 v0.0.0-20211004153227-1c3628e74d0f \
 	github.com/go-sourcemap/sourcemap	 v2.1.4+incompatible \
 	github.com/goccy/go-yaml		 v1.18.0 \
-	github.com/google/pprof			 v0.0.0-20250607225305-033d6d78b36a \
+	github.com/google/pprof			 v0.0.0-20250630185457-6e76a2b096b5 \
 	github.com/ianlancetaylor/demangle	 v0.0.0-20250417193237-f615e6bd150b \
 	github.com/kr/pretty			 v0.3.0 \
 	github.com/kylelemons/godebug		 v1.1.0 \
@@ -39,19 +39,20 @@ MODGO_MODULES =	\
 	github.com/muesli/reflow		 v0.3.0 \
 	github.com/muesli/termenv		 v0.16.0 \
 	github.com/nfnt/resize			 v0.0.0-20180221191011-83c6a9932646 \
+	github.com/pelletier/go-toml/v2		 v2.2.3 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/rivo/uniseg			 v0.4.7 \
 	github.com/sahilm/fuzzy			 v0.1.1 \
-	github.com/stretchr/objx		 v0.5.0 \
-	github.com/stretchr/testify		 v1.8.4 \
+	github.com/stretchr/objx		 v0.5.2 \
+	github.com/stretchr/testify		 v1.9.0 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/mod			 v0.25.0 \
-	golang.org/x/sync			 v0.15.0 \
-	golang.org/x/sys			 v0.33.0 \
+	golang.org/x/sync			 v0.16.0 \
+	golang.org/x/sys			 v0.35.0 \
 	golang.org/x/term			 v0.6.0 \
-	golang.org/x/text			 v0.26.0 \
-	golang.org/x/tools			 v0.33.0 \
+	golang.org/x/text			 v0.27.0 \
+	golang.org/x/tools			 v0.34.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v2			 v2.4.0 \
 	gopkg.in/yaml.v3			 v3.0.1
@@ -62,6 +63,7 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/bubbletea	 v1.3.4 \
 	github.com/charmbracelet/colorprofile	 v0.2.3-0.20250311203215-f60798e515dc \
 	github.com/charmbracelet/x/ansi		 v0.8.0 \
+	github.com/charmbracelet/x/ansi		 v0.9.3 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/dlclark/regexp2		 v1.11.4 \
@@ -74,11 +76,12 @@ MODGO_MODFILES =	\
 	github.com/rivo/uniseg			 v0.2.0 \
 	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sync			 v0.11.0 \
-	golang.org/x/sync			 v0.13.0 \
+	golang.org/x/sync			 v0.15.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
 	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.32.0 \
+	golang.org/x/sys			 v0.33.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/text			 v0.3.8
