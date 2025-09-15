@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets GL KF6ColorScheme KF6ConfigCore KF6ConfigGui

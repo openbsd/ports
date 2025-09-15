@@ -186,7 +186,6 @@ share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
 share/metainfo/
-share/metainfo/org.kde.graphsplasmoid.appdata.xml
 share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
 @tag update-desktop-database
