@@ -318,6 +318,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poetry/core/json/${MODP
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/
+lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/dependency-groups-schema.json
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/poetry-schema.json
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/project-schema.json
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/
@@ -504,7 +505,8 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/version/pep440/segments.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/version/pep440/version.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/version/requirements.py
 lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/licenses/LICENSE
