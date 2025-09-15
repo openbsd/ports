@@ -1,0 +1,22 @@
+Revert https://invent.kde.org/frameworks/kpackage/-/commit/c2e68419246c380eebd9c6708c79f9110061dd35
+Index: KF6PackageMacros.cmake
+--- KF6PackageMacros.cmake.orig
++++ KF6PackageMacros.cmake
+@@ -50,9 +50,7 @@ function(kpackage_install_package dir component)
+             PATTERN CMakeLists.txt EXCLUDE
+             PATTERN Messages.sh EXCLUDE
+             PATTERN dummydata EXCLUDE)
+-endfunction()
+ 
+-function(kpackage_generate_appstream_metadata component)
+    get_target_property(kpackagetool_cmd KF6::kpackagetool6 LOCATION)
+    if (${component} MATCHES "^.+\\..+\\." AND NOT SKIP_APPSTREAM) #we make sure there's at least 2 dots
+         set(APPDATAFILE "${CMAKE_CURRENT_BINARY_DIR}/${component}.appdata.xml")
+@@ -72,6 +70,6 @@ function(kpackage_generate_appstream_metadata componen
+             install(FILES ${APPDATAFILE} DESTINATION ${KDE_INSTALL_METAINFODIR} OPTIONAL)
+         endif()
+    else()
+-        message(FATAL_ERROR "KPackage components must be specified in reverse domain notation for appstream generation.")
++        message(DEBUG "KPackage components should be specified in reverse domain notation. Appstream information won't be generated for ${component}.")
+    endif()
+ endfunction()
