@@ -2173,8 +2173,6 @@ share/metainfo/
 share/metainfo/org.kde.marble.appdata.xml
 share/metainfo/org.kde.marble.behaim.appdata.xml
 share/metainfo/org.kde.marble.maps.appdata.xml
-share/metainfo/org.kde.plasma.worldclock.appdata.xml
-share/metainfo/org.kde.plasma.worldmap.appdata.xml
 share/mime/packages/geo.xml
 share/plasma/
 share/plasma/plasmoids/
