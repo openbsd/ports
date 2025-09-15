@@ -3,6 +3,7 @@ COMMENT=	web search application
 V=		1.4.29
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
+REVISION=	0
 
 CATEGORIES=	www textproc
 

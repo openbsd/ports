@@ -1,0 +1,22 @@
+Change defaults so that we can use xapian-omega in a chroot without a
+configuration file.
+
+Index: configfile.cc
+--- configfile.cc.orig
++++ configfile.cc
+@@ -39,12 +39,12 @@ static const char configfile_local[] = "omega.conf";
+ static const char configfile_system[] = CONFIGFILE_SYSTEM;
+ static const char configfile_envvar[] = "OMEGA_CONFIG_FILE";
+ 
+-string database_dir = "/var/lib/omega/data/";
+-string template_dir = "/var/lib/omega/templates/";
++string database_dir = "/var/omega/data/";
++string template_dir = "/var/omega/templates/";
+ string default_template = "query";
+ string default_db = "default";
+ string log_dir = "/var/log/omega/";
+-string cdb_dir = "/var/lib/omega/cdb/";
++string cdb_dir = "/var/omega/cdb/";
+ 
+ /** Return true if the file fname exists.
+  */
