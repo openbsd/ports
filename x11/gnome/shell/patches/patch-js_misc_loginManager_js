@@ -23,7 +23,7 @@ Index: js/misc/loginManager.js
      } catch {
          return false;
      }
-@@ -83,12 +89,89 @@ export function getLoginManager() {
+@@ -83,12 +89,91 @@ export function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -46,8 +46,10 @@ Index: js/misc/loginManager.js
 +    }
 +
 +    getCurrentUserProxy() {
-+        // XXX not implemented in ConsoleKit
-+        return null;
++        // XXX userProxy not implemented in ConsoleKit;
++        // needs an implementation of org.freedesktop.login1.user (GetUser)
++        // https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3636/diffs
++        return new Promise(() => {});
 +    }
 +
 +    async getCurrentSessionProxy() {
@@ -114,7 +116,7 @@ Index: js/misc/loginManager.js
  class LoginManagerSystemd extends Signals.EventEmitter {
      constructor() {
          super();
-@@ -271,16 +354,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+@@ -271,16 +356,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));
