@@ -2,10 +2,10 @@ COMMENT =	QuakeWorld server
 
 CATEGORIES =	games
 
-V =		1.10
+V =		1.11
 DISTNAME =	mvdsv-$V
-DISTFILES =	mvdsv-$V{mvdsv-source-with-submodules}.zip
-EXTRACT_CASES =	*.zip) ${UNZIP} -Laq ${FULLDISTDIR}/$$archive -d ${WRKSRC};;
+DISTFILES =	mvdsv{mvdsv-source-with-submodules}-$V.zip
+EXTRACT_CASES =	*.zip) ${UNZIP} -aq ${FULLDISTDIR}/$$archive -d ${WRKSRC};;
 DIST_TUPLE +=	github id-software Quake \
 			bf4ac424ce754894ac8f1dae6a3981954bc9852d Quake
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
 HOMEPAGE =	https://mvdsv.quake.se/
-SITES =		https://github.com/QW-Group/mvdsv/releases/download/v$V/
+SITES =		https://github.com/QW-Group/mvdsv/releases/download/$V/
 
 WANTLIB += c curl m pcre pthread
 
@@ -25,6 +25,10 @@ LIB_DEPENDS =	devel/pcre \
 		net/curl
 
 NO_TEST =	Yes
+
+# unzip -a would normally fix this, but the archive has a mess of files
+# where some .c/.h are marked as binary and some as text
+FIX_CRLF_FILES =	src/server.h src/sv_ccmds.c
 
 SAMPLES_DIR =	${PREFIX}/share/examples/mvdsv
 
