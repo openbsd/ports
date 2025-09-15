@@ -6,7 +6,7 @@ V=		4.8.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics x11
 
@@ -94,6 +94,8 @@ CXXFLAGS=	${CFLAGS}
 
 # Fix build with OpenEXR>=3 (Imath split)
 CXXFLAGS +=	-I${LOCALBASE}/include/Imath
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	cd ${PREFIX}/lib && ln -s darktable/libdarktable.so
