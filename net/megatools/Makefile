@@ -2,7 +2,7 @@ PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.11.4.20250411
+DISTNAME =		megatools-1.11.5.20250706
 
 CATEGORIES =		net
 
