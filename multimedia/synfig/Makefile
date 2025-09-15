@@ -6,7 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.3
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -66,6 +66,8 @@ CONFIGURE_ARGS =	--without-included-ltdl
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/synfig
 
 SUBST_VARS +=		API_V
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/src/synfig/main.cpp
