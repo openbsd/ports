@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -185,7 +185,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
+@@ -190,7 +190,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
  endif
  
  # These must come before the -Wno- flags
@@ -10,19 +10,7 @@ Index: Makefile
  WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation -Wno-nullability-completeness
  
  # Only add this flag if the compiler supports it
-@@ -284,9 +284,11 @@ else
- LDFLAGS += -lc -lm
- # libdl is not available as a standalone library in Haiku
- ifneq ($(PLATFORM),Haiku)
-+ifneq ($(PLATFORM),OpenBSD)
- LDFLAGS += -ldl
- endif
- endif
-+endif
- 
- ifeq ($(MAKECMDGOALS),_ios)
- OBJ := build/obj-ios
-@@ -771,7 +773,7 @@ $(BIN)/BootROMs/%.bin: BootROMs/%.asm $(OBJ)/BootROMs/
+@@ -779,7 +779,7 @@ $(BIN)/BootROMs/%.bin: BootROMs/%.asm $(OBJ)/BootROMs/
  
  # Libretro Core (uses its own build system)
  libretro:
