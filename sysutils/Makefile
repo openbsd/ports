@@ -104,6 +104,7 @@
      SUBDIR += envconsul
      SUBDIR += eventlog
      SUBDIR += exfat-fuse
+     SUBDIR += exfetch
      SUBDIR += exoscale-cli
      SUBDIR += eza
      SUBDIR += f3
