@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/github/EnvironmentProtectionRule.py
 lib/python${MODPY_VERSION}/site-packages/github/EnvironmentProtectionRuleReviewer.py
 lib/python${MODPY_VERSION}/site-packages/github/Event.py
 lib/python${MODPY_VERSION}/site-packages/github/File.py
+lib/python${MODPY_VERSION}/site-packages/github/GeneratedReleaseNotes.py
 lib/python${MODPY_VERSION}/site-packages/github/Gist.py
 lib/python${MODPY_VERSION}/site-packages/github/GistComment.py
 lib/python${MODPY_VERSION}/site-packages/github/GistFile.py
@@ -92,8 +93,10 @@ lib/python${MODPY_VERSION}/site-packages/github/InstallationAuthorization.py
 lib/python${MODPY_VERSION}/site-packages/github/Invitation.py
 lib/python${MODPY_VERSION}/site-packages/github/Issue.py
 lib/python${MODPY_VERSION}/site-packages/github/IssueComment.py
+lib/python${MODPY_VERSION}/site-packages/github/IssueDependenciesSummary.py
 lib/python${MODPY_VERSION}/site-packages/github/IssueEvent.py
 lib/python${MODPY_VERSION}/site-packages/github/IssuePullRequest.py
+lib/python${MODPY_VERSION}/site-packages/github/IssueType.py
 lib/python${MODPY_VERSION}/site-packages/github/Label.py
 lib/python${MODPY_VERSION}/site-packages/github/License.py
 lib/python${MODPY_VERSION}/site-packages/github/MainClass.py
@@ -143,6 +146,9 @@ lib/python${MODPY_VERSION}/site-packages/github/Secret.py
 lib/python${MODPY_VERSION}/site-packages/github/SecurityAndAnalysis.py
 lib/python${MODPY_VERSION}/site-packages/github/SecurityAndAnalysisFeature.py
 lib/python${MODPY_VERSION}/site-packages/github/SelfHostedActionsRunner.py
+lib/python${MODPY_VERSION}/site-packages/github/SelfHostedActionsRunnerApplication.py
+lib/python${MODPY_VERSION}/site-packages/github/SelfHostedActionsRunnerJitConfig.py
+lib/python${MODPY_VERSION}/site-packages/github/SelfHostedActionsRunnerToken.py
 lib/python${MODPY_VERSION}/site-packages/github/SourceImport.py
 lib/python${MODPY_VERSION}/site-packages/github/Stargazer.py
 lib/python${MODPY_VERSION}/site-packages/github/StatsCodeFrequency.py
@@ -150,6 +156,7 @@ lib/python${MODPY_VERSION}/site-packages/github/StatsCommitActivity.py
 lib/python${MODPY_VERSION}/site-packages/github/StatsContributor.py
 lib/python${MODPY_VERSION}/site-packages/github/StatsParticipation.py
 lib/python${MODPY_VERSION}/site-packages/github/StatsPunchCard.py
+lib/python${MODPY_VERSION}/site-packages/github/SubIssueSummary.py
 lib/python${MODPY_VERSION}/site-packages/github/Tag.py
 lib/python${MODPY_VERSION}/site-packages/github/Team.py
 lib/python${MODPY_VERSION}/site-packages/github/TeamDiscussion.py
@@ -282,6 +289,8 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Event.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Event.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}File.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}File.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}GeneratedReleaseNotes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}GeneratedReleaseNotes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Gist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Gist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}GistComment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -350,10 +359,14 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Issue.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Issue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueComment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueComment.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueDependenciesSummary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueDependenciesSummary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueEvent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueEvent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssuePullRequest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssuePullRequest.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueType.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}IssueType.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Label.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Label.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}License.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -452,6 +465,12 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SecurityAndAnaly
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SecurityAndAnalysisFeature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerApplication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerApplication.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerJitConfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerJitConfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerToken.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SelfHostedActionsRunnerToken.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SourceImport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SourceImport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Stargazer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -466,6 +485,8 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}StatsParticipati
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}StatsParticipation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}StatsPunchCard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}StatsPunchCard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SubIssueSummary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}SubIssueSummary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Tag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Tag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Team.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -496,6 +517,7 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}WorkflowStep.${M
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}WorkflowStep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/openapi.index.json
 lib/python${MODPY_VERSION}/site-packages/github/py.typed
 lib/python${MODPY_VERSION}/site-packages/pygithub-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pygithub-${MODPY_DISTV}.dist-info/METADATA
