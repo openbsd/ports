@@ -42,8 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}event.
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}g.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}g.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}global_hotkeys.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}global_hotkeys.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}hotkey_actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}hotkey_actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,12 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}mixer.
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}mixer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}polib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}polib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}prerequisite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}prerequisite.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}region.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}region.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}safety.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/dirs.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/effect.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/event.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/g.py
+lib/python${MODPY_VERSION}/site-packages/singularity/code/global_hotkeys.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}/
@@ -131,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/text.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/theme.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/widget.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/group.py
+lib/python${MODPY_VERSION}/site-packages/singularity/code/hotkey_actions.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/i18n.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/item.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/knowledge.py
@@ -138,9 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/location.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/logmessage.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/mixer.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/player.py
-lib/python${MODPY_VERSION}/site-packages/singularity/code/polib.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/prerequisite.py
-lib/python${MODPY_VERSION}/site-packages/singularity/code/pycompat.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/region.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/safety.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/savegame.py
@@ -339,14 +339,3 @@ lib/python${MODPY_VERSION}/site-packages/singularity/music/lose/Chimes They Fade
 lib/python${MODPY_VERSION}/site-packages/singularity/music/lose/March Thee to Dis.ogg
 lib/python${MODPY_VERSION}/site-packages/singularity/music/win/
 lib/python${MODPY_VERSION}/site-packages/singularity/music/win/Apex Aleph.ogg
-lib/python${MODPY_VERSION}/site-packages/utils/
-lib/python${MODPY_VERSION}/site-packages/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}data-translations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}data-translations.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}maketree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/utils/${MODPY_PYCACHE}maketree.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/utils/data-translations.py
-lib/python${MODPY_VERSION}/site-packages/utils/maketree.py
