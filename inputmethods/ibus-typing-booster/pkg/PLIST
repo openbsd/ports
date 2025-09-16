@@ -409,6 +409,9 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}m17n_translit.${MODPY_PYC_MAGIC
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}ollama_pull.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}ollama_pull.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}ollama_pull.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabsqlitedb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabsqlitedb.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabsqlitedb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -430,6 +433,7 @@ share/ibus-typing-booster/engine/itb_util.py
 share/ibus-typing-booster/engine/itb_version.py
 share/ibus-typing-booster/engine/m17n_translit.py
 share/ibus-typing-booster/engine/main.py
+share/ibus-typing-booster/engine/ollama_pull.py
 share/ibus-typing-booster/engine/tabsqlitedb.py
 share/ibus-typing-booster/engine/tabstatistics.py
 share/ibus-typing-booster/icons/
