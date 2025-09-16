@@ -1,9 +1,8 @@
 COMMENT=		spellchecking library for Python
 
-MODPY_DISTV=	3.2.2
+MODPY_DISTV=		3.3.0
 DISTNAME=		pyenchant-${MODPY_DISTV}
 PKGNAME=		py-enchant-${MODPY_DISTV}
-REVISION=		6
 
 CATEGORIES=		textproc
 
