@@ -351,7 +351,6 @@
      SUBDIR += libtalloc
      SUBDIR += libtermkey
      SUBDIR += libtool
-     SUBDIR += libunique
      SUBDIR += liburcu
      SUBDIR += libusb-compat
      SUBDIR += libusb1
