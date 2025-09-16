@@ -3,6 +3,7 @@ COMMENT=	allow connecting with Happy Eyeballs (RFC 8305)
 MODPY_DISTV=	2.6.1
 DISTNAME=	aiohappyeyeballs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/aio-libs/aiohappyeyeballs
 

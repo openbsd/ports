@@ -3,6 +3,7 @@ COMMENT=	Python module to communicate with USB FIDO devices
 MODPY_DISTV=	1.2.0
 DISTNAME=	fido2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

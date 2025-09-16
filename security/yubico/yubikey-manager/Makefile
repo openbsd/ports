@@ -5,6 +5,7 @@ MODPY_DISTV=	5.7.2
 DISTNAME=	yubikey_manager-${MODPY_DISTV}
 PKGNAME=	yubikey-manager-${MODPY_DISTV}
 YK_PROJECT=	yubikey-manager
+REVISION=	0
 
 CATEGORIES=	sysutils
 

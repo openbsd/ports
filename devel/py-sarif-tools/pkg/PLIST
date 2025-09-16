@@ -90,8 +90,9 @@ lib/python${MODPY_VERSION}/site-packages/sarif/operations/word_op.py
 lib/python${MODPY_VERSION}/site-packages/sarif/sarif_file.py
 lib/python${MODPY_VERSION}/site-packages/sarif/sarif_file_utils.py
 lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/licenses/LICENSE

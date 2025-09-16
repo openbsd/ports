@@ -2,7 +2,7 @@ COMMENT=	JFFS2 filesystem extraction tool
 
 # 0.4.3+ needs "lzallright" instead of py-lzo
 MODPY_DISTV=	0.4.2
-REVISION=	2
+REVISION=	3
 DISTNAME=	jefferson-${MODPY_DISTV}
 
 CATEGORIES=	sysutils

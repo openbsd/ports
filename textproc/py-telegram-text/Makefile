@@ -3,6 +3,7 @@ COMMENT=	markup module for Telegram messenger
 MODPY_DISTV=	0.2.0
 DISTNAME=	telegram_text-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

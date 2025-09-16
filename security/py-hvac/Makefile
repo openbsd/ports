@@ -3,7 +3,7 @@ COMMENT =		Python client library for Hashicorp Vault
 MODPY_DISTV =	1.1.0
 DISTNAME =		hvac-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

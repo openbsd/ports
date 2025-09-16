@@ -3,7 +3,7 @@ COMMENT =	convert RSS/Atom newsfeeds to email
 MODPY_DISTV =	3.14
 DISTNAME =	rss2email-${MODPY_DISTV}
 CATEGORIES =	mail www
-REVISION =	3
+REVISION =	4
 
 MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 

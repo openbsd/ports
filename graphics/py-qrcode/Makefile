@@ -3,6 +3,7 @@ COMMENT=	QR Code image generator
 MODPY_DISTV=	8.2
 DISTNAME=	qrcode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	graphics textproc
 

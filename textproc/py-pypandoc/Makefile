@@ -3,6 +3,7 @@ COMMENT=	Python wrapper for pandoc
 MODPY_DISTV=	1.15
 DISTNAME=	pypandoc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

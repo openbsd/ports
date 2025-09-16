@@ -3,7 +3,7 @@ COMMENT =		client-side and server-side support for OpenAPI Spec v3
 MODPY_DISTV =		0.19.2
 DISTNAME =		openapi_core-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

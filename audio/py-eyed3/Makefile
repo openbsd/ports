@@ -4,7 +4,7 @@ COMMENT=	module and program for processing ID3 tags
 MODPY_DISTV=	0.9.7
 DISTNAME=	eyeD3-${MODPY_DISTV}
 CATEGORIES=	audio
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://eyed3.readthedocs.io/
 

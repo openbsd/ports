@@ -3,7 +3,7 @@ COMMENT=	country, language, currency and scripts definitions
 MODPY_DISTV=	24.6.1
 DISTNAME=	pycountry-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

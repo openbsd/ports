@@ -3,7 +3,7 @@ COMMENT=	immutable dictionary
 MODPY_DISTV=	4.2.0
 DISTNAME=	immutabledict-${MODPY_DISTV}
 PKGNAME=	py-immutabledict-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

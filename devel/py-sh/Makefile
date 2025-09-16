@@ -4,6 +4,7 @@ MODPY_DISTV=	2.2.2
 DISTNAME=	sh-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/amoffat/sh
 

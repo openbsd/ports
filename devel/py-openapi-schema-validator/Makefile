@@ -3,7 +3,7 @@ COMMENT =		OpenAPI schema validator
 MODPY_DISTV =	0.6.2
 DISTNAME =		openapi_schema_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

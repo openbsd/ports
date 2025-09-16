@@ -3,6 +3,7 @@ COMMENT=	SARIF command line tools and a Python library
 MODPY_DISTV=	3.0.4
 DISTNAME=	sarif_tools-${MODPY_DISTV}
 PKGNAME=	py-sarif-tools-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

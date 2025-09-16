@@ -4,7 +4,7 @@ MODPY_DISTV =	1.5.5
 DISTNAME =		pkgconfig-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/matze/pkgconfig
 

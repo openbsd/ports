@@ -3,7 +3,7 @@ COMMENT=		Python bindings for libsodium/tweetnacl based on ctypes
 MODPY_DISTV=	2.1.0
 DISTNAME=		libnacl-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 

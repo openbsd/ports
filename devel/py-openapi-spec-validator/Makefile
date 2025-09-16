@@ -3,7 +3,7 @@ COMMENT =		OpenAPI 2.0 (aka Swagger) and OpenAPI 3 spec validator
 MODPY_DISTV =		0.7.1
 DISTNAME =		openapi_spec_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel www
 

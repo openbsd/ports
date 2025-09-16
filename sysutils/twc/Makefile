@@ -3,6 +3,7 @@ V =			2.14.0
 DISTNAME =		twc_cli-${V}
 PKGNAME =		${DISTNAME:S/_cli//}
 CATEGORIES =		sysutils net
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes

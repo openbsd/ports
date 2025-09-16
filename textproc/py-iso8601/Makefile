@@ -3,7 +3,7 @@ COMMENT=	Python module to parse ISO 8601 dates
 MODPY_DISTV=	2.1.0
 DISTNAME=	iso8601-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

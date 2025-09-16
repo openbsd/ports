@@ -3,6 +3,7 @@ COMMENT =		object oriented paths
 MODPY_DISTV =		0.4.4
 DISTNAME =		pathable-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

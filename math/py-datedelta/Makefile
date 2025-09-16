@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4
 
 DISTNAME =		datedelta-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		math
 

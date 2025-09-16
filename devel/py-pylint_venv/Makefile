@@ -3,6 +3,7 @@ COMMENT =	use pylint with different virtual environments
 MODPY_DISTV=	3.0.4
 DISTNAME=	pylint_venv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

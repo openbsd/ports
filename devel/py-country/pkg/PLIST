@@ -1,10 +1,11 @@
 @pkgpath devel/py-country,python3
 lib/python${MODPY_VERSION}/site-packages/pycountry/
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pycountry/COPYRIGHT.txt
 lib/python${MODPY_VERSION}/site-packages/pycountry/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}/

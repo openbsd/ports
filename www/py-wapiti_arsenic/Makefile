@@ -4,6 +4,7 @@ MODPY_DISTV =		28.2
 
 DISTNAME =		wapiti_arsenic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

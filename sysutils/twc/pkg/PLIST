@@ -96,8 +96,9 @@ lib/python${MODPY_VERSION}/site-packages/twc/typerx.py
 lib/python${MODPY_VERSION}/site-packages/twc/utils.py
 lib/python${MODPY_VERSION}/site-packages/twc/vars.py
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/${DISTNAME}.dist-info/licenses/COPYING

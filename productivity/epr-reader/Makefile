@@ -3,7 +3,7 @@ COMMENT =		terminal/CLI Epub Reader
 MODPY_DISTV =	2.4.15
 
 DISTNAME =		epr-reader-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity
 
