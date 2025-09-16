@@ -1,6 +1,7 @@
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
 DISTNAME=		wmmenu-1.3
+REVISION=		0
 
 CATEGORIES=		x11 x11/windowmaker
 
