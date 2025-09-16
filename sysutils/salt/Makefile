@@ -17,13 +17,11 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_DISTV =	3007.1
 DISTNAME =		salt-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils net devel
 
 HOMEPAGE =		https://saltproject.io/
-
-MAINTAINER =		Robert Nagy <robert@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
