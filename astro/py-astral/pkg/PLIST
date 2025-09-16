@@ -1,10 +1,11 @@
 @pkgpath astro/py-astral,python3
 lib/python${MODPY_VERSION}/site-packages/astral/
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/astral/__init__.py
 lib/python${MODPY_VERSION}/site-packages/astral/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}/
@@ -14,13 +15,23 @@ lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}__main__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}geocoder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}geocoder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}julian.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}julian.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}location.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}location.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}moon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}moon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}sidereal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}sidereal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}sun.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}sun.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}table4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astral/${MODPY_PYCACHE}table4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astral/geocoder.py
+lib/python${MODPY_VERSION}/site-packages/astral/julian.py
 lib/python${MODPY_VERSION}/site-packages/astral/location.py
 lib/python${MODPY_VERSION}/site-packages/astral/moon.py
+lib/python${MODPY_VERSION}/site-packages/astral/py.typed
+lib/python${MODPY_VERSION}/site-packages/astral/sidereal.py
 lib/python${MODPY_VERSION}/site-packages/astral/sun.py
+lib/python${MODPY_VERSION}/site-packages/astral/table4.py

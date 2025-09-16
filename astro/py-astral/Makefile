@@ -1,9 +1,8 @@
 COMMENT =		calculations for the position of the sun and the moon
 
-MODPY_DISTV =	2.2
+MODPY_DISTV =		3.2
 DISTNAME =		astral-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		astro
 
@@ -15,12 +14,10 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
-MODPY_PYTEST =		Yes
 
-RUN_DEPENDS =		devel/py-tz
 TEST_DEPENDS =		devel/py-freezegun
+PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
