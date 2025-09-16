@@ -1,10 +1,9 @@
 COMMENT =		programming-focused real-time strategy game
 
 DISTNAME =		colobot-$V
-REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLEW GLU SDL2 SDL2_image SDL2_ttf boost_filesystem-mt
+WANTLIB += GL GLEW SDL2 SDL2_image SDL2_ttf boost_filesystem-mt
 WANTLIB += boost_regex-mt boost_system-mt c intl m openal physfs png
 WANTLIB += pthread sndfile z boost_atomic-mt
 
@@ -32,5 +31,7 @@ CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl
 
 NO_TEST =		Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

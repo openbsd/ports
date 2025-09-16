@@ -3,7 +3,6 @@ PKG_ARCH =		*
 COMMENT =		data files for colobot
 
 DISTNAME =		colobot-data-$V
-REVISION =		0
 
 CATEGORIES =		games
 
