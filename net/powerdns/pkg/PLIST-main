@@ -30,7 +30,6 @@
 @bin bin/zone2json
 @bin bin/zone2sql
 lib/pdns/
-@so lib/pdns/libbindbackend.so
 @so lib/pdns/libgsqlite3backend.so
 @man man/man1/calidns.1
 @man man/man1/dnsbulktest.1

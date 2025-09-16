@@ -3,7 +3,7 @@ COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.9.8
+V=			5.0.0
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -11,7 +11,7 @@ PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
-REVISION-main=		0
+#REVISION-main=		0
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
 #REVISION-ldap=		0
@@ -78,7 +78,6 @@ CONFIGURE_ARGS+=	--disable-shared \
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-LIBTOOL_FLAGS=		--tag=disable-static
 
 .include <bsd.port.arch.mk>
 
