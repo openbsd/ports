@@ -1,11 +1,10 @@
 BROKEN-sparc64 = src/link/script.y:17:11: fatal error: bit: No such file or directory
 
-FIX_EXTRACT_PERMISSIONS =	Yes
-
 COMMENT =	Game Boy development system
 
-V =		0.7.0
+V =		0.9.4
 DISTNAME =	rgbds-$V
+DISTFILES =	rgbds-$V{rgbds-source}${EXTRACT_SUFX}
 
 CATEGORIES =	devel
 
@@ -23,15 +22,12 @@ SITES =		https://github.com/gbdev/rgbds/releases/download/v$V/
 
 COMPILER =	base-clang ports-gcc
 
+MODULES =	devel/cmake
+
 BUILD_DEPENDS =	devel/bison \
 		shells/bash
 
 LIB_DEPENDS =	graphics/png
-
-MAKE_FLAGS =	CFLAGS="${CFLAGS}" \
-		BINMODE=${BINMODE} \
-		MANMODE=${MANMODE} \
-		Q=
 
 FAKE_FLAGS =	mandir=${PREFIX}/man
 
@@ -39,5 +35,7 @@ FAKE_FLAGS =	mandir=${PREFIX}/man
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/rgbds
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

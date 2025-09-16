@@ -1,22 +1,23 @@
 Index: src/link/main.cpp
 --- src/link/main.cpp.orig
 +++ src/link/main.cpp
-@@ -161,6 +161,8 @@ FILE *openFile(char const *fileName, char const *mode)
- 	return file;
+@@ -8,6 +8,7 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <utility>
+ 
+ #include "diagnostics.hpp"
+@@ -211,6 +212,11 @@ static void parseScrambleSpec(char *spec) {
  }
  
-+int pledge(const char *, const char *);
+ int main(int argc, char *argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		fputs("pledge", stderr);
++		return 1;
++	}
 +
- // Short options
- static const char *optstring = "dl:m:Mn:O:o:p:S:s:tVvWwx";
+ 	char const *linkerScriptName = nullptr; // -l
  
-@@ -353,6 +355,9 @@ next:
- 
- int main(int argc, char *argv[])
- {
-+	if (pledge("stdio rpath wpath cpath", NULL) == -1)
-+		err("pledge");
-+
  	// Parse options
- 	for (int ch; (ch = musl_getopt_long_only(argc, argv, optstring, longopts, NULL)) != -1;) {
- 		switch (ch) {

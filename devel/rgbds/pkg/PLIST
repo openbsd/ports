@@ -6,6 +6,7 @@
 @man man/man1/rgbfix.1
 @man man/man1/rgbgfx.1
 @man man/man1/rgblink.1
+@man man/man5/rgbasm-old.5
 @man man/man5/rgbasm.5
 @man man/man5/rgbds.5
 @man man/man5/rgblink.5

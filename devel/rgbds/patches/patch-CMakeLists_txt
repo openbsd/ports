@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -116,7 +116,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+   endif()
+ endif()
+ 
+-set(MANDIR "share/man")
++set(MANDIR "man")
+ set(man1 "man/rgbasm.1"
+          "man/rgbfix.1"
+          "man/rgbgfx.1"

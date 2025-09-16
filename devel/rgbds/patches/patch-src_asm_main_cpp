@@ -1,22 +1,23 @@
 Index: src/asm/main.cpp
 --- src/asm/main.cpp.orig
 +++ src/asm/main.cpp
-@@ -46,6 +46,8 @@ char const *__asan_default_options(void) { return "det
+@@ -10,6 +10,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
++#include <unistd.h>
+ 
+ #include "diagnostics.hpp"
+ #include "extern/getopt.hpp"
+@@ -151,6 +152,11 @@ static std::vector<StateFeature> parseStateFeatures(ch
  }
- #endif
  
-+int pledge(const char *, const char *);
+ int main(int argc, char *argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		fputs("pledge", stderr);
++		return 1;
++	}
 +
- // Old Bison versions (confirmed for 2.3) do not forward-declare `yyparse` in the generated header
- // Unfortunately, macOS still ships 2.3, which is from 2008...
- int yyparse(void);
-@@ -146,6 +148,9 @@ static void printUsage(void)
- 
- int main(int argc, char *argv[])
- {
-+	if (pledge("stdio rpath wpath cpath", NULL) == -1)
-+		err("pledge");
-+
- 	time_t now = time(NULL);
- 	char const *sourceDateEpoch = getenv("SOURCE_DATE_EPOCH");
- 
+ 	// Support SOURCE_DATE_EPOCH for reproducible builds
+ 	// https://reproducible-builds.org/docs/source-date-epoch/
+ 	time_t now = time(nullptr);
