@@ -10,6 +10,7 @@
 @man man/man1/plakar-diag.1
 @man man/man1/plakar-diff.1
 @man man/man1/plakar-digest.1
+@man man/man1/plakar-dup.1
 @man man/man1/plakar-info.1
 @man man/man1/plakar-locate.1
 @man man/man1/plakar-login.1
@@ -22,13 +23,14 @@
 @man man/man1/plakar-pkg-create.1
 @man man/man1/plakar-pkg-rm.1
 @man man/man1/plakar-pkg-show.1
+@man man/man1/plakar-policy.1
 @man man/man1/plakar-prune.1
 @man man/man1/plakar-ptar.1
 @man man/man1/plakar-restore.1
 @man man/man1/plakar-rm.1
 @man man/man1/plakar-scheduler.1
 @man man/man1/plakar-server.1
-@man man/man1/plakar-services.1
+@man man/man1/plakar-service.1
 @man man/man1/plakar-source.1
 @man man/man1/plakar-store.1
 @man man/man1/plakar-sync.1
@@ -38,3 +40,4 @@
 @man man/man1/plakar.1
 @man man/man5/plakar-pkg-manifest.yaml.5
 @man man/man5/plakar-pkg-recipe.yaml.5
+@man man/man7/plakar-query.7
