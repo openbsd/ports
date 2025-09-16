@@ -1,12 +1,8 @@
 COMMENT=		terminal session recorder
 
-MODPY_DISTV=	2.4.0
-REVISION=		2
-
-# MODPY_PI does not work
 GH_PROJECT=		asciinema
 GH_ACCOUNT=		asciinema
-GH_TAGNAME=		v${MODPY_DISTV}
+GH_TAGNAME=		v3.0.0
 
 CATEGORIES=		textproc graphics
 
@@ -15,8 +11,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+WANTLIB += ${MODCARGO_WANTLIB} m util
 
-MODPY_PYBUILD=		setuptools
+MODULES=		devel/cargo
+
+CONFIGURE_STYLE=	cargo
+
+.include "crates.inc"
 
 .include <bsd.port.mk>
