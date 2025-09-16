@@ -280,6 +280,7 @@ share/liblouis/tables/it.tbl
 share/liblouis/tables/iu-ca-g1.ctb
 share/liblouis/tables/ja-kantenji-ucs2.utb
 share/liblouis/tables/ja-kantenji.utb
+share/liblouis/tables/ja-rokutenkanji.utb
 share/liblouis/tables/ka-in-g1.utb
 share/liblouis/tables/ka.utb
 share/liblouis/tables/kannada.cti
