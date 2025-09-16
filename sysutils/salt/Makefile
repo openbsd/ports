@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_DISTV =	3007.1
 DISTNAME =		salt-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -39,12 +40,14 @@ BUILD_DEPENDS =		textproc/py-yaml \
 # requirements/base.txt
 RUN_DEPENDS =		devel/py-looseversion \
 			devel/py-jmespath \
+			devel/py-setproctitle \
 			net/py-msgpack>=0.6.2v0 \
 			security/py-cryptography \
 			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests \
+			www/py-tornado \
  			sysutils/py-distro>=1.5.0 \
 			sysutils/py-packaging
 
