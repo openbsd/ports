@@ -4,7 +4,7 @@ using integer absolute value function 'abs' when argument is of floating point t
 Index: gthumb/gth-browser.c
 --- gthumb/gth-browser.c.orig
 +++ gthumb/gth-browser.c
-@@ -2473,8 +2473,8 @@ viewer_motion_notify_event_cb (GtkWidget      *widget,
+@@ -2474,8 +2474,8 @@ viewer_motion_notify_event_cb (GtkWidget      *widget,
  	if (browser->priv->last_mouse_y == 0.0)
  		browser->priv->last_mouse_y = event->y;
  

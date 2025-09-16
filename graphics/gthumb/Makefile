@@ -1,7 +1,7 @@
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.12.7
+GNOME_VERSION=	3.12.8
 
 CATEGORIES=	graphics
 
@@ -13,9 +13,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 c cairo clutter-1.0 clutter-gtk-1.0
 WANTLIB += exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstreamer-1.0 gstvideo-1.0 gtk-3 heif intl
-WANTLIB += jpeg jxl jxl_threads lcms2 m pango-1.0 pangocairo-1.0 png
-WANTLIB += raw rsvg-2 secret-1 soup-2.4 tiff webkit2gtk-4.0 webp
-WANTLIB += webpdemux z
+WANTLIB += jpeg jxl jxl_threads lcms2 m pango-1.0 pangocairo-1.0
+WANTLIB += png raw rsvg-2 tiff webp webpdemux z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
@@ -38,7 +37,6 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		graphics/libwebp \
 		multimedia/gstreamer1/core \
 		multimedia/libheif \
-		www/webkitgtk4 \
 		x11/gnome/librsvg
 
 RUN_DEPENDS=	graphics/dcraw \

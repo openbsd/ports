@@ -120,7 +120,6 @@ include/gthumb/uri-utils.h
 include/gthumb/zlib-utils.h
 lib/gthumb/
 lib/gthumb/extensions/
-lib/gthumb/extensions/23hq.extension
 lib/gthumb/extensions/bookmarks.extension
 lib/gthumb/extensions/cairo_io.extension
 lib/gthumb/extensions/catalogs.extension
@@ -136,8 +135,6 @@ lib/gthumb/extensions/file_manager.extension
 lib/gthumb/extensions/file_tools.extension
 lib/gthumb/extensions/file_viewer.extension
 lib/gthumb/extensions/find_duplicates.extension
-lib/gthumb/extensions/flicker.extension
-lib/gthumb/extensions/flicker_utils.extension
 lib/gthumb/extensions/gstreamer_tools.extension
 lib/gthumb/extensions/gstreamer_utils.extension
 lib/gthumb/extensions/image_print.extension
@@ -145,7 +142,6 @@ lib/gthumb/extensions/image_rotation.extension
 lib/gthumb/extensions/image_viewer.extension
 lib/gthumb/extensions/importer.extension
 lib/gthumb/extensions/jpeg_utils.extension
-@so lib/gthumb/extensions/lib23hq.so
 @so lib/gthumb/extensions/libbookmarks.so
 @so lib/gthumb/extensions/libcairo_io.so
 @so lib/gthumb/extensions/libcatalogs.so
@@ -161,8 +157,6 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/libfile_tools.so
 @so lib/gthumb/extensions/libfile_viewer.so
 @so lib/gthumb/extensions/libfind_duplicates.so
-@so lib/gthumb/extensions/libflicker.so
-@so lib/gthumb/extensions/libflicker_utils.so
 @so lib/gthumb/extensions/libgstreamer_tools.so
 @so lib/gthumb/extensions/libgstreamer_utils.so
 @so lib/gthumb/extensions/libimage_print.so
@@ -171,7 +165,7 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/libimporter.so
 @so lib/gthumb/extensions/libjpeg_utils.so
 @so lib/gthumb/extensions/liblist_tools.so
-@so lib/gthumb/extensions/liboauth.so
+@so lib/gthumb/extensions/libopen_map.so
 @so lib/gthumb/extensions/libphoto_importer.so
 @so lib/gthumb/extensions/libraw_files.so
 @so lib/gthumb/extensions/libred_eye_removal.so
@@ -183,7 +177,7 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/libterminal.so
 @so lib/gthumb/extensions/libwebalbums.so
 lib/gthumb/extensions/list_tools.extension
-lib/gthumb/extensions/oauth.extension
+lib/gthumb/extensions/open_map.extension
 lib/gthumb/extensions/photo_importer.extension
 lib/gthumb/extensions/raw_files.extension
 lib/gthumb/extensions/red_eye_removal.extension
@@ -208,16 +202,13 @@ share/glib-2.0/schemas/org.gnome.gthumb.contact-sheet.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.convert-format.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.crop.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.enums.xml
-share/glib-2.0/schemas/org.gnome.gthumb.facebook.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.file-manager.gschema.xml
-share/glib-2.0/schemas/org.gnome.gthumb.flickr.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.gstreamer-tools.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.image-print.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.image-viewer.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.importer.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.photo-importer.gschema.xml
-share/glib-2.0/schemas/org.gnome.gthumb.picasaweb.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.pixbuf-savers.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.rename-series.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.resize-images.gschema.xml
@@ -283,69 +274,62 @@ share/gthumb/contactsheetthemes/rainbow.cst
 share/gthumb/icons/
 share/gthumb/icons/filmholes.png
 share/gthumb/icons/hicolor/
-share/gthumb/icons/hicolor/16x16/
-share/gthumb/icons/hicolor/16x16/actions/
-share/gthumb/icons/hicolor/16x16/actions/change-date-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/color-profile.svg
-share/gthumb/icons/hicolor/16x16/actions/comment-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/convert-format-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/curves-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/edit-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/emblem-flag-blue.svg
-share/gthumb/icons/hicolor/16x16/actions/emblem-flag-gray.svg
-share/gthumb/icons/hicolor/16x16/actions/emblem-flag-green.svg
-share/gthumb/icons/hicolor/16x16/actions/emblem-flag-red.svg
-share/gthumb/icons/hicolor/16x16/actions/emblem-flag-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/export-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/extension-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/eyedropper-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/file-catalog-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/file-library-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/file-search-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/filter-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/format-linear-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/format-logarithmic-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/histogram-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-adjust-colors-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-adjust-contrast-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-crop-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-equalize-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-flip-horizontal-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-flip-vertical-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-grayscale-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-invert-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-navigator-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-red-eye-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-resize-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-rotate-left-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-rotate-right-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-rotate-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/image-sharpen-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/lock-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/map-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/palette-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/pinned-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/presets-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/site-facebook.png
-share/gthumb/icons/hicolor/16x16/actions/site-flickr.png
-share/gthumb/icons/hicolor/16x16/actions/site-photobucket.png
-share/gthumb/icons/hicolor/16x16/actions/site-picasaweb.png
-share/gthumb/icons/hicolor/16x16/actions/site-twentythree.png
-share/gthumb/icons/hicolor/16x16/actions/special-effects-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/swap-values-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/tag-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/tools-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/transparency-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-presentation-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-fit-height-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-fit-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-fit-width-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-in-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-original-symbolic.svg
-share/gthumb/icons/hicolor/16x16/actions/view-zoom-out-symbolic.svg
 share/gthumb/icons/hicolor/scalable/
 share/gthumb/icons/hicolor/scalable/actions/
+share/gthumb/icons/hicolor/scalable/actions/change-date-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/color-profile.svg
+share/gthumb/icons/hicolor/scalable/actions/comment-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/convert-format-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/curves-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/edit-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/emblem-flag-blue.svg
+share/gthumb/icons/hicolor/scalable/actions/emblem-flag-gray.svg
+share/gthumb/icons/hicolor/scalable/actions/emblem-flag-green.svg
+share/gthumb/icons/hicolor/scalable/actions/emblem-flag-red.svg
+share/gthumb/icons/hicolor/scalable/actions/emblem-flag-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/export-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/extension-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/eyedropper-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/file-catalog-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/file-library-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/file-search-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/filter-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/format-linear-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/format-logarithmic-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/histogram-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-adjust-colors-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-adjust-contrast-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-crop-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-equalize-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-flip-horizontal-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-flip-vertical-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-grayscale-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-invert-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-navigator-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-red-eye-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-resize-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-rotate-left-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-rotate-right-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-rotate-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/image-sharpen-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/lock-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/map-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/palette-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/pinned-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/presets-symbolic.svg
 share/gthumb/icons/hicolor/scalable/actions/slideshow-pause.svg
+share/gthumb/icons/hicolor/scalable/actions/special-effects-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/swap-values-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/tag-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/tools-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/transparency-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-presentation-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-fit-height-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-fit-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-fit-width-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-in-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-original-symbolic.svg
+share/gthumb/icons/hicolor/scalable/actions/view-zoom-out-symbolic.svg
 share/gthumb/ui/
 share/gthumb/ui/add-to-catalog.ui
 share/gthumb/ui/adjust-colors-options.ui
@@ -366,7 +350,6 @@ share/gthumb/ui/curves-options.ui
 share/gthumb/ui/edit-comment-page.ui
 share/gthumb/ui/edit-exiv2-page.ui
 share/gthumb/ui/effects-options.ui
-share/gthumb/ui/export-to-flickr.ui
 share/gthumb/ui/extensions-preferences.ui
 share/gthumb/ui/favorite-properties.ui
 share/gthumb/ui/file-selection-info.ui
@@ -378,15 +361,11 @@ share/gthumb/ui/grayscale-options.ui
 share/gthumb/ui/histogram-info.ui
 share/gthumb/ui/image-viewer-preferences.ui
 share/gthumb/ui/image-wall.ui
-share/gthumb/ui/import-from-flickr.ui
 share/gthumb/ui/import-preferences.ui
 share/gthumb/ui/jpeg-options.ui
 share/gthumb/ui/location.ui
 share/gthumb/ui/media-viewer-preferences.ui
 share/gthumb/ui/mediabar.ui
-share/gthumb/ui/oauth-account-chooser.ui
-share/gthumb/ui/oauth-account-manager.ui
-share/gthumb/ui/oauth-ask-authorization.ui
 share/gthumb/ui/organize-files-task.ui
 share/gthumb/ui/organize-files.ui
 share/gthumb/ui/overwrite-dialog.ui
@@ -1180,9 +1159,9 @@ share/help/zh_CN/gthumb/thumbnail-pane.page
 share/help/zh_CN/gthumb/thumbnails.page
 share/help/zh_CN/gthumb/viewer.page
 share/help/zh_CN/gthumb/wallpaper.page
-share/icons/hicolor/16x16/apps/org.gnome.gThumb-symbolic.svg
 share/icons/hicolor/16x16/apps/org.gnome.gThumb.png
 share/icons/hicolor/256x256/apps/org.gnome.gThumb.png
+share/icons/hicolor/scalable/apps/org.gnome.gThumb-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.gThumb.svg
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
@@ -1254,7 +1233,7 @@ share/locale/xh/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
-share/metainfo/org.gnome.gThumb.appdata.xml
+share/metainfo/org.gnome.gThumb.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas
