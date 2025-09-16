@@ -4,7 +4,7 @@ daemon="${TRUEPREFIX}/bin/salt-proxy -d"
 
 . /etc/rc.d/rc.subr
 
-pexp="python${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="python${MODPY_VERSION}: ${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}.*"
 rc_reload=NO
 
 rc_cmd $1
