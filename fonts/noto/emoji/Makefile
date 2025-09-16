@@ -1,10 +1,10 @@
 COMMENT =		emoji fonts for the noto font family
 
 NOTO_PROJECT =		emoji
+EPOCH =			0
 
-# use date as version number for consistency with other noto fonts
-V =			2024-10-02
-GH_TAGNAME =		v2.047
+V =			2.051
+GH_TAGNAME =		v$V
 
 pre-install:
 	rm ${WRKDIST}/fonts/NotoColorEmoji_WindowsCompatible.ttf
