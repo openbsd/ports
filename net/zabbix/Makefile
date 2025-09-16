@@ -16,6 +16,8 @@ CATEGORIES =		net
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
+PORTROACH =		limit:^${MAJV:C/\./\\./}
+
 HOMEPAGE =		http://www.zabbix.com/
 
 MAINTAINER =		Robert Nagy <robert@openbsd.org>
