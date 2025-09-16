@@ -91,7 +91,6 @@
      SUBDIR += libmp3splt
      SUBDIR += libmpd
      SUBDIR += libmpdclient
-     SUBDIR += libmusicbrainz
      SUBDIR += libmusicbrainz5
      SUBDIR += libmysofa
      SUBDIR += libnjb
