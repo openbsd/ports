@@ -1,9 +1,8 @@
 COMMENT=	functools like those found in stdlib
 
-MODPY_DISTV=	4.1.0
+MODPY_DISTV=	4.3.0
 DISTNAME=	jaraco_functools-${MODPY_DISTV}
 PKGNAME=	py-jaraco-functools-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,6 +15,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
+BUILD_DEPENDS=	misc/py-coherent.licensed
 RUN_DEPENDS=	devel/py-more-itertools
 TEST_DEPENDS=	devel/py-jaraco-classes
 
