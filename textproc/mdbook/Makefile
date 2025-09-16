@@ -2,7 +2,7 @@ COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.51
+GH_TAGNAME =            v0.4.52
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
