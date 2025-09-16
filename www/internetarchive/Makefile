@@ -1,8 +1,7 @@
 COMMENT =	python and cli interface to archive.org
 
-MODPY_DISTV =	4.1.0
+MODPY_DISTV =	5.5.1
 DIST_TUPLE +=	github jjjake internetarchive v${MODPY_DISTV} .
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -21,7 +20,7 @@ RUN_DEPENDS =	devel/py-docopt \
 		textproc/py-jsonpatch \
 		www/py-urllib3
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
-		${RUN_DEPENDS} \
+		textproc/py-pygments \
 		www/py-responses
 
 .include <bsd.port.mk>
