@@ -1,16 +1,7 @@
 Index: shell/source/unix/misc/senddoc.sh
 --- shell/source/unix/misc/senddoc.sh.orig
 +++ shell/source/unix/misc/senddoc.sh
-@@ -355,7 +355,7 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
-             esac
-             shift;
-         done
--        /usr/bin/open -a "${MAILER}" ${ATTACH}
-+        /usr/local/bin/open -a "${MAILER}" ${ATTACH}
-         ;;
- 
-     *)
-@@ -364,15 +364,15 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
+@@ -92,15 +92,15 @@ case $(printf %s "$MAILER_TYPE" | sed 's/-.*$//') in
          # Try to be smart, and send the mail anyway, if we have the
          # possibility to do so.
  
@@ -32,12 +23,11 @@ Index: shell/source/unix/misc/senddoc.sh
          elif command -v xdg-open >/dev/null 2>&1 ; then
              MAILER=$(command -v xdg-open)
          else
-@@ -407,7 +407,7 @@ case $(basename "$MAILER" | sed 's/-.*$//') in
-                     shift
-                     ;;
-                 --attach)
--                    if [ "$MAILER" = "/usr/bin/xdg-email" ]; then
-+                    if [ "$MAILER" = "/usr/local/bin/xdg-email" ]; then
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attach="$(printf file://%s "$2" | "${URI_ENCODE}")
-                     else
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attachment="$(printf file://%s "$2" | "${URI_ENCODE}")
+@@ -379,6 +379,6 @@ case $MAILER_TYPE in
+             esac
+             shift;
+         done
+-        /usr/bin/open -a "${MAILER}" ${ATTACH}
++        /usr/local/bin/open -a "${MAILER}" ${ATTACH}
+         ;;
+ esac

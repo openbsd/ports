@@ -2,8 +2,8 @@ Index: external/libexttextcat/openbsd.patch
 --- external/libexttextcat/openbsd.patch.orig
 +++ external/libexttextcat/openbsd.patch
 @@ -0,0 +1,11 @@
-+--- UnpackedTarball/libexttextcat/src/Makefile.in.orig	Sun Feb  4 08:48:26 2018
-++++ UnpackedTarball/libexttextcat/src/Makefile.in	Sun Feb  4 08:49:09 2018
++--- libexttextcat/src/Makefile.in.orig	Mon Sep 15 22:44:08 2025
+++++ libexttextcat/src/Makefile.in	Mon Sep 15 22:44:15 2025
 +@@ -90,7 +90,7 @@
 + POST_UNINSTALL = :
 + build_triplet = @build@

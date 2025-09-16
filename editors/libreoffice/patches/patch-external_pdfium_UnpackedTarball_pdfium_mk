@@ -1,9 +1,9 @@
 Index: external/pdfium/UnpackedTarball_pdfium.mk
 --- external/pdfium/UnpackedTarball_pdfium.mk.orig
 +++ external/pdfium/UnpackedTarball_pdfium.mk
-@@ -18,6 +18,8 @@ pdfium_patches += constexpr-template.patch
- 
- pdfium_patches += system-abseil.diff
+@@ -23,6 +23,8 @@ ifeq ($(OS),WNT)
+ pdfium_patches += pdfium-vs2019-arm64_no-__umulh.patch.1
+ endif
  
 +pdfium_patches += pdfium-openbsd.patch
 +

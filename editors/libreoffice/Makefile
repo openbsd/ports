@@ -11,8 +11,8 @@ SHARED_LIBS +=  etonyek-0.1-lo            1.12 # 1.12
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
 SHARED_LIBS +=  mwaw-0.3-lo               3.22 # 3.22
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
-SHARED_LIBS +=  orcus-0.18                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.18         0.0 # 0.0
+SHARED_LIBS +=  orcus-0.20                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.20         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
 SHARED_LIBS +=  uno_cppuhelpergcc3        3.0 # 3.0
@@ -22,8 +22,8 @@ SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
-BV=		25.2
-VERSION=	${BV}.5.2
+BV=		25.8
+VERSION=	${BV}.1.1
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -107,7 +107,7 @@ DISTFILES.a += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip
 DISTFILES.a += f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 DISTFILES.a += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip
 DISTFILES.a += frozen-1.2.0.tar.gz
-DISTFILES.a += language-subtag-registry-2025-06-23.tar.bz2
+DISTFILES.a += language-subtag-registry-2025-07-15.tar.bz2
 DISTFILES.a += libabw-0.1.3.tar.xz
 DISTFILES.a += libcdr-0.1.8.tar.xz
 DISTFILES.a += libcmis-0.6.2.tar.xz
@@ -123,7 +123,7 @@ DISTFILES.a += libmspub-0.1.4.tar.xz
 DISTFILES.a += libmwaw-0.3.22.tar.xz
 DISTFILES.a += libnumbertext-1.0.11.tar.xz
 DISTFILES.a += libodfgen-0.1.8.tar.xz
-DISTFILES.a += liborcus-0.19.2.tar.xz
+DISTFILES.a += liborcus-0.20.1.tar.xz
 DISTFILES.a += libpagemaker-0.0.4.tar.xz
 DISTFILES.a += libqxp-0.0.2.tar.xz
 DISTFILES.a += libre-hebrew-1.0.tar.gz
@@ -132,15 +132,15 @@ DISTFILES.a += libvisio-0.1.8.tar.xz
 DISTFILES.a += libwpg-0.3.4.tar.xz
 DISTFILES.a += libwps-0.4.14.tar.xz
 DISTFILES.a += libzmf-0.0.2.tar.xz
-DISTFILES.a += mdds-2.1.1.tar.xz
+DISTFILES.a += mdds-3.1.0.tar.xz
 DISTFILES.a += mythes-1.2.5.tar.xz
 DISTFILES.a += noto-fonts-20171024.tar.gz
-DISTFILES.a += pdfium-6764.tar.bz2
+DISTFILES.a += pdfium-7012.tar.bz2
 DISTFILES.a += phc-winner-argon2-20190702.tar.gz
-DISTFILES.a += skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz
-DISTFILES.a += xmlsec1-1.3.6.tar.gz
-DISTFILES.a += zxcvbn-c-2.5.tar.gz
-DISTFILES.a += zxing-cpp-2.2.1.tar.gz
+DISTFILES.a += skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz
+DISTFILES.a += xmlsec1-1.3.7.tar.gz
+DISTFILES.a += zxcvbn-c-2.6.tar.gz
+DISTFILES.a += zxing-cpp-2.3.0.tar.gz
 
 DIST_SUBDIR=	libreoffice
 
@@ -197,7 +197,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES+=	lang/python
 
-LIB_DEPENDS-main=databases/openldap \
+LIB_DEPENDS-main= \
+		archivers/zstd \
+		databases/openldap \
 		databases/mariadb \
 		databases/postgresql \
 		devel/boost \
@@ -240,6 +242,7 @@ WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
 WANTLIB-main+=	gstvideo-1.0
 WANTLIB-main+=	poppler-cpp
 WANTLIB-main+=	tiff webp revenge-0.0 wpd-0.10
+WANTLIB-main+=	boost_random-mt boost_regex-mt icudata zstd
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -261,7 +264,7 @@ WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb
 WANTLIB-kde+=		cairo graphite2 epoxy harfbuzz harfbuzz-icu
 WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
 WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
-WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
+WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
 WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
 WANTLIB-kde+=		lib/libreoffice/program/uno_cppu \
 			lib/libreoffice/program/uno_cppuhelpergcc3 \
@@ -356,6 +359,7 @@ CONFIGURE_ARGS+=\
 		--with-system-postgresql \
 		--with-system-redland \
 		--with-system-zlib \
+		--with-system-zstd \
 		--with-vendor="The OpenBSD project" \
 		--with-tls="openssl" \
 		--with-webdav="curl" \

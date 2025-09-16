@@ -1,7 +1,50 @@
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
 +++ solenv/gbuild/platform/unxgcc.mk
-@@ -176,8 +176,7 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -136,13 +136,7 @@ $(if $(call gb_LinkTarget__WantLock,$2), \
+ )
+ 	+$(if $(filter EMSCRIPTEN,$(OS)),unset PYTHONWARNINGS &&) \
+ $(call gb_Helper_abbreviate_dirs,\
+-	$(if $(call gb_LinkTarget__NeedsCxxLinker),$(or $(T_CXX),$(gb_CXX)) $(gb_CXX_LINKFLAGS),$(or $(T_CC),$(gb_CC))) \
+-		$(if $(filter Library CppunitTest,$(TARGETTYPE)),$(gb_Library_TARGETTYPEFLAGS)) \
+-		$(T_LTOFLAGS) \
+-		$(if $(SOVERSIONSCRIPT),-Wl$(COMMA)--soname=$(notdir $(1)) \
+-			-Wl$(COMMA)--version-script=$(SOVERSIONSCRIPT)) \
+-		$(subst \d,$$,$(RPATH)) \
+-		$(T_USE_LD) $(T_LDFLAGS) $(foreach pre_js,$(T_PREJS), --pre-js $(pre_js)) \
++	FILELIST=$(call gb_var2file,$(shell $(gb_MKTEMP)), \
+ 		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
+ 		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
+ 		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \
+@@ -150,7 +144,17 @@ $(call gb_Helper_abbreviate_dirs,\
+ 		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
+ 		$(foreach object,$(GENASMOBJECTS),$(call gb_GenAsmObject_get_target,$(object))) \
+ 		$(foreach object,$(GENNASMOBJECTS),$(call gb_GenNasmObject_get_target,$(object))) \
+-		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),`cat $(extraobjectlist)`) \
++		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),$(shell cat $(extraobjectlist)))) && \
++	cat $${FILELIST} | tr "[:space:]" "\n" | grep -v '^$$' > $${FILELIST}.1 && \
++	mv $${FILELIST}.1 $${FILELIST} && \
++	$(if $(call gb_LinkTarget__NeedsCxxLinker),$(or $(T_CXX),$(gb_CXX)) $(gb_CXX_LINKFLAGS),$(or $(T_CC),$(gb_CC))) \
++		$(if $(filter Library CppunitTest,$(TARGETTYPE)),$(gb_Library_TARGETTYPEFLAGS)) \
++		$(T_LTOFLAGS) \
++		$(if $(SOVERSIONSCRIPT),-Wl$(COMMA)--soname=$(notdir $(1)) \
++			-Wl$(COMMA)--version-script=$(SOVERSIONSCRIPT)) \
++		$(subst \d,$$,$(RPATH)) \
++		$(T_USE_LD) $(T_LDFLAGS) $(foreach pre_js,$(T_PREJS), --pre-js $(pre_js)) \
++		@$${FILELIST} \
+ 		$(if $(filter TRUE,$(DISABLE_DYNLOADING)), \
+ 		    -Wl$(COMMA)--start-group \
+ 			$(shell echo -n \
+@@ -169,15 +173,15 @@ $(call gb_Helper_abbreviate_dirs,\
+ 		    -Wl$(COMMA)--no-as-needed \
+ 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
+                 ) \
+-		-o $(1) \
++		-o $(1) && \
++	rm -f $${FILELIST} \
+ 	$(if $(SOVERSIONSCRIPT),&& ln -sf ../../program/$(notdir $(1)) $(ILIBTARGET)) \
+ 	$(if $(filter EMSCRIPTEN,$(OS)),$(if $(filter TRUE,$(HAVE_EXTERNAL_DWARF)),&& emdwp -e $(patsubst %$(gb_Executable_EXT),%.wasm,$(1)) -o $(patsubst %$(gb_Executable_EXT),%.wasm.dwp,$(1)))) \
+ 	$(if $(call gb_LinkTarget__WantLock,$(2)),; RC=$$? ; rm -f $(gb_LinkTarget__Lock); if test $$RC -ne 0; then exit $$RC; fi))
  
  $(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
      $(READELF) -d $(1) | grep SONAME > $(WORKDIR)/LinkTarget/$(2).exports.tmp; \
@@ -11,7 +54,7 @@ Index: solenv/gbuild/platform/unxgcc.mk
      $(call gb_Helper_replace_if_different_and_touch,$(WORKDIR)/LinkTarget/$(2).exports.tmp, \
          $(WORKDIR)/LinkTarget/$(2).exports,$(1))))
  $(if $(and $(filter CppunitTest Executable,$(TARGETTYPE)),$(filter EMSCRIPTEN,$(OS))), \
-@@ -245,7 +244,7 @@ gb_Library_DLLEXT := .a
+@@ -246,7 +250,7 @@ gb_Library_DLLEXT := .a
  else
  
  gb_Library_TARGETTYPEFLAGS := -shared -Wl,-z,noexecstack

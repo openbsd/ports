@@ -3,8 +3,8 @@ Index: vcl/skia/x11/gdiimpl.cxx
 +++ vcl/skia/x11/gdiimpl.cxx
 @@ -69,7 +69,7 @@ X11SkiaSalGraphicsImpl::createWindowContext(Display* d
      SkiaZone zone;
-     skwindow::DisplayParams displayParams;
-     displayParams.fColorType = kN32_SkColorType;
+     skwindow::DisplayParamsBuilder displayParamsBuilder;
+     displayParamsBuilder.colorType(kN32_SkColorType);
 -#if defined LINUX
 +#if defined LINUX || defined OPENBSD
      // WORKAROUND: VSync causes freezes that can even temporarily freeze the entire desktop.

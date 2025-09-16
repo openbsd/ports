@@ -1,9 +1,9 @@
 Index: external/libnumbertext/UnpackedTarball_libnumbertext.mk
 --- external/libnumbertext/UnpackedTarball_libnumbertext.mk.orig
 +++ external/libnumbertext/UnpackedTarball_libnumbertext.mk
-@@ -22,6 +22,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,libnumber
-     external/libnumbertext/MSVCNonBMPBug.patch1 \
-     external/libnumbertext/WinUnicodePath.patch1 \
+@@ -17,6 +17,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,libnumber
+     external/libnumbertext/MSVCNonBMPBug.patch \
+     external/libnumbertext/WinUnicodePath.patch \
      external/libnumbertext/deprecated.patch.0 \
 +    external/libnumbertext/spellout.patch1 \
  ))

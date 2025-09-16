@@ -1,7 +1,7 @@
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk
-@@ -75,6 +75,7 @@ gb_CFLAGS_COMMON := \
+@@ -80,6 +80,7 @@ gb_CFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
@@ -9,7 +9,7 @@ Index: solenv/gbuild/platform/com_GCC_defs.mk
  	-pipe \
  	$(if $(ENABLE_HARDENING_FLAGS),$(HARDENING_CFLAGS)) \
  	$(if $(filter EMSCRIPTEN,$(OS)),-fno-stack-protector,-fstack-protector-strong) \
-@@ -92,6 +93,7 @@ gb_CXXFLAGS_COMMON := \
+@@ -97,6 +98,7 @@ gb_CXXFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \

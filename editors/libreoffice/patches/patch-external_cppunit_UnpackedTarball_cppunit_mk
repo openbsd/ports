@@ -1,7 +1,7 @@
 Index: external/cppunit/UnpackedTarball_cppunit.mk
 --- external/cppunit/UnpackedTarball_cppunit.mk.orig
 +++ external/cppunit/UnpackedTarball_cppunit.mk
-@@ -38,6 +38,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
+@@ -40,6 +40,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/clang.patch.0 \
  	external/cppunit/0001-cid-1546460-COPY_INSTEAD_OF_MOVE.patch.1 \
  	external/cppunit/help-msvc-analyzer.patch \
