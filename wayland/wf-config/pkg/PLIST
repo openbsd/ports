@@ -1,3 +1,4 @@
+@conflict wayfire-<0.10
 include/wayfire/
 include/wayfire/config/
 include/wayfire/config/compound-option.hpp
