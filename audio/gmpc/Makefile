@@ -2,7 +2,7 @@ COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		22
+REVISION =		23
 
 CATEGORIES=		audio
 
@@ -11,38 +11,38 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 brotlicommon brotlidec c cairo expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m mpd pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread soup-2.4
-WANTLIB += sqlite3 unique-1.0 xcb xcb-render xcb-shm xml2 z
-WANTLIB += Xau Xdmcp brotlicommon brotlidec execinfo fribidi 
-WANTLIB += idn2 jpeg psl unistring
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += gtk-x11-2.0 harfbuzz iconv idn2 intl jpeg lzma m mpd
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
+WANTLIB += png psl soup-2.4 sqlite3 unistring xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 SITES=			https://www.musicpd.org/download/gmpc/${VERSION}/
 
-MODULES=		textproc/intltool x11/gnome
+MODULES=		textproc/intltool \
+			x11/gnome
+
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 
+BUILD_DEPENDS=		x11/gob2
+
+LIB_DEPENDS=		audio/libmpd \
+			x11/gtk+2 \
+			devel/libsoup
+
+CONFIGURE_ARGS=		--disable-appindicator \
+			--disable-unique
+
 # fuck you vala, for running valac without reason and generating broken code.
 post-patch:
 	touch ${WRKSRC}/src/gmpc_vala.stamp
-
-BUILD_DEPENDS=		x11/gob2
-
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache vala yelp
-
-CONFIGURE_ARGS+=	--enable-appindicator=no
-
-LIB_DEPENDS=		audio/libmpd>=11.8.17 \
-			x11/gtk+2 \
-			devel/libunique \
-			devel/libsoup
 
 .include <bsd.port.mk>

@@ -1,6 +1,4 @@
 @bin bin/gmpc
-@bin bin/gmpc-remote
-bin/gmpc-remote-stream
 include/gmpc/
 include/gmpc/config1.h
 include/gmpc/gmpc-extras.h
