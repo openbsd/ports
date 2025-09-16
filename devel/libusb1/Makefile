@@ -1,10 +1,10 @@
 COMMENT =		library for USB device access from userspace
 
-VERSION =		1.0.27
+VERSION =		1.0.29
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
 
-SHARED_LIBS +=  usb-1.0              2.1      # 4.0
+SHARED_LIBS +=  usb-1.0              2.2      # 5.0
 
 CATEGORIES =		devel
 
