@@ -1,6 +1,6 @@
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_DISTV =		6.0.4
+MODPY_DISTV =		6.0.5
 DISTNAME=		gramps-${MODPY_DISTV}
 
 CATEGORIES=		misc x11
