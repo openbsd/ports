@@ -1,6 +1,6 @@
 COMMENT=	simple GTK desktop news aggregator
 
-V=		1.16.3
+V=		1.16.5
 DISTNAME=	liferea-${V}
 
 CATEGORIES=	www news x11
