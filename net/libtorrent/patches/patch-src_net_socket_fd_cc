@@ -1,7 +1,7 @@
 Index: src/net/socket_fd.cc
 --- src/net/socket_fd.cc.orig
 +++ src/net/socket_fd.cc
-@@ -126,40 +126,14 @@ SocketFd::get_error() const {
+@@ -89,40 +89,14 @@ SocketFd::get_error() const {
  
  bool
  SocketFd::open_stream() {

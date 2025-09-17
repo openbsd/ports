@@ -6,24 +6,21 @@ BROKEN-sh =		undefined references to __sync atomic ops
 # requires C++ tr1 headers
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
-DISTNAME=		libtorrent-0.14.0
-REVISION=		2
+DISTNAME=		libtorrent-0.15.7
 EPOCH=			0
-SHARED_LIBS +=  	torrent 22.1	# .18.0
+SHARED_LIBS +=  	torrent 23.0	# .18.0
 CATEGORIES=		net devel
 
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 SITES=			https://github.com/rakshasa/rtorrent-archive/raw/master/
 
-WANTLIB += ${COMPILER_LIBCXX} cppunit crypto execinfo m z
+WANTLIB += ${COMPILER_LIBCXX} crypto execinfo m z
 
 COMPILER =		base-clang ports-gcc base-gcc
-
-LIB_DEPENDS=		devel/cppunit
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-debug \
