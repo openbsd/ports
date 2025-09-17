@@ -1,11 +1,23 @@
-/usr/local/include/git2/deprecated.h:220:17:
-error: redundant redeclaration of 'git_buf_grow' [-Werror=redundant-decls]
-GIT_EXTERN(int) git_buf_grow(git_buf *buffer, size_t target_size);
+../gnome-builder-48.3/src/libide/terminal/ide-terminal-palettes.h:51:33: error: array index 7 is past the end of the array (that has type 'char[7]') [-Werror,-Warray-bounds]
+   51 |         .foreground = GDK_RGBA ("1e1e1e"),
+
+From af7a914a238325e509ea56acbba3266a2b9575e4 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 28 May 2025 13:29:11 -0700
+Subject: [PATCH] build: port to girepository-2.0
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -165,7 +165,6 @@ test_c_args = [
+@@ -47,7 +47,6 @@ gtk_req = '>= @0@'.format(gtk_req_version)
+ gtksourceview_req = '>= @0@'.format(gtksourceview_req_version)
+ libadwaita_req = '>= @0@'.format(libadwaita_req_version)
+ libdex_req = '>= @0@'.format(libdex_req_version)
+-gobject_introspection_req = '>= @0@'.format(gobject_introspection_req_version)
+ 
+ glib_major = glib_req_version.split('.')[0].to_int()
+ glib_minor = glib_req_version.split('.')[1].to_int()
+@@ -165,7 +164,6 @@ test_c_args = [
    '-Wcast-align',
    '-Wdeclaration-after-statement',
    '-Werror=address',
@@ -13,11 +25,12 @@ Index: meson.build
    '-Werror=empty-body',
    '-Werror=implicit',
    '-Werror=implicit-function-declaration',
-@@ -182,7 +181,6 @@ test_c_args = [
-   '-Werror=parenthesis',
-   '-Werror=pointer-arith',
-   '-Werror=pointer-to-int-cast',
--  '-Werror=redundant-decls',
-   '-Werror=return-type',
-   '-Werror=sequence-point',
-   '-Werror=shadow',
+@@ -309,7 +307,7 @@ libglib_dep = dependency('glib-2.0', version: glib_req
+ libgio_dep = dependency('gio-2.0', version: glib_req)
+ libgiounix_dep = dependency('gio-unix-2.0', version: glib_req)
+ libgtk_dep = dependency('gtk4', version: gtk_req)
+-libgir_dep = dependency('gobject-introspection-1.0', version: gobject_introspection_req)
++libgir_dep = dependency('girepository-2.0', version: glib_req)
+ libadwaita_dep = dependency('libadwaita-1', version: libadwaita_req)
+ libpanel_dep = dependency('libpanel-1', version: '>= 1.7.0')
+ libgtksource_dep = dependency('gtksourceview-5', version: gtksourceview_req)

@@ -1,0 +1,16 @@
+From af7a914a238325e509ea56acbba3266a2b9575e4 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 28 May 2025 13:29:11 -0700
+Subject: [PATCH] build: port to girepository-2.0
+
+Index: src/libide/core/meson.build
+--- src/libide/core/meson.build.orig
++++ src/libide/core/meson.build
+@@ -137,6 +137,7 @@ libide_core_sources += ide_marshal
+ libide_core_deps = [
+   libdex_dep,
+   libgio_dep,
++  libgir_dep,
+   libgtk_dep,
+   libpeas_dep,
+ ]

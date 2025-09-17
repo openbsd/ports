@@ -1,6 +1,7 @@
 COMMENT=		IDE for writing GNOME-based software
 
 DIST_TUPLE=		gnome GNOME gnome-builder 48.3 .
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -10,7 +11,7 @@ HOMEPAGE=		https://apps.gnome.org/en/Builder/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c cairo cmark dex-1 editorconfig gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 git2 git2-glib-1.0 glib-2.0
+WANTLIB += gio-2.0 girepository-2.0 git2 git2-glib-1.0 glib-2.0
 WANTLIB += gobject-2.0 gom-1.0 gtk-4 gtksourceview-5 intl json-glib-1.0
 WANTLIB += jsonrpc-glib-1.0 m panel-1 pango-1.0 peas-2 portal
 WANTLIB += portal-gtk4 spelling-1 template_glib-1.0 vte-2.91-gtk4

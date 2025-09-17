@@ -1,6 +1,11 @@
 No wordexp(3) on OpenBSD.
 XXX check for the wordexp function instead + push upstream
 
+From af7a914a238325e509ea56acbba3266a2b9575e4 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 28 May 2025 13:29:11 -0700
+Subject: [PATCH] build: port to girepository-2.0
+
 Index: src/libide/core/ide-global.c
 --- src/libide/core/ide-global.c.orig
 +++ src/libide/core/ide-global.c
@@ -47,3 +52,28 @@ Index: src/libide/core/ide-global.c
  
    g_free (replace_home);
    g_free (escaped);
+@@ -615,4 +623,24 @@ ide_dup_default_cache_dir (void)
+     }
+ 
+   return default_cache_dir;
++}
++
++/**
++ * ide_get_gir_repository: (skip)
++ *
++ * Returns: (transfer none):
++ */
++GIRepository *
++ide_get_gir_repository (void)
++{
++  static GIRepository *instance;
++
++  if (instance == NULL)
++#if GLIB_CHECK_VERSION(2, 85, 0)
++    instance = gi_repository_dup_default ();
++#else
++    instance = gi_repository_new ();
++#endif
++
++  return instance;
+ }

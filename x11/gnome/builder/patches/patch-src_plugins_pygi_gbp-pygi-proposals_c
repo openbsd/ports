@@ -1,0 +1,37 @@
+From af7a914a238325e509ea56acbba3266a2b9575e4 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 28 May 2025 13:29:11 -0700
+Subject: [PATCH] build: port to girepository-2.0
+
+Index: src/plugins/pygi/gbp-pygi-proposals.c
+--- src/plugins/pygi/gbp-pygi-proposals.c.orig
++++ src/plugins/pygi/gbp-pygi-proposals.c
+@@ -22,8 +22,10 @@
+ 
+ #include "config.h"
+ 
+-#include <girepository.h>
++#include <girepository/girepository.h>
+ 
++#include <libide-core.h>
++
+ #include "gbp-pygi-proposal.h"
+ #include "gbp-pygi-proposals.h"
+ 
+@@ -57,13 +59,13 @@ get_libraries (void)
+   if (items == NULL)
+     {
+       g_autoptr(GHashTable) found = g_hash_table_new (NULL, NULL);
+-      const GSList *search_path = g_irepository_get_search_path ();
++      const char * const *search_path = gi_repository_get_search_path (ide_get_gir_repository (), NULL);
+ 
+       items = g_ptr_array_new ();
+ 
+-      for (const GSList *iter = search_path; iter; iter = iter->next)
++      for (guint i = 0; search_path[i]; i++)
+         {
+-          const char *path = iter->data;
++          const char *path = search_path[i];
+           const char *name;
+           GDir *dir;
+ 

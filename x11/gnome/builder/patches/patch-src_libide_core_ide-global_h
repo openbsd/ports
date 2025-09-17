@@ -1,0 +1,24 @@
+From af7a914a238325e509ea56acbba3266a2b9575e4 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Wed, 28 May 2025 13:29:11 -0700
+Subject: [PATCH] build: port to girepository-2.0
+
+Index: src/libide/core/ide-global.h
+--- src/libide/core/ide-global.h.orig
++++ src/libide/core/ide-global.h
+@@ -25,6 +25,7 @@
+ #endif
+ 
+ #include <glib.h>
++#include <girepository/girepository.h>
+ 
+ #include "ide-version-macros.h"
+ 
+@@ -76,5 +77,7 @@ IDE_AVAILABLE_IN_ALL
+ gchar          *ide_path_expand           (const gchar *path);
+ IDE_AVAILABLE_IN_ALL
+ char           *ide_dup_default_cache_dir (void);
++IDE_AVAILABLE_IN_ALL
++GIRepository   *ide_get_gir_repository    (void);
+ 
+ G_END_DECLS
