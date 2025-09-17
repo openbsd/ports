@@ -1,7 +1,7 @@
 COMMENT =	open network for secure, decentralized communication
 
 MODPY_DISTV =	1.138.0
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	devel/cargo \
 		lang/python
 
-WANTLIB +=	${MODCARGO_WANTLIB}
+WANTLIB +=	${MODCARGO_WANTLIB} m
 
 MODPY_PYBUILD =	poetry-core
 
