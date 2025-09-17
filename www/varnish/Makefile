@@ -1,19 +1,19 @@
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-7.7.1
+DISTNAME =		varnish-7.7.3
 
 CATEGORIES =		www
 
 SHARED_LIBS =		varnishapi      4.0     # 3.0
 
-HOMEPAGE =		https://www.varnish-cache.org/
+HOMEPAGE =		https://www.vinyl-cache.org/
 
 MAINTAINER =		Gonzalo L. Rodriguez <gonzalo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://varnish-cache.org/_downloads/
+SITES =			https://vinyl-cache.org/_downloads/
 
 EXTRACT_SUFX =		.tgz
 
