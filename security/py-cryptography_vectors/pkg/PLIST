@@ -797,11 +797,13 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-password
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/amazon-roots.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/amazon-roots.p7b
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/ascii-san.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped-no-content.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped-rsa-oaep.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped-triple-des.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/isrg.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/non-ascii-san.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/rfc7539.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/py.typed

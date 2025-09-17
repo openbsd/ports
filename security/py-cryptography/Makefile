@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_DISTV=	45.0.7
+MODPY_DISTV=	46.0.1
 DISTNAME=	cryptography-${MODPY_DISTV}
 DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
