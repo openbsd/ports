@@ -7,6 +7,7 @@
      SUBDIR += gcal
      SUBDIR += gnuastro
      SUBDIR += jday
+     SUBDIR += kosmorro
      SUBDIR += kstars
      SUBDIR += libnova
      SUBDIR += phoon
@@ -16,9 +17,11 @@
      SUBDIR += py-de421
      SUBDIR += py-erfa
      SUBDIR += py-jplephem
+     SUBDIR += py-kosmorrolib
      SUBDIR += py-metar
      SUBDIR += py-sgp4
      SUBDIR += py-skyfield
+     SUBDIR += py-skyfield-data
      SUBDIR += siril
      SUBDIR += stellarium
      SUBDIR += stellarsolver
