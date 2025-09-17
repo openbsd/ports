@@ -1,8 +1,9 @@
 COMMENT =	client to the CZDS REST API
 
-GH_ACCOUNT =	lanrat
-GH_PROJECT =	czds
-GH_TAGNAME =	v1.2.14
+MODGO_MODNAME =	github.com/lanrat/czds
+MODGO_VERSION =	v1.3.1
+
+DISTNAME =	czds-${MODGO_VERSION}
 
 CATEGORIES =	net
 
@@ -14,11 +15,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
+MODGO_TYPE =	bin
 
-do-build:
-	${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/czds-dl
-	${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/czds-request
-	${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/czds-status
+MODGO_MODULES =	\
+	golang.org/x/sync	 v0.16.0
+
+post-build:
+	mv ${MODGO_WORKSPACE}/bin/cmd ${MODGO_WORKSPACE}/bin/czds
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/czds
