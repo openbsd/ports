@@ -2,7 +2,7 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	DNSCrypt
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.13
+GH_TAGNAME =	2.1.14
 
 CATEGORIES =	net
 
