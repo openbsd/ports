@@ -1,3 +1,7 @@
+#
+# /!\ sync this port with xenocara/lib/libpng
+#
+
 COMMENT=	library for manipulating PNG images
 
 VERSION=	1.6.50
