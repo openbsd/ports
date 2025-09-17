@@ -1,8 +1,8 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -231,8 +231,7 @@ api_version_minor = 15
- libgps_version_current = 30
+@@ -236,8 +236,7 @@ api_version_minor = 15
+ libgps_version_current = 31
  libgps_version_revision = 0
  libgps_version_age = 0
 -libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
@@ -11,7 +11,7 @@ Index: SConscript
  #
  # Release identification ends here
  
-@@ -1896,7 +1895,7 @@ libgpsd_static = env.StaticLibrary(
+@@ -1921,7 +1920,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,

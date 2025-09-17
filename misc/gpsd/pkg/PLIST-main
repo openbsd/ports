@@ -11,6 +11,7 @@ bin/gpscsv
 bin/gpsdebuginfo
 @bin bin/gpsdecode
 bin/gpsfake
+bin/gpslogntp
 @bin bin/gpsmon
 @bin bin/gpspipe
 bin/gpsplot
@@ -32,9 +33,12 @@ lib/pkgconfig/libgps.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
 lib/python${MODPY_VERSION}/site-packages/gps-${VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gps/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}aiogps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}aiogps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
 @man man/man1/gpsdebuginfo.1
 @man man/man1/gpsdecode.1
 @man man/man1/gpsfake.1
+@man man/man1/gpslogntp.1
 @man man/man1/gpsmon.1
 @man man/man1/gpspipe.1
 @man man/man1/gpsplot.1
