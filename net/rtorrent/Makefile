@@ -1,7 +1,6 @@
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
-DISTNAME=		rtorrent-0.10.0
-REVISION=		1
+DISTNAME=		rtorrent-0.15.7
 EPOCH=			0
 CATEGORIES=		net
 
@@ -10,16 +9,17 @@ HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cppunit curl curses execinfo m
-WANTLIB += torrent
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c crypto curl curses execinfo m nghttp2 nghttp3 ngtcp2
+WANTLIB += ngtcp2_crypto_libressl ssl torrent z
 
 COMPILER =		base-clang ports-gcc
 
 SITES=			https://github.com/rakshasa/rtorrent-archive/raw/master/
 
-LIB_DEPENDS =		devel/cppunit \
-			net/libtorrent>=0.13.4 \
+LIB_DEPENDS =		net/libtorrent \
 			net/curl
+TEST_DEPENDS =		devel/cppunit
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS=-pthread
@@ -27,8 +27,6 @@ CONFIGURE_ARGS =	--disable-debug
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# uses std::bind2nd which was removed in c++17
-CXXFLAGS +=		-std=c++14
 # silence build log spam
 CXXFLAGS +=		-Wno-deprecated-declarations \
 			-Wno-exceptions
