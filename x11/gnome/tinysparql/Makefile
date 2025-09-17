@@ -1,11 +1,11 @@
 COMMENT=		low-footprint RDF triple store with SPARQL 1.1 interface
 
 GNOME_PROJECT=		tinysparql
-GNOME_VERSION=		3.9.2
+GNOME_VERSION=		3.10.0
 
-SHARED_LIBS += tinysparql-3.0            1.0 # 0.902.0
+SHARED_LIBS += tinysparql-3.0            1.0 # 0.1000.0
 # symlink to tinysparql-3.0.so
-SHARED_LIBS += tracker-sparql-3.0        1.0 # 0.902.0
+SHARED_LIBS += tracker-sparql-3.0        1.0 # 0.1000.0
 
 # LGPLv2.1+ - GPLv2+ - BSD-3-clause
 PERMIT_PACKAGE=		Yes
@@ -29,7 +29,6 @@ LIB_DEPENDS=		devel/json-glib \
 			textproc/icu4c \
 			textproc/libstemmer \
 			textproc/libxml
-
 
 # needed for tests
 BUILD_DEPENDS +=	devel/py-gobject3
