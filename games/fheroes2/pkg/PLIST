@@ -21,6 +21,7 @@ share/fheroes2/files/lang/de.mo
 share/fheroes2/files/lang/dk.mo
 share/fheroes2/files/lang/es.mo
 share/fheroes2/files/lang/fr.mo
+share/fheroes2/files/lang/gr.mo
 share/fheroes2/files/lang/hu.mo
 share/fheroes2/files/lang/it.mo
 share/fheroes2/files/lang/lt.mo
@@ -35,6 +36,12 @@ share/fheroes2/files/lang/sv.mo
 share/fheroes2/files/lang/tr.mo
 share/fheroes2/files/lang/uk.mo
 share/fheroes2/files/lang/vi.mo
+share/fheroes2/maps/
+share/fheroes2/maps/7_deserts_English.fh2m
+share/fheroes2/maps/7_deserts_French.fh2m
+share/fheroes2/maps/Eruption_English.fh2m
+share/fheroes2/maps/Eruption_French.fh2m
+share/fheroes2/maps/Good,_Bad,_Magne.fh2m
 share/icons/hicolor/128x128/apps/fheroes2.png
 share/metainfo/
 share/metainfo/fheroes2.metainfo.xml

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -74,7 +74,7 @@ add_subdirectory(src)
+@@ -75,7 +75,7 @@ add_subdirectory(src)
  # Translation files
  #
  if(NOT WIN32)
