@@ -146,6 +146,8 @@ BUILD_DEPENDS +=	devel/py-setuptools_scm
 BUILD_DEPENDS +=	devel/py-setuptools-rust
 _MODPY_USE_CARGO =	Yes
 .    endif
+.  elif ${MODPY_PYBUILD} == uv_build
+BUILD_DEPENDS +=	devel/uv
 .  elif !${MODPY_PYBUILD:L:Mother}
 ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, maturin, mesonpy, other, pbr, pdm, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
