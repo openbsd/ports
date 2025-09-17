@@ -34,7 +34,7 @@ Providers can be installed under any of these directories:
     ${PWD}/terraform.d/plugins
     ~/.terraform.d/plugins
     ~/.local/share/terraform/plugins
-    /usr/local/share/terraform/plugins
+    ${TRUEPREFIX}/share/terraform/plugins
 
 They must follow the sub-hierarchy according to the plugin configuration.
 
