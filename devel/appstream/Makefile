@@ -9,15 +9,15 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt5 interface for AppStream
 
-V=			1.0.6
+V=			1.1.0
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
 
-SHARED_LIBS += appstream                 1.1 # 1.0.6
-SHARED_LIBS += appstream-compose         1.1 # 1.0.6
-SHARED_LIBS += AppStreamQt               1.1 # 1.0.6
+SHARED_LIBS += appstream                 1.2 # 1.1.0
+SHARED_LIBS += appstream-compose         1.1 # 1.1.0
+SHARED_LIBS += AppStreamQt               1.1 # 1.1.0
 
 CATEGORIES=		devel
 
@@ -28,9 +28,9 @@ HOMEPAGE=		https://www.freedesktop.org/wiki/Distributions/AppStream/
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB-main += c cairo curl fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 intl m pango-1.0 rsvg-2 stemmer
-WANTLIB-main += xml2 xmlb yaml-0 zstd
+WANTLIB-main += c cairo curl fontconfig freetype fyaml gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 intl m pango-1.0 rsvg-2
+WANTLIB-main += stemmer xml2 xmlb zstd
 
 WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core appstream gio-2.0 glib-2.0
 WANTLIB-qt6 += gobject-2.0
@@ -50,8 +50,8 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			textproc/gtk-doc \
 			textproc/itstool
 
-LIB_DEPENDS-main=	devel/libyaml \
-			net/curl \
+LIB_DEPENDS-main=	net/curl \
+			textproc/libfyaml \
 			textproc/libstemmer \
 			textproc/libxml \
 			textproc/libxmlb \

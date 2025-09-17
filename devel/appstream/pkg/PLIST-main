@@ -2,7 +2,6 @@
 include/appstream/
 include/appstream-compose/
 include/appstream-compose/appstream-compose.h
-include/appstream-compose/asc-canvas.h
 include/appstream-compose/asc-compose.h
 include/appstream-compose/asc-directory-unit.h
 include/appstream-compose/asc-enums-types.h
@@ -993,7 +992,6 @@ share/doc/appstream/html/compose-api/appstream-compose.devhelp2
 share/doc/appstream/html/compose-api/appstream-logo.svg
 share/doc/appstream/html/compose-api/callback.CheckMetadataEarlyFn.html
 share/doc/appstream/html/compose-api/callback.TranslateDesktopTextFn.html
-share/doc/appstream/html/compose-api/class.Canvas.html
 share/doc/appstream/html/compose-api/class.Compose.html
 share/doc/appstream/html/compose-api/class.DirectoryUnit.html
 share/doc/appstream/html/compose-api/class.Hint.html
@@ -1002,7 +1000,6 @@ share/doc/appstream/html/compose-api/class.Image.html
 share/doc/appstream/html/compose-api/class.Result.html
 share/doc/appstream/html/compose-api/class.Unit.html
 share/doc/appstream/html/compose-api/classes_hierarchy.html
-share/doc/appstream/html/compose-api/ctor.Canvas.new.html
 share/doc/appstream/html/compose-api/ctor.Compose.new.html
 share/doc/appstream/html/compose-api/ctor.DirectoryUnit.new.html
 share/doc/appstream/html/compose-api/ctor.Hint.new.html
@@ -1015,7 +1012,6 @@ share/doc/appstream/html/compose-api/ctor.Result.new.html
 share/doc/appstream/html/compose-api/ctor.Unit.new.html
 share/doc/appstream/html/compose-api/enum.IconState.html
 share/doc/appstream/html/compose-api/enum.ImageFormat.html
-share/doc/appstream/html/compose-api/error.CanvasError.html
 share/doc/appstream/html/compose-api/error.ComposeError.html
 share/doc/appstream/html/compose-api/error.ImageError.html
 share/doc/appstream/html/compose-api/flags.ComposeFlags.html
@@ -1038,18 +1034,12 @@ share/doc/appstream/html/compose-api/func.globals_set_ffprobe_binary.html
 share/doc/appstream/html/compose-api/func.globals_set_optipng_binary.html
 share/doc/appstream/html/compose-api/func.globals_set_tmp_dir.html
 share/doc/appstream/html/compose-api/func.globals_set_use_optipng.html
-share/doc/appstream/html/compose-api/func.optimize_png.html
-share/doc/appstream/html/compose-api/func.pixbuf_blur.html
-share/doc/appstream/html/compose-api/func.pixbuf_sharpen.html
+share/doc/appstream/html/compose-api/func.render_svg_to_file.html
 share/doc/appstream/html/compose-api/fzy.js
 share/doc/appstream/html/compose-api/go-up-symbolic.png
 share/doc/appstream/html/compose-api/index.html
 share/doc/appstream/html/compose-api/index.json
 share/doc/appstream/html/compose-api/main.js
-share/doc/appstream/html/compose-api/method.Canvas.get_height.html
-share/doc/appstream/html/compose-api/method.Canvas.get_width.html
-share/doc/appstream/html/compose-api/method.Canvas.render_svg.html
-share/doc/appstream/html/compose-api/method.Canvas.save_png.html
 share/doc/appstream/html/compose-api/method.Compose.add_allowed_cid.html
 share/doc/appstream/html/compose-api/method.Compose.add_custom_allowed.html
 share/doc/appstream/html/compose-api/method.Compose.add_flags.html
@@ -1110,16 +1100,13 @@ share/doc/appstream/html/compose-api/method.IconPolicy.to_string.html
 share/doc/appstream/html/compose-api/method.IconPolicyIter.init.html
 share/doc/appstream/html/compose-api/method.IconPolicyIter.next.html
 share/doc/appstream/html/compose-api/method.Image.get_height.html
-share/doc/appstream/html/compose-api/method.Image.get_pixbuf.html
 share/doc/appstream/html/compose-api/method.Image.get_width.html
 share/doc/appstream/html/compose-api/method.Image.load_filename.html
 share/doc/appstream/html/compose-api/method.Image.save_filename.html
-share/doc/appstream/html/compose-api/method.Image.save_pixbuf.html
 share/doc/appstream/html/compose-api/method.Image.scale.html
 share/doc/appstream/html/compose-api/method.Image.scale_to_fit.html
 share/doc/appstream/html/compose-api/method.Image.scale_to_height.html
 share/doc/appstream/html/compose-api/method.Image.scale_to_width.html
-share/doc/appstream/html/compose-api/method.Image.set_pixbuf.html
 share/doc/appstream/html/compose-api/method.Result.add_component.html
 share/doc/appstream/html/compose-api/method.Result.add_component_with_string.html
 share/doc/appstream/html/compose-api/method.Result.add_hint.html
@@ -1171,7 +1158,6 @@ share/doc/appstream/html/compose-api/solarized-dark.css
 share/doc/appstream/html/compose-api/solarized-light.css
 share/doc/appstream/html/compose-api/struct.IconPolicyIter.html
 share/doc/appstream/html/compose-api/style.css
-share/doc/appstream/html/compose-api/type_func.CanvasError.quark.html
 share/doc/appstream/html/compose-api/type_func.ComposeError.quark.html
 share/doc/appstream/html/compose-api/type_func.IconState.from_string.html
 share/doc/appstream/html/compose-api/type_func.IconState.to_string.html
