@@ -2,7 +2,7 @@
 bin/retroarch-cg2glsl
 @man man/man6/retroarch-cg2glsl.6
 @man man/man6/retroarch.6
-share/applications/retroarch.desktop
+share/applications/com.libretro.RetroArch.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/retroarch/
 share/doc/retroarch/COPYING
@@ -10,7 +10,7 @@ share/doc/retroarch/README.md
 share/examples/retroarch.cfg
 @sample ${SYSCONFDIR}/retroarch.cfg
 share/metainfo/
-share/metainfo/com.libretro.RetroArch.appdata.xml
+share/metainfo/com.libretro.RetroArch.metainfo.xml
 share/pixmaps/
-share/pixmaps/retroarch.svg
+share/pixmaps/com.libretro.RetroArch.svg
 @tag update-desktop-database

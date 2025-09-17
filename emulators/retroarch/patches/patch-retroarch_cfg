@@ -6,7 +6,7 @@ Index: retroarch.cfg
  
  # Core directory for libretro core implementations.
 -# libretro_directory =
-+libretro_directory = "${PREFIX}/lib/libretro"
++libretro_directory = "/usr/local/lib/libretro"
  
  # Core info directory for libretro core information.
  # libretro_info_path =

@@ -1,14 +1,16 @@
 COMMENT =		generic multi-emulator frontend
 
-PKGNAME =		retroarch-${GH_TAGNAME:S/v//}
+DISTNAME =		retroarch-sourceonly-$V
+PKGNAME =		retroarch-$V
 
-GH_ACCOUNT =		libretro
-GH_PROJECT =		RetroArch
-GH_TAGNAME =		v1.18.0
-REVISION =		1
+V =			1.21.0
 
 # crashes when recording videos due to ffmpeg
 USE_NOBTCFI-amd64 =	Yes
+
+SITES =			https://github.com/libretro/RetroArch/releases/download/v$V/
+
+EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		emulators
 
@@ -17,20 +19,21 @@ HOMEPAGE =		https://www.libretro.com/
 # code GPLv3+, assets CC-BY-4.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Concurrent Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets SDL2 X11 X11-xcb Xext Xinerama
-WANTLIB += Xrandr Xxf86vm ass avcodec avformat avutil c crypto
+WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6Network Qt6Widgets SDL2 X11 X11-xcb Xext Xi Xinerama
+WANTLIB += Xrandr Xss Xxf86vm ass avcodec avdevice avformat avutil c crypto
 WANTLIB += drm fontconfig freetype fribidi gbm lzma m mbedcrypto
-WANTLIB += mbedtls mbedx509 openal ssl swresample swscale xcb
+WANTLIB += mbedtls mbedx509 openal pipewire-0.3 ssl swresample swscale xcb
 WANTLIB += xkbcommon
 
-MODULES =		x11/qt5
+MODULES =		x11/qt6
 RUN_DEPENDS =		devel/desktop-file-utils
 
 BUILD_DEPENDS =		graphics/vulkan-tools
 LIB_DEPENDS =		audio/openal \
 			devel/sdl2 \
 			graphics/ffmpeg \
+			multimedia/pipewire/pipewire,-libs \
 			security/polarssl \
 			x11/xkbcommon
 
