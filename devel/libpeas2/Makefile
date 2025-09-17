@@ -3,7 +3,7 @@ COMMENT=	GObject plugins library
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	2.0.7
 PKGNAME=	${GNOME_PROJECT}2-${GNOME_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -15,23 +15,24 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c++abi gio-2.0 gjs glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += intl mozjs-128
+WANTLIB += intl mozjs-128 ${MODPY_WANTLIB}
 
 MODULES=	devel/meson \
+		lang/python \
 		x11/gnome
 
-LIB_DEPENDS=	devel/spidermonkey128 \
+BUILD_DEPENDS=	devel/py-gobject3
+
+RUN_DEPENDS=	devel/py-gobject3
+
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		devel/spidermonkey128 \
 		x11/gnome/gjs
 
 MODGNOME_TOOLS=	gobject-introspection gtk-update-icon-cache vala
 
 CONFIGURE_ARGS= -Dlua51=false \
 		-Dvapi=true
-
-# XXX unbreak at least x11/gnome/builder; should be fixed for GNOME 49.
-# https://gedit-text-editor.org/blog/2025-04-30-no-more-pythons-in-gedit.html
-# https://gitlab.gnome.org/GNOME/libpeas/-/issues/58
-CONFIGURE_ARGS +=	-Dpython3=false
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

@@ -12,6 +12,7 @@ lib/libpeas-2/
 @lib lib/libpeas-2.so.${LIBpeas-2_VERSION}
 lib/libpeas-2/loaders/
 @so lib/libpeas-2/loaders/libgjsloader.so
+@so lib/libpeas-2/loaders/libpythonloader.so
 lib/pkgconfig/libpeas-2.pc
 share/gir-1.0/Peas-2.gir
 share/locale/ab/LC_MESSAGES/libpeas-2.mo
