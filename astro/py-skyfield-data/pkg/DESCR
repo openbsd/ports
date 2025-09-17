@@ -1,0 +1,11 @@
+The Skyfield library for astronomical computations depends on various data
+files, which are automatically downloaded at runtime if not already found in
+the Loader's path, or if found but the file has expired (in which case a new
+version is fetched).
+
+Skyfield-data provides offline versions of common data files:
+
+- de421.bsp, provided by the Jet Propulsion Laboratory
+
+- finals2000A.all, provided by the International Earth Rotation and
+Reference Systems Service

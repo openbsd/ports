@@ -1,0 +1,5 @@
+kosmorro is a command-line tool to calculate ephemerides for any time and
+location. Get the rise, culmination and set times of each major object of the
+Solar system in just one command. Simply give your coordinates in environment
+variables or arguments. Output is in plain text or (if texlive is installed)
+as a PDF.

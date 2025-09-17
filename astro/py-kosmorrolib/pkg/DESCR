@@ -1,0 +1,5 @@
+Kosmorrolib is the Python library internally used in Kosmorro. It
+provides easy-to-use functions for your calculation needs.
+
+The library is built on Skyfield, an excellent library designed to
+compute positions for any objects in the Solar system.
