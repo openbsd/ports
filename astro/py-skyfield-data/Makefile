@@ -1,6 +1,7 @@
 COMMENT=	offline data for py-skyfield
 
 MODPY_DISTV=	6.0.0
+REVISION=	0
 DISTNAME=	skyfield-data-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,6 +16,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-RUN_DEPENDS=	astro/py-skyfield
+RUN_DEPENDS=	astro/py-astropy-iers-data \
+		astro/py-skyfield
 
 .include <bsd.port.mk>

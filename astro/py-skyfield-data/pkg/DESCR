@@ -5,7 +5,10 @@ version is fetched).
 
 Skyfield-data provides offline versions of common data files:
 
-- de421.bsp, provided by the Jet Propulsion Laboratory
+- de421.bsp, provided by the Jet Propulsion Laboratory, this has fairly
+long validity
 
 - finals2000A.all, provided by the International Earth Rotation and
-Reference Systems Service
+Reference Systems Service, however be awware that skyfield-data does not
+update this frequently and it's often outdated - users are advised to use
+that from py3-astropy-iers-data instead
