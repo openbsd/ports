@@ -1444,6 +1444,7 @@
      SUBDIR += py-dateutil
      SUBDIR += py-dbus-deviation
      SUBDIR += py-ddt
+     SUBDIR += py-debian
      SUBDIR += py-debugpy
      SUBDIR += py-decorator
      SUBDIR += py-deprecated
@@ -1828,6 +1829,7 @@
      SUBDIR += rebar3,erlang28
      SUBDIR += remake
      SUBDIR += reposurgeon
+     SUBDIR += reuse
      SUBDIR += rgbds
      SUBDIR += riscv-elf
      SUBDIR += riscv32-esp-elf
