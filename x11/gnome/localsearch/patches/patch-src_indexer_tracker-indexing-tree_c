@@ -1,0 +1,57 @@
+REVERT (needs Gudev)
+From e7372fcd955d52284de2adf9ea77776016980a44 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Sat, 14 Jun 2025 15:03:28 +0200
+Subject: [PATCH] indexer: Lazily populate root IDs in TrackerIndexingTree
+
+Index: src/indexer/tracker-indexing-tree.c
+--- src/indexer/tracker-indexing-tree.c.orig
++++ src/indexer/tracker-indexing-tree.c
+@@ -23,8 +23,6 @@
+ 
+ #include "tracker-indexing-tree.h"
+ 
+-#include "tracker-indexing-tree-methods.h"
+-
+ #include <tracker-common.h>
+ 
+ /**
+@@ -67,7 +65,6 @@ struct _TrackerIndexingTreePrivate
+ {
+ 	GNode *config_tree;
+ 	GList *filter_patterns;
+-	GUdevClient *udev_client;
+ 	GList *allowed_text_patterns;
+ 
+ 	GFile *root;
+@@ -209,8 +206,6 @@ tracker_indexing_tree_constructed (GObject *object)
+ 	data->shallow = TRUE;
+ 
+ 	priv->config_tree = g_node_new (data);
+-
+-	priv->udev_client = g_udev_client_new (NULL);
+ }
+ 
+ static void
+@@ -233,8 +228,6 @@ tracker_indexing_tree_finalize (GObject *object)
+ 	                 NULL);
+ 	g_node_destroy (priv->config_tree);
+ 
+-	g_clear_object (&priv->udev_client);
+-
+ 	if (priv->root) {
+ 		g_object_unref (priv->root);
+ 	}
+@@ -978,12 +971,6 @@ tracker_indexing_tree_get_root (TrackerIndexingTree   
+ 	    (file == data->file ||
+ 	     g_file_equal (file, data->file) ||
+ 	     g_file_has_prefix (file, data->file))) {
+-		if (!data->id) {
+-			data->id = tracker_indexing_tree_get_root_id (tree,
+-			                                              data->file,
+-			                                              priv->udev_client);
+-		}
+-
+ 		if (id)
+ 			*id = data->id;
+ 		if (directory_flags)

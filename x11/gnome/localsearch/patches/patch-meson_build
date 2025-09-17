@@ -5,20 +5,16 @@ XXX fix and push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -23,7 +23,11 @@ gexiv2 = dependency('gexiv2', required: get_option('ra
+@@ -24,7 +24,7 @@ gexiv2 = dependency('gexiv2', required: get_option('ra
  gio = dependency('gio-2.0', version: '>=' + glib_required)
  gio_unix = dependency('gio-unix-2.0', version: '>=' + glib_required)
  glib = dependency('glib-2.0', version: '>=' + glib_required)
 -gudev = dependency('gudev-1.0')
-+if host_machine.system() == 'linux'
-+  gudev = dependency('gudev-1.0')
-+else
-+  gudev = []
-+endif
++gudev = []
  gmodule = dependency('gmodule-2.0', version: '>=' + glib_required)
  gobject = dependency('gobject-2.0', version: '>=' + glib_required)
  gobject_introspection = dependency('gobject-introspection-1.0')
-@@ -56,7 +60,7 @@ if get_option('man')
+@@ -61,7 +61,7 @@ if get_option('man')
    a2x = find_program('a2x')
  endif
  

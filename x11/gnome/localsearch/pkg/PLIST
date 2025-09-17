@@ -26,6 +26,7 @@ lib/localsearch-3.0/extract-modules/
 @so lib/localsearch-3.0/extract-modules/libextract-raw.so
 @so lib/localsearch-3.0/extract-modules/libextract-text.so
 @so lib/localsearch-3.0/extract-modules/libextract-tiff.so
+@so lib/localsearch-3.0/extract-modules/libextract-webp.so
 @so lib/localsearch-3.0/extract-modules/libextract-xps.so
 @so lib/localsearch-3.0/libtracker-extract.so
 lib/localsearch-3.0/trackertestutils/
@@ -47,15 +48,17 @@ lib/localsearch-3.0/writeback-modules/
 @bin libexec/localsearch-extractor-3
 @bin libexec/localsearch-writeback-3
 @man man/man1/localsearch-3.1
-@man man/man1/localsearch-daemon.1
 @man man/man1/localsearch-extract.1
 @man man/man1/localsearch-index.1
 @man man/man1/localsearch-info.1
+@man man/man1/localsearch-inhibit.1
 @man man/man1/localsearch-reset.1
 @man man/man1/localsearch-search.1
 @man man/man1/localsearch-status.1
 @man man/man1/localsearch-tag.1
 @man man/man1/localsearch-writeback-3.1
+@man man/man1/localsearch.1
+share/bash-completion/completions/localsearch
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.Files.Index.xml
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.xml
 share/dbus-1/services/org.freedesktop.LocalSearch3.Control.service
@@ -134,13 +137,12 @@ share/locale/tg/LC_MESSAGES/localsearch3.mo
 share/locale/th/LC_MESSAGES/localsearch3.mo
 share/locale/tr/LC_MESSAGES/localsearch3.mo
 share/locale/uk/LC_MESSAGES/localsearch3.mo
+share/locale/uz/LC_MESSAGES/localsearch3.mo
 share/locale/vi/LC_MESSAGES/localsearch3.mo
 share/locale/zh_CN/LC_MESSAGES/localsearch3.mo
 share/locale/zh_HK/LC_MESSAGES/localsearch3.mo
 share/locale/zh_TW/LC_MESSAGES/localsearch3.mo
 share/localsearch3/
-share/localsearch3/domain-ontologies/
-share/localsearch3/domain-ontologies/default.rule
 share/localsearch3/extract-rules/
 share/localsearch3/extract-rules/10-abw.rule
 share/localsearch3/extract-rules/10-bmp.rule
@@ -162,6 +164,7 @@ share/localsearch3/extract-rules/10-ps.rule
 share/localsearch3/extract-rules/10-raw.rule
 share/localsearch3/extract-rules/10-svg.rule
 share/localsearch3/extract-rules/10-tiff.rule
+share/localsearch3/extract-rules/10-webp.rule
 share/localsearch3/extract-rules/10-xps.rule
 share/localsearch3/extract-rules/11-iso.rule
 share/localsearch3/extract-rules/11-msoffice-xml.rule

@@ -1,0 +1,45 @@
+REVERT (needs Gudev)
+From e7372fcd955d52284de2adf9ea77776016980a44 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Sat, 14 Jun 2025 15:03:28 +0200
+Subject: [PATCH] indexer: Lazily populate root IDs in TrackerIndexingTree
+
+Index: src/indexer/meson.build
+--- src/indexer/meson.build.orig
++++ src/indexer/meson.build
+@@ -1,7 +1,4 @@
+-files_extract = files(
+-    'tracker-miner-files-methods.c',
+-    'tracker-indexing-tree-methods.c',
+-)
++files_extract = files('tracker-miner-files-methods.c')
+ 
+ miner_fs_enums = gnome.mkenums_simple('tracker-miner-enum-types',
+     sources: 'tracker-miner-enums.h',
+@@ -24,8 +21,7 @@ private_sources = [
+     'tracker-priority-queue.c',
+     'tracker-task-pool.c',
+     'tracker-sparql-buffer.c',
+-    'tracker-utils.c',
+-    files_extract,
++    'tracker-utils.c'
+ ]
+ 
+ if have_fanotify
+@@ -37,7 +33,7 @@ libtracker_miner_private = static_library(
+     miner_fs_resources[0], miner_fs_resources[1],
+     miner_fs_enums[0], miner_fs_enums[1],
+     private_sources,
+-    dependencies: [tracker_miners_common_dep, tracker_sparql, gmodule, gudev],
++    dependencies: [tracker_miners_common_dep, tracker_sparql, gmodule],
+     c_args: tracker_c_args,
+ )
+ 
+@@ -55,6 +51,7 @@ sources = [
+     'tracker-main.c',
+     'tracker-miner-files.c',
+     'tracker-storage.c',
++    files_extract,
+ ]
+ 
+ tracker_miner_fs_deps = [
