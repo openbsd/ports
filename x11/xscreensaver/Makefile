@@ -9,6 +9,7 @@ COMMENT=	screen saver and locker for the X Window System
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
 DISTNAME=	xscreensaver-6.12
+REVISION=	0
 
 CATEGORIES=	x11
 

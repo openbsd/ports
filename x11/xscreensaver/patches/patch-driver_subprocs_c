@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: driver/subprocs.c
+--- driver/subprocs.c.orig
++++ driver/subprocs.c
+@@ -1124,7 +1124,7 @@ spawn_screenhack (saver_screen_info *ssi)
+               how_long = 1000 * (cycle_at - now);
+ 
+               if (p->verbose_p && cycle_at - old > 2)
+-                fprintf (stderr, "%s: %d: offsetting cycle time by %ld sec\n",
++                fprintf (stderr, "%s: %d: offsetting cycle time by %lld sec\n",
+                          blurb(), ssi->number,
+                          cycle_at - old);
+             }
