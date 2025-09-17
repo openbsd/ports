@@ -1,0 +1,20 @@
+64bit time_t
+
+Index: lib/x509/output.c
+--- lib/x509/output.c.orig
++++ lib/x509/output.c
+@@ -477,12 +477,12 @@ static void print_time(gnutls_buffer_st *str, time_t t
+ 	struct tm t;
+ 
+ 	if (gmtime_r(&timestamp, &t) == NULL) {
+-		addf(str, "error: gmtime_r (%lu)\n", timestamp);
++		addf(str, "error: gmtime_r (%lld)\n", timestamp);
+ 		return;
+ 	}
+ 
+ 	if (strftime(s, max, "%a, %b %d %H:%M:%S UTC %Y", &t) == 0)
+-		addf(str, "error: strftime (%lu)\n", timestamp);
++		addf(str, "error: strftime (%lld)\n", timestamp);
+ 	else
+ 		addf(str, "%s\n", s);
+ }
