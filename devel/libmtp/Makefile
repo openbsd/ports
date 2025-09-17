@@ -1,10 +1,9 @@
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
-DISTNAME=		libmtp-1.1.21
+DISTNAME=		libmtp-1.1.22
 CATEGORIES=		devel
-REVISION=		0
 
-SHARED_LIBS +=  mtp                  7.2      # 13.0.4
+SHARED_LIBS +=  mtp                  7.2      # 13.0
 
 HOMEPAGE=		https://libmtp.sourceforge.net/
 
@@ -19,6 +18,8 @@ COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c
 # avoid "libmtp.so.7.0: undefined reference to `.L2085'"
 MODGCC4_ARCHS=		mips64 mips64el
+
+USE_GMAKE=		Yes
 
 LIB_DEPENDS=		devel/libusb1 \
 			security/libgcrypt
