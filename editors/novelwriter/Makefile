@@ -1,5 +1,5 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_DISTV =		2.7.4
+MODPY_DISTV =		2.7.5
 DISTNAME =		novelwriter-${MODPY_DISTV}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
