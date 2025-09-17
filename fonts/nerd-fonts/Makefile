@@ -2,6 +2,7 @@
     SUBDIR += codenewroman
     SUBDIR += dejavusansmono
     SUBDIR += fantasquesansmono
+    SUBDIR += intelonemono
     SUBDIR += noto
     SUBDIR += profont
     SUBDIR += symbolsonly
