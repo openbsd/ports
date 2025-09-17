@@ -1,6 +1,7 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
 MODPY_DISTV=	1.0.12
+REVISION=	0
 DISTNAME=	kosmorrolib-${MODPY_DISTV}
 PKGNAME=	py-kosmorrolib-${MODPY_DISTV}
 

@@ -1,0 +1,23 @@
+Index: kosmorrolib/core.py
+--- kosmorrolib/core.py.orig
++++ kosmorrolib/core.py
+@@ -22,7 +22,18 @@ from skyfield.nutationlib import iau2000b
+ 
+ from skyfield_data import get_skyfield_data_path
+ 
+-LOADER = Loader(get_skyfield_data_path())
++# disable runtime warnings; skyfield-data warns if either of the data files
++# have expired when using get_skyfield_data_path, even if we're only actually
++# interested in de421 which expires in 2053.
++#
++# it is documented as supporting "Loader(get_skyfield_data_path(),
++# expire=False)" but that doesn't actually work.
++#
++import warnings
++
++with warnings.catch_warnings():
++    warnings.simplefilter("ignore")
++    LOADER = Loader(get_skyfield_data_path())
+ 
+ 
+ def get_timescale():
