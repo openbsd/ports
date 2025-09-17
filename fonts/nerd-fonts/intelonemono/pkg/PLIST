@@ -1,0 +1,27 @@
+share/fonts/
+share/fonts/nerd-fonts/
+@fontdir share/fonts/nerd-fonts/intelonemono/
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-Bold.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-BoldItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-Italic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-Light.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-LightItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-Medium.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-MediumItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFont-Regular.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-Bold.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-BoldItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-Italic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-Light.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-LightItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-Medium.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-MediumItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontMono-Regular.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-Bold.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-BoldItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-Italic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-Light.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-LightItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-Medium.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-MediumItalic.ttf
+share/fonts/nerd-fonts/intelonemono/IntoneMonoNerdFontPropo-Regular.ttf
