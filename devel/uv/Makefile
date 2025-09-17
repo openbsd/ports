@@ -5,7 +5,9 @@ COMMENT =		Python package and project manager
 
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
-GH_TAGNAME =		0.8.17
+GH_TAGNAME =		${MODPY_DISTV}
+MODPY_DISTV =		0.8.17
+REVISION =		0
 
 ASYNC_ZIP =		285e48742b74ab109887d62e1ae79e7c15fd4878
 PUBGRUB =		06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
@@ -28,12 +30,16 @@ MAINTAINER =		Laurent Cheylus <foxy@free.fr>
 # MIT or Apache2.0
 PERMIT_PACKAGE =	Yes
 
+BUILD_DEPENDS =		devel/maturin \
+			devel/py-installer
+
 LIB_DEPENDS +=		archivers/bzip2 \
 			archivers/zstd
 
 WANTLIB =		${MODCARGO_WANTLIB} bz2 m zstd
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			lang/python
 CONFIGURE_STYLE =	cargo
 
 # Annoying static dependencies throughout crates/*/Cargo.toml...
@@ -42,6 +48,9 @@ MODCARGO_CRATES_KEEP =	lzma-sys
 SEPARATE_BUILD =	Yes
 
 post-build:
+	cd ${WRKSRC}/crates/uv-build && env HOME=${WRKSRC} maturin build \
+		-j ${MAKE_JOBS} --offline --profile release \
+		--out ${MODCARGO_TARGET_DIR}
 	${MODCARGO_TARGET_DIR}/release/uv -n --generate-shell-completion bash \
 		> ${WRKBUILD}/uv.bash
 	${MODCARGO_TARGET_DIR}/release/uv -n --generate-shell-completion fish \
@@ -51,6 +60,10 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/uv ${PREFIX}/bin/
+
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKBUILD}/target/uv_build*.whl
+
 	# uvx is a shell script to exec 'uv tool run'
 	${SUBST_PROGRAM} ${FILESDIR}/uvx ${PREFIX}/bin/uvx
 
