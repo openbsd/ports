@@ -1895,6 +1895,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIXCRMF-2009.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/RFC5639.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/Safecurves-pkix-18.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/SecureMimeMessageV3dot1-2009.asn1
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/X509-ML-DSA-2025.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/AlgorithmInformation-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/AttributeCertificateVersion1-2009.beam
@@ -1921,6 +1922,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIXCRMF-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/RFC5639.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/Safecurves-pkix-18.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/SecureMimeMessageV3dot1-2009.beam
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/X509-ML-DSA-2025.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_cert.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_cert_records.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_crl.beam
@@ -1964,6 +1966,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIXCRMF-2009.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/RFC5639.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/Safecurves-pkix-18.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/SecureMimeMessageV3dot1-2009.erl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/X509-ML-DSA-2025.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_cert.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_cert_records.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_crl.erl
@@ -2132,6 +2135,7 @@ lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_misc.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_note_store.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_notification_mib.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_pdus.beam
+lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_pdus_basic.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_shadow_table.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_standard_mib.beam
 lib/${ERLANG_V}/lib/${ERL_SNMP}/ebin/snmp_target_mib.beam
@@ -2411,6 +2415,7 @@ lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_mini_mib.erl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_misc.erl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_note_store.erl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_pdus.erl
+lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_pdus_basic.erl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_usm.erl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_usm.hrl
 lib/${ERLANG_V}/lib/${ERL_SNMP}/src/misc/snmp_verbosity.erl
