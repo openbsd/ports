@@ -1,0 +1,14 @@
+cc: error: unknown argument '-version'; did you mean '--version'?
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -47,7 +47,7 @@ libfyaml_la_CPPFLAGS = $(AM_CPPFLAGS) \
+ 		       -I$(top_srcdir)/src/thread
+ libfyaml_la_CFLAGS = $(AM_CFLAGS)
+ libfyaml_la_LDFLAGS = -no-undefined $(AM_LDFLAGS) $(AM_LIBLDFLAGS) \
+-		      -version $(LIBTOOL_VERSION)
++		      -version-info $(LIBTOOL_VERSION)
+ libfyaml_la_LIBADD =
+ 
+ # blake3 section
