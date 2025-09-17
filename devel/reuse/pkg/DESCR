@@ -1,0 +1,9 @@
+reuse is a tool for compliance with the REUSE recommendations.
+
+Copyright and licensing is difficult, especially when reusing software from
+different projects that are released under various different licenses. REUSE was
+started by the Free Software Foundation Europe (FSFE) to provide a set of
+recommendations to make licensing your Free Software projects easier. Not only
+do these recommendations make it easier for you to declare the licenses under
+which your works are released, but they also make it easier for a computer to
+understand how your project is licensed.
