@@ -104,6 +104,7 @@ _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 .elif ${MODPY_PYBUILD:L} != no
 BUILD_DEPENDS +=	devel/py-build \
 			devel/py-installer
+# if adding new backends, update python-modules(5)
 .  if ${MODPY_PYBUILD} == flit
 BUILD_DEPENDS +=	devel/py-flit
 .  elif ${MODPY_PYBUILD} == flit_core
@@ -149,7 +150,7 @@ _MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == uv_build
 BUILD_DEPENDS +=	devel/uv
 .  elif !${MODPY_PYBUILD:L:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, maturin, mesonpy, other, pbr, pdm, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value - see python-modules(5)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 _MODPY_WHEELSDIR ?= dist
