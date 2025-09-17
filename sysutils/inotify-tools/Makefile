@@ -3,8 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	inotify-tools
 GH_PROJECT =	inotify-tools
-GH_TAGNAME =	4.23.9.0
-REVISION =	0
+GH_TAGNAME =	4.25.9.0
 
 SHARED_LIBS =	inotifytools 1.0 # 4.1
 
@@ -33,7 +32,8 @@ pre-configure:
 		autoreconf -fi
 
 post-install:
-	# Both are linux-only and not actually installed
+	# Both are linux-only
+	rm ${PREFIX}/bin/fsnotify{wait,watch}
 	rm ${PREFIX}/man/man1/fsnotify{wait.1,watch.1}
 
 .include <bsd.port.mk>
