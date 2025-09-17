@@ -3,7 +3,7 @@ COMMENT=		CUPS bindings for Python
 MODPY_DISTV=		2.0.4
 DISTNAME=		pycups-${MODPY_DISTV}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		print
 
