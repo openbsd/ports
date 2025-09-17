@@ -1,10 +1,11 @@
 COMMENT=		real-time 3D visualization of space
 
-DIST_TUPLE=		github CelestiaProject Celestia 0d39898255bdbda249c08cd10c3c507a4798c7bc .
+DIST_TUPLE=		github CelestiaProject Celestia d3f4040401f5f71bcca79e55d53be75c05b867ef .
 # submodule for Spice until we have a port
 DIST_TUPLE +=		github OpenSpace Spice 711ffdb91865c48018ba2efef963ed645ed2557b thirdparty/Spice
 
-PKGNAME=		celestia-1.7.0.pre20250726
+PKGNAME=		celestia-1.7.0pre20250908
+EPOCH=			0
 
 SHARED_LIBS +=	celestia                  0.0 # 0.0
 SHARED_LIBS +=	spice                     0.0 # unknown
