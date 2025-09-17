@@ -23,3 +23,4 @@ lib/python${MODPY_VERSION}/site-packages/icecream/__version__.py
 lib/python${MODPY_VERSION}/site-packages/icecream/builtins.py
 lib/python${MODPY_VERSION}/site-packages/icecream/coloring.py
 lib/python${MODPY_VERSION}/site-packages/icecream/icecream.py
+lib/python${MODPY_VERSION}/site-packages/icecream/py.typed
