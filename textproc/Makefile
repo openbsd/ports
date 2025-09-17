@@ -121,6 +121,7 @@
      SUBDIR += lgrind
      SUBDIR += libebml
      SUBDIR += libexttextcat
+     SUBDIR += libfyaml
      SUBDIR += libgrapheme
      SUBDIR += libical
      SUBDIR += libinih
