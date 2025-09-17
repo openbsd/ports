@@ -1,6 +1,6 @@
 COMMENT=	library for getting/setting process names
 
-MODPY_DISTV=	1.3.6
+MODPY_DISTV=	1.3.7
 DISTNAME=	setproctitle-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -10,8 +10,6 @@ HOMEPAGE=	https://github.com/dvarrazzo/py-setproctitle
 
 # BSD 3-clause
 PERMIT_PACKAGE=Yes
-
-WANTLIB +=	pthread
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
