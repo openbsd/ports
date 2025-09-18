@@ -1277,6 +1277,10 @@ ${GEM_LIB}/gems/${DISTNAME}/man/man8/
 @man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-ssl.8
 @man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet.8
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
+${GEM_LIB}/gems/${DISTNAME}/tasks/build.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/cleanup.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/promote.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/upload.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/vox.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/
