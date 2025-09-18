@@ -2,7 +2,7 @@ V =		2.8.1
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel audio
 
 SHARED_LIBS +=  SDL2_mixer		1.1	# 2.8.0
@@ -38,6 +38,8 @@ CONFIGURE_ARGS +=	--disable-music-midi-fluidsynth \
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/sdl2_mixer-config.cmake.in
