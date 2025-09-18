@@ -1,7 +1,6 @@
 COMMENT =		turn-based empire game
 
-DISTNAME =		vms-empire-1.16
-REVISION =		0
+DISTNAME =		vms-empire-1.18
 
 CATEGORIES =		games
 
@@ -21,6 +20,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 NO_TEST =		Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	perl -pi -e 's,/usr,${PREFIX},g;' \
