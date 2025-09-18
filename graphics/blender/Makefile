@@ -113,6 +113,8 @@ MODPY_ADJ_FILES =	scripts/modules/bl_i18n_utils/merge_po.py \
 
 SUBST_VARS =	V
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/blender/
 	# Replace woff2 with ttf
