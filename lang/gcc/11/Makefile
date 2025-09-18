@@ -1,8 +1,6 @@
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
-BROKEN-mips64 = In function 'test_fn': cc1: internal compiler error: Segmentation fault
-
 # tested: aarch64 amd64 arm hppa i386 powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
