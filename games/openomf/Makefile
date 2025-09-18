@@ -1,6 +1,9 @@
 COMMENT =	free remake of One Must Fall 2097 game engine
-DISTNAME =	openomf-0.6.5.2
-REVISION =	0
+
+V =		0.8.4
+PKGNAME =	openomf-${V}
+DIST_TUPLE +=	github omf2097 openomf ${V} .
+
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.openomf.org/
@@ -9,10 +12,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 argtable2 c confuse enet intl m openal png xmp
-WANTLIB += z
-
-SITES =		https://mirrors.nycbug.org/pub/distfiles/
+WANTLIB += SDL2 SDL2_mixer c confuse enet epoxy m miniupnpc
+WANTLIB += natpmp opusfile png pthread xmp z
 
 # C11
 COMPILER =	base-clang ports-gcc
@@ -21,12 +22,13 @@ COMPILER_LANGS = c
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	audio/libxmp \
-		audio/openal \
-		devel/argtable \
+		audio/opusfile \
 		devel/libconfuse \
-		devel/sdl2 \
+		devel/sdl2-mixer \
 		graphics/png \
-		net/enet
+		net/enet \
+		net/miniupnp/libnatpmp \
+		net/miniupnp/miniupnpc
 
 NO_TEST =	Yes
 

@@ -1,22 +1,30 @@
 Install to a better location.
+Remove hardcoded optimization flags.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -174,7 +174,7 @@ include_directories(${COREINCS})
+@@ -86,9 +86,9 @@ if(MSVC)
+ else()
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-parameter -Wformat -pedantic -Wvla")
+     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -ggdb -Werror -fno-omit-frame-pointer")
+-    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -g -O2 -fno-omit-frame-pointer -DNDEBUG")
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -DNDEBUG")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -DNDEBUG")
++    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -g -fno-omit-frame-pointer -DNDEBUG")
++    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DNDEBUG")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -DNDEBUG")
+ endif()
  
- # Build core sources first as an object library
- # this can then be reused in tests and main executable to speed things up
--add_library(openomf_core OBJECT ${OPENOMF_SRC})
-+add_library(openomf_core STATIC ${OPENOMF_SRC})
- set(CORELIBS openomf_core ${CORELIBS})
- 
- # Build the game binary
-@@ -263,6 +263,6 @@ install(TARGETS openomf
-     COMPONENT Binaries
- )
- install(FILES resources/openomf.bk resources/openomf_icon.png
--    DESTINATION share/games/openomf/
-+    DESTINATION share/openomf/
-     COMPONENT Data
- )
+ # Enable AddressSanitizer if requested
+@@ -478,8 +478,8 @@ else()
+     # On unixy systems, follow standard.
+     install(TARGETS openomf RUNTIME DESTINATION bin COMPONENT Binaries)
+     install(FILES ${DOC_FILES} resources/openomf.bk resources/gamecontrollerdb/gamecontrollerdb.txt resources/icons/openomf.png
+-        DESTINATION share/games/openomf/
++        DESTINATION share/openomf/
+         COMPONENT Data
+     )
+-    install(DIRECTORY shaders/ DESTINATION share/games/openomf/shaders COMPONENT Data)
++    install(DIRECTORY shaders/ DESTINATION share/openomf/shaders COMPONENT Data)
+ endif()

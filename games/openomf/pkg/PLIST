@@ -1,5 +1,19 @@
 @bin bin/openomf
 share/doc/pkg-readmes/${PKGSTEM}
 share/openomf/
+share/openomf/DANISH.LNG
+share/openomf/DANISH.LNG2
+share/openomf/ENGLISH.DAT2
+share/openomf/GERMAN.DAT2
+share/openomf/LICENSE
+share/openomf/LICENSE.argtable3
+share/openomf/LICENSE.gamecontrollerdb
+share/openomf/README.md
+share/openomf/gamecontrollerdb.txt
 share/openomf/openomf.bk
-share/openomf/openomf_icon.png
+share/openomf/openomf.png
+share/openomf/shaders/
+share/openomf/shaders/palette.frag
+share/openomf/shaders/palette.vert
+share/openomf/shaders/rgba.frag
+share/openomf/shaders/rgba.vert
