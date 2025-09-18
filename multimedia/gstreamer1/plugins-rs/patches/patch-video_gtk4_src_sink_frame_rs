@@ -3,7 +3,7 @@ Fix build with gtk+4 >=4.20.0
 Index: video/gtk4/src/sink/frame.rs
 --- video/gtk4/src/sink/frame.rs.orig
 +++ video/gtk4/src/sink/frame.rs
-@@ -228,50 +228,6 @@ impl AsRef<[u8]> for FrameWrapper {
+@@ -228,78 +228,6 @@ impl AsRef<[u8]> for FrameWrapper {
  
  fn video_format_to_memory_format(f: gst_video::VideoFormat) -> gdk::MemoryFormat {
      match f {
@@ -51,10 +51,38 @@ Index: video/gtk4/src/sink/frame.rs
 -        gst_video::VideoFormat::Y42b => gdk::MemoryFormat::G8B8R8422,
 -        #[cfg(feature = "gtk_v4_20")]
 -        gst_video::VideoFormat::Y444 => gdk::MemoryFormat::G8B8R8444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42010le => gdk::MemoryFormat::X6g10X6b10X6r10420,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42010be => gdk::MemoryFormat::X6g10X6b10X6r10420,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42210le => gdk::MemoryFormat::X6g10X6b10X6r10422,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42210be => gdk::MemoryFormat::X6g10X6b10X6r10422,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44410le => gdk::MemoryFormat::X6g10X6b10X6r10444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44410be => gdk::MemoryFormat::X6g10X6b10X6r10444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42012le => gdk::MemoryFormat::X4g12X4b12X4r12420,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42012be => gdk::MemoryFormat::X4g12X4b12X4r12420,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42212le => gdk::MemoryFormat::X4g12X4b12X4r12422,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::I42212be => gdk::MemoryFormat::X4g12X4b12X4r12422,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44412le => gdk::MemoryFormat::X4g12X4b12X4r12444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44412be => gdk::MemoryFormat::X4g12X4b12X4r12444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44416le => gdk::MemoryFormat::G16B16R16444,
+-        #[cfg(feature = "gtk_v4_20")]
+-        gst_video::VideoFormat::Y44416be => gdk::MemoryFormat::G16B16R16444,
          #[cfg(feature = "gtk_v4_14")]
          gst_video::VideoFormat::Bgrx => gdk::MemoryFormat::B8g8r8x8,
          #[cfg(feature = "gtk_v4_14")]
-@@ -290,59 +246,6 @@ fn video_format_to_memory_format(f: gst_video::VideoFo
+@@ -318,59 +246,6 @@ fn video_format_to_memory_format(f: gst_video::VideoFo
      }
  }
  
@@ -114,7 +142,7 @@ Index: video/gtk4/src/sink/frame.rs
  fn video_frame_to_memory_texture(
      frame: gst_video::VideoFrame<gst_video::video_frame::Readable>,
      cached_textures: &mut HashMap<TextureCacheId, gdk::Texture>,
-@@ -363,29 +266,7 @@ fn video_frame_to_memory_texture(
+@@ -391,29 +266,7 @@ fn video_frame_to_memory_texture(
      let height = frame.height();
  
      let texture = {
@@ -144,7 +172,7 @@ Index: video/gtk4/src/sink/frame.rs
              let stride = frame.plane_stride()[0] as usize;
  
              gdk::MemoryTexture::new(
-@@ -475,23 +356,7 @@ fn video_frame_to_gl_texture(
+@@ -503,23 +356,7 @@ fn video_frame_to_gl_texture(
              let sync_point = (*sync_meta.as_ptr()).data;
  
              let builder = {
@@ -168,7 +196,7 @@ Index: video/gtk4/src/sink/frame.rs
                      gdk::GLTextureBuilder::new()
                          .set_context(Some(gdk_context))
                          .set_id(texture_id as u32)
-@@ -559,20 +424,6 @@ fn video_frame_to_dmabuf_texture(
+@@ -587,20 +424,6 @@ fn video_frame_to_dmabuf_texture(
          .set_width(width)
          .set_height(height)
          .set_n_planes(n_planes);
