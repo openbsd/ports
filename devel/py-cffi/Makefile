@@ -1,10 +1,9 @@
 COMMENT=	Foreign Function Interface for Python calling C code
 
-MODPY_DISTV=	1.17.1
+MODPY_DISTV=	2.0.0
 DISTNAME=	cffi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 # MIT
 PERMIT_PACKAGE=	Yes
