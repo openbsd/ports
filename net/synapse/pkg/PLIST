@@ -14,13 +14,14 @@ bin/synapse_worker
 bin/synctl
 bin/update_synapse_database
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/LICENSE-AGPL-3.0
-lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/LICENSE-COMMERCIAL
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/licenses/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/licenses/LICENSE-AGPL-3.0
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/licenses/LICENSE-COMMERCIAL
 lib/python${MODPY_VERSION}/site-packages/synapse/
 lib/python${MODPY_VERSION}/site-packages/synapse/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}/
