@@ -1,14 +1,26 @@
+Override shared lib version.
+Add include missing for pthread_rwlock_t existence check.
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2311,8 +2311,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -2623,8 +2623,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  #   (Interfaces removed:		AGE=0)
  #
- LIBNPTH_LT_CURRENT=1
--LIBNPTH_LT_AGE=1
--LIBNPTH_LT_REVISION=2
+ LIBNPTH_LT_CURRENT=3
+-LIBNPTH_LT_AGE=3
+-LIBNPTH_LT_REVISION=0
 +LIBNPTH_LT_AGE=${LIBnpth_MAJOR}
 +LIBNPTH_LT_REVISION=${LIBnpth_MINOR}
  ################################################
  
+ 
+@@ -14419,7 +14419,7 @@ fi
+ 
+ printf "%s\n" "#define HAVE_PTHREAD 1" >>confdefs.h
+ 
+-    ac_fn_c_check_type "$LINENO" "pthread_rwlock_t" "ac_cv_type_pthread_rwlock_t" "$ac_includes_default"
++    ac_fn_c_check_type "$LINENO" "pthread_rwlock_t" "ac_cv_type_pthread_rwlock_t" "#include <pthread.h>"
+ if test "x$ac_cv_type_pthread_rwlock_t" = xyes
+ then :
  

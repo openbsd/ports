@@ -1,15 +1,14 @@
 COMMENT=	new GNU Portable Threads Library
 
-DISTNAME=	npth-1.6
-REVISION=	0
+DISTNAME=	npth-1.8
 
-SHARED_LIBS=	npth 1.0	# 1.1
+SHARED_LIBS=	npth 1.1	# 3.0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.gnupg.org/software/npth/index.html
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -22,8 +21,8 @@ SITES=			${SITE_GNUPG:=npth/}
 
 CONFIGURE_STYLE=	gnu
 
-LIBnpth_MAJOR=${LIBnpth_VERSION:R} 
-LIBnpth_MINOR=${LIBnpth_VERSION:E} 
+LIBnpth_MAJOR=${LIBnpth_VERSION:R}
+LIBnpth_MINOR=${LIBnpth_VERSION:E}
 
 SUBST_VARS=		LIBnpth_MAJOR LIBnpth_MINOR
 

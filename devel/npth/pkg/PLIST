@@ -1,7 +1,7 @@
-bin/npth-config
 include/npth.h
-lib/libnpth.a
+@static-lib lib/libnpth.a
 lib/libnpth.la
 @lib lib/libnpth.so.${LIBnpth_VERSION}
+lib/pkgconfig/npth.pc
 share/aclocal/
 share/aclocal/npth.m4
