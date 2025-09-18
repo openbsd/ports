@@ -6,7 +6,7 @@ PKGNAME =	sigil-${GH_TAGNAME}
 
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
-GH_TAGNAME =	2.5.2
+GH_TAGNAME =	2.6.2
 
 CATEGORIES =	editors
 
@@ -41,6 +41,8 @@ CONFIGURE_ARGS =	-DUSE_SYSTEM_LIBS=ON
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/share/sigil/python3lib/updatechecker.py${PATCHORIG}
