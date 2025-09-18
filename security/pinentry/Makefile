@@ -2,11 +2,8 @@ COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
 COMMENT-qt6 =	PIN or passphrase entry dialog (Qt6 interface)
-REVISION-main =	1
-REVISION-gnome3 = 0
-REVISION-qt6 =	0
 
-VERSION = 	1.3.0
+VERSION = 	1.3.2
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
@@ -15,7 +12,8 @@ SITES = 	${SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER = 	Antoine Jacoutot <ajacoutot@openbsd.org>, \
+		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -45,6 +43,8 @@ LIB_DEPENDS-qt5 =	${LIB_DEPENDS} \
 			devel/kf5/kwayland \
 			x11/qt5/qtbase \
 			x11/qt5/qtx11extras
+RUN_DEPENDS-qt5 =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
+			devel/desktop-file-utils
 
 WANTLIB-qt6 += ${WANTLIB}
 WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6Widgets m
@@ -54,6 +54,8 @@ LIB_DEPENDS-qt6 =	${LIB_DEPENDS} \
 			devel/kf6/kguiaddons \
 			devel/kf6/kwindowsystem \
 			x11/qt6/qtbase
+RUN_DEPENDS-qt6 =	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
+			devel/desktop-file-utils
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
