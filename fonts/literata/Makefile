@@ -21,6 +21,7 @@ DIST_SUBDIR =	literata-${MODFONT_VERSION}
 MODULES =	font
 
 NO_BUILD =	Yes
+NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/fonts/ttf
 
