@@ -6,7 +6,7 @@ COMMENT-google=		GVFS mount module for Google Drive
 COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.56.1
+GNOME_VERSION=		1.58.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -14,13 +14,6 @@ PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
 PKGNAME-onedrive=	${GNOME_PROJECT}-onedrive-${GNOME_VERSION}
-
-REVISION-goa=		0
-REVISION-google=	0
-REVISION-main=		0
-REVISION-nfs=		0
-REVISION-onedrive=	1
-REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
