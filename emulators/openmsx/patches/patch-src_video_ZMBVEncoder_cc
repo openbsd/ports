@@ -1,7 +1,7 @@
 Index: src/video/ZMBVEncoder.cc
 --- src/video/ZMBVEncoder.cc.orig
 +++ src/video/ZMBVEncoder.cc
-@@ -431,7 +431,7 @@ std::span<const uint8_t> ZMBVEncoder::compressFrame(bo
+@@ -358,7 +358,7 @@ std::span<const uint8_t> ZMBVEncoder::compressFrame(bo
  	auto r = deflate(&zstream, Z_SYNC_FLUSH);
  	assert(r == Z_OK); (void)r;
  

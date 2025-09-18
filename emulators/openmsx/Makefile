@@ -5,9 +5,8 @@ BROKEN-sparc64 =ports-gcc does not know c++20
 
 COMMENT =	MSX home computer emulator
 
-V =		19.1
+V =		20.0
 DISTNAME =	openmsx-$V
-REVISION =	0
 
 CATEGORIES =	emulators
 

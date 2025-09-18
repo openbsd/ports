@@ -4,7 +4,16 @@ Fix compiler detection by using CHOSEN_COMPILER not CXX
 Index: build/main.mk
 --- build/main.mk.orig
 +++ build/main.mk
-@@ -334,7 +334,7 @@ LINK_FLAGS+=$(TARGET_FLAGS)
+@@ -94,7 +94,7 @@ LDFLAGS:=
+ ifneq ($(filter mingw%,$(OPENMSX_TARGET_OS)),)
+ LINK_FLAGS:=-pthread
+ else
+-LINK_FLAGS:=-pthread -ldl
++LINK_FLAGS:=-pthread
+ endif
+ # Flags that specify the target platform.
+ # These should be inherited by the 3rd party libs Makefile.
+@@ -315,7 +315,7 @@ LINK_FLAGS+=$(TARGET_FLAGS)
  CXX?=g++
  WINDRES?=windres
  DEPEND_FLAGS:=
@@ -13,7 +22,7 @@ Index: build/main.mk
    # Enable C++20 (partially supported since clang-8)
    COMPILE_FLAGS+=-std=c++20 -fconstexpr-steps=2000000
    #COMPILE_FLAGS+=-Wall -Wextra -Wundef -Wno-invalid-offsetof -Wunused-macros -Wdouble-promotion -Wmissing-declarations -Wshadow -Wold-style-cast -Wzero-as-null-pointer-constant
-@@ -345,7 +345,7 @@ ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CX
+@@ -326,7 +326,7 @@ ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CX
    CC:=$(subst clang++,clang,$(CXX))
    DEPEND_FLAGS+=-MP
  else
