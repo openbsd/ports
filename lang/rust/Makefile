@@ -12,15 +12,15 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.89.0
+V =			1.90.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.88.0
-BV-amd64 =		1.89.0
+BV-aarch64 =		1.89.0
+BV-amd64 =		1.90.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.88.0
-BV-sparc64 =		1.88.0
+BV-riscv64 =		1.89.0
+BV-sparc64 =		1.89.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -48,7 +48,7 @@ WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
 SITES =			https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
-SITES.bsp =		http://kapouay.eu.org/pub/rust/
+SITES.bsp =		https://github.com/semarie/openbsd-rustc-bootstrap/releases/download/openbsd/
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	native_bootstrap
@@ -163,7 +163,9 @@ PKG_ARCH-src =		*
 
 MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/rust-bootstrap-${BV}/lib" \
 		CARGO_HOME=${WRKBUILD}/cargo-home \
-		TMPDIR=${WRKBUILD}
+		TMPDIR=${WRKBUILD} \
+		LIBGIT2_NO_PKG_CONFIG=1 \
+		LIBSSH2_NO_PKG_CONFIG=1
 
 TEST_ENV +=	RUST_BACKTRACE=0
 
