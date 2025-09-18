@@ -1,4 +1,5 @@
-bin/vectoroids
+@bin bin/vectoroids
+@man man/man6/vectoroids.6
 share/doc/vectoroids/
 share/doc/vectoroids/README
 share/vectoroids/

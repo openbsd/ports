@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -20,7 +20,7 @@ SDL_LIB=$(shell sdl2-config --libs) $(MIXER) -lSDL2_im
+ NOSOUNDFLAG=__SOUND
+ MIXER=-lSDL2_mixer
+ 
+-CFLAGS=-Wall -Wno-long-long -pedantic -std=c99 -O2 \
++CFLAGS=$(PORT_CFLAGS) -Wall -Wno-long-long -pedantic -std=c99 \
+ 	$(shell sdl2-config --cflags) -D$(NOSOUNDFLAG) \
+ 	-DDATA_PREFIX=\"$(DATA_PREFIX)\" -DJOY_$(JOY) -D$(TARGET_DEF)
+ 
