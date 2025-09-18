@@ -2,6 +2,7 @@
 @newuser _pound:626:_pound::pound user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/pound
 @bin bin/poundctl
+@info info/pound.info
 @man man/man5/poundctl.tmpl.5
 @man man/man8/pound.8
 @man man/man8/poundctl.8

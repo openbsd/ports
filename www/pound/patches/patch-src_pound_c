@@ -1,16 +1,16 @@
 Index: src/pound.c
 --- src/pound.c.orig
 +++ src/pound.c
-@@ -21,6 +21,8 @@
- #include "json.h"
+@@ -22,6 +22,8 @@
  #include "extern.h"
+ #include "watcher.h"
  
 +#include <openssl/rand.h>
 +
  /* common variables */
  char *user;			/* user to run as */
  char *group;			/* group to run as */
-@@ -141,7 +143,7 @@ abend (char const *fmt, ...)
+@@ -164,7 +166,7 @@ abend (struct locus_range const *range, char const *fm
  /*
   * OpenSSL thread support stuff
   */

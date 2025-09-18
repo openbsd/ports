@@ -1,0 +1,19 @@
+Index: src/poundctl.c
+--- src/poundctl.c.orig
++++ src/poundctl.c
+@@ -840,11 +840,14 @@ static void
+ send_request (BIO *bio, char const *method, char const *fmt, ...)
+ {
+   va_list ap;
++  char *tempstr;
+ 
+   BIO_printf (bio, "%s %s/", method, url->path);
+   va_start (ap, fmt);
+-  BIO_vprintf (bio, fmt, ap);
++  vasprintf (&tempstr, fmt, ap);
+   va_end (ap);
++  BIO_printf (bio, tempstr);
++  free(tempstr);
+   BIO_printf (bio, " HTTP/1.1\r\n"
+ 		   "Host: %s\r\n",
+ 	      url->host);
