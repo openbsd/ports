@@ -2,8 +2,7 @@ COMMENT =		marble game inspired by Marble Madness
 
 GH_PROJECT =		trackballs
 GH_ACCOUNT =		trackballs
-GH_TAGNAME =		v1.3.4
-REVISION =		0
+GH_TAGNAME =		v1.3.5
 
 CATEGORIES =		games
 
@@ -25,5 +24,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 CONFIGURE_ARGS +=	-DTRACKBALLS_HIGHSCORES_DIR='~' \
 			-DTRACKBALLS_MAN_DIR=${PREFIX}/man
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
