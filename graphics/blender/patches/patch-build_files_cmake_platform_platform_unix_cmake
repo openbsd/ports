@@ -1,7 +1,7 @@
 Index: build_files/cmake/platform/platform_unix.cmake
 --- build_files/cmake/platform/platform_unix.cmake.orig
 +++ build_files/cmake/platform/platform_unix.cmake
-@@ -675,7 +675,7 @@ if(WITH_SYSTEM_FREETYPE)
+@@ -678,7 +678,7 @@ if(WITH_SYSTEM_FREETYPE)
    if(NOT FREETYPE_FOUND)
      message(FATAL_ERROR "Failed finding system FreeType version!")
    endif()

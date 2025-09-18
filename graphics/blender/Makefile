@@ -6,8 +6,7 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-VERSION =	4.5.0
-REVISION =	3
+VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
 
@@ -22,11 +21,11 @@ WANTLIB += ${COMPILER_LIBCXX} Alembic Iex-3_4 IlmThread-3_4 Imath-3_2
 WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 OpenImageIO
 WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
 WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
-WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx jpeg
-WANTLIB += m openal openjp2 openvdb osdCPU osdGPU pipewire-0.3
-WANTLIB += png potrace pugixml ${MODPY_WANTLIB} shaderc_shared sharpyuv
-WANTLIB += sndfile swresample swscale tbb util vulkan webp webpdemux
-WANTLIB += webpmux xkbcommon z zstd
+WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx hpdf
+WANTLIB += jpeg m openal openjp2 openvdb osdCPU osdGPU pipewire-0.3
+WANTLIB += png potrace pugixml python3.12 shaderc_shared sharpyuv
+WANTLIB += sndfile swresample swscale tbb tiff util vulkan webp
+WANTLIB += webpdemux webpmux z zstd
 
 SITES =		https://download.blender.org/source/ \
 
@@ -57,12 +56,12 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
 .endif
 
-BUILD_DEPENDS =	math/py-numpy \
-		devel/boost \
+BUILD_DEPENDS =	devel/boost \
 		devel/py-six \
-		lang/cython \
 		devel/sdl2 \
 		graphics/tiff \
+		lang/cython \
+		math/py-numpy \
 		www/py-requests
 
 # woff2_decompress in do-install
@@ -91,8 +90,9 @@ LIB_DEPENDS =	archivers/zstd \
 		math/fftw3,float \
 		math/imath \
 		multimedia/pipewire/pipewire,-libs \
+		print/libharu \
 		textproc/pugixml \
-		x11/xkbcommon \
+		 \
 		${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
