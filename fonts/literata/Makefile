@@ -1,32 +1,29 @@
 COMMENT =	contemporary serif typeface for long-form reading
 
-V =		2.201
-PKGNAME =	literata-$V
+MODFONT_FAMILY =	literata
+MODFONT_VERSION =	3.103
 
-CATEGORIES =	fonts
+DISTNAME =		${MODFONT_VERSION}
 
 HOMEPAGE =	https://fonts.google.com/specimen/Literata
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/googlefonts/literata/releases/download/v$V/
-SITES.a =	https://raw.githubusercontent.com/googlefonts/literata/v$V/
+SITES =		https://github.com/googlefonts/literata/releases/download/${MODFONT_VERSION}/
+SITES.doc =	https://raw.githubusercontent.com/googlefonts/literata/${MODFONT_VERSION}/
 
-DISTFILES =	Literata-v$V.zip
-DISTFILES.a = 	OFL.txt
-EXTRACT_ONLY =	$(DISTFILES)
+DISTFILES.doc = OFL.txt
+EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 
-DIST_SUBDIR =	literata-$V
+DIST_SUBDIR =	literata-${MODFONT_VERSION}
+
+MODULES =	font
 
 NO_BUILD =	Yes
 
-PKG_ARCH =	*
+WRKDIST =	${WRKDIR}/fonts/ttf
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/literata
-	${INSTALL_DATA} ${FULLDISTDIR}/OFL.txt ${PREFIX}/share/doc/literata
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/literata
-	${INSTALL_DATA} ${WRKDIST}/ttfs/*.ttf ${PREFIX}/share/fonts/literata
+MODFONT_DOCFILES =	../../OFL.txt
 
 .include <bsd.port.mk>
