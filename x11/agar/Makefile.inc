@@ -1,4 +1,4 @@
-V ?=			1.6.0
+V ?=			1.7.0
 DISTNAME ?=		agar-$V
 
 CATEGORIES ?=		x11

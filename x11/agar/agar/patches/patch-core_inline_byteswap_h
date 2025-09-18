@@ -6,7 +6,7 @@ rlwimi wants a 32-bit integer; this fixes the build on powerpc.
 Index: core/inline_byteswap.h
 --- core/inline_byteswap.h.orig
 +++ core/inline_byteswap.h
-@@ -45,11 +45,11 @@ Uint16
+@@ -47,11 +47,11 @@ Uint16
  ag_swap16(Uint16 x)
  # endif
  {

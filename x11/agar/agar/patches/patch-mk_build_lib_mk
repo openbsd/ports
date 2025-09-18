@@ -12,7 +12,7 @@ Index: mk/build.lib.mk
  	    *) \
  	        _libout="lib${LIB}.so.${LIB_CURRENT}.${LIB_REVISION}.${LIB_AGE}"; \
  	        _libnames="lib${LIB}.so.${LIB_CURRENT} lib${LIB}.so"; \
-@@ -662,6 +666,11 @@ install-lib: check-libtool
+@@ -670,6 +674,11 @@ install-lib: check-libtool
  			echo "(cd ${LIBDIR} && ${LN} -fs $$_libout lib${LIB}.so)"; \
  			(cd ${DESTDIR}${LIBDIR} && ${SUDO} ${LN} -fs $$_libout lib${LIB}.so); \
  		    	;; \

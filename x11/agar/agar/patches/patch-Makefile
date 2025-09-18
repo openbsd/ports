@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -90,10 +90,10 @@ install-config:
+@@ -91,10 +91,10 @@ install-config:
  	fi
  	@if [ ! -e "${DESTDIR}${PREFIX}/share/aclocal" ]; then \
  		echo "${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal"; \
@@ -11,6 +11,6 @@ Index: Makefile
  	@echo "${INSTALL_DATA} ${SRCDIR}/mk/agar.m4 ${PREFIX}/share/aclocal"
 -	@${SUDO} ${INSTALL_DATA} ${SRCDIR}/mk/agar.m4 ${DESTDIR}${PREFIX}/share/aclocal
 +	@${SUDO} ${INSTALL_DATA} ${SRCDIR}/mk/agar.m4 ${PREFIX}/share/aclocal
- 
- deinstall-config:
- 	@for F in ${AVAIL_CONFIGSCRIPTS}; do \
+ 	@echo "${INSTALL_DATA} Makefile.config ${DATADIR}/agar.mk"
+ 	@${SUDO} ${INSTALL_DATA} Makefile.config ${DESTDIR}${DATADIR}/agar.mk
+ 	@echo "${INSTALL_DATA} configure.lua ${DATADIR}/agar.lua"
