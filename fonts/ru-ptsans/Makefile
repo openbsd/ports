@@ -1,29 +1,28 @@
 COMMENT =	free Cyrillic fonts
-PKG_ARCH =	*
-DISTNAME =	ru-ptsans-3.0
-CATEGORIES =	fonts x11
-REVISION =	0
+
+DISTNAME =	ru-ptsans-${MODFONT_VERSION}
+PKGNAME =	${DISTNAME}
+
+MODULES =	font
+
+MODFONT_FAMILY =	ptsans
+MODFONT_VERSION =	4.0
+
+MODFONT_FONTFILES =	*/*.ttf
+MODFONT_DOCFILES =	OFL.txt
 
 # Original distfile taken from http://www.fontstock.com/public/
-SITES =		http://ohvost.ru/distfiles/
-HOMEPAGE =	http://paratype.com/public/
+SITES =		https://ohvost.ru/distfiles/
+HOMEPAGE =	https://fonts.google.com/specimen/PT+Sans
 
-# OFL, http://scripts.sil.org/OFL (CC-like)
-# permits:
-# Distribution, Reproduction, Embedding, DerivativeWorks
-# requires
-# Attribution, Notice, ShareAlike, DerivativeRenaming,
-# BundlingWhenSelling
-PERMIT_PACKAGE =		Yes
+EXTRACT_SUFX =	.tar.gz
+
+# SIL OFL 1.1
+PERMIT_PACKAGE =	Yes
+
+WRKDIST =		${WRKDIR}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-FONTSDIR =		${PREFIX}/share/fonts/ptsans
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ptsans
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.txt ${PREFIX}/share/ptsans
 
 .include <bsd.port.mk>

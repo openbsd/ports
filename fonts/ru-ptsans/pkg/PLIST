@@ -1,26 +1,34 @@
 @pkgpath x11/ptsans
+share/doc/ptsans/
+share/doc/ptsans/OFL.txt
 share/fonts/
 @fontdir share/fonts/ptsans/
-share/fonts/ptsans/PTC55F.ttf
-share/fonts/ptsans/PTC75F.ttf
-share/fonts/ptsans/PTF55F.ttf
-share/fonts/ptsans/PTF56F.ttf
-share/fonts/ptsans/PTF75F.ttf
-share/fonts/ptsans/PTF76F.ttf
-share/fonts/ptsans/PTM55F.ttf
-share/fonts/ptsans/PTM75F.ttf
-share/fonts/ptsans/PTN57F.ttf
-share/fonts/ptsans/PTN77F.ttf
-share/fonts/ptsans/PTS55F.ttf
-share/fonts/ptsans/PTS56F.ttf
-share/fonts/ptsans/PTS75F.ttf
-share/fonts/ptsans/PTS76F.ttf
-share/fonts/ptsans/PTZ55F.ttf
-share/fonts/ptsans/PTZ56F.ttf
-share/ptsans/
-share/ptsans/OT_TT_Install_E.txt
-share/ptsans/OT_TT_Install_R.txt
-share/ptsans/PT Free Font License_eng_1.2.txt
-share/ptsans/PT Free Font License_eng_1.3.txt
-share/ptsans/PT Free Font License_rus_1.2.txt
-share/ptsans/PT Free Font License_rus_1.3.txt
+share/fonts/ptsans/pt-astra-sans_bold-italic.ttf
+share/fonts/ptsans/pt-astra-sans_bold.ttf
+share/fonts/ptsans/pt-astra-sans_italic.ttf
+share/fonts/ptsans/pt-astra-sans_regular.ttf
+share/fonts/ptsans/pt-astra-serif_bold-italic.ttf
+share/fonts/ptsans/pt-astra-serif_bold.ttf
+share/fonts/ptsans/pt-astra-serif_italic.ttf
+share/fonts/ptsans/pt-astra-serif_regular.ttf
+share/fonts/ptsans/pt-mono_bold.ttf
+share/fonts/ptsans/pt-mono_regular.ttf
+share/fonts/ptsans/pt-root-ui_bold.ttf
+share/fonts/ptsans/pt-root-ui_light.ttf
+share/fonts/ptsans/pt-root-ui_medium.ttf
+share/fonts/ptsans/pt-root-ui_regular.ttf
+share/fonts/ptsans/pt-root-ui_vf.ttf
+share/fonts/ptsans/pt-sans_bold-italic.ttf
+share/fonts/ptsans/pt-sans_bold.ttf
+share/fonts/ptsans/pt-sans_caption-bold.ttf
+share/fonts/ptsans/pt-sans_caption-regular.ttf
+share/fonts/ptsans/pt-sans_italic.ttf
+share/fonts/ptsans/pt-sans_narrow-bold.ttf
+share/fonts/ptsans/pt-sans_narrow-regular.ttf
+share/fonts/ptsans/pt-sans_regular.ttf
+share/fonts/ptsans/pt-serif_bold-italic.ttf
+share/fonts/ptsans/pt-serif_bold.ttf
+share/fonts/ptsans/pt-serif_caption-italic.ttf
+share/fonts/ptsans/pt-serif_caption-regular.ttf
+share/fonts/ptsans/pt-serif_italic.ttf
+share/fonts/ptsans/pt-serif_regular.ttf
