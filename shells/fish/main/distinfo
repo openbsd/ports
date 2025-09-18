@@ -58,6 +58,8 @@ SHA256 (cargo/syn-2.0.79.tar.gz) = iRMs0L8FCGTh043Du8B6DrjnUwryY0TT0ru++DSZ9ZA=
 SHA256 (cargo/terminfo-0.9.0.tar.gz) = 1OqBDwaS+fUbOC//WJOIe7RYD1+iRv3lRuCxPn/O5mI=
 SHA256 (cargo/typenum-1.17.0.tar.gz) = Qv8L8MZrgjjG87V43zfQt4SOVd+Fd7P3T5KmmszuuCU=
 SHA256 (cargo/unicode-ident-1.0.13.tar.gz) = 6RtWzUytrrebvxpWRfa0+Nxb3og0rViUqNs1/anvof4=
+SHA256 (cargo/unicode-segmentation-1.12.0.tar.gz) = 9szyUSEhFLVEM+yUn9anhBJ1+a2iDd3S8p6c7qRQFJM=
+SHA256 (cargo/unicode-width-0.2.0.tar.gz) = H8gZVoQsV9rBFCKpfDuBlaH/cn8G6FyE7S6KonfJoP0=
 SHA256 (cargo/version_check-0.9.5.tar.gz) = C5KPM9l1/GrZ+GyPKDhTrSa91bELfxVCqi+hXiKJEFo=
 SHA256 (cargo/walkdir-2.5.0.tar.gz) = KXkJRkBPkdnF0G+YdO/d6h3AbF7+lFQafWhjEI46Xks=
 SHA256 (cargo/widestring-1.1.0.tar.gz) = chnTa26siT+oHoTr4GSF59y7YWF3RpsULfFPH03rExE=
@@ -73,7 +75,7 @@ SHA256 (cargo/windows_i686_msvc-0.52.6.tar.gz) = JAlIvAXF58bau6KL+J2J/84+MDAigJ5
 SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7urKcqUxbCLGng=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
-SHA256 (fish-4.0.2.tar.xz) = bh7NsWQoX8BXsvNay9wggVwWIwmee7R7v8AREgrffoM=
+SHA256 (fish-4.0.6.tar.xz) = El2c4N2KNwTcB4KSXfNPAgi//EKvXzSRREnRTDS12uE=
 SHA256 (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 5a8G17c3tm90dqIj6KbNHiscqDSziz3liQHU288KBU0=
 SIZE (cargo/allocator-api2-0.2.18.tar.gz) = 62504
 SIZE (cargo/autocfg-1.4.0.tar.gz) = 17712
@@ -135,6 +137,8 @@ SIZE (cargo/syn-2.0.79.tar.gz) = 268981
 SIZE (cargo/terminfo-0.9.0.tar.gz) = 45420
 SIZE (cargo/typenum-1.17.0.tar.gz) = 42849
 SIZE (cargo/unicode-ident-1.0.13.tar.gz) = 43279
+SIZE (cargo/unicode-segmentation-1.12.0.tar.gz) = 106323
+SIZE (cargo/unicode-width-0.2.0.tar.gz) = 271509
 SIZE (cargo/version_check-0.9.5.tar.gz) = 15554
 SIZE (cargo/walkdir-2.5.0.tar.gz) = 23951
 SIZE (cargo/widestring-1.1.0.tar.gz) = 85046
@@ -150,5 +154,5 @@ SIZE (cargo/windows_i686_msvc-0.52.6.tar.gz) = 901163
 SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
-SIZE (fish-4.0.2.tar.xz) = 3055064
+SIZE (fish-4.0.6.tar.xz) = 3057300
 SIZE (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 742431
