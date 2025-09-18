@@ -1,0 +1,56 @@
+@bin bin/mt32emu-qt
+@bin bin/mt32emu-smf2wav
+include/mt32emu/
+include/mt32emu.h
+include/mt32emu/Enumerations.h
+include/mt32emu/File.h
+include/mt32emu/FileStream.h
+include/mt32emu/MidiStreamParser.h
+include/mt32emu/ROMInfo.h
+include/mt32emu/SampleRateConverter.h
+include/mt32emu/Synth.h
+include/mt32emu/Types.h
+include/mt32emu/c_interface/
+include/mt32emu/c_interface/c_interface.h
+include/mt32emu/c_interface/c_types.h
+include/mt32emu/c_interface/cpp_interface.h
+include/mt32emu/config.h
+include/mt32emu/globals.h
+include/mt32emu/mt32emu.h
+lib/cmake/MT32Emu/
+lib/cmake/MT32Emu/MT32EmuConfig.cmake
+lib/cmake/MT32Emu/MT32EmuConfigVersion.cmake
+lib/cmake/MT32Emu/MT32EmuTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/MT32Emu/MT32EmuTargets.cmake
+@lib lib/libmt32emu.so.${LIBmt32emu_VERSION}
+lib/pkgconfig/mt32emu.pc
+share/applications/mt32emu-qt.desktop
+share/doc/munt/
+share/doc/munt/libmt32emu/
+share/doc/munt/libmt32emu/AUTHORS.txt
+share/doc/munt/libmt32emu/COPYING.LESSER.txt
+share/doc/munt/libmt32emu/COPYING.txt
+share/doc/munt/libmt32emu/NEWS.txt
+share/doc/munt/libmt32emu/README.md
+share/doc/munt/libmt32emu/TODO.txt
+share/doc/munt/mt32emu-qt/
+share/doc/munt/mt32emu-qt/AUTHORS.txt
+share/doc/munt/mt32emu-qt/COPYING.txt
+share/doc/munt/mt32emu-qt/NEWS.txt
+share/doc/munt/mt32emu-qt/README.md
+share/doc/munt/mt32emu-qt/TODO.txt
+share/doc/munt/smf2wav/
+share/doc/munt/smf2wav/AUTHORS.txt
+share/doc/munt/smf2wav/COPYING.txt
+share/doc/munt/smf2wav/README.md
+share/icons/hicolor/128x128/apps/munt.png
+share/icons/hicolor/16x16/apps/munt.png
+share/icons/hicolor/24x24/apps/munt.png
+share/icons/hicolor/256x256/apps/munt.png
+share/icons/hicolor/32x32/apps/munt.png
+share/icons/hicolor/48x48/apps/munt.png
+share/icons/hicolor/64x64/apps/munt.png
+share/icons/hicolor/72x72/apps/munt.png
+share/icons/hicolor/96x96/apps/munt.png
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

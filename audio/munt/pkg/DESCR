@@ -1,0 +1,15 @@
+Library and applications to emulate (approximately) the Roland MT-32, CM-32L and
+LAPC-I synthesiser modules.
+
+- Support for multiple simultaneous synths with separate state & configuration.
+- GUI to configure synths, manage ROMs, connections to external MIDI ports and
+MIDI programs and interfaces to the host audio systems.
+- Emulates the funny MT-32 LCD. Also displays the internal synth state in
+realtime.
+- Provides support for different operating systems and multimedia systems such
+as Windows multimedia, PulseAudio, JACK Audio Connection Kit, ALSA, OSS and
+CoreMIDI.
+- Contains built-in MIDI player of Standard MIDI files optimised for mt32emu.
+- Makes it easy to record either the MIDI input or the produced audio output.
+- Simplifies batch conversion of collections of SMF files to .wav / .raw audio
+files.

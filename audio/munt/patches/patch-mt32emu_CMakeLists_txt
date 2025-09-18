@@ -1,0 +1,24 @@
+disable static library target to avoid: CMake Error: install(EXPORT
+"MT32EmuTargets" ...) includes target "mt32emu" more than once in the
+export set.
+
+Index: mt32emu/CMakeLists.txt
+--- mt32emu/CMakeLists.txt.orig
++++ mt32emu/CMakeLists.txt
+@@ -323,11 +323,11 @@ target_include_directories(mt32emu
+ set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME Runtime)
+ set(libmt32emu_COMPONENT_DEVEL COMPONENT Devel)
+ 
+-install(TARGETS mt32emu EXPORT MT32EmuTargets
+-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} ${libmt32emu_COMPONENT_DEVEL}
+-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} NAMELINK_SKIP
+-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-)
++#install(TARGETS mt32emu EXPORT MT32EmuTargets
++  #ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} ${libmt32emu_COMPONENT_DEVEL}
++  #LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} NAMELINK_SKIP
++  #RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++#)
+ # TODO: Use NAMELINK_COMPONENT with CMake 3.12 instead.
+ if(libmt32emu_SHARED)
+   install(TARGETS mt32emu EXPORT MT32EmuTargets
