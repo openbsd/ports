@@ -1,6 +1,6 @@
-Index: src/common/Port.h
---- src/common/Port.h.orig
-+++ src/common/Port.h
+Index: src/core/base/port.h
+--- src/core/base/port.h.orig
++++ src/core/base/port.h
 @@ -37,21 +37,21 @@
  #else
  
