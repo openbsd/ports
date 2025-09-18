@@ -136,6 +136,7 @@
      SUBDIR += mt-daapd
      SUBDIR += multimux
      SUBDIR += mumble
+     SUBDIR += munt
      SUBDIR += musepack
      SUBDIR += musikcube
      SUBDIR += musique
