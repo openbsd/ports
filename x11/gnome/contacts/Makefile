@@ -39,4 +39,8 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 # void function 'contacts_chunk_save_to_persona' should not return a value [-Wreturn-type]
 CFLAGS +=		-Wno-return-type
 
+# XXX Camera support for avatar
+# multimedia/gstreamer1/plugins-rs (gtk4)
+# multimedia/pipewire/pipewire (libgstpipewire)
+
 .include <bsd.port.mk>
