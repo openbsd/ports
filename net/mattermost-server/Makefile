@@ -20,7 +20,7 @@ FULLPKGPATH-main =	net/mattermost-server,-main
 FULLPKGNAME-mmctl =	mmctl-${V}
 FULLPKGPATH-mmctl =	net/mattermost-server,-mmctl
 
-SITES =		https://ports.mocheryl.org/releases/
+SITES =		https://distfiles.tristero.se/
 SITES.a =	https://releases.mattermost.com/${V}/
 
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
