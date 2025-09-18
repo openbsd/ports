@@ -1,6 +1,7 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_DISTV=	46.0.1
+REVISION=	0
 DISTNAME=	cryptography-${MODPY_DISTV}
 DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -21,7 +22,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	maturin
 
-RUN_DEPENDS=	devel/py-cffi>=1.4.2
+RUN_DEPENDS=	devel/py-cffi>=2.0.0
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/py-setuptools
 
