@@ -1,7 +1,7 @@
 COMMENT=	Python documentation generator
 
 MODPY_DISTV=	8.2.3
-REVISION=	1
+REVISION=	2
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
@@ -33,7 +33,7 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-sphinxcontrib/websupport \
 		www/py-jinja2 \
 		textproc/py-pygments \
-		textproc/py-docutils<0.22v0 \
+		textproc/py-docutils<0.23v0 \
 		textproc/py-snowballstemmer \
 		devel/py-babel \
 		textproc/py-alabaster \
