@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.16.2
+V =		1.17.1
 V_SHARDS =	0.19.1
 V_MOLINILLO =	0.2.0
 
