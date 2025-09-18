@@ -1,4 +1,2 @@
-SHA256 (gnome/BrainBlasted-gi-typescript-definitions-gi-typescript-definitions-dbbaa0527556cd3ce5434c4a5072cd99348eff7a.tar.gz) = bGJcigG9FenzX9bqaCO1r7IojmpA402FLTe2+g+lHlc=
-SHA256 (gnome/GNOME-decibels-decibels-48.0.tar.gz) = H/4sSrJQIxTHTwF/K1i50RBUipy8I3CW5nEuZ8A7LhA=
-SIZE (gnome/BrainBlasted-gi-typescript-definitions-gi-typescript-definitions-dbbaa0527556cd3ce5434c4a5072cd99348eff7a.tar.gz) = 745244
-SIZE (gnome/GNOME-decibels-decibels-48.0.tar.gz) = 140341
+SHA256 (gnome/decibels-48.0.tar.xz) = IpsRqSYxR7y4w+If8NSvZZ+yYmL4rs5Uetz4xl4DH3Q=
+SIZE (gnome/decibels-48.0.tar.xz) = 584392

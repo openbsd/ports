@@ -1,8 +1,8 @@
 COMMENT=		play audio files
 
-DIST_TUPLE=		gnome GNOME decibels 48.0 .
-DIST_TUPLE +=		gnome BrainBlasted gi-typescript-definitions dbbaa0527556cd3ce5434c4a5072cd99348eff7a gi-types
-REVISION=		0
+GNOME_PROJECT=		decibels
+GNOME_VERSION=		48.0
+REVISION=		1
 
 CATEGORIES=		audio multimedia
 
