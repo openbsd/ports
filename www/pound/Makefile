@@ -1,6 +1,7 @@
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
 V =			4.17
+REVISION =		0
 DISTNAME =		pound-$V
 PKGNAME =		${DISTNAME:L}
 

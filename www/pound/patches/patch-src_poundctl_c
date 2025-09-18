@@ -1,19 +1,26 @@
 Index: src/poundctl.c
 --- src/poundctl.c.orig
 +++ src/poundctl.c
-@@ -840,11 +840,14 @@ static void
+@@ -840,11 +840,22 @@ static void
  send_request (BIO *bio, char const *method, char const *fmt, ...)
  {
    va_list ap;
++#ifdef LIBRESSL_VERSION_NUMBER
 +  char *tempstr;
++#endif
  
    BIO_printf (bio, "%s %s/", method, url->path);
++#ifndef LIBRESSL_VERSION_NUMBER
    va_start (ap, fmt);
--  BIO_vprintf (bio, fmt, ap);
-+  vasprintf (&tempstr, fmt, ap);
+   BIO_vprintf (bio, fmt, ap);
    va_end (ap);
-+  BIO_printf (bio, tempstr);
++#else
++  va_start (ap, fmt);
++  vasprintf (&tempstr, fmt, ap);
++  va_end (ap);
++  BIO_printf (bio, "%s", tempstr);
 +  free(tempstr);
++#endif
    BIO_printf (bio, " HTTP/1.1\r\n"
  		   "Host: %s\r\n",
  	      url->host);
