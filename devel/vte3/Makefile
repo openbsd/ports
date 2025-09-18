@@ -3,7 +3,7 @@ COMMENT-gtk4=		GTK4 terminal emulation library
 COMMENT-common=		shared files for vte3
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.80.3
+GNOME_VERSION=		0.80.4
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
