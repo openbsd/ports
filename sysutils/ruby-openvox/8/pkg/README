@@ -1,0 +1,16 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Package handling
+================
+
+Support for specifying versions or latest was dropped, in favor of supporting
+package branches.
+
+To install a package of a given branch, you have to suffix the package name
+with %branch name. For example to ensure OpenVox 8 is installed:
+
+package { 'openvox%8':
+	ensure => 'present'
+}

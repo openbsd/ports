@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/puppet agent"
+
+. /etc/rc.d/rc.subr
+
+pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1

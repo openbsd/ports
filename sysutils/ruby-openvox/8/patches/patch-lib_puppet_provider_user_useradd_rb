@@ -1,0 +1,41 @@
+Use usermod(8) -p to update to fix changing a user's password.
+
+Index: lib/puppet/provider/user/useradd.rb
+--- lib/puppet/provider/user/useradd.rb.orig
++++ lib/puppet/provider/user/useradd.rb
+@@ -14,7 +14,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     To use the `forcelocal` parameter, you need to install the `libuser` package (providing
+     `/usr/sbin/lgroupadd` and `/usr/sbin/luseradd`)."
+ 
+-  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "chage", :chpasswd => "chpasswd"
++  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "chage", :chpasswd => "usermod"
+ 
+   options :home, :flag => "-d", :method => :dir
+   options :comment, :method => :gecos
+@@ -189,25 +189,14 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     user = @resource[:name]
+     tempfile = Tempfile.new('puppet', :encoding => Encoding::UTF_8)
+     begin
+-      # Puppet execute does not support strings as input, only files.
+-      # The password is expected to be in an encrypted format given -e is specified:
+-      tempfile << "#{user}:#{value}\n"
+-      tempfile.flush
+-
+-      # Options '-e' use encrypted password
+-      # Must receive "user:enc_password" as input
+-      # command, arguments = {:failonfail => true, :combine => true}
+-      cmd = [command(:chpasswd), '-e']
++      cmd = [command(:chpasswd), '-p', value, user]
+       execute_options = {
+         :failonfail => false,
+         :combine => true,
+-        :stdinfile => tempfile.path,
+         :sensitive => has_sensitive_data?
+       }
+       output = execute(cmd, execute_options)
+     rescue => detail
+-      tempfile.close
+-      tempfile.delete
+       raise Puppet::Error, "Could not set password on #{@resource.class.name}[#{@resource.name}]: #{detail}", detail.backtrace
+     end
+ 

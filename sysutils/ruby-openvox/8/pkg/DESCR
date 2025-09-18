@@ -1,0 +1,4 @@
+OpenVox is a community implementation of Puppet, an automated administrative
+engine for your Linux, Unix, and Windows systems, designed to perform
+administrative tasks (such as adding users, installing packages, and updating
+server configurations) based on a centralized specification.
