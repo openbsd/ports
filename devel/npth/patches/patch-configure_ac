@@ -1,0 +1,15 @@
+Fix pthread_rwlock_t detection by including pthread.h instead of
+AC_DEFAULT_INCLUDES.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -378,7 +378,7 @@ if test "$have_w32_system" = no; then
+   esac
+   if test "$have_pthread" != no; then
+     AC_DEFINE(HAVE_PTHREAD,1,[Define if we have pthread.])
+-    AC_CHECK_TYPE([pthread_rwlock_t])
++    AC_CHECK_TYPE([pthread_rwlock_t], [#include <pthread.h>])
+     AC_CHECK_FUNCS([pthread_tryjoin_np pthread_setname_np pthread_getname_np])
+     AC_CHECK_FUNCS([pthread_mutex_timedlock])
+     AC_CHECK_FUNCS([pthread_rwlock_rdlock pthread_rwlock_wrlock])
