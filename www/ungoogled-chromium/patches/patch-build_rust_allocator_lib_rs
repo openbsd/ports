@@ -1,7 +1,7 @@
 Index: build/rust/allocator/lib.rs
 --- build/rust/allocator/lib.rs.orig
 +++ build/rust/allocator/lib.rs
-@@ -90,6 +90,12 @@ mod both_allocators {
+@@ -90,6 +90,18 @@ mod both_allocators {
      #[linkage = "weak"]
      fn __rust_no_alloc_shim_is_unstable_v2() {}
  
@@ -10,6 +10,12 @@ Index: build/rust/allocator/lib.rs
 +    #[no_mangle]
 +    #[linkage = "weak"]
 +    static __rust_no_alloc_shim_is_unstable: u8 = 0;
++
++    #[rustc_std_internal_symbol]
++    #[linkage = "weak"]
++    fn __rust_alloc_error_handler_should_panic_v2() -> u8 {
++        0
++    }
 +
      // Mangle the symbol name as rustc expects.
      #[rustc_std_internal_symbol]
