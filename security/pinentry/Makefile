@@ -8,6 +8,10 @@ DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
+REVISION-main =	0
+REVISION-qt5 =	0
+REVISION-qt6 =	0
+
 SITES = 	${SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
@@ -76,15 +80,12 @@ FLAVOR ?=		no_gnome3 no_qt5 no_qt6 bootstrap
 
 .include <bsd.port.arch.mk>
 
-ICON =			No
 .if !${BUILD_PACKAGES:M-gnome3}
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
 .endif
 
 .if !${BUILD_PACKAGES:M-qt5}
 CONFIGURE_ARGS +=	--disable-pinentry-qt5
-.else
-ICON =			Yes
 .endif
 
 .if !${BUILD_PACKAGES:M-qt6}
@@ -92,14 +93,6 @@ ICON =			Yes
 # devel/kf6/kguiaddons
 # devel/kf6/kwindowsystem
 CONFIGURE_ARGS +=	--disable-pinentry-qt
-.else
-ICON =			Yes
-.endif
-
-.if ${ICON} == Yes
-PKG_ARGS +=		-Dicon=1
-.else
-PKG_ARGS +=		-Dicon=0
 .endif
 
 # http://pkgs.fedoraproject.org/cgit/pinentry.git/tree/pinentry-wrapper
@@ -107,5 +100,12 @@ post-install:
 	rm ${PREFIX}/bin/pinentry
 	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${FILESDIR}/pinentry-wrapper.in ${PREFIX}/bin/pinentry
+
+# pinentry.png is only installed by the qt5 and qt6 install targets;
+# to prevent juggling with PFRAG and PLIST conflict or to create a dedicated
+# subpackage, just install it unconditionally
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/qt/icons/pinentry.png \
+		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
