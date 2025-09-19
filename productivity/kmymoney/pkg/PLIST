@@ -110,6 +110,7 @@ include/kmymoney/tagsmodel.h
 include/kmymoney/viewinterface.h
 @lib lib/libkmm_base_dialogs.so.${LIBkmm_base_dialogs_VERSION}
 @lib lib/libkmm_base_widgets.so.${LIBkmm_base_widgets_VERSION}
+@lib lib/libkmm_codec.so.${LIBkmm_codec_VERSION}
 @lib lib/libkmm_csvimportercore.so.${LIBkmm_csvimportercore_VERSION}
 @lib lib/libkmm_extended_dialogs.so.${LIBkmm_extended_dialogs_VERSION}
 @lib lib/libkmm_gpgfile.so.${LIBkmm_gpgfile_VERSION}

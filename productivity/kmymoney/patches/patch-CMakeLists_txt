@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -426,12 +426,14 @@ kde_enable_exceptions()
+@@ -425,12 +425,14 @@ kde_enable_exceptions()
  
  # There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
  # and linkers aren't compatible with each other, so we need to assume something
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
    # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
-@@ -482,7 +484,9 @@ endif()
+@@ -481,7 +483,9 @@ endif()
  # IDEA: Set on a per target base
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  

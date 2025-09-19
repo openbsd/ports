@@ -2,9 +2,8 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	personal finance manager
 
-V =		5.2.0
+V =		5.2.1
 DISTNAME =	kmymoney-${V}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -32,6 +31,7 @@ SHARED_LIBS +=	kmm_templates             0.0 # 0.0
 SHARED_LIBS +=	kmm_webconnect            0.0 # 0.0
 SHARED_LIBS +=	kmm_wizard                0.0 # 0.0
 SHARED_LIBS +=	kmm_yesno                 0.0 # 0.0
+SHARED_LIBS +=	kmm_codec                 0.0 # 0.0
 SHARED_LIBS +=	onlinetask_interfaces     0.0 # 0.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -44,18 +44,18 @@ EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} GL KChart6 KF6Archive KF6Bookmarks
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
-WANTLIB += KF6Holidays KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6Core5Compat Qt6DBus
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Sql Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml alkimia6 assuan c db db_cxx gmp gpgme
 WANTLIB += gpgmepp ical icalss icalvcal icudata icui18n icuuc
-WANTLIB += m qt6keychain ofx ${MODPY_WANTLIB} qgpgmeqt6 sqlcipher
+WANTLIB += m ofx ${MODPY_WANTLIB} qgpgmeqt6 qt6keychain sqlcipher
 
 MODULES =		lang/python \
 			devel/kf6
@@ -97,6 +97,7 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/kf6/kitemmodels \
 			devel/kf6/kitemviews \
 			devel/kf6/kjobwidgets \
+			devel/kf6/kcrash \
 			devel/kf6/knotifications \
 			devel/kf6/kservice \
 			devel/kf6/ktextwidgets \
@@ -106,13 +107,12 @@ LIB_DEPENDS =		databases/db/v4 \
 			devel/kf6/sonnet \
 			devel/libofx \
 			graphics/kdiagram-qt6 \
-			productivity/libalkimia>=8.2 \
+			productivity/libalkimia>=8.2.1 \
 			security/qtkeychain,qt6 \
 			security/gpgme,-qt \
 			security/libassuan \
 			textproc/icu4c \
 			textproc/libical \
-			x11/qt6/qt5compat \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtpositioning \
 			x11/qt6/qtwebchannel \

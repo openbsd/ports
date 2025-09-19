@@ -1,7 +1,7 @@
 Index: kmymoney/kmymoney.cpp
 --- kmymoney/kmymoney.cpp.orig
 +++ kmymoney/kmymoney.cpp
-@@ -1038,7 +1038,8 @@ KMyMoneyApp::KMyMoneyApp(QWidget* parent)
+@@ -1042,7 +1042,8 @@ KMyMoneyApp::KMyMoneyApp(QWidget* parent)
       * 3) in a separate, minimal test case, loading libsqlite3 explicitly
       *  with QLibrary::ExportExternalSymbolsHint makes libsqlcipher non-functional
      */
