@@ -7,8 +7,10 @@ COMMENT=		network analysis and security monitoring framework
 DISTNAME =		zeek-6.1.1
 REVISION =		2
 
-SHARED_LIBS +=		binpac	3.0
-SHARED_LIBS +=		broker	4.1
+SHARED_LIBS +=		binpac		3.0
+SHARED_LIBS +=		broker		4.1
+# only used at configure+build time; these libs aren't installed
+SHARED_LIBS +=		caf_core	4.1
 
 CATEGORIES=		net security
 
