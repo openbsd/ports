@@ -1,0 +1,2 @@
+@bin bin/cage
+@man man/man1/cage.1
