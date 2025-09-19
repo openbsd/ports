@@ -7,11 +7,8 @@ COMMENT=		network analysis and security monitoring framework
 DISTNAME =		zeek-6.1.1
 REVISION =		2
 
-SHARED_LIBS +=	binpac                    3.0
-SHARED_LIBS +=  broker                    4.1
-
-# only used at configure+build time; these libs aren't installed
-SHARED_LIBS +=  caf_core                  4.0
+SHARED_LIBS +=		binpac	3.0
+SHARED_LIBS +=		broker	4.1
 
 CATEGORIES=		net security
 
@@ -64,7 +61,7 @@ BUILD_DEPENDS +=	shells/bash
 RUN_DEPENDS +=		misc/findutils \
 			shells/bash
 
-# share/zeek/base/utils/active-http.bro
+# share/zeek/base/utils/active-http.zeek executes curl(1)
 RUN_DEPENDS +=		net/curl
 
 # Fix undefined reference to __atomic_load_8
