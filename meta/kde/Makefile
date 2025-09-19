@@ -29,8 +29,8 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
-REVISION-development =	1
-REVISION-main =		1
+REVISION-development =	2
+REVISION-main =		2
 REVISION-utils =	0
 
 MULTI_PACKAGES +=	-main \
@@ -295,12 +295,10 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/ksmtp \
 	x11/kde-applications/ktnef \
 	x11/kde-applications/libgravatar \
-	x11/kde-applications/libkcddb \
 	x11/kde-applications/libkdcraw \
 	x11/kde-applications/libkdegames \
 	x11/kde-applications/libkdepim \
 	x11/kde-applications/libkeduvocdocument \
-	x11/kde-applications/libkexiv2 \
 	x11/kde-applications/libkgapi \
 	x11/kde-applications/libkleo \
 	x11/kde-applications/libkmahjongg \
