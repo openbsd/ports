@@ -4,11 +4,11 @@ COMMENT =	KDE financial data handling library
 
 CATEGORIES =	productivity x11
 
-V =		8.2.0
+V =		8.2.1
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
 
-SHARED_LIBS +=	alkimia6                  0.0 # 0.0
+SHARED_LIBS +=	alkimia6                  0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

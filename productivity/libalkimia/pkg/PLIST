@@ -30,7 +30,7 @@ lib/qt6/qml/org/kde/alkimia6/
 @so lib/qt6/qml/org/kde/alkimia6/libqmlalkimia6.so
 lib/qt6/qml/org/kde/alkimia6/qmldir
 share/applications/org.kde.onlinequoteseditor6.desktop
-share/gdb/auto-load/usr/local/lib/libalkimia6.so.8.2.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libalkimia6.so.8.2.1-gdb.py
 share/icons/hicolor/128x128/apps/onlinequoteseditor6.png
 share/icons/hicolor/16x16/apps/onlinequoteseditor6.png
 share/icons/hicolor/22x22/apps/onlinequoteseditor6.png
