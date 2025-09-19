@@ -3,6 +3,7 @@ COMMENT=	cross-project testing tool for Python
 MODPY_DISTV=	8.4.2
 DISTNAME=	pytest-${MODPY_DISTV}
 PKGNAME=	py-test-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -24,7 +25,8 @@ BUILD_DEPENDS=	devel/gmake \
 
 RUN_DEPENDS=	textproc/py-iniconfig \
 		sysutils/py-packaging \
-		devel/py-pluggy<2.0
+		devel/py-pluggy<2.0 \
+		textproc/py-pygments
 
 # tests run, but there are quite a lot of failures
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
@@ -32,7 +34,6 @@ TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-attrs \
 		devel/py-hypothesis \
 		devel/py-mock \
-		textproc/py-pygments \
 		www/py-requests \
 		devel/py-setuptools \
 		textproc/py-xmlschema \
