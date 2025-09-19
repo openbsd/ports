@@ -5,7 +5,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-6.1.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broker                    4.1
@@ -27,7 +27,8 @@ WANTLIB += c crypto m maxminddb pcap pthread ssl z lib/libbind/bind
 
 SITES =			https://download.zeek.org/
 
-MODULES=		lang/python
+MODULES =		devel/cmake \
+			lang/python
 
 # c++17
 COMPILER=		base-clang ports-gcc
@@ -40,7 +41,6 @@ MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/auxil/trace-summary/trace-summary
 
 BUILD_DEPENDS=		devel/bison \
-			devel/cmake/core \
 			devel/swig
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
@@ -67,35 +67,32 @@ RUN_DEPENDS +=		misc/findutils \
 # share/zeek/base/utils/active-http.bro
 RUN_DEPENDS +=		net/curl
 
-CONFIGURE_STYLE=	simple
-
 # Fix undefined reference to __atomic_load_8
 .if ${MACHINE_ARCH} == "hppa"
-LDFLAGS +=		"-latomic"
+MODCMAKE_LDFLAGS +=	"-latomic"
 WANTLIB +=		atomic
 .endif
 
 MODCMAKE_USE_SHARED_LIBS = No
 
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
-				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
+MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib/libbind -lbind \
+	   		-Wl,-rpath ${LOCALBASE}/lib/libbind
 
-CONFIGURE_ARGS =	--builddir=${WRKBUILD} \
-			--prefix=${PREFIX} \
-			--mandir=${PREFIX}/man \
-			--conf-files-dir=${SYSCONFDIR}/zeek \
-			--localstatedir=${LOCALSTATEDIR} \
-			--spooldir=${LOCALSTATEDIR}/spool/zeek \
-			--logdir=${LOCALSTATEDIR}/log/zeek \
-			--with-python=${MODPY_BIN} \
-			--binary-package \
-			-D CMAKE_VERBOSE_MAKEFILE=ON
+CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
+			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+			-DZEEK_ETC_INSTALL_DIR=${SYSCONFDIR}/zeek \
+			-DZEEK_LOCAL_STATE_DIR=${LOCALSTATEDIR} \
+			-DZEEK_LOG_DIR=${LOCALSTATEDIR}/log/zeek \
+			-DZEEK_MAN_INSTALL_PATH=${PREFIX}/man \
+			-DZEEK_SPOOL_DIR=${LOCALSTATEDIR}/spool/zeek
 
-SEPARATE_BUILD =	Yes
+# Our modules only pass {PYTHON,Python3}_*, perhaps newer releases take them.
+CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
+
 
 # XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
 # Need Flex version >= 2.6, found 2.5.39
-CONFIGURE_ARGS +=	--disable-spicy
+CONFIGURE_ARGS +=	-DDISABLE_SPICY=TRUE
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/auxil/broker/CMakeLists.txt \

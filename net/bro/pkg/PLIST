@@ -974,7 +974,7 @@ lib/cmake/
 lib/cmake/Broker/
 lib/cmake/Broker/BrokerConfig.cmake
 lib/cmake/Broker/BrokerConfigVersion.cmake
-lib/cmake/Broker/BrokerTargets-relwithdebinfo.cmake
+lib/cmake/Broker/BrokerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Broker/BrokerTargets.cmake
 @lib lib/libbinpac.so.${LIBbinpac_VERSION}
 @lib lib/libbroker.so.${LIBbroker_VERSION}
