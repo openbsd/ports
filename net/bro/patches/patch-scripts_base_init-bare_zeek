@@ -1,0 +1,13 @@
+Look in correct GeoIP directory first.
+
+Index: scripts/base/init-bare.zeek
+--- scripts/base/init-bare.zeek.orig
++++ scripts/base/init-bare.zeek
+@@ -1177,6 +1177,7 @@ const mmdb_asn_db: string = "GeoLite2-ASN.mmdb" &redef
+ ## each of the fallback locations, and should this fail, attempt to locate the
+ ## country one.
+ const mmdb_dir_fallbacks: vector of string = vector(
++	"/var/db/GeoIP",
+ 	"/usr/share/GeoIP",
+ 	"/var/lib/GeoIP",
+ 	"/usr/local/share/GeoIP",

@@ -1,0 +1,14 @@
+CMake fails to find kqueue(2), forego the check, we have it
+
+Index: cmake/FindKqueue.cmake
+--- cmake/FindKqueue.cmake.orig
++++ cmake/FindKqueue.cmake
+@@ -1,7 +1,7 @@
+ include(CheckFunctionExists)
+ 
+ # First check whether the system has kqueue built-in. Prefer that over everything else.
+-check_function_exists(kqueue HAVE_KQUEUE)
++set(HAVE_KQUEUE true)
+ 
+ if (NOT HAVE_KQUEUE)
+ 

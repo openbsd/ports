@@ -1,14 +1,11 @@
-PORTROACH=		skipv:6.2.0,6.2.1
-
 BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-6.1.1
-REVISION =		3
+DISTNAME =		zeek-6.2.1
 
 SHARED_LIBS +=		binpac		3.0
-SHARED_LIBS +=		broker		4.1
+SHARED_LIBS +=		broker		5.0
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=		caf_core	4.1
 
