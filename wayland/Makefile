@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += cage
      SUBDIR += dmenu-wayland
      SUBDIR += foot
      SUBDIR += grim
