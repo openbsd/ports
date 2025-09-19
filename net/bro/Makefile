@@ -3,6 +3,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-6.2.1
+REVISION =		0
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		5.0
@@ -19,7 +20,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += c crypto m maxminddb pcap pthread ssl z lib/libbind/bind
+WANTLIB += c cares crypto m maxminddb pcap ssl z lib/libbind/bind
 
 SITES =			https://download.zeek.org/
 
@@ -36,11 +37,12 @@ MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/bin/zeekctl.in \
 			auxil/zeekctl/auxil/trace-summary/trace-summary
 
-BUILD_DEPENDS=		devel/bison \
+BUILD_DEPENDS =		devel/bison \
 			devel/swig
 
-LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/libbind \
+			net/libcares \
 			net/libmaxminddb
 
 RUN_DEPENDS =		devel/py-gitpython \
@@ -74,6 +76,10 @@ MODCMAKE_USE_SHARED_LIBS = No
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib/libbind -lbind \
 	   		-Wl,-rpath ${LOCALBASE}/lib/libbind
 CFLAGS +=		-I${LOCALBASE}/include/bind
+
+MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
+	   		-Wl,-rpath ${LOCALBASE}/lib
+CXXFLAGS +=		-I${LOCALBASE}/include
 
 CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
