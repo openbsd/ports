@@ -511,6 +511,7 @@
      SUBDIR += wmapm
      SUBDIR += wmcube
      SUBDIR += wmmon
+     SUBDIR += wmtempmon
      SUBDIR += wmwlmon
      SUBDIR += wsmancli
      SUBDIR += xbatt
