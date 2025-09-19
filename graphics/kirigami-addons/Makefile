@@ -1,6 +1,6 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-VERSION =	1.8.1
+VERSION =	1.9.0
 DISTNAME =	kirigami-addons-${VERSION}
 
 SHARED_LIBS +=	KirigamiAddonsStatefulApp 0.0 # 0.0

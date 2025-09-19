@@ -47,8 +47,10 @@ lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/private/DatePicker.qml
 lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/private/DatePickerDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/
+lib/qt6/qml/org/kde/kirigamiaddons/delegates/CheckDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/DefaultContentItem.qml
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qml
+lib/qt6/qml/org/kde/kirigamiaddons/delegates/RadioDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/RoundedTreeDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/SubtitleContentItem.qml
@@ -72,6 +74,8 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormComboBoxDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDateTimeDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateBackground.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFileDelegate.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormFolderDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormGridContainer.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormHeader.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormIconDelegate.qml
