@@ -2,8 +2,7 @@ COMMENT =	desktop client for Matrix
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
-GH_TAGNAME =	v0.12.0
-REVISION =	2
+GH_TAGNAME =	v0.12.1
 
 CATEGORIES=	net
 
@@ -34,7 +33,7 @@ BUILD_DEPENDS = databases/lmdbxx \
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/coeurl>=0.3.0 \
-		devel/mtxclient>=0.10.0 \
+		devel/mtxclient>=0.10.1 \
 		devel/olm \
 		devel/spdlog \
 		multimedia/gstreamer1/core \
