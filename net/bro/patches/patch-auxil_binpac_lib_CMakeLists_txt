@@ -7,8 +7,8 @@ Index: auxil/binpac/lib/CMakeLists.txt
                          CXX_EXTENSIONS OFF
 -                        SOVERSION ${BINPAC_SOVERSION}
 -                        VERSION ${BINPAC_VERSION_MAJOR}.${BINPAC_VERSION_MINOR}
-+			SOVERSION ${LIBbinpac_VERSION}
-+			VERSION ${LIBbinpac_VERSION}
++                        SOVERSION ${LIBbinpac_VERSION}
++                        VERSION ${LIBbinpac_VERSION}
                          MACOSX_RPATH true
                          OUTPUT_NAME binpac)
    install(TARGETS binpac_lib DESTINATION ${CMAKE_INSTALL_LIBDIR})

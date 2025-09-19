@@ -5,7 +5,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-6.1.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		4.1
@@ -76,6 +76,7 @@ MODCMAKE_USE_SHARED_LIBS = No
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib/libbind -lbind \
 	   		-Wl,-rpath ${LOCALBASE}/lib/libbind
+CFLAGS +=		-I${LOCALBASE}/include/bind
 
 CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -83,7 +84,8 @@ CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DZEEK_LOCAL_STATE_DIR=${LOCALSTATEDIR} \
 			-DZEEK_LOG_DIR=${LOCALSTATEDIR}/log/zeek \
 			-DZEEK_MAN_INSTALL_PATH=${PREFIX}/man \
-			-DZEEK_SPOOL_DIR=${LOCALSTATEDIR}/spool/zeek
+			-DZEEK_SPOOL_DIR=${LOCALSTATEDIR}/spool/zeek \
+			-DZEEK_STATE_DIR=${LOCALSTATEDIR}/db
 
 # Our modules only pass {PYTHON,Python3}_*, perhaps newer releases take them.
 CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
