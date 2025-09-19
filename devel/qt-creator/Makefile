@@ -3,7 +3,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			17.0.0
+V =			17.0.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -29,7 +29,6 @@ SHARED_LIBS +=  Nanotrace                 1.0 # 0.0
 SHARED_LIBS +=  qtkeychain                0.0 # 0.0
 SHARED_LIBS +=  CmdBridgeClient           2.0 # 0.0
 SHARED_LIBS +=  QmlDesignerCore           2.0 # 0.0
-SHARED_LIBS +=  Zip                       2.0 # 0.0
 
 CATEGORIES =	devel editors
 
