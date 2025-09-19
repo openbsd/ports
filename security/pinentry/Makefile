@@ -76,12 +76,15 @@ FLAVOR ?=		no_gnome3 no_qt5 no_qt6 bootstrap
 
 .include <bsd.port.arch.mk>
 
+ICON =			No
 .if !${BUILD_PACKAGES:M-gnome3}
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
 .endif
 
 .if !${BUILD_PACKAGES:M-qt5}
 CONFIGURE_ARGS +=	--disable-pinentry-qt5
+.else
+ICON =			Yes
 .endif
 
 .if !${BUILD_PACKAGES:M-qt6}
@@ -89,6 +92,14 @@ CONFIGURE_ARGS +=	--disable-pinentry-qt5
 # devel/kf6/kguiaddons
 # devel/kf6/kwindowsystem
 CONFIGURE_ARGS +=	--disable-pinentry-qt
+.else
+ICON =			Yes
+.endif
+
+.if ${ICON} == Yes
+PKG_ARGS +=		-Dicon=1
+.else
+PKG_ARGS +=		-Dicon=0
 .endif
 
 # http://pkgs.fedoraproject.org/cgit/pinentry.git/tree/pinentry-wrapper
