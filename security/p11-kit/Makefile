@@ -1,12 +1,12 @@
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
-V=			0.25.8
+V=			0.25.9
 DISTNAME=		p11-kit-${V}
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
-SHARED_LIBS += p11-kit                   3.2 # 0.4.2
+SHARED_LIBS += p11-kit                   3.2 # 0.4.4
 
 HOMEPAGE=		http://p11-glue.freedesktop.org/
 
