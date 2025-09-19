@@ -261,7 +261,6 @@
      SUBDIR += okteta
 
      # apps and libs which are needed as Qt 5 and Qt 6 Builds
-     SUBDIR += libkexiv2
      SUBDIR += kf6-libkexiv2
 
      SUBDIR += kf6-ksanecore
@@ -279,7 +278,6 @@
      #kio-gdrive
      SUBDIR += kf6-libkcompactdisc
 
-     SUBDIR += libkcddb
      SUBDIR += kf6-libkcddb
 
      SUBDIR += kdegraphics-mobipocket
