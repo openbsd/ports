@@ -5,7 +5,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-6.1.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broker                    4.1
@@ -47,7 +47,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			net/libbind \
 			net/libmaxminddb
 
-RUN_DEPENDS=		net/libmaxminddb,-asn \
+RUN_DEPENDS =		devel/py-gitpython \
+			devel/py-semantic-version \
+			net/libmaxminddb,-asn \
 			net/libmaxminddb,-city \
 			net/libmaxminddb,-db
 
