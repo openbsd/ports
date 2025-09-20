@@ -1,0 +1,14 @@
+Fix build with poppler-25.09.1.
+
+Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx.orig
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
+@@ -287,7 +287,7 @@ namespace pdfi
+ #if POPPLER_CHECK_VERSION(21, 3, 0)
+         poppler_bool useTilingPatternFill() override { return true; };
+         poppler_bool tilingPatternFill(GfxState *state, Gfx *gfx, Catalog *cat,
+-                                       GfxTilingPattern *tPat, const double *mat,
++                                       GfxTilingPattern *tPat, const std::array<double, 6> &mat,
+                                        int x0, int y0, int x1, int y1,
+                                        double xStep, double yStep) override;
+ #endif
