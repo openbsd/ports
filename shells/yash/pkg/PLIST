@@ -53,6 +53,7 @@ share/yash/completion/disown
 share/yash/completion/dnf
 share/yash/completion/doas
 share/yash/completion/du
+share/yash/completion/dvtm
 share/yash/completion/echo
 share/yash/completion/ed
 share/yash/completion/egrep
@@ -66,6 +67,7 @@ share/yash/completion/exit
 share/yash/completion/expand
 share/yash/completion/export
 share/yash/completion/fc
+share/yash/completion/fd
 share/yash/completion/fg
 share/yash/completion/fgrep
 share/yash/completion/file
@@ -160,6 +162,7 @@ share/yash/completion/mkfifo
 share/yash/completion/mksh
 share/yash/completion/more
 share/yash/completion/mv
+share/yash/completion/mw
 share/yash/completion/nawk
 share/yash/completion/newgrp
 share/yash/completion/nice
@@ -221,6 +224,14 @@ share/yash/completion/trap
 share/yash/completion/tree
 share/yash/completion/type
 share/yash/completion/typeset
+share/yash/completion/typst
+share/yash/completion/typst-compile
+share/yash/completion/typst-fonts
+share/yash/completion/typst-help
+share/yash/completion/typst-init
+share/yash/completion/typst-query
+share/yash/completion/typst-update
+share/yash/completion/typst-watch
 share/yash/completion/ulimit
 share/yash/completion/umask
 share/yash/completion/unalias
