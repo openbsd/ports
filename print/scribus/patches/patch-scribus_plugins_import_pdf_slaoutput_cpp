@@ -1,6 +1,8 @@
 https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
 (and local changes for FoFiTrueType::make())
 
+Add fixes for poppler-25.09.1.
+
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
 +++ scribus/plugins/import/pdf/slaoutput.cpp
@@ -13,6 +15,47 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  		if (!ano)
  			continue;
  		if (ano != (AnnotWidget*) annota)
+@@ -1359,14 +1359,14 @@ void SlaOutputDev::restoreState(GfxState *state)
+ 	m_graphicStack.restore();
+ }
+ 
+-void SlaOutputDev::beginTransparencyGroup(GfxState *state, const double *bbox, GfxColorSpace * /*blendingColorSpace*/, bool isolated, bool knockout, bool forSoftMask)
++void SlaOutputDev::beginTransparencyGroup(GfxState *state, const std::array<double, 4> &bbox, GfxColorSpace * /*blendingColorSpace*/, bool isolated, bool knockout, bool forSoftMask)
+ {
+ // 	qDebug() << "SlaOutputDev::beginTransparencyGroup isolated:" << isolated << "knockout:" << knockout << "forSoftMask:" << forSoftMask;
+ 	pushGroup("", forSoftMask);
+ 	m_groupStack.top().isolated = isolated;
+ }
+ 
+-void SlaOutputDev::paintTransparencyGroup(GfxState *state, const double *bbox)
++void SlaOutputDev::paintTransparencyGroup(GfxState *state, const std::array<double, 4> &bbox)
+ {
+ // 	qDebug() << "SlaOutputDev::paintTransparencyGroup";
+ 	if (m_groupStack.count() != 0)
+@@ -1465,7 +1465,7 @@ void SlaOutputDev::endTransparencyGroup(GfxState *stat
+ 	m_tmpSel->clear();
+ }
+ 
+-void SlaOutputDev::setSoftMask(GfxState * /*state*/, const double * bbox, bool alpha, Function *transferFunc, GfxColor * /*backdropColor*/)
++void SlaOutputDev::setSoftMask(GfxState * /*state*/, const std::array<double, 4> &bbox, bool alpha, Function *transferFunc, GfxColor * /*backdropColor*/)
+ {
+ 	if (m_groupStack.count() <= 0)
+ 		return;
+@@ -2215,11 +2215,11 @@ bool SlaOutputDev::patchMeshShadedFill(GfxState *state
+ 	return true;
+ }
+ 
+-bool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, GfxTilingPattern *tPat, const double *mat, int x0, int y0, int x1, int y1, double xStep, double yStep)
++bool SlaOutputDev::tilingPatternFill(GfxState *state, Gfx * /*gfx*/, Catalog *cat, GfxTilingPattern *tPat, const std::array<double, 6> &mat, int x0, int y0, int x1, int y1, double xStep, double yStep)
+ {
+ //	qDebug() << "SlaOutputDev::tilingPatternFill";
+-	const double *bbox = tPat->getBBox();
+-	const double *pmat = tPat->getMatrix();
++	const std::array<double, 4> &bbox = tPat->getBBox();
++	const std::array<double, 6> &pmat = tPat->getMatrix();
+ 	Dict *resDict = tPat->getResDict();
+ 
+ 	PDFRectangle box;
 @@ -2791,7 +2791,7 @@ void SlaOutputDev::beginMarkedContent(const char *name
  	{
  		if (dictRef->isNull())
@@ -163,3 +206,30 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
+@@ -3526,7 +3580,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+ 		return CommonStrings::None;
+ 	if (color->getSpace() == AnnotColor::colorRGB)
+ 	{
+-		const double *color_data = color->getValues();
++		const std::array<double, 4> &color_data = color->getValues();
+ 		double Rc = color_data[0];
+ 		double Gc = color_data[1];
+ 		double Bc = color_data[2];
+@@ -3535,7 +3589,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+ 	}
+ 	else if (color->getSpace() == AnnotColor::colorCMYK)
+ 	{
+-		const double *color_data = color->getValues();
++		const std::array<double, 4> &color_data = color->getValues();
+ 		double Cc = color_data[0];
+ 		double Mc = color_data[1];
+ 		double Yc = color_data[2];
+@@ -3545,7 +3599,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+ 	}
+ 	else if (color->getSpace() == AnnotColor::colorGray)
+ 	{
+-		const double *color_data = color->getValues();
++		const std::array<double, 4> &color_data = color->getValues();
+ 		double Kc = 1.0 - color_data[0];
+ 		tmp.setCmykColorF(0, 0, 0, Kc);
+ 		fNam = m_doc->PageColors.tryAddColor(namPrefix+tmp.name(), tmp);
