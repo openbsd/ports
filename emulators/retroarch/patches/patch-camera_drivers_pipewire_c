@@ -1,0 +1,21 @@
+Index: camera/drivers/pipewire.c
+--- camera/drivers/pipewire.c.orig
++++ camera/drivers/pipewire.c
+@@ -364,7 +364,7 @@ static void pipewire_free(void *data)
+    free(camera);
+ }
+ 
+-static void *pipewire_init(const char *device, uint64_t caps,
++static void *pwire_init(const char *device, uint64_t caps,
+       unsigned width, unsigned height)
+ {
+    int               res, n_params;
+@@ -457,7 +457,7 @@ static bool pipewire_poll(void *data,
+ }
+ 
+ camera_driver_t camera_pipewire = {
+-      pipewire_init,
++      pwire_init,
+       pipewire_free,
+       pipewire_start,
+       pipewire_stop,

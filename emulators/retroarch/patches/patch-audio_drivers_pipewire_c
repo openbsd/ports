@@ -1,0 +1,24 @@
+fix conflicting declaration of pipewire_init:
+https://github.com/libretro/RetroArch/commit/63a146f0ea4df69f06e3b8d8236e26fa312eb22d
+
+Index: audio/drivers/pipewire.c
+--- audio/drivers/pipewire.c.orig
++++ audio/drivers/pipewire.c
+@@ -157,7 +157,7 @@ static const struct pw_registry_events registry_events
+       .global = registry_event_global,
+ };
+ 
+-static void *pipewire_init(const char *device, unsigned rate,
++static void *pwire_init(const char *device, unsigned rate,
+       unsigned latency,
+       unsigned block_frames,
+       unsigned *new_rate)
+@@ -443,7 +443,7 @@ static size_t pipewire_buffer_size(void *data)
+ }
+ 
+ audio_driver_t audio_pipewire = {
+-      pipewire_init,
++      pwire_init,
+       pipewire_write,
+       pipewire_stop,
+       pipewire_start,
