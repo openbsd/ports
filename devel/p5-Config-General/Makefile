@@ -2,7 +2,7 @@ COMMENT =	generic configuration parser, inspired by apache
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Config-General-2.65
+DISTNAME =	Config-General-2.67
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.daemon.de/ConfigGeneral
