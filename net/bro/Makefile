@@ -3,6 +3,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.1
+REVISION =		0
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
@@ -19,15 +20,15 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += c cares crypto m maxminddb pcap ssl z zmq lib/libbind/bind
+WANTLIB += c cares crypto m maxminddb pcap ssl z zmq
 
 SITES =			https://download.zeek.org/
 
 MODULES =		devel/cmake \
 			lang/python
 
-# c++17
-COMPILER=		base-clang ports-gcc
+# c++20
+COMPILER =		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
 
@@ -40,7 +41,6 @@ BUILD_DEPENDS =		devel/bison \
 			devel/swig
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
-			net/libbind \
 			net/libcares \
 			net/libmaxminddb \
 			net/zeromq
@@ -73,21 +73,13 @@ WANTLIB +=		atomic
 
 MODCMAKE_USE_SHARED_LIBS = No
 
-MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib/libbind -lbind \
-	   		-Wl,-rpath ${LOCALBASE}/lib/libbind
-CXXFLAGS +=		-I${LOCALBASE}/include/bind
-CFLAGS +=		-I${LOCALBASE}/include/bind
-
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
 	   		-Wl,-rpath ${LOCALBASE}/lib
 CXXFLAGS +=		-I${LOCALBASE}/include
 
-.for _macro _fmt in \
-    PRId64 lld \
-    PRIu16   u \
-    PRIu64 llu \
-    PRIx64 llx
-notyet_CXXFLAGS += -D${_macro}='"${_fmt}"'
+# Pass cmake/CheckNameserCompat.cmake for src/3rdparty/zeek_inet_ntop.c 
+.for _macro in IN6ADDRSZ INT16SZ
+CFLAGS +=		-DNS_${_macro}=${_macro}
 .endfor
 
 # XXX Some files don't see PRIu64 et al. despite the right headers being there
