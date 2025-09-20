@@ -30,7 +30,7 @@ MODOPAM_PACKAGES =	slipshow.${V}
 
 SITES =			https://github.com/panglesd/slipshow/releases/download/v${V}/
 
-SITES.opamrepo =	https://kapouay.eu.org/pub/opam/
+SITES.opamrepo =	https://github.com/semarie/openbsd-opam-dependencies/releases/download/openbsd/
 DISTFILES.opamrepo =	${MODOPAM_REPO_NAME}.tar.gz
 
 BUILD_DEPENDS +=	devel/gmp,-main \
