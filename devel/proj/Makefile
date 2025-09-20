@@ -1,9 +1,8 @@
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-9.6.2
+DISTNAME=	proj-9.7.0
 CATEGORIES=	devel geo
-SHARED_LIBS=	proj 20.1
-REVISION=	0
+SHARED_LIBS=	proj 20.2
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		proj-datumgrid-1.8${EXTRACT_SUFX}
