@@ -13,7 +13,6 @@ SHA256 (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = CZVW/E1+b1yxNe/di2u0
 SHA256 (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = msQ6aG0G/evXGfevOGbIfrBpMCJy37ExAHrfRxwwi2U=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.mod) = RdeLgFcZmbaiWNoPIWc9o55rUBNJwDOkrNFpQ3QR1zM=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.zip) = oQyNPWxKm3PciFRkJF7sayfWT0MNaXk4nNnFit3hWFU=
-SHA256 (go_modules/github.com/!proton!mail/go-crypto/@v/v1.2.0.mod) = aDxSdkZpvMGeuOfJNkuyOFszObyo98ZxcXP2oG/q9kE=
 SHA256 (go_modules/github.com/!proton!mail/go-crypto/@v/v1.3.0.mod) = aDxSdkZpvMGeuOfJNkuyOFszObyo98ZxcXP2oG/q9kE=
 SHA256 (go_modules/github.com/!proton!mail/go-crypto/@v/v1.3.0.zip) = uQnHw7XQt6CHnmQLwBOC28kWa7ym+/U+4S8sBFucUCg=
 SHA256 (go_modules/github.com/alecthomas/assert/v2/@v/v2.5.0.mod) = ZkTRmdp3WsJsz+QhU0VXH6B+ABMsExiMzSQcV43jNeg=
@@ -36,7 +35,6 @@ SHA256 (go_modules/github.com/cenkalti/backoff/v4/@v/v4.3.0.zip) = 7yILHr87/0xGu
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = pjkWH4gWA6BAcA2YfSwW7IFTAkGAWM2ym8w7NJ7VbBA=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = u4Gp4tFNmlhvBZGFO9qtIw2M3w2Nb/px3driSa1XPMk=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.7.mod) = u4Gp4tFNmlhvBZGFO9qtIw2M3w2Nb/px3driSa1XPMk=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.7.zip) = mtXyy8ZEwLtkipsYLWtw+S56xN+rXPDvdGu+75RP2lk=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.24.mod) = o5ef0ywA810X6zuX0LPMb077BXv3gnE2H6dzUx5gFTE=
@@ -66,6 +64,8 @@ SHA256 (go_modules/github.com/gen2brain/shm/@v/v0.1.1.mod) = MvGOFFVBxI5NQakIEE6
 SHA256 (go_modules/github.com/gen2brain/shm/@v/v0.1.1.zip) = V3rvVf66CjBTCK9NAO7ZXmzAkHOrCXT68IuQ6Whd1GE=
 SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.4.0.mod) = U5P+Nk8aIAxqhO4se/cn8CyeCx+ETKE7GIypJfRxiwg=
 SHA256 (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.4.0.zip) = M+A5jjTspLG4ydkTGN076HGBGu5uKrq8gsAigNzKKWo=
+SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = tcaxcq3Bh4zY5pC6kSOwpldTuss42H5taDrKE21DVXg=
+SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = DP5IbNY9Re1MtYY/8cvRSxXkuTgNy/gP8mmRtASfT98=
 SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.mod) = h0Pqcv7SHMFDxKBnQI4h93h2EOZi/b6NWUMxLqiuiBY=
 SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.zip) = A9+o5xCJpvR3MQ0VxNOgNtgtAoUyiBtQ/uJUNY54Ktk=
 SHA256 (go_modules/github.com/gokyle/twofactor/@v/v1.0.1.mod) = PN5D/9k/9fA+nXECmGX+vEgj55jYfHEeAEZti0J4/Ns=
@@ -84,16 +84,15 @@ SHA256 (go_modules/github.com/google/go-querystring/@v/v1.1.0.mod) = eI/O7t3g5k8
 SHA256 (go_modules/github.com/google/go-querystring/@v/v1.1.0.zip) = pqr8AfVgLmF3kodRB04yV5KmVOHZLw4ji46HOWVt1ys=
 SHA256 (go_modules/github.com/google/shlex/@v/v0.0.0-20191202100458-e7afc7fbc510.mod) = hMaYCNIbxoSOGteNa2SWVDO1uqumZVSDOLfao5+qcL4=
 SHA256 (go_modules/github.com/google/shlex/@v/v0.0.0-20191202100458-e7afc7fbc510.zip) = G/cL20yIm0exl2Nwgy2nkGDDbK0oLyePJ5YDIAYjd1w=
-SHA256 (go_modules/github.com/gopasspw/clipboard/@v/v0.0.1.mod) = vFCW0wxTyZYREtRt95neByL6USOFUJ3ZcFym/yszn1A=
 SHA256 (go_modules/github.com/gopasspw/clipboard/@v/v0.0.3.mod) = vFCW0wxTyZYREtRt95neByL6USOFUJ3ZcFym/yszn1A=
 SHA256 (go_modules/github.com/gopasspw/clipboard/@v/v0.0.3.zip) = dO3IkHz9x4S4PqMDySAXvZ9OhY/izuX2iRqtmNrrHl4=
-SHA256 (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.1.mod) = oRhSu0dTuaPV8IlFr8hQjAxaKwnanCJ4L2pWKJoGhfg=
 SHA256 (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3-0.20250819161336-9ff4f059ac1d.mod) = oRhSu0dTuaPV8IlFr8hQjAxaKwnanCJ4L2pWKJoGhfg=
-SHA256 (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3-0.20250819161336-9ff4f059ac1d.zip) = YI0HXSt9IziACjHsEAarM/Lwcr5roYKh2OqMINKU6yc=
-SHA256 (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.16.mod) = ceptIbpbaRELDXny7FKMY/+mwJgVYHtgN5TDua8AU+A=
-SHA256 (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.16.zip) = Wlt3l8YThJEPYD2X8DHM1PSErHT/9TNsqsb119oGPyg=
+SHA256 (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3.mod) = bkT/WqMFLILrT8oddXq3BaziN7Op8nSNcIqbDbdbPDQ=
+SHA256 (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3.zip) = g4i/3hOw35wjaqjAHbBrgUWG2qRAWltXC1ObUEhxTy4=
+SHA256 (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.18-0.20250916200615-6570fde56e1d.mod) = JU+gGjiwvOOSCzSaBFt1xUcBJGfkab1pbu2c2x0hosc=
+SHA256 (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.18-0.20250916200615-6570fde56e1d.zip) = DhrLCpFZmZSzQwE198Vfpnir9uNKZbJISWssP9omvpw=
 SHA256 (go_modules/github.com/gopasspw/gopass/@v/v1.15.16-0.20250419184257-431a090f4099.mod) = It7HBU+Ac3VHVRv/Kmz+a4hvjF8Fzh65t1ZXPUKsMss=
-SHA256 (go_modules/github.com/gopasspw/gopass/@v/v1.15.16.mod) = 4PVw5ub+e3TBSeOBZ8sbBi3vft/Tm79YICv9kijot2w=
+SHA256 (go_modules/github.com/gopasspw/gopass/@v/v1.15.17.mod) = XcrKT9qBgM3byYRCZy68Xp9SxWbQuXw6kYhsIaSMQRY=
 SHA256 (go_modules/github.com/hashicorp/golang-lru/v2/@v/v2.0.7.mod) = xriGwCQv/qyStrauzxEjvGPIb67oGxb/86Eyc+UPaCQ=
 SHA256 (go_modules/github.com/hashicorp/golang-lru/v2/@v/v2.0.7.zip) = Lrkv8TlwvM1GDvrhQlW/wDu1FHTaATfkd6YPlVYazDA=
 SHA256 (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.mod) = qUfdi3h5PdOY6iCt7h99M8zydn2/juazzXe3Hxnm+5s=
@@ -222,7 +221,6 @@ SHA256 (go_modules/github.com/twpayne/go-pinentry/v4/@v/v4.0.0.zip) = LiYxry18C4
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.13.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = yhgw+avGyZoAOtKPKxReoK8MmdV2nd/wjSPOBVlZ/RI=
-SHA256 (go_modules/github.com/urfave/cli/v2/@v/v2.27.6.mod) = 4jL//gSPpOEzaDzlwahfOUefEetTvkeRq9YeKygzFWQ=
 SHA256 (go_modules/github.com/urfave/cli/v2/@v/v2.27.7.mod) = rprCPdIb3cUE6IElYKUtPUq6KIoAZXnkkCV5sqCeHPE=
 SHA256 (go_modules/github.com/urfave/cli/v2/@v/v2.27.7.zip) = qaQXWrXVUPCT9xbolxpchTmqc4Z1ohD2Mhz7WQXwSIo=
 SHA256 (go_modules/github.com/xhit/go-str2duration/v2/@v/v2.1.0.mod) = ZbS01/FCuR+B4rQmMfmANgAhpypoAYJRCbPlhe3QJVM=
@@ -249,7 +247,6 @@ SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20220919173607-35f4265a4bc0.mod
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.11.1-0.20230711161743-2e82bdd1719d.mod) = /LuJS63Wnh6BujaHj6iLkNrV7nA9X1UGnUtfokABl0M=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.24.0.mod) = TfsA4zw5LLQjnS/FtlBpqR3vs7YZC7i5dyYmfuLnRfs=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.33.0.mod) = 9trUgUYnEbDEHxR6oXUIfzZWWRxZM2JC/cn66V0PxZ4=
-SHA256 (go_modules/golang.org/x/crypto/@v/v0.37.0.mod) = U6fSO0Gqyq3+omAMBH4C6suQA51LDLPW+Yxsvsd2uaI=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.42.0.mod) = aIRazeri7+yNzyPcqcdZwDKMuuwojiolZdnrf3DgDrc=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.42.0.zip) = 3ROkTtTkbZeuvxazu2VDI/GZw7s3uUhOAQSl5TdyHHE=
 SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20250408133849-7e4ce0ab07d0.mod) = OOO3S+vRAmvqCZjoSqxZC+U8JeDDQad+jmJXoABEFIo=
@@ -358,7 +355,7 @@ SHA256 (go_modules/gotest.tools/v3/@v/v3.0.2.mod) = s8e04chosntRS61QNyeHctPkz8wN
 SHA256 (go_modules/gotest.tools/v3/@v/v3.0.2.zip) = UWSgM5xm+RehIP1wwD+AP6nRNkZGyPJcM4lRcxFJk7Q=
 SHA256 (go_modules/rsc.io/qr/@v/v0.2.0.mod) = rF8L77z0BKpyO/55gGzWFPkVobfy0HqYue9VeYJCmas=
 SHA256 (go_modules/rsc.io/qr/@v/v0.2.0.zip) = jrITcCzWmjG/fOJ4Og6C0PqA37mBeL+wIB95RSpAZ8k=
-SHA256 (gopass-v1.15.17.zip) = jkE/jwY9YL7Ia8OJAnpCOZm8UVJhGRbDHdFRWDeOu0s=
+SHA256 (gopass-v1.15.18.zip) = XG6qH3RjKk6M3n6rq+WJE2xFHpZJusFmXfNQv8adtRc=
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.zip) = 16137
@@ -374,7 +371,6 @@ SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = 55809
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.mod) = 43
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.zip) = 352548
-SIZE (go_modules/github.com/!proton!mail/go-crypto/@v/v1.2.0.mod) = 174
 SIZE (go_modules/github.com/!proton!mail/go-crypto/@v/v1.3.0.mod) = 174
 SIZE (go_modules/github.com/!proton!mail/go-crypto/@v/v1.3.0.zip) = 577149
 SIZE (go_modules/github.com/alecthomas/assert/v2/@v/v2.5.0.mod) = 133
@@ -397,7 +393,6 @@ SIZE (go_modules/github.com/cenkalti/backoff/v4/@v/v4.3.0.zip) = 16773
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = 185
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = 185
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = 7096784
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.7.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.7.zip) = 15041
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.24.mod) = 38
@@ -427,6 +422,8 @@ SIZE (go_modules/github.com/gen2brain/shm/@v/v0.1.1.mod) = 41
 SIZE (go_modules/github.com/gen2brain/shm/@v/v0.1.1.zip) = 13934
 SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.4.0.mod) = 52
 SIZE (go_modules/github.com/go-viper/mapstructure/v2/@v/v2.4.0.zip) = 61781
+SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = 30
+SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = 50402
 SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.mod) = 42
 SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.1.0.zip) = 105330
 SIZE (go_modules/github.com/gokyle/twofactor/@v/v1.0.1.mod) = 35
@@ -445,16 +442,15 @@ SIZE (go_modules/github.com/google/go-querystring/@v/v1.1.0.mod) = 90
 SIZE (go_modules/github.com/google/go-querystring/@v/v1.1.0.zip) = 13092
 SIZE (go_modules/github.com/google/shlex/@v/v0.0.0-20191202100458-e7afc7fbc510.mod) = 40
 SIZE (go_modules/github.com/google/shlex/@v/v0.0.0-20191202100458-e7afc7fbc510.zip) = 8977
-SIZE (go_modules/github.com/gopasspw/clipboard/@v/v0.0.1.mod) = 94
 SIZE (go_modules/github.com/gopasspw/clipboard/@v/v0.0.3.mod) = 94
 SIZE (go_modules/github.com/gopasspw/clipboard/@v/v0.0.3.zip) = 14783
-SIZE (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.1.mod) = 465
 SIZE (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3-0.20250819161336-9ff4f059ac1d.mod) = 465
-SIZE (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3-0.20250819161336-9ff4f059ac1d.zip) = 34247
-SIZE (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.16.mod) = 1741
-SIZE (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.16.zip) = 30928
+SIZE (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3.mod) = 508
+SIZE (go_modules/github.com/gopasspw/gitconfig/@v/v0.0.3.zip) = 34173
+SIZE (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.18-0.20250916200615-6570fde56e1d.mod) = 1771
+SIZE (go_modules/github.com/gopasspw/gopass-hibp/@v/v1.15.18-0.20250916200615-6570fde56e1d.zip) = 34026
 SIZE (go_modules/github.com/gopasspw/gopass/@v/v1.15.16-0.20250419184257-431a090f4099.mod) = 4337
-SIZE (go_modules/github.com/gopasspw/gopass/@v/v1.15.16.mod) = 4250
+SIZE (go_modules/github.com/gopasspw/gopass/@v/v1.15.17.mod) = 4323
 SIZE (go_modules/github.com/hashicorp/golang-lru/v2/@v/v2.0.7.mod) = 51
 SIZE (go_modules/github.com/hashicorp/golang-lru/v2/@v/v2.0.7.zip) = 29453
 SIZE (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.mod) = 45
@@ -583,7 +579,6 @@ SIZE (go_modules/github.com/twpayne/go-pinentry/v4/@v/v4.0.0.zip) = 15329
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.13.mod) = 40
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.mod) = 40
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.15.zip) = 4245181
-SIZE (go_modules/github.com/urfave/cli/v2/@v/v2.27.6.mod) = 280
 SIZE (go_modules/github.com/urfave/cli/v2/@v/v2.27.7.mod) = 280
 SIZE (go_modules/github.com/urfave/cli/v2/@v/v2.27.7.zip) = 3553436
 SIZE (go_modules/github.com/xhit/go-str2duration/v2/@v/v2.1.0.mod) = 51
@@ -610,7 +605,6 @@ SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20220919173607-35f4265a4bc0.mod) 
 SIZE (go_modules/golang.org/x/crypto/@v/v0.11.1-0.20230711161743-2e82bdd1719d.mod) = 190
 SIZE (go_modules/golang.org/x/crypto/@v/v0.24.0.mod) = 190
 SIZE (go_modules/golang.org/x/crypto/@v/v0.33.0.mod) = 190
-SIZE (go_modules/golang.org/x/crypto/@v/v0.37.0.mod) = 192
 SIZE (go_modules/golang.org/x/crypto/@v/v0.42.0.mod) = 192
 SIZE (go_modules/golang.org/x/crypto/@v/v0.42.0.zip) = 2230527
 SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20250408133849-7e4ce0ab07d0.mod) = 182
@@ -719,4 +713,4 @@ SIZE (go_modules/gotest.tools/v3/@v/v3.0.2.mod) = 194
 SIZE (go_modules/gotest.tools/v3/@v/v3.0.2.zip) = 92950
 SIZE (go_modules/rsc.io/qr/@v/v0.2.0.mod) = 17
 SIZE (go_modules/rsc.io/qr/@v/v0.2.0.zip) = 23674
-SIZE (gopass-v1.15.17.zip) = 2633213
+SIZE (gopass-v1.15.18.zip) = 2636855

@@ -29,6 +29,7 @@ MODGO_MODULES =	\
 	github.com/gdamore/tcell/v2			 v2.9.0 \
 	github.com/gen2brain/shm			 v0.1.1 \
 	github.com/go-viper/mapstructure/v2		 v2.4.0 \
+	github.com/gobwas/glob				 v0.2.3 \
 	github.com/godbus/dbus/v5			 v5.1.0 \
 	github.com/gokyle/twofactor			 v1.0.1 \
 	github.com/golang/mock				 v1.6.0 \
@@ -37,8 +38,8 @@ MODGO_MODULES =	\
 	github.com/google/go-querystring		 v1.1.0 \
 	github.com/google/shlex				 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/gopasspw/clipboard			 v0.0.3 \
-	github.com/gopasspw/gitconfig			 v0.0.3-0.20250819161336-9ff4f059ac1d \
-	github.com/gopasspw/gopass-hibp			 v1.15.16 \
+	github.com/gopasspw/gitconfig			 v0.0.3 \
+	github.com/gopasspw/gopass-hibp			 v1.15.18-0.20250916200615-6570fde56e1d \
 	github.com/hashicorp/golang-lru/v2		 v2.0.7 \
 	github.com/hexops/gotextdiff			 v1.0.3 \
 	github.com/inconshreveable/mousetrap		 v1.1.0 \
@@ -118,10 +119,8 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	al.essio.dev/pkg/shellescape		 v1.5.1 \
-	github.com/!proton!mail/go-crypto	 v1.2.0 \
 	github.com/boombuler/barcode		 v1.0.1-0.20190219062509-6c824513bacc \
 	github.com/cloudflare/circl		 v1.6.0 \
-	github.com/cpuguy83/go-md2man/v2	 v2.0.6 \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/gdamore/tcell/v2		 v2.8.1 \
 	github.com/gen2brain/shm		 v0.1.0 \
@@ -129,10 +128,9 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp		 v0.5.2 \
 	github.com/google/go-cmp		 v0.5.9 \
 	github.com/google/go-cmp		 v0.6.0 \
-	github.com/gopasspw/clipboard		 v0.0.1 \
-	github.com/gopasspw/gitconfig		 v0.0.1 \
-	github.com/gopasspw/gopass		 v1.15.16 \
+	github.com/gopasspw/gitconfig		 v0.0.3-0.20250819161336-9ff4f059ac1d \
 	github.com/gopasspw/gopass		 v1.15.16-0.20250419184257-431a090f4099 \
+	github.com/gopasspw/gopass		 v1.15.17 \
 	github.com/jwalton/go-supportscolor	 v1.1.0 \
 	github.com/klauspost/cpuid/v2		 v2.0.12 \
 	github.com/kr/pretty			 v0.2.1 \
@@ -161,7 +159,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/stretchr/testify		 v1.9.0 \
 	github.com/ulikunitz/xz			 v0.5.13 \
-	github.com/urfave/cli/v2		 v2.27.6 \
 	github.com/xrash/smetrics		 v0.0.0-20170218160415-a3153f7040e9 \
 	github.com/xrash/smetrics		 v0.0.0-20240521201337-686a1a2994c1 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
@@ -170,7 +167,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.11.1-0.20230711161743-2e82bdd1719d \
 	golang.org/x/crypto			 v0.24.0 \
 	golang.org/x/crypto			 v0.33.0 \
-	golang.org/x/crypto			 v0.37.0 \
 	golang.org/x/exp			 v0.0.0-20250408133849-7e4ce0ab07d0 \
 	golang.org/x/mod			 v0.27.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
