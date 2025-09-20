@@ -1,6 +1,6 @@
 COMMENT=	create PDFs from markdown or HTML
 
-MODPY_DISTV=	65.1
+MODPY_DISTV=	66.0
 DISTNAME=	weasyprint-${MODPY_DISTV}
 
 CATEGORIES=	print
