@@ -20,7 +20,7 @@ REVISION = 19
 ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-$V-3.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
 
 # old bootstraps for archs where ada is currently disabled
 #ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
