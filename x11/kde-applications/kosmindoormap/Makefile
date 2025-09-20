@@ -1,6 +1,7 @@
 COMMENT =	OSM multi-floor indoor map renderer
 DISTNAME =	kosmindoormap-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/libraries/kosmindoormap
 
@@ -18,7 +19,8 @@ WANTLIB += KF6Service KOpeningHours KPublicTransport Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
 WANTLIB += Qt6QmlWorkerScript Qt6Quick m xkbcommon
 
-BUILD_DEPENDS =	devel/bison
+BUILD_DEPENDS =	devel/bison \
+		devel/protobuf
 
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
