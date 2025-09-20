@@ -1,6 +1,6 @@
 COMMENT =		interface with Tuya WiFi smart devices
 
-MODPY_DISTV =		1.17.3
+MODPY_DISTV =		1.17.4
 GH_ACCOUNT =		jasonacox
 GH_PROJECT =		tinytuya
 GH_TAGNAME =		v${MODPY_DISTV}
@@ -20,7 +20,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-colorama \
+RUN_DEPENDS =		devel/py-cffi \
+			devel/py-colorama \
 			security/py-cryptodome \
 			security/py-cryptography \
 			www/py-requests
