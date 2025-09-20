@@ -1,0 +1,17 @@
+define AI_NUMERICSERV
+
+Index: src/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXDNSLookup.cpp
+--- src/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXDNSLookup.cpp.orig
++++ src/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXDNSLookup.cpp
+@@ -25,6 +25,11 @@
+ #include <thread>
+ #include <utility>
+ 
++#if defined(__OpenBSD__)
++// ports libbind
++#define AI_NUMERICSERV NI_NUMERICSERV
++#endif
++
+ // mingw build quirks
+ #if defined(_WIN32) && defined(__GNUC__)
+ #ifndef AI_NUMERICSERV
