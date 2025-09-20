@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/frame/browser_view.cc
    std::vector<ContentsWebView*> contents_web_views =
        GetAllVisibleContentsWebViews();
  
-@@ -5966,7 +5966,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+@@ -5977,7 +5977,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
