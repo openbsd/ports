@@ -2,8 +2,7 @@ COMMENT=        wrapper around File::Find
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	File-Finder-0.53
-REVISION=	2
+DISTNAME =	File-Finder-1.01
 CATEGORIES=     devel
 
 # perl
