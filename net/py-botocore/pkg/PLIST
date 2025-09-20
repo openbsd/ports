@@ -1673,6 +1673,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subs
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager-user-subscriptions/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager/2018-08-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager/2018-08-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/license-manager/2018-08-01/examples-1.json
@@ -2513,16 +2514,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms-voice/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms-voice/2018-09-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms-voice/2018-09-05/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms-voice/2018-09-05/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/2021-08-04/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/2021-08-04/endpoint-rule-set-1.json
