@@ -4714,6 +4714,7 @@ share/applications/org.freecad.FreeCAD.desktop
 share/doc/freecad/
 share/doc/freecad/LICENSE.html
 share/doc/freecad/ThirdPartyLibraries.html
+share/doc/pkg-readmes/${PKGSTEM}
 share/freecad/
 share/freecad/3Dconnexion/
 share/freecad/3Dconnexion/3DConnexion.xml

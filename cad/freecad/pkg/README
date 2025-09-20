@@ -1,0 +1,8 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Some CAD operations may require large amounts of memory that exceed the limits
+set by the user's default login class. This can cause FreeCAD to crash. To
+avoid this, increase datasize memory limits in ${SYSCONFDIR}/login.conf or make
+sure your user is in the 'staff' class, and bump the limits with 'ulimit'.
