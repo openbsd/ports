@@ -1,0 +1,14 @@
+Fix build with poppler-25.09.1.
+
+Index: plug-ins/pdf/pdf-import.cpp
+--- plug-ins/pdf/pdf-import.cpp.orig
++++ plug-ins/pdf/pdf-import.cpp
+@@ -396,7 +396,7 @@ public :
+     if ((pf = strstr (family, " Oblique")) != NULL)
+       *pf = 0;
+ 
+-    const double *fm = f->getFontMatrix();
++    const std::array<double, 6> &fm = f->getFontMatrix();
+     double fsize = state->getTransformedFontSize();
+     if (fm[0] != 0)
+       fsize *= fabs(fm[3] / fm[0]);
