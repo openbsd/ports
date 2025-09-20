@@ -16,12 +16,13 @@ Many devices are supported including:
   - GPS.
   - Weather Stations.
   - Controllers.
-  - Auxiliary Devices (switches, watchdog, relays, light sources, measurement devices..etc).
+  - Auxiliary Devices (switches, watchdog, relays, light sources,
+                       measurement devices..etc).
 3. Client Library: Cross-platform POSIX and Qt5-based client libraries. The
 client libraries can be embedded in 3rd party applications to communicate with
 INDI server and devices.  INDI core device drivers are shipped with INDI library
 by default.
 
-INDI 3rd party drivers are available in a dedicated 3rdparty repository 
+INDI 3rd party drivers are available in a dedicated 3rdparty repository
 (https://github.com/indilib/indi-3rdparty) and maintained by their respective
 owners.

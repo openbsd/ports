@@ -3,9 +3,14 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT-main=		Instrument-Neutral-Device-Interface protocol implemtation
 COMMENT-libs=		INDI client libraries
 
+REVISION-main=		0
+REVISION-libs=		0
+
 GH_TAGNAME=		v2.1.2
 GH_ACCOUNT=		indilib
 GH_PROJECT=		indi
+
+HOMEPAGE =		https://indilib.org/
 
 PKGNAME-libs=		lib${PKGNAME}
 
