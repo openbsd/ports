@@ -32,13 +32,6 @@ MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 aarch64 riscv64
-.if ${MACHINE_ARCH} == aarch64
-MODCLANG_VERSION =	16
-USE_LLD =		ports
-CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
-.else
-CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-.endif
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -65,6 +58,7 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 # #1664111
 CONFIGURE_ARGS +=	--with-system-ffi
 # #1732809
@@ -74,7 +68,12 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+.if ${MACHINE_ARCH} == aarch64
+# retguard leads to segfault at startup on arm64, cf #1973016
+CONFIGURE_ENV +=	CPPFLAGS="-fno-ret-protector -Wno-backend-plugin"
+.else
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+.endif
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 
 # detected by configure & dlopened
