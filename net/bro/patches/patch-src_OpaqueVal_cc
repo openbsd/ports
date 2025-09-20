@@ -1,7 +1,7 @@
 Index: src/OpaqueVal.cc
 --- src/OpaqueVal.cc.orig
 +++ src/OpaqueVal.cc
-@@ -28,11 +28,11 @@
+@@ -27,11 +27,11 @@
  #include "zeek/probabilistic/BloomFilter.h"
  #include "zeek/probabilistic/CardinalityCounter.h"
  
@@ -15,7 +15,7 @@ Index: src/OpaqueVal.cc
  #include <openssl/md5.h>
  #endif
  
-@@ -226,7 +226,7 @@ constexpr size_t SHA1VAL_STATE_SIZE = sizeof(SHA_CTX);
+@@ -225,7 +225,7 @@ constexpr size_t SHA1VAL_STATE_SIZE = sizeof(SHA_CTX);
  
  constexpr size_t SHA256VAL_STATE_SIZE = sizeof(SHA256_CTX);
  

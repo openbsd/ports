@@ -73,7 +73,6 @@ include/broker/detail/next_tick.hh
 include/broker/detail/opaque_type.hh
 include/broker/detail/overload.hh
 include/broker/detail/peer_status_map.hh
-include/broker/detail/pp.hh
 include/broker/detail/prefix_matcher.hh
 include/broker/detail/promote.hh
 include/broker/detail/radix_tree.hh
@@ -123,7 +122,6 @@ include/broker/publisher_id.hh
 include/broker/routing_update_envelope.hh
 include/broker/shutdown_options.hh
 include/broker/snapshot.hh
-include/broker/span.hh
 include/broker/status.hh
 include/broker/status_subscriber.hh
 include/broker/store.hh
@@ -153,13 +151,6 @@ include/zeek/3rdparty/
 include/zeek/3rdparty/ConvertUTF.h
 include/zeek/3rdparty/bsd-getopt-long.h
 include/zeek/3rdparty/doctest.h
-include/zeek/3rdparty/ghc/
-include/zeek/3rdparty/ghc/filesystem.hpp
-include/zeek/3rdparty/ghc/fs_fwd.hpp
-include/zeek/3rdparty/ghc/fs_impl.hpp
-include/zeek/3rdparty/ghc/fs_std.hpp
-include/zeek/3rdparty/ghc/fs_std_fwd.hpp
-include/zeek/3rdparty/ghc/fs_std_impl.hpp
 include/zeek/3rdparty/modp_numtoa.h
 include/zeek/3rdparty/nonstd/
 include/zeek/3rdparty/nonstd/expected.hpp
@@ -200,6 +191,7 @@ include/zeek/CPP-load.bif.func_h
 include/zeek/CPP-load.bif.netvar_h
 include/zeek/CompHash.h
 include/zeek/Conn.h
+include/zeek/ConnKey.h
 include/zeek/DFA.h
 include/zeek/DNS_Mapping.h
 include/zeek/DNS_Mgr.h
@@ -472,6 +464,7 @@ include/zeek/analyzer/protocol/rdp/rdpeudp-analyzer.pac
 include/zeek/analyzer/protocol/rdp/rdpeudp-protocol.pac
 include/zeek/analyzer/protocol/rdp/rdpeudp.pac
 include/zeek/analyzer/protocol/rdp/types.bif.h
+include/zeek/analyzer/protocol/redis/
 include/zeek/analyzer/protocol/rfb/
 include/zeek/analyzer/protocol/rfb/RFB.h
 include/zeek/analyzer/protocol/rfb/events.bif.h
@@ -672,9 +665,11 @@ include/zeek/cluster/
 include/zeek/cluster/Backend.h
 include/zeek/cluster/BifSupport.h
 include/zeek/cluster/Component.h
+include/zeek/cluster/Event.h
 include/zeek/cluster/Manager.h
 include/zeek/cluster/OnLoop.h
 include/zeek/cluster/Serializer.h
+include/zeek/cluster/Telemetry.h
 include/zeek/cluster/backend/
 include/zeek/cluster/backend/zeromq/
 include/zeek/cluster/backend/zeromq/Plugin.h
@@ -687,6 +682,7 @@ include/zeek/cluster/backend/zeromq/auxil/cppzmq/demo/
 include/zeek/cluster/backend/zeromq/auxil/cppzmq/examples/
 include/zeek/cluster/backend/zeromq/auxil/cppzmq/libzmq-pkg-config/
 include/zeek/cluster/backend/zeromq/auxil/cppzmq/tests/
+include/zeek/cluster/backend/zeromq/cluster_backend_zeromq.bif.h
 include/zeek/cluster/backend/zeromq/cmake/
 include/zeek/cluster/cluster.bif.h
 include/zeek/cluster/serializer/
@@ -784,6 +780,10 @@ include/zeek/cluster/websocket/auxil/IXWebSocket/ws/
 include/zeek/cluster/websocket/events.bif.h
 include/zeek/communityid.bif.func_h
 include/zeek/communityid.bif.netvar_h
+include/zeek/conn_key/
+include/zeek/conn_key/Component.h
+include/zeek/conn_key/Factory.h
+include/zeek/conn_key/Manager.h
 include/zeek/const.bif.func_h
 include/zeek/const.bif.netvar_h
 include/zeek/digest.h
@@ -939,6 +939,12 @@ include/zeek/packet_analysis/protocol/ip/
 include/zeek/packet_analysis/protocol/ip/IP.h
 include/zeek/packet_analysis/protocol/ip/IPBasedAnalyzer.h
 include/zeek/packet_analysis/protocol/ip/SessionAdapter.h
+include/zeek/packet_analysis/protocol/ip/conn_key/
+include/zeek/packet_analysis/protocol/ip/conn_key/IPBasedConnKey.h
+include/zeek/packet_analysis/protocol/ip/conn_key/fivetuple/
+include/zeek/packet_analysis/protocol/ip/conn_key/fivetuple/Factory.h
+include/zeek/packet_analysis/protocol/ip/conn_key/vlan_fivetuple/
+include/zeek/packet_analysis/protocol/ip/conn_key/vlan_fivetuple/Factory.h
 include/zeek/packet_analysis/protocol/iptunnel/
 include/zeek/packet_analysis/protocol/iptunnel/IPTunnel.h
 include/zeek/packet_analysis/protocol/linux_sll/
@@ -963,6 +969,7 @@ include/zeek/packet_analysis/protocol/ppp_serial/
 include/zeek/packet_analysis/protocol/ppp_serial/PPPSerial.h
 include/zeek/packet_analysis/protocol/pppoe/
 include/zeek/packet_analysis/protocol/pppoe/PPPoE.h
+include/zeek/packet_analysis/protocol/pppoe/functions.bif.h
 include/zeek/packet_analysis/protocol/root/
 include/zeek/packet_analysis/protocol/root/Root.h
 include/zeek/packet_analysis/protocol/skip/
@@ -1102,6 +1109,7 @@ include/zeek/storage/serializer/json/JSON.h
 include/zeek/storage/storage-async.bif.h
 include/zeek/storage/storage-events.bif.h
 include/zeek/storage/storage-sync.bif.h
+include/zeek/storage/storage.bif.h
 include/zeek/strings.bif.func_h
 include/zeek/strings.bif.netvar_h
 include/zeek/supervisor/
@@ -1136,6 +1144,7 @@ include/zeek/threading/formatters/Ascii.h
 include/zeek/threading/formatters/JSON.h
 include/zeek/types.bif.func_h
 include/zeek/types.bif.netvar_h
+include/zeek/util-types.h
 include/zeek/util.h
 include/zeek/zeek-affinity.h
 include/zeek/zeek-bif.h
@@ -1298,6 +1307,12 @@ lib/zeek/python/zeekctl/plugins/TestPlugin.py
 ${MODPY_COMMENT}lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}/
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}TestPlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}TestPlugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_broker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_broker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_check.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_zeromq.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_zeromq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_custom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_custom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}lb_myricom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1310,6 +1325,9 @@ lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}zeek_port_warning.${MODPY_PYC_MA
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}zeek_port_warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}zzz_af_packet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}zzz_af_packet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/zeek/python/zeekctl/plugins/cluster_backend_broker.py
+lib/zeek/python/zeekctl/plugins/cluster_backend_check.py
+lib/zeek/python/zeekctl/plugins/cluster_backend_zeromq.py
 lib/zeek/python/zeekctl/plugins/lb_custom.py
 lib/zeek/python/zeekctl/plugins/lb_myricom.py
 lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
@@ -1458,11 +1476,13 @@ share/btest/data/pcaps/dns-txt-multiple.trace
 share/btest/data/pcaps/dns-zero-RRs.trace
 share/btest/data/pcaps/dns/dns-binds.pcap
 share/btest/data/pcaps/dns/dns-wks.pcap
+share/btest/data/pcaps/dns/dns_extended_rcode.pcap
 share/btest/data/pcaps/dns/dynamic-update.pcap
 share/btest/data/pcaps/dns/hinfo.pcap
 share/btest/data/pcaps/dns/loc-29-trunc.pcap
 share/btest/data/pcaps/dns/long-connection.pcap
 share/btest/data/pcaps/dns/mdns.pcap
+share/btest/data/pcaps/dns/naptr.pcap
 share/btest/data/pcaps/dns/proto255.pcap
 share/btest/data/pcaps/dns/sshfp-trunc.pcap
 share/btest/data/pcaps/dns/tkey.pcap
@@ -1494,6 +1514,7 @@ share/btest/data/pcaps/ftp/bruteforce.pcap
 share/btest/data/pcaps/ftp/cwd-navigation.pcap
 share/btest/data/pcaps/ftp/fake-long-commands.pcap
 share/btest/data/pcaps/ftp/fake-server-delays-all.pcap
+share/btest/data/pcaps/ftp/ftp-auth-tls.pcap
 share/btest/data/pcaps/ftp/ftp-invalid-reply-code.pcap
 share/btest/data/pcaps/ftp/ftp-missing-reply-code.pcap
 share/btest/data/pcaps/ftp/ftp-missing-space-after-reply-code.pcap
@@ -1614,6 +1635,7 @@ share/btest/data/pcaps/ipv6_zero_len_ah.trace
 share/btest/data/pcaps/irc-353.pcap
 share/btest/data/pcaps/irc-basic.trace
 share/btest/data/pcaps/irc-dcc-send.trace
+share/btest/data/pcaps/irc-more-commands.trace
 share/btest/data/pcaps/irc-whitespace.trace
 share/btest/data/pcaps/krb/
 share/btest/data/pcaps/krb/auth.trace
@@ -1624,6 +1646,8 @@ share/btest/data/pcaps/krb/smb2_krb.keytab
 share/btest/data/pcaps/krb/smb2_krb.pcap
 share/btest/data/pcaps/krb/smb_gssapi.trace
 share/btest/data/pcaps/ldap/
+share/btest/data/pcaps/ldap/aduser1-ntlm.pcap
+share/btest/data/pcaps/ldap/aduser1.pcap
 share/btest/data/pcaps/ldap/ctu-sme-11-win7ad-1-ldap-tcp-50041.pcap
 share/btest/data/pcaps/ldap/issue-32.pcapng
 share/btest/data/pcaps/ldap/krb5-sign-seal-01.pcap
@@ -1724,6 +1748,7 @@ share/btest/data/pcaps/postgresql/psql-aws-ssl-require.pcap
 share/btest/data/pcaps/postgresql/psql-create-insert-select-delete-drop.pcap
 share/btest/data/pcaps/postgresql/psql-insert-fail-drop-fail.pcap
 share/btest/data/pcaps/postgresql/psql-login-fail.pcap
+share/btest/data/pcaps/postgresql/psql-login-no-role.pcap
 share/btest/data/pcaps/postgresql/psql-login-no-sslrequest.pcap
 share/btest/data/pcaps/postgresql/psql-login-wrong.pcap
 share/btest/data/pcaps/postgresql/psql-login.pcap
@@ -1745,6 +1770,10 @@ share/btest/data/pcaps/quic/interop/quic-go_quic-go/
 share/btest/data/pcaps/quic/interop/quic-go_quic-go/handshake.pcap
 share/btest/data/pcaps/quic/interop/quic-go_quic-go/retry.pcap
 share/btest/data/pcaps/quic/interop/quic-go_quic-go/zerortt.pcap
+share/btest/data/pcaps/quic/merlinc2_Zeek_example.pcapng
+share/btest/data/pcaps/quic/quic-decrypt-fail-google-de-51833.pcap
+share/btest/data/pcaps/quic/quic-multiple-initial-fragmented-crypto-only-initial.pcap
+share/btest/data/pcaps/quic/quic-multiple-initial-fragmented-crypto.pcap
 share/btest/data/pcaps/quic/quic_win11_firefox_google.pcap
 share/btest/data/pcaps/quic/quicdoq.pcap
 share/btest/data/pcaps/quic/quicv2-echo-443.pcap
@@ -1766,6 +1795,24 @@ share/btest/data/pcaps/rdp/rdp-x509.pcap
 share/btest/data/pcaps/rdp/rdpeudp-handshake-fail.pcap
 share/btest/data/pcaps/rdp/rdpeudp-handshake-success.pcap
 share/btest/data/pcaps/rdp/rdpeudp2-handshake-success.pcap
+share/btest/data/pcaps/redis/
+share/btest/data/pcaps/redis/almost-resp.pcap
+share/btest/data/pcaps/redis/attr.pcap
+share/btest/data/pcaps/redis/auth.pcap
+share/btest/data/pcaps/redis/bulk-loading.pcap
+share/btest/data/pcaps/redis/client-skip-while-off.pcap
+share/btest/data/pcaps/redis/django-cloud.pcap
+share/btest/data/pcaps/redis/excessive-pipelining.pcap
+share/btest/data/pcaps/redis/pipeline-quotes.pcap
+share/btest/data/pcaps/redis/pipeline-with-commands.pcap
+share/btest/data/pcaps/redis/pipelining-example.pcap
+share/btest/data/pcaps/redis/pubsub-resp3.pcap
+share/btest/data/pcaps/redis/pubsub.pcap
+share/btest/data/pcaps/redis/reply-off-on-2conn.pcap
+share/btest/data/pcaps/redis/reply-off-on.pcap
+share/btest/data/pcaps/redis/set.pcap
+share/btest/data/pcaps/redis/start-with-server.pcap
+share/btest/data/pcaps/redis/stream.pcap
 share/btest/data/pcaps/rfb/
 share/btest/data/pcaps/rfb/vnc-mac-to-linux.pcap
 share/btest/data/pcaps/rfb/vnc-scanner.pcap
@@ -1798,6 +1845,7 @@ share/btest/data/pcaps/smb/smb311.pcap
 share/btest/data/pcaps/smb/smb3_multichannel.pcap
 share/btest/data/pcaps/smb/smb3_negotiate_context.pcap
 share/btest/data/pcaps/smb/smb_many_open_files_500.pcap.gz
+share/btest/data/pcaps/smb/smb_v2_only_non_zero_reserved1.pcap
 share/btest/data/pcaps/smtp/
 share/btest/data/pcaps/smtp-attachment-msg.pcap
 share/btest/data/pcaps/smtp-mail-transactions-invalid.pcap
@@ -1808,6 +1856,7 @@ share/btest/data/pcaps/smtp/rfc3030-bdat-0-last.pcap
 share/btest/data/pcaps/smtp/rfc3030-bdat-example1.pcap
 share/btest/data/pcaps/smtp/rfc3030-bdat-multipart-chunked.pcap
 share/btest/data/pcaps/smtp/rfc3030-bdat-multipart.pcap
+share/btest/data/pcaps/smtp/rfc3030-bdat-nonascii.pcap
 share/btest/data/pcaps/smtp/smtp-bdat-cmd-chunk-size-overflow.pcap
 share/btest/data/pcaps/smtp/smtp-bdat-cmd-chunk-size-overflow2.pcap
 share/btest/data/pcaps/smtp/smtp-bdat-cmd-invalid.pcap
@@ -1928,6 +1977,7 @@ share/btest/data/pcaps/tls/ssl-v2.trace
 share/btest/data/pcaps/tls/ssl.v3.trace
 share/btest/data/pcaps/tls/telesec.pcap
 share/btest/data/pcaps/tls/tls-1.2-handshake-failure.trace
+share/btest/data/pcaps/tls/tls-1.2-protocol-error.pcap
 share/btest/data/pcaps/tls/tls-1.2-stream-keylog.pcap
 share/btest/data/pcaps/tls/tls-13draft19-early-data.pcap
 share/btest/data/pcaps/tls/tls-conn-with-extensions.trace
@@ -2014,6 +2064,7 @@ share/btest/data/pcaps/udp-multiple-source-ports.pcap
 share/btest/data/pcaps/udp-packet.pcap
 share/btest/data/pcaps/udp-signature-test.pcap
 share/btest/data/pcaps/var-services-std-ports.trace
+share/btest/data/pcaps/vlan-collisions.pcap
 share/btest/data/pcaps/vntag.pcap
 share/btest/data/pcaps/vntag_vlan_sandwich_clean.pcap
 share/btest/data/pcaps/web.trace
@@ -2043,6 +2094,7 @@ share/btest/scripts/diff-clean-doctest
 share/btest/scripts/diff-remove-abspath
 share/btest/scripts/diff-remove-fields
 share/btest/scripts/diff-remove-file-ids
+share/btest/scripts/diff-remove-first-timestamp
 share/btest/scripts/diff-remove-fractions
 share/btest/scripts/diff-remove-openclose-timestamps
 share/btest/scripts/diff-remove-spicy-abspath
@@ -2104,6 +2156,7 @@ share/zeek/base/bif/plugins/Zeek_AsciiWriter.ascii.bif.zeek
 share/zeek/base/bif/plugins/Zeek_BenchmarkReader.benchmark.bif.zeek
 share/zeek/base/bif/plugins/Zeek_BinaryReader.binary.bif.zeek
 share/zeek/base/bif/plugins/Zeek_BitTorrent.events.bif.zeek
+share/zeek/base/bif/plugins/Zeek_Cluster_Backend_ZeroMQ.cluster_backend_zeromq.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Cluster_WebSocket.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_ConfigReader.config.bif.zeek
 share/zeek/base/bif/plugins/Zeek_ConnSize.events.bif.zeek
@@ -2157,6 +2210,7 @@ share/zeek/base/bif/plugins/Zeek_NoneWriter.none.bif.zeek
 share/zeek/base/bif/plugins/Zeek_PE.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_POP3.consts.bif.zeek
 share/zeek/base/bif/plugins/Zeek_POP3.events.bif.zeek
+share/zeek/base/bif/plugins/Zeek_PPPoE.functions.bif.zeek
 share/zeek/base/bif/plugins/Zeek_RADIUS.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_RDP.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_RDP.types.bif.zeek
@@ -2235,6 +2289,7 @@ share/zeek/base/bif/stats.bif.zeek
 share/zeek/base/bif/storage-async.bif.zeek
 share/zeek/base/bif/storage-events.bif.zeek
 share/zeek/base/bif/storage-sync.bif.zeek
+share/zeek/base/bif/storage.bif.zeek
 share/zeek/base/bif/store.bif.zeek
 share/zeek/base/bif/strings.bif.zeek
 share/zeek/base/bif/supervisor.bif.zeek
@@ -2287,6 +2342,7 @@ share/zeek/base/frameworks/cluster/nodes/worker.zeek
 share/zeek/base/frameworks/cluster/pools.zeek
 share/zeek/base/frameworks/cluster/setup-connections.zeek
 share/zeek/base/frameworks/cluster/supervisor.zeek
+share/zeek/base/frameworks/cluster/telemetry.zeek
 share/zeek/base/frameworks/config/
 share/zeek/base/frameworks/config/__load__.zeek
 share/zeek/base/frameworks/config/input.zeek
@@ -2649,6 +2705,11 @@ share/zeek/base/protocols/rdp/__load__.zeek
 share/zeek/base/protocols/rdp/consts.zeek
 share/zeek/base/protocols/rdp/dpd.sig
 share/zeek/base/protocols/rdp/main.zeek
+share/zeek/base/protocols/redis/
+share/zeek/base/protocols/redis/__load__.zeek
+share/zeek/base/protocols/redis/dpd.sig
+share/zeek/base/protocols/redis/main.zeek
+share/zeek/base/protocols/redis/spicy-events.zeek
 share/zeek/base/protocols/rfb/
 share/zeek/base/protocols/rfb/__load__.zeek
 share/zeek/base/protocols/rfb/dpd.sig
@@ -2754,11 +2815,9 @@ share/zeek/cmake/CheckTypes.cmake
 share/zeek/cmake/CommonCMakeConfig.cmake
 share/zeek/cmake/ConfigurePackaging.cmake
 share/zeek/cmake/ConfigureSpicyBuild.cmake
-share/zeek/cmake/FindBIND.cmake
 share/zeek/cmake/FindBinPAC.cmake
 share/zeek/cmake/FindCAres.cmake
 share/zeek/cmake/FindCapstats.cmake
-share/zeek/cmake/FindClangTidy.cmake
 share/zeek/cmake/FindFTS.cmake
 share/zeek/cmake/FindGooglePerftools.cmake
 share/zeek/cmake/FindJeMalloc.cmake
@@ -2787,7 +2846,7 @@ share/zeek/cmake/OpenSSLTests.cmake
 share/zeek/cmake/PCAPTests.cmake
 share/zeek/cmake/ProhibitInSourceBuild.cmake
 share/zeek/cmake/README
-share/zeek/cmake/RequireCXX17.cmake
+share/zeek/cmake/RequireCXXStd.cmake
 share/zeek/cmake/SetDefaultCompileFlags.cmake
 share/zeek/cmake/SetupRPATH.cmake
 share/zeek/cmake/UserChangedWarning.cmake
@@ -2812,6 +2871,11 @@ share/zeek/policy/files/
 share/zeek/policy/files/x509/
 share/zeek/policy/files/x509/disable-certificate-events-known-certs.zeek
 share/zeek/policy/frameworks/
+share/zeek/policy/frameworks/analyzer/
+share/zeek/policy/frameworks/analyzer/debug-logging.zeek
+share/zeek/policy/frameworks/analyzer/deprecated-dpd-log.zeek
+share/zeek/policy/frameworks/analyzer/detect-protocols.zeek
+share/zeek/policy/frameworks/analyzer/packet-segment-logging.zeek
 share/zeek/policy/frameworks/cluster/
 share/zeek/policy/frameworks/cluster/backend/
 share/zeek/policy/frameworks/cluster/backend/zeromq/
@@ -2821,6 +2885,8 @@ share/zeek/policy/frameworks/cluster/backend/zeromq/main.zeek
 share/zeek/policy/frameworks/cluster/experimental.zeek
 share/zeek/policy/frameworks/cluster/nodes-experimental/
 share/zeek/policy/frameworks/cluster/nodes-experimental/manager.zeek
+share/zeek/policy/frameworks/conn_key/
+share/zeek/policy/frameworks/conn_key/vlan_fivetuple.zeek
 share/zeek/policy/frameworks/control/
 share/zeek/policy/frameworks/control/controllee.zeek
 share/zeek/policy/frameworks/control/controller.zeek
@@ -2844,6 +2910,7 @@ share/zeek/policy/frameworks/intel/seen/file-hashes.zeek
 share/zeek/policy/frameworks/intel/seen/file-names.zeek
 share/zeek/policy/frameworks/intel/seen/http-headers.zeek
 share/zeek/policy/frameworks/intel/seen/http-url.zeek
+share/zeek/policy/frameworks/intel/seen/manage-event-groups.zeek
 share/zeek/policy/frameworks/intel/seen/pubkey-hashes.zeek
 share/zeek/policy/frameworks/intel/seen/smb-filenames.zeek
 share/zeek/policy/frameworks/intel/seen/smtp-url-extraction.zeek
@@ -2940,6 +3007,7 @@ share/zeek/policy/protocols/conn/ip-proto-name-logging.zeek
 share/zeek/policy/protocols/conn/known-hosts.zeek
 share/zeek/policy/protocols/conn/known-services.zeek
 share/zeek/policy/protocols/conn/mac-logging.zeek
+share/zeek/policy/protocols/conn/pppoe-session-id-logging.zeek
 share/zeek/policy/protocols/conn/speculative-service.zeek
 share/zeek/policy/protocols/conn/vlan-logging.zeek
 share/zeek/policy/protocols/conn/weirds.zeek
@@ -2956,6 +3024,7 @@ share/zeek/policy/protocols/ftp/detect-bruteforcing.zeek
 share/zeek/policy/protocols/ftp/detect.zeek
 share/zeek/policy/protocols/ftp/software.zeek
 share/zeek/policy/protocols/http/
+share/zeek/policy/protocols/http/detect-sql-injection.zeek
 share/zeek/policy/protocols/http/detect-sqli.zeek
 share/zeek/policy/protocols/http/detect-webapps.sig
 share/zeek/policy/protocols/http/detect-webapps.zeek
@@ -3005,6 +3074,7 @@ share/zeek/policy/tuning/track-all-assets.zeek
 share/zeek/site
 share/zeek/spicy/
 share/zeek/test-all-policy.zeek
+share/zeek/tests
 share/zeek/zeekctl/
 share/zeek/zeekctl/__load__.zeek
 share/zeek/zeekctl/auto.zeek

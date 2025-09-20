@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1299,7 +1299,7 @@ if (INSTALL_ZKG)
+@@ -1293,7 +1293,7 @@ if (INSTALL_ZKG)
      configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake_templates/zkg-config.in
                     ${CMAKE_CURRENT_BINARY_DIR}/zkg-config @ONLY)
  

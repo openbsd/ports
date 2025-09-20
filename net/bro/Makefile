@@ -2,10 +2,10 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-7.2.2
+DISTNAME =		zeek-8.0.1
 
 SHARED_LIBS +=		binpac		3.0
-SHARED_LIBS +=		broker		8.0
+SHARED_LIBS +=		broker		9.0
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=		caf_core	4.1
 
@@ -19,7 +19,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += c cares crypto m maxminddb pcap ssl z lib/libbind/bind
+WANTLIB += c cares crypto m maxminddb pcap ssl z zmq lib/libbind/bind
 
 SITES =			https://download.zeek.org/
 
@@ -42,7 +42,8 @@ BUILD_DEPENDS =		devel/bison \
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/libbind \
 			net/libcares \
-			net/libmaxminddb
+			net/libmaxminddb \
+			net/zeromq
 
 RUN_DEPENDS =		devel/py-gitpython \
 			devel/py-semantic-version \
@@ -80,6 +81,17 @@ CFLAGS +=		-I${LOCALBASE}/include/bind
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
 	   		-Wl,-rpath ${LOCALBASE}/lib
 CXXFLAGS +=		-I${LOCALBASE}/include
+
+.for _macro _fmt in \
+    PRId64 lld \
+    PRIu16   u \
+    PRIu64 llu \
+    PRIx64 llx
+notyet_CXXFLAGS += -D${_macro}='"${_fmt}"'
+.endfor
+
+# XXX Some files don't see PRIu64 et al. despite the right headers being there
+CXXFLAGS +=		-include cinttypes
 
 CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \

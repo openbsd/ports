@@ -1,14 +1,14 @@
 Index: auxil/binpac/lib/CMakeLists.txt
 --- auxil/binpac/lib/CMakeLists.txt.orig
 +++ auxil/binpac/lib/CMakeLists.txt
-@@ -21,8 +21,8 @@ if(ENABLE_SHARED)
-   set_target_properties(
-     binpac_lib
-     PROPERTIES CXX_EXTENSIONS OFF
--               SOVERSION ${BINPAC_SOVERSION}
--               VERSION ${BINPAC_VERSION_MAJOR}.${BINPAC_VERSION_MINOR}
-+               SOVERSION ${LIBbinpac_VERSION}
-+               VERSION ${LIBbinpac_VERSION}
-                MACOSX_RPATH true
-                OUTPUT_NAME binpac)
-   install(TARGETS binpac_lib DESTINATION ${CMAKE_INSTALL_LIBDIR})
+@@ -16,8 +16,8 @@ if (ENABLE_SHARED)
+     add_library(binpac_lib SHARED ${binpac_lib_SRCS})
+     set_target_properties(
+         binpac_lib
+-        PROPERTIES SOVERSION ${BINPAC_SOVERSION}
+-                   VERSION ${BINPAC_VERSION_MAJOR}.${BINPAC_VERSION_MINOR}
++        PROPERTIES SOVERSION ${LIBbinpac_VERSION}
++                   VERSION ${LIBbinpac_VERSION}
+                    MACOSX_RPATH true
+                    OUTPUT_NAME binpac)
+     install(TARGETS binpac_lib DESTINATION ${CMAKE_INSTALL_LIBDIR})

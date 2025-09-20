@@ -8,7 +8,7 @@ struct in_addr   inet_makeaddr __P((u_long , u_long));
 Index: src/net_util.h
 --- src/net_util.h.orig
 +++ src/net_util.h
-@@ -23,9 +23,9 @@ enum IPFamily { IPv4, IPv6 };
+@@ -14,9 +14,9 @@
  // breaks FreeBSD builds.
  // clang-format off
  #include <sys/types.h>
