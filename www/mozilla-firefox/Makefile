@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
+REVISION =	0
 MOZILLA_VERSION =	143.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
@@ -26,14 +27,6 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
-.if ${MACHINE_ARCH} == aarch64
-MODCLANG_VERSION =	16
-USE_LLD =		ports
-CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/
-CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
-.else
-CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-.endif
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -53,7 +46,12 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+.if ${MACHINE_ARCH} == aarch64
+# retguard leads to segfault at startup on arm64, cf #1973016
+CONFIGURE_ENV +=	CPPFLAGS="-fno-ret-protector -Wno-backend-plugin"
+.else
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+.endif
 NCPU !!=		sysctl -n hw.ncpuonline
 .if ${NCPU} > 4
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
@@ -65,6 +63,7 @@ MOZILLA_USE_SYSTEM_AV1 =Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 # LTO eats too much RAM on riscv64
 .if ${MACHINE_ARCH} != riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
