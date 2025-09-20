@@ -15,7 +15,7 @@ Index: src/OpaqueVal.cc
  #include <openssl/md5.h>
  #endif
  
-@@ -247,7 +247,7 @@ constexpr size_t SHA1VAL_STATE_SIZE = sizeof(SHA_CTX);
+@@ -226,7 +226,7 @@ constexpr size_t SHA1VAL_STATE_SIZE = sizeof(SHA_CTX);
  
  constexpr size_t SHA256VAL_STATE_SIZE = sizeof(SHA256_CTX);
  

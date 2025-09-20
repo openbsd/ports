@@ -2,10 +2,10 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-7.0.10
+DISTNAME =		zeek-7.1.1
 
 SHARED_LIBS +=		binpac		3.0
-SHARED_LIBS +=		broker		6.0
+SHARED_LIBS +=		broker		7.0
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=		caf_core	4.1
 
