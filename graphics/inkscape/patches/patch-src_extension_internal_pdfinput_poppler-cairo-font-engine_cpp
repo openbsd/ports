@@ -1,4 +1,6 @@
-Fix build with poppler-25.07.
+Fix build with poppler-25.07 and 25.09.1.
+
+Partially from upstream commit b60d81745016b5f20d4c6aec6d073b8a6f3e499c.
 
 Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
 --- src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp.orig
@@ -56,3 +58,12 @@ Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
                      } else {
                          ff = FoFiTrueType::load(fileName.c_str(), 0);
                      }
+@@ -629,7 +628,7 @@ static cairo_status_t _init_type3_glyph(cairo_scaled_f
+ 
+     info = (type3_font_info_t *)cairo_font_face_get_user_data(cairo_scaled_font_get_font_face(scaled_font),
+                                                               &type3_font_key);
+-    const double *mat = info->font->getFontBBox();
++    const auto& mat = info->font->getFontBBox();
+     extents->ascent = mat[3];   /* y2 */
+     extents->descent = -mat[3]; /* -y1 */
+     extents->height = extents->ascent + extents->descent;
