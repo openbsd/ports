@@ -61,7 +61,7 @@ MODGO_MODULES =	\
 	github.com/go-logr/logr									 v1.4.3 \
 	github.com/go-logr/stdr									 v1.2.2 \
 	github.com/go-test/deep									 v1.0.3 \
-	github.com/go-viper/mapstructure/v2							 v2.3.0 \
+	github.com/go-viper/mapstructure/v2							 v2.4.0 \
 	github.com/godbus/dbus/v5								 v5.0.4 \
 	github.com/golang/groupcache								 v0.0.0-20241129210726-2c02b8208cf8 \
 	github.com/golang/protobuf								 v1.5.2 \
@@ -87,10 +87,10 @@ MODGO_MODULES =	\
 	github.com/hashicorp/hcl-lang								 v0.0.0-20250613065305-ef4e1a57cead \
 	github.com/hashicorp/hcl/v2								 v2.24.0 \
 	github.com/hashicorp/logutils								 v1.0.0 \
-	github.com/hashicorp/terraform-exec							 v0.23.0 \
-	github.com/hashicorp/terraform-json							 v0.26.0 \
-	github.com/hashicorp/terraform-registry-address						 v0.3.0 \
-	github.com/hashicorp/terraform-schema							 v0.0.0-20250828062434-26de354af365 \
+	github.com/hashicorp/terraform-exec							 v0.24.0 \
+	github.com/hashicorp/terraform-json							 v0.27.2 \
+	github.com/hashicorp/terraform-registry-address						 v0.4.0 \
+	github.com/hashicorp/terraform-schema							 v0.0.0-20250919072604-47be6f126d59 \
 	github.com/hashicorp/terraform-svchost							 v0.1.1 \
 	github.com/hexops/autogold								 v1.3.1 \
 	github.com/hexops/gotextdiff								 v1.0.3 \
@@ -154,16 +154,16 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag									 v1.0.6 \
 	github.com/spf13/viper									 v1.20.0 \
 	github.com/stretchr/objx								 v0.5.2 \
-	github.com/stretchr/testify								 v1.10.0 \
+	github.com/stretchr/testify								 v1.11.1 \
 	github.com/subosito/gotenv								 v1.6.0 \
 	github.com/valyala/bytebufferpool							 v1.0.0 \
 	github.com/valyala/fasttemplate								 v1.2.1 \
-	github.com/vektra/mockery/v2								 v2.53.4 \
+	github.com/vektra/mockery/v2								 v2.53.5 \
 	github.com/vmihailenco/msgpack/v5							 v5.3.5 \
 	github.com/vmihailenco/tagparser/v2							 v2.0.0 \
 	github.com/xanzy/ssh-agent								 v0.3.3 \
 	github.com/yuin/goldmark								 v1.4.13 \
-	github.com/zclconf/go-cty								 v1.16.3 \
+	github.com/zclconf/go-cty								 v1.17.0 \
 	github.com/zclconf/go-cty-debug								 v0.0.0-20240509010212-0d6042c53940 \
 	go.bobheadxi.dev/gobenchdata								 v1.3.1 \
 	go.bobheadxi.dev/streamline								 v1.2.1 \
@@ -171,28 +171,28 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/auto/sdk								 v1.1.0 \
 	go.opentelemetry.io/contrib/detectors/gcp						 v1.29.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc		 v0.54.0 \
-	go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace		 v0.62.0 \
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp				 v0.62.0 \
-	go.opentelemetry.io/otel								 v1.37.0 \
-	go.opentelemetry.io/otel/metric								 v1.37.0 \
-	go.opentelemetry.io/otel/sdk								 v1.37.0 \
-	go.opentelemetry.io/otel/sdk/metric							 v1.37.0 \
-	go.opentelemetry.io/otel/trace								 v1.37.0 \
+	go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace		 v0.63.0 \
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp				 v0.63.0 \
+	go.opentelemetry.io/otel								 v1.38.0 \
+	go.opentelemetry.io/otel/metric								 v1.38.0 \
+	go.opentelemetry.io/otel/sdk								 v1.38.0 \
+	go.opentelemetry.io/otel/sdk/metric							 v1.38.0 \
+	go.opentelemetry.io/otel/trace								 v1.38.0 \
 	go.uber.org/atomic									 v1.9.0 \
 	go.uber.org/multierr									 v1.11.0 \
-	golang.org/x/crypto									 v0.40.0 \
+	golang.org/x/crypto									 v0.42.0 \
 	golang.org/x/exp/typeparams								 v0.0.0-20231108232855-2478ac86f678 \
 	golang.org/x/lint									 v0.0.0-20210508222113-6edffad5e616 \
-	golang.org/x/mod									 v0.26.0 \
-	golang.org/x/net									 v0.42.0 \
+	golang.org/x/mod									 v0.28.0 \
+	golang.org/x/net									 v0.44.0 \
 	golang.org/x/oauth2									 v0.25.0 \
-	golang.org/x/sync									 v0.16.0 \
-	golang.org/x/sys									 v0.34.0 \
-	golang.org/x/telemetry									 v0.0.0-20250710130107-8d8967aff50b \
-	golang.org/x/term									 v0.33.0 \
-	golang.org/x/text									 v0.27.0 \
+	golang.org/x/sync									 v0.17.0 \
+	golang.org/x/sys									 v0.36.0 \
+	golang.org/x/telemetry									 v0.0.0-20250908211612-aef8a434d053 \
+	golang.org/x/term									 v0.35.0 \
+	golang.org/x/text									 v0.29.0 \
 	golang.org/x/time									 v0.8.0 \
-	golang.org/x/tools									 v0.35.0 \
+	golang.org/x/tools									 v0.37.0 \
 	golang.org/x/xerrors									 v0.0.0-20190717185122-a985d3407aa7 \
 	google.golang.org/api									 v0.215.0 \
 	google.golang.org/appengine								 v1.6.7 \
@@ -239,7 +239,8 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-version					 v1.6.0 \
 	github.com/hashicorp/golang-lru					 v0.5.0 \
 	github.com/hashicorp/hcl/v2					 v2.23.0 \
-	github.com/hashicorp/terraform-json				 v0.24.0 \
+	github.com/hashicorp/terraform-exec				 v0.23.1 \
+	github.com/hashicorp/terraform-json				 v0.27.1 \
 	github.com/hashicorp/terraform-registry-address			 v0.2.0 \
 	github.com/hashicorp/terraform-svchost				 v0.0.1 \
 	github.com/huandu/xstrings					 v1.3.1 \
@@ -268,6 +269,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/objx					 v0.1.0 \
 	github.com/stretchr/objx					 v0.1.1 \
 	github.com/stretchr/objx					 v0.4.0 \
+	github.com/stretchr/testify					 v1.10.0 \
 	github.com/stretchr/testify					 v1.2.2 \
 	github.com/stretchr/testify					 v1.4.0 \
 	github.com/stretchr/testify					 v1.5.1 \
@@ -281,6 +283,8 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify					 v1.9.0 \
 	github.com/zclconf/go-cty					 v1.13.1 \
 	github.com/zclconf/go-cty					 v1.16.2 \
+	github.com/zclconf/go-cty					 v1.16.3 \
+	github.com/zclconf/go-cty					 v1.16.4 \
 	github.com/zclconf/go-cty					 v1.2.0 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	go.bobheadxi.dev/gobenchdata					 v1.3.0 \
@@ -304,12 +308,15 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto						 v0.3.0 \
 	golang.org/x/crypto						 v0.32.0 \
 	golang.org/x/crypto						 v0.35.0 \
+	golang.org/x/crypto						 v0.36.0 \
 	golang.org/x/crypto						 v0.38.0 \
-	golang.org/x/crypto						 v0.39.0 \
+	golang.org/x/crypto						 v0.41.0 \
 	golang.org/x/mod						 v0.17.0 \
 	golang.org/x/mod						 v0.23.0 \
 	golang.org/x/mod						 v0.24.0 \
 	golang.org/x/mod						 v0.25.0 \
+	golang.org/x/mod						 v0.26.0 \
+	golang.org/x/mod						 v0.27.0 \
 	golang.org/x/mod						 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod						 v0.7.0 \
 	golang.org/x/net						 v0.0.0-20190404232315-eb5bcb51f2a3 \
@@ -321,7 +328,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.33.0 \
 	golang.org/x/net						 v0.36.0 \
 	golang.org/x/net						 v0.37.0 \
-	golang.org/x/net						 v0.41.0 \
+	golang.org/x/net						 v0.38.0 \
+	golang.org/x/net						 v0.43.0 \
 	golang.org/x/net						 v0.5.0 \
 	golang.org/x/net						 v0.8.0 \
 	golang.org/x/oauth2						 v0.6.0 \
@@ -331,6 +339,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync						 v0.11.0 \
 	golang.org/x/sync						 v0.14.0 \
 	golang.org/x/sync						 v0.15.0 \
+	golang.org/x/sync						 v0.16.0 \
 	golang.org/x/sync						 v0.7.0 \
 	golang.org/x/sync						 v0.8.0 \
 	golang.org/x/sys						 v0.0.0-20190215142949-d0b11bdaac8a \
@@ -353,6 +362,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.30.0 \
 	golang.org/x/sys						 v0.31.0 \
 	golang.org/x/sys						 v0.33.0 \
+	golang.org/x/sys						 v0.35.0 \
 	golang.org/x/sys						 v0.4.0 \
 	golang.org/x/sys						 v0.6.0 \
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
@@ -366,7 +376,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text						 v0.22.0 \
 	golang.org/x/text						 v0.23.0 \
 	golang.org/x/text						 v0.25.0 \
-	golang.org/x/text						 v0.26.0 \
+	golang.org/x/text						 v0.28.0 \
 	golang.org/x/text						 v0.3.0 \
 	golang.org/x/text						 v0.3.3 \
 	golang.org/x/text						 v0.3.7 \
@@ -380,6 +390,8 @@ MODGO_MODFILES =	\
 	golang.org/x/tools						 v0.21.1-0.20240531212143-b6235391adb3 \
 	golang.org/x/tools						 v0.30.0 \
 	golang.org/x/tools						 v0.34.0 \
+	golang.org/x/tools						 v0.35.0 \
+	golang.org/x/tools						 v0.36.0 \
 	golang.org/x/tools						 v0.4.0 \
 	golang.org/x/tools						 v0.5.0 \
 	google.golang.org/protobuf					 v1.28.1 \
