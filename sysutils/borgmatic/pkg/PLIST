@@ -328,6 +328,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}bootstrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}btrfs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}btrfs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}lvm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -348,6 +350,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}zfs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/bootstrap.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/btrfs.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/dump.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/lvm.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/mariadb.py
