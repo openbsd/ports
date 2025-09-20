@@ -1,7 +1,8 @@
 COMMENT=		wm-dockapp; temperature sensor monitor
 
 DISTNAME=		wmtempmon-0.1
-CATEGORIES=		sysutils x11
+REVISION=		0
+CATEGORIES=		sysutils x11 x11/windowmaker
 SITES=			https://www.nazgul.ch/dev/
 
 HOMEPAGE=		https://nazgul.ch/dev_wmtempmon.html
