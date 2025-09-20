@@ -1,0 +1,11 @@
+find strptime(3)
+
+Index: auxil/zeek-aux/zeek-archiver/zeek-archiver.cc
+--- auxil/zeek-aux/zeek-archiver/zeek-archiver.cc.orig
++++ auxil/zeek-aux/zeek-archiver/zeek-archiver.cc
+@@ -1,4 +1,4 @@
+-#define _XOPEN_SOURCE
++// #define _XOPEN_SOURCE 700
+ #include <time.h>
+ 
+ #include <sys/time.h>

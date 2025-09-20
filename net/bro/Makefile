@@ -2,11 +2,10 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-6.2.1
-REVISION =		0
+DISTNAME =		zeek-7.0.10
 
 SHARED_LIBS +=		binpac		3.0
-SHARED_LIBS +=		broker		5.0
+SHARED_LIBS +=		broker		6.0
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=		caf_core	4.1
 
@@ -75,6 +74,7 @@ MODCMAKE_USE_SHARED_LIBS = No
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib/libbind -lbind \
 	   		-Wl,-rpath ${LOCALBASE}/lib/libbind
+CXXFLAGS +=		-I${LOCALBASE}/include/bind
 CFLAGS +=		-I${LOCALBASE}/include/bind
 
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
@@ -93,13 +93,12 @@ CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 # Our modules only pass {PYTHON,Python3}_*, perhaps newer releases take them.
 CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
 
-
 # XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
 # Need Flex version >= 2.6, found 2.5.39
 CONFIGURE_ARGS +=	-DDISABLE_SPICY=TRUE
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/auxil/broker/CMakeLists.txt \
+	${SUBST_CMD} ${WRKSRC}/auxil/broker/libbroker/CMakeLists.txt \
 		${WRKSRC}/auxil/binpac/lib/CMakeLists.txt \
 		${WRKSRC}/auxil/broker/caf/CMakeLists.txt
 
