@@ -1,3 +1,5 @@
+@pkgpath www/p5-URI-ws
+@conflict p5-URI-ws-*
 ${P5SITE}/URI/
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm

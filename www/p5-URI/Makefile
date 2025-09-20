@@ -1,6 +1,7 @@
 COMMENT =	library to parse Uniform Resource Identifiers
 
 DISTNAME =	URI-5.34
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1747 2025/09/16 14:31:05 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1748 2025/09/20 19:45:37 bluhm Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1289,6 +1289,7 @@ setup_obsolete_reason(
 	3 => 'ruby34-rgen',
 	5 => 'libmusicbrainz',
 	5 => 'libunique',
+	5 => 'p5-URI-ws',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

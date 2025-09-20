@@ -3,6 +3,7 @@ COMMENT=	elegant MVC Web Application Framework
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Catalyst-Runtime-5.90128
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -47,8 +48,7 @@ RUN_DEPENDS=	converters/p5-JSON-MaybeXS>=1.0 \
 		www/p5-Plack-Middleware-RemoveRedundantBody>=0.03 \
 		www/p5-Plack-Middleware-ReverseProxy>=0.04 \
 		www/p5-Plack-Test-ExternalServer \
-		www/p5-URI>=1.65 \
-		www/p5-URI-ws>=0.03 \
+		www/p5-URI>=5.34 \
 		www/p5-libwww>=5.837
 
 TEST_DEPENDS=	devel/p5-Term-Size-Any \
@@ -58,7 +58,6 @@ TEST_DEPENDS=	devel/p5-Term-Size-Any \
 		www/p5-Catalyst-Action-REST \
 		www/p5-Catalyst-Plugin-ConfigLoader \
 		www/p5-CatalystX-LeakChecker>=0.05
-
 
 MAKE_ENV=	TEST_POD=Yes
 
