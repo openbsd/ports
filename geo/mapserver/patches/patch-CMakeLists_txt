@@ -2,7 +2,7 @@ Ensure it uses our FindIconv.cmake module
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -449,9 +449,9 @@ find_package(Freetype)
+@@ -462,9 +462,9 @@ find_package(Freetype)
  if(NOT FREETYPE_FOUND)
    report_mandatory_not_found(FREETYPE)
  endif(NOT FREETYPE_FOUND)
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
  
  
  find_package(Proj)
-@@ -521,11 +521,11 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
+@@ -534,11 +534,11 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
  
  
  if(WITH_ICONV)
@@ -30,7 +30,7 @@ Index: CMakeLists.txt
      set (USE_ICONV 1)
    else(ICONV_FOUND)
      report_optional_not_found(ICONV)
-@@ -1094,7 +1094,7 @@ if(UNIX)
+@@ -1122,7 +1122,7 @@ if(UNIX)
  else()
    set(DEFAULT_DATA_SUBDIR share/mapserver)
  endif()
@@ -39,7 +39,7 @@ Index: CMakeLists.txt
  
  # Locations are changeable by user to customize layout of MapServer installation
  # (default values are platform-specific)
-@@ -1128,7 +1128,7 @@ install(
+@@ -1156,7 +1156,7 @@ install(
  
  install(
    FILES ${PROJECT_SOURCE_DIR}/etc/mapserver-sample.conf
