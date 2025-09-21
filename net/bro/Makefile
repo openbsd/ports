@@ -101,10 +101,9 @@ CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
 # Need Flex version >= 2.6, found 2.5.39
 CONFIGURE_ARGS +=	-DDISABLE_SPICY=TRUE
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/auxil/broker/libbroker/CMakeLists.txt \
-		${WRKSRC}/auxil/binpac/lib/CMakeLists.txt \
-		${WRKSRC}/auxil/broker/caf/CMakeLists.txt
+.for _lib _ver in ${SHARED_LIBS}
+CONFIGURE_ARGS +=	-DLIB${_lib}_VERSION=${_ver}
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
