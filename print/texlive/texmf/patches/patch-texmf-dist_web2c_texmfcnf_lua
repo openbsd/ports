@@ -29,7 +29,7 @@ Index: texmf-dist/web2c/texmfcnf.lua
  
              -- standalone:
  
-@@ -73,14 +76,14 @@ return {
+@@ -73,8 +76,8 @@ return {
  
              -- texlive:
  
@@ -39,8 +39,12 @@ Index: texmf-dist/web2c/texmfcnf.lua
 +            TEXMFSYSCONFIG  = "$TEXMFROOT/texmf-config",
  
              -- The texmf-local path is only used for (maybe) some additional configuration file.
- 
--            TEXMFLOCAL      = "selfautoparent:texmf-local",
+ 	    -- Changed texmf-local to use ../ per Bruno Voisin,
+@@ -86,9 +89,9 @@ return {
+ 	    -- More info:
+ 	    --   https://wiki.contextgarden.net/Use_the_fonts_you_want
+ 	    --   https://wiki.contextgarden.net/Mtxrun#base and #fontsa
+-            TEXMFLOCAL      = "selfautoparent:../texmf-local",
 -            TEXMFFONTS      = "selfautoparent:texmf-fonts",
 -            TEXMFPROJECT    = "selfautoparent:texmf-project",
 +            TEXMFLOCAL      = "$TEXMFROOT/texmf-local",

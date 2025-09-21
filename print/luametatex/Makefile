@@ -1,11 +1,11 @@
 COMMENT =	TeX engine for ConTeXt
 
-V =		2.11.01
+V =		2.11.06
 PKGNAME =	luametatex-${V}
 
-GH_ACCOUNT =	contextgarden
-GH_PROJECT =	luametatex
-GH_TAGNAME =	v${V}
+# note: upstream forgot to tag this release it seems.
+DIST_TUPLE =	github contextgarden luametatex 76be136f8c8c4d75e53df3a17e036e81ba984525 .
+
 
 CATEGORIES =	print textproc
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 # https://github.com/contextgarden/luametatex/issues/6#issuecomment-1619143916
 MODULES =		devel/cmake
 
-WANTLIB +=		c m pthread
+WANTLIB +=		c m
 
 COMPILER =		base-clang ports-gcc base-gcc
 COMPILER_LANGS =	c

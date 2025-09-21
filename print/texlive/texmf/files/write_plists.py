@@ -10,7 +10,6 @@ import os
 import sys
 import re
 
-YEAR = 2024
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
@@ -23,14 +22,10 @@ INFO_RE = re.compile(r'^info/.*\.info')
 
 TOP_MATTER = {
     "-buildset": [
-        "@conflict texlive_texmf-minimal-<2024",
         # Scaffold a dir for ports wishing to install extra tex macros.
         "share/texmf-local/",
     ],
-    "-main": [
-        "@conflict texlive_texmf-full-<2024",
-        "@conflict texlive_texmf-buildset-<2024",
-    ],
+    "-main": [],
     "-context": [],
     "-full": [],
     "-docs": [],

@@ -1,0 +1,57 @@
+Fix luametatex crash with `context --make`.
+https://tug.org/pipermail/tldistro/2025q2/000526.html
+
+Index: source/lua/lmttexlib.c
+--- source/lua/lmttexlib.c.orig
++++ source/lua/lmttexlib.c
+@@ -1251,7 +1251,6 @@ static int texlib_error(lua_State *L)
+ 
+ static inline int texlib_aux_valid_register_index(lua_State *L, int slot, int cmd, int base, int max, int constant_cmd)
+ {
+-    int index = -1;
+     switch (lua_type(L, slot)) {
+         case LUA_TSTRING:
+             {
+@@ -1259,25 +1258,32 @@ static inline int texlib_aux_valid_register_index(lua_
+                 const char *str = lua_tolstring(L, 1, &len);
+                 int cs = tex_string_locate_only(str, len);
+                 if (eq_type(cs) == cmd) {
+-                    index = eq_value(cs) - base;
++                    return eq_value(cs) - base;
+                 } else if (eq_type(cs) == constant_cmd) {
+                     return 0xFFFF + cs; // way above max
++                } else { 
++                    return -1; 
+                 }
+             }
+             break;
+         case LUA_TNUMBER:
+-            index = lmt_tointeger(L, slot);
++            {
++                int index = lmt_tointeger(L, slot);
++                if (index >= 0 && index <= max) {
++                    return index;
++                } else { 
++                    index -= 0xFFFF;
++                    if (index > 0 && index < (eqtb_size + lmt_hash_state.hash_data.ptr + 1) && eq_type(index) == constant_cmd) {
++                        return index;
++                    } else {
++                        return -1;
++                    }
++                }
++            }
+             break;
+         default:
+             luaL_error(L, "string or a number expected");
+-            break;
+-    }
+-    if (index >= 0 && index <= max) {
+-        return index;
+-    } else if (index < (eqtb_size + lmt_hash_state.hash_data.ptr + 1) && eq_type(index) == constant_cmd) {
+-        return index;
+-    } else {
+-        return -1;
++            return -1;
+     }
+ }
+ 

@@ -1,7 +1,7 @@
 Index: texmf-dist/doc/man/man1/convertgls2bib.1
 --- texmf-dist/doc/man/man1/convertgls2bib.1.orig
 +++ texmf-dist/doc/man/man1/convertgls2bib.1
-@@ -60,6 +60,8 @@
+@@ -63,6 +63,8 @@
  .\" way too many mistakes in technical documents.
  .if n .ad l
  .nh
@@ -9,4 +9,4 @@ Index: texmf-dist/doc/man/man1/convertgls2bib.1
 +convertgls2bib \(en Glossary converter for Bib2gls
  .SH SYNOPSIS
  .IX Header "SYNOPSIS"
- \&\fBconvertgls2bib\fR [\fIoption\fR]+ \fIauxfile\fR
+ \&\fBconvertgls2bib\fR [\fIoption\fR]+ \fItexfile\fR \fIbibfile\fR

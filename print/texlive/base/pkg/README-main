@@ -9,24 +9,24 @@ There are a number of texmf trees in the OpenBSD packages:
 
 texmf-buildset:
   The smallest of the subsets. This is primarily for building OpenBSD
-  ports (approx 275MB).
+  ports (approx 190MB).
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users who do not need many
-  extra macros or ConTeXt (approx 330MB).
+  extra macros or ConTeXt (approx 331MB).
 
 texmf-full:
   Extra macros (approx 1.3GB).
 
 texmf-context:
-  Macros for the conTeXt typesetter (approx 15MB).
+  Macros for the conTeXt typesetter (approx 16MB).
 
   This was separated because conTeXt maintains it's own hashes separate
   from that of libkpse. As 99% of users don't use this, these hashes are
   generated only when the conTeXt macros are installed.
 
 texmf-docs:
-  Documentation (approx 1.5GB).
+  Documentation (approx 1.7GB).
 
   To take load off the OpenBSD mirrors this is only the documentation
   for the texmf-minimal and texmf-buildset trees. This should include

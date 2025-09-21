@@ -2,29 +2,32 @@ COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
-DISTNAME =		texlive-${DIST_V}-source
+# Note that there were several problems with the release tarball this year.
+# Upstream made an svn tag containing the fixes and I've rolled my own tarball
+# from that.
+#
+# https://tug.org/pipermail/tldistro/2025q1/000512.html
+# https://tug.org/pipermail/tldistro/2025q1/000517.html
+DISTNAME =		texlive-${V}.2-source
 PKGNAME =		texlive_base-${V}
-WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-DISTFILES.mk =		mktexlsr-${V}.gz
+DISTFILES =		texlive-${DIST_V}-extra${EXTRACT_SUFX}
+DISTFILES.zoo =		${DISTNAME}${EXTRACT_SUFX} \
+			mktexlsr-${V}.gz
 
-SITES.mk =		https://theunixzoo.co.uk/distfiles/
+SITES.zoo =		https://theunixzoo.co.uk/distfiles/
 
-SHARED_LIBS =		kpathsea	9.0 # 9.2
-SHARED_LIBS +=		ptexenc		6.1 # 5.6
+SHARED_LIBS =		kpathsea	9.1 # 10.1
+SHARED_LIBS +=		ptexenc		6.2 # 6.1
 SHARED_LIBS +=		synctex		3.1 # 2.0
 SHARED_LIBS +=		texlua53        0.1 # 8.6
 
-WANTLIB-main += ${COMPILER_LIBCXX} Lerc ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB-main += ${COMPILER_LIBCXX} ICE Lerc SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB-main += Xmu Xpm Xrender Xt c cairo expat fontconfig freetype
 WANTLIB-main += gd glib-2.0 graphite2 harfbuzz iconv icudata icui18n
 WANTLIB-main += icuio icuuc intl jpeg kpathsea lzma m paper pcre2-8
@@ -57,6 +60,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre2 \
 			print/libpaper \
 			archivers/zziplib \
+			graphics/lerc \
 			${BASE_PKGPATH},-mktexlsr
 
 LIB_DEPENDS-mktexlsr =

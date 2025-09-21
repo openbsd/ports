@@ -1,0 +1,11 @@
+https://github.com/pdfjam/pdfjam/issues/99
+
+Index: texmf-dist/scripts/pdfjam/pdfjam
+--- texmf-dist/scripts/pdfjam/pdfjam.orig
++++ texmf-dist/scripts/pdfjam/pdfjam
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!${LOCALBASE}/bin/bash
+ version=4.1
+ #########################################################################
+ ##                                                                     ##

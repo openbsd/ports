@@ -3,7 +3,7 @@ selfautoparent doesn't work, so hard-code the paths.
 Index: texmf-dist/scripts/context/lua/mtxrun.lua
 --- texmf-dist/scripts/context/lua/mtxrun.lua.orig
 +++ texmf-dist/scripts/context/lua/mtxrun.lua
-@@ -22471,9 +22471,10 @@ do
+@@ -22505,9 +22505,10 @@ do
   local texroot=environment.texroot
   resolvers.luacnfspec={
    "home:texmf/web2c",

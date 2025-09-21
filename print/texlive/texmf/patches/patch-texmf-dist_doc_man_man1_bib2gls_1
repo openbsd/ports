@@ -1,7 +1,7 @@
 Index: texmf-dist/doc/man/man1/bib2gls.1
 --- texmf-dist/doc/man/man1/bib2gls.1.orig
 +++ texmf-dist/doc/man/man1/bib2gls.1
-@@ -60,6 +60,8 @@
+@@ -63,6 +63,8 @@
  .\" way too many mistakes in technical documents.
  .if n .ad l
  .nh

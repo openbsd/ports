@@ -4,8 +4,6 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
-REVISION =		0
-
 # Please do not directly edit the PLIST files. They are auto-generated.
 #
 # If you move things out of another texmf into the buildset, don't forget to:
@@ -47,6 +45,9 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
+# While pdfjam needs bash, depend upon bash:
+RUN_DEPENDS-full +=	shells/bash
+
 # XXX: Can we make context be further towards the top dep chain? Can it depend
 # on only the buildset?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
@@ -62,7 +63,7 @@ SUBST_VARS +=		RUBY
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 
 # Substitute correct interpreter paths into scripts and deal with linked
-# manuals.  Some interpreter paths are done automatically by MODULES.
+# manuals. Some interpreter paths are done automatically by MODULES.
 pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap
 	@# in different versions.
@@ -129,12 +130,12 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make --all
-	#   mtxrun  --script fonts --reload
+	#   mtxrun --script fonts --reload
 	#
 	# Then you can tar them up and host them as the pregen tarball.
 	#
-	# (Don't forget to remove ls-R files, log files and the luametatex cache
-	# before making the tarball).
+	# (Don't forget to remove ls-R files, log files and
+	# luametatex-cache/context/<hash>/trees before making the tarball).
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
@@ -174,6 +175,9 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/scripts/context/lua/mtxrun.lua
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/tex/context/base/mkiv/data-res.lua
+	# pdfjam doesn't work under /bin/sh any more:
+	# https://github.com/pdfjam/pdfjam/issues/99
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/scripts/pdfjam/pdfjam
 
 
 # The following targets are for development only and require Python3.

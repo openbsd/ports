@@ -1,0 +1,13 @@
+Index: texmf-dist/doc/man/man1/latex-git-log.1
+--- texmf-dist/doc/man/man1/latex-git-log.1.orig
++++ texmf-dist/doc/man/man1/latex-git-log.1
+@@ -60,7 +60,8 @@
+ .\" way too many mistakes in technical documents.
+ .if n .ad l
+ .nh
+-latex-git-log \- Generates the version history of a git project as LaTeX source code.
++.SH NAME
++latex-git-log \(en Generates the version history of a git project as LaTeX source code.
+ .SH Synopsis
+ .IX Header "Synopsis"
+ latex-git-log [options] [file] ...

@@ -1,0 +1,19 @@
+Index: texmf-dist/doc/man/man1/l3sys-query.1
+--- texmf-dist/doc/man/man1/l3sys-query.1.orig
++++ texmf-dist/doc/man/man1/l3sys-query.1
+@@ -1,7 +1,7 @@
+ .TH L3SYS-QUERY 1 "2024-04-08" "LaTeX"
+ 
+ .SH NAME
+-l3sys-query
++l3sys-query \(en obtain system info via shell escape to Lua
+ 
+ .SH SYNOPSIS
+ l3sys-query <cmd> [<options>] [<args>]
+@@ -40,4 +40,4 @@ Repository : https://github.com/latex3/l3sys-query
+ Bug tracker: https://github.com/latex3/l3sys-query/issues
+ 
+ .SH AUTHORS
+-Copyright (C) 2024 The LaTeX Project
+\ No newline at end of file
++Copyright (C) 2024 The LaTeX Project

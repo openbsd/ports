@@ -45,7 +45,7 @@ tl-symlinks-full:
 		ln -s luatex dvilualatex-dev && \
 		ln -s pdftex latex-dev && \
 		ln -s luahbtex lualatex-dev && \
-		ln -s luatex optex && \
+		ln -s luahbtex optex && \
 		ln -s pdftex pdflatex-dev && \
 		ln -s xetex xelatex-dev
 
