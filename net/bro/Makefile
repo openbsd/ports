@@ -1,5 +1,3 @@
-BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
-
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.1
