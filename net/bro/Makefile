@@ -66,8 +66,6 @@ MODCMAKE_LDFLAGS +=	"-latomic"
 WANTLIB +=		atomic
 .endif
 
-MODCMAKE_USE_SHARED_LIBS = No
-
 MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib -lcares \
 	   		-Wl,-rpath ${LOCALBASE}/lib
 CXXFLAGS +=		-I${LOCALBASE}/include
@@ -97,10 +95,6 @@ CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
 # XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
 # Need Flex version >= 2.6, found 2.5.39
 CONFIGURE_ARGS +=	-DDISABLE_SPICY=TRUE
-
-.for _lib _ver in ${SHARED_LIBS}
-CONFIGURE_ARGS +=	-DLIB${_lib}_VERSION=${_ver}
-.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
