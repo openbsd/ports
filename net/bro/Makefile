@@ -3,7 +3,7 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
@@ -37,7 +37,8 @@ MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/bin/zeekctl.in \
 			auxil/zeekctl/auxil/trace-summary/trace-summary
 
-BUILD_DEPENDS =		devel/bison \
+BUILD_DEPENDS =		databases/libhiredis \
+			devel/bison \
 			devel/swig
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
