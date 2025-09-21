@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1293,7 +1293,7 @@ if (INSTALL_ZKG)
+     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake_templates/zkg-config.in
+                    ${CMAKE_CURRENT_BINARY_DIR}/zkg-config @ONLY)
+ 
+-    install(DIRECTORY DESTINATION var/lib/zkg)
++    install(DIRECTORY DESTINATION var/db/zkg)
+     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/zkg-config DESTINATION ${ZEEK_ZKG_CONFIG_DIR}
+             RENAME config)
+ endif ()
