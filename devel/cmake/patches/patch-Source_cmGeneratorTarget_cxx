@@ -8,7 +8,7 @@ Index: Source/cmGeneratorTarget.cxx
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION
 +  // environment variable. Needed for OpenBSD ports system.
-+  const auto isUseSahredLibs = [&]() -> bool {
++  const auto isUseSharedLibs = [&]() -> bool {
 +    std::string use_slibs;
 +    return  ((cmSystemTools::GetEnv("MODCMAKE_USE_SHARED_LIBS", use_slibs) &&
 +              use_slibs == std::string("yes")));
@@ -22,7 +22,7 @@ Index: Source/cmGeneratorTarget.cxx
 +    return baseName;
 +  };
 +
-+  if (isUseSahredLibs() && this->GetType() == cmStateEnums::SHARED_LIBRARY) {
++  if (isUseSharedLibs() && this->GetType() == cmStateEnums::SHARED_LIBRARY) {
 +    std::string lib_version;
 +    const std::string lib_name = "LIB" + getLibName(targetNames.Base) + "_VERSION";
 +    if (cmSystemTools::GetEnv(lib_name, lib_version)) {
