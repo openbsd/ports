@@ -6,8 +6,7 @@ COMMENT =		Python package and project manager
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
-MODPY_DISTV =		0.8.17
-REVISION =		0
+MODPY_DISTV =		0.8.19
 
 ASYNC_ZIP =		285e48742b74ab109887d62e1ae79e7c15fd4878
 PUBGRUB =		06ec5a5f59ffaeb6cf5079c6cb184467da06c9db
@@ -34,9 +33,10 @@ BUILD_DEPENDS =		devel/maturin \
 			devel/py-installer
 
 LIB_DEPENDS +=		archivers/bzip2 \
+			archivers/xz \
 			archivers/zstd
 
-WANTLIB =		${MODCARGO_WANTLIB} bz2 m zstd
+WANTLIB =		${MODCARGO_WANTLIB} bz2 m zstd lzma
 
 MODULES =		devel/cargo \
 			lang/python
