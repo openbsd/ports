@@ -1,7 +1,38 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17654,7 +17654,7 @@ fi
+@@ -12735,8 +12735,8 @@ QMAKE_EXTRA_TARGETS += percent
+ QMAKE_PROJECT_DEPTH = 0
+ EOF1
+ 	    $QT_QMAKE $lyx_test_qt_pro -o $lyx_test_qt_mak 1>/dev/null 2>&1
+-	    QT_CORE_INCLUDES=`cd $lyx_test_qt_dir; make -s -f $lyx_test_qt_mak INCPATH | sed 's/-I\. //g'`
+-	    qt_corelibs=`cd $lyx_test_qt_dir; make -s -f $lyx_test_qt_mak LIBS`
++	    QT_CORE_INCLUDES=`cd $lyx_test_qt_dir; gmake -s -f $lyx_test_qt_mak INCPATH | sed 's/-I\. //g'`
++	    qt_corelibs=`cd $lyx_test_qt_dir; gmake -s -f $lyx_test_qt_mak LIBS`
+ 	    QT_CORE_LDFLAGS=`echo $qt_corelibs | tr ' ' '\n' | grep -e "^-L" | tr '\n' ' '`
+ 	    if test -z "$QT_CORE_LDFLAGS"; then
+ 		QT_CORE_LDFLAGS="-L`$QT_QMAKE -query QT_INSTALL_LIBS`"
+@@ -12766,8 +12766,8 @@ QMAKE_EXTRA_TARGETS += percent
+ QMAKE_PROJECT_DEPTH = 0
+ EOF2
+ 		$QT_QMAKE $lyx_test_qt_pro -o $lyx_test_qt_mak 1>/dev/null 2>&1
+-		QT_INCLUDES=`cd $lyx_test_qt_dir; make -s -f $lyx_test_qt_mak INCPATH | sed 's/-I\. //g'`
+-		qt_guilibs=`cd $lyx_test_qt_dir; make -s -f $lyx_test_qt_mak LIBS`
++		QT_INCLUDES=`cd $lyx_test_qt_dir; gmake -s -f $lyx_test_qt_mak INCPATH | sed 's/-I\. //g'`
++		qt_guilibs=`cd $lyx_test_qt_dir; gmake -s -f $lyx_test_qt_mak LIBS`
+ 		QT_LDFLAGS=`echo $qt_guilibs | tr ' ' '\n' | grep -e "^-L" | tr '\n' ' '`
+ 		if test -z "$QT_LDFLAGS"; then
+ 		    QT_LDFLAGS="-L`$QT_QMAKE -query QT_INSTALL_LIBS`"
+@@ -12780,7 +12780,7 @@ EOF2
+ 		    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+ 		else
+-		    QT_MISSING=`cd $lyx_test_qt_dir; make -s -f $lyx_test_qt_mak EXPORT_MISSING | sed 's/^ *//'`
++		    QT_MISSING=`cd $lyx_test_qt_dir; gmake -s -f $lyx_test_qt_mak EXPORT_MISSING | sed 's/^ *//'`
+ 		    if test -n "$QT_MISSING"; then
+ 			    as_fn_error $? "Qt6 module(s) $QT_MISSING not found." "$LINENO" 5
+ 		    fi
+@@ -17830,7 +17830,7 @@ fi
  lyx_win_res=false;
  case ${host} in
      *mingw*|*cygwin*) lyx_win_res=true;;

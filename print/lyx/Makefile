@@ -1,6 +1,6 @@
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.4.3
+DISTNAME=	lyx-2.4.4
 PORTROACH=	skipv:2.4.x
 
 CATEGORIES=	print editors
@@ -14,17 +14,15 @@ SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.4.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.4.x/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.4.x/
 
-WANTLIB+= ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Svg
-WANTLIB+= Qt5Widgets Qt5X11Extras aspell c enchant-2 execinfo
-WANTLIB+= hunspell-1.7 iconv m magic xcb z
-
-COMPILER=	base-clang ports-gcc
+WANTLIB+= ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui Qt6Svg
+WANTLIB+= Qt6SvgWidgets Qt6Widgets aspell c enchant-2 execinfo
+WANTLIB+= hunspell-1.7 iconv m magic xcb xkbcommon z
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python \
-		x11/qt5
+		x11/qt6
 
 BUILD_DEPENDS=	devel/boost
 TEST_DEPENDS=	devel/boost
@@ -38,8 +36,7 @@ LIB_DEPENDS=	devel/libmagic \
 		textproc/enchant2 \
 		textproc/aspell/core \
 		textproc/hunspell \
-		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras
+		x11/qt6/qtsvg
 
 USE_GMAKE=	Yes
 
@@ -47,7 +44,7 @@ CONFIGURE_STYLE=		gnu
 
 CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include" \
-		--enable-qt5 \
+		--enable-qt6 \
 		--without-included-boost \
 		--with-packaging=posix
 
