@@ -51,12 +51,6 @@ RUN_DEPENDS =		devel/py-gitpython \
 			net/libmaxminddb,-city \
 			net/libmaxminddb,-db
 
-# XXX the bundled sqlite seems to pick up ICU4C if present and will error out if
-# it gets junked during the build; I could not find a proper way to disable it
-# make: don't know how to make /usr/local/include/unicode/bytestream.h
-# (prerequisite of: src/CMakeFiles/broker.dir/3rdparty/sqlite3.c.o)
-BUILD_DEPENDS +=	textproc/icu4c
-
 # share/zeekctl/scripts
 BUILD_DEPENDS +=	shells/bash
 RUN_DEPENDS +=		misc/findutils \
