@@ -63,6 +63,7 @@ intellij/lib/modules/intellij.ide.startup.importSettings.jar
 intellij/lib/modules/intellij.idea.customization.backend.jar
 intellij/lib/modules/intellij.idea.customization.base.jar
 intellij/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
+intellij/lib/modules/intellij.libraries.coil.jar
 intellij/lib/modules/intellij.libraries.compose.foundation.desktop.jar
 intellij/lib/modules/intellij.libraries.kotlinx.io.jar
 intellij/lib/modules/intellij.libraries.ktor.client.cio.jar
@@ -138,7 +139,6 @@ intellij/lib/modules/intellij.platform.recentFiles.jar
 intellij/lib/modules/intellij.platform.registry.cloud.jar
 intellij/lib/modules/intellij.platform.rpc.backend.jar
 intellij/lib/modules/intellij.platform.scopes.backend.jar
-intellij/lib/modules/intellij.platform.scopes.jar
 intellij/lib/modules/intellij.platform.searchEverywhere.backend.jar
 intellij/lib/modules/intellij.platform.searchEverywhere.frontend.jar
 intellij/lib/modules/intellij.platform.searchEverywhere.jar
