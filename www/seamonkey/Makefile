@@ -31,8 +31,7 @@ EXTRACT_ONLY =	${DISTFILES}
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.20
-REVISION-lightning =	2
+PKGNAME-lightning =	lightning-seamonkey-5.8.21
 EPOCH-lightning =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
