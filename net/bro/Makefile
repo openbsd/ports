@@ -76,6 +76,8 @@ CXXFLAGS +=		-I${LOCALBASE}/include
 .for _macro in IN6ADDRSZ INT16SZ
 CFLAGS +=		-DNS_${_macro}=${_macro}
 .endfor
+# src/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXDNSLookup.cpp
+CXXFLAGS +=		-DAI_NUMERICSERV=NI_NUMERICSERV
 
 # XXX Some files don't see PRIu64 et al. despite the right headers being there
 CXXFLAGS +=		-include cinttypes
