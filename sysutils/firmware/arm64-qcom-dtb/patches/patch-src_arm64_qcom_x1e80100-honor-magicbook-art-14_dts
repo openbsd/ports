@@ -1,11 +1,12 @@
 Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 --- src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts.orig
 +++ src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
-@@ -0,0 +1,1208 @@
+@@ -0,0 +1,1517 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 + * Copyright (c) 2025 Kirill A. Korinsky <kirill@korins.ky>
++ * Copyright (c) 2025 Valentin Manea <valentin.manea@mrs.ro>
 + */
 +
 +/dts-v1/;
@@ -26,6 +27,7 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +	aliases {
 +		serial0 = &uart21;
++		serial1 = &uart14;
 +	};
 +
 +	wcd938x: audio-codec {
@@ -69,6 +71,19 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +		};
 +	};
 +
++	hdmi-connector {
++		compatible = "hdmi-connector";
++		type = "a";
++		pinctrl-0 = <&hdmi_hpd_default>;
++		pinctrl-names = "default";
++
++		port {
++			hdmi_con: endpoint {
++				remote-endpoint = <&usb_1_ss2_qmpphy_out>;
++			};
++		};
++	};
++
 +	pmic-glink {
 +		compatible = "qcom,x1e80100-pmic-glink",
 +			     "qcom,sm8550-pmic-glink",
@@ -105,6 +120,14 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +						remote-endpoint = <&usb_1_ss0_qmpphy_out>;
 +					};
 +				};
++
++				port@2 {
++					reg = <2>;
++
++					pmic_glink_ss0_sbu: endpoint {
++						remote-endpoint = <&usb_1_ss0_sbu_mux>;
++					};
++				};
 +			};
 +		};
 +
@@ -134,30 +157,16 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +						remote-endpoint = <&usb_1_ss1_qmpphy_out>;
 +					};
 +				};
-+			};
-+		};
 +
-+		/* Magnetic camera */
-+		connector@2 {
-+			compatible = "usb-c-connector";
-+			reg = <2>;
-+			power-role = "dual";
-+			data-role = "dual";
++				port@2 {
++					reg = <2>;
 +
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					pmic_glink_usb_2_hs_in: endpoint {
-+						remote-endpoint = <&usb_2_dwc3_hs>;
++					pmic_glink_ss1_sbu: endpoint {
++						remote-endpoint = <&usb_1_ss1_sbu_mux>;
 +					};
 +				};
 +			};
 +		};
-+
 +	};
 +
 +	reserved-memory {
@@ -270,6 +279,7 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +		pinctrl-0 = <&edp_reg_en>;
 +		pinctrl-names = "default";
 +
++		regulator-always-on;
 +		regulator-boot-on;
 +	};
 +
@@ -299,6 +309,138 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +		regulator-always-on;
 +		regulator-boot-on;
++	};
++
++	/*
++	 * TODO: These two regulators are actually part of the removable M.2
++	 * card and not the CRD mainboard. Need to describe this differently.
++	 * Functionally it works correctly, because all we need to do is to
++	 * turn on the actual 3.3V supply above.
++	 */
++	vreg_wcn_0p95: regulator-wcn-0p95 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_WCN_0P95";
++		regulator-min-microvolt = <950000>;
++		regulator-max-microvolt = <950000>;
++
++		vin-supply = <&vreg_wcn_3p3>;
++	};
++
++	vreg_wcn_1p9: regulator-wcn-1p9 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_WCN_1P9";
++		regulator-min-microvolt = <1900000>;
++		regulator-max-microvolt = <1900000>;
++
++		vin-supply = <&vreg_wcn_3p3>;
++	};
++
++	vreg_wcn_3p3: regulator-wcn-3p3 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_WCN_3P3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&tlmm 214 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&wcn_sw_en>;
++		pinctrl-names = "default";
++
++		regulator-boot-on;
++	};
++
++	usb-1-ss0-sbu-mux {
++		compatible = "onnn,fsusb42", "gpio-sbu-mux";
++
++		enable-gpios = <&tlmm 168 GPIO_ACTIVE_LOW>;
++		select-gpios = <&tlmm 167 GPIO_ACTIVE_HIGH>;
++
++		pinctrl-0 = <&usb_1_ss0_sbu_default>;
++		pinctrl-names = "default";
++
++		mode-switch;
++		orientation-switch;
++
++		port {
++			usb_1_ss0_sbu_mux: endpoint {
++				remote-endpoint = <&pmic_glink_ss0_sbu>;
++			};
++		};
++	};
++
++	usb-1-ss1-sbu-mux {
++		compatible = "onnn,fsusb42", "gpio-sbu-mux";
++
++		enable-gpios = <&tlmm 179 GPIO_ACTIVE_LOW>;
++		select-gpios = <&tlmm 178 GPIO_ACTIVE_HIGH>;
++
++		pinctrl-0 = <&usb_1_ss1_sbu_default>;
++		pinctrl-names = "default";
++
++		mode-switch;
++		orientation-switch;
++
++		port {
++			usb_1_ss1_sbu_mux: endpoint {
++				remote-endpoint = <&pmic_glink_ss1_sbu>;
++			};
++		};
++	};
++
++	wcn7850-pmu {
++		compatible = "qcom,wcn7850-pmu";
++
++		wlan-enable-gpios = <&tlmm 117 GPIO_ACTIVE_HIGH>;
++		bt-enable-gpios = <&tlmm 116 GPIO_ACTIVE_HIGH>;
++
++		pinctrl-0 = <&wcn_wlan_bt_en>;
++		pinctrl-names = "default";
++
++		regulators {
++			vreg_pmu_rfa_cmn: ldo0 {
++				regulator-name = "vreg_pmu_rfa_cmn";
++			};
++
++			vreg_pmu_aon_0p59: ldo1 {
++				regulator-name = "vreg_pmu_aon_0p59";
++			};
++
++			vreg_pmu_wlcx_0p8: ldo2 {
++				regulator-name = "vreg_pmu_wlcx_0p8";
++			};
++
++			vreg_pmu_wlmx_0p85: ldo3 {
++				regulator-name = "vreg_pmu_wlmx_0p85";
++			};
++
++			vreg_pmu_btcmx_0p85: ldo4 {
++				regulator-name = "vreg_pmu_btcmx_0p85";
++			};
++
++			vreg_pmu_rfa_0p8: ldo5 {
++				regulator-name = "vreg_pmu_rfa_0p8";
++			};
++
++			vreg_pmu_rfa_1p2: ldo6 {
++				regulator-name = "vreg_pmu_rfa_1p2";
++			};
++
++			vreg_pmu_rfa_1p8: ldo7 {
++				regulator-name = "vreg_pmu_rfa_1p8";
++			};
++
++			vreg_pmu_pcie_0p9: ldo8 {
++				regulator-name = "vreg_pmu_pcie_0p9";
++			};
++
++			vreg_pmu_pcie_1p8: ldo9 {
++				regulator-name = "vreg_pmu_pcie_1p8";
++			};
++		};
 +	};
 +};
 +
@@ -400,6 +542,7 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +			regulator-min-microvolt = <1200000>;
 +			regulator-max-microvolt = <1200000>;
 +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++			regulator-always-on;
 +		};
 +
 +		vreg_l13b_3p0: ldo13 {
@@ -421,6 +564,7 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +			regulator-min-microvolt = <1800000>;
 +			regulator-max-microvolt = <1800000>;
 +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++			regulator-always-on;
 +		};
 +
 +		vreg_l16b_2p9: ldo16 {
@@ -638,8 +782,8 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +		vreg_l2j_1p2: ldo2 {
 +			regulator-name = "vreg_l2j_1p2";
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
++			regulator-min-microvolt = <1256000>;
++			regulator-max-microvolt = <1256000>;
 +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
 +		};
 +
@@ -650,6 +794,11 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
 +		};
 +	};
++};
++
++&dispcc {
++        /* HACK: disable until a panel driver is ready to retain simplefb */
++        status = "okay";
 +};
 +
 +&gpu {
@@ -789,20 +938,47 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	status = "okay";
 +};
 +
++&mdss_dp0 {
++	status = "okay";
++};
++
++&mdss_dp0_out {
++	data-lanes = <0 1>;
++	link-frequencies = /bits/ 64 <1620000000 2700000000 5400000000 8100000000>;
++};
++
++&mdss_dp1 {
++	status = "okay";
++};
++
++&mdss_dp1_out {
++	data-lanes = <0 1>;
++	link-frequencies = /bits/ 64 <1620000000 2700000000 5400000000 8100000000>;
++};
++
++&mdss_dp2 {
++	status = "okay";
++};
++
++&mdss_dp2_out {
++	data-lanes = <0 1 2 3>;
++};
++
 +&mdss_dp3 {
-+	compatible = "qcom,x1e80100-dp";
 +	/delete-property/ #sound-dai-cells;
++	compatible = "qcom,x1e80100-dp";
 +
 +	status = "okay";
 +
 +	aux-bus {
 +		panel {
-+			compatible = "samsung,atna45af01", "samsung,atna33xc20";
-+			enable-gpios = <&pmc8380_3_gpios 4 GPIO_ACTIVE_HIGH>;
++			compatible = "edp-panel";
++			//compatible = "samsung,atna45af01", "samsung,atna33xc20";
++			//enable-gpios = <&pmc8380_3_gpios 4 GPIO_ACTIVE_HIGH>;
 +			power-supply = <&vreg_edp_3p3>;
 +
-+			pinctrl-0 = <&edp_bl_en>;
-+			pinctrl-names = "default";
++			//pinctrl-0 = <&edp_bl_en>;
++			//pinctrl-names = "default";
 +
 +			port {
 +				edp_panel_in: endpoint {
@@ -847,6 +1023,15 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	vdda-pll-supply = <&vreg_l3e_1p2>;
 +
 +	status = "okay";
++};
++
++&pcie4_port0 {
++	wifi@0 {
++		compatible = "pci17cb,1107";
++		reg = <0x10000 0x0 0x0 0x0 0x0>;
++
++		qcom,ath12k-calibration-variant = "LES790";
++	};
 +};
 +
 +&pm8550ve_8_gpios {
@@ -896,25 +1081,6 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +			"qcom/x1e80100/HONOR/MRO-XXX/cdsp_dtbs.elf";
 +
 +	status = "okay";
-+};
-+
-+&smb2360_0_eusb2_repeater {
-+	vdd18-supply = <&vreg_l3d_1p8>;
-+	vdd3-supply = <&vreg_l2b_3p0>;
-+};
-+
-+&smb2360_1_eusb2_repeater {
-+	vdd18-supply = <&vreg_l3d_1p8>;
-+	vdd3-supply = <&vreg_l14b_3p0>;
-+};
-+
-+&smb2360_2 {
-+	status = "okay";
-+};
-+
-+&smb2360_2_eusb2_repeater {
-+	vdd18-supply = <&vreg_l3d_1p8>;
-+	vdd3-supply = <&vreg_l8b_3p0>;
 +};
 +
 +&swr0 {
@@ -1003,13 +1169,30 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +
 +&tlmm {
 +	gpio-reserved-ranges = <34 2>, /* Unused */
-+			       <44 4>, /* SPI (TPM) */
-+			       <238 1>; /* UFS Reset */
++			       <44 4>; /* SPI (TPM) */
 +
 +	edp_reg_en: edp-reg-en-state {
 +		pins = "gpio70";
 +		function = "gpio";
 +		drive-strength = <16>;
++		bias-disable;
++	};
++
++	hall_int_n_default: hall-int-n-state {
++		pins = "gpio92";
++		function = "gpio";
++		bias-disable;
++	};
++
++	kybd_default: kybd-default-state {
++		pins = "gpio67";
++		function = "gpio";
++		bias-disable;
++	};
++
++	hdmi_hpd_default: hdmi-hpd-default-state {
++		pins = "gpio126";
++		function = "usb2_dp";
 +		bias-disable;
 +	};
 +
@@ -1027,18 +1210,6 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +		drive-strength = <2>;
 +		bias-disable;
 +		output-low;
-+	};
-+
-+	hall_int_n_default: hall-int-n-state {
-+		pins = "gpio92";
-+		function = "gpio";
-+		bias-disable;
-+	};
-+
-+	kybd_default: kybd-default-state {
-+		pins = "gpio67";
-+		function = "gpio";
-+		bias-disable;
 +	};
 +
 +	pcie4_default: pcie4-default-state {
@@ -1085,6 +1256,93 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +		};
 +	};
 +
++	usb_1_ss0_sbu_default: usb-1-ss0-sbu-state {
++		mode-pins {
++			pins = "gpio166";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++			output-high;
++		};
++
++		oe-n-pins {
++			pins = "gpio168";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++
++		sel-pins {
++			pins = "gpio167";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++
++	};
++
++	usb_1_ss1_sbu_default: usb-1-ss1-sbu-state {
++		mode-pins {
++			pins = "gpio177";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++			output-high;
++		};
++
++		oe-n-pins {
++			pins = "gpio179";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++
++		sel-pins {
++			pins = "gpio178";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++	};
++
++	usb_1_ss2_sbu_default: usb-1-ss2-sbu-state {
++		mode-pins {
++			pins = "gpio169";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++			output-high;
++		};
++
++		oe-n-pins {
++			pins = "gpio171";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++
++		sel-pins {
++			pins = "gpio170";
++			function = "gpio";
++			bias-disable;
++			drive-strength = <2>;
++		};
++	};
++
++	wcn_sw_en: wcn-sw-en-state {
++		pins = "gpio214";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
++	wcn_wlan_bt_en: wcn-wlan-bt-en-state {
++		pins = "gpio116", "gpio117";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
 +	wcd_default: wcd-reset-n-active-state {
 +		pins = "gpio191";
 +		function = "gpio";
@@ -1097,19 +1355,38 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +&ufs_mem_hc {
 +	status = "okay";
 +
-+	vcc-supply = <&vreg_l9b_2p9>;
++	reset-gpios = <&tlmm 238 GPIO_ACTIVE_LOW>;
++	vcc-supply = <&vreg_l17b_2p5>;
 +	vcc-max-microamp = <600000>;
-+	vccq2-supply = <&vreg_l4b_1p8>;
-+	vccq2-max-microamp = <600000>;
++
++	vccq-supply = <&vreg_l2i_1p2>;
++	vccq-max-microamp = <600000>;
 +};
 +
 +&ufs_mem_phy {
 +	status = "okay";
 +
-+	vdda-phy-supply = <&vreg_l2c_0p8>;
-+	vdda-phy-max-microamp = <62900>;
-+	vdda-pll-supply = <&vreg_l12b_1p2>;
-+	vdda-pll-max-microamp = <18300>;
++	//vdda-phy-supply = <&vreg_l2c_0p8>;
++	vdda-phy-supply = <&vreg_l3i_0p8>;
++	//vdda-pll-supply = <&vreg_l12b_1p2>;
++	vdda-pll-supply = <&vreg_l3e_1p2>;
++};
++
++&uart14 {
++	status = "okay";
++
++	bluetooth {
++		compatible = "qcom,wcn7850-bt";
++		max-speed = <3200000>;
++
++		vddaon-supply = <&vreg_pmu_aon_0p59>;
++		vddwlcx-supply = <&vreg_pmu_wlcx_0p8>;
++		vddwlmx-supply = <&vreg_pmu_wlmx_0p85>;
++		vddrfacmn-supply = <&vreg_pmu_rfa_cmn>;
++		vddrfa0p8-supply = <&vreg_pmu_rfa_0p8>;
++		vddrfa1p2-supply = <&vreg_pmu_rfa_1p2>;
++		vddrfa1p8-supply = <&vreg_pmu_rfa_1p8>;
++	};
 +};
 +
 +&uart21 {
@@ -1117,24 +1394,29 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	status = "okay";
 +};
 +
++/* usb1 covers left side typec ports */
++
++/* back(towards the display) typec port */
++&usb_1_ss0 {
++	status = "okay";
++};
++
 +&usb_1_ss0_hsphy {
 +	vdd-supply = <&vreg_l3j_0p8>;
 +	vdda12-supply = <&vreg_l2j_1p2>;
-+
-+	phys = <&smb2360_0_eusb2_repeater>;
 +
 +	status = "okay";
 +};
 +
 +&usb_1_ss0_qmpphy {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
++	vdda-phy-supply = <&vreg_l2j_1p2>;
 +	vdda-pll-supply = <&vreg_l1j_0p8>;
 +
 +	status = "okay";
 +};
 +
-+&usb_1_ss0 {
-+	status = "okay";
++&usb_1_ss0_dwc3 {
++	dr_mode = "host";
 +};
 +
 +&usb_1_ss0_dwc3_hs {
@@ -1145,24 +1427,27 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	remote-endpoint = <&pmic_glink_ss0_ss_in>;
 +};
 +
++/* front typec port */
++&usb_1_ss1 {
++	status = "okay";
++};
++
 +&usb_1_ss1_hsphy {
 +	vdd-supply = <&vreg_l3j_0p8>;
 +	vdda12-supply = <&vreg_l2j_1p2>;
-+
-+	phys = <&smb2360_1_eusb2_repeater>;
 +
 +	status = "okay";
 +};
 +
 +&usb_1_ss1_qmpphy {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
++	vdda-phy-supply = <&vreg_l2j_1p2>;
 +	vdda-pll-supply = <&vreg_l2d_0p9>;
 +
 +	status = "okay";
 +};
 +
-+&usb_1_ss1 {
-+	status = "okay";
++&usb_1_ss1_dwc3 {
++	dr_mode = "host";
 +};
 +
 +&usb_1_ss1_dwc3_hs {
@@ -1173,21 +1458,33 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	remote-endpoint = <&pmic_glink_ss1_ss_in>;
 +};
 +
-+&usb_2_hsphy {
-+	vdd-supply = <&vreg_l3j_0p8>;
-+	vdda12-supply = <&vreg_l2j_1p2>;
++/* DP-HDMI bridge connected here? */
++&usb_1_ss2_qmpphy {
++	vdda-phy-supply = <&vreg_l2j_1p2>;
++	vdda-pll-supply = <&vreg_l2d_0p9>;
 +
-+	phys = <&eusb5_repeater>;
++	qcom,combo-initial-mode = "dp";
++
++	/delete-property/ mode-switch;
++	/delete-property/ orientation-switch;
 +
 +	status = "okay";
 +};
 +
-+&usb_2_dwc3_hs {
-+	remote-endpoint = <&pmic_glink_usb_2_hs_in>;
++&usb_1_ss2_qmpphy_out {
++	remote-endpoint = <&hdmi_con>;
 +};
 +
-+&usb_2 {
++
++/* MP0 goes to the USB-A port(USB3) and FPC */
++&usb_mp {
 +	status = "okay";
++};
++
++&usb_mp_dwc3 {
++	/* Limit to single port */
++	phys = <&usb_mp_hsphy0>, <&usb_mp_qmpphy0>;
++	phy-names = "usb2-0", "usb3-0";
 +};
 +
 +&usb_mp_hsphy0 {
@@ -1206,7 +1503,19 @@ Index: src/arm64/qcom/x1e80100-honor-magicbook-art-14.dts
 +	status = "okay";
 +};
 +
-+/* MP0 goes to the USB-A port */
-+&usb_mp {
++/* usb_2 is for camera, USB port on top of the screen */
++&usb_2 {
 +	status = "okay";
 +};
++
++&usb_2_hsphy {
++	vdd-supply = <&vreg_l3j_0p8>;
++	vdda12-supply = <&vreg_l2j_1p2>;
++	phys = <&eusb5_repeater>;
++	status = "okay";
++};
++
++&usb_2_dwc3 {
++	dr_mode = "host";
++};
++
