@@ -75,7 +75,7 @@ SHA256 (cargo/windows_i686_msvc-0.52.6.tar.gz) = JAlIvAXF58bau6KL+J2J/84+MDAigJ5
 SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7urKcqUxbCLGng=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
-SHA256 (fish-4.0.6.tar.xz) = El2c4N2KNwTcB4KSXfNPAgi//EKvXzSRREnRTDS12uE=
+SHA256 (fish-4.0.8.tar.xz) = f3edE6pV0vo6/Bc2TGGrntwW+qHqxYUbre/7TnNpIkA=
 SHA256 (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 5a8G17c3tm90dqIj6KbNHiscqDSziz3liQHU288KBU0=
 SIZE (cargo/allocator-api2-0.2.18.tar.gz) = 62504
 SIZE (cargo/autocfg-1.4.0.tar.gz) = 17712
@@ -154,5 +154,5 @@ SIZE (cargo/windows_i686_msvc-0.52.6.tar.gz) = 901163
 SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
-SIZE (fish-4.0.6.tar.xz) = 3057300
+SIZE (fish-4.0.8.tar.xz) = 3057636
 SIZE (fish-shell-rust-pcre2-0.2.9-utf32.tar.gz) = 742431
