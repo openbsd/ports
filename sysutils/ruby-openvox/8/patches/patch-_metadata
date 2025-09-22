@@ -1,0 +1,22 @@
+Relax version requirement for the puppet-resource_api gem to use newer versions.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -171,14 +171,14 @@ dependencies:
+   name: puppet-resource_api
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '1.5'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '1.5'
+ - !ruby/object:Gem::Dependency

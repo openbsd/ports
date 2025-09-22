@@ -28,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/glue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/io_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/parameter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/property.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/provider_get_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/puppet_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/read_only_parameter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/resource_api/simple_provider.rb
