@@ -465,6 +465,7 @@
      SUBDIR += mpfr
      SUBDIR += msbuild
      SUBDIR += msgpack
+     SUBDIR += msgpack-cxx
      SUBDIR += msp430
      SUBDIR += mspdebug
      SUBDIR += mtxclient
