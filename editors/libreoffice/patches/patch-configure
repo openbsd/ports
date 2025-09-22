@@ -1,3 +1,5 @@
+Putting openbsd*aarch64 in non-alphabetical order for patch/diff context
+
 Index: configure
 --- configure.orig
 +++ configure
@@ -11,18 +13,18 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -15804,6 +15807,11 @@ linux-android*)
-     P_SEP=:
- 
-     case "$host_cpu" in
+@@ -15847,6 +15850,11 @@ openbsd*)
+         RTL_ARCH=X86_64
+         PLATFORMID=openbsd_x86_64
+         ;;
 +    aarch64)
 +        CPUNAME=AARCH64
 +        RTL_ARCH=AARCH64
 +        PLATFORMID=openbsd_aarch64
 +        ;;
-     i*86)
-         CPUNAME=INTEL
-         RTL_ARCH=x86
+     *)
+         as_fn_error $? "Unsupported host_cpu $host_cpu for host_os $host_os" "$LINENO" 5
+         ;;
 @@ -22845,9 +22853,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
