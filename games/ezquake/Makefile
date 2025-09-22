@@ -3,7 +3,7 @@ COMMENT =	modern QuakeWorld client
 CATEGORIES =	games
 
 N =		ezquake
-V =		3.6.6
+V =		3.6.7
 DISTNAME =	${N}-source-${V}
 PKGNAME =	${N}-${V}
 
