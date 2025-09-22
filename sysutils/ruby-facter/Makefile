@@ -4,7 +4,7 @@ DISTNAME =	facter-4.10.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =	1
+REVISION =	2
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

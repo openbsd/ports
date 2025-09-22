@@ -1,4 +1,4 @@
-@conflict ruby${GEM_BIN_SUFFIX}-openfact-*
+@conflict ruby${GEM_BIN_SUFFIX}-openfact-<5.1.0p1
 ${GEM_BIN}/facter${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
