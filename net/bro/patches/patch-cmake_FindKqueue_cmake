@@ -1,14 +1,16 @@
-CMake fails to find kqueue(2), forego the check, we have it
+check for kqueue(2) properly, see Note in
+https://cmake.org/cmake/help/latest/module/CheckFunctionExists.html#command:check_function_exists
 
 Index: cmake/FindKqueue.cmake
 --- cmake/FindKqueue.cmake.orig
 +++ cmake/FindKqueue.cmake
 @@ -1,7 +1,7 @@
- include(CheckFunctionExists)
+-include(CheckFunctionExists)
++include(CheckSymbolExists)
  
  # First check whether the system has kqueue built-in. Prefer that over everything else.
 -check_function_exists(kqueue HAVE_KQUEUE)
-+set(HAVE_KQUEUE true)
++check_symbol_exists(kqueue "sys/types.h;sys/event.h;sys/time.h" HAVE_KQUEUE)
  
  if (NOT HAVE_KQUEUE)
  
