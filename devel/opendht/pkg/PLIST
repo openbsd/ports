@@ -1,0 +1,47 @@
+@bin bin/dhtchat
+@bin bin/dhtnode
+@bin bin/dhtscanner
+include/opendht/
+include/opendht.h
+include/opendht/callbacks.h
+include/opendht/crypto/
+include/opendht/crypto.h
+include/opendht/crypto/secure_vector.h
+include/opendht/def.h
+include/opendht/default_types.h
+include/opendht/dht.h
+include/opendht/dht_interface.h
+include/opendht/dht_proxy_client.h
+include/opendht/dht_proxy_server.h
+include/opendht/dhtrunner.h
+include/opendht/http.h
+include/opendht/indexation/
+include/opendht/indexation/pht.h
+include/opendht/infohash.h
+include/opendht/log.h
+include/opendht/logger.h
+include/opendht/network_engine.h
+include/opendht/network_utils.h
+include/opendht/node.h
+include/opendht/node_cache.h
+include/opendht/node_export.h
+include/opendht/peer_discovery.h
+include/opendht/proxy.h
+include/opendht/rate_limiter.h
+include/opendht/rng.h
+include/opendht/routing_table.h
+include/opendht/scheduler.h
+include/opendht/securedht.h
+include/opendht/sockaddr.h
+include/opendht/thread_pool.h
+include/opendht/utils.h
+include/opendht/value.h
+lib/cmake/opendht/
+lib/cmake/opendht/opendhtConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/opendht/opendhtConfig.cmake
+lib/cmake/opendht/opendhtConfigVersion.cmake
+@lib lib/libopendht.so.${LIBopendht_VERSION}
+lib/pkgconfig/opendht.pc
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/dhtnode.1

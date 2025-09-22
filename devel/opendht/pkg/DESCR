@@ -1,0 +1,5 @@
+A lightweight C++17 Distributed Hash Table implementation.
+
+OpenDHT provides an easy to use distributed in-memory data store.
+Every node in the network can read and write values to the store.
+Values are distributed over the network, with redundancy.
