@@ -1,5 +1,8 @@
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/xdg-user-dirs.service
 @man man/man1/xdg-user-dir.1
 @man man/man1/xdg-user-dirs-update.1
 @man man/man5/user-dirs.conf.5
@@ -16,6 +19,9 @@ share/examples/xdg-user-dirs/xdg/user-dirs.conf
 @sample ${SYSCONFDIR}/xdg/user-dirs.conf
 share/examples/xdg-user-dirs/xdg/user-dirs.defaults
 @sample ${SYSCONFDIR}/xdg/user-dirs.defaults
+share/locale/ab/
+share/locale/ab/LC_MESSAGES/
+share/locale/ab/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xdg-user-dirs.mo
@@ -41,6 +47,9 @@ share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ca/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/crh/
 share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/xdg-user-dirs.mo
@@ -83,6 +92,10 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/it/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ja/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ka/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/xdg-user-dirs.mo
@@ -96,6 +109,9 @@ share/locale/ku/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
+share/locale/lg/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xdg-user-dirs.mo
@@ -133,9 +149,9 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sr/LC_MESSAGES/xdg-user-dirs.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
@@ -149,6 +165,9 @@ share/locale/th/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/tr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/uk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/vi/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
+share/locale/wa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_HK/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-user-dirs.mo

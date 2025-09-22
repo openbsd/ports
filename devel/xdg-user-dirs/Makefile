@@ -1,6 +1,8 @@
 COMMENT=		utilities to manage well known user directories
 
-DISTNAME=		xdg-user-dirs-0.18
+DISTNAME=		xdg-user-dirs-0.19
+EXTRACT_SUFX=		.tar.xz
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://freedesktop.org/wiki/Software/xdg-user-dirs/
@@ -14,15 +16,20 @@ SITES=			http://user-dirs.freedesktop.org/releases/
 
 WANTLIB += c iconv intl
 
+MODULES=		devel/meson
+
+BUILD_DEPENDS=		devel/gettext,-tools
+
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/gettext,-runtime
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/xdg-user-dirs
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdg-user-dirs
+	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/xdg-user-dirs
 
 .include <bsd.port.mk>

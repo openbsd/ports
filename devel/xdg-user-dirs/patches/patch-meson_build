@@ -1,0 +1,26 @@
+XXX push upstream
+- ld: error: undefined symbol: libiconv_open
+- Error out in case of a warning; otherwise the configure test will pass but the
+  build will fail.
+
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -20,6 +20,7 @@ if cc.has_function('ngettext')
+   libintl_dep = declare_dependency()
+ else
+   libintl_dep = cc.find_library('intl', required: true)
++  libintl_dep += cc.find_library('iconv', required: true)
+ endif
+ 
+ systemd_dep = dependency('systemd', required: false)
+@@ -46,7 +47,7 @@ int main() {
+ }
+ '''
+ 
+-if cc.compiles(iconv_const_check, name: 'iconv with const')
++if cc.compiles(iconv_const_check, name: 'iconv with const', werror: true)
+   conf_data.set('ICONV_CONST', 'const')
+ else
+   conf_data.set('ICONV_CONST', '')
