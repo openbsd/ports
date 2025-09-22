@@ -1,6 +1,7 @@
 COMMENT =		Ultima VII game engine for modern operating systems
 
 DISTNAME =		exult-1.12.0
+REVISION =		0
 
 CATEGORIES =		games
 HOMEPAGE =		https://exult.info/
@@ -14,6 +15,7 @@ WANTLIB += Xrandr Xrender Xss Xxf86dga Xxf86vm avif c curses fluidsynth
 WANTLIB += glib-2.0 gthread-2.0 iconv intl jxl m mp3lame mpg123 ogg opus
 WANTLIB += pcre2-8 png readline samplerate sharpyuv sndfile sndio tiff usbhid
 WANTLIB += vorbis vorbisenc vorbisfile webp webpdemux xcb z
+WANTLIB += mt32emu
 
 SITES =			https://prdownloads.sourceforge.net/exult/
 
@@ -26,6 +28,7 @@ LIB_DEPENDS =		audio/fluidsynth \
 			audio/libogg \
 			audio/libsamplerate \
 			audio/libvorbis \
+			audio/munt \
 			converters/libiconv \
 			devel/sdl2-image \
 			graphics/libavif \
@@ -34,7 +37,6 @@ LIB_DEPENDS =		audio/fluidsynth \
 			graphics/png
 
 CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS =	--disable-mt32emu
 
 AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
