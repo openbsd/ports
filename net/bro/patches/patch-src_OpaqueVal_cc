@@ -1,3 +1,5 @@
+pending https://github.com/zeek/zeek/pull/4843
+
 Index: src/OpaqueVal.cc
 --- src/OpaqueVal.cc.orig
 +++ src/OpaqueVal.cc

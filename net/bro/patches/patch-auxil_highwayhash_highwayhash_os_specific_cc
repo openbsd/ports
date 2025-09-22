@@ -1,3 +1,6 @@
+https://github.com/google/highwayhash is archived and read-only,
+so no chance to upstream this (trivial) patch.
+
 Index: auxil/highwayhash/highwayhash/os_specific.cc
 --- auxil/highwayhash/highwayhash/os_specific.cc.orig
 +++ auxil/highwayhash/highwayhash/os_specific.cc

@@ -1,4 +1,5 @@
 no SO_NOSIGPIPE on OpenBSD 
+pending https://github.com/zeek/actor-framework/pull/3
 
 Index: auxil/broker/caf/libcaf_net/src/network_socket.cpp
 --- auxil/broker/caf/libcaf_net/src/network_socket.cpp.orig
