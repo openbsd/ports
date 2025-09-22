@@ -42,7 +42,6 @@ MODSCONS_FLAGS=	--allocator=system \
 ALL_TARGET=	install-core
 
 CXXFLAGS +=	-Wno-error=deprecated-builtins -Wno-error=unused-variable
-CLAGS +=	-DBOOST_NO_CXX98_FUNCTION_BASE
 
 post-extract:
 	cd ${WRKSRC}/src/third_party/mozjs; \
