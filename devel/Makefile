@@ -489,6 +489,7 @@
      SUBDIR += ois
      SUBDIR += olm
      SUBDIR += open-ath9k-htc-firmware
+     SUBDIR += opendht
      SUBDIR += openmpi
      SUBDIR += openocd
      SUBDIR += ophis
