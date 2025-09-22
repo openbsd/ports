@@ -1,0 +1,20 @@
+https://github.com/tailscale/tailscale/issues/17209
+
+From 8ec07b5f7fc31e5d86aa9db4f0c7fe5498d3f9fa Mon Sep 17 00:00:00 2001
+From: Brad Fitzpatrick <bradfitz@tailscale.com>
+Date: Sun, 21 Sep 2025 08:08:41 -0700
+Subject: [PATCH] ipn/ipnauth: don't crash on OpenBSD trying to log username of
+ unknown peer
+
+Index: ipn/ipnauth/ipnauth.go
+--- ipn/ipnauth/ipnauth.go.orig
++++ ipn/ipnauth/ipnauth.go
+@@ -64,7 +64,7 @@ type ConnIdentity struct {
+ 
+ 	// Fields used when NotWindows:
+ 	isUnixSock bool            // Conn is a *net.UnixConn
+-	creds      *peercred.Creds // or nil
++	creds      *peercred.Creds // or nil if peercred.Get was not implemented on this OS
+ 
+ 	// Used on Windows:
+ 	// TODO(bradfitz): merge these into the peercreds package and

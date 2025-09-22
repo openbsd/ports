@@ -1,0 +1,24 @@
+https://github.com/tailscale/tailscale/issues/17209
+
+From 8ec07b5f7fc31e5d86aa9db4f0c7fe5498d3f9fa Mon Sep 17 00:00:00 2001
+From: Brad Fitzpatrick <bradfitz@tailscale.com>
+Date: Sun, 21 Sep 2025 08:08:41 -0700
+Subject: [PATCH] ipn/ipnauth: don't crash on OpenBSD trying to log username of
+ unknown peer
+
+Index: ipn/ipnserver/actor.go
+--- ipn/ipnserver/actor.go.orig
++++ ipn/ipnserver/actor.go
+@@ -145,7 +145,11 @@ func (a *actor) Username() (string, error) {
+ 		defer tok.Close()
+ 		return tok.Username()
+ 	case "darwin", "linux", "illumos", "solaris", "openbsd":
+-		uid, ok := a.ci.Creds().UserID()
++		creds := a.ci.Creds()
++		if creds == nil {
++			return "", errors.New("peer credentials not implemented on this OS")
++		}
++		uid, ok := creds.UserID()
+ 		if !ok {
+ 			return "", errors.New("missing user ID")
+ 		}
