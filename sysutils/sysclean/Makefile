@@ -1,6 +1,6 @@
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-V =		4.0
+V =		4.1
 DISTNAME =	sysclean-${V}
 
 CATEGORIES =	sysutils
