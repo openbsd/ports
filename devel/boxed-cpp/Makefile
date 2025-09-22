@@ -1,6 +1,6 @@
 COMMENT =	C++ primitive type boxing
 
-V =		1.4.0
+V =		1.4.3
 DISTNAME =	boxed-cpp-${V}
 
 GH_ACCOUNT =	contour-terminal
