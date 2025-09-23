@@ -2,9 +2,9 @@ COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
-GH_TAGNAME =	v1.1
+GH_TAGNAME =	v1.1.3
 
-SHARED_LIBS +=	postal	1.0	# 1.1
+SHARED_LIBS +=	postal	1.1	# 1.1
 
 CATEGORIES =	geo
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS +=	--enable-sse2=no
 NO_TEST =	Yes
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/address_parser ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/address_parser ${PREFIX}/bin
 	rm ${PREFIX}/bin/libpostal_data
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 @newgroup _libpostal:816
 @extraunexec rm -rf /var/db/libpostal
-bin/address_parser
+@bin bin/address_parser
 include/libpostal/
 include/libpostal/libpostal.h
 @static-lib lib/libpostal.a
