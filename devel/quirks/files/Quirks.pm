@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1749 2025/09/23 00:57:57 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1750 2025/09/23 12:02:56 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1159,7 +1159,6 @@ setup_obsolete_reason(
 	5 => 'py-vivisect',
 	3 => 'irc',
 	1 => 'volatility',
-	3 => 'pokerth',
 	3 => 'driconf',
 	3 => 'GAMMApage',
 	3 => 'comix',
