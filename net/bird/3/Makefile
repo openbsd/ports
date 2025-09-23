@@ -1,4 +1,4 @@
-DISTNAME=	bird-3.1.3
+DISTNAME=	bird-3.1.4
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
