@@ -1,13 +1,13 @@
 COMMENT=	process plaintext documentation into other formats
 
-MODPY_DISTV=	0.22.1
+MODPY_DISTV=	0.22.2
 DISTNAME=	docutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://docutils.sourceforge.io/
 
-# beware breaking changes in new versions
+# beware new versions often have breaking changes
 EPOCH=		0
 
 # mostly public domain, a few files BSD, one .el GPLv3
