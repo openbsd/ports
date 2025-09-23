@@ -171,7 +171,6 @@
      SUBDIR += luaexpat,lua53
      SUBDIR += luaexpat,lua54
      SUBDIR += luceneplusplus
-     SUBDIR += makefaq
      SUBDIR += mdbook
      SUBDIR += mdp
      SUBDIR += meld
