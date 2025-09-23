@@ -2,7 +2,7 @@ COMMENT-main=		GNOME terminal
 COMMENT-nautilus=	GNOME Terminal extension for Nautilus
 
 GNOME_PROJECT=		gnome-terminal
-GNOME_VERSION=		3.56.2
+GNOME_VERSION=		3.58.0
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
@@ -25,8 +25,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			textproc/docbook-xsl \
-			x11/gnome/shell
+			textproc/docbook-xsl
 
 LIB_DEPENDS-main=	devel/vte3 \
 			sysutils/e2fsprogs \
