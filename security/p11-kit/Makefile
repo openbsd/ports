@@ -1,6 +1,6 @@
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
-V=			0.25.9
+V=			0.25.10
 DISTNAME=		p11-kit-${V}
 EXTRACT_SUFX=		.tar.xz
 
