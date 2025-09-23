@@ -1,24 +1,23 @@
-COMMENT=		command-line WebDAV client
+COMMENT=	command-line WebDAV client
 
-DISTNAME=		cadaver-0.26
-CATEGORIES=		net www
-REVISION=		0
+DISTNAME=	cadaver-0.28
+CATEGORIES=	net www
 
-HOMEPAGE=		https://notroj.github.io/cadaver/
+HOMEPAGE=	https://notroj.github.io/cadaver/
+SITES=		${HOMEPAGE}
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curses expat iconv intl neon proxy pthread readline
-WANTLIB += ssl z
+WANTLIB += c crypto curses expat iconv intl neon proxy
+WANTLIB += pthread readline ssl z
 
-LIB_DEPENDS=		net/neon
+LIB_DEPENDS=	net/neon
 
-SITES=			${HOMEPAGE}
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-ssl \
+		--with-neon="${LOCALBASE}"
 
-NO_TEST=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-ssl \
-			--with-neon="${LOCALBASE}"
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

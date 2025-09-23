@@ -1,7 +1,8 @@
 Don't redeclare size_t in some twisty way.
 
---- lib/glob.h.orig	Tue Sep  8 16:38:10 2009
-+++ lib/glob.h	Tue Sep  8 16:39:23 2009
+Index: lib/glob/glob.h
+--- lib/glob/glob.h.orig
++++ lib/glob/glob.h
 @@ -46,6 +46,7 @@ extern "C" {
  # define __ptr_t	char *
  #endif /* C++ or ANSI C.  */

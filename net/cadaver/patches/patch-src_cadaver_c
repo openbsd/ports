@@ -1,30 +1,30 @@
 Index: src/cadaver.c
 --- src/cadaver.c.orig
 +++ src/cadaver.c
-@@ -708,7 +708,7 @@ static char **completion(const char *text, int start, 
-     char *sep = strchr(rl_line_buffer, ' ');
+@@ -729,7 +729,7 @@ static char **completion(const char *text, int start, 
+     in_completion = 1;
  
      if (start == 0) {
--	matches = rl_completion_matches(text, command_generator);
-+	matches = rl_completion_matches((char *)text, command_generator);
+-        matches = rl_completion_matches(text, command_generator);
++        matches = rl_completion_matches((char *)text, command_generator);
      }
      else if (sep != NULL) {
- 	char *cname = ne_strndup(rl_line_buffer, sep - rl_line_buffer);
-@@ -720,7 +720,7 @@ static char **completion(const char *text, int start, 
- 	    case parmscope_none:
- 		break;
- 	    case parmscope_local:
--		matches = rl_completion_matches(text, 
-+		matches = rl_completion_matches((char *)text, 
- 						rl_filename_completion_function);
- 		break;
- 	    case parmscope_option:
-@@ -728,7 +728,7 @@ static char **completion(const char *text, int start, 
- 		break;
- 	    case parmscope_remote:
- 		if (session.connected) {
--		    matches = rl_completion_matches(text, remote_completion);
-+		    matches = rl_completion_matches((char *)text, remote_completion);
- 		}
- 		break;
- 	    }
+         char *cname = ne_strndup(rl_line_buffer, sep - rl_line_buffer);
+@@ -742,7 +742,7 @@ static char **completion(const char *text, int start, 
+         case parmscope_none:
+             break;
+         case parmscope_local:
+-            matches = rl_completion_matches(text,
++            matches = rl_completion_matches((char *)text,
+                                             rl_filename_completion_function);
+             break;
+         case parmscope_option:
+@@ -750,7 +750,7 @@ static char **completion(const char *text, int start, 
+             break;
+         case parmscope_remote:
+             if (session.connected) {
+-                matches = rl_completion_matches(text, remote_completion);
++                matches = rl_completion_matches((char *)text, remote_completion);
+             }
+             break;
+         }
