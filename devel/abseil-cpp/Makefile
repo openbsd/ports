@@ -3,7 +3,7 @@ BROKEN-sparc64 = is not a constant expression
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
-V =		20250814.0
+V =		20250814.1
 DISTNAME =	abseil-cpp-${V}
 
 HOMEPAGE =	https://abseil.io/
