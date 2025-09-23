@@ -2,6 +2,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.12.8
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -25,6 +26,7 @@ MODULES=	devel/dconf \
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 BUILD_DEPENDS=		devel/appstream \
+			devel/gsettings-desktop-schemas \
 			multimedia/gstreamer1/plugins-base
 
 # web albums
@@ -39,7 +41,8 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		multimedia/libheif \
 		x11/gnome/librsvg
 
-RUN_DEPENDS=	graphics/dcraw \
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		graphics/dcraw \
 		multimedia/gstreamer1/plugins-base
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
