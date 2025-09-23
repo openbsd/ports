@@ -34,8 +34,8 @@ ABSL_LIBS = \
     log_internal_nullguard log_internal_proto \
     log_internal_structured_proto log_internal_test_actions \
     log_internal_test_helpers log_internal_test_matchers log_severity log_sink \
-    low_level_hash malloc_internal per_thread_sem_test_common periodic_sampler \
-    poison pow10_helper profile_builder random_distributions \
+    malloc_internal per_thread_sem_test_common periodic_sampler poison \
+    pow10_helper profile_builder random_distributions \
     random_internal_distribution_test_util random_internal_entropy_pool \
     random_internal_platform random_internal_pool_urbg random_internal_randen \
     random_internal_randen_hwaes random_internal_randen_hwaes_impl \
