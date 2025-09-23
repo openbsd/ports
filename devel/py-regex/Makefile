@@ -1,6 +1,6 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_DISTV=	2025.8.29
+MODPY_DISTV=	2025.9.18
 DISTNAME=	regex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
