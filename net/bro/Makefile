@@ -1,7 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
@@ -80,6 +80,8 @@ CXXFLAGS +=		-include cinttypes
 
 CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+			-DINSTALL_BTEST=OFF \
+			-DINSTALL_BTEST_PCAPS=OFF \
 			-DZEEK_ETC_INSTALL_DIR=${SYSCONFDIR}/zeek \
 			-DZEEK_LOCAL_STATE_DIR=${LOCALSTATEDIR} \
 			-DZEEK_LOG_DIR=${LOCALSTATEDIR}/log/zeek \
