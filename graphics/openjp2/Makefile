@@ -2,7 +2,7 @@ COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
-GH_TAGNAME=	v2.5.3
+GH_TAGNAME=	v2.5.4
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
 
 SHARED_LIBS +=	openjp2	6.0
@@ -32,8 +32,11 @@ post-install:
 
 pre-test:
 	@if [ ! -d ${WRKDIR}/data ]; then \
-		printf "\nTests require a checkout of https://github.com/uclouvain/openjpeg-data\
-		in ${WRKDIR}/data (approx 500MB).\n\n"; \
+		printf "\n\
+		Tests need a copy of https://github.com/uclouvain/openjpeg-data\n\
+		in ${WRKDIR}/data (approx 500MB):\n\n\
+		git clone --depth 1 https://github.com/uclouvain/openjpeg-data\n\
+		doas mv openjpeg-data ${WRKDIR}/data\n\n"; \
 		exit 1; \
 	fi
 
