@@ -1,6 +1,6 @@
 COMMENT =	lightweight, simple, fast, extensible text editor
 
-V =		2.1.7
+V =		2.1.8
 GH_ACCOUNT =	lite-xl
 GH_PROJECT =	lite-xl
 GH_TAGNAME =	v$V
@@ -17,14 +17,14 @@ PERMIT_PACKAGE =Yes
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB =	c freetype lua5.4 m pcre2-8 SDL2
+WANTLIB =	c freetype lua5.4 m pcre2-8 SDL3
 
 MODULES =	devel/meson	\
 		lang/lua
 
 MODLUA_VERSION =5.4
 
-LIB_DEPENDS =   devel/sdl2	\
+LIB_DEPENDS =   devel/sdl3	\
 		devel/pcre2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -34,6 +34,6 @@ CONFIGURE_ARGS =	-Duse_system_lua=true \
 			-Ddirmonitor_backend=kqueue
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/{meson.build,src/main.c}
+	${SUBST_CMD} ${WRKSRC}/{meson.build,src/main.c,src/meson.build}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -199,7 +199,10 @@ init_lua:
+@@ -188,7 +188,10 @@ init_lua:
      lua_pushstring(L, exename);
    } else {
      // get_exe_filename failed

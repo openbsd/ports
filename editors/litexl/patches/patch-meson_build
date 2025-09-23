@@ -1,15 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -78,6 +78,7 @@ if not get_option('source-only')
-     # Lua has no official .pc file
-     # so distros come up with their own names
-     lua_names = [
-+        'lua${MODLUA_DEP_VERSION}', # OpenBSD
-         'lua5.4', # Debian
-         'lua-5.4', # FreeBSD
-         'lua',    # Fedora
-@@ -210,7 +211,7 @@ else
+@@ -99,7 +99,7 @@ else
      lite_bindir = 'bin'
      lite_docdir = get_option('datadir') / 'doc' / 'lite-xl'
      lite_datadir = get_option('datadir') / 'lite-xl'
