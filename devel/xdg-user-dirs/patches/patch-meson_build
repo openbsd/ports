@@ -7,15 +7,16 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -20,6 +20,7 @@ if cc.has_function('ngettext')
+@@ -20,6 +20,8 @@ if cc.has_function('ngettext')
    libintl_dep = declare_dependency()
  else
    libintl_dep = cc.find_library('intl', required: true)
-+  libintl_dep += cc.find_library('iconv', required: true)
++  libiconv_dep = cc.find_library('iconv', required: true)
++  libintl_dep = [libiconv_dep, libintl_dep]
  endif
  
  systemd_dep = dependency('systemd', required: false)
-@@ -46,7 +47,7 @@ int main() {
+@@ -46,7 +48,7 @@ int main() {
  }
  '''
  
