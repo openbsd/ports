@@ -256,6 +256,7 @@
      SUBDIR += pingus
      SUBDIR += pioneer
      SUBDIR += pioneers
+     SUBDIR += pokerth
      SUBDIR += polymorphable
      SUBDIR += postal
      SUBDIR += powder-toy
