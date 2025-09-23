@@ -13,6 +13,4 @@ WANTLIB =		c
 # All other lzip ports use .tar.lz by default.
 EXTRACT_SUFX =		.tar.gz
 
-USE_GMAKE =		Yes
-
 .include <bsd.port.mk>

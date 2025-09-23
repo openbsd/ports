@@ -12,6 +12,4 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-USE_GMAKE =		Yes
-
 .include <bsd.port.mk>

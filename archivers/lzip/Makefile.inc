@@ -13,6 +13,8 @@ EXTRACT_SUFX ?=		.tar.lz
 
 DIST_SUBDIR =		lzip
 
+USE_GMAKE =		Yes
+
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	CC="${CC}" CXX="${CXX}" \
 			CPPFLAGS="-I${LOCALBASE}/include" \

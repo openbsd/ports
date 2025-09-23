@@ -10,6 +10,4 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-USE_GMAKE =		Yes
-
 .include <bsd.port.mk>

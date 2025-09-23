@@ -14,6 +14,4 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		archivers/lzip/lzlib
 
-USE_GMAKE =		Yes
-
 .include <bsd.port.mk>

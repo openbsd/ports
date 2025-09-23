@@ -10,8 +10,6 @@ SITES =			${SITE_SAVANNAH:=lzip/lzlib/}
 # 2-clause BSD
 PERMIT_PACKAGE =	Yes
 
-USE_GMAKE =		Yes
-
 CONFIGURE_ARGS +=	--disable-static \
 			--disable-ldconfig
 
