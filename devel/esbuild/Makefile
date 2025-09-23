@@ -1,7 +1,7 @@
 COMMENT =	fast bundler for the web
 
 MODGO_MODNAME =	github.com/evanw/esbuild
-MODGO_VERSION =	v0.25.9
+MODGO_VERSION =	v0.25.10
 
 DISTNAME =	esbuild-${MODGO_VERSION}
 CATEGORIES =	devel
@@ -13,9 +13,9 @@ HOMEPAGE =	https://esbuild.github.io/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB +=	c pthread
 
-MODULES =		lang/go
+MODULES =	lang/go
 
 .include "modules.inc"
 
