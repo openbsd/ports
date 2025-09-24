@@ -3,7 +3,7 @@
 Index: build/php.m4
 --- build/php.m4.orig
 +++ build/php.m4
-@@ -757,7 +757,9 @@ AC_DEFUN([PHP_REQUIRE_CXX], [
+@@ -761,7 +761,9 @@ AC_DEFUN([PHP_REQUIRE_CXX], [
  AS_VAR_IF([php_cxx_done],, [
    AC_PROG_CXX
    AC_PROG_CXXCPP
