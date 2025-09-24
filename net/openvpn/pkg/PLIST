@@ -44,7 +44,6 @@ share/examples/openvpn/sample-keys/client-pass.key
 share/examples/openvpn/sample-keys/client.crt
 share/examples/openvpn/sample-keys/client.key
 share/examples/openvpn/sample-keys/client.p12
-share/examples/openvpn/sample-keys/dh2048.pem
 share/examples/openvpn/sample-keys/gen-sample-keys.sh
 share/examples/openvpn/sample-keys/openssl.cnf
 share/examples/openvpn/sample-keys/server-ec.crt

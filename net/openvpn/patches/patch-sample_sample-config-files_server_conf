@@ -1,7 +1,7 @@
 Index: sample/sample-config-files/server.conf
 --- sample/sample-config-files/server.conf.orig
 +++ sample/sample-config-files/server.conf
-@@ -266,8 +266,8 @@ keepalive 10 120
+@@ -261,8 +261,8 @@ keepalive 10 120
  #
  # You can uncomment this on non-Windows
  # systems after creating a dedicated user.
