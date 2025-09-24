@@ -2,9 +2,8 @@ COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	6.3.5
+GH_TAGNAME =	7.0.1
 DISTNAME =	hcxtools-${GH_TAGNAME}
-REVISION =	1
 
 CATEGORIES =	security
 
@@ -20,7 +19,7 @@ LIB_DEPENDS +=	net/curl \
 
 USE_GMAKE =	Yes
 ALL_TARGET =
-
+#
 CFLAGS +=       -I${LOCALBASE}/include/eopenssl35
 LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl35 -L${LOCALBASE}/lib/eopenssl35
 
