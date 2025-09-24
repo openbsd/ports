@@ -1548,6 +1548,7 @@ ${LLVM_BASE}/include/c++/v1/__type_traits/is_trivially_lexicographically_compara
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_trivially_relocatable.h
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_unbounded_array.h
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_union.h
+${LLVM_BASE}/include/c++/v1/__type_traits/is_unqualified.h
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_unsigned.h
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_valid_expansion.h
 ${LLVM_BASE}/include/c++/v1/__type_traits/is_void.h
