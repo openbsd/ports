@@ -130,7 +130,7 @@ SHA256 (cargo/tree-sitter-pascal-0.10.0.tar.gz) = ygN6nX/XRBkD6JRr/SI4MbA9a8l5pQ
 SHA256 (cargo/tree-sitter-php-0.23.11.tar.gz) = 8GbpTpJyz+Tx3LB6HFDGYJfspkjy1yM9KZyK6e2MEww=
 SHA256 (cargo/tree-sitter-python-0.23.5.tar.gz) = cL6qR+GeFSnoeH/AqA67rlqf2u/F/MiXLIhcmr9qsPA=
 SHA256 (cargo/tree-sitter-ruby-0.23.1.tar.gz) = vgSE6k72u5xXW0/avefjE0Co0tvH1SsyGsg9pwMkn5U=
-SHA256 (cargo/tree-sitter-rust-0.23.2.tar.gz) = pNZNRJymPmg8Vix3Q5RqZGZxyiOUe5ySXAz75lBRpK8=
+SHA256 (cargo/tree-sitter-rust-orchard-0.13.0.tar.gz) = QuBvAMqJ/rpNdFXpW2G5AZqXmjgFJyl/qwxGHi4TwmQ=
 SHA256 (cargo/tree-sitter-scala-0.23.3.tar.gz) = q4N8Dff/tsMV/RzXkhZDdbPsDCguo19jkjHxOARPjQw=
 SHA256 (cargo/tree-sitter-swift-0.7.0.tar.gz) = vccuqcYqbRiMn31kEJqbFLCSMYUrhyKcaMROhzi55rk=
 SHA256 (cargo/tree-sitter-toml-ng-0.7.0.tar.gz) = 6a3CyJiuSXMOhX11vkA9o/kruB2ON6L5GKCN0Q3l67E=
@@ -138,6 +138,7 @@ SHA256 (cargo/tree-sitter-typescript-0.23.2.tar.gz) = bF927Y2UenXMRG1fzNi2Auvwze
 SHA256 (cargo/tree-sitter-verilog-1.0.3.tar.gz) = 1OfgNgOVhS8fb/W3uCxy3GVX0YEHMYjfHWDsRp6mnGY=
 SHA256 (cargo/tree-sitter-xml-0.7.0.tar.gz) = 5nAEH1kdmU9U1ZfdzY9OvJMOKCxMdqQiaHQ7cfDItrM=
 SHA256 (cargo/tree-sitter-yaml-0.7.0.tar.gz) = 0MmfK5K2d/Ghi2sjL6kymvtXWBGCOKfQspyuMk71DV4=
+SHA256 (cargo/tree-sitter-zig-1.1.2.tar.gz) = qxH8EkhRsNtN1eVZg7vZYxGS6TI4OJ3NRFIXFeXVPig=
 SHA256 (cargo/tree_magic_mini-3.1.6.tar.gz) = qsXolx8kXDOJpaduZIv8gIA64GahJDp12wBk18ESnWM=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/unicode-ident-1.0.12.tar.gz) = M1S5rD+uH/Z1XLbbU2g622YWNPZ1V5Qt6k+s6+wP7ks=
@@ -174,7 +175,7 @@ SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJ
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
-SHA256 (difftastic-0.64.0.tar.gz) = VMfJMwn/miy+hxU6wdFugLrKxAQsgPa3IG6bcabxDQs=
+SHA256 (difftastic-0.65.0.tar.gz) = WUYvaeLO39wb7k/Q2kj+mnrmNc22gYwaMAsxwLFG1Lg=
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/allocator-api2-0.2.16.tar.gz) = 59025
@@ -307,7 +308,7 @@ SIZE (cargo/tree-sitter-pascal-0.10.0.tar.gz) = 236236
 SIZE (cargo/tree-sitter-php-0.23.11.tar.gz) = 475556
 SIZE (cargo/tree-sitter-python-0.23.5.tar.gz) = 174528
 SIZE (cargo/tree-sitter-ruby-0.23.1.tar.gz) = 512753
-SIZE (cargo/tree-sitter-rust-0.23.2.tar.gz) = 343880
+SIZE (cargo/tree-sitter-rust-orchard-0.13.0.tar.gz) = 610064
 SIZE (cargo/tree-sitter-scala-0.23.3.tar.gz) = 1035228
 SIZE (cargo/tree-sitter-swift-0.7.0.tar.gz) = 890957
 SIZE (cargo/tree-sitter-toml-ng-0.7.0.tar.gz) = 22919
@@ -315,6 +316,7 @@ SIZE (cargo/tree-sitter-typescript-0.23.2.tar.gz) = 829457
 SIZE (cargo/tree-sitter-verilog-1.0.3.tar.gz) = 2375813
 SIZE (cargo/tree-sitter-xml-0.7.0.tar.gz) = 75507
 SIZE (cargo/tree-sitter-yaml-0.7.0.tar.gz) = 101403
+SIZE (cargo/tree-sitter-zig-1.1.2.tar.gz) = 212493
 SIZE (cargo/tree_magic_mini-3.1.6.tar.gz) = 14869
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/unicode-ident-1.0.12.tar.gz) = 42168
@@ -351,4 +353,4 @@ SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
-SIZE (difftastic-0.64.0.tar.gz) = 25362833
+SIZE (difftastic-0.65.0.tar.gz) = 24632733
