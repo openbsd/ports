@@ -55,6 +55,7 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+CONFIGURE_ARGS +=	--enable-official-branding
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib

@@ -150,7 +150,6 @@ USE_NOBTCFI ?=	Yes
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib	\
-		--enable-official-branding	\
 		--enable-optimize="${CFLAGS}"	\
 		--disable-updater
 

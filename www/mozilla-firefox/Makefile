@@ -45,6 +45,7 @@ WANTLIB += Xrandr Xtst
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+CONFIGURE_ARGS +=	--enable-official-branding
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 .if ${MACHINE_ARCH} == aarch64
 # retguard leads to segfault at startup on arm64, cf #1973016

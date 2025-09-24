@@ -59,6 +59,7 @@ NO_TEST=	Yes
 CONFIGURE_SCRIPT =	configure.in
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--enable-linker=lld
 
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
