@@ -7,6 +7,7 @@ share/wycheproof/schemas/dsa_common.json
 share/wycheproof/schemas/dsa_p1363_verify_schema_v1.json
 share/wycheproof/schemas/dsa_verify_schema.json
 share/wycheproof/schemas/dsa_verify_schema_v1.json
+share/wycheproof/schemas/ec_curve_test_schema.json
 share/wycheproof/schemas/ecdh_ecpoint_test_schema_v1.json
 share/wycheproof/schemas/ecdh_pem_test_schema_v1.json
 share/wycheproof/schemas/ecdh_test_schema_v1.json
