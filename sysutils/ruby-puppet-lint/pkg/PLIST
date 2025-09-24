@@ -17,7 +17,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/string_slurper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/lexer/token.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/monkeypatches.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/optparser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins.rb
@@ -97,6 +96,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/mismatched_control_comment.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/parseable.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/top_scope_variables.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/two_warnings.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/unterminated_control_comment.pp
