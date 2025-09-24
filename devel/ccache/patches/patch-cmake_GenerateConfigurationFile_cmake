@@ -1,0 +1,13 @@
+Index: cmake/GenerateConfigurationFile.cmake
+--- cmake/GenerateConfigurationFile.cmake.orig
++++ cmake/GenerateConfigurationFile.cmake
+@@ -71,6 +71,9 @@ check_struct_has_member("struct statfs" f_fstypename s
+ include(CheckCXXSourceCompiles)
+ check_cxx_source_compiles(
+   [=[
++    #ifdef __i386__
++    #error XXX knock this out to avoid hitting SIGILL at runtime
++    #endif
+     #include <immintrin.h>
+     #ifndef _MSC_VER
+     __attribute__((target("avx2")))
