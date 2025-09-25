@@ -1,4 +1,4 @@
-VERSION =	2.528
+VERSION =	2.529
 SITES =		https://get.jenkins.io/war/${VERSION}/
 DIST_SUBDIR =	jenkins-devel
 
