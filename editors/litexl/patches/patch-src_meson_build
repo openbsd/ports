@@ -1,0 +1,11 @@
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -23,6 +23,7 @@ default_fallback_options = ['warning_level=0', 'werror
+ # Lua has no official .pc file
+ # so distros come up with their own names
+ lua_names = [
++    'lua${MODLUA_DEP_VERSION}', # OpenBSD
+     'lua5.4', # Debian
+     'lua-5.4', # FreeBSD
+     'lua',    # Fedora
