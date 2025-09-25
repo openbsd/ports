@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 --- llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp.orig
 +++ llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
-@@ -994,56 +994,22 @@ unsigned X86AsmBackend::getMaximumNopSize(const MCSubt
+@@ -997,56 +997,22 @@ unsigned X86AsmBackend::getMaximumNopSize(const MCSubt
  /// \return - true on success, false on failure
  bool X86AsmBackend::writeNopData(raw_ostream &OS, uint64_t Count,
                                   const MCSubtargetInfo *STI) const {

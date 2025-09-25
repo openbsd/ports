@@ -1,7 +1,7 @@
 Index: llvm/include/llvm/CodeGen/Passes.h
 --- llvm/include/llvm/CodeGen/Passes.h.orig
 +++ llvm/include/llvm/CodeGen/Passes.h
-@@ -389,6 +389,9 @@ namespace llvm {
+@@ -393,6 +393,9 @@ namespace llvm {
    ///
    FunctionPass *createStackProtectorPass();
  

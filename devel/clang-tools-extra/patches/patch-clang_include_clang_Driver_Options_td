@@ -1,7 +1,7 @@
 Index: clang/include/clang/Driver/Options.td
 --- clang/include/clang/Driver/Options.td.orig
 +++ clang/include/clang/Driver/Options.td
-@@ -3858,6 +3858,20 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+@@ -3982,6 +3982,20 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
    NormalizedValuesScope<"LangOptions::TrivialAutoVarInitKind">,
    NormalizedValues<["Uninitialized", "Zero", "Pattern"]>,
    MarshallingInfoEnum<LangOpts<"TrivialAutoVarInit">, "Uninitialized">;
@@ -22,7 +22,7 @@ Index: clang/include/clang/Driver/Options.td
  def ftrivial_auto_var_init_stop_after : Joined<["-"], "ftrivial-auto-var-init-stop-after=">, Group<f_Group>,
    Visibility<[ClangOption, CC1Option, CLOption, DXCOption]>,
    HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">,
-@@ -5338,6 +5352,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
+@@ -5530,6 +5544,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
  def mfix4300 : Flag<["-"], "mfix4300">, Group<m_mips_Features_Group>;
  def mcompact_branches_EQ : Joined<["-"], "mcompact-branches=">,
                             Group<m_mips_Features_Group>;
@@ -31,7 +31,7 @@ Index: clang/include/clang/Driver/Options.td
  } // let Flags = [TargetSpecific]
  def mbranch_likely : Flag<["-"], "mbranch-likely">, Group<m_Group>,
    IgnoredGCCCompat;
-@@ -5554,10 +5570,14 @@ def pedantic_errors : Flag<["-", "--"], "pedantic-erro
+@@ -5760,10 +5776,14 @@ def pedantic_errors : Flag<["-", "--"], "pedantic-erro
  def pedantic : Flag<["-", "--"], "pedantic">, Group<pedantic_Group>,
    Visibility<[ClangOption, CC1Option, FlangOption, FC1Option]>,
    HelpText<"Warn on language extensions">, MarshallingInfoFlag<DiagnosticOpts<"Pedantic">>;
@@ -47,7 +47,7 @@ Index: clang/include/clang/Driver/Options.td
  def pipe : Flag<["-", "--"], "pipe">,
    HelpText<"Use pipes between commands, when possible">;
  def prebind__all__twolevel__modules : Flag<["-"], "prebind_all_twolevel_modules">;
-@@ -6368,6 +6388,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+@@ -6618,6 +6638,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
  def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
  def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
  def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;

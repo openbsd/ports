@@ -1,7 +1,7 @@
 Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
 +++ llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
-@@ -950,7 +950,7 @@ void AsmPrinter::emitFunctionHeader() {
+@@ -969,7 +969,7 @@ void AsmPrinter::emitFunctionHeader() {
  
    emitLinkage(&F, CurrentFnSym);
    if (MAI->hasFunctionAlignment())
@@ -10,7 +10,7 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->emitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -3125,6 +3125,30 @@ void AsmPrinter::emitAlignment(Align Alignment, const 
+@@ -3365,6 +3365,30 @@ void AsmPrinter::emitAlignment(Align Alignment, const 
  }
  
  //===----------------------------------------------------------------------===//
@@ -41,9 +41,9 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  // Constant emission.
  //===----------------------------------------------------------------------===//
  
-@@ -3969,10 +3993,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
-     CurrentSectionBeginSym = MBB.getSymbol();
-   }
+@@ -4245,10 +4269,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
+   for (auto &Handler : Handlers)
+     Handler->beginCodeAlignment(MBB);
  
 +  bool isReachableViaFallthrough =
 +    std::find(MBB.pred_begin(), MBB.pred_end(), MBB.getPrevNode()) !=

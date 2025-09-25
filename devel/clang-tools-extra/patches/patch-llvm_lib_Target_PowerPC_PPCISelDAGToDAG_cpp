@@ -1,13 +1,15 @@
 Index: llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
 --- llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp.orig
 +++ llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
-@@ -5473,7 +5473,8 @@ void PPCDAGToDAGISel::Select(SDNode *N) {
-     // generate secure plt code for TLS symbols.
-     getGlobalBaseReg();
-   } break;
--  case PPCISD::CALL: {
-+  case PPCISD::CALL:
-+  case PPCISD::CALL_RM: {
-     if (PPCLowering->getPointerTy(CurDAG->getDataLayout()) != MVT::i32 ||
-         !TM.isPositionIndependent() || !Subtarget->isSecurePlt() ||
-         !Subtarget->isTargetELF())
+@@ -2337,6 +2337,11 @@ class BitPermutationSelector {
+                         ANDIVal, ANDISVal), 0);
+     }
+ 
++    // Caller assumes ResNo == 0, but we might have ResNo != 0 after
++    // optimizing away a permutation.  Kludge with an extra node.
++    if (Res.getResNo() != 0)
++      return CurDAG->getMachineNode(PPC::OR, dl, MVT::i32, Res, Res);
++
+     return Res.getNode();
+   }
+ 

@@ -5,17 +5,17 @@ Index: llvm/lib/Target/PowerPC/PPCFrameLowering.h
  #ifndef LLVM_LIB_TARGET_POWERPC_PPCFRAMELOWERING_H
  #define LLVM_LIB_TARGET_POWERPC_PPCFRAMELOWERING_H
  
-+#include "PPCReturnProtectorLowering.h"  
++#include "PPCReturnProtectorLowering.h"
  #include "llvm/ADT/STLExtras.h"
  #include "llvm/CodeGen/TargetFrameLowering.h"
  #include "llvm/Target/TargetMachine.h"
-@@ -176,6 +177,9 @@ class PPCFrameLowering: public TargetFrameLowering { (
+@@ -175,6 +176,9 @@ class PPCFrameLowering: public TargetFrameLowering { (
    void updateCalleeSaves(const MachineFunction &MF, BitVector &SavedRegs) const;
  
    uint64_t getStackThreshold() const override;
 +
 +  const PPCReturnProtectorLowering RPL;
 +  const ReturnProtectorLowering *getReturnProtector() const override;
- };
- } // End llvm namespace
  
+ protected:
+   bool hasFPImpl(const MachineFunction &MF) const override;

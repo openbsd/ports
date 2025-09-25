@@ -9,8 +9,8 @@ Index: llvm/lib/Target/Mips/MipsFrameLowering.h
  #include "llvm/CodeGen/TargetFrameLowering.h"
  
  namespace llvm {
-@@ -24,8 +25,11 @@ class MipsFrameLowering : public TargetFrameLowering {
-   const MipsSubtarget &STI;
+@@ -26,8 +27,11 @@ class MipsFrameLowering : public TargetFrameLowering {
+   bool hasFPImpl(const MachineFunction &MF) const override;
  
  public:
 +

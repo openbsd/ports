@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	19.1.7
+LLVM_V =	20.1.8
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
 
@@ -38,7 +38,7 @@ MODULES =		devel/cmake \
 			lang/clang \
 			lang/python
 
-MODCLANG_VERSION =		19
+MODCLANG_VERSION =		20
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_BUILDDEP =		No
 

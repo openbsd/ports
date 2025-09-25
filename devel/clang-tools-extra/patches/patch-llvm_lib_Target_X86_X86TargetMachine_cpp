@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86TargetMachine.cpp
 --- llvm/lib/Target/X86/X86TargetMachine.cpp.orig
 +++ llvm/lib/Target/X86/X86TargetMachine.cpp
-@@ -608,6 +608,7 @@ void X86PassConfig::addPreEmitPass() {
+@@ -610,6 +610,7 @@ void X86PassConfig::addPreEmitPass() {
    addPass(createX86CompressEVEXPass());
    addPass(createX86DiscriminateMemOpsPass());
    addPass(createX86InsertPrefetchPass());
@@ -9,7 +9,7 @@ Index: llvm/lib/Target/X86/X86TargetMachine.cpp
    addPass(createX86InsertX87waitPass());
  }
  
-@@ -627,6 +628,8 @@ void X86PassConfig::addPreEmitPass2() {
+@@ -629,6 +630,8 @@ void X86PassConfig::addPreEmitPass2() {
    addPass(createX86SpeculativeExecutionSideEffectSuppression());
    addPass(createX86IndirectThunksPass());
    addPass(createX86ReturnThunksPass());

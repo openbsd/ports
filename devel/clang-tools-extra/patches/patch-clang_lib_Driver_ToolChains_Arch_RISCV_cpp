@@ -1,9 +1,9 @@
 Index: clang/lib/Driver/ToolChains/Arch/RISCV.cpp
 --- clang/lib/Driver/ToolChains/Arch/RISCV.cpp.orig
 +++ clang/lib/Driver/ToolChains/Arch/RISCV.cpp
-@@ -159,6 +159,13 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
-   if (Args.hasArg(options::OPT_ffixed_x31))
-     Features.push_back("+reserve-x31");
+@@ -132,6 +132,13 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+   RESERVE_REG(x31)
+ #undef RESERVE_REG
  
 +#ifdef __OpenBSD__
 +  // -mno-relax is default, unless -mrelax is specified.
@@ -15,7 +15,7 @@ Index: clang/lib/Driver/ToolChains/Arch/RISCV.cpp
    // -mrelax is default, unless -mno-relax is specified.
    if (Args.hasFlag(options::OPT_mrelax, options::OPT_mno_relax, true)) {
      Features.push_back("+relax");
-@@ -171,6 +178,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+@@ -144,6 +151,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
    } else {
      Features.push_back("-relax");
    }

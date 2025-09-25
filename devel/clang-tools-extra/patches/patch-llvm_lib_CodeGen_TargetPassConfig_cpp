@@ -1,7 +1,7 @@
 Index: llvm/lib/CodeGen/TargetPassConfig.cpp
 --- llvm/lib/CodeGen/TargetPassConfig.cpp.orig
 +++ llvm/lib/CodeGen/TargetPassConfig.cpp
-@@ -955,6 +955,8 @@ void TargetPassConfig::addISelPrepare() {
+@@ -960,6 +960,8 @@ void TargetPassConfig::addISelPrepare() {
  
    addPass(createCallBrPass());
  

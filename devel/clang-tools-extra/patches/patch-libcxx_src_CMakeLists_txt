@@ -1,0 +1,12 @@
+Index: libcxx/src/CMakeLists.txt
+--- libcxx/src/CMakeLists.txt.orig
++++ libcxx/src/CMakeLists.txt
+@@ -349,7 +349,7 @@ endif()
+ set_target_properties(cxx_experimental
+   PROPERTIES
+     COMPILE_FLAGS "${LIBCXX_COMPILE_FLAGS}"
+-    OUTPUT_NAME   "c++experimental"
++    OUTPUT_NAME   "${LIBCXX_SHARED_OUTPUT_NAME}experimental"
+ )
+ cxx_add_common_build_flags(cxx_experimental)
+ target_compile_options(cxx_experimental PUBLIC -D_LIBCPP_ENABLE_EXPERIMENTAL)

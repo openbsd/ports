@@ -1,10 +1,10 @@
 Index: llvm/lib/Target/ARM/ARMISelLowering.cpp
 --- llvm/lib/Target/ARM/ARMISelLowering.cpp.orig
 +++ llvm/lib/Target/ARM/ARMISelLowering.cpp
-@@ -21431,6 +21431,8 @@ bool ARMTargetLowering::shouldInsertFencesForAtomic(
+@@ -21346,6 +21346,8 @@ bool ARMTargetLowering::shouldInsertFencesForAtomic(
  }
  
- bool ARMTargetLowering::useLoadStackGuardNode() const {
+ bool ARMTargetLowering::useLoadStackGuardNode(const Module &M) const {
 +  if (Subtarget->getTargetTriple().isOSOpenBSD())
 +    return false;
    // ROPI/RWPI are not supported currently.

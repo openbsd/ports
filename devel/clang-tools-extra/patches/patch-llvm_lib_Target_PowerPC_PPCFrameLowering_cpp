@@ -9,7 +9,7 @@ Index: llvm/lib/Target/PowerPC/PPCFrameLowering.cpp
  #include "PPCSubtarget.h"
  #include "PPCTargetMachine.h"
  #include "llvm/ADT/Statistic.h"
-@@ -2808,4 +2809,8 @@ uint64_t PPCFrameLowering::getStackThreshold() const {
+@@ -2817,4 +2818,8 @@ uint64_t PPCFrameLowering::getStackThreshold() const {
      return LONG_MAX;
  
    return TargetFrameLowering::getStackThreshold();

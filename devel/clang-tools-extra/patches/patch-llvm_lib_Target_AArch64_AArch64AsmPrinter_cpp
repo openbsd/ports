@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp
 --- llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp
-@@ -2790,6 +2790,18 @@ void AArch64AsmPrinter::emitInstruction(const MachineI
+@@ -3129,6 +3129,18 @@ void AArch64AsmPrinter::emitInstruction(const MachineI
      TS->emitARM64WinCFIEpilogEnd();
      return;
  

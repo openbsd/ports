@@ -1,7 +1,7 @@
 Index: llvm/lib/Support/Unix/Process.inc
 --- llvm/lib/Support/Unix/Process.inc.orig
 +++ llvm/lib/Support/Unix/Process.inc
-@@ -342,6 +342,9 @@ unsigned Process::StandardErrColumns() {
+@@ -325,6 +325,9 @@ unsigned Process::StandardErrColumns() {
  }
  
  static bool terminalHasColors() {
