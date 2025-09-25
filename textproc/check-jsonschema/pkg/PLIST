@@ -56,10 +56,13 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/buildkite.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/circle-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/cloudbuild.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/codecov.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/compose-spec.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/dependabot.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/drone-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-actions.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-config.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-forms.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-workflows.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/gitlab-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/meltano.json
