@@ -1,12 +1,11 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.11
+VERSION =	5.2.13
 DISTNAME =	krita-${VERSION}
-REVISION =	3
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                13.0 # 16.0
+SHARED_LIBS +=  kritaflake                14.0 # 16.0
 SHARED_LIBS +=  kritapigment              9.1 # 16.0
 SHARED_LIBS +=  kritaplugin               3.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
@@ -29,11 +28,11 @@ SHARED_LIBS +=  kritamultiarch            0.1 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
-SHARED_LIBS +=  kritaglobal               6.1 # 14.0
-SHARED_LIBS +=  kritaimage                68.1 # 0.0
+SHARED_LIBS +=  kritaglobal               7.0 # 14.0
+SHARED_LIBS +=  kritaimage                69.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             59.2 # 0.0
 SHARED_LIBS +=  kritalibpaintop           60.0 # 0.0
-SHARED_LIBS +=  kritaui                   72.0 # 0.0
+SHARED_LIBS +=  kritaui                   73.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -57,7 +56,7 @@ WANTLIB += fftw3 fontconfig freetype fribidi gif glib-2.0 gobject-2.0
 WANTLIB += gsl gslcblas harfbuzz heif intl jpeg json-c jxl jxl_threads
 WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler-qt5
 WANTLIB += quazip1-qt5 tiff turbojpeg unibreak webp webpdemux
-WANTLIB += webpmux z poppler
+WANTLIB += webpmux z
 
 SITES =		${SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
