@@ -1,0 +1,18 @@
+Restore code from EV-4.34, 4.35 does not work on OpenBSD 7.8 Perl 5.40.1.
+
+Index: typemap
+--- typemap.orig
++++ typemap
+@@ -37,9 +37,9 @@ T_LOOP
+ 
+ T_WATCHER
+ 	if (!(SvROK ($arg) && SvOBJECT (SvRV ($arg))
+-              && (SvSTASH (SvRV ($arg)) == stash_${ ($type =~ /ev_(\S+)/, \"$1") }
+-                  || sv_derived_from ($arg, \"EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\"))))
+-          croak (\"object is not of type EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\");
++              && (SvSTASH (SvRV ($arg)) == stash_" . ($type =~ /ev_(\S+)/, "$1") . "
++                  || sv_derived_from ($arg, \"EV::" . ($type =~ /ev_(\S+)/, ucfirst "$1") . "\"))))
++          croak (\"object is not of type EV::" . ($type =~ /ev_(\S+)/, ucfirst "$1") . "\");
+ 	$var = ($type)SvPVX (SvRV ($arg));
+ 
+ OUTPUT
