@@ -1,0 +1,14 @@
+fix with newer perl
+
+Index: muttprint
+--- muttprint.orig
++++ muttprint
+@@ -47,7 +47,7 @@ use POSIX;
+ use Text::Wrap;
+ use File::Temp qw(tempdir);
+ use File::Temp qw(tempfile);
+-use File::Spec qw(tmpdir);
++use File::Spec;
+ use File::stat qw(stat);
+ use utf8;
+ 

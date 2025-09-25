@@ -1,7 +1,7 @@
 COMMENT =	pretty printing of your mails
 
 DISTNAME =	muttprint-0.73
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	print mail
 
@@ -12,14 +12,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-SITES =			${SITE_SOURCEFORGE:=muttprint/}
+SITES =		${SITE_SOURCEFORGE:=muttprint/}
 
-RUN_DEPENDS =		converters/p5-Text-Iconv \
-			devel/p5-Time-TimeDate \
-			graphics/ImageMagick \
-			print/psutils \
-			print/texlive/base \
-			print/texlive/texmf,-full
+RUN_DEPENDS =	converters/p5-Text-Iconv \
+		devel/p5-Time-TimeDate \
+		graphics/ImageMagick \
+		print/psutils \
+		print/texlive/base \
+		print/texlive/texmf,-full
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf
