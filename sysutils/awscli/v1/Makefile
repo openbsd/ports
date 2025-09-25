@@ -1,0 +1,21 @@
+COMMENT=		universal command line environment for AWS
+
+MODPY_DISTV=		1.42.35
+REVISION=		0
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# Apache 2.0
+PERMIT_PACKAGE=		Yes
+
+MODPY_PI=		Yes
+MODPY_PYBUILD=		setuptools
+
+# !!! check setup.py for exact dependencies version
+RUN_DEPENDS +=		devel/py-colorama>=0.2.5,<0.4.7
+RUN_DEPENDS +=		net/py-botocore=1.40.${MODPY_DISTV:E}
+RUN_DEPENDS +=		net/py-s3transfer>=0.14.0,<0.15.0
+RUN_DEPENDS +=		textproc/py-yaml>=3.10,<6.1
+RUN_DEPENDS +=		security/py-rsa>=3.1.2,<4.8
+
+.include <bsd.port.mk>

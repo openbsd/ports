@@ -1,3 +1,4 @@
+@option is-branch
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
