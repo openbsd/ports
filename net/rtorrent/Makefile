@@ -1,13 +1,14 @@
-COMMENT=		ncurses BitTorrent client based on libTorrent
+COMMENT =		ncurses BitTorrent client based on libTorrent
 
-DISTNAME=		rtorrent-0.15.7
-EPOCH=			0
-CATEGORIES=		net
+DISTNAME =		rtorrent-0.15.7
+CATEGORIES =		net
 
-HOMEPAGE=		https://rakshasa.github.io/rtorrent/
+HOMEPAGE =		https://rakshasa.github.io/rtorrent/
+
+EPOCH =			0
 
 # GPLv2+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto curl curses execinfo m nghttp2 nghttp3 ngtcp2
@@ -15,7 +16,7 @@ WANTLIB += ngtcp2_crypto_libressl ssl torrent z
 
 COMPILER =		base-clang ports-gcc
 
-SITES=			https://github.com/rakshasa/rtorrent-archive/raw/master/
+SITES =			https://github.com/rakshasa/rtorrent-archive/raw/master/
 
 LIB_DEPENDS =		net/libtorrent \
 			net/curl
