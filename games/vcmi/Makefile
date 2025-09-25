@@ -2,17 +2,15 @@ COMMENT =	HoMM3 engine rewrite
 
 CATEGORIES =	games
 
-REVISION =	2
-
 HOMEPAGE =	https://vcmi.eu/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
-DIST_TUPLE += github vcmi vcmi 1.5.7 .
+DIST_TUPLE += github vcmi vcmi 1.6.7 .
 DIST_TUPLE += github fuzzylite fuzzylite \
-		7aee562d6ca17f3cf42588ffb5116e03017c3c50 AI/FuzzyLite
+		13b3122f5c353c0389ed4e66041d548c44ec9df6 AI/FuzzyLite
 DIST_TUPLE += github google googletest \
-		b796f7d44681514f58a683a3a71ff17c94edb0c1 test/googletest
+		b514bdc898e2951020cbdca1304b75f5950d1f59 test/googletest
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -23,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
-WANTLIB += c m minizip swscale tbb z
+WANTLIB += c m minizip swresample swscale tbb z
 
 # C++17
 COMPILER = 		base-clang ports-gcc
@@ -50,6 +48,8 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_TEST=OFF \
 			-Wno-dev
+
+CXXFLAGS +=		-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
 
 NO_TEST =		Yes
 
