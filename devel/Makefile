@@ -1383,6 +1383,7 @@
      SUBDIR += py-attrs
      SUBDIR += py-autocommand
      SUBDIR += py-automat
+     SUBDIR += py-awscrt
      SUBDIR += py-babel
      SUBDIR += py-backcall
      SUBDIR += py-bencode
