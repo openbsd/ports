@@ -149,6 +149,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/compare_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/each.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/overlap.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/sole.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/regexp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/securerandom.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/
