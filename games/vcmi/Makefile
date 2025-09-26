@@ -6,7 +6,7 @@ HOMEPAGE =	https://vcmi.eu/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
-DIST_TUPLE += github vcmi vcmi 1.6.7 .
+DIST_TUPLE += github vcmi vcmi 1.6.8 .
 DIST_TUPLE += github fuzzylite fuzzylite \
 		13b3122f5c353c0389ed4e66041d548c44ec9df6 AI/FuzzyLite
 DIST_TUPLE += github google googletest \
