@@ -25,6 +25,8 @@ RUN_DEPENDS +=		devel/py-awscrt>=0.27.5 \
 BUILD_DEPENDS =		devel/py-awscrt>=0.27.5 \
 			devel/py-colorama \
 			devel/py-dateutil \
+			textproc/py-docutils \
+			sysutils/py-distro \
 			devel/py-jmespath \
 			devel/py-prompt_toolkit \
 			textproc/py-ruamel.yaml \
