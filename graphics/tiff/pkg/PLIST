@@ -270,6 +270,7 @@ share/doc/tiff/manual/_sources/releases/v4.5.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.5.1.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.6.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.7.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.7.1.rst.txt
 share/doc/tiff/manual/_sources/rfcs/
 share/doc/tiff/manual/_sources/rfcs/index.rst.txt
 share/doc/tiff/manual/_sources/rfcs/rfc1_psc.rst.txt
@@ -458,6 +459,7 @@ share/doc/tiff/manual/releases/v4.5.0.html
 share/doc/tiff/manual/releases/v4.5.1.html
 share/doc/tiff/manual/releases/v4.6.0.html
 share/doc/tiff/manual/releases/v4.7.0.html
+share/doc/tiff/manual/releases/v4.7.1.html
 share/doc/tiff/manual/rfcs/
 share/doc/tiff/manual/rfcs/index.html
 share/doc/tiff/manual/rfcs/rfc1_psc.html
