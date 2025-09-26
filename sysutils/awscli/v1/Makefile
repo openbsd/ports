@@ -1,7 +1,7 @@
 COMMENT=		universal command line environment for AWS
 
 MODPY_DISTV=		1.42.35
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
