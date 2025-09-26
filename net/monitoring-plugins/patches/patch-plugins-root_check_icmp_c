@@ -1,0 +1,13 @@
+missing prototype for ioctl()
+
+Index: plugins-root/check_icmp.c
+--- plugins-root/check_icmp.c.orig
++++ plugins-root/check_icmp.c
+@@ -52,6 +52,7 @@ const char *email = "devel@monitoring-plugins.org";
+ #endif
+ 
+ #include <sys/time.h>
++#include <sys/ioctl.h>
+ #include <errno.h>
+ #include <signal.h>
+ #include <ctype.h>
