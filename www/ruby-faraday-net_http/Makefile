@@ -1,6 +1,6 @@
 COMMENT =	Faraday adapter for Net::HTTP
 
-DISTNAME =	faraday-net_http-3.4.0
+DISTNAME =	faraday-net_http-3.4.1
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/lostisland/faraday-net_http
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
