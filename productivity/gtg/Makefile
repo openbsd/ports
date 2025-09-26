@@ -1,6 +1,8 @@
+BROKEN=			needs fixes for python 3.12, uses "imp"
+
 COMMENT=		GTD organizer for GNOME
 
-MODPY_DISTV =	0.6.0
+MODPY_DISTV =		0.6.0
 DISTNAME =		gtg-${MODPY_DISTV}
 EXTRACT_SUFX =		.tar.xz
 REVISION =		5
