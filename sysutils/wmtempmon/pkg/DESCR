@@ -1,4 +1,5 @@
 wmtempmon is a wmdockapp which displays the temperature monitored by a
-temperature sensor.  In the title you can see the temperature sensor
-name.  In the main area you can see the current temperature measured by
-the monitored sensor.
+temperature device.  In the title you can see the temperature device
+name.  In the middle area you can see the temperature device sensor
+description, if one exists.  In the main area you can see the current
+temperature measured by the monitored sensor.
