@@ -1348,43 +1348,6 @@ lib/zeek/python/zeekpkg/uservar.py
 @man man/man1/zkg.1
 @man man/man8/zeek.8
 @man man/man8/zeekctl.8
-share/btest/
-share/btest/data/
-share/btest/data/Scripts/
-share/btest/data/Scripts/README
-share/btest/data/Scripts/canonify-zeek-log
-share/btest/data/Scripts/canonify-zeek-log-sorted
-share/btest/data/Scripts/diff-remove-abspath
-share/btest/data/Scripts/diff-remove-timestamps
-share/btest/data/Scripts/diff-sort
-share/btest/data/Scripts/run-zeek
-share/btest/data/Scripts/spicy-version
-share/btest/data/Scripts/zeek-version
-share/btest/data/random.seed
-share/btest/scripts/
-share/btest/scripts/diff-canonifier
-share/btest/scripts/diff-canonifier-external
-share/btest/scripts/diff-canonifier-spicy
-share/btest/scripts/diff-clean-doctest
-share/btest/scripts/diff-remove-abspath
-share/btest/scripts/diff-remove-fields
-share/btest/scripts/diff-remove-file-ids
-share/btest/scripts/diff-remove-first-timestamp
-share/btest/scripts/diff-remove-fractions
-share/btest/scripts/diff-remove-openclose-timestamps
-share/btest/scripts/diff-remove-spicy-abspath
-share/btest/scripts/diff-remove-timestamps
-share/btest/scripts/diff-remove-timestamps-and-sort
-share/btest/scripts/diff-remove-uids
-share/btest/scripts/diff-remove-x509-key-info
-share/btest/scripts/diff-remove-x509-names
-share/btest/scripts/diff-sort
-share/btest/scripts/diff-sort-and-remove-abspath
-share/btest/scripts/diff-sort-set-elements
-share/btest/scripts/spicy/
-share/btest/scripts/spicy/diff-remove-abspath
-share/btest/scripts/spicy/diff-remove-timestamps
-share/btest/scripts/spicy/diff-sort
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/zeek/
 @sample ${SYSCONFDIR}/zeek/

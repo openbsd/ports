@@ -1,7 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
@@ -30,10 +30,11 @@ COMPILER =		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 CFLAGS +=		-DDBL_DECIMAL_DIG=__DBL_DECIMAL_DIG__
 
-MODPY_ADJ_FILES=	auxil/btest/btest \
+MODPY_ADJ_FILES =	auxil/package-manager/zkg \
+			auxil/zeek-client/zeek-client \
+			auxil/zeekctl/auxil/trace-summary/trace-summary \
 			auxil/zeekctl/bin/stats-to-csv \
-			auxil/zeekctl/bin/zeekctl.in \
-			auxil/zeekctl/auxil/trace-summary/trace-summary
+			auxil/zeekctl/bin/zeekctl.in
 
 BUILD_DEPENDS =		databases/libhiredis \
 			devel/bison \
@@ -103,6 +104,7 @@ post-install:
 	mv ${PREFIX}/share/zeek/site/ ${PREFIX}/share/examples/zeek/
 	cd ${PREFIX}/share/zeek && ln -sf ${SYSCONFDIR}/zeek/site
 	${MODPY_COMPILEALL} ${PREFIX}/lib/zeek/python
+	rm -rf ${PREFIX}/share/btest/
 
 # handled by exec-add / exec-delete; symlink changes according to spooldir
 	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
