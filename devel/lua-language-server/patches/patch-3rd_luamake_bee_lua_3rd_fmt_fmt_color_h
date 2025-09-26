@@ -1,0 +1,11 @@
+Index: 3rd/luamake/bee.lua/3rd/fmt/fmt/color.h
+--- 3rd/luamake/bee.lua/3rd/fmt/fmt/color.h.orig
++++ 3rd/luamake/bee.lua/3rd/fmt/fmt/color.h
+@@ -9,6 +9,7 @@
+ #define FMT_COLOR_H_
+ 
+ #include "format.h"
++#include <algorithm>
+ 
+ FMT_BEGIN_NAMESPACE
+ FMT_BEGIN_EXPORT

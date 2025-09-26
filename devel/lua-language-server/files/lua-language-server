@@ -1,0 +1,6 @@
+#!/bin/sh
+TMPPATH=$(/usr/bin/mktemp -d '/tmp/lua-language-server.XXXXXXXXXX' || exit 1)
+exec '${TRUEPREFIX}/share/lua-language-server/bin/lua-language-server' \
+    --logpath="${TMPPATH}/log" \
+    --metapath="${TMPPATH}/meta" \
+    "$@"
