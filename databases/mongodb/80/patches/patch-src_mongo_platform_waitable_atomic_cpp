@@ -1,27 +1,68 @@
 Index: src/mongo/platform/waitable_atomic.cpp
 --- src/mongo/platform/waitable_atomic.cpp.orig
 +++ src/mongo/platform/waitable_atomic.cpp
-@@ -235,6 +235,23 @@ bool waitUntil(const void* uaddr,
-     return timeoutOverflow || errno != ETIMEDOUT;
- }
+@@ -38,6 +38,13 @@
+ #include <synchapi.h>
+ #endif
  
++#ifdef __OpenBSD__
++#include <sys/futex.h>
++#include <sys/time.h>
++#include <errno.h>
++#include <unistd.h>
++#endif
++
+ namespace mongo::waitable_atomic_details {
+ using stdx::chrono::system_clock;
+ 
+@@ -233,6 +240,50 @@ bool waitUntil(const void* uaddr,
+     // There isn't a good list of possible errors, so assuming that anything other than a timeout
+     // error is a possible spurious wakeup.
+     return timeoutOverflow || errno != ETIMEDOUT;
++}
++
 +#elif defined(__OpenBSD__)
 +
 +void notifyOne(const void* uaddr) {
++    auto* addr = reinterpret_cast<volatile uint32_t*>(const_cast<void*>(uaddr));
++    futex(addr, FUTEX_WAKE_PRIVATE, 1, nullptr, nullptr);
 +}
 +
 +void notifyMany(const void* uaddr, int nToWake) {
++    auto* addr = reinterpret_cast<volatile uint32_t*>(const_cast<void*>(uaddr));
++    futex(addr, FUTEX_WAKE_PRIVATE, nToWake, nullptr, nullptr);
 +}
 +
 +void notifyAll(const void* uaddr) {
++    auto* addr = reinterpret_cast<volatile uint32_t*>(const_cast<void*>(uaddr));
++    futex(addr, FUTEX_WAKE_PRIVATE, INT_MAX, nullptr, nullptr);
 +}
 +
 +bool waitUntil(const void* uaddr,
 +               uint32_t old,
 +               boost::optional<system_clock::time_point> deadline) {
-+    return true;
-+}
++    auto* addr = reinterpret_cast<volatile uint32_t*>(const_cast<void*>(uaddr));
 +
++    if (!deadline) {
++        int ret = futex(addr, FUTEX_WAIT_PRIVATE, old, nullptr, nullptr);
++        return ret == 0;
++    }
++
++    auto now = system_clock::now();
++    if (*deadline <= now) {
++        return false; // Already timed out
++    }
++
++    auto duration = *deadline - now;
++    auto sec = std::chrono::duration_cast<std::chrono::seconds>(duration);
++    auto nsec = std::chrono::duration_cast<std::chrono::nanoseconds>(duration - sec);
++
++    struct timespec timeout;
++    timeout.tv_sec = sec.count();
++    timeout.tv_nsec = nsec.count();
++
++    int ret = futex(addr, FUTEX_WAIT_PRIVATE, old, &timeout, nullptr);
++    return ret == 0;
+ }
+ 
  #else
- #error "Need an implementation of waitUntil(), notifyOne(), notifyMany(), notifyAll() for this OS"
- #endif

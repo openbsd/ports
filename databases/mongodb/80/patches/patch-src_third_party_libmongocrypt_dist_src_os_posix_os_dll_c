@@ -7,10 +7,10 @@ Index: src/third_party/libmongocrypt/dist/src/os_posix/os_dll.c
  
 +#elif defined(__OpenBSD__)
 +
-+// XXXX
 +mcr_dll_path_result mcr_dll_path(mcr_dll dll) {
-+   mcr_dll_path_result r;
-+	return r;
++    mcr_dll_path_result r;
++    memset(&r, 0, sizeof(r));
++    return r;
 +}
 +
  #else

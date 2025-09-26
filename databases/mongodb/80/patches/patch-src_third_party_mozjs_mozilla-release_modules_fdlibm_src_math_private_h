@@ -1,0 +1,13 @@
+Index: src/third_party/mozjs/mozilla-release/modules/fdlibm/src/math_private.h
+--- src/third_party/mozjs/mozilla-release/modules/fdlibm/src/math_private.h.orig
++++ src/third_party/mozjs/mozilla-release/modules/fdlibm/src/math_private.h
+@@ -30,9 +30,7 @@
+  * Adapted from https://github.com/freebsd/freebsd-src/search?q=__double_t
+  */
+ 
+-typedef double      __double_t;
+ typedef __double_t  double_t;
+-typedef float       __float_t;
+ 
+ /*
+  * The original fdlibm code used statements like:

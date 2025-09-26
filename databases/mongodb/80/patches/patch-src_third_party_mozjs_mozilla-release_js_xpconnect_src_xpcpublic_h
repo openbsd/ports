@@ -1,0 +1,15 @@
+Index: src/third_party/mozjs/mozilla-release/js/xpconnect/src/xpcpublic.h
+--- src/third_party/mozjs/mozilla-release/js/xpconnect/src/xpcpublic.h.orig
++++ src/third_party/mozjs/mozilla-release/js/xpconnect/src/xpcpublic.h
+@@ -909,7 +909,11 @@ struct alignas(kAutomationPageSize) ReadOnlyPage final
+   // TSan is confused by write access to read-only section.
+   static ReadOnlyPage sInstance;
+ #else
++#ifdef __OpenBSD__
++  static const volatile ReadOnlyPage sInstance __attribute__((section(".openbsd.mutable")));
++#else
+   static const volatile ReadOnlyPage sInstance;
++#endif
+ #endif
+ 
+  private:

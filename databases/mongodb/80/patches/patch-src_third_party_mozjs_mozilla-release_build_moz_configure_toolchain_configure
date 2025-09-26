@@ -1,0 +1,12 @@
+Index: src/third_party/mozjs/mozilla-release/build/moz.configure/toolchain.configure
+--- src/third_party/mozjs/mozilla-release/build/moz.configure/toolchain.configure.orig
++++ src/third_party/mozjs/mozilla-release/build/moz.configure/toolchain.configure
+@@ -2291,7 +2291,7 @@ set_define("_LIBCPP_HIDE_FROM_ABI", libcxx_override_vi
+ @depends(target, build_environment)
+ def visibility_flags(target, env):
+     if target.os != "WINNT":
+-        if target.kernel == "Darwin":
++        if target.kernel == 'Darwin' or target.kernel == 'OpenBSD':
+             return ("-fvisibility=hidden", "-fvisibility-inlines-hidden")
+         return (
+             "-I%s/system_wrappers" % os.path.join(env.dist),
