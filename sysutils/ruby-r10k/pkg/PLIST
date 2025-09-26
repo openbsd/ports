@@ -9,7 +9,6 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/docker.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/rspec_tests.yml
-${GEM_LIB}/gems/${DISTNAME}/.github/workflows/stale.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
 ${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS

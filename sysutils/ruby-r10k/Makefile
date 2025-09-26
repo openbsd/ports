@@ -1,6 +1,6 @@
 COMMENT =	Puppet module management
 
-DISTNAME =	r10k-5.0.0
+DISTNAME =	r10k-5.0.2
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
