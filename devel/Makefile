@@ -1649,6 +1649,7 @@
      SUBDIR += py-python-lsp-black
      SUBDIR += py-python-lsp-server
      SUBDIR += py-python-slugify
+     SUBDIR += py-pytokens
      SUBDIR += py-pytoolconfig
      SUBDIR += py-qdarkstyle
      SUBDIR += py-qstylizer
