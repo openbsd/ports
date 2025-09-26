@@ -10,7 +10,7 @@ COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.4.0
 REVISION=	3
-REVISION-main=	4
+REVISION-main=	5
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
