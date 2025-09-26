@@ -27,7 +27,7 @@ pycharm/lib/annotations.jar
 pycharm/lib/app-client.jar
 pycharm/lib/app.jar
 pycharm/lib/bouncy-castle.jar
-pycharm/lib/build-marker-PC-252.25557.130
+pycharm/lib/build-marker-PC-252.26199.168
 pycharm/lib/eclipse.lsp4j.debug.jar
 pycharm/lib/eclipse.lsp4j.jar
 pycharm/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -57,6 +57,7 @@ pycharm/lib/modules/intellij.grid.jar
 pycharm/lib/modules/intellij.grid.types.jar
 pycharm/lib/modules/intellij.ide.startup.importSettings.jar
 pycharm/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
+pycharm/lib/modules/intellij.libraries.coil.jar
 pycharm/lib/modules/intellij.libraries.compose.foundation.desktop.jar
 pycharm/lib/modules/intellij.libraries.kotlinx.io.jar
 pycharm/lib/modules/intellij.libraries.ktor.client.cio.jar
@@ -128,7 +129,6 @@ pycharm/lib/modules/intellij.platform.recentFiles.jar
 pycharm/lib/modules/intellij.platform.registry.cloud.jar
 pycharm/lib/modules/intellij.platform.rpc.backend.jar
 pycharm/lib/modules/intellij.platform.scopes.backend.jar
-pycharm/lib/modules/intellij.platform.scopes.jar
 pycharm/lib/modules/intellij.platform.searchEverywhere.backend.jar
 pycharm/lib/modules/intellij.platform.searchEverywhere.frontend.jar
 pycharm/lib/modules/intellij.platform.searchEverywhere.jar
@@ -960,8 +960,8 @@ pycharm/plugins/pycharm-community-sharedIndexes-bundled/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-79ce2b023f03-d902c0275401.ijx
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-79ce2b023f03-d902c0275401.txt
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-b030e9c4a83c-d902c0275401.ijx
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-b030e9c4a83c-d902c0275401.txt
 pycharm/plugins/python-ce/
 pycharm/plugins/python-ce/helpers/
 pycharm/plugins/python-ce/helpers/.gitignore
