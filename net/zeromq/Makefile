@@ -15,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread sodium ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++
+COMPILER =		base-clang ports-gcc
 
 SITES =			https://github.com/zeromq/libzmq/releases/download/v$V/
 
@@ -30,9 +31,7 @@ CONFIGURE_ARGS =	--disable-Werror
 # XXX: verify tweetnacl (the default) uses proper randomness before using it
 CONFIGURE_ARGS +=	--with-libsodium
 
-# XXX libsodium: https://github.com/jedisct1/libsodium/pull/104
-CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}" \
-			CODE_COVERAGE_CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
+CONFIGURE_ENV =		CODE_COVERAGE_CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
 
 # test_system needs to be able to create at least 496 sockets
 do-test:
