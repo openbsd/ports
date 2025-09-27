@@ -2,6 +2,7 @@ COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
 PKGNAME=	rdapper-1.18
+REVISION=	0
 DISTNAME=	App-${PKGNAME}
 CATEGORIES=	net
 PKG_ARCH=	*
@@ -13,6 +14,7 @@ BUILD_DEPENDS=	devel/p5-File-ShareDir-Install
 
 RUN_DEPENDS=	converters/p5-JSON \
 		converters/p5-Net-IDN-Encode \
+		devel/p5-File-ShareDir \
 		devel/p5-Locale-Maketext-Gettext \
 		devel/p5-Term-Size \
 		net/p5-Net-ASN \
