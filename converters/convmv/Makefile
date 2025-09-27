@@ -1,5 +1,5 @@
 COMMENT =		convert filenames from one encoding to another
-DISTNAME =		convmv-2.05
+DISTNAME =		convmv-2.06
 CATEGORIES =		converters
 HOMEPAGE =		https://www.j3e.de/linux/convmv/
 
