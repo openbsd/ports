@@ -1,0 +1,41 @@
+Disable KUnifiedPush
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -66,20 +66,21 @@ set_package_properties(Qt6Keychain PROPERTIES
+     PURPOSE "Secure storage of account secrets"
+ )
+ 
+-find_package(KUnifiedPush QUIET)
+-set_package_properties(KUnifiedPush PROPERTIES
+-    TYPE OPTIONAL
+-    PURPOSE "Push notification support"
+-    URL "https://invent.kde.org/libraries/kunifiedpush"
+-)
+-
+-if (TARGET KUnifiedPush)
+-    find_package(OpenSSL)
+-    set_package_properties(OpenSSL PROPERTIES
+-            TYPE REQUIRED
+-            PURPOSE "Generate push notification keys"
+-    )
+-endif()
++# Needs newer OpenSSL featuers
++#find_package(KUnifiedPush QUIET)
++#set_package_properties(KUnifiedPush PROPERTIES
++#    TYPE OPTIONAL
++#    PURPOSE "Push notification support"
++#    URL "https://invent.kde.org/libraries/kunifiedpush"
++#)
++#
++#if (TARGET KUnifiedPush)
++#    find_package(OpenSSL)
++#    set_package_properties(OpenSSL PROPERTIES
++#            TYPE REQUIRED
++#            PURPOSE "Generate push notification keys"
++#    )
++#endif()
+ 
+ if (ANDROID AND NOT TARGET OpenSSL::SSL)
+     find_package(OpenSSL)
