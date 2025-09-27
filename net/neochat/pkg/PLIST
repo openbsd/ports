@@ -3,6 +3,7 @@
 @so lib/qt6/plugins/kf6/purpose/neochatshareplugin.so
 @man man/man1/neochat.1
 share/applications/org.kde.neochat.desktop
+share/dbus-1/services/org.kde.neochat.service
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
 share/knotifications6/neochat.notifyrc
