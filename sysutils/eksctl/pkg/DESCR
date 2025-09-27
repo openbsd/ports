@@ -1,0 +1,2 @@
+eksctl is a simple CLI tool for creating clusters on EKS - Amazons managed
+Kubernetes service for EC2.

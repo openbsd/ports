@@ -1,0 +1,3 @@
+@bin bin/ec2geninfo
+@bin bin/eksctl
+@bin bin/schema
