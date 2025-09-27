@@ -1,10 +1,10 @@
 # !!! do not update blindly, these ports require a specific version:
 # net/py-boto3
-# sysutils/awscli
+# sysutils/awscli/v1
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_DISTV=		1.40.35
+MODPY_DISTV=		1.40.40
 DISTNAME=		botocore-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
