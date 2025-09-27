@@ -5,7 +5,7 @@ CATEGORIES =	x11
 
 HOMEPAGE =	https://apps.kde.org/dolphin
 
-SHARED_LIBS +=  dolphinprivate            11.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            12.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Baloo KF6BalooWidgets
@@ -18,8 +18,9 @@ WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
 WANTLIB += KF6NewStuffWidgets KF6Notifications KF6Parts KF6Service
 WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Widgets Qt6Xml X11 c m phonon4qt6 xkbcommon
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6MultimediaWidgets Qt6Network Qt6Qml Qt6Widgets Qt6Xml
+WANTLIB += X11 c m xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -67,9 +68,9 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		multimedia/phonon,qt6 \
 		x11/kde-applications/baloo-widgets>=${VERSION} \
 		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
 		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11

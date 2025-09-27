@@ -2,13 +2,13 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	mimetreeparser-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6MimeTreeParserCore   0.0 # 0.0
+SHARED_LIBS +=	KPim6MimeTreeParserCore    1.0 # 0.0
 SHARED_LIBS +=	KPim6MimeTreeParserWidgets 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6I18n KF6WidgetsAddons
-WANTLIB += KPim6Libkleo KPim6Mbox KPim6Mime Qt6Core Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets assuan gpgme gpgmepp
-WANTLIB += m qgpgmeqt6
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
+WANTLIB += KF6ConfigCore KF6I18n KF6WidgetsAddons KPim6Libkleo
+WANTLIB += KPim6Mbox KPim6Mime Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Widgets assuan gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 
@@ -19,6 +19,8 @@ BUILD_DEPENDS =	devel/boost \
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/ki18n \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
 		devel/kf6/kwidgetsaddons \
 		security/gpgme,-qt \
 		security/libassuan \

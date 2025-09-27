@@ -2,9 +2,6 @@
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
 bin/konsoleprofile
-lib/kconf_update_bin/
-@bin lib/kconf_update_bin/konsole_globalaccel
-@bin lib/kconf_update_bin/konsole_show_menubar
 @lib lib/libkonsoleapp.so.${LIBkonsoleapp_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 lib/qt6/plugins/kf6/parts/
@@ -67,9 +64,6 @@ share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/konsole/
 share/doc/HTML/zh_CN/konsole/index.cache.bz2
 share/doc/HTML/zh_CN/konsole/index.docbook
-share/kconf_update/
-share/kconf_update/konsole.upd
-share/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
 share/kglobalaccel/
 share/kglobalaccel/org.kde.konsole.desktop
 share/kio/

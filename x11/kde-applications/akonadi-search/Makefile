@@ -12,8 +12,8 @@ WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6I18n KF6ItemModels KF6KCMUtils
 WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6Runner KF6TextUtils
 WANTLIB += KF6WidgetsAddons KPim6AkonadiAgentBase KPim6AkonadiCore
-WANTLIB += KPim6AkonadiMime KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Widgets c m xapian
+WANTLIB += KPim6AkonadiMime KPim6AkonadiPrivate KPim6Mime Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets c m xapian
 
 MODKDE_TRANSLATIONS = yes
 

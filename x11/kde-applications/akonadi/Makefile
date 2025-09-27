@@ -1,22 +1,22 @@
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity
-REVISION =	2
 
 HOMEPAGE =	https://kontact.kde.org
 
-SHARED_LIBS +=	KPim6AkonadiAgentBase     1.0 # 0.0
-SHARED_LIBS +=	KPim6AkonadiCore          1.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiAgentBase     1.1 # 0.0
+SHARED_LIBS +=	KPim6AkonadiCore          2.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiPrivate       1.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiWidgets       0.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiXml           0.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiAgentWidgetBase 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml accounts-qt6 c kaccounts6
-WANTLIB += lzma m xml2
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml X11 accounts-qt6 c kaccounts6 lzma m xml2
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -50,16 +50,18 @@ LIB_DEPENDS =		archivers/xz \
 			devel/kf6/kconfig \
 			devel/kf6/kconfigwidgets \
 			devel/kf6/kcoreaddons \
-			devel/kf6/kguiaddons \
 			devel/kf6/kcrash \
+			devel/kf6/kguiaddons \
 			devel/kf6/ki18n \
 			devel/kf6/kiconthemes \
 			devel/kf6/kitemmodels \
 			devel/kf6/kwidgetsaddons \
+			devel/kf6/kwindowsystem \
 			devel/kf6/kxmlgui \
 			net/libaccounts-qt \
 			textproc/libxml \
-			x11/kde-applications/kf6-kaccounts-integration>=${VERSION}
+			x11/kde-applications/kf6-kaccounts-integration>=${VERSION} \
+			x11/qt6/qtdeclarative
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 

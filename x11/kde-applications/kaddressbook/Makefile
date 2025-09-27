@@ -10,16 +10,16 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6ItemModels KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Parts KF6Service KF6Solid KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiSearchDebug KPim6AkonadiWidgets
-WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6KontactInterface
-WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Mime
-WANTLIB += KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
-WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml c m
+WANTLIB += KF6Parts KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiSearchDebug KPim6AkonadiWidgets KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6KontactInterface KPim6LdapCore KPim6LdapWidgets
+WANTLIB += KPim6Libkdepim KPim6Mime KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6PimCommonAkonadi PlasmaActivities Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -52,7 +52,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kuserfeedback \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/kiconthemes \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

@@ -1,7 +1,6 @@
 include/QMobipocket6/
 include/QMobipocket6/qmobipocket/
 include/QMobipocket6/qmobipocket/mobipocket.h
-include/QMobipocket6/qmobipocket/qfilestream.h
 include/QMobipocket6/qmobipocket/qmobipocket_export.h
 include/QMobipocket6/qmobipocket_version.h
 lib/cmake/QMobipocket6/
@@ -10,3 +9,5 @@ lib/cmake/QMobipocket6/QMobipocket6ConfigVersion.cmake
 lib/cmake/QMobipocket6/QMobipocket6Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QMobipocket6/QMobipocket6Targets.cmake
 @lib lib/libQMobipocket6.so.${LIBQMobipocket6_VERSION}
+share/qlogging-categories6/
+share/qlogging-categories6/qmobipocket.categories

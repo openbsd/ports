@@ -18,7 +18,8 @@ SHARED_LIBS +=  folderconfiguresettings                  2.1 # 5.16.1
 SHARED_LIBS +=  kmailconfirmbeforedeleting               3.1 # 5.18.3
 SHARED_LIBS +=  scamconfiguresettings                    2.1 # 5.19.0
 SHARED_LIBS +=  openurlwithconfigure                     2.1 # 5.19.0
-SHARED_LIBS +=  akonadidatasetools                       2.1 # 0.0
+SHARED_LIBS +=  akonadidatasetools                       2.2 # 0.0
+SHARED_LIBS +=	KPim6AutoGenerateText                    0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6CalendarEvents
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
@@ -26,12 +27,13 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Prison KF6Service
-WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextAddonsWidgets
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6SyntaxHighlighting KF6TextAddonsWidgets KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextAutoGenerateText
 WANTLIB += KF6TextCustomEditor KF6TextGrammarCheck KF6TextTemplate
 WANTLIB += KF6TextTranslator KF6TextUtils KF6WidgetsAddons KF6XmlGui
-WANTLIB += KPim6AddressbookImportExport KPim6AkonadiCalendar KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AddressbookImportExport KPim6AkonadiCalendar KPim6AkonadiCalendarCore
+WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
 WANTLIB += KPim6AkonadiWidgets KPim6CalendarSupport KPim6CalendarUtils
 WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6Gravatar KPim6IMAP
 WANTLIB += KPim6IdentityManagementCore KPim6IdentityManagementWidgets
@@ -81,7 +83,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/prison \
-		devel/kf6/solid \
 		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \
 		security/libassuan \

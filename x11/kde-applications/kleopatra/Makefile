@@ -10,8 +10,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemModels KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
-WANTLIB += KF6Solid KF6StatusNotifierItem KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPim6AkonadiCore KPim6AkonadiMime KPim6IdentityManagementCore
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiCore
+WANTLIB += KPim6AkonadiMime KPim6AkonadiPrivate KPim6IdentityManagementCore
 WANTLIB += KPim6Libkleo KPim6MailTransport KPim6Mime KPim6MimeTreeParserWidgets
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
 WANTLIB += Qt6Xml X11 assuan c gpg-error gpgme gpgmepp m qgpgmeqt6
@@ -45,11 +45,9 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
-		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/kguiaddons \
 		security/gpgme,-qt \
 		security/libassuan \

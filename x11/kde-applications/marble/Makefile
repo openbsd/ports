@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
-REVISION =	1
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -55,18 +54,18 @@ LIB_DEPENDS =	devel/abseil-cpp \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kparts \
 		devel/kf6/krunner \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
-		devel/kf6/kguiaddons \
 		devel/kf6/kxmlgui \
 		devel/protobuf \
 		devel/shapelib \
-		multimedia/phonon,qt6 \
 		misc/gpsd \
+		multimedia/phonon,qt6 \
 		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \

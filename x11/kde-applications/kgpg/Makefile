@@ -10,9 +10,9 @@ WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
 WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6TextTemplate KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6GrantleeTheme
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
-WANTLIB += Qt6Xml X11 c m
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiPrivate
+WANTLIB += KPim6GrantleeTheme Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes

@@ -296,20 +296,6 @@ share/lokalize/icons/locolor/32x32/actions/prevtemplate.png
 share/lokalize/icons/locolor/32x32/actions/prevuntranslated.png
 share/lokalize/icons/locolor/32x32/actions/search2msgstr.png
 share/lokalize/icons/locolor/32x32/actions/transsearch.png
-share/lokalize/scripts/
-share/lokalize/scripts/find-gui-text.sh
-share/lokalize/scripts/msgmerge.py
-share/lokalize/scripts/msgmerge.rc
-share/lokalize/scripts/odf/
-${MODPY_COMMENT}share/lokalize/scripts/odf/${MODPY_PYCACHE}/
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}pyc
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}pyc
-share/lokalize/scripts/odf/xliff2odf-standalone.py
-share/lokalize/scripts/odf/xliff2odf.py
-share/lokalize/scripts/odf/xliff2odf.rc
-share/lokalize/scripts/odf/xliffmerge.py
 share/metainfo/
 share/metainfo/org.kde.lokalize.appdata.xml
 @tag update-desktop-database

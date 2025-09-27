@@ -1,6 +1,5 @@
 COMMENT =	KDE Filesharing via Samba
 DISTNAME =	kdenetwork-filesharing-${VERSION}
-REVISION =	0
 CATEGORIES =	devel
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6Completion KF6ConfigCore

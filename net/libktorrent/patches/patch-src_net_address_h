@@ -10,4 +10,4 @@ Index: src/net/address.h
 +
  namespace net
  {
- using bt::Uint16;
+ /*!

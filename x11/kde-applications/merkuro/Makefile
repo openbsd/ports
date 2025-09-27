@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	calendar email todo and task application
 
 DISTNAME =	merkuro-${VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -25,18 +24,18 @@ WANTLIB += KF6Holidays KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels
 WANTLIB += KF6KIOCore KF6Notifications KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar
-WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiSearchPIM
-WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
-WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementQuick
-WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
-WANTLIB += KPim6MailCommon KPim6MailTransport KPim6Mbox KPim6MessageComposer
-WANTLIB += KPim6MessageCore KPim6Mime KPim6MimeTreeParserCore
-WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
-WANTLIB += KirigamiAddonsStatefulApp Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets Qt6Xml X11 assuan
-WANTLIB += c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += KPim6AkonadiCalendarCore KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiSearchPIM KPim6AkonadiWidgets KPim6CalendarUtils
+WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementQuick KPim6IdentityManagementWidgets
+WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
+WANTLIB += KPim6Mbox KPim6MessageComposer KPim6MessageCore KPim6Mime
+WANTLIB += KPim6MimeTreeParserCore KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += KPim6TextEdit KirigamiAddonsStatefulApp Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += Qt6Xml X11 assuan c gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \

@@ -10,9 +10,10 @@ WANTLIB += KF6DBusAddons KF6DNSSD KF6GuiAddons KF6I18n KF6Notifications
 WANTLIB += KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui KPipeWire KPipeWireDmaBuf KWaylandClient
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 Xdamage Xext Xtst c m pipewire-0.3 vncserver wayland-client
+WANTLIB += X11 Xdamage Xext Xtst c crypto gcrypt gnutls jpeg lzo2
+WANTLIB += m pipewire-0.3 png sasl2 ssl vncserver wayland-client
 WANTLIB += xcb xcb-damage xcb-image xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-xfixes xkbcommon
+WANTLIB += xcb-xfixes xkbcommon z
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 

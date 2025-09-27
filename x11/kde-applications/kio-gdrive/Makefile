@@ -1,7 +1,6 @@
 COMMENT =	KIO Slave to access Google Drive
 DISTNAME =	kio-gdrive-${VERSION}
 CATEGORIES =	www x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets

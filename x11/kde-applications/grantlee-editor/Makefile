@@ -10,16 +10,17 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Service KF6Solid KF6SyntaxHighlighting KF6TextAutoCorrectionCore
+WANTLIB += KF6Service KF6SyntaxHighlighting KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB += KPim6GrantleeTheme KPim6Libkleo KPim6MessageCore KPim6MessageViewer
-WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += KPim6AkonadiPrivate KPim6GrantleeTheme KPim6Libkleo
+WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
+WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml assuan c gpgme
+WANTLIB += gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -49,7 +50,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/kguiaddons \
 		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \

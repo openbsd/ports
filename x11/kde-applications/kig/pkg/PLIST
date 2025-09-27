@@ -1,7 +1,7 @@
 @pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
-@so lib/qt5/plugins/kf5/parts/kigpart.so
+@so lib/qt6/plugins/kf6/parts/kigpart.so
 @man man/man1/kig.1
 share/applications/org.kde.kig.desktop
 share/doc/HTML/ca/kig/

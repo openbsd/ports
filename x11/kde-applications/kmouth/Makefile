@@ -5,7 +5,7 @@ CATEGORIES =	x11
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
 WANTLIB += Qt6PrintSupport Qt6TextToSpeech Qt6Widgets Qt6Xml c
 WANTLIB += m
@@ -30,7 +30,6 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		x11/qt6/qtspeech \
 		x11/qt6/qtmultimedia
 

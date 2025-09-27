@@ -1,7 +1,7 @@
 Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
 --- messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp.orig
 +++ messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
-@@ -19,8 +19,12 @@
+@@ -21,8 +21,12 @@ using namespace Qt::Literals::StringLiterals;
  #include <QRegularExpression>
  
  #include <openssl/bn.h>
@@ -15,14 +15,14 @@ Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
  #include <openssl/evp.h>
  #include <openssl/rsa.h>
 @@ -510,6 +514,7 @@ using EVPPKeyPtr = std::unique_ptr<EVP_PKEY, decltype(
- EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+ static EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
  {
      EVP_PKEY *pubKey = nullptr;
 +#ifndef LIBRESSL_VERSION_NUMBER
      std::unique_ptr<OSSL_DECODER_CTX, decltype(&OSSL_DECODER_CTX_free)> decoderCtx(
          OSSL_DECODER_CTX_new_for_pkey(&pubKey, "DER", nullptr, "RSA", EVP_PKEY_PUBLIC_KEY, nullptr, nullptr),
          OSSL_DECODER_CTX_free);
-@@ -517,10 +522,16 @@ EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+@@ -517,10 +522,16 @@ static EVPPKeyPtr loadRSAPublicKey(const QByteArray &d
          qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to create OSSL_DECODER_CTX";
          return {nullptr, EVP_PKEY_free};
      }
@@ -39,9 +39,9 @@ Index: messageviewer/src/dkim-verify/dkimchecksignaturejob.cpp
          // No need to free pubKey, it's initialized by this function only on success
          qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Failed to decode public key:" << ERR_error_string(ERR_get_error(), nullptr);
          return {nullptr, EVP_PKEY_free};
-@@ -575,11 +586,16 @@ std::optional<bool> doVerifySignature(EVP_PKEY *key, c
+@@ -575,11 +586,16 @@ static std::optional<bool> doVerifySignature(EVP_PKEY 
  
- uint64_t getKeyE(EVP_PKEY *key)
+ static uint64_t getKeyE(EVP_PKEY *key)
  {
 +#ifdef LIBRESSL_VERSION_NUMBER
 +    const RSA *rsa = EVP_PKEY_get0_RSA(key);

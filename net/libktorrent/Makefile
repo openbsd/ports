@@ -4,13 +4,13 @@ DISTNAME =	libktorrent-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	net
 
-SHARED_LIBS +=	KTorrent6                 0.0 # 0.0
+SHARED_LIBS +=	KTorrent6                 1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Completion KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml gcrypt gmp m
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += gcrypt gmp m
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3
@@ -44,8 +44,7 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/solid \
-		security/libgcrypt \
-		x11/qt6/qt5compat
+		security/libgcrypt
 
 # Qt6PdfQuickplugin
 BUILD_DEPENDS +=	x11/qt6/qtwebengine

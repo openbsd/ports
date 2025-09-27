@@ -4,9 +4,10 @@ CATEGORIES =	devel
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels KF6WidgetsAddons
-WANTLIB += KPim6AkonadiCalendar KPim6AkonadiCore KPim6CalendarSupport
-WANTLIB += KPim6IdentityManagementCore KPim6Mime Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6PrintSupport Qt6Widgets c m
+WANTLIB += KPim6AkonadiCalendar KPim6AkonadiCalendarCore KPim6AkonadiCore
+WANTLIB += KPim6AkonadiPrivate KPim6CalendarSupport KPim6IdentityManagementCore
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6PrintSupport Qt6Widgets
+WANTLIB += c m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_ICON_CACHE = yes

@@ -270,6 +270,12 @@ share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
 share/kolourpaint/
+share/kolourpaint/colors/
+share/kolourpaint/colors/40.colors
+share/kolourpaint/colors/Oxygen.colors
+share/kolourpaint/colors/Rainbow.colors
+share/kolourpaint/colors/Royal.colors
+share/kolourpaint/colors/Web.colors
 share/kolourpaint/icons/
 share/kolourpaint/icons/hicolor/
 share/kolourpaint/icons/hicolor/16x16/

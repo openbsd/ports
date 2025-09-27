@@ -11,8 +11,8 @@ WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
 WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
 WANTLIB += KF6TextWidgets KF6Wallet KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Svg Qt6Widgets Qt6Xml X11 c m phonon4qt6 tag
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6Svg Qt6Widgets Qt6Xml X11 c m tag
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -47,7 +47,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		multimedia/phonon,qt6 \
+		x11/qt6/qtmultimedia \
 		x11/qt6/qtsvg
 
 TEST_IS_INTERACTIVE =	X11

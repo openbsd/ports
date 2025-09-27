@@ -4,14 +4,14 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=	Okular6Core               1.0 # 0.0
+SHARED_LIBS +=	Okular6Core               2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6Archive KF6Bookmarks
 WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty
-WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6SonnetUi
 WANTLIB += KF6TextWidgets KF6ThreadWeaver KF6Wallet KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities QMobipocket6
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
@@ -56,7 +56,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		devel/kf6/purpose \
-		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/threadweaver \
 		graphics/djvulibre \

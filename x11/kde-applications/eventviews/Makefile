@@ -8,9 +8,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6Holidays
 WANTLIB += KF6I18n KF6IconThemes KF6ItemModels KF6Service KF6WidgetsAddons
-WANTLIB += KGantt6 KPim6AkonadiCalendar KPim6AkonadiCore KPim6AkonadiWidgets
+WANTLIB += KGantt6 KPim6AkonadiCalendar KPim6AkonadiCalendarCore
+WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
 WANTLIB += KPim6CalendarSupport KPim6CalendarUtils KPim6IdentityManagementCore
-WANTLIB += KPim6Libkdepim KPim6Mime Qt6Core Qt6Gui Qt6PrintSupport
+WANTLIB += KPim6Libkdepim KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6PrintSupport
 WANTLIB += Qt6Widgets m
 
 MODKDE_TRANSLATIONS = yes

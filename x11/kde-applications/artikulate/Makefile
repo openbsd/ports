@@ -2,41 +2,31 @@ COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
 
-MODKDE_KF5 =	Yes
-
-SHARED_LIBS +=  artikulatecore            3.0 # 0.0
-SHARED_LIBS +=  artikulatelearnerprofile  2.0 # 0.0
+SHARED_LIBS +=  artikulatecore            4.0 # 0.0
+SHARED_LIBS +=  artikulatelearnerprofile  3.0 # 0.0
 SHARED_LIBS +=  artikulatesound           3.1 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Sql Qt5Widgets Qt5Xml Qt5XmlPatterns c
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6I18n KF6ItemModels
+WANTLIB += KF6NewStuffCore Qt6Core Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c m xml2
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
-MODKF5_L10N_CONFLICT = yes
+MODKF6_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 MODKDE_DESKTOP_FILE = yes
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/knewstuff \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtxmlpatterns
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/karchive \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kitemmodels \
+		devel/kf6/knewstuff \
+		textproc/libxml \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

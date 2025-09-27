@@ -13,7 +13,7 @@ Index: src/agentbase/agentbase.cpp
          slotNetworkStatusChange(QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online);
      }
  }
-@@ -901,10 +901,11 @@ void AgentBase::setNeedsNetwork(bool needsNetwork)
+@@ -904,10 +904,11 @@ void AgentBase::setNeedsNetwork(bool needsNetwork)
      }
  
      d->mNeedsNetwork = needsNetwork;
@@ -29,7 +29,7 @@ Index: src/agentbase/agentbase.cpp
  }
  
  void AgentBase::setOnline(bool state)
-@@ -947,7 +948,7 @@ void AgentBase::setTemporaryOffline(int makeOnlineInSe
+@@ -950,7 +951,7 @@ void AgentBase::setTemporaryOffline(int makeOnlineInSe
  void AgentBase::setOnlineInternal(bool state)
  {
      Q_D(AgentBase);

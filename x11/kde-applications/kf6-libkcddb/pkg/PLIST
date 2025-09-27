@@ -1,3 +1,5 @@
+@pkgpath x11/kde-applications/libkcddb
+@conflict libkcddb-kf5-*
 include/KCddb6/
 include/KCddb6/KCDDB/
 include/KCddb6/KCDDB/CDInfo
@@ -26,6 +28,7 @@ lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
+share/applications/kcm_cddb.desktop
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KCddb.pri
 share/qlogging-categories6/libkcddb.categories

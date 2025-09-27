@@ -9,9 +9,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6GuiAddons KF6I18n KF6I18nLocaleData
 WANTLIB += KF6IconThemes KF6ItemModels KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Prison KF6Service KF6Solid
-WANTLIB += KF6SonnetUi KF6TextTemplate KF6TextUtils KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCore KPim6AkonadiWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Prison KF6Service KF6SonnetUi
+WANTLIB += KF6TextTemplate KF6TextUtils KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
 WANTLIB += KPim6GrantleeTheme KPim6Mime Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml m
 
@@ -40,7 +40,6 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/prison \
-		devel/kf6/solid \
 		devel/kf6/sonnet \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi>=${VERSION} \

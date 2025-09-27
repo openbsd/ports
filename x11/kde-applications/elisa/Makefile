@@ -4,7 +4,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://elisa.kde.org/
 
-SHARED_LIBS +=  elisaLib                  3.0 # 0.1
+SHARED_LIBS +=  elisaLib                  3.1 # 0.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets

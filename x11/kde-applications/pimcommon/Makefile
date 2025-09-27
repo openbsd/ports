@@ -1,10 +1,9 @@
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=	KPim6PimCommon            0.1 # 0.0
-SHARED_LIBS +=	KPim6PimCommonAkonadi     1.0 # 0.0
+SHARED_LIBS +=	KPim6PimCommon            1.0 # 0.0
+SHARED_LIBS +=	KPim6PimCommonAkonadi     2.0 # 0.0
 SHARED_LIBS +=	KPim6PimCommonActivities  0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Codecs KF6ColorScheme
@@ -13,13 +12,14 @@ WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6ItemModels
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Purpose KF6PurposeWidgets
-WANTLIB += KF6Service KF6Solid KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiSearchPIM KPim6AkonadiWidgets
-WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6LdapCore KPim6LdapWidgets
-WANTLIB += KPim6Libkdepim KPim6Mime PlasmaActivities Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml m
+WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiSearchPIM
+WANTLIB += KPim6AkonadiWidgets KPim6GrantleeTheme KPim6IMAP KPim6LdapCore
+WANTLIB += KPim6LdapWidgets KPim6Libkdepim KPim6Mime PlasmaActivities
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml m
 
 MODKDE_TRANSLATIONS = yes
 
@@ -49,7 +49,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/purpose \
-		devel/kf6/solid \
 		x11/kde-plasma/plasma-activities \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

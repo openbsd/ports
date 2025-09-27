@@ -2,16 +2,14 @@ COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
 CATEGORIES =	education
 
-MODKDE_KF5 =	Yes
-
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5I18n KF5IconThemes KF5ItemViews KF5KCMUtils
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
-WANTLIB += SM X11 Xext c m xcb xcb-xkb
+WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6GuiAddons KF6I18n KF6ItemViews KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml SM X11 Xext c m xcb xcb-xkb xkbcommon xml2
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -19,28 +17,24 @@ MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
 #KQtQuickCharts, QtQuick plugin to render beautiful and interactive charts
-RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${VERSION} \
-		x11/qt5/qtgraphicaleffects
+RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${VERSION}
 
-LIB_DEPENDS =	devel/kf5/kcmutils \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtx11extras \
-		x11/qt5/qtxmlpatterns \
-		x11/qt5/qtquickcontrols2
+LIB_DEPENDS =	devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kitemviews \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		textproc/libxml \
+		x11/qt6/qtdeclarative \
+		x11/xkbcommon
 
 .include <bsd.port.mk>

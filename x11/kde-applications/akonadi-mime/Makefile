@@ -8,8 +8,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
 WANTLIB += KF6I18n KF6ItemModels KF6KIOCore KF6WidgetsAddons KF6XmlGui
 WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
-WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml m
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6Widgets Qt6Xml m
 
 MODKDE_TRANSLATIONS = yes
 
@@ -31,7 +31,8 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		x11/kde-applications/akonadi>=${VERSION} \
-		x11/kde-applications/kmime>=${VERSION}
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

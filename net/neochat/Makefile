@@ -1,7 +1,6 @@
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_GEAR_VERSION}
 CATEGORIES=	net
-REVISION =	2
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -20,8 +19,8 @@ WANTLIB += KF6WidgetsAddons KF6WindowSystem KUnifiedPush Kirigami
 WANTLIB += KirigamiPlatform QCoro6Core QCoro6Network Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
 WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6Sql Qt6WebView Qt6Widgets QuotientQt6 X11 c cmark
-WANTLIB += icuuc m olm qt6keychain
+WANTLIB += Qt6Sql Qt6TextToSpeech Qt6WebView Qt6Widgets QuotientQt6
+WANTLIB += X11 c cmark icuuc m olm qt6keychain
 
 MODULES =	x11/kde
 
@@ -70,10 +69,11 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		textproc/icu4c \
 		textproc/cmark \
 		x11/libquotient>=0.9 \
+		x11/kde-applications/kunifiedpush \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
-		x11/qt6/qtwebview \
-		x11/kde-applications/kunifiedpush
+		x11/qt6/qtspeech \
+		x11/qt6/qtwebview
 
 TEST_IS_INTERACTIVE =	X11
 

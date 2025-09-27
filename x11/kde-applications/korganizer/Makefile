@@ -2,22 +2,22 @@ COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
 
-SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
-SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       8.0 # 5.13.2
+SHARED_LIBS +=  korganizer_core         4.0 # 5.13.2
+SHARED_LIBS +=  korganizer_interfaces   3.0 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       9.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6CalendarCore KF6ColorScheme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6GuiAddons KF6Holidays
 WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Parts KF6Service
-WANTLIB += KF6Solid KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6Parts KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiCalendarCore
+WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
 WANTLIB += KPim6AkonadiWidgets KPim6CalendarSupport KPim6CalendarUtils
 WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IncidenceEditor KPim6KontactInterface KPim6LdapCore
@@ -38,8 +38,7 @@ BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${VERSION}
 
-LIB_DEPENDS =	devel/kf6/attica \
-		devel/kf6/kcalendarcore \
+LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
@@ -55,7 +54,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kitemmodels \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
-		devel/kf6/knewstuff \
 		devel/kf6/kparts \
 		devel/kf6/kguiaddons \
 		devel/kf6/kservice \
@@ -64,7 +62,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		textproc/ktextaddons \
 		x11/kde-plasma/plasma-activities \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \

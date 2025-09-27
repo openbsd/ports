@@ -2,12 +2,11 @@ COMMENT =	QtQuick plugin to render interactive charts
 DISTNAME =	kqtquickcharts-${VERSION}
 CATEGORIES =	devel
 
-MODKDE_KF5 = Yes
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += m
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick m
-
-LIB_DEPENDS =	x11/qt5/qtdeclarative
+LIB_DEPENDS =	x11/qt6/qtdeclarative
 
 NO_TEST =	Yes
 

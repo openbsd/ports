@@ -204,6 +204,7 @@ share/ksirkskineditor/
 share/ksirkskineditor/cross.png
 share/ksirkskineditor/target.png
 share/locale/ar/LC_MESSAGES/ksirk.mo
+share/locale/ar/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ast/LC_MESSAGES/ksirk.mo
 share/locale/ast/LC_MESSAGES/ksirkskineditor.mo
 share/locale/be/LC_MESSAGES/ksirk.mo

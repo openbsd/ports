@@ -95,6 +95,7 @@ lib/qt6/qml/org/kde/kosmindoormap/FloorLevelSelector.qml
 lib/qt6/qml/org/kde/kosmindoormap/IndoorMap.qml
 lib/qt6/qml/org/kde/kosmindoormap/IndoorMapAttributionLabel.qml
 lib/qt6/qml/org/kde/kosmindoormap/IndoorMapScale.qml
+lib/qt6/qml/org/kde/kosmindoormap/IndoorMapView.qml
 lib/qt6/qml/org/kde/kosmindoormap/OSMElementInformationDialog.qml
 lib/qt6/qml/org/kde/kosmindoormap/OSMElementInformationDialogAddressDelegate.qml
 lib/qt6/qml/org/kde/kosmindoormap/OSMElementInformationDialogImageDelegate.qml
@@ -105,6 +106,7 @@ lib/qt6/qml/org/kde/kosmindoormap/RoomSearchDialog.qml
 lib/qt6/qml/org/kde/kosmindoormap/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kosmindoormap/kosmindoormapquickplugin.qmltypes
 lib/qt6/qml/org/kde/kosmindoormap/kpublictransport/
+lib/qt6/qml/org/kde/kosmindoormap/kpublictransport/PlatformDialog.qml
 lib/qt6/qml/org/kde/kosmindoormap/kpublictransport/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kosmindoormap/kpublictransport/kosmindoormap_kpublictransport_integration_plugin.qmltypes
 @so lib/qt6/qml/org/kde/kosmindoormap/kpublictransport/libkosmindoormap_kpublictransport_integration_plugin.so

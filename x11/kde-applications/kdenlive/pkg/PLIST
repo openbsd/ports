@@ -1,8 +1,61 @@
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
+@static-lib lib/libkdenliveLibplugin.a
 lib/qt6/plugins/kf6/thumbcreator/
 @so lib/qt6/plugins/kf6/thumbcreator/mltpreview.so
+lib/qt6/qml/org/kde/kdenlive/
+lib/qt6/qml/org/kde/kdenlive/AssetMenu.qml
+lib/qt6/qml/org/kde/kdenlive/AssetView.qml
+lib/qt6/qml/org/kde/kdenlive/AudioLevels.qml
+lib/qt6/qml/org/kde/kdenlive/Clip.qml
+lib/qt6/qml/org/kde/kdenlive/ClipAudioThumbs.qml
+lib/qt6/qml/org/kde/kdenlive/ClipMonitor.qml
+lib/qt6/qml/org/kde/kdenlive/ClipThumbs.qml
+lib/qt6/qml/org/kde/kdenlive/Composition.qml
+lib/qt6/qml/org/kde/kdenlive/CornerSelectionShadow.qml
+lib/qt6/qml/org/kde/kdenlive/Countdown.qml
+lib/qt6/qml/org/kde/kdenlive/EffectToolBar.qml
+lib/qt6/qml/org/kde/kdenlive/GuidesMenu.qml
+lib/qt6/qml/org/kde/kdenlive/KeyframeView.qml
+lib/qt6/qml/org/kde/kdenlive/MaskToolBar.qml
+lib/qt6/qml/org/kde/kdenlive/MixShape.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorAutomask.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorCornerScene.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorGeometryScene.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorOverlay.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorRotoScene.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorRuler.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorSplit.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorSplitTracks.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorToolButton.qml
+lib/qt6/qml/org/kde/kdenlive/MonitorTrimming.qml
+lib/qt6/qml/org/kde/kdenlive/MultiScreenToolBar.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayCenter.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayCenterDiagonal.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayLabel.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayMinimal.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayStandard.qml
+lib/qt6/qml/org/kde/kdenlive/OverlayThirds.qml
+lib/qt6/qml/org/kde/kdenlive/ProjectMonitor.qml
+lib/qt6/qml/org/kde/kdenlive/PulsingAnimation.qml
+lib/qt6/qml/org/kde/kdenlive/ResizeHandle.qml
+lib/qt6/qml/org/kde/kdenlive/ResizeLogic.js
+lib/qt6/qml/org/kde/kdenlive/RotationHandle.qml
+lib/qt6/qml/org/kde/kdenlive/Ruler.qml
+lib/qt6/qml/org/kde/kdenlive/RulerZone.qml
+lib/qt6/qml/org/kde/kdenlive/SceneToolBar.qml
+lib/qt6/qml/org/kde/kdenlive/SnappingLogic.js
+lib/qt6/qml/org/kde/kdenlive/SubTitle.qml
+lib/qt6/qml/org/kde/kdenlive/SubtitleTrackHead.qml
+lib/qt6/qml/org/kde/kdenlive/Timeline.qml
+lib/qt6/qml/org/kde/kdenlive/TimelineLogic.js
+lib/qt6/qml/org/kde/kdenlive/Track.qml
+lib/qt6/qml/org/kde/kdenlive/TrackHead.qml
+lib/qt6/qml/org/kde/kdenlive/ZoomBar.qml
+lib/qt6/qml/org/kde/kdenlive/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kdenlive/kdenliveLib.qmltypes
+lib/qt6/qml/org/kde/kdenlive/qmldir
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
 share/applications/org.kde.kdenlive.desktop
@@ -143,9 +196,10 @@ share/icons/hicolor/256x256/apps/kdenlive.png
 share/icons/hicolor/32x32/apps/kdenlive.png
 share/icons/hicolor/32x32/mimetypes/application-x-kdenlivetitle.png
 share/icons/hicolor/48x48/apps/kdenlive.png
+share/icons/hicolor/512x512/apps/kdenlive.png
 share/icons/hicolor/64x64/apps/kdenlive.png
 share/icons/hicolor/64x64/mimetypes/application-x-kdenlivetitle.png
-share/icons/hicolor/scalable/apps/kdenlive.svgz
+share/icons/hicolor/scalable/apps/kdenlive.svg
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlive.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
@@ -185,6 +239,7 @@ share/kdenlive/effects/avfilter_cas.xml
 share/kdenlive/effects/avfilter_chromahold.xml
 share/kdenlive/effects/avfilter_chromanr.xml
 share/kdenlive/effects/avfilter_chromashift.xml
+share/kdenlive/effects/avfilter_ciescope.xml
 share/kdenlive/effects/avfilter_colorbalance.xml
 share/kdenlive/effects/avfilter_colorchannelmixer.xml
 share/kdenlive/effects/avfilter_colorcontrast.xml
@@ -242,6 +297,9 @@ share/kdenlive/effects/avfilter_histeq.xml
 share/kdenlive/effects/avfilter_histogram.xml
 share/kdenlive/effects/avfilter_hqdn3d.xml
 share/kdenlive/effects/avfilter_hqx.xml
+share/kdenlive/effects/avfilter_hsvhold.xml
+share/kdenlive/effects/avfilter_hsvkey.xml
+share/kdenlive/effects/avfilter_huesaturation.xml
 share/kdenlive/effects/avfilter_il.xml
 share/kdenlive/effects/avfilter_inflate.xml
 share/kdenlive/effects/avfilter_kerneldeint.xml
@@ -300,6 +358,7 @@ share/kdenlive/effects/avfilter_zoompan.xml
 share/kdenlive/effects/box_blur.xml
 share/kdenlive/effects/boxblur.xml
 share/kdenlive/effects/brightness.xml
+share/kdenlive/effects/burningtv.xml
 share/kdenlive/effects/channelcopy.xml
 share/kdenlive/effects/charcoal.xml
 share/kdenlive/effects/chroma.xml
@@ -339,6 +398,7 @@ share/kdenlive/effects/frei0r_bigsh0t_hemi_to_eq.xml
 share/kdenlive/effects/frei0r_bigsh0t_rect_to_eq.xml
 share/kdenlive/effects/frei0r_bigsh0t_stabilize_360.xml
 share/kdenlive/effects/frei0r_bigsh0t_transform_360.xml
+share/kdenlive/effects/frei0r_bluescreen0r.xml
 share/kdenlive/effects/frei0r_brightness.xml
 share/kdenlive/effects/frei0r_c0rners.xml
 share/kdenlive/effects/frei0r_cairogradient.xml
@@ -356,9 +416,11 @@ share/kdenlive/effects/frei0r_d90stairsteppingfix.xml
 share/kdenlive/effects/frei0r_defish0r.xml
 share/kdenlive/effects/frei0r_delay0r.xml
 share/kdenlive/effects/frei0r_delaygrab.xml
+share/kdenlive/effects/frei0r_denoise_hqdn3d.xml
 share/kdenlive/effects/frei0r_distort0r.xml
 share/kdenlive/effects/frei0r_dither.xml
 share/kdenlive/effects/frei0r_edgeglow.xml
+share/kdenlive/effects/frei0r_elastic_scale.xml
 share/kdenlive/effects/frei0r_emboss.xml
 share/kdenlive/effects/frei0r_equaliz0r.xml
 share/kdenlive/effects/frei0r_facebl0r.xml
@@ -378,6 +440,8 @@ share/kdenlive/effects/frei0r_levels.xml
 share/kdenlive/effects/frei0r_lightgraffiti.xml
 share/kdenlive/effects/frei0r_luminance.xml
 share/kdenlive/effects/frei0r_mask0mate.xml
+share/kdenlive/effects/frei0r_measure_pr0be.xml
+share/kdenlive/effects/frei0r_measure_pr0file.xml
 share/kdenlive/effects/frei0r_medians.xml
 share/kdenlive/effects/frei0r_nervous.xml
 share/kdenlive/effects/frei0r_normaliz0r.xml
@@ -416,7 +480,9 @@ share/kdenlive/effects/gain.xml
 share/kdenlive/effects/gamma.xml
 share/kdenlive/effects/gpsgraphic.xml
 share/kdenlive/effects/gpstext.xml
+share/kdenlive/effects/gradientmap.xml
 share/kdenlive/effects/grain.xml
+share/kdenlive/effects/greyedge.xml
 share/kdenlive/effects/greyscale.xml
 share/kdenlive/effects/hsl_primaries.xml
 share/kdenlive/effects/hsl_range.xml
@@ -601,6 +667,7 @@ share/kdenlive/scripts/automask/kdenlive_sam2_video_predictor.py
 share/kdenlive/scripts/automask/requirements-cuda118.txt
 share/kdenlive/scripts/automask/requirements-cuda124.txt
 share/kdenlive/scripts/automask/requirements-cuda126.txt
+share/kdenlive/scripts/automask/requirements-cuda128.txt
 share/kdenlive/scripts/automask/requirements-sam.txt
 share/kdenlive/scripts/automask/sam-objectmask.py
 share/kdenlive/scripts/checkgpu.py
@@ -627,8 +694,8 @@ share/kdenlive/scripts/whisper/${MODPY_PYCACHE}whispertotext.${MODPY_PYC_MAGIC_T
 share/kdenlive/scripts/whisper/requirements-cuda118.txt
 share/kdenlive/scripts/whisper/requirements-cuda124.txt
 share/kdenlive/scripts/whisper/requirements-cuda126.txt
+share/kdenlive/scripts/whisper/requirements-cuda128.txt
 share/kdenlive/scripts/whisper/requirements-seamless.txt
-share/kdenlive/scripts/whisper/requirements-whisper-windows.txt
 share/kdenlive/scripts/whisper/requirements-whisper.txt
 share/kdenlive/scripts/whisper/seamlessquery.py
 share/kdenlive/scripts/whisper/whisperquery.py
@@ -762,3 +829,4 @@ share/mime/packages/westley.xml
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/kdenlive.categories
+share/qlogging-categories6/kdenlive.renamecategories

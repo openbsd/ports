@@ -11,7 +11,6 @@ include/KPim6/AkonadiCalendar/Akonadi/CollectionCalendar
 include/KPim6/AkonadiCalendar/Akonadi/ETMCalendar
 include/KPim6/AkonadiCalendar/Akonadi/FetchJobCalendar
 include/KPim6/AkonadiCalendar/Akonadi/FreeBusyManager
-include/KPim6/AkonadiCalendar/Akonadi/FreeBusyProviderBase
 include/KPim6/AkonadiCalendar/Akonadi/History
 include/KPim6/AkonadiCalendar/Akonadi/ICalImporter
 include/KPim6/AkonadiCalendar/Akonadi/ITIPHandler
@@ -19,6 +18,7 @@ include/KPim6/AkonadiCalendar/Akonadi/IncidenceChanger
 include/KPim6/AkonadiCalendar/Akonadi/IncidenceTreeModel
 include/KPim6/AkonadiCalendar/Akonadi/PublishDialog
 include/KPim6/AkonadiCalendar/Akonadi/SearchCollectionHelper
+include/KPim6/AkonadiCalendar/Akonadi/SelectCollection
 include/KPim6/AkonadiCalendar/Akonadi/StandardCalendarActionManager
 include/KPim6/AkonadiCalendar/Akonadi/TodoModel
 include/KPim6/AkonadiCalendar/Akonadi/TodoPurger
@@ -36,7 +36,6 @@ include/KPim6/AkonadiCalendar/akonadi/collectioncalendar.h
 include/KPim6/AkonadiCalendar/akonadi/etmcalendar.h
 include/KPim6/AkonadiCalendar/akonadi/fetchjobcalendar.h
 include/KPim6/AkonadiCalendar/akonadi/freebusymanager.h
-include/KPim6/AkonadiCalendar/akonadi/freebusyproviderbase.h
 include/KPim6/AkonadiCalendar/akonadi/history.h
 include/KPim6/AkonadiCalendar/akonadi/icalimporter.h
 include/KPim6/AkonadiCalendar/akonadi/incidencechanger.h
@@ -44,15 +43,29 @@ include/KPim6/AkonadiCalendar/akonadi/incidencetreemodel.h
 include/KPim6/AkonadiCalendar/akonadi/itiphandler.h
 include/KPim6/AkonadiCalendar/akonadi/publishdialog.h
 include/KPim6/AkonadiCalendar/akonadi/searchcollectionhelper.h
+include/KPim6/AkonadiCalendar/akonadi/selectcollection.h
 include/KPim6/AkonadiCalendar/akonadi/standardcalendaractionmanager.h
 include/KPim6/AkonadiCalendar/akonadi/todomodel.h
 include/KPim6/AkonadiCalendar/akonadi/todopurger.h
+include/KPim6/AkonadiCalendarCore/
+include/KPim6/AkonadiCalendarCore/Akonadi/
+include/KPim6/AkonadiCalendarCore/Akonadi/FreeBusyProviderBase
+include/KPim6/AkonadiCalendarCore/akonadi/
+include/KPim6/AkonadiCalendarCore/akonadi-calendar-core_version.h
+include/KPim6/AkonadiCalendarCore/akonadi/akonadi-calendar-core_export.h
+include/KPim6/AkonadiCalendarCore/akonadi/freebusyproviderbase.h
 lib/cmake/KPim6AkonadiCalendar/
 lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarConfig.cmake
 lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarConfigVersion.cmake
 lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6AkonadiCalendar/KPim6AkonadiCalendarTargets.cmake
+lib/cmake/KPim6AkonadiCalendarCore/
+lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreConfig.cmake
+lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreConfigVersion.cmake
+lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets.cmake
 @lib lib/libKPim6AkonadiCalendar.so.${LIBKPim6AkonadiCalendar_VERSION}
+@lib lib/libKPim6AkonadiCalendarCore.so.${LIBKPim6AkonadiCalendarCore_VERSION}
 @so lib/qt6/plugins/akonadi_serializer_kcalcore.so
 lib/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/
 @so lib/qt6/plugins/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so

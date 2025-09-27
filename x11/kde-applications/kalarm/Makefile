@@ -23,11 +23,11 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
 WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6TextEditTextToSpeech
 WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
-WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
-WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport KPim6Mime
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 c m mpv vlc
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
+WANTLIB += KPim6IdentityManagementCore KPim6IdentityManagementWidgets
+WANTLIB += KPim6MailTransport KPim6Mime Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Network Qt6Widgets Qt6Xml X11 c m mpv vlc
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${VERSION}

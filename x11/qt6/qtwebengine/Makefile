@@ -43,28 +43,28 @@ RUN_DEPENDS =	fonts/noto/fonts \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
 
-BUILD_DEPENDS =	audio/pulseaudio \
-		archivers/bzip2 \
+BUILD_DEPENDS =	archivers/bzip2 \
+		audio/pulseaudio \
 		devel/bison \
+		devel/glib2 \
 		devel/gperf \
 		devel/ninja \
+		devel/pcre2 \
 		devel/py-html5lib \
+		graphics/graphite2 \
 		lang/node \
 		shells/bash \
 		sysutils/flock \
-		sysutils/pciutils \
-		x11/gtk+3 \
 		sysutils/libudev-openbsd \
+		sysutils/pciutils \
+		x11/gtk+3,-main \
 		x11/py-xcbgen \
 		x11/qt6/qthttpserver
 
 LIB_DEPENDS =	archivers/minizip \
 		archivers/snappy \
 		audio/opus \
-		devel/glib2 \
 		devel/harfbuzz \
-		devel/pcre2 \
-		graphics/graphite2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/libwebp \

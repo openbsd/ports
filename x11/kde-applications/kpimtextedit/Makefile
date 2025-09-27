@@ -2,7 +2,7 @@ COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6TextEdit             0.0 # 0.0
+SHARED_LIBS +=	KPim6TextEdit             1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

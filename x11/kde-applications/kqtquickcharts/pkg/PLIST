@@ -1,17 +1,17 @@
 @pkgpath x11/kde4/kqtquickcharts
-include/KF5/
-include/KF5/kqtquickcharts_version.h
+include/KF6/
+include/KF6/kqtquickcharts_version.h
 lib/cmake/KQtQuickCharts/
 lib/cmake/KQtQuickCharts/KQtQuickChartsConfig.cmake
-lib/cmake/KQtQuickCharts/KQtQuickChartsVersion.cmake
-lib/qt5/qml/org/
-lib/qt5/qml/org/kde/
-lib/qt5/qml/org/kde/charts/
-lib/qt5/qml/org/kde/charts/BarChart.qml
-lib/qt5/qml/org/kde/charts/Label.qml
-lib/qt5/qml/org/kde/charts/LegendItem.qml
-lib/qt5/qml/org/kde/charts/LineChart.qml
-lib/qt5/qml/org/kde/charts/LineLabel.qml
-lib/qt5/qml/org/kde/charts/XYChart.qml
-@so lib/qt5/qml/org/kde/charts/libkqtquickcharts.so
-lib/qt5/qml/org/kde/charts/qmldir
+lib/cmake/KQtQuickCharts/KQtQuickChartsConfigVersion.cmake
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/charts/
+lib/qt6/qml/org/kde/charts/BarChart.qml
+lib/qt6/qml/org/kde/charts/Label.qml
+lib/qt6/qml/org/kde/charts/LegendItem.qml
+lib/qt6/qml/org/kde/charts/LineChart.qml
+lib/qt6/qml/org/kde/charts/LineLabel.qml
+lib/qt6/qml/org/kde/charts/XYChart.qml
+@so lib/qt6/qml/org/kde/charts/libkqtquickcharts.so
+lib/qt6/qml/org/kde/charts/qmldir

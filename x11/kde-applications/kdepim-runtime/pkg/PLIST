@@ -20,18 +20,20 @@
 @bin bin/akonadi_vcarddir_resource
 @bin bin/gidmigrator
 @lib lib/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
+@lib lib/libakonadi-singlefileresource-widget.so.${LIBakonadi-singlefileresource-widget_VERSION}
 @lib lib/libakonadi-singlefileresource.so.${LIBakonadi-singlefileresource_VERSION}
 @lib lib/libfolderarchivesettings.so.${LIBfolderarchivesettings_VERSION}
 @lib lib/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib lib/libmaildir.so.${LIBmaildir_VERSION}
 @lib lib/libnewmailnotifier.so.${LIBnewmailnotifier_VERSION}
 @so lib/qt6/plugins/kf6/kio/akonadi.so
-lib/qt6/plugins/pim6/akonadi/config/
 @so lib/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/contactsconfig.so
+@so lib/qt6/plugins/pim6/akonadi/config/davgroupwareconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/googleconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/icalconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/icaldirconfig.so
+@so lib/qt6/plugins/pim6/akonadi/config/imapconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/maildirconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/maildispatcherconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/mboxconfig.so
@@ -69,15 +71,13 @@ share/akonadi/davgroupware-providers/citadel.desktop
 share/akonadi/davgroupware-providers/davical.desktop
 share/akonadi/davgroupware-providers/egroupware.desktop
 share/akonadi/davgroupware-providers/fastmail.desktop
+share/akonadi/davgroupware-providers/kopano.desktop
 share/akonadi/davgroupware-providers/mailbox-org.desktop
 share/akonadi/davgroupware-providers/nextcloud.desktop
-share/akonadi/davgroupware-providers/opengroupware.desktop
 share/akonadi/davgroupware-providers/owncloud-pre9.desktop
 share/akonadi/davgroupware-providers/owncloud.desktop
-share/akonadi/davgroupware-providers/scalix.desktop
 share/akonadi/davgroupware-providers/sogo.desktop
 share/akonadi/davgroupware-providers/yahoo.desktop
-share/akonadi/davgroupware-providers/zarafa.desktop
 share/akonadi/davgroupware-providers/zimbra.desktop
 share/akonadi/davgroupware-providers/zoho.desktop
 share/akonadi/firstrun/
@@ -94,16 +94,81 @@ share/applications/org.kde.akonadi_vcard_resource.desktop
 share/applications/org.kde.akonadi_vcarddir_resource.desktop
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
+share/icons/hicolor/128x128/apps/account-apple.png
+share/icons/hicolor/128x128/apps/account-citadel.png
+share/icons/hicolor/128x128/apps/account-davical.png
+share/icons/hicolor/128x128/apps/account-egroupware.png
+share/icons/hicolor/128x128/apps/account-fastmail.png
+share/icons/hicolor/128x128/apps/account-kopano.png
+share/icons/hicolor/128x128/apps/account-mailboxorg.png
+share/icons/hicolor/128x128/apps/account-nextcloud.png
+share/icons/hicolor/128x128/apps/account-owncloud.png
+share/icons/hicolor/128x128/apps/account-sogo.png
+share/icons/hicolor/128x128/apps/account-yahoo.png
+share/icons/hicolor/128x128/apps/account-zimbra.png
+share/icons/hicolor/128x128/apps/account-zoho.png
 share/icons/hicolor/128x128/apps/akonadi-ews.png
 share/icons/hicolor/128x128/apps/ox.png
+share/icons/hicolor/16x16/apps/account-apple.png
+share/icons/hicolor/16x16/apps/account-citadel.png
+share/icons/hicolor/16x16/apps/account-davical.png
+share/icons/hicolor/16x16/apps/account-egroupware.png
+share/icons/hicolor/16x16/apps/account-fastmail.png
+share/icons/hicolor/16x16/apps/account-kopano.png
+share/icons/hicolor/16x16/apps/account-mailboxorg.png
+share/icons/hicolor/16x16/apps/account-nextcloud.png
+share/icons/hicolor/16x16/apps/account-owncloud.png
+share/icons/hicolor/16x16/apps/account-sogo.png
+share/icons/hicolor/16x16/apps/account-yahoo.png
+share/icons/hicolor/16x16/apps/account-zimbra.png
+share/icons/hicolor/16x16/apps/account-zoho.png
 share/icons/hicolor/16x16/apps/akonadi-ews.png
 share/icons/hicolor/16x16/apps/ox.png
 share/icons/hicolor/22x22/apps/akonadi-ews.png
 share/icons/hicolor/24x24/apps/akonadi-ews.png
+share/icons/hicolor/32x32/apps/account-apple.png
+share/icons/hicolor/32x32/apps/account-citadel.png
+share/icons/hicolor/32x32/apps/account-davical.png
+share/icons/hicolor/32x32/apps/account-egroupware.png
+share/icons/hicolor/32x32/apps/account-fastmail.png
+share/icons/hicolor/32x32/apps/account-kopano.png
+share/icons/hicolor/32x32/apps/account-mailboxorg.png
+share/icons/hicolor/32x32/apps/account-nextcloud.png
+share/icons/hicolor/32x32/apps/account-owncloud.png
+share/icons/hicolor/32x32/apps/account-sogo.png
+share/icons/hicolor/32x32/apps/account-yahoo.png
+share/icons/hicolor/32x32/apps/account-zimbra.png
+share/icons/hicolor/32x32/apps/account-zoho.png
 share/icons/hicolor/32x32/apps/akonadi-ews.png
 share/icons/hicolor/32x32/apps/ox.png
+share/icons/hicolor/48x48/apps/account-apple.png
+share/icons/hicolor/48x48/apps/account-citadel.png
+share/icons/hicolor/48x48/apps/account-davical.png
+share/icons/hicolor/48x48/apps/account-egroupware.png
+share/icons/hicolor/48x48/apps/account-fastmail.png
+share/icons/hicolor/48x48/apps/account-kopano.png
+share/icons/hicolor/48x48/apps/account-mailboxorg.png
+share/icons/hicolor/48x48/apps/account-nextcloud.png
+share/icons/hicolor/48x48/apps/account-owncloud.png
+share/icons/hicolor/48x48/apps/account-sogo.png
+share/icons/hicolor/48x48/apps/account-yahoo.png
+share/icons/hicolor/48x48/apps/account-zimbra.png
+share/icons/hicolor/48x48/apps/account-zoho.png
 share/icons/hicolor/48x48/apps/akonadi-ews.png
 share/icons/hicolor/48x48/apps/ox.png
+share/icons/hicolor/64x64/apps/account-apple.png
+share/icons/hicolor/64x64/apps/account-citadel.png
+share/icons/hicolor/64x64/apps/account-davical.png
+share/icons/hicolor/64x64/apps/account-egroupware.png
+share/icons/hicolor/64x64/apps/account-fastmail.png
+share/icons/hicolor/64x64/apps/account-kopano.png
+share/icons/hicolor/64x64/apps/account-mailboxorg.png
+share/icons/hicolor/64x64/apps/account-nextcloud.png
+share/icons/hicolor/64x64/apps/account-owncloud.png
+share/icons/hicolor/64x64/apps/account-sogo.png
+share/icons/hicolor/64x64/apps/account-yahoo.png
+share/icons/hicolor/64x64/apps/account-zimbra.png
+share/icons/hicolor/64x64/apps/account-zoho.png
 share/icons/hicolor/64x64/apps/akonadi-ews.png
 share/icons/hicolor/64x64/apps/ox.png
 share/icons/hicolor/72x72/apps/akonadi-ews.png

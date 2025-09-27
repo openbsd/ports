@@ -249,6 +249,7 @@ share/icons/hicolor/44x44/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
 share/icons/hicolor/scalable/apps/kile.svg
+share/kconf_update/
 share/kconf_update/kile.upd
 share/kconf_update/kile1.6_upd.pl
 share/kconf_update/kile1.7_upd.pl

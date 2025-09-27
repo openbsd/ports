@@ -2,18 +2,18 @@ COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=	KPim6MailCommon           0.0 # 0.0
+SHARED_LIBS +=	KPim6MailCommon           0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6Solid
-WANTLIB += KF6SyntaxHighlighting KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6SyntaxHighlighting
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
-WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiWidgets KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailImporter KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
@@ -48,7 +48,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/syntax-highlighting \
 		x11/kde-plasma/plasma-activities  \
 		security/gpgme,-qt \

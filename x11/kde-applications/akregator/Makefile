@@ -15,14 +15,14 @@ WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6ItemModels KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Parts KF6Service
-WANTLIB += KF6Solid KF6StatusNotifierItem KF6Syndication KF6TextAddonsWidgets
+WANTLIB += KF6StatusNotifierItem KF6Syndication KF6TextAddonsWidgets
 WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextTemplate
 WANTLIB += KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB += KPim6GrantleeTheme KPim6KontactInterface KPim6Libkdepim
-WANTLIB += KPim6Libkleo KPim6MessageCore KPim6MessageViewer KPim6Mime
-WANTLIB += KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6AkonadiPrivate KPim6GrantleeTheme KPim6KontactInterface
+WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MessageCore KPim6MessageViewer
+WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6WebEngineViewer PlasmaActivities Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
@@ -76,7 +76,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/kguiaddons \
-		devel/kf6/solid \
 		x11/kde-plasma/plasma-activities \
 		devel/kf6/syndication \
 		security/gpgme,-qt \

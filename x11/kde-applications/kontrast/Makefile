@@ -1,6 +1,5 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
-REVISION =	0
 CATEGORIES =	x11 graphics
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n

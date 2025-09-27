@@ -5,17 +5,6 @@
 @bin bin/merkuro-mail
 @lib lib/libMerkuroComponents.so.${LIBMerkuroComponents_VERSION}
 @lib lib/libmerkuro_contact.so.${LIBmerkuro_contact_VERSION}
-lib/qt6/qml/org/kde/akonadi/
-lib/qt6/qml/org/kde/akonadi/AgentConfigurationForm.qml
-lib/qt6/qml/org/kde/akonadi/CollectionChooserPage.qml
-lib/qt6/qml/org/kde/akonadi/CollectionComboBox.qml
-lib/qt6/qml/org/kde/akonadi/MobileCollectionComboBox.qml
-lib/qt6/qml/org/kde/akonadi/ProgressStatusBar.qml
-lib/qt6/qml/org/kde/akonadi/TagManagerPage.qml
-lib/qt6/qml/org/kde/akonadi/akonadi_quick_plugin.qmltypes
-lib/qt6/qml/org/kde/akonadi/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/akonadi/libakonadi_quick_plugin.so
-lib/qt6/qml/org/kde/akonadi/qmldir
 lib/qt6/qml/org/kde/merkuro/
 lib/qt6/qml/org/kde/merkuro/components/
 lib/qt6/qml/org/kde/merkuro/components/BaseApplication.qml
@@ -173,6 +162,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt/LC_MESSAGES/merkuro.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt_BR/LC_MESSAGES/merkuro.mo
+share/locale/pt_BR/LC_MESSAGES/merkurolauncher.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/ru/LC_MESSAGES/merkuro.mo
 share/locale/ru/LC_MESSAGES/merkurolauncher.mo
@@ -225,6 +215,5 @@ share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/QrCodePage.qml
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json.license
-share/qlogging-categories6/akonadi.quick.categories
 share/qlogging-categories6/merkuro.categories
 share/qlogging-categories6/merkuro.contact.categories

@@ -13,6 +13,7 @@ lib/cmake/DolphinVcs/DolphinVcsConfig.cmake
 lib/cmake/DolphinVcs/DolphinVcsConfigVersion.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
+lib/kconf_update_bin/
 @bin lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
@@ -21,6 +22,7 @@ lib/qt6/plugins/dolphin/kcms/
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so
 @so lib/qt6/plugins/kf6/kfileitemaction/movetonewfolderitemaction.so
+@so lib/qt6/plugins/kf6/kfileitemaction/setfoldericonitemaction.so
 @so lib/qt6/plugins/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
@@ -231,9 +233,10 @@ share/doc/HTML/uk/dolphin/viewproperties-dialog.png
 share/dolphin/
 share/dolphin/dolphinpartactions.desktop
 share/icons/hicolor/scalable/apps/org.kde.dolphin.svg
+share/kconf_update/
 share/kconf_update/dolphin_detailsmodesettings.upd
-share/kconf_update/dolphin_directorysizemode.py
-share/kconf_update/dolphin_directorysizemode.upd
+share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.py
+share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.upd
 share/kconf_update/dolphin_statusandlocationbarssettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/

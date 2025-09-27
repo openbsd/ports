@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -83,7 +83,7 @@ if(BUILD_TESTING)
+@@ -65,7 +65,7 @@ if(BUILD_TESTING)
      add_subdirectory(tests)
  endif()
  

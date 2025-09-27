@@ -7,10 +7,10 @@ SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels
-WANTLIB += KF6KIOCore KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiWidgets
-WANTLIB += KPim6IdentityManagementCore KPim6MailTransport KPim6Mime
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += KF6KIOCore KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiWidgets KPim6IdentityManagementCore KPim6MailTransport
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickControls2 Qt6Widgets Qt6Xml c m
 
 MODKDE_TRANSLATIONS = yes
