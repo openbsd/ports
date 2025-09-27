@@ -100,6 +100,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += ec2-api-tools
      SUBDIR += efivar
+     SUBDIR += eksctl
      SUBDIR += entr
      SUBDIR += envconsul
      SUBDIR += eventlog
