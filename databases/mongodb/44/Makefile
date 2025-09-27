@@ -1,9 +1,7 @@
 PORTROACH =	limitw:1,even
 
-BROKEN =	fails with newer libc++
-
 V =		4.4.29
-REVISION =	5
+REVISION =	6
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt

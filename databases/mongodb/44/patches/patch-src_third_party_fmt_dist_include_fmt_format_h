@@ -1,0 +1,113 @@
+"The base template for std::char_traits has been removed in LLVM 19. If you are
+using std::char_traits with types other than char, wchar_t, char8_t, char16_t,
+char32_t or a custom character type for which you specialized std::char_traits,
+your code will stop working. The Standard does not mandate that a base template
+is provided, and such a base template is bound to be incorrect for some types,
+which could currently cause unexpected behavior while going undetected."
+
+https://releases.llvm.org/19.1.0/projects/libcxx/docs/ReleaseNotes.htm
+
+This affects fmt 6.x used by MongoDB 4.4, which uses fmt::char8_t with
+std::char_traits.
+
+Add a minimal std::char_traits impl for fmt::char8_t based on the
+libc++ reference implementation for char traits:
+https://github.com/llvm/llvm-project/blob/main/libcxx/include/__string/char_traits.h#L46
+
+This is a minimal fix to fix mongodb44 with libcxx19 from base.
+
+Index: src/third_party/fmt/dist/include/fmt/format.h
+--- src/third_party/fmt/dist/include/fmt/format.h.orig
++++ src/third_party/fmt/dist/include/fmt/format.h
+@@ -43,6 +43,91 @@
+ #include <memory>
+ #include <stdexcept>
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION >= 190000
++namespace std {
++template <>
++struct char_traits<fmt::char8_t> {
++    using char_type = fmt::char8_t;
++    using int_type = unsigned int;
++    using off_type = streamoff;
++    using pos_type = streampos;
++    using state_type = mbstate_t;
++
++    static constexpr void assign(char_type& c1, const char_type& c2) noexcept {
++        c1 = c2;
++    }
++
++    static constexpr bool eq(char_type c1, char_type c2) noexcept {
++        return c1 == c2;
++    }
++
++    static constexpr bool lt(char_type c1, char_type c2) noexcept {
++        return c1 < c2;
++    }
++
++    static constexpr int compare(const char_type* s1, const char_type* s2, size_t n) {
++        for (size_t i = 0; i < n; ++i) {
++            if (lt(s1[i], s2[i])) return -1;
++            if (lt(s2[i], s1[i])) return 1;
++        }
++        return 0;
++    }
++
++    static constexpr size_t length(const char_type* s) {
++        size_t len = 0;
++        while (!eq(s[len], char_type())) ++len;
++        return len;
++    }
++
++    static constexpr const char_type* find(const char_type* s, size_t n, const char_type& a) {
++        for (size_t i = 0; i < n; ++i) {
++            if (eq(s[i], a)) return s + i;
++        }
++        return nullptr;
++    }
++
++    static char_type* move(char_type* dest, const char_type* src, size_t n) {
++        if (dest < src) {
++            for (size_t i = 0; i < n; ++i) dest[i] = src[i];
++        } else if (src < dest) {
++            for (size_t i = n; i > 0; --i) dest[i-1] = src[i-1];
++        }
++        return dest;
++    }
++
++    static char_type* copy(char_type* dest, const char_type* src, size_t n) {
++        for (size_t i = 0; i < n; ++i) dest[i] = src[i];
++        return dest;
++    }
++
++    static char_type* assign(char_type* s, size_t n, char_type a) {
++        for (size_t i = 0; i < n; ++i) s[i] = a;
++        return s;
++    }
++
++    static constexpr int_type not_eof(int_type c) noexcept {
++        return eq_int_type(c, eof()) ? ~eof() : c;
++    }
++
++    static constexpr char_type to_char_type(int_type c) noexcept {
++        return char_type(c);
++    }
++
++    static constexpr int_type to_int_type(char_type c) noexcept {
++        return int_type(c);
++    }
++
++    static constexpr bool eq_int_type(int_type c1, int_type c2) noexcept {
++        return c1 == c2;
++    }
++
++    static constexpr int_type eof() noexcept {
++        return int_type(EOF);
++    }
++};
++}
++#endif
++
+ #ifdef __clang__
+ #  define FMT_CLANG_VERSION (__clang_major__ * 100 + __clang_minor__)
+ #else
