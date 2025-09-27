@@ -274,8 +274,6 @@
 
      SUBDIR += kf6-kio-extras
 
-     # kio-zeroconf
-     #kio-gdrive
      SUBDIR += kf6-libkcompactdisc
 
      SUBDIR += kf6-libkcddb
@@ -296,11 +294,8 @@
      # net/neochat
      # x11/yakuake
 
-     # TODO
-     # kosmindoormap
-     # kpublictransport
-
      # partitionmanager
      # kpmcore
+     # kio-zeroconf
 
 .include <bsd.port.subdir.mk>
