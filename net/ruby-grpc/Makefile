@@ -1,6 +1,6 @@
 COMMENT =	RPCs from Ruby using gRPC
 
-DISTNAME =	grpc-1.74.0
+DISTNAME =	grpc-1.74.1
 CATEGORIES =	net devel
 
 HOMEPAGE =	https://grpc.io/
