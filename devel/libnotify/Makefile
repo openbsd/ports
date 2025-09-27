@@ -1,11 +1,11 @@
 COMMENT=		send desktop notifications to a notification daemon
 
-GNOME_VERSION=		0.8.6
+GNOME_VERSION=		0.8.7
 GNOME_PROJECT=		libnotify
 
 CATEGORIES=		devel
 
-SHARED_LIBS += notify                    6.0 # 4.0.0
+SHARED_LIBS += notify                    6.1 # 4.0.0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

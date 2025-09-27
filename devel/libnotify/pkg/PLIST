@@ -73,6 +73,7 @@ share/doc/libnotify-0/method.Notification.add_action.html
 share/doc/libnotify-0/method.Notification.clear_actions.html
 share/doc/libnotify-0/method.Notification.clear_hints.html
 share/doc/libnotify-0/method.Notification.close.html
+share/doc/libnotify-0/method.Notification.get_activation_app_launch_context.html
 share/doc/libnotify-0/method.Notification.get_activation_token.html
 share/doc/libnotify-0/method.Notification.get_closed_reason.html
 share/doc/libnotify-0/method.Notification.set_app_icon.html
