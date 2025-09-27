@@ -2,7 +2,7 @@ COMMENT =	Build.PL install path logic made easy
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	ExtUtils-InstallPaths-0.014
+DISTNAME =	ExtUtils-InstallPaths-0.015
 CATEGORIES =	devel
 
 # Perl
