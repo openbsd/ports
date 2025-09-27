@@ -5,6 +5,8 @@ BROKEN=		SIGSEGV or SIGILL at runtime unless --noscripting is used
 V=		8.0.12
 
 # mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
+# Also tested it with 82aac6af18abcd5bf188afbc821779ccb0ca0902 (mongodb60
+# mozjs) with the same SIGSEGV SIGILL err
 MOZJS_TAG=	5acd3be6c9563ad3e7ca6182285c69a38de47bab
 DIST_TUPLE=	github mongodb-forks spidermonkey ${MOZJS_TAG} \
 		    src/third_party/mozjs/mozilla-release
