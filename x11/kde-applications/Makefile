@@ -9,7 +9,7 @@
      #SUBDIR +=  keysmith
 
      # New in KDE Gear/24.12
-     #SUBDIR += kunifiedpush
+     SUBDIR += kunifiedpush
 
      # New in KDE Gear/24.08
      #SUBDIR += kgraphviewer
