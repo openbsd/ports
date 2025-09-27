@@ -1,10 +1,9 @@
 COMMENT =		curses-like terminal wrapper
 
-MODPY_DISTV =		0.4.2
+MODPY_DISTV =		0.4.3
 DISTNAME =		curtsies-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes
