@@ -4,8 +4,8 @@ modified to work before libressl version bump
 Index: openssl-sys/src/handwritten/evp.rs
 --- openssl-sys/src/handwritten/evp.rs.orig
 +++ openssl-sys/src/handwritten/evp.rs
-@@ -474,10 +474,10 @@ cfg_if! {
- }
+@@ -475,10 +475,10 @@ cfg_if! {
+ #[cfg(not(osslconf = "OPENSSL_NO_DEPRECATED_3_0"))]
  const_ptr_api! {
      extern "C" {
 -        pub fn EVP_PKEY_get1_RSA(k: #[const_ptr_if(libressl420)] EVP_PKEY) -> *mut RSA;
@@ -18,4 +18,4 @@ Index: openssl-sys/src/handwritten/evp.rs
 +        pub fn EVP_PKEY_get1_EC_KEY(k: #[const_ptr_if(libressl410)] EVP_PKEY) -> *mut EC_KEY;
      }
  }
- extern "C" {
+ #[cfg(not(osslconf = "OPENSSL_NO_DEPRECATED_3_0"))]
