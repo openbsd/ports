@@ -1,6 +1,6 @@
 COMMENT =		command line tool for controlling Kubernetes clusters
 
-V =			1.29.15
+V =			1.34.1
 GH_ACCOUNT =		kubernetes
 GH_PROJECT =		kubernetes
 GH_TAGNAME =		v${V}
@@ -23,6 +23,8 @@ MODULES =		lang/go
 GO_PKGNAME =		k8s.io/kubernetes
 WRKSRC =		${MODGO_WORKSPACE}/src/${GO_PKGNAME}
 ALL_TARGET =		${GO_PKGNAME}/cmd/kubectl
+
+MODGO_GO111MODULE =	On
 
 MODGO_LDFLAGS += \
 	-X ${GO_PKGNAME}/vendor/k8s.io/component-base/version.gitMajor=${V:R:R} \
