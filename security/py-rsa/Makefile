@@ -1,4 +1,4 @@
-# !!! do not update blindly: sysutils/awscli requires a specific version
+# !!! do not update blindly: sysutils/awscli/v1 requires a specific version
 
 COMMENT=		Python RSA implementation
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-asn1
 

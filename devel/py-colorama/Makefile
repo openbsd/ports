@@ -1,8 +1,8 @@
-# !!! do not update blindly: sysutils/awscli requires a specific version
+# !!! do not update blindly: sysutils/awscli/v1 requires a specific version
 
 COMMENT=		print colored terminal text from Python apps
 
-MODPY_DISTV=	0.4.6
+MODPY_DISTV=		0.4.6
 DISTNAME=		colorama-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 REVISION=		0
