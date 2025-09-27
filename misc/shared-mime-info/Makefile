@@ -1,8 +1,16 @@
+#
+# /!\ this port must build xdgmime at configure time (see pre-configure)
+#
+
 COMMENT=		shared mime database for desktops
 
 V=			2.4
 DISTNAME=		shared-mime-info-${V}
 REVISION=		0
+
+DIST_TUPLE=		fdo xdg xdgmime 5b4d3ce009639a7eb031849c04195d9ae80d25fe xdgmime
+XDGMIME_WRKBUILD=	${WRKBUILD}/xdgmime
+XDGMIME_WRKSRC=		${WRKSRC}/xdgmime
 
 CATEGORIES=		misc
 
@@ -37,12 +45,18 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
-# XXX needs https://gitlab.freedesktop.org/xdg/xdgmime sources for tests
-CONFIGURE_ARGS +=	-Dxdgmime-path=${WRKSRC}/xdgmime
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=		-Dxdgmime-path=${XDGMIME_WRKBUILD}
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}"
 
 pre-configure:
 	sed -i 's|/usr/local|${PREFIX}|g' ${WRKSRC}/src/update-mime-database.cpp
 	${SUBST_CMD} ${WRKSRC}/data/freedesktop.org.xml.in
+
+	${INSTALL_DATA_DIR} ${XDGMIME_WRKBUILD}
+	cd ${XDGMIME_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson setup \
+			${MODMESON_CONFIGURE_ARGS} ${XDGMIME_WRKSRC} \
+			${XDGMIME_WRKBUILD} && \
+		${LOCALBASE}/bin/meson compile -C ${XDGMIME_WRKBUILD} -v -j ${MAKE_JOBS}
 
 .include <bsd.port.mk>

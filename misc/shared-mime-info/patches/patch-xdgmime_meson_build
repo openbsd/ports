@@ -1,0 +1,20 @@
+Don't hide memmem(3).
+
+Index: xdgmime/meson.build
+--- xdgmime/meson.build.orig
++++ xdgmime/meson.build
+@@ -5,7 +5,6 @@ project('xdgmime', 'c',
+ )
+ 
+ add_project_arguments(
+-    '-D_POSIX_C_SOURCE=200809L',
+     '-DXDG_PREFIX=xdg_test',
+     '-DHAVE_MMAP',
+     '-Wduplicated-branches',
+@@ -35,4 +34,4 @@ if have_cxx
+ endif
+ 
+ subdir('src')
+-subdir('fuzzing')
+\ No newline at end of file
++subdir('fuzzing')
