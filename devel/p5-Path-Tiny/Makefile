@@ -1,6 +1,6 @@
 COMMENT =	file path utility
 
-DISTNAME =	Path-Tiny-0.146
+DISTNAME =	Path-Tiny-0.150
 CPAN_AUTHOR =	DAGOLDEN
 
 CATEGORIES =	devel
