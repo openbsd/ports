@@ -6,6 +6,7 @@ bin/xml_split
 ${P5SITE}/XML/Twig/
 ${P5SITE}/XML/Twig.pm
 ${P5SITE}/XML/Twig/XPath.pm
+${P5SITE}/XML/speedup.pl
 @man man/man1/xml_grep.1
 @man man/man1/xml_merge.1
 @man man/man1/xml_pp.1
