@@ -92,6 +92,7 @@ ${P5SITE}/Image/ExifTool/Geolocation.dat
 ${P5SITE}/Image/ExifTool/Geolocation.pm
 ${P5SITE}/Image/ExifTool/Geotag.pm
 ${P5SITE}/Image/ExifTool/GoPro.pm
+${P5SITE}/Image/ExifTool/Google.pm
 ${P5SITE}/Image/ExifTool/H264.pm
 ${P5SITE}/Image/ExifTool/HP.pm
 ${P5SITE}/Image/ExifTool/HTML.pm
@@ -299,6 +300,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Geolocation.3p
 @man man/man3p/Image::ExifTool::Geotag.3p
 @man man/man3p/Image::ExifTool::GoPro.3p
+@man man/man3p/Image::ExifTool::Google.3p
 @man man/man3p/Image::ExifTool::H264.3p
 @man man/man3p/Image::ExifTool::HP.3p
 @man man/man3p/Image::ExifTool::HTML.3p
