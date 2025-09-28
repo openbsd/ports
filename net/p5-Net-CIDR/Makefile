@@ -2,7 +2,7 @@ COMMENT=	manipulate IPv4/IPv6 netblocks in CIDR notation
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Net-CIDR-0.26
+DISTNAME =	Net-CIDR-0.27
 CATEGORIES=	net
 
 # Perl
