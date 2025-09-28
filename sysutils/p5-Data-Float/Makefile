@@ -1,6 +1,6 @@
 COMMENT =	details of the floating point data type
 
-DISTNAME =	Data-Float-0.013
+DISTNAME =	Data-Float-0.015
 
 CATEGORIES =	sysutils
 
@@ -8,8 +8,6 @@ CATEGORIES =	sysutils
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-
-CONFIGURE_STYLE =	modbuild
 
 PKG_ARCH =		*
 
