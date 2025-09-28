@@ -2,9 +2,8 @@ COMMENT =	Event based transparent Client/Server RPC framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Event-RPC-1.10
+DISTNAME =	Event-RPC-1.11
 CATEGORIES =	net devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
