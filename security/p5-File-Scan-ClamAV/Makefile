@@ -1,8 +1,7 @@
 COMMENT= 	client class for the ClamAV clamd virus scanner daemon
 
-DISTNAME =	File-Scan-ClamAV-1.95
+DISTNAME =	File-Scan-ClamAV-1.96
 CATEGORIES=	security
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
