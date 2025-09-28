@@ -1,6 +1,6 @@
 COMMENT =	library to add Web Authentication support to server
 
-DISTNAME =	Authen-WebAuthn-0.004
+DISTNAME =	Authen-WebAuthn-0.005
 
 CATEGORIES =	security
 
