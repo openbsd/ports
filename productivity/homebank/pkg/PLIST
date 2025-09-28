@@ -18,6 +18,7 @@ share/homebank/datas/hb-categories-lt.csv
 share/homebank/datas/hb-categories-pt.csv
 share/homebank/datas/hb-categories-ro.csv
 share/homebank/datas/hb-categories-ru.csv
+share/homebank/datas/hb-categories-se.csv
 share/homebank/datas/hb-categories-sk.csv
 share/homebank/help/
 share/homebank/help/00-intro.html
@@ -426,6 +427,7 @@ share/homebank/icons/hicolor/scalable/
 share/homebank/icons/hicolor/scalable/actions/
 share/homebank/icons/hicolor/scalable/actions/data-usage-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/edit-split-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/emblem-system-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/eye-not-looking-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/hb-account-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/hb-archive-symbolic.svg
