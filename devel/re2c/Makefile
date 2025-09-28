@@ -1,6 +1,6 @@
 COMMENT=	C-based regular expression scanner generator
 
-V=		4.2
+V=		4.3
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
