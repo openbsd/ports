@@ -1,3 +1,6 @@
+# /pobj/ulfius-2.7.15/ulfius-2.7.15/src/u_send_request.c:521:19: error: call to '_curl_easy_setopt_err_long' declared with 'warning' attribute: curl_easy_setopt expects a long argument
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
+
 COMMENT =	HTTP Framework for REST Applications in C
 
 GH_ACCOUNT =	babelouest
