@@ -1,6 +1,6 @@
 COMMENT=	interface to the system's process table#'
 
-DISTNAME =	Proc-ProcessTable-0.636
+DISTNAME =	Proc-ProcessTable-0.637
 CATEGORIES=	sysutils
 
 # Artistic License
