@@ -5,6 +5,8 @@ DISTNAME=	PyQt5-${MODPY_DISTV}
 PKGNAME=	py-qt5-${MODPY_DISTV}
 REVISION=	1
 
+DPB_PROPERTIES = parallel
+
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/pyqt/intro
