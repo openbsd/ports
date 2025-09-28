@@ -1,12 +1,11 @@
 COMMENT=	Windows Exploit Suggester - Next Generation
 
-MODPY_DISTV=	1.0.2.1
+MODPY_DISTV=	1.0.3
 DISTNAME=	wesng-${MODPY_DISTV}
 # definitions.zip isn't in the pypi release, and is updated frequently;
 # fetch it from upstream's github repo instead
-DEF_DATE=	20221123
-DEF_COMMITHASH=	2834f8e925d1f3ea7ff7de2dad6d7d4155f0fa00
-REVISION=	2
+DEF_DATE=	20250926
+DEF_COMMITHASH=	09c2e325dc6adcafbc957552bbb79abebd07a167
 
 HOMEPAGE=	https://github.com/bitsadmin/wesng
 
