@@ -31,6 +31,7 @@ COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
 LIB_DEPENDS=	devel/libevent2
+TEST_DEPENDS=	shells/bash
 
 DB_DIR=		/var/tor
 SUBST_VARS+=	DB_DIR
