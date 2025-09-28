@@ -1,0 +1,12 @@
+Index: openssl-sys/build/main.rs
+--- openssl-sys/build/main.rs.orig
++++ openssl-sys/build/main.rs
+@@ -460,7 +460,7 @@ See rust-openssl documentation for more information:
+             (4, 0, _) => ('4', '0', 'x'),
+             (4, 1, 0) => ('4', '1', '0'),
+             (4, 1, _) => ('4', '1', 'x'),
+-            _ => version_error(),
++            _ => ('4', '1', 'x'),
+         };
+ 
+         println!("cargo:libressl=true");
