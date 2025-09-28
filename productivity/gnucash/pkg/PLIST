@@ -406,6 +406,7 @@ share/doc/gnucash/ChangeLog.2020
 share/doc/gnucash/ChangeLog.2021
 share/doc/gnucash/ChangeLog.2022
 share/doc/gnucash/ChangeLog.2023
+share/doc/gnucash/ChangeLog.2024
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -951,9 +952,12 @@ share/gnucash/accounts/zh_TW/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/zh_TW/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/zh_TW/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/zh_TW/acctchrt_vehicle.gnucash-xea
-share/gnucash/chartjs/
-share/gnucash/chartjs/Chart.bundle.js
-share/gnucash/chartjs/Chart.bundle.min.js
+share/gnucash/chartjs-2/
+share/gnucash/chartjs-2/Chart.bundle.js
+share/gnucash/chartjs-2/Chart.bundle.min.js
+share/gnucash/chartjs-4/
+share/gnucash/chartjs-4/chart.js
+share/gnucash/chartjs-4/chart.umd.js
 share/gnucash/checks/
 share/gnucash/checks/deluxe.chk
 share/gnucash/checks/liberty.chk
