@@ -1,0 +1,16 @@
+Fix build with meson >=1.9.1
+
+Index: external/basis_universal/meson.build
+--- external/basis_universal/meson.build.orig
++++ external/basis_universal/meson.build
+@@ -18,8 +18,8 @@ cpp_options = [
+ enable_ktx2 = get_option('enable_ktx2')
+ enable_ktx2_zstd = enable_ktx2 and get_option('enable_ktx2_zstd')
+ 
+-cc = meson.get_compiler('cpp')
+-cc_native = meson.get_compiler('cpp', native : true)
++cc = meson.get_compiler('c')
++cc_native = meson.get_compiler('c', native : true)
+ 
+ dep_m = cc.find_library('m', required : false)
+ dep_m_native = cc_native.find_library('m', required : false)
