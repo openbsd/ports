@@ -1,3 +1,7 @@
+# static_assert(sizeof(FutexTimespec) == sizeof(timespec));
+# bee.lua/bee/thread/atomic_sync.cpp:55:41: note: expression evaluates to '8 == 12'
+ONLY_FOR_ARCHS =	amd64 aarch64
+
 COMMENT =		language server for Lua
 
 V =			3.15.0
