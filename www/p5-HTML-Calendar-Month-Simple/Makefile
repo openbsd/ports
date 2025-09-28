@@ -2,7 +2,7 @@ COMMENT=	Simple HTML Calendars
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	HTML-CalendarMonthSimple-1.26
+DISTNAME =	HTML-CalendarMonthSimple-1.27
 CATEGORIES=	www
 FIX_EXTRACT_PERMISSIONS=Yes
 
