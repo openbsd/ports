@@ -1,6 +1,6 @@
 COMMENT =	compile .cgi scripts to a code reference
 
-DISTNAME =	CGI-Compile-0.26
+DISTNAME =	CGI-Compile-0.27
 
 CATEGORIES =	www
 
