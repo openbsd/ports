@@ -19,8 +19,8 @@ MODULES=		devel/meson \
 
 BUILD_DEPENDS=		textproc/xmlto
 
-# gtk+3 is needed to build the tests
-BUILD_DEPENDS +=	x11/gtk+3
+# GTK is needed to build the tests
+BUILD_DEPENDS +=	x11/gtk+4
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 
