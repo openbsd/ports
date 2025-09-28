@@ -27,5 +27,6 @@ html              pagedjs-cli     n/a (NPM package)
 html              prince          n/a (commercial/proprietary)
 html              weasyprint      weasyprint
 html              wkhtmltopdf     wkhtmltopdf
+ms                groff           groff
 ms                pdfroff         groff
 typst             typst           typst
