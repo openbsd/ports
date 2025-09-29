@@ -1,7 +1,7 @@
 COMMENT =		convert Microsoft Reader files to OEBPS packages
 V =			1.8
 DISTNAME =		clit${V:S/.//}src
-REVISION =		1
+REVISION =		2
 PKGNAME =		clit-1.8
 CATEGORIES =		textproc converters print
 

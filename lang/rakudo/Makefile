@@ -1,6 +1,7 @@
 COMMENT =		Rakudo compiler for the Raku language
 
 V =			2025.01
+REVISION =		0
 DISTNAME =		rakudo-$V
 
 NQP_VERSION =		$V

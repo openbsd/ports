@@ -4,7 +4,7 @@ HOMEPAGE =		http://libtom.net/
 
 GH_ACCOUNT =		libtom
 GH_PROJECT =		libtommath
-GH_TAGNAME =		v1.2.0
+GH_TAGNAME =		v1.3.0
 
 # WTFPL
 PERMIT_PACKAGE =	Yes
@@ -17,7 +17,7 @@ FAKE_FLAGS =		DESTDIR=${WRKINST}${PREFIX} \
 			LIBPATH=/lib \
 			INCPATH=/include
 USE_GMAKE =		Yes
-MAKE_FILE =		makefile
+MAKE_FILE =		makefile.unix
 
 ALL_TARGET =		default
 TEST_TARGET =		coverage

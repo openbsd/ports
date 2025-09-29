@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv6
 COMMENT =		virtual machine for nqp/rakudo
 
 V =			2025.01
+REVISION =		0
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
