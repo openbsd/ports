@@ -1,9 +1,8 @@
 COMMENT=	simple WSGI-framework for small web-applications
 
-MODPY_DISTV=	0.13.2
+MODPY_DISTV =	0.13.4
 DISTNAME=	bottle-${MODPY_DISTV}
 PKGNAME=	py-bottle-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	www
 
