@@ -1,9 +1,8 @@
 COMMENT=	simple scripting language for web browsing
 
-MODPY_DISTV=	3.3
+MODPY_DISTV =	3.3.1
 DISTNAME=	twill-${MODPY_DISTV}
 CATEGORIES=	www
-REVISION=	1
 
 HOMEPAGE=	https://twill-tools.github.io/twill/
 
