@@ -149,7 +149,7 @@ software that requires a new version), you will need to:
 1. update the configuration files as needed
 
 It may be useful to use diff(1) to compare the default configuration in
-${PREFIX}/share/examples/php-X.Y/php.ini-production for the old version
+${TRUEPREFIX}/share/examples/php-X.Y/php.ini-production for the old version
 with ${SYSCONFDIR}/php-X.Y.ini and apply them to the new version's ini
 file.
 

@@ -3,6 +3,7 @@ AUTOCONF_VERSION= 2.72
 
 # keep above 7.7-stable
 REVISION-curl=	0
+REVISION-main=	0
 
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=
