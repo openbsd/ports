@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}response.${M
 lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}views.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bukuserver/${MODPY_PYCACHE}views.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bukuserver/api.py
@@ -48,12 +50,15 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/static/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/css/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/css/bookmark.css
+lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/css/list.css
+lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/css/modal.css
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/favicon.svg
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/Chart.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/bookmark.js
+lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/buku_filter.js
+lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/filters_fix.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/last_page.js
-lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/page_size.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/bookmark_create.html
@@ -67,6 +72,16 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/bookmar
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/home.html
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/lib.html
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/statistic.html
+lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/tag_edit.html
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/tags_list.html
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bukuserver/util.py
 lib/python${MODPY_VERSION}/site-packages/bukuserver/views.py
 @man man/man1/buku.1
