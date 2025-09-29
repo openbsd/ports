@@ -1,6 +1,6 @@
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.9
+DISTNAME=		awstats-8.0
 
 CATEGORIES=		www
 
