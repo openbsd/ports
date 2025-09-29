@@ -1,6 +1,6 @@
 COMMENT =		fetch lyrics from spotify
 
-V =			0.1.1.9
+V =			0.1.2.4
 MODPY_DISTV =	${V}
 DISTNAME =		syrics-${V}
 CATEGORIES =		textproc audio
