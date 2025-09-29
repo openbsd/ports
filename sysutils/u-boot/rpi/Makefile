@@ -1,4 +1,5 @@
 VERSION=	2025.07
+REVISION=	0
 
 SOC=		rpi
 
