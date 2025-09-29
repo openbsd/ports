@@ -1,7 +1,6 @@
 COMMENT=	Python driver for mongodb
 
-MODPY_DISTV=	4.15.0
-REVISION=	0
+MODPY_DISTV =	4.15.1
 DISTNAME=	pymongo-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
