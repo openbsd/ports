@@ -9,6 +9,7 @@ MODCARGO_CRATES +=	autocfg	1.1.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	2.4.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	borsh	1.5.1	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	bstr	0.2.17	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	bstr	1.9.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	bumpalo	3.14.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	bytecount	0.6.7	# Apache-2.0/MIT

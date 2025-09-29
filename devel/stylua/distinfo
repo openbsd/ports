@@ -1,4 +1,4 @@
-SHA256 (JohnnyMorganz-StyLua-v2.2.0.tar.gz) = JXhjMWaW/LhoGGJUxHzvVPgDQ8Zqi/FDDPJPNa3QpHU=
+SHA256 (JohnnyMorganz-StyLua-v2.3.0.tar.gz) = 4d/a4vy+6uYNHiUQLRhFoJUB4K+pin0x8eik9jZpWtw=
 SHA256 (cargo/aho-corasick-1.1.2.tar.gz) = spady5WLNmVUcfxh9+QW+nYDO91L/tBnjY/uHi0HofA=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstyle-1.0.4.tar.gz) = cHkHW0H1M7jGHSpNBzxGduH4skn/lKOTsFldswTg3Yc=
@@ -10,6 +10,7 @@ SHA256 (cargo/autocfg-1.1.0.tar.gz) = 1GiAK6sXy8DMV16bBT9B5yqja/prf1XjUp/6QxYbl/
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.4.2.tar.gz) = 7VcJNEBusWQ4pOl2sbRQB3QJnBO4y5buyZ9iDwUJDd8=
 SHA256 (cargo/borsh-1.5.1.tar.gz) = pjYu1V3vYizdxwpHRqaFVNe2h3E3cN5TnlmnObJJ+O0=
+SHA256 (cargo/bstr-0.2.17.tar.gz) = ujVp84Po8VmESfGkI+cumVaRN7R3QLHaEe8Zrz1cMiM=
 SHA256 (cargo/bstr-1.9.0.tar.gz) = xI8AUaS0xeC202XNBK9TrqognjzBXsLNtp5zzIf70Nw=
 SHA256 (cargo/bumpalo-3.14.0.tar.gz) = fzDnR2Uh9vivGhxMC4zJTwvuN9kXY9DKJmXymbbNiuw=
 SHA256 (cargo/bytecount-0.6.7.tar.gz) = 4eXwNdFvxiOuX3SYHbgKQ5gDiIMU46VV/W8ErNUaMgU=
@@ -144,7 +145,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.35.tar.gz) = GTHXipxzhh2gE09FO7H3kM5JsuMOuoQQtLebrHK0ai0=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (JohnnyMorganz-StyLua-v2.2.0.tar.gz) = 446052
+SIZE (JohnnyMorganz-StyLua-v2.3.0.tar.gz) = 451745
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstyle-1.0.4.tar.gz) = 13998
@@ -156,6 +157,7 @@ SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.4.2.tar.gz) = 42602
 SIZE (cargo/borsh-1.5.1.tar.gz) = 60666
+SIZE (cargo/bstr-0.2.17.tar.gz) = 330350
 SIZE (cargo/bstr-1.9.0.tar.gz) = 380170
 SIZE (cargo/bumpalo-3.14.0.tar.gz) = 82400
 SIZE (cargo/bytecount-0.6.7.tar.gz) = 14642
