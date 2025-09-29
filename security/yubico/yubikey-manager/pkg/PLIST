@@ -87,6 +87,8 @@ lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}freebsd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}freebsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}linux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}macos.${MODPY
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/base.py
+lib/python${MODPY_VERSION}/site-packages/ykman/hid/fido.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/freebsd.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/linux.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/macos.py
