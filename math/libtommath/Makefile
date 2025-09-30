@@ -10,6 +10,7 @@ GH_TAGNAME =		v1.3.0
 PERMIT_PACKAGE =	Yes
 
 MAKE_FLAGS =		CC="${CC}" \
+			CFLAGS="${CFLAGS}" \
 			IGNORE_SPEED=Yes \
 			V=1 \
 			PREFIX=
