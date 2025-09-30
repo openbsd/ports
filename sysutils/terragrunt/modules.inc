@@ -501,7 +501,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-isatty									 v0.0.20 \
 	github.com/mattn/go-localereader								 v0.0.1 \
 	github.com/mattn/go-runewidth									 v0.0.16 \
-	github.com/mattn/go-shellwords									 v1.0.4 \
+	github.com/mattn/go-shellwords									 v1.0.12 \
 	github.com/mattn/go-zglob									 v0.0.6 \
 	github.com/matttproud/golang_protobuf_extensions						 v1.0.1 \
 	github.com/mgutz/ansi										 v0.0.0-20200706080929-d51e80ef957d \
@@ -1198,6 +1198,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-runewidth								 v0.0.14 \
 	github.com/mattn/go-runewidth								 v0.0.15 \
 	github.com/mattn/go-runewidth								 v0.0.4 \
+	github.com/mattn/go-shellwords								 v1.0.4 \
 	github.com/mattn/go-zglob								 v0.0.2-0.20190814121620-e3c945676326 \
 	github.com/mattn/go-zglob								 v0.0.3 \
 	github.com/mgutz/ansi									 v0.0.0-20170206155736-9520e82c474b \

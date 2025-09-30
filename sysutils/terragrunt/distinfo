@@ -1487,8 +1487,9 @@ SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.mod) = IWyT0ZMQYSyB1
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.mod) = IWyT0ZMQYSyB1cdBAkmJ+DiX0jM8Op+We1ixMXWH9Rk=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.zip) = F50tkAx27jVg++2mDQI3o75qy3NNDLdCO1XlzLDO28o=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.4.mod) = ckOTawp6rcdTlBHrZAY0ld9lt6NvQtf/7y7rqfjICs0=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.mod) = Kb//Fv9Xt9raZOanSAbZMVSazOYctwxFijidCZwtDsI=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.zip) = bTXD7ckuR6BpiHiNaDwa04lxm1XvGdWn8jmrRwi22hE=
 SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.4.mod) = +74HY1Wuz5Ib9BclcGPRlFNoenR5p+jeImMtchP9w68=
-SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.4.zip) = 8OqbRIpjFzOhQ7SkTmSrD9ErgJ+KO3alSC4Jm8Zgs4k=
 SHA256 (go_modules/github.com/mattn/go-zglob/@v/v0.0.2-0.20190814121620-e3c945676326.mod) = ajihqKn+1GzIOybaMT3QcI9WSVuJ+hMvDLEmvhHJ6KE=
 SHA256 (go_modules/github.com/mattn/go-zglob/@v/v0.0.3.mod) = ajihqKn+1GzIOybaMT3QcI9WSVuJ+hMvDLEmvhHJ6KE=
 SHA256 (go_modules/github.com/mattn/go-zglob/@v/v0.0.6.mod) = wRhbNd/8vntJVXBw49nXi5bGVclJr6k1FLg/z1C4jHM=
@@ -2656,7 +2657,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.88.0.zip) = fIs2/i4H/BiLA9VXJkWK31+GLO7/xXYhSSA0QtHNgj4=
+SHA256 (terragrunt-v0.88.1.zip) = 8R+Vmwp9UYKX24ijpUnSAnJWtQyPMyA2Elz8sgjD9fc=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -4146,8 +4147,9 @@ SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.mod) = 84
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.mod) = 84
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.zip) = 22002
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.4.mod) = 37
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.mod) = 47
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.zip) = 9134
 SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.4.mod) = 38
-SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.4.zip) = 6594
 SIZE (go_modules/github.com/mattn/go-zglob/@v/v0.0.2-0.20190814121620-e3c945676326.mod) = 33
 SIZE (go_modules/github.com/mattn/go-zglob/@v/v0.0.3.mod) = 33
 SIZE (go_modules/github.com/mattn/go-zglob/@v/v0.0.6.mod) = 42
@@ -5315,4 +5317,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.88.0.zip) = 9681415
+SIZE (terragrunt-v0.88.1.zip) = 9363515
