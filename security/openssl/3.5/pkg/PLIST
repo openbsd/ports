@@ -4619,10 +4619,12 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_E.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_EC.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_ECD.3
+@man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_EL.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_ER.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_EW.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_F.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_I.3
+@man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_IC.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_IS.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_ISB.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_POLL_EVENT_ISE.3
