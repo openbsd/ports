@@ -2101,12 +2101,6 @@ share/stellarium/skycultures/arabic_indigenous/Transliteration.md
 share/stellarium/skycultures/arabic_indigenous/description.md
 share/stellarium/skycultures/arabic_indigenous/index.json
 share/stellarium/skycultures/arabic_indigenous/names_dictionary.md
-share/stellarium/skycultures/arabic_lunar_mansions/
-share/stellarium/skycultures/arabic_lunar_mansions/Transliteration.md
-share/stellarium/skycultures/arabic_lunar_mansions/constellation_boundaries.dat
-share/stellarium/skycultures/arabic_lunar_mansions/description.md
-share/stellarium/skycultures/arabic_lunar_mansions/index.json
-share/stellarium/skycultures/arabic_lunar_mansions/names_dictionary.md
 share/stellarium/skycultures/aztec/
 share/stellarium/skycultures/aztec/description.md
 share/stellarium/skycultures/aztec/illustrations/
@@ -2253,6 +2247,7 @@ share/stellarium/skycultures/chinese/illustrations/
 share/stellarium/skycultures/chinese/illustrations/yxkcxt.png
 share/stellarium/skycultures/chinese/index.json
 share/stellarium/skycultures/chinese/planet_names.zh_CN.fab
+share/stellarium/skycultures/chinese/po/
 share/stellarium/skycultures/chinese/star_names.zh_CN.fab
 share/stellarium/skycultures/chinese_chenzhuo/
 share/stellarium/skycultures/chinese_chenzhuo/description.md
@@ -3022,7 +3017,7 @@ share/stellarium/stars/hip_gaia3/extra_name.fab
 share/stellarium/stars/hip_gaia3/gcvs.cat
 share/stellarium/stars/hip_gaia3/name.fab
 share/stellarium/stars/hip_gaia3/object_types_v0_1.cat
-share/stellarium/stars/hip_gaia3/stars_0_0v0_18.cat
+share/stellarium/stars/hip_gaia3/stars_0_0v0_19.cat
 share/stellarium/stars/hip_gaia3/stars_1_0v0_15.cat
 share/stellarium/stars/hip_gaia3/stars_2_0v0_16.cat
 share/stellarium/stars/hip_gaia3/stars_3_0v0_10.cat
@@ -3121,7 +3116,7 @@ share/stellarium/textures/saturn_rings_radial.png
 share/stellarium/textures/sedna.png
 share/stellarium/textures/star16x16.png
 share/stellarium/textures/star16x16_rays.png
-share/stellarium/textures/sun.png
+share/stellarium/textures/sun.webp
 share/stellarium/textures/telescope.png
 share/stellarium/textures/tethys.png
 share/stellarium/textures/titan.png
