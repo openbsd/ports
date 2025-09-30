@@ -13,7 +13,7 @@ USE_NOEXECONLY =	Yes
 
 # skip PORTROACH limit for newest version
 #PORTROACH=	limit:^3\.2
-V=		3.5.3
+V=		3.5.4
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.5v0,<3.6v0
 EPOCH=		0
