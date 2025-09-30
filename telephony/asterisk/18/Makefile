@@ -8,7 +8,7 @@ VERSION_SPEC=	>=18.0,<19.0
 REVISION-fax=	0
 REVISION-ldap=	0
 REVISION-lua=	0
-REVISION-main=	1
+REVISION-main=	2
 REVISION-odbc=	0
 REVISION-pgsql=	0
 REVISION-snmp=	0
