@@ -5,6 +5,7 @@ CATEGORIES =	editors
 V =		2.9.94
 DISTNAME =	kile-${V}-1
 PKGNAME =	kile-${V}
+REVISION =	0
 
 HOMEPAGE =	https://kile.sourceforge.io
 
