@@ -1,0 +1,17 @@
+avoid null printf warnings in syslog
+
+deliberately ignoring slen here; it seems likely that it will be set to
+0 (so print nothing) in this case anyway.
+
+Index: include/asterisk/res_pjsip.h
+--- include/asterisk/res_pjsip.h.orig
++++ include/asterisk/res_pjsip.h
+@@ -69,7 +69,7 @@
+ #endif
+ 
+ #define PJSTR_PRINTF_SPEC "%.*s"
+-#define PJSTR_PRINTF_VAR(_v) ((int)(_v).slen), ((_v).ptr)
++#define PJSTR_PRINTF_VAR(_v) ((int)(_v).slen), ((_v).ptr ? (_v).ptr : "(null)")
+ 
+ #define AST_SIP_AUTH_MAX_REALM_LENGTH 255	/* From the auth/realm realtime column size */
+ #define AST_SIP_AUTH_MAX_SUPPORTED_ALGORITHMS_LENGTH (255) /* From the supported algorithms realtime column size */
