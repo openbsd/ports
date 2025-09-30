@@ -1,6 +1,6 @@
 COMMENT =		two-factor authentication for unix systems
 
-V =			2.2.0
+V =			2.2.1
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
 CATEGORIES =		sysutils
