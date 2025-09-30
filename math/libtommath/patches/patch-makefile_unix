@@ -1,0 +1,30 @@
+Index: makefile.unix
+--- makefile.unix.orig
++++ makefile.unix
+@@ -10,16 +10,16 @@
+ # make -f makefile.unix CC=bcc32
+ 
+ #The following can be overridden from command line e.g. "make -f makefile.unix CC=gcc ARFLAGS=rcs"
+-DESTDIR   =
+-PREFIX    = /usr/local
+-LIBPATH   = $(PREFIX)/lib
+-INCPATH   = $(PREFIX)/include
+-CC        = cc
+-AR        = ar
+-ARFLAGS   = r
+-RANLIB    = ranlib
+-CFLAGS    = -O2
+-LDFLAGS   =
++DESTDIR   ?=
++PREFIX    ?= /usr/local
++LIBPATH   ?= $(PREFIX)/lib
++INCPATH   ?= $(PREFIX)/include
++CC        ?= cc
++AR        ?= ar
++ARFLAGS   ?= r
++RANLIB    ?= ranlib
++CFLAGS    ?= -O2
++LDFLAGS   ?=
+ 
+ VERSION   = 1.3.0
+ 
