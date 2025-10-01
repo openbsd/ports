@@ -2,6 +2,7 @@ bin/emoji-picker
 libexec/ibus-engine-typing-booster
 libexec/ibus-setup-typing-booster
 share/applications/emoji-picker.desktop
+share/applications/ibus-setup-tb.desktop
 share/applications/ibus-setup-typing-booster.desktop
 share/glib-2.0/schemas/org.freedesktop.ibus.engine.typing-booster.gschema.xml
 share/ibus-typing-booster/
