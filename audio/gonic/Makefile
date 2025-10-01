@@ -1,7 +1,7 @@
 COMMENT =	music streaming server / subsonic server API implementation
 
 MODGO_MODNAME =	go.senan.xyz/gonic
-MODGO_VERSION =	v0.17.0
+MODGO_VERSION =	v0.18.0
 
 DISTNAME =	gonic-${MODGO_VERSION}
 

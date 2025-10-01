@@ -8,6 +8,7 @@ MODGO_MODULES =	\
 	github.com/andybalholm/cascadia			 v1.3.3 \
 	github.com/araddon/dateparse			 v0.0.0-20210429162001-6b43995a97de \
 	github.com/argusdusty/treelock			 v0.0.0-20180405040243-bde644eb4b53 \
+	github.com/aymerick/douceur			 v0.2.0 \
 	github.com/containrrr/shoutrrr			 v0.8.0 \
 	github.com/cpuguy83/go-md2man/v2		 v2.0.0-20190314233015-f79a8a8ca69d \
 	github.com/davecgh/go-spew			 v1.1.1 \
@@ -15,13 +16,19 @@ MODGO_MODULES =	\
 	github.com/dexterlb/mpvipc			 v0.0.0-20241005113212-7cdefca0e933 \
 	github.com/disintegration/imaging		 v1.6.2 \
 	github.com/djherbis/times			 v1.6.0 \
+	github.com/docopt/docopt-go			 v0.0.0-20180111231733-ee0de3bc6815 \
 	github.com/dustin/go-humanize			 v1.0.1 \
+	github.com/env25/mpdlrc				 v0.7.4 \
 	github.com/erikstmartin/go-testdb		 v0.0.0-20160219214506-8d10e4a1bae5 \
 	github.com/fatih/color				 v1.18.0 \
 	github.com/fatih/structs			 v1.1.0 \
+	github.com/fhs/gompd/v2				 v2.3.1-0.20221204164802-46d3f48f8632 \
 	github.com/fsnotify/fsnotify			 v1.9.0 \
-	github.com/go-openapi/jsonpointer		 v0.21.2 \
-	github.com/go-openapi/swag			 v0.23.1 \
+	github.com/gdamore/encoding			 v1.0.0 \
+	github.com/gdamore/tcell/v2			 v2.7.4 \
+	github.com/go-openapi/jsonpointer		 v0.22.0 \
+	github.com/go-openapi/swag			 v0.21.1 \
+	github.com/go-openapi/swag/jsonname		 v0.24.0 \
 	github.com/go-sql-driver/mysql			 v1.5.0 \
 	github.com/goccy/go-yaml			 v1.18.0 \
 	github.com/gofrs/uuid				 v3.2.0+incompatible \
@@ -32,6 +39,7 @@ MODGO_MODULES =	\
 	github.com/google/shlex				 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/google/uuid				 v1.6.0 \
 	github.com/gorilla/context			 v1.1.2 \
+	github.com/gorilla/css				 v1.0.1 \
 	github.com/gorilla/securecookie			 v1.1.2 \
 	github.com/gorilla/sessions			 v1.4.0 \
 	github.com/gosimple/unidecode			 v1.0.1 \
@@ -48,11 +56,13 @@ MODGO_MODULES =	\
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/text				 v0.2.0 \
 	github.com/lib/pq				 v1.3.0 \
-	github.com/mailru/easyjson			 v0.9.0 \
+	github.com/lucasb-eyer/go-colorful		 v1.2.0 \
+	github.com/mailru/easyjson			 v0.7.7 \
 	github.com/mattn/go-colorable			 v0.1.14 \
 	github.com/mattn/go-isatty			 v0.0.20 \
-	github.com/mattn/go-runewidth			 v0.0.16 \
+	github.com/mattn/go-runewidth			 v0.0.15 \
 	github.com/mattn/go-sqlite3			 v1.14.32 \
+	github.com/microcosm-cc/bluemonday		 v1.0.27 \
 	github.com/mitchellh/copystructure		 v1.2.0 \
 	github.com/mitchellh/mapstructure		 v1.5.0 \
 	github.com/mitchellh/reflectwalk		 v1.0.2 \
@@ -60,11 +70,10 @@ MODGO_MODULES =	\
 	github.com/mmcdole/goxpp			 v1.1.1 \
 	github.com/modern-go/concurrent			 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2			 v1.0.2 \
-	github.com/ncruces/go-sqlite3			 v0.27.1 \
+	github.com/ncruces/go-sqlite3			 v0.28.0 \
 	github.com/ncruces/julianday			 v1.0.0 \
 	github.com/nfnt/resize				 v0.0.0-20180221191011-83c6a9932646 \
-	github.com/olekukonko/tablewriter		 v0.0.5 \
-	github.com/olekukonko/tablewriter		 v1.0.9 \
+	github.com/pelletier/go-toml/v2			 v2.2.2 \
 	github.com/philippta/go-template		 v0.0.0-20220911145045-4556aca435e4 \
 	github.com/pmezard/go-difflib			 v1.0.0 \
 	github.com/rainycape/unidecode			 v0.0.0-20150907023854-cb7f23ec59be \
@@ -75,9 +84,8 @@ MODGO_MODULES =	\
 	github.com/sentriz/gormstore			 v0.0.0-20220105134332-64e31f7f6981 \
 	github.com/sergi/go-diff			 v1.4.0 \
 	github.com/shurcoo!l/sanitized_anchor_name	 v1.0.0 \
-	github.com/ssor/bom				 v0.0.0-20170718123548-6386211fdfcf \
 	github.com/stretchr/objx			 v0.5.2 \
-	github.com/stretchr/testify			 v1.10.0 \
+	github.com/stretchr/testify			 v1.11.1 \
 	github.com/tetratelabs/wazero			 v1.9.0 \
 	github.com/urfave/cli				 v1.22.3 \
 	github.com/yudai/golcs				 v0.0.0-20170316035057-ecda9a501e82 \
@@ -85,9 +93,9 @@ MODGO_MODULES =	\
 	go.senan.xyz/flagconf				 v0.1.9 \
 	go.senan.xyz/natcmp				 v0.1.2 \
 	go.senan.xyz/sqlb				 v0.2.7 \
-	go.senan.xyz/table				 v0.0.0-20240227175247-cf2c834b4c23 \
+	go.senan.xyz/table				 v0.0.0-20250823140814-89c73cfe037e \
 	go.senan.xyz/taglib				 v0.7.2 \
-	go.senan.xyz/wrtag				 v0.16.0 \
+	go.senan.xyz/wrtag				 v0.17.1 \
 	golang.org/x/crypto				 v0.41.0 \
 	golang.org/x/exp				 v0.0.0-20240719175910-8a7402abbf56 \
 	golang.org/x/image				 v0.30.0 \
@@ -106,8 +114,7 @@ MODGO_MODULES =	\
 	gopkg.in/gormigrate.v1				 v1.6.0 \
 	gopkg.in/natefinch/npipe.v2			 v2.0.0-20160621034901-c1b8fa8bdcce \
 	gopkg.in/yaml.v2				 v2.4.0 \
-	gopkg.in/yaml.v3				 v3.0.1 \
-	jaytaylor.com/html2text				 v0.0.0-20230321000545-74c2419ad056
+	gopkg.in/yaml.v3				 v3.0.1
 
 MODGO_MODFILES =	\
 	github.com/!puerkito!bio/goquery	 v1.5.1 \
@@ -117,7 +124,6 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/denisenkom/go-mssqldb	 v0.0.0-20181014144952-4e0d7dc8888f \
 	github.com/go-openapi/jsonpointer	 v0.19.5 \
-	github.com/go-openapi/swag		 v0.21.1 \
 	github.com/go-sql-driver/mysql		 v1.4.1 \
 	github.com/google/go-cmp		 v0.2.0 \
 	github.com/google/gofuzz		 v1.0.0 \
@@ -130,15 +136,14 @@ MODGO_MODFILES =	\
 	github.com/jinzhu/now			 v1.0.1 \
 	github.com/lib/pq			 v1.0.0 \
 	github.com/lib/pq			 v1.1.1 \
-	github.com/mailru/easyjson		 v0.7.7 \
-	github.com/mattn/go-runewidth		 v0.0.9 \
 	github.com/mattn/go-sqlite3		 v1.10.0 \
 	github.com/mattn/go-sqlite3		 v1.14.0 \
 	github.com/mmcdole/goxpp		 v1.1.1-0.20240225020742-a0c311522b23 \
 	github.com/modern-go/concurrent		 v0.0.0-20180228061459-e0a39a4cb421 \
-	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/rogpeppe/go-internal		 v1.12.0 \
 	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/testify		 v1.10.0 \
+	github.com/stretchr/testify		 v1.11.0 \
 	github.com/stretchr/testify		 v1.3.0 \
 	github.com/stretchr/testify		 v1.8.1 \
 	golang.org/x/crypto			 v0.0.0-20181112202954-3d3f9f413869 \
@@ -168,6 +173,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.15.0 \
 	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.25.0 \
+	golang.org/x/net			 v0.26.0 \
 	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.39.0 \
 	golang.org/x/net			 v0.4.0 \
