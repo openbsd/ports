@@ -1,0 +1,12 @@
+Index: tests/bad_dns_request_test
+--- tests/bad_dns_request_test.orig
++++ tests/bad_dns_request_test
+@@ -60,7 +60,7 @@ sub http_client($$) {
+     $socket->send($request);
+ 
+     my $buffer;
+-    $socket->recv($buffer, 4096);
++    $socket->recv($buffer, 16388);
+ 
+     $socket->close();
+ 

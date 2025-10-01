@@ -1,0 +1,12 @@
+Index: tests/slow_client_test
+--- tests/slow_client_test.orig
++++ tests/slow_client_test
+@@ -46,7 +46,7 @@ sub slow_client($$) {
+     }
+ 
+     my $buffer;
+-    $socket->recv($buffer, 4096);
++    $socket->recv($buffer, 16384);
+ 
+     $socket->close();
+ 

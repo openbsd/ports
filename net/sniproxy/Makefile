@@ -1,12 +1,12 @@
 COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
-GH_ACCOUNT =	renaudallard
+GH_ACCOUNT =	dlundquist
 GH_PROJECT =	sniproxy
-GH_TAGNAME =	0.6.8
+GH_TAGNAME =	0.7.0
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/renaudallard/sniproxy
+HOMEPAGE =	https://github.com/dlundquist/sniproxy
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 
@@ -17,20 +17,21 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 # use pledge()
-WANTLIB += c ev pcre udns
+WANTLIB += c ev pcre2-8 udns
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	net/udns \
 		devel/libev \
-		devel/pcre
+		devel/pcre2
 
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 CONFIGURE_STYLE =	autoreconf
 AUTORECONF =		./autogen.sh
 
-CONFIGURE_ARGS =	--disable-rpath
+CONFIGURE_ARGS =	--disable-rpath \
+			--enable-dns
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 

@@ -1,0 +1,27 @@
+Index: tests/connection_reset_test
+--- tests/connection_reset_test.orig
++++ tests/connection_reset_test
+@@ -42,8 +42,8 @@ sub simple_server($) {
+                       "\r\n");
+ 
+         # Send a bunch of data (more that will be buffered by the kernel
+-        for (my $i = 0; $i < 4096; $i++) {
+-            $client->send('x' x 4096);
++        for (my $i = 0; $i < 16384; $i++) {
++            $client->send('x' x 16384);
+         }
+         $client->close();
+         exit;
+@@ -76,9 +76,9 @@ sub bad_client($) {
+                   "\r\n");
+ 
+     my $buffer;
+-    $socket->recv($buffer, 4096);
+-    $socket->recv($buffer, 4096);
+-    $socket->recv($buffer, 4096);
++    $socket->recv($buffer, 16384);
++    $socket->recv($buffer, 16384);
++    $socket->recv($buffer, 16384);
+ 
+     $socket->close();
+ 

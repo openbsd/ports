@@ -1,0 +1,16 @@
+Index: README.md
+--- README.md.orig
++++ README.md
+@@ -166,3 +166,12 @@ build without UDNS, but these features will be unavail
+ UDNS uses a single UDP socket for all queries, so it is recommended you use a
+ local caching DNS resolver (with a single socket each DNS query is protected by
+ spoofing by a single 16 bit query ID, which makes it relatively easy to spoof).
++
++
++OpenBSD specific behaviour
++--------------------------
++
++On OpenBSD, sniproxy is protected by pledge(2) and unveil(2).
++Therefore, the configuration file must be /etc/sniproxy.conf, unix sockets
++must be in /var/www/sockets and logs must be in /var/log. Also, sniproxy PID
++file must be /var/run/sniproxy.pid

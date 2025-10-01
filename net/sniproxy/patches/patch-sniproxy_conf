@@ -1,0 +1,23 @@
+Index: sniproxy.conf
+--- sniproxy.conf.orig
++++ sniproxy.conf
+@@ -2,8 +2,8 @@
+ # lines that start with # are comments
+ # lines with only white space are ignored
+ 
+-user nobody
+-group nogroup
++user _sniproxy
++group _sniproxy
+ 
+ # PID file, needs to be placed in directory writable by user
+ pidfile /var/run/sniproxy.pid
+@@ -47,7 +47,7 @@ error_log {
+ # Global access log for all listeners
+ access_log {
+     # Same options as error_log
+-    filename /tmp/sniproxy-access.log
++    filename /var/log/sniproxy-access.log
+ }
+ 
+ # blocks are delimited with {...}
