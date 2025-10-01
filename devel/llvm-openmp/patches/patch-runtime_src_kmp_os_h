@@ -1,12 +1,12 @@
 Index: runtime/src/kmp_os.h
 --- runtime/src/kmp_os.h.orig
 +++ runtime/src/kmp_os.h
-@@ -214,7 +214,7 @@ typedef kmp_uint32 kmp_uint;
+@@ -219,7 +219,7 @@ typedef kmp_uint32 kmp_uint;
  
  // stdarg handling
- #if (KMP_ARCH_ARM || KMP_ARCH_X86_64 || KMP_ARCH_AARCH64) &&                   \
--    (KMP_OS_FREEBSD || KMP_OS_LINUX)
-+    (KMP_OS_FREEBSD || KMP_OS_OPENBSD || KMP_OS_LINUX)
+ #if (KMP_ARCH_ARM || KMP_ARCH_X86_64 || KMP_ARCH_AARCH64 || KMP_ARCH_WASM) &&  \
+-    (KMP_OS_FREEBSD || KMP_OS_LINUX || KMP_OS_WASI)
++    (KMP_OS_FREEBSD || KMP_OS_OPENBSD || KMP_OS_LINUX || KMP_OS_WASI)
  typedef va_list *kmp_va_list;
  #define kmp_va_deref(ap) (*(ap))
  #define kmp_va_addr_of(ap) (&(ap))

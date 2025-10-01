@@ -4,16 +4,15 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	LLVM OpenMP libraries
 
-LLVM_VERSION =	16.0.6
-LLVM_BASE =	llvm16
+LLVM_VERSION =	19.1.7
+LLVM_BASE =	llvm19
 DISTNAME =	openmp-${LLVM_VERSION}.src
 DISTFILES =	openmp-${LLVM_VERSION}.src.tar.xz \
 		cmake-${LLVM_VERSION}.src.tar.xz
 SUPDISTFILES =  ${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-openmp-${LLVM_VERSION}
-REVISION =	1
 
-SHARED_LIBS =	omp	0.0
+SHARED_LIBS =	omp	1.0
 
 CATEGORIES =	devel
 

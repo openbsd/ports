@@ -1,7 +1,7 @@
 Index: runtime/CMakeLists.txt
 --- runtime/CMakeLists.txt.orig
 +++ runtime/CMakeLists.txt
-@@ -367,7 +367,7 @@ if (OPENMP_MSVC_NAME_SCHEME)
+@@ -410,7 +410,7 @@ if (OPENMP_MSVC_NAME_SCHEME)
  endif()
  
  if(${LIBOMP_ENABLE_SHARED})
