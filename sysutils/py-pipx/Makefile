@@ -1,10 +1,9 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_DISTV=	1.7.1
+MODPY_DISTV=	1.8.0
 DISTNAME=	pipx-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
-REVISION=	0
 
 # https://github.com/pypa/pipx
 HOMEPAGE=	https://pypa.github.io/pipx/
