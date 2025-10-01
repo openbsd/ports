@@ -1,5 +1,6 @@
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.9pl20250903
+REVISION =	0
 CATEGORIES =	lang
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
@@ -37,7 +38,9 @@ LIB_DEPENDS =	devel/pcre2 \
 
 RUN_DEPENDS =	fonts/apl-fonts
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--without-sqlite3 \
 			--without-postgresql
 CONFIGURE_ENV +=	CXX_WERROR=no \

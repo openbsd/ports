@@ -1,0 +1,23 @@
+Disable use asciidoc and libreoffice, we don't install HOWTO anyway
+
+Index: HOWTOs/Makefile.am
+--- HOWTOs/Makefile.am.orig
++++ HOWTOs/Makefile.am
+@@ -63,7 +63,7 @@ all: LApack-primer.pdf
+ # The .html has a stupid <noscript> tag that needs to be removed
+ # in order to properly display the Table of Contents.
+ .asciidoc.html:
+-	@if [ -z `which asciidoc` ] ; then touch $@ ;        \
++	@if [ -z `which _asciidoc` ] ; then touch $@ ;        \
+ 	else asciidoc -a icons -o $@ $< ;                    \
+         sed -i 's|Cpp|C++|g'                        $@ ; \
+         sed -i 's|<pre><code>|<pre>\n\n<code>|'     $@ ; \
+@@ -75,7 +75,7 @@ all: LApack-primer.pdf
+ # use LibreOffic Writer (if installed) to convert .html to .pdf
+ #
+ .html.pdf:
+-	@if [ -z `which lowriter` ] ; then touch $@  ; \
++	@if [ -z `which _lowriter` ] ; then touch $@  ; \
+ 	else lowriter --headless --convert-to pdf $< ; \
+ 	fi
+ 

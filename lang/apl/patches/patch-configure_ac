@@ -1,0 +1,15 @@
+error: unknown type name 'lognormal_distribution'; did you mean 'bernoulli_distribution'?
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -293,9 +293,6 @@ apl_YES($apl_POSTGRES) && apl_POSTGRES=yes
+ m4_include([m4/check_PCRE.m4])
+    apl_NYES($apl_PCRE) && AS_ECHO(["   └──── will affect: ⎕RE"])
+ 
+-m4_include([m4/check_GSL.m4])
+-   apl_NYES($apl_GSL) && AS_ECHO(["   └──── will affect: ⎕MX"])
+-
+ m4_include([m4/check_GTK.m4])
+    apl_NYES($apl_GTK3) && AS_ECHO(["   └──── may affect: ⎕PLOT, will affect ⎕PNG"])
+ 
