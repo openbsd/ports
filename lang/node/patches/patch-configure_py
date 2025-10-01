@@ -1,7 +1,7 @@
 Index: configure.py
 --- configure.py.orig
 +++ configure.py
-@@ -1753,7 +1753,11 @@ def configure_v8(o, configs):
+@@ -1762,7 +1762,11 @@ def configure_v8(o, configs):
    if sys.platform != 'darwin':
      if o['variables']['v8_enable_webassembly'] and o['variables']['target_arch'] == 'x64':
        o['variables']['v8_enable_wasm_simd256_revec'] = 1

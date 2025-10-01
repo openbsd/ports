@@ -32,21 +32,12 @@ Index: common.gypi
            }],
            ['_toolset=="host"', {
              'conditions': [
-@@ -542,7 +546,7 @@
+@@ -541,7 +545,7 @@
+                 'cflags': [ '-m32' ],
                  'ldflags': [ '-m32' ],
                }],
-               [ 'host_arch=="ppc64" and OS not in "aix os400"', {
--                'cflags': [ '-m64', '-mminimal-toc' ],
-+                'cflags': [ '-m64' ],
-                 'ldflags': [ '-m64' ],
-               }],
-               [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -566,7 +570,7 @@
-                 'ldflags': [ '-m32' ],
-               }],
-               [ 'target_arch=="ppc64" and OS not in "aix os400"', {
--                'cflags': [ '-m64', '-mminimal-toc' ],
-+                'cflags': [ '-m64' ],
-                 'ldflags': [ '-m64' ],
-               }],
-               [ 'target_arch=="s390x" and OS=="linux"', {
+-              [ 'host_arch=="ppc64" and OS not in "aix os400"', {
++              [ 'host_arch=="ppc64" and OS not in "aix os400 openbsd"', {
+                 'conditions': [
+                   [ 'clang==0', {
+                     'cflags': [ '-mminimal-toc' ],

@@ -17,21 +17,21 @@ Index: include/node/common.gypi
              'ldflags': [ '-Wl,-z,wxneeded' ],
            }],
            ['_toolset=="host"', {
-@@ -542,7 +540,7 @@
+@@ -541,7 +539,7 @@
+                 'cflags': [ '-m32' ],
                  'ldflags': [ '-m32' ],
                }],
-               [ 'host_arch=="ppc64" and OS not in "aix os400"', {
--                'cflags': [ '-m64', '-mminimal-toc' ],
-+                'cflags': [ '-m64' ],
-                 'ldflags': [ '-m64' ],
-               }],
-               [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -566,7 +564,7 @@
+-              [ 'host_arch=="ppc64" and OS not in "aix os400"', {
++              [ 'host_arch=="ppc64" and OS not in "aix os400 openbsd"', {
+                 'conditions': [
+                   [ 'clang==0', {
+                     'cflags': [ '-mminimal-toc' ],
+@@ -570,7 +568,7 @@
+                 'cflags': [ '-m32' ],
                  'ldflags': [ '-m32' ],
                }],
-               [ 'target_arch=="ppc64" and OS not in "aix os400"', {
--                'cflags': [ '-m64', '-mminimal-toc' ],
-+                'cflags': [ '-m64' ],
-                 'ldflags': [ '-m64' ],
-               }],
-               [ 'target_arch=="s390x" and OS=="linux"', {
+-              [ 'target_arch=="ppc64" and OS not in "aix os400"', {
++              [ 'target_arch=="ppc64" and OS not in "aix os400 openbsd"', {
+                 'conditions': [
+                   [ 'clang==0', {
+                     'cflags': [ '-mminimal-toc' ],
