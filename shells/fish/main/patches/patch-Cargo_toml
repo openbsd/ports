@@ -1,12 +1,12 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -28,7 +28,7 @@ homepage = "https://fishshell.com"
- readme = "README.rst"
- 
- [dependencies]
+@@ -31,7 +31,7 @@ nix = { version = "0.30.1", default-features = false, 
+ ] }
+ num-traits = "0.2.19"
+ once_cell = "1.19.0"
 -pcre2 = { git = "https://github.com/fish-shell/rust-pcre2", tag = "0.2.9-utf32", default-features = false, features = [
 +pcre2 = { path = "../rust-pcre2-0.2.9-utf32", default-features = false, features = [
      "utf32",
  ] }
- 
+ phf = { version = "0.12", default-features = false }

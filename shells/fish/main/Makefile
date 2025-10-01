@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.0.8
+V =			4.1.1
 
 DISTNAME =		fish-${V}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.tar.xz
 
-WANTLIB += ${MODCARGO_WANTLIB} intl m pcre2-32 pcre2-8
+WANTLIB += ${MODCARGO_WANTLIB} m pcre2-32 pcre2-8
 
 # C
 COMPILER =		base-clang ports-gcc
@@ -34,10 +34,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		devel/gettext,-tools \
 			textproc/py-sphinx
 
-LIB_DEPENDS =		devel/pcre2 \
-			devel/gettext,-runtime
-
-RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		devel/pcre2
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
