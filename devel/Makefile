@@ -65,6 +65,7 @@
      SUBDIR += cargo-audit
      SUBDIR += cargo-c
      SUBDIR += cargo-generate-vendor
+     SUBDIR += cargo-insta
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += catch2
