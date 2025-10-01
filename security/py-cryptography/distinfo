@@ -34,7 +34,7 @@ SHA256 (cargo/target-lexicon-0.13.3.tar.gz) = 339iV3wl4Hg0ZJ/Ds5+v3Fl8CjUn3BxgEp
 SHA256 (cargo/unicode-ident-1.0.19.tar.gz) = 9jpUVIEpETiRBXUSlIba6visVK7kOH/nkGkZ94MMfZ0=
 SHA256 (cargo/unindent-0.2.4.tar.gz) = cmThB/VTzK6HnSH76h1nJKx4Xow7/HYhN5WbWAKCbvM=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
-SHA256 (cryptography-46.0.1.tar.gz) = 7VcIdOiPITQ39c91j57ybL/D8zbYibHlku4RKDu40cc=
+SHA256 (cryptography-46.0.2.tar.gz) = Ibb8jHGj+aYE8CijKeVWAAnMSjqCi/6l/LqOt2R9iP4=
 SIZE (cargo/asn1-0.22.0.tar.gz) = 47124
 SIZE (cargo/asn1_derive-0.22.0.tar.gz) = 8953
 SIZE (cargo/autocfg-1.5.0.tar.gz) = 18729
@@ -71,4 +71,4 @@ SIZE (cargo/target-lexicon-0.13.3.tar.gz) = 28498
 SIZE (cargo/unicode-ident-1.0.19.tar.gz) = 47480
 SIZE (cargo/unindent-0.2.4.tar.gz) = 7422
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
-SIZE (cryptography-46.0.1.tar.gz) = 749198
+SIZE (cryptography-46.0.2.tar.gz) = 749293
