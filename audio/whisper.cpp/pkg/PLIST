@@ -1,0 +1,14 @@
+@bin bin/vad-speech-segments
+@bin bin/whisper-bench
+@bin bin/whisper-cli
+@bin bin/whisper-server
+bin/whisper.cpp-download-ggml-model
+include/whisper.h
+lib/cmake/whisper/
+lib/cmake/whisper/whisper-config.cmake
+lib/cmake/whisper/whisper-version.cmake
+@lib lib/libwhisper.so.${LIBwhisper_VERSION}
+lib/pkgconfig/whisper.pc
+share/doc/pkg-readmes/${PKGSTEM}
+share/whisper.cpp/
+share/whisper.cpp/ggml-base.en.bin

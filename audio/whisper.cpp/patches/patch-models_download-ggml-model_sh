@@ -1,0 +1,32 @@
+Index: models/download-ggml-model.sh
+--- models/download-ggml-model.sh.orig
++++ models/download-ggml-model.sh
+@@ -9,8 +9,8 @@
+ src="https://huggingface.co/ggerganov/whisper.cpp"
+ pfx="resolve/main/ggml"
+ 
+-BOLD="\033[1m"
+-RESET='\033[0m'
++BOLD=$(tput bold)
++RESET=$(tput sgr0)
+ 
+ # get the path of this script
+ get_script_path() {
+@@ -117,16 +117,7 @@ if [ -f "ggml-$model.bin" ]; then
+     exit 0
+ fi
+ 
+-if [ -x "$(command -v wget2)" ]; then
+-    wget2 --no-config --progress bar -O ggml-"$model".bin $src/$pfx-"$model".bin
+-elif [ -x "$(command -v wget)" ]; then
+-    wget --no-config --quiet --show-progress -O ggml-"$model".bin $src/$pfx-"$model".bin
+-elif [ -x "$(command -v curl)" ]; then
+-    curl -L --output ggml-"$model".bin $src/$pfx-"$model".bin
+-else
+-    printf "Either wget or curl is required to download models.\n"
+-    exit 1
+-fi
++ftp -o ggml-"$model".bin $src/$pfx-"$model".bin
+ 
+ if [ $? -ne 0 ]; then
+     printf "Failed to download ggml model %s \n" "$model"

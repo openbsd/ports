@@ -1,0 +1,13 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+whisper.cpp requires use of an AI model for operation. This package
+includes a base model for English transcription; others are available
+by using the bundled download script:
+
+For example, to fetch the multilingual base model:
+$ whisper.cpp-download-ggml-model base
+
+Files fetched in this way can be used by passing the -m flag:
+$ whisper-cli -m ggml-base.bin -f {sample}.wav
