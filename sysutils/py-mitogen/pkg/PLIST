@@ -226,9 +226,12 @@ lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py314.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py314.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py36.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/${MODPY_PYCACHE}_py36.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py2.py
+lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py314.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/imports/_py36.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/jail.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/kubectl.py
