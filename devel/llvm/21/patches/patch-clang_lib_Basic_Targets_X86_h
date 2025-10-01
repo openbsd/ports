@@ -1,21 +1,20 @@
 Index: clang/lib/Basic/Targets/X86.h
 --- clang/lib/Basic/Targets/X86.h.orig
 +++ clang/lib/Basic/Targets/X86.h
-@@ -146,6 +146,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
-   bool HasMOVDIR64B = false;
-   bool HasPTWRITE = false;
-   bool HasINVPCID = false;
+@@ -182,6 +182,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
+   bool HasZU = false;
+   bool HasInlineAsmUseGPR32 = false;
+   bool HasBranchHint = false;
 +  bool HasSaveArgs = false;
-   bool HasENQCMD = false;
-   bool HasAVXVNNIINT16 = false;
-   bool HasAMXFP16 = false;
-@@ -792,10 +793,14 @@ class LLVM_LIBRARY_VISIBILITY X86_64TargetInfo : publi
+ 
+ protected:
+   llvm::X86::CPUKind CPU = llvm::X86::CK_None;
+@@ -792,10 +793,13 @@ class LLVM_LIBRARY_VISIBILITY X86_64TargetInfo : publi
      case CC_X86VectorCall:
      case CC_IntelOclBicc:
      case CC_Win64:
 +    case CC_X86RegCall:
-+    case CC_OpenCLKernel:
-+      return CCCR_OK;  
++      return CCCR_OK;
      case CC_PreserveMost:
      case CC_PreserveAll:
      case CC_PreserveNone:
