@@ -1,3 +1,13 @@
-Inference of Meta's LLaMA model (and others) in pure C/C++ with
-minimal setup and state-of-the-art performance on a wide range
-of hardware
+High-performance inference of OpenAI's Whisper automatic speech
+recognition (ASR) model. Features include:
+
+- Plain C/C++ implementation depending only on GGML
+- AVX intrinsics support for amd64
+- VSX intrinsics support for POWER architectures
+- Mixed F16 / F32 precision
+- Integer quantization support
+- Zero memory allocations at runtime
+- Vulkan support
+- Support for CPU-only inference
+- C-style API
+- Voice Activity Detection (VAD)
