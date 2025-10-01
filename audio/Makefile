@@ -270,6 +270,7 @@
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
      SUBDIR += wavpack
+     SUBDIR += whisper.cpp
      SUBDIR += wmmp
      SUBDIR += wmmp3
      SUBDIR += wmtune
