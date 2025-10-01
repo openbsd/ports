@@ -5,6 +5,8 @@ DISTNAME =		kfilemetadata-${VERSION}
 
 PKGNAME-main =		kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =	kf5-kfilemetadata-l10n-${VERSION}
+REVISION-locale =	0
+REVISION-main =		0
 
 SHARED_LIBS =	KF5FileMetaData		7.3 # 5.20
 
@@ -12,9 +14,9 @@ SHARED_LIBS =	KF5FileMetaData		7.3 # 5.20
 # use -locale instead of -l10n to please update-plist
 MULTI_PACKAGES =	-main -locale
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CoreAddons KF5I18n
-WANTLIB += Qt5Core Qt5Gui Qt5Xml avcodec avformat avutil epub
-WANTLIB += exiv2 m poppler poppler-qt5 qmobipocket tag
+WANTLIB-main += ${COMPILER_LIBCXX} KF5Archive KF5CoreAddons KF5I18n
+WANTLIB-main += Qt5Core Qt5Gui Qt5Xml avcodec avformat avutil epub
+WANTLIB-main += exiv2 m poppler poppler-qt5 tag
 
 WANTLIB-locale =
 
@@ -36,11 +38,12 @@ LIB_DEPENDS-main =	audio/taglib \
 			graphics/exiv2 \
 			graphics/ffmpeg \
 			print/poppler,-qt5 \
-			textproc/ebook-tools \
-			x11/kde-applications/kdegraphics-mobipocket
+			textproc/ebook-tools
 
 PKG_ARCH-locale =	*
 
 MODKF5_L10N_CONFLICT-locale =	Yes
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=ON
 
 .include <bsd.port.mk>
