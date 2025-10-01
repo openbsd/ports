@@ -24,7 +24,7 @@ GO_PKGNAME =		k8s.io/kubernetes
 WRKSRC =		${MODGO_WORKSPACE}/src/${GO_PKGNAME}
 ALL_TARGET =		${GO_PKGNAME}/cmd/kubectl
 
-MODGO_GO111MODULE =	On
+MODGO_GO111MODULE =	on
 
 MODGO_LDFLAGS += \
 	-X ${GO_PKGNAME}/vendor/k8s.io/component-base/version.gitMajor=${V:R:R} \
