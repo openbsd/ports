@@ -1,0 +1,17 @@
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -114,7 +114,12 @@ else()
+             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /arch:AVX")
+         endif()
+     else()
+-        set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -mfma -mf16c -mavx -mavx2")
++        message(STATUS "processor type ${CMAKE_SYSTEM_PROCESSOR}")
++        if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "amd64")
++            set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -mfma -mf16c -mavx -mavx2")
++        else()
++            set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS}")
++        endif()
+     endif()
+ endif()
+ 

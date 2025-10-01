@@ -1,0 +1,14 @@
+fix build on ILP32
+
+Index: tests/test-opt.cpp
+--- tests/test-opt.cpp.orig
++++ tests/test-opt.cpp
+@@ -98,7 +98,7 @@ static helper_ctx_data helper_get_ctx_data(
+     struct ggml_context * ctx_compute;
+     {
+         struct ggml_init_params params = {
+-            /*.mem_size   =*/ (2*ndata + 2)*ggml_tensor_overhead(),
++            /*.mem_size   =*/ static_cast<size_t>((2*ndata + 2)*ggml_tensor_overhead()),
+             /*.mem_buffer =*/ nullptr,
+             /*.no_alloc   =*/ true,
+         };

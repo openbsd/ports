@@ -1,0 +1,13 @@
+Index: src/ggml-backend-reg.cpp
+--- src/ggml-backend-reg.cpp.orig
++++ src/ggml-backend-reg.cpp
+@@ -517,7 +517,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
+         search_paths.push_back(fs::u8path(GGML_BACKEND_DIR));
+ #endif
+         // default search paths: executable directory, current directory
++#ifndef __OpenBSD__
+         search_paths.push_back(get_executable_path());
++#endif
+         search_paths.push_back(fs::current_path());
+     } else {
+         search_paths.push_back(fs::u8path(user_search_path));
