@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1751 2025/10/01 11:00:35 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1752 2025/10/01 19:44:07 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -637,6 +637,7 @@ my $stem_extensions = {
 	'kdsoap-qt6' => 'kdsoap-qt',
 	'spyder3' => 'spyder',
 	'p5-URI-ws' => 'p5-URI',
+	'llama-cpp' => 'llama.cpp',
 };
 
 my $obsolete_reason = {};

@@ -304,6 +304,7 @@
      SUBDIR += libgcroots
      SUBDIR += libgdata
      SUBDIR += libgee
+     SUBDIR += libggml
      SUBDIR += libgit2
      SUBDIR += libglade2
      SUBDIR += libgnt

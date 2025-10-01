@@ -1,46 +1,30 @@
-# "error: non-constant-expression cannot be narrowed from type 'int64_t'
-# (aka 'long long') to 'size_t' (aka 'unsigned long') in initializer list",
-# but also this really isn't going to be of much use without large amounts
-# of RAM.
-ONLY_FOR_ARCHS =	${LP64_ARCHS}
-
 COMMENT =		LLM inference system
 
-GH_ACCOUNT =		ggerganov
+GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b5372
-PKGNAME =		llama-cpp-0.0.${GH_TAGNAME:S/b//}
+GH_TAGNAME =		b6641
+PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
 
-SHARED_LIBS +=		ggml-base 1.0
-SHARED_LIBS +=		ggml-cpu 1.0
-SHARED_LIBS +=		ggml 1.0
 SHARED_LIBS +=		llama 2.0
-SHARED_LIBS +=		mtmd_shared 0.0
-SHARED_LIBS +=		ggml-vulkan 2.0
+SHARED_LIBS +=		mtmd 0.0
 
 CATEGORIES =		misc
-
-HOMEPAGE =		https://github.com/ggerganov/llama.cpp
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c curl m pthread vulkan ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c curl ggml ggml-base m
 
 MODULES =		devel/cmake
+COMPILER =		base-clang ports-gcc
 
-LIB_DEPENDS =		graphics/vulkan-loader \
+# some tests need network access
+LIB_DEPENDS =		devel/libggml \
 			net/curl
 
-BUILD_DEPENDS =		graphics/shaderc
-
-CONFIGURE_ARGS =	-DGGML_CCACHE=Off \
-			-DGGML_NATIVE=Off \
-			-DGGML_RVV=Off \
-			-DGGML_VULKAN=On
-
-# avoid requiring git during build
-CONFIGURE_ARGS +=	-DGGML_BUILD_NUMBER=""
+CONFIGURE_ARGS +=	-DLLAMA_USE_SYSTEM_GGML=on
+CFLAGS +=		-I${LOCALBASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include
 
 post-install:
 	rm ${PREFIX}/bin/test-*
