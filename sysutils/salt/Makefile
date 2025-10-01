@@ -15,9 +15,8 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_DISTV =	3007.1
+MODPY_DISTV =		3007.8
 DISTNAME =		salt-${MODPY_DISTV}
-REVISION =		2
 
 CATEGORIES =		sysutils net devel
 
@@ -27,7 +26,7 @@ HOMEPAGE =		https://saltproject.io/
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
 
