@@ -6,11 +6,11 @@ Index: exporters/pkg-config/openssl.pc.in
            } -}
  includedir={- $OUT = '';
 -              $OUT .= '${prefix}/' . $_ . ' '
-+              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl35'
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl36'
                    foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX); -}
  
  Name: OpenSSL
  Description: Secure Sockets Layer and cryptography libraries and tools
  Version: {- $OpenSSL::safe::installdata::VERSION -}
 -Requires: libssl libcrypto
-+Requires: libessl35 libecrypto35
++Requires: libessl36 libecrypto36

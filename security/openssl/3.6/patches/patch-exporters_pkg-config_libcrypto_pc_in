@@ -6,7 +6,7 @@ Index: exporters/pkg-config/libcrypto.pc.in
            } -}
  includedir={- $OUT = '';
 -              $OUT .= '${prefix}/' . $_ . ' '
-+              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl35'
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl36'
                    foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX); -}
  enginesdir=${libdir}/{- $OpenSSL::safe::installdata::ENGINESDIR_REL_LIBDIR[0] -}
  modulesdir=${libdir}/{- $OpenSSL::safe::installdata::MODULESDIR_REL_LIBDIR[0] -}

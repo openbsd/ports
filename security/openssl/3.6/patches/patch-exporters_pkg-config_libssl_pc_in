@@ -6,14 +6,14 @@ Index: exporters/pkg-config/libssl.pc.in
            } -}
  includedir={- $OUT = '';
 -              $OUT .= '${prefix}/' . $_ . ' '
-+              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl35'
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl36'
                    foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX); -}
  
  Name: OpenSSL-libssl
  Description: Secure Sockets Layer and cryptography libraries
  Version: {- $OpenSSL::safe::installdata::VERSION -}
 -Requires.private: libcrypto
-+Requires.private: libecrypto35
++Requires.private: libecrypto36
  Libs: -L${libdir} -lssl
  Cflags:{- $OUT = ' -I${includedir}';
            if (scalar @OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX > 1) {
