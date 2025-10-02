@@ -1,0 +1,18 @@
+Set version
+
+Index: script/version.lua
+--- script/version.lua.orig
++++ script/version.lua
+@@ -20,11 +20,7 @@ end
+ local m = {}
+ 
+ function m.getVersion()
+-    if not m.version then
+-        m.version = loadVersion() or '<Unknown>'
+-    end
+-
+-    return m.version
++    return '%%LUA_VERSION%%'
+ end
+ 
+ return m

@@ -6,6 +6,7 @@ COMMENT =		language server for Lua
 
 V =			3.15.0
 PKGNAME =		lua-language-server-${V}
+REVISION = 		0
 
 DIST_TUPLE +=		github LuaLS lua-language-server ${V} . \
 	github CppCXY EmmyLuaCodeStyle 8500f3af178f097331d938378648078d023f4c7c 3rd/EmmyLuaCodeStyle \
@@ -36,7 +37,12 @@ MODULES =		lang/lua
 
 BUILD_DEPENDS =		devel/ninja
 
+NO_TEST =		Yes
+
 LUA_LS_HOME =		${PREFIX}/share/lua-language-server
+
+pre-configure:
+	sed -i 's/%%LUA_VERSION%%/${V}/' ${WRKSRC}/script/version.lua
 
 do-build:
 	${SETENV} ${MAKE_ENV} ninja -C ${WRKSRC}/3rd/luamake \
