@@ -2,11 +2,11 @@ COMMENT=	convert memos written in XML to the RFC format
 
 GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
-GH_TAGNAME=	v3.30.0
+GH_TAGNAME=	v3.30.2
 #GH_TAGNAME=	v${MODPY_DISTV}
 # bad version numbers in tags;
 # https://github.com/ietf-tools/xml2rfc/issues/1264
-MODPY_DISTV=	3.29.0
+MODPY_DISTV=	3.30.1
 
 CATEGORIES=	textproc
 
