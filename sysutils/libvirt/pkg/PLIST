@@ -683,6 +683,7 @@ share/libvirt/schemas/storagevol.rng
 share/libvirt/schemas/sysinfo.rng
 share/libvirt/schemas/sysinfocommon.rng
 share/libvirt/test-screenshot.png
+share/locale/ar/LC_MESSAGES/libvirt.mo
 share/locale/as/LC_MESSAGES/libvirt.mo
 share/locale/bg/LC_MESSAGES/libvirt.mo
 share/locale/bn_IN/LC_MESSAGES/libvirt.mo
