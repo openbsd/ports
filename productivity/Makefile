@@ -36,6 +36,7 @@
      SUBDIR += projectlibre
      SUBDIR += py-caldav
      SUBDIR += py-tasklib
+     SUBDIR += py-x-wr-timezone
      SUBDIR += qbirthday
      SUBDIR += radicale
      SUBDIR += radicale2
