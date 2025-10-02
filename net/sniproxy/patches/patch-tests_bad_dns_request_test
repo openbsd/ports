@@ -6,7 +6,7 @@ Index: tests/bad_dns_request_test
  
      my $buffer;
 -    $socket->recv($buffer, 4096);
-+    $socket->recv($buffer, 16388);
++    $socket->recv($buffer, 16384);
  
      $socket->close();
  
