@@ -1,6 +1,8 @@
 @bin bin/jj
 @man man/man1/jj-abandon.1
 @man man/man1/jj-absorb.1
+@man man/man1/jj-bisect-run.1
+@man man/man1/jj-bisect.1
 @man man/man1/jj-bookmark-create.1
 @man man/man1/jj-bookmark-delete.1
 @man man/man1/jj-bookmark-forget.1
@@ -33,6 +35,8 @@
 @man man/man1/jj-file-untrack.1
 @man man/man1/jj-file.1
 @man man/man1/jj-fix.1
+@man man/man1/jj-gerrit-upload.1
+@man man/man1/jj-gerrit.1
 @man man/man1/jj-git-clone.1
 @man man/man1/jj-git-export.1
 @man man/man1/jj-git-fetch.1

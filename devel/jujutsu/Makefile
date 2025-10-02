@@ -1,6 +1,6 @@
 COMMENT =		version control system with git compatibility backend
 
-V =			0.33.0
+V =			0.34.0
 PKGNAME =		jujutsu-$V
 
 DIST_TUPLE =		github jj-vcs jj v$V .
@@ -24,6 +24,9 @@ RUN_DEPENDS =		devel/git
 
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/cli/src/commands/bisect/run.rs
+
 post-build:
 	${WRKBUILD}/target/release/jj util install-man-pages ${WRKBUILD}
 	${WRKBUILD}/target/release/jj util completion bash > ${WRKBUILD}/jj.bash
@@ -43,6 +46,8 @@ post-install:
 		${PREFIX}/share/fish/vendor_completions.d/jj.fish
 	${INSTALL_DATA} ${WRKBUILD}/jj.zsh \
 		${PREFIX}/share/zsh/site-functions/_jj
+
+TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include "crates.inc"
 

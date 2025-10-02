@@ -1,0 +1,24 @@
+Sigh.
+
+Index: cli/src/commands/bisect/run.rs
+--- cli/src/commands/bisect/run.rs.orig
++++ cli/src/commands/bisect/run.rs
+@@ -25,7 +25,6 @@ use crate::cli_util::RevisionArg;
+ use crate::cli_util::WorkspaceCommandHelper;
+ use crate::cli_util::short_operation_hash;
+ use crate::command_error::CommandError;
+-use crate::command_error::internal_error_with_message;
+ use crate::command_error::user_error;
+ use crate::command_error::user_error_with_message;
+ use crate::complete;
+@@ -196,9 +195,7 @@ fn evaluate_commit(
+     )?;
+ 
+     let mut cmd: std::process::Command = command.to_command();
+-    let jj_executable_path = std::env::current_exe().map_err(|err| {
+-        internal_error_with_message("Could not get path for the jj executable", err)
+-    })?;
++    let jj_executable_path = "${LOCALBASE}/bin/jj";
+     tracing::info!(?cmd, "running bisection evaluation command");
+     let status = cmd
+         .env("JJ_EXECUTABLE_PATH", jj_executable_path)
