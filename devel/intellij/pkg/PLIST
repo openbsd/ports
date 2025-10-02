@@ -1364,6 +1364,8 @@ intellij/plugins/marketplace/lib/boot/
 intellij/plugins/marketplace/lib/boot/marketplace-bootstrap.jar
 intellij/plugins/marketplace/lib/boot/marketplace-impl.jar
 intellij/plugins/marketplace/lib/marketplace.jar
+intellij/plugins/marketplace/lib/modules/
+intellij/plugins/marketplace/lib/modules/intellij.marketplace.statistics.jar
 intellij/plugins/marketplace/platform-build.txt
 intellij/plugins/marketplaceMl/
 intellij/plugins/marketplaceMl/lib/
@@ -1503,8 +1505,7 @@ intellij/plugins/mcpserver/lib/
 intellij/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.core.jar
 intellij/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.jsonschema.jar
 intellij/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.serialization.jar
-intellij/plugins/mcpserver/lib/io.ktor.utils.jar
-intellij/plugins/mcpserver/lib/ktor-server-cio.jar
+intellij/plugins/mcpserver/lib/ktor-server-cio-internal.jar
 intellij/plugins/mcpserver/lib/mcpserver-frontend.jar
 intellij/plugins/mcpserver/lib/mcpserver.jar
 intellij/plugins/notebooks-plugin/
