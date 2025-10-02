@@ -35,6 +35,7 @@
      SUBDIR += p5-iCal-Parser
      SUBDIR += projectlibre
      SUBDIR += py-caldav
+     SUBDIR += py-recurring-ical-events
      SUBDIR += py-tasklib
      SUBDIR += py-x-wr-timezone
      SUBDIR += qbirthday
