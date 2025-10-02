@@ -1,13 +1,13 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.2.14
-REVISION=	0
-EPOCH=		3
+DISTNAME=	mutt-2.2.15
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
+EPOCH=		3
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+= --enable-autocrypt \
 		--with-sqlite3
 LIB_DEPENDS+=	databases/sqlite3 \
 		security/gpgme
-WANTLIB+=	assuan gpg-error gpgme sqlite3
+WANTLIB+=	gpg-error gpgme sqlite3
 .endif
 
 .if ${FLAVOR:Msasl}
