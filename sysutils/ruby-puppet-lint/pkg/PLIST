@@ -110,6 +110,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper_acceptance_local.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/bin_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/checkplugin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/checks_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/configuration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/data_spec.rb
