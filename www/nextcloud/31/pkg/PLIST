@@ -1,3 +1,4 @@
+@pkgpath www/nextcloud/30
 @option is-branch
 @conflict nextcloud-*
 conf/modules.sample/

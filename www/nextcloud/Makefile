@@ -1,5 +1,4 @@
     SUBDIR =
-    SUBDIR += 30
     SUBDIR += 31
     SUBDIR += 32
 
