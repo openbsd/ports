@@ -1,5 +1,3 @@
--Bsymbolic-functions is not supported by our ld.bfd version.
-
 Index: clang/tools/clang-shlib/CMakeLists.txt
 --- clang/tools/clang-shlib/CMakeLists.txt.orig
 +++ clang/tools/clang-shlib/CMakeLists.txt
@@ -7,8 +5,8 @@ Index: clang/tools/clang-shlib/CMakeLists.txt
  
  # Optimize function calls for default visibility definitions to avoid PLT and
  # reduce dynamic relocations.
--if (NOT APPLE AND NOT MINGW AND NOT LLVM_LINKER_IS_SOLARISLD_ILLUMOS)
-+if (NOT APPLE AND NOT MINGW AND NOT LLVM_LINKER_IS_SOLARISLD_ILLUMOS AND TRUE)
+-if (NOT APPLE AND LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS)
++if (NOT APPLE AND LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS AND TRUE)
    target_link_options(clang-cpp PRIVATE LINKER:-Bsymbolic-functions)
  endif()
  if (MINGW OR CYGWIN)

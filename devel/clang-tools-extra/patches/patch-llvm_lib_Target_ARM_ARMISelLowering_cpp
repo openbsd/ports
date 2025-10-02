@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/ARM/ARMISelLowering.cpp
 --- llvm/lib/Target/ARM/ARMISelLowering.cpp.orig
 +++ llvm/lib/Target/ARM/ARMISelLowering.cpp
-@@ -21346,6 +21346,8 @@ bool ARMTargetLowering::shouldInsertFencesForAtomic(
+@@ -21361,6 +21361,8 @@ bool ARMTargetLowering::shouldInsertFencesForAtomic(
  }
  
  bool ARMTargetLowering::useLoadStackGuardNode(const Module &M) const {

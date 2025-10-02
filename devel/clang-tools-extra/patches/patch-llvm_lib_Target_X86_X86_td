@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86.td
 --- llvm/lib/Target/X86/X86.td.orig
 +++ llvm/lib/Target/X86/X86.td
-@@ -550,6 +550,10 @@ def TuningLZCNTFalseDeps : SubtargetFeature<"false-dep
+@@ -545,6 +545,10 @@ def TuningLZCNTFalseDeps : SubtargetFeature<"false-dep
                                       "HasLZCNTFalseDeps", "true",
                                       "LZCNT/TZCNT have a false dependency on dest register">;
  

@@ -1,12 +1,13 @@
 Index: llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp
 --- llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp.orig
 +++ llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp
-@@ -297,6 +297,8 @@ bool LoopIdiomRecognize::runOnLoop(Loop *L) {
-   StringRef Name = L->getHeader()->getParent()->getName();
-   if (Name == "memset" || Name == "memcpy")
+@@ -323,6 +323,9 @@ bool LoopIdiomRecognize::runOnLoop(Loop *L) {
+       Name == "wcslen")
      return false;
+ 
 +  if (Name == "_libc_memset" || Name == "_libc_memcpy")
 +    return false;
- 
++
    // Determine if code size heuristics need to be applied.
    ApplyCodeSizeHeuristics =
+       L->getHeader()->getParent()->hasOptSize() && UseLIRCodeSizeHeurs;

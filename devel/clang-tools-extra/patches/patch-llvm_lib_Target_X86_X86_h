@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86.h
 --- llvm/lib/Target/X86/X86.h.orig
 +++ llvm/lib/Target/X86/X86.h
-@@ -124,6 +124,14 @@ FunctionPass *createX86ExpandPseudoPass();
+@@ -121,6 +121,14 @@ FunctionPass *createX86ExpandPseudoPass();
  /// This pass converts X86 cmov instructions into branch when profitable.
  FunctionPass *createX86CmovConverterPass();
  

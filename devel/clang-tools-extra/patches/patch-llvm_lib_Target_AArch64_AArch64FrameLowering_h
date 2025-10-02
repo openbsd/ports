@@ -30,5 +30,5 @@ Index: llvm/lib/Target/AArch64/AArch64FrameLowering.h
 +
 +  const ReturnProtectorLowering *getReturnProtector() const override;
  
-   bool enableCFIFixup(MachineFunction &MF) const override;
- 
+   /// Harden the entire function with pac-ret.
+   ///

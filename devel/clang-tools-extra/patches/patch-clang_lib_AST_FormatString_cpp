@@ -1,7 +1,7 @@
 Index: clang/lib/AST/FormatString.cpp
 --- clang/lib/AST/FormatString.cpp.orig
 +++ clang/lib/AST/FormatString.cpp
-@@ -879,6 +879,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+@@ -970,6 +970,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
          case ConversionSpecifier::XArg:
          case ConversionSpecifier::nArg:
            return true;
@@ -12,7 +12,7 @@ Index: clang/lib/AST/FormatString.cpp
          case ConversionSpecifier::FreeBSDrArg:
          case ConversionSpecifier::FreeBSDyArg:
            return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS();
-@@ -919,6 +923,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+@@ -1010,6 +1014,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
          case ConversionSpecifier::ScanListArg:
          case ConversionSpecifier::ZArg:
            return true;
@@ -23,7 +23,7 @@ Index: clang/lib/AST/FormatString.cpp
          case ConversionSpecifier::FreeBSDrArg:
          case ConversionSpecifier::FreeBSDyArg:
            return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS();
-@@ -1085,6 +1093,7 @@ bool FormatSpecifier::hasStandardLengthConversionCombi
+@@ -1176,6 +1184,7 @@ bool FormatSpecifier::hasStandardLengthConversionCombi
          case ConversionSpecifier::uArg:
          case ConversionSpecifier::xArg:
          case ConversionSpecifier::XArg:

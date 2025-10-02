@@ -8,5 +8,5 @@ Index: compiler-rt/lib/ubsan/ubsan_platform.h
 -    defined(__NetBSD__) || defined(__DragonFly__) ||                           \
 +    defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__) ||   \
      (defined(__sun__) && defined(__svr4__)) || defined(_WIN32) ||              \
-     defined(__Fuchsia__)
+     defined(__Fuchsia__) || defined(__HAIKU__)
  #define CAN_SANITIZE_UB 1

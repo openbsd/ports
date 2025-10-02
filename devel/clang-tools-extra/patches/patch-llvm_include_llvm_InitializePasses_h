@@ -1,11 +1,11 @@
 Index: llvm/include/llvm/InitializePasses.h
 --- llvm/include/llvm/InitializePasses.h.orig
 +++ llvm/include/llvm/InitializePasses.h
-@@ -272,6 +272,7 @@ void initializeRemoveRedundantDebugValuesPass(PassRegi
- void initializeRenameIndependentSubregsPass(PassRegistry &);
- void initializeReplaceWithVeclibLegacyPass(PassRegistry &);
- void initializeResetMachineFunctionPass(PassRegistry &);
-+void initializeReturnProtectorPass(PassRegistry &);
- void initializeSCEVAAWrapperPassPass(PassRegistry &);
- void initializeSROALegacyPassPass(PassRegistry &);
- void initializeSafeStackLegacyPassPass(PassRegistry &);
+@@ -286,6 +286,7 @@ LLVM_ABI void initializeRemoveRedundantDebugValuesLega
+ LLVM_ABI void initializeRenameIndependentSubregsLegacyPass(PassRegistry &);
+ LLVM_ABI void initializeReplaceWithVeclibLegacyPass(PassRegistry &);
+ LLVM_ABI void initializeResetMachineFunctionPass(PassRegistry &);
++LLVM_ABI void initializeReturnProtectorPass(PassRegistry &);
+ LLVM_ABI void initializeSCEVAAWrapperPassPass(PassRegistry &);
+ LLVM_ABI void initializeSROALegacyPassPass(PassRegistry &);
+ LLVM_ABI void initializeSafeStackLegacyPassPass(PassRegistry &);

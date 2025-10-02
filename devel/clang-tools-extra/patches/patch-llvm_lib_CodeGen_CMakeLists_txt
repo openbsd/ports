@@ -1,7 +1,7 @@
 Index: llvm/lib/CodeGen/CMakeLists.txt
 --- llvm/lib/CodeGen/CMakeLists.txt.orig
 +++ llvm/lib/CodeGen/CMakeLists.txt
-@@ -204,6 +204,8 @@ add_llvm_component_library(LLVMCodeGen
+@@ -205,6 +205,8 @@ add_llvm_component_library(LLVMCodeGen
    RemoveLoadsIntoFakeUses.cpp
    ReplaceWithVeclib.cpp
    ResetMachineFunctionPass.cpp

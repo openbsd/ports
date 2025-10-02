@@ -8,13 +8,13 @@ Index: llvm/tools/llvm-shlib/CMakeLists.txt
 +    llvm_install_library_symlink(LLVM${LLVM_VERSION_SUFFIX} $<TARGET_FILE_NAME:LLVM> SHARED FULL_DEST COMPONENT LLVM)
    endif()
  
-   list(REMOVE_DUPLICATES LIB_NAMES)
-@@ -61,7 +62,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
+   if (MINGW OR CYGWIN)
+@@ -79,7 +80,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
          # Solaris ld does not accept global: *; so there is no way to version *all* global symbols
          set(LIB_NAMES -Wl,--version-script,${LLVM_LIBRARY_DIR}/tools/llvm-shlib/simple_version_script.map ${LIB_NAMES})
        endif()
--      if (NOT MINGW AND NOT LLVM_LINKER_IS_SOLARISLD_ILLUMOS)
-+      if (NOT MINGW AND NOT LLVM_LINKER_IS_SOLARISLD_ILLUMOS AND TRUE)
+-      if (LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS)
++      if (LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS AND TRUE)
          # Optimize function calls for default visibility definitions to avoid PLT and
          # reduce dynamic relocations.
          # Note: for -fno-pic default, the address of a function may be different from

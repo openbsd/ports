@@ -1,13 +1,13 @@
 Index: llvm/include/llvm/CodeGen/Passes.h
 --- llvm/include/llvm/CodeGen/Passes.h.orig
 +++ llvm/include/llvm/CodeGen/Passes.h
-@@ -393,6 +393,9 @@ namespace llvm {
-   ///
-   FunctionPass *createStackProtectorPass();
+@@ -400,6 +400,9 @@ LLVM_ABI extern char &PatchableFunctionID;
+ ///
+ LLVM_ABI FunctionPass *createStackProtectorPass();
  
-+  // createReturnProtectorPass - This pass add return protectors to functions.
-+  FunctionPass *createReturnProtectorPass();
++/// createReturnProtectorPass - This pass add return protectors to functions.
++LLVM_ABI FunctionPass *createReturnProtectorPass();
 +
-   /// createMachineVerifierPass - This pass verifies cenerated machine code
-   /// instructions for correctness.
-   ///
+ /// createMachineVerifierPass - This pass verifies cenerated machine code
+ /// instructions for correctness.
+ ///

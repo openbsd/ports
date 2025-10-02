@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64TargetMachine.cpp
 --- llvm/lib/Target/AArch64/AArch64TargetMachine.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64TargetMachine.cpp
-@@ -393,6 +393,7 @@ AArch64TargetMachine::AArch64TargetMachine(const Targe
+@@ -399,6 +399,7 @@ AArch64TargetMachine::AArch64TargetMachine(const Targe
    // Enable GlobalISel at or below EnableGlobalISelAt0, unless this is
    // MachO/CodeModel::Large, which GlobalISel does not support.
    if (static_cast<int>(getOptLevel()) <= EnableGlobalISelAtO &&

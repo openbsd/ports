@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/Driver.cpp
 --- clang/lib/Driver/Driver.cpp.orig
 +++ clang/lib/Driver/Driver.cpp
-@@ -6390,7 +6390,50 @@ const char *Driver::GetNamedOutputPath(Compilation &C,
+@@ -6507,7 +6507,50 @@ const char *Driver::GetNamedOutputPath(Compilation &C,
    return C.addResultFile(NamedOutput, &JA);
  }
  
@@ -52,7 +52,7 @@ Index: clang/lib/Driver/Driver.cpp
    // Search for Name in a list of paths.
    auto SearchPaths = [&](const llvm::SmallVectorImpl<std::string> &P)
        -> std::optional<std::string> {
-@@ -6400,9 +6443,14 @@ std::string Driver::GetFilePath(StringRef Name, const 
+@@ -6517,9 +6560,14 @@ std::string Driver::GetFilePath(StringRef Name, const 
        if (Dir.empty())
          continue;
        SmallString<128> P(Dir[0] == '=' ? SysRoot + Dir.substr(1) : Dir);

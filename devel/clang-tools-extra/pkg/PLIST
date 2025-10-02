@@ -16,7 +16,15 @@ bin/run-clang-tidy
 share/clang/
 share/clang-doc/
 share/clang-doc/clang-doc-default-stylesheet.css
+share/clang-doc/clang-doc-mustache.css
+share/clang-doc/class-template.mustache
+share/clang-doc/comment-template.mustache
+share/clang-doc/enum-template.mustache
+share/clang-doc/function-template.mustache
 share/clang-doc/index.js
+share/clang-doc/mustache-index.js
+share/clang-doc/namespace-template.mustache
+share/clang-doc/template.mustache
 share/clang/clang-format-bbedit.applescript
 share/clang/clang-format-diff.py
 share/clang/clang-format-sublime.py

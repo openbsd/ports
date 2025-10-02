@@ -1,7 +1,7 @@
 Index: llvm/lib/MC/MCParser/AsmParser.cpp
 --- llvm/lib/MC/MCParser/AsmParser.cpp.orig
 +++ llvm/lib/MC/MCParser/AsmParser.cpp
-@@ -991,6 +991,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+@@ -971,6 +971,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
      (void)InsertResult;
    }
  

@@ -36,7 +36,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
  }
  
  static unsigned getSUBriOpcode(bool IsLP64) {
-@@ -1425,6 +1428,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
+@@ -1450,6 +1453,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
    }
  }
  
@@ -61,7 +61,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
  bool X86FrameLowering::has128ByteRedZone(const MachineFunction &MF) const {
    // x86-64 (non Win64) has a 128 byte red zone which is guaranteed not to be
    // clobbered by any interrupt handler.
-@@ -1856,6 +1877,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
+@@ -1881,6 +1902,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
                .addReg(StackPtr)
                .setMIFlag(MachineInstr::FrameSetup);
  
@@ -105,7 +105,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
          if (NeedsDwarfCFI) {
            if (ArgBaseReg.isValid()) {
              SmallString<64> CfaExpr;
-@@ -2461,11 +2519,23 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+@@ -2490,11 +2548,23 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
        emitSPUpdate(MBB, MBBI, DL, Offset, /*InEpilogue*/ true);
      }
      // Pop EBP.
@@ -132,7 +132,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
      // We need to reset FP to its untagged state on return. Bit 60 is currently
      // used to show the presence of an extended frame.
      if (X86FI->hasSwiftAsyncContext()) {
-@@ -2505,7 +2575,7 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+@@ -2534,7 +2604,7 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
        if (!PI->getFlag(MachineInstr::FrameDestroy) ||
            (Opc != X86::POP32r && Opc != X86::POP64r && Opc != X86::BTR64ri8 &&
             Opc != X86::ADD64ri32 && Opc != X86::POPP64r && Opc != X86::POP2 &&
@@ -141,7 +141,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
          break;
        FirstCSPop = PI;
      }
-@@ -2692,6 +2762,9 @@ StackOffset X86FrameLowering::getFrameIndexReference(c
+@@ -2718,6 +2788,9 @@ StackOffset X86FrameLowering::getFrameIndexReference(c
             "FPDelta isn't aligned per the Win64 ABI!");
    }
  
@@ -151,7 +151,7 @@ Index: llvm/lib/Target/X86/X86FrameLowering.cpp
    if (FrameReg == TRI->getFramePtr()) {
      // Skip saved EBP/RBP
      Offset += SlotSize;
-@@ -4233,6 +4306,10 @@ void X86FrameLowering::adjustFrameForMsvcCxxEh(Machine
+@@ -4269,6 +4342,10 @@ void X86FrameLowering::adjustFrameForMsvcCxxEh(Machine
    addFrameReference(BuildMI(MBB, MBBI, DL, TII.get(X86::MOV64mi32)),
                      UnwindHelpFI)
        .addImm(-2);

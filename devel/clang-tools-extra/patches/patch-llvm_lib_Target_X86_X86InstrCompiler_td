@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86InstrCompiler.td
 --- llvm/lib/Target/X86/X86InstrCompiler.td.orig
 +++ llvm/lib/Target/X86/X86InstrCompiler.td
-@@ -303,6 +303,25 @@ def MORESTACK_RET_RESTORE_R10 : I<0, Pseudo, (outs), (
+@@ -309,6 +309,25 @@ def MORESTACK_RET_RESTORE_R10 : I<0, Pseudo, (outs), (
  }
  
  //===----------------------------------------------------------------------===//

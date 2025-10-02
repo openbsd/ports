@@ -1,82 +1,7 @@
 Index: clang/lib/Driver/ToolChains/Clang.cpp
 --- clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ clang/lib/Driver/ToolChains/Clang.cpp
-@@ -1561,15 +1561,21 @@ static void handlePAuthABI(const ArgList &DriverArgs, 
- 
- static void CollectARMPACBTIOptions(const ToolChain &TC, const ArgList &Args,
-                                     ArgStringList &CmdArgs, bool isAArch64) {
-+  const llvm::Triple &Triple = TC.getEffectiveTriple();
-   const Arg *A = isAArch64
-                      ? Args.getLastArg(options::OPT_msign_return_address_EQ,
-                                        options::OPT_mbranch_protection_EQ)
-                      : Args.getLastArg(options::OPT_mbranch_protection_EQ);
--  if (!A)
-+  if (!A) {
-+    if (Triple.isOSOpenBSD() && isAArch64) {
-+      CmdArgs.push_back("-msign-return-address=non-leaf");
-+      CmdArgs.push_back("-msign-return-address-key=a_key");
-+      CmdArgs.push_back("-mbranch-target-enforce");
-+    }
-     return;
-+  }
- 
-   const Driver &D = TC.getDriver();
--  const llvm::Triple &Triple = TC.getEffectiveTriple();
-   if (!(isAArch64 || (Triple.isArmT32() && Triple.isArmMClass())))
-     D.Diag(diag::warn_incompatible_branch_protection_option)
-         << Triple.getArchName();
-@@ -1583,7 +1589,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
-       D.Diag(diag::err_drv_unsupported_option_argument)
-           << A->getSpelling() << Scope;
-     Key = "a_key";
--    IndirectBranches = false;
-+    if (Triple.isOSOpenBSD() && isAArch64)
-+      IndirectBranches = true;
-+    else
-+      IndirectBranches = false;
-     BranchProtectionPAuthLR = false;
-     GuardedControlStack = false;
-   } else {
-@@ -2596,6 +2605,7 @@ static void CollectArgsForIntegratedAssembler(Compilat
-   bool UseNoExecStack = false;
-   bool Msa = false;
-   const char *MipsTargetFeature = nullptr;
-+  llvm::SmallVector<const char *> SparcTargetFeatures;
-   StringRef ImplicitIt;
-   for (const Arg *A :
-        Args.filtered(options::OPT_Wa_COMMA, options::OPT_Xassembler,
-@@ -2741,6 +2751,30 @@ static void CollectArgsForIntegratedAssembler(Compilat
-         if (MipsTargetFeature)
-           continue;
-         break;
-+      case llvm::Triple::sparc:
-+      case llvm::Triple::sparcel:
-+      case llvm::Triple::sparcv9:
-+        if (Value == "--undeclared-regs") {
-+          // LLVM already allows undeclared use of G registers, so this option
-+          // becomes a no-op. This solely exists for GNU compatibility.
-+          // TODO implement --no-undeclared-regs
-+          continue;
-+        }
-+        SparcTargetFeatures =
-+            llvm::StringSwitch<llvm::SmallVector<const char *>>(Value)
-+                .Case("-Av8", {"-v8plus"})
-+                .Case("-Av8plus", {"+v8plus", "+v9"})
-+                .Case("-Av8plusa", {"+v8plus", "+v9", "+vis"})
-+                .Case("-Av8plusb", {"+v8plus", "+v9", "+vis", "+vis2"})
-+                .Case("-Av8plusd", {"+v8plus", "+v9", "+vis", "+vis2", "+vis3"})
-+                .Case("-Av9", {"+v9"})
-+                .Case("-Av9a", {"+v9", "+vis"})
-+                .Case("-Av9b", {"+v9", "+vis", "+vis2"})
-+                .Case("-Av9d", {"+v9", "+vis", "+vis2", "+vis3"})
-+                .Default({});
-+        if (!SparcTargetFeatures.empty())
-+          continue;
-+        break;
-       }
- 
-       if (Value == "-force_cpusubtype_ALL") {
-@@ -2846,6 +2880,21 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2730,6 +2730,17 @@ static void CollectArgsForIntegratedAssembler(Compilat
      CmdArgs.push_back(MipsTargetFeature);
    }
  
@@ -90,15 +15,11 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
 +    CmdArgs.push_back("-target-feature");
 +    CmdArgs.push_back("+vis");
 +  }
-+  for (const char *Feature : SparcTargetFeatures) {
-+    CmdArgs.push_back("-target-feature");
-+    CmdArgs.push_back(Feature);
-+  }
 +
-   // forward -fembed-bitcode to assmebler
-   if (C.getDriver().embedBitcodeEnabled() ||
-       C.getDriver().embedBitcodeMarkerOnly())
-@@ -3241,6 +3290,11 @@ static void RenderFloatingPointOptions(const ToolChain
+   for (const char *Feature : SparcTargetFeatures) {
+     CmdArgs.push_back("-target-feature");
+     CmdArgs.push_back(Feature);
+@@ -3111,6 +3122,11 @@ static void RenderFloatingPointOptions(const ToolChain
                << LastFpContractOverrideOption
                << Args.MakeArgString("-ffp-contract=" + Val);
          }
@@ -110,21 +31,22 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
          FPContract = Val;
          LastSeenFfpContractOption = Val;
-@@ -5988,8 +6042,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5822,9 +5838,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're Windows MSVC since MSVC
    // doesn't do any TBAA.
-+  bool StrictAliasingDefault = !IsWindowsMSVC;
++  bool StrictAliasingDefault = !IsWindowsMSVC && !IsUEFI;
 +  // We also turn off strict aliasing on OpenBSD.
 +  if (getToolChain().getTriple().isOSOpenBSD())
 +    StrictAliasingDefault = false;
    if (!Args.hasFlag(options::OPT_fstrict_aliasing, StrictAliasingAliasOption,
--                    options::OPT_fno_strict_aliasing, !IsWindowsMSVC))
+-                    options::OPT_fno_strict_aliasing,
+-                    !IsWindowsMSVC && !IsUEFI))
 +                    options::OPT_fno_strict_aliasing, StrictAliasingDefault))
      CmdArgs.push_back("-relaxed-aliasing");
    if (Args.hasFlag(options::OPT_fno_pointer_tbaa, options::OPT_fpointer_tbaa,
                     false))
-@@ -7051,7 +7109,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6896,7 +6915,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -184,19 +106,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -7133,6 +7242,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
-     if (Arg *SA = Args.getLastArg(options::OPT_mcf_branch_label_scheme_EQ))
-       CmdArgs.push_back(Args.MakeArgString(Twine("-mcf-branch-label-scheme=") +
-                                            SA->getValue()));
-+  } else if (Triple.isOSOpenBSD() && Triple.getArch() == llvm::Triple::x86_64) {
-+    // Emit IBT endbr64 instructions by default
-+    CmdArgs.push_back("-fcf-protection=branch");
-+    // jump-table can generate indirect jumps, which are not permitted
-+    CmdArgs.push_back("-fno-jump-tables");
-   }
- 
-   if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -7666,6 +7780,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7508,6 +7578,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/ToolChains/CommonArgs.cpp
 --- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig
 +++ clang/lib/Driver/ToolChains/CommonArgs.cpp
-@@ -3098,7 +3098,11 @@ bool tools::shouldRecordCommandLine(const ToolChain &T
+@@ -3173,7 +3173,11 @@ bool tools::shouldRecordCommandLine(const ToolChain &T
  
  void tools::renderCommonIntegerOverflowOptions(const ArgList &Args,
                                                 ArgStringList &CmdArgs) {

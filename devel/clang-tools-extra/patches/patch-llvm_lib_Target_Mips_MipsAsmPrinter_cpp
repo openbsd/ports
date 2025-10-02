@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/Mips/MipsAsmPrinter.cpp
 --- llvm/lib/Target/Mips/MipsAsmPrinter.cpp.orig
 +++ llvm/lib/Target/Mips/MipsAsmPrinter.cpp
-@@ -238,6 +238,83 @@ void MipsAsmPrinter::emitInstruction(const MachineInst
+@@ -240,6 +240,83 @@ void MipsAsmPrinter::emitInstruction(const MachineInst
    case Mips::PATCHABLE_TAIL_CALL:
      LowerPATCHABLE_TAIL_CALL(*MI);
      return;
@@ -52,20 +52,20 @@ Index: llvm/lib/Target/Mips/MipsAsmPrinter.cpp
 +      // Load the offset from PCSym to the start of the function
 +      EmitToStreamer(*OutStreamer, MCInstBuilder(Mips::LUi64)
 +          .addReg(IN1)
-+          .addExpr(MipsMCExpr::create(MipsMCExpr::MipsExprKind::MEK_HI,
++          .addExpr(MCSpecifierExpr::create(
 +              MCBinaryExpr::createSub(
 +                MCSymbolRefExpr::create(PCSym, OutContext),
 +                MCSymbolRefExpr::create(FuncSym, OutContext),
-+                OutContext),
++                OutContext), Mips::S_HI,
 +              OutContext)));
 +      EmitToStreamer(*OutStreamer, MCInstBuilder(Mips::DADDiu)
 +          .addReg(IN1)
 +          .addReg(IN1)
-+          .addExpr(MipsMCExpr::create(MipsMCExpr::MipsExprKind::MEK_LO,
++          .addExpr(MCSpecifierExpr::create(
 +              MCBinaryExpr::createSub(
 +                MCSymbolRefExpr::create(PCSym, OutContext),
 +                MCSymbolRefExpr::create(FuncSym, OutContext),
-+                OutContext),
++                OutContext), Mips::S_LO,
 +              OutContext)));
 +
 +      // Sub distance from here to start of function

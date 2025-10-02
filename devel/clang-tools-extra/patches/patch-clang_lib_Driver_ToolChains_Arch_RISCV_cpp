@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/ToolChains/Arch/RISCV.cpp
 --- clang/lib/Driver/ToolChains/Arch/RISCV.cpp.orig
 +++ clang/lib/Driver/ToolChains/Arch/RISCV.cpp
-@@ -132,6 +132,13 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+@@ -129,6 +129,13 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
    RESERVE_REG(x31)
  #undef RESERVE_REG
  
@@ -15,7 +15,7 @@ Index: clang/lib/Driver/ToolChains/Arch/RISCV.cpp
    // -mrelax is default, unless -mno-relax is specified.
    if (Args.hasFlag(options::OPT_mrelax, options::OPT_mno_relax, true)) {
      Features.push_back("+relax");
-@@ -144,6 +151,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+@@ -141,6 +148,7 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
    } else {
      Features.push_back("-relax");
    }
