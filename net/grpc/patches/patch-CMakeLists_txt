@@ -3,7 +3,7 @@ Do not install grpc's copy of mozilla's CA bundle
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -47290,8 +47290,8 @@ install(FILES
+@@ -48814,8 +48814,8 @@ install(FILES
    DESTINATION ${gRPC_INSTALL_CMAKEDIR}/modules
  )
  
