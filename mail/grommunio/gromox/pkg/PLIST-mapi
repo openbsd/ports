@@ -1,6 +1,10 @@
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
+@comment lib/php-${MODPHP_VERSION}/
+@comment lib/php-${MODPHP_VERSION}/modules/
 @comment lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a
 @comment lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.la
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+@man man/man4/php-mapi.4
+@comment share/examples/php-${MODPHP_VERSION}/
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

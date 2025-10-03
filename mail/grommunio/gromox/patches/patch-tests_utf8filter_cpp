@@ -1,0 +1,11 @@
+Index: tests/utf8filter.cpp
+--- tests/utf8filter.cpp.orig
++++ tests/utf8filter.cpp
+@@ -1,6 +1,7 @@
+ #include <cstdlib>
+ #include <cstring>
+ #include <memory>
++#include <unistd.h>
+ #include <libHX/io.h>
+ #include <gromox/defs.h>
+ #include <gromox/util.hpp>

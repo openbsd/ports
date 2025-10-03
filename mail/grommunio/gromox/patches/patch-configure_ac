@@ -25,7 +25,7 @@ Index: configure.ac
  AM_CONDITIONAL([HAVE_ESEDB], [test "$have_esedb" = 1])
  AM_CONDITIONAL([HAVE_PAM], [test "$have_pamheader" = yes])
  AM_CONDITIONAL([HAVE_OLECF], [test "$have_olecf" = 1])
-@@ -161,7 +162,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise])
+@@ -161,7 +162,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise renameat2])
  AC_SEARCH_LIBS([crypt], [crypt], [crypt_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([dlopen], [dl], [dl_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([ns_initparse], [resolv], [resolv_LIBS="$LIBS"; LIBS=""])

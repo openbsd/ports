@@ -12,7 +12,6 @@
 @rcscript ${RCDIR}/gromox_zcore
 @extraunexec rm -rf /var/db/gromox/*
 @extraunexec rm -rf /var/log/gromox/*
-lib/gromox/
 @static-lib lib/libgromox_auth.a
 lib/libgromox_auth.la
 @lib lib/libgromox_auth.so.${LIBgromox_auth_VERSION}
@@ -149,6 +148,7 @@ man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
 @man man/man5/gromox-selinux.5
 @man man/man5/gromox.cfg.5
+@man man/man7/autoconfig.7
 @man man/man7/autodiscover.7
 @man man/man7/gromox.7
 man/man7/mapi.7gx
@@ -228,6 +228,9 @@ share/examples/gromox/smtp.cfg
 share/examples/gromox/zcore.cfg
 @sample ${SYSCONFDIR}/gromox/zcore.cfg
 share/gromox/
+share/gromox/Messages.xsd
+share/gromox/Services.wsdl
+share/gromox/Types.xsd
 share/gromox/abkt.pak
 share/gromox/cpid.txt
 share/gromox/exmdb_list.txt

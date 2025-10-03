@@ -1,0 +1,12 @@
+Index: exch/exmdb/db_engine.cpp
+--- exch/exmdb/db_engine.cpp.orig
++++ exch/exmdb/db_engine.cpp
+@@ -52,6 +52,8 @@
+ #include "notification_agent.hpp"
+ #define MAX_DYNAMIC_NODES				100
+ 
++#include <sys/stat.h>
++
+ using LLD = long long;
+ using LLU = unsigned long long;
+ using namespace gromox;
