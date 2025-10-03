@@ -1,5 +1,5 @@
 @pkgpath devel/qcoro,qt6
-@conflict qcoro-qt6-<0.12.0p0
+@conflict qcoro-qt6-*
 include/qcoro6/
 include/qcoro6/QCoro/
 include/qcoro6/QCoro/QCoro
