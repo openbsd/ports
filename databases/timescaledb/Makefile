@@ -4,10 +4,10 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.19.3
+GH_TAGNAME =	2.22.1
 
 # -extras is only used for 2.15.X-fix_hypertable_foreign_keys.sql
-EXTRAS_COMMIT =	1390a6977adad09e6e1528405b4717c44f04070c
+EXTRAS_COMMIT =	ba47f5dff02e8d75268cb09dd3c30101cf12dd6f
 DIST_TUPLE +=	github timescale timescaledb-extras ${EXTRAS_COMMIT} _extras
 
 CATEGORIES =	databases
