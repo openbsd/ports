@@ -3,6 +3,7 @@ COMMENT=		YAML parser and emitter
 GH_ACCOUNT=		pantoniou
 GH_PROJECT=		libfyaml
 GH_TAGNAME=		v0.9
+REVISION=		0
 
 SHARED_LIBS +=  fyaml                0.0      # 1.4
 
@@ -12,6 +13,8 @@ CATEGORIES=		textproc devel
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
+
+BUILD_DEPENDS=		devel/libyaml
 
 AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.18
