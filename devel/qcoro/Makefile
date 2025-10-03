@@ -6,7 +6,7 @@ GH_PROJECT =	qcoro
 GH_TAGNAME =	v${V}
 
 FULLPKGNAME=	qcoro-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	devel
 
