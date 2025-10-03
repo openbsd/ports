@@ -1,8 +1,8 @@
 Index: components/regional_capabilities/regional_capabilities_switches.h
 --- components/regional_capabilities/regional_capabilities_switches.h.orig
 +++ components/regional_capabilities/regional_capabilities_switches.h
-@@ -33,7 +33,7 @@ inline constexpr char kEeaListCountryOverride[] = "EEA
- BASE_DECLARE_FEATURE(kMitigateLegacySearchEnginePromoOverlap);
+@@ -47,7 +47,7 @@ BASE_DECLARE_FEATURE(kMitigateLegacySearchEnginePromoO
+ BASE_DECLARE_FEATURE(kResolveRegionalCapabilitiesFromDevice);
  #endif
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)

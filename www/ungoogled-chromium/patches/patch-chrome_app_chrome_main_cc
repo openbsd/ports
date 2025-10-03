@@ -33,7 +33,7 @@ Index: chrome/app/chrome_main.cc
    PossiblyDetermineFallbackChromeChannel(argv[0]);
  #endif
  
-@@ -181,7 +181,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -180,7 +180,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  

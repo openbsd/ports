@@ -56,15 +56,13 @@ Index: content/app/content_main_runner_impl.cc
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -412,9 +422,18 @@ void PreSandboxInit() {
+@@ -412,9 +422,16 @@ void PreSandboxInit() {
    // https://boringssl.9oo91esource.qjz9zk/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
 +#if BUILDFLAG(IS_BSD)
 +  // rust_png calls into sysctl so cache the cpu features before pledge(2)
 +  rust_png::initialize_cpudetect();
-+  // "cache" the amount of physical memory before pledge(2)
-+  base::SysInfo::AmountOfPhysicalMemoryMB();
 +#endif
 +
 +#if !BUILDFLAG(IS_BSD)
@@ -75,7 +73,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
    // Ensure access to the library CDMs before the sandbox is turned on.
-@@ -634,7 +653,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
+@@ -634,7 +651,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
  
    // Once Zygote forks and feature list initializes we can start a thread to
    // begin tracing immediately.
@@ -84,7 +82,7 @@ Index: content/app/content_main_runner_impl.cc
    if (process_type == switches::kGpuProcess) {
      tracing::InitTracingPostFeatureList(/*enable_consumer=*/false,
                                          /*will_trace_thread_restart=*/true);
-@@ -733,7 +752,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+@@ -733,7 +750,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      base::HangWatcher::CreateHangWatcherInstance();
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
@@ -93,7 +91,7 @@ Index: content/app/content_main_runner_impl.cc
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -851,11 +870,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -851,11 +868,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -107,7 +105,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1007,7 +1025,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1007,7 +1023,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
      // SeatbeltExecServer.
      CHECK(sandbox::Seatbelt::IsSandboxed());
    }
@@ -116,7 +114,7 @@ Index: content/app/content_main_runner_impl.cc
    // In sandboxed processes and zygotes, certain resource should be pre-warmed
    // as they cannot be initialized under a sandbox. In addition, loading these
    // resources in zygotes (including the unsandboxed zygote) allows them to be
-@@ -1017,10 +1035,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1017,10 +1033,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -139,7 +137,7 @@ Index: content/app/content_main_runner_impl.cc
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1122,6 +1152,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1122,6 +1150,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

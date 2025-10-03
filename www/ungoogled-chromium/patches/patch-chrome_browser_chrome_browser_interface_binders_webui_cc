@@ -23,7 +23,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui.cc
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "chrome/browser/ui/webui/on_device_translation_internals/on_device_translation_internals_ui.h"
  #include "chrome/browser/ui/webui/signin/history_sync_optin/history_sync_optin.mojom.h"
-@@ -483,7 +483,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -489,7 +489,7 @@ void PopulateChromeWebUIFrameBinders(
                                           policy::DlpInternalsUI>(map);
  #endif
  
@@ -32,7 +32,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui.cc
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -635,14 +635,14 @@ void PopulateChromeWebUIFrameBinders(
+@@ -642,14 +642,14 @@ void PopulateChromeWebUIFrameBinders(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -49,7 +49,7 @@ Index: chrome/browser/chrome_browser_interface_binders_webui.cc
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -1191,7 +1191,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1198,7 +1198,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

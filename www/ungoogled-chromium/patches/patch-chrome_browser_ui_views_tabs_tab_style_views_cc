@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/tabs/tab_style_views.cc
 --- chrome/browser/ui/views/tabs/tab_style_views.cc.orig
 +++ chrome/browser/ui/views/tabs/tab_style_views.cc
-@@ -575,7 +575,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
+@@ -557,7 +557,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
    if (!IsHoverAnimationActive()) {
      return base_opacity;
    }
