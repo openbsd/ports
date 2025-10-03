@@ -12,15 +12,17 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			140.0.7339.207
+V=			141.0.7390.54
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
+DISTFILES.a=		${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES}
 
@@ -40,6 +42,7 @@ FLAVOR?=
 PERMIT_PACKAGE =	Yes
 
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES.a=	https://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
@@ -352,6 +355,8 @@ pre-test:
 	*testdata*.tar.xz) \
 		test -d ${WRKSRC}/base/tracing/test/data || \
 			xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
+	*font*.tar.gz) \
+		${GZIP_CMD} -d <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIST}/third_party/test_fonts/test_fonts -xf -;; \
 	esac;
 .endfor
 

@@ -10,7 +10,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1356,6 +1356,19 @@ component("net") {
+@@ -1369,6 +1369,19 @@ component("net") {
      ]
    }
  
@@ -30,7 +30,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1519,7 +1532,7 @@ component("net") {
+@@ -1534,7 +1547,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -39,7 +39,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2252,7 +2265,7 @@ static_library("test_support") {
+@@ -2268,7 +2281,7 @@ static_library("test_support") {
      ]
    }
  
@@ -48,7 +48,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3050,14 +3063,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3066,14 +3079,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -65,7 +65,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3158,6 +3171,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3174,6 +3187,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -76,7 +76,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3214,7 +3231,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3230,7 +3247,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -85,7 +85,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3344,7 +3361,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3360,7 +3377,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
