@@ -1,7 +1,7 @@
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
 V =			4.17
-REVISION =		0
+REVISION =		1
 DISTNAME =		pound-$V
 PKGNAME =		${DISTNAME:L}
 
@@ -25,6 +25,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			MAKEINFO=gmakeinfo \
+			--disable-dynamic-backends \
 			--with-owner=root \
 			--with-group=bin
 
