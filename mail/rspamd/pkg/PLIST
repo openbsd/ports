@@ -22,8 +22,6 @@ share/examples/login.conf.d/rspamd
 share/examples/rspamd/
 share/examples/rspamd/actions.conf
 @sample ${ETC}/rspamd/actions.conf
-share/examples/rspamd/cgp.inc
-@sample ${ETC}/rspamd/cgp.inc
 share/examples/rspamd/common.conf
 @sample ${ETC}/rspamd/common.conf
 share/examples/rspamd/composites.conf
@@ -275,6 +273,7 @@ share/rspamd/lualib/ansicolors.lua
 share/rspamd/lualib/argparse.lua
 share/rspamd/lualib/fun.lua
 share/rspamd/lualib/global_functions.lua
+share/rspamd/lualib/llm_common.lua
 share/rspamd/lualib/lpegre.lua
 share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_aws.lua
@@ -289,6 +288,7 @@ share/rspamd/lualib/lua_content/ical.lua
 share/rspamd/lualib/lua_content/init.lua
 share/rspamd/lualib/lua_content/pdf.lua
 share/rspamd/lualib/lua_content/vcard.lua
+share/rspamd/lualib/lua_cta.lua
 share/rspamd/lualib/lua_dkim_tools.lua
 share/rspamd/lualib/lua_ffi/
 share/rspamd/lualib/lua_ffi/common.lua
@@ -345,7 +345,11 @@ share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
 share/rspamd/lualib/plugins/
 share/rspamd/lualib/plugins/dmarc.lua
+share/rspamd/lualib/plugins/neural/
 share/rspamd/lualib/plugins/neural.lua
+share/rspamd/lualib/plugins/neural/providers/
+share/rspamd/lualib/plugins/neural/providers/llm.lua
+share/rspamd/lualib/plugins/neural/providers/symbols.lua
 share/rspamd/lualib/plugins/ratelimit.lua
 share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
