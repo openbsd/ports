@@ -1,0 +1,6 @@
+SHA256 (jdk/jdk-25+36-1.tar.gz) = Yj1QWGAXxsXyMyZBtJNfN4u/vim4beEuTWXd1hgks64=
+SHA256 (jdk/openjdk-jdk25u-bootjdk-aarch64-20250930.tar.gz) = wYMBHjvcqsUkW4JVZXbc4MgHrOhPFVHTc4IlsH7sC+U=
+SHA256 (jdk/openjdk-jdk25u-bootjdk-amd64-20250930.tar.gz) = OVF4EDX6DSYitKOXr1/O1hTJ0Hg877drObH1+NYEyAA=
+SIZE (jdk/jdk-25+36-1.tar.gz) = 119493285
+SIZE (jdk/openjdk-jdk25u-bootjdk-aarch64-20250930.tar.gz) = 137389147
+SIZE (jdk/openjdk-jdk25u-bootjdk-amd64-20250930.tar.gz) = 137420219

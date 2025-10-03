@@ -1,0 +1,25 @@
+error: '__FreeBSD__' is not defined, evaluates to 0 [-Werror,-Wundef]
+  193 | #if __FreeBSD__ >= 15
+      |     ^
+
+Index: src/jdk.management/bsd/native/libmanagement_ext/UnixOperatingSystem.c
+--- src/jdk.management/bsd/native/libmanagement_ext/UnixOperatingSystem.c.orig
++++ src/jdk.management/bsd/native/libmanagement_ext/UnixOperatingSystem.c
+@@ -190,7 +190,7 @@ JNIEXPORT jlong JNICALL
+ Java_com_sun_management_internal_OperatingSystemImpl_getCommittedVirtualMemorySize0
+   (JNIEnv *env, jobject mbean)
+ {
+-#if __FreeBSD__ >= 15
++#if defined(__FreeBSD__) && __FreeBSD__ >= 15
+   rlim_t vmm_usage;
+ 
+   int result = getrlimitusage(RLIMIT_AS, 0, &vmm_usage);
+@@ -210,7 +210,7 @@ JNIEXPORT jlong JNICALL
+ Java_com_sun_management_internal_OperatingSystemImpl_getOpenFileDescriptorCount0
+   (JNIEnv *env, jobject mbean)
+ {
+-#if __FreeBSD__ >= 15
++#if defined(__FreeBSD__) && __FreeBSD__ >= 15
+     rlim_t nfiles;
+ 
+     int result = getrlimitusage(RLIMIT_NOFILE, 0, &nfiles);
