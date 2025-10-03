@@ -1,10 +1,10 @@
 COMMENT=		C/C++ library with common data structures and functions
 
-DISTNAME =		libHX-4.27
+DISTNAME =		libHX-4.28
 CATEGORIES=		devel
-EXTRACT_SUFX=		.tar.xz
+EXTRACT_SUFX=		.tar.zst
 
-SHARED_LIBS +=		HX	39.0 # 39.0
+SHARED_LIBS +=		HX	40.0 # 40.0
 
 HOMEPAGE=		https://inai.de/projects/libhx/
 

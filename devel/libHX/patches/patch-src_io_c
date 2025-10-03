@@ -1,0 +1,18 @@
+Index: src/io.c
+--- src/io.c.orig
++++ src/io.c
+@@ -65,8 +65,14 @@ static int mkdir_gen(const char *d, unsigned int mode)
+ 	if (mkdir(d, mode) == 0) /* use umask() for permissions */
+ #endif
+ 		return 1;
++#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++	/* Undocumented extra error codes */
++	if (errno != EEXIST && errno != EISDIR)
++		return -errno;
++#else
+ 	if (errno != EEXIST)
+ 		return -errno;
++#endif
+ 	if (stat(d, &sb) == 0) {
+ #if defined(_WIN32)
+ 		if (sb.st_mode & S_IFDIR)

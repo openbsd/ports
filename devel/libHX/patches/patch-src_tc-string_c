@@ -1,0 +1,25 @@
+Index: src/tc-string.c
+--- src/tc-string.c.orig
++++ src/tc-string.c
+@@ -84,14 +84,19 @@ static void t_strncat(void)
+ {
+ 	char data[5] = "DATA";
+ 
+-#ifndef __clang__
++#ifdef __clang__
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wformat-truncation"
++#else
+ #pragma GCC diagnostic push
+ #pragma GCC diagnostic ignored "-Wformat-truncation"
+ #endif
+ 	if (snprintf(data, sizeof(data), "12345678") >=
+ 	    static_cast(ssize_t, sizeof(data)))
+ 		printf("Not enough space\n");
+-#ifndef __clang__
++#ifdef __clang__
++#pragma clang diagnostic pop
++#else
+ #pragma GCC diagnostic pop
+ #endif
+ 	printf("String: >%s<\n", data);

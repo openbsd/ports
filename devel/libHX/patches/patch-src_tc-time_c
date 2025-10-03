@@ -1,0 +1,12 @@
+Index: src/tc-time.c
+--- src/tc-time.c.orig
++++ src/tc-time.c
+@@ -10,6 +10,8 @@
+ #include <libHX/misc.h>
+ #include "internal.h"
+ 
++#include <sys/time.h>
++
+ typedef struct timespec *(*add_func_t)(struct timespec *,
+ 	const struct timespec *, const struct timespec *);
+ typedef struct timespec *(*mul_func_t)(struct timespec *,
