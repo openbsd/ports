@@ -1,6 +1,0 @@
-Index: requirements/crypto.txt
---- requirements/crypto.txt.orig
-+++ requirements/crypto.txt
-@@ -1 +1 @@
--pycryptodomex>=3.9.8
-+pycryptodome

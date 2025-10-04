@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_DISTV =		3007.8
 DISTNAME =		salt-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -50,7 +51,7 @@ RUN_DEPENDS =		devel/py-looseversion \
 
 # requirements/zeromq.txt
 RUN_DEPENDS +=		net/py-zmq \
-			security/py-cryptodome
+			security/py-cryptodomex
 
 # salt/output/progress.py
 RUN_DEPENDS +=		devel/py-progressbar
