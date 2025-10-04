@@ -1,0 +1,16 @@
+https://gitlab.xfce.org/xfce/xfce4-panel/-/issues/951
+https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/issues/271
+https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/merge_requests/241
+
+Index: gdk-pixbuf/io-bmp.c
+--- gdk-pixbuf/io-bmp.c.orig
++++ gdk-pixbuf/io-bmp.c
+@@ -129,7 +129,7 @@ static void DumpBIH(unsigned char *BIH)
+ struct headerpair {
+ 	guint32 size;
+ 	guint32 width;
+-	guint32 height;
++	gint32 height;
+ 	guint depth;
+ 	guint Negative;		/* Negative = 1 -> top down BMP,
+ 				   Negative = 0 -> bottom up BMP */
