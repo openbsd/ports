@@ -93,7 +93,7 @@ CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION}
 CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" PANDOC="" CMAKE="" \
 		AWK=awk DIFF=diff GZIP=gzip MAKE=${GMAKE} MKDIR=mkdir \
 		OBJCOPY=objcopy OBJDUMP=objdump PATCH=patch \
-		READELF=readelf READLINK=readlink \
+		READELF=readelf READLINK=readlink SORT=sort \
 		--with-toolchain-type=clang \
 		--with-stdc++lib=dynamic \
 		--with-boot-jdk=${BOOT_JDK} \
