@@ -2,7 +2,7 @@ COMMENT=		helper script for launching java applications
 
 GH_ACCOUNT=		bsdkurt
 GH_PROJECT=		javaPathHelper
-GH_TAGNAME=		2.3
+GH_TAGNAME=		2.4
 
 CATEGORIES=		java
 
