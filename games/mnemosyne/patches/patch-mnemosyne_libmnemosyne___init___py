@@ -1,0 +1,17 @@
+The suggested translation library isn't well maintained and has
+some room for improvement, so don't warn about it.
+
+https://github.com/lushan88a/google_trans_new
+
+Index: mnemosyne/libmnemosyne/__init__.py
+--- mnemosyne/libmnemosyne/__init__.py.orig
++++ mnemosyne/libmnemosyne/__init__.py
+@@ -373,8 +373,6 @@ class Mnemosyne(Component):
+             if ((importlib.util.find_spec("google_trans_new")) is not None):
+                 self.components.append(\
+                     ("mnemosyne.libmnemosyne.translators.google_translator", "GoogleTranslator"))
+-            else:
+-                warnings.warn("google_trans_new package is not installed. Google translate feature will not be available.")
+         except:
+             pass
+         self.gui_for_component = {}
