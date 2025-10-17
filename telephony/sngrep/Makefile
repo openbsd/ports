@@ -2,7 +2,7 @@ COMMENT=	SIP packet capture tool with curses UI
 
 GH_ACCOUNT=	irontec
 GH_PROJECT=	sngrep
-GH_TAGNAME=	v1.8.2
+GH_TAGNAME=	v1.8.3
 
 CATEGORIES=	telephony net
 
@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 		--enable-unicode \
 		--with-openssl
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+AUTOCONF_VERSION= 2.72
+AUTOMAKE_VERSION= 1.18
 
 TEST_ENV=	TERM=vt220
 
