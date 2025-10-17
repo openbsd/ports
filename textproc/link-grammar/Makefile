@@ -1,5 +1,3 @@
-BROKEN-sparc64 = Undefined references in liblink-grammar.so to mtx_lock, tss_set, and others
-
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -8,6 +6,7 @@ COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
 VERSION =		5.12.6
+REVISION =		0
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
@@ -23,7 +22,7 @@ HOMEPAGE =		https://opencog.github.io/link-grammar-website/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += curses hunspell-1.7 m pcre2-8 sqlite3 ${COMPILER_LIBCXX}
+WANTLIB += curses hunspell-1.7 m pcre2-8 sqlite3 stdthreads ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c perl pthread z
 
@@ -48,10 +47,10 @@ PSEUDO_FLAVORS =	no_java
 
 .include <bsd.port.arch.mk>
 
-BUILD_DEPENDS =		devel/libstdthreads \
-			devel/swig
+BUILD_DEPENDS =		devel/swig
 
-LIB_DEPENDS=		databases/sqlite3
+LIB_DEPENDS=		databases/sqlite3 \
+			devel/libstdthreads
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pcre2 \
