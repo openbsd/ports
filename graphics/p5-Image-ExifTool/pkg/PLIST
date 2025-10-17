@@ -67,6 +67,7 @@ ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DJI.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
 ${P5SITE}/Image/ExifTool/DPX.pm
+${P5SITE}/Image/ExifTool/DSF.pm
 ${P5SITE}/Image/ExifTool/DV.pm
 ${P5SITE}/Image/ExifTool/DarwinCore.pm
 ${P5SITE}/Image/ExifTool/DjVu.pm
@@ -228,6 +229,7 @@ ${P5SITE}/Image/ExifTool/Validate.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WPG.pm
 ${P5SITE}/Image/ExifTool/WTV.pm
+${P5SITE}/Image/ExifTool/WavPack.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
 ${P5SITE}/Image/ExifTool/WriteExif.pl
 ${P5SITE}/Image/ExifTool/WriteIPTC.pl
@@ -276,6 +278,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::DJI.3p
 @man man/man3p/Image::ExifTool::DNG.3p
 @man man/man3p/Image::ExifTool::DPX.3p
+@man man/man3p/Image::ExifTool::DSF.3p
 @man man/man3p/Image::ExifTool::DV.3p
 @man man/man3p/Image::ExifTool::DarwinCore.3p
 @man man/man3p/Image::ExifTool::DjVu.3p
@@ -434,6 +437,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Vorbis.3p
 @man man/man3p/Image::ExifTool::WPG.3p
 @man man/man3p/Image::ExifTool::WTV.3p
+@man man/man3p/Image::ExifTool::WavPack.3p
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
 @man man/man3p/Image::ExifTool::WriteExif.3p
 @man man/man3p/Image::ExifTool::WriteIPTC.3p
