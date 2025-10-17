@@ -1,12 +1,11 @@
 COMMENT=	lil' TOML parser
 
-MODPY_DISTV=	2.2.1
+MODPY_DISTV=	2.3.0
 
 # generally not needed with Python 3.11+ as this is essentially
 # a backport of tomllib
 DISTNAME=	tomli-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
