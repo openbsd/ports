@@ -1,6 +1,6 @@
 COMMENT=	code coverage measurement for Python
 
-MODPY_DISTV=	7.10.5
+MODPY_DISTV=	7.10.7
 DISTNAME=	coverage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
