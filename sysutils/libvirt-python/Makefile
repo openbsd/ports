@@ -1,8 +1,8 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_DISTV =		11.7.0
-DISTNAME =		libvirt-python-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:S/-python-/-/}
+MODPY_DISTV =		11.8.0
+DISTNAME =		libvirt_python-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME:S/_python-/-/}
 
 CATEGORIES =		sysutils
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += virt virt-lxc virt-qemu
 
-SITES =			https://libvirt.org/sources/python/
+SITES =			https://download.libvirt.org/python/
 
 MODULES =		lang/python
 
