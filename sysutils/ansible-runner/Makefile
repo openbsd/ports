@@ -1,9 +1,11 @@
 COMMENT =	interface for controlling and interacting with Ansible
 
-MODPY_DISTV =	2.4.1
+MODPY_DISTV =	2.4.2
 
 DISTNAME =	ansible_runner-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/_/-/}
+
+MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 CATEGORIES =	sysutils
 
