@@ -3,9 +3,8 @@ PKG_ARCH=		*
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.34.0
+GNOME_VERSION=		1.35.1
 GNOME_PROJECT=		gtk-doc
-REVISION=		4
 
 CATEGORIES=		textproc devel
 
@@ -27,5 +26,7 @@ RUN_DEPENDS=		devel/py-anytree \
 			textproc/docbook-xsl \
 			textproc/py-lxml \
 			textproc/py-pygments
+
+TEST_DEPENDS=		devel/py-parameterized
 
 .include <bsd.port.mk>
