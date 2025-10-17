@@ -1,10 +1,10 @@
 COMMENT =	ahead of time compiler for numeric kernels
 
-# scipy (1.13.1, as used at 20241120) wants pythran<0.16.0
+# updates >=0.16.0 need testing/updating scipy, py-scikit-image
 MODPY_DISTV =	0.15.0
 
 DISTNAME =	pythran-${MODPY_DISTV}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	lang
 

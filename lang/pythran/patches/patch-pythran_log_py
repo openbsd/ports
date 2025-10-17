@@ -1,0 +1,13 @@
+disable annoying warning
+
+Index: pythran/log.py
+--- pythran/log.py.orig
++++ pythran/log.py
+@@ -26,7 +26,3 @@ else:
+ 
+ stream.setFormatter(formatter)
+ logger.addHandler(stream)
+-
+-if color_disabled:
+-    logger.info("Disabling color, you really want to install colorlog.")
+-
