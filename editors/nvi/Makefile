@@ -1,6 +1,6 @@
 COMMENT=	ex/vi text editor with wide character support
 
-V =		2.2.1
+V =		2.2.2
 GH_ACCOUNT =	lichray
 GH_PROJECT =	nvi2
 GH_TAGNAME =	v$V
