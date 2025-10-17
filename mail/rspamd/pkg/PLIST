@@ -32,6 +32,7 @@ share/examples/rspamd/lang_detection.inc
 @sample ${ETC}/rspamd/lang_detection.inc
 share/examples/rspamd/local.d/
 @sample ${ETC}/rspamd/local.d/
+share/examples/rspamd/local.d/antivirus.conf.example
 share/examples/rspamd/local.d/module.conf.example
 share/examples/rspamd/local.d/redis.conf
 @sample ${ETC}/rspamd/local.d/redis.conf
@@ -274,6 +275,7 @@ share/rspamd/lualib/argparse.lua
 share/rspamd/lualib/fun.lua
 share/rspamd/lualib/global_functions.lua
 share/rspamd/lualib/llm_common.lua
+share/rspamd/lualib/llm_context.lua
 share/rspamd/lualib/lpegre.lua
 share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_aws.lua
@@ -320,6 +322,7 @@ share/rspamd/lualib/lua_scanners/icap.lua
 share/rspamd/lualib/lua_scanners/init.lua
 share/rspamd/lualib/lua_scanners/kaspersky_av.lua
 share/rspamd/lualib/lua_scanners/kaspersky_se.lua
+share/rspamd/lualib/lua_scanners/metadefender.lua
 share/rspamd/lualib/lua_scanners/oletools.lua
 share/rspamd/lualib/lua_scanners/p0f.lua
 share/rspamd/lualib/lua_scanners/pyzor.lua

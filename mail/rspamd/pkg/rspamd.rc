@@ -2,6 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/rspamd"
 daemon_flags="-u _rspamd -g _rspamd"
+daemon_timeout=60
 
 . /etc/rc.d/rc.subr
 

@@ -1,4 +1,4 @@
 rspamd:\
-	:openfiles-cur=2048:\
+	:openfiles-cur=4096:\
 	:openfiles-max=4096:\
 	:tc=daemon:
