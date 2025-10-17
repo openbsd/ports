@@ -110,6 +110,7 @@
      SUBDIR += terminus-font,centered_tilde
      SUBDIR += terminus-font,symquotes
      SUBDIR += terminus-font,symquotes,centered_tilde
+     SUBDIR += tt2020
      SUBDIR += ttyp0-font
      SUBDIR += ttyp0-font,ct
      SUBDIR += ttyp0-font,nbd
