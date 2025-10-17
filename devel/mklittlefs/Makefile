@@ -1,16 +1,13 @@
-COMMENT =		tool to build and unpack littlefs images
+COMMENT =	tool to build and unpack littlefs images
 
-GH_ACCOUNT =		earlephilhower
-GH_PROJECT =		mklittlefs
-GH_TAGNAME =		4.0.1
+V =		4.1.0
+DIST_TUPLE +=	github earlephilhower mklittlefs $V .
 
-CATEGORIES =		devel
+# check submodule version in mklittlefs repo
+L =		8e251dd675da00342d45dac78b6f627f119aed03
+DIST_TUPLE +=	github littlefs-project littlefs $L littlefs
 
-LFS_V =			d01280e64934a09ba16cac60cf9d3a37e228bb66
-SITES.e =		https://github.com/littlefs-project/littlefs/archive/
-
-DISTFILES =		${GH_PROJECT}-${GH_TAGNAME}${EXTRACT_SUFX}
-DISTFILES.e =		littlefs-${LFS_V}{${LFS_V}}${EXTRACT_SUFX}
+CATEGORIES =	devel
 
 # BSDv3 littlefs and MIT mklittlefs
 PERMIT_PACKAGE =	Yes
@@ -18,20 +15,23 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c m
 
 # C++11
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MAKE_FLAGS =		CC="${CC}" CXX="${CXX}" \
-			VERSION=${GH_TAGNAME} \
-			LITTLEFS_VERSION=${LFS_V}
+MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
+		VERSION=$V \
+		LITTLEFS_VERSION=${L:C/(.{9}).*/\1/} \
+		STRIP=:
 
-USE_GMAKE =		Yes
+USE_GMAKE =	Yes
 
-NO_TEST =		Yes
-
-post-extract:
-	mv ${WRKDIR}/littlefs-${LFS_V}/* ${WRKSRC}/littlefs/
+TEST_DEPENDS =	shells/bash
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mklittlefs ${PREFIX}/bin
+
+pre-test:
+	@cd ${WRKSRC}; \
+	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
+		run_tests.sh tests/*
 
 .include <bsd.port.mk>

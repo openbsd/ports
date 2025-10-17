@@ -11,15 +11,16 @@ Index: Makefile
  endif
  endif # TARGET_OS
  
-@@ -48,7 +51,6 @@ endif
+@@ -48,8 +51,6 @@ endif
  
  STRIP ?= strip
  
--VERSION ?= $(shell git describe --always)
- LITTLEFS_VERSION := $(shell git -C littlefs describe --tags || echo "unknown")
+-VERSION ?= $(shell git describe --tag)
+-LITTLEFS_VERSION := $(shell git -C littlefs describe --tags || echo "unknown")
  BUILD_CONFIG_NAME ?= -generic
  
-@@ -75,8 +77,8 @@ override CPPFLAGS := \
+ OBJ		:= main.o \
+@@ -75,8 +76,8 @@ override CPPFLAGS := \
  	-D LFS_NAME_MAX=255 \
  	$(CPPFLAGS)
  
