@@ -10,3 +10,14 @@ Index: Makefile
  SYMLINK_CMD = $(QUIET_SYMLINK) $(MKTGTDIR) ; ln -sf
  
  ifeq ($(shared),yes)
+@@ -154,8 +154,10 @@ $(OUT)/source/fitz/leptonica-wrap.o : source/fitz/lept
+ 	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS) $(THIRD_CFLAGS) $(LEPTONICA_CFLAGS) $(LEPTONICA_DEFINES)
+ endif
+ 
++ifeq ($(HAVE_ZXINGCPP),yes)
+ $(OUT)/source/fitz/barcode.o : source/fitz/barcode.cpp
+ 	$(CXX_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS) $(THIRD_CFLAGS) $(ZXINGCPP_CFLAGS) $(ZXINGCPP_LANGFLAGS)
++endif
+ 
+ $(OUT)/platform/%.o : platform/%.c
+ 	$(CC_CMD) $(WARNING_CFLAGS)
