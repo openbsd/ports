@@ -9,7 +9,7 @@ COMMENT=		proof assistant based on a typed lambda calculus
 V =			8.20.1
 DISTNAME =		coq-${V}
 PKGNAME =		rocq-${V}
-REVISION =		0
+REVISION =		1
 
 SITES =			https://github.com/rocq-prover/rocq/releases/download/V${V}/
 
@@ -32,7 +32,8 @@ BUILD_DEPENDS=	x11/lablgtk3 \
 		devel/dune
 
 RUN_DEPENDS=	x11/lablgtk3 \
-		math/ocaml-zarith
+		math/ocaml-zarith \
+		sysutils/findlib
 
 LIB_DEPENDS=	devel/gmp
 
