@@ -2,9 +2,9 @@ COMMENT=	encrypted SQLite database
 
 GH_ACCOUNT=	sqlcipher
 GH_PROJECT=	sqlcipher
-GH_TAGNAME=	v4.9.0
+GH_TAGNAME=	v4.11.0
 
-SHARED_LIBS +=  sqlcipher                 3.0 # 8.6
+SHARED_LIBS +=  sqlcipher                 3.1
 
 CATEGORIES=	databases
 

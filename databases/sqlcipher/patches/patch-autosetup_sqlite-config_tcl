@@ -1,7 +1,7 @@
 Index: autosetup/sqlite-config.tcl
 --- autosetup/sqlite-config.tcl.orig
 +++ autosetup/sqlite-config.tcl
-@@ -792,7 +792,7 @@ proc sqlite-handle-soname {} {
+@@ -869,7 +869,7 @@ proc sqlite-handle-soname {} {
          # use it as-is
        } else {
          # Assume it's a suffix
