@@ -1,8 +1,9 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
+# standalone; intentionally no py- prefix
 MODPY_DISTV=	0.0.14
-# standalone; no py- prefix/FLAVOR
 DISTNAME=	badkeys-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -18,11 +19,13 @@ MODPY_PI=	Yes
 PORTHOME=	${WRKDIR}
 
 RUN_DEPENDS=	math/py-gmpy2 \
+		net/py-dnspython \
 		security/py-cryptography \
 		security/py-paramiko
 
-# requires net
-pre-test:
-	cd ${WRKSRC}; HOME=${PORTHOME} ${MODPY_BIN} badkeys-cli --update-bl
+# uncomment to enable online tests
+#TEST_ENV=	RUN_ONLINETESTS=1
+#pre-test:
+#	cd ${WRKSRC}; HOME=${PORTHOME} ${MODPY_BIN} badkeys-cli --update-bl
 
 .include <bsd.port.mk>
