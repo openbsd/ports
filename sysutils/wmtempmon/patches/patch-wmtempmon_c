@@ -1,0 +1,10 @@
+--- wmtempmon.c.orig	Wed Oct 15 20:30:22 2025
++++ wmtempmon.c	Wed Oct 15 20:32:00 2025
+@@ -424,6 +424,7 @@ main(int argc, char *argv[])
+ 	XEvent event;
+ 
+ 	off = 0;
++	tempi = 0;
+ 	temp_device_found = 0;
+ 	opt_temp_device_sensor_num = 0;
+ 	opt_scroll = 1;

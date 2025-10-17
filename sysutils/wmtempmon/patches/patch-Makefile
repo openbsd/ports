@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Oct 15 20:59:41 2025
++++ Makefile	Wed Oct 15 20:59:50 2025
+@@ -4,7 +4,7 @@ PROG=		wmtempmon
+ SRCS=		wmtempmon.c xutils.c
+ MAN=		wmtempmon.1
+ 
+-CFLAGS+=	-Wall -Werror -Wstrict-prototypes -ansi -I/usr/X11R6/include
++CFLAGS+=	-Wall -Wstrict-prototypes -ansi -I/usr/X11R6/include
+ LDADD+=		-L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
+ PIPE=		-pipe
+ 
