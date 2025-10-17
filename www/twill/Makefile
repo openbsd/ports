@@ -1,6 +1,7 @@
 COMMENT=	simple scripting language for web browsing
 
-MODPY_DISTV =	3.3.1
+MODPY_DISTV=	3.3.1
+REVISION=	0
 DISTNAME=	twill-${MODPY_DISTV}
 CATEGORIES=	www
 
@@ -22,7 +23,7 @@ MODPY_PYTEST_ARGS=	--ignore tests/test_wsgi_intercept.py \
 
 BUILD_DEPENDS=	textproc/py-sphinx
 
-RUN_DEPENDS=	textproc/py-lxml>=5.2,<6 \
+RUN_DEPENDS=	textproc/py-lxml<7 \
 		www/py-httpx<1 \
 		devel/py-parsing<4
 
