@@ -117,7 +117,6 @@
      SUBDIR += fna
      SUBDIR += fnaify-extralibs
      SUBDIR += foobillard
-     SUBDIR += forcedattack
      SUBDIR += fotaq
      SUBDIR += freebee
      SUBDIR += freeblocks
@@ -251,7 +250,6 @@
      SUBDIR += orthorobot
      SUBDIR += ottomatic
      SUBDIR += pacman-arena
-     SUBDIR += pathological
      SUBDIR += pentobi
      SUBDIR += pingus
      SUBDIR += pioneer
@@ -269,7 +267,6 @@
      SUBDIR += py-steam
      SUBDIR += py-unitypy
      SUBDIR += pygame_sdl2
-     SUBDIR += pyganim
      SUBDIR += pysol
      SUBDIR += pysol-cards
      SUBDIR += qqwing

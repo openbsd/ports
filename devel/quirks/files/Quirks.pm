@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1753 2025/10/17 08:58:43 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1754 2025/10/17 20:06:52 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1294,6 +1294,9 @@ setup_obsolete_reason(
 # 7.9
 	3 => 'clamnailer',
 	3 => 'clamav-unofficial-sigs',
+	3 => 'forcedattack',
+	3 => 'pathological',
+	3 => 'pyganim',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
