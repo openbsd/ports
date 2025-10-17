@@ -5,6 +5,7 @@ GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
 GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES=	x11 net
 
@@ -20,6 +21,7 @@ BUILD_DEPENDS+=	security/py-keyring \
 		sysutils/py-psutil
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/py-arrow \
 		security/py-keyring \
 		sysutils/py-psutil \
 		www/py-beautifulsoup4 \
