@@ -3,7 +3,7 @@ COMMENT =	high-level API and CLI on top of OGR
 MODPY_DISTV =	1.10.1
 DISTNAME =	fiona-${MODPY_DISTV}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
-REVISION =	2
+REVISION =	4
 
 CATEGORIES =	geo
 
@@ -34,7 +34,8 @@ RUN_DEPENDS =	geo/py-cligj \
 		devel/py-munch \
 		devel/py-six
 
-TEST_DEPENDS =	devel/py-tz \
+TEST_DEPENDS =	devel/py-parsing \
+		devel/py-tz \
 		www/py-aiohttp \
 		sysutils/py-fsspec \
 		net/py-boto3

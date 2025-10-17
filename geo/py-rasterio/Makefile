@@ -1,7 +1,7 @@
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_DISTV =	1.4.3
-REVISION =	2
+REVISION =	3
 DISTNAME =	rasterio-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
