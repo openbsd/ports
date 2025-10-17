@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -349,7 +349,7 @@ disable = [
+@@ -378,7 +378,7 @@ disable = [
  ]
  
  [tool.pytest.ini_options]
