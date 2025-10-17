@@ -56,6 +56,7 @@ lib/wireplumber-0.5/
 @so lib/wireplumber-0.5/libwireplumber-module-mixer-api.so
 @so lib/wireplumber-0.5/libwireplumber-module-modem-manager.so
 @so lib/wireplumber-0.5/libwireplumber-module-mpris.so
+@so lib/wireplumber-0.5/libwireplumber-module-notifications-api.so
 @so lib/wireplumber-0.5/libwireplumber-module-portal-permissionstore.so
 @so lib/wireplumber-0.5/libwireplumber-module-reserve-device.so
 @so lib/wireplumber-0.5/libwireplumber-module-settings.so
@@ -153,6 +154,7 @@ share/wireplumber/scripts/default-nodes/state-default-nodes.lua
 share/wireplumber/scripts/device/
 share/wireplumber/scripts/device/apply-profile.lua
 share/wireplumber/scripts/device/apply-routes.lua
+share/wireplumber/scripts/device/automute-alsa-routes.lua
 share/wireplumber/scripts/device/autoswitch-bluetooth-profile.lua
 share/wireplumber/scripts/device/find-best-profile.lua
 share/wireplumber/scripts/device/find-best-routes.lua

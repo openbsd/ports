@@ -1,7 +1,7 @@
 COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
-PW_VERSION=		0.5.11
+PW_VERSION=		0.5.12
 
 SHARED_LIBS += wireplumber-0.5           0.1 # 0.511.0
 
