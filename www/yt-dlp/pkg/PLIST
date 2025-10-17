@@ -847,6 +847,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}icareu
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}icareus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}ichinanalive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}ichinanalive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}idagio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}idagio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}idolplus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}idolplus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}ign.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2510,6 +2512,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/hypergryph.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/hytale.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/icareus.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/ichinanalive.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/idagio.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/idolplus.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/ign.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/iheart.py
