@@ -167,7 +167,7 @@ share/bash-completion/helpers/
 share/bash-completion/helpers/gst
 share/cmake/
 share/cmake/FindGStreamer.cmake
-share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2606.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2607.0-gdb.py
 share/gir-${API}/Gst-${API}.gir
 share/gir-${API}/GstBase-${API}.gir
 share/gir-${API}/GstCheck-${API}.gir
