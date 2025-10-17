@@ -215,8 +215,12 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}app_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}app_data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}builtin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}builtin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}cached_py_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}cached_py_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}discover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -227,7 +231,9 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_spec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/${MODPY_PYCACHE}py_spec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/app_data.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/builtin.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/cache.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/cached_py_info.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/discover.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv/discovery/info.py
