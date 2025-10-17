@@ -1,6 +1,7 @@
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_GEAR_VERSION}
 CATEGORIES=	net
+REVISION =	0
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -28,6 +29,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kitemmodels \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/sonnet \
+		devel/kf6/prison \
 		graphics/kquickimageeditor>=0.4 \
 		devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
@@ -36,6 +38,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS = devel/gettext,-tools \
 		devel/kf6/kitemmodels \
+		devel/kf6/prison \
 		devel/kf6/qqc2-desktop-style \
 		graphics/kquickimageeditor>=0.4 \
 		devel/kf6/kquickcharts \
