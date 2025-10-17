@@ -3,7 +3,7 @@ V =			2.16.2
 DISTNAME =		hexchat-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://hexchat.github.io/
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://hexchat.github.io/
 PERMIT_PACKAGE =	Yes
 
 # luajit
-USE_NOBTCFI =		Yes
+USE_NOBTCFI-aarch64 =	Yes
 
 WANTLIB += X11 c canberra crypto dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0

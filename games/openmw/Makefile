@@ -9,7 +9,7 @@ GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
-REVISION =		2
+REVISION =		3
 
 DISTFILES.a = 		e75adf86f91eb3082220085e42dda62679f9a3ea.zip
 DIST_SUBDIR =		openmw
@@ -24,7 +24,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3 / custom BSD-like font license / DejaVu license
 PERMIT_PACKAGE =	Yes
 
-USE_NOBTCFI =		Yes
+USE_NOBTCFI-aarch64 =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += boost_atomic-mt boost_filesystem-mt boost_iostreams-mt

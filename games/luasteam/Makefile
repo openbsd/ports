@@ -1,4 +1,4 @@
-USE_NOBTCFI =	Yes
+USE_NOBTCFI-aarch64 =	Yes
 
 COMMENT =	Lua bindings for Steam API
 V =		3.2.1
@@ -6,7 +6,7 @@ DISTNAME =	${GH_PROJECT}-${V}
 GH_ACCOUNT =	uspgamedev
 GH_PROJECT =	luasteam
 GH_TAGNAME =	v${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>

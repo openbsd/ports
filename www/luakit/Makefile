@@ -2,6 +2,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 
 V =		2.4.0
 DISTNAME =	luakit-${V}
+REVISION =	0
 
 EPOCH =		1
 
@@ -30,7 +31,7 @@ WANTLIB += soup-3.0 sqlite3 webkit2gtk-4.1
 WANTLIB +=	luajit-5.1
 LIB_DEPENDS +=	lang/luajit
 MAKE_FLAGS +=	USE_LUAJIT=1
-USE_NOBTCFI =	Yes
+USE_NOBTCFI-aarch64 = Yes
 .else
 WANTLIB +=	${MODLUA_WANTLIB}
 MAKE_FLAGS +=	USE_LUAJIT=0

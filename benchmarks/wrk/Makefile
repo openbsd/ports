@@ -3,7 +3,7 @@ COMMENT =	modern HTTP benchmarking tool
 GH_ACCOUNT =	wg
 GH_PROJECT =	wrk
 GH_TAGNAME =	4.2.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	benchmarks
 
@@ -11,7 +11,7 @@ CATEGORIES =	benchmarks
 PERMIT_PACKAGE =	Yes
 
 # luajit
-USE_NOBTCFI =	Yes
+USE_NOBTCFI-aarch64 =	Yes
 
 WANTLIB +=	c crypto luajit-5.1 m pthread ssl
 
