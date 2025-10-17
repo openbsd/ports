@@ -1,8 +1,10 @@
 COMMENT =	Patricia Trie perl module for fast IP address lookups
 
 MODULES =	cpan
-DISTNAME =	Net-Patricia-1.23
+DISTNAME =	Net-Patricia-1.24
 CATEGORIES =	net
+
+CPAN_AUTHOR =	GRUBER
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
