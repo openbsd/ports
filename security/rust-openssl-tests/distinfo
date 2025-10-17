@@ -96,7 +96,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/wit-bindgen-0.46.0.tar.gz) = 8XqFiD1ObQDoqXxYbedk2rzAYTP38dVdzlzcBwrX/lk=
-SHA256 (rust-openssl-tests-20251015-adebeb3a.tar.gz) = +PcdbSNTGoCnizHPOn+N3HuNWXwu7lHSbWCmctItLIM=
+SHA256 (rust-openssl-tests-20251017-7cb4966f.tar.gz) = 35wfYZvwDGDmjgDmlfRbhKOwuhhVQu0B12EKdxrWMXk=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/annotate-snippets-0.11.5.tar.gz) = 34687
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
@@ -195,4 +195,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-0.46.0.tar.gz) = 60508
-SIZE (rust-openssl-tests-20251015-adebeb3a.tar.gz) = 379069
+SIZE (rust-openssl-tests-20251017-7cb4966f.tar.gz) = 379055
