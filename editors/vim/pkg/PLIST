@@ -846,6 +846,7 @@ share/vim/${P}/ftplugin/clojure.vim
 share/vim/${P}/ftplugin/cmake.vim
 share/vim/${P}/ftplugin/cmakecache.vim
 share/vim/${P}/ftplugin/cobol.vim
+share/vim/${P}/ftplugin/codeowners.vim
 share/vim/${P}/ftplugin/conf.vim
 share/vim/${P}/ftplugin/config.vim
 share/vim/${P}/ftplugin/confini.vim
@@ -974,6 +975,7 @@ share/vim/${P}/ftplugin/just.vim
 share/vim/${P}/ftplugin/karel.vim
 share/vim/${P}/ftplugin/kconfig.vim
 share/vim/${P}/ftplugin/kdl.vim
+share/vim/${P}/ftplugin/kerml.vim
 share/vim/${P}/ftplugin/kivy.vim
 share/vim/${P}/ftplugin/kotlin.vim
 share/vim/${P}/ftplugin/kwt.vim
@@ -1151,6 +1153,7 @@ share/vim/${P}/ftplugin/swift.vim
 share/vim/${P}/ftplugin/swiftgyb.vim
 share/vim/${P}/ftplugin/swig.vim
 share/vim/${P}/ftplugin/sysctl.vim
+share/vim/${P}/ftplugin/sysml.vim
 share/vim/${P}/ftplugin/systemd.vim
 share/vim/${P}/ftplugin/systemverilog.vim
 share/vim/${P}/ftplugin/tap.vim
@@ -1320,6 +1323,7 @@ share/vim/${P}/indent/mojo.vim
 share/vim/${P}/indent/mp.vim
 share/vim/${P}/indent/nginx.vim
 share/vim/${P}/indent/nsis.vim
+share/vim/${P}/indent/nu.vim
 share/vim/${P}/indent/objc.vim
 share/vim/${P}/indent/obse.vim
 share/vim/${P}/indent/ocaml.vim
@@ -1402,6 +1406,7 @@ share/vim/${P}/keymap/
 share/vim/${P}/keymap/README.txt
 share/vim/${P}/keymap/accents.vim
 share/vim/${P}/keymap/arabic.vim
+share/vim/${P}/keymap/arabic_buckwalter.vim
 share/vim/${P}/keymap/arabic_utf-8.vim
 share/vim/${P}/keymap/armenian-eastern_utf-8.vim
 share/vim/${P}/keymap/armenian-western_utf-8.vim
@@ -1896,7 +1901,6 @@ share/vim/${P}/pack/dist/opt/termdebug/plugin/
 share/vim/${P}/pack/dist/opt/termdebug/plugin/termdebug.vim
 share/vim/${P}/plugin/
 share/vim/${P}/plugin/README.txt
-share/vim/${P}/plugin/colorresp.vim
 share/vim/${P}/plugin/getscriptPlugin.vim
 share/vim/${P}/plugin/gzip.vim
 share/vim/${P}/plugin/logiPat.vim
@@ -2062,6 +2066,7 @@ share/vim/${P}/syntax/cmod.vim
 share/vim/${P}/syntax/cmusrc.vim
 share/vim/${P}/syntax/cobol.vim
 share/vim/${P}/syntax/coco.vim
+share/vim/${P}/syntax/codeowners.vim
 share/vim/${P}/syntax/colortest.vim
 share/vim/${P}/syntax/conaryrecipe.vim
 share/vim/${P}/syntax/conf.vim
@@ -2280,6 +2285,7 @@ share/vim/${P}/syntax/just.vim
 share/vim/${P}/syntax/karel.vim
 share/vim/${P}/syntax/kconfig.vim
 share/vim/${P}/syntax/kdl.vim
+share/vim/${P}/syntax/kitty.vim
 share/vim/${P}/syntax/kivy.vim
 share/vim/${P}/syntax/kix.vim
 share/vim/${P}/syntax/kotlin.vim
@@ -2309,6 +2315,7 @@ share/vim/${P}/syntax/litestep.vim
 share/vim/${P}/syntax/livebook.vim
 share/vim/${P}/syntax/lnk.vim
 share/vim/${P}/syntax/lnkmap.vim
+share/vim/${P}/syntax/log.vim
 share/vim/${P}/syntax/loginaccess.vim
 share/vim/${P}/syntax/logindefs.vim
 share/vim/${P}/syntax/logtalk.vim
@@ -2398,6 +2405,7 @@ share/vim/${P}/syntax/nosyntax.vim
 share/vim/${P}/syntax/nqc.vim
 share/vim/${P}/syntax/nroff.vim
 share/vim/${P}/syntax/nsis.vim
+share/vim/${P}/syntax/nu.vim
 share/vim/${P}/syntax/obj.vim
 share/vim/${P}/syntax/objc.vim
 share/vim/${P}/syntax/objcpp.vim
@@ -2436,6 +2444,7 @@ share/vim/${P}/syntax/pike.vim
 share/vim/${P}/syntax/pilrc.vim
 share/vim/${P}/syntax/pine.vim
 share/vim/${P}/syntax/pinfo.vim
+share/vim/${P}/syntax/pkl.vim
 share/vim/${P}/syntax/plaintex.vim
 share/vim/${P}/syntax/pli.vim
 share/vim/${P}/syntax/plm.vim
