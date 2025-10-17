@@ -1,14 +1,8 @@
 COMMENT=	module for fast object serialization similar to bencode
 
-GH_ACCOUNT=	aresch
-GH_PROJECT=	rencode
-GH_COMMIT=	572ff74586d9b1daab904c6f7f7009ce0143bb75
-
-MODPY_DISTV=	1.0.6
+MODPY_DISTV=	1.0.8
 DISTNAME=	rencode-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}pl20210810
-
-REVISION=	3
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
 
@@ -18,9 +12,15 @@ HOMEPAGE=	https://github.com/aresch/rencode
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	poetry-core
+MODPY_PI=	Yes
+
 MODPY_TEST_LINK_SO= Yes
 
-BUILD_DEPENDS=	lang/cython
+BUILD_DEPENDS=	devel/py-setuptools \
+		lang/cython
+
+post-extract:
+	cd ${WRKSRC}; mv build.py build_.py
 
 .include <bsd.port.mk>

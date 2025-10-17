@@ -1,0 +1,14 @@
+ihttps://github.com/aresch/rencode/issues/42
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -9,7 +9,7 @@ packages = [{include = "rencode"}]
+ exclude = ['rencode/*.c']
+ 
+ [tool.poetry.build]
+-script = "build.py"
++script = "build_.py"
+ 
+ [tool.poetry.dependencies]
+ python = "^3.9"
