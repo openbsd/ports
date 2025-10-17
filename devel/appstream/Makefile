@@ -7,17 +7,17 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 # https://gitlab.archlinux.org/archlinux/packaging/packages/archlinux-appstream-data/-/blob/main/PKGBUILD
 
 COMMENT-main=		access to machine-readable software metadata
-COMMENT-qt6=		Qt5 interface for AppStream
+COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.1.0
+V=			1.1.1
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
 
-SHARED_LIBS += appstream                 1.2 # 1.1.0
-SHARED_LIBS += appstream-compose         1.1 # 1.1.0
-SHARED_LIBS += AppStreamQt               1.1 # 1.1.0
+SHARED_LIBS += appstream                 1.2 # 1.1.1
+SHARED_LIBS += appstream-compose         1.1 # 1.1.1
+SHARED_LIBS += AppStreamQt               1.1 # 1.1.1
 
 CATEGORIES=		devel
 
