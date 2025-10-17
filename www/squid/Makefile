@@ -37,13 +37,6 @@ USE_GMAKE=	Yes
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-CONFIGURE_ARGS=	--disable-strict-error-checking \
-		--disable-arch-native \
-		--disable-ecap \
-		--disable-esi \
-		--disable-eui \
-		--disable-shared
-
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group
 
@@ -61,38 +54,41 @@ PSEUDO_FLAVORS=	no_ldap
 FLAVORS=	krb5
 FLAVOR?=
 
-CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
+CONFIGURE_ARGS=	--datadir="${PREFIX}/share/squid" \
 		--libexecdir="${PREFIX}/libexec/squid" \
-		--enable-arp-acl \
+		--disable-arch-native \
 		--enable-auth \
 		--enable-delay-pools \
-		--enable-digest \
+		--disable-ecap \
+		--disable-eui \
 		--enable-follow-x-forwarded-for \
 		--enable-forw-via-db \
 		--enable-http-violations \
 		--enable-icap-client \
-		--disable-ident-lookups \
 		--enable-ipv6 \
-		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
-		--enable-ssl \
 		--enable-ssl-crtd \
 		--enable-stacktraces \
+		--enable-storeio="aufs ufs diskd rock" \
+		--disable-strict-error-checking \
 		--enable-translation \
 		--with-openssl \
-		--enable-storeio="aufs ufs diskd rock" \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
 		--with-pidfile="/var/run/squid.pid" \
 		--with-pthreads \
 		--with-swapdir="${LOCALSTATEDIR}/cache"
 
+# ld: error: undefined symbol: lt__PROGRAM__LTX_preloaded_symbols
+CONFIGURE_ARGS+= --disable-shared
+
 # PF transparent support requires access to /dev/pf to retrieve the original
 # source address; ipfw-transparent (which requires divert-to) uses an
 # unprivileged getsockname() call instead.
 CONFIGURE_ARGS+= --disable-pf-transparent \
 		--enable-ipfw-transparent
-# not just defaulting to build all external-acl-helpers as
+
+# list these specifically; if trying to build all external-acl-helpers,
 # kerberos_ldap_group fails
 CONFIGURE_ARGS+= --enable-external-acl-helpers="${EXTERNAL_ACL}"
 
@@ -100,10 +96,9 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 		ac_cv_header_et_com_err_h=false \
 		ac_cv_header_security_pam_appl_h=false
-E=		${TRUEPREFIX}/share/examples/squid
-FAKE_FLAGS=	sysconfdir=$E \
-		DEFAULT_CONFIG_FILE=$E/squid.conf \
-		DEFAULT_MIME_TABLE=$E/mime.conf
+FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/squid \
+		DEFAULT_CONFIG_FILE=${TRUEPREFIX}/share/examples/squid/squid.conf \
+		DEFAULT_MIME_TABLE=${TRUEPREFIX}/share/examples/squid/mime.conf
 TEST_DEPENDS=	devel/cppunit
 
 .if ${FLAVOR:Mkrb5}
@@ -121,7 +116,8 @@ WANTLIB-main+=	${MODHEIMDAL_WANTLIB} \
 CONFIGURE_ARGS+= --with-heimdal-krb5
 CONFIGURE_ENV+= LIB_KRB5_LIBS="-L${LOCALBASE}/heimdal/lib -Wl,-rpath ${LOCALBASE}/heimdal/lib -lgssapi -lkrb5"
 .else
-CONFIGURE_ARGS+= --with-krb5-config=no
+CONFIGURE_ARGS+= --without-mit-krb5 \
+		 --without-heimdal-krb5
 .endif
 
 .include <bsd.port.arch.mk>
