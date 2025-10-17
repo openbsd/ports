@@ -65,9 +65,13 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-# LTO eats too much RAM on riscv64
 .if ${MACHINE_ARCH} != riscv64
+# LTO eats too much RAM on riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
+.else
+# riscv64 JIT code not ready for prime time
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1994624
+CONFIGURE_ARGS +=	--disable-jit
 .endif
 
 # XXX badly formed debug ?
