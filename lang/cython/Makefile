@@ -1,7 +1,6 @@
 COMMENT=	optimising static compiler for Python and Cython
 
-MODPY_DISTV=	3.0.12
-REVISION=	0
+MODPY_DISTV=	3.1.4
 DISTNAME=	cython-${MODPY_DISTV}
 PKGNAME=	py-cython-${MODPY_DISTV}
 CATEGORIES=	lang
