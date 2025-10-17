@@ -2,8 +2,7 @@ COMMENT=	debug and development tools for PHP
 
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
-GH_TAGNAME=	3.4.5
-REVISION=	0
+GH_TAGNAME=	3.4.6
 
 CATEGORIES=	devel
 
@@ -24,6 +23,11 @@ MODPHP_DO_SAMPLE=
 PV=		${MODPHP_VERSION}
 MODULE_NAME=	xdebug
 SUBST_VARS+=	PV MODULE_NAME
+
+# avoid patch changing each release
+post-extract:
+	sed -i '/^; for Xdebug ${GH_TAGNAME}.*do not modify by hand/d' \
+		${WRKSRC}/xdebug.ini
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
