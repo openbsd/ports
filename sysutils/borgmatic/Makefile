@@ -1,10 +1,11 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.0.8
+MODPY_DISTV=	2.0.9
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
+# changelog https://github.com/borgmatic-collective/borgmatic/releases
 HOMEPAGE=	https://torsion.org/borgmatic/
 
 CATEGORIES=	sysutils
