@@ -1,8 +1,7 @@
-MODPY_DISTV =	6.5.1
+MODPY_DISTV =	7.6.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_DISTV}
 CATEGORIES =	multimedia net
-REVISION =	2
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,7 +16,7 @@ MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-certifi \
 		devel/py-isodate \
-		textproc/py-lxml<6 \
+		textproc/py-lxml<7 \
 		devel/py-country \
 		security/py-cryptodome<4 \
 		net/py-socks \
@@ -32,6 +31,7 @@ RUN_DEPENDS +=	graphics/ffmpeg
 TEST_DEPENDS =	devel/py-freezegun \
 		devel/py-mock \
 		devel/py-test-asyncio \
+		devel/py-test-trio \
 		devel/py-test-cov \
 		www/py-requests-mock
 

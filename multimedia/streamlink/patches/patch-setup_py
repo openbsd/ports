@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -64,7 +64,7 @@ data_files = [
-     # man page
-     #  requires pre-built man page file via sphinx (docs-requirements.txt)
+@@ -59,7 +59,7 @@ data_files = [
+     # man page:
+     #  requires the pre-built man page file via sphinx ("docs" dependency group)
      #  `make --directory=docs clean man`
 -    ("share/man/man1", ["docs/_build/man/streamlink.1"]),
 +    ("man/man1", ["docs/_build/man/streamlink.1"]),
  ]
  data_files = [
-     (destdir, [file for file in srcfiles if path.exists(file)])
+     (destdir, [file for file in srcfiles if Path(file).exists()])
