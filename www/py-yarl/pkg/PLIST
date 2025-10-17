@@ -32,7 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/yarl/_query.py
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoters.py
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.py
 @so lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.pyi
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.pyx
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_py.py
 lib/python${MODPY_VERSION}/site-packages/yarl/_url.py

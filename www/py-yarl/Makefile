@@ -1,16 +1,13 @@
 COMMENT =		yet another URL library
 
-MODPY_DISTV =		1.18.0
+MODPY_DISTV =		1.22.0
 DISTNAME =		yarl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		www devel
 
 # https://github.com/aio-libs/yarl
 HOMEPAGE =		https://yarl.readthedocs.org
-
-MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes
