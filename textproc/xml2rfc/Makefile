@@ -2,11 +2,8 @@ COMMENT=	convert memos written in XML to the RFC format
 
 GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
-GH_TAGNAME=	v3.30.2
-#GH_TAGNAME=	v${MODPY_DISTV}
-# bad version numbers in tags;
-# https://github.com/ietf-tools/xml2rfc/issues/1264
-MODPY_DISTV=	3.30.1
+GH_TAGNAME=	v${MODPY_DISTV}
+MODPY_DISTV=	3.31.0
 
 CATEGORIES=	textproc
 
@@ -38,9 +35,16 @@ TEST_DEPENDS=	devel/py-decorator \
 		fonts/noto/fonts \
 		fonts/noto/cjk
 
+post-extract:
+	# fix bad version number in git tag; https://github.com/ietf-tools/xml2rfc/issues/1264
+	@cd ${WRKSRC}; \
+		sed -i.bak "s,^__version__ =.*,__version__ = '${MODPY_DISTV}'," \
+		xml2rfc/__init__.py
+	@cd ${WRKSRC}; diff -u xml2rfc/__init__.py{.bak,} || true
+
 # tests also need network access
 PORTHOME=	${WRKDIR}
-xpre-test:
+pre-test:
 	# hide pkg_resources DeprecationWarnings
 	@ (echo '[pytest]'; \
 	echo 'filterwarnings = ignore:.*pkg_resources.*:DeprecationWarning') \
