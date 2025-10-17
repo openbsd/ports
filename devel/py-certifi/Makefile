@@ -1,6 +1,6 @@
 COMMENT=	TLS CA support for Python, patched to use /etc/ssl/cert.pem
 
-MODPY_DISTV=	2025.8.3
+MODPY_DISTV=	2025.10.5
 DISTNAME=	certifi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel security
