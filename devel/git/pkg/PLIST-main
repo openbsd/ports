@@ -420,8 +420,6 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/git
 share/doc/pkg-readmes/${PKGSTEM}
-share/emacs/
-share/emacs/site-lisp/
 share/git-core/
 share/git-core/templates/
 share/git-core/templates/description
