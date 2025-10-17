@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-ex
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/package.json
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/lib_extension_index_js.59743b9da90d1b8bb0d5.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/remoteEntry.185b344b4ead4fc619dd.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/remoteEntry.bb923b4955cce2e61f56.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/style.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/${MODPY_PYCACHE}/
@@ -274,7 +274,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/100.1d14ca44a3cc8849349f.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1039.3fe94e87219c0ed159d3.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1050.907735cc1f6aec7cf2c1.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1096.4f9e5660ada21f5261d9.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1096.dd4c563e0483cbbeb9c9.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1101.bac978f5a571e6dbdfb8.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1189.c1482e88f0e949753db6.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1208.4b9ab7b231d39ebdbc3f.js
@@ -292,7 +292,6 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1737.a5fc97075f693ec3
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1832.b1ede2fe899bdec88938.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1834.7445ad0c82371ac40737.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1838.839690ff17ec3c532f0a.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1854.a3adb21bb07c26b23d26.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1887.56f83f163a18c61efb16.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1909.7487a09fefbe7f9eabb6.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/1909.7487a09fefbe7f9eabb6.js.LICENSE.txt
@@ -373,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4010.79d13b7a2339da3b
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4053.4945facc348478fd59f4.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4068.9cc41f46f729f2c4369b.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4076.b4d803d8bf1bd6c97854.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4090.c672dc95f66409f269b3.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4090.eec44f90a54aa383426c.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4266.155b468271987c81d948.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4278.28e59e523e9e18c3780c.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4296.721da424585874d0789e.js
@@ -387,6 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4408.f24dd0edf35e0854
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4462.c3c6de84bc9399e0290d.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4484.e1d2565d1a3daa5fe5f1.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4486.8d2f41ae787607b7bf31.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4493.089a4264810379acd1f4.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4528.43328125d98d6cfdfa99.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4579.9a0033bfeaf88fd6e7bd.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/4611.bd2b768223b0cd570834.js
@@ -418,6 +418,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5244.eefac84704ad30f0
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5317.f4bba2e3d0f4fdd088f7.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5318.d5df5c275e925c22d780.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5338.38c32bdfb0695f9b501f.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5348.29c0aa8b2ec46f9b9bbf.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5489.7710426bc179ba430a0e.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5492.44728a640c37a4b4aa0c.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/5521.8d4f6dfc471f500e4311.js
@@ -442,7 +443,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6095.6e79e3bad86e054a
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6145.c422868290460078c013.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6166.2bc9ac8e2156c0701a52.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6170.65d899f43342f1e34bf1.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6180.c5301dd914d68e945d09.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6180.0ac6ae27c14a7be01889.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6261.4e1b423d7871074c80cc.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6275.e99f9312900c481b467d.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6294.b3cb5e16527b9d09b4a2.js
@@ -459,7 +460,6 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6733.2d8d3e01d56d79a5
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6767.4b82d96c237ca7e31bc6.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6831.1df8fa4cabb5b1c19803.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6843.dabcc3c9658bc6ded6d1.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6874.bb2f7fbc6ce56eecc800.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6896.af1d649e0efae70b7b1a.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6926.741390f54d0a4e945d2b.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/6941.465bebbd3d8a024f5f15.js
@@ -515,8 +515,8 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/8ea8791754915a898a31.
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/8ea8dbb1b02e6f730f55.woff
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9023.2ff687d7ff50df3719fc.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9046.99c477ea375dcbb8c7ca.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9085.5a959b5878e7afd8a878.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9085.5a959b5878e7afd8a878.js.LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9085.16e685cf2a0761b40b48.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9085.16e685cf2a0761b40b48.js.LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9094.236f7c2ae78baa2e2fa6.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9123.501219cd782693d6539f.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/9137.179a3c47465e7fb8f067.js
@@ -555,8 +555,8 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/f9217f66874b0c01cd8c.
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/fc6ddf5df402b263cfb1.woff
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/index.html
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/index.out.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/jlab_core.8aca991c1d97720da49a.js
-lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/main.d65d083251e934338191.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/jlab_core.3848fab95c3700a4e3fe.js
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/main.0d23cc96434cb99fef7b.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/package.json
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/style.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/third-party-licenses.json
@@ -868,7 +868,7 @@ share/jupyter/lab/static/
 share/jupyter/lab/static/100.1d14ca44a3cc8849349f.js
 share/jupyter/lab/static/1039.3fe94e87219c0ed159d3.js
 share/jupyter/lab/static/1050.907735cc1f6aec7cf2c1.js
-share/jupyter/lab/static/1096.4f9e5660ada21f5261d9.js
+share/jupyter/lab/static/1096.dd4c563e0483cbbeb9c9.js
 share/jupyter/lab/static/1101.bac978f5a571e6dbdfb8.js
 share/jupyter/lab/static/1189.c1482e88f0e949753db6.js
 share/jupyter/lab/static/1208.4b9ab7b231d39ebdbc3f.js
@@ -886,7 +886,6 @@ share/jupyter/lab/static/1737.a5fc97075f693ec36fe6.js
 share/jupyter/lab/static/1832.b1ede2fe899bdec88938.js
 share/jupyter/lab/static/1834.7445ad0c82371ac40737.js
 share/jupyter/lab/static/1838.839690ff17ec3c532f0a.js
-share/jupyter/lab/static/1854.a3adb21bb07c26b23d26.js
 share/jupyter/lab/static/1887.56f83f163a18c61efb16.js
 share/jupyter/lab/static/1909.7487a09fefbe7f9eabb6.js
 share/jupyter/lab/static/1909.7487a09fefbe7f9eabb6.js.LICENSE.txt
@@ -967,7 +966,7 @@ share/jupyter/lab/static/4010.79d13b7a2339da3b512a.js
 share/jupyter/lab/static/4053.4945facc348478fd59f4.js
 share/jupyter/lab/static/4068.9cc41f46f729f2c4369b.js
 share/jupyter/lab/static/4076.b4d803d8bf1bd6c97854.js
-share/jupyter/lab/static/4090.c672dc95f66409f269b3.js
+share/jupyter/lab/static/4090.eec44f90a54aa383426c.js
 share/jupyter/lab/static/4266.155b468271987c81d948.js
 share/jupyter/lab/static/4278.28e59e523e9e18c3780c.js
 share/jupyter/lab/static/4296.721da424585874d0789e.js
@@ -981,6 +980,7 @@ share/jupyter/lab/static/4408.f24dd0edf35e08548967.js
 share/jupyter/lab/static/4462.c3c6de84bc9399e0290d.js
 share/jupyter/lab/static/4484.e1d2565d1a3daa5fe5f1.js
 share/jupyter/lab/static/4486.8d2f41ae787607b7bf31.js
+share/jupyter/lab/static/4493.089a4264810379acd1f4.js
 share/jupyter/lab/static/4528.43328125d98d6cfdfa99.js
 share/jupyter/lab/static/4579.9a0033bfeaf88fd6e7bd.js
 share/jupyter/lab/static/4611.bd2b768223b0cd570834.js
@@ -1012,6 +1012,7 @@ share/jupyter/lab/static/5244.eefac84704ad30f00af3.js
 share/jupyter/lab/static/5317.f4bba2e3d0f4fdd088f7.js
 share/jupyter/lab/static/5318.d5df5c275e925c22d780.js
 share/jupyter/lab/static/5338.38c32bdfb0695f9b501f.js
+share/jupyter/lab/static/5348.29c0aa8b2ec46f9b9bbf.js
 share/jupyter/lab/static/5489.7710426bc179ba430a0e.js
 share/jupyter/lab/static/5492.44728a640c37a4b4aa0c.js
 share/jupyter/lab/static/5521.8d4f6dfc471f500e4311.js
@@ -1036,7 +1037,7 @@ share/jupyter/lab/static/6095.6e79e3bad86e054aa8c8.js
 share/jupyter/lab/static/6145.c422868290460078c013.js
 share/jupyter/lab/static/6166.2bc9ac8e2156c0701a52.js
 share/jupyter/lab/static/6170.65d899f43342f1e34bf1.js
-share/jupyter/lab/static/6180.c5301dd914d68e945d09.js
+share/jupyter/lab/static/6180.0ac6ae27c14a7be01889.js
 share/jupyter/lab/static/6261.4e1b423d7871074c80cc.js
 share/jupyter/lab/static/6275.e99f9312900c481b467d.js
 share/jupyter/lab/static/6294.b3cb5e16527b9d09b4a2.js
@@ -1053,7 +1054,6 @@ share/jupyter/lab/static/6733.2d8d3e01d56d79a52e7e.js.LICENSE.txt
 share/jupyter/lab/static/6767.4b82d96c237ca7e31bc6.js
 share/jupyter/lab/static/6831.1df8fa4cabb5b1c19803.js
 share/jupyter/lab/static/6843.dabcc3c9658bc6ded6d1.js
-share/jupyter/lab/static/6874.bb2f7fbc6ce56eecc800.js
 share/jupyter/lab/static/6896.af1d649e0efae70b7b1a.js
 share/jupyter/lab/static/6926.741390f54d0a4e945d2b.js
 share/jupyter/lab/static/6941.465bebbd3d8a024f5f15.js
@@ -1109,8 +1109,8 @@ share/jupyter/lab/static/8ea8791754915a898a31.woff2
 share/jupyter/lab/static/8ea8dbb1b02e6f730f55.woff
 share/jupyter/lab/static/9023.2ff687d7ff50df3719fc.js
 share/jupyter/lab/static/9046.99c477ea375dcbb8c7ca.js
-share/jupyter/lab/static/9085.5a959b5878e7afd8a878.js
-share/jupyter/lab/static/9085.5a959b5878e7afd8a878.js.LICENSE.txt
+share/jupyter/lab/static/9085.16e685cf2a0761b40b48.js
+share/jupyter/lab/static/9085.16e685cf2a0761b40b48.js.LICENSE.txt
 share/jupyter/lab/static/9094.236f7c2ae78baa2e2fa6.js
 share/jupyter/lab/static/9123.501219cd782693d6539f.js
 share/jupyter/lab/static/9137.179a3c47465e7fb8f067.js
@@ -1149,8 +1149,8 @@ share/jupyter/lab/static/f9217f66874b0c01cd8c.woff
 share/jupyter/lab/static/fc6ddf5df402b263cfb1.woff
 share/jupyter/lab/static/index.html
 share/jupyter/lab/static/index.out.js
-share/jupyter/lab/static/jlab_core.8aca991c1d97720da49a.js
-share/jupyter/lab/static/main.d65d083251e934338191.js
+share/jupyter/lab/static/jlab_core.3848fab95c3700a4e3fe.js
+share/jupyter/lab/static/main.0d23cc96434cb99fef7b.js
 share/jupyter/lab/static/package.json
 share/jupyter/lab/static/style.js
 share/jupyter/lab/static/third-party-licenses.json
