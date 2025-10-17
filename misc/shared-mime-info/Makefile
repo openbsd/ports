@@ -45,18 +45,24 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
-CONFIGURE_ARGS=		-Dxdgmime-path=${XDGMIME_WRKBUILD}
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}"
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS=		-Dxdgmime-path=${XDGMIME_WRKBUILD}
+.endif
 
 pre-configure:
 	sed -i 's|/usr/local|${PREFIX}|g' ${WRKSRC}/src/update-mime-database.cpp
 	${SUBST_CMD} ${WRKSRC}/data/freedesktop.org.xml.in
 
+.if ${PROPERTIES:Mclang}
 	${INSTALL_DATA_DIR} ${XDGMIME_WRKBUILD}
 	cd ${XDGMIME_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson setup \
 			${MODMESON_CONFIGURE_ARGS} ${XDGMIME_WRKSRC} \
 			${XDGMIME_WRKBUILD} && \
 		${LOCALBASE}/bin/meson compile -C ${XDGMIME_WRKBUILD} -v -j ${MAKE_JOBS}
+.endif
 
 .include <bsd.port.mk>
