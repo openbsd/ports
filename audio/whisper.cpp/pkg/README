@@ -3,11 +3,25 @@
 +-------------------------------------------------------------------------------
 
 whisper.cpp requires use of an AI model for operation. This package
-includes a base model for English transcription; others are available
-by using the bundled download script:
+bundles a base model for transcription that was trained on English
+source material (ggml-base.en).
 
-For example, to fetch the multilingual base model:
-$ whisper.cpp-download-ggml-model base
+Other models provide higher accuracy at the expense of increased use
+of resources, and there's a choice of multilingual or English-only
+source material (for the smaller models, English-only tends to give
+better results on English input - for medium/large, multilingual
+may work better - test with your typical source material).
+
+A download script, whisper.cpp-download-ggml-model, is provided.
+
+To list available downloads:
+$ whisper.cpp-download-ggml-model
+
+To fetch the multilingual medium model:
+$ whisper.cpp-download-ggml-model medium
 
 Files fetched in this way can be used by passing the -m flag:
-$ whisper-cli -m ggml-base.bin -f {sample}.wav
+$ whisper-cli -m ggml-base.bin -t {threads} -f {sample}.wav
+
+whisper-cli defaults to English; specify a language (fr, cy,  eu, ...)
+or "auto" with the -l flag. See https://whisper-api.com/docs/languages/

@@ -9,6 +9,7 @@ lib/cmake/whisper/whisper-config.cmake
 lib/cmake/whisper/whisper-version.cmake
 @lib lib/libwhisper.so.${LIBwhisper_VERSION}
 lib/pkgconfig/whisper.pc
+@bin sbin/whisper-server
 share/doc/pkg-readmes/${PKGSTEM}
 share/whisper.cpp/
 share/whisper.cpp/ggml-base.en.bin
