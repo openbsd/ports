@@ -1,6 +1,6 @@
 COMMENT=	JSON referencing in Python
 
-MODPY_DISTV=	0.36.2
+MODPY_DISTV=	0.37.0
 DISTNAME=	referencing-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
