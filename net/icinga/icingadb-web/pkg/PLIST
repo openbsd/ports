@@ -153,6 +153,7 @@ icinga-web2/modules/icingadb/library/Icingadb/Common/Icons.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/Links.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/LoadMore.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/Macros.php
+icinga-web2/modules/icingadb/library/Icingadb/Common/Model.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/ObjectInspectionDetail.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/SearchControls.php
 icinga-web2/modules/icingadb/library/Icingadb/Common/ServiceLink.php
