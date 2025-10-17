@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools_scm
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PYTEST_ARGS=	src/automat/_test/
 
 RUN_DEPENDS=	devel/py-attrs \
