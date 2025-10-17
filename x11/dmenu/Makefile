@@ -1,6 +1,6 @@
 COMMENT=		dynamic menu for X11
 
-V=			5.3
+V=			5.4
 DISTNAME=		dmenu-${V}
 
 CATEGORIES=		x11
