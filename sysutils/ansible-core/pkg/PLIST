@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_collection_proxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_collection_proxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_display_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_display_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_event_formatting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_event_formatting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_locking.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_datatag/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_datatag/_tags.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_datatag/_utils.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_datatag/_wrappers.py
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_display_utils.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_errors/
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_errors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_errors/${MODPY_PYCACHE}/
