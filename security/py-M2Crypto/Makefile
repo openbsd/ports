@@ -1,9 +1,8 @@
 COMMENT=	crypto and TLS toolkit for Python
 
-MODPY_DISTV=	0.41.0
-DISTNAME=	M2Crypto-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
-REVISION=	4
+MODPY_DISTV=	0.46.2
+DISTNAME=	m2crypto-${MODPY_DISTV}
+PKGNAME=	py-M2Crypto-${MODPY_DISTV}
 
 CATEGORIES=	security
 

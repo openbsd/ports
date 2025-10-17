@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/DH.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/DSA.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/EC.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/EVP.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/Engine.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/Err.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/RC4.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/RSA.py
@@ -19,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/Checker.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/Cipher.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/Connection.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/Context.py
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/SSLError.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/SSLServer.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/Session.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/TwistedProtocolWrapper.py
@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}Connection
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}Connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}Context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}Context.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}SSLError.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}SSLError.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}SSLServer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}SSLServer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/SSL/${MODPY_PYCACHE}Session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,8 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}EC.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}EC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}EVP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}EVP.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}Engine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}Engine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}Err.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}Err.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}RC4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,9 +99,12 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2xmlrpclib.${
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2xmlrpclib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.pyi
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/callback.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ftpslib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/httpslib.py
@@ -110,12 +113,15 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2crypto.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2xmlrpclib.py
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/py.typed
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/threading.py
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/types.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/util.py
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/LICENCE
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/LICENSES/BSD-2-Clause.txt
 lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/top_level.txt

@@ -1,0 +1,12 @@
+Index: src/SWIG/_evp.i
+--- src/SWIG/_evp.i.orig
++++ src/SWIG/_evp.i
+@@ -364,7 +364,7 @@ PyObject *hmac_init(HMAC_CTX *ctx, PyObject *key, cons
+         return NULL;
+     }
+ 
+-    if (!HMAC_Init(ctx, kbuf.buf, kbuf.len, md)) {
++    if (!HMAC_Init_ex(ctx, kbuf.buf, kbuf.len, md, NULL)) {
+         PyErr_SetString(_evp_err, "HMAC_Init failed");
+         m2_PyBuffer_Release(key, &kbuf);
+         return NULL;

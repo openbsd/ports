@@ -11,8 +11,8 @@ Index: src/SWIG/_lib11_compat.i
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
  
  #include <string.h>
- #include <openssl/engine.h>
-@@ -24,6 +24,8 @@ static void *CRYPTO_zalloc(size_t num, const char *fil
+ 
+@@ -23,6 +23,8 @@ static void *CRYPTO_zalloc(size_t num, const char *fil
        return ret;
  }
  
