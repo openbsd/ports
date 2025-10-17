@@ -13,4 +13,8 @@ rc_reload() {
 	${daemon} ${daemon_flags} -k reconfigure
 }
 
+rc_configtest() {
+	${daemon} ${daemon_flags} -k parse
+}
+
 rc_cmd $1
