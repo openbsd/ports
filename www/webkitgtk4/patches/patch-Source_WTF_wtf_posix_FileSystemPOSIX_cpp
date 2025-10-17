@@ -1,7 +1,7 @@
 Index: Source/WTF/wtf/posix/FileSystemPOSIX.cpp
 --- Source/WTF/wtf/posix/FileSystemPOSIX.cpp.orig
 +++ Source/WTF/wtf/posix/FileSystemPOSIX.cpp
-@@ -203,7 +203,11 @@ std::optional<WallTime> fileCreationTime(const String&
+@@ -116,7 +116,11 @@ std::optional<WallTime> fileCreationTime(const String&
      if (stat(fsRep.data(), &fileInfo) == -1)
          return std::nullopt;
  

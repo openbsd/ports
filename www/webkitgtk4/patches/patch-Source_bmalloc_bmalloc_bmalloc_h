@@ -1,0 +1,12 @@
+Index: Source/bmalloc/bmalloc/bmalloc.h
+--- Source/bmalloc/bmalloc/bmalloc.h.orig
++++ Source/bmalloc/bmalloc/bmalloc.h
+@@ -210,7 +210,7 @@ inline size_t availableMemory()
+     return bmalloc::availableMemory();
+ }
+     
+-#if BPLATFORM(IOS_FAMILY) || BOS(LINUX) || BOS(FREEBSD)
++#if BPLATFORM(IOS_FAMILY) || BOS(LINUX) || BOS(FREEBSD) || BOS(OPENBSD)
+ inline size_t memoryFootprint()
+ {
+     return bmalloc::memoryFootprint();

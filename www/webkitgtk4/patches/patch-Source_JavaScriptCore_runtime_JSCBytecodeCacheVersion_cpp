@@ -7,8 +7,8 @@ Index: Source/JavaScriptCore/runtime/JSCBytecodeCacheVersion.cpp
          }
          cacheVersion.construct(0);
          dataLogLnIf(JSCBytecodeCacheVersionInternal::verbose, "Failed to get UUID for JavaScriptCore framework");
--#elif OS(UNIX) && !PLATFORM(PLAYSTATION)
-+#elif OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(OPENBSD)
+-#elif OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(HAIKU)
++#elif OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(HAIKU) && !OS(OPENBSD)
          auto result = ([&] -> std::optional<uint32_t> {
              Dl_info info { };
              if (!dladdr(jsFunctionAddr, &info))

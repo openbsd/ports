@@ -4,7 +4,7 @@ Hunk 2: https://bugs.webkit.org/show_bug.cgi?id=129963
 Index: Source/WTF/wtf/PlatformEnable.h
 --- Source/WTF/wtf/PlatformEnable.h.orig
 +++ Source/WTF/wtf/PlatformEnable.h
-@@ -646,7 +646,7 @@
+@@ -651,7 +651,7 @@
  
  #if CPU(RISCV64)
  #undef ENABLE_WEBASSEMBLY
@@ -13,7 +13,7 @@ Index: Source/WTF/wtf/PlatformEnable.h
  #undef ENABLE_WEBASSEMBLY_OMGJIT
  #define ENABLE_WEBASSEMBLY_OMGJIT 0
  #undef ENABLE_WEBASSEMBLY_BBQJIT
-@@ -696,7 +696,7 @@
+@@ -701,7 +701,7 @@
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  
  /* Enable the DFG JIT on X86 and X86_64. */

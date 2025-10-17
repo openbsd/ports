@@ -1,0 +1,22 @@
+Index: Source/bmalloc/libpas/src/libpas/pas_thread_local_cache.c
+--- Source/bmalloc/libpas/src/libpas/pas_thread_local_cache.c.orig
++++ Source/bmalloc/libpas/src/libpas/pas_thread_local_cache.c
+@@ -49,7 +49,7 @@
+ #if PAS_OS(DARWIN)
+ #include <mach/thread_act.h>
+ #endif
+-#if PAS_PLATFORM(PLAYSTATION)
++#if PAS_PLATFORM(PLAYSTATION) || PAS_OS(OPENBSD)
+ #include <pthread_np.h>
+ #endif
+ 
+@@ -220,6 +220,9 @@ static void dump_thread_diagnostics(pthread_t thread)
+ #endif
+ #if PAS_PLATFORM(PLAYSTATION)
+     getname_result = pthread_get_name_np(thread, thread_name);
++#elif PAS_OS(OPENBSD)
++    pthread_get_name_np(thread, thread_name, sizeof(thread_name));
++    getname_result = 0;
+ #else
+     getname_result = pthread_getname_np(thread, thread_name, sizeof(thread_name));
+ #endif

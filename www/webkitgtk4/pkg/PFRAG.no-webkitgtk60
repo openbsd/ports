@@ -242,6 +242,7 @@ share/doc/webkit2gtk-${API}/const.EDITING_COMMAND_UNDO.html
 share/doc/webkit2gtk-${API}/const.MAJOR_VERSION.html
 share/doc/webkit2gtk-${API}/const.MICRO_VERSION.html
 share/doc/webkit2gtk-${API}/const.MINOR_VERSION.html
+share/doc/webkit2gtk-${API}/contributing.html
 share/doc/webkit2gtk-${API}/ctor.ApplicationInfo.new.html
 share/doc/webkit2gtk-${API}/ctor.ContextMenu.new.html
 share/doc/webkit2gtk-${API}/ctor.ContextMenu.new_with_items.html
@@ -958,6 +959,7 @@ share/doc/webkit2gtk-${API}/method.WebView.get_session_state.html
 share/doc/webkit2gtk-${API}/method.WebView.get_settings.html
 share/doc/webkit2gtk-${API}/method.WebView.get_snapshot.html
 share/doc/webkit2gtk-${API}/method.WebView.get_snapshot_finish.html
+share/doc/webkit2gtk-${API}/method.WebView.get_theme_color.html
 share/doc/webkit2gtk-${API}/method.WebView.get_title.html
 share/doc/webkit2gtk-${API}/method.WebView.get_tls_info.html
 share/doc/webkit2gtk-${API}/method.WebView.get_uri.html
@@ -1206,6 +1208,7 @@ share/doc/webkit2gtk-${API}/property.WebView.microphone-capture-state.html
 share/doc/webkit2gtk-${API}/property.WebView.page-id.html
 share/doc/webkit2gtk-${API}/property.WebView.related-view.html
 share/doc/webkit2gtk-${API}/property.WebView.settings.html
+share/doc/webkit2gtk-${API}/property.WebView.theme-color.html
 share/doc/webkit2gtk-${API}/property.WebView.title.html
 share/doc/webkit2gtk-${API}/property.WebView.uri.html
 share/doc/webkit2gtk-${API}/property.WebView.user-content-manager.html

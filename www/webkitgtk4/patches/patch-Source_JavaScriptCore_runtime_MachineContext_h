@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -182,6 +182,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -177,6 +177,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -26,7 +26,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  #if CPU(X86_64)
-@@ -305,6 +323,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
+@@ -294,6 +312,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -51,7 +51,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -467,6 +503,24 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -452,6 +488,24 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -76,7 +76,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -655,6 +709,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -624,6 +678,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -101,7 +101,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -712,6 +784,24 @@ inline void* wasmInstancePointer(const mcontext_t& mac
+@@ -681,6 +753,24 @@ inline void* wasmInstancePointer(const mcontext_t& mac
  #error Unknown Architecture
  #endif
  
@@ -126,7 +126,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -830,6 +920,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+@@ -794,6 +884,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
  #elif CPU(ARM64)
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_X4]);

@@ -5,24 +5,24 @@ USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
 BROKEN-arm =		JavaScriptCore/runtime/MachineContext.h, various sigcontext-related
+BROKEN-i386 =		max datasize on i386 is too low
 
 PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.48.7
+V =			2.50.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     4.2
-SHARED_LIBS +=  webkit2gtk-${API}            4.2
-SHARED_LIBS +=	webkitgtk-6.0                0.4
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.3
+SHARED_LIBS +=  webkit2gtk-${API}            4.3
+SHARED_LIBS +=	webkitgtk-6.0                0.5
 
 CATEGORIES =		www
 
@@ -42,11 +42,11 @@ WANTLIB += flite_cmulex flite_usenglish fontconfig freetype gbm
 WANTLIB += gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gstallocators-1.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gsttranscoder-1.0 gstvideo-1.0
-WANTLIB += harfbuzz harfbuzz-icu hyphen icudata icui18n icuuc
-WANTLIB += intl jpeg jxl lcms2 m pango-1.0 pangocairo-1.0 png
-WANTLIB += secret-1 sqlite3 tasn1 wayland-client wayland-egl wayland-server
-WANTLIB += webp webpdemux webpmux woff2dec xml2 xslt z
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
+WANTLIB += hyphen icudata icui18n icuuc intl jpeg jxl lcms2 m
+WANTLIB += pango-1.0 pangocairo-1.0 png secret-1 sqlite3 tasn1
+WANTLIB += wayland-client wayland-egl wayland-server webp webpdemux
+WANTLIB += webpmux woff2dec xml2 xslt z
 
 SITES =			https://webkitgtk.org/releases/
 
@@ -81,7 +81,6 @@ LIB_DEPENDS =		archivers/woff2 \
 			graphics/libjxl \
 			graphics/libwebp \
 			multimedia/gstreamer1/plugins-base \
-			multimedia/gstreamer1/plugins-bad \
 			textproc/enchant2 \
 			textproc/hyphen \
 			textproc/libxslt \
@@ -120,23 +119,27 @@ CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
     ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "mips64" && \
-    ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "riscv64"
+    ${MACHINE_ARCH} != "mips64el"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
 .endif
 
-.if ${MACHINE_ARCH} == riscv64
-# WEBASSEMBLY and FTL_JIT need at least one of OMGJIT/BBQJIT
-# Check patches/patch-Source_WTF_wtf_PlatformEnable_h
-CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=OFF
-CONFIGURE_ARGS +=	-DENABLE_FTL_JIT=OFF
+# XXX when riscv64 supports JIT
+#.if ${MACHINE_ARCH} == riscv64
+## WEBASSEMBLY and FTL_JIT need at least one of OMGJIT/BBQJIT
+## Check patches/patch-Source_WTF_wtf_PlatformEnable_h
+#CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=OFF
+#CONFIGURE_ARGS +=	-DENABLE_FTL_JIT=OFF
+#.endif
+
+# we don't want an allocation of 1GB, it's above the "default" class ulimit;
+# see Source/JavaScriptCore/jit/ExecutableAllocator.cpp for default values
+.if ${MACHINE_ARCH} == "amd64"
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=512
 .endif
 
-# we don't want an allocation of 1GB, it's above the "default" class ulimit
-.if ${MACHINE_ARCH} == "amd64"
-CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=384
-.endif
+# see Source/JavaScriptCore/runtime/StructureID.h for default values
 CXXFLAGS +=		-DSTRUCTURE_HEAP_ADDRESS_SIZE_IN_MB=256
 
 # X11/Xlib.h

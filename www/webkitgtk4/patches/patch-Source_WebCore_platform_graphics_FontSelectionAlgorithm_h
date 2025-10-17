@@ -16,7 +16,7 @@ Index: Source/WebCore/platform/graphics/FontSelectionAlgorithm.h
  
      // Since floats have 23 mantissa bits, every value can be represented losslessly.
      constexpr operator float() const;
-@@ -108,7 +112,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
+@@ -110,7 +114,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
      return { std::numeric_limits<BackingType>::min(), RawTag::RawTag };
  }
  

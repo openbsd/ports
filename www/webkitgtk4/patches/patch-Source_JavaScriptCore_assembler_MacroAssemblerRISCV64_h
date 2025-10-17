@@ -15,7 +15,7 @@ Date: Mon, 11 Nov 2024 00:56:40 +0800
 Index: Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
 --- Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h.orig
 +++ Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
-@@ -171,6 +171,14 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
+@@ -173,6 +173,14 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
      static constexpr RegisterID framePointerRegister = RISCV64Registers::fp;
      static constexpr RegisterID linkRegister = RISCV64Registers::ra;
  

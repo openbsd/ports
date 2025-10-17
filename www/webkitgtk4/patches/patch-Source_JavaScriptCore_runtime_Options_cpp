@@ -9,8 +9,8 @@ Index: Source/JavaScriptCore/runtime/Options.cpp
      return std::nullopt;
  }
  
--#if CPU(ADDRESS64) || OS(DARWIN)
-+#if CPU(ADDRESS64) || OS(DARWIN) || OS(OPENBSD)
+-#if CPU(ADDRESS64) || OS(DARWIN) || OS(HAIKU)
++#if CPU(ADDRESS64) || OS(DARWIN) || OS(HAIKU) || OS(OPENBSD)
  template<>
  std::optional<OptionsStorage::Size> parse(const char* string)
  {
@@ -18,8 +18,8 @@ Index: Source/JavaScriptCore/runtime/Options.cpp
          return value;
      return std::nullopt;
  }
--#endif // CPU(ADDRESS64) || OS(DARWIN)
-+#endif // CPU(ADDRESS64) || OS(DARWIN) || OS(OPENBSD)
+-#endif // CPU(ADDRESS64) || OS(DARWIN) || OS(HAIKU)
++#endif // CPU(ADDRESS64) || OS(DARWIN) || OS(HAIKU) || OS(OPENBSD)
  
  template<>
  std::optional<OptionsStorage::Double> parse(const char* string)

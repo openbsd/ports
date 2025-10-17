@@ -1,0 +1,17 @@
+Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
+--- Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp.orig
++++ Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.cpp
+@@ -88,6 +88,13 @@ OptionSet<RendererBufferTransportMode> AcceleratedBack
+         if (disableDMABuf && g_strcmp0(disableDMABuf, "0"))
+             return;
+ 
++/* no dma-buf on OpenBSD but keep the opportunity to set the variable to "0" to
++   test potential future support */
++#if defined(__OpenBSD__)
++        if (!disableDMABuf)
++            return;
++#endif
++
+         const char* platformExtensions = eglQueryString(nullptr, EGL_EXTENSIONS);
+         if (!GLContext::isExtensionSupported(platformExtensions, "EGL_KHR_platform_gbm")
+             && !GLContext::isExtensionSupported(platformExtensions, "EGL_MESA_platform_surfaceless")) {

@@ -1,0 +1,12 @@
+Index: Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c
+--- Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c.orig
++++ Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.c
+@@ -68,6 +68,8 @@ void pas_committed_pages_vector_construct(pas_committe
+         if (result && (mem_info.State & MEM_COMMIT))
+             vector->raw_data[i] = (unsigned char) 1;
+     }
++#elif PAS_OS(OPENBSD)
++    /* no mincore on OpenBSD */
+ #else
+     PAS_SYSCALL(mincore(object, size, vector->raw_data));
+ #endif

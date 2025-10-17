@@ -3,7 +3,7 @@ Fix build on i386.
 Index: Source/JavaScriptCore/llint/LowLevelInterpreter.asm
 --- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig
 +++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm
-@@ -2955,6 +2955,13 @@ _wasm_ipint_call_return_location_wide16:
+@@ -2980,6 +2980,13 @@ _wasm_ipint_call_return_location_wide16:
  _wasm_ipint_call_return_location_wide32:
      crash()
  

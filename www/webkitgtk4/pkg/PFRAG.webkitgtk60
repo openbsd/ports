@@ -114,6 +114,7 @@ share/doc/webkitgtk-${API}/const.EDITING_COMMAND_UNDO.html
 share/doc/webkitgtk-${API}/const.MAJOR_VERSION.html
 share/doc/webkitgtk-${API}/const.MICRO_VERSION.html
 share/doc/webkitgtk-${API}/const.MINOR_VERSION.html
+share/doc/webkitgtk-${API}/contributing.html
 share/doc/webkitgtk-${API}/ctor.ApplicationInfo.new.html
 share/doc/webkitgtk-${API}/ctor.ContextMenu.new.html
 share/doc/webkitgtk-${API}/ctor.ContextMenu.new_with_items.html
@@ -764,6 +765,7 @@ share/doc/webkitgtk-${API}/method.WebView.get_session_state.html
 share/doc/webkitgtk-${API}/method.WebView.get_settings.html
 share/doc/webkitgtk-${API}/method.WebView.get_snapshot.html
 share/doc/webkitgtk-${API}/method.WebView.get_snapshot_finish.html
+share/doc/webkitgtk-${API}/method.WebView.get_theme_color.html
 share/doc/webkitgtk-${API}/method.WebView.get_title.html
 share/doc/webkitgtk-${API}/method.WebView.get_tls_info.html
 share/doc/webkitgtk-${API}/method.WebView.get_uri.html
@@ -977,6 +979,7 @@ share/doc/webkitgtk-${API}/property.WebView.network-session.html
 share/doc/webkitgtk-${API}/property.WebView.page-id.html
 share/doc/webkitgtk-${API}/property.WebView.related-view.html
 share/doc/webkitgtk-${API}/property.WebView.settings.html
+share/doc/webkitgtk-${API}/property.WebView.theme-color.html
 share/doc/webkitgtk-${API}/property.WebView.title.html
 share/doc/webkitgtk-${API}/property.WebView.uri.html
 share/doc/webkitgtk-${API}/property.WebView.user-content-manager.html

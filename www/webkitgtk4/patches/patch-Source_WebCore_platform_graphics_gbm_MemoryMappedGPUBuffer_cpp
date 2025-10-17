@@ -1,0 +1,31 @@
+Index: Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
+--- Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp.orig
++++ Source/WebCore/platform/graphics/gbm/MemoryMappedGPUBuffer.cpp
+@@ -35,7 +35,9 @@
+ #include "PlatformDisplay.h"
+ #include <epoxy/egl.h>
+ #include <fcntl.h>
++#ifdef __linux__
+ #include <linux/dma-buf.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <wtf/SafeStrerror.h>
+ #include <wtf/StdLibExtras.h>
+@@ -342,6 +344,7 @@ std::unique_ptr<MemoryMappedGPUBuffer::AccessScope> Me
+ 
+ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCall(OptionSet<DMABufSyncFlag> flags)
+ {
++#ifdef __linux__
+     constexpr unsigned maxRetries = 10;
+ 
+     struct dma_buf_sync sync;
+@@ -371,6 +374,9 @@ bool MemoryMappedGPUBuffer::performDMABufSyncSystemCal
+     }
+ 
+     return true;
++#else
++    return false;
++#endif
+ }
+ 
+ } // namespace WebCore

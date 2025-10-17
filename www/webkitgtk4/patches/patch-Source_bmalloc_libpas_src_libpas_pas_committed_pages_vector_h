@@ -1,0 +1,12 @@
+Index: Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.h
+--- Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.h.orig
++++ Source/bmalloc/libpas/src/libpas/pas_committed_pages_vector.h
+@@ -56,7 +56,7 @@ static inline bool pas_committed_pages_vector_is_commi
+                                                            size_t page_index)
+ {
+     PAS_ASSERT(page_index < vector->size);
+-#if PAS_OS(LINUX) || PAS_OS(WINDOWS)
++#if PAS_OS(LINUX) || PAS_OS(WINDOWS) || PAS_OS(OPENBSD)
+     return vector->raw_data[page_index];
+ #else
+     return vector->raw_data[page_index] & (MINCORE_REFERENCED |

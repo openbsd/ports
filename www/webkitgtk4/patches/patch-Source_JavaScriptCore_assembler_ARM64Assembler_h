@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/assembler/ARM64Assembler.h
 --- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -3745,6 +3745,8 @@ class ARM64Assembler { (public)
+@@ -3758,6 +3758,8 @@ class ARM64Assembler { (public)
      {
  #if OS(DARWIN)
          sys_icache_invalidate(code, size);

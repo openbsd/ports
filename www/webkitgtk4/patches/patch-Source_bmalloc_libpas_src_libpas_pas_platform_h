@@ -1,0 +1,14 @@
+Index: Source/bmalloc/libpas/src/libpas/pas_platform.h
+--- Source/bmalloc/libpas/src/libpas/pas_platform.h.orig
++++ Source/bmalloc/libpas/src/libpas/pas_platform.h
+@@ -140,6 +140,10 @@
+ #define PAS_OS_FREEBSD 1
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define PAS_OS_OPENBSD 1
++#endif
++
+ #if defined(WIN32) || defined(_WIN32)
+ #define PAS_OS_WINDOWS 1
+ #endif
