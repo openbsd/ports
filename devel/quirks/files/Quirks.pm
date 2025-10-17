@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1752 2025/10/01 19:44:07 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1753 2025/10/17 08:58:43 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1291,6 +1291,9 @@ setup_obsolete_reason(
 	5 => 'libmusicbrainz',
 	5 => 'libunique',
 	3 => 'makefaq',
+# 7.9
+	3 => 'clamnailer',
+	3 => 'clamav-unofficial-sigs',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

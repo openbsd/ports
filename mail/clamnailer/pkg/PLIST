@@ -1,7 +1,0 @@
-@extraunexec rm -rf /var/db/clamnailer/*
-sbin/clamnailer
-@mode 775
-@owner _clamav
-@group _clamav
-@sample /var/db/clamnailer/
-@extra /var/db/clamav/scamnailer.ndb

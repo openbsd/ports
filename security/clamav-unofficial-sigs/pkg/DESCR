@@ -1,3 +1,0 @@
-The clamav-unofficial-sigs script provides a simple way to download, test
-and update third-party signature databases for ClamAV. Various databases
-(primarily for email-borne malware/phishing) are available.

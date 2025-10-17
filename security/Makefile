@@ -26,7 +26,6 @@
      SUBDIR += cgichk
      SUBDIR += chrootuid
      SUBDIR += clamav
-     SUBDIR += clamav-unofficial-sigs
      SUBDIR += clusterssh
      SUBDIR += corkscrew
      SUBDIR += cracklib

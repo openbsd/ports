@@ -17,7 +17,6 @@
      SUBDIR += bogofilter,qdbm
      SUBDIR += bogofilter,sqlite3
      SUBDIR += bulk_mailer
-     SUBDIR += clamnailer
      SUBDIR += clamsmtp
      SUBDIR += claws-mail
      SUBDIR += claws-mail,ldap
