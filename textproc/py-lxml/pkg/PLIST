@@ -56,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_diffcommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_diffcommand.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_difflib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_difflib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_html5builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_html5builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}_setmixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,6 +79,8 @@ lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}soupparser.${
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}usedoctest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}usedoctest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/html/_diffcommand.py
+@so lib/python${MODPY_VERSION}/site-packages/lxml/html/_difflib.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/lxml/html/_difflib.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/_html5builder.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/_setmixin.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/builder.py
