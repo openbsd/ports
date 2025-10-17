@@ -1,7 +1,6 @@
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-8.0.1
-REVISION =		3
+DISTNAME =		zeek-8.0.3
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
