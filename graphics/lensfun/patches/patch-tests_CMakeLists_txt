@@ -1,3 +1,5 @@
+if not found, OpenMP_CXX_FLAGS is set to literal NOTFOUND
+
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt

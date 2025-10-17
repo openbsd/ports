@@ -6,7 +6,7 @@ include/lensfun/
 include/lensfun/lensfun.h
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
 lib/pkgconfig/lensfun.pc
-lib/python${MODPY_VERSION}/site-packages/lensfun-0.3.3-py${MODPY_VERSION}.egg
+lib/python${MODPY_VERSION}/site-packages/lensfun-0.3.4-py${MODPY_VERSION}.egg
 share/doc/lensfun/
 share/doc/lensfun/README.md
 share/doc/lensfun/cc-by-sa-3.0.txt
@@ -47,6 +47,7 @@ share/lensfun/version_1/mil-tamron.xml
 share/lensfun/version_1/mil-tokina.xml
 share/lensfun/version_1/mil-zeiss.xml
 share/lensfun/version_1/misc.xml
+share/lensfun/version_1/om-system.xml
 share/lensfun/version_1/rf-leica.xml
 share/lensfun/version_1/slr-canon.xml
 share/lensfun/version_1/slr-hasselblad.xml

@@ -1,8 +1,9 @@
 COMMENT=	library to adjust for photographic lens characteristics
+
+MODPY_DISTV=	0.3.4
 GH_ACCOUNT=	lensfun
 GH_PROJECT=	lensfun
-GH_TAGNAME=	v0.3.3
-REVISION=	1
+GH_TAGNAME=	v${MODPY_DISTV}
 
 SHARED_LIBS=	lensfun	2.1
 
@@ -14,23 +15,23 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c glib-2.0 m png ${COMPILER_LIBCXX} z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-MODULES=		devel/cmake \
-			lang/python
+MODULES=	devel/cmake \
+		lang/python
 
-MODPY_RUNDEP=		No
+MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=		devel/py-setuptools
+BUILD_DEPENDS=	devel/py-setuptools
 
-LIB_DEPENDS=		devel/glib2 \
-			graphics/png
+LIB_DEPENDS=	devel/glib2 \
+		graphics/png
 
-CONFIGURE_ARGS=		-DBUILD_DOC=No \
-			-DBUILD_LENSTOOL=Yes \
-			-DBUILD_TESTS=Yes
+CONFIGURE_ARGS=	-DBUILD_DOC=No \
+		-DBUILD_LENSTOOL=Yes \
+		-DBUILD_TESTS=Yes
 
-DOC_DIR=		${PREFIX}/share/doc/lensfun
+DOC_DIR=	${PREFIX}/share/doc/lensfun
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
