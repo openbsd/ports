@@ -10,7 +10,7 @@ Index: base/allocator/partition_allocator/partition_alloc.gni
                       !is_hwasan && (is_linux || is_android)
  
  declare_args() {
-@@ -493,7 +493,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -482,7 +482,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

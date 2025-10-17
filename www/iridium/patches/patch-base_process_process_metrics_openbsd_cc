@@ -146,7 +146,7 @@ Index: base/process/process_metrics_openbsd.cc
 +  return false;
 +}
 +
-+bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
++bool GetSystemMemoryInfo(SystemMemoryInfo* meminfo) {
 +  NOTIMPLEMENTED();
 +  return false;
 +}

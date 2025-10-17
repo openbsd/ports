@@ -1,0 +1,12 @@
+Index: content/browser/theme_helper.cc
+--- content/browser/theme_helper.cc.orig
++++ content/browser/theme_helper.cc
+@@ -27,7 +27,7 @@ mojom::UpdateSystemColorInfoParamsPtr MakeUpdateSystem
+     ui::NativeTheme* native_theme) {
+   mojom::UpdateSystemColorInfoParamsPtr params =
+       mojom::UpdateSystemColorInfoParams::New();
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   params->accent_color = native_theme->user_color();
+ #endif
+ 
