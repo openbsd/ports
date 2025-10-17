@@ -5,12 +5,14 @@ building anyway.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -60,7 +60,7 @@ check-style:
+@@ -60,8 +60,8 @@ check-style:
  .PHONY: reindent check-style
  
  # depend on install-all so that downgrade scripts are installed as well
 -check: all install-all
 +check: all
- 	$(MAKE) -C src/test/regress check-full
+ 	# explicetely does not use $(MAKE) to avoid parallelism
+-	make -C src/test/regress check
++	gmake -C src/test/regress check
  
  .PHONY: all check clean install install-downgrades install-all
