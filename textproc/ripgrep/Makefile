@@ -3,8 +3,11 @@ COMMENT =		line oriented search tool using Rust's regex library
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		15.0.0
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
+
+MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
