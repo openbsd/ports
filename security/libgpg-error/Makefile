@@ -1,6 +1,6 @@
 COMMENT=		error codes for GnuPG related software
 
-DISTNAME=		libgpg-error-1.55
+DISTNAME=		libgpg-error-1.56
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 
