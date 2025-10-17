@@ -4,7 +4,7 @@ modified to work before libressl version bump
 Index: openssl-sys/src/handwritten/evp.rs
 --- openssl-sys/src/handwritten/evp.rs.orig
 +++ openssl-sys/src/handwritten/evp.rs
-@@ -475,10 +475,10 @@ cfg_if! {
+@@ -471,10 +471,10 @@ cfg_if! {
  #[cfg(not(osslconf = "OPENSSL_NO_DEPRECATED_3_0"))]
  const_ptr_api! {
      extern "C" {
