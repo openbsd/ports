@@ -1,14 +1,16 @@
 COMMENT =	atom/rss feed reader web application
 
-V =		2.2.12
+V =		2.2.13
 
 MODGO_MODNAME =	miniflux.app/v2
-MODGO_VERSION =	v${V}
+MODGO_VERSION =	v2.2.13-0.20250915235747-10b2b36895dd
 
 DISTNAME =	${MODGO_MODNAME}-${MODGO_VERSION}
 PKGNAME =	miniflux-${V}
 
 CATEGORIES =	net www
+
+HOMEPAGE =	https://miniflux.app/
 
 MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 
@@ -17,9 +19,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
-MODULES =		lang/go
+MODULES =	lang/go
 
-ALL_TARGET =		${MODGO_MODNAME}/...
+ALL_TARGET =	${MODGO_MODNAME}/...
 
 MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Version=${V}
 
