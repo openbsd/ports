@@ -1,0 +1,4 @@
+The ASN.1 to C compiler takes the ASN.1 module files and generates C++
+compatible C source code. That code can be used to serialize the native
+C structures into compact and unambiguous BER/OER/PER/XER-based data
+files, and deserialize the files back.
