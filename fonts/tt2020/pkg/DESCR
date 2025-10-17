@@ -1,0 +1,11 @@
+Most "typewriter" fonts are unrealistic: each instance of a particular
+letter looks identical. In text produced by a real typewriter, characters
+vary with each press of the key.
+
+TT2020 mimics the appearance of typewritten text in a novel way: the font
+contains nine slightly different copies of each glyph, and (when used in a
+modern font layout engine) selects one of these copies in a pseudorandom
+fashion using OpenType's "contextual alternates" feature.
+
+TT2020 is also multilingual, providing Latin, Cyrillic, Greek, and Hebrew
+characters, as well as italic variants.

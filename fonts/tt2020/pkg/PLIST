@@ -1,0 +1,14 @@
+share/fonts/
+@fontdir share/fonts/tt2020/
+share/fonts/tt2020/TT2020Base-Italic.ttf
+share/fonts/tt2020/TT2020Base-Regular.ttf
+share/fonts/tt2020/TT2020StyleB-Italic.ttf
+share/fonts/tt2020/TT2020StyleB-Regular.ttf
+share/fonts/tt2020/TT2020StyleD-Italic.ttf
+share/fonts/tt2020/TT2020StyleD-Regular.ttf
+share/fonts/tt2020/TT2020StyleE-Italic.ttf
+share/fonts/tt2020/TT2020StyleE-Regular.ttf
+share/fonts/tt2020/TT2020StyleF-Regular-ASCII.ttf
+share/fonts/tt2020/TT2020StyleF-Regular.ttf
+share/fonts/tt2020/TT2020StyleG-Regular-ASCII.ttf
+share/fonts/tt2020/TT2020StyleG-Regular.ttf
