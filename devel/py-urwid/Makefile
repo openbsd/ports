@@ -1,6 +1,6 @@
 COMMENT=	console user interface library for python
 
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.0.3
 DISTNAME=	urwid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
