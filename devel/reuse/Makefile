@@ -1,6 +1,6 @@
 COMMENT=	tool for compliance with the REUSE recommendations
 
-MODPY_DISTV=	5.1.1
+MODPY_DISTV=	6.1.2
 DISTNAME=	reuse-${MODPY_DISTV}
 
 CATEGORIES=	devel
@@ -18,13 +18,14 @@ MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/gettext,-tools
 RUN_DEPENDS=	www/py-jinja2>=3.0.0 \
-		devel/py-binaryornot>=0.4.4 \
-		devel/py-boolean.py>=3.8 \
-		textproc/py-license-expression>=1.0 \
-		devel/py-debian>=0.1.34 \
+		textproc/py-license-expression>=21.6.14 \
+		devel/py-debian>=0.1.48 \
 		textproc/py-tomlkit>=0.8 \
-		devel/py-attrs>=21.3 \
-		devel/py-click>=8.0
+		devel/py-attrs>=23.2 \
+		devel/py-click>=8.1 \
+		devel/py-magic>=0.4.12 \
+		textproc/py-charset-normalizer>=2.0.5 \
+		textproc/py-chardet>=3.0.2
 
 TEST_DEPENDS=	devel/py-freezegun
 
