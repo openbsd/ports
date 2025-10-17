@@ -29,6 +29,7 @@
      SUBDIR += arm-none-eabi
      SUBDIR += armips
      SUBDIR += asio
+     SUBDIR += asn1c
      SUBDIR += asm6
      SUBDIR += astyle
      SUBDIR += atf
