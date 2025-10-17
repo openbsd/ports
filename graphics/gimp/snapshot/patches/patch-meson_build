@@ -1,7 +1,18 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1208,7 +1208,7 @@ have_lua_output = have_lua
+@@ -171,6 +171,10 @@ platform_linux = (
+   host_os.contains('linux')
+ )
+ 
++platform_openbsd = (
++  host_os.contains('openbsd')
++)
++
+ platform_windows = (
+   host_os.contains('mingw') or
+   host_os.contains('cygwin') or
+@@ -1127,7 +1131,7 @@ have_lua_output = have_lua
  if have_lua
    have_lua_lgi = false
  
@@ -10,7 +21,7 @@ Index: meson.build
      lua = find_program(lua_bin, required: false)
  
      if lua.found() and meson.can_run_host_binaries()
-@@ -1587,6 +1587,7 @@ conf.set('NO_FD_SET',
+@@ -1487,6 +1491,7 @@ conf.set('NO_FD_SET',
    not platform_windows
    and not cc.compiles('''
      #include <sys/types.h>

@@ -4,7 +4,7 @@ And we don't want to BDEP on egdb.
 Index: tools/in-build-gimp.py
 --- tools/in-build-gimp.py.orig
 +++ tools/in-build-gimp.py
-@@ -31,12 +31,8 @@ try:
+@@ -33,12 +33,8 @@ try:
        subprocess.run(["install_name_tool", "-add_rpath", f"{GIMP_GLOBAL_BUILD_ROOT}/libgimpthumb", binary], check=True)
        subprocess.run(["install_name_tool", "-add_rpath", f"{GIMP_GLOBAL_BUILD_ROOT}/libgimpwidgets", binary], check=True)
  

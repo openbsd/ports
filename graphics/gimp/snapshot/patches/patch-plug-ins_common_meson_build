@@ -1,0 +1,12 @@
+Index: plug-ins/common/meson.build
+--- plug-ins/common/meson.build.orig
++++ plug-ins/common/meson.build
+@@ -164,7 +164,7 @@ if platform_windows
+   common_plugins_list += { 'name': 'file-lnk', }
+ endif
+ 
+-if platform_linux
++if platform_linux or platform_openbsd
+   common_plugins_list += {
+     'name': 'file-desktop-link',
+   }

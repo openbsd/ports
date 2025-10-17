@@ -259,7 +259,6 @@ lib/gimp/
 lib/gimp/${V}/
 lib/gimp/${V}/environ/
 lib/gimp/${V}/environ/default.env
-lib/gimp/${V}/environ/python.env
 lib/gimp/${V}/extensions/
 lib/gimp/${V}/extensions/org.gimp.extension.goat-exercises/
 @bin lib/gimp/${V}/extensions/org.gimp.extension.goat-exercises/goat-exercise-c
@@ -2237,6 +2236,7 @@ share/gimp/${V}/icons/Legacy/scalable/apps/gimp-even-horizontal-gap.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-even-vertical-gap.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-file-manager.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-gegl.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gimp-group-layer.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-lock-alpha-symbolic.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-lock-alpha.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-lock-content-symbolic.svg
@@ -2333,6 +2333,7 @@ share/gimp/${V}/icons/Legacy/scalable/apps/gimp-tool-zoom.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-transform-3d-camera.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-transform-3d-move.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-transform-3d-rotate.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gtk-cancel.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gtk-no.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gtk-ok.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gtk-select-color.svg
