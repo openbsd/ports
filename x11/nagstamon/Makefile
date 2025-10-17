@@ -1,11 +1,11 @@
 COMMENT=	nagios status monitor for the Desktop
 
 MODPY_DISTV=	3.16.2
+REVISION=	1
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
 GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES=	x11 net
 
@@ -20,13 +20,18 @@ MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS+=	security/py-keyring \
 		sysutils/py-psutil
 
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-arrow \
-		security/py-keyring \
-		sysutils/py-psutil \
+RUN_DEPENDS=	devel/desktop-file-utils
+
+# from setup.py requirements; not including optional dbus-python,
+# pysocks, requests plugins
+RUN_DEPENDS +=	devel/py-arrow \
 		www/py-beautifulsoup4 \
-		www/py-requests \
-		x11/py-qt6
+		security/py-keyring \
+		textproc/py-lxml \
+		sysutils/py-psutil \
+		x11/py-qt6 \
+		devel/py-dateutil \
+		www/py-requests
 
 NO_TEST=	Yes
 
