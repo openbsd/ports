@@ -2,6 +2,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
 V=		7.2
+REVISION=	0
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -20,8 +21,8 @@ HOMEPAGE=	https://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-main=	${COMPILER_LIBCXX} c crypto execinfo gmp gnutls hogweed \
-		iconv idn2 intl m nettle p11-kit pthread ssl tasn1 tdb unistring
+WANTLIB-main=	${COMPILER_LIBCXX} \
+		c crypto execinfo m nettle ssl tdb
 
 SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/g}/
 
@@ -41,8 +42,6 @@ EXTERNAL_ACL=	SQL_session file_userip time_quota \
 
 LIB_DEPENDS-main += \
 		databases/tdb \
-		devel/gettext,-runtime \
-		security/gnutls \
 		security/libnettle
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
@@ -72,6 +71,7 @@ CONFIGURE_ARGS=	--datadir="${PREFIX}/share/squid" \
 		--disable-strict-error-checking \
 		--enable-translation \
 		--with-openssl \
+		--without-gnutls \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
 		--with-pidfile="/var/run/squid.pid" \
