@@ -1,9 +1,8 @@
 COMMENT=	helper to test wsgi applications
 
-MODPY_DISTV=	3.0.3
+MODPY_DISTV=	3.0.7
 DISTNAME=	webtest-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	www devel
 
@@ -14,9 +13,8 @@ HOMEPAGE=	https://docs.pylonsproject.org/projects/webtest/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	www/py-waitress \
 		www/py-beautifulsoup4 \
