@@ -1,7 +1,7 @@
 Index: .cargo/config.toml
 --- .cargo/config.toml.orig
 +++ .cargo/config.toml
-@@ -10,3 +10,13 @@ replace-with = "vendored-sources"
+@@ -15,3 +15,13 @@ replace-with = "vendored-sources"
  [source.vendored-sources]
  directory = ".cargo/vendor"
  

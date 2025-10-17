@@ -156,7 +156,6 @@ share/doc/clamav/html/manual/Installing.html
 share/doc/clamav/html/manual/Installing/Add-clamav-user.html
 share/doc/clamav/html/manual/Installing/Community-projects.html
 share/doc/clamav/html/manual/Installing/Docker.html
-share/doc/clamav/html/manual/Installing/Installing-from-source-Unix-old.html
 share/doc/clamav/html/manual/Installing/Installing-from-source-Unix.html
 share/doc/clamav/html/manual/Installing/Installing-from-source-Windows.html
 share/doc/clamav/html/manual/Installing/Packages.html
@@ -198,6 +197,10 @@ share/doc/clamav/html/toc.html
 share/doc/clamav/html/toc.js
 share/doc/clamav/html/tomorrow-night.css
 share/examples/clamav/
+share/examples/clamav/certs/
+@sample ${SYSCONFDIR}/clamav-certs/
+share/examples/clamav/certs/clamav.crt
+@sample ${SYSCONFDIR}/clamav-certs/clamav.crt
 share/examples/clamav/clamav-milter.conf.sample
 @sample ${SYSCONFDIR}/clamav-milter.conf
 share/examples/clamav/clamd.conf.sample

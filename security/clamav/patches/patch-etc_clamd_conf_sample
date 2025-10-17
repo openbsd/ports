@@ -17,9 +17,9 @@ Index: etc/clamd.conf.sample
 -#DatabaseDirectory /var/lib/clamav
 +#DatabaseDirectory /var/db/clamav
  
- # Only load the official signatures published by the ClamAV project.
- # Default: no
-@@ -230,7 +230,7 @@ Example
+ # Path to the ClamAV CA certificates directory for verifying CVD signature
+ # archive digital signatures.
+@@ -266,7 +266,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges

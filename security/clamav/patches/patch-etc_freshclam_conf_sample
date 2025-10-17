@@ -8,9 +8,9 @@ Index: etc/freshclam.conf.sample
 -#DatabaseDirectory /var/lib/clamav
 +#DatabaseDirectory /var/db/clamav
  
- # Path to the log file (make sure it has proper permissions)
- # Default: disabled
-@@ -58,8 +58,8 @@ Example
+ # Path to the ClamAV CA certificates directory for verifying CVD signature
+ # archive digital signatures.
+@@ -72,8 +72,8 @@ Example
  
  # By default when started freshclam drops privileges and switches to the
  # "clamav" user. This directive allows you to change the database owner.
