@@ -1,6 +1,6 @@
 COMMENT=	classes without boilerplate
 
-MODPY_DISTV=	25.3.0
+MODPY_DISTV=	25.4.0
 DISTNAME=	attrs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,7 +16,8 @@ MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
-TEST_DEPENDS=	devel/py-hypothesis \
+TEST_DEPENDS=	devel/py-cloudpickle \
+		devel/py-hypothesis \
 		devel/py-zopeinterface
 
 .include <bsd.port.mk>
