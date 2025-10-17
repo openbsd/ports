@@ -2,8 +2,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.15.0
-REVISION-main =	0
+V =		2.15.1
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
