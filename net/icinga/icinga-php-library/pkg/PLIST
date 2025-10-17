@@ -130,6 +130,7 @@ icinga-php/ipl/vendor/brick/math/src/Internal/Calculator.php
 icinga-php/ipl/vendor/brick/math/src/Internal/Calculator/BcMathCalculator.php
 icinga-php/ipl/vendor/brick/math/src/Internal/Calculator/GmpCalculator.php
 icinga-php/ipl/vendor/brick/math/src/Internal/Calculator/NativeCalculator.php
+icinga-php/ipl/vendor/brick/math/src/Internal/CalculatorRegistry.php
 icinga-php/ipl/vendor/brick/math/src/RoundingMode.php
 icinga-php/ipl/vendor/composer/
 icinga-php/ipl/vendor/composer/ClassLoader.php
@@ -923,7 +924,9 @@ icinga-php/ipl/vendor/symfony/polyfill-php84/Php84.php
 icinga-php/ipl/vendor/symfony/polyfill-php84/Resources/
 icinga-php/ipl/vendor/symfony/polyfill-php84/Resources/stubs/
 icinga-php/ipl/vendor/symfony/polyfill-php84/Resources/stubs/Deprecated.php
+icinga-php/ipl/vendor/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php
 icinga-php/ipl/vendor/symfony/polyfill-php84/bootstrap.php
+icinga-php/ipl/vendor/symfony/polyfill-php84/bootstrap82.php
 icinga-php/ipl/vendor/symfony/polyfill-php84/composer.json
 icinga-php/ipl/vendor/webmozart/
 icinga-php/ipl/vendor/webmozart/assert/
