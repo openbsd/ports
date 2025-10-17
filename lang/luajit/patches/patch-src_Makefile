@@ -1,8 +1,8 @@
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -357,6 +357,10 @@ else
-   ifeq (GNU/kFreeBSD,$(TARGET_SYS))
+@@ -360,6 +360,10 @@ else
+   ifeq (GNU,$(TARGET_SYS))
      TARGET_XLIBS+= -ldl
    endif
 +  ifeq (OpenBSD,$(TARGET_SYS))
@@ -12,7 +12,7 @@ Index: src/Makefile
  endif
  endif
  endif
-@@ -614,10 +618,10 @@ endif
+@@ -621,10 +625,10 @@ endif
  endif
  endif
  

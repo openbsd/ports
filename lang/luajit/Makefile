@@ -1,6 +1,7 @@
 # keep arch-defines.mk LUAJIT_ARCHS in sync
 # bump ports which use PROPERTIES:Mluajit if changing
 ONLY_FOR_ARCHS = aarch64 arm amd64 i386 powerpc
+USE_NOBTCFI-aarch64 = Yes
 #
 # games/tome4 is using embedded copy of luajit
 
@@ -14,10 +15,10 @@ SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 # changes look (because they often are not)."
 GH_ACCOUNT =	LuaJIT
 GH_PROJECT =	LuaJIT
-GH_COMMIT =	871db2c84ecefd70a850e03a6c340214a81739f0
+GH_COMMIT =	25a61a182166fec06f1a1a025eb8fabbb6cf483e
 # epoch time of the commit; easiest found in ${WRKSRC}/.relver of the
 # git-archive tar
-V =		2.1.1753364724
+V =		2.1.1760617492
 
 COMMENT =	just-in-time compiler for Lua
 DISTNAME =	LuaJIT-${V}
@@ -29,8 +30,6 @@ HOMEPAGE =	https://luajit.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-USE_NOBTCFI =	Yes
 
 WANTLIB =	c m
 
@@ -48,6 +47,11 @@ MAKE_FLAGS += \
 	INSTALL_SONAME=libluajit-5.1.so.${LIBluajit-5.1_VERSION} \
 	PREFIX="${PREFIX}" \
 	Q= E=@:
+
+.if ${MACHINE_ARCH} == amd64
+MAKE_FLAGS += \
+	XCFLAGS=-DLUAJIT_ENABLE_CET_BR
+.endif
 
 USE_GMAKE =	Yes
 
