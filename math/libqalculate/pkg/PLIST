@@ -28,6 +28,7 @@ share/locale/nl/LC_MESSAGES/libqalculate.mo
 share/locale/ru/LC_MESSAGES/libqalculate.mo
 share/locale/sv/LC_MESSAGES/libqalculate.mo
 share/locale/zh_CN/LC_MESSAGES/libqalculate.mo
+share/locale/zh_TW/LC_MESSAGES/libqalculate.mo
 share/qalculate/
 share/qalculate/currencies.xml
 share/qalculate/datasets.xml
