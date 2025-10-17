@@ -103,6 +103,8 @@ include/gegl-${API_VERSION}/sc/sc-outline.h
 include/gegl-${API_VERSION}/sc/sc-sample.h
 lib/gegl-${API_VERSION}/
 lib/gegl-${API_VERSION}/dropshadow2.json
+@so lib/gegl-${API_VERSION}/exr-load.so
+@so lib/gegl-${API_VERSION}/exr-save.so
 @so lib/gegl-${API_VERSION}/gegl-common-cxx.so
 @so lib/gegl-${API_VERSION}/gegl-common-gpl3.so
 @so lib/gegl-${API_VERSION}/gegl-common.so
