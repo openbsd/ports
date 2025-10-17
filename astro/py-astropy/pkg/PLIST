@@ -1619,6 +1619,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/${MODPY_PYCACHE}test_vo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/binary2_masked_strings.xml
+lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/binary2_variable_length_char.xml
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/coosys.xml
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/custom_datatype.xml
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/empty_table.xml
@@ -1645,6 +1646,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/timesys_e
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/too_many_columns.xml.gz
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/valid_votable.xml
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/validation.txt
+lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/data/vizier_b2_votable.xml
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/test_converter.py
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/test_coosys.py
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/tests/test_dataorigin.py
