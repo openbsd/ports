@@ -14,9 +14,9 @@ SHA256 (cargo/itoa-1.0.15.tar.gz) = Sl8TuFjI0xTuPo9jkBH3zO/nH5f5blAVH7mR8meSjiw=
 SHA256 (cargo/libc-0.2.175.tar.gz) = aoKuST5Zi6rqUgmAXEm78up96VbVDX2g2hFk+cbShUM=
 SHA256 (cargo/memoffset-0.9.1.tar.gz) = SIAWv65FewNtmWCS9stEhndhHOREnpcM6vQmlSA/IYo=
 SHA256 (cargo/once_cell-1.21.3.tar.gz) = QvXhXJlTxeTMzusuc4KnFkgsNFFTFfewNTK4tOg5PS0=
-SHA256 (cargo/openssl-0.10.73.tar.gz) = hQVzTUbIqx4ZodzjrvWXrYfctMN+cYgjF2m9a9Uc6/g=
+SHA256 (cargo/openssl-0.10.74.tar.gz) = JK0U3UVBImnhow9SrY8GZPD09Kie6P4ow7NScCHrtlQ=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
-SHA256 (cargo/openssl-sys-0.9.109.tar.gz) = kAluLkdjDXi30cIJUtxiH5VxA/i8LINZ7IEpDXUjhXE=
+SHA256 (cargo/openssl-sys-0.9.110.tar.gz) = Cp8Adbo8IbCfjosgJlhLHRjUk4hkjy+788l+qN7O2OI=
 SHA256 (cargo/pem-3.0.5.tar.gz) = OK846EcKyd7jzhuuGvnBZx//xE3f2L0dCjRFvzSajvM=
 SHA256 (cargo/pkg-config-0.3.32.tar.gz) = ft3b0LUtcyshrZpfq1xwTBTNlJ5emh7Fkpok/e0bkEw=
 SHA256 (cargo/portable-atomic-1.11.1.tar.gz) = +EJnsgoW6pGOQ8aohDPC1U+hRckqgRtbBHzL4VNnRIM=
@@ -34,7 +34,7 @@ SHA256 (cargo/target-lexicon-0.13.3.tar.gz) = 339iV3wl4Hg0ZJ/Ds5+v3Fl8CjUn3BxgEp
 SHA256 (cargo/unicode-ident-1.0.19.tar.gz) = 9jpUVIEpETiRBXUSlIba6visVK7kOH/nkGkZ94MMfZ0=
 SHA256 (cargo/unindent-0.2.4.tar.gz) = cmThB/VTzK6HnSH76h1nJKx4Xow7/HYhN5WbWAKCbvM=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
-SHA256 (cryptography-46.0.2.tar.gz) = Ibb8jHGj+aYE8CijKeVWAAnMSjqCi/6l/LqOt2R9iP4=
+SHA256 (cryptography-46.0.3.tar.gz) = qLF0OBBP7QIs50WzYilNnONbTC5FwdlYrUpLAZKF9KE=
 SIZE (cargo/asn1-0.22.0.tar.gz) = 47124
 SIZE (cargo/asn1_derive-0.22.0.tar.gz) = 8953
 SIZE (cargo/autocfg-1.5.0.tar.gz) = 18729
@@ -51,9 +51,9 @@ SIZE (cargo/itoa-1.0.15.tar.gz) = 11231
 SIZE (cargo/libc-0.2.175.tar.gz) = 788728
 SIZE (cargo/memoffset-0.9.1.tar.gz) = 9032
 SIZE (cargo/once_cell-1.21.3.tar.gz) = 34534
-SIZE (cargo/openssl-0.10.73.tar.gz) = 283994
+SIZE (cargo/openssl-0.10.74.tar.gz) = 285425
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
-SIZE (cargo/openssl-sys-0.9.109.tar.gz) = 78247
+SIZE (cargo/openssl-sys-0.9.110.tar.gz) = 80412
 SIZE (cargo/pem-3.0.5.tar.gz) = 18140
 SIZE (cargo/pkg-config-0.3.32.tar.gz) = 21370
 SIZE (cargo/portable-atomic-1.11.1.tar.gz) = 185506
@@ -71,4 +71,4 @@ SIZE (cargo/target-lexicon-0.13.3.tar.gz) = 28498
 SIZE (cargo/unicode-ident-1.0.19.tar.gz) = 47480
 SIZE (cargo/unindent-0.2.4.tar.gz) = 7422
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
-SIZE (cryptography-46.0.2.tar.gz) = 749293
+SIZE (cryptography-46.0.3.tar.gz) = 749258
