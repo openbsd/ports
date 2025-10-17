@@ -1,2 +1,4 @@
-SHA256 (mozilla/firefox-143.0.3.source.tar.xz) = y2U1KuoCTjtS2ZtvpNAovmh+NFU4GgwGWy2nQO6xACs=
-SIZE (mozilla/firefox-143.0.3.source.tar.xz) = 647600856
+SHA256 (mozilla/firefox-145.0b2.source-profdata.tar.xz) = 3xogrQ2+KRgaHGEnAjaRYpQBoKZM0kmTmZmhyLXfcSU=
+SHA256 (mozilla/firefox-145.0b2.source.tar.xz) = lS19sfRl9NtQJs5Y8Hjle1KMRxn4EjLmDzCUaWdk5lY=
+SIZE (mozilla/firefox-145.0b2.source-profdata.tar.xz) = 17919964
+SIZE (mozilla/firefox-145.0b2.source.tar.xz) = 657224008

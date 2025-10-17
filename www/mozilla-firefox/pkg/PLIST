@@ -68,6 +68,7 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 ${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozinference.so.${LIBmozinference_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozwayland.so.${LIBmozwayland_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
