@@ -1,6 +1,6 @@
 COMMENT =		userland daemon to manage CPU frequency
-V =			1.2.1
-DISTNAME =		obsdfreqd-${V}
+
+DIST_TUPLE =		srht solene obsdfreqd 1.2.2 .
 
 CATEGORIES =		sysutils
 
@@ -14,9 +14,6 @@ PERMIT_PACKAGE =	Yes
 # uses unveil()
 WANTLIB +=		c m
 
-SITES =			https://git.sr.ht/~solene/obsdfreqd/archive/
-
-DISTFILES =		obsdfreqd-{}${V}${EXTRACT_SUFX}
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
