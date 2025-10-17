@@ -23,7 +23,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		25.8
-VERSION=	${BV}.1.1
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -107,7 +107,7 @@ DISTFILES.a += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip
 DISTFILES.a += f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 DISTFILES.a += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip
 DISTFILES.a += frozen-1.2.0.tar.gz
-DISTFILES.a += language-subtag-registry-2025-07-15.tar.bz2
+DISTFILES.a += language-subtag-registry-2025-08-25.tar.bz2
 DISTFILES.a += libabw-0.1.3.tar.xz
 DISTFILES.a += libcdr-0.1.8.tar.xz
 DISTFILES.a += libcmis-0.6.2.tar.xz
