@@ -24,7 +24,7 @@ Index: src/indexer/tracker-indexing-tree.c
  	GList *allowed_text_patterns;
  
  	GFile *root;
-@@ -209,8 +206,6 @@ tracker_indexing_tree_constructed (GObject *object)
+@@ -220,8 +217,6 @@ tracker_indexing_tree_constructed (GObject *object)
  	data->shallow = TRUE;
  
  	priv->config_tree = g_node_new (data);
@@ -33,7 +33,7 @@ Index: src/indexer/tracker-indexing-tree.c
  }
  
  static void
-@@ -233,8 +228,6 @@ tracker_indexing_tree_finalize (GObject *object)
+@@ -248,8 +243,6 @@ tracker_indexing_tree_finalize (GObject *object)
  	                 NULL);
  	g_node_destroy (priv->config_tree);
  
@@ -42,7 +42,7 @@ Index: src/indexer/tracker-indexing-tree.c
  	if (priv->root) {
  		g_object_unref (priv->root);
  	}
-@@ -978,12 +971,6 @@ tracker_indexing_tree_get_root (TrackerIndexingTree   
+@@ -993,12 +986,6 @@ tracker_indexing_tree_get_root (TrackerIndexingTree   
  	    (file == data->file ||
  	     g_file_equal (file, data->file) ||
  	     g_file_has_prefix (file, data->file))) {

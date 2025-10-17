@@ -1,7 +1,7 @@
 COMMENT=		collection of data extractors for Tracker/Nepomuk
 
 GNOME_PROJECT=		localsearch
-GNOME_VERSION=		3.10.0
+GNOME_VERSION=		3.10.1
 
 # LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes

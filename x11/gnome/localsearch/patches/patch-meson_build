@@ -5,7 +5,7 @@ XXX fix and push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -24,7 +24,7 @@ gexiv2 = dependency('gexiv2', required: get_option('ra
+@@ -27,7 +27,7 @@ endif
  gio = dependency('gio-2.0', version: '>=' + glib_required)
  gio_unix = dependency('gio-unix-2.0', version: '>=' + glib_required)
  glib = dependency('glib-2.0', version: '>=' + glib_required)
@@ -14,7 +14,7 @@ Index: meson.build
  gmodule = dependency('gmodule-2.0', version: '>=' + glib_required)
  gobject = dependency('gobject-2.0', version: '>=' + glib_required)
  gobject_introspection = dependency('gobject-introspection-1.0')
-@@ -61,7 +61,7 @@ if get_option('man')
+@@ -64,7 +64,7 @@ if get_option('man')
    a2x = find_program('a2x')
  endif
  
