@@ -15,24 +15,34 @@ include/ereadline/readline/tilde.h
 @lib lib/libehistory.so.${LIBehistory_VERSION}
 @static-lib lib/libereadline.a
 @lib lib/libereadline.so.${LIBereadline_VERSION}
-lib/pkgconfig/history.pc
-lib/pkgconfig/readline.pc
+lib/pkgconfig/ehistory.pc
+lib/pkgconfig/ereadline.pc
 @man man/man3/ehistory.3
 @man man/man3/ereadline.3
 share/doc/readline/
 share/doc/readline/CHANGES
 share/doc/readline/INSTALL
 share/doc/readline/README
+share/doc/readline/history.html
+share/doc/readline/readline.html
+share/doc/readline/rluserman.html
 share/readline/
 share/readline/excallback.c
 share/readline/fileman.c
+share/readline/hist_erasedups.c
+share/readline/hist_purgecmd.c
 share/readline/histexamp.c
 share/readline/manexamp.c
+share/readline/rl-callbacktest.c
+share/readline/rl-callbacktest2.c
+share/readline/rl-callbacktest3.c
 share/readline/rl-fgets.c
+share/readline/rl-timeout.c
 share/readline/rl.c
 share/readline/rlbasic.c
 share/readline/rlcat.c
 share/readline/rlevent.c
+share/readline/rlkeymaps.c
 share/readline/rlptytest.c
 share/readline/rltest.c
 share/readline/rlversion.c

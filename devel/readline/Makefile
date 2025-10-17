@@ -1,11 +1,10 @@
 COMMENT =		library to edit command lines as they are typed in
 
-V =			8.2.13
+V =			8.3
 DISTNAME =		readline-${V}
 PKGNAME =		readline-${V}
-REVISION =		1
 
-LIBV =			3.0
+LIBV =			4.0
 SHARED_LIBS +=		ehistory ${LIBV}
 SHARED_LIBS +=		ereadline ${LIBV}
 
@@ -20,12 +19,15 @@ WANTLIB += curses
 
 SITES =			${SITE_GNU:=readline/}
 #SITES.p =		${SITE_GNU:=readline/${DISTNAME}-patches/}
+
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--includedir=${PREFIX}/include/ereadline
 SEPARATE_BUILD =	Yes
 
 MAKE_ENV =		RL_SHLIB_V=${LIBereadline_VERSION}
+# otherwise the produced .pc file tries to reference a (nonexistent) termcap.pc file
+CONFIGURE_ENV =		bash_cv_termcap_lib=ncurses
 MAKE_FLAGS =		SHLIB_LIBS=-lcurses
-FAKE_FLAGS =		includedir=${TRUEPREFIX}/include/ereadline
 
 pre-configure:
 	perl -pi \

@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -105,8 +105,8 @@ install_examples = @EXAMPLES_INSTALL_TARGET@
+@@ -111,8 +111,8 @@ install_examples = @EXAMPLES_INSTALL_TARGET@
  	$(CC) -c $(CCFLAGS) $<
  
  # The name of the main library target.
@@ -12,7 +12,7 @@ Index: Makefile.in
  
  # The C code source files for this library.
  CSOURCES = $(srcdir)/readline.c $(srcdir)/funmap.c $(srcdir)/keymaps.c \
-@@ -171,12 +171,12 @@ asan:
+@@ -177,12 +177,12 @@ asan:
  
  static: $(STATIC_LIBS)
  
@@ -27,7 +27,18 @@ Index: Makefile.in
  	$(RM) $@
  	$(AR) $(ARFLAGS) $@ $(HISTOBJ) xmalloc.o xfree.o
  	-test -n "$(RANLIB)" && $(RANLIB) $@
-@@ -252,12 +252,10 @@ uninstall-pc:
+@@ -248,8 +248,8 @@ uninstall-headers:
+ maybe-uninstall-headers: uninstall-headers
+ 
+ install-pc: installdirs
+-	-$(INSTALL_DATA) $(BUILD_DIR)/readline.pc $(DESTDIR)$(pkgconfigdir)/readline.pc
+-	-$(INSTALL_DATA) $(BUILD_DIR)/history.pc $(DESTDIR)$(pkgconfigdir)/history.pc
++	-$(INSTALL_DATA) $(BUILD_DIR)/readline.pc $(DESTDIR)$(pkgconfigdir)/ereadline.pc
++	-$(INSTALL_DATA) $(BUILD_DIR)/history.pc $(DESTDIR)$(pkgconfigdir)/ehistory.pc
+ 
+ uninstall-pc:
+ 	-test -n "$(pkgconfigdir)" && cd $(DESTDIR)$(pkgconfigdir) && \
+@@ -258,12 +258,10 @@ uninstall-pc:
  maybe-uninstall-pc: uninstall-pc
  
  install-static: installdirs $(STATIC_LIBS) install-headers install-doc ${install_examples} install-pc

@@ -1,7 +1,7 @@
 Index: shlib/Makefile.in
 --- shlib/Makefile.in.orig
 +++ shlib/Makefile.in
-@@ -118,8 +118,8 @@ CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(INCLUDES) $(CPPFLAGS
+@@ -120,8 +120,8 @@ CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(INCLUDES) $(CPPFLAGS
  
  # The name of the main library target.
  

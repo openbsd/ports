@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -217,30 +217,30 @@ installdirs:	$(topdir)/support/mkdirs
+@@ -240,30 +240,30 @@ installdirs:	$(topdir)/support/mkdirs
  
  install:	installdirs
  	if test -f readline.info; then \
