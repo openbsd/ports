@@ -1,6 +1,6 @@
 COMMENT=	small expressive ORM
 
-MODPY_DISTV=	3.18.1
+MODPY_DISTV=	3.18.2
 DISTNAME=	peewee-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
