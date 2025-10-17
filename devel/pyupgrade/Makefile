@@ -1,6 +1,6 @@
 COMMENT=	automatically upgrade syntax for newer versions of Python
 
-MODPY_DISTV=	3.20.0
+MODPY_DISTV=	3.21.0
 DISTNAME=	pyupgrade-${MODPY_DISTV}
 
 CATEGORIES=	devel
