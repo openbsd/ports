@@ -1,7 +1,6 @@
 COMMENT=	fast implementation of cached properties
 
-MODPY_DISTV=	0.3.1
-REVISION=	0
+MODPY_DISTV=	0.4.1
 DISTNAME=	propcache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
