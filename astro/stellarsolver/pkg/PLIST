@@ -68,9 +68,10 @@ include/libstellarsolver/stellarsolver.h
 include/libstellarsolver/structuredefinitions.h
 include/libstellarsolver/version.h
 include/libstellarsolver/wcsdata.h
+lib/cmake/
 lib/cmake/StellarSolver/
 lib/cmake/StellarSolver/StellarSolverConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/StellarSolver/StellarSolverConfig.cmake
 lib/cmake/StellarSolver/StellarSolverConfigVersion.cmake
-@lib lib/libstellarsolver.so.${LIBstellarsolver_VERSION}
+@lib lib/libstellarsolver6.so.${LIBstellarsolver6_VERSION}
 lib/pkgconfig/stellarsolver.pc

@@ -1,6 +1,6 @@
 COMMENT =	astrometric plate solver
 
-V =		2.5
+V =		2.7
 DISTNAME =	stellarsolver-${V}
 
 CATEGORIES =	astro
@@ -12,19 +12,21 @@ SITES =		${HOMEPAGE}/archive/refs/tags/
 
 MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
 
-SHARED_LIBS =	stellarsolver             0.0 # 0.0
+SHARED_LIBS +=	stellarsolver6            0.0 # 0.0
 
-WANTLIB +=	${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
-WANTLIB +=	Qt5Widgets cfitsio gsl gslcblas m wcs
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6Network Qt6Widgets cfitsio gsl gslcblas m wcs
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake \
-		x11/qt5
+		x11/qt6
 
 LIB_DEPENDS =	astro/wcslib \
 		devel/gsl \
 		math/cfitsio
+
+CONFIGURE_ARGS =	-DUSE_QT5=OFF
 
 .include <bsd.port.mk>
