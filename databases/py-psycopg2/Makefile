@@ -1,18 +1,16 @@
 COMMENT=	PostgreSQL database adapter for Python
 
-MODPY_DISTV=	2.9.10
+MODPY_DISTV=	2.9.11
 DISTNAME=	psycopg2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
-REVISION=	1
 
 HOMEPAGE=	https://www.psycopg.org/
 
 # LGPLv3
-PERMIT_PACKAGE=Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pq pthread
+WANTLIB=	pq
 
 MODULES=	lang/python \
 		databases/postgresql
