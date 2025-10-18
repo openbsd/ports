@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageQt.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageSequence.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageShow.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageStat.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageText.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageTk.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageTransform.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageWin.py
@@ -194,6 +195,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageShow.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageShow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageStat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageStat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageText.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageText.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageTk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageTk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ImageTransform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
