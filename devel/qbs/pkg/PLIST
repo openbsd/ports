@@ -56,6 +56,7 @@ include/qbs/tools/version.h
 lib/qbs/
 lib/qbs/plugins/
 @so lib/qbs/plugins/libclangcompilationdbgenerator.so
+@so lib/qbs/plugins/libgraphvizgenerator.so
 @so lib/qbs/plugins/libiarewgenerator.so
 @so lib/qbs/plugins/libkeiluvgenerator.so
 @so lib/qbs/plugins/libmakefilegenerator.so
@@ -335,6 +336,10 @@ share/qbs/examples/compiled-qml/compiled-qml.qbs
 share/qbs/examples/compiled-qml/main.cpp
 share/qbs/examples/compiled-qml/main.qml
 share/qbs/examples/compiled-qml/qml.qrc
+share/qbs/examples/conan-zlib/
+share/qbs/examples/conan-zlib/conan-zlib.qbs
+share/qbs/examples/conan-zlib/conanfile.py
+share/qbs/examples/conan-zlib/main.c
 share/qbs/examples/cxx-modules/
 share/qbs/examples/cxx-modules/mod0/
 share/qbs/examples/cxx-modules/mod0/mod0.cppm
@@ -426,6 +431,11 @@ share/qbs/examples/install-bundle/main.cpp
 share/qbs/examples/install-bundle/white.iconset/
 share/qbs/examples/install-bundle/white.iconset/icon_16x16.png
 share/qbs/examples/install-bundle/white.iconset/icon_16x16@2x.png
+share/qbs/examples/main-bundle/
+share/qbs/examples/main-bundle/main-bundle.qbs
+share/qbs/examples/main-bundle/main.cpp
+share/qbs/examples/main-bundle/mylib.cpp
+share/qbs/examples/main-bundle/mylib.h
 share/qbs/examples/pkgconfig-provider/
 share/qbs/examples/pkgconfig-provider/main.c
 share/qbs/examples/pkgconfig-provider/pkgconfig-provider.qbs
@@ -530,7 +540,10 @@ share/qbs/imports/qbs/base/AppleDiskImage.qbs
 share/qbs/imports/qbs/base/Application.qbs
 share/qbs/imports/qbs/base/ApplicationExtension.qbs
 share/qbs/imports/qbs/base/AutotestRunner.qbs
+share/qbs/imports/qbs/base/ConfigBuild.qbs
+share/qbs/imports/qbs/base/ConfigInstall.qbs
 share/qbs/imports/qbs/base/CppApplication.qbs
+share/qbs/imports/qbs/base/CppStd.qbs
 share/qbs/imports/qbs/base/DynamicLibrary.qbs
 share/qbs/imports/qbs/base/InnoSetup.qbs
 share/qbs/imports/qbs/base/InstallPackage.qbs
@@ -542,6 +555,7 @@ share/qbs/imports/qbs/base/NSISSetup.qbs
 share/qbs/imports/qbs/base/NativeBinary.qbs
 share/qbs/imports/qbs/base/NetModule.qbs
 share/qbs/imports/qbs/base/NodeJSApplication.qbs
+share/qbs/imports/qbs/base/Plugin.qbs
 share/qbs/imports/qbs/base/QtApplication.qbs
 share/qbs/imports/qbs/base/QtGuiApplication.qbs
 share/qbs/imports/qbs/base/QtLupdateRunner.qbs
@@ -577,9 +591,6 @@ share/qbs/module-providers/Qt/templates/rcc.js
 share/qbs/module-providers/Qt/templates/scxml.qbs
 share/qbs/module-providers/Qt/templates/shadertools.js
 share/qbs/module-providers/Qt/templates/shadertools.qbs
-share/qbs/module-providers/__fallback/
-share/qbs/module-providers/__fallback/fallback.qbs
-share/qbs/module-providers/__fallback/provider.qbs
 share/qbs/module-providers/conan.js
 share/qbs/module-providers/conan.qbs
 share/qbs/module-providers/qbspkgconfig.qbs
@@ -632,6 +643,11 @@ share/qbs/modules/codesign/apple.qbs
 share/qbs/modules/codesign/codesign.js
 share/qbs/modules/codesign/noop.qbs
 share/qbs/modules/codesign/signtool.qbs
+share/qbs/modules/config/
+share/qbs/modules/config/build/
+share/qbs/modules/config/build/module.qbs
+share/qbs/modules/config/install/
+share/qbs/modules/config/install/module.qbs
 share/qbs/modules/cpp/
 share/qbs/modules/cpp/CppModule.qbs
 share/qbs/modules/cpp/DarwinGCC.qbs
@@ -696,6 +712,10 @@ share/qbs/modules/ico/IcoModule.qbs
 share/qbs/modules/ico/ico.js
 share/qbs/modules/innosetup/
 share/qbs/modules/innosetup/InnoSetupModule.qbs
+share/qbs/modules/installpaths/
+share/qbs/modules/installpaths/base.qbs
+share/qbs/modules/installpaths/debian.js
+share/qbs/modules/installpaths/linux.qbs
 share/qbs/modules/java/
 share/qbs/modules/java/JavaModule.qbs
 share/qbs/modules/java/io/
