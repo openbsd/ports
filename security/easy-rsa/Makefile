@@ -1,6 +1,6 @@
 COMMENT=	small RSA key management package
 
-V=		3.2.2
+V=		3.2.4
 PKGNAME=	easy-rsa-${V}
 DISTNAME=	EasyRSA-${V}
 EXTRACT_SUFX=	.tgz
