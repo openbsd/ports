@@ -1401,6 +1401,7 @@
      SUBDIR += py-bitstring
      SUBDIR += py-blessings
      SUBDIR += py-blinker
+     SUBDIR += py-blockbuster
      SUBDIR += py-boolean.py
      SUBDIR += py-borghash
      SUBDIR += py-build
@@ -1490,6 +1491,7 @@
      SUBDIR += py-flit
      SUBDIR += py-flit_core
      SUBDIR += py-flit_scm
+     SUBDIR += py-forbiddenfruit
      SUBDIR += py-freezegun
      SUBDIR += py-frozendict
      SUBDIR += py-frozenlist
