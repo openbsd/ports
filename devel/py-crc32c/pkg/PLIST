@@ -1,9 +1,11 @@
 @pkgpath devel/py-crc32c,python3
+bin/crc32c
 lib/python${MODPY_VERSION}/site-packages/crc32c/
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/licenses/AUTHORS.google-crc32c
 lib/python${MODPY_VERSION}/site-packages/crc32c-${MODPY_DISTV}.dist-info/licenses/LICENSE
@@ -14,17 +16,26 @@ lib/python${MODPY_VERSION}/site-packages/crc32c/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}_cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}_cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}_crc32hash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}_crc32hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}benchmark.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/crc32c/${MODPY_PYCACHE}benchmark.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/crc32c/_cli.py
 @so lib/python${MODPY_VERSION}/site-packages/crc32c/_crc32c.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/crc32c/_crc32c.pyi
 lib/python${MODPY_VERSION}/site-packages/crc32c/_crc32hash.py
 lib/python${MODPY_VERSION}/site-packages/crc32c/benchmark.py
 lib/python${MODPY_VERSION}/site-packages/crc32c/ext/
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/_crc32c.c
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/checkarm.c
 lib/python${MODPY_VERSION}/site-packages/crc32c/ext/checkarm.h
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/checksse42.c
 lib/python${MODPY_VERSION}/site-packages/crc32c/ext/checksse42.h
 lib/python${MODPY_VERSION}/site-packages/crc32c/ext/common.h
 lib/python${MODPY_VERSION}/site-packages/crc32c/ext/crc32c.h
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/crc32c_adler.c
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/crc32c_arm64.c
+lib/python${MODPY_VERSION}/site-packages/crc32c/ext/crc32c_sw.c
 lib/python${MODPY_VERSION}/site-packages/crc32c/py.typed

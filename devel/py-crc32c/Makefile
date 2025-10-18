@@ -1,10 +1,8 @@
 COMMENT=	implemention of the crc32c algorithm in hardware
 
-MODPY_DISTV =	2.7.1
-
+MODPY_DISTV =	2.8
 DISTNAME=	crc32c-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,8 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	pthread
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
