@@ -1,9 +1,8 @@
 COMMENT =		async library on top of asyncio or trio
 
-MODPY_DISTV =		3.7.1
+MODPY_DISTV =		4.9.0
 DISTNAME =		anyio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		net
 
@@ -20,11 +19,14 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
 RUN_DEPENDS =		devel/py-sniffio \
-			devel/py-trio \
+			devel/py-typing-extensions \
 			net/py-idna
 
-TEST_DEPENDS =		devel/py-hypothesis \
-			devel/py-test-mock \
+TEST_DEPENDS =		devel/py-blockbuster \
+			devel/py-exceptiongroup \
+			devel/py-hypothesis \
+			devel/py-trio \
+			devel/py-uvloop \
 			security/py-trustme \
 			sysutils/py-psutil
 
