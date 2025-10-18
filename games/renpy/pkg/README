@@ -1,8 +1,0 @@
-+-----------------------------------------------------------------------
-| Running ${PKGSTEM} on OpenBSD
-+-----------------------------------------------------------------------
-
-Ren'Py
-======
-If you cannot get a game to work, try running the `renpyify` script in
-the game's main directory (the one with the renpy/ subdirectory in it).

@@ -266,7 +266,6 @@
      SUBDIR += py-minecraft-launcher-lib
      SUBDIR += py-steam
      SUBDIR += py-unitypy
-     SUBDIR += pygame_sdl2
      SUBDIR += pysol
      SUBDIR += pysol-cards
      SUBDIR += qqwing
@@ -275,7 +274,6 @@
      SUBDIR += quakespasm
      SUBDIR += recoil-rts
      SUBDIR += redeclipse
-     SUBDIR += renpy
      SUBDIR += returntotheroots
      SUBDIR += rftg
      SUBDIR += ri-li
