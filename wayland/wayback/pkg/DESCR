@@ -1,0 +1,28 @@
+Wayback is a X11 compatibility layer which allows for running full X11
+desktop environments using Wayland components. It is essentially a
+stub compositor which provides just enough Wayland capabilities to
+host a rootful Xwayland server.
+
+It is intended to eventually replace the classic X.Org server, thus
+reducing maintenance burden of X11 applications, but a lot of work
+needs to be done first.
+
+Wayback is an experimental state: expect breaking changes, and lots of
+bugs.
+
+To run wayback on OpenBSD use a wrapper like this one:
+
+#! /bin/ksh
+set -eu
+
+: ${WLR_DRM_DEVICES:=/dev/dri/card0}
+: ${LIBSEAT_BACKEND:=noop}
+: ${XDG_RUNTIME_DIR:=${HOME}/.local/run}
+
+export WLR_DRM_DEVICES LIBSEAT_BACKEND XDG_RUNTIME_DIR
+
+if [ ! -d $XDG_RUNTIME_DIR ]; then
+    mkdir -m 700 -p $XDG_RUNTIME_DIR
+fi
+
+exec ${PREFIX}/bin/wayback-session $*

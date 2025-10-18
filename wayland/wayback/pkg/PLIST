@@ -1,0 +1,5 @@
+@bin bin/Xwayback
+@bin bin/wayback-session
+@bin libexec/wayback-compositor
+@man man/man1/Xwayback.1
+@man man/man1/wayback-session.1
