@@ -2,8 +2,7 @@ COMMENT =		binary space partitioning window manager
 
 GH_PROJECT =		bspwm
 GH_ACCOUNT =		baskerville
-GH_TAGNAME =		0.9.10
-REVISION =		0
+GH_TAGNAME =		0.9.11
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
