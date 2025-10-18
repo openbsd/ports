@@ -1,0 +1,26 @@
+Index: kstars/indi/servermanager.cpp
+--- kstars/indi/servermanager.cpp.orig
++++ kstars/indi/servermanager.cpp
+@@ -528,17 +528,17 @@ void ServerManager::processStandardError()
+     qWarning() << "INDI server is currently not supported on Windows.";
+     return;
+ #else
+-    QString stderr = serverProcess->readAllStandardError();
++    QString sstderr = serverProcess->readAllStandardError();
+ 
+-    for (auto &msg : stderr.split('\n'))
++    for (auto &msg : sstderr.split('\n'))
+         qCDebug(KSTARS_INDI) << "INDI Server: " << msg;
+ 
+-    serverBuffer.write(stderr.toLatin1());
++    serverBuffer.write(sstderr.toLatin1());
+     emit newServerLog();
+ 
+-    //if (driverCrashed == false && (stderr.contains("stdin EOF") || stderr.contains("stderr EOF")))
++    //if (driverCrashed == false && (sstderr.contains("stdin EOF") || sstderr.contains("sstderr EOF")))
+     QRegularExpression re("Driver (.*): Terminated after #0 restarts");
+-    QRegularExpressionMatch match = re.match(stderr);
++    QRegularExpressionMatch match = re.match(sstderr);
+     if (match.hasMatch())
+     {
+         QString driverExec = match.captured(1);

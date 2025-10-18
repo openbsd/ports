@@ -2,7 +2,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =	planetarium simulator for KDE
 
-V =		3.7.7
+V =		3.7.8
 DISTNAME =	kstars-${V}
 EPOCH =		0
 
@@ -15,74 +15,75 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5I18n KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Plotting KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5DataVisualization Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5Xml X11 c cfitsio curl gsl gslcblas m
-WANTLIB += nova opencv_core opencv_highgui opencv_imgproc qt5keychain
-WANTLIB += raw stellarsolver wcs z
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Plotting KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6DataVisualization
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Sql Qt6Svg Qt6SvgWidgets Qt6WebSockets Qt6Widgets
+WANTLIB += Qt6Xml c cfitsio curl gsl gslcblas indiclient m nova
+WANTLIB += opencv_calib3d opencv_core opencv_features2d opencv_flann
+WANTLIB += opencv_highgui opencv_imgcodecs opencv_imgproc opencv_photo
+WANTLIB += opencv_videoio qt6keychain raw stellarsolver6 wcs z
 
 SITES =			${SITE_KDE:=stable/kstars/${V}/}
+EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/kf5
+MODULES =		devel/kf6
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/kf5/kdoctools \
+			devel/kf6/kdoctools \
 			math/eigen3 \
-			x11/qt5/qtquickcontrols \
 			x11/xplanet
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf6/breeze-icons \
-			devel/kf5/kdoctools \
+			devel/kf6/kdoctools \
+			devel/indi,-main \
 			x11/gtk+4,-guic \
-			x11/qt5/qtquickcontrols \
 			x11/xplanet
 
-LIB_DEPENDS =		astro/wcslib \
-			astro/libnova \
-			astro/stellarsolver \
+LIB_DEPENDS =		astro/libnova \
+			astro/stellarsolver>=2.7 \
+			astro/wcslib \
 			devel/gsl \
-			devel/kf5/attica \
-			devel/kf5/kauth \
-			devel/kf5/kbookmarks \
-			devel/kf5/kcodecs \
-			devel/kf5/kcompletion \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kcrash \
-			devel/kf5/ki18n \
-			devel/kf5/kio \
-			devel/kf5/kitemviews\
-			devel/kf5/kjobwidgets \
-			devel/kf5/knewstuff \
-			devel/kf5/knotifications \
-			devel/kf5/knotifyconfig \
-			devel/kf5/kplotting \
-			devel/kf5/kservice \
-			devel/kf5/kwidgetsaddons \
-			devel/kf5/kwindowsystem \
-			devel/kf5/kxmlgui \
-			devel/kf5/solid \
+			devel/indi,-libs \
+			devel/kf6/attica \
+			devel/kf6/kbookmarks \
+			devel/kf6/kcolorscheme \
+			devel/kf6/kcompletion \
+			devel/kf6/kconfig \
+			devel/kf6/kconfigwidgets \
+			devel/kf6/kcoreaddons \
+			devel/kf6/kcrash \
+			devel/kf6/kguiaddons \
+			devel/kf6/ki18n \
+			devel/kf6/kio \
+			devel/kf6/kitemviews\
+			devel/kf6/kjobwidgets \
+			devel/kf6/knewstuff \
+			devel/kf6/knotifications \
+			devel/kf6/knotifyconfig \
+			devel/kf6/kplotting \
+			devel/kf6/kservice \
+			devel/kf6/kwidgetsaddons \
+			devel/kf6/kxmlgui \
+			devel/kf6/solid \
 			graphics/libraw \
 			graphics/opencv \
 			math/cfitsio \
 			net/curl \
-			security/qtkeychain \
-			x11/qt5/qtdatavis3d \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtsvg \
-			x11/qt5/qtwebsockets
+			security/qtkeychain,qt6 \
+			x11/qt6/qtdatavis3d \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtsvg \
+			x11/qt6/qtwebsockets
 
-# not ported
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_INDI=ON
+CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON
 
 TEST_IS_INTERACTIVE =	X11
 
