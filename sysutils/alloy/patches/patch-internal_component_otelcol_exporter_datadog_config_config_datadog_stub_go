@@ -1,8 +1,0 @@
-Index: internal/component/otelcol/exporter/datadog/config/config_datadog_stub.go
---- internal/component/otelcol/exporter/datadog/config/config_datadog_stub.go.orig
-+++ internal/component/otelcol/exporter/datadog/config/config_datadog_stub.go
-@@ -1,3 +1,3 @@
--//go:build freebsd
-+//go:build freebsd || openbsd
- 
- package datadog_config

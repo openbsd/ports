@@ -1,9 +1,0 @@
-Index: internal/component/otelcol/exporter/datadog/datadog_test.go
---- internal/component/otelcol/exporter/datadog/datadog_test.go.orig
-+++ internal/component/otelcol/exporter/datadog/datadog_test.go
-@@ -1,4 +1,4 @@
--//go:build !freebsd
-+//go:build !freebsd && !openbsd
- 
- package datadog_test
- 

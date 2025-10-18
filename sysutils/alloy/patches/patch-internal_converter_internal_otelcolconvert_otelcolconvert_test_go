@@ -1,9 +1,0 @@
-Index: internal/converter/internal/otelcolconvert/otelcolconvert_test.go
---- internal/converter/internal/otelcolconvert/otelcolconvert_test.go.orig
-+++ internal/converter/internal/otelcolconvert/otelcolconvert_test.go
-@@ -1,4 +1,4 @@
--//go:build !freebsd
-+//go:build !freebsd && !openbsd
- 
- package otelcolconvert_test
- 

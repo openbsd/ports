@@ -1,9 +1,0 @@
-Index: internal/converter/internal/otelcolconvert/converter_datadogexporter.go
---- internal/converter/internal/otelcolconvert/converter_datadogexporter.go.orig
-+++ internal/converter/internal/otelcolconvert/converter_datadogexporter.go
-@@ -1,4 +1,4 @@
--//go:build !freebsd
-+//go:build !freebsd && !openbsd
- 
- package otelcolconvert
- 

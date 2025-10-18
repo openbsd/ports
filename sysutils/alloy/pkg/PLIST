@@ -10,6 +10,7 @@
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/alloy/
 @mode 0640
 @group _loki
