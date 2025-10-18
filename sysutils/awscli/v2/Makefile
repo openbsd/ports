@@ -1,6 +1,7 @@
 COMMENT =		universal command line environment v2 for AWS
 
 MODPY_DISTV =		2.28.4
+REVISION =		0
 
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
