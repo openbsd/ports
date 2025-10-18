@@ -213,6 +213,7 @@ lib/qt6/plugins/digikam/editor/
 @so lib/qt6/plugins/digikam/editor/Editor_AutoCorrectionTool_Plugin.so
 @so lib/qt6/plugins/digikam/editor/Editor_AutoCropTool_Plugin.so
 @so lib/qt6/plugins/digikam/editor/Editor_BWSepiaTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BackgroundBlurTool_Plugin.so
 @so lib/qt6/plugins/digikam/editor/Editor_BcgTool_Plugin.so
 @so lib/qt6/plugins/digikam/editor/Editor_BlurFxTool_Plugin.so
 @so lib/qt6/plugins/digikam/editor/Editor_BlurTool_Plugin.so
