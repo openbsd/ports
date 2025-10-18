@@ -456,6 +456,7 @@
      SUBDIR += mcs
      SUBDIR += md4c
      SUBDIR += mercurial
+     SUBDIR += mergiraf
      SUBDIR += meson
      SUBDIR += meson-python
      SUBDIR += metaauto
