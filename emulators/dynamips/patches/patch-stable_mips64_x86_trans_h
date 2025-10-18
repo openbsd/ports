@@ -1,0 +1,13 @@
+Index: stable/mips64_x86_trans.h
+--- stable/mips64_x86_trans.h.orig
++++ stable/mips64_x86_trans.h
+@@ -53,8 +53,7 @@ void mips64_jit_tcb_exec(cpu_mips_t *cpu,mips64_jit_tc
+       return;
+    }
+ 
+-   asm volatile ("movl %0,%%edi"::"r"(cpu):
+-                 "esi","edi","eax","ebx","ecx","edx");
++   asm volatile ("movl %0,%%edi"::"r"(cpu));
+    jit_code();
+ }
+ 

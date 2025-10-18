@@ -1,5 +1,6 @@
---- ppc32_x86_trans.h.orig	Sun Sep  2 11:43:03 2007
-+++ ppc32_x86_trans.h	Sun Sep  2 11:43:07 2007
+Index: common/ppc32_x86_trans.h
+--- common/ppc32_x86_trans.h.orig
++++ common/ppc32_x86_trans.h
 @@ -60,8 +60,7 @@ void ppc32_jit_tcb_exec(cpu_ppc_t *cpu,ppc32_jit_tcb_t
        }
     }

@@ -1,7 +1,7 @@
-Index: net_io_filter.c
---- net_io_filter.c.orig
-+++ net_io_filter.c
-@@ -211,9 +211,12 @@ static int pf_capture_pkt_handler(netio_desc_t *nio,vo
+Index: common/net_io_filter.c
+--- common/net_io_filter.c.orig
++++ common/net_io_filter.c
+@@ -227,9 +227,12 @@ static int pf_capture_pkt_handler(netio_desc_t *nio,vo
  {
     struct netio_filter_capture *c = opt;
     struct pcap_pkthdr pkt_hdr;
@@ -12,6 +12,6 @@ Index: net_io_filter.c
 +      gettimeofday(&tv,0);
 +      pkt_hdr.ts.tv_sec = tv.tv_sec;
 +      pkt_hdr.ts.tv_usec = tv.tv_usec;
-       pkt_hdr.caplen = len;
+       pkt_hdr.caplen = m_min(len, (u_int)pcap_snapshot(c->desc));
        pkt_hdr.len = len;
  

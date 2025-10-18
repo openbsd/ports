@@ -1,0 +1,37 @@
+Index: unstable/utils.h
+--- unstable/utils.h.orig
++++ unstable/utils.h
+@@ -212,12 +212,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
+    return(((val+nb-1) & ~(nb-1)) >> shift);
+ }
+ 
++#ifndef swap16
+ /* Convert a 16-bit number between little and big endian */
+ static forced_inline m_uint16_t swap16(m_uint16_t value)
+ {
+    return((value >> 8) | ((value & 0xFF) << 8));
+ }
++#endif
+ 
++#ifndef swap32
+ /* Convert a 32-bit number between little and big endian */
+ static forced_inline m_uint32_t swap32(m_uint32_t value)
+ {
+@@ -229,7 +232,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
+    result |= (value & 0xff) << 24;
+    return(result);
+ }
++#endif
+ 
++#ifndef swap64
+ /* Convert a 64-bit number between little and big endian */
+ static forced_inline m_uint64_t swap64(m_uint64_t value)
+ {
+@@ -239,6 +244,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
+    result |= swap32(value >> 32);
+    return(result);
+ }
++#endif
+ 
+ /* Get current time in number of msec since epoch */
+ static inline m_tmcnt_t m_gettime(void)

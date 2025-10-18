@@ -1,0 +1,11 @@
+Index: common/utils.c
+--- common/utils.c.orig
++++ common/utils.c
+@@ -15,6 +15,7 @@
+ #include <unistd.h>
+ #include <time.h>
+ #include <signal.h>
++#include <pthread.h>
+ #include <sys/time.h>
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
