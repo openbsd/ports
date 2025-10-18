@@ -3,8 +3,7 @@ BROKEN-armv7 = github.com/go-piv/piv-go@v1.10.0/piv/pcsc_openbsd.go:29:15: 0x801
 
 COMMENT =	private certificate authority and ACME server
 
-V =		0.25.2
-REVISION =	0
+V =		0.28.4
 MODGO_MODNAME =	github.com/smallstep/certificates
 MODGO_VERSION =	v${V}
 DISTNAME =	step-ca-${V}
