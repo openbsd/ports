@@ -1,7 +1,6 @@
 COMMENT =	OSM multi-floor indoor map renderer
 DISTNAME =	kosmindoormap-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/libraries/kosmindoormap
 

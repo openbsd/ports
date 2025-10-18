@@ -1,7 +1,6 @@
 COMMENT =	KDE Mastodon client
 DISTNAME =	tokodon-${VERSION}
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/tokodon/
 

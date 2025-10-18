@@ -34,6 +34,8 @@ WANTLIB += Qt6Widgets Qt6Xml assuan crypto gpgme gpgmepp m qgpgmeqt6
 
 WANTLIB += lib/inotify/inotify
 
+
+
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 

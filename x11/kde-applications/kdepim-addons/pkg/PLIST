@@ -52,6 +52,7 @@ lib/qt6/plugins/pim6/kmail/plugineditor/
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_aitooleditorplugin.so
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_askautogeneratetexteditorplugin.so
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_autogenerateanswerseditorplugin.so
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_changecaseeditorplugin.so
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_insertemaileditorplugin.so
 @so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_insertshorturleditorplugin.so

@@ -126,6 +126,7 @@ lib/qt6/qml/org/kde/kpublictransport/ui/kpublictransportquickplugin.qmltypes
 lib/qt6/qml/org/kde/kpublictransport/ui/private/
 lib/qt6/qml/org/kde/kpublictransport/ui/private/CountryComboBox.qml
 lib/qt6/qml/org/kde/kpublictransport/ui/qmldir
+share/locale/ar/LC_MESSAGES/kpublictransport.mo
 share/locale/ca/LC_MESSAGES/kpublictransport.mo
 share/locale/ca@valencia/LC_MESSAGES/kpublictransport.mo
 share/locale/cs/LC_MESSAGES/kpublictransport.mo

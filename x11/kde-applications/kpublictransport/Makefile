@@ -1,7 +1,6 @@
 COMMENT =	library for accessing realtime public transport data
 DISTNAME =	kpublictransport-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/libraries/kpublictransport
 

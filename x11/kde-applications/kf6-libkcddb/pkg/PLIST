@@ -1,5 +1,5 @@
-@pkgpath x11/kde-applications/libkcddb
 @conflict libkcddb-kf5-*
+@pkgpath x11/kde-applications/libkcddb
 include/KCddb6/
 include/KCddb6/KCDDB/
 include/KCddb6/KCDDB/CDInfo
