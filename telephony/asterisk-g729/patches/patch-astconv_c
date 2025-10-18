@@ -1,0 +1,15 @@
+asterisk 20.16.0 (etc) moved to 64-bit flags (with some backwards compat
+for little-endian archs, see 43bf8a4ded7a6)
+
+Index: astconv.c
+--- astconv.c.orig
++++ astconv.c
+@@ -231,7 +231,7 @@ int __ast_register_translator(struct ast_translator *t
+ 
+ /* unused but required to load codec module */
+ int option_verbose, option_debug;
+-struct ast_flags ast_options;
++struct ast_flags64 ast_options;
+ void ast_module_unregister(const struct ast_module_info *_mod_info) {}
+ void ast_register_file_version(const char *file, const char *version) {}
+ void ast_unregister_file_version(const char *file) {}
