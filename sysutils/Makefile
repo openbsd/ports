@@ -430,6 +430,7 @@
      SUBDIR += shelldap
      SUBDIR += shmux
      SUBDIR += shunt
+     SUBDIR += signalbackup-tools
      SUBDIR += simple-mtpfs
      SUBDIR += skill
      SUBDIR += skim
