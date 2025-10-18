@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1755 2025/10/18 12:23:24 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1756 2025/10/18 12:30:14 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1299,6 +1299,7 @@ setup_obsolete_reason(
 	3 => 'pyganim',
 	9 => 'renpy',
 	5 => 'pygame_sdl2',
+	3 => 'dynagen',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

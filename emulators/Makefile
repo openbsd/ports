@@ -13,7 +13,6 @@
      SUBDIR += dosbox
      SUBDIR += dosbox-staging
      SUBDIR += dosbox-x
-     SUBDIR += dynagen
      SUBDIR += dynamips
      SUBDIR += emulationstation
      SUBDIR += es-de
