@@ -737,7 +737,6 @@
      SUBDIR += tdlib
      SUBDIR += telepathy
      SUBDIR += telescope
-     SUBDIR += termshark
      SUBDIR += tg
      SUBDIR += tg_owt
      SUBDIR += thcrut
