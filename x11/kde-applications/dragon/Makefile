@@ -1,6 +1,7 @@
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
 WANTLIB += KF6I18nQml KF6KIOCore KF6Service KF6WindowSystem Qt6Core
@@ -14,7 +15,10 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
-RUN_DEPENDS =	misc/shared-mime-info
+RUN_DEPENDS =	misc/shared-mime-info \
+		devel/kf6/kirigami
+
+BUILD_DEPENDS =	devel/kf6/kirigami
 
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
