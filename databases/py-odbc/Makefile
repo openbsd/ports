@@ -1,9 +1,8 @@
 COMMENT=	ODBC bindings for Python
 
-MODPY_DISTV=	5.2.0
+MODPY_DISTV=	5.3.0
 DISTNAME=	pyodbc-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	2
 
 CATEGORIES=	databases
 
