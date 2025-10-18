@@ -8,6 +8,7 @@
 @mode
 @owner
 @group
+@bin bin/bitcoin
 @bin bin/bitcoin-cli
 @bin bin/bitcoin-tx
 @bin bin/bitcoin-util
@@ -15,11 +16,16 @@
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
 @comment @bin bin/test_bitcoin-qt
+@bin libexec/bitcoin-node
+@bin libexec/test_bitcoin
 @man man/man1/bitcoin-cli.1
 @man man/man1/bitcoin-tx.1
 @man man/man1/bitcoin-util.1
 @man man/man1/bitcoin-wallet.1
+@man man/man1/bitcoin.1
 @man man/man1/bitcoind.1
+share/bash-completion/
+share/bash-completion/completions/
 share/bash-completion/completions/bitcoin/
 share/bash-completion/completions/bitcoin/bitcoin-cli.bash
 share/bash-completion/completions/bitcoin/bitcoin-tx.bash

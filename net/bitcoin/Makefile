@@ -2,7 +2,7 @@ BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
 COMMENT =		P2P payment system
 
-V =			29.1
+V =			30.0
 
 DISTNAME =		bitcoin-${V}
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS =		devel/boost \
+			devel/capnproto
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libevent2 \
@@ -44,10 +45,10 @@ CONFIGURE_ARGS +=	-DWITH_ZMQ=ON
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	-DBUILD_GUI=OFF
 .else
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Test Qt6Widgets
 WANTLIB += qrencode
 
-MODULES +=		x11/qt5
+MODULES +=		x11/qt6
 
 LIB_DEPENDS +=		graphics/libqrencode
 
