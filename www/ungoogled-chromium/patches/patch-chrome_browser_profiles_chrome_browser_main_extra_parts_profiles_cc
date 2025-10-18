@@ -1,7 +1,7 @@
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -376,7 +376,7 @@
+@@ -377,7 +377,7 @@
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_store_factory.h"
  #include "chrome/browser/enterprise/idle/idle_service_factory.h"
-@@ -422,14 +422,14 @@
+@@ -423,14 +423,14 @@
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -27,7 +27,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
  #include "chrome/browser/policy/messaging_layer/util/manual_test_heartbeat_event_factory.h"
  #endif
  
-@@ -437,7 +437,7 @@
+@@ -438,7 +438,7 @@
  #include "chrome/browser/history_embeddings/history_embeddings_service_factory.h"
  #endif
  
@@ -36,7 +36,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_service_factory.h"
  #include "chrome/browser/enterprise/signin/oidc_authentication_signin_interceptor_factory.h"
-@@ -662,7 +662,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -663,7 +663,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    AccountInvestigatorFactory::GetInstance();
    AccountPasswordStoreFactory::GetInstance();
    AccountReconcilorFactory::GetInstance();
@@ -45,7 +45,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    AccountsPolicyManagerFactory::GetInstance();
  #endif
  #if !BUILDFLAG(IS_ANDROID)
-@@ -761,7 +761,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -762,7 +762,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    DiceBoundSessionCookieServiceFactory::GetInstance();
  #endif
  #endif
@@ -54,7 +54,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    browser_sync::UserEventServiceFactory::GetInstance();
-@@ -824,13 +824,13 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -825,13 +825,13 @@ void ChromeBrowserMainExtraPartsProfiles::
    collaboration::comments::CommentsServiceFactory::GetInstance();
    collaboration::messaging::MessagingBackendServiceFactory::GetInstance();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -70,7 +70,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    contextual_cueing::ContextualCueingServiceFactory::GetInstance();
  #endif
    CookieSettingsFactory::GetInstance();
-@@ -880,17 +880,17 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -881,17 +881,17 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
    enterprise_connectors::ConnectorsServiceFactory::GetInstance();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -91,7 +91,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    enterprise_idle::IdleServiceFactory::GetInstance();
    enterprise_signals::SignalsAggregatorFactory::GetInstance();
  #endif
-@@ -899,10 +899,10 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -900,10 +900,10 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
    enterprise_reporting::LegacyTechServiceFactory::GetInstance();
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -104,7 +104,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    enterprise_signin::EnterpriseSigninServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(ENABLE_SESSION_SERVICE)
-@@ -1039,7 +1039,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1043,7 +1043,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_ANDROID)
    MerchantViewerDataManagerFactory::GetInstance();
  #endif
@@ -113,7 +113,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
  #if !BUILDFLAG(IS_ANDROID)
-@@ -1122,7 +1122,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1126,7 +1126,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    PasswordCounterFactory::GetInstance();
  #endif  // !BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -122,7 +122,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    PasswordManagerBlocklistPolicyFactory::GetInstance();
  #endif
    PasswordManagerSettingsServiceFactory::GetInstance();
-@@ -1167,7 +1167,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1171,7 +1171,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_CHROMEOS)
    policy::PolicyCertServiceFactory::GetInstance();
  #endif
@@ -131,7 +131,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    policy::ProfileTokenPolicyWebSigninServiceFactory::GetInstance();
    policy::UserPolicyOidcSigninServiceFactory::GetInstance();
  #endif
-@@ -1203,7 +1203,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1207,7 +1207,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS)
    ProfileStatisticsFactory::GetInstance();
  #endif
@@ -140,7 +140,7 @@ Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
    ProfileTokenWebSigninInterceptorFactory::GetInstance();
    OidcAuthenticationSigninInterceptorFactory::GetInstance();
  #endif
-@@ -1223,7 +1223,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1227,7 +1227,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    ReduceAcceptLanguageFactory::GetInstance();
    RendererUpdaterFactory::GetInstance();
    regional_capabilities::RegionalCapabilitiesServiceFactory::GetInstance();

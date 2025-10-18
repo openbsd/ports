@@ -10,8 +10,8 @@ Index: chrome/common/chrome_switches.h
  extern const char kEnableNewAppMenuIcon[];
  extern const char kGuest[];
  extern const char kForceNtpMobilePromo[];
-@@ -297,7 +297,7 @@ extern const char kGlicSkipReloadAfterNavigation[];
- extern const char kGlicHostLogging[];
+@@ -298,7 +298,7 @@ extern const char kGlicHostLogging[];
+ extern const char kGlicAdminRedirectPatterns[];
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
