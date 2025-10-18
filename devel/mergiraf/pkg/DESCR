@@ -1,0 +1,3 @@
+Mergiraf can solve a wide range of Git merge conflicts because it's
+aware of the syntax trees in your files. Thanks to its understanding
+of your language, it can often reconcile the needs of both sides.
