@@ -43,6 +43,11 @@ lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instr
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/includes/core.h
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/includes/valgrind.h
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/includes/zig.h
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/scripts/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/scripts/${MODPY_PYCACHE}release.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/scripts/${MODPY_PYCACHE}release.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/hooks/instrument-hooks/scripts/release.py
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind.py
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/walltime.py
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/plugin.py

@@ -1,6 +1,6 @@
 COMMENT=	pytest plugin to create CodSpeed benchmarks
 
-MODPY_DISTV=	4.0.0
+MODPY_DISTV=	4.1.1
 DISTNAME=	pytest_codspeed-${MODPY_DISTV}
 PKGNAME=	py-test-codspeed-${MODPY_DISTV}
 CATEGORIES=	devel
