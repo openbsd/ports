@@ -2,8 +2,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		infinite-world block sandbox game
 
-DIST_TUPLE +=		github luanti-org luanti 5.13.0 .
-REVISION =		1
+DIST_TUPLE +=		github luanti-org luanti 5.14.0 .
 
 CATEGORIES =		games x11
 
