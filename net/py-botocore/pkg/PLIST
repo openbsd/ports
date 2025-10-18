@@ -840,6 +840,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/endpoint-rule-set-1.json
@@ -2257,6 +2258,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-explorer-2/2022-07-28/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/endpoint-rule-set-1.json
@@ -2722,6 +2724,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/vpc-lattice/2022-11-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf-regional/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf-regional/2016-11-28/
