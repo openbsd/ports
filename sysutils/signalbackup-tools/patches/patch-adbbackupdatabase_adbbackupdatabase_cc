@@ -1,0 +1,32 @@
+LibreSSL doesn't provide PKCS12_key_gen_utf8() in pkcs12.h.
+
+Index: adbbackupdatabase/adbbackupdatabase.cc
+--- adbbackupdatabase/adbbackupdatabase.cc.orig
++++ adbbackupdatabase/adbbackupdatabase.cc
+@@ -160,7 +160,7 @@ AdbBackupDatabase::AdbBackupDatabase(std::string const
+   // create the kek-mac key from the salt, iterations and passphrase
+   int kek_mackey_length = 16;
+   std::unique_ptr<unsigned char []> kek_mackey(new unsigned char[kek_mackey_length]);
+-  if (!PKCS12_key_gen_utf8(passphrase.data(), passphrase.length(), mac_salt.first, mac_salt.second,
++  if (!PKCS12_key_gen_uni((unsigned char *)passphrase.data(), passphrase.length(), mac_salt.first, mac_salt.second,
+                            KEY_MATERIAL_ID, iterations, kek_mackey_length, kek_mackey.get(), EVP_sha1())) [[unlikely]]
+   {
+     Logger::error("Failed to generate mac-key with pkcs12");
+@@ -223,7 +223,7 @@ AdbBackupDatabase::AdbBackupDatabase(std::string const
+   // cipherkey:
+   int cipherkey_length = 16;
+   std::unique_ptr<unsigned char []> cipherkey(new unsigned char[cipherkey_length]);
+-  if (!PKCS12_key_gen_utf8(passphrase.data(), passphrase.length(), encryption_salt.first, encryption_salt.second,
++  if (!PKCS12_key_gen_uni((unsigned char *)passphrase.data(), passphrase.length(), encryption_salt.first, encryption_salt.second,
+                            KEY_MATERIAL_ID, iterations, cipherkey_length, cipherkey.get(), EVP_sha1())) [[unlikely]]
+   {
+     Logger::error("ADB backup: Failed to generate cipherkey with pkcs12");
+@@ -235,7 +235,7 @@ AdbBackupDatabase::AdbBackupDatabase(std::string const
+   // iv:
+   int iv_length = 16;
+   std::unique_ptr<unsigned char []> iv(new unsigned char[iv_length]);
+-  if (!PKCS12_key_gen_utf8(passphrase.data(), passphrase.length(), encryption_salt.first, encryption_salt.second,
++  if (!PKCS12_key_gen_uni((unsigned char *)passphrase.data(), passphrase.length(), encryption_salt.first, encryption_salt.second,
+                            IV_ID, iterations, iv_length, iv.get(), EVP_sha1()))
+   {
+     Logger::error("ADB backup: Failed to generate IV with pkcs12");
