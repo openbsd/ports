@@ -2,7 +2,7 @@ COMMENT =	ClassName type constraint with coercion to load the class
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	MooseX-Types-LoadableClass-0.015
+DISTNAME =	MooseX-Types-LoadableClass-0.016
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
