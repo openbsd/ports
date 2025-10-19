@@ -1,9 +1,8 @@
 COMMENT	=	minimal seat management daemon and universal library
 
-V =		0.8.0
+V =		0.9.1
 DISTNAME =	seatd-$V
 CATEGORIES =	sysutils
-REVISION =	0
 
 SITES =		https://git.sr.ht/~kennylevinsen/seatd/archive/
 DISTFILES =     seatd-{}${V}${EXTRACT_SUFX}

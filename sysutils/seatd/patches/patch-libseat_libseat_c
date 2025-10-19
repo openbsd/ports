@@ -1,0 +1,14 @@
+skip the builtin backend, so that we default to the noop backend
+(the only one working on OpenBSD for now)
+Index: libseat/libseat.c
+--- libseat/libseat.c.orig
++++ libseat/libseat.c
+@@ -65,7 +65,7 @@ struct libseat *libseat_open_seat(const struct libseat
+ 
+ 	struct libseat *backend = NULL;
+ 	for (const struct named_backend *iter = impls; iter->backend != NULL; iter++) {
+-		if (iter->backend == &noop_impl) {
++		if (iter->backend == &builtin_impl) {
+ 			continue;
+ 		}
+ 		backend = iter->backend->open_seat(listener, data);
