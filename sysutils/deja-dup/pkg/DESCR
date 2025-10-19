@@ -11,3 +11,5 @@ Features:
 
 Support for Microsoft OneDrive requires the requests_oauthlib python module;
 available in the www/py-requests-oauthlib port / package.
+
+Support for old-type backups requires the sysutils/duplicity package.

@@ -1,6 +1,7 @@
 COMMENT=		simple encrypted backup tool for GNOME
 
 DIST_TUPLE=		gnome World deja-dup 49.2 .
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -27,9 +28,6 @@ BUILD_DEPENDS=		devel/appstream \
 RUN_DEPENDS=		devel/py-gobject3 \
 			sysutils/restic \
 			x11/gnome/gvfs
-
-# restic is the default but keep compatibility with old duplicity backups
-RUN_DEPENDS +=		sysutils/duplicity
 
 LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup3 \
