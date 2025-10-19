@@ -1,6 +1,6 @@
 COMMENT=	generator-based operators for asynchronous iteration
 
-MODPY_DISTV=	0.7.0
+MODPY_DISTV=	0.7.1
 DISTNAME=	aiostream-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
