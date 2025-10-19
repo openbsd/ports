@@ -1,0 +1,8 @@
+cattrs is a Swiss army knife for structuring and validating data
+in Python. In practice, that means it converts unstructured
+dictionaries into proper classes and back, while validating their
+contents.
+
+cattrs works best with attrs classes, and dataclasses where simple
+structuring works out of the box, even for nested data, without
+polluting your data model with serialization details.
