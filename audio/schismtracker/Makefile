@@ -2,7 +2,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20250825
+GH_TAGNAME =	20251014
 
 CATEGORIES =	audio x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB +=	SDL2 c m utf8proc
+WANTLIB +=	SDL2 X11 c m utf8proc
 
 MODULES =	lang/python
 
