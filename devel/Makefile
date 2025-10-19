@@ -1925,6 +1925,7 @@
      SUBDIR += ruby-yajl,ruby33
      SUBDIR += ruby-yajl,ruby34
      SUBDIR += ruby-zeitwerk
+     SUBDIR += ruff
      SUBDIR += rust-analyzer
      SUBDIR += rust-bindgen
      SUBDIR += samurai
