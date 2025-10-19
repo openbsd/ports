@@ -1,10 +1,9 @@
 COMMENT=	lightweight, object-oriented state machine for Python
 
-MODPY_DISTV =	0.9.2
+MODPY_DISTV =	0.9.3
 DISTNAME=	transitions-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://github.com/pytransitions/transitions
 
