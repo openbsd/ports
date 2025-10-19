@@ -1,6 +1,6 @@
 COMMENT=	detect blocking calls in the async event loop
 
-MODPY_DISTV=	1.5.24
+MODPY_DISTV=	1.5.25
 DISTNAME=	blockbuster-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
