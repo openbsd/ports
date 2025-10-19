@@ -1,0 +1,8 @@
+lsprotocol is a Python implementation of object types used in the
+Language Server Protocol (LSP). This repository contains the code
+generator and the generated types for LSP.
+
+LSP is used by editors to communicate with various tools to enables
+services like code completion, documentation on hover, formatting,
+code analysis, etc. The intent of this library is to allow you to
+build on top of the types used by LSP.
