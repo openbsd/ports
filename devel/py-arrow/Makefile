@@ -1,11 +1,10 @@
 COMMENT=	better dates and times for Python
 
-MODPY_DISTV=	1.3.0
+MODPY_DISTV=	1.4.0
 DISTNAME=	arrow-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	https://arrow.readthedocs.io
-REVISION=	2
 
 # Apache 2.0
 PERMIT_PACKAGE= Yes
