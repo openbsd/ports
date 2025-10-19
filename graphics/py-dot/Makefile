@@ -1,10 +1,9 @@
 COMMENT=	Python interface to Graphviz's Dot
 
-MODPY_DISTV=	3.0.4
+MODPY_DISTV=	4.0.1
 DISTNAME=	pydot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
-REVISION=	0
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
@@ -12,11 +11,11 @@ HOMEPAGE=	https://github.com/erocarrera/pydot
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-parsing
+
 RUN_DEPENDS=	devel/py-parsing \
 		math/graphviz
 
