@@ -26,7 +26,8 @@ SITES =		${SITE_GNU:=binutils/}
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	--disable-gprof \
+CONFIGURE_ARGS +=	--disable-gas \
+			--disable-gprof \
 			--disable-ld \
 			--disable-libctf \
 			--disable-nls \
@@ -38,10 +39,7 @@ CONFIGURE_ARGS +=	--disable-gprof \
 USE_GMAKE =	Yes
 
 post-install:
-	@rm ${PREFIX}/bin/gas
-	@rm ${PREFIX}/info/as.info
 	@rm ${PREFIX}/info/bfd.info
-	@rm ${PREFIX}/man/man1/gas.1
 	@rm -rf ${PREFIX}/*-unknown-openbsd${OSREV}
 
 .include <bsd.port.mk>
