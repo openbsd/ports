@@ -1412,6 +1412,7 @@
      SUBDIR += py-cachetools
      SUBDIR += py-cairocffi
      SUBDIR += py-calver
+     SUBDIR += py-cattrs
      SUBDIR += py-certifi
      SUBDIR += py-cffi
      SUBDIR += py-cfgv
@@ -1569,6 +1570,7 @@
      SUBDIR += py-logilab-common
      SUBDIR += py-loguru
      SUBDIR += py-looseversion
+     SUBDIR += py-lsprotocol
      SUBDIR += py-magic
      SUBDIR += py-matrix-common
      SUBDIR += py-mccabe
@@ -1654,6 +1656,7 @@
      SUBDIR += py-pyrsistent
      SUBDIR += py-pyte
      SUBDIR += py-python-lsp-black
+     SUBDIR += py-python-lsp-ruff
      SUBDIR += py-python-lsp-server
      SUBDIR += py-python-slugify
      SUBDIR += py-pytokens
