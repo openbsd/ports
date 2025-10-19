@@ -1,9 +1,8 @@
 COMMENT =		SPNEGO authentication library
 
-MODPY_DISTV =	0.11.2
+MODPY_DISTV =		0.12.0
 DISTNAME =		pyspnego-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
 
 CATEGORIES =		security
 
