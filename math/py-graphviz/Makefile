@@ -1,24 +1,26 @@
-COMMENT =		simple Python interface for Graphviz
+COMMENT=	simple Python interface for Graphviz
 
-MODPY_DISTV =	0.14.1
-DISTNAME =		graphviz-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		7
+MODPY_DISTV=	0.21
+DISTNAME=	graphviz-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		math
+CATEGORIES=	math
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-EXTRACT_SUFX =		.zip
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+TEST_DEPENDS=	devel/py-mock \
+		devel/py-test-cov \
+		devel/py-test-mock \
+		math/graphviz
 
-TEST_DEPENDS =		devel/py-mock \
-			devel/py-test-cov \
-			devel/py-test-mock \
-			math/graphviz
+# https://github.com/xflr6/graphviz/issues/219
+# https://github.com/pytest-dev/pytest/issues/12123
+MODPY_PYTEST_ARGS= --ignore tests/conftest.py \
+		   --ignore tests/backend/conftest.py
 
 .include <bsd.port.mk>
