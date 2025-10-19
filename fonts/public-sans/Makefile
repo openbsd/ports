@@ -1,34 +1,29 @@
 COMMENT =		strong, neutral, principles-driven typeface
 
-V =			2.001
-DISTNAME =		public-sans-v$V
-PKGNAME =		public-sans-$V
+MODFONT_FAMILY =	public-sans
+MODFONT_VERSION =	2.001
 
-CATEGORIES =		fonts
+REVISION =		0
+
+DISTNAME =		public-sans-v${MODFONT_VERSION}
 
 HOMEPAGE =		https://public-sans.digital.gov/
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/uswds/public-sans/releases/download/v$V/
+SITES =			https://github.com/uswds/public-sans/releases/download/v${MODFONT_VERSION}/
 
-EXTRACT_SUFX =		.zip
+MODULES =		font
+
+MODFONT_FONTFILES =	fonts/*/*.ttf \
+			fonts/*/*.otf
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
 
-PKG_ARCH =		*
-
-FONTDIR =		${PREFIX}/share/fonts/public-sans
-
 FIX_EXTRACT_PERMISSIONS =	Yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/*/*.{ttf,otf} \
-		${FONTDIR}
 
 .include <bsd.port.mk>
