@@ -1,3 +1,5 @@
+@newgroup _yggdrasil:614
+@newuser _yggdrasil:614:614::Yggdrasil:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/yggdrasil
 @bin bin/yggdrasil
 @bin bin/yggdrasil-genkeys
