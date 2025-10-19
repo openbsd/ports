@@ -1,6 +1,6 @@
 COMMENT =		Jupyter core package
 
-MODPY_DISTV =		5.8.1
+MODPY_DISTV =		5.9.1
 DISTNAME =		jupyter_core-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
