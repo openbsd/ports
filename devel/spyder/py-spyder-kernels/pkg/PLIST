@@ -43,6 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}kernel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}kernel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}kernelapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}kernelapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}outstream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}outstream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}shell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}start.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}start.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/kernel.py
+lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/kernelapp.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/outstream.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/shell.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/start.py

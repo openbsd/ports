@@ -1,6 +1,6 @@
 COMMENT =		Python Language Server
 
-MODPY_DISTV =		1.12.2
+MODPY_DISTV =		1.13.1
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
@@ -29,6 +29,7 @@ RUN_DEPENDS =		devel/autopep8 \
 			devel/py-rope>=1.11.0 \
 			devel/py-yapf>=0.33.0 \
 			net/py-python-lsp-jsonrpc>=1.1.0,<2.0.0 \
+			textproc/py-black \
 			textproc/py-ujson>=3.0.0 \
 			textproc/py-whatthepatch>=1.0.2,<2.0.0
 
@@ -39,7 +40,8 @@ TEST_DEPENDS =		devel/py-coverage \
 			devel/pylint \
 			graphics/py-matplotlib \
 			math/py-numpy \
-			math/py-pandas
+			math/py-pandas \
+			x11/py-qt6
 
 PORTHOME =	${WRKDIR}
 

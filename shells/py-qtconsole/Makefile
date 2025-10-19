@@ -1,9 +1,8 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_DISTV =		5.6.1
+MODPY_DISTV =		5.7.0
 DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		shells
 
@@ -23,6 +22,7 @@ RUN_DEPENDS =		devel/py-ipykernel>=4.1 \
 			devel/py-pexpect \
 			devel/py-traitlets>=5.2.2 \
 			sysutils/py-packaging \
+			textproc/py-ipython_pygments_lexers \
 			textproc/py-pygments \
 			x11/py-qt6 \
 			x11/py-qtpy>=2.4.0
@@ -31,6 +31,7 @@ RUN_DEPENDS =		devel/py-ipykernel>=4.1 \
 MODPY_PYTEST_ARGS =	--ignore qtconsole/tests/test_00_console_widget.py
 
 TEST_DEPENDS =		devel/py-flaky \
+			devel/py-test-asyncio \
 			devel/py-test-cov
 
 PORTHOME =		${WRKDIR}
