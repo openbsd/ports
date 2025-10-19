@@ -446,6 +446,7 @@
      SUBDIR += py-inflection
      SUBDIR += py-ini2toml
      SUBDIR += py-iniconfig
+     SUBDIR += py-ipython_pygments_lexers
      SUBDIR += py-iso8601
      SUBDIR += py-jaraco-text
      SUBDIR += py-jellyfish
