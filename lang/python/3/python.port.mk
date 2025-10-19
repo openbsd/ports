@@ -155,6 +155,7 @@ ERRORS +=		"Fatal: unknown MODPY_PYBUILD value - see python-modules(5)"
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 _MODPY_WHEELSDIR ?= dist
 .  if ${_MODPY_USE_CARGO:L} == yes
+ONLY_FOR_ARCHS ?=	${RUST_ARCHS}
 MODCARGO_INSTALL ?=	No
 MODCARGO_TEST ?=	No
 MODULES +=		devel/cargo
