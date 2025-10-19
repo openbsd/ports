@@ -1,6 +1,6 @@
 COMMENT=	brain-dead simple config-ini parsing
 
-MODPY_DISTV=	2.1.0
+MODPY_DISTV=	2.3.0
 DISTNAME=	iniconfig-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,10 +12,7 @@ HOMEPAGE=	http://github.com/RonnyPfannschmidt/iniconfig
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	hatch-vcs
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
-
-# missing from sdist
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
