@@ -1,0 +1,3 @@
+python-lsp-ruff is a plugin for python-lsp-server that adds linting,
+code actions and formatting capabilities that are provided by ruff,
+an extremely fast Python linter and formatter written in Rust.
