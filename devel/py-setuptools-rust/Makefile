@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS=	${RUST_ARCHS}
+
 COMMENT=	setuptools Rust extension plugin
 
 MODPY_DISTV=	1.12.0
@@ -20,10 +22,5 @@ MODPY_PYTEST_ARGS= setuptools_rust
 RUN_DEPENDS=	devel/py-semantic-version \
 		devel/py-setuptools \
 		devel/py-typing-extensions
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mrust}
-RUN_DEPENDS+=	lang/rust
-.endif
 
 .include <bsd.port.mk>

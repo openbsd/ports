@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS=	${RUST_ARCHS}
+
 COMMENT=	develop crates with pyo3, rust-cpython and cffi bindings
 
 GH_ACCOUNT=	PyO3
