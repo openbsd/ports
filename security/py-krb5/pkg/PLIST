@@ -11,6 +11,9 @@ lib/python${MODPY_VERSION}/site-packages/krb5/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/krb5/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/krb5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/krb5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/krb5/${MODPY_PYCACHE}_adpi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/krb5/${MODPY_PYCACHE}_adpi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/krb5/_adpi.py
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_ccache.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/krb5/_ccache.pyi
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_ccache_match.${MODPY_PYC_MAGIC_TAG}so
@@ -20,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/krb5/_ccache_mit.pyi
 lib/python${MODPY_VERSION}/site-packages/krb5/_ccache_support_switch.pyi
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_cccol.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/krb5/_cccol.pyi
+lib/python${MODPY_VERSION}/site-packages/krb5/_chpw_message_mit.pyi
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_context.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/krb5/_context.pyi
 lib/python${MODPY_VERSION}/site-packages/krb5/_context_mit.pyi
@@ -51,6 +55,8 @@ lib/python${MODPY_VERSION}/site-packages/krb5/_kt_mit.pyi
 lib/python${MODPY_VERSION}/site-packages/krb5/_principal.pyi
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_principal_heimdal.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/krb5/_principal_heimdal.pyi
+@so lib/python${MODPY_VERSION}/site-packages/krb5/_set_password.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/krb5/_set_password.pyi
 @so lib/python${MODPY_VERSION}/site-packages/krb5/_string.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/krb5/_string.pyi
 lib/python${MODPY_VERSION}/site-packages/krb5/_string_mit.pyi

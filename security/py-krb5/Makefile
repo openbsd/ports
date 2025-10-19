@@ -1,9 +1,8 @@
 COMMENT =		krb5 API interface
 
-MODPY_DISTV =	0.6.0
+MODPY_DISTV =		0.8.0
 DISTNAME =		krb5-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		security
 
