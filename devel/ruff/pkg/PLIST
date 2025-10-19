@@ -1,0 +1,10 @@
+@bin bin/ruff
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/ruff
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/ruff.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_ruff

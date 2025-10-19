@@ -1,0 +1,76 @@
+Fix tests for crate unicode_names2
+
+- Feature attributes are only allowed on the nightly release channel.
+  See rustc --explain E0554
+
+- Suppress use of unstable library feature 'test': 'bench' is a part of custom
+  test frameworks which are unstable. See rustc --explain E0658
+
+Index: modcargo-crates/unicode_names2-1.3.0/src/lib.rs
+--- modcargo-crates/unicode_names2-1.3.0/src/lib.rs.orig
++++ modcargo-crates/unicode_names2-1.3.0/src/lib.rs
+@@ -30,8 +30,6 @@
+ //!   string) is required, unless you use a raw string.
+ //!
+ //! ```rust
+-//! #![feature(proc_macro_hygiene)]
+-//!
+ //! #[macro_use]
+ //! extern crate unicode_names2_macros;
+ //!
+@@ -59,7 +57,6 @@
+ //! ```
+ 
+ #![cfg_attr(feature = "no_std", no_std)]
+-#![cfg_attr(test, feature(test))]
+ #![deny(missing_docs, unsafe_code)]
+ 
+ #[cfg(all(test, feature = "no_std"))]
+@@ -443,10 +440,6 @@ mod tests {
+     use std::char;
+     use std::prelude::v1::*;
+ 
+-    extern crate test;
+-
+-    use test::bench::Bencher;
+-
+     static DATA: &'static str =
+         include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/data/UnicodeData.txt"));
+ 
+@@ -614,7 +607,6 @@ mod tests {
+         assert_eq!(super::character_by_alias(b"NOT AN ALIAS"), None);
+     }
+ 
+-    #[bench]
+     fn name_basic(b: &mut Bencher) {
+         b.iter(|| {
+             for s in name('ö').unwrap() {
+@@ -623,12 +615,10 @@ mod tests {
+         })
+     }
+ 
+-    #[bench]
+     fn character_basic(b: &mut Bencher) {
+         b.iter(|| character("LATIN SMALL LETTER O WITH DIAERESIS"));
+     }
+ 
+-    #[bench]
+     fn name_10000_invalid(b: &mut Bencher) {
+         // be consistent across runs, but avoid sequential/caching.
+         let mut rng = StdRng::seed_from_u64(0x12345678);
+@@ -648,7 +638,6 @@ mod tests {
+         })
+     }
+ 
+-    #[bench]
+     fn name_all_valid(b: &mut Bencher) {
+         let chars = (0u32..0x10FFFF)
+             .filter_map(|x| match char::from_u32(x) {
+@@ -666,7 +655,6 @@ mod tests {
+         });
+     }
+ 
+-    #[bench]
+     fn character_10000(b: &mut Bencher) {
+         // be consistent across runs, but avoid sequential/caching.
+         let mut rng = StdRng::seed_from_u64(0x12345678);
