@@ -1,2 +1,11 @@
 @bin bin/ccache
 @man man/man1/ccache.1
+share/doc/ccache/
+share/doc/ccache/AUTHORS.adoc
+share/doc/ccache/AUTHORS.html
+share/doc/ccache/LICENSE.adoc
+share/doc/ccache/LICENSE.html
+share/doc/ccache/MANUAL.adoc
+share/doc/ccache/MANUAL.html
+share/doc/ccache/NEWS.adoc
+share/doc/ccache/NEWS.html
