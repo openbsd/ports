@@ -1,7 +1,7 @@
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		10
+REVISION =		11
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui
@@ -15,7 +15,7 @@ WANTLIB += Xrender
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 BUILD_DEPENDS =		devel/jam
 LIB_DEPENDS =		x11/fltk \
 			x11/dbus
