@@ -7,7 +7,7 @@ V =		3.15.3
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
 GH_TAGNAME =	v${V}
-REVISION-main =	0
+REVISION-main =	1
 
 DISTNAME =		nextcloudclient-${V}
 PKGNAME-main =		nextcloudclient-${V}
@@ -79,8 +79,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 
 LIB_DEPENDS-dolphin =	devel/kf6/kio
 
-CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
-			-DUNIT_TESTING=ON \
+CONFIGURE_ARGS =	-DUNIT_TESTING=ON \
 			-DWITH_CRASHREPORTER=OFF
 
 # Disable Doxygen

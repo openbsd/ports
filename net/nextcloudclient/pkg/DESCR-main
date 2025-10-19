@@ -3,3 +3,5 @@ platform. Our technology combines the convenience and ease of use of
 consumer-grade solutions like Dropbox and Google Drive with the security,
 privacy and control business needs. nextcloudclient is a tool to synchronize
 files from Nextcloud Server with your computer.
+
+Nautilus integration requires the py3-urllib3 package.

@@ -17,6 +17,9 @@ include/nextcloudsync/mirall/syncresult.h
 @lib lib/libnextcloudsync.so.${LIBnextcloudsync_VERSION}
 @lib lib/libnextcloudsync_vfs_suffix.so.${LIBnextcloudsync_vfs_suffix_VERSION}
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
+share/caja-python/
+share/caja-python/extensions/
+share/caja-python/extensions/syncstate-Nextcloud.py
 share/examples/Nextcloud/
 @sample ${SYSCONFDIR}/Nextcloud/
 share/examples/Nextcloud/sync-exclude.lst
@@ -33,6 +36,12 @@ share/icons/hicolor/48x48/apps/Nextcloud.png
 share/icons/hicolor/512x512/apps/Nextcloud.png
 share/icons/hicolor/64x64/apps/Nextcloud.png
 share/mime/packages/nextcloud.xml
+share/nautilus-python/
+share/nautilus-python/extensions/
+share/nautilus-python/extensions/syncstate-Nextcloud.py
+share/nemo-python/
+share/nemo-python/extensions/
+share/nemo-python/extensions/syncstate-Nextcloud.py
 share/nextcloud/
 share/nextcloud/i18n/
 share/nextcloud/i18n/client_TW.qm
