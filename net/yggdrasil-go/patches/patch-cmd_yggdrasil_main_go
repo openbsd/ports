@@ -1,10 +1,4 @@
-Pledge full filesystem read for Go's resolv.conf polling
-
-sys/kern/kern_pledge.c r1.329 removed the unveil bypass for "dns",
-so "rpath" is needed for Go's DNS to stat(2) it.
-
-Since current "/ rwc" and "cpath" with the new "rpath" amount to full
-read access, there is no point in unveiling anymore.
+merged https://github.com/yggdrasil-network/yggdrasil-go/pull/1275
 
 Index: cmd/yggdrasil/main.go
 --- cmd/yggdrasil/main.go.orig
