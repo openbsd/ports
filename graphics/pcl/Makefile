@@ -3,9 +3,8 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		image and point cloud processing library
 
-V =			1.15.0
+V =			1.15.1
 PKGNAME =		pcl-${V}
-REVISION =		0
 
 DIST_TUPLE +=		github PointCloudLibrary pcl ${PKGNAME} .
 DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
@@ -14,7 +13,7 @@ DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
         pcl_keypoints pcl_ml pcl_octree pcl_recognition pcl_registration \
         pcl_sample_consensus pcl_search pcl_segmentation pcl_stereo \
         pcl_surface pcl_tracking
-SHARED_LIBS += ${LIB} 1.0 # 0.0
+SHARED_LIBS += ${LIB} 2.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
@@ -25,8 +24,8 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt c flann_cpp lz4 m pcap png qhull_r
-WANTLIB += usb-1.0 z
+WANTLIB += boost_iostreams-mt boost_random-mt boost_regex-mt boost_system-mt
+WANTLIB += c flann_cpp lz4 m pcap png qhull_r usb-1.0 z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
@@ -35,6 +34,7 @@ PCLVER =		pcl-${V:R}
 SUBST_VARS +=		PCLVER
 
 BUILD_DEPENDS =		math/eigen3 \
+			devel/cjson \
 			x11/xkbcommon
 
 LIB_DEPENDS =		devel/boost \
@@ -65,7 +65,8 @@ CONFIGURE_ARGS =	-DWITH_LIBUSB=ON \
 			-DWITH_QT=OFF \
 			-DWITH_DOCS=OFF \
 			-DBUILD_global_tests=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_nanoflann=ON
 
 # GTest's source is needed for tests
 GTEST_WRKSRC =		${WRKDIR}/gtest_dist/googletest
