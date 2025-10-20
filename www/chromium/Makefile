@@ -14,6 +14,8 @@ COMMENT=		Chromium browser
 
 V=			141.0.7390.107
 
+REVISION=		0
+
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
@@ -62,6 +64,7 @@ WANTLIB+=	harfbuzz harfbuzz-subset icudata icui18n icuuc intl jpeg kvm
 WANTLIB+=	m nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	plc4 plds4 png pthread pthread smime3 sndio udev usbhid util
 WANTLIB+=	xcb xkbcommon xml2 xshmfence xslt z
+WANTLIB+=	aom vpx
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -90,7 +93,9 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -142,8 +147,10 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
+		libaom \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -192,9 +199,10 @@ GN_ARGS+=	enable_rust=true \
 		rustc_version=\"${RUSTC_VERSION}\"
 
 # pull in our patched sources for libaom and libvpx
-GN_ARGS+=	use_vaapi=true
-BUILD_DEPENDS+=	multimedia/aom:patch \
-		multimedia/libvpx:patch
+#GN_ARGS+=	use_vaapi=true
+#BUILD_DEPENDS+=	multimedia/aom:patch \
+#		multimedia/libvpx:patch
+GN_ARGS+=	use_vaapi=false
 
 
 .if ${MACHINE_ARCH} == "aarch64"
@@ -255,11 +263,11 @@ GN_ARGS+=	use_thin_lto=false \
 		thin_lto_enable_optimizations=true
 .endif
 
-pre-patch:
-	cd ${WRKDIR}/multimedia/aom/libaom-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
-	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
+#pre-patch:
+#	cd ${WRKDIR}/multimedia/aom/libaom-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
+#	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

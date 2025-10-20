@@ -16,6 +16,8 @@ COMMENT=		Chromium browser sans integration with Google
 V=			141.0.7390.107
 UGV=			${V}-1
 
+REVISION=		0
+
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
@@ -67,6 +69,7 @@ WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 WANTLIB+=	epoll-shim lzma udev
+WANTLIB+=	aom vpx
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -96,7 +99,9 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -147,8 +152,10 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
+		libaom \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -192,9 +199,10 @@ GN_ARGS+=	enable_rust=true \
 		rustc_version=\"${RUSTC_VERSION}\"
 
 # pull in our patched sources for libaom and libvpx
-GN_ARGS+=	use_vaapi=true
-BUILD_DEPENDS+=	multimedia/aom:patch \
-		multimedia/libvpx:patch
+#GN_ARGS+=	use_vaapi=true
+#BUILD_DEPENDS+=	multimedia/aom:patch \
+#		multimedia/libvpx:patch
+GN_ARGS+=	use_vaapi=false
 
 .if ${MACHINE_ARCH} == "aarch64"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -274,10 +282,10 @@ pre-patch:
 	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
 		utils/domain_substitution.py apply -r domain_regex.list -f \
 		domain_substitution.list -c ${WRKSRC}/domsubcache.tar.gz ${WRKSRC}
-	cd ${WRKDIR}/multimedia/aom/libaom-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
-	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
+#	cd ${WRKDIR}/multimedia/aom/libaom-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
+#	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

@@ -13,6 +13,8 @@ COMMENT=		Iridium browser
 
 V=			2025.10.141.1
 
+REVISION=		0
+
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES+=		${IRIDIUM_DISTFILES}
@@ -58,6 +60,7 @@ WANTLIB+=	kvm lzma m nspr4 nss3 nssutil3 openh264 opus pango-1.0
 WANTLIB+=	pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png
 WANTLIB+=	pthread smime3 sndio udev usbhid util xcb xcb-render xcb-shm
 WANTLIB+=	xkbcommon xml2 xshmfence xslt z
+WANTLIB+=	aom vpx
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -86,7 +89,9 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -119,8 +124,10 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
+		libaom \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -170,9 +177,10 @@ GN_ARGS+=	enable_rust=true \
 		rustc_version=\"${RUSTC_VERSION}\"
 
 # pull in our patched sources for libaom and libvpx
-GN_ARGS+=	use_vaapi=true
-BUILD_DEPENDS+=	multimedia/aom:patch \
-		multimedia/libvpx:patch
+#GN_ARGS+=	use_vaapi=true
+#BUILD_DEPENDS+=	multimedia/aom:patch \
+#		multimedia/libvpx:patch
+GN_ARGS+=	use_vaapi=false
 
 .if ${MACHINE_ARCH} == "aarch64"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -232,11 +240,11 @@ GN_ARGS+=	use_thin_lto=false \
 		thin_lto_enable_optimizations=true
 .endif
 
-pre-patch:
-	cd ${WRKDIR}/multimedia/aom/libaom-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
-	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
-		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
+#pre-patch:
+#	cd ${WRKDIR}/multimedia/aom/libaom-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
+#	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
+#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
