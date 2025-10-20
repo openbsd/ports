@@ -1,6 +1,6 @@
 COMMENT =		enhanced release of Doom, Heretic, Hexen, and Strife
 
-V =			7.0
+V =			7.1
 DIST_TUPLE =		github fabiangreffrath crispy-doom crispy-doom-${V} .
 PKGNAME =		crispy-doom-${V}
 
