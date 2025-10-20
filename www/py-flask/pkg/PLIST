@@ -1,4 +1,3 @@
-@conflict py-flask-<0.12.3p3
 @pkgpath www/py-flask,python3
 bin/flask
 lib/python${MODPY_VERSION}/site-packages/flask/

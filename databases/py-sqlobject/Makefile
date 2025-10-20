@@ -1,7 +1,7 @@
 COMMENT =		ORM (Object Relational Manager) for Python
 
 MODPY_DISTV =	3.11.0
-REVISION =		3
+REVISION =		4
 DISTNAME =		SQLObject-${MODPY_DISTV}
 PKGNAME =		py-sqlobject-${MODPY_DISTV}
 CATEGORIES =		databases

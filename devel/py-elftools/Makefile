@@ -4,7 +4,7 @@ MODPY_DISTV =		0.31
 DISTNAME =		pyelftools-${MODPY_DISTV}
 PKGNAME =		py-elftools-${MODPY_DISTV}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>

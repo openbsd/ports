@@ -3,7 +3,7 @@ COMMENT =	python svg graph plotting library
 MODPY_DISTV =	3.0.5
 DISTNAME =	pygal-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 

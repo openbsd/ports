@@ -3,7 +3,7 @@ COMMENT=	flexible forms validation and rendering library
 MODPY_DISTV=	3.2.1
 DISTNAME=	wtforms-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

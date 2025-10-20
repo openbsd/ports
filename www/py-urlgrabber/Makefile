@@ -3,7 +3,7 @@ COMMENT =		high-level cross-protocol url-grabber
 MODPY_DISTV =	4.1.0
 DISTNAME =		urlgrabber-${MODPY_DISTV}
 PKGNAME =		py-urlgrabber-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 

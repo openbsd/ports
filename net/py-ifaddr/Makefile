@@ -3,7 +3,7 @@ COMMENT=		enumerate IP addresses on the local network adapters
 MODPY_DISTV=	0.2.0
 DISTNAME=		ifaddr-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 

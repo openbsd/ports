@@ -5,7 +5,7 @@ COMMENT=		print colored terminal text from Python apps
 MODPY_DISTV=		0.4.6
 DISTNAME=		colorama-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

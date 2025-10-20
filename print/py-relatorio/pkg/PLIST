@@ -1,4 +1,3 @@
-@conflict py-relatorio-*
 @pkgpath print/py-relatorio,python3
 bin/relatorio-render
 lib/python${MODPY_VERSION}/site-packages/relatorio/

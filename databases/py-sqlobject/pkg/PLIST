@@ -1,4 +1,3 @@
-@conflict py-sqlobject-*
 @pkgpath databases/py-sqlobject,python3
 bin/sqlobject-admin
 bin/sqlobject-convertOldURI

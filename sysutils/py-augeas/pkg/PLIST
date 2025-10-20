@@ -1,4 +1,3 @@
-@conflict py-augeas-*
 @pkgpath sysutils/py-augeas,python3
 @so lib/python${MODPY_VERSION}/site-packages/_augeas${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/augeas/

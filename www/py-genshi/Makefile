@@ -3,7 +3,7 @@ COMMENT=	toolkit for generation of output for the web
 MODPY_DISTV=	0.7.9
 DISTNAME=	Genshi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www
 

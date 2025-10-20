@@ -1,4 +1,3 @@
-@conflict py-flask-principal-*
 @pkgpath www/py-flask-principal,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}flask_principal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

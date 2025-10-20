@@ -3,7 +3,7 @@ COMMENT=	collection of ASN.1 data structures for py-asn1
 MODPY_DISTV=	0.4.2
 DISTNAME=	pyasn1_modules-${MODPY_DISTV}
 PKGNAME=	py-asn1-modules-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

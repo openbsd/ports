@@ -1,4 +1,3 @@
-@conflict py-frozen-flask-*
 @pkgpath www/py-frozen-flask,python3
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/__init__.py

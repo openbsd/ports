@@ -4,7 +4,7 @@ MODPY_DISTV =	0.16
 DISTNAME =	PyX-${MODPY_DISTV}
 PKGNAME =	py-pyx-${MODPY_DISTV}
 CATEGORIES =	graphics devel
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://pyx.sourceforge.net/
 

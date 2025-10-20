@@ -1,4 +1,3 @@
-@conflict py-whisper-*
 @pkgpath databases/py-whisper,python3
 bin/find-corrupt-whisper-files.py
 bin/rrd2whisper.py

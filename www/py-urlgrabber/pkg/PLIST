@@ -1,4 +1,3 @@
-@conflict py-urlgrabber-*
 @pkgpath www/py-urlgrabber,python3
 bin/urlgrabber
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/

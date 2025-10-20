@@ -1,7 +1,7 @@
 COMMENT =		sphinx theme used by guzzle
 
 MODPY_DISTV =	0.7.11
-REVISION =		11
+REVISION =		12
 DISTNAME =		guzzle_sphinx_theme-${MODPY_DISTV}
 PKGNAME =		py-sphinx_guzzle_theme-${MODPY_DISTV}
 

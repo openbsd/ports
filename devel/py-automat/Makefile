@@ -3,6 +3,7 @@ COMMENT=	finite-state machines in Python
 MODPY_DISTV=	25.4.16
 DISTNAME=	automat-${MODPY_DISTV}
 PKGNAME=	py-automat-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

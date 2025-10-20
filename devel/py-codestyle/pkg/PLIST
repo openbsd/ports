@@ -1,4 +1,3 @@
-@conflict py-codestyle-<2.5.0p1
 @pkgpath devel/py-codestyle,python3
 bin/pycodestyle
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/

@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 MODPY_DISTV =		3.10.7
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics devel math
 

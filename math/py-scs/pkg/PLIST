@@ -1,4 +1,3 @@
-@conflict py-scs-*
 @pkgpath math/py-scs,python3
 @so lib/python${MODPY_VERSION}/site-packages/_scs_direct.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/_scs_indirect.${MODPY_PYC_MAGIC_TAG}so

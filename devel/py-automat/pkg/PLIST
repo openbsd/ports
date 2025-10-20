@@ -1,4 +1,3 @@
-@conflict py-automat-*
 @pkgpath devel/py-automat,python3
 bin/automat-visualize
 lib/python${MODPY_VERSION}/site-packages/automat/

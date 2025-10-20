@@ -3,7 +3,7 @@ COMMENT =		user session management for flask
 MODPY_DISTV =		0.6.3
 DISTNAME =		Flask-Login-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

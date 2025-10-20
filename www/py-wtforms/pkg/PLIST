@@ -1,5 +1,4 @@
 @conflict py-flask-wtk-<0.9.4p0
-@conflict py-wtforms-*
 @pkgpath www/py-wtforms,python3
 lib/python${MODPY_VERSION}/site-packages/wtforms/
 lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/

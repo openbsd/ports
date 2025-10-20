@@ -1,4 +1,3 @@
-@conflict py-elftools-*
 @pkgpath devel/py-elftools,python3
 bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/

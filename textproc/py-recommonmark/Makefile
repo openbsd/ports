@@ -7,7 +7,7 @@ GH_ACCOUNT=	readthedocs
 GH_PROJECT=	recommonmark
 GH_TAGNAME=	${MODPY_DISTV}
 PKGNAME=	py-recommonmark-${MODPY_DISTV}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	textproc devel
 

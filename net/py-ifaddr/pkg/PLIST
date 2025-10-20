@@ -1,4 +1,3 @@
-@conflict py-ifaddr-*
 @pkgpath net/py-ifaddr,python3
 lib/python${MODPY_VERSION}/site-packages/ifaddr/
 lib/python${MODPY_VERSION}/site-packages/ifaddr-${MODPY_DISTV}.dist-info/

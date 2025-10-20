@@ -3,7 +3,7 @@ COMMENT =		freezes a Flask application into a set of static files
 MODPY_DISTV =	0.19
 DISTNAME =		Frozen-Flask-${MODPY_DISTV}
 PKGNAME =		py-frozen-flask-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

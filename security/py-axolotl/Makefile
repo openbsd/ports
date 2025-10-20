@@ -3,7 +3,7 @@ COMMENT =		Python port of libaxolotl
 MODPY_DISTV =	0.2.3
 DISTNAME =		python-axolotl-${MODPY_DISTV}
 PKGNAME =		py-axolotl-${MODPY_DISTV}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		security
 

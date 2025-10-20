@@ -1,4 +1,3 @@
-@conflict py-textfsm-*
 @pkgpath textproc/py-textfsm,python3
 bin/textfsm
 lib/python${MODPY_VERSION}/site-packages/testdata/

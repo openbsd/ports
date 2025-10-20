@@ -3,7 +3,7 @@ COMMENT=	Python bindings for Chromaprint and the Acoustid API
 MODPY_DISTV=	1.3.0
 DISTNAME=	pyacoustid-${MODPY_DISTV}
 PKGNAME=	py-acoustid-${MODPY_DISTV}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio
 

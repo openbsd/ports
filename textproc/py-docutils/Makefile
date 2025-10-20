@@ -4,6 +4,7 @@ MODPY_DISTV=	0.22.2
 DISTNAME=	docutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://docutils.sourceforge.io/
 

@@ -1,4 +1,3 @@
-@conflict py-carbon-*
 @pkgpath databases/py-carbon,python3
 @newgroup _graphite:706
 @newuser _graphite:706:_graphite::Graphite and Carbon user:/nonexistent:/sbin/nologin

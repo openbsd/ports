@@ -1,7 +1,7 @@
 COMMENT=	Python library for "Tom's Obvious Minimal Language"
 
 MODPY_DISTV=	0.10.2
-REVISION=	6
+REVISION=	7
 
 DISTNAME=	toml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}

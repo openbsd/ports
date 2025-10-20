@@ -9,6 +9,7 @@ TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
 
 DISTNAME=		protobuf-${MODPY_DISTV}
 PKGNAME=		py-protobuf-${MODPY_DISTV}
+REVISION=		0
 
 # C11
 COMPILER=		base-clang ports-gcc

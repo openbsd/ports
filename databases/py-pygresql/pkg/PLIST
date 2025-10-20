@@ -1,4 +1,3 @@
-@conflict py-pygresql-*
 @pkgpath databases/py-pygresql,python3
 lib/python${MODPY_VERSION}/site-packages/pg/
 lib/python${MODPY_VERSION}/site-packages/pg/__init__.py

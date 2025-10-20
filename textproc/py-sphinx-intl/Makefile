@@ -3,7 +3,7 @@ COMMENT =		internationalization helper for Sphinx
 MODPY_DISTV =	2.1.0
 PKGNAME =		py-sphinx-intl-${MODPY_DISTV}
 DISTNAME =		sphinx-intl-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 

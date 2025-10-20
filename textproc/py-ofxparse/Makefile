@@ -1,7 +1,7 @@
 COMMENT =	parser for the Open Financial Exchange file format
 
 MODPY_DISTV =	0.21
-REVISION =	6
+REVISION =	7
 DISTNAME =	ofxparse-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 

@@ -5,7 +5,7 @@ MODPY_DISTV =	1.1.10
 DISTNAME =		whisper-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		4
+REVISION =		5
 
 # Apache
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,3 @@
-@conflict py-flask-login-*
 @pkgpath www/py-flask-login,python3
 lib/python${MODPY_VERSION}/site-packages/flask_login/
 lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/

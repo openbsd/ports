@@ -1,4 +1,3 @@
-@conflict py-mpd2-*
 @pkgpath audio/py-mpd2,python3
 lib/python${MODPY_VERSION}/site-packages/mpd/
 lib/python${MODPY_VERSION}/site-packages/mpd/__init__.py

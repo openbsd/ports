@@ -1,4 +1,3 @@
-@conflict py-sqlparse-*
 @pkgpath databases/py-sqlparse,python3
 bin/sqlformat
 lib/python${MODPY_VERSION}/site-packages/sqlparse/

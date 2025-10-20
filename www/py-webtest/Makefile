@@ -3,6 +3,7 @@ COMMENT=	helper to test wsgi applications
 MODPY_DISTV=	3.0.7
 DISTNAME=	webtest-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www devel
 

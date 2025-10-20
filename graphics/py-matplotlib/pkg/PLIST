@@ -1,4 +1,3 @@
-@conflict py-matplotlib-*
 @pkgpath graphics/py-matplotlib,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc

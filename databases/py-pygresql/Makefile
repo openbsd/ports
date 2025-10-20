@@ -4,7 +4,7 @@ MODPY_DISTV =	6.0
 DISTNAME =		PyGreSQL-${MODPY_DISTV}
 PKGNAME =		py-pygresql-${MODPY_DISTV}
 CATEGORIES =		databases
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://www.pygresql.org/
 

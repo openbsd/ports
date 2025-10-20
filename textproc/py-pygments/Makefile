@@ -4,6 +4,7 @@ MODPY_DISTV=	2.19.2
 DISTNAME=	pygments-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc devel
+REVISION=	0
 
 HOMEPAGE=	https://pygments.org/
 

@@ -1,4 +1,3 @@
-@conflict py-recommonmark-*
 @pkgpath textproc/py-recommonmark,python3
 bin/cm2html
 bin/cm2latex

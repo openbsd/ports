@@ -1,4 +1,3 @@
-@conflict py-pyx-*
 @pkgpath graphics/py-pyx,python3
 lib/python${MODPY_VERSION}/site-packages/pyx/
 lib/python${MODPY_VERSION}/site-packages/pyx-${MODPY_DISTV}.dist-info/
