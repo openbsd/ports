@@ -43,10 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/pygame-${MODPY_DISTV}-py${MODPY_VERSION
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/hook-pygame.py
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/${MODPY_PYCACHE}hook-pygame.${MODPY_PYC_MAGIC_TAG}pyc
@@ -61,7 +59,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/controller.pyi
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/touch.pyi
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/video.pyi
@@ -89,7 +86,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/docs/
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/draw.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/draw.${MODPY_PYC_MAGIC_TAG}so
@@ -100,7 +96,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/event.pyi
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/README.rst
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/aacircle.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}aacircle.${MODPY_PYC_MAGIC_TAG}pyc
@@ -299,7 +294,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/base_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}base_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -400,11 +394,9 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/rect_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}rect_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -422,7 +414,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/ze
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/all_ok/${MODPY_PYCACHE}zero_tests_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -434,7 +425,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everythin
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/everything/${MODPY_PYCACHE}sleep_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -444,7 +434,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/m
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/exclude/${MODPY_PYCACHE}magic_tag_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -454,7 +443,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/failures1/${MODPY_PYCACHE}fake_4_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -462,7 +450,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplet
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete/${MODPY_PYCACHE}fake_3_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -470,7 +457,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplet
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/incomplete_todo/${MODPY_PYCACHE}fake_3_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/fake_1_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/${MODPY_PYCACHE}fake_1_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -478,7 +464,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/infinite_loop/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -488,7 +473,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_std
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stderr/${MODPY_PYCACHE}fake_4_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/print_stdout/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -500,7 +484,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/run_tests
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/${MODPY_PYCACHE}run_tests__test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/fake_2_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/run_tests__tests/timeout/${MODPY_PYCACHE}fake_2_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -532,7 +515,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_test_.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}test_test_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/arrinter.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/test_utils/${MODPY_PYCACHE}arrinter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -566,7 +548,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/video_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}video_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/threads/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/threads/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/time.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/time.${MODPY_PYC_MAGIC_TAG}so

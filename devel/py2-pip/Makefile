@@ -1,11 +1,11 @@
 COMMENT =		tool for installing Python packages
 
 PORTROACH=		limit:^20\.
-MODPY_DISTV =	20.3.4
+MODPY_DISTV =		20.3.4
 DISTNAME =		pip-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://pip.pypa.io/en/stable/
 

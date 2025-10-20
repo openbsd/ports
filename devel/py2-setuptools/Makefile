@@ -7,7 +7,7 @@ MODPY_DISTV =		44.1.1
 DISTNAME =		setuptools-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 EXTRACT_SUFX =		.zip

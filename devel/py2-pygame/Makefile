@@ -1,6 +1,7 @@
 COMMENT=	set of Python modules designed for writing games
 
 MODPY_DISTV=	2.0.3
+REVISION=	0
 # no more py2 releases
 PORTROACH=	ignore:1
 DISTNAME=	pygame-${MODPY_DISTV}

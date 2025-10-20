@@ -2,10 +2,10 @@ COMMENT=		DNS toolkit for Python
 
 # dnspython>=2 is py3-only; this old version is kept around for
 # python 2 until mail/mailman can be updated
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
 
-MODPY_DISTV=	1.16.0
-REVISION=		6
+MODPY_DISTV=		1.16.0
+REVISION=		7
 DISTNAME=		dnspython-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
