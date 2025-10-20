@@ -1,7 +1,7 @@
 Index: src/main.rs
 --- src/main.rs.orig
 +++ src/main.rs
-@@ -34,8 +34,7 @@ use std::{borrow::Cow, path::PathBuf, str::FromStr, sy
+@@ -37,8 +37,7 @@ use std::{borrow::Cow, path::PathBuf, str::FromStr, sy
  
  /// Get the directory where the Nushell executable is located.
  fn current_exe_directory() -> PathBuf {

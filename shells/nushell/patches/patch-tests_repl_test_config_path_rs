@@ -1,0 +1,12 @@
+Index: tests/repl/test_config_path.rs
+--- tests/repl/test_config_path.rs.orig
++++ tests/repl/test_config_path.rs
+@@ -27,7 +27,7 @@ fn non_xdg_config_dir() -> AbsolutePathBuf {
+ 
+     // On Linux, dirs::config_dir checks $XDG_CONFIG_HOME first, then gets $HOME/.config,
+     // so we have to get $HOME ourselves
+-    #[cfg(target_os = "linux")]
++    #[cfg(any(target_os = "linux", target_os = "openbsd"))]
+     let config_dir = {
+         let mut dir = dirs::home_dir().expect("Could not get config directory");
+         dir.push(".config");

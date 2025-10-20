@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.107.0
+GH_TAGNAME =		0.108.0
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
@@ -41,6 +41,6 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/main.rs
 
 # last known test results
-# 0.107.0: test result: FAILED 1391 passed; 7 failed; 25 ignored; 0 measured; 0 filtered out;
+# 0.108.0: test result: FAILED 1416 passed; 3 failed; 25 ignored; 0 measured; 0 filtered out;
 
 .include <bsd.port.mk>
