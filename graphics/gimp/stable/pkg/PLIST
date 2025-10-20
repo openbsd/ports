@@ -579,22 +579,22 @@ lib/gimp/2.0/python/gimpcolor.la
 @so lib/gimp/2.0/python/gimpcolor.so
 lib/gimp/2.0/python/gimpenums.py
 lib/gimp/2.0/python/gimpenums.pyc
-lib/gimp/2.0/python/gimpenums.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpenums.pyo
 lib/gimp/2.0/python/gimpfu.py
 lib/gimp/2.0/python/gimpfu.pyc
-lib/gimp/2.0/python/gimpfu.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpfu.pyo
 lib/gimp/2.0/python/gimpplugin.py
 lib/gimp/2.0/python/gimpplugin.pyc
-lib/gimp/2.0/python/gimpplugin.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpplugin.pyo
 lib/gimp/2.0/python/gimpshelf.py
 lib/gimp/2.0/python/gimpshelf.pyc
-lib/gimp/2.0/python/gimpshelf.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpshelf.pyo
 lib/gimp/2.0/python/gimpthumb.a
 lib/gimp/2.0/python/gimpthumb.la
 @so lib/gimp/2.0/python/gimpthumb.so
 lib/gimp/2.0/python/gimpui.py
 lib/gimp/2.0/python/gimpui.pyc
-lib/gimp/2.0/python/gimpui.${MODPY_PYOEXTENSION}
+lib/gimp/2.0/python/gimpui.pyo
 lib/gimp/2.0/python/pygimp-logo.png
 @static-lib lib/libgimp-2.0.a
 lib/libgimp-2.0.la
