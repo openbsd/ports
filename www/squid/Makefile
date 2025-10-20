@@ -29,7 +29,7 @@ SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/g
 # C++17
 COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS+=	devel/cppunit
+BUILD_DEPENDS=	devel/cppunit
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
@@ -40,7 +40,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group
 
-LIB_DEPENDS-main += \
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		databases/tdb \
 		security/libnettle
 
