@@ -1,6 +1,7 @@
 COMMENT=	code coverage measurement for Python
 
 MODPY_DISTV=	7.10.7
+REVISION=	0
 DISTNAME=	coverage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -13,6 +14,9 @@ HOMEPAGE=	https://coverage.readthedocs.io/en/stable/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${MODPY_WANTLIB} pthread
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	lang/python
 MODPY_PI=	Yes
