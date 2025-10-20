@@ -1,6 +1,5 @@
 @bin bin/vtkProbeOpenGLVersion
 include/vtk/
-include/vtk/Basis_Constant_CellC0Gradient.h
 include/vtk/DICOMAppHelper.h
 include/vtk/DICOMCMakeConfig.h
 include/vtk/DICOMCallback.h
@@ -1892,6 +1891,7 @@ include/vtk/vtkOpenGLRenderTimerLog.h
 include/vtk/vtkOpenGLRenderUtilities.h
 include/vtk/vtkOpenGLRenderWindow.h
 include/vtk/vtkOpenGLRenderer.h
+include/vtk/vtkOpenGLResourceFreeCallback.h
 include/vtk/vtkOpenGLShaderCache.h
 include/vtk/vtkOpenGLShaderDeclaration.h
 include/vtk/vtkOpenGLShaderProperty.h

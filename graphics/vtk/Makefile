@@ -4,7 +4,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		visualization toolkit
 
-V =			9.5.0
+V =			9.5.2
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
 
@@ -43,7 +43,7 @@ PKGNAME =		${DISTNAME:L}
 	vtkRenderingVolumeOpenGL2 vtkRenderingVtkJS vtkTestingCore \
 	vtkTestingRendering vtkViewsContext2D vtkViewsCore vtkViewsInfovis \
 	vtkexodusII vtkfmt vtkglad vtkioss vtkkissfft vtkmetaio vtksys vtktoken
-SHARED_LIBS += ${LIB} 2.0 # 0.0
+SHARED_LIBS += ${LIB} 3.0 # 0.0
 .endfor
 
 CATEGORIES =		graphics
