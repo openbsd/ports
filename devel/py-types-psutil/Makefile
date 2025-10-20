@@ -1,10 +1,8 @@
 COMMENT=	typing stubs for psutil
 
-# "this version aims to provide accurate annotations for psutil==6.1.*"
-MODPY_DISTV=	6.1.0.20241102
-DISTNAME=	types-psutil-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
-REVISION=	0
+MODPY_DISTV=	7.0.0.20251001
+DISTNAME=	types_psutil-${MODPY_DISTV}
+PKGNAME=	py-types-psutil-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
@@ -14,9 +12,8 @@ HOMEPAGE=	https://github.com/python/typeshed
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 

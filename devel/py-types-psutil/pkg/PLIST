@@ -3,7 +3,6 @@ lib/python${MODPY_VERSION}/site-packages/psutil-stubs/
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/METADATA.toml
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_common.pyi
-lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_compat.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psaix.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psbsd.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_pslinux.pyi
@@ -20,4 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/types_psutil-${MODPY_DISTV}.dist-info/top_level.txt
