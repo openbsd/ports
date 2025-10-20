@@ -1,7 +1,7 @@
 COMMENT =	perl module to generate random data
 
-DISTNAME =	Data-Random-0.13
-REVISION =	0
+DISTNAME =	Data-Random-0.14
+CPAN_AUTHOR =	BAREFOOT
 
 CATEGORIES =	devel
 
