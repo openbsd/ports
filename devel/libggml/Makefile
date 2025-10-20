@@ -18,7 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 MODULES=	devel/cmake
-COMPILER=	base-clang ports-gcc
+COMPILER=	base-clang
+# ports-gcc needs fixing for std::filesystem
 
 # probably not enough...
 EXTRA_ports-gcc= -lstdc++fs
