@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5GuiAddons
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
-SITES =		${SITE_KDE:=stable/kproperty/src/}
+SITES =		${SITE_KDE:=Attic/kproperty/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \
