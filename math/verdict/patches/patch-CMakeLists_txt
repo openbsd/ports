@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -121,7 +121,7 @@ endif ()
+@@ -144,7 +144,7 @@ endif ()
  # Install documentation
  install(FILES
    README.md
