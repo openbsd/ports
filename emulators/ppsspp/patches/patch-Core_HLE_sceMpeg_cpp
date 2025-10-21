@@ -12,3 +12,12 @@ Index: Core/HLE/sceMpeg.cpp
  	if (pmp_Codec == NULL){
  		ERROR_LOG(Log::Mpeg, "Can not find H264 codec, please update ffmpeg");
  		return false;
+@@ -928,7 +928,7 @@ static bool decodePmpVideo(PSPPointer<SceMpegRingBuffe
+ 			avcodec_send_packet(pCodecCtx, &packet);
+ 		int len = avcodec_receive_frame(pCodecCtx, pFrame);
+ 		if (len == 0) {
+-			len = pFrame->pkt_size;
++			len = packet.size;
+ 			got_picture = 1;
+ 		} else if (len == AVERROR(EAGAIN)) {
+ 			len = 0;
