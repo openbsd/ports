@@ -1,0 +1,17 @@
+https://github.com/blender/blender/commit/ebfad2c071d712d126a5c3d93ebed8a226821feb
+
+Index: extern/audaspace/plugins/ffmpeg/FFMPEGReader.h
+--- extern/audaspace/plugins/ffmpeg/FFMPEGReader.h.orig
++++ extern/audaspace/plugins/ffmpeg/FFMPEGReader.h
+@@ -107,11 +107,6 @@ class AUD_PLUGIN_API FFMPEGReader : public IReader (pr
+ 	std::shared_ptr<Buffer> m_membuffer;
+ 
+ 	/**
+-	 * The buffer to read with.
+-	 */
+-	data_t* m_membuf;
+-
+-	/**
+ 	 * Reading position of the buffer.
+ 	 */
+ 	long long m_membufferpos;
