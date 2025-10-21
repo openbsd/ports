@@ -1,0 +1,13 @@
+Avoid conflict with includes from simdutf installed system-wide
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -138,6 +138,7 @@ include_directories(
+         "${CMAKE_SOURCE_DIR}/contrib/lua-lpeg"
+         "${CMAKE_SOURCE_DIR}/contrib/frozen/include"
+         "${CMAKE_SOURCE_DIR}/contrib/fu2/include"
++        "${CMAKE_SOURCE_DIR}/contrib/simdutf/include"
+         "${CMAKE_BINARY_DIR}/src" # Stored in the binary dir
+         "${CMAKE_BINARY_DIR}/src/libcryptobox"
+ )
