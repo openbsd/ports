@@ -1,0 +1,27 @@
+Index: libav.h
+--- libav.h.orig
++++ libav.h
+@@ -174,7 +174,11 @@ lav_get_interlaced(AVStream *s)
+ #define lav_codec_tag(s) s->codecpar->codec_tag
+ #define lav_sample_rate(s) s->codecpar->sample_rate
+ #define lav_bit_rate(s) s->codecpar->bit_rate
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(59, 24, 100)
+ #define lav_channels(s) s->codecpar->channels
++#else
++#define lav_channels(s) s->codecpar->ch_layout.nb_channels
++#endif
+ #define lav_width(s) s->codecpar->width
+ #define lav_height(s) s->codecpar->height
+ #define lav_profile(s) s->codecpar->profile
+@@ -186,7 +190,11 @@ lav_get_interlaced(AVStream *s)
+ #define lav_codec_tag(s) s->codec->codec_tag
+ #define lav_sample_rate(s) s->codec->sample_rate
+ #define lav_bit_rate(s) s->codec->bit_rate
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(59, 24, 100)
+ #define lav_channels(s) s->codec->channels
++#else
++#define lav_channels(s) s->codec->ch_layout.nb_channels
++#endif
+ #define lav_width(s) s->codec->width
+ #define lav_height(s) s->codec->height
+ #define lav_profile(s) s->codec->profile
