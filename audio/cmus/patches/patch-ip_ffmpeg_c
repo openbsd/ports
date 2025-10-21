@@ -1,0 +1,23 @@
+Index: ip/ffmpeg.c
+--- ip/ffmpeg.c.orig
++++ ip/ffmpeg.c
+@@ -226,7 +226,9 @@ static int ffmpeg_open(struct input_plugin_data *ip_da
+ 	priv->codec = codec;
+ 	priv->input = ffmpeg_input_create();
+ 	if (priv->input == NULL) {
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 		avcodec_close(cc);
++#endif
+ #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(57, 48, 101)
+ 		avcodec_free_context(&cc);
+ #endif
+@@ -289,7 +291,9 @@ static int ffmpeg_close(struct input_plugin_data *ip_d
+ {
+ 	struct ffmpeg_private *priv = ip_data->private;
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close(priv->codec_context);
++#endif
+ #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(57, 48, 101)
+ 	avcodec_free_context(&priv->codec_context);
+ #endif
