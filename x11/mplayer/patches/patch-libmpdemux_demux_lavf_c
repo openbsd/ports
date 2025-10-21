@@ -1,0 +1,29 @@
+Index: libmpdemux/demux_lavf.c
+--- libmpdemux/demux_lavf.c.orig
++++ libmpdemux/demux_lavf.c
+@@ -366,9 +366,11 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+             if (demuxer->audio->id != i)
+                 st->discard= AVDISCARD_ALL;
+             if (priv->audio_streams == 0) {
+-                size_t rg_size;
+-                AVReplayGain *rg = (AVReplayGain*)av_stream_get_side_data(st, AV_PKT_DATA_REPLAYGAIN, &rg_size);
+-                if (rg && rg_size >= sizeof(*rg)) {
++                AVReplayGain *rg;
++                AVPacketSideData *sd = av_packet_side_data_get(st->codecpar->coded_side_data,
++                    st->codecpar->nb_coded_side_data, AV_PKT_DATA_REPLAYGAIN);
++                if (sd && sd->size >= sizeof(*rg)) {
++                    rg = (AVReplayGain *)sd->data;
+                     priv->r_gain = rg->track_gain / 10000;
+                 }
+             } else
+@@ -378,7 +380,9 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+         }
+         case AVMEDIA_TYPE_VIDEO:{
+             AVDictionaryEntry *rot = av_dict_get(st->metadata, "rotate",   NULL, 0);
+-            const int32_t *disp_matrix = av_stream_get_side_data(st, AV_PKT_DATA_DISPLAYMATRIX, NULL);
++            const AVPacketSideData *side_data = av_packet_side_data_get(st->codecpar->coded_side_data,
++                st->codecpar->nb_coded_side_data, AV_PKT_DATA_DISPLAYMATRIX);
++            const int32_t *disp_matrix = side_data ? (int32_t *)side_data->data : NULL;
+             sh_video_t* sh_video;
+             BITMAPINFOHEADER *bih;
+             sh_video=new_sh_video_vid(demuxer, i, priv->video_streams);

@@ -1,0 +1,12 @@
+Index: libmpcodecs/vf_screenshot.c
+--- libmpcodecs/vf_screenshot.c.orig
++++ libmpcodecs/vf_screenshot.c
+@@ -279,7 +279,7 @@ static int query_format(struct vf_instance *vf, unsign
+ 
+ static void uninit(vf_instance_t *vf)
+ {
+-    avcodec_close(vf->priv->avctx);
++    avcodec_free_context(&vf->priv->avctx);
+     av_freep(&vf->priv->avctx);
+     if(vf->priv->ctx) sws_freeContext(vf->priv->ctx);
+     av_freep(&vf->priv->pic->data[0]);

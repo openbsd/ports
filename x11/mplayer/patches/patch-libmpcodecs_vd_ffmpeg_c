@@ -1,0 +1,26 @@
+Index: libmpcodecs/vd_ffmpeg.c
+--- libmpcodecs/vd_ffmpeg.c.orig
++++ libmpcodecs/vd_ffmpeg.c
+@@ -511,9 +511,6 @@ static void uninit(sh_video_t *sh){
+     }
+ 
+     if (avctx) {
+-        if (avctx->codec && avcodec_close(avctx) < 0)
+-            mp_msg(MSGT_DECVIDEO, MSGL_ERR, MSGTR_CantCloseCodec);
+-
+         av_freep(&avctx->extradata);
+         av_freep(&avctx->hwaccel_context);
+     }
+@@ -1060,8 +1057,10 @@ static mp_image_t *decode(sh_video_t *sh, void *data, 
+ //    mpi->qscale = av_frame_get_qp_table(pic, &mpi->qstride, &mpi->qscale_type);
+     mpi->pict_type=pic->pict_type;
+     mpi->fields = MP_IMGFIELD_ORDERED;
+-    if(pic->interlaced_frame) mpi->fields |= MP_IMGFIELD_INTERLACED;
+-    if(pic->top_field_first ) mpi->fields |= MP_IMGFIELD_TOP_FIRST;
++    if(pic->flags & AV_FRAME_FLAG_INTERLACED)
++        mpi->fields |= MP_IMGFIELD_INTERLACED;
++    if(pic->flags & AV_FRAME_FLAG_TOP_FIELD_FIRST)
++        mpi->fields |= MP_IMGFIELD_TOP_FIRST;
+     if(pic->repeat_pict == 1) mpi->fields |= MP_IMGFIELD_REPEAT_FIRST;
+ 
+     return mpi;
