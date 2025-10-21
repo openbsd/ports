@@ -351,7 +351,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (tea-v0.11.0.zip) = ps1nKCjImdPRo3hCuPC211l9PhrUawEl/uAZXqjmzEw=
+SHA256 (tea-v0.11.1.zip) = S7VvGrUjSMwE8NhptkdOeY3eO1GtsZLDxupQHUSkm1k=
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/code.gitea.io/gitea-vet/@v/v0.2.3.mod) = 103
@@ -705,4 +705,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (tea-v0.11.0.zip) = 830450
+SIZE (tea-v0.11.1.zip) = 831506
