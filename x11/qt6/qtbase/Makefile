@@ -129,7 +129,6 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DFEATURE_openssl_linked=ON \
 			-DFEATURE_system_sqlite=ON \
 			-DFEATURE_system_xcb_xinput=ON \
-			-DFEATURE_no_direct_extern_access=ON \
 			-DFEATURE_libproxy=ON \
 			-DFEATURE_dtls=OFF
 
