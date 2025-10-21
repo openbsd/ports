@@ -16228,6 +16228,7 @@ share/ri/${REV}/system/URI/Generic/%2d-i.ri
 share/ri/${REV}/system/URI/Generic/%3d%3d-i.ri
 share/ri/${REV}/system/URI/Generic/absolute%3f-i.ri
 share/ri/${REV}/system/URI/Generic/absolute-i.ri
+share/ri/${REV}/system/URI/Generic/authority-i.ri
 share/ri/${REV}/system/URI/Generic/build-c.ri
 share/ri/${REV}/system/URI/Generic/build2-c.ri
 share/ri/${REV}/system/URI/Generic/cdesc-Generic.ri
@@ -16282,6 +16283,7 @@ share/ri/${REV}/system/URI/Generic/route_to-i.ri
 share/ri/${REV}/system/URI/Generic/scheme%3d-i.ri
 share/ri/${REV}/system/URI/Generic/scheme-i.ri
 share/ri/${REV}/system/URI/Generic/select-i.ri
+share/ri/${REV}/system/URI/Generic/set_authority-i.ri
 share/ri/${REV}/system/URI/Generic/set_host-i.ri
 share/ri/${REV}/system/URI/Generic/set_opaque-i.ri
 share/ri/${REV}/system/URI/Generic/set_password-i.ri

@@ -3273,7 +3273,7 @@ lib/ruby/gems/${REV}/gems/typeprof-0.30.1/lib/typeprof/lsp/text.rb
 lib/ruby/gems/${REV}/gems/typeprof-0.30.1/lib/typeprof/lsp/util.rb
 lib/ruby/gems/${REV}/gems/typeprof-0.30.1/lib/typeprof/version.rb
 lib/ruby/gems/${REV}/gems/un-0.3.0/
-lib/ruby/gems/${REV}/gems/uri-1.0.3/
+lib/ruby/gems/${REV}/gems/uri-1.0.4/
 lib/ruby/gems/${REV}/gems/weakref-0.1.3/
 lib/ruby/gems/${REV}/gems/yaml-0.4.0/
 lib/ruby/gems/${REV}/gems/zlib-3.2.1/
@@ -3339,7 +3339,7 @@ lib/ruby/gems/${REV}/specifications/default/timeout-0.4.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/tmpdir-0.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/tsort-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/un-0.3.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/uri-1.0.3.gemspec
+lib/ruby/gems/${REV}/specifications/default/uri-1.0.4.gemspec
 lib/ruby/gems/${REV}/specifications/default/weakref-0.1.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/yaml-0.4.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/zlib-3.2.1.gemspec
