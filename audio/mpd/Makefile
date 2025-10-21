@@ -1,6 +1,6 @@
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.24.5
+VER =			0.24.6
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
