@@ -2,7 +2,7 @@ COMMENT =	property editing framework with editor widget
 
 VERSION =	3.2.0
 DISTNAME =	kproperty-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KPropertyCore3            1.1 # 3.0
 SHARED_LIBS +=  KPropertyWidgets3         1.1 # 3.0
@@ -32,8 +32,11 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kguiaddons
 
-CONFIGURE_ARGS =	-DBUILD_TESTING=On \
-			-DBUILD_EXAMPLES=On
+CONFIGURE_ARGS =	-DBUILD_TESTING=OFF \
+			-DBUILD_EXAMPLES=OFF
+
+CONFIGURE_ARGS +=	-DPython_ADDITIONAL_VERSIONS=3
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 

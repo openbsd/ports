@@ -1,0 +1,61 @@
+Index: cmake/modules/KPropertyAddIconsRccFile.cmake
+--- cmake/modules/KPropertyAddIconsRccFile.cmake.orig
++++ cmake/modules/KPropertyAddIconsRccFile.cmake
+@@ -37,44 +37,35 @@ macro(kproperty_add_icons_rcc_file _target _parent_tar
+         VERBATIM
+     )
+ 
+-    add_custom_target(${_target}_build_qrc
++    add_custom_command(
++        OUTPUT "${_QRC_FILE}"
+         COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"
+         # avoid adding the .qrc file to rcc due to rcc misfeature
+         COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"
+-        DEPENDS "${_FILES}"
+-        SOURCES "${_FILES}"
++        DEPENDS ${_target}_copy_icons
+         WORKING_DIRECTORY "${_BASE_DIR}"
+         COMMENT "Building Qt resource file ${_QRC_FILE}"
+         VERBATIM
+     )
+-    add_dependencies(${_target}_build_qrc ${_target}_copy_icons)
+-
+-    add_custom_target(${_target}_build_rcc
++    add_custom_command(
++        OUTPUT "${_RCC_FILE}"
+         COMMAND ${Qt5Core_RCC_EXECUTABLE} --compress 9 --threshold 0 --binary
+                 --output "${_RCC_FILE}" "${_QRC_FILE}"
+-        #COMMAND ${CMAKE_COMMAND} -E remove -f ${_QRC_FILE}
+-        DEPENDS "${_QRC_FILE}" "${_FILES}"
++        DEPENDS "${_QRC_FILE}"
+         WORKING_DIRECTORY "${_BASE_DIR}"
+         COMMENT "Building external Qt resource ${_RCC_FILE}"
+         VERBATIM
+     )
+-    add_dependencies(${_target}_build_rcc ${_target}_build_qrc)
+ 
+-    add_dependencies(${_parent_target} ${_target}_build_rcc)
+-
+-    install(FILES
+-            ${_RCC_FILE}
+-            DESTINATION "${ICONS_INSTALL_DIR}"
++    add_custom_target(${_target}_build_rcc ALL
++        DEPENDS "${_RCC_FILE}"
+     )
+ 
+-    add_update_file_target(
+-        TARGET update_${_target}
+-        COMMAND "${PROJECT_SOURCE_DIR}/cmake/modules/update_icon_list.sh"
+-                ${_theme} icons/${_theme}/files.cmake
+-        FILE ${_target}_files.cmake
+-        SOURCES "${PROJECT_SOURCE_DIR}/cmake/modules/update_icon_list.sh"
+-    )
+-    add_dependencies(update_all_rcc update_${_target})
++    install(FILES "${_RCC_FILE}"
++        DESTINATION "${ICONS_INSTALL_DIR}"
++     )
++
++    add_dependencies(${_parent_target} ${_target}_build_rcc)
+ 
+     unset(_BASE_DIR)
+     unset(_QRC_FILE)
