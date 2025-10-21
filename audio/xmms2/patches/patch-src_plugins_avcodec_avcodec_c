@@ -1,0 +1,39 @@
+Index: src/plugins/avcodec/avcodec.c
+--- src/plugins/avcodec/avcodec.c.orig
++++ src/plugins/avcodec/avcodec.c
+@@ -130,7 +130,11 @@ xmms_avcodec_destroy (xmms_xform_t *xform)
+ 	data = xmms_xform_private_data_get (xform);
+ 	g_return_if_fail (data);
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close (data->codecctx);
++#else
++	avcodec_free_context (&data->codecctx);
++#endif
+ 	av_free (data->codecctx);
+ 	av_frame_free (&data->read_out_frame);
+ 
+@@ -251,7 +255,11 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 			g_string_insert_len (data->outbuf, 0, buf, ret);
+ 		} else {
+ 			XMMS_DBG ("First read failed, codec is not working...");
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 			avcodec_close (data->codecctx);
++#else
++			avcodec_free_context (&data->codecctx);
++#endif
+ 			goto err;
+ 		}
+ 	}
+@@ -260,7 +268,11 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 	data->channels = XMMS2_AVCODEC_CHANNEL_FIELD(data->codecctx);
+ 	data->sampleformat = xmms_avcodec_translate_sample_format (data->codecctx->sample_fmt);
+ 	if (data->sampleformat == XMMS_SAMPLE_FORMAT_UNKNOWN) {
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 		avcodec_close (data->codecctx);
++#else
++		avcodec_free_context (&data->codecctx);
++#endif
+ 		goto err;
+ 	}
+ 
