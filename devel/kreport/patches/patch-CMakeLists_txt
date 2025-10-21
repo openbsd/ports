@@ -1,0 +1,15 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.16)
+ find_package(ECM 1.8.0 REQUIRED NO_MODULE)
+ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+ include(SetKReportCMakePolicies NO_POLICY_SCOPE)
+@@ -62,4 +62,4 @@ if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
+     ecm_install_po_files_as_qm(po)
+ endif()
+ 
+-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
++feature_summary(WHAT ALL)

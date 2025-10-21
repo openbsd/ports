@@ -1,0 +1,57 @@
+Index: cmake/modules/KReportAddIconsRccFile.cmake
+--- cmake/modules/KReportAddIconsRccFile.cmake.orig
++++ cmake/modules/KReportAddIconsRccFile.cmake
+@@ -37,33 +37,34 @@ macro(kreport_add_icons_rcc_file _target _parent_targe
+         VERBATIM
+     )
+ 
+-    add_custom_target(${_target}_build_qrc
++    add_custom_command(
++        OUTPUT "${_QRC_FILE}"
+         COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"
+-        # avoid adding the .qrc file to rcc due to rcc misfeature
+         COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"
+-        DEPENDS "${_FILES}"
+-        SOURCES "${_FILES}"
++        DEPENDS ${_target}_copy_icons
+         WORKING_DIRECTORY "${_BASE_DIR}"
+         COMMENT "Building Qt resource file ${_QRC_FILE}"
+         VERBATIM
+     )
+-    add_dependencies(${_target}_build_qrc ${_target}_copy_icons)
+ 
+-    add_custom_target(${_target}_build_rcc
++    add_custom_command(
++        OUTPUT "${_RCC_FILE}"
+         COMMAND ${Qt5Core_RCC_EXECUTABLE} --compress 9 --threshold 0 --binary
+                 --output "${_RCC_FILE}" "${_QRC_FILE}"
+-        DEPENDS "${_QRC_FILE}" "${_FILES}"
++        DEPENDS "${_QRC_FILE}"
+         WORKING_DIRECTORY "${_BASE_DIR}"
+         COMMENT "Building external Qt resource ${_RCC_FILE}"
+         VERBATIM
+     )
+-    add_dependencies(${_target}_build_rcc ${_target}_build_qrc)
+ 
++    add_custom_target(${_target}_build_rcc ALL
++        DEPENDS "${_RCC_FILE}"
++    )
++
+     add_dependencies(${_parent_target} ${_target}_build_rcc)
+ 
+-    install(FILES
+-            ${_RCC_FILE}
+-            DESTINATION "${ICONS_INSTALL_DIR}"
++    install(FILES "${_RCC_FILE}"
++        DESTINATION "${ICONS_INSTALL_DIR}"
+     )
+ 
+     add_update_file_target(
+@@ -78,6 +79,7 @@ macro(kreport_add_icons_rcc_file _target _parent_targe
+     unset(_BASE_DIR)
+     unset(_QRC_FILE)
+     unset(_RCC_FILE)
++    unset(_RCC_DIR)
+ endmacro()
+ 
+ # Convenience macro for plugin icons. Icons are places in a path that contains _plugin_target.
