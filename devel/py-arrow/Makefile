@@ -5,6 +5,7 @@ DISTNAME=	arrow-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	https://arrow.readthedocs.io
+REVISION=	0
 
 # Apache 2.0
 PERMIT_PACKAGE= Yes
@@ -14,7 +15,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 
 RUN_DEPENDS=	devel/py-dateutil \
-		devel/py-types-python-dateutil
+		devel/py-types-python-dateutil \
+		devel/py-tzdata
 
 TEST_DEPENDS=	devel/py-simplejson \
 		devel/py-test-cov \
