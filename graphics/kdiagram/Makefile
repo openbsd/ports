@@ -2,6 +2,7 @@ COMMENT =	libraries for creating business diagrams
 
 VERSION =	2.8.0
 DISTNAME =	kdiagram-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 

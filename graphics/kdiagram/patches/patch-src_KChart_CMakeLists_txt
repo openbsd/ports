@@ -1,0 +1,11 @@
+Index: src/KChart/CMakeLists.txt
+--- src/KChart/CMakeLists.txt.orig
++++ src/KChart/CMakeLists.txt
+@@ -360,6 +360,7 @@ ecm_generate_pri_file(
+     BASE_NAME KChart
+     LIB_NAME KChart
+     DEPS "widgets svg"
++    VERSION 2.8.0
+     FILENAME_VAR PRI_FILENAME
+     INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_DIR}/KChart
+ )
