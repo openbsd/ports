@@ -22,7 +22,33 @@ Index: src/videofilters/h264dec.cpp
  	error = avcodec_open2(&d->av_context, codec, NULL);
  	if (error != 0) {
  		ms_fatal("avcodec_open() failed.");
-@@ -162,7 +160,7 @@ static mblk_t *get_as_yuvmsg(MSFilter *f, DecData *s, 
+@@ -113,7 +111,12 @@ static void dec_preprocess(MSFilter *f) {
+ }
+ 
+ static void dec_reinit(DecData *d) {
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close(&d->av_context);
++#else
++	AVCodecContext *avctx = &d->av_context;
++	avcodec_free_context(&avctx);
++#endif
+ 	dec_open(d);
+ }
+ 
+@@ -125,7 +128,12 @@ static void dec_postprocess(MSFilter *f) {
+ static void dec_uninit(MSFilter *f) {
+ 	DecData *d = (DecData *)f->data;
+ 	delete d->unpacker;
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close(&d->av_context);
++#else
++	AVCodecContext *avctx = &d->av_context;
++	avcodec_free_context(&avctx);
++#endif
+ 	if (d->sps) freemsg(d->sps);
+ 	if (d->pps) freemsg(d->pps);
+ 	if (d->orig) av_frame_free(&d->orig);
+@@ -162,7 +170,7 @@ static mblk_t *get_as_yuvmsg(MSFilter *f, DecData *s, 
  		ms_error("%s: error in sws_scale().", f->desc->name);
  	}
  #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(50, 43, 0) // backward compatibility with Debian Squeeze (6.0)
