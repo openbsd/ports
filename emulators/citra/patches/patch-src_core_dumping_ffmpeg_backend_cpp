@@ -1,0 +1,15 @@
+Index: src/core/dumping/ffmpeg_backend.cpp
+--- src/core/dumping/ffmpeg_backend.cpp.orig
++++ src/core/dumping/ffmpeg_backend.cpp
+@@ -956,7 +956,11 @@ std::string FormatDefaultValue(const AVOption* option,
+     case AV_OPT_TYPE_VIDEO_RATE: {
+         return ToStdString(option->default_val.str);
+     }
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 57, 24, 100 )
++    case AV_OPT_TYPE_CHLAYOUT: {
++#else
+     case AV_OPT_TYPE_CHANNEL_LAYOUT: {
++#endif
+         return fmt::format("{:#x}", option->default_val.i64);
+     }
+     default:
