@@ -5,7 +5,7 @@ GH_PROJECT =	baresip
 
 MAINTAINER =		Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS +=		baresip	4.0 # 0.0
+SHARED_LIBS +=		baresip	4.1 # 0.0
 MULTI_PACKAGES =	-main -gtk
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
