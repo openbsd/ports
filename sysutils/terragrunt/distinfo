@@ -2651,7 +2651,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7u
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (terragrunt-v0.91.1.zip) = Wl4GHmXXtey4wN8SIH4gXMnyK4YimrrSTUkNu0Nihrs=
+SHA256 (terragrunt-v0.91.2.zip) = jNJTZtaXTqlIidJcFlZs811am17gW8iNqpfB0tVnld0=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -5305,4 +5305,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (terragrunt-v0.91.1.zip) = 9558899
+SIZE (terragrunt-v0.91.2.zip) = 9577904
