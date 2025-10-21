@@ -1,0 +1,13 @@
+Index: switch/src/io.cpp
+--- switch/src/io.cpp.orig
++++ switch/src/io.cpp
+@@ -332,7 +332,9 @@ bool IO::FreeVideo()
+ 	// avcodec_alloc_context3(codec);
+ 	if(this->codec_context)
+ 	{
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 		avcodec_close(this->codec_context);
++#endif
+ 		avcodec_free_context(&this->codec_context);
+ 	}
+ 

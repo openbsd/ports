@@ -1,0 +1,13 @@
+Index: lib/src/ffmpegdecoder.c
+--- lib/src/ffmpegdecoder.c.orig
++++ lib/src/ffmpegdecoder.c
+@@ -99,7 +99,9 @@ error_mutex:
+ 
+ CHIAKI_EXPORT void chiaki_ffmpeg_decoder_fini(ChiakiFfmpegDecoder *decoder)
+ {
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close(decoder->codec_context);
++#endif
+ 	avcodec_free_context(&decoder->codec_context);
+ 	if(decoder->hw_device_ctx)
+ 		av_buffer_unref(&decoder->hw_device_ctx);
