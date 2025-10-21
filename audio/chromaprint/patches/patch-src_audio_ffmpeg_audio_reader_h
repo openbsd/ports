@@ -1,0 +1,15 @@
+Index: src/audio/ffmpeg_audio_reader.h
+--- src/audio/ffmpeg_audio_reader.h.orig
++++ src/audio/ffmpeg_audio_reader.h
+@@ -220,7 +220,11 @@ inline void FFmpegAudioReader::Close() {
+ 	m_stream_index = -1;
+ 
+ 	if (m_codec_ctx) {
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 		avcodec_close(m_codec_ctx);
++#else
++		avcodec_free_context(&m_codec_ctx);
++#endif
+ 		m_codec_ctx = nullptr;
+ 	}
+ 
