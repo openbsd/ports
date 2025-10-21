@@ -1,0 +1,67 @@
+Index: libhb/stream.c
+--- libhb/stream.c.orig
++++ libhb/stream.c
+@@ -4052,16 +4052,16 @@ static int probe_dts_profile( hb_stream_t *stream, hb_
+     }
+     switch (info.profile)
+     {
+-        case FF_PROFILE_DTS:
+-        case FF_PROFILE_DTS_ES:
+-        case FF_PROFILE_DTS_96_24:
++        case AV_PROFILE_DTS:
++        case AV_PROFILE_DTS_ES:
++        case AV_PROFILE_DTS_96_24:
+             pes->codec = HB_ACODEC_DCA;
+             pes->stream_type = 0x82;
+             pes->stream_kind = A;
+             break;
+ 
+-        case FF_PROFILE_DTS_HD_HRA:
+-        case FF_PROFILE_DTS_HD_MA:
++        case AV_PROFILE_DTS_HD_HRA:
++        case AV_PROFILE_DTS_HD_MA:
+             pes->stream_type = 0;
+             pes->stream_kind = A;
+             break;
+@@ -5408,14 +5408,14 @@ static void add_ffmpeg_audio(hb_title_t *title, hb_str
+         {
+             switch (codecpar->profile)
+             {
+-                case FF_PROFILE_DTS:
+-                case FF_PROFILE_DTS_ES:
+-                case FF_PROFILE_DTS_96_24:
++                case AV_PROFILE_DTS:
++                case AV_PROFILE_DTS_ES:
++                case AV_PROFILE_DTS_96_24:
+                     audio->config.in.codec = HB_ACODEC_DCA;
+                     break;
+ 
+-                case FF_PROFILE_DTS_HD_MA:
+-                case FF_PROFILE_DTS_HD_HRA:
++                case AV_PROFILE_DTS_HD_MA:
++                case AV_PROFILE_DTS_HD_HRA:
+                     audio->config.in.codec = HB_ACODEC_DCA_HD;
+                     break;
+ 
+@@ -5846,9 +5846,9 @@ static hb_title_t *ffmpeg_title_scan( hb_stream_t *str
+             }
+ 
+             int j;
+-            for (j = 0; j < st->nb_side_data; j++)
++            for (j = 0; j < codecpar->nb_coded_side_data; j++)
+             {
+-                AVPacketSideData sd = st->side_data[j];
++                AVPacketSideData sd = codecpar->coded_side_data[j];
+                 switch (sd.type)
+                 {
+                     case AV_PKT_DATA_DISPLAYMATRIX:
+@@ -5899,7 +5899,8 @@ static hb_title_t *ffmpeg_title_scan( hb_stream_t *str
+             // title->video_timebase.den = st->time_base.den;
+             title->video_timebase.num = 1;
+             title->video_timebase.den = 90000;
+-            if (ic->iformat->raw_codec_id != AV_CODEC_ID_NONE)
++            // See: https://github.com/HandBrake/HandBrake/pull/5884
++            if (st->start_time == AV_NOPTS_VALUE && st->duration == AV_NOPTS_VALUE)
+             {
+                 title->flags |= HBTF_RAW_VIDEO;
+             }
