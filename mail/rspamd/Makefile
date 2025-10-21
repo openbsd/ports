@@ -27,7 +27,8 @@ FLAVOR=
 .endif
 
 MODULES=	devel/cmake
-COMPILER=	base-clang ports-gcc
+COMPILER=	base-clang
+# no ports-gcc; C++20
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	archivers/libarchive \
