@@ -10,7 +10,6 @@ SHA256 (gnome/../cargo/anstyle-1.0.11.tar.gz) = hi7ZbKSH6AnxyOWoRH9u4s8QL4Rok4AL
 SHA256 (gnome/../cargo/anstyle-parse-0.2.7.tar.gz) = TnZEgk8Kose5OEV5I07xDrfvtqDeuD+WMKSVlN2cFcI=
 SHA256 (gnome/../cargo/anstyle-query-1.1.4.tar.gz) = niMfYTT2G3EHaj6rUGw3nU82Ei8q8Vqf8EQV6kwzOeI=
 SHA256 (gnome/../cargo/anstyle-wincon-3.0.10.tar.gz) = PgYzQUUioy/6rIrGzI90jgkMVxdmH93uoEIZ4jRPXyo=
-SHA256 (gnome/../cargo/anyhow-1.0.99.tar.gz) = sGdKHd7stwGXeB6UXeSzuP+2H6k5pVl7z0hQNzdmMQA=
 SHA256 (gnome/../cargo/approx-0.5.1.tar.gz) = yrES8KhtVo6g5ifMHWvnSh6c1VIUaE21VhmV9trYl8Y=
 SHA256 (gnome/../cargo/assert_cmd-2.0.17.tar.gz) = K9OJpLKXCgEoLuRVKUkTwKQ3JNrtzRokw+sOwcEyC2Y=
 SHA256 (gnome/../cargo/autocfg-1.5.0.tar.gz) = wIYG+MPL9M5uyOKPsAFKLAhnCP6VTqqIU4SmFlFy5+g=
@@ -145,7 +144,7 @@ SHA256 (gnome/../cargo/litemap-0.8.0.tar.gz) = JB6u9f0SyIcFoB/BBmxIxLNuDdQ3fc3H7
 SHA256 (gnome/../cargo/locale_config-0.3.0.tar.gz) = CNLDWxb0SD9sJvDk6VUHF6L2V1vNbxKlP/DEkKlKaTQ=
 SHA256 (gnome/../cargo/lock_api-0.4.13.tar.gz) = lpNlB/FTYFvd/NoGjdgEeWyEMk7SUQgJ5bKmJMgdp2U=
 SHA256 (gnome/../cargo/log-0.4.27.tar.gz) = E9wt81HjICeDof4NRDdfcpX/tASSZ7DzAYNG3BIqHZQ=
-SHA256 (gnome/../cargo/lopdf-0.36.0.tar.gz) = WfolWemboPJqEkWKq8dUQyyAW7uMulFsQnglqZevH7c=
+SHA256 (gnome/../cargo/lopdf-0.38.0.tar.gz) = xxhP3qK8PNJyoazsQDDDIaj5h16Hez+SpT8vYDP9wok=
 SHA256 (gnome/../cargo/mac-0.1.1.tar.gz) = xB4MT++GlhrG1vioJgn1XzGwXk/OFJrFcQ5Dnfdhm6Q=
 SHA256 (gnome/../cargo/malloc_buf-0.0.6.tar.gz) = YruQf+iNVNjZzjKjzOq0IY7S9rfTVhfK/prfhOQ5Gcs=
 SHA256 (gnome/../cargo/markup5ever-0.35.0.tar.gz) = MR/mnJNGUPjxllKzlGB18PxBrYdX27aPHKFOeQDswcM=
@@ -276,6 +275,7 @@ SHA256 (gnome/../cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+I
 SHA256 (gnome/../cargo/toml-0.8.23.tar.gz) = 3BvrmWudg1KannXBehaGdn0UjXBmMUPHhU2LSgnO02I=
 SHA256 (gnome/../cargo/toml_datetime-0.6.11.tar.gz) = Is3a+I9PvBPFGuu/X47OtcfFqdoqxAoTUZ61sKDo8Rw=
 SHA256 (gnome/../cargo/toml_edit-0.22.27.tar.gz) = Qf6MZgrkJXiHz2Y5SGLSHbykpt3SbwSjVgQQQGovgZo=
+SHA256 (gnome/../cargo/ttf-parser-0.25.1.tar.gz) = 0t+QaweFZ0j6P24K0MuqBHBS1KfdYJ4jHE9yzujDbzE=
 SHA256 (gnome/../cargo/typenum-1.18.0.tar.gz) = Hcz/484Hr5OGv9KegMCrGoIFovw05LzUA2TfkCz6jz8=
 SHA256 (gnome/../cargo/unarray-0.1.4.tar.gz) = 6uqFszTbWD/jJ00StM0YgAMr6rQJwNd0vgRNRICrmpQ=
 SHA256 (gnome/../cargo/unicode-bidi-0.3.18.tar.gz) = XBy12zkVKJinkWiXFUOxy1Ag3/f+Q8jcRosIhfXinfU=
@@ -347,7 +347,7 @@ SHA256 (gnome/../cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5Gs
 SHA256 (gnome/../cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (gnome/../cargo/zune-jpeg-0.4.20.tar.gz) = /B9+IFznnrLaPNccX1XzWJeFy3x59qA9HI0Ukb2l0Ik=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.61.1.tar.xz) = vBu81BkSCwmNsovqVTNdneJHDU5qn27pcge0EPwVhn0=
+SHA256 (gnome/librsvg-2.61.2.tar.xz) = RkTYNiPdYcxEecKzw3Lh2isoFVLryQA1yNGsUC6x3AA=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
@@ -360,7 +360,6 @@ SIZE (gnome/../cargo/anstyle-1.0.11.tar.gz) = 15880
 SIZE (gnome/../cargo/anstyle-parse-0.2.7.tar.gz) = 21707
 SIZE (gnome/../cargo/anstyle-query-1.1.4.tar.gz) = 10192
 SIZE (gnome/../cargo/anstyle-wincon-3.0.10.tar.gz) = 12558
-SIZE (gnome/../cargo/anyhow-1.0.99.tar.gz) = 53809
 SIZE (gnome/../cargo/approx-0.5.1.tar.gz) = 15100
 SIZE (gnome/../cargo/assert_cmd-2.0.17.tar.gz) = 26914
 SIZE (gnome/../cargo/autocfg-1.5.0.tar.gz) = 18729
@@ -495,7 +494,7 @@ SIZE (gnome/../cargo/litemap-0.8.0.tar.gz) = 34344
 SIZE (gnome/../cargo/locale_config-0.3.0.tar.gz) = 20808
 SIZE (gnome/../cargo/lock_api-0.4.13.tar.gz) = 28565
 SIZE (gnome/../cargo/log-0.4.27.tar.gz) = 48120
-SIZE (gnome/../cargo/lopdf-0.36.0.tar.gz) = 7056406
+SIZE (gnome/../cargo/lopdf-0.38.0.tar.gz) = 7476430
 SIZE (gnome/../cargo/mac-0.1.1.tar.gz) = 4838
 SIZE (gnome/../cargo/malloc_buf-0.0.6.tar.gz) = 1239
 SIZE (gnome/../cargo/markup5ever-0.35.0.tar.gz) = 15883
@@ -626,6 +625,7 @@ SIZE (gnome/../cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
 SIZE (gnome/../cargo/toml-0.8.23.tar.gz) = 36050
 SIZE (gnome/../cargo/toml_datetime-0.6.11.tar.gz) = 16125
 SIZE (gnome/../cargo/toml_edit-0.22.27.tar.gz) = 78602
+SIZE (gnome/../cargo/ttf-parser-0.25.1.tar.gz) = 201121
 SIZE (gnome/../cargo/typenum-1.18.0.tar.gz) = 74871
 SIZE (gnome/../cargo/unarray-0.1.4.tar.gz) = 12895
 SIZE (gnome/../cargo/unicode-bidi-0.3.18.tar.gz) = 58300
@@ -697,4 +697,4 @@ SIZE (gnome/../cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (gnome/../cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (gnome/../cargo/zune-jpeg-0.4.20.tar.gz) = 67723
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.61.1.tar.xz) = 6758784
+SIZE (gnome/librsvg-2.61.2.tar.xz) = 6758744

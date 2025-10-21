@@ -3,7 +3,7 @@ COMMENT=		SAX-based render library for SVG files
 # !!! /!\ make sure both distinfo are updated on version change:
 # make makesum && make RUST_ARCHS= makesum
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.61.1
+STABLE_VERSION=		2.61.2
 OLD_VERSION=		2.40.21
 DISTFILES.stable=	librsvg-${STABLE_VERSION}${EXTRACT_SUFX}
 DISTFILES.old= 		librsvg-${OLD_VERSION}${EXTRACT_SUFX}
@@ -36,15 +36,15 @@ MODGNOME_TOOLS +=	gi-docgen
 BUILD_DEPENDS=		devel/cargo-c
 # rst2man
 BUILD_DEPENDS +=	textproc/py-docutils
+LIB_DEPENDS +=		multimedia/dav1d
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
 WANTLIB += ${MODCARGO_WANTLIB} cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 xml2
-# XXX Dependency dav1d found: NO. Found 1.2.1 but need: '>= 1.3.0'
-CONFIGURE_ARGS +=	-Davif=disabled
-# XXX ENABLE AT NEXT RELEASE: we don't support glycin in graphics/gdk-pixbuf2
-#CONFIGURE_ARGS +=	-Dpixbuf-loader=enabled
+WANTLIB += dav1d fontconfig harfbuzz
+# XXX we don't support glycin in graphics/gdk-pixbuf2
+CONFIGURE_ARGS +=	-Dpixbuf-loader=enabled
 .else
 ### old ########################################################################
 REVISION=		9
