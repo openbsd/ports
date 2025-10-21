@@ -1,0 +1,40 @@
+Index: libhb/hbffmpeg.c
+--- libhb/hbffmpeg.c.orig
++++ libhb/hbffmpeg.c
+@@ -41,12 +41,17 @@ void hb_video_buffer_to_avframe(AVFrame *frame, hb_buf
+     frame->linesize[2] = buf->plane[2].stride;
+ 
+     frame->pts              = buf->s.start;
+-    frame->reordered_opaque = buf->s.duration;
+     frame->width            = buf->f.width;
+     frame->height           = buf->f.height;
+     frame->format           = buf->f.fmt;
+-    frame->interlaced_frame = !!buf->s.combed;
+-    frame->top_field_first  = !!(buf->s.flags & PIC_FLAG_TOP_FIELD_FIRST);
++    if (!!buf->s.combed)
++        frame->flags        |= AV_FRAME_FLAG_INTERLACED;
++    else
++        frame->flags        &= ~AV_FRAME_FLAG_INTERLACED;
++    if (!!(buf->s.flags & PIC_FLAG_TOP_FIELD_FIRST))
++        frame->flags        |= AV_FRAME_FLAG_TOP_FIELD_FIRST;
++    else
++        frame->flags        &= ~AV_FRAME_FLAG_TOP_FIELD_FIRST;
+ 
+     frame->format          = buf->f.fmt;
+     frame->color_primaries = hb_colr_pri_hb_to_ff(buf->f.color_prim);
+@@ -65,13 +70,12 @@ void hb_avframe_set_video_buffer_flags(hb_buffer_t * b
+     }
+ 
+     buf->s.start = av_rescale_q(frame->pts, time_base, (AVRational){1, 90000});
+-    buf->s.duration = frame->reordered_opaque;
+ 
+-    if (frame->top_field_first)
++    if (frame->flags & AV_FRAME_FLAG_TOP_FIELD_FIRST)
+     {
+         buf->s.flags |= PIC_FLAG_TOP_FIELD_FIRST;
+     }
+-    if (!frame->interlaced_frame)
++    if (!(frame->flags & AV_FRAME_FLAG_INTERLACED))
+     {
+         buf->s.flags |= PIC_FLAG_PROGRESSIVE_FRAME;
+     }

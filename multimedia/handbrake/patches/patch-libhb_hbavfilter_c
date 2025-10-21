@@ -1,0 +1,25 @@
+Index: libhb/hbavfilter.c
+--- libhb/hbavfilter.c.orig
++++ libhb/hbavfilter.c
+@@ -271,6 +271,7 @@ void hb_avfilter_graph_update_init(hb_avfilter_graph_t
+ {
+     // Retrieve the parameters of the output filter
+     AVFilterLink *link     = graph->output->inputs[0];
++    AVRational frame_rate  = av_buffersink_get_frame_rate(graph->output);
+     init->geometry.width   = link->w;
+     init->geometry.height  = link->h;
+     init->geometry.par.num = link->sample_aspect_ratio.num;
+@@ -278,10 +279,10 @@ void hb_avfilter_graph_update_init(hb_avfilter_graph_t
+     init->pix_fmt          = link->format;
+     // avfilter can generate "unknown" framerates.  If this happens
+     // just pass along the source framerate.
+-    if (link->frame_rate.num > 0 && link->frame_rate.den > 0)
++    if (frame_rate.num > 0 && frame_rate.den > 0)
+     {
+-        init->vrate.num        = link->frame_rate.num;
+-        init->vrate.den        = link->frame_rate.den;
++        init->vrate.num        = frame_rate.num;
++        init->vrate.den        = frame_rate.den;
+     }
+ }
+ 
