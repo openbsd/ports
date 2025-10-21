@@ -7,7 +7,7 @@
 Index: src/arch/MovieTexture/MovieTexture_FFMpeg.h
 --- src/arch/MovieTexture/MovieTexture_FFMpeg.h.orig
 +++ src/arch/MovieTexture/MovieTexture_FFMpeg.h
-@@ -13,6 +13,22 @@ namespace avcodec
+@@ -13,11 +13,31 @@ namespace avcodec
  		#include <libavformat/avformat.h>
  		#include <libswscale/swscale.h>
  		#include <libavutil/pixdesc.h>
@@ -30,6 +30,15 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.h
  	}
  };
  
+ #define STEPMANIA_FFMPEG_BUFFER_SIZE 4096
++#ifdef SWS_BICUBIC
+ static const int sws_flags = SWS_BICUBIC; // XXX: Reasonable default?
++#else
++static const int sws_flags = avcodec::SWS_BICUBIC; // XXX: Reasonable default?
++#endif
+ 
+ class MovieTexture_FFMpeg: public MovieTexture_Generic
+ {
 @@ -48,8 +64,8 @@ class MovieDecoder_FFMpeg: public MovieDecoder (public
  	void GetFrame( RageSurface *pOut );
  	int DecodeFrame( float fTargetTime );

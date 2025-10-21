@@ -9,7 +9,18 @@
 Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
 --- src/arch/MovieTexture/MovieTexture_FFMpeg.cpp.orig
 +++ src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
-@@ -109,6 +109,10 @@ MovieDecoder_FFMpeg::MovieDecoder_FFMpeg()
+@@ -9,6 +9,10 @@
+ 
+ #include <cerrno>
+ 
++#if LIBAVCODEC_VERSION_MAJOR > 59
++#define frame_number frame_num
++#endif
++
+ static void FixLilEndian()
+ {
+ #if defined(ENDIAN_LITTLE)
+@@ -109,6 +113,10 @@ MovieDecoder_FFMpeg::MovieDecoder_FFMpeg()
  {
  	FixLilEndian();
  
@@ -20,7 +31,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  	m_fctx = NULL;
  	m_pStream = NULL;
  	m_iCurrentPacketOffset = -1;
-@@ -119,16 +123,37 @@ MovieDecoder_FFMpeg::MovieDecoder_FFMpeg()
+@@ -119,16 +127,37 @@ MovieDecoder_FFMpeg::MovieDecoder_FFMpeg()
  
  MovieDecoder_FFMpeg::~MovieDecoder_FFMpeg()
  {
@@ -58,7 +69,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
      if (m_avioContext != NULL )
      {
          RageFile *file = (RageFile *)m_avioContext->opaque;
-@@ -136,29 +161,14 @@ MovieDecoder_FFMpeg::~MovieDecoder_FFMpeg()
+@@ -136,29 +165,14 @@ MovieDecoder_FFMpeg::~MovieDecoder_FFMpeg()
          delete file;
          avcodec::av_free(m_avioContext);
      }
@@ -93,7 +104,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  }
  
  /* Read until we get a frame, EOF or error.  Return -1 on error, 0 on EOF, 1 if we have a frame. */
-@@ -265,16 +275,23 @@ int MovieDecoder_FFMpeg::DecodePacket( float fTargetTi
+@@ -265,16 +279,23 @@ int MovieDecoder_FFMpeg::DecodePacket( float fTargetTi
  		bool bSkipThisFrame = 
  			fTargetTime != -1 &&
  			GetTimestamp() + GetFrameDuration() < fTargetTime &&
@@ -120,7 +131,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  
  		if( len < 0 )
  		{
-@@ -333,9 +350,15 @@ int MovieDecoder_FFMpeg::DecodePacket( float fTargetTi
+@@ -333,9 +354,15 @@ int MovieDecoder_FFMpeg::DecodePacket( float fTargetTi
  
  void MovieDecoder_FFMpeg::GetFrame( RageSurface *pSurface )
  {
@@ -136,7 +147,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  
  	/* XXX 1: Do this in one of the Open() methods instead?
  	 * XXX 2: The problem of doing this in Open() is that m_AVTexfmt is not
-@@ -344,12 +367,12 @@ void MovieDecoder_FFMpeg::GetFrame( RageSurface *pSurf
+@@ -344,12 +371,12 @@ void MovieDecoder_FFMpeg::GetFrame( RageSurface *pSurf
  	if( m_swsctx == NULL )
  	{
  		m_swsctx = avcodec::sws_getCachedContext( m_swsctx,
@@ -151,7 +162,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  			return;
  		}
  	}
-@@ -384,8 +407,10 @@ void MovieTexture_FFMpeg::RegisterProtocols()
+@@ -384,8 +411,10 @@ void MovieTexture_FFMpeg::RegisterProtocols()
  		return;
  	Done = true;
  
@@ -162,7 +173,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  }
  
  static int AVIORageFile_ReadPacket( void *opaque, uint8_t *buf, int buf_size )
-@@ -413,6 +438,8 @@ RString MovieDecoder_FFMpeg::Open( RString sFile )
+@@ -413,6 +442,8 @@ RString MovieDecoder_FFMpeg::Open( RString sFile )
  {
  	MovieTexture_FFMpeg::RegisterProtocols();
      
@@ -171,7 +182,7 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
  	m_fctx = avcodec::avformat_alloc_context();
  	if( !m_fctx )
  		return "AVCodec: Couldn't allocate context";
-@@ -444,54 +471,76 @@ RString MovieDecoder_FFMpeg::Open( RString sFile )
+@@ -444,54 +475,84 @@ RString MovieDecoder_FFMpeg::Open( RString sFile )
  		m_fctx->streams[stream_idx] == NULL )
  		return "Couldn't find any video streams";
  	m_pStream = m_fctx->streams[stream_idx];
@@ -219,7 +230,11 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
 -	if( m_pStream->codec->codec )
 -		avcodec::avcodec_close( m_pStream->codec );
 +	if( m_pStreamCodec->codec )
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
 +		avcodec::avcodec_close( m_pStreamCodec );
++#else
++		avcodec::avcodec_free_context( &m_pStreamCodec );
++#endif
  
 -	avcodec::AVCodec *pCodec = avcodec::avcodec_find_decoder( m_pStream->codec->codec_id );
 +#if LIBAVCODEC_VERSION_MAJOR >= 59
@@ -261,7 +276,11 @@ Index: src/arch/MovieTexture/MovieTexture_FFMpeg.cpp
 +	if( m_pStream && m_pStreamCodec->codec )
  	{
 -		avcodec::avcodec_close( m_pStream->codec );
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
 +		avcodec::avcodec_close( m_pStreamCodec );
++#else
++		avcodec::avcodec_free_context( &m_pStreamCodec );
++#endif
  		m_pStream = NULL;
  	}
  
