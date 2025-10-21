@@ -3,7 +3,7 @@ Detect erlang ERTS directory at runtime.
 Index: bin/elixir
 --- bin/elixir.orig
 +++ bin/elixir
-@@ -222,7 +222,9 @@ fi
+@@ -223,7 +223,9 @@ if [ "$MODE" != "iex" ]; then ERL="-s elixir start_cli
  
  # One MAY change ERTS_BIN= but you MUST NOT change
  # ERTS_BIN=$ERTS_BIN as it is handled by Elixir releases.
