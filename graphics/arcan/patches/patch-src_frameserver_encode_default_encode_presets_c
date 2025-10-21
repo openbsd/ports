@@ -1,0 +1,52 @@
+https://github.com/letoram/arcan/commit/e717c1b5833bdc2dea7dc6f64eeaf39c683ebd26
+
+Index: src/frameserver/encode/default/encode_presets.c
+--- src/frameserver/encode/default/encode_presets.c.orig
++++ src/frameserver/encode/default/encode_presets.c
+@@ -63,7 +63,7 @@ static bool default_vcodec_setup(struct codec_ent* dst
+ 		dst->storage.video.codec, NULL) != 0){
+ 		dst->storage.video.codec   = NULL;
+ 		dst->storage.video.context = NULL;
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		return false;
+ 	}
+ 
+@@ -91,12 +91,18 @@ static bool default_acodec_setup(
+ 
+ 	if (avcodec_open2(
+ 		dst->storage.audio.context, dst->storage.audio.codec, NULL) != 0){
+-		avcodec_close(dst->storage.audio.context);
++		avcodec_free_context(&dst->storage.audio.context);
+ 		dst->storage.audio.context = NULL;
+ 		dst->storage.audio.codec   = NULL;
+ 		return false;
+ 	}
+ 
++	av_channel_layout_copy(
++		&ctx->ch_layout,
++		&(AVChannelLayout)AV_CHANNEL_LAYOUT_STEREO);
++
++/* should sweep codec and find best match for number of channels */
++
+ 	return true;
+ }
+ 
+@@ -175,7 +181,7 @@ static bool setup_cb_x264(struct codec_ent* dst, unsig
+ 
+ 	if (avcodec_open2(dst->storage.video.context,
+ 		dst->storage.video.codec, &opts) != 0){
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		dst->storage.video.context = NULL;
+ 		dst->storage.video.codec   = NULL;
+ 		return false;
+@@ -241,7 +247,7 @@ static bool setup_cb_vp8(struct codec_ent* dst, unsign
+ 		width, height, fps, vbr / 1024);
+ 	if (avcodec_open2(dst->storage.video.context,
+ 		dst->storage.video.codec, &opts) != 0){
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		dst->storage.video.context = NULL;
+ 		dst->storage.video.codec   = NULL;
+ 		return false;

@@ -1,0 +1,14 @@
+https://github.com/letoram/arcan/commit/e717c1b5833bdc2dea7dc6f64eeaf39c683ebd26
+
+Index: src/frameserver/encode/default/encode_presets.h
+--- src/frameserver/encode/default/encode_presets.h.orig
++++ src/frameserver/encode/default/encode_presets.h
+@@ -29,7 +29,7 @@ struct codec_ent
+ 		} video, audio;
+ 
+ 		struct {
+-			AVOutputFormat*  format;
++			const AVOutputFormat*  format;
+ 			AVFormatContext* context;
+ 		} container;
+ 
