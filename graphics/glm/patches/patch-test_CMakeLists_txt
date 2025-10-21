@@ -1,20 +1,20 @@
 Index: test/CMakeLists.txt
 --- test/CMakeLists.txt.orig
 +++ test/CMakeLists.txt
-@@ -77,6 +77,7 @@ if(GLM_TEST_ENABLE_FAST_MATH)
- 
- 	if((CMAKE_CXX_COMPILER_ID MATCHES "Clang") OR (CMAKE_CXX_COMPILER_ID MATCHES "GNU"))
- 		add_compile_options(-ffast-math)
+@@ -11,6 +11,7 @@ if (GLM_TEST_ENABLE_SIMD_FMA)
+ 	add_definitions(-DGLM_FORCE_FMA)
+ 	if((CMAKE_CXX_COMPILER_ID MATCHES "GNU") OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
+ 		add_compile_options(-mfma)
 +		add_definitions(-mfpmath=387)
+ 	endif()
+ endif()
  
- 	elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
- 		add_compile_options(/fp:fast)
-@@ -197,7 +198,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
- 		message("GLM: Clang - ${CMAKE_CXX_COMPILER_ID} compiler")
+@@ -23,7 +24,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+ 
+ 	add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+ 	if(NOT GLM_DISABLE_AUTO_DETECTION)
+-		add_compile_options(-Werror -Weverything)
++		add_compile_options(-Weverything)
  	endif()
  
--	add_compile_options(-Werror -Weverything)
-+	add_compile_options(-Weverything)
- 	add_compile_options(-Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-c++11-long-long -Wno-padded -Wno-gnu-anonymous-struct -Wno-nested-anon-types)
- 	add_compile_options(-Wno-undefined-reinterpret-cast -Wno-sign-conversion -Wno-unused-variable -Wno-missing-prototypes -Wno-unreachable-code -Wno-missing-variable-declarations -Wno-sign-compare -Wno-global-constructors -Wno-unused-macros -Wno-format-nonliteral)
- 
+ elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")

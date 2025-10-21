@@ -1,5 +1,4 @@
 include/glm/
-include/glm/CMakeLists.txt
 include/glm/common.hpp
 include/glm/detail/
 include/glm/detail/_features.hpp
@@ -9,6 +8,7 @@ include/glm/detail/_swizzle.hpp
 include/glm/detail/_swizzle_func.hpp
 include/glm/detail/_vectorize.hpp
 include/glm/detail/compute_common.hpp
+include/glm/detail/compute_vector_decl.hpp
 include/glm/detail/compute_vector_relational.hpp
 include/glm/detail/func_common.inl
 include/glm/detail/func_common_simd.inl
@@ -62,10 +62,11 @@ include/glm/detail/type_vec3.hpp
 include/glm/detail/type_vec3.inl
 include/glm/detail/type_vec4.hpp
 include/glm/detail/type_vec4.inl
-include/glm/detail/type_vec4_simd.inl
+include/glm/detail/type_vec_simd.inl
 include/glm/exponential.hpp
 include/glm/ext/
 include/glm/ext.hpp
+include/glm/ext/_matrix_vectorize.hpp
 include/glm/ext/matrix_clip_space.hpp
 include/glm/ext/matrix_clip_space.inl
 include/glm/ext/matrix_common.hpp
@@ -124,6 +125,8 @@ include/glm/ext/matrix_int4x3.hpp
 include/glm/ext/matrix_int4x3_sized.hpp
 include/glm/ext/matrix_int4x4.hpp
 include/glm/ext/matrix_int4x4_sized.hpp
+include/glm/ext/matrix_integer.hpp
+include/glm/ext/matrix_integer.inl
 include/glm/ext/matrix_projection.hpp
 include/glm/ext/matrix_projection.inl
 include/glm/ext/matrix_relational.hpp
@@ -174,6 +177,8 @@ include/glm/ext/scalar_integer.hpp
 include/glm/ext/scalar_integer.inl
 include/glm/ext/scalar_packing.hpp
 include/glm/ext/scalar_packing.inl
+include/glm/ext/scalar_reciprocal.hpp
+include/glm/ext/scalar_reciprocal.inl
 include/glm/ext/scalar_relational.hpp
 include/glm/ext/scalar_relational.inl
 include/glm/ext/scalar_uint_sized.hpp
@@ -217,6 +222,8 @@ include/glm/ext/vector_integer.hpp
 include/glm/ext/vector_integer.inl
 include/glm/ext/vector_packing.hpp
 include/glm/ext/vector_packing.inl
+include/glm/ext/vector_reciprocal.hpp
+include/glm/ext/vector_reciprocal.inl
 include/glm/ext/vector_relational.hpp
 include/glm/ext/vector_relational.inl
 include/glm/ext/vector_uint1.hpp
@@ -231,6 +238,7 @@ include/glm/ext/vector_ulp.hpp
 include/glm/ext/vector_ulp.inl
 include/glm/fwd.hpp
 include/glm/geometric.hpp
+include/glm/glm.cppm
 include/glm/glm.hpp
 include/glm/gtc/
 include/glm/gtc/bitfield.hpp
@@ -260,7 +268,6 @@ include/glm/gtc/quaternion_simd.inl
 include/glm/gtc/random.hpp
 include/glm/gtc/random.inl
 include/glm/gtc/reciprocal.hpp
-include/glm/gtc/reciprocal.inl
 include/glm/gtc/round.hpp
 include/glm/gtc/round.inl
 include/glm/gtc/type_aligned.hpp
@@ -308,7 +315,7 @@ include/glm/gtx/fast_square_root.hpp
 include/glm/gtx/fast_square_root.inl
 include/glm/gtx/fast_trigonometry.hpp
 include/glm/gtx/fast_trigonometry.inl
-include/glm/gtx/float_notmalize.inl
+include/glm/gtx/float_normalize.inl
 include/glm/gtx/functions.hpp
 include/glm/gtx/functions.inl
 include/glm/gtx/gradient_paint.hpp
@@ -323,6 +330,8 @@ include/glm/gtx/intersect.hpp
 include/glm/gtx/intersect.inl
 include/glm/gtx/io.hpp
 include/glm/gtx/io.inl
+include/glm/gtx/iteration.hpp
+include/glm/gtx/iteration.inl
 include/glm/gtx/log_base.hpp
 include/glm/gtx/log_base.inl
 include/glm/gtx/matrix_cross_product.hpp
@@ -350,11 +359,12 @@ include/glm/gtx/normal.inl
 include/glm/gtx/normalize_dot.hpp
 include/glm/gtx/normalize_dot.inl
 include/glm/gtx/number_precision.hpp
-include/glm/gtx/number_precision.inl
 include/glm/gtx/optimum_pow.hpp
 include/glm/gtx/optimum_pow.inl
 include/glm/gtx/orthonormalize.hpp
 include/glm/gtx/orthonormalize.inl
+include/glm/gtx/pca.hpp
+include/glm/gtx/pca.inl
 include/glm/gtx/perpendicular.hpp
 include/glm/gtx/perpendicular.inl
 include/glm/gtx/polar_coordinates.hpp
@@ -379,6 +389,8 @@ include/glm/gtx/std_based_type.hpp
 include/glm/gtx/std_based_type.inl
 include/glm/gtx/string_cast.hpp
 include/glm/gtx/string_cast.inl
+include/glm/gtx/structured_bindings.hpp
+include/glm/gtx/structured_bindings.inl
 include/glm/gtx/texture.hpp
 include/glm/gtx/texture.inl
 include/glm/gtx/transform.hpp
@@ -424,7 +436,8 @@ include/glm/vec2.hpp
 include/glm/vec3.hpp
 include/glm/vec4.hpp
 include/glm/vector_relational.hpp
-lib/cmake/
-lib/cmake/glm/
-lib/cmake/glm/glmConfig-version.cmake
-lib/cmake/glm/glmConfig.cmake
+@static-lib lib/libglm.a
+share/glm/
+share/glm/glmConfig${MODCMAKE_BUILD_SUFFIX}
+share/glm/glmConfig.cmake
+share/glm/glmConfigVersion.cmake
