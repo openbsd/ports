@@ -65,7 +65,8 @@ go/lib/fips140/Makefile
 go/lib/fips140/README.md
 go/lib/fips140/fips140.sum
 go/lib/fips140/inprocess.txt
-go/lib/fips140/v1.0.0.zip
+go/lib/fips140/v1.0.0-c2097c7c.zip
+go/lib/fips140/v1.0.0.txt
 go/lib/time/
 go/lib/time/README
 go/lib/time/mkzip.go
@@ -150,6 +151,7 @@ go/src/archive/tar/testdata/gnu-nil-sparse-data.tar
 go/src/archive/tar/testdata/gnu-nil-sparse-hole.tar
 go/src/archive/tar/testdata/gnu-not-utf8.tar
 go/src/archive/tar/testdata/gnu-sparse-big.tar
+go/src/archive/tar/testdata/gnu-sparse-many-zeros.tar.bz2
 go/src/archive/tar/testdata/gnu-utf8.tar
 go/src/archive/tar/testdata/gnu.tar
 go/src/archive/tar/testdata/hardlink.tar
@@ -6640,6 +6642,7 @@ go/src/debug/elf/testdata/compressed-64.obj
 go/src/debug/elf/testdata/gcc-386-freebsd-exec
 go/src/debug/elf/testdata/gcc-amd64-linux-exec
 go/src/debug/elf/testdata/gcc-amd64-openbsd-debug-with-rela.obj
+@comment beware update-plist incorrectly replacing above line
 go/src/debug/elf/testdata/gcc-riscv64-linux-exec
 go/src/debug/elf/testdata/go-relocation-test-clang-arm.obj
 go/src/debug/elf/testdata/go-relocation-test-clang-x86.obj
@@ -10595,6 +10598,7 @@ go/src/runtime/debuglog.go
 go/src/runtime/debuglog_off.go
 go/src/runtime/debuglog_on.go
 go/src/runtime/debuglog_test.go
+go/src/runtime/decoratemappings_test.go
 go/src/runtime/defer_test.go
 go/src/runtime/defs1_linux.go
 go/src/runtime/defs1_netbsd_386.go
@@ -15067,6 +15071,7 @@ go/test/fixedbugs/issue7538a.go
 go/test/fixedbugs/issue7538b.go
 go/test/fixedbugs/issue7547.go
 go/test/fixedbugs/issue7550.go
+go/test/fixedbugs/issue75569.go
 go/test/fixedbugs/issue7590.go
 go/test/fixedbugs/issue7648.dir/
 go/test/fixedbugs/issue7648.dir/a.go
