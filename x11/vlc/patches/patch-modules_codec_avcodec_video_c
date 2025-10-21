@@ -1,0 +1,72 @@
+https://code.videolan.org/videolan/vlc/-/merge_requests/6656
+https://code.videolan.org/videolan/vlc/-/merge_requests/6659
+https://code.videolan.org/videolan/vlc/-/merge_requests/2814
+
+Index: modules/codec/avcodec/video.c
+--- modules/codec/avcodec/video.c.orig
++++ modules/codec/avcodec/video.c
+@@ -204,8 +204,7 @@ static int lavc_GetVideoFormat(decoder_t *dec, video_f
+     else if (ctx->time_base.num > 0 && ctx->time_base.den > 0)
+     {
+         fmt->i_frame_rate = ctx->time_base.den;
+-        fmt->i_frame_rate_base = ctx->time_base.num
+-                                 * __MAX(ctx->ticks_per_frame, 1);
++        fmt->i_frame_rate_base = ctx->time_base.num;
+     }
+ 
+     /* FIXME we should only set the known values and let the core decide
+@@ -327,12 +326,10 @@ static int lavc_UpdateVideoFormat(decoder_t *dec, AVCo
+ 
+     /* always have date in fields/ticks units */
+     if(dec->p_sys->pts.i_divider_num)
+-        date_Change(&dec->p_sys->pts, fmt_out.i_frame_rate *
+-                                      __MAX(ctx->ticks_per_frame, 1),
++        date_Change(&dec->p_sys->pts, fmt_out.i_frame_rate,
+                                       fmt_out.i_frame_rate_base);
+     else
+-        date_Init(&dec->p_sys->pts, fmt_out.i_frame_rate *
+-                                    __MAX(ctx->ticks_per_frame, 1),
++        date_Init(&dec->p_sys->pts, fmt_out.i_frame_rate,
+                                     fmt_out.i_frame_rate_base);
+ 
+     fmt_out.p_palette = dec->fmt_out.video.p_palette;
+@@ -625,11 +622,6 @@ static int InitVideoDecCommon( decoder_t *p_dec )
+     p_dec->pf_decode = DecodeVideo;
+     p_dec->pf_flush  = Flush;
+ 
+-    /* XXX: Writing input format makes little sense. */
+-    if( p_context->profile != FF_PROFILE_UNKNOWN )
+-        p_dec->fmt_in.i_profile = p_context->profile;
+-    if( p_context->level != FF_LEVEL_UNKNOWN )
+-        p_dec->fmt_in.i_level = p_context->level;
+     return VLC_SUCCESS;
+ }
+ 
+@@ -945,9 +937,11 @@ static vlc_tick_t interpolate_next_pts( decoder_t *p_d
+         p_sys->pts.i_divider_num == 0 )
+         return VLC_TICK_INVALID;
+ 
++#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(60, 12, 100))
++    int i_tick = p_context->codec_descriptor->props & AV_CODEC_PROP_FIELDS ? 2 : 1;
++#else
+     int i_tick = p_context->ticks_per_frame;
+-    if( i_tick <= 0 )
+-        i_tick = 1;
++#endif
+ 
+     /* interpolate the next PTS */
+     return date_Increment( &p_sys->pts, i_tick + frame->repeat_pict );
+@@ -1426,8 +1420,13 @@ static picture_t *DecodeBlock( decoder_t *p_dec, block
+         /* Hack to force display of still pictures */
+         p_pic->b_force = p_sys->b_first_frame;
+         p_pic->i_nb_fields = 2 + frame->repeat_pict;
++#if (LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(58, 7, 100))
++        p_pic->b_progressive = !(frame->flags & AV_FRAME_FLAG_INTERLACED);
++        p_pic->b_top_field_first = !!(frame->flags & AV_FRAME_FLAG_TOP_FIELD_FIRST);
++#else
+         p_pic->b_progressive = !frame->interlaced_frame;
+         p_pic->b_top_field_first = frame->top_field_first;
++#endif
+ 
+         if (DecodeSidedata(p_dec, frame, p_pic))
+             i_pts = VLC_TICK_INVALID;
