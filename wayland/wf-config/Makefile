@@ -2,7 +2,7 @@ COMMENT =	configuration files library for wayfire
 
 V =		0.10.0
 DISTNAME =	wf-config-${V}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	wf-config 0.2 # 0.0
 CATEGORIES =	wayland

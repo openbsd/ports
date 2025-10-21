@@ -6,6 +6,7 @@ DISTNAME =	choria-${V}-${COMMIT}-src
 PKGNAME =	choria-${V}
 CATEGORIES =	games x11
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+REVISION =	0
 
 HOMEPAGE =	https://choria.gitlab.io/
 

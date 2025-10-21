@@ -4,6 +4,7 @@ V =		0.10.0
 GH_ACCOUNT =	WayfireWM
 
 DISTNAME =	wayfire-${V}
+REVISION =	0
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland

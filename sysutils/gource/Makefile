@@ -3,6 +3,7 @@ COMMENT =	software version control visualization tool
 DISTNAME =	gource-0.55
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
+REVISION =	0
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 

@@ -3,6 +3,7 @@ COMMENT =	website access log visualization
 DISTNAME =	logstalgia-1.1.4
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://logstalgia.io/
+REVISION =	0
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 

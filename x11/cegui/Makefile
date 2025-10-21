@@ -2,7 +2,7 @@ COMMENT =		widgets library for graphics engines
 
 V =			0.8.7
 DISTNAME =		cegui-${V}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	CEGUIBase-0			2.0 # 3.1
 SHARED_LIBS +=	CEGUICommonDialogs-0		2.0 # 3.1

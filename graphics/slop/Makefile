@@ -8,6 +8,7 @@ GH_TAGNAME =	v7.7
 
 COMMENT =	query for a selection and print to stdout (select operation)
 CATEGORIES =	graphics x11
+REVISION =	0
 
 SHARED_LIBS =   slopy   3.0     # 0.0
 

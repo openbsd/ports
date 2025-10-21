@@ -7,7 +7,7 @@ PKGNAME =	arx-libertatis-${GH_TAGNAME}
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
 GH_TAGNAME =	1.2.1
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	ArxIO                     0.0 # 1.2
 

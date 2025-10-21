@@ -3,7 +3,7 @@ COMMENT =		jump 'n' run game
 V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
