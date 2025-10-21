@@ -1,0 +1,110 @@
+Index: cmake/modules/KDbCreateSharedDataClasses.cmake
+--- cmake/modules/KDbCreateSharedDataClasses.cmake.orig
++++ cmake/modules/KDbCreateSharedDataClasses.cmake
+@@ -16,54 +16,87 @@
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ 
+ macro(KDB_CREATE_SHARED_DATA_CLASSES)
+-    # message(STATUS "KDB_CREATE_SHARED_DATA_CLASSES ARGV: ${ARGV}")
+     set(_args "")
+     list(APPEND _args ${ARGV})
+     list(GET _args 0 OUTPUT_VAR)
+     list(GET _args 1 PREFIX)
+     list(REMOVE_AT _args 0 1)
+-    # message(STATUS "OUTPUT_VAR: ${OUTPUT_VAR} ${_args}")
+-    find_package(PythonInterp 2.6)
+-    set_package_properties(PythonInterp PROPERTIES DESCRIPTION "Python language interpreter"
+-                           URL "https://www.python.org" TYPE REQUIRED
+-                           PURPOSE "Required by the Shared Data Classes (SDC) tool")
++    
++    # Find Python 3 interpreter (required)
++    if(NOT Python3_EXECUTABLE)
++        find_package(Python3 COMPONENTS Interpreter REQUIRED)
++    endif()
++    
++    set_package_properties(Python3 PROPERTIES 
++        DESCRIPTION "Python 3 language interpreter"
++        URL "https://www.python.org" 
++        TYPE REQUIRED
++        PURPOSE "Required by the Shared Data Classes (SDC) tool"
++    )
++    
++    # Collect all output files to create a dependency target
++    set(_all_outputs "")
++    
+     foreach(_input ${_args})
+         get_filename_component(INPUT ${_input} ABSOLUTE)
+         string(REGEX REPLACE "\\.shared\\.h" ".h" OUTPUT ${_input})
+         string(REGEX REPLACE ".*/([^/]+)\\.h" "\\1.h" OUTPUT ${OUTPUT})
+-        #MESSAGE(DEBUG "--------- ${_input} ${OUTPUT} ${INPUT}")
+-        #MESSAGE(DEBUG "COMMAND python2 ${CMAKE_SOURCE_DIR}/tools/sdc.py ${INPUT} ${CMAKE_CURRENT_BINARY_DIR}/${OUTPUT}")
+-        message(STATUS "Creating shared data class in ${OUTPUT} from ${_input}")
++        
++        # Determine output directory based on PREFIX parameter
+         if(${PREFIX} STREQUAL "NO_PREFIX")
+             set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
+         else()
+             set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/${PREFIX})
+             set(OUTPUT "${PREFIX}/${OUTPUT}")
+         endif()
+-        # message(STATUS "OUTPUT_DIR: ${OUTPUT_DIR} ${PREFIX}")
++        
++        # Ensure output directory exists
+         file(MAKE_DIRECTORY ${OUTPUT_DIR})
+-        execute_process(
+-            COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tools/sdc.py
+-                           ${INPUT}
+-                           ${OUTPUT_DIR}/${OUTPUT}
++        
++        set(FULL_OUTPUT_PATH "${OUTPUT_DIR}/${OUTPUT}")
++        
++        message(STATUS "Will create shared data class: ${OUTPUT} from ${_input}")
++        
++        # Use add_custom_command instead of execute_process
++        # This generates headers at build-time, not at configure-time
++        # This ensures proper dependency tracking by the build system
++        add_custom_command(
++            OUTPUT "${FULL_OUTPUT_PATH}"
++            COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tools/sdc.py
++                    ${INPUT}
++                    ${FULL_OUTPUT_PATH}
++            DEPENDS ${INPUT} ${CMAKE_SOURCE_DIR}/tools/sdc.py
+             WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+-            RESULT_VARIABLE KDB_CREATE_SHARED_DATA_CLASSES_RESULT
++            COMMENT "Generating shared data class ${OUTPUT}"
++            VERBATIM
+         )
+-        # MESSAGE(STATUS "...result: ${KDB_CREATE_SHARED_DATA_CLASSES_RESULT}")
++        
++        # Add to output variable (relative path for install rules)
+         list(APPEND ${OUTPUT_VAR} "${OUTPUT}")
++        # Add to internal list (full path for dependency tracking)
++        list(APPEND _all_outputs "${FULL_OUTPUT_PATH}")
+     endforeach(_input)
++    
++    # Create a custom target that depends on all generated files
++    # This target can be used as a dependency by other targets
++    add_custom_target(_shared_classes ALL
++        DEPENDS ${_all_outputs}
++        COMMENT "Generating all shared data classes"
++    )
++    
+ endmacro(KDB_CREATE_SHARED_DATA_CLASSES)
+ 
+ macro(KDB_REMOVE_EXTENSIONS)
+-    # message(STATUS "KDB_REMOVE_EXTENSIONS ARGV: ${ARGV}")
++    # Remove .h extensions from a list of header file names
++    # First argument is the output variable name
++    # Remaining arguments are input file names
+     set(_args "")
+     list(APPEND _args ${ARGV})
+     list(GET _args 0 OUTPUT_VAR)
+     list(REMOVE_AT _args 0)
+-    # message(STATUS "OUTPUT_VAR: ${OUTPUT_VAR} ${_args}")
++
+     foreach(_input ${_args})
+         string(REGEX REPLACE "\\.h" "" OUTPUT ${_input})
+-        # message(STATUS "...result: ${OUTPUT}")
+         list(APPEND ${OUTPUT_VAR} "${OUTPUT}")
+     endforeach(_input)
+ endmacro(KDB_REMOVE_EXTENSIONS)

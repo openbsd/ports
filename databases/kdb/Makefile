@@ -2,7 +2,7 @@ COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  KDb3                      1.1 # 3.0
 
@@ -39,5 +39,8 @@ LIB_DEPENDS =		devel/kf5/kcoreaddons \
 
 CONFIGURE_ARGS +=	-DBUILD_TESTING=On \
 			-DBUILD_EXAMPLES=On
+
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

@@ -1,0 +1,45 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -172,6 +172,10 @@ ecm_create_qm_loader(kdb_LIB_SRCS kdb_qt)
+ add_library(KDb SHARED ${kdb_LIB_SRCS})
+ set_coinstallable_lib_version(KDb)
+ 
++if(TARGET _shared_classes)
++    add_dependencies(KDb _shared_classes)
++endif()
++
+ kdb_create_shared_data_classes(
+     kdb_GENERATED_SHARED_DATA_CLASS_HEADERS # output variable with list of headers
+     NO_PREFIX # subdirectory in which the headers should be generated
+@@ -399,13 +403,23 @@ ecm_generate_headers(kdb_FORWARDING_HEADERS
+ 
+ #message(STATUS "%% ${kdb_GENERATED_SHARED_DATA_CLASS_BASENAMES}")
+ 
+-ecm_generate_headers(kdb_FORWARDING_HEADERS_FROM_BUILDDIR
+-    REQUIRED_HEADERS kdb_HEADERS_FROM_BUILDDIR
+-    ORIGINAL CAMELCASE
+-    SOURCE_DIR ${PROJECT_BINARY_DIR}/src
+-    HEADER_NAMES
+-        ${kdb_GENERATED_SHARED_DATA_CLASS_BASENAMES}
+-)
++set(kdb_FORWARDING_HEADERS_FROM_BUILDDIR "")
++set(kdb_HEADERS_FROM_BUILDDIR "")
++
++foreach(header ${kdb_GENERATED_SHARED_DATA_CLASS_HEADERS})
++    # header enthält bereits den relativen Pfad (z.B. "KDbConnectionData.h")
++    set(FULL_PATH "${CMAKE_CURRENT_BINARY_DIR}/${header}")
++    
++    # Extrahiere Basename ohne .h
++    string(REGEX REPLACE "\\.h$" "" basename "${header}")
++    
++    # CamelCase Forwarding Header (ohne .h Extension)
++    set(FORWARDING_HEADER "${CMAKE_CURRENT_BINARY_DIR}/${basename}")
++    file(WRITE "${FORWARDING_HEADER}" "#include \"${header}\"\n")
++    
++    list(APPEND kdb_FORWARDING_HEADERS_FROM_BUILDDIR "${FORWARDING_HEADER}")
++    list(APPEND kdb_HEADERS_FROM_BUILDDIR "${FULL_PATH}")
++endforeach()
+ 
+ #message(STATUS "%%kdb_HEADERS_FROM_BUILDDIR ${kdb_HEADERS_FROM_BUILDDIR}")
+ 
