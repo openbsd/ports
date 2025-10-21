@@ -1,0 +1,293 @@
+15250:771f4ae27e58
+15287:1e7b18400886
+15288:73b833e7fe35
+
+Index: src/combined/ffmpeg/ff_audio_decoder.c
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig
++++ src/combined/ffmpeg/ff_audio_decoder.c
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2001-2022 the xine project
++ * Copyright (C) 2001-2024 the xine project
+  *
+  * This file is part of xine, a free video player.
+  *
+@@ -67,6 +67,7 @@ typedef struct {
+ 
+   xine_t                 *xine;
+   float                   gain;
++  int                     bitexact;
+ } ff_audio_class_t;
+ 
+ typedef struct ff_audio_decoder_s {
+@@ -188,14 +189,25 @@ static int ff_aac_mode_parse (ff_audio_decoder_t *this
+         xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+           "ffmpeg_audio_dec: found AAC ADTS syncword after %d bytes\n", i);
+         if (this->buftype == BUF_AUDIO_AAC_LATM) {
++          uint8_t *ed = NULL;
++          int es = 0;
+           xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+             "ffmpeg_audio_dec: stream says LATM but is ADTS -> switching decoders\n");
+-          if (this->decoder_ok) {
+-            pthread_mutex_lock (&ffmpeg_lock);
+-            avcodec_close (this->context);
+-            pthread_mutex_unlock (&ffmpeg_lock);
+-            this->decoder_ok = 0;
++          pthread_mutex_lock (&ffmpeg_lock);
++          if (this->context) {
++            ed = this->context->extradata;
++            es = this->context->extradata_size;
++            this->context->extradata = NULL;
++            this->context->extradata_size = 0;
++            XFF_FREE_CONTEXT (this->context);
+           }
++          this->decoder_ok = 0;
++          this->context = XFF_ALLOC_CONTEXT ();
++          if (this->context) {
++            this->context->extradata = ed;
++            this->context->extradata_size = es;
++          }
++          pthread_mutex_unlock (&ffmpeg_lock);
+           this->codec = NULL;
+           ff_audio_open_codec (this, BUF_AUDIO_AAC);
+         }
+@@ -303,7 +315,11 @@ static void ff_audio_init_codec(ff_audio_decoder_t *th
+ 
+   this->context->bits_per_sample = this->ff_bits;
+   this->context->sample_rate = this->ff_sample_rate;
++#if XFF_AUDIO_CHANNEL_LAYOUT < 2
+   this->context->channels    = this->ff_channels;
++#else
++  this->context->ch_layout.nb_channels = this->ff_channels;
++#endif
+   this->context->codec_id    = this->codec->id;
+   this->context->codec_type  = this->codec->type;
+   this->context->codec_tag   = _x_stream_info_get(this->stream, XINE_STREAM_INFO_AUDIO_FOURCC);
+@@ -345,6 +361,11 @@ static int ff_audio_open_codec(ff_audio_decoder_t *thi
+     return -1;
+   }
+ 
++  if (this->class->bitexact)
++    this->context->flags |= CODEC_FLAG_BITEXACT;
++  else
++    this->context->flags &= ~CODEC_FLAG_BITEXACT;
++
+   pthread_mutex_lock (&ffmpeg_lock);
+   if (XFF_AVCODEC_OPEN (this->context, this->codec) < 0) {
+     pthread_mutex_unlock (&ffmpeg_lock);
+@@ -527,17 +548,76 @@ static void ff_audio_output_close(ff_audio_decoder_t *
+   this->ao_mode = 0;
+ }
+ 
++static unsigned int ff_list_channels (uint8_t *list, uint64_t map) {
++  unsigned int n, bit;
++
++  for (n = bit = 0; map; map >>= 1, bit++) {
++    uint32_t b = map & 1;
++
++    list[n] = bit;
++    n += b;
++  }
++  return n;
++}
++
+ static void ff_map_channels (ff_audio_decoder_t *this) {
+   uint64_t ff_map;
++  uint8_t ff_list[64];
++  unsigned int ff_num;
++  const char *type = "native";
+   int caps = this->stream->audio_out->get_capabilities (this->stream->audio_out);
+ 
++#if XFF_AUDIO_CHANNEL_LAYOUT < 2
++
+   /* safety kludge for very old libavcodec */
+-#ifdef AV_CH_FRONT_LEFT
++#  ifdef AV_CH_FRONT_LEFT
+   ff_map = this->context->channel_layout;
+   if (!ff_map) /* wma2 bug */
+-#endif
++#  endif
+     ff_map = ((uint64_t)1 << this->context->channels) - 1;
++  ff_num = ff_list_channels (ff_list, ff_map);
+ 
++#else /* XFF_AUDIO_CHANNEL_LAYOUT == 2 */
++
++  ff_num = this->context->ch_layout.nb_channels;
++  if (ff_num > (int)(sizeof (ff_list) / sizeof (ff_list[0])))
++    ff_num = sizeof (ff_list) / sizeof (ff_list[0]);
++  switch (this->context->ch_layout.order) {
++    const AVChannelCustom *cmap;
++    unsigned int i;
++
++    case AV_CHANNEL_ORDER_UNSPEC:
++      type = "unknown";
++      goto _fallback;
++
++    case AV_CHANNEL_ORDER_NATIVE:
++      ff_map = this->context->ch_layout.u.mask;
++      if (!ff_map) /* wma2 bug */
++        ff_map = ((uint64_t)1 << ff_num) - 1;
++      ff_num = ff_list_channels (ff_list, ff_map);
++      break;
++
++    case AV_CHANNEL_ORDER_CUSTOM:
++      type = "custom";
++      if (!(cmap = this->context->ch_layout.u.map))
++        goto _fallback;
++      ff_map = 0;
++      for (i = 0; i < ff_num; i++) {
++        ff_list[i] = cmap[i].id;
++        ff_map |= (uint64_t)1 << ff_list[i];
++      }
++      break;
++
++    default:
++      type = "unsupported";
++      /* fall through */
++    _fallback:
++      ff_map = ((uint64_t)1 << ff_num) - 1;
++      ff_num = ff_list_channels (ff_list, ff_map);
++  }
++
++#endif
++
+   if ((caps != this->ao_caps) || (ff_map != this->ff_map)) {
+     unsigned int i, j;
+     /* ff: see names[] below; xine: L R RL RR C LFE */
+@@ -562,7 +642,7 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+ 
+     this->ao_caps     = caps;
+     this->ff_map      = ff_map;
+-    this->ff_channels = this->context->channels;
++    this->ff_channels = ff_num;
+ 
+     /* silence out */
+     for (i = 0; i < MAX_CHANNELS; i++)
+@@ -576,20 +656,23 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+       this->left[0] = this->right[0] = 0;
+       tries = wishlist + 0 * num_modes;
+     } else if (this->ff_channels == 2) { /* stereo */
++      /* FIXME: libxine does not yet support audio selection _after_ decoding.
++       * For now, treat the most common "dual mono" case as stereo. */
+       name_map[0] = 0;
+       name_map[1] = 1;
+       this->left[0] = 0;
+       this->right[0] = 1;
+       tries = wishlist + 1 * num_modes;
+     } else {
+-      for (i = j = 0; i < sizeof (base_map) / sizeof (base_map[0]); i++) {
+-        if ((ff_map >> i) & 1) {
+-          int8_t target = base_map[i];
+-          if ((target >= 0) && (this->map[target] < 0))
+-            this->map[target] = j;
+-          name_map[j] = i; /* for debug output below */
+-          j++;
+-        }
++      for (i = 0; i < ff_num; i++) {
++        int8_t target;
++        uint32_t num = ff_list[i];
++        if (num >= sizeof (base_map) / sizeof (base_map[0]))
++          continue;
++        target = base_map[num];
++        if ((target >= 0) && (this->map[target] < 0))
++          this->map[target] = i;
++        name_map[i] = num; /* for debug output below */
+       }
+       this->left[0]  = this->map[0] < 0 ? 0 : this->map[0];
+       this->map[0]   = -1;
+@@ -641,8 +724,8 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+         "rear center",
+         "side left", "side right"
+       };
+-      int8_t buf[200];
+-      int p = sprintf (buf, "ff_audio_dec: channel layout: ");
++      int8_t buf[256];
++      int p = sprintf (buf, "ff_audio_dec: %s channel layout: ", type);
+       int8_t *indx = this->left;
+       for (i = 0; i < 2; i++) {
+         buf[p++] = '[';
+@@ -1310,11 +1393,27 @@ static void ff_audio_reset (audio_decoder_t *this_gen)
+       XFF_FREE_FRAME (this->av_frame);
+     }
+ #endif
++#if 1
++    avcodec_flush_buffers (this->context);
++#else
+     pthread_mutex_lock (&ffmpeg_lock);
+-    avcodec_close (this->context);
+-    if (XFF_AVCODEC_OPEN (this->context, this->codec) < 0)
++    {
++      uint8_t *ed = this->context->extradata;
++      int es = this->context->extradata_size;
++      this->context->extradata = NULL;
++      this->context->extradata_size = 0;
++      XFF_FREE_CONTEXT (this->context);
+       this->decoder_ok = 0;
++      this->context = XFF_ALLOC_CONTEXT ();
++      if (this->context) {
++        this->context->extradata = ed;
++        this->context->extradata_size = es;
++      }
++    }
++    if (XFF_AVCODEC_OPEN (this->context, this->codec) >= 0)
++      this->decoder_ok = 1;
+     pthread_mutex_unlock (&ffmpeg_lock);
++#endif
+   }
+ 
+   ff_audio_reset_parser(this);
+@@ -1352,20 +1451,20 @@ static void ff_audio_dispose (audio_decoder_t *this_ge
+       XFF_FREE_FRAME (this->av_frame);
+     }
+ #endif
+-    pthread_mutex_lock (&ffmpeg_lock);
+-    avcodec_close (this->context);
+-    pthread_mutex_unlock (&ffmpeg_lock);
+   }
++  pthread_mutex_lock (&ffmpeg_lock);
++  if (this->context) {
++    _x_freep (&this->context->extradata);
++    this->context->extradata_size = 0;
++    XFF_FREE_CONTEXT (this->context);
++  }
++  pthread_mutex_unlock (&ffmpeg_lock);
+ 
+   ff_audio_output_close(this);
+ 
+   xine_free_aligned (this->buf);
+   xine_free_aligned (this->decode_buffer);
+ 
+-  _x_freep (&this->context->extradata);
+-  this->context->extradata_size = 0;
+-  XFF_FREE_CONTEXT (this->context);
+-
+   XFF_PACKET_UNREF (this->avpkt);
+ 
+   xine_pts_queue_delete (&this->pts_queue);
+@@ -1447,6 +1546,12 @@ static void dispose_audio_class (audio_decoder_class_t
+   free (this);
+ }
+ 
++static void ff_bitexact_cb (void *user_data, xine_cfg_entry_t *entry) {
++  ff_audio_class_t *class = (ff_audio_class_t *)user_data;
++
++  class->bitexact = entry->num_value;
++}
++
+ void *init_audio_plugin (xine_t *xine, const void *data) {
+ 
+   ff_audio_class_t *this ;
+@@ -1473,6 +1578,13 @@ void *init_audio_plugin (xine_t *xine, const void *dat
+         "This cannot be fixed by volume control, but by this setting."),
+       10, ff_gain_cb, this)
+     / (float)20);
++
++  this->bitexact = xine->config->register_bool (xine->config,
++      "audio.processing.ffmpeg_bitexact", 0,
++      _("Let FFmpeg use precise but slower math"),
++      _("Get slightly better sound, at the expense of speed.\n"
++        "Takes effect with next stream."),
++      10, ff_bitexact_cb, this);
+ 
+   return this;
+ }

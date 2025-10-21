@@ -1,0 +1,12 @@
+Index: src/combined/ffmpeg/ffmpeg_compat.h
+--- src/combined/ffmpeg/ffmpeg_compat.h.orig
++++ src/combined/ffmpeg/ffmpeg_compat.h
+@@ -55,7 +55,7 @@
+ 
+ /* reordered_opaque appeared in libavcodec 51.68.0 */
+ #define XFF_AVCODEC_REORDERED_OPAQUE
+-#if LIBAVCODEC_VERSION_INT < XFF_INT_VERSION(51,68,0)
++#if LIBAVCODEC_VERSION_INT < XFF_INT_VERSION(51,68,0) || !defined(FF_API_REORDERED_OPAQUE)
+ # undef XFF_AVCODEC_REORDERED_OPAQUE
+ #endif
+ 
