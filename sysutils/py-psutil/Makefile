@@ -1,11 +1,10 @@
 COMMENT=	library to retrieve system information and utilisation
 
-MODPY_DISTV=	7.0.0
+MODPY_DISTV=	7.1.0
 
 DISTNAME=	psutil-${MODPY_DISTV}
 PKGNAME=	py-psutil-${MODPY_DISTV}
 CATEGORIES=	sysutils
-REVISION=	0
 
 HOMEPAGE=	https://github.com/giampaolo/psutil
 
@@ -19,5 +18,9 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 MODPY_TEST_LINK_SO= Yes
+
+TEST_DEPENDS=	devel/py-test-instafail \
+		devel/py-test-subtests \
+		devel/py-test-xdist
 
 .include <bsd.port.mk>

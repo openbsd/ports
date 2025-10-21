@@ -70,6 +70,8 @@ lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_proce
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_process_all.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_scripts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_scripts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_sudo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_sudo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_sunos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_sunos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/${MODPY_PYCACHE}test_system.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_posix.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_process.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_process_all.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_scripts.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_sudo.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_sunos.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_system.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_testutils.py
