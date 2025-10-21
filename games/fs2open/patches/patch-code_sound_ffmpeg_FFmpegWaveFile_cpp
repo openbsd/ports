@@ -1,0 +1,17 @@
+https://github.com/scp-fs2open/fs2open.github.com/pull/6948/commits/af833f059cc0cfc925792e019f6c2b754c6d53c1
+
+Index: code/sound/ffmpeg/FFmpegWaveFile.cpp
+--- code/sound/ffmpeg/FFmpegWaveFile.cpp.orig
++++ code/sound/ffmpeg/FFmpegWaveFile.cpp
+@@ -151,9 +151,10 @@ FFmpegWaveFile::~FFmpegWaveFile()
+ 	av_frame_free(&m_decodeFrame);
+ 
+ 	if (m_audioCodecCtx) {
+-		avcodec_close(m_audioCodecCtx);
+ #if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(57, 24, 255)
+ 		avcodec_free_context(&m_audioCodecCtx);
++#else
++		avcodec_close(m_audioCodecCtx);
+ #endif
+ 		m_audioCodecCtx = nullptr;
+ 	}
