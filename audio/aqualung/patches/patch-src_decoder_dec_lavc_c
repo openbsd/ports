@@ -1,0 +1,15 @@
+Index: src/decoder/dec_lavc.c
+--- src/decoder/dec_lavc.c.orig
++++ src/decoder/dec_lavc.c
+@@ -360,7 +360,11 @@ lavc_decoder_close(decoder_t * dec) {
+ 
+ 	lavc_pdata_t * pd = (lavc_pdata_t *)dec->pdata;
+ 
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+ 	avcodec_close(pd->avCodecCtx);
++#else
++	avcodec_free_context(&pd->avCodecCtx);
++#endif
+ 
+ 	avformat_close_input(&pd->avFormatCtx);
+ 
