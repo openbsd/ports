@@ -78,7 +78,6 @@ share/kexi/3.2/examples/
 share/kexi/3.2/examples/Simple_Database.kexi
 share/kexi/3.2/icons/
 share/kexi/3.2/icons/kexi_breeze.rcc
-share/kexi/3.2/icons/org.kexi-project.form.widgets.main_breeze.rcc
 share/kexi/3.2/status/
 share/kexi/3.2/status/contribution_details.ui
 share/kexi/3.2/status/contribution_help.ui
@@ -250,5 +249,6 @@ share/locale/zh_TW/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/keximigrate_mdb.mo
 @tag update-desktop-database
+share/metainfo/
 share/metainfo/org.kde.kexi-3.2.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

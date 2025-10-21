@@ -1,6 +1,12 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.16)
+ find_package(ECM 1.8.0 REQUIRED NOMODULE)
+ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+ include(SetKexiCMakePolicies NO_POLICY_SCOPE)
 @@ -198,8 +198,8 @@ endif()
  ##
  ## Test for marble
@@ -12,3 +18,12 @@ Index: CMakeLists.txt
  set_package_properties(KexiMarble PROPERTIES
      DESCRIPTION "KDE World Globe Widget library"
      URL "https://marble.kde.org"
+@@ -281,7 +281,7 @@ endif()
+ calligra_product_deps_report("product_deps")
+ calligra_log_should_build()
+ 
+-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
++feature_summary(WHAT ALL)
+ 
+   find_package(KF5DocTools CONFIG)
+   if(KF5DocTools_FOUND)

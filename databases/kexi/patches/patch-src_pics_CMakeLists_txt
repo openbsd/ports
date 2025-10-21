@@ -1,0 +1,44 @@
+Index: src/pics/CMakeLists.txt
+--- src/pics/CMakeLists.txt.orig
++++ src/pics/CMakeLists.txt
+@@ -44,27 +44,33 @@ add_custom_target(colorize_icons
+ )
+ add_dependencies(colorize_icons copy_icons)
+ 
+-add_custom_target(build_qrc
++# Changed from add_custom_target to add_custom_command
++add_custom_command(
++    OUTPUT "${_QRC_FILE}"
+     COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"
+     # avoid adding the .qrc file to rcc due to rcc misfeature
+     COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"
+-    DEPENDS "${_FILES}"
+-    SOURCES "${_FILES}"
++    DEPENDS colorize_icons
+     WORKING_DIRECTORY "${_BASE_DIR}"
+     COMMENT "Building Qt resource file ${_QRC_FILE}"
+     VERBATIM
+ )
+-add_dependencies(build_qrc colorize_icons)
+ 
+-add_custom_target(build_rcc
++# Changed from add_custom_target to add_custom_command
++add_custom_command(
++    OUTPUT "${_RCC_FILE}"
+     COMMAND ${Qt5Core_RCC_EXECUTABLE} --compress 9 --threshold 0 --binary
+             --output "${_RCC_FILE}" "${_QRC_FILE}"
+-    DEPENDS "${_QRC_FILE}" "${_FILES}"
++    DEPENDS "${_QRC_FILE}"
+     WORKING_DIRECTORY "${_BASE_DIR}"
+     COMMENT "Building external Qt resource ${_RCC_FILE}"
+     VERBATIM
+ )
+-add_dependencies(build_rcc build_qrc)
++
++# New target that depends on the output file
++add_custom_target(build_rcc ALL
++    DEPENDS "${_RCC_FILE}"
++)
+ 
+ add_dependencies(kexi build_rcc)
+ 

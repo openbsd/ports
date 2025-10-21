@@ -1,0 +1,32 @@
+Index: cmake/modules/update_icon_list.sh
+--- cmake/modules/update_icon_list.sh.orig
++++ cmake/modules/update_icon_list.sh
+@@ -21,8 +21,8 @@
+ # Updates list of icon files in icons/$1/ and outputs to $2.
+ # Used by kexi_add_icons_rcc_file() cmake macro.
+ #
++#!/bin/sh
+ set -e
+-
+ theme=$1
+ output=$2
+ if [ -z "$theme" ] ; then echo "Theme name required as first argument"; exit 1; fi
+@@ -36,16 +36,13 @@ function content()
+     echo "# WARNING! All changes made in this file will be lost!"
+     echo
+     echo "set(_PNG_FILES"
+-    find icons/$theme/ -name \*png | sed "s/\.\///g" | sort
++    find icons/$theme/ -name "*.png" -type f | sed "s/^\.\///g" | sort
+     echo ")"
+     echo
+-
+     echo "set(_SVG_FILES"
+-    find icons/$theme/ -name \*svg | sed "s/\.\///g" | sort
++    find icons/$theme/ -name "*.svg" -type f | sed "s/^\.\///g" | sort
+     echo ")"
+     echo
+-
+     echo "set(_FILES \${_PNG_FILES} \${_SVG_FILES})"
+ }
+-
+ content > $output
