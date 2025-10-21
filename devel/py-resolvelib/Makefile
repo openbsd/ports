@@ -1,6 +1,6 @@
 COMMENT =		resolve abstract dependencies into concrete ones
 
-MODPY_DISTV =		1.2.0
+MODPY_DISTV =		1.2.1
 DISTNAME =		resolvelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
