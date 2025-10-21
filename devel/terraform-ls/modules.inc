@@ -79,7 +79,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-memdb								 v1.3.5 \
 	github.com/hashicorp/go-multierror							 v1.1.1 \
 	github.com/hashicorp/go-retryablehttp							 v0.7.7 \
-	github.com/hashicorp/go-slug								 v0.16.7 \
+	github.com/hashicorp/go-slug								 v0.16.8 \
 	github.com/hashicorp/go-uuid								 v1.0.3 \
 	github.com/hashicorp/go-version								 v1.7.0 \
 	github.com/hashicorp/golang-lru								 v0.5.4 \
@@ -90,7 +90,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/terraform-exec							 v0.24.0 \
 	github.com/hashicorp/terraform-json							 v0.27.2 \
 	github.com/hashicorp/terraform-registry-address						 v0.4.0 \
-	github.com/hashicorp/terraform-schema							 v0.0.0-20250919072604-47be6f126d59 \
+	github.com/hashicorp/terraform-schema							 v0.0.0-20251007154251-20a20a238307 \
 	github.com/hashicorp/terraform-svchost							 v0.1.1 \
 	github.com/hexops/autogold								 v1.3.1 \
 	github.com/hexops/gotextdiff								 v1.0.3 \
@@ -241,8 +241,6 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/hcl/v2					 v2.23.0 \
 	github.com/hashicorp/terraform-exec				 v0.23.1 \
 	github.com/hashicorp/terraform-json				 v0.27.1 \
-	github.com/hashicorp/terraform-registry-address			 v0.2.0 \
-	github.com/hashicorp/terraform-svchost				 v0.0.1 \
 	github.com/huandu/xstrings					 v1.3.1 \
 	github.com/huandu/xstrings					 v1.3.2 \
 	github.com/huandu/xstrings					 v1.3.3 \
@@ -327,7 +325,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.3.0 \
 	golang.org/x/net						 v0.33.0 \
 	golang.org/x/net						 v0.36.0 \
-	golang.org/x/net						 v0.37.0 \
 	golang.org/x/net						 v0.38.0 \
 	golang.org/x/net						 v0.43.0 \
 	golang.org/x/net						 v0.5.0 \

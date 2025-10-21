@@ -183,8 +183,8 @@ SHA256 (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.mod) = a0THuM+MX
 SHA256 (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.zip) = lyzYQe5R/erGnFowHlf46ieuvxX93X9iHVwkDyjDAAw=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = EIAKwHT/lU7l7L5Rczj0E3MKQqLEfBzYGrZQ0b08VPg=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = Kfo2VavQp8kfOh6xhtMJ7CS1gK+xDTmjzfqM3g6Z4Kk=
-SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.7.mod) = s50F/xx7uUjSbiq5yjugScCVopi0XJETVvoHE1Hs2Zc=
-SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.7.zip) = H323tP4evuBHs1vt0/k7gnnkuHRLbZwd+5Ojt1K+Shc=
+SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.8.mod) = KVbQIc4B0rMwC3BntjNH/D5EVUj9Imh9dTnt5vMZJQc=
+SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.8.zip) = wEK+yRCjSBujtLFIPC7uBI8TaiL6POwIEw3TcKa6DZQ=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.0.mod) = HEqWrRVd4eqwQGKlvkAQu5qqNxJSrtUkIXwuacFK3s8=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.3.mod) = HEqWrRVd4eqwQGKlvkAQu5qqNxJSrtUkIXwuacFK3s8=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.3.zip) = Xp3CuzeF1ppl0oeks/p+n1g6En5BxqL9CVrIYv7XHa0=
@@ -209,12 +209,10 @@ SHA256 (go_modules/github.com/hashicorp/terraform-exec/@v/v0.24.0.zip) = ATtJk8i
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.1.mod) = lsyeTimFWmm88pL2V3OMxw50H/r0KfpeQXM32rf8sp0=
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.2.mod) = lsyeTimFWmm88pL2V3OMxw50H/r0KfpeQXM32rf8sp0=
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.2.zip) = sBj9c1R6Qzf9q4UU+jtxjiFL+ZLZewV2LGQj8MTqRrU=
-SHA256 (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.2.0.mod) = c2wHckn5iCfQgnQ/8EjPEjXXKrr4H3qmxwmCuQaD4ug=
 SHA256 (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.4.0.mod) = 4zCTDR8cflsLgdZpMtYlDvBdNzcJFsKDDHelMWc/q3s=
 SHA256 (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.4.0.zip) = 2YRa6asNJS7xvRBaRWyXP07SDcLdjrrABYsFSlWv550=
-SHA256 (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20250919072604-47be6f126d59.mod) = uMUWzG/WTc23+LgKKwLBruI1klcFmbnuu4/fhiDLUWQ=
-SHA256 (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20250919072604-47be6f126d59.zip) = L8bReE8ylg8y5OMktcSQol1RMUpdPWbIP9zQs8NLwWg=
-SHA256 (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.0.1.mod) = Af47EnaQok3ErW9eZs+vXkM9WflMFEbOwitycILcFys=
+SHA256 (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20251007154251-20a20a238307.mod) = uMUWzG/WTc23+LgKKwLBruI1klcFmbnuu4/fhiDLUWQ=
+SHA256 (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20251007154251-20a20a238307.zip) = fvfMs4SbEK62PWOHCbIu1YRUbu0tELEOpDPYOY/lHRo=
 SHA256 (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.1.1.mod) = 6XwvkiNnsHkPi9Xx9mjSRbAb2j+hNiyEfxtjJEtLieA=
 SHA256 (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.1.1.zip) = SiNcH/V60AJ5CYBXDR76HyKGVYfb8BccY9Rw6w5+Ofk=
 SHA256 (go_modules/github.com/hexops/autogold/@v/v1.3.1.mod) = E9g6ug7zQ1ugSf+y83tOB/v+C3tE7LTfWErurZbHZ8I=
@@ -485,7 +483,6 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.2.0.mod) = B+xkXjNT/CZz8tje5cFOuSi5wTE
 SHA256 (go_modules/golang.org/x/net/@v/v0.3.0.mod) = PDYKM2jCXws5pktjD+dO2ZjfAOar7pP9SfVv/nWQoTE=
 SHA256 (go_modules/golang.org/x/net/@v/v0.33.0.mod) = RiKZCCjFV/NMHmS5Z/3vXOC6bEOixGakrbsLyqyo5cE=
 SHA256 (go_modules/golang.org/x/net/@v/v0.36.0.mod) = 35gn+cjSnfSXxROLtBwkgLfNq0WtYbipgcJQw604+vI=
-SHA256 (go_modules/golang.org/x/net/@v/v0.37.0.mod) = QM4pKslRF68tWVcPIkktFySFRcQIR+VzwJJKcMl1ryQ=
 SHA256 (go_modules/golang.org/x/net/@v/v0.38.0.mod) = QM4pKslRF68tWVcPIkktFySFRcQIR+VzwJJKcMl1ryQ=
 SHA256 (go_modules/golang.org/x/net/@v/v0.43.0.mod) = SiTEOY34wmHq57pSzbSwFpFyXNxG5K1JeBGq01fCWDI=
 SHA256 (go_modules/golang.org/x/net/@v/v0.44.0.mod) = tk7DdbgZA1BE5QkWCPPuStO6enwqpubh6+UrE2dauCE=
@@ -609,7 +606,7 @@ SHA256 (go_modules/honnef.co/go/tools/@v/v0.5.1.mod) = sUccd483kGL0ZyndeafpIXFK4
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.5.1.zip) = 1yj/OS/FtvZ2oww26dCluF9vLga067sSHCfZZcvf+hE=
 SHA256 (go_modules/mvdan.cc/gofumpt/@v/v0.4.0.mod) = iA+hDayPAZ7egw8wM61n8loFIcZAyC2tBXjhGxwC+PA=
 SHA256 (go_modules/mvdan.cc/gofumpt/@v/v0.4.0.zip) = lMfK/NbpDats9v5A0fmTC+NQrxgRbgA1sLcl0BP3cX8=
-SHA256 (terraform-ls-v0.38.0.zip) = e8vXKxw77Nx1q5ja2WdM1454UpjO61Zf/M6p2O9cbak=
+SHA256 (terraform-ls-v0.38.2.zip) = KX2DW6xmEWUF/F2I22NCdspuMlb8lskVGSo1DEAkgrA=
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.mod) = 89
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.zip) = 8836
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.mod) = 434
@@ -795,8 +792,8 @@ SIZE (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.mod) = 96
 SIZE (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.zip) = 19419
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = 341
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = 32348
-SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.7.mod) = 426
-SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.7.zip) = 111199
+SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.8.mod) = 426
+SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.8.zip) = 116205
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.0.mod) = 36
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.3.mod) = 36
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.3.zip) = 8078
@@ -821,12 +818,10 @@ SIZE (go_modules/github.com/hashicorp/terraform-exec/@v/v0.24.0.zip) = 175173
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.1.mod) = 519
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.2.mod) = 519
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.27.2.zip) = 657216
-SIZE (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.2.0.mod) = 228
 SIZE (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.4.0.mod) = 252
 SIZE (go_modules/github.com/hashicorp/terraform-registry-address/@v/v0.4.0.zip) = 35799
-SIZE (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20250919072604-47be6f126d59.mod) = 1414
-SIZE (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20250919072604-47be6f126d59.zip) = 324099
-SIZE (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.0.1.mod) = 465
+SIZE (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20251007154251-20a20a238307.mod) = 1414
+SIZE (go_modules/github.com/hashicorp/terraform-schema/@v/v0.0.0-20251007154251-20a20a238307.zip) = 325056
 SIZE (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.1.1.mod) = 527
 SIZE (go_modules/github.com/hashicorp/terraform-svchost/@v/v0.1.1.zip) = 44295
 SIZE (go_modules/github.com/hexops/autogold/@v/v1.3.1.mod) = 275
@@ -1097,7 +1092,6 @@ SIZE (go_modules/golang.org/x/net/@v/v0.2.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.3.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.33.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.36.0.mod) = 157
-SIZE (go_modules/golang.org/x/net/@v/v0.37.0.mod) = 157
 SIZE (go_modules/golang.org/x/net/@v/v0.38.0.mod) = 157
 SIZE (go_modules/golang.org/x/net/@v/v0.43.0.mod) = 157
 SIZE (go_modules/golang.org/x/net/@v/v0.44.0.mod) = 157
@@ -1221,4 +1215,4 @@ SIZE (go_modules/honnef.co/go/tools/@v/v0.5.1.mod) = 405
 SIZE (go_modules/honnef.co/go/tools/@v/v0.5.1.zip) = 989391
 SIZE (go_modules/mvdan.cc/gofumpt/@v/v0.4.0.mod) = 513
 SIZE (go_modules/mvdan.cc/gofumpt/@v/v0.4.0.zip) = 60554
-SIZE (terraform-ls-v0.38.0.zip) = 2758317
+SIZE (terraform-ls-v0.38.2.zip) = 2759361
