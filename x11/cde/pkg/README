@@ -34,12 +34,12 @@ Starting the Common Desktop Environment
 The prefered way to login and start CDE is by using xenodm(1):
     # rcctl enable xenodm && rcctl start xenodm
 Then configure .xsession for you user:
-    $ echo "${TRUEPREFIX}/dt/bin/Xsession" >>~/.xsession
+    $ echo "${TRUEPREFIX}/bin/Xsession" >>~/.xsession
 
 Alternatively, you can use startx(1) from the glass console:
-    $ startx ${TRUEPREFIX}/dt/bin/Xsession
+    $ startx ${TRUEPREFIX}/bin/Xsession
 or
-    $ echo "${TRUEPREFIX}/dt/bin/Xsession" >>~/.xinitrc
+    $ echo "${TRUEPREFIX}/bin/Xsession" >>~/.xinitrc
     $ startx
 
 The CDE login service is also provided as another alternative:
