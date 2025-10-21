@@ -1,0 +1,44 @@
+https://github.com/libretro/RetroArch/commit/21776a2e59f5f5899ff2198c0df25a95b5020012
+
+Index: cores/libretro-ffmpeg/ffmpeg_core.c
+--- cores/libretro-ffmpeg/ffmpeg_core.c.orig
++++ cores/libretro-ffmpeg/ffmpeg_core.c
+@@ -106,6 +106,9 @@ static bool hw_decoding_enabled;
+ static enum AVPixelFormat pix_fmt;
+ static bool force_sw_decoder;
+ #endif
++#ifndef FFMPEG8
++#define FFMPEG8 (LIBAVCODEC_VERSION_MAJOR >= 62)
++#endif
+ 
+ #define MAX_STREAMS 8
+ static AVCodecContext *actx[MAX_STREAMS];
+@@ -2088,17 +2091,28 @@ void CORE_PREFIX(retro_unload_game)(void)
+ 
+    for (i = 0; i < MAX_STREAMS; i++)
+    {
++#if FFMPEG8
+       if (sctx[i])
++         avcodec_free_context(&sctx[i]);
++      if (actx[i])
++         avcodec_free_context(&actx[i]);
++#else
++      if (sctx[i])
+          avcodec_close(sctx[i]);
+       if (actx[i])
+          avcodec_close(actx[i]);
++#endif
+       sctx[i] = NULL;
+       actx[i] = NULL;
+    }
+ 
+    if (vctx)
+    {
++#if FFMPEG8
++      avcodec_free_context(&vctx);
++#else
+       avcodec_close(vctx);
++#endif
+       vctx = NULL;
+    }
+ 
