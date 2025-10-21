@@ -1,0 +1,15 @@
+Index: src/ffmpeg.imageio/ffmpeginput.cpp
+--- src/ffmpeg.imageio/ffmpeginput.cpp.orig
++++ src/ffmpeg.imageio/ffmpeginput.cpp
+@@ -581,7 +581,11 @@ bool
+ FFmpegInput::close(void)
+ {
+     if (m_codec_context)
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 3, 100)
+         avcodec_close(m_codec_context);
++#else
++        avcodec_free_context(&m_codec_context);
++#endif
+     if (m_format_context) {
+         avformat_close_input(&m_format_context);
+         av_free(m_format_context);  // will free m_codec and m_codec_context
