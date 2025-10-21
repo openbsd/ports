@@ -1,6 +1,6 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_DISTV =		4.13.2
+MODPY_DISTV =		4.15.0
 DISTNAME =		typing_extensions-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,8 +17,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
-
-# no tests in pypi distfile
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
