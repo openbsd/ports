@@ -1,0 +1,12 @@
+Index: plugins/main/video/video.c
+--- plugins/main/video/video.c.orig
++++ plugins/main/video/video.c
+@@ -225,7 +225,7 @@ static void
+ free_allocated(void)
+ {
+   if (NULL != codec_ctx) {
+-    avcodec_close(codec_ctx);
++    avcodec_free_context(&codec_ctx);
+   }
+   if (NULL != fmt_ctx) {
+     avformat_close_input(&fmt_ctx);
