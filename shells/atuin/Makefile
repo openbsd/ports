@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =	sparc64
 COMMENT =	Magical shell history
 
 DISTNAME =	atuin-${V}
-V = 		18.8.0
+V = 		18.9.0
 
 DIST_TUPLE +=	github atuinsh atuin v${V} .
 
