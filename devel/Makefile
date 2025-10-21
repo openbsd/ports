@@ -1734,6 +1734,7 @@
      SUBDIR += py-test-forked
      SUBDIR += py-test-httpbin
      SUBDIR += py-test-httpserver
+     SUBDIR += py-test-instafail
      SUBDIR += py-test-isort
      SUBDIR += py-test-jupyter
      SUBDIR += py-test-lazy-fixture
