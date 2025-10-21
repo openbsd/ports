@@ -1,7 +1,7 @@
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.20
 CATEGORIES =	graphics x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
