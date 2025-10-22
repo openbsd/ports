@@ -21,6 +21,7 @@ MODPY_PYTEST_ARGS= setuptools_rust
 
 RUN_DEPENDS=	devel/py-semantic-version \
 		devel/py-setuptools \
-		devel/py-typing-extensions
+		devel/py-typing-extensions \
+		lang/rust
 
 .include <bsd.port.mk>
