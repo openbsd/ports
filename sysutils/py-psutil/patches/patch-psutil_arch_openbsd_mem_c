@@ -1,7 +1,7 @@
 Index: psutil/arch/openbsd/mem.c
 --- psutil/arch/openbsd/mem.c.orig
 +++ psutil/arch/openbsd/mem.c
-@@ -76,8 +76,8 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
+@@ -68,8 +68,8 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
      int nswap, i;
  
      if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0) {
