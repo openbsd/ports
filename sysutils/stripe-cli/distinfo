@@ -44,7 +44,8 @@ SHA256 (go_modules/github.com/chzyer/test/@v/v1.0.0.mod) = ew4cewCaDLGNfkXKPKYVA
 SHA256 (go_modules/github.com/chzyer/test/@v/v1.0.0.zip) = QCWlmKAelQ7kS6B4tJPmHlJ9rYFxtroQt64wNx28Ywo=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = muCoSwYWZOyFibpqYcGMg8iQISByoY5Iybawup5o2ow=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
-SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.0.zip) = eDbIs7DZP3Ofs1DTCz9hnZHOaPJQNZ85HAXXDaw6F6o=
+SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
+SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = pjkWH4gWA6BAcA2YfSwW7IFTAkGAWM2ym8w7NJ7VbBA=
 SHA256 (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20241223141626-cff3c89139a3.mod) = UkcA4wWisr912wF2bl5BLkJhkyHXYbxCcWNbP/pwItQ=
 SHA256 (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20241223141626-cff3c89139a3.zip) = HZ94k0m2fCLDmvG2yTlDLmYwPpWybYYu9J+JTr3cyaw=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = u4Gp4tFNmlhvBZGFO9qtIw2M3w2Nb/px3driSa1XPMk=
@@ -452,7 +453,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) =
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (stripe-cli-v1.28.0.zip) = bezx7/m8qDIt7zq4MmBZZzliIY6mfbdEXuVm6O/pw1Q=
+SHA256 (stripe-cli-v1.31.0.zip) = FefuxXaYSO3byzIOLA52I1rNccMqjR9Ipkg7f92HMq4=
 SIZE (go_modules/cel.dev/expr/@v/v0.19.1.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.19.1.zip) = 247232
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.6.0.mod) = 125
@@ -499,7 +500,8 @@ SIZE (go_modules/github.com/chzyer/test/@v/v1.0.0.mod) = 79
 SIZE (go_modules/github.com/chzyer/test/@v/v1.0.0.zip) = 5518
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = 153
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = 185
-SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.0.zip) = 7094339
+SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = 185
+SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = 7096784
 SIZE (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20241223141626-cff3c89139a3.mod) = 535
 SIZE (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20241223141626-cff3c89139a3.zip) = 157490
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = 100
@@ -907,4 +909,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 9
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (stripe-cli-v1.28.0.zip) = 2154490
+SIZE (stripe-cli-v1.31.0.zip) = 2200756

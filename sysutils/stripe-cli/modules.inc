@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/logex								 v1.2.1 \
 	github.com/chzyer/readline							 v1.5.1 \
 	github.com/chzyer/test								 v1.0.0 \
-	github.com/cloudflare/circl							 v1.6.0 \
+	github.com/cloudflare/circl							 v1.6.1 \
 	github.com/cncf/xds/go								 v0.0.0-20241223141626-cff3c89139a3 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.6 \
 	github.com/cyphar/filepath-securejoin						 v0.4.1 \
@@ -150,6 +150,7 @@ MODGO_MODFILES =	\
 	github.com/chzyer/readline			 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test				 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/cloudflare/circl			 v1.3.7 \
+	github.com/cloudflare/circl			 v1.6.0 \
 	github.com/cyphar/filepath-securejoin		 v0.3.6 \
 	github.com/danieljoos/wincred			 v1.1.2 \
 	github.com/davecgh/go-spew			 v1.1.0 \
