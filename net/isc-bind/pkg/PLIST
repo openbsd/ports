@@ -154,7 +154,6 @@ include/isc/crc64.h
 include/isc/dir.h
 include/isc/dnsstream.h
 include/isc/endian.h
-include/isc/entropy.h
 include/isc/errno.h
 include/isc/error.h
 include/isc/file.h
