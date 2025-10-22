@@ -2,7 +2,7 @@ COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-1.3.0
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -13,7 +13,7 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	c curses ev gnutls lz4 m nettle oath pam protobuf-c
+WANTLIB+=	c curses ev gnutls llhttp lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
 
 SITES=		https://www.infradead.org/ocserv/download/
@@ -30,7 +30,8 @@ LIB_DEPENDS=	archivers/lz4 \
 		net/radcli>=1.2.5 \
 		security/gnutls \
 		security/oath-toolkit \
-		security/openpam
+		security/openpam \
+		www/llhttp
 TEST_DEPENDS=	net/openconnect \
 		shells/bash \
 		sysutils/coreutils \
