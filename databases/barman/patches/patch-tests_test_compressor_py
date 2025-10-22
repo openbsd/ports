@@ -1,0 +1,38 @@
+allow running the other tests, though we don't gave py-snappy/cramjam yet
+
+Index: tests/test_compressor.py
+--- tests/test_compressor.py.orig
++++ tests/test_compressor.py
+@@ -24,8 +24,6 @@ import logging
+ import lzma
+ import os
+ import tarfile
+-
+-import cramjam
+ import lz4.frame
+ import mock
+ import pytest
+@@ -48,7 +46,6 @@ from barman.compression import (
+     PgBaseBackupCompressionOption,
+     PyBZip2Compressor,
+     PyGZipCompressor,
+-    SnappyCompressor,
+     XZCompressor,
+     ZSTDCompression,
+     ZSTDCompressor,
+@@ -485,7 +482,6 @@ class TestInternalCompressors(object):
+             ("xz", XZCompressor),
+             ("zstd", ZSTDCompressor),
+             ("lz4", LZ4Compressor),
+-            ("snappy", SnappyCompressor),
+         ],
+     )
+     def test_compress_in_mem(self, compression, compression_class):
+@@ -510,7 +506,6 @@ class TestInternalCompressors(object):
+             ("pybzip2", PyBZip2Compressor, io.BytesIO(bz2.compress(b"data"))),
+             ("xz", XZCompressor, io.BytesIO(lzma.compress(b"data"))),
+             ("lz4", LZ4Compressor, io.BytesIO(lz4.frame.compress(b"data"))),
+-            ("snappy", SnappyCompressor, io.BytesIO(cramjam.snappy.compress(b"data"))),
+             (
+                 "zstd",
+                 ZSTDCompressor,

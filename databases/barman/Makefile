@@ -1,11 +1,10 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_DISTV =	3.13.2
+MODPY_DISTV =	3.16.1
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_DISTV}
 DISTNAME =	barman-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
@@ -25,6 +24,9 @@ RUN_DEPENDS =	archivers/py-zstandard \
 		devel/py-dateutil \
 		devel/py-argcomplete
 
+# tests also want python-snappy and cramjam; test_compressor.py patched
+# ti disable requiring them for now to allow other compression-related
+# tests to run
 TEST_DEPENDS =	archivers/py-lz4 \
 		devel/py-test-timeout \
 		devel/py-mock \

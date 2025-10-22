@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/barman/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}annotations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}copy_controller.
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}copy_controller.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}diagnose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}diagnose.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}encryption.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}encryption.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}fs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/backup_manifest.py
 lib/python${MODPY_VERSION}/site-packages/barman/cli.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/
 lib/python${MODPY_VERSION}/site-packages/barman/clients/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_backup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +147,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/clients/walrestore.py
 lib/python${MODPY_VERSION}/site-packages/barman/cloud.py
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}aws_s3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,6 +164,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/compression.py
 lib/python${MODPY_VERSION}/site-packages/barman/config.py
 lib/python${MODPY_VERSION}/site-packages/barman/copy_controller.py
 lib/python${MODPY_VERSION}/site-packages/barman/diagnose.py
+lib/python${MODPY_VERSION}/site-packages/barman/encryption.py
 lib/python${MODPY_VERSION}/site-packages/barman/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/barman/fs.py
 lib/python${MODPY_VERSION}/site-packages/barman/hooks.py
@@ -177,7 +180,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.py
 lib/python${MODPY_VERSION}/site-packages/barman/server.py
 lib/python${MODPY_VERSION}/site-packages/barman/storage/
 lib/python${MODPY_VERSION}/site-packages/barman/storage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}file_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -215,6 +218,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 @man man/man1/barman-get-wal.1
 @man man/man1/barman-keep.1
 @man man/man1/barman-list-files.1
+@man man/man1/barman-list-processes.1
 @man man/man1/barman-list-servers.1
 @man man/man1/barman-list_backups.1
 @man man/man1/barman-lock-directory-cleanup.1
@@ -231,6 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 @man man/man1/barman-sync-backup.1
 @man man/man1/barman-sync-info.1
 @man man/man1/barman-sync-wals.1
+@man man/man1/barman-terminate-process.1
 @man man/man1/barman-verify-backup.1
 @man man/man1/barman-verify.1
 @man man/man1/barman-wal-archive.1

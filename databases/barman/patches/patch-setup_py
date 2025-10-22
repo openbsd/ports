@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -60,7 +60,7 @@ setup(
+@@ -87,7 +87,7 @@ setup(
      packages=find_packages(exclude=["tests"]),
      data_files=[
          (
@@ -10,7 +10,7 @@ Index: setup.py
              [
                  "docs/_build/man/barman.1",
                  "docs/_build/man/barman-archive-wal.1",
-@@ -107,7 +107,7 @@ setup(
+@@ -136,7 +136,7 @@ setup(
                  "docs/_build/man/barman-wal-archive.1",
              ],
          ),

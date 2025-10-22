@@ -1,7 +1,7 @@
 Index: barman/fs.py
 --- barman/fs.py.orig
 +++ barman/fs.py
-@@ -151,6 +151,9 @@ class UnixLocalCommand(object):
+@@ -167,6 +167,9 @@ class UnixLocalCommand(object):
          if self.is_osx():
              print("is osx")
              args = ["-f", "%Lp", path]
@@ -11,3 +11,12 @@ Index: barman/fs.py
          cmd_ret = self.cmd("stat", args=args)
          if cmd_ret != 0:
              raise FsOperationFailed(
+@@ -435,7 +438,7 @@ class UnixLocalCommand(object):
+         if not self.exists(path):
+             raise FsOperationFailed("Following path does not exist: %s" % path)
+         args = ["-c", "%d", path]
+-        if self.is_osx():
++        if self.is_osx() or sys.platform.startswith("openbsd"):
+             args = ["-f", "%d", path]
+         cmd_ret = self.cmd("stat", args=args)
+         if cmd_ret != 0:
