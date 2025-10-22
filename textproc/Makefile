@@ -580,6 +580,7 @@
      SUBDIR += sablotron
      SUBDIR += scdoc
      SUBDIR += sim
+     SUBDIR += simdutf
      SUBDIR += simpleini
      SUBDIR += slides
      SUBDIR += slipshow
