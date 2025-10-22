@@ -1,0 +1,5 @@
+simdutf provides fast Unicode functions for validation and transcoding, using
+SIMD instructions.
+
+It compiles down to a small library of a few hundred kilobytes.
+Functions are exception-free and non allocating.
