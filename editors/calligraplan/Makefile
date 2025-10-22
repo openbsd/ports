@@ -2,7 +2,7 @@ COMMENT =	KDE Calligra project management application
 
 VERSION =	3.3.0
 DISTNAME =	calligraplan-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors x11
 
