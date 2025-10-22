@@ -1,6 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME =		zeek-8.0.3
+REVISION =		0
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		9.0
@@ -37,7 +38,8 @@ MODPY_ADJ_FILES =	auxil/package-manager/zkg \
 
 BUILD_DEPENDS =		databases/libhiredis \
 			devel/bison \
-			devel/swig
+			devel/swig \
+			net/cppzmq
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/libcares \
