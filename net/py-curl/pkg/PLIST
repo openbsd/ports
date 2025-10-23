@@ -1,7 +1,7 @@
 @pkgpath net/py-curl,python3
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_DISTV}.dist-info/

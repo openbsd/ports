@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/onionshare/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/onionshare/settings.py
 lib/python${MODPY_VERSION}/site-packages/onionshare/strings.py
 lib/python${MODPY_VERSION}/site-packages/onionshare/web/
 lib/python${MODPY_VERSION}/site-packages/onionshare/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/onionshare/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare/web/${MODPY_PYCACHE}receive_mode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}widgets.
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,12 +60,12 @@ lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/${MODPY_PYCACHE}his
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/history.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/receive_mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/${MODPY_PYCACHE}file_selection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

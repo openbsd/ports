@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/lap-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/lap-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/lap-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lap/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}lapmod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -16,7 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/lap/${MODPY_PYCACHE}lapmod.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/lap/lapmod.py
 lib/python${MODPY_VERSION}/site-packages/lap/tests/
 lib/python${MODPY_VERSION}/site-packages/lap/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lap/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lap/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lap/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lap/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lap/tests/${MODPY_PYCACHE}test_arr_loop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

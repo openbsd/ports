@@ -7,12 +7,12 @@ lib/python${MODPY_VERSION}/site-packages/LXMF/LXMRouter.py
 lib/python${MODPY_VERSION}/site-packages/LXMF/LXMessage.py
 lib/python${MODPY_VERSION}/site-packages/LXMF/LXStamper.py
 lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/${MODPY_PYCACHE}lxmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/${MODPY_PYCACHE}lxmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/LXMF/Utilities/lxmd.py
 lib/python${MODPY_VERSION}/site-packages/LXMF/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/LXMF/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/LXMF/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/LXMF/${MODPY_PYCACHE}Handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/LXMF/${MODPY_PYCACHE}Handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/LXMF/${MODPY_PYCACHE}LXMF.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/radicale-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/auth/IMAP.py
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/LDAP.py
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/PAM.py
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/radicale/auth/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/${MODPY_PYCACHE}IMAP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/${MODPY_PYCACHE}IMAP.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/auth/${MODPY_PYCACHE}LDAP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/log.py
 lib/python${MODPY_VERSION}/site-packages/radicale/pathutils.py
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/rights/${MODPY_PYCACHE}regex.$
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/regex.py
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/radicale/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/radicale/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

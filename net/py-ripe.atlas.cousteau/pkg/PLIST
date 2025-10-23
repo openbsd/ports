@@ -4,7 +4,7 @@ lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}-py${
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}api_listing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

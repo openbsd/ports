@@ -1,7 +1,7 @@
 lib/python${MODPY_VERSION}/site-packages/coherent/
 lib/python${MODPY_VERSION}/site-packages/coherent/licensed/
 lib/python${MODPY_VERSION}/site-packages/coherent/licensed/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/coherent/licensed/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/coherent/licensed/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/coherent/licensed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coherent/licensed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coherent/licensed/${MODPY_PYCACHE}_functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_DISTV}.dist-info/t
 lib/python${MODPY_VERSION}/site-packages/pierky/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/${MODPY_PYCACHE}arin_db_dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/builder.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/cached_objects.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/commands/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config.d/general.di
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config.d/log.ini
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config.d/rtt_getter.sh
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/${MODPY_PYCACHE}asns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/program.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/config/validators.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/enrichers/${MODPY_PYCACHE}arin_db_dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -201,7 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/template-
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/template-context/main.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -243,7 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/sk
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/AS2.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/README.rst
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -9,6 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/u_msgpack_python-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/umsgpack/
 lib/python${MODPY_VERSION}/site-packages/umsgpack/__init__.py
 lib/python${MODPY_VERSION}/site-packages/umsgpack/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/umsgpack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/umsgpack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/umsgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/umsgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

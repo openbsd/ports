@@ -333,7 +333,7 @@ share/lilypond/${VERSION}/ps/lilyponddefs.ps
 share/lilypond/${VERSION}/ps/music-drawing-routines.ps
 share/lilypond/${VERSION}/ps/nocache.ps
 share/lilypond/${VERSION}/python/
-${MODPY_COMMENT}share/lilypond/${VERSION}/python/${MODPY_PYCACHE}/
+share/lilypond/${VERSION}/python/${MODPY_PYCACHE}/
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}book_base.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}book_docbook.${MODPY_PYC_MAGIC_TAG}pyc
 share/lilypond/${VERSION}/python/${MODPY_PYCACHE}book_html.${MODPY_PYC_MAGIC_TAG}pyc

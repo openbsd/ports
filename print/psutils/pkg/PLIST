@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/psutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}warnings.${MODP
 lib/python${MODPY_VERSION}/site-packages/psutils/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutils/argparse.py
 lib/python${MODPY_VERSION}/site-packages/psutils/command/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}epsffit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}epsffit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psutils/command/${MODPY_PYCACHE}extractres.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

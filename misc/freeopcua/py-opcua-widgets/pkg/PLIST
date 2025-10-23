@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/opcua_widgets-${MODPY_DISTV}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/opcua_widgets-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/uawidgets/
 lib/python${MODPY_VERSION}/site-packages/uawidgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uawidgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uawidgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uawidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uawidgets/${MODPY_PYCACHE}attrs_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uawidgets/${MODPY_PYCACHE}call_method_dialog.${MODPY_PYC_MAGIC_TAG}pyc

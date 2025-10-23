@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/tables-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/tables-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/tables-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tables/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -110,7 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.pxd
 lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/misc/
 lib/python${MODPY_VERSION}/site-packages/tables/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/misc/proxydict.py
 lib/python${MODPY_VERSION}/site-packages/tables/node.py
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}filenode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,7 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/nodes/${MODPY_PYCACHE}filenode.$
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/filenode.py
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/nodes/tests/${MODPY_PYCACHE}test_filenode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/registry.py
 lib/python${MODPY_VERSION}/site-packages/tables/req_versions.py
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/${MODPY_PYCACHE}pt2to3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -170,7 +170,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/tests/Tables_lzo1_shuffle.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Tables_lzo2.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Tables_lzo2_shuffle.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tables/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tables/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tables/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/tests/${MODPY_PYCACHE}check_leaks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

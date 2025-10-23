@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pygraphviz-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/pygraphviz-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pygraphviz-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygraphviz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygraphviz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/${MODPY_PYCACHE}agraph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/pygraphviz/scraper.py
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/testing.py
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygraphviz/tests/${MODPY_PYCACHE}test_attribute_defaults.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/pyspnego-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/spnego/
 lib/python${MODPY_VERSION}/site-packages/spnego/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spnego/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spnego/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spnego/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spnego/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spnego/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spnego/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/spnego/_negotiate.py
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm.py
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spnego/_ntlm_raw/${MODPY_PYCACHE}crypto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

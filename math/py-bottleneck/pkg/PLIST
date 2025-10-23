@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bottleneck/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}_pytesttester.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/_pytesttester.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/_version.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/benchmark/${MODPY_PYCACHE}autotimeit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/conftest.py
 @so lib/python${MODPY_VERSION}/site-packages/bottleneck/reduce.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/${MODPY_PYCACHE}move.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/nonreduce_axis.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/slow/reduce.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/src/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/src/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/${MODPY_PYCACHE}bn_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/src/bn_config.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/src/bn_template.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

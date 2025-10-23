@@ -1168,12 +1168,12 @@ lib/zeek/plugins/
 lib/zeek/python/
 lib/zeek/python/SubnetTree.py
 @so lib/zeek/python/_SubnetTree.so
-${MODPY_COMMENT}lib/zeek/python/${MODPY_PYCACHE}/
+lib/zeek/python/${MODPY_PYCACHE}/
 lib/zeek/python/${MODPY_PYCACHE}SubnetTree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/${MODPY_PYCACHE}SubnetTree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/broker/
 lib/zeek/python/broker/__init__.py
-${MODPY_COMMENT}lib/zeek/python/broker/${MODPY_PYCACHE}/
+lib/zeek/python/broker/${MODPY_PYCACHE}/
 lib/zeek/python/broker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/broker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/broker/${MODPY_PYCACHE}zeek.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1182,7 +1182,7 @@ lib/zeek/python/broker/${MODPY_PYCACHE}zeek.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/broker/zeek.py
 lib/zeek/python/zeekclient/
 lib/zeek/python/zeekclient/__init__.py
-${MODPY_COMMENT}lib/zeek/python/zeekclient/${MODPY_PYCACHE}/
+lib/zeek/python/zeekclient/${MODPY_PYCACHE}/
 lib/zeek/python/zeekclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekclient/${MODPY_PYCACHE}brokertypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1218,7 +1218,7 @@ lib/zeek/python/zeekclient/utils.py
 lib/zeek/python/zeekctl/
 lib/zeek/python/zeekctl/ZeekControl/
 lib/zeek/python/zeekctl/ZeekControl/__init__.py
-${MODPY_COMMENT}lib/zeek/python/zeekctl/ZeekControl/${MODPY_PYCACHE}/
+lib/zeek/python/zeekctl/ZeekControl/${MODPY_PYCACHE}/
 lib/zeek/python/zeekctl/ZeekControl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekctl/ZeekControl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/ZeekControl/${MODPY_PYCACHE}cmdresult.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1289,7 +1289,7 @@ lib/zeek/python/zeekctl/ZeekControl/zeekcmd.py
 lib/zeek/python/zeekctl/ZeekControl/zeekctl.py
 lib/zeek/python/zeekctl/plugins/
 lib/zeek/python/zeekctl/plugins/TestPlugin.py
-${MODPY_COMMENT}lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}/
+lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}/
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}TestPlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}TestPlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekctl/plugins/${MODPY_PYCACHE}cluster_backend_broker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1321,7 +1321,7 @@ lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 lib/zeek/python/zeekctl/plugins/zzz_af_packet.py
 lib/zeek/python/zeekpkg/
 lib/zeek/python/zeekpkg/__init__.py
-${MODPY_COMMENT}lib/zeek/python/zeekpkg/${MODPY_PYCACHE}/
+lib/zeek/python/zeekpkg/${MODPY_PYCACHE}/
 lib/zeek/python/zeekpkg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/zeek/python/zeekpkg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/zeek/python/zeekpkg/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

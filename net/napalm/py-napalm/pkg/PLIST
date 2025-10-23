@@ -13,14 +13,14 @@ lib/python${MODPY_VERSION}/site-packages/napalm-${MODPY_DISTV}.dist-info/entry_p
 lib/python${MODPY_VERSION}/site-packages/napalm-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/napalm/_SUPPORTED_DRIVERS.py
 lib/python${MODPY_VERSION}/site-packages/napalm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}_SUPPORTED_DRIVERS.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}_SUPPORTED_DRIVERS.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/base/base.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/canonical_map.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/clitools/${MODPY_PYCACHE}cl_napalm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/base/mock.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/netmiko_helpers.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/base/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/base/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -91,7 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/base/test/helpers.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/models.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/${MODPY_PYCACHE}jinja_filters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/base/utils/string_parsers.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/validate.py
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/eos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/eos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/${MODPY_PYCACHE}eos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/eos/templates/set_users.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/templates/snmp_config.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/textfsm_templates/
@@ -131,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/textfsm_templates/snmp
 lib/python${MODPY_VERSION}/site-packages/napalm/eos/utils/textfsm_templates/vrf.tpl
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/ios/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/${MODPY_PYCACHE}ios.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/show
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/show_lldp_neighbors_detail.tpl
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -178,7 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/templates/set_users.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/templates/snmp_config.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/junos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/junos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/junos/templates/set_users.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/templates/snmp_config.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/${MODPY_PYCACHE}junos_views.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/junos_views.py
 lib/python${MODPY_VERSION}/site-packages/napalm/junos/utils/junos_views.yml
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/nxos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/nxos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/${MODPY_PYCACHE}nxos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -229,7 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/nxos/templates/set_users.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/templates/snmp_config.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/textfsm_templates/
@@ -238,7 +238,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/textfsm_templates/snm
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos/utils/textfsm_templates/users.tpl
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/${MODPY_PYCACHE}nxos_ssh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -256,7 +256,7 @@ lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/templates/set_users.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/templates/snmp_config.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/nxos_ssh/utils/textfsm_templates/

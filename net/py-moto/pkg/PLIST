@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/moto-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/moto-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/moto-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/moto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}backend_index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}settings.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/moto/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/acm/
 lib/python${MODPY_VERSION}/site-packages/moto/acm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/acm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/acm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/acm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/acm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/acm/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/acm/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/acm/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/acmpca/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/acmpca/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/acmpca/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/acmpca/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/amp/
 lib/python${MODPY_VERSION}/site-packages/moto/amp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/amp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/amp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/amp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/amp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/amp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/amp/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/amp/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/apigateway/${MODPY_PYCACHE}utils.$
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/integration_parsers/${MODPY_PYCACHE}aws_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/apigateway/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigateway/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/responses.
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewaymanagementapi/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/apigatewayv2/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/appconfig/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/appconfig/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,7 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/appconfig/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/appconfig/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -182,7 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/applicationautoscaling/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/appsync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/appsync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,7 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/appsync/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/appsync/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/athena/
 lib/python${MODPY_VERSION}/site-packages/moto/athena/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/athena/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/athena/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/athena/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/athena/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/athena/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/athena/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/athena/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -236,7 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/autoscaling/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/awslambda/
 lib/python${MODPY_VERSION}/site-packages/moto/awslambda/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/awslambda/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/awslambda/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/awslambda/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/awslambda/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/awslambda/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -261,7 +261,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/backend_index.py
 lib/python${MODPY_VERSION}/site-packages/moto/backends.py
 lib/python${MODPY_VERSION}/site-packages/moto/batch/
 lib/python${MODPY_VERSION}/site-packages/moto/batch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/batch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/batch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/batch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/batch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/batch/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -281,7 +281,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/batch/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/batch/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -295,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/batch_simple/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/budgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/budgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -312,7 +312,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/budgets/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/budgets/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ce/
 lib/python${MODPY_VERSION}/site-packages/moto/ce/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ce/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ce/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ce/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -329,7 +329,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ce/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ce/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/${MODPY_PYCACHE}custom_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -355,7 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudformation/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -372,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudfront/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -389,7 +389,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudtrail/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -412,7 +412,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cloudwatch/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/codebuild/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/codebuild/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -429,7 +429,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/codebuild/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/codebuild/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/codecommit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/codecommit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -446,7 +446,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/codecommit/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/codecommit/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,7 +463,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/codepipeline/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -483,7 +483,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidentity/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -506,7 +506,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/cognitoidp/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/comprehend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/comprehend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -523,7 +523,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/comprehend/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/comprehend/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/config/
 lib/python${MODPY_VERSION}/site-packages/moto/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/config/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -542,7 +542,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/config/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/config/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/core/
 lib/python${MODPY_VERSION}/site-packages/moto/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/core/${MODPY_PYCACHE}base_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -583,7 +583,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/core/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/core/versions.py
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/databrew/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/databrew/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -600,7 +600,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/databrew/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/databrew/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -617,7 +617,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/datapipeline/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/datasync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/datasync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -634,7 +634,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/datasync/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/datasync/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/dax/
 lib/python${MODPY_VERSION}/site-packages/moto/dax/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dax/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dax/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -654,7 +654,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dax/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/dax/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/dms/
 lib/python${MODPY_VERSION}/site-packages/moto/dms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dms/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -674,7 +674,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dms/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/dms/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/ds/
 lib/python${MODPY_VERSION}/site-packages/moto/ds/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ds/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ds/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ds/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -697,7 +697,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ds/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/ds/validations.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/${MODPY_PYCACHE}comparisons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -715,7 +715,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/limits.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/${MODPY_PYCACHE}dynamo_type.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -729,7 +729,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/table.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/models/utilities.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/parsing/${MODPY_PYCACHE}ast_nodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -761,7 +761,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/${MODPY_PYCACHE}comparisons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -778,7 +778,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodb_v20111205/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -792,7 +792,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/dynamodbstreams/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ebs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ebs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -806,7 +806,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ebs/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ebs/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -820,7 +820,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ec2/${MODPY_PYCACHE}utils.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/models/${MODPY_PYCACHE}amis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1071,7 +1071,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ec2/resources/latest_amis/us-west-
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/resources/latest_amis/us-west-2.json
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/responses/${MODPY_PYCACHE}_base_response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1201,7 +1201,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ec2/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ec2/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1215,7 +1215,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ec2instanceconnect/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ecr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ecr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1235,7 +1235,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ecr/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ecr/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ecs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ecs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1252,7 +1252,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ecs/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ecs/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/efs/
 lib/python${MODPY_VERSION}/site-packages/moto/efs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/efs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/efs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/efs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/efs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/efs/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1269,7 +1269,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/efs/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/efs/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/eks/
 lib/python${MODPY_VERSION}/site-packages/moto/eks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/eks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/eks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/eks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/eks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/eks/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1289,7 +1289,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/eks/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/eks/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/elasticache/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/elasticache/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1306,7 +1306,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/elasticache/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/elasticache/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1326,7 +1326,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/elasticbeanstalk/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1340,7 +1340,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/elastictranscoder/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/elb/
 lib/python${MODPY_VERSION}/site-packages/moto/elb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/elb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/elb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/elb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/elb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/elb/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1360,7 +1360,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/elb/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/elb/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/elbv2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/elbv2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1380,7 +1380,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/elbv2/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/elbv2/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/emr/
 lib/python${MODPY_VERSION}/site-packages/moto/emr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/emr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/emr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/emr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/emr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/emr/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1400,7 +1400,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/emr/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/emr/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1420,7 +1420,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/emrcontainers/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1440,7 +1440,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/emrserverless/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/es/
 lib/python${MODPY_VERSION}/site-packages/moto/es/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/es/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/es/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/es/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/es/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/es/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1457,7 +1457,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/es/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/es/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/events/
 lib/python${MODPY_VERSION}/site-packages/moto/events/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/events/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/events/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/events/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1480,7 +1480,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/events/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/events/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/firehose/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/firehose/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1497,7 +1497,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/firehose/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/firehose/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/forecast/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/forecast/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1514,7 +1514,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/forecast/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/forecast/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/glacier/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/glacier/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1531,7 +1531,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/glacier/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/glacier/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/glue/
 lib/python${MODPY_VERSION}/site-packages/moto/glue/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/glue/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/glue/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/glue/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/glue/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/glue/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1557,7 +1557,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/glue/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/glue/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/greengrass/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/greengrass/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1574,7 +1574,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/greengrass/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/greengrass/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/guardduty/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/guardduty/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1591,7 +1591,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/guardduty/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/guardduty/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/iam/
 lib/python${MODPY_VERSION}/site-packages/moto/iam/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/iam/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/iam/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/iam/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/iam/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/iam/${MODPY_PYCACHE}access_control.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1623,7 +1623,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/iam/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/iam/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/identitystore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/identitystore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1640,7 +1640,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/identitystore/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/identitystore/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1654,7 +1654,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/instance_metadata/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/iot/
 lib/python${MODPY_VERSION}/site-packages/moto/iot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/iot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/iot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/iot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/iot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/iot/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1674,7 +1674,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/iot/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/iot/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/iotdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/iotdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1691,7 +1691,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/iotdata/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/iotdata/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/kinesis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/kinesis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1711,7 +1711,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/kinesis/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/kinesis/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1728,7 +1728,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideo/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1745,7 +1745,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/response
 lib/python${MODPY_VERSION}/site-packages/moto/kinesisvideoarchivedmedia/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/kms/
 lib/python${MODPY_VERSION}/site-packages/moto/kms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/kms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/kms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/kms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/kms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/kms/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1768,7 +1768,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/kms/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/kms/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1785,7 +1785,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/lakeformation/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/logs/
 lib/python${MODPY_VERSION}/site-packages/moto/logs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/logs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/logs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/logs/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1808,7 +1808,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/logs/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/logs/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1828,7 +1828,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/managedblockchain/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1845,7 +1845,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediaconnect/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/medialive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/medialive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1862,7 +1862,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/medialive/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/medialive/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1879,7 +1879,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediapackage/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/mediastore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/mediastore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1896,7 +1896,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/mediastore/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediastore/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1913,7 +1913,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/mediastoredata/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1930,12 +1930,12 @@ lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/meteringmarketplace/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/moto_api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/moto_api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/${MODPY_PYCACHE}managed_state_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1955,7 +1955,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/models.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/moto_random.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/recorder/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1968,7 +1968,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/state_manager.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_api/_internal/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_server/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/moto_server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/moto_server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/moto_server/${MODPY_PYCACHE}threaded_moto_server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/moto_server/${MODPY_PYCACHE}threaded_moto_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/moto_server/${MODPY_PYCACHE}utilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1982,7 +1982,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/moto_server/utilities.py
 lib/python${MODPY_VERSION}/site-packages/moto/moto_server/werkzeug_app.py
 lib/python${MODPY_VERSION}/site-packages/moto/mq/
 lib/python${MODPY_VERSION}/site-packages/moto/mq/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/mq/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/mq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/mq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/mq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/mq/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2002,7 +2002,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/mq/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/mq/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/neptune/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/neptune/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2019,7 +2019,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/neptune/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/neptune/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/opensearch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/opensearch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2039,7 +2039,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/opensearch/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/opensearch/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/opsworks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/opsworks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2056,7 +2056,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/opsworks/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/opsworks/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/organizations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/organizations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2076,17 +2076,17 @@ lib/python${MODPY_VERSION}/site-packages/moto/organizations/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/organizations/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/packages/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/${MODPY_PYCACHE}blockdevicemapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2109,7 +2109,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/instancetype.py
 lib/python${MODPY_VERSION}/site-packages/moto/packages/boto/ec2/tag.py
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCACHE}cfnresponse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2117,7 +2117,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/moto/packages/cfnresponse/cfnresponse.py
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/personalize/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/personalize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2134,7 +2134,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/personalize/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/personalize/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2151,7 +2151,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/pinpoint/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/polly/
 lib/python${MODPY_VERSION}/site-packages/moto/polly/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/polly/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/polly/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/polly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/polly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/polly/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2171,7 +2171,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/polly/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/polly/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/quicksight/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/quicksight/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2188,7 +2188,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/quicksight/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/quicksight/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ram/
 lib/python${MODPY_VERSION}/site-packages/moto/ram/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ram/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ram/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ram/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2205,7 +2205,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ram/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/ram/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/rds/
 lib/python${MODPY_VERSION}/site-packages/moto/rds/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/rds/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/rds/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/rds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/rds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/rds/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2229,7 +2229,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/rds/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/rds/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2243,7 +2243,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/rdsdata/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/redshift/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/redshift/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2263,7 +2263,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/redshift/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/redshift/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2280,7 +2280,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/redshiftdata/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/rekognition/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/rekognition/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2294,7 +2294,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/rekognition/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/rekognition/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2311,7 +2311,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroups/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2325,7 +2325,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/responses
 lib/python${MODPY_VERSION}/site-packages/moto/resourcegroupstaggingapi/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/route53/
 lib/python${MODPY_VERSION}/site-packages/moto/route53/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/route53/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/route53/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/route53/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/route53/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/route53/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2345,7 +2345,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/route53/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/route53/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2368,7 +2368,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/route53resolver/validations.py
 lib/python${MODPY_VERSION}/site-packages/moto/s3/
 lib/python${MODPY_VERSION}/site-packages/moto/s3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/s3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/s3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/s3/${MODPY_PYCACHE}cloud_formation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2400,7 +2400,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/s3/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/s3/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2408,7 +2408,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/${MODPY_PYCACHE}util
 lib/python${MODPY_VERSION}/site-packages/moto/s3bucket_path/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/s3control/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/s3control/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2428,7 +2428,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/s3control/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/s3control/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2451,7 +2451,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/sagemaker/validators.py
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/scheduler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/scheduler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2468,7 +2468,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/scheduler/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/scheduler/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2485,7 +2485,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sdb/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/sdb/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2501,7 +2501,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/${MODPY_PYCACHE}uti
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/list_secrets/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2514,7 +2514,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/secretsmanager/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/server.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2531,7 +2531,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicediscovery/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2546,12 +2546,12 @@ lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/models.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/resources/default_quotas/${MODPY_PYCACHE}vpc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2561,7 +2561,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/servicequotas/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ses/
 lib/python${MODPY_VERSION}/site-packages/moto/ses/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ses/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2587,7 +2587,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ses/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ses/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/sesv2/
 lib/python${MODPY_VERSION}/site-packages/moto/sesv2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sesv2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sesv2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sesv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sesv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sesv2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2605,7 +2605,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sesv2/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/settings.py
 lib/python${MODPY_VERSION}/site-packages/moto/signer/
 lib/python${MODPY_VERSION}/site-packages/moto/signer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/signer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/signer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/signer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/signer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/signer/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2622,7 +2622,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/signer/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/signer/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sns/
 lib/python${MODPY_VERSION}/site-packages/moto/sns/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sns/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sns/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2642,7 +2642,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sns/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sns/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sqs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sqs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2665,7 +2665,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sqs/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sqs/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ssm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ssm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2743,7 +2743,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ssm/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ssm/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2763,7 +2763,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/ssoadmin/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2783,7 +2783,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/stepfunctions/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/sts/
 lib/python${MODPY_VERSION}/site-packages/moto/sts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/sts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/sts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/sts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/sts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/sts/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2803,7 +2803,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/sts/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/sts/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/support/
 lib/python${MODPY_VERSION}/site-packages/moto/support/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/support/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/support/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2822,7 +2822,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/support/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/support/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/swf/
 lib/python${MODPY_VERSION}/site-packages/moto/swf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/swf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/swf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/swf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/swf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/swf/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2839,7 +2839,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/swf/constants.py
 lib/python${MODPY_VERSION}/site-packages/moto/swf/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/moto/swf/models/
 lib/python${MODPY_VERSION}/site-packages/moto/swf/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/swf/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/swf/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/swf/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/swf/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/swf/models/${MODPY_PYCACHE}activity_task.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2877,7 +2877,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/swf/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/swf/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/textract/
 lib/python${MODPY_VERSION}/site-packages/moto/textract/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/textract/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/textract/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/textract/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/textract/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/textract/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2894,7 +2894,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/textract/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/textract/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2911,7 +2911,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/timestreamwrite/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/transcribe/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/transcribe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2928,7 +2928,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/transcribe/responses.py
 lib/python${MODPY_VERSION}/site-packages/moto/transcribe/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/${MODPY_PYCACHE}arns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2960,7 +2960,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/utilities/tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/moto/utilities/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/wafv2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/wafv2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2980,7 +2980,7 @@ lib/python${MODPY_VERSION}/site-packages/moto/wafv2/urls.py
 lib/python${MODPY_VERSION}/site-packages/moto/wafv2/utils.py
 lib/python${MODPY_VERSION}/site-packages/moto/xray/
 lib/python${MODPY_VERSION}/site-packages/moto/xray/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/moto/xray/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/moto/xray/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/moto/xray/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/moto/xray/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/moto/xray/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

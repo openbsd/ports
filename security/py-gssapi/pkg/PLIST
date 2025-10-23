@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/gssapi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gssapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gssapi/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,14 +34,14 @@ lib/python${MODPY_VERSION}/site-packages/gssapi/names.py
 lib/python${MODPY_VERSION}/site-packages/gssapi/py.typed
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}named_tuples.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/${MODPY_PYCACHE}named_tuples.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/gssapi/raw/_enum_extensions/ext_dce.${MODPY_PYC_MAGIC_TAG}so
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/gssapi/raw/types.pyi
 lib/python${MODPY_VERSION}/site-packages/gssapi/sec_contexts.py
 lib/python${MODPY_VERSION}/site-packages/gssapi/tests/
 lib/python${MODPY_VERSION}/site-packages/gssapi/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gssapi/tests/${MODPY_PYCACHE}test_high_level.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

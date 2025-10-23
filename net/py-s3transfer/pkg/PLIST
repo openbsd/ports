@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/licenses/NOTICE.txt
 lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/s3transfer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}bandwidth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

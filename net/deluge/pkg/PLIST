@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/deluge-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/deluge-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/deluge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/${MODPY_PYCACHE}_libtorrent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/configmanager.py
 lib/python${MODPY_VERSION}/site-packages/deluge/conftest.py
 lib/python${MODPY_VERSION}/site-packages/deluge/core/
 lib/python${MODPY_VERSION}/site-packages/deluge/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/core/${MODPY_PYCACHE}alertmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/event.py
 lib/python${MODPY_VERSION}/site-packages/deluge/httpdownloader.py
 lib/python${MODPY_VERSION}/site-packages/deluge/i18n/
 lib/python${MODPY_VERSION}/site-packages/deluge/i18n/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/i18n/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/i18n/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/i18n/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/i18n/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/i18n/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -374,7 +374,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/plugins/Stats-0.4-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/Toggle-0.4-py${MODPY_VERSION}.egg
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/WebUi-0.2-py${MODPY_VERSION}.egg
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -386,7 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/plugins/pluginbase.py
 lib/python${MODPY_VERSION}/site-packages/deluge/transfer.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -411,7 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/client.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/common.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -422,7 +422,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}parse
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -430,7 +430,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/command.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/cmdline/commands/${MODPY_PYCACHE}add.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -494,7 +494,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/console.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/main.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/${MODPY_PYCACHE}add_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -519,7 +519,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/connectionmanag
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/eventview.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/${MODPY_PYCACHE}preference_panes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -531,7 +531,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/preferences/pre
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentdetail.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/${MODPY_PYCACHE}add_torrents_popup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -561,7 +561,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/modes/torrentlist/tor
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/parser.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -581,7 +581,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/curses_util.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/utils/format_utils.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/console/widgets/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -890,7 +890,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/data/pixmaps/traffic.svg
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/data/pixmaps/traffic16.png
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/gtk3/${MODPY_PYCACHE}aboutdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1038,7 +1038,7 @@ lib/python${MODPY_VERSION}/site-packages/deluge/ui/ui.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/ui_entry.py
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deluge/ui/web/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gramps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gramps/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}version.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gramps/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/${MODPY_PYCACHE}arghandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,13 +40,13 @@ lib/python${MODPY_VERSION}/site-packages/gramps/cli/clidbman.py
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/grampscli.py
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/cli/user.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/const.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/constfunc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_ar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -190,7 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_dateutils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_grampslocale.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -217,7 +217,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/base.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/conversion_tools/${MODPY_PYCACHE}conversion_21.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/db/utils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/dbstate.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/${MODPY_PYCACHE}name.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -246,7 +246,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/place.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/errors.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/${MODPY_PYCACHE}_filterlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -269,7 +269,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/_searchfilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/optimizer.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/${MODPY_PYCACHE}_changedsincebase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -355,7 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_regexpidbase.
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/_rule.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/${MODPY_PYCACHE}_allcitations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -426,7 +426,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_rege
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/citation/_regexpsourceidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/${MODPY_PYCACHE}_allevents.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -503,7 +503,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_matches
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/event/_regexpidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/${MODPY_PYCACHE}_allfamilies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -619,7 +619,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_search
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/family/_searchmothername.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/${MODPY_PYCACHE}_allmedia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -672,7 +672,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/_mediapr
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/media/_regexpidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/${MODPY_PYCACHE}_allnotes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -713,7 +713,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/_notepriv
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/note/_regexpidof.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/${MODPY_PYCACHE}_changedsince.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -964,7 +964,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_relati
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/person/_searchname.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/${MODPY_PYCACHE}_allplaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1044,7 +1044,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_regexpi
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_withinarea.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/${MODPY_PYCACHE}_allrepos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1088,7 +1088,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_re
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/repository/_repoprivate.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/${MODPY_PYCACHE}_allsources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1151,7 +1151,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/source/_source
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/git_revision.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/${MODPY_PYCACHE}address.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1363,7 +1363,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/urlbase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/lib/urltype.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1398,7 +1398,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/mergerepositoryquery.p
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/merge/mergesourcequery.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/${MODPY_PYCACHE}_pythonmime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1409,7 +1409,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/_pythonmime.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/mime/_winmime.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/${MODPY_PYCACHE}_docgenplugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1443,7 +1443,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/_pluginreg.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/_thumbnailer.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/${MODPY_PYCACHE}cairobackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1454,7 +1454,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/cairobackend
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docbackend/docbackend.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}basedoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1495,7 +1495,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/textdoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/treedoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}_boolean.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1557,7 +1557,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/_surnamecolor.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/_text.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/${MODPY_PYCACHE}_bibliography.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1590,7 +1590,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/report/utils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/utils.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/proxy/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1615,7 +1615,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/recentfiles.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/relationship.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/simple/${MODPY_PYCACHE}_simpleaccess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1634,7 +1634,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/updatecallback.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/user.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/${MODPY_PYCACHE}alive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1703,7 +1703,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/db.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/debug.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/docgen/${MODPY_PYCACHE}csvtab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1739,7 +1739,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/win32locale.py
 lib/python${MODPY_VERSION}/site-packages/gramps/grampsapp.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/${MODPY_PYCACHE}aboutdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1816,7 +1816,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/display.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/displaystate.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}addmedia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1886,7 +1886,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/${MODPY_PYCACHE}obje
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/addmedia.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/displaytabs/${MODPY_PYCACHE}addrembedlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2072,7 +2072,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/filtereditor.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/editors/objectentries.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/${MODPY_PYCACHE}_filtercombobox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2089,7 +2089,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/_filterstore.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/_searchbar.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/filters/sidebar/${MODPY_PYCACHE}_citationsidebarfilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2180,7 +2180,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/grampsgui.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/listmodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/logger/${MODPY_PYCACHE}_errorreportassistant.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2199,7 +2199,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/makefilter.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/managedwindow.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/${MODPY_PYCACHE}mergecitation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2232,7 +2232,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/merge/mergesource.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/navigator.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/${MODPY_PYCACHE}_dialogs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2248,7 +2248,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/_guioptions.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/_windows.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/${MODPY_PYCACHE}_exportassistant.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2259,7 +2259,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/_exportassistant
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/export/_exportoptions.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/${MODPY_PYCACHE}_quickreports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2273,7 +2273,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/_quicktable.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/quick/_textbufdoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_bookdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2319,7 +2319,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/tool.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/pluginmanager.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/selectors/${MODPY_PYCACHE}baseselector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2368,7 +2368,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/utilscairo.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/viewmanager.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2388,7 +2388,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/pageview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/tags.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/${MODPY_PYCACHE}basemodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2435,7 +2435,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/sourcemodel
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/views/treemodels/treebasemodel.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}basicentry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2545,12 +2545,12 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/validatedcomboentry.
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/validatedmaskedentry.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/${MODPY_PYCACHE}cite.gpr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2561,12 +2561,12 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/cite.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/cite/legacy.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/${MODPY_PYCACHE}bsddb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2577,7 +2577,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/bsddb.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/bsddb/bsddb.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/${MODPY_PYCACHE}dbapi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2591,7 +2591,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/sqlite.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/db/dbapi/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/${MODPY_PYCACHE}asciidoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2624,7 +2624,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/rtfdoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/docgen/svgdrawdoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/${MODPY_PYCACHE}ancestortree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2650,7 +2650,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/statisticscha
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/drawreport/timeline.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/${MODPY_PYCACHE}export.gpr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2682,7 +2682,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/exportvcard.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/export/exportxml.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/${MODPY_PYCACHE}ageondategramplet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2813,7 +2813,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/welcomegramplet
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/gramplet/whatsnext.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/${MODPY_PYCACHE}graphplugins.gpr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2830,7 +2830,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/gvhourglass.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/graph/gvrelgraph.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/${MODPY_PYCACHE}import.gpr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2864,7 +2864,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/importvcard.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/importer/importxml.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/${MODPY_PYCACHE}libcairodoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2935,7 +2935,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libsubstkeyword.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/libtreebase.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/${MODPY_PYCACHE}cairoprint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2982,7 +2982,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/placeselection.
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/lib/maps/selectionlayer.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/${MODPY_PYCACHE}eniroswedenmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2999,7 +2999,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/mapservice.g
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/mapservices/openstreetmap.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/${MODPY_PYCACHE}ageondate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3043,7 +3043,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/samesurnames.p
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/quickview/siblings.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_ca.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3120,7 +3120,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_uk.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/relplugins.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/${MODPY_PYCACHE}categorysidebar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3137,7 +3137,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/expandersidebar.
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/sidebar/sidebar.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/${MODPY_PYCACHE}alphabeticalindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3202,7 +3202,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/tagreport.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/textreport/textplugins.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/${MODPY_PYCACHE}gnomethumb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3216,7 +3216,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/imagethumb.p
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/thumbnailer/thumb.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/${MODPY_PYCACHE}changenames.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3317,7 +3317,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/verify.glade
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/tool/verify.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/${MODPY_PYCACHE}citationlistview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3403,7 +3403,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/sourceview.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/view/view.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/${MODPY_PYCACHE}addressbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3501,7 +3501,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/webcal.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webreport/webplugins.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/${MODPY_PYCACHE}webstuff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3512,7 +3512,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/webstuff.gpr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/webstuff/webstuff.py
 lib/python${MODPY_VERSION}/site-packages/gramps/test/
 lib/python${MODPY_VERSION}/site-packages/gramps/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gramps/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gramps/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gramps/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gramps/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/test/${MODPY_PYCACHE}regrtest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

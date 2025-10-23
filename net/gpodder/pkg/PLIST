@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gpodder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}build_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/extensions.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/feedcore.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/base.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/config.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}channel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -147,7 +147,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/download.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/draw.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/interface/${MODPY_PYCACHE}addpodcast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -184,7 +184,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/opml.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/player.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/plugins/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -212,7 +212,7 @@ share/gpodder/examples/
 share/gpodder/examples/gpodder_mark_played.py
 share/gpodder/examples/hello_world.py
 share/gpodder/extensions/
-${MODPY_COMMENT}share/gpodder/extensions/${MODPY_PYCACHE}/
+share/gpodder/extensions/${MODPY_PYCACHE}/
 share/gpodder/extensions/${MODPY_PYCACHE}audio_converter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gpodder/extensions/${MODPY_PYCACHE}audio_converter.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}command_on_download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

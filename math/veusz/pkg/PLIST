@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/COPYING
 lib/python${MODPY_VERSION}/site-packages/veusz/ChangeLog
 lib/python${MODPY_VERSION}/site-packages/veusz/VERSION
 lib/python${MODPY_VERSION}/site-packages/veusz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}embed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}veusz_main.${MODP
 lib/python${MODPY_VERSION}/site-packages/veusz/${MODPY_PYCACHE}veusz_main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/readcsv.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dataimport/simpleread.py
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/datasets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/datasets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/datasets/text.py
 lib/python${MODPY_VERSION}/site-packages/veusz/datasets/twod.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/${MODPY_PYCACHE}aboutdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,7 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/stylesheet.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/veuszdialog.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/
 lib/python${MODPY_VERSION}/site-packages/veusz/document/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/document/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/document/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/document/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/document/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_surface.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/3d_volume.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/FDR_example.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/FDR_sample_data.csv
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/${MODPY_PYCACHE}embedexample.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/${MODPY_PYCACHE}embedexample.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/axis_function.vsz
@@ -311,7 +311,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/tutorialdata.csv
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/vectorfield.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/veusz/helpers/_nc_cntr.${MODPY_PYC_MAGIC_TAG}so
@@ -479,7 +479,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz_48.png
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/veusz_64.png
 lib/python${MODPY_VERSION}/site-packages/veusz/plugins/
 lib/python${MODPY_VERSION}/site-packages/veusz/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/plugins/${MODPY_PYCACHE}datasetplugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -500,7 +500,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/plugins/votable.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtall.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/${MODPY_PYCACHE}clicklabel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -532,7 +532,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/lineeditwithclear.py
 lib/python${MODPY_VERSION}/site-packages/veusz/qtwidgets/recentfilesbutton.py
 lib/python${MODPY_VERSION}/site-packages/veusz/setting/
 lib/python${MODPY_VERSION}/site-packages/veusz/setting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/setting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/setting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/setting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/setting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/setting/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -588,7 +588,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/ui/softwareversions.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/stylesheet.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -640,7 +640,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/veusz_listen.py
 lib/python${MODPY_VERSION}/site-packages/veusz/veusz_main.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/${MODPY_PYCACHE}axis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -768,7 +768,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/widgets/volume3d.py
 lib/python${MODPY_VERSION}/site-packages/veusz/widgets/widget.py
 lib/python${MODPY_VERSION}/site-packages/veusz/windows/
 lib/python${MODPY_VERSION}/site-packages/veusz/windows/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/veusz/windows/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/veusz/windows/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/veusz/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/veusz/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/windows/${MODPY_PYCACHE}consolewindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

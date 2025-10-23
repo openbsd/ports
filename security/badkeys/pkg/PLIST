@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/badkeys-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/badkeys-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/badkeys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/dnssec.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/jwk.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/primes1024.dat
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/primes512.dat
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/primes768.dat
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}fermat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

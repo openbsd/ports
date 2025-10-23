@@ -41,7 +41,7 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 share/lyx/
 share/lyx/CREDITS
 share/lyx/RELEASE-NOTES
-${MODPY_COMMENT}share/lyx/${MODPY_PYCACHE}/
+share/lyx/${MODPY_PYCACHE}/
 share/lyx/${MODPY_PYCACHE}configure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/${MODPY_PYCACHE}configure.${MODPY_PYC_MAGIC_TAG}pyc
 share/lyx/autocorrect
@@ -3398,7 +3398,7 @@ share/lyx/layouts/varwidth.module
 share/lyx/layouttranslations
 share/lyx/lyx2lyx/
 share/lyx/lyx2lyx/LyX.py
-${MODPY_COMMENT}share/lyx/lyx2lyx/${MODPY_PYCACHE}/
+share/lyx/lyx2lyx/${MODPY_PYCACHE}/
 share/lyx/lyx2lyx/${MODPY_PYCACHE}LyX.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/${MODPY_PYCACHE}LyX.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/lyx/lyx2lyx/${MODPY_PYCACHE}LyX.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3513,7 +3513,7 @@ share/lyx/lyx2lyx/test_parser_tools.py
 share/lyx/lyx2lyx/unicode_symbols.py
 share/lyx/scripts/
 share/lyx/scripts/TeXFiles.py
-${MODPY_COMMENT}share/lyx/scripts/${MODPY_PYCACHE}/
+share/lyx/scripts/${MODPY_PYCACHE}/
 share/lyx/scripts/${MODPY_PYCACHE}TeXFiles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lyx/scripts/${MODPY_PYCACHE}TeXFiles.${MODPY_PYC_MAGIC_TAG}pyc
 share/lyx/scripts/${MODPY_PYCACHE}clean_dvi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

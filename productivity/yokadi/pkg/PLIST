@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yokadi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}createdemodb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}yokadid.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}yokadid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/${MODPY_PYCACHE}basepaths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/core/yokadiexception.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/core/yokadioptionparser.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/createdemodb.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/${MODPY_PYCACHE}aliastestcase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/${MODPY_PYCACHE}aliastestcase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/${MODPY_PYCACHE}argstestcase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/tests/ydateutilstestcase.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/yokadioptionparsertestcase.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/tests/yokaditestcase.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/update/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/update/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/update/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/update/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/update/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/update/${MODPY_PYCACHE}update10to11.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -169,7 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/update/update9to10.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/update/updateutils.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/${MODPY_PYCACHE}aliascmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -228,7 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/tui.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/ycli/xmllistrenderer.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/yical/
 lib/python${MODPY_VERSION}/site-packages/yokadi/yical/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/yical/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yokadi/yical/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yokadi/yical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yokadi/yical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yokadi/yical/${MODPY_PYCACHE}icalutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

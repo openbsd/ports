@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/topydo-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/topydo/Commands.py
 lib/python${MODPY_VERSION}/site-packages/topydo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/commands/RevertCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/SortCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/TagCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}AddCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}AddCommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/commands/${MODPY_PYCACHE}AppendCommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,7 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/lib/Version.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/View.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/WriteCommand.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/${MODPY_PYCACHE}ChangeSet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/${MODPY_PYCACHE}ChangeSet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/${MODPY_PYCACHE}Color.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -169,7 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/Colors.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/Format.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/Numbers.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/${MODPY_PYCACHE}Colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/${MODPY_PYCACHE}Colors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/prettyprinters/${MODPY_PYCACHE}Format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -184,7 +184,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/Ical.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/Json.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/PrettyPrinter.py
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/${MODPY_PYCACHE}Dot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/${MODPY_PYCACHE}Dot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/lib/printers/${MODPY_PYCACHE}Ical.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -200,7 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/ui/CLIApplicationBase.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/CompleterBase.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/UILoader.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}CLIApplicationBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}CLIApplicationBase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}CompleterBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -212,7 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/ui/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/CLI.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/${MODPY_PYCACHE}CLI.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/${MODPY_PYCACHE}CLI.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -231,7 +231,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/Transaction.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/Utils.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/ViewWidget.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/${MODPY_PYCACHE}ColumnCompleter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/${MODPY_PYCACHE}ColumnCompleter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/columns/${MODPY_PYCACHE}ColumnLayout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -262,7 +262,7 @@ lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/Prompt.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/PromptCompleter.py
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/${MODPY_PYCACHE}Prompt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/${MODPY_PYCACHE}Prompt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/topydo/ui/prompt/${MODPY_PYCACHE}PromptCompleter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

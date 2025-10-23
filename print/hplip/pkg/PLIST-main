@@ -152,7 +152,7 @@ share/hplip/base/
 share/hplip/base/CdmWifi.py
 share/hplip/base/LedmWifi.py
 share/hplip/base/__init__.py
-${MODPY_COMMENT}share/hplip/base/${MODPY_PYCACHE}/
+share/hplip/base/${MODPY_PYCACHE}/
 share/hplip/base/${MODPY_PYCACHE}CdmWifi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/base/${MODPY_PYCACHE}CdmWifi.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/${MODPY_PYCACHE}LedmWifi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -248,7 +248,7 @@ share/hplip/base/os_utils.py
 share/hplip/base/password.py
 share/hplip/base/pexpect/
 share/hplip/base/pexpect/__init__.py
-${MODPY_COMMENT}share/hplip/base/pexpect/${MODPY_PYCACHE}/
+share/hplip/base/pexpect/${MODPY_PYCACHE}/
 share/hplip/base/pexpect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/base/pexpect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/base/pkit.py
@@ -273,7 +273,7 @@ share/hplip/colorcal.py
 share/hplip/config_usb_printer.py
 share/hplip/copier/
 share/hplip/copier/__init__.py
-${MODPY_COMMENT}share/hplip/copier/${MODPY_PYCACHE}/
+share/hplip/copier/${MODPY_PYCACHE}/
 share/hplip/copier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/copier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/copier/${MODPY_PYCACHE}copier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -325,7 +325,7 @@ share/hplip/doctor.py
 share/hplip/fab.py
 share/hplip/fax/
 share/hplip/fax/__init__.py
-${MODPY_COMMENT}share/hplip/fax/${MODPY_PYCACHE}/
+share/hplip/fax/${MODPY_PYCACHE}/
 share/hplip/fax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/fax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/fax/${MODPY_PYCACHE}cdmfax.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -366,7 +366,7 @@ share/hplip/hpssd.py
 share/hplip/info.py
 share/hplip/installer/
 share/hplip/installer/__init__.py
-${MODPY_COMMENT}share/hplip/installer/${MODPY_PYCACHE}/
+share/hplip/installer/${MODPY_PYCACHE}/
 share/hplip/installer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/installer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/installer/${MODPY_PYCACHE}core_install.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -387,7 +387,7 @@ share/hplip/makecopies.py
 share/hplip/makeuri.py
 share/hplip/pcard/
 share/hplip/pcard/__init__.py
-${MODPY_COMMENT}share/hplip/pcard/${MODPY_PYCACHE}/
+share/hplip/pcard/${MODPY_PYCACHE}/
 share/hplip/pcard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/pcard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/pcard/${MODPY_PYCACHE}photocard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ share/hplip/print.py
 share/hplip/printsettings.py
 share/hplip/prnt/
 share/hplip/prnt/__init__.py
-${MODPY_COMMENT}share/hplip/prnt/${MODPY_PYCACHE}/
+share/hplip/prnt/${MODPY_PYCACHE}/
 share/hplip/prnt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/prnt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/prnt/${MODPY_PYCACHE}colorcal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -420,7 +420,7 @@ share/hplip/query.py
 share/hplip/scan/
 share/hplip/scan.py
 share/hplip/scan/__init__.py
-${MODPY_COMMENT}share/hplip/scan/${MODPY_PYCACHE}/
+share/hplip/scan/${MODPY_PYCACHE}/
 share/hplip/scan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/scan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/scan/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

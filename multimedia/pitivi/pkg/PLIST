@@ -3,7 +3,7 @@ lib/pitivi/
 lib/pitivi/python/
 lib/pitivi/python/pitivi/
 lib/pitivi/python/pitivi/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/${MODPY_PYCACHE}action_search_bar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,7 +33,7 @@ lib/pitivi/python/pitivi/application.py
 lib/pitivi/python/pitivi/autoaligner.py
 lib/pitivi/python/pitivi/check.py
 lib/pitivi/python/pitivi/clip_properties/
-${MODPY_COMMENT}lib/pitivi/python/pitivi/clip_properties/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/clip_properties/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/clip_properties/${MODPY_PYCACHE}alignment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/clip_properties/${MODPY_PYCACHE}color.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/clip_properties/${MODPY_PYCACHE}compositing.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,7 +51,7 @@ lib/pitivi/python/pitivi/coptimizations/
 lib/pitivi/python/pitivi/coptimizations/renderer.c
 lib/pitivi/python/pitivi/dialogs/
 lib/pitivi/python/pitivi/dialogs/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/dialogs/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/dialogs/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/dialogs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/dialogs/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/dialogs/${MODPY_PYCACHE}browseprojects.${MODPY_PYC_MAGIC_TAG}pyc
@@ -85,7 +85,7 @@ lib/pitivi/python/pitivi/shortcuts.py
 lib/pitivi/python/pitivi/tabsmanager.py
 lib/pitivi/python/pitivi/timeline/
 lib/pitivi/python/pitivi/timeline/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/timeline/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/timeline/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/timeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/timeline/${MODPY_PYCACHE}elements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/timeline/${MODPY_PYCACHE}layer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -104,7 +104,7 @@ lib/pitivi/python/pitivi/trackerperspective.py
 lib/pitivi/python/pitivi/transitions.py
 lib/pitivi/python/pitivi/undo/
 lib/pitivi/python/pitivi/undo/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/undo/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/undo/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/undo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/undo/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/undo/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -118,7 +118,7 @@ lib/pitivi/python/pitivi/undo/timeline.py
 lib/pitivi/python/pitivi/undo/undo.py
 lib/pitivi/python/pitivi/utils/
 lib/pitivi/python/pitivi/utils/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/utils/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/utils/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/utils/${MODPY_PYCACHE}beat_detection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/utils/${MODPY_PYCACHE}check_pipeline.${MODPY_PYC_MAGIC_TAG}pyc
@@ -152,7 +152,7 @@ lib/pitivi/python/pitivi/utils/validate.py
 lib/pitivi/python/pitivi/utils/widgets.py
 lib/pitivi/python/pitivi/viewer/
 lib/pitivi/python/pitivi/viewer/__init__.py
-${MODPY_COMMENT}lib/pitivi/python/pitivi/viewer/${MODPY_PYCACHE}/
+lib/pitivi/python/pitivi/viewer/${MODPY_PYCACHE}/
 lib/pitivi/python/pitivi/viewer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/viewer/${MODPY_PYCACHE}guidelines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pitivi/python/pitivi/viewer/${MODPY_PYCACHE}move_scale_overlay.${MODPY_PYC_MAGIC_TAG}pyc

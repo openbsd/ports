@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zim/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/actions.py
 lib/python${MODPY_VERSION}/site-packages/zim/applications.py
 lib/python${MODPY_VERSION}/site-packages/zim/base/
 lib/python${MODPY_VERSION}/site-packages/zim/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/base/${MODPY_PYCACHE}klasslookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/base/klasslookup.py
 lib/python${MODPY_VERSION}/site-packages/zim/base/naturalsort.py
 lib/python${MODPY_VERSION}/site-packages/zim/config/
 lib/python${MODPY_VERSION}/site-packages/zim/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/config/${MODPY_PYCACHE}basedirs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/errors.py
 lib/python${MODPY_VERSION}/site-packages/zim/export/
 lib/python${MODPY_VERSION}/site-packages/zim/export/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/export/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}template.${M
 lib/python${MODPY_VERSION}/site-packages/zim/export/${MODPY_PYCACHE}template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/
 lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/export/exporters/${MODPY_PYCACHE}files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/export/template.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/
 lib/python${MODPY_VERSION}/site-packages/zim/formats/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/formats/wiki.py
 lib/python${MODPY_VERSION}/site-packages/zim/fs.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/${MODPY_PYCACHE}actionextension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -165,7 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/gui/actionextension.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/applications.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/base/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/gui/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/gui/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/gui/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/base/${MODPY_PYCACHE}images.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/gui/notebookdialog.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/notebookview.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -226,7 +226,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/history.py
 lib/python${MODPY_VERSION}/site-packages/zim/import_files.py
 lib/python${MODPY_VERSION}/site-packages/zim/inc/
 lib/python${MODPY_VERSION}/site-packages/zim/inc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/inc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/inc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/inc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/inc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/inc/${MODPY_PYCACHE}arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -235,7 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/inc/arithmetic.py
 lib/python${MODPY_VERSION}/site-packages/zim/insertedobjects.py
 lib/python${MODPY_VERSION}/site-packages/zim/main/
 lib/python${MODPY_VERSION}/site-packages/zim/main/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/main/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/main/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/main/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -246,7 +246,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/main/application.py
 lib/python${MODPY_VERSION}/site-packages/zim/main/command.py
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/newfs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/newfs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -263,7 +263,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/newfs/local.py
 lib/python${MODPY_VERSION}/site-packages/zim/newfs/mock.py
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}content_updater.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -281,7 +281,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/notebook/${MODPY_PYCACHE}page.${MOD
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/content_updater.py
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/index/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -306,7 +306,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/notebook/operations.py
 lib/python${MODPY_VERSION}/site-packages/zim/notebook/page.py
 lib/python${MODPY_VERSION}/site-packages/zim/parse/
 lib/python${MODPY_VERSION}/site-packages/zim/parse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/parse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/parse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/parse/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,7 +335,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/parse/tokenlist.py
 lib/python${MODPY_VERSION}/site-packages/zim/parse/xml.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -407,7 +407,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/${MODPY_PYCACHE}zeitgeist-l
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/arithmetic.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/${MODPY_PYCACHE}filebrowser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -422,7 +422,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/thumbnail
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/backlinkpane.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/${MODPY_PYCACHE}imagegenerator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -446,7 +446,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/mermaiddiagrameditor.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/osx_menubar.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/pageindex/${MODPY_PYCACHE}generictreemodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -465,7 +465,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableofcontents.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tags.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -478,7 +478,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/trayicon.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/${MODPY_PYCACHE}bzr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -499,7 +499,7 @@ lib/python${MODPY_VERSION}/site-packages/zim/search.py
 lib/python${MODPY_VERSION}/site-packages/zim/signals.py
 lib/python${MODPY_VERSION}/site-packages/zim/templates/
 lib/python${MODPY_VERSION}/site-packages/zim/templates/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zim/templates/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zim/templates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zim/templates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zim/templates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zim/templates/${MODPY_PYCACHE}expression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

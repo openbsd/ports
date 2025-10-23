@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/Company.py
 lib/python${MODPY_VERSION}/site-packages/imdb/Movie.py
 lib/python${MODPY_VERSION}/site-packages/imdb/Person.py
 lib/python${MODPY_VERSION}/site-packages/imdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/${MODPY_PYCACHE}Character.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/${MODPY_PYCACHE}Character.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/${MODPY_PYCACHE}Company.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/helpers.py
 lib/python${MODPY_VERSION}/site-packages/imdb/linguistics.py
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/locale/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/locale/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/ar/
@@ -91,14 +91,14 @@ lib/python${MODPY_VERSION}/site-packages/imdb/locale/tr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/imdb/locale/tr/LC_MESSAGES/imdbpy.mo
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/${MODPY_PYCACHE}companyParser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/utils.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/logging.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/${MODPY_PYCACHE}utils.${
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/s3/utils.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/sql/${MODPY_PYCACHE}alchemyadapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

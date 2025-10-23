@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.20.0.dist-info/top_lev
 lib/python${MODPY_VERSION}/site-packages/wormhole/
 lib/python${MODPY_VERSION}/site-packages/wormhole/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/_boss.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_code.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/
 lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/_dilation/${MODPY_PYCACHE}_noise.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/_version.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_wordlist.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wormhole/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wormhole/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -157,7 +157,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/journal.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/observer.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -206,7 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/test/common.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/conftest.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/dilate/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

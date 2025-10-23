@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/libcloud/
 lib/python${MODPY_VERSION}/site-packages/libcloud/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}security.${MOD
 lib/python${MODPY_VERSION}/site-packages/libcloud/${MODPY_PYCACHE}security.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/backup/${MODPY_PYCACHE}types.$
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/backup/drivers/${MODPY_PYCACHE}dimensiondata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/backup/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/${MODPY_PYCACHE}abiquo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -189,7 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/zonomi.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/${MODPY_PYCACHE}types.
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/constants/${MODPY_PYCACHE}ec2_instance_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -223,7 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/deployment.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/${MODPY_PYCACHE}abiquo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -360,7 +360,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/ssh.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -372,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/${MODPY_PYCACHE}type
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/drivers/${MODPY_PYCACHE}docker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACHE}docker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -412,7 +412,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha256
 lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha512
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -424,7 +424,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}types.${MO
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/${MODPY_PYCACHE}auroradns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -513,7 +513,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/http.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -525,7 +525,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/loadbalancer/drivers/${MODPY_PYCACHE}alb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -565,7 +565,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/py.typed
 lib/python${MODPY_VERSION}/site-packages/libcloud/security.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -577,7 +577,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/${MODPY_PYCACHE}types.
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/base.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}atmos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -638,7 +638,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

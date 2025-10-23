@@ -74,7 +74,7 @@ share/libharu/bindings/python/
 share/libharu/bindings/python/History.txt
 share/libharu/bindings/python/README.python
 share/libharu/bindings/python/__init__.py
-${MODPY_COMMENT}share/libharu/bindings/python/${MODPY_PYCACHE}/
+share/libharu/bindings/python/${MODPY_PYCACHE}/
 share/libharu/bindings/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/libharu/bindings/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/libharu/bindings/python/${MODPY_PYCACHE}c_func.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ share/libharu/bindings/python/${MODPY_PYCACHE}hpdf_types.${MODPY_PYC_MAGIC_TAG}$
 share/libharu/bindings/python/${MODPY_PYCACHE}hpdf_types.${MODPY_PYC_MAGIC_TAG}pyc
 share/libharu/bindings/python/c_func.py
 share/libharu/bindings/python/demo/
-${MODPY_COMMENT}share/libharu/bindings/python/demo/${MODPY_PYCACHE}/
+share/libharu/bindings/python/demo/${MODPY_PYCACHE}/
 share/libharu/bindings/python/demo/${MODPY_PYCACHE}arc_demo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/libharu/bindings/python/demo/${MODPY_PYCACHE}arc_demo.${MODPY_PYC_MAGIC_TAG}pyc
 share/libharu/bindings/python/demo/${MODPY_PYCACHE}character_map.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

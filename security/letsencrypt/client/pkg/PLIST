@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/certbot-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/certbot-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/certbot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}achallenges.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}util.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/auth_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cert_manager.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/${MODPY_PYCACHE}cli_constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/client.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/constants.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}completer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/log.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/main.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/${MODPY_PYCACHE}disco.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/snap_config.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/storage.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}account_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -203,7 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/cli_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/client_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/${MODPY_PYCACHE}filesystem_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/configuration_t
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/${MODPY_PYCACHE}completer_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -248,7 +248,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/main_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/ocsp_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}common_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/updater.py
 lib/python${MODPY_VERSION}/site-packages/certbot/achallenges.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -312,7 +312,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/configuration.py
 lib/python${MODPY_VERSION}/site-packages/certbot/crypto_util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/display/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/display/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/display/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/display/${MODPY_PYCACHE}ops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -327,7 +327,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/main.py
 lib/python${MODPY_VERSION}/site-packages/certbot/ocsp.py
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -359,7 +359,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/reverter.py
 lib/python${MODPY_VERSION}/site-packages/certbot/ssl-dhparams.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}acme_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

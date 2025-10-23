@@ -33,7 +33,7 @@ ${EGGDIR}/not-zip-safe
 ${EGGDIR}/requires.txt
 ${EGGDIR}/top_level.txt
 ${SITEDIR}/mlpack/__init__.py
-${MODPY_COMMENT}${SITEDIR}/mlpack/${MODPY_PYCACHE}/
+${SITEDIR}/mlpack/${MODPY_PYCACHE}/
 ${SITEDIR}/mlpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${SITEDIR}/mlpack/${MODPY_PYCACHE}matrix_utils.${MODPY_PYC_MAGIC_TAG}pyc
 @so ${SITEDIR}/mlpack/adaboost.${MODPY_PYC_MAGIC_TAG}so

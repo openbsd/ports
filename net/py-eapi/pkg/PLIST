@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyeapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}utils.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pyeapi/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyeapi/api/
 lib/python${MODPY_VERSION}/site-packages/pyeapi/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyeapi/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyeapi/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyeapi/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyeapi/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyeapi/api/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

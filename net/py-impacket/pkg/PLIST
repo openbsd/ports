@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/ImpactDecoder.py
 lib/python${MODPY_VERSION}/site-packages/impacket/ImpactPacket.py
 lib/python${MODPY_VERSION}/site-packages/impacket/NDP.py
 lib/python${MODPY_VERSION}/site-packages/impacket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/${MODPY_PYCACHE}Dot11Crypto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/${MODPY_PYCACHE}Dot11Crypto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/${MODPY_PYCACHE}Dot11KeyManager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -105,12 +105,12 @@ lib/python${MODPY_VERSION}/site-packages/impacket/cdp.py
 lib/python${MODPY_VERSION}/site-packages/impacket/crypto.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/${MODPY_PYCACHE}atsvc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -179,7 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/atsvc.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/bkrp.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/dcom/${MODPY_PYCACHE}comev.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/eap.py
 lib/python${MODPY_VERSION}/site-packages/impacket/ese.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/${MODPY_PYCACHE}ldap_shell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -259,12 +259,12 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ldap_shell.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/logger.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/${MODPY_PYCACHE}dcsyncattack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -285,7 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/dc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattack.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/httpattacks/${MODPY_PYCACHE}adcsattack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -298,7 +298,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/rp
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/attacks/smbattack.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/${MODPY_PYCACHE}dcsyncclient.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -327,7 +327,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/sm
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/smtprelayclient.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/${MODPY_PYCACHE}httprelayserver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -342,7 +342,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/ht
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/smbrelayserver.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/socksplugins/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -370,7 +370,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/so
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/wcfrelayserver.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/hresult_errors.py
 lib/python${MODPY_VERSION}/site-packages/impacket/http.py
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/krb5/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/${MODPY_PYCACHE}asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -432,7 +432,7 @@ lib/python${MODPY_VERSION}/site-packages/impacket/krb5/pac.py
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/types.py
 lib/python${MODPY_VERSION}/site-packages/impacket/ldap/
 lib/python${MODPY_VERSION}/site-packages/impacket/ldap/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/impacket/ldap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/impacket/ldap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/impacket/ldap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/ldap/${MODPY_PYCACHE}ldap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

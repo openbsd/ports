@@ -1,7 +1,7 @@
 bin/knockpy
 lib/python${MODPY_VERSION}/site-packages/knock/
 lib/python${MODPY_VERSION}/site-packages/knock/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}knockpy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

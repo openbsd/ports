@@ -7,14 +7,14 @@ lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/W
 lib/python${MODPY_VERSION}/site-packages/skimage/
 lib/python${MODPY_VERSION}/site-packages/skimage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/${MODPY_PYCACHE}_dependency_checks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tester.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/testing.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/tests/${MODPY_PYCACHE}test_coord.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/_shared/utils.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_shared/version_requirements.py
 lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/
 lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/${MODPY_PYCACHE}numpy_lookfor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/_vendored/numpy_lookfor.py
 lib/python${MODPY_VERSION}/site-packages/skimage/color/
 lib/python${MODPY_VERSION}/site-packages/skimage/color/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/color/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/color/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/color/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/color/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/color/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/color/${MODPY_PYCACHE}adapt_rgb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/color/delta_e.py
 lib/python${MODPY_VERSION}/site-packages/skimage/color/rgb_colors.py
 lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/color/tests/${MODPY_PYCACHE}test_adapt_rgb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/data/
 lib/python${MODPY_VERSION}/site-packages/skimage/data/README.txt
 lib/python${MODPY_VERSION}/site-packages/skimage/data/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/data/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/data/${MODPY_PYCACHE}_binary_blobs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -188,7 +188,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/data/retina.jpg
 lib/python${MODPY_VERSION}/site-packages/skimage/data/rocket.jpg
 lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/data/tests/${MODPY_PYCACHE}test_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -198,7 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/data/text.png
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/${MODPY_PYCACHE}_polygon2mask.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/draw/draw3d.py
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/draw_nd.py
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/${MODPY_PYCACHE}test_draw.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/draw/tests/test_random_shapes.p
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/exposure/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/exposure/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/${MODPY_PYCACHE}_adapthist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -254,7 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/exposure/exposure.py
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/histogram_matching.py
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/${MODPY_PYCACHE}test_exposure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -266,7 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/exposure/tests/test_histogram_m
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/${MODPY_PYCACHE}_basic_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,7 +335,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/feature/sift.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/template.py
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/feature/tests/${MODPY_PYCACHE}test_basic_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -397,7 +397,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/feature/util.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/${MODPY_PYCACHE}_fft_based.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -437,7 +437,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/edges.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/lpi_filter.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/${MODPY_PYCACHE}_percentile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -456,7 +456,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/generic.py
 @so lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/percentile_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/${MODPY_PYCACHE}test_rank.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -465,7 +465,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/rank/tests/test_rank.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/ridges.py
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/filters/tests/${MODPY_PYCACHE}test_correlate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -505,7 +505,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/filters/thresholding.py
 lib/python${MODPY_VERSION}/site-packages/skimage/future/
 lib/python${MODPY_VERSION}/site-packages/skimage/future/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/future/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}manual_segmentation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -515,7 +515,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/future/${MODPY_PYCACHE}trainabl
 lib/python${MODPY_VERSION}/site-packages/skimage/future/manual_segmentation.py
 lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/future/tests/${MODPY_PYCACHE}test_trainable_segmentation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -525,7 +525,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/future/trainable_segmentation.p
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/${MODPY_PYCACHE}_graph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -555,7 +555,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/graph/mcp.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/spath.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/${MODPY_PYCACHE}test_anisotropy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -584,7 +584,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/test_rag.py
 lib/python${MODPY_VERSION}/site-packages/skimage/graph/tests/test_spath.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/io/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/io/${MODPY_PYCACHE}_image_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -603,7 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/io/_image_stack.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_io.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/io/_plugins/${MODPY_PYCACHE}fits_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,7 +645,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/io/manage_plugins.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/sift.py
 lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/io/tests/${MODPY_PYCACHE}test_collection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -691,7 +691,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/io/util.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/${MODPY_PYCACHE}_blur_effect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -749,7 +749,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/measure/pnpoly.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/profile.py
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/${MODPY_PYCACHE}test_block.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -797,7 +797,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/measure/tests/test_regionprops.
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/metrics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/metrics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/${MODPY_PYCACHE}_adapted_rand_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -820,7 +820,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/metrics/set_metrics.py
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/simple_metrics.py
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/${MODPY_PYCACHE}test_segmentation_metrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -837,7 +837,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/test_simple_metri
 lib/python${MODPY_VERSION}/site-packages/skimage/metrics/tests/test_structural_similarity.py
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/${MODPY_PYCACHE}_flood_fill.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -888,7 +888,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/morphology/max_tree.py
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/misc.py
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/tests/${MODPY_PYCACHE}test_binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -934,7 +934,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/py.typed
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/registration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/registration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/${MODPY_PYCACHE}_masked_phase_cross_correlation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -951,7 +951,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/registration/_optical_flow_util
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/_phase_cross_correlation.py
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/${MODPY_PYCACHE}test_ilk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -969,7 +969,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/registration/tests/test_tvl1.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/${MODPY_PYCACHE}_cycle_spin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1006,7 +1006,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/restoration/j_invariant.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/non_local_means.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/tests/${MODPY_PYCACHE}test_denoise.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1031,7 +1031,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/restoration/uft.py
 lib/python${MODPY_VERSION}/site-packages/skimage/restoration/unwrap.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/${MODPY_PYCACHE}_chan_vese.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1076,7 +1076,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/random_walker_segm
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/slic_superpixels.py
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/${MODPY_PYCACHE}test_active_contour_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1118,7 +1118,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/segmentation/tests/test_watersh
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_geometric.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1150,7 +1150,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/pyramids.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/radon_transform.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_finite_radon_transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1179,7 +1179,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_thin_plate
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_warps.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/
 lib/python${MODPY_VERSION}/site-packages/skimage/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/util/${MODPY_PYCACHE}_invert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1226,7 +1226,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/util/noise.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/shape.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/
 lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/util/tests/${MODPY_PYCACHE}test_apply_parallel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_DISTV}.dist-info/top_leve
 lib/python${MODPY_VERSION}/site-packages/scapy/VERSION
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -86,7 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/all.py
 lib/python${MODPY_VERSION}/site-packages/scapy/ansmachine.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}unix.${MODPY
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/${MODPY_PYCACHE}unix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/bpf/${MODPY_PYCACHE}consts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/common.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/libpcap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux/${MODPY_PYCACHE}rtnetlink.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/solaris.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/unix.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/structures.py
 lib/python${MODPY_VERSION}/site-packages/scapy/as_resolvers.py
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/asn1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/asn1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/${MODPY_PYCACHE}asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,7 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/config.py
 lib/python${MODPY_VERSION}/site-packages/scapy/consts.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}altbeacon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -363,7 +363,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/altbeacon.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/aoe.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}ccp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -386,7 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/${MODPY_PYCACHE}uds_scan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/${MODPY_PYCACHE}pdu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -403,7 +403,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/secoc_
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/autosar/secoc_pdu.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/bmw/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -420,7 +420,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/doip.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/ecu.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/${MODPY_PYCACHE}gmlan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -441,7 +441,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/gm/gmlanutils.
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/kwp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}obd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -454,7 +454,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/${MODPY_PYCACHE}services.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODPY_PYCACHE}iids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -462,7 +462,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/${MODP
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/iid/iids.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/mid/${MODPY_PYCACHE}mids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -472,7 +472,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/obd.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/packet.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/pid/${MODPY_PYCACHE}pids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -500,7 +500,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/scanner.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/services.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODPY_PYCACHE}tids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -508,7 +508,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/${MODP
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/obd/tid/tids.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/scanner/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -536,7 +536,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/uds_logging.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/uds_scan.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${MODPY_PYCACHE}definitions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -544,7 +544,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/${M
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/volkswagen/definitions.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/automotive/xcp/${MODPY_PYCACHE}cto_commands_master.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -603,7 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ikev2.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isis.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isotp/${MODPY_PYCACHE}isotp_native_socket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -662,7 +662,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rsvp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtcp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtps/${MODPY_PYCACHE}common_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -678,14 +678,14 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rtsp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}pcom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/${MODPY_PYCACHE}pcom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/scada/iec104/${MODPY_PYCACHE}iec104_fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -720,7 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/fields.py
 lib/python${MODPY_VERSION}/site-packages/scapy/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -868,7 +868,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/mgcp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mobileip.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -895,7 +895,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/msnrpc.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/mspac.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ept.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -945,7 +945,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/ssh.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tftp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -988,7 +988,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/basefields.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/cert.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1057,7 +1057,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/x509.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/zigbee.py
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}ethertypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1087,7 +1087,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/libs/winpcapy.py
 lib/python${MODPY_VERSION}/site-packages/scapy/main.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}nmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1102,7 +1102,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}voip.${MO
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}voip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}automaton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1131,7 +1131,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/themes.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/UTscapy.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}UTscapy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}UTscapy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1146,7 +1146,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}scapy_pyann
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}scapy_pyannotate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/${MODPY_PYCACHE}isotpscanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

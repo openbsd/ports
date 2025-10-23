@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pandas-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pandas-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pandas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}testing.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/_config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_config/display.py
 lib/python${MODPY_VERSION}/site-packages/pandas/_config/localization.py
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/algos.${MODPY_PYC_MAGIC_TAG}so
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_libs/testing.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslib.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/base.${MODPY_PYC_MAGIC_TAG}so
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/tzconversion.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/tslibs/vectorized.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/aggregations.${MODPY_PYC_MAGIC_TAG}so
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_libs/window/indexers.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_libs/writers.pyi
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing/
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/_testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/_testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/_testing/${MODPY_PYCACHE}_hypothesis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,42 +166,42 @@ lib/python${MODPY_VERSION}/site-packages/pandas/_version.py
 lib/python${MODPY_VERSION}/site-packages/pandas/_version_meson.py
 lib/python${MODPY_VERSION}/site-packages/pandas/api/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/indexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/api/types/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/types/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/types/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/types/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/api/typing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/arrays/
 lib/python${MODPY_VERSION}/site-packages/pandas/arrays/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/arrays/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/arrays/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/compat/_optional.py
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/compressors.py
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/compat/numpy/${MODPY_PYCACHE}function.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -230,7 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/compat/pyarrow.py
 lib/python${MODPY_VERSION}/site-packages/pandas/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}accessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -277,7 +277,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}sorting.${M
 lib/python${MODPY_VERSION}/site-packages/pandas/core/${MODPY_PYCACHE}sorting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/${MODPY_PYCACHE}executor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -288,7 +288,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/executor.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/extensions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/_numba/kernels/${MODPY_PYCACHE}mean_.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -312,7 +312,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/api.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/apply.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/${MODPY_PYCACHE}datetimelike_accumulations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -342,7 +342,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/array_algos/transforms.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arraylike.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/${MODPY_PYCACHE}_arrow_string_mixins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -389,7 +389,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/_ranges.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/_utils.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/arrow/${MODPY_PYCACHE}_arrow_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -418,7 +418,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/numpy_.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/period.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/arrays/sparse/${MODPY_PYCACHE}accessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -437,7 +437,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/base.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/common.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/computation/${MODPY_PYCACHE}align.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -480,7 +480,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/config_init.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/construction.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/dtypes/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -518,7 +518,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/frame.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/generic.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -547,7 +547,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/numba_.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/groupby/ops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -558,7 +558,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/objects.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexers/utils.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/${MODPY_PYCACHE}accessors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -603,7 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/indexes/timedeltas.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/indexing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -626,7 +626,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/from_dataframe.
 lib/python${MODPY_VERSION}/site-packages/pandas/core/interchange/utils.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -655,7 +655,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/managers.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/internals/ops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/methods/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -671,7 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/missing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/nanops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/${MODPY_PYCACHE}array_ops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -698,7 +698,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/ops/missing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/resample.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/reshape/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -735,7 +735,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/shared_docs.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sorting.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -743,7 +743,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/${MODPY_PYCACHE}api.
 lib/python${MODPY_VERSION}/site-packages/pandas/core/sparse/api.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/${MODPY_PYCACHE}accessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -757,7 +757,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/base.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/strings/object_array.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/${MODPY_PYCACHE}datetimes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -774,7 +774,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/timedeltas.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/tools/times.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/${MODPY_PYCACHE}hashing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -785,7 +785,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/util/hashing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/util/numba_.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/core/window/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/core/window/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -811,12 +811,12 @@ lib/python${MODPY_VERSION}/site-packages/pandas/core/window/online.py
 lib/python${MODPY_VERSION}/site-packages/pandas/core/window/rolling.py
 lib/python${MODPY_VERSION}/site-packages/pandas/errors/
 lib/python${MODPY_VERSION}/site-packages/pandas/errors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/errors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/errors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/errors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/errors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -853,14 +853,14 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/_util.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/api.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/clipboards.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/common.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -893,7 +893,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/excel/_xlsxwriter.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/feather_format.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/formats/${MODPY_PYCACHE}_color_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -947,7 +947,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/gbq.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/html.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/json/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/json/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/json/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/json/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/json/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -963,7 +963,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/orc.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parquet.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/parsers/${MODPY_PYCACHE}arrow_parser_wrapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -985,7 +985,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/pickle.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/pytables.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/io/sas/${MODPY_PYCACHE}sas7bdat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1006,7 +1006,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/stata.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/xml.py
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1016,7 +1016,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/plotting/${MODPY_PYCACHE}_misc.$
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_core.py
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/plotting/_matplotlib/${MODPY_PYCACHE}boxplot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1051,7 +1051,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/pyproject.toml
 lib/python${MODPY_VERSION}/site-packages/pandas/testing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}test_aggregation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1082,7 +1082,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}test_take.
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/${MODPY_PYCACHE}test_take.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1093,7 +1093,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/test_api.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/api/test_types.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1128,7 +1128,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/test_series_transfor
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/apply/test_str.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1163,7 +1163,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/test_period.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arithmetic/test_timedelta64.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}masked_shared.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1182,7 +1182,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/${MODPY_PYCACHE}test_timedeltas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1217,7 +1217,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/test_reduct
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/boolean/test_repr.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/${MODPY_PYCACHE}test_algos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1270,7 +1270,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_ta
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/categorical/test_warnings.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1284,7 +1284,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/test_cumu
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/datetimes/test_reductions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1319,7 +1319,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/test_repr.
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/floating/test_to_numpy.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1354,7 +1354,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/test_reduct
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/integer/test_repr.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/${MODPY_PYCACHE}test_astype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1374,7 +1374,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/test_inter
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/interval/test_overlaps.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1392,7 +1392,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked/test_indexin
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/masked_shared.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/${MODPY_PYCACHE}test_indexing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1403,7 +1403,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/test_indexin
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/numpy_/test_numpy.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/${MODPY_PYCACHE}test_arrow_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1420,7 +1420,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/test_constru
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/period/test_reductions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/${MODPY_PYCACHE}test_accessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1458,7 +1458,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/test_reducti
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/sparse/test_unary.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/string_/${MODPY_PYCACHE}test_string.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1475,7 +1475,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/test_period.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/test_timedeltas.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1489,7 +1489,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/test_cum
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/arrays/timedeltas/test_reductions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1518,7 +1518,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/test_unique.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/base/test_value_counts.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/${MODPY_PYCACHE}test_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1529,7 +1529,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/test_compat.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/computation/test_eval.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1540,7 +1540,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/test_config.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/config/test_localization.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCACHE}test_extract_array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1548,7 +1548,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/construction/test_extract_array.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}test_array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1583,7 +1583,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/index/${MODPY_PYCACHE}test_datetimeindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1615,7 +1615,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/test_util.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/copy_view/util.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}test_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1632,7 +1632,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/${MODPY_PYCACHE}test_missing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/cast/${MODPY_PYCACHE}test_can_hold_element.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1676,7 +1676,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/test_inference.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/dtypes/test_missing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1705,7 +1705,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/${MODPY_PYCACHE}test_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1716,7 +1716,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/array_with_attr/test_array_with_attr.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/${MODPY_PYCACHE}accumulate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1776,7 +1776,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/base/setitem.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1784,7 +1784,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/date/array.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1795,7 +1795,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/array.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/decimal/test_decimal.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1806,7 +1806,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/array.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/json/test_json.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/list/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1828,7 +1828,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/test_sparse.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/extension/test_string.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1877,7 +1877,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/common.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/${MODPY_PYCACHE}test_from_dict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1888,7 +1888,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/test_fr
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/constructors/test_from_records.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/${MODPY_PYCACHE}test_coercion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1932,7 +1932,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/test_where.
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/indexing/test_xs.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/methods/${MODPY_PYCACHE}test_add_prefix_suffix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2199,7 +2199,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/test_unary.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/frame/test_validate.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/${MODPY_PYCACHE}test_duplicate_labels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2225,7 +2225,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/test_series.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/generic/test_to_xarray.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2278,7 +2278,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/${MODPY_PYCACHE}test_timegrouper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/${MODPY_PYCACHE}test_aggregate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2296,7 +2296,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/aggregate/test_oth
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/methods/${MODPY_PYCACHE}test_corrwith.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2360,7 +2360,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/test_reductions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/test_timegrouper.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/${MODPY_PYCACHE}test_numba.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2371,7 +2371,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/test_num
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/groupby/transform/test_transform.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2402,7 +2402,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/${MODPY_PYCACHE}test_subclass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2428,7 +2428,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/test_se
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/base_class/test_where.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/${MODPY_PYCACHE}test_append.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2467,7 +2467,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/categorical/test_s
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/${MODPY_PYCACHE}test_drop_duplicates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2493,7 +2493,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/test
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimelike_/test_value_counts.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2532,7 +2532,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/${MODPY_PYCACHE}test_timezones.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/methods/${MODPY_PYCACHE}test_asof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2620,7 +2620,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_set
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/datetimes/test_timezones.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/${MODPY_PYCACHE}test_astype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2658,7 +2658,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/test_pick
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/interval/test_setops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2747,7 +2747,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/test_sorting
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/multi/test_take.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/${MODPY_PYCACHE}test_astype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2767,7 +2767,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/test_numer
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/numeric/test_setops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/${MODPY_PYCACHE}test_astype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2778,7 +2778,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/test_astype
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/object/test_indexing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2813,7 +2813,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/${MODPY_PYCACHE}test_tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/methods/${MODPY_PYCACHE}test_asfreq.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2860,7 +2860,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/test_setops
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/period/test_tools.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/ranges/${MODPY_PYCACHE}test_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2892,7 +2892,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/test_setops.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/test_subclass.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2925,7 +2925,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/${MODPY_PYCACHE}test_timedelta_range.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/methods/${MODPY_PYCACHE}test_astype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2962,7 +2962,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_ti
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexes/timedeltas/test_timedelta_range.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3003,7 +3003,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/common.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/${MODPY_PYCACHE}test_interval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3014,7 +3014,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/test_int
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/interval/test_interval_new.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/multiindex/${MODPY_PYCACHE}test_chaining_and_caching.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3067,7 +3067,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/test_partial.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/indexing/test_scalar.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/${MODPY_PYCACHE}test_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3081,7 +3081,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/test_spec_conf
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/interchange/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3095,7 +3095,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/test_internals.p
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/internals/test_managers.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3137,7 +3137,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/${MODPY_PYCACHE}test_st
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/${MODPY_PYCACHE}test_odf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3166,7 +3166,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/test_xlrd.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/excel/test_xlsxwriter.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}test_console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3195,7 +3195,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/${MODPY_PYCACHE}test_to_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/style/${MODPY_PYCACHE}test_bar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3246,7 +3246,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/formats/test_to_string.
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/generate_legacy_storage_files.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3278,7 +3278,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/test_readlines.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/json/test_ujson.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3327,7 +3327,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/${MODPY_PYCACHE}test_upcast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/${MODPY_PYCACHE}test_chunksize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3369,7 +3369,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/common/test_verb
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/dtypes/${MODPY_PYCACHE}test_categorical.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3404,7 +3404,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/test_unsupported
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/test_upcast.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/${MODPY_PYCACHE}test_parse_dates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3418,7 +3418,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/test_str
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/parser/usecols/test_usecols_basic.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3480,7 +3480,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/test_time_seri
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/pytables/test_timezones.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/sas/${MODPY_PYCACHE}test_byteswap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3513,7 +3513,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/test_sql.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/test_stata.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3530,7 +3530,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/test_xml.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/io/xml/test_xml_dtypes.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/${MODPY_PYCACHE}test_hashtable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3547,7 +3547,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/test_lib.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/libs/test_libalgos.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3578,7 +3578,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/common.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/frame/${MODPY_PYCACHE}test_frame.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3611,7 +3611,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/test_series.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/plotting/test_style.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/${MODPY_PYCACHE}test_reductions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3622,7 +3622,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/test_reductions
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reductions/test_stat_reductions.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3651,7 +3651,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/test_time_grouper
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/resample/test_timedelta.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}test_crosstab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3676,7 +3676,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3717,7 +3717,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/test_series
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/concat/test_sort.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/merge/${MODPY_PYCACHE}test_join.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3753,7 +3753,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/test_union_categor
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/reshape/test_util.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}test_na_scalar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3762,7 +3762,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/${MODPY_PYCACHE}test_nat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3785,7 +3785,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/test_inter
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/interval/test_overlaps.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/period/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3801,7 +3801,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/test_na_scalar.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/test_nat.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3814,7 +3814,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/${MODPY_PYCACHE}test_timedelta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/methods/${MODPY_PYCACHE}test_as_unit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3829,7 +3829,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/test_form
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timedelta/test_timedelta.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}test_arithmetic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3846,7 +3846,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/${MODPY_PYCACHE}test_timezones.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/methods/${MODPY_PYCACHE}test_as_unit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3884,7 +3884,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/test_time
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/scalar/timestamp/test_timezones.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3917,7 +3917,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/${MODPY_PYCACHE}test_validate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/${MODPY_PYCACHE}test_cat_accessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3940,7 +3940,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/test_str_
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/accessors/test_struct_accessor.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/${MODPY_PYCACHE}test_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3978,7 +3978,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/test_where
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/indexing/test_xs.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/methods/${MODPY_PYCACHE}test_add_prefix_suffix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4207,7 +4207,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/test_unary.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/series/test_validate.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/strings/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4255,7 +4255,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/test_sorting.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/test_take.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/${MODPY_PYCACHE}test_to_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4272,12 +4272,12 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/test_to_time.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tools/test_to_timedelta.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/${MODPY_PYCACHE}test_freq_code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4291,7 +4291,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/test_f
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/frequencies/test_inference.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/${MODPY_PYCACHE}test_calendar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4308,7 +4308,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/test_holid
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/holiday/test_observance.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4376,7 +4376,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/test_week.
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tseries/offsets/test_year.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4435,7 +4435,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/test_to_offset.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/tslibs/test_tzconversion.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4515,7 +4515,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/test_validate_inclusi
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/util/test_validate_kwargs.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4557,7 +4557,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/conftest.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/moments/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4591,7 +4591,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/test_timeseries_win
 lib/python${MODPY_VERSION}/site-packages/pandas/tests/window/test_win_type.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tseries/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/tseries/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4608,7 +4608,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tseries/holiday.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tseries/offsets.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4634,6 +4634,6 @@ lib/python${MODPY_VERSION}/site-packages/pandas/util/_tester.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/_validators.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/version/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/version/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/util/version/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/util/version/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pandas/util/version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

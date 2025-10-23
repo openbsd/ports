@@ -1,6 +1,6 @@
 bin/prover9-mace4
 libexec/prover9/p9m4/
-${MODPY_COMMENT}libexec/prover9/p9m4/${MODPY_PYCACHE}/
+libexec/prover9/p9m4/${MODPY_PYCACHE}/
 libexec/prover9/p9m4/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 libexec/prover9/p9m4/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 libexec/prover9/p9m4/${MODPY_PYCACHE}files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

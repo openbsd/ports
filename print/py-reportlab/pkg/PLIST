@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/reportlab-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/reportlab-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/reportlab/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}rl_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/zx______.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/zy______.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}renderPDF.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}widg
 @so lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/_renderPM.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}code128.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/usps4s.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/widgets.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/charts/${MODPY_PYCACHE}areas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -182,7 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/renderSVG.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/renderbase.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/${MODPY_PYCACHE}bubble.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -241,7 +241,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/utils.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgetbase.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}adjustableArrow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -268,7 +268,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/table.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/PyFontify.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}PyFontify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}PyFontify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -369,7 +369,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/lib/validators.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/yaml.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_can_cmap_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -476,7 +476,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/rl_codecs.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/ttfonts.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -496,7 +496,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/pdfimages.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfgen/textobject.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}doctemplate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

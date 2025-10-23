@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/boto3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/data/sqs/2012-11-05/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/sqs/2012-11-05/resources-1.json
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/docs/utils.py
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/waiter.py
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}conditions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/transform.py
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/types.py
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}createtags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/examples/s3.rst
 lib/python${MODPY_VERSION}/site-packages/boto3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/resources/params.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/response.py
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

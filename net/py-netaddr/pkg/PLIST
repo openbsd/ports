@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/netaddr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/cli.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/compat.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/${MODPY_PYCACHE}subnet_splitter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/subnet_splitter.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/core.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/eui/
 lib/python${MODPY_VERSION}/site-packages/netaddr/eui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/eui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/eui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/eui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/eui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/eui/${MODPY_PYCACHE}ieee.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/eui/oui.txt
 lib/python${MODPY_VERSION}/site-packages/netaddr/fbsocket.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/ip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/ip/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/${MODPY_PYCACHE}glob.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/ip/rfc1924.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/sets.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/${MODPY_PYCACHE}eui48.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,14 +90,14 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv4.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv6.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}test_netaddr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/${MODPY_PYCACHE}test_netaddr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}test_pubsub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -105,7 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/core/test_pubsub.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/${MODPY_PYCACHE}test_eui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/test_eui.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/eui/test_ieee_parsers.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/${MODPY_PYCACHE}test_cidr_v4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -183,7 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/test_platform_osx.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/ip/test_socket_module_fallback.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/tests/strategy/${MODPY_PYCACHE}test_eui48_strategy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

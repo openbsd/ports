@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/rss2email/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/rss2email/feeds.py
 lib/python${MODPY_VERSION}/site-packages/rss2email/main.py
 lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/
 lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}downcase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

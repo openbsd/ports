@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/printrun-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/printrun-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/printrun/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/${MODPY_PYCACHE}eventhandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -62,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/gcoder.py
 lib/python${MODPY_VERSION}/site-packages/printrun/gcview.py
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}panel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}trackball.$
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/${MODPY_PYCACHE}trackball.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/libtatlin/${MODPY_PYCACHE}actors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/gl/panel.py
 lib/python${MODPY_VERSION}/site-packages/printrun/gl/trackball.py
 lib/python${MODPY_VERSION}/site-packages/printrun/gui/
 lib/python${MODPY_VERSION}/site-packages/printrun/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/gui/${MODPY_PYCACHE}bufferedcanvas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -120,7 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/objectplater.py
 lib/python${MODPY_VERSION}/site-packages/printrun/packer.py
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}sample.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/plugins/${MODPY_PYCACHE}sample
 lib/python${MODPY_VERSION}/site-packages/printrun/plugins/sample.py
 lib/python${MODPY_VERSION}/site-packages/printrun/power/
 lib/python${MODPY_VERSION}/site-packages/printrun/power/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/power/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/power/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/power/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/power/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/power/${MODPY_PYCACHE}osx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -142,7 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/printrun/rpc.py
 lib/python${MODPY_VERSION}/site-packages/printrun/settings.py
 lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/
 lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/printrun/spoolmanager/${MODPY_PYCACHE}spoolmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

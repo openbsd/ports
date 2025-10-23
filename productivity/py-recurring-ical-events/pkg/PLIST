@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/recurring_ical_events-${MODPY_DISTV}.di
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/.gitignore
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/${MODPY_PYCACHE}v
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/_version.py
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/adapters/${MODPY_PYCACHE}alarm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/pages.py
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/query.py
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/${MODPY_PYCACHE}alarm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/base.py
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/selection/name.py
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recurring_ical_events/series/${MODPY_PYCACHE}alarm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

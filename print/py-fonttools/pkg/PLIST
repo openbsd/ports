@@ -6,7 +6,7 @@ bin/ttx
 lib/python${MODPY_VERSION}/site-packages/fontTools/
 lib/python${MODPY_VERSION}/site-packages/fontTools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/afmLib.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/agl.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/${MODPY_PYCACHE}specializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/specializer.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/cffLib/width.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,13 +60,13 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/table_builder.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/colorLib/unbuilder.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/config/
 lib/python${MODPY_VERSION}/site-packages/fontTools/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,7 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/errors.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/cu2qu/ufo.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/designspaceLib/${MODPY_PYCACHE}split.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/MacRoman.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/StandardEncoding.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/${MODPY_PYCACHE}MacRoman.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/${MODPY_PYCACHE}MacRoman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/${MODPY_PYCACHE}StandardEncoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/encodings/codecs.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/feaLib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,7 +155,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/help.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/merge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/merge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -183,7 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/merge/unicode.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/merge/util.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/${MODPY_PYCACHE}arrayTools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -270,7 +270,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/misc/macCreatorType.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/macRes.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/misc/plistlib/py.typed
@@ -293,14 +293,14 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/misc/xmlWriter.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/mtiLib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -315,7 +315,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/maxContextCalc.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -325,7 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/fontTools/otlLib/optimize/gpos.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/pens/${MODPY_PYCACHE}areaPen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -414,7 +414,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/pens/wxPen.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -433,7 +433,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/qu2cu/qu2cu.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/subset/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/subset/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -449,12 +449,12 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/subset/svg.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/subset/util.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/${MODPY_PYCACHE}arc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -468,13 +468,13 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/parser.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/svgLib/path/shapes.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/t1Lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/tfmLib.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/${MODPY_PYCACHE}macUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -555,7 +555,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/V_D_M_X_.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/V_O_R_G_.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/V_V_A_R_.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/${MODPY_PYCACHE}B_A_S_E_.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/${MODPY_PYCACHE}B_A_S_E_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/tables/${MODPY_PYCACHE}BitmapGlyphMetrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -804,7 +804,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/ttLib/woff2.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ttx.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/ufoLib/${MODPY_PYCACHE}converters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -844,7 +844,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/OTTags.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/ScriptExtensions.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/Scripts.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}Blocks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}Blocks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}OTTags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -858,7 +858,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/unicodedata/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -898,7 +898,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/featureVars.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/instancer/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -926,7 +926,7 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/stat.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/varLib/varStore.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}_future.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/_typing.py
 lib/python${MODPY_VERSION}/site-packages/zmq/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,14 +53,14 @@ lib/python${MODPY_VERSION}/site-packages/zmq/auth/thread.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}select.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/${MODPY_PYCACHE}select.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/${MODPY_PYCACHE}_poll.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,7 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/utils.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/_device.${MODPY_PYC_MAGIC_TAG}so
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/constants.py
 lib/python${MODPY_VERSION}/site-packages/zmq/decorators.py
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}basedevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -134,7 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/devices/proxysteerabledevice.py
 lib/python${MODPY_VERSION}/site-packages/zmq/error.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/ioloop.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/zmqstream.py
 lib/python${MODPY_VERSION}/site-packages/zmq/green/
 lib/python${MODPY_VERSION}/site-packages/zmq/green/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/green/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/green/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/green/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/green/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/green/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -164,7 +164,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/green/core.py
 lib/python${MODPY_VERSION}/site-packages/zmq/green/device.py
 lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/
 lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/green/eventloop/${MODPY_PYCACHE}ioloop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/green/poll.py
 lib/python${MODPY_VERSION}/site-packages/zmq/log/
 lib/python${MODPY_VERSION}/site-packages/zmq/log/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/log/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/log/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/log/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/log/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/log/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/log/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -188,7 +188,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/log/handlers.py
 lib/python${MODPY_VERSION}/site-packages/zmq/py.typed
 lib/python${MODPY_VERSION}/site-packages/zmq/ssh/
 lib/python${MODPY_VERSION}/site-packages/zmq/ssh/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/ssh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/ssh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/ssh/${MODPY_PYCACHE}forward.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -200,7 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/ssh/tunnel.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}attrsettr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -229,7 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/sugar/tracker.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/version.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -343,7 +343,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_z85.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_zmqstream.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zmq/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/${MODPY_PYCACHE}garbage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

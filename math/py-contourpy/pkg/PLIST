@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/contourpy-${MODPY_DISTV}.dist-info/META
 lib/python${MODPY_VERSION}/site-packages/contourpy-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/contourpy-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/contourpy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/contourpy/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/contourpy/typecheck.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/types.py
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/contourpy/util/${MODPY_PYCACHE}_build_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

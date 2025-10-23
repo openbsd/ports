@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/dnsviz-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/dnsviz-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dnsviz-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dnsviz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}base32.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}util.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/dnsviz/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/dnsviz/analysis/status.py
 lib/python${MODPY_VERSION}/site-packages/dnsviz/base32.py
 lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dnsviz/commands/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/dnsviz/transport.py
 lib/python${MODPY_VERSION}/site-packages/dnsviz/util.py
 lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dnsviz/viz/${MODPY_PYCACHE}dnssec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

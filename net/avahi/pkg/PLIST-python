@@ -6,6 +6,6 @@ lib/avahi/service-types.db
 lib/python${MODPY_VERSION}/site-packages/avahi/
 lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/avahi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/weasyprint-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/weasyprint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/${MODPY_PYCACHE}urls.${MODPY
 lib/python${MODPY_VERSION}/site-packages/weasyprint/anchors.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/css/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/css/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/${MODPY_PYCACHE}computed_values.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/css/targets.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/utils.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/${MODPY_PYCACHE}descriptors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/css/validation/properties.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/document.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/${MODPY_PYCACHE}border.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,7 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/border.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/color.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/draw/text.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/${MODPY_PYCACHE}boxes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/${MODPY_PYCACHE}boxes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/formatting_structure/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/html.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/images.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}absolute.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/logger.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/matrix.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/${MODPY_PYCACHE}anchors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -182,7 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/pdf/tags.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/stacking.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/${MODPY_PYCACHE}bounding_box.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,7 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/shapes.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/text.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/svg/utils.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/text/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weasyprint/text/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weasyprint/text/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weasyprint/text/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/text/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/text/${MODPY_PYCACHE}ffi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

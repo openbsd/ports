@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield-${MODPY_DISTV}.di
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_progress_yield/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

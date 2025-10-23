@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/toot-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/toot-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/toot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/toot/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/auth.py
 lib/python${MODPY_VERSION}/site-packages/toot/cache.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/
 lib/python${MODPY_VERSION}/site-packages/toot/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}accounts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/settings.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/
 lib/python${MODPY_VERSION}/site-packages/toot/tui/NOTES.md
 lib/python${MODPY_VERSION}/site-packages/toot/tui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/overlays.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/poll.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}richtext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/widgets.py
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/README.md
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/${MODPY_PYCACHE}hyperlink.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,7 +155,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/hyperlink.py
 lib/python${MODPY_VERSION}/site-packages/toot/urwidgets/text_embed.py
 lib/python${MODPY_VERSION}/site-packages/toot/utils/
 lib/python${MODPY_VERSION}/site-packages/toot/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

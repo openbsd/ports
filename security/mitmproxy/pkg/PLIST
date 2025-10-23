@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/mitmproxy-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mitmproxy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}addonmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,7 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/${MODPY_PYCACHE}websocket.${M
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addonmanager.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/${MODPY_PYCACHE}anticache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -175,7 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/next_layer.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboarding.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/addons/onboardingapp/static/
@@ -216,7 +216,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/command_lexer.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/connection.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -267,7 +267,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_graphql.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_http3.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/_view_image/${MODPY_PYCACHE}image_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -290,7 +290,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contentviews/base.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/README.md
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}imghdr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -298,7 +298,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/${MODPY_PYCACHE}imghd
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/LICENSE.BSD-3
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/click/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/imghdr.py
@@ -306,7 +306,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/README.md
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/kaitaistruct/${MODPY_PYCACHE}dtls_client_hello.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -347,7 +347,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/ASWBXMLCodePage
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/GlobalTokens.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/InvalidDataException.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}ASCommandResponse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}ASCommandResponse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}ASWBXML.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -364,7 +364,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/contrib/wbxml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/coretypes/${MODPY_PYCACHE}bidi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -386,7 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/hooks.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/http.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/io/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -405,7 +405,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/log.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/master.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -423,7 +423,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/${MODPY_PYCACHE}tls.${MOD
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/check.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/dns/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -448,7 +448,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/encoding.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/free_port.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -469,7 +469,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/cookies.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/headers.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/net/http/http1/${MODPY_PYCACHE}assemble.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -490,7 +490,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/options.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/optmanager.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/${MODPY_PYCACHE}linux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -510,7 +510,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/pf.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/platform/windows.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -539,7 +539,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/events.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layer.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}dns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -557,7 +557,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/dns.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -590,7 +590,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/http/_upstream_p
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/modes.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/layers/quic/${MODPY_PYCACHE}_client_hello_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -624,7 +624,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/proxy/utils.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/py.typed
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}concurrent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -632,7 +632,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/${MODPY_PYCACHE}concur
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/script/concurrent.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tcp.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/${MODPY_PYCACHE}taddons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/${MODPY_PYCACHE}taddons.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/${MODPY_PYCACHE}tflow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,7 +645,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/test/tutils.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tls.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}cmdline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -657,7 +657,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/${MODPY_PYCACHE}main.${
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/cmdline.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}commandexecutor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -708,7 +708,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/commander/${MODPY_PYCACHE}commander.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -725,7 +725,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/flowlist.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/flowview.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/console/grideditor/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -764,7 +764,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/dump.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/main.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -820,7 +820,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/types.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/udp.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/${MODPY_PYCACHE}arg_check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -861,7 +861,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/human.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/magisk.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/utils/pyinstaller/${MODPY_PYCACHE}hook-mitmproxy.addons.onboardingapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

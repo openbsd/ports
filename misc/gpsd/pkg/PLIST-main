@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/gps/
 lib/python${MODPY_VERSION}/site-packages/gps-${VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gps/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gps/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/README.mkd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/README.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}SABnzbd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/${MODPY_PYCACHE}SABnzbd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/
@@ -357,7 +357,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/requirements.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -489,7 +489,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/sorting.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/urlgrabber.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}apireg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -537,11 +537,11 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.cmd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.sh
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}Sample-PostProc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}Sample-PostProc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}extract_pot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}extract_pot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}make_mo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

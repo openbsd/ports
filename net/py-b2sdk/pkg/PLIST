@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/b2sdk/LICENSE
 lib/python${MODPY_VERSION}/site-packages/b2sdk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}version.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/b2sdk/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -62,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}version
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/${MODPY_PYCACHE}version_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/account_info/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/bucket.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/cache.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/encryption/${MODPY_PYCACHE}setting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/http_constants.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/included_sources.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/large_file/${MODPY_PYCACHE}part.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/raw_api.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/raw_simulator.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/replication/${MODPY_PYCACHE}monitoring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/LICENSE
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/NOTICE
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/README.md
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACHE}included_source_meta.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/requests/included_source_meta.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/scan/scan.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/session.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/range.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/stream/wrapper.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -230,14 +230,14 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/report.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/sync/sync.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}transfer_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/${MODPY_PYCACHE}transfer_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/${MODPY_PYCACHE}emerger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -255,7 +255,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/excepti
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/executor.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/planner/${MODPY_PYCACHE}part_definition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -271,7 +271,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/unbound
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/emerge/write_intent.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/${MODPY_PYCACHE}download_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -282,7 +282,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downlo
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloaded_file.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -299,7 +299,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downlo
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/inbound/downloader/stats_collector.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/outbound/${MODPY_PYCACHE}copy_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -327,7 +327,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/transfer/transfer_manag
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/types.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/${MODPY_PYCACHE}docs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -354,7 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/utils/typing.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_internal/version_utils.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}hook-b2sdk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -362,7 +362,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/${MODPY_PYCACHE}hook
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_pyinstaller/hook-b2sdk.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -370,7 +370,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/${MODPY_PYCACHE}exception.${M
 lib/python${MODPY_VERSION}/site-packages/b2sdk/_v3/exception.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/${MODPY_PYCACHE}account_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -390,7 +390,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/exception.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v0/sync.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/${MODPY_PYCACHE}account_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -424,7 +424,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/file_metadata.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/file_version.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/${MODPY_PYCACHE}monitoring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -433,7 +433,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/replication/monitoring.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/session.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/${MODPY_PYCACHE}encryption_provider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -462,7 +462,7 @@ lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/scan_policies.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v1/sync/sync.py
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/b2sdk/v2/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

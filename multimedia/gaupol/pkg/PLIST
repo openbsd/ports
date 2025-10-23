@@ -1,7 +1,7 @@
 bin/gaupol
 lib/python${MODPY_VERSION}/site-packages/aeidon/
 lib/python${MODPY_VERSION}/site-packages/aeidon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}calculator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}util.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/aeidon/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aeidon/agents/
 lib/python${MODPY_VERSION}/site-packages/aeidon/agents/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aeidon/agents/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aeidon/agents/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aeidon/agents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aeidon/agents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aeidon/agents/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/aeidon/errors.py
 lib/python${MODPY_VERSION}/site-packages/aeidon/file.py
 lib/python${MODPY_VERSION}/site-packages/aeidon/files/
 lib/python${MODPY_VERSION}/site-packages/aeidon/files/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aeidon/files/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aeidon/files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aeidon/files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aeidon/files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aeidon/files/${MODPY_PYCACHE}ass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/aeidon/markup.py
 lib/python${MODPY_VERSION}/site-packages/aeidon/markupconv.py
 lib/python${MODPY_VERSION}/site-packages/aeidon/markups/
 lib/python${MODPY_VERSION}/site-packages/aeidon/markups/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aeidon/markups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aeidon/markups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aeidon/markups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aeidon/markups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aeidon/markups/${MODPY_PYCACHE}ass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/gaupol-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/gaupol-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/gaupol-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gaupol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -272,7 +272,7 @@ lib/python${MODPY_VERSION}/site-packages/gaupol/${MODPY_PYCACHE}view.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/gaupol/action.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gaupol/actions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gaupol/actions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -304,7 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/gaupol/actions/video.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/actions/view.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/agents/
 lib/python${MODPY_VERSION}/site-packages/gaupol/agents/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gaupol/agents/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gaupol/agents/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gaupol/agents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gaupol/agents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gaupol/agents/${MODPY_PYCACHE}close.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -356,7 +356,7 @@ lib/python${MODPY_VERSION}/site-packages/gaupol/attrdict.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/config.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/
 lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gaupol/dialogs/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -441,7 +441,7 @@ lib/python${MODPY_VERSION}/site-packages/gaupol/page.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/player.py
 lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/
 lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gaupol/renderers/${MODPY_PYCACHE}float.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

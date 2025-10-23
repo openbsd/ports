@@ -3,7 +3,7 @@ bin/tls.py
 bin/tlsdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/
 lib/python${MODPY_VERSION}/site-packages/tlslite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlslite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tlslite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlslite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tlslite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/handshakehelpers.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/handshakesettings.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}asyncstatemachine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/tlsconnection.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/tlsrecordlayer.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}aes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

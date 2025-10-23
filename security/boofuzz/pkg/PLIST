@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/boofuzz-${MODPY_DISTV}.dist-info/licenses/AUTHORS.txt
 lib/python${MODPY_VERSION}/site-packages/boofuzz-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/boofuzz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}repeater.${MODP
 lib/python${MODPY_VERSION}/site-packages/boofuzz/${MODPY_PYCACHE}repeater.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/blocks/${MODPY_PYCACHE}aligned.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/cli.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/cli_context.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/connections/${MODPY_PYCACHE}base_socket_connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/ifuzz_logger.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/ifuzz_logger_backend.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/${MODPY_PYCACHE}ber.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/misc.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/legos/xdr.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/monitors/${MODPY_PYCACHE}base_monitor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/mutation.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/mutation_context.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/${MODPY_PYCACHE}cluster.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/graph.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/pgraph/node.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/primitives/${MODPY_PYCACHE}base_primitive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,7 +275,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/protocol_session_reference.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/repeater.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -295,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/target.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/sessions/web_app.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/${MODPY_PYCACHE}crash_binning.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -321,7 +321,7 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/process_monitor_pedrpc_se
 lib/python${MODPY_VERSION}/site-packages/boofuzz/utils/scada.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boofuzz/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boofuzz/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/web/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit-${MODPY_DISTV}.dist-info/top_le
 lib/python${MODPY_VERSION}/site-packages/guessit-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/guessit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/guessit/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,13 +36,13 @@ lib/python${MODPY_VERSION}/site-packages/guessit/__version__.py
 lib/python${MODPY_VERSION}/site-packages/guessit/api.py
 lib/python${MODPY_VERSION}/site-packages/guessit/config/
 lib/python${MODPY_VERSION}/site-packages/guessit/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/config/options.json
 lib/python${MODPY_VERSION}/site-packages/guessit/data/
 lib/python${MODPY_VERSION}/site-packages/guessit/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/data/tlds-alpha-by-domain.txt
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/options.py
 lib/python${MODPY_VERSION}/site-packages/guessit/reutils.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}match_processors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}processor
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/${MODPY_PYCACHE}processors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/${MODPY_PYCACHE}comparators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/validators.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/common/words.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/markers/${MODPY_PYCACHE}groups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/match_processors.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/processors.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}audio_codec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/video_codec.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/website.py
 lib/python${MODPY_VERSION}/site-packages/guessit/test/
 lib/python${MODPY_VERSION}/site-packages/guessit/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/test/episodes.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/movies.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}processors_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

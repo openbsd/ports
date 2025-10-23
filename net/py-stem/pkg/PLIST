@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/stem/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/cached_fallbacks.cfg
 lib/python${MODPY_VERSION}/site-packages/stem/cached_manual.sqlite
 lib/python${MODPY_VERSION}/site-packages/stem/client/
 lib/python${MODPY_VERSION}/site-packages/stem/client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}cell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/connection.py
 lib/python${MODPY_VERSION}/site-packages/stem/control.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}bandwidth_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/directory.py
 lib/python${MODPY_VERSION}/site-packages/stem/exit_policy.py
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/interpreter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/interpreter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/prereq.py
 lib/python${MODPY_VERSION}/site-packages/stem/process.py
 lib/python${MODPY_VERSION}/site-packages/stem/response/
 lib/python${MODPY_VERSION}/site-packages/stem/response/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/response/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/response/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/response/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/response/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/response/${MODPY_PYCACHE}add_onion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/settings.cfg
 lib/python${MODPY_VERSION}/site-packages/stem/socket.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/
 lib/python${MODPY_VERSION}/site-packages/stem/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

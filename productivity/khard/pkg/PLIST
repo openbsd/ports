@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/khard-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/khard/__init__.py
 lib/python${MODPY_VERSION}/site-packages/khard/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/khard/data/template.yaml
 lib/python${MODPY_VERSION}/site-packages/khard/formatter.py
 lib/python${MODPY_VERSION}/site-packages/khard/helpers/
 lib/python${MODPY_VERSION}/site-packages/khard/helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/khard/helpers/${MODPY_PYCACHE}interactive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

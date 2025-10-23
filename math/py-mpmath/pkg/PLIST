@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mpmath/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}ctx_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}visualization.${
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}visualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/calculus/${MODPY_PYCACHE}approximation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/ctx_mp_python.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/function_docs.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/functions/
 lib/python${MODPY_VERSION}/site-packages/mpmath/functions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/functions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/functions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/functions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/functions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/functions/${MODPY_PYCACHE}bessel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/functions/zetazeros.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/identification.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libmpi.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/math2.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/${MODPY_PYCACHE}calculus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,7 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/matrices.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/rational.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/tests/${MODPY_PYCACHE}extratest_gamma.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

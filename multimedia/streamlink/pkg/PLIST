@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/streamlink-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/streamlink/__init__.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/logger.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/options.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}requests_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,14 +51,14 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/packages/${MODPY_PYCACHE}req
 lib/python${MODPY_VERSION}/site-packages/streamlink/packages/requests_file.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/${MODPY_PYCACHE}useragents.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/useragents.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/validate.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/webbrowser/${MODPY_PYCACHE}aws_waf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/api/websocket.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugin/plugin.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}abematv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -493,7 +493,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/zeenews.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/py.typed
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/session/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/session/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -514,7 +514,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/session/plugins.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/session/session.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}ffmpegmux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -531,7 +531,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}wrapp
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/${MODPY_PYCACHE}wrappers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/dash/${MODPY_PYCACHE}dash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -548,7 +548,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/stream/file.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/filtered.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/${MODPY_PYCACHE}hls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -563,7 +563,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/stream/hls/segment.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/http.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/stream/segmented/${MODPY_PYCACHE}segment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -577,7 +577,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/stream/wrappers.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/user_input.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -630,7 +630,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/utils/times.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/utils/url.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/validate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/validate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/${MODPY_PYCACHE}_exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -647,7 +647,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/validate/_validate.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/validate/_validators.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}chromium.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -658,7 +658,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}w
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/${MODPY_PYCACHE}webbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -671,7 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/client.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/connection.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/cdp/devtools/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -723,7 +723,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/webbrowser/webbrowser.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink_cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink_cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -749,7 +749,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink_cli/argparser.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/compat.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/console/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -779,7 +779,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink_cli/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/main.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/output/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -799,7 +799,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink_cli/show_matchers.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/streamrunner.py
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink_cli/utils/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

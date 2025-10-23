@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/RELEASE.md
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,7 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_concurrent.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_defaults.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}ghostscript.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_metadata.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipeline.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_pipelines/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_version.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/api.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/${MODPY_PYCACHE}concurrency.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,7 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/builtin_plugins/tesseract_ocr.
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/cli.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/pdf.ttf
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/data/sRGB.icc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/extra_plugins/${MODPY_PYCACHE}semfree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -150,7 +150,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/hocrtransform/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/optimize.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfa.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/pdfinfo/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/py.typed
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/quality.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}_windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

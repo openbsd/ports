@@ -9,12 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/_pyinstaller/${MODPY_PYCACHE}hook-mitmproxy_linux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

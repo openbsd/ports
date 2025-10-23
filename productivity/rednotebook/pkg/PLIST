@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rednotebook/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/configuration.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/data.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/external/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/external/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rednotebook/external/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/external/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rednotebook/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/external/${MODPY_PYCACHE}elibintl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/files/rednotebook-highlight
 lib/python${MODPY_VERSION}/site-packages/rednotebook/files/t2t.lang
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/storage.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/templates.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rednotebook/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/${MODPY_PYCACHE}dates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

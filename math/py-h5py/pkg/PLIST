@@ -16,7 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/licenses/lzf/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/h5py/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}h5py_warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}version.${MODPY_PY
 @so lib/python${MODPY_VERSION}/site-packages/h5py/_errors.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/_hl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/_hl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/_hl/${MODPY_PYCACHE}attrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/h5py_warnings.py
 lib/python${MODPY_VERSION}/site-packages/h5py/ipy_completer.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -173,7 +173,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/conftest.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/data_files/vlen_string_dset.h5
@@ -215,7 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_selections.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_slicing.py
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/h5py/tests/test_vds/${MODPY_PYCACHE}test_highlevel_vds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

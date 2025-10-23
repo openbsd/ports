@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/exabgp-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/exabgp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}version.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/${MODPY_PYCACHE}bgp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/application/netlink.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/application/tojson.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}fsm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/${MODPY_PYCACHE}timer.${MODP
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/fsm.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/${MODPY_PYCACHE}direction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/nop.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/notification.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE}asn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/asn.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/open/capability/${MODPY_PYCACHE}addpath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -164,14 +164,14 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/refresh.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/unknown.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}eor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/${MODPY_PYCACHE}eor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/${MODPY_PYCACHE}aggregator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -214,14 +214,14 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/att
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/attributes.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}linkstate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/${MODPY_PYCACHE}linkstate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/link/${MODPY_PYCACHE}admingroup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -269,7 +269,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgp
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/linkstate.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/${MODPY_PYCACHE}isisarea.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -295,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgp
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/node/srcap.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgpls/prefix/${MODPY_PYCACHE}igpextags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -328,12 +328,12 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/bgp
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/clusterlist.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/${MODPY_PYCACHE}bandwidth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -374,7 +374,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/com
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/extended/traffic.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/${MODPY_PYCACHE}communities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -385,7 +385,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/com
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/initial/community.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/community/large/${MODPY_PYCACHE}communities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -405,7 +405,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/ori
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/pmsi.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/${MODPY_PYCACHE}ipv6sid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -429,7 +429,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/attribute/sr/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/eor.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}cidr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -450,7 +450,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/${MODPY_PYCACHE}vpls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/${MODPY_PYCACHE}link.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -470,7 +470,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/pr
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/prefixv6.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tlvs/${MODPY_PYCACHE}ifaceaddr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -497,7 +497,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/bgpls/tl
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/cidr.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/evpn/${MODPY_PYCACHE}ethernetad.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -525,7 +525,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/label.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/nlri.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/message/update/nlri/qualifier/${MODPY_PYCACHE}esi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -552,7 +552,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/neighbor.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/bgp/timer.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}capability.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -571,7 +571,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}us
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/${MODPY_PYCACHE}usage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/announce/${MODPY_PYCACHE}flow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -597,7 +597,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/check.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/configuration.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -621,7 +621,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/core/tokeniser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/environment.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/${MODPY_PYCACHE}match.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -641,7 +641,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/scope.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/flow/then.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -652,7 +652,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/parser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/l2vpn/vpls.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -669,7 +669,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/nexthop.p
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/neighbor/parser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -678,7 +678,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/operational/parser
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/parser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -687,7 +687,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/process/parser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/setup.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/${MODPY_PYCACHE}mpls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -701,7 +701,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/parser.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/static/route.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/${MODPY_PYCACHE}neighbor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -710,7 +710,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/template/neighbor.
 lib/python${MODPY_VERSION}/site-packages/exabgp/configuration/usage.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/data/
 lib/python${MODPY_VERSION}/site-packages/exabgp/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/data/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -720,7 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/debug.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/logger.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/${MODPY_PYCACHE}attributes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -744,7 +744,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/netlink.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/old.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/route/${MODPY_PYCACHE}address.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -763,7 +763,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/sequence.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/netlink/tc.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}family.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -773,7 +773,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/${MODPY_PYCACHE}resourc
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/family.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/${MODPY_PYCACHE}fragment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -790,7 +790,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/netmask.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/port.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}flag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -798,13 +798,13 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/ip/tcp/flag.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/iso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/protocol/resource.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}asynchronous.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -827,7 +827,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}protocol
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -836,7 +836,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}tran
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/${MODPY_PYCACHE}transcoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/${MODPY_PYCACHE}announce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -863,7 +863,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/command/watchdog.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/processes.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/api/response/${MODPY_PYCACHE}answer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -885,7 +885,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/listener.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/loop.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/network/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -907,7 +907,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/peer.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/reactor/protocol.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/rib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/rib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -924,7 +924,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/rib/incoming.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/rib/outgoing.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -968,7 +968,7 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/util/trace.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/util/usage.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}bitstring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

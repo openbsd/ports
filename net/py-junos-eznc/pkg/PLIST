@@ -2,7 +2,7 @@
 lib/python${MODPY_VERSION}/site-packages/jnpr/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/${MODPY_PYCACHE}version.${MO
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/_version.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}user_ssh
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/${MODPY_PYCACHE}user_ssh_key.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/phyport/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,13 +54,13 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/user.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfg/user_ssh_key.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/cfgro/srx.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/command/chassis_fan.yml
@@ -112,7 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/exception.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factcache.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/${MODPY_PYCACHE}cfgtable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/factory/viewfields.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/__example.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}__example.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}__example.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/vmhost.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/jxml.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/${MODPY_PYCACHE}chassis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -236,7 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/switch_style.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/swver.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/arp.yml
@@ -270,7 +270,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/vlan.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/xcvr.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/${MODPY_PYCACHE}autosys.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -300,7 +300,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/resources/user.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/rpcmeta.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -320,7 +320,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_ssh.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_telnet.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

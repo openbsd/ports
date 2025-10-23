@@ -1,11 +1,11 @@
 bin/gtg
 lib/python${MODPY_VERSION}/site-packages/GTG/
 lib/python${MODPY_VERSION}/site-packages/GTG/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/${MODPY_PYCACHE}backend_caldav.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/${MODPY_PYCACHE}backend_localfile.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/backends/periodic_import_backend.py
 lib/python${MODPY_VERSION}/site-packages/GTG/backends/sync_engine.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/
 lib/python${MODPY_VERSION}/site-packages/GTG/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/${MODPY_PYCACHE}borg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/core/keyring.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/networkmanager.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/
 lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/plugins/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/core/watchdog.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/xml.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/gtk/${MODPY_PYCACHE}tag_completion.
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/application.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/${MODPY_PYCACHE}addpanel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/${MODPY_PYCACHE}backendscombo.${MODPY_PYC_MAGIC_TAG}pyc
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/backendstree.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/configurepanel.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/${MODPY_PYCACHE}checkbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/${MODPY_PYCACHE}import_tags.${MODPY_PYC_MAGIC_TAG}pyc
@@ -117,7 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/period.p
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/backends/parameters_ui/text.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/${MODPY_PYCACHE}adaptive_button.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/browser/${MODPY_PYCACHE}backend_infobar.${MODPY_PYC_MAGIC_TAG}pyc
@@ -159,7 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/gtk/data/tag_editor.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/data/task_editor.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/${MODPY_PYCACHE}calendar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/editor/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -178,12 +178,12 @@ lib/python${MODPY_VERSION}/site-packages/GTG/gtk/preferences.py
 lib/python${MODPY_VERSION}/site-packages/GTG/gtk/tag_completion.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
@@ -196,7 +196,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/dev_console/window.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}task_str.${MODPY_PYC_MAGIC_TAG}pyc
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/${MODPY_PYCACHE}temp
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/${MODPY_PYCACHE}description_pocketmod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/${MODPY_PYCACHE}description_sexy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/${MODPY_PYCACHE}description_simple.${MODPY_PYC_MAGIC_TAG}pyc
@@ -232,7 +232,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/templates.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/${MODPY_PYCACHE}gamify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/gamify.py
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/gamify/prefs.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/${MODPY_PYCACHE}hamster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
@@ -250,14 +250,14 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/hamster/prefs.ui
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send-email.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/${MODPY_PYCACHE}sendEmail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/send_email/sendEmail.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched-tasks.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/${MODPY_PYCACHE}untouchedTasks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/untouchedTasks.py
@@ -265,7 +265,7 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/untouched_tasks/untouchedTa
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency-color.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/${MODPY_PYCACHE}urgency_color.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/urgency_color/preferences.ui

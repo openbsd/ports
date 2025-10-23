@@ -358,7 +358,7 @@ share/hplip/data/images/other/viewer.png
 share/hplip/data/images/other/zca.png
 share/hplip/ui5/
 share/hplip/ui5/__init__.py
-${MODPY_COMMENT}share/hplip/ui5/${MODPY_PYCACHE}/
+share/hplip/ui5/${MODPY_PYCACHE}/
 share/hplip/ui5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hplip/ui5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/hplip/ui5/${MODPY_PYCACHE}aboutdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

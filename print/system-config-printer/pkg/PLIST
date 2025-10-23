@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/cupshelpers-1.0-py${MODPY_VERSION}.egg-
 lib/python${MODPY_VERSION}/site-packages/cupshelpers-1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/cupshelpers-1.0-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/${MODPY_PYCACHE}cupshelpers.${MODPY_PYC_MAGIC_TAG}pyc

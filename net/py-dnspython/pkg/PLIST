@@ -1,7 +1,7 @@
 @pkgpath net/py-dnspython,python3
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_asyncbackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,7 +136,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/btreezone.py
 lib/python${MODPY_VERSION}/site-packages/dns/dnssec.py
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/dnssecalgs/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -179,7 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/py.typed
 lib/python${MODPY_VERSION}/site-packages/dns/query.py
 lib/python${MODPY_VERSION}/site-packages/dns/quic/
 lib/python${MODPY_VERSION}/site-packages/dns/quic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/quic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/quic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/quic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/quic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/quic/${MODPY_PYCACHE}_asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/WALLET.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/X25.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/ZONEMD.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}AFSDB.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}AFSDB.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}AMTRELAY.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -358,7 +358,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/A.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}A.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}A.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -379,7 +379,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/SRV.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/SVCB.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/WKS.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}A.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}A.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}AAAA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -411,7 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}WKS.${MO
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/${MODPY_PYCACHE}dnskeybase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -9,7 +9,7 @@ bin/rnstatus
 bin/rnx
 lib/python${MODPY_VERSION}/site-packages/CRNS/
 lib/python${MODPY_VERSION}/site-packages/CRNS/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/CRNS/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/CRNS/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/CRNS/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/CRNS/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/SHA512.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/Token.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/X25519.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}AES.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}AES.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}Ed25519.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/${MODPY_PYCACHE}aes128.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/aes128.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/aes/aes256.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Cryptography/pure25519/${MODPY_PYCACHE}_ed25519.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/KISSInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/RNodeInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/SerialInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/${MODPY_PYCACHE}KISSInterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/${MODPY_PYCACHE}KISSInterface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/Android/${MODPY_PYCACHE}RNodeInterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/SerialInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/TCPInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/UDPInterface.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}AX25KISSInterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}AX25KISSInterface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}AutoInterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Interfaces/util/${MODPY_PYCACHE}netinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Reticulum.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Transport.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/${MODPY_PYCACHE}rncp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,7 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rnsd.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rnstatus.py
 lib/python${MODPY_VERSION}/site-packages/RNS/Utilities/rnx.py
 lib/python${MODPY_VERSION}/site-packages/RNS/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}Buffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}Buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}Channel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/${MODPY_PYCACHE}_version.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/RNS/_version.py
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}configobj.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -231,7 +231,7 @@ lib/python${MODPY_VERSION}/site-packages/RNS/vendor/${MODPY_PYCACHE}umsgpack.${M
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/configobj.py
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/RNS/vendor/i2plib/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
