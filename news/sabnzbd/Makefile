@@ -1,6 +1,6 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			4.5.3
+VERSION =			4.5.4
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
@@ -20,6 +20,7 @@ MODULES =			lang/python
 
 BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
+				archivers/py-rarfile \
 				archivers/unrar \
 				archivers/unzip \
 				devel/py-cffi \

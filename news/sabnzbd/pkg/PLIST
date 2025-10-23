@@ -510,8 +510,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}p
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pybonjour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pystone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pystone.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarvolinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarvolinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}sleepless.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -529,7 +527,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/getperformance.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/kronos.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pybonjour.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pystone.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/rarfile.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/rarvolinfo.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/sleepless.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ssdp.py
