@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/fasteners-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/fasteners-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/fasteners-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/fasteners/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fasteners/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fasteners/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fasteners/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fasteners/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fasteners/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/fasteners/process_lock.py
 lib/python${MODPY_VERSION}/site-packages/fasteners/process_mechanism.py
 lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/
 lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fasteners/pywin32/${MODPY_PYCACHE}pywintypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

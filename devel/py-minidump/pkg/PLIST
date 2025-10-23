@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/minidump/__amain__.py
 lib/python${MODPY_VERSION}/site-packages/minidump/__init__.py
 lib/python${MODPY_VERSION}/site-packages/minidump/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__amain__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__amain__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/streams/ThreadListStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/TokenStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/UnloadedModuleListStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}CommentStreamA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}CommentStreamA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}CommentStreamW.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}peb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -137,7 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}peb
 lib/python${MODPY_VERSION}/site-packages/minidump/structures/peb.py
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}createminidump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/utils/privileges.py
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/privileges_types.py
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/winapi/${MODPY_PYCACHE}defines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

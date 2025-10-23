@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dtfabric/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}data_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/dtfabric/reader.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/registry.py
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtfabric/runtime/${MODPY_PYCACHE}byte_operations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

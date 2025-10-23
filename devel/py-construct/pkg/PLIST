@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/construct-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/construct-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/construct-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/construct/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/construct/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/construct/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/construct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/construct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/construct/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/construct/debug.py
 lib/python${MODPY_VERSION}/site-packages/construct/expr.py
 lib/python${MODPY_VERSION}/site-packages/construct/lib/
 lib/python${MODPY_VERSION}/site-packages/construct/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/construct/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/construct/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/construct/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/construct/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/construct/lib/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

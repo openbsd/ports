@@ -9,12 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/rope-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rope/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/
 lib/python${MODPY_VERSION}/site-packages/rope/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/libutils.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/nameanalyze.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}doa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/oi/soi.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/transform.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/factory.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,7 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/num
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/providers/pep0484_type_comments.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/type_hinting/resolvers/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/stdmods.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/taskhandle.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}datastructures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,7 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/versioning.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/worder.py
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}changestack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,7 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}generate.$
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/autoimport/${MODPY_PYCACHE}defs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/contrib/fixsyntax.py
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/generate.py
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/refactor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/refactor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/${MODPY_PYCACHE}change_signature.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -291,7 +291,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/refactor/extract.py
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/functionutils.py
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/refactor/importutils/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

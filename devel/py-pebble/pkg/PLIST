@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pebble-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pebble-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pebble-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pebble/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}functions.${MODP
 lib/python${MODPY_VERSION}/site-packages/pebble/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/process.py
 lib/python${MODPY_VERSION}/site-packages/pebble/asynchronous/thread.py
 lib/python${MODPY_VERSION}/site-packages/pebble/common/
 lib/python${MODPY_VERSION}/site-packages/pebble/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pebble/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pebble/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pebble/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pebble/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/common/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/pebble/common/shared.py
 lib/python${MODPY_VERSION}/site-packages/pebble/common/types.py
 lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/
 lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/concurrent/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/pebble/decorators.py
 lib/python${MODPY_VERSION}/site-packages/pebble/functions.py
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pebble/pool/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pebble/pool/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/${MODPY_PYCACHE}base_pool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

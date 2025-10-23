@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/send2trash-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/send2trash-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/send2trash/__init__.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/send2trash/compat.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/mac/
 lib/python${MODPY_VERSION}/site-packages/send2trash/mac/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/send2trash/mac/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/send2trash/mac/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/send2trash/mac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/send2trash/mac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/mac/${MODPY_PYCACHE}legacy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/send2trash/util.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/IFileOperationProgressSink.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/send2trash/win/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/send2trash/win/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/${MODPY_PYCACHE}IFileOperationProgressSink.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/${MODPY_PYCACHE}IFileOperationProgressSink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/win/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

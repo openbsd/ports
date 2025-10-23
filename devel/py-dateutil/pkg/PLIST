@@ -1,7 +1,7 @@
 @pkgpath devel/py-dateutil,python3
 lib/python${MODPY_VERSION}/site-packages/dateutil/
 lib/python${MODPY_VERSION}/site-packages/dateutil/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/dateutil/_version.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/easter.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser/
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/dateutil/relativedelta.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/rrule.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/dateutil/tzwin.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/utils.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}rebuild.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

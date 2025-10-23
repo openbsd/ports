@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_DISTV}.dist-info/top_level.
 lib/python${MODPY_VERSION}/site-packages/pip/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/__main__.py
 lib/python${MODPY_VERSION}/site-packages/pip/__pip-runner__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}__pip-runner__.${MO
 lib/python${MODPY_VERSION}/site-packages/pip/${MODPY_PYCACHE}__pip-runner__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/${MODPY_PYCACHE}build_env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -91,7 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/build_env.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cache.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/${MODPY_PYCACHE}autocompletion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,7 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/spinners.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/cli/status_codes.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -192,7 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/commands/wheel.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/configuration.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,7 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/distributions/wheel.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/${MODPY_PYCACHE}collector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/package_finder.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/index/sources.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/${MODPY_PYCACHE}_distutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -239,7 +239,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/locations/base.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/main.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/_json.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/base.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -267,7 +267,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/importlib/_envs.
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/metadata/pkg_resources.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/${MODPY_PYCACHE}candidate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -308,7 +308,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/target_python.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/models/wheel.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -334,7 +334,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/utils.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/network/xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -345,7 +345,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/${MODPY_PYCACHE}prepare.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/build/${MODPY_PYCACHE}build_tracker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -373,7 +373,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/check.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/freeze.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/install/${MODPY_PYCACHE}editable_legacy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -386,7 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/operations/prepare.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/pyproject.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/${MODPY_PYCACHE}constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -409,7 +409,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/req_set.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/req/req_uninstall.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -417,7 +417,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/base.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -425,7 +425,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/${MODPY
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/legacy/resolver.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -455,7 +455,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/resolution/resolvelib/res
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/self_outdated_check.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/${MODPY_PYCACHE}_jaraco_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -535,7 +535,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/virtualenv.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/utils/wheel.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/${MODPY_PYCACHE}bazaar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -556,12 +556,12 @@ lib/python${MODPY_VERSION}/site-packages/pip/_internal/vcs/versioncontrol.py
 lib/python${MODPY_VERSION}/site-packages/pip/_internal/wheel_builder.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -585,7 +585,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/adapter.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/cache.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/${MODPY_PYCACHE}file_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -603,7 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/wrapper.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -616,7 +616,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -636,7 +636,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/_toml_com
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/dependency_groups/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -660,7 +660,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/w64.exe
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -671,7 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/distro.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -698,7 +698,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/uts46data.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -712,7 +712,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/ext.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/fallback.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}_elffile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -749,7 +749,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_structures.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/licenses/${MODPY_PYCACHE}_spdx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -765,13 +765,13 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/utils.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/version.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -798,7 +798,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/windows.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -833,13 +833,13 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/console.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filter.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatter.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/${MODPY_PYCACHE}_mapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -848,7 +848,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/formatters/_mappin
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexer.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/lexers/${MODPY_PYCACHE}_mapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -865,7 +865,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/sphinxext.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/style.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/styles/${MODPY_PYCACHE}_mapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -876,7 +876,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/unistring.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pygments/util.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYCACHE}_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -884,7 +884,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_impl.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process/${MODPY_PYCACHE}_in_process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -893,7 +893,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/_in_process
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyproject_hooks/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -949,7 +949,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/structures.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/utils.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/${MODPY_PYCACHE}providers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -963,7 +963,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/reporters.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -982,7 +982,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/structs.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1215,7 +1215,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/traceback.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/tree.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1230,7 +1230,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/_types.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/${MODPY_PYCACHE}_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1239,7 +1239,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/_writer.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli_w/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1260,7 +1260,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/_windows.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1289,7 +1289,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/connection.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYCACHE}_appengine_environ.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1307,7 +1307,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/contrib/_securetransport/${MODPY_PYCACHE}bindings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1326,14 +1326,14 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/fields.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/filepost.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1348,7 +1348,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/request.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/response.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

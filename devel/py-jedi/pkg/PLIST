@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jedi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jedi/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}utils.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/jedi/_compatibility.py
 lib/python${MODPY_VERSION}/site-packages/jedi/api/
 lib/python${MODPY_VERSION}/site-packages/jedi/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/api/${MODPY_PYCACHE}classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/api/keywords.py
 lib/python${MODPY_VERSION}/site-packages/jedi/api/project.py
 lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/
 lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/api/refactoring/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -91,7 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/debug.py
 lib/python${MODPY_VERSION}/site-packages/jedi/file_io.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/inference/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/inference/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/inference/base_value.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/cache.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/${MODPY_PYCACHE}access.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -165,7 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/mixed.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/compiled/subprocess/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -183,7 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/inference/finder.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/flow_analysis.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/gradual/${MODPY_PYCACHE}annotation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -228,7 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/inference/sys_path.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/utils.py
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/${MODPY_PYCACHE}decorator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -258,7 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/jedi/inference/value/namespace.py
 lib/python${MODPY_VERSION}/site-packages/jedi/parser_utils.py
 lib/python${MODPY_VERSION}/site-packages/jedi/plugins/
 lib/python${MODPY_VERSION}/site-packages/jedi/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jedi/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jedi/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jedi/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jedi/plugins/${MODPY_PYCACHE}django.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

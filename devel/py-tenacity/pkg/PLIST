@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tenacity/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/tenacity/_utils.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/after.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/
 lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

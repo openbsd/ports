@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gitdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/base.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/const.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gitdb/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/pack.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/stream.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/test/
 lib/python${MODPY_VERSION}/site-packages/gitdb/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gitdb/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/test/${MODPY_PYCACHE}lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/typ.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/util.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

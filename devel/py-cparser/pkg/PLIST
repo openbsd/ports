@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pycparser-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pycparser-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pycparser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pycparser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycparser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycparser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycparser/${MODPY_PYCACHE}_ast_gen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/pycparser/c_parser.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/lextab.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}cpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

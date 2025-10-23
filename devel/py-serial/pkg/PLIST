@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/pyserial-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/serial/
 lib/python${MODPY_VERSION}/site-packages/serial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/serial/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/serial/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/serial/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/serial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/serial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/serial/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,12 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/serial/serialutil.py
 lib/python${MODPY_VERSION}/site-packages/serial/serialwin32.py
 lib/python${MODPY_VERSION}/site-packages/serial/threaded/
 lib/python${MODPY_VERSION}/site-packages/serial/threaded/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/serial/threaded/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/serial/threaded/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/serial/threaded/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/serial/threaded/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/serial/tools/
 lib/python${MODPY_VERSION}/site-packages/serial/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/serial/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/serial/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/serial/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/serial/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/serial/tools/${MODPY_PYCACHE}hexlify_codec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/serial/tools/list_ports_windows.py
 lib/python${MODPY_VERSION}/site-packages/serial/tools/miniterm.py
 lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/
 lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/serial/urlhandler/${MODPY_PYCACHE}protocol_alt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

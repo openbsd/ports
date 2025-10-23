@@ -3,7 +3,7 @@
 @comment bin/easy_install
 lib/python${MODPY_VERSION}/site-packages/_distutils_hack/
 lib/python${MODPY_VERSION}/site-packages/_distutils_hack/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_distutils_hack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/_distutils_hack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/_distutils_hack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_distutils_hack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_distutils_hack/${MODPY_PYCACHE}override.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/_distutils_hack/override.py
 lib/python${MODPY_VERSION}/site-packages/distutils-precedence.pth
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/api_tests.txt
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_core_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}windows_supp
 lib/python${MODPY_VERSION}/site-packages/setuptools/_core_metadata.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}_log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -163,7 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/ccompiler.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/cmd.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/${MODPY_PYCACHE}_framework_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -225,7 +225,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/install_s
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/command/sdist.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/${MODPY_PYCACHE}numpy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -236,7 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/numpy.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compat/py39.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/${MODPY_PYCACHE}cygwin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -254,7 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/cygwi
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/errors.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/msvc.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/${MODPY_PYCACHE}test_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/${MODPY_PYCACHE}test_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/compilers/C/tests/${MODPY_PYCACHE}test_cygwin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -311,7 +311,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand-2.2.2.di
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand-2.2.2.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand-2.2.2.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/autocommand/${MODPY_PYCACHE}autoasync.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -338,12 +338,12 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect-7.3.1.dist-i
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect-7.3.1.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect-7.3.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/inflect/compat/${MODPY_PYCACHE}py38.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -381,12 +381,12 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco.text-3.12.1.d
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco.text-3.12.1.dist-info/REQUESTED
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco.text-3.12.1.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco.text-3.12.1.dist-info/top_level.txt
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/collections/py.typed
@@ -394,14 +394,14 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/context.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/functools/py.typed
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/Lorem ipsum.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/jaraco/text/${MODPY_PYCACHE}layouts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -430,7 +430,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs-4.2.2.d
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/platformdirs/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -464,7 +464,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard-4.3.0.dist
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard-4.3.0.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard-4.3.0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/${MODPY_PYCACHE}_checkers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -508,7 +508,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/archive_util.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/build_meta.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/${MODPY_PYCACHE}_requirestxt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -583,7 +583,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/command/setopt.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/test.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/compat/
 lib/python${MODPY_VERSION}/site-packages/setuptools/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/compat/${MODPY_PYCACHE}py310.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -601,7 +601,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/compat/py39.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/NOTICE
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/${MODPY_PYCACHE}_apply_pyprojecttoml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -616,7 +616,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/config/_apply_pyprojecttoml.
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/NOTICE
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/config/_validate_pyproject/${MODPY_PYCACHE}error_reporting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

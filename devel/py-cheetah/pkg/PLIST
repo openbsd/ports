@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/LoadTemplate.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/I18n.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/${MODPY_PYCACHE}I18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/${MODPY_PYCACHE}I18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/SkeletonPage.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/SkeletonPage.tmpl
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/_SkeletonPage.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/${MODPY_PYCACHE}SkeletonPage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/${MODPY_PYCACHE}SkeletonPage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/${MODPY_PYCACHE}_SkeletonPage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/TemplateCmdLineIface.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Test.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Unicode.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Analyzer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Boinker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/MondoReportDoc.txt
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/RecursiveNull.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/SiteHierarchy.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/${MODPY_PYCACHE}CGITemplate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/${MODPY_PYCACHE}CGITemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/${MODPY_PYCACHE}MondoReport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,7 +136,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/Indenter.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/Misc.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/WebInputMixin.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/${MODPY_PYCACHE}Indenter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/${MODPY_PYCACHE}Indenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/${MODPY_PYCACHE}Misc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -156,7 +156,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/htmlEncode.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/statprof.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Version.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}CacheRegion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}CacheRegion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}CacheStore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

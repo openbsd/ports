@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_DISTV}.dist-info/WHEE
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyparsing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyparsing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyparsing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyparsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyparsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyparsing/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/pyparsing/common.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing/core.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/
 lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyparsing/diagram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyparsing/exceptions.py
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/pyparsing/results.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing/testing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/
 lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyparsing/tools/${MODPY_PYCACHE}cvt_pyparsing_pep8_names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

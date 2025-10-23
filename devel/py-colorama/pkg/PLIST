@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/colorama/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}ansi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/colorama/ansitowin32.py
 lib/python${MODPY_VERSION}/site-packages/colorama/initialise.py
 lib/python${MODPY_VERSION}/site-packages/colorama/tests/
 lib/python${MODPY_VERSION}/site-packages/colorama/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/colorama/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/colorama/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/colorama/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/colorama/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/colorama/tests/${MODPY_PYCACHE}ansi_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

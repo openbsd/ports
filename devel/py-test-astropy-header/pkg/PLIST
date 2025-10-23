@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.di
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

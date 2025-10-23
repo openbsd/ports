@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/clint-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/clint/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/clint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/clint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/clint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/clint/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/clint/arguments.py
 lib/python${MODPY_VERSION}/site-packages/clint/eng.py
 lib/python${MODPY_VERSION}/site-packages/clint/packages/
 lib/python${MODPY_VERSION}/site-packages/clint/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/clint/packages/${MODPY_PYCACHE}orderedd
 lib/python${MODPY_VERSION}/site-packages/clint/packages/appdirs.py
 lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/
 lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/clint/packages/colorama/${MODPY_PYCACHE}ansi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/clint/pipes.py
 lib/python${MODPY_VERSION}/site-packages/clint/resources.py
 lib/python${MODPY_VERSION}/site-packages/clint/textui/
 lib/python${MODPY_VERSION}/site-packages/clint/textui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/clint/textui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/clint/textui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/clint/textui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/clint/textui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/clint/textui/${MODPY_PYCACHE}colored.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

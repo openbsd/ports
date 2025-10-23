@@ -1,7 +1,7 @@
 @pkgpath devel/py-gitpython,python3
 lib/python${MODPY_VERSION}/site-packages/git/
 lib/python${MODPY_VERSION}/site-packages/git/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/git/diff.py
 lib/python${MODPY_VERSION}/site-packages/git/exc.py
 lib/python${MODPY_VERSION}/site-packages/git/index/
 lib/python${MODPY_VERSION}/site-packages/git/index/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/index/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/index/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/index/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/index/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/git/index/typ.py
 lib/python${MODPY_VERSION}/site-packages/git/index/util.py
 lib/python${MODPY_VERSION}/site-packages/git/objects/
 lib/python${MODPY_VERSION}/site-packages/git/objects/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/objects/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/objects/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/objects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/objects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/objects/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/git/objects/commit.py
 lib/python${MODPY_VERSION}/site-packages/git/objects/fun.py
 lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/
 lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/objects/submodule/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,7 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/git/objects/util.py
 lib/python${MODPY_VERSION}/site-packages/git/py.typed
 lib/python${MODPY_VERSION}/site-packages/git/refs/
 lib/python${MODPY_VERSION}/site-packages/git/refs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/refs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/refs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/refs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/refs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/refs/${MODPY_PYCACHE}head.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -112,7 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/git/refs/tag.py
 lib/python${MODPY_VERSION}/site-packages/git/remote.py
 lib/python${MODPY_VERSION}/site-packages/git/repo/
 lib/python${MODPY_VERSION}/site-packages/git/repo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/repo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/git/repo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/git/repo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/git/repo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/git/repo/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

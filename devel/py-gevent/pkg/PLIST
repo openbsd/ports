@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gevent/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}_abstract_linkable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/_compat.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_config.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/_ffi/${MODPY_PYCACHE}callback.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/greenlet.py
 lib/python${MODPY_VERSION}/site-packages/gevent/hub.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/${MODPY_PYCACHE}_corecffi_build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/libev/corecffi.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libev/watcher.py
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/libuv/${MODPY_PYCACHE}_corecffi_build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -220,7 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/lock.py
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/monkey/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/monkey/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/monkey/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -255,7 +255,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/pywsgi.py
 lib/python${MODPY_VERSION}/site-packages/gevent/queue.py
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/resolver/${MODPY_PYCACHE}_addresses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -288,7 +288,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/ssl.py
 lib/python${MODPY_VERSION}/site-packages/gevent/subprocess.py
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}errorhandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -336,7 +336,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}travis.$
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/${MODPY_PYCACHE}sitecustomize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/${MODPY_PYCACHE}sitecustomize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/testing/coveragesite/sitecustomize.py
@@ -366,7 +366,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/2_7_keycert.pem
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -666,7 +666,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/tests/lock_tests.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/tests/monkey_package/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/astroid/__init__.py
 lib/python${MODPY_VERSION}/site-packages/astroid/__pkginfo__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__pkginfo__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/astroid_manager.py
 lib/python${MODPY_VERSION}/site-packages/astroid/bases.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -241,7 +241,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/helpers.py
 lib/python${MODPY_VERSION}/site-packages/astroid/inference_tip.py
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}dunder_lookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -250,7 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}obj
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/${MODPY_PYCACHE}objectmodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/${MODPY_PYCACHE}spec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -265,7 +265,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/manager.py
 lib/python${MODPY_VERSION}/site-packages/astroid/modutils.py
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}_base_nodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -287,7 +287,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/nodes/node_classes.py
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/node_ng.py
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/scoped_nodes/${MODPY_PYCACHE}mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

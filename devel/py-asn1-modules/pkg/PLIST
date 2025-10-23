@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}pem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

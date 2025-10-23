@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/TThreadStateCreator.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/TThreadStateDestroy.cpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/TUserGreenlet.cpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/greenlet/_greenlet.${MODPY_PYC_MAGIC_TAG}so
@@ -46,7 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_slp_switch.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_thread_support.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/greenlet/platform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/greenlet/platform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/setup_switch_x64_masm.cmd
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_x86_unix.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/slp_platformselect.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_clearing_run_switches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

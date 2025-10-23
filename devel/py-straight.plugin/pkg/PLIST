@@ -3,7 +3,7 @@ lib/python${MODPY_VERSION}/site-packages/straight/
 lib/python${MODPY_VERSION}/site-packages/straight.plugin-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/straight/plugin/
 lib/python${MODPY_VERSION}/site-packages/straight/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/straight/plugin/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

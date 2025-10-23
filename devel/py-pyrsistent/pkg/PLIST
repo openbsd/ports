@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyrsistent/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyrsistent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/${MODPY_PYCACHE}_checked_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -2,7 +2,7 @@
 @pkgpath devel/py-distutils-extra,python3
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}auto.${M
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/auto.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/${MODPY_PYCACHE}build_extra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

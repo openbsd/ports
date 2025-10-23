@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_DISTV}.dist-info/entry
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/nbformat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}_imports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,14 +43,14 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/_version.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/converter.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}words.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/${MODPY_PYCACHE}words.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/corpus/tests/${MODPY_PYCACHE}test_words.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/sentinel.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/sign.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/v1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/v1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/v1/nbjson.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v1/rwbase.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/v2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/v2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/v2/nbxml.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v2/rwbase.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/v3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/v3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/v3/nbpy.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v3/rwbase.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

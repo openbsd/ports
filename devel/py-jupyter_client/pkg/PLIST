@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/jupyter_client-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/_version.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/adapter.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/asynchronous/client.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/blocking/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/connect.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/consoleapp.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -107,7 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/managerabc.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/multikernelmanager.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/provisioning/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/runapp.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/session.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ssh/${MODPY_PYCACHE}forward.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/automat-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/automat-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/automat-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/automat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/automat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/automat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/automat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/automat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/automat/_methodical.py
 lib/python${MODPY_VERSION}/site-packages/automat/_runtimeproto.py
 lib/python${MODPY_VERSION}/site-packages/automat/_test/
 lib/python${MODPY_VERSION}/site-packages/automat/_test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

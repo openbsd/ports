@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/matrix_common-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/matrix_common-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/matrix_common-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/matrix_common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matrix_common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matrix_common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matrix_common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matrix_common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matrix_common/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/matrix_common/py.typed
 lib/python${MODPY_VERSION}/site-packages/matrix_common/regex.py
 lib/python${MODPY_VERSION}/site-packages/matrix_common/types/
 lib/python${MODPY_VERSION}/site-packages/matrix_common/types/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matrix_common/types/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matrix_common/types/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matrix_common/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matrix_common/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matrix_common/types/${MODPY_PYCACHE}mxc_uri.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

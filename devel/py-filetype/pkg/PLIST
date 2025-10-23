@@ -1,7 +1,7 @@
 @pkgpath devel/py-filetype,python3
 @comment lib/python${MODPY_VERSION}/site-packages/examples/
 @comment lib/python${MODPY_VERSION}/site-packages/examples/__init__.py
-@comment ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}/
+@comment lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}/
 @comment lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @comment lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}pyc
 @comment lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}bytes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/filetype-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/filetype-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/filetype/__init__.py
 lib/python${MODPY_VERSION}/site-packages/filetype/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/filetype/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/filetype/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/filetype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/filetype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filetype/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/filetype/helpers.py
 lib/python${MODPY_VERSION}/site-packages/filetype/match.py
 lib/python${MODPY_VERSION}/site-packages/filetype/types/
 lib/python${MODPY_VERSION}/site-packages/filetype/types/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/filetype/types/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/filetype/types/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/filetype/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/filetype/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filetype/types/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

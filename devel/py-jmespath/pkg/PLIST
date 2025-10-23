@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/jmespath-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/jmespath-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/jmespath-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jmespath/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jmespath/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jmespath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jmespath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jmespath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jmespath/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

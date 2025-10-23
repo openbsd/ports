@@ -1,14 +1,14 @@
 @pkgpath devel/py-protobuf,python3
 lib/python${MODPY_VERSION}/site-packages/google/
 lib/python${MODPY_VERSION}/site-packages/google/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/_upb/
 @so lib/python${MODPY_VERSION}/site-packages/google/_upb/_message.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}any.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,7 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/any_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/api_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/${MODPY_PYCACHE}plugin_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/empty_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/field_mask_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/${MODPY_PYCACHE}api_implementation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -151,7 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/proto_json.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/proto_text.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}cpp_message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -165,7 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/struct_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/symbol_database.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/text_encoding.py
@@ -176,7 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/type_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/unknown_fields.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/wrappers_pb2.py

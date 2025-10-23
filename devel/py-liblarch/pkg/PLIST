@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/${MODPY_PYCACHE}filteredtree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/liblarch/viewcount.py
 lib/python${MODPY_VERSION}/site-packages/liblarch/viewtree.py
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

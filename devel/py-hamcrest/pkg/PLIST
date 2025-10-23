@@ -1,12 +1,12 @@
 @pkgpath devel/py-hamcrest,python3
 lib/python${MODPY_VERSION}/site-packages/hamcrest/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}assert_that.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/base_description.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/base_matcher.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}allof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/raises.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/description.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}hasmethod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,12 +87,12 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/selfdescribingvalue.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/string_description.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/${MODPY_PYCACHE}is_empty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/issequence_
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/collection/issequence_onlycontaining.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PYCACHE}match_equality.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/integration/match_equality.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/${MODPY_PYCACHE}iscloseto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/iscloseto.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/number/ordering_comparison.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/${MODPY_PYCACHE}haslength.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/hasproperty.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/object/hasstring.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/${MODPY_PYCACHE}isequal_ignoring_case.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_DISTV}.dist-info/licenses/A
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}version.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}command_hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/_compat/packaging.py
 lib/python${MODPY_VERSION}/site-packages/pbr/build.py
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/find_package.py
 lib/python${MODPY_VERSION}/site-packages/pbr/git.py
 lib/python${MODPY_VERSION}/site-packages/pbr/hooks/
 lib/python${MODPY_VERSION}/site-packages/pbr/hooks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/hooks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/hooks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/hooks/${MODPY_PYCACHE}backwards.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/pbr_json.py
 lib/python${MODPY_VERSION}/site-packages/pbr/sphinxext.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -116,7 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}util.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/_compat/${MODPY_PYCACHE}test_commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/functional/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -176,7 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/CHANGES.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/MANIFEST.in
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/README.txt
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/
@@ -185,7 +185,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/b.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/c.rst
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/conf.py
@@ -196,7 +196,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/extra-file.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/git-extra-file.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/${MODPY_PYCACHE}_setup_hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

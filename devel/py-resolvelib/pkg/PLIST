@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/resolvelib-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/resolvelib-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/resolvelib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/resolvelib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/resolvelib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/resolvelib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/resolvelib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/resolvelib/${MODPY_PYCACHE}providers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/resolvelib/py.typed
 lib/python${MODPY_VERSION}/site-packages/resolvelib/reporters.py
 lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/
 lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/resolvelib/resolvers/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

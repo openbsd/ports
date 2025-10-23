@@ -4,7 +4,7 @@ bin/logilab-pytest
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/logilab/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/logilab/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/logilab/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/logilab/common/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/logilab/common/types.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/umessage.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/logilab/common/ureports/${MODPY_PYCACHE}docbook_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

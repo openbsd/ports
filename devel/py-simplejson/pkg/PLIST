@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/raw_json.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}_cibw_runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

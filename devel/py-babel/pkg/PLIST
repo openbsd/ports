@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/babel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1110,7 +1110,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/zu_ZA.dat
 lib/python${MODPY_VERSION}/site-packages/babel/localedata.py
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/localtime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/babel/localtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/${MODPY_PYCACHE}_fallback.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1127,7 +1127,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/localtime/_unix.py
 lib/python${MODPY_VERSION}/site-packages/babel/localtime/_win32.py
 lib/python${MODPY_VERSION}/site-packages/babel/messages/
 lib/python${MODPY_VERSION}/site-packages/babel/messages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

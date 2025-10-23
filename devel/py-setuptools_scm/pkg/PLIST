@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/.git_archival.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,7 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_config.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_entrypoints.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/pathtools.
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_get_version_impl.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/${MODPY_PYCACHE}dump_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

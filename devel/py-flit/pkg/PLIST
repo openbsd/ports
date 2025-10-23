@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/flit-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/flit-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/flit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flit/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/flit/upload.py
 lib/python${MODPY_VERSION}/site-packages/flit/validate.py
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flit/vcs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flit/vcs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,12 +70,12 @@ lib/python${MODPY_VERSION}/site-packages/flit/vcs/git.py
 lib/python${MODPY_VERSION}/site-packages/flit/vcs/hg.py
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flit/vendorized/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flit/vendorized/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit/vendorized/readme/${MODPY_PYCACHE}clean.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

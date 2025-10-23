@@ -5,7 +5,7 @@ bin/pynose
 lib/python${MODPY_VERSION}/site-packages/nose/
 lib/python${MODPY_VERSION}/site-packages/nose/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nose/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/nose/inspector.py
 lib/python${MODPY_VERSION}/site-packages/nose/loader.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}allmodules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/nose/result.py
 lib/python${MODPY_VERSION}/site-packages/nose/selector.py
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/sphinx/${MODPY_PYCACHE}pluginopts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -134,7 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/nose/sphinx/pluginopts.py
 lib/python${MODPY_VERSION}/site-packages/nose/suite.py
 lib/python${MODPY_VERSION}/site-packages/nose/tools/
 lib/python${MODPY_VERSION}/site-packages/nose/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/tools/${MODPY_PYCACHE}nontrivial.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

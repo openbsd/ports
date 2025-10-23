@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/parso/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}_compatibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/normalizer.py
 lib/python${MODPY_VERSION}/site-packages/parso/parser.py
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/pgen2/generator.py
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/grammar_parser.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/
 lib/python${MODPY_VERSION}/site-packages/parso/python/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

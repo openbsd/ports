@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/pexpect-${MODPY_DISTV}.dist-info/top_le
 lib/python${MODPY_VERSION}/site-packages/pexpect/ANSI.py
 lib/python${MODPY_VERSION}/site-packages/pexpect/FSM.py
 lib/python${MODPY_VERSION}/site-packages/pexpect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}ANSI.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}ANSI.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}FSM.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}FSM.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async_pre_await.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async_pre_await.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}_async_w_await.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

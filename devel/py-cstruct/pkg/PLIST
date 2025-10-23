@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cstruct-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/cstruct/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cstruct/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

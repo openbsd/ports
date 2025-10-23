@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_DISTV}.dist-info/entr
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/icalendar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/icalendar/parser_tools.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/prop.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/timezone/${MODPY_PYCACHE}equivalent_timezone_ids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

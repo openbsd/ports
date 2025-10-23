@@ -2,7 +2,7 @@
 @pkgpath devel/py-suds,python3
 lib/python${MODPY_VERSION}/site-packages/suds/
 lib/python${MODPY_VERSION}/site-packages/suds/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}argparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}wsse.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/suds/argparser.py
 lib/python${MODPY_VERSION}/site-packages/suds/bindings/
 lib/python${MODPY_VERSION}/site-packages/suds/bindings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/bindings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/bindings/${MODPY_PYCACHE}binding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/client.py
 lib/python${MODPY_VERSION}/site-packages/suds/metrics.py
 lib/python${MODPY_VERSION}/site-packages/suds/mx/
 lib/python${MODPY_VERSION}/site-packages/suds/mx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/mx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/mx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/mx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/mx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/mx/${MODPY_PYCACHE}appender.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/reader.py
 lib/python${MODPY_VERSION}/site-packages/suds/resolver.py
 lib/python${MODPY_VERSION}/site-packages/suds/sax/
 lib/python${MODPY_VERSION}/site-packages/suds/sax/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/sax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/sax/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/sax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/sax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/sax/${MODPY_PYCACHE}attribute.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/store.py
 lib/python${MODPY_VERSION}/site-packages/suds/sudsobject.py
 lib/python${MODPY_VERSION}/site-packages/suds/transport/
 lib/python${MODPY_VERSION}/site-packages/suds/transport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/transport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/transport/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/transport/https.py
 lib/python${MODPY_VERSION}/site-packages/suds/transport/options.py
 lib/python${MODPY_VERSION}/site-packages/suds/umx/
 lib/python${MODPY_VERSION}/site-packages/suds/umx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/umx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/umx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/umx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/umx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/umx/${MODPY_PYCACHE}attrlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -161,7 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/suds/wsdl.py
 lib/python${MODPY_VERSION}/site-packages/suds/wsse.py
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/xsd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/suds/xsd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/${MODPY_PYCACHE}depsort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

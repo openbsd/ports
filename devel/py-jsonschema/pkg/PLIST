@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/jsonschema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema/_typing.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/_utils.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/benchmarks/${MODPY_PYCACHE}const_vs_enum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/protocols.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema/tests/${MODPY_PYCACHE}_suite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

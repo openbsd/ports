@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/easyprocess-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/easyprocess-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/easyprocess-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/easyprocess/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/easyprocess/${MODPY_PYCACHE}unicodeutil
 lib/python${MODPY_VERSION}/site-packages/easyprocess/about.py
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

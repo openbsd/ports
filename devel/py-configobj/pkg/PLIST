@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/configobj-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/configobj-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/configobj-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/configobj/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/configobj/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/configobj/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/configobj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/configobj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/configobj/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,6 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/configobj/_version.py
 lib/python${MODPY_VERSION}/site-packages/configobj/validate.py
 lib/python${MODPY_VERSION}/site-packages/validate/
 lib/python${MODPY_VERSION}/site-packages/validate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/validate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/validate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/validate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/validate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

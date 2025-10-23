@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/cli.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/client.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/
 lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}gcs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -137,7 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/config.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/README.swift.rst
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}diffstat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -196,7 +196,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/stdint.h
 lib/python${MODPY_VERSION}/site-packages/dulwich/submodule.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_object_store.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

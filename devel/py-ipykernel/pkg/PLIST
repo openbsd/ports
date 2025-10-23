@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/ipykernel-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ipykernel/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/_eventloop_macos.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/_version.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/${MODPY_PYCACHE}comm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/embed.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/eventloops.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/${MODPY_PYCACHE}gtk3embed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/gui/gtkembed.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/heartbeat.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/inprocess/${MODPY_PYCACHE}blocking.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -133,7 +133,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/pickleutil.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/py.typed
 lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/pylab/${MODPY_PYCACHE}backend_inline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

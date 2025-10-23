@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/extension_helpers-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/extension_helpers-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/extension_helpers-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/extension_helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/extension_helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/${MODPY_PYCACHE}_openmp_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/extension_helpers/src/
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/src/compiler.c
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_openmp_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

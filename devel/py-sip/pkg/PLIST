@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/licenses/L
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sipbuild/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/configurable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/${MODPY_PYCACHE}distinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,7 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/distutils_builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/${MODPY_PYCACHE}bindings_configuration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/error_log.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/instantiations.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/api.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/code/code.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/extracts.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/formatters/${MODPY_PYCACHE}argument.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -159,7 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/type_hints.p
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/outputs/xml.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/${MODPY_PYCACHE}annotations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -179,7 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/parser.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/parser_manager.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/ply/${MODPY_PYCACHE}lex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -194,7 +194,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/parser/tokens.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/python_slots.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/resolver/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/generator/utils.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/installable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}abi_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -652,7 +652,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/setuptools_builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/toml.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

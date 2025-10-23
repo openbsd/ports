@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pycountry-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pycountry/COPYRIGHT.txt
 lib/python${MODPY_VERSION}/site-packages/pycountry/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycountry/${MODPY_PYCACHE}db.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -934,7 +934,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/iso316
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/iso639-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/py.typed
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}test_general.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}test_general.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/test_general.py

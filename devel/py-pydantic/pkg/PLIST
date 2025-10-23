@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pydantic-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pydantic-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pydantic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}_migration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}warnings.${MOD
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -179,7 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/datetime_parse.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/decorator.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/
 lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/deprecated/${MODPY_PYCACHE}class_validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -208,7 +208,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/error_wrappers.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/errors.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}arguments_schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -229,7 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/networks.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/parse.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/
 lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/plugin/${MODPY_PYCACHE}_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -248,7 +248,7 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/typing.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/utils.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/v1/
 lib/python${MODPY_VERSION}/site-packages/pydantic/v1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic/v1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic/v1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydantic/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/v1/${MODPY_PYCACHE}_hypothesis_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

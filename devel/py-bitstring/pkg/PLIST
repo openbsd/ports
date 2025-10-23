@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/bitstring-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/bitstring-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bitstring/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bitstring/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bitstring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bitstring/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bitstring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bitstring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bitstring/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

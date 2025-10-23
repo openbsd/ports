@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_core-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/jupyter_core-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_core/py.typed
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/troubleshoot.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_core/version.py

@@ -2,12 +2,12 @@
 bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/common/
 lib/python${MODPY_VERSION}/site-packages/elftools/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}construct_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/common/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/elftools/common/utils.py
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/construct/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/construct/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/construct/core.py
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/debug.py
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/construct/lib/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/macros.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}abbrevtable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/ranges.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/structs.py
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/ehabiinfo.py
 lib/python${MODPY_VERSION}/site-packages/elftools/ehabi/structs.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
