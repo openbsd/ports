@@ -10,7 +10,7 @@ lib/bluefish/
 @man man/man1/bluefish.1
 share/applications/bluefish.desktop
 share/bluefish/
-${MODPY_COMMENT}share/bluefish/${MODPY_PYCACHE}/
+share/bluefish/${MODPY_PYCACHE}/
 share/bluefish/${MODPY_PYCACHE}cssmin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/${MODPY_PYCACHE}cssmin.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/${MODPY_PYCACHE}jsmin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ share/bluefish/plugins/htmlbar/ui/
 share/bluefish/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 share/bluefish/plugins/zencoding/
 share/bluefish/plugins/zencoding/__init__.py
-${MODPY_COMMENT}share/bluefish/plugins/zencoding/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/${MODPY_PYCACHE}/
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}html_matcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ share/bluefish/plugins/zencoding/${MODPY_PYCACHE}zen_settings.${MODPY_PYC_MAGIC_
 share/bluefish/plugins/zencoding/${MODPY_PYCACHE}zen_settings.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/actions/
 share/bluefish/plugins/zencoding/actions/__init__.py
-${MODPY_COMMENT}share/bluefish/plugins/zencoding/actions/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/actions/${MODPY_PYCACHE}/
 share/bluefish/plugins/zencoding/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/plugins/zencoding/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/actions/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,7 +136,7 @@ share/bluefish/plugins/zencoding/actions/token.py
 share/bluefish/plugins/zencoding/actions/traverse.py
 share/bluefish/plugins/zencoding/filters/
 share/bluefish/plugins/zencoding/filters/__init__.py
-${MODPY_COMMENT}share/bluefish/plugins/zencoding/filters/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/filters/${MODPY_PYCACHE}/
 share/bluefish/plugins/zencoding/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/plugins/zencoding/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/filters/${MODPY_PYCACHE}comment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ share/bluefish/plugins/zencoding/filters/xsl.py
 share/bluefish/plugins/zencoding/html_matcher.py
 share/bluefish/plugins/zencoding/interface/
 share/bluefish/plugins/zencoding/interface/__init__.py
-${MODPY_COMMENT}share/bluefish/plugins/zencoding/interface/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/interface/${MODPY_PYCACHE}/
 share/bluefish/plugins/zencoding/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/plugins/zencoding/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/interface/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -183,7 +183,7 @@ share/bluefish/plugins/zencoding/interface/editor.py
 share/bluefish/plugins/zencoding/interface/file.py
 share/bluefish/plugins/zencoding/parser/
 share/bluefish/plugins/zencoding/parser/__init__.py
-${MODPY_COMMENT}share/bluefish/plugins/zencoding/parser/${MODPY_PYCACHE}/
+share/bluefish/plugins/zencoding/parser/${MODPY_PYCACHE}/
 share/bluefish/plugins/zencoding/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bluefish/plugins/zencoding/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/plugins/zencoding/parser/${MODPY_PYCACHE}abbreviation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

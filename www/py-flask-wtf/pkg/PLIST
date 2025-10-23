@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/flask_wtf-${MODPY_DISTV}.dist-info/WHEE
 lib/python${MODPY_VERSION}/site-packages/flask_wtf-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/flask_wtf/form.py
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/i18n.py
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/recaptcha/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

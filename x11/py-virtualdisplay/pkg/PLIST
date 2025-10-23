@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/abstractdisplay.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/display.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}headless.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

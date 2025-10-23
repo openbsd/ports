@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/httpcore-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/httpcore-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/httpcore-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/httpcore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/httpcore/${MODPY_PYCACHE}_utils.${MODPY
 lib/python${MODPY_VERSION}/site-packages/httpcore/_api.py
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpcore/_async/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpcore/_async/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/httpcore/_async/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/httpcore/_async/socks_proxy.py
 lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore/_backends/${MODPY_PYCACHE}anyio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/httpcore/_models.py
 lib/python${MODPY_VERSION}/site-packages/httpcore/_ssl.py
 lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore/_sync/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

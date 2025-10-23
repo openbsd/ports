@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}oauth1_auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}oauth
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/${MODPY_PYCACHE}oauth2_session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/compliance_fixes/${MODPY_PYCACHE}douban.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

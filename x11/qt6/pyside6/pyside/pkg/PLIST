@@ -169,13 +169,13 @@ include/PySide6/pysideweakref.h
 include/PySide6/qobjectconnect.h
 include/PySide6/signalmanager.h
 lib/cmake/PySide6/
-${MODPY_COMMENT}lib/cmake/PySide6/PySide6Config${MODPY_ABI3SO}.cmake
+lib/cmake/PySide6/PySide6Config${MODPY_ABI3SO}.cmake
 lib/cmake/PySide6/PySide6Config.cmake
 lib/cmake/PySide6/PySide6ConfigVersion.cmake
 lib/cmake/PySide6/PySide6Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/PySide6/PySide6Targets.cmake
 lib/cmake/PySide6Qml/
-${MODPY_COMMENT}lib/cmake/PySide6Qml/PySide6QmlConfig${MODPY_ABI3SO}.cmake
+lib/cmake/PySide6Qml/PySide6QmlConfig${MODPY_ABI3SO}.cmake
 lib/cmake/PySide6Qml/PySide6QmlConfig.cmake
 lib/cmake/PySide6Qml/PySide6QmlConfigVersion.cmake
 lib/cmake/PySide6Qml/PySide6QmlTargets${MODCMAKE_BUILD_SUFFIX}
@@ -198,7 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/Qt3DLogic.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/Qt3DRender.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtAsyncio/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -314,7 +314,7 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/QtWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtXml${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtXml.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PySide6/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PySide6/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PySide6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PySide6/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -325,7 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/_config.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/_git_pyside_version.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

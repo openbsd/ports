@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_DISTV}.dist-info/licenses/LICENSE-MIT
 lib/python${MODPY_VERSION}/site-packages/orjson/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orjson/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/orjson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/orjson/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/orjson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orjson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/orjson/orjson.${MODPY_PYC_MAGIC_TAG}so

@@ -2,7 +2,7 @@
 @pkgpath www/py-webpy,python3
 lib/python${MODPY_VERSION}/site-packages/web/
 lib/python${MODPY_VERSION}/site-packages/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/web/application.py
 lib/python${MODPY_VERSION}/site-packages/web/browser.py
 lib/python${MODPY_VERSION}/site-packages/web/contrib/
 lib/python${MODPY_VERSION}/site-packages/web/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web/contrib/${MODPY_PYCACHE}template.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

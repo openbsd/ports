@@ -3,7 +3,7 @@
 bin/showtime
 lib/python${MODPY_VERSION}/site-packages/showtime/
 lib/python${MODPY_VERSION}/site-packages/showtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}application_delegate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}window.${MODPY
 lib/python${MODPY_VERSION}/site-packages/showtime/application_delegate.py
 lib/python${MODPY_VERSION}/site-packages/showtime/drag_overlay.py
 lib/python${MODPY_VERSION}/site-packages/showtime/logging/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/showtime/logging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/showtime/logging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/showtime/logging/${MODPY_PYCACHE}color_log_formatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/showtime/logging/${MODPY_PYCACHE}color_log_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/showtime/logging/${MODPY_PYCACHE}session_file_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

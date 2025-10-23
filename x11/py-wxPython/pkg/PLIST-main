@@ -14,7 +14,7 @@ bin/wxdocs
 bin/wxget
 lib/python${MODPY_VERSION}/site-packages/wx/
 lib/python${MODPY_VERSION}/site-packages/wx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/${MODPY_PYCACHE}adv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/CDate.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ClickableHtmlWindow.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/${MODPY_PYCACHE}CDate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/${MODPY_PYCACHE}ClickableHtmlWindow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/activex.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/activexwrapper.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/${MODPY_PYCACHE}advancedsplash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/${MODPY_PYCACHE}aquabutton.${MODPY_PYC_MAGIC_TAG}pyc
@@ -187,7 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aquabutton.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/artmanager.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/${MODPY_PYCACHE}aui_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/aui/${MODPY_PYCACHE}aui_switcherdialog.${MODPY_PYC_MAGIC_TAG}pyc
@@ -239,7 +239,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/multidirdialog.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/peakmeter.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/${MODPY_PYCACHE}persist_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/persist/${MODPY_PYCACHE}persist_handlers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -254,7 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/pygauge.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/pyprogress.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/${MODPY_PYCACHE}art.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/ribbon/${MODPY_PYCACHE}art_aui.${MODPY_PYC_MAGIC_TAG}pyc
@@ -295,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/xlsgrid.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/agw/zoombar.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/${MODPY_PYCACHE}analogclock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -305,7 +305,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/analogclock.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/helpers.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/${MODPY_PYCACHE}buttontreectrlpanel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/lib_setup/${MODPY_PYCACHE}fontselect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -316,7 +316,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/analogclock/styles.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/anchors.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/art/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/art/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/art/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/art/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/art/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/art/${MODPY_PYCACHE}flagart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/art/${MODPY_PYCACHE}img2pyartprov.${MODPY_PYC_MAGIC_TAG}pyc
@@ -328,7 +328,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/calendar.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/checkbox.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/colourchooser/${MODPY_PYCACHE}intl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -353,7 +353,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/dragscroller.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/README.txt
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/editor/${MODPY_PYCACHE}images.${MODPY_PYC_MAGIC_TAG}pyc
@@ -383,13 +383,13 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/BBox.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/Colors.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/GUI.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}BBox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}Colors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}GUI.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/Utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/${MODPY_PYCACHE}FCEvents.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/${MODPY_PYCACHE}FCObjects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/floatcanvas/${MODPY_PYCACHE}FloatCanvas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -402,7 +402,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/foldmenu.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gestures.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/${MODPY_PYCACHE}dynamicsash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/gizmos/${MODPY_PYCACHE}ledctrl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -424,7 +424,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/langlistctrl.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/layoutf.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/${MODPY_PYCACHE}combobox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/${MODPY_PYCACHE}ctrl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -442,7 +442,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/textctrl.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/masked/timectrl.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/${MODPY_PYCACHE}grid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/mixins/${MODPY_PYCACHE}gridlabelrenderer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -466,7 +466,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/newevent.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/nvdlg.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/${MODPY_PYCACHE}bmpshape.${MODPY_PYC_MAGIC_TAG}pyc
@@ -488,7 +488,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/lines.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/ogl/oglmisc.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/${MODPY_PYCACHE}buttonpanel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/${MODPY_PYCACHE}images.${MODPY_PYC_MAGIC_TAG}pyc
@@ -507,7 +507,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/ReadMe.txt
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/Save.png
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/ZoomIn.png
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/ZoomOut.png
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/${MODPY_PYCACHE}encode_bitmaps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/bitmaps/encode_bitmaps.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pdfviewer/buttonpanel.py
@@ -521,7 +521,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/CHANGELOG.md
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/README.md
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}plotcanvas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -529,7 +529,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}polyobjects
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/plot/examples/${MODPY_PYCACHE}simple_example.${MODPY_PYC_MAGIC_TAG}pyc
@@ -546,7 +546,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/LICENSE_BSD_Simple.txt
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/README_WxPython.txt
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/RELEASE_NOTES.txt
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}policies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}pub.${MODPY_PYC_MAGIC_TAG}pyc
@@ -554,7 +554,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}setuparg1
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/${MODPY_PYCACHE}setupkwargs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}callables.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}imp2.${MODPY_PYC_MAGIC_TAG}pyc
@@ -575,7 +575,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}vali
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/${MODPY_PYCACHE}weakmethod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/${MODPY_PYCACHE}listenerimpl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/arg1/${MODPY_PYCACHE}publisher.${MODPY_PYC_MAGIC_TAG}pyc
@@ -592,7 +592,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/imp2.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/itopicdefnprovider.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/${MODPY_PYCACHE}datamsg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/core/kwargs/${MODPY_PYCACHE}listenerimpl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -626,7 +626,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/setuparg1.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/setupkwargs.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/${MODPY_PYCACHE}exchandling.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/pubsub/utils/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -655,7 +655,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/utils.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wordwrap.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/${MODPY_PYCACHE}wx_cairocffi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo/${MODPY_PYCACHE}wx_pycairo.${MODPY_PYC_MAGIC_TAG}pyc
@@ -825,7 +825,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/py/PySlices_32.png
 lib/python${MODPY_VERSION}/site-packages/wx/py/PyWrap.py
 lib/python${MODPY_VERSION}/site-packages/wx/py/README.txt
 lib/python${MODPY_VERSION}/site-packages/wx/py/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/py/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/py/${MODPY_PYCACHE}PyAlaCarte.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/py/${MODPY_PYCACHE}PyAlaMode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/py/${MODPY_PYCACHE}PyAlaModeTest.${MODPY_PYC_MAGIC_TAG}pyc
@@ -874,7 +874,7 @@ lib/python${MODPY_VERSION}/site-packages/wx/py/pseudo.py
 lib/python${MODPY_VERSION}/site-packages/wx/py/shell.py
 lib/python${MODPY_VERSION}/site-packages/wx/py/sliceshell.py
 lib/python${MODPY_VERSION}/site-packages/wx/py/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/py/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/py/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/py/tests/${MODPY_PYCACHE}test_interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/py/tests/${MODPY_PYCACHE}test_introspect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/py/tests/${MODPY_PYCACHE}test_pseudo.${MODPY_PYC_MAGIC_TAG}pyc
@@ -895,12 +895,12 @@ lib/python${MODPY_VERSION}/site-packages/wx/stc.py
 lib/python${MODPY_VERSION}/site-packages/wx/stc.pyi
 lib/python${MODPY_VERSION}/site-packages/wx/svg/
 lib/python${MODPY_VERSION}/site-packages/wx/svg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/svg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/svg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/wx/svg/_nanosvg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wx/tools/
 lib/python${MODPY_VERSION}/site-packages/wx/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wx/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wx/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wx/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/tools/${MODPY_PYCACHE}dbg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wx/tools/${MODPY_PYCACHE}genaxmodule.${MODPY_PYC_MAGIC_TAG}pyc

@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,12 +54,12 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}versioning.${MOD
 lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/_cli/util/${MODPY_PYCACHE}colour.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/addnodes.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/application.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/builders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/${MODPY_PYCACHE}_epub_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -107,7 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/builders/epub3.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/gettext.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}_assets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/_assets.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/_build_info.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/builders/text.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/xml.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/
 lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/cmd/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/config.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/directives/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/directives/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/${MODPY_PYCACHE}admonitions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/directives/other.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/directives/patches.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}_domains_container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -200,7 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/_domains_container.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/_index.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -219,7 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/changeset.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/citation.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/cpp/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -239,7 +239,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/javascript.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/math.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/${MODPY_PYCACHE}_annotations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -251,17 +251,17 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/python/_object.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/rst.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/std/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/environment/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/environment/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/${MODPY_PYCACHE}asset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,7 +275,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/indexentrie
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/adapters/toctree.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/environment/collectors/${MODPY_PYCACHE}asset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -297,7 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/errors.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/events.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}autosectionlabel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -333,7 +333,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/ext/${MODPY_PYCACHE}viewcode.${M
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -352,7 +352,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/_generate.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/apidoc/_shared.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/${MODPY_PYCACHE}directive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -376,7 +376,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autodoc/typehints.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosectionlabel.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/autosummary/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/ext/inheritance_diagram.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/intersphinx/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -421,7 +421,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/ext/linkcode.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/mathjax.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/ext/napoleon/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -437,7 +437,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/.tx/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/.tx/config
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ar/
@@ -786,7 +786,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/project.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -800,7 +800,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/registry.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/roles.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/search/
 lib/python${MODPY_VERSION}/site-packages/sphinx/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/search/${MODPY_PYCACHE}da.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -925,7 +925,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/templates/texinfo/
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/texinfo/Makefile
 lib/python${MODPY_VERSION}/site-packages/sphinx/testing/
 lib/python${MODPY_VERSION}/site-packages/sphinx/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/testing/${MODPY_PYCACHE}fixtures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1101,7 +1101,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/themes/traditional/theme.toml
 lib/python${MODPY_VERSION}/site-packages/sphinx/theming.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/${MODPY_PYCACHE}compact_bullet_list.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1114,7 +1114,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/compact_bullet_list.p
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/i18n.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1126,7 +1126,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/post_transforms/image
 lib/python${MODPY_VERSION}/site-packages/sphinx/transforms/references.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1243,7 +1243,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/util/typing.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/versioning.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/writers/
 lib/python${MODPY_VERSION}/site-packages/sphinx/writers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/writers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx/writers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/writers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/writers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/writers/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

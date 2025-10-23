@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/changelog_chug-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/changelog_chug-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/chug/
 lib/python${MODPY_VERSION}/site-packages/chug/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/chug/${MODPY_PYCACHE}writers.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/chug/model.py
 lib/python${MODPY_VERSION}/site-packages/chug/parsers/
 lib/python${MODPY_VERSION}/site-packages/chug/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chug/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/chug/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/chug/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chug/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chug/parsers/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/uvicorn-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/uvicorn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/config.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/importer.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/${MODPY_PYCACHE}off.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,7 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/lifespan/on.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/logging.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/loops/uvloop.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/main.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/${MODPY_PYCACHE}asgi2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,14 +83,14 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/proxy_headers.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/middleware/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/http/httptools_impl.p
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/utils.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/protocols/websockets/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/uvicorn/py.typed
 lib/python${MODPY_VERSION}/site-packages/uvicorn/server.py
 lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uvicorn/supervisors/${MODPY_PYCACHE}basereload.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

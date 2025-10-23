@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/quixote-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/quixote/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quixote/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote/${MODPY_PYCACHE}wsgi.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/quixote/config.py
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/demo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/demo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/demo/${MODPY_PYCACHE}altdemo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote/directory.py
 lib/python${MODPY_VERSION}/site-packages/quixote/errors.py
 lib/python${MODPY_VERSION}/site-packages/quixote/form/
 lib/python${MODPY_VERSION}/site-packages/quixote/form/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/form/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/form/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/form/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/form/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/form/${MODPY_PYCACHE}compatibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote/form/form.py
 lib/python${MODPY_VERSION}/site-packages/quixote/form/widget.py
 lib/python${MODPY_VERSION}/site-packages/quixote/html/
 lib/python${MODPY_VERSION}/site-packages/quixote/html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/html/${MODPY_PYCACHE}_py_htmltext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote/http_response.py
 lib/python${MODPY_VERSION}/site-packages/quixote/logger.py
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/ptl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/ptl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/ptl/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/quixote/publish1.py
 lib/python${MODPY_VERSION}/site-packages/quixote/sendmail.py
 lib/python${MODPY_VERSION}/site-packages/quixote/server/
 lib/python${MODPY_VERSION}/site-packages/quixote/server/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/quixote/server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quixote/server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quixote/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/quixote/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quixote/server/${MODPY_PYCACHE}cgi_server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

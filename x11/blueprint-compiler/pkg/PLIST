@@ -1,7 +1,7 @@
 bin/blueprint-compiler
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}annotations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}ast_utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/gir.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/interactive_port.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}adw_breakpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}adw_response_dialog.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,11 +93,11 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/lsp_utils.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/main.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/${MODPY_PYCACHE}xml_emitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/outputs/xml/xml_emitter.py

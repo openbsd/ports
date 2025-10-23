@@ -5,7 +5,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/.external-package
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_configuration_he
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_file_scanner.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/application_logging.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}block_quote_count_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}block_quote_count_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/${MODPY_PYCACHE}block_quote_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,12 +47,12 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/block_quote_dat
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/block_quote_non_fenced_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/block_quotes/block_quote_processor.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/${MODPY_PYCACHE}coalesce_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/${MODPY_PYCACHE}coalesce_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/coalesce/coalesce_processor.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/${MODPY_PYCACHE}container_block_leaf_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/${MODPY_PYCACHE}container_block_leaf_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/${MODPY_PYCACHE}container_block_nested_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/container_i
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/container_blocks/parse_block_pass_properties.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/${MODPY_PYCACHE}extension_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/extension_
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extension_manager/parser_extension.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/${MODPY_PYCACHE}disallowed_raw_html.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,7 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/extensions/task_list_items.p
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/file_scan_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/${MODPY_PYCACHE}bad_tokenization_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -169,7 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/source_providers.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/tab_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/general/tokenized_markdown.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}html_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}html_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}html_raw_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/${MODPY_PYCACHE}html_ra
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/html_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/html/html_raw_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/${MODPY_PYCACHE}emphasis_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/${MODPY_PYCACHE}emphasis_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/${MODPY_PYCACHE}inline_autolink_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -218,7 +218,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/inline_response.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/inline_tabified_text_block_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/inline/inline_text_block_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/${MODPY_PYCACHE}atx_leaf_block_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/${MODPY_PYCACHE}atx_leaf_block_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/${MODPY_PYCACHE}fenced_leaf_block_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -256,7 +256,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/table_block_proc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/table_block_tuple.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/leaf_blocks/thematic_leaf_block_processor.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/${MODPY_PYCACHE}link_create_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/${MODPY_PYCACHE}link_create_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/${MODPY_PYCACHE}link_helper_properties.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -288,7 +288,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/link_reference_titles.
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/link_reference_tuple.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/links/link_search_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/${MODPY_PYCACHE}list_block_can_close_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/${MODPY_PYCACHE}list_block_can_close_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/list_blocks/${MODPY_PYCACHE}list_block_create_new_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -308,7 +308,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/main.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/my_application_properties_facade.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/${MODPY_PYCACHE}bad_plugin_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -349,7 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/replace_token
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugin_manager/rule_plugin.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/${MODPY_PYCACHE}plugin_one.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -494,7 +494,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_md_048.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_pml_100.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/rule_pml_101.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}container_token_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}container_token_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/plugins/utils/${MODPY_PYCACHE}leading_space_index_tracker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -509,7 +509,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/resources/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/resources/entities.json
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/return_code_helper.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/${MODPY_PYCACHE}atx_heading_markdown_token.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/${MODPY_PYCACHE}atx_heading_markdown_token.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/${MODPY_PYCACHE}blank_line_markdown_token.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -613,7 +613,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/token_types.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/unordered_list_start_markdown_token.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/tokens/uri_autolink_markdown_token.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/${MODPY_PYCACHE}transform_state.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/${MODPY_PYCACHE}transform_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/${MODPY_PYCACHE}transform_to_gfm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -627,7 +627,7 @@ lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/transform_to_g
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/transform_to_gfm_list_looseness.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_gfm/transform_to_gfm_token_handlers.py
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/${MODPY_PYCACHE}markdown_transform_context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/${MODPY_PYCACHE}markdown_transform_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymarkdown/transform_markdown/${MODPY_PYCACHE}transform_block_quote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

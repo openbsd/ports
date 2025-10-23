@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/responses/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}_recorder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/responses/py.typed
 lib/python${MODPY_VERSION}/site-packages/responses/registries.py
 lib/python${MODPY_VERSION}/site-packages/responses/tests/
 lib/python${MODPY_VERSION}/site-packages/responses/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/responses/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/responses/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/responses/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/responses/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/tests/${MODPY_PYCACHE}test_matchers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

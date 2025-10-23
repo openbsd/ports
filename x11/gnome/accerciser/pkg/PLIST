@@ -1,7 +1,7 @@
 bin/accerciser
 lib/python${MODPY_VERSION}/site-packages/accerciser/
 lib/python${MODPY_VERSION}/site-packages/accerciser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}about_dialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}accerciser.${MODPY_PYC_MAGIC_TAG}pyc
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/accerciser/menus.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/node.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}base_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc

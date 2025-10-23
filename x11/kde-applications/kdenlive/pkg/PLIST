@@ -647,7 +647,7 @@ share/kdenlive/resourceproviders/pixabay_photo.json
 share/kdenlive/resourceproviders/pixabay_videos.json
 share/kdenlive/sammodelsinfo.rc
 share/kdenlive/scripts/
-${MODPY_COMMENT}share/kdenlive/scripts/${MODPY_PYCACHE}/
+share/kdenlive/scripts/${MODPY_PYCACHE}/
 share/kdenlive/scripts/${MODPY_PYCACHE}checkgpu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/${MODPY_PYCACHE}checkgpu.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/${MODPY_PYCACHE}checkpackages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -655,7 +655,7 @@ share/kdenlive/scripts/${MODPY_PYCACHE}checkpackages.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/${MODPY_PYCACHE}otiointerface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/${MODPY_PYCACHE}otiointerface.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/automask/
-${MODPY_COMMENT}share/kdenlive/scripts/automask/${MODPY_PYCACHE}/
+share/kdenlive/scripts/automask/${MODPY_PYCACHE}/
 share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_build_sam.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_build_sam.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_sam2_video_predictor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -674,7 +674,7 @@ share/kdenlive/scripts/checkgpu.py
 share/kdenlive/scripts/checkpackages.py
 share/kdenlive/scripts/otiointerface.py
 share/kdenlive/scripts/vosk/
-${MODPY_COMMENT}share/kdenlive/scripts/vosk/${MODPY_PYCACHE}/
+share/kdenlive/scripts/vosk/${MODPY_PYCACHE}/
 share/kdenlive/scripts/vosk/${MODPY_PYCACHE}speech.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/vosk/${MODPY_PYCACHE}speech.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/vosk/${MODPY_PYCACHE}speechtotext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -682,7 +682,7 @@ share/kdenlive/scripts/vosk/${MODPY_PYCACHE}speechtotext.${MODPY_PYC_MAGIC_TAG}p
 share/kdenlive/scripts/vosk/speech.py
 share/kdenlive/scripts/vosk/speechtotext.py
 share/kdenlive/scripts/whisper/
-${MODPY_COMMENT}share/kdenlive/scripts/whisper/${MODPY_PYCACHE}/
+share/kdenlive/scripts/whisper/${MODPY_PYCACHE}/
 share/kdenlive/scripts/whisper/${MODPY_PYCACHE}seamlessquery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/whisper/${MODPY_PYCACHE}seamlessquery.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/whisper/${MODPY_PYCACHE}whisperquery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

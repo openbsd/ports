@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/internetarchive-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/internetarchive-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/internetarchive-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/internetarchive/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/internetarchive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/internetarchive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/internetarchive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/internetarchive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/internetarchive/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/internetarchive/auth.py
 lib/python${MODPY_VERSION}/site-packages/internetarchive/catalog.py
 lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/
 lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/internetarchive/cli/${MODPY_PYCACHE}cli_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

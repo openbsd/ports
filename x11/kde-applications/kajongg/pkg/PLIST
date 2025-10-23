@@ -72,7 +72,7 @@ share/icons/hicolor/64x64/apps/kajongg.png
 share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/kajongg.svgz
 share/kajongg/
-${MODPY_COMMENT}share/kajongg/${MODPY_PYCACHE}/
+share/kajongg/${MODPY_PYCACHE}/
 share/kajongg/${MODPY_PYCACHE}altint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}altint.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

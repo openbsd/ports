@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/YoutubeDL.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}YoutubeDL.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}YoutubeDL.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}webvtt.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/${MODPY_PYCACHE}webvtt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/__pyinstaller/${MODPY_PYCACHE}hook-yt_dlp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/aes.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/cache.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/shutil.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/types.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -86,14 +86,14 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/cookies.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/Cryptodome.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}Cryptodome.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}Cryptodome.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}bunnycdn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/websocket.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/youtube_live_chat.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}_extractors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3160,7 +3160,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/younow.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youporn.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3190,7 +3190,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/_video.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/README.md
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}_director.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3207,7 +3207,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/youtube/pot/_builtin/${MODPY_PYCACHE}memory_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3239,7 +3239,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/jsinterp.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/minicurses.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/networking/${MODPY_PYCACHE}_curlcffi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3273,7 +3273,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/options.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/plugins.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/postprocessor/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3307,7 +3307,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/socks.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/update.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3327,7 +3327,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/_legacy.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/_utils.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/jslib/${MODPY_PYCACHE}devalue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

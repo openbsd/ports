@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/cheroot-${MODPY_DISTV}.dist-info/top_le
 lib/python${MODPY_VERSION}/site-packages/cheroot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cheroot/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cheroot/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cheroot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cheroot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cheroot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cheroot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cheroot/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/cheroot/server.pyi
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/${MODPY_PYCACHE}builtin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,7 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/pyopenssl.py
 lib/python${MODPY_VERSION}/site-packages/cheroot/ssl/pyopenssl.pyi
 lib/python${MODPY_VERSION}/site-packages/cheroot/test/
 lib/python${MODPY_VERSION}/site-packages/cheroot/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cheroot/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cheroot/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cheroot/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cheroot/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cheroot/test/${MODPY_PYCACHE}_pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/cheroot/testing.pyi
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cheroot/workers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cheroot/workers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cheroot/workers/${MODPY_PYCACHE}threadpool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

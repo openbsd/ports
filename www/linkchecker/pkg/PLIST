@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/linkcheck/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/ansicolor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/better_exchook2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/${MODPY_PYCACHE}chromium.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/opera.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/bookmarks/safari.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/${MODPY_PYCACHE}results.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,7 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/robots_txt.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/urlqueue.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -143,7 +143,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/cmdline.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/colorama.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/${MODPY_PYCACHE}arg_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -157,7 +157,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/command/linkchecker.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/command/setup_config.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/configuration/${MODPY_PYCACHE}confparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/containers.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cookies.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/data/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/data/linkcheckerrc
@@ -187,7 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/data/locale/nl_NL/LC_MESSAGES
 lib/python${MODPY_VERSION}/site-packages/linkcheck/decorators.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/director/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/director/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/director/${MODPY_PYCACHE}aggregator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -216,7 +216,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/fileutil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ftpparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/${MODPY_PYCACHE}htmlsoup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/log.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logconf.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/${MODPY_PYCACHE}csvlog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -286,7 +286,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/memoryutil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/mimeutil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}iputil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -294,7 +294,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/network/${MODPY_PYCACHE}iputi
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/iputil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}sitemap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -302,7 +302,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/${MODPY_PYCACHE}sitema
 lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/sitemap.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/plugins/${MODPY_PYCACHE}anchorcheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

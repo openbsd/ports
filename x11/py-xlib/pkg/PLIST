@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/Xatom.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/Xcursorfont.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/Xutil.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/${MODPY_PYCACHE}X.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/${MODPY_PYCACHE}X.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/${MODPY_PYCACHE}XK.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/display.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/error.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xinput.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xtest.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/${MODPY_PYCACHE}apl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/xk3270.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/keysymdef/xkb.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/
 lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/protocol/structs.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/rdb.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/support/
 lib/python${MODPY_VERSION}/site-packages/Xlib/support/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/support/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/support/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/threaded.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xauth.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/${MODPY_PYCACHE}colormap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

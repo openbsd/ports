@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/python_json_logger-${MODPY_DISTV}.dist-
 lib/python${MODPY_VERSION}/site-packages/python_json_logger-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/
 lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pythonjsonlogger/${MODPY_PYCACHE}jsonlogger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/webencodings-${MODPY_DISTV}.dist-info/R
 lib/python${MODPY_VERSION}/site-packages/webencodings-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/webencodings-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/webencodings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webencodings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/webencodings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/webencodings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/webencodings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/webencodings/${MODPY_PYCACHE}labels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

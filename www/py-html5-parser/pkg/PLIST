@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/html5_parser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/html5_parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/html5_parser/${MODPY_PYCACHE}dom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

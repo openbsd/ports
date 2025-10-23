@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/flask/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flask/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/flask/globals.py
 lib/python${MODPY_VERSION}/site-packages/flask/helpers.py
 lib/python${MODPY_VERSION}/site-packages/flask/json/
 lib/python${MODPY_VERSION}/site-packages/flask/json/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask/json/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask/json/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/json/${MODPY_PYCACHE}provider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/flask/logging.py
 lib/python${MODPY_VERSION}/site-packages/flask/py.typed
 lib/python${MODPY_VERSION}/site-packages/flask/sansio/
 lib/python${MODPY_VERSION}/site-packages/flask/sansio/README.md
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}blueprints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

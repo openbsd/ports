@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/httpx-${MODPY_DISTV}.dist-info/entry_po
 lib/python${MODPY_VERSION}/site-packages/httpx-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/httpx-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/httpx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpx/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/httpx/_multipart.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_status_codes.py
 lib/python${MODPY_VERSION}/site-packages/httpx/_transports/
 lib/python${MODPY_VERSION}/site-packages/httpx/_transports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpx/_transports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httpx/_transports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpx/_transports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpx/_transports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpx/_transports/${MODPY_PYCACHE}asgi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

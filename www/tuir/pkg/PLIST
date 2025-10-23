@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/tuir-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/tuir-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tuir/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tuir/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tuir/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tuir/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tuir/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tuir/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tuir/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,12 +60,12 @@ lib/python${MODPY_VERSION}/site-packages/tuir/oauth.py
 lib/python${MODPY_VERSION}/site-packages/tuir/objects.py
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tuir/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tuir/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tuir/packages/praw/${MODPY_PYCACHE}decorator_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

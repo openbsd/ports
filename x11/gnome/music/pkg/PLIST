@@ -1,7 +1,7 @@
 bin/gnome-music
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumart.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/coverpaintable.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/embeddedart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}grlsearchwrapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}grltrackerplaylists.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/trackerwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/utils.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/${MODPY_PYCACHE}albumsview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/${MODPY_PYCACHE}artistsview.${MODPY_PYC_MAGIC_TAG}pyc
@@ -91,7 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/playlistsview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/searchview.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumcover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumnavigationpage.${MODPY_PYC_MAGIC_TAG}pyc

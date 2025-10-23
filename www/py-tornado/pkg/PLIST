@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}_locale_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -91,7 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/netutil.py
 lib/python${MODPY_VERSION}/site-packages/tornado/options.py
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tornado/platform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tornado/platform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/template.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

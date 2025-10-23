@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/breadcrumbs.html

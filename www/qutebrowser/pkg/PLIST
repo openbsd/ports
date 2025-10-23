@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_DISTV}.dist-info/to
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/${MODPY_PYCACHE}qutebrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/${MODPY_PYCACHE}apitypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/api/qtutils.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/app.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/${MODPY_PYCACHE}browsertab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/inspector.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/navigate.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/network/${MODPY_PYCACHE}pac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/urlmarks.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webelem.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}certificateerror.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,7 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/webengine
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/webview.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/httpheaders.
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/mhtml.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/${MODPY_PYCACHE}filescheme.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -227,7 +227,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/webpage.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/webview.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}argparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -250,7 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/runners.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/userscripts.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/${MODPY_PYCACHE}completer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -264,7 +264,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/completiondelega
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/completionwidget.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/${MODPY_PYCACHE}completionmodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/urlmodel.
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/models/util.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/${MODPY_PYCACHE}adblockcommands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -321,7 +321,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/readlinecommands
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/scrollcommands.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/${MODPY_PYCACHE}blockutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -330,7 +330,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/utils/blockutils
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/components/zoomcommands.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -372,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/stylesheet.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/config/websettings.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/extensions/${MODPY_PYCACHE}interceptors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -457,7 +457,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/stylesheet.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/webelem.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/${MODPY_PYCACHE}basekeyparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -480,7 +480,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/modeman.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/keyinput/modeparsers.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/${MODPY_PYCACHE}mainwindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -500,7 +500,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/messageview.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/prompt.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/statusbar/${MODPY_PYCACHE}backforward.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -541,7 +541,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/tabwidget.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/mainwindow/windowundo.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}autoupdate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -636,7 +636,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/throttle.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/utilcmds.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}_core_pyqtproperty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -693,7 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/widgets.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qutebrowser.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

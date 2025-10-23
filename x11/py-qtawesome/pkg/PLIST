@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/qtawesome-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/qtawesome-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/qtawesome-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qtawesome/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/qtawesome/icon_browser.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/iconic_font.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/styles.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}test_icon_browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}test_icon_browser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtawesome/tests/${MODPY_PYCACHE}test_qtawesome.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

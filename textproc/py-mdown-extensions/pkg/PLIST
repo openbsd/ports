@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-
 lib/python${MODPY_VERSION}/site-packages/pymdownx/
 lib/python${MODPY_VERSION}/site-packages/pymdownx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/__meta__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/${MODPY_PYCACHE}__meta__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/pymdownx/b64.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/betterem.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymdownx/blocks/${MODPY_PYCACHE}admonition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

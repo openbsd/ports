@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/QtXml.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtXmlPatterns.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qsci.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qsci.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}Qt3DAnimation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -214,7 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/shiboken.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/sip.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -354,7 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}utils.${MODP
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/conftest.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/optional_deps/${MODPY_PYCACHE}optional_dep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

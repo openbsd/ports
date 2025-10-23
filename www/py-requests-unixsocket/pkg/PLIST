@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_unixsocket-${MODPY_DISTV}.dist
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/${MODPY_PYCACHE}testutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/adapters.py
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/${MODPY_PYCACHE}test_requests_unixsocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/${MODPY_PYCACHE}test_requests_unixsocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_unixsocket/tests/test_requests_unixsocket.py

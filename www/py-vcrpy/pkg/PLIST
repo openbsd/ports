@@ -1,11 +1,11 @@
 @pkgpath www/py-vcrpy,python3
 lib/python${MODPY_VERSION}/site-packages/vcr/
 lib/python${MODPY_VERSION}/site-packages/vcr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}_handle_coroutine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}_handle_coroutine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}_handle_coroutine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}cassette.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}cassette.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}unittest.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}unittest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/_handle_coroutine.py
+lib/python${MODPY_VERSION}/site-packages/vcr/_handle_coroutine.py
 lib/python${MODPY_VERSION}/site-packages/vcr/cassette.py
 lib/python${MODPY_VERSION}/site-packages/vcr/config.py
 lib/python${MODPY_VERSION}/site-packages/vcr/errors.py
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/vcr/migration.py
 lib/python${MODPY_VERSION}/site-packages/vcr/patch.py
 lib/python${MODPY_VERSION}/site-packages/vcr/persisters/
 lib/python${MODPY_VERSION}/site-packages/vcr/persisters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/persisters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vcr/persisters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vcr/persisters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/persisters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/persisters/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,7 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/vcr/request.py
 lib/python${MODPY_VERSION}/site-packages/vcr/serialize.py
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/serializers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vcr/serializers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/vcr/serializers/jsonserializer.py
 lib/python${MODPY_VERSION}/site-packages/vcr/serializers/yamlserializer.py
 lib/python${MODPY_VERSION}/site-packages/vcr/stubs/
 lib/python${MODPY_VERSION}/site-packages/vcr/stubs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vcr/stubs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vcr/stubs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vcr/stubs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vcr/stubs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcr/stubs/${MODPY_PYCACHE}aiohttp_stubs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

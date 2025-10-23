@@ -310,7 +310,7 @@ share/tellico/collectorz2tellico.xsl
 share/tellico/comicvine2tellico.xsl
 share/tellico/crossref2tellico.xsl
 share/tellico/data-sources/
-${MODPY_COMMENT}share/tellico/data-sources/${MODPY_PYCACHE}/
+share/tellico/data-sources/${MODPY_PYCACHE}/
 share/tellico/data-sources/${MODPY_PYCACHE}dark_horse_comics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tellico/data-sources/${MODPY_PYCACHE}dark_horse_comics.${MODPY_PYC_MAGIC_TAG}pyc
 share/tellico/data-sources/dark_horse_comics.py

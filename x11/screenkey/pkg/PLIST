@@ -1,7 +1,7 @@
 bin/screenkey
 lib/python${MODPY_VERSION}/site-packages/Screenkey/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Screenkey/${MODPY_PYCACHE}inputlistener.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

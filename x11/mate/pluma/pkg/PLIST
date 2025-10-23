@@ -30,7 +30,7 @@ lib/pluma/plugins/docinfo.plugin
 lib/pluma/plugins/externaltools/
 lib/pluma/plugins/externaltools.plugin
 lib/pluma/plugins/externaltools/__init__.py
-${MODPY_COMMENT}lib/pluma/plugins/externaltools/${MODPY_PYCACHE}/
+lib/pluma/plugins/externaltools/${MODPY_PYCACHE}/
 lib/pluma/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/pluma/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pluma/plugins/externaltools/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/pluma/plugins/modelines.plugin
 lib/pluma/plugins/pythonconsole/
 lib/pluma/plugins/pythonconsole.plugin
 lib/pluma/plugins/pythonconsole/__init__.py
-${MODPY_COMMENT}lib/pluma/plugins/pythonconsole/${MODPY_PYCACHE}/
+lib/pluma/plugins/pythonconsole/${MODPY_PYCACHE}/
 lib/pluma/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/pluma/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pluma/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/pluma/plugins/pythonconsole/console.py
 lib/pluma/plugins/quickopen/
 lib/pluma/plugins/quickopen.plugin
 lib/pluma/plugins/quickopen/__init__.py
-${MODPY_COMMENT}lib/pluma/plugins/quickopen/${MODPY_PYCACHE}/
+lib/pluma/plugins/quickopen/${MODPY_PYCACHE}/
 lib/pluma/plugins/quickopen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/pluma/plugins/quickopen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pluma/plugins/quickopen/${MODPY_PYCACHE}popup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/pluma/plugins/snippets/Snippet.py
 lib/pluma/plugins/snippets/SubstitutionParser.py
 lib/pluma/plugins/snippets/WindowHelper.py
 lib/pluma/plugins/snippets/__init__.py
-${MODPY_COMMENT}lib/pluma/plugins/snippets/${MODPY_PYCACHE}/
+lib/pluma/plugins/snippets/${MODPY_PYCACHE}/
 lib/pluma/plugins/snippets/${MODPY_PYCACHE}Completion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/pluma/plugins/snippets/${MODPY_PYCACHE}Completion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/pluma/plugins/snippets/${MODPY_PYCACHE}Document.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

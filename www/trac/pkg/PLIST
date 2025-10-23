@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/trac-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/trac-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/trac-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/trac/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}test.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/trac/about.py
 lib/python${MODPY_VERSION}/site-packages/trac/admin/
 lib/python${MODPY_VERSION}/site-packages/trac/admin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/admin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/admin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/admin/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/config.py
 lib/python${MODPY_VERSION}/site-packages/trac/core.py
 lib/python${MODPY_VERSION}/site-packages/trac/db/
 lib/python${MODPY_VERSION}/site-packages/trac/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/db/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -418,7 +418,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/locale/zh_TW/LC_MESSAGES/tracini.m
 lib/python${MODPY_VERSION}/site-packages/trac/log.py
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/mimeview/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/mimeview/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -440,7 +440,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/mimeview/templates/prefs_pygments.
 lib/python${MODPY_VERSION}/site-packages/trac/mimeview/txtl.py
 lib/python${MODPY_VERSION}/site-packages/trac/notification/
 lib/python${MODPY_VERSION}/site-packages/trac/notification/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/notification/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/notification/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/notification/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/notification/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/notification/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -460,7 +460,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/notification/templates/prefs_notif
 lib/python${MODPY_VERSION}/site-packages/trac/perm.py
 lib/python${MODPY_VERSION}/site-packages/trac/prefs/
 lib/python${MODPY_VERSION}/site-packages/trac/prefs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/prefs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/prefs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/prefs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/prefs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/prefs/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -478,7 +478,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/prefs/web_ui.py
 lib/python${MODPY_VERSION}/site-packages/trac/resource.py
 lib/python${MODPY_VERSION}/site-packages/trac/search/
 lib/python${MODPY_VERSION}/site-packages/trac/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/search/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -513,7 +513,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/templates/theme.html
 lib/python${MODPY_VERSION}/site-packages/trac/test.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/ticket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/ticket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -582,7 +582,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/ticket/workflows/basic-workflow.in
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/workflows/original-workflow.ini
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/timeline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/timeline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -596,7 +596,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/timeline/templates/timeline.rss
 lib/python${MODPY_VERSION}/site-packages/trac/timeline/web_ui.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/upgrades/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/${MODPY_PYCACHE}db10.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -730,7 +730,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db8.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db9.py
 lib/python${MODPY_VERSION}/site-packages/trac/util/
 lib/python${MODPY_VERSION}/site-packages/trac/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/util/${MODPY_PYCACHE}autoreload.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -765,7 +765,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/util/text.py
 lib/python${MODPY_VERSION}/site-packages/trac/util/translation.py
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -799,7 +799,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/templates/revisionl
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/templates/sortable_th.html
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -816,7 +816,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/log.py
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/web_ui/util.py
 lib/python${MODPY_VERSION}/site-packages/trac/web/
 lib/python${MODPY_VERSION}/site-packages/trac/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/web/${MODPY_PYCACHE}_fcgi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -861,7 +861,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/web/templates/deploy_trac.wsgi
 lib/python${MODPY_VERSION}/site-packages/trac/web/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/wiki/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trac/wiki/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -969,12 +969,12 @@ lib/python${MODPY_VERSION}/site-packages/trac/wiki/web_api.py
 lib/python${MODPY_VERSION}/site-packages/trac/wiki/web_ui.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/
 lib/python${MODPY_VERSION}/site-packages/tracopt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/perm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/perm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/${MODPY_PYCACHE}authz_policy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -985,7 +985,7 @@ lib/python${MODPY_VERSION}/site-packages/tracopt/perm/authz_policy.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/perm/config_perm_provider.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/${MODPY_PYCACHE}clone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1004,13 +1004,13 @@ lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/templates/
 lib/python${MODPY_VERSION}/site-packages/tracopt/ticket/templates/ticket_delete.html
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/PyGIT.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCACHE}PyGIT.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCACHE}PyGIT.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1020,7 +1020,7 @@ lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/git/git_fs.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/${MODPY_PYCACHE}svn_fs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

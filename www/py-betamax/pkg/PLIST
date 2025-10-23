@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/betamax/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}adapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/betamax/${MODPY_PYCACHE}util.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/betamax/adapter.py
 lib/python${MODPY_VERSION}/site-packages/betamax/cassette/
 lib/python${MODPY_VERSION}/site-packages/betamax/cassette/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/betamax/cassette/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/betamax/cassette/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/betamax/cassette/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/betamax/cassette/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/betamax/cassette/${MODPY_PYCACHE}cassette.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/betamax/decorator.py
 lib/python${MODPY_VERSION}/site-packages/betamax/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/
 lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/${MODPY_PYCACHE}pytest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/betamax/fixtures/unittest.py
 lib/python${MODPY_VERSION}/site-packages/betamax/headers.py
 lib/python${MODPY_VERSION}/site-packages/betamax/matchers/
 lib/python${MODPY_VERSION}/site-packages/betamax/matchers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/betamax/matchers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/betamax/matchers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/betamax/matchers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/betamax/matchers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/betamax/matchers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/betamax/options.py
 lib/python${MODPY_VERSION}/site-packages/betamax/recorder.py
 lib/python${MODPY_VERSION}/site-packages/betamax/serializers/
 lib/python${MODPY_VERSION}/site-packages/betamax/serializers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/betamax/serializers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/betamax/serializers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/betamax/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/betamax/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/betamax/serializers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

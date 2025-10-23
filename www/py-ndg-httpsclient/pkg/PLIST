@@ -3,13 +3,13 @@
 bin/ndg_httpclient
 lib/python${MODPY_VERSION}/site-packages/ndg/
 lib/python${MODPY_VERSION}/site-packages/ndg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ndg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}https.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/subj_alt_name.py
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/README
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/test/${MODPY_PYCACHE}test_https.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

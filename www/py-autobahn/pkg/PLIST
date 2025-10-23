@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/autobahn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/asset/xbr_gray.svg
 lib/python${MODPY_VERSION}/site-packages/autobahn/asset/xbr_white.svg
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/${MODPY_PYCACHE}component.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/component.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/rawsocket.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/README_NO_INIT_PY
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/${MODPY_PYCACHE}test_aio_rawsocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/${MODPY_PYCACHE}test_aio_rawsocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/test/${MODPY_PYCACHE}test_aio_websocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,13 +65,13 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/wamp.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/websocket.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/asyncio/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/exception.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/${MODPY_PYCACHE}_utf8validator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/_utf8validator.c
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/_utf8validator.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}test_nvx_utf8validator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,14 +88,14 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/${MODPY_PYCACHE}test_
 lib/python${MODPY_VERSION}/site-packages/autobahn/nvx/test/test_nvx_utf8validator.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/${MODPY_PYCACHE}test_rawsocket_url.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/test/test_rawsocket_
 lib/python${MODPY_VERSION}/site-packages/autobahn/rawsocket/util.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/test/${MODPY_PYCACHE}test_rng.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -116,7 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/test/test_util.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/testutil.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/${MODPY_PYCACHE}choosereactor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/rawsocket.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/resource.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/${MODPY_PYCACHE}test_tx_application_runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -174,7 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/test_tx_websocket
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/test/test_wamp_runner.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/util.py
@@ -182,13 +182,13 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/wamp.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/websocket.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/twisted/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/util.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -228,7 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/cryptosign.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/exception.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/schema/
@@ -243,7 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/Map.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/Void.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/${MODPY_PYCACHE}Map.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/${MODPY_PYCACHE}Map.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/${MODPY_PYCACHE}Void.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -313,7 +313,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/Unsubscrib
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/Welcome.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/Yield.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/${MODPY_PYCACHE}Abort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/${MODPY_PYCACHE}Abort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/gen/wamp/proto/${MODPY_PYCACHE}AnyMessage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -447,7 +447,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/role.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/serializer.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/test/${MODPY_PYCACHE}test_wamp_auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -506,7 +506,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/uri.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/wamp/websocket.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/${MODPY_PYCACHE}compress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -540,7 +540,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/protocol.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/test/${MODPY_PYCACHE}test_websocket_frame.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -558,7 +558,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/util.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/websocket/xormasker.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/${MODPY_PYCACHE}_abi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -680,7 +680,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/templates/sol-eip712/
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/templates/sol-eip712/obj-eip712.sol.jinja2
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/${MODPY_PYCACHE}test_xbr_argon2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -727,7 +727,7 @@ lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/test_xbr_secmod.py
 lib/python${MODPY_VERSION}/site-packages/autobahn/xbr/test/test_xbr_web3.py
 lib/python${MODPY_VERSION}/site-packages/twisted/
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}autobahn_endpoints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}autobahn_endpoints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}autobahn_twistd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

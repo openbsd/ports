@@ -37,7 +37,7 @@ include/shiboken6/signature_p.h
 include/shiboken6/threadstatesaver.h
 include/shiboken6/voidptr.h
 lib/cmake/Shiboken6/
-${MODPY_COMMENT}lib/cmake/Shiboken6/Shiboken6Config${MODPY_ABI3SO}.cmake
+lib/cmake/Shiboken6/Shiboken6Config${MODPY_ABI3SO}.cmake
 lib/cmake/Shiboken6/Shiboken6Config.cmake
 lib/cmake/Shiboken6/Shiboken6ConfigVersion.cmake
 lib/cmake/Shiboken6/Shiboken6Targets${MODCMAKE_BUILD_SUFFIX}
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/shiboken6/
 @so lib/python${MODPY_VERSION}/site-packages/shiboken6/Shiboken${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/shiboken6/Shiboken.pyi
 lib/python${MODPY_VERSION}/site-packages/shiboken6/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shiboken6/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shiboken6/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shiboken6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shiboken6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shiboken6/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/shiboken6/_git_shiboken_module_version.
 lib/python${MODPY_VERSION}/site-packages/shiboken6/py.typed
 lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/
 lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shiboken6_generator/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

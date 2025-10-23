@@ -1,19 +1,19 @@
 @pkgpath www/py-frozen-flask,python3
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/admin/admin_static/

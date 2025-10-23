@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/daemon.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}auth_basic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/static.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpcutil.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/process/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/${MODPY_PYCACHE}plugins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/process/win32.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/wspbus.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/apache-fcgi.conf
@@ -158,7 +158,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/static/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/static/made_with_cherrypy_small.png
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}_test_decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -322,7 +322,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/webtest.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/README.rst
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/tutorial/${MODPY_PYCACHE}tut01_helloworld.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

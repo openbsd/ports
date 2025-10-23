@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pymacaroons-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/pymacaroons-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pymacaroons-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}caveat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}verifier.${
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/${MODPY_PYCACHE}verifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/${MODPY_PYCACHE}base_binder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/pymacaroons/binders/hash_signatures_bin
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat.py
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/${MODPY_PYCACHE}base_first_party.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/pymacaroons/caveat_delegates/third_part
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/${MODPY_PYCACHE}base_field_encryptor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/pymacaroons/field_encryptors/secret_box
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/macaroon.py
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/serializers/${MODPY_PYCACHE}base_serializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

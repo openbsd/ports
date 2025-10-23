@@ -8,12 +8,12 @@ lib/python${MODPY_VERSION}/site-packages/flup-${MODPY_DISTV}.dist-info/entry_poi
 lib/python${MODPY_VERSION}/site-packages/flup-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flup-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/flup/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flup/client/
 lib/python${MODPY_VERSION}/site-packages/flup/client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flup/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flup/client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flup/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flup/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flup/client/${MODPY_PYCACHE}fcgi_app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/flup/client/fcgi_app.py
 lib/python${MODPY_VERSION}/site-packages/flup/client/scgi_app.py
 lib/python${MODPY_VERSION}/site-packages/flup/server/
 lib/python${MODPY_VERSION}/site-packages/flup/server/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flup/server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flup/server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flup/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flup/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flup/server/${MODPY_PYCACHE}ajp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

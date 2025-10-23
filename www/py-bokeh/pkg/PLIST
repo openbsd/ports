@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/top_leve
 lib/python${MODPY_VERSION}/site-packages/bokeh/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/bokeh/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,7 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.6.2.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/${MODPY_DISTV}.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}appli
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/application.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/server_lifec
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/handlers/server_request_handler.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -192,7 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/client/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/client/websocket.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/colors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/colors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/${MODPY_PYCACHE}color.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -209,7 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/colors/named.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/colors/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/${MODPY_PYCACHE}bootstrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -222,7 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/command/bootstrap.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommand.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/command/subcommands/static.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/command/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -297,7 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/core/json_encoder.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/properties.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/property/${MODPY_PYCACHE}_sphinx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -416,7 +416,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/core/templates.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/types.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -436,7 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/issue.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/core/validation/warnings.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/document/
 lib/python${MODPY_VERSION}/site-packages/bokeh/document/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/document/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/document/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/document/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/document/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/document/${MODPY_PYCACHE}callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,7 +463,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/document/modules.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/driving.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/embed/
 lib/python${MODPY_VERSION}/site-packages/bokeh/embed/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/embed/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/embed/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/embed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/embed/${MODPY_PYCACHE}bundle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -491,7 +491,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/events.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/ext.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/io/
 lib/python${MODPY_VERSION}/site-packages/bokeh/io/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/io/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/io/${MODPY_PYCACHE}doc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -524,7 +524,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/io/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/layouts.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/model/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/model/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/${MODPY_PYCACHE}data_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -541,7 +541,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/model/model.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/model/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}axes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -610,7 +610,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}transforms
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}transforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/${MODPY_PYCACHE}annotation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -631,7 +631,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/dimensional.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/geometry.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/annotations/html/${MODPY_PYCACHE}html_annotation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -649,7 +649,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/axes.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/callbacks.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/canvas.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/${MODPY_PYCACHE}properties.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/${MODPY_PYCACHE}properties.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/common/properties.py
@@ -671,7 +671,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/map_plots.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/mappers.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/misc/${MODPY_PYCACHE}group_by.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -682,7 +682,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/plots.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ranges.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/renderers/${MODPY_PYCACHE}contour_renderer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -712,7 +712,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/tools.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/transforms.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/${MODPY_PYCACHE}dialogs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -741,7 +741,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/tooltips.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/ui/ui_element.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}structure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -749,7 +749,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/${MODPY_PYCACHE}struc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/util/structure.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/${MODPY_PYCACHE}buttons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -779,7 +779,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/widgets/widget.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/palettes.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -823,7 +823,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/gmap.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/plotting/graph.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -836,7 +836,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/message.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/protocol/messages/${MODPY_PYCACHE}ack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -871,7 +871,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/py.typed
 lib/python${MODPY_VERSION}/site-packages/bokeh/resources.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/${MODPY_PYCACHE}airport_routes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -996,7 +996,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/us_states.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/sampledata/world_cities.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/${MODPY_PYCACHE}auth_provider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1850,7 +1850,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/urls.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/${MODPY_PYCACHE}auth_request_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1889,7 +1889,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/views/ws.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/settings.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/${MODPY_PYCACHE}bokeh_autodoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1984,7 +1984,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/templates.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/sphinxext/util.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/themes/
 lib/python${MODPY_VERSION}/site-packages/bokeh/themes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/themes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/themes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/themes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/themes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/themes/${MODPY_PYCACHE}_caliber.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2011,7 +2011,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/themes/theme.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/transform.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/util/
 lib/python${MODPY_VERSION}/site-packages/bokeh/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bokeh/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bokeh/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bokeh/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/util/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

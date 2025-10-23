@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/twill-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/twill-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/twill/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twill/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twill/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/twill/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/twill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twill/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/twill/commands.py
 lib/python${MODPY_VERSION}/site-packages/twill/errors.py
 lib/python${MODPY_VERSION}/site-packages/twill/extensions/
 lib/python${MODPY_VERSION}/site-packages/twill/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twill/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/twill/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/twill/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/twill/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twill/extensions/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

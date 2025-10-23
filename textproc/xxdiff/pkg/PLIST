@@ -19,7 +19,7 @@ bin/xx-svn-review
 @bin bin/xxdiff
 lib/python${MODPY_VERSION}/site-packages/xxdiff/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xxdiff/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xxdiff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/${MODPY_PYCACHE}checkout.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/checkout.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/condrepl.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/db/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xxdiff/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/db/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/db/postgresql.py
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/patches.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/resilient.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/${MODPY_PYCACHE}clearcase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/${MODPY_PYCACHE}cvs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/perforce.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scm/subversion.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/${MODPY_PYCACHE}condreplace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/${MODPY_PYCACHE}cvsdiff.${MODPY_PYC_MAGIC_TAG}pyc

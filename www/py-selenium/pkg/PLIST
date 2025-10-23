@@ -8,12 +8,12 @@ lib/python${MODPY_VERSION}/site-packages/selenium-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/selenium-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/selenium-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/selenium/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/common/
 lib/python${MODPY_VERSION}/site-packages/selenium/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,12 +21,12 @@ lib/python${MODPY_VERSION}/site-packages/selenium/common/${MODPY_PYCACHE}excepti
 lib/python${MODPY_VERSION}/site-packages/selenium/common/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCACHE}webdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/android/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_PYCACHE}webdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/blackberry/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/service.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/chrome/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCACHE}action_chains.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/action_chains.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/actions/${MODPY_PYCACHE}action_builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/by.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/desired_capabilities.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/html5/${MODPY_PYCACHE}application_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/touch_actions
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/common/utils.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -142,7 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/service.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/edge/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/${MODPY_PYCACHE}extension_connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/x86/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/firefox/x86/x_ignore_nofocus.so
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,7 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/service.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/ie/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/options.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/opera/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -213,7 +213,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/service.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/phantomjs/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -247,7 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/remote/webelement.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/${MODPY_PYCACHE}permissions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -264,7 +264,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/service.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/safari/webdriver.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/${MODPY_PYCACHE}abstract_event_listener.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/ui.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/support/wait.py
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/selenium/webdriver/webkitgtk/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

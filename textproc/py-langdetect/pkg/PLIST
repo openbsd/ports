@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/langdetect-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/langdetect-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/langdetect-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/langdetect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/langdetect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/langdetect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/langdetect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/langdetect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/langdetect/${MODPY_PYCACHE}detector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/langdetect/profiles/zh-cn
 lib/python${MODPY_VERSION}/site-packages/langdetect/profiles/zh-tw
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/langdetect/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/langdetect/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/${MODPY_PYCACHE}test_detector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/langdetect/tests/test_detector.py
 lib/python${MODPY_VERSION}/site-packages/langdetect/tests/test_language.py
 lib/python${MODPY_VERSION}/site-packages/langdetect/utils/
 lib/python${MODPY_VERSION}/site-packages/langdetect/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/langdetect/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/langdetect/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/langdetect/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/langdetect/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/langdetect/utils/${MODPY_PYCACHE}lang_profile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

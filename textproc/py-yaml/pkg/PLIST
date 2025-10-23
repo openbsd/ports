@@ -2,7 +2,7 @@
 @pkgpath textproc/py-yaml,python3
 lib/python${MODPY_VERSION}/site-packages/_yaml/
 lib/python${MODPY_VERSION}/site-packages/_yaml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyyaml-${MODPY_DISTV}.dist-info/
@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/pyyaml-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pyyaml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yaml/
 lib/python${MODPY_VERSION}/site-packages/yaml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}composer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

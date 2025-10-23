@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/httptools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/httptools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/httptools/${MODPY_PYCACHE}_version.${MO
 lib/python${MODPY_VERSION}/site-packages/httptools/_version.py
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

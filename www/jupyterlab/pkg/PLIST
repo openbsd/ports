@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/jupyterlab-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/coreconfig.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/debuglog.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/extensions/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,12 +78,12 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-ex
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/remoteEntry.f32405f3bdd3e446ee5d.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/@jupyterlab/galata-extension/static/style.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/galata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/handlers/${MODPY_PYCACHE}announcements.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -563,7 +563,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/static/third-party-licenses.
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/style.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -591,7 +591,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/echo_kernel.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/.yarnrc.yml
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/${MODPY_PYCACHE}mock_package.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/${MODPY_PYCACHE}mock_package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/extension/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -606,7 +606,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/incompat
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/incompat/package.json
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/${MODPY_PYCACHE}jlab_mock_consumer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/${MODPY_PYCACHE}jlab_mock_consumer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -616,7 +616,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/package.json
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/consumer/setup.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/${MODPY_PYCACHE}jlab_mock_provider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/${MODPY_PYCACHE}jlab_mock_provider.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/interop/provider/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -636,7 +636,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/package/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/package/index.js
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/package/package.json
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/${MODPY_PYCACHE}mock_service_manager_package.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/${MODPY_PYCACHE}mock_service_manager_package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-manager-extension/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -648,7 +648,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/service-
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/MANIFEST.in
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/index.js
@@ -657,12 +657,12 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyp
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/setup.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/test_hyphens_underscore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens-underscore/yarn.lock
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/MANIFEST.in
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/index.js
@@ -671,13 +671,13 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyp
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/setup.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/test_hyphens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test-hyphens/yarn.lock
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/MANIFEST.in
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/index.js
@@ -686,7 +686,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/setup.py
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/test_no_hyphens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyterlab/tests/mock_packages/test_no_hyphens/yarn.lock

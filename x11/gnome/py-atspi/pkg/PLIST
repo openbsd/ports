@@ -3,7 +3,7 @@
 lib/python${MODPY_VERSION}/site-packages/pyatspi/
 lib/python${MODPY_VERSION}/site-packages/pyatspi/Accessibility.py
 lib/python${MODPY_VERSION}/site-packages/pyatspi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyatspi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyatspi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyatspi/${MODPY_PYCACHE}Accessibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyatspi/${MODPY_PYCACHE}Accessibility.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyatspi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

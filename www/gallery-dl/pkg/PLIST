@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/gallery_dl-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gallery_dl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/config.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/cookies.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/downloader/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,7 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/500px.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/8chan.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/8muses.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}2ch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}2ch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}2chan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -750,7 +750,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/output.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/path.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/postprocessor/${MODPY_PYCACHE}classify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

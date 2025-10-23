@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/yamlloader-${MODPY_DISTV}.dist-info/WHE
 lib/python${MODPY_VERSION}/site-packages/yamlloader-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/yamlloader-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/yamlloader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/yamlloader/${MODPY_PYCACHE}settings.${M
 lib/python${MODPY_VERSION}/site-packages/yamlloader/_version.py
 lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/
 lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamlloader/ordereddict/${MODPY_PYCACHE}dumpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

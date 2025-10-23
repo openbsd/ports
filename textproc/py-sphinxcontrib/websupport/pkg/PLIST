@@ -2,7 +2,7 @@
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/files/websuppo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}nullsearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/whooshs
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/xapiansearch.py
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/${MODPY_PYCACHE}differ.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

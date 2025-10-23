@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_DISTV}.dist-info/licenses/vendor/llhttp/LICENSE
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/aiohttp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}_cookie_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pxd.hash
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pyx.hash
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/reader_c.pxd.hash
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

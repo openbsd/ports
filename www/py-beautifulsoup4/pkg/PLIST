@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bs4/
 lib/python${MODPY_VERSION}/site-packages/bs4/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}_deprecation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/bs4/_typing.py
 lib/python${MODPY_VERSION}/site-packages/bs4/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/bs4/builder/
 lib/python${MODPY_VERSION}/site-packages/bs4/builder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bs4/builder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bs4/builder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bs4/builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bs4/builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bs4/builder/${MODPY_PYCACHE}_html5lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/bs4/formatter.py
 lib/python${MODPY_VERSION}/site-packages/bs4/py.typed
 lib/python${MODPY_VERSION}/site-packages/bs4/tests/
 lib/python${MODPY_VERSION}/site-packages/bs4/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

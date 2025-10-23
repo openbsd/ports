@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_mock-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/requests_mock-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/requests_mock-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/requests_mock/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_mock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_mock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_mock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_mock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_mock/${MODPY_PYCACHE}adapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/requests_mock/adapter.py
 lib/python${MODPY_VERSION}/site-packages/requests_mock/compat.py
 lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/
 lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_mock/contrib/${MODPY_PYCACHE}_pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

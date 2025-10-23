@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urllib3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/connection.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}_appengine_environ.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/${MODPY_PYCACHE}socks.$
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_appengine_environ.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/_securetransport/${MODPY_PYCACHE}bindings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -74,14 +74,14 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/fields.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/filepost.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/request.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/response.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

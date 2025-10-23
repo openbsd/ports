@@ -5,7 +5,7 @@
 bin/woob
 lib/python${MODPY_VERSION}/site-packages/weboob/
 lib/python${MODPY_VERSION}/site-packages/weboob/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weboob/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weboob/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weboob/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/woob-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/woob-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/woob/__init__.py
 lib/python${MODPY_VERSION}/site-packages/woob/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,12 +32,12 @@ lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}launcher.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/woob/${MODPY_PYCACHE}launcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE}bands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bands/bands.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}bank.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bank/bank.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}bill.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bill/bill.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE}books.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/books/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/books/books.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PYCACHE}bugtracker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/woob/applications/bugtracker/bugtracker.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCACHE}calendar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/woob/applications/calendar/calendar.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACHE}cinema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cinema/cinema.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/woob/applications/cli/cli.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/config/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/config/config.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_PYCACHE}contentedit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,7 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/woob/applications/contentedit/contentedit.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACHE}dating.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/dating/dating.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -133,7 +133,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/debug/debug.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCACHE}gallery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gallery/gallery.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE}gauge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/gauge/gauge.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCACHE}geolocip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -157,7 +157,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/woob/applications/geolocip/geolocip.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCACHE}housing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -165,7 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/housing/housing.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}job.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -173,7 +173,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/job/${MODPY_PYCACHE}j
 lib/python${MODPY_VERSION}/site-packages/woob/applications/job/job.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACHE}lyrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,12 +181,12 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/lyrics/lyrics.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/main/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/main/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/main/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/main/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE}money.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -194,7 +194,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/money/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/money/money.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}msg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -202,7 +202,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/${MODPY_PYCACHE}m
 lib/python${MODPY_VERSION}/site-packages/woob/applications/msg/msg.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACHE}parcel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -210,7 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/parcel/parcel.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE}paste.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -218,7 +218,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/paste/paste.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_PYCACHE}pricecompare.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -226,7 +226,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/woob/applications/pricecompare/pricecompare.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE}radio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/radio/radio.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCACHE}recipes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -242,7 +242,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/recipes/recipes.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE}repos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -250,7 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/applications/repos/repos.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}rpg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -258,7 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/${MODPY_PYCACHE}r
 lib/python${MODPY_VERSION}/site-packages/woob/applications/rpg/rpg.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}shop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -266,7 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/shop/shop.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}smtp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -274,7 +274,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/smtp/smtp.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYCACHE}subtitles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -282,7 +282,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/subtitles/subtitles.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCACHE}torrent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -290,7 +290,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/torrent/torrent.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYCACHE}translate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -298,7 +298,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/translate/translate.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACHE}travel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -306,7 +306,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/woob/applications/travel/travel.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/video/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/video/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/${MODPY_PYCACHE}image2xterm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -317,7 +317,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/video/image2xterm.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/video/video.py
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCACHE}weather.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -325,7 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/woob/applications/weather/weather.py
 lib/python${MODPY_VERSION}/site-packages/woob/browser/
 lib/python${MODPY_VERSION}/site-packages/woob/browser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/browser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/browser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/browser/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -371,7 +371,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/browser/elements.py
 lib/python${MODPY_VERSION}/site-packages/woob/browser/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/
 lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/browser/filters/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -404,7 +404,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/browser/switch.py
 lib/python${MODPY_VERSION}/site-packages/woob/browser/url.py
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/capabilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/capabilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -498,7 +498,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/capabilities/audiostream.py
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bands.py
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/bank/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -555,7 +555,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/capabilities/video.py
 lib/python${MODPY_VERSION}/site-packages/woob/capabilities/weather.py
 lib/python${MODPY_VERSION}/site-packages/woob/core/
 lib/python${MODPY_VERSION}/site-packages/woob/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/core/${MODPY_PYCACHE}backendscfg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -586,7 +586,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/woob/launcher.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -633,7 +633,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}value.${MODP
 lib/python${MODPY_VERSION}/site-packages/woob/tools/${MODPY_PYCACHE}value.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/application/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/application/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -657,7 +657,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/application/captcha.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/console.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/application/formatters/${MODPY_PYCACHE}csv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -689,7 +689,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/application/results.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/backend.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}paste.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -700,7 +700,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/${MODPY_PYCACHE}streaminfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -708,7 +708,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/audio/audio.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/${MODPY_PYCACHE}bank_transfer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -737,7 +737,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/transactio
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bank/transactions.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PYCACHE}documents.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -745,7 +745,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/bill/documents.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/${MODPY_PYCACHE}housing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -756,7 +756,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/housing
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/housing/housing_test.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/messages/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -767,7 +767,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/recipe.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/streaminfo.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_PYCACHE}ytdl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -775,7 +775,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/woob/tools/capabilities/video/ytdl.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}virtkeyboard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -783,7 +783,7 @@ lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/${MODPY_PYCACHE}virt
 lib/python${MODPY_VERSION}/site-packages/woob/tools/captcha/virtkeyboard.py
 lib/python${MODPY_VERSION}/site-packages/woob/tools/config/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/woob/tools/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/woob/tools/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/woob/tools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/woob/tools/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/woob/tools/config/${MODPY_PYCACHE}dbmconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
