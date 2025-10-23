@@ -1,3 +1,6 @@
+# needs fixing for 64-bit time_t
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
+
 COMMENT =	tool to work with Signal backup files
 
 GH_ACCOUNT =	bepaald
