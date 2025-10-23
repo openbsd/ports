@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/web2ldap/__about__.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}utctime.${MODP
 lib/python${MODPY_VERSION}/site-packages/web2ldap/${MODPY_PYCACHE}utctime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}add.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/params.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/passwd.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}acp133.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -273,7 +273,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/referral.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/rename.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/schema/${MODPY_PYCACHE}syntaxes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/checkinst.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldapsession.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldaputil/${MODPY_PYCACHE}asynch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -316,7 +316,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/msbase.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/utctime.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}forms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

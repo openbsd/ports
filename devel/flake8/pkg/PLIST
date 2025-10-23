@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/flake8-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flake8/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flake8/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8/${MODPY_PYCACHE}violation.${MODP
 lib/python${MODPY_VERSION}/site-packages/flake8/_compat.py
 lib/python${MODPY_VERSION}/site-packages/flake8/api/
 lib/python${MODPY_VERSION}/site-packages/flake8/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/api/${MODPY_PYCACHE}legacy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8/discover_files.py
 lib/python${MODPY_VERSION}/site-packages/flake8/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/formatting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/formatting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/${MODPY_PYCACHE}_windows_color.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,7 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8/formatting/base.py
 lib/python${MODPY_VERSION}/site-packages/flake8/formatting/default.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/
 lib/python${MODPY_VERSION}/site-packages/flake8/main/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8/main/debug.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/options.py
 lib/python${MODPY_VERSION}/site-packages/flake8/options/
 lib/python${MODPY_VERSION}/site-packages/flake8/options/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}aggregator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -98,7 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/flake8/options/manager.py
 lib/python${MODPY_VERSION}/site-packages/flake8/options/parse_args.py
 lib/python${MODPY_VERSION}/site-packages/flake8/plugins/
 lib/python${MODPY_VERSION}/site-packages/flake8/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flake8/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flake8/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flake8/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/plugins/${MODPY_PYCACHE}finder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/gyp/MSVSUserFile.py
 lib/python${MODPY_VERSION}/site-packages/gyp/MSVSUtil.py
 lib/python${MODPY_VERSION}/site-packages/gyp/MSVSVersion.py
 lib/python${MODPY_VERSION}/site-packages/gyp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gyp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gyp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gyp/${MODPY_PYCACHE}MSVSNew.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gyp/${MODPY_PYCACHE}MSVSNew.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gyp/${MODPY_PYCACHE}MSVSProject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/gyp/easy_xml_test.py
 lib/python${MODPY_VERSION}/site-packages/gyp/flock_tool.py
 lib/python${MODPY_VERSION}/site-packages/gyp/generator/
 lib/python${MODPY_VERSION}/site-packages/gyp/generator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gyp/generator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gyp/generator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gyp/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gyp/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gyp/generator/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/claripy-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/claripy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/claripy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}annotation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}strings.${MODPY
 lib/python${MODPY_VERSION}/site-packages/claripy/annotation.py
 lib/python${MODPY_VERSION}/site-packages/claripy/ast/
 lib/python${MODPY_VERSION}/site-packages/claripy/ast/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/ast/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/ast/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/ast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/ast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/ast/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/backend_manager.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backend_object.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backend_concrete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_concrete.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/${MODPY_PYCACHE}abc_popen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/fp.py
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend.py
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/${MODPY_PYCACHE}composited_cache_mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/smtlib_script_d
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend_mixins/solve_block_mixin.py
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/frontends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/frontends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/${MODPY_PYCACHE}composite_frontend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -198,7 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/solvers.py
 lib/python${MODPY_VERSION}/site-packages/claripy/strings.py
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -209,7 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/utils/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/orderedset.py
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/vsa/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/claripy/vsa/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/${MODPY_PYCACHE}abstract_location.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

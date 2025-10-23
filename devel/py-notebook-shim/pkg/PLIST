@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook_shim-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook_shim/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notebook_shim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook_shim/nbserver.py
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/shim.py
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}mockextension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}moc
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}test_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/${MODPY_PYCACHE}test_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/${MODPY_PYCACHE}jupyter_my_ext_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/${MODPY_PYCACHE}jupyter_my_ext_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook_shim/tests/confs/${MODPY_PYCACHE}jupyter_notebook_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

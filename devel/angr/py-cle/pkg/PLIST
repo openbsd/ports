@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}address_translator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/${MODPY_PYCACHE}utils.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/cle/address_translator.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,7 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/binja.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/blob.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/${MODPY_PYCACHE}backedcgc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/cgc/cgc.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/coff.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}compilation_unit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/metaelf.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/regions.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/${MODPY_PYCACHE}amd64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -163,12 +163,12 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/variable.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/variable_type.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/simdata.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/ihex.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/java/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/java/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/${MODPY_PYCACHE}android_lifecycle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -203,7 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/java/jar.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/soot.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/${MODPY_PYCACHE}binding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -229,13 +229,13 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/structs.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/symbol.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/minidump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/named_region.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}pe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -248,7 +248,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/pe.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/regions.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/relocation/${MODPY_PYCACHE}amd64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -281,7 +281,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/symbol.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/te.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/tls/${MODPY_PYCACHE}elf_tls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

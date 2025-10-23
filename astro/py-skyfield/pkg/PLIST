@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/skyfield-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/skyfield/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skyfield/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skyfield/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skyfield/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/constellationlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/curvelib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}earth_orientation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -161,7 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/sgp4lib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/starlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}conventions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

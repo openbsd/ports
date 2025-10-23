@@ -611,7 +611,7 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}embedded_interpreter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -621,7 +621,7 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}Logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}Logger.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -638,7 +638,7 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/attrib_fro
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cache.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}gnu_libstdcpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -652,7 +652,7 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/synth.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}operating_system.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -672,7 +672,7 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_proc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_thread_plan.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}in_call_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

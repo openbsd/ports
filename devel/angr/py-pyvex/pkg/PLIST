@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/pyvex-${MODPY_DISTV}.dist-info/licenses/pyvex_c/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyvex-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyvex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}_register_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lib/
 @so lib/python${MODPY_VERSION}/site-packages/pyvex/lib/libpyvex.so
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}libvex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -67,7 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}zerodivis
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/${MODPY_PYCACHE}zerodivision.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/gym/${MODPY_PYCACHE}aarch64_spotter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/lifter.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/post_processor.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}instr_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

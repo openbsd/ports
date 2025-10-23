@@ -14,7 +14,7 @@ lib/freecad/Ext/PySide/QtUiTools.py
 lib/freecad/Ext/PySide/QtWebEngineWidgets.py
 lib/freecad/Ext/PySide/QtWidgets.py
 lib/freecad/Ext/PySide/__init__.py
-${MODPY_COMMENT}lib/freecad/Ext/PySide/${MODPY_PYCACHE}/
+lib/freecad/Ext/PySide/${MODPY_PYCACHE}/
 lib/freecad/Ext/PySide/${MODPY_PYCACHE}QtCore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Ext/PySide/${MODPY_PYCACHE}QtCore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Ext/PySide/${MODPY_PYCACHE}QtGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,12 +37,12 @@ lib/freecad/Ext/freecad/
 lib/freecad/Ext/freecad/gui/
 lib/freecad/Ext/freecad/gui/RemoteDebugger.py
 lib/freecad/Ext/freecad/gui/RemoteDebugger.ui
-${MODPY_COMMENT}lib/freecad/Ext/freecad/gui/${MODPY_PYCACHE}/
+lib/freecad/Ext/freecad/gui/${MODPY_PYCACHE}/
 lib/freecad/Ext/freecad/gui/${MODPY_PYCACHE}RemoteDebugger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Ext/freecad/gui/${MODPY_PYCACHE}RemoteDebugger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Ext/lazy_loader/
 lib/freecad/Ext/lazy_loader/__init__.py
-${MODPY_COMMENT}lib/freecad/Ext/lazy_loader/${MODPY_PYCACHE}/
+lib/freecad/Ext/lazy_loader/${MODPY_PYCACHE}/
 lib/freecad/Ext/lazy_loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Ext/lazy_loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Ext/lazy_loader/${MODPY_PYCACHE}lazy_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,14 +52,14 @@ lib/freecad/Mod/
 lib/freecad/Mod/Assembly/
 lib/freecad/Mod/Assembly/Assembly/
 lib/freecad/Mod/Assembly/Assembly/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Assembly/Assembly/${MODPY_PYCACHE}/
+lib/freecad/Mod/Assembly/Assembly/${MODPY_PYCACHE}/
 lib/freecad/Mod/Assembly/Assembly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Assembly/Assembly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Assembly/AssemblyImport.py
 lib/freecad/Mod/Assembly/AssemblyTests/
 lib/freecad/Mod/Assembly/AssemblyTests/TestCore.py
 lib/freecad/Mod/Assembly/AssemblyTests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Assembly/AssemblyTests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Assembly/AssemblyTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Assembly/AssemblyTests/${MODPY_PYCACHE}TestCore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Assembly/AssemblyTests/${MODPY_PYCACHE}TestCore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Assembly/AssemblyTests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/freecad/Mod/Assembly/Preferences.py
 lib/freecad/Mod/Assembly/SoSwitchMarker.py
 lib/freecad/Mod/Assembly/TestAssemblyWorkbench.py
 lib/freecad/Mod/Assembly/UtilsAssembly.py
-${MODPY_COMMENT}lib/freecad/Mod/Assembly/${MODPY_PYCACHE}/
+lib/freecad/Mod/Assembly/${MODPY_PYCACHE}/
 lib/freecad/Mod/Assembly/${MODPY_PYCACHE}AssemblyImport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Assembly/${MODPY_PYCACHE}AssemblyImport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Assembly/${MODPY_PYCACHE}Assembly_rc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,7 +155,7 @@ lib/freecad/Mod/BIM/BimSelect.py
 lib/freecad/Mod/BIM/BimStatus.py
 lib/freecad/Mod/BIM/Dice3DS/
 lib/freecad/Mod/BIM/Dice3DS/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/BIM/Dice3DS/${MODPY_PYCACHE}/
+lib/freecad/Mod/BIM/Dice3DS/${MODPY_PYCACHE}/
 lib/freecad/Mod/BIM/Dice3DS/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/Dice3DS/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/Dice3DS/${MODPY_PYCACHE}dom3ds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ lib/freecad/Mod/BIM/Init.py
 lib/freecad/Mod/BIM/InitGui.py
 lib/freecad/Mod/BIM/OfflineRenderingUtils.py
 lib/freecad/Mod/BIM/TestArch.py
-${MODPY_COMMENT}lib/freecad/Mod/BIM/${MODPY_PYCACHE}/
+lib/freecad/Mod/BIM/${MODPY_PYCACHE}/
 lib/freecad/Mod/BIM/${MODPY_PYCACHE}Arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/${MODPY_PYCACHE}Arch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/${MODPY_PYCACHE}ArchAxis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -338,7 +338,7 @@ lib/freecad/Mod/BIM/bimcommands/BimWelcome.py
 lib/freecad/Mod/BIM/bimcommands/BimWindow.py
 lib/freecad/Mod/BIM/bimcommands/BimWindows.py
 lib/freecad/Mod/BIM/bimcommands/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}/
+lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}/
 lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}BimArchUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}BimArchUtils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}BimAxis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -501,7 +501,7 @@ lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}$
 lib/freecad/Mod/BIM/bimcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/importers/
 lib/freecad/Mod/BIM/importers/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/BIM/importers/${MODPY_PYCACHE}/
+lib/freecad/Mod/BIM/importers/${MODPY_PYCACHE}/
 lib/freecad/Mod/BIM/importers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/importers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/importers/${MODPY_PYCACHE}exportIFC.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -551,7 +551,7 @@ lib/freecad/Mod/BIM/importers/importSHP.py
 lib/freecad/Mod/BIM/importers/importWebGL.py
 lib/freecad/Mod/BIM/nativeifc/
 lib/freecad/Mod/BIM/nativeifc/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/BIM/nativeifc/${MODPY_PYCACHE}/
+lib/freecad/Mod/BIM/nativeifc/${MODPY_PYCACHE}/
 lib/freecad/Mod/BIM/nativeifc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/BIM/nativeifc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/BIM/nativeifc/${MODPY_PYCACHE}ifc_commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -664,7 +664,7 @@ lib/freecad/Mod/CAM/CAMTests/Tools/Library/test-path-tool-bit-library-00.fctl
 lib/freecad/Mod/CAM/CAMTests/Tools/Shape/
 lib/freecad/Mod/CAM/CAMTests/Tools/Shape/test-path-tool-bit-shape-00.fcstd
 lib/freecad/Mod/CAM/CAMTests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/CAMTests/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/CAMTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/CAMTests/${MODPY_PYCACHE}FilePathTestUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/CAMTests/${MODPY_PYCACHE}FilePathTestUtils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/CAMTests/${MODPY_PYCACHE}PathTestUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -794,7 +794,7 @@ lib/freecad/Mod/CAM/Path/Base/
 lib/freecad/Mod/CAM/Path/Base/Drillable.py
 lib/freecad/Mod/CAM/Path/Base/FeedRate.py
 lib/freecad/Mod/CAM/Path/Base/Generator/
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Base/Generator/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Base/Generator/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Base/Generator/${MODPY_PYCACHE}dogboneII.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Base/Generator/${MODPY_PYCACHE}dogboneII.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Base/Generator/${MODPY_PYCACHE}drill.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -823,7 +823,7 @@ lib/freecad/Mod/CAM/Path/Base/Gui/SetupSheet.py
 lib/freecad/Mod/CAM/Path/Base/Gui/SetupSheetOpPrototype.py
 lib/freecad/Mod/CAM/Path/Base/Gui/Util.py
 lib/freecad/Mod/CAM/Path/Base/Gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Base/Gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Base/Gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Base/Gui/${MODPY_PYCACHE}GetPoint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Base/Gui/${MODPY_PYCACHE}GetPoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Base/Gui/${MODPY_PYCACHE}IconViewProvider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -850,7 +850,7 @@ lib/freecad/Mod/CAM/Path/Base/SetupSheet.py
 lib/freecad/Mod/CAM/Path/Base/SetupSheetOpPrototype.py
 lib/freecad/Mod/CAM/Path/Base/Util.py
 lib/freecad/Mod/CAM/Path/Base/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Base/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Base/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Base/${MODPY_PYCACHE}Drillable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Base/${MODPY_PYCACHE}Drillable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Base/${MODPY_PYCACHE}FeedRate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -887,7 +887,7 @@ lib/freecad/Mod/CAM/Path/Dressup/Gui/TagPreferences.py
 lib/freecad/Mod/CAM/Path/Dressup/Gui/Tags.py
 lib/freecad/Mod/CAM/Path/Dressup/Gui/ZCorrect.py
 lib/freecad/Mod/CAM/Path/Dressup/Gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}AxisMap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}AxisMap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}Boundary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -915,7 +915,7 @@ lib/freecad/Mod/CAM/Path/Dressup/Gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_
 lib/freecad/Mod/CAM/Path/Dressup/Tags.py
 lib/freecad/Mod/CAM/Path/Dressup/Utils.py
 lib/freecad/Mod/CAM/Path/Dressup/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Dressup/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Dressup/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Dressup/${MODPY_PYCACHE}Boundary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Dressup/${MODPY_PYCACHE}Boundary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Dressup/${MODPY_PYCACHE}DogboneII.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -942,7 +942,7 @@ lib/freecad/Mod/CAM/Path/Main/Gui/SanityCmd.py
 lib/freecad/Mod/CAM/Path/Main/Gui/Simulator.py
 lib/freecad/Mod/CAM/Path/Main/Gui/SimulatorGL.py
 lib/freecad/Mod/CAM/Path/Main/Gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Main/Gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Main/Gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Main/Gui/${MODPY_PYCACHE}Camotics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Main/Gui/${MODPY_PYCACHE}Camotics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Main/Gui/${MODPY_PYCACHE}Fixture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -975,7 +975,7 @@ lib/freecad/Mod/CAM/Path/Main/Sanity/Sanity_Bulb.svg
 lib/freecad/Mod/CAM/Path/Main/Sanity/Sanity_Caution.svg
 lib/freecad/Mod/CAM/Path/Main/Sanity/Sanity_Note.svg
 lib/freecad/Mod/CAM/Path/Main/Sanity/Sanity_Warning.svg
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}HTMLTemplate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}HTMLTemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}ImageBuilder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -986,7 +986,7 @@ lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}Sanity.${MODPY_PYC_MAGIC_TA
 lib/freecad/Mod/CAM/Path/Main/Sanity/${MODPY_PYCACHE}Sanity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Main/Stock.py
 lib/freecad/Mod/CAM/Path/Main/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Main/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Main/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Main/${MODPY_PYCACHE}Job.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Main/${MODPY_PYCACHE}Job.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Main/${MODPY_PYCACHE}Stock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1032,7 +1032,7 @@ lib/freecad/Mod/CAM/Path/Op/Gui/ThreadMilling.py
 lib/freecad/Mod/CAM/Path/Op/Gui/Vcarve.py
 lib/freecad/Mod/CAM/Path/Op/Gui/Waterline.py
 lib/freecad/Mod/CAM/Path/Op/Gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Op/Gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Op/Gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Op/Gui/${MODPY_PYCACHE}Adaptive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Op/Gui/${MODPY_PYCACHE}Adaptive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Op/Gui/${MODPY_PYCACHE}Array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1102,7 +1102,7 @@ lib/freecad/Mod/CAM/Path/Op/Util.py
 lib/freecad/Mod/CAM/Path/Op/Vcarve.py
 lib/freecad/Mod/CAM/Path/Op/Waterline.py
 lib/freecad/Mod/CAM/Path/Op/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Op/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Op/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Op/${MODPY_PYCACHE}Adaptive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Op/${MODPY_PYCACHE}Adaptive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Op/${MODPY_PYCACHE}Area.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1161,7 +1161,7 @@ lib/freecad/Mod/CAM/Path/Post/UtilsArguments.py
 lib/freecad/Mod/CAM/Path/Post/UtilsExport.py
 lib/freecad/Mod/CAM/Path/Post/UtilsParse.py
 lib/freecad/Mod/CAM/Path/Post/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}Command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}Command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}Processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1179,7 +1179,7 @@ lib/freecad/Mod/CAM/Path/Post/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Post/scripts/
 lib/freecad/Mod/CAM/Path/Post/scripts/KineticNCBeamicon2_post.py
 lib/freecad/Mod/CAM/Path/Post/scripts/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Post/scripts/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Post/scripts/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Post/scripts/${MODPY_PYCACHE}KineticNCBeamicon2_post.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Post/scripts/${MODPY_PYCACHE}KineticNCBeamicon2_post.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Post/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1292,7 +1292,7 @@ lib/freecad/Mod/CAM/Path/Tool/Gui/BitLibrary.py
 lib/freecad/Mod/CAM/Path/Tool/Gui/BitLibraryCmd.py
 lib/freecad/Mod/CAM/Path/Tool/Gui/Controller.py
 lib/freecad/Mod/CAM/Path/Tool/Gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}Bit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}Bit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}BitCmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1308,7 +1308,7 @@ lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}Controller.${MODPY_PYC_MAGIC_T
 lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Tool/Gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Tool/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}Bit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}Bit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}Controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1316,7 +1316,7 @@ lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}Controller.${MODPY_PYC_MAGIC_TAG}p
 lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/Tool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}Geom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}Geom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}GuiInit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1330,7 +1330,7 @@ lib/freecad/Mod/CAM/Path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/PathCommands.py
 lib/freecad/Mod/CAM/PathPythonGui/
 lib/freecad/Mod/CAM/PathPythonGui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/PathPythonGui/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/PathPythonGui/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/PathPythonGui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/PathPythonGui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/PathPythonGui/${MODPY_PYCACHE}simple_edit_panel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1342,7 +1342,7 @@ lib/freecad/Mod/CAM/PathScripts/PathPropertyBagGui.py
 lib/freecad/Mod/CAM/PathScripts/PathUtils.py
 lib/freecad/Mod/CAM/PathScripts/PathUtilsGui.py
 lib/freecad/Mod/CAM/PathScripts/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/CAM/PathScripts/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/PathScripts/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/PathScripts/${MODPY_PYCACHE}PathPropertyBag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/PathScripts/${MODPY_PYCACHE}PathPropertyBag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/PathScripts/${MODPY_PYCACHE}PathPropertyBagGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1379,7 +1379,7 @@ lib/freecad/Mod/CAM/Tools/Shape/probe.fcstd
 lib/freecad/Mod/CAM/Tools/Shape/slittingsaw.fcstd
 lib/freecad/Mod/CAM/Tools/Shape/thread-mill.fcstd
 lib/freecad/Mod/CAM/Tools/Shape/v-bit.fcstd
-${MODPY_COMMENT}lib/freecad/Mod/CAM/${MODPY_PYCACHE}/
+lib/freecad/Mod/CAM/${MODPY_PYCACHE}/
 lib/freecad/Mod/CAM/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/CAM/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/CAM/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1400,7 +1400,7 @@ lib/freecad/Mod/Draft/InitGui.py
 lib/freecad/Mod/Draft/TestDraft.py
 lib/freecad/Mod/Draft/TestDraftGui.py
 lib/freecad/Mod/Draft/WorkingPlane.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/${MODPY_PYCACHE}Draft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/${MODPY_PYCACHE}Draft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/${MODPY_PYCACHE}DraftGeomUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1436,7 +1436,7 @@ lib/freecad/Mod/Draft/${MODPY_PYCACHE}importSVG.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftfunctions/
 lib/freecad/Mod/Draft/draftfunctions/README.md
 lib/freecad/Mod/Draft/draftfunctions/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftfunctions/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftfunctions/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftfunctions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftfunctions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftfunctions/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1498,7 +1498,7 @@ lib/freecad/Mod/Draft/draftfunctions/svgtext.py
 lib/freecad/Mod/Draft/draftfunctions/upgrade.py
 lib/freecad/Mod/Draft/draftgeoutils/
 lib/freecad/Mod/Draft/draftgeoutils/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftgeoutils/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftgeoutils/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftgeoutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftgeoutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftgeoutils/${MODPY_PYCACHE}arcs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1555,7 +1555,7 @@ lib/freecad/Mod/Draft/draftgeoutils/wires.py
 lib/freecad/Mod/Draft/draftguitools/
 lib/freecad/Mod/Draft/draftguitools/README.md
 lib/freecad/Mod/Draft/draftguitools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftguitools/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftguitools/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftguitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftguitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftguitools/${MODPY_PYCACHE}gui_annotationstyleeditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1753,7 +1753,7 @@ lib/freecad/Mod/Draft/draftguitools/gui_wire2spline.py
 lib/freecad/Mod/Draft/draftmake/
 lib/freecad/Mod/Draft/draftmake/README.md
 lib/freecad/Mod/Draft/draftmake/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftmake/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftmake/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftmake/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftmake/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftmake/${MODPY_PYCACHE}make_arc_3points.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1849,7 +1849,7 @@ lib/freecad/Mod/Draft/draftmake/make_wpproxy.py
 lib/freecad/Mod/Draft/draftobjects/
 lib/freecad/Mod/Draft/draftobjects/README.md
 lib/freecad/Mod/Draft/draftobjects/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftobjects/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftobjects/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftobjects/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1936,7 +1936,7 @@ lib/freecad/Mod/Draft/draftobjects/wpproxy.py
 lib/freecad/Mod/Draft/drafttaskpanels/
 lib/freecad/Mod/Draft/drafttaskpanels/README.md
 lib/freecad/Mod/Draft/drafttaskpanels/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/drafttaskpanels/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/drafttaskpanels/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/drafttaskpanels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/drafttaskpanels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/drafttaskpanels/${MODPY_PYCACHE}task_circulararray.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1960,7 +1960,7 @@ lib/freecad/Mod/Draft/drafttaskpanels/task_shapestring.py
 lib/freecad/Mod/Draft/drafttests/
 lib/freecad/Mod/Draft/drafttests/README.md
 lib/freecad/Mod/Draft/drafttests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/drafttests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/drafttests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/drafttests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/drafttests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/drafttests/${MODPY_PYCACHE}auxiliary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2011,7 +2011,7 @@ lib/freecad/Mod/Draft/drafttests/test_svg.py
 lib/freecad/Mod/Draft/draftutils/
 lib/freecad/Mod/Draft/draftutils/README.md
 lib/freecad/Mod/Draft/draftutils/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftutils/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftutils/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftutils/${MODPY_PYCACHE}grid_observer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2050,7 +2050,7 @@ lib/freecad/Mod/Draft/draftutils/utils.py
 lib/freecad/Mod/Draft/draftviewproviders/
 lib/freecad/Mod/Draft/draftviewproviders/README.md
 lib/freecad/Mod/Draft/draftviewproviders/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Draft/draftviewproviders/${MODPY_PYCACHE}/
+lib/freecad/Mod/Draft/draftviewproviders/${MODPY_PYCACHE}/
 lib/freecad/Mod/Draft/draftviewproviders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Draft/draftviewproviders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Draft/draftviewproviders/${MODPY_PYCACHE}view_array.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2158,7 +2158,7 @@ lib/freecad/Mod/Fem/Resources/ui/ResultShow.ui
 lib/freecad/Mod/Fem/Resources/ui/SolverCalculix.ui
 lib/freecad/Mod/Fem/TestFemApp.py
 lib/freecad/Mod/Fem/TestFemGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2172,7 +2172,7 @@ lib/freecad/Mod/Fem/${MODPY_PYCACHE}TestFemGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/coding_conventions.md
 lib/freecad/Mod/Fem/femcommands/
 lib/freecad/Mod/Fem/femcommands/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femcommands/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femcommands/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femcommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femcommands/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2183,7 +2183,7 @@ lib/freecad/Mod/Fem/femcommands/commands.py
 lib/freecad/Mod/Fem/femcommands/manager.py
 lib/freecad/Mod/Fem/femexamples/
 lib/freecad/Mod/Fem/femexamples/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femexamples/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femexamples/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femexamples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femexamples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femexamples/${MODPY_PYCACHE}boxanalysis_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2349,7 +2349,7 @@ lib/freecad/Mod/Fem/femexamples/material_multiple_tensionrod_twoboxes.py
 lib/freecad/Mod/Fem/femexamples/material_nl_platewithhole.py
 lib/freecad/Mod/Fem/femexamples/meshes/
 lib/freecad/Mod/Fem/femexamples/meshes/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femexamples/meshes/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femexamples/meshes/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femexamples/meshes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femexamples/meshes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femexamples/meshes/${MODPY_PYCACHE}mesh_beamsimple_tetra10.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2463,13 +2463,13 @@ lib/freecad/Mod/Fem/femexamples/truss_3d_cs_circle_ele_seg2.py
 lib/freecad/Mod/Fem/femexamples/truss_3d_cs_circle_ele_seg3.py
 lib/freecad/Mod/Fem/femguiobjects/
 lib/freecad/Mod/Fem/femguiobjects/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femguiobjects/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femguiobjects/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femguiobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femguiobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femguiobjects/readme.md
 lib/freecad/Mod/Fem/femguiutils/
 lib/freecad/Mod/Fem/femguiutils/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femguiutils/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femguiutils/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femguiutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femguiutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femguiutils/${MODPY_PYCACHE}migrate_gui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2480,7 +2480,7 @@ lib/freecad/Mod/Fem/femguiutils/migrate_gui.py
 lib/freecad/Mod/Fem/femguiutils/selection_widgets.py
 lib/freecad/Mod/Fem/feminout/
 lib/freecad/Mod/Fem/feminout/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/feminout/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/feminout/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/feminout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/feminout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/feminout/${MODPY_PYCACHE}convert2TetGen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2533,7 +2533,7 @@ lib/freecad/Mod/Fem/feminout/writeFenicsXDMF.py
 lib/freecad/Mod/Fem/feminout/writeFenicsXML.py
 lib/freecad/Mod/Fem/femmesh/
 lib/freecad/Mod/Fem/femmesh/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femmesh/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femmesh/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femmesh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femmesh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femmesh/${MODPY_PYCACHE}femmesh2mesh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2553,7 +2553,7 @@ lib/freecad/Mod/Fem/femmesh/meshtools.py
 lib/freecad/Mod/Fem/femmesh/netgentools.py
 lib/freecad/Mod/Fem/femobjects/
 lib/freecad/Mod/Fem/femobjects/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femobjects/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femobjects/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femobjects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femobjects/${MODPY_PYCACHE}base_femelement.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2648,7 +2648,7 @@ lib/freecad/Mod/Fem/femobjects/result_mechanical.py
 lib/freecad/Mod/Fem/femobjects/solver_ccxtools.py
 lib/freecad/Mod/Fem/femresult/
 lib/freecad/Mod/Fem/femresult/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}resulttools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2656,7 +2656,7 @@ lib/freecad/Mod/Fem/femresult/${MODPY_PYCACHE}resulttools.${MODPY_PYC_MAGIC_TAG}
 lib/freecad/Mod/Fem/femresult/resulttools.py
 lib/freecad/Mod/Fem/femsolver/
 lib/freecad/Mod/Fem/femsolver/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}equationbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2681,7 +2681,7 @@ lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}writerbase.${MODPY_PYC_MAGIC_TAG}$
 lib/freecad/Mod/Fem/femsolver/${MODPY_PYCACHE}writerbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/calculix/
 lib/freecad/Mod/Fem/femsolver/calculix/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/calculix/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/calculix/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/calculix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/calculix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/calculix/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2770,7 +2770,7 @@ lib/freecad/Mod/Fem/femsolver/calculix/write_step_output.py
 lib/freecad/Mod/Fem/femsolver/calculix/writer.py
 lib/freecad/Mod/Fem/femsolver/elmer/
 lib/freecad/Mod/Fem/femsolver/elmer/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}sifio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2783,7 +2783,7 @@ lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG
 lib/freecad/Mod/Fem/femsolver/elmer/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/elmer/equations/
 lib/freecad/Mod/Fem/femsolver/elmer/equations/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/elmer/equations/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/elmer/equations/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/elmer/equations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/elmer/equations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/elmer/equations/${MODPY_PYCACHE}deformation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2856,7 +2856,7 @@ lib/freecad/Mod/Fem/femsolver/elmer/writer.py
 lib/freecad/Mod/Fem/femsolver/equationbase.py
 lib/freecad/Mod/Fem/femsolver/fenics/
 lib/freecad/Mod/Fem/femsolver/fenics/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}fenics_tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2864,7 +2864,7 @@ lib/freecad/Mod/Fem/femsolver/fenics/${MODPY_PYCACHE}fenics_tools.${MODPY_PYC_MA
 lib/freecad/Mod/Fem/femsolver/fenics/fenics_tools.py
 lib/freecad/Mod/Fem/femsolver/mystran/
 lib/freecad/Mod/Fem/femsolver/mystran/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/mystran/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/mystran/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/mystran/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/mystran/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/mystran/${MODPY_PYCACHE}add_con_fixed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2905,7 +2905,7 @@ lib/freecad/Mod/Fem/femsolver/task.py
 lib/freecad/Mod/Fem/femsolver/writerbase.py
 lib/freecad/Mod/Fem/femsolver/z88/
 lib/freecad/Mod/Fem/femsolver/z88/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femsolver/z88/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femsolver/z88/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femsolver/z88/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femsolver/z88/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femsolver/z88/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2919,7 +2919,7 @@ lib/freecad/Mod/Fem/femsolver/z88/tasks.py
 lib/freecad/Mod/Fem/femsolver/z88/writer.py
 lib/freecad/Mod/Fem/femtaskpanels/
 lib/freecad/Mod/Fem/femtaskpanels/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtaskpanels/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtaskpanels/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtaskpanels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtaskpanels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtaskpanels/${MODPY_PYCACHE}base_femmeshtaskpanel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2999,12 +2999,12 @@ lib/freecad/Mod/Fem/femtaskpanels/task_result_mechanical.py
 lib/freecad/Mod/Fem/femtaskpanels/task_solver_ccxtools.py
 lib/freecad/Mod/Fem/femtest/
 lib/freecad/Mod/Fem/femtest/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/app/
 lib/freecad/Mod/Fem/femtest/app/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/app/${MODPY_PYCACHE}support_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3045,12 +3045,12 @@ lib/freecad/Mod/Fem/femtest/app/test_solver_mystran.py
 lib/freecad/Mod/Fem/femtest/app/test_solver_z88.py
 lib/freecad/Mod/Fem/femtest/data/
 lib/freecad/Mod/Fem/femtest/data/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/calculix/
 lib/freecad/Mod/Fem/femtest/data/calculix/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/calculix/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/calculix/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/calculix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/calculix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/calculix/box.FCStd
@@ -3100,7 +3100,7 @@ lib/freecad/Mod/Fem/femtest/data/calculix/thermomech_bimetal.inp
 lib/freecad/Mod/Fem/femtest/data/elmer/
 lib/freecad/Mod/Fem/femtest/data/elmer/ELMERSOLVER_STARTINFO
 lib/freecad/Mod/Fem/femtest/data/elmer/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/elmer/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/elmer/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/elmer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/elmer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/elmer/box_static_0_mm.sif
@@ -3111,7 +3111,7 @@ lib/freecad/Mod/Fem/femtest/data/elmer/ccxcantilever_prescribeddisplacement_0_mm
 lib/freecad/Mod/Fem/femtest/data/elmer/group_mesh.geo
 lib/freecad/Mod/Fem/femtest/data/mesh/
 lib/freecad/Mod/Fem/femtest/data/mesh/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/mesh/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/mesh/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/mesh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/mesh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/mesh/tetra10_mesh.inp
@@ -3121,7 +3121,7 @@ lib/freecad/Mod/Fem/femtest/data/mesh/tetra10_mesh.yml
 lib/freecad/Mod/Fem/femtest/data/mesh/tetra10_mesh.z88
 lib/freecad/Mod/Fem/femtest/data/mystran/
 lib/freecad/Mod/Fem/femtest/data/mystran/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/mystran/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/mystran/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/mystran/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/mystran/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/mystran/ccx_cantilever_ele_quad4.bdf
@@ -3132,13 +3132,13 @@ lib/freecad/Mod/Fem/femtest/data/mystran/ccx_cantilever_nodeload.bdf
 lib/freecad/Mod/Fem/femtest/data/mystran/mystran_plate.bdf
 lib/freecad/Mod/Fem/femtest/data/open/
 lib/freecad/Mod/Fem/femtest/data/open/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/open/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/open/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/open/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/open/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/open/all_objects_de9b3fb438.FCStd
 lib/freecad/Mod/Fem/femtest/data/z88/
 lib/freecad/Mod/Fem/femtest/data/z88/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/data/z88/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/data/z88/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/data/z88/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/data/z88/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/data/z88/ccx_cantilever_ele_hexa20/
@@ -3183,7 +3183,7 @@ lib/freecad/Mod/Fem/femtest/data/z88/ccx_cantilever_nodeload/z88man.txt
 lib/freecad/Mod/Fem/femtest/data/z88/ccx_cantilever_nodeload/z88mat.txt
 lib/freecad/Mod/Fem/femtest/gui/
 lib/freecad/Mod/Fem/femtest/gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtest/gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtest/gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtest/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtest/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtest/gui/${MODPY_PYCACHE}test_open.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3193,7 +3193,7 @@ lib/freecad/Mod/Fem/femtest/test_commands.sh
 lib/freecad/Mod/Fem/femtest/test_information.md
 lib/freecad/Mod/Fem/femtools/
 lib/freecad/Mod/Fem/femtools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femtools/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femtools/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femtools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femtools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femtools/${MODPY_PYCACHE}ccxtools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3225,7 +3225,7 @@ lib/freecad/Mod/Fem/femtools/migrate_app.py
 lib/freecad/Mod/Fem/femtools/tokrules.py
 lib/freecad/Mod/Fem/femviewprovider/
 lib/freecad/Mod/Fem/femviewprovider/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Fem/femviewprovider/${MODPY_PYCACHE}/
+lib/freecad/Mod/Fem/femviewprovider/${MODPY_PYCACHE}/
 lib/freecad/Mod/Fem/femviewprovider/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Fem/femviewprovider/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Fem/femviewprovider/${MODPY_PYCACHE}view_base_femconstraint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3328,7 +3328,7 @@ lib/freecad/Mod/Help/
 lib/freecad/Mod/Help/Help.py
 lib/freecad/Mod/Help/Help_rc.py
 lib/freecad/Mod/Help/InitGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Help/${MODPY_PYCACHE}/
+lib/freecad/Mod/Help/${MODPY_PYCACHE}/
 lib/freecad/Mod/Help/${MODPY_PYCACHE}Help.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Help/${MODPY_PYCACHE}Help.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Help/${MODPY_PYCACHE}Help_rc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3375,7 +3375,7 @@ lib/freecad/Mod/Idf/Idflibs/TSS0P_8.stp
 lib/freecad/Mod/Idf/Idflibs/VC0603_SMD.stp
 lib/freecad/Mod/Idf/Idflibs/footprints_models.csv
 lib/freecad/Mod/Idf/Init.py
-${MODPY_COMMENT}lib/freecad/Mod/Idf/${MODPY_PYCACHE}/
+lib/freecad/Mod/Idf/${MODPY_PYCACHE}/
 lib/freecad/Mod/Idf/${MODPY_PYCACHE}Idf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Idf/${MODPY_PYCACHE}Idf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Idf/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3384,7 +3384,7 @@ lib/freecad/Mod/Import/
 lib/freecad/Mod/Import/Init.py
 lib/freecad/Mod/Import/InitGui.py
 lib/freecad/Mod/Import/TestImportGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Import/${MODPY_PYCACHE}/
+lib/freecad/Mod/Import/${MODPY_PYCACHE}/
 lib/freecad/Mod/Import/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Import/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Import/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3397,7 +3397,7 @@ lib/freecad/Mod/Import/stepZ.py
 lib/freecad/Mod/Inspection/
 lib/freecad/Mod/Inspection/Init.py
 lib/freecad/Mod/Inspection/InitGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Inspection/${MODPY_PYCACHE}/
+lib/freecad/Mod/Inspection/${MODPY_PYCACHE}/
 lib/freecad/Mod/Inspection/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Inspection/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Inspection/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3412,7 +3412,7 @@ lib/freecad/Mod/Material/Resources/ui/materials-editor.ui
 lib/freecad/Mod/Material/Templatematerial.yml
 lib/freecad/Mod/Material/TestMaterialsApp.py
 lib/freecad/Mod/Material/TestMaterialsGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Material/${MODPY_PYCACHE}/
+lib/freecad/Mod/Material/${MODPY_PYCACHE}/
 lib/freecad/Mod/Material/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Material/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Material/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3439,7 +3439,7 @@ lib/freecad/Mod/Material/materialtests/TestMaterialFilter.py
 lib/freecad/Mod/Material/materialtests/TestMaterials.py
 lib/freecad/Mod/Material/materialtests/TestModels.py
 lib/freecad/Mod/Material/materialtests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}TestMaterialCreation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}TestMaterialCreation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}TestMaterialDocument.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3455,7 +3455,7 @@ lib/freecad/Mod/Material/materialtests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGI
 lib/freecad/Mod/Material/materialtools/
 lib/freecad/Mod/Material/materialtools/MaterialModels.py
 lib/freecad/Mod/Material/materialtools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Material/materialtools/${MODPY_PYCACHE}/
+lib/freecad/Mod/Material/materialtools/${MODPY_PYCACHE}/
 lib/freecad/Mod/Material/materialtools/${MODPY_PYCACHE}MaterialModels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Material/materialtools/${MODPY_PYCACHE}MaterialModels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Material/materialtools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3468,7 +3468,7 @@ lib/freecad/Mod/Measure/Init.py
 lib/freecad/Mod/Measure/InitGui.py
 lib/freecad/Mod/Measure/MeasureCOM.py
 lib/freecad/Mod/Measure/UtilsMeasure.py
-${MODPY_COMMENT}lib/freecad/Mod/Measure/${MODPY_PYCACHE}/
+lib/freecad/Mod/Measure/${MODPY_PYCACHE}/
 lib/freecad/Mod/Measure/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Measure/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Measure/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3489,7 +3489,7 @@ lib/freecad/Mod/Mesh/Init.py
 lib/freecad/Mod/Mesh/InitGui.py
 lib/freecad/Mod/Mesh/MeshEnums.py
 lib/freecad/Mod/Mesh/MeshTestsApp.py
-${MODPY_COMMENT}lib/freecad/Mod/Mesh/${MODPY_PYCACHE}/
+lib/freecad/Mod/Mesh/${MODPY_PYCACHE}/
 lib/freecad/Mod/Mesh/${MODPY_PYCACHE}BuildRegularGeoms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Mesh/${MODPY_PYCACHE}BuildRegularGeoms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Mesh/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3504,7 +3504,7 @@ lib/freecad/Mod/MeshPart/
 lib/freecad/Mod/MeshPart/Init.py
 lib/freecad/Mod/MeshPart/InitGui.py
 lib/freecad/Mod/MeshPart/MeshFlatteningCommand.py
-${MODPY_COMMENT}lib/freecad/Mod/MeshPart/${MODPY_PYCACHE}/
+lib/freecad/Mod/MeshPart/${MODPY_PYCACHE}/
 lib/freecad/Mod/MeshPart/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/MeshPart/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/MeshPart/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3519,12 +3519,12 @@ lib/freecad/Mod/OpenSCAD/OpenSCADCommands.py
 lib/freecad/Mod/OpenSCAD/OpenSCADFeatures.py
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/OpenSCAD/OpenSCADTest/${MODPY_PYCACHE}/
+lib/freecad/Mod/OpenSCAD/OpenSCADTest/${MODPY_PYCACHE}/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/${MODPY_PYCACHE}/
+lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/${MODPY_PYCACHE}/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/app/${MODPY_PYCACHE}test_importCSG.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3539,12 +3539,12 @@ lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/Surface.dat
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/Surface.png
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/Surface2.dat
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/${MODPY_PYCACHE}/
+lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/${MODPY_PYCACHE}/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/${MODPY_PYCACHE}/
+lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/${MODPY_PYCACHE}/
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/OpenSCAD/OpenSCADTest/gui/${MODPY_PYCACHE}test_dummy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3555,7 +3555,7 @@ lib/freecad/Mod/OpenSCAD/OpenSCADUtils.py
 lib/freecad/Mod/OpenSCAD/OpenSCAD_rc.py
 lib/freecad/Mod/OpenSCAD/TestOpenSCADApp.py
 lib/freecad/Mod/OpenSCAD/TestOpenSCADGui.py
-${MODPY_COMMENT}lib/freecad/Mod/OpenSCAD/${MODPY_PYCACHE}/
+lib/freecad/Mod/OpenSCAD/${MODPY_PYCACHE}/
 lib/freecad/Mod/OpenSCAD/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/OpenSCAD/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/OpenSCAD/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3599,7 +3599,7 @@ lib/freecad/Mod/Part/AttachmentEditor/FrozenClass.py
 lib/freecad/Mod/Part/AttachmentEditor/TaskAttachmentEditor.py
 lib/freecad/Mod/Part/AttachmentEditor/TaskAttachmentEditor.ui
 lib/freecad/Mod/Part/AttachmentEditor/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/AttachmentEditor/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/AttachmentEditor/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/AttachmentEditor/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/AttachmentEditor/${MODPY_PYCACHE}Commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/AttachmentEditor/${MODPY_PYCACHE}FrozenClass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3618,7 +3618,7 @@ lib/freecad/Mod/Part/BOPTools/SplitAPI.py
 lib/freecad/Mod/Part/BOPTools/SplitFeatures.py
 lib/freecad/Mod/Part/BOPTools/Utils.py
 lib/freecad/Mod/Part/BOPTools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/BOPTools/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/BOPTools/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/BOPTools/${MODPY_PYCACHE}BOPFeatures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/BOPTools/${MODPY_PYCACHE}BOPFeatures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/BOPTools/${MODPY_PYCACHE}GeneralFuseResult.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3645,7 +3645,7 @@ lib/freecad/Mod/Part/BasicShapes/TaskTube.ui
 lib/freecad/Mod/Part/BasicShapes/Utils.py
 lib/freecad/Mod/Part/BasicShapes/ViewProviderShapes.py
 lib/freecad/Mod/Part/BasicShapes/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/BasicShapes/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/BasicShapes/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/BasicShapes/${MODPY_PYCACHE}CommandShapes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/BasicShapes/${MODPY_PYCACHE}CommandShapes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/BasicShapes/${MODPY_PYCACHE}ShapeContent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3664,7 +3664,7 @@ lib/freecad/Mod/Part/CompoundTools/Explode.py
 lib/freecad/Mod/Part/CompoundTools/_CommandCompoundFilter.py
 lib/freecad/Mod/Part/CompoundTools/_CommandExplodeCompound.py
 lib/freecad/Mod/Part/CompoundTools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/CompoundTools/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/CompoundTools/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/CompoundTools/${MODPY_PYCACHE}CompoundFilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/CompoundTools/${MODPY_PYCACHE}CompoundFilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/CompoundTools/${MODPY_PYCACHE}Explode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3682,7 +3682,7 @@ lib/freecad/Mod/Part/MakeBottle.py
 lib/freecad/Mod/Part/PartEnums.py
 lib/freecad/Mod/Part/TestPartApp.py
 lib/freecad/Mod/Part/TestPartGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3705,7 +3705,7 @@ lib/freecad/Mod/Part/parttests/Geom2d_tests.py
 lib/freecad/Mod/Part/parttests/TopoShapeListTest.py
 lib/freecad/Mod/Part/parttests/TopoShapeTest.py
 lib/freecad/Mod/Part/parttests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Part/parttests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Part/parttests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Part/parttests/${MODPY_PYCACHE}BRep_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Part/parttests/${MODPY_PYCACHE}BRep_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Part/parttests/${MODPY_PYCACHE}ColorPerFaceTest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3759,7 +3759,7 @@ lib/freecad/Mod/PartDesign/PartDesignTests/TestSketch.py
 lib/freecad/Mod/PartDesign/PartDesignTests/TestThickness.py
 lib/freecad/Mod/PartDesign/PartDesignTests/TestTopologicalNamingProblem.py
 lib/freecad/Mod/PartDesign/PartDesignTests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/PartDesignTests/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/PartDesignTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/PartDesignTests/${MODPY_PYCACHE}TestBoolean.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/PartDesignTests/${MODPY_PYCACHE}TestBoolean.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/PartDesignTests/${MODPY_PYCACHE}TestChamfer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3817,7 +3817,7 @@ lib/freecad/Mod/PartDesign/Scripts/Parallelepiped.py
 lib/freecad/Mod/PartDesign/Scripts/RadialCopy.py
 lib/freecad/Mod/PartDesign/Scripts/Spring.py
 lib/freecad/Mod/PartDesign/Scripts/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/Scripts/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/Scripts/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/Scripts/${MODPY_PYCACHE}DistanceBolt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/Scripts/${MODPY_PYCACHE}DistanceBolt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/Scripts/${MODPY_PYCACHE}Epitrochoid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3847,7 +3847,7 @@ lib/freecad/Mod/PartDesign/WizardShaft/WizardShaft.py
 lib/freecad/Mod/PartDesign/WizardShaft/WizardShaft.svg
 lib/freecad/Mod/PartDesign/WizardShaft/WizardShaftTable.py
 lib/freecad/Mod/PartDesign/WizardShaft/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}SegmentFunction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}SegmentFunction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}Shaft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3863,7 +3863,7 @@ lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}WizardShaftTable.${MODPY_
 lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/WizardShaft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3880,7 +3880,7 @@ lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODP
 lib/freecad/Mod/PartDesign/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/fcgear/
 lib/freecad/Mod/PartDesign/fcgear/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/fcgear/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/fcgear/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/fcgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/fcgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/fcgear/${MODPY_PYCACHE}fcgear.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3894,7 +3894,7 @@ lib/freecad/Mod/PartDesign/fcgear/involute.py
 lib/freecad/Mod/PartDesign/fcgear/svggear.py
 lib/freecad/Mod/PartDesign/fcsprocket/
 lib/freecad/Mod/PartDesign/fcsprocket/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/PartDesign/fcsprocket/${MODPY_PYCACHE}/
+lib/freecad/Mod/PartDesign/fcsprocket/${MODPY_PYCACHE}/
 lib/freecad/Mod/PartDesign/fcsprocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/PartDesign/fcsprocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/PartDesign/fcsprocket/${MODPY_PYCACHE}fcsprocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3908,20 +3908,20 @@ lib/freecad/Mod/PartDesign/fcsprocket/fcsprocketdialog.py
 lib/freecad/Mod/PartDesign/fcsprocket/sprocket.py
 lib/freecad/Mod/Plot/
 lib/freecad/Mod/Plot/Plot.py
-${MODPY_COMMENT}lib/freecad/Mod/Plot/${MODPY_PYCACHE}/
+lib/freecad/Mod/Plot/${MODPY_PYCACHE}/
 lib/freecad/Mod/Plot/${MODPY_PYCACHE}Plot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Plot/${MODPY_PYCACHE}Plot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Points/
 lib/freecad/Mod/Points/Init.py
 lib/freecad/Mod/Points/InitGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Points/${MODPY_PYCACHE}/
+lib/freecad/Mod/Points/${MODPY_PYCACHE}/
 lib/freecad/Mod/Points/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Points/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Points/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Points/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Points/pointscommands/
 lib/freecad/Mod/Points/pointscommands/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Points/pointscommands/${MODPY_PYCACHE}/
+lib/freecad/Mod/Points/pointscommands/${MODPY_PYCACHE}/
 lib/freecad/Mod/Points/pointscommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Points/pointscommands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Points/pointscommands/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3930,7 +3930,7 @@ lib/freecad/Mod/Points/pointscommands/commands.py
 lib/freecad/Mod/ReverseEngineering/
 lib/freecad/Mod/ReverseEngineering/Init.py
 lib/freecad/Mod/ReverseEngineering/InitGui.py
-${MODPY_COMMENT}lib/freecad/Mod/ReverseEngineering/${MODPY_PYCACHE}/
+lib/freecad/Mod/ReverseEngineering/${MODPY_PYCACHE}/
 lib/freecad/Mod/ReverseEngineering/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/ReverseEngineering/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/ReverseEngineering/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3942,7 +3942,7 @@ lib/freecad/Mod/Robot/KukaExporter.py
 lib/freecad/Mod/Robot/MovieTool.py
 lib/freecad/Mod/Robot/RobotExample.py
 lib/freecad/Mod/Robot/RobotExampleTrajectoryOutOfShapes.py
-${MODPY_COMMENT}lib/freecad/Mod/Robot/${MODPY_PYCACHE}/
+lib/freecad/Mod/Robot/${MODPY_PYCACHE}/
 lib/freecad/Mod/Robot/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Robot/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Robot/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3967,7 +3967,7 @@ lib/freecad/Mod/Show/SceneDetails/Pickability.py
 lib/freecad/Mod/Show/SceneDetails/VProperty.py
 lib/freecad/Mod/Show/SceneDetails/Workbench.py
 lib/freecad/Mod/Show/SceneDetails/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Show/SceneDetails/${MODPY_PYCACHE}/
+lib/freecad/Mod/Show/SceneDetails/${MODPY_PYCACHE}/
 lib/freecad/Mod/Show/SceneDetails/${MODPY_PYCACHE}Camera.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Show/SceneDetails/${MODPY_PYCACHE}Camera.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Show/SceneDetails/${MODPY_PYCACHE}ClipPlane.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3986,7 +3986,7 @@ lib/freecad/Mod/Show/ShowUtils.py
 lib/freecad/Mod/Show/TVObserver.py
 lib/freecad/Mod/Show/TVStack.py
 lib/freecad/Mod/Show/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Show/${MODPY_PYCACHE}/
+lib/freecad/Mod/Show/${MODPY_PYCACHE}/
 lib/freecad/Mod/Show/${MODPY_PYCACHE}Containers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Show/${MODPY_PYCACHE}Containers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Show/${MODPY_PYCACHE}DepGraphTools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4011,7 +4011,7 @@ lib/freecad/Mod/Sketcher/ProfileLib/
 lib/freecad/Mod/Sketcher/ProfileLib/Hexagon.py
 lib/freecad/Mod/Sketcher/ProfileLib/RegularPolygon.py
 lib/freecad/Mod/Sketcher/ProfileLib/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Sketcher/ProfileLib/${MODPY_PYCACHE}/
+lib/freecad/Mod/Sketcher/ProfileLib/${MODPY_PYCACHE}/
 lib/freecad/Mod/Sketcher/ProfileLib/${MODPY_PYCACHE}Hexagon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Sketcher/ProfileLib/${MODPY_PYCACHE}Hexagon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/ProfileLib/${MODPY_PYCACHE}RegularPolygon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4026,7 +4026,7 @@ lib/freecad/Mod/Sketcher/SketcherTests/TestSketchFillet.py
 lib/freecad/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
 lib/freecad/Mod/Sketcher/SketcherTests/TestSketcherSolver.py
 lib/freecad/Mod/Sketcher/SketcherTests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchExpression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchExpression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}TestSketchFillet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4039,7 +4039,7 @@ lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGI
 lib/freecad/Mod/Sketcher/SketcherTests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/TestSketcherApp.py
 lib/freecad/Mod/Sketcher/TestSketcherGui.py
-${MODPY_COMMENT}lib/freecad/Mod/Sketcher/${MODPY_PYCACHE}/
+lib/freecad/Mod/Sketcher/${MODPY_PYCACHE}/
 lib/freecad/Mod/Sketcher/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Sketcher/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Sketcher/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4056,7 +4056,7 @@ lib/freecad/Mod/Spreadsheet/
 lib/freecad/Mod/Spreadsheet/Init.py
 lib/freecad/Mod/Spreadsheet/InitGui.py
 lib/freecad/Mod/Spreadsheet/TestSpreadsheet.py
-${MODPY_COMMENT}lib/freecad/Mod/Spreadsheet/${MODPY_PYCACHE}/
+lib/freecad/Mod/Spreadsheet/${MODPY_PYCACHE}/
 lib/freecad/Mod/Spreadsheet/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Spreadsheet/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Spreadsheet/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4073,7 +4073,7 @@ lib/freecad/Mod/Start/
 lib/freecad/Mod/Start/Init.py
 lib/freecad/Mod/Start/InitGui.py
 lib/freecad/Mod/Start/StartMigrator.py
-${MODPY_COMMENT}lib/freecad/Mod/Start/${MODPY_PYCACHE}/
+lib/freecad/Mod/Start/${MODPY_PYCACHE}/
 lib/freecad/Mod/Start/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Start/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Start/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4086,13 +4086,13 @@ lib/freecad/Mod/Surface/InitGui.py
 lib/freecad/Mod/Surface/SurfaceTests/
 lib/freecad/Mod/Surface/SurfaceTests/TestBlendCurve.py
 lib/freecad/Mod/Surface/SurfaceTests/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}/
+lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}/
 lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}TestBlendCurve.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}TestBlendCurve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Surface/SurfaceTests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Surface/TestSurfaceApp.py
-${MODPY_COMMENT}lib/freecad/Mod/Surface/${MODPY_PYCACHE}/
+lib/freecad/Mod/Surface/${MODPY_PYCACHE}/
 lib/freecad/Mod/Surface/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Surface/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Surface/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4120,7 +4120,7 @@ lib/freecad/Mod/TechDraw/TDTest/TestNonAsciiSymbol.svg
 lib/freecad/Mod/TechDraw/TDTest/TestSymbol.svg
 lib/freecad/Mod/TechDraw/TDTest/TestTemplate.svg
 lib/freecad/Mod/TechDraw/TDTest/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/TechDraw/TDTest/${MODPY_PYCACHE}/
+lib/freecad/Mod/TechDraw/TDTest/${MODPY_PYCACHE}/
 lib/freecad/Mod/TechDraw/TDTest/${MODPY_PYCACHE}DrawHatchTest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/TechDraw/TDTest/${MODPY_PYCACHE}DrawHatchTest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/TechDraw/TDTest/${MODPY_PYCACHE}DrawProjectionGroupTest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4166,7 +4166,7 @@ lib/freecad/Mod/TechDraw/TechDrawTools/TaskHoleShaftFit.py
 lib/freecad/Mod/TechDraw/TechDrawTools/TaskMoveView.py
 lib/freecad/Mod/TechDraw/TechDrawTools/TaskShareView.py
 lib/freecad/Mod/TechDraw/TechDrawTools/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}/
+lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}/
 lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}CommandAxoLengthDimension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}CommandAxoLengthDimension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}CommandFillTemplateFields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4199,7 +4199,7 @@ lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGI
 lib/freecad/Mod/TechDraw/TechDrawTools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/TechDraw/TestTechDrawApp.py
 lib/freecad/Mod/TechDraw/TestTechDrawGui.py
-${MODPY_COMMENT}lib/freecad/Mod/TechDraw/${MODPY_PYCACHE}/
+lib/freecad/Mod/TechDraw/${MODPY_PYCACHE}/
 lib/freecad/Mod/TechDraw/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/TechDraw/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/TechDraw/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4231,7 +4231,7 @@ lib/freecad/Mod/Test/UnicodeTests.py
 lib/freecad/Mod/Test/UnitTests.py
 lib/freecad/Mod/Test/Workbench.py
 lib/freecad/Mod/Test/__init__.py
-${MODPY_COMMENT}lib/freecad/Mod/Test/${MODPY_PYCACHE}/
+lib/freecad/Mod/Test/${MODPY_PYCACHE}/
 lib/freecad/Mod/Test/${MODPY_PYCACHE}BaseTests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Test/${MODPY_PYCACHE}BaseTests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Test/${MODPY_PYCACHE}Document.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4279,7 +4279,7 @@ lib/freecad/Mod/Tux/NavigationIndicatorGui.py
 lib/freecad/Mod/Tux/PersistentToolbars.py
 lib/freecad/Mod/Tux/PersistentToolbarsGui.py
 lib/freecad/Mod/Tux/Tux_rc.py
-${MODPY_COMMENT}lib/freecad/Mod/Tux/${MODPY_PYCACHE}/
+lib/freecad/Mod/Tux/${MODPY_PYCACHE}/
 lib/freecad/Mod/Tux/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Tux/${MODPY_PYCACHE}InitGui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Tux/${MODPY_PYCACHE}NavigationIndicatorGui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4292,7 +4292,7 @@ lib/freecad/Mod/Tux/${MODPY_PYCACHE}Tux_rc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTE
 lib/freecad/Mod/Tux/${MODPY_PYCACHE}Tux_rc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/Mod/Web/
 lib/freecad/Mod/Web/Init.py
-${MODPY_COMMENT}lib/freecad/Mod/Web/${MODPY_PYCACHE}/
+lib/freecad/Mod/Web/${MODPY_PYCACHE}/
 lib/freecad/Mod/Web/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/freecad/Mod/Web/${MODPY_PYCACHE}Init.${MODPY_PYC_MAGIC_TAG}pyc
 lib/freecad/bin/
@@ -4681,7 +4681,7 @@ lib/freecad/lib/
 lib/python${MODPY_VERSION}/site-packages/freecad/
 lib/python${MODPY_VERSION}/site-packages/freecad/UiTools.py
 lib/python${MODPY_VERSION}/site-packages/freecad/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freecad/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/freecad/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/freecad/${MODPY_PYCACHE}UiTools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/freecad/${MODPY_PYCACHE}UiTools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/freecad/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

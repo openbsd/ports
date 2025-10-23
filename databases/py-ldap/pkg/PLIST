@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_
 @so lib/python${MODPY_VERSION}/site-packages/_ldap.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ldap/
 lib/python${MODPY_VERSION}/site-packages/ldap/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/${MODPY_PYCACHE}async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap/compat.py
 lib/python${MODPY_VERSION}/site-packages/ldap/constants.py
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap/controls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap/controls/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/${MODPY_PYCACHE}deref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap/controls/vlv.py
 lib/python${MODPY_VERSION}/site-packages/ldap/dn.py
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap/resiter.py
 lib/python${MODPY_VERSION}/site-packages/ldap/sasl.py
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap/schema/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -132,7 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/slapdtest/
 lib/python${MODPY_VERSION}/site-packages/slapdtest/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}_slapdtest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

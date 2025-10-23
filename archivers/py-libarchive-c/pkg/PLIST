@@ -2,7 +2,7 @@
 @pkgpath archivers/py-libarchive-c,python3
 lib/python${MODPY_VERSION}/site-packages/libarchive/
 lib/python${MODPY_VERSION}/site-packages/libarchive/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}entry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

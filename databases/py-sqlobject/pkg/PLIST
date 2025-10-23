@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/sqlobject-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sqlobject-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/declarative.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/events.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}firebirdconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/${MODPY_PYCACHE}fire
 lib/python${MODPY_VERSION}/site-packages/sqlobject/firebird/firebirdconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}hashcol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/include/${MODPY_PYCACHE}hashc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/hashcol.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/${MODPY_PYCACHE}test_hashcol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/include/tests/test_hashcol.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/index.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}iteration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/${MODPY_PYCACHE}i
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/iteration.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/inheritance/tests/${MODPY_PYCACHE}test_aggregates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/joins.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/main.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -143,7 +143,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/${MODPY_PYCACHE}comma
 lib/python${MODPY_VERSION}/site-packages/sqlobject/manager/command.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/${MODPY_PYCACHE}maxdbconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,7 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/maxdbconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/maxdb/readme.txt
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}mssqlconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/${MODPY_PYCACHE}mssqlco
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mssql/mssqlconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}mysqlconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/${MODPY_PYCACHE}mysqlco
 lib/python${MODPY_VERSION}/site-packages/sqlobject/mysql/mysqlconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/${MODPY_PYCACHE}pgconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/postgres/pgconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlbuilder.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sqlite/${MODPY_PYCACHE}sqliteconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -187,7 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/sresults.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/styles.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}sybaseconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -195,7 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/${MODPY_PYCACHE}sybase
 lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/sybaseconnection.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/${MODPY_PYCACHE}dbtest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -434,7 +434,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_validation.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/tests/test_views.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/${MODPY_PYCACHE}csvexport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -451,12 +451,12 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/util/moduleloader.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/threadinglocal.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/test/${MODPY_PYCACHE}test_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

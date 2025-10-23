@@ -18,7 +18,7 @@ share/gdb/python/gdb/
 share/gdb/python/gdb/FrameDecorator.py
 share/gdb/python/gdb/FrameIterator.py
 share/gdb/python/gdb/__init__.py
-${MODPY_COMMENT}share/gdb/python/gdb/${MODPY_PYCACHE}/
+share/gdb/python/gdb/${MODPY_PYCACHE}/
 share/gdb/python/gdb/${MODPY_PYCACHE}FrameDecorator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}FrameDecorator.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}FrameIterator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,7 +51,7 @@ share/gdb/python/gdb/${MODPY_PYCACHE}xmethod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEX
 share/gdb/python/gdb/${MODPY_PYCACHE}xmethod.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/command/
 share/gdb/python/gdb/command/__init__.py
-${MODPY_COMMENT}share/gdb/python/gdb/command/${MODPY_PYCACHE}/
+share/gdb/python/gdb/command/${MODPY_PYCACHE}/
 share/gdb/python/gdb/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/command/${MODPY_PYCACHE}explore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ share/gdb/python/gdb/command/unwinders.py
 share/gdb/python/gdb/command/xmethods.py
 share/gdb/python/gdb/dap/
 share/gdb/python/gdb/dap/__init__.py
-${MODPY_COMMENT}share/gdb/python/gdb/dap/${MODPY_PYCACHE}/
+share/gdb/python/gdb/dap/${MODPY_PYCACHE}/
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}breakpoint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -153,7 +153,7 @@ share/gdb/python/gdb/disassembler.py
 share/gdb/python/gdb/frames.py
 share/gdb/python/gdb/function/
 share/gdb/python/gdb/function/__init__.py
-${MODPY_COMMENT}share/gdb/python/gdb/function/${MODPY_PYCACHE}/
+share/gdb/python/gdb/function/${MODPY_PYCACHE}/
 share/gdb/python/gdb/function/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/function/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/function/${MODPY_PYCACHE}as_string.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -170,7 +170,7 @@ share/gdb/python/gdb/missing_files.py
 share/gdb/python/gdb/missing_objfile.py
 share/gdb/python/gdb/printer/
 share/gdb/python/gdb/printer/__init__.py
-${MODPY_COMMENT}share/gdb/python/gdb/printer/${MODPY_PYCACHE}/
+share/gdb/python/gdb/printer/${MODPY_PYCACHE}/
 share/gdb/python/gdb/printer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/printer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/printing.py

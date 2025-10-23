@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sqlparse/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}utils.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/sqlparse/cli.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/${MODPY_PYCACHE}filter_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlparse/engine/statement_splitter.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/${MODPY_PYCACHE}aligned_indent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

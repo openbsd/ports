@@ -1,7 +1,7 @@
 bin/puddletag
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/actiondlg.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audio_filter.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/${MODPY_PYCACHE}_compatid3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/genres.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/helperwin.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/${MODPY_PYCACHE}quodlibetlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/logger.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/m3u.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/${MODPY_PYCACHE}action_dialogs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -196,7 +196,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/tagtools.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/teststuff.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -209,7 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/musiclib.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/pluginloader.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/puddleobjects.py
@@ -222,7 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/CDDB.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/TagSource.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}CDDB.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}CDDB.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/${MODPY_PYCACHE}TagSource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -256,7 +256,7 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/exampletags.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/freedb.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/${MODPY_PYCACHE}funcs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

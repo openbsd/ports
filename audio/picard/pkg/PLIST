@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_DISTV}.dist-info/licenses/COPYING.txt
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/picard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}album.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}version.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/picard/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}json_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -74,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/album.py
 lib/python${MODPY_VERSION}/site-packages/picard/audit.py
 lib/python${MODPY_VERSION}/site-packages/picard/browser/
 lib/python${MODPY_VERSION}/site-packages/picard/browser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/browser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/browser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/browser/${MODPY_PYCACHE}addrelease.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/config.py
 lib/python${MODPY_VERSION}/site-packages/picard/config_upgrade.py
 lib/python${MODPY_VERSION}/site-packages/picard/const/
 lib/python${MODPY_VERSION}/site-packages/picard/const/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/const/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/const/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/const/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/const/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/const/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/const/scripts.py
 lib/python${MODPY_VERSION}/site-packages/picard/const/sys.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/coverart/${MODPY_PYCACHE}utils.$
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/image.py
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/coverart/providers/${MODPY_PYCACHE}caa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -150,7 +150,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/coverart/utils.py
 lib/python${MODPY_VERSION}/site-packages/picard/dataobj.py
 lib/python${MODPY_VERSION}/site-packages/picard/disc/
 lib/python${MODPY_VERSION}/site-packages/picard/disc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/disc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/disc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/disc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/disc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/disc/${MODPY_PYCACHE}dbpoweramplog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/disc/whipperlog.py
 lib/python${MODPY_VERSION}/site-packages/picard/file.py
 lib/python${MODPY_VERSION}/site-packages/picard/formats/
 lib/python${MODPY_VERSION}/site-packages/picard/formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/formats/${MODPY_PYCACHE}ac3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -197,7 +197,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/formats/midi.py
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mp4.py
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/formats/mutagenext/${MODPY_PYCACHE}aac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/plugin.py
 lib/python${MODPY_VERSION}/site-packages/picard/pluginmanager.py
 lib/python${MODPY_VERSION}/site-packages/picard/plugins/
 lib/python${MODPY_VERSION}/site-packages/picard/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/profile.py
@@ -232,7 +232,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/releasegroup.py
 lib/python${MODPY_VERSION}/site-packages/picard/resources.py
 lib/python${MODPY_VERSION}/site-packages/picard/script/
 lib/python${MODPY_VERSION}/site-packages/picard/script/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/script/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/script/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/script/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -249,7 +249,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/tagger.py
 lib/python${MODPY_VERSION}/site-packages/picard/track.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/${MODPY_PYCACHE}aboutdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -422,7 +422,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/moveable_list_view.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/newuserdialog.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/ui/options/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/ui/options/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/options/${MODPY_PYCACHE}advanced.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -515,7 +515,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/scripteditor.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/scriptsmenu.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/searchdialog/${MODPY_PYCACHE}album.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -579,7 +579,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/ui_win_compat_dialog.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/util.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/${MODPY_PYCACHE}editablelistview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -605,7 +605,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/taglisteditor.py
 lib/python${MODPY_VERSION}/site-packages/picard/ui/widgets/tristatesortheaderview.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/
 lib/python${MODPY_VERSION}/site-packages/picard/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}astrcmp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -693,7 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/xml.py
 lib/python${MODPY_VERSION}/site-packages/picard/version.py
 lib/python${MODPY_VERSION}/site-packages/picard/webservice/
 lib/python${MODPY_VERSION}/site-packages/picard/webservice/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/webservice/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/picard/webservice/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/webservice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/webservice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/webservice/${MODPY_PYCACHE}api_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

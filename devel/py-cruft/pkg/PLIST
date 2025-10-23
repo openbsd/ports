@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cruft/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cruft/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}exceptions.${MODP
 lib/python${MODPY_VERSION}/site-packages/cruft/_cli.py
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cruft/_commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cruft/_commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,7 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/cruft/_commands/link.py
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/update.py
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/${MODPY_PYCACHE}cookiecutter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

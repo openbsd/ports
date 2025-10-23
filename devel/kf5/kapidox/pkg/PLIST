@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/${DISTNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kapidox/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}argparserutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}depdiagram_generate.${MODPY_PYC_MAGIC_TAG}pyc
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/kapidox/argparserutils.py
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kapidox/depdiagram/${MODPY_PYCACHE}framework.${MODPY_PYC_MAGIC_TAG}pyc

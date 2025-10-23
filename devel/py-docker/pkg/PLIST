@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/docker-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/docker-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/docker-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/docker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/${MODPY_PYCACHE}version.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/docker/_version.py
 lib/python${MODPY_VERSION}/site-packages/docker/api/
 lib/python${MODPY_VERSION}/site-packages/docker/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/api/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/client.py
 lib/python${MODPY_VERSION}/site-packages/docker/constants.py
 lib/python${MODPY_VERSION}/site-packages/docker/context/
 lib/python${MODPY_VERSION}/site-packages/docker/context/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/context/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/context/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/context/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/context/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/context/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/context/config.py
 lib/python${MODPY_VERSION}/site-packages/docker/context/context.py
 lib/python${MODPY_VERSION}/site-packages/docker/credentials/
 lib/python${MODPY_VERSION}/site-packages/docker/credentials/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/credentials/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/credentials/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/credentials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/credentials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/credentials/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -105,7 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/credentials/utils.py
 lib/python${MODPY_VERSION}/site-packages/docker/errors.py
 lib/python${MODPY_VERSION}/site-packages/docker/models/
 lib/python${MODPY_VERSION}/site-packages/docker/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/models/${MODPY_PYCACHE}configs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/models/volumes.py
 lib/python${MODPY_VERSION}/site-packages/docker/tls.py
 lib/python${MODPY_VERSION}/site-packages/docker/transport/
 lib/python${MODPY_VERSION}/site-packages/docker/transport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/transport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/transport/${MODPY_PYCACHE}basehttpadapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -164,7 +164,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/transport/sshconn.py
 lib/python${MODPY_VERSION}/site-packages/docker/transport/unixconn.py
 lib/python${MODPY_VERSION}/site-packages/docker/types/
 lib/python${MODPY_VERSION}/site-packages/docker/types/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/types/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/types/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/types/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -190,7 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/docker/types/services.py
 lib/python${MODPY_VERSION}/site-packages/docker/types/swarm.py
 lib/python${MODPY_VERSION}/site-packages/docker/utils/
 lib/python${MODPY_VERSION}/site-packages/docker/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docker/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docker/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docker/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docker/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docker/utils/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

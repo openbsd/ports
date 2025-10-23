@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder-${MODPY_DISTV}.di
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/cli.py
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/compare_migrated/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/hooks.py
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_jupyter_builder/migrate/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -3960,7 +3960,7 @@ ${LLVM_BASE}/lib/cmake/llvm/llvm-driver-template.cpp.in
 @static-lib ${LLVM_BASE}/lib/libclangTransformer.a
 ${LLVM_BASE}/lib/libear/
 ${LLVM_BASE}/lib/libear/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/libear/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/libear/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/libear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/libear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/libear/config.h.in
@@ -3972,7 +3972,7 @@ ${LLVM_BASE}/lib/libear/ear.c
 @static-lib ${LLVM_BASE}/lib/liblldWasm.a
 ${LLVM_BASE}/lib/libscanbuild/
 ${LLVM_BASE}/lib/libscanbuild/__init__.py
-${MODPY_COMMENT}${LLVM_BASE}/lib/libscanbuild/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/libscanbuild/${MODPY_PYCACHE}/
 ${LLVM_BASE}/lib/libscanbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/libscanbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/libscanbuild/${MODPY_PYCACHE}analyze.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4009,7 +4009,7 @@ ${LLVM_BASE}/libexec/intercept-c++
 ${LLVM_BASE}/libexec/intercept-cc
 ${LLVM_BASE}/share/
 ${LLVM_BASE}/share/clang/
-${MODPY_COMMENT}${LLVM_BASE}/share/clang/${MODPY_PYCACHE}/
+${LLVM_BASE}/share/clang/${MODPY_PYCACHE}/
 ${LLVM_BASE}/share/clang/${MODPY_PYCACHE}clang-format-diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/share/clang/${MODPY_PYCACHE}clang-format-diff.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/share/clang/${MODPY_PYCACHE}clang-format-sublime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4023,7 +4023,7 @@ ${LLVM_BASE}/share/clang/clang-format-sublime.py
 ${LLVM_BASE}/share/clang/clang-format.el
 ${LLVM_BASE}/share/clang/clang-format.py
 ${LLVM_BASE}/share/opt-viewer/
-${MODPY_COMMENT}${LLVM_BASE}/share/opt-viewer/${MODPY_PYCACHE}/
+${LLVM_BASE}/share/opt-viewer/${MODPY_PYCACHE}/
 ${LLVM_BASE}/share/opt-viewer/${MODPY_PYCACHE}opt-diff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/share/opt-viewer/${MODPY_PYCACHE}opt-diff.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/share/opt-viewer/${MODPY_PYCACHE}opt-stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4046,7 +4046,7 @@ ${LLVM_BASE}/share/scan-build/sorttable.js
 ${LLVM_BASE}/share/scan-view/
 ${LLVM_BASE}/share/scan-view/Reporter.py
 ${LLVM_BASE}/share/scan-view/ScanView.py
-${MODPY_COMMENT}${LLVM_BASE}/share/scan-view/${MODPY_PYCACHE}/
+${LLVM_BASE}/share/scan-view/${MODPY_PYCACHE}/
 ${LLVM_BASE}/share/scan-view/${MODPY_PYCACHE}Reporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/share/scan-view/${MODPY_PYCACHE}Reporter.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/share/scan-view/${MODPY_PYCACHE}ScanView.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

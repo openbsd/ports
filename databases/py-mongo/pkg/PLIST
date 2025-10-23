@@ -2,7 +2,7 @@
 %%no_be%%
 lib/python${MODPY_VERSION}/site-packages/bson/
 lib/python${MODPY_VERSION}/site-packages/bson/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bson/${MODPY_PYCACHE}_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -74,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/bson/typings.py
 lib/python${MODPY_VERSION}/site-packages/bson/tz_util.py
 lib/python${MODPY_VERSION}/site-packages/gridfs/
 lib/python${MODPY_VERSION}/site-packages/gridfs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}grid_file_shared
 lib/python${MODPY_VERSION}/site-packages/gridfs/${MODPY_PYCACHE}grid_file_shared.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/
 lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gridfs/asynchronous/${MODPY_PYCACHE}grid_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/gridfs/grid_file_shared.py
 lib/python${MODPY_VERSION}/site-packages/gridfs/py.typed
 lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/
 lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gridfs/synchronous/${MODPY_PYCACHE}grid_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pymongo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_asyncio_lock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,7 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/_gcp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/_version.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/
 lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/asynchronous/${MODPY_PYCACHE}aggregation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -379,7 +379,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/ssl_context.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/ssl_support.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/
 lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/synchronous/${MODPY_PYCACHE}aggregation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

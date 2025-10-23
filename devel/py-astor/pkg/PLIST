@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/astor-${MODPY_DISTV}.dist-info/top_leve
 lib/python${MODPY_VERSION}/site-packages/astor-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/astor/VERSION
 lib/python${MODPY_VERSION}/site-packages/astor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astor/${MODPY_PYCACHE}code_gen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

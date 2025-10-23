@@ -1,7 +1,7 @@
 @pkgpath devel/keystone/python,python3
 lib/python${MODPY_VERSION}/site-packages/keystone/
 lib/python${MODPY_VERSION}/site-packages/keystone/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}arm64_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

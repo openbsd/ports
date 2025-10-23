@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/sonata-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/sonata-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/sonata-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sonata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/sonata/pixmaps/sonatacd.png
 lib/python${MODPY_VERSION}/site-packages/sonata/playlists.py
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/${MODPY_PYCACHE}covers_lastfm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

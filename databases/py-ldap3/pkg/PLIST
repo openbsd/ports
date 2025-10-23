@@ -10,14 +10,14 @@ lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/ldap3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ldap3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/${MODPY_PYCACHE}attrDef.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/entry.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/abstract/objectDef.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,14 +69,14 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/core/tls.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/core/usage.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}operation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/${MODPY_PYCACHE}operation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/${MODPY_PYCACHE}addMembersToGroups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/removeMembersFro
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/microsoft/unlockAccount.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/novell/${MODPY_PYCACHE}addMembersToGroups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/PagedSearch.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/PersistentSearch.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/${MODPY_PYCACHE}PagedSearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/${MODPY_PYCACHE}PagedSearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/${MODPY_PYCACHE}PersistentSearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,7 +155,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/modifyPassword.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/extend/standard/whoAmI.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/operation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/operation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/${MODPY_PYCACHE}abandon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -190,7 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/operation/search.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/operation/unbind.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/${MODPY_PYCACHE}controls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -221,7 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/controls.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/convert.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/formatters/${MODPY_PYCACHE}formatters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -245,7 +245,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/rfc4512.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/rfc4527.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/${MODPY_PYCACHE}digestMd5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -265,7 +265,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/plain.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/sasl/sasl.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/${MODPY_PYCACHE}ad2012R2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -285,7 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/edir914.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/protocol/schemas/slapd24.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/${MODPY_PYCACHE}asyncStream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -326,7 +326,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/safeSync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/strategy/sync.py
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap3/utils/${MODPY_PYCACHE}asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

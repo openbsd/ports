@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/thrift/TSerialization.py
 lib/python${MODPY_VERSION}/site-packages/thrift/TTornado.py
 lib/python${MODPY_VERSION}/site-packages/thrift/Thrift.py
 lib/python${MODPY_VERSION}/site-packages/thrift/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/thrift/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/thrift/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/thrift/${MODPY_PYCACHE}TMultiplexedProcessor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/thrift/${MODPY_PYCACHE}TMultiplexedProcessor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/thrift/${MODPY_PYCACHE}TRecursive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/thrift/protocol/TMultiplexedProtocol.py
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/TProtocol.py
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/TProtocolDecorator.py
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/thrift/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/thrift/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/${MODPY_PYCACHE}TBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/${MODPY_PYCACHE}TBase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/thrift/protocol/${MODPY_PYCACHE}TBinaryProtocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/thrift/server/TNonblockingServer.py
 lib/python${MODPY_VERSION}/site-packages/thrift/server/TProcessPoolServer.py
 lib/python${MODPY_VERSION}/site-packages/thrift/server/TServer.py
 lib/python${MODPY_VERSION}/site-packages/thrift/server/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/thrift/server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/thrift/server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/thrift/server/${MODPY_PYCACHE}THttpServer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/thrift/server/${MODPY_PYCACHE}THttpServer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/thrift/server/${MODPY_PYCACHE}TNonblockingServer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -86,7 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/thrift/transport/TTransport.py
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/TTwisted.py
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/TZlibTransport.py
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/thrift/transport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/thrift/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/${MODPY_PYCACHE}THeaderTransport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/${MODPY_PYCACHE}THeaderTransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/thrift/transport/${MODPY_PYCACHE}THttpClient.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

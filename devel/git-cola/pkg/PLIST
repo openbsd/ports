@@ -5,7 +5,7 @@ bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/cola/
 lib/python${MODPY_VERSION}/site-packages/cola/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cola/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -276,7 +276,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/interaction.py
 lib/python${MODPY_VERSION}/site-packages/cola/main.py
 lib/python${MODPY_VERSION}/site-packages/cola/models/
 lib/python${MODPY_VERSION}/site-packages/cola/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cola/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cola/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cola/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/models/${MODPY_PYCACHE}browse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -310,7 +310,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/utils.py
 lib/python${MODPY_VERSION}/site-packages/cola/version.py
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/widgets/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

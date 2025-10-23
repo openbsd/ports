@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/influxdb-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/influxdb-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/influxdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb/${MODPY_PYCACHE}_dataframe_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/helper.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/
 lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb/influxdb08/${MODPY_PYCACHE}chunked_json.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb/line_protocol.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/resultset.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/${MODPY_PYCACHE}chunked_json_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb/tests/dataframe_client_test.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/helper_test.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/influxdb08/${MODPY_PYCACHE}client_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb/tests/misc.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/resultset_test.py
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb/tests/server_tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_DISTV}.dist-info/to
 lib/python${MODPY_VERSION}/site-packages/pgactivity/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/profiles/narrow.conf
 lib/python${MODPY_VERSION}/site-packages/pgactivity/profiles/wide.conf
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/disable_log_min_duration_sample.sql

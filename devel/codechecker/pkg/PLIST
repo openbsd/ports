@@ -3,7 +3,7 @@ share/CodeChecker/
 share/CodeChecker/LICENSE.TXT
 share/CodeChecker/bin/
 share/CodeChecker/bin/CodeChecker
-${MODPY_COMMENT}share/CodeChecker/bin/${MODPY_PYCACHE}/
+share/CodeChecker/bin/${MODPY_PYCACHE}/
 share/CodeChecker/bin/${MODPY_PYCACHE}gerrit_changed_files_to_skipfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/bin/${MODPY_PYCACHE}gerrit_changed_files_to_skipfile.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/bin/bazel-compile-commands
@@ -52,7 +52,7 @@ share/CodeChecker/lib/
 share/CodeChecker/lib/python3/
 share/CodeChecker/lib/python3/bazel_compile_commands/
 share/CodeChecker/lib/python3/bazel_compile_commands/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/bazel_compile_commands/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/bazel_compile_commands/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/bazel_compile_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/bazel_compile_commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/bazel_compile_commands/${MODPY_PYCACHE}bazel_compile_commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ share/CodeChecker/lib/python3/bazel_compile_commands/bazel_compile_commands.py
 share/CodeChecker/lib/python3/codechecker/
 share/CodeChecker/lib/python3/codechecker_analyzer/
 share/CodeChecker/lib/python3/codechecker_analyzer/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/${MODPY_PYCACHE}analysis_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzer.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzer_context.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/${MODPY_PYCACHE}analyzer_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -112,7 +112,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/analyzer_base.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/analyzer_types.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/statistics.
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangsa/version.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -156,7 +156,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/clangtidy/result_ha
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/config_handler.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -171,7 +171,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/cppcheck/result_han
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/flag.py
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/gcc/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -187,7 +187,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/analyzers/result_handler_base
 share/CodeChecker/lib/python3/codechecker_analyzer/arg.py
 share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/
 share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/${MODPY_PYCACHE}build_action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -205,7 +205,7 @@ share/CodeChecker/lib/python3/codechecker_analyzer/buildlog/log_parser.py
 share/CodeChecker/lib/python3/codechecker_analyzer/checkers.py
 share/CodeChecker/lib/python3/codechecker_analyzer/cmd/
 share/CodeChecker/lib/python3/codechecker_analyzer/cmd/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_analyzer/cmd/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_analyzer/cmd/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_analyzer/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_analyzer/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_analyzer/cmd/${MODPY_PYCACHE}analyze.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -253,7 +253,7 @@ share/CodeChecker/lib/python3/codechecker_api-6.58.0.dist-info/licenses/LICENSE
 share/CodeChecker/lib/python3/codechecker_api-6.58.0.dist-info/top_level.txt
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/${MODPY_PYCACHE}codeCheckerAuthentication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -267,7 +267,7 @@ share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/constants.py
 share/CodeChecker/lib/python3/codechecker_api/Authentication_v6/ttypes.py
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/${MODPY_PYCACHE}configurationService.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -281,7 +281,7 @@ share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/constants.py
 share/CodeChecker/lib/python3/codechecker_api/Configuration_v6/ttypes.py
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/${MODPY_PYCACHE}codeCheckerProductService.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -295,7 +295,7 @@ share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/constants.py
 share/CodeChecker/lib/python3/codechecker_api/ProductManagement_v6/ttypes.py
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -308,12 +308,12 @@ share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/constants.py
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/serverInfoService.py
 share/CodeChecker/lib/python3/codechecker_api/ServerInfo_v6/ttypes.py
 share/CodeChecker/lib/python3/codechecker_api/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/
 share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api/codeCheckerDBAccess_v6/${MODPY_PYCACHE}codeCheckerDBAccess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -337,7 +337,7 @@ share/CodeChecker/lib/python3/codechecker_api_shared-6.58.0.dist-info/licenses/
 share/CodeChecker/lib/python3/codechecker_api_shared-6.58.0.dist-info/licenses/LICENSE
 share/CodeChecker/lib/python3/codechecker_api_shared-6.58.0.dist-info/top_level.txt
 share/CodeChecker/lib/python3/codechecker_api_shared/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_api_shared/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_api_shared/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_api_shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_api_shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_api_shared/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -348,7 +348,7 @@ share/CodeChecker/lib/python3/codechecker_api_shared/constants.py
 share/CodeChecker/lib/python3/codechecker_api_shared/ttypes.py
 share/CodeChecker/lib/python3/codechecker_client/
 share/CodeChecker/lib/python3/codechecker_client/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_client/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_client/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_client/${MODPY_PYCACHE}blame_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -383,7 +383,7 @@ share/CodeChecker/lib/python3/codechecker_client/blame_info.py
 share/CodeChecker/lib/python3/codechecker_client/client.py
 share/CodeChecker/lib/python3/codechecker_client/cmd/
 share/CodeChecker/lib/python3/codechecker_client/cmd/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_client/cmd/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_client/cmd/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_client/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_client/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_client/cmd/${MODPY_PYCACHE}cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -397,7 +397,7 @@ share/CodeChecker/lib/python3/codechecker_client/cmd_line_client.py
 share/CodeChecker/lib/python3/codechecker_client/credential_manager.py
 share/CodeChecker/lib/python3/codechecker_client/helpers/
 share/CodeChecker/lib/python3/codechecker_client/helpers/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_client/helpers/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_client/helpers/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_client/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_client/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_client/helpers/${MODPY_PYCACHE}authentication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -426,7 +426,7 @@ share/CodeChecker/lib/python3/codechecker_client/thrift_call.py
 share/CodeChecker/lib/python3/codechecker_client/token_client.py
 share/CodeChecker/lib/python3/codechecker_common/
 share/CodeChecker/lib/python3/codechecker_common/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_common/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_common/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_common/${MODPY_PYCACHE}arg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -454,7 +454,7 @@ share/CodeChecker/lib/python3/codechecker_common/checker_labels.py
 share/CodeChecker/lib/python3/codechecker_common/cli.py
 share/CodeChecker/lib/python3/codechecker_common/cmd/
 share/CodeChecker/lib/python3/codechecker_common/cmd/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_common/cmd/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_common/cmd/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_common/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_common/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_common/cmd/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,7 +463,7 @@ share/CodeChecker/lib/python3/codechecker_common/cmd/version.py
 share/CodeChecker/lib/python3/codechecker_common/cmd_config.py
 share/CodeChecker/lib/python3/codechecker_common/compatibility/
 share/CodeChecker/lib/python3/codechecker_common/compatibility/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_common/compatibility/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_common/compatibility/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_common/compatibility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_common/compatibility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_common/compatibility/${MODPY_PYCACHE}multiprocessing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -472,7 +472,7 @@ share/CodeChecker/lib/python3/codechecker_common/compatibility/multiprocessing.p
 share/CodeChecker/lib/python3/codechecker_common/logger.py
 share/CodeChecker/lib/python3/codechecker_common/output/
 share/CodeChecker/lib/python3/codechecker_common/output/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_common/output/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_common/output/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_common/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_common/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_common/requirements_py/
@@ -487,7 +487,7 @@ share/CodeChecker/lib/python3/codechecker_common/tests/Makefile
 share/CodeChecker/lib/python3/codechecker_common/util.py
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -498,7 +498,7 @@ share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/cli.py
 share/CodeChecker/lib/python3/codechecker_merge_clang_extdef_mappings/merge_clang_extdef_mappings.py
 share/CodeChecker/lib/python3/codechecker_report_converter/
 share/CodeChecker/lib/python3/codechecker_report_converter/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -509,7 +509,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}util.
 share/CodeChecker/lib/python3/codechecker_report_converter/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -519,7 +519,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/${MODPY_PYC
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -530,7 +530,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/clang_tidy/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -541,7 +541,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/coccinelle/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -549,7 +549,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/${
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cppcheck/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -560,7 +560,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/ana
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/cpplint/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -568,7 +568,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/${MO
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/eslint/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -576,7 +576,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/${MODPY
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/gcc/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -587,7 +587,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/anal
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/golint/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -595,7 +595,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/${MOD
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/infer/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -606,7 +606,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/a
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/kerneldoc/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -618,7 +618,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/markdownlin
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -629,7 +629,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/an
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pyflakes/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -637,7 +637,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/${MO
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/pylint/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,14 +645,14 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/roslynator/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -663,7 +663,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/address/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -674,7 +674,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/leak/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/memory/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -686,7 +686,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -697,7 +697,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/thread/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -708,7 +708,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sanitizers/ub/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -719,7 +719,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/anal
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/smatch/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -730,7 +730,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/anal
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sparse/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -741,7 +741,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/anal
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/sphinx/parser.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -749,7 +749,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/${
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/spotbugs/analyzer_result.py
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -758,7 +758,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/analyzers/tslint/anal
 share/CodeChecker/lib/python3/codechecker_report_converter/cli.py
 share/CodeChecker/lib/python3/codechecker_report_converter/report/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/report/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/report/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/report/${MODPY_PYCACHE}checker_labels.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -775,7 +775,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/report/checker_labels
 share/CodeChecker/lib/python3/codechecker_report_converter/report/hash.py
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/report/output/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/report/output/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/${MODPY_PYCACHE}baseline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -793,7 +793,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/report/output/codecli
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/gerrit.py
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/html/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -827,7 +827,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/report/output/json.py
 share/CodeChecker/lib/python3/codechecker_report_converter/report/output/plaintext.py
 share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_report_converter/report/parser/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -846,7 +846,7 @@ share/CodeChecker/lib/python3/codechecker_report_converter/twodim.py
 share/CodeChecker/lib/python3/codechecker_report_converter/util.py
 share/CodeChecker/lib/python3/codechecker_server/
 share/CodeChecker/lib/python3/codechecker_server/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}instance_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -867,7 +867,7 @@ share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}tmp.${MODPY_PYC
 share/CodeChecker/lib/python3/codechecker_server/${MODPY_PYCACHE}tmp.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/api/
 share/CodeChecker/lib/python3/codechecker_server/api/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/api/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/api/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/api/${MODPY_PYCACHE}authentication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -893,7 +893,7 @@ share/CodeChecker/lib/python3/codechecker_server/api/server_info_handler.py
 share/CodeChecker/lib/python3/codechecker_server/api/thrift_enum_helper.py
 share/CodeChecker/lib/python3/codechecker_server/auth/
 share/CodeChecker/lib/python3/codechecker_server/auth/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/auth/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/auth/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/auth/${MODPY_PYCACHE}cc_ldap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -904,7 +904,7 @@ share/CodeChecker/lib/python3/codechecker_server/auth/cc_ldap.py
 share/CodeChecker/lib/python3/codechecker_server/auth/cc_pam.py
 share/CodeChecker/lib/python3/codechecker_server/cmd/
 share/CodeChecker/lib/python3/codechecker_server/cmd/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -912,7 +912,7 @@ share/CodeChecker/lib/python3/codechecker_server/cmd/${MODPY_PYCACHE}server.${MO
 share/CodeChecker/lib/python3/codechecker_server/cmd/server.py
 share/CodeChecker/lib/python3/codechecker_server/database/
 share/CodeChecker/lib/python3/codechecker_server/database/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/database/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/database/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/database/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/database/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/database/${MODPY_PYCACHE}config_db_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -931,14 +931,14 @@ share/CodeChecker/lib/python3/codechecker_server/instance_manager.py
 share/CodeChecker/lib/python3/codechecker_server/metadata.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/
 share/CodeChecker/lib/python3/codechecker_server/migrations/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/migrations/config/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/migrations/config/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -957,7 +957,7 @@ share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/6b9f
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/7829789fc19c_global_permission_to_get_access_controls.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/8268fc7ca7f4_initial_schema.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/${MODPY_PYCACHE}00099e8bc212_store_limit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/${MODPY_PYCACHE}00099e8bc212_store_limit.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/${MODPY_PYCACHE}126fa3f55e4b_added_permission_for_product_view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -992,7 +992,7 @@ share/CodeChecker/lib/python3/codechecker_server/migrations/config/versions/dec6
 share/CodeChecker/lib/python3/codechecker_server/migrations/logging.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/migrations/report/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/migrations/report/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1014,7 +1014,7 @@ share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/82ca
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/9987aa593ca7_add_codechecker_version_to_run_history.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/9d956a0fae8d_report_annotations.py
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/${MODPY_PYCACHE}080349e895d7_add_check_command_to_run_history.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/${MODPY_PYCACHE}080349e895d7_add_check_command_to_run_history.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_server/migrations/report/versions/${MODPY_PYCACHE}101a9cb747de_add_bug_event_and_point_report_index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1084,7 +1084,7 @@ share/CodeChecker/lib/python3/codechecker_server/session_manager.py
 share/CodeChecker/lib/python3/codechecker_server/tmp.py
 share/CodeChecker/lib/python3/codechecker_statistics_collector/
 share/CodeChecker/lib/python3/codechecker_statistics_collector/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1094,7 +1094,7 @@ share/CodeChecker/lib/python3/codechecker_statistics_collector/${MODPY_PYCACHE}p
 share/CodeChecker/lib/python3/codechecker_statistics_collector/cli.py
 share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/
 share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/${MODPY_PYCACHE}return_value.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1106,12 +1106,12 @@ share/CodeChecker/lib/python3/codechecker_statistics_collector/collectors/specia
 share/CodeChecker/lib/python3/codechecker_statistics_collector/post_process_stats.py
 share/CodeChecker/lib/python3/codechecker_web/
 share/CodeChecker/lib/python3/codechecker_web/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_web/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_web/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_web/cmd/
 share/CodeChecker/lib/python3/codechecker_web/cmd/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}web_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1119,7 +1119,7 @@ share/CodeChecker/lib/python3/codechecker_web/cmd/${MODPY_PYCACHE}web_version.${
 share/CodeChecker/lib/python3/codechecker_web/cmd/web_version.py
 share/CodeChecker/lib/python3/codechecker_web/shared/
 share/CodeChecker/lib/python3/codechecker_web/shared/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/codechecker_web/shared/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/codechecker_web/shared/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/codechecker_web/shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/codechecker_web/shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/codechecker_web/shared/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1145,7 +1145,7 @@ share/CodeChecker/lib/python3/codechecker_web/shared/version.py
 share/CodeChecker/lib/python3/codechecker_web/shared/webserver_context.py
 share/CodeChecker/lib/python3/tu_collector/
 share/CodeChecker/lib/python3/tu_collector/__init__.py
-${MODPY_COMMENT}share/CodeChecker/lib/python3/tu_collector/${MODPY_PYCACHE}/
+share/CodeChecker/lib/python3/tu_collector/${MODPY_PYCACHE}/
 share/CodeChecker/lib/python3/tu_collector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/CodeChecker/lib/python3/tu_collector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/CodeChecker/lib/python3/tu_collector/${MODPY_PYCACHE}tu_collector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

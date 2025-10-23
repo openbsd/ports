@@ -1,7 +1,7 @@
 @pkgpath audio/py-mpd2,python3
 lib/python${MODPY_VERSION}/site-packages/mpd/
 lib/python${MODPY_VERSION}/site-packages/mpd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

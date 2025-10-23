@@ -1481,7 +1481,7 @@ share/arduino/hardware/espressif/esp8266/tests/restyle.sh
 share/arduino/hardware/espressif/esp8266/tests/run_CI_locally.sh
 share/arduino/hardware/espressif/esp8266/tools/
 share/arduino/hardware/espressif/esp8266/tools/TZupdate.sh
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/${MODPY_PYCACHE}boards.txt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/${MODPY_PYCACHE}boards.txt.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1528,7 +1528,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/CONTRIBUTING.md
 share/arduino/hardware/espressif/esp8266/tools/esptool/LICENSE
 share/arduino/hardware/espressif/esp8266/tools/esptool/MANIFEST.in
 share/arduino/hardware/espressif/esp8266/tools/esptool/README.md
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/${MODPY_PYCACHE}esp_rfc2217_server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/${MODPY_PYCACHE}esp_rfc2217_server.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/${MODPY_PYCACHE}espefuse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1543,12 +1543,12 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/esp_rfc2217_server.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espefuse.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/${MODPY_PYCACHE}base_fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1566,7 +1566,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/base_oper
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/emulate_efuse_controller_base.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/${MODPY_PYCACHE}emulate_efuse_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1583,7 +1583,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/mem
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32/operations.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/${MODPY_PYCACHE}emulate_efuse_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1600,7 +1600,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/m
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32c3/operations.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/${MODPY_PYCACHE}emulate_efuse_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1617,7 +1617,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/m
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s2/operations.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/espressif/efuse/esp32s3beta2/${MODPY_PYCACHE}emulate_efuse_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1639,7 +1639,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/esptool.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/Makefile
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/README.md
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/${MODPY_PYCACHE}compare_stubs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/${MODPY_PYCACHE}compare_stubs.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/flasher_stub/${MODPY_PYCACHE}esptool_test_stub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1680,7 +1680,7 @@ share/arduino/hardware/espressif/esp8266/tools/esptool/setup.cfg
 share/arduino/hardware/espressif/esp8266/tools/esptool/setup.py
 share/arduino/hardware/espressif/esp8266/tools/esptool/test/
 share/arduino/hardware/espressif/esp8266/tools/esptool/test/README.md
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/esptool/test/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/esptool/test/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/esptool/test/${MODPY_PYCACHE}test_espefuse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/esptool/test/${MODPY_PYCACHE}test_espefuse.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/esptool/test/${MODPY_PYCACHE}test_espefuse_host.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1785,12 +1785,12 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/CHANGES.rst
 share/arduino/hardware/espressif/esp8266/tools/pyserial/LICENSE.txt
 share/arduino/hardware/espressif/esp8266/tools/pyserial/MANIFEST.in
 share/arduino/hardware/espressif/esp8266/tools/pyserial/README.rst
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/Makefile
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/appendix.rst
@@ -1804,7 +1804,7 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/shortintro
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/tools.rst
 share/arduino/hardware/espressif/esp8266/tools/pyserial/documentation/url_handlers.rst
 share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/${MODPY_PYCACHE}at_protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/${MODPY_PYCACHE}at_protocol.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/examples/${MODPY_PYCACHE}port_publisher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1840,7 +1840,7 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/requirements.txt
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/__init__.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/__main__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1870,12 +1870,12 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/serialutil.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/serialwin32.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/threaded/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/${MODPY_PYCACHE}hexlify_codec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1904,7 +1904,7 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/list_ports_
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/tools/miniterm.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/urlhandler/${MODPY_PYCACHE}protocol_alt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1932,7 +1932,7 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/serial/win32.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/setup.cfg
 share/arduino/hardware/espressif/esp8266/tools/pyserial/setup.py
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}run_all_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}run_all_tests.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1971,7 +1971,7 @@ share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}tes
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/__init__.py
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp8266/tools/pyserial/test/handlers/${MODPY_PYCACHE}protocol_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

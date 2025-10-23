@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/influxdb_client-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/influxdb_client-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}version
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/${MODPY_PYCACHE}api_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/api_client.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_async/rest.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/${MODPY_PYCACHE}api_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/api_client.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/_sync/rest.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/tasks_api.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/users_api.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/${MODPY_PYCACHE}date_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/multiproces
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/warnings.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}dataframe_serializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write_api_async.
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/configuration.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/${MODPY_PYCACHE}add_resource_member_request_body.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1111,7 +1111,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/py.typed
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/rest.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/${MODPY_PYCACHE}_base_service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

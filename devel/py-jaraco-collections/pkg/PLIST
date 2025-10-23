@@ -1,7 +1,7 @@
 @pkgpath devel/py-jaraco-collections,python3
 lib/python${MODPY_VERSION}/site-packages/jaraco/collections/
 lib/python${MODPY_VERSION}/site-packages/jaraco/collections/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jaraco/collections/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jaraco/collections/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jaraco/collections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jaraco/collections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/collections/py.typed

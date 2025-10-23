@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/carbon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}amqp_listener.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}writer.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/
 lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/carbon/aggregator/${MODPY_PYCACHE}buffers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

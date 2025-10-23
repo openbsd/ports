@@ -941,7 +941,7 @@ share/arduino/hardware/espressif/esp32/package.json
 share/arduino/hardware/espressif/esp32/platform.txt
 share/arduino/hardware/espressif/esp32/programmers.txt
 share/arduino/hardware/espressif/esp32/tools/
-${MODPY_COMMENT}share/arduino/hardware/espressif/esp32/tools/${MODPY_PYCACHE}/
+share/arduino/hardware/espressif/esp32/tools/${MODPY_PYCACHE}/
 share/arduino/hardware/espressif/esp32/tools/${MODPY_PYCACHE}espota.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/arduino/hardware/espressif/esp32/tools/${MODPY_PYCACHE}espota.${MODPY_PYC_MAGIC_TAG}pyc
 share/arduino/hardware/espressif/esp32/tools/${MODPY_PYCACHE}esptool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

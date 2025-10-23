@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}_build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

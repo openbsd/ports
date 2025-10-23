@@ -7,7 +7,7 @@ bin/bpython-urwid
 lib/python${MODPY_VERSION}/site-packages/bpdb/
 lib/python${MODPY_VERSION}/site-packages/bpdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpdb/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bpython/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpython/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython/config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsies.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/${MODPY_PYCACHE}_internal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -140,7 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython/sample-config
 lib/python${MODPY_VERSION}/site-packages/bpython/simpleeval.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_args.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -187,7 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_simpl
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_simpleeval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/fodder/${MODPY_PYCACHE}encoding_ascii.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -230,7 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_repl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_simpleeval.py
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/translations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bpython/translations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.py

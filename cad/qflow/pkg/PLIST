@@ -22,7 +22,7 @@ share/qflow/bin/sta
 share/qflow/bin/yosys
 share/qflow/bin/yosys-abc
 share/qflow/scripts/
-${MODPY_COMMENT}share/qflow/scripts/${MODPY_PYCACHE}/
+share/qflow/scripts/${MODPY_PYCACHE}/
 share/qflow/scripts/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/qflow/scripts/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}pyc
 share/qflow/scripts/${MODPY_PYCACHE}count_lvs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

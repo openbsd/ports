@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION
 lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bsddb3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}db.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}dbobj.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/bsddb3/dbutils.py
 lib/python${MODPY_VERSION}/site-packages/bsddb3/test_support.py
 lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/
 lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/${MODPY_PYCACHE}test_all.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bsddb3/tests/${MODPY_PYCACHE}test_associate.${MODPY_PYC_MAGIC_TAG}pyc

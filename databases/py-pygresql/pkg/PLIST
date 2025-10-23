@@ -1,7 +1,7 @@
 @pkgpath databases/py-pygresql,python3
 lib/python${MODPY_VERSION}/site-packages/pg/
 lib/python${MODPY_VERSION}/site-packages/pg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}adapt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/pg/py.typed
 lib/python${MODPY_VERSION}/site-packages/pg/tz.py
 lib/python${MODPY_VERSION}/site-packages/pgdb/
 lib/python${MODPY_VERSION}/site-packages/pgdb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pgdb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pgdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pgdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pgdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgdb/${MODPY_PYCACHE}adapt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

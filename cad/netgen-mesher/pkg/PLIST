@@ -217,7 +217,7 @@ lib/python${MODPY_VERSION}/site-packages/netgen/
 lib/python${MODPY_VERSION}/site-packages/netgen/NgOCC.py
 lib/python${MODPY_VERSION}/site-packages/netgen/__init__.py
 lib/python${MODPY_VERSION}/site-packages/netgen/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}NgOCC.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}NgOCC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -247,7 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/netgen/${MODPY_PYCACHE}webgui.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/netgen/config/
 lib/python${MODPY_VERSION}/site-packages/netgen/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/netgen/config/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netgen/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netgen/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netgen/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/netgen/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netgen/config/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -270,7 +270,7 @@ lib/python${MODPY_VERSION}/site-packages/netgen/webgui.py
 lib/python${MODPY_VERSION}/site-packages/netgen_mesher-py3.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyngcore/
 lib/python${MODPY_VERSION}/site-packages/pyngcore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyngcore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyngcore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyngcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyngcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pyngcore/pyngcore.${MODPY_PYC_MAGIC_TAG}so

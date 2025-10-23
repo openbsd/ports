@@ -2,7 +2,7 @@ bin/com.github.geigi.cozy
 bin/cozy
 lib/python${MODPY_VERSION}/site-packages/cozy/
 lib/python${MODPY_VERSION}/site-packages/cozy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/${MODPY_PYCACHE}app_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/application.py
 lib/python${MODPY_VERSION}/site-packages/cozy/application_settings.py
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/architecture/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/architecture/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/${MODPY_PYCACHE}event_sender.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/architecture/profiler.py
 lib/python${MODPY_VERSION}/site-packages/cozy/architecture/singleton.py
 lib/python${MODPY_VERSION}/site-packages/cozy/control/
 lib/python${MODPY_VERSION}/site-packages/cozy/control/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/control/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/control/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/control/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/control/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/control/${MODPY_PYCACHE}application_directories.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/control/offline_cache.py
 lib/python${MODPY_VERSION}/site-packages/cozy/control/string_representation.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/
 lib/python${MODPY_VERSION}/site-packages/cozy/db/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/db/${MODPY_PYCACHE}artwork_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -110,19 +110,19 @@ lib/python${MODPY_VERSION}/site-packages/cozy/db/track.py
 lib/python${MODPY_VERSION}/site-packages/cozy/db/track_to_file.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/LICENCE
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ext/inject/py.typed
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/${MODPY_PYCACHE}is_same_book.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -133,7 +133,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/extensions/is_same_book.py
 lib/python${MODPY_VERSION}/site-packages/cozy/extensions/set.py
 lib/python${MODPY_VERSION}/site-packages/cozy/media/
 lib/python${MODPY_VERSION}/site-packages/cozy/media/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/media/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/media/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/media/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/media/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/media/${MODPY_PYCACHE}chapter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,7 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/media/player.py
 lib/python${MODPY_VERSION}/site-packages/cozy/media/tag_reader.py
 lib/python${MODPY_VERSION}/site-packages/cozy/model/
 lib/python${MODPY_VERSION}/site-packages/cozy/model/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/model/${MODPY_PYCACHE}book.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -190,7 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/open_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/power_manager.py
 lib/python${MODPY_VERSION}/site-packages/cozy/report/
 lib/python${MODPY_VERSION}/site-packages/cozy/report/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/report/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/report/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/report/${MODPY_PYCACHE}log_level.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -205,7 +205,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/report/reporter.py
 lib/python${MODPY_VERSION}/site-packages/cozy/tools.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/${MODPY_PYCACHE}app_view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -261,7 +261,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/ui/search_view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/toaster.py
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/ui/widgets/${MODPY_PYCACHE}album_element.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -307,7 +307,7 @@ lib/python${MODPY_VERSION}/site-packages/cozy/version.py
 lib/python${MODPY_VERSION}/site-packages/cozy/view.py
 lib/python${MODPY_VERSION}/site-packages/cozy/view_model/
 lib/python${MODPY_VERSION}/site-packages/cozy/view_model/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cozy/view_model/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cozy/view_model/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cozy/view_model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cozy/view_model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cozy/view_model/${MODPY_PYCACHE}app_view_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

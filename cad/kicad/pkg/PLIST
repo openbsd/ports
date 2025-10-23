@@ -362,7 +362,7 @@ share/kicad/demos/pic_programmer/pic_programmer.kicad_sym
 share/kicad/demos/pic_programmer/pic_sockets.kicad_sch
 share/kicad/demos/pic_programmer/sym-lib-table
 share/kicad/demos/python_scripts_examples/
-${MODPY_COMMENT}share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}/
+share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}/
 share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_menu_add_automatic_border.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_menu_add_automatic_border.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/demos/python_scripts_examples/${MODPY_PYCACHE}action_menu_text_by_date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -884,7 +884,7 @@ share/kicad/internat/zh_TW/
 share/kicad/internat/zh_TW/kicad.mo
 share/kicad/plugins/
 share/kicad/plugins/README-bom.txt
-${MODPY_COMMENT}share/kicad/plugins/${MODPY_PYCACHE}/
+share/kicad/plugins/${MODPY_PYCACHE}/
 share/kicad/plugins/${MODPY_PYCACHE}bom_csv_grouped_by_value.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/plugins/${MODPY_PYCACHE}bom_csv_grouped_by_value.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/plugins/${MODPY_PYCACHE}bom_csv_grouped_by_value_with_fp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -920,7 +920,7 @@ share/kicad/schemas/pcm.v1.schema.json
 share/kicad/scripting/
 share/kicad/scripting/kicad_pyshell/
 share/kicad/scripting/kicad_pyshell/__init__.py
-${MODPY_COMMENT}share/kicad/scripting/kicad_pyshell/${MODPY_PYCACHE}/
+share/kicad/scripting/kicad_pyshell/${MODPY_PYCACHE}/
 share/kicad/scripting/kicad_pyshell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/scripting/kicad_pyshell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/scripting/kicad_pyshell/${MODPY_PYCACHE}kicad_pyeditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -931,7 +931,7 @@ share/kicad/scripting/plugins/FPC_wizard.py
 share/kicad/scripting/plugins/FootprintWizardBase.py
 share/kicad/scripting/plugins/PadArray.py
 share/kicad/scripting/plugins/__init__.py
-${MODPY_COMMENT}share/kicad/scripting/plugins/${MODPY_PYCACHE}/
+share/kicad/scripting/plugins/${MODPY_PYCACHE}/
 share/kicad/scripting/plugins/${MODPY_PYCACHE}FPC_wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/scripting/plugins/${MODPY_PYCACHE}FPC_wizard.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/scripting/plugins/${MODPY_PYCACHE}FootprintWizardBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

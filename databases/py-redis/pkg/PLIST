@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/redis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}backoff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}utils.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/redis/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/_parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/_parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/_parsers/resp3.py
 lib/python${MODPY_VERSION}/site-packages/redis/_parsers/socket.py
 lib/python${MODPY_VERSION}/site-packages/redis/asyncio/
 lib/python${MODPY_VERSION}/site-packages/redis/asyncio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/asyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/asyncio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/asyncio/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/client.py
 lib/python${MODPY_VERSION}/site-packages/redis/cluster.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}cluster.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}sentinel
 lib/python${MODPY_VERSION}/site-packages/redis/commands/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/bf/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/commands/cluster.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/core.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/commands/graph/query_result.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/helpers.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/json/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/json/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/json/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/json/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/json/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/commands/json/path.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/redismodules.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/search/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/search/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/redis/commands/search/suggestion.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/sentinel.py
 lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/redis/commands/timeseries/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

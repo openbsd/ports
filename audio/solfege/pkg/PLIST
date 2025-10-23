@@ -1531,7 +1531,7 @@ share/solfege/help/tr/ly/theory-intervals-thirds.png
 share/solfege/solfege/
 share/solfege/solfege.css
 share/solfege/solfege/__init__.py
-${MODPY_COMMENT}share/solfege/solfege/${MODPY_PYCACHE}/
+share/solfege/solfege/${MODPY_PYCACHE}/
 share/solfege/solfege/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1594,7 +1594,7 @@ share/solfege/solfege/download_pyalsa.py
 share/solfege/solfege/esel.py
 share/solfege/solfege/exercises/
 share/solfege/solfege/exercises/__init__.py
-${MODPY_COMMENT}share/solfege/solfege/exercises/${MODPY_PYCACHE}/
+share/solfege/solfege/exercises/${MODPY_PYCACHE}/
 share/solfege/solfege/exercises/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/exercises/${MODPY_PYCACHE}chordvoicing.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/exercises/${MODPY_PYCACHE}compareintervals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1661,7 +1661,7 @@ share/solfege/solfege/mainwin.py
 share/solfege/solfege/make_screenshots.py
 share/solfege/solfege/mpd/
 share/solfege/solfege/mpd/__init__.py
-${MODPY_COMMENT}share/solfege/solfege/mpd/${MODPY_PYCACHE}/
+share/solfege/solfege/mpd/${MODPY_PYCACHE}/
 share/solfege/solfege/mpd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/mpd/${MODPY_PYCACHE}_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/mpd/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1710,7 +1710,7 @@ share/solfege/solfege/reportlib.py
 share/solfege/solfege/runtime.py
 share/solfege/solfege/soundcard/
 share/solfege/solfege/soundcard/__init__.py
-${MODPY_COMMENT}share/solfege/solfege/soundcard/${MODPY_PYCACHE}/
+share/solfege/solfege/soundcard/${MODPY_PYCACHE}/
 share/solfege/solfege/soundcard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/soundcard/${MODPY_PYCACHE}alsa_sequencer.${MODPY_PYC_MAGIC_TAG}pyc
 share/solfege/solfege/soundcard/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyc

@@ -8,6 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/pyserial_asyncio-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/pyserial_asyncio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/serial_asyncio/
 lib/python${MODPY_VERSION}/site-packages/serial_asyncio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/serial_asyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/serial_asyncio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/serial_asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/serial_asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

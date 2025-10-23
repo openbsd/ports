@@ -1,10 +1,10 @@
 @pkgpath audio/py-mutagen,python3
-${MODPY_COMMENT}bin/mid3cp
-${MODPY_COMMENT}bin/mid3iconv
-${MODPY_COMMENT}bin/mid3v2
-${MODPY_COMMENT}bin/moggsplit
-${MODPY_COMMENT}bin/mutagen-inspect
-${MODPY_COMMENT}bin/mutagen-pony
+bin/mid3cp
+bin/mid3iconv
+bin/mid3v2
+bin/moggsplit
+bin/mutagen-inspect
+bin/mutagen-pony
 lib/python${MODPY_VERSION}/site-packages/mutagen/
 lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_DISTV}.dist-info/METADATA
@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/_riff.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tools/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}_attrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/easymp4.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/flac.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -163,7 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -171,7 +171,7 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/${MODPY_PYCACHE}_util.${MOD
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3/_util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}_as_entry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -197,9 +197,9 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/tak.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/wave.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.py
-${MODPY_COMMENT}@man man/man1/mid3cp.1
-${MODPY_COMMENT}@man man/man1/mid3iconv.1
-${MODPY_COMMENT}@man man/man1/mid3v2.1
-${MODPY_COMMENT}@man man/man1/moggsplit.1
-${MODPY_COMMENT}@man man/man1/mutagen-inspect.1
-${MODPY_COMMENT}@man man/man1/mutagen-pony.1
+@man man/man1/mid3cp.1
+@man man/man1/mid3iconv.1
+@man man/man1/mid3v2.1
+@man man/man1/moggsplit.1
+@man man/man1/mutagen-inspect.1
+@man man/man1/mutagen-pony.1

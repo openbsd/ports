@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/borgstore-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/borgstore-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/borgstore/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/borgstore/${MODPY_PYCACHE}store.${MODPY
 lib/python${MODPY_VERSION}/site-packages/borgstore/_version.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/borgstore/constants.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/store.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/utils/${MODPY_PYCACHE}nesting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

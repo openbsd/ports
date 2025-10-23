@@ -772,7 +772,7 @@ share/qbs/python/
 share/qbs/python/dmgbuild/
 share/qbs/python/dmgbuild/__init__.py
 share/qbs/python/dmgbuild/__main__.py
-${MODPY_COMMENT}share/qbs/python/dmgbuild/${MODPY_PYCACHE}/
+share/qbs/python/dmgbuild/${MODPY_PYCACHE}/
 share/qbs/python/dmgbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/qbs/python/dmgbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/qbs/python/dmgbuild/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -792,7 +792,7 @@ share/qbs/python/dmgbuild/licensing.py
 share/qbs/python/ds_store/
 share/qbs/python/ds_store/__init__.py
 share/qbs/python/ds_store/__main__.py
-${MODPY_COMMENT}share/qbs/python/ds_store/${MODPY_PYCACHE}/
+share/qbs/python/ds_store/${MODPY_PYCACHE}/
 share/qbs/python/ds_store/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/qbs/python/ds_store/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/qbs/python/ds_store/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -805,7 +805,7 @@ share/qbs/python/ds_store/buddy.py
 share/qbs/python/ds_store/store.py
 share/qbs/python/mac_alias/
 share/qbs/python/mac_alias/__init__.py
-${MODPY_COMMENT}share/qbs/python/mac_alias/${MODPY_PYCACHE}/
+share/qbs/python/mac_alias/${MODPY_PYCACHE}/
 share/qbs/python/mac_alias/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/qbs/python/mac_alias/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/qbs/python/mac_alias/${MODPY_PYCACHE}alias.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
