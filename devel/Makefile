@@ -1563,7 +1563,6 @@
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-libcst
      SUBDIR += py-liblarch
-     SUBDIR += py-lief
      SUBDIR += py-littleutils
      SUBDIR += py-llvmlite
      SUBDIR += py-logfury
