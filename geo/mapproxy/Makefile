@@ -1,6 +1,6 @@
 COMMENT =	GIS WMTS/TMS tile caching server
 
-MODPY_DISTV =	5.1.1
+MODPY_DISTV =	6.0.0
 DISTNAME =		mapproxy-${MODPY_DISTV}
 
 CATEGORIES =	geo www
@@ -16,6 +16,7 @@ MODPY_PI =	yes
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	geo/py-proj \
+		geo/py-shapely \
 		devel/py-jsonschema \
 		devel/py-future \
 		www/py-werkzeug \
@@ -25,7 +26,6 @@ RUN_DEPENDS =	geo/py-proj \
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-nose \
-		geo/py-shapely \
 		geo/gdal,-python \
 		www/py-requests \
 		www/py-webtest
