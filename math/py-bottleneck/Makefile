@@ -1,9 +1,8 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_DISTV =		1.5.0
+MODPY_DISTV =		1.6.0
 DISTNAME =		bottleneck-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		math
 
