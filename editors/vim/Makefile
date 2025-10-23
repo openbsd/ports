@@ -1,5 +1,4 @@
 COMMENT=	vi clone with many additional features
-DPB_PROPERTIES=	parallel
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
 V=		9.1.1863
