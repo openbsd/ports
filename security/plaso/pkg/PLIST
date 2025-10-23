@@ -13,14 +13,14 @@ lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/plaso/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}dependencies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/${MODPY_PYCACHE}dependencies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/${MODPY_PYCACHE}browser_search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analysis/virustotal.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/windows_services.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}hashing_analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}yara_an
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/${MODPY_PYCACHE}yara_analyzer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashers/${MODPY_PYCACHE}entropy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/yara_analyzer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}extraction_tool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,7 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/${MODPY_PYCACHE}views.${MODPY
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/extraction_tool.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/${MODPY_PYCACHE}analysis_plugins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -270,7 +270,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/tools.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/views.py
 lib/python${MODPY_VERSION}/site-packages/plaso/containers/
 lib/python${MODPY_VERSION}/site-packages/plaso/containers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/containers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/containers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/containers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/containers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/containers/${MODPY_PYCACHE}analyzer_result.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -321,7 +321,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/containers/windows_events.py
 lib/python${MODPY_VERSION}/site-packages/plaso/dependencies.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/engine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/${MODPY_PYCACHE}artifact_filters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -383,7 +383,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/engine/yaml_filter_file.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/zeromq_queue.py
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/${MODPY_PYCACHE}event_filter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -412,7 +412,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/filters/parser_filter.py
 lib/python${MODPY_VERSION}/site-packages/plaso/filters/path_filter.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/${MODPY_PYCACHE}asl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -540,7 +540,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/winrestore.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/yaml_formatters_file.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/${MODPY_PYCACHE}bufferlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -572,7 +572,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/lib/specification.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/timelib.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/${MODPY_PYCACHE}analysis_process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -607,7 +607,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/task_manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/worker_process.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/
 lib/python${MODPY_VERSION}/site-packages/plaso/output/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/output/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/output/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/${MODPY_PYCACHE}dynamic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -669,7 +669,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/output/tln.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/xlsx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/${MODPY_PYCACHE}amcache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -830,7 +830,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bash_history.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_parser.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_plugins/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -849,7 +849,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/chrome_cache.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/chrome_preferences.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/${MODPY_PYCACHE}ganalytics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -868,7 +868,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/custom_destinations.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/czip_plugins/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -884,7 +884,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dtfabric_parser.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/${MODPY_PYCACHE}file_history.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -928,7 +928,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ntfs.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/${MODPY_PYCACHE}automatic_destinations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -952,7 +952,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/pe.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/${MODPY_PYCACHE}airport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1016,7 +1016,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/selinux.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/setupapi.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/shared/${MODPY_PYCACHE}shell_items.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1027,7 +1027,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sophos_av.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sqlite_plugins/${MODPY_PYCACHE}android_calls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1127,7 +1127,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/symantec.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/syslog_plugins/${MODPY_PYCACHE}cron.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1157,7 +1157,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winprefetch.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/${MODPY_PYCACHE}appcompatcache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1268,7 +1268,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/xchatscrollback.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/zsh_extended_history.py
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1291,7 +1291,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/windows.py
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/serializer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/serializer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1305,7 +1305,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/serializer/json_serializer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/logger.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/${MODPY_PYCACHE}event_heaps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1329,7 +1329,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/event_tag_index.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/factory.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/fake/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1341,7 +1341,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/logger.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/${MODPY_PYCACHE}merge_reader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1358,7 +1358,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/redis_store.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/redis/writer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/${MODPY_PYCACHE}merge_reader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1376,7 +1376,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/writer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/time_range.py
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}bsmtoken.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1384,7 +1384,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/unix/${MODPY_PYCACHE}bsmtoken.${M
 lib/python${MODPY_VERSION}/site-packages/plaso/unix/bsmtoken.py
 lib/python${MODPY_VERSION}/site-packages/plaso/winnt/
 lib/python${MODPY_VERSION}/site-packages/plaso/winnt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/plaso/winnt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/plaso/winnt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/plaso/winnt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/winnt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/winnt/${MODPY_PYCACHE}human_readable_service_enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

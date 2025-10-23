@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/timing_runner.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/tree.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}_ordered_dict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/stats.py
 share/tlsfuzzer/
 share/tlsfuzzer/scripts/
 share/tlsfuzzer/scripts/__init__.py
-${MODPY_COMMENT}share/tlsfuzzer/scripts/${MODPY_PYCACHE}/
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}/
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}marvin_ciphertext_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

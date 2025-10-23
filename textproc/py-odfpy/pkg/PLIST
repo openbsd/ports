@@ -12,7 +12,7 @@ bin/odfuserfield
 bin/xml2odf
 lib/python${MODPY_VERSION}/site-packages/odf/
 lib/python${MODPY_VERSION}/site-packages/odf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/odf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/odf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/odf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/odf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/odf/${MODPY_PYCACHE}anim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

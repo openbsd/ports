@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cssutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cssutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/${MODPY_PYCACHE}_fetch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/_fetchgae.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/codec.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/css/
 lib/python${MODPY_VERSION}/site-packages/cssutils/css/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/css/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssutils/css/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cssutils/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/css/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,7 +136,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/sac.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/script.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/
 lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/scripts/${MODPY_PYCACHE}csscapture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,7 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/serialize.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/settings.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/${MODPY_PYCACHE}medialist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -169,7 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/stylesheet.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/stylesheets/stylesheetlist.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}basetest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -368,6 +368,6 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/tokenize2.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/util.py
 lib/python${MODPY_VERSION}/site-packages/encutils/
 lib/python${MODPY_VERSION}/site-packages/encutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/encutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/encutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

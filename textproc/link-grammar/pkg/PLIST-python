@@ -1,7 +1,7 @@
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/
 lib/python${MODPY_VERSION}/site-packages/linkgrammar.pth
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}clinkgrammar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -2,7 +2,7 @@
 @pkgpath sysutils/py-daemon,python3
 lib/python${MODPY_VERSION}/site-packages/daemon/
 lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_DISTV}.dist-info/t
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}yaml_utils.
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}yaml_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}rules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/errors.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/file_utils.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/generate_docs.py
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/py.typed
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/requirements.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -209,7 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/complexity.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/conftest.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/deprecated_bare_vars.md
@@ -303,7 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/README.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,7 +335,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/skip_utils.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/stats.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/${MODPY_PYCACHE}fixtures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

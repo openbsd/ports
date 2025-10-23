@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/feedparser-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/feedparser-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/feedparser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/feedparser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/feedparser/${MODPY_PYCACHE}util.${MODPY
 lib/python${MODPY_VERSION}/site-packages/feedparser/api.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/
 lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/datetimes/${MODPY_PYCACHE}asctime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/feedparser/http.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/mixin.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/mediarss.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/namespaces/psc.py
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/feedparser/parsers/${MODPY_PYCACHE}loose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

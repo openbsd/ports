@@ -9,12 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pynetbox/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox/core/response.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/core/util.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}circuits.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

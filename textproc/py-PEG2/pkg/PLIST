@@ -8,14 +8,14 @@ lib/python${MODPY_VERSION}/site-packages/pypeg2-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pypeg2-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pypeg2-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pypeg2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}xmlast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypeg2/${MODPY_PYCACHE}xmlast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypeg2/test/
 lib/python${MODPY_VERSION}/site-packages/pypeg2/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypeg2/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pypeg2/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pypeg2/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypeg2/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypeg2/test/${MODPY_PYCACHE}test_pyPEG2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

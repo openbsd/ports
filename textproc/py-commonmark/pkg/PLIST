@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/commonmark-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/commonmark-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/commonmark-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/commonmark/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/commonmark/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/commonmark/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/commonmark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/commonmark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/commonmark/${MODPY_PYCACHE}blocks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/commonmark/node.py
 lib/python${MODPY_VERSION}/site-packages/commonmark/normalize_reference.py
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/commonmark/render/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/commonmark/render/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/commonmark/render/renderer.py
 lib/python${MODPY_VERSION}/site-packages/commonmark/render/rst.py
 lib/python${MODPY_VERSION}/site-packages/commonmark/tests/
 lib/python${MODPY_VERSION}/site-packages/commonmark/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/commonmark/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/commonmark/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/commonmark/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/commonmark/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/commonmark/tests/${MODPY_PYCACHE}rst_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

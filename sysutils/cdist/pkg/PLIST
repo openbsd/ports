@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/cdist-7.0.1.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/cdist-7.0.1.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cdist-7.0.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cdist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cdist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cdist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cdist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cdist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cdist/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1960,7 +1960,7 @@ lib/python${MODPY_VERSION}/site-packages/cdist/config.py
 lib/python${MODPY_VERSION}/site-packages/cdist/configuration.py
 lib/python${MODPY_VERSION}/site-packages/cdist/core/
 lib/python${MODPY_VERSION}/site-packages/cdist/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cdist/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cdist/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cdist/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cdist/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cdist/core/${MODPY_PYCACHE}cdist_object.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1984,7 +1984,7 @@ lib/python${MODPY_VERSION}/site-packages/cdist/core/util.py
 lib/python${MODPY_VERSION}/site-packages/cdist/emulator.py
 lib/python${MODPY_VERSION}/site-packages/cdist/exec/
 lib/python${MODPY_VERSION}/site-packages/cdist/exec/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cdist/exec/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cdist/exec/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cdist/exec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cdist/exec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cdist/exec/${MODPY_PYCACHE}local.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2007,7 +2007,7 @@ lib/python${MODPY_VERSION}/site-packages/cdist/message.py
 lib/python${MODPY_VERSION}/site-packages/cdist/mputil.py
 lib/python${MODPY_VERSION}/site-packages/cdist/preos.py
 lib/python${MODPY_VERSION}/site-packages/cdist/scan/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cdist/scan/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cdist/scan/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cdist/scan/${MODPY_PYCACHE}commandline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cdist/scan/${MODPY_PYCACHE}commandline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cdist/scan/${MODPY_PYCACHE}scan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2017,7 +2017,7 @@ lib/python${MODPY_VERSION}/site-packages/cdist/scan/scan.py
 lib/python${MODPY_VERSION}/site-packages/cdist/shell.py
 lib/python${MODPY_VERSION}/site-packages/cdist/util/
 lib/python${MODPY_VERSION}/site-packages/cdist/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cdist/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cdist/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cdist/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cdist/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cdist/util/${MODPY_PYCACHE}fsproperty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

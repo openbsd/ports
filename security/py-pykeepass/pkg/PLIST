@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pykeepass-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pykeepass-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pykeepass-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pykeepass/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}attachment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/pykeepass/group.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/icons.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/humanfriendly-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/humanfriendly-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/humanfriendly-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/humanfriendly/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/humanfriendly/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/${MODPY_PYCACHE}case.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/humanfriendly/sphinx.py
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/tables.py
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/humanfriendly/terminal/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

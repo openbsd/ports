@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/hvac-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hvac/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/${MODPY_PYCACHE}utils.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/hvac/adapters.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}vault_api_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}vault_api_cate
 lib/python${MODPY_VERSION}/site-packages/hvac/api/${MODPY_PYCACHE}vault_api_category.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/${MODPY_PYCACHE}approle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/token.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/auth_methods/userpass.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/${MODPY_PYCACHE}active_directory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -133,7 +133,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/transform.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/secrets_engines/transit.py
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/api/system_backend/${MODPY_PYCACHE}audit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/hvac/api/vault_api_category.py
 lib/python${MODPY_VERSION}/site-packages/hvac/aws_utils.py
 lib/python${MODPY_VERSION}/site-packages/hvac/constants/
 lib/python${MODPY_VERSION}/site-packages/hvac/constants/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/constants/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/constants/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/constants/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/constants/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hvac/constants/${MODPY_PYCACHE}approle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -214,6 +214,6 @@ lib/python${MODPY_VERSION}/site-packages/hvac/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/hvac/utils.py
 lib/python${MODPY_VERSION}/site-packages/hvac/v1/
 lib/python${MODPY_VERSION}/site-packages/hvac/v1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hvac/v1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hvac/v1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hvac/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hvac/v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

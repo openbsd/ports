@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/rebulk-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/rebulk-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rebulk-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/rebulk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rebulk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rebulk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rebulk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rebulk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rebulk/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/rebulk/remodule.py
 lib/python${MODPY_VERSION}/site-packages/rebulk/rules.py
 lib/python${MODPY_VERSION}/site-packages/rebulk/test/
 lib/python${MODPY_VERSION}/site-packages/rebulk/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rebulk/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rebulk/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rebulk/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rebulk/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rebulk/test/${MODPY_PYCACHE}default_rules_module.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

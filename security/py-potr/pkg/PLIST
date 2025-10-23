@@ -1,7 +1,7 @@
 @pkgpath security/py-potr,python3
 lib/python${MODPY_VERSION}/site-packages/potr/
 lib/python${MODPY_VERSION}/site-packages/potr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}utils.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/
 lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

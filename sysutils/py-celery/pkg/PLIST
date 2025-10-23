@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/celery-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/celery-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/celery/__init__.py
 lib/python${MODPY_VERSION}/site-packages/celery/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/${MODPY_PYCACHE}states.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/celery/_state.py
 lib/python${MODPY_VERSION}/site-packages/celery/app/
 lib/python${MODPY_VERSION}/site-packages/celery/app/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/app/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/app/${MODPY_PYCACHE}amqp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,7 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/app/trace.py
 lib/python${MODPY_VERSION}/site-packages/celery/app/utils.py
 lib/python${MODPY_VERSION}/site-packages/celery/apps/
 lib/python${MODPY_VERSION}/site-packages/celery/apps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/apps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/apps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/apps/${MODPY_PYCACHE}beat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/apps/multi.py
 lib/python${MODPY_VERSION}/site-packages/celery/apps/worker.py
 lib/python${MODPY_VERSION}/site-packages/celery/backends/
 lib/python${MODPY_VERSION}/site-packages/celery/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/backends/${MODPY_PYCACHE}arangodb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -155,7 +155,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/backends/couchbase.py
 lib/python${MODPY_VERSION}/site-packages/celery/backends/couchdb.py
 lib/python${MODPY_VERSION}/site-packages/celery/backends/database/
 lib/python${MODPY_VERSION}/site-packages/celery/backends/database/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/backends/database/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/backends/database/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/backends/database/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/backends/database/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/backends/database/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -175,7 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/backends/s3.py
 lib/python${MODPY_VERSION}/site-packages/celery/beat.py
 lib/python${MODPY_VERSION}/site-packages/celery/bin/
 lib/python${MODPY_VERSION}/site-packages/celery/bin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/bin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/bin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/bin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/bin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/bin/${MODPY_PYCACHE}amqp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -233,7 +233,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/bootsteps.py
 lib/python${MODPY_VERSION}/site-packages/celery/canvas.py
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/concurrency/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/concurrency/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/${MODPY_PYCACHE}asynpool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -259,7 +259,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/concurrency/solo.py
 lib/python${MODPY_VERSION}/site-packages/celery/concurrency/thread.py
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}abortable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,7 +275,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/contrib/${MODPY_PYCACHE}sphinx.$
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/abortable.py
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/django/${MODPY_PYCACHE}task.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -287,7 +287,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/contrib/rdb.py
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/sphinx.py
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -307,7 +307,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/tasks.py
 lib/python${MODPY_VERSION}/site-packages/celery/contrib/testing/worker.py
 lib/python${MODPY_VERSION}/site-packages/celery/events/
 lib/python${MODPY_VERSION}/site-packages/celery/events/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/events/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/events/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/events/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/events/${MODPY_PYCACHE}cursesmon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -334,7 +334,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/events/state.py
 lib/python${MODPY_VERSION}/site-packages/celery/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}django.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -342,7 +342,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/fixups/${MODPY_PYCACHE}django.${
 lib/python${MODPY_VERSION}/site-packages/celery/fixups/django.py
 lib/python${MODPY_VERSION}/site-packages/celery/loaders/
 lib/python${MODPY_VERSION}/site-packages/celery/loaders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/loaders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/loaders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/loaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/loaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/loaders/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -360,7 +360,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/result.py
 lib/python${MODPY_VERSION}/site-packages/celery/schedules.py
 lib/python${MODPY_VERSION}/site-packages/celery/security/
 lib/python${MODPY_VERSION}/site-packages/celery/security/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/security/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/security/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/security/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/security/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/security/${MODPY_PYCACHE}certificate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -379,7 +379,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/signals.py
 lib/python${MODPY_VERSION}/site-packages/celery/states.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/utils/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -431,7 +431,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/utils/debug.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/utils/dispatch/${MODPY_PYCACHE}signal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -449,7 +449,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/utils/saferepr.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/serialization.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/static/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/static/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/utils/static/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/utils/static/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/utils/static/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/utils/static/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/utils/static/celery_128.png
@@ -461,7 +461,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/utils/time.py
 lib/python${MODPY_VERSION}/site-packages/celery/utils/timer2.py
 lib/python${MODPY_VERSION}/site-packages/celery/worker/
 lib/python${MODPY_VERSION}/site-packages/celery/worker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/worker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/worker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/worker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/worker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/worker/${MODPY_PYCACHE}autoscale.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -488,7 +488,7 @@ lib/python${MODPY_VERSION}/site-packages/celery/worker/autoscale.py
 lib/python${MODPY_VERSION}/site-packages/celery/worker/components.py
 lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/
 lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/celery/worker/consumer/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

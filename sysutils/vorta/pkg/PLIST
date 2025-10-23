@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/vorta-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vorta/__init__.py
 lib/python${MODPY_VERSION}/site-packages/vorta/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/assets/metadata/com.borgbase.Vort
 lib/python${MODPY_VERSION}/site-packages/vorta/autostart.py
 lib/python${MODPY_VERSION}/site-packages/vorta/borg/
 lib/python${MODPY_VERSION}/site-packages/vorta/borg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/borg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/borg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/borg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/borg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/borg/${MODPY_PYCACHE}_compatibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/borg/version.py
 lib/python${MODPY_VERSION}/site-packages/vorta/config.py
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/i18n/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/i18n/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/qm/
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/i18n/ts/vorta.sk.ts
 lib/python${MODPY_VERSION}/site-packages/vorta/i18n/ts/vorta.sv.ts
 lib/python${MODPY_VERSION}/site-packages/vorta/keyring/
 lib/python${MODPY_VERSION}/site-packages/vorta/keyring/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/keyring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/keyring/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/keyring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/keyring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/keyring/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -225,7 +225,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/keyring/secretstorage.py
 lib/python${MODPY_VERSION}/site-packages/vorta/log.py
 lib/python${MODPY_VERSION}/site-packages/vorta/network_status/
 lib/python${MODPY_VERSION}/site-packages/vorta/network_status/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/network_status/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/network_status/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/network_status/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/network_status/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/network_status/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -243,7 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/qt_single_application.py
 lib/python${MODPY_VERSION}/site-packages/vorta/scheduler.py
 lib/python${MODPY_VERSION}/site-packages/vorta/store/
 lib/python${MODPY_VERSION}/site-packages/vorta/store/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/store/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/store/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/store/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/store/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/store/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -263,7 +263,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/updater.py
 lib/python${MODPY_VERSION}/site-packages/vorta/utils.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/
 lib/python${MODPY_VERSION}/site-packages/vorta/views/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/views/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/views/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/views/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/${MODPY_PYCACHE}archive_tab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -303,7 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/views/main_window.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/misc_tab.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}loading_button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

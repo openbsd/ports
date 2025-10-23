@@ -1,7 +1,7 @@
 @pkgpath textproc/py-ICU,python3
 lib/python${MODPY_VERSION}/site-packages/icu/
 lib/python${MODPY_VERSION}/site-packages/icu/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/icu/_icu_.${MODPY_PYC_MAGIC_TAG}so

@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/black/__init__.py
 lib/python${MODPY_VERSION}/site-packages/black/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/black/ranges.py
 lib/python${MODPY_VERSION}/site-packages/black/report.py
 lib/python${MODPY_VERSION}/site-packages/black/resources/
 lib/python${MODPY_VERSION}/site-packages/black/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/resources/black.schema.json
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/black/trans.py
 lib/python${MODPY_VERSION}/site-packages/blackd/
 lib/python${MODPY_VERSION}/site-packages/blackd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/blackd/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blackd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blackd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blackd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/blackd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blackd/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -110,7 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/blib2to3/LICENSE
 lib/python${MODPY_VERSION}/site-packages/blib2to3/PatternGrammar.txt
 lib/python${MODPY_VERSION}/site-packages/blib2to3/README
 lib/python${MODPY_VERSION}/site-packages/blib2to3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}pygram.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}pytree.${MODPY
 lib/python${MODPY_VERSION}/site-packages/blib2to3/${MODPY_PYCACHE}pytree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/
 lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blib2to3/pgen2/${MODPY_PYCACHE}conv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

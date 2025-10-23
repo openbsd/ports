@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}linklockfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

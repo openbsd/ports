@@ -2,7 +2,7 @@
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}SSL.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}SSL.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

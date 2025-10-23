@@ -4,7 +4,7 @@ share/theharvester/COPYING
 share/theharvester/Dockerfile
 share/theharvester/LICENSES
 share/theharvester/README.md
-${MODPY_COMMENT}share/theharvester/${MODPY_PYCACHE}/
+share/theharvester/${MODPY_PYCACHE}/
 share/theharvester/${MODPY_PYCACHE}censysparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/${MODPY_PYCACHE}censysparser.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/${MODPY_PYCACHE}cymonparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,7 +27,7 @@ share/theharvester/discovery/DNS/Opcode.py
 share/theharvester/discovery/DNS/Status.py
 share/theharvester/discovery/DNS/Type.py
 share/theharvester/discovery/DNS/__init__.py
-${MODPY_COMMENT}share/theharvester/discovery/DNS/${MODPY_PYCACHE}/
+share/theharvester/discovery/DNS/${MODPY_PYCACHE}/
 share/theharvester/discovery/DNS/${MODPY_PYCACHE}Base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/discovery/DNS/${MODPY_PYCACHE}Base.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/DNS/${MODPY_PYCACHE}Class.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ share/theharvester/discovery/DNS/lazy.py
 share/theharvester/discovery/DNS/win32dns.py
 share/theharvester/discovery/IPy.py
 share/theharvester/discovery/__init__.py
-${MODPY_COMMENT}share/theharvester/discovery/${MODPY_PYCACHE}/
+share/theharvester/discovery/${MODPY_PYCACHE}/
 share/theharvester/discovery/${MODPY_PYCACHE}IPy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/discovery/${MODPY_PYCACHE}IPy.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ share/theharvester/discovery/port_scanner.py
 share/theharvester/discovery/s3_scanner.py
 share/theharvester/discovery/shodan/
 share/theharvester/discovery/shodan/__init__.py
-${MODPY_COMMENT}share/theharvester/discovery/shodan/${MODPY_PYCACHE}/
+share/theharvester/discovery/shodan/${MODPY_PYCACHE}/
 share/theharvester/discovery/shodan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/discovery/shodan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/shodan/${MODPY_PYCACHE}alert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,7 +162,7 @@ share/theharvester/discovery/shodan/alert.py
 share/theharvester/discovery/shodan/api.py
 share/theharvester/discovery/shodan/cli/
 share/theharvester/discovery/shodan/cli/__init__.py
-${MODPY_COMMENT}share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}/
+share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}/
 share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -173,7 +173,7 @@ share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}worldmap.${MODPY_PYC_MAG
 share/theharvester/discovery/shodan/cli/${MODPY_PYCACHE}worldmap.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/shodan/cli/converter/
 share/theharvester/discovery/shodan/cli/converter/__init__.py
-${MODPY_COMMENT}share/theharvester/discovery/shodan/cli/converter/${MODPY_PYCACHE}/
+share/theharvester/discovery/shodan/cli/converter/${MODPY_PYCACHE}/
 share/theharvester/discovery/shodan/cli/converter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/discovery/shodan/cli/converter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/shodan/cli/converter/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -213,7 +213,7 @@ share/theharvester/discovery/yahoosearch.py
 share/theharvester/discovery/yandexsearch.py
 share/theharvester/lib/
 share/theharvester/lib/__init__.py
-${MODPY_COMMENT}share/theharvester/lib/${MODPY_PYCACHE}/
+share/theharvester/lib/${MODPY_PYCACHE}/
 share/theharvester/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/lib/${MODPY_PYCACHE}graphs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -243,7 +243,7 @@ share/theharvester/myparser.py
 share/theharvester/requirements.txt
 share/theharvester/stash.py
 share/theharvester/tests/
-${MODPY_COMMENT}share/theharvester/tests/${MODPY_PYCACHE}/
+share/theharvester/tests/${MODPY_PYCACHE}/
 share/theharvester/tests/${MODPY_PYCACHE}myparser_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/theharvester/tests/${MODPY_PYCACHE}myparser_test.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/tests/myparser_test.py

@@ -506,6 +506,6 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Signature/wyc
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Signature/wycheproof/rsa_signature_4096_sha512_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Signature/wycheproof/rsa_signature_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/service_identity/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}cryptography.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

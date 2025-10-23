@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/wfuzz-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wfuzz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,12 +50,12 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/dictionaries.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/exception.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/moduleman/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/Response.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/TextParser.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/Variables.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/${MODPY_PYCACHE}Request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/${MODPY_PYCACHE}Request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/${MODPY_PYCACHE}Response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/cache.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/reqresp/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/externals/settings/settings.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/facade.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/${MODPY_PYCACHE}dictfactory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,7 +127,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/plugin_factory.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/factories/reqresp_factory.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/filters/${MODPY_PYCACHE}ppfilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/fuzzqueues.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/fuzzrequest.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/helpers/${MODPY_PYCACHE}file_func.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/myqueues.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/options.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -185,12 +185,12 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/payloadtools.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugin_api/urlutils.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}encoders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -198,7 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/encoders/encoders.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE}iterations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -206,7 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/iterators/iterations.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/${MODPY_PYCACHE}autorize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -271,7 +271,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/stdin.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/payloads/wfuzzp.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -279,7 +279,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/printers/printers.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/${MODPY_PYCACHE}backups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -329,12 +329,12 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/title.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/plugins/scripts/wcdb.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/${MODPY_PYCACHE}clparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -354,7 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/mvc.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/console/output.py
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wfuzz/ui/gui/${MODPY_PYCACHE}controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

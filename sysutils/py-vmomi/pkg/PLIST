@@ -5,7 +5,7 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}vsanmgmtObjects.${MODPY
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}vsanmgmtObjects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVim/
 lib/python${MODPY_VERSION}/site-packages/pyVim/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyVim/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyVim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyVim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyVim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVim/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/pyVmomi/Version.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/VmomiJSONEncoder.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/VmomiSupport.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}Cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}Cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}Differ.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

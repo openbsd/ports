@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}asyoutypeformatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrier.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/data2.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_255.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -968,7 +968,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/geocoder.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1078,7 +1078,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/re_util.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_AC.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1811,7 +1811,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/timezone.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

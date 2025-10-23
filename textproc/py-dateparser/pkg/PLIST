@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/dateparser-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dateparser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dateparser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}timezones.${
 lib/python${MODPY_VERSION}/site-packages/dateparser/${MODPY_PYCACHE}timezones.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/
 lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/${MODPY_PYCACHE}hijri.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/calendars/jalali_parser.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/conf.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/${MODPY_PYCACHE}fasttext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -62,14 +62,14 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/la
 lib/python${MODPY_VERSION}/site-packages/dateparser/custom_language_detection/language_mapping.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}languages_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/${MODPY_PYCACHE}languages_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/data/date_translation_data/${MODPY_PYCACHE}af.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -694,7 +694,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/date_parser.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/freshness_date_parser.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/languages/
 lib/python${MODPY_VERSION}/site-packages/dateparser/languages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/languages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/languages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/languages/${MODPY_PYCACHE}dictionary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -712,7 +712,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/languages/validation.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/parser.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/search/${MODPY_PYCACHE}detection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -728,7 +728,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/timezone_parser.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/timezones.py
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}strptime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -736,7 +736,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}strpti
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/strptime.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -753,7 +753,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser_cli/fasttext_manager.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/utils.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -761,7 +761,7 @@ lib/python${MODPY_VERSION}/site-packages/dateparser_data/${MODPY_PYCACHE}setting
 lib/python${MODPY_VERSION}/site-packages/dateparser_data/settings.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/
 lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser_scripts/${MODPY_PYCACHE}get_cldr_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

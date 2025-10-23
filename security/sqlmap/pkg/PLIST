@@ -11,7 +11,7 @@ share/sqlmap/.github/workflows/
 share/sqlmap/.github/workflows/tests.yml
 share/sqlmap/.pylintrc
 share/sqlmap/LICENSE
-${MODPY_COMMENT}share/sqlmap/${MODPY_PYCACHE}/
+share/sqlmap/${MODPY_PYCACHE}/
 share/sqlmap/${MODPY_PYCACHE}sqlmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/${MODPY_PYCACHE}sqlmap.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/${MODPY_PYCACHE}sqlmapapi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -162,12 +162,12 @@ share/sqlmap/data/xml/payloads/union_query.xml
 share/sqlmap/data/xml/queries.xml
 share/sqlmap/extra/
 share/sqlmap/extra/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/${MODPY_PYCACHE}/
+share/sqlmap/extra/${MODPY_PYCACHE}/
 share/sqlmap/extra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/beep/
 share/sqlmap/extra/beep/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/beep/${MODPY_PYCACHE}/
+share/sqlmap/extra/beep/${MODPY_PYCACHE}/
 share/sqlmap/extra/beep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/beep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/beep/${MODPY_PYCACHE}beep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -177,7 +177,7 @@ share/sqlmap/extra/beep/beep.wav
 share/sqlmap/extra/cloak/
 share/sqlmap/extra/cloak/README.txt
 share/sqlmap/extra/cloak/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/cloak/${MODPY_PYCACHE}/
+share/sqlmap/extra/cloak/${MODPY_PYCACHE}/
 share/sqlmap/extra/cloak/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/cloak/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/cloak/${MODPY_PYCACHE}cloak.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ share/sqlmap/extra/cloak/cloak.py
 share/sqlmap/extra/dbgtool/
 share/sqlmap/extra/dbgtool/README.txt
 share/sqlmap/extra/dbgtool/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/dbgtool/${MODPY_PYCACHE}/
+share/sqlmap/extra/dbgtool/${MODPY_PYCACHE}/
 share/sqlmap/extra/dbgtool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/dbgtool/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/dbgtool/${MODPY_PYCACHE}dbgtool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -195,7 +195,7 @@ share/sqlmap/extra/dbgtool/dbgtool.py
 share/sqlmap/extra/icmpsh/
 share/sqlmap/extra/icmpsh/README.txt
 share/sqlmap/extra/icmpsh/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/icmpsh/${MODPY_PYCACHE}/
+share/sqlmap/extra/icmpsh/${MODPY_PYCACHE}/
 share/sqlmap/extra/icmpsh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/icmpsh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/icmpsh/${MODPY_PYCACHE}icmpsh_m.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ share/sqlmap/extra/shellcodeexec/linux/shellcodeexec.x64_
 share/sqlmap/extra/shellcodeexec/windows/
 share/sqlmap/extra/shellcodeexec/windows/shellcodeexec.x32.exe_
 share/sqlmap/extra/shutils/
-${MODPY_COMMENT}share/sqlmap/extra/shutils/${MODPY_PYCACHE}/
+share/sqlmap/extra/shutils/${MODPY_PYCACHE}/
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}duplicates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}duplicates.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}newlines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -247,7 +247,7 @@ share/sqlmap/extra/shutils/recloak.sh
 share/sqlmap/extra/shutils/strip.sh
 share/sqlmap/extra/vulnserver/
 share/sqlmap/extra/vulnserver/__init__.py
-${MODPY_COMMENT}share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}/
+share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}/
 share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}vulnserver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -255,12 +255,12 @@ share/sqlmap/extra/vulnserver/${MODPY_PYCACHE}vulnserver.${MODPY_PYC_MAGIC_TAG}p
 share/sqlmap/extra/vulnserver/vulnserver.py
 share/sqlmap/lib/
 share/sqlmap/lib/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/${MODPY_PYCACHE}/
+share/sqlmap/lib/${MODPY_PYCACHE}/
 share/sqlmap/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/controller/
 share/sqlmap/lib/controller/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/controller/${MODPY_PYCACHE}/
+share/sqlmap/lib/controller/${MODPY_PYCACHE}/
 share/sqlmap/lib/controller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/controller/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/controller/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -277,7 +277,7 @@ share/sqlmap/lib/controller/controller.py
 share/sqlmap/lib/controller/handler.py
 share/sqlmap/lib/core/
 share/sqlmap/lib/core/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/core/${MODPY_PYCACHE}/
+share/sqlmap/lib/core/${MODPY_PYCACHE}/
 share/sqlmap/lib/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/core/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -378,7 +378,7 @@ share/sqlmap/lib/core/update.py
 share/sqlmap/lib/core/wordlist.py
 share/sqlmap/lib/parse/
 share/sqlmap/lib/parse/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/parse/${MODPY_PYCACHE}/
+share/sqlmap/lib/parse/${MODPY_PYCACHE}/
 share/sqlmap/lib/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/parse/${MODPY_PYCACHE}banner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -407,7 +407,7 @@ share/sqlmap/lib/parse/payloads.py
 share/sqlmap/lib/parse/sitemap.py
 share/sqlmap/lib/request/
 share/sqlmap/lib/request/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/request/${MODPY_PYCACHE}/
+share/sqlmap/lib/request/${MODPY_PYCACHE}/
 share/sqlmap/lib/request/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/request/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/request/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -454,7 +454,7 @@ share/sqlmap/lib/request/redirecthandler.py
 share/sqlmap/lib/request/templates.py
 share/sqlmap/lib/takeover/
 share/sqlmap/lib/takeover/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/takeover/${MODPY_PYCACHE}/
+share/sqlmap/lib/takeover/${MODPY_PYCACHE}/
 share/sqlmap/lib/takeover/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/takeover/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/takeover/${MODPY_PYCACHE}abstraction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -480,12 +480,12 @@ share/sqlmap/lib/takeover/web.py
 share/sqlmap/lib/takeover/xp_cmdshell.py
 share/sqlmap/lib/techniques/
 share/sqlmap/lib/techniques/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/techniques/${MODPY_PYCACHE}/
+share/sqlmap/lib/techniques/${MODPY_PYCACHE}/
 share/sqlmap/lib/techniques/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/techniques/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/blind/
 share/sqlmap/lib/techniques/blind/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}/
+share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}/
 share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}inference.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -493,7 +493,7 @@ share/sqlmap/lib/techniques/blind/${MODPY_PYCACHE}inference.${MODPY_PYC_MAGIC_TA
 share/sqlmap/lib/techniques/blind/inference.py
 share/sqlmap/lib/techniques/dns/
 share/sqlmap/lib/techniques/dns/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/techniques/dns/${MODPY_PYCACHE}/
+share/sqlmap/lib/techniques/dns/${MODPY_PYCACHE}/
 share/sqlmap/lib/techniques/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/techniques/dns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/dns/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -504,7 +504,7 @@ share/sqlmap/lib/techniques/dns/test.py
 share/sqlmap/lib/techniques/dns/use.py
 share/sqlmap/lib/techniques/error/
 share/sqlmap/lib/techniques/error/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}/
+share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}/
 share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}use.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -512,7 +512,7 @@ share/sqlmap/lib/techniques/error/${MODPY_PYCACHE}use.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/error/use.py
 share/sqlmap/lib/techniques/union/
 share/sqlmap/lib/techniques/union/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/techniques/union/${MODPY_PYCACHE}/
+share/sqlmap/lib/techniques/union/${MODPY_PYCACHE}/
 share/sqlmap/lib/techniques/union/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/techniques/union/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/techniques/union/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -523,7 +523,7 @@ share/sqlmap/lib/techniques/union/test.py
 share/sqlmap/lib/techniques/union/use.py
 share/sqlmap/lib/utils/
 share/sqlmap/lib/utils/__init__.py
-${MODPY_COMMENT}share/sqlmap/lib/utils/${MODPY_PYCACHE}/
+share/sqlmap/lib/utils/${MODPY_PYCACHE}/
 share/sqlmap/lib/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/lib/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -585,17 +585,17 @@ share/sqlmap/lib/utils/versioncheck.py
 share/sqlmap/lib/utils/xrange.py
 share/sqlmap/plugins/
 share/sqlmap/plugins/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/${MODPY_PYCACHE}/
+share/sqlmap/plugins/${MODPY_PYCACHE}/
 share/sqlmap/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/
 share/sqlmap/plugins/dbms/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/access/
 share/sqlmap/plugins/dbms/access/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/access/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/access/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/access/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/access/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/access/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -618,7 +618,7 @@ share/sqlmap/plugins/dbms/access/syntax.py
 share/sqlmap/plugins/dbms/access/takeover.py
 share/sqlmap/plugins/dbms/altibase/
 share/sqlmap/plugins/dbms/altibase/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/altibase/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/altibase/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/altibase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/altibase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/altibase/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -641,7 +641,7 @@ share/sqlmap/plugins/dbms/altibase/syntax.py
 share/sqlmap/plugins/dbms/altibase/takeover.py
 share/sqlmap/plugins/dbms/cache/
 share/sqlmap/plugins/dbms/cache/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/cache/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/cache/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/cache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/cache/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -664,7 +664,7 @@ share/sqlmap/plugins/dbms/cache/syntax.py
 share/sqlmap/plugins/dbms/cache/takeover.py
 share/sqlmap/plugins/dbms/clickhouse/
 share/sqlmap/plugins/dbms/clickhouse/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/clickhouse/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/clickhouse/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/clickhouse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/clickhouse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/clickhouse/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -687,7 +687,7 @@ share/sqlmap/plugins/dbms/clickhouse/syntax.py
 share/sqlmap/plugins/dbms/clickhouse/takeover.py
 share/sqlmap/plugins/dbms/cratedb/
 share/sqlmap/plugins/dbms/cratedb/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/cratedb/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/cratedb/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/cratedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/cratedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/cratedb/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -710,7 +710,7 @@ share/sqlmap/plugins/dbms/cratedb/syntax.py
 share/sqlmap/plugins/dbms/cratedb/takeover.py
 share/sqlmap/plugins/dbms/cubrid/
 share/sqlmap/plugins/dbms/cubrid/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/cubrid/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/cubrid/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/cubrid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/cubrid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/cubrid/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -733,7 +733,7 @@ share/sqlmap/plugins/dbms/cubrid/syntax.py
 share/sqlmap/plugins/dbms/cubrid/takeover.py
 share/sqlmap/plugins/dbms/db2/
 share/sqlmap/plugins/dbms/db2/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/db2/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/db2/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/db2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/db2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/db2/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -756,7 +756,7 @@ share/sqlmap/plugins/dbms/db2/syntax.py
 share/sqlmap/plugins/dbms/db2/takeover.py
 share/sqlmap/plugins/dbms/derby/
 share/sqlmap/plugins/dbms/derby/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/derby/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/derby/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/derby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/derby/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/derby/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -779,7 +779,7 @@ share/sqlmap/plugins/dbms/derby/syntax.py
 share/sqlmap/plugins/dbms/derby/takeover.py
 share/sqlmap/plugins/dbms/extremedb/
 share/sqlmap/plugins/dbms/extremedb/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/extremedb/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/extremedb/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/extremedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/extremedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/extremedb/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -802,7 +802,7 @@ share/sqlmap/plugins/dbms/extremedb/syntax.py
 share/sqlmap/plugins/dbms/extremedb/takeover.py
 share/sqlmap/plugins/dbms/firebird/
 share/sqlmap/plugins/dbms/firebird/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/firebird/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/firebird/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/firebird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/firebird/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/firebird/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -825,7 +825,7 @@ share/sqlmap/plugins/dbms/firebird/syntax.py
 share/sqlmap/plugins/dbms/firebird/takeover.py
 share/sqlmap/plugins/dbms/frontbase/
 share/sqlmap/plugins/dbms/frontbase/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/frontbase/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/frontbase/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/frontbase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/frontbase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/frontbase/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -848,7 +848,7 @@ share/sqlmap/plugins/dbms/frontbase/syntax.py
 share/sqlmap/plugins/dbms/frontbase/takeover.py
 share/sqlmap/plugins/dbms/h2/
 share/sqlmap/plugins/dbms/h2/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/h2/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/h2/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/h2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/h2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/h2/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -871,7 +871,7 @@ share/sqlmap/plugins/dbms/h2/syntax.py
 share/sqlmap/plugins/dbms/h2/takeover.py
 share/sqlmap/plugins/dbms/hsqldb/
 share/sqlmap/plugins/dbms/hsqldb/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/hsqldb/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/hsqldb/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/hsqldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/hsqldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/hsqldb/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -894,7 +894,7 @@ share/sqlmap/plugins/dbms/hsqldb/syntax.py
 share/sqlmap/plugins/dbms/hsqldb/takeover.py
 share/sqlmap/plugins/dbms/informix/
 share/sqlmap/plugins/dbms/informix/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/informix/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/informix/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/informix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/informix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/informix/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -917,7 +917,7 @@ share/sqlmap/plugins/dbms/informix/syntax.py
 share/sqlmap/plugins/dbms/informix/takeover.py
 share/sqlmap/plugins/dbms/maxdb/
 share/sqlmap/plugins/dbms/maxdb/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/maxdb/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/maxdb/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/maxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/maxdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/maxdb/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -940,7 +940,7 @@ share/sqlmap/plugins/dbms/maxdb/syntax.py
 share/sqlmap/plugins/dbms/maxdb/takeover.py
 share/sqlmap/plugins/dbms/mckoi/
 share/sqlmap/plugins/dbms/mckoi/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/mckoi/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/mckoi/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/mckoi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/mckoi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/mckoi/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -963,7 +963,7 @@ share/sqlmap/plugins/dbms/mckoi/syntax.py
 share/sqlmap/plugins/dbms/mckoi/takeover.py
 share/sqlmap/plugins/dbms/mimersql/
 share/sqlmap/plugins/dbms/mimersql/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/mimersql/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/mimersql/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/mimersql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/mimersql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/mimersql/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -986,7 +986,7 @@ share/sqlmap/plugins/dbms/mimersql/syntax.py
 share/sqlmap/plugins/dbms/mimersql/takeover.py
 share/sqlmap/plugins/dbms/monetdb/
 share/sqlmap/plugins/dbms/monetdb/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/monetdb/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/monetdb/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/monetdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/monetdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/monetdb/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1009,7 +1009,7 @@ share/sqlmap/plugins/dbms/monetdb/syntax.py
 share/sqlmap/plugins/dbms/monetdb/takeover.py
 share/sqlmap/plugins/dbms/mssqlserver/
 share/sqlmap/plugins/dbms/mssqlserver/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/mssqlserver/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/mssqlserver/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/mssqlserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/mssqlserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/mssqlserver/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1032,7 +1032,7 @@ share/sqlmap/plugins/dbms/mssqlserver/syntax.py
 share/sqlmap/plugins/dbms/mssqlserver/takeover.py
 share/sqlmap/plugins/dbms/mysql/
 share/sqlmap/plugins/dbms/mysql/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/mysql/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/mysql/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/mysql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/mysql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/mysql/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1055,7 +1055,7 @@ share/sqlmap/plugins/dbms/mysql/syntax.py
 share/sqlmap/plugins/dbms/mysql/takeover.py
 share/sqlmap/plugins/dbms/oracle/
 share/sqlmap/plugins/dbms/oracle/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/oracle/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/oracle/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/oracle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/oracle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/oracle/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1078,7 +1078,7 @@ share/sqlmap/plugins/dbms/oracle/syntax.py
 share/sqlmap/plugins/dbms/oracle/takeover.py
 share/sqlmap/plugins/dbms/postgresql/
 share/sqlmap/plugins/dbms/postgresql/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/postgresql/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/postgresql/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/postgresql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/postgresql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/postgresql/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1101,7 +1101,7 @@ share/sqlmap/plugins/dbms/postgresql/syntax.py
 share/sqlmap/plugins/dbms/postgresql/takeover.py
 share/sqlmap/plugins/dbms/presto/
 share/sqlmap/plugins/dbms/presto/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/presto/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/presto/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/presto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/presto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/presto/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1124,7 +1124,7 @@ share/sqlmap/plugins/dbms/presto/syntax.py
 share/sqlmap/plugins/dbms/presto/takeover.py
 share/sqlmap/plugins/dbms/raima/
 share/sqlmap/plugins/dbms/raima/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/raima/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/raima/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/raima/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/raima/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/raima/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1147,7 +1147,7 @@ share/sqlmap/plugins/dbms/raima/syntax.py
 share/sqlmap/plugins/dbms/raima/takeover.py
 share/sqlmap/plugins/dbms/sqlite/
 share/sqlmap/plugins/dbms/sqlite/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/sqlite/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/sqlite/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/sqlite/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1170,7 +1170,7 @@ share/sqlmap/plugins/dbms/sqlite/syntax.py
 share/sqlmap/plugins/dbms/sqlite/takeover.py
 share/sqlmap/plugins/dbms/sybase/
 share/sqlmap/plugins/dbms/sybase/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/sybase/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/sybase/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/sybase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/sybase/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/sybase/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1193,7 +1193,7 @@ share/sqlmap/plugins/dbms/sybase/syntax.py
 share/sqlmap/plugins/dbms/sybase/takeover.py
 share/sqlmap/plugins/dbms/vertica/
 share/sqlmap/plugins/dbms/vertica/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/vertica/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/vertica/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/vertica/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/vertica/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/vertica/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1216,7 +1216,7 @@ share/sqlmap/plugins/dbms/vertica/syntax.py
 share/sqlmap/plugins/dbms/vertica/takeover.py
 share/sqlmap/plugins/dbms/virtuoso/
 share/sqlmap/plugins/dbms/virtuoso/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/dbms/virtuoso/${MODPY_PYCACHE}/
+share/sqlmap/plugins/dbms/virtuoso/${MODPY_PYCACHE}/
 share/sqlmap/plugins/dbms/virtuoso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/dbms/virtuoso/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/dbms/virtuoso/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1239,7 +1239,7 @@ share/sqlmap/plugins/dbms/virtuoso/syntax.py
 share/sqlmap/plugins/dbms/virtuoso/takeover.py
 share/sqlmap/plugins/generic/
 share/sqlmap/plugins/generic/__init__.py
-${MODPY_COMMENT}share/sqlmap/plugins/generic/${MODPY_PYCACHE}/
+share/sqlmap/plugins/generic/${MODPY_PYCACHE}/
 share/sqlmap/plugins/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/plugins/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/plugins/generic/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1285,7 +1285,7 @@ share/sqlmap/sqlmapapi.yaml
 share/sqlmap/tamper/
 share/sqlmap/tamper/0eunion.py
 share/sqlmap/tamper/__init__.py
-${MODPY_COMMENT}share/sqlmap/tamper/${MODPY_PYCACHE}/
+share/sqlmap/tamper/${MODPY_PYCACHE}/
 share/sqlmap/tamper/${MODPY_PYCACHE}0eunion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/tamper/${MODPY_PYCACHE}0eunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1496,12 +1496,12 @@ share/sqlmap/tamper/versionedmorekeywords.py
 share/sqlmap/tamper/xforwardedfor.py
 share/sqlmap/thirdparty/
 share/sqlmap/thirdparty/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/ansistrm/
 share/sqlmap/thirdparty/ansistrm/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}ansistrm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1509,7 +1509,7 @@ share/sqlmap/thirdparty/ansistrm/${MODPY_PYCACHE}ansistrm.${MODPY_PYC_MAGIC_TAG}
 share/sqlmap/thirdparty/ansistrm/ansistrm.py
 share/sqlmap/thirdparty/beautifulsoup/
 share/sqlmap/thirdparty/beautifulsoup/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}beautifulsoup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1517,7 +1517,7 @@ share/sqlmap/thirdparty/beautifulsoup/${MODPY_PYCACHE}beautifulsoup.${MODPY_PYC_
 share/sqlmap/thirdparty/beautifulsoup/beautifulsoup.py
 share/sqlmap/thirdparty/bottle/
 share/sqlmap/thirdparty/bottle/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}bottle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1525,7 +1525,7 @@ share/sqlmap/thirdparty/bottle/${MODPY_PYCACHE}bottle.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/bottle/bottle.py
 share/sqlmap/thirdparty/chardet/
 share/sqlmap/thirdparty/chardet/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1644,7 +1644,7 @@ share/sqlmap/thirdparty/chardet/utf8prober.py
 share/sqlmap/thirdparty/chardet/version.py
 share/sqlmap/thirdparty/clientform/
 share/sqlmap/thirdparty/clientform/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}clientform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1652,7 +1652,7 @@ share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}clientform.${MODPY_PYC_MAGIC_
 share/sqlmap/thirdparty/clientform/clientform.py
 share/sqlmap/thirdparty/colorama/
 share/sqlmap/thirdparty/colorama/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/colorama/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/colorama/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/colorama/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/colorama/${MODPY_PYCACHE}ansi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1672,7 +1672,7 @@ share/sqlmap/thirdparty/colorama/win32.py
 share/sqlmap/thirdparty/colorama/winterm.py
 share/sqlmap/thirdparty/fcrypt/
 share/sqlmap/thirdparty/fcrypt/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/fcrypt/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/fcrypt/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/fcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/fcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/fcrypt/${MODPY_PYCACHE}fcrypt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1681,7 +1681,7 @@ share/sqlmap/thirdparty/fcrypt/fcrypt.py
 share/sqlmap/thirdparty/identywaf/
 share/sqlmap/thirdparty/identywaf/LICENSE
 share/sqlmap/thirdparty/identywaf/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/identywaf/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/identywaf/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/identywaf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/identywaf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/identywaf/${MODPY_PYCACHE}identYwaf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1690,7 +1690,7 @@ share/sqlmap/thirdparty/identywaf/data.json
 share/sqlmap/thirdparty/identywaf/identYwaf.py
 share/sqlmap/thirdparty/keepalive/
 share/sqlmap/thirdparty/keepalive/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}keepalive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1698,7 +1698,7 @@ share/sqlmap/thirdparty/keepalive/${MODPY_PYCACHE}keepalive.${MODPY_PYC_MAGIC_TA
 share/sqlmap/thirdparty/keepalive/keepalive.py
 share/sqlmap/thirdparty/magic/
 share/sqlmap/thirdparty/magic/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1706,7 +1706,7 @@ share/sqlmap/thirdparty/magic/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/magic/magic.py
 share/sqlmap/thirdparty/multipart/
 share/sqlmap/thirdparty/multipart/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}multipartpost.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1714,7 +1714,7 @@ share/sqlmap/thirdparty/multipart/${MODPY_PYCACHE}multipartpost.${MODPY_PYC_MAGI
 share/sqlmap/thirdparty/multipart/multipartpost.py
 share/sqlmap/thirdparty/odict/
 share/sqlmap/thirdparty/odict/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1722,7 +1722,7 @@ share/sqlmap/thirdparty/odict/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}
 share/sqlmap/thirdparty/odict/ordereddict.py
 share/sqlmap/thirdparty/prettyprint/
 share/sqlmap/thirdparty/prettyprint/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}prettyprint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1730,7 +1730,7 @@ share/sqlmap/thirdparty/prettyprint/${MODPY_PYCACHE}prettyprint.${MODPY_PYC_MAGI
 share/sqlmap/thirdparty/prettyprint/prettyprint.py
 share/sqlmap/thirdparty/pydes/
 share/sqlmap/thirdparty/pydes/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}pyDes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1738,13 +1738,13 @@ share/sqlmap/thirdparty/pydes/${MODPY_PYCACHE}pyDes.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/pydes/pyDes.py
 share/sqlmap/thirdparty/six/
 share/sqlmap/thirdparty/six/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/six/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/six/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/six/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/six/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/socks/
 share/sqlmap/thirdparty/socks/LICENSE
 share/sqlmap/thirdparty/socks/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1752,7 +1752,7 @@ share/sqlmap/thirdparty/socks/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/socks/socks.py
 share/sqlmap/thirdparty/termcolor/
 share/sqlmap/thirdparty/termcolor/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}termcolor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1760,7 +1760,7 @@ share/sqlmap/thirdparty/termcolor/${MODPY_PYCACHE}termcolor.${MODPY_PYC_MAGIC_TA
 share/sqlmap/thirdparty/termcolor/termcolor.py
 share/sqlmap/thirdparty/wininetpton/
 share/sqlmap/thirdparty/wininetpton/__init__.py
-${MODPY_COMMENT}share/sqlmap/thirdparty/wininetpton/${MODPY_PYCACHE}/
+share/sqlmap/thirdparty/wininetpton/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/wininetpton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sqlmap/thirdparty/wininetpton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/wininetpton/${MODPY_PYCACHE}win_inet_pton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

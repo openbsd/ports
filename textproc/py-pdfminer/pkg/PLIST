@@ -3,7 +3,7 @@ bin/dumppdf.py
 bin/pdf2txt.py
 lib/python${MODPY_VERSION}/site-packages/pdfminer/
 lib/python${MODPY_VERSION}/site-packages/pdfminer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}_saslprep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

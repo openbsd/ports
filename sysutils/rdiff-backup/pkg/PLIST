@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Security.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/SetConnections.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/Time.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiff_backup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/${MODPY_PYCACHE}FilenameMapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/${MODPY_PYCACHE}FilenameMapping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/${MODPY_PYCACHE}Globals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiff_backup/user_group.py
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/win_acls.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}actions_mgr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}run.${MODPY
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiffbackup/actions_mgr.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/arguments.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/${MODPY_PYCACHE}_dir_shadow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/directory.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/fs_abilities.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/${MODPY_PYCACHE}filenames.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/map/owners.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/locations/repository.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta/${MODPY_PYCACHE}acl_posix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -223,7 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/rdiffbackup/meta_mgr.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/run.py
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rdiffbackup/utils/${MODPY_PYCACHE}argopts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

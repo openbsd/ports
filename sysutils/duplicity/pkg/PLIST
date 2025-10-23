@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backend_pool.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_cloudfiles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -201,7 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pcabackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pydrivebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/pyrax_identity/${MODPY_PYCACHE}hubic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

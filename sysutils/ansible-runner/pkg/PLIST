@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_runner-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/ansible_runner-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_runner/${MODPY_PYCACHE}streamin
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/cleanup.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,12 +60,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_runner/config/runner.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/defaults.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/display_callback/callback/${MODPY_PYCACHE}awx_display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_runner/loader.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/output.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/runner.py
@@ -85,7 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_runner/runner_config.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/streaming.py
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_runner/utils/${MODPY_PYCACHE}base64io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

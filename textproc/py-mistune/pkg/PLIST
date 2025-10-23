@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mistune/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mistune/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/mistune/block_parser.py
 lib/python${MODPY_VERSION}/site-packages/mistune/core.py
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mistune/directives/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mistune/directives/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune/directives/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,7 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/mistune/list_parser.py
 lib/python${MODPY_VERSION}/site-packages/mistune/markdown.py
 lib/python${MODPY_VERSION}/site-packages/mistune/plugins/
 lib/python${MODPY_VERSION}/site-packages/mistune/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mistune/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mistune/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mistune/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mistune/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune/plugins/${MODPY_PYCACHE}abbr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,7 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/mistune/plugins/url.py
 lib/python${MODPY_VERSION}/site-packages/mistune/py.typed
 lib/python${MODPY_VERSION}/site-packages/mistune/renderers/
 lib/python${MODPY_VERSION}/site-packages/mistune/renderers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mistune/renderers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mistune/renderers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mistune/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mistune/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune/renderers/${MODPY_PYCACHE}_list.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

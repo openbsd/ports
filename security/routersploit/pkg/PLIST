@@ -8,26 +8,26 @@ lib/python${MODPY_VERSION}/site-packages/routersploit-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/routersploit-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/routersploit-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/routersploit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}btle_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/${MODPY_PYCACHE}btle_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/${MODPY_PYCACHE}btle_device.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle/btle_s
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/bluetooth/btle_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/${MODPY_PYCACHE}encoders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/shell.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/exploit/utils.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}ftp_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/${MODPY_PYCACHE}f
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ftp/ftp_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}http_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/http/http_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}snmp_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/snmp/snmp_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}ssh_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/${MODPY_PYCACHE}s
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/ssh/ssh_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}tcp_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/tcp/tcp_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACHE}telnet_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -116,7 +116,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/telnet/telnet_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/${MODPY_PYCACHE}udp_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -125,12 +125,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/core/udp/udp_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/libs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACHE}apiros_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/apiros/apiros_client.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}lzs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,22 +146,22 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/${MODPY_PYCACHE}l
 lib/python${MODPY_VERSION}/site-packages/routersploit/libs/lzs/lzs.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -178,7 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/acti/webinterface_http_form_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -192,7 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/amer
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/american_dynamics/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -206,7 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arec
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/arecont/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -220,7 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avig
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avigilon/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avte
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/avtech/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -251,7 +251,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/axis/webinterface_http_auth_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -268,7 +268,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basl
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/basler/webinterface_http_form_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -285,7 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/bric
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/brickcom/webinterface_http_auth_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -302,7 +302,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cano
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/canon/webinterface_http_auth_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -316,7 +316,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/cisco/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -330,7 +330,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlin
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/dlink/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -344,7 +344,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geov
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/geovision/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -358,7 +358,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/gran
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/grandstream/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -372,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikv
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hikvision/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -386,7 +386,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/hone
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/honeywell/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqin
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/iqinvision/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -414,7 +414,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/jvc/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -428,7 +428,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobo
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/mobotix/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -442,7 +442,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sams
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/samsung/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -456,7 +456,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sent
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/sentry360/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -470,7 +470,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siem
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/siemens/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -484,7 +484,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/spec
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/speco/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -498,7 +498,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/star
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/stardot/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -512,7 +512,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacr
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vacron/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -526,7 +526,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/vide
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/cameras/videoiq/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/${MODPY_PYCACHE}ftp_bruteforce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -558,17 +558,17 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/teln
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/generic/telnet_default.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/printers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -585,7 +585,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asma
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asmax/webinterface_http_auth_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -599,7 +599,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/asus/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -613,7 +613,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belk
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/belkin/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -627,7 +627,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bhu/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -641,7 +641,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/bill
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/billion/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -655,7 +655,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/cisco/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -669,7 +669,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comt
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/comtrend/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -683,7 +683,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlin
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/dlink/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -697,7 +697,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fort
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/fortinet/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -711,7 +711,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huaw
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/huawei/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -725,7 +725,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfi
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ipfire/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -739,7 +739,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juni
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/juniper/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -753,7 +753,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/link
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/linksys/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/${MODPY_PYCACHE}api_ros_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -770,7 +770,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikr
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/mikrotik/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -784,7 +784,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movi
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/movistar/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -798,7 +798,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netcore/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -812,7 +812,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netg
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netgear/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -826,7 +826,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/nets
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/netsys/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/${MODPY_PYCACHE}ssh_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -837,7 +837,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfse
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/pfsense/webinterface_http_form_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -851,7 +851,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tech
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/technicolor/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -865,7 +865,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thom
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/thomson/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -879,7 +879,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tpli
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/tplink/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -893,7 +893,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiq
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/ubiquiti/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -907,7 +907,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zte/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/${MODPY_PYCACHE}ftp_default_creds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -921,12 +921,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxe
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/creds/routers/zyxel/telnet_default_creds.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/${MODPY_PYCACHE}base64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -937,7 +937,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/base6
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/php/hex.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/${MODPY_PYCACHE}base64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -948,17 +948,17 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/ba
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/encoders/python/hex.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/${MODPY_PYCACHE}videoiq_camera_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -966,7 +966,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/a
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/avigilon/videoiq_camera_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/${MODPY_PYCACHE}corp_network_cameras_conf_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -977,7 +977,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/b
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/brickcom/users_cgi_creds_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/${MODPY_PYCACHE}video_surv_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -985,7 +985,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/c
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/cisco/video_surv_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/${MODPY_PYCACHE}dcs_930l_932l_auth_bypass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -993,7 +993,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/d
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/dlink/dcs_930l_932l_auth_bypass.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/${MODPY_PYCACHE}gxv3611hd_ip_camera_backdoor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1004,7 +1004,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/g
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/grandstream/gxv3611hd_ip_camera_sqli.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/honeywell/${MODPY_PYCACHE}hicc_1100pt_password_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1014,7 +1014,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/P2P_wificam_credential_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/P2P_wificam_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/${MODPY_PYCACHE}P2P_wificam_credential_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/${MODPY_PYCACHE}P2P_wificam_credential_disclosure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/${MODPY_PYCACHE}P2P_wificam_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1032,7 +1032,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/multi/netwave_ip_camera_information_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/${MODPY_PYCACHE}dvr_jaws_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1040,7 +1040,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/mvpower/dvr_jaws_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/${MODPY_PYCACHE}cvms2025_credentials_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1048,7 +1048,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/s
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/siemens/cvms2025_credentials_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/${MODPY_PYCACHE}uc_httpd_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1056,7 +1056,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/x
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/cameras/xiongmai/uc_httpd_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/${MODPY_PYCACHE}heartbleed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1070,12 +1070,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/s
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/generic/ssh_auth_keys.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/${MODPY_PYCACHE}b1m_projector_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1083,7 +1083,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/asus/b1m_projector_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/${MODPY_PYCACHE}pg8528_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1091,7 +1091,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miel
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/miele/pg8528_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/misc/wepresent/${MODPY_PYCACHE}wipg1000_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1101,7 +1101,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/4011g_5012nv_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/${MODPY_PYCACHE}4011g_5012nv_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/${MODPY_PYCACHE}4011g_5012nv_path_traversal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1111,7 +1111,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/2wire/gateway_auth_bypass.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/${MODPY_PYCACHE}ap8760_password_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1130,12 +1130,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/officeconnect_info_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/3com/officeconnect_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/${MODPY_PYCACHE}ar_1004g_password_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1146,7 +1146,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/a
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asmax/ar_804_gu_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/${MODPY_PYCACHE}asuswrt_lan_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1160,7 +1160,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/a
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/asus/rt_n16_password_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/${MODPY_PYCACHE}auth_bypass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1183,7 +1183,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/b
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/belkin/play_max_prce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/${MODPY_PYCACHE}bhu_urouter_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1191,7 +1191,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/b
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/bhu/bhu_urouter_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/${MODPY_PYCACHE}billion_5200w_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1202,7 +1202,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/b
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/billion/billion_7700nr4_password_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/${MODPY_PYCACHE}catalyst_2960_rocem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1234,7 +1234,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/c
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/cisco/unified_multi_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/${MODPY_PYCACHE}ct_5361t_password_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1242,7 +1242,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/c
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/comtrend/ct_5361t_password_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/${MODPY_PYCACHE}dcs_930l_auth_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1325,7 +1325,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/d
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/dlink/multi_hnap_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/${MODPY_PYCACHE}fortigate_os_backdoor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1333,7 +1333,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/f
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/fortinet/fortigate_os_backdoor.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/${MODPY_PYCACHE}e5331_mifi_info_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1350,7 +1350,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/h
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/huawei/hg866_password_change.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ipfire/${MODPY_PYCACHE}ipfire_oinkcode_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1365,7 +1365,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/i
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/1500_2500_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/${MODPY_PYCACHE}1500_2500_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/${MODPY_PYCACHE}1500_2500_rce.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1384,7 +1384,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/l
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/linksys/wrt100_110_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/${MODPY_PYCACHE}routeros_jailbreak.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1395,7 +1395,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/mikrotik/winbox_auth_bypass_creds_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/${MODPY_PYCACHE}adsl_router_bhs_rta_path_traversal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1403,7 +1403,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/movistar/adsl_router_bhs_rta_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/${MODPY_PYCACHE}gpon_home_gateway_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1423,7 +1423,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/m
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/multi/tcp_32764_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/${MODPY_PYCACHE}udp_53413_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1431,7 +1431,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/n
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netcore/udp_53413_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/${MODPY_PYCACHE}dgn2200_dnslookup_cgi_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1463,7 +1463,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/n
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netgear/wnr500_612v3_jnr1010_2010_path_traversal.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/netsys/${MODPY_PYCACHE}multi_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1472,14 +1472,14 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/n
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/915wm_dns_change.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}915wm_dns_change.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}915wm_dns_change.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/shuttle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/${MODPY_PYCACHE}dwg855_authbypass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1496,7 +1496,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/t
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/technicolor/tg784_authbypass.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/${MODPY_PYCACHE}twg849_info_disclosure.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1507,7 +1507,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/t
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/thomson/twg850_password_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/${MODPY_PYCACHE}archer_c2_c20i_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1524,7 +1524,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/t
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/tplink/wdr842nd_wdr842n_configure_disclosure.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/${MODPY_PYCACHE}airos_6_x.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1532,7 +1532,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/u
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/ubiquiti/airos_6_x.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/${MODPY_PYCACHE}f460_f660_backdoor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1543,7 +1543,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/z
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zte/zxv10_rce.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/${MODPY_PYCACHE}d1000_rce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1563,12 +1563,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/z
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/exploits/routers/zyxel/zywall_usg_extract_hashes.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/${MODPY_PYCACHE}btle_enumerate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1582,7 +1582,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/bluetooth/btle_write.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MODPY_PYCACHE}ssdp_msearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1590,12 +1590,12 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/${MOD
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/generic/upnp/ssdp_msearch.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1606,7 +1606,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/bin
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/armle/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/${MODPY_PYCACHE}awk_bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1653,7 +1653,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/pytho
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/cmd/python_reverse_udp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1664,7 +1664,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/bi
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsbe/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1675,7 +1675,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/bi
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/mipsle/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1686,7 +1686,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/bind
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/perl/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1697,7 +1697,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/bind_
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/php/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1714,7 +1714,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/re
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/python/reverse_udp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1725,7 +1725,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/bind_
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x64/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/${MODPY_PYCACHE}bind_tcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1736,7 +1736,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/bind_
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/payloads/x86/reverse_tcp.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_PYCACHE}autopwn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1744,7 +1744,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/autopwn.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/${MODPY_PYCACHE}camera_scan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1752,7 +1752,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/$
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/cameras/camera_scan.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MODPY_PYCACHE}misc_scan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1760,7 +1760,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/${MO
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/misc/misc_scan.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/${MODPY_PYCACHE}router_scan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1768,7 +1768,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/$
 lib/python${MODPY_VERSION}/site-packages/routersploit/modules/scanners/routers/router_scan.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/ssh_keys/
@@ -1794,7 +1794,7 @@ lib/python${MODPY_VERSION}/site-packages/routersploit/resources/vendors/
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/vendors/oui.dat
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/routersploit/resources/wordlists/defaults.txt

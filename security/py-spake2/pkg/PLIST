@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/spake2-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/spake2-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/spake2-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spake2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spake2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spake2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spake2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spake2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spake2/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/spake2/ed25519_group.py
 lib/python${MODPY_VERSION}/site-packages/spake2/groups.py
 lib/python${MODPY_VERSION}/site-packages/spake2/parameters/
 lib/python${MODPY_VERSION}/site-packages/spake2/parameters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spake2/parameters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spake2/parameters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spake2/parameters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spake2/parameters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spake2/parameters/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/spake2/params.py
 lib/python${MODPY_VERSION}/site-packages/spake2/spake2.py
 lib/python${MODPY_VERSION}/site-packages/spake2/test/
 lib/python${MODPY_VERSION}/site-packages/spake2/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spake2/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spake2/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spake2/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spake2/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spake2/test/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

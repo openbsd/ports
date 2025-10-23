@@ -12,12 +12,12 @@ lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/miasm/VERSION
 lib/python${MODPY_VERSION}/site-packages/miasm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/analysis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/analysis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,12 +70,12 @@ lib/python${MODPY_VERSION}/site-packages/miasm/analysis/simplifier.py
 lib/python${MODPY_VERSION}/site-packages/miasm/analysis/ssa.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -98,7 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/aarch64/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/arm/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,7 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mep/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/mips32/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -193,7 +193,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/msp430/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -216,7 +216,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/ppc/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -227,7 +227,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/arch.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/sh4/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -253,7 +253,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm/arch/x86/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm/core/
 lib/python${MODPY_VERSION}/site-packages/miasm/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/core/${MODPY_PYCACHE}asm_ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -303,7 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/core/types.py
 lib/python${MODPY_VERSION}/site-packages/miasm/core/utils.py
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/expression/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/expression/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/${MODPY_PYCACHE}expression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -335,7 +335,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/expression/simplifications_explic
 lib/python${MODPY_VERSION}/site-packages/miasm/expression/smt2_helper.py
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/ir/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/ir/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -356,7 +356,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/ir/symbexec_types.py
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/C.py
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/${MODPY_PYCACHE}C.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/${MODPY_PYCACHE}C.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/ir/translators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -382,7 +382,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/jitter/JitCore.h
 @so lib/python${MODPY_VERSION}/site-packages/miasm/jitter/Jitllvm.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/miasm/jitter/VmMngr.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/jitter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/jitter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/${MODPY_PYCACHE}codegen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -424,7 +424,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/JitCore_ppc32_regs.h
 @so lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/JitCore_x86.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/JitCore_x86.h
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/bn.h
@@ -441,7 +441,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/jitter/jitload.py
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/llvmconvert.py
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/loader/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -459,7 +459,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/jitter/vm_mngr.h
 lib/python${MODPY_VERSION}/site-packages/miasm/jitter/vm_mngr_py.h
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/loader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/loader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/${MODPY_PYCACHE}cstruct.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -491,7 +491,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/loader/pe_init.py
 lib/python${MODPY_VERSION}/site-packages/miasm/loader/strpatchwork.py
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -507,7 +507,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/${MODPY_PYCACHE}win_api_x8
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/common.py
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/miasm/os_dep/linux/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

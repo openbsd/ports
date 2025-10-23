@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-6070-PBKDF
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/scrypt.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/__about__.py
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

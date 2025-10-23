@@ -147,7 +147,7 @@ share/virt-manager/ui/vsockdetails.ui
 share/virt-manager/ui/xmleditor.ui
 share/virt-manager/virtManager/
 share/virt-manager/virtManager/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtManager/${MODPY_PYCACHE}/
+share/virt-manager/virtManager/${MODPY_PYCACHE}/
 share/virt-manager/virtManager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtManager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ share/virt-manager/virtManager/createvol.py
 share/virt-manager/virtManager/delete.py
 share/virt-manager/virtManager/details/
 share/virt-manager/virtManager/details/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtManager/details/${MODPY_PYCACHE}/
+share/virt-manager/virtManager/details/${MODPY_PYCACHE}/
 share/virt-manager/virtManager/details/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtManager/details/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/details/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -247,7 +247,7 @@ share/virt-manager/virtManager/details/sshtunnels.py
 share/virt-manager/virtManager/details/viewers.py
 share/virt-manager/virtManager/device/
 share/virt-manager/virtManager/device/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtManager/device/${MODPY_PYCACHE}/
+share/virt-manager/virtManager/device/${MODPY_PYCACHE}/
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}addstorage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -278,7 +278,7 @@ share/virt-manager/virtManager/hostnets.py
 share/virt-manager/virtManager/hoststorage.py
 share/virt-manager/virtManager/lib/
 share/virt-manager/virtManager/lib/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtManager/lib/${MODPY_PYCACHE}/
+share/virt-manager/virtManager/lib/${MODPY_PYCACHE}/
 share/virt-manager/virtManager/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtManager/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/lib/${MODPY_PYCACHE}connectauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -312,7 +312,7 @@ share/virt-manager/virtManager/manager.py
 share/virt-manager/virtManager/migrate.py
 share/virt-manager/virtManager/object/
 share/virt-manager/virtManager/object/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtManager/object/${MODPY_PYCACHE}/
+share/virt-manager/virtManager/object/${MODPY_PYCACHE}/
 share/virt-manager/virtManager/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtManager/object/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/object/${MODPY_PYCACHE}domain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -340,7 +340,7 @@ share/virt-manager/virtManager/vmwindow.py
 share/virt-manager/virtManager/xmleditor.py
 share/virt-manager/virtinst/
 share/virt-manager/virtinst/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtinst/${MODPY_PYCACHE}/
+share/virt-manager/virtinst/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}_progresspriv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -404,7 +404,7 @@ share/virt-manager/virtinst/cloner.py
 share/virt-manager/virtinst/connection.py
 share/virt-manager/virtinst/devices/
 share/virt-manager/virtinst/devices/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtinst/devices/${MODPY_PYCACHE}/
+share/virt-manager/virtinst/devices/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -482,7 +482,7 @@ share/virt-manager/virtinst/devices/watchdog.py
 share/virt-manager/virtinst/diskbackend.py
 share/virt-manager/virtinst/domain/
 share/virt-manager/virtinst/domain/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtinst/domain/${MODPY_PYCACHE}/
+share/virt-manager/virtinst/domain/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/domain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/domain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/domain/${MODPY_PYCACHE}blkiotune.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -547,7 +547,7 @@ share/virt-manager/virtinst/generatename.py
 share/virt-manager/virtinst/guest.py
 share/virt-manager/virtinst/install/
 share/virt-manager/virtinst/install/__init__.py
-${MODPY_COMMENT}share/virt-manager/virtinst/install/${MODPY_PYCACHE}/
+share/virt-manager/virtinst/install/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/install/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/virt-manager/virtinst/install/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/install/${MODPY_PYCACHE}cloudinit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

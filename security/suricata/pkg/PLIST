@@ -35,12 +35,12 @@ lib/suricata/
 lib/suricata/python/
 lib/suricata/python/suricata/
 lib/suricata/python/suricata/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/config/
 lib/suricata/python/suricata/config/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/config/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/config/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/config/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/suricata/python/suricata/config/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_T
 lib/suricata/python/suricata/config/defaults.py
 lib/suricata/python/suricata/ctl/
 lib/suricata/python/suricata/ctl/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/ctl/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/ctl/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/ctl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/ctl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/ctl/${MODPY_PYCACHE}filestore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/suricata/python/suricata/ctl/main.py
 lib/suricata/python/suricata/ctl/test_filestore.py
 lib/suricata/python/suricata/sc/
 lib/suricata/python/suricata/sc/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/sc/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/sc/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/sc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/sc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/sc/${MODPY_PYCACHE}specs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/suricata/python/suricata/sc/specs.py
 lib/suricata/python/suricata/sc/suricatasc.py
 lib/suricata/python/suricata/update/
 lib/suricata/python/suricata/update/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/suricata/python/suricata/update/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TA
 lib/suricata/python/suricata/update/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/commands/
 lib/suricata/python/suricata/update/commands/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/commands/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/commands/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/commands/${MODPY_PYCACHE}addsource.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -139,14 +139,14 @@ lib/suricata/python/suricata/update/commands/removesource.py
 lib/suricata/python/suricata/update/commands/updatesources.py
 lib/suricata/python/suricata/update/compat/
 lib/suricata/python/suricata/update/compat/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/compat/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/compat/argparse/
 lib/suricata/python/suricata/update/compat/argparse/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/compat/argparse/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/compat/argparse/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/compat/argparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/compat/argparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/compat/argparse/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -156,7 +156,7 @@ lib/suricata/python/suricata/update/compat/ordereddict.py
 lib/suricata/python/suricata/update/config.py
 lib/suricata/python/suricata/update/configs/
 lib/suricata/python/suricata/update/configs/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/configs/disable.conf
@@ -167,7 +167,7 @@ lib/suricata/python/suricata/update/configs/threshold.in
 lib/suricata/python/suricata/update/configs/update.yaml
 lib/suricata/python/suricata/update/data/
 lib/suricata/python/suricata/update/data/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}/
+lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -193,7 +193,7 @@ lib/suricata/python/suricata/update/util.py
 lib/suricata/python/suricata/update/version.py
 lib/suricata/python/suricatasc/
 lib/suricata/python/suricatasc/__init__.py
-${MODPY_COMMENT}lib/suricata/python/suricatasc/${MODPY_PYCACHE}/
+lib/suricata/python/suricatasc/${MODPY_PYCACHE}/
 lib/suricata/python/suricatasc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/suricata/python/suricatasc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/suricata.1

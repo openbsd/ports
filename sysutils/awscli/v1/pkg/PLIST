@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -67,7 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/argprocess.py
 lib/python${MODPY_VERSION}/site-packages/awscli/arguments.py
 lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/
 lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/bcdoc/${MODPY_PYCACHE}docevents.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/compat.py
 lib/python${MODPY_VERSION}/site-packages/awscli/completer.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}addexamples.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -198,7 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/binaryhoist.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cliinputjson.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/${MODPY_PYCACHE}artifact_exporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudsearch.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudsearchdomain.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/${MODPY_PYCACHE}subscribe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -238,7 +238,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/utils.
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudtrail/validation.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/${MODPY_PYCACHE}login.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -247,7 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codeartifact/logi
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codecommit.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/${MODPY_PYCACHE}codedeploy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -280,7 +280,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/codedeploy/utils.
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/commands.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/${MODPY_PYCACHE}getstatus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -297,7 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/ren
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configservice/subscribe.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/${MODPY_PYCACHE}addmodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -320,7 +320,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/set.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/writer.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -337,7 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/list
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/translator.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -355,7 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/iam.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dynamodb.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/${MODPY_PYCACHE}addcount.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -383,7 +383,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr_public.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}deploy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -400,7 +400,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/executecomman
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/filehelpers.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -420,7 +420,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/ordered_yaml.
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/update_kubeconfig.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/${MODPY_PYCACHE}addinstancegroups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -509,7 +509,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/steputils.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/terminateclusters.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/${MODPY_PYCACHE}base36.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -530,7 +530,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emrcontainers/upd
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/flatten.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/${MODPY_PYCACHE}getlog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -543,7 +543,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/generatecliskelet
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/globalargs.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -571,7 +571,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kinesis.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}startlivetail.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -589,7 +589,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/removals.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/route53.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/${MODPY_PYCACHE}comparator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -628,7 +628,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/s3handler.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/subcommands.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -655,7 +655,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sagemaker.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/scalarparse.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

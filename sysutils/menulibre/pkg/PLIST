@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/menulibre/TextEntryButton.py
 lib/python${MODPY_VERSION}/site-packages/menulibre/Toolbar.py
 lib/python${MODPY_VERSION}/site-packages/menulibre/XmlMenuElementTree.py
 lib/python${MODPY_VERSION}/site-packages/menulibre/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}ActionEditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}ActionEditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}AdvancedPage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/menulibre/${MODPY_PYCACHE}util.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/menulibre/util.py
 lib/python${MODPY_VERSION}/site-packages/menulibre_lib/
 lib/python${MODPY_VERSION}/site-packages/menulibre_lib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/menulibre_lib/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

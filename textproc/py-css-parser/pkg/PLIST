@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/css_parser-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/css_parser-${MODPY_DISTV}.dist-info/licenses/COPYING.LESSER
 lib/python${MODPY_VERSION}/site-packages/css_parser-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/css_parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/css_parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/css_parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/css_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/css_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/css_parser/${MODPY_PYCACHE}_codec2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,7 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/css_parser/_fetchgae.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/codec.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/css/
 lib/python${MODPY_VERSION}/site-packages/css_parser/css/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/css_parser/css/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/css_parser/css/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/css_parser/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/css_parser/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/css_parser/css/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,7 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/css_parser/css/value.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/cssproductions.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/
 lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/css_parser/encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/css_parser/errorhandler.py
@@ -142,7 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/css_parser/sac.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/script.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/
 lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/css_parser/scripts/${MODPY_PYCACHE}csscapture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -158,7 +158,7 @@ lib/python${MODPY_VERSION}/site-packages/css_parser/serialize.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/settings.py
 lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/
 lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/css_parser/stylesheets/${MODPY_PYCACHE}medialist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

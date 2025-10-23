@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/entry_p
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ropper/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ropper/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/ropper/${MODPY_PYCACHE}z3helper.${MODPY
 lib/python${MODPY_VERSION}/site-packages/ropper/arch.py
 lib/python${MODPY_VERSION}/site-packages/ropper/common/
 lib/python${MODPY_VERSION}/site-packages/ropper/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/common/${MODPY_PYCACHE}abstract.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,7 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/ropper/console.py
 lib/python${MODPY_VERSION}/site-packages/ropper/gadget.py
 lib/python${MODPY_VERSION}/site-packages/ropper/loaders/
 lib/python${MODPY_VERSION}/site-packages/ropper/loaders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/loaders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/loaders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/loaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/loaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/loaders/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/ropper/loaders/raw.py
 lib/python${MODPY_VERSION}/site-packages/ropper/options.py
 lib/python${MODPY_VERSION}/site-packages/ropper/printer/
 lib/python${MODPY_VERSION}/site-packages/ropper/printer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/printer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/printer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/printer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/printer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/printer/${MODPY_PYCACHE}elfprinter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,14 +100,14 @@ lib/python${MODPY_VERSION}/site-packages/ropper/printer/rawprinter.py
 lib/python${MODPY_VERSION}/site-packages/ropper/rop.py
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}ropchain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/${MODPY_PYCACHE}ropchain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ropper/ropchain/arch/${MODPY_PYCACHE}ropchainx86.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

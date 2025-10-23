@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/tentakel-${MODPY_DISTV}.dist-info/RECOR
 lib/python${MODPY_VERSION}/site-packages/tentakel-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/tentakel-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/tentakel/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tentakel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tentakel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tentakel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tentakel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tentakel/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/tentakel/error.py
 lib/python${MODPY_VERSION}/site-packages/tentakel/main.py
 lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/
 lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tentakel/plugins/${MODPY_PYCACHE}rsh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

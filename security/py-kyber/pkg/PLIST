@@ -6,12 +6,12 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/kyber_py-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/kyber_py-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/kyber_py/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}aes256_ctr_drbg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/${MODPY_PYCACHE}aes256_ct
 lib/python${MODPY_VERSION}/site-packages/kyber_py/drbg/aes256_ctr_drbg.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/${MODPY_PYCACHE}default_parameters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/default_parameters.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/kyber/kyber.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/${MODPY_PYCACHE}default_parameters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/default_parameters.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/ml_kem/ml_kem.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/${MODPY_PYCACHE}modules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/modules.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/modules/modules_generic.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/${MODPY_PYCACHE}polynomials.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,7 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/polynomials.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/polynomials/polynomials_generic.py
 lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kyber_py/utilities/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

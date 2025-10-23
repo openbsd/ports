@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/pykwalify-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pykwalify-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pykwalify-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pykwalify/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pykwalify/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pykwalify/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pykwalify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pykwalify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykwalify/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

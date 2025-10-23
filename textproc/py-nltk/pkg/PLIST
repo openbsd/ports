@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nltk/VERSION
 lib/python${MODPY_VERSION}/site-packages/nltk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}book.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}wsd.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}wsd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/app/
 lib/python${MODPY_VERSION}/site-packages/nltk/app/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/app/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/app/${MODPY_PYCACHE}chartparser_app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/app/wordnet_app.py
 lib/python${MODPY_VERSION}/site-packages/nltk/book.py
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/ccg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/ccg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,7 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/ccg/lexicon.py
 lib/python${MODPY_VERSION}/site-packages/nltk/ccg/logic.py
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/chat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/chat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/${MODPY_PYCACHE}eliza.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -142,7 +142,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/chat/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/chat/zen.py
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/chunk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/chunk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -159,7 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/chunk/regexp.py
 lib/python${MODPY_VERSION}/site-packages/nltk/chunk/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/classify/
 lib/python${MODPY_VERSION}/site-packages/nltk/classify/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/classify/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/classify/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/classify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/classify/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/classify/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/classify/weka.py
 lib/python${MODPY_VERSION}/site-packages/nltk/cli.py
 lib/python${MODPY_VERSION}/site-packages/nltk/cluster/
 lib/python${MODPY_VERSION}/site-packages/nltk/cluster/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/cluster/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/cluster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/cluster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/cluster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/cluster/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -230,7 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/collocations.py
 lib/python${MODPY_VERSION}/site-packages/nltk/compat.py
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}europarl_raw.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/corpus/${MODPY_PYCACHE}util.${MODP
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/europarl_raw.py
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/${MODPY_PYCACHE}aligned.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -405,7 +405,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/decorators.py
 lib/python${MODPY_VERSION}/site-packages/nltk/downloader.py
 lib/python${MODPY_VERSION}/site-packages/nltk/draw/
 lib/python${MODPY_VERSION}/site-packages/nltk/draw/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/draw/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/draw/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/draw/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/draw/${MODPY_PYCACHE}cfg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -428,7 +428,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/grammar.py
 lib/python${MODPY_VERSION}/site-packages/nltk/help.py
 lib/python${MODPY_VERSION}/site-packages/nltk/inference/
 lib/python${MODPY_VERSION}/site-packages/nltk/inference/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/inference/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/inference/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/inference/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/inference/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/inference/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -458,7 +458,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/langnames.py
 lib/python${MODPY_VERSION}/site-packages/nltk/lazyimport.py
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/lm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/lm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -484,7 +484,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/lm/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/lm/vocabulary.py
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/metrics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/metrics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/${MODPY_PYCACHE}agreement.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -516,7 +516,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/metrics/segmentation.py
 lib/python${MODPY_VERSION}/site-packages/nltk/metrics/spearman.py
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/misc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/${MODPY_PYCACHE}babelfish.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -536,7 +536,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/misc/sort.py
 lib/python${MODPY_VERSION}/site-packages/nltk/misc/wordfinder.py
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/parse/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -599,7 +599,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/parse/viterbi.py
 lib/python${MODPY_VERSION}/site-packages/nltk/probability.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/sem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/sem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/${MODPY_PYCACHE}boxer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -646,7 +646,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/sem/skolemize.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sem/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/${MODPY_PYCACHE}sentiment_analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -660,7 +660,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/sentiment/vader.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/stem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/stem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -702,7 +702,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/stem/wordnet.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tabdata.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -746,7 +746,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tag/tnt.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/tbl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/tbl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -769,7 +769,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tbl/rule.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tbl/template.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/${MODPY_PYCACHE}all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -856,7 +856,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/treeprettyprinter.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/treetransforms.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_aline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -933,7 +933,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_wor
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/${MODPY_PYCACHE}test_wordnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/lm/${MODPY_PYCACHE}test_counter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -986,7 +986,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_wordnet.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/translate/${MODPY_PYCACHE}test_bleu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1030,7 +1030,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/text.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tgrep.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1090,7 +1090,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/toolbox.py
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/translate/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/translate/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1149,7 +1149,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/translate/ribes_score.py
 lib/python${MODPY_VERSION}/site-packages/nltk/translate/stack_decoder.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tree/
 lib/python${MODPY_VERSION}/site-packages/nltk/tree/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/tree/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/tree/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/tree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/tree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tree/${MODPY_PYCACHE}immutable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1177,7 +1177,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/treeprettyprinter.py
 lib/python${MODPY_VERSION}/site-packages/nltk/treetransforms.py
 lib/python${MODPY_VERSION}/site-packages/nltk/twitter/
 lib/python${MODPY_VERSION}/site-packages/nltk/twitter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/twitter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nltk/twitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/twitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/twitter/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

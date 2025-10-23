@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lxml/ElementInclude.py
 lib/python${MODPY_VERSION}/site-packages/lxml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}ElementInclude.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}ElementInclude.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml/extensions.pxi
 lib/python${MODPY_VERSION}/site-packages/lxml/html/
 lib/python${MODPY_VERSION}/site-packages/lxml/html/ElementSoup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}ElementSoup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}ElementSoup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml/html/usedoctest.py
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/c14n.pxd
@@ -117,7 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml/includes/xpath.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/xslt.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/isoschematron/resources/

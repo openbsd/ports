@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/elementpath-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/elementpath-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/elementpath/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/collations.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/compare.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/
 lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/datatypes/${MODPY_PYCACHE}atomic_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,7 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/protocols.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/py.typed
 lib/python${MODPY_VERSION}/site-packages/elementpath/regex/
 lib/python${MODPY_VERSION}/site-packages/elementpath/regex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/regex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/regex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/regex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/regex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/regex/${MODPY_PYCACHE}character_classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,14 +124,14 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/tdop.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/tree_builders.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/validators/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/validators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/analyze-string.xsd
 lib/python${MODPY_VERSION}/site-packages/elementpath/validators/schema-for-json.xsd
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/${MODPY_PYCACHE}_xpath1_axes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/_xpath1_operators.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath1/xpath1_parser.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/${MODPY_PYCACHE}_xpath2_constructors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,7 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/xpath2/xpath2_parser.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath3.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/${MODPY_PYCACHE}_translation_maps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/xpath30_helpers.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath30/xpath30_parser.py
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elementpath/xpath31/${MODPY_PYCACHE}_xpath31_functions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

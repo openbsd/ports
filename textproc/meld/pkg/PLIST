@@ -1,7 +1,7 @@
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}accelerators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}actiongutter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/iohelpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/linkmap.py
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}diffutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/matchers/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/tree.py
 lib/python${MODPY_VERSION}/site-packages/meld/treehelpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/ui/
 lib/python${MODPY_VERSION}/site-packages/meld/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}bufferselectors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/ui/${MODPY_PYCACHE}cellrenderers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -125,7 +125,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/vc/
 lib/python${MODPY_VERSION}/site-packages/meld/vc/COPYING
 lib/python${MODPY_VERSION}/site-packages/meld/vc/README
 lib/python${MODPY_VERSION}/site-packages/meld/vc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}_null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/${MODPY_PYCACHE}_vc.${MODPY_PYC_MAGIC_TAG}pyc

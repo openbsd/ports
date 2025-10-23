@@ -5,7 +5,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint-${MODPY_DISTV}.d
 lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli_plugin_endpoint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/doc/awscli-plugin-endpoint/

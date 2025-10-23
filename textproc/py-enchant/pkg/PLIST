@@ -1,7 +1,7 @@
 @pkgpath textproc/py-enchant,python3
 lib/python${MODPY_VERSION}/site-packages/enchant/
 lib/python${MODPY_VERSION}/site-packages/enchant/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/enchant/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/enchant/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/enchant/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/enchant/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/enchant/${MODPY_PYCACHE}_enchant.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/enchant/checker/
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/CmdLineChecker.py
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/GtkSpellCheckerDialog.py
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/enchant/checker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/enchant/checker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/${MODPY_PYCACHE}CmdLineChecker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/${MODPY_PYCACHE}CmdLineChecker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/enchant/checker/${MODPY_PYCACHE}GtkSpellCheckerDialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/enchant/errors.py
 lib/python${MODPY_VERSION}/site-packages/enchant/pypwl.py
 lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/
 lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/enchant/tokenize/${MODPY_PYCACHE}de.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

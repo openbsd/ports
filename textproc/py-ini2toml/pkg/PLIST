@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/ini2toml-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/ini2toml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ini2toml/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ini2toml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ini2toml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ini2toml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ini2toml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ini2toml/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/ini2toml/base_translator.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/cli.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/
 lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ini2toml/drivers/${MODPY_PYCACHE}configparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/ini2toml/errors.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/intermediate_repr.py
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ini2toml/plugins/${MODPY_PYCACHE}best_effort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

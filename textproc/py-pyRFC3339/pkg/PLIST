@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pyrfc3339-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

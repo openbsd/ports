@@ -2,7 +2,7 @@
 @so lib/python${MODPY_VERSION}/site-packages/_augeas${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/augeas/
 lib/python${MODPY_VERSION}/site-packages/augeas/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}ffi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

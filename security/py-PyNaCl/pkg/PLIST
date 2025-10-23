@@ -1,7 +1,7 @@
 @pkgpath security/py-PyNaCl,python3
 lib/python${MODPY_VERSION}/site-packages/nacl/
 lib/python${MODPY_VERSION}/site-packages/nacl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/nacl/${MODPY_PYCACHE}utils.${MODPY_PYC_
 @so lib/python${MODPY_VERSION}/site-packages/nacl/_sodium${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/bindings/${MODPY_PYCACHE}crypto_aead.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,7 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/nacl/hashlib.py
 lib/python${MODPY_VERSION}/site-packages/nacl/public.py
 lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/
 lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nacl/pwhash/${MODPY_PYCACHE}_argon2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

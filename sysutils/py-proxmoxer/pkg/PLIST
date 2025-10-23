@@ -7,14 +7,14 @@ lib/python${MODPY_VERSION}/site-packages/proxmoxer-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/proxmoxer-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/proxmoxer-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/${MODPY_PYCACHE}command_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/proxmoxer/backends/ssh_paramiko.py
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/core.py
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proxmoxer/tools/${MODPY_PYCACHE}files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/licenses/licenses/gpl-3-0.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/frontend.py
 lib/python${MODPY_VERSION}/site-packages/docutils/io.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/languages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/${MODPY_PYCACHE}af.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/zh_tw.py
 lib/python${MODPY_VERSION}/site-packages/docutils/nodes.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/${MODPY_PYCACHE}commonmark_wrapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -158,7 +158,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/null.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/recommonmark_wrapper.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}roles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -169,7 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}ta
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/${MODPY_PYCACHE}tableparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/directives/${MODPY_PYCACHE}admonitions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/include/xhtml1-spe
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/include/xhtml1-symbol.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/${MODPY_PYCACHE}af.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -329,7 +329,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/states.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/tableparser.py
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/readers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/readers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/${MODPY_PYCACHE}doctree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -344,7 +344,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/readers/standalone.py
 lib/python${MODPY_VERSION}/site-packages/docutils/statemachine.py
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/transforms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/transforms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/${MODPY_PYCACHE}components.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -373,7 +373,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/transforms/universal.py
 lib/python${MODPY_VERSION}/site-packages/docutils/transforms/writer_aux.py
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/${MODPY_PYCACHE}_roman_numerals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -393,7 +393,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/utils/_typing.py
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/code_analyzer.py
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/math/${MODPY_PYCACHE}latex2mathml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -422,7 +422,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/utils/smartquotes.py
 lib/python${MODPY_VERSION}/site-packages/docutils/utils/urischemes.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/${MODPY_PYCACHE}_html_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -439,14 +439,14 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/_html_base.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/docutils_xml.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/html4css1.css
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/template.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/italic-field-names.css
@@ -458,7 +458,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/templat
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html5_polyglot/tuftig.css
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/default.tex
@@ -470,7 +470,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/manpage.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/null.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/${MODPY_PYCACHE}prepstyles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -482,7 +482,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/pygmentsformat
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/styles.odt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/pep.css
@@ -490,7 +490,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/pep_html/template.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/pseudoxml.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/
@@ -525,6 +525,6 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-w
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-white/pretty.css
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

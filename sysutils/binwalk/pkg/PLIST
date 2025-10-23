@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/binwalk-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/binwalk-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/binwalk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/binwalk/config/
 lib/python${MODPY_VERSION}/site-packages/binwalk/config/extract.conf
 lib/python${MODPY_VERSION}/site-packages/binwalk/core/
 lib/python${MODPY_VERSION}/site-packages/binwalk/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/binwalk/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/binwalk/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/binwalk/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/binwalk/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/core/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,7 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/binwalk/magic/sql
 lib/python${MODPY_VERSION}/site-packages/binwalk/magic/vxworks
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/binwalk/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/binwalk/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/${MODPY_PYCACHE}compression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ lib/python${MODPY_VERSION}/site-packages/binwalk/modules/general.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/hexdiff.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/modules/signature.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}arcadyan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}arcadyan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}cpio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/salttesting-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/salttesting-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/salttesting-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/salttesting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}github.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/${MODPY_PYCACHE}xmlunit.${M
 lib/python${MODPY_VERSION}/site-packages/salttesting/case.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/base.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/cherrypytest/case.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,7 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/mixins.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/mock.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}cover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -69,7 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/parser/${MODPY_PYCACHE}cove
 lib/python${MODPY_VERSION}/site-packages/salttesting/parser/cover.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/${MODPY_PYCACHE}fileperms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,12 +87,12 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep8.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/${MODPY_PYCACHE}fix_filter_salt_six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bcrypt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bcrypt/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/bcrypt/_bcrypt.${MODPY_PYC_MAGIC_TAG}so

@@ -1,7 +1,7 @@
 @pkgpath sysutils/py-consul,python3
 lib/python${MODPY_VERSION}/site-packages/consul/
 lib/python${MODPY_VERSION}/site-packages/consul/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}aio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}std.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/consul/aio.py
 lib/python${MODPY_VERSION}/site-packages/consul/api/
 lib/python${MODPY_VERSION}/site-packages/consul/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}agent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -48,7 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}txn.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/consul/api/${MODPY_PYCACHE}txn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/consul/api/acl/
 lib/python${MODPY_VERSION}/site-packages/consul/api/acl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/consul/api/acl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/consul/api/acl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/consul/api/acl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/consul/api/acl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/consul/api/acl/${MODPY_PYCACHE}policy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/consul/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/consul/std.py
 lib/python${MODPY_VERSION}/site-packages/docs/
 lib/python${MODPY_VERSION}/site-packages/docs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

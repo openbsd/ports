@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/pyphen-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pyphen-${MODPY_DISTV}.dist-info/licenses/COPYING.MPL
 lib/python${MODPY_VERSION}/site-packages/pyphen-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyphen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyphen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyphen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyphen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyphen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyphen/dictionaries/

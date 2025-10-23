@@ -1,7 +1,7 @@
 @pkgpath security/py-axolotl,python3
 lib/python${MODPY_VERSION}/site-packages/axolotl/
 lib/python${MODPY_VERSION}/site-packages/axolotl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}axolotladdress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/axolotladdress.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/duplicatemessagexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/${MODPY_PYCACHE}curve.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/ec.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/ecc/eckeypair.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/groups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/groups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/${MODPY_PYCACHE}groupcipher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -66,7 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/groups/groupcipher.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/groupsessionbuilder.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/${MODPY_PYCACHE}senderchainkey.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,7 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/groups/ratchet/sendermessagekey
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/senderkeyname.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/groups/state/${MODPY_PYCACHE}senderkeyrecord.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -98,7 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/invalidmessageexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/invalidversionexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/
 lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/kdf/${MODPY_PYCACHE}derivedmessagesecrets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,7 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/legacymessageexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/nosessionexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/${MODPY_PYCACHE}ciphertextmessage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/whispermessage.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/protocol/whisperprotos_pb2.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/
 lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/ratchet/${MODPY_PYCACHE}aliceaxolotlparameters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -174,7 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/sessionbuilder.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/sessioncipher.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/state/
 lib/python${MODPY_VERSION}/site-packages/axolotl/state/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/state/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/state/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/state/${MODPY_PYCACHE}axolotlstore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -213,7 +213,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/state/storageprotos_pb2.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/statekeyexchangeexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}inmemoryaxolotlstore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}test_sigs
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/${MODPY_PYCACHE}test_sigs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/groups/${MODPY_PYCACHE}inmemorysenderkeystore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -250,7 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/tests/inmemorysessionstore.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/inmemorysignedprekeystore.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}test_hkdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -258,7 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/${MODPY_PYCACHE}test_
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/kdf/test_hkdf.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/ratchet/${MODPY_PYCACHE}test_chainkey.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,7 +275,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/tests/test_sessioncipher.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/test_sigs.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/${MODPY_PYCACHE}test_byteutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -284,7 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/tests/util/test_byteutil.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/untrustedidentityexception.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/axolotl/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/${MODPY_PYCACHE}byteutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

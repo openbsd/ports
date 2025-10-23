@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import-${MODPY_DISTV}.dist-info/zi
 lib/python${MODPY_VERSION}/site-packages/pass_import/__about__.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/clean.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/core.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/
 lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/decrypters/${MODPY_PYCACHE}gpg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/detecter.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/errors.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/formats/
 lib/python${MODPY_VERSION}/site-packages/pass_import/formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pass_import/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pass_import/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pass_import/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pass_import/formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/formats/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/formats/yaml.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/manager.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}aegis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

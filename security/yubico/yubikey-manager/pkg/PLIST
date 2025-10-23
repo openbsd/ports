@@ -1,7 +1,7 @@
 bin/ykman
 lib/python${MODPY_VERSION}/site-packages/ykman/
 lib/python${MODPY_VERSION}/site-packages/ykman/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/${MODPY_PYCACHE}util.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/_cli/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/ykman/diagnostics.py
 lib/python${MODPY_VERSION}/site-packages/ykman/fido.py
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/hid/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,14 +111,14 @@ lib/python${MODPY_VERSION}/site-packages/ykman/openpgp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/otp.py
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/pcsc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/piv.py
 lib/python${MODPY_VERSION}/site-packages/ykman/py.typed
 lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/
 lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ykman/scancodes/${MODPY_PYCACHE}bepo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -157,7 +157,7 @@ lib/python${MODPY_VERSION}/site-packages/yubikey_manager-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/yubikey_manager-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/yubikit/
 lib/python${MODPY_VERSION}/site-packages/yubikit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}hsmauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -180,7 +180,7 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}yubiotp.${MODPY
 lib/python${MODPY_VERSION}/site-packages/yubikit/${MODPY_PYCACHE}yubiotp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/${MODPY_PYCACHE}fido.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,7 +191,7 @@ lib/python${MODPY_VERSION}/site-packages/yubikit/core/fido.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/otp.py
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yubikit/core/smartcard/${MODPY_PYCACHE}scp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

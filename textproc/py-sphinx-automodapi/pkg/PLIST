@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/${MODPY_PYCACHE}autodoc_enhancements.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/templates/autosummary
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/templates/autosummary_core/module.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -239,11 +239,11 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/cases/variables
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/cases/variables/output/index.rst.automodsumm
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/conf.py
@@ -251,12 +251,12 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warn
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/docs/index.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/${MODPY_PYCACHE}foo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -264,7 +264,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warn
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/duplicated_warning/duplicated/foo/foo.py
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_automodapi/tests/example_module/${MODPY_PYCACHE}abstract_classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/jellyfish/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jellyfish/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}_jellyfish.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

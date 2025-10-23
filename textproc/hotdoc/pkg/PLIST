@@ -2,7 +2,7 @@ bin/hotdoc
 bin/hotdoc_dep_printer
 lib/python${MODPY_VERSION}/site-packages/backports/
 lib/python${MODPY_VERSION}/site-packages/backports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}entry_points_selectable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/hotdoc-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/hotdoc/VERSION.txt
 lib/python${MODPY_VERSION}/site-packages/hotdoc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}hotdoc_dep_printer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}run_hotdoc.${MOD
 lib/python${MODPY_VERSION}/site-packages/hotdoc/${MODPY_PYCACHE}run_hotdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/${MODPY_PYCACHE}comment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -104,7 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/core/templates/struct.html
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/templates/symbol_wrapper.html
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/${MODPY_PYCACHE}test_config_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,12 +131,12 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tests/test_project.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/core/tree.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}c_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/${MODPY_PYCACHE}uti
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/c_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/${MODPY_PYCACHE}cindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -158,7 +158,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/clang/enumerations.
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/c/utils.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/${MODPY_PYCACHE}check_since_markers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,7 +166,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/$
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/check_since_markers/check_since_markers.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/${MODPY_PYCACHE}comment_on_github_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -178,7 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/tem
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/comment_on_github/templates/github_comments.html
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}dbus_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/dbus/dbus_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/${MODPY_PYCACHE}devhelp_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -195,7 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/devhelp.css
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/devhelp/devhelp_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODPY_PYCACHE}edit_on_github_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -203,7 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/${MODP
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/edit_on_github/edit_on_github_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCACHE}feedgen_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,7 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/feedgen/feedgen_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/${MODPY_PYCACHE}annotation_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -238,7 +238,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/formatter.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/gi_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/gi_annotations.html
@@ -253,7 +253,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/html_templates/sym
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/language.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/languages/${MODPY_PYCACHE}c.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -270,14 +270,14 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/symbols.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/test_gi_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/transition_scripts/translate_sections.sh
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gi/utils.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PYCACHE}git_upload_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -285,7 +285,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/git_upload/git_upload_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}gst_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/${MODPY_PYCACHE}g
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/gst/gst_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/${MODPY_PYCACHE}license_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -311,7 +311,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/html_template
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/license/license_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/${MODPY_PYCACHE}search_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -322,7 +322,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/stopwords.txt
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/search/trie.js
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/${MODPY_PYCACHE}syntax_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -575,7 +575,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/p
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/syntax_highlighting/syntax_extension.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/extensions/tags/${MODPY_PYCACHE}tag_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -648,7 +648,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_bootstrap_theme/dist/them
 lib/python${MODPY_VERSION}/site-packages/hotdoc/hotdoc_dep_printer.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}cmark_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -659,7 +659,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}sitemap.
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/${MODPY_PYCACHE}sitemap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/c_comment_scanner/c_comment_scanner.${MODPY_PYC_MAGIC_TAG}so
@@ -670,7 +670,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/gtk_doc.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/sitemap.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/${MODPY_PYCACHE}test_cmark_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -682,7 +682,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/parsers/tests/test_standalone_pa
 lib/python${MODPY_VERSION}/site-packages/hotdoc/run_hotdoc.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/${MODPY_PYCACHE}fixtures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -693,7 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/tests/test_hotdoc.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/${MODPY_PYCACHE}configurable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -714,7 +714,7 @@ lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/setup_utils.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/signals.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hotdoc/utils/tests/${MODPY_PYCACHE}test_loggable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

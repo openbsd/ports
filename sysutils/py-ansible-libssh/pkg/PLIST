@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/.gitignore
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}_scm_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.pyx
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/callbacks.pxd
