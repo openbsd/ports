@@ -2,11 +2,10 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =		pythonic interface to the HDF5 binary data format
 
-MODPY_DISTV =		3.14.0
+MODPY_DISTV =		3.15.1
 DISTNAME =		h5py-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION = 		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
