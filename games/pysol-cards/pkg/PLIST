@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}cards.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

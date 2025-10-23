@@ -511,12 +511,12 @@ xtensa-lx106-elf/share/gcc-${VERSION}/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/__init__.py
-${MODPY_COMMENT}xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/${MODPY_PYCACHE}/
+xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/${MODPY_PYCACHE}/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/__init__.py
-${MODPY_COMMENT}xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/${MODPY_PYCACHE}/
+xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/${MODPY_PYCACHE}/
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-lx106-elf/share/gcc-${VERSION}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

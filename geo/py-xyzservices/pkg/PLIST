@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/xyzservices-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/xyzservices-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/xyzservices-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xyzservices/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}providers.$
 lib/python${MODPY_VERSION}/site-packages/xyzservices/${MODPY_PYCACHE}providers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xyzservices/data/
 lib/python${MODPY_VERSION}/site-packages/xyzservices/data/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xyzservices/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xyzservices/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xyzservices/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xyzservices/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xyzservices/data/providers.json
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/xyzservices/lib.py
 lib/python${MODPY_VERSION}/site-packages/xyzservices/providers.py
 lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/
 lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xyzservices/tests/${MODPY_PYCACHE}test_lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -150,7 +150,7 @@ share/games/stratagus/war1gus/maps/RushHour(4).png
 share/games/stratagus/war1gus/maps/RushHour(4).smp
 share/games/stratagus/war1gus/maps/RushHour(4).sms
 share/games/stratagus/war1gus/scripts/
-${MODPY_COMMENT}share/games/stratagus/war1gus/scripts/${MODPY_PYCACHE}/
+share/games/stratagus/war1gus/scripts/${MODPY_PYCACHE}/
 share/games/stratagus/war1gus/scripts/${MODPY_PYCACHE}rewrite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/games/stratagus/war1gus/scripts/${MODPY_PYCACHE}rewrite.${MODPY_PYC_MAGIC_TAG}pyc
 share/games/stratagus/war1gus/scripts/ai/

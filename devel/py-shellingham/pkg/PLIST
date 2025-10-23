@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/shellingham/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/shellingham/_core.py
 lib/python${MODPY_VERSION}/site-packages/shellingham/nt.py
 lib/python${MODPY_VERSION}/site-packages/shellingham/posix/
 lib/python${MODPY_VERSION}/site-packages/shellingham/posix/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shellingham/posix/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shellingham/posix/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shellingham/posix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shellingham/posix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shellingham/posix/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

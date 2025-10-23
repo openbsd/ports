@@ -16,7 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/top_lev
 lib/python${MODPY_VERSION}/site-packages/pylint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/__main__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/__pkginfo__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}typing.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pylint/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/checkers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/checkers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/${MODPY_PYCACHE}async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/checkers/async.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/bad_chained_comparison.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/${MODPY_PYCACHE}basic_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/docstring_checker.
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/function_checker.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/name_checker/${MODPY_PYCACHE}checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -137,7 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base/pass_checker.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/base_checker.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/classes/${MODPY_PYCACHE}class_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -165,7 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/checkers/non_ascii_names.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/raw_metrics.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/refactoring/${MODPY_PYCACHE}implicit_booleaness_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -192,7 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/checkers/utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/checkers/variables.py
 lib/python${MODPY_VERSION}/site-packages/pylint/config/
 lib/python${MODPY_VERSION}/site-packages/pylint/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}_breaking_changes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -222,7 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/config/${MODPY_PYCACHE}utils.${M
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_breaking_changes.py
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/config/_pylint_config/${MODPY_PYCACHE}generate_command.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -255,7 +255,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/constants.py
 lib/python${MODPY_VERSION}/site-packages/pylint/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pylint/extensions/
 lib/python${MODPY_VERSION}/site-packages/pylint/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/extensions/${MODPY_PYCACHE}_check_docs_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -340,7 +340,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/graph.py
 lib/python${MODPY_VERSION}/site-packages/pylint/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/lint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/lint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/${MODPY_PYCACHE}base_options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -372,7 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/lint/run.py
 lib/python${MODPY_VERSION}/site-packages/pylint/lint/utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/message/
 lib/python${MODPY_VERSION}/site-packages/pylint/message/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/message/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/message/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/message/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/message/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/message/${MODPY_PYCACHE}_deleted_message_ids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -393,7 +393,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/message/message_id_store.py
 lib/python${MODPY_VERSION}/site-packages/pylint/py.typed
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/${MODPY_PYCACHE}diadefslib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -431,7 +431,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/pyreverse/writer.py
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}base_reporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -454,7 +454,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/reporters/reports_handler_mix_in
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/text.py
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/${MODPY_PYCACHE}base_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -468,7 +468,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/nodes.py
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/ureports/text_writer.py
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}_run.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -501,7 +501,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}utils.
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/_primer/${MODPY_PYCACHE}package_to_lint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -529,7 +529,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/testutils/constants.py
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/decorator.py
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils/functional/${MODPY_PYCACHE}find_functional_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -554,7 +554,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/testutils/utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/typing.py
 lib/python${MODPY_VERSION}/site-packages/pylint/utils/
 lib/python${MODPY_VERSION}/site-packages/pylint/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylint/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylint/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylint/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/utils/${MODPY_PYCACHE}ast_walker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

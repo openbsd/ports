@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_trio-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/pytest_trio-${MODPY_DISTV}.dist-info/licenses/LICENSE.MIT
 lib/python${MODPY_VERSION}/site-packages/pytest_trio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}plugin.${MO
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_trio/_tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

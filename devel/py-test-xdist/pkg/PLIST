@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_xdist-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/pytest_xdist-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xdist/
 lib/python${MODPY_VERSION}/site-packages/xdist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/xdist/remote.py
 lib/python${MODPY_VERSION}/site-packages/xdist/report.py
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}each.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

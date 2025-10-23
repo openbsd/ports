@@ -912,7 +912,7 @@ share/golly/Scripts/Python/glife/RuleTree.py
 share/golly/Scripts/Python/glife/WriteBMP.py
 share/golly/Scripts/Python/glife/WriteRuleTable.py
 share/golly/Scripts/Python/glife/__init__.py
-${MODPY_COMMENT}share/golly/Scripts/Python/glife/${MODPY_PYCACHE}/
+share/golly/Scripts/Python/glife/${MODPY_PYCACHE}/
 share/golly/Scripts/Python/glife/base.py
 share/golly/Scripts/Python/glife/gun24.py
 share/golly/Scripts/Python/glife/gun256.py

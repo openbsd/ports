@@ -177,7 +177,7 @@ share/gemrb/GUIScripts/Portrait.py
 share/gemrb/GUIScripts/PortraitWindow.py
 share/gemrb/GUIScripts/Spellbook.py
 share/gemrb/GUIScripts/TextScreen.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/${MODPY_PYCACHE}ActionsWindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/${MODPY_PYCACHE}ActionsWindow.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/${MODPY_PYCACHE}Actor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -313,7 +313,7 @@ share/gemrb/GUIScripts/bg1/ImportFile.py
 share/gemrb/GUIScripts/bg1/LoadScreen.py
 share/gemrb/GUIScripts/bg1/QuitGame.py
 share/gemrb/GUIScripts/bg1/Start.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/bg1/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/bg1/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/bg1/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/bg1/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/bg1/${MODPY_PYCACHE}CharGen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -407,7 +407,7 @@ share/gemrb/GUIScripts/bg2/QuitGame.py
 share/gemrb/GUIScripts/bg2/Start.py
 share/gemrb/GUIScripts/bg2/Start2.py
 share/gemrb/GUIScripts/bg2/StartOpt.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/bg2/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/bg2/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/bg2/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/bg2/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/bg2/${MODPY_PYCACHE}CharGen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -504,7 +504,7 @@ share/gemrb/GUIScripts/demo/README
 share/gemrb/GUIScripts/demo/SetupGame.py
 share/gemrb/GUIScripts/demo/Start.py
 share/gemrb/GUIScripts/demo/Tests.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/demo/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/demo/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/demo/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/demo/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/demo/${MODPY_PYCACHE}GUIINV.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -551,7 +551,7 @@ share/gemrb/GUIScripts/iwd/LoadScreen.py
 share/gemrb/GUIScripts/iwd/PartyFormation.py
 share/gemrb/GUIScripts/iwd/QuitGame.py
 share/gemrb/GUIScripts/iwd/Start.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/iwd/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/iwd/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/iwd/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/iwd/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/iwd/${MODPY_PYCACHE}CharGen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -614,7 +614,7 @@ share/gemrb/GUIScripts/iwd2/Songs.py
 share/gemrb/GUIScripts/iwd2/Spells.py
 share/gemrb/GUIScripts/iwd2/Start.py
 share/gemrb/GUIScripts/iwd2/SubRaces.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/iwd2/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/iwd2/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/iwd2/${MODPY_PYCACHE}Abilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/iwd2/${MODPY_PYCACHE}Abilities.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/iwd2/${MODPY_PYCACHE}Alignment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -724,7 +724,7 @@ share/gemrb/GUIScripts/pst/NewLife.py
 share/gemrb/GUIScripts/pst/PortraitWindow.py
 share/gemrb/GUIScripts/pst/QuitGame.py
 share/gemrb/GUIScripts/pst/Start.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}Clock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -770,7 +770,7 @@ share/gemrb/GUIScripts/pst/${MODPY_PYCACHE}Start.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/test/
 share/gemrb/GUIScripts/test/Autodetect.py
 share/gemrb/GUIScripts/test/Start.py
-${MODPY_COMMENT}share/gemrb/GUIScripts/test/${MODPY_PYCACHE}/
+share/gemrb/GUIScripts/test/${MODPY_PYCACHE}/
 share/gemrb/GUIScripts/test/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gemrb/GUIScripts/test/${MODPY_PYCACHE}Autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/gemrb/GUIScripts/test/${MODPY_PYCACHE}Start.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/morecantile-${MODPY_DISTV}.dist-info/en
 lib/python${MODPY_VERSION}/site-packages/morecantile-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/morecantile-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/morecantile/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/morecantile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/morecantile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/morecantile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/morecantile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/morecantile/${MODPY_PYCACHE}commons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/morecantile/models.py
 lib/python${MODPY_VERSION}/site-packages/morecantile/py.typed
 lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/
 lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/morecantile/scripts/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

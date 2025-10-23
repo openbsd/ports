@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/laspy-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/laspy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/laspy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}_pointappender.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}utils.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/_compression/
 lib/python${MODPY_VERSION}/site-packages/laspy/_compression/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/_compression/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/laspy/_compression/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/_compression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/laspy/_compression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/_compression/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/_pointreader.py
 lib/python${MODPY_VERSION}/site-packages/laspy/_pointwriter.py
 lib/python${MODPY_VERSION}/site-packages/laspy/cli/
 lib/python${MODPY_VERSION}/site-packages/laspy/cli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/cli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/laspy/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/laspy/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/cli/${MODPY_PYCACHE}copc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,7 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/lib.py
 lib/python${MODPY_VERSION}/site-packages/laspy/lib.pyi
 lib/python${MODPY_VERSION}/site-packages/laspy/point/
 lib/python${MODPY_VERSION}/site-packages/laspy/point/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}dims.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/typehints.py
 lib/python${MODPY_VERSION}/site-packages/laspy/utils.py
 lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/
 lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/vlrs/${MODPY_PYCACHE}geotiff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

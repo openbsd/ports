@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urwid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid/container.py
 lib/python${MODPY_VERSION}/site-packages/urwid/decoration.py
 lib/python${MODPY_VERSION}/site-packages/urwid/display/
 lib/python${MODPY_VERSION}/site-packages/urwid/display/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/display/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urwid/display/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urwid/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/display/${MODPY_PYCACHE}_posix_raw_display.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid/display/raw.py
 lib/python${MODPY_VERSION}/site-packages/urwid/display/web.py
 lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/
 lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/event_loop/${MODPY_PYCACHE}abstract_loop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid/version.py
 lib/python${MODPY_VERSION}/site-packages/urwid/vterm.py
 lib/python${MODPY_VERSION}/site-packages/urwid/widget/
 lib/python${MODPY_VERSION}/site-packages/urwid/widget/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid/widget/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urwid/widget/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid/widget/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urwid/widget/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/widget/${MODPY_PYCACHE}attr_map.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -2,12 +2,12 @@
 @pkgpath editors/py-neovim,python3
 lib/python${MODPY_VERSION}/site-packages/neovim/
 lib/python${MODPY_VERSION}/site-packages/neovim/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/neovim/api/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/
@@ -19,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pynvim/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}util.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pynvim/_version.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/api/
 lib/python${MODPY_VERSION}/site-packages/pynvim/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynvim/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynvim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/api/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/pynvim/api/window.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/compat.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}async_session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,7 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/${MODPY_PYCACHE}sess
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/async_session.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/event_loop/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/msgpack_stream.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/msgpack_rpc/session.py
 lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/
 lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/plugin/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

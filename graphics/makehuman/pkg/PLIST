@@ -1,7 +1,7 @@
 bin/makehuman
 share/applications/MakeHuman.desktop
 share/makehuman/
-${MODPY_COMMENT}share/makehuman/${MODPY_PYCACHE}/
+share/makehuman/${MODPY_PYCACHE}/
 share/makehuman/${MODPY_PYCACHE}compile_models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/${MODPY_PYCACHE}compile_models.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/${MODPY_PYCACHE}compile_proxies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -17,7 +17,7 @@ share/makehuman/${MODPY_PYCACHE}download_assets_git.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/${MODPY_PYCACHE}makehuman.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/${MODPY_PYCACHE}makehuman.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/apps/
-${MODPY_COMMENT}share/makehuman/apps/${MODPY_PYCACHE}/
+share/makehuman/apps/${MODPY_PYCACHE}/
 share/makehuman/apps/${MODPY_PYCACHE}autoskinblender.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/apps/${MODPY_PYCACHE}autoskinblender.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/apps/${MODPY_PYCACHE}catmull_clark_subdivision.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ share/makehuman/apps/catmull_clark_subdivision.py
 share/makehuman/apps/compat.py
 share/makehuman/apps/devtests.py
 share/makehuman/apps/gui/
-${MODPY_COMMENT}share/makehuman/apps/gui/${MODPY_PYCACHE}/
+share/makehuman/apps/gui/${MODPY_PYCACHE}/
 share/makehuman/apps/gui/${MODPY_PYCACHE}guiexport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/apps/gui/${MODPY_PYCACHE}guiexport.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/apps/gui/${MODPY_PYCACHE}guifiles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ share/makehuman/compile_models.py
 share/makehuman/compile_proxies.py
 share/makehuman/compile_targets.py
 share/makehuman/core/
-${MODPY_COMMENT}share/makehuman/core/${MODPY_PYCACHE}/
+share/makehuman/core/${MODPY_PYCACHE}/
 share/makehuman/core/${MODPY_PYCACHE}algos3d.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/core/${MODPY_PYCACHE}algos3d.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/core/${MODPY_PYCACHE}animation3d.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2009,7 +2009,7 @@ share/makehuman/icons/makehuman_bg.svg
 share/makehuman/icons/makehuman_icon_multires.xcf
 share/makehuman/icons/makehuman_osx.xcf
 share/makehuman/lib/
-${MODPY_COMMENT}share/makehuman/lib/${MODPY_PYCACHE}/
+share/makehuman/lib/${MODPY_PYCACHE}/
 share/makehuman/lib/${MODPY_PYCACHE}camera.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/lib/${MODPY_PYCACHE}camera.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/lib/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2123,7 +2123,7 @@ share/makehuman/plugins/1_convert_model_tags.py
 share/makehuman/plugins/1_mhapi/
 share/makehuman/plugins/1_mhapi/JsonCall.py
 share/makehuman/plugins/1_mhapi/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/1_mhapi/${MODPY_PYCACHE}/
+share/makehuman/plugins/1_mhapi/${MODPY_PYCACHE}/
 share/makehuman/plugins/1_mhapi/${MODPY_PYCACHE}JsonCall.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/1_mhapi/${MODPY_PYCACHE}JsonCall.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/1_mhapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2186,7 +2186,7 @@ share/makehuman/plugins/3_libraries_pose.py
 share/makehuman/plugins/3_libraries_proxy_chooser.py
 share/makehuman/plugins/3_libraries_skeleton/
 share/makehuman/plugins/3_libraries_skeleton/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/3_libraries_skeleton/${MODPY_PYCACHE}/
+share/makehuman/plugins/3_libraries_skeleton/${MODPY_PYCACHE}/
 share/makehuman/plugins/3_libraries_skeleton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/3_libraries_skeleton/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/3_libraries_skeleton/${MODPY_PYCACHE}debugtab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2200,7 +2200,7 @@ share/makehuman/plugins/3_libraries_tongue.py
 share/makehuman/plugins/4_rendering_9_viewer.py
 share/makehuman/plugins/4_rendering_opengl/
 share/makehuman/plugins/4_rendering_opengl/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/4_rendering_opengl/${MODPY_PYCACHE}/
+share/makehuman/plugins/4_rendering_opengl/${MODPY_PYCACHE}/
 share/makehuman/plugins/4_rendering_opengl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/4_rendering_opengl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/4_rendering_opengl/${MODPY_PYCACHE}mh2opengl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2220,7 +2220,7 @@ share/makehuman/plugins/7_material_editor.py
 share/makehuman/plugins/7_profile.py
 share/makehuman/plugins/7_save_targets/
 share/makehuman/plugins/7_save_targets/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/7_save_targets/${MODPY_PYCACHE}/
+share/makehuman/plugins/7_save_targets/${MODPY_PYCACHE}/
 share/makehuman/plugins/7_save_targets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/7_save_targets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/7_save_targets/${MODPY_PYCACHE}savetargets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2230,7 +2230,7 @@ share/makehuman/plugins/7_scene_editor.py
 share/makehuman/plugins/7_scripting.py
 share/makehuman/plugins/7_shell/
 share/makehuman/plugins/7_shell/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/7_shell/${MODPY_PYCACHE}/
+share/makehuman/plugins/7_shell/${MODPY_PYCACHE}/
 share/makehuman/plugins/7_shell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/7_shell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/7_shell/${MODPY_PYCACHE}ipythonconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2242,7 +2242,7 @@ share/makehuman/plugins/7_shell/shell.py
 share/makehuman/plugins/7_targets.py
 share/makehuman/plugins/8_asset_downloader/
 share/makehuman/plugins/8_asset_downloader/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/8_asset_downloader/${MODPY_PYCACHE}/
+share/makehuman/plugins/8_asset_downloader/${MODPY_PYCACHE}/
 share/makehuman/plugins/8_asset_downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/8_asset_downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/8_asset_downloader/${MODPY_PYCACHE}assetcleaner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2268,7 +2268,7 @@ share/makehuman/plugins/8_asset_downloader/remoteasset.py
 share/makehuman/plugins/8_asset_downloader/tablemodel.py
 share/makehuman/plugins/8_server_socket/
 share/makehuman/plugins/8_server_socket/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/8_server_socket/${MODPY_PYCACHE}/
+share/makehuman/plugins/8_server_socket/${MODPY_PYCACHE}/
 share/makehuman/plugins/8_server_socket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/8_server_socket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/8_server_socket/${MODPY_PYCACHE}abstractop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2288,12 +2288,12 @@ share/makehuman/plugins/8_server_socket/modops.py
 share/makehuman/plugins/8_server_socket/workerthread.py
 share/makehuman/plugins/9_export_bvh/
 share/makehuman/plugins/9_export_bvh/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_bvh/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_bvh/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_bvh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_bvh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_collada/
 share/makehuman/plugins/9_export_collada/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_collada/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_collada/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_collada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_collada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_collada/${MODPY_PYCACHE}dae_animation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2316,7 +2316,7 @@ share/makehuman/plugins/9_export_collada/dae_node.py
 share/makehuman/plugins/9_export_collada/mh2collada.py
 share/makehuman/plugins/9_export_fbx/
 share/makehuman/plugins/9_export_fbx/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_fbx/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_fbx/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_fbx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_fbx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_fbx/${MODPY_PYCACHE}data_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2358,7 +2358,7 @@ share/makehuman/plugins/9_export_fbx/mh2fbx.py
 share/makehuman/plugins/9_export_light.py
 share/makehuman/plugins/9_export_obj/
 share/makehuman/plugins/9_export_obj/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}mh2obj.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2366,7 +2366,7 @@ share/makehuman/plugins/9_export_obj/${MODPY_PYCACHE}mh2obj.${MODPY_PYC_MAGIC_TA
 share/makehuman/plugins/9_export_obj/mh2obj.py
 share/makehuman/plugins/9_export_ogre/
 share/makehuman/plugins/9_export_ogre/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}mh2ogre.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2374,7 +2374,7 @@ share/makehuman/plugins/9_export_ogre/${MODPY_PYCACHE}mh2ogre.${MODPY_PYC_MAGIC_
 share/makehuman/plugins/9_export_ogre/mh2ogre.py
 share/makehuman/plugins/9_export_stl/
 share/makehuman/plugins/9_export_stl/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_export_stl/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_export_stl/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_export_stl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_export_stl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_export_stl/${MODPY_PYCACHE}mh2stl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2383,7 +2383,7 @@ share/makehuman/plugins/9_export_stl/mh2stl.py
 share/makehuman/plugins/9_export_uvmap.py
 share/makehuman/plugins/9_massproduce/
 share/makehuman/plugins/9_massproduce/__init__.py
-${MODPY_COMMENT}share/makehuman/plugins/9_massproduce/${MODPY_PYCACHE}/
+share/makehuman/plugins/9_massproduce/${MODPY_PYCACHE}/
 share/makehuman/plugins/9_massproduce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/9_massproduce/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/9_massproduce/${MODPY_PYCACHE}humanstate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2401,7 +2401,7 @@ share/makehuman/plugins/9_massproduce/massproduce.py
 share/makehuman/plugins/9_massproduce/modifiergroups.py
 share/makehuman/plugins/9_massproduce/randomizationsettings.py
 share/makehuman/plugins/9_massproduce/randomizeaction.py
-${MODPY_COMMENT}share/makehuman/plugins/${MODPY_PYCACHE}/
+share/makehuman/plugins/${MODPY_PYCACHE}/
 share/makehuman/plugins/${MODPY_PYCACHE}0_modeling_0_modifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/plugins/${MODPY_PYCACHE}0_modeling_0_modifiers.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/plugins/${MODPY_PYCACHE}0_modeling_1_bodyshapes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2480,7 +2480,7 @@ share/makehuman/plugins/${MODPY_PYCACHE}9_export_uvmap.${MODPY_PYC_MAGIC_TAG}${M
 share/makehuman/plugins/${MODPY_PYCACHE}9_export_uvmap.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/pylintrc
 share/makehuman/shared/
-${MODPY_COMMENT}share/makehuman/shared/${MODPY_PYCACHE}/
+share/makehuman/shared/${MODPY_PYCACHE}/
 share/makehuman/shared/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/shared/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/shared/${MODPY_PYCACHE}bvh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2528,7 +2528,7 @@ share/makehuman/shared/subtexture.py
 share/makehuman/shared/wavefront.py
 share/makehuman/testsuite/
 share/makehuman/testsuite/__init__.py
-${MODPY_COMMENT}share/makehuman/testsuite/${MODPY_PYCACHE}/
+share/makehuman/testsuite/${MODPY_PYCACHE}/
 share/makehuman/testsuite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makehuman/testsuite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/makehuman/testsuite/${MODPY_PYCACHE}blender_initTest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

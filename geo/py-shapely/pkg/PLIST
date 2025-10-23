@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/shapely-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/shapely/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/${MODPY_PYCACHE}_coverage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/_version.py
 lib/python${MODPY_VERSION}/site-packages/shapely/affinity.py
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/${MODPY_PYCACHE}_oriented_envelope.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/decorators.py
 lib/python${MODPY_VERSION}/site-packages/shapely/errors.py
 lib/python${MODPY_VERSION}/site-packages/shapely/geometry/
 lib/python${MODPY_VERSION}/site-packages/shapely/geometry/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/geometry/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/geometry/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/geometry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/geometry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/geometry/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/strtree.py
 lib/python${MODPY_VERSION}/site-packages/shapely/testing.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -188,7 +188,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/tests/${MODPY_PYCACHE}test_test
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/${MODPY_PYCACHE}test_collection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -238,7 +238,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/test_point.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/geometry/test_polygon.py
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/tests/legacy/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -399,7 +399,7 @@ lib/python${MODPY_VERSION}/site-packages/shapely/tests/test_testing.py
 lib/python${MODPY_VERSION}/site-packages/shapely/validation.py
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/wkb.py

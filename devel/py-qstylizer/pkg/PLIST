@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/qstylizer-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qstylizer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}style.${MODPY
 lib/python${MODPY_VERSION}/site-packages/qstylizer/${MODPY_PYCACHE}style.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/
 lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qstylizer/descriptor/${MODPY_PYCACHE}prop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

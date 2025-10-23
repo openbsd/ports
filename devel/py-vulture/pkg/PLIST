@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vulture/__init__.py
 lib/python${MODPY_VERSION}/site-packages/vulture/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/vulture/reachability.py
 lib/python${MODPY_VERSION}/site-packages/vulture/utils.py
 lib/python${MODPY_VERSION}/site-packages/vulture/version.py
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}argparse_whitelist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}argparse_whitelist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vulture/whitelists/${MODPY_PYCACHE}ast_whitelist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

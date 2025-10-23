@@ -364,7 +364,7 @@ share/ibus-typing-booster/data/emoji-zwj-sequences.txt
 share/ibus-typing-booster/data/emoji.json
 share/ibus-typing-booster/data/fi_FI.dic
 share/ibus-typing-booster/engine/
-${MODPY_COMMENT}share/ibus-typing-booster/engine/${MODPY_PYCACHE}/
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}/
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}emoji_picker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}emoji_picker.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}emoji_picker.${MODPY_PYC_MAGIC_TAG}pyc
@@ -440,7 +440,7 @@ share/ibus-typing-booster/engine/tabstatistics.py
 share/ibus-typing-booster/icons/
 share/ibus-typing-booster/icons/ibus-typing-booster.svg
 share/ibus-typing-booster/setup/
-${MODPY_COMMENT}share/ibus-typing-booster/setup/${MODPY_PYCACHE}/
+share/ibus-typing-booster/setup/${MODPY_PYCACHE}/
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc

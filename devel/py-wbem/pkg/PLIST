@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pywbem/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_cim_constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -96,13 +96,13 @@ lib/python${MODPY_VERSION}/site-packages/pywbem/_utils.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_valuemapping.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/${MODPY_PYCACHE}_hashable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,7 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocasedict/_version.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCACHE}_nocaselist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/pywbem/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/config.py
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywbem_mock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pywbem_mock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/${MODPY_PYCACHE}_baseprovider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

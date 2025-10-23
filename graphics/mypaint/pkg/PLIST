@@ -8,7 +8,7 @@ lib/mypaint/MyPaint-2.0.0a0-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/mypaint/MyPaint-2.0.0a0-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/mypaint/gui/
 lib/mypaint/gui/__init__.py
-${MODPY_COMMENT}lib/mypaint/gui/${MODPY_PYCACHE}/
+lib/mypaint/gui/${MODPY_PYCACHE}/
 lib/mypaint/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/gui/${MODPY_PYCACHE}accelmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/gui/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
@@ -103,7 +103,7 @@ lib/mypaint/gui/colorpicker.py
 lib/mypaint/gui/colorpreview.py
 lib/mypaint/gui/colors/
 lib/mypaint/gui/colors/__init__.py
-${MODPY_COMMENT}lib/mypaint/gui/colors/${MODPY_PYCACHE}/
+lib/mypaint/gui/colors/${MODPY_PYCACHE}/
 lib/mypaint/gui/colors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/gui/colors/${MODPY_PYCACHE}adjbases.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/gui/colors/${MODPY_PYCACHE}bases.${MODPY_PYC_MAGIC_TAG}pyc
@@ -207,7 +207,7 @@ lib/mypaint/gui/windowing.py
 lib/mypaint/gui/workspace.py
 lib/mypaint/lib/
 lib/mypaint/lib/__init__.py
-${MODPY_COMMENT}lib/mypaint/lib/${MODPY_PYCACHE}/
+lib/mypaint/lib/${MODPY_PYCACHE}/
 lib/mypaint/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/${MODPY_PYCACHE}alg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/${MODPY_PYCACHE}autosave.${MODPY_PYC_MAGIC_TAG}pyc
@@ -276,7 +276,7 @@ lib/mypaint/lib/i18n.py
 lib/mypaint/lib/idletask.py
 lib/mypaint/lib/layer/
 lib/mypaint/lib/layer/__init__.py
-${MODPY_COMMENT}lib/mypaint/lib/layer/${MODPY_PYCACHE}/
+lib/mypaint/lib/layer/${MODPY_PYCACHE}/
 lib/mypaint/lib/layer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/layer/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/mypaint/lib/layer/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc

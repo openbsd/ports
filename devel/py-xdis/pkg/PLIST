@@ -3,7 +3,7 @@
 bin/pydisasm
 lib/python${MODPY_VERSION}/site-packages/test_unit/
 lib/python${MODPY_VERSION}/site-packages/test_unit/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}test_dis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,7 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/xdis/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xdis/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}wordcode.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/xdis/${MODPY_PYCACHE}wordcode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/bin/
 lib/python${MODPY_VERSION}/site-packages/xdis/bin/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/bin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/bin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/bin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/bin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/bin/${MODPY_PYCACHE}pydisasm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/bin/pydisasm.py
 lib/python${MODPY_VERSION}/site-packages/xdis/bytecode.py
 lib/python${MODPY_VERSION}/site-packages/xdis/codetype/
 lib/python${MODPY_VERSION}/site-packages/xdis/codetype/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/codetype/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/codetype/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/codetype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/codetype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/codetype/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/cross_types.py
 lib/python${MODPY_VERSION}/site-packages/xdis/disasm.py
 lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/
 lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/dropbox/${MODPY_PYCACHE}decrypt25.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/marsh.py
 lib/python${MODPY_VERSION}/site-packages/xdis/op_imports.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -223,7 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_3x.
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/base.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/format/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

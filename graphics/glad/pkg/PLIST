@@ -2,7 +2,7 @@ bin/glad
 lib/python${MODPY_VERSION}/site-packages/glad/
 lib/python${MODPY_VERSION}/site-packages/glad/__init__.py
 lib/python${MODPY_VERSION}/site-packages/glad/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,7 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/glad/${MODPY_PYCACHE}util.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/glad/config.py
 lib/python${MODPY_VERSION}/site-packages/glad/files/
 lib/python${MODPY_VERSION}/site-packages/glad/files/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/glad/files/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/glad/files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/glad/files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/files/egl.xml
@@ -46,14 +46,14 @@ lib/python${MODPY_VERSION}/site-packages/glad/files/vulkan_video_codecs_common.h
 lib/python${MODPY_VERSION}/site-packages/glad/files/wgl.xml
 lib/python${MODPY_VERSION}/site-packages/glad/generator/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/generator/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/glad/generator/c/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/glad/generator/c/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/templates/
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/glad/generator/c/templates/wgl.c
 lib/python${MODPY_VERSION}/site-packages/glad/generator/c/templates/wgl.h
 lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glad/generator/rust/templates/

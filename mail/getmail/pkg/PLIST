@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/getmail6-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/getmail6-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/getmailcore/
 lib/python${MODPY_VERSION}/site-packages/getmailcore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/getmailcore/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/getmailcore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/getmailcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/getmailcore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/getmailcore/${MODPY_PYCACHE}_retrieverbases.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

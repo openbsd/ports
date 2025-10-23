@@ -1402,12 +1402,12 @@ riscv32-esp-elf/share/gcc-${V}/
 riscv32-esp-elf/share/gcc-${V}/python/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/__init__.py
-${MODPY_COMMENT}riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/__init__.py
-${MODPY_COMMENT}riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

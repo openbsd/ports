@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/structlog-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/structlog-${MODPY_DISTV}.dist-info/licenses/LICENSE-MIT
 lib/python${MODPY_VERSION}/site-packages/structlog-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/structlog/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/structlog/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/structlog/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/structlog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/structlog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/structlog/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rasterio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/
 lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -110,7 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/plot.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/profiles.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}blocks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

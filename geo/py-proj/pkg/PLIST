@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -74,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/aoi.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/base.pxi
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}_cf1x8.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

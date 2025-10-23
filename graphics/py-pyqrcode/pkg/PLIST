@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqrcode-${MODPY_DISTV}.dist-info/RECOR
 lib/python${MODPY_VERSION}/site-packages/pyqrcode-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pyqrcode-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyqrcode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyqrcode/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyqrcode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyqrcode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqrcode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqrcode/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

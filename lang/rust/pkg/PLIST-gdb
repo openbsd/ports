@@ -2,7 +2,7 @@ bin/rust-gdb
 @comment bin/rust-gdbgui
 bin/rust-lldb
 lib/rustlib/etc/
-${MODPY_COMMENT}lib/rustlib/etc/${MODPY_PYCACHE}/
+lib/rustlib/etc/${MODPY_PYCACHE}/
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_load_rust_pretty_printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_load_rust_pretty_printers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_lookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -66,7 +66,7 @@ share/ECM/kde-modules/KDESetupPrefixScript.cmake
 share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/clang-format.cmake
 share/ECM/kde-modules/kde-git-commit-hooks/
-${MODPY_COMMENT}share/ECM/kde-modules/kde-git-commit-hooks/${MODPY_PYCACHE}/
+share/ECM/kde-modules/kde-git-commit-hooks/${MODPY_PYCACHE}/
 share/ECM/kde-modules/kde-git-commit-hooks/${MODPY_PYCACHE}json-schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/kde-modules/kde-git-commit-hooks/${MODPY_PYCACHE}json-schema.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/kde-modules/kde-git-commit-hooks/clang-format.sh
@@ -133,7 +133,7 @@ share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
 share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/QtVersionOption.cmake
-${MODPY_COMMENT}share/ECM/modules/${MODPY_PYCACHE}/
+share/ECM/modules/${MODPY_PYCACHE}/
 share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/modules/check-outbound-license.py
@@ -143,7 +143,7 @@ share/ECM/test-modules/test_execute_and_compare.cmake
 share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/ECMAndroidDeployQt5.cmake
-${MODPY_COMMENT}share/ECM/toolchain/${MODPY_PYCACHE}/
+share/ECM/toolchain/${MODPY_PYCACHE}/
 share/ECM/toolchain/${MODPY_PYCACHE}generate-fastlane-metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/toolchain/${MODPY_PYCACHE}generate-fastlane-metadata.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/toolchain/deployment-file-qt514.json.in

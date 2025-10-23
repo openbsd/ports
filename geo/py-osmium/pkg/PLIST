@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_DISTV}.dist-info/licenses/LICENSE.TXT
 lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/osmium/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}back_reference_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/osmium/index.pyi
 lib/python${MODPY_VERSION}/site-packages/osmium/io.pyi
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}mutable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/osmium/osm/types.py
 lib/python${MODPY_VERSION}/site-packages/osmium/py.typed
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/supermercado-${MODPY_DISTV}.dist-info/l
 lib/python${MODPY_VERSION}/site-packages/supermercado-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/supermercado-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/supermercado/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/supermercado/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/supermercado/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/supermercado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/supermercado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/supermercado/${MODPY_PYCACHE}burntiles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/supermercado/burntiles.py
 lib/python${MODPY_VERSION}/site-packages/supermercado/edge_finder.py
 lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/
 lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/supermercado/scripts/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

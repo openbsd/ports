@@ -1,6 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/fife/
 lib/python${MODPY_VERSION}/site-packages/fife/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}fife.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/${MODPY_PYCACHE}fifechan.${MODPY_P
 @so lib/python${MODPY_VERSION}/site-packages/fife/_fifechan.so
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/${MODPY_PYCACHE}basicapplication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/extensions/fifelog.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/loaders.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/${MODPY_PYCACHE}attrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/autoposition.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/compat.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/dialog/${MODPY_PYCACHE}filebrowser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,7 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/pychanbasicappli
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/tools.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/${MODPY_PYCACHE}adjustingcontainer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -175,7 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/dockarea
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/dropdown.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/pychan/widgets/flowcontainer.py
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/fife/extensions/pythonize.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/savers.py
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fife/extensions/serializers/${MODPY_PYCACHE}simplexml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

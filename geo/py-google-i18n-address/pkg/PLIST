@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/google_i18n_address-${MODPY_DISTV}.dist
 lib/python${MODPY_VERSION}/site-packages/google_i18n_address-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/i18naddress/
 lib/python${MODPY_VERSION}/site-packages/i18naddress/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/i18naddress/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/i18naddress/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/i18naddress/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/i18naddress/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/i18naddress/${MODPY_PYCACHE}downloader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -3,7 +3,7 @@ share/fs-uae-launcher/
 share/fs-uae-launcher/python${MODPY_VERSION}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/data/
@@ -51,7 +51,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/Repacker.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/RootMetaInfo.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/TimeStamp.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/${MODPY_PYCACHE}ADFSBitmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/${MODPY_PYCACHE}ADFSBitmap.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/${MODPY_PYCACHE}ADFSDir.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -98,7 +98,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/ImageFile.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/PartBlockDevice.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/RawBlockDevice.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/${MODPY_PYCACHE}ADFBlockDevice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/${MODPY_PYCACHE}ADFBlockDevice.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/blkdev/${MODPY_PYCACHE}BlkDevFactory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -131,7 +131,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/FileListBlock.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/RootBlock.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/UserDirBlock.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/${MODPY_PYCACHE}BitmapBlock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/${MODPY_PYCACHE}BitmapBlock.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/${MODPY_PYCACHE}BitmapExtBlock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -168,7 +168,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/LoadSegBlock.
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/PartitionBlock.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/RDBlock.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/${MODPY_PYCACHE}BadBlocksBlock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/${MODPY_PYCACHE}BadBlocksBlock.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/block/rdb/${MODPY_PYCACHE}FSHeaderBlock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -186,7 +186,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/FileSystem.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/Partition.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/RDisk.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/${MODPY_PYCACHE}FileSystem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/${MODPY_PYCACHE}FileSystem.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/rdb/${MODPY_PYCACHE}Partition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/Log.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/Progress.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/Validator.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/${MODPY_PYCACHE}BitmapScan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/${MODPY_PYCACHE}BitmapScan.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/fs/validate/${MODPY_PYCACHE}BlockScan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -230,7 +230,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/RomBuilder.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/RomPatcher.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/RomSplitter.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/${MODPY_PYCACHE}KickRom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/${MODPY_PYCACHE}KickRom.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/rom/${MODPY_PYCACHE}RemusFile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -253,7 +253,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/ArchiveScanner.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/FileScanner.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/ScanFile.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}ADFSScanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}ADFSScanner.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}ArchiveScanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -266,7 +266,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}__ini
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/scan/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/tools/${MODPY_PYCACHE}geotool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -292,7 +292,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/KeyValue.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/Logging.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/VerTag.py
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}BlkDevTools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}BlkDevTools.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}ByteSize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -316,7 +316,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/amitools/util/${MODPY_PYCACHE}__ini
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/Application.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/arcade/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/arcade/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/${MODPY_PYCACHE}Application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/${MODPY_PYCACHE}Application.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -351,7 +351,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/arcade/gamecenter.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/gamecentersettings.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/glui/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -457,7 +457,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/arcade/platform.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/LiberationSans-Bold.ttf
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -467,7 +467,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/amiga_save_disk.adf
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/0.png
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/items/${MODPY_PYCACHE}fix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -606,7 +606,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/arcade/res/update.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/resources.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/${MODPY_PYCACHE}arcade_window.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -627,7 +627,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/top_level.txt
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -678,7 +678,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/system.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/task.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/tests/${MODPY_PYCACHE}test_application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -730,7 +730,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/user.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/util.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsboot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/
@@ -747,7 +747,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/GameNameUtil.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/LockerDatabase.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/SignalContext.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}BaseContext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}BaseContext.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}BaseDatabase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -806,7 +806,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}session.${MODP
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/amiga/${MODPY_PYCACHE}adf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -865,7 +865,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/contextaware.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/download.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/${MODPY_PYCACHE}dolphindriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -885,7 +885,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/gamedriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mamedriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/${MODPY_PYCACHE}gamegeardriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -897,7 +897,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafen/lynxdriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mednafendriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/mess/${MODPY_PYCACHE}messmsxdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -914,7 +914,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/drivers/retroarchdriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/filedatabase.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -925,7 +925,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/constants.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/gamedb/game_database_dumper.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -939,7 +939,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/requestparams.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/http/server.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/input/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -980,7 +980,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/main.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/NetplayContext.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/${MODPY_PYCACHE}NetplayContext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/${MODPY_PYCACHE}NetplayContext.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/netplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -989,7 +989,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/network.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/GameDatabaseSynchronizer.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/${MODPY_PYCACHE}GameDatabaseSynchronizer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/${MODPY_PYCACHE}GameDatabaseSynchronizer.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ogd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1022,7 +1022,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/option.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platform.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}amiga.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1079,7 +1079,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}turb
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/${MODPY_PYCACHE}turbografxcd.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/a2600/${MODPY_PYCACHE}messa2600driver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1089,7 +1089,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/amiga.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/amstrad_cpc.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/${MODPY_PYCACHE}arcadeplatform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1100,7 +1100,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/arcadeplatfor
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/arcade/mamearcadedriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/atari/${MODPY_PYCACHE}atariplatform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1117,7 +1117,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cdtv.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/commodore64.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}messcpcdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1125,7 +1125,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/${MODPY_PYCACHE}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/cpc/messcpcdriver.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/dos/${MODPY_PYCACHE}dosboxdosdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1147,7 +1147,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/msx.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/neogeo.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/ngc/${MODPY_PYCACHE}ngcdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1162,7 +1162,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/turbografx16.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/turbografxcd.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/${MODPY_PYCACHE}fusespectrumdriver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1176,7 +1176,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/messspectrumdriv
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/platforms/zxs/spectrumplatform.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/${MODPY_PYCACHE}pluginexecutablefinder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1188,7 +1188,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/plugins/pluginmanager.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/refreshratetool.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/amiga/
@@ -1768,7 +1768,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/saves.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/session.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1779,7 +1779,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/helper.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/spectrum/roms.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/${MODPY_PYCACHE}gamecenterview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1793,7 +1793,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/mainwindow.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/ui/qwindow.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/${MODPY_PYCACHE}archiveutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1813,7 +1813,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/gamenameutil.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/util/sdl2.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1824,14 +1824,14 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/handlers.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/web/server.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}zipfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/${MODPY_PYCACHE}zipfile.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/${MODPY_PYCACHE}test_zipfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1843,7 +1843,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fspy/tests/zipfile/utf-8.zip
 share/fs-uae-launcher/python${MODPY_VERSION}/fspy/zipfile.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fstd/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fstd/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/${MODPY_PYCACHE}adffile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1860,7 +1860,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fstd/adffile.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/data.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/desktop/${MODPY_PYCACHE}gnome3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1874,12 +1874,12 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fstd/typing.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fstd/webapp.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/${MODPY_PYCACHE}element.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1902,7 +1902,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/signal.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/common/spacer.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/extra/${MODPY_PYCACHE}iconheader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1935,7 +1935,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/TextArea.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/TextField.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/VerticalItemView.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/${MODPY_PYCACHE}Application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/${MODPY_PYCACHE}Application.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/${MODPY_PYCACHE}Button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2032,13 +2032,13 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/window.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/qt/windowbase.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/WidgetTestCase.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/${MODPY_PYCACHE}WidgetTestCase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/${MODPY_PYCACHE}WidgetTestCase.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2051,12 +2051,12 @@ share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/test_button.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/test/test_text_field.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/fsui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}cd_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2101,7 +2101,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}version.${
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/apps/${MODPY_PYCACHE}dosbox_fs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2162,7 +2162,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/launcher_signal.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/launcherapp.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/${MODPY_PYCACHE}channel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2198,7 +2198,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/netplay/player.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/option.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/panels/${MODPY_PYCACHE}additionalconfigpanel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2354,7 +2354,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/64/fs-uae-launcher.png
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/64/fs-uae.png
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/README.txt
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/res/add_button.png
@@ -2424,7 +2424,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/Server.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/ServerWindow.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}Server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}Server.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}ServerWindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2436,7 +2436,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/${MODPY_PYCACHE}gam
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/server/game.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/${MODPY_PYCACHE}advanced_settings_page.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2534,7 +2534,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/settings_page.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/FilterSettingsPage.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/${MODPY_PYCACHE}FilterSettingsPage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/${MODPY_PYCACHE}FilterSettingsPage.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/unused/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2548,7 +2548,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/videosynccheckbox
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/settings/whdload_settings_page.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/setup/${MODPY_PYCACHE}setupwelcomepage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2583,7 +2583,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/TabPanel.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/VariantsBrowser.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/WindowWithTabs.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}ChecksumDialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}ChecksumDialog.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}ConfigGroup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2657,7 +2657,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/${MODPY_PYCACHE}widgets
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/aboutdialog.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/behaviors/${MODPY_PYCACHE}amigaenablebehavior.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2680,7 +2680,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/GameInfoPanel
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/ScreenshotsPanel.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/WebButton.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/${MODPY_PYCACHE}BottomPanel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/${MODPY_PYCACHE}BottomPanel.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/bottombar/${MODPY_PYCACHE}EditButton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2702,7 +2702,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/InputSelector.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/KickstartGroup.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/WHDLoadGroup.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/${MODPY_PYCACHE}ConfigCheckBox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/${MODPY_PYCACHE}ConfigCheckBox.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/config/${MODPY_PYCACHE}CustomOptionsPage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2748,7 +2748,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/ImportDialog.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/ImportGroup.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/ImportTask.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/${MODPY_PYCACHE}ImportDialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/${MODPY_PYCACHE}ImportDialog.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/imports/${MODPY_PYCACHE}ImportGroup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2776,7 +2776,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/StatusElement
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/WarningsElement.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/WebLinkElement.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/${MODPY_PYCACHE}LanguageElement.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/${MODPY_PYCACHE}LanguageElement.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/ui/statusbar/${MODPY_PYCACHE}PlayersElement.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2799,7 +2799,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/launcher/update_manager.py
 share/fs-uae-launcher/python${MODPY_VERSION}/launcher/version.py
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2822,7 +2822,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/ircevents.py
 share/fs-uae-launcher/python${MODPY_VERSION}/oyoyo/parse.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}expansion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2833,7 +2833,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}sys.${MOD
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/${MODPY_PYCACHE}sys.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/${MODPY_PYCACHE}adf_creator_app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2854,7 +2854,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/adf_creator_app.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/__init__.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/__main__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2867,7 +2867,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/da
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/48/adf-file.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/48/zip-file.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/archive_extractor/data/folder.png
@@ -2888,12 +2888,12 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/file_manager/data/48
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/hdf_creator_app.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/help/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/apps/joystick_config_app.py
@@ -2986,7 +2986,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/res/48/web-browser.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/res/gamepad-config.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/${MODPY_PYCACHE}shell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3001,7 +3001,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/shell/window.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/sys.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3048,7 +3048,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/NotoSans-Regular.ttf
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/Roboto-Regular.ttf
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/data/window-close-dark.png
@@ -3089,14 +3089,14 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/text_field.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/theme.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/web_view.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/ui/window.py
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/${MODPY_PYCACHE}application_runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3112,7 +3112,7 @@ share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/16/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/16/folder.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/16/information.png
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/__init__.py
-${MODPY_COMMENT}share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/${MODPY_PYCACHE}/
+share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/${MODPY_PYCACHE}/
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/fs-uae-launcher/python${MODPY_VERSION}/workspace/util/help_button.py

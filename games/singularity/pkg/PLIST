@@ -14,14 +14,14 @@ lib/python${MODPY_VERSION}/site-packages/endgame_singularity-${MODPY_DISTV}.dist
 lib/python${MODPY_VERSION}/site-packages/singularity/
 lib/python${MODPY_VERSION}/site-packages/singularity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/singularity/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/g.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/global_hotkeys.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/graphics/${MODPY_PYCACHE}button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/code/safety.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/savegame.py
 lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/code/screens/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -313,7 +313,7 @@ lib/python${MODPY_VERSION}/site-packages/singularity/i18n/messages.pot
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/story.pot
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/singularity/i18n/utils/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

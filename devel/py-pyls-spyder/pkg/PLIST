@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pyls_spyder-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyls_spyder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyls_spyder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyls_spyder/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

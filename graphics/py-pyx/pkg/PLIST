@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx-${MODPY_DISTV}.dist-info/licenses/A
 lib/python${MODPY_VERSION}/site-packages/pyx-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyx-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyx/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/${MODPY_PYCACHE}attr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,7 +109,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/11pt.lfs
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/11ptex.lfs
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/12pt.lfs
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/12ptex.lfs
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/${MODPY_PYCACHE}createlfs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/${MODPY_PYCACHE}createlfs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/data/lfs/createlfs.py
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/deformer.py
 lib/python${MODPY_VERSION}/site-packages/pyx/document.py
 lib/python${MODPY_VERSION}/site-packages/pyx/dvi/
 lib/python${MODPY_VERSION}/site-packages/pyx/dvi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/dvi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/dvi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/dvi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/dvi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/dvi/${MODPY_PYCACHE}dvifile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/dvi/vffile.py
 lib/python${MODPY_VERSION}/site-packages/pyx/epsfile.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/
 lib/python${MODPY_VERSION}/site-packages/pyx/font/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/${MODPY_PYCACHE}afmfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/font/t1code.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/t1file.py
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -185,7 +185,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}style.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/${MODPY_PYCACHE}style.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/graph/axis/${MODPY_PYCACHE}axis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -220,7 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/mathutils.py
 lib/python${MODPY_VERSION}/site-packages/pyx/mesh.py
 lib/python${MODPY_VERSION}/site-packages/pyx/metapost/
 lib/python${MODPY_VERSION}/site-packages/pyx/metapost/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyx/metapost/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyx/metapost/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyx/metapost/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyx/metapost/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/metapost/${MODPY_PYCACHE}mp_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

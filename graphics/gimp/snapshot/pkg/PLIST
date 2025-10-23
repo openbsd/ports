@@ -502,7 +502,7 @@ lib/gimp/${V}/plug-ins/cml-explorer/
 lib/gimp/${V}/plug-ins/colormap-remap/
 @bin lib/gimp/${V}/plug-ins/colormap-remap/colormap-remap
 lib/gimp/${V}/plug-ins/colorxhtml/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/colorxhtml/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/colorxhtml/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/colorxhtml/${MODPY_PYCACHE}colorxhtml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/colorxhtml/${MODPY_PYCACHE}colorxhtml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/colorxhtml/colorxhtml.py
@@ -579,7 +579,7 @@ lib/gimp/${V}/plug-ins/file-jpeg/
 lib/gimp/${V}/plug-ins/file-jpegxl/
 @bin lib/gimp/${V}/plug-ins/file-jpegxl/file-jpegxl
 lib/gimp/${V}/plug-ins/file-openraster/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/file-openraster/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/file-openraster/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/file-openraster/${MODPY_PYCACHE}file-openraster.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/file-openraster/${MODPY_PYCACHE}file-openraster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/file-openraster/file-openraster.py
@@ -638,7 +638,7 @@ lib/gimp/${V}/plug-ins/film/
 lib/gimp/${V}/plug-ins/flame/
 @bin lib/gimp/${V}/plug-ins/flame/flame
 lib/gimp/${V}/plug-ins/foggify/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/foggify/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/foggify/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/foggify/${MODPY_PYCACHE}foggify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/foggify/${MODPY_PYCACHE}foggify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/foggify/foggify.py
@@ -653,7 +653,7 @@ lib/gimp/${V}/plug-ins/gradient-flare/
 lib/gimp/${V}/plug-ins/gradient-map/
 @bin lib/gimp/${V}/plug-ins/gradient-map/gradient-map
 lib/gimp/${V}/plug-ins/gradients-save-as-css/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/gradients-save-as-css/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/gradients-save-as-css/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/gradients-save-as-css/${MODPY_PYCACHE}gradients-save-as-css.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/gradients-save-as-css/${MODPY_PYCACHE}gradients-save-as-css.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/gradients-save-as-css/gradients-save-as-css.py
@@ -664,7 +664,7 @@ lib/gimp/${V}/plug-ins/guillotine/
 lib/gimp/${V}/plug-ins/help/
 @bin lib/gimp/${V}/plug-ins/help/help
 lib/gimp/${V}/plug-ins/histogram-export/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/histogram-export/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/histogram-export/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/histogram-export/${MODPY_PYCACHE}histogram-export.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/histogram-export/${MODPY_PYCACHE}histogram-export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/histogram-export/histogram-export.py
@@ -691,17 +691,17 @@ lib/gimp/${V}/plug-ins/nl-filter/
 lib/gimp/${V}/plug-ins/pagecurl/
 @bin lib/gimp/${V}/plug-ins/pagecurl/pagecurl
 lib/gimp/${V}/plug-ins/palette-offset/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/palette-offset/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/palette-offset/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/palette-offset/${MODPY_PYCACHE}palette-offset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/palette-offset/${MODPY_PYCACHE}palette-offset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/palette-offset/palette-offset.py
 lib/gimp/${V}/plug-ins/palette-sort/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/palette-sort/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/palette-sort/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/palette-sort/${MODPY_PYCACHE}palette-sort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/palette-sort/${MODPY_PYCACHE}palette-sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/palette-sort/palette-sort.py
 lib/gimp/${V}/plug-ins/palette-to-gradient/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/palette-to-gradient/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/palette-to-gradient/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/palette-to-gradient/${MODPY_PYCACHE}palette-to-gradient.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/palette-to-gradient/${MODPY_PYCACHE}palette-to-gradient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/palette-to-gradient/palette-to-gradient.py
@@ -712,7 +712,7 @@ lib/gimp/${V}/plug-ins/print/
 lib/gimp/${V}/plug-ins/procedure-browser/
 @bin lib/gimp/${V}/plug-ins/procedure-browser/procedure-browser
 lib/gimp/${V}/plug-ins/python-console/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}pyconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}pyconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}python-console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -720,7 +720,7 @@ lib/gimp/${V}/plug-ins/python-console/${MODPY_PYCACHE}python-console.${MODPY_PYC
 lib/gimp/${V}/plug-ins/python-console/pyconsole.py
 lib/gimp/${V}/plug-ins/python-console/python-console.py
 lib/gimp/${V}/plug-ins/python-eval/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/python-eval/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/python-eval/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/python-eval/${MODPY_PYCACHE}python-eval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/python-eval/${MODPY_PYCACHE}python-eval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/python-eval/python-eval.py
@@ -743,7 +743,7 @@ lib/gimp/${V}/plug-ins/sparkle/
 lib/gimp/${V}/plug-ins/sphere-designer/
 @bin lib/gimp/${V}/plug-ins/sphere-designer/sphere-designer
 lib/gimp/${V}/plug-ins/spyro-plus/
-${MODPY_COMMENT}lib/gimp/${V}/plug-ins/spyro-plus/${MODPY_PYCACHE}/
+lib/gimp/${V}/plug-ins/spyro-plus/${MODPY_PYCACHE}/
 lib/gimp/${V}/plug-ins/spyro-plus/${MODPY_PYCACHE}spyro-plus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/gimp/${V}/plug-ins/spyro-plus/${MODPY_PYCACHE}spyro-plus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gimp/${V}/plug-ins/spyro-plus/spyro-plus.py

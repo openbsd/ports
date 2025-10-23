@@ -3,14 +3,14 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/README
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/README
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/${MODPY_PYCACHE}activate_cards_on_rollover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/${MODPY_PYCACHE}activate_cards_on_rollover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/${MODPY_PYCACHE}add_menu_item.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/reverse_arabi
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_plugins/shortcuts.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/README
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/${MODPY_PYCACHE}add_card.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/${MODPY_PYCACHE}add_card.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/${MODPY_PYCACHE}export_stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,7 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/import_rosett
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/example_scripts/silence.mp3
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/${MODPY_PYCACHE}card.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -170,7 +170,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_type_conver
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/M_sided.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/${MODPY_PYCACHE}M_sided.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/${MODPY_PYCACHE}M_sided.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/card_types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,7 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/configuration.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controller.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MODPY_PYCACHE}default_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/${MO
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/controllers/default_controller.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/criteria/${MODPY_PYCACHE}default_criterion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/SQLite
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/SQLite_statistics.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/SQLite_sync.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/${MODPY_PYCACHE}SQLite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/${MODPY_PYCACHE}SQLite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/${MODPY_PYCACHE}SQLite_criterion_applier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -250,7 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/databases/_sqlit
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/Makefile
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/docs/source/_static/
@@ -295,7 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/fact_view.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_format.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/${MODPY_PYCACHE}anki2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -338,7 +338,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filter.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/RTL_handler.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/${MODPY_PYCACHE}RTL_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/${MODPY_PYCACHE}RTL_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -370,7 +370,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/filters/non_lati
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translator.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/gui_translators/${MODPY_PYCACHE}gettext_gui_translator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -383,7 +383,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/hook.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/language.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/languages/${MODPY_PYCACHE}afrikaans.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -699,7 +699,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/log_uploader.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/logger.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/${MODPY_PYCACHE}database_logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -708,13 +708,13 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/loggers/database
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugin.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncer.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/${MODPY_PYCACHE}google_pronouncer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -723,7 +723,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/pronouncers/goog
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chain.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/${MODPY_PYCACHE}card_browser_render_chain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -741,7 +741,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/render_chains/sy
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderer.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}anki_renderer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -754,7 +754,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODP
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/${MODPY_PYCACHE}plain_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/${MODPY_PYCACHE}decorator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -772,7 +772,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/t
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/README.anki
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/renderers/anki/template/${MODPY_PYCACHE}furigana.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -797,7 +797,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controlle
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/SM2_controller.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/SM2_controller_cramming.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/${MODPY_PYCACHE}SM2_controller.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/${MODPY_PYCACHE}SM2_controller.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/review_controllers/${MODPY_PYCACHE}SM2_controller_cramming.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -808,7 +808,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/scheduler.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/SM2_mnemosyne.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/${MODPY_PYCACHE}SM2_mnemosyne.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/${MODPY_PYCACHE}SM2_mnemosyne.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -819,7 +819,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/schedulers/cramm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_page.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/statistics_pages/${MODPY_PYCACHE}cards_added.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -847,7 +847,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/stopwatch.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_mode.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/study_modes/${MODPY_PYCACHE}cram_all.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -868,7 +868,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/tag_tree.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translator.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/${MODPY_PYCACHE}google_translator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -877,7 +877,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/translators/goog
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_component.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/${MODPY_PYCACHE}card_type_widget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -903,7 +903,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/re
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/statistics_widget.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/upgrades/${MODPY_PYCACHE}upgrade1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -916,7 +916,7 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/utils.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/${MODPY_PYCACHE}about_dlg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1281,13 +1281,13 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_translator_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/DO_NOT_DELETE
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/version.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/web_server/${MODPY_PYCACHE}audio_player_container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1325,7 +1325,7 @@ lib/python${MODPY_VERSION}/site-packages/openSM2sync/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/LICENSE
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/README
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}binary_format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1349,7 +1349,7 @@ lib/python${MODPY_VERSION}/site-packages/openSM2sync/${MODPY_PYCACHE}utils.${MOD
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_format.py
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/binary_formats/${MODPY_PYCACHE}mnemosyne_format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1363,7 +1363,7 @@ lib/python${MODPY_VERSION}/site-packages/openSM2sync/server.py
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_format.py
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openSM2sync/text_formats/${MODPY_PYCACHE}xml_format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

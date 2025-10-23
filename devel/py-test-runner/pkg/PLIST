@@ -1,7 +1,7 @@
 @pkgpath devel/py-test-runner,python3
 lib/python${MODPY_VERSION}/site-packages/ptr/
 lib/python${MODPY_VERSION}/site-packages/ptr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ptr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ptr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ptr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ptr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_runner-${MODPY_DISTV}.dist-info/

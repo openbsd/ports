@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools-${MODPY_DISTV}.dist
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/contexts/scratch/Do
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/factories/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/templates.py
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/utils.py
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_docker_tools/wrappers/${MODPY_PYCACHE}container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

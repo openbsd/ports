@@ -2,7 +2,7 @@
 lib/python${MODPY_VERSION}/site-packages/pdm/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,13 +25,13 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}wheel.${MOD
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/editables/${MODPY_PYCACHE}redirector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,7 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/LICENSE.APACHE
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/LICENSE.BSD
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/${MODPY_PYCACHE}_elffile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/packaging/version.p
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/pyproject_metadata/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli/py.typed
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/_vendor/tomli_w/${MODPY_PYCACHE}_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/editable.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/base.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/setuptools.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/hooks/version/${MODPY_PYCACHE}scm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

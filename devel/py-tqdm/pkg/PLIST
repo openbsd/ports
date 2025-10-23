@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/tqdm-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/tqdm-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tqdm/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/tqdm/cli.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/completion.sh
 lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/
 lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/contrib/${MODPY_PYCACHE}bells.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

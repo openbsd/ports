@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygal/__about__.py
 lib/python${MODPY_VERSION}/site-packages/pygal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygal/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,7 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal/etree.py
 lib/python${MODPY_VERSION}/site-packages/pygal/formatters.py
 lib/python${MODPY_VERSION}/site-packages/pygal/graph/
 lib/python${MODPY_VERSION}/site-packages/pygal/graph/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygal/graph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygal/graph/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygal/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/graph/${MODPY_PYCACHE}bar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal/graph/xy.py
 lib/python${MODPY_VERSION}/site-packages/pygal/interpolate.py
 lib/python${MODPY_VERSION}/site-packages/pygal/maps/
 lib/python${MODPY_VERSION}/site-packages/pygal/maps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygal/maps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygal/maps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygal/maps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/maps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/serie.py
@@ -152,7 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/pygal/svg.py
 lib/python${MODPY_VERSION}/site-packages/pygal/table.py
 lib/python${MODPY_VERSION}/site-packages/pygal/test/
 lib/python${MODPY_VERSION}/site-packages/pygal/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygal/test/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

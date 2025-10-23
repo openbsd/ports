@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/pygeoif-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pygeoif-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pygeoif-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygeoif/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeoif/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygeoif/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygeoif/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoif/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoif/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/pygeoif/functions.py
 lib/python${MODPY_VERSION}/site-packages/pygeoif/geometry.py
 lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/
 lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoif/hypothesis/${MODPY_PYCACHE}strategies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

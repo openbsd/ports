@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/REC
 lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}_afm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,7 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/_animation_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_api/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -215,7 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/artist.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/axes/${MODPY_PYCACHE}_axes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -240,7 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backend_tools.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backend_tools.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/${MODPY_PYCACHE}_backend_gtk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -351,7 +351,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_wxcairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_compat.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/qt_editor/${MODPY_PYCACHE}_formlayout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,7 +645,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/patheffects.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/projections/${MODPY_PYCACHE}geo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -669,7 +669,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/scale.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/scale.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/sphinxext/${MODPY_PYCACHE}figmpl_directive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -692,7 +692,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/streamplot.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/streamplot.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/style/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/style/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/style/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/style/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/style/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/style/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/style/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -704,7 +704,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/table.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}_markers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -736,7 +736,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/UnitDbl.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/UnitDblConverter.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/UnitDblFormatter.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}Duration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}Duration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/jpl_units/${MODPY_PYCACHE}Epoch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -759,7 +759,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/Courier10PitchBT-Bold.pfb
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/README
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3306,7 +3306,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_widgets.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/.gitignore
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/README.md
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/tinypages/${MODPY_PYCACHE}range4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3338,7 +3338,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/transforms.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/transforms.pyi
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tri/${MODPY_PYCACHE}_triangulation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3380,7 +3380,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/widgets.pyi
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/${MODPY_PYCACHE}anchored_artists.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3409,7 +3409,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/mpl_axes.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/parasite_axes.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3437,7 +3437,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/conftest.
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axes_grid1/tests/test_axes_grid1.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/${MODPY_PYCACHE}angle_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3469,7 +3469,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/grid_helper_cur
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/parasite_axes.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3516,7 +3516,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/test_grid
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/axisartist/tests/test_grid_helper_curvelinear.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/${MODPY_PYCACHE}art3d.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3533,7 +3533,7 @@ lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/axis3d.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/proj3d.py
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpl_toolkits/mplot3d/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -17,7 +17,7 @@ share/ibus-anthy/dicts/oldchar.t
 share/ibus-anthy/dicts/symbol.t
 share/ibus-anthy/dicts/zipcode.t
 share/ibus-anthy/engine/
-${MODPY_COMMENT}share/ibus-anthy/engine/${MODPY_PYCACHE}/
+share/ibus-anthy/engine/${MODPY_PYCACHE}/
 share/ibus-anthy/engine/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-anthy/engine/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-anthy/engine/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,7 +50,7 @@ share/ibus-anthy/engine/segment.py
 share/ibus-anthy/engine/tables.py
 share/ibus-anthy/engine/thumb.py
 share/ibus-anthy/setup/
-${MODPY_COMMENT}share/ibus-anthy/setup/${MODPY_PYCACHE}/
+share/ibus-anthy/setup/${MODPY_PYCACHE}/
 share/ibus-anthy/setup/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-anthy/setup/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-anthy/setup/${MODPY_PYCACHE}anthyprefs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

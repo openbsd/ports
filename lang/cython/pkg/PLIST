@@ -22,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestIpythonMagic.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestRecythonize.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestStripLiterals.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCyCache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCyCache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCythonizeArgsParser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}Test
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Build/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/${MODPY_PYCACHE}BuildExecutable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/${MODPY_PYCACHE}BuildExecutable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/${MODPY_PYCACHE}Cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestUtilityLoad.p
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestVisitor.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/Utils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestBuffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestBuffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestBuiltin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -175,7 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Version.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Visitor.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}AnalysedTreeTransforms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}AnalysedTreeTransforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}Annotate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -273,7 +273,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/DebugWriter.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/TestLibCython.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/${MODPY_PYCACHE}TestLibCython.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/${MODPY_PYCACHE}TestLibCython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -287,7 +287,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/codefile
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/test_libcython_in_gdb.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/Tests/test_libpython_in_gdb.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/${MODPY_PYCACHE}Cygdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/${MODPY_PYCACHE}Cygdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/${MODPY_PYCACHE}DebugWriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -303,7 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Debugger/libpython.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Debugging.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/${MODPY_PYCACHE}build_ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -468,7 +468,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}DFA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -489,7 +489,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.${MODPY_PYC_MAGIC_TAG}so
@@ -500,7 +500,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.pyi
 lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}_looper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -519,7 +519,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestShadow.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestStringIOTree.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestTestUtils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCodeWriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCodeWriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCythonUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -577,7 +577,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TypeConversion.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs_C.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -587,7 +587,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/arrayarray.h
 lib/python${MODPY_VERSION}/site-packages/Cython/Utils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cython/__init__.pyi
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}CodeWriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}CodeWriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}Coverage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -620,7 +620,7 @@ lib/python${MODPY_VERSION}/site-packages/cython-${MODPY_DISTV}.dist-info/top_lev
 lib/python${MODPY_VERSION}/site-packages/cython.py
 lib/python${MODPY_VERSION}/site-packages/pyximport/
 lib/python${MODPY_VERSION}/site-packages/pyximport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}pyxbuild.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

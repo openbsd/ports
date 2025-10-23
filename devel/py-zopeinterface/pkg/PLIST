@@ -3,7 +3,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope/interface/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/advice.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -67,7 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/common/numbers.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/sequence.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}basemapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/registry.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/ro.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}advisory_testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

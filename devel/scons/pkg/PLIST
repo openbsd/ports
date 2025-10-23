@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Node/Alias.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/FS.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/Python.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}Alias.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}Alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}FS.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Node/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/SCons/PathList.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Platform/
 lib/python${MODPY_VERSION}/site-packages/SCons/Platform/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Platform/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Platform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Platform/${MODPY_PYCACHE}aix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,7 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/Python.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/RC.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/SWIG.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/${MODPY_PYCACHE}C.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/${MODPY_PYCACHE}C.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Scanner/${MODPY_PYCACHE}D.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Script/Main.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/SConsOptions.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/SConscript.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Script/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Script/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/${MODPY_PYCACHE}Interactive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/${MODPY_PYCACHE}Interactive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Script/${MODPY_PYCACHE}Main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Subst.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/Job.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/${MODPY_PYCACHE}Job.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/${MODPY_PYCACHE}Job.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Taskmaster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/Util.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/Warnings.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/WinSDK.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}Config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}Dispatcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/MSVC/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/README.rst
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/${MODPY_PYCACHE}arch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/vc.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/MSCommon/vs.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/PharLapCommon.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/${MODPY_PYCACHE}386asm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/${MODPY_PYCACHE}386asm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/${MODPY_PYCACHE}DCommon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -450,7 +450,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/cc.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clang.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangCommon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/clangxx.py
@@ -462,7 +462,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/default.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/dmd.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/
@@ -609,7 +609,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/e
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/NOTICE.txt
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/README.LIBXSLT
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/README.txt
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/${MODPY_PYCACHE}docbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/${MODPY_PYCACHE}docbook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/extensions/${MODPY_PYCACHE}xslt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1872,7 +1872,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/LoadableModule.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/SharedLibrary.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/${MODPY_PYCACHE}LoadableModule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/${MODPY_PYCACHE}LoadableModule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/linkCommon/${MODPY_PYCACHE}SharedLibrary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1903,7 +1903,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/Overrides.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/Rules.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/Utils.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/${MODPY_PYCACHE}Globals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/${MODPY_PYCACHE}Globals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/${MODPY_PYCACHE}Methods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1929,7 +1929,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/ninja_run_daemon.
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/ninja_tool/ninja_scons_daemon.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/packaging/${MODPY_PYCACHE}ipk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1999,7 +1999,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/yacc.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/zip.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Util/
 lib/python${MODPY_VERSION}/site-packages/SCons/Util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Util/${MODPY_PYCACHE}envs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2020,7 +2020,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Util/stats.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/ConfigureCache.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/${MODPY_PYCACHE}ConfigureCache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/${MODPY_PYCACHE}ConfigureCache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2035,7 +2035,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Variables/ListVariable.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/PackageVariable.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/PathVariable.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}BoolVariable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}BoolVariable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}EnumVariable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2051,7 +2051,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Variables/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/SCons/Warnings.py
 lib/python${MODPY_VERSION}/site-packages/SCons/__init__.py
 lib/python${MODPY_VERSION}/site-packages/SCons/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}Action.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}Action.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}Builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2098,7 +2098,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}exitfuncs.${MODPY
 lib/python${MODPY_VERSION}/site-packages/SCons/${MODPY_PYCACHE}exitfuncs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/compat/
 lib/python${MODPY_VERSION}/site-packages/SCons/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/compat/${MODPY_PYCACHE}_scons_dbm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

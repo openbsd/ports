@@ -111,7 +111,7 @@ share/hugin/data/plugins-templates/
 share/hugin/data/plugins-templates/dual_use.py
 share/hugin/data/plugins-templates/plugin_skeleton.py
 share/hugin/data/plugins/README_woa.txt
-${MODPY_COMMENT}share/hugin/data/plugins/${MODPY_PYCACHE}/
+share/hugin/data/plugins/${MODPY_PYCACHE}/
 share/hugin/data/plugins/${MODPY_PYCACHE}top_five.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hugin/data/plugins/${MODPY_PYCACHE}top_five.${MODPY_PYC_MAGIC_TAG}pyc
 share/hugin/data/plugins/${MODPY_PYCACHE}woa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

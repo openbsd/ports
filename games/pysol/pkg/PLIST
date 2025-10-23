@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pysolfc-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/pysolfc-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pysollib/
 lib/python${MODPY_VERSION}/site-packages/pysollib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/${MODPY_PYCACHE}acard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/customgame.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/formatter.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/game/
 lib/python${MODPY_VERSION}/site-packages/pysollib/game/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/game/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/game/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/game/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/game/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/game/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -98,7 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/game/dump.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/gamedb.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/${MODPY_PYCACHE}acesandkings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -293,7 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/labyrinth.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/larasgame.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/mahjongg/${MODPY_PYCACHE}mahjongg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -336,7 +336,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/games/siebenbisas.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/simplex.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/games/special/${MODPY_PYCACHE}cribbage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -420,7 +420,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/LImage.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/LObjWrap.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/LTask.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/${MODPY_PYCACHE}LApp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/${MODPY_PYCACHE}LApp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/kivy/${MODPY_PYCACHE}LBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -529,7 +529,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/options.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolaudio.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/pysolgtk/${MODPY_PYCACHE}card.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -620,7 +620,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/stats.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/struct_new.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/tile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/tile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/${MODPY_PYCACHE}basetilemfxdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -691,7 +691,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/tile/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/tile/wizarddialog.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/tk/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/tk/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/${MODPY_PYCACHE}basetkmfxdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -765,13 +765,13 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/tk/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/tk/wizarddialog.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/Canvas2.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/${MODPY_PYCACHE}Canvas2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/${MODPY_PYCACHE}Canvas2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -821,7 +821,7 @@ lib/python${MODPY_VERSION}/site-packages/pysollib/ui/tktile/tkwrap.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/util.py
 lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/
 lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pysollib/winsystems/${MODPY_PYCACHE}aqua.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

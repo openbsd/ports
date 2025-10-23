@@ -1422,7 +1422,7 @@ lib/node_modules/node-gyp/eslint.config.js
 lib/node_modules/node-gyp/gyp/
 lib/node_modules/node-gyp/gyp/.release-please-manifest.json
 lib/node_modules/node-gyp/gyp/LICENSE
-${MODPY_COMMENT}lib/node_modules/node-gyp/gyp/${MODPY_PYCACHE}/
+lib/node_modules/node-gyp/gyp/${MODPY_PYCACHE}/
 lib/node_modules/node-gyp/gyp/${MODPY_PYCACHE}gyp_main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/node_modules/node-gyp/gyp/${MODPY_PYCACHE}gyp_main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/node_modules/node-gyp/gyp/${MODPY_PYCACHE}test_gyp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1454,7 +1454,7 @@ lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUserFile.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUtil.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSVersion.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/__init__.py
-${MODPY_COMMENT}lib/node_modules/node-gyp/gyp/pylib/gyp/${MODPY_PYCACHE}/
+lib/node_modules/node-gyp/gyp/pylib/gyp/${MODPY_PYCACHE}/
 lib/node_modules/node-gyp/gyp/pylib/gyp/${MODPY_PYCACHE}MSVSNew.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/node_modules/node-gyp/gyp/pylib/gyp/${MODPY_PYCACHE}MSVSNew.${MODPY_PYC_MAGIC_TAG}pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/${MODPY_PYCACHE}MSVSProject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1514,7 +1514,7 @@ lib/node_modules/node-gyp/gyp/pylib/gyp/easy_xml_test.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/flock_tool.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/__init__.py
-${MODPY_COMMENT}lib/node_modules/node-gyp/gyp/pylib/gyp/generator/${MODPY_PYCACHE}/
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/${MODPY_PYCACHE}/
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/${MODPY_PYCACHE}analyzer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1579,7 +1579,7 @@ lib/node_modules/node-gyp/gyp/pylib/packaging/LICENSE
 lib/node_modules/node-gyp/gyp/pylib/packaging/LICENSE.APACHE
 lib/node_modules/node-gyp/gyp/pylib/packaging/LICENSE.BSD
 lib/node_modules/node-gyp/gyp/pylib/packaging/__init__.py
-${MODPY_COMMENT}lib/node_modules/node-gyp/gyp/pylib/packaging/${MODPY_PYCACHE}/
+lib/node_modules/node-gyp/gyp/pylib/packaging/${MODPY_PYCACHE}/
 lib/node_modules/node-gyp/gyp/pylib/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/node_modules/node-gyp/gyp/pylib/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/node_modules/node-gyp/gyp/pylib/packaging/${MODPY_PYCACHE}_elffile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

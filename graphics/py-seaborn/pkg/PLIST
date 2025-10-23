@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/seaborn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/_base.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_compat.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/_core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/_core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/_core/typing.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_docstrings.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/${MODPY_PYCACHE}area.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/text.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_statistics.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/${MODPY_PYCACHE}aggregation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,7 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/categorical.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/cm.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/colors/
 lib/python${MODPY_VERSION}/site-packages/seaborn/colors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/colors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/colors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/colors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/colors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/colors/${MODPY_PYCACHE}crayons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -153,7 +153,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/colors/xkcd_rgb.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/distributions.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/external/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

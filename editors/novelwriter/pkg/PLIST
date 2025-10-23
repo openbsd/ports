@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter-${MODPY_DISTV}.dist-info/li
 lib/python${MODPY_VERSION}/site-packages/novelwriter-${MODPY_DISTV}.dist-info/licenses/setup/LICENSE-Apache-2.0.txt
 lib/python${MODPY_VERSION}/site-packages/novelwriter-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/novelwriter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -120,7 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/common.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/config.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/constants.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/${MODPY_PYCACHE}buildsettings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/${MODPY_PYCACHE}buildsettings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/${MODPY_PYCACHE}coretools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -176,7 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/core/status.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/storage.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/core/tree.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/${MODPY_PYCACHE}docmerge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -204,7 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/dialogs/wordlist.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/enum.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/error.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/${MODPY_PYCACHE}configlayout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/${MODPY_PYCACHE}configlayout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/${MODPY_PYCACHE}eventfilters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -236,7 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/switch.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/switchbox.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/extensions/versioninfo.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/${MODPY_PYCACHE}shared.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/${MODPY_PYCACHE}shared.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/${MODPY_PYCACHE}todocx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -262,7 +262,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/toodt.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/toqdoc.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/formats/toraw.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/${MODPY_PYCACHE}doceditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/${MODPY_PYCACHE}doceditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/gui/${MODPY_PYCACHE}dochighlight.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -309,7 +309,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/guimain.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/shared.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/splash.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/${MODPY_PYCACHE}counting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -320,7 +320,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/text/comments.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/counting.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/text/patterns.py
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}dictionaries.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}dictionaries.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/novelwriter/tools/${MODPY_PYCACHE}lipsum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

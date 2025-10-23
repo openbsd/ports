@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_xprocess-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/pytest_xprocess-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xprocess/
 lib/python${MODPY_VERSION}/site-packages/xprocess/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xprocess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xprocess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xprocess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xprocess/${MODPY_PYCACHE}pytest_xprocess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

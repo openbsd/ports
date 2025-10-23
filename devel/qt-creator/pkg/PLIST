@@ -327,7 +327,7 @@ share/qtcreator/debugger-with-python2/utils.py
 share/qtcreator/debugger/.pylintrc
 share/qtcreator/debugger/LICENSE.GPL3-EXCEPT
 share/qtcreator/debugger/README.txt
-${MODPY_COMMENT}share/qtcreator/debugger/${MODPY_PYCACHE}/
+share/qtcreator/debugger/${MODPY_PYCACHE}/
 share/qtcreator/debugger/${MODPY_PYCACHE}android_stdtypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/qtcreator/debugger/${MODPY_PYCACHE}android_stdtypes.${MODPY_PYC_MAGIC_TAG}pyc
 share/qtcreator/debugger/${MODPY_PYCACHE}boosttypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

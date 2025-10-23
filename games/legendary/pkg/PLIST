@@ -1,7 +1,7 @@
 bin/legendary
 lib/python${MODPY_VERSION}/site-packages/legendary/
 lib/python${MODPY_VERSION}/site-packages/legendary/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}core.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/legendary/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/api/
 lib/python${MODPY_VERSION}/site-packages/legendary/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/api/${MODPY_PYCACHE}egs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,12 +23,12 @@ lib/python${MODPY_VERSION}/site-packages/legendary/cli.py
 lib/python${MODPY_VERSION}/site-packages/legendary/core.py
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/downloader/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/downloader/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/manager.py
 lib/python${MODPY_VERSION}/site-packages/legendary/downloader/mp/workers.py
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/lfs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/lfs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/${MODPY_PYCACHE}crossover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/legendary/lfs/windows_helpers.py
 lib/python${MODPY_VERSION}/site-packages/legendary/lfs/wine_helpers.py
 lib/python${MODPY_VERSION}/site-packages/legendary/models/
 lib/python${MODPY_VERSION}/site-packages/legendary/models/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/models/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/models/${MODPY_PYCACHE}chunk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/legendary/models/json_manifest.py
 lib/python${MODPY_VERSION}/site-packages/legendary/models/manifest.py
 lib/python${MODPY_VERSION}/site-packages/legendary/utils/
 lib/python${MODPY_VERSION}/site-packages/legendary/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/legendary/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/legendary/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/legendary/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/legendary/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/legendary/utils/${MODPY_PYCACHE}aliasing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

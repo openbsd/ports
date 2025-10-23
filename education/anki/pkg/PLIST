@@ -1,7 +1,7 @@
 bin/anki
 lib/python${MODPY_VERSION}/site-packages/anki/
 lib/python${MODPY_VERSION}/site-packages/anki/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anki/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/anki/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/anki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anki/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anki/${MODPY_PYCACHE}buildhash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/anki/find.py
 lib/python${MODPY_VERSION}/site-packages/anki/hooks.py
 lib/python${MODPY_VERSION}/site-packages/anki/importing/
 lib/python${MODPY_VERSION}/site-packages/anki/importing/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anki/importing/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/anki/importing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/anki/importing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anki/importing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anki/importing/${MODPY_PYCACHE}anki2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -394,7 +394,7 @@ lib/python${MODPY_VERSION}/site-packages/anki/template/
 lib/python${MODPY_VERSION}/site-packages/anki/template/LICENSE
 lib/python${MODPY_VERSION}/site-packages/anki/template/README.anki
 lib/python${MODPY_VERSION}/site-packages/anki/template/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anki/template/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/anki/template/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/anki/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anki/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anki/template/${MODPY_PYCACHE}furigana.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -412,7 +412,7 @@ lib/python${MODPY_VERSION}/site-packages/anki/template/view.py
 lib/python${MODPY_VERSION}/site-packages/anki/utils.py
 lib/python${MODPY_VERSION}/site-packages/aqt/
 lib/python${MODPY_VERSION}/site-packages/aqt/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aqt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aqt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aqt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aqt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aqt/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -511,7 +511,7 @@ lib/python${MODPY_VERSION}/site-packages/aqt/exporting.py
 lib/python${MODPY_VERSION}/site-packages/aqt/fields.py
 lib/python${MODPY_VERSION}/site-packages/aqt/forms/
 lib/python${MODPY_VERSION}/site-packages/aqt/forms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aqt/forms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aqt/forms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/aqt/forms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aqt/forms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aqt/forms/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

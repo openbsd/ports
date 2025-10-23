@@ -4,7 +4,7 @@ lib/python${MODPY_VERSION}/site-packages/wheezy/
 lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.py
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.py
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

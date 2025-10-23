@@ -514,12 +514,12 @@ xtensa-esp32s2-elf/share/gcc-${V}/
 xtensa-esp32s2-elf/share/gcc-${V}/python/
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/__init__.py
-${MODPY_COMMENT}xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
+xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/__init__.py
-${MODPY_COMMENT}xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
+xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-esp32s2-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

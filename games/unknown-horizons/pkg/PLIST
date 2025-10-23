@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/UnknownHorizons-${MODPY_DISTV}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/UnknownHorizons-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/horizons/
 lib/python${MODPY_VERSION}/site-packages/horizons/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}entities.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,14 +23,14 @@ lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}timer.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/horizons/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}generic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}pirate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/${MODPY_PYCACHE}trader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/${MODPY_PYCACHE}areabuilder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/${MODPY_PYCACHE}basicbuilder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/areabuilder.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/basicbuilder.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/${MODPY_PYCACHE}behaviorcomponents.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/${MODPY_PYCACHE}diplomacysettings.${MODPY_PYC_MAGIC_TAG}pyc
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/movecallb
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/behavior/profile.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/${MODPY_PYCACHE}boatbuilder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/${MODPY_PYCACHE}brickyard.${MODPY_PYC_MAGIC_TAG}pyc
@@ -124,7 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/building/weaver.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/buildingevaluator.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/${MODPY_PYCACHE}combatmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/${MODPY_PYCACHE}fleet.${MODPY_PYC_MAGIC_TAG}pyc
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/combat/unitmanager
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/constants.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/${MODPY_PYCACHE}boatbuilder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/goal/${MODPY_PYCACHE}combatship.${MODPY_PYC_MAGIC_TAG}pyc
@@ -173,7 +173,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/internationaltrade
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/landmanager.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/${MODPY_PYCACHE}domestictrade.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/${MODPY_PYCACHE}foundsettlement.${MODPY_PYC_MAGIC_TAG}pyc
@@ -187,7 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/preparefou
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/mission/specialdomestictrade.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/personality/${MODPY_PYCACHE}other.${MODPY_PYC_MAGIC_TAG}pyc
@@ -203,14 +203,14 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/settlementmanager.
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/specialdomestictrademanager.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/${MODPY_PYCACHE}condition.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/${MODPY_PYCACHE}strategymanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/condition.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/${MODPY_PYCACHE}chaseshipsandattack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/aiplayer/strategy/mission/${MODPY_PYCACHE}pirateroutine.${MODPY_PYC_MAGIC_TAG}pyc
@@ -229,7 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/ai/pirate.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ai/trader.py
 lib/python${MODPY_VERSION}/site-packages/horizons/command/
 lib/python${MODPY_VERSION}/site-packages/horizons/command/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/command/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/command/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/command/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/command/${MODPY_PYCACHE}building.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/command/${MODPY_PYCACHE}diplomacy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -249,7 +249,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/command/uioptions.py
 lib/python${MODPY_VERSION}/site-packages/horizons/command/unit.py
 lib/python${MODPY_VERSION}/site-packages/horizons/component/
 lib/python${MODPY_VERSION}/site-packages/horizons/component/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/component/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/component/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/component/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/component/${MODPY_PYCACHE}ambientsoundcomponent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/component/${MODPY_PYCACHE}collectingcomponent.${MODPY_PYC_MAGIC_TAG}pyc
@@ -284,7 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/component/tradepostcomponent.p
 lib/python${MODPY_VERSION}/site-packages/horizons/constants.py
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/editor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/editor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/${MODPY_PYCACHE}intermediatemap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -296,7 +296,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/editor/session.py
 lib/python${MODPY_VERSION}/site-packages/horizons/editor/worldeditor.py
 lib/python${MODPY_VERSION}/site-packages/horizons/engine/
 lib/python${MODPY_VERSION}/site-packages/horizons/engine/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/engine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/engine/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/engine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/engine/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/engine/${MODPY_PYCACHE}generate_atlases.${MODPY_PYC_MAGIC_TAG}pyc
@@ -311,7 +311,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/engine/sound.py
 lib/python${MODPY_VERSION}/site-packages/horizons/entities.py
 lib/python${MODPY_VERSION}/site-packages/horizons/ext/
 lib/python${MODPY_VERSION}/site-packages/horizons/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ext/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/ext/${MODPY_PYCACHE}polib.${MODPY_PYC_MAGIC_TAG}pyc
@@ -323,7 +323,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/extscheduler.py
 lib/python${MODPY_VERSION}/site-packages/horizons/globals.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
@@ -337,7 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/i18n.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/ingamegui.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/${MODPY_PYCACHE}ingamekeylistener.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/${MODPY_PYCACHE}keyconfig.${MODPY_PYC_MAGIC_TAG}pyc
@@ -347,7 +347,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/keyconfig.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/keylisteners/mainlistener.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/${MODPY_PYCACHE}aidataselection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/${MODPY_PYCACHE}editorstartmenu.${MODPY_PYC_MAGIC_TAG}pyc
@@ -375,7 +375,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/settings.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/modules/singleplayermenu.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/${MODPY_PYCACHE}attackingtool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/${MODPY_PYCACHE}buildingtool.${MODPY_PYC_MAGIC_TAG}pyc
@@ -396,7 +396,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/mousetools/tilelayingtool.
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/style.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/${MODPY_PYCACHE}barrackstabs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/tabs/${MODPY_PYCACHE}barriertab.${MODPY_PYC_MAGIC_TAG}pyc
@@ -440,7 +440,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/translations.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/util.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/${MODPY_PYCACHE}buysellinventory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/${MODPY_PYCACHE}fpsdisplay.${MODPY_PYC_MAGIC_TAG}pyc
@@ -489,7 +489,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/gui/widgets/unitoverview.py
 lib/python${MODPY_VERSION}/site-packages/horizons/gui/windows.py
 lib/python${MODPY_VERSION}/site-packages/horizons/i18n/
 lib/python${MODPY_VERSION}/site-packages/horizons/i18n/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/i18n/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/i18n/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/i18n/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/i18n/${MODPY_PYCACHE}objecttranslations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/i18n/${MODPY_PYCACHE}voice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -499,7 +499,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/main.py
 lib/python${MODPY_VERSION}/site-packages/horizons/manager.py
 lib/python${MODPY_VERSION}/site-packages/horizons/messaging/
 lib/python${MODPY_VERSION}/site-packages/horizons/messaging/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/messaging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/messaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/messaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/messaging/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/messaging/${MODPY_PYCACHE}messagebus.${MODPY_PYC_MAGIC_TAG}pyc
@@ -512,7 +512,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/messaging/simplemessagebus.py
 lib/python${MODPY_VERSION}/site-packages/horizons/mpsession.py
 lib/python${MODPY_VERSION}/site-packages/horizons/network/
 lib/python${MODPY_VERSION}/site-packages/horizons/network/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/network/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/network/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/network/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/network/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
@@ -523,7 +523,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/network/connection.py
 lib/python${MODPY_VERSION}/site-packages/horizons/network/networkinterface.py
 lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/
 lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/network/packets/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
@@ -533,7 +533,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/network/server.py
 lib/python${MODPY_VERSION}/site-packages/horizons/savegamemanager.py
 lib/python${MODPY_VERSION}/site-packages/horizons/scenario/
 lib/python${MODPY_VERSION}/site-packages/horizons/scenario/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/scenario/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/scenario/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/scenario/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/scenario/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/scenario/${MODPY_PYCACHE}conditions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -547,7 +547,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/spsession.py
 lib/python${MODPY_VERSION}/site-packages/horizons/timer.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/${MODPY_PYCACHE}atlasloading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/${MODPY_PYCACHE}buildingindexer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -587,7 +587,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/util/lastactiveplayersettlemen
 lib/python${MODPY_VERSION}/site-packages/horizons/util/living.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/${MODPY_PYCACHE}actionsetloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/${MODPY_PYCACHE}jsondecoder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -604,7 +604,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/util/loaders/tilesetloader.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/migratepaths.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/${MODPY_PYCACHE}pather.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pathfinding/${MODPY_PYCACHE}pathfinder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -620,7 +620,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/util/pychananimation.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/pychanchildfinder.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/python/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/python/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/util/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/util/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/python/${MODPY_PYCACHE}callback.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/python/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
@@ -643,7 +643,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/util/savegameaccessor.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/savegameupgrader.py
 lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/${MODPY_PYCACHE}annulus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/util/shapes/${MODPY_PYCACHE}circle.${MODPY_PYC_MAGIC_TAG}pyc
@@ -666,7 +666,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/util/yamlcachestorage.py
 lib/python${MODPY_VERSION}/site-packages/horizons/view.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}buildingowner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}concreteobject.${MODPY_PYC_MAGIC_TAG}pyc
@@ -685,7 +685,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}traderou
 lib/python${MODPY_VERSION}/site-packages/horizons/world/${MODPY_PYCACHE}worldutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/${MODPY_PYCACHE}binarycache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/${MODPY_PYCACHE}connectedareacache.${MODPY_PYC_MAGIC_TAG}pyc
@@ -705,7 +705,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/simplecolle
 lib/python${MODPY_VERSION}/site-packages/horizons/world/buildability/terraincache.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/building/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/building/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/building/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/building/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/building/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/building/${MODPY_PYCACHE}buildable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/building/${MODPY_PYCACHE}building.${MODPY_PYC_MAGIC_TAG}pyc
@@ -732,7 +732,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/concreteobject.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/diplomacy.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/${MODPY_PYCACHE}blackdeathdisaster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/disaster/${MODPY_PYCACHE}buildinginfluencingdisaster.${MODPY_PYC_MAGIC_TAG}pyc
@@ -747,7 +747,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/ingametype.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/island.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/${MODPY_PYCACHE}productionfinishediconmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/managers/${MODPY_PYCACHE}statusiconmanager.${MODPY_PYC_MAGIC_TAG}pyc
@@ -757,7 +757,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/player.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/playerstats.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/production/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/production/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/production/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/production/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/production/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/production/${MODPY_PYCACHE}producer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/production/${MODPY_PYCACHE}production.${MODPY_PYC_MAGIC_TAG}pyc
@@ -777,7 +777,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/storage.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/traderoute.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}animal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}fightingship.${MODPY_PYC_MAGIC_TAG}pyc
@@ -792,7 +792,7 @@ lib/python${MODPY_VERSION}/site-packages/horizons/world/units/${MODPY_PYCACHE}we
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/animal.py
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/${MODPY_PYCACHE}animalcollector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/horizons/world/units/collectors/${MODPY_PYCACHE}buildingcollector.${MODPY_PYC_MAGIC_TAG}pyc

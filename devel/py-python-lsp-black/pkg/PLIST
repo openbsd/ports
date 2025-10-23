@@ -1,7 +1,7 @@
 @pkgpath devel/py-python-lsp-black,python3
 lib/python${MODPY_VERSION}/site-packages/pylsp_black/
 lib/python${MODPY_VERSION}/site-packages/pylsp_black/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylsp_black/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylsp_black/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylsp_black/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylsp_black/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylsp_black/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

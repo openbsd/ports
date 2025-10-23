@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/tzdata-${MODPY_DISTV}.dist-info/licenses/licenses/LICENSE_APACHE
 lib/python${MODPY_VERSION}/site-packages/tzdata-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tzdata/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/Tripoli
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/Tunis
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/Windhoek
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Africa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/San_L
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/Tucuman
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/Ushuaia
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Argentina/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Aruba
@@ -163,7 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/Vevay
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/Vincennes
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/Winamac
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indiana/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Indianapolis
@@ -176,7 +176,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/Louisville
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/Monticello
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Kentucky/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Knox_IN
@@ -214,7 +214,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/Be
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/Center
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/New_Salem
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/North_Dakota/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Nuuk
@@ -264,7 +264,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Winnipeg
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Yakutat
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Yellowknife
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/
@@ -281,13 +281,13 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/Syowa
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/Troll
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/Vostok
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Antarctica/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/Longyearbyen
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Arctic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/
@@ -391,7 +391,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/Yangon
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/Yekaterinburg
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/Yerevan
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Asia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/
@@ -408,7 +408,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/South_Georgia
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/St_Helena
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/Stanley
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Atlantic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/
@@ -436,7 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/Victoria
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/West
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/Yancowinna
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Australia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/
@@ -445,7 +445,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/DeNoronha
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/East
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/West
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Brazil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/CET
@@ -460,14 +460,14 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/Pacific
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/Saskatchewan
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/Yukon
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Canada/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/Continental
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/EasterIsland
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Chile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Cuba
@@ -513,7 +513,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/UTC
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/Universal
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/Zulu
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Etc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/
@@ -582,7 +582,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/Zagreb
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/Zaporozhye
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/Zurich
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Europe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Factory
@@ -609,7 +609,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/Mauritius
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/Mayotte
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/Reunion
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Indian/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Iran
@@ -626,7 +626,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/BajaNorte
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/BajaSur
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/General
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Mexico/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/NZ
@@ -680,7 +680,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/Wake
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/Wallis
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/Yap
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Pacific/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Poland
@@ -704,7 +704,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/Mountain
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/Pacific
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/Samoa
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/US/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/UTC
@@ -713,7 +713,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/W-SU
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/WET
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/Zulu
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/iso3166.tab

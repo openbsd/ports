@@ -6,7 +6,7 @@ lib/libsvn_swig_py-1.la
 @lib lib/libsvn_swig_py-1.so.${LIBsvn_swig_py-1_VERSION}
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
@@ -50,7 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/libsvn/repos.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/wc.py
 lib/python${MODPY_VERSION}/site-packages/svn/
 lib/python${MODPY_VERSION}/site-packages/svn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/svn/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc

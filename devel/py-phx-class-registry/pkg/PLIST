@@ -1,7 +1,7 @@
 @pkgpath devel/py-phx-class-registry,python3
 lib/python${MODPY_VERSION}/site-packages/class_registry/
 lib/python${MODPY_VERSION}/site-packages/class_registry/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}auto_register.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

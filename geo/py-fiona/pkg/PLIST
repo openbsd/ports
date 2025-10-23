@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/licenses
 lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/fiona/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -67,12 +67,12 @@ lib/python${MODPY_VERSION}/site-packages/fiona/_path.py
 lib/python${MODPY_VERSION}/site-packages/fiona/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/fiona/_transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/snuggs.py
@@ -90,7 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/fiona/errors.py
 lib/python${MODPY_VERSION}/site-packages/fiona/features.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}bounds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

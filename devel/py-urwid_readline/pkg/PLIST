@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/urwid_readline-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/urwid_readline-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/urwid_readline-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urwid_readline/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urwid_readline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/urwid_readline/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urwid_readline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urwid_readline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urwid_readline/${MODPY_PYCACHE}readline_edit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

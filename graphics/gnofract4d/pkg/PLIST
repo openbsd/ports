@@ -1,7 +1,7 @@
 bin/gnofract4d
 lib/python${MODPY_VERSION}/site-packages/fract4d/
 lib/python${MODPY_VERSION}/site-packages/fract4d/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fract4d/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fract4d/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fract4d/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fract4d/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fract4d/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,7 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/fract4d/messages.py
 lib/python${MODPY_VERSION}/site-packages/fract4d/options.py
 lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/
 lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fract4d_compiler/${MODPY_PYCACHE}absyn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -120,7 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/fract4dgui/AVIGen.py
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/DlgAdvOpt.py
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/PNGGen.py
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fract4dgui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fract4dgui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/${MODPY_PYCACHE}AVIGen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/${MODPY_PYCACHE}AVIGen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fract4dgui/${MODPY_PYCACHE}DlgAdvOpt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

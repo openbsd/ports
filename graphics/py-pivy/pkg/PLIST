@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pivy-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pivy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pivy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}coin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/${MODPY_PYCACHE}utils.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/pivy/coin.py
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/graphics/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/graphics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/graphics/plot.py
 lib/python${MODPY_VERSION}/site-packages/pivy/graphics/viewer.py
 lib/python${MODPY_VERSION}/site-packages/pivy/gui/
 lib/python${MODPY_VERSION}/site-packages/pivy/gui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/gui/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/quarter/QuarterWidget.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/SensorManager.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/SignalThread.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/quarter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/quarter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/${MODPY_PYCACHE}ContextMenu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/${MODPY_PYCACHE}ContextMenu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/${MODPY_PYCACHE}ImageReader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/DeviceManager.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/KeyboardHandler.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/MouseHandler.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/${MODPY_PYCACHE}DeviceHandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/${MODPY_PYCACHE}DeviceHandler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/devices/${MODPY_PYCACHE}DeviceManager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/DragDropHand
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/EventHandler.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/EventManager.py
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/${MODPY_PYCACHE}DragDropHandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/${MODPY_PYCACHE}DragDropHandler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/eventhandlers/${MODPY_PYCACHE}EventHandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/PyQuarterWidgetPlugin.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/${MODPY_PYCACHE}PyQuarterWidgetPlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pivy/quarter/plugins/designer/python/${MODPY_PYCACHE}PyQuarterWidgetPlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pivy/sogui.py

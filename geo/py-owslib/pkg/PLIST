@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/owslib-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/owslib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/owslib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}wps.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}wps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/${MODPY_PYCACHE}csw2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,7 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/csw2.py
 lib/python${MODPY_VERSION}/site-packages/owslib/catalogue/csw3.py
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs100.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/dif.py
 lib/python${MODPY_VERSION}/site-packages/owslib/etree.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -138,7 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/iso3.py
 lib/python${MODPY_VERSION}/site-packages/owslib/iso_che.py
 lib/python${MODPY_VERSION}/site-packages/owslib/map/
 lib/python${MODPY_VERSION}/site-packages/owslib/map/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/map/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/map/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/map/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/map/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/map/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -153,7 +153,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/map/wms130.py
 lib/python${MODPY_VERSION}/site-packages/owslib/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}connectedsystems.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -181,7 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/opensearch.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ows.py
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}atom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,7 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/geojson.py
 lib/python${MODPY_VERSION}/site-packages/owslib/sos.py
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/swe/${MODPY_PYCACHE}common.${MOD
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/common.py
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/${MODPY_PYCACHE}om.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -224,7 +224,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/sos200.py
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/observation/waterml2.py
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/sensor/${MODPY_PYCACHE}sml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -234,7 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/tms.py
 lib/python${MODPY_VERSION}/site-packages/owslib/util.py
 lib/python${MODPY_VERSION}/site-packages/owslib/waterml/
 lib/python${MODPY_VERSION}/site-packages/owslib/waterml/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/waterml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/waterml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/waterml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/waterml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/waterml/${MODPY_PYCACHE}wml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

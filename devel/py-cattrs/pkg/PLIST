@@ -1,6 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/cattr/
 lib/python${MODPY_VERSION}/site-packages/cattr/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattr/${MODPY_PYCACHE}converters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/cattr/errors.py
 lib/python${MODPY_VERSION}/site-packages/cattr/gen.py
 lib/python${MODPY_VERSION}/site-packages/cattr/preconf/
 lib/python${MODPY_VERSION}/site-packages/cattr/preconf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattr/preconf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattr/preconf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattr/preconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattr/preconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattr/preconf/${MODPY_PYCACHE}bson.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/cattrs-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/cattrs-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cattrs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/errors.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/fns.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattrs/gen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattrs/gen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/gen/${MODPY_PYCACHE}_consts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,7 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/gen/typeddicts.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/literals.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/${MODPY_PYCACHE}bson.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,7 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/cattrs/preconf/ujson.py
 lib/python${MODPY_VERSION}/site-packages/cattrs/py.typed
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cattrs/strategies/${MODPY_PYCACHE}_class_methods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

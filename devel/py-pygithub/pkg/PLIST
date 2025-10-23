@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/github/WorkflowJob.py
 lib/python${MODPY_VERSION}/site-packages/github/WorkflowRun.py
 lib/python${MODPY_VERSION}/site-packages/github/WorkflowStep.py
 lib/python${MODPY_VERSION}/site-packages/github/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}AccessToken.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}AccessToken.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}AdvisoryBase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

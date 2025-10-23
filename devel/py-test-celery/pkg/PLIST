@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -16,7 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}plugin.${
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/api/worker.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/defaults.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,12 +58,12 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/fixtures/worker.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/plugin.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/defaul
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/localstack/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -97,7 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/default
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/memcached/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/defaults
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/rabbitmq/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,7 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -137,7 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/def
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/backend/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/broker/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/redis/defaults.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/Dockerfile
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PYCACHE}container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -170,7 +170,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/container.py
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_celery/vendors/worker/content/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

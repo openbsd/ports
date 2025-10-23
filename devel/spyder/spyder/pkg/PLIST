@@ -13,7 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}.dist-info/license
 lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}.dist-info/licenses/NOTICE.txt
 lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}dependencies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}requirements.${M
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,7 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/_version.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/asyncdispatcher.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/fonts.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/${MODPY_PYCACHE}_confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/mixins.p
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugin_registration/registry.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/${MODPY_PYCACHE}_old_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/plugins/tests.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/preferences.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/shellconnect/${MODPY_PYCACHE}main_widget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,7 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/translations.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/${MODPY_PYCACHE}auxiliary_widgets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/widgets/toolbars.py
 lib/python${MODPY_VERSION}/site-packages/spyder/app/
 lib/python${MODPY_VERSION}/site-packages/spyder/app/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/app/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/app/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/app/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/app/${MODPY_PYCACHE}cli_options.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -172,7 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/app/start.py
 lib/python${MODPY_VERSION}/site-packages/spyder/app/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/config/
 lib/python${MODPY_VERSION}/site-packages/spyder/config/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/config/${MODPY_PYCACHE}appearance.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -398,14 +398,14 @@ lib/python${MODPY_VERSION}/site-packages/spyder/locale/zh_CN/LC_MESSAGES/spyder.
 lib/python${MODPY_VERSION}/site-packages/spyder/pil_patch.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/${MODPY_PYCACHE}confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -419,7 +419,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/appearance/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -436,7 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -463,7 +463,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/application/widgets/stat
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/base.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -483,12 +483,12 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/decorators.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/${MODPY_PYCACHE}actor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -502,7 +502,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fal
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/fallback/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -514,7 +514,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/client.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/conftabs/${MODPY_PYCACHE}advanced.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -536,7 +536,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/provider.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -556,14 +556,14 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/providers/workspace.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/common/${MODPY_PYCACHE}consumer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -575,7 +575,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/main.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/${MODPY_PYCACHE}consumer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -586,7 +586,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/stdio/producer.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/${MODPY_PYCACHE}consumer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -597,7 +597,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/transport/tcp/producer.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/${MODPY_PYCACHE}messagebox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -611,7 +611,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/lan
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/languageserver/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/${MODPY_PYCACHE}actor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -628,7 +628,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/sni
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/trie.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/${MODPY_PYCACHE}snippetsconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -636,7 +636,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/sni
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/completion/providers/snippets/widgets/snippetsconfig.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -647,7 +647,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/${MODPY_PYCACHE}ansihandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -658,7 +658,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/ansihandle
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/utils/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -675,7 +675,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/main_wid
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/console/widgets/shell.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -688,7 +688,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/confpage.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/${MODPY_PYCACHE}debuggerpanel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -697,7 +697,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/panels/debugger
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_PYCACHE}breakpointsmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -705,7 +705,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/utils/breakpointsmanager.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/${MODPY_PYCACHE}breakpoint_table_view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -719,7 +719,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/framesb
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/debugger/widgets/main_widget.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -728,7 +728,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}p
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -752,7 +752,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/api/run.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/confpage.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/${MODPY_PYCACHE}closebrackets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -772,7 +772,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/manage
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/extensions/snippets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/${MODPY_PYCACHE}classfunctiondropdown.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -802,7 +802,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/panels/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/${MODPY_PYCACHE}autosave.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -831,7 +831,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/languages.p
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/utils/switcher_manager.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/${MODPY_PYCACHE}autosaveerror.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -860,7 +860,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/autosavee
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/base.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeeditor/${MODPY_PYCACHE}codeeditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -875,7 +875,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/codeedito
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/completion.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/editorstack/${MODPY_PYCACHE}editorstack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -894,7 +894,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/tabswitch
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/editor/widgets/window.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -908,7 +908,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/confpage.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/${MODPY_PYCACHE}explorer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -928,7 +928,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/remote_
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/explorer/widgets/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -939,7 +939,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/${MODPY_PYCACHE}run_conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -947,7 +947,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/externalterminal/widgets/run_conf.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -958,7 +958,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/${MODPY_PYCACHE}combobox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -975,7 +975,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/resu
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/findinfiles/widgets/search_thread.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -992,7 +992,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2837,7 +2837,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/utils/tutorial.rst
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/help/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2854,7 +2854,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/history/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2871,7 +2871,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/assets/te
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/assets/templates/loading.html
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/comms/${MODPY_PYCACHE}kernelcomm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2881,7 +2881,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/confpage.
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2904,7 +2904,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/sty
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/utils/websocket_client.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2948,7 +2948,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/s
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/ipythonconsole/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2965,7 +2965,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/layouts.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_PYCACHE}dialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2973,7 +2973,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/layout/widgets/dialog.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/${MODPY_PYCACHE}confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2987,7 +2987,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/containe
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/maininterpreter/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2998,7 +2998,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/mainmenu/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3019,7 +3019,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/static/css/li
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/onlinehelp/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3039,7 +3039,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/plugin.p
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/outlineexplorer/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3050,7 +3050,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/${MODPY_PYCACHE}figurebrowser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3061,7 +3061,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/figurebrow
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/plots/widgets/main_widget.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3072,7 +3072,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/${MODPY_PYCACHE}configdialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3083,7 +3083,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/conf
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/preferences/widgets/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3097,7 +3097,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/confpage.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/${MODPY_PYCACHE}main_widget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3108,7 +3108,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/main_wi
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/profiler/widgets/profiler_data_tree.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3119,7 +3119,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3133,7 +3133,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/cookie.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/utils/watcher.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/${MODPY_PYCACHE}main_widget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3150,7 +3150,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/project
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/projects/widgets/qcookiecutter.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3172,7 +3172,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pylint/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3189,7 +3189,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MODPY_PYCACHE}pathmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3197,14 +3197,14 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/${MOD
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/pythonpath/widgets/pathmanager.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3213,7 +3213,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3227,7 +3227,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/manager/ssh.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/modules/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3244,7 +3244,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/api/ssh.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MODPY_PYCACHE}installation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3252,7 +3252,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/${MOD
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/utils/installation.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/${MODPY_PYCACHE}connectiondialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3269,7 +3269,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/con
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/remoteclient/widgets/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3292,7 +3292,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/run/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3309,7 +3309,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/${MODPY_PYCACHE}summary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3320,7 +3320,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/summar
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/shortcuts/widgets/table.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/${MODPY_PYCACHE}confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3334,7 +3334,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3342,7 +3342,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/${MODP
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/statusbar/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3359,7 +3359,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3373,7 +3373,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/proxymo
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/switcher/widgets/switcher.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3387,7 +3387,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/toolbar/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3407,7 +3407,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/tours.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/tours/widgets.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3426,7 +3426,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3438,7 +3438,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/up
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/workers.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3452,7 +3452,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/confpag
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/${MODPY_PYCACHE}arrayeditor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3485,7 +3485,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objecteditor.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/objectexplorer/${MODPY_PYCACHE}attribute_model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3510,7 +3510,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/variableexplorer/widgets/texteditor.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/workingdirectory/${MODPY_PYCACHE}confpage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3526,7 +3526,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/pyplot.py
 lib/python${MODPY_VERSION}/site-packages/spyder/requirements.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/${MODPY_PYCACHE}bsdsocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3598,7 +3598,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/README.rst
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}lockfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3606,7 +3606,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/${MODPY_PYCACHE}l
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3617,7 +3617,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/check
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/binaryornot/helpers.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/external/dafsa/${MODPY_PYCACHE}dafsa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3630,7 +3630,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/image_path_manager.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/installers.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/introspection/${MODPY_PYCACHE}module_completion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3645,7 +3645,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/qthelpers.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/registries.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/snippets/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3671,7 +3671,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/utils/windows.py
 lib/python${MODPY_VERSION}/site-packages/spyder/utils/workers.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/${MODPY_PYCACHE}arraybuilder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3734,7 +3734,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/findreplace.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/github/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3758,4 +3758,4 @@ lib/python${MODPY_VERSION}/site-packages/spyder/windows/spyder_light.ico
 share/applications/spyder.desktop
 share/icons/spyder.png
 @tag update-desktop-database
-${MODPY_COMMENT}share/metainfo/org.spyder_ide.spyder.appdata.xml
+share/metainfo/org.spyder_ide.spyder.appdata.xml

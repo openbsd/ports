@@ -104,7 +104,7 @@ share/inkscape/extensions/Poly3DObjects/trunc_dodec.obj
 share/inkscape/extensions/Poly3DObjects/trunc_icos.obj
 share/inkscape/extensions/Poly3DObjects/trunc_oct.obj
 share/inkscape/extensions/Poly3DObjects/trunc_tet.obj
-${MODPY_COMMENT}share/inkscape/extensions/${MODPY_PYCACHE}/
+share/inkscape/extensions/${MODPY_PYCACHE}/
 share/inkscape/extensions/${MODPY_PYCACHE}addnodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/${MODPY_PYCACHE}addnodes.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/${MODPY_PYCACHE}cgm_enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -526,7 +526,7 @@ share/inkscape/extensions/barcode/Rm4scc.py
 share/inkscape/extensions/barcode/Upca.py
 share/inkscape/extensions/barcode/Upce.py
 share/inkscape/extensions/barcode/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/barcode/${MODPY_PYCACHE}/
+share/inkscape/extensions/barcode/${MODPY_PYCACHE}/
 share/inkscape/extensions/barcode/${MODPY_PYCACHE}Base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/barcode/${MODPY_PYCACHE}Base.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/barcode/${MODPY_PYCACHE}BaseEan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -621,7 +621,7 @@ share/inkscape/extensions/doc_ai_convert.py
 share/inkscape/extensions/docinfo.inx
 share/inkscape/extensions/docinfo.py
 share/inkscape/extensions/docs/
-${MODPY_COMMENT}share/inkscape/extensions/docs/${MODPY_PYCACHE}/
+share/inkscape/extensions/docs/${MODPY_PYCACHE}/
 share/inkscape/extensions/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/docs/${MODPY_PYCACHE}poetry-parse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -886,7 +886,7 @@ share/inkscape/extensions/ink2canvas.inx
 share/inkscape/extensions/ink2canvas.py
 share/inkscape/extensions/ink2canvas_lib/
 share/inkscape/extensions/ink2canvas_lib/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/ink2canvas_lib/${MODPY_PYCACHE}/
+share/inkscape/extensions/ink2canvas_lib/${MODPY_PYCACHE}/
 share/inkscape/extensions/ink2canvas_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/ink2canvas_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/ink2canvas_lib/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -897,7 +897,7 @@ share/inkscape/extensions/ink2canvas_lib/canvas.py
 share/inkscape/extensions/ink2canvas_lib/svg.py
 share/inkscape/extensions/inkex/
 share/inkscape/extensions/inkex/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -936,7 +936,7 @@ share/inkscape/extensions/inkex/colors.py
 share/inkscape/extensions/inkex/command.py
 share/inkscape/extensions/inkex/css/
 share/inkscape/extensions/inkex/css/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/css/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/css/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/css/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/css/${MODPY_PYCACHE}compiler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -948,7 +948,7 @@ share/inkscape/extensions/inkex/css/parser.py
 share/inkscape/extensions/inkex/deprecated/
 share/inkscape/extensions/inkex/deprecated-simple/
 share/inkscape/extensions/inkex/deprecated-simple/README.rst
-${MODPY_COMMENT}share/inkscape/extensions/inkex/deprecated-simple/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/deprecated-simple/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/deprecated-simple/${MODPY_PYCACHE}bezmisc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/deprecated-simple/${MODPY_PYCACHE}bezmisc.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/deprecated-simple/${MODPY_PYCACHE}cspsubdiv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -974,7 +974,7 @@ share/inkscape/extensions/inkex/deprecated-simple/simplepath.py
 share/inkscape/extensions/inkex/deprecated-simple/simplestyle.py
 share/inkscape/extensions/inkex/deprecated-simple/simpletransform.py
 share/inkscape/extensions/inkex/deprecated/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/deprecated/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/deprecated/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/deprecated/${MODPY_PYCACHE}deprecatedeffect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -988,7 +988,7 @@ share/inkscape/extensions/inkex/deprecated/main.py
 share/inkscape/extensions/inkex/deprecated/meta.py
 share/inkscape/extensions/inkex/elements/
 share/inkscape/extensions/inkex/elements/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/elements/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1030,7 +1030,7 @@ share/inkscape/extensions/inkex/elements/_utils.py
 share/inkscape/extensions/inkex/extensions.py
 share/inkscape/extensions/inkex/gui/
 share/inkscape/extensions/inkex/gui/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/gui/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/gui/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/gui/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1054,7 +1054,7 @@ share/inkscape/extensions/inkex/gui/window.py
 share/inkscape/extensions/inkex/interfaces/
 share/inkscape/extensions/inkex/interfaces/IElement.py
 share/inkscape/extensions/inkex/interfaces/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/interfaces/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/interfaces/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/interfaces/${MODPY_PYCACHE}IElement.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/interfaces/${MODPY_PYCACHE}IElement.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/interfaces/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1063,7 +1063,7 @@ share/inkscape/extensions/inkex/inx.py
 share/inkscape/extensions/inkex/localization.py
 share/inkscape/extensions/inkex/paths/
 share/inkscape/extensions/inkex/paths/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/paths/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/paths/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/paths/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/paths/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/paths/${MODPY_PYCACHE}arc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1090,7 +1090,7 @@ share/inkscape/extensions/inkex/py.typed
 share/inkscape/extensions/inkex/styles.py
 share/inkscape/extensions/inkex/tester/
 share/inkscape/extensions/inkex/tester/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkex/tester/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkex/tester/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkex/tester/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkex/tester/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkex/tester/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1127,12 +1127,12 @@ share/inkscape/extensions/inkex/utils.py
 share/inkscape/extensions/inkman/
 share/inkscape/extensions/inkman/inkman/
 share/inkscape/extensions/inkman/inkman/LICENSE.txt
-${MODPY_COMMENT}share/inkscape/extensions/inkman/inkman/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkman/inkman/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkman/inkman/${MODPY_PYCACHE}manage_extensions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkman/inkman/${MODPY_PYCACHE}manage_extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkman/inkman/inkman/
 share/inkscape/extensions/inkman/inkman/inkman/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkman/inkman/inkman/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkman/inkman/inkman/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkman/inkman/inkman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkman/inkman/inkman/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkman/inkman/inkman/${MODPY_PYCACHE}archive.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1155,7 +1155,7 @@ share/inkscape/extensions/inkman/inkman/inkman/archive.py
 share/inkscape/extensions/inkman/inkman/inkman/backfoot.py
 share/inkscape/extensions/inkman/inkman/inkman/data/
 share/inkscape/extensions/inkman/inkman/inkman/data/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkman/inkman/inkman/data/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkman/inkman/inkman/data/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkman/inkman/inkman/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkman/inkman/inkman/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkman/inkman/inkman/data/gui.ui
@@ -1163,7 +1163,7 @@ share/inkscape/extensions/inkman/inkman/inkman/data/info.ui
 share/inkscape/extensions/inkman/inkman/inkman/data/package.json
 share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/
 share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/core_icon.svg
@@ -1180,7 +1180,7 @@ share/inkscape/extensions/inkman/inkman/inkman/data/pixmaps/star-some.svg
 share/inkscape/extensions/inkman/inkman/inkman/factory.py
 share/inkscape/extensions/inkman/inkman/inkman/gui/
 share/inkscape/extensions/inkman/inkman/inkman/gui/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/inkman/inkman/inkman/gui/${MODPY_PYCACHE}/
+share/inkscape/extensions/inkman/inkman/inkman/gui/${MODPY_PYCACHE}/
 share/inkscape/extensions/inkman/inkman/inkman/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/inkman/inkman/inkman/gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/inkman/inkman/inkman/gui/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1266,7 +1266,7 @@ share/inkscape/extensions/nicechart.py
 share/inkscape/extensions/other/
 share/inkscape/extensions/other/clipart/
 share/inkscape/extensions/other/clipart/LICENSE.txt
-${MODPY_COMMENT}share/inkscape/extensions/other/clipart/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/clipart/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/clipart/${MODPY_PYCACHE}import_sources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/clipart/${MODPY_PYCACHE}import_sources.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/clipart/${MODPY_PYCACHE}import_web_image.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1300,7 +1300,7 @@ share/inkscape/extensions/other/clipart/licenses/perm-pd.svg
 share/inkscape/extensions/other/clipart/licenses/perm-sa.svg
 share/inkscape/extensions/other/clipart/licenses/unknown.svg
 share/inkscape/extensions/other/clipart/sources/
-${MODPY_COMMENT}share/inkscape/extensions/other/clipart/sources/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/clipart/sources/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/clipart/sources/${MODPY_PYCACHE}bioicons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/clipart/sources/${MODPY_PYCACHE}bioicons.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/clipart/sources/${MODPY_PYCACHE}inkscape-web.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1330,7 +1330,7 @@ share/inkscape/extensions/other/extension-afdesign/inkaf/
 share/inkscape/extensions/other/extension-afdesign/inkaf.inx
 share/inkscape/extensions/other/extension-afdesign/inkaf/__init__.py
 share/inkscape/extensions/other/extension-afdesign/inkaf/__main__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-afdesign/inkaf/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-afdesign/inkaf/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-afdesign/inkaf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-afdesign/inkaf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-afdesign/inkaf/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1345,7 +1345,7 @@ share/inkscape/extensions/other/extension-afdesign/inkaf/afinput.py
 share/inkscape/extensions/other/extension-afdesign/inkaf/extract.py
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-afdesign/inkaf/parser/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-afdesign/inkaf/parser/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/${MODPY_PYCACHE}consts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1374,7 +1374,7 @@ share/inkscape/extensions/other/extension-afdesign/inkaf/parser/types.py
 share/inkscape/extensions/other/extension-afdesign/inkaf/parser/utils.py
 share/inkscape/extensions/other/extension-afdesign/inkaf/svg/
 share/inkscape/extensions/other/extension-afdesign/inkaf/svg/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-afdesign/inkaf/svg/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-afdesign/inkaf/svg/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-afdesign/inkaf/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-afdesign/inkaf/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-afdesign/inkaf/svg/${MODPY_PYCACHE}adjustment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1415,7 +1415,7 @@ share/inkscape/extensions/other/extension-curve/inkvn-curve.inx
 share/inkscape/extensions/other/extension-curve/inkvn.inx
 share/inkscape/extensions/other/extension-curve/inkvn/__init__.py
 share/inkscape/extensions/other/extension-curve/inkvn/__main__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1426,7 +1426,7 @@ share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}vninput.${
 share/inkscape/extensions/other/extension-curve/inkvn/${MODPY_PYCACHE}vninput.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-curve/inkvn/elements/
 share/inkscape/extensions/other/extension-curve/inkvn/elements/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-curve/inkvn/elements/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-curve/inkvn/elements/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-curve/inkvn/elements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-curve/inkvn/elements/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-curve/inkvn/elements/${MODPY_PYCACHE}artboard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1455,7 +1455,7 @@ share/inkscape/extensions/other/extension-curve/inkvn/elements/styles.py
 share/inkscape/extensions/other/extension-curve/inkvn/elements/text.py
 share/inkscape/extensions/other/extension-curve/inkvn/reader/
 share/inkscape/extensions/other/extension-curve/inkvn/reader/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-curve/inkvn/reader/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-curve/inkvn/reader/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-curve/inkvn/reader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-curve/inkvn/reader/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-curve/inkvn/reader/${MODPY_PYCACHE}decode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1475,7 +1475,7 @@ share/inkscape/extensions/other/extension-curve/inkvn/reader/read.py
 share/inkscape/extensions/other/extension-curve/inkvn/reader/text.py
 share/inkscape/extensions/other/extension-curve/inkvn/svg/
 share/inkscape/extensions/other/extension-curve/inkvn/svg/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-curve/inkvn/svg/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-curve/inkvn/svg/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-curve/inkvn/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-curve/inkvn/svg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-curve/inkvn/svg/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1489,7 +1489,7 @@ share/inkscape/extensions/other/extension-xaml/docs/
 share/inkscape/extensions/other/extension-xaml/docs/svg2xaml.rst
 share/inkscape/extensions/other/extension-xaml/inkxaml/
 share/inkscape/extensions/other/extension-xaml/inkxaml/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}svg2xaml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1500,7 +1500,7 @@ share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}xamlobjec
 share/inkscape/extensions/other/extension-xaml/inkxaml/${MODPY_PYCACHE}xamlobjects.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-xaml/inkxaml/export/
 share/inkscape/extensions/other/extension-xaml/inkxaml/export/__init__.py
-${MODPY_COMMENT}share/inkscape/extensions/other/extension-xaml/inkxaml/export/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/extension-xaml/inkxaml/export/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/extension-xaml/inkxaml/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/extension-xaml/inkxaml/export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/extension-xaml/inkxaml/export/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1537,7 +1537,7 @@ share/inkscape/extensions/other/extension-xaml/inkxaml/xaml2svg/transform.xsl
 share/inkscape/extensions/other/extension-xaml/inkxaml/xamlobjects.py
 share/inkscape/extensions/other/gcodetools/
 share/inkscape/extensions/other/gcodetools/LICENSE.txt
-${MODPY_COMMENT}share/inkscape/extensions/other/gcodetools/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/gcodetools/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/gcodetools/${MODPY_PYCACHE}gcodetools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/gcodetools/${MODPY_PYCACHE}gcodetools.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/gcodetools/gcodetools.py
@@ -1552,7 +1552,7 @@ share/inkscape/extensions/other/gcodetools/gcodetools_path_to_gcode.inx
 share/inkscape/extensions/other/gcodetools/gcodetools_prepare_path_for_plasma.inx
 share/inkscape/extensions/other/gcodetools/gcodetools_tools_library.inx
 share/inkscape/extensions/other/templates/
-${MODPY_COMMENT}share/inkscape/extensions/other/templates/${MODPY_PYCACHE}/
+share/inkscape/extensions/other/templates/${MODPY_PYCACHE}/
 share/inkscape/extensions/other/templates/${MODPY_PYCACHE}template_shape_prefab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/other/templates/${MODPY_PYCACHE}template_shape_prefab.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/other/templates/icons/
@@ -1727,7 +1727,7 @@ share/inkscape/extensions/text_titlecase.py
 share/inkscape/extensions/text_uppercase.inx
 share/inkscape/extensions/text_uppercase.py
 share/inkscape/extensions/tools/
-${MODPY_COMMENT}share/inkscape/extensions/tools/${MODPY_PYCACHE}/
+share/inkscape/extensions/tools/${MODPY_PYCACHE}/
 share/inkscape/extensions/tools/${MODPY_PYCACHE}generate_argparse_conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/inkscape/extensions/tools/${MODPY_PYCACHE}generate_argparse_conf.${MODPY_PYC_MAGIC_TAG}pyc
 share/inkscape/extensions/tools/generate_argparse_conf.py

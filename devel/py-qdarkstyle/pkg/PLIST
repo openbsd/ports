@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/qdarkstyle-${MODPY_DISTV}.dist-info/lic
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/qdarkstyle/${MODPY_PYCACHE}palette.${MO
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/colorsystem.py
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/${MODPY_PYCACHE}darkstyle_rc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -251,14 +251,14 @@ lib/python${MODPY_VERSION}/site-packages/qdarkstyle/dark/rc/window_undock_presse
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/dw_buttons.ui
@@ -272,7 +272,7 @@ lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/dw_widgets.ui
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/example/ui/mw_menus.ui
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/light/${MODPY_PYCACHE}lightstyle_rc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -528,7 +528,7 @@ lib/python${MODPY_VERSION}/site-packages/qdarkstyle/svg/window_undock.svg
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qdarkstyle/utils/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

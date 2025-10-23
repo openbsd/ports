@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/pyupgrade-${MODPY_DISTV}.dist-info/lice
 lib/python${MODPY_VERSION}/site-packages/pyupgrade-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyupgrade/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyupgrade/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/pyupgrade/_data.py
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_main.py
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyupgrade/_plugins/${MODPY_PYCACHE}collections_abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_Signal.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_Simulation.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_Waiter.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_Cosimulation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_Cosimulation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_ShadowSignal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_visitors.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_VHDLNameValidation.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_VHDLNameValidation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_VHDLNameValidation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

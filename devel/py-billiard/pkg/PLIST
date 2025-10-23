@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/billiard-${MODPY_DISTV}.dist-info/licen
 lib/python${MODPY_VERSION}/site-packages/billiard-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/billiard-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/billiard/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/billiard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/billiard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/billiard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/billiard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/billiard/${MODPY_PYCACHE}_ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/billiard/connection.py
 lib/python${MODPY_VERSION}/site-packages/billiard/context.py
 lib/python${MODPY_VERSION}/site-packages/billiard/dummy/
 lib/python${MODPY_VERSION}/site-packages/billiard/dummy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/billiard/dummy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/billiard/dummy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/billiard/dummy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/billiard/dummy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/billiard/dummy/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

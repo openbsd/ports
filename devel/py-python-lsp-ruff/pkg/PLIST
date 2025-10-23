@@ -1,6 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/
 lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylsp_ruff/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -273,7 +273,7 @@ share/ibus/keymaps/kr
 share/ibus/keymaps/modifiers
 share/ibus/keymaps/us
 share/ibus/setup/
-${MODPY_COMMENT}share/ibus/setup/${MODPY_PYCACHE}/
+share/ibus/setup/${MODPY_PYCACHE}/
 share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

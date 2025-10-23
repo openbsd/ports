@@ -1,6 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/debian/
 lib/python${MODPY_VERSION}/site-packages/debian/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}_arch_table.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/debian/${MODPY_PYCACHE}watch.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/debian/_arch_table.py
 lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/
 lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debian/_deb822_repro/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

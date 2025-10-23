@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zipp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}_functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/zipp/${MODPY_PYCACHE}glob.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/zipp/_functools.py
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}overlay.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

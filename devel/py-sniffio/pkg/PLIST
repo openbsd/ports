@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/licens
 lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/licenses/LICENSE.MIT
 lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sniffio/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,7 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}_version.${MODP
 lib/python${MODPY_VERSION}/site-packages/sniffio/_impl.py
 lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/
 lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sniffio/_tests/${MODPY_PYCACHE}test_sniffio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -50,7 +50,7 @@ share/sigil/iconthemes/main.rcc
 share/sigil/iconthemes/material.rcc
 share/sigil/plugin_launchers/
 share/sigil/plugin_launchers/python/
-${MODPY_COMMENT}share/sigil/plugin_launchers/python/${MODPY_PYCACHE}/
+share/sigil/plugin_launchers/python/${MODPY_PYCACHE}/
 share/sigil/plugin_launchers/python/${MODPY_PYCACHE}bookcontainer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sigil/plugin_launchers/python/${MODPY_PYCACHE}bookcontainer.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/plugin_launchers/python/${MODPY_PYCACHE}compatibility_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -111,7 +111,7 @@ share/sigil/plugin_launchers/python/sigil_bs4/
 share/sigil/plugin_launchers/python/sigil_bs4/AUTHORS.txt
 share/sigil/plugin_launchers/python/sigil_bs4/COPYING.txt
 share/sigil/plugin_launchers/python/sigil_bs4/__init__.py
-${MODPY_COMMENT}share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}/
+share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}/
 share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}dammit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +122,7 @@ share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}element.${MODPY_PY
 share/sigil/plugin_launchers/python/sigil_bs4/${MODPY_PYCACHE}element.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/plugin_launchers/python/sigil_bs4/builder/
 share/sigil/plugin_launchers/python/sigil_bs4/builder/__init__.py
-${MODPY_COMMENT}share/sigil/plugin_launchers/python/sigil_bs4/builder/${MODPY_PYCACHE}/
+share/sigil/plugin_launchers/python/sigil_bs4/builder/${MODPY_PYCACHE}/
 share/sigil/plugin_launchers/python/sigil_bs4/builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sigil/plugin_launchers/python/sigil_bs4/builder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/plugin_launchers/python/sigil_bs4/builder/${MODPY_PYCACHE}_html5lib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -148,7 +148,7 @@ share/sigil/plugin_launchers/python/wrapper.py
 share/sigil/polyfills/
 share/sigil/polyfills/custom-mathjax.min.js
 share/sigil/python3lib/
-${MODPY_COMMENT}share/sigil/python3lib/${MODPY_PYCACHE}/
+share/sigil/python3lib/${MODPY_PYCACHE}/
 share/sigil/python3lib/${MODPY_PYCACHE}cssreformatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sigil/python3lib/${MODPY_PYCACHE}cssreformatter.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/python3lib/${MODPY_PYCACHE}diffstat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -220,7 +220,7 @@ share/sigil/python3lib/unidecode/LICENSE
 share/sigil/python3lib/unidecode/README.rst
 share/sigil/python3lib/unidecode/__init__.py
 share/sigil/python3lib/unidecode/__main__.py
-${MODPY_COMMENT}share/sigil/python3lib/unidecode/${MODPY_PYCACHE}/
+share/sigil/python3lib/unidecode/${MODPY_PYCACHE}/
 share/sigil/python3lib/unidecode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/sigil/python3lib/unidecode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sigil/python3lib/unidecode/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

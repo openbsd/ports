@@ -2345,7 +2345,7 @@ share/freeorion/default/python/AI/AIstate.py
 share/freeorion/default/python/AI/ColonisationAI.py
 share/freeorion/default/python/AI/CombatRatingsAI/
 share/freeorion/default/python/AI/CombatRatingsAI/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/CombatRatingsAI/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/CombatRatingsAI/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/CombatRatingsAI/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/CombatRatingsAI/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/CombatRatingsAI/${MODPY_PYCACHE}_fleet_combat_stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2377,7 +2377,7 @@ share/freeorion/default/python/AI/ResearchAI.py
 share/freeorion/default/python/AI/ResourcesAI.py
 share/freeorion/default/python/AI/ShipDesignAI.py
 share/freeorion/default/python/AI/TechsListsAI.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/${MODPY_PYCACHE}AIDependencies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/${MODPY_PYCACHE}AIDependencies.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/${MODPY_PYCACHE}AIFleetMission.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2437,7 +2437,7 @@ share/freeorion/default/python/AI/aistate_interface.py
 share/freeorion/default/python/AI/buildings.py
 share/freeorion/default/python/AI/character/
 share/freeorion/default/python/AI/character/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/character/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/character/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/character/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/character/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/character/${MODPY_PYCACHE}character_module.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2448,7 +2448,7 @@ share/freeorion/default/python/AI/character/character_module.py
 share/freeorion/default/python/AI/character/character_strings_module.py
 share/freeorion/default/python/AI/colonization/
 share/freeorion/default/python/AI/colonization/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/colonization/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/colonization/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/colonization/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/colonization/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/colonization/${MODPY_PYCACHE}calculate_influence.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2487,7 +2487,7 @@ share/freeorion/default/python/AI/colonization/rate_pilots.py
 share/freeorion/default/python/AI/empire/
 share/freeorion/default/python/AI/empire/README.md
 share/freeorion/default/python/AI/empire/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/empire/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/empire/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/empire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/empire/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/empire/${MODPY_PYCACHE}buildings_locations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2516,7 +2516,7 @@ share/freeorion/default/python/AI/empire/survey_lock.py
 share/freeorion/default/python/AI/empire/survey_universe.py
 share/freeorion/default/python/AI/expansion_plans/
 share/freeorion/default/python/AI/expansion_plans/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/expansion_plans/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/expansion_plans/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/expansion_plans/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/expansion_plans/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/expansion_plans/${MODPY_PYCACHE}expansion_plans_implementation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2529,7 +2529,7 @@ share/freeorion/default/python/AI/fleet_orders.py
 share/freeorion/default/python/AI/freeOrionAIInterface.pyi
 share/freeorion/default/python/AI/freeorion_tools/
 share/freeorion/default/python/AI/freeorion_tools/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/freeorion_tools/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/freeorion_tools/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/freeorion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/freeorion_tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/freeorion_tools/${MODPY_PYCACHE}_fleet_position.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2563,7 +2563,7 @@ share/freeorion/default/python/AI/freeorion_tools/bonus_calculation.py
 share/freeorion/default/python/AI/freeorion_tools/caching.py
 share/freeorion/default/python/AI/freeorion_tools/chat_handler/
 share/freeorion/default/python/AI/freeorion_tools/chat_handler/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/freeorion_tools/chat_handler/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/freeorion_tools/chat_handler/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/freeorion_tools/chat_handler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/freeorion_tools/chat_handler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/freeorion_tools/chat_handler/${MODPY_PYCACHE}base_chat_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2591,7 +2591,7 @@ share/freeorion/default/python/AI/freeorion_tools/lazy_initializer.py
 share/freeorion/default/python/AI/freeorion_tools/patch_interface.py
 share/freeorion/default/python/AI/freeorion_tools/statistics/
 share/freeorion/default/python/AI/freeorion_tools/statistics/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/freeorion_tools/statistics/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/freeorion_tools/statistics/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/freeorion_tools/statistics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/freeorion_tools/statistics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/freeorion_tools/statistics/${MODPY_PYCACHE}statistic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2603,7 +2603,7 @@ share/freeorion/default/python/AI/generate_orders.py
 share/freeorion/default/python/AI/pathfinding.py
 share/freeorion/default/python/AI/production/
 share/freeorion/default/python/AI/production/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/production/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/production/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/production/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/production/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/production/${MODPY_PYCACHE}_report.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2611,7 +2611,7 @@ share/freeorion/default/python/AI/production/${MODPY_PYCACHE}_report.${MODPY_PYC
 share/freeorion/default/python/AI/production/_report.py
 share/freeorion/default/python/AI/savegame_codec/
 share/freeorion/default/python/AI/savegame_codec/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/savegame_codec/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/savegame_codec/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/savegame_codec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/savegame_codec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/savegame_codec/${MODPY_PYCACHE}_decoder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2625,7 +2625,7 @@ share/freeorion/default/python/AI/savegame_codec/_definitions.py
 share/freeorion/default/python/AI/savegame_codec/_encoder.py
 share/freeorion/default/python/AI/ship_design/
 share/freeorion/default/python/AI/ship_design/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/ship_design/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/ship_design/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/ship_design/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/ship_design/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/ship_design/${MODPY_PYCACHE}_additional_specification.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2640,7 +2640,7 @@ share/freeorion/default/python/AI/ship_design/_ship_design_cache.py
 share/freeorion/default/python/AI/target.py
 share/freeorion/default/python/AI/turn_state/
 share/freeorion/default/python/AI/turn_state/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/turn_state/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/turn_state/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/turn_state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/turn_state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/turn_state/${MODPY_PYCACHE}_empire_resources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2657,7 +2657,7 @@ share/freeorion/default/python/AI/turn_state/_supply_state.py
 share/freeorion/default/python/AI/turn_state/design.py
 share/freeorion/default/python/AI/universe/
 share/freeorion/default/python/AI/universe/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}/
+share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}/
 share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}system_network.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2665,18 +2665,18 @@ share/freeorion/default/python/AI/universe/${MODPY_PYCACHE}system_network.${MODP
 share/freeorion/default/python/AI/universe/system_network.py
 share/freeorion/default/python/README.md
 share/freeorion/default/python/auth/
-${MODPY_COMMENT}share/freeorion/default/python/auth/${MODPY_PYCACHE}/
+share/freeorion/default/python/auth/${MODPY_PYCACHE}/
 share/freeorion/default/python/auth/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/auth/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/auth/auth.py
 share/freeorion/default/python/charting/
 share/freeorion/default/python/charting/README.md
-${MODPY_COMMENT}share/freeorion/default/python/charting/${MODPY_PYCACHE}/
+share/freeorion/default/python/charting/${MODPY_PYCACHE}/
 share/freeorion/default/python/charting/${MODPY_PYCACHE}streamlite_app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/charting/${MODPY_PYCACHE}streamlite_app.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/charting/log_parser/
 share/freeorion/default/python/charting/log_parser/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/charting/log_parser/${MODPY_PYCACHE}/
+share/freeorion/default/python/charting/log_parser/${MODPY_PYCACHE}/
 share/freeorion/default/python/charting/log_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/charting/log_parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/charting/log_parser/${MODPY_PYCACHE}collect_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2692,7 +2692,7 @@ share/freeorion/default/python/charting/log_parser/extract_data.py
 share/freeorion/default/python/charting/log_parser/file_reader.py
 share/freeorion/default/python/charting/log_parser/log_tokenizer.py
 share/freeorion/default/python/charting/log_parser/tests/
-${MODPY_COMMENT}share/freeorion/default/python/charting/log_parser/tests/${MODPY_PYCACHE}/
+share/freeorion/default/python/charting/log_parser/tests/${MODPY_PYCACHE}/
 share/freeorion/default/python/charting/log_parser/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/charting/log_parser/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/charting/log_parser/tests/${MODPY_PYCACHE}test_tokenizer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2703,7 +2703,7 @@ share/freeorion/default/python/charting/requirements_charts.txt
 share/freeorion/default/python/charting/streamlite_app.py
 share/freeorion/default/python/charting/tabs/
 share/freeorion/default/python/charting/tabs/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/charting/tabs/${MODPY_PYCACHE}/
+share/freeorion/default/python/charting/tabs/${MODPY_PYCACHE}/
 share/freeorion/default/python/charting/tabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/charting/tabs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/charting/tabs/${MODPY_PYCACHE}policies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2716,13 +2716,13 @@ share/freeorion/default/python/charting/tabs/policies.py
 share/freeorion/default/python/charting/tabs/stats.py
 share/freeorion/default/python/charting/tabs/widgets.py
 share/freeorion/default/python/chat/
-${MODPY_COMMENT}share/freeorion/default/python/chat/${MODPY_PYCACHE}/
+share/freeorion/default/python/chat/${MODPY_PYCACHE}/
 share/freeorion/default/python/chat/${MODPY_PYCACHE}chat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/chat/${MODPY_PYCACHE}chat.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/chat/chat.py
 share/freeorion/default/python/common/
 share/freeorion/default/python/common/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/common/${MODPY_PYCACHE}/
+share/freeorion/default/python/common/${MODPY_PYCACHE}/
 share/freeorion/default/python/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/common/${MODPY_PYCACHE}configure_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2746,7 +2746,7 @@ share/freeorion/default/python/common/listeners.py
 share/freeorion/default/python/common/option_tools.py
 share/freeorion/default/python/common/print_utils/
 share/freeorion/default/python/common/print_utils/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/common/print_utils/${MODPY_PYCACHE}/
+share/freeorion/default/python/common/print_utils/${MODPY_PYCACHE}/
 share/freeorion/default/python/common/print_utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/common/print_utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/common/print_utils/${MODPY_PYCACHE}_base_field.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2764,7 +2764,7 @@ share/freeorion/default/python/common/print_utils/_table.py
 share/freeorion/default/python/common/profiling.py
 share/freeorion/default/python/common/statistic_interface/
 share/freeorion/default/python/common/statistic_interface/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/common/statistic_interface/${MODPY_PYCACHE}/
+share/freeorion/default/python/common/statistic_interface/${MODPY_PYCACHE}/
 share/freeorion/default/python/common/statistic_interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/common/statistic_interface/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/common/statistic_interface/${MODPY_PYCACHE}_dump_value.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2783,7 +2783,7 @@ share/freeorion/default/python/common/timers.py
 share/freeorion/default/python/freeorion.pyi
 share/freeorion/default/python/handlers/
 share/freeorion/default/python/handlers/README.md
-${MODPY_COMMENT}share/freeorion/default/python/handlers/${MODPY_PYCACHE}/
+share/freeorion/default/python/handlers/${MODPY_PYCACHE}/
 share/freeorion/default/python/handlers/${MODPY_PYCACHE}inspect_freeOrionAIInterface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/handlers/${MODPY_PYCACHE}inspect_freeOrionAIInterface.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/handlers/${MODPY_PYCACHE}inspect_universe_generation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2798,7 +2798,7 @@ share/freeorion/default/python/pytest.ini
 share/freeorion/default/python/requirements-dev.txt
 share/freeorion/default/python/stub_generator/
 share/freeorion/default/python/stub_generator/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}/
+share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}/
 share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}generate_stub.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2810,7 +2810,7 @@ share/freeorion/default/python/stub_generator/${MODPY_PYCACHE}test_docs.${MODPY_
 share/freeorion/default/python/stub_generator/generate_stub.py
 share/freeorion/default/python/stub_generator/interface_inspector/
 share/freeorion/default/python/stub_generator/interface_inspector/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/stub_generator/interface_inspector/${MODPY_PYCACHE}/
+share/freeorion/default/python/stub_generator/interface_inspector/${MODPY_PYCACHE}/
 share/freeorion/default/python/stub_generator/interface_inspector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/stub_generator/interface_inspector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/stub_generator/interface_inspector/${MODPY_PYCACHE}class_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2834,7 +2834,7 @@ share/freeorion/default/python/stub_generator/interface_inspector/module_inspect
 share/freeorion/default/python/stub_generator/parse_docs.py
 share/freeorion/default/python/stub_generator/stub_generator/
 share/freeorion/default/python/stub_generator/stub_generator/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/stub_generator/stub_generator/${MODPY_PYCACHE}/
+share/freeorion/default/python/stub_generator/stub_generator/${MODPY_PYCACHE}/
 share/freeorion/default/python/stub_generator/stub_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/stub_generator/stub_generator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/stub_generator/stub_generator/${MODPY_PYCACHE}argument_name_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2853,7 +2853,7 @@ share/freeorion/default/python/stub_generator/stub_generator/argument_name_gener
 share/freeorion/default/python/stub_generator/stub_generator/class_generator.py
 share/freeorion/default/python/stub_generator/stub_generator/collection_classes/
 share/freeorion/default/python/stub_generator/stub_generator/collection_classes/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/stub_generator/stub_generator/collection_classes/${MODPY_PYCACHE}/
+share/freeorion/default/python/stub_generator/stub_generator/collection_classes/${MODPY_PYCACHE}/
 share/freeorion/default/python/stub_generator/stub_generator/collection_classes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/stub_generator/stub_generator/collection_classes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/stub_generator/stub_generator/collection_classes/${MODPY_PYCACHE}_collection_name_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2867,7 +2867,7 @@ share/freeorion/default/python/stub_generator/stub_generator/function_generator.
 share/freeorion/default/python/stub_generator/stub_generator/result_builder.py
 share/freeorion/default/python/stub_generator/stub_generator/rtype/
 share/freeorion/default/python/stub_generator/stub_generator/rtype/__init__.py
-${MODPY_COMMENT}share/freeorion/default/python/stub_generator/stub_generator/rtype/${MODPY_PYCACHE}/
+share/freeorion/default/python/stub_generator/stub_generator/rtype/${MODPY_PYCACHE}/
 share/freeorion/default/python/stub_generator/stub_generator/rtype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/stub_generator/stub_generator/rtype/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/stub_generator/stub_generator/rtype/${MODPY_PYCACHE}_function_mapping.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2892,7 +2892,7 @@ share/freeorion/default/python/stub_generator/stub_generator/test_resource_build
 share/freeorion/default/python/stub_generator/test_docs.py
 share/freeorion/default/python/tests/
 share/freeorion/default/python/tests/AI/
-${MODPY_COMMENT}share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}/
+share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}/
 share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_assertion_fails.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_assertion_fails.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_bonus_calculator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2918,7 +2918,7 @@ share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_system_network.${MO
 share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_tech_groups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/AI/${MODPY_PYCACHE}test_tech_groups.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/AI/character_test/
-${MODPY_COMMENT}share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}/
+share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}/
 share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}character_strings_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}character_strings_test.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}character_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2926,7 +2926,7 @@ share/freeorion/default/python/tests/AI/character_test/${MODPY_PYCACHE}character
 share/freeorion/default/python/tests/AI/character_test/character_strings_test.py
 share/freeorion/default/python/tests/AI/character_test/character_test.py
 share/freeorion/default/python/tests/AI/save_game_codec/
-${MODPY_COMMENT}share/freeorion/default/python/tests/AI/save_game_codec/${MODPY_PYCACHE}/
+share/freeorion/default/python/tests/AI/save_game_codec/${MODPY_PYCACHE}/
 share/freeorion/default/python/tests/AI/save_game_codec/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/AI/save_game_codec/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/AI/save_game_codec/${MODPY_PYCACHE}test_save_game_decoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2949,22 +2949,22 @@ share/freeorion/default/python/tests/AI/test_stats_writer.py
 share/freeorion/default/python/tests/AI/test_system_network.py
 share/freeorion/default/python/tests/AI/test_tech_groups.py
 share/freeorion/default/python/tests/README.md
-${MODPY_COMMENT}share/freeorion/default/python/tests/${MODPY_PYCACHE}/
+share/freeorion/default/python/tests/${MODPY_PYCACHE}/
 share/freeorion/default/python/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/common/
-${MODPY_COMMENT}share/freeorion/default/python/tests/common/${MODPY_PYCACHE}/
+share/freeorion/default/python/tests/common/${MODPY_PYCACHE}/
 share/freeorion/default/python/tests/common/${MODPY_PYCACHE}test_print_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/tests/common/${MODPY_PYCACHE}test_print_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/tests/common/test_print_utils.py
 share/freeorion/default/python/tests/conftest.py
 share/freeorion/default/python/turn_events/
-${MODPY_COMMENT}share/freeorion/default/python/turn_events/${MODPY_PYCACHE}/
+share/freeorion/default/python/turn_events/${MODPY_PYCACHE}/
 share/freeorion/default/python/turn_events/${MODPY_PYCACHE}turn_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/turn_events/${MODPY_PYCACHE}turn_events.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/turn_events/turn_events.py
 share/freeorion/default/python/universe_generation/
-${MODPY_COMMENT}share/freeorion/default/python/universe_generation/${MODPY_PYCACHE}/
+share/freeorion/default/python/universe_generation/${MODPY_PYCACHE}/
 share/freeorion/default/python/universe_generation/${MODPY_PYCACHE}empires.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/python/universe_generation/${MODPY_PYCACHE}empires.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/python/universe_generation/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3015,7 +3015,7 @@ share/freeorion/default/python/universe_generation/universe_tables.py
 share/freeorion/default/python/universe_generation/util.py
 share/freeorion/default/scripting/
 share/freeorion/default/scripting/README.md
-${MODPY_COMMENT}share/freeorion/default/scripting/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/${MODPY_PYCACHE}custom_sitreps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/${MODPY_PYCACHE}custom_sitreps.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/${MODPY_PYCACHE}game_rules.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3085,7 +3085,7 @@ share/freeorion/default/scripting/buildings/TERRAFORM.focs.txt
 share/freeorion/default/scripting/buildings/TRANSFORMER.focs.txt
 share/freeorion/default/scripting/buildings/TRANSLATOR.focs.txt
 share/freeorion/default/scripting/buildings/XENORESURRECTION_LAB.focs.txt
-${MODPY_COMMENT}share/freeorion/default/scripting/buildings/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/buildings/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/buildings/${MODPY_PYCACHE}ABANDON_OUTPOST.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/buildings/${MODPY_PYCACHE}ABANDON_OUTPOST.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/buildings/${MODPY_PYCACHE}ART_BLACK_HOLE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3139,7 +3139,7 @@ share/freeorion/default/scripting/buildings/colonies/SP_SUPER_TEST.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_TAEGHIRUS.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_TRITH.focs.txt
 share/freeorion/default/scripting/buildings/colonies/SP_UGMORS.focs.txt
-${MODPY_COMMENT}share/freeorion/default/scripting/buildings/colonies/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/buildings/colonies/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/buildings/colonies/${MODPY_PYCACHE}col_bld_gen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/buildings/colonies/${MODPY_PYCACHE}col_bld_gen.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/buildings/colonies/col_bld_gen.py
@@ -3335,7 +3335,7 @@ share/freeorion/default/scripting/fields/fields.macros
 share/freeorion/default/scripting/focs/
 share/freeorion/default/scripting/focs/README.md
 share/freeorion/default/scripting/focs/__init__.py
-${MODPY_COMMENT}share/freeorion/default/scripting/focs/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/focs/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/focs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/focs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/focs/${MODPY_PYCACHE}_buildings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3367,7 +3367,7 @@ share/freeorion/default/scripting/focs/_tech.pyi
 share/freeorion/default/scripting/focs/_types.py
 share/freeorion/default/scripting/game_rules.focs.py
 share/freeorion/default/scripting/macros/
-${MODPY_COMMENT}share/freeorion/default/scripting/macros/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/macros/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/macros/${MODPY_PYCACHE}base_prod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/macros/${MODPY_PYCACHE}base_prod.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/macros/${MODPY_PYCACHE}enqueue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3851,7 +3851,7 @@ share/freeorion/default/scripting/species/SP_TRITH.focs.py
 share/freeorion/default/scripting/species/SP_UGMORS.focs.py
 share/freeorion/default/scripting/species/SP_VOLP.focs.py
 share/freeorion/default/scripting/species/SpeciesCensusOrdering.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/species/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/species/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/species/${MODPY_PYCACHE}SP_ABADDONI.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/species/${MODPY_PYCACHE}SP_ABADDONI.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/species/${MODPY_PYCACHE}SP_ACIREMA.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3955,7 +3955,7 @@ share/freeorion/default/scripting/species/${MODPY_PYCACHE}SP_VOLP.focs.${MODPY_P
 share/freeorion/default/scripting/species/${MODPY_PYCACHE}SpeciesCensusOrdering.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/species/${MODPY_PYCACHE}SpeciesCensusOrdering.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/species/species_macros/
-${MODPY_COMMENT}share/freeorion/default/scripting/species/species_macros/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/species/species_macros/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/species/species_macros/${MODPY_PYCACHE}advanced_focus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/species/species_macros/${MODPY_PYCACHE}advanced_focus.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/species/species_macros/${MODPY_PYCACHE}detection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4034,7 +4034,7 @@ share/freeorion/default/scripting/starting_unlocks/fleets.inf
 share/freeorion/default/scripting/starting_unlocks/items.inf
 share/freeorion/default/scripting/techs/
 share/freeorion/default/scripting/techs/Categories.inf.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/${MODPY_PYCACHE}Categories.inf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/${MODPY_PYCACHE}Categories.inf.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/${MODPY_PYCACHE}techs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4057,7 +4057,7 @@ share/freeorion/default/scripting/techs/construction/PLANET_DRIVE.focs.py
 share/freeorion/default/scripting/techs/construction/REMOTE_COL.disabled
 share/freeorion/default/scripting/techs/construction/STARGATE.focs.py
 share/freeorion/default/scripting/techs/construction/TRANSCEND_ARCH.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/construction/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/construction/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/construction/${MODPY_PYCACHE}ARCH_MONOFIL.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/construction/${MODPY_PYCACHE}ARCH_MONOFIL.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/construction/${MODPY_PYCACHE}ARCH_PSYCH.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4095,7 +4095,7 @@ share/freeorion/default/scripting/techs/defense/BarrierShield.focs.py
 share/freeorion/default/scripting/techs/defense/Defense.focs.py
 share/freeorion/default/scripting/techs/defense/Garrison.focs.py
 share/freeorion/default/scripting/techs/defense/Network.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/defense/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/defense/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/defense/${MODPY_PYCACHE}BarrierShield.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/defense/${MODPY_PYCACHE}BarrierShield.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/defense/${MODPY_PYCACHE}Defense.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4130,7 +4130,7 @@ share/freeorion/default/scripting/techs/growth/TERRAFORM.focs.py
 share/freeorion/default/scripting/techs/growth/TRANSORG_SENT.focs.py
 share/freeorion/default/scripting/techs/growth/XENO_GENETICS.focs.py
 share/freeorion/default/scripting/techs/growth/XENO_HYBRIDS.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/growth/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/growth/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/growth/${MODPY_PYCACHE}ADV_ECOMAN.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/growth/${MODPY_PYCACHE}ADV_ECOMAN.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/growth/${MODPY_PYCACHE}BIOTERROR.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4193,7 +4193,7 @@ share/freeorion/default/scripting/techs/learning/TRANSCEND.focs.py
 share/freeorion/default/scripting/techs/learning/TRANSLING_THOUGHT.focs.py
 share/freeorion/default/scripting/techs/learning/UNIFIED_CONC.focs.py
 share/freeorion/default/scripting/techs/learning/XENO_ARCH.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/learning/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/learning/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/learning/${MODPY_PYCACHE}ALGO_ELEGANCE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/learning/${MODPY_PYCACHE}ALGO_ELEGANCE.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/learning/${MODPY_PYCACHE}ART_BLACK_HOLE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4262,7 +4262,7 @@ share/freeorion/default/scripting/techs/production/SOLAR_ORB_GEN.focs.py
 share/freeorion/default/scripting/techs/production/TRANS_DESIGN.focs.py
 share/freeorion/default/scripting/techs/production/VOID_PREDICTION.focs.py
 share/freeorion/default/scripting/techs/production/ZERO_GEN.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/production/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/production/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/production/${MODPY_PYCACHE}ADAPTIVE_AUTOMATION.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/production/${MODPY_PYCACHE}ADAPTIVE_AUTOMATION.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/production/${MODPY_PYCACHE}EXOBOTS.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4309,7 +4309,7 @@ share/freeorion/default/scripting/techs/ship_hulls/
 share/freeorion/default/scripting/techs/ship_hulls/SHP_DOMESTIC_MONSTER.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/SHP_GAL_EXPLO.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/SHP_XENTRONIUM_HULL.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/${MODPY_PYCACHE}SHP_DOMESTIC_MONSTER.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/${MODPY_PYCACHE}SHP_DOMESTIC_MONSTER.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/${MODPY_PYCACHE}SHP_GAL_EXPLO.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4324,7 +4324,7 @@ share/freeorion/default/scripting/techs/ship_hulls/asteroid/SHP_HEAVY_AST_HULL.f
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/SHP_MINIAST_SWARM.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/SHP_MONOMOLEC_LATTIC.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/SHP_SCAT_AST_HULL.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/asteroid/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/asteroid/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/${MODPY_PYCACHE}SHP_ASTEROID_HULLS.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/${MODPY_PYCACHE}SHP_ASTEROID_HULLS.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/asteroid/${MODPY_PYCACHE}SHP_ASTEROID_REFORM.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4345,7 +4345,7 @@ share/freeorion/default/scripting/techs/ship_hulls/energy/SHP_ENRG_FRIGATE.focs.
 share/freeorion/default/scripting/techs/ship_hulls/energy/SHP_FRC_ENRG_COMP.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/energy/SHP_QUANT_ENRG_MAG.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/energy/SHP_SOLAR_CONT.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/energy/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/energy/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/energy/${MODPY_PYCACHE}SHP_ENRG_BOUND_MAN.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/energy/${MODPY_PYCACHE}SHP_ENRG_BOUND_MAN.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/energy/${MODPY_PYCACHE}SHP_ENRG_FRIGATE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4366,7 +4366,7 @@ share/freeorion/default/scripting/techs/ship_hulls/organic/SHP_MONOCELL_EXP.focs
 share/freeorion/default/scripting/techs/ship_hulls/organic/SHP_MULTICELL_CAST.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/organic/SHP_ORG_HULL.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/organic/SHP_SENT_HULL.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/organic/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/organic/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/organic/${MODPY_PYCACHE}SHP_BIOADAPTIVE_SPEC.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/organic/${MODPY_PYCACHE}SHP_BIOADAPTIVE_SPEC.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/organic/${MODPY_PYCACHE}SHP_CONT_BIOADAPT.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4393,7 +4393,7 @@ share/freeorion/default/scripting/techs/ship_hulls/robotic/SHP_MIL_ROBO_CONT.foc
 share/freeorion/default/scripting/techs/ship_hulls/robotic/SHP_NANOROBO_MAINT.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/robotic/SHP_SMALL_ROBO.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/robotic/SHP_TRANSSPACE_DRIVE.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/robotic/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/robotic/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/robotic/${MODPY_PYCACHE}SHP_CONTGRAV_MAINT.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/robotic/${MODPY_PYCACHE}SHP_CONTGRAV_MAINT.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/robotic/${MODPY_PYCACHE}SHP_MASSPROP_SPEC.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4412,7 +4412,7 @@ share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/SHP_SPACE_FLUX_BUBBLE.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/SHP_SPACE_FLUX_COMPOSITION.focs.py
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/SHP_SPACE_FLUX_DRIVE.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/${MODPY_PYCACHE}SHP_SPACE_FLUX_BUBBLE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/${MODPY_PYCACHE}SHP_SPACE_FLUX_BUBBLE.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_hulls/spatial_flux/${MODPY_PYCACHE}SHP_SPACE_FLUX_COMPOSITION.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4425,7 +4425,7 @@ share/freeorion/default/scripting/techs/ship_parts/armor/SHP_DIAMOND_PLATE.focs.
 share/freeorion/default/scripting/techs/ship_parts/armor/SHP_ROOT_ARMOR.focs.py
 share/freeorion/default/scripting/techs/ship_parts/armor/SHP_XENTRONIUM_PLATE.focs.py
 share/freeorion/default/scripting/techs/ship_parts/armor/SHP_ZORTRIUM_PLATE.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_parts/armor/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_parts/armor/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_parts/armor/${MODPY_PYCACHE}SHP_DIAMOND_PLATE.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_parts/armor/${MODPY_PYCACHE}SHP_DIAMOND_PLATE.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_parts/armor/${MODPY_PYCACHE}SHP_ROOT_ARMOR.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4439,7 +4439,7 @@ share/freeorion/default/scripting/techs/ship_parts/damage_control/SHP_ADV_DAM_CO
 share/freeorion/default/scripting/techs/ship_parts/damage_control/SHP_BASIC_DAM_CONT.focs.py
 share/freeorion/default/scripting/techs/ship_parts/damage_control/SHP_FLEET_REPAIR.focs.py
 share/freeorion/default/scripting/techs/ship_parts/damage_control/SHP_REINFORCED_HULL.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_parts/damage_control/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_parts/damage_control/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_parts/damage_control/${MODPY_PYCACHE}SHP_ADV_DAM_CONT.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_parts/damage_control/${MODPY_PYCACHE}SHP_ADV_DAM_CONT.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_parts/damage_control/${MODPY_PYCACHE}SHP_BASIC_DAM_CONT.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4452,7 +4452,7 @@ share/freeorion/default/scripting/techs/ship_parts/fuel/
 share/freeorion/default/scripting/techs/ship_parts/fuel/SHP_ANTIMATTER_TANK.focs.py
 share/freeorion/default/scripting/techs/ship_parts/fuel/SHP_DEUTERIUM_TANK.focs.py
 share/freeorion/default/scripting/techs/ship_parts/fuel/SHP_ZERO_POINT.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_parts/fuel/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_parts/fuel/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_parts/fuel/${MODPY_PYCACHE}SHP_ANTIMATTER_TANK.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_parts/fuel/${MODPY_PYCACHE}SHP_ANTIMATTER_TANK.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_parts/fuel/${MODPY_PYCACHE}SHP_DEUTERIUM_TANK.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4467,7 +4467,7 @@ share/freeorion/default/scripting/techs/ship_parts/shield/SHP_BLACKSHIELD.focs.p
 share/freeorion/default/scripting/techs/ship_parts/shield/SHP_DEFLECTOR_SHIELD.focs.py
 share/freeorion/default/scripting/techs/ship_parts/shield/SHP_MULTISPEC_SHIELD.focs.py
 share/freeorion/default/scripting/techs/ship_parts/shield/SHP_PLASMA_SHIELD.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_parts/shield/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_parts/shield/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_parts/shield/${MODPY_PYCACHE}SHP_BLACKSHIELD.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_parts/shield/${MODPY_PYCACHE}SHP_BLACKSHIELD.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_parts/shield/${MODPY_PYCACHE}SHP_DEFLECTOR_SHIELD.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4480,7 +4480,7 @@ share/freeorion/default/scripting/techs/ship_parts/speed/
 share/freeorion/default/scripting/techs/ship_parts/speed/SHP_IMPROVED_ENGINE_COUPLINGS.focs.py
 share/freeorion/default/scripting/techs/ship_parts/speed/SHP_N_DIMENSIONAL_ENGINE_MATRIX.focs.py
 share/freeorion/default/scripting/techs/ship_parts/speed/SHP_SINGULATIRY_ENGINE_CORE.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_parts/speed/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_parts/speed/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_parts/speed/${MODPY_PYCACHE}SHP_IMPROVED_ENGINE_COUPLINGS.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_parts/speed/${MODPY_PYCACHE}SHP_IMPROVED_ENGINE_COUPLINGS.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_parts/speed/${MODPY_PYCACHE}SHP_N_DIMENSIONAL_ENGINE_MATRIX.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4491,7 +4491,7 @@ share/freeorion/default/scripting/techs/ship_weapons/
 share/freeorion/default/scripting/techs/ship_weapons/SHP_KRILL_SPAWN.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/SHP_NOVA_BOMB.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/SHP_ROOT_AGGRESSION.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_weapons/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_weapons/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_weapons/${MODPY_PYCACHE}SHP_KRILL_SPAWN.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_weapons/${MODPY_PYCACHE}SHP_KRILL_SPAWN.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_weapons/${MODPY_PYCACHE}SHP_NOVA_BOMB.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4511,7 +4511,7 @@ share/freeorion/default/scripting/techs/ship_weapons/bombard/SHP_EMP.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/bombard/SHP_GRV.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/bombard/SHP_SONIC.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/bombard/SHP_VOID_SHADOW.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_weapons/bombard/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_weapons/bombard/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_weapons/bombard/${MODPY_PYCACHE}SHP_BIOTERM.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_weapons/bombard/${MODPY_PYCACHE}SHP_BIOTERM.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_weapons/bombard/${MODPY_PYCACHE}SHP_BOMBARD.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4537,7 +4537,7 @@ share/freeorion/default/scripting/techs/ship_weapons/fighters/SHP_FIGHTERS_1.foc
 share/freeorion/default/scripting/techs/ship_weapons/fighters/SHP_FIGHTERS_2.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/fighters/SHP_FIGHTERS_3.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/fighters/SHP_FIGHTERS_4.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_weapons/fighters/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_weapons/fighters/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_weapons/fighters/${MODPY_PYCACHE}SHP_FIGHTERS_1.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_weapons/fighters/${MODPY_PYCACHE}SHP_FIGHTERS_1.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_weapons/fighters/${MODPY_PYCACHE}SHP_FIGHTERS_2.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4568,7 +4568,7 @@ share/freeorion/default/scripting/techs/ship_weapons/short_range/SHP_WEAPON_4_1.
 share/freeorion/default/scripting/techs/ship_weapons/short_range/SHP_WEAPON_4_2.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/short_range/SHP_WEAPON_4_3.focs.py
 share/freeorion/default/scripting/techs/ship_weapons/short_range/SHP_WEAPON_4_4.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/ship_weapons/short_range/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/ship_weapons/short_range/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/ship_weapons/short_range/${MODPY_PYCACHE}SHP_ARC_DISRUPTOR.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/ship_weapons/short_range/${MODPY_PYCACHE}SHP_ARC_DISRUPTOR.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/ship_weapons/short_range/${MODPY_PYCACHE}SHP_ORGANIC_WAR_ADAPTION.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4613,7 +4613,7 @@ share/freeorion/default/scripting/techs/specials/
 share/freeorion/default/scripting/techs/specials/COL_BANFORO.focs.py
 share/freeorion/default/scripting/techs/specials/COL_KILANDOW.focs.py
 share/freeorion/default/scripting/techs/specials/COL_MISIORLA.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/specials/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/specials/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/specials/${MODPY_PYCACHE}COL_BANFORO.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/specials/${MODPY_PYCACHE}COL_BANFORO.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/specials/${MODPY_PYCACHE}COL_KILANDOW.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -4639,7 +4639,7 @@ share/freeorion/default/scripting/techs/spy/STEALTH_4.focs.py
 share/freeorion/default/scripting/techs/spy/STEALTH_PART_1.focs.py
 share/freeorion/default/scripting/techs/spy/STEALTH_PART_2.focs.py
 share/freeorion/default/scripting/techs/spy/STEALTH_PART_3.focs.py
-${MODPY_COMMENT}share/freeorion/default/scripting/techs/spy/${MODPY_PYCACHE}/
+share/freeorion/default/scripting/techs/spy/${MODPY_PYCACHE}/
 share/freeorion/default/scripting/techs/spy/${MODPY_PYCACHE}CUSTOM_ADVISORIES.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/freeorion/default/scripting/techs/spy/${MODPY_PYCACHE}CUSTOM_ADVISORIES.focs.${MODPY_PYC_MAGIC_TAG}pyc
 share/freeorion/default/scripting/techs/spy/${MODPY_PYCACHE}DETECT_1.focs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

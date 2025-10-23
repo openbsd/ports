@@ -6183,7 +6183,7 @@ share/TeXmacs/plugins/tikz/progs/init-tikz.scm
 share/TeXmacs/plugins/tmpy/
 share/TeXmacs/plugins/tmpy/README.md
 share/TeXmacs/plugins/tmpy/__init__.py
-${MODPY_COMMENT}share/TeXmacs/plugins/tmpy/${MODPY_PYCACHE}/
+share/TeXmacs/plugins/tmpy/${MODPY_PYCACHE}/
 share/TeXmacs/plugins/tmpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/TeXmacs/plugins/tmpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/TeXmacs/plugins/tmpy/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -6201,7 +6201,7 @@ share/TeXmacs/plugins/tmpy/compat.py
 share/TeXmacs/plugins/tmpy/completion.py
 share/TeXmacs/plugins/tmpy/graph/
 share/TeXmacs/plugins/tmpy/graph/__init__.py
-${MODPY_COMMENT}share/TeXmacs/plugins/tmpy/graph/${MODPY_PYCACHE}/
+share/TeXmacs/plugins/tmpy/graph/${MODPY_PYCACHE}/
 share/TeXmacs/plugins/tmpy/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/TeXmacs/plugins/tmpy/graph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/TeXmacs/plugins/tmpy/graph/${MODPY_PYCACHE}asymptote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -6247,7 +6247,7 @@ share/TeXmacs/plugins/tmpy/postscript.py
 share/TeXmacs/plugins/tmpy/protocol.py
 share/TeXmacs/plugins/tmpy/session/
 share/TeXmacs/plugins/tmpy/session/__init__.py
-${MODPY_COMMENT}share/TeXmacs/plugins/tmpy/session/${MODPY_PYCACHE}/
+share/TeXmacs/plugins/tmpy/session/${MODPY_PYCACHE}/
 share/TeXmacs/plugins/tmpy/session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/TeXmacs/plugins/tmpy/session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/TeXmacs/plugins/tmpy/session/${MODPY_PYCACHE}tm_asy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

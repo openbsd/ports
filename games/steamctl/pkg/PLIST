@@ -11,7 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl-${MODPY_DISTV}.dist-info/top_l
 lib/python${MODPY_VERSION}/site-packages/steamctl-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/steamctl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,12 +24,12 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/argparser.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/clients.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/enums.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/apps/gcmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/${MODPY_PYCACHE}card_idler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -51,7 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/card_idler.
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/assistant/discovery_queue.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/${MODPY_PYCACHE}cmd_code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -62,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/cmd_cod
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/authenticator/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE}cmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/clean/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE}gcmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,7 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/cloud/gcmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE}gcmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -86,7 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/depot/gcmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCACHE}cmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,7 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/hlmaster/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCACHE}cmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -102,7 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/steamid/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}gcmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -110,7 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/${MODPY_PYCACHE}g
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/ugc/gcmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACHE}cmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,7 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/webapi/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/${MODPY_PYCACHE}cmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,7 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/cmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/commands/workshop/gcmds.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}apps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
