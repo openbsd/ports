@@ -1,8 +1,11 @@
 COMMENT=	YAML 1.2 loader/dumper package for Python
 
-MODPY_DISTV=	0.18.15
+MODPY_DISTV=	0.18.16
 DISTNAME=	ruamel.yaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+
+# https://sourceforge.net/p/ruamel-yaml/code/
+HOMEPAGE=	https://yaml.dev/doc/ruamel.yaml/
 
 CATEGORIES=	textproc
 
@@ -15,9 +18,9 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-# missing from sdist
-NO_TEST=	Yes
-
 RUN_DEPENDS=	textproc/py-ruamel.yaml.clib
+
+# only in sf repo, missing from sdist
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
