@@ -13,7 +13,7 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			62321fd7128ab2650b459d4195781af8185e46b5	.
 PKGNAME =		tg_owt-0.0.0.20250601
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -56,7 +56,7 @@ WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point avcodec avformat avutil crc32c
 WANTLIB += crypto jpeg m openh264 opus ssl swresample swscale
-WANTLIB += vpx
+WANTLIB += srtp2 vpx
 
 # C++20
 COMPILER =		base-clang ports-gcc
