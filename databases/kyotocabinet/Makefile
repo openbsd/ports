@@ -1,8 +1,5 @@
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 
-# requires C++ tr1 headers
-NOT_FOR_ARCHS=		${GCC3_ARCHS}
-
 COMMENT=	straightforward implementation of DBM
 
 DISTNAME=	kyotocabinet-1.2.80

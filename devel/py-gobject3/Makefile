@@ -29,7 +29,7 @@ MODPY_PYBUILD=		setuptools
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=737874
 MODULES +=		gcc4
-MODGCC4_ARCHS=		${GCC3_ARCHS} ${GCC4_ARCHS}
+MODGCC4_ARCHS=		${GCC4_ARCHS}
 
 BUILD_DEPENDS=		graphics/py-cairo
 

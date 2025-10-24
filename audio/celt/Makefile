@@ -2,9 +2,6 @@ PORTROACH =	limit:^0\.11\.1
 
 # The CELT codec has been merged into the IETF Opus codec and is now obsolete
 
-# invalid use of `restrict'
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
-
 COMMENT =	experimental ultra-low delay audio codec
 
 DISTNAME =	celt-0.11.1

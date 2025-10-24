@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1645 2025/07/30 12:06:30 jca Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1646 2025/10/24 14:25:34 rsadowski Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -320,14 +320,12 @@ PORTROACH ?=
 
 # this only happens if we exit modules without having ever gone
 # thru compiler.port.mk - update portcheck if changing COMPILER default
-COMPILER ?= base-clang base-gcc gcc3
+COMPILER ?= base-clang base-gcc
 COMPILER_LANGS ?= c c++
 .if ${PROPERTIES:Mclang}
 CHOSEN_COMPILER ?= base-clang
-.elif ${PROPERTIES:Mgcc4}
-CHOSEN_COMPILER ?= base-gcc
 .else
-CHOSEN_COMPILER ?= gcc3
+CHOSEN_COMPILER ?= base-gcc
 .endif
 COMPILER_LIBCXX ?= ${LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: compiler.port.mk,v 1.5 2017/11/17 00:24:01 naddy Exp $
+# $OpenBSD: compiler.port.mk,v 1.6 2025/10/24 14:25:34 rsadowski Exp $
 #
 #  Copyright (c) 2017 Marc Espie
 # 
@@ -29,11 +29,6 @@
 _COMPILER_ARCHS += ${GCC4_ARCHS}
 .    if ${PROPERTIES:Mgcc4}
 CHOSEN_COMPILER ?= base-gcc
-.    endif
-.  elif "$c" == "gcc3"
-_COMPILER_ARCHS += ${GCC3_ARCHS}
-.    if ${PROPERTIES:Mgcc3}
-CHOSEN_COMPILER ?= gcc3
 .    endif
 .  elif "$c" == "base-clang"
 _COMPILER_ARCHS += ${CLANG_ARCHS}

@@ -1,6 +1,3 @@
-# __builtin_clz
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
-
 COMMENT =	parallel implementation of gzip utilizing multiple cores
 
 DISTNAME =	pigz-2.8

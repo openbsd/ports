@@ -1,8 +1,5 @@
 PORTROACH=		limit:^2\.66
 
-# g++3 chokes on the code
-NOT_FOR_ARCHS=		${GCC3_ARCHS}
-
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm

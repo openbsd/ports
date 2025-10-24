@@ -1,6 +1,3 @@
-# -fvisibility
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
-
 COMMENT=	SGI audiofile library clone
 
 V=		0.3.6

@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.149 2025/02/26 14:22:53 sthen Exp $
+# $OpenBSD: portcheck,v 1.150 2025/10/24 14:25:34 rsadowski Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -887,7 +887,7 @@ sub_checks() {
 					fi
 				fi
 
-				[[ "$compiler" == "base-clang base-gcc gcc3" ]] \
+				[[ "$compiler" == "base-clang base-gcc" ]] \
 				    && default_compiler=true
 
 				check_wantlib "$portref" "$modules" \

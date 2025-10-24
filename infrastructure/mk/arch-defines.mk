@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.111 2025/07/21 02:31:26 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.112 2025/10/24 14:25:34 rsadowski Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -20,8 +20,8 @@ APM_ARCHS = arm64 amd64 i386 loongson macppc riscv64 sparc64
 BE_ARCHS = hppa m88k mips64 powerpc powerpc64 sparc64
 LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el riscv64 sh
 LP64_ARCHS = aarch64 alpha amd64 mips64 mips64el powerpc64 riscv64 sparc64
-GCC4_ARCHS = alpha hppa sh sparc64
-GCC3_ARCHS = m88k
+GCC4_ARCHS = alpha hppa m88k sh sparc64
+
 # arches where certain ports are available
 MONO_ARCHS = aarch64 amd64 i386
 GO_ARCHS = aarch64 amd64 arm i386 riscv64
@@ -46,7 +46,7 @@ GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc6
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
 DEBUGINFO_ARCHS = aarch64 amd64
 
-.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM LUAJIT \
+.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC49 MONO LLVM LUAJIT \
                      CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
                      LLD RUST DEBUGINFO
 .  for A B in ${MACHINE_ARCH} ${ARCH}

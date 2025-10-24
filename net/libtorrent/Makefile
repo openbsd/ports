@@ -3,9 +3,6 @@ COMMENT=		BitTorrent library written in C++
 BROKEN-hppa =		undefined references to __sync atomic ops
 BROKEN-sh =		undefined references to __sync atomic ops
 
-# requires C++ tr1 headers
-NOT_FOR_ARCHS=		${GCC3_ARCHS}
-
 DISTNAME=		libtorrent-0.15.7
 EPOCH=			0
 SHARED_LIBS +=  	torrent 23.0	# .18.0
