@@ -66,14 +66,11 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}imghdr.${
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}imghdr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}shutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}shutil.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/_deprecated.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/_legacy.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/compat_utils.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/imghdr.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/shutil.py
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/types.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}/
