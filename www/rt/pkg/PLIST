@@ -331,6 +331,7 @@ libdata/perl5/site_perl/RT/Scrips.pm
 libdata/perl5/site_perl/RT/Search/
 libdata/perl5/site_perl/RT/Search.pm
 libdata/perl5/site_perl/RT/Search/ActiveTicketsInQueue.pm
+libdata/perl5/site_perl/RT/Search/Calendar.pm
 libdata/perl5/site_perl/RT/Search/FromSQL.pm
 libdata/perl5/site_perl/RT/Search/Simple.pm
 libdata/perl5/site_perl/RT/SearchBuilder/
@@ -1729,6 +1730,7 @@ share/rt/html/Asset/Elements/EditDates
 share/rt/html/Asset/Elements/EditPeople
 share/rt/html/Asset/Elements/EditPeopleInline
 share/rt/html/Asset/Elements/EditRoleMembers
+share/rt/html/Asset/Elements/PagedShowHistory
 share/rt/html/Asset/Elements/Search
 share/rt/html/Asset/Elements/SelectCatalog
 share/rt/html/Asset/Elements/SelectRoleType
@@ -1931,6 +1933,7 @@ share/rt/html/Elements/RefreshHomepage
 share/rt/html/Elements/SavedSearchSelectUser
 share/rt/html/Elements/SavedSearches
 share/rt/html/Elements/ScrubHTML
+share/rt/html/Elements/SearchDisplayMode
 share/rt/html/Elements/Section
 share/rt/html/Elements/SelectArticle
 share/rt/html/Elements/SelectArticleAutocomplete
@@ -2014,6 +2017,7 @@ share/rt/html/Elements/Submit
 share/rt/html/Elements/SystemWarnings
 share/rt/html/Elements/TSVExport
 share/rt/html/Elements/Tabs
+share/rt/html/Elements/TransactionTypeFilterDropdown
 share/rt/html/Elements/ValidateCustomFields
 share/rt/html/Elements/WidgetBar
 share/rt/html/Errors/
@@ -2039,6 +2043,7 @@ share/rt/html/Group/SavedSearches.html
 share/rt/html/Group/Search.html
 share/rt/html/Group/Summary.html
 share/rt/html/Helpers/
+share/rt/html/Helpers/AddTicketMessage
 share/rt/html/Helpers/AddTimeWorked
 share/rt/html/Helpers/Admin/
 share/rt/html/Helpers/Admin/EditCustomFieldValue
@@ -2057,6 +2062,7 @@ share/rt/html/Helpers/Autocomplete/Tickets
 share/rt/html/Helpers/Autocomplete/Users
 share/rt/html/Helpers/Autocomplete/autohandler
 share/rt/html/Helpers/BuildFormatString
+share/rt/html/Helpers/CalendarEventInfo
 share/rt/html/Helpers/CollectionListRow
 share/rt/html/Helpers/EditTicketDescription
 share/rt/html/Helpers/Permalink
@@ -2188,11 +2194,14 @@ share/rt/html/Search/
 share/rt/html/Search/Article.html
 share/rt/html/Search/Build.html
 share/rt/html/Search/Bulk.html
+share/rt/html/Search/Calendar.html
 share/rt/html/Search/Chart.html
 share/rt/html/Search/Edit.html
 share/rt/html/Search/Elements/
 share/rt/html/Search/Elements/Article
 share/rt/html/Search/Elements/BuildFormatString
+share/rt/html/Search/Elements/Calendar
+share/rt/html/Search/Elements/CalendarEvent
 share/rt/html/Search/Elements/Chart
 share/rt/html/Search/Elements/ChartTable
 share/rt/html/Search/Elements/ConditionRow
@@ -2261,13 +2270,16 @@ share/rt/html/SelfService/Elements/MyRequests
 share/rt/html/SelfService/Elements/RequestUpdate
 share/rt/html/SelfService/Elements/SearchArticle
 share/rt/html/SelfService/Helpers/
+share/rt/html/SelfService/Helpers/AssetHistoryPage
 share/rt/html/SelfService/Helpers/Autocomplete/
+share/rt/html/SelfService/Helpers/Autocomplete/Articles
 share/rt/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/SelfService/Helpers/Autocomplete/Principals
 share/rt/html/SelfService/Helpers/Autocomplete/Users
 share/rt/html/SelfService/Helpers/SelectOwnerDropdown
 share/rt/html/SelfService/Helpers/ShortcutHelp
 share/rt/html/SelfService/Helpers/TextDiff
+share/rt/html/SelfService/Helpers/TicketHistoryPage
 share/rt/html/SelfService/Helpers/Upload/
 share/rt/html/SelfService/Helpers/Upload/Add
 share/rt/html/SelfService/Helpers/Upload/Delete
@@ -2312,6 +2324,8 @@ share/rt/html/Ticket/Elements/EditPeopleInline
 share/rt/html/Ticket/Elements/EditTimes
 share/rt/html/Ticket/Elements/EditTransactionCustomFields
 share/rt/html/Ticket/Elements/EditWatchers
+share/rt/html/Ticket/Elements/MessageDetails
+share/rt/html/Ticket/Elements/PagedShowHistory
 share/rt/html/Ticket/Elements/PopupTimerLink
 share/rt/html/Ticket/Elements/Reminders
 share/rt/html/Ticket/Elements/ScrollShowHistory
@@ -2614,6 +2628,7 @@ share/rt/static/css/elevator/base.css
 share/rt/static/css/elevator/bootstrap-combobox.css
 share/rt/static/css/elevator/bootstrap.css
 share/rt/static/css/elevator/boxes.css
+share/rt/static/css/elevator/calendar.css
 share/rt/static/css/elevator/charts.css
 share/rt/static/css/elevator/ckeditor5.css
 share/rt/static/css/elevator/collection.css

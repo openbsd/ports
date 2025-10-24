@@ -1,6 +1,6 @@
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-6.0.1
+DISTNAME=		rt-6.0.2
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -25,6 +25,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			devel/p5-Date-Extract>=0.07 \
 			devel/p5-DateTime \
 			devel/p5-DateTime-Format-Natural \
+			devel/p5-DateTime-Set \
 			devel/p5-Devel-GlobalDestruction \
 			devel/p5-Devel-StackTrace \
 			devel/p5-File-ShareDir \
