@@ -4,7 +4,7 @@ MODPY_DISTV =	0.5.10
 
 DISTNAME =	opcua-widgets-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	misc
 
@@ -19,6 +19,6 @@ RUN_DEPENDS =		misc/freeopcua/py-opcua \
 			x11/py-qt5
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

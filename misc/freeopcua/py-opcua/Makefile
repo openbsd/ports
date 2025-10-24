@@ -4,7 +4,7 @@ MODPY_DISTV =	0.98.13
 
 DISTNAME =	opcua-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	misc
 
@@ -21,6 +21,6 @@ RUN_DEPENDS =		devel/py-dateutil \
 			textproc/py-lxml
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>
