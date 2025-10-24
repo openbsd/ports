@@ -17,7 +17,7 @@ Index: configure
  do :
  
  
-@@ -31464,7 +31464,7 @@ main (void)
+@@ -31462,7 +31462,7 @@ main (void)
  _ACEOF
  if ac_fn_c_try_link "$LINENO"
  then :
@@ -26,7 +26,7 @@ Index: configure
  then :
  
              { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
-@@ -32012,7 +32012,7 @@ fi
+@@ -32010,7 +32010,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -35,7 +35,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34138,7 +34138,7 @@ then :
+@@ -34136,7 +34136,7 @@ then :
  
  else $as_nop
  
