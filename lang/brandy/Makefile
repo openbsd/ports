@@ -1,6 +1,6 @@
 COMMENT =	interpreter for BBC Basic (Basic VI)
 
-V =		1.23.5
+V =		1.23.6
 DISTNAME =	MatrixBrandy-${V}
 PKGNAME =	brandy-${V}
 EXTRACT_SUFX =	.tar.xz
