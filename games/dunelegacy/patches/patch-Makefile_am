@@ -1,7 +1,7 @@
-Index: Makefile.in
---- Makefile.in.orig
-+++ Makefile.in
-@@ -869,12 +869,12 @@ uninstall-am: uninstall-datafilesDATA uninstall-local
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -55,12 +55,12 @@ datafilesdir = $(dunelegacydatadir)
  install-data-local:
  	@$(NORMAL_INSTALL)
  	$(MKDIR_P) $(DESTDIR)$(dunelegacydatadir)/locale
@@ -16,5 +16,5 @@ Index: Makefile.in
 -	$(INSTALL_DATA) data/maps/multiplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/multiplayer/
 +	$(INSTALL_DATA) $(srcdir)/data/maps/multiplayer/*.ini $(DESTDIR)$(dunelegacydatadir)/maps/multiplayer/
  
+ 
  uninstall-local:
- 	@$(NORMAL_UNINSTALL)
