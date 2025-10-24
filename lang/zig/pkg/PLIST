@@ -14766,6 +14766,7 @@ lib/zig/libc/musl/src/fenv/hexagon/fenv.S
 lib/zig/libc/musl/src/fenv/i386/
 lib/zig/libc/musl/src/fenv/i386/fenv.s
 lib/zig/libc/musl/src/fenv/loongarch64/
+lib/zig/libc/musl/src/fenv/loongarch64/fenv-sf.c
 lib/zig/libc/musl/src/fenv/loongarch64/fenv.S
 lib/zig/libc/musl/src/fenv/m68k/
 lib/zig/libc/musl/src/fenv/m68k/fenv.c

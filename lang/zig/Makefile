@@ -5,15 +5,15 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.15.1
+DISTNAME =	zig-0.15.2
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
 GH_COMMIT =	${ZIG_COMMIT}
 
 # see https://github.com/ziglang/zig/tree/0.15.x
-ZIG_VERSION =	0.15.1
-ZIG_COMMIT =	3db960767d12b6214bcf43f1966a037c7a586a12
+ZIG_VERSION =	0.15.2
+ZIG_COMMIT =	e4cbd752c8c05f131051f8c873cff7823177d7d3
 
 CATEGORIES =	lang
 
