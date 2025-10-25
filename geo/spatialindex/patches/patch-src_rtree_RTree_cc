@@ -1,0 +1,14 @@
+https://github.com/libspatialindex/libspatialindex/pull/277
+
+Index: src/rtree/RTree.cc
+--- src/rtree/RTree.cc.orig
++++ src/rtree/RTree.cc
+@@ -613,7 +613,7 @@ double SpatialIndex::RTree::RTree::nearestNeighborQuer
+                     Data* e = new Data(n->m_pDataLength[cChild], n->m_pData[cChild], *(n->m_ptrMBR[cChild]), n->m_pIdentifier[cChild]);
+                     // we need to compare the query with the actual data entry here, so we call the
+                     // appropriate getMinimumDistance method of NearestNeighborComparator.
+-                    queue.push(NNEntry(n->m_pIdentifier[cChild], e, nnc.getMinimumDistance(query, e->m_region)));
++                    queue.push(NNEntry(n->m_pIdentifier[cChild], e, nnc.getMinimumDistance(query, *e)));
+                 }
+                 else
+                 {
