@@ -39,6 +39,7 @@ include/google/protobuf/compiler/java/helpers.h
 include/google/protobuf/compiler/java/java_features.pb.h
 include/google/protobuf/compiler/java/name_resolver.h
 include/google/protobuf/compiler/java/names.h
+include/google/protobuf/compiler/java/names_internal.h
 include/google/protobuf/compiler/java/options.h
 include/google/protobuf/compiler/kotlin/
 include/google/protobuf/compiler/kotlin/generator.h
@@ -139,6 +140,8 @@ include/google/protobuf/message_lite.h
 include/google/protobuf/metadata.h
 include/google/protobuf/metadata_lite.h
 include/google/protobuf/micro_string.h
+include/google/protobuf/os_macros_restore.inc
+include/google/protobuf/os_macros_undef.inc
 include/google/protobuf/parse_context.h
 include/google/protobuf/port.h
 include/google/protobuf/port_def.inc
