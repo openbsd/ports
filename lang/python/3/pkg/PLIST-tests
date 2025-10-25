@@ -4820,7 +4820,7 @@ lib/python3.12/test/typinganndata/ann_module8.py
 lib/python3.12/test/typinganndata/ann_module9.py
 lib/python3.12/test/typinganndata/mod_generics_cache.py
 lib/python3.12/test/wheeldata/
-lib/python3.12/test/wheeldata/setuptools-67.6.1-py3-none-any.whl
+lib/python3.12/test/wheeldata/setuptools-79.0.1-py3-none-any.whl
 lib/python3.12/test/wheeldata/wheel-0.40.0-py3-none-any.whl
 lib/python3.12/test/win_console_handler.py
 lib/python3.12/test/xmltestdata/
