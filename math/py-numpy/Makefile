@@ -4,7 +4,7 @@ COMMENT=	fast array and numeric programming library for Python
 MODPY_DISTV=	2.2.6
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math devel
 
@@ -15,14 +15,16 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} ${MODFORTRAN_WANTLIB} blas
+WANTLIB += cblas lapack m
 
 # Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
 # Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH
 DWZ=		:
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		fortran
 MODPY_PYBUILD=	mesonpy
 MODPY_PI=	Yes
 
@@ -47,14 +49,9 @@ TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-tz \
 		devel/py-wheel
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mgcc49}
-MODULES+=	fortran
 BUILD_DEPENDS+=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS+=	${MODFORTRAN_LIB_DEPENDS} \
 		math/lapack
-WANTLIB+=	${MODFORTRAN_WANTLIB} blas cblas lapack
-.endif
 
 # Cython up to 0.28.4 used the discouraged __attribute__((optimize("Os")))
 # which caused runtime breakage on at least macppc.

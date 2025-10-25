@@ -7,7 +7,7 @@ V =		1.05.0
 COMMENT =	open-source, multi-platform BASIC compiler
 DISTNAME =	FreeBASIC-${V}-source-openbsd
 PKGNAME =	freebasic-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.freebasic.net/
@@ -17,7 +17,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Runtime and Graphics libs: LGPLv2+ with static linking exception
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m ncurses pthread
+WANTLIB += c curses m pthread
 
 # Can't use upstream; no OpenBSD bootstrap.
 SITES =		https://devio.us/~bcallah/source/
@@ -31,14 +31,8 @@ COMPILER_LANGS =	c
 # And your BASIC programs will be linked against it.
 BUILD_DEPENDS =	devel/libffi
 
-# XXX only pulls this if it actually exists
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mgcc49}
-# Use ports-gcc as the backend runtime compiler, since we know FreeBASIC
-# will generate C files with GNU C extensions that clang doesn't like.
 RUN_DEPENDS =	devel/libffi \
-		lang/gcc/${MODGCC4_VERSION},-main # Something else?
-.endif
+		lang/gcc/${MODGCC4_VERSION},-main
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile

@@ -1620,11 +1620,11 @@ lib/freebasic/openbsd-${A}/
 lib/freebasic/openbsd-${A}/fbextra.x
 lib/freebasic/openbsd-${A}/fbrt0.o
 lib/freebasic/openbsd-${A}/fbrt0pic.o
-lib/freebasic/openbsd-${A}/libfb.a
-lib/freebasic/openbsd-${A}/libfbgfx.a
-lib/freebasic/openbsd-${A}/libfbgfxmt.a
-lib/freebasic/openbsd-${A}/libfbgfxmtpic.a
-lib/freebasic/openbsd-${A}/libfbgfxpic.a
-lib/freebasic/openbsd-${A}/libfbmt.a
-lib/freebasic/openbsd-${A}/libfbmtpic.a
-lib/freebasic/openbsd-${A}/libfbpic.a
+@static-lib lib/freebasic/openbsd-${A}/libfb.a
+@static-lib lib/freebasic/openbsd-${A}/libfbgfx.a
+@static-lib lib/freebasic/openbsd-${A}/libfbgfxmt.a
+@static-lib lib/freebasic/openbsd-${A}/libfbgfxmtpic.a
+@static-lib lib/freebasic/openbsd-${A}/libfbgfxpic.a
+@static-lib lib/freebasic/openbsd-${A}/libfbmt.a
+@static-lib lib/freebasic/openbsd-${A}/libfbmtpic.a
+@static-lib lib/freebasic/openbsd-${A}/libfbpic.a
