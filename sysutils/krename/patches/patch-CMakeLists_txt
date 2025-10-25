@@ -6,7 +6,17 @@ Subject: [PATCH] Fix build with >=exiv2-0.28, raise minimum to 0.27
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -54,12 +54,8 @@ set_package_properties(Taglib PROPERTIES
+@@ -1,8 +1,7 @@
+-cmake_minimum_required(VERSION 3.7)
++cmake_minimum_required(VERSION 3.16)
+ 
+ project(krename)
+ 
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+ # search packages used by KDE
+ find_package(ECM 0.0.11 REQUIRED NO_MODULE)
+ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+@@ -54,12 +53,8 @@ set_package_properties(Taglib PROPERTIES
      TYPE OPTIONAL)
  
  # Find exiv2

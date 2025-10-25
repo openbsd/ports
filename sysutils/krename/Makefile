@@ -2,7 +2,7 @@ COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.2
 DISTNAME =	krename-${VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	sysutils x11
 
