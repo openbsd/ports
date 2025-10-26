@@ -12,6 +12,7 @@ lib/ocaml/stdune/csexp/csexp.a
 lib/ocaml/stdune/csexp/csexp.cmx
 lib/ocaml/stdune/csexp/csexp.cmxa
 lib/ocaml/stdune/csexp/csexp.cmxs
+lib/ocaml/stdune/filesystem_stubs/dune_filesystem_stubs.a
 lib/ocaml/stdune/filesystem_stubs/dune_filesystem_stubs.cmx
 lib/ocaml/stdune/filesystem_stubs/dune_filesystem_stubs.cmxa
 lib/ocaml/stdune/filesystem_stubs/dune_filesystem_stubs.cmxs
@@ -35,8 +36,11 @@ lib/ocaml/stdune/stdune__Code_error.cmx
 lib/ocaml/stdune/stdune__Comparable.cmx
 lib/ocaml/stdune/stdune__Comparable_intf.cmx
 lib/ocaml/stdune/stdune__Comparator.cmx
+lib/ocaml/stdune/stdune__Dev_null.cmx
+lib/ocaml/stdune/stdune__Dune_either.cmx
 lib/ocaml/stdune/stdune__Either.cmx
 lib/ocaml/stdune/stdune__Env.cmx
+lib/ocaml/stdune/stdune__Env_path.cmx
 lib/ocaml/stdune/stdune__Escape.cmx
 lib/ocaml/stdune/stdune__Exn.cmx
 lib/ocaml/stdune/stdune__Exn_with_backtrace.cmx
@@ -68,6 +72,7 @@ lib/ocaml/stdune/stdune__Or_exn.cmx
 lib/ocaml/stdune/stdune__Path.cmx
 lib/ocaml/stdune/stdune__Path_intf.cmx
 lib/ocaml/stdune/stdune__Pid.cmx
+lib/ocaml/stdune/stdune__Platform.cmx
 lib/ocaml/stdune/stdune__Poly.cmx
 lib/ocaml/stdune/stdune__Predicate.cmx
 lib/ocaml/stdune/stdune__Proc.cmx

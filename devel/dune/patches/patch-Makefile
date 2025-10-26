@@ -2,7 +2,7 @@ Respect MAKE_JOBS during bootstrap phase
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -47,7 +47,7 @@ release: $(BIN)
+@@ -46,7 +46,7 @@ release: $(BIN)
  	@$(BIN) build @install -p dune --profile dune-bootstrap
  
  $(BIN):

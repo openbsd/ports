@@ -45,6 +45,8 @@ share/doc/dune/
 share/doc/dune/CHANGES.md
 share/doc/dune/LICENSE.md
 share/doc/dune/README.md
+share/doc/dune/odoc-pages/
+share/doc/dune/odoc-pages/index.mld
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/dune-flymake.el

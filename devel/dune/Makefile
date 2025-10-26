@@ -3,9 +3,7 @@ MULTI_PACKAGES =	-main -configurator
 COMMENT-main =		OCaml build system
 COMMENT-configurator =	OCaml library for gathering system configuration
 
-VERSION =		3.6.2
-REVISION-main =		2
-REVISION-configurator =	0
+VERSION =		3.8.3
 
 CATEGORIES =		devel
 
