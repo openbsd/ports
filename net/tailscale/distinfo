@@ -1323,6 +1323,7 @@ SHA256 (go_modules/github.com/moby/sys/userns/@v/v0.1.0.mod) = dGb3rRJIAMV7z9x1N
 SHA256 (go_modules/github.com/moby/sys/userns/@v/v0.1.0.zip) = JMECvMQY3tw3j7yqU7ECUbNQQvLoa/CI93MlAGT+MIA=
 SHA256 (go_modules/github.com/moby/term/@v/v0.0.0-20210619224110-3f7ff695adc6.mod) = Qr6b4volOaz4ot36nfC+Si00P+KVNoXWB/hB41pIgpY=
 SHA256 (go_modules/github.com/moby/term/@v/v0.0.0-20221205130635-1aeaba878587.mod) = YXzxWXXcyj+hNmj96YgWl4GIQmjEqhJYCkqOv9rfbWo=
+SHA256 (go_modules/github.com/moby/term/@v/v0.5.0.mod) = YXzxWXXcyj+hNmj96YgWl4GIQmjEqhJYCkqOv9rfbWo=
 SHA256 (go_modules/github.com/moby/term/@v/v0.5.2.mod) = aYKER5WYc/nIJfuNGsSm0GjWaKLUjI3+5nPpvslbsiw=
 SHA256 (go_modules/github.com/moby/term/@v/v0.5.2.zip) = +NblxTmSxkBRLuRam2FHp2W+vj2NUOO/4eTsPgUs1og=
 SHA256 (go_modules/github.com/modern-go/concurrent/@v/v0.0.0-20180228061459-e0a39a4cb421.mod) = J6Xp8FxxCJtv1eEZ/ByM6B8MFtpOwzVxV7HYXiuoWuI=
@@ -1707,8 +1708,8 @@ SHA256 (go_modules/github.com/t-yuki/gocover-cobertura/@v/v0.0.0-20180217150009-
 SHA256 (go_modules/github.com/t-yuki/gocover-cobertura/@v/v0.0.0-20180217150009-aaee18c8195c.zip) = /63b9tbH1wZLRQteaguvhBOZuqRCgQvDFzwoqlp2UII=
 SHA256 (go_modules/github.com/tailscale/certstore/@v/v0.1.1-0.20231202035212-d3fa0460f47e.mod) = H3gciqnSYOm1fgxe2W5VnjDDKguqdZ/1Q3To2cycCwc=
 SHA256 (go_modules/github.com/tailscale/certstore/@v/v0.1.1-0.20231202035212-d3fa0460f47e.zip) = yPCqJ+f/7SXCC6gdlZOEjB9E6HYWLS+Mu4H00xB/ciU=
-SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20250112153213-b748de04d81b.mod) = HHhjj6V8Te7J7O5sPFrvhSLK/S0P49EEnA2p58LE4VY=
-SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20250112153213-b748de04d81b.zip) = g6bHhToEJyNdl4CxdqbTMtNoF25DLPwzGBtFq0Yf2Go=
+SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20251001183927-9c2ad255ef3f.mod) = HHhjj6V8Te7J7O5sPFrvhSLK/S0P49EEnA2p58LE4VY=
+SHA256 (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20251001183927-9c2ad255ef3f.zip) = kqzO97dOi+I98BU57SGt8pSaBiSAi+ZIkW8YV9BmmGU=
 SHA256 (go_modules/github.com/tailscale/go-winio/@v/v0.0.0-20231025203758-c4f33415bf55.mod) = WbivDiwZT1KRYO4clSQoESgdfpv+YOIKRG2dGzBhNUs=
 SHA256 (go_modules/github.com/tailscale/go-winio/@v/v0.0.0-20231025203758-c4f33415bf55.zip) = BDMDcHHgZ+w8wGANuXoxsilrhSrehoi0qtmQ9+y9Gjc=
 SHA256 (go_modules/github.com/tailscale/goexpect/@v/v0.0.0-20210902213824-6e8c725cea41.mod) = 10pfvHFZMI2CXTb7HNJbK2ngfgi4Em+6P/RFkaznf4Q=
@@ -2758,7 +2759,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.1.zip) = UVmE
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = ls01XNT8EFcJEXpXnTm9ba+iNZHtIEug4S8FLJT4cVQ=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = GcGueolLJMUcGaFPICznsg9pahAlIJQ7/cKE2s770T4=
 SHA256 (go_modules/tailscale.com/@v/v1.73.0-pre.0.20240822193108-696711cc17c4.mod) = oL4n5UGP7E/MrZ8FpIABm+q/DinsipIyPThn5Y/Fl+8=
-SHA256 (tailscale.com-v1.88.3.zip) = cM+omikyeLTy1g7AkCDhU3JLNqZ2mpHZSzeVkb1TYU8=
+SHA256 (tailscale.com-v1.90.2.zip) = 8+RHp+GIUyf59vvCBZUN4i/lA+aZPR55rid3ugkfyBA=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.mod) = 173
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.zip) = 7059
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.1.mod) = 77
@@ -4084,6 +4085,7 @@ SIZE (go_modules/github.com/moby/sys/userns/@v/v0.1.0.mod) = 43
 SIZE (go_modules/github.com/moby/sys/userns/@v/v0.1.0.zip) = 7056
 SIZE (go_modules/github.com/moby/term/@v/v0.0.0-20210619224110-3f7ff695adc6.mod) = 298
 SIZE (go_modules/github.com/moby/term/@v/v0.0.0-20221205130635-1aeaba878587.mod) = 171
+SIZE (go_modules/github.com/moby/term/@v/v0.5.0.mod) = 171
 SIZE (go_modules/github.com/moby/term/@v/v0.5.2.mod) = 171
 SIZE (go_modules/github.com/moby/term/@v/v0.5.2.zip) = 22625
 SIZE (go_modules/github.com/modern-go/concurrent/@v/v0.0.0-20180228061459-e0a39a4cb421.mod) = 39
@@ -4468,8 +4470,8 @@ SIZE (go_modules/github.com/t-yuki/gocover-cobertura/@v/v0.0.0-20180217150009-aa
 SIZE (go_modules/github.com/t-yuki/gocover-cobertura/@v/v0.0.0-20180217150009-aaee18c8195c.zip) = 11623
 SIZE (go_modules/github.com/tailscale/certstore/@v/v0.1.1-0.20231202035212-d3fa0460f47e.mod) = 211
 SIZE (go_modules/github.com/tailscale/certstore/@v/v0.1.1-0.20231202035212-d3fa0460f47e.zip) = 23169
-SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20250112153213-b748de04d81b.mod) = 207
-SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20250112153213-b748de04d81b.zip) = 12368
+SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20251001183927-9c2ad255ef3f.mod) = 207
+SIZE (go_modules/github.com/tailscale/depaware/@v/v0.0.0-20251001183927-9c2ad255ef3f.zip) = 12404
 SIZE (go_modules/github.com/tailscale/go-winio/@v/v0.0.0-20231025203758-c4f33415bf55.mod) = 194
 SIZE (go_modules/github.com/tailscale/go-winio/@v/v0.0.0-20231025203758-c4f33415bf55.zip) = 166078
 SIZE (go_modules/github.com/tailscale/goexpect/@v/v0.0.0-20210902213824-6e8c725cea41.mod) = 310
@@ -5519,4 +5521,4 @@ SIZE (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.1.zip) = 99928
 SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = 65
 SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = 6671
 SIZE (go_modules/tailscale.com/@v/v1.73.0-pre.0.20240822193108-696711cc17c4.mod) = 20014
-SIZE (tailscale.com-v1.88.3.zip) = 5188027
+SIZE (tailscale.com-v1.90.2.zip) = 5396870

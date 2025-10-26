@@ -639,7 +639,7 @@ MODGO_MODULES =	\
 	github.com/syndtr/gocapability							 v0.0.0-20200815063812-42c35b437635 \
 	github.com/t-yuki/gocover-cobertura						 v0.0.0-20180217150009-aaee18c8195c \
 	github.com/tailscale/certstore							 v0.1.1-0.20231202035212-d3fa0460f47e \
-	github.com/tailscale/depaware							 v0.0.0-20250112153213-b748de04d81b \
+	github.com/tailscale/depaware							 v0.0.0-20251001183927-9c2ad255ef3f \
 	github.com/tailscale/go-winio							 v0.0.0-20231025203758-c4f33415bf55 \
 	github.com/tailscale/goexpect							 v0.0.0-20210902213824-6e8c725cea41 \
 	github.com/tailscale/golang-x-crypto						 v0.0.0-20250404221719-a5573b049869 \
@@ -1164,6 +1164,7 @@ MODGO_MODFILES =	\
 	github.com/moby/sys/user							 v0.1.0 \
 	github.com/moby/term								 v0.0.0-20210619224110-3f7ff695adc6 \
 	github.com/moby/term								 v0.0.0-20221205130635-1aeaba878587 \
+	github.com/moby/term								 v0.5.0 \
 	github.com/modern-go/concurrent							 v0.0.0-20180228061459-e0a39a4cb421 \
 	github.com/modern-go/reflect2							 v0.0.0-20180701023420-4b7aa43c6742 \
 	github.com/modern-go/reflect2							 v1.0.1 \
