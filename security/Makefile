@@ -340,7 +340,6 @@
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rbw
-     SUBDIR += rdp
      SUBDIR += reaver
      SUBDIR += recon-ng
      SUBDIR += regripper
