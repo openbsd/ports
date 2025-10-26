@@ -1,6 +1,6 @@
 COMMENT =		components for JupyterLab and similar applications
 
-MODPY_DISTV =		2.27.3
+MODPY_DISTV =		2.28.0
 DISTNAME =		jupyterlab_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
