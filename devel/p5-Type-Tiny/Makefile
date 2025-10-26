@@ -1,6 +1,6 @@
 COMMENT =	tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =	Type-Tiny-2.008003
+DISTNAME =	Type-Tiny-2.008004
 CPAN_AUTHOR =	TOBYINK
 
 CATEGORIES =	devel
