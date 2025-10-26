@@ -3,9 +3,9 @@ Index: gui/qt5/gwengui-qt5-config.cmake.in
 +++ gui/qt5/gwengui-qt5-config.cmake.in
 @@ -33,7 +33,7 @@ if(WIN32)
  elseif(APPLE)
-     set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.dylib")
+     set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt@QT_MAJOR_VERSION@.dylib")
  else()
--    set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.so")
+-    set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt@QT_MAJOR_VERSION@.so")
 +    set_and_check(${CMAKE_FIND_PACKAGE_NAME}_LIBRARIES "@libdir@/libgwengui-qt5.so.${LIBgwengui-qt5_VERSION}")
  endif()
  
