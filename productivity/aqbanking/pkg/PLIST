@@ -62,9 +62,9 @@ lib/aqbanking/plugins/44/providers/aqhbci.xml
 lib/aqbanking/plugins/44/providers/aqnone.xml
 lib/aqbanking/plugins/44/providers/aqofxconnect.xml
 lib/aqbanking/plugins/44/providers/aqpaypal.xml
-lib/cmake/aqbanking-6.6/
-lib/cmake/aqbanking-6.6/aqbanking-config-version.cmake
-lib/cmake/aqbanking-6.6/aqbanking-config.cmake
+lib/cmake/aqbanking-6.7/
+lib/cmake/aqbanking-6.7/aqbanking-config-version.cmake
+lib/cmake/aqbanking-6.7/aqbanking-config.cmake
 @static-lib lib/libaqbanking.a
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}

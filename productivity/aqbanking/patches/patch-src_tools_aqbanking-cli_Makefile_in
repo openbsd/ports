@@ -3,7 +3,7 @@ Do not hardcode -lstdc++
 Index: src/tools/aqbanking-cli/Makefile.in
 --- src/tools/aqbanking-cli/Makefile.in.orig
 +++ src/tools/aqbanking-cli/Makefile.in
-@@ -490,7 +490,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src/libs -I$(top_builddi
+@@ -492,7 +492,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src/libs -I$(top_builddi
  AM_CFLAGS = @visibility_cflags@
  aqbanking_cli_LDADD = \
    $(aqbanking_internal_libs) \
