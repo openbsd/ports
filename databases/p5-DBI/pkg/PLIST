@@ -106,6 +106,7 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBD::Proxy.3p
 @man man/man3p/DBD::Sponge.3p
 @man man/man3p/DBI.3p
+@man man/man3p/DBI::Changes.3p
 @man man/man3p/DBI::Const::GetInfo::ANSI.3p
 @man man/man3p/DBI::Const::GetInfo::ODBC.3p
 @man man/man3p/DBI::Const::GetInfoReturn.3p
