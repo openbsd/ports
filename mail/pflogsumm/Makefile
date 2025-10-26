@@ -1,13 +1,11 @@
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.12
+DISTNAME=	pflogsumm-1.1.13
 CATEGORIES=	mail
 
 SITES=		http://jimsun.linxnet.com/downloads/
 
 HOMEPAGE=	http://jimsun.linxnet.com/postfix_contrib.html
-
-MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
