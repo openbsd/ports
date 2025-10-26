@@ -13,10 +13,6 @@ CONFIGURE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 .endif
 
-# Limit the number of moc/uic processes started by cmake_autogen
-# (default: number of CPUs on the system)
-CONFIGURE_ARGS += -DCMAKE_AUTOGEN_PARALLEL=${MAKE_JOBS}
-
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
@@ -116,6 +112,10 @@ CONFIGURE_ENV +=	MODTK_VERSION=${MODTK_VERSION} \
 			MODTK_LIBDIR=${MODTK_LIBDIR} \
 			MODTK_LIB=${MODTK_LIB}
 .endif
+
+# Limit the number of moc/uic processes started by cmake_autogen
+# (default: number of CPUs on the system)
+CONFIGURE_ARGS +=	-DCMAKE_AUTOGEN_PARALLEL=${MAKE_JOBS}
 
 .if ! empty(MODCMAKE_LDFLAGS)
 # https://cmake.org/cmake/help/latest/envvar/LDFLAGS.html
