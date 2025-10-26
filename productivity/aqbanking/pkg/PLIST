@@ -226,6 +226,7 @@ share/aqbanking/imexporters/xml/data/ofx2.xml
 share/aqbanking/imexporters/xml/data/pain_001_001_03.xml
 share/aqbanking/imexporters/xml/data/pain_001_001_09.xml
 share/aqbanking/imexporters/xml/data/pain_001_003_03.xml
+share/aqbanking/imexporters/xml/data/pain_002_001_10.xml
 share/aqbanking/imexporters/xml/data/pain_008_001_02.xml
 share/aqbanking/imexporters/xml/data/pain_008_003_02.xml
 share/aqbanking/imexporters/xml/profiles/
