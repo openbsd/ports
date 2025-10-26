@@ -1,45 +1,33 @@
-COMMENT =		hardcore 3D space shmup
-BROKEN-sparc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
-BROKEN-powerpc =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
-BROKEN-powerpc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
+COMMENT =	hardcore 3D space shmup
 
-V =			1.3.2
-DISTNAME =		astromenace-src-$V
-PKGNAME =		astromenace-$V
-REVISION =		1
+V =		1.4.3
+GH_ACCOUNT =	viewizard
+GH_PROJECT =	astromenace
+GH_TAGNAME =	v${V}
 
-CATEGORIES =		games
+CATEGORIES =	games
 
-HOMEPAGE =		http://www.viewizard.com/
+HOMEPAGE =	http://www.viewizard.com/
 
 # code GPLv3+, data a mix of GPLv3+, CC BY-SA 3.0, SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU ICE SDL SM X11 Xext Xinerama alut c fontconfig
-WANTLIB += freetype m ogg openal pthread ${COMPILER_LIBCXX} vorbis vorbisfile
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 alut c freetype m ogg
+WANTLIB += openal vorbis vorbisfile
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-SITES =			${SITE_SOURCEFORGE:=openastromenace/}
-EXTRACT_SUFX =		.tar.bz2
+MODULES =	devel/cmake
 
-MODULES =		devel/cmake
-LIB_DEPENDS =		audio/freealut \
-			audio/libvorbis \
-			audio/openal \
-			devel/sdl
+LIB_DEPENDS =	audio/freealut \
+		audio/libvorbis \
+		audio/libogg \
+		audio/openal \
+		devel/sdl2
 
-CONFIGURE_ARGS +=	-DDATADIR=${PREFIX}/share/astromenace
+CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+			-DDATADIR=${LOCALBASE}/share/astromenace
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/AstroMenace
-
-do-install:
-	cd ${WRKSRC} && \
-		${WRKBUILD}/AstroMenace --pack --rawdata=./RAW_VFS_DATA --dir=.
-	${INSTALL_PROGRAM} ${WRKBUILD}/AstroMenace ${PREFIX}/bin/astromenace
-	${INSTALL_DATA_DIR} ${PREFIX}/share/astromenace/
-	${INSTALL_DATA} ${WRKSRC}/gamedata.vfs ${PREFIX}/share/astromenace/
 
 .include <bsd.port.mk>
