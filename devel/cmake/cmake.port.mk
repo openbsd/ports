@@ -16,13 +16,6 @@ MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
-BUILD_DEPENDS += devel/ninja
-.elif ${USE_NINJA:L} == "samurai"
-BUILD_DEPENDS += devel/samurai
-CONFIGURE_ARGS += -DCMAKE_MAKE_PROGRAM=samu
-.endif
-
-.if ${USE_NINJA:L} == "yes" || ${USE_NINJA:L} == "samurai"
 _MODCMAKE_GEN = Ninja
 MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
@@ -59,7 +52,7 @@ do-test:
 	@${MODCMAKE_TEST_TARGET}
 .endif
 
-.else
+.else # USE_NINJA
 _MODCMAKE_GEN = "Unix Makefiles"
 # XXX cmake include parser is bogus
 DPB_PROPERTIES += nojunk
