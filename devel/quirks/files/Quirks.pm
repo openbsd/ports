@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1759 2025/10/26 19:08:58 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1760 2025/10/26 19:27:30 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1007,6 +1007,7 @@ setup_obsolete_reason(
 	3 => 'termshark',
 	14 => 'py3-lief',
 	1 => 'rdp',
+	71 => 'mininet',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1063,6 +1064,7 @@ my $obsolete_message = {
 	68 => "unmaintained upstream, outdated for decades, does not work, expected dhclient, use unwind.conf(5) 'block list file' instead",
 	69 => "no longer maintained upstream, does not support ffmpeg > 6",
 	70 => "retired upstream, no longer needed, only consumer security/libdigidocpp switched to textproc/libxml + security/xmlsec",
+	71 => "stale fork, requires Python 2, wants long gone switch(4), example does nothing (may destroy existing interfaces)",
 };
 
 # ->is_base_system($handle, $state):

@@ -283,7 +283,6 @@
      SUBDIR += megatools
      SUBDIR += microblog-purple
      SUBDIR += miniflux
-     SUBDIR += mininet
      SUBDIR += minio
      SUBDIR += miniupnp
      SUBDIR += mirmon
