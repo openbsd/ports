@@ -1,0 +1,15 @@
+Allow use of external asciidoc instead of the embedded
+copy which is Python 2 code.
+
+Index: build/Doc.jam
+--- build/Doc.jam.orig
++++ build/Doc.jam
+@@ -8,7 +8,7 @@
+ # GNU General Public License version 2 or newer.
+ # See COPYING for details.
+ 
+-ASCIIDOC  = "$(TOP)/doc/asciidoc/asciidoc.py" ;
++ASCIIDOC  ?= "$(TOP)/doc/asciidoc/asciidoc.py" ;
+ DOCDIR    = "$(TOP)/doc" ;
+ MANUALDIR = "$(DOCDIR)/manual" ;
+ 

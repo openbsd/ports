@@ -62,16 +62,16 @@ share/doc/ede-${FULL_V}/manual/index.html
 share/doc/ede-${FULL_V}/manual/introduction.html
 share/ede/
 share/ede/panel-applets/
-share/ede/panel-applets/battery_monitor.so
-share/ede/panel-applets/clock.so
-share/ede/panel-applets/cpu_monitor.so
-share/ede/panel-applets/keyboard_layout.so
-share/ede/panel-applets/mem_monitor.so
-share/ede/panel-applets/pager.so
-share/ede/panel-applets/quick_launch.so
-share/ede/panel-applets/start_menu.so
-share/ede/panel-applets/system_tray.so
-share/ede/panel-applets/taskbar.so
+@so share/ede/panel-applets/battery_monitor.so
+@so share/ede/panel-applets/clock.so
+@so share/ede/panel-applets/cpu_monitor.so
+@so share/ede/panel-applets/keyboard_layout.so
+@so share/ede/panel-applets/mem_monitor.so
+@so share/ede/panel-applets/pager.so
+@so share/ede/panel-applets/quick_launch.so
+@so share/ede/panel-applets/start_menu.so
+@so share/ede/panel-applets/system_tray.so
+@so share/ede/panel-applets/taskbar.so
 share/ede/themes/
 share/ede/themes/splash-themes/
 share/ede/themes/splash-themes/scape/
