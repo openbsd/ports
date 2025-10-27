@@ -23,11 +23,6 @@ MODPY_PI=	Yes
 
 WANTLIB=	blosc blosc2 bz2 hdf5 lzo2
 
-MODPY_DISTUTILS_BUILDARGS=	--blosc=${LOCALBASE} \
-				--blosc2=${LOCALBASE} \
-				--hdf5=${LOCALBASE} \
-				--lzo=${LOCALBASE}
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -18,8 +18,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS=-v test/
 
-MODPY_DISTUTILS_BUILD=build_ext --inplace
-
 BUILD_DEPENDS=	lang/cython
 
 RUN_DEPENDS=	devel/desktop-file-utils \
