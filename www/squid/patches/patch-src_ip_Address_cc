@@ -1,0 +1,64 @@
+From 5750e4fc76b55f7bc27ae8b8953e491991a91e55 Mon Sep 17 00:00:00 2001
+From: Ben Kallus <49924171+kenballus@users.noreply.github.com>
+Date: Mon, 11 Aug 2025 13:02:17 +0000
+Subject: [PATCH] Fix type mismatch in new/delete of addrinfo::ai_addr (#2136)
+
+new/delete type mismatches are UB. Fix an instance of this
+problem that occurs when sockaddr_in6 is allocated, but
+sockaddr is deallocated, by always allocating/deallocating
+sockaddr_storage.
+
+Index: src/ip/Address.cc
+--- src/ip/Address.cc.orig
++++ src/ip/Address.cc
+@@ -643,11 +643,8 @@ Ip::Address::getAddrInfo(struct addrinfo *&dst, int fo
+             && dst->ai_protocol == 0)
+         dst->ai_protocol = IPPROTO_UDP;
+ 
++    InitAddr(dst);
+     if (force == AF_INET6 || (force == AF_UNSPEC && isIPv6()) ) {
+-        dst->ai_addr = (struct sockaddr*)new sockaddr_in6;
+-
+-        memset(dst->ai_addr,0,sizeof(struct sockaddr_in6));
+-
+         getSockAddr(*((struct sockaddr_in6*)dst->ai_addr));
+ 
+         dst->ai_addrlen = sizeof(struct sockaddr_in6);
+@@ -669,11 +666,6 @@ Ip::Address::getAddrInfo(struct addrinfo *&dst, int fo
+ #endif
+ 
+     } else if ( force == AF_INET || (force == AF_UNSPEC && isIPv4()) ) {
+-
+-        dst->ai_addr = (struct sockaddr*)new sockaddr_in;
+-
+-        memset(dst->ai_addr,0,sizeof(struct sockaddr_in));
+-
+         getSockAddr(*((struct sockaddr_in*)dst->ai_addr));
+ 
+         dst->ai_addrlen = sizeof(struct sockaddr_in);
+@@ -693,12 +685,12 @@ Ip::Address::InitAddr(struct addrinfo *&ai)
+     }
+ 
+     // remove any existing data.
+-    if (ai->ai_addr) delete ai->ai_addr;
++    delete reinterpret_cast<struct sockaddr_storage *>(ai->ai_addr);
+ 
+-    ai->ai_addr = (struct sockaddr*)new sockaddr_in6;
+-    memset(ai->ai_addr, 0, sizeof(struct sockaddr_in6));
++    ai->ai_addr = reinterpret_cast<struct sockaddr *>(new sockaddr_storage);
++    memset(ai->ai_addr, 0, sizeof(struct sockaddr_storage));
+ 
+-    ai->ai_addrlen = sizeof(struct sockaddr_in6);
++    ai->ai_addrlen = sizeof(struct sockaddr_storage);
+ 
+ }
+ 
+@@ -707,7 +699,7 @@ Ip::Address::FreeAddr(struct addrinfo *&ai)
+ {
+     if (ai == nullptr) return;
+ 
+-    if (ai->ai_addr) delete ai->ai_addr;
++    delete reinterpret_cast<struct sockaddr_storage *>(ai->ai_addr);
+ 
+     ai->ai_addr = nullptr;
+ 
