@@ -1,14 +1,14 @@
 Index: desktop-widgets/mainwindow.ui
 --- desktop-widgets/mainwindow.ui.orig
 +++ desktop-widgets/mainwindow.ui
-@@ -114,7 +114,6 @@
+@@ -107,7 +107,6 @@
       <string>&amp;Help</string>
      </property>
      <addaction name="actionAboutSubsurface"/>
 -    <addaction name="action_Check_for_Updates"/>
-     <addaction name="actionUserSurvey"/>
      <addaction name="actionUserManual"/>
     </widget>
+    <widget class="QMenu" name="menuImport">
 @@ -399,11 +398,6 @@
     </property>
     <property name="shortcut">

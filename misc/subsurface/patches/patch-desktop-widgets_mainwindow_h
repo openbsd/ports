@@ -1,19 +1,11 @@
 Index: desktop-widgets/mainwindow.h
 --- desktop-widgets/mainwindow.h.orig
 +++ desktop-widgets/mainwindow.h
-@@ -71,7 +71,6 @@ class MainWindow : public QMainWindow { (public)
- 	void cleanUpEmpty();
- 	void setToolButtonsEnabled(bool enabled);
- 	void printPlan();
--	void checkSurvey();
- 	void setApplicationState(const QByteArray& state);
- 	void setStateProperties(const QByteArray& state, const PropertyList& tl, const PropertyList& tr, const PropertyList& bl,const PropertyList& br);
- 	bool inPlanner();
-@@ -130,7 +129,6 @@ slots:
- 	void on_actionUserSurvey_triggered();
+@@ -127,7 +127,6 @@ slots:
+ 	void on_actionUserManual_triggered();
  	void on_actionDivePlanner_triggered();
  	void on_actionReplanDive_triggered();
 -	void on_action_Check_for_Updates_triggered();
  
- 	void on_actionDiveSiteEdit_triggered();
- 	void selectionChanged();
+ 	void divesSelected(const std::vector<dive *> &selection, dive *currentDive, int currentDC);
+ 	void initialUiSetup();

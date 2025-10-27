@@ -1,0 +1,11 @@
+Index: tests/testprofile.cpp
+--- tests/testprofile.cpp.orig
++++ tests/testprofile.cpp
+@@ -9,6 +9,7 @@
+ #include "core/save-profiledata.h"
+ #include "core/pref.h"
+ #include "QTextCodec"
++#include <locale.h>
+ 
+ // This test compares the content of struct profile against a known reference version for a list
+ // of dives to prevent accidental regressions. Thus is you change anything in the profile this

@@ -1,58 +1,26 @@
 Index: desktop-widgets/mainwindow.cpp
 --- desktop-widgets/mainwindow.cpp.orig
 +++ desktop-widgets/mainwindow.cpp
-@@ -259,7 +259,6 @@ MainWindow::MainWindow() : QMainWindow(),
- 	memset(&copyPasteDive, 0, sizeof(copyPasteDive));
- 	memset(&what, 0, sizeof(what));
+@@ -209,7 +209,6 @@ MainWindow::MainWindow() :
+ 	ui.menuHelp->removeAction(ui.actionUserManual);
+ #endif
  
 -	updateManager = new UpdateManager(this);
  	undoAction = Command::undoAction(this);
  	redoAction = Command::redoAction(this);
- 	undoAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Z));
-@@ -1276,14 +1275,6 @@ void MainWindow::on_actionAboutSubsurface_triggered()
- 	dlg.exec();
- }
+ 	undoAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_Z));
+@@ -854,14 +853,6 @@ void MainWindow::on_actionAboutSubsurface_triggered()
+ 	SubsurfaceAbout dlg(this);
  
+ 	dlg.exec();
+-}
+-
 -void MainWindow::on_action_Check_for_Updates_triggered()
 -{
 -	if (!updateManager)
 -		updateManager = new UpdateManager(this);
 -
 -	updateManager->checkForUpdates();
--}
--
- void MainWindow::on_actionUserManual_triggered()
- {
- #ifndef NO_USERMANUAL
-@@ -1445,31 +1436,11 @@ void MainWindow::readSettings()
- 
- 	loadRecentFiles();
- 	if (firstRun) {
--		checkSurvey();
- 		firstRun = false;
- 	}
  }
  
- #undef TOOLBOX_PREF_BUTTON
--
--void MainWindow::checkSurvey()
--{
--	QSettings s;
--	s.beginGroup("UserSurvey");
--	if (!s.contains("FirstUse42")) {
--		QVariant value = QDate().currentDate();
--		s.setValue("FirstUse42", value);
--	}
--	// wait a week for production versions, but not at all for non-tagged builds
--	int waitTime = 7;
--	QDate firstUse42 = s.value("FirstUse42").toDate();
--	if (run_survey || (firstUse42.daysTo(QDate().currentDate()) > waitTime && !s.contains("SurveyDone"))) {
--		if (!survey)
--			survey = new UserSurvey(this);
--		survey->show();
--	}
--	s.endGroup();
--}
- 
- void MainWindow::writeSettings()
- {
+ void MainWindow::on_actionUserManual_triggered()

@@ -1,0 +1,53 @@
+Index: Documentation/Makefile
+--- Documentation/Makefile.orig
++++ Documentation/Makefile
+@@ -29,29 +29,29 @@ $(OUT)/images: images mobile-images
+ 
+ $(OUT)/%.text: %.txt
+ 	$(mkdir)
+-	@VERSION=$(shell git log -1 --pretty=format:%H $< | xargs ../scripts/get-version-for-changeset.sh); \
++	@VERSION=6.0.5459
+ 	if [ -z "$$VERSION" ]; then \
+ 		VERSION="pre-6.0.0"; \
+ 	fi; \
+-	VERSION_DATE=$(shell git log -1 --pretty=format:%ad --date=short $<); \
++	VERSION_DATE="2025-10-22"; \
+ 	$(A2X) -f text -a version=$$VERSION -a version-date=$$VERSION_DATE --destination-dir=$(OUT)/ $<
+ 
+ $(OUT)/%.pdf: %.txt
+ 	$(mkdir)
+-	@VERSION=$(shell git log -1 --pretty=format:%H $< | xargs ../scripts/get-version-for-changeset.sh); \
++	@VERSION=6.0.5459
+ 	if [ -z "$$VERSION" ]; then \
+ 		VERSION="pre-6.0.0"; \
+ 	fi; \
+-	VERSION_DATE=$(shell git log -1 --pretty=format:%ad --date=short $<); \
++	VERSION_DATE="2025-10-22"; \
+ 	$(A2X) --dblatex-opts "-P latex.output.revhistory=0" -f pdf -a version=$$VERSION -a version-date=$$VERSION_DATE --destination-dir=$(OUT)/ $<
+ 
+ $(OUT)/%.html: %.txt | $(OUT)/images
+ 	$(mkdir)
+-	@VERSION=$(shell git log -1 --pretty=format:%H $< | xargs ../scripts/get-version-for-changeset.sh); \
++	@VERSION=6.0.5459
+ 	if [ -z "$$VERSION" ]; then \
+ 		VERSION="pre-6.0.0"; \
+ 	fi; \
+-	VERSION_DATE=$(shell git log -1 --pretty=format:%ad --date=short $<); \
++	VERSION_DATE="2025-10-22"; \
+ 	$(ASCIIDOC) -a toc -a toclevels=3 -a themedir=$(PWD) -a theme=$(THEME) -a version=$$VERSION -a version-date=$$VERSION_DATE -o $@ $<
+ 
+ # for the web facing version of the desktop manual, just use the post-processing script
+@@ -63,11 +63,11 @@ user-manual.html.wp: $(OUT)/user-manual.html
+ # the table of context and then post process
+ mobile-manual-v3.html.wp: mobile-manual-v3.txt
+ 	$(mkdir)
+-	@VERSION=$(shell git log -1 --pretty=format:%H $< | xargs ../scripts/get-version-for-changeset.sh); \
++	@VERSION=6.0.5459
+ 	if [ -z "$$VERSION" ]; then \
+ 		VERSION="pre-6.0.0"; \
+ 	fi; \
+-	VERSION_DATE=$(shell git log -1 --pretty=format:%ad --date=short $<); \
++	VERSION_DATE="2025-10-22"; \
+ 	$(ASCIIDOC) -a toc -a toclevels=1 -a themedir=$(PWD) -a theme=$(THEME) -a version="$$VERSION" -a version-date="$$VERSION_DATE" -o $(<:%.txt=%.html.tmp) $< && \
+ 		bash ../scripts/prep-manual.sh $(<:%.txt=%.html.tmp) && \
+ 		rm $(<:%.txt=%.html.tmp) && \
