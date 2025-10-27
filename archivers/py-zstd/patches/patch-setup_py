@@ -1,0 +1,26 @@
+- disable -fno-lto; base-gcc doesn't understand it
+- don't build with -O3 by default
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -355,8 +355,8 @@ if BUILD_SPEED3:
+         'msvc': ['/O3', ],
+         'mingw32': ['-O3',],
+         'unix': ['-O3',],
+-        'clang': ['-O3',],
+-        'gcc': ['-O3',],
++        'clang': ['',],
++        'gcc': ['',],
+     }
+ ###
+ # DVERSION - pass module version string
+@@ -399,7 +399,7 @@ if SUP_DEBUG:
+             COPT[comp].extend([ '-DZSTD_DEBUG=1','-g',
+             ])
+ 
+-if BUILD_NO_LTO:
++if 0 and BUILD_NO_LTO:
+     for comp in COPT:
+         if comp == 'msvc':
+             pass
