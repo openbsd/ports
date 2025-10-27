@@ -3,7 +3,7 @@ COMMENT =	raster graphics editor for digital painters
 MODPY_DISTV =	2.0.1
 DISTNAME =	mypaint-${MODPY_DISTV}
 EXTRACT_SUFX =	.tar.xz
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	graphics
 
@@ -22,8 +22,6 @@ WANTLIB += png
 SITES =			https://github.com/mypaint/mypaint/releases/download/v${MODPY_DISTV}/
 
 MODULES =		lang/python
-
-MODPY_SETUPTOOLS =	Yes
 SEPARATE_BUILD =	Yes
 COMPILER =		base-clang ports-gcc
 
@@ -52,5 +50,15 @@ LIB_DEPENDS =		devel/harfbuzz \
 TEST_DEPENDS =		devel/py-nose
 
 PORTHOME =		${WRKSRC}
+
+do-build:
+	cd ${WRKSRC}; \
+		${MODPY_BIN} ./setup.py build --build-base=${WRKBUILD}
+
+do-install:
+	cd ${WRKSRC}; \
+		${MODPY_BIN} ./setup.py build --build-base=${WRKBUILD} \
+		install --prefix=${TRUEPREFIX} --root=${WRKINST} \
+		--single-version-externally-managed
 
 .include <bsd.port.mk>
