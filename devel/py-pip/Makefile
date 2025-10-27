@@ -11,7 +11,7 @@ HOMEPAGE=	https://pip.pypa.io/en/stable/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
 # No test suites in pypi tarball
