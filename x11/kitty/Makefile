@@ -31,13 +31,6 @@ COMPILER_LANGS =	c
 CFLAGS +=		"-DOPENSSL_clear_free=freezero"
 
 MODULES =		lang/python
-MODPY_DISTUTILS_BUILD =	linux-package
-MODPY_SETUP_ARGS +=	--verbose \
-			--ignore-compiler-warnings \
-			--extra-include-dirs=${LOCALBASE}/include \
-			--extra-library-dirs=${LOCALBASE}/lib
-# this disables checking upstream for updates
-MODPY_SETUP_ARGS +=	--update-check-interval=0
 
 # optional dependencies:
 # graphics/ImageMagick (to use the kitty icat tool to display images in
@@ -59,6 +52,18 @@ TEST_ENV =		CI=true \
 
 # needed for 'make test'
 USE_GMAKE =		Yes
+
+_ARGS =			--verbose \
+			--ignore-compiler-warnings \
+			--extra-include-dirs=${LOCALBASE}/include \
+			--extra-library-dirs=${LOCALBASE}/lib \
+
+# this disables checking upstream for updates
+_ARGS +=		--update-check-interval=0
+
+do-build:
+	cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${MODPY_BIN} setup.py ${_ARGS} linux-package
 
 pre-test:
 	mkdir -p ${WRKDIR}/tmp/cache
