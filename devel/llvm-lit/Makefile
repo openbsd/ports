@@ -5,6 +5,7 @@ DPB_PROPERTIES =	parallel
 COMMENT =	LLVM integrated tester
 
 LLVM_VERSION =	19.1.7
+REVISION =	0
 DISTNAME =	llvm-project-${LLVM_VERSION}.src
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-lit-${LLVM_VERSION}
@@ -53,16 +54,14 @@ TEST_TARGET =		check-lit
 SUBST_VARS =		LLVM_VERSION
 
 post-build:
-	@cd ${WRKSRC}/utils/lit && ${SETENV} ${MAKE_ENV} \
-	    ${MODPY_BIN} ./${MODPY_SETUP} ${MODPY_SETUP_ARGS} \
-	    ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
+	cd ${WRKSRC}/utils/lit && \
+		${MODPY_BUILD_TARGET:S!${WRKDIST}/llvm!${WRKDIST}/llvm/utils/lit!}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/FileCheck ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/not ${PREFIX}/bin
-	@cd ${WRKSRC}/utils/lit && ${SETENV} ${MAKE_ENV} \
-	    ${MODPY_BIN} ./${MODPY_SETUP} ${MODPY_SETUP_ARGS} \
-	    ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
+	cd ${WRKSRC}/utils/lit && \
+		${MODPY_INSTALL_TARGET:S!${WRKDIST}/llvm!${WRKDIST}/llvm/utils/lit!}
 	${INSTALL_MAN} ${WRKBUILD}/docs/man/FileCheck.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKBUILD}/docs/man/lit.1 ${PREFIX}/man/man1
 
