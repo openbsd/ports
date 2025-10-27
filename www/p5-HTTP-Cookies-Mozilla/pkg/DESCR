@@ -1,0 +1,9 @@
+This package overrides the load() and save() methods of HTTP::Cookies
+so it can work with Mozilla cookie files.
+
+It should be able to work with all Mozilla derived browsers.
+
+This module can access the sqlite cookie jar either through
+DBD::SQlite or using the sqlite3(1) interface.
+
+In order to reduce dependencies, this package only depends on sqlite.
