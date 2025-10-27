@@ -288,6 +288,7 @@
      SUBDIR += p5-HTTP-Body
      SUBDIR += p5-HTTP-CookieJar
      SUBDIR += p5-HTTP-Cookies
+     SUBDIR += p5-HTTP-Cookies-Mozilla
      SUBDIR += p5-HTTP-DAV
      SUBDIR += p5-HTTP-Daemon
      SUBDIR += p5-HTTP-Date
