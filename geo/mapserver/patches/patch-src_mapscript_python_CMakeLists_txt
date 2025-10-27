@@ -1,0 +1,30 @@
+Index: src/mapscript/python/CMakeLists.txt
+--- src/mapscript/python/CMakeLists.txt.orig
++++ src/mapscript/python/CMakeLists.txt
+@@ -69,7 +69,7 @@ add_custom_command(
+     WORKING_DIRECTORY ${MAPSCRIPT_WORKING_DIR}
+     COMMAND ${Python_EXECUTABLE} -m venv mapscriptvenv
+     COMMAND ${CMAKE_COMMAND} -E env PIP_NO_PYTHON_VERSION_WARNING=1
+-            ${Python_VENV_SCRIPTS}/pip install --no-warn-script-location  -r ${PROJECT_SOURCE_DIR}/src/mapscript/python/requirements-dev.txt > requires.log
++            ${Python_VENV_SCRIPTS}/pip install --use-pep517 --no-build-isolation --no-warn-script-location  -r ${PROJECT_SOURCE_DIR}/src/mapscript/python/requirements-dev.txt > requires.log
+     COMMAND ${CMAKE_COMMAND} -E touch ${MAPSCRIPT_WORKING_DIR}/mapscriptvenv.stamp
+     COMMENT "Creating a Python virtual environment and installing the required packages"
+ )
+@@ -87,7 +87,7 @@ add_custom_command(
+     WORKING_DIRECTORY ${Python_VENV_SCRIPTS} # make sure scripts aren't run when from the same folder as mapscript.py
+     DEPENDS ${MAPSCRIPT_WORKING_DIR}/mapscriptwheel.stamp
+     OUTPUT ${MAPSCRIPT_WORKING_DIR}/mapscripttests.stamp
+-    COMMAND ${Python_VENV_SCRIPTS}/pip install --no-index --find-links=${MAPSCRIPT_WORKING_DIR}/dist mapscript
++    COMMAND ${Python_VENV_SCRIPTS}/pip install --use-pep517 --no-build-isolation --no-index --find-links=${MAPSCRIPT_WORKING_DIR}/dist mapscript
+     # ERROR: file or package not found: mapscript.tests (missing __init__.py?) is caused by
+     # ImportError: DLL load failed while importing _mapscript: The specified module could not be found.
+     COMMAND ${Python_VENV_SCRIPTS}/python -m pytest --pyargs mapscript.tests
+@@ -140,7 +140,7 @@ install(
+     endif()
+ 
+     execute_process(
+-      COMMAND ${Python_EXECUTABLE} -m pip install \${PYTHON_ROOT} \${PYTHON_PREFIX} .
++      COMMAND ${Python_EXECUTABLE} -m pip install --use-pep517 --no-build-isolation \${PYTHON_ROOT} \${PYTHON_PREFIX} .
+       WORKING_DIRECTORY ${MAPSCRIPT_WORKING_DIR}
+     )
+   "

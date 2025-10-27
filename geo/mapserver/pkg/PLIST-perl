@@ -1,3 +1,5 @@
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/mapscript/
 @so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/mapscript/mapscript.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/mapscript.pm

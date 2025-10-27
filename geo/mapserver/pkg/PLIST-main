@@ -3,6 +3,7 @@
 @cwd ${LOCALBASE}
 @bin bin/mapserv
 @lib lib/libmapserver.so.${LIBmapserver_VERSION}
+share/doc/pkg-readmes/${PKGSTEM}
 share/mapserver/mapserver-sample.conf
 @sample ${SYSCONFDIR}/mapserver.conf
 share/mapserver/ogcapi/
@@ -18,5 +19,3 @@ share/mapserver/ogcapi/templates/html-plain/footer.html
 share/mapserver/ogcapi/templates/html-plain/header.html
 share/mapserver/ogcapi/templates/html-plain/landing.html
 share/mapserver/ogcapi/templates/html-plain/openapi.html
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
-${PKGSTEM}
