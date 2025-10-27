@@ -21,10 +21,7 @@ MODULES =		lang/python \
 			textproc/intltool
 
 MODPY_ADJ_FILES =	unknown-horizons
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-
-SEPARATE_BUILD =	Yes
+MODPY_PYBUILD =		setuptools
 
 PORTHOME =		${WRKDIR}
 
