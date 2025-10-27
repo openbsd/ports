@@ -1,6 +1,7 @@
 COMMENT =		ebook management application
 
 V =			8.0.1
+REVISION =		0
 DISTNAME =		calibre-$V
 
 CATEGORIES =		textproc
@@ -90,12 +91,6 @@ MAKE_ENV +=		CALIBRE_PY3_PORT=1 \
 
 PORTHOME =		${WRKDIR}
 NO_TEST =		Yes
-MODPY_SETUPTOOLS =	Yes
-
-## setup.py doesn't like the options in our python module
-MODPY_DISTUTILS_BUILD =		build
-MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
-				--root=${PREFIX}
 
 # Cannot use MODPY_ADJ_FILES as there are ERANGE files with hard-coded shebang
 pre-patch:
@@ -110,8 +105,12 @@ pre-configure:
 	ln -s fake-xdg ${WRKDIR}/bin/$i
 .endfor
 
+do-build:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MODPY_BIN} setup.py build
+
 do-install:
-	${MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MODPY_BIN} setup.py install \
+		--prefix=${TRUEPREFIX} --root=${PREFIX}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
 	cd ${WRKSRC}/recipes && find . -type f -exec \
 	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
