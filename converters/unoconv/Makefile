@@ -1,5 +1,5 @@
 # sync with editors/libreoffice
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
 PKG_ARCH=		*
 
@@ -8,7 +8,7 @@ COMMENT=		UNiversal Office CONVerter
 GH_ACCOUNT=		unoconv
 GH_PROJECT=		unoconv
 GH_TAGNAME=		0.9.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		converters textproc
 

@@ -1,0 +1,39 @@
+distutils.version is moving to packaging and triggers deprecation warnings
+if used, but we don't really need this check anyway; we don't care about
+running with libreoffice versions <=3.3.
+
+Index: unoconv
+--- unoconv.orig
++++ unoconv
+@@ -16,7 +16,6 @@
+ 
+ from __future__ import print_function
+ 
+-from distutils.version import LooseVersion
+ import getopt
+ import glob
+ import os
+@@ -857,10 +856,7 @@ class Convertor:
+             info(3, "Launching our own listener using %s." % office.binary)
+             try:
+                 product = self.svcmgr.createInstance("com.sun.star.configuration.ConfigurationProvider").createInstanceWithArguments("com.sun.star.configuration.ConfigurationAccess", UnoProps(nodepath="/org.openoffice.Setup/Product"))
+-                if product.ooName not in ('LibreOffice', 'LOdev') or LooseVersion(product.ooSetupVersion) <= LooseVersion('3.3'):
+-                    args = [office.binary, "-headless", "-invisible", "-nocrashreport", "-nodefault", "-nofirststartwizard", "-nologo", "-norestore", "-accept=%s" % op.connection]
+-                else:
+-                    args = [office.binary, "--headless", "--invisible", "--nocrashreport", "--nodefault", "--nofirststartwizard", "--nologo", "--norestore", "--accept=%s" % op.connection]
++                args = [office.binary, "--headless", "--invisible", "--nocrashreport", "--nodefault", "--nofirststartwizard", "--nologo", "--norestore", "--accept=%s" % op.connection]
+                 if op.userProfile:
+                     args.append("-env:UserInstallation=file://" + realpath(op.userProfile))
+                 info(2, '%s listener arguments are %s.' % (product.ooName, args))
+@@ -1228,10 +1224,7 @@ class Listener:
+             else:
+                 info(1, "Existing %s listener found, nothing to do." % product.ooName)
+                 return
+-            if product.ooName != "LibreOffice" or LooseVersion(product.ooSetupVersion) <= LooseVersion('3.3'):
+-                cmd = [office.binary, "-headless", "-invisible", "-nocrashreport", "-nodefault", "-nologo", "-nofirststartwizard", "-norestore", "-accept=%s" % op.connection]
+-            else:
+-                cmd = [office.binary, "--headless", "--invisible", "--nocrashreport", "--nodefault", "--nologo", "--nofirststartwizard", "--norestore", "--accept=%s" % op.connection]
++            cmd = [office.binary, "--headless", "--invisible", "--nocrashreport", "--nodefault", "--nologo", "--nofirststartwizard", "--norestore", "--accept=%s" % op.connection]
+ 
+             # The rationale for using subprocess.Popen is to be able to handle
+             # a SIGTERM signal below and properly terminate the started office
