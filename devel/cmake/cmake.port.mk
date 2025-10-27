@@ -16,6 +16,7 @@ MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
+BUILD_DEPENDS += devel/ninja
 _MODCMAKE_GEN = Ninja
 MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
