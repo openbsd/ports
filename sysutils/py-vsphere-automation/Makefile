@@ -1,12 +1,13 @@
 COMMENT =		VMware vSphere Automation SDK for Python
 
-MODPY_DISTV =	8.0.2.0
+V =			8.0.2.0
+MODPY_DISTV =		1.86.0
 GH_ACCOUNT =		vmware
 GH_PROJECT =		vsphere-automation-sdk-python
-GH_TAGNAME =		v${MODPY_DISTV}
+GH_TAGNAME =		v${V}
 
-PKGNAME =		py-vsphere-automation-${MODPY_DISTV}
-REVISION =		1
+PKGNAME =		py-vsphere-automation-${V}
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -18,8 +19,7 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-pip \
 			sysutils/py-vmomi \

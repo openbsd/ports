@@ -3353,10 +3353,11 @@ lib/python${MODPY_VERSION}/site-packages/vmwarecloud_draas-1.23.0.dist-info/REQU
 lib/python${MODPY_VERSION}/site-packages/vmwarecloud_draas-1.23.0.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/vmwarecloud_draas-1.23.0.dist-info/direct_url.json
 lib/python${MODPY_VERSION}/site-packages/vmwarecloud_draas-1.23.0.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-1.86.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/vsphere_automation_sdk-${MODPY_DISTV}.dist-info/top_level.txt
 @comment requirements.txt

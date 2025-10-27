@@ -1,13 +1,12 @@
 COMMENT =	doxygen wrapper for KDE
 DISTNAME =	kapidox-${VERSION}
 FULLPKGNAME =	${PKGNAME}${FLAVOR_EXT}
-REVISION =	0
+REVISION =	1
 
 WANTLIB- =
 
 MODULES =	lang/python
-
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 SUBST_VARS =	DISTNAME
 
