@@ -28,12 +28,11 @@ SITES =		https://apps.ankiweb.net/downloads/archive/
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
-
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where
 # qtwebengine isn't available
-BUILD_DEPENDS =	www/py-qtwebengine
+BUILD_DEPENDS =	devel/py-setuptools \
+		www/py-qtwebengine
 
 RUN_DEPENDS =	audio/lame \
 		audio/py-audio \
