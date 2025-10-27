@@ -1,10 +1,10 @@
 COMMENT =		convert between ASN.1 encodings and text
 
+V =			0.7.0
 MODGO_MODNAME =		github.com/google/der-ascii
-MODGO_VERSION =		v0.6.0
-REVISION =		0
+MODGO_VERSION =		v$V
 
-DISTNAME =		der-ascii-0.6.0
+DISTNAME =		der-ascii-$V
 EPOCH =			0
 
 CATEGORIES =		textproc sysutils
