@@ -46,7 +46,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( svgJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -1034,7 +1034,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
+@@ -1043,7 +1043,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
  
  int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  {
@@ -55,7 +55,7 @@ Index: eeschema/eeschema_jobs_handler.cpp
  
      wxCHECK( upgradeJob, CLI::EXIT_CODES::ERR_UNKNOWN );
  
-@@ -1123,7 +1123,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
+@@ -1131,7 +1131,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobSchErc( JOB* aJob )
  {

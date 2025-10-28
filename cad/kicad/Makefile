@@ -4,11 +4,10 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			9.0.3
+V =			9.0.5
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		1
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -60,7 +59,7 @@ WANTLIB += absl_vlog_config_internal atk-1.0 boost_chrono-mt boost_locale-mt
 WANTLIB += boost_system-mt boost_thread-mt c cairo cairo-gobject
 WANTLIB += curl fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += git2 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl iodbc
-WANTLIB += m nng pango-1.0 pangocairo-1.0 pixman-1 protobuf ${MODPY_WANTLIB}
+WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 ${MODPY_WANTLIB}
 WANTLIB += secret-1 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
@@ -77,6 +76,7 @@ BUILD_DEPENDS =		devel/doxygen \
 			devel/gettext,-tools \
 			devel/re2c \
 			devel/swig \
+			devel/protobuf \
 			graphics/freeglut \
 			graphics/glm \
 			misc/shared-mime-info
@@ -100,7 +100,6 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/harfbuzz \
 			devel/libgit2/libgit2 \
 			devel/pango \
-			devel/protobuf \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
 			net/curl \
