@@ -759,6 +759,7 @@
      SUBDIR += tremc
      SUBDIR += trickle
      SUBDIR += trippy
+     SUBDIR += trurl
      SUBDIR += ttg
      SUBDIR += tuisky
      SUBDIR += tut
