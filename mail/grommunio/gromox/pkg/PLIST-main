@@ -12,6 +12,9 @@
 @rcscript ${RCDIR}/gromox_zcore
 @extraunexec rm -rf /var/db/gromox/*
 @extraunexec rm -rf /var/log/gromox/*
+@static-lib lib/libgromox_abtree.a
+lib/libgromox_abtree.la
+@lib lib/libgromox_abtree.so.${LIBgromox_abtree_VERSION}
 @static-lib lib/libgromox_auth.a
 lib/libgromox_auth.la
 @lib lib/libgromox_auth.so.${LIBgromox_auth_VERSION}
@@ -171,8 +174,10 @@ man/man8/event.8gx
 @man man/man8/gromox-exm2mt.8
 @man man/man8/gromox-exm2tnef.8
 @man man/man8/gromox-exm2vcf.8
+@man man/man8/gromox-ical2mt.8
 @man man/man8/gromox-kdb2mt.8
 @man man/man8/gromox-mailq.8
+@man man/man8/gromox-mbck.8
 @man man/man8/gromox-mbop.8
 @man man/man8/gromox-mbsize.8
 @man man/man8/gromox-mkmidb.8
@@ -180,6 +185,7 @@ man/man8/event.8gx
 @man man/man8/gromox-mkpublic.8
 @man man/man8/gromox-mt2exm.8
 @man man/man8/gromox-snapshot.8
+@man man/man8/gromox-vcf2mt.8
 man/man8/http.8gx
 man/man8/imap.8gx
 @man man/man8/kdb-uidextract-limited.8
@@ -232,7 +238,9 @@ share/gromox/Messages.xsd
 share/gromox/Services.wsdl
 share/gromox/Types.xsd
 share/gromox/abkt.pak
+share/gromox/conf.php
 share/gromox/cpid.txt
+share/gromox/db.php
 share/gromox/exmdb_list.txt
 share/gromox/folder_names.txt
 share/gromox/fpm-gromox.conf.sample
@@ -240,11 +248,6 @@ share/gromox/gdbinit
 share/gromox/gromox.ldif
 share/gromox/http/
 share/gromox/http/php/
-share/gromox/http/php/ews/
-share/gromox/http/php/ews/thumbnail.php
-share/gromox/http/php/lib/
-share/gromox/http/php/lib/conf.php
-share/gromox/http/php/lib/db.php
 share/gromox/lang_charset.txt
 share/gromox/lcid.txt
 share/gromox/local_bounce/
@@ -325,7 +328,6 @@ share/gromox/mlist_bounce/shift-jis/
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_DOMAIN
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_INTERNAL
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_SPECIFIED
-share/gromox/msgchg_group_0x1.txt
 share/gromox/notify_bounce/
 share/gromox/notify_bounce/ascii/
 share/gromox/notify_bounce/ascii/BOUNCE_NOTIFY_NON_READ
@@ -340,7 +342,6 @@ share/gromox/notify_bounce/gbk/
 share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_NON_READ
 share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_READ
 share/gromox/propnames.txt
-share/gromox/sa/
-share/gromox/sa/submit.php
 share/gromox/sqliterc
+share/gromox/submit.php
 share/gromox/timezone.pak

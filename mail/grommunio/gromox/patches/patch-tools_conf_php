@@ -1,6 +1,6 @@
-Index: exch/php/lib/conf.php
---- exch/php/lib/conf.php.orig
-+++ exch/php/lib/conf.php
+Index: tools/conf.php
+--- tools/conf.php.orig
++++ tools/conf.php
 @@ -44,10 +44,10 @@ function get_app_config()
  	$a["default"]["timezone"] ??= "Europe/Vienna";
  
