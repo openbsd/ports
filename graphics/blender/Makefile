@@ -92,7 +92,6 @@ LIB_DEPENDS =	archivers/zstd \
 		multimedia/pipewire/pipewire,-libs \
 		print/libharu \
 		textproc/pugixml \
-		 \
 		${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
