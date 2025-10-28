@@ -1,5 +1,5 @@
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.14.0
+DISTNAME=	geos-3.14.1
 
 CATEGORIES=	geo
 
