@@ -1,0 +1,34 @@
+Index: libavformat/tls_openssl.c
+--- libavformat/tls_openssl.c.orig
++++ libavformat/tls_openssl.c
+@@ -33,6 +33,8 @@
+ #include <openssl/err.h>
+ #include <openssl/x509v3.h>
+ 
++#define TLS_ST_OK SSL_ST_OK
++
+ /**
+  * Returns a heap-allocated null-terminated string containing
+  * the PEM-encoded public key. Caller must free.
+@@ -869,7 +871,9 @@ static int dtls_start(URLContext *h, const char *url, 
+         c->mtu = 1096;
+     SSL_set_options(p->ssl, SSL_OP_NO_QUERY_MTU);
+     SSL_set_mtu(p->ssl, c->mtu);
++#ifdef DTLS_set_link_mtu
+     DTLS_set_link_mtu(p->ssl, c->mtu);
++#endif
+     init_bio_method(h);
+     if (p->tls_shared.external_sock != 1) {
+         if ((ret = ff_tls_open_underlying(&p->tls_shared, h, url, options)) < 0) {
+@@ -1008,8 +1012,10 @@ static int tls_write(URLContext *h, const uint8_t *buf
+     uc->flags &= ~AVIO_FLAG_NONBLOCK;
+     uc->flags |= h->flags & AVIO_FLAG_NONBLOCK;
+ 
+-    if (c->tls_shared.is_dtls)
++#ifdef DTLS_get_link_mtu
++  if (c->tls_shared.is_dtls)
+         size = FFMIN(size, DTLS_get_data_mtu(c->ssl));
++#endif
+ 
+     ret = SSL_write(c->ssl, buf, size);
+     if (ret > 0)

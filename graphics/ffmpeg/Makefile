@@ -1,7 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
-V=		6.1.3
+V=		8.0
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
 CATEGORIES=	graphics multimedia
@@ -10,18 +10,18 @@ EXTRACT_SUFX=	.tar.xz
 
 USE_NOBTCFI-amd64=	Yes
 
-SHARED_LIBS=	avcodec		26.0 \
-		avdevice	14.0 \
-		avfilter	12.0 \
-		avformat	23.0 \
-		avutil		16.0 \
-		postproc	20.0 \
-		swresample	5.0 \
-		swscale		8.0
+SHARED_LIBS=	avcodec		27.0 \
+		avdevice	15.0 \
+		avfilter	13.0 \
+		avformat	24.0 \
+		avutil		17.0 \
+		swresample	6.0 \
+		swscale		9.0
 
 HOMEPAGE=	https://ffmpeg.org/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com>
+MAINTAINER=	Brad Smith <brad@comstyle.com> \
+		Kirill A. Korinsky <kirill@korins.ky>
 
 # LGPLv2.1 and GPLv2
 PERMIT_PACKAGE=	Yes
@@ -86,7 +86,6 @@ LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
 
 LIBavutil_EXTRALIBS=-L${X11BASE}/lib -lva -lva-drm -lva-x11 -lm -pthread
 
-LIBpostproc_EXTRALIBS=-lm
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
 
@@ -171,7 +170,6 @@ MAKE_ENV+=	V=1 \
 		libavfilter_extralibs="${LIBavfilter_EXTRALIBS}" \
 		libavformat_extralibs="${LIBavformat_EXTRALIBS}" \
 		libavutil_extralibs="${LIBavutil_EXTRALIBS}" \
-		libpostproc_extralibs="${LIBpostproc_EXTRALIBS}" \
 		libswresample_extralibs="${LIBswresample_EXTRALIBS}" \
 		libswscale_extralibs="${LIBswscale_EXTRALIBS}" \
 		libavcodec_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
@@ -179,15 +177,13 @@ MAKE_ENV+=	V=1 \
 		libavfilter_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
 		libavformat_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
 		libavutil_linkflags="" \
-		libpostproc_linkflags="" \
 		libswresample_linkflags="" \
 		libswscale_linkflags="" \
 		libavcodec_requires="libswresample libavutil" \
-		libavdevice_requires="libavfilter libswscale libpostproc libavformat libavcodec libswresample libavutil" \
-		libavfilter_requires="libswscale libpostproc libavformat libavcodec libswresample libavutil" \
+		libavdevice_requires="libavfilter libswscale libavformat libavcodec libswresample libavutil" \
+		libavfilter_requires="libswscale libavformat libavcodec libswresample libavutil" \
 		libavformat_requires="libavcodec libswresample libavutil" \
 		libavutil_requires="" \
-		libpostproc_requires="libavutil" \
 		libswresample_requires="libavutil" \
 		libswscale_requires="libavutil"
 
@@ -196,17 +192,15 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavfilter_VERSION=${LIBavfilter_VERSION} \
 		libavformat_VERSION=${LIBavformat_VERSION} \
 		libavutil_VERSION=${LIBavutil_VERSION} \
-		libpostproc_VERSION=${LIBpostproc_VERSION} \
 		libswresample_VERSION=${LIBswresample_VERSION} \
 		libswscale_VERSION=${LIBswscale_VERSION}
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
 		LIBavcodec_EXTRALIBS="-lswresample -lavutil ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavfilter -lswscale -lpostproc -lavformat -lavcodec -lswresample -lavutil ${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="-lswscale -lpostproc -lavformat -lavcodec -lswresample -lavutil ${LIBavfilter_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavfilter -lswscale -lavformat -lavcodec -lswresample -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lswscale -lavformat -lavcodec -lswresample -lavutil ${LIBavfilter_EXTRALIBS}" \
 		LIBavformat_EXTRALIBS="-lavcodec -lswresample -lavutil ${LIBavformat_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
-		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
 		LIBswresample_EXTRALIBS="-lavutil ${LIBswresample_EXTRALIBS}" \
 		LIBswscale_EXTRALIBS="-lavutil ${LIBswscale_EXTRALIBS}"
 FAKE_FLAGS=	${VERSION_FLAGS} \
@@ -215,7 +209,7 @@ FAKE_FLAGS=	${VERSION_FLAGS} \
 ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check
 
-.for _l in avutil avfilter avcodec avformat avdevice swscale swresample postproc
+.for _l in avutil avfilter avcodec avformat avdevice swscale swresample
 TEST_LIB_PATH:=	${TEST_LIB_PATH}:${WRKBUILD}/lib${_l}
 .endfor
 TEST_ENV+=	LD_LIBRARY_PATH=${TEST_LIB_PATH:C/^://}

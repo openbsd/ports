@@ -1,16 +1,19 @@
 Index: ffbuild/library.mak
 --- ffbuild/library.mak.orig
 +++ ffbuild/library.mak
-@@ -66,7 +66,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
- 
- $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SHLIBOBJS) $(SLIBOBJS) $(SUBDIR)lib$(NAME).ver
+@@ -74,9 +74,9 @@ $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SHLIBOBJS) 
  	$(SLIB_CREATE_DEF_CMD)
+ ifeq ($(RESPONSE_FILES),yes)
+ 	$(Q)echo $$(filter %.o,$$^) > $$@.objs
+-	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDSOFLAGS) $$(LD_O) @$$@.objs $(FFEXTRALIBS)
++	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDSOFLAGS) $$(LD_O) @$$@.objs $(LIB$(NAME)_EXTRALIBS)
+ else
 -	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDSOFLAGS) $$(LD_O) $$(filter %.o,$$^) $(FFEXTRALIBS)
 +	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDSOFLAGS) $$(LD_O) $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS)
+ endif
  	$(SLIB_EXTRA_CMD)
- 
- ifdef SUBDIR
-@@ -80,8 +80,6 @@ clean::
+ 	-$(RM) $$@.objs
+@@ -92,8 +92,6 @@ clean::
  install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
  	$(Q)mkdir -p "$(SHLIBDIR)"
  	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"

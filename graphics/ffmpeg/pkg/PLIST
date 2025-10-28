@@ -7,7 +7,6 @@ include/libavcodec/ac3_parser.h
 include/libavcodec/adts_parser.h
 include/libavcodec/avcodec.h
 include/libavcodec/avdct.h
-include/libavcodec/avfft.h
 include/libavcodec/bsf.h
 include/libavcodec/codec.h
 include/libavcodec/codec_desc.h
@@ -22,12 +21,12 @@ include/libavcodec/jni.h
 include/libavcodec/mediacodec.h
 include/libavcodec/packet.h
 include/libavcodec/qsv.h
+include/libavcodec/smpte_436m.h
 include/libavcodec/vdpau.h
 include/libavcodec/version.h
 include/libavcodec/version_major.h
 include/libavcodec/videotoolbox.h
 include/libavcodec/vorbis_parser.h
-include/libavcodec/xvmc.h
 include/libavdevice/
 include/libavdevice/avdevice.h
 include/libavdevice/version.h
@@ -63,6 +62,7 @@ include/libavutil/camellia.h
 include/libavutil/cast5.h
 include/libavutil/channel_layout.h
 include/libavutil/common.h
+include/libavutil/container_fifo.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
 include/libavutil/csp.h
@@ -86,17 +86,21 @@ include/libavutil/hdr_dynamic_metadata.h
 include/libavutil/hdr_dynamic_vivid_metadata.h
 include/libavutil/hmac.h
 include/libavutil/hwcontext.h
+include/libavutil/hwcontext_amf.h
 include/libavutil/hwcontext_cuda.h
 include/libavutil/hwcontext_d3d11va.h
+include/libavutil/hwcontext_d3d12va.h
 include/libavutil/hwcontext_drm.h
 include/libavutil/hwcontext_dxva2.h
 include/libavutil/hwcontext_mediacodec.h
+include/libavutil/hwcontext_oh.h
 include/libavutil/hwcontext_opencl.h
 include/libavutil/hwcontext_qsv.h
 include/libavutil/hwcontext_vaapi.h
 include/libavutil/hwcontext_vdpau.h
 include/libavutil/hwcontext_videotoolbox.h
 include/libavutil/hwcontext_vulkan.h
+include/libavutil/iamf.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
 include/libavutil/intreadwrite.h
@@ -118,6 +122,7 @@ include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
 include/libavutil/rc4.h
+include/libavutil/refstruct.h
 include/libavutil/replaygain.h
 include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
@@ -125,6 +130,7 @@ include/libavutil/sha.h
 include/libavutil/sha512.h
 include/libavutil/spherical.h
 include/libavutil/stereo3d.h
+include/libavutil/tdrdi.h
 include/libavutil/tea.h
 include/libavutil/threadmessage.h
 include/libavutil/time.h
@@ -138,10 +144,6 @@ include/libavutil/version.h
 include/libavutil/video_enc_params.h
 include/libavutil/video_hint.h
 include/libavutil/xtea.h
-include/libpostproc/
-include/libpostproc/postprocess.h
-include/libpostproc/version.h
-include/libpostproc/version_major.h
 include/libswresample/
 include/libswresample/swresample.h
 include/libswresample/version.h
@@ -160,8 +162,6 @@ include/libswscale/version_major.h
 @lib lib/libavformat.so.${LIBavformat_VERSION}
 @static-lib lib/libavutil.a
 @lib lib/libavutil.so.${LIBavutil_VERSION}
-@static-lib lib/libpostproc.a
-@lib lib/libpostproc.so.${LIBpostproc_VERSION}
 @static-lib lib/libswresample.a
 @lib lib/libswresample.so.${LIBswresample_VERSION}
 @static-lib lib/libswscale.a
@@ -171,7 +171,6 @@ lib/pkgconfig/libavdevice.pc
 lib/pkgconfig/libavfilter.pc
 lib/pkgconfig/libavformat.pc
 lib/pkgconfig/libavutil.pc
-lib/pkgconfig/libpostproc.pc
 lib/pkgconfig/libswresample.pc
 lib/pkgconfig/libswscale.pc
 @man man/man1/ffmpeg-all.1
