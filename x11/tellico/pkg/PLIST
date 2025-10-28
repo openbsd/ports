@@ -245,6 +245,7 @@ share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
 share/knsrcfiles/
 share/knsrcfiles/tellico-template.knsrc
+share/locale/ar/LC_MESSAGES/tellico.mo
 share/locale/bg/LC_MESSAGES/tellico.mo
 share/locale/bs/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo
