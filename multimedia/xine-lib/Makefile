@@ -1,6 +1,7 @@
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.13
+REVISION=	0
 CATEGORIES=	multimedia
 SITES=		${SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -19,7 +20,7 @@ WANTLIB += Xau Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm aom avcodec
 WANTLIB += avformat avutil bluray bz2 c cdio crypto dav1d drm dvdnav
 WANTLIB += dvdread execinfo expat fontconfig freetype gbm gcrypt glapi
 WANTLIB += gpg-error gsm iconv intl iso9660 jpeg lcms lzma m mng modplug
-WANTLIB += mp3lame mpcdec nfs ogg opus png postproc sndio speex ssl
+WANTLIB += mp3lame mpcdec nfs ogg opus png sndio speex ssl
 WANTLIB += swresample theora theoradec theoraenc udfread usbhid v4l2
 WANTLIB += v4lconvert vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-shape xcb-shm xcb-sync
