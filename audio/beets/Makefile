@@ -1,9 +1,8 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_DISTV=	2.4.0
+MODPY_DISTV=	2.5.1
 DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
-REVISION=	0
 
 HOMEPAGE=	https://beets.io/
 
