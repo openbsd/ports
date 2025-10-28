@@ -479,7 +479,6 @@ lib/vlc/plugins/video_filter/
 @so lib/vlc/plugins/video_filter/libmotiondetect_plugin.so
 @so lib/vlc/plugins/video_filter/liboldmovie_plugin.so
 @so lib/vlc/plugins/video_filter/libposterize_plugin.so
-@so lib/vlc/plugins/video_filter/libpostproc_plugin.so
 @so lib/vlc/plugins/video_filter/libpsychedelic_plugin.so
 @so lib/vlc/plugins/video_filter/libpuzzle_plugin.so
 @so lib/vlc/plugins/video_filter/libripple_plugin.so

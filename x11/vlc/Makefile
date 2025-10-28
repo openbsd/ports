@@ -9,7 +9,7 @@ CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
-REVISION-main=	8
+REVISION-main=	9
 
 USE_NOBTCFI=	Yes
 
@@ -69,7 +69,7 @@ WANTLIB-main += gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz
 WANTLIB-main += hogweed icudata icui18n icuuc idn2 jpeg lz4 lzma matroska
 WANTLIB-main += mp3lame nettle nfs notify ogg opus p11-kit pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-16 pcre2-8
-WANTLIB-main += pixman-1 png postproc protobuf-lite rsvg-2 sharpyuv
+WANTLIB-main += pixman-1 png protobuf-lite rsvg-2 sharpyuv
 WANTLIB-main += smb2 sndio soxr speex speexdsp ssl swresample swscale
 WANTLIB-main += tag tar tasn1 theoradec theoraenc tiff udfread unibreak
 WANTLIB-main += unistring usbhid utf8_range utf8_validity va va-drm
