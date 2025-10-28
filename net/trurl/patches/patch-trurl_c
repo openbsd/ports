@@ -1,0 +1,15 @@
+Handle uppercase URL escapes in tests, backport of
+https://github.com/curl/trurl/commit/f22a2c45956f35702e437fb83ac05376f1956ec5
+
+Index: trurl.c
+--- trurl.c.orig
++++ trurl.c
+@@ -316,6 +316,8 @@ static void show_version(void)
+ #ifdef SUPPORTS_ZONEID
+   fprintf(stdout, " zone-id");
+ #endif
++  if(data->version_num >= 0x080f00)
++    fprintf(stdout, " uppercase-hex");
+ 
+   fprintf(stdout, "\n");
+   exit(0);

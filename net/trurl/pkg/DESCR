@@ -1,0 +1,7 @@
+trurl is a tool in a similar spirit of tr but for URLs. Here, 'tr' stands for
+translate or transpose.
+
+It is designed to help shell script authors everywhere. URLs are tricky to
+parse and there are numerous security problems in software because of this.
+trurl wants to help soften this problem by taking away the need for script and
+command line authors everywhere to re-invent the wheel over and over.

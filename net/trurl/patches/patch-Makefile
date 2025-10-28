@@ -1,0 +1,24 @@
+add DESTDIR to completion install (backport of https://github.com/curl/trurl/commit/0ce73c17cb865db0df424d410ea6a7b808e89067)
+fix path of completions (upstream bbb62f7f05af1365c7f12645fcc77b6ac7538439)
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -39,7 +39,7 @@ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ MANDIR ?= $(PREFIX)/share/man/man1
+ ZSH_COMPLETIONSDIR ?= $(PREFIX)/share/zsh/site-functions
+-COMPLETION_FILES=scripts/_trurl.zsh
++COMPLETION_FILES=completions/_trurl.zsh
+ 
+ INSTALL ?= install
+ PYTHON3 ?= python3
+@@ -64,7 +64,7 @@ install:
+ 	fi)
+ 	(if test -f $(COMPLETION_FILES); then \
+ 	$(INSTALL) -d $(DESTDIR)$(ZSH_COMPLETIONSDIR); \
+-	$(INSTALL) -m 0755 $(COMPLETION_FILES) $(ZSH_COMPLETIONSDIR)/_trurl; \
++	$(INSTALL) -m 0755 $(COMPLETION_FILES) $(DESTDIR)$(ZSH_COMPLETIONSDIR)/_trurl; \
+ 	fi)
+ 
+ .PHONY: clean
