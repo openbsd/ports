@@ -48,7 +48,7 @@ Index: Cargo.toml
  walkdir = { version = "2.5.0" }
  which = { version = "8.0.0", features = ["regex"] }
  windows = { version = "0.59.0", features = ["Win32_Globalization", "Win32_Security", "Win32_System_Console", "Win32_System_Kernel", "Win32_System_Diagnostics_Debug", "Win32_Storage_FileSystem", "Win32_System_Registry", "Win32_System_IO", "Win32_System_Ioctl"] }
-@@ -329,5 +329,5 @@ codegen-units = 1
+@@ -330,5 +330,5 @@ codegen-units = 1
  inherits = "release"
  
  [patch.crates-io]
