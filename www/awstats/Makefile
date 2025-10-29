@@ -1,6 +1,7 @@
 COMMENT=		free real-time logfile analyzer
 
 DISTNAME=		awstats-8.0
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -11,7 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 SITES=			${SITE_SOURCEFORGE:=awstats/}
 
-RUN_DEPENDS=		www/p5-libwww
+RUN_DEPENDS=		www/p5-libwww \
+			devel/p5-Try-Tiny \
+			converters/p5-JSON-XS
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
