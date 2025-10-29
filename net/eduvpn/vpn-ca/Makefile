@@ -1,6 +1,6 @@
 COMMENT=	simple CA to manage server and client certificates
 
-V=		5.0.1
+V=		5.0.3
 DISTNAME=	vpn-ca-$V
 
 # MIT
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	textproc/scdoc \
 MAKE_FLAGS=     GOBUILDFLAGS="-v -buildvcs=false -p=${MAKE_JOBS}"
 ALL_TARGET=     vpn-ca
 PORTHOME=       ${WRKDIR}
+NO_TEST=	Yes
 
 post-build:
 	scdoc < ${WRKSRC}/vpn-ca.1.scd > ${WRKSRC}/vpn-ca.1
