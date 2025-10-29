@@ -26,10 +26,13 @@ MODPY_PYC_MAGIC_TAG =	cpython-${MODPY_MAJORMINOR}.
 MODPY_ABI3SO =		.abi3
 MODPY_PYOEXTENSION ?=	opt-1.pyc
 
-MODPY_SETUPTOOLS ?=
-MODPY_SETUPUTILS ?=
+MODPY_SETUPTOOLS ?=	default
 MODPY_PYBUILD ?=	No
 MODPY_PI ?=
+
+.if ${MODPY_SETUPTOOLS} != default
+ERRORS += "Fatal: MODPY_SETUPTOOLS is only for python 2 ports."
+.endif
 
 # If MODPY_PYTEST_ARGS are set, or if using MODPY_PYBUILD, it implies that
 # we want MODPY_PYTEST = Yes
@@ -86,21 +89,7 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 
 _MODPY_USE_CARGO = No
 
-.if ${MODPY_SETUPTOOLS:L} == "yes"
-.  if ${MODPY_PYBUILD:L} != "no"
-ERRORS += "Fatal: both MODPY_PYBUILD and MODPY_SETUPTOOLS are set. Just use MODPY_PYBUILD."
-.  endif
-_MODPY_PRE_BUILD_STEPS += ; (echo; echo '*** Using legacy MODPY_SETUPTOOLS; please move to MODPY_PYBUILD'; \
-			  echo ) >> ${WRKDIR}/.modpy-warn
-MODPY_SETUPUTILS_DEPEND ?= py3-setuptools->=79v0:devel/py-setuptools
-BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
-MODPY_SETUPUTILS =	Yes
-
-# The setuptools uses test target
-TEST_TARGET ?=	test
-_MODPY_USERBASE =
-_MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
-.elif ${MODPY_PYBUILD:L} != no
+.if ${MODPY_PYBUILD:L} != no
 BUILD_DEPENDS +=	devel/py-build \
 			devel/py-installer
 # if adding new backends, update python-modules(5)
@@ -159,25 +148,9 @@ MODCARGO_INSTALL ?=	No
 MODCARGO_TEST ?=	No
 MODULES +=		devel/cargo
 .  endif
-.else
-MODPY_SETUPUTILS =	No
-# Detect the case where a port is capable of building with setup.py
-# via fallback to distutils, but should use py-build instead.
-_MODPY_SETUPUTILS_FAKE_DIR =	\
-	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
-_MODPY_PRE_BUILD_STEPS +=	\
-	;mkdir -p ${_MODPY_SETUPUTILS_FAKE_DIR} \
-	;exec 3>&1 \
-	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
-	;echo 'def setup(*args, **kwargs):' \
-	;echo '    msg = "OpenBSD ports: use MODPY_PYBUILD"' \
-	;echo '    raise Exception(msg)' \
-	;echo 'Extension = Feature = find_packages = setup' \
-	;exec 1>&3
-_MODPY_USERBASE =	${WRKDIR}
 .endif
 
-.if ${MODPY_SETUPTOOLS:L} == "yes" || ${MODPY_PYBUILD:Msetuptools*}
+.if ${MODPY_PYBUILD:Msetuptools*}
 # Setuptools opportunistically picks up plugins. If it picks one up that
 # uses finalize_distribution_options (usually setuptools_scm), junking
 # that plugin will cause failure at the end of build.
@@ -213,17 +186,10 @@ MODPY_SETUP ?=		setup.py
 
 # build or build_ext are commonly used
 MODPY_DISTUTILS_BUILD ?=	build --build-base=${WRKBUILD}
-
-.if ${MODPY_SETUPUTILS:L} == "yes"
-MODPY_DISTUTILS_INSTALL ?=	install --prefix=${TRUEPREFIX} \
-				--root=${DESTDIR} \
-				--single-version-externally-managed
-.else
 MODPY_DISTUTILS_INSTALL ?=	install --prefix=${TRUEPREFIX} \
 				--root=${DESTDIR}
-.endif
 
-MAKE_ENV +=		CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
+MAKE_ENV +=		CC=${CC}
 CONFIGURE_ENV +=	PYTHON="${MODPY_BIN}"
 .if ${CONFIGURE_STYLE:Mgnu}
 CONFIGURE_ENV +=	ac_cv_prog_PYTHON="${MODPY_BIN}" \
@@ -244,8 +210,6 @@ MODPY_PYTEST_USERARGS ?=
 MODPY_TEST_CMD +=	-m pytest ${MODPY_PYTEST_USERARGS}
 MODPY_TEST_LIBDIR ?=	${WRKINST}${MODPY_SITEPKG}:${WRKSRC}/build/lib:${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}:${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}:${WRKSRC}
 TEST_ENV +=		PYTEST_DEBUG_TEMPROOT=${WRKDIR}
-.else
-MODPY_TEST_CMD +=	./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
 .endif
 
 MODPY_TEST_LIBDIR ?=
@@ -339,8 +303,6 @@ MODPY_INSTALL_TARGET = \
 MODPY_TEST_TARGET +=	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
-.  elif ${MODPY_SETUPUTILS:L} == "yes"
-MODPY_TEST_TARGET +=	${TEST_TARGET}
 .  endif
 .endif
 
@@ -368,8 +330,7 @@ do-install:
 	@${MODPY_INSTALL_TARGET}
 .  endif
 
-.  if !target(do-test) && \
-      (${MODPY_SETUPUTILS:L} == "yes" || ${MODPY_PYTEST:L} == "yes")
+.  if !target(do-test) && ${MODPY_PYTEST:L} == "yes"
 do-test:
 	@${MODPY_TEST_TARGET}
 .  endif
