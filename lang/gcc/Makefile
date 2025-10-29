@@ -3,6 +3,6 @@
      SUBDIR =
      SUBDIR += 8
      SUBDIR += 11
-#    SUBDIR += 15
+     SUBDIR += 15
 
 .include <bsd.port.subdir.mk>
