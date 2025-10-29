@@ -1,0 +1,11 @@
+Work with Ruby 3.3.10 (and any Ruby version with 2 digit tiny version).
+Index: ext/amalgalite/c/extconf.rb
+--- ext/amalgalite/c/extconf.rb.orig
++++ ext/amalgalite/c/extconf.rb
+@@ -80,5 +80,5 @@ ignoreable_warnings.each do |warning|
+   $CFLAGS += " -Wno-#{warning}"
+ end
+ 
+-subdir = RUBY_VERSION.sub(/\.\d$/,'')
++subdir = RUBY_VERSION.sub(/\.\d+\z/,'')
+ create_makefile("amalgalite/#{subdir}/amalgalite")
