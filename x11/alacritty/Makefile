@@ -5,8 +5,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
-GH_TAGNAME =	v0.15.1
-REVISION =	1
+GH_TAGNAME =	v0.16.1
 
 HOMEPAGE =	https://alacritty.org/
 
