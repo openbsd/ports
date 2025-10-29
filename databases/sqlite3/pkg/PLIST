@@ -1,5 +1,7 @@
 @pkgpath databases/sqlite3,-main
+@bin bin/sqldiff
 @bin bin/sqlite3
+@bin bin/sqlite3_rsync
 include/sqlite3.h
 include/sqlite3ext.h
 @static-lib lib/libsqlite3.a
