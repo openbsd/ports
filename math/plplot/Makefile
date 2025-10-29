@@ -53,7 +53,9 @@ CONFIGURE_ARGS =	-D ENABLE_ada=OFF \
 			-D ENABLE_itcl=OFF \
 			-D ENABLE_tk=OFF \
 			-D ENABLE_itk=OFF \
-			-D ENABLE_wxwidgets=OFF
+			-D ENABLE_wxwidgets=OFF \
+			-D CMAKE_TEST_SIGNAL_TYPE=OFF \
+			-D RETSIGTYPE=void
 
 DOCSRC =		${WRKSRC}/doc/docbook/src
 
