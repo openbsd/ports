@@ -3,12 +3,10 @@ COMMENT =	session manager and a toolchest-like application launcher
 V =		1.3
 DISTNAME =	emwm-utils-src-${V}
 PKGNAME =	emwm-utils-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 HOMEPAGE =	https://fastestcode.org/emwm.html
-
-MAINTAINER =	izzy Meyer <izder456@disroot.org>
 
 # MIT
 PERMIT_PACKAGE = Yes

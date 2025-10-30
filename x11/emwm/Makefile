@@ -3,11 +3,10 @@ COMMENT =	enhanced motif window manager (MWM fork)
 V =		1.3
 DISTNAME =	emwm-src-${V}
 PKGNAME =	emwm-${V}
+REVISION =	0
 
 CATEGORIES =	x11
 HOMEPAGE =	https://fastestcode.org/emwm.html
-
-MAINTAINER =	izzy Meyer <izder456@disroot.org>
 
 # LGPL v2.1
 PERMIT_PACKAGE = Yes
