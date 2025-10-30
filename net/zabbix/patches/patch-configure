@@ -9,7 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main (void)
-@@ -19143,16 +19144,16 @@ fi
+@@ -19891,16 +19892,16 @@ fi
  RANLIB="ranlib"
  
  
