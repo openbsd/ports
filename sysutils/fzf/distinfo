@@ -1,4 +1,4 @@
-SHA256 (fzf-0.66.0.zip) = KGJf9CVP/0X1kmo5+cgtCTkfs+++gmRQu+oKSm5At/o=
+SHA256 (fzf-0.66.1.zip) = 575zLgezZGTn2UabhAbJmg1E0J92h6yOtv17CVlI5Hg=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.mod) = Zj95BXVMltgHzmGn6DUhzWdhku/gmGkmRR1PxDU+JaA=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.zip) = CPuBKrWH17sQ1w2Irc5JYhjnUBx7FxkTiTelTYH1/sk=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = Z2IawwIkfAvI+iS78TchCDbgwG1nxBFsjI+YHhY9AEM=
@@ -65,7 +65,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.35.0.zip) = bSOR2KmonlTHnN6vXndt/AeY
 SHA256 (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = gw7Xjc0+mSfEEuJkEjAwhEd0nVE9MQJNJ24kQ7IBZgk=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.zip) = xOnwY8/tVGyQ8AqWV96sT5FaiZT4y+bb0/GOeeuDAs8=
-SIZE (fzf-0.66.0.zip) = 413632
+SIZE (fzf-0.66.1.zip) = 413744
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.mod) = 92
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.14.zip) = 71415
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = 78
