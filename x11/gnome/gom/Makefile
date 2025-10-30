@@ -1,7 +1,7 @@
 COMMENT=		GObject to SQLite object mapper
 
 GNOME_PROJECT=		gom
-GNOME_VERSION=		0.5.4
+GNOME_VERSION=		0.5.5
 
 SHARED_LIBS += gom-1.0                   0.0 # 0.1.0
 
