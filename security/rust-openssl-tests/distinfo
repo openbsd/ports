@@ -74,7 +74,7 @@ SHA256 (cargo/syn-2.0.108.tar.gz) = 2liRfTUkJICgXCiXBk2gqAWJoqBHbJo/L9yDtTUC6Rc=
 SHA256 (cargo/term-0.6.1.tar.gz) = wIY6M0XnD2HWE+qzLuBGzNG8xfkQX+QCxh/NDBPuuLU=
 SHA256 (cargo/thiserror-1.0.69.tar.gz) = tqr1M5tXjqhbUOCA/rJQo+iujPzf+aRhyewpBLySP1I=
 SHA256 (cargo/thiserror-impl-1.0.69.tar.gz) = T+5sTvyQBZ4Q+B5tQsYKGPdliMPXTLg6CyQqK2x1BME=
-SHA256 (cargo/unicode-ident-1.0.20.tar.gz) = Ri7rda63OuqQAlPOc5yOGKZ0I/rfAGA3zT/yfoJ0igY=
+SHA256 (cargo/unicode-ident-1.0.22.tar.gz) = kxL3xPb/kGmxZUmCNM6L5lgFnGcoYzZnxSbifcLPHfU=
 SHA256 (cargo/unicode-width-0.2.2.tar.gz) = tKwEjXHt5+521YVRet1F2lMGYO9DkOSbCYczxuiX8lQ=
 SHA256 (cargo/unicode-xid-0.2.6.tar.gz) = 68HATHFRDH9wK1K3w1BzTJ/xKVxGSgMzWwC7hPxU+FM=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
@@ -97,7 +97,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/wit-bindgen-0.46.0.tar.gz) = 8XqFiD1ObQDoqXxYbedk2rzAYTP38dVdzlzcBwrX/lk=
-SHA256 (rust-openssl-tests-20251029-3fd4bf2c.tar.gz) = pwAKkRZdbZeCJEshWHqv8gUbBqz+lzDi8F0xWDBJv/Y=
+SHA256 (rust-openssl-tests-20251030-95aa8e86.tar.gz) = x/YbTSe/KhLpI9iJQLiv8cBHxDaBrmNXkQGmwP7an9E=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/annotate-snippets-0.11.5.tar.gz) = 34687
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
@@ -174,7 +174,7 @@ SIZE (cargo/syn-2.0.108.tar.gz) = 301754
 SIZE (cargo/term-0.6.1.tar.gz) = 37578
 SIZE (cargo/thiserror-1.0.69.tar.gz) = 22198
 SIZE (cargo/thiserror-impl-1.0.69.tar.gz) = 18365
-SIZE (cargo/unicode-ident-1.0.20.tar.gz) = 47416
+SIZE (cargo/unicode-ident-1.0.22.tar.gz) = 47919
 SIZE (cargo/unicode-width-0.2.2.tar.gz) = 282768
 SIZE (cargo/unicode-xid-0.2.6.tar.gz) = 15744
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
@@ -197,4 +197,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-0.46.0.tar.gz) = 60508
-SIZE (rust-openssl-tests-20251029-3fd4bf2c.tar.gz) = 379038
+SIZE (rust-openssl-tests-20251030-95aa8e86.tar.gz) = 379401
