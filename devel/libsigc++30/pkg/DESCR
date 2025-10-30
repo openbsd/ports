@@ -1,4 +1,8 @@
-libsigc++ implements a typesafe callback system for standard C++. It
-allows you to define signals and to connect those signals to any
-callback function, either global or a member function, regardless of
-whether it is static or virtual.
+libsigc++ (a.k.a. libsigcplusplus) implements a typesafe callback system for
+standard C++. It allows you to define signals and to connect those signals to
+any callback function, either global or a member function, regardless of whether
+it is static or virtual.
+
+libsigc++ is used by gtkmm to wrap the GTK signal system. It does not depend on
+GTK or gtkmm.  sigc++-2.0 and sigc++-3.0 are different parallel-installable
+ABIs.

@@ -1,13 +1,13 @@
-COMMENT=		callback framework for C++
+COMMENT=		typesafe callback system for standard C++
 
-GNOME_VERSION=		3.6.0
-GNOME_PROJECT=		libsigc++
-PKGNAME=		libsigc++30-${GNOME_VERSION}
-REVISION=		0
+V=			3.8.0
+DISTNAME=		libsigc++-${V}
+EXTRACT_SUFX=		.tar.xz
+PKGNAME=		libsigc++30-${V}
 
 CATEGORIES=		devel
 
-SHARED_LIBS += sigc-3.0                  0.2 # 0.0.0
+SHARED_LIBS += sigc-3.0                  0.3 # 0.0.0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -16,8 +16,9 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 
-MODULES=		devel/meson \
-			x11/gnome
+SITES=			https://github.com/libsigcplusplus/libsigcplusplus/releases/download/${V}/
+
+MODULES=		devel/meson
 
 # c++11
 COMPILER =		base-clang ports-gcc

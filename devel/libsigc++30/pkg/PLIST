@@ -33,6 +33,7 @@ include/sigc++-3.0/sigc++/scoped_connection.h
 include/sigc++-3.0/sigc++/sigc++.h
 include/sigc++-3.0/sigc++/signal.h
 include/sigc++-3.0/sigc++/signal_base.h
+include/sigc++-3.0/sigc++/signal_connect.h
 include/sigc++-3.0/sigc++/slot.h
 include/sigc++-3.0/sigc++/trackable.h
 include/sigc++-3.0/sigc++/tuple-utils/
