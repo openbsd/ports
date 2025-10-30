@@ -1,0 +1,17 @@
+REVERT (needs NetworkManager):
+From 00b9c55fad7bdc82e6d37d86d9a9c355859f85a0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Markus=20G=C3=B6llnitz?= <camelcasenick@bewares.it>
+Date: Mon, 19 Jun 2023 05:09:06 +0200
+Subject: [PATCH] add network panel using vnstat
+
+Index: data/org.gnome.Usage.gresource.xml
+--- data/org.gnome.Usage.gresource.xml.orig
++++ data/org.gnome.Usage.gresource.xml
+@@ -11,7 +11,6 @@
+         <file preprocess="xml-stripblanks">ui/cpu-view.ui</file>
+         <file preprocess="xml-stripblanks">ui/memory-speedometer.ui</file>
+         <file preprocess="xml-stripblanks">ui/memory-view.ui</file>
+-        <file preprocess="xml-stripblanks">ui/network-view.ui</file>
+         <file preprocess="xml-stripblanks">ui/no-results-found-view.ui</file>
+         <file preprocess="xml-stripblanks">ui/quit-process-dialog.ui</file>
+         <file preprocess="xml-stripblanks">ui/speedometer.ui</file>

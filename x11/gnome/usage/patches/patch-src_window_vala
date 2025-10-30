@@ -1,0 +1,17 @@
+REVERT (needs NetworkManager):
+From 00b9c55fad7bdc82e6d37d86d9a9c355859f85a0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Markus=20G=C3=B6llnitz?= <camelcasenick@bewares.it>
+Date: Mon, 19 Jun 2023 05:09:06 +0200
+Subject: [PATCH] add network panel using vnstat
+
+Index: src/window.vala
+--- src/window.vala.orig
++++ src/window.vala
+@@ -50,7 +50,6 @@ public class Usage.Window : Adw.ApplicationWindow {
+         views = new View[] {
+             new CpuView (),
+             new MemoryView (),
+-            new NetworkView (),
+             new StorageView (),
+         };
+ 

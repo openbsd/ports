@@ -42,7 +42,7 @@ share/locale/tr/LC_MESSAGES/gnome-usage.mo
 share/locale/uk/LC_MESSAGES/gnome-usage.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-usage.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-usage.mo
-share/metainfo/org.gnome.Usage.appdata.xml
+share/metainfo/org.gnome.Usage.metainfo.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

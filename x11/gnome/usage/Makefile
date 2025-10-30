@@ -1,7 +1,7 @@
 COMMENT=		system resources status
 
 GNOME_PROJECT=		gnome-usage
-GNOME_VERSION=		46.1
+GNOME_VERSION=		48.0
 
 CATEGORIES=		sysutils
 

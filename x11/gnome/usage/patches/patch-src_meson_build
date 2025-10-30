@@ -1,0 +1,29 @@
+REVERT (needs NetworkManager):
+From 00b9c55fad7bdc82e6d37d86d9a9c355859f85a0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Markus=20G=C3=B6llnitz?= <camelcasenick@bewares.it>
+Date: Mon, 19 Jun 2023 05:09:06 +0200
+Subject: [PATCH] add network panel using vnstat
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -15,9 +15,6 @@ vala_sources = [
+   'memory-speedometer.vala',
+   'memory-view.vala',
+   'monitor.vala',
+-  'network/network-interface-graph.vala',
+-  'network/network-view.vala',
+-  'network/vnstat.vala',
+   'no-results-found-view.vala',
+   'performance-graph-view.vala',
+   'process-list-box.vala',
+@@ -50,9 +47,7 @@ deps = [
+   glib_dep,
+   gobject_dep,
+   gtk_dep,
+-  json_dep,
+   libgtop_dep,
+-  libnm_dep,
+   tinysparql_dep,
+   libadwaita_dep,
+   cc.find_library('m'),
