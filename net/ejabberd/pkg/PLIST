@@ -351,7 +351,6 @@ lib/ejabberd/ejabberd-${V}/include/ejabberd_router.hrl
 lib/ejabberd/ejabberd-${V}/include/ejabberd_sm.hrl
 lib/ejabberd/ejabberd-${V}/include/ejabberd_sql.hrl
 lib/ejabberd/ejabberd-${V}/include/ejabberd_sql_pt.hrl
-lib/ejabberd/ejabberd-${V}/include/ejabberd_stacktrace.hrl
 lib/ejabberd/ejabberd-${V}/include/ejabberd_web_admin.hrl
 lib/ejabberd/ejabberd-${V}/include/eldap.hrl
 lib/ejabberd/ejabberd-${V}/include/http_bind.hrl

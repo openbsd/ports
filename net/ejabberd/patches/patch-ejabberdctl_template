@@ -5,7 +5,7 @@ See: https://github.com/processone/ejabberd/pull/4320
 Index: ejabberdctl.template
 --- ejabberdctl.template.orig
 +++ ejabberdctl.template
-@@ -130,7 +130,7 @@ set_dist_client()
+@@ -133,7 +133,7 @@ set_dist_client()
  exec_cmd()
  {
      case $EXEC_CMD in

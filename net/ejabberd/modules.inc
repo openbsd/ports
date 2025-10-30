@@ -22,15 +22,15 @@ MODERL_MODULES =	base64url		1.0.1 \
 			jose			1.11.10 \
 			luerl			1.2.3 \
 			mqtree			1.0.19 \
-			p1_acme			1.0.28 \
+			p1_acme			1.0.29 \
 			p1_mysql		1.0.26 \
 			p1_oauth2		0.6.14 \
-			p1_pgsql		1.1.35 \
+			p1_pgsql		1.1.36 \
 			p1_utils		1.0.28 \
 			pkix			1.0.10 \
 			sqlite3			1.1.15 \
 			stringprep		1.0.33 \
 			stun			1.2.21 \
 			unicode_util_compat	0.7.1 \
-			xmpp			1.11.1 \
-			yconf			1.0.21
+			xmpp			1.11.2 \
+			yconf			1.0.22
