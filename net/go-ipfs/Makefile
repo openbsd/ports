@@ -1,7 +1,7 @@
 COMMENT =	IPFS implementation in Go
 
 MODGO_MODNAME =	github.com/ipfs/kubo
-MODGO_VERSION =	v0.26.0
+MODGO_VERSION =	v0.38.1
 
 DISTNAME =	kubo-${MODGO_VERSION}
 
