@@ -1,8 +1,8 @@
 COMMENT=		simple note editor
 
-DIST_TUPLE=		gnome GNOME gnome-notes BIJIBEN_${GNOME_VERSION:S/./_/} .
-GNOME_VERSION=		40.1
-REVISION=		11
+GNOME_VERSION=		40.2
+GNOME_PROJECT=		bijiben
+PKGNAME=		gnome-notes-${GNOME_VERSION}
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
