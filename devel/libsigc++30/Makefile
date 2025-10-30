@@ -4,12 +4,15 @@ V=			3.8.0
 DISTNAME=		libsigc++-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		libsigc++30-${V}
+REVISION=		0
 
 CATEGORIES=		devel
 
 SHARED_LIBS += sigc-3.0                  0.3 # 0.0.0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+HOMEPAGE=		https://libsigcplusplus.github.io/libsigcplusplus/
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
