@@ -1,7 +1,7 @@
 https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
 (and local changes for FoFiTrueType::make())
 
-Add fixes for poppler-25.09.1.
+Add fixes for poppler-25.09.1 and 25.10.0.
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
@@ -233,3 +233,34 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  		double Kc = 1.0 - color_data[0];
  		tmp.setCmykColorF(0, 0, 0, Kc);
  		fNam = m_doc->PageColors.tryAddColor(namPrefix+tmp.name(), tmp);
+@@ -3748,25 +3802,25 @@ void SlaOutputDev::pushGroup(const QString& maskName, 
+ 
+ QString SlaOutputDev::UnicodeParsedString(const GooString *s1) const
+ {
+-	if (!s1 || s1->getLength() == 0)
++	if (!s1 || s1->size() == 0)
+ 		return QString();
+ 	bool isUnicode;
+ 	int i;
+ 	Unicode u;
+ 	QString result;
+-	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->getLength() > 1 && (s1->getChar(1) & 0xff) == 0xff))
++	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->size() > 1 && (s1->getChar(1) & 0xff) == 0xff))
+ 	{
+ 		isUnicode = true;
+ 		i = 2;
+-		result.reserve((s1->getLength() - 2) / 2);
++		result.reserve((s1->size() - 2) / 2);
+ 	}
+ 	else
+ 	{
+ 		isUnicode = false;
+ 		i = 0;
+-		result.reserve(s1->getLength());
++		result.reserve(s1->size());
+ 	}
+-	while (i < s1->getLength())
++	while (i < s1->size())
+ 	{
+ 		if (isUnicode)
+ 		{

@@ -17,3 +17,34 @@ Index: scribus/plugins/import/pdf/importpdf.cpp
  					if (order)
  					{
  						for (int i = 0; i < order->getLength (); ++i)
+@@ -874,25 +874,25 @@ QRectF PdfPlug::getCBox(int box, int pgNum)
+ 
+ QString PdfPlug::UnicodeParsedString(const GooString *s1)
+ {
+-	if (!s1 || s1->getLength() == 0)
++	if (!s1 || s1->size() == 0)
+ 		return QString();
+ 	bool isUnicode;
+ 	int i;
+ 	Unicode u;
+ 	QString result;
+-	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->getLength() > 1 && (s1->getChar(1) & 0xff) == 0xff))
++	if ((s1->getChar(0) & 0xff) == 0xfe && (s1->size() > 1 && (s1->getChar(1) & 0xff) == 0xff))
+ 	{
+ 		isUnicode = true;
+ 		i = 2;
+-		result.reserve((s1->getLength() - 2) / 2);
++		result.reserve((s1->size() - 2) / 2);
+ 	}
+ 	else
+ 	{
+ 		isUnicode = false;
+ 		i = 0;
+-		result.reserve(s1->getLength());
++		result.reserve(s1->size());
+ 	}
+-	while (i < s1->getLength())
++	while (i < s1->size())
+ 	{
+ 		if (isUnicode)
+ 		{
