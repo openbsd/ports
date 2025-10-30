@@ -1,0 +1,22 @@
+From 262d25e4125337201b452b072c7aa4b0d70a98d0 Mon Sep 17 00:00:00 2001
+From: Till Kamppeter <till.kamppeter@gmail.com>
+Date: Thu, 30 Oct 2025 13:50:15 +0100
+Subject: [PATCH] Rename ppdClose() to ppdClose2() to avoid clash with libcups
+
+Index: ppd/ppd.c
+--- ppd/ppd.c.orig
++++ ppd/ppd.c
+@@ -106,11 +106,11 @@ static int		ppd_update_filters(ppd_file_t *ppd,
+ 
+ 
+ //
+-// 'ppdClose()' - Free all memory used by the PPD file.
++// 'ppdClose2()' - Free all memory used by the PPD file.
+ //
+ 
+ void
+-ppdClose(ppd_file_t *ppd)		// I - PPD file record
++ppdClose2(ppd_file_t *ppd)		// I - PPD file record
+ {
+   int			i;		// Looping var
+   ppd_group_t		*group;		// Current group

@@ -3,6 +3,8 @@ COMMENT=		library for retro-fitting legacy printer drivers
 V=			2.1.1
 DISTNAME=		libppd-${V}
 
+REVISION=		0
+
 SHARED_LIBS +=  ppd                  0.0      # 2.0
 
 CATEGORIES=		print devel
