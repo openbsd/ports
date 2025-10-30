@@ -1,4 +1,4 @@
-Fix build with poppler-25.09.1.
+Fix build with poppler-25.09.1 and poppler-25.10.0.
 
 Index: plug-ins/pdf/pdf-import.cpp
 --- plug-ins/pdf/pdf-import.cpp.orig
@@ -12,3 +12,12 @@ Index: plug-ins/pdf/pdf-import.cpp
      double fsize = state->getTransformedFontSize();
      if (fm[0] != 0)
        fsize *= fabs(fm[3] / fm[0]);
+@@ -776,7 +776,7 @@ void
+ DiaOutputDev::drawString(GfxState *state, GooString *s)
+ {
+   Color text_color = this->fill_color;
+-  int len = s->getLength();
++  int len = s->size();
+   DiaObject *obj;
+   gchar *utf8 = NULL;
+   DiaFont *font;
