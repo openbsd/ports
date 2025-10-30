@@ -2,7 +2,7 @@ COMMENT=		terminal session recorder
 
 GH_PROJECT=		asciinema
 GH_ACCOUNT=		asciinema
-GH_TAGNAME=		v3.0.0
+GH_TAGNAME=		v3.0.1
 
 CATEGORIES=		textproc graphics
 
