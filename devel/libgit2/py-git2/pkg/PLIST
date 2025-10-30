@@ -56,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}settings.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}transaction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}transaction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/_build.py
@@ -98,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/decl/revert.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/stash.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/strarray.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/submodule.h
+lib/python${MODPY_VERSION}/site-packages/pygit2/decl/transaction.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/transport.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/decl/types.h
 lib/python${MODPY_VERSION}/site-packages/pygit2/enums.py
@@ -115,4 +118,5 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/remotes.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/submodules.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/transaction.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/utils.py
