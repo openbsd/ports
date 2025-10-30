@@ -1,9 +1,8 @@
 COMMENT=	embedded SQL implementation
 
-DISTNAME=	sqlite-src-3500400
-REVISION=	0
-EXTRACT_SUFX=	.zip
+DISTNAME=	sqlite-autoconf-3500400
 PKGNAME=	sqlite3-3.50.4
+REVISION=	1
 
 # XXX needs bumps every time :-/
 SHARED_LIBS +=  sqlite3                   37.34 # 8.6
@@ -33,16 +32,17 @@ BUILD_DEPENDS=	converters/sqlite2mdoc \
 		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	--soname=${LIBsqlite3_VERSION} \
+CONFIGURE_ARGS=	--disable-static-shell \
+		--soname=${LIBsqlite3_VERSION} \
 		--prefix=${PREFIX} \
 		--sysconfdir=${SYSCONFDIR} \
 		--mandir=${PREFIX}/man \
 		--localstatedir=${LOCALSTATEDIR} \
-		--with-tclsh=${MODTCL_BIN} \
 		--enable-all
 
 CONFIGURE_ENV=	CCACHE=None \
-		CFLAGS='${CFLAGS}'
+		CFLAGS='${CFLAGS}' \
+		autosetup_tclsh=${MODTCL_BIN}
 
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB \
@@ -52,9 +52,6 @@ CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 MAKE_FLAGS=	LDFLAGS.rpath="-Wl,-rpath,${PREFIX}/lib"
 # don't strip the binary
 MAKE_FLAGS+=	INSTALL.strip.0="${INSTALL_PROGRAM}"
-
-ALL_TARGET=	all sqldiff sqlite3_rsync
-INSTALL_TARGET=	install install-diff install-rsync
 
 post-install:
 		rm ${PREFIX}/lib/libsqlite3.so{,.0}
