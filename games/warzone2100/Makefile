@@ -39,9 +39,7 @@ LIB_DEPENDS=	audio/libogg \
 		net/miniupnp/miniupnpc \
 		security/libsodium
 
-BUILD_DEPENDS=	archivers/libzip \
-		archivers/unzip \
-		archivers/zip \
+BUILD_DEPENDS=	archivers/p7zip \
 		devel/gettext,-tools \
 		devel/sdl2 \
 		graphics/shaderc \
