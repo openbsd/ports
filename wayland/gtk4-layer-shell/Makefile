@@ -1,6 +1,6 @@
 COMMENT =	desktop components for Wayland using the Layer Shell proto
 
-GH_TAGNAME =	v1.2.0
+GH_TAGNAME =	v1.3.0
 GH_ACCOUNT =	wmww
 GH_PROJECT =	gtk4-layer-shell
 
@@ -24,6 +24,9 @@ BUILD_DEPENDS =	devel/gobject-introspection \
 LIB_DEPENDS =	x11/gtk+4
 WANTLIB +=	c gio-2.0 glib-2.0 gobject-2.0 gtk-4 wayland-client
 
-CFLAGS +=	-L${X11BASE}/lib
-
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+# Needed for ports-gcc - does not work in LDFLAGS
+CFLAGS +=	-L${X11BASE}/lib
+.endif
