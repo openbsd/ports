@@ -58,6 +58,10 @@ lib/${BROWSER_NAME}/fonts/Cousine-Bold.ttf
 lib/${BROWSER_NAME}/fonts/Cousine-BoldItalic.ttf
 lib/${BROWSER_NAME}/fonts/Cousine-Italic.ttf
 lib/${BROWSER_NAME}/fonts/Cousine-Regular.ttf
+lib/${BROWSER_NAME}/fonts/Jigmo.ttf
+lib/${BROWSER_NAME}/fonts/Jigmo2.ttf
+lib/${BROWSER_NAME}/fonts/Jigmo3.ttf
+lib/${BROWSER_NAME}/fonts/NotoColorEmoji.ttf
 lib/${BROWSER_NAME}/fonts/NotoNaskhArabic-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansAdlam-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansArmenian-Regular.ttf
@@ -85,9 +89,7 @@ lib/${BROWSER_NAME}/fonts/NotoSansGurmukhi-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansHanifiRohingya-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansHanunoo-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansHebrew-Regular.ttf
-lib/${BROWSER_NAME}/fonts/NotoSansJP-Regular.otf
 lib/${BROWSER_NAME}/fonts/NotoSansJavanese-Regular.ttf
-lib/${BROWSER_NAME}/fonts/NotoSansKR-Regular.otf
 lib/${BROWSER_NAME}/fonts/NotoSansKannada-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansKayahLi-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansKhmer-Regular.ttf
@@ -120,7 +122,6 @@ lib/${BROWSER_NAME}/fonts/NotoSansPahawhHmong-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansPauCinHau-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansRejang-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansRunic-Regular.ttf
-lib/${BROWSER_NAME}/fonts/NotoSansSC-Regular.otf
 lib/${BROWSER_NAME}/fonts/NotoSansSamaritan-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansSaurashtra-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansSharada-Regular.ttf
@@ -133,7 +134,6 @@ lib/${BROWSER_NAME}/fonts/NotoSansSylotiNagri-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansSymbols-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansSymbols2-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansSyriac-Regular.ttf
-lib/${BROWSER_NAME}/fonts/NotoSansTC-Regular.otf
 lib/${BROWSER_NAME}/fonts/NotoSansTagalog-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansTagbanwa-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansTaiLe-Regular.ttf
@@ -197,7 +197,6 @@ lib/${BROWSER_NAME}/fonts/fonts.conf
 @bin lib/${BROWSER_NAME}/glxtest
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/${BROWSER_NAME}/libgkcodecs.so.${LIBgkcodecs_VERSION}
-@lib lib/${BROWSER_NAME}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 ${COMMENT_FFVPX}@lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 ${COMMENT_FFVPX}@lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}
@@ -205,7 +204,6 @@ ${COMMENT_FFVPX}@lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${BROWSER_NAME}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${BROWSER_NAME}/libmozwayland.so.${LIBmozwayland_VERSION}
 @lib lib/${BROWSER_NAME}/libnss3.so.${LIBnss3_VERSION}
-@lib lib/${BROWSER_NAME}/libnssckbi.so.${LIBnssckbi_VERSION}
 @lib lib/${BROWSER_NAME}/libnssutil3.so.${LIBnssutil3_VERSION}
 @lib lib/${BROWSER_NAME}/libsmime3.so.${LIBsmime3_VERSION}
 @lib lib/${BROWSER_NAME}/libsoftokn3.so.${LIBsoftokn3_VERSION}

@@ -1,5 +1,5 @@
 ADDON_NAME =		noscript
-V =			13.0.9
+V =			13.2.2
 COMMENT =		Tor Browser add-on: flexible JS blocker
 HOMEPAGE =		https://noscript.net
 SITES =			https://secure.informaction.com/download/releases/

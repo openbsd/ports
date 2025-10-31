@@ -11,18 +11,18 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-128.14.0esr-14.5-1-build6
+DISTNAME =		src-firefox-tor-browser-140.4.0esr-15.0-1-build5
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
 			tor-browser-linux-x86_64-${TB_VERSION}.tar.xz \
-			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
+			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz{tor-expert-bundle-linux-x86_64.tar.gz}
 
-SO_VERSION =		10.0
+SO_VERSION =		11.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozwayland
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
-MOZILLA_LIBS +=		mozsqlite3 ipcclientcerts
+MOZILLA_LIBS +=		mozsqlite3
 MOZILLA_LIBS +=		gkcodecs
 
 # mozilla public license for the browser
@@ -90,11 +90,11 @@ RUN_DEPENDS +=		net/obfs4proxy>=0.0.14 \
 			net/snowflake_proxy>=2.4.1 \
 			net/tor>=0.4.8.7
 
+MOZILLA_USE_SYSTEM_AV1	=Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 # LTO eats too much RAM on riscv64
 .if ${MACHINE_ARCH} != riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
