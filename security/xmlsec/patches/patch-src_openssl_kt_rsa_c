@@ -1,0 +1,15 @@
+kt_rsa.c:697:56: error: use of undeclared identifier 'pKey'
+  697 |     xmlSecAssert2(xmlSecOpenSSLKeyValueRsaCheckKeyType(pKey) == 0, -1);
+
+Index: src/openssl/kt_rsa.c
+--- src/openssl/kt_rsa.c.orig
++++ src/openssl/kt_rsa.c
+@@ -694,7 +694,7 @@ xmlSecOpenSSLRsaOaepProcessImpl(xmlSecOpenSSLRsaOaepCt
+ 
+     xmlSecAssert2(ctx != NULL, -1);
+     xmlSecAssert2(ctx->pKey != NULL, -1);
+-    xmlSecAssert2(xmlSecOpenSSLKeyValueRsaCheckKeyType(pKey) == 0, -1);
++    xmlSecAssert2(xmlSecOpenSSLKeyValueRsaCheckKeyType(ctx->pKey) == 0, -1);
+     xmlSecAssert2(inBuf != NULL, -1);
+     xmlSecAssert2(inSize > 0, -1);
+     xmlSecAssert2(outBuf != NULL, -1);

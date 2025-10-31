@@ -1,7 +1,7 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.3.7
+VERSION=	1.3.8
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB-main += c crypto gmp gnutls hogweed iconv idn2 intl ltdl lzma
+WANTLIB-main += c crypto gmp gnutls hogweed iconv idn2 intl ltdl
 WANTLIB-main += m nettle p11-kit pthread ssl tasn1 unistring xml2 xslt
 WANTLIB-main += z
 

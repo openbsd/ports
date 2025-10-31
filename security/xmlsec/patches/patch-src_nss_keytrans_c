@@ -1,0 +1,17 @@
+From 23463d9d90e69d75c6d456268882e36ea134ae8b Mon Sep 17 00:00:00 2001
+From: lsh123 <aleksey@aleksey.com>
+Date: Sun, 26 Oct 2025 15:57:36 -0700
+Subject: [PATCH] Cleanup errors (#976)
+
+Index: src/nss/keytrans.c
+--- src/nss/keytrans.c.orig
++++ src/nss/keytrans.c
+@@ -140,7 +140,7 @@ xmlSecNssKeyTransportInitialize(xmlSecTransformPtr tra
+ 
+     /* not found */
+     {
+-        xmlSecNotImplementedError(xmlSecErrorsSafeString(xmlSecTransformGetName(transform)));
++        xmlSecInvalidTransfromError(transform);
+         return(-1);
+     }
+ 
