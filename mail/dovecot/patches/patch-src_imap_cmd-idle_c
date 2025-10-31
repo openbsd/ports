@@ -1,0 +1,32 @@
+From 9a00369c8a09ccb2799dd6b3a4767947f5ace55a Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 14 Oct 2024 12:53:33 +0300
+Subject: [PATCH] imap: Fix potential hang/crash when unhibernating
+
+This fixes two potential bugs:
+
+a) Unhibernation is triggered by new mailbox changes. While sending these
+to IMAP client, Dovecot notices that the client has disconnected. The
+process will stay IDLEing for 30 minutes until it gets disconnected with
+"Disconnected: Inactivity - no input for 1800 secs"
+
+b) Unhibernation is triggered by DONE command with some further pipelined
+commands. During unhibernation new mailbox changes are noticed, and
+again IMAP client is found to be disconnected while sending the changes.
+This causes a segfault.
+
+Index: src/imap/cmd-idle.c
+--- src/imap/cmd-idle.c.orig
++++ src/imap/cmd-idle.c
+@@ -302,7 +302,9 @@ bool cmd_idle(struct client_command_context *cmd)
+ 
+ 	/* check immediately if there are changes. if they came before we
+ 	   added mailbox-notifier, we wouldn't see them otherwise. */
+-	if (client->mailbox != NULL)
+-		idle_sync_now(client->mailbox, ctx);
++	if (client->mailbox != NULL) {
++		if (idle_sync_now(client->mailbox, ctx))
++			return TRUE;
++	}
+ 	return idle_client_handle_input(ctx, FALSE);
+ }

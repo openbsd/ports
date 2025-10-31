@@ -1,5 +1,10 @@
-replicator: fixed infinity loop on sync replication
-https://github.com/dovecot/core/pull/223
+From d3a097075afb7b5d8955978ed4a2ae99add11f88 Mon Sep 17 00:00:00 2001
+From: "Kirill A. Korinsky" <kirill@korins.ky>
+Date: Wed, 25 Sep 2024 18:30:52 +0200
+Subject: [PATCH] replicator: fixed infinity loop on sync replication
+
+Before this fix, replicator adds the same lookup into callbacks over and
+over, until it reaches out of memory, and crashes.
 
 Index: src/replication/replicator/replicator-queue.c
 --- src/replication/replicator/replicator-queue.c.orig

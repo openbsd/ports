@@ -1,0 +1,37 @@
+From 1fd4fcc00335a0560e5686e17aceece7933f214d Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Fri, 6 Sep 2024 14:42:55 +0300
+Subject: [PATCH] imap-login: Don't forward x-multiplex ID parameter when
+ proxying
+
+If a connecting v2.4 proxy sends this parameter, it should be ignored rather
+than forwarded to the next hop, which again might be v2.4. This would end
+up enabling multiplex iostreams, even though this v2.3 proxy doesn't
+understand it.
+
+Index: src/imap-login/imap-login-cmd-id.c
+--- src/imap-login/imap-login-cmd-id.c.orig
++++ src/imap-login/imap-login-cmd-id.c
+@@ -70,6 +70,14 @@ cmd_id_x_forward_(struct imap_client *client,
+ 	client_add_forward_field(&client->common, key+10, value);
+ }
+ 
++static void
++cmd_id_x_multiplex(struct imap_client *client ATTR_UNUSED,
++		   const char *key ATTR_UNUSED, const char *value ATTR_UNUSED)
++{
++	/* ignore - registered here only so that it's not automatically
++	   forwarded by imap_id_retain=yes handling */
++}
++
+ static const struct imap_id_param_handler imap_login_id_params[] = {
+ 	{ "x-originating-ip", FALSE, cmd_id_x_originating_ip },
+ 	{ "x-originating-port", FALSE, cmd_id_x_originating_port },
+@@ -79,6 +87,7 @@ static const struct imap_id_param_handler imap_login_i
+ 	{ "x-session-id", FALSE, cmd_id_x_session_id },
+ 	{ "x-session-ext-id", FALSE, cmd_id_x_session_id },
+ 	{ "x-forward-", TRUE, cmd_id_x_forward_ },
++	{ "x-multiplex", FALSE, cmd_id_x_multiplex },
+ 
+ 	{ NULL, FALSE, NULL }
+ };

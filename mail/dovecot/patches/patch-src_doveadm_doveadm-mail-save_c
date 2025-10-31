@@ -1,0 +1,22 @@
+From 97791e1ea53fdff64bafef6ff572b237b41dbe3b Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 22:46:51 +0300
+Subject: [PATCH] doveadm save: Fix potential assert-crash if saving failed
+
+The input stream may not have been fully read at failure time.
+
+Fixes:
+Panic: file doveadm-mail-save.c: line 91 (cmd_save_to_mailbox): assertion failed: (input->eof)
+
+Index: src/doveadm/doveadm-mail-save.c
+--- src/doveadm/doveadm-mail-save.c.orig
++++ src/doveadm/doveadm-mail-save.c
+@@ -77,7 +77,7 @@ cmd_save_to_mailbox(struct save_cmd_context *ctx, stru
+ 		mailbox_save_cancel(&save_ctx);
+ 	if (trans != NULL)
+ 		mailbox_transaction_rollback(&trans);
+-	i_assert(input->eof);
++	i_assert(ret < 0 || input->eof);
+ 	return ret < 0 ? -1 : 0;
+ }
+ 

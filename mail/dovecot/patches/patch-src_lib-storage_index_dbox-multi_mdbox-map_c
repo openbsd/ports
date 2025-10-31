@@ -1,0 +1,21 @@
+From efdceaab8aa8c2443264b5cc2239e19c72904227 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Wed, 20 Nov 2024 15:16:00 +0200
+Subject: [PATCH] mdbox: Fix crash if resync fails because of an early failure
+
+This mainly happened if dovecot.map.index.log was locked and resync timed
+out waiting for it.
+
+Index: src/lib-storage/index/dbox-multi/mdbox-map.c
+--- src/lib-storage/index/dbox-multi/mdbox-map.c.orig
++++ src/lib-storage/index/dbox-multi/mdbox-map.c
+@@ -537,7 +537,8 @@ void mdbox_map_atomic_set_success(struct mdbox_map_ato
+ 
+ void mdbox_map_atomic_unset_fscked(struct mdbox_map_atomic_context *atomic)
+ {
+-	mail_index_unset_fscked(atomic->sync_trans);
++	if (atomic->sync_trans != NULL)
++		mail_index_unset_fscked(atomic->sync_trans);
+ }
+ 
+ int mdbox_map_atomic_finish(struct mdbox_map_atomic_context **_atomic)

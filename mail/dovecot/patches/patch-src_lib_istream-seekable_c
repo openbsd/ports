@@ -1,0 +1,157 @@
+From 30b7e3cb5c7037a5a2d31096a75696d70c9c9f94 Mon Sep 17 00:00:00 2001
+From: Markus Valentin <markus.valentin@open-xchange.com>
+Date: Tue, 3 Dec 2024 14:30:27 +0100
+Subject: [PATCH] lib: istream-seekable - Remove unused define BUF_INITIAL_SIZE
+
+From 97791e1ea53fdff64bafef6ff572b237b41dbe3b Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 22:46:51 +0300
+Subject: [PATCH] doveadm save: Fix potential assert-crash if saving failed
+
+The input stream may not have been fully read at failure time.
+
+From 53c7113720fbf4768f6413fdfbb2e55bc778716d Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 23:05:22 +0300
+Subject: [PATCH] lib: istream-seekable - Fix moving stream to memory on
+ write() failure
+
+Fixes:
+Panic: file istream-seekable.c: line 238 (read_from_buffer): assertion failed: (*ret_r > 0)
+
+From 6afc5b06a543c936aa428d758d7f8bad3f13fb66 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 23:23:40 +0300
+Subject: [PATCH] lib: istream-seekable - Assert that write() won't return 0
+
+From bc94afb46ad201af6c4a0e145ac07f8730973b01 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 23:28:23 +0300
+Subject: [PATCH] lib: istream-seekable - Improve logging after write() errors
+
+Also don't silently handle out of disk space errors - log a warning instead.
+
+From 7fe2c39271b8e993632fd1b9a3ec95e031360f24 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 3 Jun 2024 23:42:25 +0300
+Subject: [PATCH] lib: istream-seekable - Allow in-memory fallback only for up
+ to 10 MB streams
+
+
+Index: src/lib/istream-seekable.c
+--- src/lib/istream-seekable.c.orig
++++ src/lib/istream-seekable.c
+@@ -13,13 +13,14 @@
+ 
+ #include <unistd.h>
+ 
+-#define BUF_INITIAL_SIZE (1024*32)
++#define MAX_MEMORY_FALLBACK_SIZE (1024*1024*10)
+ 
+ struct seekable_istream {
+ 	struct istream_private istream;
+ 
+-	char *temp_path;
++	char *temp_path, *write_failed_temp_path;
+ 	uoff_t write_peak;
++	int write_failed_errno;
+ 	uoff_t size;
+ 	size_t buffer_peak;
+ 
+@@ -63,6 +64,7 @@ static void i_stream_seekable_destroy(struct iostream_
+ 	if (sstream->free_context)
+ 		i_free(sstream->context);
+ 	i_free(sstream->temp_path);
++	i_free(sstream->write_failed_temp_path);
+ 	i_free(sstream->input);
+ }
+ 
+@@ -194,6 +196,7 @@ static bool read_from_buffer(struct seekable_istream *
+ 		/* This could be the first read() or we could have already
+ 		   seeked backwards. */
+ 		i_assert(stream->pos == 0 && stream->skip == 0);
++		i_assert(sstream->buffer_peak >= stream->istream.v_offset);
+ 		stream->skip = stream->istream.v_offset;
+ 		stream->pos = sstream->buffer_peak;
+ 		size = stream->pos - stream->skip;
+@@ -244,11 +247,12 @@ static int i_stream_seekable_write_failed(struct seeka
+ 	struct istream_private *stream = &sstream->istream;
+ 	void *data;
+ 	size_t old_pos = stream->pos;
++	int write_errno = errno;
+ 
+ 	i_assert(sstream->fd != -1);
+ 	i_assert(stream->skip == 0);
+ 
+-	stream->max_buffer_size = SIZE_MAX;
++	stream->max_buffer_size = MAX_MEMORY_FALLBACK_SIZE;
+ 	stream->pos = 0;
+ 	data = i_stream_alloc(stream, sstream->write_peak);
+ 	stream->pos = old_pos;
+@@ -257,10 +261,11 @@ static int i_stream_seekable_write_failed(struct seeka
+ 		sstream->istream.istream.stream_errno = errno;
+ 		sstream->istream.istream.eof = TRUE;
+ 		io_stream_set_error(&sstream->istream.iostream,
+-				    "istream-seekable: read(%s) failed: %m",
+-				    sstream->temp_path);
++				    "istream-seekable: write(%s) failed: %s, and attempt to read() it back failed: %m",
++				    sstream->temp_path, strerror(write_errno));
+ 		return -1;
+ 	}
++	sstream->buffer_peak = sstream->write_peak;
+ 	i_stream_destroy(&sstream->fd_input);
+ 	sstream->fd = -1; /* autoclosed by fd_input */
+ 
+@@ -280,6 +285,17 @@ static ssize_t i_stream_seekable_read(struct istream_p
+ 		if (read_from_buffer(sstream, &ret))
+ 			return ret;
+ 
++		if (sstream->write_failed_errno != 0) {
++			errno = sstream->write_failed_errno;
++			sstream->istream.istream.stream_errno = errno;
++			sstream->istream.istream.eof = TRUE;
++			io_stream_set_error(&sstream->istream.iostream,
++				"istream-seekable: write(%s) failed: %m - "
++				"stream is too large for memory",
++				sstream->write_failed_temp_path);
++			return -1;
++		}
++
+ 		/* copy everything to temp file and use it as the stream */
+ 		if (copy_to_temp_file(sstream) < 0) {
+ 			stream->max_buffer_size = SIZE_MAX;
+@@ -306,16 +322,31 @@ static ssize_t i_stream_seekable_read(struct istream_p
+ 
+ 		/* save to our file */
+ 		data = i_stream_get_data(sstream->cur_input, &size);
++		i_assert(size > 0);
+ 		ret = write(sstream->fd, data, size);
+-		if (ret <= 0) {
+-			if (ret < 0 && !ENOSPACE(errno)) {
+-				i_error("istream-seekable: write_full(%s) failed: %m",
++		i_assert(ret != 0);
++		if (ret < 0) {
++			if (sstream->write_peak + size >= MAX_MEMORY_FALLBACK_SIZE) {
++				sstream->istream.istream.stream_errno = errno;
++				sstream->istream.istream.eof = TRUE;
++				io_stream_set_error(&sstream->istream.iostream,
++					"istream-seekable: write(%s) failed: %m",
+ 					sstream->temp_path);
++				return -1;
+ 			}
++
++			sstream->write_failed_errno = errno;
++			sstream->write_failed_temp_path =
++				i_strdup(sstream->temp_path);
+ 			if (i_stream_seekable_write_failed(sstream) < 0)
+ 				return -1;
+ 			if (!read_from_buffer(sstream, &ret))
+ 				i_unreached();
++
++			errno = sstream->write_failed_errno;
++			i_warning("istream-seekable: write_full(%s) failed: %m - "
++				  "fallback to using only memory",
++				  sstream->write_failed_temp_path);
+ 			return ret;
+ 		}
+ 		i_stream_sync(sstream->fd_input);

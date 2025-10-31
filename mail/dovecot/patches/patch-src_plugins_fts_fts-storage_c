@@ -1,0 +1,18 @@
+From 13061d620c1dd6952bbb7b0d4a7ae4f5e665b8d9 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Mon, 9 Sep 2024 18:45:59 +0300
+Subject: [PATCH] fts: Don't ignore parent mail_precache() failure
+
+Index: src/plugins/fts/fts-storage.c
+--- src/plugins/fts/fts-storage.c.orig
++++ src/plugins/fts/fts-storage.c
+@@ -558,7 +558,8 @@ static int fts_mail_precache(struct mail *_mail)
+ 	struct fts_transaction_context *ft = FTS_CONTEXT_REQUIRE(_mail->transaction);
+ 	int ret = 0;
+ 
+-	fmail->module_ctx.super.precache(_mail);
++	if (fmail->module_ctx.super.precache(_mail) < 0)
++		return -1;
+ 	if (fmail->virtual_mail) {
+ 		if (ft->highest_virtual_uid < _mail->uid)
+ 			ft->highest_virtual_uid = _mail->uid;
