@@ -1,14 +1,8 @@
-# XXX check new release if it builds with doxygen;
-# RUN_DEPENDS += devel/doxygen
-# in do-build:
-# ${MAKE_ENV} -> ${MAKE_ENV} DOXYGEN=${LOCALBASE}/bin/doxygen
-# build.py --nodoc -> build.py dox touch etg --nodoc sip build_py
-
 COMMENT-main=	Python bindings for wxWidgets C++ class library
 COMMENT-media=	wxMedia support for wxPython
 COMMENT-webview=wxWebView support for wxPython
 
-V=		4.2.3
+V=		4.2.4
 DISTNAME=	wxPython-${V}
 PKGNAME=	py-${DISTNAME}
 
@@ -54,6 +48,7 @@ MODULES=		lang/python
 BUILD_DEPENDS=		devel/py-setuptools \
 			devel/py-sip \
 			devel/py-six \
+			lang/cython \
 			www/py-requests
 
 LIB_DEPENDS-main=	x11/wxWidgets
