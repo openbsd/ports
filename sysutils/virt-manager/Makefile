@@ -1,8 +1,11 @@
+BROKEN=			https://github.com/virt-manager/virt-manager/issues/984
+
 COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-5.1.0
 CATEGORIES=		sysutils x11
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -31,7 +34,7 @@ RUN_DEPENDS=		devel/libvirt-glib \
 			devel/vte3 \
 			misc/osinfo/libosinfo \
 			sysutils/libvirt-python \
-			textproc/libxml,-python \
+			textproc/py-lxml \
 			www/py-requests \
 			x11/gtk-vnc \
 			x11/gtksourceview4 \
