@@ -1,7 +1,7 @@
 Index: xmllint.c
 --- xmllint.c.orig
 +++ xmllint.c
-@@ -2825,7 +2825,7 @@ static void usage(FILE *f, const char *name) {
+@@ -2375,7 +2375,7 @@ static void usage(FILE *f, const char *name) {
  #ifdef LIBXML_CATALOG_ENABLED
      fprintf(f, "\t--catalogs : use SGML catalogs from $SGML_CATALOG_FILES\n");
      fprintf(f, "\t             otherwise XML Catalogs starting from \n");

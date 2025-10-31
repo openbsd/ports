@@ -1,7 +1,7 @@
 Index: runtest.c
 --- runtest.c.orig
 +++ runtest.c
-@@ -3410,7 +3410,7 @@ static int
+@@ -3331,7 +3331,7 @@ static int
  uripMatch(const char * URI) {
  #ifdef LIBXML_CATALOG_ENABLED
      if ((URI == NULL) ||
@@ -10,7 +10,7 @@ Index: runtest.c
          return(0);
  #endif
      /* Verify we received the escaped URL */
-@@ -3432,7 +3432,7 @@ static void *
+@@ -3351,7 +3351,7 @@ static void *
  uripOpen(const char * URI) {
  #ifdef LIBXML_CATALOG_ENABLED
      if ((URI == NULL) ||
