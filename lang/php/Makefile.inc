@@ -199,7 +199,7 @@ WANTLIB$i +=		c
 .endfor
 
 .for i in ${SAPI}
-WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
+WANTLIB$i +=		argon2 crypto curses iconv intl m onig
 WANTLIB$i +=		pcre2-8 pthread readline sodium ssl util xml2 z
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			devel/pcre2 \
@@ -413,7 +413,7 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 COMMENT-soap=		SOAP functions for php
 HOMEPAGE-soap=		https://www.php.net/soap
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap+=		iconv lzma m pthread xml2 z
+WANTLIB-soap+=		iconv m pthread xml2 z
 .if ${BUILD_PACKAGES:M-soap}
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 .endif
@@ -442,7 +442,7 @@ CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 COMMENT-xsl=		XSL functions for php
 HOMEPAGE-xsl=		https://www.php.net/xsl
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl+=		exslt iconv lzma m pthread xml2 xslt z
+WANTLIB-xsl+=		exslt iconv m pthread xml2 xslt z
 .if ${BUILD_PACKAGES:M-xsl}
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 .endif
