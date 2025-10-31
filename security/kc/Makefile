@@ -21,6 +21,8 @@ LIB_DEPENDS =	textproc/libxml \
 
 MAKE_ENV +=	OS_OPENBSD=yes HAVE_LIBSCRYPT=yes
 
+CFLAGS +=	-I${LOCALBASE}/include
+
 .if ${FLAVOR:Myubikey}
 WANTLIB += ykpers-1 yubikey
 

@@ -20,4 +20,6 @@ BUILD_DEPENDS=	devel/py-cffi
 RUN_DEPENDS=	devel/py-cffi
 LIB_DEPENDS=	sysutils/augeas
 
+CFLAGS +=	-I${LOCALBASE}/include
+
 .include <bsd.port.mk>
