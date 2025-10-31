@@ -1,4 +1,5 @@
 VER=		22.6.0
+REVISION=	0
 
 PJ_V=		2.15.1
 SHLIB_V=	0.0
