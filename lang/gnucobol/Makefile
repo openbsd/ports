@@ -1,6 +1,7 @@
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-3.2
+REVISION =	0
 
 SHARED_LIBS +=	cob	6.0	# 6.0
 
@@ -12,7 +13,7 @@ HOMEPAGE =	https://gnucobol.sourceforge.io/
 # run-time library: LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cjson curses db gmp iconv intl lzma m pthread xml2
+WANTLIB += c cjson curses db gmp iconv intl m pthread xml2
 WANTLIB += z
 
 SITES =		${SITE_GNU:=gnucobol/}

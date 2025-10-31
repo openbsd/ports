@@ -3,6 +3,7 @@ COMMENT =	point cloud storage extension for PostgreSQL
 GH_TAGNAME =	v1.2.5
 GH_PROJECT =	pointcloud
 GH_ACCOUNT =	pgpointcloud
+REVISION =	0
 
 CATEGORIES =	geo databases
 
@@ -15,7 +16,7 @@ LIB_DEPENDS =	textproc/libxml
 BUILD_DEPENDS =	databases/postgresql,-server \
 		devel/cunit
 
-WANTLIB +=	c iconv lzma m z xml2
+WANTLIB +=	c iconv m z xml2
 WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_STYLE = autoreconf

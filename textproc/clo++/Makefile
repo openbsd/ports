@@ -1,13 +1,13 @@
 COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0
-REVISION=	7
+REVISION=	8
 CATEGORIES=	textproc
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv m pthread lzma ${COMPILER_LIBCXX} xml2>=6 z
+WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xml2>=6 z
 
 COMPILER=	base-clang ports-gcc base-gcc
 

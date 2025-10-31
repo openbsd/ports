@@ -4,7 +4,7 @@ VERSION =	3.0.14
 DISTNAME =	modsecurity-v${VERSION}
 PKGNAME  =	libmodsecurity-${VERSION}
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
-REVISION  =	0
+REVISION  =	1
 
 SHARED_LIBS =	modsecurity	2.0	# 3.14
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.modsecurity.org
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z \
+WANTLIB =	${COMPILER_LIBCXX} c crypto curl iconv m ssl z \
 		maxminddb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl \
 		pcre pcre2-8 xml2 yajl
 

@@ -3,7 +3,7 @@ BROKEN-arm =		Makefile.defs:1397: Unsupported compiler (cc:clang), try gcc
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.5.4
-REVISION =		3
+REVISION =		4
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -38,7 +38,7 @@ WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 WANTLIB-main =		${COMPILER_LIBCXX} \
 			c crypto curl expat event_core event_extra iconv m \
-			pcre pthread ssl lzma xml2 curses readline unistring z
+			pcre pthread ssl xml2 curses readline unistring z
 
 LIB_DEPENDS-main =	converters/libiconv \
 			converters/libunistring \
@@ -114,7 +114,7 @@ PSEUDO_FLAVORS +=	no_xml
 MULTI_PACKAGES +=	-xml
 COMMENT-xml =		kamailio XML modules
 KAMAILIO_GROUPS +=	kxml
-WANTLIB-xml =		iconv lzma m pthread xml2 z \
+WANTLIB-xml =		iconv m pthread xml2 z \
 			lib/kamailio/srdb1
 LIB_DEPENDS-xml =	telephony/kamailio,-main
 .endif
@@ -151,7 +151,7 @@ PSEUDO_FLAVORS +=	no_presence
 MULTI_PACKAGES +=	-presence
 COMMENT-presence =	kamailio presence modules
 KAMAILIO_GROUPS +=	kpresence
-WANTLIB-presence +=	curl iconv lzma m pthread xml2 z \
+WANTLIB-presence +=	curl iconv m pthread xml2 z \
 			lib/kamailio/srdb1
 LIB_DEPENDS-presence =	telephony/kamailio,-main
 .endif

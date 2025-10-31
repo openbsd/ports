@@ -62,6 +62,8 @@ share/doc/libxslt/tutorial2/
 share/doc/libxslt/tutorial2/libxslt_pipes.c
 share/doc/libxslt/tutorial2/libxslt_pipes.html
 share/doc/libxslt/xsltproc.html
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libexslt/
 share/gtk-doc/html/libexslt/general.html
 share/gtk-doc/html/libexslt/home.png

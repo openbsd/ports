@@ -5,7 +5,7 @@ GH_ACCOUNT =		scality
 GH_PROJECT =		Droplet
 GH_TAGNAME =		v2.0
 DISTNAME=		droplet-${GH_TAGNAME:S/v//}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		droplet		1.0 #0.0
 
@@ -14,7 +14,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += crypto iconv json-c lzma m pthread ssl xml2 z
+WANTLIB += crypto iconv json-c m pthread ssl xml2 z
 
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml \

@@ -1,7 +1,7 @@
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		7
+REVISION =		8
 CATEGORIES=		security
 
 HOMEPAGE=		https://rarcrack.sourceforge.net/
@@ -11,7 +11,7 @@ MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+= c iconv lzma m pthread xml2 z
+WANTLIB+= c iconv m pthread xml2 z
 
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml

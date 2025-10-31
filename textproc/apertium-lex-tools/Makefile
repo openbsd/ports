@@ -2,7 +2,7 @@ COMMENT =		module for compiling and processing lexical rules
 
 V =			0.4.2
 DISTNAME =		apertium-lex-tools-$V
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  apertium-lex-tools        0.0 # 1.0
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c iconv icudata icui18n icuio icuuc lttoolbox lzma
+WANTLIB += c iconv icudata icui18n icuio icuuc lttoolbox
 WANTLIB += m xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc

@@ -1,7 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict ices-0.*
-bin/ices
+@bin bin/ices
 @man man/man1/ices.1
 share/doc/ices/
 share/doc/ices/icesmanual.html

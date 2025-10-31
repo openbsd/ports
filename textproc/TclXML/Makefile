@@ -1,7 +1,7 @@
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
-REVISION =	6
+REVISION =	7
 CATEGORIES =	textproc
 
 SITES =		${SITE_SOURCEFORGE:=tclxml/}
@@ -13,7 +13,7 @@ SHARED_LIBS +=	Tclxml32	0.0
 # custom
 PERMIT_PACKAGE =		Yes
 
-WANTLIB +=		m z exslt iconv xslt lzma pthread xml2
+WANTLIB +=		m z exslt iconv xslt pthread xml2
 
 MODULES =		lang/tcl
 BUILD_DEPENDS +=	${MODTCL_BUILD_DEPENDS}

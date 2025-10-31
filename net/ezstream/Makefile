@@ -2,6 +2,7 @@ COMMENT=	streaming source client that uses external en-/decoders
 
 DISTNAME=	ezstream-1.0.2
 CATEGORIES=	net multimedia
+REVISION=	0
 
 HOMEPAGE=	https://icecast.org/ezstream/
 
@@ -10,7 +11,7 @@ MAINTAINER=	Moritz Grimm <mgrimm@mrsserver.net>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	${COMPILER_LIBCXX} c crypto iconv lzma m ogg shout \
+WANTLIB+=	${COMPILER_LIBCXX} c crypto iconv m ogg shout \
 		speex ssl tag tag_c theora vorbis xml2 z
 
 SITES=		https://downloads.xiph.org/releases/ezstream/ \

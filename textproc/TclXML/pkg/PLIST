@@ -8,7 +8,7 @@ include/tclxml/tclxslt.h
 lib/tcl/TclxmlConfig.sh
 lib/tcl/tclxml/
 @lib lib/tcl/tclxml/libTclxml32.so.${LIBTclxml32_VERSION}
-lib/tcl/tclxml/libTclxmlstub32.a
+@static-lib lib/tcl/tclxml/libTclxmlstub32.a
 lib/tcl/tclxml/pkgIndex.tcl
 lib/tcl/tclxml/process.tcl
 lib/tcl/tclxml/resources.tcl

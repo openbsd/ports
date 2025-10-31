@@ -34,7 +34,7 @@ include/droplet-1.0/droplet/utils.h
 include/droplet-1.0/droplet/vec.h
 include/droplet-1.0/droplet/vfs.h
 include/droplet-1.0/dropletp.h
-lib/libdroplet.a
+@static-lib lib/libdroplet.a
 lib/libdroplet.la
 @lib lib/libdroplet.so.${LIBdroplet_VERSION}
 lib/pkgconfig/droplet-1.0.pc

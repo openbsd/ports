@@ -2,6 +2,7 @@ COMMENT=		configuration editing tool and API
 
 V=			1.14.1
 DISTNAME=		augeas-${V}
+REVISION=		0
 
 CATEGORIES=		sysutils devel
 
@@ -13,7 +14,7 @@ HOMEPAGE=		https://augeas.net/
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses iconv lzma m pthread readline xml2 z
+WANTLIB += c curses iconv m readline xml2 z
 
 SITES=		https://github.com/hercules-team/augeas/releases/download/release-${V}/
 

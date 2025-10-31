@@ -4,7 +4,7 @@ PORTROACH_COMMENT=	ices2 is a different port
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-REVISION=	13
+REVISION=	14
 CATEGORIES=	net audio
 
 HOMEPAGE=	https://icecast.org/ices/
@@ -12,9 +12,9 @@ HOMEPAGE=	https://icecast.org/ices/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =	c iconv m ogg perl pthread theora util vorbis vorbisfile z
+WANTLIB =	c iconv m ogg perl pthread theora vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB} crypto ssl
-WANTLIB += 	mp3lame shout>=3 speex>=4 FLAC>=5 lzma xml2>=7
+WANTLIB += 	mp3lame shout speex FLAC xml2
 
 SITES=		https://downloads.xiph.org/releases/ices/
 

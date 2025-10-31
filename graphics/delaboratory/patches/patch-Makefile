@@ -1,7 +1,28 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -98,7 +98,7 @@ ifeq (${DEBUG}, YES)
+@@ -46,8 +46,10 @@ EXE=.exe
+ else
+ # settings for standard build
+ 
+-LDFLAGS=`${WXCONFIG} --libs` `xml2-config --libs` -ltiff
++LDFLAGS=`${WXCONFIG} --libs` `xml2-config --libs` -ltiff
+ CXXFLAGS_WX=`${WXCONFIG} --cxxflags` `xml2-config --cflags`
++# tiffio.h
++CXXFLAGS_WX += -I${LOCALBASE}/include
+ 
+ endif
+ 
+@@ -84,7 +86,7 @@ ALGORITHMS_HEADERS = ${addprefix algorithms/, ${ALGORI
+ STRIP=strip 
+ 
+ 
+-ifeq (${ARCH}, 64)
++ifeq (amd64, 64)
+ OPTFLAGS=-march=x86-64
+ else
+ OPTFLAGS=-march=i686
+@@ -98,7 +100,7 @@ ifeq (${DEBUG}, YES)
  CXXFLAGS+=-g -Wall -pedantic 
  else
  # release stuff

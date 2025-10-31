@@ -2,7 +2,7 @@
 bin/flickcurl-config
 @bin bin/flickrdf
 include/flickcurl.h
-lib/libflickcurl.a
+@static-lib lib/libflickcurl.a
 lib/libflickcurl.la
 @lib lib/libflickcurl.so.${LIBflickcurl_VERSION}
 lib/pkgconfig/flickcurl.pc
@@ -10,8 +10,6 @@ lib/pkgconfig/flickcurl.pc
 @man man/man1/flickcurl.1
 @man man/man1/flickrdf.1
 share/doc/pkg-readmes/${PKGSTEM}
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/flickcurl/
 share/gtk-doc/html/flickcurl/appgarden-commercial-picker.png
 share/gtk-doc/html/flickcurl/appgarden-edit-auth-flow-mobile.png

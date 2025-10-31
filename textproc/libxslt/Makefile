@@ -2,7 +2,7 @@ COMMENT=		XSLT C Library for GNOME
 
 GNOME_VERSION=		1.1.43
 GNOME_PROJECT=		libxslt
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  xslt                 4.2      # 2.43
 SHARED_LIBS +=  exslt                9.8      # 8.24
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv lzma m pthread xml2 z
+WANTLIB += c iconv m xml2 z
 
 MODULES=		x11/gnome
 

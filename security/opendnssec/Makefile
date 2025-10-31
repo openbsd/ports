@@ -1,6 +1,7 @@
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-2.1.14
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -11,7 +12,7 @@ MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
+WANTLIB += c crypto iconv ldns m pthread xml2 z
 
 SITES=		https://dist.opendnssec.org/source/
 

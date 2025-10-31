@@ -2,6 +2,7 @@ BROKEN-sparc64 = localpointer.h:561:31: error: 'auto' parameter not permitted in
 
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
+REVISION =	0
 
 V =		5.8.0
 DISTNAME =	libqalculate-$V
@@ -15,7 +16,7 @@ HOMEPAGE =	https://qalculate.github.io/
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl curses ehistory ereadline
-WANTLIB += gmp iconv icudata icuuc intl lzma m mpfr nghttp2 nghttp3
+WANTLIB += gmp iconv icudata icuuc intl m mpfr nghttp2 nghttp3
 WANTLIB += ngtcp2 ngtcp2_crypto_libressl ssl xml2 z
 
 COMPILER =	base-clang ports-gcc

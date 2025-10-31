@@ -153,6 +153,7 @@ lib/pkgconfig/yaz.pc
 @man man/man7/yaz-log.7
 @man man/man7/yaz.7
 @man man/man8/yaz-ztest.8
+share/aclocal/
 share/aclocal/yaz.m4
 share/doc/yaz/
 share/doc/yaz/apilayer.png

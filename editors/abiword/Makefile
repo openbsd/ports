@@ -9,7 +9,7 @@ DIST_TUPLE=	gnome World AbiWord c4e5ec46e146c4c894d66a862a287582ec76a2b1 .
 WRKDIST=	${WRKDIR}/AbiWord-c4e5ec46e146c4c894d66a862a287582ec76a2b1
 
 DISTNAME=	abiword-3.0.7.0.20250728
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  abiword-3.1-test          0.0 # 0.0
 
@@ -30,7 +30,7 @@ WANTLIB += epoll-shim epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += icudata icuuc intl jpeg ltdl lzma m mpfr nghttp2 nghttp3
+WANTLIB += icudata icuuc intl jpeg ltdl dav1d m mpfr nghttp2 nghttp3
 WANTLIB += ngtcp2 ngtcp2_crypto_libressl pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png raptor2 rasqal
 WANTLIB += rdf rsvg-2 spectre ssl uuid wayland-client wayland-cursor

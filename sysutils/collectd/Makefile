@@ -30,7 +30,8 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION =		5
+
+REVISION =		6
 REVISION-nut =		6
 
 HOMEPAGE =		http://www.collectd.org/
@@ -58,7 +59,7 @@ RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	X11 cairo expat \
 			freetype glib-2.0 gobject-2.0 \
-			harfbuzz iconv intl lzma m \
+			harfbuzz iconv intl m \
 			pango-1.0 pangocairo-1.0 \
 			png pthread rrd xcb \
 			xml2 z
@@ -70,7 +71,7 @@ WANTLIB-snmp =		crypto netsnmp pthread c kvm m netsnmpagent perl ssl
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-virt =	sysutils/libvirt
-WANTLIB-virt =		iconv lzma m pthread virt xml2 z
+WANTLIB-virt =		pthread virt xml2
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
@@ -89,7 +90,7 @@ WANTLIB-nut =		crypto kvm pthread ssl upsclient
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
 WANTLIB-riemann =	gmp gnutls hogweed intl iconv idn2 nettle \
 			protobuf-c p11-kit pthread riemann-client-gnutls tasn1 \
-			unistring brotlidec brotlienc z zstd
+			unistring z
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-mqtt =	net/mosquitto
@@ -100,8 +101,7 @@ LIB_DEPENDS-prometheus =	www/libmicrohttpd \
 				devel/protobuf-c
 RUN_DEPENDS-prometheus =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-prometheus =	gmp gnutls hogweed iconv idn2 intl microhttpd \
-			nettle p11-kit protobuf-c pthread tasn1 unistring \
-			brotlidec brotlienc z zstd
+			nettle p11-kit protobuf-c pthread tasn1 unistring
 
 LIB_DEPENDS-redis =	databases/libhiredis
 RUN_DEPENDS-redis =	collectd-$V:${BASE_PKGPATH},-main
@@ -117,7 +117,7 @@ LIB_DEPENDS +=	net/curl \
 		security/libgcrypt \
 		devel/libyajl
 
-WANTLIB += c crypto gpg-error kvm curl xml2 lzma m
+WANTLIB += c crypto gpg-error kvm curl xml2 m
 WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += pcap pthread ssl xml2 z statgrab gcrypt iconv intl
 WANTLIB += yajl

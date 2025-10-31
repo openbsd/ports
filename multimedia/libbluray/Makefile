@@ -3,6 +3,7 @@ COMMENT =		library supporting Blu-ray playback
 V =			1.3.4
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
+REVISION =		0
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 
@@ -12,7 +13,7 @@ EXTRACT_SUFX =		.tar.bz2
 # LGPL v2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c expat fontconfig freetype iconv lzma m pthread
+WANTLIB +=		c expat fontconfig freetype iconv m pthread
 WANTLIB +=		udfread xml2 z
 
 SHARED_LIBS +=		bluray		3.2	# 11.0

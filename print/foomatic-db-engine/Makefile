@@ -2,7 +2,7 @@ COMMENT=		Foomatic PPD generator
 
 DISTNAME=		foomatic-db-engine-4.0.13
 CATEGORIES=		print
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv m lzma pthread xml2 z
+WANTLIB += c iconv m pthread xml2 z
 
 SITES=			https://www.openprinting.org/download/foomatic/
 

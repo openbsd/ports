@@ -6,6 +6,7 @@ V=		9.20.15
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -21,7 +22,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto execinfo iconv idn2 json-c lzma m nghttp2
+WANTLIB += c crypto execinfo iconv idn2 json-c m nghttp2
 WANTLIB += pthread ssl unistring urcu urcu-cds urcu-common uv
 WANTLIB += xml2 z
 

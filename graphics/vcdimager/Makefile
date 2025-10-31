@@ -2,7 +2,7 @@ COMMENT=		(S)VCD authoring software
 
 DISTNAME=		vcdimager-2.0.1
 CATEGORIES=		graphics multimedia
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  vcdinfo              0.0      # 2.0
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.vcdimager.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c cdio iconv intl iso9660 lzma m popt pthread xml2 z
+WANTLIB =  c cdio iconv intl iso9660 m popt pthread xml2 z
 
 USE_GMAKE=		Yes
 

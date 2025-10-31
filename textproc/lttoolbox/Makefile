@@ -2,6 +2,7 @@ COMMENT =		finite-state lexical processing toolkit
 
 V =			3.7.6
 DISTNAME =		lttoolbox-$V
+REVISION =		0
 
 SHARED_LIBS +=		lttoolbox                1.0 # 3.0
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
+WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xml2 z
 WANTLIB += icudata icui18n icuio icuuc
 
 SITES =		https://github.com/apertium/lttoolbox/releases/download/v$V/

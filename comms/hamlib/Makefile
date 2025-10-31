@@ -4,6 +4,7 @@ COMMENT-tcl=	Tcl bindings for hamlib
 
 VERSION=	4.6.4
 REVISION=	0
+REVISION-main=	1
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
@@ -26,7 +27,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 cWANTLIB=		m pthread usb-1.0
 WANTLIB-main=		${cWANTLIB} ${COMPILER_LIBCXX} \
-			c curses iconv lzma perl readline xml2 z
+			c curses iconv perl readline xml2 z
 WANTLIB-python=		${cWANTLIB} hamlib iconv intl util ${MODPY_WANTLIB}
 WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 

@@ -8,10 +8,10 @@ include/ogle/msgevents.h
 @lib lib/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
 @lib lib/libmsgevents.so.${LIBmsgevents_VERSION}
 lib/ogle/
-lib/ogle/libdvdcontrol.a
+@static-lib lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 @lib lib/ogle/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
-lib/ogle/libmsgevents.a
+@static-lib lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
 @lib lib/ogle/libmsgevents.so.${LIBmsgevents_VERSION}
 @bin lib/ogle/ogle_ac3_p
