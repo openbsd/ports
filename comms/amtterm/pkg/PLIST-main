@@ -1,7 +1,7 @@
+@conflict amtterm-cli-<1.7p0
 bin/amttool
 @bin bin/gamt
 @man man/man1/amttool.1
 @man man/man1/gamt.1
-@man man/man7/amt-howto.7
 share/applications/gamt.desktop
 @tag update-desktop-database

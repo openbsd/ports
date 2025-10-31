@@ -2,6 +2,7 @@ COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.7
+REVISION=	0
 DISTNAME=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term

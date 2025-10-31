@@ -1,4 +1,6 @@
+@conflict amtterm-<1.7p0
 @bin bin/amtider
 @bin bin/amtterm
 @man man/man1/amtider.1
 @man man/man1/amtterm.1
+@man man/man7/amt-howto.7
