@@ -1,7 +1,7 @@
 COMMENT=	Python library for building powerful interactive CLI
 
 # check ipython requirements; as of 2024/06, wants <3.1
-MODPY_DISTV=	3.0.51
+MODPY_DISTV=	3.0.52
 DISTNAME=	prompt_toolkit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

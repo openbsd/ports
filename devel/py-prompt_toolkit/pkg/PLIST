@@ -421,12 +421,15 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}choice_input.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}choice_input.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}dialogs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}dialogs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/choice_input.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/dialogs.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/progress_bar/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/shortcuts/progress_bar/__init__.py
