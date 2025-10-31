@@ -1,5 +1,5 @@
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-11.7
+DISTNAME =		hiawatha-11.8
 CATEGORIES =		www net
 
 HOMEPAGE =		https://hiawatha.leisink.net/

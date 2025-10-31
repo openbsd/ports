@@ -6,16 +6,16 @@ Remove hardcoded dwarf-4 debug format that ld.bfd doesn't handle
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
- project(Hiawatha VERSION 11.7 LANGUAGES C)
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
+ project(Hiawatha VERSION 11.8 LANGUAGES C)
  
  # Compiler
 -set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -gdwarf-4")
-+set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -g")
++set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS}")
+ #set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -gdwarf-4 -Wno-array-bounds -Wno-stringop-overflow")
  set(CMAKE_BUILD_TYPE "RelWithDebInfo")
  
- # Options
-@@ -175,15 +175,15 @@ endforeach()
+@@ -176,15 +176,15 @@ endforeach()
  
  install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
  
