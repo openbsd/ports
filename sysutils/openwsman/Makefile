@@ -4,6 +4,7 @@ COMMENT=	open source WS-Management client API
 GH_ACCOUNT=	Openwsman
 GH_PROJECT=	openwsman
 GH_TAGNAME=	v2.8.1
+REVISION=	0
 
 SHARED_LIBS +=	wsman                     1.0 # 0.0
 SHARED_LIBS +=	wsman_client              0.0 # 0.0

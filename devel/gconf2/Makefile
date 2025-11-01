@@ -3,7 +3,7 @@ COMMENT=		configuration database system for GNOME
 GNOME_PROJECT=		GConf
 GNOME_VERSION=		3.2.6
 PKGNAME=		gconf2-${GNOME_VERSION}
-REVISION=		18
+REVISION=		19
 
 SHARED_LIBS +=  gconf-2              6.2      # 5.5
 

@@ -1,4 +1,5 @@
 COMMENT=		source code editing widget
+REVISION=		0
 
 DIST_TUPLE=		gnome World/gedit libgedit-gtksourceview 299.5.0 .
 

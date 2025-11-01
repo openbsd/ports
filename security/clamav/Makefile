@@ -4,6 +4,7 @@ COMMENT=	virus scanner
 V=		1.5.1
 DISTNAME=	clamav-$V
 PKGNAME=	clamav-${V:S/-rc/rc/}
+REVISION=	0
 
 CATEGORIES=	security
 

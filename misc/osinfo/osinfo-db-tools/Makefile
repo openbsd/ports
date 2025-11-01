@@ -1,6 +1,7 @@
 COMMENT=		tools to manage the libosinfo database
 
 DISTNAME=		osinfo-db-tools-${V}
+REVISION=		0
 
 WANTLIB += archive c gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0
 WANTLIB += soup-3.0 xml2

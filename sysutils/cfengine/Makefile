@@ -3,7 +3,7 @@ BROKEN =	pkg_add fails: problem with symlinks
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.7.2
-REVISION =	5
+REVISION =	6
 
 PORTROACH =	site:https://github.com/cfengine/core/archive/
 

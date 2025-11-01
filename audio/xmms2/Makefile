@@ -2,7 +2,7 @@ COMMENT =		audio player daemon with library management
 
 V =			0.9.5
 DISTNAME =		xmms2-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		xmmsclient++		3.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	2.0 # 1.0.0

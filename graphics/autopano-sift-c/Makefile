@@ -1,7 +1,7 @@
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1
-REVISION=		5
+REVISION=		6
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics

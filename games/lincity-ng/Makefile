@@ -1,7 +1,7 @@
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
-REVISION =	12
+REVISION =	13
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 

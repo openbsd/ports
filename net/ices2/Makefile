@@ -2,7 +2,7 @@ COMMENT=	icecast source for streaming Ogg Vorbis
 
 DISTNAME=	ices-2.0.2
 CATEGORIES=	net audio
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	https://icecast.org/ices/
 

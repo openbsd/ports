@@ -4,6 +4,7 @@ COMMENT =		3D light cycle game
 
 DISTNAME =		armagetronad-${V}.${P}
 EXTRACT_SUFX =		.tbz
+REVISION =		0
 
 CATEGORIES =		games x11
 

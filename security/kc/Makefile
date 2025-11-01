@@ -3,6 +3,7 @@ COMMENT =	console based password storing application
 GH_ACCOUNT =	levaidaniel
 GH_PROJECT =	kc
 GH_TAGNAME =	2.5.4
+REVISION =	0
 
 CATEGORIES =	security
 

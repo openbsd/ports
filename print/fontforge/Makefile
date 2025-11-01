@@ -10,7 +10,7 @@ SHARED_LIBS=		fontforge	4.0 \
 			gioftp		2.1 \
 			gunicode	5.1 \
 			gutils		2.1
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		print
 

@@ -5,7 +5,7 @@ COMMENT =	light-weight system monitor
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
 GH_TAGNAME =	v1.22.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils
 

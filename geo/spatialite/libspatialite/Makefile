@@ -1,7 +1,7 @@
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-5.1.0
-REVISION =	2
+REVISION =	3
 SHARED_LIBS =	spatialite 2.0 # 9.0
 
 CONFIGURE_ARGS +=	--enable-rttopo \

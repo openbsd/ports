@@ -2,7 +2,7 @@ COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	textproc
 

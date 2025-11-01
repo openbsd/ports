@@ -13,6 +13,8 @@ DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
+REVISION-main=	0
+REVISION-mapi=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox

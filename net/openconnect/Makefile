@@ -1,7 +1,7 @@
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.20
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 

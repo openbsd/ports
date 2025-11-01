@@ -4,6 +4,7 @@ DISTNAME=	netpbm-11.09.02
 SHARED_LIBS=	netpbm	7.0
 CATEGORIES=	graphics
 HOMEPAGE=	https://netpbm.sourceforge.net/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

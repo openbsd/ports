@@ -4,7 +4,7 @@ GNOME_PROJECT=		libgda
 GNOME_VERSION=		6.0.0
 EPOCH=			2
 
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		databases
 

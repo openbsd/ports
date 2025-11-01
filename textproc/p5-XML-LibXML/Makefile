@@ -2,7 +2,7 @@ COMMENT =	perl binding for libxml2
 
 DISTNAME =	XML-LibXML-2.0210
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

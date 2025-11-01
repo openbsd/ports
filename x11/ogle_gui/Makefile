@@ -2,7 +2,7 @@ CATEGORIES=	x11
 
 COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
-REVISION=	16
+REVISION=	17
 
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se

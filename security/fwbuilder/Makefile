@@ -8,7 +8,7 @@ GH_ACCOUNT =	fwbuilder
 GH_PROJECT =	fwbuilder
 GH_TAGNAME =	v${V}-${RC}
 DISTNAME =	${GH_PROJECT}-${V}${RC}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net security
 

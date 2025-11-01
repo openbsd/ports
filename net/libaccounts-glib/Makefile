@@ -4,7 +4,7 @@ CATEGORIES =	net
 
 V =		1.26
 DISTNAME =	libaccounts-glib-${V}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 

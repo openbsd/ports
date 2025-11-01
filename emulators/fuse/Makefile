@@ -2,7 +2,7 @@ COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-1.6.0
 CATEGORIES=		emulators
 HOMEPAGE=		https://fuse-emulator.sourceforge.net/
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

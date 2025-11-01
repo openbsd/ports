@@ -3,6 +3,7 @@ COMMENT=	library and tools to modify and parse PDF documents
 V =		0.10.5
 DIST_TUPLE +=	github podofo podofo ${V} .
 DISTNAME=	podofo-${V}
+REVISION=	0
 
 SHARED_LIBS +=	podofo                    5.0 # 0.10.5
 

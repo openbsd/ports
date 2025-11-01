@@ -3,7 +3,7 @@ SHARED_LIBS +=  translate                 0.0 # 0.0
 COMMENT=	library/CLI tool interfacing to online translation services
 
 DISTNAME=	libtranslate-0.99
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	textproc
 

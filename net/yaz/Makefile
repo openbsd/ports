@@ -1,7 +1,7 @@
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-5.31.1
 CATEGORIES=		net
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS+=		yaz		1.2	# 5.0
 SHARED_LIBS+=		yaz_icu		1.3	# 5.0

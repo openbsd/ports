@@ -3,7 +3,7 @@ COMMENT =		tty-based CardDav search tool
 V =			1.6
 DISTNAME =		mcds-${V}
 CATEGORIES =		productivity
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 

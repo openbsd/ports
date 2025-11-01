@@ -3,7 +3,7 @@ BROKEN-arm =		Makefile.defs:1397: Unsupported compiler (cc:clang), try gcc
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.5.4
-REVISION =		4
+REVISION =		5
 
 DISTNAME =		kamailio-${VERSION}_src
 

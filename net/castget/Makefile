@@ -2,7 +2,7 @@ COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-2.0.1
 CATEGORIES=		net
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://castget.johndal.com/
 

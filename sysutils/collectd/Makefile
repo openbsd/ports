@@ -31,8 +31,8 @@ PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
 
-REVISION =		6
-REVISION-nut =		6
+REVISION =		7
+REVISION-nut =		7
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0

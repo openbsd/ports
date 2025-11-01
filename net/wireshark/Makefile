@@ -9,6 +9,8 @@ PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
+REVISION-main =	0
+REVISION-text =	0
 
 SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0

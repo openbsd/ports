@@ -1,6 +1,7 @@
 COMMENT =	multilingual text processing library
 
 DISTNAME =	m17n-lib-1.8.6
+REVISION =	0
 
 SHARED_LIBS +=  m17n-core            0.0      # 4.2
 SHARED_LIBS +=  m17n                 0.0      # 4.2

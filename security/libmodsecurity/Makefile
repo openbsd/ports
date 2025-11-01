@@ -4,7 +4,7 @@ VERSION =	3.0.14
 DISTNAME =	modsecurity-v${VERSION}
 PKGNAME  =	libmodsecurity-${VERSION}
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
-REVISION  =	1
+REVISION  =	2
 
 SHARED_LIBS =	modsecurity	2.0	# 3.14
 

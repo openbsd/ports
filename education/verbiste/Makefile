@@ -4,6 +4,7 @@ DISTNAME=	verbiste-0.1.49
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/verbiste.html
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

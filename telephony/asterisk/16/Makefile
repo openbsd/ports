@@ -8,7 +8,8 @@ VERSION_SPEC=	>=16.0,<17.0
 # ok to remove if version bumped in 7.7-current, we can rely on
 # the libpthread bump to get updates from 7.7-stable
 REVISION-kqueue=1
-REVISION-main=	3
+REVISION-main=	4
+REVISION-calendar=	0
 
 # @sample lines removed post 7.7-release
 REVISION-fax=	0

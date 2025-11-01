@@ -1,7 +1,7 @@
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
-REVISION =	7
+REVISION =	8
 CATEGORIES =	textproc
 
 SITES =		${SITE_SOURCEFORGE:=tclxml/}

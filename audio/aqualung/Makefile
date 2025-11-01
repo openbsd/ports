@@ -4,6 +4,7 @@ VERSION=	2.0
 DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	https://github.com/jeremyevans/aqualung
 

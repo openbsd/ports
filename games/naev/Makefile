@@ -10,8 +10,8 @@ V =			0.11.5
 DISTNAME =		naev-${V}-source
 PKGNAME =		naev-${V}
 
-REVISION-data =		2
-REVISION-main =		3
+REVISION-data =		3
+REVISION-main =		4
 
 CATEGORIES =		games x11
 

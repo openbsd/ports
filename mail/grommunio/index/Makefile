@@ -4,6 +4,7 @@ COMMENT=	FTS indexer for grommunio-web
 
 V=		1.3
 DISTNAME=	grommunio-index-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-index

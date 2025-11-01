@@ -7,7 +7,7 @@ COMMENT =		visualization toolkit
 V =			9.5.2
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 .for LIB in vtkChartsCore vtkCommonColor vtkCommonComputationalGeometry \
 	vtkCommonCore vtkCommonDataModel vtkCommonExecutionModel vtkCommonMath \

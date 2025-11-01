@@ -1,7 +1,7 @@
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
 CATEGORIES =	graphics x11
-REVISION =	8
+REVISION =	9
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

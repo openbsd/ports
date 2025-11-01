@@ -1,7 +1,7 @@
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-3.2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	cob	6.0	# 6.0
 

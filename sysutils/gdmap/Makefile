@@ -1,7 +1,7 @@
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		https://gdmap.sourceforge.net/
 

@@ -1,5 +1,6 @@
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6DocTools               0.0 # 0.0
 

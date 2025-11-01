@@ -6,7 +6,7 @@ COMMENT=		shared mime database for desktops
 
 V=			2.4
 DISTNAME=		shared-mime-info-${V}
-REVISION=		0
+REVISION=		1
 
 DIST_TUPLE=		fdo xdg xdgmime 5b4d3ce009639a7eb031849c04195d9ae80d25fe xdgmime
 XDGMIME_WRKBUILD=	${WRKBUILD}/xdgmime

@@ -1,7 +1,7 @@
 COMMENT =	command line XML toolkit
 
 DISTNAME =	xmlstarlet-1.6.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	textproc
 

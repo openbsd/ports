@@ -1,5 +1,5 @@
 V =		2.1.3.17
-REVISION =	2
+REVISION =	3
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz

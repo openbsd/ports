@@ -2,7 +2,7 @@ COMMENT=	text mode rss and atom newsreader
 CATEGORIES=	www
 
 DISTNAME=	snownews-1.11
-REVISION=	0
+REVISION=	1
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes

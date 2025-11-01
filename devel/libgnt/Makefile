@@ -5,6 +5,7 @@ DISTNAME=	libgnt-${VER}
 CATEGORIES=	devel
 SITES=		${SITE_SOURCEFORGE:=pidgin/libgnt/${VER}/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	gnt	0.0
 

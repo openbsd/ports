@@ -1,7 +1,7 @@
 COMMENT =	beginner's drill tool to learn Japanese kana characters
 
 DISTNAME =	kanatest-0.4.6
-REVISION =	13
+REVISION =	14
 
 CATEGORIES =	japanese
 

@@ -1,4 +1,5 @@
 COMMENT=		SANE backend for eSCL and WSD scanners
+REVISION=		0
 
 DIST_TUPLE=		github alexpevzner sane-airscan 0.99.36 .
 

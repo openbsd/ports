@@ -47,7 +47,7 @@ WANTLIB += dav1d fontconfig harfbuzz
 CONFIGURE_ARGS +=	-Dpixbuf-loader=enabled
 .else
 ### old ########################################################################
-REVISION=		9
+REVISION=		10
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*

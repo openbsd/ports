@@ -1,7 +1,7 @@
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		8
+REVISION =		9
 CATEGORIES=		security
 
 HOMEPAGE=		https://rarcrack.sourceforge.net/

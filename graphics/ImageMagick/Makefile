@@ -4,7 +4,7 @@ COMMENT=	image processing tools
 
 VER=		6.9.13
 DASHVER=	26
-REVISION=	0
+REVISION=	1
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	ImageMagick-${VER}.${DASHVER}
 PORTROACH=	site:https://imagemagick.org/archive/releases/ limit:6.*

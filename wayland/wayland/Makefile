@@ -2,7 +2,7 @@ COMMENT =	Display server protocol
 
 DISTNAME =	wayland-${V}
 V =		1.24.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	wayland
 

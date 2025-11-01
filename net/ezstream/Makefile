@@ -2,7 +2,7 @@ COMMENT=	streaming source client that uses external en-/decoders
 
 DISTNAME=	ezstream-1.0.2
 CATEGORIES=	net multimedia
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://icecast.org/ezstream/
 

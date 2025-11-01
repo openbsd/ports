@@ -2,6 +2,7 @@ COMMENT=		DICOM toolkit
 
 V =			3.6.9
 DISTNAME=		dcmtk-$V
+REVISION=		0
 
 SHARED_LIBS +=  cmr                       1.0 # 3.6
 SHARED_LIBS +=  dcmdata                   2.0 # 3.6

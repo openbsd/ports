@@ -2,7 +2,7 @@ COMMENT =		finite-state lexical processing toolkit
 
 V =			3.7.6
 DISTNAME =		lttoolbox-$V
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		lttoolbox                1.0 # 3.0
 

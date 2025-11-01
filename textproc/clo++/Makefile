@@ -1,7 +1,7 @@
 COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	textproc
 
 # BSD

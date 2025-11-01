@@ -1,7 +1,7 @@
 COMMENT=	library to access the contents of an iPod
 
 DISTNAME=	libgpod-0.8.3
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  gpod                 722.0    # 7.2
 

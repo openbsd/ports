@@ -3,7 +3,7 @@ COMMENT =		library supporting Blu-ray playback
 V =			1.3.4
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 

@@ -6,6 +6,7 @@ V=		4.9.3
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	math
 

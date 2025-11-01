@@ -3,6 +3,7 @@ COMMENT=		library to handle keyboard descriptions
 V=			1.11.0
 DIST_TUPLE=		github xkbcommon libxkbcommon xkbcommon-${V} .
 PKGNAME=		libxkbcommon-${V}
+REVISION=		0
 
 SHARED_LIBS += xkbcommon                 4.0 # 0.11.0
 SHARED_LIBS += xkbcommon-x11             2.3 # 0.11.0

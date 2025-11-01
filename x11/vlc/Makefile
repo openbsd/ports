@@ -8,8 +8,8 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-jack=	0
-REVISION-main=	9
+REVISION-jack=	1
+REVISION-main=	10
 
 USE_NOBTCFI=	Yes
 

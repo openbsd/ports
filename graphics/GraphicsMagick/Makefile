@@ -1,7 +1,7 @@
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.45
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics devel
 SITES=		${SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz

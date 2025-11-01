@@ -5,7 +5,7 @@ GH_ACCOUNT =		scality
 GH_PROJECT =		Droplet
 GH_TAGNAME =		v2.0
 DISTNAME=		droplet-${GH_TAGNAME:S/v//}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS=		droplet		1.0 #0.0
 

@@ -1,7 +1,7 @@
 PHP_VERSION=	8.4.14
 AUTOCONF_VERSION= 2.72
 
-REVISION=	0
+REVISION=	1
 
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=

@@ -1,7 +1,7 @@
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
-REVISION =	7
+REVISION =	8
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/

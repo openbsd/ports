@@ -1,4 +1,5 @@
 COMMENT =	challenging 2D motocross platform game
+REVISION =	0
 
 BROKEN-sparc64 = Always hangs for 8 hours and gets killed
 

@@ -6,7 +6,7 @@ COMMENT =	dialect of Scheme designed for systems programming
 GH_ACCOUNT =	vyzo
 GH_PROJECT =	gerbil
 GH_TAGNAME =	v0.16
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 

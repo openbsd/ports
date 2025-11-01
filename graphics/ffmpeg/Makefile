@@ -7,6 +7,7 @@ EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 USE_NOBTCFI-amd64=	Yes
 

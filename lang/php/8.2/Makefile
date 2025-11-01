@@ -2,8 +2,7 @@ PHP_VERSION=	8.2.29
 AUTOCONF_VERSION= 2.72
 
 # keep above 7.7-stable
-REVISION=	2
-REVISION-main=	3
+REVISION=	4
 
 PHP_PKGSPEC=	>=8.2,<8.3
 PHP_EXTENSIONS += -imap -pspell

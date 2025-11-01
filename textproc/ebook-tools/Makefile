@@ -1,6 +1,7 @@
 COMMENT =		accessing and converting various ebook file formats
 V =			0.2.2
 DISTNAME =		ebook-tools-${V}
+REVISION =		0
 
 HOMEPAGE =		https://sourceforge.net/projects/ebook-tools/
 

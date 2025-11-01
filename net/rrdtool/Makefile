@@ -9,6 +9,9 @@ DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-$V
+REVISION-main=	0
+REVISION-ruby=	0
+REVISION-update=0
 
 SHARED_LIBS +=	rrd                  6.0      # 11.0
 

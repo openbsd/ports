@@ -2,6 +2,7 @@ COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 V =		6.1.0
 DISTNAME =	universal-ctags-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 

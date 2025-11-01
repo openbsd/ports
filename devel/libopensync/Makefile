@@ -2,7 +2,7 @@ COMMENT=	data synchronization framework
 
 V=		0.36
 DISTNAME=	libopensync-${V}
-REVISION =	5
+REVISION =	6
 SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
 

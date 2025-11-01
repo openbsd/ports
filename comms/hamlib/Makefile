@@ -3,8 +3,8 @@ COMMENT-python=	Python bindings for hamlib
 COMMENT-tcl=	Tcl bindings for hamlib
 
 VERSION=	4.6.4
-REVISION=	0
-REVISION-main=	1
+REVISION=	1
+REVISION-main=	2
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
