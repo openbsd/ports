@@ -1,0 +1,33 @@
+Don't use store, replace SSL_CIPHER_standard_name() by existing API and
+don't try to run EVP_DigestInit() with NULL md, this ends in tears.
+
+Index: src/ne_openssl.c
+--- src/ne_openssl.c.orig
++++ src/ne_openssl.c
+@@ -86,7 +86,7 @@ typedef const unsigned char ne_d2i_uchar;
+ #define EVP_PKEY_get0_RSA(evp) (evp->pkey.rsa)
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000
++#if OPENSSL_VERSION_NUMBER >= 0x10101000 && !defined(LIBRESSL_VERSION_NUMBER)
+ /* OpenSSL 1.1.1 has STORE. */
+ #define HAVE_OPENSSL111
+ #include <openssl/store.h>
+@@ -795,7 +795,7 @@ int ne__negotiate_ssl(ne_session *sess)
+         const SSL_CIPHER *ciph = SSL_get_current_cipher(ssl);
+ 
+         sess->status.hs.protocol = ne_sock_getproto(sess->socket);
+-        sess->status.hs.ciphersuite = SSL_CIPHER_standard_name(ciph);
++        sess->status.hs.ciphersuite = SSL_CIPHER_get_name(ciph);
+         sess->notify_cb(sess->notify_ud, ne_status_handshake, &sess->status);
+     }
+ 
+@@ -1358,6 +1358,8 @@ char *ne_vstrhash(unsigned int flags, va_list ap)
+     unsigned char v[EVP_MAX_MD_SIZE];
+     unsigned int vlen;
+     const char *arg;
++
++    if (!md) return NULL;
+ 
+     ctx = EVP_MD_CTX_new();
+     if (!ctx) return NULL;

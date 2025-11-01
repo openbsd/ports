@@ -8,4 +8,4 @@ Index: test/utils.c
 +#include <sys/socket.h>
  
  #include "ne_session.h"
- 
+ #include "ne_string.h"

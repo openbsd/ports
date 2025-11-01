@@ -1,9 +1,8 @@
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.34.2
-REVISION=		1
+DISTNAME=		neon-0.35.0
 
-SHARED_LIBS +=  neon                 31.4     # 34.2
+SHARED_LIBS +=  neon                 31.5     # 34.2
 
 CATEGORIES=		net www devel
 

@@ -1,0 +1,13 @@
+Avoid linking failure due to a test depending on <openssl/store.h>
+
+Index: test/ssl.c
+--- test/ssl.c.orig
++++ test/ssl.c
+@@ -2093,7 +2093,6 @@ ne_test tests[] = {
+     T_XFAIL(pkcs11_dsa), /* unclear why this fails currently. */
+ #endif
+     T(notifier),
+-    T(clicert_uri),
+ 
+     T(NULL) 
+ };
