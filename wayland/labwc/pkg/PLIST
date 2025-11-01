@@ -1,5 +1,7 @@
 bin/lab-sensible-terminal
+@bin bin/labnag
 @bin bin/labwc
+@man man/man1/labnag.1
 @man man/man1/labwc.1
 @man man/man5/labwc-actions.5
 @man man/man5/labwc-config.5
@@ -56,6 +58,7 @@ share/locale/sv/LC_MESSAGES/labwc.mo
 share/locale/tr/LC_MESSAGES/labwc.mo
 share/locale/uk/LC_MESSAGES/labwc.mo
 share/locale/zh_CN/LC_MESSAGES/labwc.mo
+share/locale/zh_TW/LC_MESSAGES/labwc.mo
 share/wayland-sessions/
 share/wayland-sessions/labwc.desktop
 share/xdg-desktop-portal/
