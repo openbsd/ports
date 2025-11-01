@@ -28,7 +28,7 @@ Index: chrome/browser/browser_process_impl.cc
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1435,7 +1435,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1368,7 +1368,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state())));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -37,7 +37,7 @@ Index: chrome/browser/browser_process_impl.cc
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore) !=
        "basic") {
-@@ -1715,7 +1715,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1718,7 +1718,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

@@ -1,6 +1,6 @@
-Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
---- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig
-+++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
+Index: chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc
+--- chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig
++++ chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc
 @@ -17,7 +17,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_win.h"
  #endif
@@ -17,5 +17,5 @@ Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  std::unique_ptr<OpaqueBrowserFrameView> CreateOpaqueBrowserFrameViewLinux(
-     BrowserFrame* frame,
+     BrowserWidget* widget,
      BrowserView* browser_view) {

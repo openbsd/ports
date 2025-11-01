@@ -19,7 +19,7 @@ Index: chrome/browser/enterprise/util/managed_browser_utils.cc
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
-@@ -428,7 +428,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+@@ -408,7 +408,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
  }
  
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
@@ -28,7 +28,7 @@ Index: chrome/browser/enterprise/util/managed_browser_utils.cc
    BrowserManagementNoticeState management_notice_state =
        GetManagementNoticeStateForNTPFooter(profile);
    switch (management_notice_state) {
-@@ -446,7 +446,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
+@@ -426,7 +426,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
  
  BrowserManagementNoticeState GetManagementNoticeStateForNTPFooter(
      Profile* profile) {
