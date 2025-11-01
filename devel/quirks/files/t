@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: t,v 1.5 2025/10/23 19:43:31 sthen Exp $
+# $OpenBSD: t,v 1.6 2025/11/01 14:28:23 sthen Exp $
 #
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
@@ -22,9 +22,7 @@ use warnings;
 use Quirks;
 use OpenBSD::State;
 
-my @list = qw(terraform-provider-terraform-0 drupal-7.0 qhacc-0 qgo-0
-	beediff-1 sqliteman-3 gbirthday-1 qlandkartegt-0 keepassx-12
-	lives-5 kde-i18n-af-12 kde-l10n-hi-2 sqliteman-1);
+my @list = qw(cheese-1 opensmtpd-extras-1 depotdownloader-1);
 
 my $state = OpenBSD::State->new('test');
 
