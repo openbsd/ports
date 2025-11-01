@@ -71,6 +71,10 @@ then
 elif [ -n "$DISPLAY" -a -x ${TRUEPREFIX}/bin/pinentry-gtk-2 ]
 then
 	export PINENTRY_BINARY="${TRUEPREFIX}/bin/pinentry-gtk-2"
+# otherwise test if pinentry-dmenu is installed
+elif [ -n "$DISPLAY" -a -x ${TRUEPREFIX}/bin/pinentry-dmenu ]
+then
+	export PINENTRY_BINARY="${TRUEPREFIX}/bin/pinentry-dmenu"
 # otherwise test if pinentry-qt4 exists although KDE is not detected
 elif [ -n "$DISPLAY" -a -x ${TRUEPREFIX}/bin/pinentry-qt4 ]
 then
