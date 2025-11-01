@@ -1,6 +1,6 @@
 COMMENT =		basic implementation of the __geo_interface__
 
-MODPY_DISTV =	1.5.1
+MODPY_DISTV =	1.6.0
 DISTNAME =		pygeoif-${MODPY_DISTV}
 PKGNAME =		py-geoif-${MODPY_DISTV}
 
