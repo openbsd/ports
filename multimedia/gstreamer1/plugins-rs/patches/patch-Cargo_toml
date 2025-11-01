@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -168,3 +168,52 @@ gst-tag = { package = "gstreamer-tag", git = "https://
+@@ -169,3 +169,52 @@ gst-tag = { package = "gstreamer-tag", git = "https://
  gst-utils = { package = "gstreamer-utils", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
  gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
  gst-webrtc = { package = "gstreamer-webrtc", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
