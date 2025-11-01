@@ -6,6 +6,7 @@ COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
+REVISION=	0
 
 # https://github.com/ice-wm/icewm
 HOMEPAGE=	https://ice-wm.org/
@@ -40,7 +41,7 @@ LIB_DEPENDS=	audio/libao \
 		graphics/cairo \
 		graphics/gdk-pixbuf2 \
 		graphics/imlib2 \
-		textproc/libxml,-main \
+		textproc/libxml \
 		x11/gnome/librsvg
 
 RUN_DEPENDS=	devel/desktop-file-utils
