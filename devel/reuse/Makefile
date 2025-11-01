@@ -1,10 +1,11 @@
 COMMENT=	tool for compliance with the REUSE recommendations
 
-MODPY_DISTV=	6.1.2
+MODPY_DISTV=	6.2.0
 DISTNAME=	reuse-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
+# https://github.com/fsfe/reuse-tool
 HOMEPAGE=	https://reuse.software/
 
 MAINTAINER=	Alvar Penning <post@0x21.biz>
@@ -28,5 +29,10 @@ RUN_DEPENDS=	www/py-jinja2>=3.0.0 \
 		textproc/py-chardet>=3.0.2
 
 TEST_DEPENDS=	devel/py-freezegun
+
+pre-test:
+	@if [[ -d ${WRKINST} ]]; then echo; echo \
+		"tests only work before 'make fake' is run"; \
+		echo; exit 1; fi
 
 .include <bsd.port.mk>
