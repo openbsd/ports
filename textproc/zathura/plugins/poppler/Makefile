@@ -1,4 +1,4 @@
-V =		0.3.3
+V =		0.3.4
 COMMENT =	poppler pdf plugin for zathura
 PROJECT =	zathura-pdf-poppler
 

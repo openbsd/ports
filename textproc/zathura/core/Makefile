@@ -1,4 +1,4 @@
-V =			0.5.12
+V =			0.5.14
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c cairo gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gdk-3 gtk-3 intl json-glib-1.0 m magic pango-1.0 sqlite3 synctex
+WANTLIB += gdk-3 gtk-3 intl json-glib-1.0 m magic pango-1.0 pangocairo-1.0 sqlite3 synctex
 
 SITES =		https://pwmt.org/projects/zathura/download/
 
