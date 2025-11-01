@@ -1,4 +1,6 @@
-PySNMP is a Python implementation of SNMP v.1/v.2c engine. Its general
-functionality is to assemble/disassemble SNMP messages from/into given
-SNMP Object IDs along with associated values. PySNMP also provides a few
-transport methods specific to TCP/IP networking.
+The PySNMP core library implements a robust SNMP engine entirely in
+Python. It provides full support for SNMPv1, SNMPv2c, and SNMPv3, as
+well as key features like MIB handling and asynchronous operations.
+
+See the source distribution or https://github.com/lextudio/pysnmp for
+a variety of examples showing common use cases and advanced features.
