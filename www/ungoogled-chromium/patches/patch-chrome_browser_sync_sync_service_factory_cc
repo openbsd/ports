@@ -1,7 +1,7 @@
 Index: chrome/browser/sync/sync_service_factory.cc
 --- chrome/browser/sync/sync_service_factory.cc.orig
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -135,7 +135,7 @@ namespace {
+@@ -134,7 +134,7 @@ namespace {
  tab_groups::TabGroupSyncService* GetTabGroupSyncService(Profile* profile) {
    CHECK(profile);
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

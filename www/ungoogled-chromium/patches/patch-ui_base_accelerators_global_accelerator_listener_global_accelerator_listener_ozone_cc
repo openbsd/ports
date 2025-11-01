@@ -16,10 +16,10 @@ Index: ui/base/accelerators/global_accelerator_listener/global_accelerator_liste
  namespace {
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
- BASE_FEATURE(kGlobalShortcutsPortal,
-              "GlobalShortcutsPortal",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -75,7 +75,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
+ BASE_FEATURE(kGlobalShortcutsPortal, base::FEATURE_ENABLED_BY_DEFAULT);
+ constexpr char kChannelEnvVar[] = "CHROME_VERSION_EXTRA";
+ 
+@@ -73,7 +73,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
      return instance->get();
    }
  

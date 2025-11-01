@@ -9,4 +9,4 @@ Index: ui/views/window/default_frame_view.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return FrameBorderThickness();
  #else
-   return frame_->IsMaximized() ? FrameBorderThickness() : kFrameShadowThickness;
+   return widget_->IsMaximized() ? FrameBorderThickness()

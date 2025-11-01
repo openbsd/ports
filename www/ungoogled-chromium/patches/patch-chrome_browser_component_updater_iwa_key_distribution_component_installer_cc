@@ -8,9 +8,9 @@ Index: chrome/browser/component_updater/iwa_key_distribution_component_installer
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kIwaKeyDistributionComponent,
-              "IwaKeyDistributionComponent",
  #if BUILDFLAG(IS_CHROMEOS)
-@@ -102,7 +102,7 @@ bool IwaKeyDistributionComponentInstallerPolicy::IsSup
+              base::FEATURE_ENABLED_BY_DEFAULT
+@@ -101,7 +101,7 @@ bool IwaKeyDistributionComponentInstallerPolicy::IsSup
    // the main IWA feature.
  #if BUILDFLAG(IS_WIN)
    return base::FeatureList::IsEnabled(features::kIsolatedWebApps);

@@ -1,7 +1,7 @@
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
-@@ -532,12 +532,17 @@ int UDPSocketPosix::SetRecvTos() {
+@@ -550,12 +550,17 @@ int UDPSocketPosix::SetRecvTos() {
  #endif  // BUILDFLAG(IS_APPLE)
    }
  
@@ -20,7 +20,7 @@ Index: net/socket/udp_socket_posix.cc
    if (confirm) {
      sendto_flags_ |= MSG_CONFIRM;
    } else {
-@@ -558,7 +563,7 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
+@@ -576,7 +581,7 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;
@@ -29,7 +29,7 @@ Index: net/socket/udp_socket_posix.cc
    // SO_REUSEPORT on OSX permits multiple processes to each receive
    // UDP multicast or broadcast datagrams destined for the bound
    // port.
-@@ -916,7 +921,7 @@ int UDPSocketPosix::DoBind(const IPEndPoint& address) 
+@@ -934,7 +939,7 @@ int UDPSocketPosix::DoBind(const IPEndPoint& address) 
  #if BUILDFLAG(IS_CHROMEOS)
    if (last_error == EINVAL)
      return ERR_ADDRESS_IN_USE;

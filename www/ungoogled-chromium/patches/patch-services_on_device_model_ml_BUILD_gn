@@ -6,7 +6,7 @@ Index: services/on_device_model/ml/BUILD.gn
        deps += [ "//gpu/config" ]
      }
 -    if (is_win || is_mac || is_linux) {
-+    if (!is_bsd && (is_win || is_mac || is_linux)) {
++    if ((is_win || is_mac || is_linux) && !is_bsd) {
        deps += [ "//third_party/xnnpack" ]
      }
      public_deps = [

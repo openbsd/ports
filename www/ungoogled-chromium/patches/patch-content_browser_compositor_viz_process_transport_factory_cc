@@ -1,7 +1,7 @@
 Index: content/browser/compositor/viz_process_transport_factory.cc
 --- content/browser/compositor/viz_process_transport_factory.cc.orig
 +++ content/browser/compositor/viz_process_transport_factory.cc
-@@ -103,7 +103,7 @@ class HostDisplayClient : public viz::HostDisplayClien
+@@ -98,7 +98,7 @@ class HostDisplayClient : public viz::HostDisplayClien
    HostDisplayClient& operator=(const HostDisplayClient&) = delete;
  
    // viz::HostDisplayClient:

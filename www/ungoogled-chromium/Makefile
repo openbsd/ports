@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			141.0.7390.122
+V=			142.0.7444.59
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -48,7 +48,7 @@ SITES.a=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
-MODCLANG_VERSION=	19
+MODCLANG_VERSION=	21
 MODQT5_DEPS=		No
 MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
@@ -67,7 +67,6 @@ WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 WANTLIB+=	epoll-shim lzma udev
-WANTLIB+=	aom vpx
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -97,9 +96,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
-		multimedia/aom \
 		multimedia/dav1d \
-		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -150,10 +147,8 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
-		libaom \
 		libjpeg \
 		libpng \
-		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -196,11 +191,12 @@ GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute=\"${LOCALBASE}\" \
 		rustc_version=\"${RUSTC_VERSION}\"
 
+PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom|vpx)"
+
 # pull in our patched sources for libaom and libvpx
-#GN_ARGS+=	use_vaapi=true
-#BUILD_DEPENDS+=	multimedia/aom:patch \
-#		multimedia/libvpx:patch
-GN_ARGS+=	use_vaapi=false
+GN_ARGS+=	use_vaapi=true
+BUILD_DEPENDS+=	multimedia/aom:patch \
+		multimedia/libvpx:patch
 
 .if ${MACHINE_ARCH} == "aarch64"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -280,10 +276,13 @@ pre-patch:
 	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
 		utils/domain_substitution.py apply -r domain_regex.list -f \
 		domain_substitution.list -c ${WRKSRC}/domsubcache.tar.gz ${WRKSRC}
-#	cd ${WRKDIR}/multimedia/aom/libaom-* && \
-#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom
-#	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
-#		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx
+	cd ${WRKDIR}/multimedia/aom/libaom-* && \
+		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom/source/libaom
+	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
+		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx/source/libvpx 
+	perl -pi -e 's#const uint8_t \*p,#uint8_t \*p,#g' \
+		${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
+		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
