@@ -1,0 +1,12 @@
+Index: src/core/others/ojph_mem.c
+--- src/core/others/ojph_mem.c.orig
++++ src/core/others/ojph_mem.c
+@@ -48,6 +48,8 @@
+ #define OJPH_OS_ANDROID
+ #elif (defined __linux)
+ #define OJPH_OS_LINUX
++#elif (defined __OpenBSD__)
++#define OJPH_OS_OPENBSD
+ #endif
+ 
+ ////////////////////////////////////////////////////////////////////////////////
