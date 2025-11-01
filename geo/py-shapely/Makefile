@@ -1,6 +1,6 @@
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_DISTV =	2.1.1
+MODPY_DISTV =	2.1.2
 GH_TAGNAME =	${MODPY_DISTV}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
