@@ -1,6 +1,4 @@
-most bits from https://github.com/JakubMelka/PDF4QT/pull/220
 
-last-1 chunk: https://github.com/JakubMelka/PDF4QT/commit/a124bd5f6df61899507dc5b5f16985fdc6ee7f66
 last chunk: MERGE_QT_TRANSLATIONS only in 6.9 ?
 https://doc.qt.io/qt-6/qtlinguist-cmake-qt-add-translations.html#merging-qt-provided-translations
 simplify translation handling (only cs is done anyway...)
@@ -8,96 +6,7 @@ simplify translation handling (only cs is done anyway...)
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -27,8 +27,8 @@ message(STATUS "Build type - CMAKE_BUILD_TYPE: ${CMAKE
- 
- project(PDF4QT VERSION ${PDF4QT_VERSION} LANGUAGES CXX)
- 
--option(PDF4QT_INSTALL_DEPENDENCIES "Install dependencies" ON)
--option(PDF4QT_INSTALL_QT_DEPENDENCIES "Install Qt dependencies" ON)
-+option(PDF4QT_INSTALL_DEPENDENCIES "Install dependencies" ${VCPKG_TOOLCHAIN})
-+option(PDF4QT_INSTALL_QT_DEPENDENCIES "Install Qt dependencies" ${VCPKG_TOOLCHAIN})
- 
- add_compile_definitions(PDF4QT_PROJECT_VERSION="${PDF4QT_VERSION}")
- add_compile_definitions(QT_NO_EMIT)
-@@ -42,7 +42,7 @@ option(PDF4QT_BUILD_ONLY_CORE_LIBRARY "Build only core
- 
- set(PDF4QT_QT_ROOT "" CACHE PATH "Qt root directory")
- 
--if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-+if(VCPKG_TOOLCHAIN AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-   set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install CACHE PATH "Installation directory" FORCE)
- endif()
- 
-@@ -62,7 +62,7 @@ endif()
- qt_standard_project_setup(I18N_TRANSLATED_LANGUAGES en de cs es ko)
- 
- find_package(OpenSSL REQUIRED)
--find_package(lcms2 REQUIRED)
-+find_library(LCMS2_LIBRARIES lcms2 REQUIRED)
- find_package(ZLIB REQUIRED)
- find_package(Freetype REQUIRED)
- find_package(OpenJPEG CONFIG REQUIRED)
-@@ -96,23 +96,12 @@ if (LINUX_GCC)
-     find_package(TBB REQUIRED)
- endif()
- 
--option(PDF4QT_INSTALL_TO_USR "Install to usr directory" ON)
-+option(PDF4QT_INSTALL_TO_USR "Install to usr directory" ${VCPKG_TOOLCHAIN})
- 
- if(PDF4QT_LINUX)
--    set(PDF4QT_INSTALL_LIB_DIR_IMPL lib)
--    set(PDF4QT_INSTALL_BIN_DIR_IMPL bin)
-+    set(PDF4QT_INSTALL_LIB_DIR_IMPL ${CMAKE_INSTALL_LIBDIR})
-+    set(PDF4QT_INSTALL_BIN_DIR_IMPL ${CMAKE_INSTALL_BINDIR})
- 
--    # Check if VCPKG_OVERLAY_PORTS is set as an environment variable or a CMake argument
--    if(NOT DEFINED ENV{VCPKG_OVERLAY_PORTS} AND NOT DEFINED VCPKG_OVERLAY_PORTS)
--        message(WARNING "The VCPKG_OVERLAY_PORTS variable is not set! Application can crash in Open/Save dialog due to incompatible LIBPNG.")
--    else()
--        set(VCPKG_OVERLAY_PORTS_VALUE "$ENV{VCPKG_OVERLAY_PORTS}")
--        if(DEFINED VCPKG_OVERLAY_PORTS)
--            set(VCPKG_OVERLAY_PORTS_VALUE "${VCPKG_OVERLAY_PORTS}")
--        endif()
--        message(STATUS "The VCPKG_OVERLAY_PORTS variable is set to: ${VCPKG_OVERLAY_PORTS_VALUE}")
--    endif()
--
- else()
-     set(PDF4QT_INSTALL_LIB_DIR_IMPL bin)
-     set(PDF4QT_INSTALL_BIN_DIR_IMPL bin)
-@@ -121,15 +110,30 @@ endif()
- if(PDF4QT_INSTALL_TO_USR)
-     set(PDF4QT_INSTALL_LIB_DIR usr/${PDF4QT_INSTALL_LIB_DIR_IMPL})
-     set(PDF4QT_INSTALL_BIN_DIR usr/${PDF4QT_INSTALL_BIN_DIR_IMPL})
--    set(PDF4QT_INSTALL_SHARE_DIR usr/share)
-+    set(PDF4QT_INSTALL_SHARE_DIR usr/${CMAKE_INSTALL_DATAROOTDIR})
- else()
-     set(PDF4QT_INSTALL_LIB_DIR ${PDF4QT_INSTALL_LIB_DIR_IMPL})
-     set(PDF4QT_INSTALL_BIN_DIR ${PDF4QT_INSTALL_BIN_DIR_IMPL})
--    set(PDF4QT_INSTALL_SHARE_DIR share)
-+    set(PDF4QT_INSTALL_SHARE_DIR ${CMAKE_INSTALL_DATAROOTDIR})
- endif()
- 
- add_subdirectory(Pdf4QtLibCore)
- 
-+# Install public headers from Pdf4QtLibCore/include
-+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Pdf4QtLibCore/sources/
-+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibCore
-+        FILES_MATCHING PATTERN "*.h")
-+# Install generated export header
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdf4qtlibcore_export.h
-+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibCore)
-+# Install public headers from Pdf4QtLibWidgets/include
-+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Pdf4QtLibWidgets/sources/
-+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibWidgets
-+        FILES_MATCHING PATTERN "*.h")
-+# Install generated export header
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdf4qtlibwidgets_export.h
-+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibWidgets)
-+
- if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
-     add_subdirectory(Pdf4QtLibWidgets)
-     add_subdirectory(CodeGenerator)
-@@ -147,32 +151,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
+@@ -180,32 +180,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
      add_subdirectory(WixInstaller)
  endif()
  

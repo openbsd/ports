@@ -2,9 +2,8 @@ COMMENT =	PDF generator library, viewer and editor
 
 GH_ACCOUNT =	JakubMelka
 GH_PROJECT =	PDF4QT
-GH_TAGNAME =	v1.5.1.0
+GH_TAGNAME =	v1.5.2.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 HOMEPAGE =	https://jakubmelka.github.io/
 
