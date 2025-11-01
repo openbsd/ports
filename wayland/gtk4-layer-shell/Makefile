@@ -24,9 +24,6 @@ BUILD_DEPENDS =	devel/gobject-introspection \
 LIB_DEPENDS =	x11/gtk+4
 WANTLIB +=	c gio-2.0 glib-2.0 gobject-2.0 gtk-4 wayland-client
 
-.include <bsd.port.mk>
+CONFIGURE_ENV =	LDFLAGS="-L${X11BASE}/lib"
 
-.if ${CHOSEN_COMPILER} == ports-gcc
-# Needed for ports-gcc - does not work in LDFLAGS
-CFLAGS +=	-L${X11BASE}/lib
-.endif
+.include <bsd.port.mk>
