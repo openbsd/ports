@@ -46,6 +46,8 @@ NO_TEST =		Yes
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+FIX_CRLF_FILES =	src/core/fex/7z_C/CpuArch.c
+
 post-install:
 	mv ${PREFIX}/etc/ ${PREFIX}/share/examples/vbam/
 
