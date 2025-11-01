@@ -2,6 +2,7 @@ COMMENT =	kernel normal form formatter
 
 V =		5.1.1
 DISTNAME =	knfmt-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -11,9 +12,6 @@ MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
-
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
 
 # uses pledge()
 WANTLIB +=	c
