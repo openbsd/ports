@@ -1,6 +1,6 @@
 COMMENT=	shapefile manipulation library
 
-V =		1.6.1
+V =		1.6.2
 DISTNAME=	shapelib-${V}
 
 CATEGORIES=	devel
