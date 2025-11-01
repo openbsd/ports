@@ -1,9 +1,9 @@
-COMMENT-main=		XML parsing library
+COMMENT=		XML parsing library
 
 GNOME_VERSION=		2.15.1
 GNOME_PROJECT=		libxml2
-
-PKGNAME-main=		libxml-${GNOME_VERSION}
+PKGNAME=		libxml-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += xml2                      22.1 # 16.1.1
 
@@ -20,13 +20,9 @@ COMPILER_LANGS=		c
 MODULES=		devel/meson \
 			x11/gnome
 
-MULTI_PACKAGES=		-main
+LIB_DEPENDS=		converters/libiconv
 
-LIB_DEPENDS-main=	converters/libiconv
-
-WANTLIB-main += c iconv m z
-
-RUN_DEPENDS-main=
+WANTLIB += c iconv m z
 
 CONFIGURE_ARGS=		-Dlegacy=enabled
 
