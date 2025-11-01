@@ -1,9 +1,9 @@
 Index: crates/main/Cargo.toml
 --- crates/main/Cargo.toml.orig
 +++ crates/main/Cargo.toml
-@@ -30,7 +30,7 @@ trc = { path = "../trc" }
- utils = { path = "../utils" }
- tokio = { version = "1.23", features = ["full"] }
+@@ -36,7 +36,7 @@ utils = { path = "../utils" }
+ migration = { path = "../migration" }
+ tokio = { version = "1.47", features = ["full"] }
  
 -[target.'cfg(not(target_env = "msvc"))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]

@@ -21,8 +21,9 @@
 @mode
 @owner
 @group
+@bin bin/stalwart
 @bin bin/stalwart-cli
-@bin bin/stalwart-mail
+bin/stalwart-mail
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login.conf.d/stalwart_mail
 @sample ${SYSCONFDIR}/login.conf.d/stalwart_mail

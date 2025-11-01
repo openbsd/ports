@@ -59,8 +59,8 @@ Index: resources/config/config.toml
  enable = true
  
 -#[server.run-as]
--#user = "stalwart-mail"
--#group = "stalwart-mail"
+-#user = "stalwart"
+-#group = "stalwart"
 +[server.run-as]
 +user = "_stalwart-smtp"
 +group = "_stalwart-smtp"

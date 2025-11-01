@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/stalwart-mail"
+daemon="${TRUEPREFIX}/bin/stalwart"
 daemon_logger="daemon.info"
 daemon_flags="--config /var/stalwart/etc/config.toml"
 
