@@ -1,4 +1,5 @@
-BROKEN-i386=	../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.39.0/internal/utilization/utilization.go:216:25: undefined: sysinfo.PhysicalMemoryBytes
+# ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.39.0/internal/utilization/utilization.go:216:25: undefined: sysinfo.PhysicalMemoryBytes
+ONLY_FOR_ARCHS =	amd64
 
 # XXX there are some problems with this port which seem to be related to
 # removing direct syscalls; to replicate: "step base64"; makeRaw from
