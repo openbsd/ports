@@ -174,7 +174,9 @@
      SUBDIR += py-ldap
      SUBDIR += py-ldap0
      SUBDIR += py-ldap3
+     SUBDIR += py-limits
      SUBDIR += py-lmdb
+     SUBDIR += py-marshmallow-sqlalchemy
      SUBDIR += py-minidb
      SUBDIR += py-mongo
      SUBDIR += py-mysqlclient
@@ -189,6 +191,7 @@
      SUBDIR += py-redis
      SUBDIR += py-sql
      SUBDIR += py-sqlalchemy
+     SUBDIR += py-sqlalchemy-utils
      SUBDIR += py-sqlobject
      SUBDIR += py-sqlparse
      SUBDIR += py-whisper

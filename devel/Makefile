@@ -1369,6 +1369,7 @@
      SUBDIR += py-annotated_types
      SUBDIR += py-anytree
      SUBDIR += py-apipkg
+     SUBDIR += py-apispec
      SUBDIR += py-appdirs
      SUBDIR += py-application_properties
      SUBDIR += py-argcomplete
@@ -1571,6 +1572,7 @@
      SUBDIR += py-looseversion
      SUBDIR += py-lsprotocol
      SUBDIR += py-magic
+     SUBDIR += py-marshmallow
      SUBDIR += py-matrix-common
      SUBDIR += py-mccabe
      SUBDIR += py-minidump
@@ -1629,6 +1631,7 @@
      SUBDIR += py-portalocker
      SUBDIR += py-prance
      SUBDIR += py-pretend
+     SUBDIR += py-prison
      SUBDIR += py-process-tests
      SUBDIR += py-progress
      SUBDIR += py-progressbar
@@ -1812,7 +1815,6 @@
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting
      SUBDIR += py2-pip
-     SUBDIR += py2-pygame
      SUBDIR += py2-setuptools
      SUBDIR += py3c
      SUBDIR += pycdc

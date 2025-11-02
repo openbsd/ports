@@ -439,9 +439,13 @@
      SUBDIR += py-feedgenerator
      SUBDIR += py-flasgger
      SUBDIR += py-flask
+     SUBDIR += py-flask-appbuilder
      SUBDIR += py-flask-apscheduler
+     SUBDIR += py-flask-babel
      SUBDIR += py-flask-caching
      SUBDIR += py-flask-cors
+     SUBDIR += py-flask-jwt-extended
+     SUBDIR += py-flask-limiter
      SUBDIR += py-flask-login
      SUBDIR += py-flask-principal
      SUBDIR += py-flask-wtf

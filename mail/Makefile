@@ -194,6 +194,7 @@
      SUBDIR += procmail
      SUBDIR += py-authres
      SUBDIR += py-dkimpy
+     SUBDIR += py-email-validator
      SUBDIR += py-imaplib2
      SUBDIR += py-policyd-spf
      SUBDIR += py-spf
