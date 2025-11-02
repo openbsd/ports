@@ -1,0 +1,39 @@
+Index: swig/python/conversion.cpp
+--- swig/python/conversion.cpp.orig
++++ swig/python/conversion.cpp
+@@ -47,7 +47,7 @@ template<> void conv_out<TCHAR *>(PyObject *value, voi
+ 		*reinterpret_cast<char **>(resp) = PyBytes_AsString(value);
+ 		return;
+ 	}
+-	int len = PyUnicode_GetSize(value);
++	int len = PyUnicode_GetLength(value);
+ 	if (MAPIAllocateMore((len + 1) * sizeof(wchar_t), base, reinterpret_cast<void **>(resp)) != hrSuccess)
+ 		throw std::bad_alloc();
+ 	/* FIXME: Required for the PyUnicodeObject cast */
+@@ -257,7 +257,7 @@ wchar_t * CopyPyUnicode(wchar_t **lpWide, PyObject *o,
+         return NULL;
+     }
+ 
+-	auto size = PyUnicode_GetSize(unicode);
++	auto size = PyUnicode_GetLength(unicode);
+ 	if (MAPIAllocateMore((size + 1) * sizeof(wchar_t), lpBase, reinterpret_cast<void **>(lpWide)) == hrSuccess) {
+ 	    PyUnicode_AsWideChar(unicode, *lpWide, size);
+ 
+@@ -469,7 +469,7 @@ void Object_to_p_SPropValue(PyObject *object, SPropVal
+ 	case PT_UNICODE:
+ 		// @todo add PyUnicode_Check call?
+ 		if (ulFlags == CONV_COPY_SHALLOW && NATIVE_UNICODE)
+-			lpProp->Value.lpszW = PyUnicode_AsUnicode(Value);
++			lpProp->Value.lpszW = PyUnicode_AsWideCharString(Value, NULL);
+ 		else
+ 			CopyPyUnicode(&lpProp->Value.lpszW, Value, lpBase);
+ 		break;
+@@ -650,7 +650,7 @@ void Object_to_p_SPropValue(PyObject *object, SPropVal
+ 			if (elem == nullptr)
+ 				break;
+ 			if (ulFlags == CONV_COPY_SHALLOW && NATIVE_UNICODE)
+-				lpProp->Value.MVszW.lppszW[n] = PyUnicode_AsUnicode(elem);
++				lpProp->Value.MVszW.lppszW[n] = PyUnicode_AsWideCharString(elem, NULL);
+ 			else
+ 				CopyPyUnicode(&lpProp->Value.MVszW.lppszW[n], Value, lpBase);
+ 			++n;

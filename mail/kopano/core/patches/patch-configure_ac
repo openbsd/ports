@@ -41,6 +41,15 @@ Index: configure.ac
  	)
  ])
  PKG_CHECK_MODULES([libHX], [libHX >= 1.10])
+@@ -408,7 +411,7 @@ PKG_CHECK_MODULES([TCMALLOC], [libtcmalloc_minimal], [
+ CPPFLAGS="$CPPFLAGS $TCMALLOC_CFLAGS"
+ AC_CHECK_HEADERS([gperftools/malloc_extension.h google/malloc_extension.h])
+ CPPFLAGS="$CPPFLAGS_system"
+-PKG_CHECK_MODULES([VMIME], [vmime >= 0.9.2k1])
++PKG_CHECK_MODULES([VMIME], [vmime >= 0.9.2])
+ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
+ 	PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 0.8 jsoncpp < 1])
+ ])
 @@ -423,7 +426,7 @@ LDAP_FLAGS=""
  LDAP_LIBS=""
  AC_CHECK_HEADERS([ldap.h], [
