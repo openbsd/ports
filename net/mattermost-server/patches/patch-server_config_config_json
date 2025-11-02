@@ -35,25 +35,8 @@ Index: server/config/config.json
 +    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
-     "VerboseDiagnostics": false,
-@@ -195,14 +195,14 @@
-     "Certificate": ""
-   },
-   "NotificationLogSettings": {
--    "EnableConsole": true,
-+    "EnableConsole": false,
-     "ConsoleLevel": "INFO",
-     "ConsoleJson": true,
-     "EnableColor": false,
-     "EnableFile": true,
-     "FileLevel": "INFO",
-     "FileJson": true,
--    "FileLocation": "",
-+    "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
-     "AdvancedLoggingJSON": {}
-   },
-   "PasswordSettings": {
-@@ -221,7 +221,7 @@
+     "EnableSentry": true,
+@@ -209,7 +209,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -62,7 +45,7 @@ Index: server/config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -242,7 +242,7 @@
+@@ -230,7 +230,7 @@
      "AmazonS3StorageClass": "",
      "DedicatedExportStore": false,
      "ExportDriverName": "local",
@@ -71,7 +54,7 @@ Index: server/config/config.json
      "ExportAmazonS3AccessKeyId": "",
      "ExportAmazonS3SecretAccessKey": "",
      "ExportAmazonS3Bucket": "",
-@@ -272,11 +272,11 @@
+@@ -260,11 +260,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -86,7 +69,7 @@ Index: server/config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -316,7 +316,7 @@
+@@ -304,7 +304,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -95,7 +78,7 @@ Index: server/config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -423,7 +423,7 @@
+@@ -411,7 +411,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -104,7 +87,7 @@ Index: server/config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -612,8 +612,8 @@
+@@ -592,8 +592,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -115,8 +98,8 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -690,11 +690,11 @@
-     "ContentFlagging": false
+@@ -674,11 +674,11 @@
+     "MobileSSOCodeExchange": true
    },
    "ImportSettings": {
 -    "Directory": "./import",
@@ -129,7 +112,7 @@ Index: server/config/config.json
      "RetentionDays": 30
    },
    "WranglerSettings": {
-@@ -761,4 +761,4 @@
+@@ -745,4 +745,4 @@
        "HideFlaggedContent": true
      }
    }
