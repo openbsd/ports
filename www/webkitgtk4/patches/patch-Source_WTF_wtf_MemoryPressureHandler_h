@@ -1,0 +1,21 @@
+Index: Source/WTF/wtf/MemoryPressureHandler.h
+--- Source/WTF/wtf/MemoryPressureHandler.h.orig
++++ Source/WTF/wtf/MemoryPressureHandler.h
+@@ -97,7 +97,7 @@ class MemoryPressureHandler { (public)
+     WTF_EXPORT_PRIVATE void setMemoryFootprintPollIntervalForTesting(Seconds);
+     WTF_EXPORT_PRIVATE void setShouldUsePeriodicMemoryMonitor(bool);
+ 
+-#if OS(LINUX) || OS(FREEBSD) || OS(HAIKU) || OS(QNX)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD) || OS(HAIKU) || OS(QNX)
+     WTF_EXPORT_PRIVATE void triggerMemoryPressureEvent(bool isCritical);
+ #endif
+ 
+@@ -268,7 +268,7 @@ class MemoryPressureHandler { (public)
+     Win32Handle m_lowMemoryHandle;
+ #endif
+ 
+-#if OS(LINUX) || OS(FREEBSD) || OS(HAIKU) || OS(QNX)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD) || OS(HAIKU) || OS(QNX)
+     RunLoop::Timer m_holdOffTimer;
+     void holdOffTimerFired();
+ #endif

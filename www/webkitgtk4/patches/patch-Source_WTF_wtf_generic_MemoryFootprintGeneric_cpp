@@ -1,0 +1,21 @@
+Index: Source/WTF/wtf/generic/MemoryFootprintGeneric.cpp
+--- Source/WTF/wtf/generic/MemoryFootprintGeneric.cpp.orig
++++ Source/WTF/wtf/generic/MemoryFootprintGeneric.cpp
+@@ -27,7 +27,7 @@
+ #include <wtf/MemoryFootprint.h>
+ #include <wtf/Platform.h>
+ 
+-#if !USE(SYSTEM_MALLOC) && (OS(LINUX) || OS(FREEBSD))
++#if !USE(SYSTEM_MALLOC) && (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))
+ #include <bmalloc/bmalloc.h>
+ #endif
+ 
+@@ -35,7 +35,7 @@ namespace WTF {
+ 
+ size_t memoryFootprint()
+ {
+-#if !USE(SYSTEM_MALLOC) && (OS(LINUX) || OS(FREEBSD))
++#if !USE(SYSTEM_MALLOC) && (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))
+     return bmalloc::api::memoryFootprint();
+ #else
+     return 0;

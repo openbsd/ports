@@ -15,7 +15,7 @@ V =			2.50.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -93,11 +93,6 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 
 # XXX revisit at next release if execinfo can be used
 CONFIGURE_ARGS +=	-DUSE_LIBBACKTRACE=OFF
-
-# until proven useful
-# see defaults in Source/WTF/wtf/PlatformEnable.h
-#CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=ON
-#CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY_B3JIT=ON
 
 # XXX broken at runtime
 #CONFIGURE_ARGS +=	-DUSE_SYSTEM_MALLOC=ON

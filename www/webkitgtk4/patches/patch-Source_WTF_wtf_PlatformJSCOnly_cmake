@@ -1,0 +1,16 @@
+Index: Source/WTF/wtf/PlatformJSCOnly.cmake
+--- Source/WTF/wtf/PlatformJSCOnly.cmake.orig
++++ Source/WTF/wtf/PlatformJSCOnly.cmake
+@@ -103,6 +103,12 @@ elseif (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ 
+         unix/MemoryPressureHandlerUnix.cpp
+     )
++elseif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++    list(APPEND WTF_SOURCES
++        generic/MemoryFootprintGeneric.cpp
++
++        unix/MemoryPressureHandlerUnix.cpp
++    )
+ else ()
+     list(APPEND WTF_SOURCES
+         generic/MemoryFootprintGeneric.cpp

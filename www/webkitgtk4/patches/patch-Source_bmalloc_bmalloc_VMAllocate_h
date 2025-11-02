@@ -1,0 +1,12 @@
+Index: Source/bmalloc/bmalloc/VMAllocate.h
+--- Source/bmalloc/bmalloc/VMAllocate.h.orig
++++ Source/bmalloc/bmalloc/VMAllocate.h
+@@ -287,7 +287,7 @@ inline void vmDeallocatePhysicalPages(void* p, size_t 
+     vmValidatePhysical(p, vmSize);
+ #if BOS(DARWIN)
+     SYSCALL(madvise(p, vmSize, MADV_FREE_REUSABLE));
+-#elif BOS(FREEBSD)
++#elif (BOS(FREEBSD) || BOS(OPENBSD))
+     SYSCALL(madvise(p, vmSize, MADV_FREE));
+ #else
+     SYSCALL(madvise(p, vmSize, MADV_DONTNEED));
