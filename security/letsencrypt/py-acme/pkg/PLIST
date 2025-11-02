@@ -43,6 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}ch
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}challenges_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}client_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}client_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}crypto_util_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}crypto_util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}errors_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}ut
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/${MODPY_PYCACHE}util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/challenges_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/client_test.py
+lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/conftest.py
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/_internal/tests/fields_test.py
