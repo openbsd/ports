@@ -89,13 +89,13 @@ Index: gcc/config.gcc
 +mips64-*-openbsd*)
 +	set
 +	tm_file="elfos.h openbsd.h openbsd-stdint.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
-+	tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 DEFAULT_FLAG_PIE=1"
++	tm_defines="${tm_defines} MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 DEFAULT_FLAG_PIE=1"
 +	extra_options="${extra_options} openbsd.opt"
 +	;;
 +mips64el-*-openbsd*)
 +	set
 +	tm_file="elfos.h openbsd.h openbsd-stdint.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
-+	tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 TARGET_ENDIAN_DEFAULT=0 DEFAULT_FLAG_PIE=1"
++	tm_defines="${tm_defines} MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 TARGET_ENDIAN_DEFAULT=0 DEFAULT_FLAG_PIE=1"
 +	extra_options="${extra_options} openbsd.opt"
 +	;;
  i[34567]86-*-linux* | i[34567]86-*-kfreebsd*-gnu | i[34567]86-*-gnu* | i[34567]86-*-kopensolaris*-gnu)
