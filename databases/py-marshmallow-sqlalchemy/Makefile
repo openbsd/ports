@@ -3,6 +3,7 @@ COMMENT=		SQLAlchemy integration with marshmallow library
 MODPY_DISTV =		1.4.2
 DISTNAME =		marshmallow_sqlalchemy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		databases
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		flit_core
 
 RUN_DEPENDS =		databases/py-sqlalchemy<3.0 \
 			devel/py-marshmallow
