@@ -1,6 +1,15 @@
 Index: src/cadaver.c
 --- src/cadaver.c.orig
 +++ src/cadaver.c
+@@ -240,7 +240,7 @@ static void setup_ssl(ne_session *sess)
+     cc = NULL;
+     if (ccuri) {
+         name = ccuri;
+-#if NE_MINIMUM_VERSION(0, 35)
++#if 0
+         cc = ne_ssl_clicert_fromuri(ccuri, 0);
+ #else
+         printf(_("Client certificate URIs are supported "
 @@ -729,7 +729,7 @@ static char **completion(const char *text, int start, 
      in_completion = 1;
  
