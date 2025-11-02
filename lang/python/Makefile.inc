@@ -128,12 +128,16 @@ CONFIGURE_ARGS +=	--with-fpectl \
 			--with-tcltk-libs='-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB}'
 .else
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
-# XXX try using --enable-optimizations again; needs per-arch testing
 .  if ${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "arm"
 CONFIGURE_ARGS +=	--with-lto
 .  else
-CONFIGURE_ARGS +=	--with-lto=no
+CONFIGURE_ARGS +=	--without-lto
 .  endif
+# also available is "--enable-optimizations" to use profile-guided
+# optimisation; supposedly quite a good performance improvement,
+# but fails with our clang toolchain as of v16 (and still the case
+# with 19). if it can be enabled again, it needs testing per-arch
+# and only adding where working.
 TEST_IS_INTERACTIVE =	Yes
 .endif
 
