@@ -1,0 +1,3 @@
+Simple and rapid application development framework, built on top
+of Flask. Includes detailed security, auto CRUD generation for your
+models, google charts and much more.
