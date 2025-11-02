@@ -2,6 +2,7 @@ COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
 
 VERSION=	6.3.0
+REVISION=	0
 DISTNAME=	gmp-${VERSION}
 MULTI_PACKAGES=	-main -cxx
 PKGNAME-cxx=	gmpxx-${VERSION}
@@ -41,6 +42,10 @@ CONFIGURE_ENV+=	gmp_cv_func_vsnprintf=yes
 
 .if ${MACHINE_ARCH:Maarch64}
 CONFIGURE_ENV+= ASMFLAGS=-mmark-bti-property
+.endif
+
+.if ${MACHINE_ARCH:Mhppa}
+CONFIGURE_ARGS+= --disable-assembly
 .endif
 
 .include <bsd.port.arch.mk>
