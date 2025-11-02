@@ -2,14 +2,13 @@ COMMENT=		web-based VirtualBox front-end
 
 GH_ACCOUNT=		phpvirtualbox
 GH_PROJECT=		phpvirtualbox
-GH_TAGNAME=		7.2-1
+GH_TAGNAME=		7.2-2
 PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
 
 CATEGORIES=		www sysutils
 
-HOMEPAGE=		https://sourceforge.net/projects/phpvirtualbox/
-
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # GPLv3
 PERMIT_PACKAGE=	Yes
 

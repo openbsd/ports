@@ -591,9 +591,6 @@ phpvirtualbox/panes/settingsSharedFolders.html
 phpvirtualbox/panes/settingsStorage.html
 phpvirtualbox/panes/settingsSystem.html
 phpvirtualbox/panes/settingsUSB.html
-phpvirtualbox/panes/tabVMConsole.html
-phpvirtualbox/panes/tabVMConsoleRDP.html
-phpvirtualbox/panes/tabVMConsoleVNC.html
 phpvirtualbox/panes/tabVMDetails.html
 phpvirtualbox/panes/tabVMSnapshots.html
 phpvirtualbox/panes/tabs.html
@@ -618,15 +615,7 @@ phpvirtualbox/panes/wizardNewHDAdvanced.html
 phpvirtualbox/panes/wizardNewVM.html
 phpvirtualbox/panes/wizardNewVMAdvanced.html
 phpvirtualbox/phpvirtualbox.conf
-phpvirtualbox/rdpweb/
-phpvirtualbox/rdpweb/RDPClientUI.swf
-phpvirtualbox/rdpweb/license_3rd.txt
-phpvirtualbox/rdpweb/swfobject.js
-phpvirtualbox/rdpweb/webclient.js
-phpvirtualbox/rdpweb/webclient3.html
 phpvirtualbox/recovery.php-disabled
-phpvirtualbox/tightvnc/
-phpvirtualbox/tightvnc/VncViewer.jar
 phpvirtualbox/vboxinit
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${PKGSTEM}
