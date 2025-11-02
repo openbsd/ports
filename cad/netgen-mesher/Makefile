@@ -1,10 +1,11 @@
 COMMENT =		automatic 3d tetrahedral mesh generator
 
-V =			6.2.2404
+V =			6.2.2505
 PKGNAME =		netgen-mesher-${V}
-REVISION =		2
 
-DIST_TUPLE +=		github NGSolve netgen v${V} .
+GH_ACCOUNT =		NGSolve
+GH_PROJECT =		netgen
+GH_TAGNAME =		v${V}
 
 CATEGORIES =		cad
 HOMEPAGE =		https://ngsolve.org/
@@ -40,6 +41,8 @@ BUILD_DEPENDS =		devel/py-pybind11 \
 LIB_DEPENDS =		cad/opencascade \
 			graphics/jpeg
 
+RUN_DEPENDS =		math/py-numpy
+
 TEST_DEPENDS =		devel/py-test-check \
 			math/py-numpy
 
@@ -58,7 +61,7 @@ CONFIGURE_ARGS +=	-DPREFER_SYSTEM_PYBIND11=ON \
 # For NETGEN_VERSION_GIT: git describe --tags --match "v[0-9]*" --long --dirty
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DNG_INSTALL_DIR_INCLUDE=include/netgen \
-			-DNETGEN_VERSION_GIT=v${V}-80-g7656211b \
+			-DNETGEN_VERSION_GIT=v${V}-0-g41893720 \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11 \
 			-DTCL_STUB_LIBRARY=${LOCALBASE}/lib/libtclstub${MODTCL_VERSION:S/.//}.a \
 			-DTK_STUB_LIBRARY=${LOCALBASE}/lib/libtkstub${MODTK_VERSION:S/.//}.a
