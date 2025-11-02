@@ -1,5 +1,5 @@
 # ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.39.0/internal/utilization/utilization.go:216:25: undefined: sysinfo.PhysicalMemoryBytes
-# https://github.com/newrelic/go-agent/pull/56
+# https://github.com/newrelic/go-agent/pull/567
 ONLY_FOR_ARCHS =	amd64
 
 # XXX there are some problems with this port which seem to be related to
