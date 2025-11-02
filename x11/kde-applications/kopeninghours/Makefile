@@ -8,7 +8,7 @@ SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += KF6Holidays KF6I18n Qt6Core Qt6Network Qt6Qml boost_container-mt
-WANTLIB += boost_graph-mt boost_python312-mt intl m util
+WANTLIB += boost_graph-mt boost_python${MODPY_MAJORMINOR}-mt intl m util
 
 MODKDE_TRANSLATIONS = yes
 
