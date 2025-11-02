@@ -6,3 +6,6 @@ share/bash-completion/completions/
 share/bash-completion/completions/pizauth
 share/examples/pizauth/
 share/examples/pizauth/pizauth.conf
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/pizauth.fish
