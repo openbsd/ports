@@ -8,6 +8,7 @@ bin/circo
 @bin bin/dot
 bin/dot2gxl
 @bin bin/dot_builtins
+bin/dot_sandbox
 @bin bin/edgepaint
 bin/fdp
 @bin bin/gc
@@ -62,7 +63,7 @@ include/graphviz/types.h
 include/graphviz/usershape.h
 include/graphviz/xdot.h
 lib/graphviz/
-lib/graphviz/config6
+lib/graphviz/config8
 lib/graphviz/guile/
 @so lib/graphviz/guile/libgv_guile.so
 @lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
@@ -105,6 +106,7 @@ ${P5ARCH}/gv.pm
 @man man/man1/dijkstra.1
 @man man/man1/dot.1
 @man man/man1/dot2gxl.1
+@man man/man1/dot_sandbox.1
 @man man/man1/edgepaint.1
 @man man/man1/fdp.1
 @man man/man1/gc.1

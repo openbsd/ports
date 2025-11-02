@@ -1,31 +1,12 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -77,7 +77,7 @@ case "${host_os}" in
-     GVPLUGIN_VERSION=`expr $GVPLUGIN_CURRENT + 1`
-     ;;
-   * )
--    GVPLUGIN_VERSION=$GVPLUGIN_CURRENT
-+    GVPLUGIN_VERSION=$GVPLUGIN_CURRENT.0
-     ;;
- esac
- AC_DEFINE_UNQUOTED(GVPLUGIN_VERSION,$GVPLUGIN_VERSION,[Compatibility version number for plugins.])
-@@ -600,7 +600,7 @@ else
-       if test "$GUILE_CONFIG" = ""; then
-         use_guile="No (guile not available)"
-       else
--        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
-+        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -En '1 s/^.* +([0-9\.]+)$/\1/ p'`]
-         GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
-         GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
-         AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)
-@@ -1760,7 +1760,8 @@ AM_CONDITIONAL([WITH_QT], [test "$use_qt" = "Yes"])
- dnl -----------------------------------
- dnl INCLUDES and LIBS for QUARTZ
+@@ -74,7 +74,7 @@ dnl Checks for system type
  
--if test "${host_os::6}" = "darwin"; then
-+# ${host_os::6}": bad substitution
-+if test false; then
-   AC_ARG_WITH(quartz,
-     [AS_HELP_STRING([--with-quartz=yes],[Quartz framework (Mac OS X)])],
-     [],[with_quartz=yes])
+ AC_CANONICAL_HOST
+ 
+-GVPLUGIN_VERSION=$GVPLUGIN_CURRENT
++GVPLUGIN_VERSION=$GVPLUGIN_CURRENT.0
+ AC_DEFINE_UNQUOTED(GVPLUGIN_VERSION,$GVPLUGIN_VERSION,[Compatibility version number for plugins.])
+ AC_SUBST([GVPLUGIN_VERSION])
+ 

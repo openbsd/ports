@@ -1,35 +1,30 @@
 COMMENT-main=	graph drawing software
 COMMENT-tcl=	Tcl bindings to graphviz
 
-V=		10.0.1
+V=		14.0.2
 DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
-REVISION-main=	1
-REVISION-tcl=	0
 
 MULTI_PACKAGES=	-main -tcl
 
 SITES=		https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$V/
 
-SHARED_LIBS += cdt			3.0 # 5.0
-SHARED_LIBS += xdot			1.0 # 4.0
-SHARED_LIBS += cgraph			2.0 # 6.0
-SHARED_LIBS += pathplan			4.0 # 4.0
-SHARED_LIBS += gvc			3.0 # 6.0
-SHARED_LIBS += gvpr			2.0 # 2.0
+SHARED_LIBS +=	cdt                  4.0      # 6.0
+SHARED_LIBS +=	xdot                 1.0      # 4.0
+SHARED_LIBS +=	cgraph               3.0      # 8.2
+SHARED_LIBS +=	pathplan             5.0      # 4.2
+SHARED_LIBS +=	gvc                  4.0      # 7.1
+SHARED_LIBS +=	gvpr                 3.0      # 2.2
 
 # plugins loaded by dlopen() in graphviz, not traditional shared libraries
 # linked by other software. following upstream numbering reduces the patches
 # needed to handle this to a simple .0 addition in configure.ac.
-GVPLUGIN_VERSION =	7.0
-.for plugin in \
-	gvplugin_core gvplugin_gd gvplugin_gdk gvplugin_gtk gvplugin_kitty \
-	gvplugin_pango gvplugin_rsvg gvplugin_xlib \
-	gvplugin_dot_layout gvplugin_neato_layout gvplugin_vt gvplugin_webp \
-	gvplugin_poppler
-SHARED_LIBS += ${plugin} ${GVPLUGIN_VERSION}
+GVPLUGIN_VERSION =	8.0		# 8.2
+.for plugin in core gd gdk kitty pango rsvg xlib \
+	dot_layout neato_layout webp poppler vt
+SHARED_LIBS += gvplugin_${plugin} ${GVPLUGIN_VERSION}
 .endfor
 
 HOMEPAGE=	https://graphviz.org/
@@ -48,9 +43,10 @@ WANTLIB += z zstd
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
-WANTLIB-main += c gc gdk-x11-2.0 gdk_pixbuf-2.0 gmp guile-2.2
-WANTLIB-main += lcms2 openjp2 perl poppler poppler-glib rsvg-2 unistring
-WANTLIB-main += xml2
+WANTLIB-main += c cairo-gobject dav1d epoll-shim epoxy gc gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += gmp guile-2.2 lcms2 openjp2 perl poppler poppler-glib
+WANTLIB-main += rsvg-2 unistring wayland-client wayland-cursor wayland-egl
+WANTLIB-main += xkbcommon xml2
 
 # "extra" libtclXX: tcldot is built against Tcl headers
 WANTLIB-tcl += ${WANTLIB} ${MODTCL_WANTLIB}
@@ -64,7 +60,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
-		x11/gtk+2 \
+		x11/gtk+3 \
 		x11/gnome/librsvg \
 		graphics/graphite2 \
 		devel/harfbuzz \
