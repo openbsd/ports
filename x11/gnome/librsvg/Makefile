@@ -19,6 +19,7 @@ EPOCH=			0
 
 ### stable #####################################################################
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS += rsvg-2                    41.1 # 2.59.2
 GNOME_VERSION=		${STABLE_VERSION}
 
