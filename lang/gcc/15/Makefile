@@ -4,7 +4,7 @@
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
-ONLY_FOR_ARCHS-ada = amd64 i386 mips64 powerpc
+ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc # i386
 
 DPB_PROPERTIES = parallel
 
