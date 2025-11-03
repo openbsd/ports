@@ -1,0 +1,10 @@
+The audioop module contains some useful operations on sound fragments.
+It operates on sound fragments consisting of signed integer samples 8,
+16, 24 or 32 bits wide, stored in bytes-like objects. All scalar items
+are integers, unless specified otherwise.
+
+This module provides support for a-LAW, u-LAW and Intel/DVI ADPCM
+encodings.
+
+This is a replacement for 'audioop', removed from the standard library
+in Python 3.13.

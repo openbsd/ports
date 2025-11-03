@@ -1,0 +1,8 @@
+This module provides support for reading and writing AIFF and AIFF-C
+files. AIFF is Audio Interchange File Format, a format for storing
+digital audio samples in a file, and is widely used in film production,
+amongst others. AIFF-C is a newer version of the format that includes
+the ability to compress the audio data.
+
+This is a replacement for 'aifc', removed from the standard library in
+Python 3.13.

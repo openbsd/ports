@@ -1,0 +1,7 @@
+This module provides an interface for reading files that use EA IFF 85
+chunks. These are used in Audio Interchange File Format (AIFF/AIFF-C)
+and some others. The WAVE audio file format is closely related and can
+also be read using this module.
+
+This is a replacement for 'chunk', removed from the standard library in
+Python 3.13.
