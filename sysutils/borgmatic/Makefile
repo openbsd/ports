@@ -1,6 +1,6 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.0.10
+MODPY_DISTV=	2.0.11
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -16,8 +16,8 @@ EPOCH=		0
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
 		devel/py-colorama<0.5 \
