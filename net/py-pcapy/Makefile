@@ -1,15 +1,8 @@
 COMMENT =		libpcap module for Python
 
-# XXX unless development resumes, replace with pcapy-ng; dependent
-# ports will need syncing. this will fail with py3.10.
-# https://github.com/stamparm/pcapy-ng
-
-MODPY_DISTV =	0.11.5.dev0
-GH_ACCOUNT =		helpsystems
-GH_PROJECT =		pcapy
-GH_TAGNAME =		${MODPY_DISTV:S/.dev0//}
-PKGNAME =		py-${DISTNAME}
-REVISION =		6
+MODPY_DISTV =		1.0.9
+DISTNAME =		pcapy-ng-${MODPY_DISTV}
+PKGNAME =		py-pcapy-${MODPY_DISTV}
 
 CATEGORIES =		net devel
 
@@ -22,12 +15,13 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
 MAKE_ENV +=		LDSHARED="${CC} -shared -fPIC"
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
-TEST_DEPENDS =		${BASE_PKGPATH}
 
-do-test:
-	cd ${WRKSRC}/tests; ${MODPY_BIN} pcapytests.py
+MODPY_TEST_LINK_SO =	Yes
+MODPY_TEST_DIR =	${WRKSRC}/tests
+MODPY_PYTEST_ARGS =	pcapytests.py
 
 .include <bsd.port.mk>

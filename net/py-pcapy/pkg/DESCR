@@ -4,3 +4,5 @@ to access the routines from the pcap packet capture library.
 Pcapy is most useful when used together with a packet handling package such
 as Impacket, a collection of Python classes for constructing and dissecting
 network packets.
+
+This package is now using the "pcapy-ng" fork.
