@@ -113,8 +113,11 @@
      SUBDIR += tt2020
      SUBDIR += ttyp0-font
      SUBDIR += ttyp0-font,ct
+     SUBDIR += ttyp0-font,ct,dz
+     SUBDIR += ttyp0-font,dz
      SUBDIR += ttyp0-font,nbd
      SUBDIR += ttyp0-font,nbs
+     SUBDIR += ttyp0-font,sc
      SUBDIR += ttyp0-font,sq
      SUBDIR += ttyp0-font,sz
      SUBDIR += ubuntu-fonts
