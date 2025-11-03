@@ -1,7 +1,7 @@
 COMMENT =	web application framework for writing scalable web APIs in C
 
 DISTNAME =	kore-4.2.3
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	www
 
@@ -39,13 +39,14 @@ WANTLIB +=	pq
 LIB_DEPENDS +=	databases/postgresql,-main
 .endif
 
-.if ${FLAVOR} == "python"
-CONFIGURE_STYLE = none
-MODULES =	lang/python
-MAKE_ENV +=	PYTHON=1
-WANTLIB +=	${MODPY_WANTLIB} intl m util
-LIB_DEPENDS +=	devel/gettext,-runtime
-.endif
+# XXX disable python support for now; frequently breaks with python major updates
+#.if ${FLAVOR} == "python"
+#CONFIGURE_STYLE = none
+#MODULES =	lang/python
+#MAKE_ENV +=	PYTHON=1
+#WANTLIB +=	${MODPY_WANTLIB} intl m util
+#LIB_DEPENDS +=	devel/gettext,-runtime
+#.endif
 
 USE_GMAKE =	Yes
 

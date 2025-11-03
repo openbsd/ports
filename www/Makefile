@@ -82,7 +82,6 @@
      SUBDIR += kore,acme
      SUBDIR += kore,curl
      SUBDIR += kore,pgsql
-     SUBDIR += kore,python
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
