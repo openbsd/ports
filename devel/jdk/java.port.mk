@@ -1,5 +1,6 @@
-# Set MODJAVA_VER to 1.8, 11, 17 or 21 based on the version of the jdk needed
-# for the port. Append a + (e.g., 11+) if any higher version is acceptable.
+# Set MODJAVA_VER to 1.8, 11, 17, 21 or 25 based on the version of the jdk
+# needed for the port. Append a + (e.g., 11+) if any higher version is
+# acceptable.
 
 MODJAVA_VER?=
 
@@ -22,13 +23,16 @@ MODJAVA_VER?=
 #
 
 .if ${MODJAVA_VER:S/+//} != "1.8" && ${MODJAVA_VER:S/+//} != "11" && \
-  ${MODJAVA_VER:S/+//} != "17" && ${MODJAVA_VER:S/+//} != "21"
-    ERRORS+="Fatal: MODJAVA_VER must be one of 1.8, 11, 17 or 21"
+  ${MODJAVA_VER:S/+//} != "17" && ${MODJAVA_VER:S/+//} != "21" && \
+  ${MODJAVA_VER:S/+//} != "25"
+    ERRORS+="Fatal: MODJAVA_VER must be one of 1.8, 11, 17, 21 or 25"
     ERRORS+="with an optional + suffix."
 .endif
 
 .if ${MODJAVA_VER:S/+//} == "1.8" || ${MODJAVA_VER:S/+//} == "11"
     ONLY_FOR_ARCHS?= i386 amd64 aarch64 sparc64
+.elif ${MODJAVA_VER:S/+//} == "25"
+    ONLY_FOR_ARCHS?= amd64 aarch64
 .else
     ONLY_FOR_ARCHS?= i386 amd64 aarch64
 .endif
@@ -42,9 +46,12 @@ MODJAVA_VER?=
 .elif ${MODJAVA_VER:S/+//} == "17"
     JAVA_HOME= ${LOCALBASE}/jdk-17
     MODJAVA_BUILD_DEPENDS+= jdk->=17v0,<18v0:devel/jdk/17
-.else
+.elif ${MODJAVA_VER:S/+//} == "21"
     JAVA_HOME= ${LOCALBASE}/jdk-21
     MODJAVA_BUILD_DEPENDS+= jdk->=21v0,<22v0:devel/jdk/21
+.else
+    JAVA_HOME= ${LOCALBASE}/jdk-25
+    MODJAVA_BUILD_DEPENDS+= jdk->=25v0,<26v0:devel/jdk/25
 .endif
 
 .if ${MODJAVA_VER:M*+}
