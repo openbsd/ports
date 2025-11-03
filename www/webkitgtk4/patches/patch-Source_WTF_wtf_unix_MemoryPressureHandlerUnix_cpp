@@ -34,7 +34,7 @@ Index: Source/WTF/wtf/unix/MemoryPressureHandlerUnix.cpp
          return 0;
  
 -    return static_cast<size_t>(info.ki_rssize - info.ki_tsize) * pageSize;
-+    return static_cast<size_t>(info.kp.p_vm_rssize - info.kp.p_vm_tsize) * pageSize;
++    return static_cast<size_t>(info.p_vm_rssize - info.p_vm_tsize) * pageSize;
  #elif OS(QNX)
      int fd = open("/proc/self/ctl", O_RDONLY);
      if (fd == -1)
