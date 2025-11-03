@@ -4,6 +4,7 @@
 @bin bin/autobonker
 @bin bin/gettoken
 @bin bin/honk
+@bin bin/newstrigger
 @bin bin/saytheday
 @bin bin/sprayandpray
 @bin bin/youvegothonks

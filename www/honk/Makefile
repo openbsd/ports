@@ -1,6 +1,6 @@
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-1.5.1
+DISTNAME =		honk-1.5.2
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -25,7 +25,7 @@ DOCDIR ?=		${PREFIX}/share/doc/honk
 EXAMPLESDIR = 		${PREFIX}/share/examples/honk
 
 post-build:
-.for toy in autobonker saytheday sprayandpray youvegothonks
+.for toy in autobonker newstrigger saytheday sprayandpray youvegothonks
 	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy} \
 		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/${toy}.go
 .endfor
