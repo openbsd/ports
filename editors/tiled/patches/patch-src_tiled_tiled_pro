@@ -1,7 +1,7 @@
 Index: src/tiled/tiled.pro
 --- src/tiled/tiled.pro.orig
 +++ src/tiled/tiled.pro
-@@ -552,7 +552,7 @@ appdatafile.path = $${PREFIX}/share/metainfo/
+@@ -599,7 +599,7 @@ appdatafile.path = $${PREFIX}/share/metainfo/
  appdatafile.files += ../../org.mapeditor.Tiled.appdata.xml
  INSTALLS += appdatafile
  
