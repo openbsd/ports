@@ -19,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 intl m pcre2-16 python3.12
+WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 intl m pcre2-16 ${MODPY_WANTLIB}
 WANTLIB += util z
 
 MODULES =		devel/cmake \

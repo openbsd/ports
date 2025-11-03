@@ -23,7 +23,7 @@ WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
 WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
 WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx hpdf
 WANTLIB += jpeg m openal openjp2 openvdb osdCPU osdGPU pipewire-0.3
-WANTLIB += png potrace pugixml python3.12 shaderc_shared sharpyuv
+WANTLIB += png potrace pugixml ${MODPY_WANTLIB} shaderc_shared sharpyuv
 WANTLIB += sndfile swresample swscale tbb tiff util vulkan webp
 WANTLIB += webpdemux webpmux z zstd
 

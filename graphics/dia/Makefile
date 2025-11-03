@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0 gtk-3
-WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler python3.12
+WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler ${MODPY_WANTLIB}
 WANTLIB += xml2 xpm-pixbuf xslt
 
 MODULES=		devel/meson \
