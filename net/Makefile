@@ -629,6 +629,7 @@
      SUBDIR += py-socks
      SUBDIR += py-solaredge-interface
      SUBDIR += py-solaredge-modbus
+#     SUBDIR += py-standard-telnetlib		# for py3.13
      SUBDIR += py-stem
      SUBDIR += py-telegram
      SUBDIR += py-tinytuya
