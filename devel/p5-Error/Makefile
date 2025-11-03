@@ -2,7 +2,7 @@ COMMENT =	error/exception handling in an OO-ish way
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Error-0.17029
+DISTNAME =	Error-0.17030
 CATEGORIES =	devel
 
 # perl
