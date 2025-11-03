@@ -14,6 +14,10 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
 
+# uses stdatomic.h from C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 BUILD_DEPENDS=		devel/libyaml
 
 AUTOCONF_VERSION=	2.72
