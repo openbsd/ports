@@ -604,6 +604,8 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}thrott
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}throttle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}utilcmds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}utilcmds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}wmname.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}wmname.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/autoupdate.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/backendproblem.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/binparsing.py
@@ -634,6 +636,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/split.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/sql.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/throttle.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/utilcmds.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/wmname.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/qt/${MODPY_PYCACHE}/
