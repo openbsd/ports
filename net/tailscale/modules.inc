@@ -311,7 +311,7 @@ MODGO_MODULES =	\
 	github.com/google/btree								 v1.1.2 \
 	github.com/google/cel-go							 v0.22.0 \
 	github.com/google/gnostic-models						 v0.6.9-0.20230804172637-c7be7c783f49 \
-	github.com/google/go-cmp							 v0.6.0 \
+	github.com/google/go-cmp							 v0.7.0 \
 	github.com/google/go-containerregistry						 v0.20.3 \
 	github.com/google/go-github/v56							 v56.0.0 \
 	github.com/google/go-github/v66							 v66.0.0 \
@@ -1073,6 +1073,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp							 v0.5.7 \
 	github.com/google/go-cmp							 v0.5.8 \
 	github.com/google/go-cmp							 v0.5.9 \
+	github.com/google/go-cmp							 v0.6.0 \
 	github.com/google/go-containerregistry						 v0.20.2 \
 	github.com/google/go-tpm							 v0.9.1-0.20230914180155-ee6cbcd136f8 \
 	github.com/google/gofuzz							 v1.0.0 \
