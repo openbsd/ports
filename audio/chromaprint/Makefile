@@ -4,7 +4,7 @@ DISTNAME =		chromaprint-1.5.1
 GH_ACCOUNT =		acoustid
 GH_PROJECT =		chromaprint
 GH_COMMIT =		aa67c95b9e486884a6d3ee8b0c91207d8c2b0551
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		chromaprint               3.0 # 1.5.0
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://acoustid.org/chromaprint
 # MIT with LGPL2.1+ parts
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} avcodec avformat avutil c m swresample
+WANTLIB += ${COMPILER_LIBCXX} avcodec avformat avutil c fftw3f m swresample
 
 # C++11
 COMPILER =		base-clang ports-gcc
@@ -24,7 +24,8 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		audio/taglib
 
-LIB_DEPENDS =		graphics/ffmpeg>=6.1.2
+LIB_DEPENDS =		graphics/ffmpeg>=6.1.2 \
+			math/fftw3,float
 
 CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
 			-DBUILD_TESTS=ON
