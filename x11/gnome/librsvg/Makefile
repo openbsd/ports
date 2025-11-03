@@ -48,13 +48,18 @@ WANTLIB += dav1d fontconfig harfbuzz
 CONFIGURE_ARGS +=	-Dpixbuf-loader=enabled
 .else
 ### old ########################################################################
-REVISION=		10
+REVISION=		11
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
 WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre2-8 Xau Xdmcp
 LIB_DEPENDS +=		www/libcroco
+# dav1d is not actually used in old-librsvg, but WANTLIBs in other ports
+# that use the rust version will include it, so provide a path here to
+# avoid extra pain.
+LIB_DEPENDS +=		multimedia/dav1d
+WANTLIB +=		dav1d
 CONFIGURE_ARGS +=	--disable-tools
 CHECKSUM_FILE=		${.CURDIR}/distinfo.old
 CONFIGURE_STYLE=	gnu
