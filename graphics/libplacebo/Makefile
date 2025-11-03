@@ -2,11 +2,10 @@ COMMENT=	reusable library for GPU-accelerated video/image rendering
 
 GH_ACCOUNT=	haasn
 GH_PROJECT=	libplacebo
-GH_TAGNAME=	v6.338.2
-REVISION=	0
+GH_TAGNAME=	v7.351.0
 CATEGORIES=	graphics
 
-SHARED_LIBS=	placebo	8.0
+SHARED_LIBS=	placebo	9.0
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
