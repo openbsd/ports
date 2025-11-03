@@ -1,0 +1,4 @@
+Telnetlib was removed from the Python standard library and is no longer
+bundled with default Python installations. The module is provided
+separately here to maintain compatibility and access to Telnet
+functionality.
