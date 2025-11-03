@@ -1,6 +1,6 @@
 COMMENT =	maintains info about a physical person
 
-DISTNAME =	User-Identity-1.02
+DISTNAME =	User-Identity-1.03
 
 CATEGORIES =	misc
 
