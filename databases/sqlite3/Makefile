@@ -52,8 +52,6 @@ CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 MAKE_FLAGS=	LDFLAGS.rpath="-Wl,-rpath,${PREFIX}/lib"
 # don't strip the binary
 MAKE_FLAGS+=	INSTALL.strip.0="${INSTALL_PROGRAM}"
-# enable 
-MAKE_FLAGS+=	SHELL_OPT="-DSQLITE_DQS=1"
 
 ALL_TARGET=	all sqldiff sqlite3_rsync
 INSTALL_TARGET=	install install-diff install-rsync
