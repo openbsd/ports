@@ -1,11 +1,11 @@
 Index: psutil/arch/openbsd/mem.c
 --- psutil/arch/openbsd/mem.c.orig
 +++ psutil/arch/openbsd/mem.c
-@@ -68,8 +68,8 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
+@@ -69,8 +69,8 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
      int nswap, i;
  
      if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0) {
--        PyErr_SetFromErrno(PyExc_OSError);
+-        psutil_oserror();
 -        return NULL;
 +        // This means there's no swap partition.
 +        return Py_BuildValue("(iiiii)", 0, 0, 0, 0, 0);

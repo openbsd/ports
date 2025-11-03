@@ -36,7 +36,6 @@ lib/python${MODPY_VERSION}/site-packages/psutil/_psosx.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_psposix.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_pssunos.py
 @so lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_bsd.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_posix.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/psutil/_pswindows.py
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/
 lib/python${MODPY_VERSION}/site-packages/psutil/tests/__init__.py
