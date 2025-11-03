@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.10 2020/06/11 19:55:15 espie Exp $
+# $OpenBSD: show-reverse-deps,v 1.11 2025/11/03 14:46:04 sthen Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -72,9 +72,9 @@ fi
 
 if $fuzzy
 then
-	query="p2.fullpkgpath like \"%$1%\""
+	query="p2.fullpkgpath like '%$1%'"
 else
-	query="p2.fullpkgpath=\"$1\""
+	query="p2.fullpkgpath='$1'"
 fi
 if $verbose
 then

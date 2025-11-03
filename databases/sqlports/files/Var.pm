@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.75 2023/11/11 11:53:07 espie Exp $
+# $OpenBSD: Var.pm,v 1.76 2025/11/03 14:46:04 sthen Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -689,7 +689,7 @@ sub expr($self)
 qq{CASE $q
   WHEN 0 THEN $v
   WHEN 1 THEN '"'||$v||'"'
-  WHEN 2 THEN "'"||$v||"'"
+  WHEN 2 THEN ''''||$v||''''
 END};
 }
 

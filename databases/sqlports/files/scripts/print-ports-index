@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.12 2019/07/14 11:27:19 espie Exp $
+# $OpenBSD: print-ports-index,v 1.13 2025/11/03 14:46:04 sthen Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -29,7 +29,7 @@ cat <<'EOSQL' |sqlite3 $file
 with 
     d1 (d, p, t) as 
 	(select 
-	    distinct((case pkgspec when '' then '' else pkgspec||":" end)||_paths.fullpkgpath) as fd,
+	    distinct((case pkgspec when '' then '' else pkgspec||':' end)||_paths.fullpkgpath) as fd,
 	    _depends.fullpkgpath, type
 	from _depends join _paths on _Paths.Id=_depends.dependspath order by fd),
 -- and now the part that's going to be used 3 times in the main request
@@ -37,7 +37,7 @@ with
 	(select group_concat(d, ' ') as dlist, p, t
 	from d1 group by p, t)
 select fullpkgname, ports.fullpkgpath,
-    (case prefix when '/usr/local' THEN "" else prefix end),
+    (case prefix when '/usr/local' THEN '' else prefix end),
       comment,descr, maintainer,categories,
     libd.dlist, buildd.dlist, rund.dlist,
 
@@ -52,8 +52,8 @@ select fullpkgname, ports.fullpkgpath,
 	else only_for_archs
 	end,
     '?',
-    (case lower(PERMIT_PACKAGE) when "yes" then "y" else "n" end),
-    (case lower(PERMIT_DISTFILES) when "yes" then "y" else "n" end)
+    (case lower(PERMIT_PACKAGE) when 'yes' then 'y' else 'n' end),
+    (case lower(PERMIT_DISTFILES) when 'yes' then 'y' else 'n' end)
     from ports
     	left join d2 as libd on libd.p=ports.pathid and libd.t=0
     	left join d2 as buildd on buildd.p=ports.pathid and buildd.t=2
