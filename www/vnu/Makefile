@@ -1,6 +1,6 @@
 COMMENT =	HTML5 validator
 
-V =		24.10.17
+V =		25.11.2
 DISTNAME =	vnu-jar-$V
 PKGNAME =	vnu-$V
 
