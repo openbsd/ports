@@ -1,20 +1,21 @@
-COMMENT=		check shell scripts for bash-specific constructs
+COMMENT=	check shell scripts for bash-specific constructs
 
-V=			2.25.19
-DISTNAME=		devscripts_$V
-PKGNAME=		checkbashisms-$V
-EXTRACT_SUFX=		.tar.xz
-WRKDIST=		${WRKDIR}/devscripts-$V/scripts
-CATEGORIES=		sysutils devel
+V=		2.25.23
+DISTNAME=	devscripts_$V
+PKGNAME=	checkbashisms-$V
+EXTRACT_SUFX=	.tar.xz
+WRKDIST=	${WRKDIR}/devscripts
+WRKSRC=		${WRKDIST}/scripts
+CATEGORIES=	sysutils devel
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-SITES=			https://deb.debian.org/debian/pool/main/d/devscripts/
+SITES=		https://deb.debian.org/debian/pool/main/d/devscripts/
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
-PKG_ARCH=		*
+NO_BUILD=	Yes
+NO_TEST=	Yes
+PKG_ARCH=	*
 
 do-install:
 	sed -i "s/###VERSION###/${V}/g" ${WRKSRC}/checkbashisms.pl
