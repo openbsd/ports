@@ -1,6 +1,6 @@
 COMMENT =		monospace bitmap screen fonts
 
-PKGNAME =		ttyp0-1.3
+PKGNAME =		ttyp0-2.1
 DISTNAME =		uw-${PKGNAME}
 CATEGORIES =		fonts x11
 
@@ -14,34 +14,58 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
 USE_GMAKE =		Yes
-MAKE_FLAGS =		PCFDIR=${PREFIX}/share/fonts/uw-ttyp0
+BUILD_DEPENDS =		sysutils/bdfresize
+MAKE_FLAGS =		GEN_OTB=1 \
+			GEN_PCF=1
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	--otbdir=${PREFIX}/share/fonts/uw-ttyp0 \
+			--pcfdir=${PREFIX}/share/fonts/uw-ttyp0
 NO_TEST =		Yes
 USE_X11 =		Yes
 
-FLAVORS =		sq ct nbs nbd sz
+FLAVORS =		sq ct nbs nbd sz dz sc
 FLAVOR ?=
 
 .if ${FLAVOR:Msq}
-VARIANTS +=	"COPYTO AccStress PApostropheAscii"
-VARIANTS +=	"COPYTO PAmComma AccGraveAscii"
+# straight accent and apostrophe
+VARIANTS +=	"COPYTO PApostropheStraight PApostropheAscii"
+VARIANTS +=	"COPYTO AccGraveStraight AccGraveAscii"
 .endif
 
-.if ${FLAVOR:Msz}
+.if ${FLAVOR:Msz} && ${FLAVOR:Mdz}
+ERRORS +=	"Fatal: Select at most one of sz and dz"
+.elif ${FLAVOR:Msz}
+# slashed zero
 VARIANTS +=	"COPYTO Digit0Slashed Digit0"
+.elif ${FLAVOR:Mdz}
+# dotted zero
+VARIANTS +=	"COPYTO Digit0Dotted Digit0"
 .endif
 
 .if ${FLAVOR:Mct}
+# centered ASCII tilde
 VARIANTS +=	"COPYTO MTilde AccTildeAscii"
 .endif
 
 .if ${FLAVOR:Mnbs} && ${FLAVOR:Mnbd}
 ERRORS +=	"Fatal: Select at most one of nbs and nbd"
 .elif ${FLAVOR:Mnbs}
+#- display no-break space like normal space
 VARIANTS +=	"COPYTO Space SpaceNoBreak"
 .elif ${FLAVOR:Mnbd}
+#- display no-break space with a dot
 VARIANTS +=	"COPYTO DVisibleSpace SpaceNoBreak"
+.endif
+
+.if ${FLAVOR:Msc}
+# Serbian rather than eastern Cyrillic italics
+VARIANTS +=	"COPYTO CySmlBeSrb CySmlBe"
+VARIANTS +=	"IFFONT -I- COPYTO CySmlGheSrb CySmlGhe"
+VARIANTS +=	"IFFONT -I- COPYTO CySmlDeSrb CySmlDe"
+VARIANTS +=	"IFFONT -I- COPYTO CySmlPeSrb CySmlPe"
+VARIANTS +=	"IFFONT -I- COPYTO CySmlTeSrb CySmlTe"
+VARIANTS +=	"IFFONT -I- COPYTO CySmlGheAcuteMcd CySmlGheAcute"
 .endif
 
 post-configure:
@@ -49,16 +73,7 @@ post-configure:
 		echo $$var >>${WRKSRC}/VARIANTS.dat; \
 	done
 
-post-build:
-	mkdir ${WRKSRC}/genotb
-	for bdf in ${WRKSRC}/genbdf/t0-*-uni.bdf; do \
-		${X11BASE}/bin/fonttosfnt \
-		  -o ${WRKSRC}/genotb/`basename $$bdf .bdf`.otb \
-		  $$bdf; \
-	done
-
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/uw-ttyp0
-	${INSTALL_DATA} ${WRKSRC}/genotb/*.otb ${PREFIX}/share/fonts/uw-ttyp0
 
 .include <bsd.port.mk>

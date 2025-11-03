@@ -1,0 +1,12 @@
+Index: TARGETS_PCF.dat
+--- TARGETS_PCF.dat.orig
++++ TARGETS_PCF.dat
+@@ -24,6 +24,8 @@
+ # line accordingly:
+ 
+ SIZES_PCF = 11 12 13 14 15 16 17 18 22 30 40 11b 12b 13b 14b 15b 16b 17b 18b 22b 30b 40b 15i 16i 17i 18i 30i 40i
++SIZES_PCF += 60 60b 60i
++SIZES_PCF += 80 80b 80i
+ 
+ # **********************************************************************
+ #
