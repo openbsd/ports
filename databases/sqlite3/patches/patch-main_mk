@@ -1,0 +1,34 @@
+our previous builds used "sqlite-autoconf" and the shell accepted
+syntax like:
+
+sqlite> select "foo";
+foo
+
+As of SQLite 3.41.0 (2023-02-21), builds from "sqlite-src" are done
+with DQS=0 which does warn.
+
+sqlite> select "foo";
+Parse error: no such column: "foo" - should this be a string literal in single-quotes?
+  select "foo";
+         ^--- error here
+
+(see https://sqlite.org/quirks.html#dblquote)
+
+for now, replicate the old setup to reduce behaviour change, while we
+decide what to do with configuration in this port.
+
+if you want to change from the default, use '.dbconfig dqs_ddl (on/off)'
+and '.dbconfig dqs_dml (on/off)'; this can go in ~/.sqliterc if wanted.
+
+Index: main.mk
+--- main.mk.orig
++++ main.mk
+@@ -958,7 +958,7 @@ TESTOPTS = --verbose=file --output=test-out.txt
+ # Note that some of these will only apply when embedding sqlite3.c
+ # into the shell, as these flags are not otherwise passed on to the
+ # library.
+-SHELL_OPT += -DSQLITE_DQS=0
++#SHELL_OPT += -DSQLITE_DQS=0
+ SHELL_OPT += -DSQLITE_ENABLE_FTS4
+ #SHELL_OPT += -DSQLITE_ENABLE_FTS5
+ SHELL_OPT += -DSQLITE_ENABLE_RTREE
