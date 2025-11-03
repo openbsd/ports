@@ -71,11 +71,11 @@ lib/girepository-${API}/GES-${API}.typelib
 @so lib/gstreamer-${API}/libgstnle.so
 @lib lib/libges-${API}.so.${LIBges-${API}_VERSION}
 lib/pkgconfig/gst-editing-services-${API}.pc
-lib/python3.12/site-packages/gi/
-lib/python3.12/site-packages/gi/overrides/
-lib/python3.12/site-packages/gi/overrides/GES.py
-lib/python3.12/site-packages/gi/overrides/__pycache__/
-lib/python3.12/site-packages/gi/overrides/__pycache__/GES.cpython-312.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GES.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GES.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/ges-launch-${API}.1
 share/bash-completion/completions/ges-launch-${API}
 share/gir-${API}/GES-${API}.gir
