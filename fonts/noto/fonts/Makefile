@@ -2,7 +2,7 @@ COMMENT =		pan-unicode font family
 
 NOTO_PROJECT =		fonts
 
-V =			2025.10.01
+V =			2025.11.01
 GH_ACCOUNT =		notofonts
 GH_PROJECT =		notofonts.github.io
 GH_TAGNAME =		noto-monthly-release-$V

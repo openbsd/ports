@@ -1091,6 +1091,7 @@ share/fonts/noto/NotoSansShavian-Regular.ttf
 share/fonts/noto/NotoSansSiddham-Regular.ttf
 share/fonts/noto/NotoSansSignWriting-Regular.ttf
 share/fonts/noto/NotoSansSinhala-Black.ttf
+share/fonts/noto/NotoSansSinhala-BlackCondensed.ttf
 share/fonts/noto/NotoSansSinhala-Bold.ttf
 share/fonts/noto/NotoSansSinhala-Condensed.ttf
 share/fonts/noto/NotoSansSinhala-CondensedBlack.ttf
@@ -1126,6 +1127,7 @@ share/fonts/noto/NotoSansSinhala-SemiCondensedMedium.ttf
 share/fonts/noto/NotoSansSinhala-SemiCondensedSemiBold.ttf
 share/fonts/noto/NotoSansSinhala-SemiCondensedThin.ttf
 share/fonts/noto/NotoSansSinhala-Thin.ttf
+share/fonts/noto/NotoSansSinhala-ThinCondensed.ttf
 share/fonts/noto/NotoSansSinhalaUI-Black.ttf
 share/fonts/noto/NotoSansSinhalaUI-Bold.ttf
 share/fonts/noto/NotoSansSinhalaUI-Condensed.ttf
@@ -1839,6 +1841,13 @@ share/fonts/noto/NotoSerifHebrew-SemiCondensedMedium.ttf
 share/fonts/noto/NotoSerifHebrew-SemiCondensedSemiBold.ttf
 share/fonts/noto/NotoSerifHebrew-SemiCondensedThin.ttf
 share/fonts/noto/NotoSerifHebrew-Thin.ttf
+share/fonts/noto/NotoSerifHentaigana-Black.ttf
+share/fonts/noto/NotoSerifHentaigana-Bold.ttf
+share/fonts/noto/NotoSerifHentaigana-ExtraLight.ttf
+share/fonts/noto/NotoSerifHentaigana-Light.ttf
+share/fonts/noto/NotoSerifHentaigana-Medium.ttf
+share/fonts/noto/NotoSerifHentaigana-Regular.ttf
+share/fonts/noto/NotoSerifHentaigana-SemiBold.ttf
 share/fonts/noto/NotoSerifKannada-Black.ttf
 share/fonts/noto/NotoSerifKannada-Bold.ttf
 share/fonts/noto/NotoSerifKannada-ExtraBold.ttf
@@ -2144,6 +2153,7 @@ share/fonts/noto/NotoSerifTibetan-Medium.ttf
 share/fonts/noto/NotoSerifTibetan-Regular.ttf
 share/fonts/noto/NotoSerifTibetan-SemiBold.ttf
 share/fonts/noto/NotoSerifTibetan-Thin.ttf
+share/fonts/noto/NotoSerifTodhri-Regular.ttf
 share/fonts/noto/NotoSerifToto-Bold.ttf
 share/fonts/noto/NotoSerifToto-Medium.ttf
 share/fonts/noto/NotoSerifToto-Regular.ttf
