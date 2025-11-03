@@ -1,12 +1,12 @@
 Index: configs/e2guardian.conf.in
 --- configs/e2guardian.conf.in.orig
 +++ configs/e2guardian.conf.in
-@@ -577,7 +577,7 @@ logconnectionhandlingerrors = on
- # On 32-bit systems reduce this to 300 to avoid exceeding the <4GB
- # virtual memory limit and on Linux decrease the thread stack size from
- # 10MB to 2MB (ulimit -s 2048)
--httpworkers = 500 
-+httpworkers = 50
+@@ -1098,7 +1098,7 @@ weightedphrasemode = 2
+ ### TUNING section
+ ###
  
- # Process options
- # (Change these only if you really know what you are doing).
+-#httpworkers = 500
++httpworkers = 50
+ #
+ #sets the number of worker threads to use
+ #

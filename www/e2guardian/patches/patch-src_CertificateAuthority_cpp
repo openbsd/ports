@@ -1,0 +1,19 @@
+Index: src/CertificateAuthority.cpp
+--- src/CertificateAuthority.cpp.orig
++++ src/CertificateAuthority.cpp
+@@ -444,6 +444,7 @@ X509 *CertificateAuthority::generateCertificate(const 
+         return NULL;
+     }
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER)
+     // set authority_key_id to subject_key_id of the CA
+     ERR_clear_error();
+     const ASN1_OCTET_STRING *auth_key_id = X509_get0_subject_key_id(_caCert);
+@@ -468,6 +469,7 @@ X509 *CertificateAuthority::generateCertificate(const 
+     }
+     X509_EXTENSION_free(ext);
+     AUTHORITY_KEYID_free(akid);
++#endif
+ 
+     String temp1;
+ 

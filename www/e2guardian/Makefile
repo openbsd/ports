@@ -1,10 +1,13 @@
 GH_ACCOUNT =	e2guardian
 GH_PROJECT =	e2guardian
-GH_TAGNAME =	v5.3.4
+GH_TAGNAME =	v${V}r
+
+V =		5.5.9
+
+PKGNAME =	${GH_PROJECT}-${V}
 
 COMMENT =	content scanning web filter
 CATEGORIES =	www net
-REVISION =	0
 
 HOMEPAGE =	http://www.e2guardian.org/
 
@@ -35,7 +38,7 @@ FLAVOR ?=
 CONFIGURE_ARGS +=	--with-dgdebug
 .endif
 
-FAKE_FLAGS +=		DGCONFDIR=${PREFIX}/share/examples/e2guardian \
+FAKE_FLAGS +=		E2CONFDIR=${PREFIX}/share/examples/e2guardian \
 			rel_group=_e2guardian \
 			rel_user=_e2guardian
 

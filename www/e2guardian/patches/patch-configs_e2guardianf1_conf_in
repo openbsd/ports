@@ -1,12 +1,12 @@
 Index: configs/e2guardianf1.conf.in
 --- configs/e2guardianf1.conf.in.orig
 +++ configs/e2guardianf1.conf.in
-@@ -308,7 +308,7 @@ bypasskey = ''
- #cgikey = 'you must change this text in order to be secure'
+@@ -760,7 +760,7 @@ cgikey = 'you must change this text in order to be sec
  
- #  Users will not be able to bypass sites/urls in these lists
--sitelist = 'name=bannedbypass,messageno=500,path=@DGCONFDIR@/lists/domainsnobypass'
-+#sitelist = 'name=bannedbypass,messageno=500,path=@DGCONFDIR@/lists/domainsnobypass'
- #ipsitelist = 'name=bannedbypass,messageno=500,path=@DGCONFDIR@/lists/ipnobypass'
- #urllist = 'name=bannedbypass,messageno=501,path=@DGCONFDIR@/lists/urlnobypass'
+ 
+ # Users will not be able to bypass sites/urls in these lists
+-sitelist = 'name=bannedbypass,messageno=500,path=__LISTDIR__/domainsnobypass'
++#sitelist = 'name=bannedbypass,messageno=500,path=__LISTDIR__/domainsnobypass'
+ #ipsitelist = 'name=bannedbypass,messageno=500,path=__LISTDIR__/ipnobypass'
+ #urllist = 'name=bannedbypass,messageno=501,path=__LISTDIR__/urlnobypass'
  

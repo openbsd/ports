@@ -1,8 +1,8 @@
 Index: src/LOptionContainer.cpp
 --- src/LOptionContainer.cpp.orig
 +++ src/LOptionContainer.cpp
-@@ -40,7 +40,7 @@ LOptionContainer::LOptionContainer(int load_id)
- {
+@@ -36,7 +36,7 @@ LOptionContainer::LOptionContainer(int load_id)
+ 
      char buff[40];
  
 -    sprintf(buff, "%ld", time(NULL));
