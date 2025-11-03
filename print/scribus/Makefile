@@ -14,8 +14,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
 WANTLIB += Qt6Network Qt6PrintSupport Qt6Svg Qt6Widgets Qt6Xml
 WANTLIB += c cairo cups execinfo fontconfig freetype harfbuzz
 WANTLIB += harfbuzz-icu harfbuzz-subset hunspell-1.7 icudata icuuc
-WANTLIB += jpeg lcms2 m png podofo poppler python3.12 qtadvanceddocking-qt6
-WANTLIB += tiff util xml2 z
+WANTLIB += jpeg lcms2 m png podofo poppler qtadvanceddocking-qt6
+WANTLIB += tiff util xml2 z ${MODPY_WANTLIB}
 
 SITES=		${SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
