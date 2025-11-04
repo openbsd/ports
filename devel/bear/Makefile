@@ -3,7 +3,7 @@ COMMENT =	clang database generator
 V =		3.1.6
 DIST_TUPLE +=	github rizsotto Bear ${V} .
 DISTNAME =	bear-${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -40,6 +40,7 @@ WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c execinfo fmt gpr grpc grpc++
+WANTLIB += m protobuf spdlog utf8_range utf8_validity
 
 # C++17
 COMPILER = base-clang ports-gcc
