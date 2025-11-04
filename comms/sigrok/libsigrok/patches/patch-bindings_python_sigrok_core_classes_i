@@ -1,0 +1,34 @@
+Fix build with Python 3.13:
+
+https://github.com/sigrokproject/libsigrok/commit/5bc8174531df86991ba8aa6d12942923925d9e72
+
+Index: bindings/python/sigrok/core/classes.i
+--- bindings/python/sigrok/core/classes.i.orig
++++ bindings/python/sigrok/core/classes.i
+@@ -131,7 +131,7 @@ typedef guint pyg_flags_type;
+ 
+         auto arglist = Py_BuildValue("(OO)", log_obj, string_obj);
+ 
+-        auto result = PyEval_CallObject($input, arglist);
++        auto result = PyObject_CallObject($input, arglist);
+ 
+         Py_XDECREF(arglist);
+         Py_XDECREF(log_obj);
+@@ -174,7 +174,7 @@ typedef guint pyg_flags_type;
+     $1 = [=] () {
+         const auto gstate = PyGILState_Ensure();
+ 
+-        const auto result = PyEval_CallObject($input, nullptr);
++        const auto result = PyObject_CallObject($input, nullptr);
+         const bool completed = !PyErr_Occurred();
+         const bool valid_result = (completed && result == Py_None);
+ 
+@@ -218,7 +218,7 @@ typedef guint pyg_flags_type;
+ 
+         auto arglist = Py_BuildValue("(OO)", device_obj, packet_obj);
+ 
+-        auto result = PyEval_CallObject($input, arglist);
++        auto result = PyObject_CallObject($input, arglist);
+ 
+         Py_XDECREF(arglist);
+         Py_XDECREF(device_obj);
