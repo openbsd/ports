@@ -26,10 +26,10 @@ MODPY_PYC_MAGIC_TAG =	cpython-${MODPY_MAJORMINOR}.
 MODPY_ABI3SO =		.abi3
 MODPY_PYOEXTENSION ?=	opt-1.pyc
 
-MODPY_SETUPTOOLS ?=	default
 MODPY_PYBUILD ?=	No
 MODPY_PI ?=
 
+MODPY_SETUPTOOLS ?=	default
 .if ${MODPY_SETUPTOOLS} != default
 ERRORS += "Fatal: MODPY_SETUPTOOLS is only for python 2 ports."
 .endif
@@ -37,7 +37,7 @@ ERRORS += "Fatal: MODPY_SETUPTOOLS is only for python 2 ports."
 # If MODPY_PYTEST_ARGS are set, or if using MODPY_PYBUILD, it implies that
 # we want MODPY_PYTEST = Yes
 MODPY_PYTEST_ARGS ?=
-.if empty(MODPY_PYTEST_ARGS) && ${MODPY_PYBUILD:L} == no
+.if empty(MODPY_PYTEST_ARGS) && ${MODPY_PYBUILD} == No
 MODPY_PYTEST ?=		No
 .else
 MODPY_PYTEST ?=		Yes
@@ -76,7 +76,7 @@ TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 
 _MODPY_PRE_BUILD_STEPS = :
 
-.if ${MODPY_PYBUILD:L} == "no"
+.if ${MODPY_PYBUILD} == No
 # not necessarily an error, but try to draw attention to it. defer printing
 # the warning to fake-install where it's less likely to scroll off the screen.
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
@@ -89,7 +89,7 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 
 _MODPY_USE_CARGO = No
 
-.if ${MODPY_PYBUILD:L} != no
+.if ${MODPY_PYBUILD} != No
 BUILD_DEPENDS +=	devel/py-build \
 			devel/py-installer
 # if adding new backends, update python-modules(5)
@@ -137,12 +137,12 @@ _MODPY_USE_CARGO =	Yes
 .    endif
 .  elif ${MODPY_PYBUILD} == uv_build
 BUILD_DEPENDS +=	devel/uv
-.  elif !${MODPY_PYBUILD:L:Mother}
+.  elif !${MODPY_PYBUILD:Mother}
 ERRORS +=		"Fatal: unknown MODPY_PYBUILD value - see python-modules(5)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 _MODPY_WHEELSDIR ?= dist
-.  if ${_MODPY_USE_CARGO:L} == yes
+.  if ${_MODPY_USE_CARGO} == Yes
 ONLY_FOR_ARCHS ?=	${RUST_ARCHS}
 MODCARGO_INSTALL ?=	No
 MODCARGO_TEST ?=	No
@@ -256,7 +256,7 @@ MODPY_TEST_SO_CMD = for _dir in ${MODPY_TEST_LIBDIR:S,:, ,g}; do \
 MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .endif
 
-.if ${MODPY_PYBUILD:L} != no
+.if ${MODPY_PYBUILD} != No
 .  if ! ${BUILD_DEPENDS:Mmisc/py-coherent.licensed}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	(grep -A8 '^requires' ${WRKSRC}/pyproject.toml | \
@@ -309,14 +309,14 @@ MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 MODPY_INSTALL_TARGET += ; if [ -r ${WRKDIR}/.modpy-warn ]; then cat ${WRKDIR}/.modpy-warn; fi
 
 .if empty(CONFIGURE_STYLE)
-.  if !target(do-configure) && ${_MODPY_USE_CARGO:L} == yes
+.  if !target(do-configure) && ${_MODPY_USE_CARGO} == Yes
 do-configure:
 	@${MODCARGO_configure}
 .  endif
 
 .  if !target(do-build)
 do-build:
-.    if ${_MODPY_USE_CARGO:L} == yes
+.    if ${_MODPY_USE_CARGO} == Yes
 	@${MODCARGO_BUILD_TARGET}
 .    endif
 .    if ${MODPY_PYBUILD} != maturin
