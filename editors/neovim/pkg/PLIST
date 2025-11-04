@@ -294,6 +294,7 @@ share/nvim/runtime/doc/job_control.txt
 share/nvim/runtime/doc/lsp.txt
 share/nvim/runtime/doc/lua-bit.txt
 share/nvim/runtime/doc/lua-guide.txt
+share/nvim/runtime/doc/lua-plugin.txt
 share/nvim/runtime/doc/lua.txt
 share/nvim/runtime/doc/luaref.txt
 share/nvim/runtime/doc/luvref.txt

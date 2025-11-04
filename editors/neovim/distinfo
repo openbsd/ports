@@ -2,7 +2,7 @@ SHA256 (LuaJIT-LuaJIT-538a82133ad6fddfd0ca64de167c4aca3bc1a2da.tar.gz) = esvDa+j
 SHA256 (MDeiml-tree-sitter-markdown-v0.5.0.tar.gz) = FMLJSMzw6bYG7sObCShsWd3fKDB4SfcbfOKx0e8Gk34=
 SHA256 (keplerproject-lua-compat-5.3-v0.13.tar.gz) = 9dww57H9qFbuTTkr5FdkLB8MJZJkqbm/vLaAMCzoj8I=
 SHA256 (luvit-luv-1.50.0-1.tar.gz) = u08FcFceQMHSp2RPb5wTCabM2xm/TTl+jXv9DGuI5hM=
-SHA256 (neovim-neovim-v0.11.4.tar.gz) = g8+VQ77auL7IwRzVDM2aS/FXBCCpFLmij4OtEAym1SQ=
+SHA256 (neovim-neovim-v0.11.5.tar.gz) = xjRQ37QrsBFc1elZ+Bx3mJ4cj9Ag1ePx5tiXFUzot3E=
 SHA256 (neovim-tree-sitter-vim-v0.7.0.tar.gz) = ROq8MRJ8T+rNoZ8qBaV4gnISj/VhzgEJOot6U6rcx7I=
 SHA256 (neovim-tree-sitter-vimdoc-v4.0.0.tar.gz) = gJZ5TA8JCy10t7/5RUisG+MoW5Kex0+Dm9mz/09Mags=
 SHA256 (tree-sitter-grammars-tree-sitter-lua-v0.4.0.tar.gz) = sJd6ztSmO7dfJnJXh+BHuPX0oJJxLIQOpwcHZdQElVk=
@@ -12,7 +12,7 @@ SIZE (LuaJIT-LuaJIT-538a82133ad6fddfd0ca64de167c4aca3bc1a2da.tar.gz) = 1083676
 SIZE (MDeiml-tree-sitter-markdown-v0.5.0.tar.gz) = 419516
 SIZE (keplerproject-lua-compat-5.3-v0.13.tar.gz) = 60960
 SIZE (luvit-luv-1.50.0-1.tar.gz) = 142052
-SIZE (neovim-neovim-v0.11.4.tar.gz) = 12961606
+SIZE (neovim-neovim-v0.11.5.tar.gz) = 12979925
 SIZE (neovim-tree-sitter-vim-v0.7.0.tar.gz) = 364666
 SIZE (neovim-tree-sitter-vimdoc-v4.0.0.tar.gz) = 58862
 SIZE (tree-sitter-grammars-tree-sitter-lua-v0.4.0.tar.gz) = 63999
