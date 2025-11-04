@@ -62,7 +62,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +#endif
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
-+#include "third_party/skia/experimental/rust_png/ffi/FFI.rs.h"
++#include "third_party/skia/rust/png/FFI.rs.h"
 +
 +#include <fontconfig/fontconfig.h>
 +#include "ui/gfx/linux/fontconfig_util.h"

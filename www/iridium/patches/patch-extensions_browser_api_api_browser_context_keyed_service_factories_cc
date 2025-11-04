@@ -1,7 +1,7 @@
 Index: extensions/browser/api/api_browser_context_keyed_service_factories.cc
 --- extensions/browser/api/api_browser_context_keyed_service_factories.cc.orig
 +++ extensions/browser/api/api_browser_context_keyed_service_factories.cc
-@@ -121,7 +121,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
+@@ -123,7 +123,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
    MediaPerceptionAPIManager::GetFactoryInstance();
  #endif
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
