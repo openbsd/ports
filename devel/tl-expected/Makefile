@@ -2,19 +2,9 @@ COMMENT =	C++11/14/17 std::expected with functional-style extensions
 
 GH_ACCOUNT =		TartanLlama
 GH_PROJECT =		expected
-GH_TAGNAME =		v1.1.0
+GH_TAGNAME =		v1.3.1
 PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
-
-DIST_SUBDIR =		tl-expected
-SITES.pr =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
-# pending "Added packaged Catch2 support and switched to v3"
-PATCHFILES.pr =		use-system-catch2-{pull/}141.patch
-# pending "Fixed version number in exported CMake configs"
-PATCHFILES.pr +=	fix-version-{pull/}142.patch
-
-PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =		https://tl.tartanllama.xyz
 
@@ -29,14 +19,10 @@ COMPILER_LANGS =	c++
 
 MODULES =		devel/cmake
 
+# wants to fetch old Catch2, using devel/catch2 is not supported
+CONFIGURE_ARGS =	-DBUILD_TESTING=OFF
+
 # only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
-
-# detect during configure
-BUILD_DEPENDS =		devel/catch2
-TEST_DEPENDS =		devel/catch2
-
-pre-test:
-	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
