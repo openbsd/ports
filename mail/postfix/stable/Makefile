@@ -1,8 +1,6 @@
-VERSION=	3.10.1
+VERSION=	3.10.5
 
 EPOCH=		0
-
-REVISION=	3
 
 PORTROACH=	site:https://ftp.fu-berlin.de/unix/mail/postfix/official/
 SITES=		${SITE_POSTFIX:=official/}
