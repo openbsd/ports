@@ -25,7 +25,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby version.
 .    if !defined(FLAVORS)
-FLAVORS=	ruby32 ruby33 ruby34
+FLAVORS=	ruby33 ruby34
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
@@ -49,11 +49,10 @@ FLAVOR =		ruby34
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby32 ruby33 ruby34
+.    for i in ruby33 ruby34
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby32} || \
-            ${FLAVOR:N$i:Mruby33} || \
+.        if ${FLAVOR:N$i:Mruby33} || \
             ${FLAVOR:N$i:Mruby34}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
@@ -153,7 +152,7 @@ SITES?=		${SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
 .  if ${CONFIGURE_STYLE:L:Mext}
-# Use ports-gcc for ruby32 extensions if base does not use clang
+# Use ports-gcc for extensions if base does not use clang
 COMPILER ?= 	base-clang ports-gcc
 COMPILER_LANGS ?= c
 # Add build complete file to package so rubygems doesn't complain
