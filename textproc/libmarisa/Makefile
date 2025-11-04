@@ -55,7 +55,7 @@ WANTLIB-perl =		c marisa perl
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES +=		lang/python
-MODPY_PYBUILD=		setuptools
+BUILD_DEPENDS +=	devel/py-setuptools
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main=${V}
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 WANTLIB-python =	${COMPILER_LIBCXX} m marisa
