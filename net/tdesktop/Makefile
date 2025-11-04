@@ -11,11 +11,10 @@ USE_NOBTCFI-amd64 =	Yes
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			6.1.4
+V =			6.2.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
