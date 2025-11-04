@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1761 2025/11/01 14:28:23 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1762 2025/11/04 01:12:26 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -974,6 +974,7 @@ setup_obsolete_reason(
 	6 => 'py-elasticsearch-curator',
 	6 => 'py-ipython_genutils',
 # 7.8
+	3 => qr{^ruby32-},
 	6 => 'gnome-video-effects',
 	3 => 'gnome-dictionary',
 	3 => 'gnome-photos',
