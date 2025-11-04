@@ -11,9 +11,8 @@ COMMENT =		WebRTC build for Telegram
 # No releases or tags, use commit from tdesktop's snap/snapcraft.yaml
 # 04.08.2024 HEAD to include merged PRs
 DIST_TUPLE =		github	desktop-app	tg_owt	\
-			62321fd7128ab2650b459d4195781af8185e46b5	.
-PKGNAME =		tg_owt-0.0.0.20250601
-REVISION =		1
+			5c5c71258777d0196dbb3a09cc37d2f56ead28ab	.
+PKGNAME =		tg_owt-0.0.0.20250913
 
 CATEGORIES =		net
 
