@@ -3,12 +3,19 @@
 # build uses too much memory on i386 (noticed in calls_group_menu.cpp)
 NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
+# XXX Starting with 6.1.4 opening chats (presumably those containing media)
+#   causes crashes (regardless of ffmpeg's version).
+# NB  Both GDB and LLDB abort when loading Telegram.core;  GDB can attach
+#   to a running process, but debug-tdesktop (see below) is needed, anyway.
+USE_NOBTCFI-amd64 =	Yes
+
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			6.1.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
