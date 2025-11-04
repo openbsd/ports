@@ -18,8 +18,8 @@ SITES =	https://github.com/distcc/distcc/releases/download/v${VERSION}/
 MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		lang/python
-MODPY_DISTV =	${VERSION}
-MODPY_PYBUILD =		setuptools
+MODPY_DISTV =		${VERSION}
+BUILD_DEPENDS =		devel/py-setuptools
 
 # Only -main needs an RDEP
 MODPY_RUNDEP =		No

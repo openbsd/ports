@@ -5,7 +5,7 @@ DPB_PROPERTIES =	parallel
 COMMENT =	LLVM integrated tester
 
 LLVM_VERSION =	19.1.7
-REVISION =	0
+REVISION =	1
 DISTNAME =	llvm-project-${LLVM_VERSION}.src
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-lit-${LLVM_VERSION}
@@ -30,9 +30,8 @@ COMPILER =		base-clang ports-clang
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_PYBUILD =		setuptools
-
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		devel/py-setuptools \
+			textproc/py-sphinx
 LIB_DEPENDS =		archivers/zstd
 TEST_DEPENDS =		shells/bash \
 			sysutils/py-psutil
