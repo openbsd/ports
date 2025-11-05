@@ -308,7 +308,7 @@ MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 
 MODPY_INSTALL_TARGET += ; if [ -r ${WRKDIR}/.modpy-warn ]; then cat ${WRKDIR}/.modpy-warn; fi
 
-.if empty(CONFIGURE_STYLE)
+.if ${MODPY_PYBUILD} != No
 .  if !target(do-configure) && ${_MODPY_USE_CARGO} == Yes
 do-configure:
 	@${MODCARGO_configure}
