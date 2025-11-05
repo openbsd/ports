@@ -18,7 +18,6 @@ EXTRACT_SUFX =			-src.tar.gz
 
 MODULES =			lang/python
 
-BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/py-rarfile \
 				archivers/unrar \
@@ -52,11 +51,11 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				www/py-CherryPy \
 				www/py-cheroot
 
-NO_BUILD =			Yes
-
 # XXX broken, needs pyfakefs, pytest-httpserver, tavern and tavalidate (not in
 # ports)
 NO_TEST =			Yes
+
+do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} \
