@@ -20,11 +20,10 @@ WANTLIB =  c crack iconv intl pthread z
 
 MODULES =		lang/python
 
-MODPY_PYBUILD =		setuptools
-
 USE_GMAKE =		Yes
 
 BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/py-setuptools \
 			shells/bash
 
 LIB_DEPENDS =		security/cracklib
