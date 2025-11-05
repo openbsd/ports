@@ -15,9 +15,8 @@ SITES=			https://github.com/OpenPrinting/system-config-printer/releases/download
 
 MODULES=		lang/python
 
-MODPY_PYBUILD=		setuptools
-
 BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/py-setuptools \
 			print/cups,-libs \
 			textproc/xmlto
 
