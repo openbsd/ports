@@ -1,6 +1,6 @@
 COMMENT =		user-level RCU implementation
 
-V =			0.15.3
+V =			0.15.4
 DISTNAME =		userspace-rcu-$V
 PKGNAME =		liburcu-$V
 

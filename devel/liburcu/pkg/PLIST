@@ -76,6 +76,7 @@ include/urcu/uatomic/alpha.h
 include/urcu/uatomic/api.h
 include/urcu/uatomic/arm.h
 include/urcu/uatomic/builtins-generic.h
+include/urcu/uatomic/builtins-x86.h
 include/urcu/uatomic/builtins.h
 include/urcu/uatomic/gcc.h
 include/urcu/uatomic/generic.h
