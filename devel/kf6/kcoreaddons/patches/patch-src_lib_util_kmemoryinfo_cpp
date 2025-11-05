@@ -1,0 +1,56 @@
+Index: src/lib/util/kmemoryinfo.cpp
+--- src/lib/util/kmemoryinfo.cpp.orig
++++ src/lib/util/kmemoryinfo.cpp
+@@ -467,14 +467,23 @@ static int swap_usage(int *used, int *total)
+ 
+ bool KMemoryInfo::update()
+ {
+-    // TODO: compute m_availablePhysical on OpenBSD
++    int64_t memSize = 0;
++    size_t sz = 0;
+ 
+-    // tota phsycial memory
+-    const long phys_pages = sysconf(_SC_PHYS_PAGES);
+-    const long pagesize = sysconf(_SC_PAGESIZE);
+-    if (phys_pages != -1 && pagesize != -1)
+-        d->m_totalPhysical = ((uint64_t)phys_pages * (uint64_t)pagesize / 1024);
++    int usermem_mib[] = {CTL_HW, HW_USERMEM64};
++    sz = sizeof(memSize);
++    if (sysctl(usermem_mib, 2, &memSize, &sz, NULL, 0) != 0) {
++        return false;
++    }
++    d->m_availablePhysical = memSize;
+ 
++    int physmem_mib[] = {CTL_HW, HW_PHYSMEM64};
++    sz = sizeof(memSize);
++    if (sysctl(physmem_mib, 2, &memSize, &sz, NULL, 0) != 0) {
++        return false;
++    }
++    d->m_totalPhysical = memSize;
++
+     int swap_free = 0;
+     int swap_tot = 0;
+     if (swap_usage(&swap_free, &swap_tot)) {
+@@ -484,17 +493,18 @@ bool KMemoryInfo::update()
+ 
+     int uvmexp_mib[] = {CTL_VM, VM_UVMEXP};
+     struct uvmexp uvmexp;
+-    size_t size = sizeof(uvmexp);
+-    if (sysctl(uvmexp_mib, 2, &uvmexp, &size, NULL, 0) == -1) {
++    sz = sizeof(uvmexp);
++    if (sysctl(uvmexp_mib, 2, &uvmexp, &sz, NULL, 0) == -1) {
+         bzero(&uvmexp, sizeof(uvmexp));
+         return false;
+     }
++    const long pagesize = sysconf(_SC_PAGESIZE);
+     d->m_freePhysical = uvmexp.free * pagesize / 1024;
+ 
+     int bcstats_mib[] = {CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT};
+     struct bcachestats bcstats;
+-    size = sizeof(bcstats);
+-    if (sysctl(bcstats_mib, 3, &bcstats, &size, NULL, 0) == -1) {
++    sz = sizeof(bcstats);
++    if (sysctl(bcstats_mib, 3, &bcstats, &sz, NULL, 0) == -1) {
+         bzero(&bcstats, sizeof(bcstats));
+         return false;
+     }
