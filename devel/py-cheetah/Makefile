@@ -1,25 +1,28 @@
-COMMENT=		Python-powered template engine and code generator
+COMMENT=	Python-powered template engine and code generator
 
-MODPY_DISTV=	3.2.6
-DISTNAME=		Cheetah3-${MODPY_DISTV}
-PKGNAME=		py-cheetah-${MODPY_DISTV}
-REVISION=		6
-CATEGORIES=		devel textproc
+MODPY_DISTV=	3.4.0
+DISTNAME=	ct3-${MODPY_DISTV}
+PKGNAME=	py-cheetah-${MODPY_DISTV}
+CATEGORIES=	devel textproc
 
-HOMEPAGE=		https://cheetahtemplate.org/
+# https://pypi.org/project/CT3/
+# https://github.com/CheetahTemplate3/cheetah3
+HOMEPAGE=	https://cheetahtemplate.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MODULES=		lang/python
-MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-TEST_DEPENDS=		textproc/py-markdown \
-			textproc/py-pygments
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		textproc/py-markdown \
+		textproc/py-pygments
 
-MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
+do-test:
+	cd ${WRKDIR}; cheetah test
 
 .include <bsd.port.mk>
