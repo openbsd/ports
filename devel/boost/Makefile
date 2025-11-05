@@ -123,9 +123,6 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/b2 \
 BOOTSTRAP+=	--without-libraries=context,coroutine,fiber
 .endif
 
-# python.port.mk makes assumptions about an empty CONFIGURE_STYLE
-CONFIGURE_STYLE= none
-
 CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
