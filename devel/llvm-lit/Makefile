@@ -30,8 +30,7 @@ COMPILER =		base-clang ports-clang
 MODULES =		devel/cmake \
 			lang/python
 
-BUILD_DEPENDS =		devel/py-setuptools \
-			textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx
 LIB_DEPENDS =		archivers/zstd
 TEST_DEPENDS =		shells/bash \
 			sysutils/py-psutil
@@ -52,6 +51,7 @@ TEST_TARGET =		check-lit
 
 SUBST_VARS =		LLVM_VERSION
 
+MODPY_PYBUILD =		setuptools
 post-build:
 	cd ${WRKSRC}/utils/lit && \
 		${MODPY_BUILD_TARGET:S!${WRKDIST}/llvm!${WRKDIST}/llvm/utils/lit!}
