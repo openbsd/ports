@@ -5,8 +5,9 @@ MODPY_DISTV=	15.0.1
 DISTNAME=	coloredlogs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	2
+REVISION=	3
 
+# https://github.com/xolox/python-coloredlogs
 HOMEPAGE=	https://coloredlogs.readthedocs.io/
 
 # MIT
