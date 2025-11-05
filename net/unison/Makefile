@@ -7,7 +7,7 @@ COMMENT-gui =	gtk3 based interface for unison
 
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
-GH_TAGNAME =	v2.53.7
+GH_TAGNAME =	v2.53.8
 
 CATEGORIES =	net
 
@@ -33,8 +33,6 @@ RUN_DEPENDS-gui =	${BASE_PKGPATH},-main=${GH_TAGNAME:S/v//} \
 MAKE_FLAGS =	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
 		OCAMLOPT=ocamlopt.opt \
 		CFLAGS=
-
-USE_GMAKE =	Yes
 
 MULTI_PACKAGES =	-main -gui
 
