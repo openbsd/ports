@@ -1,6 +1,7 @@
 COMMENT=		binary editor
 
-DIST_TUPLE=		gnome GNOME ghex 48.2 .
+GNOME_PROJECT=		ghex
+GNOME_VERSION=		48.3
 
 SHARED_LIBS += gtkhex-4                  1.0 # 1.10.1
 
