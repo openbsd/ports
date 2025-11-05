@@ -1,0 +1,21 @@
+Index: humanfriendly/cli.py
+--- humanfriendly/cli.py.orig
++++ humanfriendly/cli.py
+@@ -79,7 +79,7 @@ Supported options:
+ # Standard library modules.
+ import functools
+ import getopt
+-import pipes
++import shlex
+ import subprocess
+ import sys
+ 
+@@ -176,7 +176,7 @@ def main():
+ def run_command(command_line):
+     """Run an external command and show a spinner while the command is running."""
+     timer = Timer()
+-    spinner_label = "Waiting for command: %s" % " ".join(map(pipes.quote, command_line))
++    spinner_label = "Waiting for command: %s" % " ".join(map(shlex.quote, command_line))
+     with Spinner(label=spinner_label, timer=timer) as spinner:
+         process = subprocess.Popen(command_line)
+         while True:

@@ -5,7 +5,7 @@ MODPY_DISTV=	10.0
 DISTNAME=	humanfriendly-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://humanfriendly.readthedocs.io/
 
