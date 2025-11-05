@@ -1,4 +1,4 @@
-SHA256 (consul-template-v0.41.2.zip) = qsTio/eI09YFBO2mh0g4MDZqJ1wwLo4knz/6/e5waKs=
+SHA256 (consul-template-v0.41.3.zip) = FgTV4xUgBkue+vbScQJr/crYPRzp/hKRtDbHRMm26gE=
 SHA256 (go_modules/dario.cat/mergo/@v/v1.0.1.mod) = 4jxLgDpsbm5FdHlG6H0kcEzXd1bMSEvf0XtXIjvzINY=
 SHA256 (go_modules/dario.cat/mergo/@v/v1.0.2.mod) = 1MZdel9oBRGH0ThfDeOcxKf0eojcN/RdLf5JRAPiXuI=
 SHA256 (go_modules/dario.cat/mergo/@v/v1.0.2.zip) = Z9Lp2DylfTqM4aDg5ianwDdTs5ZrWLQblel8pOeyxkA=
@@ -427,7 +427,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (consul-template-v0.41.2.zip) = 414613
+SIZE (consul-template-v0.41.3.zip) = 415176
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.1.mod) = 65
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.2.mod) = 32
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.2.zip) = 50059

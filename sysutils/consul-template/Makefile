@@ -1,7 +1,7 @@
 COMMENT=	template rendering and notifications with Consul
 
 MODGO_MODNAME=	github.com/hashicorp/consul-template
-MODGO_VERSION=	v0.41.2
+MODGO_VERSION=	v0.41.3
 DISTNAME=	consul-template-${MODGO_VERSION}
 
 CATEGORIES=	sysutils net
