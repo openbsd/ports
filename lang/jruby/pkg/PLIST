@@ -20,7 +20,7 @@ jruby/lib/
 jruby/lib/jni/
 jruby/lib/jni/${JFFI_ARCH}/
 @so jruby/lib/jni/${JFFI_ARCH}/libjffi-1.2.so
-jruby/lib/jruby-java21.0.8.jsa
+jruby/lib/jruby-java21.0.9.jsa
 jruby/lib/jruby.jar
 jruby/lib/ruby/
 jruby/lib/ruby/3.1/
