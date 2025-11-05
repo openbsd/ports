@@ -3,13 +3,12 @@ COMMENT=		tensor library for machine learning
 GH_ACCOUNT=		ggml-org
 GH_PROJECT=		ggml
 GH_COMMIT=		09aa758381718f7731c148238574a7e169001f13
+REVISION=		0
 DISTNAME=		ggml-0.9.4pl20251101
 PKGNAME=		lib${DISTNAME}
 
 SHARED_LIBS +=		ggml 3.0
 SHARED_LIBS +=		ggml-base 3.0
-SHARED_LIBS +=		ggml-cpu 3.0
-SHARED_LIBS +=		ggml-vulkan 3.0
 
 CATEGORIES=		devel
 
@@ -33,15 +32,25 @@ CONFIGURE_ARGS=	-DGGML_CCACHE=off \
 		-DGGML_BACKEND_DL=on \
 		-DGGML_BACKEND_DIR=${PREFIX}/lib
 
+.if ${MACHINE_ARCH:Mamd64}
+CONFIGURE_ARGS+= -DGGML_CPU_ALL_VARIANTS=on
+PKG_ARGS+=	-Damd64=1
+PKG_ARGS+=	-Dcpu=0
+.else
+CONFIGURE_ARGS+= -DGGML_CPU_ALL_VARIANTS=off
+PKG_ARGS+=	-Damd64=0
+PKG_ARGS+=	-Dcpu=1
+.endif
+
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Maarch64}
 CONFIGURE_ARGS+= -DGGML_VULKAN=on
 BUILD_DEPENDS=	graphics/shaderc
 LIB_DEPENDS=	graphics/vulkan-loader
 WANTLIB+=	vulkan
-PKG_ARGS=	-Dvulkan=1
+PKG_ARGS+=	-Dvulkan=1
 .else
 CONFIGURE_ARGS+= -DGGML_VULKAN=off
-PKG_ARGS=	-Dvulkan=0
+PKG_ARGS+=	-Dvulkan=0
 .endif
 
 .include <bsd.port.mk>

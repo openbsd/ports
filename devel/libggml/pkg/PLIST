@@ -19,6 +19,7 @@ lib/cmake/ggml/
 lib/cmake/ggml/ggml-config.cmake
 lib/cmake/ggml/ggml-version.cmake
 @lib lib/libggml-base.so.${LIBggml-base_VERSION}
-@so lib/libggml-cpu.so
+%%cpu%%
+%%amd64%%
 @lib lib/libggml.so.${LIBggml_VERSION}
 share/pkgconfig/ggml.pc
