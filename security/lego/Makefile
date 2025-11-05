@@ -2,6 +2,7 @@ COMMENT =		Let's Encrypt/ACME client written in Go
 
 MODGO_MODNAME =		github.com/go-acme/lego/v4
 MODGO_VERSION =		v4.28.0
+REVISION =		0
 
 DISTNAME =		lego-${MODGO_VERSION}
 CATEGORIES =		security

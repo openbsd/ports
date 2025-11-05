@@ -7,7 +7,7 @@ Features:
     Challenge Extension
   - Support RFC 8738: certificates for IP addresses
   - Support RFC 9773: Renewal Information (ARI) Extension
-  - Support draft-aaron-acme-profiles-00: Profiles Extension
+  - Support draft-ietf-acme-profiles-00: Profiles Extension
 - Register with CA
 - Obtain certificates, both from scratch or with an existing CSR
 - Renew certificates
