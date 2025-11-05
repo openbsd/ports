@@ -10,7 +10,7 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -280,7 +280,7 @@
+@@ -290,7 +290,7 @@
  # log.format: plain
  # log.format.json.fix_duplicate_message_fields: true
  #
@@ -19,7 +19,7 @@ Index: config/logstash.yml
  #
  # ------------ Other Settings --------------
  #
-@@ -297,66 +297,3 @@
+@@ -307,66 +307,3 @@
  # Determine where to allocate memory buffers, for plugins that leverage them.
  # Defaults to heap,but can be switched to direct if you prefer using direct memory space instead.
  # pipeline.buffer.type: heap
