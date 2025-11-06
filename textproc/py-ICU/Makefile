@@ -1,6 +1,6 @@
 COMMENT=		Python extension wrapping the ICU C++ API
 
-MODPY_DISTV=		2.15.3
+MODPY_DISTV=		2.16
 DISTNAME=		pyicu-${MODPY_DISTV}
 PKGNAME=		py-ICU-${MODPY_DISTV}
 WRKDIST=		${WRKDIR}/pyicu-${MODPY_DISTV}
