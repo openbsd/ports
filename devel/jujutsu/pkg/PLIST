@@ -38,6 +38,10 @@
 @man man/man1/jj-gerrit-upload.1
 @man man/man1/jj-gerrit.1
 @man man/man1/jj-git-clone.1
+@man man/man1/jj-git-colocation-disable.1
+@man man/man1/jj-git-colocation-enable.1
+@man man/man1/jj-git-colocation-status.1
+@man man/man1/jj-git-colocation.1
 @man man/man1/jj-git-export.1
 @man man/man1/jj-git-fetch.1
 @man man/man1/jj-git-import.1
@@ -83,7 +87,9 @@
 @man man/man1/jj-split.1
 @man man/man1/jj-squash.1
 @man man/man1/jj-status.1
+@man man/man1/jj-tag-delete.1
 @man man/man1/jj-tag-list.1
+@man man/man1/jj-tag-set.1
 @man man/man1/jj-tag.1
 @man man/man1/jj-undo.1
 @man man/man1/jj-unsign.1
