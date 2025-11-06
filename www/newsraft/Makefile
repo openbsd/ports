@@ -1,18 +1,19 @@
 COMMENT=	lightweight feed reader for text terminals
 
 DISTNAME=	newsraft-0.33
+REVISION=	0
 WRKDIST=	${WRKDIR}/newsraft
 
 CATEGORIES=	www
 
-HOMEPAGE=	https://codeberg.org/grisha/newsraft
+HOMEPAGE=	https://codeberg.org/newsraft/newsraft
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curl expat gumbo pthread sqlite3
 
-SITES=		https://codeberg.org/grisha/newsraft/archive/
+SITES=		https://codeberg.org/newsraft/newsraft/archive/
 
 BUILD_DEPENDS=	textproc/scdoc
 LIB_DEPENDS=	databases/sqlite3 \
