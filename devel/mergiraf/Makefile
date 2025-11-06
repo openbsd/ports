@@ -1,6 +1,6 @@
 COMMENT =		syntax-aware git merge driver
 
-V =			0.15.0
+V =			0.16.1
 PKGNAME =		mergiraf-$V
 
 WRKDIST =		${WRKDIR}/mergiraf
