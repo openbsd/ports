@@ -10,6 +10,10 @@ WANTLIB +=	pthread ${MODPY_WANTLIB}
 # Apache2
 PERMIT_PACKAGE=	Yes
 
+# -std=c11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
