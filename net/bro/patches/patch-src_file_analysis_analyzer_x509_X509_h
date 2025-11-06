@@ -1,4 +1,4 @@
-pending https://github.com/zeek/zeek/pull/4843
+merged https://github.com/zeek/zeek/pull/4843
 
 Index: src/file_analysis/analyzer/x509/X509.h
 --- src/file_analysis/analyzer/x509/X509.h.orig
