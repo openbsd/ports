@@ -1,7 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_DISTV=	1.6
-REVISION=	4
+REVISION=	5
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
 PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
@@ -27,7 +27,8 @@ RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
 		devel/py-setuptools \
 		textproc/py-docutils \
-		textproc/py-pygments
+		textproc/py-pygments \
+		www/py-multipart>1
 
 BUILD_DEPENDS=	${COMMON_DEPS}
 
