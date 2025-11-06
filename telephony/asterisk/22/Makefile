@@ -1,5 +1,5 @@
 VER=		22.6.0
-REVISION=	1
+REVISION=	2
 
 PJ_V=		2.15.1
 SHLIB_V=	0.0
@@ -9,7 +9,6 @@ VERSION_SPEC=	>=22.0,<23.0
 PORTROACH=	limitw:0,even
 
 MENUSELECT=	--enable ENABLE_SRTP_AES_192 \
-		--enable ENABLE_SRTP_AES_256 \
-		--enable ENABLE_SRTP_AES_GCM
+		--enable ENABLE_SRTP_AES_256
 
 .include <bsd.port.mk>
