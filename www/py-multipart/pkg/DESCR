@@ -1,2 +1,19 @@
-python-multipart is an Apache2 licensed streaming multipart
-parser for Python. Test coverage is currently 100%.
+"multipart" is a fast incremental non-blocking parser for multipart/form-data,
+as well as blocking alternatives for easier use in WSGI or CGI applications.
+
+- 100% test coverage with test data from actual browsers and HTTP clients.
+- High throughput and low latency.
+- Predictable memory and disk resource consumption via fine grained limits.
+- Strict mode: Spent less time parsing malicious or broken inputs.
+
+All parsers in this module implement multipart/form-data as defined by
+HTML5 and RFC7578, supporting all modern browsers or HTTP clients in use
+today. Legacy browsers (e.g. IE6) are supported to some degree, but only
+if the required workarounds do not impact performance or security. In
+detail this means:
+
+Just multipart/form-data, not suitable for email parsing.
+No multipart/mixed support (deprecated in RFC7578).
+No base64 or quoted-printable transfer encoding (deprecated in RFC7578).
+No encoded-word or name=_charset_ encoding markers (deprecated in HTML5).
+No support for clearly broken clients (e.g. invalid line breaks or headers).

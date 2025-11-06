@@ -482,6 +482,7 @@
      SUBDIR += py-multipart
      SUBDIR += py-ndg-httpsclient
      SUBDIR += py-openapi-core
+     SUBDIR += py-python-multipart
      SUBDIR += py-qt6webengine
      SUBDIR += py-qtwebengine
      SUBDIR += py-query

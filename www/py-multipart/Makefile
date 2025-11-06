@@ -1,21 +1,19 @@
-COMMENT =		streaming multipart parser for Python
+COMMENT=	parser for multipart/form-data
 
-MODPY_DISTV =	0.0.17
-DISTNAME =		python_multipart-${MODPY_DISTV}
-PKGNAME =		py-multipart-${MODPY_DISTV}
-REVISION =		0
+MODPY_DISTV=	1.3.0
+DISTNAME=	multipart-${MODPY_DISTV}
+PKGNAME=	py-multipart-${MODPY_DISTV}
 
-CATEGORIES =		www
+CATEGORIES=	www
 
-HOMEPAGE =		https://github.com/Kludex/python-multipart
-
-MAINTAINER =		Renaud Allard <renaud@allard.it>
+# https://github.com/defnull/multipart
+HOMEPAGE=	https://multipart.readthedocs.io/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		hatchling
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
