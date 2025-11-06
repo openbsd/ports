@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2025.11.142
+V=			2025.11.142.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -163,11 +163,9 @@ GN_ARGS=	is_official_build=true \
 		v8_enable_cet_ibt=true
 
 # rust
-RUSTC_VERSION!!=rustc -V
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute=\"${LOCALBASE}\" \
-		rustc_version=\"${RUSTC_VERSION}\"
+		rust_sysroot_absolute=\"${LOCALBASE}\"
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom|vpx)"
 
