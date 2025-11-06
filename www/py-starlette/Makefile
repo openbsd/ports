@@ -26,6 +26,6 @@ TEST_DEPENDS =		devel/py-trio \
 			www/py-httpx \
 			www/py-itsdangerous \
 			www/py-jinja2 \
-			www/py-multipart
+			www/py-python-multipart
 
 .include <bsd.port.mk>

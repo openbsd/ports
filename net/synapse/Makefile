@@ -1,6 +1,7 @@
 COMMENT =	open network for secure, decentralized communication
 
 MODPY_DISTV =	1.141.0
+REVISION =	0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -59,7 +60,7 @@ RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
 		textproc/py-ijson \
 		devel/py-matrix-common>=1.3.0,<2.0.0 \
 		sysutils/py-packaging \
-		www/py-multipart
+		www/py-python-multipart
 # still relying on pkg_resources, see comments in
 # https://github.com/matrix-org/synapse/pull/12542
 RUN_DEPENDS +=	devel/py-setuptools
