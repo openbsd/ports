@@ -22,12 +22,9 @@ share/i2p/certificates/family/
 share/i2p/certificates/family/SUNYSB.crt
 share/i2p/certificates/family/bandura.crt
 share/i2p/certificates/family/gostcoin.crt
-share/i2p/certificates/family/i2p-dev.crt
-share/i2p/certificates/family/i2pd-dev.crt
 share/i2p/certificates/family/memcpy.crt
 share/i2p/certificates/family/mibhq.crt
 share/i2p/certificates/family/stormycloud.crt
-share/i2p/certificates/family/volatile.crt
 share/i2p/certificates/news/
 share/i2p/certificates/news/echelon_at_mail.i2p.crt
 share/i2p/certificates/news/hankhill19580_at_gmail.com.crt
@@ -50,11 +47,13 @@ share/i2p/certificates/reseed/lazygravy_at_mail.i2p.crt
 share/i2p/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 share/i2p/certificates/reseed/rambler_at_mail.i2p.crt
 share/i2p/certificates/reseed/reseed_at_diva.exchange.crt
+share/i2p/certificates/reseed/unixeno_at_cubicchaos.net.crt
 share/i2p/certificates/router/
 share/i2p/certificates/router/echelon_at_mail.i2p.crt
 share/i2p/certificates/router/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/router/zzz_at_mail.i2p.crt
 share/i2p/certificates/ssl/
+share/i2p/certificates/ssl/cubicchaos.net.crt
 share/i2p/certificates/ssl/i2pseed.creativecowpat.net.crt
 share/i2p/certificates/ssl/isrgrootx1.crt
 share/i2p/clients.config
