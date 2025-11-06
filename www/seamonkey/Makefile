@@ -65,7 +65,7 @@ CONFIGURE_ARGS +=	--enable-linker=lld
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
 # autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
 BUILD_DEPENDS +=	devel/autoconf/2.13
-# for distutils
+# for distutils; possibly not needed any more
 BUILD_DEPENDS +=	devel/py-setuptools
 
 # lld blows when linking libxul; limit threads
@@ -106,6 +106,7 @@ post-patch:
 	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-MIT
 	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
 	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
+	${SUBST_CMD} ${WRKSRC}/third_party/python/virtualenv/virtualenv/discovery/py_info.py
 
 pre-configure:
 	chmod +x ${WRKSRC}/configure.in

@@ -1,0 +1,21 @@
+Index: third_party/python/virtualenv/virtualenv/discovery/cached_py_info.py
+--- third_party/python/virtualenv/virtualenv/discovery/cached_py_info.py.orig
++++ third_party/python/virtualenv/virtualenv/discovery/cached_py_info.py
+@@ -8,7 +8,7 @@ from __future__ import absolute_import, unicode_litera
+ 
+ import logging
+ import os
+-import pipes
++import shlex
+ import sys
+ from collections import OrderedDict
+ 
+@@ -122,7 +122,7 @@ class LogCmd(object):
+         def e(v):
+             return v.decode("utf-8") if isinstance(v, bytes) else v
+ 
+-        cmd_repr = e(" ").join(pipes.quote(e(c)) for c in self.cmd)
++        cmd_repr = e(" ").join(shlex.quote(e(c)) for c in self.cmd)
+         if self.env is not None:
+             cmd_repr += e(" env of {!r}").format(self.env)
+         if PY2:

@@ -1,6 +1,5 @@
-drop distutils codepaths, the version bundled with virtualenv has a broken/updated six ?
+drop distutils codepaths, the version bundled with virtualenv has outdated six
 
-i know 3.12 is hardcoded but MEH.
 Index: third_party/python/virtualenv/virtualenv/discovery/py_info.py
 --- third_party/python/virtualenv/virtualenv/discovery/py_info.py.orig
 +++ third_party/python/virtualenv/virtualenv/discovery/py_info.py
@@ -26,9 +25,9 @@ Index: third_party/python/virtualenv/virtualenv/discovery/py_info.py
 -        result = {key: (getattr(i, "install_{}".format(key))[1:]).lstrip(os.sep) for key in SCHEME_KEYS}
 -        return result
 +        return {
-+           'purelib': 'lib/python3.12/site-packages',
-+           'platlib': 'lib/python3.12/site-packages',
-+           'headers': 'include/python3.12', 'scripts': 'bin', 'data': ''}
++           'purelib': 'lib/python${MODPY_VERSION}/site-packages',
++           'platlib': 'lib/python${MODPY_VERSION}/site-packages',
++           'headers': 'include/python${MODPY_VERSION}', 'scripts': 'bin', 'data': ''}
  
      @property
      def version_str(self):
