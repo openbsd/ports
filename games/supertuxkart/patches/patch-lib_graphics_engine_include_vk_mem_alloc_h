@@ -1,7 +1,7 @@
 Index: lib/graphics_engine/include/vk_mem_alloc.h
 --- lib/graphics_engine/include/vk_mem_alloc.h.orig
 +++ lib/graphics_engine/include/vk_mem_alloc.h
-@@ -2666,7 +2666,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
+@@ -2669,7 +2669,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
  
      return memalign(alignment, size);
  }

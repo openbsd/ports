@@ -2,10 +2,9 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots
 
-V =			1.4
-DISTNAME =		SuperTuxKart-${V}
-PKGNAME =		${DISTNAME:L}
-REVISION =		1
+V =			1.5
+DISTNAME =		SuperTuxKart-$V
+PKGNAME =		supertuxkart-$V
 
 CATEGORIES =		games
 
@@ -20,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto curl freetype harfbuzz
 WANTLIB += jpeg m openal png shaderc_shared sqlite3 vorbisfile z
 
 SITES =		https://github.com/supertuxkart/stk-code/releases/download/$V/
-EXTRACT_SUFX =		-src.tar.xz
+EXTRACT_SUFX =		-src.tar.gz
 
 MODULES =		devel/cmake
 
