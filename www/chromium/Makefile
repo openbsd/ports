@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			142.0.7444.59
+V=			142.0.7444.134
 
 DISTNAME=		chromium-${V}
 
@@ -185,11 +185,9 @@ GN_ARGS=	is_official_build=true \
 		moc_qt6_path=\"${MODQT6_MOC}\"
 
 # rust
-RUSTC_VERSION!!=rustc -V
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute=\"${LOCALBASE}\" \
-		rustc_version=\"${RUSTC_VERSION}\"
+		rust_sysroot_absolute=\"${LOCALBASE}\"
 
 PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom|vpx)"
 
