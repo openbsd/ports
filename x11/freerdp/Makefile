@@ -1,5 +1,9 @@
+# XXX ffmpeg 8
+USE_NOBTCFI =		yes
+
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.11.7
+REVISION =		0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
@@ -27,6 +31,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xv
 WANTLIB += avcodec avutil c crypto cups epoll-shim execinfo m pthread sndio
 WANTLIB += ssl swresample usb-1.0 xkbfile
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # thread-local storage; C11
 COMPILER =		base-clang ports-gcc

@@ -1,0 +1,27 @@
+Index: libfreerdp/codec/h264_ffmpeg.c
+--- libfreerdp/codec/h264_ffmpeg.c.orig
++++ libfreerdp/codec/h264_ffmpeg.c
+@@ -100,10 +100,10 @@ static void libavcodec_destroy_encoder(H264_CONTEXT* h
+ 
+ 	if (sys->codecEncoderContext)
+ 	{
+-		avcodec_close(sys->codecEncoderContext);
+ #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 69, 100)
+ 		avcodec_free_context(&sys->codecEncoderContext);
+ #else
++		avcodec_close(sys->codecEncoderContext);
+ 		av_free(sys->codecEncoderContext);
+ #endif
+ 	}
+@@ -430,10 +430,10 @@ static void libavcodec_uninit(H264_CONTEXT* h264)
+ 
+ 	if (sys->codecDecoderContext)
+ 	{
+-		avcodec_close(sys->codecDecoderContext);
+ #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55, 69, 100)
+ 		avcodec_free_context(&sys->codecDecoderContext);
+ #else
++		avcodec_close(sys->codecDecoderContext);
+ 		av_free(sys->codecDecoderContext);
+ #endif
+ 	}
