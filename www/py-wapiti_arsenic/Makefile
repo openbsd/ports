@@ -1,6 +1,6 @@
 COMMENT =		asynchronous WebDriver client for Wapiti
 
-MODPY_DISTV =		28.2
+MODPY_DISTV =		28.4
 
 DISTNAME =		wapiti_arsenic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
@@ -21,6 +21,6 @@ MODPY_PYBUILD =		poetry-core
 RUN_DEPENDS =		devel/py-attrs \
 			devel/py-structlog \
 			sysutils/py-packaging \
-			www/py-aiohttp
+			www/py-httpx
 
 .include <bsd.port.mk>
