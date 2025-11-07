@@ -1324,8 +1324,8 @@ SHA256 (go_modules/github.com/opencontainers/go-digest/@v/v1.0.0.mod) = jeAlCkum
 SHA256 (go_modules/github.com/opencontainers/go-digest/@v/v1.0.0.zip) = YV77Mf9s1xA1uKo4w2Wdi02kbzzZKsgHy1BEmt/jfIY=
 SHA256 (go_modules/github.com/opencontainers/image-spec/@v/v1.1.0.mod) = bg06OmgaYxyXuub7hVtwpmFTq/xo8xIhBMyHrKtuCKo=
 SHA256 (go_modules/github.com/opencontainers/image-spec/@v/v1.1.0.zip) = S7RnTgk+qCvOaaDuERzaNaTjciIAdA1ewxlGbcZrSHk=
-SHA256 (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20250121132637-504036cd70e7.mod) = XaYSGf7N3RNSkvJSYIFLRtRiLmxwkTOWaOR3qpnu+ZE=
-SHA256 (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20250121132637-504036cd70e7.zip) = gUCmmP6zJP1O6B2wTN/FL/ZczrcEVPdn8LfqdHLRw1w=
+SHA256 (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20251021132045-587d123c2828.mod) = XaYSGf7N3RNSkvJSYIFLRtRiLmxwkTOWaOR3qpnu+ZE=
+SHA256 (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20251021132045-587d123c2828.zip) = R9UEqzt1qkYmBlyHPBaVSUkyGEfSedpydQl+cEdRv44=
 SHA256 (go_modules/github.com/opentofu/registry-address/@v/v0.0.0-20230920144404-f1e51167f633.mod) = 54OV/A66A3oXJjyannjnZzBSaaNjVfX5LoMTs1MTYdI=
 SHA256 (go_modules/github.com/opentofu/registry-address/@v/v0.0.0-20230920144404-f1e51167f633.zip) = jXEfRLp4FcZoLhqgXm9K34qhG+EVQBCQK7tbcA3HQtc=
 SHA256 (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.mod) = z3ai3ue71eq5xd9DYHvTwV77idmMtc315xzKmA7yeng=
@@ -2382,7 +2382,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (opentofu-v1.10.6.zip) = /wU1H7ivwnYZjvrL8n2+bxUW+ch/CSRms8229ICJ4/o=
+SHA256 (opentofu-v1.10.7.zip) = A9aE5YZEWJSFq7KCKJf2qEsfzMKW6c0mzE3WI5JG20A=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3709,8 +3709,8 @@ SIZE (go_modules/github.com/opencontainers/go-digest/@v/v1.0.0.mod) = 52
 SIZE (go_modules/github.com/opencontainers/go-digest/@v/v1.0.0.zip) = 34573
 SIZE (go_modules/github.com/opencontainers/image-spec/@v/v1.1.0.mod) = 515
 SIZE (go_modules/github.com/opencontainers/image-spec/@v/v1.1.0.zip) = 197746
-SIZE (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20250121132637-504036cd70e7.mod) = 802
-SIZE (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20250121132637-504036cd70e7.zip) = 630354
+SIZE (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20251021132045-587d123c2828.mod) = 802
+SIZE (go_modules/github.com/opentofu/hcl/v2/@v/v2.20.2-0.20251021132045-587d123c2828.zip) = 630754
 SIZE (go_modules/github.com/opentofu/registry-address/@v/v0.0.0-20230920144404-f1e51167f633.mod) = 219
 SIZE (go_modules/github.com/opentofu/registry-address/@v/v0.0.0-20230920144404-f1e51167f633.zip) = 26760
 SIZE (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.mod) = 43
@@ -4767,4 +4767,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (opentofu-v1.10.6.zip) = 6755227
+SIZE (opentofu-v1.10.7.zip) = 6759314

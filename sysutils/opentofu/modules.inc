@@ -424,7 +424,7 @@ MODGO_MODULES =	\
 	github.com/openbao/openbao/api/v2							 v2.3.0 \
 	github.com/opencontainers/go-digest							 v1.0.0 \
 	github.com/opencontainers/image-spec							 v1.1.0 \
-	github.com/opentofu/hcl/v2								 v2.20.2-0.20250121132637-504036cd70e7 \
+	github.com/opentofu/hcl/v2								 v2.20.2-0.20251021132045-587d123c2828 \
 	github.com/opentofu/registry-address							 v0.0.0-20230920144404-f1e51167f633 \
 	github.com/packer-community/winrmcp							 v0.0.0-20180921211025-c76d91c1e7db \
 	github.com/pascaldekloe/goe								 v0.1.0 \
