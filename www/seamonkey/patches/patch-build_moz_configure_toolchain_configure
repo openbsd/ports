@@ -1,10 +1,5 @@
 Fix build with icu >=75
 
-Fix build with libcxx 19.1.7
-https://bugzilla.mozilla.org/show_bug.cgi?id=1874059
-https://github.com/llvm/llvm-project/issues/79027
-https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276746
-
 Index: build/moz.configure/toolchain.configure
 --- build/moz.configure/toolchain.configure.orig
 +++ build/moz.configure/toolchain.configure
@@ -17,12 +12,3 @@ Index: build/moz.configure/toolchain.configure
      if info.language == 'C++':
          if info.type == 'clang' and info.language_version != cxx14_version:
              flags.append('-std=gnu++14')
-@@ -1332,7 +1332,7 @@ set_define('_LIBCPP_HIDE_FROM_ABI', libcxx_override_vi
- @depends(target, check_build_environment)
- def visibility_flags(target, env):
-     if target.os != 'WINNT':
--        if target.kernel == 'Darwin':
-+        if target.kernel == 'Darwin' or target.kernel == 'OpenBSD':
-             return ('-fvisibility=hidden', '-fvisibility-inlines-hidden')
-         return ('-I%s/system_wrappers' % os.path.join(env.dist),
-                 '-include',

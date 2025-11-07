@@ -5,14 +5,14 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.21
+MOZILLA_VERSION =	2.53.22
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
 
 # unbreaks build with rust 1.83
 SITES.p =	https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-1896958-rust183.zip{attachment.cgi?id=9445781}
+PATCHFILES.p=	bug-1896958-127a1-25322.zip{attachment.cgi?id=9520949}
 PATCH_DIST_STRIP =	-p1 -f
 # || true because third_party/rust/packed_simd/Cargo.toml fails to patch but we dont care
 PATCH_CASES += *.zip) \
@@ -31,7 +31,7 @@ EXTRACT_ONLY =	${DISTFILES}
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.21
+PKGNAME-lightning =	lightning-seamonkey-5.8.22
 EPOCH-lightning =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
@@ -102,8 +102,6 @@ post-extract:
 # patch doesnt grok file rename from git
 # and cargo fails to checksum those if not present
 post-patch:
-	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-APACHE
-	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-MIT
 	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
 	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
 	${SUBST_CMD} ${WRKSRC}/third_party/python/virtualenv/virtualenv/discovery/py_info.py
