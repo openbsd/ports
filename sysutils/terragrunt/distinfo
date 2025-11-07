@@ -1297,8 +1297,7 @@ SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.zip) = Co2Jy81rB4Mb
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.mod) = sivifzSl/k55Kv4jXraCDi9+7xJnZvdRxnuw9olJLOM=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.zip) = 8qOaiXBMRcKiTug0aII3DwExs0a2wFdcGYRW91K2CLc=
 SHA256 (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210209133302-4fd17a0faac2.mod) = 3aX3SK4xprBH2t+pron8ZUT7BuqdXtJD2tQILq3+le8=
-SHA256 (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210318070130-9a80970d6b34.mod) = 3aX3SK4xprBH2t+pron8ZUT7BuqdXtJD2tQILq3+le8=
-SHA256 (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210318070130-9a80970d6b34.zip) = hP+z8YL6KSwbuGKc/LyrLiVEafnwlrSFC6J0u1ZS0JA=
+SHA256 (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210209133302-4fd17a0faac2.zip) = IjJDEhEKOEwXADU7sy2ojKPmFjwNrzQREFInwUcuF34=
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.13.0.mod) = C9zu7flQfchuhxettYBDbaGokwLX7AL0+d7ttd6Y9cQ=
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.23.0.mod) = E0p790nmpYw3uXkaw3URCuZZUBcZYDW6kZlblfvsDTE=
 SHA256 (go_modules/github.com/hashicorp/terraform-json/@v/v0.23.0.zip) = kqVidjmgLZedXeIvMvKCQL2Mi1Zv0XIzim9K2sqLikU=
@@ -2670,7 +2669,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7u
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (terragrunt-v0.93.0.zip) = O6a8lbmrc2qSWgpkTd6w0Qzz9BCFq7MknScGTiyUQI0=
+SHA256 (terragrunt-v0.93.3.zip) = P133HIQsB3syZlcYzYxkZOJCTeTGoWK8hR4+z1TMb9Y=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -3970,8 +3969,7 @@ SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.zip) = 90161
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.mod) = 33
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.zip) = 767764
 SIZE (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210209133302-4fd17a0faac2.mod) = 514
-SIZE (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210318070130-9a80970d6b34.mod) = 514
-SIZE (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210318070130-9a80970d6b34.zip) = 68499
+SIZE (go_modules/github.com/hashicorp/terraform-config-inspect/@v/v0.0.0-20210209133302-4fd17a0faac2.zip) = 66163
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.13.0.mod) = 283
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.23.0.mod) = 519
 SIZE (go_modules/github.com/hashicorp/terraform-json/@v/v0.23.0.zip) = 644792
@@ -5343,4 +5341,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (terragrunt-v0.93.0.zip) = 9619106
+SIZE (terragrunt-v0.93.3.zip) = 9637334

@@ -436,7 +436,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/memberlist									 v0.1.0 \
 	github.com/hashicorp/serf									 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform									 v0.15.3 \
-	github.com/hashicorp/terraform-config-inspect							 v0.0.0-20210318070130-9a80970d6b34 \
+	github.com/hashicorp/terraform-config-inspect							 v0.0.0-20210209133302-4fd17a0faac2 \
 	github.com/hashicorp/terraform-json								 v0.23.0 \
 	github.com/hashicorp/terraform-plugin-log							 v0.9.0 \
 	github.com/hashicorp/terraform-registry-address							 v0.2.4 \
@@ -1147,7 +1147,6 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/hcl/v2								 v2.22.0 \
 	github.com/hashicorp/hcl/v2								 v2.23.0 \
 	github.com/hashicorp/hcl/v2								 v2.9.1 \
-	github.com/hashicorp/terraform-config-inspect						 v0.0.0-20210209133302-4fd17a0faac2 \
 	github.com/hashicorp/terraform-json							 v0.13.0 \
 	github.com/hashicorp/terraform-registry-address						 v0.2.2 \
 	github.com/hashicorp/terraform-registry-address						 v0.2.3 \
