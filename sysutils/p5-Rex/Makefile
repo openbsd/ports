@@ -1,7 +1,7 @@
 COMMENT=	perl-based deployment and configuration management
 
 CPAN_AUTHOR=	FERKI
-DISTNAME=	Rex-1.14.3
+DISTNAME=	Rex-1.16.1
 
 CATEGORIES=	sysutils
 
