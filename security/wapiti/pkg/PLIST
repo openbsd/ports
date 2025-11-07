@@ -297,6 +297,8 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}log4shell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}methods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}methods.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}ns_takeovers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}ns_takeovers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}redirect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}redirect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/${MODPY_PYCACHE}reflected_xss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -354,6 +356,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/internal_error.p
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/ldapi.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/log4shell.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/methods.py
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/ns_takeovers.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/redirect.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/reflected_xss.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/definitions/resource_consumption.py
