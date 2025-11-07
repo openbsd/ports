@@ -48,11 +48,17 @@ lib/python${MODPY_VERSION}/site-packages/apsw/tests/__main__.py
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}carray.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}carray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}ftstests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}ftstests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}jsonb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}jsonb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}sessiontests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/${MODPY_PYCACHE}sessiontests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/carray.py
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/ftstests.py
+lib/python${MODPY_VERSION}/site-packages/apsw/tests/jsonb.py
 lib/python${MODPY_VERSION}/site-packages/apsw/tests/sessiontests.py
 lib/python${MODPY_VERSION}/site-packages/apsw/trace.py
 lib/python${MODPY_VERSION}/site-packages/apsw/unicode.py

@@ -1,7 +1,7 @@
 COMMENT =	thin SQLite wrapper for Python
 
 # version 3.XX.Y.Z of apsw usually needs sqlite3 of at least 3.XX
-MODPY_DISTV =	3.50.4.0
+MODPY_DISTV =	3.51.0.0
 DISTNAME =	apsw-${MODPY_DISTV}
 PKGNAME =	py-apsw-${MODPY_DISTV}
 CATEGORIES =	databases
@@ -17,7 +17,7 @@ EXTRACT_SUFX =	.zip
 
 WANTLIB += ${MODPY_WANTLIB} pthread sqlite3
 
-LIB_DEPENDS =	databases/sqlite3>=3.49.1
+LIB_DEPENDS =	databases/sqlite3>=3.51
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
