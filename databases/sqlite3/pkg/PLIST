@@ -9,11 +9,12 @@ include/sqlite3ext.h
 lib/pkgconfig/sqlite3.pc
 @man man/man1/sqlite3.1
 @man man/man3/SQLITE_ACCESS_EXISTS.3
+@man man/man3/SQLITE_CARRAY_INT32.3
 @man man/man3/SQLITE_CHANGESETAPPLY_NOSAVEPOINT.3
 @man man/man3/SQLITE_CHANGESETSTART_INVERT.3
 @man man/man3/SQLITE_CHANGESET_DATA.3
 @man man/man3/SQLITE_CHANGESET_OMIT.3
-@man man/man3/SQLITE_CHECKPOINT_PASSIVE.3
+@man man/man3/SQLITE_CHECKPOINT_NOOP.3
 @man man/man3/SQLITE_CONFIG_SINGLETHREAD.3
 @man man/man3/SQLITE_CREATE_INDEX.3
 @man man/man3/SQLITE_DBCONFIG_MAINDBNAME.3
@@ -74,6 +75,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_busy_handler.3
 @man man/man3/sqlite3_busy_timeout.3
 @man man/man3/sqlite3_cancel_auto_extension.3
+@man man/man3/sqlite3_carray_bind.3
 @man man/man3/sqlite3_changegroup.3
 @man man/man3/sqlite3_changes.3
 @man man/man3/sqlite3_changeset_iter.3
@@ -162,6 +164,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_serialize.3
 @man man/man3/sqlite3_session.3
 @man man/man3/sqlite3_set_authorizer.3
+@man man/man3/sqlite3_set_errmsg.3
 @man man/man3/sqlite3_set_last_insert_rowid.3
 @man man/man3/sqlite3_setlk_timeout.3
 @man man/man3/sqlite3_sleep.3
