@@ -1,7 +1,7 @@
 Index: gcc/ada/Makefile.rtl
 --- gcc/ada/Makefile.rtl.orig
 +++ gcc/ada/Makefile.rtl
-@@ -1828,6 +1828,237 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
+@@ -1828,6 +1828,239 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
  endif
  endif
  
@@ -149,6 +149,7 @@ Index: gcc/ada/Makefile.rtl
 +ifeq ($(strip $(filter-out mips64 openbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-intnam.ads<libgnarl/a-intnam__bsd.ads \
++  a-nallfl.ads<libgnat/a-nallfl__wraplf.ads \
 +  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
 +  s-intman.adb<libgnarl/s-intman__posix.adb \
 +  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
@@ -179,6 +180,7 @@ Index: gcc/ada/Makefile.rtl
 +ifeq ($(strip $(filter-out mips64el openbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-intnam.ads<libgnarl/a-intnam__bsd.ads \
++  a-nallfl.ads<libgnat/a-nallfl__wraplf.ads \
 +  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
 +  s-intman.adb<libgnarl/s-intman__posix.adb \
 +  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
@@ -239,7 +241,7 @@ Index: gcc/ada/Makefile.rtl
  # aarch64 FreeBSD
  ifeq ($(SELECTED_PAIRS),PAIRS_NONE)
  ifeq ($(strip $(filter-out %aarch64 freebsd%,$(target_cpu) $(target_os))),)
-@@ -3209,7 +3440,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
+@@ -3209,7 +3442,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
  #  from ADA_INCLUDE_SRCS.
  
  LIBGNAT_SRCS = $(patsubst %.o,%.c,$(LIBGNAT_OBJS))			\
