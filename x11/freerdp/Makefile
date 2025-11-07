@@ -1,9 +1,9 @@
 # XXX ffmpeg 8
-USE_NOBTCFI =		yes
+USE_NOBTCFI-amd64 =	yes
 
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.11.7
-REVISION =		0
+REVISION =		1
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
