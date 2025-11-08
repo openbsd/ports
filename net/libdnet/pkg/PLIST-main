@@ -23,8 +23,6 @@ include/dnet/udp.h
 @static-lib lib/libdnet.a
 lib/libdnet.la
 @lib lib/libdnet.so.${LIBdnet_VERSION}
-@comment lib/python${MODPY_VERSION}/
-@comment lib/python${MODPY_VERSION}/site-packages/
 @man man/man3/dnet.3
 @man man/man8/dnet.8
 @bin sbin/dnet
