@@ -8,7 +8,7 @@ SHA256 (cargo/bindgen-0.72.1.tar.gz) = mTd2tQnPtJx1DxG48HpG+iPgoThv/AH7Hn00Pvw4e
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.10.0.tar.gz) = gS4StShcxRWpxypcHTttRqGdrFrP71JllowWYQbjHdM=
 SHA256 (cargo/bssl-sys-0.1.0.tar.gz) = MS0SOTwGA4Ty5u0Ux7S+N7PdkCSYV0hWE8GpG5oau1w=
-SHA256 (cargo/cc-1.2.43.tar.gz) = c56w+UVXVUs8qahtLTe+vUnF5tDB0r2jW6W9rIML78I=
+SHA256 (cargo/cc-1.2.45.tar.gz) = NZALbI1wn7HYVGca4nrqqe7C+LAbNk4WGaQNo+b+Kv4=
 SHA256 (cargo/cexpr-0.6.0.tar.gz) = b6w4epi7fDcpIFfP/FbWLstimQACZAJjOukWDfk6h2Y=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.4.tar.gz) = kzD4sv8T80VAtE6UbvNREYJXJ7ONMyhu+YYUJhUSGAE=
@@ -52,7 +52,7 @@ SHA256 (cargo/openssl-src-300.5.4+3.5.4.tar.gz) = pQezeSmV2umw34ocHjdx6EGLfC2fC6
 SHA256 (cargo/pkg-config-0.3.32.tar.gz) = ft3b0LUtcyshrZpfq1xwTBTNlJ5emh7Fkpok/e0bkEw=
 SHA256 (cargo/prettyplease-0.2.37.tar.gz) = R5yorazdfOjx+znOnszL/pOj8TRLPQ2X8gvAGWII9is=
 SHA256 (cargo/proc-macro2-1.0.103.tar.gz) = XulbxO+HuNW6Mui3cUzMg0hlJ26rCu1cmVjQDsRfSeg=
-SHA256 (cargo/quote-1.0.41.tar.gz) = ziV2fntJnRtgR2jnzeZF0UzIWEIx6mspXpyesiwC4dE=
+SHA256 (cargo/quote-1.0.42.tar.gz) = ozjMQdJ+bMbc5s78E6Bynfu4HCYrH1GTMVdd2A7zBn8=
 SHA256 (cargo/r-efi-5.3.0.tar.gz) = ac2zTBWM6yiN8R4YtL053plPZlfYOEe9/9vX80Z1Sw8=
 SHA256 (cargo/redox_users-0.4.6.tar.gz) = ugCf8yTR/BuQC9H9sxVk/r5YqMzIpv27k7VD0zsTykM=
 SHA256 (cargo/regex-1.12.2.tar.gz) = hDvAGR918+ImUa5fHnKTmrL3KkvDD6gKBmvWbt78JNQ=
@@ -70,7 +70,7 @@ SHA256 (cargo/serde_core-1.0.228.tar.gz) = QdOFx9TKWOWfxzKvJcOYO2eshSwaJQAK/hF13
 SHA256 (cargo/serde_derive-1.0.228.tar.gz) = 1UDyINMYcXPaIg+IWrZmCDZ7ZXTpJQEak1Pkut2pHXk=
 SHA256 (cargo/serde_json-1.0.145.tar.gz) = QCpvZtjHCRFs8i9VjqshD1pQGH9wLrTX5e842afxx5w=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
-SHA256 (cargo/syn-2.0.108.tar.gz) = 2liRfTUkJICgXCiXBk2gqAWJoqBHbJo/L9yDtTUC6Rc=
+SHA256 (cargo/syn-2.0.109.tar.gz) = LxfH4BPogliqlUPcvoGspopmeprDfNacn7wHhYv+Di8=
 SHA256 (cargo/term-0.6.1.tar.gz) = wIY6M0XnD2HWE+qzLuBGzNG8xfkQX+QCxh/NDBPuuLU=
 SHA256 (cargo/thiserror-1.0.69.tar.gz) = tqr1M5tXjqhbUOCA/rJQo+iujPzf+aRhyewpBLySP1I=
 SHA256 (cargo/thiserror-impl-1.0.69.tar.gz) = T+5sTvyQBZ4Q+B5tQsYKGPdliMPXTLg6CyQqK2x1BME=
@@ -97,7 +97,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/wit-bindgen-0.46.0.tar.gz) = 8XqFiD1ObQDoqXxYbedk2rzAYTP38dVdzlzcBwrX/lk=
-SHA256 (rust-openssl-tests-20251030-95aa8e86.tar.gz) = x/YbTSe/KhLpI9iJQLiv8cBHxDaBrmNXkQGmwP7an9E=
+SHA256 (rust-openssl-tests-20251107-09b90d03.tar.gz) = St6liyoLIcZEIjLK2mzTcW2kw3gg/RKZQnVHd1a65qs=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/annotate-snippets-0.11.5.tar.gz) = 34687
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
@@ -108,7 +108,7 @@ SIZE (cargo/bindgen-0.72.1.tar.gz) = 246071
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.10.0.tar.gz) = 48427
 SIZE (cargo/bssl-sys-0.1.0.tar.gz) = 1061
-SIZE (cargo/cc-1.2.43.tar.gz) = 91384
+SIZE (cargo/cc-1.2.45.tar.gz) = 92261
 SIZE (cargo/cexpr-0.6.0.tar.gz) = 17966
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.4.tar.gz) = 9360
@@ -152,7 +152,7 @@ SIZE (cargo/openssl-src-300.5.4+3.5.4.tar.gz) = 7102203
 SIZE (cargo/pkg-config-0.3.32.tar.gz) = 21370
 SIZE (cargo/prettyplease-0.2.37.tar.gz) = 72033
 SIZE (cargo/proc-macro2-1.0.103.tar.gz) = 60024
-SIZE (cargo/quote-1.0.41.tar.gz) = 31408
+SIZE (cargo/quote-1.0.42.tar.gz) = 31504
 SIZE (cargo/r-efi-5.3.0.tar.gz) = 64532
 SIZE (cargo/redox_users-0.4.6.tar.gz) = 15585
 SIZE (cargo/regex-1.12.2.tar.gz) = 163843
@@ -170,7 +170,7 @@ SIZE (cargo/serde_core-1.0.228.tar.gz) = 63111
 SIZE (cargo/serde_derive-1.0.228.tar.gz) = 59605
 SIZE (cargo/serde_json-1.0.145.tar.gz) = 155748
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
-SIZE (cargo/syn-2.0.108.tar.gz) = 301754
+SIZE (cargo/syn-2.0.109.tar.gz) = 301826
 SIZE (cargo/term-0.6.1.tar.gz) = 37578
 SIZE (cargo/thiserror-1.0.69.tar.gz) = 22198
 SIZE (cargo/thiserror-impl-1.0.69.tar.gz) = 18365
@@ -197,4 +197,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-0.46.0.tar.gz) = 60508
-SIZE (rust-openssl-tests-20251030-95aa8e86.tar.gz) = 379401
+SIZE (rust-openssl-tests-20251107-09b90d03.tar.gz) = 381850
