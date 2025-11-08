@@ -8,16 +8,17 @@ CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
-# the main FFmpeg libraries themselves have been patched (see
-# patch-libavutil_x86_tx_float_asm, patch-libavutil_x86_x86inc_asm)
+# the main FFmpeg libraries themselves have been patched for amd64 BTI
+# (patch-libavutil_x86_tx_float_asm, patch-libavutil_x86_x86inc_asm)
 # so updates need testing on an amd64 BTI machine ("make test"
-# covers this reasonably well, even when built with USE_NOBTCFI).
-#
-# aarch64 BTI support is already included upstream.
+# covers this reasonably well). if there are bigger problems then
+# some of these will fail even when built with USE_NOBTCFI.
 #
 # some deps (e.g. x264, x265) are only BTI-clean on aarch64, so set
-# the flag here in order that bin/ffmpeg is built with enforcement
-# disabled.
+# USE_NOBTCFI here in order that bin/ffmpeg is built with enforcement
+# disabled. (some FFmpeg tests fail on amd64 if built without this).
+#
+# aarch64 BTI support for FFmpeg libraries is already included upstream.
 USE_NOBTCFI-amd64=	Yes
 
 EPOCH=		1
