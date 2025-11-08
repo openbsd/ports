@@ -3,6 +3,7 @@
 USE_NOEXECONLY=		Yes
 .endif
 
+MODULES =		lang/python
 MODPY_DISTV =		2.0.0b19
 PKGNAME =		borgbackup-${MODPY_DISTV:S/b/beta/}
 EPOCH =			0

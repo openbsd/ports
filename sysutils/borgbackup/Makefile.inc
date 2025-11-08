@@ -16,7 +16,6 @@ WANTLIB +=		lz4 xxhash zstd
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
