@@ -852,6 +852,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/endpoint-rule-set-1.json
