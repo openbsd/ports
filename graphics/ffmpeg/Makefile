@@ -2,14 +2,15 @@ COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
 V=		8.0
+REVISION=	1
 DISTNAME=	ffmpeg-${V}
-EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-USE_NOBTCFI-amd64=	Yes
+#USE_NOBTCFI-amd64=	Yes
+
+EPOCH=		1
 
 SHARED_LIBS=	avcodec		27.0 \
 		avdevice	15.0 \
