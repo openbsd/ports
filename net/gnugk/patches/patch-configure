@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5535,7 +5535,7 @@ else
+@@ -6262,7 +6262,7 @@ else $as_nop
  fi
  
  
@@ -9,4 +9,4 @@ Index: configure
 +PTLIBSNMPSUPPORT=`cat ${PTLIBDIR}/make/ptbuildopts.mak | grep 'define P_SNMP'`
  if test "${PTLIBSNMPSUPPORT:-unset}" = "unset" ; then
  	if test "x${ptlibsnmp}" != "xno" ; then
- 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: No PTLib SNMP support available" >&5
+ 		{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: No PTLib SNMP support available" >&5

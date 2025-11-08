@@ -2,7 +2,7 @@ BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.13
+V=			5.14
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
@@ -22,6 +22,7 @@ WANTLIB += maxminddb netsnmp netsnmpagent netsnmpmibs pt sasl2
 WANTLIB += ssh ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc
+
 # uses std::mem_fun
 CXXFLAGS_base-clang =	-std=gnu++14
 
