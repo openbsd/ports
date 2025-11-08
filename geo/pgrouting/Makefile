@@ -1,6 +1,6 @@
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		3.8.0
+V =		4.0.0
 DISTNAME =	pgrouting-${V}
 SITES =		https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
+# doxygen crashes, & html doc wants sphinx-build
+CONFIGURE_ARGS = -DBUILD_DOXY=OFF -DBUILD_HTML=OFF
 MODULES =	databases/postgresql devel/cmake
 COMPILER =	base-clang ports-gcc
 
