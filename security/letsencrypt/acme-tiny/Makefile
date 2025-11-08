@@ -11,6 +11,7 @@ HOMEPAGE=	https://github.com/diafygi/acme-tiny
 # MIT
 PERMIT_PACKAGE=	Yes
 
+MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PI_DIR=	a/acme_tiny
 MODPY_PYBUILD=	setuptools_scm

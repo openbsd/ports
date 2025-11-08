@@ -5,6 +5,7 @@ HOMEPAGE=	https://certbot.eff.org/
 DISTNAME=	certbot-${MODPY_DISTV}
 REVISION=	0
 
+MODULES=	lang/python
 RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
 		devel/py-configargparse \
 		devel/py-configobj \
