@@ -1,0 +1,197 @@
+- use _CET_ENDBR in functions header
+
+Index: libavutil/x86/tx_float.asm
+--- libavutil/x86/tx_float.asm.orig
++++ libavutil/x86/tx_float.asm
+@@ -135,6 +135,7 @@ SECTION .text
+ ; %1 - coefficients (r0.reim, r1.reim)
+ ; %2 - temporary
+ %macro FFT2 2
++    _CET_ENDBR
+     shufps   %2, %1, %1, q3322
+     shufps   %1, %1, %1, q1100
+ 
+@@ -148,6 +149,7 @@ SECTION .text
+ ; %2 - odd coefficients  (r1.reim, r3.reim, r5.reim, r7.reim)
+ ; %3 - temporary
+ %macro FFT4 3
++    _CET_ENDBR
+     subps  %3, %1, %2         ;  r1234, [r5678]
+     addps  %1, %1, %2         ;  t1234, [t5678]
+ 
+@@ -171,6 +173,7 @@ SECTION .text
+ ; %5 - temporary
+ ; %6 - temporary
+ %macro FFT8 6
++    _CET_ENDBR
+     addps    %5, %1, %3               ; q1-8
+     addps    %6, %2, %4               ; k1-8
+ 
+@@ -212,6 +215,7 @@ SECTION .text
+ ; %3 - temporary
+ ; %4 - temporary
+ %macro FFT8_AVX 4
++    _CET_ENDBR
+     subps      %3, %1, %2               ;  r1234, r5678
+     addps      %1, %1, %2               ;  q1234, q5678
+ 
+@@ -251,6 +255,7 @@ SECTION .text
+ ; %5, %6 - temporary
+ ; %7, %8 - temporary (optional)
+ %macro FFT16 6-8
++    _CET_ENDBR
+     FFT4       %3, %4, %5
+ %if %0 > 7
+     FFT8_AVX   %1, %2, %6, %7
+@@ -320,6 +325,7 @@ SECTION .text
+ ; xm14 - out[0]
+ ; xm15 - out[10, 5]
+ %macro FFT15 0
++    _CET_ENDBR
+     shufps xm1, xm0, xm0, q3223      ; in[1].imrereim
+     shufps xm0, xm0, xm0, q1001      ; in[0].imrereim
+ 
+@@ -438,6 +444,7 @@ SECTION .text
+ ; Output is slightly permuted such that tx2,3's coefficients are interleaved
+ ; on a 2-point basis (look at `doc/transforms.md`)
+ %macro SPLIT_RADIX_COMBINE 17
++    _CET_ENDBR
+ %if %1 && mmsize == 32
+     vperm2f128 %14, %6, %7, 0x20     ; m2[0], m2[1], m3[0], m3[1] even
+     vperm2f128 %16, %9, %8, 0x20     ; m2[0], m2[1], m3[0], m3[1] odd
+@@ -517,6 +524,7 @@ SECTION .text
+ ; however, if the twiddles aren't needed after this, the registers they use
+ ; can be used as any of the temporary registers.
+ %macro SPLIT_RADIX_COMBINE_HALF 10
++    _CET_ENDBR
+ %if %1
+     shufps     %8, %6, %6, q2200     ; cos00224466
+     shufps     %9, %7, %7, q1133     ; wim77553311
+@@ -559,6 +567,7 @@ SECTION .text
+ 
+ ; Same as above, tries REALLY hard to use 2 temporary registers.
+ %macro SPLIT_RADIX_COMBINE_LITE 9
++    _CET_ENDBR
+ %if %1
+     shufps     %8, %6, %6, q2200        ; cos00224466
+     shufps     %9, %7, %7, q1133        ; wim77553311
+@@ -607,6 +616,7 @@ SECTION .text
+ %endmacro
+ 
+ %macro SPLIT_RADIX_COMBINE_64 0
++    _CET_ENDBR
+     SPLIT_RADIX_COMBINE_LITE 1, m0, m1, tx1_e0, tx2_e0, tw_e, tw_o, tmp1, tmp2
+ 
+     movaps [outq +  0*mmsize], m0
+@@ -648,6 +658,7 @@ SECTION .text
+ ; combine loop
+ ; %1 must contain len*2, %2 must contain len*4, %3 must contain len*6
+ %macro SPLIT_RADIX_LOAD_COMBINE_4 8
++    _CET_ENDBR
+     movaps m8,         [rtabq + (%5)*mmsize + %7]
+     vperm2f128 m9, m9, [itabq - (%5)*mmsize + %8], 0x23
+ 
+@@ -693,6 +704,7 @@ SECTION .text
+ %else
+ %define offset_i 0
+ %endif
++    _CET_ENDBR
+ 
+     SPLIT_RADIX_LOAD_COMBINE_4 %1, 2*%1, %2, 0, 0, offset_c, offset_r, offset_i
+     SPLIT_RADIX_LOAD_COMBINE_4 %1, 2*%1, %2, 1, 1, offset_c, offset_r, offset_i
+@@ -705,6 +717,7 @@ SECTION .text
+ ; a full combine+deinterleave loop
+ ; %3 must contain len*2, %4 must contain len*4, %5 must contain len*6
+ %macro SPLIT_RADIX_COMBINE_DEINTERLEAVE_2 6
++    _CET_ENDBR
+     movaps m8,         [rtabq + (0 + %2)*mmsize]
+     vperm2f128 m9, m9, [itabq - (0 + %2)*mmsize], 0x23
+ 
+@@ -807,6 +820,7 @@ SECTION .text
+ %else
+ %define offset 0
+ %endif
++    _CET_ENDBR
+     SPLIT_RADIX_COMBINE_DEINTERLEAVE_2 0, 0, %1, %1*2, %2, offset
+     SPLIT_RADIX_COMBINE_DEINTERLEAVE_2 4, 2, %1, %1*2, %2, offset
+ %endmacro
+@@ -826,6 +840,7 @@ cglobal fft2_float, 4, 4, 2, ctx, out, in, stride
+ 
+ %macro FFT4_FN 3
+ INIT_XMM sse2
++    _CET_ENDBR
+ %if %3
+ cglobal fft4_ %+ %1 %+ _asm_float, 0, 0, 0, ctx, out, in, stride
+ %else
+@@ -862,6 +877,7 @@ FFT4_FN inv, 1, 1
+ 
+ %macro FFT8_SSE_FN 1
+ INIT_XMM sse3
++    _CET_ENDBR
+ %if %1
+ cglobal fft8_asm_float, 0, 0, 0, ctx, out, in, stride, tmp
+     movaps m0, [inq + 0*mmsize]
+@@ -907,6 +923,7 @@ FFT8_SSE_FN 1
+ 
+ %macro FFT8_AVX_FN 1
+ INIT_YMM avx
++    _CET_ENDBR
+ %if %1
+ cglobal fft8_asm_float, 0, 0, 0, ctx, out, in, stride, tmp
+     movaps m0, [inq + 0*mmsize]
+@@ -947,6 +964,7 @@ FFT8_AVX_FN 1
+ 
+ %macro FFT16_FN 2
+ INIT_YMM %1
++    _CET_ENDBR
+ %if %2
+ cglobal fft16_asm_float, 0, 0, 0, ctx, out, in, stride, tmp
+     movaps m0, [inq + 0*mmsize]
+@@ -998,6 +1016,7 @@ FFT16_FN fma3, 1
+ 
+ %macro FFT32_FN 2
+ INIT_YMM %1
++    _CET_ENDBR
+ %if %2
+ cglobal fft32_asm_float, 0, 0, 0, ctx, out, in, stride, tmp
+     movaps m4, [inq + 4*mmsize]
+@@ -1084,6 +1103,7 @@ FFT32_FN fma3, 1
+ 
+ %macro FFT_SPLIT_RADIX_DEF 1-2
+ ALIGN 16
++    _CET_ENDBR
+ .%1 %+ pt:
+     PUSH lenq
+     mov lenq, (%1/4)
+@@ -1122,6 +1142,7 @@ ALIGN 16
+ 
+ %macro FFT_SPLIT_RADIX_FN 2
+ INIT_YMM %1
++    _CET_ENDBR
+ %if %2
+ cglobal fft_sr_asm_float, 0, 0, 0, ctx, out, in, stride, len, lut, itab, rtab, tgt, tmp
+ %else
+@@ -1522,6 +1543,7 @@ FFT_SPLIT_RADIX_FN avx2, 1
+ %endif
+ 
+ %macro FFT15_FN 2
++    _CET_ENDBR
+ INIT_YMM avx2
+ cglobal fft15_ %+ %2, 4, 10, 16, ctx, out, in, stride, len, lut, tmp, tgt5, stride3, stride5
+     mov lutq, [ctxq + AVTXContext.map]
+@@ -1585,6 +1607,7 @@ FFT15_FN 1, ns_float
+ %endif
+ 
+ %macro IMDCT_FN 1
++    _CET_ENDBR
+ INIT_YMM %1
+ cglobal mdct_inv_float, 4, 14, 16, 320, ctx, out, in, stride, len, lut, exp, t1, t2, t3, \
+                                         t4, t5, btmp
+@@ -1772,6 +1795,7 @@ IMDCT_FN avx2
+ %endif
+ 
+ %macro PFA_15_FN 2
++    _CET_ENDBR
+ INIT_YMM %1
+ %if %2
+ cglobal fft_pfa_15xM_asm_float, 0, 0, 0, ctx, out, in, stride, len, lut, buf, map, tgt, tmp, \
