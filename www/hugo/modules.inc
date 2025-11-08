@@ -362,8 +362,8 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx								 v0.5.0 \
 	github.com/stretchr/testify								 v1.10.0 \
 	github.com/tdewolff/argp								 v0.0.0-20250209172303-079abae893fb \
-	github.com/tdewolff/minify/v2								 v2.24.4 \
-	github.com/tdewolff/parse/v2								 v2.8.4 \
+	github.com/tdewolff/minify/v2								 v2.24.5 \
+	github.com/tdewolff/parse/v2								 v2.8.5-0.20251020133559-0efcf90bef1a \
 	github.com/tdewolff/test								 v1.0.11 \
 	github.com/tetratelabs/wazero								 v1.9.0 \
 	github.com/ugorji/go/codec								 v1.2.7 \
