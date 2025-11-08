@@ -7,8 +7,6 @@ HOMEPAGE=		https://aws.amazon.com/cli/
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-MODULES=		lang/python
-
 RUN_DEPENDS +=		textproc/py-docutils
 
 NO_TEST=		Yes

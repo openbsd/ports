@@ -9,6 +9,7 @@ GH_TAGNAME =		${MODPY_DISTV}
 
 MAINTAINER =		Joel Knight <knight.joel@gmail.com>
 
+MODULES=		lang/python
 MODPY_PYBUILD =		flit_core
 
 RUN_DEPENDS +=		devel/py-awscrt>=0.27.5 \
