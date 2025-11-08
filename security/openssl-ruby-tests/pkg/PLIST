@@ -78,17 +78,13 @@ share/openssl-ruby-tests/test/openssl/fixtures/
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh2048_ffdhe2048.pem
-share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa2048.pem
-share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa256.pem
-share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa512.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/mldsa65-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/mldsa65-2.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/p256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-2.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-3.pem
-share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa2048.pem
 share/openssl-ruby-tests/test/openssl/test_asn1.rb
 share/openssl-ruby-tests/test/openssl/test_bn.rb
