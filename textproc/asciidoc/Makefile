@@ -1,6 +1,7 @@
 COMMENT=	text document format for writing documents and man pages
 
 MODPY_DISTV=	10.2.1
+REVISION=	0
 DISTNAME=	asciidoc-${MODPY_DISTV}
 
 CATEGORIES=	textproc
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	textproc/docbook-xsl
 RUN_DEPENDS=	textproc/docbook-xsl \
 		w3m-*|lynx-*:www/w3m
 
-PKG_ARCH=	*
 USE_GMAKE=	Yes
 TEST_DEPENDS=	devel/py-test-mock
 
