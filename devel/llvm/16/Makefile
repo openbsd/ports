@@ -15,4 +15,6 @@ SHARED_LIBS +=	LTO		0.0 \
 # Apache License v2.0 with LLVM Exceptions
 PERMIT_PACKAGE =	Yes
 
+MODULES +=	lang/python
+
 .include <bsd.port.mk>

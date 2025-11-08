@@ -95,8 +95,7 @@ WRKSRC =	${WRKDIR}/llvm-project-${LLVM_VERSION}.src/llvm
 # C++11
 COMPILER =	base-clang ports-gcc
 
-MODULES +=	devel/cmake \
-		lang/python
+MODULES +=	devel/cmake
 
 BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx \
