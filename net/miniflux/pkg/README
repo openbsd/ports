@@ -5,9 +5,6 @@
 Initial Setup
 =============
 
-The database server will need to have the hstore extension. This means
-installing postgresql-contrib on OpenBSD.
-
 Configure ${SYSCONFDIR}/miniflux.conf to your liking. Create a user and
 database as defined in ${SYSCONFDIR}/miniflux.conf:
 
@@ -21,11 +18,6 @@ Create a database for miniflux that belongs to our user
 
 $ createdb -U postgres -O miniflux miniflux
 
-Create the extension hstore as superuser
-
-$ psql -U postgres miniflux -c 'create extension hstore'
-CREATE EXTENSION
-
 Run the database migrations.
 
 # su -s/bin/sh - _miniflux
@@ -36,3 +28,26 @@ Create the initial admin account.
 $ miniflux -c /etc/miniflux.conf -create-admin
 
 Miniflux is now ready to be started via rcctl.
+
+Deprecating hstore
+==================
+
+If you're performing a migration from a version that required your
+postgresql database to have the hstore extension enabled, you will
+most likely encounter the following error during the procedure:
+
+[Migration v119] pq: must be owner of extension hstore
+
+This generally happens when you're trying to drop an extension with
+an account that is different than the one that had created it, which
+would be the case if you had installed it following the original
+port's setup instructions. You need to perform this step manually
+then rerun the in-software update. Here is one way of achieving
+that:
+
+$ psql -U postgres miniflux -c 'DROP EXTENSION hstore'
+
+Optionally you might want to remove the postgresql contrib package
+if that was the only reason you had it installed in the first place:
+
+# pkg_delete postgresql-contrib

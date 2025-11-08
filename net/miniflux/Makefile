@@ -1,9 +1,9 @@
 COMMENT =	atom/rss feed reader web application
 
-V =		2.2.13
+V =		2.2.14
 
 MODGO_MODNAME =	miniflux.app/v2
-MODGO_VERSION =	v2.2.13-0.20250915235747-10b2b36895dd
+MODGO_VERSION =	v${V}
 
 DISTNAME =	${MODGO_MODNAME}-${MODGO_VERSION}
 PKGNAME =	miniflux-${V}
