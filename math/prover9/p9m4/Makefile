@@ -9,11 +9,9 @@ SITES=			${HOMEPAGE}/gui/
 CONFIGURE_STYLE=	# empty
 
 PKG_ARCH=		*
-NO_BUILD=		Yes
 NO_TEST=		Yes
 
-# explicit because of NO_BUILD
-MODPY_BUILDDEP=		Yes
+MODULES=		lang/python
 
 MODPY_ADJ_FILES=	control.py files.py my_setup.py options.py \
 			partition_input.py platforms.py prover9-mace4.py \
@@ -35,6 +33,8 @@ post-extract:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/files.py
 	${SUBST_CMD} -m 555 -c ${FILESDIR}/prover9-mace4.sh ${WRKSRC}/prover9-mace4
+
+do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/prover9-mace4 ${PREFIX}/bin/

@@ -3,6 +3,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 # spyder 6.2.0 should have better support for Qt6, for now
 # stick to qt5 and qtwebengine. (See issue #20201).
 
+MODULES =	lang/python
 MODPY_DISTV =	6.1.0
 DISTNAME =	spyder-${MODPY_DISTV}
 

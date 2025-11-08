@@ -8,6 +8,7 @@ SITES=			${HOMEPAGE}/download/
 
 WANTLIB +=		c m
 
+MODULES=		lang/python
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	utilities/attack \
 			utilities/gvizify \
