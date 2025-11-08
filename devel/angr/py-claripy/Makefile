@@ -1,6 +1,7 @@
 COMMENT =		abstraction layer for constraint solvers
 REVISION =		2
 
+MODULES =		lang/python
 ANGR_PYTHON_MODULE =	claripy
 
 # tests write here

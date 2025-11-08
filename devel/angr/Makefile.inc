@@ -14,7 +14,6 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 .if defined(ANGR_PYTHON_MODULE)
 HOMEPAGE ?=		https://github.com/angr/${ANGR_PYTHON_MODULE}/
 
-MODULES ?=		lang/python
 MODPY_PI ?=		Yes
 MODPY_PYBUILD ?=	setuptools
 

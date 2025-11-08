@@ -1,6 +1,7 @@
 COMMENT =		Python interface to libVEX and VEX IR
 REVISION =		2
 
+MODULES =		lang/python
 ANGR_PYTHON_MODULE =	pyvex
 
 USE_GMAKE =		Yes

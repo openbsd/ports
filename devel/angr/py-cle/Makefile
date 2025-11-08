@@ -1,6 +1,7 @@
 COMMENT =		CLE loads binaries and their associated libraries
 REVISION =		2
 
+MODULES =		lang/python
 ANGR_PYTHON_MODULE =	cle
 
 RUN_DEPENDS =		devel/angr/py-archinfo>=${MODPY_DISTV} \

@@ -1,7 +1,8 @@
 COMMENT =		efficient SMT solver library (angr fork)
 
+MODULES =		lang/python
 ANGR_PYTHON_MODULE =	z3-solver
-MODPY_DISTV =	4.8.10.0
+MODPY_DISTV =		4.8.10.0
 REVISION =		7
 
 CATEGORIES +=		math

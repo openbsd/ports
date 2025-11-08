@@ -24,7 +24,8 @@ NO_TEST =	Yes
 #			devel/py-mock
 # also needs treq, pyjade ?
 
-UPDATE_PLIST_ARGS+=-i MODPY_PY_PREFIX
+MODULES =	lang/python
+UPDATE_PLIST_ARGS+= -i MODPY_PY_PREFIX
 
 HOMEDIR =		/var/buildbot
 

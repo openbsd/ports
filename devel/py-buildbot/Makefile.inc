@@ -11,7 +11,5 @@ PERMIT_PACKAGE =	Yes
 
 SITES =		https://github.com/buildbot/buildbot/releases/download/v${MODPY_DISTV}/
 
-MODULES =	lang/python
-
 MODPY_PYBUILD =	setuptools
 

@@ -1,6 +1,7 @@
 COMMENT =		angr intermediate language
 REVISION =		2
 
+MODULES =		lang/python
 ANGR_PYTHON_MODULE =	ailment
 
 # ailment cannot be used standalone as it requires angr, however

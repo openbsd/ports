@@ -2,6 +2,7 @@ COMMENT =	web interface for buildbot
 
 PART = www
 
+MODULES =	lang/python
 BUILD_DEPENDS =	www/py-autobahn \
 		devel/py-buildbot/pkg
 
