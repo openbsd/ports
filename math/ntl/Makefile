@@ -1,7 +1,7 @@
 COMMENT =	Victor Shoup's Number Theory Library
 
-DISTNAME =	ntl-11.5.1
-SHARED_LIBS =	ntl	10.0	# 0.0
+DISTNAME =	ntl-11.6.0
+SHARED_LIBS =	ntl	10.1	# 0.0
 CATEGORIES =	math
 
 HOMEPAGE =	https://www.shoup.net/ntl/

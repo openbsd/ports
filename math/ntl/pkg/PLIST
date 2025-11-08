@@ -1,7 +1,6 @@
 include/NTL/
 include/NTL/ALL_FEATURES.h
 include/NTL/BasicThreadPool.h
-include/NTL/ConfigLog.h
 include/NTL/FFT.h
 include/NTL/FFT_impl.h
 include/NTL/FacVec.h
@@ -86,6 +85,9 @@ include/NTL/pair_lzz_pEX_long.h
 include/NTL/pair_lzz_pX_long.h
 include/NTL/pd_FFT.h
 include/NTL/quad_float.h
+include/NTL/simde_avx.h
+include/NTL/simde_fma.h
+include/NTL/simde_pclmul.h
 include/NTL/sp_arith.h
 include/NTL/thread.h
 include/NTL/tools.h

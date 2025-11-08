@@ -1,7 +1,6 @@
-Index: src/DoConfig
---- src/DoConfig.orig
-+++ src/DoConfig
-@@ -13,8 +13,8 @@ system("echo '*** CompilerOutput.log ***' > CompilerOu
+--- src/DoConfig.orig.port	Fri Nov  7 18:30:51 2025
++++ src/DoConfig	Sat Nov  8 11:06:36 2025
+@@ -37,8 +37,8 @@
  
  %MakeVal = (
  
@@ -12,17 +11,19 @@ Index: src/DoConfig
  'CXXAUTOFLAGS'=> '',
  'NOCONTRACT'  => '',
  'AR'	      => 'ar',
-@@ -28,12 +28,14 @@ system("echo '*** CompilerOutput.log ***' > CompilerOu
+@@ -52,7 +52,7 @@
  'LDLIBS'      => '-lm',
  'CPPFLAGS'    => '',
  
--'DEF_PREFIX'  => '/usr/local',
-+'DEF_PREFIX'  => '${LOCALBASE}',
+-'SYS_PREFIX'  => '/usr/local',
++'SYS_PREFIX'  => '${LOCALBASE}',
+ 'DEF_PREFIX'  => '$(SYS_PREFIX)',
  
  'PREFIX'      => '$(DEF_PREFIX)',
- 'LIBDIR'      => '$(PREFIX)/lib',
+@@ -60,6 +60,8 @@
  'INCLUDEDIR'  => '$(PREFIX)/include',
  'DOCDIR'      => '$(PREFIX)/share/doc',
+ 'PKGDIR'      => '$(PREFIX)/lib/pkgconfig',
 +
 +'LIBntl_VERSION' => '$(LIBntl_VERSION)',
  
