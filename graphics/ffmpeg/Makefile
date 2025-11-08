@@ -2,13 +2,23 @@ COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
 V=		8.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
-#USE_NOBTCFI-amd64=	Yes
+# the main FFmpeg libraries themselves have been patched (see
+# patch-libavutil_x86_tx_float_asm, patch-libavutil_x86_x86inc_asm)
+# so updates need testing on an amd64 BTI machine ("make test"
+# covers this reasonably well, even when built with USE_NOBTCFI).
+#
+# aarch64 BTI support is already included upstream.
+#
+# some deps (e.g. x264, x265) are only BTI-clean on aarch64, so set
+# the flag here in order that bin/ffmpeg is built with enforcement
+# disabled.
+USE_NOBTCFI-amd64=	Yes
 
 EPOCH=		1
 
