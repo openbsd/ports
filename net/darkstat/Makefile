@@ -2,7 +2,7 @@ COMMENT=		network statistics gatherer with graphs
 
 GH_ACCOUNT=		emikulic
 GH_PROJECT=		darkstat
-GH_TAGNAME=		3.0.721
+GH_TAGNAME=		3.0.722
 
 CATEGORIES=		net www
 

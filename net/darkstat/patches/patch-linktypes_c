@@ -1,0 +1,12 @@
+Index: linktypes.c
+--- linktypes.c.orig
++++ linktypes.c
+@@ -16,7 +16,7 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
+-#include <pcap/dlt.h>
++#include <pcap.h>
+ 
+ struct linktype_pair {
+   int linktype;  /* Returned by pcap_datalink(). */
