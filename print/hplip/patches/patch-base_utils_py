@@ -4,6 +4,8 @@ that results in text string going into translate function in base/utils.py, whic
 expects binary string because of parameters. Remove this patch if base/utils.py
 code gets fixed.
 
+locale.format -> locale.format_string for python 3.12 compat
+
 Disable download_from_network()
 
 Index: base/utils.py
@@ -24,6 +26,15 @@ Index: base/utils.py
          except OSError:
              return lis
  
+@@ -505,7 +505,7 @@ def sort_dict_by_value(d):
+ 
+ 
+ def commafy(val):
+-    return locale.format("%s", val, grouping=True)
++    return locale.format_string("%s", val, grouping=True)
+ 
+ 
+ def format_bytes(s, show_bytes=False):
 @@ -617,7 +617,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
@@ -184,3 +195,10 @@ Index: base/utils.py
      except :
          log.warn("unable to determine auth_type ")
      return authType
+@@ -2675,4 +2674,4 @@ def sanitize_filename(filename):
+     # Ensure the filename only contains safe characters
+     if not re.match(r'^[\w\-. ]+$', filename):
+         raise ValueError("Invalid filename")
+-    return filename
+\ No newline at end of file
++    return filename
