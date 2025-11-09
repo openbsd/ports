@@ -1,7 +1,6 @@
 COMMENT=	round-tripping wrapper for Python stdlib's "tokenize"
 
-MODPY_DISTV=	6.1.0
-REVISION=	1
+MODPY_DISTV =	6.2.0
 DISTNAME=	tokenize_rt-${MODPY_DISTV}
 PKGNAME=	py-tokenize-rt-${MODPY_DISTV}
 
