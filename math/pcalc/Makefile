@@ -9,6 +9,7 @@ CATEGORIES =	math sysutils
 GH_ACCOUNT =	vapier
 GH_PROJECT =	pcalc
 GH_TAGNAME =	v4
+REVISION =	0
 
 MAINTAINER =	Charles Daniels <charles@cdaniels.net>
 
@@ -16,9 +17,6 @@ MAINTAINER =	Charles Daniels <charles@cdaniels.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
-
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
 
 BUILD_DEPENDS =	devel/bison
 
