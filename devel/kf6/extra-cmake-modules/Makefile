@@ -1,7 +1,6 @@
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
-
-PKG_ARCH =	*
+REVISION =	0
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No
