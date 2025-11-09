@@ -3,15 +3,10 @@
 # build uses too much memory on i386 (noticed in calls_group_menu.cpp)
 NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
-# XXX Starting with 6.1.4 opening chats (presumably those containing media)
-#   causes crashes (regardless of ffmpeg's version).
-# NB  Both GDB and LLDB abort when loading Telegram.core;  GDB can attach
-#   to a running process, but debug-tdesktop (see below) is needed, anyway.
-USE_NOBTCFI-amd64 =	Yes
-
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			6.2.4
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -74,7 +69,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/kf6/kcoreaddons \
 			devel/libdispatch \
 			devel/protobuf \
-			graphics/ffmpeg>=8 \
+			graphics/ffmpeg>=8.0p2v1 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20250913 \
