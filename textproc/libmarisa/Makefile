@@ -32,7 +32,7 @@ PERMIT_PACKAGE =	Yes
 # C++
 COMPILER =		base-clang ports-gcc
 
-PSEUDO_FLAVORS =	no_perl no_python no_ruby
+PSEUDO_FLAVORS =	no_ruby
 FLAVOR? =
 
 MULTI_PACKAGES =	-main -perl -python -ruby
@@ -40,33 +40,18 @@ MULTI_PACKAGES =	-main -perl -python -ruby
 RUN_DEPENDS-main =	# empty
 WANTLIB-main += ${COMPILER_LIBCXX} c m
 
-.include <bsd.port.arch.mk>
-
-.if ${BUILD_PACKAGES:M-perl} || ${BUILD_PACKAGES:M-python} || ${BUILD_PACKAGES:M-ruby}
 BUILD_DEPENDS +=	devel/swig
-.endif
 
-.if ${BUILD_PACKAGES:M-perl}
 MODULES +=		perl
 LIB_DEPENDS-perl =	${BUILD_PKGPATH},-main=${V}
 RUN_DEPENDS-perl =	# empty
 WANTLIB-perl =		c marisa perl
-.endif
 
-.if ${BUILD_PACKAGES:M-python}
 MODULES +=		lang/python
 BUILD_DEPENDS +=	devel/py-setuptools
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main=${V}
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 WANTLIB-python =	${COMPILER_LIBCXX} m marisa
-.endif
-
-.if ${BUILD_PACKAGES:M-ruby}
-MODULES +=		lang/ruby
-LIB_DEPENDS-ruby =	${BUILD_PKGPATH},-main=${V}
-RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
-WANTLIB-ruby =		${COMPILER_LIBCXX} c m marisa pthread
-.endif
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
@@ -77,22 +62,27 @@ CONFIGURE_ARGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS +=	--enable-sse2
 .endif
 
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-ruby}
+MODULES +=		lang/ruby
+LIB_DEPENDS-ruby =	${BUILD_PKGPATH},-main=${V}
+RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
+WANTLIB-ruby =		${COMPILER_LIBCXX} c m marisa pthread
+.endif
+
 post-build:
-.if ${BUILD_PACKAGES:M-perl}
 	cd ${WRKDIST}/bindings && make swig-perl
 	cd ${WRKDIST}/bindings/perl && \
 	    perl Makefile.PL \
 	    INC="-I${WRKSRC}/include" \
 	    LIBS="-L${WRKSRC}/lib/marisa/.libs -lmarisa" && \
 	    ${MAKE} ${MAKE_FLAGS}
-.endif
-.if ${BUILD_PACKAGES:M-python}
 	cd ${WRKDIST}/bindings && make swig-python
 	cd ${WRKDIST}/bindings/python && \
 	    ${MODPY_BIN} setup.py build_ext \
 	    --include-dirs=${WRKSRC}/include/ \
 	    --library-dirs=${WRKSRC}/lib/marisa/.libs
-.endif
 .if ${BUILD_PACKAGES:M-ruby}
 	cd ${WRKDIST}/bindings && make swig-ruby
 	cd ${WRKDIST}/bindings/ruby && \
@@ -103,14 +93,10 @@ post-build:
 .endif
 
 post-install:
-.if ${BUILD_PACKAGES:M-perl}
 	cd ${WRKDIST}/bindings/perl && \
 	    ${MAKE} ${MAKE_FLAGS} install
-.endif
-.if ${BUILD_PACKAGES:M-python}
 	cd ${WRKDIST}/bindings/python && \
 	    ${MODPY_BIN} setup.py ${MODPY_DISTUTILS_INSTALL}
-.endif
 .if ${BUILD_PACKAGES:M-ruby}
 	cd ${WRKDIST}/bindings/ruby && \
 	    ${MAKE} ${MAKE_FLAGS} install INSTALL_PROG="${INSTALL_SCRIPT}"
