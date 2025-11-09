@@ -1,0 +1,16 @@
+clang on riscv64 also provides __builtin___clear_cache()
+https://hg-edge.mozilla.org/releases/mozilla-beta/rev/6bb27ca75983
+https://hg-edge.mozilla.org/mozilla-central/rev/36f9e80ba3d2
+
+Index: js/src/jit/riscv64/Architecture-riscv64.cpp
+--- js/src/jit/riscv64/Architecture-riscv64.cpp.orig
++++ js/src/jit/riscv64/Architecture-riscv64.cpp
+@@ -76,7 +76,7 @@ void FlushICache(void* code, size_t size) {
+ #if defined(JS_SIMULATOR)
+   js::jit::SimulatorProcess::FlushICache(code, size);
+ 
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ #  if defined(__GNUC__)
+   intptr_t end = reinterpret_cast<intptr_t>(code) + size;
+   __builtin___clear_cache(reinterpret_cast<char*>(code),

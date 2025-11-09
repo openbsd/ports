@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 # Don't forget to bump www/firefox-i18n after updates.
 
 MOZILLA_VERSION =	144.0.2
+REVISION =		0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -68,9 +69,6 @@ CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 .if ${MACHINE_ARCH} != riscv64
 # LTO eats too much RAM on riscv64
 CONFIGURE_ARGS +=	--enable-lto=thin
-.else
-# riscv64 JIT code not ready for prime time #1994624
-CONFIGURE_ARGS +=	--disable-jit
 .endif
 
 # XXX badly formed debug ?

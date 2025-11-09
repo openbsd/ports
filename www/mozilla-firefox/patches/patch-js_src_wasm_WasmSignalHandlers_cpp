@@ -1,0 +1,20 @@
+sigcontext MD code for JIT on riscv64 #1994624
+https://hg-edge.mozilla.org/releases/mozilla-beta/rev/6bb27ca75983
+https://hg-edge.mozilla.org/mozilla-central/rev/36f9e80ba3d2
+
+Index: js/src/wasm/WasmSignalHandlers.cpp
+--- js/src/wasm/WasmSignalHandlers.cpp.orig
++++ js/src/wasm/WasmSignalHandlers.cpp
+@@ -100,6 +100,12 @@ using namespace js::wasm;
+ #      define RLR_sig(p) ((p)->sc_lr)
+ #      define R31_sig(p) ((p)->sc_sp)
+ #    endif
++#    if defined(__riscv)
++#      define RPC_sig(p) ((p)->sc_sepc)
++#      define RRA_sig(p) ((p)->sc_ra)
++#      define RFP_sig(p) ((p)->sc_s[0])
++#      define R02_sig(p) ((p)->sc_sp)
++#    endif
+ #    if defined(__mips__)
+ #      define EPC_sig(p) ((p)->sc_pc)
+ #      define RFP_sig(p) ((p)->sc_regs[30])
