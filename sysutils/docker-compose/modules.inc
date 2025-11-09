@@ -66,7 +66,7 @@ MODGO_MODULES =	\
 	github.com/cloudflare/cfssl							 v0.0.0-20180223231731-4e2dcbde5004 \
 	github.com/cncf/xds/go								 v0.0.0-20250501225837-2ac532fd4443 \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.9.0 \
+	github.com/compose-spec/compose-go/v2						 v2.9.1 \
 	github.com/containerd/accelerated-container-image				 v1.3.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
 	github.com/containerd/cgroups/v3						 v3.0.5 \
@@ -404,6 +404,7 @@ MODGO_MODFILES =	\
 	github.com/beorn7/perks					 v0.0.0-20150223135152-b965b613227f \
 	github.com/beorn7/perks					 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks					 v1.0.0 \
+	github.com/compose-spec/compose-go/v2			 v2.9.0 \
 	github.com/containerd/console				 v1.0.4 \
 	github.com/containerd/continuity			 v0.4.1 \
 	github.com/containerd/errdefs				 v0.3.0 \
