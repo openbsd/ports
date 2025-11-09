@@ -1,11 +1,13 @@
 COMMENT =	incredibly simple helpers for testing code with exceptions
 
-DISTNAME =	Test-Fatal-0.017
+DISTNAME =	Test-Fatal-0.018
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		RJBS
 
 MODULES =		cpan
 
