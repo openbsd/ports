@@ -1,14 +1,15 @@
-COMMENT=	perl module to implementing delay loading of object-data
+COMMENT =	perl module to implementing delay loading of object-data
 
-MODULES=	cpan
-PKG_ARCH=	*
-VERSION=	0.21
-REVISION=	0
-DISTNAME=	Object-Realize-Later-${VERSION}
-PKGNAME=	p5-Object-Realize-${VERSION}
-CATEGORIES=	devel
+MODULES =	cpan
+PKG_ARCH =	*
+VERSION =	0.22
+DISTNAME =	Object-Realize-Later-${VERSION}
+PKGNAME =	p5-Object-Realize-${VERSION}
+CATEGORIES =	devel
 
-HOMEPAGE=	http://perl.overmeer.net/
+HOMEPAGE =	http://perl.overmeer.net/
+
+CPAN_AUTHOR =	MARKOV
 
 # perl
 PERMIT_PACKAGE=	Yes
