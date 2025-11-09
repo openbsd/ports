@@ -1,15 +1,13 @@
 COMMENT=	CUPS drivers for SPL printers
 
-V=		2.0.1.20130902
-DISTNAME=	splix-${V}svn
-PKGNAME=	splix-${V}
-EXTRACT_SUFX=	.tar.bz2
-WRKDIST=	${WRKDIR}/splix
-REVISION=	4
+GH_ACCOUNT=	OpenPrinting
+GH_PROJECT=	splix
+GH_COMMIT=	47a05b3f98a60de8442168db8f9f12bb1c342575
+DISTNAME=	splix-2.0.2pre20251018
 
 CATEGORIES=	print
 
-HOMEPAGE=	http://splix.ap2c.org/
+HOMEPAGE=	https://openprinting.github.io/splix/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -19,10 +17,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c cups cupsimage jbig85 m
 
 COMPILER=	base-clang ports-gcc base-gcc
-
-# snapshot of SVN (Fedora tarball)
-SITES=	http://pkgs.fedoraproject.org/repo/pkgs/splix/${DISTNAME}${EXTRACT_SUFX}/2901e9482dd1a7c44f7b730696868e09/
-#SITES=	${SITE_SOURCEFORGE:=splix/}
 
 LIB_DEPENDS=	print/cups,-libs \
 		graphics/jbigkit

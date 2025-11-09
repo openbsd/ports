@@ -29,4 +29,4 @@ To obtain the color profile files download the official Linux drivers
 for your printer and look in the "cms" directory.
 
 Samsung color profile files are available at
-    http://splix.ap2c.org/samsung_cms.tar.bz2
+    https://openprinting.github.io/splix/samsung_cms.tar.bz2

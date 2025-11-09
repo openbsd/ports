@@ -5,14 +5,14 @@ Index: rules.mk
  
  $(rastertoqpdl_TARGET): $(rastertoqpdl_OBJ)
  	$(call printCmd, $(cmd_link))
--	$(Q)g++ -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) \
-+	$(Q)${CXX} -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) $(LDFLAGS) \
+-	$(Q)$(CXX) -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) \
++	$(Q)$(CXX) -o $@ $^ $(rastertoqpdl_CXXFLAGS) $(rastertoqpdl_LDFLAGS) $(LDFLAGS) \
  		$(rastertoqpdl_LIBS)
  
  $(pstoqpdl_TARGET): $(pstoqpdl_OBJ)
  	$(call printCmd, $(cmd_link))
--	$(Q)g++ -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) \
-+	$(Q)${CXX} -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) $(LDFLAGS) \
+-	$(Q)$(CXX) -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) \
++	$(Q)$(CXX) -o $@ $^ $(pstoqpdl_CXXFLAGS) $(pstoqpdl_LDFLAGS) $(LDFLAGS) \
  		$(pstoqpdl_LIBS)
  
  .PHONY: install installcms

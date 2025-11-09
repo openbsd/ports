@@ -2,6 +2,7 @@
 @bin libexec/cups/filter/rastertoqpdl
 share/cups/drv/splix/
 share/cups/drv/splix/splix-dell.drv
+share/cups/drv/splix/splix-hp.drv
 share/cups/drv/splix/splix-lexmark.drv
 share/cups/drv/splix/splix-samsung.drv
 share/cups/drv/splix/splix-toshiba.drv
