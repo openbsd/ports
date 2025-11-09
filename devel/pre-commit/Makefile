@@ -1,6 +1,6 @@
 COMMENT =		framework for managing git pre-commit hooks
 
-MODPY_DISTV =		4.3.0
+MODPY_DISTV =		4.4.0
 DISTNAME =		pre_commit-${MODPY_DISTV}
 PKGNAME =		pre-commit-${MODPY_DISTV}
 
