@@ -632,6 +632,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_event_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_messages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_messages.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_no_six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_no_six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_plugin_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_plugin_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -729,6 +731,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_p
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_profiles/_module_modern_m2c.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_profiles/_tagless.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_messages.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_no_six.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/${MODPY_PYCACHE}/
@@ -2080,8 +2083,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}path.${MO
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}plugin_docs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}plugin_docs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/${MODPY_PYCACHE}shlex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2128,7 +2129,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/lock.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/multiprocessing.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/path.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/plugin_docs.py
-lib/python${MODPY_VERSION}/site-packages/ansible/utils/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/sentinel.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/shlex.py
 lib/python${MODPY_VERSION}/site-packages/ansible/utils/singleton.py
@@ -2200,7 +2200,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/playbooks/windows_ho
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/default.ini
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/legacy.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/ansible-test.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/ansible.txt
@@ -2985,5 +2984,5 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/config/config.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.networking.template
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.winrm.template
 share/doc/ansible/
-share/doc/ansible/CHANGELOG-v2.19.rst
+share/doc/ansible/CHANGELOG-v2.20.rst
 share/doc/ansible/COPYING
