@@ -1,0 +1,16 @@
+Default to c17 like clang.
+
+Index: gcc/c-family/c-opts.cc
+--- gcc/c-family/c-opts.cc.orig
++++ gcc/c-family/c-opts.cc
+@@ -261,8 +261,8 @@ c_common_init_options (unsigned int decoded_options_co
+ 
+   if (c_language == clk_c)
+     {
+-      /* The default for C is gnu23.  */
+-      set_std_c23 (false /* ISO */);
++      /* The default for C is gnu17.  */
++      set_std_c17 (false /* ISO */);
+ 
+       /* If preprocessing assembly language, accept any of the C-family
+ 	 front end options since the driver may pass them through.  */

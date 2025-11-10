@@ -10,11 +10,15 @@ DPB_PROPERTIES = parallel
 
 USE_NOEXECONLY = Yes
 
+# local modifications to gcc to behave more like base-clang include:
+# - default to gnu17 (instead of gnu23)
+# - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
+#   into simple warnings.
 V = 15.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-REVISION = 0
+REVISION = 1
 
 ADASTRAP-amd64 = adastrap-amd64-11.2.0-5.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
