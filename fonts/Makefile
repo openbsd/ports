@@ -75,6 +75,7 @@
      SUBDIR += migmix
      SUBDIR += migu
      SUBDIR += mixfont-mplus-ipa
+     SUBDIR += monaspace
      SUBDIR += mononoki
      SUBDIR += mplus-fonts
      SUBDIR += msctfonts
