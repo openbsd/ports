@@ -1,0 +1,9 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+VTE includes 2 scripts providing OCS shell sequences that can be sourced to keep
+the terminal updated about the current directory:
+
+    ${SYSCONFDIR}/profile.d/vte.sh for bash and zsh
+    ${SYSCONFDIR}/profile.d/vte.ch for tcsh

@@ -1,5 +1,10 @@
 @conflict vte3-<0.70.1p0
 @bin libexec/vte-urlencode-cwd
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/vte3/
+share/examples/vte3/profile.d/
+share/examples/vte3/profile.d/vte.csh
+share/examples/vte3/profile.d/vte.sh
 share/glade/
 share/glade/catalogs/
 share/glade/pixmaps/

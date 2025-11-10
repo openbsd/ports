@@ -9,6 +9,8 @@ PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
 PKGNAME-common=		vte3-common-${GNOME_VERSION}
 
+REVISION-common=	0
+
 SHARED_LIBS += vte-2.91                  2.12 # 0.8000.3
 SHARED_LIBS += vte-2.91-gtk4             0.4 # 0
 
@@ -78,8 +80,8 @@ TEST_DEPENDS=		shells/bash
 CONFIGURE_ARGS +=	-D_b_symbolic_functions=false
 .endif
 
-# XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:
-	rm -r ${WRKINST}${SYSCONFDIR}/profile.d
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vte3/
+	mv ${WRKINST}${SYSCONFDIR}/profile.d ${PREFIX}/share/examples/vte3/
 
 .include <bsd.port.mk>
