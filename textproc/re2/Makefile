@@ -1,8 +1,7 @@
 COMMENT =		non-backtracking regular expression engine
-V =			2025-08-12
+V =			2025-11-05
 DISTNAME =		re2-${V}
 PKGNAME =		re2-${V:S/-//g}
-REVISION =		0
 
 SHARED_LIBS =		re2	3.0
 
