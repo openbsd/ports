@@ -3,8 +3,11 @@
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/vte3/
 share/examples/vte3/profile.d/
+@sample ${SYSCONFDIR}/profile.d/
 share/examples/vte3/profile.d/vte.csh
+@sample ${SYSCONFDIR}/profile.d/vte.csh
 share/examples/vte3/profile.d/vte.sh
+@sample ${SYSCONFDIR}/profile.d/vte.sh
 share/glade/
 share/glade/catalogs/
 share/glade/pixmaps/
