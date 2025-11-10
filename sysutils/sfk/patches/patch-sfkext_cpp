@@ -1,0 +1,12 @@
+Index: sfkext.cpp
+--- sfkext.cpp.orig
++++ sfkext.cpp
+@@ -488,7 +488,7 @@ int UDPIO::initSendReceive
+       memset(&mreq, 0, sizeof(mreq));
+       mreq.imr_interface.s_addr = htonl(INADDR_ANY);
+ 
+-      #if defined(MAC_OS_X) || defined(SOLARIS)
++      #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+         #define SOL_IP IPPROTO_IP
+       #endif
+ 

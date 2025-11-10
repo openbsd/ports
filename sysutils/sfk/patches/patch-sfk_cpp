@@ -1,0 +1,66 @@
+Index: sfk.cpp
+--- sfk.cpp.orig
++++ sfk.cpp
+@@ -1025,7 +1025,7 @@ int mygetpos64(FILE *f, num &rpos, char *pszFile)
+    fpos_t npos1;
+    if (fgetpos(f, &npos1))
+       return 9+perr("getpos failed on %s\n", pszFile);
+-   #if defined(MAC_OS_X) || defined(SOLARIS)
++   #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+    rpos = (num)npos1;
+    #else
+    rpos = (num)npos1.__pos;
+@@ -1038,7 +1038,7 @@ int mysetpos64(FILE *f, num pos, char *pszFile)
+    fpos_t npos1;
+    if (fgetpos(f, &npos1))
+       return 9+perr("getpos failed on %s\n", pszFile);
+-   #if defined(MAC_OS_X) || defined(SOLARIS)
++   #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+    npos1 = (fpos_t)pos;
+    #else
+    npos1.__pos = (__off_t)pos;
+@@ -2760,7 +2760,7 @@ int myfseek(FILE *f, num nOffset, int nOrigin)
+    fpos64_t xpos;
+    if (fgetpos64(f, &xpos)) // read xpos.__state
+       return 9+perr("internal: myfseek: failed to read position");
+-    #if defined(MAC_OS_X) || defined(SOLARIS)
++    #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+      xpos = (fpos_t)nOffset;
+     #else
+      if (sizeof(xpos.__pos) != sizeof(nOffset)) return 9+perr("internal: myfseek: wrong __pos size, need 64 bits");
+@@ -6202,7 +6202,7 @@ int mygetpos(FILE *f, num &rpos, char *pszFile)
+    fpos_t npos1;
+    if (fgetpos(f, &npos1))
+       return 9+perr("getpos failed on %s\n", pszFile);
+-   #if defined(MAC_OS_X) || defined(SOLARIS)
++   #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+    rpos = (num)npos1;
+    #else
+    rpos = (num)npos1.__pos;
+@@ -6215,7 +6215,7 @@ int mysetpos(FILE *f, num pos, char *pszFile)
+    fpos_t npos1;
+    if (fgetpos(f, &npos1))
+       return 9+perr("getpos failed on %s\n", pszFile);
+-   #if defined(MAC_OS_X) || defined(SOLARIS)
++   #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+    npos1 = (fpos_t)pos;
+    #else
+    npos1.__pos = (__off_t)pos;
+@@ -11736,7 +11736,7 @@ int Coi::seek(num nOffset, int nOrigin)
+    fpos64_t xpos;
+    if (fgetpos64(f, &xpos)) // read xpos.__state
+       return 9+perr("internal: seek: failed to read position");
+-    #if defined(MAC_OS_X) || defined(SOLARIS)
++    #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+      xpos = (fpos_t)nOffset;
+     #else
+      if (sizeof(xpos.__pos) != sizeof(nOffset)) return 9+perr("internal: myfseek: wrong __pos size, need 64 bits");
+@@ -35069,7 +35069,7 @@ int udpAnyServ(uint nPort, char *pszForward, int nForw
+       {
+          // multicast receive
+  
+-         #if defined(MAC_OS_X) || defined(SOLARIS)
++         #if defined(MAC_OS_X) || defined(SOLARIS) || defined(OPENBSD)
+             #define SOL_IP IPPROTO_IP
+          #endif
+  

@@ -1,0 +1,39 @@
+Index: sfkbase.hpp
+--- sfkbase.hpp.orig
++++ sfkbase.hpp
+@@ -20,6 +20,9 @@
+  #if defined(__sun) && defined(__SVR4)
+   #define SOLARIS
+  #endif
++ #if defined(__OpenBSD__)
++  #define OPENBSD
++ #endif
+ #endif
+ 
+ #include <stdlib.h>
+@@ -30,7 +33,6 @@
+ #include <assert.h>
+ #include <time.h>
+ #include <math.h>
+-#include <sys/timeb.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <limits.h>
+@@ -105,7 +107,7 @@
+   #include <pwd.h>
+   #include <ifaddrs.h>
+   #include <fcntl.h>
+-  #ifndef MAC_OS_X
++  #if !defined(MAC_OS_X) && !defined(OPENBSD)
+    #include <wait.h>
+    #include <net/if_arp.h>
+    #include <linux/sockios.h>
+@@ -134,7 +136,7 @@
+ 
+ // - - - - - basic types and tracing - - - - -
+ 
+-#ifdef MAC_OS_X
++#if defined(MAC_OS_X) || defined(OPENBSD)
+  #define fpos64_t  fpos_t
+  #define fgetpos64 fgetpos
+  #define fsetpos64 fsetpos
