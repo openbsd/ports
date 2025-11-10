@@ -1,12 +1,13 @@
 Index: sub/av_sub.c
 --- sub/av_sub.c.orig
 +++ sub/av_sub.c
-@@ -30,7 +30,7 @@ void reset_avsub(struct sh_sub *sh)
+@@ -30,8 +30,7 @@ void reset_avsub(struct sh_sub *sh)
          AVCodecContext *ctx = sh->context;
          ctx->extradata = NULL;
          ctx->extradata_size = 0;
 -        avcodec_close(sh->context);
+-        av_freep(&sh->context);
 +        avcodec_free_context(&sh->context);
-         av_freep(&sh->context);
      }
  }
+ 

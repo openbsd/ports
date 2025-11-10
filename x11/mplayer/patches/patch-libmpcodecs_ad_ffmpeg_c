@@ -1,12 +1,15 @@
 Index: libmpcodecs/ad_ffmpeg.c
 --- libmpcodecs/ad_ffmpeg.c.orig
 +++ libmpcodecs/ad_ffmpeg.c
-@@ -196,7 +196,7 @@ static void uninit(sh_audio_t *sh)
+@@ -196,10 +196,9 @@ static void uninit(sh_audio_t *sh)
  {
      AVCodecContext *lavc_context = sh->context;
  
 -    if (avcodec_close(lavc_context) < 0)
-+    avcodec_free_context(&lavc_context);
- 	mp_msg(MSGT_DECVIDEO, MSGL_ERR, MSGTR_CantCloseCodec);
+-	mp_msg(MSGT_DECVIDEO, MSGL_ERR, MSGTR_CantCloseCodec);
      av_freep(&lavc_context->opaque);
      av_freep(&lavc_context->extradata);
++    avcodec_free_context(&lavc_context);
+     av_freep(&lavc_context);
+ }
+ 

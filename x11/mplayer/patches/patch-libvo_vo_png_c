@@ -1,21 +1,23 @@
 Index: libvo/vo_png.c
 --- libvo/vo_png.c.orig
 +++ libvo/vo_png.c
-@@ -126,7 +126,7 @@ config(uint32_t width, uint32_t height, uint32_t d_wid
+@@ -126,8 +126,7 @@ config(uint32_t width, uint32_t height, uint32_t d_wid
  
  
      if (avctx && png_format != format) {
 -        avcodec_close(avctx);
+-        av_freep(&avctx);
 +        avcodec_free_context(&avctx);
-         av_freep(&avctx);
      }
  
-@@ -214,7 +214,7 @@ query_format(uint32_t format)
+     if (!avctx) {
+@@ -214,8 +213,7 @@ query_format(uint32_t format)
  }
  
  static void uninit(void){
 -    avcodec_close(avctx);
+-    av_freep(&avctx);
 +    avcodec_free_context(&avctx);
-     av_freep(&avctx);
      av_freep(&outbuffer);
      outbuffer_size = 0;
+     free(png_outdir);
