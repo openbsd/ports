@@ -55,3 +55,13 @@ Index: gcc/configure
      *) enable_default_ssp=$enableval ;;
    esac
  else
+@@ -30981,6 +30987,9 @@ case "$target" in
+     else
+       gcc_cv_target_dl_iterate_phdr=no
+     fi
++    ;;
++  *-*-openbsd*)
++    gcc_cv_target_dl_iterate_phdr=yes
+     ;;
+   *-*-dragonfly* | *-*-freebsd*)
+     if grep dl_iterate_phdr $target_header_dir/sys/link_elf.h > /dev/null 2>&1; then

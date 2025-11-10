@@ -55,3 +55,13 @@ Index: gcc/configure
      *) enable_default_ssp=$enableval ;;
    esac
  else
+@@ -33636,6 +33642,9 @@ $as_echo_n "checking dl_iterate_phdr in target C libra
+ gcc_cv_target_dl_iterate_phdr=unknown
+ case "$target" in
+   *-*-solaris2*)
++    gcc_cv_target_dl_iterate_phdr=yes
++    ;;
++  *-*-openbsd*)
+     gcc_cv_target_dl_iterate_phdr=yes
+     ;;
+   *-*-dragonfly* | *-*-freebsd*)
