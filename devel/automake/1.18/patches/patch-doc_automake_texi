@@ -36,7 +36,7 @@ Index: doc/automake.texi
  @end direntry
  
  @titlepage
-@@ -1600,15 +1601,15 @@ curious: the basic idea is to run:
+@@ -1603,15 +1604,15 @@ curious: the basic idea is to run:
  
  @enumerate
  @item @command{aclocal} (@pxref{aclocal Invocation}),
@@ -55,7 +55,7 @@ Index: doc/automake.texi
  invoked at different points.  Thus, as you can see, using
  @command{autoreconf} is quite a bit more convenient.
  
-@@ -8069,7 +8070,7 @@ AM_PATH_PYTHON([2.5])
+@@ -8072,7 +8073,7 @@ AM_PATH_PYTHON([2.5])
  
  @noindent
  This is fine when Python is an absolute requirement for the package.
@@ -64,7 +64,7 @@ Index: doc/automake.texi
  @code{AM_PATH_PYTHON} could be called as follows.
  
  @example
-@@ -9295,7 +9296,7 @@ let's proceed with an example.  Suppose our package co
+@@ -9285,7 +9286,7 @@ let's proceed with an example.  Suppose our package co
  for which we want to build a man page using @command{help2man}.  GNU
  @command{help2man} produces simple manual pages from the
  @option{--help} and @option{--version} output of other commands

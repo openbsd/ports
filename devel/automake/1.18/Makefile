@@ -1,5 +1,5 @@
 VERSION=	1.18
-DISTNAME=	automake-${VERSION}
+DISTNAME=	automake-${VERSION}.1
 PKGSPEC=	automake->=${VERSION},<1.19
 EXTRACT_SUFX=	.tar.xz
 PORTROACH=
