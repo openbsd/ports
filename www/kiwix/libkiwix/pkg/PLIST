@@ -13,6 +13,7 @@ include/kiwix/manager.h
 include/kiwix/name_mapper.h
 include/kiwix/search_renderer.h
 include/kiwix/server.h
+include/kiwix/spelling_correction.h
 include/kiwix/tools.h
 include/kiwix/version.h
 @lib lib/libkiwix.so.${LIBkiwix_VERSION}
