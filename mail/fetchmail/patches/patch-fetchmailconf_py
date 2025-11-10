@@ -1,0 +1,11 @@
+Index: fetchmailconf.py
+--- fetchmailconf.py.orig
++++ fetchmailconf.py
+@@ -2296,6 +2296,7 @@ COPYING in the source or documentation directory for d
+ 
+     if not have_tk:
+         print("Python's tk (tkinter) module is missing. Please install it to use fetchmailconf.", file=sys.stderr)
++        print("Try 'pkg_add python-tkinter%3'.", file=sys.stderr)
+         sys.exit(1)
+ 
+     # OK, now run the configuration edit

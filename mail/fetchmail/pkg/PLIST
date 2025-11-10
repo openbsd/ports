@@ -1,30 +1,35 @@
 @bin bin/fetchmail
 bin/fetchmailconf
-libexec/fetchmailconf.bin
 @man man/man1/fetchmail.1
 @man man/man1/fetchmailconf.1
 share/doc/fetchmail/
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
 share/doc/fetchmail/FEATURES
+share/doc/fetchmail/Mailbox-Names-UTF7.html
+share/doc/fetchmail/NEWS
 share/doc/fetchmail/NOTES
 share/doc/fetchmail/README
+share/doc/fetchmail/README.NTLM
+share/doc/fetchmail/README.SSL
+share/doc/fetchmail/README.SSL-SERVER
+share/doc/fetchmail/README.packaging
 share/doc/fetchmail/design-notes.html
+share/doc/fetchmail/esrs-design-notes.html
 share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/fetchmail-features.html
+share/doc/fetchmail/fetchmail-man.html
 share/doc/fetchmail/todo.html
 share/locale/cs/LC_MESSAGES/fetchmail.mo
 share/locale/de/LC_MESSAGES/fetchmail.mo
 share/locale/eo/LC_MESSAGES/fetchmail.mo
 share/locale/es/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
+share/locale/it/LC_MESSAGES/fetchmail.mo
 share/locale/ja/LC_MESSAGES/fetchmail.mo
 share/locale/pl/LC_MESSAGES/fetchmail.mo
 share/locale/ro/LC_MESSAGES/fetchmail.mo
-share/locale/ru/LC_MESSAGES/fetchmail.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/fetchmail.mo
-share/locale/sr/LC_MESSAGES/fetchmail.mo
 share/locale/sv/LC_MESSAGES/fetchmail.mo
-share/locale/vi/LC_MESSAGES/fetchmail.mo
