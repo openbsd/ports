@@ -2,6 +2,7 @@ COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
 XFCE_VERSION=	4.20.3
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -14,6 +15,7 @@ MODXFCE_PURGE_LA =	lib/xfce4/session/splash-engines
 CONFIGURE_ENV=  ac_cv_header_sys_user_h=yes
 CONFIGURE_ARGS=	--disable-linker-opts \
 		--disable-systemd \
+		--with-wayland-session-prefix=${PREFIX} \
 		--with-xsession-prefix=${PREFIX}
 #CONFIGURE_ARGS+= --enable-session-screenshots
 #XXX session-screenshots broken?
@@ -42,8 +44,7 @@ WANTLIB += wayland-egl xfce4windowing-0 xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \
-		conffilesdir=${PREFIX}/share/examples/xfce4-session \
-		desktop_waylanddir=${PREFIX}/share/examples/xfce4-session
+		conffilesdir=${PREFIX}/share/examples/xfce4-session
 
 post-install:
 	${SUBST_CMD} ${PREFIX}/bin/xflock4

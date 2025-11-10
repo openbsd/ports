@@ -14,7 +14,6 @@ share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
 share/examples/xfce4-session/
 share/examples/xfce4-session/Xft.xrdb
-share/examples/xfce4-session/xfce-wayland.desktop
 share/examples/xfce4-session/xfce4-session.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 share/examples/xfce4-session/xinitrc
@@ -122,6 +121,8 @@ share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/polkit-1/actions/org.xfce.session.policy
+share/wayland-sessions/
+share/wayland-sessions/xfce-wayland.desktop
 share/xdg-desktop-portal/
 share/xdg-desktop-portal/xfce-portals.conf
 share/xfce4/
