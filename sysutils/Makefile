@@ -427,6 +427,7 @@
      SUBDIR += sec
      SUBDIR += serf
      SUBDIR += setquota
+     SUBDIR += sfk
      SUBDIR += shelldap
      SUBDIR += shmux
      SUBDIR += shunt
