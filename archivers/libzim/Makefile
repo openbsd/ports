@@ -1,9 +1,9 @@
 BROKEN-sparc64 = error: comparison of integer expressions of different signedness
 COMMENT =	reference implementation of the ZIM specification
 
-DISTNAME =	libzim-9.3.0
+DISTNAME =	libzim-9.4.0
 
-SHARED_LIBS +=  zim                       4.0 # 9.3.0
+SHARED_LIBS +=  zim                       5.0 # 9.4.0
 
 CATEGORIES =	archivers
 
