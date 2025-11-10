@@ -1,0 +1,13 @@
+Should match b_lundef in meson(1).
+
+Index: libyelp/web-process-extension/meson.build
+--- libyelp/web-process-extension/meson.build.orig
++++ libyelp/web-process-extension/meson.build
+@@ -8,7 +8,6 @@ webprocessextension_sources = files(
+ webprocessextension = library('yelpwebprocessextension',
+                              sources: webprocessextension_sources,
+                              install: true,
+-                             link_args : ['-Wl,--no-undefined'],
+                              dependencies: [libadwaita_dep, webkitgtk_web_process_extension_dep],
+                              include_directories: [configinc, libyelpinc],
+                              c_args: ['-DHAVE_CONFIG_H'],

@@ -1,16 +1,18 @@
 COMMENT=		GNOME help browser
 
-DIST_TUPLE=		gnome GNOME yelp 42.3 .
+GNOME_PROJECT=		yelp
+GNOME_VERSION=		49.0
 
-SHARED_LIBS += yelp                      0.0 # 0.0.0
+SHARED_LIBS += yelp-1                    0.0 # 0.0.0
 
 HOMEPAGE=		https://apps.gnome.org/Yelp/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += bz2 c exslt gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += handy-1 intl lzma sqlite3 webkit2gtk-4.1 xml2 xslt
+WANTLIB += adwaita-1 bz2 c exslt gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-4 intl javascriptcoregtk-6.0 lzma m sqlite3 webkitgtk-6.0
+WANTLIB += xml2 xslt
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -24,8 +26,8 @@ BUILD_DEPENDS=		x11/gnome/yelp-xsl \
 RUN_DEPENDS=		x11/gnome/yelp-xsl
 
 LIB_DEPENDS=		archivers/xz \
-			www/webkitgtk4,webkitgtk41 \
-			x11/libhandy
+			www/webkitgtk4,webkitgtk60 \
+			x11/gnome/libadwaita
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
