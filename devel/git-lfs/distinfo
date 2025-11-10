@@ -1,2 +1,4 @@
-SHA256 (git-lfs-2.13.2.tar.gz) = eC5idd+co3BzCUURLhaguMZLmBnwth+uUroeu8jc4tU=
-SIZE (git-lfs-2.13.2.tar.gz) = 2527736
+SHA256 (git-lfs-3.7.1-vendor.tar.gz) = S2cg0ApsrgXDIcKTAgsL+4hQu3df0lTYygKovOzSAas=
+SHA256 (git-lfs-v3.7.1.tar.gz) = j1YFhiLt/qHREeUOmETvL1zmcLLb5NVdSOdlyUOvQ1E=
+SIZE (git-lfs-3.7.1-vendor.tar.gz) = 3134588
+SIZE (git-lfs-v3.7.1.tar.gz) = 713503
