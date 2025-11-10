@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 # Don't forget to bump www/firefox-i18n after updates.
 
 MOZILLA_VERSION =	144.0.2
-REVISION =		0
+REVISION =		1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -24,6 +24,10 @@ PERMIT_PACKAGE=	Yes
 
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla lang/python
+
+SITES.p =	https://bugzilla.mozilla.org/
+PATCHFILES.p=	bug-1962139-ffmpeg8.patch{attachment.cgi?id=9524599}
+PATCH_DIST_STRIP =	-p1 -f
 
 MODPY_RUNDEP =	No
 
