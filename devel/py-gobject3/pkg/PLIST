@@ -48,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/GObject.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gdk.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GdkPixbuf.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gio.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GioUnix.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gtk.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Pango.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/__init__.py
@@ -58,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GObject.${
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gdk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GdkPixbuf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GioUnix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Pango.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
