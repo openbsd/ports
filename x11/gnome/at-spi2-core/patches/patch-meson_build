@@ -3,8 +3,8 @@ XXX push upstream; this is what gdk-pixbuf is doing
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -87,16 +87,10 @@ if host_machine.system() == 'darwin'
-   common_ldflags += [ '-compatibility_version', darwin_versions[0], '-current_version', darwin_versions[1]]
+@@ -88,16 +88,10 @@ if host_machine.system() == 'darwin'
+   add_project_arguments([ '-D_DARWIN_C_SOURCE' ], language: 'c')
  endif
  
 -# Functions
