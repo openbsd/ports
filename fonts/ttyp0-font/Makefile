@@ -1,6 +1,7 @@
 COMMENT =		monospace bitmap screen fonts
 
 PKGNAME =		ttyp0-2.1
+REVISION =		0
 DISTNAME =		uw-${PKGNAME}
 CATEGORIES =		fonts x11
 
@@ -74,6 +75,8 @@ post-configure:
 	done
 
 pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/uw-ttyp0
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,fonts}/uw-ttyp0
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} Charset *.txt FAQ.html \
+		DesignNotes.html ${PREFIX}/share/doc/uw-ttyp0
 
 .include <bsd.port.mk>

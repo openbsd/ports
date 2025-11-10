@@ -1,3 +1,9 @@
+share/doc/uw-ttyp0/
+share/doc/uw-ttyp0/Charset
+share/doc/uw-ttyp0/CheckRendering.txt
+share/doc/uw-ttyp0/DesignNotes.html
+share/doc/uw-ttyp0/FAQ.html
+share/doc/uw-ttyp0/Thanks.txt
 share/fonts/
 @fontdir share/fonts/uw-ttyp0/
 share/fonts/uw-ttyp0/UW-Ttyp0-11-Bold.otb
