@@ -1,0 +1,17 @@
+The Monaspace type system is a monospaced type superfamily with some modern
+tricks up its sleeve. It consists of five variable axis typefaces. Each one
+has a distinct voice, but they are all metrics-compatible with one another,
+allowing you to mix and match them for a more expressive typographical
+palette.
+
+Monaspace features Texture Healing, a novel technique that evens out the
+density of monospaced type, bringing it closer to how proportional type
+has looked for centuries. Texture healing preserves the monospace grid,
+and works in most editors without needing new software or editor plugins.
+
+The Monaspace fonts come in four interchangeable variants:
+
+- Monaspace ____: the static family
+- Monaspace ____ Var or VF: the variable family
+- Monaspace ____ NF: static families patched with NerdFonts
+- Monaspace ____ Frozen: the "frozen" TTF family
