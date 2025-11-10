@@ -1,8 +1,7 @@
 COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor
-GNOME_VERSION=		45.0.1
-REVISION=		0
+GNOME_VERSION=		49.0
 
 CATEGORIES=		sysutils editors
 
