@@ -29,7 +29,7 @@ Index: meson.build
  	xkbcommon,
  	wayland_client,
  ]
-@@ -108,12 +108,16 @@ sources = [
+@@ -108,13 +108,17 @@ sources = [
  
  if libpam.found()
  	sources += ['pam.c']
@@ -40,8 +40,9 @@ Index: meson.build
 +	warning('You must do this manually post-install: chgrp auth /path/to/swaylock ; chmod g+s /path/to/swaylock')
 +	sources += ['bsdauth.c']
  else
- 	warning('The swaylock binary must be setuid when compiled without libpam')
+ 	warning('The swaylock binary often needs to be setuid when compiled without libpam')
  	warning('You must do this manually post-install: chmod a+s /path/to/swaylock')
+ 	warning('See the "Without PAM" section of the README for details.')
  	sources += ['shadow.c']
 -	dependencies += [crypt]
 +	dependencies += [crypt, rt]
