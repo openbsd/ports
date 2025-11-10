@@ -1,6 +1,6 @@
 COMMENT=		typefaces for GNOME
 
-GNOME_VERSION=		48.2
+GNOME_VERSION=		49.0
 GNOME_PROJECT=		adwaita-fonts
 
 CATEGORIES=		fonts x11
