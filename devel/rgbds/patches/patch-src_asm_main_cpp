@@ -1,16 +1,16 @@
 Index: src/asm/main.cpp
 --- src/asm/main.cpp.orig
 +++ src/asm/main.cpp
-@@ -10,6 +10,7 @@
- #include <stdlib.h>
- #include <string.h>
- #include <time.h>
+@@ -17,6 +17,7 @@
+ #include <unordered_map>
+ #include <utility>
+ #include <vector>
 +#include <unistd.h>
  
- #include "diagnostics.hpp"
- #include "extern/getopt.hpp"
-@@ -151,6 +152,11 @@ static std::vector<StateFeature> parseStateFeatures(ch
- }
+ #include "backtrace.hpp"
+ #include "cli.hpp"
+@@ -498,6 +499,11 @@ static void verboseOutputConfig() {
+ // LCOV_EXCL_STOP
  
  int main(int argc, char *argv[]) {
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1) {

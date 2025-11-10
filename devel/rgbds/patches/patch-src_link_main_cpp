@@ -1,16 +1,16 @@
 Index: src/link/main.cpp
 --- src/link/main.cpp.orig
 +++ src/link/main.cpp
-@@ -8,6 +8,7 @@
- #include <stdarg.h>
+@@ -10,6 +10,7 @@
+ #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
 +#include <unistd.h>
  #include <utility>
  
- #include "diagnostics.hpp"
-@@ -211,6 +212,11 @@ static void parseScrambleSpec(char *spec) {
- }
+ #include "backtrace.hpp"
+@@ -415,6 +416,11 @@ static void verboseOutputConfig() {
+ // LCOV_EXCL_STOP
  
  int main(int argc, char *argv[]) {
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
@@ -18,6 +18,6 @@ Index: src/link/main.cpp
 +		return 1;
 +	}
 +
- 	char const *linkerScriptName = nullptr; // -l
+ 	cli_ParseArgs(argc, argv, optstring, longopts, parseArg, usage);
  
- 	// Parse options
+ 	verboseOutputConfig();

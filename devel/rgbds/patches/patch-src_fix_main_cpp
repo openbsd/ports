@@ -1,15 +1,15 @@
 Index: src/fix/main.cpp
 --- src/fix/main.cpp.orig
 +++ src/fix/main.cpp
-@@ -10,6 +10,7 @@
+@@ -11,6 +11,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
 +#include <unistd.h>
- #include <vector>
  
+ #include "cli.hpp"
  #include "diagnostics.hpp"
-@@ -670,6 +671,11 @@ static void initLogo() {
+@@ -346,6 +347,11 @@ static void initLogo() {
  }
  
  int main(int argc, char *argv[]) {
@@ -18,6 +18,6 @@ Index: src/fix/main.cpp
 +		return 1;
 +	}
 +
- 	char const *outputFilename = nullptr;
- 	for (int ch; (ch = musl_getopt_long_only(argc, argv, optstring, longopts, nullptr)) != -1;) {
- 		switch (ch) {
+ 	cli_ParseArgs(argc, argv, optstring, longopts, parseArg, usage);
+ 
+ 	if ((options.cartridgeType & 0xFF00) == TPP1 && !options.japanese) {

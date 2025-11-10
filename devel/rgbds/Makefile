@@ -2,7 +2,7 @@ BROKEN-sparc64 = src/link/script.y:17:11: fatal error: bit: No such file or dire
 
 COMMENT =	Game Boy development system
 
-V =		0.9.4
+V =		1.0.0
 DISTNAME =	rgbds-$V
 DISTFILES =	rgbds-$V{rgbds-source}${EXTRACT_SUFX}
 

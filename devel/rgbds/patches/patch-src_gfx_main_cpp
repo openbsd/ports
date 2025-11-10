@@ -2,14 +2,14 @@ Index: src/gfx/main.cpp
 --- src/gfx/main.cpp.orig
 +++ src/gfx/main.cpp
 @@ -12,6 +12,7 @@
- #include <stdlib.h>
  #include <string.h>
+ #include <string>
  #include <string_view>
 +#include <unistd.h>
  #include <vector>
  
- #include "diagnostics.hpp"
-@@ -741,6 +742,11 @@ static void replaceExtension(std::string &path, char c
+ #include "cli.hpp"
+@@ -639,6 +640,11 @@ static void replaceExtension(std::string &path, char c
  }
  
  int main(int argc, char *argv[]) {
@@ -18,6 +18,6 @@ Index: src/gfx/main.cpp
 +		return 1;
 +	}
 +
- 	struct AtFileStackEntry {
- 		int parentInd;            // Saved offset into parent argv
- 		std::vector<char *> argv; // This context's arg pointer vec
+ 	cli_ParseArgs(argc, argv, optstring, longopts, parseArg, usage);
+ 
+ 	if (options.nbColorsPerPal == 0) {
