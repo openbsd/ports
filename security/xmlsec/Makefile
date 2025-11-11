@@ -23,7 +23,8 @@ WANTLIB-main += c crypto gmp gnutls hogweed iconv idn2 intl ltdl
 WANTLIB-main += m nettle p11-kit pthread ssl tasn1 unistring xml2 xslt
 WANTLIB-main += z
 
-SITES=		${HOMEPAGE}download/
+SITES=		https://www.aleksey.com/xmlsec/download/ \
+		https://www.aleksey.com/xmlsec/download/older-releases/
 
 MULTI_PACKAGES=	-main -docs
 
