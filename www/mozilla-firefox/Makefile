@@ -3,16 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	144.0.2
-REVISION =		1
+MOZILLA_VERSION =	145.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-MOZILLA_PROFDATA_TASKID =	G7w52zrKRxyDlcIcDZYNGA
+MOZILLA_PROFDATA_TASKID =	RqimfYxpQEaO_r_rx3PjJg
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	156.0
+SO_VERSION =	157.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozinference mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3
@@ -65,6 +64,7 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 .endif
 
+MOZILLA_USE_DBUS =	Yes
 MOZILLA_USE_SYSTEM_AV1 =Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox

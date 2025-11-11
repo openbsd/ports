@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 
-FV =		144.0.2
+FV =		145.0
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
@@ -19,8 +19,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-SITES =	https://ftp.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/ \
-	http://releases.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/
+SITES =	https://ftp.mozilla.org/pub/firefox/releases/${FV}/linux-x86_64/xpi/ \
+	http://releases.mozilla.org/pub/firefox/releases/${FV}/linux-x86_64/xpi/
 
 LANGUAGES =	ach af an ar ast az be bg bn br bs ca cs cy da de dsb el en-GB en-US eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he \
