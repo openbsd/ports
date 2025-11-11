@@ -1,7 +1,6 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
-MODPY_DISTV =		0.20.0
-REVISION =		3
+MODPY_DISTV =		0.22.1
 DISTNAME =		uvloop-${MODPY_DISTV}
 PKGNAME =		py-uvloop-${MODPY_DISTV}
 
@@ -14,6 +13,11 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
+
+# fails with gcc, which doesn't like the trailing "":
+# cc -O2 -pipe -I/usr/local/include -fPIC -I/usr/local/include/python3.12 -c uvloop/loop.c -o build/temp.openbsd-7.8-amd64-cpython-312/uvloop/loop.o ""
+COMPILER =		base-clang
+COMPILER_LANGS =	c
 
 MODULES =		lang/python
 WANTLIB +=		pthread uv
@@ -32,18 +36,8 @@ TEST_DEPENDS =		security/py-openssl \
 			sysutils/py-psutil \
 			www/py-aiohttp
 
-MODPY_PYTEST_ARGS =	--deselect "tests/test_dns.py::Test_UV_DNS::test_getaddrinfo_8" \
-			--deselect "tests/test_dns.py::Test_UV_DNS::test_getaddrinfo_9" \
-			--deselect "tests/test_dns.py::Test_UV_DNS::test_getaddrinfo_21" \
-			--deselect "tests/test_fs_event.py" \
-			--deselect "tests/test_regr1.py" \
-			--deselect "tests/test_tcp.py::Test_UV_TCPSSL::test_write_to_closed_transport"
-
-pre-patch:
-	rm -r ${WRKSRC}/vendor
-	rm ${WRKSRC}/uvloop/loop.c
-
-pre-test:
-	cd ${WRKSRC} && test -d uvloop && mv uvloop uvloop-bk || test -d uvloop-bk
+MODPY_TEST_LINK_SO =	Yes
+MODPY_PYTEST_ARGS +=	--deselect tests/test_fs_event.py # segfaults
+MODPY_PYTEST_ARGS +=	--deselect tests/test_regr1.py # hangs
 
 .include <bsd.port.mk>
