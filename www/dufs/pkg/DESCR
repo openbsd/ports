@@ -1,0 +1,11 @@
+Dufs is a file server with features including:
+
+- Serve static files
+- Download folder as zip file
+- Upload files and folders (Drag & Drop)
+- Create/Edit/Search files
+- Resumable/partial uploads/downloads
+- Access control
+- Support https
+- Support webdav
+- Easy to use with curl
