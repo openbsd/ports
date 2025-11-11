@@ -1,15 +1,17 @@
 Index: lttoolbox/lt_tmxcomp.cc
 --- lttoolbox/lt_tmxcomp.cc.orig
 +++ lttoolbox/lt_tmxcomp.cc
-@@ -21,6 +21,7 @@
+@@ -21,8 +21,8 @@
  #include <libgen.h>
  #include <string>
  #include <getopt.h>
 +#include <unistd.h>
  
- 
+-
  void endProgram(char *name)
-@@ -47,6 +48,11 @@ void endProgram(char *name)
+ {
+   if(name != NULL)
+@@ -47,6 +47,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {

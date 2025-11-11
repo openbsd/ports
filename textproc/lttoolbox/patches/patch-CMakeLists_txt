@@ -1,0 +1,24 @@
+Use POSIX 2024 to work around a bug in our iostream header resulting in
+compilation errors when old _POSIX_C_SOURCE is set.
+
+Set _BSD_SOURCE to expose pledge().
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -102,7 +102,7 @@ if(WIN32)
+ 	add_definitions(-DSTDC_HEADERS -DREGEX_MALLOC)
+ 	include_directories("lttoolbox/win32")
+ else()
+-	add_definitions(-D_POSIX_C_SOURCE=200112 -D_GNU_SOURCE)
++	add_definitions(-D_POSIX_C_SOURCE=202405 -D_GNU_SOURCE -D_BSD_SOURCE)
+ endif()
+ 
+ if(NOT APPLE)
+@@ -137,6 +137,7 @@ endif()
+ 
+ # ICU
+ find_package(ICU COMPONENTS i18n io uc REQUIRED)
++include_directories(${ICU_INCLUDE_DIRS})
+ 
+ # utf8cpp / utfcpp
+ find_path(UTFCPP_INCLUDE_DIRS utf8.h PATH_SUFFIXES utf8cpp utfcpp utf8 REQUIRED)

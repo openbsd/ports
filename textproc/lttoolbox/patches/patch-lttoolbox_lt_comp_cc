@@ -1,5 +1,3 @@
-Last chunk: fix build with libxml >=2.14
-
 Index: lttoolbox/lt_comp.cc
 --- lttoolbox/lt_comp.cc.orig
 +++ lttoolbox/lt_comp.cc
@@ -23,12 +21,3 @@ Index: lttoolbox/lt_comp.cc
    LtLocale::tryToSetLocale();
    CLI cli("build a letter transducer from a dictionary", PACKAGE_VERSION);
    cli.add_bool_arg('d', "debug", "insert line numbers before each entry");
-@@ -119,7 +125,7 @@ int main(int argc, char *argv[])
-     std::cerr << "Error: Cannot not open file '" << infile << "'." << std::endl << std::endl;
-     exit(EXIT_FAILURE);
-   }
--  initGenericErrorDefaultFunc(NULL);
-+  xmlSetGenericErrorFunc(NULL, NULL);
- 
- 
-   if(opc == "lr")

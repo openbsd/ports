@@ -1,10 +1,9 @@
 COMMENT =		finite-state lexical processing toolkit
 
-V =			3.7.6
+V =			3.8.2
 DISTNAME =		lttoolbox-$V
-REVISION =		1
 
-SHARED_LIBS +=		lttoolbox                1.0 # 3.0
+SHARED_LIBS +=		lttoolbox                2.0 # 3.0
 
 CATEGORIES =		textproc
 
@@ -19,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB += c iconv m pthread ${COMPILER_LIBCXX} xml2 z
-WANTLIB += icudata icui18n icuio icuuc
+WANTLIB += c m pthread ${COMPILER_LIBCXX} xml2
+WANTLIB += icui18n icuio icuuc
 
 SITES =		https://github.com/apertium/lttoolbox/releases/download/v$V/
 
@@ -29,15 +28,12 @@ EXTRACT_SUFX =		.tar.bz2
 # C++2b
 COMPILER =		base-clang ports-gcc
 
+MODULES =		devel/cmake
+
 BUILD_DEPENDS =		devel/utfcpp
-LIB_DEPENDS =		converters/libiconv \
-			textproc/icu4c \
+LIB_DEPENDS =		textproc/icu4c \
 			textproc/libxml
 
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
-
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/utf8cpp"
+#CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 
 .include <bsd.port.mk>

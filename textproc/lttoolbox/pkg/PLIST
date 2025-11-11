@@ -1,11 +1,12 @@
 @conflict apertium-separable-<0.6.1
-@bin bin/lsx-comp
+bin/lsx-comp
 @bin bin/lt-append
 @bin bin/lt-apply-acx
 @bin bin/lt-comp
 @bin bin/lt-compose
 @bin bin/lt-expand
 @bin bin/lt-invert
+@bin bin/lt-merge
 @bin bin/lt-paradigm
 @bin bin/lt-print
 @bin bin/lt-proc
@@ -40,6 +41,7 @@ include/lttoolbox/serialiser.h
 include/lttoolbox/sorted_vector.h
 include/lttoolbox/sorted_vector.hpp
 include/lttoolbox/state.h
+include/lttoolbox/stream_reader.h
 include/lttoolbox/string_utils.h
 include/lttoolbox/symbol_iter.h
 include/lttoolbox/tmx_compiler.h
@@ -48,8 +50,6 @@ include/lttoolbox/transducer.h
 include/lttoolbox/ustring.h
 include/lttoolbox/xml_parse_util.h
 include/lttoolbox/xml_walk_util.h
-@static-lib lib/liblttoolbox.a
-lib/liblttoolbox.la
 @lib lib/liblttoolbox.so.${LIBlttoolbox_VERSION}
 lib/pkgconfig/lttoolbox.pc
 @man man/man1/lsx-comp.1
@@ -57,6 +57,7 @@ lib/pkgconfig/lttoolbox.pc
 @man man/man1/lt-comp.1
 @man man/man1/lt-compose.1
 @man man/man1/lt-expand.1
+@man man/man1/lt-merge.1
 @man man/man1/lt-paradigm.1
 @man man/man1/lt-print.1
 @man man/man1/lt-proc.1

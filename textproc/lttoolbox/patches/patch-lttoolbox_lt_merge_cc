@@ -1,0 +1,19 @@
+Index: lttoolbox/lt_merge.cc
+--- lttoolbox/lt_merge.cc.orig
++++ lttoolbox/lt_merge.cc
+@@ -19,10 +19,14 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/lt_locale.h>
+ #include <iostream>
++#include <unistd.h>
+ 
+-
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return 1;
++  }
+   LtLocale::tryToSetLocale();
+   CLI cli("merge lexical units from the one tagged BEG until END", PACKAGE_VERSION);
+   cli.add_file_arg("input_file");
