@@ -1,7 +1,7 @@
 Index: src/lua/lua_util.c
 --- src/lua/lua_util.c.orig
 +++ src/lua/lua_util.c
-@@ -2539,11 +2539,19 @@ lua_util_get_memory_usage(lua_State *L)
+@@ -2556,11 +2556,19 @@ lua_util_get_memory_usage(lua_State *L)
  
  	if (sysctl(mib, 4, &kp, &len, NULL, 0) == 0) {
  		lua_pushstring(L, "rss");
@@ -20,4 +20,4 @@ Index: src/lua/lua_util.c
 +#endif
  		lua_settable(L, -3);
  	}
- #endif
+ #elif defined(__OpenBSD__)

@@ -65,6 +65,8 @@ share/examples/rspamd/modules.conf
 @sample ${ETC}/rspamd/modules.conf
 share/examples/rspamd/modules.d/
 @sample ${ETC}/rspamd/modules.d/
+share/examples/rspamd/modules.d/aliases.conf
+@sample ${ETC}/rspamd/modules.d/aliases.conf
 share/examples/rspamd/modules.d/antivirus.conf
 @sample ${ETC}/rspamd/modules.d/antivirus.conf
 share/examples/rspamd/modules.d/arc.conf
@@ -276,7 +278,9 @@ share/rspamd/lualib/fun.lua
 share/rspamd/lualib/global_functions.lua
 share/rspamd/lualib/llm_common.lua
 share/rspamd/lualib/llm_context.lua
+share/rspamd/lualib/llm_search_context.lua
 share/rspamd/lualib/lpegre.lua
+share/rspamd/lualib/lua_aliases.lua
 share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_aws.lua
 share/rspamd/lualib/lua_bayes_learn.lua
@@ -299,6 +303,7 @@ share/rspamd/lualib/lua_ffi/init.lua
 share/rspamd/lualib/lua_ffi/linalg.lua
 share/rspamd/lualib/lua_ffi/spf.lua
 share/rspamd/lualib/lua_fuzzy.lua
+share/rspamd/lualib/lua_fuzzy_html.lua
 share/rspamd/lualib/lua_lexer.lua
 share/rspamd/lualib/lua_magic/
 share/rspamd/lualib/lua_magic/heuristics.lua
@@ -396,6 +401,7 @@ share/rspamd/lualib/rspamadm/template.lua
 share/rspamd/lualib/rspamadm/vault.lua
 share/rspamd/lualib/tableshape.lua
 share/rspamd/plugins/
+share/rspamd/plugins/aliases.lua
 share/rspamd/plugins/antivirus.lua
 share/rspamd/plugins/arc.lua
 share/rspamd/plugins/asn.lua
@@ -460,6 +466,7 @@ share/rspamd/rules/controller/maps.lua
 share/rspamd/rules/controller/neural.lua
 share/rspamd/rules/controller/selectors.lua
 share/rspamd/rules/forwarding.lua
+share/rspamd/rules/fuzzy_html_phishing.lua
 share/rspamd/rules/headers_checks.lua
 share/rspamd/rules/html.lua
 share/rspamd/rules/mid.lua
@@ -478,12 +485,11 @@ share/rspamd/www/README.md
 share/rspamd/www/apple-touch-icon.png
 share/rspamd/www/browserconfig.xml
 share/rspamd/www/css/
-share/rspamd/www/css/FooTable.Glyphicons.css
+share/rspamd/www/css/FooTable.FontAwesome.css
 share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/codejar-linenumbers.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/d3pie.css
-share/rspamd/www/css/font-glyphicons.css
 share/rspamd/www/css/footable.standalone.min.css
 share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/prism.css
@@ -492,20 +498,18 @@ share/rspamd/www/css/svg-with-js.min.css
 share/rspamd/www/favicon-16x16.png
 share/rspamd/www/favicon-32x32.png
 share/rspamd/www/favicon.ico
-share/rspamd/www/fonts/
-share/rspamd/www/fonts/glyphicons-halflings-regular.ttf
-share/rspamd/www/fonts/glyphicons-halflings-regular.woff
-share/rspamd/www/fonts/glyphicons-halflings-regular.woff2
 share/rspamd/www/img/
 share/rspamd/www/img/asc.png
 share/rspamd/www/img/desc.png
 share/rspamd/www/img/drop-area.svg
 share/rspamd/www/img/rspamd_logo_navbar.png
+share/rspamd/www/img/rspamd_logo_navbar_dark.png
 share/rspamd/www/index.html
 share/rspamd/www/js/
 share/rspamd/www/js/app/
 share/rspamd/www/js/app/common.js
 share/rspamd/www/js/app/config.js
+share/rspamd/www/js/app/footable-fontawesome.js
 share/rspamd/www/js/app/graph.js
 share/rspamd/www/js/app/history.js
 share/rspamd/www/js/app/libft.js
