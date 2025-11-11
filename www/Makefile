@@ -36,6 +36,7 @@
      SUBDIR += dokuwiki
      SUBDIR += dooble
      SUBDIR += drush
+     SUBDIR += dufs
      SUBDIR += e2guardian
      SUBDIR += edbrowse
      SUBDIR += elinks
