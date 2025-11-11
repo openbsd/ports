@@ -1,7 +1,7 @@
 COMMENT =	recursive structural transfer module for apertium
 
 DISTNAME =	apertium-recursive-$V
-V =		1.1.2
+V =		1.2.1
 
 CATEGORIES =	textproc
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/utf8cpp"
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION =	1.18
 
 .include <bsd.port.mk>

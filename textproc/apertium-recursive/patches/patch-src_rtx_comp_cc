@@ -1,15 +1,13 @@
 Index: src/rtx_comp.cc
 --- src/rtx_comp.cc.orig
 +++ src/rtx_comp.cc
-@@ -7,6 +7,7 @@
- #include <getopt.h>
+@@ -7,11 +7,17 @@
+ #include <iostream>
  #include <libxml/xmlreader.h>
  #include <trx_compiler.h>
 +#include <unistd.h>
  
  using namespace std;
- 
-@@ -33,6 +34,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
@@ -19,5 +17,5 @@ Index: src/rtx_comp.cc
 +    exit(EXIT_FAILURE);
 +  }
    LtLocale::tryToSetLocale();
- 
- #if HAVE_GETOPT_LONG
+   CLI cli("compile .rtx files", PACKAGE_VERSION);
+   cli.add_str_arg('e', "exclude", "exclude a rule by name", "NAME");
