@@ -3,7 +3,7 @@ argv0 isn't suitable as current_exe() in all cases.
 Index: library/std/src/sys/pal/unix/os.rs
 --- library/std/src/sys/pal/unix/os.rs.orig
 +++ library/std/src/sys/pal/unix/os.rs
-@@ -391,13 +391,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
+@@ -370,13 +370,13 @@ pub fn current_exe() -> io::Result<PathBuf> {
          cvt(libc::sysctl(mib, 4, argv.as_mut_ptr() as *mut _, &mut argv_len, ptr::null_mut(), 0))?;
          argv.set_len(argv_len as usize);
          if argv[0].is_null() {

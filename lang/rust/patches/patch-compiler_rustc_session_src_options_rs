@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1970,6 +1970,25 @@ pub mod parse {
+@@ -2034,6 +2034,25 @@ pub mod parse {
      }
  }
  
@@ -30,7 +30,7 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      CodegenOptions, CodegenOptionsTargetModifiers, CG_OPTIONS, cgopts, "C", "codegen",
  
-@@ -2156,11 +2175,11 @@ options! {
+@@ -2220,11 +2239,11 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),

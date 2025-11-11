@@ -1,6 +1,6 @@
 # increment after rust compiler update to trigger updates of
 # all compiled rust packages (see arch-defines.mk)
-_SYSTEM_VERSION-rust =	17
+_SYSTEM_VERSION-rust =	18
 
 CATEGORIES +=		lang/rust
 
@@ -14,7 +14,7 @@ MODRUST_WANTLIB +=	c pthread
 MODRUST_WANTLIB +=	c++abi
 .else
 # libgcc.a is static
-MODRUST_WANTLIB +=	
+MODRUST_WANTLIB +=
 .endif
 
 CHECK_LIB_DEPENDS_ARGS +=	-S MODRUST_WANTLIB="${MODRUST_WANTLIB}"
