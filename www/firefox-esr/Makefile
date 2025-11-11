@@ -1,12 +1,12 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-MOZILLA_VERSION =	140.4.0esr
+MOZILLA_VERSION =	140.5.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
-MOZILLA_PROFDATA_TASKID = TK9s3rWYSXqeINyH06dXVQ
+MOZILLA_PROFDATA_TASKID = F9iClvqVQEa_qm8PKNQWcg
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -21,6 +21,10 @@ PERMIT_PACKAGE=	Yes
 
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla lang/python
+
+SITES.p =	https://bugzilla.mozilla.org/
+PATCHFILES.p=	bug-1962139-ffmpeg8-140esr.patch{attachment.cgi?id=9525881}
+PATCH_DIST_STRIP =	-p1 -f
 
 MODPY_RUNDEP =	No
 
@@ -64,6 +68,7 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 
+MOZILLA_USE_DBUS =	Yes
 MOZILLA_USE_SYSTEM_AV1 =Yes
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
