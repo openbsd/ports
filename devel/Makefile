@@ -1976,6 +1976,7 @@
      SUBDIR += spdlog
      SUBDIR += spice-protocol
      SUBDIR += spidermonkey128
+     SUBDIR += spidermonkey140
      SUBDIR += splint
      SUBDIR += spyder
      SUBDIR += sqlc
