@@ -1,0 +1,14 @@
+- Fix awk detection
+
+Index: moz.configure
+--- moz.configure.orig
++++ moz.configure
+@@ -602,7 +602,7 @@ include(
+ 
+ # Awk detection
+ # ==============================================================
+-awk = check_prog("AWK", ("gawk", "mawk", "nawk", "awk"), paths=prefer_mozillabuild_path)
++awk = check_prog('AWK', ('awk',))
+ 
+ # Until the AWK variable is not necessary in old-configure
+ 

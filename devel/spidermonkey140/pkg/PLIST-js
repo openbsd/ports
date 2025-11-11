@@ -1,0 +1,3 @@
+@conflict js128-*
+@pkgpath devel/spidermonkey128,-js
+@bin bin/js${MOZILLA_VERSION}
