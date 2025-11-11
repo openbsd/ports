@@ -172,8 +172,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}packa
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}package_latest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}partial_become.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}partial_become.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}pattern.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}pattern.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}playbook_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}playbook_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}risky_file_permissions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -274,8 +272,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/package_latest.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/package_latest.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/partial_become.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/partial_become.py
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/pattern.md
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/pattern.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/playbook_extension.md
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/playbook_extension.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/risky_file_permissions.md
@@ -323,7 +319,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/main.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/meta-runtime.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/meta.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/molecule.json
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/pattern.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/play-argspec.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/playbook.json
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/schemas/requirements.json
