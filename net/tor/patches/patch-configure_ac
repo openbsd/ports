@@ -13,6 +13,6 @@ Index: configure.ac
 -dnl code will work.
 -TOR_CHECK_CFLAGS(-fasynchronous-unwind-tables)
 -
- dnl ============================================================
- dnl Check for libseccomp
- 
+ # From https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html:
+ #
+ # Enable code instrumentation to increase program security by checking that
