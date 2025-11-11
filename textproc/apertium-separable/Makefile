@@ -1,8 +1,7 @@
 COMMENT =		reorder separable/discontinuous multiwords
 
-V =			0.6.1
+V =			0.7.1
 DISTNAME =		apertium-separable-$V
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -33,8 +32,8 @@ LIB_DEPENDS =		textproc/icu4c \
 
 USE_GMAKE =		Yes
 
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION =	1.18
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/utf8cpp" \

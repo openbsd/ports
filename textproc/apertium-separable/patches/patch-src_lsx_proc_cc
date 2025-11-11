@@ -1,15 +1,16 @@
 Index: src/lsx_proc.cc
 --- src/lsx_proc.cc.orig
 +++ src/lsx_proc.cc
-@@ -3,6 +3,7 @@
- #include <iostream>
- #include <getopt.h>
- #include <libgen.h>
+@@ -1,6 +1,8 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/file_utils.h>
+ #include <lttoolbox/cli.h>
++#include <iostream>
 +#include <unistd.h>
  
  #include "lsx_processor.h"
  
-@@ -28,6 +29,11 @@ void endProgram(char* name)
+@@ -8,6 +10,11 @@ using namespace std;
  
  int main (int argc, char** argv)
  {
@@ -19,5 +20,5 @@ Index: src/lsx_proc.cc
 +  }
 +
    LtLocale::tryToSetLocale();
-   
-   LSXProcessor fstp;
+   CLI cli("re-tokenize a stream", PACKAGE_VERSION);
+   cli.add_bool_arg('p', "postgen", "act as a postgenerator");
