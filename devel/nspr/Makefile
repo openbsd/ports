@@ -1,6 +1,6 @@
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.37
+VER=			4.38.2
 DISTNAME=		nspr-${VER}
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

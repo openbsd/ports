@@ -3,7 +3,7 @@ disable ipv6 socket tests, they hang ?
 Index: nspr/pr/tests/socket.c
 --- nspr/pr/tests/socket.c.orig
 +++ nspr/pr/tests/socket.c
-@@ -2085,6 +2085,7 @@ int main(int argc, char** argv) {
+@@ -2084,6 +2084,7 @@ int main(int argc, char** argv) {
    /*
     * client-server test, Ipv6-Ipv4
     */
@@ -11,7 +11,7 @@ Index: nspr/pr/tests/socket.c
    client_domain = PR_AF_INET6;
    printf("TCP Client/Server Test - IPv6/Ipv4\n");
    if (TCP_Socket_Client_Server_Test() < 0) {
-@@ -2119,6 +2120,7 @@ int main(int argc, char** argv) {
+@@ -2118,6 +2119,7 @@ int main(int argc, char** argv) {
    }
    test_cancelio = 0;
  
