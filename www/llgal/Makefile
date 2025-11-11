@@ -1,6 +1,7 @@
 COMMENT=	command-line online gallery generator
 
 DISTNAME=	llgal-0.13.19
+REVISION=	0
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://bgoglin.free.fr/llgal/
@@ -25,6 +26,8 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR}
+FAKE_FLAGS=	DOCDIR=${PREFIX}/share/doc/llgal
+INSTALL_TARGET=	install install-doc
 
 WRKDIST=	${WRKDIR}/llgal-${DISTNAME}
 
@@ -34,5 +37,9 @@ pre-build:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/llgal.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/llgalrc.5 ${PREFIX}/man/man5
+	mv ${PREFIX}/share/doc/llgal/examples \
+	       ${PREFIX}/share/examples/llgal
+	mv ${PREFIX}/share/doc/llgal/llgalrc \
+	       ${PREFIX}/share/examples/llgal/
 
 .include <bsd.port.mk>
