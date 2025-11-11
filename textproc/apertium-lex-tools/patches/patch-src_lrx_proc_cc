@@ -1,15 +1,14 @@
 Index: src/lrx_proc.cc
 --- src/lrx_proc.cc.orig
 +++ src/lrx_proc.cc
-@@ -20,6 +20,7 @@
- #include <getopt.h>
- #include <iostream>
- #include <libgen.h>
-+#include <unistd.h>
+@@ -19,11 +19,17 @@
  #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/file_utils.h>
++#include <iostream>
++#include <unistd.h>
  
  using namespace std;
-@@ -43,6 +44,10 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
@@ -18,5 +17,5 @@ Index: src/lrx_proc.cc
 +  }
 +
    LtLocale::tryToSetLocale();
-   LRXProcessor lrxp;
- 
+   CLI cli("process a bilingual stream with a lexical rule transducer", PACKAGE_VERSION);
+   cli.add_bool_arg('t', "trace", "trace rules which have been applied");
