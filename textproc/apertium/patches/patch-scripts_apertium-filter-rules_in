@@ -1,9 +1,0 @@
-Index: scripts/apertium-filter-rules.in
---- scripts/apertium-filter-rules.in.orig
-+++ scripts/apertium-filter-rules.in
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${LOCALBASE}/bin/bash
- case $# in
-   2)
-     LANG=$1

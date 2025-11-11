@@ -9,7 +9,7 @@ Index: apertium/apertium_extract_caps.cc
  
  #ifdef __MINGW32__
  #include <windows.h>
-@@ -64,6 +65,11 @@ std::pair<UString, UString> read_lu(InputFile& input)
+@@ -72,6 +73,11 @@ UString lemma_case(UStringView lu)
  
  int main(int argc, char* argv[])
  {

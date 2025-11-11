@@ -201,12 +201,12 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-validate-tagger.1
 @man man/man1/apertium-validate-transfer.1
 @man man/man1/apertium.1
+share/aclocal/
 share/aclocal/apertium.m4
 share/apertium/
 share/apertium/crx.dtd
 share/apertium/deformat.xsl
 share/apertium/filter-dix.xslt
-share/apertium/filter-rules.xslt
 share/apertium/format.dtd
 share/apertium/format.rnc
 share/apertium/interchunk.dtd

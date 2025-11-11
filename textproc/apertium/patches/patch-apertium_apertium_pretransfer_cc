@@ -1,24 +1,21 @@
 Index: apertium/apertium_pretransfer.cc
 --- apertium/apertium_pretransfer.cc.orig
 +++ apertium/apertium_pretransfer.cc
-@@ -20,6 +20,7 @@
- #include <libgen.h>
- #include <string>
- #include "getopt_long.h"
+@@ -19,9 +19,17 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/file_utils.h>
+ #include <lttoolbox/lt_locale.h>
++#include <iostream>
 +#include <unistd.h>
- 
- #ifdef _MSC_VER
- #include <io.h>
-@@ -43,6 +44,12 @@ void usage(char *progname)
  
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +  {
-+    wcerr << L"pledge" << endl;
++    std::wcerr << L"pledge" << std::endl;
 +    exit(EXIT_FAILURE);
 +  }
 +
    LtLocale::tryToSetLocale();
-   bool compound_sep = false;
-   bool null_flush = false;
+   CLI cli("split compounds in preparation for transfer");
+   cli.add_bool_arg('e', "compounds", "treat ~ as compound separator");
