@@ -1,12 +1,11 @@
 COMMENT =	Wayland kiosk
 
-DISTNAME =	cage-0.2.0pl20250702
+V =		0.2.1
+DISTNAME =	cage-${V}
 CATEGORIES =	wayland
 HOMEPAGE =	https://www.hjdskes.nl/projects/cage/
 
-GH_ACCOUNT =	cage-kiosk
-GH_PROJECT =	cage
-GH_COMMIT =	2e593fe5a8a2186a558ceb414674775e4ba5d2b1
+SITES =		https://github.com/cage-kiosk/cage/releases/download/v${V}/
 
 # MIT
 PERMIT_PACKAGE =	yes
