@@ -1,10 +1,13 @@
 # build uses too much memory for 32-bit archs
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
+# "Document oci-fra.t1x does not validate against /usr/local/share/apertium/transfer.dtd"
+BROKEN =	broken with apertium >= 3.9.12
+
 L =	oci-fra
 LANG =	Occitan/French
 V =	1.0.0
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
