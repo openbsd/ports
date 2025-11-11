@@ -1,7 +1,7 @@
 L =	urd-hin
 LANG =	Urdu/Hindu
 V =	0.1.0
-REVISION =	3
+REVISION =	4
 
 SITES =		https://apertium.org/releases/apertium-$L/
 

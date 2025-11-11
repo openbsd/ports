@@ -1,7 +1,7 @@
 L =	eng-cat
 LANG =	English/Catalan
 V =	1.0.1
-REVISION =	2
+REVISION =	3
 
 BUILD_DEPENDS +=	textproc/apertium-anaphora \
 			textproc/apertium-dicts/cat \

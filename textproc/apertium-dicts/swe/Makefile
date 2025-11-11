@@ -1,7 +1,7 @@
 L =	swe
 LANG =	Swedish
 V =	0.8.2
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

@@ -1,7 +1,7 @@
 L =	oci
 LANG =	Occitan
 V =	1.0.0
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

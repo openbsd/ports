@@ -1,7 +1,7 @@
 L =	crh
 LANG =	Crimean Tatar
 V =	0.2.0
-REVISION =	3
+REVISION =	4
 
 BROKEN =	0.2.0 incompatible with apertium>=3.7.2
 

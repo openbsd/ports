@@ -1,7 +1,7 @@
 L =	fra-cat
 LANG =	French/Catalan
 V =	1.10.0
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

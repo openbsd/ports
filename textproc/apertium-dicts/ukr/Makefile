@@ -1,7 +1,7 @@
 L =	ukr
 LANG =	Ukrainian
 V =	0.1.1
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 

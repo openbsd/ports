@@ -1,7 +1,7 @@
 L =	rus
 LANG =	Russian
 V =	0.2.1
-REVISION =	2
+REVISION =	3
 
 SITES =		https://distfiles.roadrunner.page/
 

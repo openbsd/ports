@@ -1,7 +1,7 @@
 L =	fr-es
 LANG =	French/Spanish
 V =	0.9.4
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

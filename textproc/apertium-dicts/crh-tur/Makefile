@@ -1,7 +1,7 @@
 L =	crh-tur
 LANG =	Crimean Tatar/Turkish
 V =	0.3.0
-REVISION =	3
+REVISION =	4
 
 BROKEN =	0.3.0 incompatible with apertium>=3.7.2
 

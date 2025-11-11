@@ -1,6 +1,7 @@
 L =	cat-ita
 LANG =	Catalan/Italian
 V =	1.1.0
+REVISION =	0
 
 USE_GMAKE =	Yes
 

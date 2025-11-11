@@ -1,7 +1,7 @@
 L =	szl
 LANG =	Silesian
 V =	0.1.1
-REVISION =	2
+REVISION =	3
 
 SITES =		https://distfiles.roadrunner.page/
 

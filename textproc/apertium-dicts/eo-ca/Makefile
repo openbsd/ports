@@ -1,7 +1,7 @@
 L =	eo-ca
 LANG =	Esperanto/Catalan
 V =	0.9.2
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 

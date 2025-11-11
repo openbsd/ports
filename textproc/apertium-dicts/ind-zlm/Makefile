@@ -1,7 +1,7 @@
 L =	ind-zlm
 LANG =	Indonesian/Malaysian
 V =	0.1.2
-REVISION =	2
+REVISION =	3
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/ind \
 			textproc/apertium-dicts/zlm \

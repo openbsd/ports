@@ -1,7 +1,7 @@
 L =	ind
 LANG =	Indonesian
 V =	0.2.0
-REVISION =	2
+REVISION =	3
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

@@ -1,6 +1,7 @@
 L =	eng-spa
 LANG =	English/Spanish
 V =	0.8.1
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
