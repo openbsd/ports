@@ -1,11 +1,11 @@
 COMMENT =		Nintendo Entertainment System core for retroarch
 
-V =			1.51.1
+V =			1.53.2
 DISTNAME =		libretro-nestopia-$V
 
 GH_ACCOUNT =		libretro
 GH_PROJECT =		nestopia
-GH_COMMIT =		a9e197f2583ef4f36e9e77d930a677e63a2c2f62
+GH_COMMIT =		d33852f5efe89c87a06f8ce7d12b8b5451e9ae71
 
 .include <bsd.port.arch.mk>
 
@@ -37,6 +37,8 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 WRKSRC =		${WRKDIST}/libretro
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libretro
