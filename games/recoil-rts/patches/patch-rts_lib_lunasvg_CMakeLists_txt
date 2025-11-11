@@ -1,0 +1,18 @@
+Index: rts/lib/lunasvg/CMakeLists.txt
+--- rts/lib/lunasvg/CMakeLists.txt.orig
++++ rts/lib/lunasvg/CMakeLists.txt
+@@ -27,14 +27,3 @@ endif()
+ 
+ set(LUNASVG_LIBDIR ${CMAKE_INSTALL_PREFIX}/lib)
+ set(LUNASVG_INCDIR ${CMAKE_INSTALL_PREFIX}/include)
+-
+-install(FILES
+-    include/lunasvg.h
+-    DESTINATION ${LUNASVG_INCDIR}
+-)
+-
+-install(TARGETS lunasvg
+-    LIBRARY     DESTINATION    ${LUNASVG_LIBDIR}
+-    ARCHIVE     DESTINATION    ${LUNASVG_LIBDIR}
+-    INCLUDES    DESTINATION    ${LUNASVG_INCDIR}
+-)

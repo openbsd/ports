@@ -183,7 +183,6 @@ include/common/TracyUwp.hpp
 include/common/TracyYield.hpp
 include/common/tracy_lz4.hpp
 include/common/tracy_lz4hc.hpp
-include/lunasvg.h
 include/readerwriterqueue/
 include/readerwriterqueue/LICENSE.md
 include/readerwriterqueue/atomicops.h
@@ -214,7 +213,6 @@ lib/cmake/RmlUi/Modules/Findlunasvg.cmake
 lib/cmake/RmlUi/RmlUiConfig.cmake
 lib/cmake/RmlUi/RmlUiConfigVersion.cmake
 @static-lib lib/libTracyClient.a
-@static-lib lib/liblunasvg.a
 @static-lib lib/librmlui.a
 @static-lib lib/librmlui_debugger.a
 @so lib/libunitsync.so
