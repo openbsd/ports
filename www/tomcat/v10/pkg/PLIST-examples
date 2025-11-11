@@ -1659,6 +1659,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/jmx/package-tree.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/package-summary.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/package-tree.html
 webapps/docs/api/org/apache/tomcat/jni/
+webapps/docs/api/org/apache/tomcat/jni/AprStatus.html
 webapps/docs/api/org/apache/tomcat/jni/Buffer.html
 webapps/docs/api/org/apache/tomcat/jni/CertificateVerifier.html
 webapps/docs/api/org/apache/tomcat/jni/FileInfo.html
@@ -2067,6 +2068,7 @@ webapps/docs/api/org/apache/tomcat/util/net/jsse/PEMFile.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/net/jsse/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/
+webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLCertificateVerifier.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLConf.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLConfCmd.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLContext.html
