@@ -190,12 +190,14 @@ firmware/amdgpu/gc_12_0_0_rlc.bin
 firmware/amdgpu/gc_12_0_0_toc.bin
 firmware/amdgpu/gc_12_0_0_uni_mes.bin
 firmware/amdgpu/gc_12_0_1_imu.bin
+firmware/amdgpu/gc_12_0_1_imu_kicker.bin
 firmware/amdgpu/gc_12_0_1_me.bin
 firmware/amdgpu/gc_12_0_1_mec.bin
 firmware/amdgpu/gc_12_0_1_mes.bin
 firmware/amdgpu/gc_12_0_1_mes1.bin
 firmware/amdgpu/gc_12_0_1_pfp.bin
 firmware/amdgpu/gc_12_0_1_rlc.bin
+firmware/amdgpu/gc_12_0_1_rlc_kicker.bin
 firmware/amdgpu/gc_12_0_1_toc.bin
 firmware/amdgpu/gc_12_0_1_uni_mes.bin
 firmware/amdgpu/gc_9_4_3_mec.bin
@@ -448,7 +450,9 @@ firmware/amdgpu/psp_14_0_1_toc.bin
 firmware/amdgpu/psp_14_0_2_sos.bin
 firmware/amdgpu/psp_14_0_2_ta.bin
 firmware/amdgpu/psp_14_0_3_sos.bin
+firmware/amdgpu/psp_14_0_3_sos_kicker.bin
 firmware/amdgpu/psp_14_0_3_ta.bin
+firmware/amdgpu/psp_14_0_3_ta_kicker.bin
 firmware/amdgpu/psp_14_0_4_ta.bin
 firmware/amdgpu/psp_14_0_4_toc.bin
 firmware/amdgpu/psp_14_0_5_ta.bin
@@ -527,6 +531,7 @@ firmware/amdgpu/smu_13_0_6.bin
 firmware/amdgpu/smu_13_0_7.bin
 firmware/amdgpu/smu_14_0_2.bin
 firmware/amdgpu/smu_14_0_3.bin
+firmware/amdgpu/smu_14_0_3_kicker.bin
 firmware/amdgpu/stoney_ce.bin
 firmware/amdgpu/stoney_me.bin
 firmware/amdgpu/stoney_mec.bin
