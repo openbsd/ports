@@ -2,8 +2,10 @@
      SUBDIR += cage
      SUBDIR += dmenu-wayland
      SUBDIR += foot
+     SUBDIR += greetd
      SUBDIR += grim
      SUBDIR += gtk-layer-shell
+     SUBDIR += gtkgreet
      SUBDIR += gtk4-layer-shell
      SUBDIR += havoc
      SUBDIR += labwc
@@ -11,6 +13,7 @@
      SUBDIR += libevdev-openbsd
      SUBDIR += libinput-openbsd
      SUBDIR += plasma-wayland-protocols
+     SUBDIR += regreet
      SUBDIR += slurp
      SUBDIR += sway
      SUBDIR += swaybg
