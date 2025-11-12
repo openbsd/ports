@@ -1,0 +1,12 @@
+Index: greetd/src/config/mod.rs
+--- greetd/src/config/mod.rs.orig
++++ greetd/src/config/mod.rs
+@@ -5,7 +5,7 @@ use getopts::Options;
+ 
+ use super::error::Error;
+ 
+-const RUNFILE: &str = "/run/greetd.run";
++const RUNFILE: &str = "/var/run/greetd/greetd.run";
+ const GENERAL_SERVICE: &str = "greetd";
+ const GREETER_SERVICE: &str = "greetd-greeter";
+ 

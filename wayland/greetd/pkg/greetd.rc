@@ -1,0 +1,16 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/greetd"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+        install -d -m 700 -o _greetd /var/run/greetd
+}
+
+rc_post() {
+        rm -Rf /var/run/greetd
+}
+
+rc_bg=YES
+rc_cmd $1

@@ -1,0 +1,26 @@
+we don't have an equivalent to prctl to be signaled of our parent's death
+
+XXX: explore kqueue to register an event handled on ppid ?
+or watch for a pipe status between the parent and the child, being closed..
+
+Index: greetd/src/session/prctl.rs
+--- greetd/src/session/prctl.rs.orig
++++ greetd/src/session/prctl.rs
+@@ -1,4 +1,4 @@
+-use nix::{errno::Errno, Result};
++use nix::{Result};
+ 
+ pub const PRCTL_SET_PDEATHSIG: i32 = 1;
+ 
+@@ -8,10 +8,5 @@ pub enum PrctlOption {
+ }
+ 
+ pub fn prctl(option: PrctlOption) -> Result<()> {
+-    Errno::result(match option {
+-        PrctlOption::SET_PDEATHSIG(sig) => unsafe {
+-            libc::prctl(PRCTL_SET_PDEATHSIG, sig, 0, 0, 0)
+-        },
+-    })
+-    .map(drop)
++    Ok(())
+ }

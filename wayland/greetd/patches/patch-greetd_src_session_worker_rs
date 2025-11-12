@@ -1,0 +1,110 @@
+add proper support for OpenBSD specificities:
+
+- call login_fbtab with the logged in user so that devices have the right mode/ownership
+- call it again at session teardown to reset perms to root
+- call setusercontext so that limits from login.conf are applied
+- the LOGIN_SETALL magic number comes from the define in login_cap.h
+- push XDG_RUNTIME_DIR in the env until OpenBSD properly handles it
+- use /var/run/greetd as a dumping ground for the wayland session run by _greetd
+
+Index: greetd/src/session/worker.rs
+--- greetd/src/session/worker.rs.orig
++++ greetd/src/session/worker.rs
+@@ -1,5 +1,17 @@
+ use std::{env, ffi::CString, os::unix::net::UnixDatagram};
+ 
++use libc::{ c_int, c_char, uid_t, gid_t, c_uint, c_void, getpwnam, passwd };
++// $grep SETALL /usr/include/login_cap.h -> bindgen
++// #define LOGIN_SETALL            0x01ff  /* Set all. */
++const LOGIN_SETALL : u32 = 511;
++
++#[link(name = "util")]
++extern "C" {
++    fn login_fbtab(tty: *const c_char, uid: uid_t, gid: gid_t) -> c_int;
++    fn setusercontext(lc: *mut c_void, pwd: *mut passwd, uid: uid_t, flags: c_uint) -> c_int;
++}
++use std::ptr;
++
+ use nix::{
+     sys::wait::waitpid,
+     unistd::{execve, fork, initgroups, setgid, setsid, setuid, ForkResult},
+@@ -163,6 +175,14 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+ 
+     let user = nix::unistd::User::from_name(&pam_username)?.ok_or("unable to get user info")?;
+ 
++    // call login_fbtab with the user logging in for login.conf limits
++    let ttyc_str = CString::new("ttyC0").unwrap();
++    let ttyptr: *const c_char = ttyc_str.as_ptr() as *const c_char;
++    let rc = unsafe { login_fbtab(ttyptr, user.uid.into(), user.gid.into()) };
++    if rc != 0 {
++        return Err("login_fbtab failed".into());
++    }
++
+     // Make this process a session leader.
+     setsid().map_err(|e| format!("unable to become session leader: {}", e))?;
+ 
+@@ -170,7 +190,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+         TerminalMode::Stdin => (),
+         TerminalMode::Terminal { path, vt, switch } => {
+             // Tell PAM what TTY we're targetting, which is used by logind.
+-            pam.set_item(PamItemType::TTY, &format!("tty{}", vt))?;
++            pam.set_item(PamItemType::TTY, &format!("ttyC{}", vt))?;
+             pam.putenv(&format!("XDG_VTNR={}", vt))?;
+ 
+             // Opening our target terminal.
+@@ -204,6 +224,8 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+     // and set all environment variables later.
+     let prepared_env = [
+         "XDG_SEAT=seat0".to_string(),
++        "WLR_DRM_DEVICES=/dev/dri/card0".to_string(),
++        "QT_QPA_PLATFORM=wayland".to_string(),
+         format!("XDG_SESSION_CLASS={}", class.as_str()),
+         format!("USER={}", user.name),
+         format!("LOGNAME={}", user.name),
+@@ -218,6 +240,15 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+         pam.putenv(e)?;
+     }
+ 
++    if user.name == "_greetd" {
++        pam.putenv("XDG_RUNTIME_DIR=/var/run/greetd")?;
++        // needed for ... .cache/mesa_shader_cache ?
++        // pam.putenv("XDG_CACHE_HOME=/var/run/greetd/.cache")?;
++        pam.putenv("HOME=/var/run/greetd/")?;
++    } else {
++        pam.putenv(&format!("XDG_RUNTIME_DIR={}/.local/run", user.dir.to_string_lossy()))?;
++    }
++
+     // Session time!
+     pam.open_session(PamFlag::NONE)?;
+ 
+@@ -249,10 +280,13 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+             // accidentally using '?'. The process *must* exit from within
+             // this match arm.
+ 
+-            // Drop privileges to target user
+-            initgroups(&cusername, user.gid).expect("unable to init groups");
+-            setgid(user.gid).expect("unable to set GID");
+-            setuid(user.uid).expect("unable to set UID");
++            // setusercontext(LOGIN_SETALL) takes care of calling initgroups/setuid/setgid
++            let unameptr: *const c_char = cusername.as_ptr() as *const c_char;
++            let pwn = unsafe { getpwnam(unameptr) };
++            let suc = unsafe { setusercontext(ptr::null_mut(), pwn, user.uid.into(), LOGIN_SETALL) };
++            if suc != 0 {
++                eprintln!("failed calling setusercontext: {}", suc);
++            }
+ 
+             // Set our parent death signal. setuid/setgid above resets the
+             // death signal, which is why we do this here.
+@@ -308,6 +342,12 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+     pam.close_session(PamFlag::NONE)?;
+     pam.setcred(PamFlag::DELETE_CRED)?;
+     pam.end()?;
++
++    // reset perms to root via fbtab (xenodm does the same)
++    let rc2 = unsafe { login_fbtab(ttyptr, 0, 0) };
++    if rc2 != 0 {
++        return Err("login_fbtab failed".into());
++    }
+ 
+     Ok(())
+ }

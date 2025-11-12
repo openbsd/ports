@@ -1,0 +1,63 @@
+use /dev/ttyC everywhere
+
+Index: greetd/src/server.rs
+--- greetd/src/server.rs.orig
++++ greetd/src/server.rs
+@@ -108,7 +108,7 @@ async fn client_handler(ctx: &Context, mut s: UnixStre
+ //
+ // If the target is VtSelection::None, return nothing.
+ fn get_tty(config: &Config) -> Result<TerminalMode, Error> {
+-    const TTY_PREFIX: &str = "/dev/tty";
++    const TTY_PREFIX: &str = "/dev/ttyC";
+     const PTS_PREFIX: &str = "/dev/pts";
+ 
+     let term = match config.file.terminal.vt {
+@@ -134,13 +134,13 @@ fn get_tty(config: &Config) -> Result<TerminalMode, Er
+                 }
+                 // We don't have a usable terminal, so we have to jump through some hoops
+                 _ => {
+-                    let sys_term = Terminal::open("/dev/tty0")
++                    let sys_term = Terminal::open("/dev/ttyC0")
+                         .map_err(|e| format!("unable to open terminal: {}", e))?;
+                     let vt = sys_term
+                         .vt_get_current()
+                         .map_err(|e| format!("unable to get current VT: {}", e))?;
+                     TerminalMode::Terminal {
+-                        path: format!("/dev/tty{}", vt),
++                        path: format!("/dev/ttyC{}", vt),
+                         vt,
+                         switch: false,
+                     }
+@@ -148,20 +148,20 @@ fn get_tty(config: &Config) -> Result<TerminalMode, Er
+             }
+         }
+         VtSelection::Next => {
+-            let term = Terminal::open("/dev/tty0")
++            let term = Terminal::open("/dev/ttyC0")
+                 .map_err(|e| format!("unable to open terminal: {}", e))?;
+             let vt = term
+                 .vt_get_next()
+                 .map_err(|e| format!("unable to get next VT: {}", e))?;
+             TerminalMode::Terminal {
+-                path: format!("/dev/tty{}", vt),
++                path: format!("/dev/ttyC{}", vt),
+                 vt,
+                 switch: config.file.terminal.switch,
+             }
+         }
+         VtSelection::None => TerminalMode::Stdin,
+         VtSelection::Specific(vt) => TerminalMode::Terminal {
+-            path: format!("/dev/tty{}", vt),
++            path: format!("/dev/ttyC{}", vt),
+             vt,
+             switch: config.file.terminal.switch,
+         },
+@@ -175,7 +175,7 @@ struct Listener(UnixListener);
+ 
+ impl Listener {
+     fn create(uid: Uid, gid: Gid) -> Result<(String, Listener), Error> {
+-        let path = format!("/run/greetd-{}.sock", getpid().as_raw());
++        let path = format!("/var/run/greetd/greetd-{}.sock", getpid().as_raw());
+         let _ = std::fs::remove_file(&path);
+         let listener =
+             UnixListener::bind(&path).map_err(|e| format!("unable to open listener: {}", e))?;

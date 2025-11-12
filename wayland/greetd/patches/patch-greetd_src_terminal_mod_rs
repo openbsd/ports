@@ -1,0 +1,138 @@
+neuter all ioctls/vt switches, no support yet in wayland
+
+(eg it needs more than just what's in wsconsctl display.focus)
+Index: greetd/src/terminal/mod.rs
+--- greetd/src/terminal/mod.rs.orig
++++ greetd/src/terminal/mod.rs
+@@ -90,51 +90,22 @@ impl Terminal {
+     /// disables the kernel console on this VT, and also disables blanking
+     /// between VT switches if both source and target VT is in graphics mode.
+     pub fn kd_setmode(&self, mode: KdMode) -> Result<(), Error> {
+-        let mode = mode.to_const();
+-        let ret = unsafe { ioctl::kd_setmode(self.fd, mode) };
+-
+-        if let Err(v) = ret {
+-            Err(format!("terminal: unable to set kernel display mode: {}", v).into())
+-        } else {
+-            Ok(())
+-        }
++        Ok(())
+     }
+ 
+     /// Switches to the specified VT and waits for completion of switch.
+     fn vt_activate(&self, target_vt: usize) -> Result<(), Error> {
+-        if let Err(v) = unsafe { ioctl::vt_activate(self.fd, target_vt as i32) } {
+-            return Err(format!("terminal: unable to activate: {}", v).into());
+-        }
+-        if let Err(v) = unsafe { ioctl::vt_waitactive(self.fd, target_vt as i32) } {
+-            return Err(format!("terminal: unable to wait for activation: {}", v).into());
+-        }
+         Ok(())
+     }
+ 
+     /// Waits for specified VT to become active.
+     pub fn vt_waitactive(&self, target_vt: usize) -> Result<(), Error> {
+-        if let Err(v) = unsafe { ioctl::vt_waitactive(self.fd, target_vt as i32) } {
+-            return Err(format!("terminal: unable to wait for activation: {}", v).into());
+-        }
+         Ok(())
+     }
+ 
+     /// Set the VT mode to VT_AUTO with everything cleared.
+     fn vt_mode_clean(&self) -> Result<(), Error> {
+-        let mode = ioctl::vt_mode {
+-            mode: ioctl::VT_AUTO,
+-            waitv: 0,
+-            relsig: 0,
+-            acqsig: 0,
+-            frsig: 0,
+-        };
+-        let res = unsafe { ioctl::vt_setmode(self.fd, &mode) };
+-
+-        if let Err(v) = res {
+-            Err(format!("terminal: unable to set vt mode: {}", v).into())
+-        } else {
+-            Ok(())
+-        }
++        Ok(())
+     }
+ 
+     /// Set a VT mode, switch to the VT and wait for its activation. On Linux,
+@@ -143,62 +114,19 @@ impl Terminal {
+     /// VT_SETMODE followed by VT_ACTIVATE is used. For all platforms,
+     /// VT_WAITACTIVE is used to wait for shell activation.
+     pub fn vt_setactivate(&self, target_vt: usize) -> Result<(), Error> {
+-        if cfg!(target_os = "linux") {
+-            let arg = ioctl::vt_setactivate {
+-                console: target_vt as u64,
+-                mode: ioctl::vt_mode {
+-                    mode: ioctl::VT_AUTO,
+-                    waitv: 0,
+-                    relsig: 0,
+-                    acqsig: 0,
+-                    frsig: 0,
+-                },
+-            };
+-            if let Err(v) = unsafe { ioctl::vt_setactivate(self.fd, &arg) } {
+-                return Err(format!("terminal: unable to setactivate: {}", v).into());
+-            }
+-            if let Err(v) = unsafe { ioctl::vt_waitactive(self.fd, target_vt as i32) } {
+-                return Err(format!("terminal: unable to wait for activation: {}", v).into());
+-            }
+-        } else {
+-            self.vt_mode_clean()?;
+-            self.vt_activate(target_vt)?;
+-        }
+         Ok(())
+     }
+ 
+     /// Retrieves the current VT number.
+     pub fn vt_get_current(&self) -> Result<usize, Error> {
+-        let mut state = ioctl::vt_state {
+-            v_active: 0,
+-            v_signal: 0,
+-            v_state: 0,
+-        };
+-        let res = unsafe { ioctl::vt_getstate(self.fd, &mut state as *mut ioctl::vt_state) };
+-
+-        if let Err(v) = res {
+-            Err(format!("terminal: unable to get current vt: {}", v).into())
+-        } else if state.v_active < 1 {
+-            Err(format!("terminal: current vt invalid: {}", state.v_active).into())
+-        } else {
+-            Ok(state.v_active as usize)
+-        }
++        Ok(0 as usize)
+     }
+ 
+     /// Find the next unallocated VT, allocate it and return the number. Note
+     /// that allocation does not mean exclusivity, and another process may take
+     /// and use the VT before you get to it.
+     pub fn vt_get_next(&self) -> Result<usize, Error> {
+-        let mut next_vt: i64 = 0;
+-        let res = unsafe { ioctl::vt_openqry(self.fd, &mut next_vt as *mut i64) };
+-
+-        if let Err(v) = res {
+-            Err(format!("terminal: unable to get next vt: {}", v).into())
+-        } else if next_vt < 1 {
+-            Err(format!("terminal: next vt invalid: {}", next_vt).into())
+-        } else {
+-            Ok(next_vt as usize)
+-        }
++        Ok(4 as usize)
+     }
+ 
+     /// Hook up stdin, stdout and stderr of the current process ot this
+@@ -228,11 +156,6 @@ impl Terminal {
+ 
+     // Forcibly take control of the terminal referred to by this fd.
+     pub fn term_take_ctty(&self) -> Result<(), Error> {
+-        let res = unsafe { ioctl::term_tiocsctty(self.fd, 1) };
+-
+-        match res {
+-            Err(e) => Err(format!("terminal: unable to take controlling terminal: {}", e).into()),
+-            Ok(_) => Ok(()),
+-        }
++        Ok(())
+     }
+ }

@@ -1,0 +1,31 @@
+Index: config.toml
+--- config.toml.orig
++++ config.toml
+@@ -1,16 +1,25 @@
+ [terminal]
+ # The VT to run the greeter on. Can be "next", "current" or a number
+ # designating the VT.
+-vt = 1
++# XXX hardcoded to 0 for now on OpenBSD
++vt = 0
+ 
++[general]
++# use /etc/pam.d/system
++service = "system"
++
+ # The default session, also known as the greeter.
+ [default_session]
+ 
+ # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
+ # with whatever you want started, such as `sway`.
+ command = "agreety --cmd /bin/sh"
++# uncomment if you've installed gtkgreet
++# command = "cage -d -s -- gtkgreet"
++# same but with french keymap
++# command = "env XKB_DEFAULT_LAYOUT=fr cage -d -s -- gtkgreet"
+ 
+ # The user to run the command as. The privileges this user must have depends
+ # on the greeter. A graphical greeter may for example require the user to be
+ # in the `video` group.
+-user = "greeter"
++user = "_greetd"

@@ -1,0 +1,15 @@
+@newgroup _greetd:565
+@newuser _greetd:565:565::greetd user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/greetd
+@bin bin/agreety
+@bin bin/greetd
+@comment @man man/man1/agreety.1
+@man man/man1/greetd.1
+@man man/man5/greetd.5
+@man man/man7/greetd-ipc.7
+share/examples/greetd/
+@sample ${SYSCONFDIR}/greetd/
+share/examples/greetd/config.toml
+@sample ${SYSCONFDIR}/greetd/config.toml
+share/examples/greetd/environments
+@sample ${SYSCONFDIR}/greetd/environments
