@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -12,8 +12,6 @@ project(
+ )
+ 
+ add_project_arguments([
+-	'-D_POSIX_C_SOURCE=200809L',
+-
+ 	'-Wno-unused-parameter',
+ 	'-Wno-unused-result',
+ 	'-Wundef',
