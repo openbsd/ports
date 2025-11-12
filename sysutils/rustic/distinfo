@@ -635,7 +635,7 @@ SHA256 (cargo/zopfli-0.8.3.tar.gz) = 8FzYeX1jhlQl/4m1xKSIBPNboM6NElgAAnrWAX0rUkk
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (rustic-rs-rustic-v0.10.1.tar.gz) = 79MQhV1EdY7Q48xLtR/8i/9Z/xYMlC9GmI8D75eHZM8=
+SHA256 (rustic-rs-rustic-v0.10.2.tar.gz) = 6DBe/lQ+aPddrsisXXt4MaasWGDz3Deoz99A7PfR5F8=
 SIZE (cargo/abscissa_core-0.9.0.tar.gz) = 36553
 SIZE (cargo/abscissa_derive-0.9.0.tar.gz) = 5621
 SIZE (cargo/addr2line-0.25.1.tar.gz) = 43134
@@ -1273,4 +1273,4 @@ SIZE (cargo/zopfli-0.8.3.tar.gz) = 51589
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (rustic-rs-rustic-v0.10.1.tar.gz) = 573974
+SIZE (rustic-rs-rustic-v0.10.2.tar.gz) = 574327
