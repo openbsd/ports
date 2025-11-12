@@ -1,0 +1,2 @@
+uncomment the 'command = "cage -s -- gtkgreet"' line in /etc/greetd/config.toml
+to use gtkgreet as a graphical login manager for greetd.

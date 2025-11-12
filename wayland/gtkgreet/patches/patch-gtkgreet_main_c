@@ -1,0 +1,14 @@
+provide all fields, otherwise blows on -Werror,-Wmissing-field-initializer
+
+Index: gtkgreet/main.c
+--- gtkgreet/main.c.orig
++++ gtkgreet/main.c
+@@ -28,7 +28,7 @@ static GOptionEntry entries[] =
+   { "command", 'c', 0, G_OPTION_ARG_STRING, &command, "Command to run", "sway"},
+   { "background", 'b', 0, G_OPTION_ARG_STRING, &background, "Background image to use", NULL},
+   { "style", 's', 0, G_OPTION_ARG_FILENAME, &style, "CSS style to use", NULL },
+-  { NULL }
++  { NULL , 0, 0, 0, NULL, NULL, NULL }
+ };
+ 
+ #ifdef LAYER_SHELL
