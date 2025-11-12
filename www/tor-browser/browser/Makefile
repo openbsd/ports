@@ -11,12 +11,12 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-140.4.0esr-15.0-1-build5
+DISTNAME =		src-firefox-tor-browser-140.5.0esr-15.0-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
 			tor-browser-linux-x86_64-${TB_VERSION}.tar.xz \
-			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz{tor-expert-bundle-linux-x86_64.tar.gz}
+			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
 
 SO_VERSION =		11.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozwayland
