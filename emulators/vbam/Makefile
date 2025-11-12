@@ -5,7 +5,7 @@ COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
-GH_TAGNAME =		v2.2.2
+GH_TAGNAME =		v2.2.3
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
@@ -33,14 +33,16 @@ LIB_DEPENDS =		archivers/bzip2 \
 
 CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \
 			-DENABLE_WX=OFF \
-			-DENABLE_SDL=ON
+			-DENABLE_SDL=ON \
+			-DCCACHE_EXECUTABLE=OFF
 # Creates unlinkable files ('data' according to file(1))
 CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
 # Assembler autodetection fails on i386, can be worked around with
 # -DCMAKE_ASM_NASM_COMPILER=yasm, but then linking fails.
 CONFIGURE_ARGS +=	-DENABLE_ASM=OFF
 
-CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include \
+			-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 
