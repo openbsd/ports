@@ -8,13 +8,10 @@ COMMENT-js =		C/C++ Mozilla's JavaScript shell'
 MOZILLA_VERSION =	140
 SUBST_VARS =		MOZILLA_VERSION
 
-REVISION-main =		0
-REVISION-js =		0
-
 SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
 SUBST_VARS +=		SO_VERSION
 
-V =			${MOZILLA_VERSION}.4.0
+V =			${MOZILLA_VERSION}.5.0
 DISTNAME =		firefox-${V}esr.source
 DIST_SUBDIR =		mozilla
 PKGNAME-main =		spidermonkey${MOZILLA_VERSION}-${V}
