@@ -1,21 +1,21 @@
 Index: man/osm2pgsql.1
 --- man/osm2pgsql.1.orig
 +++ man/osm2pgsql.1
-@@ -163,7 +163,7 @@ If the RAM is not big enough, use about 75% of memory.
+@@ -161,7 +161,7 @@ If the RAM is not big enough, use about 75% of memory.
  Make sure to leave enough RAM for PostgreSQL.
- It needs at least the amount of \f[V]shared_buffers\f[R] given in its
+ It needs at least the amount of \f[CR]shared_buffers\f[R] given in its
  configuration.
 -Defaults to 800.
 +Defaults to 100.
  .TP
- -x, --extra-attributes
+ \-x, \-\-extra\-attributes
  Include attributes of each object in the middle tables and make them
-@@ -216,7 +216,7 @@ The style file.
+@@ -214,7 +214,7 @@ The style file.
  This specifies how the data is imported into the database, its format
  depends on the output.
  (For the \f[B]pgsql\f[R] output, the default is
--\f[V]/usr/share/osm2pgsql/default.style\f[R], for other outputs there is
-+\f[V]${TRUEPREFIX}/share/osm2pgsql/default.style\f[R], for other outputs there is
- no default.)
+-\f[CR]/usr/share/osm2pgsql/default.style\f[R], for other outputs there
++\f[CR]${TRUEPREFIX}/share/osm2pgsql/default.style\f[R], for other outputs there
+ is no default.)
  .SH PGSQL OUTPUT OPTIONS
  .TP

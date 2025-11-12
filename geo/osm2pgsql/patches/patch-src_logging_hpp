@@ -5,7 +5,7 @@ Index: src/logging.hpp
 --- src/logging.hpp.orig
 +++ src/logging.hpp
 @@ -37,10 +37,9 @@ enum class log_level : uint8_t
- class logger
+ class logger_t
  {
  public:
 -    template <typename... TArgs>
@@ -17,9 +17,9 @@ Index: src/logging.hpp
      {
          if (with_level < m_current_level) {
              return;
-@@ -111,37 +110,37 @@ class logger (private)
+@@ -111,37 +110,37 @@ class logger_t (private)
  
- logger &get_logger() noexcept;
+ logger_t &get_logger() noexcept;
  
 -template <typename... TArgs>
 -void log_debug(fmt::format_string<TArgs...> format_str, TArgs &&...args)

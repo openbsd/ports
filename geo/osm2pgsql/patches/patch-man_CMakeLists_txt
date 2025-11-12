@@ -1,7 +1,7 @@
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig
 +++ man/CMakeLists.txt
-@@ -62,9 +62,9 @@ if(MANPAGE_TARGETS)
+@@ -70,9 +70,9 @@ if(MANPAGE_TARGETS)
  endif()
  
  if(ENABLE_INSTALL)
