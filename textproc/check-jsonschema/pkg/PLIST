@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}catalo
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}catalog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}format_errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}format_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}identify_filetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}identify_filetype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/${MODPY_PYCACHE}instance_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -55,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/bitbucket-pipelines.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/buildkite.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/circle-ci.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/citation-file-format.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/cloudbuild.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/codecov.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/compose-spec.json
@@ -93,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/cli/main_command.py
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/cli/param_types.py
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/cli/parse_result.py
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/cli/warnings.py
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/format_errors.py
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/formats/
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/formats/__init__.py
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/formats/${MODPY_PYCACHE}/
