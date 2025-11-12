@@ -1,7 +1,6 @@
 COMMENT =	curses-based solitaire collection suite
-DISTNAME =	cpat-1.4.1
+DISTNAME =	cpat-1.4.2
 CATEGORIES =	games
-REVISION =	2
 
 HOMEPAGE =	https://cpat.sourceforge.net/
 
