@@ -1,3 +1,6 @@
+@newgroup _llama-server:583
+@newuser _llama-server:583:_llama-server::llama-server account:${LOCALSTATEDIR}/db/llama-server:/sbin/nologin
+@rcscript ${RCDIR}/llama_server
 bin/convert_hf_to_gguf.py
 @bin bin/llama-batched
 @bin bin/llama-batched-bench
@@ -43,3 +46,10 @@ lib/cmake/llama/llama-version.cmake
 @lib lib/libllama.so.${LIBllama_VERSION}
 @lib lib/libmtmd.so.${LIBmtmd_VERSION}
 lib/pkgconfig/llama.pc
+@owner _llama-server
+@group _llama-server
+@sample /var/db/llama-server/
+@owner
+@group
+share/examples/login.conf.d/llama_server
+@sample ${SYSCONFDIR}/login.conf.d/llama_server

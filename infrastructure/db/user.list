@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.473 2025/10/19 16:23:20 kn Exp $
+$OpenBSD: user.list,v 1.474 2025/11/12 09:33:37 kirill Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -91,7 +91,7 @@ id  user		group		port
 580 _puppet		_puppet		sysutils/ruby-{puppet,openvox}
 581 _piknik		_piknik		sysutils/piknik
 582 _tabled		_tabled		sysutils/tabled
-#583			_kdesud		x11/kde/base3
+583 _llama-server	_llama-server	misc/llama.cpp
 584 _wstunnel		_wstunnel	net/wstunnel
 585 _lighttpd		_lighttpd	www/lighttpd
 586 _gnugk		_gnugk		net/gnugk
