@@ -138,12 +138,6 @@ share/examples/i2pd/certificates/reseed/admin_at_stormycloud.org.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/admin_at_stormycloud.org.crt
 @owner
 @group
-share/examples/i2pd/certificates/reseed/arnavbhatt288_at_mail.i2p.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/arnavbhatt288_at_mail.i2p.crt
-@owner
-@group
 share/examples/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt
 @owner _i2pd
 @group _i2pd
@@ -202,12 +196,6 @@ share/examples/i2pd/certificates/reseed/reseed_at_diva.exchange.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/reseed_at_diva.exchange.crt 
-@owner
-@group
-share/examples/i2pd/certificates/reseed/unixeno_at_cubicchaos.net.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/unixeno_at_cubicchaos.net.crt
 @owner
 @group
 share/examples/i2pd/i2pd.conf
