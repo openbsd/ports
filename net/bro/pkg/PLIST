@@ -1362,9 +1362,9 @@ share/examples/zeek/site/local.zeek
 share/examples/zeek/zeekctl.cfg
 @sample ${SYSCONFDIR}/zeek/zeekctl.cfg
 share/examples/zeek/zkg/
-@sample ${SYSCONFDIR}/zkg/
+@sample ${SYSCONFDIR}/zeek/zkg/
 share/examples/zeek/zkg/config
-@sample ${SYSCONFDIR}/zkg/config
+@sample ${SYSCONFDIR}/zeek/zkg/config
 share/zeek/
 share/zeek/base/
 share/zeek/base/bif/
