@@ -4,7 +4,7 @@ COMMENT =		Spotify TUI client
 
 GH_ACCOUNT =		aome510
 GH_PROJECT =		spotify-player
-GH_TAGNAME =		v0.21.0
+GH_TAGNAME =		v0.21.2
 
 CATEGORIES =		audio
 
@@ -15,11 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} crypto dbus-1 m portaudio ssl
 
-MODULES =		devel/cargo \
-			lang/clang
-
-# needed by the build script of aws-lc-sys
-BUILD_DEPENDS =		devel/cmake/core
+MODULES =		devel/cargo
 
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main
@@ -27,10 +23,6 @@ LIB_DEPENDS =		audio/portaudio-svn \
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	cargo
-
-# libclang needed for bindgen used from aws-lc-sys
-MAKE_ENV =		LIBCLANG_PATH=/usr/local/llvm${MODCLANG_VERSION}/lib
-MODCLANG_COMPILER_LINKS = no
 
 MODCARGO_NO_DEFAULT_FEATURES = Yes
 MODCARGO_FEATURES =	portaudio-backend media-control fzf
