@@ -1,7 +1,6 @@
 COMMENT =	tools to manipulate font files
 
-DISTNAME =	lcdf-typetools-2.108
-REVISION =	0
+DISTNAME =	lcdf-typetools-2.110
 
 CATEGORIES =	print
 
