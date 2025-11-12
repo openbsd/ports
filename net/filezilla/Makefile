@@ -3,13 +3,12 @@ BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initia
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.69.3
+V=		3.69.5
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
-REVISION=	0
 
 SHARED_LIBS+=	fzclient-commonui-private	5.2
-SHARED_LIBS+=	fzclient-private		11.0
+SHARED_LIBS+=	fzclient-private		12.0
 
 CATEGORIES=	net
 
@@ -49,7 +48,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.51.1 \
+		net/libfilezilla>=0.52.0 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
