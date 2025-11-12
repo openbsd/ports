@@ -1,0 +1,11 @@
+A clean and customizable GTK-based greetd greeter written in Rust.
+
+* Shows a dropdown list of existing users and X11/Wayland sessions
+* Allows manual entry of username and session command
+* Remembers the last authenticated user
+* Automatically selects the last used session per user
+* Allows setting environment variables for created sessions
+* Allows changing reboot & poweroff commands for different init systems
+* Supports custom CSS files for further customizations
+* Respects `XDG_DATA_DIRS` environment variable
+* Respects fields `Hidden` and `NoDisplay` in session files

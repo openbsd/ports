@@ -1,0 +1,27 @@
+set default background and reboot/shutdown commands
+
+Index: regreet.sample.toml
+--- regreet.sample.toml.orig
++++ regreet.sample.toml
+@@ -4,7 +4,7 @@
+ 
+ [background]
+ # Path to the background image
+-path = "/usr/share/backgrounds/greeter.jpg"
++path = "/etc/X11/xenodm/pixmaps/OpenBSD_15bpp.xpm"
+ 
+ # How the background image covers the screen if the aspect ratio doesn't match
+ # Available values: "Fill", "Contain", "Cover", "ScaleDown"
+@@ -34,10 +34,10 @@ theme_name = "Adwaita"
+ 
+ [commands]
+ # The command used to reboot the system
+-reboot = ["systemctl", "reboot"]
++reboot = ["/sbin/shutdown", "-r", "now"]
+ 
+ # The command used to shut down the system
+-poweroff = ["systemctl", "poweroff"]
++poweroff = ["/sbin/shutdown", "-p", "now"]
+ 
+ # The command prefix for X11 sessions to start the X server
+ x11_prefix = [ "startx", "/usr/bin/env" ]

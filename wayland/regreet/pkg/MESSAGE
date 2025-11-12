@@ -1,0 +1,5 @@
+uncomment the 'command = "cage -s -- regreet"' line in /etc/greetd/config.toml
+to use regreet as a graphical login manager for greetd.
+
+To allow regreet to shutdown/reboot the computer, put the _greetd user in the
+_shutdown group.

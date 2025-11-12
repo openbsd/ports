@@ -1,0 +1,7 @@
+@bin bin/regreet
+share/examples/regreet/
+share/examples/regreet/regreet.sample.toml
+@sample ${SYSCONFDIR}/greetd/regreet.toml
+@mode 700
+@owner _greetd
+@sample ${LOCALSTATEDIR}/regreet/
