@@ -2,7 +2,7 @@ COMMENT =	minimalistic password manager written in shell
 
 GH_ACCOUNT =    rnagy
 GH_PROJECT =    opm
-GH_TAGNAME =    1.2
+GH_TAGNAME =    1.3
 
 CATEGORIES =	security
 
@@ -11,6 +11,7 @@ MAINTAINER =	Robert Nagy <robert@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	x11/xclip
+RUN_DEPENDS =	security/oath-toolkit,-main \
+		x11/xclip
 
 .include <bsd.port.mk>
