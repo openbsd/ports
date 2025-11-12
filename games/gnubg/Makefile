@@ -3,7 +3,7 @@ COMMENT =		GNU Backgammon
 V =			1.07.001
 DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		games x11
 
