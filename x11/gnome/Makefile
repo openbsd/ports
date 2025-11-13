@@ -22,7 +22,6 @@
      SUBDIR += decibels
      SUBDIR += desktop
      SUBDIR += devel-docs
-     SUBDIR += devhelp
      SUBDIR += endeavour
      SUBDIR += eog
      SUBDIR += eog-plugins
