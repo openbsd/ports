@@ -241,7 +241,7 @@ do-test:
 		ninja -j ${MAKE_JOBS} check-llvm-unit
 
 diff-to-base: ${_PATCH_COOKIE}
-.for _subdir in clang lld lldb llvm
+.for _subdir in clang lld lldb llvm libunwind
 	@_d=/tmp/llvm${LLVM_MAJOR}_${_subdir}.diff && echo "Creating $${_d} ..." && \
 		diff -ruN -x CVS -x test -x unittests -x '*${PATCHORIG}' -x '*.beforesubst' \
 		${BSDSRCDIR}/gnu/llvm/${_subdir} ${WRKDIST}/${_subdir} \
