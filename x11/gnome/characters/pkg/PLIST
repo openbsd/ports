@@ -14,6 +14,7 @@ share/icons/hicolor/symbolic/apps/org.gnome.Characters-symbolic.svg
 share/locale/ab/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/az/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/bg/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/bn/LC_MESSAGES/org.gnome.Characters.mo
@@ -78,7 +79,9 @@ share/locale/ta/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/th/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tr/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ug/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/uz/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Characters.mo
 share/metainfo/org.gnome.Characters.appdata.xml
