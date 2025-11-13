@@ -1,0 +1,16 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -30,7 +30,11 @@ webkit_req = '>= @0@'.format(webkit_req_version)
+ 
+ adw_dep = dependency('libadwaita-1', version: adw_req)
+ dex_dep = dependency('libdex-1', version: dex_req)
+-flatpak_dep = dependency('flatpak', version: flatpak_req)
++if build_machine.system() == 'linux'
++  flatpak_dep = dependency('flatpak', version: flatpak_req)
++else
++  flatpak_dep = []
++endif
+ foundry_dep = dependency('libfoundry-1', version: foundry_req)
+ glib_dep = dependency('glib-2.0', version: glib_req)
+ gom_dep = dependency('gom-1.0', version: gom_req)
