@@ -63,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweakview.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/utils.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/widgets.py
 share/applications/org.gnome.tweaks.desktop
+share/dbus-1/services/org.gnome.tweaks.service
 share/glib-2.0/schemas/org.gnome.tweaks.gschema.xml
 share/gnome-tweaks/
 share/gnome-tweaks/shell.css
@@ -94,6 +95,7 @@ share/locale/fr/LC_MESSAGES/gnome-tweaks.mo
 share/locale/fur/LC_MESSAGES/gnome-tweaks.mo
 share/locale/gl/LC_MESSAGES/gnome-tweaks.mo
 share/locale/he/LC_MESSAGES/gnome-tweaks.mo
+share/locale/hi/LC_MESSAGES/gnome-tweaks.mo
 share/locale/hr/LC_MESSAGES/gnome-tweaks.mo
 share/locale/hu/LC_MESSAGES/gnome-tweaks.mo
 share/locale/id/LC_MESSAGES/gnome-tweaks.mo

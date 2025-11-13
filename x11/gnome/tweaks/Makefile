@@ -1,8 +1,7 @@
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
-GNOME_VERSION=		46.1
-REVISION=		2
+GNOME_VERSION=		49.0
 
 CATEGORIES=		sysutils
 
