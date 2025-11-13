@@ -1,0 +1,23 @@
+Unbreak for girepository-2.0
+
+Index: src/gui/gtd-application.c
+--- src/gui/gtd-application.c.orig
++++ src/gui/gtd-application.c
+@@ -32,7 +32,7 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <gio/gio.h>
+-#include <girepository.h>
++#include <girepository/girepository.h>
+ #include <glib/gi18n.h>
+ 
+ 
+@@ -286,7 +286,7 @@ gtd_application_local_command_line (GApplication   *ap
+                                     gchar        ***arguments,
+                                     gint           *exit_status)
+ {
+-  g_application_add_option_group (application, g_irepository_get_option_group());
++  g_application_add_option_group (application, gi_repository_get_option_group());
+ 
+   return G_APPLICATION_CLASS (gtd_application_parent_class)->local_command_line (application,
+                                                                                  arguments,

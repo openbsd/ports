@@ -2,7 +2,7 @@ COMMENT=		graphical user interface for git
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		44
-REVISION=		4
+REVISION=		6
 
 SHARED_LIBS += gitg-1.0                  1.0 # 0.0.0
 SHARED_LIBS += gitg-ext-1.0              0.0 # 0.0.0
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 girepository-1.0
+WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 girepository-2.0
 WANTLIB += git2-glib-1.0 glib-2.0 gobject-2.0 gpgme gspell-1 gtk-3
 WANTLIB += gtksourceview-4 handy-1 intl json-glib-1.0 m pango-1.0
 WANTLIB += peas-1.0 secret-1 xml2

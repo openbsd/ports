@@ -1,0 +1,41 @@
+Unbreak for girepository-2.0
+
+Index: src/eog-plugin-engine.c
+--- src/eog-plugin-engine.c.orig
++++ src/eog-plugin-engine.c
+@@ -34,7 +34,7 @@
+ #include <glib/gi18n.h>
+ #include <glib.h>
+ #include <gio/gio.h>
+-#include <girepository.h>
++#include <girepository/girepository.h>
+ 
+ #define EOG_PLUGIN_DATA_DIR EOG_DATA_DIR G_DIR_SEPARATOR_S "plugins"
+ 
+@@ -89,7 +89,7 @@ eog_plugin_engine_new (void)
+ 					"girepository-1.0", NULL);
+ 
+ 	/* This should be moved to libpeas */
+-	if (g_irepository_require (g_irepository_get_default (),
++	if (g_irepository_require (gi_repository_dup_default (),
+ 				   "Peas", "1.0", 0, &error) == NULL)
+ 	{
+ 		g_warning ("Error loading Peas typelib: %s\n",
+@@ -98,7 +98,7 @@ eog_plugin_engine_new (void)
+ 	}
+ 
+ 
+-	if (g_irepository_require (g_irepository_get_default (),
++	if (g_irepository_require (gi_repository_dup_default (),
+ 				   "PeasGtk", "1.0", 0, &error) == NULL)
+ 	{
+ 		g_warning ("Error loading PeasGtk typelib: %s\n",
+@@ -107,7 +107,7 @@ eog_plugin_engine_new (void)
+ 	}
+ 
+ 
+-	if (g_irepository_require_private (g_irepository_get_default (),
++	if (g_irepository_require_private (gi_repository_dup_default (),
+ 					   private_path, "Eog", "3.0", 0,
+ 					   &error) == NULL)
+ 	{

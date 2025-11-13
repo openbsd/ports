@@ -1,3 +1,5 @@
+Unbreak for girepository-2.0
+
 Index: tests/libgitg/test-commit.vala
 --- tests/libgitg/test-commit.vala.orig
 +++ tests/libgitg/test-commit.vala

@@ -1,0 +1,14 @@
+Unbreak for girepository-2.0
+
+Index: gitg/gitg-plugins-engine.vala
+--- gitg/gitg-plugins-engine.vala.orig
++++ gitg/gitg-plugins-engine.vala
+@@ -28,7 +28,7 @@ public class PluginsEngine : Peas.Engine
+ 	{
+ 		enable_loader("python");
+ 
+-		var repo = Introspection.Repository.get_default();
++		var repo = Introspection.Repository.dup_default();
+ 
+ 		try
+ 		{

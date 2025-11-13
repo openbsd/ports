@@ -1,0 +1,41 @@
+https://github.com/mate-desktop/eom/issues/358
+
+Index: src/eom-plugin-engine.c
+--- src/eom-plugin-engine.c.orig
++++ src/eom-plugin-engine.c
+@@ -34,7 +34,7 @@
+ #include <glib/gi18n.h>
+ #include <glib.h>
+ #include <gio/gio.h>
+-#include <girepository.h>
++#include <girepository/girepository.h>
+ 
+ #define USER_EOM_PLUGINS_LOCATION "plugins/"
+ 
+@@ -87,7 +87,7 @@ eom_plugin_engine_new (void)
+ 	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
+ 
+ 	/* This should be moved to libpeas */
+-	if (g_irepository_require (g_irepository_get_default (),
++	if (gi_repository_require (gi_repository_dup_default (),
+ 	                           "Peas", "1.0", 0, &error) == NULL)
+ 	{
+ 		g_warning ("Error loading Peas typelib: %s\n",
+@@ -95,7 +95,7 @@ eom_plugin_engine_new (void)
+ 		g_clear_error (&error);
+ 	}
+ 
+-	if (g_irepository_require (g_irepository_get_default (),
++	if (gi_repository_require (gi_repository_dup_default (),
+ 	                           "PeasGtk", "1.0", 0, &error) == NULL)
+ 	{
+ 		g_warning ("Error loading PeasGtk typelib: %s\n",
+@@ -103,7 +103,7 @@ eom_plugin_engine_new (void)
+ 		g_clear_error (&error);
+ 	}
+ 
+-	if (g_irepository_require_private (g_irepository_get_default (),
++	if (gi_repository_require_private (gi_repository_dup_default (),
+ 	                                   private_path, "Eom", "1.0", 0,
+ 	                                   &error) == NULL)
+ 	{

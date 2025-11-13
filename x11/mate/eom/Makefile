@@ -1,6 +1,6 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		3
+REVISION=		4
 
 COMMENT=		image viewer for the MATE desktop
 
@@ -11,23 +11,20 @@ MATE_PROJECT=		eom
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat
-WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl jpeg
-WANTLIB += lzma m pcre2-8 pixman-1 png pthread xcb
-WANTLIB += xcb-render xcb-shm xcb-util xml2 z
-WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
-WANTLIB += exempi exif gdk-3 fribidi
-WANTLIB += girepository-1.0 graphite2 gtk-3 harfbuzz lcms2
-WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 rsvg-2 startup-notification-1
-WANTLIB += SM Xt bz2 jasper openjp2 tiff webp webpdemux webpmux
-WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += djvulibre jbig raw_r Xau Xdmcp
-WANTLIB += ${COMPILER_LIBCXX} execinfo heif
-WANTLIB += atspi dbus-1 epoll-shim sharpyuv wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
+WANTLIB += SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject dav1d dbus-1 dconf
+WANTLIB += djvulibre epoll-shim epoxy exempi exif expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += girepository-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz heif iconv intl jasper jbig
+WANTLIB += jpeg lcms2 lzma m mate-desktop-2 openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 peas-1.0 peas-gtk-1.0
+WANTLIB += pixman-1 png raw_r rsvg-2 sharpyuv startup-notification-1
+WANTLIB += tiff wayland-client wayland-cursor wayland-egl webp
+WANTLIB += webpdemux webpmux xcb xcb-render xcb-shm xcb-util xkbcommon
+WANTLIB += xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,0 +1,39 @@
+Unbreak for girepository-2.0
+
+Index: pluma/pluma-plugins-engine.c
+--- pluma/pluma-plugins-engine.c.orig
++++ pluma/pluma-plugins-engine.c
+@@ -36,7 +36,7 @@
+ #include <string.h>
+ 
+ #include <glib/gi18n.h>
+-#include <girepository.h>
++#include <girepository/girepository.h>
+ 
+ #include "pluma-plugins-engine.h"
+ #include "pluma-debug.h"
+@@ -68,21 +68,21 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
+ 	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA_ID);
+ 
+ 	/* This should be moved to libpeas */
+-	if (!g_irepository_require (g_irepository_get_default (),
++	if (!g_irepository_require (gi_repository_dup_default (),
+ 	                            "Peas", "1.0", 0, &error))
+ 	{
+ 		g_warning ("Could not load Peas repository: %s", error->message);
+ 		g_clear_error (&error);
+ 	}
+ 
+-	if (!g_irepository_require (g_irepository_get_default (),
++	if (!g_irepository_require (gi_repository_dup_default (),
+ 	                            "PeasGtk", "1.0", 0, &error))
+ 	{
+ 		g_warning ("Could not load PeasGtk repository: %s", error->message);
+ 		g_clear_error (&error);
+ 	}
+ 
+-	if (!g_irepository_require_private (g_irepository_get_default (),
++	if (!g_irepository_require_private (gi_repository_dup_default (),
+ 	                                    LIBDIR "/girepository-1.0",
+ 	                                    "Pluma", "1.0", 0, &error))
+ 	{

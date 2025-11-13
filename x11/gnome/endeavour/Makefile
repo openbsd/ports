@@ -1,12 +1,12 @@
 COMMENT=		task manager for GNOME
 
 DIST_TUPLE=		gnome World Endeavour 43.0 .
-REVISION=		4
+REVISION=		5
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += adwaita-1 c ecal-2.0 edataserver-1.2 gio-2.0 girepository-1.0
+WANTLIB += adwaita-1 c ecal-2.0 edataserver-1.2 gio-2.0 girepository-2.0
 WANTLIB += glib-2.0 goa-1.0 gobject-2.0 graphene-1.0 gtk-4 ical-glib
 WANTLIB += intl m pango-1.0 peas-1.0
 
