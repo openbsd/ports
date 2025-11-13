@@ -1,0 +1,50 @@
+Build with newer FFmpeg
+
+Index: Core/HW/MediaEngine.cpp
+--- Core/HW/MediaEngine.cpp.orig
++++ Core/HW/MediaEngine.cpp
+@@ -365,7 +365,7 @@ void MediaEngine::closeContext() {
+ 	m_pCodecCtxs.clear();
+ 	// These are streams allocated from avformat_new_stream.
+ 	for (auto &it : m_codecsToClose) {
+-		avcodec_close(it);
++		avcodec_free_context(&it);
+ 	}
+ 	m_codecsToClose.clear();
+ 	if (m_pFormatCtx)
+@@ -406,7 +406,7 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+ 		// no need to add an existing stream.
+ 		if ((u32)streamNum < m_pFormatCtx->nb_streams)
+ 			return true;
+-		AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
++		const AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+ 		if (!h264_codec)
+ 			return false;
+ 		AVStream *stream = avformat_new_stream(m_pFormatCtx, h264_codec);
+@@ -429,7 +429,7 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+ 			}
+ 
+ #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 16, 100)
+-			AVCodec *codec = avcodec_find_decoder(stream->codecpar->codec_id);
++			const AVCodec *codec = avcodec_find_decoder(stream->codecpar->codec_id);
+ 			AVCodecContext *codecCtx = avcodec_alloc_context3(codec);
+ #else
+ 			AVCodecContext *codecCtx = stream->codec;
+@@ -517,7 +517,7 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
+ 
+ 		AVStream *stream = m_pFormatCtx->streams[streamNum];
+ #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 33, 100)
+-		AVCodec *pCodec = avcodec_find_decoder(stream->codecpar->codec_id);
++		const AVCodec *pCodec = avcodec_find_decoder(stream->codecpar->codec_id);
+ 		if (!pCodec) {
+ 			WARN_LOG_REPORT(Log::ME, "Could not find decoder for %d", (int)stream->codecpar->codec_id);
+ 			return false;
+@@ -683,7 +683,7 @@ bool MediaEngine::stepVideo(int videoPixelMode, bool s
+ 				avcodec_send_packet(m_pCodecCtx, &packet);
+ 			int result = avcodec_receive_frame(m_pCodecCtx, m_pFrame);
+ 			if (result == 0) {
+-				result = m_pFrame->pkt_size;
++				result = packet.size;
+ 				frameFinished = 1;
+ 			} else if (result == AVERROR(EAGAIN)) {
+ 				result = 0;
