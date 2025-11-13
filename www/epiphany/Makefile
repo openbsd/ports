@@ -1,7 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	48.5
+GNOME_VERSION=	49.1
 
 CATEGORIES=	www
 
@@ -19,7 +19,8 @@ WANTLIB += nettle pango-1.0 portal portal-gtk4 secret-1 soup-3.0
 WANTLIB += sqlite3 webkitgtk-6.0 xml2
 
 BUILD_DEPENDS=	devel/iso-codes \
-		devel/gsettings-desktop-schemas
+		devel/gsettings-desktop-schemas \
+		x11/blueprint-compiler
 
 RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas

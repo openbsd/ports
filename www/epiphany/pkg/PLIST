@@ -854,7 +854,7 @@ share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
-share/metainfo/org.gnome.Epiphany.appdata.xml
+share/metainfo/org.gnome.Epiphany.metainfo.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
