@@ -1,7 +1,7 @@
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 CATEGORIES=		productivity
 
@@ -25,7 +25,9 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection gtk-update-icon-cache vala
 
-BUILD_DEPENDS=		devel/appstream
+BUILD_DEPENDS=		devel/appstream \
+			lang/vala,-valadoc \
+			x11/blueprint-compiler
 
 LIB_DEPENDS=		graphics/libqrencode \
 			net/telepathy/folks \
