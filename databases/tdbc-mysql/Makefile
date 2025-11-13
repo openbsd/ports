@@ -1,6 +1,6 @@
 COMMENT =		MariaDB module for TDBC
 
-V =			1.1.10
+V =			1.1.12
 N =			mysql
 
 DISTNAME =		tdbc${N}${V}
