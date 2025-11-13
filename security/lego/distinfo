@@ -2001,7 +2001,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7Uv
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.6.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.6.0.zip) = pu2yet62+PfmukEsrOAVnOo1r5wqowgJHaG+W15OurM=
-SHA256 (lego-v4.28.0.zip) = rf0+/f9l8LUJhfiFkJ33GgfsmcxX34/5r/kcL2GQg+E=
+SHA256 (lego-v4.28.1.zip) = pE4rO0HZOEuJ2fY8Wz090u4rK/kCPINvlIGBVG1LXTo=
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.zip) = 269497
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
@@ -4005,4 +4005,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.6.0.mod) = 100
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.6.0.zip) = 66337
-SIZE (lego-v4.28.0.zip) = 1681612
+SIZE (lego-v4.28.1.zip) = 1681655
