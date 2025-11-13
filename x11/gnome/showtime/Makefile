@@ -1,7 +1,7 @@
 COMMENT=		play videos
 
 GNOME_PROJECT=		showtime
-GNOME_VERSION=		48.1
+GNOME_VERSION=		49.0
 
 CATEGORIES=		multimedia
 
