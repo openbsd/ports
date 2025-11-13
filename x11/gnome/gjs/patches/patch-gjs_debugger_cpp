@@ -18,7 +18,7 @@ Index: gjs/debugger.cpp
  #include <glib.h>
  
  #include <js/CallArgs.h>
-@@ -34,6 +29,11 @@
+@@ -35,6 +30,11 @@
  #include "gjs/jsapi-util.h"
  #include "gjs/macros.h"
  #include "gjs/module.h"
