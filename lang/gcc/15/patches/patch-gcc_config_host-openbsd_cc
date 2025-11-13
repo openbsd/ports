@@ -1,0 +1,27 @@
+Follow NetBSD layout for VM_SPACE
+https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=3cf50fcdac65b4174270915d5024fced130b7133
+
+Index: gcc/config/host-openbsd.cc
+--- gcc/config/host-openbsd.cc.orig
++++ gcc/config/host-openbsd.cc
+@@ -31,14 +31,14 @@
+ 
+ /* For various ports, try to guess a fixed spot in the vm space
+    that's probably free.  */
+-#if defined(__amd64__)
++#if defined(__sparc64__)
++# define TRY_EMPTY_VM_SPACE	0x40000000000
++#elif defined(_LP64)
+ # define TRY_EMPTY_VM_SPACE	0x400000000000
+-#elif defined(__hppa__)
+-# define TRY_EMPTY_VM_SPACE	0xb0000000
+-#elif defined(__i386__)
+-# define TRY_EMPTY_VM_SPACE	0xb0000000
++#elif defined(__mips__) || defined(__vax__) || defined (__arm__)
++# define TRY_EMPTY_VM_SPACE	0x60000000
+ #else
+-# define TRY_EMPTY_VM_SPACE	0
++# define TRY_EMPTY_VM_SPACE	0xb0000000
+ #endif
+ 
+ /* Determine a location where we might be able to reliably allocate
