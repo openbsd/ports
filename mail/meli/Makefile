@@ -4,8 +4,6 @@ GH_ACCOUNT =		meli
 GH_PROJECT =		meli
 GH_TAGNAME =		v0.8.11
 
-# ring-v0.17 does not support this arch
-NOT_FOR_ARCHS = sparc64
 # error[E0308]: mismatched types                                  --> melib/src/backends/notmuch.rs:82:13
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
