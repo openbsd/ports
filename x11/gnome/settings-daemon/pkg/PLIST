@@ -21,8 +21,6 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-xsettings
 share/GConf/gsettings/gnome-settings-daemon.convert
 share/examples/gnome-settings-daemon/
-@sample ${SYSCONFDIR}/gnome-settings-daemon/
-@sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
 share/examples/gnome-settings-daemon/xdg/
 share/examples/gnome-settings-daemon/xdg/Xwayland-session.d/
 share/examples/gnome-settings-daemon/xdg/Xwayland-session.d/00-xrdb
