@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 HOMEPAGE=		https://apps.gnome.org/Weather/
 
@@ -17,6 +17,7 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/appstream \
 			geo/geoclue2 \
+			lang/typescript \
 			x11/gnome/gjs \
 			x11/gnome/libadwaita \
 			x11/gnome/libgweather4
