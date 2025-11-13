@@ -2,7 +2,7 @@ COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_PROJECT= 	glade
 GNOME_VERSION=	3.40.0
-REVISION=       7
+REVISION=       8
 
 CATEGORIES=	devel
 
@@ -30,8 +30,7 @@ BUILD_DEPENDS=	devel/py-gobject3
 
 LIB_DEPENDS=	x11/gtk+3
 
-RUN_DEPENDS=	x11/gnome/devhelp \
-		devel/py-gobject3
+RUN_DEPENDS=	devel/py-gobject3
 
 MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
 MODGNOME_TOOLS += gobject-introspection yelp
