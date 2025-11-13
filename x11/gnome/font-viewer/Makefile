@@ -1,7 +1,7 @@
 COMMENT=		font viewer utility for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 HOMEPAGE=		https://apps.gnome.org/FontViewer/
 
@@ -9,8 +9,8 @@ HOMEPAGE=		https://apps.gnome.org/FontViewer/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c cairo fontconfig freetype fribidi gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 graphene-1.0 gtk-4 harfbuzz intl
-WANTLIB += m pango-1.0 pangocairo-1.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-4 harfbuzz intl m pango-1.0
+WANTLIB += pangocairo-1.0
 
 MODULES=		devel/meson \
 			x11/gnome
