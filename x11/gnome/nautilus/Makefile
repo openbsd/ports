@@ -1,7 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		48.5
+GNOME_VERSION=		49.0
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 adwaita-1 c cairo cloudproviders gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-desktop-4 gobject-2.0 graphene-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gtk-4 intl m pango-1.0 portal portal-gtk4
-WANTLIB += tinysparql-3.0 wayland-client
+WANTLIB += gstreamer-1.0 gtk-4 icui18n icuuc intl m pango-1.0
+WANTLIB += portal portal-gtk4 tinysparql-3.0 wayland-client
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -40,6 +40,7 @@ RUN_DEPENDS +=		x11/xdg-user-dirs-gtk
 LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \
 			sysutils/flatpak/libportal,-gtk4 \
+			textproc/icu4c \
 			x11/gnome/autoar \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/libadwaita \

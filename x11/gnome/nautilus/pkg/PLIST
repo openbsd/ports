@@ -13,7 +13,7 @@ include/nautilus/libnautilus-extension/nautilus-properties-item.h
 include/nautilus/libnautilus-extension/nautilus-properties-model-provider.h
 include/nautilus/libnautilus-extension/nautilus-properties-model.h
 include/nautilus/nautilus-extension.h
-lib/girepository-1.0/Nautilus-4.0.typelib
+lib/girepository-1.0/Nautilus-4.1.typelib
 @lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
 lib/nautilus/
 lib/nautilus/extensions-4/
@@ -24,7 +24,7 @@ share/applications/nautilus-autorun-software.desktop
 share/applications/org.gnome.Nautilus.desktop
 share/dbus-1/services/org.freedesktop.FileManager1.service
 share/dbus-1/services/org.gnome.Nautilus.service
-share/gir-1.0/Nautilus-4.0.gir
+share/gir-1.0/Nautilus-4.1.gir
 share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
@@ -83,6 +83,7 @@ share/locale/hi/LC_MESSAGES/nautilus.mo
 share/locale/hr/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
 share/locale/hy/LC_MESSAGES/nautilus.mo
+share/locale/ia/LC_MESSAGES/nautilus.mo
 share/locale/id/LC_MESSAGES/nautilus.mo
 share/locale/ie/LC_MESSAGES/nautilus.mo
 share/locale/ig/LC_MESSAGES/nautilus.mo
