@@ -1,0 +1,27 @@
+Fix duplicate define error:
+
+/usr/local/include/pnglibconf.h:207:9: error: 'PNG_ARM_NEON_OPT' macro redefined [-Werror,-Wmacro-redefined]
+
+Index: make/modules/java.desktop/lib/ClientLibraries.gmk
+--- make/modules/java.desktop/lib/ClientLibraries.gmk.orig
++++ make/modules/java.desktop/lib/ClientLibraries.gmk
+@@ -166,7 +166,7 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+   ifeq ($(USE_EXTERNAL_LIBPNG), false)
+     LIBSPLASHSCREEN_HEADER_DIRS += libsplashscreen/libpng
+     LIBSPLASHSCREEN_CFLAGS += -DPNG_NO_MMX_CODE -DPNG_ARM_NEON_OPT=0 \
+-        -DPNG_ARM_NEON_IMPLEMENTATION=0
++        -DPNG_ARM_NEON_IMPLEMENTATION=0 -DPNG_LOONGARCH_LSX_OPT=0
+   else
+     LIBSPLASHSCREEN_EXCLUDES += libpng
+   endif
+@@ -179,9 +179,7 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+     LIBSPLASHSCREEN_STATIC_LIB_EXCLUDE_OBJS += $(LIBZIP_OBJS)
+   endif
+ 
+-  LIBSPLASHSCREEN_CFLAGS += -DSPLASHSCREEN -DPNG_NO_MMX_CODE \
+-      -DPNG_ARM_NEON_OPT=0 -DPNG_ARM_NEON_IMPLEMENTATION=0 \
+-      -DPNG_LOONGARCH_LSX_OPT=0
++  LIBSPLASHSCREEN_CFLAGS += -DSPLASHSCREEN
+ 
+   ifeq ($(call isTargetOs, linux bsd)+$(call isTargetCpuArch, ppc), true+true)
+     LIBSPLASHSCREEN_CFLAGS += -DPNG_POWERPC_VSX_OPT=0
