@@ -11,6 +11,8 @@ GNOME_VERSION=		3.24.51
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
+REVISION-main=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gdk-3                     2201.1 # 0.2419.32

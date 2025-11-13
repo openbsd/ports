@@ -18,6 +18,8 @@ PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 
+REVISION-main=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gtk-4                     5.5 # 1.2000.2

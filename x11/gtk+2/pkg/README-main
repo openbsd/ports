@@ -28,13 +28,13 @@ Printing
 
 Preview
 -------
-By default, GTK+ uses the "evince" command from the evince package to
-display a "Print Preview". This can be modified by editing:
+By default, GTK+ uses evince to display a "Print Preview". This can be modified
+by editing:
     ~/.gtkrc-2.0
 and appending the following line:
-gtk-print-preview-command = "epdfview %f"
+gtk-print-preview-command = "xpdf3 %f"
 
-(epdfview can be replaced by any other PDF viewer command like xpdf...)
+(xpdf3 can be replaced by any other PDF viewer command)
 
 Note that by default, "evince" will remove the temporary PDF preview
 file (/tmp/previewXXXXX.pdf) when done, that might not be the case with
