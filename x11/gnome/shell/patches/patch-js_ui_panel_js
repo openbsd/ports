@@ -7,6 +7,8 @@ https://gitlab.gnome.org/GNOME/mutter/-/commit/ac2be8df1406561a6e9eb7ad5f2dcda35
 https://gitlab.gnome.org/GNOME/mutter/-/commit/3eb3f6b8b1c2d388736d9dc1751ef846a7dbac13
 https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/commit/08ae6461a824d244ea6d678d62579ca95c3c55c1
 
+(gnome-shell:10821): GNOME Shell-CRITICAL **: 09:02:24.828: Failed to setup quick settings: TypeError: can't access property "connectObject", this._manager is null
+
 Index: js/ui/panel.js
 --- js/ui/panel.js.orig
 +++ js/ui/panel.js
