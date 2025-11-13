@@ -1,0 +1,49 @@
+No wordexp(3) on OpenBSD
+XXX check for the wordexp function instead + push upstream
+
+Index: libfoundry/platform/foundry-path.c
+--- libfoundry/platform/foundry-path.c.orig
++++ libfoundry/platform/foundry-path.c
+@@ -21,7 +21,9 @@
+ #include "config.h"
+ 
+ #include <errno.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#endif
+ 
+ #include "foundry-path.h"
+ 
+@@ -38,11 +40,13 @@
+ char *
+ foundry_path_expand (const char *path)
+ {
++#ifndef __OpenBSD__
+   wordexp_t state = { 0 };
++  int r;
++#endif
+   char *replace_home = NULL;
+   char *ret = NULL;
+   char *escaped;
+-  int r;
+ 
+   if (path == NULL)
+     return NULL;
+@@ -64,6 +68,7 @@ foundry_path_expand (const char *path)
+     }
+ 
+   escaped = g_shell_quote (path);
++#ifndef __OpenBSD__
+   r = wordexp (escaped, &state, WRDE_NOCMD);
+   if (r == 0 && state.we_wordc > 0)
+     ret = g_strdup (state.we_wordv [0]);
+@@ -75,6 +80,9 @@ foundry_path_expand (const char *path)
+ 
+       ret = g_build_filename (g_get_home_dir (), freeme, NULL);
+     }
++#else
++  ret = g_strdup (path);
++#endif
+ 
+   g_free (replace_home);
+   g_free (escaped);
