@@ -122,11 +122,12 @@ CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 
 .if ${PROPERTIES:Mclang}
 CONFIGURE_ARGS+=--with-toolchain-type=clang
-# for clang15+
-CONFIGURE_ARGS+=--disable-warnings-as-errors
 .else
 CONFIGURE_ARGS+=--with-toolchain-type=gcc
 .endif
+
+# XXX: for clang15+ & gcc15
+CONFIGURE_ARGS+=--disable-warnings-as-errors
 
 .if ${PROPERTIES:Mdebuginfo}
 CONFIGURE_ARGS+=--with-native-debug-symbols=external
