@@ -1,0 +1,25 @@
+XXXX push upstream
+
+Index: src/color-lightness-tests.cc
+--- src/color-lightness-tests.cc.orig
++++ src/color-lightness-tests.cc
+@@ -23,15 +23,19 @@ using namespace vte::color;
+ static void
+ test_white(void)
+ {
++#ifdef FLT_TRUE_MIN
+         auto const white = rgb{G_MAXUINT16, G_MAXUINT16, G_MAXUINT16};
+         g_assert_cmpfloat_with_epsilon(perceived_lightness(white), 1., FLT_TRUE_MIN);
++#endif
+ }
+ 
+ static void
+ test_black(void)
+ {
++#ifdef FLT_TRUE_MIN
+         auto const black = rgb{0, 0, 0};
+         g_assert_cmpfloat_with_epsilon(perceived_lightness(black), 0., FLT_TRUE_MIN);
++#endif
+ }
+ 
+ static auto assert_is_dark(rgb const& color) -> void
