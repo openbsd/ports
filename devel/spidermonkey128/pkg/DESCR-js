@@ -1,3 +1,0 @@
-SpiderMonkey is Mozilla's JavaScript engine written in C and C++.
-
-this package contains the js shell binary.
