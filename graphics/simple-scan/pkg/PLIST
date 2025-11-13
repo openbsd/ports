@@ -1,6 +1,6 @@
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
-share/applications/simple-scan.desktop
+share/applications/org.gnome.SimpleScan.desktop
 share/glib-2.0/schemas/org.gnome.SimpleScan.gschema.xml
 share/help/
 share/help/C/
@@ -807,7 +807,7 @@ share/locale/vi/LC_MESSAGES/simple-scan.mo
 share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
 share/locale/zh_HK/LC_MESSAGES/simple-scan.mo
 share/locale/zh_TW/LC_MESSAGES/simple-scan.mo
-share/metainfo/org.gnome.SimpleScan.appdata.xml
+share/metainfo/org.gnome.SimpleScan.metainfo.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
