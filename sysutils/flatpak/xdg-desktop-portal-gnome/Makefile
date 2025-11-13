@@ -1,7 +1,7 @@
 COMMENT=		GNOME backend implementation for xdg-desktop-portal
 
 GNOME_PROJECT=		xdg-desktop-portal-gnome
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
