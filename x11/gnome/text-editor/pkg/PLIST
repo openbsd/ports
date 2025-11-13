@@ -270,6 +270,7 @@ share/help/zh_CN/gnome-text-editor/media/search-recent.png
 share/icons/hicolor/scalable/apps/org.gnome.TextEditor.svg
 share/icons/hicolor/symbolic/apps/org.gnome.TextEditor-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-text-editor.mo
+share/locale/ar/LC_MESSAGES/gnome-text-editor.mo
 share/locale/be/LC_MESSAGES/gnome-text-editor.mo
 share/locale/bg/LC_MESSAGES/gnome-text-editor.mo
 share/locale/ca/LC_MESSAGES/gnome-text-editor.mo

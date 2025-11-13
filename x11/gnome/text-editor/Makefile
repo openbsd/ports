@@ -1,7 +1,7 @@
 COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
-GNOME_VERSION=		48.3
+GNOME_VERSION=		49.0
 
 CATEGORIES=		editors
 
@@ -10,8 +10,8 @@ HOMEPAGE=		https://apps.gnome.org/TextEditor/
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += adwaita-1 c cairo editorconfig gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-4 gtksourceview-5 intl m pango-1.0 spelling-1
+WANTLIB += adwaita-1 c editorconfig gio-2.0 glib-2.0 gobject-2.0 gtk-4
+WANTLIB += gtksourceview-5 intl m pango-1.0 spelling-1
 
 # gnu17
 COMPILER=		base-clang ports-gcc
