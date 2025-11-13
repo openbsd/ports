@@ -1,7 +1,7 @@
 COMMENT=		keep track of time
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 HOMEPAGE=		https://apps.gnome.org/Clocks/
 
