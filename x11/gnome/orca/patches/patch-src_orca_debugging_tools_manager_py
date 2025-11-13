@@ -7,6 +7,6 @@ Index: src/orca/debugging_tools_manager.py
              try:
 -                cmdline = subprocess.getoutput(f"cat /proc/{pid}/cmdline")
 +                cmdline = subprocess.getoutput(f"ps -o args -p %s | sed 1d' % {pid}")
-             except Exception as error:
+             except subprocess.SubprocessError as error:
                  cmdline = f"EXCEPTION: {error}"
              else:

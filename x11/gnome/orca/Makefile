@@ -1,7 +1,7 @@
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		48.7
+GNOME_VERSION=		49.4
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -14,12 +14,14 @@ MODGNOME_TOOLS= 	gtk-update-icon-cache gobject-introspection yelp
 
 BUILD_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/py-atspi \
-			x11/gtk+3
+			x11/gtk+3 \
+			x11/py-dasbus
 
 RUN_DEPENDS=		devel/py-gobject3 \
 			sysutils/py-psutil \
 			devel/py-setproctitle \
-			x11/gnome/py-atspi
+			x11/gnome/py-atspi \
+			x11/py-dasbus
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
