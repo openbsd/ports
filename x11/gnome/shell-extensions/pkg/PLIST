@@ -162,8 +162,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-shell-extensions.mo
 share/wayland-sessions/
 share/wayland-sessions/gnome-classic-wayland.desktop
 share/wayland-sessions/gnome-classic.desktop
-share/xsessions/
-share/xsessions/gnome-classic-xorg.desktop
-share/xsessions/gnome-classic.desktop
 @tag glib-compile-schemas
 @tag update-desktop-database
