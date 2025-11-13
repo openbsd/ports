@@ -9,7 +9,7 @@ Index: src/backends/meta-udev.h
  #include <gudev/gudev.h>
  
  #include "backends/meta-backend-types.h"
-@@ -60,3 +61,4 @@ void meta_udev_pause (MetaUdev *udev);
+@@ -64,3 +65,4 @@ void meta_udev_pause (MetaUdev *udev);
  void meta_udev_resume (MetaUdev *udev);
  
  MetaUdev * meta_udev_new (MetaBackend *backend);

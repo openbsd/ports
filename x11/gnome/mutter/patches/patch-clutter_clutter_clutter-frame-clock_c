@@ -3,7 +3,7 @@ warning: format specifies type 'long' but the argument has type 'int64_t' (aka '
 Index: clutter/clutter/clutter-frame-clock.c
 --- clutter/clutter/clutter-frame-clock.c.orig
 +++ clutter/clutter/clutter-frame-clock.c
-@@ -1610,16 +1610,16 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
+@@ -1688,16 +1688,16 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
        return string;
      }
  

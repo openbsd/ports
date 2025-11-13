@@ -1,0 +1,40 @@
+REVERT:
+From e1a1247fb5889181fc64367798b08b54260853cc Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 1 Aug 2025 11:26:24 -0400
+Subject: [PATCH] background: Plumb color state through backgrounds
+
+Index: src/compositor/meta-background.c
+--- src/compositor/meta-background.c.orig
++++ src/compositor/meta-background.c
+@@ -24,11 +24,9 @@
+ #include <string.h>
+ 
+ #include "backends/meta-backend-private.h"
+-#include "clutter/clutter-color-state.h"
+ #include "compositor/cogl-utils.h"
+-#include "compositor/meta-background-image-private.h"
+-#include "meta/compositor.h"
+ #include "meta/display.h"
++#include "meta/meta-background-image.h"
+ #include "meta/meta-background.h"
+ #include "meta/meta-monitor-manager.h"
+ #include "meta/util.h"
+@@ -1033,17 +1031,4 @@ meta_background_refresh_all (void)
+ 
+   for (l = all_backgrounds; l; l = l->next)
+     mark_changed (l->data);
+-}
+-
+-ClutterColorState *
+-meta_background_get_color_state (MetaBackground *self)
+-{
+-  g_return_val_if_fail (META_IS_BACKGROUND (self), NULL);
+-
+-  if (self->background_image1)
+-    return meta_background_image_get_color_state (self->background_image1);
+-  else if (self->background_image2)
+-    return meta_background_image_get_color_state (self->background_image2);
+-  else
+-    return NULL;
+ }

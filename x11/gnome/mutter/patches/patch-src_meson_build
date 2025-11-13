@@ -1,0 +1,18 @@
+REVERT:
+From 34d66f86d941dc47101f1f69c54122913442dee2 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Wed, 18 Jun 2025 15:52:46 -0400
+Subject: [PATCH] background: Port from gdk-pixbuf to glycin
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -25,7 +25,7 @@ mutter_pkg_private_deps = [
+   gmodule_no_export_dep,
+   gnome_settings_daemon_dep,
+   xkbcommon_dep,
+-  glycin_dep,
++  gdk_pixbuf_dep,
+   libeis_dep,
+   libdisplay_info_dep,
+ ]

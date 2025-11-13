@@ -1,0 +1,20 @@
+../mutter-49.1.1/src/helpers/meta-backlight-helper.c:42:2: error: "gsd-backlight-helper does not work on non-Linux"
+   42 | #error "gsd-backlight-helper does not work on non-Linux
+
+Index: src/helpers/meson.build
+--- src/helpers/meson.build.orig
++++ src/helpers/meson.build
+@@ -1,3 +1,5 @@
++if host_machine.system() == 'linux'
++
+ helpers_cdata = configuration_data()
+ helpers_cdata.set('libexecdir', libexecdir)
+ 
+@@ -37,4 +39,5 @@ if have_x11
+     install_dir: libexecdir,
+     install: true,
+   )
+-endif
+\ No newline at end of file
++endif
++endif

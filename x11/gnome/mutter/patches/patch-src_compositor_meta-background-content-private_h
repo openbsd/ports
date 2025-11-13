@@ -1,0 +1,15 @@
+REVERT:
+From e1a1247fb5889181fc64367798b08b54260853cc Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 1 Aug 2025 11:26:24 -0400
+Subject: [PATCH] background: Plumb color state through backgrounds
+
+Index: src/compositor/meta-background-content-private.h
+--- src/compositor/meta-background-content-private.h.orig
++++ src/compositor/meta-background-content-private.h
+@@ -11,5 +11,3 @@ void meta_background_content_cull_unobscured (MetaBack
+ 
+ void meta_background_content_cull_redraw_clip (MetaBackgroundContent *self,
+                                                MtkRegion             *clip_region);
+-
+-MetaBackground * meta_background_content_get_background (MetaBackgroundContent *self);

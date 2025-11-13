@@ -1,0 +1,47 @@
+REVERT:
+From e1a1247fb5889181fc64367798b08b54260853cc Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 1 Aug 2025 11:26:24 -0400
+Subject: [PATCH] background: Plumb color state through backgrounds
+
+Index: src/compositor/meta-background-content.c
+--- src/compositor/meta-background-content.c.orig
++++ src/compositor/meta-background-content.c
+@@ -303,7 +303,6 @@ on_background_changed (MetaBackground        *backgrou
+ {
+   invalidate_pipeline (self, CHANGED_BACKGROUND);
+   clutter_content_invalidate (CLUTTER_CONTENT (self));
+-  g_object_notify_by_pspec (G_OBJECT (self), properties[PROP_BACKGROUND]);
+ }
+ 
+ static CoglPipeline *
+@@ -970,9 +969,7 @@ meta_background_content_class_init (MetaBackgroundCont
+   properties[PROP_BACKGROUND] =
+     g_param_spec_object ("background", NULL, NULL,
+                          META_TYPE_BACKGROUND,
+-                         G_PARAM_READWRITE |
+-                         G_PARAM_STATIC_STRINGS |
+-                         G_PARAM_EXPLICIT_NOTIFY);
++                         G_PARAM_READWRITE);
+ 
+   properties[PROP_GRADIENT] =
+     g_param_spec_boolean ("gradient", NULL, NULL,
+@@ -1075,7 +1072,6 @@ meta_background_content_set_background (MetaBackground
+ 
+   invalidate_pipeline (self, CHANGED_BACKGROUND);
+   clutter_content_invalidate (CLUTTER_CONTENT (self));
+-  g_object_notify_by_pspec (G_OBJECT (self), properties[PROP_BACKGROUND]);
+ }
+ 
+ void
+@@ -1232,10 +1228,4 @@ meta_background_content_cull_redraw_clip (MetaBackgrou
+                                           MtkRegion             *clip_region)
+ {
+   set_clip_region (self, clip_region);
+-}
+-
+-MetaBackground *
+-meta_background_content_get_background (MetaBackgroundContent *self)
+-{
+-  return self->background;
+ }

@@ -1,19 +1,20 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		48.6
+GNOME_VERSION=		49.1.1
+REVISION=		0
 
-SHARED_LIBS += mutter-mtk-16             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-16            0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-16         0.0 # 0.0.0
-SHARED_LIBS += mutter-16                 0.0 # 0.0.0
+SHARED_LIBS += mutter-mtk-17             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-17            0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-17         0.0 # 0.0.0
+SHARED_LIBS += mutter-17                 0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xtst atk-1.0 c cairo
-WANTLIB += canberra colord display-info drm eis fribidi gdk_pixbuf-2.0
+WANTLIB += EGL GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xtst atk-1.0 c cairo canberra
+WANTLIB += colord display-info drm eis fribidi gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-4 gobject-2.0
 WANTLIB += graphene-1.0 gtk-4 harfbuzz intl lcms2 m pango-1.0
 WANTLIB += pangocairo-1.0 pixman-1 startup-notification-1 wayland-server
@@ -49,6 +50,7 @@ LIB_DEPENDS=		audio/libcanberra \
 			sysutils/libdisplay-info \
 			wayland/libei \
 			wayland/wayland \
+			x11/gnome/at-spi2-core \
 			x11/gnome/desktop,-gtk4 \
 			x11/xkbcommon
 
@@ -62,7 +64,11 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dlibwacom=false \
 			-Dtests=disabled \
 			-Dprofiler=false \
-			-Dlogind=false
+			-Dlogind=false \
+			-Dx11=true
+
+# XXX needs native backend and remote desktop
+CONFIGURE_ARGS +=	-Ddevkit=disabled
 
 # XXX needs logind and udev to be enabled
 CONFIGURE_ARGS +=	-Dnative_backend=false

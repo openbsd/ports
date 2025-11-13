@@ -1,9 +1,33 @@
+1st chunk: REVERT:
+From 34d66f86d941dc47101f1f69c54122913442dee2 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Wed, 18 Jun 2025 15:52:46 -0400
+Subject: [PATCH] background: Port from gdk-pixbuf to glycin
+
 XXX push upstream
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -626,6 +626,8 @@ if have_xwayland
+@@ -21,7 +21,7 @@ gi_req = '>= 0.9.5'
+ graphene_req = '>= 1.10.2'
+ gtk3_req = '>= 3.19.8'
+ gtk4_req = '>= 4.14.0'
+-glycin_req = '>= 2.0.beta.2'
++gdk_pixbuf_req = '>= 2.0'
+ pango_req = '>= 1.46.0'
+ cairo_req = '>= 1.10.0'
+ pangocairo_req = '>= 1.20'
+@@ -117,7 +117,7 @@ subproject('gvdb')
+ 
+ m_dep = cc.find_library('m', required: true)
+ graphene_dep = dependency('graphene-gobject-1.0', version: graphene_req)
+-glycin_dep = dependency('glycin-2', version: glycin_req)
++gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: gdk_pixbuf_req)
+ cairo_dep = dependency('cairo', version: cairo_req)
+ pixman_dep = dependency('pixman-1', version: pixman_req)
+ gsettings_desktop_schemas_dep = dependency('gsettings-desktop-schemas',
+@@ -657,6 +657,8 @@ if have_xwayland
      cdata.set('HAVE_SYS_RANDOM', 1)
    elif cc.has_header_symbol('linux/random.h', 'getrandom')
      cdata.set('HAVE_LINUX_RANDOM', 1)

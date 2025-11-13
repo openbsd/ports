@@ -1,0 +1,15 @@
+REVERT:
+From e1a1247fb5889181fc64367798b08b54260853cc Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 1 Aug 2025 11:26:24 -0400
+Subject: [PATCH] background: Plumb color state through backgrounds
+
+Index: src/compositor/meta-background-private.h
+--- src/compositor/meta-background-private.h.orig
++++ src/compositor/meta-background-private.h
+@@ -9,5 +9,3 @@ CoglTexture * meta_background_get_texture (MetaBackgro
+                                            int                     monitor_index,
+                                            MtkRectangle           *texture_area,
+                                            CoglPipelineWrapMode   *wrap_mode);
+-
+-ClutterColorState * meta_background_get_color_state (MetaBackground *self);

@@ -12,4 +12,4 @@ Index: src/core/meta-context-main.c
 +#endif
  #endif
  
- #include "backends/meta-monitor.h"
+ #include "backends/meta-monitor-private.h"

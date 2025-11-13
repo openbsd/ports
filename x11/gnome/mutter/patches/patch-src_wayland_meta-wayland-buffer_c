@@ -29,7 +29,7 @@ Index: src/wayland/meta-wayland-buffer.c
    uint32_t shm_format;
    const MetaFormatInfo *format_info;
  
-@@ -429,6 +433,7 @@ shm_buffer_attach (MetaWaylandBuffer  *buffer,
+@@ -432,6 +436,7 @@ shm_buffer_attach (MetaWaylandBuffer  *buffer,
    cogl_format = format_info->cogl_format;
    multi_format = format_info->multi_texture_format;
  
@@ -37,7 +37,7 @@ Index: src/wayland/meta-wayland-buffer.c
    meta_topic (META_DEBUG_WAYLAND,
                "[wl-shm] wl_buffer@%u wl_shm_format %s "
                "-> MetaMultiTextureFormat %s / CoglPixelFormat %s",
-@@ -436,6 +441,7 @@ shm_buffer_attach (MetaWaylandBuffer  *buffer,
+@@ -439,6 +444,7 @@ shm_buffer_attach (MetaWaylandBuffer  *buffer,
                shm_format_to_string (&format_buf, shm_format),
                meta_multi_texture_format_to_string (multi_format),
                cogl_pixel_format_to_string (cogl_format));

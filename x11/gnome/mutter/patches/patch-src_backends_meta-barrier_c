@@ -1,0 +1,13 @@
+../mutter-49.1.1/src/backends/meta-barrier.c:287:26: error: use of undeclared identifier 'META_TYPE_BACKEND'; did you mean 'META_DEBUG_BACKEND'?
+
+Index: src/backends/meta-barrier.c
+--- src/backends/meta-barrier.c.orig
++++ src/backends/meta-barrier.c
+@@ -9,6 +9,7 @@
+ #include "config.h"
+ 
+ #include "meta/barrier.h"
++#include "meta/meta-backend.h"
+ #include "backends/meta-barrier-private.h"
+ 
+ #include <glib-object.h>

@@ -1,0 +1,16 @@
+In file included from ../mutter-49.1.1/src/core/delete.c:33:
+../mutter-49.1.1/src/core/window-private.h:530:3: error: unknown type name 'uint'
+  530 |   uint unconstrained_rect_valid :
+
+Index: src/core/window-private.h
+--- src/core/window-private.h.orig
++++ src/core/window-private.h
+@@ -527,7 +527,7 @@ struct _MetaWindow
+   guint placed : 1;
+ 
+   /* Have this window been positioned? */
+-  uint unconstrained_rect_valid : 1;
++  guint unconstrained_rect_valid : 1;
+ 
+   /* Has this window not ever been shown yet? */
+   guint showing_for_first_time : 1;
