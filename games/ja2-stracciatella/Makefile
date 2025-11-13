@@ -1,13 +1,13 @@
-COMMENT =	Jagged Alliance 2 engine
+COMMENT =	Jagged Alliance 2 turn-based strategy game engine
 
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://ja2-stracciatella.github.io/
+HOMEPAGE =	https://ja2-stracciatella.github.io/
 
 # SFI-SCLA / public domain
 PERMIT_PACKAGE =	Yes
