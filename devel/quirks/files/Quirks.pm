@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1762 2025/11/04 01:12:26 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.1763 2025/11/13 08:19:38 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -490,6 +490,8 @@ my $stem_extensions = {
 	'spyder3' => 'spyder',
 	'p5-URI-ws' => 'p5-URI',
 	'llama-cpp' => 'llama.cpp',
+# 7.9
+	'spidermonkey128' => 'spidermonkey140',
 };
 
 my $obsolete_reason = {};
