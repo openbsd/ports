@@ -1,7 +1,7 @@
 COMMENT=		graphical disk usage analyzer
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		48.0
+GNOME_VERSION=		49.0
 
 HOMEPAGE=		https://apps.gnome.org/Baobab/
 
