@@ -1,7 +1,7 @@
 COMMENT=		IDE for writing GNOME-based software
 
-DIST_TUPLE=		gnome GNOME gnome-builder 48.3 .
-REVISION=		0
+GNOME_PROJECT=		gnome-builder
+GNOME_VERSION=		49.1
 
 CATEGORIES=		devel
 
@@ -15,7 +15,7 @@ WANTLIB += gio-2.0 girepository-2.0 git2 git2-glib-1.0 glib-2.0
 WANTLIB += gobject-2.0 gom-1.0 gtk-4 gtksourceview-5 intl json-glib-1.0
 WANTLIB += jsonrpc-glib-1.0 m panel-1 pango-1.0 peas-2 portal
 WANTLIB += portal-gtk4 spelling-1 template_glib-1.0 vte-2.91-gtk4
-WANTLIB += webkitgtk-6.0 xml2
+WANTLIB += webkitgtk-6.0 xml2 yaml-0
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 MODULES=		devel/dconf \
@@ -43,6 +43,7 @@ LIB_DEPENDS=		${MODCLANG_LIB_DEPENDS} \
 			devel/jsonrpc-glib \
 			devel/libgit2/libgit2-glib \
 			devel/libpeas2 \
+			devel/libyaml \
 			devel/template-glib \
 			devel/vte3,-gtk4 \
 			editors/editorconfig-core-c \
