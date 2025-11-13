@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL module for TDBC
 
-V =			1.1.10
+V =			1.1.12
 N =			postgres
 
 DISTNAME =		tdbc${N}${V}
