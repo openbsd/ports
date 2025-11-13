@@ -1,2 +1,3 @@
+lib/gtk-4.0/4.0.0/
 lib/gtk-4.0/4.0.0/immodules/
 @so lib/gtk-4.0/4.0.0/immodules/libim-ibus.so

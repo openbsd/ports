@@ -5,7 +5,7 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.32
+GH_TAGNAME =		1.5.33
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
@@ -48,10 +48,16 @@ WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi xkbcommon
 WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk4 += ${WANTLIB}
-WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
-WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd dbus-1
-WANTLIB-gtk4 += epoll-shim wayland-client wayland-egl xkbcommon
-WANTLIB-gtk4 += Lerc harfbuzz-subset vulkan
+WANTLIB-gtk4 += EGL GL LLVM Lerc X11-xcb Xxf86vm avahi-client avahi-common
+WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter crypto cups
+WANTLIB-gtk4 += dav1d dbus-1 drm drm_amdgpu drm_intel elf epoll-shim
+WANTLIB-gtk4 += epoxy execinfo gbm glapi graphene-1.0 gstallocators-1.0
+WANTLIB-gtk4 += gstaudio-1.0 gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstplay-1.0
+WANTLIB-gtk4 += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-4 harfbuzz-subset
+WANTLIB-gtk4 += ibus-1.0 lzma lzo2 orc-0.4 pciaccess rsvg-2 ssl tiff
+WANTLIB-gtk4 += vulkan wayland-client wayland-cursor wayland-egl xcb-dri2
+WANTLIB-gtk4 += xcb-dri3 xcb-glx xcb-present xcb-randr xcb-sync xcb-xfixes
+WANTLIB-gtk4 += xkbcommon xml2 xshmfence zstd
 
 MODULES =		devel/dconf \
 			lang/python
@@ -91,8 +97,8 @@ LIB_DEPENDS-gtk4 =	${BASE_PKGPATH},-main \
 
 USE_GMAKE =		Yes
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION =	1.18
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -105,6 +111,9 @@ CONFIGURE_ARGS =	--disable-python2 \
 			--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
 			--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations
 			
+# needs libevdev/libevdev-uinput.h
+CONFIGURE_ARGS +=	--disable-tests
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 FAKE_FLAGS =		bash_completiondir=${PREFIX}/share/examples/ibus/bash_completion.d \

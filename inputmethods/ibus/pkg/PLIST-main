@@ -6,6 +6,7 @@
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
+include/ibus-1.0/ibus-visibility.h
 include/ibus-1.0/ibus.h
 include/ibus-1.0/ibusaccelgroup.h
 include/ibus-1.0/ibusattribute.h
@@ -29,6 +30,7 @@ include/ibus-1.0/ibuskeys.h
 include/ibus-1.0/ibuskeysyms-compat.h
 include/ibus-1.0/ibuskeysyms.h
 include/ibus-1.0/ibuslookuptable.h
+include/ibus-1.0/ibusmessage.h
 include/ibus-1.0/ibusobject.h
 include/ibus-1.0/ibusobservedpath.h
 include/ibus-1.0/ibuspanelservice.h
@@ -47,12 +49,14 @@ include/ibus-1.0/ibusversion.h
 include/ibus-1.0/ibusxevent.h
 include/ibus-1.0/ibusxml.h
 lib/girepository-1.0/IBus-1.0.typelib
+lib/gtk-4.0/
 @static-lib lib/libibus-1.0.a
 lib/libibus-1.0.la
 @lib lib/libibus-1.0.so.${LIBibus-1.0_VERSION}
 lib/pkgconfig/ibus-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MODPY_PYC_MAGIC_TAG}pyc
 @bin libexec/ibus-dconf
 @bin libexec/ibus-engine-simple
@@ -108,6 +112,7 @@ share/ibus/component/gtkpanel.xml
 share/ibus/component/simple.xml
 share/ibus/dicts/
 share/ibus/dicts/emoji-af.dict
+share/ibus/dicts/emoji-ak.dict
 share/ibus/dicts/emoji-am.dict
 share/ibus/dicts/emoji-ar.dict
 share/ibus/dicts/emoji-ar_SA.dict
@@ -118,10 +123,12 @@ share/ibus/dicts/emoji-be.dict
 share/ibus/dicts/emoji-bew.dict
 share/ibus/dicts/emoji-bg.dict
 share/ibus/dicts/emoji-bgn.dict
+share/ibus/dicts/emoji-blo.dict
 share/ibus/dicts/emoji-bn.dict
 share/ibus/dicts/emoji-br.dict
 share/ibus/dicts/emoji-bs.dict
 share/ibus/dicts/emoji-ca.dict
+share/ibus/dicts/emoji-ca_ES_VALENCIA.dict
 share/ibus/dicts/emoji-ccp.dict
 share/ibus/dicts/emoji-ceb.dict
 share/ibus/dicts/emoji-chr.dict
@@ -154,6 +161,7 @@ share/ibus/dicts/emoji-fil.dict
 share/ibus/dicts/emoji-fo.dict
 share/ibus/dicts/emoji-fr.dict
 share/ibus/dicts/emoji-fr_CA.dict
+share/ibus/dicts/emoji-frr.dict
 share/ibus/dicts/emoji-ga.dict
 share/ibus/dicts/emoji-gd.dict
 share/ibus/dicts/emoji-gl.dict
@@ -177,6 +185,7 @@ share/ibus/dicts/emoji-jv.dict
 share/ibus/dicts/emoji-ka.dict
 share/ibus/dicts/emoji-kab.dict
 share/ibus/dicts/emoji-kk.dict
+share/ibus/dicts/emoji-kk_Arab.dict
 share/ibus/dicts/emoji-kl.dict
 share/ibus/dicts/emoji-km.dict
 share/ibus/dicts/emoji-kn.dict
@@ -205,9 +214,11 @@ share/ibus/dicts/emoji-nn.dict
 share/ibus/dicts/emoji-no.dict
 share/ibus/dicts/emoji-nso.dict
 share/ibus/dicts/emoji-oc.dict
+share/ibus/dicts/emoji-om.dict
 share/ibus/dicts/emoji-or.dict
 share/ibus/dicts/emoji-pa.dict
 share/ibus/dicts/emoji-pa_Arab.dict
+share/ibus/dicts/emoji-pap.dict
 share/ibus/dicts/emoji-pcm.dict
 share/ibus/dicts/emoji-pl.dict
 share/ibus/dicts/emoji-ps.dict
@@ -251,6 +262,7 @@ share/ibus/dicts/emoji-ug.dict
 share/ibus/dicts/emoji-uk.dict
 share/ibus/dicts/emoji-ur.dict
 share/ibus/dicts/emoji-uz.dict
+share/ibus/dicts/emoji-vec.dict
 share/ibus/dicts/emoji-vi.dict
 share/ibus/dicts/emoji-wo.dict
 share/ibus/dicts/emoji-xh.dict
@@ -275,22 +287,31 @@ share/ibus/keymaps/us
 share/ibus/setup/
 share/ibus/setup/${MODPY_PYCACHE}/
 share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}emojilang.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}engineabout.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}enginecombobox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginecombobox.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}enginecombobox.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}enginedialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginedialog.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}enginedialog.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}enginetreeview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}enginetreeview.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}enginetreeview.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}keyboardshortcut.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}keyboardshortcut.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}keyboardshortcut.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus/setup/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus/setup/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus/setup/emojilang.py
 share/ibus/setup/engineabout.py
