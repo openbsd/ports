@@ -3,7 +3,7 @@ Avoid duplicate *chrom* copies which we do via @sample
 Index: src/app/CMakeLists.txt
 --- src/app/CMakeLists.txt.orig
 +++ src/app/CMakeLists.txt
-@@ -167,14 +167,8 @@ else()
+@@ -161,14 +161,8 @@ else()
      endif()
      install(FILES ${CMAKE_CURRENT_BINARY_DIR}/eu.webeid.json
          DESTINATION ${CMAKE_INSTALL_DATADIR}/web-eid)

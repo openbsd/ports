@@ -3,16 +3,11 @@ COMMENT-chrome =	Chromium extension
 COMMENT-firefox =	Firefox extension
 CATEGORIES =		security www
 
-V =			2.6.0
-REVISION-chrome =	0
-REVISION-firefox =	0
-DISTNAME =		web-eid_${V}.654-2004
-PKGNAME =		web-eid-${V}
+V =			2.8.0
+DISTNAME =		web-eid-${V}
 PKGNAME-main =		web-eid-native-${V}
-WRKDIST =		${WRKDIR}/web-eid
 
 SITES =			https://github.com/web-eid/web-eid-app/releases/download/v${V}/
-EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -chrome -firefox
 
@@ -23,7 +18,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 HOMEPAGE =		https://web-eid.eu/
 
-# -std=gnu++17
+# -std=gnu++20
 COMPILER =		base-clang ports-gcc
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Svg
