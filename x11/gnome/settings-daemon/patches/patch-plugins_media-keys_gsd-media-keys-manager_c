@@ -3,7 +3,7 @@ Inhibit support (login1 -> ConsoleKit).
 Index: plugins/media-keys/gsd-media-keys-manager.c
 --- plugins/media-keys/gsd-media-keys-manager.c.orig
 +++ plugins/media-keys/gsd-media-keys-manager.c
-@@ -107,9 +107,9 @@
+@@ -104,9 +104,9 @@
  #define VOLUME_STEP_PRECISE 2
  #define MAX_VOLUME 65536.0
  

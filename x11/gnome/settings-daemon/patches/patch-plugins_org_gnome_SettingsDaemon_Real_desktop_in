@@ -1,0 +1,20 @@
+REVERT:
+From 242752d489b40f7cac20fc244a76eac8572cd955 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Fri, 18 Jul 2025 23:16:01 -0400
+Subject: [PATCH] plugins: Drop .desktop files
+
+Index: plugins/org.gnome.SettingsDaemon.Real.desktop.in
+--- plugins/org.gnome.SettingsDaemon.Real.desktop.in.orig
++++ plugins/org.gnome.SettingsDaemon.Real.desktop.in
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Type=Application
++Name=@description@
++Exec=@libexecdir@/gsd-@pluginname@
++OnlyShowIn=GNOME;
++NoDisplay=true
++X-GNOME-Autostart-Phase=Initialization
++X-GNOME-Autostart-Notify=true
++X-GNOME-AutoRestart=true
++X-GNOME-HiddenUnderSystemd=@systemd_hidden@

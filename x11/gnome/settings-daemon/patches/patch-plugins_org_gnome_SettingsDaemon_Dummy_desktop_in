@@ -1,0 +1,17 @@
+REVERT:
+From 242752d489b40f7cac20fc244a76eac8572cd955 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Fri, 18 Jul 2025 23:16:01 -0400
+Subject: [PATCH] plugins: Drop .desktop files
+
+Index: plugins/org.gnome.SettingsDaemon.Dummy.desktop.in
+--- plugins/org.gnome.SettingsDaemon.Dummy.desktop.in.orig
++++ plugins/org.gnome.SettingsDaemon.Dummy.desktop.in
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Type=Application
++Name=GNOME Settings Daemon's @pluginname@ dummy autostart file
++Exec=false
++OnlyShowIn=GNOME;
++NoDisplay=true
++Hidden=true

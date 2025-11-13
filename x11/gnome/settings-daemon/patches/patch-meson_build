@@ -1,13 +1,18 @@
-XXX push upstream; GUDev is not a hard requirement
+REVERT:
+From 242752d489b40f7cac20fc244a76eac8572cd955 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Fri, 18 Jul 2025 23:16:01 -0400
+Subject: [PATCH] plugins: Drop .desktop files
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -163,7 +163,6 @@ config_h.set10('HAVE_TIMERFD', has_timerfd_create)
- # Check for wayland dependencies
- enable_wayland = get_option('wayland')
- if enable_wayland
--  assert(enable_gudev, 'GUDev support is required for wayland support.')
-   wayland_client_dep = dependency('wayland-client')
-   wayland_gdk_dep = dependency('gdk-wayland-3.0')
- endif
+@@ -37,6 +37,8 @@ gsd_pkglibdir = join_paths(gsd_libdir, gsd_api_name)
+ 
+ gsd_schemadir = join_paths(gsd_datadir, 'glib-2.0', 'schemas')
+ 
++gsd_xdg_autostart = join_paths(gsd_sysconfdir, 'xdg', 'autostart')
++
+ gsd_3_0_api_name = '@0@-@1@'.format(meson.project_name(), '3.0')
+ gsd_gtk_modules_directory = join_paths(gsd_libdir, gsd_3_0_api_name, 'gtk-modules')
+ 
