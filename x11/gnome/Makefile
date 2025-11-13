@@ -29,6 +29,7 @@
      SUBDIR += epub-thumbnailer
      SUBDIR += file-roller
      SUBDIR += font-viewer
+     SUBDIR += foundry
      SUBDIR += gcr
      SUBDIR += gcr4
      SUBDIR += gdl
@@ -62,6 +63,7 @@
      SUBDIR += libxklavier
      SUBDIR += localsearch
      SUBDIR += mahjongg
+     SUBDIR += manuals
      SUBDIR += maps
      SUBDIR += menus
      SUBDIR += msgraph
