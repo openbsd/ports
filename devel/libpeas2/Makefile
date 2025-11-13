@@ -1,13 +1,13 @@
 COMMENT=	GObject plugins library
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	2.0.7
+GNOME_VERSION=	2.2.0
 PKGNAME=	${GNOME_PROJECT}2-${GNOME_VERSION}
-REVISION=	3
+REVISION=	0
 
 CATEGORIES=	devel
 
-SHARED_LIBS += peas-2                    0.0 # 0.0.7
+SHARED_LIBS += peas-2                    0.1 # 0.200.0
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -15,24 +15,27 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c++abi gio-2.0 gjs glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += intl mozjs-128 ${MODPY_WANTLIB}
+WANTLIB += intl mozjs-140 ${MODLUA_WANTLIB} ${MODPY_WANTLIB}
 
 MODULES=	devel/meson \
+		lang/lua \
 		lang/python \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/py-gobject3
+BUILD_DEPENDS=	devel/lua-lgi \
+		devel/py-gobject3 \
+		lang/luajit
 
-RUN_DEPENDS=	devel/py-gobject3
+RUN_DEPENDS=	devel/py-gobject3 \
+		devel/lua-lgi
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		devel/spidermonkey128 \
+		devel/spidermonkey140 \
 		x11/gnome/gjs
 
 MODGNOME_TOOLS=	gobject-introspection gtk-update-icon-cache vala
 
-CONFIGURE_ARGS= -Dlua51=false \
-		-Dvapi=true
+CONFIGURE_ARGS=	-Dvapi=true
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

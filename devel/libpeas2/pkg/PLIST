@@ -12,6 +12,7 @@ lib/libpeas-2/
 @lib lib/libpeas-2.so.${LIBpeas-2_VERSION}
 lib/libpeas-2/loaders/
 @so lib/libpeas-2/loaders/libgjsloader.so
+@so lib/libpeas-2/loaders/lib${MODLUA_DEP}loader.so
 @so lib/libpeas-2/loaders/libpythonloader.so
 lib/pkgconfig/libpeas-2.pc
 share/gir-1.0/Peas-2.gir
@@ -86,6 +87,7 @@ share/locale/th/LC_MESSAGES/libpeas-2.mo
 share/locale/tr/LC_MESSAGES/libpeas-2.mo
 share/locale/ug/LC_MESSAGES/libpeas-2.mo
 share/locale/uk/LC_MESSAGES/libpeas-2.mo
+share/locale/uz/LC_MESSAGES/libpeas-2.mo
 share/locale/vi/LC_MESSAGES/libpeas-2.mo
 share/locale/zh_CN/LC_MESSAGES/libpeas-2.mo
 share/locale/zh_HK/LC_MESSAGES/libpeas-2.mo
