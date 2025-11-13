@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1764 2025/11/13 15:53:07 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1765 2025/11/13 17:58:34 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -493,6 +493,7 @@ my $stem_extensions = {
 # 7.9
 	'spidermonkey128' => 'spidermonkey140',
 	'evince' => 'papers',
+	'devhelp' => 'manuals',
 };
 
 my $obsolete_reason = {};
