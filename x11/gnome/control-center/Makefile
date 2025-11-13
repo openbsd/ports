@@ -4,8 +4,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
-GNOME_VERSION=		48.4
-REVISION=		0
+GNOME_VERSION=		49.1
 
 CATEGORIES=		x11
 
@@ -14,14 +13,13 @@ HOMEPAGE=		https://apps.gnome.org/Settings/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xi accountsservice adwaita-1 c cairo colord colord-gtk4
+WANTLIB += X11 accountsservice adwaita-1 c cairo colord colord-gtk4
 WANTLIB += cups epoxy fontconfig gcr-4 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnome-rr-4 gnutls
-WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 graphene-1.0 gsound
-WANTLIB += gtk-4 gtop-2.0 ibus-1.0 intl json-glib-1.0 m pango-1.0
-WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib pwquality
-WANTLIB += secret-1 smbclient soup-3.0 upower-glib wayland-client
-WANTLIB += xml2
+WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnutls goa-1.0
+WANTLIB += goa-backend-1.0 gobject-2.0 graphene-1.0 gsound gtk-4
+WANTLIB += gtop-2.0 ibus-1.0 intl json-glib-1.0 m pango-1.0 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib pwquality secret-1 smbclient
+WANTLIB += soup-3.0 upower-glib wayland-client xml2
 
 MODULES=		devel/meson \
 			devel/dconf \
@@ -44,6 +42,7 @@ LIB_DEPENDS=		audio/gsound \
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gsettings-desktop-schemas \
+			x11/blueprint-compiler \
 			x11/gnome/settings-daemon
 
 # NOTE that a11y dependencies (e.g. caribou) are not enforced on purpose.

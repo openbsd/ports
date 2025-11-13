@@ -13,7 +13,7 @@ Index: panels/system/users/cc-user-page.c
  #include "cc-password-dialog.h"
  #include "cc-permission-infobar.h"
  #include "user-utils.h"
-@@ -640,6 +641,7 @@ cc_user_page_class_init (CcUserPageClass * klass)
+@@ -641,6 +642,7 @@ cc_user_page_class_init (CcUserPageClass * klass)
                                                             FALSE,
                                                             G_PARAM_READABLE));
      g_type_ensure (CC_TYPE_LIST_ROW);

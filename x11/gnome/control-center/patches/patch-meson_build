@@ -3,12 +3,12 @@ No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -197,7 +197,7 @@ libxml_dep = dependency('libxml-2.0')
+@@ -210,7 +210,7 @@ libxml_dep = dependency('libxml-2.0')
  pulse_dep = dependency('libpulse', version: pulse_req_version)
  pulse_mainloop_dep = dependency('libpulse-mainloop-glib', version: pulse_req_version)
  upower_glib_dep = dependency('upower-glib', version: '>= 1.90.6')
 -gudev_dep = dependency('gudev-1.0', version: '>= 232')
 +gudev_dep = []
- x11_dep = dependency('x11', version: '>= 1.8')
- xi_dep = dependency('xi', version: '>= 1.2')
  epoxy_dep = dependency('epoxy')
+ gcr_dep = dependency('gcr-4', version: '>= 4.1.0')
+ pwquality_dep = dependency('pwquality', version: '>= 1.2.2')

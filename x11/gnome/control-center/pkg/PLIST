@@ -278,8 +278,7 @@ share/locale/zh_HK/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
-share/metainfo/org.gnome.Settings.appdata.xml
-share/pixmaps/
+share/metainfo/org.gnome.Settings.metainfo.xml
 share/pixmaps/faces/
 share/pixmaps/faces/bicycle.jpg
 share/pixmaps/faces/book.jpg
