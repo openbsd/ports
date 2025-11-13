@@ -9,6 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		1
+REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -134,7 +135,8 @@ RUN_DEPENDS-extras +=	www/epiphany
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
 RUN_DEPENDS-extras +=	sysutils/dspy \
 			x11/gnome/builder \
-			x11/gnome/dconf-editor
+			x11/gnome/dconf-editor \
+			x11/gnome/manuals
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-mobile.bst
 #RUN_DEPENDS-extras +=
@@ -147,7 +149,6 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 ################################################################################
 
 RUN_DEPENDS-extras +=	mail/evolution \
-			x11/gnome/devhelp \
 			x11/gnome/endeavour \
 			x11/gnome/file-roller,-nautilus \
 			x11/gnome/ghex \
