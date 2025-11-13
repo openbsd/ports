@@ -3,11 +3,17 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -23,7 +23,6 @@ executable(meson.project_name(),
-         cogl_dependency,
-         gsound_dependency,
+@@ -46,11 +46,10 @@ executable(meson.project_name(),
          gtk_dependency,
+         libadwaita_dependency,
+         libgnome_games_support_dependency,
 -        manette_dependency,
-         pango_depepdency,
+         pango_dependency,
          pango_cairo_dependency,
          posix_dependency,
+         rsvg_dependency,
+         libm_dependency
+     ]
+-)
+\ No newline at end of file
++)

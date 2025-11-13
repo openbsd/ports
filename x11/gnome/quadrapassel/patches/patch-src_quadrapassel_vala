@@ -3,18 +3,19 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: src/quadrapassel.vala
 --- src/quadrapassel.vala.orig
 +++ src/quadrapassel.vala
-@@ -58,8 +58,6 @@ public class Quadrapassel : Gtk.Application
-     private Gtk.CheckButton sound_toggle;
-     private Gtk.ListStore controls_model;
+@@ -61,9 +61,6 @@ public class Quadrapassel : Adw.Application
+     private Adw.PreferencesDialog preferences_dialog;
+     private Preview theme_preview;
  
 -    private Manette.Monitor manette_monitor;
+-    private bool is_manette_button_down = false;
 -
      private const GLib.ActionEntry[] action_entries =
      {
          { "new-game",      new_game_cb    },
-@@ -200,13 +198,6 @@ public class Quadrapassel : Gtk.Application
- 
-         game_grid.attach (pause_play_button, 2, 16, 1, 2);
+@@ -249,13 +246,6 @@ public class Quadrapassel : Adw.Application
+                                                                         new Games.Scores.HistoryFileImporter (parse_old_score),
+                                                                         APP_ID);
  
 -        manette_monitor = new Manette.Monitor ();
 -        manette_monitor.device_connected.connect (manette_device_connected_cb);
@@ -23,13 +24,13 @@ Index: src/quadrapassel.vala
 -        while (manette_iterator.next (out manette_device))
 -            manette_device_connected_cb (manette_device);
 -
-         history = new History (Path.build_filename (Environment.get_user_data_dir (), "quadrapassel", "history"));
-         history.load ();
- 
-@@ -576,85 +567,6 @@ public class Quadrapassel : Gtk.Application
-     private void quit_cb ()
-     {
-         window.destroy ();
+         pause_action.set_enabled (false);
+         new_game_button.set_sensitive (false);
+     }
+@@ -474,103 +464,6 @@ public class Quadrapassel : Adw.Application
+         if (window != null)
+             window.close ();
+         base.quit ();
 -    }
 -
 -    private void manette_device_connected_cb (Manette.Device manette_device)
@@ -40,19 +41,35 @@ Index: src/quadrapassel.vala
 -
 -    private void manette_button_press_event_cb (Manette.Event event)
 -    {
--        if (game == null)
+-        if (is_manette_button_down)
 -            return;
 -
 -        uint16 button;
 -        if (!event.get_button (out button))
 -            return;
 -
--        if (button == InputEventCode.BTN_START || button == InputEventCode.BTN_SELECT)
+-        is_manette_button_down = true;
+-
+-        if (button == InputEventCode.BTN_SELECT)
 -        {
--            if (!game.game_over)
--                game.paused = !game.paused;
+-            new_game();
 -            return;
 -        }
+-
+-        if (button == InputEventCode.BTN_START)
+-        {
+-            if (game == null)
+-                new_game();
+-            else if (!game.game_over)
+-                game.paused = !game.paused;
+-            else
+-                new_game();
+-
+-            return;
+-        }
+-
+-        if (game == null)
+-            return;
 -
 -        if (game.paused)
 -            return;
@@ -91,11 +108,13 @@ Index: src/quadrapassel.vala
 -
 -    private void manette_button_release_event_cb (Manette.Event event)
 -    {
--        if (game == null)
--            return;
--
 -        uint16 button;
 -        if (!event.get_button (out button))
+-            return;
+-
+-        is_manette_button_down = false;
+-
+-        if (game == null)
 -            return;
 -
 -        if (button == InputEventCode.BTN_DPAD_LEFT ||
@@ -111,4 +130,4 @@ Index: src/quadrapassel.vala
 -        }
      }
  
-     private bool key_press_event_cb (Gtk.Widget widget, Gdk.EventKey event)
+     private bool key_press_event_cb (Gtk.EventControllerKey controller,
