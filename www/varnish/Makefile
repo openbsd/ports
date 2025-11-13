@@ -1,10 +1,10 @@
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-7.7.3
+DISTNAME =		varnish-8.0.0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      4.0     # 3.0
+SHARED_LIBS =		varnishapi      5.0     # 8.0
 
 HOMEPAGE =		https://www.vinyl-cache.org/
 
@@ -30,10 +30,7 @@ LIB_DEPENDS =		devel/pcre2
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 
-# requires to patch configure.ac
-AUTOCONF_VERSION =	2.72
-AUTOMAKE_VERSION=	1.16
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \

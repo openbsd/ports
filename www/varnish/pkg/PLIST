@@ -10,6 +10,7 @@ bin/varnishreload
 @bin bin/varnishstat_help_gen
 @bin bin/varnishtest
 @bin bin/varnishtop
+@bin bin/vtest
 include/varnish/
 include/varnish/cache/
 include/varnish/cache/cache.h
@@ -110,7 +111,6 @@ lib/varnish/
 lib/varnish/vmods/
 @so lib/varnish/vmods/libvmod_blob.so
 @so lib/varnish/vmods/libvmod_cookie.so
-@so lib/varnish/vmods/libvmod_debug.so
 @so lib/varnish/vmods/libvmod_directors.so
 @so lib/varnish/vmods/libvmod_h2.so
 @so lib/varnish/vmods/libvmod_proxy.so
