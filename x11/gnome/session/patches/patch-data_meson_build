@@ -1,3 +1,8 @@
+From 53d746b99ae0098904e297989fd50c7610c26b61 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Sat, 28 Jun 2025 14:50:27 +0200
+Subject: [PATCH] data: Drop dependency on Wacom g-s-d plugin
+
 REVERT:
 From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
 From: Jordan Petridis <jordan@centricular.com>
@@ -7,7 +12,15 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: data/meson.build
 --- data/meson.build.orig
 +++ data/meson.build
-@@ -110,6 +110,7 @@ install_data(
+@@ -28,7 +28,6 @@ required_components = {
+     'org.gnome.SettingsDaemon.Smartcard',
+     'org.gnome.SettingsDaemon.Sound',
+     'org.gnome.SettingsDaemon.UsbProtection',
+-    'org.gnome.SettingsDaemon.Wacom',
+     'org.gnome.SettingsDaemon.XSettings',
+   ],
+ }
+@@ -110,6 +109,7 @@ install_data(
    install_dir: join_paths(session_datadir, 'glib-2.0', 'schemas'),
  )
  
@@ -15,7 +28,7 @@ Index: data/meson.build
  unit_conf = configuration_data()
  unit_conf.set('libexecdir', session_libexecdir)
  
-@@ -176,6 +177,7 @@ foreach session, req_components: required_components
+@@ -176,6 +176,7 @@ foreach session, req_components: required_components
        session),
    )
  endforeach

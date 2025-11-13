@@ -1,7 +1,10 @@
 COMMENT=		GNOME session
 
+# XXX cannot update, see:
+# https://blogs.gnome.org/adrianvovk/2025/06/10/gnome-systemd-dependencies/
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		48.0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -21,6 +24,7 @@ BUILD_DEPENDS=		textproc/xmlto \
 			x11/gnome/settings-daemon
 
 LIB_DEPENDS=		devel/json-glib \
+			x11/gnome/desktop \
 			x11/gtk+3
 
 # polkit(8) almost always needs to know the "active" session
