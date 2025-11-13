@@ -1,7 +1,7 @@
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		48.3
+GNOME_VERSION=		49.0.2
 
 HOMEPAGE=		https://apps.gnome.org/Music/
 
