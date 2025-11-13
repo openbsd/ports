@@ -1,3 +1,7 @@
+# XXX cannot update, see:
+# https://blogs.gnome.org/adrianvovk/2025/06/10/gnome-systemd-dependencies/
+PORTROACH=		limit:48
+
 COMMENT=		GNOME session
 
 # XXX cannot update, see:

@@ -1,7 +1,9 @@
-COMMENT=		GNOME display manager
-
 # XXX cannot update, see:
 # https://blogs.gnome.org/adrianvovk/2025/06/10/gnome-systemd-dependencies/
+PORTROACH=		limit:48
+
+COMMENT=		GNOME display manager
+
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
 REVISION=		2
