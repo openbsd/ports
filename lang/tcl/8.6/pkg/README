@@ -77,7 +77,7 @@ ${TRUEPREFIX}/lib/tcl/modules/{85,86}
 
 Manual Page Configuration
 =========================
-Adding the following lines to /etc/man.conf wil enable man(1)
+Adding the following lines to /etc/man.conf will enable man(1)
 and related commands can find the Tcl and Tk manual pages.
 
 manpath ${TRUEPREFIX}/lib/tcl/tcl8.6/man
@@ -89,5 +89,7 @@ Newsgroup: nntp://comp.lang.tcl
 Wiki:      http://wiki.tcl-lang.org
 Tutorial:  http://www.tcl-lang.org/man/tcl8.5/tutorial/tcltutorial.html
 Wikibook:  http://en.wikibooks.org/wiki/Programming:Tcl
-Book:      Practical Programming in Tcl and Tk, 4th Edition
-           ISBN: 0-13-038560-3
+Books:     The Tcl Programming Language: A Comprehensive Guide
+             ISBN-13: 9798316640539
+           Practical Programming in Tcl and Tk, 4th Edition
+             ISBN: 0-13-038560-3

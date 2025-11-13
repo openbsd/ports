@@ -33,6 +33,7 @@ lib/tcl/tcl8.6/encoding/cp1255.enc
 lib/tcl/tcl8.6/encoding/cp1256.enc
 lib/tcl/tcl8.6/encoding/cp1257.enc
 lib/tcl/tcl8.6/encoding/cp1258.enc
+lib/tcl/tcl8.6/encoding/cp165.enc
 lib/tcl/tcl8.6/encoding/cp437.enc
 lib/tcl/tcl8.6/encoding/cp737.enc
 lib/tcl/tcl8.6/encoding/cp775.enc
@@ -180,6 +181,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_ClassSetMetadata.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ClearChannelHandlers.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_Close.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_CloseEx.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CommandComplete.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CommandTraceInfo.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_Concat.3
@@ -944,7 +946,7 @@ lib/tcl/tcl8.6/modules/msgcat-1.6.1.tm
 lib/tcl/tcl8.6/modules/platform/
 lib/tcl/tcl8.6/modules/platform-1.0.19.tm
 lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/tcltest-2.5.9.tm
+lib/tcl/tcl8.6/modules/tcltest-2.5.10.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg
