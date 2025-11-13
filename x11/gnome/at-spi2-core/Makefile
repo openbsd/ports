@@ -2,6 +2,7 @@ COMMENT=		service interface for assistive technologies
 
 GNOME_PROJECT=		at-spi2-core
 GNOME_VERSION=		2.58.1
+REVISION=		0
 
 SHARED_LIBS += atk-1.0                   21810.4 # 0.25810.1
 SHARED_LIBS += atspi                     1.4 # 0.0.1
@@ -14,7 +15,9 @@ WANTLIB += X11 Xi Xtst c dbus-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl
 
 MODULES=		devel/meson \
+			lang/python \
 			x11/gnome
+MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/libxml
 RUN_DEPENDS=		textproc/libxml

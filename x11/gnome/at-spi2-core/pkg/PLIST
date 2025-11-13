@@ -91,11 +91,11 @@ lib/gtk-2.0/modules/
 lib/pkgconfig/atk-bridge-2.0.pc
 lib/pkgconfig/atk.pc
 lib/pkgconfig/atspi-2.pc
-lib/python3.12/site-packages/gi/
-lib/python3.12/site-packages/gi/overrides/
-lib/python3.12/site-packages/gi/overrides/Atspi.py
-lib/python3.12/site-packages/gi/overrides/__pycache__/
-lib/python3.12/site-packages/gi/overrides/__pycache__/Atspi.cpython-312.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Atspi.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Atspi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/systemd/
 lib/systemd/user/
 lib/systemd/user/at-spi-dbus-bus.service
