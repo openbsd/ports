@@ -1,29 +1,7 @@
 Index: libhb/encavcodecaudio.c
 --- libhb/encavcodecaudio.c.orig
 +++ libhb/encavcodecaudio.c
-@@ -74,7 +74,7 @@ static int encavcodecaInit(hb_work_object_t *w, hb_job
-     enum AVCodecID codec_id        = AV_CODEC_ID_NONE;
-     enum AVSampleFormat sample_fmt = AV_SAMPLE_FMT_FLTP;
-     int bits_per_raw_sample        = 0;
--    int profile                    = FF_PROFILE_UNKNOWN;
-+    int profile                    = AV_PROFILE_UNKNOWN;
- 
-     // override with encoder-specific values
-     switch (audio->config.out.codec)
-@@ -99,10 +99,10 @@ static int encavcodecaInit(hb_work_object_t *w, hb_job
-             switch (audio->config.out.codec)
-             {
-                 case HB_ACODEC_FDK_HAAC:
--                    profile = FF_PROFILE_AAC_HE;
-+                    profile = AV_PROFILE_AAC_HE;
-                     break;
-                 default:
--                    profile = FF_PROFILE_AAC_LOW;
-+                    profile = AV_PROFILE_AAC_LOW;
-                     break;
-             }
-             // FFmpeg's libfdk-aac wrapper expects back channels for 5.1
-@@ -238,7 +238,7 @@ static int encavcodecaInit(hb_work_object_t *w, hb_job
+@@ -272,7 +272,7 @@ static int encavcodecaInit(hb_work_object_t *w, hb_job
      pv->input_buf         = malloc(pv->input_samples * sizeof(float));
      // Some encoders in libav (e.g. fdk-aac) fail if the output buffer
      // size is not some minimum value.  8K seems to be enough :(

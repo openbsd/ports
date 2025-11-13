@@ -1,9 +1,16 @@
-Do not look for CMake; we don't need it.
-
 Index: make/configure.py
 --- make/configure.py.orig
 +++ make/configure.py
-@@ -1638,13 +1638,10 @@ try:
+@@ -1449,7 +1449,7 @@ def createCLI( cross = None ):
+     grp.add_argument( '--disable-vce', dest="enable_vce", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
+ 
+     h = IfHost( 'libdovi', '*-*-*', none=argparse.SUPPRESS ).value
+-    grp.add_argument( '--enable-libdovi', dest="enable_libdovi", default=not Tools.cargo.fail and not Tools.cargoc.fail, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
++    grp.add_argument( '--enable-libdovi', dest="enable_libdovi", default=False, action='store_true', help=(( 'enable %s' %h ) if h != argparse.SUPPRESS else h) )
+     grp.add_argument( '--disable-libdovi', dest="enable_libdovi", action='store_false', help=(( 'disable %s' %h ) if h != argparse.SUPPRESS else h) )
+ 
+ 
+@@ -1657,13 +1657,10 @@ try:
      class Tools:
          ar         = ToolProbe( 'AR.exe',         'ar',         'ar', abort=True )
          cp         = ToolProbe( 'CP.exe',         'cp',         'cp', abort=True )
@@ -17,7 +24,7 @@ Index: make/configure.py
          python     = ToolProbe( 'PYTHON.exe',     'python',     os.path.basename(sys.executable), abort=True )
  
          gcc_tools  = ['GCC.gcc',
-@@ -1659,14 +1656,9 @@ try:
+@@ -1678,16 +1675,11 @@ try:
          else:
              gmake  = ToolProbe( 'GMAKE.exe',      'make',       'gmake', 'make', abort=True )
  
@@ -26,13 +33,15 @@ Index: make/configure.py
          libtool    = ToolProbe( 'LIBTOOL.exe',    'libtool',    'libtool', abort=True )
          lipo       = ToolProbe( 'LIPO.exe',       'lipo',       'lipo', abort=False )
          pkgconfig  = ToolProbe( 'PKGCONFIG.exe',  'pkgconfig',  'pkg-config', abort=True, minversion=[0,27,0] )
--        meson      = ToolProbe( 'MESON.exe',      'meson',      'meson', abort=True, minversion=[0,47,0] )
+         meson      = ToolProbe( 'MESON.exe',      'meson',      'meson', abort=True, minversion=[0,51,0] )
 -        nasm       = ToolProbe( 'NASM.exe',       'asm',        'nasm', abort=True, minversion=[2,13,0] )
--        ninja      = ToolProbe( 'NINJA.exe',      'ninja',      'ninja-build', 'ninja', abort=True )
+         ninja      = ToolProbe( 'NINJA.exe',      'ninja',      'ninja-build', 'ninja', abort=True )
+-        cargo      = ToolProbe( 'CARGO.exe',      'cargo',        'cargo', abort=False )
+-        cargoc     = ToolProbe( 'CARGO-C.exe',    'cargo-cbuild', 'cargo-cbuild', abort=False )
  
          xcodebuild = ToolProbe( 'XCODEBUILD.exe', 'xcodebuild', 'xcodebuild', abort=(True if (not xcode_opts['disabled'] and (build_tuple.match('*-*-darwin*') and cross is None)) else False), versionopt='-version', minversion=[10,3,0] )
  
-@@ -1765,10 +1757,6 @@ try:
+@@ -1787,10 +1779,6 @@ try:
      #####################################
      # Requires oneVPL which requires CMake 3.16.3 or later
      Tools.cmake = ToolProbe('CMAKE.exe', 'cmake', 'cmake', abort=True, minversion=[3,16,3])

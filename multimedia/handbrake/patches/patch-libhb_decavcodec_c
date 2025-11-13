@@ -1,64 +1,17 @@
 Index: libhb/decavcodec.c
 --- libhb/decavcodec.c.orig
 +++ libhb/decavcodec.c
-@@ -2037,8 +2037,8 @@ static void compute_frame_duration( hb_work_private_t 
-     int64_t max_fps = 64LL;
+@@ -1320,11 +1320,13 @@ static hb_buffer_t *copy_frame( hb_work_private_t *pv 
+             int type = AV_FRAME_DATA_DOVI_RPU_BUFFER;
+             sd = av_frame_get_side_data(pv->frame, type);
  
-     // context->time_base may be in fields, so set the max *fields* per second
--    if ( pv->context->ticks_per_frame > 1 )
--        max_fps *= pv->context->ticks_per_frame;
-+    if ( pv->context->codec_descriptor->props & AV_CODEC_PROP_FIELDS )
-+        max_fps *= 2;
- 
-     if ( pv->title->opaque_priv )
-     {
-@@ -2057,7 +2057,8 @@ static void compute_frame_duration( hb_work_private_t 
-         // Raw demuxers set a default fps of 25 and do not parse
-         // a value from the container.  So use the codec time_base
-         // for raw demuxers.
--        else if (ic->iformat->raw_codec_id == AV_CODEC_ID_NONE)
-+        // See: https://github.com/HandBrake/HandBrake/pull/5884
-+        else if (st->start_time == AV_NOPTS_VALUE && st->duration == AV_NOPTS_VALUE)
-         {
-             // XXX We don't have a frame count or duration so try to use the
-             // far less reliable time base info in the stream.
-@@ -2083,11 +2084,11 @@ static void compute_frame_duration( hb_work_private_t 
-         {
-             duration =  (double)pv->context->time_base.num /
-                         (double)pv->context->time_base.den;
--            if ( pv->context->ticks_per_frame > 1 )
-+            if ( pv->context->codec_descriptor->props & AV_CODEC_PROP_FIELDS )
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
+             if (sd == NULL)
              {
-                 // for ffmpeg 0.5 & later, the H.264 & MPEG-2 time base is
-                 // field rate rather than frame rate so convert back to frames.
--                duration *= pv->context->ticks_per_frame;
-+                duration *= 2;
+                 type = AV_FRAME_DATA_DOVI_RPU_BUFFER_T35;
+                 sd = av_frame_get_side_data(pv->frame, type);
              }
-         }
-     }
-@@ -2098,11 +2099,11 @@ static void compute_frame_duration( hb_work_private_t 
-         {
-             duration =  (double)pv->context->time_base.num /
-                             (double)pv->context->time_base.den;
--            if ( pv->context->ticks_per_frame > 1 )
-+            if ( pv->context->codec_descriptor->props & AV_CODEC_PROP_FIELDS )
-             {
-                 // for ffmpeg 0.5 & later, the H.264 & MPEG-2 time base is
-                 // field rate rather than frame rate so convert back to frames.
--                duration *= pv->context->ticks_per_frame;
-+                duration *= 2;
-             }
-         }
-     }
-@@ -2113,9 +2114,9 @@ static void compute_frame_duration( hb_work_private_t 
-     }
-     pv->duration = duration * 90000.;
-     pv->field_duration = pv->duration;
--    if ( pv->context->ticks_per_frame > 1 )
-+    if ( pv->context->codec_descriptor->props & AV_CODEC_PROP_FIELDS )
-     {
--        pv->field_duration /= pv->context->ticks_per_frame;
-+        pv->field_duration /= 2;
-     }
- }
++#endif
  
+             if (sd != NULL && sd->size > 0)
+             {

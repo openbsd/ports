@@ -1,0 +1,69 @@
+Index: libhb/rpu.c
+--- libhb/rpu.c.orig
++++ libhb/rpu.c
+@@ -159,8 +159,11 @@ static void apply_rpu_if_needed(hb_filter_private_t *p
+     for (int i = 0; i < buf->nb_side_data; i++)
+     {
+         const AVFrameSideData *side_data = buf->side_data[i];
+-        if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER ||
+-            side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER_T35)
++        if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
++            || side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
++#endif
++           )
+         {
+             type = side_data->type;
+             rpu_available = 1;
+@@ -216,18 +219,23 @@ static int rpu_work(hb_filter_object_t *filter,
+     for (int i = 0; i < in->nb_side_data; i++)
+     {
+         const AVFrameSideData *side_data = in->side_data[i];
+-        if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER ||
+-            side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER_T35)
++        if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
++            || side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
++#endif
++           )
+         {
+             DoviRpuOpaque *rpu_in = NULL;
+             if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER)
+             {
+                 rpu_in = dovi_parse_unspec62_nalu(side_data->data, side_data->size);
+             }
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
+             else if (side_data->type == AV_FRAME_DATA_DOVI_RPU_BUFFER_T35)
+             {
+                 rpu_in = dovi_parse_itu_t35_dovi_metadata_obu(side_data->data, side_data->size);
+             }
++#endif
+ 
+             if (rpu_in == NULL)
+             {
+@@ -316,10 +324,12 @@ static int rpu_work(hb_filter_object_t *filter,
+                 {
+                     rpu_data = dovi_write_unspec62_nalu(rpu_in);
+                 }
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
+                 else if (pv->mode & RPU_MODE_EMIT_T35_OBU)
+                 {
+                     rpu_data = dovi_write_av1_rpu_metadata_obu_t35_complete(rpu_in);
+                 }
++#endif
+ 
+                 if (rpu_data)
+                 {
+@@ -334,10 +344,12 @@ static int rpu_work(hb_filter_object_t *filter,
+                     {
+                         sd_dst = hb_buffer_new_side_data_from_buf(in, AV_FRAME_DATA_DOVI_RPU_BUFFER, ref);
+                     }
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
+                     else if (pv->mode & RPU_MODE_EMIT_T35_OBU)
+                     {
+                         sd_dst = hb_buffer_new_side_data_from_buf(in, AV_FRAME_DATA_DOVI_RPU_BUFFER_T35, ref);
+                     }
++#endif
+ 
+                     if (!sd_dst)
+                     {

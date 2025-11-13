@@ -1,13 +1,12 @@
 Index: test/module.defs
 --- test/module.defs.orig
 +++ test/module.defs
-@@ -16,7 +16,7 @@ TEST.libs = $(LIBHB.a)
- TEST.GCC.l = \
--        ass avformat avfilter avcodec avutil swresample postproc mp3lame dvdnav \
-+        ass avformat avfilter avcodec avutil swresample mp3lame dvdnav \
-         dvdread fribidi swscale vpx theoraenc theoradec vorbis vorbisenc ogg \
--        x264 bluray freetype xml2 bz2 z jansson harfbuzz opus speex lzma dav1d \
-+        x264 x265 bluray freetype xml2 bz2 z jansson harfbuzz opus speex lzma dav1d \
-         turbojpeg zimg SvtAv1Enc
+@@ -17,7 +17,7 @@ TEST.GCC.L = $(CONTRIB.build/)lib
+ TEST.libs = $(LIBHB.a)
  
- ifeq (,$(filter $(HOST.system),darwin cygwin mingw))
+ TEST.pkgconfig_libs = libass libavformat libavfilter libavcodec libavutil libswresample dvdnav \
+-	dvdread libswscale theoraenc theoradec vorbis vorbisenc ogg x264 libbluray \
++	dvdread libswscale theoraenc theoradec vorbis vorbisenc ogg x264 x265 libbluray \
+ 	jansson libturbojpeg SvtAv1Enc
+ 
+ TEST.pkgconfig_libs += $(foreach m,$(MODULES.NAMES),$($m.OSL.libs))

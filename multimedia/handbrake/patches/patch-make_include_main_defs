@@ -1,9 +1,7 @@
-Rip out all the optional dependencies.
-
 Index: make/include/main.defs
 --- make/include/main.defs.orig
 +++ make/include/main.defs
-@@ -7,97 +7,6 @@ include $(SRC/)make/include/tool.defs
+@@ -8,105 +8,6 @@ include $(SRC/)make/include/tool.defs
  
  ###############################################################################
  
@@ -17,7 +15,6 @@ Index: make/include/main.defs
 -    MODULES += contrib/freetype
 -    MODULES += contrib/fribidi
 -    MODULES += contrib/harfbuzz
--    MODULES += contrib/libxml2
 -    MODULES += contrib/libass
 -    MODULES += contrib/libogg
 -    MODULES += contrib/libvorbis
@@ -70,8 +67,13 @@ Index: make/include/main.defs
 -    MODULES += contrib/nvenc
 -endif
 -
+-ifeq (1,$(FEATURE.libdovi))
+-    MODULES += contrib/libdovi
+-endif
+-
 -ifneq (,$(filter $(HOST.system),darwin))
 -    MODULES += contrib/xz
+-    MODULES += contrib/bin2c
 -endif
 -
 -ifneq (,$(filter $(HOST.machine),arm64 aarch64))
@@ -97,6 +99,10 @@ Index: make/include/main.defs
 -    MODULES += contrib/libiconv
 -endif
 -
+-ifneq (,$(filter $(HOST.system),netbsd))
+-    # needed to avoid conflict with jpeg-9e
+-    MODULES += contrib/libjpeg-turbo
+-endif
 -
  ## these must come after contrib since some contrib modules are optional
  MODULES += libhb

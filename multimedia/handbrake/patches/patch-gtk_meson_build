@@ -1,0 +1,12 @@
+Index: gtk/meson.build
+--- gtk/meson.build.orig
++++ gtk/meson.build
+@@ -20,7 +20,7 @@ if hb_dir == ''
+   hb_dir = meson.current_build_dir() / '..'
+ endif
+ 
+-hb_incdirs = include_directories(hb_dir / 'libhb', hb_dir / 'contrib/include')
++hb_incdirs = include_directories(hb_dir / 'libhb')
+ 
+ # External dependencies (required)
+ ghb_deps = [

@@ -1,0 +1,12 @@
+Index: libhb/handbrake/rpu.h
+--- libhb/handbrake/rpu.h.orig
++++ libhb/handbrake/rpu.h
+@@ -14,6 +14,8 @@
+ #define RPU_MODE_CONVERT_TO_8_1      2
+ 
+ #define RPU_MODE_EMIT_UNSPECT_62_NAL 4
++#ifdef AV_FRAME_DATA_DOVI_RPU_BUFFER_T35
+ #define RPU_MODE_EMIT_T35_OBU        8
++#endif
+ 
+ #endif // HANDBRAKE_RPU_H
