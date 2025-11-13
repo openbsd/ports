@@ -20,13 +20,19 @@ include/libpeas-1.0/libpeas/peas-version.h
 include/libpeas-1.0/libpeas/peas.h
 lib/girepository-1.0/Peas-1.0.typelib
 lib/girepository-1.0/PeasGtk-1.0.typelib
+lib/libpeas-1.0/
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
+lib/libpeas-1.0/loaders/
+@so lib/libpeas-1.0/loaders/libpython3loader.so
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
 lib/peas-demo/plugins/
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 @so lib/peas-demo/plugins/helloworld/libhelloworld.so
+lib/peas-demo/plugins/pythonhello/
+lib/peas-demo/plugins/pythonhello/pythonhello.plugin
+lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/secondtime/
 @so lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
