@@ -3,9 +3,6 @@ COMMENT=		GNOME's Tour & Greeter
 GNOME_PROJECT=		gnome-tour
 GNOME_VERSION=		49.0
 
-# needed due to the devel/cargo MODULE
-DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
-
 HOMEPAGE=		https://apps.gnome.org/Tour/
 
 # GPLv3
