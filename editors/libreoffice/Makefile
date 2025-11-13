@@ -7,8 +7,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-SHARED_LIBS +=  etonyek-0.1-lo            1.12 # 1.12
-SHARED_LIBS +=  langtag-lo                5.1 # 5.1
+SHARED_LIBS +=  etonyek-0.1-lo            1.13 # 1.13
+SHARED_LIBS +=  langtag-lo                5.2 # 5.2
 SHARED_LIBS +=  mwaw-0.3-lo               3.22 # 3.22
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
 SHARED_LIBS +=  orcus-0.20                0.0 # 0.0
@@ -23,15 +23,13 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		25.8
-VERSION=	${BV}.2.2
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-REVISION-main=	0
-REVISION-kde=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -117,10 +115,10 @@ DISTFILES.a += libe-book-0.1.3.tar.xz
 DISTFILES.a += libepubgen-0.1.1.tar.xz
 DISTFILES.a += liberation-fonts-ttf-2.1.5.tar.gz
 DISTFILES.a += liberation-narrow-fonts-ttf-1.07.6.tar.gz
-DISTFILES.a += libetonyek-0.1.12.tar.xz
+DISTFILES.a += libetonyek-0.1.13.tar.xz
 DISTFILES.a += libexttextcat-3.4.7.tar.xz
 DISTFILES.a += libfreehand-0.1.2.tar.xz
-DISTFILES.a += liblangtag-0.6.7.tar.bz2
+DISTFILES.a += liblangtag-0.6.8.tar.bz2
 DISTFILES.a += libmspub-0.1.4.tar.xz
 DISTFILES.a += libmwaw-0.3.22.tar.xz
 DISTFILES.a += libnumbertext-1.0.11.tar.xz
@@ -130,7 +128,7 @@ DISTFILES.a += libpagemaker-0.0.4.tar.xz
 DISTFILES.a += libqxp-0.0.2.tar.xz
 DISTFILES.a += libre-hebrew-1.0.tar.gz
 DISTFILES.a += libstaroffice-0.0.7.tar.xz
-DISTFILES.a += libvisio-0.1.8.tar.xz
+DISTFILES.a += libvisio-0.1.10.tar.xz
 DISTFILES.a += libwpg-0.3.4.tar.xz
 DISTFILES.a += libwps-0.4.14.tar.xz
 DISTFILES.a += libzmf-0.0.2.tar.xz
@@ -140,7 +138,7 @@ DISTFILES.a += noto-fonts-20171024.tar.gz
 DISTFILES.a += pdfium-7012.tar.bz2
 DISTFILES.a += phc-winner-argon2-20190702.tar.gz
 DISTFILES.a += skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz
-DISTFILES.a += xmlsec1-1.3.7.tar.gz
+DISTFILES.a += xmlsec1-1.3.8.tar.gz
 DISTFILES.a += zxcvbn-c-2.6.tar.gz
 DISTFILES.a += zxing-cpp-2.3.0.tar.gz
 
