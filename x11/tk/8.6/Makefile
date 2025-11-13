@@ -1,6 +1,6 @@
 COMMENT =		graphical toolkit for Tcl
 
-P =			16
+P =			17
 DISTNAME =		tk8.6.${P}
 PKGNAME =		tk-8.6.${P}
 SHARED_LIBS =		tk86 1.${P}
