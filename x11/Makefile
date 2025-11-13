@@ -246,6 +246,7 @@
      SUBDIR += polkit-qt,qt5
      SUBDIR += polybar
      SUBDIR += pwm
+     SUBDIR += py-dasbus
      SUBDIR += py-gtk2
      SUBDIR += py-i3ipc
      SUBDIR += py-pyglet
