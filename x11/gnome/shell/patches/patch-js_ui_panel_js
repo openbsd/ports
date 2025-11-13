@@ -1,0 +1,48 @@
+Disable brightness management:
+it is now handled by mutter using sysfs (linux only).
+See:
+https://gitlab.gnome.org/GNOME/gnome-shell/-/commit/146c324d29bf0a4fe648b913ca3f7b0f8a4d25b9
+https://gitlab.gnome.org/GNOME/gnome-shell/-/commit/f2d751095699f43034411e47f7db5d3bc11fc170
+https://gitlab.gnome.org/GNOME/mutter/-/commit/ac2be8df1406561a6e9eb7ad5f2dcda35a2a3cfc
+https://gitlab.gnome.org/GNOME/mutter/-/commit/3eb3f6b8b1c2d388736d9dc1751ef846a7dbac13
+https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/commit/08ae6461a824d244ea6d678d62579ca95c3c55c1
+
+Index: js/ui/panel.js
+--- js/ui/panel.js.orig
++++ js/ui/panel.js
+@@ -322,7 +322,6 @@ class QuickSettings extends PanelMenu.Button {
+         this._camera = new CameraStatus.Indicator();
+         this._volumeOutput = new VolumeStatus.OutputIndicator();
+         this._volumeInput = new VolumeStatus.InputIndicator();
+-        this._brightness = new BrightnessStatus.Indicator();
+         this._remoteAccess = new RemoteAccessStatus.RemoteAccessApplet();
+         this._location = new LocationStatus.Indicator();
+         this._thunderbolt = new ThunderboltStatus.Indicator();
+@@ -344,7 +343,6 @@ class QuickSettings extends PanelMenu.Button {
+         this._indicators.insert_child_at_index(this._location, pos++);
+ 
+         // append all other indicators
+-        this._indicators.add_child(this._brightness);
+         this._indicators.add_child(this._thunderbolt);
+         this._indicators.add_child(this._nightLight);
+         if (this._network)
+@@ -369,8 +367,6 @@ class QuickSettings extends PanelMenu.Button {
+             sibling, N_QUICK_SETTINGS_COLUMNS);
+         this._addItemsBefore(this._volumeInput.quickSettingsItems,
+             sibling, N_QUICK_SETTINGS_COLUMNS);
+-        this._addItemsBefore(this._brightness.quickSettingsItems,
+-            sibling, N_QUICK_SETTINGS_COLUMNS);
+ 
+         this._addItemsBefore(this._camera.quickSettingsItems, sibling);
+         this._addItemsBefore(this._remoteAccess.quickSettingsItems, sibling);
+@@ -406,10 +402,6 @@ class QuickSettings extends PanelMenu.Button {
+      * @param {number=} colSpan
+      */
+     addExternalIndicator(indicator, colSpan = 1) {
+-        // Insert before first non-privacy indicator if it exists
+-        let sibling = this._brightness ?? null;
+-        this._indicators.insert_child_below(indicator, sibling);
+-
+         // Insert before background apps if it exists
+         sibling = this._backgroundApps?.quickSettingsItems?.at(-1) ?? null;
+         this._addItemsBefore(indicator.quickSettingsItems, sibling, colSpan);
