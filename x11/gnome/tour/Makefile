@@ -1,7 +1,7 @@
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour
-GNOME_VERSION=		48.1
+GNOME_VERSION=		49.0
 
 # needed due to the devel/cargo MODULE
 DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
@@ -35,7 +35,7 @@ MAKE_ENV=		GETTEXT_DIR=${LOCALBASE} \
 pre-configure:
 	mkdir -p ${WRKBUILD}/.cargo
 	sed -e 's,directory = .*",directory = "${WRKSRC}/vendor",g' \
-		${WRKSRC}/.cargo/config \
-		>${WRKBUILD}/.cargo/config ${}
+		${WRKSRC}/.cargo/config.toml \
+		>${WRKBUILD}/.cargo/config.toml ${}
 
 .include <bsd.port.mk>

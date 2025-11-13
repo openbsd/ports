@@ -2,9 +2,9 @@ Set profile for rust build, based on 'release' profile, see
 https://doc.rust-lang.org/cargo/reference/profiles.html#release
 and devel/cargo/cargo.port.mk. The default doesn't work for i386.
 
-Index: .cargo/config
---- .cargo/config.orig
-+++ .cargo/config
+Index: .cargo/config.toml
+--- .cargo/config.toml.orig
++++ .cargo/config.toml
 @@ -3,3 +3,14 @@ replace-with = "vendored-sources"
  
  [source.vendored-sources]

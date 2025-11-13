@@ -1,5 +1,6 @@
 @bin bin/gnome-tour
 share/applications/org.gnome.Tour.desktop
+share/dbus-1/services/org.gnome.Tour.service
 share/gnome-tour/
 share/gnome-tour/resources.gresource
 share/icons/hicolor/scalable/apps/org.gnome.Tour.svg
@@ -57,6 +58,7 @@ share/locale/sv/LC_MESSAGES/gnome-tour.mo
 share/locale/ta/LC_MESSAGES/gnome-tour.mo
 share/locale/tr/LC_MESSAGES/gnome-tour.mo
 share/locale/uk/LC_MESSAGES/gnome-tour.mo
+share/locale/uz/LC_MESSAGES/gnome-tour.mo
 share/locale/vi/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tour.mo
