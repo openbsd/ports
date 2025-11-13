@@ -10,8 +10,8 @@ Index: src/TextualParser.cpp
 +#endif
  #include <bitset>
  
- namespace CG3 {
-@@ -2597,6 +2599,7 @@ void TextualParser::parseFromUChar(UChar* input, const
+ #define MAYBE_QUOTED(n, p) \
+@@ -2630,6 +2632,7 @@ void TextualParser::parseFromUChar(UChar* input, const
  
  				std::string abspath = &cbuffers[0][0];
  
@@ -19,7 +19,7 @@ Index: src/TextualParser.cpp
  				if (abspath.find_first_of("~$*") != std::string::npos) {
  					wordexp_t p;
  					auto rv = wordexp(abspath.data(), &p, WRDE_NOCMD | WRDE_UNDEF);
-@@ -2608,6 +2611,7 @@ void TextualParser::parseFromUChar(UChar* input, const
+@@ -2641,6 +2644,7 @@ void TextualParser::parseFromUChar(UChar* input, const
  					abspath = p.we_wordv[0];
  					wordfree(&p);
  				}

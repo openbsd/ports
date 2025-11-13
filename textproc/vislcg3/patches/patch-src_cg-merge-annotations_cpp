@@ -1,14 +1,12 @@
 Index: src/cg-merge-annotations.cpp
 --- src/cg-merge-annotations.cpp.orig
 +++ src/cg-merge-annotations.cpp
-@@ -20,10 +20,15 @@
- #include "sorted_vector.hpp"
- #include "stdafx.hpp"
- #include "filesystem.hpp"
-+#include <unistd.h>
+@@ -23,7 +23,13 @@
  namespace fs = ::std::filesystem;
  using namespace CG3;
  
++extern "C" int pledge(const char *, const char *);
++
  int main(int argc, char* argv[]) {
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 +		std::cerr << "pledge" << std::endl;

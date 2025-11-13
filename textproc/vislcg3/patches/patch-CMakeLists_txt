@@ -1,13 +1,16 @@
 Don't set optimization level in cflags.
+
 Work around vasprintf visibility bug in OpenBSD's iostream header
-(cannot be used without _BSD_VISIBLE).
+(cannot be used without _POSIX_C_SOURCE < 202405).
 Work around locale_t visibility bug in OpenBSD's iostream header
 (cannot be used with _POSIX_C_SOURCE=200112).
+
 Unbreak with cmake >=3.30
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
  cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
  project(cg3 CXX C)
  
@@ -16,7 +19,7 @@ Index: CMakeLists.txt
  set(MASTER_PROJECT OFF)
  if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
  	set(MASTER_PROJECT ON)
-@@ -56,10 +58,8 @@ else()
+@@ -57,10 +59,8 @@ else()
  
  	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${_FLAGS_COMMON} -fvisibility-inlines-hidden")
  	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g3")
@@ -27,13 +30,12 @@ Index: CMakeLists.txt
  
  	# Enable latest possible C standard
  	foreach(flag "-std=c2x" "-std=c11" "-std=c1x" "-std=c99")
-@@ -120,7 +120,8 @@ if(WIN32)
- 	add_definitions(-DUNICODE -D_UNICODE -D_SECURE_SCL=0 -D_ITERATOR_DEBUG_LEVEL=0 -D_CRT_SECURE_NO_DEPRECATE -DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN -DNOMINMAX -D_SILENCE_CXX20_CISO646_REMOVED_WARNING)
+@@ -126,7 +126,7 @@ if(WIN32)
+ 	add_definitions(-DUNICODE -D_UNICODE -D_SECURE_SCL=0 -D_ITERATOR_DEBUG_LEVEL=0 -D_CRT_SECURE_NO_DEPRECATE -DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN -DNOMINMAX -D_SILENCE_CXX20_CISO646_REMOVED_WARNING -D_USE_MATH_DEFINES)
  	include_directories("include/getopt" "include/wordexp")
  else()
 -	add_definitions(-D_POSIX_C_SOURCE=200112 -DBOOST_NO_CXX98_FUNCTION_BASE=1)
-+	add_definitions(-D_POSIX_C_SOURCE=200809 -DBOOST_NO_CXX98_FUNCTION_BASE=1)
-+	add_definitions(-D_BSD_SOURCE)
++	add_definitions(-D_POSIX_C_SOURCE=202405 -DBOOST_NO_CXX98_FUNCTION_BASE=1)
  	set(POPEN_PLUS_CPP "../include/posix/popen_plus.cpp" "../include/posix/popen_plus.hpp")
  	include_directories("include/posix")
  endif()

@@ -1,7 +1,7 @@
 Index: src/inlines.hpp
 --- src/inlines.hpp.orig
 +++ src/inlines.hpp
-@@ -66,6 +66,8 @@ constexpr inline void* VOIDP(T t) {
+@@ -71,6 +71,8 @@ constexpr inline void* VOIDP(T t) {
  	return static_cast<void*>(t);
  }
  
@@ -9,4 +9,4 @@ Index: src/inlines.hpp
 +
  namespace CG3 {
  
- constexpr double NUMERIC_MIN = static_cast<double>(-(1ll << 48ll));
+ constexpr double NUMERIC_MIN = DBL(-(1ll << 48ll));
