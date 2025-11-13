@@ -3,7 +3,7 @@ No SessionId with ConsoleKit.
 Index: js/gdm/loginDialog.js
 --- js/gdm/loginDialog.js.orig
 +++ js/gdm/loginDialog.js
-@@ -48,6 +48,10 @@ const _CONFLICTING_SESSION_DIALOG_TIMEOUT = 60;
+@@ -52,6 +52,10 @@ const N_A11Y_MENU_COLUMNS = 2;
  
  Gio._promisify(Gio.File.prototype, 'load_contents_async');
  
@@ -14,7 +14,7 @@ Index: js/gdm/loginDialog.js
  export const UserListItem = GObject.registerClass({
      Signals: {'activate': {}},
  }, class UserListItem extends St.Button {
-@@ -1200,6 +1204,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1254,6 +1258,7 @@ export const LoginDialog = GObject.registerClass({
      }
  
      async _findConflictingSession(startingSessionId) {
@@ -22,7 +22,7 @@ Index: js/gdm/loginDialog.js
          const loginManager = LoginManager.getLoginManager();
          const sessions = await loginManager.listSessions();
          const [, , startingSessionOwner, ,] = sessions.find(([id, , , ,]) => id === startingSessionId);
-@@ -1219,6 +1224,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1273,6 +1278,7 @@ export const LoginDialog = GObject.registerClass({
                  continue;
  
              return sessionProxy;

@@ -5,19 +5,21 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
-GNOME_VERSION=		48.6
+GNOME_VERSION=		49.1
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
-WANTLIB += edataserver-1.2 gcr-4 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += edataserver-1.2 gcr-4 gdk_pixbuf-2.0 gio-2.0 girepository-2.0
 WANTLIB += gjs glib-2.0 gnome-autoar-0 gnome-desktop-4 gobject-2.0
-WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-16
+WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-17
 WANTLIB += pango-1.0 polkit-agent-1 polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-16/mutter-clutter-16
-WANTLIB += lib/mutter-16/mutter-cogl-16
-WANTLIB += lib/mutter-16/mutter-mtk-16
+WANTLIB += soup-3.0
+WANTLIB += lib/mutter-17/mutter-clutter-17
+WANTLIB += lib/mutter-17/mutter-cogl-17
+WANTLIB += lib/mutter-17/mutter-mtk-17
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -104,5 +106,11 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-extract:
 	cp ${FILESDIR}/*.xml ${WRKSRC}/data/dbus-interfaces/
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/commit/f3911151da7b0e3c630011cb26bd85f719e531d2;
+# see patch-data_meson_build, patch-data_org_gnome_Shell_desktop_in_in
+	mv ${WRKSRC}/data/org.gnome.Shell.Extensions.desktop.in \
+		${WRKSRC}/data/org.gnome.Shell.Extensions.desktop.in.in
+	mv ${WRKSRC}/data/org.gnome.Shell.PortalHelper.desktop.in \
+		${WRKSRC}/data/org.gnome.Shell.PortalHelper.desktop.in.in
 
 .include <bsd.port.mk>

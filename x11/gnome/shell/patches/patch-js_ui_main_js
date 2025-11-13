@@ -1,0 +1,38 @@
+REVERT:
+From d697bdceaefeae49ad0e03df7352884899c3e14a Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Tue, 8 Jul 2025 20:56:18 -0400
+Subject: [PATCH] Revert "main: Notify gnome-session when we're ready"
+
+Index: js/ui/main.js
+--- js/ui/main.js.orig
++++ js/ui/main.js
+@@ -326,6 +326,7 @@ async function _initializeUI() {
+     GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+         Shell.util_sd_notify();
+         global.context.notify_ready();
++        _notifyGnomeSessionReady();
+         return GLib.SOURCE_REMOVE;
+     });
+ 
+@@ -388,6 +389,20 @@ async function _initializeUI() {
+             Scripting.runPerfScript(perfModule, perfOutput);
+         }
+     });
++}
++
++async function _notifyGnomeSessionReady() {
++    try {
++        let params = GLib.Variant.new('(ss)', ['org.gnome.Shell.desktop', '']);
++        await Gio.DBus.session.call(
++            'org.gnome.SessionManager',
++            '/org/gnome/SessionManager',
++            'org.gnome.SessionManager',
++            'RegisterClient', params, null,
++            Gio.DBusCallFlags.NONE, -1, null);
++    } catch (e) {
++        log(`Error notifying gnome-session that we're ready: ${e.message}`);
++    }
+ }
+ 
+ function _handleShowWelcomeScreen() {

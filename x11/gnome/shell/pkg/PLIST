@@ -11,15 +11,15 @@ bin/gnome-shell-extension-tool
 bin/gnome-shell-test-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-16.typelib
-lib/gnome-shell/St-16.typelib
+lib/gnome-shell/Shell-17.typelib
+lib/gnome-shell/St-17.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgvc.so
-@so lib/gnome-shell/libshell-16.so
+@so lib/gnome-shell/libshell-17.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-16.so
+@so lib/gnome-shell/libst-17.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
@@ -29,6 +29,7 @@ share/applications/org.gnome.Extensions.desktop
 share/applications/org.gnome.Shell.Extensions.desktop
 share/applications/org.gnome.Shell.desktop
 share/bash-completion/completions/gnome-extensions
+share/dbus-1/interfaces/org.gnome.Shell.Brightness.xml
 share/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 share/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
@@ -54,10 +55,6 @@ share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-16.gir
-share/gnome-shell/St-16.gir
-share/gnome-shell/gir-1.0/
-share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
 share/gnome-shell/gnome-shell-icons.gresource
 share/gnome-shell/gnome-shell-osk-layouts.gresource
