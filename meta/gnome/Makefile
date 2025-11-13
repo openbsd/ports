@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=		https://www.gnome.org/
@@ -71,10 +73,12 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
-			x11/gnome/sushi \
 			x11/gnome/tecla  \
 			x11/gnome/tour \
 			x11/gnome/user-docs
+
+# XXX needs to be ported from evince to papers
+#RUN_DEPENDS-main +=	x11/gnome/sushi
 
 # XXX don't depend on gnome-initial-setup; it's in the CVS Attic for now.
 # Initial Setup is used to configure / create new users.
@@ -96,8 +100,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 #RUN_DEPENDS-main +=	x11/gnome/initial-setup
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-apps.bst
-RUN_DEPENDS-main +=	evince-*-!light:graphics/evince \
-			graphics/simple-scan \
+RUN_DEPENDS-main +=	graphics/simple-scan \
 			x11/gnome/baobab \
 			x11/gnome/calculator \
 			x11/gnome/calendar \
@@ -111,6 +114,7 @@ RUN_DEPENDS-main +=	evince-*-!light:graphics/evince \
 			x11/gnome/maps \
 			x11/gnome/music \
 			x11/gnome/nautilus \
+			x11/gnome/papers \
 			x11/gnome/showtime \
 			x11/gnome/system-monitor \
 			x11/gnome/text-editor \
