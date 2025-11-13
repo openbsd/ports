@@ -71,6 +71,7 @@
      SUBDIR += notes
      SUBDIR += online-accounts
      SUBDIR += orca
+     SUBDIR += papers
      SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi
