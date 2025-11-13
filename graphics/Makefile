@@ -50,8 +50,6 @@
      SUBDIR += drawpile
      SUBDIR += dumpmpeg
      SUBDIR += enblend-enfuse
-     SUBDIR += evince
-     SUBDIR += evince,light
      SUBDIR += exiftran
      SUBDIR += exiv2
      SUBDIR += farbfeld
