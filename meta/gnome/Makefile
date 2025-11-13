@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -120,6 +120,9 @@ RUN_DEPENDS-main +=	graphics/simple-scan \
 			x11/gnome/text-editor \
 			x11/gnome/weather \
 			x11/gnome/yelp
+
+# nautilus support for papers, we already depend on both
+RUN_DEPENDS-main +=	x11/gnome/papers,-nautilus
 
 # should be "loupe"
 RUN_DEPENDS-main +=	x11/gnome/eog
