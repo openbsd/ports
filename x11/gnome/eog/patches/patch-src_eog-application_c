@@ -1,0 +1,16 @@
+From 5456b9f896975750d3c7b8854d4c031b7b7409b2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Sat, 31 Aug 2024 04:21:44 +0200
+Subject: [PATCH] Set prgname to application ID
+
+Index: src/eog-application.c
+--- src/eog-application.c.orig
++++ src/eog-application.c
+@@ -334,6 +334,7 @@ eog_application_startup (GApplication *application)
+ 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+                                            EOG_DATA_DIR G_DIR_SEPARATOR_S "icons");
+ 
++	g_set_prgname (APPLICATION_ID);
+ 	gtk_window_set_default_icon_name (APPLICATION_ID);
+ 	g_set_application_name (_("Eye of GNOME"));
+ 
