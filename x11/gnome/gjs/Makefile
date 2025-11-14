@@ -31,7 +31,9 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER=		base-clang ports-clang
 
-BUILD_DEPENDS=		x11/gtk+4
+# needed for tests
+BUILD_DEPENDS=		x11/gtk+3 \
+			x11/gtk+4
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/spidermonkey140 \
@@ -44,6 +46,8 @@ RUN_DEPENDS=		devel/gobject-introspection
 
 CONFIGURE_ARGS=		-Dprofiler=disabled \
 			-Dinstalled_tests=false
+
+TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
