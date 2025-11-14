@@ -482,6 +482,7 @@
      SUBDIR += py-multidict
      SUBDIR += py-multipart
      SUBDIR += py-ndg-httpsclient
+     SUBDIR += py-nh3
      SUBDIR += py-openapi-core
      SUBDIR += py-python-multipart
      SUBDIR += py-qt6webengine
