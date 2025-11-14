@@ -1,7 +1,7 @@
 Index: Modules/_hashopenssl.c
 --- Modules/_hashopenssl.c.orig
 +++ Modules/_hashopenssl.c
-@@ -44,7 +44,9 @@
+@@ -45,7 +45,9 @@
  
  #define MUNCH_SIZE INT_MAX
  
@@ -11,7 +11,7 @@ Index: Modules/_hashopenssl.c
  #if defined(NID_sha3_224) && defined(NID_sha3_256) && defined(NID_sha3_384) && defined(NID_sha3_512)
  #define PY_OPENSSL_HAS_SHA3 1
  #endif
-@@ -958,11 +960,15 @@ py_evp_fromname(PyObject *module, const char *digestna
+@@ -971,11 +973,15 @@ _hashlib_HASH(PyObject *module, const char *digestname
          goto exit;
      }
  

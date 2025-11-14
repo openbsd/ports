@@ -3,7 +3,7 @@ Make bsd make happy
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in
-@@ -534,8 +534,6 @@ LIBMPDEC_OBJS= \
+@@ -591,8 +591,6 @@ LIBMPDEC_OBJS= \
  		Modules/_decimal/libmpdec/numbertheory.o \
  		Modules/_decimal/libmpdec/sixstep.o \
  		Modules/_decimal/libmpdec/transpose.o

@@ -4,7 +4,7 @@ decide on a version number.
 Index: Lib/ctypes/util.py
 --- Lib/ctypes/util.py.orig
 +++ Lib/ctypes/util.py
-@@ -207,6 +207,9 @@ elif os.name == "posix":
+@@ -216,6 +216,9 @@ elif os.name == "posix":
              return nums or [sys.maxsize]
  
          def find_library(name):

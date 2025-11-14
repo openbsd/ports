@@ -12,19 +12,19 @@ Index: configure.ac
  # Version number of Python's own shared library file.
  AC_SUBST([SOVERSION])
 -SOVERSION=1.0
-+SOVERSION=${LIBpython3.12_VERSION}
++SOVERSION=${LIBpython3.13_VERSION}
  
  # The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
  # certain features on NetBSD, so we need _NETBSD_SOURCE to re-enable
-@@ -1123,6 +1123,7 @@ AC_MSG_CHECKING([for multiarch])
- AS_CASE([$ac_sys_system],
+@@ -1137,6 +1137,7 @@ AS_CASE([$ac_sys_system],
    [Darwin*], [MULTIARCH=""],
+   [iOS], [MULTIARCH=""],
    [FreeBSD*], [MULTIARCH=""],
 +  [OpenBSD*], [MULTIARCH=""],
    [MULTIARCH=$($CC --print-multiarch 2>/dev/null)]
  )
  AC_SUBST([MULTIARCH])
-@@ -1858,13 +1859,13 @@ esac
+@@ -1965,13 +1966,13 @@ esac
  [AC_MSG_RESULT([no])])
  if test "$Py_LTO" = 'true' ; then
    case $CC in
@@ -40,16 +40,16 @@ Index: configure.ac
        AC_SUBST([LLVM_AR_FOUND])
        if test -n "${LLVM_AR}" -a -x "${LLVM_AR}"
        then
-@@ -1987,7 +1988,7 @@ then
- fi
- LLVM_PROF_ERR=no
- case $CC in
+@@ -2097,7 +2098,7 @@ LLVM_PROF_ERR=no
+ # GNU Autoconf recommends the use of expr instead of basename.
+ AS_VAR_SET([CC_BASENAME], [$(expr "//$CC" : '.*/\(.*\)')])
+ case "$CC_BASENAME" in
 -  *clang*)
 +  *clang*|cc)
      # Any changes made here should be reflected in the GCC+Darwin case below
      PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
      PGO_PROF_USE_FLAG="-fprofile-instr-use=\"\$(shell pwd)/code.profclangd\""
-@@ -4149,11 +4150,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
+@@ -4366,11 +4367,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
  dnl
  found_tcltk=no
  for _QUERY in \
