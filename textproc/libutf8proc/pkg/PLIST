@@ -1,4 +1,10 @@
 @pkgpath www/netsurf/libutf8proc
 include/utf8proc.h
+lib/cmake/
+lib/cmake/utf8proc/
+lib/cmake/utf8proc/utf8proc-config-version.cmake
+lib/cmake/utf8proc/utf8proc-config.cmake
+lib/cmake/utf8proc/utf8proc-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/utf8proc/utf8proc-targets.cmake
 @lib lib/libutf8proc.so.${LIButf8proc_VERSION}
 lib/pkgconfig/libutf8proc.pc
