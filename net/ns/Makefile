@@ -13,6 +13,7 @@ HOMEPAGE=	https://nsnam.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 
 MODULES +=	x11/tk
+MODTK_VERSION =	8.5
 WANTLIB +=	X11 Xext c m pcap ${COMPILER_LIBCXX} otcl
 WANTLIB +=	${MODTK_WANTLIB}
 
