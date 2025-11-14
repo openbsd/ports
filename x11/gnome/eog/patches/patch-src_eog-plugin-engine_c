@@ -17,7 +17,7 @@ Index: src/eog-plugin-engine.c
  
  	/* This should be moved to libpeas */
 -	if (g_irepository_require (g_irepository_get_default (),
-+	if (g_irepository_require (gi_repository_dup_default (),
++	if (gi_repository_require (gi_repository_dup_default (),
  				   "Peas", "1.0", 0, &error) == NULL)
  	{
  		g_warning ("Error loading Peas typelib: %s\n",
@@ -26,7 +26,7 @@ Index: src/eog-plugin-engine.c
  
  
 -	if (g_irepository_require (g_irepository_get_default (),
-+	if (g_irepository_require (gi_repository_dup_default (),
++	if (gi_repository_require (gi_repository_dup_default (),
  				   "PeasGtk", "1.0", 0, &error) == NULL)
  	{
  		g_warning ("Error loading PeasGtk typelib: %s\n",
@@ -35,7 +35,7 @@ Index: src/eog-plugin-engine.c
  
  
 -	if (g_irepository_require_private (g_irepository_get_default (),
-+	if (g_irepository_require_private (gi_repository_dup_default (),
++	if (gi_repository_require_private (gi_repository_dup_default (),
  					   private_path, "Eog", "3.0", 0,
  					   &error) == NULL)
  	{
