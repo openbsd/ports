@@ -31,6 +31,8 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER=		base-clang ports-clang
 
+BUILD_DEPENDS=		x11/gtk+4
+
 LIB_DEPENDS=		devel/glib2 \
 			devel/spidermonkey140 \
 			graphics/cairo
@@ -39,9 +41,6 @@ LIB_DEPENDS=		devel/glib2 \
 BUILD_DEPENDS +=	x11/dbus
 
 RUN_DEPENDS=		devel/gobject-introspection
-
-TEST_DEPENDS=		x11/gtk+3 \
-			x11/gtk+4
 
 CONFIGURE_ARGS=		-Dprofiler=disabled \
 			-Dinstalled_tests=false
