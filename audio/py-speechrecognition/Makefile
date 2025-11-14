@@ -18,16 +18,21 @@ PERMIT_PACKAGE=	Yes
 MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
-MODPY_PYTEST_ARGS=	--ignore tests/recognizers/test_google_cloud.py
+MODPY_PYTEST_ARGS= \
+	--ignore tests/recognizers/test_google_cloud.py \
+	--ignore tests/recognizers/whisper_api/test_groq.py \
+	--ignore tests/recognizers/whisper_api/test_openai.py
 
-# XXX: Python 3.13 will require RDEPs on standard-aifc
-# and audioop-lts due to use of aifc and audioop
+BUILD_DEPENDS =	audio/py-standard-aifc
 RUN_DEPENDS =	audio/flac \
 		audio/py-audio>=0.2.11 \
+		audio/py-audioop-lts \
+		audio/py-standard-aifc \
 		devel/py-typing-extensions
 
 # XXX: needs a few more TDEPs
-TEST_DEPENDS =	www/py-httpx \
+TEST_DEPENDS =	math/py-numpy \
+		www/py-httpx \
 		www/py-respx
 
 .include <bsd.port.mk>

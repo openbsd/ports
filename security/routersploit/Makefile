@@ -14,9 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
-# will need standard-telnetlib when updating python to 3.13
 RUN_DEPENDS =	devel/py-setuptools \
 		net/py-snmp \
+		net/py-standard-telnetlib \
 		security/py-cryptodome \
 		security/py-paramiko \
 		www/py-requests
