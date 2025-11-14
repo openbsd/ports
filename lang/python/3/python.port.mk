@@ -170,6 +170,9 @@ BUILD_DEPENDS +=	lang/pythran
 .endif
 
 .if ${MODPY_PI:L} == "yes"
+.  if defined(GH_ACCOUNT)
+ERRORS += "both MODPY_PI and GH_ACCOUNT are set"
+.  endif
 _MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_DISTV}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
 SITES =			${SITE_PYPI:=${MODPY_PI_DIR}/}
