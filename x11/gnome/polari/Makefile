@@ -1,8 +1,7 @@
 COMMENT=		IRC Client for GNOME
 
 GNOME_PROJECT=		polari
-GNOME_VERSION=		46.0
-REVISION=		2
+GNOME_VERSION=		49.0
 
 CATEGORIES=		net
 
@@ -11,15 +10,14 @@ HOMEPAGE=		https://apps.gnome.org/Polari/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gio-2.0 girepository-1.0 gjs glib-2.0 gobject-2.0
+WANTLIB += c gio-2.0 girepository-2.0 gjs glib-2.0 gobject-2.0
 WANTLIB += telepathy-glib tinysparql-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache yelp
+MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
 
 LIB_DEPENDS=		net/telepathy/telepathy-glib \
 			x11/gnome/gjs \

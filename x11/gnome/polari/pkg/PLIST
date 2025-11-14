@@ -313,15 +313,13 @@ share/help/uk/polari/network-connect.page
 share/help/uk/polari/overview.page
 share/help/uk/polari/sharing.page
 share/icons/hicolor/scalable/apps/org.gnome.Polari.Devel.svg
-share/icons/hicolor/scalable/apps/org.gnome.Polari.Devel.svg.license
 share/icons/hicolor/scalable/apps/org.gnome.Polari.svg
-share/icons/hicolor/scalable/apps/org.gnome.Polari.svg.license
 share/icons/hicolor/symbolic/apps/org.gnome.Polari-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gnome.Polari-symbolic.svg.license
 share/locale/af/LC_MESSAGES/polari.mo
 share/locale/ar/LC_MESSAGES/polari.mo
 share/locale/as/LC_MESSAGES/polari.mo
 share/locale/be/LC_MESSAGES/polari.mo
+share/locale/bg/LC_MESSAGES/polari.mo
 share/locale/bs/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
 share/locale/ca@valencia/LC_MESSAGES/polari.mo
@@ -341,6 +339,7 @@ share/locale/fr/LC_MESSAGES/polari.mo
 share/locale/fur/LC_MESSAGES/polari.mo
 share/locale/gl/LC_MESSAGES/polari.mo
 share/locale/he/LC_MESSAGES/polari.mo
+share/locale/hi/LC_MESSAGES/polari.mo
 share/locale/hr/LC_MESSAGES/polari.mo
 share/locale/hu/LC_MESSAGES/polari.mo
 share/locale/id/LC_MESSAGES/polari.mo
@@ -372,6 +371,7 @@ share/locale/sr@latin/LC_MESSAGES/polari.mo
 share/locale/sv/LC_MESSAGES/polari.mo
 share/locale/te/LC_MESSAGES/polari.mo
 share/locale/tg/LC_MESSAGES/polari.mo
+share/locale/th/LC_MESSAGES/polari.mo
 share/locale/tr/LC_MESSAGES/polari.mo
 share/locale/uk/LC_MESSAGES/polari.mo
 share/locale/vi/LC_MESSAGES/polari.mo
