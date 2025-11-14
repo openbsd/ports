@@ -11,10 +11,12 @@ share/icons/hicolor/symbolic/apps/de.schmidhuberj.DieBahn-symbolic.svg
 share/locale/ar/LC_MESSAGES/diebahn.mo
 share/locale/bg/LC_MESSAGES/diebahn.mo
 share/locale/bn/LC_MESSAGES/diebahn.mo
+share/locale/cs/LC_MESSAGES/diebahn.mo
 share/locale/da/LC_MESSAGES/diebahn.mo
 share/locale/de/LC_MESSAGES/diebahn.mo
 share/locale/es/LC_MESSAGES/diebahn.mo
 share/locale/et/LC_MESSAGES/diebahn.mo
+share/locale/eu/LC_MESSAGES/diebahn.mo
 share/locale/fi/LC_MESSAGES/diebahn.mo
 share/locale/fr/LC_MESSAGES/diebahn.mo
 share/locale/hi/LC_MESSAGES/diebahn.mo
@@ -25,8 +27,6 @@ share/locale/it/LC_MESSAGES/diebahn.mo
 share/locale/ja/LC_MESSAGES/diebahn.mo
 share/locale/kab/LC_MESSAGES/diebahn.mo
 share/locale/ko/LC_MESSAGES/diebahn.mo
-share/locale/nb_NO/
-share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/diebahn.mo
 share/locale/nl/LC_MESSAGES/diebahn.mo
 share/locale/oc/LC_MESSAGES/diebahn.mo
