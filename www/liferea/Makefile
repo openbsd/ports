@@ -1,8 +1,7 @@
 COMMENT=	simple GTK desktop news aggregator
 
-V=		1.16.5
+V=		1.16.6
 DISTNAME=	liferea-${V}
-REVISION=	1
 
 CATEGORIES=	www news x11
 
@@ -24,7 +23,7 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu hwy hyphen iconv icudata icui18n icuuc
 WANTLIB += idn2 intl javascriptcoregtk-4.1 jpeg json-glib-1.0
-WANTLIB += jxl jxl_cms lcms2 lzma m nghttp2 orc-0.4 pango-1.0
+WANTLIB += jxl jxl_cms lcms2 m nghttp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-8 peas-2
 WANTLIB += pixman-1 png psl secret-1 sharpyuv soup-3.0 sqlite3
 WANTLIB += tasn1 unistring wayland-client wayland-cursor wayland-egl
