@@ -1,20 +1,18 @@
-COMMENT =	simple API to read and write INI-style configuration files
-CATEGORIES =	textproc
+COMMENT=	simple API to read and write INI-style configuration files
 
-GH_ACCOUNT =	brofield
-GH_PROJECT =	simpleini
-GH_TAGNAME =	v4.22
+CATEGORIES=	textproc
+
+GH_ACCOUNT=	brofield
+GH_PROJECT=	simpleini
+GH_TAGNAME=	v4.25
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-NO_BUILD =		Yes
+MODULES=	devel/cmake
 
-TEST_DEPENDS =	devel/gtest
-USE_GMAKE =	Yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/SimpleIni.h ${PREFIX}/include
+# otherwise it uses cmake DOWNLOAD
+CONFIGURE_ARGS=	-DSIMPLEINI_USE_SYSTEM_GTEST=On
+BUILD_DEPENDS=	devel/gtest
 
 .include <bsd.port.mk>
