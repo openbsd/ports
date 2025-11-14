@@ -1,6 +1,6 @@
 COMMENT =		fast XML/DOM/XPath/XSLT/HTML/JSON extension for Tcl
 
-V =			0.9.3
+V =			0.9.6
 VER =			${V:S/.//g}
 
 DISTNAME =		tdom-${V}

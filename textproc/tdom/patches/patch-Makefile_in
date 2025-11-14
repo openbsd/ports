@@ -3,7 +3,7 @@ Install to OpenBSD locations and adjust pkgIndex.tcl accordingly.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -451,8 +451,8 @@ install-lib-binaries: binaries
+@@ -457,8 +457,8 @@ install-lib-binaries: binaries
  	@$(INSTALL_DATA_DIR) "$(DESTDIR)$(pkglibdir)"
  	@list='$(lib_BINARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
@@ -14,7 +14,7 @@ Index: Makefile.in
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \
  		lib=`basename $$p|sed -e 's/.[^.]*$$//'`.lib; \
-@@ -463,8 +463,8 @@ install-lib-binaries: binaries
+@@ -469,8 +469,8 @@ install-lib-binaries: binaries
  	    fi; \
  	  fi; \
  	done
@@ -25,7 +25,7 @@ Index: Makefile.in
  	@list='$(PKG_TCL_SOURCES)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
  	    destp=`basename $$p`; \
-@@ -474,6 +474,7 @@ install-lib-binaries: binaries
+@@ -480,6 +480,7 @@ install-lib-binaries: binaries
  	done
  	@if test "x$(SHARED_BUILD)" = "x1"; then \
  	    echo "Installing pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \

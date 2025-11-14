@@ -15,3 +15,4 @@ lib/tcl/tdom/tdomConfig.sh
 @man man/mann/schema.n
 @man man/mann/tdomcmd.n
 @man man/mann/tnc.n
+@man man/mann/xpathFunc.n
