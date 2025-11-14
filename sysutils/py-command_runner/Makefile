@@ -1,6 +1,6 @@
 COMMENT=	platform agnostic command and shell execution tool
 
-MODPY_DISTV=	1.7.4
+MODPY_DISTV =	1.7.5
 DISTNAME=	command_runner-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
