@@ -1,27 +1,22 @@
-COMMENT =	file transport adapter for requests
+COMMENT=	file transport adapter for requests
 
-MODPY_DISTV =	1.5.1
+MODPY_DISTV=	2.1.0
+DISTNAME=	requests_file-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
 
-DISTNAME =	requests-file-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	3
+CATEGORIES=	www
 
-CATEGORIES =	www
+HOMEPAGE=	https://github.com/dashea/requests-file/
 
-HOMEPAGE =	https://github.com/dashea/requests-file/
-
-MAINTAINER =	George Rosamond <george@nycbug.org>
+MAINTAINER=	George Rosamond <george@nycbug.org>
 
 # Apache2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		www/py-requests
-
-TEST_DEPENDS =		www/py-requests
+RUN_DEPENDS=	www/py-requests
 
 .include <bsd.port.mk>
