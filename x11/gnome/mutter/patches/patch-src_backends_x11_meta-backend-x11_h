@@ -1,0 +1,36 @@
+From a25c35c16d0f161fb3d73e7f35fd68ccb78b1217 Mon Sep 17 00:00:00 2001
+From: duli <duli4868@gmail.com>
+Date: Mon, 3 Nov 2025 19:43:54 +0800
+Subject: [PATCH] x11: Handle ignored modifiers when grabbing keys and buttons
+
+Index: src/backends/x11/meta-backend-x11.h
+--- src/backends/x11/meta-backend-x11.h.orig
++++ src/backends/x11/meta-backend-x11.h
+@@ -77,23 +77,23 @@ void meta_backend_x11_passive_button_grab (MetaBackend
+                                            Window               xwindow,
+                                            int                  button,
+                                            MetaPassiveGrabMode  grab_mode,
+-                                           ClutterModifierType  modifiers);
++                                           GArray              *mods);
+ 
+ void meta_backend_x11_passive_button_ungrab (MetaBackendX11      *backend_x11,
+                                              Window               xwindow,
+                                              int                  button,
+-                                             ClutterModifierType  modifiers);
++                                             GArray              *mods);
+ 
+ void meta_backend_x11_passive_key_grab (MetaBackendX11      *backend_x11,
+                                         Window               xwindow,
+                                         int                  keycode,
+                                         MetaPassiveGrabMode  grab_mode,
+-                                        ClutterModifierType  modmask);
++                                        GArray              *mods);
+ 
+ void meta_backend_x11_passive_key_ungrab (MetaBackendX11      *backend_x11,
+                                           Window               xwindow,
+                                           int                  keycode,
+-                                          ClutterModifierType  modmask);
++                                          GArray              *mods);
+ 
+ void meta_backend_x11_allow_events (MetaBackendX11     *backend_x11,
+                                     const ClutterEvent *event,
