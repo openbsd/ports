@@ -1,13 +1,17 @@
 COMMENT=	Python implementation of the patiencediff algorithm
 
-MODPY_DISTV =	0.2.15
-DISTNAME=	patiencediff-${MODPY_DISTV}
-PKGNAME=	py-patiencediff-${MODPY_DISTV}
-REVISION=	1
+ONLY_FOR_ARCHS=	${RUST_ARCHS}
+
+MODPY_DISTV=	0.2.18
+# use github; sdist is missing Cargo.lock
+GH_ACCOUNT=	breezy-team
+GH_PROJECT=	patiencediff
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	https://pypi.org/project/patiencediff/
+HOMEPAGE=	https://github.com/breezy-team/patiencediff
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -15,11 +19,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	${MODPY_WANTLIB} pthread
 
 MODULES=	lang/python
-MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools-rust
+
 # otherwise extension is not found and relevant tests are skipped
-MODPY_TEST_DIR=	${WRKSRC}/build/lib.*
+MODPY_TEST_LINK_SO= Yes
 
-BUILD_DEPENDS=	lang/cython
-
+.include "crates.inc"
 .include <bsd.port.mk>
