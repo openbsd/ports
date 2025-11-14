@@ -1,7 +1,7 @@
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
-GNOME_VERSION =		49.0
+GNOME_VERSION =		49.1
 
 HOMEPAGE =		https://apps.gnome.org/Characters/
 
