@@ -1,3 +1,5 @@
+BROKEN-i3o6 = relocation R_386_PC32 cannot be used against symbol
+
 COMMENT =		Nintendo Entertainment System core for retroarch
 
 V =			1.53.2
