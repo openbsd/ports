@@ -1,10 +1,6 @@
-# build time requirement for WebKit2-4.0 introspection
-#USE_WXNEEDED=		Yes
-
 COMMENT=		read documentation
 
-GNOME_PROJECT=		manuals
-GNOME_VERSION=		49.0
+DIST_TUPLE=		gnome GNOME manuals 49.1 .
 
 CATEGORIES=		textproc
 
