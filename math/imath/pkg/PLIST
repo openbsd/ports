@@ -87,7 +87,7 @@ lib/cmake/Imath/PyImathTargets.cmake
 @lib lib/libImath-3_2.so.${LIBImath-3_2_VERSION}
 @lib lib/libImath.so.${LIBImath_VERSION}
 @lib lib/libPyImath.so.${LIBPyImath_VERSION}
-@lib lib/libPyImath_Python3_12-3_2.so.${LIBPyImath_Python3_12-3_2_VERSION}
+@lib lib/libPyImath_Python3_13-3_2.so.${LIBPyImath_Python3_13-3_2_VERSION}
 lib/pkgconfig/Imath.pc
 lib/pkgconfig/PyImath.pc
 @so lib/python${MODPY_VERSION}/site-packages/imath.so

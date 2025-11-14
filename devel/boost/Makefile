@@ -35,10 +35,10 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1f-mt boost_math_tr1f \
 		boost_math_tr1l-mt boost_math_tr1l \
 		boost_nowide-mt boost_nowide \
-		boost_numpy312-mt boost_numpy312 \
+		boost_numpy313-mt boost_numpy313 \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
-		boost_python312-mt boost_python312 \
+		boost_python313-mt boost_python313 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
