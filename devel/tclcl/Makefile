@@ -13,6 +13,7 @@ HOMEPAGE=	https://otcl-tclcl.sourceforge.net/tclcl/
 PERMIT_PACKAGE=	Yes
 
 MODULES +=	x11/tk
+MODTK_VERSION=	8.5
 WANTLIB=		c m ${COMPILER_LIBCXX} otcl>=1
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -28,6 +29,8 @@ CONFIGURE_ARGS=	--with-tcl-ver=${MODTCL_VERSION} \
 		--with-tcl=${LOCALBASE} \
 		--with-tk=${LOCALBASE}
 
+NO_TEST=	Yes
+
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/otcldoc
 
@@ -38,7 +41,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tclcl
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@ln -sf ${TRUEPREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
