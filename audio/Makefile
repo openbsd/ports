@@ -198,7 +198,7 @@
      SUBDIR += pulseaudio-qt
      SUBDIR += py-acoustid
      SUBDIR += py-audio
-#     SUBDIR += py-audioop-lts			# for py313
+     SUBDIR += py-audioop-lts
      SUBDIR += py-discid
      SUBDIR += py-discogs-client
      SUBDIR += py-eyed3
@@ -208,8 +208,8 @@
      SUBDIR += py-musicbrainzngs
      SUBDIR += py-mutagen
      SUBDIR += py-speechrecognition
-#     SUBDIR += py-standard-aifc		# for py313
-#     SUBDIR += py-standard-chunk		# for py313
+     SUBDIR += py-standard-aifc
+     SUBDIR += py-standard-chunk
      SUBDIR += py-tagpy
      SUBDIR += py-tinytag
      SUBDIR += qsynth
