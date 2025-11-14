@@ -16,24 +16,24 @@ Index: pluma/pluma-plugins-engine.c
  	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA_ID);
  
  	/* This should be moved to libpeas */
--	if (!g_irepository_require (g_irepository_get_default (),
-+	if (!g_irepository_require (gi_repository_dup_default (),
+-	if (!gi_repository_require (g_irepository_get_default (),
++	if (!gi_repository_require (gi_repository_dup_default (),
  	                            "Peas", "1.0", 0, &error))
  	{
  		g_warning ("Could not load Peas repository: %s", error->message);
  		g_clear_error (&error);
  	}
  
--	if (!g_irepository_require (g_irepository_get_default (),
-+	if (!g_irepository_require (gi_repository_dup_default (),
+-	if (!gi_repository_require (g_irepository_get_default (),
++	if (!gi_repository_require (gi_repository_dup_default (),
  	                            "PeasGtk", "1.0", 0, &error))
  	{
  		g_warning ("Could not load PeasGtk repository: %s", error->message);
  		g_clear_error (&error);
  	}
  
--	if (!g_irepository_require_private (g_irepository_get_default (),
-+	if (!g_irepository_require_private (gi_repository_dup_default (),
+-	if (!gi_repository_require_private (g_irepository_get_default (),
++	if (!gi_repository_require_private (gi_repository_dup_default (),
  	                                    LIBDIR "/girepository-1.0",
  	                                    "Pluma", "1.0", 0, &error))
  	{
