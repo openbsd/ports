@@ -1,6 +1,7 @@
 COMMENT =	perl framework for SIP
 
-DISTNAME =	Net-SIP-0.839
+DISTNAME =	Net-SIP-0.840
+CPAN_AUTHOR =	SULLR
 
 CATEGORIES =	net telephony
 
