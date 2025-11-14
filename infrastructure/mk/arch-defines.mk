@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.112 2025/10/24 14:25:34 rsadowski Exp $
+# $OpenBSD: arch-defines.mk,v 1.113 2025/11/14 17:46:39 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -105,6 +105,10 @@ _SYSTEM_VERSION-clang = 3
 # go-compiled packages can be updated easily for a new go compiler
 .if defined(MODULES) && ${MODULES:Mlang/go}
 _SYSTEM_VERSION-go = ${_MODGO_SYSTEM_VERSION}
+.endif
+
+.if defined(MODULES) && ${MODULES:Mlang/python}
+_PKG_ARGS_VERSION += -V ${_MODPY_SYSTEM_VERSION}
 .endif
 
 # defined in rust.port.mk; added to version for all rust arches so that
