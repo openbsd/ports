@@ -4,6 +4,7 @@ V=			3.3.0
 DISTNAME=		com.github.johnfactotum.Foliate-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		foliate-${V}
+REVISION=		0
 
 CATEGORIES=		textproc graphics print
 

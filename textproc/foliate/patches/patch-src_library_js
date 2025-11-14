@@ -1,0 +1,26 @@
+From ae8e573b198880ad7df7c5ad668acd0db284bad2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Markus=20G=C3=B6llnitz?= <camelcasenick@bewares.it>
+Date: Tue, 4 Nov 2025 19:49:57 +0100
+Subject: [PATCH] Fix crash and improve fractions in list view of library
+
+Index: src/library.js
+--- src/library.js.orig
++++ src/library.js
+@@ -219,7 +219,7 @@ GObject.registerClass({
+     }
+ })
+ 
+-const fraction = p => p?.[1] ? (p[0] + 1) / (p[1] + 1) : null
++const fraction = p => !isNaN(p?.[1]) && p?.[1] > 0 ? p[0] / p[1] : null
+ 
+ const BookItem = GObject.registerClass({
+     GTypeName: 'FoliateBookItem',
+@@ -279,7 +279,7 @@ const BookRow = GObject.registerClass({
+     update(item, data) {
+         this.#item = item
+         const { metadata, progress } = data
+-        const title = metadata?.title
++        const title = formatLanguageMap(metadata?.title)
+         this._title.label = title
+ 
+         const author = formatAuthors(metadata)
