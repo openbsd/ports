@@ -1,0 +1,22 @@
+Index: components/files/linuxpath.cpp
+--- components/files/linuxpath.cpp.orig
++++ components/files/linuxpath.cpp
+@@ -75,6 +75,10 @@ namespace Files
+ 
+     std::filesystem::path LinuxPath::getLocalPath() const
+     {
++#ifdef __OpenBSD__
++        std::filesystem::path binprefix("${TRUEPREFIX}/bin");
++        return binprefix / mName;
++#else
+         auto localPath = std::filesystem::current_path() / "";
+ 
+         static const std::filesystem::path statusPaths[]
+@@ -92,6 +96,7 @@ namespace Files
+         }
+ 
+         return localPath;
++#endif
+     }
+ 
+     std::filesystem::path LinuxPath::getGlobalDataPath() const
