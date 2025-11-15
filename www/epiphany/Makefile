@@ -20,6 +20,7 @@ WANTLIB += sqlite3 webkitgtk-6.0 xml2
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas \
+		textproc/py-docutils \
 		x11/blueprint-compiler
 
 RUN_DEPENDS=	devel/iso-codes \
