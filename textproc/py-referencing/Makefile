@@ -1,6 +1,7 @@
 COMMENT=	JSON referencing in Python
 
 MODPY_DISTV=	0.37.0
+REVISION=	0
 DISTNAME=	referencing-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,10 +17,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
-# devel/py-typing-extensions needed for py < 3.13
 RUN_DEPENDS=	devel/py-attrs \
-		devel/py-rpds-py \
-		devel/py-typing-extensions
+		devel/py-rpds-py
 
 TEST_DEPENDS=	devel/py-jsonschema \
 		devel/py-test-subtests
