@@ -26,8 +26,6 @@ include/xfce4/libxfce4ui-2/libxfce4ui/xfce-sm-client.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-spawn.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-titled-dialog.h
 lib/girepository-1.0/Libxfce4ui-2.0.typelib
-lib/glade/modules/libxfce4uiglade2.la
-@so lib/glade/modules/libxfce4uiglade2.so
 lib/libxfce4kbd-private-3.la
 @lib lib/libxfce4kbd-private-3.so.${LIBxfce4kbd-private-3_VERSION}
 lib/libxfce4ui-2.la
@@ -42,9 +40,6 @@ share/examples/xfconf/
 share/examples/xfconf/xfce4-keyboard-shortcuts.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 share/gir-1.0/Libxfce4ui-2.0.gir
-share/glade/catalogs/libxfce4ui-2.xml
-share/glade/pixmaps/hicolor/16x16/actions/widget-libxfce4ui-xfce-titled-dialog.png
-share/glade/pixmaps/hicolor/22x22/actions/widget-libxfce4ui-xfce-titled-dialog.png
 share/gtk-doc/html/libxfce4ui/
 share/gtk-doc/html/libxfce4ui/XfceClipboardManager.html
 share/gtk-doc/html/libxfce4ui/XfceFilenameInput.html
