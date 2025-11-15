@@ -1,7 +1,8 @@
-From 53d746b99ae0098904e297989fd50c7610c26b61 Mon Sep 17 00:00:00 2001
-From: Carlos Garnacho <carlosg@gnome.org>
-Date: Sat, 28 Jun 2025 14:50:27 +0200
-Subject: [PATCH] data: Drop dependency on Wacom g-s-d plugin
+REVERT: (no support in gnome-settings-daemon)
+From 1414250aec551f0ca8582fe2c3f57ea0286ba3b8 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Tue, 6 May 2025 21:57:47 -0400
+Subject: [PATCH] data: Enable gsd-wwan
 
 REVERT:
 From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
@@ -12,27 +13,68 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: data/meson.build
 --- data/meson.build.orig
 +++ data/meson.build
-@@ -28,7 +28,6 @@ required_components = {
-     'org.gnome.SettingsDaemon.Smartcard',
-     'org.gnome.SettingsDaemon.Sound',
-     'org.gnome.SettingsDaemon.UsbProtection',
--    'org.gnome.SettingsDaemon.Wacom',
-     'org.gnome.SettingsDaemon.XSettings',
-   ],
- }
-@@ -110,6 +109,7 @@ install_data(
-   install_dir: join_paths(session_datadir, 'glib-2.0', 'schemas'),
- )
+@@ -81,7 +81,6 @@ wanted_components = [
+   'org.gnome.SettingsDaemon.Smartcard',
+   'org.gnome.SettingsDaemon.Sound',
+   'org.gnome.SettingsDaemon.UsbProtection',
+-  'org.gnome.SettingsDaemon.Wwan',
+ ]
+ 
+ # Generate the legacy "builtin" session configuration. In this mode, gnome-session
+@@ -123,6 +122,7 @@ foreach component: required_components
+   wanted_targets += 'Requires=@0@.target'.format(component)
+ endforeach
  
 +if enable_systemd_session
- unit_conf = configuration_data()
- unit_conf.set('libexecdir', session_libexecdir)
+ configure_file(
+   input: 'gnome.session.conf.in',
+   output: 'gnome.session.conf',
+@@ -132,6 +132,7 @@ configure_file(
+   },
+   install_dir: systemd_userunitdir / 'gnome-session@gnome.target.d',
+ )
++endif
  
-@@ -176,6 +176,7 @@ foreach session, req_components: required_components
-       session),
+ # Install the other necessary systemd scaffolding
+ 
+@@ -143,6 +144,7 @@ systemd_service = [
+   'gnome-session-failed.service',
+ ]
+ 
++if enable_systemd_session
+ foreach service: systemd_service
+   configure_file(
+     input: service + '.in',
+@@ -154,6 +156,7 @@ foreach service: systemd_service
+     },
    )
  endforeach
 +endif
  
- data = files('hardware-compatibility')
+ systemd_target = [
+   'gnome-session-wayland@.target',
+@@ -175,13 +178,16 @@ if have_x11
+   ]
+ endif
+ 
++if enable_systemd_session
+ install_data(
+   systemd_target,
+   install_dir: systemd_userunitdir
+ )
++endif
+ 
+ # Install resource limits that are applied to GNOME-launched apps
+ 
++if enable_systemd
+ install_data(
+   'app-override.scope.conf',
+   rename: 'override.conf',
+@@ -194,6 +200,7 @@ install_data(
+   rename: 'override.conf',
+   install_dir : join_paths(systemd_userunitdir, 'app-flatpak-.scope.d')
+ )
++endif
+ 
+ # Install some other misc. configuration files
  

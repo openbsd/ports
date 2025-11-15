@@ -1,0 +1,110 @@
+From c8a6643201ab765397fc20aca232d7e83acd4d1b Mon Sep 17 00:00:00 2001
+From: gnome-build-meta-bot <sysadmin@gnome.org>
+Date: Mon, 4 Aug 2025 10:06:58 +0000
+Subject: [PATCH] Update mimeapps.list
+
+From 20bfc774414fb37f52eb0b3aaacc4c2128711c44 Mon Sep 17 00:00:00 2001
+From: gnome-build-meta-bot <sysadmin@gnome.org>
+Date: Tue, 23 Sep 2025 14:54:45 +0000
+Subject: [PATCH] Update mimeapps.list
+
+Index: data/gnome-mimeapps.list
+--- data/gnome-mimeapps.list.orig
++++ data/gnome-mimeapps.list
+@@ -11,8 +11,7 @@ application/gzip=org.gnome.Nautilus.desktop
+ application/illustrator=org.gnome.Papers.desktop
+ application/javascript=org.gnome.Builder.desktop
+ application/json=org.gnome.Builder.desktop
+-application/oxps=org.gnome.Evince.desktop
+-application/pdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
++application/pdf=org.gnome.Papers.desktop
+ application/pkcs10=gcr-viewer.desktop
+ application/pkcs10+pem=gcr-viewer.desktop
+ application/pkcs12=gcr-viewer.desktop
+@@ -32,7 +31,6 @@ application/vnd.geo+json=org.gnome.Maps.desktop
+ application/vnd.google-earth.kml+xml=org.gnome.Maps.desktop
+ application/vnd.iccprofile=gcm-import.desktop
+ application/vnd.ms-cab-compressed=gnome-software-local-file-fwupd.desktop
+-application/vnd.ms-xpsdocument=org.gnome.Evince.desktop
+ application/vnd.rar=org.gnome.Nautilus.desktop
+ application/vnd.snap=gnome-software-local-file-snap.desktop
+ application/x-7z-compressed=org.gnome.Nautilus.desktop
+@@ -40,20 +38,20 @@ application/x-7z-compressed-tar=org.gnome.Nautilus.des
+ application/x-bzip=org.gnome.Nautilus.desktop
+ application/x-bzip-compressed-tar=org.gnome.Nautilus.desktop
+ application/x-bzip2-compressed-tar=org.gnome.Nautilus.desktop
+-application/x-bzpdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
++application/x-bzpdf=org.gnome.Papers.desktop
+ application/x-cd-image=gnome-disk-image-mounter.desktop;org.gnome.Boxes.desktop
+ application/x-compress=org.gnome.Nautilus.desktop
+ application/x-compressed-tar=org.gnome.Nautilus.desktop
+ application/x-cpio=org.gnome.Nautilus.desktop
+ application/x-desktop=org.gnome.Builder.desktop
+-application/x-ext-pdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
++application/x-ext-pdf=org.gnome.Papers.desktop
+ application/x-font-otf=org.gnome.font-viewer.desktop
+ application/x-font-pcf=org.gnome.font-viewer.desktop
+ application/x-font-ttf=org.gnome.font-viewer.desktop
+ application/x-font-type1=org.gnome.font-viewer.desktop
+ application/x-gnome-app-info=org.gnome.Builder.desktop
+ application/x-gzip=org.gnome.Nautilus.desktop
+-application/x-gzpdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
++application/x-gzpdf=org.gnome.Papers.desktop
+ application/x-javascript=org.gnome.Builder.desktop
+ application/x-lha=org.gnome.Nautilus.desktop
+ application/x-lzip=org.gnome.Nautilus.desktop
+@@ -86,7 +84,7 @@ application/x-xar=org.gnome.Nautilus.desktop
+ application/x-xpinstall=org.gnome.Epiphany.desktop
+ application/x-xz=org.gnome.Nautilus.desktop
+ application/x-xz-compressed-tar=org.gnome.Nautilus.desktop
+-application/x-xzpdf=org.gnome.Papers.desktop;org.gnome.Evince.desktop
++application/x-xzpdf=org.gnome.Papers.desktop
+ application/x-yaml=org.gnome.Builder.desktop
+ application/x-zerosize=org.gnome.TextEditor.desktop
+ application/x-zstd-compressed-tar=org.gnome.Nautilus.desktop
+@@ -127,15 +125,16 @@ image/jpeg=org.gnome.Loupe.desktop
+ image/jxl=org.gnome.Loupe.desktop
+ image/png=org.gnome.Loupe.desktop
+ image/qoi=org.gnome.Loupe.desktop
+-image/svg+xml=org.gnome.Loupe.desktop
++image/svg+xml=org.gnome.Loupe.desktop;org.gtk.Shaper.desktop
+ image/svg+xml-compressed=org.gnome.Loupe.desktop
+-image/tiff=org.gnome.Loupe.desktop;org.gnome.Papers.desktop;org.gnome.Evince.desktop
++image/tiff=org.gnome.Loupe.desktop;org.gnome.Papers.desktop
+ image/vnd-ms.dds=org.gnome.Loupe.desktop
+ image/vnd.microsoft.icon=org.gnome.Loupe.desktop
+ image/vnd.radiance=org.gnome.Loupe.desktop
+ image/webp=org.gnome.Loupe.desktop
+ image/x-dds=org.gnome.Loupe.desktop
+ image/x-exr=org.gnome.Loupe.desktop
++image/x-gtk-path-animation=org.gtk.Shaper.desktop
+ image/x-portable-anymap=org.gnome.Loupe.desktop
+ image/x-portable-bitmap=org.gnome.Loupe.desktop
+ image/x-portable-graymap=org.gnome.Loupe.desktop
+@@ -225,13 +224,13 @@ x-scheme-handler/com.googleusercontent.apps.5904022909
+ x-scheme-handler/eds-oauth2=org.gnome.evolution-data-server.OAuth2-handler.desktop
+ x-scheme-handler/flatpak+https=org.gnome.Software.desktop
+ x-scheme-handler/geo=org.gnome.Maps.desktop
+-x-scheme-handler/ghelp=yelp.desktop
++x-scheme-handler/ghelp=org.gnome.Yelp.desktop
+ x-scheme-handler/goa-oauth2=org.gnome.OnlineAccounts.OAuth2.desktop
+-x-scheme-handler/help=yelp.desktop
++x-scheme-handler/help=org.gnome.Yelp.desktop
+ x-scheme-handler/http=org.gnome.Epiphany.desktop
+ x-scheme-handler/https=org.gnome.Epiphany.desktop
+-x-scheme-handler/info=yelp.desktop
+-x-scheme-handler/man=yelp.desktop
++x-scheme-handler/info=org.gnome.Yelp.desktop
++x-scheme-handler/man=org.gnome.Yelp.desktop
+ x-scheme-handler/maps=org.gnome.Maps.desktop
+ x-scheme-handler/sip=org.gnome.Calls.desktop
+ x-scheme-handler/sips=org.gnome.Calls.desktop
+@@ -239,6 +238,7 @@ x-scheme-handler/snap=org.gnome.Software.desktop
+ x-scheme-handler/tel=org.gnome.Calls.desktop
+ 
+ # Tracking data to catch stale overrides:
+-#OVERRIDE image/tiff WAS org.gnome.Evince.desktop org.gnome.Loupe.desktop org.gnome.Papers.desktop
++#OVERRIDE image/tiff WAS org.gnome.Loupe.desktop org.gnome.Papers.desktop
+ #OVERRIDE inode/directory WAS org.gnome.Nautilus.desktop org.gnome.baobab.desktop
+ #OVERRIDE text/html WAS org.gnome.Builder.desktop org.gnome.Epiphany.desktop
++

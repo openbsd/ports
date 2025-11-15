@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: gnome-session/gsm-consolekit.c
 --- gnome-session/gsm-consolekit.c.orig
 +++ gnome-session/gsm-consolekit.c
-@@ -0,0 +1,972 @@
+@@ -0,0 +1,971 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2008 Jon McCann <jmccann@redhat.com>
@@ -216,7 +216,6 @@ Index: gnome-session/gsm-consolekit.c
 +{
 +        GError *error = NULL;
 +        GDBusConnection *bus;
-+        GVariant *res;
 +
 +        manager->priv = G_TYPE_INSTANCE_GET_PRIVATE (manager,
 +                                                     GSM_TYPE_CONSOLEKIT,

@@ -7,7 +7,23 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: gnome-session/gsm-util.c
 --- gnome-session/gsm-util.c.orig
 +++ gnome-session/gsm-util.c
-@@ -626,6 +626,7 @@ gsm_util_export_activation_environment (GError     **e
+@@ -48,6 +48,7 @@ static const char * const variable_blacklist[] = {
+     NULL
+ };
+ 
++#ifdef HAVE_SYSTEMD
+ /* The following is copied from GDMs spawn_session function.
+  *
+  * Environment variables listed here will be copied into the user's service
+@@ -82,6 +83,7 @@ static const char * const variable_unsetlist[] = {
+ 
+     NULL
+ };
++#endif
+ 
+ char *
+ gsm_util_find_desktop_file_for_app_name (const char *name,
+@@ -545,6 +547,7 @@ gsm_util_export_activation_environment (GError     **e
          return environment_updated;
  }
  
@@ -15,7 +31,7 @@ Index: gnome-session/gsm-util.c
  gboolean
  gsm_util_export_user_environment (GError     **error)
  {
-@@ -884,6 +885,7 @@ gsm_util_systemd_reset_failed (GError **error)
+@@ -803,6 +806,7 @@ gsm_util_systemd_reset_failed (GError **error)
  
          return TRUE;
  }
@@ -23,7 +39,7 @@ Index: gnome-session/gsm-util.c
  
  void
  gsm_util_setenv (const char *variable,
-@@ -907,12 +909,14 @@ gsm_util_setenv (const char *variable,
+@@ -826,12 +830,14 @@ gsm_util_setenv (const char *variable,
                  g_clear_error (&error);
          }
  

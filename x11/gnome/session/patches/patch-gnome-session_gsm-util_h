@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: gnome-session/gsm-util.h
 --- gnome-session/gsm-util.h.orig
 +++ gnome-session/gsm-util.h
-@@ -53,6 +53,7 @@ const char * const * gsm_util_listenv               (v
+@@ -47,6 +47,7 @@ const char * const * gsm_util_listenv               (v
  const char * const * gsm_util_get_variable_blacklist(void);
  
  gboolean    gsm_util_export_activation_environment  (GError     **error);
@@ -15,7 +15,7 @@ Index: gnome-session/gsm-util.h
  gboolean    gsm_util_export_user_environment        (GError     **error);
  gboolean    gsm_util_systemd_unit_is_active         (const char  *unit,
                                                       GError     **error);
-@@ -61,6 +62,7 @@ gboolean    gsm_util_start_systemd_unit             (c
+@@ -55,6 +56,7 @@ gboolean    gsm_util_start_systemd_unit             (c
                                                       GError     **error);
  gboolean    gsm_util_systemd_reset_failed           (GError     **error);
  

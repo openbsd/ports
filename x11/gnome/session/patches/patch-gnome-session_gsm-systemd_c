@@ -16,7 +16,7 @@ Index: gnome-session/gsm-systemd.c
  #include <errno.h>
  #include <string.h>
  #include <stdlib.h>
-@@ -1194,4 +1196,13 @@ sd_proxy_signal_cb (GDBusProxy  *proxy,
+@@ -1183,4 +1185,13 @@ sd_proxy_signal_cb (GDBusProxy  *proxy,
          }
  }
  
