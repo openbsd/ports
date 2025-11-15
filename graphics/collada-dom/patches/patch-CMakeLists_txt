@@ -1,0 +1,25 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -130,7 +130,7 @@ if( APPLE OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   add_definitions("-Dfopen64=fopen -Dfseeko64=fseeko -Dfseek64=fseek -Dftell64=ftell -Dftello64=ftello")
+ endif()
+ 
+-set(COLLADA_DOM_INCLUDE_INSTALL_DIR "include/collada-dom${COLLADA_DOM_SOVERSION}")
++set(COLLADA_DOM_INCLUDE_INSTALL_DIR "include/collada-dom")
+ 
+ set(COLLADA_DOM_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/dom/include)
+ set(COLLADA_DOM_LINK_DIRS "")
+@@ -175,11 +175,7 @@ foreach(ldir ${Boost_LIBRARY_DIRS})
+   set(COLLADA_DOM_BOOST_LIB_DIRS "${COLLADA_DOM_BOOST_LIB_DIRS} -L${ldir}")
+ endforeach()
+ 
+-if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+-  set(EXTRA_COMPILE_FLAGS "${COLLADA_DOM_EXTERNAL_FLAGS} -DCOLLADA_DOM_NAMESPACE -fPIC")
+-else()
+-  set(EXTRA_COMPILE_FLAGS "${COLLADA_DOM_EXTERNAL_FLAGS} -DCOLLADA_DOM_NAMESPACE")
+-endif()
++set(EXTRA_COMPILE_FLAGS "${COLLADA_DOM_EXTERNAL_FLAGS} -DCOLLADA_DOM_NAMESPACE -fPIC")
+ 
+ find_package(ZLIB)
+ if( NOT ZLIB_FOUND )

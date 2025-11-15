@@ -1,0 +1,14 @@
+This package provides the COLLADA Document Object Model (DOM), an
+API that provides a C++ object representation of a COLLADA XML
+instance document.
+
+COLLADA defines an XML-based schema to make it easy to transport
+3D assets between applications - enabling diverse 3D authoring and
+content processing tools to be combined into a production pipeline.
+The intermediate language provides comprehensive encoding of visual
+scenes including: geometry, shaders and effects, physics, animation,
+kinematics, and even multiple version representations of the same
+asset.  COLLADA FX enables leading 3D authoring tools to work
+effectively together to create shader and effects applications and
+assets to be authored and packaged using OpenGL Shading Language,
+Cg, CgFX, and DirectX FX.

@@ -1,0 +1,14 @@
+https://github.com/freebsd/freebsd-ports/commit/452c407f87c8d9d0d5c1171bbbeec42129ec6778
+
+Index: dom/src/dae/daeZAEUncompressHandler.cpp
+--- dom/src/dae/daeZAEUncompressHandler.cpp.orig
++++ dom/src/dae/daeZAEUncompressHandler.cpp
+@@ -268,7 +268,7 @@ bool daeZAEUncompressHandler::checkAndExtractInternalA
+     bool error = false;
+ 
+     boost::filesystem::path archivePath(filePath);
+-    std::string dir = archivePath.branch_path().string();
++    std::string dir = archivePath.parent_path().string();
+ 
+     const std::string& randomSegment = cdom::getRandomFileName();
+     std::string tmpDir = dir + cdom::getFileSeparator() + randomSegment + cdom::getFileSeparator();
