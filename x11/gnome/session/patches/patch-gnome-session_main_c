@@ -4,6 +4,16 @@ From: Jordan Petridis <jordan@centricular.com>
 Date: Sat, 29 Apr 2023 18:02:20 +0300
 Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 
+From e4fac1586cce560b8c86791b1e6aa5eda6b71b7d Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Wed, 4 Jun 2025 18:34:25 -0400
+Subject: [PATCH] main: Don't set XDG_CURRENT_DESKTOP
+
+From 3d8b261e4d53d20be338ffe605f781cf07581617 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Wed, 4 Jun 2025 19:39:00 -0400
+Subject: [PATCH] main: Cleanup --disable-acceleration-check
+
 Index: gnome-session/main.c
 --- gnome-session/main.c.orig
 +++ gnome-session/main.c
@@ -22,7 +32,15 @@ Index: gnome-session/main.c
  static gboolean failsafe = FALSE;
  static gboolean show_version = FALSE;
  static gboolean debug = FALSE;
-@@ -255,6 +258,7 @@ initialize_gio (void)
+@@ -55,7 +58,6 @@ static gboolean please_fail = FALSE;
+ static gboolean disable_acceleration_check = FALSE;
+ static const char *session_name = NULL;
+ static GsmManager *manager = NULL;
+-static char *gl_renderer = NULL;
+ 
+ static GMainLoop *loop;
+ 
+@@ -255,6 +257,7 @@ initialize_gio (void)
          }
  }
  
@@ -30,7 +48,7 @@ Index: gnome-session/main.c
  static gboolean
  leader_term_or_int_signal_cb (gpointer data)
  {
-@@ -460,6 +464,7 @@ systemd_leader_run(void)
+@@ -460,6 +463,7 @@ systemd_leader_run(void)
          gsm_main ();
          exit(0);
  }
@@ -38,7 +56,7 @@ Index: gnome-session/main.c
  
  int
  main (int argc, char **argv)
-@@ -473,7 +478,11 @@ main (int argc, char **argv)
+@@ -473,7 +477,11 @@ main (int argc, char **argv)
          guint             name_owner_id;
          GOptionContext   *options;
          static GOptionEntry entries[] = {
@@ -50,7 +68,30 @@ Index: gnome-session/main.c
                  { "autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), N_("AUTOSTART_DIR") },
                  { "session", 0, 0, G_OPTION_ARG_STRING, &opt_session_name, N_("Session to use"), N_("SESSION_NAME") },
                  { "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL },
-@@ -532,6 +541,7 @@ main (int argc, char **argv)
+@@ -490,15 +498,6 @@ main (int argc, char **argv)
+                 gsm_util_init_error (TRUE, "%s", error->message);
+         }
+ 
+-        /* From 3.14 GDM sets XDG_CURRENT_DESKTOP. For compatibility with
+-         * older versions of GDM,  other display managers, and startx,
+-         * set a fallback value if we don't find it set.
+-         */
+-        if (g_getenv ("XDG_CURRENT_DESKTOP") == NULL) {
+-            g_setenv("XDG_CURRENT_DESKTOP", "GNOME", TRUE);
+-            gsm_util_setenv ("XDG_CURRENT_DESKTOP", "GNOME");
+-        }
+-
+         /* Make sure we initialize gio in a way that does not autostart any daemon */
+         initialize_gio ();
+ 
+@@ -528,10 +527,14 @@ main (int argc, char **argv)
+                 exit (0);
+         }
+ 
++        if (disable_acceleration_check)
++                g_warning ("Wayland assumes that acceleration works, so --disable-acceleration-check is deprecated!");
++
+         /* Rebind stdout/stderr to the journal explicitly, so that
           * journald picks ups the nicer "gnome-session" as the program
           * name instead of whatever shell script GDM happened to use.
           */
@@ -58,7 +99,7 @@ Index: gnome-session/main.c
          if (!debug) {
                  int journalfd;
  
-@@ -541,6 +551,7 @@ main (int argc, char **argv)
+@@ -541,6 +544,7 @@ main (int argc, char **argv)
                          dup2(journalfd, 2);
                  }
          }
@@ -66,7 +107,7 @@ Index: gnome-session/main.c
  
          gdm_log_init ();
          gdm_log_set_debug (debug);
-@@ -576,12 +587,15 @@ main (int argc, char **argv)
+@@ -576,12 +580,15 @@ main (int argc, char **argv)
  
          session_name = opt_session_name;
  
@@ -83,7 +124,7 @@ Index: gnome-session/main.c
                  const gchar *session_type = NULL;
                  g_autofree gchar *gnome_session_target = NULL;
  
-@@ -628,6 +642,7 @@ main (int argc, char **argv)
+@@ -628,6 +635,7 @@ main (int argc, char **argv)
                          exit (1);
                  }
          }
@@ -91,7 +132,7 @@ Index: gnome-session/main.c
  
          {
                  gchar *ibus_path;
-@@ -664,7 +679,9 @@ main (int argc, char **argv)
+@@ -664,10 +672,11 @@ main (int argc, char **argv)
  
          gsm_main ();
  
@@ -100,4 +141,7 @@ Index: gnome-session/main.c
 +#endif
  
          g_clear_object (&manager);
-         g_free (gl_renderer);
+-        g_free (gl_renderer);
+ 
+         g_bus_unown_name (name_owner_id);
+         gdm_log_shutdown ();

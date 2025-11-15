@@ -1,0 +1,16 @@
+From a187bb1cee6acaa85d9a5a9701386fc1b5be0100 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Wed, 8 Oct 2025 15:55:49 -0400
+Subject: [PATCH] gnome-session-inhibit: Fixup option parsing
+
+Index: tools/gnome-session-inhibit.c
+--- tools/gnome-session-inhibit.c.orig
++++ tools/gnome-session-inhibit.c
+@@ -383,6 +383,7 @@ int main (int argc, char *argv[])
+   g_option_context_set_main_group (opts, main_opts);
+   g_option_context_set_summary (opts, N_("Execute COMMAND while inhibiting some session functionality."));
+   g_option_context_set_description (opts, N_("Valid ACTION values are: logout, switch-user, suspend, idle, and automount.\nIf no --inhibit options are specified, idle is assumed."));
++  g_option_context_set_strict_posix (opts, TRUE);
+ 
+   if (!g_option_context_parse (opts, &argc, &argv, &error))
+     {
