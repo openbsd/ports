@@ -669,6 +669,7 @@ lib/osgPlugins-${V}/
 @so lib/osgPlugins-${V}/osgdb_bvh.so
 @so lib/osgPlugins-${V}/osgdb_cfg.so
 @so lib/osgPlugins-${V}/osgdb_curl.so
+@so lib/osgPlugins-${V}/osgdb_dae.so
 @so lib/osgPlugins-${V}/osgdb_dds.so
 @so lib/osgPlugins-${V}/osgdb_deprecated_osg.so
 @so lib/osgPlugins-${V}/osgdb_deprecated_osganimation.so
