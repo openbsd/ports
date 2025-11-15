@@ -1,6 +1,6 @@
 COMMENT =		library for creating GUIs for games and 3D applications
 
-V = 			3.4.1
+V = 			3.4.3
 GH_ACCOUNT = 		MyGUI
 GH_PROJECT = 		mygui
 GH_TAGNAME = 		MyGUI${V}
@@ -30,6 +30,8 @@ CXXFLAGS +=		-fPIC
 CONFIGURE_ARGS += 	-DMYGUI_BUILD_DEMOS=false \
 			-DMYGUI_BUILD_PLUGINS=false \
 			-DMYGUI_BUILD_TOOLS=false \
+			-DMYGUI_DONT_USE_OBSOLETE=ON \
+			-DMYGUI_USE_SYSTEM_GLEW=true \
 			-DMYGUI_RENDERSYSTEM=4 \
 			-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
 			-Wno-dev

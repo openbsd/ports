@@ -2,8 +2,8 @@ Unbreak with libcxx
 Index: MyGUIEngine/include/MyGUI_UString.h
 --- MyGUIEngine/include/MyGUI_UString.h.orig
 +++ MyGUIEngine/include/MyGUI_UString.h
-@@ -154,10 +154,10 @@ namespace MyGUI
- 		static const size_type npos = static_cast<size_type>(~0);
+@@ -163,10 +163,10 @@ namespace MyGUI
+ 		static const size_type npos = std::numeric_limits<size_t>::max();
  
  		//! a single 32-bit Unicode character
 -		using unicode_char = uint32;
