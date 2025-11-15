@@ -2,13 +2,10 @@ COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05
 PKGNAME=		${DISTNAME:S/v//}
-REVISION =		6
+REVISION=		7
 
 SITES=			${HOMEPAGE}/gui/
 
-CONFIGURE_STYLE=	# empty
-
-PKG_ARCH=		*
 NO_TEST=		Yes
 
 MODULES=		lang/python
