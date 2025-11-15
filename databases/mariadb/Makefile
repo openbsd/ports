@@ -3,22 +3,16 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
-REVISION-server=0
-REVISION-tests=	0
 
-# numbers in first SITES entry are version-dependent, check links from
-# https://dlm.mariadb.com/browse/mariadb_server/<version>/source/
-VERSION=	11.4.7
+VERSION=	11.4.9
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
 CATEGORIES=	databases
-SITES=		https://dlm.mariadb.com/4273371/MariaDB/${DISTNAME}/source/ \
-		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
-		https://archive.mariadb.org/${DISTNAME}/source/
-REVISION-main=	0
+SITES=		https://archive.mariadb.org/${DISTNAME}/source/ \
+		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
-FMT_V=		11.1.4
+FMT_V=		12.0.0
 DISTFILES.fmt=	fmt-${FMT_V}.zip
 SITES.fmt=	https://github.com/fmtlib/fmt/releases/download/${FMT_V}/
 

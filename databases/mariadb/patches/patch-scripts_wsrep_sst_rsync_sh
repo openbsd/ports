@@ -1,7 +1,7 @@
 Index: scripts/wsrep_sst_rsync.sh
 --- scripts/wsrep_sst_rsync.sh.orig
 +++ scripts/wsrep_sst_rsync.sh
-@@ -127,9 +127,15 @@ check_pid_and_port()
+@@ -129,9 +129,15 @@ check_pid_and_port()
              fi
              final='$'
          else

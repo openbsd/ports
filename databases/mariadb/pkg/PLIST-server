@@ -231,9 +231,11 @@ include/mysql/server/private/key.h
 include/mysql/server/private/keycaches.h
 include/mysql/server/private/lex.h
 include/mysql/server/private/lex_charset.h
+include/mysql/server/private/lex_hash.h
 include/mysql/server/private/lex_ident.h
 include/mysql/server/private/lex_string.h
 include/mysql/server/private/lex_symbol.h
+include/mysql/server/private/lex_token.h
 include/mysql/server/private/lf.h
 include/mysql/server/private/lock.h
 include/mysql/server/private/log.h
@@ -511,6 +513,7 @@ lib/mysql/plugin/
 @so lib/mysql/plugin/adt_null.so
 @so lib/mysql/plugin/auth_0x0100.so
 @so lib/mysql/plugin/auth_ed25519.so
+@so lib/mysql/plugin/auth_mysql_sha2.so
 @so lib/mysql/plugin/auth_test_plugin.so
 @so lib/mysql/plugin/caching_sha2_password.so
 @so lib/mysql/plugin/client_ed25519.so
