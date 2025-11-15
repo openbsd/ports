@@ -17,11 +17,14 @@ MODULES =		devel/dconf \
 
 MODGNOME_TOOLS =	vala desktop-file-utils gtk-update-icon-cache yelp
 
+BUILD_DEPENDS =		x11/blueprint-compiler
+
 LIB_DEPENDS =		audio/gsound \
 			devel/libgee \
 			x11/gnome/libadwaita
 
-MODGNOME_LDFLAGS +=    -L${X11BASE}/lib
+MODGNOME_LDFLAGS =	-L${X11BASE}/lib
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
 .include <bsd.port.mk>
