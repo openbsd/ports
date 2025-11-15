@@ -20,7 +20,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-BUILD_DEPENDS=		lang/vala,,-valadoc
+BUILD_DEPENDS=		lang/vala,,-valadoc \
+			x11/blueprint-compiler
 
 LIB_DEPENDS=		devel/libgee \
 			devel/libmpc \
