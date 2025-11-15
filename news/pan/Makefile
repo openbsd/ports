@@ -2,8 +2,6 @@ COMMENT=		read and post Usenet articles
 
 DIST_TUPLE=		gnome GNOME pan v0.164 .
 
-#WRKDIST=		${WRKDIR}/pan-v${GNOME_VERSION}-7e6f2f65a732871c059df2c6d93a565a46bae8e1
-
 CATEGORIES=		news x11
 
 # GPLv2 - GFDLv1.1
