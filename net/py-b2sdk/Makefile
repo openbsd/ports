@@ -1,10 +1,10 @@
 COMMENT =		client lib to access B2 cloud storage
 
-MODPY_DISTV =		2.5.1
+MODPY_DISTV =		2.10.1
 DISTNAME =		b2sdk-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel net
-REVISION =		1
+#REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes
