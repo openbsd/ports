@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1765 2025/11/13 17:58:34 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1766 2025/11/15 11:51:17 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1014,6 +1014,7 @@ setup_obsolete_reason(
 	1 => 'rdp',
 	71 => 'mininet',
 	6 => 'dovecot-fts-xapian',
+	3 => 'glade',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later

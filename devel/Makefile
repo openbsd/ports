@@ -193,7 +193,6 @@
      SUBDIR += github-backup
      SUBDIR += github-cli
      SUBDIR += gitsh
-     SUBDIR += glade
      SUBDIR += glib2
      SUBDIR += glib2mm
      SUBDIR += glibmm268
