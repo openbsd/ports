@@ -13,50 +13,61 @@ choice to install his favorite applications for daily usage (i.e. PIM,
 WWW browser, office and development applications have been left out on
 purpose).
 
-Starting GNOME
-==============
+Running GNOME
+=============
 
 DBus
 ----
-Before running gnome-session(1), a system-wide D-Bus daemon needs to be
-running ("messagebus" must be added to "pkg_scripts" in rc.conf.local(8)).
+GNOME needs a system-wide D-Bus daemon to be running:
+    # rcctl enable messagebus
+    # rcctl order messagebus
 
 GDM
 ---
 Session management requires the use of GDM as login manager, otherwise
 some key features like screen locking, session tracking... will not work
-properly. To do so, "gdm" must be added at the end of "pkg_scripts" in
-rc.conf.local(8) (and "xenodm_flags" commented or removed).
+properly.
+    # rcctl disable xenodm
+    # rcctl enable gdm
 
 Locales
 -------
 Default language and character set for GNOME by the GDM greeter are set in:
     ${SYSCONFDIR}/gdm/locale.conf
+
 Note that the variables set in this file will be inherited by the user session.
 They can be unset/overriden in the user's .profile file or by using
 gnome-control-center.
 
-Alternative (non-GDM) GNOME startup
------------------------------------
-*** NOT RECOMMENDED ***
-To start GNOME without GDM, the following line needs to be added:
-    exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
-to ~/.xinitrc when using startx(1) (console login)
-to ~/.xsession when using xenodm(1) (or similar login)
-
 mDNS/DNS-SD support
 ===================
+
 The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
 Rendezvous) in GNOME. Several applications can optionally benefit from
 it (e.g. the "Network" shortcut in nautilus(1)) while some others
 will not work at all without it (e.g. seahorse-sharing(1)).
 
-To make use of it, rc.conf.local(8) needs to contain the following line:
-    multicast=YES
-and "avahi_daemon" must be added to "pkg_scripts" _after_ "messagebus".
+To make use of it, multicast and avahi-daemon must be enabled:
+    # rcctl enable multicast avahi_daemon
+
+Google account integration
+==========================
+
+Linking a Google account to GNOME requires running the
+${PREFIX}/libexec/goa-oauth2-handler helper from a web browser.
+Most of them have can only access a subset of the filesystem due to unveil(2).
+
+For Chrome-based browsers, append the following rules to
+    ${SYSCONFDIR}/BROWSER/unveil.main
+where BROWSER is one of chromium, iridium, or ungoogled-chromium:
+
+# gnome-browser-connector
+${LOCALBASE}/bin r
+${LOCALBASE}/bin/gnome-browser-connector-host rx
 
 Cheat sheet
 ===========
 # rcctl disable xenodm
 # rcctl enable multicast messagebus avahi_daemon gdm
+# rcctl order messagebus
 # reboot
