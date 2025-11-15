@@ -3,7 +3,7 @@ COMMENT=	test asyncio code with pytest
 MODPY_DISTV=	1.2.0
 DISTNAME=	pytest_asyncio-${MODPY_DISTV}
 PKGNAME=	py-test-asyncio-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -23,8 +23,5 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-test-trio
 
 RUN_DEPENDS=	devel/py-test
-
-# Needed until Python 3.13
-RUN_DEPENDS +=	devel/py-typing-extensions
 
 .include <bsd.port.mk>
