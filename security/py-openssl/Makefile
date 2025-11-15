@@ -1,6 +1,7 @@
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_DISTV=	25.3.0
+REVISION=	0
 DISTNAME=	pyopenssl-${MODPY_DISTV}
 PKGNAME=	py-openssl-${MODPY_DISTV}
 CATEGORIES=	security devel
@@ -13,9 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl
 
-# typing-extensions for py<3.13
-RUN_DEPENDS=	security/py-cryptography>=45.0.7,<47 \
-		devel/py-typing-extensions
+RUN_DEPENDS=	security/py-cryptography>=45.0.7,<47
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	lang/python
