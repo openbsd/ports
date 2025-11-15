@@ -28,6 +28,7 @@
      SUBDIR += chafa
      SUBDIR += clutter
      SUBDIR += coin
+     SUBDIR += collada-dom
      SUBDIR += colord
      SUBDIR += colord-gtk
      SUBDIR += colorexplorer
