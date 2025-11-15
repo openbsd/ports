@@ -13,7 +13,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
 
-# Tests require a Backblaze account and network connectivity
+# Tests require a Backblaze account and network connectivity,
+# and are not included in the pypi sdist.
 NO_TEST =		Yes
 
 BUILD_DEPENDS =		devel/py-annotated_types
