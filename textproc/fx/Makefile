@@ -1,8 +1,8 @@
 COMMENT =		terminal JSON viewer & processor
 
-VERSION =		39.1.0
+VERSION =		39.2.0
 MODGO_MODNAME =		github.com/antonmedv/fx
-MODGO_VERSION =		v0.0.0-20250907121230-758a717200b1
+MODGO_VERSION =		v0.0.0-20251112094209-c8fd8cf39408
 
 DISTNAME =		fx-${VERSION}
 
