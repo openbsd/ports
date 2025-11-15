@@ -54,16 +54,16 @@ Google account integration
 ==========================
 
 Linking a Google account to GNOME requires running the
-${PREFIX}/libexec/goa-oauth2-handler helper from a web browser.
+${LOCALBASE}/libexec/goa-oauth2-handler helper from a web browser.
 Most of them have can only access a subset of the filesystem due to unveil(2).
 
 For Chrome-based browsers, append the following rules to
     ${SYSCONFDIR}/BROWSER/unveil.main
 where BROWSER is one of chromium, iridium, or ungoogled-chromium:
 
-# gnome-browser-connector
-${LOCALBASE}/bin r
-${LOCALBASE}/bin/gnome-browser-connector-host rx
+# GNOME OAuth2 handler
+${LOCALBASE}/libexec r
+${LOCALBASE}/libexec/goa-oauth2-handler rx
 
 Cheat sheet
 ===========
