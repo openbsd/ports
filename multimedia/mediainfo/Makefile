@@ -1,6 +1,6 @@
 COMMENT=	utility for reading information from audio/video files
 
-VERSION=	25.07
+VERSION=	25.10
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=autoreconf
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 AUTOMAKE_VERSION=1.16
 AUTOCONF_DIR=	${WRKBUILD}
 

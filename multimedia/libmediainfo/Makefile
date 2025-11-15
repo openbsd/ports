@@ -1,9 +1,8 @@
 COMMENT=	read metadata from media files
 
-VERSION=	25.07.1
+VERSION=	25.10
 PKGNAME=	libmediainfo-${VERSION}
-REVISION=	0
-SHARED_LIBS=	mediainfo	20.0 # 0.0
+SHARED_LIBS=	mediainfo	21.0 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -27,7 +26,7 @@ CONFIGURE_ARGS=	--enable-static
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 AUTOMAKE_VERSION=1.16
 AUTOCONF_DIR=	${WRKBUILD}
 
