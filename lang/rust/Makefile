@@ -61,6 +61,9 @@ BUILD_DEPENDS +=	lang/rust
 DISTFILES.bsp +=	${BOOTSTRAP}
 .endif
 
+MODULES +=		lang/python \
+			gnu
+
 .include <bsd.port.arch.mk>
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
@@ -127,9 +130,6 @@ SUBST_VARS +=	LIBRUST_HASH
 # as we need devel/llvm only for libs.
 # on others archs, use ports-gcc as llvm libraries depends on libestdc++.so and libgcc.a.
 COMPILER =		base-clang ports-gcc
-
-MODULES +=		lang/python \
-			gnu
 
 MODPY_RUNDEP =		No
 
