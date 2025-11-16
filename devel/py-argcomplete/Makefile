@@ -1,6 +1,6 @@
 COMMENT=	bash tab completion for argparse
 
-MODPY_DISTV=	3.6.2
+MODPY_DISTV=	3.6.3
 DISTNAME=	argcomplete-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -15,7 +15,8 @@ MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-coverage \
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-coverage \
 		devel/py-pexpect \
 		devel/py-wheel \
 		devel/py-mypy \
