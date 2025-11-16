@@ -1,9 +1,8 @@
 COMMENT=	immutable dictionary
 
-MODPY_DISTV=	2.4.6
+MODPY_DISTV=	2.4.7
 DISTNAME=	frozendict-${MODPY_DISTV}
 PKGNAME=	py-frozendict-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,8 +15,6 @@ MODULES=	lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI=	Yes
 
-# allow finding the extension
-MODPY_TEST_DIR=		${WRKSRC}/build
-MODPY_PYTEST_ARGS=	..
+MODPY_TEST_LINK_SO=	Yes
 
 .include <bsd.port.mk>
