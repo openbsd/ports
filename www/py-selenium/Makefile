@@ -1,8 +1,9 @@
 COMMENT=	Python bindings for Selenium WebDriver
 
 # 4.x uses SeleniumManager, a command-line tool implemented in rust.
-# it's built as part of the py-selenium build but that currently fails as
-# lzma-sys hits "failed to read dir xz-5.2/src/liblzma/common"
+# this can be made to build using MODCARGO_CRATES_KEEP=lzma-sys but then
+# runtime fails "Invalid operating system", however selenium does work
+# if installed in a venv using uv. To be investigated...
 MODPY_DISTV=	3.141.0
 DISTNAME=	selenium-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
