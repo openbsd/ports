@@ -506,6 +506,7 @@ share/vim/${P}/compiler/ant.vim
 share/vim/${P}/compiler/bash.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
+share/vim/${P}/compiler/biome.vim
 share/vim/${P}/compiler/cargo.vim
 share/vim/${P}/compiler/checkstyle.vim
 share/vim/${P}/compiler/cm3.vim
@@ -615,6 +616,7 @@ share/vim/${P}/compiler/svelte-check.vim
 share/vim/${P}/compiler/tcl.vim
 share/vim/${P}/compiler/tex.vim
 share/vim/${P}/compiler/tidy.vim
+share/vim/${P}/compiler/tombi.vim
 share/vim/${P}/compiler/ts-node.vim
 share/vim/${P}/compiler/tsc.vim
 share/vim/${P}/compiler/typedoc.vim
@@ -1133,9 +1135,11 @@ share/vim/${P}/ftplugin/slint.vim
 share/vim/${P}/ftplugin/slpconf.vim
 share/vim/${P}/ftplugin/slpreg.vim
 share/vim/${P}/ftplugin/slpspi.vim
+share/vim/${P}/ftplugin/sml.vim
 share/vim/${P}/ftplugin/snakemake.vim
 share/vim/${P}/ftplugin/solidity.vim
 share/vim/${P}/ftplugin/solution.vim
+share/vim/${P}/ftplugin/soy.vim
 share/vim/${P}/ftplugin/spajson.vim
 share/vim/${P}/ftplugin/spec.vim
 share/vim/${P}/ftplugin/sql.vim
