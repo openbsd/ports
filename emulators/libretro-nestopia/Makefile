@@ -1,4 +1,4 @@
-BROKEN-i3o6 = relocation R_386_PC32 cannot be used against symbol
+BROKEN-i386 =		relocation R_386_PC32 cannot be used against symbol
 
 COMMENT =		Nintendo Entertainment System core for retroarch
 
