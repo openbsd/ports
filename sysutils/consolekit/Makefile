@@ -4,7 +4,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		sysutils	
 
@@ -16,8 +16,8 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ICE SM X11 c dbus-1 drm execinfo ffi gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl kvm pcre2-8 polkit-gobject-1
+WANTLIB += ICE SM X11 c dbus-1 drm ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 iconv intl kvm pcre2-8 polkit-gobject-1
 WANTLIB += pthread xcb z
 
 USE_GMAKE=		Yes
@@ -33,6 +33,7 @@ RUN_DEPENDS +=		x11/dbus,-suid
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-pam-module \
 			--disable-libudev \
+			--disable-libevdev \
 			--with-pam-module-dir=${LOCALBASE}/lib/security \
 
 CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
