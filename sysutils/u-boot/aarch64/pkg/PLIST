@@ -31,14 +31,6 @@ share/u-boot/nanopi-neo4-rk3399/u-boot-rockchip.bin
 @comment share/u-boot/nanopi-neo4-rk3399/u-boot.bin
 @comment share/u-boot/nanopi-neo4-rk3399/u-boot.img
 share/u-boot/nanopi-neo4-rk3399/u-boot.itb
-share/u-boot/nanopi-r2s-rk3328/
-share/u-boot/nanopi-r2s-rk3328/idbloader.img
-@comment share/u-boot/nanopi-r2s-rk3328/u-boot
-share/u-boot/nanopi-r2s-rk3328/u-boot-rockchip.bin
-@comment share/u-boot/nanopi-r2s-rk3328/u-boot-spl.bin
-@comment share/u-boot/nanopi-r2s-rk3328/u-boot.bin
-@comment share/u-boot/nanopi-r2s-rk3328/u-boot.img
-share/u-boot/nanopi-r2s-rk3328/u-boot.itb
 share/u-boot/nanopi-r4s-rk3399/
 share/u-boot/nanopi-r4s-rk3399/idbloader.img
 @comment share/u-boot/nanopi-r4s-rk3399/u-boot
@@ -74,16 +66,6 @@ share/u-boot/rock-pi-n10-rk3399pro/u-boot-rockchip.bin
 @comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.bin
 @comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.img
 share/u-boot/rock-pi-n10-rk3399pro/u-boot.itb
-share/u-boot/rock64-rk3328/
-share/u-boot/rock64-rk3328/idbloader.img
-@comment share/u-boot/rock64-rk3328/u-boot
-share/u-boot/rock64-rk3328/u-boot-rockchip.bin
-@comment share/u-boot/rock64-rk3328/u-boot-spl.bin
-@comment share/u-boot/rock64-rk3328/u-boot.bin
-@comment share/u-boot/rock64-rk3328/u-boot.img
-share/u-boot/rock64-rk3328/u-boot.itb
-share/u-boot/rock960-rk3399/
-share/u-boot/rock960-rk3399/idbloader.img
 @comment share/u-boot/rock960-rk3399/u-boot
 share/u-boot/rock960-rk3399/u-boot-rockchip.bin
 @comment share/u-boot/rock960-rk3399/u-boot-spl.bin
