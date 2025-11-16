@@ -23,7 +23,8 @@ WANTLIB += freetype m z ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/ois
+BUILD_DEPENDS =		devel/ois \
+			graphics/glew
 
 CXXFLAGS +=		-fPIC
 
