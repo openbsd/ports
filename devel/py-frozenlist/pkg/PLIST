@@ -12,7 +12,6 @@ lib/python${MODPY_VERSION}/site-packages/frozenlist/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozenlist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/frozenlist/_frozenlist.cpp
 @so lib/python${MODPY_VERSION}/site-packages/frozenlist/_frozenlist.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/frozenlist/_frozenlist.pyx
 lib/python${MODPY_VERSION}/site-packages/frozenlist/py.typed
