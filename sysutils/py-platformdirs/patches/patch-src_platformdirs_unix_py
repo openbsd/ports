@@ -1,0 +1,28 @@
+Index: src/platformdirs/unix.py
+--- src/platformdirs/unix.py.orig
++++ src/platformdirs/unix.py
+@@ -170,14 +170,22 @@ class Unix(PlatformDirsABC):  # noqa: PLR0904
+         :return: runtime directory tied to the user, e.g. ``/run/user/$(id -u)/$appname/$version`` or
+          ``$XDG_RUNTIME_DIR/$appname/$version``.
+ 
+-         For FreeBSD/OpenBSD/NetBSD, it would return ``/var/run/user/$(id -u)/$appname/$version`` if
++         For FreeBSD/NetBSD, it would return ``/var/run/user/$(id -u)/$appname/$version`` if
+          exists, otherwise ``/tmp/runtime-$(id -u)/$appname/$version``, if``$XDG_RUNTIME_DIR``
+          is not set.
++
++         For OpenBSD, it would return ``/tmp/run/user/$(id -u)/$appname/$version`` if
++         exists, otherwise ``/tmp/runtime-$(id -u)/$appname/$version``, if``$XDG_RUNTIME_DIR``
++         is not set.
+         """
+         path = os.environ.get("XDG_RUNTIME_DIR", "")
+         if not path.strip():
+-            if sys.platform.startswith(("freebsd", "openbsd", "netbsd")):
++            if sys.platform.startswith(("freebsd", "netbsd")):
+                 path = f"/var/run/user/{getuid()}"
++                if not Path(path).exists():
++                    path = f"/tmp/runtime-{getuid()}"  # noqa: S108
++            elif sys.platform.startswith(("openbsd")):
++                path = f"/tmp/run/user/{getuid()}"
+                 if not Path(path).exists():
+                     path = f"/tmp/runtime-{getuid()}"  # noqa: S108
+             else:
