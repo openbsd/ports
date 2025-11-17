@@ -65,6 +65,4 @@ RUN_DEPENDS=		converters/py-html2text \
 # LGPL
 PERMIT_PACKAGE =	Yes
 
-PKG_ARCH=		*
-
 .include <bsd.port.mk>
