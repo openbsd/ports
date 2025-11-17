@@ -3,7 +3,7 @@ COMMENT=	web-based front end for the nfdump netflow tools
 GH_ACCOUNT=	phaag
 GH_PROJECT=	nfsen
 GH_TAGNAME=	v.1.3.11
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net www
 HOMEPAGE=	https://nfsen.sourceforge.net/
 
@@ -14,8 +14,7 @@ MODULES=	perl lang/php
 RUN_DEPENDS=	net/rrdtool \
 		mail/p5-Mail-Tools \
 		net/p5-Socket6 \
-		net/nfdump,-nfprofile \
-		net/nfdump>=1.6.20
+		net/nfdump
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
