@@ -3,16 +3,6 @@ https://github.com/dino/dino/issues/1694
 Index: libdino/meson.build
 --- libdino/meson.build.orig
 +++ libdino/meson.build
-@@ -1,7 +1,8 @@
- # version_vala
-+version_py = meson.current_source_dir() / 'version.py'
- dot_git = meson.current_source_dir() / '../.git'
- version_file = meson.current_source_dir() / '../VERSION'
--command = [prog_python, files('version.py'), version_file, '--git-repo', meson.current_source_dir()]
-+command = [prog_python, version_py, version_file, '--git-repo', meson.current_source_dir()]
- if prog_git.found()
-     command += ['--git', prog_git]
- endif
 @@ -85,7 +86,7 @@ vala_args = []
  if meson.get_compiler('vala').version().version_compare('=0.56.11')
      vala_args += ['-D', 'VALA_0_56_11']

@@ -1,12 +1,12 @@
 COMMENT=	XMPP desktop client
-VERSION=	0.5.0
+VERSION=	0.5.1
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
-SHARED_LIBS +=	crypto-vala               1.0 # 0.0
-SHARED_LIBS +=	dino                      4.0 # 0.0
-SHARED_LIBS +=	qlite                     1.0 # 0.1
-SHARED_LIBS +=	xmpp-vala                 4.0 # 0.1
+SHARED_LIBS +=	crypto-vala               1.1 # 0.5.1
+SHARED_LIBS +=	dino                      4.1 # 0.5.1
+SHARED_LIBS +=	qlite                     1.1 # 0.5.1
+SHARED_LIBS +=	xmpp-vala                 4.1 # 0.5.1
 
 HOMEPAGE=	https://dino.im/
 
