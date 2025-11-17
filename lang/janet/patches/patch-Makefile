@@ -22,7 +22,7 @@ Index: Makefile
  JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  JANET_DIST_DIR?=janet-dist
  JANET_BOOT_FLAGS:=. JANET_PATH '$(JANET_PATH)'
-@@ -346,7 +346,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -353,7 +353,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	strip $(STRIPFLAGS) '$(DESTDIR)$(BINDIR)/janet'
  	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
@@ -31,13 +31,13 @@ Index: Makefile
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
  	if test $(UNAME) = Darwin ; then \
-@@ -354,9 +354,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -361,9 +361,7 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  		ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.dylib' ; \
- 		ln -sf libjanet.$(shell $(JANET_TARGET) -e '(print janet/version)').dylib $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
+ 		ln -sf libjanet.$(JANET_VERSION).dylib $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
  	else \
--		cp $(JANET_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)')' ; \
+-		cp $(JANET_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.so.$(JANET_VERSION)' ; \
 -		ln -sf $(SONAME) '$(DESTDIR)$(LIBDIR)/libjanet.so' ; \
--		ln -sf libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)') $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
+-		ln -sf libjanet.so.$(JANET_VERSION) $(DESTDIR)$(LIBDIR)/$(SONAME) ; \
 +		cp $(JANET_LIBRARY) '$(DESTDIR)$(LIBDIR)/' ; \
  	fi
  	cp $(JANET_STATIC_LIBRARY) '$(DESTDIR)$(LIBDIR)/libjanet.a'
