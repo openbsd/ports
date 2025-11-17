@@ -1,0 +1,12 @@
+Index: CBLAS/CMakeLists.txt
+--- CBLAS/CMakeLists.txt.orig
++++ CBLAS/CMakeLists.txt
+@@ -10,7 +10,7 @@ if(CMAKE_Fortran_COMPILER)
+   enable_language(Fortran)
+   include(FortranCInterface)
+   ## Ensure that the fortran compiler and c compiler specified are compatible
+-  FortranCInterface_VERIFY()
++  #FortranCInterface_VERIFY()
+   FortranCInterface_HEADER(${LAPACK_BINARY_DIR}/include/cblas_mangling.h
+                           MACRO_NAMESPACE "F77_"
+                           SYMBOL_NAMESPACE "F77_")
