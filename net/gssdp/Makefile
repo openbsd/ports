@@ -12,6 +12,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
+# -std=gnu11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl soup-3.0
 
 MODULES=		devel/meson \
