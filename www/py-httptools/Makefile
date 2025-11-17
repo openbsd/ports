@@ -1,6 +1,6 @@
 COMMENT=	fast HTTP parser for Python
 
-MODPY_DISTV=	0.6.4
+MODPY_DISTV=	0.7.1
 DISTNAME=	httptools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

@@ -20,11 +20,16 @@ lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/cparser.pxd
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/errors.py
 @so lib/python${MODPY_VERSION}/site-packages/httptools/parser/parser.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/parser.pyi
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/parser.pyx
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/protocol.py
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/python.pxd
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_cparser.pxd
 @so lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.pyi
 lib/python${MODPY_VERSION}/site-packages/httptools/parser/url_parser.pyx

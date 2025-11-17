@@ -1,0 +1,11 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools==80.9.0"]
++requires = ["setuptools"]
+ 
+ [project]
+ name = "httptools"
