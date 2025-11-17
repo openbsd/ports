@@ -18,6 +18,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread
 
+# uses C++11
+COMPILER =		base-clang ports-gcc
+
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF \
