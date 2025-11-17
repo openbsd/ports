@@ -1,7 +1,15 @@
 Index: plugins/node.d.openbsd/if_packets_.in
 --- plugins/node.d.openbsd/if_packets_.in.orig
 +++ plugins/node.d.openbsd/if_packets_.in
-@@ -37,7 +37,7 @@ if [ "$1" = "suggest" ]; then
+@@ -31,13 +31,15 @@ if [ "$1" = "autoconf" ]; then
+ 	fi
+ fi
+ 
++DESCR=$(/sbin/ifconfig ${INTERFACE} | /usr/bin/awk -F ': ' '/description:(.*)$/ {print substr($2, 1, 12);}')
++
+ if [ "$1" = "suggest" ]; then
+ 	if [ -x /sbin/ifconfig ]
+ 	then
  		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
  		exit 0
  	elif [ -x /usr/bin/netstat ]; then
@@ -10,7 +18,20 @@ Index: plugins/node.d.openbsd/if_packets_.in
  		exit 0
  	else
  		exit 1
-@@ -69,9 +69,9 @@ fi
+@@ -47,7 +49,11 @@ fi
+ if [ "$1" = "config" ]; then
+ 
+ 	echo "graph_order rpackets opackets"
+-	echo "graph_title $INTERFACE pps"
++	if [ "X${DESCR}" != 'X' ]; then
++		echo "graph_title $INTERFACE (${DESCR}) pps"
++	else
++		echo "graph_title $INTERFACE pps"
++	fi
+ 	echo 'graph_args --base 1000'
+ 	echo 'graph_vlabel packets per ${graph_period} in (-) / out (+)'
+ 	echo 'graph_category network'
+@@ -69,9 +75,9 @@ fi
  if [ "$INTERFACE" = "aggregated" ]; then
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
@@ -23,7 +44,7 @@ Index: plugins/node.d.openbsd/if_packets_.in
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
  			rsum += $5; osum += $8;
-@@ -79,7 +79,7 @@ BEGIN { rsum = 0; osum = 0; }
+@@ -79,7 +85,7 @@ BEGIN { rsum = 0; osum = 0; }
  			rsum += $4; osum += $8;
  		}
  	} else { # NF == 12
@@ -32,7 +53,7 @@ Index: plugins/node.d.openbsd/if_packets_.in
  	}
  }
  END {
-@@ -89,10 +89,10 @@ END {
+@@ -89,10 +95,10 @@ END {
  
  else
  	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '
@@ -46,7 +67,7 @@ Index: plugins/node.d.openbsd/if_packets_.in
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
  			print "rpackets.value", $5;
-@@ -103,7 +103,7 @@ else
+@@ -103,7 +109,7 @@ else
  		}
  	} else { # NF == 12
  		print "rpackets.value", $5;

@@ -111,6 +111,7 @@ libexec/munin/plugins/if_packets_
 libexec/munin/plugins/if_pps_
 libexec/munin/plugins/ifx_concurrent_sessions_
 libexec/munin/plugins/intr
+libexec/munin/plugins/iostat_
 @comment libexec/munin/plugins/ipac-ng
 libexec/munin/plugins/ipmi_
 libexec/munin/plugins/ipmi_sensor_

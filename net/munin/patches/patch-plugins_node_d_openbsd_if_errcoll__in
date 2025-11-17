@@ -13,7 +13,15 @@ Index: plugins/node.d.openbsd/if_errcoll_.in
  #
  # Any device found in /usr/bin/netstat can be monitored.
  #
-@@ -34,7 +34,7 @@ if [ "$1" = "suggest" ]; then
+@@ -28,13 +28,15 @@ if [ "$1" = "autoconf" ]; then
+ 	fi
+ fi
+ 
++DESCR=$(/sbin/ifconfig ${INTERFACE} | /usr/bin/awk -F ': ' '/description:(.*)$/ {print substr($2, 1, 12);}')
++
+ if [ "$1" = "suggest" ]; then
+ 	if [ -x /sbin/ifconfig ]
+ 	then
  		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
  		exit 0
  	elif [ -x /usr/bin/netstat ]; then
@@ -22,7 +30,20 @@ Index: plugins/node.d.openbsd/if_errcoll_.in
  		exit 0
  	else
  		exit 1
-@@ -57,25 +57,15 @@ if [ "$1" = "config" ]; then
+@@ -43,7 +45,11 @@ fi
+ 
+ if [ "$1" = "config" ]; then
+ 	echo "graph_order ierrors oerrors collisions"
+-	echo "graph_title $INTERFACE Errors & Collisions"
++	if [ "X${DESCR}" != 'X' ]; then
++		echo "graph_title $INTERFACE (${DESCR}) Errors & Collisions"
++	else
++		echo "graph_title $INTERFACE Errors & Collisions"
++	fi
+ 	echo 'graph_args --base 1000'
+ 	echo 'graph_vlabel events / ${graph_period}'
+ 	echo 'graph_category network'
+@@ -57,25 +63,15 @@ if [ "$1" = "config" ]; then
  	exit 0
  fi;
  
