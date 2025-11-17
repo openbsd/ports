@@ -20,6 +20,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
+MODGNOME_TOOLS=		gobject-introspection
+
 BUILD_DEPENDS=		devel/appstream
 
 LIB_DEPENDS=		devel/json-glib \
