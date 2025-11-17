@@ -4,10 +4,9 @@
 
 DHCPv6-PD (Prefix Delegation)
 =============================
-As OpenBSD doesn't yet support DHCPv6 in the base OS, one common use of
-this package is to request Prefix Delegation from an ISP, which hands you
-one or more routable IPv6 subnet that can be assigned to interfaces
-facing your local network.
+One common use of this package is to request Prefix Delegation from
+an ISP, which hands you one or more routable IPv6 subnet that can be
+assigned to interfaces facing your local network.
 
 Here is a sample configuration achieving this, fetching addresses over the
 pppoe0 interface and assigning it to multiple local networks.
