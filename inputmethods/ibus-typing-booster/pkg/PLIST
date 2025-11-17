@@ -441,6 +441,9 @@ share/ibus-typing-booster/icons/
 share/ibus-typing-booster/icons/ibus-typing-booster.svg
 share/ibus-typing-booster/setup/
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}/
+share/ibus-typing-booster/setup/${MODPY_PYCACHE}dictionary_download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/setup/${MODPY_PYCACHE}dictionary_download.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/setup/${MODPY_PYCACHE}dictionary_download.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
@@ -456,6 +459,7 @@ share/ibus-typing-booster/setup/${MODPY_PYCACHE}pkginstall.${MODPY_PYC_MAGIC_TAG
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}test_input_purpose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}test_input_purpose.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/setup/${MODPY_PYCACHE}test_input_purpose.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/setup/dictionary_download.py
 share/ibus-typing-booster/setup/i18n.py
 share/ibus-typing-booster/setup/itb_version.py
 share/ibus-typing-booster/setup/main.py
