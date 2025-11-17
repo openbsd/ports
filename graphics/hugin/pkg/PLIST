@@ -15,6 +15,7 @@
 @bin bin/hugin_lensdb
 @bin bin/hugin_stacker
 @bin bin/hugin_stitch_project
+@bin bin/hugin_toolbox
 @bin bin/icpfind
 @bin bin/linefind
 @bin bin/nona
@@ -79,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/hsi.py
 share/applications/PTBatcherGUI.desktop
 share/applications/calibrate_lens_gui.desktop
 share/applications/hugin.desktop
+share/applications/hugin_toolbox_gui.desktop
 share/applications/pto_gen.desktop
 share/hugin/
 share/hugin/data/
@@ -129,28 +131,20 @@ share/hugin/xrc/cpdetector_dialog.xrc
 share/hugin/xrc/data/
 share/hugin/xrc/data/COPYING.txt
 share/hugin/xrc/data/about.htm
-share/hugin/xrc/data/add_project.png
-share/hugin/xrc/data/add_projects.png
-share/hugin/xrc/data/autocrop_tool.png
-share/hugin/xrc/data/center_pano.png
-share/hugin/xrc/data/crop_tool.png
-share/hugin/xrc/data/crop_tool_small.png
+share/hugin/xrc/data/add_project.svg
+share/hugin/xrc/data/add_projects.svg
+share/hugin/xrc/data/autocrop_tool.svg
+share/hugin/xrc/data/center_pano.svg
+share/hugin/xrc/data/crop_tool.svg
 share/hugin/xrc/data/dedication.htm
-share/hugin/xrc/data/drag_tool.png
-share/hugin/xrc/data/drag_tool_small.png
-share/hugin/xrc/data/druid.control.128.png
-share/hugin/xrc/data/druid.images.128.png
-share/hugin/xrc/data/druid.lenses.128.png
-share/hugin/xrc/data/druid.optimize.128.png
-share/hugin/xrc/data/druid.stitch.128.png
-share/hugin/xrc/data/edit_add.png
-share/hugin/xrc/data/filenew.png
-share/hugin/xrc/data/fileopen.png
-share/hugin/xrc/data/filesave.png
-share/hugin/xrc/data/filesaveas.png
-share/hugin/xrc/data/fit_pano.png
-share/hugin/xrc/data/gl_preview.png
-share/hugin/xrc/data/gl_preview_small.png
+share/hugin/xrc/data/drag_tool.svg
+share/hugin/xrc/data/edit_add.svg
+share/hugin/xrc/data/filenew.svg
+share/hugin/xrc/data/fileopen.svg
+share/hugin/xrc/data/filesave.svg
+share/hugin/xrc/data/filesaveas.svg
+share/hugin/xrc/data/fit_pano.svg
+share/hugin/xrc/data/gl_preview.svg
 share/hugin/xrc/data/help_en_EN/
 share/hugin/xrc/data/help_en_EN/0014985448cc97c209313a079e4eda593c810582.png
 share/hugin/xrc/data/help_en_EN/0881f567a2579a682ece721d6d93816eecbcff0d.png
@@ -393,6 +387,7 @@ share/hugin/xrc/data/help_en_EN/Hugin_reload.png
 share/hugin/xrc/data/help_en_EN/Hugin_stacker.html
 share/hugin/xrc/data/help_en_EN/Hugin_stitch_project.html
 share/hugin/xrc/data/help_en_EN/Hugin_straighten_pano.png
+share/hugin/xrc/data/help_en_EN/Hugin_toolbox.html
 share/hugin/xrc/data/help_en_EN/Hugin_translation_guide.html
 share/hugin/xrc/data/help_en_EN/Hugin_undo.png
 share/hugin/xrc/data/help_en_EN/Icpfind.html
@@ -514,35 +509,30 @@ share/hugin/xrc/data/help_en_EN/license.html
 share/hugin/xrc/data/help_en_EN/manual.css
 share/hugin/xrc/data/hugin.ico
 share/hugin/xrc/data/hugin.png
-share/hugin/xrc/data/hugin_small.png
-share/hugin/xrc/data/identify_tool.png
-share/hugin/xrc/data/identify_tool_small.png
-share/hugin/xrc/data/info.png
+share/hugin/xrc/data/hugin.svg
+share/hugin/xrc/data/identify_tool.svg
+share/hugin/xrc/data/info.svg
 share/hugin/xrc/data/intro.htm
 share/hugin/xrc/data/keyboard_pl.html
-share/hugin/xrc/data/list.png
-share/hugin/xrc/data/logo.png
-share/hugin/xrc/data/number1.png
-share/hugin/xrc/data/number2.png
-share/hugin/xrc/data/number3.png
-share/hugin/xrc/data/optimize.png
+share/hugin/xrc/data/list.svg
+share/hugin/xrc/data/number1.svg
+share/hugin/xrc/data/number2.svg
+share/hugin/xrc/data/number3.svg
+share/hugin/xrc/data/optimize.svg
 share/hugin/xrc/data/output_blended_fused.png
 share/hugin/xrc/data/output_fused_blended.png
 share/hugin/xrc/data/output_hdr.png
 share/hugin/xrc/data/output_normal.png
-share/hugin/xrc/data/pause.png
-share/hugin/xrc/data/photometric.png
-share/hugin/xrc/data/preview.png
-share/hugin/xrc/data/preview_auto_update.png
-share/hugin/xrc/data/preview_control_point_tool.png
-share/hugin/xrc/data/preview_control_point_tool_small.png
-share/hugin/xrc/data/preview_layout.png
-share/hugin/xrc/data/preview_layout_small.png
-share/hugin/xrc/data/preview_num_transform.png
-share/hugin/xrc/data/preview_show_all.png
-share/hugin/xrc/data/preview_show_none.png
-share/hugin/xrc/data/preview_white_balance.png
-share/hugin/xrc/data/preview_white_balance_small.png
+share/hugin/xrc/data/pause.svg
+share/hugin/xrc/data/photometric.svg
+share/hugin/xrc/data/preview.svg
+share/hugin/xrc/data/preview_auto_update.svg
+share/hugin/xrc/data/preview_control_point_tool.svg
+share/hugin/xrc/data/preview_layout.svg
+share/hugin/xrc/data/preview_num_transform.svg
+share/hugin/xrc/data/preview_show_all.svg
+share/hugin/xrc/data/preview_show_none.svg
+share/hugin/xrc/data/preview_white_balance.svg
 share/hugin/xrc/data/ptbatcher.ico
 share/hugin/xrc/data/ptbatcher.png
 share/hugin/xrc/data/ptbatcher_pause.ico
@@ -550,19 +540,17 @@ share/hugin/xrc/data/ptbatcher_pause.png
 share/hugin/xrc/data/ptbatcher_running.ico
 share/hugin/xrc/data/ptbatcher_running.png
 share/hugin/xrc/data/pto_icon.ico
-share/hugin/xrc/data/pto_icon.png
-share/hugin/xrc/data/redo.png
-share/hugin/xrc/data/reload.png
-share/hugin/xrc/data/remove_project.png
-share/hugin/xrc/data/skip.png
+share/hugin/xrc/data/redo.svg
+share/hugin/xrc/data/reload.svg
+share/hugin/xrc/data/remove_project.svg
+share/hugin/xrc/data/skip.svg
 share/hugin/xrc/data/splash.png
 share/hugin/xrc/data/sponsors.htm
-share/hugin/xrc/data/start.png
-share/hugin/xrc/data/stop.png
-share/hugin/xrc/data/straighten_pano.png
+share/hugin/xrc/data/start.svg
+share/hugin/xrc/data/stop.svg
+share/hugin/xrc/data/straighten_pano.svg
 share/hugin/xrc/data/tips.txt
-share/hugin/xrc/data/transparent.png
-share/hugin/xrc/data/undo.png
+share/hugin/xrc/data/undo.svg
 share/hugin/xrc/data/upstream.txt
 share/hugin/xrc/dlg_warning.xrc
 share/hugin/xrc/edit_script_dialog.xrc
@@ -581,6 +569,7 @@ share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
+share/hugin/xrc/toolbox_panel.xrc
 share/icons/hicolor/128x128/apps/hugin.png
 share/icons/hicolor/128x128/apps/ptbatcher.png
 share/icons/hicolor/16x16/apps/hugin.png
@@ -626,6 +615,7 @@ share/metainfo/
 share/metainfo/PTBatcherGUI.appdata.xml
 share/metainfo/calibrate_lens_gui.appdata.xml
 share/metainfo/hugin.appdata.xml
+share/metainfo/hugin_toolbox.appdata.xml
 share/mime/packages/hugin.xml
 @tag update-desktop-database
 @tag update-mime-database

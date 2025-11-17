@@ -2,8 +2,7 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2024.0.1
-REVISION =	4
+DISTNAME =	hugin-2025.0.0
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -11,11 +10,11 @@ EXTRACT_SUFX =	.tar.bz2
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS +=  celeste                   4.0
-SHARED_LIBS +=  huginbase                 8.0
-SHARED_LIBS +=  huginbasewx               7.0
-SHARED_LIBS +=  icpfindlib                5.0
-SHARED_LIBS +=  localfeatures             4.0
+SHARED_LIBS +=  celeste                   5.0
+SHARED_LIBS +=  huginbase                 9.0
+SHARED_LIBS +=  huginbasewx               8.0
+SHARED_LIBS +=  icpfindlib                6.0
+SHARED_LIBS +=  localfeatures             5.0
 SHARED_LIBS +=  hugin_python_interface    4.0
 
 CATEGORIES =	graphics x11
@@ -27,10 +26,9 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLU Iex-3_4 IlmThread-3_4 Imath-3_2 OpenEXR-3_4 X11
-WANTLIB += boost_atomic-mt boost_filesystem-mt boost_system-mt c epoxy exiv2
-WANTLIB += fftw3 flann flann_cpp jpeg lcms2 lz4 m pano13 png sqlite3
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} GL GLU Iex-3_4
+WANTLIB += IlmThread-3_4 Imath-3_2 OpenEXR-3_4 X11 c epoxy exiv2
+WANTLIB += fftw3 flann flann_cpp lcms2 lz4 m pano13 sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
@@ -50,8 +48,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
-LIB_DEPENDS =		devel/boost \
-			graphics/exiv2>=0.12 \
+LIB_DEPENDS =		graphics/exiv2>=0.12 \
 			graphics/lcms2 \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
@@ -61,7 +58,7 @@ LIB_DEPENDS =		devel/boost \
 
 MODULES =		devel/cmake lang/python
 
-# C++11
+# C++17
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ENV =		MANDIR=man
