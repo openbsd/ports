@@ -1,15 +1,6 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1,7 +1,7 @@
- project('gdm', 'c',
-   version: '48.0',
-   license: 'GPL2+',
--  meson_version: '>= 0.57',
-+  meson_version: '>= 1.0.0',
- )
- 
- # Modules
 @@ -178,7 +178,7 @@ have_pam_syslog = cc.has_function('pam_syslog', args: 
  have_utmpx_header = cc.has_header('utmpx.h')
  have_utmp_header =  cc.has_header('utmp.h')

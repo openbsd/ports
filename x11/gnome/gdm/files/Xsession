@@ -25,7 +25,7 @@ fi
 
 # XDG_RUNTIME_DIR
 if test "x$XDG_RUNTIME_DIR" = "x"; then
-	XDG_RUNTIME_DIR=/var/run/user/`id -u`
+	XDG_RUNTIME_DIR=/tmp/run/user/`id -u`
 fi
 export XDG_RUNTIME_DIR
 

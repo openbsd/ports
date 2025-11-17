@@ -8,7 +8,8 @@ rc_bg=YES
 rc_reload=NO
 
 rc_pre() {
-	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR which lifetime
+	# is bound to the user being logged in.
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
 
@@ -24,7 +25,8 @@ rc_post() {
 		chown root:wheel /dev/dri/renderD128
 	fi
 
-	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR which lifetime
+	# is bound to the user being logged in.
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
 
