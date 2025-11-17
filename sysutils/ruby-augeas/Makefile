@@ -1,18 +1,21 @@
 COMMENT=	provider bindings for Augeas
 
-DISTNAME=	ruby-augeas-0.5.0
-PKGNAME=	${DISTNAME:S/ruby-//}
-REVISION=	9
+V=		0.6.0
+DISTNAME=	ruby-augeas-${V}
+PKGNAME=	${DISTNAME:ruby-%=}
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://augeas.net/
+HOMEPAGE=	https://augeas.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MODULES=	lang/ruby
+WANTLIB=	c++abi augeas pthread xml2
 
-WANTLIB+=	augeas pthread xml2
+SITES=		https://github.com/hercules-team/ruby-augeas/releases/download/release-${V}/
+EXTRACT_SUFX=	.tgz
+
+MODULES=	lang/ruby
 
 LIB_DEPENDS=	sysutils/augeas
 

@@ -1,12 +1,26 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
+@so ${GEM_EXTENSIONS_DIR}/_augeas.so
+${GEM_EXTENSIONS_DIR}/gem_make.out
+${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.c
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.h
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.o
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.so
+${GEM_LIB}/gems/${DISTNAME}/ext/augeas/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
-${GEM_LIB}/gems/${DISTNAME}/lib/_augeas.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/_augeas.so
+${GEM_LIB}/gems/${DISTNAME}/lib/augeas/
 ${GEM_LIB}/gems/${DISTNAME}/lib/augeas.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/augeas/facade.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/
 ${GEM_LIB}/gems/${DISTNAME}/tests/root/
 ${GEM_LIB}/gems/${DISTNAME}/tests/root/etc/
@@ -16,4 +30,5 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/root/etc/inittab
 ${GEM_LIB}/gems/${DISTNAME}/tests/root/etc/ssh/
 ${GEM_LIB}/gems/${DISTNAME}/tests/root/etc/ssh/sshd_config
 ${GEM_LIB}/gems/${DISTNAME}/tests/tc_augeas.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/tc_facade.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
