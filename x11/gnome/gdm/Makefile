@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
-REVISION=		3
+REVISION=		4
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -100,9 +100,6 @@ CONFIGURE_ARGS=		-Ddefault-pam-config=none \
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
-	sed -i -e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,/bin/bash,/bin/ksh,g' \
-		${WRKSRC}/daemon/gdm-session-worker.c
 	${SUBST_CMD} ${WRKSRC}/daemon/gdm-local-display-factory.c
 
 post-install:
