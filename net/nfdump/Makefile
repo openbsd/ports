@@ -1,28 +1,23 @@
-COMMENT-main =		tools to collect and process netflow data
-COMMENT-nfprofile =	filters data from nfdump according to profiles
+COMMENT =		tools to collect and process netflow data
 
-V =			1.7.5
+V =			1.7.7
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
-PKGNAME-nfprofile =	nfprofile-$V
 
-SHARED_LIBS +=	nfdump                    3.0
-SHARED_LIBS +=  nffile                    0.0
+SHARED_LIBS +=  nffile               1.0      # unknown
+SHARED_LIBS +=  nfdump               4.0      # unknown
 
 CATEGORIES =		net
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		bz2 c lz4 z zstd
-WANTLIB-main =		${WANTLIB} ft m pthread
+WANTLIB += X11 bz2 c cairo expat freetype ft glib-2.0 gobject-2.0
+WANTLIB += harfbuzz iconv intl lz4 m pango-1.0 pangocairo-1.0
+WANTLIB += pcap png pthread rrd xcb xml2 z zstd
 
-WANTLIB-nfprofile =  ${WANTLIB}
-WANTLIB-nfprofile += X11 cairo expat freetype glib-2.0 gobject-2.0 harfbuzz
-WANTLIB-nfprofile += iconv intl lzma m nfdump nffile pango-1.0 pangocairo-1.0
-WANTLIB-nfprofile += png pthread rrd xcb xml2
-
+# gnu17
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -33,32 +28,29 @@ AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 
 CONFIGURE_ARGS +=	--enable-ftconv \
+			--enable-ja4 \
+			--enable-maxmind \
+			--enable-nfpcapd \
 			--enable-nfprofile \
 			--enable-nftrack \
-			--enable-nsel \
 			--enable-sflow \
-			--enable-maxmind \
 			--enable-tor \
 			--with-rrdpath=${LOCALBASE} \
 			--with-ftpath=${LOCALBASE}
 
-MULTI_PACKAGES =	-main -nfprofile
-
-LIB_DEPENDS-main =	archivers/bzip2 \
+LIB_DEPENDS =		archivers/bzip2 \
 			archivers/lz4 \
 			archivers/zstd \
-			net/flow-tools>=0.68.5
-
-LIB_DEPENDS-nfprofile =	net/rrdtool \
-			net/nfdump,-main
-RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nfdump
+			net/flow-tools>=0.68.5 \
+			net/rrdtool
 
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
 			ac_cv_path_DOXYGEN=
 TEST_FLAGS =		TZ=CET
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/nfdump
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nfdump
 
 .include <bsd.port.mk>

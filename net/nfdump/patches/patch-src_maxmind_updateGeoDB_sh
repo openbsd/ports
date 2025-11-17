@@ -13,7 +13,7 @@ Index: src/maxmind/updateGeoDB.sh
 -LICENSE=YOURLICENSEKEY
 +LICENSE=${LICENSE:=YOURLICENSEKEY}
  
- # language: the location information is avalable in many languages
+ # language: the location information is available in many languages
  # available languages:
 @@ -18,14 +18,14 @@ rm -rf GeoLite2-ASN-CSV_* GeoLite2-City-CSV_*
  

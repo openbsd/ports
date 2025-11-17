@@ -1,3 +1,6 @@
+@conflict nfprofile-*
+@pkgpath net/nfdump,-main
+@pkgpath net/nfdump,-nfprofile
 @newgroup _nfcapd:649
 @newuser _nfcapd:649:_nfcapd::nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump
@@ -6,7 +9,10 @@
 @bin bin/nfcapd
 @bin bin/nfdump
 @bin bin/nfexpire
+@bin bin/nfpcapd
+@bin bin/nfprofile
 @bin bin/nfreplay
+@bin bin/nftrack
 @bin bin/sfcapd
 @bin bin/torlookup
 bin/updateGeoDB.sh
@@ -23,8 +29,13 @@ lib/libnffile.la
 @man man/man1/nfcapd.1
 @man man/man1/nfdump.1
 @man man/man1/nfexpire.1
+@man man/man1/nfpcapd.1
+@man man/man1/nfprofile.1
 @man man/man1/nfreplay.1
 @man man/man1/sfcapd.1
 @man man/man1/torlookup.1
 share/doc/nfdump/
 share/doc/nfdump/README
+share/examples/nfdump/
+share/examples/nfdump/nfdump.conf.dist
+@sample ${SYSCONFDIR}/nfdump.conf
