@@ -2,10 +2,10 @@ COMMENT =		fast library for number theory
 
 DPB_PROPERTIES =	parallel
 
-V =			3.1.2
+V =			3.3.1
 PKGNAME =		flintlib-${V}
 DISTNAME =		flint-${V}
-SHARED_LIBS =		flint		1.0	# 19.0.0
+SHARED_LIBS =		flint		2.0	# 21.0.0
 CATEGORIES =		math
 
 HOMEPAGE =		https://flintlib.org/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m pthread gmp mpfr
 
-SITES =			https://flintlib.org/
+SITES =			https://flintlib.org/download/
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

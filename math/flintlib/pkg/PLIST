@@ -32,8 +32,10 @@ include/flint/ca_ext.h
 include/flint/ca_field.h
 include/flint/ca_mat.h
 include/flint/ca_poly.h
+include/flint/ca_types.h
 include/flint/ca_vec.h
 include/flint/calcium.h
+include/flint/config.h
 include/flint/crt_helpers.h
 include/flint/d_mat.h
 include/flint/d_vec.h
@@ -44,8 +46,9 @@ include/flint/double_interval.h
 include/flint/fexpr.h
 include/flint/fexpr_builtin.h
 include/flint/fft.h
-include/flint/fft_tuning.h
+include/flint/fft_small.h
 include/flint/flint-config.h
+include/flint/flint-mparam.h
 include/flint/flint.h
 include/flint/fmpq.h
 include/flint/fmpq_mat.h
@@ -112,6 +115,7 @@ include/flint/fq_zech_poly.h
 include/flint/fq_zech_poly_factor.h
 include/flint/fq_zech_types.h
 include/flint/fq_zech_vec.h
+include/flint/gettimeofday.h
 include/flint/gmpcompat.h
 include/flint/gr.h
 include/flint/gr_generic.h
@@ -119,6 +123,7 @@ include/flint/gr_mat.h
 include/flint/gr_mpoly.h
 include/flint/gr_poly.h
 include/flint/gr_special.h
+include/flint/gr_types.h
 include/flint/gr_vec.h
 include/flint/hypgeom.h
 include/flint/limb_types.h
@@ -126,6 +131,7 @@ include/flint/long_extras.h
 include/flint/longlong.h
 include/flint/longlong_asm_clang.h
 include/flint/longlong_asm_gcc.h
+include/flint/longlong_asm_gnu.h
 include/flint/longlong_div_gnu.h
 include/flint/longlong_msc_arm64.h
 include/flint/longlong_msc_x86.h
@@ -135,12 +141,14 @@ include/flint/mpf-impl.h
 include/flint/mpfr_mat.h
 include/flint/mpfr_vec.h
 include/flint/mpn_extras.h
+include/flint/mpn_mod.h
 include/flint/mpoly.h
 include/flint/mpoly_types.h
 include/flint/n_poly.h
 include/flint/n_poly_types.h
 include/flint/nf.h
 include/flint/nf_elem.h
+include/flint/nfloat.h
 include/flint/nmod.h
 include/flint/nmod_mat.h
 include/flint/nmod_mpoly.h
@@ -162,18 +170,21 @@ include/flint/qfb.h
 include/flint/qqbar.h
 include/flint/qsieve.h
 include/flint/templates.h
+include/flint/test_helpers.h
 include/flint/thread_pool.h
 include/flint/thread_support.h
 include/flint/ulong_extras.h
 @comment @so lib/libflint.so
 @lib lib/libflint.so.${LIBflint_VERSION}
-@comment lib/libflint.so.19
+@comment lib/libflint.so.21
 lib/pkgconfig/flint.pc
 share/doc/flint/
 share/doc/flint/README.md
 share/examples/flint/
+share/examples/flint/AKS.c
 share/examples/flint/bernoulli.c
 share/examples/flint/binet.c
+share/examples/flint/check_n_is_prime.c
 share/examples/flint/class_poly.c
 share/examples/flint/complex_plot.c
 share/examples/flint/crt.c
@@ -193,6 +204,7 @@ share/examples/flint/hilbert_matrix.c
 share/examples/flint/hilbert_matrix_ca.c
 share/examples/flint/huge_expr.c
 share/examples/flint/integrals.c
+share/examples/flint/integrals_double_exp.c
 share/examples/flint/keiper_li.c
 share/examples/flint/lcentral.c
 share/examples/flint/logistic.c
