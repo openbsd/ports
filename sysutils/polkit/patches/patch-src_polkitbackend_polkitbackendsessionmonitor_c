@@ -1,0 +1,14 @@
+XDG_RUNTIME_DIR
+
+Index: src/polkitbackend/polkitbackendsessionmonitor.c
+--- src/polkitbackend/polkitbackendsessionmonitor.c.orig
++++ src/polkitbackend/polkitbackendsessionmonitor.c
+@@ -29,7 +29,7 @@
+ #include <polkit/polkitprivate.h>
+ #include "polkitbackendsessionmonitor.h"
+ 
+-#define CKDB_PATH "/var/run/ConsoleKit/database"
++#define CKDB_PATH "/tmp/run/ConsoleKit/database"
+ 
+ /* <internal>
+  * SECTION:polkitbackendsessionmonitor
