@@ -1,10 +1,12 @@
 COMMENT =		command-line tool to access B2 cloud storage
 
-MODPY_DISTV =	4.2.0
+# Holding at 4.3.3 due to 
+# https://github.com/Backblaze/B2_Command_Line_Tool/issues/1104
+MODPY_DISTV =		4.3.3
 
 DISTNAME =		b2-${MODPY_DISTV}
 PKGNAME =		backblaze-${DISTNAME}
-REVISION =		0
+#REVISION =		0
 
 CATEGORIES =		sysutils
 
