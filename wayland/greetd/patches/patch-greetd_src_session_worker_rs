@@ -10,13 +10,14 @@ add proper support for OpenBSD specificities:
 Index: greetd/src/session/worker.rs
 --- greetd/src/session/worker.rs.orig
 +++ greetd/src/session/worker.rs
-@@ -1,5 +1,17 @@
+@@ -1,5 +1,18 @@
  use std::{env, ffi::CString, os::unix::net::UnixDatagram};
  
 +use libc::{ c_int, c_char, uid_t, gid_t, c_uint, c_void, getpwnam, passwd };
 +// $grep SETALL /usr/include/login_cap.h -> bindgen
-+// #define LOGIN_SETALL            0x01ff  /* Set all. */
-+const LOGIN_SETALL : u32 = 511;
++// #define LOGIN_SETALL            0x03ff  /* Set all. */
++const LOGIN_SETALL : u32 = 1023;
++const LOGIN_SETXDGENV : u32 = 512;
 +
 +#[link(name = "util")]
 +extern "C" {
@@ -28,7 +29,7 @@ Index: greetd/src/session/worker.rs
  use nix::{
      sys::wait::waitpid,
      unistd::{execve, fork, initgroups, setgid, setsid, setuid, ForkResult},
-@@ -163,6 +175,14 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -163,6 +176,14 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
  
      let user = nix::unistd::User::from_name(&pam_username)?.ok_or("unable to get user info")?;
  
@@ -43,7 +44,7 @@ Index: greetd/src/session/worker.rs
      // Make this process a session leader.
      setsid().map_err(|e| format!("unable to become session leader: {}", e))?;
  
-@@ -170,7 +190,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -170,7 +191,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
          TerminalMode::Stdin => (),
          TerminalMode::Terminal { path, vt, switch } => {
              // Tell PAM what TTY we're targetting, which is used by logind.
@@ -52,7 +53,7 @@ Index: greetd/src/session/worker.rs
              pam.putenv(&format!("XDG_VTNR={}", vt))?;
  
              // Opening our target terminal.
-@@ -204,6 +224,8 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -204,6 +225,8 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
      // and set all environment variables later.
      let prepared_env = [
          "XDG_SEAT=seat0".to_string(),
@@ -61,7 +62,7 @@ Index: greetd/src/session/worker.rs
          format!("XDG_SESSION_CLASS={}", class.as_str()),
          format!("USER={}", user.name),
          format!("LOGNAME={}", user.name),
-@@ -218,6 +240,15 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -218,6 +241,15 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
          pam.putenv(e)?;
      }
  
@@ -77,7 +78,7 @@ Index: greetd/src/session/worker.rs
      // Session time!
      pam.open_session(PamFlag::NONE)?;
  
-@@ -249,10 +280,13 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -249,10 +281,13 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
              // accidentally using '?'. The process *must* exit from within
              // this match arm.
  
@@ -95,7 +96,7 @@ Index: greetd/src/session/worker.rs
  
              // Set our parent death signal. setuid/setgid above resets the
              // death signal, which is why we do this here.
-@@ -308,6 +342,12 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -308,6 +343,12 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
      pam.close_session(PamFlag::NONE)?;
      pam.setcred(PamFlag::DELETE_CRED)?;
      pam.end()?;
