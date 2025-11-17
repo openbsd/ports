@@ -1,6 +1,6 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_DISTV =		4.4.4
+MODPY_DISTV =		4.4.5
 DISTNAME =		lz4-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,12 +18,10 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
 MODPY_PYTEST_ARGS =	--ignore tests/stream
+MODPY_TEST_LINK_SO =	Yes
 
 BUILD_DEPENDS =		devel/py-pkgconfig
 LIB_DEPENDS =		archivers/lz4
 TEST_DEPENDS =		sysutils/py-psutil
-
-pre-test:
-	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
 
 .include <bsd.port.mk>
