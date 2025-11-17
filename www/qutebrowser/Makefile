@@ -1,6 +1,6 @@
 COMMENT=	keyboard-focused browser with a minimal GUI
 
-MODPY_DISTV=	3.6.0
+MODPY_DISTV=	3.6.1
 DISTNAME=	qutebrowser-${MODPY_DISTV}
 
 HOMEPAGE=	https://www.qutebrowser.org/
