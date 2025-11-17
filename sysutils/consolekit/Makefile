@@ -4,7 +4,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		sysutils	
 
@@ -38,6 +38,9 @@ CONFIGURE_ARGS=		--disable-pam-module \
 
 CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
+# XDG_RUNTIME_DIR
+CONFIGURE_ARGS +=	--with-rundir=/tmp/run
+
 # needed for 'make check'
 CONFIGURE_ARGS +=	--enable-docbook-docs
 
@@ -53,7 +56,7 @@ AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 
 post-install:
-	rmdir ${WRKINST}/var/run/ConsoleKit
+	rmdir ${WRKINST}/tmp/run/ConsoleKit ${WRKINST}/tmp/run/
 	rm -r ${WRKINST}/${SYSCONFDIR}/X11/xinit/xinitrc.d \
 		${PREFIX}/share/examples/consolekit/logrotate.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/polkit-1/rules.d
