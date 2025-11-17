@@ -1,4 +1,4 @@
-XDG_RUNTIME_DIR
+XDG_RUNTIME_DIR; --with-rundir=/tmp/run in sysutils/consolekit
 
 Index: src/polkitbackend/polkitbackendsessionmonitor.c
 --- src/polkitbackend/polkitbackendsessionmonitor.c.orig

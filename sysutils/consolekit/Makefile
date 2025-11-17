@@ -38,7 +38,8 @@ CONFIGURE_ARGS=		--disable-pam-module \
 
 CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
-# XDG_RUNTIME_DIR
+# XDG_RUNTIME_DIR;
+# see sysutils/polkit/patches/patch-src_polkitbackend_polkitbackendsessionmonitor_c
 CONFIGURE_ARGS +=	--with-rundir=/tmp/run
 
 # needed for 'make check'
