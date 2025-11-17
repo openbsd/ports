@@ -2,7 +2,7 @@ COMMENT = C11 standard threads library
 
 DISTNAME =	libstdthreads-${V}
 V =		0.3.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
