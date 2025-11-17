@@ -14,6 +14,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE=	Yes
 
+# uses C++11
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} c m tiff
 
 MODULES=	devel/cmake
