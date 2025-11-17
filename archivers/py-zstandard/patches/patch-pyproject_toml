@@ -1,0 +1,36 @@
+relax; pins were added due to no-gil support for freethreaded Python builds,
+but we don't currently need that in the package build.
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -25,8 +25,7 @@ dependencies = []
+ 
+ [project.optional-dependencies]
+ cffi = [
+-    "cffi~=1.17; platform_python_implementation != 'PyPy' and python_version < '3.14'",
+-    "cffi>=2.0.0b; platform_python_implementation != 'PyPy' and python_version >= '3.14'",
++    "cffi>=2.0.0b; platform_python_implementation != 'PyPy'",
+ ]
+ 
+ [project.urls]
+@@ -35,8 +34,7 @@ Documentation = "https://python-zstandard.readthedocs.
+ 
+ [build-system]
+ requires = [
+-    "cffi~=1.17; platform_python_implementation != 'PyPy' and python_version < '3.14'",
+-    "cffi>=2.0.0b; platform_python_implementation != 'PyPy' and python_version >= '3.14'",
++    "cffi>=2.0.0b; platform_python_implementation != 'PyPy'",
+     "packaging",
+     "setuptools>=77.0.0",
+ ]
+@@ -44,8 +42,7 @@ build-backend = "setuptools.build_meta"
+ 
+ [dependency-groups]
+ dev = [
+-    "cffi~=1.17; platform_python_implementation != 'PyPy' and python_version < '3.14'",
+-    "cffi>=2.0.0b; platform_python_implementation != 'PyPy' and python_version >= '3.14'",
++    "cffi>=2.0.0b; platform_python_implementation != 'PyPy'",
+     "hypothesis==6.111.0",
+     "mypy>=1.17.1",
+     "pytest>=8.4.1",
