@@ -1,15 +1,14 @@
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_DISTV =	2.8.0
-DISTNAME =	PyJWT-${MODPY_DISTV}
+MODPY_DISTV =	2.10.1
+DISTNAME =	pyjwt-${MODPY_DISTV}
 PKGNAME =	py-jwt-${MODPY_DISTV}
 CATEGORIES =	www
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	3
 
 HOMEPAGE =	http://github.com/jpadilla/pyjwt
 
-# BSD
+# MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
