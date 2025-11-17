@@ -18,6 +18,10 @@ WANTLIB += c iconv intl
 
 MODULES=		devel/meson
 
+# -std=gnu11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 BUILD_DEPENDS=		devel/gettext,-tools
 
 # man pages
