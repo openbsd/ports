@@ -1,6 +1,6 @@
 COMMENT=		Actions, Menus and Toolbars Kit
 
-DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.9.1 .
+DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.9.2 .
 
 SHARED_LIBS += gedit-amtk-5              0.0 # 0
 
