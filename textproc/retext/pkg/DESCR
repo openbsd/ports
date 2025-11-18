@@ -1,0 +1,8 @@
+ReText is a simple but powerful editor for markup languages. It is based
+on 'Markups', which supports Markdown, reStructuredText, Textile and
+AsciiDoc. One can also add support for custom markups using Python
+modules.
+
+For a more powerful preview engine with JavaScript support, you can
+"pkg_add py3-qt6webengine", this is not forced as a dependency as it's
+only available on a couple of machine architectures.
