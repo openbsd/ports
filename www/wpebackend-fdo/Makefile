@@ -2,7 +2,7 @@ PORTROACH=	limitw:1,even
 
 COMMENT=	WPE Backend for Wayland
 
-DISTNAME=	wpebackend-fdo-1.16.0
+DISTNAME=	wpebackend-fdo-1.16.1
 
 CATEGORIES=	www wayland
 
@@ -18,9 +18,8 @@ PERMIT_PACKAGE = Yes
 SITES=		https://wpewebkit.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
-# COMPILER_LIBCXX?
-WANTLIB += c++ epoxy gio-2.0 glib-2.0 gobject-2.0 m wayland-client
-WANTLIB += wayland-egl wayland-server wpe-1.0
+WANTLIB += ${COMPILER_LIBCXX} epoxy gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += m wayland-client wayland-egl wayland-server wpe-1.0
 
 MODULES=	devel/meson
 

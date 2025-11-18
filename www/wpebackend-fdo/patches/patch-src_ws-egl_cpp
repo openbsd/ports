@@ -1,0 +1,38 @@
+OpenBSD does not support memfd_create.
+
+Index: src/ws-egl.cpp
+--- src/ws-egl.cpp.orig
++++ src/ws-egl.cpp
+@@ -33,6 +33,7 @@
+ #include <vector>
+ #include <sys/mman.h>
+ #include <sys/stat.h>
++#include <unistd.h> /* close(2) */
+ 
+ #ifndef EGL_WL_bind_wayland_display
+ #define EGL_WAYLAND_BUFFER_WL 0x31D5
+@@ -367,16 +368,24 @@ void ImplEGL::initMainDevice()
+ void ImplEGL::initFormatTable()
+ {
+     errno = 0;
++#ifndef __OpenBSD__
+     int fd = memfd_create("wpe-fdo-shared", MFD_CLOEXEC | MFD_ALLOW_SEALING | MFD_NOEXEC_SEAL);
+     if (fd < 0 && errno == EINVAL && MFD_NOEXEC_SEAL != 0)
+         fd = memfd_create("wpe-fdo-shared", MFD_CLOEXEC | MFD_ALLOW_SEALING);
++#else
++    /* XXX no sealing support */
++    int fd = shm_open ("wpe-fdo-shared", O_CLOEXEC | O_RDWR, 0600);
++#endif
+ 
+     if (fd < 0)
+         return;
+ 
+     // We can add this seal before calling ftruncate(), as the file is currently zero-sized anyway.
+     // There is also no need to check for the return value, we couldn't do anything with it anyway.
++/* XXX no sealing support */
++#ifndef __OpenBSD__
+     fcntl(fd, F_ADD_SEALS, F_SEAL_SHRINK);
++#endif
+ 
+     struct FormatData {
+         uint32_t format { 0 };
