@@ -1,4 +1,4 @@
-@pkgpath textproc/libxml
+@pkgpath textproc/libxml,-python
 @define-tag libxml2/rebuild at-end %D/share/libxml2/rebuild
 @tag libxml2/rebuild
 bin/xml2-config
