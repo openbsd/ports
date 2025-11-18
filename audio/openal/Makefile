@@ -1,15 +1,17 @@
 COMMENT =	cross-platform 3D audio API
 
-V =		1.24.2
+V =		1.24.3
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 EPOCH =		0
-REVISION =	1
 CATEGORIES =	audio
 
 SHARED_LIBS =	openal	6.0
 
-HOMEPAGE =	https://openal-soft.org/
+HOMEPAGE =	http://openal-soft.org/
+
+SITES =		https://github.com/kcat/openal-soft/releases/download/$V/
+EXTRACT_SUFX =	.tar.bz2
 
 MAINTAINER =	David Carlier <devnexen@gmail.com>
 
@@ -17,9 +19,6 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 PERMIT_PACKAGE =Yes
 
 WANTLIB +=	c m mysofa pthread sndio z ${COMPILER_LIBCXX}
-
-SITES =		${HOMEPAGE}openal-releases/
-EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS +=	audio/libmysofa>=1.3.3
 

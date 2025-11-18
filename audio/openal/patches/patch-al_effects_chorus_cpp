@@ -3,7 +3,7 @@ gcc8: error: expression '<throw-expression>' is not a constant expression
 Index: al/effects/chorus.cpp
 --- al/effects/chorus.cpp.orig
 +++ al/effects/chorus.cpp
-@@ -42,9 +42,10 @@ constexpr ALenum EnumFromWaveform(ChorusWaveform type)
+@@ -43,9 +43,10 @@ constexpr ALenum EnumFromWaveform(ChorusWaveform type)
      {
      case ChorusWaveform::Sinusoid: return AL_CHORUS_WAVEFORM_SINUSOID;
      case ChorusWaveform::Triangle: return AL_CHORUS_WAVEFORM_TRIANGLE;

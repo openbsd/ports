@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -149,7 +149,7 @@ endif()
+@@ -165,7 +165,7 @@ add_subdirectory(fmt-11.1.1 EXCLUDE_FROM_ALL)
  set(CPP_DEFS ) # C pre-processor, not C++
  set(INC_PATHS )
  set(C_FLAGS )
@@ -10,7 +10,7 @@ Index: CMakeLists.txt
  set(LINKER_FLAGS_DEBUG )
  set(LINKER_FLAGS_RELEASE )
  set(EXTRA_LIBS )
-@@ -1375,7 +1375,7 @@ target_include_directories(alsoft.common PRIVATE ${Ope
+@@ -1402,7 +1402,7 @@ target_include_directories(alsoft.common PRIVATE ${Ope
      PUBLIC ${OpenAL_BINARY_DIR} ${OpenAL_SOURCE_DIR}/common)
  target_compile_definitions(alsoft.common PRIVATE ${CPP_DEFS})
  target_compile_options(alsoft.common PRIVATE ${C_FLAGS})
@@ -19,7 +19,7 @@ Index: CMakeLists.txt
  set_target_properties(alsoft.common PROPERTIES ${ALSOFT_STD_VERSION_PROPS}
      POSITION_INDEPENDENT_CODE TRUE)
  
-@@ -1649,7 +1649,7 @@ endif()
+@@ -1676,7 +1676,7 @@ endif()
  
  if(ALSOFT_INSTALL_CONFIG)
      install(FILES alsoftrc.sample

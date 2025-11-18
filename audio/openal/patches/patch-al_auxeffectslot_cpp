@@ -3,7 +3,7 @@ gcc8: error: expression '<throw-expression>' is not a constant expression
 Index: al/auxeffectslot.cpp
 --- al/auxeffectslot.cpp.orig
 +++ al/auxeffectslot.cpp
-@@ -242,9 +242,10 @@ constexpr auto EffectSlotTypeFromEnum(ALenum type) noe
+@@ -241,9 +241,10 @@ constexpr auto EffectSlotTypeFromEnum(ALenum type) noe
      case AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT: return EffectSlotType::Dedicated;
      case AL_EFFECT_DEDICATED_DIALOGUE: return EffectSlotType::Dedicated;
      case AL_EFFECT_CONVOLUTION_SOFT: return EffectSlotType::Convolution;

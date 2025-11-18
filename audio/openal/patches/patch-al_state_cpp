@@ -3,7 +3,7 @@ gcc8: error: expression '<throw-expression>' is not a constant expression
 Index: al/state.cpp
 --- al/state.cpp.orig
 +++ al/state.cpp
-@@ -140,8 +140,9 @@ constexpr auto ALenumFromDistanceModel(DistanceModel m
+@@ -146,8 +146,9 @@ constexpr auto ALenumFromDistanceModel(DistanceModel m
      case DistanceModel::LinearClamped: return AL_LINEAR_DISTANCE_CLAMPED;
      case DistanceModel::Exponent: return AL_EXPONENT_DISTANCE;
      case DistanceModel::ExponentClamped: return AL_EXPONENT_DISTANCE_CLAMPED;
