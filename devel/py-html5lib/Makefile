@@ -4,7 +4,7 @@ MODPY_DISTV=	1.1
 DISTNAME=		html5lib-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel www textproc
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 
