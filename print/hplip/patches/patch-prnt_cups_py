@@ -1,7 +1,7 @@
 Index: prnt/cups.py
 --- prnt/cups.py.orig
 +++ prnt/cups.py
-@@ -236,8 +236,8 @@ def isfamilydrv(ppds):
+@@ -238,8 +238,8 @@ def isfamilydrv(ppds):
                  
  def getPPDPath(addtional_paths=None):
      """
@@ -12,7 +12,7 @@ Index: prnt/cups.py
      """
      if addtional_paths is None:
          addtional_paths = []
-@@ -267,16 +267,16 @@ def getPPDPath1(addtional_paths=None):
+@@ -271,16 +271,16 @@ def getPPDPath1(addtional_paths=None):
  
  def getAllowableMIMETypes():
      """
@@ -34,33 +34,16 @@ Index: prnt/cups.py
      for path in paths:
          files.extend(glob.glob(path))
      for f in files:
-@@ -337,11 +337,11 @@ def getSystemPPDs():
-     else: # 1.2.x
-         log.debug("(CUPS 1.2.x) Getting list of PPDs using CUPS_GET_PPDS...")
-         ppd_dict = cupsext.getPPDList()
--        cups_ppd_path = getPPDPath() # usually /usr/share/cups/model
--        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '/usr/share/ppd')
-+        cups_ppd_path = getPPDPath() # usually ${LOCALBASE}/share/cups/model
-+        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '${LOCALBASE}/share/ppd')
- 
+@@ -341,7 +341,7 @@ def getSystemPPDs():
+         foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '/usr/share/ppd')
+  
          if not foomatic_ppd_path or not os.path.exists(foomatic_ppd_path):
 -            foomatic_ppd_path = '/usr/share/ppd'
 +            foomatic_ppd_path = '${LOCALBASE}/share/foomatic/db/source/PPD'
- 
+  
          log.debug("CUPS PPD base path = %s" % cups_ppd_path)
          log.debug("Foomatic PPD base path = %s" % foomatic_ppd_path)
-@@ -360,8 +360,8 @@ def getSystemPPDs():
-                         'gutenprint' in ppd):
- 
-                     # PPD files returned by CUPS_GET_PPDS (and by lpinfo -m)
--                    # can be relative to /usr/share/ppd/ or to
--                    # /usr/share/cups/model/. Not sure why this is.
-+                    # can be relative to ${LOCALBASE}/share/ppd/ or to
-+                    # ${LOCALBASE}/share/cups/model/. Not sure why this is.
-                     # Here we will try both and see which one it is...
- 
-                     if os.path.exists(ppd):
-@@ -419,7 +419,7 @@ number_pat = re.compile(r""".*?(\d+)""", re.IGNORECASE
+@@ -425,7 +425,7 @@ number_pat = re.compile(r""".*?(\d+)""", re.IGNORECASE
  STRIP_STRINGS2 = ['foomatic:', 'hp-', 'hp_', 'hp ', '.gz', '.ppd',
                    'drv:', '-pcl', '-pcl3', '-jetready',
                   '-zxs', '-zjs', '-ps', '-postscript', '-pdf',
@@ -69,7 +52,7 @@ Index: prnt/cups.py
  
  
  for p in list(models.TECH_CLASS_PDLS.values()):
-@@ -703,7 +703,7 @@ def getFaxPPDFile(mq, model):
+@@ -709,7 +709,7 @@ def getFaxPPDFile(mq, model):
  
  
  def getErrorLogLevel():
