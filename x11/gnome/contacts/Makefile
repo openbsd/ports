@@ -26,7 +26,7 @@ MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection gtk-update-icon-cache vala
 
 BUILD_DEPENDS=		devel/appstream \
-			lang/vala,-valadoc \
+			lang/vala,,-valadoc \
 			x11/blueprint-compiler
 
 LIB_DEPENDS=		graphics/libqrencode \
