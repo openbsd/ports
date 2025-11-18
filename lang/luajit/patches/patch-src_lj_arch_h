@@ -5,7 +5,7 @@ ignore the gcc version check ifdef hell for all base-clang arches.
 Index: src/lj_arch.h
 --- src/lj_arch.h.orig
 +++ src/lj_arch.h
-@@ -460,7 +460,7 @@
+@@ -482,7 +482,7 @@
  /* -- Checks for requirements --------------------------------------------- */
  
  /* Check for minimum required compiler versions. */
