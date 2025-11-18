@@ -1,6 +1,6 @@
 COMMENT=		file loading and saving module
 
-DIST_TUPLE=		gnome World/gedit libgedit-gfls 0.3.0 .
+DIST_TUPLE=		gnome World/gedit libgedit-gfls 0.3.1 .
 
 SHARED_LIBS += gedit-gfls-1              0.2 # 0
 
