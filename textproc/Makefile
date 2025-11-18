@@ -460,6 +460,7 @@
      SUBDIR += py-lxml
      SUBDIR += py-markdown
      SUBDIR += py-markdown-it
+     SUBDIR += py-markups
      SUBDIR += py-mdown-extensions
      SUBDIR += py-mdurl
      SUBDIR += py-mistune
@@ -485,6 +486,7 @@
      SUBDIR += py-pypandoc
      SUBDIR += py-pyphen
      SUBDIR += py-python-json-logger
+     SUBDIR += py-python-markdown-math
      SUBDIR += py-pyuca
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
@@ -544,6 +546,7 @@
      SUBDIR += recutils
      SUBDIR += redland
      SUBDIR += redland-bindings
+     SUBDIR += retext
      SUBDIR += riff
      SUBDIR += ripgrep
      SUBDIR += rman
