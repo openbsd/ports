@@ -5,12 +5,13 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.50.0
+REVISION =		0
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
 
-DISTFILES.a = 		c393777d26d2ff6519ac23612abf8af42678c9dd.zip
+DISTFILES.a =		c393777d26d2ff6519ac23612abf8af42678c9dd.zip
 DIST_SUBDIR =		openmw
 SITES.a =		https://github.com/recastnavigation/recastnavigation/archive/
 
@@ -22,8 +23,6 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3 / custom BSD-like font license / DejaVu license
 PERMIT_PACKAGE =	Yes
-
-USE_NOBTCFI-aarch64 =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += OpenThreads Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
@@ -38,7 +37,7 @@ MODULES =		devel/cmake lang/lua x11/qt6 lang/clang
 MODCLANG_VERSION =	19
 COMPILER =		ports-clang
 
-BUILD_DEPENDS = 	sysutils/e2fsprogs
+BUILD_DEPENDS =		sysutils/e2fsprogs
 LIB_DEPENDS =		archivers/unshield \
 			audio/openal \
 			databases/sqlite3 \
@@ -52,9 +51,9 @@ LIB_DEPENDS =		archivers/unshield \
 			lang/luajit \
 			textproc/icu4c \
 			x11/qt6/qtsvg
-RUN_DEPENDS  = 		devel/desktop-file-utils
+RUN_DEPENDS  =		devel/desktop-file-utils
 
-CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
+CONFIGURE_ARGS +=	-DBINDIR=${LOCALBASE}/bin \
 			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
 			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
 			-DGLOBAL_CONFIG_PATH="${SYSCONFDIR}" \
@@ -67,7 +66,7 @@ NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/openmw-${GH_TAGNAME}
 
-CFLAGS += 		-I${X11BASE}/include -pthread
+CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
 MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
 

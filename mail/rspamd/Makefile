@@ -3,6 +3,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	3.14.0
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -76,7 +77,6 @@ CONFIGURE_ARGS+= -DENABLE_LTO=off
 .if ${PROPERTIES:Mluajit}
 LIB_DEPENDS+=	lang/luajit
 WANTLIB+=	luajit-5.1
-USE_NOBTCFI-aarch64=	Yes
 .else
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
 MODULES+=	lang/lua

@@ -1,14 +1,11 @@
 COMMENT =		physics sandbox simulation
 
-# LuaJIT
-USE_NOBTCFI-aarch64 =		Yes
-
 V =			99.3.384
 PKGNAME =		powder-toy-${V}
 DIST_TUPLE +=		github The-Powder-Toy The-Powder-Toy v${V} .
 CATEGORIES =		games
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # GPL-3.0
 PERMIT_PACKAGE =	Yes

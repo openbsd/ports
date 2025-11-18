@@ -3,6 +3,7 @@ DPB_PROPERTIES =	parallel
 COMMENT =		infinite-world block sandbox game
 
 DIST_TUPLE +=		github luanti-org luanti 5.14.0 .
+REVISION =		0
 
 CATEGORIES =		games x11
 
@@ -33,9 +34,6 @@ CONFIGURE_ARGS +=	-DINSTALL_DEVTEST=ON
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
 .endif
-
-# luajit
-USE_NOBTCFI-aarch64 =	Yes
 
 CXXFLAGS +=		-I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib

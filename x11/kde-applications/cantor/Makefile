@@ -1,12 +1,9 @@
 USE_WXNEEDED =	Yes
 
-# luajit
-USE_NOBTCFI-aarch64 =	Yes
-
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
