@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT-main =		native messaging host for Web eID browser extension
 COMMENT-chrome =	Chromium extension
 COMMENT-firefox =	Firefox extension
