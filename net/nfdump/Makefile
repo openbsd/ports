@@ -1,14 +1,15 @@
-COMMENT =		tools to collect and process netflow data
+COMMENT =	tools to collect and process netflow data
 
-V =			1.7.7
-GH_ACCOUNT =		phaag
-GH_PROJECT =		nfdump
-GH_TAGNAME =		v$V
+V =		1.7.7
+REVISION =	0
+GH_ACCOUNT =	phaag
+GH_PROJECT =	nfdump
+GH_TAGNAME =	v$V
 
 SHARED_LIBS +=  nffile               1.0      # unknown
 SHARED_LIBS +=  nfdump               4.0      # unknown
 
-CATEGORIES =		net
+CATEGORIES =	net
 
 # BSD
 PERMIT_PACKAGE =	Yes
