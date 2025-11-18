@@ -1,4 +1,4 @@
-@conflict spyder-*
+@conflict spyder3-*
 @pkgpath devel/spyder/spyder,python3
 bin/spyder
 lib/python${MODPY_VERSION}/site-packages/spyder/
