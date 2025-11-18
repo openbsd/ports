@@ -1,6 +1,6 @@
 COMMENT=	Python code formatter
 
-MODPY_DISTV=	25.1.0
+MODPY_DISTV=	25.11.0
 DISTNAME=	black-${MODPY_DISTV}
 PKGNAME=	py-black-${MODPY_DISTV}
 
@@ -26,9 +26,11 @@ BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
 RUN_DEPENDS=	devel/py-click>=8.0.0 \
 		devel/py-mypy-extensions>=0.4.3 \
 		devel/py-pathspec>=0.9.0 \
+		devel/py-pytokens>=0.1.10 \
 		sysutils/py-packaging>=22.0 \
 		sysutils/py-platformdirs>=2
 
-TEST_DEPENDS=	www/py-aiohttp
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		www/py-aiohttp
 
 .include <bsd.port.mk>
