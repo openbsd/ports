@@ -1,7 +1,7 @@
 Index: src/core/RSettings.cpp
 --- src/core/RSettings.cpp.orig
 +++ src/core/RSettings.cpp
-@@ -364,9 +364,13 @@ QString RSettings::getApplicationPath() {
+@@ -393,9 +393,13 @@ QString RSettings::getApplicationPath() {
      }
  #endif
  

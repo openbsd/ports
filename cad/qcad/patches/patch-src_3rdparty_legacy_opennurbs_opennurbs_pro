@@ -1,0 +1,12 @@
+Use base zlib.  A future version of qcad might need this patch moved
+from 3rdparty/legacy/opennurbs to 3rdparty/opennurbs.
+
+Index: src/3rdparty/legacy/opennurbs/opennurbs.pro
+--- src/3rdparty/legacy/opennurbs/opennurbs.pro.orig
++++ src/3rdparty/legacy/opennurbs/opennurbs.pro
+@@ -1,5 +1,4 @@
+ include (../../../../shared.pri)
+ TEMPLATE = subdirs
+ SUBDIRS = \
+-    zlib \
+     opennurbs

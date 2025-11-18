@@ -1,0 +1,15 @@
+Must use textproc/libstemmer, because qcad links to the port if it is
+installed.
+
+Index: src/stemmer/RStemmer.cpp
+--- src/stemmer/RStemmer.cpp.orig
++++ src/stemmer/RStemmer.cpp
+@@ -18,7 +18,7 @@
+  */
+ #include <QDebug>
+ 
+-#include "stemmer/include/libstemmer.h"
++#include <libstemmer.h>
+ 
+ #include "RStemmer.h"
+ 

@@ -1,7 +1,18 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
 Index: src/core/core.pro
 --- src/core/core.pro.orig
 +++ src/core/core.pro
-@@ -309,7 +309,7 @@ RC_FILE = core.rc
+@@ -307,7 +307,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ 
+ QT += concurrent
+@@ -319,7 +319,7 @@ RC_FILE = core.rc
  OTHER_FILES += core.dox math/math.dox
  DEFINES += QCADCORE_LIBRARY
  

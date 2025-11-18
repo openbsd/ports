@@ -1,11 +1,13 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
 Index: src/scripting/ecmaapi/ecmaapi.pro
 --- src/scripting/ecmaapi/ecmaapi.pro.orig
 +++ src/scripting/ecmaapi/ecmaapi.pro
-@@ -4,7 +4,6 @@ CONFIG += plugin
+@@ -1,6 +1,6 @@
+ include( ../../../shared.pri )
+ TEMPLATE = lib
+-CONFIG += plugin
++#CONFIG += plugin
  TARGET = $${RLIBNAME}ecmaapi
  CONFIG -= warn_on
  CONFIG += warn_off
--CONFIG += precompile_header
- PRECOMPILED_HEADER = stable.h
- OTHER_FILES += ecmaapi.dox
- DEFINES += QCADECMAAPI_LIBRARY

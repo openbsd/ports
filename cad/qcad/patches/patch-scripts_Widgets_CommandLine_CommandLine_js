@@ -1,7 +1,7 @@
 Index: scripts/Widgets/CommandLine/CommandLine.js
 --- scripts/Widgets/CommandLine/CommandLine.js.orig
 +++ scripts/Widgets/CommandLine/CommandLine.js
-@@ -498,6 +498,9 @@ CommandLine.init = function(basePath) {
+@@ -539,6 +539,9 @@ CommandLine.init = function(basePath) {
      case "solaris":
          system = "Solaris";
          break;
@@ -9,5 +9,5 @@ Index: scripts/Widgets/CommandLine/CommandLine.js
 +        system = "OpenBSD";
 +        break;
      }
-     EAction.handleUserMessage(
-                 "%1 %2 / Qt %3 / %4 %5"
+     var platformName = "";
+     if (RSettings.getQtVersion() >= 0x060000) {

@@ -1,0 +1,31 @@
+Must use textproc/libstemmer, because qcad links to the port if it is
+installed.
+
+Index: src/3rdparty/3rdparty.pro
+--- src/3rdparty/3rdparty.pro.orig
++++ src/3rdparty/3rdparty.pro
+@@ -1,7 +1,7 @@
+ include (../../shared.pri)
+ TEMPLATE = subdirs
+ SUBDIRS = \
+-    stemmer \
++    #stemmer \
+     legacy
+ 
+ 
+@@ -27,12 +27,12 @@ else {
+ }
+ 
+ !r_mobile {
+-    exists(qt-labs-qtscriptgenerator-$${QT_VERSION}) {
+-        SUBDIRS += qt-labs-qtscriptgenerator-$${QT_VERSION}
++    exists(qt-labs-qtscriptgenerator-5.15.16) {
++        SUBDIRS += qt-labs-qtscriptgenerator-5.15.16
+     }
+     else {
+         lessThan(QT_MAJOR_VERSION, 6) {
+-            error("Script bindings not available for Qt version $${QT_VERSION}. You can add them to src/3rdparty/qt-labs-qtscriptgenerator-$${QT_VERSION} or use another version of Qt.")
++            error("Script bindings not available for Qt version 5.15.16. You can add them to src/3rdparty/qt-labs-qtscriptgenerator-5.15.16 or use another version of Qt.")
+         }
+     }
+ }

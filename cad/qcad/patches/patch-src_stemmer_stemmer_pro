@@ -1,0 +1,22 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Must use textproc/libstemmer, because qcad links to the port if it is
+installed.
+
+Index: src/stemmer/stemmer.pro
+--- src/stemmer/stemmer.pro.orig
++++ src/stemmer/stemmer.pro
+@@ -5,11 +5,11 @@ HEADERS = \
+     RStemmer.h
+ 
+ TEMPLATE = lib
+-CONFIG += plugin
++#CONFIG += plugin
+ TARGET = $${RLIBNAME}stemmer
+ LIBS += -lstemmer
+ OTHER_FILES += stemmer.dox
+ DEFINES += QCADSTEMMER_LIBRARY
+ RC_FILE = stemmer.rc
+ 
+-POST_TARGETDEPS += $$PWD/../../$$ROUTDIR/$${RLIBPRE}stemmer$${RLIBPOST}
++#POST_TARGETDEPS += $$PWD/../../$$ROUTDIR/$${RLIBPRE}stemmer$${RLIBPOST}

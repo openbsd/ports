@@ -11,7 +11,6 @@
 @lib lib/libqcadspatialindex.so.${LIBqcadspatialindex_VERSION}
 @lib lib/libqcadstemmer.so.${LIBqcadstemmer_VERSION}
 @lib lib/libspatialindexnavel.so.${LIBspatialindexnavel_VERSION}
-@static-lib lib/libstemmer.a
 @man man/man1/qcad.1
 share/applications/qcad.desktop
 share/examples/qcad/
@@ -547,16 +546,16 @@ share/qcad/plugins/printsupport/
 @so share/qcad/plugins/printsupport/libcupsprintersupport.so
 share/qcad/plugins/printsupport/readme.txt
 share/qcad/plugins/script/
-@lib share/qcad/plugins/script/libqtscript_core.so.1.0
-@lib share/qcad/plugins/script/libqtscript_gui.so.1.0
-@lib share/qcad/plugins/script/libqtscript_network.so.1.0
-@lib share/qcad/plugins/script/libqtscript_opengl.so.1.0
-@lib share/qcad/plugins/script/libqtscript_printsupport.so.1.0
-@lib share/qcad/plugins/script/libqtscript_sql.so.1.0
-@lib share/qcad/plugins/script/libqtscript_uitools.so.1.0
-@lib share/qcad/plugins/script/libqtscript_widgets.so.1.0
-@lib share/qcad/plugins/script/libqtscript_xml.so.1.0
-@lib share/qcad/plugins/script/libqtscript_xmlpatterns.so.1.0
+@so share/qcad/plugins/script/libqtscript_core.so
+@so share/qcad/plugins/script/libqtscript_gui.so
+@so share/qcad/plugins/script/libqtscript_network.so
+@so share/qcad/plugins/script/libqtscript_opengl.so
+@so share/qcad/plugins/script/libqtscript_printsupport.so
+@so share/qcad/plugins/script/libqtscript_sql.so
+@so share/qcad/plugins/script/libqtscript_uitools.so
+@so share/qcad/plugins/script/libqtscript_widgets.so
+@so share/qcad/plugins/script/libqtscript_xml.so
+@so share/qcad/plugins/script/libqtscript_xmlpatterns.so
 share/qcad/plugins/sqldrivers/
 @so share/qcad/plugins/sqldrivers/libqsqlite.so
 share/qcad/plugins/sqldrivers/readme.txt
@@ -1735,9 +1734,19 @@ share/qcad/scripts/Draw/Arc/ArcTPR/ArcTPR.ui
 share/qcad/scripts/Draw/Arc/ArcTPR/ArcTPRInit.js
 share/qcad/scripts/Draw/Arc/ArcTPR/Tests/
 share/qcad/scripts/Draw/Arc/ArcTPR/Tests/ArcTPRTest00.js
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/ArcTPRTest01.js
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/ArcTPRTest02.js
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/ArcTPRTest03.js
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/ArcTPRTest04.js
 share/qcad/scripts/Draw/Arc/ArcTPR/Tests/actual/
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/data/
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/data/four_solutions.dxf
 share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/
 share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/ArcTPRTest00_000.dxf
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/ArcTPRTest01_000.dxf
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/ArcTPRTest02_000.dxf
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/ArcTPRTest03_000.dxf
+share/qcad/scripts/Draw/Arc/ArcTPR/Tests/required/ArcTPRTest04_000.dxf
 share/qcad/scripts/Draw/Arc/ArcTPR/doc/
 share/qcad/scripts/Draw/Arc/ArcTPR/doc/ArcTPR.png
 share/qcad/scripts/Draw/Arc/ArcTPR/doc/ArcTPR_bg.html
@@ -1820,18 +1829,32 @@ share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_ja.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_nl.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_pl.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_bg.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_cs.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_da.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_de.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_en.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_es.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_et.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_fi.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_fr.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_hu.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_id.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_it.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_ja.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_lt.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_lv.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_nl.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_pl.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_pt.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_ro.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_ru.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_sk.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_sl.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_sv.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_tr.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_uk.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_zh_CN.html
+share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_proc_zh_TW.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_pt.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_ru.html
 share/qcad/scripts/Draw/Arc/ArcTangential/doc/ArcTangential_sl.html
@@ -2167,12 +2190,14 @@ share/qcad/scripts/Draw/Circle/Circle3T/Tests/Circle3TTest00.js
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/Circle3TTest01.js
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/Circle3TTest02.js
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/Circle3TTest03.js
+share/qcad/scripts/Draw/Circle/Circle3T/Tests/Circle3TTest04.js
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/actual/
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/Circle3TTest00_000.dxf
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/Circle3TTest01_000.dxf
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/Circle3TTest02_000.dxf
 share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/Circle3TTest03_000.dxf
+share/qcad/scripts/Draw/Circle/Circle3T/Tests/required/Circle3TTest04_000.dxf
 share/qcad/scripts/Draw/Circle/Circle3T/doc/
 share/qcad/scripts/Draw/Circle/Circle3T/doc/Circle3T.png
 share/qcad/scripts/Draw/Circle/Circle3T/doc/Circle3T_bg.html
@@ -3351,59 +3376,6 @@ share/qcad/scripts/Draw/Ellipse/EllipseDD/doc/EllipseDD_pt.html
 share/qcad/scripts/Draw/Ellipse/EllipseDD/doc/EllipseDD_ru.html
 share/qcad/scripts/Draw/Ellipse/EllipseDD/doc/EllipseDD_sl.html
 share/qcad/scripts/Draw/Ellipse/EllipseDD/doc/EllipseDD_sv.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/EllipseInscribedQuad-inverse.svg
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/EllipseInscribedQuad.js
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/EllipseInscribedQuad.svg
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/EllipseInscribedQuadInit.js
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/Tests/
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/Tests/EllipseInscribedQuadTest00.js
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/Tests/actual/
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/Tests/required/
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/Tests/required/EllipseInscribedQuadTest00_000.dxf
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad.png
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_bg.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_da.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_de.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_bg.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_da.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_de.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_en.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_es.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_fr.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_it.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_ja.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_nl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_pl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_pt.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_ru.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_sl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_desc_sv.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_en.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_es.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_fr.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_it.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_ja.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_nl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_pl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_bg.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_da.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_de.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_en.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_es.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_fr.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_it.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_ja.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_nl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_pl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_pt.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_ru.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_proc_sv.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_pt.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_ru.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_sl.html
-share/qcad/scripts/Draw/Ellipse/EllipseInscribedQuad/doc/EllipseInscribedQuad_sv.html
 share/qcad/scripts/Draw/Ellipse/EllipseOffset/
 share/qcad/scripts/Draw/Ellipse/EllipseOffset/EllipseOffset-inverse.svg
 share/qcad/scripts/Draw/Ellipse/EllipseOffset/EllipseOffset.js
@@ -4607,10 +4579,14 @@ share/qcad/scripts/Draw/Polyline/DrawPolyline/Redo.svg
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/DrawPolylineTest00.js
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/DrawPolylineTest01.js
+share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/DrawPolylineTest02.js
+share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/DrawPolylineTest03.js
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/actual/
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/required/
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/required/DrawPolylineTest00_000.dxf
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/required/DrawPolylineTest01_000.dxf
+share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/required/DrawPolylineTest02_000.dxf
+share/qcad/scripts/Draw/Polyline/DrawPolyline/Tests/required/DrawPolylineTest03_000.dxf
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Undo-inverse.svg
 share/qcad/scripts/Draw/Polyline/DrawPolyline/Undo.svg
 share/qcad/scripts/Draw/Polyline/DrawPolyline/doc/
@@ -4915,10 +4891,42 @@ share/qcad/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePPInit.js
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest00.js
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest01.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest02.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest03.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest04.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest05.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest06.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest07.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest08.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest09.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest10.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest11.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest12.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest13.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest14.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest15.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest16.js
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest17.js
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/actual/
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest00_000.dxf
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest01_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest02_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest03_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest04_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest05_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest06_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest07_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest08_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest09_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest10_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest11_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest12_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest13_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest14_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest15_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest16_000.dxf
+share/qcad/scripts/Draw/Shape/ShapeRectanglePP/Tests/required/ShapeRectanglePPTest17_000.dxf
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/doc/
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/doc/ShapeRectanglePP.png
 share/qcad/scripts/Draw/Shape/ShapeRectanglePP/doc/ShapeRectanglePP_bg.html
@@ -7819,6 +7827,9 @@ share/qcad/scripts/Misc/Examples/ExMinimal2/ExMinimal2.js
 share/qcad/scripts/Misc/Examples/ExMinimal2/ExMinimal2.ui
 share/qcad/scripts/Misc/Examples/Examples.js
 share/qcad/scripts/Misc/Examples/IOExamples/
+share/qcad/scripts/Misc/Examples/IOExamples/ExCsvExport/
+share/qcad/scripts/Misc/Examples/IOExamples/ExCsvExport/ExCsvExport.js
+share/qcad/scripts/Misc/Examples/IOExamples/ExCsvExport/ExCsvExportInit.js
 share/qcad/scripts/Misc/Examples/IOExamples/ExDumpPolyline/
 share/qcad/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ExDumpPolyline.js
 share/qcad/scripts/Misc/Examples/IOExamples/ExDumpPolyline/points.txt
@@ -8207,6 +8218,8 @@ share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroids.svg
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/InfoCentroidsListener.js
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/InfoCentroidsListener.svg
+share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/InfoCentroidsListenerActive.svg
+share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/InfoCentroidsListenerInactive.svg
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoCentroidsListener/InfoCentroidsListenerInit.js
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoSumCentroidsWeighted/
 share/qcad/scripts/Misc/MiscInformation/InfoCentroids/InfoSumCentroidsWeighted/InfoSumCentroidsWeighted-inverse.svg
@@ -8236,9 +8249,12 @@ share/qcad/scripts/Misc/MiscSelect/
 share/qcad/scripts/Misc/MiscSelect/MiscSelect.js
 share/qcad/scripts/Misc/MiscSelect/SelectByColor/
 share/qcad/scripts/Misc/MiscSelect/SelectByColor/SelectByColor.js
+share/qcad/scripts/Misc/MiscSelect/SelectByColor/SelectByColor.svg
 share/qcad/scripts/Misc/MiscSelect/SelectByColor/SelectByColorInit.js
 share/qcad/scripts/Misc/MiscSelect/SelectByHandle/
+share/qcad/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandle-inverse.svg
 share/qcad/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandle.js
+share/qcad/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandle.svg
 share/qcad/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandleDialog.ui
 share/qcad/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandleInit.js
 share/qcad/scripts/Misc/MiscSelect/dir/
@@ -8260,6 +8276,7 @@ share/qcad/scripts/Misc/Tutorials/CommandLineTools/LaunchCommandLineTool/LaunchC
 share/qcad/scripts/Misc/Tutorials/CommandLineTools/dir/
 share/qcad/scripts/Misc/Tutorials/CreatingNewTool/
 share/qcad/scripts/Misc/Tutorials/CreatingNewTool/CreatingNewTool.dox
+share/qcad/scripts/Misc/Tutorials/CreatingNewTool/ExThreePoints.js
 share/qcad/scripts/Misc/Tutorials/ImportantClasses.dox
 share/qcad/scripts/Misc/Tutorials/LibraryBrowserScripts/
 share/qcad/scripts/Misc/Tutorials/LibraryBrowserScripts/CubeCuttingOut.js
@@ -8281,14 +8298,13 @@ share/qcad/scripts/Misc/Tutorials/Tutorials.js
 share/qcad/scripts/Misc/Tutorials/dir/
 share/qcad/scripts/Misc/dir/
 share/qcad/scripts/Misc/doc/
-share/qcad/scripts/Misc/doc/Examples_de.html
-share/qcad/scripts/Misc/doc/Examples_en.html
-share/qcad/scripts/Misc/doc/Examples_ja.html
 share/qcad/scripts/Misc/doc/Misc.png
 share/qcad/scripts/Misc/doc/Misc_da.html
 share/qcad/scripts/Misc/doc/Misc_de.html
 share/qcad/scripts/Misc/doc/Misc_en.html
+share/qcad/scripts/Misc/doc/Misc_es.html
 share/qcad/scripts/Misc/doc/Misc_ja.html
+share/qcad/scripts/Misc/doc/Misc_pl.html
 share/qcad/scripts/Misc/doc/Misc_ru.html
 share/qcad/scripts/Misc/doc/Misc_sl.html
 share/qcad/scripts/Modify/
@@ -9263,6 +9279,8 @@ share/qcad/scripts/Modify/OffsetThrough/OffsetThrough.ui
 share/qcad/scripts/Modify/OffsetThrough/OffsetThroughInit.js
 share/qcad/scripts/Modify/OffsetThrough/doc/
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough.png
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_bg.html
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_da.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_de.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_desc_bg.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_desc_da.html
@@ -9283,6 +9301,8 @@ share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_es.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_fr.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_it.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_ja.html
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_nl.html
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_pl.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_bg.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_da.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_de.html
@@ -9297,7 +9317,9 @@ share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_pt.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_ru.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_proc_sv.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_pt.html
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_ru.html
 share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_sl.html
+share/qcad/scripts/Modify/OffsetThrough/doc/OffsetThrough_sv.html
 share/qcad/scripts/Modify/Reverse/
 share/qcad/scripts/Modify/Reverse/Reverse-inverse.svg
 share/qcad/scripts/Modify/Reverse/Reverse.js
@@ -9788,6 +9810,7 @@ share/qcad/scripts/Modify/Translate/doc/Translate_ru.html
 share/qcad/scripts/Modify/Translate/doc/Translate_sl.html
 share/qcad/scripts/Modify/Translate/doc/Translate_sv.html
 share/qcad/scripts/Modify/TranslateRotate/
+share/qcad/scripts/Modify/TranslateRotate/PreferencesPage.ui
 share/qcad/scripts/Modify/TranslateRotate/Tests/
 share/qcad/scripts/Modify/TranslateRotate/Tests/TranslateRotateTest00.js
 share/qcad/scripts/Modify/TranslateRotate/Tests/TranslateRotateTest01.js
@@ -9806,6 +9829,7 @@ share/qcad/scripts/Modify/TranslateRotate/TranslateRotate.ui
 share/qcad/scripts/Modify/TranslateRotate/TranslateRotateDialog.svg
 share/qcad/scripts/Modify/TranslateRotate/TranslateRotateDialog.ui
 share/qcad/scripts/Modify/TranslateRotate/TranslateRotateInit.js
+share/qcad/scripts/Modify/TranslateRotate/TranslateRotateNoDialog.ui
 share/qcad/scripts/Modify/TranslateRotate/doc/
 share/qcad/scripts/Modify/TranslateRotate/doc/TranslateRotate.png
 share/qcad/scripts/Modify/TranslateRotate/doc/TranslateRotateDialog.png
@@ -11926,24 +11950,6 @@ share/qcad/scripts/View/LinetypeMode/doc/LinetypeMode_pt.html
 share/qcad/scripts/View/LinetypeMode/doc/LinetypeMode_ru.html
 share/qcad/scripts/View/LinetypeMode/doc/LinetypeMode_sl.html
 share/qcad/scripts/View/LinetypeMode/doc/LinetypeMode_sv.html
-share/qcad/scripts/View/OptionsToolBarFocus/
-share/qcad/scripts/View/OptionsToolBarFocus/OptionsToolBarFocus.js
-share/qcad/scripts/View/OptionsToolBarFocus/OptionsToolBarFocusInit.js
-share/qcad/scripts/View/OptionsToolBarFocus/doc/
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_bg.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_da.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_de.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_en.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_es.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_fr.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_it.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_ja.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_nl.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_pl.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_pt.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_ru.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_sl.html
-share/qcad/scripts/View/OptionsToolBarFocus/doc/OptionsToolBarFocus_sv.html
 share/qcad/scripts/View/ShowToolDialog/
 share/qcad/scripts/View/ShowToolDialog/ShowToolDialog.js
 share/qcad/scripts/View/ToggleGrid/
@@ -12480,6 +12486,7 @@ share/qcad/scripts/Widgets/LayerList/layerstatus_11-inverse.svg
 share/qcad/scripts/Widgets/LayerList/layerstatus_11.svg
 share/qcad/scripts/Widgets/MenuBar/
 share/qcad/scripts/Widgets/MenuBar/MenuBar.js
+share/qcad/scripts/Widgets/MenuBar/MenuBarInit.js
 share/qcad/scripts/Widgets/MenuBar/PreferencesPage.ui
 share/qcad/scripts/Widgets/MouseDisplay/
 share/qcad/scripts/Widgets/MouseDisplay/Mouse-inverse.svg
@@ -12712,6 +12719,7 @@ share/qcad/scripts/lib/sprintf2/sprintf2.js
 share/qcad/scripts/library.js
 share/qcad/scripts/map.js
 share/qcad/scripts/mimetype.png
+share/qcad/scripts/org.qcad.QCAD.png
 share/qcad/scripts/qcad_icon.png
 share/qcad/scripts/qcad_icon.svg
 share/qcad/scripts/scripts.dox
@@ -12887,13 +12895,17 @@ share/qcad/ts/assistant_de.qm
 share/qcad/ts/assistant_en.qm
 share/qcad/ts/assistant_es.qm
 share/qcad/ts/assistant_fr.qm
+share/qcad/ts/assistant_hr.qm
 share/qcad/ts/assistant_hu.qm
 share/qcad/ts/assistant_ja.qm
 share/qcad/ts/assistant_ko.qm
+share/qcad/ts/assistant_nl.qm
 share/qcad/ts/assistant_pl.qm
+share/qcad/ts/assistant_pt_BR.qm
 share/qcad/ts/assistant_ru.qm
 share/qcad/ts/assistant_sk.qm
 share/qcad/ts/assistant_sl.qm
+share/qcad/ts/assistant_tr.qm
 share/qcad/ts/assistant_uk.qm
 share/qcad/ts/assistant_zh_CN.qm
 share/qcad/ts/assistant_zh_TW.qm
@@ -12905,13 +12917,16 @@ share/qcad/ts/designer_de.qm
 share/qcad/ts/designer_en.qm
 share/qcad/ts/designer_es.qm
 share/qcad/ts/designer_fr.qm
+share/qcad/ts/designer_hr.qm
 share/qcad/ts/designer_hu.qm
 share/qcad/ts/designer_ja.qm
 share/qcad/ts/designer_ko.qm
+share/qcad/ts/designer_nl.qm
 share/qcad/ts/designer_pl.qm
 share/qcad/ts/designer_ru.qm
 share/qcad/ts/designer_sk.qm
 share/qcad/ts/designer_sl.qm
+share/qcad/ts/designer_tr.qm
 share/qcad/ts/designer_uk.qm
 share/qcad/ts/designer_zh_CN.qm
 share/qcad/ts/designer_zh_TW.qm
@@ -12923,13 +12938,18 @@ share/qcad/ts/linguist_de.qm
 share/qcad/ts/linguist_en.qm
 share/qcad/ts/linguist_es.qm
 share/qcad/ts/linguist_fr.qm
+share/qcad/ts/linguist_hr.qm
 share/qcad/ts/linguist_hu.qm
+share/qcad/ts/linguist_it.qm
 share/qcad/ts/linguist_ja.qm
 share/qcad/ts/linguist_ko.qm
+share/qcad/ts/linguist_nl.qm
 share/qcad/ts/linguist_pl.qm
 share/qcad/ts/linguist_ru.qm
 share/qcad/ts/linguist_sk.qm
 share/qcad/ts/linguist_sl.qm
+share/qcad/ts/linguist_sv.qm
+share/qcad/ts/linguist_tr.qm
 share/qcad/ts/linguist_uk.qm
 share/qcad/ts/linguist_zh_CN.qm
 share/qcad/ts/linguist_zh_TW.qm
@@ -13056,10 +13076,12 @@ share/qcad/ts/qt_es.qm
 share/qcad/ts/qt_fa.qm
 share/qcad/ts/qt_fi.qm
 share/qcad/ts/qt_fr.qm
+share/qcad/ts/qt_gd.qm
 share/qcad/ts/qt_gl.qm
 share/qcad/ts/qt_he.qm
 share/qcad/ts/qt_help_ar.qm
 share/qcad/ts/qt_help_bg.qm
+share/qcad/ts/qt_help_ca.qm
 share/qcad/ts/qt_help_cs.qm
 share/qcad/ts/qt_help_da.qm
 share/qcad/ts/qt_help_de.qm
@@ -13067,28 +13089,40 @@ share/qcad/ts/qt_help_en.qm
 share/qcad/ts/qt_help_es.qm
 share/qcad/ts/qt_help_fr.qm
 share/qcad/ts/qt_help_gl.qm
+share/qcad/ts/qt_help_hr.qm
 share/qcad/ts/qt_help_hu.qm
 share/qcad/ts/qt_help_it.qm
 share/qcad/ts/qt_help_ja.qm
 share/qcad/ts/qt_help_ko.qm
+share/qcad/ts/qt_help_nl.qm
+share/qcad/ts/qt_help_nn.qm
 share/qcad/ts/qt_help_pl.qm
+share/qcad/ts/qt_help_pt_BR.qm
 share/qcad/ts/qt_help_ru.qm
 share/qcad/ts/qt_help_sk.qm
 share/qcad/ts/qt_help_sl.qm
+share/qcad/ts/qt_help_tr.qm
 share/qcad/ts/qt_help_uk.qm
 share/qcad/ts/qt_help_zh_CN.qm
 share/qcad/ts/qt_help_zh_TW.qm
+share/qcad/ts/qt_hr.qm
 share/qcad/ts/qt_hu.qm
 share/qcad/ts/qt_it.qm
 share/qcad/ts/qt_ja.qm
 share/qcad/ts/qt_ko.qm
 share/qcad/ts/qt_lt.qm
+share/qcad/ts/qt_lv.qm
+share/qcad/ts/qt_nl.qm
+share/qcad/ts/qt_nn.qm
 share/qcad/ts/qt_pl.qm
 share/qcad/ts/qt_pt.qm
+share/qcad/ts/qt_pt_BR.qm
+share/qcad/ts/qt_pt_PT.qm
 share/qcad/ts/qt_ru.qm
 share/qcad/ts/qt_sk.qm
 share/qcad/ts/qt_sl.qm
 share/qcad/ts/qt_sv.qm
+share/qcad/ts/qt_tr.qm
 share/qcad/ts/qt_uk.qm
 share/qcad/ts/qt_zh_CN.qm
 share/qcad/ts/qt_zh_TW.qm
@@ -13100,22 +13134,28 @@ share/qcad/ts/qtbase_da.qm
 share/qcad/ts/qtbase_de.qm
 share/qcad/ts/qtbase_en.qm
 share/qcad/ts/qtbase_es.qm
+share/qcad/ts/qtbase_fa.qm
 share/qcad/ts/qtbase_fi.qm
 share/qcad/ts/qtbase_fr.qm
 share/qcad/ts/qtbase_gd.qm
 share/qcad/ts/qtbase_he.qm
+share/qcad/ts/qtbase_hr.qm
 share/qcad/ts/qtbase_hu.qm
 share/qcad/ts/qtbase_it.qm
 share/qcad/ts/qtbase_ja.qm
 share/qcad/ts/qtbase_ko.qm
 share/qcad/ts/qtbase_lv.qm
 share/qcad/ts/qtbase_nl.qm
+share/qcad/ts/qtbase_nn.qm
 share/qcad/ts/qtbase_pl.qm
 share/qcad/ts/qtbase_pt.qm
+share/qcad/ts/qtbase_pt_BR.qm
 share/qcad/ts/qtbase_ru.qm
 share/qcad/ts/qtbase_sk.qm
+share/qcad/ts/qtbase_tr.qm
 share/qcad/ts/qtbase_uk.qm
 share/qcad/ts/qtbase_zh_CN.qm
+share/qcad/ts/qtbase_zh_TW.qm
 share/qcad/ts/qtconfig_hu.qm
 share/qcad/ts/qtconfig_ja.qm
 share/qcad/ts/qtconfig_ko.qm

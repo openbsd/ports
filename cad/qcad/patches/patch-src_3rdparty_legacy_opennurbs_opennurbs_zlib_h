@@ -1,0 +1,15 @@
+Use base zlib.  A future version of qcad might need this patch moved
+from 3rdparty/legacy/opennurbs to 3rdparty/opennurbs.
+
+Index: src/3rdparty/legacy/opennurbs/opennurbs_zlib.h
+--- src/3rdparty/legacy/opennurbs/opennurbs_zlib.h.orig
++++ src/3rdparty/legacy/opennurbs/opennurbs_zlib.h
+@@ -39,7 +39,7 @@
+ #endif
+ 
+ extern "C" {
+-#include "./zlib/zlib.h"
++#include <zlib.h>
+ }
+ 
+ ON_BEGIN_EXTERNC

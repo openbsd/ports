@@ -1,6 +1,9 @@
-Index: src/3rdparty/opennurbs/opennurbs_zlib.cpp
---- src/3rdparty/opennurbs/opennurbs_zlib.cpp.orig
-+++ src/3rdparty/opennurbs/opennurbs_zlib.cpp
+Use base zlib.  A future version of qcad might need this patch moved
+from 3rdparty/legacy/opennurbs to 3rdparty/opennurbs.
+
+Index: src/3rdparty/legacy/opennurbs/opennurbs_zlib.cpp
+--- src/3rdparty/legacy/opennurbs/opennurbs_zlib.cpp.orig
++++ src/3rdparty/legacy/opennurbs/opennurbs_zlib.cpp
 @@ -293,11 +293,11 @@ size_t ON_BinaryArchive::WriteDeflate( // returns numb
        // no uncompressed input is left - switch to finish mode
        flush = Z_FINISH;

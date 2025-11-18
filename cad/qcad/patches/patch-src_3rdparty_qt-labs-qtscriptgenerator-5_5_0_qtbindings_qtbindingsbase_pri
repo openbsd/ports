@@ -1,3 +1,6 @@
+Build plugins/script/libqtscript_*.so as plugins (without a version
+number) and only for release.
+
 Index: src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri
 --- src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri.orig
 +++ src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri
@@ -6,6 +9,6 @@ Index: src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pr
  QT += script
  #CONFIG += plugin release build_all
 -CONFIG += debug_and_release
-+CONFIG += release
++CONFIG += plugin release
  GENERATEDCPP = $$PWD/../generated_cpp
  TARGET=$$qtLibraryTarget($$TARGET)

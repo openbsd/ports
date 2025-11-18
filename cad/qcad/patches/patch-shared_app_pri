@@ -10,3 +10,14 @@ Index: shared_app.pri
  }
  
  win32 {
+@@ -45,6 +45,10 @@ linux-g++ {
+ 
+ freebsd-* {
+     LIBS += -lGLU -lexecinfo
++}
++
++openbsd {
++    LIBS += -lexecinfo
+ }
+ 
+ macx {

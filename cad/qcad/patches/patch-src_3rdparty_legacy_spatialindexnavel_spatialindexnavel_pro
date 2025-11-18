@@ -1,0 +1,14 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Index: src/3rdparty/legacy/spatialindexnavel/spatialindexnavel.pro
+--- src/3rdparty/legacy/spatialindexnavel/spatialindexnavel.pro.orig
++++ src/3rdparty/legacy/spatialindexnavel/spatialindexnavel.pro
+@@ -6,7 +6,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ 
+ # this is required to compile the spatial index library from navel ltd:

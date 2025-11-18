@@ -1,0 +1,14 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Index: src/spatialindex/spatialindex.pro
+--- src/spatialindex/spatialindex.pro.orig
++++ src/spatialindex/spatialindex.pro
+@@ -11,7 +11,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ TARGET = $${RLIBNAME}spatialindex
+ LIBS += -l$${RLIBNAME}core -lspatialindexnavel

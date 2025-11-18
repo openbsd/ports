@@ -1,9 +1,0 @@
-Index: src/3rdparty/opennurbs/opennurbs.pro
---- src/3rdparty/opennurbs/opennurbs.pro.orig
-+++ src/3rdparty/opennurbs/opennurbs.pro
-@@ -1,5 +1,4 @@
- include (../../../shared.pri)
- TEMPLATE = subdirs
- SUBDIRS = \
--    zlib \
-     opennurbs

@@ -1,0 +1,14 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Index: src/entity/entity.pro
+--- src/entity/entity.pro.orig
++++ src/entity/entity.pro
+@@ -135,7 +135,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ NAME = $${RLIBNAME}entity
+ TARGET = $${NAME}

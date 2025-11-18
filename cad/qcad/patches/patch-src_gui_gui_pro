@@ -1,0 +1,14 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Index: src/gui/gui.pro
+--- src/gui/gui.pro.orig
++++ src/gui/gui.pro
+@@ -96,7 +96,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ 
+ LIBS += -l$${RLIBNAME}core -l$${RLIBNAME}entity

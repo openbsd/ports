@@ -2,9 +2,9 @@ COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.28.2.2
+GH_TAGNAME =	v3.32.4.0
 
-SO_VERSION =	2.0
+SO_VERSION =	3.0
 QCAD_LIBS =	qcadcore \
 		qcadecmaapi \
 		qcadentity \
@@ -31,7 +31,8 @@ PERMIT_PACKAGE =Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
 WANTLIB += Qt5Script Qt5ScriptTools Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 stemmer tiff z
+WANTLIB += Qt5XmlPatterns c cups execinfo jpeg m sqlite3 stemmer
+WANTLIB += tiff z
 
 MODULES =	devel/qmake \
 		x11/qt5
@@ -39,8 +40,7 @@ MODULES =	devel/qmake \
 BUILD_DEPENDS =	sysutils/e2fsprogs \
 		x11/qt5/qtimageformats
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/qt5/qtwebengine
+RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	print/cups,-libs \
 		textproc/libstemmer \
@@ -63,17 +63,11 @@ pre-configure:
 	cp ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.15.3/qt-labs-qtscriptgenerator-5.15.3.pro \
            ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${MODQT5_VERSION}/qt-labs-qtscriptgenerator-${MODQT5_VERSION}.pro
 	${SUBST_CMD} ${WRKSRC}/src/core/RS.cpp \
-		${WRKSRC}/src/core/RSettings.cpp \
-		${WRKSRC}/scripts/Help/ShowReadme/ShowReadme.js
-
+		${WRKSRC}/src/core/RSettings.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/qcad-bin ${PREFIX}/bin/qcad
-.for _lib in ${QCAD_LIBS}
-	${INSTALL_DATA} ${WRKSRC}/release/lib${_lib}.so \
-		${PREFIX}/lib/lib${_lib}.so.${SO_VERSION}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/release/*.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/release/*.{a,so.*} ${PREFIX}/lib/
 	${INSTALL_MAN} ${WRKSRC}/qcad.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/qcad.desktop ${PREFIX}/share/applications
@@ -81,7 +75,9 @@ do-install:
 .for dir in fonts libraries linetypes patterns plugins scripts themes ts
 	cp -Rp ${WRKSRC}/${dir} ${PREFIX}/share/qcad/
 .endfor
-	find ${PREFIX} \( -name .gitignore -or -name *.pr[io] -or -name *.ts \) -delete
+	find ${PREFIX} \( -name .gitignore -or \
+		-name '*.orig.port' -or -name '*.pr[io]' -or \
+		-name '*.ts' \) -delete
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcad
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/scripts/qcad_icon.png \

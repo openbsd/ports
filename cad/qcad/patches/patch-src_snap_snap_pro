@@ -1,0 +1,14 @@
+CONFIG -= plugin if shared_app.pri links to it.
+
+Index: src/snap/snap.pro
+--- src/snap/snap.pro.orig
++++ src/snap/snap.pro
+@@ -42,7 +42,7 @@ r_static_libs {
+     CONFIG += staticlib
+ }
+ else {
+-    CONFIG += plugin
++    #CONFIG += plugin
+ }
+ TARGET = $${RLIBNAME}snap
+ LIBS += -l$${RLIBNAME}core -l$${RLIBNAME}grid -l$${RLIBNAME}entity
