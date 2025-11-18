@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	25.10.0
+GH_TAGNAME=	25.11.0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
@@ -113,7 +113,7 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	cd ${WRKDIST:C,^.*/,,}; \
 	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php \
 	    app/ConfigRepository.php; \
-	${COMPOSER} install --no-dev; \
+	${COMPOSER} install --no-dev --no-scripts; \
 	echo tarring; tar cf - vendor | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	cd -; rm -rf $$t

@@ -1,7 +1,7 @@
 Index: LibreNMS/Exceptions/UnserializableRouteCache.php
 --- LibreNMS/Exceptions/UnserializableRouteCache.php.orig
 +++ LibreNMS/Exceptions/UnserializableRouteCache.php
-@@ -51,7 +51,7 @@ class UnserializableRouteCache extends \Exception impl
+@@ -46,7 +46,7 @@ class UnserializableRouteCache extends \Exception impl
      {
          $errorMessage = "Erroneous data format for unserializing 'Symfony\Component\Routing\CompiledRoute'";
          if ($exception instanceof \ErrorException && $exception->message == $errorMessage) {

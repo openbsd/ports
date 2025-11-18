@@ -9,6 +9,6 @@ Index: app/ConfigRepository.php
          if (! Str::contains($binary, '/')) {
 -            $output = `whereis -b $binary`;
 +            $output = `whereis $binary`;
-             $list = trim(substr($output, strpos($output, ':') + 1));
+             $list = trim(substr((string) $output, strpos((string) $output, ':') + 1));
              $targets = explode(' ', $list);
              foreach ($targets as $target) {

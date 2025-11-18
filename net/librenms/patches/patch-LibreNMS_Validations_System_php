@@ -7,9 +7,9 @@ Index: LibreNMS/Validations/System.php
      {
          $install_dir = $validator->getBaseDir();
  
--        $lnms = str_replace('lnms:', '', rtrim(`whereis -b lnms 2>/dev/null`));
-+        $lnms = str_replace('lnms:', '', rtrim(`whereis lnms 2>/dev/null`));
-         $path = rtrim(`echo "\$PATH"`);
+-        $lnms = str_replace('lnms:', '', rtrim((string) `whereis -b lnms 2>/dev/null`));
++        $lnms = str_replace('lnms:', '', rtrim((string) `whereis lnms 2>/dev/null`));
+         $path = rtrim((string) `echo "\$PATH"`);
  
          // if couldn't find lnms and we have PATH
 @@ -56,7 +56,7 @@ class System extends BaseValidation
