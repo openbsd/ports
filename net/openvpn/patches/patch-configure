@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19578,7 +19578,7 @@ else
+@@ -20929,7 +20929,7 @@ else
  fi
  
  
