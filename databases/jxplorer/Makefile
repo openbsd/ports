@@ -3,7 +3,7 @@ COMMENT=	standards compliant LDAP browser
 V=		3.2
 DISTNAME=	JXv${V}deploy
 PKGNAME=	jxplorer-${V}
-REVISION=	13
+REVISION=	14
 EXTRACT_SUFX=	.zip
 CATEGORIES=	databases net
 
@@ -16,7 +16,7 @@ SITES=		${SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 
 RUN_DEPENDS=	java/javaPathHelper
 
