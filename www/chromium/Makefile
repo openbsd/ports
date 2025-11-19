@@ -12,9 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			142.0.7444.162
-
-REVISION=		0
+V=			142.0.7444.175
 
 DISTNAME=		chromium-${V}
 
@@ -22,7 +20,7 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 DISTFILES.a=		${REGRESS_DISTFILES.a}
 
-CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
+CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
@@ -272,6 +270,7 @@ post-patch:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
+		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
 		${WRKSRC}/v8/tools/run.py \
@@ -283,6 +282,12 @@ post-patch:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	@( \
+		echo "#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
+		echo "#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
+		echo "#define DAWN_COMMIT_HASH \"$$(cat ${WRKSRC}/gpu/webgpu/DAWN_VERSION)\"" ;\
+		echo "#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_" \
+	) > ${WRKSRC}/gpu/webgpu/dawn_commit_hash.h
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC}/media/ffmpeg && \
