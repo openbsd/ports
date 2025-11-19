@@ -10,3 +10,15 @@ Index: meson.build
  utmp_has_host_field = cc.has_member(utmp_struct, 'ut_host', prefix: utmp_include)
  utmp_has_pid_field = cc.has_member(utmp_struct, 'ut_pid', prefix: utmp_include)
  utmp_has_id_field = cc.has_member(utmp_struct, 'ut_id', prefix: utmp_include)
+@@ -240,6 +240,11 @@ if dconf_dep.found()
+ else
+   dconf_sysconfig = gdm_prefix / get_option('sysconfdir')
+   dconf_datadir = gdm_prefix / get_option('datadir')
++endif
++
++# SYSCONFDIR is never under /usr/local on OpenBSD
++if host_machine.system() == 'openbsd'
++  dconf_sysconfig = get_option('sysconfdir')
+ endif
+ 
+ dconf_profiles_path = dconf_datadir / 'dconf' / 'profile'
