@@ -19,7 +19,7 @@ Index: filters/Makefile.in
  all: all-am
  
  .SUFFIXES:
-@@ -495,8 +495,8 @@ uninstall-man: uninstall-man3
+@@ -496,8 +496,8 @@ uninstall-man: uninstall-man3
  
  # CLEANFILES = $(man_MANS)
  

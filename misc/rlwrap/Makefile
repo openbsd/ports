@@ -1,6 +1,6 @@
 COMMENT=	generic readline wrapper for various programs
 
-V =		0.47.1
+V =		0.48
 DISTNAME=	rlwrap-$V
 CATEGORIES=	misc
 
@@ -17,9 +17,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-TEST_IS_INTERACTIVE=	Yes
-
-do-test:
-	cd ${WRKSRC} && HOME=${WRKDIR} src/rlwrap perl test/testclient
+# doesn't work well under ports infrastructure; doesn't respond to
+# input correctly and is hard to kill. to run manually;
+#   cd `make show=WRKSRC`; src/rlwrap perl test/testclient
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
