@@ -1,12 +1,7 @@
-# missing landing pads and xonly violations in aws-lc-{rs,sys}
-USE_NOBTCFI =		Yes
-USE_NOEXECONLY =	Yes
-
 COMMENT =		Spotify client running as UNIX daemon
 GH_ACCOUNT =		Spotifyd
 GH_PROJECT =		spotifyd
-GH_TAGNAME =		v0.4.1
-REVISION =		1
+GH_TAGNAME =		v0.4.2
 CATEGORIES =		audio net
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
@@ -20,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 
 # uses pledge()
-WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
+WANTLIB =		${MODCARGO_WANTLIB} crypto dbus-1 m portaudio ssl
 
 MODULES =		devel/cargo \
 			lang/clang
