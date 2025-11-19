@@ -1,3 +1,6 @@
+@pkgpath misc/openhab-addons
+@option is-branch
+@conflict openhab-addons-*
 libexec/openhab/
 libexec/openhab/addons/
 libexec/openhab/addons/openhab-addons-${V}.kar

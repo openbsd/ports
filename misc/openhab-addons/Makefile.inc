@@ -1,0 +1,30 @@
+COMMENT=	addons for openHAB
+
+V=		${OH_VERSION}
+DISTNAME=	openhab-addons-${V}
+
+CATEGORIES=	misc
+
+HOMEPAGE=	https://www.openhab.org/
+
+MAINTAINER=	Chaz Kettleson <chaz@pyr3x.com>
+
+# EPL-2.0
+PERMIT_PACKAGE=	Yes
+
+SITES=		https://github.com/openhab/openhab-distro/releases/download/${V}/
+EXTRACT_SUFX=	.kar
+EXTRACT_ONLY=
+
+DESCR=		${.CURDIR}/../pkg/DESCR
+
+NO_BUILD=	Yes
+NO_TEST=	Yes
+
+SUBST_VARS=	V
+
+do-install:
+	${SUBST_DATA} ${.CURDIR}/../pkg/README \
+		${WRKINST}${LOCALBASE}/share/doc/pkg-readmes/${PKGSTEM}
+	${INSTALL_DATA_DIR} ${PREFIX}/libexec/openhab/addons/
+	cp ${FULLDISTDIR}/${ALL_DISTFILES} ${PREFIX}/libexec/openhab/addons/
