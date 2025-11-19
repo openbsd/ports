@@ -3,3 +3,5 @@ lib/tcl/sqlite3/
 @so lib/tcl/sqlite3/libsqlite${VER}.so
 lib/tcl/sqlite3/pkgIndex.tcl
 @man man/mann/sqlite3.n
+share/examples/sqlite3-tcl/
+share/examples/sqlite3-tcl/sqlite3_analyzer

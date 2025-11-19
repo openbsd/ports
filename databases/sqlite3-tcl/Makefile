@@ -1,12 +1,12 @@
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.46.1
-VER =			${V:S/.//g}
+V =			3.51.0
 
-DISTNAME =		sqlite-autoconf-${VER:C/.$/0\0/}00
+DISTNAME =		sqlite${V}
 PKGNAME =		sqlite3-tcl-${V}
+
 CATEGORIES =		databases
-HOMEPAGE =		http://www.sqlite.org/
+HOMEPAGE =		https://cyqlite.sourceforge.io/cgi-bin/sqlite/home
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # PD
@@ -14,9 +14,13 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-SITES =			${HOMEPAGE}2024/
+SITES =			${SITE_SOURCEFORGE:=tcl/}
+
+DISTFILES =		tclsqlite{sqlite}${V}${EXTRACT_SUFX}
 
 MODULES =		lang/tcl
+MODTCL_VERSION =	8.6
+
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 
@@ -25,26 +29,32 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
-			--libdir=${MODTCL_TCLDIR}
-
-NO_TEST =		Yes
+			--libdir=${MODTCL_TCLDIR} \
+			--bindir=${PREFIX}/share/examples/sqlite3-tcl
 
 CFLAGS +=		-DSQLITE_ENABLE_API_ARMOR=1 \
-			-DSQLITE_ENABLE_COLUMN_METADATA=1 \
 			-DSQLITE_ENABLE_EXPLAIN_COMMENTS=1 \
-			-DSQLITE_ENABLE_FTS3_PARENTHESIS=1 \
-			-DSQLITE_ENABLE_JSON1=1 \
 			-DSQLITE_ENABLE_PREUPDATE_HOOK=1 \
 			-DSQLITE_ENABLE_SESSION=1 \
 			-DSQLITE_ENABLE_UNLOCK_NOTIFY=1 \
 			-DSQLITE_DQS=0 \
 			-DSQLITE_HAVE_ISNAN=1 \
-			-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1 \
-			-DSQLITE_MAX_ALLOCATION_SIZE=0x00fffeff \
-			-DSQLITE_SOUNDEX=1 \
-			-DSQLITE_STRICT_SUBTYPE=1
+			-DSQLITE_MAX_ALLOCATION_SIZE=0x00fffeff
 
-WRKSRC =		${WRKDIST}/tea
+CFLAGS +=		-USQLITE_ENABLE_OFFSET_SQL_FUNC \
+			-USQLITE_ENABLE_STAT4 \
+			-USQLITE_OMIT_LOOKASIDE \
+			-USQLITE_SECURE_DELETE \
+			-USQLITE_UNTESTABLE \
+			-USQLITE_USE_ALLOCA
+
+TEST_TARGET =		test
+
 SUBST_VARS =		VER
+
+VER =			${V:S/.//g}
+
+pre-configure:
+	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/compat/sqlite3/spaceanal.tcl
 
 .include <bsd.port.mk>
