@@ -1,8 +1,7 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		8.37.0
+MODPY_DISTV =		9.7.0
 DISTNAME =		ipython-${MODPY_DISTV}
-PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_DISTV}
 
 CATEGORIES =		devel
 
@@ -26,12 +25,12 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-stack_data \
 			devel/py-traitlets>=5.13.0 \
 			graphics/py-matplotlib-inline \
+			textproc/py-ipython_pygments_lexers \
 			textproc/py-pygments>=2.4.0
 
 # Note that if you have pdb++ installed, tests will fail.
 # Could benefit from having jupyter_ai
-TEST_DEPENDS =		databases/py-pickleshare \
-			devel/py-ipykernel \
+TEST_DEPENDS =		devel/py-ipykernel \
 			devel/py-curio \
 			devel/py-nbformat \
 			devel/py-testpath \
@@ -56,7 +55,10 @@ post-install:
 		${APPS_DIR}/ipython.desktop
 
 pre-build:
-	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
+	${SUBST_CMD} ${WRKBUILD}/tests/test_interactiveshell.py
 	${SUBST_CMD} ${WRKBUILD}/examples/IPython\ Kernel/ipython.desktop
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
