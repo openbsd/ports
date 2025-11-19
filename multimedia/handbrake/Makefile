@@ -1,6 +1,7 @@
 COMMENT =	open source video transcoder
 
 V =		1.10.2
+REVISION =	0
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
 EXTRACT_SUFX =	.tar.bz2
@@ -30,28 +31,17 @@ BUILD_DEPENDS =	devel/libtool \
 		devel/ninja \
 		textproc/intltool
 
-LIB_DEPENDS =	archivers/bzip2 \
-		archivers/xz \
-		audio/lame \
-		audio/libogg \
+LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis \
-		audio/opus \
-		audio/speex \
 		converters/libiconv \
-		devel/fribidi \
-		devel/harfbuzz \
 		devel/jansson \
 		devel/libdvdread \
 		graphics/ffmpeg \
 		graphics/jpeg \
-		graphics/zimg \
-		multimedia/aom \
 		multimedia/libass \
 		multimedia/libbluray \
-		multimedia/gstreamer1/plugins-base \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
-		multimedia/libvpx \
 		multimedia/svt-av1 \
 		multimedia/x264 \
 		multimedia/x265>=4.1 \
