@@ -2,9 +2,9 @@ COMMENT=		alternative formatting library for C and C++
 
 GH_ACCOUNT=		fmtlib
 GH_PROJECT=		fmt
-GH_TAGNAME=		10.2.1
+GH_TAGNAME=		11.2.0
 
-SHARED_LIBS=		fmt	2.0
+SHARED_LIBS=		fmt	2.1
 
 CATEGORIES=		devel
 
