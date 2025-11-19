@@ -9,12 +9,16 @@ Index: mesonbuild/build.py
  )
  from .options import OptionKey
  
-@@ -2584,6 +2585,26 @@ class SharedLibrary(BuildTarget):
+@@ -2584,6 +2585,30 @@ class SharedLibrary(BuildTarget):
              if self.darwin_versions is None and self.soversion is not None:
                  # If unspecified, pick the soversion
                  self.darwin_versions = (self.soversion, self.soversion)
 +        if is_openbsd():
-+            self.libversion = os.getenv('LIB' + self.name + '_VERSION')
++            libname = self.name
++            if hasattr(self, 'prefix'):
++                prefixed_name = self.prefix + self.name
++                libname = prefixed_name.removeprefix('lib')
++            self.libversion = os.getenv('LIB' + libname + '_VERSION')
 +            if (self.libversion is None and
 +                    self.soversion is not None and
 +                    len(self.soversion) != 0 and
@@ -30,13 +34,13 @@ Index: mesonbuild/build.py
 +                    f.write("# SHARED_LIBS+= {:<25}<obsd version> # <orig version>\n".format("<libname>"))
 +                    f.close
 +                f = open(shared_libs_log, 'a')
-+                f.write("SHARED_LIBS += {:<25} {} # {}\n".format(self.name, \
++                f.write("SHARED_LIBS += {:<25} {} # {}\n".format(libname, \
 +                        self.soversion, self.ltversion_orig))
 +                f.close
  
          # Visual Studio module-definitions file
          self.process_vs_module_defs_kw(kwargs)
-@@ -2635,6 +2656,8 @@ class SharedLibrary(BuildTarget):
+@@ -2635,6 +2660,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
