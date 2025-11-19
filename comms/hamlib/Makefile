@@ -5,6 +5,8 @@ COMMENT-tcl=	Tcl bindings for hamlib
 VERSION=	4.6.4
 REVISION=	1
 REVISION-main=	2
+REVISION-tcl=	2
+
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
@@ -17,6 +19,8 @@ HOMEPAGE=	https://hamlib.github.io/
 
 MODULES=	lang/python \
 		lang/tcl
+
+MODTCL_VERSION=	8.6
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -47,6 +51,8 @@ RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
 SITES=			https://github.com/Hamlib/Hamlib/releases/download/${VERSION}/
 
+MAKE_FLAGS=		tcldir=${MODTCL_TCLDIR}/hamlib
+
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-cxx-binding \
@@ -64,5 +70,6 @@ post-install:
 	rm -f ${PREFIX}/libdata/perl5/site_perl/*-openbsd/perltest.pl \
 		${PREFIX}/libdata/perl5/*-openbsd/perllocal.pod
 	rmdir ${PREFIX}/libdata/perl5/*-openbsd
+	rm -f ${PREFIX}/lib/tcl/hamlib/hamlibtcl.{la,so}
 
 .include <bsd.port.mk>
