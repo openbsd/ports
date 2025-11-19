@@ -1,3 +1,6 @@
+@pkgpath misc/openhab
+@option is-branch
+@conflict openhab-*
 @newgroup _openhab:899
 @newuser _openhab:899:_openhab::openHAB user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/openhab
