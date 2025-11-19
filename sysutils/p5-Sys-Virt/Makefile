@@ -1,6 +1,6 @@
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			11.6.0
+V=			11.8.0
 DISTNAME=		Sys-Virt-v${V}
 PKGNAME=		p5-Sys-Virt-${V}
 
@@ -20,6 +20,7 @@ WANTLIB += c perl virt
 MODULES=		cpan
 
 MODCPAN_EXAMPLES=	Yes
+CPAN_AUTHOR=		DANBERR
 
 CONFIGURE_STYLE=	modbuild
 
