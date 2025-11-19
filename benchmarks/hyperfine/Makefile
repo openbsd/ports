@@ -2,7 +2,7 @@ COMMENT =		command-line benchmarking tool
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		hyperfine
-GH_TAGNAME =		v1.19.0
+GH_TAGNAME =		v1.20.0
 
 CATEGORIES =		benchmarks
 
@@ -16,5 +16,4 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 
 .include "crates.inc"
-
 .include <bsd.port.mk>
