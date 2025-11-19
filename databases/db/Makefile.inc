@@ -66,7 +66,7 @@ NO_TEST=	Yes
 .if ${BUILD_PACKAGES:M-java}
 CONFIGURE_ARGS+=--enable-java
 MODULES+=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	17+
 CONFIGURE_ENV+=	JAVAC=${JAVA_HOME}/bin/javac \
 		JAR=${JAVA_HOME}/bin/jar \
 		JAVA=${JAVA_HOME}/bin/java

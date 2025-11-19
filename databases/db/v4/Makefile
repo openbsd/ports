@@ -7,7 +7,7 @@ PKGSPEC-java=	db-java->=4,<5|db-java->=4v0,<5v0
 PKGSPEC-tcl=	db-tcl->=4,<5|db-tcl->=4v0,<5v0
 
 REVISION-main=	8
-REVISION-java=	14
+REVISION-java=	15
 REVISION-tcl=	5
 
 EPOCH=		0
