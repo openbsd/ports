@@ -6,7 +6,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 MODULES =	lang/python
 MODPY_DISTV =	6.1.0
 DISTNAME =	spyder-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
 

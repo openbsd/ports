@@ -4,6 +4,7 @@ MODULES=	lang/python
 MODPY_DISTV=	3.1.1
 DISTNAME=	spyder_kernels-${MODPY_DISTV}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/_/-/}
+REVISION=	0
 
 PORTROACH=	limit:^3
 
