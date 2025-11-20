@@ -2,7 +2,7 @@ COMMENT=	web-based UI for Icinga DB
 
 GH_PROJECT=	icingadb-web
 MODULE_NAME=	icingadb-web
-MODULE_VERSION=	v1.2.3
+MODULE_VERSION=	v1.3.0
 MODULE_DEST=	${PREFIX}/icinga-web2/modules/icingadb
 
 HOMEPAGE=	https://icinga.com/docs/icinga-db-web/
