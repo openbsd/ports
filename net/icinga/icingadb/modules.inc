@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	github.com/goccy/go-yaml			 v1.13.0 \
 	github.com/google/go-cmp			 v0.7.0 \
 	github.com/google/uuid				 v1.6.0 \
-	github.com/icinga/icinga-go-library		 v0.7.2 \
+	github.com/icinga/icinga-go-library		 v0.8.1 \
 	github.com/jessevdk/go-flags			 v1.6.1 \
 	github.com/jmoiron/sqlx				 v1.4.0 \
 	github.com/kr/text				 v0.2.0 \
@@ -27,15 +27,15 @@ MODGO_MODULES =	\
 	github.com/mattn/go-colorable			 v0.1.13 \
 	github.com/mattn/go-isatty			 v0.0.20 \
 	github.com/mattn/go-runewidth			 v0.0.12 \
-	github.com/mattn/go-sqlite3			 v1.14.28 \
+	github.com/mattn/go-sqlite3			 v1.14.32 \
 	github.com/okzk/sdnotify			 v0.0.0-20180710141335-d9becc38acbd \
 	github.com/pkg/errors				 v0.9.1 \
 	github.com/pmezard/go-difflib			 v1.0.0 \
-	github.com/redis/go-redis/v9			 v9.10.0 \
+	github.com/redis/go-redis/v9			 v9.16.0 \
 	github.com/rivo/uniseg				 v0.2.0 \
 	github.com/ssgreg/journald			 v1.0.0 \
 	github.com/stretchr/objx			 v0.5.2 \
-	github.com/stretchr/testify			 v1.10.0 \
+	github.com/stretchr/testify			 v1.11.1 \
 	github.com/vbauerster/mpb/v6			 v6.0.4 \
 	go.uber.org/goleak				 v1.3.0 \
 	go.uber.org/multierr				 v1.11.0 \
@@ -44,7 +44,7 @@ MODGO_MODULES =	\
 	golang.org/x/exp				 v0.0.0-20240506185415-9bf2ced13842 \
 	golang.org/x/mod				 v0.17.0 \
 	golang.org/x/net				 v0.30.0 \
-	golang.org/x/sync				 v0.15.0 \
+	golang.org/x/sync				 v0.18.0 \
 	golang.org/x/sys				 v0.26.0 \
 	golang.org/x/text				 v0.19.0 \
 	golang.org/x/tools				 v0.21.0 \

@@ -1,7 +1,7 @@
 COMMENT=	configuration and state database for Icinga
 
 GH_PROJECT=	icingadb
-GH_TAGNAME=	v1.4.0
+GH_TAGNAME=	v1.5.0
 
 MODGO_MODNAME=	github.com/icinga/icingadb
 MODGO_VERSION=	${GH_TAGNAME}
