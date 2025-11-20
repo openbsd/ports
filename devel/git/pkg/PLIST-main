@@ -83,6 +83,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-gc
 @bin libexec/git/git-get-tar-commit-id
 @bin libexec/git/git-grep
+libexec/git/git-gui--askyesno
 @bin libexec/git/git-hash-object
 @bin libexec/git/git-help
 @bin libexec/git/git-hook
@@ -95,6 +96,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
 @bin libexec/git/git-interpret-trailers
+@bin libexec/git/git-last-modified
 @bin libexec/git/git-log
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
@@ -147,6 +149,7 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-repack
 @bin libexec/git/git-replace
 @bin libexec/git/git-replay
+@bin libexec/git/git-repo
 libexec/git/git-request-pull
 @bin libexec/git/git-rerere
 @bin libexec/git/git-reset
@@ -291,6 +294,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-init.1
 @man man/man1/git-instaweb.1
 @man man/man1/git-interpret-trailers.1
+@man man/man1/git-last-modified.1
 @man man/man1/git-log.1
 @man man/man1/git-ls-files.1
 @man man/man1/git-ls-remote.1
@@ -334,6 +338,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-repack.1
 @man man/man1/git-replace.1
 @man man/man1/git-replay.1
+@man man/man1/git-repo.1
 @man man/man1/git-request-pull.1
 @man man/man1/git-rerere.1
 @man man/man1/git-reset.1
@@ -387,6 +392,7 @@ libexec/git/mergetools/xxdiff
 @man man/man5/gitformat-chunk.5
 @man man/man5/gitformat-commit-graph.5
 @man man/man5/gitformat-index.5
+@man man/man5/gitformat-loose.5
 @man man/man5/gitformat-pack.5
 @man man/man5/gitformat-signature.5
 @man man/man5/githooks.5
