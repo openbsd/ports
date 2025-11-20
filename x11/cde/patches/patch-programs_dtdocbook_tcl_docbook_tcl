@@ -1,9 +1,0 @@
-Index: programs/dtdocbook/tcl/docbook.tcl
---- programs/dtdocbook/tcl/docbook.tcl.orig
-+++ programs/dtdocbook/tcl/docbook.tcl
-@@ -1,4 +1,4 @@
--#!/usr/bin/tclsh
-+#!${MODTCL_BIN}
- # set the global variables
- set nextId        0  ;# gets incremented before each use
- 

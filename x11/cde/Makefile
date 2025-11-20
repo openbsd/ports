@@ -88,8 +88,8 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl \
-		${WRKSRC}/programs/dtlogin/Makefile.am
+	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/programs/dtdocbook/tcl/docbook.tcl
+	@${SUBST_CMD} ${WRKSRC}/programs/dtlogin/Makefile.am
 
 pre-install:
 	mkdir -p ${PREFIX}/share/terminfo
