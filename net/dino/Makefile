@@ -1,5 +1,6 @@
 COMMENT=	XMPP desktop client
 VERSION=	0.5.1
+REVISION=	0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 

@@ -1,7 +1,7 @@
 @bin bin/dino
 include/crypto-vala.h
-include/dino.h
 include/dino_i18n.h
+include/libdino.h
 include/qlite.h
 include/xmpp-vala.h
 lib/dino/
@@ -152,7 +152,7 @@ share/metainfo/im.dino.Dino.appdata.xml
 share/vala/vapi/crypto-vala.deps
 share/vala/vapi/crypto-vala.vapi
 share/vala/vapi/dino.deps
-share/vala/vapi/dino.vapi
+share/vala/vapi/libdino.vapi
 share/vala/vapi/qlite.deps
 share/vala/vapi/qlite.vapi
 share/vala/vapi/xmpp-vala.deps
