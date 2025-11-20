@@ -1,7 +1,7 @@
 Index: usmb_file.c
 --- usmb_file.c.orig
 +++ usmb_file.c
-@@ -60,7 +60,18 @@
+@@ -60,7 +60,18 @@ static bool fix_nlink (const char *url, struct stat *s
    return (NULL == dirent);
  }
  
@@ -20,7 +20,7 @@ Index: usmb_file.c
  int usmb_getattr (const char *filename, struct stat *st)
  {
    char *url = make_url (filename);
-@@ -74,6 +85,8 @@
+@@ -74,6 +85,8 @@ int usmb_getattr (const char *filename, struct stat *s
    if ((0 > ret) || !fix_nlink (url, st))
      ret = -errno;
  
@@ -29,7 +29,7 @@ Index: usmb_file.c
    free (url);
    return ret;
  }
-@@ -101,6 +114,8 @@
+@@ -101,6 +114,8 @@ int usmb_fgetattr (const char *filename UNUSED, struct
        return -errno;
    }
  
@@ -38,7 +38,7 @@ Index: usmb_file.c
    return 0;
  }
  
-@@ -147,8 +162,6 @@
+@@ -147,8 +162,6 @@ int usmb_release (const char *filename UNUSED, struct 
  int usmb_read (const char *filename UNUSED, char *buff, size_t len, off_t off,
                 struct fuse_file_info *fi)
  {
@@ -47,7 +47,7 @@ Index: usmb_file.c
    SMBCFILE *file = fd_to_smbcfile (fi->fh);
    DEBUG (fprintf (stderr, "read (%p, %p, %llu, %lld) ",
                    (void *)file, buff, (unsigned long long)len, (long long)off));
-@@ -178,14 +191,11 @@
+@@ -178,14 +191,11 @@ int usmb_write (const char *filename UNUSED, const cha
    size_t written = 0;
    int bytes = 0;
  
@@ -63,7 +63,7 @@ Index: usmb_file.c
      if (0 > bytes)
        break;
  
-@@ -199,6 +209,30 @@
+@@ -199,6 +209,30 @@ int usmb_write (const char *filename UNUSED, const cha
  
    DEBUG (fprintf (stderr, "= %d\n", (0 > bytes) ? -errno : (int)written));
    return (0 > bytes) ? -errno : (int)written;
@@ -92,3 +92,5 @@ Index: usmb_file.c
 +  free (url);
 +  return ret;
  }
+ 
+ 

@@ -1,7 +1,7 @@
 Index: options.c
 --- options.c.orig
 +++ options.c
-@@ -149,7 +149,6 @@
+@@ -149,7 +149,6 @@ void build_fuse_args (const char *options, const char 
    static char MINUS_D[] = "-d";
    static char MINUS_F[] = "-f";
    static char MINUS_O[] = "-o";
@@ -9,7 +9,7 @@ Index: options.c
  
    assert (NULL != mountpoint);
    static char *argv[MAXARGS];
-@@ -167,9 +166,6 @@
+@@ -167,9 +166,6 @@ void build_fuse_args (const char *options, const char 
    if (nofork)
  #endif
      argv[argc++] = MINUS_F;
