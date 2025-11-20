@@ -8,12 +8,6 @@ DISTFILES =	unifi-$V{UniFi.unix}.zip \
 
 SITES.sh =	https://spacehopper.org/mirrors/
 
-LOG4J_V =	2.17.1
-SITES.log4j =	${SITE_APACHE:=logging/log4j/${LOG4J_V}/}
-
-COMMONSTEXT_V =	1.10.0
-SITES.commons =	${SITE_APACHE:=commons/text/binaries/}
-
 SITES.snmp =	https://dl.ubnt-ut.com/snmp/
 DISTFILES.snmp = UBNT-MIB UBNT-UniFi-MIB
 
@@ -27,17 +21,6 @@ PKGNAME =	unifi-$V
 # typical symptom of failure: APs stuck in "adopting".
 SNAPPY_S ?=	-libc++.9.0
 DISTFILES.sh +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar
-
-REPLACE_LOG4J ?= No
-.if ${REPLACE_LOG4J} == Yes
-DISTFILES.log4j += apache-log4j-${LOG4J_V}-bin.tar.gz
-EXTRACT_ONLY +=	apache-log4j-${LOG4J_V}-bin.tar.gz
-.endif
-REPLACE_COMMONSTEXT ?= No
-.if ${REPLACE_COMMONSTEXT} == Yes
-DISTFILES.commons += commons-text-${COMMONSTEXT_V}-bin.tar.gz
-EXTRACT_ONLY +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz
-.endif
 
 CATEGORIES =	net
 
@@ -74,7 +57,7 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/UniFi
 INSTDIR =	${PREFIX}/share/unifi/
 VERSION ?=	$V.0
-SUBST_VARS +=	VERSION LOG4J_V SNAPPY_S SNAPPY_V
+SUBST_VARS +=	VERSION SNAPPY_S SNAPPY_V
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
@@ -92,28 +75,13 @@ post-extract:
 	@cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
 
 do-configure:
-	@cd ${WRKSRC}/lib; echo \
-	    "** Overriding `echo snappy-java-*.jar` from upstream for ${SNAPPY_V}${SNAPPY_S}"; \
-	if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then \
-	    ln -fs snappy-java-${SNAPPY_V}${SNAPPY_S}.jar \
-		${WRKSRC}/lib/snappy-java-*.jar; \
-	fi
-	@cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ${WRKSRC}/lib
-	@cd ${WRKSRC}; ls -l lib/snappy-java*; echo
-.if ${REPLACE_LOG4J} == Yes
-	@echo "** Overriding vulnerable log4j versions"; echo
-.  for l4j_comp in log4j-api log4j-core log4j-slf4j-impl
-	@ln -fs ${l4j_comp}-${LOG4J_V}.jar ${WRKSRC}/lib/${l4j_comp}-*jar
-	@${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-${LOG4J_V}.jar ${WRKSRC}/lib
-	@cd ${WRKSRC}; ls -l lib/${l4j_comp}*; echo
-.  endfor
-.endif
-.if ${REPLACE_COMMONSTEXT} == Yes
-	@echo "** Overriding vulnerable commons-text version"; echo
-	@ln -fs commons-text-${COMMONSTEXT_V}.jar ${WRKSRC}/lib/commons-text-*jar
-	@${INSTALL_DATA} ${WRKDIR}/commons-text-*/commons-text-${COMMONSTEXT_V}.jar ${WRKSRC}/lib
-	@cd ${WRKSRC}; ls -l lib/commons-text*; echo
-.endif
+	@cd ${WRKSRC}/lib/local; if ! [ -r snappy-java-${SNAPPY_V}.jar ]; then \
+	       echo snappy-java-*.jar does not match ${SNAPPY_V}; exit 1; fi
+	@cd ${WRKSRC}/lib/local; \
+	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ./; \
+	ln -fs snappy-java-${SNAPPY_V}${SNAPPY_S}.jar \
+		snappy-java-${SNAPPY_V}.jar; \
+	ls -l snappy-java*; echo
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
