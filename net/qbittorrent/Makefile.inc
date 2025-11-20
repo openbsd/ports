@@ -1,4 +1,4 @@
-VER =		5.1.3
+VER =		5.1.4
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent
