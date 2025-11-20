@@ -1,0 +1,20 @@
+Update for Python 3.8+ (existing code will break in Python 3.14)
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -49,8 +49,12 @@ class VersionFinder(ast.NodeVisitor):
+ 
+     def visit_Assign(self, node):
+         try:
+-            if node.targets[0].id == self.VARIABLE_NAME:
+-                self.version = node.value.s
++            target = node.targets[0]
++            if isinstance(target, ast.Name) and target.id == self.VARIABLE_NAME:
++                value = node.value
++                if isinstance(value, ast.Constant):
++                    if isinstance(value.value, str):
++                        self.version = value.value
+         except Exception:
+             pass
+ 

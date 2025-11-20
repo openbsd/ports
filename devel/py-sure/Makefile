@@ -3,7 +3,7 @@ COMMENT=	utility belt for automated testing in Python for Python
 MODPY_DISTV=	2.0.1
 DISTNAME=	sure-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
