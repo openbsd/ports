@@ -453,7 +453,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) =
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (stripe-cli-v1.31.0.zip) = FefuxXaYSO3byzIOLA52I1rNccMqjR9Ipkg7f92HMq4=
+SHA256 (stripe-cli-v1.32.0.zip) = 5GLZD6XWL/54rutPD0jROfjUH2oCqMIeD2852LIqj54=
 SIZE (go_modules/cel.dev/expr/@v/v0.19.1.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.19.1.zip) = 247232
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.6.0.mod) = 125
@@ -909,4 +909,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 9
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20210107192922-496545a6307b.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (stripe-cli-v1.31.0.zip) = 2200756
+SIZE (stripe-cli-v1.32.0.zip) = 2237360
