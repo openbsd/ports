@@ -1,0 +1,30 @@
+From c7dcffdc86a2ac4fe8e176aac3a6b71cb79adbe4 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sun, 31 Aug 2025 08:20:27 +0200
+Subject: [PATCH] Don't crash with a family
+
+Index: pango/pangofc-fontmap.c
+--- pango/pangofc-fontmap.c.orig
++++ pango/pangofc-fontmap.c
+@@ -2367,13 +2367,15 @@ pango_fc_font_map_get_face (PangoFontMap *fontmap,
+   g_assert (res == FcResultMatch);
+ 
+   family = (PangoFcFamily *) pango_fc_font_map_get_family (fontmap, s);
+-
+-  ensure_faces (family);
+-
+-  for (int i = 0; i < family->n_faces; i++)
++  if (family)
+     {
+-      if (compare_face_pattern (family->faces[i]->pattern, fcfont->font_pattern) == 0)
+-        return PANGO_FONT_FACE (family->faces[i]);
++      ensure_faces (family);
++
++      for (int i = 0; i < family->n_faces; i++)
++        {
++          if (compare_face_pattern (family->faces[i]->pattern, fcfont->font_pattern) == 0)
++            return PANGO_FONT_FACE (family->faces[i]);
++        }
+     }
+ 
+   return NULL;
