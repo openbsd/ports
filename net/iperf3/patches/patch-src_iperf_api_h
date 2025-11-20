@@ -1,0 +1,14 @@
+Match include used in .c file to fix
+./iperf_api.h:395:77: error: unknown type name 'va_list'; did you mean '__va_list'?
+
+Index: src/iperf_api.h
+--- src/iperf_api.h.orig
++++ src/iperf_api.h
+@@ -32,6 +32,7 @@
+ #include <setjmp.h>
+ #include <stdio.h>
+ #include <stdint.h>
++#include <stdarg.h>
+ #ifdef __cplusplus
+ extern "C" { /* open extern "C" */
+ #endif
