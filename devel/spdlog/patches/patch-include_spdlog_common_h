@@ -1,0 +1,22 @@
+From 96a8f6250cbf4e8c76387c614f666710a2fa9bad Mon Sep 17 00:00:00 2001
+From: jdrouhard <john@drouhard.dev>
+Date: Thu, 9 Jan 2025 16:58:46 -0600
+Subject: [PATCH] fix: remove unused to_string_view overload in fmt >= 11.1 (#3314)
+
+Index: include/spdlog/common.h
+--- include/spdlog/common.h.orig
++++ include/spdlog/common.h
+@@ -364,12 +364,7 @@ SPDLOG_CONSTEXPR_FUNC spdlog::wstring_view_t to_string
+ }
+ #endif
+ 
+-#ifndef SPDLOG_USE_STD_FORMAT
+-template <typename T, typename... Args>
+-inline fmt::basic_string_view<T> to_string_view(fmt::basic_format_string<T, Args...> fmt) {
+-    return fmt;
+-}
+-#elif __cpp_lib_format >= 202207L
++#if defined(SPDLOG_USE_STD_FORMAT) &&  __cpp_lib_format >= 202207L
+ template <typename T, typename... Args>
+ SPDLOG_CONSTEXPR_FUNC std::basic_string_view<T> to_string_view(
+     std::basic_format_string<T, Args...> fmt) SPDLOG_NOEXCEPT {
