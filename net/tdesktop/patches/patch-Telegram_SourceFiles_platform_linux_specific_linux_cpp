@@ -39,7 +39,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  			auto interface = XdgDBus::DBus(
  				XdgDBus::DBusProxy::new_for_bus_finish(res, nullptr));
  
-@@ -804,7 +804,7 @@ void LaunchMaps(const Data::LocationPoint &point, Fn<v
+@@ -549,7 +549,7 @@ void PortalCheckScheme(
  		Gio::DBusProxyFlags::NONE_,
  		base::Platform::XDP::kService,
  		base::Platform::XDP::kObjectPath,
@@ -48,7 +48,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  			auto interface = XdpOpenURI::OpenURI(
  				XdpOpenURI::OpenURIProxy::new_for_bus_finish(res, nullptr));
  
-@@ -818,7 +818,7 @@ void LaunchMaps(const Data::LocationPoint &point, Fn<v
+@@ -563,7 +563,7 @@ void PortalCheckScheme(
  				GLib::Variant::new_array(
  					GLib::VariantType::new_("{sv}"),
  					{}),
