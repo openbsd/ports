@@ -12,9 +12,9 @@ PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 
 WANTLIB-main += ICE SDL2 SM X11 Xext aom avcodec avdevice avfilter
 WANTLIB-main += avformat avutil c crypto execinfo gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += m mosquitto mp3lame mpg123 opencore-amrnb opus png
-WANTLIB-main += pthread re sndfile sndio spandsp speexdsp ssl swresample
-WANTLIB-main += swscale twolame v4l2 vpx z
+WANTLIB-main += m mosquitto opencore-amrnb opus png
+WANTLIB-main += pthread re sndfile sndio spandsp ssl swresample
+WANTLIB-main += swscale v4l2 vpx z
 WANTLIB-main += ${COMPILER_LIBCXX}
 
 WANTLIB-gtk += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
@@ -25,13 +25,12 @@ BUILD_DEPENDS =		telephony/libzrtp>=0.20221005:build
 LIB_DEPENDS-main =	audio/libsndfile \
 			audio/opencore-amr \
 			audio/opus \
-			audio/twolame \
 			graphics/ffmpeg \
 			graphics/png \
 			multimedia/libv4l \
 			multimedia/libvpx \
 			net/mosquitto \
-			telephony/baresip/re>=4.0.0 \
+			telephony/baresip/re>=${GH_TAGNAME:C/^v//} \
 			telephony/spandsp
 LIB_DEPENDS-gtk =	x11/gtk+3,-main
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main \
