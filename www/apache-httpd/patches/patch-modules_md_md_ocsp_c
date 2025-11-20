@@ -1,0 +1,14 @@
+https://github.com/apache/httpd/pull/578
+
+Index: modules/md/md_ocsp.c
+--- modules/md/md_ocsp.c.orig
++++ modules/md/md_ocsp.c
+@@ -531,7 +531,7 @@ static const char *certid_summary(const OCSP_CERTID *c
+         bn = ASN1_INTEGER_to_BN(aserial, NULL);
+         s = BN_bn2hex(bn);
+         serial = apr_pstrdup(p, s);
+-        OPENSSL_free((void*)bn);
++        BN_free(bn);
+         OPENSSL_free((void*)s);
+     }
+     return apr_psprintf(p, "certid[der=%s, issuer=%s, key=%s, serial=%s]",
