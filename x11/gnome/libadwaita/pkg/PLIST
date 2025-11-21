@@ -129,6 +129,7 @@ share/locale/lv/LC_MESSAGES/libadwaita.mo
 share/locale/nb/LC_MESSAGES/libadwaita.mo
 share/locale/ne/LC_MESSAGES/libadwaita.mo
 share/locale/nl/LC_MESSAGES/libadwaita.mo
+share/locale/nn/LC_MESSAGES/libadwaita.mo
 share/locale/oc/LC_MESSAGES/libadwaita.mo
 share/locale/pa/LC_MESSAGES/libadwaita.mo
 share/locale/pl/LC_MESSAGES/libadwaita.mo
@@ -139,11 +140,13 @@ share/locale/ru/LC_MESSAGES/libadwaita.mo
 share/locale/sk/LC_MESSAGES/libadwaita.mo
 share/locale/sl/LC_MESSAGES/libadwaita.mo
 share/locale/sr/LC_MESSAGES/libadwaita.mo
+share/locale/sr@latin/LC_MESSAGES/libadwaita.mo
 share/locale/sv/LC_MESSAGES/libadwaita.mo
 share/locale/th/LC_MESSAGES/libadwaita.mo
 share/locale/tr/LC_MESSAGES/libadwaita.mo
 share/locale/ug/LC_MESSAGES/libadwaita.mo
 share/locale/uk/LC_MESSAGES/libadwaita.mo
+share/locale/uz/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
 share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
 share/locale/zh_TW/LC_MESSAGES/libadwaita.mo
