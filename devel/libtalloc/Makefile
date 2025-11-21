@@ -3,6 +3,7 @@ COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
 V=		2.4.3
+REVISION=	0
 
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
