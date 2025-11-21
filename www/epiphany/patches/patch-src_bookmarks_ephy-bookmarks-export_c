@@ -1,0 +1,14 @@
+../epiphany-49.2/src/bookmarks/ephy-bookmarks-export.c:172:27: warning: format specifies type 'long' but the argument has type 'gint64' (aka 'long long') [-Wformat]
+
+Index: src/bookmarks/ephy-bookmarks-export.c
+--- src/bookmarks/ephy-bookmarks-export.c.orig
++++ src/bookmarks/ephy-bookmarks-export.c
+@@ -167,7 +167,7 @@ add_bookmark_to_html (EphyBookmark *bookmark,
+   }
+ 
+   g_string_append_printf (html,
+-                          "<DT><A HREF=\"%s\" ADD_DATE=\"%ld\" TAGS=\"%s\">%s</A>\n",
++                          "<DT><A HREF=\"%s\" ADD_DATE=\"%lld\" TAGS=\"%s\">%s</A>\n",
+                           ephy_bookmark_get_url (bookmark),
+                           ephy_bookmark_get_time_added (bookmark),
+                           tags ? tags->str : "",
