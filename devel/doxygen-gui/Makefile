@@ -1,5 +1,3 @@
-BROKEN =		needs to be ported to fmt >=1.11
-
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	m88k sh
@@ -10,6 +8,7 @@ COMMENT=	GUI front-end for doxygen
 VERSION=	1.14.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
+REVISION=	0
 
 CATEGORIES=	devel textproc
 
@@ -39,14 +38,18 @@ MODPY_RUNDEP=	No
 CXXFLAGS+=	-mxgot
 .endif
 
-BUILD_DEPENDS+=	devel/bison \
+BUILD_DEPENDS+=	converters/libiconv \
+		devel/bison \
+		devel/fmt \
 		devel/git \
-		converters/libiconv
+		devel/spdlog
 
 RUN_DEPENDS=	devel/doxygen
 
 CONFIGURE_ARGS=	-Dbuild_wizard=ON \
-		-Dforce_qt=Qt6
+		-Dforce_qt=Qt6 \
+		-Duse_sys_spdlog=ON \
+		-Duse_sys_fmt=ON
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
