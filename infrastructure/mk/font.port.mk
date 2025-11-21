@@ -1,4 +1,4 @@
-# $OpenBSD: font.port.mk,v 1.9 2024/07/11 12:54:41 bentley Exp $
+# $OpenBSD: font.port.mk,v 1.10 2025/11/21 06:26:52 bentley Exp $
 
 CATEGORIES +=	fonts
 
@@ -13,9 +13,11 @@ PKGNAME ?=	${MODFONT_FAMILY}-${MODFONT_VERSION}
 
 MODFONT_FONTDIR ?=	${PREFIX}/share/fonts/${MODFONT_FAMILY}
 MODFONT_DOCDIR ?=	${PREFIX}/share/doc/${MODFONT_FAMILY}
+MODFONT_WEBDIR ?=	${WRKINST}${VARBASE}/www/fonts/${MODFONT_FAMILY}
 
 MODFONT_FONTFILES ?=
 MODFONT_DOCFILES ?=
+MODFONT_WEBFILES ?=
 
 MODFONT_do-install = ${INSTALL_DATA_DIR} ${MODFONT_FONTDIR};
 
@@ -30,6 +32,12 @@ MODFONT_do-install += for t in ${MODFONT_FONTFILES}; do ${INSTALL_DATA} ${WRKSRC
 .if !empty(MODFONT_DOCFILES)
 MODFONT_do-install += ; ${INSTALL_DATA_DIR} ${MODFONT_DOCDIR}
 MODFONT_do-install += ; for t in ${MODFONT_DOCFILES}; do ${INSTALL_DATA} ${WRKSRC}/$$t ${MODFONT_DOCDIR}; done
+.endif
+
+.if !empty(MODFONT_WEBFILES)
+PREFIX-web ?=	${VARBASE}/www
+MODFONT_do-install += ; ${INSTALL_DATA_DIR} ${MODFONT_WEBDIR}
+MODFONT_do-install += ; for t in ${MODFONT_WEBFILES}; do ${INSTALL_DATA} ${WRKSRC}/$$t ${MODFONT_WEBDIR}; done
 .endif
 
 .  if !target(do-install)
