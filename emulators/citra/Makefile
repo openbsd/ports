@@ -1,5 +1,3 @@
-BROKEN =		needs to be ported to fmt >=1.11
-
 # ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
 ONLY_FOR_ARCHS =	amd64 arm64
 
@@ -11,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -85,7 +83,9 @@ WRKDIST =		${WRKDIR}/${DISTNAME}
 CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
 
 post-extract:
-	rm -rf ${WRKSRC}/externals/{sdl2,catch2,fmt,boost,cryptopp}
+	rm -r ${WRKSRC}/externals/cryptopp-cmake \
+		${WRKSRC}/externals/dynarmic/externals/catch/src/catch2 \
+		${WRKSRC}/externals/dynarmic/externals/fmt
 
 .if ${MACHINE_ARCH} == amd64
 PKG_ARGS +=	-Dx86=1
