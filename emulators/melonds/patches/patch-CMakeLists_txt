@@ -13,4 +13,4 @@ Index: CMakeLists.txt
 -
  if (WIN32)
      option(BUILD_STATIC "Statically link dependencies" OFF)
- endif()
+     add_definitions(-DWIN32_LEAN_AND_MEAN -DNOMINMAX)
