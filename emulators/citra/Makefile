@@ -1,3 +1,5 @@
+BROKEN =		needs to be ported to fmt >=1.11
+
 # ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
 ONLY_FOR_ARCHS =	amd64 arm64
 

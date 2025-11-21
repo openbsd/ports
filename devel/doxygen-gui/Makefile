@@ -1,3 +1,5 @@
+BROKEN =		needs to be ported to fmt >=1.11
+
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	m88k sh

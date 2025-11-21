@@ -1,3 +1,5 @@
+BROKEN =		needs to be ported to fmt >=1.11
+
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface

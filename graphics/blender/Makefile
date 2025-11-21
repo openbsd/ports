@@ -1,3 +1,5 @@
+BROKEN =		needs to be ported to fmt >=1.11
+
 # powerpc - tbb 64-bit atomics
 # sparc64 - openexr linking failure
 # 32-bit archs - static assert in cuda that a pointer is the same size as ULL
