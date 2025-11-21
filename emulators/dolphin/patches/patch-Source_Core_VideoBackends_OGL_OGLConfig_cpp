@@ -1,0 +1,17 @@
+From d7c93d87befcc1ee29e0355338d960b7f8d31e78 Mon Sep 17 00:00:00 2001
+From: Alfred Wingate <parona@protonmail.com>
+Date: Fri, 9 Aug 2024 08:54:08 +0300
+Subject: [PATCH] Add support for libfmt-11
+
+Index: Source/Core/VideoBackends/OGL/OGLConfig.cpp
+--- Source/Core/VideoBackends/OGL/OGLConfig.cpp.orig
++++ Source/Core/VideoBackends/OGL/OGLConfig.cpp
+@@ -7,6 +7,8 @@
+ #include <string>
+ #include <string_view>
+ 
++#include <fmt/ranges.h>
++
+ #include "Common/Assert.h"
+ #include "Common/GL/GLContext.h"
+ #include "Common/GL/GLExtensions/GLExtensions.h"

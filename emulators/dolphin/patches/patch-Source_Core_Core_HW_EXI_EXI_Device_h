@@ -1,0 +1,17 @@
+From d7c93d87befcc1ee29e0355338d960b7f8d31e78 Mon Sep 17 00:00:00 2001
+From: Alfred Wingate <parona@protonmail.com>
+Date: Fri, 9 Aug 2024 08:54:08 +0300
+Subject: [PATCH] Add support for libfmt-11
+
+Index: Source/Core/Core/HW/EXI/EXI_Device.h
+--- Source/Core/Core/HW/EXI/EXI_Device.h.orig
++++ Source/Core/Core/HW/EXI/EXI_Device.h
+@@ -111,7 +111,7 @@ struct fmt::formatter<ExpansionInterface::EXIDeviceTyp
+   constexpr formatter() : EnumFormatter(names) {}
+ 
+   template <typename FormatContext>
+-  auto format(const ExpansionInterface::EXIDeviceType& e, FormatContext& ctx)
++  auto format(const ExpansionInterface::EXIDeviceType& e, FormatContext& ctx) const
+   {
+     if (e != ExpansionInterface::EXIDeviceType::None)
+     {

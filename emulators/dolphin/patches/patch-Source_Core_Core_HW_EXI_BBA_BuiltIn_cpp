@@ -1,0 +1,17 @@
+From 825092ad33a2e7466e79520c1338d0bed56ca299 Mon Sep 17 00:00:00 2001
+From: Ferdinand Bachmann <ferdinand.bachmann@yrlf.at>
+Date: Sat, 4 Jan 2025 18:45:32 +0100
+Subject: [PATCH] BBA/HLE: Fix incorrect fmt format string
+
+Index: Source/Core/Core/HW/EXI/BBA/BuiltIn.cpp
+--- Source/Core/Core/HW/EXI/BBA/BuiltIn.cpp.orig
++++ Source/Core/Core/HW/EXI/BBA/BuiltIn.cpp
+@@ -686,7 +686,7 @@ bool CEXIETHERNET::BuiltInBBAInterface::SendFrame(cons
+   }
+ 
+   default:
+-    ERROR_LOG_FMT(SP1, "Unsupported EtherType {#06x}", *ethertype);
++    ERROR_LOG_FMT(SP1, "Unsupported EtherType {:#06x}", *ethertype);
+     return false;
+   }
+ 

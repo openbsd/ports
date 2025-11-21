@@ -1,0 +1,16 @@
+From d7c93d87befcc1ee29e0355338d960b7f8d31e78 Mon Sep 17 00:00:00 2001
+From: Alfred Wingate <parona@protonmail.com>
+Date: Fri, 9 Aug 2024 08:54:08 +0300
+Subject: [PATCH] Add support for libfmt-11
+
+Index: Source/Core/Core/NetPlayClient.cpp
+--- Source/Core/Core/NetPlayClient.cpp.orig
++++ Source/Core/Core/NetPlayClient.cpp
+@@ -17,6 +17,7 @@
+ #include <vector>
+ 
+ #include <fmt/format.h>
++#include <fmt/ranges.h>
+ 
+ #include "Common/Assert.h"
+ #include "Common/CommonPaths.h"
