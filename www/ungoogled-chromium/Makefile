@@ -13,17 +13,15 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			142.0.7444.162
+V=			142.0.7444.175
 UGV=			${V}-1
-
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 
-CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
+CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 DIST_TUPLE=		github ungoogled-software ungoogled-chromium ${UGV} .
@@ -290,6 +288,7 @@ post-patch:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
+		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
 		${WRKSRC}/v8/tools/run.py \
