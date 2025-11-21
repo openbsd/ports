@@ -23,7 +23,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 29
+REVISION = 30
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
