@@ -12727,6 +12727,7 @@ share/rust-openssl-tests/openssl/test/nid_test_cert.pem
 share/rust-openssl-tests/openssl/test/nid_uid_test_cert.pem
 share/rust-openssl-tests/openssl/test/ocsp_ca_cert.der
 share/rust-openssl-tests/openssl/test/ocsp_resp_no_nextupdate.der
+share/rust-openssl-tests/openssl/test/ocsp_resp_revoked.der
 share/rust-openssl-tests/openssl/test/ocsp_subject_cert.der
 share/rust-openssl-tests/openssl/test/pkcs1.pem.pub
 share/rust-openssl-tests/openssl/test/pkcs8-nocrypt.der

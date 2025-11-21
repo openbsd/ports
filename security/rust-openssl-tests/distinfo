@@ -8,7 +8,7 @@ SHA256 (cargo/bindgen-0.72.1.tar.gz) = mTd2tQnPtJx1DxG48HpG+iPgoThv/AH7Hn00Pvw4e
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.10.0.tar.gz) = gS4StShcxRWpxypcHTttRqGdrFrP71JllowWYQbjHdM=
 SHA256 (cargo/bssl-sys-0.1.0.tar.gz) = MS0SOTwGA4Ty5u0Ux7S+N7PdkCSYV0hWE8GpG5oau1w=
-SHA256 (cargo/cc-1.2.46.tar.gz) = uXRj4QZMsbHBOErQoLnIq9CYjiqR9SYGyA7xSq22PjY=
+SHA256 (cargo/cc-1.2.47.tar.gz) = zUBdgshP9/NXOfF19n2Ln7doeg6EzNx4vTVog5gnzwc=
 SHA256 (cargo/cexpr-0.6.0.tar.gz) = b6w4epi7fDcpIFfP/FbWLstimQACZAJjOukWDfk6h2Y=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.4.tar.gz) = kzD4sv8T80VAtE6UbvNREYJXJ7ONMyhu+YYUJhUSGAE=
@@ -97,7 +97,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/wit-bindgen-0.46.0.tar.gz) = 8XqFiD1ObQDoqXxYbedk2rzAYTP38dVdzlzcBwrX/lk=
-SHA256 (rust-openssl-tests-20251117-97d80f03.tar.gz) = gRKGC2rX0cZyiuugfXSTsOEWohc5QAlpLqtlhvhcPK8=
+SHA256 (rust-openssl-tests-20251121-e1951c1b.tar.gz) = XcUC5h6tLokkwXzvRZ4xQgjK2MtyaCgL+EyQ/Ks1DhI=
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
 SIZE (cargo/annotate-snippets-0.11.5.tar.gz) = 34687
 SIZE (cargo/anstyle-1.0.13.tar.gz) = 17651
@@ -108,7 +108,7 @@ SIZE (cargo/bindgen-0.72.1.tar.gz) = 246071
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.10.0.tar.gz) = 48427
 SIZE (cargo/bssl-sys-0.1.0.tar.gz) = 1061
-SIZE (cargo/cc-1.2.46.tar.gz) = 92306
+SIZE (cargo/cc-1.2.47.tar.gz) = 92422
 SIZE (cargo/cexpr-0.6.0.tar.gz) = 17966
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.4.tar.gz) = 9360
@@ -197,4 +197,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-0.46.0.tar.gz) = 60508
-SIZE (rust-openssl-tests-20251117-97d80f03.tar.gz) = 381879
+SIZE (rust-openssl-tests-20251121-e1951c1b.tar.gz) = 382418
