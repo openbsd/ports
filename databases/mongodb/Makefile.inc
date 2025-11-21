@@ -1,7 +1,7 @@
 USE_WXNEEDED =	Yes
 
-# The default storage engine (WiredTiger) only works on amd64.
-ONLY_FOR_ARCHS = amd64
+# The default storage engine (WiredTiger) only works on some archs.
+ONLY_FOR_ARCHS ?= amd64 aarch64
 DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
