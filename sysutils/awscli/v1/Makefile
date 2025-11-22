@@ -2,7 +2,7 @@ PORTROACH=		limit:^1
 
 COMMENT=		universal command line environment for AWS
 
-MODPY_DISTV=		1.42.74
+MODPY_DISTV=		1.43.2
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -15,8 +15,8 @@ MODPY_PYBUILD=		setuptools
 
 # !!! check setup.py for exact dependencies version
 RUN_DEPENDS +=		devel/py-colorama>=0.2.5,<0.4.7
-RUN_DEPENDS +=		net/py-botocore=1.40.${MODPY_DISTV:E}
-RUN_DEPENDS +=		net/py-s3transfer>=0.14.0,<0.15.0
+RUN_DEPENDS +=		net/py-botocore=1.41.${MODPY_DISTV:E}
+RUN_DEPENDS +=		net/py-s3transfer>=0.15.0,<0.16.0
 RUN_DEPENDS +=		textproc/py-yaml>=3.10,<6.1
 RUN_DEPENDS +=		security/py-rsa>=3.1.2,<4.8
 
