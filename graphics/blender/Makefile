@@ -1,5 +1,3 @@
-BROKEN =		needs to be ported to fmt >=1.11
-
 # powerpc - tbb 64-bit atomics
 # sparc64 - openexr linking failure
 # 32-bit archs - static assert in cuda that a pointer is the same size as ULL
@@ -107,6 +105,10 @@ NO_TEST =	Yes
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 CFLAGS +=		-I${LOCALBASE}/include
+
+# XXX hack for fmt >=1.11; to be removed at next release probably
+# /usr/local/include/OpenImageIO/detail/fmt/format.h:41:10: fatal error: 'base.h' file not found
+CXXFLAGS +=		-I${LOCALBASE}/include/fmt/
 
 MODPY_ADJ_FILES =	scripts/modules/bl_i18n_utils/merge_po.py \
 			scripts/modules/bl_i18n_utils/utils_rtl.py \
