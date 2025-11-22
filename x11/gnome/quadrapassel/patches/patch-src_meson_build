@@ -3,7 +3,7 @@ Drop libmanette dependency which requires libevdev/libinput
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -46,11 +46,10 @@ executable(meson.project_name(),
+@@ -49,11 +49,10 @@ executable(meson.project_name(),
          gtk_dependency,
          libadwaita_dependency,
          libgnome_games_support_dependency,

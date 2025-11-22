@@ -10,12 +10,12 @@ Index: src/quadrapassel.vala
 -    private Manette.Monitor manette_monitor;
 -    private bool is_manette_button_down = false;
 -
+     private bool pause_requested = false;
+ 
      private const GLib.ActionEntry[] action_entries =
-     {
-         { "new-game",      new_game_cb    },
-@@ -249,13 +246,6 @@ public class Quadrapassel : Adw.Application
-                                                                         new Games.Scores.HistoryFileImporter (parse_old_score),
-                                                                         APP_ID);
+@@ -255,13 +252,6 @@ public class Quadrapassel : Adw.Application
+                                                                         APP_ID,
+                                                                         -1);
  
 -        manette_monitor = new Manette.Monitor ();
 -        manette_monitor.device_connected.connect (manette_device_connected_cb);
@@ -27,9 +27,9 @@ Index: src/quadrapassel.vala
          pause_action.set_enabled (false);
          new_game_button.set_sensitive (false);
      }
-@@ -474,103 +464,6 @@ public class Quadrapassel : Adw.Application
-         if (window != null)
-             window.close ();
+@@ -515,103 +505,6 @@ public class Quadrapassel : Adw.Application
+         }
+ 
          base.quit ();
 -    }
 -
@@ -61,7 +61,7 @@ Index: src/quadrapassel.vala
 -            if (game == null)
 -                new_game();
 -            else if (!game.game_over)
--                game.paused = !game.paused;
+-                user_pause ();
 -            else
 -                new_game();
 -
