@@ -1,8 +1,8 @@
 COMMENT=	rapid application development framework for Flask
 
-MODPY_DISTV =	5.0.1
-DISTNAME=	Flask-AppBuilder-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
+MODPY_DISTV =	5.0.2
+DISTNAME=	flask_appbuilder-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
 
 CATEGORIES=	www
 
