@@ -337,6 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/
@@ -796,6 +797,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/comprehendmedical/2018-10
 lib/python${MODPY_VERSION}/site-packages/botocore/data/comprehendmedical/2018-10-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/comprehendmedical/2018-10-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/2025-09-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/2025-09-22/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/2025-09-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/2025-09-22/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer-automation/2025-09-22/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer/2019-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer/2019-11-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/compute-optimizer/2019-11-01/examples-1.json
@@ -1688,6 +1695,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/2020-12-15/
@@ -1890,6 +1898,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/examples
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/2024-07-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/2024-07-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/2024-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/2024-07-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa-serverless/2024-07-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa/2020-07-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa/2020-07-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mwaa/2020-07-01/examples-1.json
@@ -2013,6 +2027,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/examp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partitions.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-channel/2024-03-18/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/endpoint-rule-set-1.json
@@ -2296,6 +2316,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/endpoint-r
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rum/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json
@@ -2477,6 +2498,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/example
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signin/2023-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/simspaceweaver/2022-10-28/endpoint-rule-set-1.json
