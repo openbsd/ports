@@ -1,6 +1,6 @@
 COMMENT=	write distributed self-replicating programs in Python
 
-MODPY_DISTV=	0.3.30
+MODPY_DISTV=	0.3.32
 DISTNAME=	mitogen-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,7 +16,7 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 # some (not entirely organised) tests are in the github tree,
-# but require various setup including docker)
+# but require various setup including docker
 NO_TEST=	Yes
 
 post-install:
