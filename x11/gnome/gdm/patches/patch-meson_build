@@ -18,7 +18,7 @@ Index: meson.build
 +
 +# SYSCONFDIR is never under /usr/local on OpenBSD
 +if host_machine.system() == 'openbsd'
-+  dconf_sysconfig = get_option('sysconfdir')
++  dconf_sysconfig = get_option('sysconfdir') + '/'
  endif
  
  dconf_profiles_path = dconf_datadir / 'dconf' / 'profile'

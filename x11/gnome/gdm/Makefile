@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		48.0
-REVISION=		5
+REVISION=		6
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
