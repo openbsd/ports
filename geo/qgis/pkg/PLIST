@@ -2679,7 +2679,6 @@ share/icons/hicolor/scalable/mimetypes/qgis_qgs.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qlr.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qml.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qpt.svg
-share/metainfo/
 share/metainfo/org.qgis.qgis.appdata.xml
 share/mime/packages/qgis.xml
 share/qgis/
