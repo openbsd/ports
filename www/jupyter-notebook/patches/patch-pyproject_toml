@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -81,7 +81,7 @@ validate-bump = false
+@@ -84,7 +84,7 @@ validate-bump = false
  [tool.hatch.build.targets.wheel.shared-data]
  "notebook/labextension" = "share/jupyter/labextensions/@jupyter-notebook/lab-extension"
  "notebook/schemas/@jupyter-notebook" = "share/jupyter/lab/schemas/@jupyter-notebook"

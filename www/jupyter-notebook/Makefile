@@ -1,6 +1,6 @@
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_DISTV =		7.4.7
+MODPY_DISTV =		7.5.0
 DISTNAME =		notebook-${MODPY_DISTV}
 PKGNAME =		jupyter-notebook-${MODPY_DISTV}
 
@@ -19,13 +19,13 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
 BUILD_DEPENDS =		devel/py-hatch-jupyter-builder \
-			www/jupyterlab<4.5
+			www/jupyterlab<4.6
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-jupyter_server<3 \
 			devel/py-jupyterlab_server<3 \
 			devel/py-notebook-shim<0.3 \
-			www/jupyterlab<4.5 \
+			www/jupyterlab<4.6 \
 			www/py-tornado>=6.2.0 \
 			x11/gtk+4,-guic
 

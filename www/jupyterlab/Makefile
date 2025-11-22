@@ -1,6 +1,6 @@
 COMMENT =		Jupyterlab computational environment
 
-MODPY_DISTV =		4.4.10
+MODPY_DISTV =		4.5.0
 DISTNAME =		jupyterlab-${MODPY_DISTV}
 
 CATEGORIES =		www devel
@@ -25,7 +25,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-jupyter_lsp>=2.0.0 \
 			devel/py-jupyter_core \
 			devel/py-jupyter_server>=2.4.0,<3 \
-			devel/py-jupyterlab_server>=2.27.1,<3 \
+			devel/py-jupyterlab_server>=2.28.0,<3 \
 			devel/py-notebook-shim>=0.2 \
 			devel/py-setuptools \
 			devel/py-traitlets \
