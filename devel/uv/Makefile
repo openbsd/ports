@@ -3,21 +3,10 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Python package and project manager
 
+MODPY_DISTV =		0.9.11
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
-MODPY_DISTV =		0.9.5
-
-ASYNC_ZIP =		285e48742b74ab109887d62e1ae79e7c15fd4878
-PUBGRUB =		d8efd77673c9a90792da9da31b6c0da7ea8a324b
-REQWEST_MIDDLEWARE =	7650ed76215a962a96d94a79be71c27bffde7ab2
-TL =			6e25b2ee2513d75385101a8ff9f591ef51f314ec
-
-DIST_TUPLE +=	github astral-sh rs-async-zip ${ASYNC_ZIP} ../rs-async-zip
-DIST_TUPLE +=	github astral-sh pubgrub ${PUBGRUB} ../pubgrub
-DIST_TUPLE +=	github astral-sh reqwest-middleware ${REQWEST_MIDDLEWARE} \
-		../reqwest-middleware
-DIST_TUPLE +=	github astral-sh tl ${TL} ../tl
 
 CATEGORIES =		devel
 
