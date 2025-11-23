@@ -4,10 +4,10 @@ PKGNAME =		${DISTNAME:L}
 
 GH_ACCOUNT =		coelckers
 GH_PROJECT =		ZMusic
-GH_TAGNAME =		1.1.14
+GH_TAGNAME =		1.3.0
 
-SHARED_LIBS +=		zmusic		2.0 # 1.1.14
-SHARED_LIBS +=		zmusiclite	2.0 # 1.1.14
+SHARED_LIBS +=		zmusic		3.0 # 1.3.0
+SHARED_LIBS +=		zmusiclite	3.0 # 1.3.0
 
 CATEGORIES =		audio
 
