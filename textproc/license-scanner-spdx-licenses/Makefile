@@ -1,7 +1,7 @@
 COMMENT =		Additional license data from SPDX for license-scanner
 GH_ACCOUNT =            spdx
 GH_PROJECT =            license-list-data
-GH_TAGNAME =            v3.24.0
+GH_TAGNAME =            v3.27.0
 DISTNAME =		license-scanner-spdx-licenses-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		textproc
