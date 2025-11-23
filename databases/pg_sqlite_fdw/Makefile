@@ -1,3 +1,4 @@
+BROKEN =		does not yet support PostgreSQL 18
 COMMENT =		PostgreSQL Foreign Data Wrapper for SQLite
 
 GH_ACCOUNT =		pgspider
