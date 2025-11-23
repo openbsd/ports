@@ -41,7 +41,6 @@ include/postgresql/libpq-events.h
 include/postgresql/libpq-fe.h
 include/postgresql/libpq/libpq-fs.h
 include/postgresql/pg_config.h
-include/postgresql/pg_config_ext.h
 include/postgresql/pg_config_manual.h
 include/postgresql/pg_config_os.h
 include/postgresql/pgtypes.h

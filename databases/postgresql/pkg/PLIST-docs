@@ -56,6 +56,7 @@ share/doc/postgresql/html/auth-delay.html
 share/doc/postgresql/html/auth-ident.html
 share/doc/postgresql/html/auth-ldap.html
 share/doc/postgresql/html/auth-methods.html
+share/doc/postgresql/html/auth-oauth.html
 share/doc/postgresql/html/auth-pam.html
 share/doc/postgresql/html/auth-password.html
 share/doc/postgresql/html/auth-peer.html
@@ -305,7 +306,6 @@ share/doc/postgresql/html/event-trigger-database-login-example.html
 share/doc/postgresql/html/event-trigger-definition.html
 share/doc/postgresql/html/event-trigger-example.html
 share/doc/postgresql/html/event-trigger-interface.html
-share/doc/postgresql/html/event-trigger-matrix.html
 share/doc/postgresql/html/event-trigger-table-rewrite-example.html
 share/doc/postgresql/html/event-triggers.html
 share/doc/postgresql/html/executor.html
@@ -508,6 +508,7 @@ share/doc/postgresql/html/libpq-ldap.html
 share/doc/postgresql/html/libpq-misc.html
 share/doc/postgresql/html/libpq-notice-processing.html
 share/doc/postgresql/html/libpq-notify.html
+share/doc/postgresql/html/libpq-oauth.html
 share/doc/postgresql/html/libpq-pgpass.html
 share/doc/postgresql/html/libpq-pgservice.html
 share/doc/postgresql/html/libpq-pipeline-mode.html
@@ -531,6 +532,7 @@ share/doc/postgresql/html/logical-replication-col-lists.html
 share/doc/postgresql/html/logical-replication-config.html
 share/doc/postgresql/html/logical-replication-conflicts.html
 share/doc/postgresql/html/logical-replication-failover.html
+share/doc/postgresql/html/logical-replication-gencols.html
 share/doc/postgresql/html/logical-replication-monitoring.html
 share/doc/postgresql/html/logical-replication-publication.html
 share/doc/postgresql/html/logical-replication-quick-setup.html
@@ -538,6 +540,7 @@ share/doc/postgresql/html/logical-replication-restrictions.html
 share/doc/postgresql/html/logical-replication-row-filter.html
 share/doc/postgresql/html/logical-replication-security.html
 share/doc/postgresql/html/logical-replication-subscription.html
+share/doc/postgresql/html/logical-replication-upgrade.html
 share/doc/postgresql/html/logical-replication.html
 share/doc/postgresql/html/logicaldecoding-catalogs.html
 share/doc/postgresql/html/logicaldecoding-example.html
@@ -574,6 +577,10 @@ share/doc/postgresql/html/nls-translator.html
 share/doc/postgresql/html/nls.html
 share/doc/postgresql/html/non-durability.html
 share/doc/postgresql/html/notation.html
+share/doc/postgresql/html/oauth-validator-callbacks.html
+share/doc/postgresql/html/oauth-validator-design.html
+share/doc/postgresql/html/oauth-validator-init.html
+share/doc/postgresql/html/oauth-validators.html
 share/doc/postgresql/html/oid2name.html
 share/doc/postgresql/html/overview.html
 share/doc/postgresql/html/pageinspect.html
@@ -590,6 +597,8 @@ share/doc/postgresql/html/pgbench.html
 share/doc/postgresql/html/pgbuffercache.html
 share/doc/postgresql/html/pgcrypto.html
 share/doc/postgresql/html/pgfreespacemap.html
+share/doc/postgresql/html/pglogicalinspect.html
+share/doc/postgresql/html/pgoverexplain.html
 share/doc/postgresql/html/pgprewarm.html
 share/doc/postgresql/html/pgrowlocks.html
 share/doc/postgresql/html/pgstatstatements.html
@@ -695,14 +704,8 @@ share/doc/postgresql/html/regress-run.html
 share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
-share/doc/postgresql/html/release-17-1.html
-share/doc/postgresql/html/release-17-2.html
-share/doc/postgresql/html/release-17-3.html
-share/doc/postgresql/html/release-17-4.html
-share/doc/postgresql/html/release-17-5.html
-share/doc/postgresql/html/release-17-6.html
-share/doc/postgresql/html/release-17-7.html
-share/doc/postgresql/html/release-17.html
+share/doc/postgresql/html/release-18-1.html
+share/doc/postgresql/html/release-18.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
@@ -722,7 +725,6 @@ share/doc/postgresql/html/rules-triggers.html
 share/doc/postgresql/html/rules-update.html
 share/doc/postgresql/html/rules-views.html
 share/doc/postgresql/html/rules.html
-share/doc/postgresql/html/runtime-config-autovacuum.html
 share/doc/postgresql/html/runtime-config-client.html
 share/doc/postgresql/html/runtime-config-compatible.html
 share/doc/postgresql/html/runtime-config-connection.html
@@ -738,6 +740,7 @@ share/doc/postgresql/html/runtime-config-replication.html
 share/doc/postgresql/html/runtime-config-resource.html
 share/doc/postgresql/html/runtime-config-short.html
 share/doc/postgresql/html/runtime-config-statistics.html
+share/doc/postgresql/html/runtime-config-vacuum.html
 share/doc/postgresql/html/runtime-config-wal.html
 share/doc/postgresql/html/runtime-config.html
 share/doc/postgresql/html/runtime.html
@@ -1086,6 +1089,7 @@ share/doc/postgresql/html/user-manag.html
 share/doc/postgresql/html/using-explain.html
 share/doc/postgresql/html/uuid-ossp.html
 share/doc/postgresql/html/vacuumlo.html
+share/doc/postgresql/html/view-pg-aios.html
 share/doc/postgresql/html/view-pg-available-extension-versions.html
 share/doc/postgresql/html/view-pg-available-extensions.html
 share/doc/postgresql/html/view-pg-backend-memory-contexts.html
@@ -1110,6 +1114,7 @@ share/doc/postgresql/html/view-pg-seclabels.html
 share/doc/postgresql/html/view-pg-sequences.html
 share/doc/postgresql/html/view-pg-settings.html
 share/doc/postgresql/html/view-pg-shadow.html
+share/doc/postgresql/html/view-pg-shmem-allocations-numa.html
 share/doc/postgresql/html/view-pg-shmem-allocations.html
 share/doc/postgresql/html/view-pg-stats-ext-exprs.html
 share/doc/postgresql/html/view-pg-stats-ext.html

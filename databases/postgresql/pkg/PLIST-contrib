@@ -36,6 +36,8 @@
 @so lib/postgresql/passwordcheck.so
 @so lib/postgresql/pg_buffercache.so
 @so lib/postgresql/pg_freespacemap.so
+@so lib/postgresql/pg_logicalinspect.so
+@so lib/postgresql/pg_overexplain.so
 @so lib/postgresql/pg_prewarm.so
 @so lib/postgresql/pg_stat_statements.so
 @so lib/postgresql/pg_surgery.so
@@ -68,6 +70,7 @@ share/postgresql/extension/amcheck--1.0.sql
 share/postgresql/extension/amcheck--1.1--1.2.sql
 share/postgresql/extension/amcheck--1.2--1.3.sql
 share/postgresql/extension/amcheck--1.3--1.4.sql
+share/postgresql/extension/amcheck--1.4--1.5.sql
 share/postgresql/extension/amcheck.control
 share/postgresql/extension/autoinc--1.0.sql
 share/postgresql/extension/autoinc.control
@@ -90,6 +93,7 @@ share/postgresql/extension/btree_gist--1.3--1.4.sql
 share/postgresql/extension/btree_gist--1.4--1.5.sql
 share/postgresql/extension/btree_gist--1.5--1.6.sql
 share/postgresql/extension/btree_gist--1.6--1.7.sql
+share/postgresql/extension/btree_gist--1.7--1.8.sql
 share/postgresql/extension/btree_gist.control
 share/postgresql/extension/citext--1.0--1.1.sql
 share/postgresql/extension/citext--1.1--1.2.sql
@@ -98,6 +102,8 @@ share/postgresql/extension/citext--1.3--1.4.sql
 share/postgresql/extension/citext--1.4--1.5.sql
 share/postgresql/extension/citext--1.4.sql
 share/postgresql/extension/citext--1.5--1.6.sql
+share/postgresql/extension/citext--1.6--1.7.sql
+share/postgresql/extension/citext--1.7--1.8.sql
 share/postgresql/extension/citext.control
 share/postgresql/extension/cube--1.0--1.1.sql
 share/postgresql/extension/cube--1.1--1.2.sql
@@ -152,12 +158,14 @@ share/postgresql/extension/intarray.control
 share/postgresql/extension/isn--1.0--1.1.sql
 share/postgresql/extension/isn--1.1--1.2.sql
 share/postgresql/extension/isn--1.1.sql
+share/postgresql/extension/isn--1.2--1.3.sql
 share/postgresql/extension/isn.control
 share/postgresql/extension/jsonb_plperl--1.0.sql
 share/postgresql/extension/jsonb_plperl.control
 share/postgresql/extension/jsonb_plperlu--1.0.sql
 share/postgresql/extension/jsonb_plperlu.control
 share/postgresql/extension/lo--1.0--1.1.sql
+share/postgresql/extension/lo--1.1--1.2.sql
 share/postgresql/extension/lo--1.1.sql
 share/postgresql/extension/lo.control
 share/postgresql/extension/ltree--1.0--1.1.sql
@@ -171,6 +179,7 @@ share/postgresql/extension/pageinspect--1.0--1.1.sql
 share/postgresql/extension/pageinspect--1.1--1.2.sql
 share/postgresql/extension/pageinspect--1.10--1.11.sql
 share/postgresql/extension/pageinspect--1.11--1.12.sql
+share/postgresql/extension/pageinspect--1.12--1.13.sql
 share/postgresql/extension/pageinspect--1.2--1.3.sql
 share/postgresql/extension/pageinspect--1.3--1.4.sql
 share/postgresql/extension/pageinspect--1.4--1.5.sql
@@ -187,11 +196,15 @@ share/postgresql/extension/pg_buffercache--1.2--1.3.sql
 share/postgresql/extension/pg_buffercache--1.2.sql
 share/postgresql/extension/pg_buffercache--1.3--1.4.sql
 share/postgresql/extension/pg_buffercache--1.4--1.5.sql
+share/postgresql/extension/pg_buffercache--1.5--1.6.sql
 share/postgresql/extension/pg_buffercache.control
 share/postgresql/extension/pg_freespacemap--1.0--1.1.sql
 share/postgresql/extension/pg_freespacemap--1.1--1.2.sql
 share/postgresql/extension/pg_freespacemap--1.1.sql
+share/postgresql/extension/pg_freespacemap--1.2--1.3.sql
 share/postgresql/extension/pg_freespacemap.control
+share/postgresql/extension/pg_logicalinspect--1.0.sql
+share/postgresql/extension/pg_logicalinspect.control
 share/postgresql/extension/pg_prewarm--1.0--1.1.sql
 share/postgresql/extension/pg_prewarm--1.1--1.2.sql
 share/postgresql/extension/pg_prewarm--1.1.sql
@@ -199,6 +212,7 @@ share/postgresql/extension/pg_prewarm.control
 share/postgresql/extension/pg_stat_statements--1.0--1.1.sql
 share/postgresql/extension/pg_stat_statements--1.1--1.2.sql
 share/postgresql/extension/pg_stat_statements--1.10--1.11.sql
+share/postgresql/extension/pg_stat_statements--1.11--1.12.sql
 share/postgresql/extension/pg_stat_statements--1.2--1.3.sql
 share/postgresql/extension/pg_stat_statements--1.3--1.4.sql
 share/postgresql/extension/pg_stat_statements--1.4--1.5.sql
@@ -229,6 +243,7 @@ share/postgresql/extension/pg_walinspect.control
 share/postgresql/extension/pgcrypto--1.0--1.1.sql
 share/postgresql/extension/pgcrypto--1.1--1.2.sql
 share/postgresql/extension/pgcrypto--1.2--1.3.sql
+share/postgresql/extension/pgcrypto--1.3--1.4.sql
 share/postgresql/extension/pgcrypto--1.3.sql
 share/postgresql/extension/pgcrypto.control
 share/postgresql/extension/pgrowlocks--1.0--1.1.sql
@@ -244,6 +259,7 @@ share/postgresql/extension/pgstattuple--1.4.sql
 share/postgresql/extension/pgstattuple.control
 share/postgresql/extension/postgres_fdw--1.0--1.1.sql
 share/postgresql/extension/postgres_fdw--1.0.sql
+share/postgresql/extension/postgres_fdw--1.1--1.2.sql
 share/postgresql/extension/postgres_fdw.control
 share/postgresql/extension/refint--1.0.sql
 share/postgresql/extension/refint.control
@@ -272,5 +288,6 @@ share/postgresql/extension/uuid-ossp--1.0--1.1.sql
 share/postgresql/extension/uuid-ossp--1.1.sql
 share/postgresql/extension/uuid-ossp.control
 share/postgresql/extension/xml2--1.0--1.1.sql
+share/postgresql/extension/xml2--1.1--1.2.sql
 share/postgresql/extension/xml2--1.1.sql
 share/postgresql/extension/xml2.control
