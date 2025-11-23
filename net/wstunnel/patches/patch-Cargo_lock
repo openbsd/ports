@@ -1,8 +1,8 @@
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -3278,6 +3278,15 @@ source = "registry+https://github.com/rust-lang/crates
- checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
+@@ -3889,6 +3889,15 @@ dependencies = [
+ ]
  
  [[package]]
 +name = "unveil"
@@ -15,9 +15,9 @@ Index: Cargo.lock
 +
 +[[package]]
  name = "url"
- version = "2.5.4"
+ version = "2.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4003,6 +4012,7 @@ dependencies = [
+@@ -4595,6 +4604,7 @@ dependencies = [
   "tokio",
   "tracing",
   "tracing-subscriber",
