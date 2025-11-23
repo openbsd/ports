@@ -1,7 +1,7 @@
 Index: src/mainwindow.cpp
 --- src/mainwindow.cpp.orig
 +++ src/mainwindow.cpp
-@@ -143,7 +143,7 @@ MainWindow::MainWindow()
+@@ -150,7 +150,7 @@ MainWindow::MainWindow()
      , m_keyframesDock(0)
  {
  #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
