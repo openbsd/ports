@@ -1,9 +1,8 @@
 COMMENT =	URI templates
 
-MODPY_DISTV =	4.1.1
+MODPY_DISTV =	4.2.0
 DISTNAME =	uritemplate-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
 
 CATEGORIES =	www
 
