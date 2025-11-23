@@ -3,14 +3,11 @@ COMMENT-gtk4=		GTK4 terminal emulation library
 COMMENT-common=		shared files for vte3
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.82.1
+GNOME_VERSION=		0.82.2
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
 PKGNAME-common=		vte3-common-${GNOME_VERSION}
-
-REVISION-main=		0
-REVISION-gtk4=		0
 
 SHARED_LIBS += vte-2.91                  2.13 # 0.8200.1
 SHARED_LIBS += vte-2.91-gtk4             0.5 # 0
@@ -76,6 +73,9 @@ LIB_DEPENDS-common=	# empty
 RUN_DEPENDS-common=	# empty
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
+
+# do not show the VTE terminal in GNOME applications list
+CONFIGURE_ARGS +=	-Dapp-hidden=true
 
 TEST_DEPENDS=		shells/bash
 
