@@ -1,5 +1,7 @@
-VER=		22.6.0
-REVISION=	2
+VER=		22.7.0
+
+# keep above 7.8-stable
+REVISION-main=	0
 
 PJ_V=		2.15.1
 SHLIB_V=	0.0
