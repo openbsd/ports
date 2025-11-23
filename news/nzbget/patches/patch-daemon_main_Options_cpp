@@ -1,0 +1,14 @@
+Create required dirs after dropping privileges, ensuring correct
+ownership. Based on https://github.com/nzbgetcom/nzbget/pull/345.
+
+Index: daemon/main/Options.cpp
+--- daemon/main/Options.cpp.orig
++++ daemon/main/Options.cpp
+@@ -203,7 +203,6 @@ void Options::Init(const char* exeName, const char* co
+ 
+ 	ConvertOldOptions(&m_optEntries);
+ 
+-	CheckDirs();
+ 	InitOptions();
+ 	CheckOptions();
+ 

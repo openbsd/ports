@@ -1,0 +1,23 @@
+Create required dirs after dropping privileges, ensuring correct
+ownership. Based on https://github.com/nzbgetcom/nzbget/pull/345.
+
+Index: daemon/main/Options.h
+--- daemon/main/Options.h.orig
++++ daemon/main/Options.h
+@@ -362,6 +362,7 @@ class Options (public)
+ 	GuardedOptEntries GuardOptEntries() { return GuardedOptEntries(&m_optEntries, &m_optEntriesMutex); }
+ 	void CreateSchedulerTask(int id, const char* time, const char* weekDays,
+ 		ESchedulerCommand command, const char* param);
++	void CheckDirs();
+ 
+ 	// Options
+ 	const char* GetConfigFilename() const { return m_configFilename; }
+@@ -491,8 +492,6 @@ class Options (public)
+ 	bool GetRemoteClientMode() { return m_remoteClientMode; }
+ 
+ private:
+-	void CheckDirs();
+-
+ 	OptEntries m_optEntries;
+ 	Mutex m_optEntriesMutex;
+ 	Categories m_categories;

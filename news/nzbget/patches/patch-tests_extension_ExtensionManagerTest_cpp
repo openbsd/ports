@@ -1,0 +1,33 @@
+Create required dirs after dropping privileges, ensuring correct
+ownership. Based on https://github.com/nzbgetcom/nzbget/pull/345.
+
+Index: tests/extension/ExtensionManagerTest.cpp
+--- tests/extension/ExtensionManagerTest.cpp.orig
++++ tests/extension/ExtensionManagerTest.cpp
+@@ -47,6 +47,8 @@ BOOST_AUTO_TEST_CASE(LoadExtensionsTest)
+ 	Options options(&cmdOpts, nullptr);
+ 	g_Options = &options;
+ 
++	options.CheckDirs();
++
+ 	std::vector<std::string> correctOrder = { "Extension2", "Extension1", "email" };
+ 	ExtensionManager::Manager manager;
+ 
+@@ -75,6 +77,8 @@ BOOST_AUTO_TEST_CASE(ShouldNotDeleteExtensionIfExtensi
+ 	g_Options = &options;
+ 	ExtensionManager::Manager manager;
+ 
++	options.CheckDirs();
++
+ 	BOOST_REQUIRE(manager.LoadExtensions() == std::nullopt);
+ 
+ 	const auto busyExt = manager.FindIf([](auto script) { return true; });
+@@ -100,6 +104,8 @@ BOOST_AUTO_TEST_CASE(DeleteExtensionTest)
+ 	Options options(&cmdOpts, nullptr);
+ 	g_Options = &options;
+ 	ExtensionManager::Manager manager;
++
++	options.CheckDirs();
+ 
+ 	BOOST_REQUIRE(manager.LoadExtensions() == std::nullopt);
+ 

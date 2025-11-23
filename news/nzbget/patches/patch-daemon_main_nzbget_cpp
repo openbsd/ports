@@ -1,0 +1,15 @@
+Create required dirs after dropping privileges, ensuring correct
+ownership. Based on https://github.com/nzbgetcom/nzbget/pull/345.
+
+Index: daemon/main/nzbget.cpp
+--- daemon/main/nzbget.cpp.orig
++++ daemon/main/nzbget.cpp
+@@ -333,6 +333,8 @@ void NZBGet::Init()
+ 		info("nzbget %s remote-mode", Util::VersionRevision());
+ 	}
+ 
++	m_options->CheckDirs();
++
+ 	info("using %s", m_options->GetConfigFilename());
+ 	info("nzbget runs on %s:%i", m_options->GetControlIp(), m_options->GetControlPort());
+ 

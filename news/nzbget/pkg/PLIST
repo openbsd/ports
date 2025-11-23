@@ -5,17 +5,10 @@
 @owner _nzbget
 @group _nzbget
 @sample ${LOCALSTATEDIR}/nzbget/
-@sample ${LOCALSTATEDIR}/nzbget/nzb/
-@sample ${LOCALSTATEDIR}/nzbget/tmp/
-@sample ${LOCALSTATEDIR}/nzbget/queue/
 @mode
 @owner
 @group
 @bin bin/nzbget
-@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/nzbget.{lock,log}
-@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/nzb/*
-@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/tmp/*
-@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/queue/*
 share/nzbget/
 share/nzbget/doc/
 share/nzbget/doc/COPYING

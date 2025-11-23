@@ -1,0 +1,15 @@
+Create required dirs after dropping privileges, ensuring correct
+ownership. Based on https://github.com/nzbgetcom/nzbget/pull/345.
+
+Index: tests/main/OptionsTest.cpp
+--- tests/main/OptionsTest.cpp.orig
++++ tests/main/OptionsTest.cpp
+@@ -80,6 +80,8 @@ BOOST_AUTO_TEST_CASE(OptionsInitWithoutConfigurationFi
+ {
+ 	Options options(nullptr, nullptr);
+ 
++	options.CheckDirs();
++
+ 	BOOST_CHECK(options.GetConfigFilename() == nullptr);
+ #ifdef WIN32
+ 	BOOST_CHECK(strcmp(options.GetTempDir(), "nzbget/tmp") == 0);
