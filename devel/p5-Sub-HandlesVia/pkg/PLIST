@@ -30,6 +30,7 @@ ${P5SITE}/Sub/HandlesVia/Manual/
 ${P5SITE}/Sub/HandlesVia/Manual/Advanced.pod
 ${P5SITE}/Sub/HandlesVia/Manual/Comparison.pod
 ${P5SITE}/Sub/HandlesVia/Manual/WithClassTiny.pod
+${P5SITE}/Sub/HandlesVia/Manual/WithCorinna.pod
 ${P5SITE}/Sub/HandlesVia/Manual/WithGeneric.pod
 ${P5SITE}/Sub/HandlesVia/Manual/WithMite.pod
 ${P5SITE}/Sub/HandlesVia/Manual/WithMoo.pod
@@ -69,6 +70,7 @@ ${P5SITE}/Sub/HandlesVia/Toolkit/Plain.pm.mite.pm
 @man man/man3p/Sub::HandlesVia::Manual::Advanced.3p
 @man man/man3p/Sub::HandlesVia::Manual::Comparison.3p
 @man man/man3p/Sub::HandlesVia::Manual::WithClassTiny.3p
+@man man/man3p/Sub::HandlesVia::Manual::WithCorinna.3p
 @man man/man3p/Sub::HandlesVia::Manual::WithGeneric.3p
 @man man/man3p/Sub::HandlesVia::Manual::WithMite.3p
 @man man/man3p/Sub::HandlesVia::Manual::WithMoo.3p

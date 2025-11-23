@@ -1,11 +1,13 @@
 COMMENT =	alternative handles_via implementation
 
-DISTNAME =	Sub-HandlesVia-0.050003
+DISTNAME =	Sub-HandlesVia-0.052000
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		TOBYINK
 
 MODULES =		cpan
 
