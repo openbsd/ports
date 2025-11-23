@@ -10,3 +10,13 @@ Index: auto.def
    msg-result "Trying to link statically"
  } else {
    define-append EXTRA_CFLAGS -DFOSSIL_DYNAMIC_BUILD=1
+@@ -814,7 +814,8 @@ if {[opt-bool fusefs]} {
+   if {[opt-bool static]} {
+     msg-result "FuseFS support disabled due to -static"
+   } elseif {[cc-check-function-in-lib fuse_mount fuse]} {
+-    define-append EXTRA_CFLAGS -DFOSSIL_HAVE_FUSEFS
++    set cflags [exec pkg-config fuse --cflags-only-I]
++    define-append EXTRA_CFLAGS -DFOSSIL_HAVE_FUSEFS $cflags
+     define FOSSIL_HAVE_FUSEFS 1
+     msg-result "FuseFS support enabled"
+   }

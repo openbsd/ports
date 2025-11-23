@@ -11,7 +11,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c fuse pthread
 
-MAKE_FLAGS =	CPPFLAGS="-DFUSE_USE_VERSION=29 -DDISABLE_XATTR" \
+MAKE_FLAGS =	CPPFLAGS="-DFUSE_USE_VERSION=29 -DDISABLE_XATTR \
+		`pkg-config --cflags fuse`" \
 		LIB="-lfuse -lpthread"
 
 ALL_TARGET =	build
