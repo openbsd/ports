@@ -1,3 +1,9 @@
+2nd chunk:
+From bf711cfd86536971404974a48c4db7298bda0e06 Mon Sep 17 00:00:00 2001
+From: Alynx Zhou <alynx.zhou@gmail.com>
+Date: Tue, 1 Apr 2025 11:18:05 +0800
+Subject: [PATCH] gdm-config: Add missing "/" when building dconf paths
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -10,7 +16,13 @@ Index: meson.build
  utmp_has_host_field = cc.has_member(utmp_struct, 'ut_host', prefix: utmp_include)
  utmp_has_pid_field = cc.has_member(utmp_struct, 'ut_pid', prefix: utmp_include)
  utmp_has_id_field = cc.has_member(utmp_struct, 'ut_id', prefix: utmp_include)
-@@ -240,6 +240,11 @@ if dconf_dep.found()
+@@ -235,11 +235,16 @@ endif
+ # dconf paths, we should fix dconf.pc to provide us more real data though
+ if dconf_dep.found()
+   dconf_prefix = dconf_dep.get_variable(pkgconfig: 'prefix')
+-  dconf_sysconfig = (dconf_prefix == '/usr') ? '/etc' : dconf_prefix + '/etc/'
++  dconf_sysconfig = (dconf_prefix == '/usr') ? '/etc' : dconf_prefix + '/etc'
+   dconf_datadir = dconf_prefix / 'share'
  else
    dconf_sysconfig = gdm_prefix / get_option('sysconfdir')
    dconf_datadir = gdm_prefix / get_option('datadir')
@@ -18,7 +30,7 @@ Index: meson.build
 +
 +# SYSCONFDIR is never under /usr/local on OpenBSD
 +if host_machine.system() == 'openbsd'
-+  dconf_sysconfig = get_option('sysconfdir') + '/'
++  dconf_sysconfig = get_option('sysconfdir')
  endif
  
  dconf_profiles_path = dconf_datadir / 'dconf' / 'profile'

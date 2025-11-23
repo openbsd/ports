@@ -1,0 +1,19 @@
+From bf711cfd86536971404974a48c4db7298bda0e06 Mon Sep 17 00:00:00 2001
+From: Alynx Zhou <alynx.zhou@gmail.com>
+Date: Tue, 1 Apr 2025 11:18:05 +0800
+Subject: [PATCH] gdm-config: Add missing "/" when building dconf paths
+
+Index: utils/gdm-config.c
+--- utils/gdm-config.c.orig
++++ utils/gdm-config.c
+@@ -34,8 +34,8 @@
+ 
+ #include "gdm-common.h"
+ 
+-#define DCONF_SYSCONFIG_PROFILES_PATH DCONF_SYSCONFIG "dconf/profile"
+-#define DCONF_SYSCONFIG_DB_PATH DCONF_SYSCONFIG "dconf/db"
++#define DCONF_SYSCONFIG_PROFILES_PATH DCONF_SYSCONFIG "/dconf/profile"
++#define DCONF_SYSCONFIG_DB_PATH DCONF_SYSCONFIG "/dconf/db"
+ #define DCONF_SYSTEM_DB_PREFIX "system-db:"
+ #define DCONF_SYSTEM_DB_DEFAULT_NAME "gdm_auth_config"
+ 
