@@ -1,7 +1,7 @@
 Index: Coil64.pro
 --- Coil64.pro.orig
 +++ Coil64.pro
-@@ -153,7 +153,6 @@ win32:{
+@@ -155,7 +155,6 @@ win32:{
  unix:{
    !macx:{
      QMAKE_LFLAGS += -no-pie
