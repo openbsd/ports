@@ -1,2 +1,4 @@
 SHA256 (pllua-REL_2_0_12.tar.gz) = eztLXXSaLR4EBznA6q1LWze2d4ZurX9qbjSfhAxetMM=
+SHA256 (pllua-pg18-fix.patch) = MAeJdYPQ1hqqAiKQCoR0jl9xBM8ktbE3i5fXXGsjSO0=
 SIZE (pllua-REL_2_0_12.tar.gz) = 222446
+SIZE (pllua-pg18-fix.patch) = 3950

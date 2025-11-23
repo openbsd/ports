@@ -5,7 +5,11 @@ GH_ACCOUNT =		pllua
 GH_PROJECT =		pllua
 GH_TAGNAME =		REL_${VERSION:S/./_/g}
 PKGNAME =		postgresql-pllua-${VERSION}
-REVISION =		0
+REVISION =		1
+
+SITES.p =       	https://github.com/pllua/pllua/commit/
+PATCHFILES.p =          pllua-pg18-fix{bb2f44b542e650ddd250e4e27c73e86aadb09dde}.patch
+PATCH_DIST_STRIP =      -p1
 
 CATEGORIES =		databases
 
@@ -22,8 +26,8 @@ MODULES =		lang/lua
 MODLUA_VERSION =	5.3
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			postgresql-client->=17,<18:databases/postgresql,-main
-RUN_DEPENDS =		postgresql-server->=17,<18:databases/postgresql,-server
+			postgresql-client->=18,<19:databases/postgresql,-main
+RUN_DEPENDS =		postgresql-server->=18,<19:databases/postgresql,-server
 
 USE_GMAKE =		Yes
 
