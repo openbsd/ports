@@ -6,8 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/showtime/__init__.py
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}application_delegate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}application_delegate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}mpris.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -16,7 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}play.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}play.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/showtime/application_delegate.py
 lib/python${MODPY_VERSION}/site-packages/showtime/main.py
 lib/python${MODPY_VERSION}/site-packages/showtime/mpris.py
 lib/python${MODPY_VERSION}/site-packages/showtime/play.py
@@ -58,6 +55,7 @@ share/locale/eu/LC_MESSAGES/showtime.mo
 share/locale/fa/LC_MESSAGES/showtime.mo
 share/locale/fi/LC_MESSAGES/showtime.mo
 share/locale/fr/LC_MESSAGES/showtime.mo
+share/locale/fur/LC_MESSAGES/showtime.mo
 share/locale/gl/LC_MESSAGES/showtime.mo
 share/locale/he/LC_MESSAGES/showtime.mo
 share/locale/hi/LC_MESSAGES/showtime.mo
@@ -70,6 +68,7 @@ share/locale/ka/LC_MESSAGES/showtime.mo
 share/locale/kab/LC_MESSAGES/showtime.mo
 share/locale/ko/LC_MESSAGES/showtime.mo
 share/locale/lt/LC_MESSAGES/showtime.mo
+share/locale/nb/LC_MESSAGES/showtime.mo
 share/locale/ne/LC_MESSAGES/showtime.mo
 share/locale/nl/LC_MESSAGES/showtime.mo
 share/locale/nn/LC_MESSAGES/showtime.mo
@@ -82,8 +81,10 @@ share/locale/ru/LC_MESSAGES/showtime.mo
 share/locale/sk/LC_MESSAGES/showtime.mo
 share/locale/sl/LC_MESSAGES/showtime.mo
 share/locale/sr/LC_MESSAGES/showtime.mo
+share/locale/sr@latin/LC_MESSAGES/showtime.mo
 share/locale/sv/LC_MESSAGES/showtime.mo
 share/locale/tr/LC_MESSAGES/showtime.mo
+share/locale/ug/LC_MESSAGES/showtime.mo
 share/locale/uk/LC_MESSAGES/showtime.mo
 share/locale/uz/LC_MESSAGES/showtime.mo
 share/locale/zh_CN/LC_MESSAGES/showtime.mo

@@ -1,12 +1,14 @@
+XXX push upstream
+
 Index: showtime/showtime.in
 --- showtime/showtime.in.orig
 +++ showtime/showtime.in
-@@ -17,7 +17,7 @@ localedir = "@localedir@"
+@@ -16,7 +16,7 @@ localedir = "@localedir@"
  sys.path.insert(1, pkgdatadir)
  signal.signal(signal.SIGINT, signal.SIG_DFL)
  
 -if system() == "Linux":
 +if system() == "Linux" or system() == "OpenBSD":
-     locale.bindtextdomain("showtime", localedir)
-     locale.textdomain("showtime")
-     gettext.install("showtime", localedir)
+     locale.bindtextdomain("@BIN_NAME@", localedir)
+     locale.textdomain("@BIN_NAME@")
+     gettext.install("@BIN_NAME@", localedir)
