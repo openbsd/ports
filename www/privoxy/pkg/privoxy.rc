@@ -10,7 +10,7 @@ rc_reload=NO
 rc_pre()
 {
 	case ${daemon_flags} in
-	*--chroot*)	
+	*--chroot*)
 		pax -rw -u -p e ${SYSCONFDIR}/privoxy /var/privoxy/
 		pax -rw -u -p e ${SYSCONFDIR}/hosts /var/privoxy/
 		pax -rw -u -p e ${SYSCONFDIR}/resolv.conf /var/privoxy/

@@ -1,7 +1,7 @@
 Index: openssl.c
 --- openssl.c.orig
 +++ openssl.c
-@@ -278,6 +278,7 @@ static int ssl_store_cert(struct client_state *csp, X5
+@@ -285,6 +285,7 @@ static int ssl_store_cert(struct client_state *csp, X5
     long l;
     const ASN1_INTEGER *bs;
  #if OPENSSL_VERSION_NUMBER > 0x10100000L
@@ -9,7 +9,7 @@ Index: openssl.c
     const X509_ALGOR *tsig_alg;
  #endif
     int loc;
-@@ -481,7 +482,8 @@ static int ssl_store_cert(struct client_state *csp, X5
+@@ -488,7 +489,8 @@ static int ssl_store_cert(struct client_state *csp, X5
        goto exit;
     }
     tsig_alg = X509_get0_tbs_sigalg(crt);

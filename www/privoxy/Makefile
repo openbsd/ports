@@ -1,17 +1,16 @@
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.33
+V=		4.0.0
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
-REVISION=	1
 
 HOMEPAGE=	https://www.privoxy.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto pcre pcreposix pthread ssl z
+WANTLIB += c crypto pcre2-8 pcre2-posix pthread ssl z
 
 SITES=		${SITE_SOURCEFORGE:=ijbswa/}
 EXTRACT_SUFX=	-src.tar.gz
@@ -24,15 +23,15 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
 
-LIB_DEPENDS=	devel/pcre
+LIB_DEPENDS=	devel/pcre2
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.72
 CONFIGURE_ARGS=	--with-docbook=no \
 		--with-openssl
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-PRIVOXYCONF=	${SYSCONFDIR}/privoxy/
+PRIVOXYCONF=	${SYSCONFDIR}/privoxy
 SUBST_VARS=	PRIVOXYCONF
 
 pre-configure:
