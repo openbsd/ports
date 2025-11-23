@@ -931,6 +931,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-s
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-syntax-binding_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-syntax-serialize_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-syntax-serialize_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-thread_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw-thread_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/letstx-scheme_rkt.dep
@@ -1131,6 +1133,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/
 lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/
 lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/ops_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/ops_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/struct-type-property_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/struct-type-property_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/undefined_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/unsafe/compiled/undefined_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/raco/
@@ -1936,6 +1940,7 @@ share/racket/collects/racket/private/kw-file.rkt
 share/racket/collects/racket/private/kw-prop-key.rkt
 share/racket/collects/racket/private/kw-syntax-binding.rkt
 share/racket/collects/racket/private/kw-syntax-serialize.rkt
+share/racket/collects/racket/private/kw-thread.rkt
 share/racket/collects/racket/private/kw.rkt
 share/racket/collects/racket/private/letstx-scheme.rkt
 share/racket/collects/racket/private/link-path.rkt
@@ -2075,6 +2080,7 @@ share/racket/collects/racket/unit/lang/reader.rkt
 share/racket/collects/racket/unreachable.rkt
 share/racket/collects/racket/unsafe/
 share/racket/collects/racket/unsafe/ops.rkt
+share/racket/collects/racket/unsafe/struct-type-property.rkt
 share/racket/collects/racket/unsafe/undefined.rkt
 share/racket/collects/racket/vector.rkt
 share/racket/collects/raco/
