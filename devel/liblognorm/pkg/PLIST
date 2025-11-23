@@ -1,6 +1,6 @@
 @bin bin/lognormalizer
 include/liblognorm.h
-lib/liblognorm.a
+@static-lib lib/liblognorm.a
 lib/liblognorm.la
 @lib lib/liblognorm.so.${LIBlognorm_VERSION}
 lib/pkgconfig/lognorm.pc

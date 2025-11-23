@@ -1,8 +1,8 @@
 COMMENT =	fast-samples based normalization library
 
-DISTNAME =	liblognorm-2.0.6
+DISTNAME =	liblognorm-2.0.7
 
-SHARED_LIBS +=	lognorm		0.1 # 6.0
+SHARED_LIBS +=	lognorm		0.2 # 6.0
 
 CATEGORIES =	devel
 
