@@ -1,17 +1,17 @@
-BROKEN =		needs to be ported to fmt >=1.11
-
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		4.0.6
-REVISION=	1
-DISTNAME=	transmission-${VER}
+VER=		4.1.0beta3
+DISTNAME=	transmission-4.1.0-beta.3+rf20fd5e373
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
+
 CATEGORIES=	net
+
 HOMEPAGE=	https://transmissionbt.com/
+
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
 
 DEBUG_PACKAGES=${BUILD_PACKAGES}
@@ -19,7 +19,7 @@ DEBUG_PACKAGES=${BUILD_PACKAGES}
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
+SITES=	https://github.com/transmission/transmission/releases/download/4.1.0-beta.3/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
@@ -34,17 +34,17 @@ FLAVOR?=
 .include <bsd.port.arch.mk>
 
 WANTLIB-common =	${COMPILER_LIBCXX} c crypto curl deflate
-WANTLIB-common +=	m miniupnpc natpmp psl ssl
+WANTLIB-common +=	m miniupnpc natpmp psl ssl crc32c intl
 
 WANTLIB-main =	${WANTLIB-common}
 
 WANTLIB-gtk +=	${WANTLIB-common} atk-1.0 atkmm-1.6 cairo cairo-gobject
 WANTLIB-gtk +=	cairomm-1.0 gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
 WANTLIB-gtk +=	giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0
-WANTLIB-gtk +=	harfbuzz intl pango-1.0 pangocairo-1.0 pangomm-1.4 sigc-2.0
+WANTLIB-gtk +=	harfbuzz pango-1.0 pangocairo-1.0 pangomm-1.4 sigc-2.0
 
 WANTLIB-qt +=	${WANTLIB-common} GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
-WANTLIB-qt +=	Qt6Widgets
+WANTLIB-qt +=	Qt6Widgets crc32c
 
 MODULES +=		devel/cmake \
 			textproc/intltool
@@ -52,6 +52,7 @@ MODULES +=		devel/cmake \
 BUILD_DEPENDS +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
+			devel/crc32c \
 			net/curl \
 			net/libpsl \
 			net/miniupnp/libnatpmp \

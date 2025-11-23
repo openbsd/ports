@@ -12,9 +12,11 @@ share/transmission/translations/transmission_es.qm
 share/transmission/translations/transmission_eu.qm
 share/transmission/translations/transmission_fi.qm
 share/transmission/translations/transmission_fr.qm
+share/transmission/translations/transmission_he.qm
 share/transmission/translations/transmission_hu.qm
 share/transmission/translations/transmission_id.qm
-share/transmission/translations/transmission_it_IT.qm
+share/transmission/translations/transmission_is.qm
+share/transmission/translations/transmission_it.qm
 share/transmission/translations/transmission_ja.qm
 share/transmission/translations/transmission_ka.qm
 share/transmission/translations/transmission_kk.qm
@@ -32,4 +34,5 @@ share/transmission/translations/transmission_sv.qm
 share/transmission/translations/transmission_tr.qm
 share/transmission/translations/transmission_uk.qm
 share/transmission/translations/transmission_zh_CN.qm
+share/transmission/translations/transmission_zh_TW.qm
 @tag update-desktop-database
