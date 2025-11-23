@@ -1,11 +1,13 @@
 COMMENT =	MooX::Options + MooX::Cmd + Sanity
 
-DISTNAME =	CLI-Osprey-0.08
+DISTNAME =	CLI-Osprey-0.09
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		ARODLAND
 
 MODULES =		cpan
 
