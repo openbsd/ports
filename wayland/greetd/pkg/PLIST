@@ -1,5 +1,5 @@
 @newgroup _greetd:565
-@newuser _greetd:565:565::greetd user:/var/empty:/sbin/nologin
+@newuser _greetd:565:565::greetd user:/var/run/greetd:/sbin/nologin
 @rcscript ${RCDIR}/greetd
 @bin bin/agreety
 @bin bin/greetd
