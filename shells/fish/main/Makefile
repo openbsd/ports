@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.1.2
+V =			4.2.1
 
 DISTNAME =		fish-${V}
 
@@ -37,7 +37,6 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 LIB_DEPENDS =		devel/pcre2
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
-			share/tools/deroff.py \
 			share/tools/web_config/webconfig.py
 
 MAKE_FLAGS =		V=1

@@ -98,7 +98,9 @@ share/doc/fish/cmds/fish_right_prompt.html
 share/doc/fish/cmds/fish_should_add_to_history.html
 share/doc/fish/cmds/fish_status_to_signal.html
 share/doc/fish/cmds/fish_svn_prompt.html
+share/doc/fish/cmds/fish_tab_title.html
 share/doc/fish/cmds/fish_title.html
+share/doc/fish/cmds/fish_title.inc.html
 share/doc/fish/cmds/fish_update_completions.html
 share/doc/fish/cmds/fish_vcs_prompt.html
 share/doc/fish/cmds/fish_vi_key_bindings.html
@@ -1251,6 +1253,7 @@ share/fish/functions/__fish_cache_put.fish
 share/fish/functions/__fish_cache_sourced_completions.fish
 share/fish/functions/__fish_cached.fish
 share/fish/functions/__fish_cancel_commandline.fish
+share/fish/functions/__fish_canonicalize_builtin.fish
 share/fish/functions/__fish_change_key_bindings.fish
 share/fish/functions/__fish_cmd__complete_args.fish
 share/fish/functions/__fish_commandline_is_singlequoted.fish
@@ -1304,6 +1307,9 @@ share/fish/functions/__fish_contains_opt.fish
 share/fish/functions/__fish_crux_packages.fish
 share/fish/functions/__fish_cursor_konsole.fish
 share/fish/functions/__fish_cursor_xterm.fish
+share/fish/functions/__fish_data_list_files.fish
+share/fish/functions/__fish_data_with_directory.fish
+share/fish/functions/__fish_data_with_file.fish
 share/fish/functions/__fish_describe_command.fish
 share/fish/functions/__fish_echo.fish
 share/fish/functions/__fish_edit_command_if_at_cursor.fish
@@ -1316,10 +1322,13 @@ share/fish/functions/__fish_is_first_arg.fish
 share/fish/functions/__fish_is_first_token.fish
 share/fish/functions/__fish_is_git_repository.fish
 share/fish/functions/__fish_is_nth_token.fish
+share/fish/functions/__fish_is_standalone.fish
 share/fish/functions/__fish_is_switch.fish
 share/fish/functions/__fish_is_token_n.fish
 share/fish/functions/__fish_is_zfs_feature_enabled.fish
 share/fish/functions/__fish_list_current_token.fish
+share/fish/functions/__fish_locale_vars.fish
+share/fish/functions/__fish_macos_set_env.fish
 share/fish/functions/__fish_make_cache_dir.fish
 share/fish/functions/__fish_make_completion_signals.fish
 share/fish/functions/__fish_man_page.fish
@@ -1402,6 +1411,7 @@ share/fish/functions/__fish_use_subcommand.fish
 share/fish/functions/__fish_vcs_prompt.fish
 share/fish/functions/__fish_whatis.fish
 share/fish/functions/__fish_whatis_current_token.fish
+share/fish/functions/__fish_with_status.fish
 share/fish/functions/__ssh_history_completions.fish
 share/fish/functions/__terlar_git_prompt.fish
 share/fish/functions/_validate_int.fish
@@ -1546,6 +1556,7 @@ share/fish/man/man1/
 @man share/fish/man/man1/fish_should_add_to_history.1
 @man share/fish/man/man1/fish_status_to_signal.1
 @man share/fish/man/man1/fish_svn_prompt.1
+@man share/fish/man/man1/fish_tab_title.1
 @man share/fish/man/man1/fish_title.1
 @man share/fish/man/man1/fish_update_completions.1
 @man share/fish/man/man1/fish_vcs_prompt.1
@@ -1616,10 +1627,7 @@ share/fish/tools/
 share/fish/tools/${MODPY_PYCACHE}/
 share/fish/tools/${MODPY_PYCACHE}create_manpage_completions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fish/tools/${MODPY_PYCACHE}create_manpage_completions.${MODPY_PYC_MAGIC_TAG}pyc
-share/fish/tools/${MODPY_PYCACHE}deroff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/fish/tools/${MODPY_PYCACHE}deroff.${MODPY_PYC_MAGIC_TAG}pyc
 share/fish/tools/create_manpage_completions.py
-share/fish/tools/deroff.py
 share/fish/tools/web_config/
 share/fish/tools/web_config/${MODPY_PYCACHE}/
 share/fish/tools/web_config/${MODPY_PYCACHE}webconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
