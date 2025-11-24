@@ -2,10 +2,9 @@ BROKEN-riscv64=	fails to link to libpython on riscv64
 
 COMMENT=	concrete syntax tree with AST-like properties for Python
 
-MODPY_DISTV=	1.6.0
+MODPY_DISTV=	1.8.6
 DISTNAME=	libcst-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 HOMEPAGE=	https://github.com/Instagram/LibCST
 
