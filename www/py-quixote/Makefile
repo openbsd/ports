@@ -1,13 +1,12 @@
 COMMENT=	simple Python framework for web-based applications
 
-MODPY_DISTV=	3.6
-DISTNAME=	Quixote-${MODPY_DISTV}
+MODPY_DISTV=	3.7
+DISTNAME=	quixote-${MODPY_DISTV}
 PKGNAME=	py-quixote-${MODPY_DISTV}
-REVISION=	3
 
 CATEGORIES=	www
 
-HOMEPAGE=	http://quixote.ca/
+HOMEPAGE=	https://github.com/nascheme/quixote
 
 # MIT
 PERMIT_PACKAGE=	Yes
