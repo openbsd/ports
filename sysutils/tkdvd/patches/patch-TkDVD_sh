@@ -1,13 +1,6 @@
---- TkDVD.sh.orig	Sat Aug 30 14:04:00 2008
-+++ TkDVD.sh	Sat Nov  7 15:47:06 2009
-@@ -1,6 +1,6 @@
- #!/bin/sh
- # the next line restarts using wish \
--exec wish "$0" "$@"
-+exec ${MODTK_BIN} "$0" "$@"
- 
- #    Copyright 2003,2008 Regis Damongeot
- 
+Index: TkDVD.sh
+--- TkDVD.sh.orig
++++ TkDVD.sh
 @@ -25,7 +25,7 @@ wm geometry . 700x550
  wm protocol . WM_DELETE_WINDOW { save_options; destroy . }
  set burn_type "burn_dvd"
