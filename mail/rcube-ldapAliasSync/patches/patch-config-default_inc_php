@@ -10,3 +10,12 @@ Index: config-default.inc.php
  	// Mail parameters
  	'mail' => array(
  		# Domain to use for LDAP searches (required, if 'replace_domain' is true)
+@@ -234,7 +234,7 @@ $rcmail_config['ldapAliasSync'] = array(
+ 	'general' => array(
+ 		# Log level (optional)
+ 		# Set the level of log details to be logged by this plugin
+-		# Possible values: 'error', 'warn', 'info', 'debug'
++		# Possible values: 'error', 'warning', 'info', 'debug'
+ 		# Default: 'error'
+ 		#'log_level' => 'error',
+ 
