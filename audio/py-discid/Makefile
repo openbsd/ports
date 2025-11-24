@@ -1,21 +1,20 @@
-COMMENT =		Python binding of libdiscid
+COMMENT=	Python binding of libdiscid
 
-MODPY_DISTV =	1.2.0
-DISTNAME =		discid-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		8
+MODPY_DISTV=	1.3.0
+DISTNAME=	discid-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		audio
+CATEGORIES=	audio
 
-HOMEPAGE =		https://python-discid.readthedocs.org/
+HOMEPAGE=	https://python-discid.readthedocs.org/
 
-# LGPL3 or later
-PERMIT_PACKAGE =	Yes
+# LGPLv3+
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-RUN_DEPENDS =		audio/libdiscid
+RUN_DEPENDS=	audio/libdiscid
 
 .include <bsd.port.mk>

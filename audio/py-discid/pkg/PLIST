@@ -5,7 +5,6 @@ lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/METADAT
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/licenses/COPYING.LESSER
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/discid/__init__.py
