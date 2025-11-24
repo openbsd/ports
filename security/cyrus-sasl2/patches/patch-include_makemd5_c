@@ -1,0 +1,19 @@
+Enable PROTOTYPES by default, even base-gcc handles this modern feature.
+
+Index: include/makemd5.c
+--- include/makemd5.c.orig
++++ include/makemd5.c
+@@ -155,11 +155,11 @@ static int print_pre(FILE *f)
+ 	  "\n"
+ 	  "/* PROTOTYPES should be set to one if and only if the compiler supports\n"
+ 	  "  function argument prototyping.\n"
+-	  "The following makes PROTOTYPES default to 0 if it has not already\n"
++	  "The following makes PROTOTYPES default to 1 if it has not already\n"
+ 	  "  been defined with C compiler flags.\n"
+ 	  " */\n"
+ 	  "#ifndef PROTOTYPES\n"
+-	  "#define PROTOTYPES 0\n"
++	  "#define PROTOTYPES 1\n"
+ 	  "#endif\n"
+ 	  "\n"
+ 	  "/* POINTER defines a generic pointer type */\n"
