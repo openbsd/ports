@@ -11,9 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2025.11.142.2
-
-REVISION=		0
+V=			2025.11.142.3
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -249,6 +247,7 @@ post-patch:
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
+		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
 		${WRKSRC}/v8/tools/run.py \
