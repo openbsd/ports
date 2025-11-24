@@ -4,6 +4,8 @@ GH_ACCOUNT =		LibVNC
 GH_PROJECT =		x11vnc
 GH_TAGNAME =		0.9.17
 
+REVISION =		0
+
 CATEGORIES =		x11
 
 # GPLv2
@@ -14,6 +16,8 @@ WANTLIB += Xrandr Xtst avahi-client avahi-common c cairo crypto
 WANTLIB += ssl vncclient vncserver
 
 MODULES =		x11/tk
+MODTK_VERSION =		8.6
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			${MODTK_RUN_DEPENDS}
 LIB_DEPENDS =		graphics/cairo \
@@ -30,6 +34,10 @@ CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+
+SUBST_VARS =		WISH_BIN
+
+WISH_BIN =		${MODTK_BIN:T}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gui.c
