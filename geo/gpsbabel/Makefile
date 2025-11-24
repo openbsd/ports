@@ -14,6 +14,9 @@ DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
+
+REVISION-tk=		0
+
 CATEGORIES=		geo
 
 HOMEPAGE=		https://www.gpsbabel.org/
@@ -36,6 +39,8 @@ MULTI_PACKAGES=		-main -tk -qt
 MODULES=		devel/cmake \
 			x11/tk \
 			x11/qt6
+
+MODTK_VERSION=		8.6
 
 # gpsbabel (from the -main subpackage) is linked against Qt6Core
 LIB_DEPENDS-main=	devel/libusb1 \
@@ -60,7 +65,7 @@ CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -lshp
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/guibabel
+	@${MODTCL_WISH_ADJ} ${WRKSRC}/guibabel
 	@perl -pi -e 's/gpsbabelfe-bin/guibabel-qt/' \
 		${WRKSRC}/gui/gpsbabel.desktop
 
