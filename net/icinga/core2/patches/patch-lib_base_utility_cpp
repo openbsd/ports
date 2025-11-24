@@ -1,0 +1,24 @@
+OpenBSD has pthread_set_name_np as well
+There doesn't seem to be a cmake check to define HAVE_PTHREAD_SET_NAME_NP?
+
+Index: lib/base/utility.cpp
+--- lib/base/utility.cpp.orig
++++ lib/base/utility.cpp
+@@ -34,7 +34,7 @@
+ #include <utf8.h>
+ #include <vector>
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #	include <pthread_np.h>
+ #endif /* __FreeBSD__ */
+ 
+@@ -1294,7 +1294,7 @@ void Utility::SetThreadName(const String& name, bool o
+ 	WindowsSetThreadName(name.CStr());
+ #endif /* _WIN32 */
+ 
+-#ifdef HAVE_PTHREAD_SET_NAME_NP
++#if 1 || defined(HAVE_PTHREAD_SET_NAME_NP)
+ 	pthread_set_name_np(pthread_self(), name.CStr());
+ #endif /* HAVE_PTHREAD_SET_NAME_NP */
+ 
