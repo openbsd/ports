@@ -5,8 +5,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
-GNOME_VERSION=		49.1
-REVISION=		2
+GNOME_VERSION=		49.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

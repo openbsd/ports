@@ -14,7 +14,7 @@ Index: js/gdm/loginDialog.js
  export const UserListItem = GObject.registerClass({
      Signals: {'activate': {}},
  }, class UserListItem extends St.Button {
-@@ -1254,6 +1258,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1257,6 +1261,7 @@ export const LoginDialog = GObject.registerClass({
      }
  
      async _findConflictingSession(startingSessionId) {
@@ -22,7 +22,7 @@ Index: js/gdm/loginDialog.js
          const loginManager = LoginManager.getLoginManager();
          const sessions = await loginManager.listSessions();
          const [, , startingSessionOwner, ,] = sessions.find(([id, , , ,]) => id === startingSessionId);
-@@ -1273,6 +1278,7 @@ export const LoginDialog = GObject.registerClass({
+@@ -1276,6 +1281,7 @@ export const LoginDialog = GObject.registerClass({
                  continue;
  
              return sessionProxy;

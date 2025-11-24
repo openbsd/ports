@@ -116,7 +116,7 @@ Index: js/misc/loginManager.js
  class LoginManagerSystemd extends Signals.EventEmitter {
      constructor() {
          super();
-@@ -271,16 +356,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+@@ -255,16 +340,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));
