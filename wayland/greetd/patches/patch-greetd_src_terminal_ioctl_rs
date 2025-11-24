@@ -1,5 +1,5 @@
 Use TIOCSCTTY from libc crate, which actually knows about OpenBSD. This
-lets agreety and other child sessions run with a a proper controlling
+lets agreety and other child sessions run with a proper controlling
 terminal.
 
 Index: greetd/src/terminal/ioctl.rs
