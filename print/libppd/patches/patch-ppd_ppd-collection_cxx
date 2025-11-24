@@ -1,0 +1,13 @@
+ppd-collection.cxx:853:13: error: 'intmax_t' was not declared in this scope
+
+Index: ppd/ppd-collection.cxx
+--- ppd/ppd-collection.cxx.orig
++++ ppd/ppd-collection.cxx
+@@ -16,6 +16,7 @@
+ // Include necessary headers...
+ //
+ 
++#include <stdint.h>
+ #include <cups/dir.h>
+ #include <cups/transcode.h>
+ #include <ppd/ppd.h>
