@@ -1,3 +1,5 @@
+@conflict devhelp-*
+@pkgpath x11/gnome/devhelp
 @bin bin/manuals
 share/applications/app.devsuite.Manuals.desktop
 share/dbus-1/services/app.devsuite.Manuals.service
