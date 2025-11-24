@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	${GCC49_ARCHS}
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
 V =			1.14.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		hdf5-${V}
 GH_ACCOUNT =		HDFGroup
 GH_PROJECT =		hdf5
@@ -28,8 +28,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} z aec sz
 
-COMPILER =		base-clang ports-gcc base-gcc
-COMPILER_LANGS =	fortran
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c++ fortran
 
 # for h5fuse.sh
 RUN_DEPENDS +=		shells/bash
