@@ -18,7 +18,7 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curses execinfo icudata icui18n icuuc m perl readline ssl xml2 z
+WANTLIB=  c crypto curses execinfo icudata icui18n icuuc m perl readline ssl xml2 z
 
 SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
@@ -68,7 +68,9 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
-LIB_DEPENDS =	textproc/libxml \
+BUILD_DEPENDS=	devel/bison
+
+LIB_DEPENDS=	textproc/libxml \
 		textproc/icu4c
 
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
