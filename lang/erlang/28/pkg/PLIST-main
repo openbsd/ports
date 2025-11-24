@@ -1877,6 +1877,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/CryptographicMessageSyntaxAlgorithms-
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/DSS.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/ECPrivateKey.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/EnrollmentMessageSyntax-2009.asn1
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/KEMAlgorithmInformation-2023.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/OCSP-2024-08.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/OTP-PKIX.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/OTP-PKIX.asn1config
@@ -1891,6 +1892,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIX1Explicit-2009.asn1config
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIX1Implicit-2009.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIXAlgs-2009.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIXAttributeCertificate-2009.asn1
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIXCMP-2023.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/PKIXCRMF-2009.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/RFC5639.asn1
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/asn1/Safecurves-pkix-18.asn1
@@ -1905,6 +1907,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/CryptographicMessageSyntaxAlgorithms-
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/DSS.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/ECPrivateKey.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/EnrollmentMessageSyntax-2009.beam
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/KEMAlgorithmInformation-2023.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/OCSP-2024-08.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/OTP-PKIX.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKCS-1.beam
@@ -1918,6 +1921,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIX1Explicit-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIX1Implicit-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIXAlgs-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIXAttributeCertificate-2009.beam
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIXCMP-2023.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/PKIXCRMF-2009.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/RFC5639.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/Safecurves-pkix-18.beam
@@ -1939,6 +1943,8 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/public_key.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/OTP-PUB-KEY.hrl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/PKCS-FRAME.hrl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/PKIXCMP.hrl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/PKIXCRMF.hrl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/include/public_key.hrl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/AlgorithmInformation-2009.erl
@@ -1949,6 +1955,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/CryptographicMessageSyntaxAlgorithms-2
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/DSS.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/ECPrivateKey.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/EnrollmentMessageSyntax-2009.erl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/KEMAlgorithmInformation-2023.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/OCSP-2024-08.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/OTP-PKIX.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKCS-1.erl
@@ -1962,6 +1969,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIX1Explicit-2009.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIX1Implicit-2009.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIXAlgs-2009.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIXAttributeCertificate-2009.erl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIXCMP-2023.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/PKIXCRMF-2009.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/RFC5639.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/Safecurves-pkix-18.erl
