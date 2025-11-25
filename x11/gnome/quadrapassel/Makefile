@@ -20,7 +20,7 @@ MODGNOME_TOOLS =	vala desktop-file-utils gtk-update-icon-cache
 BUILD_DEPENDS =		x11/blueprint-compiler
 
 # XXX libgee support was dropped but configure still looks for it
-BUILD_DEPENDS =		devel/libgee
+BUILD_DEPENDS +=	devel/libgee
 
 LIB_DEPENDS =		audio/gsound \
 			x11/gnome/libadwaita
