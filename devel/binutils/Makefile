@@ -1,8 +1,7 @@
 COMMENT =	GNU binary utilities
 
 # keep version synchronized with devel/gas
-DISTNAME =	binutils-2.45
-REVISION =	0
+DISTNAME =	binutils-2.45.1
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	devel
