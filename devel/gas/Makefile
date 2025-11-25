@@ -1,8 +1,7 @@
 COMMENT =		GNU assembler
 
 # keep version synchronized with devel/binutils
-V =			2.45
-REVISION =		1
+V =			2.45.1
 DISTNAME =		binutils-$V
 PKGNAME =		gas-$V
 
