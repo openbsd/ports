@@ -7,6 +7,10 @@ CATEGORIES=	databases
 # PHP
 PERMIT_PACKAGE=	Yes
 
+# needs __BYTE_ORDER__
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	c
 
 MODULES=	lang/php/pecl
