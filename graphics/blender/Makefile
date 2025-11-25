@@ -109,6 +109,7 @@ CFLAGS +=		-I${LOCALBASE}/include
 # XXX hack for fmt >=1.11; to be removed at next release probably
 # /usr/local/include/OpenImageIO/detail/fmt/format.h:41:10: fatal error: 'base.h' file not found
 CXXFLAGS +=		-I${LOCALBASE}/include/fmt/
+BUILD_DEPENDS +=	devel/fmt
 
 MODPY_ADJ_FILES =	scripts/modules/bl_i18n_utils/merge_po.py \
 			scripts/modules/bl_i18n_utils/utils_rtl.py \
