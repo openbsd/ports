@@ -27,48 +27,48 @@ lib/libgromox_common.la
 @static-lib lib/libgromox_dbop.a
 lib/libgromox_dbop.la
 @lib lib/libgromox_dbop.so.${LIBgromox_dbop_VERSION}
+@static-lib lib/libgromox_emsmdb.a
+lib/libgromox_emsmdb.la
+@lib lib/libgromox_emsmdb.so.${LIBgromox_emsmdb_VERSION}
 @static-lib lib/libgromox_epoll.a
 lib/libgromox_epoll.la
 @lib lib/libgromox_epoll.so.${LIBgromox_epoll_VERSION}
+@static-lib lib/libgromox_ews.a
+lib/libgromox_ews.la
+@lib lib/libgromox_ews.so.${LIBgromox_ews_VERSION}
 @static-lib lib/libgromox_exrpc.a
 lib/libgromox_exrpc.la
 @lib lib/libgromox_exrpc.so.${LIBgromox_exrpc_VERSION}
 @static-lib lib/libgromox_mapi.a
 lib/libgromox_mapi.la
 @lib lib/libgromox_mapi.so.${LIBgromox_mapi_VERSION}
-@static-lib lib/libgromox_rpc.a
-lib/libgromox_rpc.la
-@lib lib/libgromox_rpc.so.${LIBgromox_rpc_VERSION}
-@static-lib lib/libgxh_ews.a
-lib/libgxh_ews.la
-@lib lib/libgxh_ews.so.${LIBgxh_ews_VERSION}
-@static-lib lib/libgxh_mh_emsmdb.a
-lib/libgxh_mh_emsmdb.la
-@lib lib/libgxh_mh_emsmdb.so.${LIBgxh_mh_emsmdb_VERSION}
-@static-lib lib/libgxh_mh_nsp.a
-lib/libgxh_mh_nsp.la
-@lib lib/libgxh_mh_nsp.so.${LIBgxh_mh_nsp_VERSION}
-@static-lib lib/libgxh_oab.a
-lib/libgxh_oab.la
-@lib lib/libgxh_oab.so.${LIBgxh_oab_VERSION}
-@static-lib lib/libgxh_oxdisco.a
-lib/libgxh_oxdisco.la
-@lib lib/libgxh_oxdisco.so.${LIBgxh_oxdisco_VERSION}
+@static-lib lib/libgromox_mh_emsmdb.a
+lib/libgromox_mh_emsmdb.la
+@lib lib/libgromox_mh_emsmdb.so.${LIBgromox_mh_emsmdb_VERSION}
+@static-lib lib/libgromox_mh_nsp.a
+lib/libgromox_mh_nsp.la
+@lib lib/libgromox_mh_nsp.so.${LIBgromox_mh_nsp_VERSION}
+@static-lib lib/libgromox_ndr.a
+lib/libgromox_ndr.la
+@lib lib/libgromox_ndr.so.${LIBgromox_ndr_VERSION}
+@static-lib lib/libgromox_nsp.a
+lib/libgromox_nsp.la
+@lib lib/libgromox_nsp.so.${LIBgromox_nsp_VERSION}
+@static-lib lib/libgromox_oab.a
+lib/libgromox_oab.la
+@lib lib/libgromox_oab.so.${LIBgromox_oab_VERSION}
+@static-lib lib/libgromox_oxdisco.a
+lib/libgromox_oxdisco.la
+@lib lib/libgromox_oxdisco.so.${LIBgromox_oxdisco_VERSION}
+@static-lib lib/libgromox_rfr.a
+lib/libgromox_rfr.la
+@lib lib/libgromox_rfr.so.${LIBgromox_rfr_VERSION}
 @static-lib lib/libgxm_alias_resolve.a
 lib/libgxm_alias_resolve.la
 @lib lib/libgxm_alias_resolve.so.${LIBgxm_alias_resolve_VERSION}
 @static-lib lib/libgxm_exmdb_local.a
 lib/libgxm_exmdb_local.la
 @lib lib/libgxm_exmdb_local.so.${LIBgxm_exmdb_local_VERSION}
-@static-lib lib/libgxp_exchange_emsmdb.a
-lib/libgxp_exchange_emsmdb.la
-@lib lib/libgxp_exchange_emsmdb.so.${LIBgxp_exchange_emsmdb_VERSION}
-@static-lib lib/libgxp_exchange_nsp.a
-lib/libgxp_exchange_nsp.la
-@lib lib/libgxp_exchange_nsp.so.${LIBgxp_exchange_nsp_VERSION}
-@static-lib lib/libgxp_exchange_rfr.a
-lib/libgxp_exchange_rfr.la
-@lib lib/libgxp_exchange_rfr.so.${LIBgxp_exchange_rfr_VERSION}
 @static-lib lib/libgxs_event_proxy.a
 lib/libgxs_event_proxy.la
 @lib lib/libgxs_event_proxy.so.${LIBgxs_event_proxy_VERSION}
@@ -99,6 +99,7 @@ lib/systemd/system/gromox-delivery.service
 lib/systemd/system/gromox-event.service
 lib/systemd/system/gromox-http.service
 lib/systemd/system/gromox-imap.service
+lib/systemd/system/gromox-istore.service
 lib/systemd/system/gromox-midb.service
 lib/systemd/system/gromox-pop3.service
 lib/systemd/system/gromox-snapshot.service
@@ -111,13 +112,14 @@ lib/tmpfiles.d/
 lib/tmpfiles.d/tmpfiles-gromox.conf
 libexec/gromox/
 @bin libexec/gromox/authtry
+@bin libexec/gromox/ddbg
 @bin libexec/gromox/delivery
 @bin libexec/gromox/delivery-queue
-@bin libexec/gromox/eidprint
 @bin libexec/gromox/event
 @bin libexec/gromox/gromox-snapshot
 @bin libexec/gromox/http
 @bin libexec/gromox/imap
+@bin libexec/gromox/istore
 libexec/gromox/kdb-uidextract
 libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/midb
@@ -125,6 +127,7 @@ libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/textmapquery
 @bin libexec/gromox/timer
 @bin libexec/gromox/zcore
+man/man1/ddbg.1gx
 man/man4/alias_resolve.4gx
 man/man4/authmgr.4gx
 man/man4/autodiscover.4gx
@@ -188,6 +191,7 @@ man/man8/event.8gx
 @man man/man8/gromox-vcf2mt.8
 man/man8/http.8gx
 man/man8/imap.8gx
+man/man8/istore.8gx
 @man man/man8/kdb-uidextract-limited.8
 @man man/man8/kdb-uidextract.8
 man/man8/midb.8gx

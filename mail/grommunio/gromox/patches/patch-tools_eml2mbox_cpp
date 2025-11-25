@@ -4,9 +4,9 @@ tools/eml2mbox.cpp:18:13: error: use of undeclared identifier 'time'
 Index: tools/eml2mbox.cpp
 --- tools/eml2mbox.cpp.orig
 +++ tools/eml2mbox.cpp
-@@ -6,6 +6,7 @@
- #include <cstdlib>
+@@ -7,6 +7,7 @@
  #include <cstring>
+ #include <ctime>
  #include <memory>
 +#include <time.h>
  #include <libHX/io.h>

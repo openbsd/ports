@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		3.1
+V=		3.2
 
 # required for mime.types
 MAILCAP_V=	2-1-54
@@ -13,12 +13,10 @@ DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
-REVISION-main=	0
-REVISION-mapi=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	bcd11570017a7f8eb33a591e37b7984de610c794
+GH_COMMIT=	c9b0d1f61f3130f5955968bcf00dc7b3906ad1cb
 
 SITES.a=	https://pagure.io/mailcap/archive/r${MAILCAP_V}/
 DISTFILES.a=	mailcap-r${MAILCAP_V}.tar.gz
@@ -31,20 +29,20 @@ SHARED_LIBS +=  gromox_authz              0.0 # 0.0
 SHARED_LIBS +=  gromox_common             0.0 # 0.0
 SHARED_LIBS +=  gromox_cplus              0.0 # 0.0
 SHARED_LIBS +=  gromox_dbop               0.0 # 0.0
+SHARED_LIBS +=  gromox_emsmdb             0.0 # 0.0
 SHARED_LIBS +=  gromox_epoll              0.0 # 0.0
+SHARED_LIBS +=  gromox_ews                0.0 # 0.0
 SHARED_LIBS +=  gromox_exrpc              0.0 # 0.0
 SHARED_LIBS +=  gromox_mapi               0.0 # 0.0
-SHARED_LIBS +=  gromox_rpc                0.0 # 0.0
-SHARED_LIBS +=  gxh_ews                   0.0 # 0.0
-SHARED_LIBS +=  gxh_mh_emsmdb             0.0 # 0.0
-SHARED_LIBS +=  gxh_mh_nsp                0.0 # 0.0
-SHARED_LIBS +=  gxh_oab                   0.0 # 0.0
-SHARED_LIBS +=  gxh_oxdisco               0.0 # 0.0
+SHARED_LIBS +=  gromox_mh_emsmdb          0.0 # 0.0
+SHARED_LIBS +=  gromox_mh_nsp             0.0 # 0.0
+SHARED_LIBS +=  gromox_ndr                0.0 # 0.0
+SHARED_LIBS +=  gromox_nsp                0.0 # 0.0
+SHARED_LIBS +=  gromox_oab                0.0 # 0.0
+SHARED_LIBS +=  gromox_oxdisco            0.0 # 0.0
+SHARED_LIBS +=  gromox_rfr                0.0 # 0.0
 SHARED_LIBS +=  gxm_alias_resolve         0.0 # 0.0
 SHARED_LIBS +=  gxm_exmdb_local           0.0 # 0.0
-SHARED_LIBS +=  gxp_exchange_emsmdb       0.0 # 0.0
-SHARED_LIBS +=  gxp_exchange_nsp          0.0 # 0.0
-SHARED_LIBS +=  gxp_exchange_rfr          0.0 # 0.0
 SHARED_LIBS +=  gxs_dnsbl_filter          0.0 # 0.0
 SHARED_LIBS +=  gxs_event_proxy           0.0 # 0.0
 SHARED_LIBS +=  gxs_event_stub            0.0 # 0.0
@@ -75,7 +73,7 @@ BUILD_DEPENDS=	devel/cppunit \
 WANTLIB += ${COMPILER_LIBCXX} HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
 WANTLIB-main += ${WANTLIB} c cares crypto curl fmt icudata icuuc
-WANTLIB-main += lber ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
+WANTLIB-main += lber ldap mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
 # Do not substitute MODULE_NAME

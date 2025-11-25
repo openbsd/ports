@@ -9,18 +9,7 @@ Index: configure.ac
  AM_CONDITIONAL([WITH_GNU_LD], [test "$with_gnu_ld" = yes])
  
  saved_CPPFLAGS="$CPPFLAGS"
-@@ -114,9 +115,7 @@ PKG_CHECK_MODULES([fmt], [fmt >= 8])
- PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
- 	PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 0.8 jsoncpp < 1])
- ])
--PKG_CHECK_MODULES([gss], [krb5-gssapi], [
--	AC_DEFINE([HAVE_GSSAPI], [1])
--], [:])
-+PKG_CHECK_MODULES([gss], [krb5-gssapi], [have_gssapi=1], [have_gssapi=0])
- PKG_CHECK_MODULES([libHX], [libHX >= 4.28])
- PKG_CHECK_MODULES([libcrypto], [libcrypto])
- PKG_CHECK_MODULES([libcurl], [libcurl])
-@@ -134,25 +133,27 @@ PKG_CHECK_MODULES([libxxhash], [libxxhash >= 0.7], [ha
+@@ -142,13 +143,13 @@ PKG_CHECK_MODULES([libxxhash], [libxxhash >= 0.7], [ha
  PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
  PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([tinyxml2], [tinyxml2 >= 8])
@@ -33,16 +22,10 @@ Index: configure.ac
  AC_CHECK_HEADERS([sys/epoll.h sys/event.h sys/ioctl.h sys/random.h sys/vfs.h sys/xattr.h])
 -AC_CHECK_HEADERS([security/pam_modules.h], [have_pamheader="yes"])
 +dnl Neuter pam check AC_CHECK_HEADERS([security/pam_modules.h], [have_pamheader="yes"])
+ AM_CONDITIONAL([HAVE_CURL], [test "$have_curl" = 1])
  AM_CONDITIONAL([HAVE_ESEDB], [test "$have_esedb" = 1])
-+AM_CONDITIONAL([HAVE_GSSAPI], [test "$have_gssapi" = 1])
- AM_CONDITIONAL([HAVE_PAM], [test "$have_pamheader" = yes])
- AM_CONDITIONAL([HAVE_OLECF], [test "$have_olecf" = 1])
- AM_CONDITIONAL([HAVE_PFF], [test "$have_pff" = 1])
- AM_CONDITIONAL([HAVE_XXHASH], [test "$have_xxhash" = 1])
- AS_IF([test "$have_esedb" = 1], [AC_DEFINE([HAVE_ESEDB], [1], [])])
-+AS_IF([test "$have_gssapi" = 1], [AC_DEFINE([HAVE_GSSAPI], [1], [])])
- AS_IF([test "$have_xxhash" = 1], [AC_DEFINE([HAVE_XXHASH], [1], [])])
- AC_CHECK_FUNCS([fsetxattr posix_fadvise renameat2])
+ AM_CONDITIONAL([HAVE_GSSAPI], [test "$have_gssapi" = 1])
+@@ -162,7 +163,7 @@ AC_CHECK_FUNCS([fsetxattr posix_fadvise renameat2])
  AC_SEARCH_LIBS([crypt], [crypt], [crypt_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([dlopen], [dl], [dl_LIBS="$LIBS"; LIBS=""])
  AC_SEARCH_LIBS([ns_initparse], [resolv], [resolv_LIBS="$LIBS"; LIBS=""])

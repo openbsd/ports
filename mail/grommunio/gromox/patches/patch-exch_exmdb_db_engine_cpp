@@ -1,7 +1,7 @@
 Index: exch/exmdb/db_engine.cpp
 --- exch/exmdb/db_engine.cpp.orig
 +++ exch/exmdb/db_engine.cpp
-@@ -52,6 +52,8 @@
+@@ -53,6 +53,8 @@
  #include "notification_agent.hpp"
  #define MAX_DYNAMIC_NODES				100
  
