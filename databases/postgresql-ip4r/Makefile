@@ -4,15 +4,18 @@ GH_ACCOUNT=	RhodiumToad
 GH_PROJECT=	ip4r
 
 # use a slightly newer commit including the license file
-#GH_TAGNAME=	2.4.1
-GH_COMMIT=	5f9ce88a353f241b7968b60835ba7186c8199162
-DISTNAME=	ip4r-2.4.1pl1
+GH_TAGNAME=	2.4.2
+#DISTNAME=	ip4r-2.4.1pl1
 
 PKGNAME=	postgresql-${DISTNAME}
 CATEGORIES=	databases net
 
 # PostgreSQL license (BSD)
 PERMIT_PACKAGE=	Yes
+
+# -Wvla and other unrecognized command line options
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += c
 
