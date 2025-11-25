@@ -21,6 +21,8 @@ MODULES+=	textproc/intltool
 .if ${MODULES:M*devel/meson*}
 EXTRACT_SUFX?=	.tar.xz
 CONFIGURE_STYLE=meson
+# xfce-revision.h generation needs git, but we dont build from git checkouts
+MODXFCE4_post-extract +=	ln -sf /usr/bin/false ${WRKDIR}/bin/git
 .else
 EXTRACT_SUFX?=	.tar.bz2
 .endif
