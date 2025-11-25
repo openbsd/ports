@@ -6,6 +6,10 @@ CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
 
+# -std=gnu11
+COMPILER ?=	base-clang ports-gcc
+COMPILER_LANGS ?=	c
+
 # needed for all ports but *-themes
 .if !defined(XFCE_NO_SRC)
 LIBTOOL_FLAGS?=	--tag=disable-static
@@ -117,6 +121,5 @@ MODXFCE4_post-install = for f in ${MODXFCE_PURGE_LA} ; do \
 LIB_DEPENDS+=	${MODXFCE_LIB_DEPENDS}
 WANTLIB+=	${MODXFCE_WANTLIB}
 RUN_DEPENDS+=	${MODXFCE_RUN_DEPENDS}
-CFLAGS+=	-std=gnu99
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
