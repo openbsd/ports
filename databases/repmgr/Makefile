@@ -15,6 +15,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crypto curl curses execinfo json-c m pq readline ssl
 WANTLIB += xml2 z pthread
 
+# -Wvla and other unrecognized command line options
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 SITES =		${HOMEPAGE}download/
 
 USE_GMAKE =	Yes

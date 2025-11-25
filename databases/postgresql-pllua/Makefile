@@ -22,6 +22,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c ${MODLUA_WANTLIB}
 
+# -Wvla and other unrecognized command line options
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3
 

@@ -17,6 +17,10 @@ SITES=			https://www.pgpool.net/mediawiki/images/
 
 WANTLIB= 		c crypto m pq ssl pthread
 
+# -Wvla and other unrecognized command line options
+COMPILER=		base-clang ports-gcc
+COMPILER_LANG=		c
+
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS= 	--with-openssl
 

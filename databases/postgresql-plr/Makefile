@@ -14,6 +14,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lib/R/lib/R
 
+# -Wvla and other unrecognized command line options
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 BUILD_DEPENDS =		databases/postgresql,-server
 RUN_DEPENDS =		databases/postgresql,-server
 LIB_DEPENDS =		math/R

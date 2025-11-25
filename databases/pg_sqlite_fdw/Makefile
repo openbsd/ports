@@ -16,6 +16,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c sqlite3
 
+# -Wvla and other unrecognized command line options
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 BUILD_DEPENDS =		databases/postgresql,-server
 RUN_DEPENDS =		databases/postgresql,-server
 LIB_DEPENDS =		databases/sqlite3
