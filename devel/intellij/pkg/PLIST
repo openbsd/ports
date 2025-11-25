@@ -971,6 +971,7 @@ intellij/plugins/junit/lib/
 intellij/plugins/junit/lib/junit-rt.jar
 intellij/plugins/junit/lib/junit.jar
 intellij/plugins/junit/lib/junit5-rt.jar
+intellij/plugins/junit/lib/junit6-rt.jar
 intellij/plugins/jupyter-plugin/
 intellij/plugins/jupyter-plugin/jupyter-web/
 intellij/plugins/jupyter-plugin/jupyter-web/1030.js
