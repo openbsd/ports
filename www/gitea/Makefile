@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.25.1
+VERSION =		1.25.2
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -20,7 +20,7 @@ MODULES =		lang/go
 
 GO_TAGS =		purego sqlite sqlite_unlock_notify
 MODGO_FLAGS +=		-tags "${GO_TAGS}"
-MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${LOCALBASE}/share/gitea
+MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.AppWorkPath=${LOCALSTATEDIR}/gitea
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomConf=${SYSCONFDIR}/gitea/app.ini
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.CustomPath=${LOCALSTATEDIR}/gitea/custom
 MODGO_LDFLAGS += -X code.gitea.io/gitea/modules/setting.StaticRootPath=${LOCALBASE}/share/gitea
