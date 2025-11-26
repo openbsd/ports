@@ -13,9 +13,6 @@ HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/
 # SIP license (Python-like) or GPLv2/v3
 PERMIT_PACKAGE=	Yes
 
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
-
 MODULES=	lang/python
 
 MODPY_PI=	Yes
