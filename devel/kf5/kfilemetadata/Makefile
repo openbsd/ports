@@ -20,6 +20,10 @@ WANTLIB-main += exiv2 m poppler poppler-qt5 tag
 
 WANTLIB-locale =
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES +=		lang/python
 # required only for externalextractortest and externalwritertest
 MODPY_BUILDDEP =	No
