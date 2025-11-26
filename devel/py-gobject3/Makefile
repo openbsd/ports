@@ -17,6 +17,9 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += cairo cairo-gobject ffi girepository-2.0 glib-2.0 gobject-2.0
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
