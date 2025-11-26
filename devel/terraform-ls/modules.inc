@@ -40,8 +40,8 @@ MODGO_MODULES =	\
 	github.com/cncf/xds/go									 v0.0.0-20240905190251-b4127c9b8d78 \
 	github.com/coreos/go-systemd/v22							 v22.5.0 \
 	github.com/cpuguy83/go-md2man/v2							 v2.0.4 \
-	github.com/creachadair/jrpc2								 v1.3.2 \
-	github.com/creachadair/mds								 v0.25.1 \
+	github.com/creachadair/jrpc2								 v1.3.3 \
+	github.com/creachadair/mds								 v0.25.4 \
 	github.com/cyphar/filepath-securejoin							 v0.4.1 \
 	github.com/davecgh/go-spew								 v1.1.2-0.20180830191138-d8f796af33cc \
 	github.com/djherbis/buffer								 v1.2.0 \
@@ -90,7 +90,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/terraform-exec							 v0.24.0 \
 	github.com/hashicorp/terraform-json							 v0.27.2 \
 	github.com/hashicorp/terraform-registry-address						 v0.4.0 \
-	github.com/hashicorp/terraform-schema							 v0.0.0-20251007154251-20a20a238307 \
+	github.com/hashicorp/terraform-schema							 v0.0.0-20251124065812-a4dd8fbff2ba \
 	github.com/hashicorp/terraform-svchost							 v0.1.1 \
 	github.com/hexops/autogold								 v1.3.1 \
 	github.com/hexops/gotextdiff								 v1.0.3 \
@@ -180,19 +180,19 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/trace								 v1.38.0 \
 	go.uber.org/atomic									 v1.9.0 \
 	go.uber.org/multierr									 v1.11.0 \
-	golang.org/x/crypto									 v0.42.0 \
+	golang.org/x/crypto									 v0.45.0 \
 	golang.org/x/exp/typeparams								 v0.0.0-20231108232855-2478ac86f678 \
 	golang.org/x/lint									 v0.0.0-20210508222113-6edffad5e616 \
-	golang.org/x/mod									 v0.28.0 \
-	golang.org/x/net									 v0.44.0 \
+	golang.org/x/mod									 v0.29.0 \
+	golang.org/x/net									 v0.47.0 \
 	golang.org/x/oauth2									 v0.25.0 \
-	golang.org/x/sync									 v0.17.0 \
-	golang.org/x/sys									 v0.36.0 \
-	golang.org/x/telemetry									 v0.0.0-20250908211612-aef8a434d053 \
-	golang.org/x/term									 v0.35.0 \
-	golang.org/x/text									 v0.29.0 \
+	golang.org/x/sync									 v0.18.0 \
+	golang.org/x/sys									 v0.38.0 \
+	golang.org/x/telemetry									 v0.0.0-20251008203120-078029d740a8 \
+	golang.org/x/term									 v0.37.0 \
+	golang.org/x/text									 v0.31.0 \
 	golang.org/x/time									 v0.8.0 \
-	golang.org/x/tools									 v0.37.0 \
+	golang.org/x/tools									 v0.38.0 \
 	golang.org/x/xerrors									 v0.0.0-20190717185122-a985d3407aa7 \
 	google.golang.org/api									 v0.215.0 \
 	google.golang.org/appengine								 v1.6.7 \
@@ -309,12 +309,12 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto						 v0.36.0 \
 	golang.org/x/crypto						 v0.38.0 \
 	golang.org/x/crypto						 v0.41.0 \
+	golang.org/x/crypto						 v0.44.0 \
 	golang.org/x/mod						 v0.17.0 \
 	golang.org/x/mod						 v0.23.0 \
 	golang.org/x/mod						 v0.24.0 \
 	golang.org/x/mod						 v0.25.0 \
 	golang.org/x/mod						 v0.26.0 \
-	golang.org/x/mod						 v0.27.0 \
 	golang.org/x/mod						 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod						 v0.7.0 \
 	golang.org/x/net						 v0.0.0-20190404232315-eb5bcb51f2a3 \
@@ -327,6 +327,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.36.0 \
 	golang.org/x/net						 v0.38.0 \
 	golang.org/x/net						 v0.43.0 \
+	golang.org/x/net						 v0.46.0 \
 	golang.org/x/net						 v0.5.0 \
 	golang.org/x/net						 v0.8.0 \
 	golang.org/x/oauth2						 v0.6.0 \
@@ -337,6 +338,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync						 v0.14.0 \
 	golang.org/x/sync						 v0.15.0 \
 	golang.org/x/sync						 v0.16.0 \
+	golang.org/x/sync						 v0.17.0 \
 	golang.org/x/sync						 v0.7.0 \
 	golang.org/x/sync						 v0.8.0 \
 	golang.org/x/sys						 v0.0.0-20190215142949-d0b11bdaac8a \
@@ -360,6 +362,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.31.0 \
 	golang.org/x/sys						 v0.33.0 \
 	golang.org/x/sys						 v0.35.0 \
+	golang.org/x/sys						 v0.37.0 \
 	golang.org/x/sys						 v0.4.0 \
 	golang.org/x/sys						 v0.6.0 \
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
@@ -388,7 +391,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools						 v0.30.0 \
 	golang.org/x/tools						 v0.34.0 \
 	golang.org/x/tools						 v0.35.0 \
-	golang.org/x/tools						 v0.36.0 \
+	golang.org/x/tools						 v0.37.0 \
 	golang.org/x/tools						 v0.4.0 \
 	golang.org/x/tools						 v0.5.0 \
 	google.golang.org/protobuf					 v1.28.1 \
