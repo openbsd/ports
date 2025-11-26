@@ -12,6 +12,10 @@ WANTLIB += boost_graph-mt boost_python${MODPY_MAJORMINOR}-mt intl m util
 
 MODKDE_TRANSLATIONS = yes
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/bison
