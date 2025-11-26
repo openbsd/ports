@@ -58,6 +58,7 @@ MODQT6_USE_CXX17 ?=	Yes
 
 .if ${MODQT6_USE_CXX17:L} == "yes"
 COMPILER ?= base-clang ports-gcc
+COMPILER_LANGS ?= c c++
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 .endif
 

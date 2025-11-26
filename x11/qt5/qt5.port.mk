@@ -174,6 +174,7 @@ MAKE_FLAGS +=	${_MODQT5_SETUP}
 MODQT5_USE_CXX11 ?=	Yes
 .if ${MODQT5_USE_CXX11:L} == "yes"
 COMPILER ?= base-clang ports-gcc
+COMPILER_LANGS ?= c c++
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 # useful?
 _MODQT5_SETUP +=	CC=${CC} CXX=${CXX}
