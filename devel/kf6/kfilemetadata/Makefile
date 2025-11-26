@@ -8,6 +8,10 @@ WANTLIB += KF6I18n QMobipocket6 Qt6Core Qt6Gui Qt6Xml avcodec
 WANTLIB += avformat avutil c epub exiv2 m poppler poppler-qt6
 WANTLIB += tag
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 # required only for externalextractortest and externalwritertest
 MODPY_BUILDDEP =	No

@@ -7,6 +7,10 @@ SHARED_LIBS +=  KF6I18nQml                0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml intl m
 
+# needs c++ and python
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python \
 		textproc/intltool
 

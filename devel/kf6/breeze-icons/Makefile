@@ -7,6 +7,10 @@ SHARED_LIBS +=	KF6BreezeIcons            0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui m
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =	lang/python
 MODPY_RUNDEP =	No
 

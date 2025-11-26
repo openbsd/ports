@@ -6,6 +6,10 @@ SHARED_LIBS +=  KF6Su                     0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} ICE KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6I18n KF6Pty Qt6Core SM X11 Xext c m
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 # required only for tests
 MODPY_BUILDDEP =	Yes
