@@ -1,4 +1,4 @@
-SHA256 (certspotter-v0.21.0.zip) = o0Zd56NvLjdfWd/rqDsrKc8rW8CmzPh4cXxfpxS3fsk=
+SHA256 (certspotter-v0.22.0.zip) = 27wYMReGZa/xBq0Gjx6Y/aoJxEdaxLYkeKEN078nobo=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.39.0.mod) = lqs16FH2Xi5uJrOf8l0kD7JzhzoQlXtcJk/H630a1o4=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.39.0.zip) = R2CLBkKYy3YOnZuppKGCYsU6W1fF4afmy9qyx0f37tM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.25.0.mod) = H7itL3IBzXm/F4V4s1qurRcgyrK4z+o1uZsltgg58e8=
@@ -16,7 +16,7 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.26.0.mod) = F4uOMwKIGD6ry253aj8BCZtZJ
 SHA256 (go_modules/golang.org/x/text/@v/v0.26.0.zip) = xST0rOLh81t12eYXexWXzzFzbIEGTfWXik1hMA12Jsg=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = QoVxoQqrdYamfaLJN16K5IDe+NL6Ed6Mb/8oppa5WR8=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.zip) = 2np22dsJVvMN1/mVfurXqrWqEy28p4ptV4Q2+U/f7oQ=
-SIZE (certspotter-v0.21.0.zip) = 105050
+SIZE (certspotter-v0.22.0.zip) = 110689
 SIZE (go_modules/golang.org/x/crypto/@v/v0.39.0.mod) = 192
 SIZE (go_modules/golang.org/x/crypto/@v/v0.39.0.zip) = 2220343
 SIZE (go_modules/golang.org/x/mod/@v/v0.25.0.mod) = 86

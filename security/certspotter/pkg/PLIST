@@ -10,4 +10,7 @@
 @mode
 @owner
 @group
+share/doc/certspotter/
+share/doc/certspotter/CHANGELOG.md
+share/doc/certspotter/README.md
 share/doc/pkg-readmes/${PKGSTEM}
