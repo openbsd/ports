@@ -7,6 +7,8 @@ GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
 GH_TAGNAME =		1.5.33
 
+REVISION-gtk4 =		0
+
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
@@ -48,9 +50,12 @@ WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi xkbcommon
 WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk4 += ${WANTLIB}
+.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386
+WANTLIB-gtk4 += drm_intel
+.endif
 WANTLIB-gtk4 += EGL GL LLVM Lerc X11-xcb Xxf86vm avahi-client avahi-common
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter crypto cups
-WANTLIB-gtk4 += dav1d dbus-1 drm drm_amdgpu drm_intel elf epoll-shim
+WANTLIB-gtk4 += dav1d dbus-1 drm drm_amdgpu elf epoll-shim
 WANTLIB-gtk4 += epoxy execinfo gbm glapi graphene-1.0 gstallocators-1.0
 WANTLIB-gtk4 += gstaudio-1.0 gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstplay-1.0
 WANTLIB-gtk4 += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-4 harfbuzz-subset
