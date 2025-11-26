@@ -28,13 +28,13 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx		 v0.5.2 \
 	github.com/stretchr/testify		 v1.10.0 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
-	golang.org/x/crypto			 v0.35.0 \
-	golang.org/x/net			 v0.33.0 \
+	golang.org/x/crypto			 v0.45.0 \
+	golang.org/x/net			 v0.47.0 \
 	golang.org/x/oauth2			 v0.24.0 \
-	golang.org/x/sync			 v0.7.0 \
-	golang.org/x/sys			 v0.30.0 \
-	golang.org/x/term			 v0.29.0 \
-	golang.org/x/text			 v0.22.0 \
+	golang.org/x/sync			 v0.18.0 \
+	golang.org/x/sys			 v0.38.0 \
+	golang.org/x/term			 v0.37.0 \
+	golang.org/x/text			 v0.31.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf		 v1.36.5 \
 	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
@@ -48,7 +48,8 @@ MODGO_MODFILES =	\
 	github.com/prometheus/client_golang	 v1.20.4 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.7.0 \
-	golang.org/x/net			 v0.21.0 \
+	golang.org/x/net			 v0.33.0 \
+	golang.org/x/sync			 v0.7.0 \
 	golang.org/x/sys			 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys			 v0.20.0 \
 	golang.org/x/sys			 v0.28.0 \
