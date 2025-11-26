@@ -1,9 +1,8 @@
 COMMENT =		configuration validator
 
-MODPY_DISTV =	3.4.0
+MODPY_DISTV =		3.5.0
 DISTNAME =		cfgv-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
