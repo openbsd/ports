@@ -9,6 +9,10 @@ CATEGORIES +=		lang/python
 # must be REVISION-bumped.
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync.
 
+# needs gcc > 4 for atomic instructions 
+COMPILER ?=		base-clang ports-gcc
+COMPILER_LANGS ?=	c
+
 MODPY_WANTLIB =		python${MODPY_VERSION}
 MODPY_RUN_DEPENDS =	lang/python/3
 MODPY_LIB_DEPENDS =	lang/python/3
