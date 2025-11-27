@@ -1,0 +1,10 @@
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/cagebreak/
+@bin bin/cagebreak
+bin/startcagebreak.sh
+@man man/man1/cagebreak.1
+@man man/man5/cagebreak-config.5
+@man man/man7/cagebreak-socket.7
+share/doc/cagebreak/
+share/doc/cagebreak/config
+@sample ${SYSCONFDIR}/xdg/cagebreak/config

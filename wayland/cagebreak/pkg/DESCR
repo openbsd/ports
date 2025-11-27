@@ -1,0 +1,6 @@
+cagebreak is a slim, keyboard-controlled, tiling compositor for wayland
+conceptually based on the X11 window manager ratpoison.  It allows for
+the screen to be split into non-overlapping tiles and, in contrast to
+the original ratpoison, has native support for multi-workspace
+operation.  All interactions between the user and cagebreak are done via
+the keyboard.
