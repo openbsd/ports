@@ -187,6 +187,10 @@ share/keeperrl/data_free/ui/steeds4.png
 share/keeperrl/data_free/ui/test.png
 share/keeperrl/data_free/ui/travelling.txt
 share/keeperrl/data_free/ui/unlock_message.txt
+share/keeperrl/data_free/ui/witch_animals_school.txt
+share/keeperrl/data_free/ui/witch_animation_school.txt
+share/keeperrl/data_free/ui/witch_curse_school.txt
+share/keeperrl/data_free/ui/witch_polymorph_school.txt
 share/keeperrl/data_free/ui/yes_or_no.txt
 share/keeperrl/data_free/ui/yes_or_no_below.txt
 share/keeperrl/gdb_input.txt
