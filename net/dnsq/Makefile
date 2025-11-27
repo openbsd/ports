@@ -1,10 +1,10 @@
 COMMENT =	feature-rich command line DNS client
 
 MODGO_MODNAME =	github.com/natesales/q
-MODGO_VERSION =	v0.19.9
+MODGO_VERSION =	v0.19.11
 
 DISTNAME =	dnsq-${MODGO_VERSION}
-PKGNAME =	dnsq-0.19.9
+PKGNAME =	dnsq-0.19.11
 
 HOMEPAGE =	https://github.com/natesales/q
 MAINTAINER =	Renaud Allard <renaud@allard.it>
