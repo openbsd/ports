@@ -1,8 +1,8 @@
 QT5NAME =		QtDataVis3D
 COMMENT-main =		Qt5 3D data visualization components
 
-KDE_COMMIT =		db75c351cd0c2b93016ca489ffb9db806e6fd6e9
-KDE_VERSION =		3
+KDE_COMMIT =		d9b988d3c5f9f34b97f3a9ac1347bfb55464cd60
+KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples
 

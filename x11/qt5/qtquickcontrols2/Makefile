@@ -2,7 +2,7 @@ QT5NAME =	QtQuickcontrols2
 
 COMMENT-main =	Qt5 Quick based UI controls from Qt Labs
 
-KDE_COMMIT =	8f244d09b22ed68b3aefaa8e521c8d68d18cada7
+KDE_COMMIT =	e464888c53a641ee44a34ff2350cfb156c8ed59f
 KDE_VERSION =	5
 
 SHARED_LIBS +=  Qt5QuickControls2             1.1 # 5.9

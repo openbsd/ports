@@ -1,7 +1,11 @@
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
 
+KDE_COMMIT =		182ceff6560f68d70017ab980186a6106fd126a6
+KDE_VERSION =		0
+
 MULTI_PACKAGES =	-main -examples
+
 SHARED_LIBS +=  Qt5Script                 3.0 # 5.9
 SHARED_LIBS +=  Qt5ScriptTools            3.0 # 5.9
 
@@ -10,5 +14,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets m
 RUN_DEPENDS-examples =	x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
+
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

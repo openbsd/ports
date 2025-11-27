@@ -3,8 +3,8 @@ Allow our V4L2 to be used.
 Index: src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp
 --- src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp.orig
 +++ src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp
-@@ -43,7 +43,11 @@
- #include <QDebug>
+@@ -45,7 +45,11 @@
+ #include <gst/gst.h>
  
  #include <private/qcore_unix_p.h>
 -#include <linux/videodev2.h>

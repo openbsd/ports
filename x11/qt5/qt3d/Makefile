@@ -1,8 +1,8 @@
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
 
-KDE_COMMIT =		1eecf07a4d5dadd1b5aaf785fc2a5ed03565599d
-KDE_VERSION =		3
+KDE_COMMIT =		208f5835e6c2415c9dc5cbe92bba83aa28bab7ea
+KDE_VERSION =		0
 
 MULTI_PACKAGES =	-main -examples
 

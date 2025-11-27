@@ -47,8 +47,8 @@ PERMIT_PACKAGE ?=	Yes
 .if defined(KDE_VERSION) && defined(KDE_COMMIT)
 DIST_TUPLE +=		kde qt qt/${QT5NAME:L} ${KDE_COMMIT} .
 .else
-SITES ?=		https://download.qt.io/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
-			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
+SITES ?=		https://download.qt.io/archive/qt/${VERSION:R}/${VERSION}/submodules/ \
+			https://mirrors.ocf.berkeley.edu/qt/archive/qt/${VERSION:R}/${VERSION}/submodules/ \
 			https://download.qt.io/archive/qt/${VERSION:R}/${VERSION}/submodules/
 .endif
 

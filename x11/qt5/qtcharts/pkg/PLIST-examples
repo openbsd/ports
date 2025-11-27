@@ -4,6 +4,8 @@ lib/qt5/examples/charts/areachart/
 lib/qt5/examples/charts/areachart/areachart.pro
 lib/qt5/examples/charts/areachart/main.cpp
 lib/qt5/examples/charts/audio/
+lib/qt5/examples/charts/audio/apple/
+lib/qt5/examples/charts/audio/apple/Info.qmake.plist
 lib/qt5/examples/charts/audio/audio.pro
 lib/qt5/examples/charts/audio/main.cpp
 lib/qt5/examples/charts/audio/widget.cpp

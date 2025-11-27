@@ -1,11 +1,12 @@
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
 
+#KDE_COMMIT =		ddb2afda6f713259fc8d95fb22a1c96bb448c36a
+#KDE_VERSION =		0
+
 PKGNAME =		qt5-docs-${QT5_VERSION}
 PKGNAME-html =		qt5-html-${QT5_VERSION}
 PKGNAME-qch =		qt5-qch-${QT5_VERSION}
-
-REVISION-html =		0
 
 MULTI_PACKAGES =	-html -qch
 SUBPACKAGE ?=		-html

@@ -1,23 +1,18 @@
 # Many parts are copied from www/chromium port, so keep in sync
 # INFO
 # Based on Chromium version: 87.0.4280.144
-# Patched with security patches up to: 119.0.6045.123
+# Patched with security patches up to: 130.0.6723.59
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
-KDE_COMMIT =		17fd3176988586168bee8654008a097a5f23ec1d
-KDE_VERSION =		11
-REVISION =		2
-
-# Override
-VERSION =		${QT5_WEBENGINE_VERSION}
-QT5_VERSION =		${QT5_WEBENGINE_VERSION}
+KDE_COMMIT =		87ceb6a2ef5ee25d56f765dc533728c4ca4787e0
+KDE_VERSION =		2
 
 # https://invent.kde.org/qt/qt/qtwebengine-chromium/-/commits/87-based?ref_type=heads
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
-		1cbcced5046ed659707a4d6ce548a6fd04b20b4b src/3rdparty
+		85337c28bae7d7d2c79282c4f4c92435cd7649b8 src/3rdparty
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
@@ -44,10 +39,9 @@ WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5WebChannel Qt5Widgets Qt5Xml
 WANTLIB += X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xi Xrandr
 WANTLIB += Xrender Xtst c cbor crypto cups dbus-1 drm event execinfo
-WANTLIB += expat fido2 fontconfig freetype gbm glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-subset intl jpeg kvm lcms2 lzma m
-WANTLIB += minizip nspr4 nss3 nssutil3 opus pcre2-8 plc4 plds4
-WANTLIB += png sharpyuv smime3 snappy sndio usbhid util vpx webp
+WANTLIB += expat fido2 fontconfig gbm harfbuzz harfbuzz-subset
+WANTLIB += jpeg kvm lcms2 m minizip nspr4 nss3 nssutil3 opus plc4
+WANTLIB += plds4 png smime3 snappy sndio usbhid util vpx webp
 WANTLIB += webpdemux webpmux xcb xkbcommon xml2 xslt z
 
 # BSD-like, patents
@@ -148,13 +142,5 @@ post-configure:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
-
-pre-fake:
-# Fix version mismatches for CMake
-.for module in WebEngine WebEngineCore WebEngineWidgets
-	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},5.15.15 $${_Qt5${module}_FIND_VERSION_EXACT},g' \
-		${WRKBUILD}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake
-.endfor
-
 
 .include <bsd.port.mk>

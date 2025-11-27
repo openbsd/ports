@@ -1,9 +1,7 @@
 QT5NAME =		QtBase
 
-KDE_COMMIT =		2529f7f0c2333d437089c775c9c30f624d1fd5bc
-KDE_VERSION =		130
-
-REVISION-main = 	0
+KDE_COMMIT =		bebdfd54917e25d1c100e6bd9f5dd53c2e645fd8
+KDE_VERSION =		109
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -24,7 +22,7 @@ DPB_PROPERTIES =	parallel
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
 SHARED_LIBS +=  Qt5Core                      6.0 # 5.15
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
-SHARED_LIBS +=  Qt5Gui                       4.2 # 5.15
+SHARED_LIBS +=  Qt5Gui                       4.3 # 5.15
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15
@@ -35,13 +33,13 @@ SHARED_LIBS +=  Qt5Xml                       3.0 # 5.15
 SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.15
-SHARED_LIBS +=  Qt5XcbQpa                    1.0 # 5.15
+SHARED_LIBS +=  Qt5XcbQpa                    2.0 # 5.15
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
 WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-main += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB-main += icudata icui18n icuuc intl jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-main += pcre2-16 png sqlite3 ssl xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
@@ -49,14 +47,9 @@ WANTLIB-main += xcb-xkb xkbcommon xkbcommon-x11 z zstd
 
 WANTLIB-global =
 
-WANTLIB-mysql =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
-WANTLIB-mysql +=	m pthread mariadb
-
-WANTLIB-psql =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
-WANTLIB-psql +=		m pthread pq
-
-WANTLIB-tds =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
-WANTLIB-tds +=		m pthread sybdb
+WANTLIB-mysql += ${COMPILER_LIBCXX} Qt5Core Qt5Sql m mariadb
+WANTLIB-psql += ${COMPILER_LIBCXX} Qt5Core Qt5Sql m pq
+WANTLIB-tds += ${COMPILER_LIBCXX} Qt5Core Qt5Sql m sybdb
 
 # there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
 MULTI_PACKAGES =	-main -examples -global -mysql -psql -tds
@@ -83,8 +76,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+3 \
 			x11/xkbcommon>=1.0.1
 
-# those come from gthread-2.0, not used by Qt itself
-WANTLIB-main +=		intl
 LIB_DEPENDS-main +=	devel/gettext,-runtime
 
 LIB_DEPENDS-global =
