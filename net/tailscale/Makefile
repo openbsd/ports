@@ -2,7 +2,7 @@ BROKEN-i386 =	unix.EPROTO not defined
 
 COMMENT =	modern overlay-like VPN built on top of WireGuard
 
-V =		1.90.8
+V =		1.90.9
 MODGO_MODNAME =	tailscale.com
 MODGO_VERSION =	v${V}
 
