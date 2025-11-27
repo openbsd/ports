@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += cage
+     SUBDIR += cagebreak
      SUBDIR += dmenu-wayland
      SUBDIR += foot
      SUBDIR += greetd
