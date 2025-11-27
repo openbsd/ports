@@ -1,6 +1,6 @@
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
-V = 		1.24.1
+V = 		1.25.0
 DISTNAME = 	pgbouncer-${V}
 
 CATEGORIES = 	databases
@@ -16,14 +16,15 @@ WANTLIB = 	c event_core event_extra crypto ssl
 
 SITES = 	https://pgbouncer.github.io/downloads/files/${V}/
 
+BUILD_DEPENDS =	textproc/pandoc
 LIB_DEPENDS =	devel/libevent2
 
 CONFIGURE_STYLE = 	gnu
-#Disable the detection of asciidoc since docs are already included
-CONFIGURE_ENV =         ASCIIDOC=' '
-CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE} --without-cares
+CONFIGURE_ARGS = 	--without-cares
 MAKE_FLAGS +=		V=1
 
 USE_GMAKE = 		Yes
+# needs psycopg1
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
