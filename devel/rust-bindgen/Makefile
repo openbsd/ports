@@ -2,7 +2,7 @@ COMMENT =	automatically generates Rust FFI bindings (C and C++)
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-bindgen
-GH_TAGNAME =	v0.72.0
+GH_TAGNAME =	v0.72.1
 
 CATEGORIES =	devel
 
