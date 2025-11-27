@@ -1,10 +1,10 @@
 COMMENT =		GLib ICE implementation
-DISTNAME =		libnice-0.1.22
-REVISION =		0
+
+DISTNAME =		libnice-0.1.23
 
 CATEGORIES =		net
 
-SHARED_LIBS +=		nice	4.3	# 10.14.0
+SHARED_LIBS +=		nice	4.3	# 10.15.0
 
 WANTLIB += c crypto gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gupnp-igd-1.6
