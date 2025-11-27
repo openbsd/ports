@@ -1,7 +1,6 @@
 COMMENT=		Common Desktop Environment
 
-DISTNAME=		cde-2.5.2.0.20250613
-REVISION=		9
+DISTNAME=		cde-2.5.3
 
 CATEGORIES=		x11
 
@@ -24,8 +23,7 @@ SHARED_LIBS +=  DtMmdb               0.0      # .2.1
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-#SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
-SITES=			https://distfiles.bsdfrog.org/
+SITES=			${SITE_SOURCEFORGE:=cdesktopenv/}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
@@ -64,6 +62,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 BUILD_DEPENDS +=	shells/ksh93
 RUN_DEPENDS +=		shells/ksh93
 CONFIGURE_ENV +=	ac_cv_path_KSH=${LOCALBASE}/bin/ksh93
+
+TEST_DEPENDS=		${BASE_PKGPATH}
 
 CONFIGURE_ARGS=		--with-tcl=${MODTCL_LIBDIR} \
 			--with-utmp-file=/var/run/utmp \
