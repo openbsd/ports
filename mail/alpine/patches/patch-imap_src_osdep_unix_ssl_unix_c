@@ -1,5 +1,7 @@
-* some popular mail services enforce SNI for TLSv1.3 clients, so send it
 * retry SSL_write on blocking socket if we're told to do so.
+* use libssl built-in hostname verification rather than hand-rolled.
+https://sources.debian.org/patches/uw-imap/8:2007f~dfsg-7/1006_openssl1.1_autoverify.patch/
+adapted for alpine c-client.
 
 Index: imap/src/osdep/unix/ssl_unix.c
 --- imap/src/osdep/unix/ssl_unix.c.orig
@@ -12,7 +14,23 @@ Index: imap/src/osdep/unix/ssl_unix.c
    unsigned long sl,tl;
    int minv, maxv;
    long masklow, maskhigh;
-@@ -465,7 +466,13 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
+@@ -413,7 +414,14 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
+ 				/* disable certificate validation? */
+   if (flags & NET_NOVALIDATECERT)
+     SSL_CTX_set_verify (stream->context,SSL_VERIFY_NONE,NIL);
+-  else SSL_CTX_set_verify (stream->context,SSL_VERIFY_PEER,ssl_open_verify);
++  else {
++#if OPENSSL_VERSION_NUMBER >= 0x10100000
++    X509_VERIFY_PARAM *param = SSL_CTX_get0_param(stream->context);
++    X509_VERIFY_PARAM_set_hostflags(param, X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS);
++    X509_VERIFY_PARAM_set1_host(param, host, 0);
++#endif
++    SSL_CTX_set_verify (stream->context,SSL_VERIFY_PEER,ssl_open_verify);
++  }
+ 				/* set cipher list */
+   ciphers = (char *) mail_parameters (NIL,GET_SSLCIPHERS,NIL);
+   if(ciphers != NIL
+@@ -465,8 +473,16 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
    SSL_set_connect_state (stream->con);
    if (SSL_in_init (stream->con)) SSL_total_renegotiations (stream->con);
  				/* now negotiate SSL */
@@ -25,23 +43,32 @@ Index: imap/src/osdep/unix/ssl_unix.c
 +        SSL_get_error(stream->con, ssl_err) == SSL_ERROR_WANT_WRITE));
 +  if (ssl_err < 0)
      return ssl_last_error ? ssl_last_error : "SSL negotiation failed";
++
++#if OPENSSL_VERSION_NUMBER < 0x10100000
  				/* need to validate host names? */
    cert = SSL_get_peer_certificate (stream->con);
-@@ -530,7 +537,7 @@ static char *ssl_validate_cert (X509 *cert,char *host)
- 				/* make sure have a certificate */
-   if (!cert) return "No certificate from server";
- 				/* Method 1: locate CN */
--#ifndef OPENSSL_1_1_0
-+#if !defined(OPENSSL_1_1_0) && !defined(LIBRESSL_VERSION_NUMBER)
-   if (cert->name == NIL)
-      ret = "No name in certificate";
-   else if ((s = strstr (cert->name,"/CN=")) != NIL) {
-@@ -579,7 +586,7 @@ static char *ssl_validate_cert (X509 *cert,char *host)
+   if (!(flags & NET_NOVALIDATECERT) &&
+@@ -480,6 +496,7 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
+     return ssl_last_error = cpystr (tmp);
    }
+   X509_free(cert);
++#endif
+   return NIL;
+ }
+ 
+@@ -518,6 +535,7 @@ static int ssl_open_verify (int ok,X509_STORE_CTX *ctx
+  * Returns: NIL if validated, else string of error message
+  */
  
-   if (ret == NIL
--#ifndef OPENSSL_1_1_0
-+#if !defined(OPENSSL_1_1_0) && !defined(LIBRESSL_VERSION_NUMBER)
-        && !cert->name
- #endif /* OPENSSL_1_1_0 */
-        && !X509_get_subject_name(cert))
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ static char *ssl_validate_cert (X509 *cert,char *host)
+ {
+   int i,j,n, m = 0;
+@@ -590,6 +608,7 @@ static char *ssl_validate_cert (X509 *cert,char *host)
+ 
+   return ret;
+ }
++#endif
+ 
+ /* Case-independent wildcard pattern match
+  * Accepts: base string

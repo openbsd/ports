@@ -14,7 +14,7 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 # pico/pilot PKGNAMEs have different version numbers, so REVISION are
 # set separately below (and shouldn't get removed when alpine is updated).
 REVISION-main=		3
-REVISION-c-client=	1
+REVISION-c-client=	2
 REVISION-imap=		1
 REVISION-mailutil=	1
 
