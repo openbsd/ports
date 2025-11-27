@@ -8,6 +8,7 @@ include/libproxy/
 include/libproxy/proxy.h
 lib/girepository-1.0/Libproxy-1.0.typelib
 lib/libproxy/
+@static-lib lib/libproxy.a
 @lib lib/libproxy.so.${LIBproxy_VERSION}
 @so lib/libproxy/libpxbackend-1.0.so
 lib/pkgconfig/libproxy-1.0.pc
