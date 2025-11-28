@@ -1,0 +1,28 @@
+Index: src/gblv4.c
+--- src/gblv4.c.orig
++++ src/gblv4.c
+@@ -119,6 +119,7 @@ int gbl_sock_init(void) {
+         return -1;
+     }
+ 
++#ifdef __linux__
+     /* Bind to interface only */
+     if (iface[0]) {
+         memset(&ifr, 0, sizeof(ifr));
+@@ -133,6 +134,7 @@ int gbl_sock_init(void) {
+             return -1;
+         }
+     }
++#endif
+ 
+     if (bind(sock, (struct sockaddr *) &s, sizeof (s)) == -1) {
+         printl(ERROR, "Failed to bind udp port: %s\n", strerror(errno));
+@@ -274,7 +276,7 @@ gbl_recv(gbl_cmd_t *gbl_cmd, unsigned char cmd, const 
+  * @param gbl_cmd
+  * @return
+  */
+-int
++void
+ gbl_prepare_cmd(gbl_cmd_t *gbl_cmd) {
+ 
+     if (gbl_cmd->cmd != 2) {

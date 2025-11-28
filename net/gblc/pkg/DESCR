@@ -1,0 +1,3 @@
+The gblc (Gude Boot Loader Client) utility can be used to search GBL devices
+within your network, to modify their network settings, perform a reset to
+factory defaults or to update the firmware.

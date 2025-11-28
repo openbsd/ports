@@ -1,0 +1,36 @@
+Index: src/gblv4.h
+--- src/gblv4.h.orig
++++ src/gblv4.h
+@@ -16,6 +16,7 @@
+ 
+ #include <sys/types.h>
+ #include <stdio.h>
++#include <unistd.h>
+ 
+ #define GBL_PORT            50123
+ 
+@@ -170,7 +171,7 @@ int gbl_set_hostname(gbl_cmd_t * gbl_cmd, char * hostn
+ /* gbl socket/dgram content helpers */
+ int gbl_sock_init(void);
+ void gbl_sock_close(void);
+-int gbl_prepare_cmd(gbl_cmd_t *gbl_cmd);
++void gbl_prepare_cmd(gbl_cmd_t *gbl_cmd);
+ int gbl_send_dgram(gbl_cmd_t * gbl_cmd, struct in_addr * addr);
+ void dump_gbl_dev(gbl_cmd_t *gbl_cmd, unsigned char verbose);
+ unsigned char gbl_dev_bootloader(gbl_cmd_t *gbl_cmd);
+@@ -184,3 +185,15 @@ int gbl_poll_reply(gbl_cmd_t * gbl_cmd, unsigned short
+ /* external symbols */
+ extern const char * GBL_CMDS[];
+ extern const unsigned int GBL_TIMEOUTS[];
++
++/* insert from gblv4.c */
++int gbl_get_config_entity(gbl_cmd_t * gbl_cmd, u_int32_t cfg_ent_id,
++    u_int8_t cfg_ent_idx);
++int gbl_set_config_entity(gbl_cmd_t * gbl_cmd, u_int32_t cfg_ent_id,
++    u_int8_t cfg_ent_idx, int cfg_ent_data_len, char * cfg_ent_data);
++int gbl_del_config_entity(gbl_cmd_t * gbl_cmd, u_int32_t entity_id,
++    u_int8_t subidx, u_int8_t force);
++void dump_eprom_entity(gbl_cmd_t *gbl_cmd);
++void dump_eprom_entity_error_code(u_int8_t error_code);
++int next_eprom_entity(gbl_cmd_t *gbl_cmd, u_int32_t *next_id,
++    u_int8_t *next_sub_idx);
