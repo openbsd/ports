@@ -10,7 +10,7 @@ Index: test/run-stp-tests.sh
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -593,7 +593,7 @@ if test -f "$root/cups/libcups.so.2"; then
+@@ -589,7 +589,7 @@ if test -f "$root/cups/libcups.so.2"; then
  		LD_LIBRARY_PATH="$root/cups:$LD_LIBRARY_PATH"
  	fi
  

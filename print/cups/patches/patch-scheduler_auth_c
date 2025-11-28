@@ -12,7 +12,7 @@ Index: scheduler/auth.c
  
  /*
   * Local functions...
-@@ -638,6 +642,53 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+@@ -644,6 +648,53 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  
        pam_end(pamh, PAM_SUCCESS);
  
