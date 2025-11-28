@@ -1,3 +1,5 @@
+don't install external component
+
 Index: rts/lib/lunasvg/CMakeLists.txt
 --- rts/lib/lunasvg/CMakeLists.txt.orig
 +++ rts/lib/lunasvg/CMakeLists.txt

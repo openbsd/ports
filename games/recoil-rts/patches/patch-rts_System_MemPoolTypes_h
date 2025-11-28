@@ -4,7 +4,7 @@ EXPERIMENTAL: fix error: static_cast from 'NativeThreadId' (aka
 Index: rts/System/MemPoolTypes.h
 --- rts/System/MemPoolTypes.h.orig
 +++ rts/System/MemPoolTypes.h
-@@ -425,7 +425,7 @@ inline size_t StablePosAllocator<T>::Allocate(size_t n
+@@ -431,7 +431,7 @@ inline size_t StablePosAllocator<T>::Allocate(size_t n
  	if (positionToSize.empty()) {
  		size_t returnPos = data.size();
  		data.resize(data.size() + numElems);

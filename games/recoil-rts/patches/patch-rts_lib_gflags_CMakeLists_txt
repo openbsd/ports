@@ -1,0 +1,56 @@
+don't install external component
+
+Index: rts/lib/gflags/CMakeLists.txt
+--- rts/lib/gflags/CMakeLists.txt.orig
++++ rts/lib/gflags/CMakeLists.txt
+@@ -492,50 +492,6 @@ if (GFLAGS_IS_SUBPROJECT)
+ endif ()
+ 
+ # ----------------------------------------------------------------------------
+-# installation rules
+-set (EXPORT_NAME ${PACKAGE_NAME}-targets)
+-file (RELATIVE_PATH INSTALL_PREFIX_REL2CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/${CONFIG_INSTALL_DIR}" "${CMAKE_INSTALL_PREFIX}")
+-configure_file (cmake/config.cmake.in  "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}-config-install.cmake" @ONLY)
+-configure_file (cmake/version.cmake.in "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}-config-version.cmake" @ONLY)
+-
+-if (BUILD_SHARED_LIBS AND INSTALL_SHARED_LIBS)
+-  foreach (opts IN ITEMS "" _nothreads)
+-    if (BUILD_gflags${opts}_LIB)
+-      install (TARGETS gflags${opts}_shared DESTINATION ${LIBRARY_INSTALL_DIR} EXPORT ${EXPORT_NAME})
+-    endif ()
+-  endforeach ()
+-endif ()
+-if (BUILD_STATIC_LIBS AND INSTALL_STATIC_LIBS)
+-  foreach (opts IN ITEMS "" _nothreads)
+-    if (BUILD_gflags${opts}_LIB)
+-      install (TARGETS gflags${opts}_static DESTINATION ${LIBRARY_INSTALL_DIR} EXPORT ${EXPORT_NAME})
+-    endif ()
+-  endforeach ()
+-endif ()
+-
+-if (INSTALL_HEADERS)
+-  install (FILES ${PUBLIC_HDRS} DESTINATION ${INCLUDE_INSTALL_DIR}/${GFLAGS_INCLUDE_DIR})
+-  install (
+-    FILES "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}-config-install.cmake"
+-    RENAME ${PACKAGE_NAME}-config.cmake
+-    DESTINATION ${CONFIG_INSTALL_DIR}
+-  )
+-  install (
+-    FILES "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}-config-version.cmake"
+-    DESTINATION ${CONFIG_INSTALL_DIR}
+-  )
+-  install (EXPORT ${EXPORT_NAME} DESTINATION ${CONFIG_INSTALL_DIR})
+-  if (UNIX)
+-    install (PROGRAMS src/gflags_completions.sh DESTINATION ${RUNTIME_INSTALL_DIR})
+-  endif ()
+-endif ()
+-
+-if (PKGCONFIG_INSTALL_DIR)
+-  configure_file ("cmake/package.pc.in" "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}.pc" @ONLY)
+-  install (FILES "${PROJECT_BINARY_DIR}/${PACKAGE_NAME}.pc" DESTINATION "${PKGCONFIG_INSTALL_DIR}")
+-endif ()
+-
+-# ----------------------------------------------------------------------------
+ # support direct use of build tree
+ set (INSTALL_PREFIX_REL2CONFIG_DIR .)
+ export (TARGETS ${TARGETS} FILE "${PROJECT_BINARY_DIR}/${EXPORT_NAME}.cmake")

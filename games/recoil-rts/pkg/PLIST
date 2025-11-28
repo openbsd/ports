@@ -216,7 +216,6 @@ lib/cmake/RmlUi/RmlUiConfigVersion.cmake
 @static-lib lib/librmlui.a
 @static-lib lib/librmlui_debugger.a
 @so lib/libunitsync.so
-lib/pkgconfig/gflags.pc
 share/Tracy/
 share/Tracy/TracyConfig.cmake
 share/Tracy/TracyTargets-relwithdebinfo.cmake

@@ -18,5 +18,5 @@ Index: test/CMakeLists.txt
 -endif (UNIX AND (NOT APPLE) AND (NOT MINGW))
 +endif (UNIX AND (NOT APPLE) AND (NOT MINGW) AND (NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")))
  
- include_directories(${CMAKE_BINARY_DIR}/src-generated/engine)
+ ADD_SUBDIRECTORY(lib/catch2)
  

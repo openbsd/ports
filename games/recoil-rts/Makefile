@@ -8,9 +8,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.04.08
+V =			2025.06.11
 PKGNAME =		recoil-rts-${V}
-REVISION =		1
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
@@ -22,44 +21,52 @@ DIST_TUPLE +=		github USCiLab cereal \
 DIST_TUPLE +=		github skypjack entt \
 			e4ccb878f47245a319704912435d3c89f34ad6be \
 			rts/lib/entt # MIT
+DIST_TUPLE +=		github spnda fastgltf \
+			eebda658317cd907d6cdf9c9ed7e40b96e8453dd \
+			rts/lib/fastgltf # MIT
 DIST_TUPLE +=		github gflags gflags \
 			f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 			rts/lib/gflags # BSD-3
 DIST_TUPLE +=		github sammycage lunasvg \
 			d1eec967ec515395cfd669a1bfed8d5a6a119dde \
 			rts/lib/lunasvg # MIT
+DIST_TUPLE +=		github simdjson simdjson \
+			0c0ce1bd48baa0677dc7c0945ea7cd1e8b52b297 \
+			rts/lib/simdjson # Apache 2 / MIT
 DIST_TUPLE +=		github wolfpld tracy \
 			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			6d05ca04666618e3906301dc8e9ba0893180ba25 \
+			7c0e69a3fc1aa84ecb3bc0b5df5930038fbb0634 \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
 			AI/Skirmish/CircuitAI # GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
-			bdac30330eccb5ec73da299922491f3f4ee8debe \
+			8263d019b8b048f3939ddfbc2595d7f10ef45bf4 \
 			tools/pr-downloader # GPL-2.0
 DIST_TUPLE +=		github cameron314 readerwriterqueue \
 			8e7627d18c2108aca178888d88514179899a044f \
 			tools/pr-downloader/src/lib/readerwriterqueue # BSD-2
 
 CATEGORIES =		games x11
-HOMEPAGE =		https://beyond-all-reason.github.io/spring/
+HOMEPAGE =		https://beyond-all-reason.github.io/RecoilEngine/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU IL SDL2 X11 Xcursor c curl
-WANTLIB += execinfo expat fontconfig freetype jsoncpp m minizip ogg
-WANTLIB += openal vorbis vorbisfile z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU IL SDL2 X11 Xcursor
+WANTLIB += Xfixes Xrender c curl execinfo expat fontconfig
+WANTLIB += freetype jsoncpp m minizip ogg openal vorbis
+WANTLIB += vorbisfile z
 
 FIX_CRLF_FILES = \
 	tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
 
-# needs std::format not in clang 16
+# C++11 or newer
 COMPILER =		base-clang ports-gcc
+
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		archivers/p7zip \
@@ -76,9 +83,6 @@ LIB_DEPENDS =		archivers/minizip \
 			devel/sdl2 \
 			graphics/DevIL \
 			net/curl
-
-# use fmt::format while clang doesn't support std::format yet
-BUILD_DEPENDS +=	devel/fmt
 
 # per upstream, build type RELWITHDEBINFO is preferred because of crashhandler
 CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \

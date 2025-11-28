@@ -1,0 +1,17 @@
+Fix build, add missing header.
+
+rts/lib/RmlUi/Source/Core/Log.cpp:46:2: error:
+cannot initialize a parameter of type '__va_list_tag *' with an lvalue of type 'va_list' (aka '__va_list_tag[1]')
+
+Index: rts/lib/RmlUi/Source/Core/CMakeLists.txt
+--- rts/lib/RmlUi/Source/Core/CMakeLists.txt.orig
++++ rts/lib/RmlUi/Source/Core/CMakeLists.txt
+@@ -438,7 +438,7 @@ endif()
+ # RMLUI_CMAKE_MINIMUM_VERSION_RAISE_NOTICE:
+ # From CMake 3.16 we can skip the version check.
+ if(RMLUI_PRECOMPILED_HEADERS AND CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+-	target_precompile_headers(rmlui_core PRIVATE "${PROJECT_SOURCE_DIR}/Source/Core/precompiled.h")
++	target_precompile_headers(rmlui_core PRIVATE <cstdarg> "${PROJECT_SOURCE_DIR}/Source/Core/precompiled.h")
+ elseif(RMLUI_PRECOMPILED_HEADERS)
+ 	message(STATUS "Could not enable precompiled headers, requires CMake version 3.16 or greater.")
+ endif()

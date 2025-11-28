@@ -1,7 +1,7 @@
 Index: rts/System/Platform/Threading.cpp
 --- rts/System/Platform/Threading.cpp.orig
 +++ rts/System/Platform/Threading.cpp
-@@ -432,8 +432,12 @@ namespace Threading {
+@@ -492,8 +492,12 @@ namespace Threading {
  		tracy::SetThreadName(newname.c_str());
  	#endif
  	#ifndef _WIN32

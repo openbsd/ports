@@ -1,0 +1,18 @@
+Fix build, remove static_assert to avoid missing function.
+
+rts/System/SafeUtil.h:108:28: error:
+no template named 'is_trivially_constructible_v' in namespace 'std';
+did you mean 'is_default_constructible_v'?
+
+Index: rts/System/SafeUtil.h
+--- rts/System/SafeUtil.h.orig
++++ rts/System/SafeUtil.h
+@@ -105,8 +105,6 @@ namespace spring {
+         static_assert(sizeof(TIn) == sizeof(TOut), "Types must match sizes");
+         static_assert(std::is_trivially_copyable<TIn>::value , "Requires TriviallyCopyable input");
+         static_assert(std::is_trivially_copyable<TOut>::value, "Requires TriviallyCopyable output");
+-        static_assert(std::is_trivially_constructible_v<TOut>,
+-            "This implementation additionally requires destination type to be trivially constructible");
+ 
+         TOut t2;
+         std::memcpy(std::addressof(t2), std::addressof(t1), sizeof(TIn));

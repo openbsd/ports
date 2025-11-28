@@ -3,7 +3,7 @@ stub thread affinity stuff
 Index: rts/System/Platform/Linux/CpuTopology.cpp
 --- rts/System/Platform/Linux/CpuTopology.cpp.orig
 +++ rts/System/Platform/Linux/CpuTopology.cpp
-@@ -38,6 +38,9 @@ int get_cpu_count() {
+@@ -90,6 +90,9 @@ std::vector<int> get_online_cpus() {
  
  // Set CPU affinity to a specific core
  void set_cpu_affinity(uint32_t cpu) {
@@ -13,7 +13,7 @@ Index: rts/System/Platform/Linux/CpuTopology.cpp
  	cpu_set_t mask;
  	CPU_ZERO(&mask);
  	CPU_SET(cpu, &mask);
-@@ -46,6 +49,7 @@ void set_cpu_affinity(uint32_t cpu) {
+@@ -98,6 +101,7 @@ void set_cpu_affinity(uint32_t cpu) {
  	if (pthread_setaffinity_np(thread, sizeof(mask), &mask) != 0) {
  		perror("pthread_setaffinity_np");
  	}

@@ -47,5 +47,5 @@ Index: rts/System/Platform/CpuID.cpp
  		smtDetected = !!( processorMasks.hyperThreadLowMask | processorMasks.hyperThreadHighMask );
 +#endif
  	}
- 
- }
+ 	std::string CPUID::GetCPUBrandString() {
+         // Check if the CPU supports the extended CPUID leaves for the brand string

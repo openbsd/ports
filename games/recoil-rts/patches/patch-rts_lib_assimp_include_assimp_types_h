@@ -1,0 +1,19 @@
+Fix build, add missing header.
+
+rts/lib/assimp/include/assimp/*.inl: error:
+no member named 'abs' in namespace 'std'
+
+Index: rts/lib/assimp/include/assimp/types.h
+--- rts/lib/assimp/include/assimp/types.h.orig
++++ rts/lib/assimp/include/assimp/types.h
+@@ -53,6 +53,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+ #include <string.h>
+ #include <limits.h>
+ 
++#ifdef __cplusplus
++#include <cstdlib>  // for std:abs
++#endif
++
+ // Our compile configuration
+ #include "defs.h"
+ 

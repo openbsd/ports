@@ -1,0 +1,44 @@
+don't install external component
+
+Index: rts/lib/fastgltf/CMakeLists.txt
+--- rts/lib/fastgltf/CMakeLists.txt.orig
++++ rts/lib/fastgltf/CMakeLists.txt
+@@ -141,38 +141,6 @@ elseif(FASTGLTF_ENABLE_CPP_MODULES)
+     message(WARNING "FASTGLTF_ENABLE_CPP_MODULES is ON but compiler does not support them")
+ endif()
+ 
+-write_basic_package_version_file(
+-    "${PROJECT_BINARY_DIR}/fastgltfConfigVersion.cmake"
+-    VERSION ${PACKAGE_VERSION}
+-    COMPATIBILITY SameMajorVersion
+-)
+-
+-install(
+-    FILES ${FASTGLTF_HEADERS}
+-    DESTINATION include/fastgltf
+-)
+-
+-install(FILES
+-    "${CMAKE_CURRENT_BINARY_DIR}/fastgltfConfigVersion.cmake"
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/fastgltf
+-)
+-
+-install(
+-    TARGETS fastgltf
+-    EXPORT fastgltf-targets
+-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+-)
+-
+-install(
+-    EXPORT fastgltf-targets
+-    FILE fastgltfConfig.cmake
+-    NAMESPACE fastgltf::
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/fastgltf
+-)
+-
+ if (FASTGLTF_ENABLE_TESTS OR FASTGLTF_ENABLE_EXAMPLES)
+     # This is required so that Catch2 compiles with C++17, enabling various features we use in tests.
+     if (NOT DEFINED CMAKE_CXX_STANDARD OR CMAKE_CXX_STANDARD STREQUAL "" OR CMAKE_CXX_STANDARD LESS 17)

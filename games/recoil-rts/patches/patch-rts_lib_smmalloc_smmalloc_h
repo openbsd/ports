@@ -1,0 +1,16 @@
+Fix build, add missing header.
+
+rts/lib/smmalloc/smmalloc.h:663:62: error:
+no member named 'is_standard_layout' in namespace 'std'
+
+Index: rts/lib/smmalloc/smmalloc.h
+--- rts/lib/smmalloc/smmalloc.h.orig
++++ rts/lib/smmalloc/smmalloc.h
+@@ -28,6 +28,7 @@
+ #include <initializer_list>
+ #include <memory>
+ #include <stdint.h>
++#include <type_traits>
+ 
+ //#define SMMALLOC_STATS_SUPPORT
+ 

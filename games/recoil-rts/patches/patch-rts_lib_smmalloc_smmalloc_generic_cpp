@@ -1,0 +1,17 @@
+Fix build, add missing header.
+
+rts/lib/smmalloc/smmalloc_generic.cpp:53:21: error:
+no member named 'malloc' in namespace 'std';
+did you mean simply 'malloc'?
+
+Index: rts/lib/smmalloc/smmalloc_generic.cpp
+--- rts/lib/smmalloc/smmalloc_generic.cpp.orig
++++ rts/lib/smmalloc/smmalloc_generic.cpp
+@@ -21,6 +21,7 @@
+ // 	THE SOFTWARE.
+ #include "smmalloc.h"
+ #include <stdlib.h>
++#include <cstdlib>
+ 
+ struct Header
+ {
