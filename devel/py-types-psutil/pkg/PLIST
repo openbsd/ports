@@ -9,9 +9,11 @@ lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_pslinux.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psosx.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psposix.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_pssunos.pyi
+lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_aix.pyi
+lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_bsd.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_linux.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_osx.pyi
-lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_posix.pyi
+lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_sunos.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psutil_windows.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_pswindows.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/py.typed
