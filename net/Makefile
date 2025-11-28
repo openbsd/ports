@@ -114,6 +114,7 @@
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
      SUBDIR += gajim
+     SUBDIR += gblc
      SUBDIR += gdnsd
      SUBDIR += gelatod
      SUBDIR += geomyidae
