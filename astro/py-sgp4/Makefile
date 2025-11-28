@@ -1,9 +1,8 @@
 COMMENT=	Python implementation of SGP4 satellite tracking algorithm
 
-MODPY_DISTV=	2.24
+MODPY_DISTV=	2.25
 DISTNAME=	sgp4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	astro
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER=	base-clang ports-gcc
+COMPILER_LANGS = c c++
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
