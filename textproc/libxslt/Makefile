@@ -1,8 +1,6 @@
 COMMENT=		XSLT C Library for GNOME
 
-GNOME_VERSION=		1.1.43
-GNOME_PROJECT=		libxslt
-REVISION=		3
+DIST_TUPLE=		gnome GNOME libxslt v1.1.44 .
 
 SHARED_LIBS +=  xslt                 4.2      # 2.43
 SHARED_LIBS +=  exslt                9.8      # 8.24
@@ -20,7 +18,11 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		textproc/libxml
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
+
+CONFIGURE_STYLE=	autoreconf
+
 CONFIGURE_ARGS=		--with-libxml-include-prefix="${LOCALBASE}/include/libxml2" \
 			--without-python
 CONFIGURE_ENV=		XML_CONFIG="${LOCALBASE}/bin/xml2-config"

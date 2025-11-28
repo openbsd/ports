@@ -20,6 +20,7 @@ include/libxslt/preproc.h
 include/libxslt/security.h
 include/libxslt/templates.h
 include/libxslt/transform.h
+include/libxslt/transformInternals.h
 include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
