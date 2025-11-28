@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/dms"
+daemon_user="_dms"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+# '-http [::]:1338' breaks pgrep(1)
+pexp=$(echo "$pexp" | tr [ .)
+
+rc_cmd $1

@@ -1,0 +1,4 @@
+@newgroup _dms:596
+@newuser _dms:596:596::dms:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/dms
+@bin bin/dms
