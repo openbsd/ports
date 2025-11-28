@@ -4,7 +4,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -446,10 +446,6 @@ else() # MSVC
+@@ -453,10 +453,6 @@ else() # MSVC
      add_compile_flag("-Wno-error=missing-field-initializers")
    endif()
  
