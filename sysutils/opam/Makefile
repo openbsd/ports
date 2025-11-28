@@ -4,8 +4,8 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.4.1
-PKGNAME =		opam-${V}
+V =			2.5.0
+PKGNAME =		opam-${V:S/-//}
 DISTNAME =		opam-full-${V}
 
 SITES =			https://github.com/ocaml/opam/releases/download/${V}/
@@ -40,7 +40,7 @@ CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 CONFIGURE_STYLE =	gnu autoreconf no-autoheader
 CONFIGURE_ARGS =	--with-vendored-deps
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
 TEST_TARGET =		tests

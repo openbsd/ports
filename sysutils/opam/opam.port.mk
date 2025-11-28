@@ -11,13 +11,13 @@ MODOPAM_WITH_TEST ?=	No
 
 # Add sysutils/opam to BUILD_DEPENDS, and net/rsync to copying local repositories.
 .if ${MODOPAM_BUILDDEP:L} == "yes"
-BUILD_DEPENDS +=	sysutils/opam>=2.4 \
+BUILD_DEPENDS +=	sysutils/opam>=2.5 \
 			net/rsync
 .endif
 
 # Default location of opam binary (provided by sysutils/opam).
-# Uses --cli=2.4 to stick with 2.4 options even if opam is upgraded.
-MODOPAM_OPAM_BIN ?=	${LOCALBASE}/bin/opam --cli=2.4
+# Uses --cli=X.Y to stick with X.Y options even if opam is upgraded.
+MODOPAM_OPAM_BIN ?=	${LOCALBASE}/bin/opam --cli=2.5
 
 # Default path for OPAMROOT.
 MODOPAM_OPAMROOT ?=	${WRKDIR}/modopam-opamroot
