@@ -15,7 +15,7 @@ USE_NOEXECONLY = Yes
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 20
+REVISION = 21
 
 ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
