@@ -17,9 +17,6 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += cairo cairo-gobject ffi girepository-2.0 glib-2.0 gobject-2.0
 
-COMPILER=		base-clang ports-gcc
-COMPILER_LANGS=		c
-
 MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
@@ -27,10 +24,6 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gobject-introspection
 
 MODPY_PYBUILD=		setuptools
-
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=737874
-MODULES +=		gcc4
-MODGCC4_ARCHS=		${GCC4_ARCHS}
 
 BUILD_DEPENDS=		graphics/py-cairo
 
