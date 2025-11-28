@@ -2,9 +2,8 @@ COMMENT=	FastCGI Development Kit
 
 GH_ACCOUNT=	FastCGI-Archives
 GH_PROJECT=	fcgi2
-GH_TAGNAME=	2.4.6
+GH_TAGNAME=	2.4.7
 PKGNAME=	fcgi-${GH_TAGNAME}
-REVISION =	0
 
 CATEGORIES=	www
 SHARED_LIBS +=	fcgi                 0.1      # .0.0
