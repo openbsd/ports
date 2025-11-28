@@ -29,6 +29,9 @@ WANTLIB += ${COMPILER_LIBCXX} ICE Mrm SM Uil X11 Xau Xdmcp Xext
 WANTLIB += Xft Xinerama Xm Xmu Xpm Xrender Xss Xt c expat fontconfig
 WANTLIB += freetype iconv jpeg lmdb m png tcl86 util xcb z
 
+# needs C++11
+COMPILER=		base-clang ports-gcc
+
 MODULES=		lang/tcl
 
 MODTCL_VERSION=		8.6
