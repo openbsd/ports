@@ -5,6 +5,7 @@
      SUBDIR += ccextractor
      SUBDIR += dav1d
      SUBDIR += devede
+     SUBDIR += dms
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
      SUBDIR += dvdstyler
