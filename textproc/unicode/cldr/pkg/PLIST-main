@@ -7,6 +7,7 @@ share/unicode/cldr/common/annotationsDerived/ar_SA.xml
 share/unicode/cldr/common/annotationsDerived/as.xml
 share/unicode/cldr/common/annotationsDerived/ast.xml
 share/unicode/cldr/common/annotationsDerived/az.xml
+share/unicode/cldr/common/annotationsDerived/ba.xml
 share/unicode/cldr/common/annotationsDerived/be.xml
 share/unicode/cldr/common/annotationsDerived/bew.xml
 share/unicode/cldr/common/annotationsDerived/bg.xml
@@ -125,6 +126,7 @@ share/unicode/cldr/common/annotationsDerived/sa.xml
 share/unicode/cldr/common/annotationsDerived/sat.xml
 share/unicode/cldr/common/annotationsDerived/sc.xml
 share/unicode/cldr/common/annotationsDerived/sd.xml
+share/unicode/cldr/common/annotationsDerived/shn.xml
 share/unicode/cldr/common/annotationsDerived/si.xml
 share/unicode/cldr/common/annotationsDerived/sk.xml
 share/unicode/cldr/common/annotationsDerived/sl.xml
@@ -139,6 +141,7 @@ share/unicode/cldr/common/annotationsDerived/su.xml
 share/unicode/cldr/common/annotationsDerived/sv.xml
 share/unicode/cldr/common/annotationsDerived/sw.xml
 share/unicode/cldr/common/annotationsDerived/sw_KE.xml
+share/unicode/cldr/common/annotationsDerived/syr.xml
 share/unicode/cldr/common/annotationsDerived/ta.xml
 share/unicode/cldr/common/annotationsDerived/te.xml
 share/unicode/cldr/common/annotationsDerived/tg.xml
@@ -371,6 +374,7 @@ share/unicode/cldr/common/casing/se.xml
 share/unicode/cldr/common/casing/seh.xml
 share/unicode/cldr/common/casing/ses.xml
 share/unicode/cldr/common/casing/sg.xml
+share/unicode/cldr/common/casing/sgs.xml
 share/unicode/cldr/common/casing/shi.xml
 share/unicode/cldr/common/casing/shi_Latn.xml
 share/unicode/cldr/common/casing/si.xml
@@ -445,6 +449,7 @@ share/unicode/cldr/common/collation/bal.xml
 share/unicode/cldr/common/collation/bal_Latn.xml
 share/unicode/cldr/common/collation/be.xml
 share/unicode/cldr/common/collation/bg.xml
+share/unicode/cldr/common/collation/blo.xml
 share/unicode/cldr/common/collation/bn.xml
 share/unicode/cldr/common/collation/bo.xml
 share/unicode/cldr/common/collation/br.xml
@@ -536,6 +541,7 @@ share/unicode/cldr/common/collation/root.xml
 share/unicode/cldr/common/collation/ru.xml
 share/unicode/cldr/common/collation/sa.xml
 share/unicode/cldr/common/collation/se.xml
+share/unicode/cldr/common/collation/sgs.xml
 share/unicode/cldr/common/collation/si.xml
 share/unicode/cldr/common/collation/sk.xml
 share/unicode/cldr/common/collation/sl.xml
@@ -695,6 +701,8 @@ share/unicode/cldr/common/main/bn_IN.xml
 share/unicode/cldr/common/main/bo.xml
 share/unicode/cldr/common/main/bo_CN.xml
 share/unicode/cldr/common/main/bo_IN.xml
+share/unicode/cldr/common/main/bqi.xml
+share/unicode/cldr/common/main/bqi_IR.xml
 share/unicode/cldr/common/main/br.xml
 share/unicode/cldr/common/main/br_FR.xml
 share/unicode/cldr/common/main/brx.xml
@@ -706,6 +714,8 @@ share/unicode/cldr/common/main/bs_Latn.xml
 share/unicode/cldr/common/main/bs_Latn_BA.xml
 share/unicode/cldr/common/main/bss.xml
 share/unicode/cldr/common/main/bss_CM.xml
+share/unicode/cldr/common/main/bua.xml
+share/unicode/cldr/common/main/bua_RU.xml
 share/unicode/cldr/common/main/byn.xml
 share/unicode/cldr/common/main/byn_ER.xml
 share/unicode/cldr/common/main/ca.xml
@@ -816,6 +826,7 @@ share/unicode/cldr/common/main/en_DK.xml
 share/unicode/cldr/common/main/en_DM.xml
 share/unicode/cldr/common/main/en_Dsrt.xml
 share/unicode/cldr/common/main/en_Dsrt_US.xml
+share/unicode/cldr/common/main/en_EE.xml
 share/unicode/cldr/common/main/en_ER.xml
 share/unicode/cldr/common/main/en_ES.xml
 share/unicode/cldr/common/main/en_FI.xml
@@ -825,6 +836,7 @@ share/unicode/cldr/common/main/en_FM.xml
 share/unicode/cldr/common/main/en_FR.xml
 share/unicode/cldr/common/main/en_GB.xml
 share/unicode/cldr/common/main/en_GD.xml
+share/unicode/cldr/common/main/en_GE.xml
 share/unicode/cldr/common/main/en_GG.xml
 share/unicode/cldr/common/main/en_GH.xml
 share/unicode/cldr/common/main/en_GI.xml
@@ -843,6 +855,7 @@ share/unicode/cldr/common/main/en_IO.xml
 share/unicode/cldr/common/main/en_IT.xml
 share/unicode/cldr/common/main/en_JE.xml
 share/unicode/cldr/common/main/en_JM.xml
+share/unicode/cldr/common/main/en_JP.xml
 share/unicode/cldr/common/main/en_KE.xml
 share/unicode/cldr/common/main/en_KI.xml
 share/unicode/cldr/common/main/en_KN.xml
@@ -850,6 +863,8 @@ share/unicode/cldr/common/main/en_KY.xml
 share/unicode/cldr/common/main/en_LC.xml
 share/unicode/cldr/common/main/en_LR.xml
 share/unicode/cldr/common/main/en_LS.xml
+share/unicode/cldr/common/main/en_LT.xml
+share/unicode/cldr/common/main/en_LV.xml
 share/unicode/cldr/common/main/en_MG.xml
 share/unicode/cldr/common/main/en_MH.xml
 share/unicode/cldr/common/main/en_MO.xml
@@ -898,6 +913,7 @@ share/unicode/cldr/common/main/en_TO.xml
 share/unicode/cldr/common/main/en_TT.xml
 share/unicode/cldr/common/main/en_TV.xml
 share/unicode/cldr/common/main/en_TZ.xml
+share/unicode/cldr/common/main/en_UA.xml
 share/unicode/cldr/common/main/en_UG.xml
 share/unicode/cldr/common/main/en_UM.xml
 share/unicode/cldr/common/main/en_US.xml
@@ -1142,6 +1158,8 @@ share/unicode/cldr/common/main/kde.xml
 share/unicode/cldr/common/main/kde_TZ.xml
 share/unicode/cldr/common/main/kea.xml
 share/unicode/cldr/common/main/kea_CV.xml
+share/unicode/cldr/common/main/kek.xml
+share/unicode/cldr/common/main/kek_GT.xml
 share/unicode/cldr/common/main/ken.xml
 share/unicode/cldr/common/main/ken_CM.xml
 share/unicode/cldr/common/main/kgp.xml
@@ -1190,6 +1208,13 @@ share/unicode/cldr/common/main/ksf_CM.xml
 share/unicode/cldr/common/main/ksh.xml
 share/unicode/cldr/common/main/ksh_DE.xml
 share/unicode/cldr/common/main/ku.xml
+share/unicode/cldr/common/main/ku_Arab.xml
+share/unicode/cldr/common/main/ku_Arab_IQ.xml
+share/unicode/cldr/common/main/ku_Arab_IR.xml
+share/unicode/cldr/common/main/ku_Latn.xml
+share/unicode/cldr/common/main/ku_Latn_IQ.xml
+share/unicode/cldr/common/main/ku_Latn_SY.xml
+share/unicode/cldr/common/main/ku_Latn_TR.xml
 share/unicode/cldr/common/main/ku_TR.xml
 share/unicode/cldr/common/main/kw.xml
 share/unicode/cldr/common/main/kw_GB.xml
@@ -1242,6 +1267,8 @@ share/unicode/cldr/common/main/luy.xml
 share/unicode/cldr/common/main/luy_KE.xml
 share/unicode/cldr/common/main/lv.xml
 share/unicode/cldr/common/main/lv_LV.xml
+share/unicode/cldr/common/main/lzz.xml
+share/unicode/cldr/common/main/lzz_TR.xml
 share/unicode/cldr/common/main/mai.xml
 share/unicode/cldr/common/main/mai_IN.xml
 share/unicode/cldr/common/main/mas.xml
@@ -1297,6 +1324,9 @@ share/unicode/cldr/common/main/mua.xml
 share/unicode/cldr/common/main/mua_CM.xml
 share/unicode/cldr/common/main/mus.xml
 share/unicode/cldr/common/main/mus_US.xml
+share/unicode/cldr/common/main/mww.xml
+share/unicode/cldr/common/main/mww_Hmnp.xml
+share/unicode/cldr/common/main/mww_Hmnp_US.xml
 share/unicode/cldr/common/main/my.xml
 share/unicode/cldr/common/main/my_MM.xml
 share/unicode/cldr/common/main/myv.xml
@@ -1348,6 +1378,9 @@ share/unicode/cldr/common/main/nyn_UG.xml
 share/unicode/cldr/common/main/oc.xml
 share/unicode/cldr/common/main/oc_ES.xml
 share/unicode/cldr/common/main/oc_FR.xml
+share/unicode/cldr/common/main/oka.xml
+share/unicode/cldr/common/main/oka_CA.xml
+share/unicode/cldr/common/main/oka_US.xml
 share/unicode/cldr/common/main/om.xml
 share/unicode/cldr/common/main/om_ET.xml
 share/unicode/cldr/common/main/om_KE.xml
@@ -1368,10 +1401,15 @@ share/unicode/cldr/common/main/pap_AW.xml
 share/unicode/cldr/common/main/pap_CW.xml
 share/unicode/cldr/common/main/pcm.xml
 share/unicode/cldr/common/main/pcm_NG.xml
+share/unicode/cldr/common/main/pi.xml
+share/unicode/cldr/common/main/pi_Latn.xml
+share/unicode/cldr/common/main/pi_Latn_GB.xml
 share/unicode/cldr/common/main/pis.xml
 share/unicode/cldr/common/main/pis_SB.xml
 share/unicode/cldr/common/main/pl.xml
 share/unicode/cldr/common/main/pl_PL.xml
+share/unicode/cldr/common/main/pms.xml
+share/unicode/cldr/common/main/pms_IT.xml
 share/unicode/cldr/common/main/prg.xml
 share/unicode/cldr/common/main/prg_PL.xml
 share/unicode/cldr/common/main/ps.xml
@@ -1460,6 +1498,8 @@ share/unicode/cldr/common/main/ses.xml
 share/unicode/cldr/common/main/ses_ML.xml
 share/unicode/cldr/common/main/sg.xml
 share/unicode/cldr/common/main/sg_CF.xml
+share/unicode/cldr/common/main/sgs.xml
+share/unicode/cldr/common/main/sgs_LT.xml
 share/unicode/cldr/common/main/shi.xml
 share/unicode/cldr/common/main/shi_Latn.xml
 share/unicode/cldr/common/main/shi_Latn_MA.xml
@@ -1521,6 +1561,11 @@ share/unicode/cldr/common/main/st_ZA.xml
 share/unicode/cldr/common/main/su.xml
 share/unicode/cldr/common/main/su_Latn.xml
 share/unicode/cldr/common/main/su_Latn_ID.xml
+share/unicode/cldr/common/main/suz.xml
+share/unicode/cldr/common/main/suz_Deva.xml
+share/unicode/cldr/common/main/suz_Deva_NP.xml
+share/unicode/cldr/common/main/suz_Sunu.xml
+share/unicode/cldr/common/main/suz_Sunu_NP.xml
 share/unicode/cldr/common/main/sv.xml
 share/unicode/cldr/common/main/sv_AX.xml
 share/unicode/cldr/common/main/sv_FI.xml
@@ -1950,14 +1995,17 @@ share/unicode/cldr/common/testData/personNameTest/am.txt
 share/unicode/cldr/common/testData/personNameTest/ar.txt
 share/unicode/cldr/common/testData/personNameTest/as.txt
 share/unicode/cldr/common/testData/personNameTest/az.txt
+share/unicode/cldr/common/testData/personNameTest/ba.txt
 share/unicode/cldr/common/testData/personNameTest/bal_Latn.txt
 share/unicode/cldr/common/testData/personNameTest/be.txt
 share/unicode/cldr/common/testData/personNameTest/bg.txt
+share/unicode/cldr/common/testData/personNameTest/blo.txt
 share/unicode/cldr/common/testData/personNameTest/bn.txt
 share/unicode/cldr/common/testData/personNameTest/bs.txt
 share/unicode/cldr/common/testData/personNameTest/ca.txt
 share/unicode/cldr/common/testData/personNameTest/chr.txt
 share/unicode/cldr/common/testData/personNameTest/cs.txt
+share/unicode/cldr/common/testData/personNameTest/cv.txt
 share/unicode/cldr/common/testData/personNameTest/cy.txt
 share/unicode/cldr/common/testData/personNameTest/da.txt
 share/unicode/cldr/common/testData/personNameTest/de.txt
@@ -1991,10 +2039,12 @@ share/unicode/cldr/common/testData/personNameTest/ja.txt
 share/unicode/cldr/common/testData/personNameTest/jv.txt
 share/unicode/cldr/common/testData/personNameTest/ka.txt
 share/unicode/cldr/common/testData/personNameTest/kk.txt
+share/unicode/cldr/common/testData/personNameTest/kk_Arab.txt
 share/unicode/cldr/common/testData/personNameTest/km.txt
 share/unicode/cldr/common/testData/personNameTest/kn.txt
 share/unicode/cldr/common/testData/personNameTest/ko.txt
 share/unicode/cldr/common/testData/personNameTest/kok.txt
+share/unicode/cldr/common/testData/personNameTest/kok_Latn.txt
 share/unicode/cldr/common/testData/personNameTest/ky.txt
 share/unicode/cldr/common/testData/personNameTest/lo.txt
 share/unicode/cldr/common/testData/personNameTest/lt.txt
@@ -2016,10 +2066,12 @@ share/unicode/cldr/common/testData/personNameTest/pl.txt
 share/unicode/cldr/common/testData/personNameTest/ps.txt
 share/unicode/cldr/common/testData/personNameTest/pt.txt
 share/unicode/cldr/common/testData/personNameTest/qu.txt
+share/unicode/cldr/common/testData/personNameTest/rm.txt
 share/unicode/cldr/common/testData/personNameTest/ro.txt
 share/unicode/cldr/common/testData/personNameTest/ru.txt
 share/unicode/cldr/common/testData/personNameTest/sc.txt
 share/unicode/cldr/common/testData/personNameTest/sd.txt
+share/unicode/cldr/common/testData/personNameTest/shn.txt
 share/unicode/cldr/common/testData/personNameTest/si.txt
 share/unicode/cldr/common/testData/personNameTest/sk.txt
 share/unicode/cldr/common/testData/personNameTest/sl.txt
@@ -2741,6 +2793,7 @@ share/unicode/cldr/common/uca/CollationTest_CLDR_SHIFTED.txt
 share/unicode/cldr/common/uca/CollationTest_CLDR_SHIFTED_SHORT.txt
 share/unicode/cldr/common/uca/FractionalUCA.txt
 share/unicode/cldr/common/uca/FractionalUCA_SHORT.txt
+share/unicode/cldr/common/uca/FractionalUCA_blanked.txt
 share/unicode/cldr/common/uca/UCA_Rules.txt
 share/unicode/cldr/common/uca/UCA_Rules_SHORT.txt
 share/unicode/cldr/common/uca/allkeys_CLDR.txt
