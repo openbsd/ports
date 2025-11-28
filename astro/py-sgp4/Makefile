@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER_LANGS = c c++
+COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
