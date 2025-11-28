@@ -1,6 +1,6 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.0.11
+MODPY_DISTV=	2.0.12
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
