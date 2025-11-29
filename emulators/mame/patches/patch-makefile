@@ -1,12 +1,12 @@
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -215,7 +215,7 @@ GENIEOS := freebsd
- endif
- ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
+@@ -226,7 +226,7 @@ OS := netbsd
+ GENIEOS := freebsd
+ else ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
  OS := openbsd
 -GENIEOS := freebsd
 +GENIEOS := bsd
- endif
- ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
+ else ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
+ GENIEOS := darwin

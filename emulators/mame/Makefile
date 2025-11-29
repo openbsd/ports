@@ -5,13 +5,12 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		276
+V =		283
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
 CATEGORIES =	emulators
-REVISION =	0
 
 HOMEPAGE =	https://mamedev.org/
 
@@ -47,6 +46,7 @@ MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" OVERRIDE_LD="${CXX}" \
 		OPT_FLAGS="${CXXFLAGS}" \
 		PYTHON_EXECUTABLE="${MODPY_BIN}" \
+		FORCE_DRC_C_BACKEND=1 \
 		NO_USE_PORTAUDIO=1 \
 		NO_USE_PULSEAUDIO=1 \
 		USE_SYSTEM_LIB_ASIO=1 \
