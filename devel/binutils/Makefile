@@ -1,8 +1,9 @@
 COMMENT =	GNU binary utilities
 
 # keep version synchronized with devel/gas
-DISTNAME =	binutils-2.45.1
-EXTRACT_SUFX =	.tar.bz2
+V =		2.45.1
+DISTNAME =	binutils-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,7 +20,7 @@ COMPILER_LANGS =	c
 WANTLIB += c z zstd
 
 LIB_DEPENDS +=	archivers/zstd
-RUN_DEPENDS +=	devel/gas>=2.45p1
+RUN_DEPENDS +=	devel/gas>=${V}
 
 SITES =		${SITE_GNU:=binutils/}
 
