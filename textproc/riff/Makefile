@@ -2,7 +2,7 @@ COMMENT =		diff tool highlighting which parts of lines have changed
 
 GH_ACCOUNT =		walles
 GH_PROJECT =		riff
-GH_TAGNAME =		3.4.2
+GH_TAGNAME =		3.6.1
 
 CATEGORIES =		textproc
 
