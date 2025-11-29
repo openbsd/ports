@@ -1,7 +1,7 @@
 COMMENT=	rapid multi-Python deployment
 
 DISTNAME=	execnet-${MODPY_DISTV}
-MODPY_DISTV=	2.1.1
+MODPY_DISTV =	2.1.2
 MODPY_PI=	Yes
 PKGNAME=	py-${DISTNAME}
 
