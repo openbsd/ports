@@ -1,7 +1,7 @@
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -3889,6 +3889,15 @@ dependencies = [
+@@ -3817,6 +3817,15 @@ dependencies = [
  ]
  
  [[package]]
@@ -17,7 +17,7 @@ Index: Cargo.lock
  name = "url"
  version = "2.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4595,6 +4604,7 @@ dependencies = [
+@@ -4491,6 +4500,7 @@ dependencies = [
   "tokio",
   "tracing",
   "tracing-subscriber",
