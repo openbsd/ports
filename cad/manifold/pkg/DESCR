@@ -1,0 +1,9 @@
+Manifold is a geometry library dedicated to creating and operating
+on manifold triangle meshes. A manifold mesh is a mesh that represents
+a solid object, and so is very important in manufacturing, CAD,
+structural analysis, etc. Manifold also supports arbitrary vertex
+properties and enables mapping of materials for rendering use-cases.
+Our primary goal is reliability: guaranteed manifold output without
+caveats or edge cases. Our secondary goal is performance: efficient
+algorithms that make extensive use of parallelization, or pipelining
+when only a single thread is available.
