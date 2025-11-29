@@ -1,6 +1,7 @@
 COMMENT=		spell-checking library for GTK+
 
-DIST_TUPLE=		gnome GNOME gspell 1.14.1 .
+GNOME_PROJECT=		gspell
+GNOME_VERSION=		1.14.2
 
 CATEGORIES=		textproc
 
