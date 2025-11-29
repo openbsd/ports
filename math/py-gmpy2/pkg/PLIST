@@ -13,6 +13,9 @@ lib/python${MODPY_VERSION}/site-packages/gmpy2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gmpy2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gmpy2/gmp.h
 @so lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.h
 lib/python${MODPY_VERSION}/site-packages/gmpy2/gmpy2.pxd
+lib/python${MODPY_VERSION}/site-packages/gmpy2/mpc.h
+lib/python${MODPY_VERSION}/site-packages/gmpy2/mpfr.h
