@@ -1933,6 +1933,7 @@
      SUBDIR += rust-analyzer
      SUBDIR += rust-bindgen
      SUBDIR += samurai
+     SUBDIR += sanitizers-cmake
      SUBDIR += sbt
      SUBDIR += sccache
      SUBDIR += scons
