@@ -1,0 +1,8 @@
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/FindASan.cmake
+share/cmake/Modules/FindMSan.cmake
+share/cmake/Modules/FindSanitizers.cmake
+share/cmake/Modules/FindTSan.cmake
+share/cmake/Modules/FindUBSan.cmake
+share/cmake/Modules/sanitize-helpers.cmake
