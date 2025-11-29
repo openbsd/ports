@@ -1,3 +1,4 @@
+FETCH_PACKAGES=No
 # powerpc - tbb 64-bit atomics
 # sparc64 - openexr linking failure
 # 32-bit archs - static assert in cuda that a pointer is the same size as ULL
@@ -9,6 +10,7 @@ COMMENT =	3D creation software
 VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -22,10 +24,10 @@ WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 OpenImageIO
 WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
 WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
 WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx hpdf
-WANTLIB += jpeg m openal openjp2 openvdb osdCPU osdGPU pipewire-0.3
-WANTLIB += png potrace pugixml ${MODPY_WANTLIB} shaderc_shared sharpyuv
-WANTLIB += sndfile swresample swscale tbb tiff util vulkan webp
-WANTLIB += webpdemux webpmux z zstd
+WANTLIB += jpeg m manifold openal openjp2 openvdb osdCPU osdGPU
+WANTLIB += pipewire-0.3 png potrace pugixml python3.12 shaderc_shared
+WANTLIB += sharpyuv sndfile swresample swscale tbb tiff util vulkan
+WANTLIB += webp webpdemux webpmux z zstd
 
 SITES =		https://download.blender.org/source/ \
 
@@ -70,6 +72,7 @@ BUILD_DEPENDS += archivers/woff2>=1.0.2p1
 LIB_DEPENDS =	archivers/zstd \
 		audio/libsndfile \
 		audio/openal \
+		cad/manifold \
 		devel/gmp,-cxx \
 		devel/tbb \
 		graphics/alembic \
