@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT =	declarative cross-platform build tool
 
-V =		3.1.0
+V =		3.1.1
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
