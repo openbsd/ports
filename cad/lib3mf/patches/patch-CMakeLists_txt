@@ -1,0 +1,23 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -201,7 +201,8 @@ if (USE_INCLUDED_LIBZIP)
+ else()
+     find_package(PkgConfig REQUIRED)
+     pkg_check_modules(LIBZIP REQUIRED libzip)
+-    target_link_libraries(${PROJECT_NAME} ${LIBZIP_LIBRARIES})
++    target_link_libraries(${PROJECT_NAME} ${LIBZIP_LINK_LIBRARIES})
++    target_include_directories(${PROJECT_NAME} PUBLIC ${LIBZIP_INCLUDE_DIRS})
+ endif()
+ 
+ 
+@@ -210,7 +211,8 @@ if (USE_INCLUDED_ZLIB)
+ else()
+     find_package(PkgConfig REQUIRED)
+     pkg_check_modules(ZLIB REQUIRED zlib)
+-    target_link_libraries(${PROJECT_NAME} ${ZLIB_LIBRARIES})
++    target_link_libraries(${PROJECT_NAME} ${ZLIB_LINK_LIBRARIES})
++    target_include_directories(${PROJECT_NAME} PUBLIC ${ZLIB_INCLUDE_DIRS})
+ endif()
+ 
+ 
