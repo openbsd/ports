@@ -1,7 +1,7 @@
 Index: src/jtag/drivers/nulink_usb.c
 --- src/jtag/drivers/nulink_usb.c.orig
 +++ src/jtag/drivers/nulink_usb.c
-@@ -1043,7 +1043,7 @@ static int nulink_usb_open(struct hl_interface_param_s
+@@ -1035,7 +1035,7 @@ static int nulink_usb_open(struct hl_interface_param_s
  		return ERROR_FAIL;
  	}
  

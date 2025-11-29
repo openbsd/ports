@@ -1,15 +1,14 @@
 COMMENT =	Open On-Chip Debugging
 
-DISTNAME =	openocd-0.11.0
+DISTNAME =	openocd-0.12.0
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://openocd.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c ftdi1 hidapi-libusb iconv jim m pthread usb usb-1.0 util
+WANTLIB += c ftdi1 hidapi-libusb jim m pthread usb-1.0 util
 
 SITES =		${SITE_SOURCEFORGE:=openocd/}
 EXTRACT_SUFX =	.tar.bz2
@@ -39,6 +38,7 @@ CONFIGURE_ARGS = --disable-werror \
 		--enable-aice \
 		--enable-buspirate \
 		--disable-internal-jimtcl \
+		--disable-doxygen-html \
 		--without-capstone
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
@@ -46,8 +46,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
 
 LIB_DEPENDS =	comms/libhidapi \
 		devel/libftdi1 \
-		devel/libusb-compat \
-		lang/jimtcl>=0.75
+		lang/jimtcl>=0.81
 
 USE_GMAKE =	Yes
 # Fails to link main.o and libopenocd.a properly resulting in undefined reference in the gdb_server.o
