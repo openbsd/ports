@@ -2,12 +2,15 @@ COMMENT =		version control system with git compatibility backend
 
 V =			0.35.0
 PKGNAME =		jujutsu-$V
+REVISION =		0
 
 DIST_TUPLE =		github jj-vcs jj v$V .
 
 CATEGORIES =		devel
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
+
+HOMEPAGE =		https://www.jj-vcs.dev/v$V/
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
