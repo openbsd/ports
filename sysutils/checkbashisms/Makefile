@@ -1,6 +1,6 @@
 COMMENT=	check shell scripts for bash-specific constructs
 
-V =		2.25.25
+V =		2.25.27
 DISTNAME=	devscripts_$V
 PKGNAME=	checkbashisms-$V
 EXTRACT_SUFX=	.tar.xz
