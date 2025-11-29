@@ -1,9 +1,8 @@
 COMMENT=	display coverage stats online via coveralls.io
 
-MODPY_DISTV=	4.0.1
+MODPY_DISTV =	4.0.2
 DISTNAME=	coveralls-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	devel
 
