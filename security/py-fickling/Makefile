@@ -11,10 +11,9 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =		flit_core
+MODPY_PYBUILD =		hatchling
 MODPY_PI =		Yes
 
-BUILD_DEPENDS =		devel/py-hatchling
-
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
