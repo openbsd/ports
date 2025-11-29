@@ -1,10 +1,9 @@
 COMMENT=	Python package for describing statistical models
 
-MODPY_DISTV=	1.0.1
+MODPY_DISTV =	1.0.2
 DISTNAME=	patsy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-REVISION=	1
 
 HOMEPAGE=	https://github.com/pydata/patsy
 
