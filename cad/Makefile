@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += abc
+     SUBDIR += clipper2
      SUBDIR += coil64
      SUBDIR += dxf2gcode
      SUBDIR += freecad
@@ -13,8 +14,10 @@
      SUBDIR += kicad
      SUBDIR += kicad-share
      SUBDIR += lepton-eda
+     SUBDIR += lib3mf
      SUBDIR += librecad
      SUBDIR += magic
+     SUBDIR += manifold
      SUBDIR += necpp
      SUBDIR += netgen
      SUBDIR += netgen-mesher
