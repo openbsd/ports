@@ -2,7 +2,7 @@ COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
-GH_TAGNAME =	v1.1.3
+GH_TAGNAME =	v1.1.4
 
 SHARED_LIBS +=	postal	1.1	# 1.1
 
@@ -11,7 +11,7 @@ CATEGORIES =	geo
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	m
+WANTLIB +=	c m
 
 AUTOMAKE_VERSION = 1.15
 AUTOCONF_VERSION = 2.69
