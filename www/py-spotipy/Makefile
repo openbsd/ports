@@ -4,11 +4,9 @@ MODPY_DISTV =		2.25.1
 DISTNAME =		spotipy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www audio
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://spotipy.readthedocs.io
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

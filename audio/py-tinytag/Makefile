@@ -5,11 +5,9 @@ MODPY_DISTV =	${V}
 DISTNAME =		tinytag-${V}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		audio textproc
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/devsnd/tinytag
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
