@@ -31,6 +31,8 @@ lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}import_hook.${
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}import_hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}ml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}pickle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}pickle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}polyglot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,6 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/fickling/fickle.py
 lib/python${MODPY_VERSION}/site-packages/fickling/hook.py
 lib/python${MODPY_VERSION}/site-packages/fickling/import_hook.py
 lib/python${MODPY_VERSION}/site-packages/fickling/loader.py
+lib/python${MODPY_VERSION}/site-packages/fickling/ml.py
 lib/python${MODPY_VERSION}/site-packages/fickling/pickle.py
 lib/python${MODPY_VERSION}/site-packages/fickling/polyglot.py
 lib/python${MODPY_VERSION}/site-packages/fickling/pytorch.py

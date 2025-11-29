@@ -1,10 +1,9 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_DISTV =	0.1.3
+MODPY_DISTV =	0.1.5
 DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	2
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -14,5 +13,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
 MODPY_PI =		Yes
+
+BUILD_DEPENDS =		devel/py-hatchling
+
 
 .include <bsd.port.mk>
