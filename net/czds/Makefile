@@ -1,7 +1,7 @@
 COMMENT =	client to the CZDS REST API
 
 MODGO_MODNAME =	github.com/lanrat/czds
-MODGO_VERSION =	v1.3.1
+MODGO_VERSION =	v1.3.2
 
 DISTNAME =	czds-${MODGO_VERSION}
 
