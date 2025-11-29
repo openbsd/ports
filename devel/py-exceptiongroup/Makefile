@@ -1,6 +1,6 @@
 COMMENT=	backport of Python 3.11 ExceptionGroup class (PEP 654)
 
-MODPY_DISTV=	1.3.0
+MODPY_DISTV =	1.3.1
 DISTNAME=	exceptiongroup-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
