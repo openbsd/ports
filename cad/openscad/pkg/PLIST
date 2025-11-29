@@ -1,4 +1,5 @@
-@bin bin/openscad
+bin/openscad
+@bin libexec/openscad
 @man man/man1/openscad.1
 share/applications/openscad.desktop
 share/icons/hicolor/128x128/apps/openscad.png
@@ -13,6 +14,8 @@ share/openscad/
 share/openscad/color-schemes/
 share/openscad/color-schemes/editor/
 share/openscad/color-schemes/editor/dark-background.json
+share/openscad/color-schemes/editor/high-contrast-dark.json
+share/openscad/color-schemes/editor/high-contrast-light.json
 share/openscad/color-schemes/editor/light-background.json
 share/openscad/color-schemes/editor/monokai.json
 share/openscad/color-schemes/editor/solarized-dark.json
@@ -20,13 +23,17 @@ share/openscad/color-schemes/editor/solarized-light.json
 share/openscad/color-schemes/editor/tomorrow-night.json
 share/openscad/color-schemes/editor/tomorrow.json
 share/openscad/color-schemes/editor/visualstudio.json
+share/openscad/color-schemes/editor/xcode.json
 share/openscad/color-schemes/readme.txt
 share/openscad/color-schemes/render/
 share/openscad/color-schemes/render/beforedawn.json
+share/openscad/color-schemes/render/clearsky.json
+share/openscad/color-schemes/render/daylight-gem.json
 share/openscad/color-schemes/render/deepocean.json
 share/openscad/color-schemes/render/metallic.json
 share/openscad/color-schemes/render/monotone.json
 share/openscad/color-schemes/render/nature.json
+share/openscad/color-schemes/render/nocturnal-gem.json
 share/openscad/color-schemes/render/solarized.json
 share/openscad/color-schemes/render/starnight.json
 share/openscad/color-schemes/render/sunset.json
@@ -39,6 +46,7 @@ share/openscad/examples/Advanced/animation.scad
 share/openscad/examples/Advanced/assert.scad
 share/openscad/examples/Advanced/children.scad
 share/openscad/examples/Advanced/children_indexed.scad
+share/openscad/examples/Advanced/example-dir.json
 share/openscad/examples/Advanced/module_recursion.scad
 share/openscad/examples/Advanced/offset.scad
 share/openscad/examples/Advanced/surface_image.png
@@ -47,16 +55,20 @@ share/openscad/examples/Basics/
 share/openscad/examples/Basics/CSG-modules.scad
 share/openscad/examples/Basics/CSG.scad
 share/openscad/examples/Basics/LetterBlock.scad
+share/openscad/examples/Basics/example-dir.json
+share/openscad/examples/Basics/hull.scad
 share/openscad/examples/Basics/linear_extrude.scad
 share/openscad/examples/Basics/logo.scad
 share/openscad/examples/Basics/logo_and_text.scad
 share/openscad/examples/Basics/projection.scad
 share/openscad/examples/Basics/projection.stl
+share/openscad/examples/Basics/roof.scad
 share/openscad/examples/Basics/rotate_extrude.scad
 share/openscad/examples/Basics/text_on_cube.scad
 share/openscad/examples/COPYING-CC0.txt
 share/openscad/examples/Functions/
 share/openscad/examples/Functions/echo.scad
+share/openscad/examples/Functions/example-dir.json
 share/openscad/examples/Functions/functions.scad
 share/openscad/examples/Functions/list_comprehensions.scad
 share/openscad/examples/Functions/polygon_areas.scad
@@ -96,12 +108,33 @@ share/openscad/examples/Old/example024.scad
 share/openscad/examples/Parametric/
 share/openscad/examples/Parametric/candleStand.json
 share/openscad/examples/Parametric/candleStand.scad
+share/openscad/examples/Parametric/example-dir.json
 share/openscad/examples/Parametric/sign.json
 share/openscad/examples/Parametric/sign.scad
-share/openscad/examples/examples.json
+share/openscad/fonts/
+share/openscad/fonts/05-osx-fonts.conf
+share/openscad/fonts/10-liberation.conf
+share/openscad/fonts/Liberation-2.00.1/
+share/openscad/fonts/Liberation-2.00.1/AUTHORS
+share/openscad/fonts/Liberation-2.00.1/ChangeLog
+share/openscad/fonts/Liberation-2.00.1/LICENSE
+share/openscad/fonts/Liberation-2.00.1/README
+share/openscad/fonts/Liberation-2.00.1/TODO
+share/openscad/fonts/Liberation-2.00.1/ttf/
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationMono-Bold.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationMono-BoldItalic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationMono-Italic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationMono-Regular.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSans-Bold.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSans-BoldItalic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSans-Italic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSans-Regular.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSerif-Bold.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSerif-BoldItalic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSerif-Italic.ttf
+share/openscad/fonts/Liberation-2.00.1/ttf/LiberationSerif-Regular.ttf
 share/openscad/libraries/
 share/openscad/libraries/MCAD/
-share/openscad/libraries/MCAD/.gitignore
 share/openscad/libraries/MCAD/2Dshapes.scad
 share/openscad/libraries/MCAD/3d_triangle.scad
 share/openscad/libraries/MCAD/README.markdown
@@ -118,6 +151,7 @@ share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}${
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}pyc
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_mcad.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_mcad.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/array.scad
 share/openscad/libraries/MCAD/bearing.scad
 share/openscad/libraries/MCAD/bitmap/
 share/openscad/libraries/MCAD/bitmap/README
@@ -126,6 +160,7 @@ share/openscad/libraries/MCAD/bitmap/bitmap.scad
 share/openscad/libraries/MCAD/bitmap/height_map.scad
 share/openscad/libraries/MCAD/bitmap/letter_necklace.scad
 share/openscad/libraries/MCAD/bitmap/name_tag.scad
+share/openscad/libraries/MCAD/bitmap/test_name_tag.scad
 share/openscad/libraries/MCAD/boxes.scad
 share/openscad/libraries/MCAD/constants.scad
 share/openscad/libraries/MCAD/curves.scad
@@ -138,6 +173,7 @@ share/openscad/libraries/MCAD/layouts.scad
 share/openscad/libraries/MCAD/lego_compatibility.scad
 share/openscad/libraries/MCAD/lgpl-2.1.txt
 share/openscad/libraries/MCAD/libtriangles.scad
+share/openscad/libraries/MCAD/linear_bearing.scad
 share/openscad/libraries/MCAD/materials.scad
 share/openscad/libraries/MCAD/math.scad
 share/openscad/libraries/MCAD/metric_fastners.scad
@@ -147,6 +183,7 @@ share/openscad/libraries/MCAD/nuts_and_bolts.scad
 share/openscad/libraries/MCAD/openscad_testing.py
 share/openscad/libraries/MCAD/openscad_utils.py
 share/openscad/libraries/MCAD/polyholes.scad
+share/openscad/libraries/MCAD/profiles.scad
 share/openscad/libraries/MCAD/regular_shapes.scad
 share/openscad/libraries/MCAD/screw.scad
 share/openscad/libraries/MCAD/servos.scad
@@ -177,28 +214,47 @@ share/openscad/locale/fr/LC_MESSAGES/openscad.mo
 share/openscad/locale/hy/
 share/openscad/locale/hy/LC_MESSAGES/
 share/openscad/locale/hy/LC_MESSAGES/openscad.mo
+share/openscad/locale/it/
+share/openscad/locale/it/LC_MESSAGES/
+share/openscad/locale/it/LC_MESSAGES/openscad.mo
+share/openscad/locale/ka/
+share/openscad/locale/ka/LC_MESSAGES/
+share/openscad/locale/ka/LC_MESSAGES/openscad.mo
 share/openscad/locale/pl/
 share/openscad/locale/pl/LC_MESSAGES/
 share/openscad/locale/pl/LC_MESSAGES/openscad.mo
+share/openscad/locale/pt_BR/
+share/openscad/locale/pt_BR/LC_MESSAGES/
+share/openscad/locale/pt_BR/LC_MESSAGES/openscad.mo
 share/openscad/locale/ru/
 share/openscad/locale/ru/LC_MESSAGES/
 share/openscad/locale/ru/LC_MESSAGES/openscad.mo
+share/openscad/locale/tr/
+share/openscad/locale/tr/LC_MESSAGES/
+share/openscad/locale/tr/LC_MESSAGES/openscad.mo
 share/openscad/locale/uk/
 share/openscad/locale/uk/LC_MESSAGES/
 share/openscad/locale/uk/LC_MESSAGES/openscad.mo
-@tag update-desktop-database
-@tag update-mime-database
 share/openscad/locale/zh_CN/
 share/openscad/locale/zh_CN/LC_MESSAGES/
 share/openscad/locale/zh_CN/LC_MESSAGES/openscad.mo
 share/openscad/locale/zh_TW/
 share/openscad/locale/zh_TW/LC_MESSAGES/
 share/openscad/locale/zh_TW/LC_MESSAGES/openscad.mo
+share/openscad/shaders/
+share/openscad/shaders/MouseSelector.frag
+share/openscad/shaders/MouseSelector.vert
+share/openscad/shaders/OpenCSG.vert
+share/openscad/shaders/ViewEdges.frag
+share/openscad/shaders/ViewEdges.vert
 share/openscad/templates/
+share/openscad/templates/CC0.json
 share/openscad/templates/difference.json
 share/openscad/templates/for.json
 share/openscad/templates/function.json
 share/openscad/templates/module.json
 share/openscad/templates/rotate.json
 share/openscad/templates/translate.json
+@tag update-mime-database
+@tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

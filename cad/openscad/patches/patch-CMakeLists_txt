@@ -1,0 +1,42 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -396,7 +396,7 @@ else()
+   target_link_libraries(OpenSCAD PRIVATE Eigen3::Eigen)
+   message(STATUS "Eigen: ${Eigen3_VERSION}")
+ 
+-  find_package(Boost 1.70 REQUIRED QUIET COMPONENTS regex program_options)
++  find_package(Boost 1.70 REQUIRED QUIET COMPONENTS filesystem regex program_options)
+   message(STATUS "Boost: ${Boost_VERSION}")
+   target_include_directories(OpenSCAD SYSTEM PRIVATE ${Boost_INCLUDE_DIRS})
+   target_link_libraries(OpenSCAD PRIVATE ${Boost_LIBRARIES})
+@@ -559,7 +559,7 @@ if(ENABLE_CAIRO STREQUAL "AUTO")
+   if(CAIRO_VERSION OR CAIRO_FOUND)
+     message(STATUS "Cairo: ${CAIRO_VERSION}")
+     target_include_directories(OpenSCAD SYSTEM PRIVATE ${CAIRO_INCLUDE_DIRS})
+-    target_link_libraries(OpenSCAD PRIVATE ${CAIRO_LIBRARIES})
++    target_link_libraries(OpenSCAD PRIVATE ${CAIRO_LINK_LIBRARIES})
+     target_compile_definitions(OpenSCAD PRIVATE ENABLE_CAIRO)
+   else()
+     message(STATUS "Cairo: disabled (not found)")
+@@ -806,7 +806,7 @@ elseif(UNIX)
+       if (NOT USE_GLAD)
+         target_compile_definitions(OpenSCAD PRIVATE GLEW_EGL)
+       endif()
+-      target_link_libraries(OpenSCAD PRIVATE OpenGL::EGL)
++      target_link_libraries(OpenSCAD PRIVATE ${OPENGL_egl_LIBRARY})
+     endif()
+     if(ENABLE_GLX AND OpenGL_GLX_FOUND)
+       target_compile_definitions(OpenSCAD PRIVATE ENABLE_GLX)
+@@ -1121,11 +1121,6 @@ else()
+     ${GLEW_SOURCES})
+ endif()
+ 
+-
+-if(UNIX AND (NOT APPLE) AND (NOT HEADLESS))
+-  set(PLATFORM_INPUT_DRIVER_SOURCES src/gui/input/JoystickInputDriver.cc)
+-  target_compile_definitions(OpenSCAD PRIVATE ENABLE_JOYSTICK)
+-endif()
+ 
+ set(INPUT_DRIVER_SOURCES
+   ${PLATFORM_INPUT_DRIVER_SOURCES}

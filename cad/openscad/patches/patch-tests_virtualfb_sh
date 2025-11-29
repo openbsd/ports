@@ -1,0 +1,9 @@
+Index: tests/virtualfb.sh
+--- tests/virtualfb.sh.orig
++++ tests/virtualfb.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ 
+ # Toggle the Virtual Framebuffer
+ # If started, stop. If stopped, start.
