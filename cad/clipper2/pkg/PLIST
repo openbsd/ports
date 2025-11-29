@@ -1,0 +1,28 @@
+include/clipper2/
+include/clipper2/Utils/
+include/clipper2/Utils/ClipFileLoad.h
+include/clipper2/Utils/ClipFileSave.h
+include/clipper2/Utils/Colors.h
+include/clipper2/Utils/CommonUtils.h
+include/clipper2/Utils/Timer.h
+include/clipper2/Utils/clipper.svg.h
+include/clipper2/clipper.core.h
+include/clipper2/clipper.engine.h
+include/clipper2/clipper.export.h
+include/clipper2/clipper.h
+include/clipper2/clipper.minkowski.h
+include/clipper2/clipper.offset.h
+include/clipper2/clipper.rectclip.h
+include/clipper2/clipper.version.h
+lib/cmake/
+lib/cmake/clipper2/
+lib/cmake/clipper2/Clipper2Config.cmake
+lib/cmake/clipper2/Clipper2ConfigVersion.cmake
+lib/cmake/clipper2/Clipper2Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/clipper2/Clipper2Targets.cmake
+@lib lib/libClipper2.so.${LIBClipper2_VERSION}
+@lib lib/libClipper2Z.so.${LIBClipper2Z_VERSION}
+@static-lib lib/libClipper2Zutils.a
+@static-lib lib/libClipper2utils.a
+lib/pkgconfig/Clipper2.pc
+lib/pkgconfig/Clipper2Z.pc
