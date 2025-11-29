@@ -1,4 +1,4 @@
-# XXX
+# XXX HOWTO update
 # This port is more or less a copy from devel/llvm and it tries to
 # package the clang extra tools without increasing the complexity of
 # devel/llvm.
@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	21.1.3
+LLVM_V =	21.1.6
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
 

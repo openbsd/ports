@@ -1,7 +1,7 @@
 Index: clang/tools/clang-shlib/CMakeLists.txt
 --- clang/tools/clang-shlib/CMakeLists.txt.orig
 +++ clang/tools/clang-shlib/CMakeLists.txt
-@@ -57,7 +57,7 @@ endif()
+@@ -61,7 +61,7 @@ endif()
  
  # Optimize function calls for default visibility definitions to avoid PLT and
  # reduce dynamic relocations.
