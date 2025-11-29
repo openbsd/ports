@@ -27,6 +27,7 @@ lib/qtcreator/
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/qtcreator/libCmdBridgeClient.so.${LIBCmdBridgeClient_VERSION}
+@lib lib/qtcreator/libDevContainer.so.${LIBDevContainer_VERSION}
 @lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/qtcreator/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/qtcreator/libKSyntaxHighlighting.so.${LIBKSyntaxHighlighting_VERSION}
@@ -40,6 +41,7 @@ lib/qtcreator/
 @lib lib/qtcreator/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/qtcreator/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/qtcreator/libSqlite.so.${LIBSqlite_VERSION}
+@lib lib/qtcreator/libTasking.so.${LIBTasking_VERSION}
 @lib lib/qtcreator/libTerminalLib.so.${LIBTerminalLib_VERSION}
 @lib lib/qtcreator/libTracing.so.${LIBTracing_VERSION}
 @lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
@@ -74,6 +76,7 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libCtfVisualizer.so
 @so lib/qtcreator/plugins/libDebugger.so
 @so lib/qtcreator/plugins/libDesigner.so
+@so lib/qtcreator/plugins/libDevContainerPlugin.so
 @so lib/qtcreator/plugins/libDiffEditor.so
 @so lib/qtcreator/plugins/libDocker.so
 @so lib/qtcreator/plugins/libEffectComposer.so
@@ -145,7 +148,7 @@ lib/qtcreator/plugins/qmldesigner/
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qmlpuppet-17.0.2
+@bin libexec/qtcreator/qmlpuppet-18.0.0
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtpromaker
@@ -194,6 +197,7 @@ share/qtcreator/changelog/changes-16.0.2.md
 share/qtcreator/changelog/changes-17.0.0.md
 share/qtcreator/changelog/changes-17.0.1.md
 share/qtcreator/changelog/changes-17.0.2.md
+share/qtcreator/changelog/changes-18.0.0.md
 share/qtcreator/changelog/changes-2.0.0
 share/qtcreator/changelog/changes-2.0.1
 share/qtcreator/changelog/changes-2.1.0
@@ -372,7 +376,8 @@ share/qtcreator/debugger/gdbbridge.py
 share/qtcreator/debugger/gdbtracepoint.py
 share/qtcreator/debugger/libcpp_stdtypes.py
 share/qtcreator/debugger/lldbbridge.py
-share/qtcreator/debugger/loadorder.txt
+share/qtcreator/debugger/loadorder_gdbbridge.txt
+share/qtcreator/debugger/loadorder_lldbbridge.txt
 share/qtcreator/debugger/misctypes.py
 share/qtcreator/debugger/opencvtypes.py
 share/qtcreator/debugger/pdbbridge.py
@@ -2626,10 +2631,6 @@ share/qtcreator/templates/wizards/classes/itemmodel/wizard.json
 share/qtcreator/templates/wizards/classes/python/
 share/qtcreator/templates/wizards/classes/python/file.py
 share/qtcreator/templates/wizards/classes/python/wizard.json
-share/qtcreator/templates/wizards/codesnippet/
-share/qtcreator/templates/wizards/codesnippet/CMakeLists.txt
-share/qtcreator/templates/wizards/codesnippet/main.cpp
-share/qtcreator/templates/wizards/codesnippet/wizard.json
 share/qtcreator/templates/wizards/files/
 share/qtcreator/templates/wizards/files/cppheader/
 share/qtcreator/templates/wizards/files/cppheader/file.h
@@ -2664,13 +2665,6 @@ share/qtcreator/templates/wizards/files/js/wizard.json
 share/qtcreator/templates/wizards/files/markdown/
 share/qtcreator/templates/wizards/files/markdown/file.md
 share/qtcreator/templates/wizards/files/markdown/wizard.json
-share/qtcreator/templates/wizards/files/modeling/
-share/qtcreator/templates/wizards/files/modeling/model/
-share/qtcreator/templates/wizards/files/modeling/model/file.qmodel
-share/qtcreator/templates/wizards/files/modeling/model/wizard.json
-share/qtcreator/templates/wizards/files/modeling/scratch/
-share/qtcreator/templates/wizards/files/modeling/scratch/file.qmodel
-share/qtcreator/templates/wizards/files/modeling/scratch/wizard.json
 share/qtcreator/templates/wizards/files/nim/
 share/qtcreator/templates/wizards/files/nim/file.nim
 share/qtcreator/templates/wizards/files/nim/wizard.json
@@ -2801,6 +2795,27 @@ share/qtcreator/templates/wizards/projects/qtforpythonapplication/requirements.t
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/pyproject.toml
 share/qtcreator/templates/wizards/projects/qtforpythonapplication/widget/wizard.json
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/CMakeLists.txt.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/Main.qml.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/featureadapter.cpp.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/featureadapter.h.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/featurebackend.cpp.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/featurebackend.h.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/interfaces.qface.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/interfaces.yaml.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/main.cpp.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/moduleplugin.cpp.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/moduleplugin.h.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/moduleplugin.json.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/production_backend.cmake.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/production_server.cmake.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/servermain.cpp.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/servermain.h.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/simulation.qml.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/simulation_backend.cmake.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/simulation_server.cmake.tpl
+share/qtcreator/templates/wizards/projects/qtinterfaceframework/wizard.json
 share/qtcreator/templates/wizards/projects/qtquick2-extension/
 share/qtcreator/templates/wizards/projects/qtquick2-extension/CMakeLists.6.x.txt
 share/qtcreator/templates/wizards/projects/qtquick2-extension/example/

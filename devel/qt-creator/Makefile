@@ -3,32 +3,34 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			17.0.2
+V =			18.0.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
 SHARED_LIBS +=  Aggregation               4.1 # 0.0
-SHARED_LIBS +=  CPlusPlus                 11.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           11.0 # 0.0
-SHARED_LIBS +=  GLSL                      3.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 12.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           12.0 # 0.0
+SHARED_LIBS +=  GLSL                      4.0 # 0.0
 SHARED_LIBS +=  LanguageUtils             4.0 # 0.0
 SHARED_LIBS +=  QmlDebug                  8.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          4.0 # 0.0
-SHARED_LIBS +=  QmlJS                     16.0 # 0.0
-SHARED_LIBS +=  Utils                     17.0 # 0.0
+SHARED_LIBS +=  QmlJS                     17.0 # 0.0
+SHARED_LIBS +=  Utils                     18.0 # 0.0
 SHARED_LIBS +=  Sqlite                    13.0 # 1.0
-SHARED_LIBS +=  Modeling                  10.0 # 1.0
+SHARED_LIBS +=  Modeling                  11.0 # 1.0
 SHARED_LIBS +=  Tracing                   5.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    10.0 # 4.8
+SHARED_LIBS +=  LanguageServerProtocol    11.0 # 4.8
 SHARED_LIBS +=  AdvancedDockingSystem     5.1 # 4.12
 SHARED_LIBS +=  qlitehtml                 5.1 # 4.15
-SHARED_LIBS +=  ProParser                 5.0 # 4.15
+SHARED_LIBS +=  ProParser                 6.0 # 4.15
 SHARED_LIBS +=  KSyntaxHighlighting       3.0 # 0.0
 SHARED_LIBS +=  TerminalLib               1.5 # 0.0
 SHARED_LIBS +=  Nanotrace                 1.0 # 0.0
 SHARED_LIBS +=  qtkeychain                0.0 # 0.0
-SHARED_LIBS +=  CmdBridgeClient           2.0 # 0.0
-SHARED_LIBS +=  QmlDesignerCore           2.0 # 0.0
+SHARED_LIBS +=  CmdBridgeClient           2.1 # 0.0
+SHARED_LIBS +=  QmlDesignerCore           3.0 # 0.0
+SHARED_LIBS +=  DevContainer              0.0 # 0.0
+SHARED_LIBS +=  Tasking                   0.0 # 0.0
 
 CATEGORIES =	devel editors
 
@@ -95,6 +97,7 @@ LIB_DEPENDS = 	archivers/libarchive \
 
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
 			-DENABLE_SVG_SUPPORT=ON \
+			-DBUILD_EXECUTABLE_CMDBRIDGE=OFF \
 			-DBUILD_WITH_PCH=OFF
 
 GDB_ADJ_FILES = \
