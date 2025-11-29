@@ -1,4 +1,4 @@
-lib/jim/arc4random.so
+@so lib/jim/arc4random.so
 share/doc/jimarc4random/
 share/doc/jimarc4random/LICENSE
 share/doc/jimarc4random/jimarc4random.txt

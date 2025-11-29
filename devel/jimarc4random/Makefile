@@ -4,7 +4,7 @@ GH_ACCOUNT =		aryler
 GH_PROJECT =		Jimarc4random
 GH_TAGNAME =		0.3
 DISTNAME =		jimarc4random-${GH_TAGNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
