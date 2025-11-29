@@ -9,6 +9,7 @@ share/gpxsee/CRS/projections.csv
 share/gpxsee/maps/
 share/gpxsee/maps/Antarctica.xml
 share/gpxsee/maps/OpenFreeMap.xml
+share/gpxsee/maps/OpenSeaMap.xml
 share/gpxsee/maps/OpenStreetMap.xml
 share/gpxsee/maps/OpenTopoMap.xml
 share/gpxsee/maps/USGS-imagery.xml
