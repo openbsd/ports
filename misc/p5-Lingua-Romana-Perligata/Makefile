@@ -1,6 +1,6 @@
 COMMENT =		write Perl in Latin
 
-DISTNAME =		Lingua-Romana-Perligata-0.604
+DISTNAME =		Lingua-Romana-Perligata-0.605
 CATEGORIES =		misc
 
 MODULES =		cpan
