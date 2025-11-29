@@ -11,7 +11,7 @@ Index: Makefile.in
  @endif
  SHOBJ_CFLAGS ?= @SHOBJ_CFLAGS@
  @if JIM_STATICLIB
-@@ -78,6 +77,7 @@ JIMSH := jimsh@EXEEXT@
+@@ -79,6 +78,7 @@ JIMSH := jimsh@EXEEXT@
  INSTALL_DATA_DIR ?= mkdir -p
  INSTALL_DATA ?= cp
  INSTALL_PROGRAM ?= cp
@@ -19,7 +19,7 @@ Index: Makefile.in
  @endif
  
  all: $(JIMSH) @C_EXT_SHOBJS@
-@@ -99,20 +99,25 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+@@ -100,24 +100,30 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
  	$(Q)$(JIMSH_CC) @SH_LINKRPATH_FLAGS@ @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
@@ -41,11 +41,17 @@ Index: Makefile.in
  
 +install-exas:
 +	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/examples/jim{,/api,/ext}
-+	$(INSTALL_SCRIPT) build-jim-ext         $(DESTDIR)@datadir@/examples/jim
-+	$(INSTALL_DATA) @srcdir@/examples/*     $(DESTDIR)@datadir@/examples/jim
-+	$(INSTALL_DATA) @srcdir@/examples.api/{README,Makefile,*.c,*.tcl} $(DESTDIR)@datadir@/examples/jim/api
++	$(INSTALL_SCRIPT) build-jim-ext                             $(DESTDIR)@datadir@/examples/jim
++	$(INSTALL_DATA) @srcdir@/examples/*                         $(DESTDIR)@datadir@/examples/jim
 +	$(INSTALL_DATA) @srcdir@/examples.ext/{README,Makefile,*.c} $(DESTDIR)@datadir@/examples/jim/ext
++	$(INSTALL_DATA) @srcdir@/examples.api/{README,*.c,*.tcl}    $(DESTDIR)@datadir@/examples/jim/api
++	$(INSTALL_DATA) examples.api/Makefile                       $(DESTDIR)@datadir@/examples/jim/api
 +
  install-exec: all
  	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
  	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
+-	$(INSTALL_PROGRAM) @srcdir@/jimdb $(DESTDIR)@bindir@
++	$(INSTALL_SCRIPT) @srcdir@/jimdb $(DESTDIR)@bindir@
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)@bindir@/$(JIMSH)

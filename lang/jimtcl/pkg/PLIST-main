@@ -1,3 +1,5 @@
+@pkgpath lang/jimtcl
+bin/jimdb
 @bin bin/jimsh
 include/jim/
 include/jim/jim-config.h
@@ -7,9 +9,7 @@ include/jim/jim-subcmd.h
 include/jim/jim-win32compat.h
 include/jim/jim.h
 lib/jim/
-@so lib/jim/sqlite3.so
 lib/jim/tcltest.tcl
-@so lib/jim/zlib.so
 @lib lib/libjim.so.${LIBjim_VERSION}
 lib/pkgconfig/jimtcl.pc
 share/doc/jim/
@@ -22,6 +22,8 @@ share/doc/jim/README.sqlite
 share/doc/jim/README.utf-8
 share/doc/jim/Tcl.html
 share/examples/jim/
+share/examples/jim/COPYING.FreeSans.ttf
+share/examples/jim/FreeSans.ttf
 share/examples/jim/api/
 share/examples/jim/api/Makefile
 share/examples/jim/api/README
@@ -34,18 +36,27 @@ share/examples/jim/api/print.tcl
 share/examples/jim/build-jim-ext
 share/examples/jim/certificate.pem
 share/examples/jim/client-server.tcl
+share/examples/jim/dbgtest.tcl
 share/examples/jim/dns.tcl
 share/examples/jim/dnstest.tcl
 share/examples/jim/ext/
 share/examples/jim/ext/Makefile
 share/examples/jim/ext/README
 share/examples/jim/ext/helloworld.c
+share/examples/jim/jcov
 share/examples/jim/jtclsh.tcl
+share/examples/jim/jtime
+share/examples/jim/jtrace
 share/examples/jim/metakit.tcl
 share/examples/jim/ootest.tcl
 share/examples/jim/parray.tcl
 share/examples/jim/pipe.tcl
 share/examples/jim/popen.tcl
+share/examples/jim/redis-pubsub.tcl
+share/examples/jim/redis.tcl
+share/examples/jim/sdlcircles.tcl
+share/examples/jim/sdlevents.tcl
+share/examples/jim/sdltest.tcl
 share/examples/jim/sqlite3test.tcl
 share/examples/jim/ssl.client
 share/examples/jim/ssl.server

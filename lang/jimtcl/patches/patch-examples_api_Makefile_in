@@ -1,11 +1,10 @@
 Index: examples.api/Makefile.in
 --- examples.api/Makefile.in.orig
 +++ examples.api/Makefile.in
-@@ -1,6 +1,6 @@
+@@ -1,5 +1,5 @@
  CFLAGS+= -Wall -g
 -CFLAGS+= -I..
 +CFLAGS+= -I${LOCALBASE}/include/jim
  LDFLAGS += @LDFLAGS@
  LDLIBS += -L.. -ljim @LDLIBS@
  
- EXAMPLES=		\
