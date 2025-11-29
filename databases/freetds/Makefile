@@ -1,6 +1,6 @@
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-1.5.8
+DISTNAME=	freetds-1.5.9
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.2      # 6.0
