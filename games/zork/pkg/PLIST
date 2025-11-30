@@ -1,0 +1,7 @@
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/zork/
+share/doc/zork/LICENSE
+share/zork/
+share/zork/zork1.z3
+share/zork/zork2.z3
+share/zork/zork3.z3

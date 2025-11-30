@@ -1,0 +1,13 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Running .z3 files
+=================
+
+Zork 1, 2, and 3 are provided in compiled .z3 format in ${PREFIX}/share.
+They can be run with an appropriate interpreter installed from another
+package, such as frotz(6)/dfrotz(6)/sfrotz(6) from the "frotz" package,
+or gargoyle(6) from the "garglk" package:
+
+    frotz ${PREFIX}/share/zork/zork1.z3
