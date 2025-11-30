@@ -36,6 +36,7 @@ EXTRACT_ONLY =	${DISTFILES}
 
 # Cannot use sysutils/xxhash as that introduces a loop.
 # XXX: Revisit using the :patch target next update.
+# XXX: A :patch target will likely introduce the same loop.
 post-extract:
 	cp ${DISTDIR}/xxhash-${XXHASH_V}.h ${WRKSRC}/xxhash.h
 
