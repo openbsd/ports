@@ -1,0 +1,19 @@
+include/lunasvg/
+include/lunasvg/lunasvg.h
+include/plutovg/
+include/plutovg/plutovg.h
+lib/cmake/
+lib/cmake/lunasvg/
+lib/cmake/lunasvg/lunasvgConfig.cmake
+lib/cmake/lunasvg/lunasvgConfigVersion.cmake
+lib/cmake/lunasvg/lunasvgTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/lunasvg/lunasvgTargets.cmake
+lib/cmake/plutovg/
+lib/cmake/plutovg/plutovgConfig.cmake
+lib/cmake/plutovg/plutovgConfigVersion.cmake
+lib/cmake/plutovg/plutovgTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plutovg/plutovgTargets.cmake
+@lib lib/liblunasvg.so.${LIBlunasvg_VERSION}
+@lib lib/libplutovg.so.${LIBplutovg_VERSION}
+lib/pkgconfig/lunasvg.pc
+lib/pkgconfig/plutovg.pc
