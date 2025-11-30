@@ -419,6 +419,7 @@
      SUBDIR += zelda3-rom
      SUBDIR += zelda3-sprites
      SUBDIR += zoom
+     SUBDIR += zork
      SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>
