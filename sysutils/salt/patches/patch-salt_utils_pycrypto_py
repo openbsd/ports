@@ -1,0 +1,73 @@
+crypt has been deprecated since version 3.11, removed in version 3.13
+
+PEP 594
+
+Index: salt/utils/pycrypto.py
+--- salt/utils/pycrypto.py.orig
++++ salt/utils/pycrypto.py
+@@ -24,11 +24,11 @@ except ImportError:
+     HAS_RANDOM = False
+ 
+ try:
+-    import crypt
++    import hashlib
+ 
+-    HAS_CRYPT = True
++    HAS_HASHLIB = True
+ except (ImportError, PermissionError):
+-    HAS_CRYPT = False
++    HAS_HASHLIB = False
+ 
+ try:
+     import passlib.context
+@@ -101,8 +101,8 @@ def secure_password(
+         raise CommandExecutionError(str(exc))
+ 
+ 
+-if HAS_CRYPT:
+-    methods = {m.name.lower(): m for m in crypt.methods}
++if HAS_HASHLIB:
++    methods = {m.lower(): m for m in hashlib.algorithms_guaranteed}
+ else:
+     methods = {}
+ known_methods = ["sha512", "sha256", "blowfish", "md5", "crypt"]
+@@ -130,9 +130,9 @@ def _gen_hash_passlib(crypt_salt=None, password=None, 
+     return ctx.hash(**kwargs)
+ 
+ 
+-def _gen_hash_crypt(crypt_salt=None, password=None, algorithm=None):
++def _gen_hash_hashlib(crypt_salt=None, password=None, algorithm=None):
+     """
+-    Generate /etc/shadow hash using the native crypt module
++    Generate /etc/shadow hash using the native hashlib module
+     """
+     if crypt_salt is None:
+         # setting crypt_salt to the algorithm makes crypt generate
+@@ -144,7 +144,9 @@ def _gen_hash_crypt(crypt_salt=None, password=None, al
+             crypt_salt = f"${methods[algorithm].ident}${crypt_salt}"
+ 
+     try:
+-        ret = crypt.crypt(password, crypt_salt)
++        h = hashlib.new(crypt_salt)
++        h.update(password.encode("utf-8"))
++        ret = h.hexdigest()
+     except OSError:
+         ret = None
+     return ret
+@@ -159,13 +161,13 @@ def gen_hash(crypt_salt=None, password=None, algorithm
+ 
+     if algorithm is None:
+         # prefer the most secure natively supported method
+-        algorithm = crypt.methods[0].name.lower() if HAS_CRYPT else known_methods[0]
++        algorithm = crypt.methods[0].name.lower() if HAS_HASHLIB else known_methods[0]
+ 
+     if algorithm == "crypt" and crypt_salt and len(crypt_salt) != 2:
+         log.warning("Hash salt is too long for 'crypt' hash.")
+ 
+-    if HAS_CRYPT and algorithm in methods:
+-        return _gen_hash_crypt(
++    if HAS_HASHLIB and algorithm in methods:
++        return _gen_hash_hashlib(
+             crypt_salt=crypt_salt, password=password, algorithm=algorithm
+         )
+     elif HAS_PASSLIB and algorithm in known_methods:

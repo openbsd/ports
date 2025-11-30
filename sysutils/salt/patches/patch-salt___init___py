@@ -1,0 +1,15 @@
+Index: salt/__init__.py
+--- salt/__init__.py.orig
++++ salt/__init__.py
+@@ -110,6 +110,11 @@ warnings.filterwarnings(
+     category=DeprecationWarning,
+ )
+ 
++warnings.filterwarnings(
++    "ignore",
++    "datetime.datetime.utcnow().*",
++    category=DeprecationWarning,
++)
+ 
+ def __define_global_system_encoding_variable__():
+     import builtins
