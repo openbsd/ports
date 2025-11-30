@@ -1,3 +1,5 @@
+BROKEN=		by Qt update
+
 COMMENT=	graphical file comparator and merge tool
 
 GH_ACCOUNT=	blais
