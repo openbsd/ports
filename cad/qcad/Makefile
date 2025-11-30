@@ -1,3 +1,5 @@
+BROKEN=		by Qt update
+
 COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
