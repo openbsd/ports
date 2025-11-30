@@ -1,12 +1,9 @@
 COMMENT=	kernels used by spyder on its ipython console
 
 MODULES=	lang/python
-MODPY_DISTV=	3.1.1
+MODPY_DISTV=	3.1.2
 DISTNAME=	spyder_kernels-${MODPY_DISTV}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/_/-/}
-REVISION=	0
-
-PORTROACH=	limit:^3
 
 HOMEPAGE=	https://github.com/spyder-ide/spyder-kernels
 

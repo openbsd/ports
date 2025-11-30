@@ -1,6 +1,6 @@
 COMMENT =		Python Language Server
 
-MODPY_DISTV =		1.13.1
+MODPY_DISTV =		1.13.2
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
