@@ -1,9 +1,8 @@
 COMMENT=	painless YAML configuration
 
-MODPY_DISTV=	2.0.1
+MODPY_DISTV=	2.1.0
 DISTNAME=	confuse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	textproc
 
@@ -13,7 +12,7 @@ HOMEPAGE=	https://github.com/beetbox/confuse
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	flit_core
+MODPY_PYBUILD=	poetry-core
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/py-yaml
