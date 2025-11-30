@@ -175,6 +175,7 @@
      SUBDIR += libxmi
      SUBDIR += lsys
      SUBDIR += luagd
+     SUBDIR += lunasvg
      SUBDIR += luvcview
      SUBDIR += maim
      SUBDIR += makehuman
