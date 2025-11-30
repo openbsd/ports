@@ -4,6 +4,8 @@ XXHASH_V =	0.8.3
 DISTFILES =	${PKGNAME}.tar.gz
 DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/dwz/
