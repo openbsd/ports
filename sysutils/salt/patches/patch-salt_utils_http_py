@@ -1,0 +1,14 @@
+use requests as default http library because tornado fails silently
+
+Index: salt/utils/http.py
+--- salt/utils/http.py.orig
++++ salt/utils/http.py
+@@ -217,7 +217,7 @@ def query(
+             opts = {}
+ 
+     if not backend:
+-        backend = opts.get("backend", "tornado")
++        backend = opts.get("backend", "requests")
+ 
+     proxy_host = opts.get("proxy_host", None)
+     if proxy_host:
