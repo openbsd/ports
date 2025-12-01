@@ -1,4 +1,4 @@
-V=		10.0.160
+V=		10.0.161
 SNAPPY_V=	1.1.10.5
 SNAPPY_S=	-jdk17-libc++.12.0
 #BUILD_V=	-2a2e9ad4pa
