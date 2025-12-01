@@ -1,5 +1,3 @@
-BROKEN=		by Qt update
-
 COMMENT=	graphical file comparator and merge tool
 
 GH_ACCOUNT=	blais
@@ -7,7 +5,7 @@ GH_PROJECT=	xxdiff
 GH_COMMIT=	f0d6fd44b3f31a852cbd765596b6db05a8e78276
 
 DISTNAME=	xxdiff-20220318
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	textproc x11
 
@@ -16,6 +14,7 @@ HOMEPAGE=	https://furius.ca/xxdiff/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
 CXXFLAGS_base-clang =	-std=c++14
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
