@@ -21,6 +21,7 @@ MODULES =	lang/python \
 		lang/tcl
 
 MODPY_RUNDEP =	No
+MODTCL_VERSION=	8.6
 
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
@@ -36,7 +37,7 @@ CONFIGURE_STYLE = gnu
 # swig -> ruby (yjit) -> rust -> llvm -> swig.
 CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
-		 --with-guilelib=${LOCALBASE}/lib \
+		 --with-guile-config=${LOCALBASE}/bin/guile-config \
 		 --with-python=${MODPY_BIN} \
 		 --without-android \
 		 --without-csharp \
