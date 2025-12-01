@@ -1,16 +1,16 @@
 Index: lib/fseeko.c
 --- lib/fseeko.c.orig
 +++ lib/fseeko.c
-@@ -53,7 +53,7 @@ fseeko (FILE *fp, off_t offset, int whence)
-       && fp->_IO_write_ptr == fp->_IO_write_base
-       && fp->_IO_save_base == NULL)
+@@ -56,7 +56,7 @@ fseeko (FILE *fp, off_t offset, int whence)
+       && fp_->_IO_write_ptr == fp_->_IO_write_base
+       && fp_->_IO_save_base == NULL)
  #elif defined __sferror || defined __DragonFly__ || defined __ANDROID__
 -  /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin, Minix 3, Android */
 +  /* FreeBSD, NetBSD, DragonFly, Mac OS X, Cygwin, Minix 3, Android */
  # if defined __SL64 && defined __SCLE /* Cygwin */
    if ((fp->_flags & __SL64) == 0)
      {
-@@ -73,6 +73,8 @@ fseeko (FILE *fp, off_t offset, int whence)
+@@ -76,6 +76,8 @@ fseeko (FILE *fp, off_t offset, int whence)
                       ? fp_->_bf._size
                       : 0)
        && fp_ub._base == NULL)
