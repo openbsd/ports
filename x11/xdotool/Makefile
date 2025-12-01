@@ -1,10 +1,10 @@
 COMMENT=	fake keyboard and mouse input
 
-V =		3.20211022.1
+V =		4.20251130.1
 DISTNAME =	xdotool-${V}
 EPOCH=		0
 
-SHARED_LIBS=	xdo 0.2
+SHARED_LIBS=	xdo 1.0
 
 CATEGORIES=	x11
 
