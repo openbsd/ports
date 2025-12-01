@@ -4,11 +4,11 @@ ONLY_FOR_ARCHS +=	aarch64 amd64 arm i386 powerpc powerpc64
 
 COMMENT =	high performance Common Lisp compiler
 
-V =		2.5.9
+V =		2.5.11
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
 
-SHARED_LIBS +=	sbcl	15.0
+SHARED_LIBS +=	sbcl	16.0
 
 CATEGORIES =	lang
 
