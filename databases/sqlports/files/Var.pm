@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.76 2025/11/03 14:46:04 sthen Exp $
+# $OpenBSD: Var.pm,v 1.77 2025/12/01 00:30:35 thfr Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1233,10 +1233,10 @@ sub create_tables($self, $inserter)
 {
 	$self->create_table(
 	    $self->fullpkgpath,
-	    Sql::Column::Text->new("Type"),
-	    Sql::Column::Text->new("Account"),
-	    Sql::Column::Text->new("Project"),
-	    Sql::Column::Text->new("Id"),
+	    Sql::Column::Text->new("Type")->constraint,
+	    Sql::Column::Text->new("Account")->constraint,
+	    Sql::Column::Text->new("Project")->constraint,
+	    Sql::Column::Text->new("Id")->constraint,
 	    Sql::Column::Text->new("Mv"));
 	$self->create_view(
 	    $self->pathref,
