@@ -2,14 +2,14 @@ BROKEN-sparc64= attempted static link of dynamic object libglib-2.0.so.4201.13
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-11.9.0
+DISTNAME=		libvirt-11.10.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.6 # 0.11009.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.11009.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.11009.0
-SHARED_LIBS += virt-admin                2.2 # 0.11009.0
+SHARED_LIBS += virt                      2.6 # 0.11010.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.11010.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.11010.0
+SHARED_LIBS += virt-admin                2.2 # 0.11010.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -77,7 +77,7 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			secdriver_apparmor secdriver_selinux nbdkit driver_ch \
 			login_shell driver_network nss sysctl_config \
 			git_werror libnl apparmor_profiles sanlock firewalld \
-			firewalld_zone nbdkit_config_default userfaultfd_sysctl
+			firewalld_zone nbdkit_config_default
 
 # storage
 DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \

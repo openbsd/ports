@@ -1,8 +1,8 @@
 Index: src/rpc/virnettlsconfig.h
 --- src/rpc/virnettlsconfig.h.orig
 +++ src/rpc/virnettlsconfig.h
-@@ -22,9 +22,15 @@
- 
+@@ -23,9 +23,15 @@
+ #include "internal.h"
  #include "configmake.h"
  
 -#define LIBVIRT_PKI_DIR SYSCONFDIR "/pki"
