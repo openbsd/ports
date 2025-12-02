@@ -1,10 +1,9 @@
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-2020.3.19
-REVISION =		0
+DISTNAME =		simgear-2024.1.3
 
-SHARED_LIBS +=  SimGearCore               7.0 # 2.10
-SHARED_LIBS +=  SimGearScene              7.0 # 2.10
+SHARED_LIBS +=  SimGearCore               9.0 # 2.10
+SHARED_LIBS +=  SimGearScene              9.0 # 2.10
 
 CATEGORIES =		graphics
 
@@ -15,18 +14,20 @@ HOMEPAGE =		http://www.flightgear.org
 # LGPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =			${SITE_SOURCEFORGE:=flightgear/}
+SITES =			https://gitlab.com/flightgear/fgmeta/-/jobs/11942161583/artifacts/raw/sgbuild/
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB += GL GLU OpenThreads curl expat lzma m openal osg osgDB osgGA
-WANTLIB += osgParticle osgSim osgText osgUtil osgViewer pthread z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL GLU OpenThreads avcodec avdevice
+WANTLIB += avformat avutil cares curl expat lzma m openal osg osgDB
+WANTLIB += osgGA osgParticle osgSim osgTerrain osgText osgUtil
+WANTLIB += osgViewer swresample swscale z
 
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		graphics/openscenegraph \
-			audio/openal
+			audio/openal \
+			net/libcares
 
 CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
