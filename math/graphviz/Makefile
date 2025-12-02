@@ -120,7 +120,7 @@ CONFIGURE_ARGS+= --with-tclsh=${MODTCL_BIN} \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		TCLCONFIG=${MODTCL_CONFIG} \
+		TCLCONFIG=${MODTCL_LIBDIR}/tclConfig.sh \
 		GUILE=guile2.2 \
 		GUILE_CONFIG=guile-config2.2
 
