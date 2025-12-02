@@ -3,9 +3,9 @@ disable libudev detection
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -146,11 +146,6 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR
- 
+@@ -139,11 +139,6 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR
      set(USE_DBUS_DEFAULT 1)
+     set(ENABLE_VR_DEFAULT 1)
  
 -    find_package(UDev QUIET)
 -    if(UDEV_FOUND)

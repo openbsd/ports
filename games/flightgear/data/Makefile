@@ -16,7 +16,7 @@ PKG_ARCH =		*
 
 do-install:
 	xz -cd ${FULLDISTDIR}/${DISTFILES} | tar -xf - \
-	    -C ${PREFIX}/share -s ',^fgdata,flightgear,'
+	    -C ${PREFIX}/share -s ',^fgdata_2024_1,flightgear,'
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/flightgear
 
 .include <bsd.port.mk>

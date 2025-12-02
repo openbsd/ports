@@ -1,6 +1,7 @@
---- utils/GPSsmooth/UGear_main.cxx.orig	Wed Aug 31 16:53:32 2011
-+++ utils/GPSsmooth/UGear_main.cxx	Wed Aug 31 16:53:50 2011
-@@ -5,6 +5,7 @@
+Index: utils/GPSsmooth/UGear_main.cxx
+--- utils/GPSsmooth/UGear_main.cxx.orig
++++ utils/GPSsmooth/UGear_main.cxx
+@@ -4,6 +4,7 @@
  #ifdef HAVE_WINDOWS_H
  #  include <windows.h>
  #else
