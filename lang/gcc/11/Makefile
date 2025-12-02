@@ -17,7 +17,9 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 REVISION = 21
 
-ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
+# aarch64 bootstrap contains only gdc
+ADASTRAP-aarch64 = adastrap-aarch64-$V-0.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-6.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
@@ -272,14 +274,29 @@ post-install:
 
 ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
+GDC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-dlang}.tgz
 GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 
 .PHONY: bootstrap
 
+.if ${BUILD_PACKAGES:M-ada} && ${BUILD_PACKAGES:M-dlang}
+bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GDC_PACKAGE} ${GXX_PACKAGE}
+.elif ${BUILD_PACKAGES:M-ada}
 bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
+.elif ${BUILD_PACKAGES:M-dlang}
+bootstrap: ${GCC_PACKAGE} ${GDC_PACKAGE} ${GXX_PACKAGE}
+.else
+bootstrap: ${GCC_PACKAGE} ${GXX_PACKAGE}
+.endif
+	${_PBUILD} rm -rf ${WRKDIR}/prepare
 	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+.if ${BUILD_PACKAGES:M-ada}
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${ADA_PACKAGE}
+.endif
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GCC_PACKAGE}
+.if ${BUILD_PACKAGES:M-dlang}
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GDC_PACKAGE}
+.endif
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GXX_PACKAGE}
 	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
 	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-openbsd*/$V/include-fixed
