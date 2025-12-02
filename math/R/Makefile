@@ -75,8 +75,8 @@ CONFIGURE_ARGS= --disable-java \
 		--disable-openmp \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
-		--with-tcl-config=${MODTCL_CONFIG} \
-		--with-tk-config=${MODTK_CONFIG}
+		--with-tcl-config=${MODTCL_LIBDIR}/tclConfig.sh \
+		--with-tk-config=${MODTK_LIBDIR}/tkConfig.sh
 
 CONFIGURE_ENV=	FC="${MODFORTRAN_COMPILER}" \
 		FFLAGS="${FFLAGS}" \
