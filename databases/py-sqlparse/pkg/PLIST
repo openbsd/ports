@@ -74,6 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlparse/filters/tokens.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/formatter.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/keywords.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/lexer.py
+lib/python${MODPY_VERSION}/site-packages/sqlparse/py.typed
 lib/python${MODPY_VERSION}/site-packages/sqlparse/sql.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/tokens.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/utils.py
