@@ -1,8 +1,8 @@
 COMMENT=		GStreamer bindings for Rust
 
-V=			0.14.3
+V=			0.14.4
 DIST_TUPLE=		fdo gstreamer gst-plugins-rs ${V} .
-WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-f5ba8124f1b86484a399599c810d95a9419b12be
+WRKDIST=		${WRKDIR}/gst-plugins-rs-${V}-95a7172f82d0ec816e4e89111a762c24d5c47b22
 
 # see patch-Cargo_toml;
 # grep git+https Cargo.lock | sort -u
@@ -10,7 +10,7 @@ DIST_TUPLE +=		github gtk-rs gtk-rs-core f1b0b52fb591d5164e90dc69d0567c5feb0276a
 DIST_TUPLE +=		github gtk-rs gtk4-rs 063c412ba57218b237e497aed934aa9e690179bf ../gtk4-rs
 DIST_TUPLE +=		github rust-av ffv1 bd9eabfc14c9ad53c37b32279e276619f4390ab8 ../ffv1
 DIST_TUPLE +=		github rust-av flavors 833508af656d298c269f2397c8541a084264d992 ../flavors
-DIST_TUPLE +=		fdo gstreamer gstreamer-rs b9a475cb179b9d7bff932e2fd9267f7118bffa15 ../gstreamer-rs
+DIST_TUPLE +=		fdo gstreamer gstreamer-rs 51e40346a321972fce9849af290dd6b3e1f2c587 ../gstreamer-rs
 
 WANTLIB += ${MODCARGO_WANTLIB} cairo dav1d gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += graphene-1.0 gstbase-1.0 gstgl-1.0 gstreamer-1.0 gstrtp-1.0
