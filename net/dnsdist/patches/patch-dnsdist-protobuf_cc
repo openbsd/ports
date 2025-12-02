@@ -1,0 +1,11 @@
+Index: dnsdist-protobuf.cc
+--- dnsdist-protobuf.cc.orig
++++ dnsdist-protobuf.cc
+@@ -25,6 +25,7 @@
+ #include "base64.hh"
+ #include "dnsdist.hh"
+ #include "dnsdist-protobuf.hh"
++#include "dolog.hh"
+ #include "protozero.hh"
+ 
+ DNSDistProtoBufMessage::DNSDistProtoBufMessage(const DNSQuestion& dnsquestion) :

@@ -41,7 +41,7 @@ SHA256 (cargo/windows_i686_msvc-0.52.6.tar.gz) = JAlIvAXF58bau6KL+J2J/84+MDAigJ5
 SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7urKcqUxbCLGng=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
-SHA256 (dnsdist-2.0.1.tar.xz) = FE4jVtB9ZXelcHgqb3n0JhJTRCIdvcTdqqf51GjVGQA=
+SHA256 (dnsdist-2.0.2.tar.xz) = M3Trplpco8+5/Fl5HEflA1FJ/lIcy7ztX4NKF/RWQb8=
 SIZE (cargo/anstyle-1.0.10.tar.gz) = 15725
 SIZE (cargo/cc-1.2.25.tar.gz) = 106594
 SIZE (cargo/clap-4.5.39.tar.gz) = 57328
@@ -85,4 +85,4 @@ SIZE (cargo/windows_i686_msvc-0.52.6.tar.gz) = 901163
 SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
-SIZE (dnsdist-2.0.1.tar.xz) = 2279512
+SIZE (dnsdist-2.0.2.tar.xz) = 2284864

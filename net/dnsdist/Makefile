@@ -1,6 +1,6 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-2.0.1
+DISTNAME=		dnsdist-2.0.2
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -66,13 +66,12 @@ CONFIGURE_ARGS+=	-Dcdb=enabled \
 			-Ddnscrypt=enabled \
 			-Ddnstap=enabled \
 			-Debpf=disabled \
-			-Debpf=disabled \
 			-Dlibedit=enabled \
 			-Dhardening=disabled \
 			-Dlibcap=disabled \
 			-Dlmdb=enabled \
 			-Dnghttp2=enabled \
-			-Dre2=disabled \
+			-Dre2=enabled \
 			-Dsnmp=disabled \
 			-Dsystemd-service=disabled \
 			-Dtls-gnutls=disabled \
@@ -87,6 +86,7 @@ LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			databases/tinycdb \
 			net/libfstrm \
 			security/libsodium \
+			textproc/re2 \
 			www/nghttp2
 
 
