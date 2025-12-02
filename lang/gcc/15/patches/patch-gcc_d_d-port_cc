@@ -1,0 +1,14 @@
+Index: gcc/d/d-port.cc
+--- gcc/d/d-port.cc.orig
++++ gcc/d/d-port.cc
+@@ -169,3 +169,10 @@ Port::valcpy (void *buffer, uint64_t value, d_size_t s
+       gcc_unreachable ();
+     }
+ }
++
++#if defined(__OpenBSD__) && defined(__LP64__)
++void Port::valcpy(void *dst, unsigned long val, size_t size)
++{
++    valcpy(dst, (uint64_t)val, size);
++}
++#endif

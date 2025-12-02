@@ -1,0 +1,13 @@
+Index: libphobos/configure.tgt
+--- libphobos/configure.tgt.orig
++++ libphobos/configure.tgt
+@@ -30,6 +30,9 @@ case "${target}" in
+   aarch64-*-darwin2*)
+ 	LIBPHOBOS_SUPPORTED=yes
+ 	;;
++  *-*-openbsd*)
++	LIBPHOBOS_SUPPORTED=yes
++	;;
+   aarch64*-*-linux*)
+ 	LIBPHOBOS_SUPPORTED=yes
+ 	;;

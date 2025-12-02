@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc # i386
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 # needs gdc from gcc-9+
 
 DPB_PROPERTIES = parallel
 
@@ -18,9 +19,11 @@ V = 15.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-REVISION = 3
+REVISION = 4
 
-ADASTRAP-amd64 = adastrap-amd64-11.2.0-5.tar.xz
+# aarch64 bootstrap contains only gdc
+ADASTRAP-aarch64 = adastrap-aarch64-11.2.0-0.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-11.2.0-6.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 ADASTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
@@ -34,6 +37,7 @@ PKGNAME-c++ =   g++-${FULL_PKGVERSION}
 PKGNAME-f95 =   g95-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
+PKGNAME-dlang = gdc-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=15,<16
 
 SHARED_LIBS =	estdc++		21.0 \
@@ -45,12 +49,14 @@ SHARED_LIBS =	estdc++		21.0 \
 		quadmath	5.0 \
 		cc1		3.0 \
 		cc1plugin	3.0 \
-		cp1plugin	2.0
+		cp1plugin	2.0 \
+		gphobos		1.0 \
+		gdruntime	1.0
 
 PSEUDO_FLAVORS = no_ada full
 FLAVOR ?=
 
-MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada
+MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada -dlang
 
 .include <bsd.port.arch.mk>
 
@@ -83,11 +89,12 @@ TEST_DEPENDS += devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=15,<16
 
 LANGS = c,c++,fortran,objc
-.if ${BUILD_PACKAGES:M-ada}
+.if ${BUILD_PACKAGES:M-ada} || ${BUILD_PACKAGES:M-dlang}
 DISTFILES.strap += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 CC = ${WRKDIR}/bin/egcc
 CXX = ${WRKDIR}/bin/eg++
+GDC = ${WRKDIR}/bin/egdc
 # make sure we link the right libestdc++.a in stage1 when using a bootstrap
 CONFIGURE_ARGS += --with-stage1-ldflags="-L${WRKDIR}/bootstrap/lib"
 .elif ${PROPERTIES:Mgcc4}
@@ -102,6 +109,10 @@ LANGS := ${LANGS},ada
 TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 
+.if ${BUILD_PACKAGES:M-dlang}
+LANGS := ${LANGS},d
+.endif
+
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
@@ -110,6 +121,7 @@ EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
 EXTRA_ENV += STRIP=/usr/bin/strip
+EXTRA_ENV += GDC=${GDC}
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}
@@ -236,7 +248,7 @@ LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 LIB_DEPENDS-libs =
 
 post-extract:
-.for f in egcc eg++
+.for f in egcc eg++ egdc
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
@@ -277,15 +289,29 @@ post-install:
 
 ADA_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-ada}.tgz
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-main}.tgz
+GDC_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-dlang}.tgz
 GXX_PACKAGE = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME-c++}.tgz
 
 .PHONY: bootstrap
 
+.if ${BUILD_PACKAGES:M-ada} && ${BUILD_PACKAGES:M-dlang}
+bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GDC_PACKAGE} ${GXX_PACKAGE}
+.elif ${BUILD_PACKAGES:M-ada}
 bootstrap: ${ADA_PACKAGE} ${GCC_PACKAGE} ${GXX_PACKAGE}
+.elif ${BUILD_PACKAGES:M-dlang}
+bootstrap: ${GCC_PACKAGE} ${GDC_PACKAGE} ${GXX_PACKAGE}
+.else
+bootstrap: ${GCC_PACKAGE} ${GXX_PACKAGE}
+.endif
 	${_PBUILD} rm -rf ${WRKDIR}/prepare
 	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+.if ${BUILD_PACKAGES:M-ada}
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${ADA_PACKAGE}
+.endif
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GCC_PACKAGE}
+.if ${BUILD_PACKAGES:M-dlang}
+	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GDC_PACKAGE}
+.endif
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar xzf ${GXX_PACKAGE}
 	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man,share}
 	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-openbsd*/$V/include-fixed

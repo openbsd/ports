@@ -1,0 +1,16 @@
+Index: gcc/d/d-lang.cc
+--- gcc/d/d-lang.cc.orig
++++ gcc/d/d-lang.cc
+@@ -1964,6 +1964,12 @@ const scoped_attribute_specs *const d_langhook_attribu
+   &d_langhook_common_attribute_table,
+ };
+ 
++extern "C" const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ /* Definitions for our language-specific hooks.  */
+ 
+ #undef LANG_HOOKS_NAME

@@ -1,0 +1,14 @@
+Index: libphobos/src/Makefile.in
+--- libphobos/src/Makefile.in.orig
++++ libphobos/src/Makefile.in
+@@ -540,8 +540,9 @@ toolexeclib_LTLIBRARIES = libgphobos.la
+ libgphobos_la_SOURCES = $(ALL_PHOBOS_SOURCES)
+ libgphobos_la_LIBTOOLFLAGS = 
+ @ENABLE_DARWIN_AT_RPATH_TRUE@libgphobos_darwin_rpath = -Wl,-rpath,@loader_path
++include $(top_srcdir)/../libversions
+ libgphobos_la_LDFLAGS = -Wc,-nophoboslib,-dstartfiles,-B../libdruntime/gcc \
+-    -version-info $(libtool_VERSION) $(libgphobos_darwin_rpath)
++    $(LIBgphobos_LTVERSION) $(libgphobos_darwin_rpath)
+ 
+ @ENABLE_LIBDRUNTIME_ONLY_FALSE@libgphobos_la_LIBADD = \
+ @ENABLE_LIBDRUNTIME_ONLY_FALSE@    ../libdruntime/libgdruntime_convenience.la $(LIBZ)

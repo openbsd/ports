@@ -1,0 +1,16 @@
+Index: libphobos/libdruntime/core/sys/posix/config.d
+--- libphobos/libdruntime/core/sys/posix/config.d.orig
++++ libphobos/libdruntime/core/sys/posix/config.d
+@@ -196,6 +196,12 @@ else version (OpenBSD)
+         enum _STACKALIGNBYTES = 15;
+         enum _MAX_PAGE_SHIFT = 12;
+     }
++    else version (PPC64)
++    {
++        enum _ALIGNBYTES = 7;
++        enum _STACKALIGNBYTES = 15;
++        enum _MAX_PAGE_SHIFT = 12;
++    }
+     else version (SPARC64)
+     {
+         enum _ALIGNBYTES = 15;

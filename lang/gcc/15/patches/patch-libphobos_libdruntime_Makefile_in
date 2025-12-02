@@ -1,0 +1,14 @@
+Index: libphobos/libdruntime/Makefile.in
+--- libphobos/libdruntime/Makefile.in.orig
++++ libphobos/libdruntime/Makefile.in
+@@ -829,8 +829,9 @@ toolexeclib_LTLIBRARIES = libgdruntime.la
+ libgdruntime_la_SOURCES = $(ALL_DRUNTIME_SOURCES)
+ libgdruntime_la_LIBTOOLFLAGS = 
+ @ENABLE_DARWIN_AT_RPATH_TRUE@libgdruntime_darwin_rpath = -Wl,-rpath,@loader_path
++include $(top_srcdir)/../libversions
+ libgdruntime_la_LDFLAGS = -Wc,-nophoboslib,-dstartfiles,-B../src,-Bgcc \
+-    -version-info $(libtool_VERSION) $(libgdruntime_darwin_rpath)
++    $(LIBgdruntime_LTVERSION) $(libgdruntime_darwin_rpath)
+ 
+ libgdruntime_la_LIBADD = $(LIBATOMIC) $(LIBBACKTRACE)
+ libgdruntime_la_DEPENDENCIES = $(DRTSTUFF)

@@ -1,0 +1,78 @@
+Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
+The old code was for some other platform (AIX?), not BSD nor Linux.
+This patch fixes OpenBSD but might break the other platform.
+
+Index: libphobos/libdruntime/core/thread/fiber/package.d
+--- libphobos/libdruntime/core/thread/fiber/package.d.orig
++++ libphobos/libdruntime/core/thread/fiber/package.d
+@@ -94,8 +94,13 @@ package
+     {
+         version = AlignFiberStackTo16Byte;
+ 
+-        version (GNU_CET)
++        version (OpenBSD)
+         {
++            version = AsmExternal;
++            version = AsmX86_64_Posix;
++        }
++        else version (GNU_CET)
++        {
+             // fiber_switchContext does not support shadow stack from
+             // Intel CET.  So use ucontext implementation.
+         }
+@@ -127,6 +132,7 @@ package
+         {
+             version = AsmPPC_Posix;
+             version = AsmExternal;
++            version = AlignFiberStackTo16Byte;
+         }
+     }
+     else version (PPC64)
+@@ -139,6 +145,8 @@ package
+         }
+         else version (Posix)
+         {
++            version = AsmPPC_Posix;
++            version = AsmExternal;
+             version = AlignFiberStackTo16Byte;
+         }
+     }
+@@ -1075,27 +1083,22 @@ class Fiber : FiberBase (protected)
+         }
+         else version (AsmPPC_Posix)
+         {
+-            version (StackGrowsDown)
+-            {
+-                pstack -= int.sizeof * 5;
+-            }
+-            else
+-            {
+-                pstack += int.sizeof * 5;
+-            }
++            version (StackGrowsDown) {} else static assert (false);
+ 
+-            push( cast(size_t) &fiber_entryPoint );     // link register
+-            push( 0x00000000 );                         // control register
+-            push( 0x00000000 );                         // old stack pointer
+-
+-            // GPR values
+-            version (StackGrowsDown)
++            version (PPC64)
+             {
+-                pstack -= int.sizeof * 20;
++                pstack -= size_t.sizeof * 5;
++                push( cast(size_t) &fiber_entryPoint);  // link register
++                push( 0x00000000_00000000 );            // condition register
++                push( 0x00000000_00000000 );            // old stack pointer
++                pstack -= size_t.sizeof * 18;           // GPRs
+             }
+             else
+             {
+-                pstack += int.sizeof * 20;
++                pstack -= size_t.sizeof * 6;
++                push( cast(size_t) &fiber_entryPoint);  // link register
++                push( 0x00000000 );                     // old stack pointer
++                pstack -= size_t.sizeof * 20;           // GPRs and CR
+             }
+ 
+             assert( (cast(size_t) pstack & 0x0f) == 0 );
