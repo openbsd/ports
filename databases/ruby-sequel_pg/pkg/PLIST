@@ -10,5 +10,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_streaming.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg.so
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/sequel_pg.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
