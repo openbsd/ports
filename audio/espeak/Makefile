@@ -19,6 +19,11 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		audio/pcaudiolib
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+USE_LIBTOOL=		gnu
+.endif
+
 USE_GMAKE=		Yes
 NO_TEST=		Yes
 
