@@ -7,6 +7,10 @@ SHARED_LIBS =	KF5Su		7.0
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5Pty Qt5Core SM X11 Xext c m
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 
 # required only for tests

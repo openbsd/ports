@@ -7,6 +7,10 @@ SHARED_LIBS +=	KF5I18nLocaleData	1.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml intl m
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 
 MODPY_BUILDDEP =	No

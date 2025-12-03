@@ -23,6 +23,10 @@ WANTLIB += Qt5Xml m
 SITES =		${SITE_KDE:=stable/kreport/src/}
 EXTRACT_SUFX =	.tar.xz
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =		devel/kf5 \
 			lang/python
 
