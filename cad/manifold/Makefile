@@ -1,7 +1,7 @@
 COMMENT =	geometry library for topological robustness
 GH_ACCOUNT =	elalish
 GH_PROJECT =	manifold
-GH_TAGNAME =	v3.2.1
+GH_TAGNAME =	v3.3.2
 
 CATEGORIES =	cad
 
@@ -21,8 +21,6 @@ LIB_DEPENDS =	cad/clipper2
 
 BUILD_DEPENDS =	devel/gtest
 
-# Trouble with gtest, can probably be fixed.
-#CONFIGURE_ARGS =	-DMANIFOLD_TEST=OFF
 CONFIGURE_ARGS = -DMANIFOLD_DOWNLOADS=OFF
 
 .include <bsd.port.mk>
