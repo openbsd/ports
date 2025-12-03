@@ -1,0 +1,15 @@
+https://github.com/OpenPrinting/cups/commit/e472e53e6e62306228f7bc688030fc5fb9e7ba2e
+
+Index: conf/cupsd.conf.in
+--- conf/cupsd.conf.in.orig
++++ conf/cupsd.conf.in
+@@ -28,9 +28,6 @@ DefaultAuthType Basic
+ # Web interface setting...
+ WebInterface @CUPS_WEBIF@
+ 
+-# Timeout after cupsd exits if idle (applied only if cupsd runs on-demand - with -l)
+-IdleExitTimeout @EXIT_TIMEOUT@
+-
+ # Restrict access to the server...
+ <Location />
+   Order allow,deny
