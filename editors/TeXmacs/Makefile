@@ -19,6 +19,10 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets c execinfo freetype gmp guile jpeg ltdl
 WANTLIB += m png sqlite3 util z
 
+# needs c++ and python
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES=	devel/cmake \
 		lang/python \
 		x11/qt5

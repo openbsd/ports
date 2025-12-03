@@ -17,6 +17,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} GL c m z
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Widgets
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 # if necessary (i.e. failure to build after updating), the Python plugin
 # can be disabled with MODQMAKE_ARGS= DISABLE_PYTHON_PLUGIN=yes.
 # it's disabled by default in preferences anyway and not required for

@@ -17,6 +17,10 @@ PERMIT_PACKAGE = Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Svg
 WANTLIB += Qt6SvgWidgets Qt6Widgets c m msgpack-c
 
+# needs c++ and python
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES =	devel/cmake \
 		lang/python \
 		x11/qt6
