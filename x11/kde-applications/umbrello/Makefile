@@ -26,6 +26,10 @@ MODCLANG_COMPILER_LINKS = no
 
 MODKDE_KF5 = yes
 
+# needs c++ and python
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES +=	lang/python
 
 RUN_DEPENDS =	math/graphviz

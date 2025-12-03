@@ -19,6 +19,10 @@ SHARED_LIBS +=  Qt5QmlWorkerScript        0.0 # 5.15
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
 WANTLIB-main += Qt5Test Qt5Widgets c m
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
