@@ -3,7 +3,7 @@ Neuter compat shims that break with opaque structs in ssl.h and x509.h.
 Index: lib/usual/tls/tls_compat.h
 --- lib/usual/tls/tls_compat.h.orig
 +++ lib/usual/tls/tls_compat.h
-@@ -28,7 +28,6 @@
+@@ -32,7 +32,6 @@ bool get_ecdh_curve_nid(EVP_PKEY *pk, int *nid);
  
  #ifndef LIBRESSL_VERSION_NUMBER
  #define USE_LIBSSL_INTERNALS
@@ -11,7 +11,7 @@ Index: lib/usual/tls/tls_compat.h
  
  #define NID_kx_ecdhe (-90)
  #define NID_kx_dhe (-91)
-@@ -78,6 +77,8 @@ static inline X509_OBJECT *X509_STORE_CTX_get_obj_by_s
+@@ -82,6 +81,8 @@ static inline X509_OBJECT *X509_STORE_CTX_get_obj_by_s
  	}
  	return NULL;
  }
