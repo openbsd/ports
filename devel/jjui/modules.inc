@@ -13,7 +13,6 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/x/ansi		 v0.11.1 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.14 \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241011142426-46044092ad91 \
-	github.com/charmbracelet/x/exp/teatest	 v0.0.0-20250131172436-6251e772efa1 \
 	github.com/charmbracelet/x/term		 v0.2.2 \
 	github.com/clipperhouse/displaywidth	 v0.6.0 \
 	github.com/clipperhouse/stringish	 v0.1.1 \
@@ -45,18 +44,14 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
-	github.com/charmbracelet/bubbletea	 v1.1.2 \
 	github.com/charmbracelet/bubbletea	 v1.3.4 \
 	github.com/charmbracelet/colorprofile	 v0.2.3-0.20250311203215-f60798e515dc \
-	github.com/charmbracelet/lipgloss	 v0.13.0 \
 	github.com/charmbracelet/x/ansi		 v0.10.1 \
 	github.com/charmbracelet/x/ansi		 v0.10.3 \
 	github.com/charmbracelet/x/ansi		 v0.11.0 \
-	github.com/charmbracelet/x/ansi		 v0.4.0 \
 	github.com/charmbracelet/x/ansi		 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
-	github.com/charmbracelet/x/term		 v0.2.0 \
 	github.com/charmbracelet/x/term		 v0.2.1 \
 	github.com/clipperhouse/displaywidth	 v0.4.1 \
 	github.com/clipperhouse/displaywidth	 v0.5.0 \
@@ -64,18 +59,14 @@ MODGO_MODFILES =	\
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-runewidth		 v0.0.14 \
 	github.com/mattn/go-runewidth		 v0.0.16 \
-	github.com/muesli/termenv		 v0.15.2 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/sync			 v0.11.0 \
-	golang.org/x/sync			 v0.8.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
-	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.37.0 \
 	golang.org/x/sys			 v0.6.0 \
-	golang.org/x/text			 v0.19.0 \
 	golang.org/x/text			 v0.3.8
 
