@@ -62,7 +62,7 @@ MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada -dlang
 
 DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
-.for _arch in ${ONLY_FOR_ARCHS-ada}
+.for _arch in ${ONLY_FOR_ARCHS-ada} ${ONLY_FOR_ARCHS-dlang}
 SUPDISTFILES.strap += ${ADASTRAP-${_arch}}
 .endfor
 EXTRACT_ONLY =	${DISTFILES}
