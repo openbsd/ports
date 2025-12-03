@@ -10,6 +10,10 @@ DISTFILES.icons =	${DISTNAME}-icons{icons}.zip
 
 SITES.icons =	https://sourceforge.net/projects/cstitch/files/Cstitch/Icons/
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =		devel/qmake lang/python x11/qt5
 
 MODPY_RUNDEP =		No

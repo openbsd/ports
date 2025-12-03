@@ -15,6 +15,10 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0 gtk-3
 WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler ${MODPY_WANTLIB}
 WANTLIB += xml2 xpm-pixbuf xslt
 
+# needs c++ and python
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c c++
+
 MODULES=		lang/python \
 			devel/meson \
 			x11/gnome
