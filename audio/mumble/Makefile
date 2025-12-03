@@ -103,6 +103,10 @@ MULTI_PACKAGES =	-main -server
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5

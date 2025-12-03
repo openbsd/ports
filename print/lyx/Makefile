@@ -21,6 +21,10 @@ WANTLIB+= hunspell-1.7 iconv m magic xcb xkbcommon z
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# needs c++ and python
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES=	lang/python \
 		x11/qt6
 

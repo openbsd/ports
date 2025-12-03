@@ -21,6 +21,10 @@ WANTLIB += Qt5Widgets Qt5Xml c icui18n icuuc m mariadb pq sqlite3
 SITES =		${SITE_KDE:=stable/kdb/src/}
 EXTRACT_SUFX =	.tar.xz
 
+# needs c++ and python
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS = 	c c++
+
 MODULES =		devel/cmake \
 			lang/python \
 			devel/kf5
