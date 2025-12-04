@@ -9,6 +9,9 @@ HOMEPAGE =	https://github.com/rmagick/rmagick
 # MIT
 PERMIT_PACKAGE = Yes
 
+# needs -std=c++11
+COMPILER =	base-clang ports-gcc
+
 MODULES =	lang/ruby
 
 WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16

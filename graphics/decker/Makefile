@@ -13,6 +13,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		SDL2 SDL2_image c m
 
+# needs -Wpedantic and other -W flags
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 USE_GMAKE =		Yes
 
 BUILD_DEPENDS =		editors/vim \

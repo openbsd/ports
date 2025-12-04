@@ -12,6 +12,10 @@ HOMEPAGE =	https://github.com/saitoha/libsixel
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# needs thread local storage
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB +=	c jpeg m png z
 
 SITES =		https://github.com/saitoha/libsixel/releases/download/v$V/
