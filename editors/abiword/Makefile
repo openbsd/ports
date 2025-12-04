@@ -5,11 +5,10 @@ BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fau
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
-DIST_TUPLE=	gnome World AbiWord c4e5ec46e146c4c894d66a862a287582ec76a2b1 .
-WRKDIST=	${WRKDIR}/AbiWord-c4e5ec46e146c4c894d66a862a287582ec76a2b1
+DIST_TUPLE=	gnome World AbiWord b7825e1c4cf6503609600dbac52faea3b4c72508 .
+WRKDIST=	${WRKDIR}/AbiWord-b7825e1c4cf6503609600dbac52faea3b4c72508
 
-DISTNAME=	abiword-3.0.7.0.20250728
-REVISION=	1
+DISTNAME=	abiword-3.0.8pre20250821
 
 SHARED_LIBS +=  abiword-3.1-test          0.0 # 0.0
 
