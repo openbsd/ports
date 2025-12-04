@@ -16,6 +16,10 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 aa c curses exif gphoto2 gphoto2_port iconv intl
 WANTLIB += jpeg ltdl m popt pthread readline xcb
 
+# needs -Wimplicit-int, etc.
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 SITES=			${SITE_SOURCEFORGE:=gphoto/}
 
 LIB_DEPENDS=		devel/popt \

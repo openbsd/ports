@@ -16,6 +16,10 @@ WANTLIB-main += m opus pipewire-0.3 pthread readline sndfile
 
 WANTLIB-libs += intl pthread
 
+# needs -std=c++17 (during configure)
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c c++
+
 MODULES=		devel/meson \
 			lang/python
 
