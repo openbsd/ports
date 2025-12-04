@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		9.7.0
+MODPY_DISTV =		9.8.0
 DISTNAME =		ipython-${MODPY_DISTV}
 
 CATEGORIES =		devel
