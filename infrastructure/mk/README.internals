@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.19 2023/08/10 18:50:58 espie Exp $
+$OpenBSD: README.internals,v 1.20 2025/12/04 18:18:34 tb Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -424,6 +424,9 @@ _SHSCRIPT: prepend to a shell script in the infrastructure, e.g.,
     ${_SHSCRIPT}/update-patches
 
 _PERLSCRIPT: likewise for perl scripts.
+
+_PERLDSCRIPT: (unused) variation of _PERLSCRIPT for debugging a script,
+	runs through perl -d
 
 _ALL_VARIABLES _ALL_VARIABLES_INDEXED _ALL_VARIABLES_PER_ARCH:
 	stuff to dump in dump-vars. First is "simple" variable, second one

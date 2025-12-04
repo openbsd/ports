@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.89 2023/11/12 12:55:08 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.90 2025/12/04 18:18:34 tb Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -11,6 +11,7 @@ DANGEROUS ?= No
 LOCALBASE ?= /usr/local
 
 _PERLSCRIPT = /usr/bin/perl ${PORTSDIR}/infrastructure/bin
+_PERLDSCRIPT = /usr/bin/perl -d ${PORTSDIR}/infrastructure/bin
 
 .if !defined(PKGPATH)
 PKGPATH != PORTSDIR_PATH=${PORTSDIR_PATH} \
