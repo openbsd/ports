@@ -984,6 +984,7 @@ share/vim/${P}/ftplugin/kwt.vim
 share/vim/${P}/ftplugin/lc.vim
 share/vim/${P}/ftplugin/ld.vim
 share/vim/${P}/ftplugin/ldapconf.vim
+share/vim/${P}/ftplugin/leex.vim
 share/vim/${P}/ftplugin/leo.vim
 share/vim/${P}/ftplugin/less.vim
 share/vim/${P}/ftplugin/lex.vim
@@ -1309,6 +1310,7 @@ share/vim/${P}/indent/kotlin.vim
 share/vim/${P}/indent/krl.vim
 share/vim/${P}/indent/ld.vim
 share/vim/${P}/indent/less.vim
+share/vim/${P}/indent/lf.vim
 share/vim/${P}/indent/lifelines.vim
 share/vim/${P}/indent/liquid.vim
 share/vim/${P}/indent/lisp.vim
@@ -1853,6 +1855,14 @@ share/vim/${P}/pack/dist/opt/editorconfig/ftdetect/
 share/vim/${P}/pack/dist/opt/editorconfig/ftdetect/editorconfig.vim
 share/vim/${P}/pack/dist/opt/editorconfig/plugin/
 share/vim/${P}/pack/dist/opt/editorconfig/plugin/editorconfig.vim
+share/vim/${P}/pack/dist/opt/helpcurwin/
+share/vim/${P}/pack/dist/opt/helpcurwin/autoload/
+share/vim/${P}/pack/dist/opt/helpcurwin/autoload/helpcurwin.vim
+share/vim/${P}/pack/dist/opt/helpcurwin/doc/
+share/vim/${P}/pack/dist/opt/helpcurwin/doc/helpcurwin.txt
+share/vim/${P}/pack/dist/opt/helpcurwin/doc/tags
+share/vim/${P}/pack/dist/opt/helpcurwin/plugin/
+share/vim/${P}/pack/dist/opt/helpcurwin/plugin/helpcurwin.vim
 share/vim/${P}/pack/dist/opt/helptoc/
 share/vim/${P}/pack/dist/opt/helptoc/autoload/
 share/vim/${P}/pack/dist/opt/helptoc/autoload/helptoc.vim
@@ -2302,6 +2312,7 @@ share/vim/${P}/syntax/lc.vim
 share/vim/${P}/syntax/ld.vim
 share/vim/${P}/syntax/ldapconf.vim
 share/vim/${P}/syntax/ldif.vim
+share/vim/${P}/syntax/leex.vim
 share/vim/${P}/syntax/less.vim
 share/vim/${P}/syntax/lex.vim
 share/vim/${P}/syntax/lf.vim
@@ -2831,6 +2842,7 @@ share/vim/${P}/tutor/tutor1.vi
 share/vim/${P}/tutor/tutor1.zh_cn
 share/vim/${P}/tutor/tutor1.zh_tw
 share/vim/${P}/tutor/tutor2
+share/vim/${P}/tutor/tutor2.es
 share/vim/${P}/tutor/tutor2.fr
 share/vim/${P}/tutor/tutor2.gl
 share/vim/${P}/tutor/tutor2.it
