@@ -1,5 +1,5 @@
 VERSION =	2.2.18
-REVISION =	1
+REVISION =	2
 
 post-extract:
 	sed -i 's,"/usr/sbin/%s","${TRUEPREFIX}/sbin/%s",' \

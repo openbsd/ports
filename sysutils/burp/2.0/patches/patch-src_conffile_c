@@ -1,0 +1,12 @@
+Index: src/conffile.c
+--- src/conffile.c.orig
++++ src/conffile.c
+@@ -542,7 +542,7 @@ static char *extract_cn(X509_NAME *subj)
+ 	  || !(e=X509_NAME_get_entry(subj, index))
+ 	  || !(d=X509_NAME_ENTRY_get_data(e)))
+ 		return NULL;
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ 		return (char *)ASN1_STRING_data(d);
+ #else
+ 		return (char *)ASN1_STRING_get0_data(d);
