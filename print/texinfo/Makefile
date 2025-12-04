@@ -1,7 +1,7 @@
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-7.1
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		print
 
