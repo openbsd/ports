@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.bz2
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# -std=c++14
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += c pthread
 
 MODULES =	devel/cmake

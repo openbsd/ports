@@ -9,6 +9,9 @@ GH_TAGNAME=	v4.25
 # MIT
 PERMIT_PACKAGE=	Yes
 
+# needs -std=c++14
+COMPILER=	base-clang ports-gcc
+
 MODULES=	devel/cmake
 
 # otherwise it uses cmake DOWNLOAD
