@@ -3,16 +3,16 @@
 Index: src/addagent/main.c
 --- src/addagent/main.c.orig
 +++ src/addagent/main.c
-@@ -84,6 +84,8 @@ static void manage_shutdown(__attribute__((unused)) in
+@@ -75,6 +75,8 @@ static void manage_shutdown(__attribute__((unused)) in
+     exit(0);
  }
- #endif
  
 +int willchroot;
 +
  int main(int argc, char **argv)
  {
      char *user_msg;
-@@ -104,7 +106,6 @@ int main(int argc, char **argv)
+@@ -93,7 +95,6 @@ int main(int argc, char **argv)
      int ret;
  #endif
  
