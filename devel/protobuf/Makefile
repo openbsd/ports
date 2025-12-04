@@ -1,7 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		6
-PROTOBUF_VERSION =	33.0
+PROTOBUF_VERSION =	33.1
 
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
@@ -14,7 +14,7 @@ SUBST_VARS +=		PROTOC_VERSION
 
 SHARED_LIBS +=		protobuf-lite	31.0
 SHARED_LIBS +=		protobuf	34.0
-SHARED_LIBS +=		protoc		36.0
+SHARED_LIBS +=		protoc		36.1
 SHARED_LIBS +=		utf8_range	1.0
 SHARED_LIBS +=		utf8_validity	2.0
 
