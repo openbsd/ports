@@ -23,6 +23,9 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
+REVISION-main =		0
+REVISION-buildset =	0
+
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -37,6 +40,7 @@ MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
+MODTK_VERSION =		8.6
 
 .include "adj.mk"
 
@@ -44,6 +48,7 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
+			${MODTK_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 # While pdfjam needs bash, depend upon bash:
 RUN_DEPENDS-full +=	shells/bash
