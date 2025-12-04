@@ -18,6 +18,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curl gnutls jansson microhttpd orcania pthread yder z
 
+# workaround -Werror issues with base-gcc
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 MODULES =	devel/cmake
 
 LIB_DEPENDS +=	devel/jansson \

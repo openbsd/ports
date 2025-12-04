@@ -15,6 +15,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	orcania
 
+# workaround -Werror issues with base-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		devel/cmake
 
 LIB_DEPENDS +=		devel/orcania>=2.3.3
