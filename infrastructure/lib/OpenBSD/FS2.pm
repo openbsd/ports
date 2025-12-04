@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.42 2023/07/05 15:07:54 espie Exp $
+# $OpenBSD: FS2.pm,v 1.43 2025/12/04 17:56:14 sthen Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -350,8 +350,9 @@ sub recognize($class, $filename, $fs, $)
 	my $tag2 = <$fh>;
 	$tag .= $tag2 if defined $tag2;
 	close $fh;
-	if ($tag =~ /^This\sis\s.*,\sproduced\sby\sg?[Mm]akeinfo(?:\sversion\s|\-)?.*[\d\s]from/s ||
-	    $tag =~ /^Dies\sist\s.*,\shergestellt\svon\sg?[Mm]akeinfo(?:\sVersion\s|\-)?.*[\d\s]aus/s) {
+	my $prog = qr{(?:g?[Mm]akeinfo|texi2any)};
+	if ($tag =~ /^This\sis\s.*,\sproduced\sby\s$prog(?:\sversion\s|\-)?.*[\d\s]from/s ||
+	    $tag =~ /^Dies\sist\s.*,\shergestellt\svon\s$prog(?:\sVersion\s|\-)?.*[\d\s]aus/s) {
 		return 1;
 	} else {
 		return 0;
