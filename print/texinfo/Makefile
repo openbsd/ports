@@ -1,7 +1,7 @@
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-7.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		print
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS =		devel/help2man \
 			lang/gawk
 RUN_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		converters/libunistring \
-			devel/gettext,-runtime 
+			devel/gettext,-runtime
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
@@ -32,7 +32,6 @@ INSTALL_TARGET =	install install-tex
 
 # gtexindex is a shell script which hardcodes texindex.awk
 post-install:
-	cd ${PREFIX}/info && for i in *.info*; do mv $$i g$$i; done
 	cd ${PREFIX}/share/texinfo && mv gtexindex.awk texindex.awk
 
 .include <bsd.port.mk>

@@ -7,13 +7,13 @@ bin/gtexi2any
 bin/gtexi2dvi
 bin/gtexi2pdf
 bin/gtexindex
-info/ginfo-stnd.info
-info/gtexi2any_api.info
-info/gtexi2any_internals.info
-info/gtexinfo.info
-info/gtexinfo.info-1
-info/gtexinfo.info-2
-info/gtexinfo.info-3
+info/info-stnd.info
+info/texi2any_api.info
+info/texi2any_internals.info
+info/texinfo.info
+info/texinfo.info-1
+info/texinfo.info-2
+info/texinfo.info-3
 lib/texinfo/
 @comment lib/texinfo/MiscXS.la
 @so lib/texinfo/MiscXS.so
