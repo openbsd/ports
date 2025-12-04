@@ -1,0 +1,16 @@
+commit 95d47d7dcf65a4f0e7371f193c8d936b4e1adc77
+
+Rename min/max macros to uppercase
+
+Index: src/sdl.cc
+--- src/sdl.cc.orig
++++ src/sdl.cc
+@@ -75,7 +75,7 @@ void SDLPlayer::callback(void *userdata, Uint8 *audiob
+       minicnt += self->spec.freq;
+       self->playing = self->p->update();
+     }
+-    i = min(towrite, (long)(minicnt / self->p->getrefresh() + 4) & ~3);
++    i = MIN(towrite, (long)(minicnt / self->p->getrefresh() + 4) & ~3);
+     self->opl->update((short *)pos, i);
+     pos += i * self->getsampsize(); towrite -= i;
+     minicnt -= (long)(self->p->getrefresh() * i);

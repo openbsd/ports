@@ -1,0 +1,23 @@
+commit 95d47d7dcf65a4f0e7371f193c8d936b4e1adc77
+
+Rename min/max macros to uppercase
+
+Index: src/defines.h
+--- src/defines.h.orig
++++ src/defines.h
+@@ -34,11 +34,11 @@
+ #define MSG_NOTE	3
+ #define MSG_DEBUG	4
+ 
+-#ifndef min
+-#  define min(a,b) (((a) < (b)) ? (a) : (b))
++#ifndef MIN
++#  define MIN(a,b) (((a) < (b)) ? (a) : (b))
+ #endif
+-#ifndef max
+-#  define max(a,b) (((a) > (b)) ? (a) : (b))
++#ifndef MAX
++#  define MAX(a,b) (((a) > (b)) ? (a) : (b))
+ #endif
+ 
+ /***** Global functions *****/

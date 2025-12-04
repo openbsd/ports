@@ -1,0 +1,21 @@
+commit 95d47d7dcf65a4f0e7371f193c8d936b4e1adc77
+
+Rename min/max macros to uppercase
+
+Index: src/output.cc
+--- src/output.cc.orig
++++ src/output.cc
+@@ -70,11 +70,11 @@ void EmuPlayer::frame()
+       minicnt += freq;
+       playing = p->update();
+     }
+-    i = min(towrite, (long)(minicnt / p->getrefresh() + 4) & ~3);
++    i = MIN(towrite, (long)(minicnt / p->getrefresh() + 4) & ~3);
+     opl->update((short *)pos, i);
+     pos += i * getsampsize(); towrite -= i;
+     i = (long)(p->getrefresh() * i);
+-    minicnt -= max(1, i);
++    minicnt -= MAX(1, i);
+   }
+ 
+   // call output driver
