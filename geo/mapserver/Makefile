@@ -6,8 +6,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		8.4.1
-REVISION=	0
+V=		8.6.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	mapserver-${V:S/-//}
 PKGNAME-utils=	mapserver-utils-${V:S/-//}
@@ -90,8 +89,6 @@ SUBST_VARS+=	PREFIX-main VARBASE
 
 # avoid warning about pip cache
 PORTHOME=	${WRKDIR}
-post-extract:
-	rm -f ${WRKSRC}/cmake/Find{Freetype,PostgreSQL,ICONV}.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin

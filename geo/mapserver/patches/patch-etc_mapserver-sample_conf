@@ -1,4 +1,4 @@
-Index: etc/mapserver-sample.conf
+ndex: etc/mapserver-sample.conf
 --- etc/mapserver-sample.conf.orig
 +++ etc/mapserver-sample.conf
 @@ -11,14 +11,14 @@ CONFIG
@@ -22,7 +22,7 @@ Index: etc/mapserver-sample.conf
      #
      # OGC API
      #
--    # OGCAPI_HTML_TEMPLATE_DIRECTORY "/usr/local/mapserver/share/ogcapi/templates/html-bootstrap4/"
+-    # OGCAPI_HTML_TEMPLATE_DIRECTORY "/usr/local/mapserver/share/ogcapi/templates/html-bootstrap/"
 +    # OGCAPI_HTML_TEMPLATE_DIRECTORY "/usr/local/share/mapserver/ogcapi/templates/html-plain/"
    END
   

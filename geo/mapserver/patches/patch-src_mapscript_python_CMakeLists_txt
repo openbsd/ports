@@ -1,3 +1,5 @@
+https://github.com/MapServer/MapServer/issues/7370
+
 Index: src/mapscript/python/CMakeLists.txt
 --- src/mapscript/python/CMakeLists.txt.orig
 +++ src/mapscript/python/CMakeLists.txt
@@ -19,12 +21,3 @@ Index: src/mapscript/python/CMakeLists.txt
      # ERROR: file or package not found: mapscript.tests (missing __init__.py?) is caused by
      # ImportError: DLL load failed while importing _mapscript: The specified module could not be found.
      COMMAND ${Python_VENV_SCRIPTS}/python -m pytest --pyargs mapscript.tests
-@@ -140,7 +140,7 @@ install(
-     endif()
- 
-     execute_process(
--      COMMAND ${Python_EXECUTABLE} -m pip install \${PYTHON_ROOT} \${PYTHON_PREFIX} .
-+      COMMAND ${Python_EXECUTABLE} -m pip install --use-pep517 --no-build-isolation \${PYTHON_ROOT} \${PYTHON_PREFIX} .
-       WORKING_DIRECTORY ${MAPSCRIPT_WORKING_DIR}
-     )
-   "
