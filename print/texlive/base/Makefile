@@ -16,6 +16,8 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
+REVISION-main =		0
+
 DISTFILES =		texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.zoo =		${DISTNAME}${EXTRACT_SUFX} \
 			mktexlsr-${V}.gz
@@ -67,7 +69,12 @@ LIB_DEPENDS-mktexlsr =
 
 LIB_DEPENDS-synctex =
 
-MODULES =		textproc/intltool perl
+MODULES =		textproc/intltool lang/ruby x11/tk perl
+
+# Ruby and Tk modules only here for README substitution
+MODRUBY_BUILDDEP =	No
+MODRUBY_RUNDEP =	No
+MODTK_VERSION =		8.6
 
 # c++-17 required for some subprojects
 COMPILER =		base-clang ports-gcc
@@ -153,7 +160,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 # https://tug.org/pipermail/tldistro/2024q2/000477.html
 CONFIGURE_ARGS +=	--disable-dvisvgm
 
-SUBST_VARS +=		TRUEPREFIX LOCALBASE
+SUBST_VARS +=		TRUEPREFIX LOCALBASE MODTK_VERSION
 
 # just to silence error - never used
 pre-install:
