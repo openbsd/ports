@@ -7,6 +7,9 @@ WANTLIB =		c crypto m mariadb pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
 			databases/mariadb,-main
 
+# for configure
+COMPILER_LANGS =	c c++
+
 post-install:
 	mv ${PREFIX}/etc ${PREFIX}/share/examples/restund/
 
