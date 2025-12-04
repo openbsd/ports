@@ -1,0 +1,15 @@
+Load data from the example dir.
+
+
+Index: tclpkg/gdtclft/demo/entities.tcl
+--- tclpkg/gdtclft/demo/entities.tcl.orig
++++ tclpkg/gdtclft/demo/entities.tcl
+@@ -44,7 +44,7 @@ for {set val 32} {$val < 127} {incr val} {
+ 
+ # get other names for  html-4.0 characters from: 
+ #          http://www.w3.org/TR/REC-html40/sgml/entities.html
+-set f [open entities.html r]
++set f [open [file join [file dirname [info script]] entities.html]]
+ while {! [eof $f]} {
+ 	set rec [gets $f]
+ 	if {[scan $rec {&lt;!ENTITY %s CDATA "&amp;#%d;" --} name val] == 2} {

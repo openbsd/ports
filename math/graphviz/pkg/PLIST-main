@@ -192,8 +192,6 @@ share/examples/graphviz/demo/entities.tcl
 share/examples/graphviz/demo/entities.tcl.README
 share/examples/graphviz/demo/gcat.tcl
 share/examples/graphviz/demo/gcat.tcl.README
-share/examples/graphviz/demo/modgraph.pl
-share/examples/graphviz/demo/modgraph.tcl
 share/examples/graphviz/demo/pathplan.tcl
 share/examples/graphviz/demo/pathplan.tcl.README
 share/examples/graphviz/demo/pathplan_data/

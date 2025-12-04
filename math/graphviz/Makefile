@@ -6,6 +6,7 @@ DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
+REVISION=	0
 
 MULTI_PACKAGES=	-main -tcl
 
@@ -48,14 +49,15 @@ WANTLIB-main += gmp guile-2.2 lcms2 openjp2 perl poppler poppler-glib
 WANTLIB-main += rsvg-2 unistring wayland-client wayland-cursor wayland-egl
 WANTLIB-main += xkbcommon xml2
 
-# "extra" libtclXX: tcldot is built against Tcl headers
-WANTLIB-tcl += ${WANTLIB} ${MODTCL_WANTLIB}
+WANTLIB-tcl += ${WANTLIB}
 WANTLIB-tcl += cdt cgraph gvc pathplan xdot
 
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/tcl \
 		perl
+MODTCL_VERSION=	8.6
+
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
@@ -66,12 +68,16 @@ LIB_DEPENDS=	graphics/jpeg \
 		devel/harfbuzz \
 		print/poppler \
 		lang/guile2
-LIB_DEPENDS-tcl=math/graphviz,-main \
-		${MODTCL_LIB_DEPENDS}
-BUILD_DEPENDS=	devel/swig
-TEST_DEPENDS=	${FULLPKGNAME}:math/graphviz
-MODTCL_VERSION=	8.6
 
+BUILD_DEPENDS=	devel/swig \
+		${MODTCL_BUILD_DEPENDS}
+
+TEST_DEPENDS=	${FULLPKGNAME}:math/graphviz
+
+LIB_DEPENDS-tcl=math/graphviz,-main
+RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
+
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoreconf
@@ -127,8 +133,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
 
-MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib \
-		-ltclstub${MODTCL_VERSION:S/.//}_pic'
+MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${WRKDIR}/lib \
+		    -ltclstub${MODTCL_VERSION:S/.//}'
 
 # needs "criterion" to actually do anything
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
@@ -145,8 +151,22 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 
 # Ensure plugin version check works.
 SUBST_VARS +=	GVPLUGIN_VERSION
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib/gvc/gvconfig.c
+	@${MODTCL_TCLSH_ADJ} \
+	    ${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl \
+	    ${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl
+	@${MODTCL_WISH_ADJ} \
+	    ${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
+	    ${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl
+	@${SUBST_CMD} \
+	    ${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
+	    ${WRKSRC}/lib/gvc/gvconfig.c
+
+post-configure:
+	@mkdir -p ${WRKDIR}/lib \
+	&& ln -sf ${LOCALBASE}/lib/libtclstub86.a \
+	    ${WRKDIR}/lib/libtclstub86_pic.a
 
 post-install:
 # generate config6 from fake-install directory, so we don't need
@@ -160,5 +180,8 @@ post-install:
 
 # Second copy of tcl extensions isn't needed
 	rm -R ${PREFIX}/lib/tcl${MODTCL_VERSION}
+
+# Needs a /proc filesystem
+	rm ${PREFIX}/share/examples/graphviz/demo/modgraph.*
 
 .include <bsd.port.mk>

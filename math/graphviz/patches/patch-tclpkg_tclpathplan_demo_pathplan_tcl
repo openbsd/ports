@@ -1,0 +1,56 @@
+Tkspline isn't necessary for this demo.
+Load data from the example dir.
+
+
+Index: tclpkg/tclpathplan/demo/pathplan.tcl
+--- tclpkg/tclpathplan/demo/pathplan.tcl.orig
++++ tclpkg/tclpathplan/demo/pathplan.tcl
+@@ -2,7 +2,6 @@
+ # next line is a comment in tcl \
+ exec wish "$0" ${1+"$@"}
+ 
+-package require Tkspline
+ package require Tclpathplan
+ 
+ ########################################################################
+@@ -190,11 +189,11 @@ proc nextpoint {vc c wx wy} {
+ 					$c coords $id $path
+ 					$c itemconfigure $id -fill orange
+ 					set id [$c create line $x $y $x $y \
+-						-smooth spline -fill orange -state disabled]
++						-smooth raw -fill orange -state disabled]
+ 				}
+ 			} {
+ 				set id [$c create line $gx $gy $gx $gy \
+-					-smooth spline -fill orange -state disabled]
++					-smooth raw -fill orange -state disabled]
+ 			}
+ 		}
+ 		delete {
+@@ -365,7 +364,7 @@ proc loadpaths {vc c file} {
+ 			puts $path
+ 		} {
+ 			$c create line $path \
+-				-smooth spline -fill #ff00c0 -state disabled
++				-smooth raw -fill #ff00c0 -state disabled
+ 		}
+ 	}
+ 	close $f
+@@ -429,7 +428,7 @@ proc nextfile {} {
+ 
+ set vc [vgpane]
+ set mode draw
+-set filename "pathplan.tcl.data/unknown.dat"
++set filename [file join [file dirname [info script]] pathplan_data unknown.dat]
+ frame .fl
+ set a [frame .fl.a]
+ set b [frame .fl.b]
+@@ -560,7 +559,7 @@ bind .fr.coordinates <Return> {
+ 				puts $coords
+ 			} {
+ 				$c create line $coords \
+-					-smooth spline -fill orange -state disabled
++					-smooth raw -fill orange -state disabled
+ 			}
+ 		}
+ 	}
