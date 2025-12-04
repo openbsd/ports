@@ -1,0 +1,14 @@
+Ommitted parameter names is a C23 feature.
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -37,7 +37,7 @@
+ 
+ /** alarmInterrupt is used to print out the progress at specific intervals */
+ static void
+-alarmInterrupt(int) {
++alarmInterrupt(int dummy) {
+   if(!printProgress())
+     alarm(PRINTERVAL);
+ }

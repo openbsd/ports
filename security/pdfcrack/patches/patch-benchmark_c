@@ -1,0 +1,14 @@
+Ommitted parameter names is a C23 feature.
+
+Index: benchmark.c
+--- benchmark.c.orig
++++ benchmark.c
+@@ -40,7 +40,7 @@ static volatile bool finished = false;
+ 
+ /** interruptBench is used to stop the current benchmark */
+ static void
+-interruptBench(int) {
++interruptBench(int dummy) {
+   finished = true;
+ }
+ 
