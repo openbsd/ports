@@ -13,6 +13,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Chromium browser
 
 V=			142.0.7444.175
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -141,7 +142,6 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
-		icu \
 		libjpeg \
 		libpng \
 		libxml \

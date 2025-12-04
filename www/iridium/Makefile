@@ -12,6 +12,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2025.11.142.3
+REVISION=		0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -118,7 +119,6 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
-		icu \
 		libjpeg \
 		libpng \
 		libxml \
