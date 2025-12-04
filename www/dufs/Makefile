@@ -12,6 +12,10 @@ HOMEPAGE =	https://github.com/sigoden/dufs
 # Apache/2.0 and MIT
 PERMIT_PACKAGE =	Yes
 
+# -std=c1x
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 MODULES =	devel/cargo
 
 SEPARATE_BUILD =	Yes

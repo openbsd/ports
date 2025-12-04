@@ -19,6 +19,10 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += rdf
 WANTLIB-main = ${WANTLIB} c perl # uses perl ABI
 
+# needs stdalign.h C11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 # -main is the Perl binding
 MULTI_PACKAGES=		-main -ruby
 
