@@ -10,8 +10,8 @@ HOMEPAGE=	https://jlint.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c z m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=c++14
+COMPILER =	base-clang ports-gcc
+CXXFLAGS =	-std=c++14
 
 SITES=		${SITE_SOURCEFORGE:=jlint/}
 

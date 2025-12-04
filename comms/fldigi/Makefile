@@ -19,9 +19,9 @@ WANTLIB += Xrender
 
 SITES=		${SITE_SOURCEFORGE:=fldigi/}
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=gnu++0x
+CXXFLAGS =	-std=gnu++0x
 
 RUN_DEPENDS=	devel/desktop-file-utils
 BUILD_DEPENDS=	textproc/asciidoc

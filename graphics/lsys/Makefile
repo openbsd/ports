@@ -14,9 +14,9 @@ SITES=		http://crappydiffs.org/
 
 WANTLIB += GL GLU X11 Xext c m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
+CXXFLAGS =		-std=c++14
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

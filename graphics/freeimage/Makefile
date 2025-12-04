@@ -14,9 +14,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		${COMPILER_LIBCXX} m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
+CXXFLAGS =		-std=c++14
 
 SITES=			${SITE_SOURCEFORGE:=freeimage/}
 EXTRACT_SUFX=		.zip
