@@ -1,0 +1,14 @@
+cc1: error: unrecognized command line option "-Wpedantic"
+
+Index: Makefile.inc
+--- Makefile.inc.orig
++++ Makefile.inc
+@@ -2,7 +2,7 @@ V=2.89
+ 
+ AR?=	ar
+ CC?=	cc
+-CFLAGS+=-g -Wall -Wpedantic -Wextra -Wno-unused-parameter -Werror
++CFLAGS+=-g -Wall -Wextra -Wno-unused-parameter
+ INSTALL?=install
+ LORDER?=lorder
+ TSORT?=tsort
