@@ -1,0 +1,89 @@
+Add support for thread_name.
+
+Index: gdb/obsd-nat.c
+--- gdb/obsd-nat.c.orig
++++ gdb/obsd-nat.c
+@@ -23,11 +23,13 @@
+ 
+ #include <sys/types.h>
+ #include <sys/ptrace.h>
++#include <sys/sysctl.h>
+ #include "gdbsupport/gdb_wait.h"
+ 
+ #include "inf-ptrace.h"
+ #include "obsd-nat.h"
+ #include "gdbsupport/eintr.h"
++#include "gdbsupport/function-view.h"
+ 
+ /* OpenBSD 5.2 and later include rthreads which uses a thread model
+    that maps userland threads directly onto kernel threads in a 1:1
+@@ -183,4 +185,69 @@ int
+ obsd_nat_target::remove_fork_catchpoint (int pid)
+ {
+   return 0;
++}
++
++/* Generic thread lister within a specified PID.  The CALLBACK
++   parameters is a C++ function that is called for each detected thread.
++   When the CALLBACK function returns true, the iteration is interrupted.
++
++   This function assumes internally that the queried process is stopped
++   and the number of threads does not change between two sysctl () calls.  */
++
++static bool
++obsd_thread_lister (const pid_t pid,
++		      gdb::function_view<bool (const struct kinfo_proc *)>
++		      callback)
++{
++  int mib[6] = {CTL_KERN, KERN_PROC, KERN_PROC_PID | KERN_PROC_SHOW_THREADS,
++      pid, sizeof(struct kinfo_proc), 0};
++  size_t size;
++
++  if (sysctl (mib, ARRAY_SIZE (mib), NULL, &size, NULL, 0) == -1 || size == 0)
++    perror_with_name (("sysctl"));
++
++  mib[5] = size / sizeof (struct kinfo_proc);
++
++  gdb::unique_xmalloc_ptr<struct kinfo_proc[]> ki
++    ((struct kinfo_proc *) xcalloc (mib[5], sizeof (struct kinfo_proc)));
++
++  if (sysctl (mib, ARRAY_SIZE (mib), ki.get (), &size, NULL, 0) == -1
++      || size == 0)
++    perror_with_name (("sysctl"));
++
++  for (size_t i = 0; i < size / sizeof (struct kinfo_proc); i++)
++    {
++      struct kinfo_proc *l = &ki[i];
++      if (callback (l))
++	return true;
++    }
++
++  return false;
++}
++
++/* See obsd-nat.h.  */
++
++const char *
++obsd_nat_target::thread_name (struct thread_info *thr)
++{
++  pid_t pid = thr->ptid.pid ();
++  ptid_t::lwp_type tid = thr->ptid.lwp ();
++
++  static char buf[KI_MAXCOMLEN] = {};
++
++  auto fn
++    = [=] (const struct kinfo_proc *ki)
++      {
++	if (ki->p_tid == tid)
++	  {
++	    xsnprintf (buf, sizeof buf, "%s", ki->p_name);
++	    return true;
++	  }
++	return false;
++      };
++
++  if (obsd_thread_lister (pid, fn))
++    return buf;
++  else
++    return NULL;
+ }
