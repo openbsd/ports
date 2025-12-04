@@ -1,10 +1,9 @@
 COMMENT =	modular and extensible wayland compositor
 
-V =		0.10.0
+V =		0.10.1
 GH_ACCOUNT =	WayfireWM
 
 DISTNAME =	wayfire-${V}
-REVISION =	1
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland
