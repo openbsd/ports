@@ -1,26 +1,18 @@
 COMMENT =	lightweight game library for java
 
-BROKEN-i386 =	ld: error: undefined symbol: __stack_smash_handler
+ONLY_FOR_ARCHS= amd64 aarch64
 
 V =		3.3.1.1
 DISTNAME =	lwjgl3-${V}
 
 KOTLIN_V =	1.6.20-M1
 
-.if ${MACHINE_ARCH} == "i386"
-M_ARCH =	""
-PKG_ARGS +=	-Dx86=1
-MAKE_ENV +=	ANT_OPTS="-Xmx900M -Xms900M"
-.elif ${MACHINE_ARCH} == "amd64"
-M_ARCH =	64
+.if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=	-Dx86=1
 .elif ${MACHINE_ARCH} == "aarch64"
-M_ARCH =	64
 PKG_ARGS +=	-Dx86=0
 MAKE_ENV+=	LWJGL_BUILD_ARCH=arm64
 MAKE_ENV +=	ANT_OPTS="-Xmx1600M"
-.else
-PKG_ARGS +=	-Dx86=0
 .endif
 
 LWJGL3_HOME =	${PREFIX}/share/lwjgl3
@@ -70,8 +62,6 @@ LIB_DEPENDS =	archivers/lz4 \
 PORTHOME =	${WRKDIR}
 
 NO_TEST =	Yes
-
-SUBST_VARS +=	M_ARCH
 
 post-extract:
 	mkdir -p ${WRKSRC}/bin/libs
