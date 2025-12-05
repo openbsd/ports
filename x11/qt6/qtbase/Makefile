@@ -4,7 +4,7 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		4
+REVISION-main =		5
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
