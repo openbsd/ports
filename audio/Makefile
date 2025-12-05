@@ -232,6 +232,7 @@
      SUBDIR += shntool
      SUBDIR += shorten
      SUBDIR += sidplay
+     SUBDIR += siosw
      SUBDIR += siren
      SUBDIR += snack
      SUBDIR += sndiortp
