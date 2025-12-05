@@ -11,6 +11,10 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += gio-2.0 glib-2.0 goa-1.0 gobject-2.0 intl json-glib-1.0
 WANTLIB += soup-3.0
 
+# needs -std=gnu11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 MODULES=		devel/meson \
 			x11/gnome
 

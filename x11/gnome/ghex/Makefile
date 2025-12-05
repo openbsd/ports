@@ -13,6 +13,10 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += adwaita-1 c cairo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-4 intl pango-1.0 pangocairo-1.0
 
+# needs C11 unicode support
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
