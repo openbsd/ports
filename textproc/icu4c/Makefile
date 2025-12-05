@@ -1,19 +1,21 @@
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		77.1
-DISTNAME=		icu4c-${VERSION:S/./_/g}-src
+VERSION=		78.1
+DISTNAME=		icu4c-${VERSION}-sources
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 EPOCH-main=		0
 EPOCH-wwwdata=		0
+
+REVISION-main=		0
 
 # XXX libicudata is not recognized as a SHARED_LIBS by the ports tools because
 # it's missing the '.note.openbsd.ident' section ("-nodefaultlibs -nostdlib" in
 # LDFLAGS); @lib and LIBicudata_VERSION must be added manually;
 # (see ports/infrastructure/lib/OpenBSD/FS2.pm)
 MAJ_V=			${VERSION:R}
-SO_VERSION=		22.5
+SO_VERSION=		23.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -34,7 +36,7 @@ WANTLIB-wwwdata=	# empty
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SITES=			https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/
+SITES=			https://github.com/unicode-org/icu/releases/download/release-${VERSION}/
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 

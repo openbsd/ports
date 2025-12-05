@@ -208,6 +208,8 @@ include/unicode/utf16.h
 include/unicode/utf32.h
 include/unicode/utf8.h
 include/unicode/utf_old.h
+include/unicode/utfiterator.h
+include/unicode/utfstring.h
 include/unicode/utmscale.h
 include/unicode/utrace.h
 include/unicode/utrans.h
