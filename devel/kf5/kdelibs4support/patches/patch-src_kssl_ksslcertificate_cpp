@@ -5,7 +5,12 @@ so we need to cast.
 Index: src/kssl/ksslcertificate.cpp
 --- src/kssl/ksslcertificate.cpp.orig
 +++ src/kssl/ksslcertificate.cpp
-@@ -196,9 +196,11 @@ QString KSSLCertificate::getSignatureText() const
+@@ -192,20 +192,22 @@ QString KSSLCertificate::getSignatureText() const
+     QString rc = "";
+ 
+ #if KSSL_HAVE_SSL
+-    char *s;
++    const char *s;
      int n, i;
  
      const X509_ALGOR *algor;
@@ -18,3 +23,21 @@ Index: src/kssl/ksslcertificate.cpp
      rc = i18n("Signature Algorithm: ");
      rc += (i == NID_undef) ? i18n("Unknown") : QString(d->kossl->OBJ_nid2ln(i));
  
+     rc += '\n';
+     rc += i18n("Signature Contents:");
+-    n = sig->length;
+-    s = (char *)sig->data;
++    n = ASN1_STRING_length(sig);
++    s = (const char *)ASN1_STRING_get0_data(sig);
+     for (i = 0; i < n; ++i) {
+         if (i % 20 != 0) {
+             rc += ':';
+@@ -1314,7 +1316,7 @@ QStringList KSSLCertificate::subjAltNames() const
+             continue;
+         }
+ 
+-        QString s = (const char *)d->kossl->ASN1_STRING_data(val->d.ia5);
++        QString s = (const char *)d->kossl->ASN1_STRING_get0_data(val->d.ia5);
+         if (!s.isEmpty()  &&
+                 /* skip subjectAltNames with embedded NULs */
+                 s.length() == d->kossl->ASN1_STRING_length(val->d.ia5)) {

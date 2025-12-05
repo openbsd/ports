@@ -16,6 +16,15 @@ Index: src/kssl/kopenssl.cpp
      static void (*K_CRYPTO_free)(void *) = nullptr;
  #else
      static void (*K_CRYPTO_free)(void *, const char *, int) = nullptr;
+@@ -205,7 +206,7 @@ extern "C" {
+     static int (*K_X509_NAME_add_entry_by_txt)(X509_NAME *, char *, int, unsigned char *, int, int, int) = nullptr;
+     static X509_NAME *(*K_X509_NAME_new)() = nullptr;
+     static int (*K_X509_REQ_set_subject_name)(X509_REQ *, X509_NAME *) = nullptr;
+-    static unsigned char *(*K_ASN1_STRING_data)(ASN1_STRING *) = nullptr;
++    static const unsigned char *(*K_ASN1_STRING_get0_data)(const ASN1_STRING *) = nullptr;
+     static int (*K_ASN1_STRING_length)(ASN1_STRING *) = nullptr;
+     static STACK_OF(SSL_CIPHER) *(*K_SSL_get_ciphers)(const SSL *ssl) = nullptr;
+ 
 @@ -269,7 +270,7 @@ static QString findMostRecentLib(QString dir, QString 
      QString best = 0L;
      // where do we start
@@ -42,6 +51,15 @@ Index: src/kssl/kopenssl.cpp
          K_X509_STORE_add_lookup = (X509_LOOKUP * (*)(X509_STORE *, X509_LOOKUP_METHOD *)) d->cryptoLib->resolve("X509_STORE_add_lookup");
          K_X509_LOOKUP_file = (X509_LOOKUP_METHOD * (*)(void)) d->cryptoLib->resolve("X509_LOOKUP_file");
          K_X509_LOOKUP_free = (void (*)(X509_LOOKUP *)) d->cryptoLib->resolve("X509_LOOKUP_free");
+@@ -571,7 +573,7 @@ KOpenSSLProxy::KOpenSSLProxy()
+         K_X509_NAME_add_entry_by_txt = (int (*)(X509_NAME *, char *, int, unsigned char *, int, int, int)) d->cryptoLib->resolve("X509_NAME_add_entry_by_txt");
+         K_X509_NAME_new = (X509_NAME * (*)()) d->cryptoLib->resolve("X509_NAME_new");
+         K_X509_REQ_set_subject_name = (int (*)(X509_REQ *, X509_NAME *)) d->cryptoLib->resolve("X509_REQ_set_subject_name");
+-        K_ASN1_STRING_data = (unsigned char *(*)(ASN1_STRING *)) d->cryptoLib->resolve("ASN1_STRING_data");
++        K_ASN1_STRING_get0_data = (const unsigned char *(*)(const ASN1_STRING *)) d->cryptoLib->resolve("ASN1_STRING_get0_data");
+         K_ASN1_STRING_length = (int (*)(ASN1_STRING *)) d->cryptoLib->resolve("ASN1_STRING_length");
+ #endif
+     }
 @@ -1057,6 +1059,13 @@ void KOpenSSLProxy::X509_get0_signature(const ASN1_BIT
  #endif
  }
@@ -65,3 +83,17 @@ Index: src/kssl/kopenssl.cpp
  void KOpenSSLProxy::CRYPTO_free(void *x)
  {
      if (K_CRYPTO_free) {
+@@ -2205,10 +2214,10 @@ int KOpenSSLProxy::X509_REQ_set_subject_name(X509_REQ 
+     return -1;
+ }
+ 
+-unsigned char *KOpenSSLProxy::ASN1_STRING_data(ASN1_STRING *x)
++const unsigned char *KOpenSSLProxy::ASN1_STRING_get0_data(const ASN1_STRING *x)
+ {
+-    if (K_ASN1_STRING_data) {
+-        return (K_ASN1_STRING_data)(x);
++    if (K_ASN1_STRING_get0_data) {
++        return (K_ASN1_STRING_get0_data)(x);
+     }
+     return nullptr;
+ }
