@@ -15,7 +15,83 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  #include <openssl/kdf.h>
  
  using namespace QCA;
-@@ -6460,7 +6465,7 @@ static QStringList all_hash_types()
+@@ -311,7 +318,7 @@ static void try_get_name_item(X509_NAME *name, int nid
+     while ((loc = X509_NAME_get_index_by_NID(name, nid, loc)) != -1) {
+         X509_NAME_ENTRY *ne   = X509_NAME_get_entry(name, loc);
+         ASN1_STRING     *data = X509_NAME_ENTRY_get_data(ne);
+-        QByteArray       cs((const char *)data->data, data->length);
++        QByteArray       cs((const char *)ASN1_STRING_get0_data(data), ASN1_STRING_length(data));
+         info->insert(t, QString::fromLatin1(cs));
+     }
+ }
+@@ -328,7 +335,7 @@ try_get_name_item_by_oid(X509_NAME *name, const QStrin
+     while ((loc = X509_NAME_get_index_by_OBJ(name, oid, loc)) != -1) {
+         X509_NAME_ENTRY *ne   = X509_NAME_get_entry(name, loc);
+         ASN1_STRING     *data = X509_NAME_ENTRY_get_data(ne);
+-        QByteArray       cs((const char *)data->data, data->length);
++        QByteArray       cs((const char *)ASN1_STRING_get0_data(data), ASN1_STRING_length(data));
+         info->insert(t, QString::fromLatin1(cs));
+         qDebug() << "oid: " << oidText << ",  result: " << cs;
+     }
+@@ -3335,15 +3342,15 @@ class X509Item (public)
+ QDateTime ASN1_UTCTIME_QDateTime(const ASN1_UTCTIME *tm, int *isGmt)
+ {
+     QDateTime qdt;
+-    char     *v;
++    const char     *v;
+     int       gmt = 0;
+     int       i;
+     int       y = 0, M = 0, d = 0, h = 0, m = 0, s = 0;
+     QDate     qdate;
+     QTime     qtime;
+ 
+-    i = tm->length;
+-    v = (char *)tm->data;
++    i = ASN1_STRING_length(tm);
++    v = (const char *)ASN1_STRING_get0_data(tm);
+ 
+     if (i < 10)
+         goto auq_err;
+@@ -3716,9 +3723,9 @@ class MyCertContext : public CertContext (public)
+ 
+         X509_get0_signature(&signature, nullptr, x);
+         if (signature) {
+-            p.sig = QByteArray(signature->length, 0);
+-            for (int i = 0; i < signature->length; i++)
+-                p.sig[i] = signature->data[i];
++            p.sig = QByteArray(ASN1_STRING_length(signature), 0);
++            for (int i = 0; i < ASN1_STRING_length(signature); i++)
++                p.sig[i] = ASN1_STRING_get0_data(signature)[i];
+         }
+ 
+         switch (X509_get_signature_nid(x)) {
+@@ -4214,9 +4221,9 @@ class MyCSRContext : public CSRContext (public)
+ 
+         X509_REQ_get0_signature(x, &signature, nullptr);
+         if (signature) {
+-            p.sig = QByteArray(signature->length, 0);
+-            for (int i = 0; i < signature->length; i++)
+-                p.sig[i] = signature->data[i];
++            p.sig = QByteArray(ASN1_STRING_length(signature), 0);
++            for (int i = 0; i < ASN1_STRING_length(signature); i++)
++                p.sig[i] = ASN1_STRING_get0_data(signature)[i];
+         }
+ 
+         switch (X509_REQ_get_signature_nid(x)) {
+@@ -4412,9 +4419,9 @@ class MyCRLContext : public CRLContext (public)
+ 
+         X509_CRL_get0_signature(x, &signature, nullptr);
+         if (signature) {
+-            p.sig = QByteArray(signature->length, 0);
+-            for (int i = 0; i < signature->length; i++)
+-                p.sig[i] = signature->data[i];
++            p.sig = QByteArray(ASN1_STRING_length(signature), 0);
++            for (int i = 0; i < ASN1_STRING_length(signature); i++)
++                p.sig[i] = ASN1_STRING_get0_data(signature)[i];
+         }
+ 
+         switch (X509_CRL_get_signature_nid(x)) {
+@@ -6460,7 +6467,7 @@ static QStringList all_hash_types()
          list += QStringLiteral("md2");
  #endif
          list += QStringLiteral("md4");
@@ -24,7 +100,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
          list += QStringLiteral("whirlpool");
  #endif
      }
-@@ -6921,7 +6926,7 @@ class opensslProvider : public Provider (public)
+@@ -6921,7 +6928,7 @@ class opensslProvider : public Provider (public)
  #endif
              else if (type == QLatin1String("md4"))
                  return new opensslHashContext(EVP_md4(), this, type);
