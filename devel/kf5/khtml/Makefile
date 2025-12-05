@@ -1,5 +1,6 @@
 COMMENT =	original KDE HTML rendering engine
 DISTNAME =	khtml-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5KHtml	6.0
 
