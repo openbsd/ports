@@ -1,7 +1,7 @@
 Index: etc/a2ps_cfg.in
 --- etc/a2ps_cfg.in.orig
 +++ etc/a2ps_cfg.in
-@@ -55,7 +55,7 @@ LibraryPath: @libpath@
+@@ -54,7 +54,7 @@ LibraryPath: @libpath@
  
  # It may be useful to extend it so that a2ps can see some
  # TeX or X11 resources: it likes AFM files and PF[AB] files.
