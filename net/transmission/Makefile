@@ -2,8 +2,8 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		4.1.0beta3
-DISTNAME=	transmission-4.1.0-beta.3+rf20fd5e373
+VER=		4.1.0beta4
+DISTNAME=	transmission-4.1.0-beta.4+rc92b42de9c
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
@@ -19,7 +19,7 @@ DEBUG_PACKAGES=${BUILD_PACKAGES}
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://github.com/transmission/transmission/releases/download/4.1.0-beta.3/
+SITES=	https://github.com/transmission/transmission/releases/download/4.1.0-beta.4/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
@@ -76,7 +76,8 @@ RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 			devel/desktop-file-utils
 
 CONFIGURE_ARGS +=	-DENABLE_CLI=ON \
-			-DENABLE_TESTS=OFF
+			-DENABLE_TESTS=OFF \
+			-DRUN_CLANG_TIDY=OFF
 
 # XXX sees ports libevent2 but picks base libevent expecting a single .so.*
 # use the bundle until upstream cmake code gets fixed
