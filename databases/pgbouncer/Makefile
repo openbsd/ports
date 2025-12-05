@@ -2,6 +2,7 @@ COMMENT = 	lightweight connection pooler for PostgreSQL
 
 V = 		1.25.1
 DISTNAME = 	pgbouncer-${V}
+REVISION =	0
 
 CATEGORIES = 	databases
 
