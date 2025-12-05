@@ -25,9 +25,9 @@ WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender atomic avcodec
 WANTLIB += avdevice avfilter avformat avutil c epoxy execinfo
 WANTLIB += fftw3 fftw3f fftw3f_threads freetype gmp gmpxx hpdf
 WANTLIB += jpeg m manifold openal openjp2 openvdb osdCPU osdGPU
-WANTLIB += pipewire-0.3 png potrace pugixml python3.12 shaderc_shared
-WANTLIB += sharpyuv sndfile swresample swscale tbb tiff util vulkan
-WANTLIB += webp webpdemux webpmux z zstd
+WANTLIB += pipewire-0.3 png potrace pugixml ${MODPY_WANTLIB}
+WANTLIB += shaderc_shared sharpyuv sndfile swresample swscale tbb tiff
+WANTLIB += util vulkan webp webpdemux webpmux z zstd
 
 SITES =		https://download.blender.org/source/ \
 
