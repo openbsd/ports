@@ -2,10 +2,13 @@ fix build with ICU 74
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1862601
 https://bugzilla.mozilla.org/show_bug.cgi?id=1864745
+
+last line: fix build with ICU 48
+https://hg-edge.mozilla.org/mozilla-central/rev/5b1712d5d0a3
 Index: intl/lwbrk/LineBreaker.cpp
 --- intl/lwbrk/LineBreaker.cpp.orig
 +++ intl/lwbrk/LineBreaker.cpp
-@@ -559,7 +559,12 @@ GetClass(uint32_t u)
+@@ -559,7 +559,13 @@ GetClass(uint32_t u)
      /* REGIONAL_INDICATOR = 39,           [RI] */ CLASS_CHARACTER,
      /* E_BASE = 40,                       [EB] */ CLASS_BREAKABLE,
      /* E_MODIFIER = 41,                   [EM] */ CLASS_CHARACTER,
@@ -16,6 +19,7 @@ Index: intl/lwbrk/LineBreaker.cpp
 +    /* AKSARA_START = 45,                 [AS] */ CLASS_CHARACTER,
 +    /* VIRAMA_FINAL = 46,                 [VF] */ CLASS_CHARACTER,
 +    /* VIRAMA = 47,                       [VI] */ CLASS_CHARACTER,
++    /* UNAMBIGUOUS_HYPHEN = 48            [HH] */ CLASS_BREAKABLE,
    };
  
    static_assert(U_LB_COUNT == mozilla::ArrayLength(sUnicodeLineBreakToClass),
