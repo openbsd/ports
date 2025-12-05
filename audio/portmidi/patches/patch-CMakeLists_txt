@@ -8,8 +8,8 @@ Index: CMakeLists.txt
  # Versions are now in the form x.y.z
  # Changed 1.0 to 2.0 because API is extended with virtual ports:
  set(SOVERSION "2")
--set(VERSION "2.0.4")
-+set(VERSION "2.0.6")
+-set(VERSION "2.0.7")
++set(VERSION "2.0.8")
  
  project(portmidi VERSION "${VERSION}"
                   DESCRIPTION "Cross-Platform MIDI IO")

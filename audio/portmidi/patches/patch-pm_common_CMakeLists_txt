@@ -3,7 +3,7 @@
 Index: pm_common/CMakeLists.txt
 --- pm_common/CMakeLists.txt.orig
 +++ pm_common/CMakeLists.txt
-@@ -37,9 +37,10 @@ set(PM_LIB_PUBLIC_SRC ${PMDIR}/pm_common/portmidi.c
+@@ -44,9 +44,10 @@ set(PM_LIB_PUBLIC_SRC ${PMDIR}/pm_common/portmidi.c
                        ${PMDIR}/pm_common/pmutil.c
                        ${PMDIR}/porttime/porttime.c)
  add_library(portmidi ${PM_LIB_PUBLIC_SRC})
