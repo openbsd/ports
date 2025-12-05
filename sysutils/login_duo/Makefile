@@ -4,6 +4,7 @@ V =			2.2.2
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
