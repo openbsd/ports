@@ -10,6 +10,10 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # Apache2
 PERMIT_PACKAGE =	Yes
 
+# needs c++ and modern c
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
 MODULES =		lang/ruby
 
 WANTLIB += ${COMPILER_LIBCXX} grpc
