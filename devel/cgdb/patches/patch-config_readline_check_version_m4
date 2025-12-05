@@ -10,3 +10,12 @@ Index: config/readline_check_version.m4
  CFLAGS="$CFLAGS -I${ac_cv_rl_includedir}"
  LDFLAGS="$LDFLAGS -L${ac_cv_rl_libdir}"
  
+@@ -86,7 +86,7 @@ AC_CACHE_VAL(ac_cv_rl_version,
+ #include <stdlib.h>
+ #include <readline/readline.h>
+ 
+-main()
++int main(void)
+ {
+ 	FILE *fp;
+ 	fp = fopen("conftest.rlv", "w");
