@@ -12,6 +12,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -125,9 +126,6 @@ CONFIGURE_ARGS+=--with-toolchain-type=clang
 .else
 CONFIGURE_ARGS+=--with-toolchain-type=gcc
 .endif
-
-# XXX: for clang15+ & gcc15
-CONFIGURE_ARGS+=--disable-warnings-as-errors
 
 .if ${PROPERTIES:Mdebuginfo}
 CONFIGURE_ARGS+=--with-native-debug-symbols=external

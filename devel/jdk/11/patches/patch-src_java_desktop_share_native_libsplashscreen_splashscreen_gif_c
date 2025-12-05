@@ -1,0 +1,26 @@
+Backport:
+
+8355077: Compiler error at splashscreen_gif.c due to unterminated string initialization
+Reviewed-by: prr
+
+Index: src/java.desktop/share/native/libsplashscreen/splashscreen_gif.c
+--- src/java.desktop/share/native/libsplashscreen/splashscreen_gif.c.orig
++++ src/java.desktop/share/native/libsplashscreen/splashscreen_gif.c
+@@ -48,7 +48,7 @@
+                                 // restore the area overwritten by the graphic with
+                                 // what was there prior to rendering the graphic.
+ 
+-static const char szNetscape20ext[11] = "NETSCAPE2.0";
++static const char szNetscape20ext[] = "NETSCAPE2.0";
+ 
+ #define NSEXT_LOOP      0x01    // Loop Count field code
+ 
+@@ -181,7 +181,7 @@ SplashDecodeGif(Splash * splash, GifFileType * gif)
+                 }
+             case APPLICATION_EXT_FUNC_CODE:
+                 {
+-                    if (size == sizeof(szNetscape20ext)
++                    if (size == strlen(szNetscape20ext)
+                         && memcmp(pExtension, szNetscape20ext, size) == 0) {
+                         int iSubCode;
+ 

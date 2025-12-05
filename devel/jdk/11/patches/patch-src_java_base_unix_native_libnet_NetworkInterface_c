@@ -1,0 +1,26 @@
+error: 'strncpy' output may be truncated copying 15 bytes from a string of
+ length 15 [-Werror=stringop-truncation]
+
+Index: src/java.base/unix/native/libnet/NetworkInterface.c
+--- src/java.base/unix/native/libnet/NetworkInterface.c.orig
++++ src/java.base/unix/native/libnet/NetworkInterface.c
+@@ -2151,7 +2151,8 @@ static int getMacAddress
+ static int getMTU(JNIEnv *env, int sock, const char *ifname) {
+     struct ifreq if2;
+     memset((char *)&if2, 0, sizeof(if2));
+-    strncpy(if2.ifr_name, ifname, sizeof(if2.ifr_name) - 1);
++    strncpy(if2.ifr_name, ifname, sizeof(if2.ifr_name));
++    if2.ifr_name[sizeof(if2.ifr_name) - 1] = 0;
+ 
+     if (ioctl(sock, SIOCGIFMTU, (char *)&if2) < 0) {
+         JNU_ThrowByNameWithMessageAndLastError
+@@ -2165,7 +2166,8 @@ static int getMTU(JNIEnv *env, int sock, const char *i
+ static int getFlags(int sock, const char *ifname, int *flags) {
+     struct ifreq if2;
+     memset((char *)&if2, 0, sizeof(if2));
+-    strncpy(if2.ifr_name, ifname, sizeof(if2.ifr_name) - 1);
++    strncpy(if2.ifr_name, ifname, sizeof(if2.ifr_name));
++    if2.ifr_name[sizeof(if2.ifr_name) - 1] = 0;
+ 
+     if (ioctl(sock, SIOCGIFFLAGS, (char *)&if2) < 0) {
+         return -1;

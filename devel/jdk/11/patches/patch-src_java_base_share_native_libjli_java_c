@@ -1,0 +1,26 @@
+Backport:
+
+8286694: Incorrect argument processing in java launcher
+Reviewed-by: dholmes
+
+Index: src/java.base/share/native/libjli/java.c
+--- src/java.base/share/native/libjli/java.c.orig
++++ src/java.base/share/native/libjli/java.c
+@@ -50,6 +50,7 @@
+  * the CreateExecutionEnviroment will remove the -d<n> flags.
+  */
+ 
++#include <assert.h>
+ 
+ #include "java.h"
+ #include "jni.h"
+@@ -1695,7 +1696,8 @@ TranslateApplicationArgs(int jargc, const char **jargv
+     for (i = 0; i < jargc; i++) {
+         const char *arg = jargv[i];
+         if (arg[0] == '-' && arg[1] == 'J') {
+-            *nargv++ = ((arg + 2) == NULL) ? NULL : JLI_StringDup(arg + 2);
++            assert(arg[2] != '\0' && "Invalid JAVA_ARGS or EXTRA_JAVA_ARGS defined by build");
++            *nargv++ = JLI_StringDup(arg + 2);
+         }
+     }
+ 

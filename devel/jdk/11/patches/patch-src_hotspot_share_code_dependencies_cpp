@@ -1,0 +1,17 @@
+Fix gcc 15 warning that found a bug:
+
+error: 'sprintf' may write a terminating nul past the end of the destination [-Werror=format-overflow=]
+note: 'sprintf' output between 3 and 13 bytes into a destination of size 12
+
+Index: src/hotspot/share/code/dependencies.cpp
+--- src/hotspot/share/code/dependencies.cpp.orig
++++ src/hotspot/share/code/dependencies.cpp
+@@ -792,7 +792,7 @@ void Dependencies::write_dependency_to(xmlStream* xtty
+         xtty->object("x", arg.metadata_value());
+       }
+     } else {
+-      char xn[12]; sprintf(xn, "x%d", j);
++      char xn[13]; sprintf(xn, "x%d", j);
+       if (arg.is_oop()) {
+         xtty->object(xn, Handle(thread, arg.oop_value()));
+       } else {

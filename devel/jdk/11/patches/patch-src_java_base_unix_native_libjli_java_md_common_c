@@ -1,0 +1,15 @@
+error: '%s' directive output may be truncated writing up to 1023 bytes into a region of size between 2 and 1025 [-Werror=format-truncation=]
+note: 'snprintf' output between 2 and 2048 bytes into a destination of size 1026
+
+Index: src/java.base/unix/native/libjli/java_md_common.c
+--- src/java.base/unix/native/libjli/java_md_common.c.orig
++++ src/java.base/unix/native/libjli/java_md_common.c
+@@ -125,7 +125,7 @@ ProgramExists(char *name)
+ static char *
+ Resolve(char *indir, char *cmd)
+ {
+-    char name[PATH_MAX + 2], *real;
++    char name[PATH_MAX * 2], *real;
+ 
+     if ((JLI_StrLen(indir) + JLI_StrLen(cmd) + 1)  > PATH_MAX) return 0;
+     JLI_Snprintf(name, sizeof(name), "%s%c%s", indir, FILE_SEPARATOR, cmd);
