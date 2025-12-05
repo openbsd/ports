@@ -2,6 +2,7 @@ COMMENT =		simple distributed software configuration management
 
 V =			2.27
 PKGNAME =		fossil-${V}
+REVISION =		0
 
 # commit ID must be changed in DISTFILES when updating, see
 # https://fossil-scm.org/home/uv/download.html
