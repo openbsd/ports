@@ -421,6 +421,7 @@ lib/qt6/qml/QtWebEngine/ControlsDelegates/qmldir
 lib/qt6/qml/QtWebEngine/plugins.qmltypes
 lib/qt6/qml/QtWebEngine/qmldir
 share/qt6/resources/
+share/qt6/resources/icudtl.dat
 share/qt6/resources/qtwebengine_devtools_resources.pak
 share/qt6/resources/qtwebengine_resources.pak
 share/qt6/resources/qtwebengine_resources_100p.pak

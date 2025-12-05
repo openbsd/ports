@@ -11,7 +11,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -28,7 +28,7 @@ WANTLIB += Qt6QuickWidgets Qt6WebChannel Qt6WebChannelQuick Qt6Widgets
 WANTLIB += Qt6Xml X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr
 WANTLIB += Xrender Xtst c cbor crypto dbus-1 drm event execinfo
 WANTLIB += expat fido2 fontconfig freetype gbm harfbuzz harfbuzz-subset
-WANTLIB += icudata icui18n icuuc jpeg kvm lcms2 m minizip nspr4
+WANTLIB += jpeg kvm lcms2 m minizip nspr4
 WANTLIB += nss3 nssutil3 openh264 openjp2 opus plc4 plds4 png
 WANTLIB += smime3 snappy sndio tiff usbhid util vpx webp webpdemux
 WANTLIB += webpmux xcb xkbcommon xkbfile xml2 xshmfence xslt z
@@ -127,8 +127,9 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 
 GN_SYSTEM_LIBS=		fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
-LIB_DEPENDS +=		textproc/icu4c
+# XXX broken with icu4c >=78.1; check at next release + update WANTLIB
+#CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
+#LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 
