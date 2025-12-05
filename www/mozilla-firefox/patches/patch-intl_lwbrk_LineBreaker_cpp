@@ -1,0 +1,15 @@
+fix build with icu 78
+
+from https://hg-edge.mozilla.org/mozilla-central/rev/5b1712d5d0a3
+remove in 147
+Index: intl/lwbrk/LineBreaker.cpp
+--- intl/lwbrk/LineBreaker.cpp.orig
++++ intl/lwbrk/LineBreaker.cpp
+@@ -453,6 +453,7 @@ static int8_t GetClass(uint32_t u, LineBreakRule aLeve
+       /* AKSARA_START = 45,                 [AS] */ CLASS_CHARACTER,
+       /* VIRAMA_FINAL = 46,                 [VF] */ CLASS_CHARACTER,
+       /* VIRAMA = 47,                       [VI] */ CLASS_CHARACTER,
++      /* UNAMBIGUOUS_HYPHEN = 48            [HH] */ CLASS_BREAKABLE,
+   };
+ 
+   static_assert(U_LB_COUNT == std::size(sUnicodeLineBreakToClass),
