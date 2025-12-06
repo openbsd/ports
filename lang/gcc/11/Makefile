@@ -19,7 +19,7 @@ REVISION = 21
 
 # aarch64 bootstrap contains only gdc
 ADASTRAP-aarch64 = adastrap-aarch64-$V-0.tar.xz
-ADASTRAP-amd64 = adastrap-amd64-$V-6.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-5.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
