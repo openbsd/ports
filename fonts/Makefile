@@ -28,6 +28,7 @@
      SUBDIR += doulos
      SUBDIR += doulos-cipher
      SUBDIR += ecoliercourt-fonts
+     SUBDIR += epson-mx80
      SUBDIR += fantasque-sans
      SUBDIR += farsi-bfonts-ttf
      SUBDIR += farsifonts-ttf
