@@ -20,7 +20,9 @@ BUILD_DEPENDS=	devel/p5-Devel-CheckLib \
 
 LIB_DEPENDS=	devel/libidn2 \
 		net/ldns
-TEST_DEPENDS=	devel/p5-Test-Fatal
+TEST_DEPENDS=	devel/p5-Test-Fatal \
+		devel/p5-Test-Exception \
+		devel/p5-Test-Differences
 
 # --no-ed25519: requires openssl 1.1.1 for NID_ED25519 etc.
 # --prefix-openssl: actually used for -lldns -lidn2 not openssl
