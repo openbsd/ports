@@ -1,0 +1,8 @@
+share/doc/epson-mx80/
+share/doc/epson-mx80/ReadMe.txt
+share/fonts/
+@fontdir share/fonts/epson-mx80/
+share/fonts/epson-mx80/EPSON MX-80 O E Z.otf
+share/fonts/epson-mx80/EPSON MX-80 O E.otf
+share/fonts/epson-mx80/EPSON MX-80 O Z.otf
+share/fonts/epson-mx80/EPSON MX-80 O.otf
