@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 mips64 powerpc # i386
-ONLY_FOR_ARCHS-dlang = aarch64 amd64 # needs gdc from gcc-9+
+ONLY_FOR_ARCHS-dlang = # aarch64 amd64 # needs gdc from gcc-9+
 
 DPB_PROPERTIES = parallel
 
@@ -23,7 +23,7 @@ REVISION = 4
 
 # aarch64 bootstrap contains only gdc
 ADASTRAP-aarch64 = adastrap-aarch64-11.2.0-0.tar.xz
-ADASTRAP-amd64 = adastrap-amd64-11.2.0-6.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-11.2.0-5.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 ADASTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
