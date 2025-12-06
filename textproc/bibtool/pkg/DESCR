@@ -1,0 +1,19 @@
+BibTool allows the manipulation of BibTeX files which goes beyond
+the possibilities -- and intentions -- of BibTeX.  The possibilities
+of BibTool include
+
+- Pretty-printing of BibTeX databases adjustable by lots of parameters.
+- Syntactic checks with error recovery superior to BibTeX and helpful
+  error messages.
+- Semantic checks can be specified by the user.
+- Sorting and merging of BibTeX databases according to a free definable
+  sort key.
+- Generation of uniform reference keys according to predefined rules or
+  according to an own specification.
+- Selecting references used in one publication which are found by
+  analyzing an .aux file.
+- Selecting references by a set of criteria (regular expressions).
+- Controlled rewriting of fields utilizing regular expressions to
+  specify the rewriting rules.
+- Macro (String) expansion to eliminate the need of extra string
+  definitions. Collecting statistics about one or more BibTeX databases.
