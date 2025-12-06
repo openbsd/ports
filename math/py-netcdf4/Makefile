@@ -1,10 +1,9 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_DISTV=	1.7.2
+MODPY_DISTV=	1.7.3
 DISTNAME=	netcdf4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	math
-REVISION=	2
 
 HOMEPAGE=	http://unidata.github.io/netcdf4-python/
 
