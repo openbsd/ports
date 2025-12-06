@@ -12,8 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			142.0.7444.175
-REVISION=		0
+V=			143.0.7499.40
 
 DISTNAME=		chromium-${V}
 
@@ -282,12 +281,6 @@ post-patch:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
-	@( \
-		echo "#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define DAWN_COMMIT_HASH \"$$(cat ${WRKSRC}/gpu/webgpu/DAWN_VERSION)\"" ;\
-		echo "#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_" \
-	) > ${WRKSRC}/gpu/webgpu/dawn_commit_hash.h
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC}/media/ffmpeg && \

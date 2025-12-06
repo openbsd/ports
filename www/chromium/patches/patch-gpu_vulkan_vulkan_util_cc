@@ -1,7 +1,7 @@
 Index: gpu/vulkan/vulkan_util.cc
 --- gpu/vulkan/vulkan_util.cc.orig
 +++ gpu/vulkan/vulkan_util.cc
-@@ -481,7 +481,7 @@ bool CheckVulkanCompatibilities(
+@@ -474,7 +474,7 @@ bool CheckVulkanCompatibilities(
      }
    }
  

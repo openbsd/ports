@@ -1,7 +1,7 @@
 Index: third_party/crabbyavif/BUILD.gn
 --- third_party/crabbyavif/BUILD.gn.orig
 +++ third_party/crabbyavif/BUILD.gn
-@@ -197,12 +197,11 @@ rust_static_library("crabbyavif") {
+@@ -198,12 +198,11 @@ rust_static_library("crabbyavif") {
      "dav1d",
      "libyuv",
      "capi",

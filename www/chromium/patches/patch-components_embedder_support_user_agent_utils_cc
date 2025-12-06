@@ -47,7 +47,7 @@ Index: components/embedder_support/user_agent_utils.cc
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -873,6 +876,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -868,6 +871,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

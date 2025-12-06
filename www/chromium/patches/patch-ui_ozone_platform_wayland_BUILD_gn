@@ -1,0 +1,11 @@
+Index: ui/ozone/platform/wayland/BUILD.gn
+--- ui/ozone/platform/wayland/BUILD.gn.orig
++++ ui/ozone/platform/wayland/BUILD.gn
+@@ -246,7 +246,6 @@ source_set("wayland") {
+     "//mojo/public/cpp/system",
+     "//skia",
+     "//third_party/angle:includes",
+-    "//third_party/libsync",
+     "//third_party/wayland:wayland_client",
+     "//third_party/wayland:wayland_cursor",
+     "//third_party/wayland:wayland_egl",
