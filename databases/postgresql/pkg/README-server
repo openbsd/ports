@@ -57,17 +57,19 @@ Restart PostgreSQL to allow these changes to take effect.
 Tuning for busy servers
 =======================
 The default sizes in the GENERIC kernel for SysV semaphores are not
-large enough for PostgreSQL to use the default max_connections
-configuration value of 100, so PostgreSQL will use a smaller than
-default max_connections if you do not increase the limits.  Adding the
-following in /etc/sysctl.conf will be reasonable for many systems:
+large enough for PostgreSQL.  Adding the following in /etc/sysctl.conf
+should allow PostgreSQL to start:
 
 	kern.seminfo.semmni=256
 	kern.seminfo.semmns=2048
 
+While you can start PostgreSQL with smaller limits, it's probably
+not wise unless you are very resource constrained.
+
 You may also want to tune the max_connections value in the
 postgresql.conf file to increase the number of connections to the
-backend.
+backend.  However, for busy servers with many connections, these
+limits may need to be increased further.
 
 By default, the _postgresql user, and so the postmaster and backend
 processes run in the login(1) class of "postgresql". On a busy server,
@@ -77,10 +79,6 @@ more memory, etc.
 
 The capability database file is located at /etc/login.conf.d/postgresql
  
-For more than about 250 connections, these numbers should be
-increased. Please report any changes and experiences to the package
-maintainers so that we can update this file for future versions.
-
 Upgrade Howto (for a major upgrade)
 ===================================
 If you didn't install PostgreSQL by following this README,
