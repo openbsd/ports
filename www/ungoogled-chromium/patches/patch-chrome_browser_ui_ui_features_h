@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.h
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -63,7 +63,7 @@ enum class PdfInfoBarTrigger { kPdfLoad = 0, kStartup 
+@@ -61,7 +61,7 @@ enum class PdfInfoBarTrigger { kPdfLoad = 0, kStartup 
  BASE_DECLARE_FEATURE_PARAM(PdfInfoBarTrigger, kPdfInfoBarTrigger);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/ui_features.h
  // When enabled, user may see the session restore UI flow.
  BASE_DECLARE_FEATURE(kSessionRestoreInfobar);
  
-@@ -345,7 +345,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+@@ -366,7 +366,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

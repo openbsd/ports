@@ -1,7 +1,7 @@
 Index: components/device_signals/core/common/signals_features.cc
 --- components/device_signals/core/common/signals_features.cc.orig
 +++ components/device_signals/core/common/signals_features.cc
-@@ -51,7 +51,7 @@ bool IsDetectedAgentSignalCollectionEnabled() {
+@@ -61,7 +61,7 @@ bool IsSystemSignalCollectionImprovementEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

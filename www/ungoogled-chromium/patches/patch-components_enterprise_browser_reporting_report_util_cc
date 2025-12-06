@@ -1,7 +1,7 @@
 Index: components/enterprise/browser/reporting/report_util.cc
 --- components/enterprise/browser/reporting/report_util.cc.orig
 +++ components/enterprise/browser/reporting/report_util.cc
-@@ -166,7 +166,7 @@ std::string GetSecuritySignalsInReport(
+@@ -167,7 +167,7 @@ std::string GetSecuritySignalsInReport(
      signals_dict.Set("antivirus_info", std::move(anti_virus_list));
  
      signals_dict.Set("hotfixes", RepeatedFieldptrToList(os_report.hotfixes()));

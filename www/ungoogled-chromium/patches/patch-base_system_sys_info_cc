@@ -1,7 +1,7 @@
 Index: base/system/sys_info.cc
 --- base/system/sys_info.cc.orig
 +++ base/system/sys_info.cc
-@@ -222,7 +222,7 @@ std::string SysInfo::SocManufacturer() {
+@@ -233,7 +233,7 @@ std::string SysInfo::SocManufacturer() {
  #endif
  
  void SysInfo::GetHardwareInfo(base::OnceCallback<void(HardwareInfo)> callback) {

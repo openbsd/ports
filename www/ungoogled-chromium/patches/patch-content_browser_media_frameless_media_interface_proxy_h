@@ -10,7 +10,7 @@ Index: content/browser/media/frameless_media_interface_proxy.h
  #include "media/mojo/mojom/video_decoder.mojom.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -98,7 +98,7 @@ class FramelessMediaInterfaceProxy final
+@@ -96,7 +96,7 @@ class FramelessMediaInterfaceProxy final
    // Connections to the renderer.
    mojo::ReceiverSet<media::mojom::InterfaceFactory> receivers_;
  
