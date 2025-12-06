@@ -1,6 +1,6 @@
 COMMENT =	distribution of modules to handle locale codes
 
-DISTNAME =	Locale-Codes-3.85
+DISTNAME =	Locale-Codes-3.86
 
 CATEGORIES =	devel
 
@@ -8,6 +8,8 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
+CPAN_AUTHOR =		SBECK
 
 MAKE_ENV =		TEST_POD=1 RELEASE_TESTING=1
 
