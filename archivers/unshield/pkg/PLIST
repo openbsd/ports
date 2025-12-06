@@ -1,5 +1,9 @@
 @bin bin/unshield
 include/libunshield.h
+lib/cmake/
+lib/cmake/unshield/
+lib/cmake/unshield/unshieldConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/unshield/unshieldConfig.cmake
 @lib lib/libunshield.so.${LIBunshield_VERSION}
 lib/pkgconfig/libunshield.pc
 @man man/man1/unshield.1

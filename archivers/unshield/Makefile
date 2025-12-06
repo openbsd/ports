@@ -2,11 +2,11 @@ COMMENT=	extract files from InstallShield CAB archives
 
 GH_ACCOUNT=	twogood
 GH_PROJECT=	unshield
-GH_TAGNAME=	1.5.1
+GH_TAGNAME=	1.6.2
 
 CATEGORIES=	archivers
 
-SHARED_LIBS+=	unshield	2.2
+SHARED_LIBS+=	unshield	3.0
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
