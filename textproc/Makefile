@@ -18,6 +18,7 @@
      SUBDIR += aspell
      SUBDIR += bibelot
      SUBDIR += bibtex2html
+     SUBDIR += bibtool
      SUBDIR += boust
      SUBDIR += c2html
      SUBDIR += calibre
