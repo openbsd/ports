@@ -1,6 +1,8 @@
+# octeon: ERROR Facter::InternalFactManager - unable to resolve type 'size_t'
+# https://github.com/OpenVoxProject/openfact/issues/47
+
 COMMENT =		system inventory tool
-DISTNAME =		openfact-5.1.0
-REVISION =		1
+DISTNAME =		openfact-5.2.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/OpenVoxProject/openfact/

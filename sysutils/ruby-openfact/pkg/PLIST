@@ -404,6 +404,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/os/selinux/current_mode.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/os/selinux/enabled.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/os/selinux/enforced.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/os/selinux/policy_version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/os/support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/partitions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/path.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processor.rb
