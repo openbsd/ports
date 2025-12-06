@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	Zigbee to MQTT bridge
 
-V=		2.6.2
+V=		2.7.0
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
