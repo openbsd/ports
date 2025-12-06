@@ -1,11 +1,13 @@
 COMMENT =	Perl unit testing framework
 
-DISTNAME =	Test-Unit-0.27
+DISTNAME =	Test-Unit-0.28
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		RJBS
 
 MODULES =		cpan
 
