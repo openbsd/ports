@@ -1,7 +1,7 @@
 COMMENT =	command-line Kiwix tools
 
 KIWIX_PROJECT =	kiwix-tools
-V =		3.8.0
+V =		3.8.1
 
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
