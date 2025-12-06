@@ -1250,38 +1250,34 @@ ${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/locales/en/
 ${GEM_LIB}/gems/${DISTNAME}/locales/en/puppet.po
 ${GEM_LIB}/gems/${DISTNAME}/locales/puppet.pot
-@mandir ${GEM_LIB}/gems/${DISTNAME}/man/
-${GEM_LIB}/gems/${DISTNAME}/man/man5/
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man5/puppet.conf.5
-${GEM_LIB}/gems/${DISTNAME}/man/man8/
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-agent.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-apply.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-catalog.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-config.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-describe.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-device.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-doc.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-epp.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-facts.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-filebucket.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-generate.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-help.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-lookup.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-module.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-node.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-parser.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-plugin.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-report.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-resource.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-script.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-ssl.8
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet.8
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/build.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/cleanup.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/promote.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/upload.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/vox.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/
+@man man/man5/puppet.conf.5
+@man man/man8/puppet-agent.8
+@man man/man8/puppet-apply.8
+@man man/man8/puppet-catalog.8
+@man man/man8/puppet-config.8
+@man man/man8/puppet-describe.8
+@man man/man8/puppet-device.8
+@man man/man8/puppet-doc.8
+@man man/man8/puppet-epp.8
+@man man/man8/puppet-facts.8
+@man man/man8/puppet-filebucket.8
+@man man/man8/puppet-generate.8
+@man man/man8/puppet-help.8
+@man man/man8/puppet-lookup.8
+@man man/man8/puppet-module.8
+@man man/man8/puppet-node.8
+@man man/man8/puppet-parser.8
+@man man/man8/puppet-plugin.8
+@man man/man8/puppet-report.8
+@man man/man8/puppet-resource.8
+@man man/man8/puppet-script.8
+@man man/man8/puppet-ssl.8
+@man man/man8/puppet.8
 share/doc/pkg-readmes/${PKGSTEM}

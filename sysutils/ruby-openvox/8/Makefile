@@ -1,5 +1,4 @@
-VERSION =		8.23.1
-REVISION =		0
+VERSION =		8.24.0
 
 RUN_DEPENDS =		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.13,<2 \
 			devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR}>=1,<2 \
@@ -18,5 +17,8 @@ pre-configure:
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb \
 		${WRKSRC}/lib/puppet/defaults.rb
+
+post-install:
+	 cd ${PREFIX} && rm -rf man/ && mv ${GEM_LIB}/gems/${DISTNAME}/man .
 
 .include <bsd.port.mk>
