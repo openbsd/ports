@@ -1,6 +1,6 @@
 COMMENT=		AWS SDK for Python
 
-MODPY_DISTV=		1.41.5
+MODPY_DISTV=		1.42.4
 DISTNAME=		boto3-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
@@ -20,6 +20,6 @@ MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-jmespath \
 			net/py-botocore=${MODPY_DISTV} \
-			net/py-s3transfer>=0.15.0,<0.16.0
+			net/py-s3transfer>=0.16.0,<0.17.0
 
 .include <bsd.port.mk>
