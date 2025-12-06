@@ -1,30 +1,32 @@
-COMMENT =		Python bindings for the Brotli compression library
+COMMENT=	Python bindings for the Brotli compression library
 
-MODPY_DISTV =	1.1.0
-DISTNAME =		Brotli-${MODPY_DISTV}
-PKGNAME =		py-brotli-${MODPY_DISTV}
-REVISION =		1
+MODPY_DISTV=	1.2.0
+DISTNAME=	brotli-${MODPY_DISTV}
+PKGNAME=	py-brotli-${MODPY_DISTV}
 
-CATEGORIES =		archivers
+# rename to avoid conflict with archivers/brotli
+DISTFILES=	pypi-{}brotli-${MODPY_DISTV}.tar.gz
 
-HOMEPAGE =		https://github.com/google/brotli
+CATEGORIES=	archivers
+
+HOMEPAGE=	https://github.com/google/brotli
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 # C++
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-WANTLIB +=		${COMPILER_LIBCXX} m
+MODULES=	lang/python
 
-MODULES =		lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS= python/
+BUILD_DEPENDS=	devel/py-pkgconfig
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	python/
-
-# Tests aren't included in 1.0.9 tarball (even the github tarball,
-# although they are in the repo?!), but can be copied in (tests/ and
-# python/tests/).
+# not yet; archivers/brotli is old
+#MAKE_ENV=	USE_SYSTEM_BROTLI=1
+#LIB_DEPENDS=	archivers/brotli
+#WANTLIB=	brotlicommon brotlidec brotlienc
 
 .include <bsd.port.mk>
