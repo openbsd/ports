@@ -1,7 +1,6 @@
 COMMENT=	determine appropriate platform-specific directories
 
-MODPY_DISTV=	4.5.0
-REVISION=	0
+MODPY_DISTV=	4.5.1
 DISTNAME=	platformdirs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
