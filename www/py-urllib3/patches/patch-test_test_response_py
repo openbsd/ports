@@ -1,0 +1,35 @@
+Fixed a security issue where an attacker could compose an HTTP response with
+virtually unlimited links in the ``Content-Encoding`` header, potentially
+leading to a denial of service (DoS) attack by exhausting system resources
+during decoding. The number of allowed chained encodings is now limited to 5.
+
+From 24d7b67eac89f94e11003424bcf0d8f7b72222a8 Mon Sep 17 00:00:00 2001
+From: Illia Volochii <illia.volochii@gmail.com>
+Date: Fri, 5 Dec 2025 16:41:33 +0200
+Subject: [PATCH] Merge commit from fork
+
+* Add a hard-coded limit for the decompression chain
+
+* Reuse new list
+
+Index: test/test_response.py
+--- test/test_response.py.orig
++++ test/test_response.py
+@@ -295,6 +295,17 @@ class TestResponse(object):
+ 
+         assert r.data == b"foo"
+ 
++
++    def test_read_multi_decoding_too_many_links(self) -> None:
++        fp = BytesIO(b"foo")
++        with pytest.raises(
++            DecodeError, match="Too many content encodings in the chain: 6 > 5"
++        ):
++            HTTPResponse(
++                fp,
++                headers={"content-encoding": "gzip, deflate, br, zstd, gzip, deflate"},
++            )
++
+     def test_body_blob(self):
+         resp = HTTPResponse(b"foo")
+         assert resp.data == b"foo"
