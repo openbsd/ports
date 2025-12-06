@@ -1,18 +1,16 @@
 COMMENT =		east asian fonts for the noto font family
 
-NOTO_PROJECT =		cjk
+MODFONT_FAMILY =	noto-cjk
 
-V =			20240730
+MODFONT_VERSION =	20240730
 
-SITES.a =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
-SITES.b =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.003/
-DISTFILES.a =		01_NotoSansCJK-OTF-VF.zip
-DISTFILES.b = 		02_NotoSerifCJK-OTF-VF.zip
-DIST_SUBDIR =		noto-cjk-$V
+SITES.sans =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
+SITES.serif =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.003/
+DISTFILES.sans =	01_NotoSansCJK-OTF-VF.zip
+DISTFILES.serif = 	02_NotoSerifCJK-OTF-VF.zip
+DIST_SUBDIR =		noto-cjk-${MODFONT_VERSION}
 WRKDIST =		${WRKDIR}
 
-do-install:
-	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}
-	${INSTALL_DATA} ${WRKDIST}/Variable/OTC/*.ttc ${NOTO_INSTALLDIR}
+MODFONT_FONTFILES =	Variable/OTC/*.ttc
 
 .include <bsd.port.mk>

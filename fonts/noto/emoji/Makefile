@@ -1,16 +1,13 @@
 COMMENT =		emoji fonts for the noto font family
 
-NOTO_PROJECT =		emoji
+MODFONT_FAMILY =	noto-emoji
+
+MODFONT_VERSION =	2.051
+GH_ACCOUNT =		googlefonts
+GH_PROJECT =		noto-emoji
+GH_TAGNAME =		v${MODFONT_VERSION}
 EPOCH =			0
 
-V =			2.051
-GH_TAGNAME =		v$V
-
-pre-install:
-	rm ${WRKDIST}/fonts/NotoColorEmoji_WindowsCompatible.ttf
-
-do-install:
-	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}
-	${INSTALL_DATA} ${WRKDIST}/fonts/NotoColorEmoji.ttf ${NOTO_INSTALLDIR}
+MODFONT_FONTFILES =	fonts/NotoColorEmoji.ttf
 
 .include <bsd.port.mk>
