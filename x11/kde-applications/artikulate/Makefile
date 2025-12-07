@@ -1,11 +1,10 @@
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  artikulatecore            4.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  3.0 # 0.0
-SHARED_LIBS +=  artikulatesound           3.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6I18n KF6ItemModels
@@ -19,6 +18,7 @@ MODKF6_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 MODKDE_DESKTOP_FILE = yes
 
+BUILD_DEPENDS = x11/qt6/qtmultimedia
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/karchive \
 		devel/kf6/kconfig \
