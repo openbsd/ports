@@ -1,6 +1,6 @@
 COMMENT =	parse regular expressions
 
-DISTNAME =	PPIx-Regexp-0.088
+DISTNAME =	PPIx-Regexp-0.091
 CPAN_AUTHOR =	WYANT
 
 CATEGORIES =	textproc
