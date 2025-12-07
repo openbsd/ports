@@ -94,7 +94,6 @@ include/git2/tree.h
 include/git2/types.h
 include/git2/version.h
 include/git2/worktree.h
-lib/cmake/
 lib/cmake/libgit2/
 lib/cmake/libgit2/libgit2Config.cmake
 lib/cmake/libgit2/libgit2ConfigVersion.cmake
