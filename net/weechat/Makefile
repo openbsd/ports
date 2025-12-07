@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.7.2
+V=		4.8.1
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -45,6 +45,7 @@ MODULES=	devel/cmake \
 		lang/tcl
 
 MODTCL_VERSION=	8.6
+MODLUA_VERSION=	5.3
 
 MODLUA_RUNDEP=	No
 MODPY_RUNDEP=	No
