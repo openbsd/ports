@@ -4,7 +4,7 @@ inline 'using Fn = std::function<Signature>;' to fix the build
 Index: Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp
 --- Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp
-@@ -118,7 +118,7 @@ void ResolveCurrentExactLocation(Fn<void(Core::GeoLoca
+@@ -92,7 +92,7 @@ void ResolveCurrentExactLocation(Fn<void(Core::GeoLoca
  				.accuracy = Core::GeoLocationAccuracy::Exact,
  			});
  		}),
@@ -13,12 +13,3 @@ Index: Telegram/SourceFiles/platform/linux/current_geo_location_linux.cpp
  }
  
  void ResolveLocationAddress(
-@@ -193,7 +193,7 @@ void ResolveLocationAddress(
- 
- 			(*callback)({ .name = checked.join(u", "_q) });
- 		}),
--		new Fn(callback));
-+		new std::function(callback));
- }
- 
- } // namespace Platform
