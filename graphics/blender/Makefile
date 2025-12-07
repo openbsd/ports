@@ -1,4 +1,3 @@
-FETCH_PACKAGES=No
 # powerpc - tbb 64-bit atomics
 # sparc64 - openexr linking failure
 # 32-bit archs - static assert in cuda that a pointer is the same size as ULL
@@ -10,7 +9,7 @@ COMMENT =	3D creation software
 VERSION =	4.5.3
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
