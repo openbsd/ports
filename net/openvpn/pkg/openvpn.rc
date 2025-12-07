@@ -1,5 +1,7 @@
 #!/bin/ksh
 
+# XXX "--daemon" must kept at the end of $daemon
+# See pkg-readmes/openvpn
 daemon="${TRUEPREFIX}/sbin/openvpn --daemon"
 
 . /etc/rc.d/rc.subr

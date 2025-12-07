@@ -14,7 +14,17 @@ Using the openvpn rc script
 # rcctl enable openvpn
 # rcctl set openvpn flags '--config /etc/openvpn/server.conf'
 
+To avoid ambiguity in options handling, always explicitly
+specify --config before the path to your configuration file.
+
 To handle multiple openvpn instances see EXAMPLES in rcctl(8).
+
+The openvpn rc script always passes --daemon before the user-selectable
+flags.  This breaks the effets of 'daemon <custom-progname>' in
+configuration files.  To work around this, you can pass an optional
+<custom-progname> at the start of the user-selectable flags:
+
+# rcctl set openvpn flags 'openvpn-custom --config /etc/openvpn/custom.conf'
 
 Using an /etc/hostname.* file without persist-tun
 -------------------------------------------------
