@@ -1,6 +1,6 @@
 COMMENT=	fast Python implementation of JSON schema
 
-MODPY_DISTV=	2.21.1
+MODPY_DISTV =	2.21.2
 DISTNAME=	fastjsonschema-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
