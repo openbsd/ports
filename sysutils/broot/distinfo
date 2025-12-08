@@ -1,4 +1,4 @@
-SHA256 (broot-1.53.0.tar.gz) = zWdagSIqyCojh3gyWlHj8UuXHfMs7t+buJLzodAS4Q4=
+SHA256 (broot-1.54.0.tar.gz) = kviMYFHI7XJ21DpKtFqs/nsN0dZbNQPUW6H52tXpXPE=
 SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo=
 SHA256 (cargo/ahash-0.8.12.tar.gz) = WhXxec1gxFhLioxZaSeq3EYuJ/LKcMBOAHGWSnO6enU=
 SHA256 (cargo/aho-corasick-1.1.4.tar.gz) = 3dMaEwQnwnUY3yZpQ6UwjtktSyJsxjn1qPEAKBYXQwE=
@@ -177,7 +177,7 @@ SHA256 (cargo/lazy-regex-3.4.2.tar.gz) = GRiY4X3e4Z5gvMs5RaoCM56B7dSoxQ4h/U1Izez
 SHA256 (cargo/lazy-regex-proc_macros-3.4.2.tar.gz) = w13IsNqD0alQfhISLIDepxqcfGEwFDRzkkg6g+pZPgQ=
 SHA256 (cargo/lazy_static-1.5.0.tar.gz) = u9K8tMlj8t2uBqLvx+nzWRMSRzxQxmheHymAaDFuZv4=
 SHA256 (cargo/lebe-0.5.3.tar.gz) = enmjMypmCUgNfQyeq5V7ymtFW5G7hOZtGfX/ZilLhbg=
-SHA256 (cargo/lfs-core-0.16.2.tar.gz) = S6gcsXYPMZsjIuTlgDKKn9GAiGCoSN23cOt3nyxfAus=
+SHA256 (cargo/lfs-core-0.17.0.tar.gz) = wHRRBc3k6LFmuWqebbneQchpRUD7eHAYYHKXudn/b9A=
 SHA256 (cargo/libc-0.2.177.tar.gz) = KHSir0eiMlwgAabm+tmxalO4AhArUoFjiFFxz5KxWXY=
 SHA256 (cargo/libfuzzer-sys-0.4.10.tar.gz) = UDcZDh9wy+71Zb0mdZkkKSb3JNO4qfUQ/X4LVAz6RAQ=
 SHA256 (cargo/libgit2-sys-0.18.2+1.9.1.tar.gz) = HEL+A98r08U6OpxzF62R2AyBzR+wyuyNfMTNK/oQwiI=
@@ -464,7 +464,7 @@ SHA256 (cargo/zune-png-0.4.10.tar.gz) = fSnAhXacbynv/qiQ8JMSCsAZN1/ceJ0qSWuoupbH
 SHA256 (cargo/zune-ppm-0.4.0.tar.gz) = BSfmRSM+OzSxCqV2tLFW5g9S8VsB+QZ4nrgg9+9LJ3Q=
 SHA256 (cargo/zune-psd-0.4.0.tar.gz) = qxEnXWIYEyBrpMIPTsZH6rBzPA/HHDJ20SOCKf2DTUk=
 SHA256 (cargo/zune-qoi-0.4.10.tar.gz) = 3FmLZynt5UZBPLUHfY3bg7RgVaFW1cw8Ylz+EiSE6ck=
-SIZE (broot-1.53.0.tar.gz) = 15379873
+SIZE (broot-1.54.0.tar.gz) = 13736739
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.4.tar.gz) = 184015
@@ -643,7 +643,7 @@ SIZE (cargo/lazy-regex-3.4.2.tar.gz) = 9028
 SIZE (cargo/lazy-regex-proc_macros-3.4.2.tar.gz) = 6813
 SIZE (cargo/lazy_static-1.5.0.tar.gz) = 14025
 SIZE (cargo/lebe-0.5.3.tar.gz) = 9439
-SIZE (cargo/lfs-core-0.16.2.tar.gz) = 25701
+SIZE (cargo/lfs-core-0.17.0.tar.gz) = 25832
 SIZE (cargo/libc-0.2.177.tar.gz) = 792045
 SIZE (cargo/libfuzzer-sys-0.4.10.tar.gz) = 133968
 SIZE (cargo/libgit2-sys-0.18.2+1.9.1.tar.gz) = 1856057
