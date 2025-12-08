@@ -19,6 +19,7 @@ include/pj/argparse.h
 include/pj/array.h
 include/pj/assert.h
 include/pj/atomic_queue.h
+include/pj/atomic_slist.h
 include/pj/compat/
 include/pj/compat/assert.h
 include/pj/compat/cc_armcc.h
@@ -35,6 +36,7 @@ include/pj/compat/limits.h
 include/pj/compat/m_alpha.h
 include/pj/compat/m_armv4.h
 include/pj/compat/m_auto.h
+include/pj/compat/m_auto.h.cm
 include/pj/compat/m_auto.h.in
 include/pj/compat/m_i386.h
 include/pj/compat/m_m68k.h
@@ -43,6 +45,7 @@ include/pj/compat/m_sparc.h
 include/pj/compat/m_x86_64.h
 include/pj/compat/malloc.h
 include/pj/compat/os_auto.h
+include/pj/compat/os_auto.h.cm
 include/pj/compat/os_auto.h.in
 include/pj/compat/os_darwinos.h
 include/pj/compat/os_linux.h
@@ -149,6 +152,7 @@ include/pjmedia-codec/audio_codecs.h
 include/pjmedia-codec/bcg729.h
 include/pjmedia-codec/config.h
 include/pjmedia-codec/config_auto.h
+include/pjmedia-codec/config_auto.h.cm
 include/pjmedia-codec/config_auto.h.in
 include/pjmedia-codec/ffmpeg_vid_codecs.h
 include/pjmedia-codec/g722.h
@@ -181,6 +185,7 @@ include/pjmedia-videodev/videodev_imp.h
 include/pjmedia.h
 include/pjmedia/alaw_ulaw.h
 include/pjmedia/audiodev.h
+include/pjmedia/av_sync.h
 include/pjmedia/avi.h
 include/pjmedia/avi_stream.h
 include/pjmedia/bidirectional.h
@@ -190,6 +195,7 @@ include/pjmedia/codec.h
 include/pjmedia/conference.h
 include/pjmedia/config.h
 include/pjmedia/config_auto.h
+include/pjmedia/config_auto.h.cm
 include/pjmedia/config_auto.h.in
 include/pjmedia/converter.h
 include/pjmedia/delaybuf.h
@@ -232,6 +238,7 @@ include/pjmedia/transport_ice.h
 include/pjmedia/transport_loop.h
 include/pjmedia/transport_srtp.h
 include/pjmedia/transport_udp.h
+include/pjmedia/txt_stream.h
 include/pjmedia/types.h
 include/pjmedia/vid_codec.h
 include/pjmedia/vid_codec_util.h
@@ -283,6 +290,7 @@ include/pjsip-ua/sip_100rel.h
 include/pjsip-ua/sip_inv.h
 include/pjsip-ua/sip_regc.h
 include/pjsip-ua/sip_replaces.h
+include/pjsip-ua/sip_siprec.h
 include/pjsip-ua/sip_timer.h
 include/pjsip-ua/sip_xfer.h
 include/pjsip.h
@@ -292,6 +300,7 @@ include/pjsip/sip_auth_aka.h
 include/pjsip/sip_auth_msg.h
 include/pjsip/sip_auth_parser.h
 include/pjsip/sip_autoconf.h
+include/pjsip/sip_autoconf.h.cm
 include/pjsip/sip_autoconf.h.in
 include/pjsip/sip_config.h
 include/pjsip/sip_dialog.h
