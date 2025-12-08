@@ -2,13 +2,10 @@ COMMENT =	runtime module handling
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Module-Runtime-0.016
+DISTNAME =	Module-Runtime-0.018
 CATEGORIES =	devel
-REVISION =	0
 
-# same as perl
+# perl
 PERMIT_PACKAGE =	Yes
-
-CONFIGURE_STYLE =	modbuild
 
 .include <bsd.port.mk>
