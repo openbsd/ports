@@ -1,0 +1,5 @@
+This project was initially a part of lxml. Because HTML cleaner is designed as 
+blocklist-based, many reports about possible security vulnerabilities were 
+filed for lxml and that make the project problematic for security-sensitive 
+environments. Therefore we decided to extract the problematic part to a 
+separate project.
