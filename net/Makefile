@@ -575,6 +575,7 @@
      SUBDIR += py-boto3
      SUBDIR += py-botocore
      SUBDIR += py-cares
+     SUBDIR += py-cbor2
      SUBDIR += py-curl
      SUBDIR += py-cymruwhois
      SUBDIR += py-dns			# py2
