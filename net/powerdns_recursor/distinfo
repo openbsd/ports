@@ -94,7 +94,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
-SHA256 (pdns-recursor-5.3.1.tar.xz) = p7Yz1LXaO18U1Rp44h4X8TNMgozpb8zN2XzXqq8Uy9U=
+SHA256 (pdns-recursor-5.3.3.tar.xz) = 6+60VL35d6fzlH8X86SyoXo3pnPbH+sPLxVrZ7k6Ayk=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/anstyle-1.0.10.tar.gz) = 15725
@@ -191,4 +191,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
-SIZE (pdns-recursor-5.3.1.tar.xz) = 1362088
+SIZE (pdns-recursor-5.3.3.tar.xz) = 1362768
