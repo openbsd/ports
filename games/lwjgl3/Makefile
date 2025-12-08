@@ -4,13 +4,17 @@ ONLY_FOR_ARCHS= amd64 aarch64
 
 V =		3.3.1.1
 DISTNAME =	lwjgl3-${V}
+REVISION =	0
 
 KOTLIN_V =	1.6.20-M1
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=	-Dx86=1
-.elif ${MACHINE_ARCH} == "aarch64"
+.else
 PKG_ARGS +=	-Dx86=0
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
 MAKE_ENV+=	LWJGL_BUILD_ARCH=arm64
 MAKE_ENV +=	ANT_OPTS="-Xmx1600M"
 .endif
