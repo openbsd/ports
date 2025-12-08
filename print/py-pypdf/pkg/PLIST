@@ -115,15 +115,12 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${M
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_fixed_width_page.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_font.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_font.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_font_widths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_font_widths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_text_state_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_text_state_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_text_state_params.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/${MODPY_PYCACHE}_text_state_params.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/_fixed_width_page.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/_font.py
-lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/_font_widths.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/_text_state_manager.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_layout_mode/_text_state_params.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_text_extraction/_text_extractor.py
