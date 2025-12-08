@@ -1,7 +1,6 @@
 COMMENT =	ELF related utils for ELF 32/64 binaries
 
-DISTNAME =	pax-utils-1.3.9
-EXTRACT_SUFX =	.tar.xz
+DISTNAME =	pax-utils-1.3.10
 
 CATEGORIES =	devel
 
@@ -17,14 +16,15 @@ COMPILER_LANGS =	c
 
 WANTLIB +=	c
 
-SITES =		https://dev.gentoo.org/~sam/distfiles/app-misc/pax-utils/
+SITES =		https://cgit.gentoo.org/proj/pax-utils.git/snapshot/
 
 MODULES =	devel/meson
+
+BUILD_DEPENDS =		textproc/xmlto
 
 RUN_DEPENDS =		shells/bash
 
 CONFIGURE_ARGS =	-Dlddtree_implementation=sh \
-			-Dbuild_manpages=disabled \
 			-Duse_libcap=disabled \
 			-Duse_fuzzing=false
 
