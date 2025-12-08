@@ -3,9 +3,9 @@ COMMENT =	API and tools for decoding and encoding GRIB and BUFR
 # "ecCodes only supports 64 bit platforms"
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
-DISTNAME =	eccodes-2.44.66-Source
-EXTRACT_SUFX =	-PRE-RELEASE.tar.gz
-PKGNAME =	eccodes-2.44pre66
+VERSION =	2.44.0
+DISTNAME =	eccodes-$(VERSION)-Source
+PKGNAME =	eccodes-$(VERSION)
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -29,10 +29,7 @@ PERMIT_PACKAGE = Yes
 WANTLIB += ${COMPILER_LIBCXX} aec c jasper jpeg m netcdf openjp2
 
 # for releases (id relates to project and doesn't vary by version)
-#SITES =	https://confluence.ecmwf.int/download/attachments/45757960/
-
-# prerelease
-SITES =		https://confluence.ecmwf.int/download/attachments/293728047/
+SITES =	https://confluence.ecmwf.int/download/attachments/45757960/
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c c++ fortran
@@ -46,9 +43,8 @@ LIB_DEPENDS =	archivers/libaec \
 		graphics/openjp2 \
 		math/netcdf
 
-# XXX remove DISABLE_OS_CHECK when OpenBSD is added upstream
-CONFIGURE_ARGS = -DDISABLE_OS_CHECK=ON \
-		-DENABLE_NETCDF=ON \
+SEPARATE_BUILD = Yes
+CONFIGURE_ARGS = -DENABLE_NETCDF=ON \
 		-DENABLE_AEC=ON \
 		-DENABLE_MEMFS=ON
 
