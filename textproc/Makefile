@@ -459,6 +459,7 @@
      SUBDIR += py-lark
      SUBDIR += py-license-expression
      SUBDIR += py-lxml
+     SUBDIR += py-lxml-html-clean
      SUBDIR += py-markdown
      SUBDIR += py-markdown-it
      SUBDIR += py-markups
@@ -493,6 +494,7 @@
      SUBDIR += py-recommonmark
      SUBDIR += py-referencing
      SUBDIR += py-regress
+     SUBDIR += py-rjsmin
      SUBDIR += py-roman-numerals
      SUBDIR += py-rst2ansi
      SUBDIR += py-ruamel.yaml
