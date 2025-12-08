@@ -1,6 +1,6 @@
 COMMENT =		console-based visual debugger for Python
 
-MODPY_DISTV =		2025.1.3
+MODPY_DISTV =		2025.1.5
 DISTNAME =		pudb-${MODPY_DISTV}
 PKGNAME =		py-pudb-${MODPY_DISTV}
 
