@@ -187,6 +187,7 @@
      SUBDIR += paulstretch
      SUBDIR += pavucontrol
      SUBDIR += pcaudiolib
+     SUBDIR += pd
      SUBDIR += pianobar
      SUBDIR += picard
      SUBDIR += pithos
