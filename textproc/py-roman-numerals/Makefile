@@ -1,7 +1,8 @@
 COMMENT=	manipulate well-formed Roman nunerals
 
 MODPY_DISTV=	3.1.0
-DISTNAME=	roman_numerals_py-${MODPY_DISTV}
+REVISION=	0
+DISTNAME=	roman_numerals-${MODPY_DISTV}
 PKGNAME=	py-roman-numerals-${MODPY_DISTV}
 
 CATEGORIES=	textproc
