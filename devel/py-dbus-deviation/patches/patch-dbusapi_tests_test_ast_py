@@ -1,0 +1,25 @@
+From 2ee6b32cc893eeda74a67593efc80f603b74a73c Mon Sep 17 00:00:00 2001
+From: Steve Kowalik <steven@wedontsleep.org>
+Date: Mon, 22 Jan 2024 12:41:49 +1100
+Subject: [PATCH] Use self.assertEqual() everywhere
+
+self.assertEquals() has been deprecated since 3.1 and was finally
+removed in Python 3.12. Move with the times and use the correct method
+name.
+
+Index: dbusapi/tests/test_ast.py
+--- dbusapi/tests/test_ast.py.orig
++++ dbusapi/tests/test_ast.py
+@@ -227,9 +227,9 @@ class TestAstTraversal(unittest.TestCase):
+         })
+ 
+         children = [node for node in iface.walk()]
+-        self.assertEquals(len(children), 2)
+-        self.assertEquals(children[0], method)
+-        self.assertEquals(children[1], annotation)
++        self.assertEqual(len(children), 2)
++        self.assertEqual(children[0], method)
++        self.assertEqual(children[1], annotation)
+ 
+ 
+ class TestAstSignatures(unittest.TestCase):

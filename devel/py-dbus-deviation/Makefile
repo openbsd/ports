@@ -3,7 +3,7 @@ COMMENT=	D-Bus introspection XML parser and processor
 MODPY_DISTV=	0.6.1
 DISTNAME=	dbus-deviation-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	devel
 
