@@ -1,8 +1,7 @@
 COMMENT =		synchronize calendars and contacts
 
-MODPY_DISTV =		0.19.3
+MODPY_DISTV =		0.20.0
 DISTNAME =		vdirsyncer-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		productivity
 
@@ -21,8 +20,7 @@ MODPY_PYBUILD =		setuptools_scm
 BUILD_DEPENDS =		textproc/py-sphinx \
 			${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/py-atomicwrites \
-			www/py-aiohttp \
+RUN_DEPENDS =		www/py-aiohttp \
 			www/py-aiohttp-oauthlib \
 			devel/py-aiostream \
 			devel/py-click-log>=0.3.0 \
