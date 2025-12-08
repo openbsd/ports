@@ -2,15 +2,14 @@ PORTROACH=		ignore:1
 
 COMMENT=		all-in-one management software
 
-MV=			16.0
-SV=			20230929
+MV=			19.0
+SV=			20251208
 V=			${MV}.${SV}
 
 DISTNAME=		odoo_${V}
 
 PKGNAME=		${DISTNAME:S/_/-/}
 CATEGORIES=		www
-REVISION=		2
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
@@ -34,23 +33,28 @@ RUN_DEPENDS=		converters/py-html2text \
 			devel/py-decorator \
 			devel/py-gevent \
 			devel/py-mock \
+			devel/py-setuptools \
 			devel/py-stdnum \
 			devel/py-xlsxwriter \
 			graphics/py-Pillow \
 			graphics/py-dot \
 			graphics/py-qrcode \
 			lang/node \
+			net/py-cbor2 \
 			print/py-reportlab \
 			security/py-openssl \
 			security/py-passlib \
+			security/py-asn1crypto \
 			sysutils/py-psutil \
 			telephony/py-phonenumbers \
 			textproc/py-PyPDF2 \
 			textproc/py-chardet \
 			textproc/py-docutils \
 			textproc/py-lxml \
+			textproc/py-lxml-html-clean \
 			textproc/py-ofxparse \
 			textproc/py-polib \
+			textproc/py-rjsmin \
 			textproc/py-vobject \
 			textproc/py-xlwt \
 			textproc/py-yaml \

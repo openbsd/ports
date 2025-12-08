@@ -1,0 +1,47 @@
+odoo depends on an old version of the goip2 module so let's just neuter it
+
+Index: odoo/http.py
+--- odoo/http.py.orig
++++ odoo/http.py
+@@ -252,7 +252,31 @@ DEFAULT_MAX_CONTENT_LENGTH = 128 * 1024 * 1024  # 128M
+ if geoip2:
+     GEOIP_EMPTY_COUNTRY = geoip2.models.Country({})
+     GEOIP_EMPTY_CITY = geoip2.models.City({})
++else:
++    class _Country():
++        def __init__(self, raw_response, locales=None):
++            if locales is None:
++                locales = ['en']
++            self._locales = locales
++            self.continent = {}
++            self.country = {}
++            self.registered_country = {}
++            self.represented_country = {}
++            self.maxmind = {}
++            self.traits = {}
++            self.raw = raw_response
+ 
++    class _City(_Country):
++        def __init__(self, raw_response, locales=None):
++            super(_City, self).__init__(raw_response, locales)
++            self.city = {}
++            self.location = {}
++            self.postal = {}
++            self.subdivisions = []
++
++    GEOIP_EMPTY_COUNTRY = _Country({})
++    GEOIP_EMPTY_CITY = _City({})
++
+ MISSING_CSRF_WARNING = """\
+ No CSRF validation token provided for path %r
+ 
+@@ -1370,6 +1394,9 @@ class GeoIP(collections.abc.Mapping):
+ 
+     # Old dict API, undocumented for now, will be deprecated some day
+     def __getitem__(self, item):
++        if not geoip2:
++            return None
++
+         if item == 'country_name':
+             return self.country_name
+ 

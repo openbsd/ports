@@ -1,7 +1,7 @@
 Index: odoo/service/server.py
 --- odoo/service/server.py.orig
 +++ odoo/service/server.py
-@@ -72,7 +72,7 @@ def memory_info(process):
+@@ -81,7 +81,7 @@ def memory_info(process):
      # psutil < 2.0 does not have memory_info, >= 3.0 does not have get_memory_info
      pmem = (getattr(process, 'memory_info', None) or process.get_memory_info)()
      # MacOSX allocates very large vms to all processes so we only monitor the rss usage.
@@ -10,7 +10,7 @@ Index: odoo/service/server.py
          return pmem.rss
      return pmem.vms
  
-@@ -1125,7 +1125,7 @@ class WorkerHTTP(Worker):
+@@ -1321,7 +1321,7 @@ class WorkerHTTP(Worker):
          # latencies & b/w saturation. This timeout is also essential to protect against accidental
          # DoS due to idle HTTP connections.
          sock_timeout = os.environ.get("ODOO_HTTP_SOCKET_TIMEOUT")
