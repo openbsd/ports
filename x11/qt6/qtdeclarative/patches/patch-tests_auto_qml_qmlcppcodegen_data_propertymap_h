@@ -1,0 +1,59 @@
+From 9c6b2b78e9076f1c2676aa0c41573db9ca480654 Mon Sep 17 00:00:00 2001
+From: Ulf Hermann <ulf.hermann@qt.io>
+Date: Tue, 02 Dec 2025 17:42:30 +0100
+Subject: [PATCH] QtQml: Invalidate fallback lookups after each call from AOT code
+
+Fallback property lookups are created for completely dynamic
+metaobjects. Anything about them may change between any two calls.
+
+Pick-to: 6.8 6.5
+Fixes: QTBUG-142331
+Change-Id: Ib732c37a6f27ab8105bea0eeae000af7eb9c36d7
+Reviewed-by: Sami Shalayel <sami.shalayel@qt.io>
+(cherry picked from commit 9af6d2d6d0046b3c8369e15eb4791957cdc7ab7b)
+Reviewed-by: Fabian Kosmale <fabian.kosmale@qt.io>
+
+Index: tests/auto/qml/qmlcppcodegen/data/propertymap.h
+--- tests/auto/qml/qmlcppcodegen/data/propertymap.h.orig
++++ tests/auto/qml/qmlcppcodegen/data/propertymap.h
+@@ -0,0 +1,40 @@
++// Copyright (C) 2025 The Qt Company Ltd.
++// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
++
++#ifndef PROPERTYMAP_H
++#define PROPERTYMAP_H
++
++#include <QtCore/qobject.h>
++#include <QtQml/qqml.h>
++#include <QtQml/qqmlpropertymap.h>
++
++class WithPropertyMap : public QObject
++{
++    Q_OBJECT
++    QML_ELEMENT
++    Q_PROPERTY(QQmlPropertyMap *map READ map NOTIFY mapChanged)
++public:
++    WithPropertyMap(QObject *parent = nullptr)
++        : QObject(parent)
++        , m_map(new QQmlPropertyMap(this))
++    {
++    }
++
++    QQmlPropertyMap *map() const { return m_map; }
++
++    void setProperties(const QVariantHash &properties)
++    {
++        delete m_map;
++        m_map = new QQmlPropertyMap(this);
++        m_map->insert(properties);
++        emit mapChanged();
++    }
++
++signals:
++    void mapChanged();
++
++private:
++    QQmlPropertyMap *m_map = nullptr;
++};
++
++#endif // PROPERTYMAP_H

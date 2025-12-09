@@ -1,0 +1,34 @@
+From 9c6b2b78e9076f1c2676aa0c41573db9ca480654 Mon Sep 17 00:00:00 2001
+From: Ulf Hermann <ulf.hermann@qt.io>
+Date: Tue, 02 Dec 2025 17:42:30 +0100
+Subject: [PATCH] QtQml: Invalidate fallback lookups after each call from AOT code
+
+Fallback property lookups are created for completely dynamic
+metaobjects. Anything about them may change between any two calls.
+
+Pick-to: 6.8 6.5
+Fixes: QTBUG-142331
+Change-Id: Ib732c37a6f27ab8105bea0eeae000af7eb9c36d7
+Reviewed-by: Sami Shalayel <sami.shalayel@qt.io>
+(cherry picked from commit 9af6d2d6d0046b3c8369e15eb4791957cdc7ab7b)
+Reviewed-by: Fabian Kosmale <fabian.kosmale@qt.io>
+
+Index: tests/auto/qml/qmlcppcodegen/data/CMakeLists.txt
+--- tests/auto/qml/qmlcppcodegen/data/CMakeLists.txt.orig
++++ tests/auto/qml/qmlcppcodegen/data/CMakeLists.txt
+@@ -26,6 +26,7 @@ set(cpp_sources
+     multiforeign.h
+     objectwithmethod.h
+     person.cpp person.h
++    propertymap.h
+     qmlusing.h
+     recursiveObject.h
+     refuseWrite.h
+@@ -279,6 +280,7 @@ set(qml_files
+     popContextAfterRet.qml
+     prefixedMetaType.qml
+     pressAndHoldButton.qml
++    propertyMap.qml
+     qmlUsing.qml
+     qtbug113150.qml
+     qtfont.qml

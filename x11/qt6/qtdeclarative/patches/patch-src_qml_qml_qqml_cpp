@@ -1,0 +1,79 @@
+From 9c6b2b78e9076f1c2676aa0c41573db9ca480654 Mon Sep 17 00:00:00 2001
+From: Ulf Hermann <ulf.hermann@qt.io>
+Date: Tue, 02 Dec 2025 17:42:30 +0100
+Subject: [PATCH] QtQml: Invalidate fallback lookups after each call from AOT code
+
+Fallback property lookups are created for completely dynamic
+metaobjects. Anything about them may change between any two calls.
+
+Pick-to: 6.8 6.5
+Fixes: QTBUG-142331
+Change-Id: Ib732c37a6f27ab8105bea0eeae000af7eb9c36d7
+Reviewed-by: Sami Shalayel <sami.shalayel@qt.io>
+(cherry picked from commit 9af6d2d6d0046b3c8369e15eb4791957cdc7ab7b)
+Reviewed-by: Fabian Kosmale <fabian.kosmale@qt.io>
+
+Index: src/qml/qml/qqml.cpp
+--- src/qml/qml/qqml.cpp.orig
++++ src/qml/qml/qqml.cpp
+@@ -1377,16 +1377,16 @@ struct FallbackPropertyQmlData
+ 
+ static FallbackPropertyQmlData findFallbackPropertyQmlData(QV4::Lookup *lookup, QObject *object)
+ {
++    // We've just initialized the lookup. So everything must be fine here.
++
+     QQmlData *qmlData = QQmlData::get(object);
+-    if (qmlData && qmlData->isQueuedForDeletion)
+-        return {qmlData, nullptr, PropertyResult::Deleted};
+ 
++    Q_ASSERT(!qmlData || !qmlData->isQueuedForDeletion);
+     Q_ASSERT(!QQmlData::wasDeleted(object));
+ 
+     const QMetaObject *metaObject
+             = reinterpret_cast<const QMetaObject *>(lookup->qobjectFallbackLookup.metaObject - 1);
+-    if (!metaObject || metaObject != object->metaObject())
+-        return {qmlData, nullptr, PropertyResult::NeedsInit};
++    Q_ASSERT(metaObject == object->metaObject());
+ 
+     return {qmlData, metaObject, PropertyResult::OK};
+ }
+@@ -2576,6 +2576,7 @@ bool AOTCompiledContext::loadScopeObjectPropertyLookup
+         break;
+     case QV4::Lookup::Call::ContextGetterScopeObjectPropertyFallback:
+         result = loadFallbackProperty(lookup, qmlScopeObject, target, this);
++        lookup->call = QV4::Lookup::Call::ContextGetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2607,6 +2608,7 @@ bool AOTCompiledContext::writeBackScopeObjectPropertyL
+         break;
+     case QV4::Lookup::Call::ContextGetterScopeObjectPropertyFallback:
+         result = writeBackFallbackProperty(lookup, qmlScopeObject, source);
++        lookup->call = QV4::Lookup::Call::ContextGetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2807,6 +2809,7 @@ bool AOTCompiledContext::getObjectLookup(uint index, Q
+         result = lookup->asVariant
+                 ? loadFallbackAsVariant(lookup, object, target, this)
+                 : loadFallbackProperty(lookup, object, target, this);
++        lookup->call = QV4::Lookup::Call::GetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2841,6 +2844,7 @@ bool AOTCompiledContext::writeBackObjectLookup(uint in
+         result = lookup->asVariant
+                 ? writeBackFallbackAsVariant(lookup, object, source)
+                 : writeBackFallbackProperty(lookup, object, source);
++        lookup->call = QV4::Lookup::Call::GetterGeneric;
+         break;
+     default:
+         return false;
+@@ -3001,6 +3005,7 @@ bool AOTCompiledContext::setObjectLookup(uint index, Q
+         result = lookup->asVariant
+                 ? storeFallbackAsVariant(engine->handle(), lookup, object, value)
+                 : storeFallbackProperty(lookup, object, value);
++        lookup->call = QV4::Lookup::Call::SetterGeneric;
+         break;
+     default:
+         return false;
