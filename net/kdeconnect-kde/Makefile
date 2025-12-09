@@ -1,7 +1,6 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
-REVISION =	2
 
 SHARED_LIBS +=	kdeconnectcore		7.0 # 1.4
 
@@ -79,7 +78,6 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtconnectivity \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py

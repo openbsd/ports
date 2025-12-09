@@ -5,7 +5,7 @@ COMMENT =	cross-platform Qt-based web browser
 DISTNAME =	falkon-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS +=  FalkonPrivate             1.0 # 0.0
+SHARED_LIBS +=  FalkonPrivate             2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Completion KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6Crash KF6JobWidgets KF6KIOCore KF6KIOGui

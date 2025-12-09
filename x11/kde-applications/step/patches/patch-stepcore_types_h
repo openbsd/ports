@@ -1,0 +1,12 @@
+Index: stepcore/types.h
+--- stepcore/types.h.orig
++++ stepcore/types.h
+@@ -38,7 +38,7 @@ struct Color
+ 
+ template<> inline QString typeToString(const Color& v)
+ {
+-    return QStringLiteral("#%1").arg(v, 8, 16, QLatin1Char('0'));
++    return QStringLiteral("#%1").arg(v.value, 8, 16, QLatin1Char('0'));
+ }
+ 
+ template<> inline Color stringToType(const QString& s, bool *ok)

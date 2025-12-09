@@ -1,7 +1,6 @@
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 
@@ -34,20 +33,21 @@ WANTLIB += xml2 z
 
 MODKDE_TRANSLATIONS = yes
 
-BUILD_DEPENDS =	textproc/libxml
+RUN_DEPENDS =	misc/shared-mime-info
 
-RUN_DEPENDS =	textproc/libxml \
-		misc/shared-mime-info
-
-LIB_DEPENDS =	devel/kf6/karchive \
+LIB_DEPENDS =	devel/abseil-cpp \
+		devel/boost \
+		devel/kf6/karchive \
 		devel/kf6/kcalendarcore \
-		devel/kf6/ki18n \
-		devel/kf6/kcontacts \
 		devel/kf6/kcodecs \
+		devel/kf6/kcontacts \
+		devel/kf6/ki18n \
+		devel/protobuf \
+		graphics/zxing-cpp \
 		print/poppler \
 		productivity/libphonenumber \
+		textproc/icu4c \
 		textproc/libxml \
-		graphics/zxing-cpp \
 		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kpkpass>=${VERSION} \
 		x11/qt6/qtdeclarative

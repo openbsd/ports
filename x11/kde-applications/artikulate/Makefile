@@ -1,7 +1,6 @@
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
-REVISION =	1
 
 SHARED_LIBS +=  artikulatecore            4.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  3.0 # 0.0

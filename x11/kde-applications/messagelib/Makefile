@@ -28,13 +28,10 @@ WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailTransport KPim6Mbox KPim6Mime KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml assuan crypto gpgme gpgmepp m qgpgmeqt6
 
 WANTLIB += lib/inotify/inotify
-
-
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

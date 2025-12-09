@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
@@ -16,11 +15,10 @@ WANTLIB += KF6KIOGui KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
 WANTLIB += KF6TextEditor KF6TextWidgets KF6WidgetsAddons KF6XmlGui
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += c intl luajit-5.1 m poppler poppler-qt6 ${MODPY_WANTLIB}
-WANTLIB += qalculate spectre util xml2 xslt
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
+WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml c intl luajit-5.1 m poppler poppler-qt6
+WANTLIB += ${MODPY_WANTLIB} qalculate spectre util xml2 xslt
 
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 

@@ -70,7 +70,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		security/qtkeychain,qt6 \
 		textproc/icu4c \
 		textproc/cmark \
-		x11/libquotient>=0.9 \
+		x11/libquotient>=0.9.5 \
 		x11/kde-applications/kunifiedpush \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
