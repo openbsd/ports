@@ -1,0 +1,18 @@
+include/KNightTime/
+include/KNightTime/KDarkLightSchedule
+include/KNightTime/KDarkLightScheduleProvider
+include/KNightTime/kdarklightschedule.h
+include/KNightTime/kdarklightscheduleprovider.h
+include/KNightTime/knighttime_export.h
+lib/cmake/KNightTime/
+lib/cmake/KNightTime/KNightTimeConfig.cmake
+lib/cmake/KNightTime/KNightTimeConfigVersion.cmake
+lib/cmake/KNightTime/KNightTimeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KNightTime/KNightTimeTargets.cmake
+@lib lib/libKNightTime.so.${LIBKNightTime_VERSION}
+lib/systemd/user/plasma-knighttimed.service
+@bin libexec/knighttimed
+share/applications/org.kde.knighttimed.desktop
+share/dbus-1/interfaces/org.kde.NightTime.xml
+share/dbus-1/services/org.kde.NightTime.service
+share/qlogging-categories6/knighttime.categories
