@@ -1,9 +1,8 @@
 COMMENT=	Python bindings for Qt6
 
-MODPY_DISTV=	6.8.0
-DISTNAME=	PyQt6-${MODPY_DISTV}
+MODPY_DISTV=	6.10.0
+DISTNAME=	pyqt6-${MODPY_DISTV}
 PKGNAME=	py-qt6-${MODPY_DISTV}
-REVISION=	0
 
 DPB_PROPERTIES = parallel
 
@@ -19,19 +18,18 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Bluetooth Qt6Core Qt6DBus
 WANTLIB += Qt6Designer Qt6Gui Qt6Help Qt6Multimedia Qt6MultimediaWidgets
 WANTLIB += Qt6Network Qt6Nfc Qt6OpenGL Qt6OpenGLWidgets Qt6Pdf
 WANTLIB += Qt6PdfWidgets Qt6Positioning Qt6PrintSupport Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender
-WANTLIB += Qt6Quick3DUtils Qt6QuickWidgets Qt6RemoteObjects Qt6Sensors
-WANTLIB += Qt6SerialPort Qt6ShaderTools Qt6SpatialAudio Qt6Sql
+WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender Qt6Quick3DUtils
+WANTLIB += Qt6QuickWidgets Qt6RemoteObjects Qt6Sensors Qt6SerialPort
+WANTLIB += Qt6ShaderTools Qt6SpatialAudio Qt6Sql Qt6StateMachine
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6WebChannel
 WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m ${MODPY_WANTLIB}
-WANTLIB += Qt6QmlMeta Qt6QmlWorkerScript
 
-BUILD_DEPENDS=	devel/py-qt-builder>=1.18.0\
+BUILD_DEPENDS=	devel/py-qt-builder>=1.19.0\
 		x11/py-sip-qt6>=13.10.0 \
 		x11/dbus-python \
 		graphics/vulkan-loader
 
-RUN_DEPENDS=	devel/py-sip>=6.10.0v0 \
+RUN_DEPENDS=	devel/py-sip>=6.14.0v0 \
 		x11/py-sip-qt6>=13.10.0 \
 		devel/py-ply \
 		x11/dbus-python
@@ -43,8 +41,10 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtquick3d \
 		x11/qt6/qtremoteobjects \
-		x11/qt6/qtserialport \
+		x11/qt6/qtscxml \
 		x11/qt6/qtsensors \
+		x11/qt6/qtserialport \
+		x11/qt6/qtshadertools \
 		x11/qt6/qtspeech \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
