@@ -1792,6 +1792,7 @@ go/src/cmd/compile/testdata/script/dwarf5_gen_assembly_and_go.txt
 go/src/cmd/compile/testdata/script/embedbad.txt
 go/src/cmd/compile/testdata/script/issue70173.txt
 go/src/cmd/compile/testdata/script/issue73947.txt
+go/src/cmd/compile/testdata/script/issue75461.txt
 go/src/cmd/compile/testdata/script/script_test_basics.txt
 go/src/cmd/covdata/
 go/src/cmd/covdata/argsmerge.go
@@ -5724,8 +5725,6 @@ go/src/crypto/internal/fips140/subtle/xor_asm.go
 go/src/crypto/internal/fips140/subtle/xor_generic.go
 go/src/crypto/internal/fips140/subtle/xor_loong64.go
 go/src/crypto/internal/fips140/subtle/xor_loong64.s
-go/src/crypto/internal/fips140/subtle/xor_mips64x.s
-go/src/crypto/internal/fips140/subtle/xor_mipsx.s
 go/src/crypto/internal/fips140/subtle/xor_ppc64x.s
 go/src/crypto/internal/fips140/subtle/xor_riscv64.s
 go/src/crypto/internal/fips140/tls12/
@@ -15073,6 +15072,7 @@ go/test/fixedbugs/issue7547.go
 go/test/fixedbugs/issue7550.go
 go/test/fixedbugs/issue75569.go
 go/test/fixedbugs/issue7590.go
+go/test/fixedbugs/issue76008.go
 go/test/fixedbugs/issue7648.dir/
 go/test/fixedbugs/issue7648.dir/a.go
 go/test/fixedbugs/issue7648.dir/b.go
