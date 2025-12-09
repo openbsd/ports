@@ -1,7 +1,7 @@
 COMMENT =	markup-based typesetting system
 
 DISTNAME =	typst-${V}
-V =		0.14.0
+V =		0.14.1
 
 DIST_TUPLE +=	github typst typst v${V} .
 DIST_TUPLE +=	github typst typst-dev-assets v${V} crates/typst-dev-assets
