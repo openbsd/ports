@@ -213,9 +213,12 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}arguments_schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}arguments_schema.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}missing_sentinel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}missing_sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}pipeline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/${MODPY_PYCACHE}pipeline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/arguments_schema.py
+lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/missing_sentinel.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/experimental/pipeline.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/fields.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/functional_serializers.py

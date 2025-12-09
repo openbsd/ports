@@ -1,6 +1,6 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_DISTV =		2.33.1
+MODPY_DISTV =		2.41.5
 DISTNAME =		pydantic_core-${MODPY_DISTV}
 PKGNAME =		py-pydantic-core-${MODPY_DISTV}
 
