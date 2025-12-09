@@ -3,10 +3,6 @@
 bin/pylupdate5
 bin/pyrcc5
 bin/pyuic5
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/RECORD
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/Qt${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtBluetooth${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtCore${MODPY_ABI3SO}.so
@@ -964,6 +960,10 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/widget-plugins/qtquickwidgets
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/widget-plugins/qtwebenginewidgets.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/widget-plugins/qtwebkit.py
 @so lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/pyqt5${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyqt5-${MODPY_DISTV}.dist-info/RECORD
 lib/qt5/plugins/PyQt5/
 @so lib/qt5/plugins/PyQt5/libpyqt5qmlplugin.so
 @so lib/qt5/plugins/designer/libpyqt5.so
