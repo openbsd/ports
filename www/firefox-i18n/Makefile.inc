@@ -2,7 +2,7 @@
 PORTROACH =	ignore:1
 
 # keep in sync with working archs.. sigh
-ONLY_FOR_ARCHS =	amd64 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 PKG_ARCH =	*
 
