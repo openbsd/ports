@@ -1,8 +1,0 @@
---- tests/compatibility_test.sh.orig	Mon Apr 10 10:42:24 2017
-+++ tests/compatibility_test.sh	Tue Apr 18 18:31:26 2017
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- #
- # Test that the brotli command-line tool can decompress old brotli-compressed
- # files.

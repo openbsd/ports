@@ -1,21 +1,19 @@
+@bin bin/brcat
 @bin bin/brotli
 include/brotli/
 include/brotli/decode.h
 include/brotli/encode.h
 include/brotli/port.h
+include/brotli/shared_dictionary.h
 include/brotli/types.h
-@static-lib lib/libbrotlicommon.a
-@comment lib/libbrotlicommon.la
 @lib lib/libbrotlicommon.so.${LIBbrotlicommon_VERSION}
-@static-lib lib/libbrotlidec.a
-@comment lib/libbrotlidec.la
 @lib lib/libbrotlidec.so.${LIBbrotlidec_VERSION}
-@static-lib lib/libbrotlienc.a
-@comment lib/libbrotlienc.la
 @lib lib/libbrotlienc.so.${LIBbrotlienc_VERSION}
 lib/pkgconfig/libbrotlicommon.pc
 lib/pkgconfig/libbrotlidec.pc
 lib/pkgconfig/libbrotlienc.pc
 @man man/man1/brotli.1
-share/doc/brotli/
-share/doc/brotli/README
+@comment @man man/man3/constants.h.3
+@comment @man man/man3/decode.h.3
+@comment @man man/man3/encode.h.3
+@comment @man man/man3/types.h.3

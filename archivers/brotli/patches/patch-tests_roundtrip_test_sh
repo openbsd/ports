@@ -1,9 +1,0 @@
-Index: tests/roundtrip_test.sh
---- tests/roundtrip_test.sh.orig
-+++ tests/roundtrip_test.sh
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- #
- # Roundtrip test for the brotli command-line tool.
- #
