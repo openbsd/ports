@@ -30,6 +30,7 @@ share/wycheproof/schemas/mldsa_sign_common.json
 share/wycheproof/schemas/mldsa_sign_noseed_schema.json
 share/wycheproof/schemas/mldsa_sign_seed_schema.json
 share/wycheproof/schemas/mldsa_verify_schema.json
+share/wycheproof/schemas/mlkem_encaps_test_schema.json
 share/wycheproof/schemas/mlkem_test_schema.json
 share/wycheproof/schemas/primality_test_schema_v1.json
 share/wycheproof/schemas/rsa_common.json
@@ -240,8 +241,11 @@ share/wycheproof/testvectors_v1/mldsa_65_verify_test.json
 share/wycheproof/testvectors_v1/mldsa_87_sign_noseed_test.json
 share/wycheproof/testvectors_v1/mldsa_87_sign_seed_test.json
 share/wycheproof/testvectors_v1/mldsa_87_verify_test.json
+share/wycheproof/testvectors_v1/mlkem_1024_encaps_test.json
 share/wycheproof/testvectors_v1/mlkem_1024_test.json
+share/wycheproof/testvectors_v1/mlkem_512_encaps_test.json
 share/wycheproof/testvectors_v1/mlkem_512_test.json
+share/wycheproof/testvectors_v1/mlkem_768_encaps_test.json
 share/wycheproof/testvectors_v1/mlkem_768_test.json
 share/wycheproof/testvectors_v1/morus1280_test.json
 share/wycheproof/testvectors_v1/morus640_test.json
