@@ -62,6 +62,8 @@ CONFIGURE_ARGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ARGS +=	--enable-sse2
 .endif
 
+TEST_TARGET =		check
+
 .include <bsd.port.arch.mk>
 
 .if ${BUILD_PACKAGES:M-ruby}
