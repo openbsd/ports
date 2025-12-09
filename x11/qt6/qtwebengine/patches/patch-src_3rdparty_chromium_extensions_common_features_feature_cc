@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/extensions/common/features/feature.cc
 --- src/3rdparty/chromium/extensions/common/features/feature.cc.orig
 +++ src/3rdparty/chromium/extensions/common/features/feature.cc
-@@ -34,6 +34,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -29,6 +29,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
  #elif BUILDFLAG(IS_FUCHSIA)
    return FUCHSIA_PLATFORM;

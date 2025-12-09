@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/ui/compositor/compositor.cc
 --- src/3rdparty/chromium/ui/compositor/compositor.cc.orig
 +++ src/3rdparty/chromium/ui/compositor/compositor.cc
-@@ -894,7 +894,7 @@ void Compositor::OnResume() {
+@@ -929,7 +929,7 @@ void Compositor::OnResume() {
      obs.ResetIfActive();
  }
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
  void Compositor::OnCompleteSwapWithNewSize(const gfx::Size& size) {
-   for (auto& observer : observer_list_)
-     observer.OnCompositingCompleteSwapWithNewSize(this, size);
+   observer_list_.Notify(
+       &CompositorObserver::OnCompositingCompleteSwapWithNewSize, this, size);

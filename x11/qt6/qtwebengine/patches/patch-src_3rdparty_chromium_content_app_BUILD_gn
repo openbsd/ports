@@ -1,0 +1,16 @@
+Index: src/3rdparty/chromium/content/app/BUILD.gn
+--- src/3rdparty/chromium/content/app/BUILD.gn.orig
++++ src/3rdparty/chromium/content/app/BUILD.gn
+@@ -90,9 +90,9 @@ source_set("content_main_runner_app") {
+            "//third_party/tflite:buildflags",
+            "//tools/v8_context_snapshot:buildflags",
+          ]
+-  if (build_tflite_with_xnnpack) {
+-    deps += [ "//third_party/cpuinfo" ]
+-  }
++#  if (build_tflite_with_xnnpack) {
++#    deps += [ "//third_party/cpuinfo" ]
++#  }
+ }
+ 
+ source_set("app") {

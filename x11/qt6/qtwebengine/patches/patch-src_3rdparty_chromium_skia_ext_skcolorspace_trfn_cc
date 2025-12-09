@@ -9,4 +9,4 @@ Index: src/3rdparty/chromium/skia/ext/skcolorspace_trfn.cc
 +
  #include "skia/ext/skcolorspace_trfn.h"
  
- #include <cmath>
+ #include <array>

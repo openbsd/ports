@@ -1,7 +1,7 @@
 Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
 --- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
-@@ -46,6 +46,12 @@ QT_BEGIN_NAMESPACE
+@@ -47,6 +47,12 @@ QT_BEGIN_NAMESPACE
  
  #define DUMMYARG
  
@@ -14,7 +14,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -205,6 +211,7 @@ int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
+@@ -206,6 +212,7 @@ int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  int q_EVP_PKEY_up_ref(EVP_PKEY *a);
  EVP_PKEY_CTX *q_EVP_PKEY_CTX_new(EVP_PKEY *pkey, ENGINE *e);
  void q_EVP_PKEY_CTX_free(EVP_PKEY_CTX *ctx);
@@ -22,7 +22,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  int q_EVP_PKEY_param_check(EVP_PKEY_CTX *ctx);
  int q_OPENSSL_sk_num(OPENSSL_STACK *a);
  void q_OPENSSL_sk_pop_free(OPENSSL_STACK *a, void (*b)(void *));
-@@ -212,6 +219,20 @@ OPENSSL_STACK *q_OPENSSL_sk_new_null();
+@@ -213,6 +220,20 @@ OPENSSL_STACK *q_OPENSSL_sk_new_null();
  void q_OPENSSL_sk_push(OPENSSL_STACK *st, void *data);
  void q_OPENSSL_sk_free(OPENSSL_STACK *a);
  void * q_OPENSSL_sk_value(OPENSSL_STACK *a, int b);
@@ -43,7 +43,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  qssloptions q_SSL_CTX_set_options(SSL_CTX *ctx, qssloptions op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -237,8 +258,13 @@ STACK_OF(X509) *q_X509_STORE_CTX_get0_chain(X509_STORE
+@@ -238,8 +259,13 @@ STACK_OF(X509) *q_X509_STORE_CTX_get0_chain(X509_STORE
  # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
                                                         | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  
@@ -57,7 +57,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
-@@ -423,12 +449,14 @@ int q_SSL_CTX_use_certificate_file(SSL_CTX *a, const c
+@@ -424,12 +450,14 @@ int q_SSL_CTX_use_certificate_file(SSL_CTX *a, const c
  int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -72,7 +72,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -537,14 +565,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
+@@ -538,14 +566,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
  #define q_BIO_get_mem_data(b, pp) (int)q_BIO_ctrl(b,BIO_CTRL_INFO,0,(char *)pp)
  #define q_BIO_pending(b) (int)q_BIO_ctrl(b,BIO_CTRL_PENDING,0,NULL)
  #define q_SSL_CTX_set_mode(ctx,op) q_SSL_CTX_ctrl((ctx),SSL_CTRL_MODE,(op),NULL)

@@ -1,10 +1,10 @@
 Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
 --- src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig
 +++ src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
-@@ -31,6 +31,7 @@ enum class EmbeddedTargetOs {
-   kMac,
+@@ -36,6 +36,7 @@ enum class EmbeddedTargetOs {
    kWin,
    kStarboard,
+   kZOS,
 +  kOpenBSD,
    kGeneric,  // Everything not covered above falls in here.
  };

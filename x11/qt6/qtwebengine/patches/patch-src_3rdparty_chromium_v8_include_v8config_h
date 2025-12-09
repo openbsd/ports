@@ -1,10 +1,7 @@
-Add support for OpenBSD and FreeBSD.
-Avoid using the 'preserve_most' attribute which clashes with -fret-protector.
-
 Index: src/3rdparty/chromium/v8/include/v8config.h
 --- src/3rdparty/chromium/v8/include/v8config.h.orig
 +++ src/3rdparty/chromium/v8/include/v8config.h
-@@ -185,6 +185,8 @@ path. Add it with -I<path> to the command line
+@@ -201,6 +201,8 @@ path. Add it with -I<path> to the command line
    && !defined(V8_TARGET_OS_FUCHSIA) \
    && !defined(V8_TARGET_OS_IOS) \
    && !defined(V8_TARGET_OS_LINUX) \
@@ -13,7 +10,7 @@ Index: src/3rdparty/chromium/v8/include/v8config.h
    && !defined(V8_TARGET_OS_MACOS) \
    && !defined(V8_TARGET_OS_WIN) \
    && !defined(V8_TARGET_OS_CHROMEOS)
-@@ -197,6 +199,8 @@ path. Add it with -I<path> to the command line
+@@ -213,6 +215,8 @@ path. Add it with -I<path> to the command line
    || defined(V8_TARGET_OS_FUCHSIA) \
    || defined(V8_TARGET_OS_IOS) \
    || defined(V8_TARGET_OS_LINUX) \
@@ -22,7 +19,7 @@ Index: src/3rdparty/chromium/v8/include/v8config.h
    || defined(V8_TARGET_OS_MACOS) \
    || defined(V8_TARGET_OS_WIN) \
    || defined(V8_TARGET_OS_CHROMEOS)
-@@ -220,6 +224,16 @@ path. Add it with -I<path> to the command line
+@@ -236,6 +240,16 @@ path. Add it with -I<path> to the command line
  # define V8_TARGET_OS_LINUX
  #endif
  
@@ -39,13 +36,11 @@ Index: src/3rdparty/chromium/v8/include/v8config.h
  #ifdef V8_OS_MACOS
  # define V8_TARGET_OS_MACOS
  #endif
-@@ -367,7 +381,8 @@ path. Add it with -I<path> to the command line
+@@ -382,6 +396,7 @@ path. Add it with -I<path> to the command line
+ #if (defined(_M_X64) || defined(__x86_64__)            /* x64 (everywhere) */  \
       || ((defined(__AARCH64EL__) || defined(_M_ARM64)) /* arm64, but ... */    \
           && !defined(_WIN32)))                         /* not on windows */    \
++     && !defined(__OpenBSD__)                          /* not on OpenBSD */    \
       && !defined(COMPONENT_BUILD)                      /* no component build */\
--     && __clang_major__ >= 17                          /* clang >= 17 */
-+     && __clang_major__ >= 17                          /* clang >= 17 */ \
-+     && !defined(_RET_PROTECTOR)
+      && __clang_major__ >= 17                          /* clang >= 17 */
  # define V8_HAS_ATTRIBUTE_PRESERVE_MOST (__has_attribute(preserve_most))
- #endif
- # define V8_HAS_ATTRIBUTE_VISIBILITY (__has_attribute(visibility))

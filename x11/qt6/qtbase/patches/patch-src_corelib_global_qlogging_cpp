@@ -1,7 +1,7 @@
 Index: src/corelib/global/qlogging.cpp
 --- src/corelib/global/qlogging.cpp.orig
 +++ src/corelib/global/qlogging.cpp
-@@ -1507,7 +1507,7 @@ backtraceFramesForLogMessage(int frameCount,
+@@ -1537,7 +1537,7 @@ backtraceFramesForLogMessage(int frameCount,
      // This code is protected by QMessagePattern::mutex so it is thread safe on all compilers
      static const QRegularExpression rx(QStringLiteral("^(?:[^(]*/)?([^(/]+)\\(([^+]*)(?:[\\+[a-f0-9x]*)?\\) \\[[a-f0-9x]*\\]$"));
  

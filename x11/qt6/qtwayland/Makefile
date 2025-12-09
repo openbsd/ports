@@ -14,14 +14,15 @@ SHARED_LIBS +=  Qt6WaylandCompositorXdgShell         0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Svg c drm m wayland-client wayland-cursor
-WANTLIB += wayland-egl wayland-server xkbcommon
+WANTLIB += Qt6Quick Qt6Svg Qt6WaylandClient drm m wayland-client
+WANTLIB += wayland-cursor wayland-egl wayland-server xkbcommon
 
 LIB_DEPENDS =	wayland/wayland \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
 BUILD_DEPENDS =	wayland/wayland-protocols \
+		x11/qt6/qtbase,-global \
 		x11/qt6/qtshadertools
 
 .include <bsd.port.mk>

@@ -38,6 +38,7 @@ lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/colorlut.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/ledscreen.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/maskedblur.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/normalmapping.qen
+lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/rectangularshadow.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/spriteanimation.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/sunburst.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/extra/swirl.qen

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 --- src/3rdparty/chromium/base/process/process_metrics_freebsd.cc.orig
 +++ src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
-@@ -3,20 +3,39 @@
+@@ -3,41 +3,92 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -18,7 +18,6 @@ Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 +#include <libutil.h>
 +
  #include "base/memory/ptr_util.h"
- #include "base/process/process_metrics_iocounters.h"
 +#include "base/values.h"
  
  namespace base {
@@ -27,56 +26,89 @@ Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 +  int pagesize = getpagesize();
 +  int pageshift = 0;
  
+-ProcessMetrics::ProcessMetrics(ProcessHandle process)
+-    : process_(process), last_cpu_(0) {}
 +  while (pagesize > 1) {
 +    pageshift++;
 +    pagesize >>= 1;
 +  }
-+
+ 
 +  return pageshift;
 +}
 +}
 +
- ProcessMetrics::ProcessMetrics(ProcessHandle process)
--    : process_(process),
--      last_cpu_(0) {}
-+    : process_(process) {}
- 
++ProcessMetrics::ProcessMetrics(ProcessHandle process) : process_(process) {}
++
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -24,22 +43,19 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+     ProcessHandle process) {
    return WrapUnique(new ProcessMetrics(process));
  }
  
--double ProcessMetrics::GetPlatformIndependentCPUUsage() {
-+TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
-   struct kinfo_proc info;
+-base::expected<double, ProcessCPUUsageError>
+-ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-  struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
++base::expected<ProcessMemoryInfo, ProcessUsageError>
++ProcessMetrics::GetMemoryInfo() const {
++  ProcessMemoryInfo memory_info;
++  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
++  struct kinfo_proc *pp;
++  int nproc;
+ 
+-  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
+-    return base::unexpected(ProcessCPUUsageError::kSystemError);
++  if (kd == nullptr) {
++    return base::unexpected(ProcessUsageError::kSystemError);
+   }
+ 
+-  return base::ok(double{info.ki_pctcpu} / FSCALE * 100.0);
++  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
++    kvm_close(kd);
++    return base::unexpected(ProcessUsageError::kProcessNotFound);
++  }
++
++  if (nproc > 0) {
++    memory_info.resident_set_bytes = pp->ki_rssize << GetPageShift();
++  } else {
++    kvm_close(kd);
++    return base::unexpected(ProcessUsageError::kProcessNotFound);
++  }
++
++  kvm_close(kd);
++  return memory_info;
+ }
+ 
+ base::expected<TimeDelta, ProcessCPUUsageError>
+ ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED();
++  struct kinfo_proc info;
 +  size_t length = sizeof(struct kinfo_proc);
 +  struct timeval tv;
- 
++
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
 +
-   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
--    return 0;
-+    return TimeDelta();
- 
--  return (info.ki_pctcpu / FSCALE) * 100.0;
-+  return Microseconds(info.ki_runtime);
++  if (process_ == 0) {
++    return base::unexpected(ProcessCPUUsageError::kSystemError);
++  }
++
++  if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
++    return base::unexpected(ProcessCPUUsageError::kSystemError);
++  }
++
++  if (length == 0) {
++    return base::unexpected(ProcessCPUUsageError::kProcessNotFound);
++  }
++
++  return base::ok(Microseconds(info.ki_runtime));
  }
  
--TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--  return TimeDelta();
--}
--
- bool ProcessMetrics::GetIOCounters(IoCounters* io_counters) const {
-   return false;
- }
-@@ -65,6 +81,230 @@ size_t GetSystemCommitCharge() {
+ size_t GetSystemCommitCharge() {
+@@ -64,6 +115,176 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
-   return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
+   return mem_total - (mem_free * pagesize) - (mem_inactive * pagesize);
 +}
 +
 +int64_t GetNumberOfThreads(ProcessHandle process) {
@@ -159,60 +191,6 @@ Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 +  return total_count;
 +}
 +
-+size_t ProcessMetrics::GetResidentSetSize() const {
-+  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
-+
-+  if (kd == nullptr)
-+    return 0;
-+
-+  struct kinfo_proc *pp;
-+  int nproc;
-+
-+  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
-+    kvm_close(kd);
-+    return 0;
-+  }
-+  
-+  size_t rss;
-+
-+  if (nproc > 0) {
-+    rss = pp->ki_rssize << GetPageShift();
-+  } else {
-+    rss = 0;
-+  }
-+
-+  kvm_close(kd);
-+  return rss;
-+}
-+
-+uint64_t ProcessMetrics::GetVmSwapBytes() const {
-+  kvm_t *kd = kvm_open(nullptr, "/dev/null", nullptr, O_RDONLY, "kvm_open");
-+
-+  if (kd == nullptr)
-+    return 0;
-+
-+  struct kinfo_proc *pp;
-+  int nproc;
-+
-+  if ((pp = kvm_getprocs(kd, KERN_PROC_PID, process_, &nproc)) == nullptr) {
-+    kvm_close(kd);
-+    return 0;
-+  }
-+  
-+  size_t swrss;
-+
-+  if (nproc > 0) {
-+    swrss = pp->ki_swrss > pp->ki_rssize
-+      ? (pp->ki_swrss - pp->ki_rssize) << GetPageShift()
-+      : 0;
-+  } else {
-+    swrss = 0;
-+  }
-+
-+  kvm_close(kd);
-+  return swrss;
-+}
-+
 +int ProcessMetrics::GetIdleWakeupsPerSecond() {
 +  NOTIMPLEMENTED();
 +  return 0;
@@ -248,7 +226,7 @@ Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 +
 +Value::Dict SystemDiskInfo::ToDict() const {
 +  Value::Dict res;
-+ 
++
 +  // Write out uint64_t variables as doubles.
 +  // Note: this may discard some precision, but for JS there's no other option.
 +  res.Set("reads", static_cast<double>(reads));
@@ -264,7 +242,7 @@ Index: src/3rdparty/chromium/base/process/process_metrics_freebsd.cc
 +  res.Set("weighted_io_time", static_cast<double>(weighted_io_time));
 +
 +  NOTIMPLEMENTED();
-+ 
++
 +  return res;
 +}
 +

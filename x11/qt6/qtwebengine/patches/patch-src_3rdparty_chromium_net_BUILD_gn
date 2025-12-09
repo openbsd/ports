@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/net/BUILD.gn
 --- src/3rdparty/chromium/net/BUILD.gn.orig
 +++ src/3rdparty/chromium/net/BUILD.gn
-@@ -126,7 +126,7 @@ net_configs = [
+@@ -131,7 +131,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -10,7 +10,37 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1183,6 +1183,19 @@ component("net") {
+@@ -142,6 +142,14 @@ if (is_linux && use_external_gssapi && external_gssapi
+   net_configs += [ ":external_gssapi" ]
+ }
+ 
++if (is_bsd) {
++  config("bsd_epoll_shim") {
++    include_dirs = [ "/usr/local/include/libepoll-shim" ]
++    libs = [ "epoll-shim" ]
++  }
++  net_configs += [ ":bsd_epoll_shim" ]
++}
++
+ source_set("constants") {
+   sources = [ "base/trace_constants.h" ]
+   deps = [ "//base" ]
+@@ -1313,10 +1321,10 @@ jumbo_component("net") {
+       "base/network_interfaces_linux.h",
+       "base/platform_mime_util_linux.cc",
+     ]
+-    jumbo_excluded_sources += [
+-      "base/address_tracker_linux.cc",
+-      "base/network_interfaces_linux.cc",
+-    ]
++    #jumbo_excluded_sources += [
++    #  "base/address_tracker_linux.cc",
++    #  "base/network_interfaces_linux.cc",
++    #]
+   }
+ 
+   if (is_linux) {
+@@ -1326,6 +1334,19 @@ jumbo_component("net") {
      ]
    }
  
@@ -25,12 +55,12 @@ Index: src/3rdparty/chromium/net/BUILD.gn
 +      "base/network_change_notifier_linux.cc",
 +      "base/network_interfaces_linux.cc",
 +    ]
-+  }   
++  }
 +
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1340,7 +1353,7 @@ component("net") {
+@@ -1492,7 +1513,7 @@ jumbo_component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -39,7 +69,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2810,7 +2823,7 @@ test("net_unittests") {
+@@ -3009,7 +3030,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -48,7 +78,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2898,6 +2911,10 @@ test("net_unittests") {
+@@ -3103,6 +3124,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -57,9 +87,9 @@ Index: src/3rdparty/chromium/net/BUILD.gn
 +  }
 +
    if (enable_websockets) {
-     deps += [ "//net/server:tests" ]
-   }
-@@ -2968,7 +2985,7 @@ test("net_unittests") {
+     sources += [
+       "server/http_connection_unittest.cc",
+@@ -3169,7 +3194,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -68,7 +98,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3103,7 +3120,7 @@ test("net_unittests") {
+@@ -3308,7 +3333,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

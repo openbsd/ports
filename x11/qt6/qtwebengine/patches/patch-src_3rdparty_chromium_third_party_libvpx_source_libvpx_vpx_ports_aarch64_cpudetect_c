@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c
 --- src/3rdparty/chromium/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig
 +++ src/3rdparty/chromium/third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c
-@@ -91,9 +91,23 @@ static int arm_get_cpu_caps(void) {
+@@ -120,9 +120,23 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  

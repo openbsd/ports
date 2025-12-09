@@ -3,7 +3,7 @@ include/X11/qt6/QtWebView/${VERSION}/
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qabstractwebview_p.h
-include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qnativeviewcontroller_p.h
+include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qtwebview-config_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebview_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewfactory_p.h
 include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewinterface_p.h
@@ -12,6 +12,7 @@ include/X11/qt6/QtWebView/${VERSION}/QtWebView/private/qwebviewplugin_p.h
 include/X11/qt6/QtWebView/QtWebView
 include/X11/qt6/QtWebView/QtWebViewDepends
 include/X11/qt6/QtWebView/QtWebViewVersion
+include/X11/qt6/QtWebView/qtwebview-config.h
 include/X11/qt6/QtWebView/qtwebviewfunctions.h
 include/X11/qt6/QtWebView/qtwebviewversion.h
 include/X11/qt6/QtWebView/qwebview_global.h
@@ -19,7 +20,6 @@ include/X11/qt6/QtWebViewQuick/
 include/X11/qt6/QtWebViewQuick/${VERSION}/
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/private/
-include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/private/qquickviewcontroller_p.h
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/private/qquickwebview_p.h
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/private/qquickwebviewloadrequest_p.h
 include/X11/qt6/QtWebViewQuick/${VERSION}/QtWebViewQuick/private/qquickwebviewsettings_p.h
@@ -29,6 +29,7 @@ include/X11/qt6/QtWebViewQuick/QtWebViewQuickDepends
 include/X11/qt6/QtWebViewQuick/QtWebViewQuickVersion
 include/X11/qt6/QtWebViewQuick/qtwebviewquickexports.h
 include/X11/qt6/QtWebViewQuick/qtwebviewquickversion.h
+lib/cmake/Qt6/FindWebView2.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebViewTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginConfig.cmake
@@ -53,6 +54,15 @@ lib/cmake/Qt6WebView/Qt6WebViewTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebView/Qt6WebViewTargets.cmake
 lib/cmake/Qt6WebView/Qt6WebViewVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebView/Qt6WebViewVersionlessTargets.cmake
+lib/cmake/Qt6WebViewPrivate/
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateConfig.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateConfigVersion.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateDependencies.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateTargets.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebViewPrivate/Qt6WebViewPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebViewQuick/
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickConfig.cmake
@@ -63,14 +73,23 @@ lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessTargets.cmake
+lib/cmake/Qt6WebViewQuickPrivate/
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateConfig.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateDependencies.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateTargets.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateVersionlessTargets.cmake
 lib/libQt6WebView.prl
 @lib lib/libQt6WebView.so.${LIBQt6WebView_VERSION}
 lib/libQt6WebViewQuick.prl
 @lib lib/libQt6WebViewQuick.so.${LIBQt6WebViewQuick_VERSION}
 lib/pkgconfig/Qt6WebView.pc
 lib/pkgconfig/Qt6WebViewQuick.pc
-lib/qt6/metatypes/qt6webview_release_metatypes.json
-lib/qt6/metatypes/qt6webviewquick_release_metatypes.json
+lib/qt6/metatypes/qt6webview_metatypes.json
+lib/qt6/metatypes/qt6webviewquick_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_webview.pri
 lib/qt6/mkspecs/modules/qt_lib_webview_private.pri
 lib/qt6/mkspecs/modules/qt_lib_webviewquick.pri

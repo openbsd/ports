@@ -62,10 +62,9 @@ lib/libQt6JsonRpc.prl
 @static-lib lib/libQt6LanguageServer.a
 lib/libQt6LanguageServer.prl
 lib/qt6/
-lib/qt6/libexec/
 lib/qt6/metatypes/
-lib/qt6/metatypes/qt6jsonrpcprivate_release_metatypes.json
-lib/qt6/metatypes/qt6languageserverprivate_release_metatypes.json
+lib/qt6/metatypes/qt6jsonrpcprivate_metatypes.json
+lib/qt6/metatypes/qt6languageserverprivate_metatypes.json
 lib/qt6/mkspecs/
 lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_jsonrpc_private.pri

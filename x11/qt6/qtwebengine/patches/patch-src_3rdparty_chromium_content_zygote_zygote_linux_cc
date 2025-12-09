@@ -7,8 +7,8 @@ Index: src/3rdparty/chromium/content/zygote/zygote_linux.cc
  // found in the LICENSE file.
 +#if 0
  
- #include "content/zygote/zygote_linux.h"
- 
+ #ifdef UNSAFE_BUFFERS_BUILD
+ // TODO(crbug.com/342213636): Remove this and spanify to fix the errors.
 @@ -709,3 +710,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
  }
  

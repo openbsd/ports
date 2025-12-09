@@ -45,6 +45,15 @@ lib/cmake/Qt6WebChannel/Qt6WebChannelTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebChannel/Qt6WebChannelTargets.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessTargets.cmake
+lib/cmake/Qt6WebChannelPrivate/
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfig.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersion.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateDependencies.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateTargets.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebChannelPrivate/Qt6WebChannelPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebChannelQuick/
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfig.cmake
@@ -55,14 +64,23 @@ lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessTargets.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateConfig.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateDependencies.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateTargets.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateVersionlessTargets.cmake
 lib/libQt6WebChannel.prl
 @lib lib/libQt6WebChannel.so.${LIBQt6WebChannel_VERSION}
 lib/libQt6WebChannelQuick.prl
 @lib lib/libQt6WebChannelQuick.so.${LIBQt6WebChannelQuick_VERSION}
 lib/pkgconfig/Qt6WebChannel.pc
 lib/pkgconfig/Qt6WebChannelQuick.pc
-lib/qt6/metatypes/qt6webchannel_release_metatypes.json
-lib/qt6/metatypes/qt6webchannelquick_release_metatypes.json
+lib/qt6/metatypes/qt6webchannel_metatypes.json
+lib/qt6/metatypes/qt6webchannelquick_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_webchannel.pri
 lib/qt6/mkspecs/modules/qt_lib_webchannel_private.pri
 lib/qt6/mkspecs/modules/qt_lib_webchannelquick.pri

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/BUILD.gn
 --- src/3rdparty/chromium/BUILD.gn.orig
 +++ src/3rdparty/chromium/BUILD.gn
-@@ -64,7 +64,7 @@ declare_args() {
+@@ -72,7 +72,7 @@ declare_args() {
    qtwebengine_target = "//tools/gn"
  }
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/BUILD.gn
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -96,7 +96,6 @@ group("gn_all") {
+@@ -104,7 +104,6 @@ group("gn_all") {
        "//codelabs",
        "//components:components_unittests",
        "//components/gwp_asan:gwp_asan_unittests",
@@ -18,7 +18,7 @@ Index: src/3rdparty/chromium/BUILD.gn
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -426,7 +425,7 @@ group("gn_all") {
+@@ -447,7 +446,7 @@ group("gn_all") {
        }
      }
  
@@ -27,64 +27,48 @@ Index: src/3rdparty/chromium/BUILD.gn
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -626,6 +625,15 @@ group("gn_all") {
+@@ -685,7 +684,7 @@ group("gn_all") {
        }
      }
  
-+    if (is_bsd) {
-+      deps -= [
-+        "//third_party/breakpad:dump_syms($host_toolchain)",
-+        "//third_party/breakpad:microdump_stackwalk($host_toolchain)",
-+        "//third_party/breakpad:minidump_dump($host_toolchain)",
-+        "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
-+      ]
-+    }
-+
-     if (is_mac) {
-       deps += [
-         "//third_party/breakpad:dump_syms",
-@@ -672,7 +680,7 @@ group("gn_all") {
-           host_os == "win") {
-         deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
-       }
--    } else if (!is_android && !is_ios && !is_fuchsia) {
-+    } else if (!is_android && !is_ios && !is_fuchsia && !is_bsd) {
-       deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
-     }
- 
-@@ -1093,7 +1101,7 @@ if (use_blink && !is_cronet_build) {
+-    if (!is_fuchsia) {
++    if (!is_fuchsia && !is_bsd) {
+       # The official builders use this binary from the default toolchain's
+       # output directory after building in order to upload the symbols of that
+       # binary. They build the binary like `ninja symupload` which requires the
+@@ -1130,7 +1129,7 @@ if (use_blink && !is_cronet_build) {
      ]
-   }
  
--  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos) {
-+  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
-     script_test("chrome_wpt_tests") {
-       script = "//third_party/blink/tools/run_wpt_tests.py"
-       args = [
-@@ -1184,7 +1192,7 @@ if (use_blink && !is_cronet_build) {
+     if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android &&
+-        !is_castos) {
++        !is_castos && !is_bsd) {
+       deps += [
+         ":chrome_wpt_tests",
+         ":headless_shell_wpt",
+@@ -1280,7 +1279,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
 -    if (!is_win && !is_android) {
 +    if (!is_win && !is_android && !is_bsd) {
-       data_deps +=
-           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
-     }
-@@ -1193,7 +1201,7 @@ if (use_blink && !is_cronet_build) {
-       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1294,7 +1293,7 @@ if (use_blink && !is_cronet_build) {
+       data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
 -    if (is_linux || is_chromeos) {
 +    if ((is_linux && !is_bsd) || is_chromeos) {
-       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
-     }
- 
-@@ -1643,7 +1651,7 @@ group("chromium_builder_perf") {
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1764,7 +1763,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  
 -    if (!is_win) {
 +    if (!is_win && !is_bsd) {
-       data_deps +=
-           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
+       data_deps += [ "//third_party/breakpad:minidump_stackwalk($host_system_allocator_toolchain)" ]
      }
+   }

@@ -14,9 +14,12 @@ include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobject
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectpendingcall_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectregistrysource_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectreplica_p.h
+include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectrepparser_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectsource_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectsourceio_p.h
+include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qremoteobjectstructs_p.h
 include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/qtremoteobjects-config_p.h
+include/X11/qt6/QtRemoteObjects/${VERSION}/QtRemoteObjects/private/rep_grammar_p.h
 include/X11/qt6/QtRemoteObjects/QAbstractItemModelReplica
 include/X11/qt6/QtRemoteObjects/QConnectionAbstractServer
 include/X11/qt6/QtRemoteObjects/QIntHash
@@ -56,6 +59,7 @@ include/X11/qt6/QtRemoteObjects/qtremoteobjectglobal.h
 include/X11/qt6/QtRemoteObjects/qtremoteobjects-config.h
 include/X11/qt6/QtRemoteObjects/qtremoteobjectsexports.h
 include/X11/qt6/QtRemoteObjects/qtremoteobjectsversion.h
+include/X11/qt6/QtRemoteObjects/repparser.h
 include/X11/qt6/QtRemoteObjectsQml/
 include/X11/qt6/QtRemoteObjectsQml/${VERSION}/
 include/X11/qt6/QtRemoteObjectsQml/${VERSION}/QtRemoteObjectsQml/
@@ -68,6 +72,7 @@ include/X11/qt6/QtRemoteObjectsQml/qtremoteobjectsqmlversion.h
 include/X11/qt6/QtRepParser/
 include/X11/qt6/QtRepParser/QtRepParserDepends
 include/X11/qt6/QtRepParser/parser.g
+include/X11/qt6/QtRepParser/qregexparser.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtRemoteObjectsTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsConfig.cmake
@@ -86,6 +91,15 @@ lib/cmake/Qt6RemoteObjects/Qt6RemoteObjectsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6RemoteObjects/Qt6RemoteObjectsTargets.cmake
 lib/cmake/Qt6RemoteObjects/Qt6RemoteObjectsVersionlessAliasTargets.cmake
 lib/cmake/Qt6RemoteObjects/Qt6RemoteObjectsVersionlessTargets.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateConfig.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateConfigVersion.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateDependencies.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateTargets.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6RemoteObjectsPrivate/Qt6RemoteObjectsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6RemoteObjectsQml/
 lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlConfig.cmake
@@ -96,6 +110,15 @@ lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlTargets.cmake
 lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6RemoteObjectsQml/Qt6RemoteObjectsQmlVersionlessTargets.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateConfig.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateConfigVersion.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateDependencies.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateTargets.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6RemoteObjectsQmlPrivate/Qt6RemoteObjectsQmlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6RemoteObjectsTools/
 lib/cmake/Qt6RemoteObjectsTools/Qt6RemoteObjectsToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6RemoteObjectsTools/Qt6RemoteObjectsToolsConfig.cmake
@@ -122,8 +145,8 @@ lib/pkgconfig/Qt6RemoteObjects.pc
 lib/pkgconfig/Qt6RemoteObjectsQml.pc
 lib/pkgconfig/Qt6RepParser.pc
 @bin lib/qt6/libexec/repc
-lib/qt6/metatypes/qt6remoteobjects_release_metatypes.json
-lib/qt6/metatypes/qt6remoteobjectsqml_release_metatypes.json
+lib/qt6/metatypes/qt6remoteobjects_metatypes.json
+lib/qt6/metatypes/qt6remoteobjectsqml_metatypes.json
 lib/qt6/mkspecs/features/remoteobjects_repc.prf
 lib/qt6/mkspecs/features/repcclient.pri
 lib/qt6/mkspecs/features/repccommon.pri
@@ -135,7 +158,6 @@ lib/qt6/mkspecs/modules/qt_lib_remoteobjects_private.pri
 lib/qt6/mkspecs/modules/qt_lib_remoteobjectsqml.pri
 lib/qt6/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri
 lib/qt6/mkspecs/modules/qt_lib_repparser.pri
-lib/qt6/mkspecs/modules/qt_lib_repparser_private.pri
 lib/qt6/modules/RemoteObjects.json
 lib/qt6/modules/RemoteObjectsQml.json
 lib/qt6/modules/RepParser.json

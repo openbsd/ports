@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/third_party/dav1d/libdav1d/src/mem.h
+--- src/3rdparty/chromium/third_party/dav1d/libdav1d/src/mem.h.orig
++++ src/3rdparty/chromium/third_party/dav1d/libdav1d/src/mem.h
+@@ -32,9 +32,6 @@
+ 
+ #include <stdlib.h>
+ 
+-#if defined(_WIN32) || HAVE_MEMALIGN
+-#include <malloc.h>
+-#endif
+ 
+ #include "dav1d/dav1d.h"
+ 

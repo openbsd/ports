@@ -1,0 +1,65 @@
+Index: cmake/QtToolchainHelpers.cmake
+--- cmake/QtToolchainHelpers.cmake.orig
++++ cmake/QtToolchainHelpers.cmake
+@@ -91,6 +91,8 @@ function(get_gn_os result)
+         set(${result} "win" PARENT_SCOPE)
+     elseif(LINUX)
+         set(${result} "linux" PARENT_SCOPE)
++    elseif(OPENBSD)
++        set(${result} "linux" PARENT_SCOPE)
+     elseif(MACOS)
+         set(${result} "mac" PARENT_SCOPE)
+     elseif(IOS)
+@@ -257,6 +259,7 @@ macro(append_build_type_setup)
+         use_partition_alloc_as_malloc=false
+         use_custom_libcxx=false
+         use_custom_libcxx_for_host=false
++        use_system_libdrm=true
+         enable_rust=false # We do not yet support rust
+         enable_chromium_prelude=false
+         enable_rust_png=false
+@@ -326,7 +329,7 @@ macro(append_build_type_setup)
+ 
+     extend_gn_list(gnArgArg
+         ARGS enable_precompiled_headers
+-        CONDITION BUILD_WITH_PCH AND NOT LINUX
++        CONDITION BUILD_WITH_PCH AND NOT UNIX
+     )
+     extend_gn_list(gnArgArg
+         ARGS dcheck_always_on
+@@ -370,7 +373,7 @@ macro(append_compiler_linker_sdk_setup)
+     extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
+     extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
+     extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
+-    extend_gn_list(gnArgArg ARGS is_gcc CONDITION LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++    extend_gn_list(gnArgArg ARGS is_gcc CONDITION UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+ 
+     if(CLANG)
+         if(MACOS)
+@@ -418,7 +421,7 @@ macro(append_compiler_linker_sdk_setup)
+                 use_libcxx=true
+             )
+         endif()
+-        if(DEFINED QT_FEATURE_stdlib_libcpp AND LINUX)
++        if(DEFINED QT_FEATURE_stdlib_libcpp AND UNIX)
+             extend_gn_list(gnArgArg ARGS use_libcxx
+                 CONDITION QT_FEATURE_stdlib_libcpp
+             )
+@@ -459,7 +462,7 @@ macro(append_compiler_linker_sdk_setup)
+         )
+     endif()
+     get_gn_arch(cpu ${TEST_architecture_arch})
+-    if(LINUX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
++    if(UNIX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
+ 
+         extend_gn_list_cflag(gnArgArg
+             ARG arm_tune
+@@ -568,7 +571,7 @@ macro(append_toolchain_setup)
+         endif()
+         unset(host_cpu)
+         unset(target_cpu)
+-    elseif(LINUX)
++    elseif(UNIX)
+         get_gn_arch(cpu ${TEST_architecture_arch})
+         list(APPEND gnArgArg
+             custom_toolchain="${buildDir}/target_toolchain:target"

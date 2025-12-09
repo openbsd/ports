@@ -7,7 +7,9 @@ include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserver_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverhttp1protocolhandler_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverhttp2protocolhandler_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverliterals_p.h
+include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverparser_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrequest_p.h
+include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrequestfilter_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverresponder_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverresponse_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrouter_p.h
@@ -15,6 +17,7 @@ include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrouterru
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverstream_p.h
 include/X11/qt6/QtHttpServer/QAbstractHttpServer
 include/X11/qt6/QtHttpServer/QHttpServer
+include/X11/qt6/QtHttpServer/QHttpServerConfiguration
 include/X11/qt6/QtHttpServer/QHttpServerRequest
 include/X11/qt6/QtHttpServer/QHttpServerResponder
 include/X11/qt6/QtHttpServer/QHttpServerResponse
@@ -27,6 +30,7 @@ include/X11/qt6/QtHttpServer/QtHttpServerDepends
 include/X11/qt6/QtHttpServer/QtHttpServerVersion
 include/X11/qt6/QtHttpServer/qabstracthttpserver.h
 include/X11/qt6/QtHttpServer/qhttpserver.h
+include/X11/qt6/QtHttpServer/qhttpserverconfiguration.h
 include/X11/qt6/QtHttpServer/qhttpserverrequest.h
 include/X11/qt6/QtHttpServer/qhttpserverresponder.h
 include/X11/qt6/QtHttpServer/qhttpserverresponse.h
@@ -49,10 +53,19 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfig.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersion.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateDependencies.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessTargets.cmake
 lib/libQt6HttpServer.prl
 @lib lib/libQt6HttpServer.so.${LIBQt6HttpServer_VERSION}
 lib/pkgconfig/Qt6HttpServer.pc
-lib/qt6/metatypes/qt6httpserver_release_metatypes.json
+lib/qt6/metatypes/qt6httpserver_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_httpserver.pri
 lib/qt6/mkspecs/modules/qt_lib_httpserver_private.pri
 lib/qt6/modules/HttpServer.json

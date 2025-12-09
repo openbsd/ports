@@ -27,3 +27,18 @@ Index: src/3rdparty/chromium/build/linux/unbundle/icu.gn
    ]
  }
  
+@@ -46,6 +58,14 @@ pkg_config("system_icuuc") {
+ }
+ 
+ source_set("icui18n") {
++  deps = [ ":icui18n_shim" ]
++  public_configs = [
++    ":icu_config",
++    ":system_icui18n",
++  ]
++}
++
++source_set("icui18n_hidden_visibility") {
+   deps = [ ":icui18n_shim" ]
+   public_configs = [
+     ":icu_config",

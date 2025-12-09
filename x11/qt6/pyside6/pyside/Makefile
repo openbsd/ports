@@ -3,25 +3,24 @@ DPB_PROPERTIES =	parallel
 COMMENT =		Python Qt bindings for Qt 6
 PKGNAME =		pyside6-${VERSION}
 
-SHARED_LIBS +=		pyside6.abi3		1.0 # 0.0
-SHARED_LIBS +=		pyside6qml.abi3		0.0 # 0.0
+SHARED_LIBS +=		pyside6.abi3		2.0 # 0.0
+SHARED_LIBS +=		pyside6qml.abi3		1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt63DAnimation Qt63DCore Qt63DExtras
 WANTLIB += Qt63DInput Qt63DLogic Qt63DRender Qt6Bluetooth Qt6Charts
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6DataVisualization
 WANTLIB += Qt6Designer Qt6Graphs Qt6GraphsWidgets Qt6Gui Qt6Help
-WANTLIB += Qt6HttpServer Qt6Location Qt6Multimedia Qt6MultimediaWidgets
-WANTLIB += Qt6Network Qt6NetworkAuth Qt6Nfc Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Pdf Qt6PdfWidgets Qt6Positioning Qt6PositioningQuick
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender Qt6Quick3DUtils
-WANTLIB += Qt6QuickControls2 Qt6QuickShapes Qt6QuickTest Qt6QuickWidgets
+WANTLIB += Qt6HttpServer Qt6Location Qt6MultimediaWidgets Qt6Network
+WANTLIB += Qt6NetworkAuth Qt6Nfc Qt6OpenGL Qt6OpenGLWidgets Qt6Pdf
+WANTLIB += Qt6PdfWidgets Qt6Positioning Qt6PositioningQuick Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender
+WANTLIB += Qt6Quick3DUtils Qt6QuickControls2 Qt6QuickTest Qt6QuickWidgets
 WANTLIB += Qt6RemoteObjects Qt6Scxml Qt6Sensors Qt6SerialBus Qt6SerialPort
 WANTLIB += Qt6ShaderTools Qt6SpatialAudio Qt6Sql Qt6StateMachine
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6UiTools
 WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
 WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6WebView Qt6Widgets
-WANTLIB += Qt6Xml c m shiboken6.abi3 xkbcommon
+WANTLIB += Qt6Xml m shiboken6.abi3
 
 MODULES +=		lang/python
 
@@ -51,8 +50,7 @@ LIB_DEPENDS =		x11/qt6/pyside6/shiboken \
 			x11/qt6/qtwebchannel \
 			x11/qt6/qtwebengine \
 			x11/qt6/qtwebsockets \
-			x11/qt6/qtwebview \
-			x11/xkbcommon
+			x11/qt6/qtwebview
 
 RUN_DEPENDS =		graphics/vulkan-headers
 
@@ -66,7 +64,8 @@ TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/cmake/Macros/PySideModules.cmake
+	${SUBST_CMD} ${WRKSRC}/cmake/Macros/PySideModules.cmake \
+		${WRKSRC}/libpyside/PySide6Config-spec.cmake.in
 
 post-install:
 	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}/PySide6{,/support}/

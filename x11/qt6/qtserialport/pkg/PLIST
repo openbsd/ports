@@ -27,10 +27,19 @@ lib/cmake/Qt6SerialPort/Qt6SerialPortTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessAliasTargets.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake
+lib/cmake/Qt6SerialPortPrivate/
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateConfig.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateConfigVersion.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateDependencies.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateTargets.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SerialPortPrivate/Qt6SerialPortPrivateVersionlessTargets.cmake
 lib/libQt6SerialPort.prl
 @lib lib/libQt6SerialPort.so.${LIBQt6SerialPort_VERSION}
 lib/pkgconfig/Qt6SerialPort.pc
-lib/qt6/metatypes/qt6serialport_release_metatypes.json
+lib/qt6/metatypes/qt6serialport_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_serialport.pri
 lib/qt6/mkspecs/modules/qt_lib_serialport_private.pri
 lib/qt6/modules/SerialPort.json

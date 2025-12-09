@@ -1,12 +1,30 @@
 Index: src/gui/configure.cmake
 --- src/gui/configure.cmake.orig
 +++ src/gui/configure.cmake
-@@ -69,7 +69,7 @@ qt_find_package(GLESv2 PROVIDED_TARGETS GLESv2::GLESv2
- qt_find_package(Tslib PROVIDED_TARGETS PkgConfig::Tslib MODULE_NAME gui QMAKE_LIB tslib)
- qt_find_package(WrapVulkanHeaders PROVIDED_TARGETS WrapVulkanHeaders::WrapVulkanHeaders
+@@ -76,7 +76,7 @@ qt_find_package(GLESv2 MODULE
+ qt_find_package(Tslib MODULE PROVIDED_TARGETS PkgConfig::Tslib MODULE_NAME gui QMAKE_LIB tslib)
+ qt_find_package(WrapVulkanHeaders MODULE PROVIDED_TARGETS WrapVulkanHeaders::WrapVulkanHeaders
      MODULE_NAME gui QMAKE_LIB vulkan MARK_OPTIONAL)
--if((LINUX) OR QT_FIND_ALL_PACKAGES_ALWAYS)
-+if((UNIX) OR QT_FIND_ALL_PACKAGES_ALWAYS)
-     qt_find_package(Wayland PROVIDED_TARGETS Wayland::Server MODULE_NAME gui QMAKE_LIB wayland_server)
-     qt_find_package(Wayland PROVIDED_TARGETS Wayland::Client MODULE_NAME gui QMAKE_LIB wayland_client)
- endif()
+-if(LINUX OR FREEBSD OR QT_FIND_ALL_PACKAGES_ALWAYS)
++if(LINUX OR FREEBSD OR OPENBSD OR QT_FIND_ALL_PACKAGES_ALWAYS)
+     qt_find_package(Wayland MODULE PROVIDED_TARGETS Wayland::Server
+                     MODULE_NAME gui QMAKE_LIB wayland_server)
+     qt_find_package(Wayland MODULE PROVIDED_TARGETS Wayland::Client
+@@ -192,7 +192,7 @@ endif()
+ qt_add_qmake_lib_dependency(xrender xlib)
+ 
+ # qt wayland client
+-if(LINUX OR FREEBSD OR QT_FIND_ALL_PACKAGES_ALWAYS)
++if(LINUX OR FREEBSD OR OPENBSD OR QT_FIND_ALL_PACKAGES_ALWAYS)
+     # EGL
+     if(NOT TARGET EGL::EGL)
+         qt_find_package(EGL MODULE
+@@ -429,7 +429,7 @@ PVRGrfxServerInit();
+ qt_config_compile_test(evdev
+     LABEL "evdev"
+     CODE
+-"#if defined(__FreeBSD__)
++"#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <dev/evdev/input.h>
+ #else
+ #  include <linux/input.h>

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/functional/unretained_traits.h
 --- src/3rdparty/chromium/base/functional/unretained_traits.h.orig
 +++ src/3rdparty/chromium/base/functional/unretained_traits.h
-@@ -99,7 +99,7 @@ struct SupportsUnretainedImpl {
+@@ -90,7 +90,7 @@ struct SupportsUnretainedImpl {
  // official builds, and then in non-test code as well.
  #if defined(FORCE_UNRETAINED_COMPLETENESS_CHECKS_FOR_TESTS) || \
      (!defined(UNIT_TEST) && !defined(OFFICIAL_BUILD) &&        \

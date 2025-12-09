@@ -1,0 +1,11 @@
+Index: sources/pyside6/libpyside/PySide6Config-spec.cmake.in
+--- sources/pyside6/libpyside/PySide6Config-spec.cmake.in.orig
++++ sources/pyside6/libpyside/PySide6Config-spec.cmake.in
+@@ -16,5 +16,5 @@ set(PYSIDE_SO_VERSION "@pyside6_library_so_version@")
+ 
+ # Set relocatable variables.
+ set_and_check(PYSIDE_PYTHONPATH "@PACKAGE_PYSIDE_PYTHONPATH@")
+-set_and_check(PYSIDE_TYPESYSTEMS "@PACKAGE_PYSIDE_TYPESYSTEMS@")
+-set_and_check(PYSIDE_GLUE "@PACKAGE_PYSIDE_GLUE@")
++set_and_check(PYSIDE_TYPESYSTEMS "${TRUEPREFIX}/share/PySide6/typesystems")
++set_and_check(PYSIDE_GLUE "${TRUEPREFIX}/share/PySide6/glue")

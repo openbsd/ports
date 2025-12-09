@@ -2,6 +2,13 @@ include/X11/qt6/QtSvg/
 include/X11/qt6/QtSvg/${VERSION}/
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgabstractanimation_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvganimate_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvganimatedproperty_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvganimator_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgcssanimation_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgcsshandler_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgcssproperties_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgfilter_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgfont_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvggraphics_p.h
@@ -10,7 +17,9 @@ include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvghelper_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgnode_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstyleselector_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgutils_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgvisitor_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
 include/X11/qt6/QtSvg/QSvgGenerator
@@ -57,6 +66,15 @@ lib/cmake/Qt6Svg/Qt6SvgTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Svg/Qt6SvgTargets.cmake
 lib/cmake/Qt6Svg/Qt6SvgVersionlessAliasTargets.cmake
 lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake
+lib/cmake/Qt6SvgPrivate/
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfig.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersion.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateDependencies.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateTargets.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateVersionlessTargets.cmake
 lib/cmake/Qt6SvgWidgets/
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsConfig.cmake
@@ -73,12 +91,11 @@ lib/libQt6SvgWidgets.prl
 @lib lib/libQt6SvgWidgets.so.${LIBQt6SvgWidgets_VERSION}
 lib/pkgconfig/Qt6Svg.pc
 lib/pkgconfig/Qt6SvgWidgets.pc
-lib/qt6/metatypes/qt6svg_release_metatypes.json
-lib/qt6/metatypes/qt6svgwidgets_release_metatypes.json
+lib/qt6/metatypes/qt6svg_metatypes.json
+lib/qt6/metatypes/qt6svgwidgets_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_svg.pri
 lib/qt6/mkspecs/modules/qt_lib_svg_private.pri
 lib/qt6/mkspecs/modules/qt_lib_svgwidgets.pri
-lib/qt6/mkspecs/modules/qt_lib_svgwidgets_private.pri
 lib/qt6/modules/Svg.json
 lib/qt6/modules/SvgWidgets.json
 lib/qt6/plugins/iconengines/

@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS =   Qt6Qml                    7.0 # 6.7
 SHARED_LIBS +=  Qt6Quick                  8.0 # 6.7
@@ -50,6 +49,10 @@ SHARED_LIBS +=  Qt6QmlMeta                0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickControls2FluentWinUI3StyleImpl 0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickVectorImage       0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickVectorImageGenerator 0.0 # 0.0
+
+SHARED_LIBS +=	Qt6LabsSynchronizer       0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickShapesDesignHelpers 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickVectorImageHelpers 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Sql Qt6Svg Qt6Test Qt6Widgets c m xkbcommon

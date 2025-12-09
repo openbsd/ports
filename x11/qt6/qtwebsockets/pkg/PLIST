@@ -47,10 +47,19 @@ lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfig.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfigVersion.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateDependencies.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateVersionlessTargets.cmake
 lib/libQt6WebSockets.prl
 @lib lib/libQt6WebSockets.so.${LIBQt6WebSockets_VERSION}
 lib/pkgconfig/Qt6WebSockets.pc
-lib/qt6/metatypes/qt6websockets_release_metatypes.json
+lib/qt6/metatypes/qt6websockets_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_websockets.pri
 lib/qt6/mkspecs/modules/qt_lib_websockets_private.pri
 lib/qt6/modules/WebSockets.json

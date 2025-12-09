@@ -1,0 +1,23 @@
+/usr/include/sys/signal.h:190:27: note: previous definition is here
+  190 | typedef struct sigcontext ucontext_t;
+Index: src/testlib/qtestcrashhandler_unix.cpp
+--- src/testlib/qtestcrashhandler_unix.cpp.orig
++++ src/testlib/qtestcrashhandler_unix.cpp
+@@ -40,7 +40,7 @@
+ # elif __has_include(<ucontext.h>)
+ #  include <ucontext.h>
+ # else
+-using ucontext_t = void;
++//using ucontext_t = void;
+ # endif
+ 
+ #if defined(Q_OS_MACOS)
+@@ -368,7 +368,7 @@ void printTestRunTime()
+ static quintptr getProgramCounter(void *ucontext)
+ {
+     quintptr pc = 0;
+-    if ([[maybe_unused]] auto ctx = static_cast<ucontext_t *>(ucontext)) {
++    if ([[maybe_unused]] auto ctx = static_cast<void *>(ucontext)) {
+ #if 0 // keep the list below alphabetical
+ 
+ #elif defined(Q_OS_DARWIN) && defined(Q_PROCESSOR_ARM_64)

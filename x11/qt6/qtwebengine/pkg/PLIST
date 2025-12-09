@@ -9,6 +9,7 @@ include/X11/qt6/QtPdf/${VERSION}/QtPdf/private/qpdflinkmodel_p.h
 include/X11/qt6/QtPdf/${VERSION}/QtPdf/private/qpdfsearchmodel_p.h
 include/X11/qt6/QtPdf/${VERSION}/QtPdf/private/qpdfselection_p.h
 include/X11/qt6/QtPdf/${VERSION}/QtPdf/private/qtpdf-config_p.h
+include/X11/qt6/QtPdf/${VERSION}/QtPdf/private/qtpdfglobal_p.h
 include/X11/qt6/QtPdf/QPdfBookmarkModel
 include/X11/qt6/QtPdf/QPdfDocument
 include/X11/qt6/QtPdf/QPdfDocumentRenderOptions
@@ -75,6 +76,7 @@ include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginecon
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginecookiestore_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginedesktopmediarequest_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginedownloadrequest_p.h
+include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineextensioninfo_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineglobalsettings_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginehistory_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginemessagepumpscheduler_p.h
@@ -82,6 +84,7 @@ include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginenew
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginepage_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginepermission_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineprofile_p.h
+include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineprofilebuilder_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginescriptcollection_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginewebauthuxrequest_p.h
@@ -93,6 +96,8 @@ include/X11/qt6/QtWebEngineCore/QWebEngineContextMenuRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineCookieStore
 include/X11/qt6/QtWebEngineCore/QWebEngineDesktopMediaRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineDownloadRequest
+include/X11/qt6/QtWebEngineCore/QWebEngineExtensionInfo
+include/X11/qt6/QtWebEngineCore/QWebEngineExtensionManager
 include/X11/qt6/QtWebEngineCore/QWebEngineFileSystemAccessRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineFindTextResult
 include/X11/qt6/QtWebEngineCore/QWebEngineFrame
@@ -109,6 +114,7 @@ include/X11/qt6/QtWebEngineCore/QWebEngineNotification
 include/X11/qt6/QtWebEngineCore/QWebEnginePage
 include/X11/qt6/QtWebEngineCore/QWebEnginePermission
 include/X11/qt6/QtWebEngineCore/QWebEngineProfile
+include/X11/qt6/QtWebEngineCore/QWebEngineProfileBuilder
 include/X11/qt6/QtWebEngineCore/QWebEngineQuotaRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineRegisterProtocolHandlerRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineScript
@@ -135,6 +141,8 @@ include/X11/qt6/QtWebEngineCore/qwebenginecontextmenurequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginecookiestore.h
 include/X11/qt6/QtWebEngineCore/qwebenginedesktopmediarequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginedownloadrequest.h
+include/X11/qt6/QtWebEngineCore/qwebengineextensioninfo.h
+include/X11/qt6/QtWebEngineCore/qwebengineextensionmanager.h
 include/X11/qt6/QtWebEngineCore/qwebenginefilesystemaccessrequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginefindtextresult.h
 include/X11/qt6/QtWebEngineCore/qwebengineframe.h
@@ -149,6 +157,7 @@ include/X11/qt6/QtWebEngineCore/qwebenginenotification.h
 include/X11/qt6/QtWebEngineCore/qwebenginepage.h
 include/X11/qt6/QtWebEngineCore/qwebenginepermission.h
 include/X11/qt6/QtWebEngineCore/qwebengineprofile.h
+include/X11/qt6/QtWebEngineCore/qwebengineprofilebuilder.h
 include/X11/qt6/QtWebEngineCore/qwebenginequotarequest.h
 include/X11/qt6/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginescript.h
@@ -171,10 +180,12 @@ include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickweben
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginedialogrequests_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginefaviconprovider_p_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineforeigntypes_p.h
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineframe_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginenewwindowrequest_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineprofile_p.h
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineprofileprototype_p.h
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineprofileprototype_p_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginescriptcollection_p.h
-include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginescriptcollection_p_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginesettings_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginesingleton_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebenginetouchhandle_p.h
@@ -243,6 +254,15 @@ lib/cmake/Qt6Pdf/Qt6PdfTargets-relwithdebinfo.cmake
 lib/cmake/Qt6Pdf/Qt6PdfTargets.cmake
 lib/cmake/Qt6Pdf/Qt6PdfVersionlessAliasTargets.cmake
 lib/cmake/Qt6Pdf/Qt6PdfVersionlessTargets.cmake
+lib/cmake/Qt6PdfPrivate/
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateConfig.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateConfigVersion.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateDependencies.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateTargets.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6PdfPrivate/Qt6PdfPrivateVersionlessTargets.cmake
 lib/cmake/Qt6PdfQuick/
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickConfig.cmake
@@ -253,6 +273,15 @@ lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets-relwithdebinfo.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessTargets.cmake
+lib/cmake/Qt6PdfQuickPrivate/
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateConfig.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateDependencies.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateTargets.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6PdfQuickPrivate/Qt6PdfQuickPrivateVersionlessTargets.cmake
 lib/cmake/Qt6PdfWidgets/
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsConfig.cmake
@@ -263,6 +292,15 @@ lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets-relwithdebinfo.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessTargets.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateConfig.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateConfigVersion.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateDependencies.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateTargets.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6PdfWidgetsPrivate/Qt6PdfWidgetsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfigVersion.cmake
@@ -293,6 +331,15 @@ lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-relwithdebinfo.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfig.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateDependencies.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebEngineCoreTools/
 lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfig.cmake
@@ -321,6 +368,15 @@ lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlTargets-rel
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlTargets.cmake
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfig.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateDependencies.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfig.cmake
@@ -331,6 +387,15 @@ lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets-relwithdebinfo.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfig.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateDependencies.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessTargets.cmake
 lib/libQt6Pdf.prl
 @lib lib/libQt6Pdf.so.${LIBQt6Pdf_VERSION}
 lib/libQt6PdfQuick.prl
@@ -353,15 +418,16 @@ lib/pkgconfig/Qt6WebEngineQuick.pc
 lib/pkgconfig/Qt6WebEngineQuickDelegatesQml.pc
 lib/pkgconfig/Qt6WebEngineWidgets.pc
 @bin lib/qt6/libexec/QtWebEngineProcess
+@bin lib/qt6/libexec/gn
 @bin lib/qt6/libexec/qwebengine_convert_dict
 @bin lib/qt6/libexec/webenginedriver
-lib/qt6/metatypes/qt6pdf_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6pdfquick_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6pdfwidgets_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6webenginecore_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6webenginequick_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6webenginequickdelegatesqml_relwithdebinfo_metatypes.json
-lib/qt6/metatypes/qt6webenginewidgets_relwithdebinfo_metatypes.json
+lib/qt6/metatypes/qt6pdf_metatypes.json
+lib/qt6/metatypes/qt6pdfquick_metatypes.json
+lib/qt6/metatypes/qt6pdfwidgets_metatypes.json
+lib/qt6/metatypes/qt6webenginecore_metatypes.json
+lib/qt6/metatypes/qt6webenginequick_metatypes.json
+lib/qt6/metatypes/qt6webenginequickdelegatesqml_metatypes.json
+lib/qt6/metatypes/qt6webenginewidgets_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_pdf.pri
 lib/qt6/mkspecs/modules/qt_lib_pdf_private.pri
 lib/qt6/mkspecs/modules/qt_lib_pdfquick.pri
@@ -373,7 +439,6 @@ lib/qt6/mkspecs/modules/qt_lib_webenginecore_private.pri
 lib/qt6/mkspecs/modules/qt_lib_webenginequick.pri
 lib/qt6/mkspecs/modules/qt_lib_webenginequick_private.pri
 lib/qt6/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri
-lib/qt6/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri
 lib/qt6/mkspecs/modules/qt_lib_webenginewidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_webenginewidgets_private.pri
 lib/qt6/modules/Pdf.json

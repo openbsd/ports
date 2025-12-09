@@ -1,17 +1,26 @@
 Index: src/3rdparty/gn/build/gen.py
 --- src/3rdparty/gn/build/gen.py.orig
 +++ src/3rdparty/gn/build/gen.py
-@@ -94,6 +94,9 @@ class Platform(object):
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++# || BUILDFLAG(IS_BSD)!/usr/bin/env pyehon3
+ # Copyright 2014 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+@@ -94,6 +94,12 @@ class Platform(object):
    def is_solaris(self):
      return self._platform == 'solaris'
  
 +  def is_openbsd(self):
 +    return self._platform == 'openbsd'
 +
++  def is_freebsd(self):
++    return self._platform == 'freebsd'
++
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku', 'solaris', 'msys', 'netbsd', 'serenity']
  
-@@ -327,7 +330,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -329,7 +335,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'linux': 'build_linux.ninja.template',
        'freebsd': 'build_linux.ninja.template',
        'aix': 'build_aix.ninja.template',
@@ -20,12 +29,14 @@ Index: src/3rdparty/gn/build/gen.py
        'haiku': 'build_haiku.ninja.template',
        'solaris': 'build_linux.ninja.template',
        'netbsd': 'build_linux.ninja.template',
-@@ -539,6 +542,8 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -600,8 +606,8 @@ def WriteGNNinja(path, platform, host, options, args_l
+       cflags.append('-DPATH_MAX=1024')
+       cflags.append('-DZOSLIB_OVERRIDE_CLIB')
  
-         '-std=c++20'
-     ])
-+
+-    if platform.is_posix() and not platform.is_haiku():
+-      ldflags.append('-pthread')
++    ldflags.append('-pthread')
 +    ldflags.append('-lkvm')
  
-     if is_gcc(cxx):
-       cflags.append('-Wno-redundant-move')
+     if platform.is_mingw() or platform.is_msys():
+       cflags.extend(['-DUNICODE',

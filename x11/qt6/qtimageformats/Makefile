@@ -1,7 +1,6 @@
 QT6NAME =	QtImageFormats
 COMMENT =	Qt6 additional image formats
 PKGSPEC =	qt6-qtimageformats-${QT6_PKGSPEC}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui c jasper jpeg
 WANTLIB += m mng tiff webp webpdemux webpmux

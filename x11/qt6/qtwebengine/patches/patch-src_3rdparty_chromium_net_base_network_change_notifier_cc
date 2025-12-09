@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/net/base/network_change_notifier.cc
  #include "net/base/network_change_notifier_passive.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -329,6 +329,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -324,6 +324,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
  #elif BUILDFLAG(IS_FUCHSIA)
    return std::make_unique<NetworkChangeNotifierFuchsia>(
        /*require_wlan=*/false);

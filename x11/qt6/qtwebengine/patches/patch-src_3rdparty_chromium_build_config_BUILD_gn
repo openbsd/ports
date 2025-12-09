@@ -1,14 +1,37 @@
 Index: src/3rdparty/chromium/build/config/BUILD.gn
 --- src/3rdparty/chromium/build/config/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -218,11 +218,13 @@ config("default_libs") {
+@@ -22,7 +22,6 @@ import("//build/config/ui.gni")
+ if (is_android) {
+   import("//build/config/android/abi.gni")
+ }
+-
+ # ==============================================
+ #   PLEASE DO NOT ADD MORE THINGS TO THIS LIST
+ # ==============================================
+@@ -156,8 +155,13 @@ config("release") {
+     # follows XCode's default behavior for Release builds.
+     defines += [ "NS_BLOCK_ASSERTIONS=1" ]
+   }
++  include_dirs = [ "/usr/local/include/libepoll-shim" ]
++  libs = [ "epoll-shim" ]
++  cflags = [ "-I/usr/local/include/libepoll-shim" ]
+ }
+ 
++
++
+ # Default libraries ------------------------------------------------------------
+ 
+ # This config defines the default libraries applied to all targets.
+@@ -219,11 +223,14 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since
      # linking can have run-time side effects, nothing should be listed here.
      libs = []
 +  } else if (is_bsd) {
 +    libs = [
++      "epoll-shim",
 +      "pthread",
-+    ]
++     ]
    } else if (is_linux || is_chromeos) {
      libs = [
 -      "dl",
@@ -17,3 +40,11 @@ Index: src/3rdparty/chromium/build/config/BUILD.gn
      ]
    }
  }
+@@ -356,7 +363,6 @@ config("executable_config") {
+       configs += [ "//build/config/chromecast:executable_config" ]
+     }
+   }
+-
+   # If we're using the prebuilt instrumented libraries with the sanitizers, we
+   # need to add ldflags to every binary to make sure they are picked up.
+   if (prebuilt_instrumented_libraries_available) {

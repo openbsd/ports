@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/dav1d/libdav1d/src/thread.h
+--- src/3rdparty/chromium/third_party/dav1d/libdav1d/src/thread.h.orig
++++ src/3rdparty/chromium/third_party/dav1d/libdav1d/src/thread.h
+@@ -168,7 +168,7 @@ static inline void dav1d_set_thread_name(const char *c
+ #elif HAVE_PTHREAD_SETNAME_NP
+ 
+ static inline void dav1d_set_thread_name(const char *const name) {
+-    pthread_setname_np(pthread_self(), name);
++    pthread_set_name_np(pthread_self(), name);
+ }
+ 
+ #elif HAVE_PTHREAD_SET_NAME_NP

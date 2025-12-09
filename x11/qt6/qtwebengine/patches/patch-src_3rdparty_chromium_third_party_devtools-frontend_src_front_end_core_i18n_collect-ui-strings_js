@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/devtools-frontend/src/front_end/core/i18n/collect-ui-strings.js
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/front_end/core/i18n/collect-ui-strings.js.orig
++++ src/3rdparty/chromium/third_party/devtools-frontend/src/front_end/core/i18n/collect-ui-strings.js
+@@ -38,7 +38,7 @@ function convertCtcToLhLAndSave(outputDirectory, local
+ 
+   /** @type {Record<string, CtcMessage>} */
+   const sortedCtcStrings = {};
+-  const sortedEntries = Object.entries(strings).sort(([keyA], [keyB]) => keyA.localeCompare(keyB));
++  const sortedEntries = Object.entries(strings).sort(([keyA], [keyB]) => keyA < keyB ? -1 : (keyA > keyB ? 1 : 0));
+   for (const [key, defn] of sortedEntries) {
+     sortedCtcStrings[key] = defn;
+   }

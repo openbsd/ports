@@ -304,6 +304,15 @@ lib/cmake/Qt6Charts/Qt6ChartsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake
 lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake
+lib/cmake/Qt6ChartsPrivate/
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfig.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersion.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateDependencies.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ChartsQml/
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlConfig.cmake
@@ -314,6 +323,15 @@ lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessTargets.cmake
+lib/cmake/Qt6ChartsQmlPrivate/
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateConfig.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateConfigVersion.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateDependencies.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateTargets.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6ChartsQmlPrivate/Qt6ChartsQmlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Config.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2ConfigVersion.cmake
@@ -326,8 +344,8 @@ lib/libQt6ChartsQml.prl
 @lib lib/libQt6ChartsQml.so.${LIBQt6ChartsQml_VERSION}
 lib/pkgconfig/Qt6Charts.pc
 lib/pkgconfig/Qt6ChartsQml.pc
-lib/qt6/metatypes/qt6charts_release_metatypes.json
-lib/qt6/metatypes/qt6chartsqml_release_metatypes.json
+lib/qt6/metatypes/qt6charts_metatypes.json
+lib/qt6/metatypes/qt6chartsqml_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_charts.pri
 lib/qt6/mkspecs/modules/qt_lib_charts_private.pri
 lib/qt6/mkspecs/modules/qt_lib_chartsqml.pri

@@ -65,6 +65,15 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
+lib/cmake/Qt6Core5CompatPrivate/
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfig.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersion.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateDependencies.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateTargets.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6Core5CompatPrivate/Qt6Core5CompatPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfigVersion.cmake
@@ -80,7 +89,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 lib/libQt6Core5Compat.prl
 @lib lib/libQt6Core5Compat.so.${LIBQt6Core5Compat_VERSION}
 lib/pkgconfig/Qt6Core5Compat.pc
-lib/qt6/metatypes/qt6core5compat_release_metatypes.json
+lib/qt6/metatypes/qt6core5compat_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_core5compat.pri
 lib/qt6/mkspecs/modules/qt_lib_core5compat_private.pri
 lib/qt6/modules/Core5Compat.json
@@ -112,7 +121,6 @@ lib/qt6/qml/Qt5Compat/GraphicalEffects/RecursiveBlur.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/ThresholdMask.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/ZoomBlur.qml
 @so lib/qt6/qml/Qt5Compat/GraphicalEffects/libqtgraphicaleffectsplugin.so
-lib/qt6/qml/Qt5Compat/GraphicalEffects/plugins.qmltypes
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/DropShadowBase.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/FastGlow.qml
@@ -125,3 +133,4 @@ lib/qt6/qml/Qt5Compat/GraphicalEffects/private/GaussianMaskedBlur.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/plugins.qmltypes
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/qmldir
 lib/qt6/qml/Qt5Compat/GraphicalEffects/qmldir
+lib/qt6/qml/Qt5Compat/GraphicalEffects/qtgraphicaleffectsplugin.qmltypes

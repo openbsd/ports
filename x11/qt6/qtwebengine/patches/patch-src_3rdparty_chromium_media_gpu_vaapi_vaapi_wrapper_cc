@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/media/gpu/vaapi/vaapi_wrapper.cc
 --- src/3rdparty/chromium/media/gpu/vaapi/vaapi_wrapper.cc.orig
 +++ src/3rdparty/chromium/media/gpu/vaapi/vaapi_wrapper.cc
-@@ -66,7 +66,7 @@
+@@ -78,7 +78,7 @@
  using media_gpu_vaapi::kModuleVa_prot;
  #endif
  

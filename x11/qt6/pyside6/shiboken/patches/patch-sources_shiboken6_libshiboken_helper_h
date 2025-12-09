@@ -11,9 +11,9 @@ Index: sources/shiboken6/libshiboken/helper.h
  #include <iosfwd>
  
  #define SBK_UNUSED(x)   (void)(x);
-@@ -61,7 +64,7 @@ class AutoArrayPointer
-         T *data;
- };
+@@ -69,7 +72,7 @@ class ArrayPointer
+ template <class T>
+ using AutoArrayPointer = ArrayPointer<T>; // deprecated
  
 -using ThreadId = unsigned long long;
 +using ThreadId = pthread_t;

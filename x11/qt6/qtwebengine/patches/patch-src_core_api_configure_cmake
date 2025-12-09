@@ -7,9 +7,9 @@ Index: src/core/api/configure.cmake
          pkg_check_modules(PULSEAUDIO libpulse>=0.9.10 libpulse-mainloop-glib)
 +        pkg_check_modules(SNDIO libsndio)
          pkg_check_modules(XDAMAGE xdamage)
-         pkg_check_modules(POPPLER_CPP poppler-cpp IMPORTED_TARGET)
          pkg_check_modules(GBM gbm)
-@@ -87,6 +88,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
+         pkg_check_modules(LIBVA libva>=1.14)
+@@ -96,6 +97,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
      AUTODETECT NOT QT_FEATURE_webengine_embedded_build
      CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer
  )
@@ -21,7 +21,7 @@ Index: src/core/api/configure.cmake
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -168,7 +174,7 @@ qt_feature("webengine-vaapi" PRIVATE
+@@ -179,15 +185,13 @@ qt_feature("webengine-vaapi" PRIVATE
      PURPOSE "Enables support for VA-API hardware acceleration"
      AUTODETECT GBM_FOUND AND LIBVA_FOUND AND QT_FEATURE_vulkan
      # hardware accelerated encoding requires bundled libvpx
@@ -30,7 +30,15 @@ Index: src/core/api/configure.cmake
  )
  list(LENGTH CMAKE_OSX_ARCHITECTURES osx_arch_count)
  qt_feature("webenginedriver" PUBLIC
-@@ -212,15 +218,19 @@ qt_configure_add_summary_entry(
+     SECTION "WebEngine"
+     LABEL "Build WebEngineDriver"
+     PURPOSE "Enables WebEngineDriver build"
+-    CONDITION NOT CMAKE_CROSSCOMPILING
+-              AND NOT (CMAKE_OSX_ARCHITECTURES AND osx_arch_count GREATER 1)
+     DISABLE CMAKE_BUILD_TYPE STREQUAL Debug
+ )
+ qt_feature("webengine-arm64-udot-support" PRIVATE
+@@ -222,15 +226,19 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-vaapi"
@@ -51,5 +59,5 @@ Index: src/core/api/configure.cmake
 +    ARGS "webengine-system-sndio"
 +    CONDITION UNIX
  )
- qt_configure_add_summary_entry(ARGS "webengine-v8-context-snapshot")
- qt_configure_add_summary_entry(ARGS "webenginedriver")
+ qt_configure_add_summary_entry(
+     ARGS "webengine-webrtc-system-openh264"

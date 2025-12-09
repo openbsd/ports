@@ -38,6 +38,9 @@ bin/pyside6/project_lib/__init__.py
 bin/pyside6/project_lib/design_studio_project.py
 bin/pyside6/project_lib/newproject.py
 bin/pyside6/project_lib/project_data.py
+bin/pyside6/project_lib/pyproject_json.py
+bin/pyside6/project_lib/pyproject_parse_result.py
+bin/pyside6/project_lib/pyproject_toml.py
 bin/pyside6/project_lib/utils.py
 bin/pyside6/pyside_tool.py
 bin/pyside6/qml.py

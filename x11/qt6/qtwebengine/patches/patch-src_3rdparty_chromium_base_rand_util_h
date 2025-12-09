@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/rand_util.h
 --- src/3rdparty/chromium/base/rand_util.h.orig
 +++ src/3rdparty/chromium/base/rand_util.h
-@@ -149,7 +149,7 @@ void RandomShuffle(Itr first, Itr last) {
+@@ -209,7 +209,7 @@ void RandomShuffle(Itr first, Itr last) {
    std::shuffle(first, last, RandomBitGenerator());
  }
  

@@ -4,7 +4,6 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		5
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
@@ -33,26 +32,24 @@ SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.7
 SHARED_LIBS +=  Qt6XcbQpa                    4.1 # 6.7
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.7
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.7
-
-WANTLIB-global =
+SHARED_LIBS +=  Qt6WaylandClient             0.0 # 0.0
+SHARED_LIBS +=  Qt6WlShellIntegration        0.0 # 0.0
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
 WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1
 WANTLIB-main += double-conversion drm execinfo fontconfig freetype
 WANTLIB-main += gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += gthread-2.0 gtk-3 harfbuzz icudata icui18n icuuc iodbc
-WANTLIB-main += jpeg m pango-1.0 pangocairo-1.0 pcre2-16 png proxy
-WANTLIB-main += sqlite3 ssl xcb xcb-cursor xcb-glx xcb-icccm xcb-image
-WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
-WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinput xcb-xkb xkbcommon
+WANTLIB-main += gthread-2.0 gtk-3 harfbuzz icudata icui18n icuuc intl
+WANTLIB-main += iodbc jpeg m pango-1.0 pangocairo-1.0 pcre2-16 png
+WANTLIB-main += proxy sqlite3 ssl wayland-client wayland-cursor wayland-egl
+WANTLIB-main += xcb xcb-cursor xcb-glx xcb-icccm xcb-image xcb-keysyms
+WANTLIB-main += xcb-randr xcb-render xcb-render-util xcb-shape xcb-shm
+WANTLIB-main += xcb-sync xcb-util xcb-xfixes xcb-xinput xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z zstd
 
-# those come from gthread-2.0, not used by Qt itself
-WANTLIB-main +=		intl
+WANTLIB-mysql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m mariadb
 
-WANTLIB-mysql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql c execinfo m mariadb
-
-WANTLIB-psql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql c execinfo m pq
+WANTLIB-psql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m pq
 
 MULTI_PACKAGES =	-main -global -mysql -psql
 
@@ -113,27 +110,27 @@ CONFIGURE_ARGS +=	-DQT_QMAKE_TARGET_MKSPEC=openbsd-g++
 .endif
 
 # cmake/configure-cmake-mapping.md
-CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-			-DINSTALL_BINDIR=lib/qt6/bin \
-			-DINSTALL_DOCDIR=share/doc/qt6 \
-			-DINSTALL_ARCHDATADIR=lib/qt6 \
-			-DINSTALL_DATADIR=share/qt6 \
-			-DINSTALL_INCLUDEDIR=include/X11/qt6 \
-			-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
-			-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
-			-DINSTALL_PLUGINSDIR=lib/qt6/plugins \
-			-DBUILD_WITH_PCH=OFF \
+CONFIGURE_ARGS +=	-DBUILD_WITH_PCH=OFF \
+			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+			-DFEATURE_dtls=OFF \
 			-DFEATURE_journald=OFF \
-			-DFEATURE_libudev=OFF \
 			-DFEATURE_libinput=OFF \
+			-DFEATURE_libproxy=ON \
+			-DFEATURE_libudev=OFF \
+			-DFEATURE_no_direct_extern_access=ON \
 			-DFEATURE_openssl_linked=ON \
 			-DFEATURE_system_sqlite=ON \
 			-DFEATURE_system_xcb_xinput=ON \
-			-DFEATURE_libproxy=ON \
-			-DFEATURE_dtls=OFF
+			-DFEATURE_wayland=ON \
+			-DINSTALL_ARCHDATADIR=lib/qt6 \
+			-DINSTALL_BINDIR=lib/qt6/bin \
+			-DINSTALL_DATADIR=share/qt6 \
+			-DINSTALL_DOCDIR=share/doc/qt6 \
+			-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
+			-DINSTALL_INCLUDEDIR=include/X11/qt6 \
+			-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
+			-DINSTALL_PLUGINSDIR=lib/qt6/plugins
 
-# qt6/qtwayland depends on Qt6Gui wayland support
-CONFIGURE_ARGS +=	-DFEATURE_wayland=ON
 # TODO
 #CONFIGURE_ARGS +=	-DQT_BUILD_TESTS=ON
 

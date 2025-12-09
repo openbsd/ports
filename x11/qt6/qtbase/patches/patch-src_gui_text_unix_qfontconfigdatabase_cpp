@@ -1,7 +1,7 @@
 Index: src/gui/text/unix/qfontconfigdatabase.cpp
 --- src/gui/text/unix/qfontconfigdatabase.cpp.orig
 +++ src/gui/text/unix/qfontconfigdatabase.cpp
-@@ -587,7 +587,7 @@ void QFontconfigDatabase::populateFontDatabase()
+@@ -627,7 +627,7 @@ void QFontconfigDatabase::populateFontDatabase()
              ++p;
          }
  
@@ -10,7 +10,7 @@ Index: src/gui/text/unix/qfontconfigdatabase.cpp
          /* Support the named instance of Variable Fonts. */
          FcPatternAddBool(pattern, FC_VARIABLE, FcFalse);
  #endif
-@@ -1010,7 +1010,7 @@ void QFontconfigDatabase::setupFontEngine(QFontEngineF
+@@ -1061,7 +1061,7 @@ void QFontconfigDatabase::setupFontEngine(QFontEngineF
      FcConfigSubstitute(nullptr, pattern, FcMatchPattern);
      FcDefaultSubstitute(pattern);
  

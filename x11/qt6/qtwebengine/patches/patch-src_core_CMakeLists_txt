@@ -5,39 +5,42 @@ Index: src/core/CMakeLists.txt
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX)
-+if(UNIX)
+-if(LINUX OR WIN32)
++if(UNIX OR WIN32)
      setup_toolchains()
  endif()
  
-@@ -200,7 +200,7 @@ foreach(arch ${archs})
+@@ -212,7 +212,7 @@ foreach(arch ${archs})
                  accessibility_activation_observer.cpp accessibility_activation_observer.h
-         )
- 
--        extend_gn_target(${buildGn} CONDITION LINUX OR WIN32
-+        extend_gn_target(${buildGn} CONDITION UNIX OR WIN32
-             SOURCES
-                 compositor/content_gpu_client_qt.cpp compositor/content_gpu_client_qt.h
-                 ozone/gl_context_qt.cpp ozone/gl_context_qt.h
-@@ -213,7 +213,7 @@ foreach(arch ${archs})
-                 ozone/gl_surface_wgl_qt.cpp ozone/gl_surface_wgl_qt.h
          )
  
 -        extend_gn_target(${buildGn} CONDITION LINUX
 +        extend_gn_target(${buildGn} CONDITION UNIX
              SOURCES
-                 ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
-                 ozone/gl_ozone_egl_qt.cpp ozone/gl_ozone_egl_qt.h
-@@ -325,6 +325,8 @@ foreach(arch ${archs})
-             qtwebengine_target="${buildDir}/${config}/${arch}:QtWebEngineCore"
-             build_dawn_tests=false
-             build_with_tflite_lib=false
-+            is_qtwebengine=true
-+            is_qtpdf=false
-             enable_background_contents=false
-             enable_background_mode=false
-             enable_ipc_fuzzer=false
-@@ -436,7 +438,7 @@ foreach(arch ${archs})
+                 ozone/gl_ozone_qt.cpp ozone/gl_ozone_qt.h
+                 ozone/ozone_util_qt.cpp ozone/ozone_util_qt.h
+@@ -220,17 +220,17 @@ foreach(arch ${archs})
+                 ozone/surface_factory_qt.cpp ozone/surface_factory_qt.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl
++        extend_gn_target(${buildGn} CONDITION UNIX AND QT_FEATURE_opengl
+             SOURCES
+                 ozone/gl_helper.cpp ozone/gl_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
++        extend_gn_target(${buildGn} CONDITION UNIX AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
+             SOURCES
+                 ozone/glx_helper.cpp ozone/glx_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_egl
++        extend_gn_target(${buildGn} CONDITION UNIX AND QT_FEATURE_opengl AND QT_FEATURE_egl
+             SOURCES
+                 ozone/egl_helper.cpp ozone/egl_helper.h
+         )
+@@ -461,7 +461,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
@@ -46,16 +49,27 @@ Index: src/core/CMakeLists.txt
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -506,7 +508,11 @@ foreach(arch ${archs})
-                 CONDITION QT_FEATURE_webengine_system_pulseaudio
-             )
-             extend_gn_list(gnArgArg
--                ARGS use_system_minigbm
-+                ARGS use_system_sndi
-+                CONDITION QT_FEATURE_webengine_system_sndio
-+            )
-+            extend_gn_list(gnArgArg
-+                ARGS use_sndio
+@@ -534,6 +534,10 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_gbm
              )
              extend_gn_list(gnArgArg
++                ARGS use_system_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
++            )
++            extend_gn_list(gnArgArg
+                 ARGS rtc_system_openh264
+                 CONDITION QT_FEATURE_webengine_webrtc_system_openh264
+             )
+@@ -657,9 +661,9 @@ add_gn_build_artifacts_to_target(
+     ${dataStampOption}
+ )
+ add_dependencies(WebEngineCore run_core_NinjaDone)
+-if(COIN_BUG_699)
+-   set_property(TARGET WebEngineCore PROPERTY CXX_LINKER_LAUNCHER ${PROJECT_BINARY_DIR}/linker_ulimit.sh)
+-endif()
++#if(COIN_BUG_699)
++#   set_property(TARGET WebEngineCore PROPERTY CXX_LINKER_LAUNCHER ${PROJECT_BINARY_DIR}/linker_ulimit.sh)
++#endif()
+ 
+ ##
+ #  SANDBOX

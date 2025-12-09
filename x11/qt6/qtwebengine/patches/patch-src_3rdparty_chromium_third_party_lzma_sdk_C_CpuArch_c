@@ -1,20 +1,10 @@
 Index: src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
 --- src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c.orig
 +++ src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
-@@ -789,7 +789,6 @@ BoolInt CPU_IsSupported_CRYPTO(void) { return IsProces
- BoolInt CPU_IsSupported_NEON(void)   { return IsProcessorFeaturePresent(PF_ARM_NEON_INSTRUCTIONS_AVAILABLE) ? 1 : 0; }
+@@ -790,6 +790,36 @@ BoolInt CPU_IsSupported_NEON(void)   { return IsProces
  
  #else
--
- #if defined(__APPLE__)
  
- /*
-@@ -853,6 +852,36 @@ BoolInt CPU_IsSupported_SHA3(void)
- BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
- BoolInt CPU_IsSupported_SHA2(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
- BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYPTO_SUPPORT_VAL; }
-+
-+
 +#elif defined(__OpenBSD__)
 +
 +#include <sys/param.h>
@@ -43,6 +33,8 @@ Index: src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
 +MY_HWCAP_CHECK_FUNC (SHA1)
 +MY_HWCAP_CHECK_FUNC (SHA2)
 +MY_HWCAP_CHECK_FUNC (AES)
++
++
+ #if defined(__APPLE__)
  
- 
- #else // __APPLE__
+ /*

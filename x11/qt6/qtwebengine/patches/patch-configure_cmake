@@ -1,7 +1,24 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -180,29 +180,6 @@ int main() {
+@@ -17,7 +17,6 @@ qt_webengine_set_version(gcc 10.0)
+ qt_webengine_set_version(clang 17.0)
+ qt_webengine_set_version(gcc_for_pdf 9.0)
+ qt_webengine_set_version(glib 2.32.0)
+-qt_webengine_set_version(glibc 2.16)
+ qt_webengine_set_version(harfbuzz 4.3.0)
+ qt_webengine_set_version(libpng 1.6.0)
+ qt_webengine_set_version(libtiff 4.5.0)
+@@ -116,7 +115,7 @@ if(Python3_EXECUTABLE)
+     )
+ endif()
+ 
+-if(LINUX)
++if(UNIX)
+    qt_webengine_configure_check_for_ulimit()
+ endif()
+ 
+@@ -227,29 +226,7 @@ int main() {
  }"
  )
  
@@ -17,7 +34,7 @@ Index: configure.cmake
 -    return 0;
 -}"
 -)
--
+ 
 -qt_config_compile_test(khr
 -    LABEL "khr"
 -    CODE
@@ -28,10 +45,152 @@ Index: configure.cmake
 -}"
 -)
 -
+ # "Unmodified ffmpeg >= 5.0 is not supported."
  qt_config_compile_test(libavformat
      LABEL "libavformat"
-     LIBRARIES
-@@ -434,7 +411,7 @@ qt_feature("webengine-system-libpci" PRIVATE
+@@ -302,16 +279,16 @@ unset(targets_to_check)
+ 
+ qt_webengine_configure_check("supported-platform"
+     MODULES QtWebEngine
+-    CONDITION LINUX OR WIN32 OR MACOS
++    CONDITION UNIX OR WIN32 OR MACOS
+     MESSAGE "Build can be done only on Linux, Windows or macOS."
+ )
+ qt_webengine_configure_check("supported-platform"
+     MODULES QtPdf
+-    CONDITION LINUX OR WIN32 OR MACOS OR IOS OR ANDROID
++    CONDITION UNIX OR WIN32 OR MACOS OR IOS OR ANDROID
+     MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
+ )
+ 
+-if(LINUX AND CMAKE_CROSSCOMPILING)
++if(UNIX AND CMAKE_CROSSCOMPILING)
+     set(supported_targets "arm" "arm64" "armv7-a" "x86_64")
+     qt_webengine_configure_check("supported-arch"
+         MODULES QtWebEngine QtPdf
+@@ -381,51 +358,37 @@ qt_webengine_configure_check("flex"
+ )
+ qt_webengine_configure_check("pkg-config"
+     MODULES QtWebEngine QtPdf
+-    CONDITION NOT LINUX OR PkgConfig_FOUND
++    CONDITION NOT UNIX OR PkgConfig_FOUND
+     MESSAGE "A pkg-config support is required."
+     DOCUMENTATION "A pkg-config binary."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+-qt_webengine_configure_check("glibc"
+-    MODULES QtWebEngine
+-    CONDITION NOT LINUX OR TEST_glibc
+-    MESSAGE "A suitable version >= ${QT_CONFIGURE_CHECK_glibc_version} of glibc is required."
+-    DOCUMENTATION "Glibc library at least ${QT_CONFIGURE_CHECK_glibc_version} version or later."
+-    TAGS LINUX_PLATFORM
+-)
+-qt_webengine_configure_check("mesa-headers"
+-    MODULES QtWebEngine
+-    CONDITION NOT LINUX OR TEST_khr
+-    MESSAGE "Build requires Khronos development headers for build - see mesa/libegl1-mesa-dev"
+-    DOCUMENTATION "Mesa development headers."
+-    TAGS LINUX_PLATFORM
+-)
+ qt_webengine_configure_check("fontconfig"
+     MODULES QtWebEngine
+-    CONDITION NOT LINUX OR FONTCONFIG_FOUND
++    CONDITION NOT UNIX OR FONTCONFIG_FOUND
+     MESSAGE "Build requires fontconfig."
+     DOCUMENTATION "Fontconfig"
+-    TAGS LINUX_PKG_CONFIG
++    TAGS UNIX_PKG_CONFIG
+ )
+ qt_webengine_configure_check("nss"
+     MODULES QtWebEngine
+-    CONDITION NOT LINUX OR NSS_FOUND
++    CONDITION NOT UNIX OR NSS_FOUND
+     MESSAGE "Build requires nss >= ${QT_CONFIGURE_CHECK_nss_version}."
+     DOCUMENTATION "Nss library is at least ${QT_CONFIGURE_CHECK_nss_version} version."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ qt_webengine_configure_check("dbus"
+     MODULES QtWebEngine
+-    CONDITION NOT LINUX OR DBUS_FOUND
++    CONDITION NOT UNIX OR DBUS_FOUND
+     MESSAGE "Build requires dbus."
+     DOCUMENTATION "Dbus"
+-    TAGS LINUX_PKG_CONFIG
++    TAGS UNIX_PKG_CONFIG
+ )
+ qt_webengine_configure_check("compiler"
+     MODULES QtWebEngine
+     CONDITION MSVC OR
+-        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
+-        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
++        (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
++        (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
+         (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+     MESSAGE
+         "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
+@@ -433,8 +396,8 @@ qt_webengine_configure_check("compiler"
+ qt_webengine_configure_check("compiler"
+     MODULES QtPdf
+     CONDITION MSVC OR
+-        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
+-        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
++        (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
++        (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
+         (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang") OR
+         (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
+         (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
+@@ -466,29 +429,29 @@ qt_webengine_configure_check("msvc-2022"
+ 
+ qt_webengine_configure_check("gcc"
+     MODULES QtWebEngine
+-    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
++    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
+               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_gcc_version}
+     MESSAGE "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_version}"
+     DOCUMENTATION "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_version} to compile QtWebEngine."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ 
+ qt_webengine_configure_check("clang"
+     MODULES QtWebEngine
+-    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "CLANG" OR
++    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "CLANG" OR
+               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_calng_version}
+     MESSAGE "Clang version must be at least ${QT_CONFIGURE_CHECK_clang_version}"
+     DOCUMENTATION "Clang version must be at least ${QT_CONFIGURE_CHECK_clang_version} to compile QtWebEngine."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ 
+ qt_webengine_configure_check("gcc_for_pdf"
+     MODULES QtPdf
+-    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
++    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
+               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}
+     MESSAGE "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}"
+     DOCUMENTATION "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}"
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ 
+ if(WIN32)
+@@ -516,10 +479,10 @@ foreach(x_lib ${x_libs})
+     string(TOLOWER ${x_lib} lib)
+     qt_webengine_configure_check("${lib}"
+         MODULES QtWebEngine
+-        CONDITION NOT TARGET Qt6::Gui OR NOT LINUX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
++        CONDITION NOT TARGET Qt6::Gui OR NOT UNIX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
+         MESSAGE "Could not find ${lib} library for qpa-xcb support."
+         DOCUMENTATION "${lib}"
+-        TAGS LINUX_XCB
++        TAGS UNIX_XCB
+         OPTIONAL
+     )
+     if(qpa_xcb_support_check AND NOT QT_CONFIGURE_CHECK_${lib})
+@@ -743,7 +706,7 @@ qt_feature("webengine-system-openh264" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support X11 on qpa-xcb"
@@ -39,112 +198,4 @@ Index: configure.cmake
 +    CONDITION UNIX
          AND TARGET Qt::Gui
          AND QT_FEATURE_xcb
-         AND X11_FOUND
-@@ -474,15 +451,15 @@ assertTargets(
- )
- add_check_for_support(
-    MODULES QtWebEngine
--   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS
-+   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS
-    MESSAGE "Build can be done only on Linux, Windows or macOS."
- )
- add_check_for_support(
-    MODULES QtPdf
--   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
-+   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
-    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
- )
--if(LINUX AND CMAKE_CROSSCOMPILING)
-+if(UNIX AND CMAKE_CROSSCOMPILING)
-    set(supportedTargets "arm" "arm64" "armv7-a" "x86_64")
-    add_check_for_support(
-        MODULES QtWebEngine QtPdf
-@@ -502,13 +479,6 @@ add_check_for_support(
-    MESSAGE "node.js version 14 or later is required."
- )
- add_check_for_support(
--    MODULES QtWebEngine
--    CONDITION NOT (Nodejs_ARCH STREQUAL "ia32") AND
--              NOT (Nodejs_ARCH STREQUAL "x86") AND
--              NOT (Nodejs_ARCH STREQUAL "arm")
--    MESSAGE "32bit version of Nodejs is not supported."
--)
--add_check_for_support(
-    MODULES QtWebEngine QtPdf
-    CONDITION Python3_EXECUTABLE
-    MESSAGE "Python version 3.8 or later is required."
-@@ -535,7 +505,7 @@ add_check_for_support(
- )
- add_check_for_support(
-    MODULES QtWebEngine QtPdf
--   CONDITION NOT LINUX OR PkgConfig_FOUND
-+   CONDITION NOT UNIX OR PkgConfig_FOUND
-    MESSAGE "A pkg-config support is required."
- )
- add_check_for_support(
-@@ -550,30 +520,30 @@ add_check_for_support(
- )
- add_check_for_support(
-    MODULES QtWebEngine
--   CONDITION NOT LINUX OR FONTCONFIG_FOUND
-+   CONDITION NOT UNIX OR FONTCONFIG_FOUND
-    MESSAGE "Build requires fontconfig."
- )
- add_check_for_support(
-    MODULES QtWebEngine
--   CONDITION NOT LINUX OR NSS_FOUND
-+   CONDITION NOT UNIX OR NSS_FOUND
-    MESSAGE "Build requires nss >= 3.26."
- )
- add_check_for_support(
-    MODULES QtWebEngine
--   CONDITION NOT LINUX OR DBUS_FOUND
-+   CONDITION NOT UNIX OR DBUS_FOUND
-    MESSAGE "Build requires dbus."
- )
- add_check_for_support(
-     MODULES QtWebEngine
--    CONDITION NOT LINUX OR NOT QT_FEATURE_webengine_system_ffmpeg OR TEST_libavformat
-+    CONDITION NOT UNIX OR NOT QT_FEATURE_webengine_system_ffmpeg OR TEST_libavformat
-     MESSAGE "Unmodified ffmpeg >= 5.0 is not supported."
- )
- 
- add_check_for_support(
-    MODULES QtWebEngine
-    CONDITION MSVC OR
--       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
--       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
-+       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
-+       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
-        (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
-    MESSAGE
-        "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
-@@ -582,8 +552,8 @@ add_check_for_support(
- add_check_for_support(
-    MODULES QtPdf
-    CONDITION MSVC OR
--       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
--       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
-+       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
-+       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
-        (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang") OR
-        (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
-        (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
-@@ -592,7 +562,7 @@ add_check_for_support(
-        "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
- )
- 
--if (LINUX OR MINGW)
-+if (UNIX OR MINGW)
-     add_check_for_support(
-         MODULES QtWebEngine QtPdf
-         CONDITION NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
-@@ -705,7 +675,7 @@ qt_configure_add_report_entry(
-     CONDITION IOS AND simulator AND device AND QT_FEATURE_qtpdf_build
- )
- 
--if(LINUX AND QT_FEATURE_xcb AND TARGET Qt::Gui)
-+if(UNIX AND QT_FEATURE_xcb AND TARGET Qt::Gui)
-     set(ozone_x11_support X11 LIBDRM XCOMPOSITE XCURSOR XRANDR XI XPROTO XSHMFENCE XTST XKBCOMMON XKBFILE)
-     set(ozone_x11_error OFF)
-     foreach(xs ${ozone_x11_support})
+         AND qpa_xcb_support_check

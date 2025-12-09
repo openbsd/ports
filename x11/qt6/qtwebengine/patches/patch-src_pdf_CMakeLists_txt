@@ -1,30 +1,21 @@
 Index: src/pdf/CMakeLists.txt
 --- src/pdf/CMakeLists.txt.orig
 +++ src/pdf/CMakeLists.txt
-@@ -70,7 +70,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
+@@ -69,7 +69,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX OR MINGW OR ANDROID)
-+if(UNIX OR MINGW OR ANDROID)
+-if(LINUX OR MINGW OR ANDROID OR WIN32)
++if(UNIX OR MINGW OR ANDROID OR WIN32)
      setup_toolchains()
  endif()
  
-@@ -120,6 +120,8 @@ foreach(arch ${archs})
-           qt_libjpeg_config="${buildDir}/${config}/${arch}:qt_libjpeg_config"
-           qt_harfbuzz_config="${buildDir}/${config}/${arch}:qt_harfbuzz_config"
-           qt_freetype_config="${buildDir}/${config}/${arch}:qt_freetype_config"
-+          is_qtwebengine=true
-+          is_qtpdf=true
-           enable_swiftshader=false
-           enable_swiftshader_vulkan=false
-           angle_enable_swiftshader=false
-@@ -138,7 +140,7 @@ foreach(arch ${archs})
-           v8_enable_webassembly=false
+@@ -144,7 +144,7 @@ foreach(arch ${archs})
+           webnn_use_tflite=false
          )
  
 -        if(LINUX OR ANDROID)
 +        if(UNIX OR ANDROID)
              list(APPEND gnArgArg
+                 enable_vr=false
                  is_cfi=false
-                 ozone_auto_platforms=false

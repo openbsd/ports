@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/blink/renderer/core/editing/editing_behavior.cc
 --- src/3rdparty/chromium/third_party/blink/renderer/core/editing/editing_behavior.cc.orig
 +++ src/3rdparty/chromium/third_party/blink/renderer/core/editing/editing_behavior.cc
-@@ -324,7 +324,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
+@@ -304,7 +304,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
    // unexpected behaviour
    if (ch < ' ')
      return false;

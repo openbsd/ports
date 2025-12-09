@@ -1,7 +1,7 @@
 Index: cmake/QtFlagHandlingHelpers.cmake
 --- cmake/QtFlagHandlingHelpers.cmake.orig
 +++ cmake/QtFlagHandlingHelpers.cmake
-@@ -177,6 +177,10 @@ function(qt_internal_add_link_flags_no_undefined targe
+@@ -179,6 +179,10 @@ function(qt_internal_add_link_flags_no_undefined targe
              set(no_undefined_flag "-Wl,--no-undefined")
          endif()
  

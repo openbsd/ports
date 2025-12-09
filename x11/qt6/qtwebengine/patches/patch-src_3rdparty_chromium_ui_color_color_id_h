@@ -1,10 +1,10 @@
 Index: src/3rdparty/chromium/ui/color/color_id.h
 --- src/3rdparty/chromium/ui/color/color_id.h.orig
 +++ src/3rdparty/chromium/ui/color/color_id.h
-@@ -610,7 +610,7 @@
-   E_CPONLY(kColorNativeColor6) \
-   E_CPONLY(kColorNativeBaseColor) \
-   E_CPONLY(kColorNativeSecondaryColor)
+@@ -620,7 +620,7 @@
+   \
+   E_CPONLY(kColorCrosSysPositive) \
+   E_CPONLY(kColorCrosSysComplementVariant)
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #define PLATFORM_SPECIFIC_COLOR_IDS \

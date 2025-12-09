@@ -158,6 +158,15 @@ lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfigVersion.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginTargets.cmake
+lib/cmake/Qt6SensorsPrivate/
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfig.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfigVersion.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateDependencies.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateTargets.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SensorsPrivate/Qt6SensorsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6SensorsQuick/
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickConfig.cmake
@@ -168,14 +177,23 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
+lib/cmake/Qt6SensorsQuickPrivate/
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateConfig.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateDependencies.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateTargets.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateVersionlessTargets.cmake
 lib/libQt6Sensors.prl
 @lib lib/libQt6Sensors.so.${LIBQt6Sensors_VERSION}
 lib/libQt6SensorsQuick.prl
 @lib lib/libQt6SensorsQuick.so.${LIBQt6SensorsQuick_VERSION}
 lib/pkgconfig/Qt6Sensors.pc
 lib/pkgconfig/Qt6SensorsQuick.pc
-lib/qt6/metatypes/qt6sensors_release_metatypes.json
-lib/qt6/metatypes/qt6sensorsquick_release_metatypes.json
+lib/qt6/metatypes/qt6sensors_metatypes.json
+lib/qt6/metatypes/qt6sensorsquick_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_sensors.pri
 lib/qt6/mkspecs/modules/qt_lib_sensors_private.pri
 lib/qt6/mkspecs/modules/qt_lib_sensorsquick.pri

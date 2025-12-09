@@ -1,0 +1,12 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -146,7 +146,7 @@ if(CMAKE_CROSSCOMPILING AND NOT IOS AND NOT MACOS AND 
+ endif()
+ 
+ # install gn for cross build
+-if((LINUX OR MACOS OR WIN32) AND INSTALL_GN)
++if((UNIX OR MACOS OR WIN32) AND INSTALL_GN)
+     if(NOT QT_WILL_INSTALL)
+         set(copyOutput
+             ${QT_BUILD_DIR}/${INSTALL_LIBEXECDIR}/gn${CMAKE_EXECUTABLE_SUFFIX}

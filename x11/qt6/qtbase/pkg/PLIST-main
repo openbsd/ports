@@ -16,6 +16,7 @@ include/X11/qt6/QtConcurrent/QtConcurrentDepends
 include/X11/qt6/QtConcurrent/QtConcurrentFilter
 include/X11/qt6/QtConcurrent/QtConcurrentMap
 include/X11/qt6/QtConcurrent/QtConcurrentRun
+include/X11/qt6/QtConcurrent/QtConcurrentTask
 include/X11/qt6/QtConcurrent/QtConcurrentVersion
 include/X11/qt6/QtConcurrent/qtaskbuilder.h
 include/X11/qt6/QtConcurrent/qtconcurrent_global.h
@@ -45,7 +46,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractfileengine_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractitemmodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractproxymodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qanimationgroup_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qbytedata_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcalendarbackend_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcalendarmath_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcborcommon_p.h
@@ -55,7 +55,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qconfig_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcore_unix_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcoreapplication_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcoreevent_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdatastream_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdataurl_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdatetime_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdatetimeparser_p.h
@@ -69,6 +68,7 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qendian_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qeventdispatcher_glib_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qeventdispatcher_unix_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qeventloop_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qexpected_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfactoryloader_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfile_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfiledevice_p.h
@@ -89,9 +89,9 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfunctions_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfutex_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfutureinterface_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qfuturewatcher_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qgettid_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qglobal_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qgregoriancalendar_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qhijricalendar_data_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qhijricalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qhooks_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qidentityproxymodel_p.h
@@ -99,8 +99,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qiodevice_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qipaddress_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qislamiccivilcalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qitemselectionmodel_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qiterable_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjalalicalendar_data_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjalalicalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjson_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjsonparser_p.h
@@ -108,13 +106,13 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjsonwriter_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjuliancalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlibrary_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlibraryinfo_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlocale_data_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlocale_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlocale_tools_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlocaltime_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlockfile_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlocking_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qlogging_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qloggingcategory_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qloggingregistry_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qmakearray_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qmetaobject_moc_p.h
@@ -151,7 +149,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qreadwritelock_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qresource_iterator_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qresource_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qringbuffer_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qromancalendar_data_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qromancalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsavefile_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsequentialanimationgroup_p.h
@@ -161,23 +158,24 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsimd_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsimd_x86_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsingleshottimer_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsmallbytearray_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qspan_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstorageinfo_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstringalgorithms_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstringconverter_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstringiterator_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsystemerror_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsystemsemaphore_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtclasshelper_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtcore-config_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtcoreglobal_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtemporaryfile_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtenvironmentvariables_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtextstream_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qthread_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qthreadpool_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qthreadstorage_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimer_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimerinfo_unix_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimezonelocale_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimezoneprivate_data_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtimezoneprivate_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtipccommon_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qtools_p.h
@@ -189,6 +187,7 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qunicodetools_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/quniquehandle_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/quniquehandle_types_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qurl_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/quuid_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qvariant_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qvariantanimation_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qvolatile_p.h
@@ -199,6 +198,7 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qxmlstreamparser_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qxmlutils_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qzipreader_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qzipwriter_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/wcharhelpers_win_p.h
 include/X11/qt6/QtCore/QAbstractAnimation
 include/X11/qt6/QtCore/QAbstractEventDispatcher
 include/X11/qt6/QtCore/QAbstractEventDispatcherV2
@@ -443,6 +443,7 @@ include/X11/qt6/QtCore/QPropertyProxyBindingData
 include/X11/qt6/QtCore/QQueue
 include/X11/qt6/QtCore/QRandomGenerator
 include/X11/qt6/QtCore/QRandomGenerator64
+include/X11/qt6/QtCore/QRangeModel
 include/X11/qt6/QtCore/QReadLocker
 include/X11/qt6/QtCore/QReadWriteLock
 include/X11/qt6/QtCore/QRect
@@ -524,6 +525,7 @@ include/X11/qt6/QtCore/QThread
 include/X11/qt6/QtCore/QThreadPool
 include/X11/qt6/QtCore/QThreadStorage
 include/X11/qt6/QtCore/QThreadStorageData
+include/X11/qt6/QtCore/QThreadStorageTraits
 include/X11/qt6/QtCore/QTime
 include/X11/qt6/QtCore/QTimeLine
 include/X11/qt6/QtCore/QTimeZone
@@ -584,6 +586,7 @@ include/X11/qt6/QtCore/QtConstructorMacros
 include/X11/qt6/QtCore/QtContainerFwd
 include/X11/qt6/QtCore/QtCore
 include/X11/qt6/QtCore/QtCoreDepends
+include/X11/qt6/QtCore/QtCoreGlobal
 include/X11/qt6/QtCore/QtCoreVersion
 include/X11/qt6/QtCore/QtDarwinHelpers
 include/X11/qt6/QtCore/QtDebug
@@ -602,6 +605,7 @@ include/X11/qt6/QtCore/QtPlugin
 include/X11/qt6/QtCore/QtPluginInstanceFunction
 include/X11/qt6/QtCore/QtPluginMetaDataFunction
 include/X11/qt6/QtCore/QtPreprocessorSupport
+include/X11/qt6/QtCore/QtPrivate
 include/X11/qt6/QtCore/QtProcessorDetection
 include/X11/qt6/QtCore/QtResource
 include/X11/qt6/QtCore/QtStartUpFunction
@@ -613,6 +617,7 @@ include/X11/qt6/QtCore/QtTypeTraits
 include/X11/qt6/QtCore/QtTypes
 include/X11/qt6/QtCore/QtVersion
 include/X11/qt6/QtCore/QtVersionChecks
+include/X11/qt6/QtCore/q17memory.h
 include/X11/qt6/QtCore/q20algorithm.h
 include/X11/qt6/QtCore/q20chrono.h
 include/X11/qt6/QtCore/q20functional.h
@@ -623,6 +628,7 @@ include/X11/qt6/QtCore/q20type_traits.h
 include/X11/qt6/QtCore/q20utility.h
 include/X11/qt6/QtCore/q20vector.h
 include/X11/qt6/QtCore/q23functional.h
+include/X11/qt6/QtCore/q23type_traits.h
 include/X11/qt6/QtCore/q23utility.h
 include/X11/qt6/QtCore/q26numeric.h
 include/X11/qt6/QtCore/qabstractanimation.h
@@ -631,6 +637,7 @@ include/X11/qt6/QtCore/qabstractitemmodel.h
 include/X11/qt6/QtCore/qabstractnativeeventfilter.h
 include/X11/qt6/QtCore/qabstractproxymodel.h
 include/X11/qt6/QtCore/qalgorithms.h
+include/X11/qt6/QtCore/qalloc.h
 include/X11/qt6/QtCore/qanimationgroup.h
 include/X11/qt6/QtCore/qanystringview.h
 include/X11/qt6/QtCore/qapplicationstatic.h
@@ -662,6 +669,7 @@ include/X11/qt6/QtCore/qcborstreamreader.h
 include/X11/qt6/QtCore/qcborstreamwriter.h
 include/X11/qt6/QtCore/qcborvalue.h
 include/X11/qt6/QtCore/qchar.h
+include/X11/qt6/QtCore/qcheckedint_impl.h
 include/X11/qt6/QtCore/qchronotimer.h
 include/X11/qt6/QtCore/qcollator.h
 include/X11/qt6/QtCore/qcommandlineoption.h
@@ -721,10 +729,12 @@ include/X11/qt6/QtCore/qiodevice.h
 include/X11/qt6/QtCore/qiodevicebase.h
 include/X11/qt6/QtCore/qitemselectionmodel.h
 include/X11/qt6/QtCore/qiterable.h
+include/X11/qt6/QtCore/qiterable_impl.h
 include/X11/qt6/QtCore/qiterator.h
 include/X11/qt6/QtCore/qjsonarray.h
 include/X11/qt6/QtCore/qjsondocument.h
 include/X11/qt6/QtCore/qjsonobject.h
+include/X11/qt6/QtCore/qjsonparseerror.h
 include/X11/qt6/QtCore/qjsonvalue.h
 include/X11/qt6/QtCore/qlatin1stringmatcher.h
 include/X11/qt6/QtCore/qlatin1stringview.h
@@ -775,6 +785,8 @@ include/X11/qt6/QtCore/qpropertyanimation.h
 include/X11/qt6/QtCore/qpropertyprivate.h
 include/X11/qt6/QtCore/qqueue.h
 include/X11/qt6/QtCore/qrandom.h
+include/X11/qt6/QtCore/qrangemodel.h
+include/X11/qt6/QtCore/qrangemodel_impl.h
 include/X11/qt6/QtCore/qreadwritelock.h
 include/X11/qt6/QtCore/qrect.h
 include/X11/qt6/QtCore/qrefcount.h
@@ -829,6 +841,7 @@ include/X11/qt6/QtCore/qtconfiginclude.h
 include/X11/qt6/QtCore/qtconfigmacros.h
 include/X11/qt6/QtCore/qtcore-config.h
 include/X11/qt6/QtCore/qtcoreexports.h
+include/X11/qt6/QtCore/qtcoreglobal.h
 include/X11/qt6/QtCore/qtcoreversion.h
 include/X11/qt6/QtCore/qtdeprecationdefinitions.h
 include/X11/qt6/QtCore/qtdeprecationmarkers.h
@@ -838,6 +851,7 @@ include/X11/qt6/QtCore/qtenvironmentvariables.h
 include/X11/qt6/QtCore/qtestsupport_core.h
 include/X11/qt6/QtCore/qtextboundaryfinder.h
 include/X11/qt6/QtCore/qtextstream.h
+include/X11/qt6/QtCore/qtformat_impl.h
 include/X11/qt6/QtCore/qthread.h
 include/X11/qt6/QtCore/qthreadpool.h
 include/X11/qt6/QtCore/qthreadstorage.h
@@ -846,6 +860,7 @@ include/X11/qt6/QtCore/qtimer.h
 include/X11/qt6/QtCore/qtimezone.h
 include/X11/qt6/QtCore/qtipccommon.h
 include/X11/qt6/QtCore/qtmetamacros.h
+include/X11/qt6/QtCore/qtmocconstants.h
 include/X11/qt6/QtCore/qtmochelpers.h
 include/X11/qt6/QtCore/qtnoop.h
 include/X11/qt6/QtCore/qtpreprocessorsupport.h
@@ -1043,8 +1058,10 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractfileiconengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractfileiconprovider_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstractlayoutstyleinfo_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qabstracttextdocumentlayout_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qaccessibilityhints_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qaccessiblebridgeutils_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qaccessiblecache_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qaccessiblehelper_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qaction_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qactiongroup_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qastchandler_p.h
@@ -1066,24 +1083,30 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcolortransfertable_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcolortransform_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcolortrc_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcolortrclut_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcolrpaintgraphrenderer_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcosmeticstroker_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcssparser_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcssutil_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qcursor_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdatabuffer_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbuslistener_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusmenuadaptor_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusmenubar_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusmenuconnection_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusmenuregistrarproxy_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusmenutypes_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbusplatformmenu_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbussettings_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbustrayicon_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdbustraytypes_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdesktopunixservices_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdistancefield_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdnd_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawhelper_loongarch64_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawhelper_neon_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawhelper_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawhelper_x86_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawingprimitive_lsx_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qdrawingprimitive_sse2_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qedidparser_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qedidvendortable_p.h
@@ -1105,15 +1128,17 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfontengine_ft_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfontengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfontengineglyphcache_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfontenginemultifontconfig_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfonticonengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfontsubset_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfragmentmap_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qfreetypefontdatabase_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgenericunixeventdispatcher_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgenericunixfontdatabase_p.h
-include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgenericunixservices_p.h
-include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgenericunixthemes_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgenericunixtheme_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qglxconvenience_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qglyphrun_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgnomeportalinterface_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgnometheme_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgrayraster_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qgridlayoutengine_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qguiapplication_p.h
@@ -1134,6 +1159,7 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/private/qinputdevicemanager_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qinputdevicemanager_p_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qinputmethod_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qinternalmimedata_p.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/private/qkdetheme_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qkeymapper_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qkeysequence_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/private/qktxhandler_p.h
@@ -1280,6 +1306,7 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/rhi/qshaderdescription.h
 include/X11/qt6/QtGui/QAbstractFileIconProvider
 include/X11/qt6/QtGui/QAbstractTextDocumentLayout
 include/X11/qt6/QtGui/QAbstractUndoItem
+include/X11/qt6/QtGui/QAccessibilityHints
 include/X11/qt6/QtGui/QAccessible
 include/X11/qt6/QtGui/QAccessibleActionInterface
 include/X11/qt6/QtGui/QAccessibleAnnouncementEvent
@@ -1343,6 +1370,7 @@ include/X11/qt6/QtGui/QFontDatabase
 include/X11/qt6/QtGui/QFontInfo
 include/X11/qt6/QtGui/QFontMetrics
 include/X11/qt6/QtGui/QFontMetricsF
+include/X11/qt6/QtGui/QFontVariableAxis
 include/X11/qt6/QtGui/QGenericMatrix
 include/X11/qt6/QtGui/QGenericPlugin
 include/X11/qt6/QtGui/QGenericPluginFactory
@@ -1405,6 +1433,7 @@ include/X11/qt6/QtGui/QPaintEvent
 include/X11/qt6/QtGui/QPainter
 include/X11/qt6/QtGui/QPainterPath
 include/X11/qt6/QtGui/QPainterPathStroker
+include/X11/qt6/QtGui/QPainterStateGuard
 include/X11/qt6/QtGui/QPalette
 include/X11/qt6/QtGui/QPdfOutputIntent
 include/X11/qt6/QtGui/QPdfWriter
@@ -1514,6 +1543,7 @@ include/X11/qt6/QtGui/deviceeventcontroller_adaptor.h
 include/X11/qt6/QtGui/properties_interface.h
 include/X11/qt6/QtGui/qabstractfileiconprovider.h
 include/X11/qt6/QtGui/qabstracttextdocumentlayout.h
+include/X11/qt6/QtGui/qaccessibilityhints.h
 include/X11/qt6/QtGui/qaccessible.h
 include/X11/qt6/QtGui/qaccessible_base.h
 include/X11/qt6/QtGui/qaccessiblebridge.h
@@ -1538,6 +1568,7 @@ include/X11/qt6/QtGui/qfont.h
 include/X11/qt6/QtGui/qfontdatabase.h
 include/X11/qt6/QtGui/qfontinfo.h
 include/X11/qt6/QtGui/qfontmetrics.h
+include/X11/qt6/QtGui/qfontvariableaxis.h
 include/X11/qt6/QtGui/qgenericmatrix.h
 include/X11/qt6/QtGui/qgenericplugin.h
 include/X11/qt6/QtGui/qgenericpluginfactory.h
@@ -1573,6 +1604,7 @@ include/X11/qt6/QtGui/qpaintdevicewindow.h
 include/X11/qt6/QtGui/qpaintengine.h
 include/X11/qt6/QtGui/qpainter.h
 include/X11/qt6/QtGui/qpainterpath.h
+include/X11/qt6/QtGui/qpainterstateguard.h
 include/X11/qt6/QtGui/qpalette.h
 include/X11/qt6/QtGui/qpdfoutputintent.h
 include/X11/qt6/QtGui/qpdfwriter.h
@@ -1629,8 +1661,6 @@ include/X11/qt6/QtGui/qvulkanwindow.h
 include/X11/qt6/QtGui/qwindow.h
 include/X11/qt6/QtGui/qwindowdefs.h
 include/X11/qt6/QtGui/socket_interface.h
-include/X11/qt6/QtInputSupport/
-include/X11/qt6/QtInputSupport/QtInputSupportDepends
 include/X11/qt6/QtKmsSupport/
 include/X11/qt6/QtKmsSupport/${VERSION}/
 include/X11/qt6/QtKmsSupport/${VERSION}/QtKmsSupport/
@@ -1656,6 +1686,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractprotocolhandler_
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocket_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocketengine_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qauthenticator_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qbytedatabuffer_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qdecompresshelper_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qdnslookup_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostaddress_p.h
@@ -1718,6 +1749,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslkey_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslpresharedkeyauthenticator_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslserver_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcontenttypeparser_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcpserver_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcpsocket_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtldurl_p.h
@@ -2015,6 +2047,7 @@ include/X11/qt6/QtSql/${VERSION}/QtSql/private/qtsql-config_p.h
 include/X11/qt6/QtSql/${VERSION}/QtSql/private/qtsqlglobal_p.h
 include/X11/qt6/QtSql/QSql
 include/X11/qt6/QtSql/QSqlDatabase
+include/X11/qt6/QtSql/QSqlDatabaseDefaultConnectionName
 include/X11/qt6/QtSql/QSqlDriver
 include/X11/qt6/QtSql/QSqlDriverCreator
 include/X11/qt6/QtSql/QSqlDriverCreatorBase
@@ -2055,6 +2088,7 @@ include/X11/qt6/QtTest/${VERSION}/
 include/X11/qt6/QtTest/${VERSION}/QtTest/
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/catch_p.h
+include/X11/qt6/QtTest/${VERSION}/QtTest/private/cycle_include_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/cycle_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qabstracttestlogger_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qbenchmark_p.h
@@ -2130,6 +2164,136 @@ include/X11/qt6/QtTest/qttestexports.h
 include/X11/qt6/QtTest/qttestglobal.h
 include/X11/qt6/QtTest/qttestlib-config.h
 include/X11/qt6/QtTest/qttestversion.h
+include/X11/qt6/QtWaylandClient/
+include/X11/qt6/QtWaylandClient/${VERSION}/
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qtwaylandclient-config_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qtwaylandclientglobal_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-appmenu.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-cursor-shape-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-fractional-scale-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-hardware-integration.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-pointer-gestures-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-pointer-warp-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-text-input-method-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-windowmanager.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-server-buffer-extension.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-tablet-unstable-v2.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v2.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-text-input-unstable-v3.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-viewporter.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wayland.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wlr-data-control-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-shell.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-system-bell-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xx-color-management-v4.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandabstractdecoration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandappmenu_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandbuffer_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientbufferintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientbufferintegrationfactory_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientbufferintegrationplugin_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientextension_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientshellapi_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclipboard_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandcolormanagement_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandcursor_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddatacontrolv1_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddatadevice_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddatadevicemanager_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddataoffer_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddatasource_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddecorationfactory_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddecorationplugin_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddisplay_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddnd_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandeventdispatcher_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandfractionalscale_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandhardwareintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputcontext_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdevice_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdeviceintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdeviceintegrationfactory_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputdeviceintegrationplugin_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputmethodcontext_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputmethodeventbuilder_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandmimehelper_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandnativeinterface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandplatformservices_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandpointergestures_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandprimaryselectionv1_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandscreen_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegrationfactory_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandserverbufferintegrationplugin_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsharedmemoryformathelper_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegrationfactory_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellintegrationplugin_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshellsurface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshm_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshmbackingstore_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandshmwindow_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsubsurface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandsurface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtabletv2_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputinterface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv1_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv2_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandtextinputv3_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandviewport_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandvulkaninstance_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandvulkanwindow_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandwindow_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandwindowmanagerintegration_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-appmenu-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-cursor-shape-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-fractional-scale-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-hardware-integration-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-pointer-gestures-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-pointer-warp-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-text-input-method-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-windowmanager-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-tablet-unstable-v2-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v2-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-text-input-unstable-v3-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-viewporter-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wayland-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wlr-data-control-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-system-bell-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xx-color-management-v4-client-protocol.h
+include/X11/qt6/QtWaylandClient/QWaylandClientExtension
+include/X11/qt6/QtWaylandClient/QWaylandClientExtensionTemplate
+include/X11/qt6/QtWaylandClient/QtWaylandClient
+include/X11/qt6/QtWaylandClient/QtWaylandClientDepends
+include/X11/qt6/QtWaylandClient/QtWaylandClientVersion
+include/X11/qt6/QtWaylandClient/qtwaylandclient-config.h
+include/X11/qt6/QtWaylandClient/qtwaylandclientexports.h
+include/X11/qt6/QtWaylandClient/qtwaylandclientglobal.h
+include/X11/qt6/QtWaylandClient/qtwaylandclientversion.h
+include/X11/qt6/QtWaylandClient/qwaylandclientextension.h
+include/X11/qt6/QtWaylandGlobal/
+include/X11/qt6/QtWaylandGlobal/${VERSION}/
+include/X11/qt6/QtWaylandGlobal/${VERSION}/QtWaylandGlobal/
+include/X11/qt6/QtWaylandGlobal/${VERSION}/QtWaylandGlobal/private/
+include/X11/qt6/QtWaylandGlobal/${VERSION}/QtWaylandGlobal/private/qtwaylandglobal-config_p.h
+include/X11/qt6/QtWaylandGlobal/QtWaylandGlobal
+include/X11/qt6/QtWaylandGlobal/QtWaylandGlobalDepends
+include/X11/qt6/QtWaylandGlobal/QtWaylandGlobalVersion
+include/X11/qt6/QtWaylandGlobal/qtwaylandglobal-config.h
+include/X11/qt6/QtWaylandGlobal/qtwaylandglobalversion.h
 include/X11/qt6/QtWidgets/
 include/X11/qt6/QtWidgets/${VERSION}/
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/
@@ -2259,6 +2423,7 @@ include/X11/qt6/QtWidgets/QAbstractScrollArea
 include/X11/qt6/QtWidgets/QAbstractSlider
 include/X11/qt6/QtWidgets/QAbstractSpinBox
 include/X11/qt6/QtWidgets/QAccessibleWidget
+include/X11/qt6/QtWidgets/QAccessibleWidgetV2
 include/X11/qt6/QtWidgets/QApplication
 include/X11/qt6/QtWidgets/QBoxLayout
 include/X11/qt6/QtWidgets/QButtonGroup
@@ -2575,6 +2740,18 @@ include/X11/qt6/QtWidgets/qwhatsthis.h
 include/X11/qt6/QtWidgets/qwidget.h
 include/X11/qt6/QtWidgets/qwidgetaction.h
 include/X11/qt6/QtWidgets/qwizard.h
+include/X11/qt6/QtWlShellIntegration/
+include/X11/qt6/QtWlShellIntegration/${VERSION}/
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwayland-wayland.h
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwaylandwlshellintegration_p.h
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/qwaylandwlshellsurface_p.h
+include/X11/qt6/QtWlShellIntegration/${VERSION}/QtWlShellIntegration/private/wayland-wayland-client-protocol.h
+include/X11/qt6/QtWlShellIntegration/QtWlShellIntegration
+include/X11/qt6/QtWlShellIntegration/QtWlShellIntegrationDepends
+include/X11/qt6/QtWlShellIntegration/QtWlShellIntegrationVersion
+include/X11/qt6/QtWlShellIntegration/qtwlshellintegrationversion.h
 include/X11/qt6/QtXml/
 include/X11/qt6/QtXml/${VERSION}/
 include/X11/qt6/QtXml/${VERSION}/QtXml/
@@ -2610,6 +2787,9 @@ include/X11/qt6/QtXml/qtxmlversion.h
 lib/cmake/Qt6/
 lib/cmake/Qt6/3rdparty/
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/
+lib/cmake/Qt6/3rdparty/extra-cmake-modules/0001-ECMEnableSanitizers.cmake-fix-GCC-s-note-variable-tr.patch
+lib/cmake/Qt6/3rdparty/extra-cmake-modules/0002-ECMEnableSanitizers.cmake-replace-tabs-with-spaces.patch
+lib/cmake/Qt6/3rdparty/extra-cmake-modules/0003-ECMEnableSanitizers.cmake-fix-no-undefined-flag-replacement.patch
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/REUSE.toml
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/
@@ -2639,6 +2819,7 @@ lib/cmake/Qt6/FindGLESv2.cmake
 lib/cmake/Qt6/FindGSSAPI.cmake
 lib/cmake/Qt6/FindGTK3.cmake
 lib/cmake/Qt6/FindInterbase.cmake
+lib/cmake/Qt6/FindJeMalloc.cmake
 lib/cmake/Qt6/FindLibb2.cmake
 lib/cmake/Qt6/FindLibproxy.cmake
 lib/cmake/Qt6/FindLibsystemd.cmake
@@ -2746,6 +2927,7 @@ lib/cmake/Qt6/QtJavaHelpers.cmake
 lib/cmake/Qt6/QtLalrHelpers.cmake
 lib/cmake/Qt6/QtMkspecHelpers.cmake
 lib/cmake/Qt6/QtModuleConfig.cmake.in
+lib/cmake/Qt6/QtModuleConfigPrivate.cmake.in
 lib/cmake/Qt6/QtModuleDependencies.cmake.in
 lib/cmake/Qt6/QtModuleHeadersCheck.cmake
 lib/cmake/Qt6/QtModuleHelpers.cmake
@@ -2768,7 +2950,9 @@ lib/cmake/Qt6/QtPriHelpers.cmake
 lib/cmake/Qt6/QtPrlHelpers.cmake
 lib/cmake/Qt6/QtProcessConfigureArgs.cmake
 lib/cmake/Qt6/QtProperties.cmake
+lib/cmake/Qt6/QtPublicAndroidHelpers.cmake
 lib/cmake/Qt6/QtPublicAppleHelpers.cmake
+lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
 lib/cmake/Qt6/QtPublicDependencyHelpers.cmake
@@ -2777,6 +2961,7 @@ lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
+lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake
@@ -2794,6 +2979,7 @@ lib/cmake/Qt6/QtPublicTestHelpers.cmake
 lib/cmake/Qt6/QtPublicToolHelpers.cmake
 lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake
 lib/cmake/Qt6/QtPublicWasmToolchainHelpers.cmake
+lib/cmake/Qt6/QtPublicWindowsHelpers.cmake
 lib/cmake/Qt6/QtQmakeHelpers.cmake
 lib/cmake/Qt6/QtResourceHelpers.cmake
 lib/cmake/Qt6/QtRpathHelpers.cmake
@@ -2811,6 +2997,7 @@ lib/cmake/Qt6/QtTargetHelpers.cmake
 lib/cmake/Qt6/QtTestHelpers.cmake
 lib/cmake/Qt6/QtToolHelpers.cmake
 lib/cmake/Qt6/QtToolchainHelpers.cmake
+lib/cmake/Qt6/QtTransitiveExtras.cmake.in
 lib/cmake/Qt6/QtUnityBuildHelpers.cmake
 lib/cmake/Qt6/QtVersionlessAliasTargets.cmake.in
 lib/cmake/Qt6/QtVersionlessTargets.cmake.in
@@ -2841,12 +3028,15 @@ lib/cmake/Qt6/platforms/FindVxWorksPlatformGraphics.cmake
 lib/cmake/Qt6/platforms/Platform/
 lib/cmake/Qt6/platforms/Platform/Integrity.cmake
 lib/cmake/Qt6/qbatchedtestrunner.in.cpp
+lib/cmake/Qt6/qt-internal-config.redo.bat.in
+lib/cmake/Qt6/qt-internal-config.redo.in
 lib/cmake/Qt6/qt.toolchain.cmake
 lib/cmake/Qt6BuildInternals/
 lib/cmake/Qt6BuildInternals/Qt6BuildInternalsConfig.cmake
 lib/cmake/Qt6BuildInternals/Qt6BuildInternalsConfigVersion.cmake
 lib/cmake/Qt6BuildInternals/Qt6BuildInternalsConfigVersionImpl.cmake
 lib/cmake/Qt6BuildInternals/QtBuildInternalsExtra.cmake
+lib/cmake/Qt6BuildInternals/QtBuildInternalsHelpers.cmake
 lib/cmake/Qt6BuildInternals/QtStandaloneTestTemplateProject/
 lib/cmake/Qt6BuildInternals/QtStandaloneTestTemplateProject/CMakeLists.txt
 lib/cmake/Qt6BuildInternals/QtStandaloneTestTemplateProject/Main.cmake
@@ -2878,6 +3068,15 @@ lib/cmake/Qt6Core/Qt6CoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Core/Qt6CoreTargets.cmake
 lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake
+lib/cmake/Qt6CorePrivate/
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfig.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersion.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateConfigVersionImpl.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateDependencies.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateTargets.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6CorePrivate/Qt6CorePrivateVersionlessTargets.cmake
 lib/cmake/Qt6CoreTools/
 lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake
@@ -2898,6 +3097,15 @@ lib/cmake/Qt6DBus/Qt6DBusTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6DBus/Qt6DBusTargets.cmake
 lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake
 lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake
+lib/cmake/Qt6DBusPrivate/
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfig.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateDependencies.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateTargets.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateVersionlessTargets.cmake
 lib/cmake/Qt6DBusTools/
 lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake
@@ -3089,6 +3297,12 @@ lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Gui/Qt6QVncIntegrationPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake
 lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QXcbEglIntegrationPluginConfigVersion.cmake
@@ -3113,6 +3327,15 @@ lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginTargets.cmake
+lib/cmake/Qt6GuiPrivate/
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfig.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersion.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateDependencies.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateTargets.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6GuiPrivate/Qt6GuiPrivateVersionlessTargets.cmake
 lib/cmake/Qt6GuiTools/
 lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake
@@ -3124,16 +3347,7 @@ lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake
 lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake
 lib/cmake/Qt6HostInfo/
 lib/cmake/Qt6HostInfo/Qt6HostInfoConfig.cmake
-lib/cmake/Qt6InputSupportPrivate/
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateAdditionalTargetInfo.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateConfig.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateConfigVersion.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateConfigVersionImpl.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateDependencies.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateTargets.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateVersionlessAliasTargets.cmake
-lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateVersionlessTargets.cmake
+lib/cmake/Qt6HostInfo/Qt6HostInfoConfigVersion.cmake
 lib/cmake/Qt6KmsSupportPrivate/
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateConfig.cmake
@@ -3173,6 +3387,15 @@ lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfigVersion.cmake
 lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake
+lib/cmake/Qt6NetworkPrivate/
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfig.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersion.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateDependencies.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateTargets.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6NetworkPrivate/Qt6NetworkPrivateVersionlessTargets.cmake
 lib/cmake/Qt6OpenGL/
 lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake
@@ -3183,6 +3406,15 @@ lib/cmake/Qt6OpenGL/Qt6OpenGLTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessTargets.cmake
+lib/cmake/Qt6OpenGLPrivate/
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfig.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersion.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateDependencies.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateTargets.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6OpenGLPrivate/Qt6OpenGLPrivateVersionlessTargets.cmake
 lib/cmake/Qt6OpenGLWidgets/
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake
@@ -3210,6 +3442,15 @@ lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfigVersion.cmake
 lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfigVersionImpl.cmake
 lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets.cmake
+lib/cmake/Qt6PrintSupportPrivate/
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfig.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersion.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateDependencies.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateTargets.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6PrintSupportPrivate/Qt6PrintSupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Sql/
 lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake
@@ -3235,6 +3476,15 @@ lib/cmake/Qt6Sql/Qt6SqlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Sql/Qt6SqlTargets.cmake
 lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake
+lib/cmake/Qt6SqlPrivate/
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfig.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersion.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateDependencies.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateTargets.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SqlPrivate/Qt6SqlPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Test/
 lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake
 lib/cmake/Qt6Test/Qt6TestConfig.cmake
@@ -3245,6 +3495,7 @@ lib/cmake/Qt6Test/Qt6TestTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Test/Qt6TestTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake
+lib/cmake/Qt6Test/QtTestProperties.cmake
 lib/cmake/Qt6TestInternalsPrivate/
 lib/cmake/Qt6TestInternalsPrivate/3rdparty/
 lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/
@@ -3256,6 +3507,112 @@ lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateTargets.cmake
 lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/QtRunCMake.cmake
+lib/cmake/Qt6TestInternalsPrivate/QtRunCMakeTestWrappers.cmake
+lib/cmake/Qt6TestInternalsPrivate/RunCMake.cmake
+lib/cmake/Qt6TestPrivate/
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateConfig.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateConfigVersion.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateDependencies.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateTargets.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6TestPrivate/Qt6TestPrivateVersionlessTargets.cmake
+lib/cmake/Qt6WaylandClient/
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6DmaBufServerBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandEglClientBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandFullScreenShellV1IntegrationPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandWlShellIntegrationPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandXdgShellIntegrationPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6ShmServerBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6VulkanServerBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientDependencies.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientPlugins.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessTargets.cmake
+lib/cmake/Qt6WaylandClientPrivate/
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateConfig.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateConfigVersion.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateDependencies.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateTargets.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandClientPrivate/Qt6WaylandClientPrivateVersionlessTargets.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfig.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfigVersion.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateExtraProperties.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateTargets.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateVersionlessTargets.cmake
+lib/cmake/Qt6WaylandScannerTools/
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandClientMacros.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandCompositorMacros.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsConfig.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsConfigVersion.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsDependencies.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsTargets.cmake
+lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsVersionlessTargets.cmake
 lib/cmake/Qt6Widgets/
 lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
@@ -3268,6 +3625,15 @@ lib/cmake/Qt6Widgets/Qt6WidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake
+lib/cmake/Qt6WidgetsPrivate/
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfig.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersion.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateDependencies.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateTargets.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WidgetsPrivate/Qt6WidgetsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WidgetsTools/
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake
@@ -3277,6 +3643,16 @@ lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateConfig.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateConfigVersion.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateDependencies.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateTargets.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateVersionlessTargets.cmake
 lib/cmake/Qt6XcbQpaPrivate/
 lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateConfig.cmake
@@ -3297,6 +3673,15 @@ lib/cmake/Qt6Xml/Qt6XmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Xml/Qt6XmlTargets.cmake
 lib/cmake/Qt6Xml/Qt6XmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
+lib/cmake/Qt6XmlPrivate/
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateConfig.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateConfigVersion.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateDependencies.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateTargets.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessTargets.cmake
 lib/libQt6Concurrent.prl
 @lib lib/libQt6Concurrent.so.${LIBQt6Concurrent_VERSION}
 lib/libQt6Core.prl
@@ -3319,8 +3704,6 @@ lib/libQt6ExamplesAssetDownloader.prl
 lib/libQt6FbSupport.prl
 lib/libQt6Gui.prl
 @lib lib/libQt6Gui.so.${LIBQt6Gui_VERSION}
-@static-lib lib/libQt6InputSupport.a
-lib/libQt6InputSupport.prl
 @static-lib lib/libQt6KmsSupport.a
 lib/libQt6KmsSupport.prl
 lib/libQt6Network.prl
@@ -3335,8 +3718,12 @@ lib/libQt6Sql.prl
 @lib lib/libQt6Sql.so.${LIBQt6Sql_VERSION}
 lib/libQt6Test.prl
 @lib lib/libQt6Test.so.${LIBQt6Test_VERSION}
+lib/libQt6WaylandClient.prl
+@lib lib/libQt6WaylandClient.so.${LIBQt6WaylandClient_VERSION}
 lib/libQt6Widgets.prl
 @lib lib/libQt6Widgets.so.${LIBQt6Widgets_VERSION}
+lib/libQt6WlShellIntegration.prl
+@lib lib/libQt6WlShellIntegration.so.${LIBQt6WlShellIntegration_VERSION}
 lib/libQt6XcbQpa.prl
 @lib lib/libQt6XcbQpa.so.${LIBQt6XcbQpa_VERSION}
 lib/libQt6Xml.prl
@@ -3357,6 +3744,7 @@ lib/pkgconfig/Qt6Platform.pc
 lib/pkgconfig/Qt6PrintSupport.pc
 lib/pkgconfig/Qt6Sql.pc
 lib/pkgconfig/Qt6Test.pc
+lib/pkgconfig/Qt6WaylandClient.pc
 lib/pkgconfig/Qt6Widgets.pc
 lib/pkgconfig/Qt6Xml.pc
 lib/qt6/
@@ -3392,6 +3780,7 @@ lib/qt6/libexec/qt-cmake-standalone-test
 lib/qt6/libexec/qt-internal-configure-examples
 lib/qt6/libexec/qt-internal-configure-tests
 lib/qt6/libexec/qt-testrunner.py
+@bin lib/qt6/libexec/qtwaylandscanner
 @bin lib/qt6/libexec/qvkgen
 @bin lib/qt6/libexec/rcc
 lib/qt6/libexec/sanitizer-testrunner.py
@@ -3400,28 +3789,29 @@ lib/qt6/libexec/sanitizer-testrunner.py
 @bin lib/qt6/libexec/tracepointgen
 @bin lib/qt6/libexec/uic
 lib/qt6/metatypes/
-lib/qt6/metatypes/qt6concurrent_release_metatypes.json
-lib/qt6/metatypes/qt6core_release_metatypes.json
-lib/qt6/metatypes/qt6dbus_release_metatypes.json
-lib/qt6/metatypes/qt6devicediscoverysupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6eglfsdeviceintegrationprivate_release_metatypes.json
-lib/qt6/metatypes/qt6eglfskmsgbmsupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6eglfskmssupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6exampleiconsprivate_release_metatypes.json
-lib/qt6/metatypes/qt6examplesassetdownloaderprivate_release_metatypes.json
-lib/qt6/metatypes/qt6fbsupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6gui_release_metatypes.json
-lib/qt6/metatypes/qt6inputsupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6kmssupportprivate_release_metatypes.json
-lib/qt6/metatypes/qt6network_release_metatypes.json
-lib/qt6/metatypes/qt6opengl_release_metatypes.json
-lib/qt6/metatypes/qt6openglwidgets_release_metatypes.json
-lib/qt6/metatypes/qt6printsupport_release_metatypes.json
-lib/qt6/metatypes/qt6sql_release_metatypes.json
-lib/qt6/metatypes/qt6test_release_metatypes.json
-lib/qt6/metatypes/qt6widgets_release_metatypes.json
-lib/qt6/metatypes/qt6xcbqpaprivate_release_metatypes.json
-lib/qt6/metatypes/qt6xml_release_metatypes.json
+lib/qt6/metatypes/qt6concurrent_metatypes.json
+lib/qt6/metatypes/qt6core_metatypes.json
+lib/qt6/metatypes/qt6dbus_metatypes.json
+lib/qt6/metatypes/qt6devicediscoverysupportprivate_metatypes.json
+lib/qt6/metatypes/qt6eglfsdeviceintegrationprivate_metatypes.json
+lib/qt6/metatypes/qt6eglfskmsgbmsupportprivate_metatypes.json
+lib/qt6/metatypes/qt6eglfskmssupportprivate_metatypes.json
+lib/qt6/metatypes/qt6exampleiconsprivate_metatypes.json
+lib/qt6/metatypes/qt6examplesassetdownloaderprivate_metatypes.json
+lib/qt6/metatypes/qt6fbsupportprivate_metatypes.json
+lib/qt6/metatypes/qt6gui_metatypes.json
+lib/qt6/metatypes/qt6kmssupportprivate_metatypes.json
+lib/qt6/metatypes/qt6network_metatypes.json
+lib/qt6/metatypes/qt6opengl_metatypes.json
+lib/qt6/metatypes/qt6openglwidgets_metatypes.json
+lib/qt6/metatypes/qt6printsupport_metatypes.json
+lib/qt6/metatypes/qt6sql_metatypes.json
+lib/qt6/metatypes/qt6test_metatypes.json
+lib/qt6/metatypes/qt6waylandclient_metatypes.json
+lib/qt6/metatypes/qt6widgets_metatypes.json
+lib/qt6/metatypes/qt6wlshellintegrationprivate_metatypes.json
+lib/qt6/metatypes/qt6xcbqpaprivate_metatypes.json
+lib/qt6/metatypes/qt6xml_metatypes.json
 lib/qt6/mkspecs/
 lib/qt6/mkspecs/REUSE.toml
 lib/qt6/mkspecs/aix-g++/
@@ -3648,6 +4038,7 @@ lib/qt6/mkspecs/features/android/sdk.prf
 lib/qt6/mkspecs/features/android/spec_post.prf
 lib/qt6/mkspecs/features/benchmark.prf
 lib/qt6/mkspecs/features/build_pass.prf
+lib/qt6/mkspecs/features/ccache.prf
 lib/qt6/mkspecs/features/cmake_functions.prf
 lib/qt6/mkspecs/features/cmdline.prf
 lib/qt6/mkspecs/features/configure.prf
@@ -3700,8 +4091,6 @@ lib/qt6/mkspecs/features/mac/rez.prf
 lib/qt6/mkspecs/features/mac/sdk.mk
 lib/qt6/mkspecs/features/mac/sdk.prf
 lib/qt6/mkspecs/features/mac/toolchain.prf
-lib/qt6/mkspecs/features/mac/unsupported/
-lib/qt6/mkspecs/features/mac/unsupported/objc_namespace.prf
 lib/qt6/mkspecs/features/metatypes.prf
 lib/qt6/mkspecs/features/moc.prf
 lib/qt6/mkspecs/features/no_debug_info.prf
@@ -3756,7 +4145,6 @@ lib/qt6/mkspecs/features/uikit/xcodebuild.mk
 lib/qt6/mkspecs/features/uikit/xcodebuild.prf
 lib/qt6/mkspecs/features/unix/
 lib/qt6/mkspecs/features/unix/bsymbolic_functions.prf
-lib/qt6/mkspecs/features/unix/ccache.prf
 lib/qt6/mkspecs/features/unix/hide_symbols.prf
 lib/qt6/mkspecs/features/unix/largefile.prf
 lib/qt6/mkspecs/features/unix/no_direct_extern_access.prf
@@ -3909,7 +4297,6 @@ lib/qt6/mkspecs/macx-xcode/qplatformdefs.h
 lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/README
 lib/qt6/mkspecs/modules/qt_lib_concurrent.pri
-lib/qt6/mkspecs/modules/qt_lib_concurrent_private.pri
 lib/qt6/mkspecs/modules/qt_lib_core.pri
 lib/qt6/mkspecs/modules/qt_lib_core_private.pri
 lib/qt6/mkspecs/modules/qt_lib_dbus.pri
@@ -3923,14 +4310,12 @@ lib/qt6/mkspecs/modules/qt_lib_examples_asset_downloader_private.pri
 lib/qt6/mkspecs/modules/qt_lib_fb_support_private.pri
 lib/qt6/mkspecs/modules/qt_lib_gui.pri
 lib/qt6/mkspecs/modules/qt_lib_gui_private.pri
-lib/qt6/mkspecs/modules/qt_lib_input_support_private.pri
 lib/qt6/mkspecs/modules/qt_lib_kms_support_private.pri
 lib/qt6/mkspecs/modules/qt_lib_network.pri
 lib/qt6/mkspecs/modules/qt_lib_network_private.pri
 lib/qt6/mkspecs/modules/qt_lib_opengl.pri
 lib/qt6/mkspecs/modules/qt_lib_opengl_private.pri
 lib/qt6/mkspecs/modules/qt_lib_openglwidgets.pri
-lib/qt6/mkspecs/modules/qt_lib_openglwidgets_private.pri
 lib/qt6/mkspecs/modules/qt_lib_printsupport.pri
 lib/qt6/mkspecs/modules/qt_lib_printsupport_private.pri
 lib/qt6/mkspecs/modules/qt_lib_sql.pri
@@ -3938,8 +4323,12 @@ lib/qt6/mkspecs/modules/qt_lib_sql_private.pri
 lib/qt6/mkspecs/modules/qt_lib_testinternals_private.pri
 lib/qt6/mkspecs/modules/qt_lib_testlib.pri
 lib/qt6/mkspecs/modules/qt_lib_testlib_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandclient.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandclient_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandglobal_private.pri
 lib/qt6/mkspecs/modules/qt_lib_widgets.pri
 lib/qt6/mkspecs/modules/qt_lib_widgets_private.pri
+lib/qt6/mkspecs/modules/qt_lib_wl_shell_integration_private.pri
 lib/qt6/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri
 lib/qt6/mkspecs/modules/qt_lib_xml.pri
 lib/qt6/mkspecs/modules/qt_lib_xml_private.pri
@@ -4057,7 +4446,6 @@ lib/qt6/modules/ExampleIconsPrivate.json
 lib/qt6/modules/ExamplesAssetDownloaderPrivate.json
 lib/qt6/modules/FbSupportPrivate.json
 lib/qt6/modules/Gui.json
-lib/qt6/modules/InputSupportPrivate.json
 lib/qt6/modules/KmsSupportPrivate.json
 lib/qt6/modules/Network.json
 lib/qt6/modules/OpenGL.json
@@ -4066,7 +4454,10 @@ lib/qt6/modules/PrintSupport.json
 lib/qt6/modules/Sql.json
 lib/qt6/modules/Test.json
 lib/qt6/modules/TestInternalsPrivate.json
+lib/qt6/modules/WaylandClient.json
+lib/qt6/modules/WaylandGlobalPrivate.json
 lib/qt6/modules/Widgets.json
+lib/qt6/modules/WlShellIntegrationPrivate.json
 lib/qt6/modules/XcbQpaPrivate.json
 lib/qt6/modules/Xml.json
 lib/qt6/plugins/
@@ -4093,6 +4484,7 @@ lib/qt6/plugins/platforms/
 @so lib/qt6/plugins/platforms/libqoffscreen.so
 @so lib/qt6/plugins/platforms/libqvkkhrdisplay.so
 @so lib/qt6/plugins/platforms/libqvnc.so
+@so lib/qt6/plugins/platforms/libqwayland.so
 @so lib/qt6/plugins/platforms/libqxcb.so
 lib/qt6/plugins/platformthemes/
 @so lib/qt6/plugins/platformthemes/libqgtk3.so
@@ -4105,6 +4497,18 @@ lib/qt6/plugins/sqldrivers/
 lib/qt6/plugins/tls/
 @so lib/qt6/plugins/tls/libqcertonlybackend.so
 @so lib/qt6/plugins/tls/libqopensslbackend.so
+lib/qt6/plugins/wayland-decoration-client/
+@so lib/qt6/plugins/wayland-decoration-client/libbradient.so
+lib/qt6/plugins/wayland-graphics-integration-client/
+@so lib/qt6/plugins/wayland-graphics-integration-client/libdmabuf-server.so
+@so lib/qt6/plugins/wayland-graphics-integration-client/libdrm-egl-server.so
+@so lib/qt6/plugins/wayland-graphics-integration-client/libqt-plugin-wayland-egl.so
+@so lib/qt6/plugins/wayland-graphics-integration-client/libshm-emulation-server.so
+@so lib/qt6/plugins/wayland-graphics-integration-client/libvulkan-server.so
+lib/qt6/plugins/wayland-shell-integration/
+@so lib/qt6/plugins/wayland-shell-integration/libfullscreen-shell-v1.so
+@so lib/qt6/plugins/wayland-shell-integration/libwl-shell-plugin.so
+@so lib/qt6/plugins/wayland-shell-integration/libxdg-shell.so
 lib/qt6/plugins/xcbglintegrations/
 @so lib/qt6/plugins/xcbglintegrations/libqxcb-egl-integration.so
 @so lib/qt6/plugins/xcbglintegrations/libqxcb-glx-integration.so

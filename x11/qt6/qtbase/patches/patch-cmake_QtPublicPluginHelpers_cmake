@@ -4,7 +4,7 @@ default
 Index: cmake/QtPublicPluginHelpers.cmake
 --- cmake/QtPublicPluginHelpers.cmake.orig
 +++ cmake/QtPublicPluginHelpers.cmake
-@@ -601,7 +601,7 @@ macro(__qt_internal_include_qml_plugin_packages)
+@@ -607,7 +607,7 @@ macro(__qt_internal_include_qml_plugin_packages)
  
      # Distributions should probably change this default.
      if(NOT DEFINED QT_SKIP_AUTO_QML_PLUGIN_INCLUSION)

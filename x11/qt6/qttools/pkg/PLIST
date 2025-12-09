@@ -244,6 +244,8 @@ include/X11/qt6/QtHelp/qhelpsearchquerywidget.h
 include/X11/qt6/QtHelp/qhelpsearchresult.h
 include/X11/qt6/QtHelp/qhelpsearchresultwidget.h
 include/X11/qt6/QtHelp/qthelpversion.h
+include/X11/qt6/QtHelp/ui_qfilternamedialog.h
+include/X11/qt6/QtHelp/ui_qhelpfiltersettingswidget.h
 include/X11/qt6/QtQDocCatch/
 include/X11/qt6/QtQDocCatch/QtQDocCatchDepends
 include/X11/qt6/QtQDocCatch/catch/
@@ -335,6 +337,15 @@ lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateTargets${MODC
 lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateTargets.cmake
 lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6DesignerPrivate/
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateConfig.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateConfigVersion.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateDependencies.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateTargets.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6DesignerPrivate/Qt6DesignerPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Help/
 lib/cmake/Qt6Help/Qt6HelpAdditionalTargetInfo.cmake
 lib/cmake/Qt6Help/Qt6HelpConfig.cmake
@@ -352,6 +363,15 @@ lib/cmake/Qt6Help/Qt6QHelpEnginePluginConfigVersion.cmake
 lib/cmake/Qt6Help/Qt6QHelpEnginePluginConfigVersionImpl.cmake
 lib/cmake/Qt6Help/Qt6QHelpEnginePluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Help/Qt6QHelpEnginePluginTargets.cmake
+lib/cmake/Qt6HelpPrivate/
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateConfig.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateConfigVersion.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateDependencies.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateTargets.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6HelpPrivate/Qt6HelpPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Linguist/
 lib/cmake/Qt6Linguist/Qt6LinguistAdditionalTargetInfo.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistConfig.cmake
@@ -402,6 +422,7 @@ lib/cmake/Qt6Tools/Qt6ToolsConfig.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfigVersion.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfigVersionImpl.cmake
 lib/cmake/Qt6Tools/Qt6ToolsDependencies.cmake
+lib/cmake/Qt6Tools/Qt6ToolsExtraProperties.cmake
 lib/cmake/Qt6Tools/Qt6ToolsTargets.cmake
 lib/cmake/Qt6Tools/Qt6ToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Tools/Qt6ToolsVersionlessTargets.cmake
@@ -433,6 +454,15 @@ lib/cmake/Qt6UiTools/Qt6UiToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6UiTools/Qt6UiToolsTargets.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsVersionlessTargets.cmake
+lib/cmake/Qt6UiToolsPrivate/
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateConfig.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateConfigVersion.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateDependencies.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateTargets.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateVersionlessTargets.cmake
 lib/libQt6Designer.prl
 @lib lib/libQt6Designer.so.${LIBQt6Designer_VERSION}
 lib/libQt6DesignerComponents.prl
@@ -465,10 +495,10 @@ lib/pkgconfig/Qt6UiTools.pc
 @bin lib/qt6/libexec/lupdate-pro
 @bin lib/qt6/libexec/qhelpgenerator
 @bin lib/qt6/libexec/qtattributionsscanner
-lib/qt6/metatypes/qt6designer_release_metatypes.json
-lib/qt6/metatypes/qt6designercomponentsprivate_release_metatypes.json
-lib/qt6/metatypes/qt6help_release_metatypes.json
-lib/qt6/metatypes/qt6uitools_release_metatypes.json
+lib/qt6/metatypes/qt6designer_metatypes.json
+lib/qt6/metatypes/qt6designercomponentsprivate_metatypes.json
+lib/qt6/metatypes/qt6help_metatypes.json
+lib/qt6/metatypes/qt6uitools_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_designer.pri
 lib/qt6/mkspecs/modules/qt_lib_designer_private.pri
 lib/qt6/mkspecs/modules/qt_lib_designercomponents_private.pri

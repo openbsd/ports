@@ -6,7 +6,7 @@ Index: src/3rdparty/gn/src/util/exe_path.cc
  
  #include "base/win/win_util.h"
 -#elif defined(OS_FREEBSD) || defined(OS_NETBSD)
-+#elif defined(OS_FREEBSD) || defined(OS_NETBSD) || defined(OS_OPENBSD)
++#elif defined(OS_FREEBSD) || defined(OS_NETBSD)  || defined(OS_OPENBSD)
  #include <limits.h>
  #include <sys/sysctl.h>
  #include <sys/types.h>
@@ -21,11 +21,11 @@ Index: src/3rdparty/gn/src/util/exe_path.cc
  #if defined(OS_MACOSX)
  
  base::FilePath GetExePath() {
-@@ -80,6 +84,67 @@ base::FilePath GetExePath() {
+@@ -79,6 +83,66 @@ base::FilePath GetExePath() {
+     return base::FilePath();
    }
    return base::FilePath(buf);
- }
-+
++}
 +#elif defined(OS_OPENBSD)
 +
 +base::FilePath GetExePath() {
@@ -85,7 +85,6 @@ Index: src/3rdparty/gn/src/util/exe_path.cc
 +
 +out:
 +  return base::FilePath();
-+ }
+ }
  
  #elif defined(OS_HAIKU)
- 

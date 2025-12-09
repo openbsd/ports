@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/debug/proc_maps_linux.cc
 --- src/3rdparty/chromium/base/debug/proc_maps_linux.cc.orig
 +++ src/3rdparty/chromium/base/debug/proc_maps_linux.cc
-@@ -13,7 +13,7 @@
+@@ -22,7 +22,7 @@
  #include "base/strings/string_split.h"
  #include "build/build_config.h"
  

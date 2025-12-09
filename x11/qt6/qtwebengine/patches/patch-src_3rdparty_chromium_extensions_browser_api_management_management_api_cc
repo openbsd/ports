@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/extensions/browser/api/management/management_api.cc
 --- src/3rdparty/chromium/extensions/browser/api/management/management_api.cc.orig
 +++ src/3rdparty/chromium/extensions/browser/api/management/management_api.cc
-@@ -279,7 +279,7 @@ bool PlatformSupportsApprovalFlowForExtensions() {
+@@ -285,7 +285,7 @@ bool PlatformSupportsApprovalFlowForExtensions() {
  #if BUILDFLAG(IS_CHROMEOS)
    // ChromeOS devices have this feature already shipped.
    return true;

@@ -15,6 +15,7 @@ SHARED_LIBS +=  Qt63DQuickRender          2.1 # 6.6
 SHARED_LIBS +=  Qt63DQuickScene2D         1.1 # 6.6
 SHARED_LIBS +=	Qt63DQuickScene3D         0.0 # 0.0
 SHARED_LIBS +=  Qt63DRender               1.1 # 6.6
+SHARED_LIBS +=	Qt63DQuickLogic           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels

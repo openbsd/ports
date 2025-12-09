@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn
 --- src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn
-@@ -357,7 +357,6 @@ target(link_target_type, "ffmpeg_internal") {
+@@ -358,7 +358,6 @@ target(link_target_type, "ffmpeg_internal") {
        libs += [
          "m",
          "z",

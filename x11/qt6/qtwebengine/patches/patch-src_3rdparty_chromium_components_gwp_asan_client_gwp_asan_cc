@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc
 --- src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc.orig
 +++ src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc
-@@ -70,7 +70,7 @@ namespace {
+@@ -75,7 +75,7 @@ namespace {
  // ProcessSamplingBoost is the multiplier to increase the
  // ProcessSamplingProbability in scenarios where we want to perform additional
  // testing (e.g., on canary/dev builds).
