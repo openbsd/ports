@@ -65,6 +65,9 @@ lib/qt6/qml/org/kde/userfeedback/KF6UserFeedbackQml.qmltypes
 lib/qt6/qml/org/kde/userfeedback/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so
 lib/qt6/qml/org/kde/userfeedback/qmldir
+share/KDE/
+share/KDE/UserFeedbackConsole/
+share/KDE/UserFeedbackConsole/user-feedback-manual.qch
 share/kf6/
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KF6UserFeedbackCore.pri

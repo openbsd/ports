@@ -16,6 +16,7 @@ share/ECM/find-modules/Find7Zip.cmake
 share/ECM/find-modules/Find7z.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
+share/ECM/find-modules/FindFFmpeg.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake
@@ -163,6 +164,7 @@ share/doc/ECM/html/_sources/find-module/Find7Zip.rst.txt
 share/doc/ECM/html/_sources/find-module/Find7z.rst.txt
 share/doc/ECM/html/_sources/find-module/FindCanberra.rst.txt
 share/doc/ECM/html/_sources/find-module/FindEGL.rst.txt
+share/doc/ECM/html/_sources/find-module/FindFFmpeg.rst.txt
 share/doc/ECM/html/_sources/find-module/FindGLIB2.rst.txt
 share/doc/ECM/html/_sources/find-module/FindGperf.rst.txt
 share/doc/ECM/html/_sources/find-module/FindGradle.rst.txt
@@ -273,6 +275,7 @@ share/doc/ECM/html/find-module/Find7Zip.html
 share/doc/ECM/html/find-module/Find7z.html
 share/doc/ECM/html/find-module/FindCanberra.html
 share/doc/ECM/html/find-module/FindEGL.html
+share/doc/ECM/html/find-module/FindFFmpeg.html
 share/doc/ECM/html/find-module/FindGLIB2.html
 share/doc/ECM/html/find-module/FindGperf.html
 share/doc/ECM/html/find-module/FindGradle.html

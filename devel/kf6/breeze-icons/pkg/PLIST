@@ -16,6 +16,7 @@ share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
 share/icons/breeze-dark/actions/12/
+share/icons/breeze-dark/actions/12/external-link-symbolic.svg
 share/icons/breeze-dark/actions/12/mobile-close-app.svg
 share/icons/breeze-dark/actions/12/mobile-task-switcher.svg
 share/icons/breeze-dark/actions/12/object-fill.svg
@@ -629,6 +630,8 @@ share/icons/breeze-dark/actions/16/document-save-symbolic.svg
 share/icons/breeze-dark/actions/16/document-save.svg
 share/icons/breeze-dark/actions/16/document-scan-symbolic.svg
 share/icons/breeze-dark/actions/16/document-scan.svg
+share/icons/breeze-dark/actions/16/document-send-rtl.svg
+share/icons/breeze-dark/actions/16/document-send-symbolic-rtl.svg
 share/icons/breeze-dark/actions/16/document-send-symbolic.svg
 share/icons/breeze-dark/actions/16/document-send.svg
 share/icons/breeze-dark/actions/16/document-share-symbolic.svg
@@ -929,6 +932,7 @@ share/icons/breeze-dark/actions/16/expand-symbolic.svg
 share/icons/breeze-dark/actions/16/expand.svg
 share/icons/breeze-dark/actions/16/export-symbolic.svg
 share/icons/breeze-dark/actions/16/extension-symbolic.svg
+share/icons/breeze-dark/actions/16/external-link-symbolic.svg
 share/icons/breeze-dark/actions/16/favorite-genres-amarok-symbolic.svg
 share/icons/breeze-dark/actions/16/favorite-genres-amarok.svg
 share/icons/breeze-dark/actions/16/feed-subscribe-symbolic.svg
@@ -2302,6 +2306,8 @@ share/icons/breeze-dark/actions/16/online-symbolic.svg
 share/icons/breeze-dark/actions/16/online.svg
 share/icons/breeze-dark/actions/16/open-for-editing-symbolic.svg
 share/icons/breeze-dark/actions/16/open-for-editing.svg
+share/icons/breeze-dark/actions/16/open-link-rtl.svg
+share/icons/breeze-dark/actions/16/open-link-symbolic-rtl.svg
 share/icons/breeze-dark/actions/16/open-link-symbolic.svg
 share/icons/breeze-dark/actions/16/open-link.svg
 share/icons/breeze-dark/actions/16/open-menu-symbolic.svg
@@ -4258,6 +4264,8 @@ share/icons/breeze-dark/actions/22/document-save-symbolic.svg
 share/icons/breeze-dark/actions/22/document-save.svg
 share/icons/breeze-dark/actions/22/document-scan-symbolic.svg
 share/icons/breeze-dark/actions/22/document-scan.svg
+share/icons/breeze-dark/actions/22/document-send-rtl.svg
+share/icons/breeze-dark/actions/22/document-send-symbolic-rtl.svg
 share/icons/breeze-dark/actions/22/document-send-symbolic.svg
 share/icons/breeze-dark/actions/22/document-send.svg
 share/icons/breeze-dark/actions/22/document-share-symbolic.svg
@@ -4564,6 +4572,7 @@ share/icons/breeze-dark/actions/22/expand-all-symbolic.svg
 share/icons/breeze-dark/actions/22/expand-all.svg
 share/icons/breeze-dark/actions/22/expand-symbolic.svg
 share/icons/breeze-dark/actions/22/expand.svg
+share/icons/breeze-dark/actions/22/external-link-symbolic.svg
 share/icons/breeze-dark/actions/22/favorite-favorited-symbolic.svg
 share/icons/breeze-dark/actions/22/favorite-favorited.svg
 share/icons/breeze-dark/actions/22/favorite-genres-amarok-symbolic.svg
@@ -6117,6 +6126,8 @@ share/icons/breeze-dark/actions/22/online-symbolic.svg
 share/icons/breeze-dark/actions/22/online.svg
 share/icons/breeze-dark/actions/22/open-for-editing-symbolic.svg
 share/icons/breeze-dark/actions/22/open-for-editing.svg
+share/icons/breeze-dark/actions/22/open-link-rtl.svg
+share/icons/breeze-dark/actions/22/open-link-symbolic-rtl.svg
 share/icons/breeze-dark/actions/22/open-link-symbolic.svg
 share/icons/breeze-dark/actions/22/open-link.svg
 share/icons/breeze-dark/actions/22/open-menu-symbolic.svg
@@ -8154,6 +8165,8 @@ share/icons/breeze-dark/actions/24/document-save-symbolic.svg
 share/icons/breeze-dark/actions/24/document-save.svg
 share/icons/breeze-dark/actions/24/document-scan-symbolic.svg
 share/icons/breeze-dark/actions/24/document-scan.svg
+share/icons/breeze-dark/actions/24/document-send-rtl.svg
+share/icons/breeze-dark/actions/24/document-send-symbolic-rtl.svg
 share/icons/breeze-dark/actions/24/document-send-symbolic.svg
 share/icons/breeze-dark/actions/24/document-send.svg
 share/icons/breeze-dark/actions/24/document-share-symbolic.svg
@@ -8460,6 +8473,7 @@ share/icons/breeze-dark/actions/24/expand-all-symbolic.svg
 share/icons/breeze-dark/actions/24/expand-all.svg
 share/icons/breeze-dark/actions/24/expand-symbolic.svg
 share/icons/breeze-dark/actions/24/expand.svg
+share/icons/breeze-dark/actions/24/external-link-symbolic.svg
 share/icons/breeze-dark/actions/24/favorite-favorited-symbolic.svg
 share/icons/breeze-dark/actions/24/favorite-favorited.svg
 share/icons/breeze-dark/actions/24/favorite-genres-amarok-symbolic.svg
@@ -10013,6 +10027,8 @@ share/icons/breeze-dark/actions/24/online-symbolic.svg
 share/icons/breeze-dark/actions/24/online.svg
 share/icons/breeze-dark/actions/24/open-for-editing-symbolic.svg
 share/icons/breeze-dark/actions/24/open-for-editing.svg
+share/icons/breeze-dark/actions/24/open-link-rtl.svg
+share/icons/breeze-dark/actions/24/open-link-symbolic-rtl.svg
 share/icons/breeze-dark/actions/24/open-link-symbolic.svg
 share/icons/breeze-dark/actions/24/open-link.svg
 share/icons/breeze-dark/actions/24/open-menu-symbolic.svg
@@ -17998,6 +18014,7 @@ share/icons/breeze-dark/status/16/microphone-sensitivity-muted-symbolic.svg
 share/icons/breeze-dark/status/16/microphone-sensitivity-muted.svg
 share/icons/breeze-dark/status/16/network-offline-symbolic.svg
 share/icons/breeze-dark/status/16/non-starred-symbolic.svg
+share/icons/breeze-dark/status/16/non-starred.svg
 share/icons/breeze-dark/status/16/org.kde.CrowTranslate-tray-symbolic.svg
 share/icons/breeze-dark/status/16/org.kde.CrowTranslate-tray.svg
 share/icons/breeze-dark/status/16/pidgin-tray-available-symbolic.svg
@@ -18035,9 +18052,12 @@ share/icons/breeze-dark/status/16/security-low-symbolic.svg
 share/icons/breeze-dark/status/16/security-low.svg
 share/icons/breeze-dark/status/16/security-medium-symbolic.svg
 share/icons/breeze-dark/status/16/security-medium.svg
+share/icons/breeze-dark/status/16/semi-starred-rtl.svg
 share/icons/breeze-dark/status/16/semi-starred-symbolic-rtl.svg
 share/icons/breeze-dark/status/16/semi-starred-symbolic.svg
+share/icons/breeze-dark/status/16/semi-starred.svg
 share/icons/breeze-dark/status/16/starred-symbolic.svg
+share/icons/breeze-dark/status/16/starred.svg
 share/icons/breeze-dark/status/16/state-download-symbolic.svg
 share/icons/breeze-dark/status/16/state-download.svg
 share/icons/breeze-dark/status/16/state-error-symbolic.svg
@@ -18810,6 +18830,8 @@ share/icons/breeze-dark/status/22/nm-signal-50-symbolic.svg
 share/icons/breeze-dark/status/22/nm-signal-50.svg
 share/icons/breeze-dark/status/22/nm-signal-75-symbolic.svg
 share/icons/breeze-dark/status/22/nm-signal-75.svg
+share/icons/breeze-dark/status/22/non-starred-symbolic.svg
+share/icons/breeze-dark/status/22/non-starred.svg
 share/icons/breeze-dark/status/22/org.telegram.desktop-attention-symbolic.svg
 share/icons/breeze-dark/status/22/org.telegram.desktop-mute-symbolic.svg
 share/icons/breeze-dark/status/22/org.telegram.desktop-symbolic.svg
@@ -18839,6 +18861,8 @@ share/icons/breeze-dark/status/22/showinfo.svg
 share/icons/breeze-dark/status/22/snap.telegram.desktop.-attention-symbolic.svg
 share/icons/breeze-dark/status/22/snap.telegram.desktop.-mute-symbolic.svg
 share/icons/breeze-dark/status/22/snap.telegram.desktop.-symbolic.svg
+share/icons/breeze-dark/status/22/starred-symbolic.svg
+share/icons/breeze-dark/status/22/starred.svg
 share/icons/breeze-dark/status/22/state-download-symbolic.svg
 share/icons/breeze-dark/status/22/state-download.svg
 share/icons/breeze-dark/status/22/state-error-symbolic.svg
@@ -19633,6 +19657,8 @@ share/icons/breeze-dark/status/24/nm-signal-50-symbolic.svg
 share/icons/breeze-dark/status/24/nm-signal-50.svg
 share/icons/breeze-dark/status/24/nm-signal-75-symbolic.svg
 share/icons/breeze-dark/status/24/nm-signal-75.svg
+share/icons/breeze-dark/status/24/non-starred-symbolic.svg
+share/icons/breeze-dark/status/24/non-starred.svg
 share/icons/breeze-dark/status/24/org.telegram.desktop-attention-symbolic.svg
 share/icons/breeze-dark/status/24/org.telegram.desktop-mute-symbolic.svg
 share/icons/breeze-dark/status/24/org.telegram.desktop-symbolic.svg
@@ -19662,6 +19688,8 @@ share/icons/breeze-dark/status/24/showinfo.svg
 share/icons/breeze-dark/status/24/snap.telegram.desktop.-attention-symbolic.svg
 share/icons/breeze-dark/status/24/snap.telegram.desktop.-mute-symbolic.svg
 share/icons/breeze-dark/status/24/snap.telegram.desktop.-symbolic.svg
+share/icons/breeze-dark/status/24/starred-symbolic.svg
+share/icons/breeze-dark/status/24/starred.svg
 share/icons/breeze-dark/status/24/state-download-symbolic.svg
 share/icons/breeze-dark/status/24/state-download.svg
 share/icons/breeze-dark/status/24/state-error-symbolic.svg
@@ -19935,6 +19963,7 @@ share/icons/breeze-dark/status/64/security-low.svg
 share/icons/breeze-dark/status/64/security-medium.svg
 share/icons/breeze/actions/
 share/icons/breeze/actions/12/
+share/icons/breeze/actions/12/external-link-symbolic.svg
 share/icons/breeze/actions/12/mobile-close-app.svg
 share/icons/breeze/actions/12/mobile-task-switcher.svg
 share/icons/breeze/actions/12/object-fill.svg
@@ -20548,6 +20577,8 @@ share/icons/breeze/actions/16/document-save-symbolic.svg
 share/icons/breeze/actions/16/document-save.svg
 share/icons/breeze/actions/16/document-scan-symbolic.svg
 share/icons/breeze/actions/16/document-scan.svg
+share/icons/breeze/actions/16/document-send-rtl.svg
+share/icons/breeze/actions/16/document-send-symbolic-rtl.svg
 share/icons/breeze/actions/16/document-send-symbolic.svg
 share/icons/breeze/actions/16/document-send.svg
 share/icons/breeze/actions/16/document-share-symbolic.svg
@@ -20848,6 +20879,7 @@ share/icons/breeze/actions/16/expand-symbolic.svg
 share/icons/breeze/actions/16/expand.svg
 share/icons/breeze/actions/16/export-symbolic.svg
 share/icons/breeze/actions/16/extension-symbolic.svg
+share/icons/breeze/actions/16/external-link-symbolic.svg
 share/icons/breeze/actions/16/favorite-genres-amarok-symbolic.svg
 share/icons/breeze/actions/16/favorite-genres-amarok.svg
 share/icons/breeze/actions/16/feed-subscribe-symbolic.svg
@@ -22221,6 +22253,8 @@ share/icons/breeze/actions/16/online-symbolic.svg
 share/icons/breeze/actions/16/online.svg
 share/icons/breeze/actions/16/open-for-editing-symbolic.svg
 share/icons/breeze/actions/16/open-for-editing.svg
+share/icons/breeze/actions/16/open-link-rtl.svg
+share/icons/breeze/actions/16/open-link-symbolic-rtl.svg
 share/icons/breeze/actions/16/open-link-symbolic.svg
 share/icons/breeze/actions/16/open-link.svg
 share/icons/breeze/actions/16/open-menu-symbolic.svg
@@ -24177,6 +24211,8 @@ share/icons/breeze/actions/22/document-save-symbolic.svg
 share/icons/breeze/actions/22/document-save.svg
 share/icons/breeze/actions/22/document-scan-symbolic.svg
 share/icons/breeze/actions/22/document-scan.svg
+share/icons/breeze/actions/22/document-send-rtl.svg
+share/icons/breeze/actions/22/document-send-symbolic-rtl.svg
 share/icons/breeze/actions/22/document-send-symbolic.svg
 share/icons/breeze/actions/22/document-send.svg
 share/icons/breeze/actions/22/document-share-symbolic.svg
@@ -24483,6 +24519,7 @@ share/icons/breeze/actions/22/expand-all-symbolic.svg
 share/icons/breeze/actions/22/expand-all.svg
 share/icons/breeze/actions/22/expand-symbolic.svg
 share/icons/breeze/actions/22/expand.svg
+share/icons/breeze/actions/22/external-link-symbolic.svg
 share/icons/breeze/actions/22/favorite-favorited-symbolic.svg
 share/icons/breeze/actions/22/favorite-favorited.svg
 share/icons/breeze/actions/22/favorite-genres-amarok-symbolic.svg
@@ -26036,6 +26073,8 @@ share/icons/breeze/actions/22/online-symbolic.svg
 share/icons/breeze/actions/22/online.svg
 share/icons/breeze/actions/22/open-for-editing-symbolic.svg
 share/icons/breeze/actions/22/open-for-editing.svg
+share/icons/breeze/actions/22/open-link-rtl.svg
+share/icons/breeze/actions/22/open-link-symbolic-rtl.svg
 share/icons/breeze/actions/22/open-link-symbolic.svg
 share/icons/breeze/actions/22/open-link.svg
 share/icons/breeze/actions/22/open-menu-symbolic.svg
@@ -28073,6 +28112,8 @@ share/icons/breeze/actions/24/document-save-symbolic.svg
 share/icons/breeze/actions/24/document-save.svg
 share/icons/breeze/actions/24/document-scan-symbolic.svg
 share/icons/breeze/actions/24/document-scan.svg
+share/icons/breeze/actions/24/document-send-rtl.svg
+share/icons/breeze/actions/24/document-send-symbolic-rtl.svg
 share/icons/breeze/actions/24/document-send-symbolic.svg
 share/icons/breeze/actions/24/document-send.svg
 share/icons/breeze/actions/24/document-share-symbolic.svg
@@ -28379,6 +28420,7 @@ share/icons/breeze/actions/24/expand-all-symbolic.svg
 share/icons/breeze/actions/24/expand-all.svg
 share/icons/breeze/actions/24/expand-symbolic.svg
 share/icons/breeze/actions/24/expand.svg
+share/icons/breeze/actions/24/external-link-symbolic.svg
 share/icons/breeze/actions/24/favorite-favorited-symbolic.svg
 share/icons/breeze/actions/24/favorite-favorited.svg
 share/icons/breeze/actions/24/favorite-genres-amarok-symbolic.svg
@@ -29932,6 +29974,8 @@ share/icons/breeze/actions/24/online-symbolic.svg
 share/icons/breeze/actions/24/online.svg
 share/icons/breeze/actions/24/open-for-editing-symbolic.svg
 share/icons/breeze/actions/24/open-for-editing.svg
+share/icons/breeze/actions/24/open-link-rtl.svg
+share/icons/breeze/actions/24/open-link-symbolic-rtl.svg
 share/icons/breeze/actions/24/open-link-symbolic.svg
 share/icons/breeze/actions/24/open-link.svg
 share/icons/breeze/actions/24/open-menu-symbolic.svg
@@ -37918,6 +37962,7 @@ share/icons/breeze/status/16/microphone-sensitivity-muted-symbolic.svg
 share/icons/breeze/status/16/microphone-sensitivity-muted.svg
 share/icons/breeze/status/16/network-offline-symbolic.svg
 share/icons/breeze/status/16/non-starred-symbolic.svg
+share/icons/breeze/status/16/non-starred.svg
 share/icons/breeze/status/16/org.kde.CrowTranslate-tray-symbolic.svg
 share/icons/breeze/status/16/org.kde.CrowTranslate-tray.svg
 share/icons/breeze/status/16/pidgin-tray-available-symbolic.svg
@@ -37955,9 +38000,12 @@ share/icons/breeze/status/16/security-low-symbolic.svg
 share/icons/breeze/status/16/security-low.svg
 share/icons/breeze/status/16/security-medium-symbolic.svg
 share/icons/breeze/status/16/security-medium.svg
+share/icons/breeze/status/16/semi-starred-rtl.svg
 share/icons/breeze/status/16/semi-starred-symbolic-rtl.svg
 share/icons/breeze/status/16/semi-starred-symbolic.svg
+share/icons/breeze/status/16/semi-starred.svg
 share/icons/breeze/status/16/starred-symbolic.svg
+share/icons/breeze/status/16/starred.svg
 share/icons/breeze/status/16/state-download-symbolic.svg
 share/icons/breeze/status/16/state-download.svg
 share/icons/breeze/status/16/state-error-symbolic.svg
@@ -38730,6 +38778,8 @@ share/icons/breeze/status/22/nm-signal-50-symbolic.svg
 share/icons/breeze/status/22/nm-signal-50.svg
 share/icons/breeze/status/22/nm-signal-75-symbolic.svg
 share/icons/breeze/status/22/nm-signal-75.svg
+share/icons/breeze/status/22/non-starred-symbolic.svg
+share/icons/breeze/status/22/non-starred.svg
 share/icons/breeze/status/22/org.telegram.desktop-attention-symbolic.svg
 share/icons/breeze/status/22/org.telegram.desktop-mute-symbolic.svg
 share/icons/breeze/status/22/org.telegram.desktop-symbolic.svg
@@ -38759,6 +38809,8 @@ share/icons/breeze/status/22/showinfo.svg
 share/icons/breeze/status/22/snap.telegram.desktop.-attention-symbolic.svg
 share/icons/breeze/status/22/snap.telegram.desktop.-mute-symbolic.svg
 share/icons/breeze/status/22/snap.telegram.desktop.-symbolic.svg
+share/icons/breeze/status/22/starred-symbolic.svg
+share/icons/breeze/status/22/starred.svg
 share/icons/breeze/status/22/state-download-symbolic.svg
 share/icons/breeze/status/22/state-download.svg
 share/icons/breeze/status/22/state-error-symbolic.svg
@@ -39553,6 +39605,8 @@ share/icons/breeze/status/24/nm-signal-50-symbolic.svg
 share/icons/breeze/status/24/nm-signal-50.svg
 share/icons/breeze/status/24/nm-signal-75-symbolic.svg
 share/icons/breeze/status/24/nm-signal-75.svg
+share/icons/breeze/status/24/non-starred-symbolic.svg
+share/icons/breeze/status/24/non-starred.svg
 share/icons/breeze/status/24/org.telegram.desktop-attention-symbolic.svg
 share/icons/breeze/status/24/org.telegram.desktop-mute-symbolic.svg
 share/icons/breeze/status/24/org.telegram.desktop-symbolic.svg
@@ -39582,6 +39636,8 @@ share/icons/breeze/status/24/showinfo.svg
 share/icons/breeze/status/24/snap.telegram.desktop.-attention-symbolic.svg
 share/icons/breeze/status/24/snap.telegram.desktop.-mute-symbolic.svg
 share/icons/breeze/status/24/snap.telegram.desktop.-symbolic.svg
+share/icons/breeze/status/24/starred-symbolic.svg
+share/icons/breeze/status/24/starred.svg
 share/icons/breeze/status/24/state-download-symbolic.svg
 share/icons/breeze/status/24/state-download.svg
 share/icons/breeze/status/24/state-error-symbolic.svg

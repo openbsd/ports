@@ -11,7 +11,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 BUILD_DEPENDS =		wayland/plasma-wayland-protocols>=1.15.0
 
-LIB_DEPENDS =		x11/qt6/qtwayland \
+LIB_DEPENDS =		x11/qt6/qtwayland  \
 			x11/qt6/qtdeclarative \
 			wayland/wayland \
 			x11/xkbcommon

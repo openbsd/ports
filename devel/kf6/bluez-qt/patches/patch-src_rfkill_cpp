@@ -1,0 +1,21 @@
+Index: src/rfkill.cpp
+--- src/rfkill.cpp.orig
++++ src/rfkill.cpp
+@@ -11,7 +11,7 @@
+ 
+ #include "debug.h"
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ #include <fcntl.h>
+ #include <stdint.h>
+ #include <string.h>
+@@ -26,7 +26,7 @@
+ 
+ namespace BluezQt
+ {
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ enum rfkill_type {
+     RFKILL_TYPE_ALL = 0,
+     RFKILL_TYPE_WLAN,
