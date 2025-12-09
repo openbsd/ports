@@ -1,37 +1,37 @@
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			11.0
-DISTNAME=		verilog-$V
-REVISION=		1
-PKGNAME=		iverilog-$V
+V=			12_0
+DISTNAME=		iverilog-${V}
+PKGNAME=		iverilog-${V:S/_/./}
 CATEGORIES=		lang devel
 
 HOMEPAGE =		https://steveicarus.github.io/iverilog/
 
+DIST_TUPLE +=	github steveicarus iverilog v${V} .
+
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-
-SITES=			ftp://ftp.icarus.com/pub/eda/verilog/v11/
 
 WANTLIB += ${COMPILER_LIBCXX} bz2 c curses m readline z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
-
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		devel/bison
+BUILD_DEPENDS=		devel/bison \
+			devel/gperf
 LIB_DEPENDS =		archivers/bzip2
 YACC=			bison
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-suffix
-CONFIGURE_ENV+=		CFLAGS="-fPIC ${CFLAGS}" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 
-VVP_DOCS=		README.txt opcodes.txt
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		sh ./autoconf.sh
+
+CONFIGURE_ARGS+=	--disable-suffix
+
 DOC_DIR=		${PREFIX}/share/doc/iverilog
 
 post-install:

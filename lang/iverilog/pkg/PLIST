@@ -55,7 +55,6 @@ lib/ivl/vvp.conf
 share/doc/iverilog/
 @comment share/doc/iverilog/BUGS.txt
 share/doc/iverilog/QUICK_START.txt
-share/doc/iverilog/README.txt
 share/doc/iverilog/attributes.txt
 @comment share/doc/iverilog/cygwin.txt
 share/doc/iverilog/developer-quick-start.txt
