@@ -17,18 +17,18 @@ WANTLIB += m pulse pulse-mainloop-glib
 BUILD_DEPENDS =	devel/kf6/kitemmodels \
 		devel/kf6/kdeclarative \
 		devel/kf6/ksvg \
-		graphics/kirigami-addons>=1.0.0 \
+		graphics/kirigami-addons \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/gtk-vnc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kdeclarative \
 		devel/kf6/kitemmodels \
-		graphics/kirigami-addons>=1.0.0
+		graphics/kirigami-addons
 
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
-		audio/pulseaudio-qt>=1.6.0 \
+		audio/pulseaudio-qt \
 		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/kf6/kcmutils \

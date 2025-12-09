@@ -21,7 +21,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS =	sysutils/consolekit \
 		wayland/plasma-wayland-protocols \
-		wayland/wayland-protocols>=1.40 \
+		wayland/wayland-protocols \
 		x11/kde-plasma/kscreen>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kconfig \

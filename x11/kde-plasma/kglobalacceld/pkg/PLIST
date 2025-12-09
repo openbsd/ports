@@ -2,6 +2,7 @@ include/KGlobalAccelD/
 include/KGlobalAccelD/kglobalaccel_interface.h
 include/KGlobalAccelD/kglobalacceld.h
 include/KGlobalAccelD/kglobalacceld_export.h
+include/KGlobalAccelD/shortcutkeystate.h
 lib/cmake/KGlobalAccelD/
 lib/cmake/KGlobalAccelD/KGlobalAccelDConfig.cmake
 lib/cmake/KGlobalAccelD/KGlobalAccelDConfigVersion.cmake
@@ -17,3 +18,4 @@ share/examples/kglobalacceld/xdg/
 share/examples/kglobalacceld/xdg/autostart/
 share/examples/kglobalacceld/xdg/autostart/kglobalacceld.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/kglobalacceld.desktop
+share/qlogging-categories6/kglobalacceld.categories

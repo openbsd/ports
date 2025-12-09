@@ -119,6 +119,8 @@ include/kwin-x11/pointer_input.h
 include/kwin-x11/rulebooksettings.h
 include/kwin-x11/rules.h
 include/kwin-x11/scene/
+include/kwin-x11/scene/borderoutline.h
+include/kwin-x11/scene/borderradius.h
 include/kwin-x11/scene/cursordelegate_opengl.h
 include/kwin-x11/scene/cursordelegate_qpainter.h
 include/kwin-x11/scene/cursoritem.h
@@ -131,6 +133,7 @@ include/kwin-x11/scene/itemgeometry.h
 include/kwin-x11/scene/itemrenderer.h
 include/kwin-x11/scene/itemrenderer_opengl.h
 include/kwin-x11/scene/itemrenderer_qpainter.h
+include/kwin-x11/scene/outlinedborderitem.h
 include/kwin-x11/scene/rootitem.h
 include/kwin-x11/scene/scene.h
 include/kwin-x11/scene/shadowitem.h
@@ -289,6 +292,7 @@ lib/kconf_update_bin/
 @bin lib/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default-x11
 @bin lib/kconf_update_bin/kwin-6.0-reset-active-mouse-screen-x11
 @bin lib/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts-x11
+@bin lib/kconf_update_bin/kwin-6.5-showpaint-changes-x11
 @bin lib/kconf_update_bin/kwin5_update_default_rules_x11
 @lib lib/libkcmkwincommon-x11.so.${LIBkcmkwincommon-x11_VERSION}
 @lib lib/libkwin-x11.so.${LIBkwin-x11_VERSION}
@@ -304,20 +308,16 @@ lib/qt6/plugins/kwin-x11/effects/configs/
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_blur_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_diminactive_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_glide_config.so
-@so lib/qt6/plugins/kwin-x11/effects/configs/kwin_invert_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_magiclamp_config.so
-@so lib/qt6/plugins/kwin-x11/effects/configs/kwin_magnifier_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_mouseclick_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_mousemark_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_overview_config.so
-@so lib/qt6/plugins/kwin-x11/effects/configs/kwin_showpaint_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_slide_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_thumbnailaside_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_tileseditor_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_trackmouse_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_windowview_config.so
 @so lib/qt6/plugins/kwin-x11/effects/configs/kwin_wobblywindows_config.so
-@so lib/qt6/plugins/kwin-x11/effects/configs/kwin_zoom_config.so
 lib/qt6/plugins/kwin-x11/plugins/
 @so lib/qt6/plugins/kwin-x11/plugins/krunnerintegration.so
 @so lib/qt6/plugins/kwin-x11/plugins/nightlight.so
@@ -470,6 +470,25 @@ share/doc/HTML/en/kcontrol/windowspecific-x11/window-matching-ready-akregator.pn
 share/doc/HTML/en/kcontrol/windowspecific-x11/window-matching-tbird-compose.png
 share/doc/HTML/en/kcontrol/windowspecific-x11/window-matching-tbird-main.png
 share/doc/HTML/en/kcontrol/windowspecific-x11/window-matching-tbird-reminder.png
+share/doc/HTML/es/kcontrol/
+share/doc/HTML/es/kcontrol/desktop-x11/
+share/doc/HTML/es/kcontrol/desktop-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/desktop-x11/index.docbook
+share/doc/HTML/es/kcontrol/kwindecoration-x11/
+share/doc/HTML/es/kcontrol/kwindecoration-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwindecoration-x11/index.docbook
+share/doc/HTML/es/kcontrol/kwineffects-x11/
+share/doc/HTML/es/kcontrol/kwineffects-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwineffects-x11/index.docbook
+share/doc/HTML/es/kcontrol/kwinscreenedges-x11/
+share/doc/HTML/es/kcontrol/kwinscreenedges-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwinscreenedges-x11/index.docbook
+share/doc/HTML/es/kcontrol/kwintouchscreen-x11/
+share/doc/HTML/es/kcontrol/kwintouchscreen-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwintouchscreen-x11/index.docbook
+share/doc/HTML/es/kcontrol/kwinvirtualkeyboard-x11/
+share/doc/HTML/es/kcontrol/kwinvirtualkeyboard-x11/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwinvirtualkeyboard-x11/index.docbook
 share/doc/HTML/it/kcontrol/
 share/doc/HTML/it/kcontrol/desktop-x11/
 share/doc/HTML/it/kcontrol/desktop-x11/index.cache.bz2
@@ -1221,6 +1240,7 @@ share/locale/ku/LC_MESSAGES/kcm_kwinrules_x11.mo
 share/locale/ku/LC_MESSAGES/kcmkwincompositing_x11.mo
 share/locale/ku/LC_MESSAGES/kcmkwm_x11.mo
 share/locale/ku/LC_MESSAGES/kwin_x11.mo
+share/locale/lt/LC_MESSAGES/kcm_animations_x11.mo
 share/locale/lt/LC_MESSAGES/kcm_kwin_effects_x11.mo
 share/locale/lt/LC_MESSAGES/kcm_kwin_scripts_x11.mo
 share/locale/lt/LC_MESSAGES/kcm_kwin_virtualdesktops_x11.mo

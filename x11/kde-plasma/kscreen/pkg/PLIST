@@ -13,8 +13,6 @@ share/applications/kcm_kscreen.desktop
 share/dbus-1/services/org.kde.kscreen.osdService.service
 share/kglobalaccel/
 share/kglobalaccel/org.kde.kscreen.desktop
-share/kscreen/
-share/kscreen/graz.png
 share/locale/ar/LC_MESSAGES/hdrcalibrator.mo
 share/locale/ar/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ar/LC_MESSAGES/kscreen_common.mo
@@ -119,9 +117,11 @@ share/locale/ko/LC_MESSAGES/hdrcalibrator.mo
 share/locale/ko/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ko/LC_MESSAGES/kscreen_common.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/lt/LC_MESSAGES/hdrcalibrator.mo
 share/locale/lt/LC_MESSAGES/kcm_kscreen.mo
 share/locale/lt/LC_MESSAGES/kscreen_common.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/lv/LC_MESSAGES/hdrcalibrator.mo
 share/locale/lv/LC_MESSAGES/kcm_kscreen.mo
 share/locale/lv/LC_MESSAGES/kscreen_common.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo

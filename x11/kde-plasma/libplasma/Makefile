@@ -20,7 +20,7 @@ WANTLIB += xcb xcb-composite xcb-damage xcb-render xcb-shape xcb-xfixes
 WANTLIB += xkbcommon
 
 BUILD_DEPENDS =	archivers/gtar \
-		wayland/wayland-protocols>=1.40 \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf6/kcmutils \

@@ -1,4 +1,4 @@
-COMMENT =	KDE krameworks 5 tools
+COMMENT =	KDE krameworks tools
 
 DISTNAME =	kde-cli-tools-${VERSION}
 

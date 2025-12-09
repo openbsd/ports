@@ -4,8 +4,8 @@ lib/qt6/qml/org/kde/milou/ResultsListView.qml
 lib/qt6/qml/org/kde/milou/ResultsListViewDelegate.qml
 lib/qt6/qml/org/kde/milou/ResultsView.qml
 lib/qt6/qml/org/kde/milou/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/milou/libmilouqmlplugin.so
-lib/qt6/qml/org/kde/milou/milouqmlplugin.qmltypes
+@so lib/qt6/qml/org/kde/milou/libmilou.so
+lib/qt6/qml/org/kde/milou/milou.qmltypes
 lib/qt6/qml/org/kde/milou/qmldir
 share/locale/ar/LC_MESSAGES/milou.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.milou.mo

@@ -19,6 +19,7 @@
      SUBDIR += kactivitymanagerd
      SUBDIR += kde-gtk-config
      SUBDIR += kinfocenter
+     SUBDIR += knighttime
      SUBDIR += kmenuedit
      SUBDIR += libkscreen
      SUBDIR += qqc2-breeze-style

@@ -2,7 +2,7 @@
 @so lib/gtk-3.0/modules/libwindow-decorations-gtk-module.so
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/gtk_theme
-@bin lib/kconf_update_bin/remove_deprecated_gtk4_option
+@bin lib/kconf_update_bin/remove_deprecated_gtk4_option_v2
 lib/qt6/plugins/kf6/kded/
 @so lib/qt6/plugins/kf6/kded/gtkconfig.so
 @bin libexec/gtk3_preview

@@ -1,0 +1,39 @@
+Index: wallpapers/potd/plugins/potdengine.cpp
+--- wallpapers/potd/plugins/potdengine.cpp.orig
++++ wallpapers/potd/plugins/potdengine.cpp
+@@ -29,9 +29,9 @@ bool isUsingMeteredConnection()
+         return false;
+     }
+     const auto instance = QNetworkInformation::instance();
+-    if (instance->supports(QNetworkInformation::Feature::Metered)) {
++    if (instance && instance->supports(QNetworkInformation::Feature::Metered)) {
+         return instance->isMetered();
+-    } else if (instance->supports(QNetworkInformation::Feature::TransportMedium)) {
++    } else if (instance && instance->supports(QNetworkInformation::Feature::TransportMedium)) {
+         const auto transport = instance->transportMedium();
+         return transport == QNetworkInformation::TransportMedium::Cellular //
+             || transport == QNetworkInformation::TransportMedium::Bluetooth;
+@@ -45,7 +45,9 @@ bool isNetworkConnected()
+         return true;
+     }
+     const auto instance = QNetworkInformation::instance();
+-    if (instance->supports(QNetworkInformation::Feature::Reachability) && instance->reachability() != QNetworkInformation::Reachability::Online) {
++    if (instance &&
++        instance->supports(QNetworkInformation::Feature::Reachability) &&
++        instance->reachability() != QNetworkInformation::Reachability::Online) {
+         return false;
+     }
+     return true;
+@@ -377,10 +379,10 @@ void PotdEngine::loadNetworkInformation()
+     s_networkInformationAvailable = true;
+     const auto instance = QNetworkInformation::instance();
+ 
+-    if (instance->supports(QNetworkInformation::Feature::Metered)) {
++    if (instance && instance->supports(QNetworkInformation::Feature::Metered)) {
+         connect(instance, &QNetworkInformation::isMeteredChanged, this, &PotdEngine::slotIsMeteredChanged);
+     }
+-    if (instance->supports(QNetworkInformation::Feature::Reachability)) {
++    if (instance && instance->supports(QNetworkInformation::Feature::Reachability)) {
+         connect(instance, &QNetworkInformation::reachabilityChanged, this, &PotdEngine::slotReachabilityChanged);
+     }
+ }

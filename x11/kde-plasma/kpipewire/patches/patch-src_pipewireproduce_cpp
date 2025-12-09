@@ -1,16 +1,16 @@
 Index: src/pipewireproduce.cpp
 --- src/pipewireproduce.cpp.orig
 +++ src/pipewireproduce.cpp
-@@ -15,6 +15,9 @@
- #include <memory>
- #include <qstringliteral.h>
+@@ -25,6 +25,9 @@
+ 
+ #include "logging_frame_statistics.h"
  
 +#include <pthread.h>
 +#include <pthread_np.h>
 +
- #include "gifencoder_p.h"
- #include "h264vaapiencoder_p.h"
- #include "libopenh264encoder_p.h"
+ extern "C" {
+ #include <fcntl.h>
+ }
 @@ -174,7 +177,7 @@ void PipeWireProduce::setupStream()
              m_outputCondition.notify_all();
          }

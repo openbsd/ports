@@ -1,9 +1,8 @@
 QNetworkInformation::Reachability is not available on OpenBSD, stop using it
 and fallback to the default one.
-
-Index: dataengines/weather/weatherengine.cpp
---- dataengines/weather/weatherengine.cpp.orig
-+++ dataengines/weather/weatherengine.cpp
+Index: src/dataengines/weather/weatherengine.cpp
+--- src/dataengines/weather/weatherengine.cpp.orig
++++ src/dataengines/weather/weatherengine.cpp
 @@ -25,8 +25,9 @@ WeatherEngine::WeatherEngine(QObject *parent)
      // Globally notify all plugins to remove their sources (and unload plugin)
      connect(this, &Plasma5Support::DataEngine::sourceRemoved, this, &WeatherEngine::removeIonSource);

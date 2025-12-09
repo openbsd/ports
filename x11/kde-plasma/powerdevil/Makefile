@@ -1,6 +1,5 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -56,6 +55,7 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		wayland/wayland \
 		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \
+		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
 		x11/qt6/qtdeclarative \

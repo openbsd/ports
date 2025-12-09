@@ -64,6 +64,7 @@ lib/qt6/qml/org/kde/ksysguard/faces/ExtendedLegend.qml
 lib/qt6/qml/org/kde/ksysguard/faces/SensorFace.qml
 lib/qt6/qml/org/kde/ksysguard/faces/SensorFaces.qmltypes
 lib/qt6/qml/org/kde/ksysguard/faces/SensorRangeSpinBox.qml
+lib/qt6/qml/org/kde/ksysguard/faces/SuffixSpinBox.qml
 lib/qt6/qml/org/kde/ksysguard/faces/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/ksysguard/faces/libSensorFacesplugin.so
 lib/qt6/qml/org/kde/ksysguard/faces/private/
@@ -78,9 +79,9 @@ lib/qt6/qml/org/kde/ksysguard/formatter/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/ksysguard/formatter/libFormatterplugin.so
 lib/qt6/qml/org/kde/ksysguard/formatter/qmldir
 lib/qt6/qml/org/kde/ksysguard/process/
-lib/qt6/qml/org/kde/ksysguard/process/ProcessPlugin.qmltypes
 lib/qt6/qml/org/kde/ksysguard/process/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/ksysguard/process/libProcessPlugin.so
+@so lib/qt6/qml/org/kde/ksysguard/process/libprocesscoreplugin.so
+lib/qt6/qml/org/kde/ksysguard/process/processcore.qmltypes
 lib/qt6/qml/org/kde/ksysguard/process/qmldir
 lib/qt6/qml/org/kde/ksysguard/sensors/
 lib/qt6/qml/org/kde/ksysguard/sensors/Sensors.qmltypes
@@ -481,10 +482,12 @@ share/locale/lt/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
 share/locale/lt/LC_MESSAGES/ksysguard_sensors.mo
+share/locale/lt/LC_MESSAGES/ksysguard_systemstats.mo
 share/locale/lt/LC_MESSAGES/processcore.mo
 share/locale/lv/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/lv/LC_MESSAGES/KSysGuardSensorFaces.mo

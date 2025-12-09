@@ -11,6 +11,7 @@ SHARED_LIBS +=  kmpris                    0.0 # 0.0
 SHARED_LIBS +=  kworkspace6               0.0 # 0.0
 SHARED_LIBS +=  batterycontrol            0.0 # 0.0
 SHARED_LIBS +=  klipper                   0.0 # 0.0
+SHARED_LIBS +=	klookandfeel              0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KExiv2Qt6 KF6Archive KF6Attica
 WANTLIB += KF6AuthCore KF6Baloo KF6Bookmarks KF6CalendarEvents

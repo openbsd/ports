@@ -8,12 +8,12 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon
 
 BUILD_DEPENDS =		wayland/libinput-openbsd \
-			wayland/plasma-wayland-protocols>=1.14.0 \
-			wayland/wayland-protocols>=1.40
+			wayland/plasma-wayland-protocols>=1.19.0 \
+			wayland/wayland-protocols
 
 RUN_DEPENDS =		wayland/libinput-openbsd \
-			wayland/plasma-wayland-protocols>=1.14.0 \
-			wayland/wayland-protocols>=1.40
+			wayland/plasma-wayland-protocols>=1.19.0 \
+			wayland/wayland-protocols
 
 LIB_DEPENDS =		wayland/wayland \
 			x11/qt6/qtwayland \

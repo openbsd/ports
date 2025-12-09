@@ -1,10 +1,11 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
 MODKDE_DOCS =		Yes
+
+SHARED_LIBS +=	kglobalaccelmodel         0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6AuthCore KF6Baloo
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
@@ -79,6 +80,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		net/libaccounts-qt \
 		textproc/icu4c \
 		x11/kde-applications/kf6-kaccounts-integration \
+		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/libksysguard>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/kde-plasma/plasma-activities-stats>=${VERSION} \

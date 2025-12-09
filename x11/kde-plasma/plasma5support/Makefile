@@ -5,6 +5,7 @@ DISTNAME =	plasma5support-${VERSION}
 MODKDE_TRANSLATIONS =	Yes
 
 SHARED_LIBS +=  Plasma5Support            0.0 # 0.0
+SHARED_LIBS +=	weather_ion               0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6GuiAddons KF6I18n KF6IdleTime
@@ -33,6 +34,8 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/kholidays \
+		devel/kf6/kunitconversion \
 		devel/kf6/kwindowsystem \
 		devel/kf6/solid \
 		x11/kde-plasma/libksysguard>=${VERSION} \

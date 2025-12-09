@@ -1,6 +1,5 @@
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
-REVISION =	0
 
 # From KDE Gear 23.08.4 to KDE Plasma 6.0
 EPOCH =		0

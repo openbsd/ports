@@ -78,6 +78,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
+		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/libqaccessibilityclient \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsensors \

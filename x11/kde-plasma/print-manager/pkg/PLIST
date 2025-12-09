@@ -2,17 +2,19 @@
 @pkgpath x11/kde-applications/print-manager
 @bin bin/configure-printer
 @bin bin/kde-print-queue
-@lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
+@so lib/libkcups.so
 @so lib/qt6/plugins/kf6/kded/printmanager.so
 lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/applets/
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.printmanager.so
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_printer_manager.so
 lib/qt6/qml/org/kde/plasma/
 lib/qt6/qml/org/kde/plasma/printmanager/
-lib/qt6/qml/org/kde/plasma/printmanager/kcupslib.qmltypes
+lib/qt6/qml/org/kde/plasma/printmanager/kcups.qmltypes
 lib/qt6/qml/org/kde/plasma/printmanager/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/plasma/printmanager/libkcupslibplugin.so
+@so lib/qt6/qml/org/kde/plasma/printmanager/libkcupsplugin.so
 lib/qt6/qml/org/kde/plasma/printmanager/qmldir
 share/applications/kcm_printer_manager.desktop
 share/applications/org.kde.ConfigurePrinter.desktop
@@ -114,6 +116,9 @@ share/locale/ko/LC_MESSAGES/print-manager.mo
 share/locale/lt/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/lt/LC_MESSAGES/print-manager.mo
+share/locale/lv/LC_MESSAGES/kcm_printer_manager.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
+share/locale/lv/LC_MESSAGES/print-manager.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/mr/LC_MESSAGES/print-manager.mo
 share/locale/nb/LC_MESSAGES/kcm_printer_manager.mo
@@ -184,16 +189,5 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/zh_TW/LC_MESSAGES/print-manager.mo
 share/metainfo/
 share/metainfo/org.kde.print-manager.metainfo.xml
-share/plasma/
-share/plasma/plasmoids/
-share/plasma/plasmoids/org.kde.plasma.printmanager/
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/FullRepresentation.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterDelegate.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.json
 @tag update-desktop-database
 share/qlogging-categories6/pmlogs.categories

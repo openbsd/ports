@@ -1,0 +1,53 @@
+Index: applets/weather/ioncontrol_p.cpp
+--- applets/weather/ioncontrol_p.cpp.orig
++++ applets/weather/ioncontrol_p.cpp
+@@ -18,7 +18,8 @@ IonControl::IonControl(const QString &name, const std:
+     , m_ionName(name)
+ {
+     QNetworkInformation::loadBackendByFeatures(QNetworkInformation::Feature::Reachability);
+-    connect(QNetworkInformation::instance(), &QNetworkInformation::reachabilityChanged, this, &IonControl::onOnlineStateChanged);
++    if (const auto instance = QNetworkInformation::instance())
++        connect(instance, &QNetworkInformation::reachabilityChanged, this, &IonControl::onOnlineStateChanged);
+ 
+     qCDebug(WEATHER::CONTROLLER) << "IonControl " << m_ionName << ": The worker thread is: " << m_fetchThread.get();
+ 
+@@ -61,7 +62,8 @@ void IonControl::updateLocations(const std::shared_ptr
+     qCDebug(WEATHER::CONTROLLER) << "IonControl " << m_ionName << ": get locations request";
+ 
+     // skip update and add locations to the queue if the network is offline
+-    if (QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
++    const auto instance = QNetworkInformation::instance();
++    if (instance && instance->reachability() != QNetworkInformation::Reachability::Online) {
+         qCDebug(WEATHER::CONTROLLER) << "IonControl " << m_ionName << ": Network connection is unavailable. Skip update forecast";
+         auto errorLocations = std::make_shared<Locations>();
+         errorLocations->setError();
+@@ -154,7 +156,8 @@ void IonControl::updateForecast(const std::shared_ptr<
+     qCDebug(WEATHER::CONTROLLER) << "IonControl " << m_ionName << ": get forecast request";
+ 
+     // skip update and add forecast to the queue if the network is offline
+-    if (QNetworkInformation::instance()->reachability() != QNetworkInformation::Reachability::Online) {
++    const auto instance = QNetworkInformation::instance();
++    if (instance && instance->reachability() != QNetworkInformation::Reachability::Online) {
+         qCDebug(WEATHER::CONTROLLER) << "IonControl " << m_ionName << ": Network connection is unavailable. Skip update forecast";
+         auto errorForecast = std::make_shared<Forecast>();
+         errorForecast->setError();
+@@ -216,7 +219,8 @@ void IonControl::onFetchForecastEnded()
+ 
+     m_isBusy = false;
+ 
+-    if (QNetworkInformation::instance()->reachability() == QNetworkInformation::Reachability::Online) {
++    const auto instance = QNetworkInformation::instance();
++    if (instance && instance->reachability() == QNetworkInformation::Reachability::Online) {
+         checkQueues();
+     }
+ }
+@@ -229,7 +233,8 @@ void IonControl::onFetchForecastCancelled()
+ 
+     m_isBusy = false;
+ 
+-    if (QNetworkInformation::instance()->reachability() == QNetworkInformation::Reachability::Online) {
++    const auto instance = QNetworkInformation::instance();
++    if (instance && instance->reachability() == QNetworkInformation::Reachability::Online) {
+         checkQueues();
+     }
+ }

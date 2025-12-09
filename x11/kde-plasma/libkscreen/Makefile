@@ -9,7 +9,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6WaylandClient
 WANTLIB += c m wayland-client wayland-cursor xcb xcb-dpms xcb-randr
 WANTLIB += xkbcommon
 
-BUILD_DEPENDS =	wayland/wayland-protocols>=1.40 \
+BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	x11/qt6/qtwayland \

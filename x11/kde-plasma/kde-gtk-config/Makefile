@@ -1,4 +1,4 @@
-COMMENT =	GTK2 and GTK3 configurator for KDE
+COMMENT =	GTK3 configurator for KDE
 DISTNAME =	kde-gtk-config-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore

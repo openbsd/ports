@@ -1,9 +1,10 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
+SHARED_LIBS +=	plasmaweatherdata         0.0 # 0.0
+SHARED_LIBS +=	plasmaweatherion          0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6CalendarEvents
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
@@ -26,10 +27,10 @@ BUILD_DEPENDS =	archivers/gtar \
 		devel/kf6/kitemmodels \
 		devel/kf6/purpose \
 		devel/kf6/knewstuff \
-		graphics/kirigami-addons>=1.0.0
+		graphics/kirigami-addons
 
 RUN_DEPENDS =	devel/kf6/kitemmodels \
-		graphics/kirigami-addons>=1.0.0 \
+		graphics/kirigami-addons \
 		x11/dbus,-suid
 
 LIB_DEPENDS =	devel/kf6/kcmutils \

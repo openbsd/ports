@@ -58,6 +58,17 @@ share/wallpapers/Cluster/contents/images/
 share/wallpapers/Cluster/contents/images/3840x2160.png
 share/wallpapers/Cluster/contents/screenshot.png
 share/wallpapers/Cluster/metadata.json
+share/wallpapers/Coast/
+share/wallpapers/Coast/contents/
+share/wallpapers/Coast/contents/images/
+share/wallpapers/Coast/contents/images/1440x2960.png
+share/wallpapers/Coast/contents/images/5120x2880.png
+share/wallpapers/Coast/contents/images/7680x2160.png
+share/wallpapers/Coast/contents/images_dark/
+share/wallpapers/Coast/contents/images_dark/1440x2960.png
+share/wallpapers/Coast/contents/images_dark/5120x2880.png
+share/wallpapers/Coast/contents/images_dark/7680x2160.png
+share/wallpapers/Coast/metadata.json
 share/wallpapers/ColdRipple/
 share/wallpapers/ColdRipple/contents/
 share/wallpapers/ColdRipple/contents/images/
