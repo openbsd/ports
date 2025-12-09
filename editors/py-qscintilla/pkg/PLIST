@@ -62,7 +62,3 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qsciscintilla.
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qsciscintillabase.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscistyle.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscistyledtext.sip
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/RECORD

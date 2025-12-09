@@ -4,7 +4,7 @@ VERSION =		2.14.1
 MODPY_DISTV =	${VERSION}
 DISTNAME =		QScintilla_src-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		editors x11 devel
 
