@@ -12,5 +12,7 @@ of changes made to this version of Python for the OpenBSD package.
 
 5.  Removed calls to the CRYPTO_THREADID noops.
 
+6.  Treat ASN1_STRING as opaque
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/2.7.

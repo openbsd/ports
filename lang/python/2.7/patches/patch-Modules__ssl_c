@@ -3,7 +3,9 @@ what python's lock protects
 
 #2: ERR_get_state is no longer used in OpenSSL 3.0 or libressl as of 20240303
 
-#3, #4: Drop CRYPTO_THREADID noops
+#3 - #6: treat ASN1_STRING as opaque
+
+#7, #8: Drop CRYPTO_THREADID noops
 
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
@@ -26,6 +28,59 @@ Index: Modules/_ssl.c
      ERR_clear_error();
  
      PySSL_BEGIN_ALLOW_THREADS
+@@ -956,18 +958,18 @@ _get_peer_alt_names (X509 *certificate) {
+             goto fail;
+         }
+ 
+-        p = X509_EXTENSION_get_data(ext)->data;
++        p = ASN1_STRING_get0_data(X509_EXTENSION_get_data(ext));
+         if (method->it)
+             names = (GENERAL_NAMES*)
+               (ASN1_item_d2i(NULL,
+                              &p,
+-                             X509_EXTENSION_get_data(ext)->length,
++                             ASN1_STRING_length(X509_EXTENSION_get_data(ext)),
+                              ASN1_ITEM_ptr(method->it)));
+         else
+             names = (GENERAL_NAMES*)
+               (method->d2i(NULL,
+                            &p,
+-                           X509_EXTENSION_get_data(ext)->length));
++                           ASN1_STRING_length(X509_EXTENSION_get_data(ext))));
+ 
+         for(j = 0; j < sk_GENERAL_NAME_num(names); j++) {
+             /* get a rendering of each name in the set of names */
+@@ -1028,7 +1030,7 @@ _get_peer_alt_names (X509 *certificate) {
+                     goto fail;
+                 }
+                 PyTuple_SET_ITEM(t, 0, v);
+-                v = PyString_FromStringAndSize((char *)ASN1_STRING_data(as),
++                v = PyString_FromStringAndSize((char *)ASN1_STRING_get0_data(as),
+                                                ASN1_STRING_length(as));
+                 if (v == NULL) {
+                     Py_DECREF(t);
+@@ -1173,8 +1175,8 @@ _get_aia_uri(X509 *certificate, int nid) {
+             continue;
+         }
+         uri = ad->location->d.uniformResourceIdentifier;
+-        ostr = PyUnicode_FromStringAndSize((char *)uri->data,
+-                                           uri->length);
++        ostr = PyUnicode_FromStringAndSize((char *)ASN1_STRING_get0_data(uri),
++                                           ASN1_STRING_length(uri));
+         if (ostr == NULL) {
+             goto fail;
+         }
+@@ -1240,8 +1242,8 @@ _get_crl_dp(X509 *certificate) {
+                 continue;
+             }
+             uri = gn->d.uniformResourceIdentifier;
+-            ouri = PyUnicode_FromStringAndSize((char *)uri->data,
+-                                               uri->length);
++            ouri = PyUnicode_FromStringAndSize((char *)ASN1_STRING_get0_data(uri),
++                                               ASN1_STRING_length(uri));
+             if (ouri == NULL)
+                 goto done;
+ 
 @@ -4078,15 +4080,7 @@ static PyMethodDef PySSL_methods[] = {
  
  static PyThread_type_lock *_ssl_locks = NULL;
