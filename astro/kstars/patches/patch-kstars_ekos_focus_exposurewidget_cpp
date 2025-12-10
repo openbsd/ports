@@ -1,0 +1,11 @@
+https://github.com/KDE/kstars/commit/ce53888e6dbaeb1b9239fca55288b5ead969b5a7
+Index: kstars/ekos/focus/exposurewidget.cpp
+--- kstars/ekos/focus/exposurewidget.cpp.orig
++++ kstars/ekos/focus/exposurewidget.cpp
+@@ -28,5 +28,5 @@ QString ExposureWidget::textFromValue(double value) co
+         count++;
+         v *= 10;
+     }
+-    return QWidget::locale().toString(value, u'f', std::max(3, count));
++    return QWidget::locale().toString(value, static_cast<char>(u'f'), std::max(3, count));
+ }
