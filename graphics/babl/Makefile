@@ -1,6 +1,6 @@
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.116
+V=			0.1.118
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -33,9 +33,9 @@ COMPILER_LANGS=		c
 # rsvg-convert(1)
 BUILD_DEPENDS=		x11/gnome/librsvg
 
-LIB_DEPENDS=		graphics/lcms2
+BUILD_DEPENDS +=	devel/git
 
-CONFIGURE_ARGS=		-Dwith-docs=false
+LIB_DEPENDS=		graphics/lcms2
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \
