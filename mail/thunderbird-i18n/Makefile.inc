@@ -1,9 +1,9 @@
 # keep in sync with www/mozilla/mozilla.port.mk
-ONLY_FOR_ARCHS =	amd64 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 PKG_ARCH =	*
 
-FV =		140.5.0esr
+FV =		140.6.0esr
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
