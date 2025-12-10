@@ -12,6 +12,8 @@ PKGNAME-gtk4=		libportal-gtk4-${V}
 PKGNAME-qt5=		libportal-qt5-${V}
 PKGNAME-qt6=		libportal-qt6-${V}
 
+REVISION-qt6=		0
+
 SHARED_LIBS += portal                    0.1 # 1.0.0
 SHARED_LIBS += portal-gtk3               0.0 # 1.0.0
 SHARED_LIBS += portal-gtk4               0.0 # 1.0.0
