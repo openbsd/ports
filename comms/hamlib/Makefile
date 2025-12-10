@@ -2,10 +2,7 @@ COMMENT-main=	radio/rotator control library
 COMMENT-python=	Python bindings for hamlib
 COMMENT-tcl=	Tcl bindings for hamlib
 
-VERSION=	4.6.4
-REVISION=	1
-REVISION-main=	2
-REVISION-tcl=	2
+VERSION=	4.6.5
 
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
@@ -33,7 +30,7 @@ cWANTLIB=		m pthread usb-1.0
 WANTLIB-main=		${cWANTLIB} ${COMPILER_LIBCXX} \
 			c curses iconv perl readline xml2 z
 WANTLIB-python=		${cWANTLIB} hamlib iconv intl util ${MODPY_WANTLIB}
-WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
+WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB} z
 
 LIB_DEPENDS-main=	textproc/libxml \
 			devel/libusb1 \
@@ -52,24 +49,37 @@ RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 SITES=			https://github.com/Hamlib/Hamlib/releases/download/${VERSION}/
 
 MAKE_FLAGS=		tcldir=${MODTCL_TCLDIR}/hamlib
+FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/hamlib
 
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS=		--with-cxx-binding \
-			--with-perl-binding \
-			--with-rpc-backends \
-			--with-tcl-binding \
+CONFIGURE_ARGS=		--with-perl-binding \
 			--with-python-binding \
+			--with-tcl-binding \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-xml-support \
-			--without-indi
+			--without-indi \
+			--disable-html-matrix
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# The -rpaths in the Tcl and Python libs point to their install dirs.
+# These libs won't load from the build dir without help.
+TEST_ENV=		LD_LIBRARY_PATH=./.libs
+
+pre-configure:
+	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/bindings/tcltest.tcl.in
+
+pre-test:
+	ln -sf ${MODTCL_BIN} ${WRKDIR}/bin/tclsh
 
 post-install:
 	rm -f ${PREFIX}/libdata/perl5/site_perl/*-openbsd/perltest.pl \
 		${PREFIX}/libdata/perl5/*-openbsd/perllocal.pod
 	rmdir ${PREFIX}/libdata/perl5/*-openbsd
 	rm -f ${PREFIX}/lib/tcl/hamlib/hamlibtcl.{la,so}
+	chmod 0755 ${PREFIX}/share/examples/hamlib/{perltest.pl,py3test.py,tcltest.tcl}
 
 .include <bsd.port.mk>

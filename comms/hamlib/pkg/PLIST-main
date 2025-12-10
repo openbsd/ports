@@ -60,7 +60,7 @@ share/doc/hamlib/LICENSE
 share/doc/hamlib/README.betatester
 share/doc/hamlib/README.developer
 share/doc/hamlib/README.md
-share/doc/hamlib/examples/
-share/doc/hamlib/examples/perltest.pl
-share/doc/hamlib/examples/py3test.py
-share/doc/hamlib/examples/tcltest.tcl
+share/examples/hamlib/
+share/examples/hamlib/perltest.pl
+share/examples/hamlib/py3test.py
+share/examples/hamlib/tcltest.tcl

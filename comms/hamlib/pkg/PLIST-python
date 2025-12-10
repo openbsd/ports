@@ -3,4 +3,5 @@ lib/python${MODPY_VERSION}/site-packages/_Hamlib.la
 @so lib/python${MODPY_VERSION}/site-packages/_Hamlib.so
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}Hamlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}Hamlib.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}Hamlib.${MODPY_PYC_MAGIC_TAG}pyc
