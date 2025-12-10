@@ -1522,6 +1522,7 @@
      SUBDIR += py-immutabledict
      SUBDIR += py-importlib-metadata
      SUBDIR += py-incremental
+     SUBDIR += py-inline-snapshot
      SUBDIR += py-installer
      SUBDIR += py-intelhex
      SUBDIR += py-intervaltree
