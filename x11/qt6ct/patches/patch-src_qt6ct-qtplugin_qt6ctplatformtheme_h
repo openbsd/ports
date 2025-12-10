@@ -1,0 +1,17 @@
+https://www.opencode.net/trialuser/qt6ct/-/commit/2d99bd0881aeac0a0eab9595159009ff750a1889
+
+Index: src/qt6ct-qtplugin/qt6ctplatformtheme.h
+--- src/qt6ct-qtplugin/qt6ctplatformtheme.h.orig
++++ src/qt6ct-qtplugin/qt6ctplatformtheme.h
+@@ -31,7 +31,11 @@
+ #define QT6CTPLATFORMTHEME_H
+ 
+ #include <qpa/qplatformtheme.h>
++#if (QT_VERSION >= QT_VERSION_CHECK(6, 10, 0))
++#include <private/qgenericunixtheme_p.h>
++#else
+ #include <private/qgenericunixthemes_p.h>
++#endif
+ #include <QObject>
+ #include <QFont>
+ #include <QPalette>

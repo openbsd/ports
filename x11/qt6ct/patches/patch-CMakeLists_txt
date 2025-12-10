@@ -1,10 +1,22 @@
 unbreak build
   ld: error: undefined symbol: __cxa_atexit
 
+https://www.opencode.net/trialuser/qt6ct/-/commit/a9b4d01019015a57e570f8f68d10884562c91c36
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -71,7 +71,6 @@ endif()
+@@ -25,6 +25,9 @@ set(CMAKE_BUILD_RPATH_USE_ORIGIN ON)
+ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+ 
+ find_package(Qt6 REQUIRED COMPONENTS BuildInternals Core Gui OPTIONAL_COMPONENTS Widgets QuickControls2 LinguistTools)
++if(Qt6_VERSION VERSION_GREATER_EQUAL 6.10)
++    find_package(Qt6 6.10 CONFIG REQUIRED COMPONENTS WidgetsPrivate GuiPrivate)
++endif()
+ find_package(KF6Config)
+ find_package(KF6ColorScheme)
+ find_package(KF6IconThemes)
+@@ -71,7 +74,6 @@ endif()
  
  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/qt6ct-common)
  
