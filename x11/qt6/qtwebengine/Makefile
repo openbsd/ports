@@ -44,6 +44,7 @@ RUN_DEPENDS =	fonts/noto/fonts \
 		x11/gtk+3,-cups
 
 BUILD_DEPENDS =	archivers/bzip2 \
+		archivers/brotli \
 		audio/pulseaudio \
 		devel/bison \
 		devel/glib2 \
