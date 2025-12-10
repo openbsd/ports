@@ -1,0 +1,13 @@
+disable fuse for now; build fails
+
+Index: examples/fuse/wscript_build
+--- examples/fuse/wscript_build.orig
++++ examples/fuse/wscript_build
+@@ -1,6 +1,6 @@
+ #!/usr/local/bin/python3.13
+ 
+-if bld.env.HAVE_FUSE:
++if False and bld.env.HAVE_FUSE:
+     bld.SAMBA_BINARY('smb2mount',
+                      source='smb2mount.c clifuse.c',
+                      deps='smbconf CMDLINE_S3 libsmb fuse',
