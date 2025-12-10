@@ -80,3 +80,9 @@ do-install:
 		-name '*.dll' \) \
 		-delete
 
+fix-plist:
+	for i in pkg/PLIST-examples; do \
+	    cp $$i $$i.orig; \
+	    grep -v -e @owner -e @group -e @option $$i > $$i.tmp; \
+	    (echo @option is-branch; echo @owner _tomcat; \
+	    echo @group _tomcat; cat $$i.tmp) > $$i; done
