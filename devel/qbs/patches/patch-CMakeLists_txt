@@ -1,0 +1,21 @@
+cmake: fix build with Qt 6.10
+See QTBUG-87776, since Qt 6.9, QtCorePrivate was moved into
+a separate package. Since 6.10, compatibility was also removed
+and configuration fails if QtCorePrivate is not found using
+find_package.
+
+Change-Id: Ida62060606e2f92b6c38581c90b91951d8f1f310
+Reviewed-by: Christian Kandeler <christian.kandeler@qt.io>
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -49,6 +49,9 @@ if (Qt6_FOUND)
+             set_property(TARGET Qt6::Core5Compat PROPERTY IMPORTED_GLOBAL TRUE) # hack for CMake < 3.18
+         endif()
+         add_library(Qt6Core5Compat ALIAS Qt6::Core5Compat)
++    if (Qt6Core_VERSION VERSION_GREATER_EQUAL 6.9.0)
++        find_package(Qt${QT_VERSION_MAJOR} COMPONENTS CorePrivate REQUIRED)
++    endif()
+     endif()
+ else()
+   if(NOT TARGET Qt6Core5Compat)
