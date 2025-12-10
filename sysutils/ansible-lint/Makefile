@@ -1,6 +1,6 @@
 COMMENT=	best practices checker for ansible
 
-MODPY_DISTV=	25.11.0
+MODPY_DISTV=	25.12.1
 DISTNAME=	ansible_lint-${MODPY_DISTV}
 PKGNAME=	ansible-lint-${MODPY_DISTV}
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	devel/git \
 		sysutils/py-ansible-compat \
 		textproc/py-black \
 		sysutils/py-filelock \
-		devel/py-importlib-metadata \
 		devel/py-jsonschema \
 		sysutils/py-packaging \
 		devel/py-pathspec \
