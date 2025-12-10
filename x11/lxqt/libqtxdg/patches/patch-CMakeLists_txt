@@ -1,0 +1,15 @@
+https://github.com/lxqt/libqtxdg/commit/b01a024921acdfd5b0e97d5fda2933c726826e99
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -27,6 +27,10 @@ find_package(Qt6 ${QT_MINIMUM_VERSION} CONFIG REQUIRED
+ find_package(GLIB ${GLIB_MINIMUM_VERSION} REQUIRED COMPONENTS gobject gio gio-unix)
+ find_package(XTerm)
+ 
++if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
++    find_package(Qt6GuiPrivate ${QT_MINIMUM_VERSION} REQUIRED)
++endif()
++
+ include(GNUInstallDirs)             # Standard directories for installation
+ include(CMakePackageConfigHelpers)
+ include(GenerateExportHeader)

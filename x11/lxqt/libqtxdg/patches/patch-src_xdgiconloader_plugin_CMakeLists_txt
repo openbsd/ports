@@ -1,0 +1,13 @@
+https://github.com/lxqt/libqtxdg/commit/b01a024921acdfd5b0e97d5fda2933c726826e99
+Index: src/xdgiconloader/plugin/CMakeLists.txt
+--- src/xdgiconloader/plugin/CMakeLists.txt.orig
++++ src/xdgiconloader/plugin/CMakeLists.txt
+@@ -11,6 +11,8 @@ target_compile_definitions(${QTXDGX_ICONENGINEPLUGIN_L
+         "QT_NO_KEYWORDS"
+ )
+ target_link_libraries(${QTXDGX_ICONENGINEPLUGIN_LIBRARY_NAME}
++    PRIVATE
++        Qt6::GuiPrivate
+     PUBLIC
+         Qt6::Gui
+         "${QTXDGX_ICONLOADER_LIBRARY_NAME}"

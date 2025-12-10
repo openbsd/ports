@@ -1,0 +1,13 @@
+https://github.com/lxqt/libqtxdg/commit/b01a024921acdfd5b0e97d5fda2933c726826e99
+Index: src/xdgiconloader/CMakeLists.txt
+--- src/xdgiconloader/CMakeLists.txt.orig
++++ src/xdgiconloader/CMakeLists.txt
+@@ -50,6 +50,8 @@ target_include_directories(${QTXDGX_ICONLOADER_LIBRARY
+ )
+ 
+ target_link_libraries(${QTXDGX_ICONLOADER_LIBRARY_NAME}
++    PRIVATE
++        Qt6::GuiPrivate
+     PUBLIC
+         Qt6::Gui
+         Qt6::Svg
