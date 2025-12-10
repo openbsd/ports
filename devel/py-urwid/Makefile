@@ -1,5 +1,6 @@
 COMMENT=	console user interface library for python
 
+# 20251210: not 3.0.4 yet; https://github.com/ihabunek/toot/issues/558
 MODPY_DISTV=	3.0.3
 DISTNAME=	urwid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
