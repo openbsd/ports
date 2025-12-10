@@ -1,3 +1,3 @@
-OH_VERSION=	4.3.8
+OH_VERSION=	4.3.9
 
 .include <bsd.port.mk>
