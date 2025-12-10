@@ -3,7 +3,7 @@ COMMENT =	python Qt5WebEngine bindings
 MODPY_DISTV =	5.15.7
 DISTNAME =	PyQtWebEngine-${MODPY_DISTV}
 PKGNAME =	py-qtwebengine-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
