@@ -10,9 +10,12 @@ Index: CMakeLists.txt
  ################## RESOURCES ########################
  if (UNIX AND NOT APPLE)
  set(UTILITIES_FILES
-@@ -388,6 +390,20 @@ set(CMAKE_AUTORCC ON)
+@@ -386,8 +388,22 @@ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_AUTORCC ON)
  
- find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core Core5Compat Network PrintSupport Qml Widgets Xml LinguistTools)
+-find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core Core5Compat Network PrintSupport Qml Widgets Xml LinguistTools)
++find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core CorePrivate Core5Compat Network PrintSupport Qml Widgets Xml LinguistTools)
  
 +option(USE_SYSTEM_HUNSPELL "Use system-installed Hunspell instead of bundled version" OFF)
 +
@@ -110,11 +113,11 @@ Index: CMakeLists.txt
  set(PREFIX ${INSTALL_DIR})
  if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 -  set(CMAKE_INSTALL_PREFIX ${PREFIX} CACHE PATH "..." FORCE)
-+  set(CMAKE_INSTALL_PREFIX ${LOCALBASE} CACHE PATH "..." FORCE)
++  set(CMAKE_INSTALL_PREFIX /usr/local CACHE PATH "..." FORCE)
  endif()
  target_compile_definitions(${PROJECT_NAME} PRIVATE
 -    PREFIX=\"${PREFIX}\"
-+    PREFIX=\"${LOCALBASE}\"
++    PREFIX=\"/usr/local\"
      )
  if (${AUTHORIZELINUXQSTYLES} STREQUAL "yes")
  target_compile_definitions(${PROJECT_NAME} PRIVATE
