@@ -35,6 +35,7 @@ LIB_DEPENDS =	audio/pulseaudio \
 		x11/xkbcommon
 
 CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
+			-DQT_FEATURE_pipewire=OFF \
 			-DQT_FEATURE_vaapi=OFF
 
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
