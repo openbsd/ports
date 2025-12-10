@@ -20,26 +20,7 @@ Index: src/aioquic/asyncio/client.py
  ) -> AsyncGenerator[QuicConnectionProtocol, None]:
      """
      Connect to a QUIC server at the given `host` and `port`.
-@@ -50,16 +51,11 @@ async def connect(
-       you can set it to `False` if you want to immediately start sending data using
-       0-RTT.
-     * ``local_port`` is the UDP port number that this client wants to bind.
-+    * ``dual_stack`` is a flag which enabled or disabled using IPv4/IPv6 Dual-Stack.
-+      The default value is platform specific and similar with socket.has_dualstack_ipv6().
-     """
-     loop = asyncio.get_event_loop()
--    local_host = "::"
- 
--    # lookup remote address
--    infos = await loop.getaddrinfo(host, port, type=socket.SOCK_DGRAM)
--    addr = infos[0][4]
--    if len(addr) == 2:
--        addr = ("::ffff:" + addr[0], addr[1], 0, 0)
--
-     # prepare QUIC connection
-     if configuration is None:
-         configuration = QuicConfiguration(is_client=True)
-@@ -71,16 +67,40 @@ async def connect(
+@@ -71,16 +72,40 @@ async def connect(
          token_handler=token_handler,
      )
  

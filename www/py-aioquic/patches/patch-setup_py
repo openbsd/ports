@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -1,7 +1,7 @@
+ import sys
+ 
+ import setuptools
+-from wheel.bdist_wheel import bdist_wheel
++from setuptools.command.bdist_wheel import bdist_wheel
+ 
+ if sys.platform == "win32":
+     extra_compile_args = []

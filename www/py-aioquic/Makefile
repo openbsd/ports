@@ -1,32 +1,31 @@
-COMMENT =		QUIC and HTTP/3 implementation in Python
+COMMENT=	QUIC and HTTP/3 implementation in Python
 
-MODPY_DISTV =	1.2.0
-DISTNAME =		aioquic-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV=	1.3.0
+DISTNAME=	aioquic-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www
+HOMEPAGE=	https://github.com/python-hyper/h2
+
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB +=		crypto
+WANTLIB=	crypto
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-HOMEPAGE =		https://github.com/python-hyper/h2
+RUN_DEPENDS=	archivers/py-lsqpack \
+		devel/py-certifi \
+		security/py-cryptography \
+		security/py-openssl \
+		security/py-service_identity
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+TEST_DEPENDS=	devel/py-coverage
 
-RUN_DEPENDS =		archivers/py-lsqpack \
-			devel/py-certifi \
-			security/py-cryptography \
-			security/py-openssl \
-			security/py-service_identity
-
-TEST_DEPENDS =		devel/py-coverage
-
-TEST_ENV +=		AIOQUIC_SKIP_TESTS=ed448
+MODPY_PYTEST_ARGS= -v
+TEST_ENV +=	AIOQUIC_SKIP_TESTS=ed448
 
 .include <bsd.port.mk>
