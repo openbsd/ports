@@ -1,6 +1,6 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_DISTV=	25.11.0
+MODPY_DISTV=	25.12.0
 DISTNAME=	ansible_compat-${MODPY_DISTV}
 PKGNAME=	py-ansible-compat-${MODPY_DISTV}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	sysutils/py-packaging \
 # some tests require network
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/py-flaky \
+		devel/py-test-instafail \
 		devel/py-test-mock
 
 pre-test:
