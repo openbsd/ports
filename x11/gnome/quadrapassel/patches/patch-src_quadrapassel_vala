@@ -13,7 +13,7 @@ Index: src/quadrapassel.vala
      private bool pause_requested = false;
  
      private const GLib.ActionEntry[] action_entries =
-@@ -255,13 +252,6 @@ public class Quadrapassel : Adw.Application
+@@ -271,13 +268,6 @@ public class Quadrapassel : Adw.Application
                                                                          APP_ID,
                                                                          -1);
  
@@ -27,7 +27,7 @@ Index: src/quadrapassel.vala
          pause_action.set_enabled (false);
          new_game_button.set_sensitive (false);
      }
-@@ -515,103 +505,6 @@ public class Quadrapassel : Adw.Application
+@@ -533,103 +523,6 @@ public class Quadrapassel : Adw.Application
          }
  
          base.quit ();
