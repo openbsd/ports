@@ -1,0 +1,24 @@
+https://github.com/zealdocs/zeal/commit/11f6a85bb5f314ba8e1dbdc7654ef2647b75161e
+Index: src/libs/ui/docsetsdialog.cpp
+--- src/libs/ui/docsetsdialog.cpp.orig
++++ src/libs/ui/docsetsdialog.cpp
+@@ -360,7 +360,8 @@ void DocsetsDialog::downloadCompleted()
+         QTemporaryFile *tmpFile = m_tmpFiles[docsetName];
+         if (!tmpFile) {
+             tmpFile = new QTemporaryFile(QStringLiteral("%1/%2.XXXXXX.tmp").arg(Core::Application::cacheLocation(), docsetName), this);
+-            tmpFile->open();
++            if (!tmpFile->open())
++                return;
+             m_tmpFiles.insert(docsetName, tmpFile);
+         }
+ 
+@@ -403,7 +404,8 @@ void DocsetsDialog::downloadProgress(qint64 received, 
+         QTemporaryFile *tmpFile = m_tmpFiles[docsetName];
+         if (!tmpFile) {
+             tmpFile = new QTemporaryFile(QStringLiteral("%1/%2.XXXXXX.tmp").arg(Core::Application::cacheLocation(), docsetName), this);
+-            tmpFile->open();
++            if (!tmpFile->open())
++                return;
+             m_tmpFiles.insert(docsetName, tmpFile);
+         }
+ 
