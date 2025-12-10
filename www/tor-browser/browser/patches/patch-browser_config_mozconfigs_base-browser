@@ -1,5 +1,7 @@
 Don't use --enable-rust-simd, fails to build.
 
+Don't use --disable-zucchini, not a supported flag on OpenBSD.
+
 Remove $WASI_SYSROOT test, it breaks the build for us. Not sure if the test
 is relevant for us. Was added upstream in
 https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
@@ -7,7 +9,7 @@ https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/41406
 Index: browser/config/mozconfigs/base-browser
 --- browser/config/mozconfigs/base-browser.orig
 +++ browser/config/mozconfigs/base-browser
-@@ -11,7 +11,6 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUES
+@@ -11,18 +11,16 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUES
  export MOZILLA_OFFICIAL=1
  
  ac_add_options --enable-optimize
@@ -15,7 +17,11 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-unverified-updates
  ac_add_options --enable-base-browser-update
-@@ -20,6 +19,8 @@ ac_add_options --enable-bundled-fonts
+-# tor-browser#44414: Disable Zucchini until we fix mingw compatibility and work
+-# on potential updates for our update pipeline.
+-ac_add_options --disable-zucchini
+ 
+ ac_add_options --enable-bundled-fonts
  
  ac_add_options --disable-tests
  ac_add_options --disable-debug
@@ -24,7 +30,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-crashreporter
  # Before removing, please notice that WebRTC does not work on mingw (Bug 1393901)
-@@ -39,7 +40,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
+@@ -42,7 +40,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
  # Disable the creation of a <something>.default that Firefox by default creates
  # for old version that could not use dedicated profiles. See tor-browser#41542.
  ac_add_options --disable-legacy-profile-creation
