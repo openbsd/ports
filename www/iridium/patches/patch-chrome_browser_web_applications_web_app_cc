@@ -10,7 +10,7 @@ Index: chrome/browser/web_applications/web_app.cc
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -737,7 +737,7 @@ void WebApp::SetCurrentOsIntegrationStates(
+@@ -754,7 +754,7 @@ void WebApp::SetCurrentOsIntegrationStates(
  void WebApp::SetIsolationData(IsolationData isolation_data) {
    CHECK(manifest_id_.is_valid()
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

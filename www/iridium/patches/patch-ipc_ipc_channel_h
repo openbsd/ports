@@ -1,7 +1,7 @@
 Index: ipc/ipc_channel.h
 --- ipc/ipc_channel.h.orig
 +++ ipc/ipc_channel.h
-@@ -206,7 +206,7 @@ class COMPONENT_EXPORT(IPC) Channel : public Sender {
+@@ -201,7 +201,7 @@ class COMPONENT_EXPORT(IPC) Channel final
    // Generates a channel ID that's non-predictable and unique.
    static std::string GenerateUniqueRandomChannelID();
  

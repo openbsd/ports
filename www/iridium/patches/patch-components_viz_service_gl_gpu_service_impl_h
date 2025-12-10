@@ -1,7 +1,7 @@
 Index: components/viz/service/gl/gpu_service_impl.h
 --- components/viz/service/gl/gpu_service_impl.h.orig
 +++ components/viz/service/gl/gpu_service_impl.h
-@@ -448,7 +448,7 @@ class VIZ_SERVICE_EXPORT GpuServiceImpl
+@@ -442,7 +442,7 @@ class VIZ_SERVICE_EXPORT GpuServiceImpl
  
    void OnBeginFrameOnIO(const BeginFrameArgs& args);
  
