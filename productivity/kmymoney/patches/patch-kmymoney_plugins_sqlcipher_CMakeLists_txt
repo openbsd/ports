@@ -1,0 +1,16 @@
+https://src.fedoraproject.org/rpms/kmymoney/blob/rawhide/f/kmymoney-fix-build-against-qt-6-10.patch
+Index: kmymoney/plugins/sqlcipher/CMakeLists.txt
+--- kmymoney/plugins/sqlcipher/CMakeLists.txt.orig
++++ kmymoney/plugins/sqlcipher/CMakeLists.txt
+@@ -32,10 +32,7 @@ target_link_libraries(qsqlcipher
+   PRIVATE
+     PkgConfig::SQLCIPHER
+ )
+-if (TARGET Qt::SqlPrivate)
+-  target_link_libraries(qsqlcipher PRIVATE Qt::SqlPrivate)
+-endif()
+-target_link_libraries(qsqlcipher PRIVATE Qt::Sql)
++target_link_libraries(qsqlcipher PRIVATE Qt::Sql Qt::SqlPrivate)
+ 
+ if(BUILD_TESTING)
+  add_subdirectory(tests)

@@ -1,0 +1,12 @@
+Index: kmymoney/plugins/gnc/import/mymoneygncreader.cpp
+--- kmymoney/plugins/gnc/import/mymoneygncreader.cpp.orig
++++ kmymoney/plugins/gnc/import/mymoneygncreader.cpp
+@@ -2706,4 +2706,8 @@ void MyMoneyGncReader::signalProgress(int current, int
+         (*m_progressCallback)(current, total, msg);
+     return ;
+ }
++
++unsigned int GncObject::kvpCount() const {
++        return (m_kvpList.count());
++    } //!
+ #endif // _GNCFILEANON
