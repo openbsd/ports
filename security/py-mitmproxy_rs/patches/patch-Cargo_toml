@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -63,7 +63,7 @@ socket2 = "0.5.10"
+@@ -63,7 +63,7 @@ socket2 = "0.6.0"
  
  [patch.crates-io]
  # tokio = { path = "../tokio/tokio" }
