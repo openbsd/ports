@@ -1,6 +1,7 @@
 COMMENT =		module for interacting with various Steam features
 
 PKGNAME =		py-steam-1.5.1
+REVISION =		0
 DIST_TUPLE +=		github CFTools-Software-GmbH ValvePython-steam \
 			6e78b9c34141eaa3c00b785f12e02f47244df20c .
 CATEGORIES =		games
@@ -18,6 +19,7 @@ RUN_DEPENDS =		archivers/py-zstd \
 			devel/py-gevent-eventemitter \
 			devel/py-protobuf \
 			devel/py-six \
+			net/py-wsproto \
 			security/py-cryptodomex \
 			www/py-requests
 
