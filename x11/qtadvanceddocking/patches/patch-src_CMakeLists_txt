@@ -1,20 +1,20 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -86,7 +86,7 @@ target_link_libraries(${library_name} PUBLIC Qt${QT_VE
-                                                Qt${QT_VERSION_MAJOR}::Gui 
-                                                Qt${QT_VERSION_MAJOR}::Widgets)
+@@ -97,7 +97,7 @@ if(QT_VERSION_MAJOR STREQUAL "6")
+ endif()
+ 
  if (UNIX AND NOT APPLE)
 -  if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
 +  if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
        find_package(X11 REQUIRED)
        target_link_libraries(${library_name} PUBLIC X11::xcb)
    else()
-@@ -127,7 +127,7 @@ install(FILES ${ads_HEADERS}
+@@ -138,7 +138,7 @@ install(FILES ${ads_HEADERS}
  install(FILES
      "${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE"
      "${CMAKE_CURRENT_SOURCE_DIR}/../gnu-lgpl-v2.1.md"
--    DESTINATION license/ads
+-    DESTINATION share/ads/license
 +    DESTINATION share/licenses/qtadvanceddocking-qt6/
      COMPONENT license
  )

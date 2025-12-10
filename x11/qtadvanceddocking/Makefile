@@ -1,7 +1,7 @@
 
 COMMENT =	advanced docking system for Qt
 
-V =		4.4.0
+V =		4.4.1
 DISTNAME =	qtadvanceddocking-${V}
 
 DIST_TUPLE =	github githubuser0xFFFF Qt-Advanced-Docking-System ${V} .
