@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Rust components used in mitmproxy
 
-MODPY_DISTV =		0.12.7
+MODPY_DISTV =		0.12.8
 DISTNAME =		mitmproxy_rs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
