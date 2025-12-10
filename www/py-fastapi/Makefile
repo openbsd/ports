@@ -22,10 +22,14 @@ RUN_DEPENDS =		devel/py-pydantic \
 			devel/py-typing-extensions \
 			www/py-starlette
 
-# XXX: needs inline_snapshot
+# see requirements-tests.txt
+# XXX: needs sqlmodel
 TEST_DEPENDS =		devel/py-dirty-equals \
+			devel/py-inline-snapshot \
+			databases/py-sqlalchemy \
 			textproc/py-orjson \
 			mail/py-email-validator \
+			www/py-flask \
 			www/py-httpx
 
 .include <bsd.port.mk>
