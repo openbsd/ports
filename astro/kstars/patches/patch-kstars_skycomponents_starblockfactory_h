@@ -1,0 +1,11 @@
+Index: kstars/skycomponents/starblockfactory.h
+--- kstars/skycomponents/starblockfactory.h.orig
++++ kstars/skycomponents/starblockfactory.h
+@@ -7,6 +7,7 @@
+ #pragma once
+ 
+ #include "typedef.h"
++#include "skyobjects/starobject.h"
+ 
+ class StarBlock;
+ 

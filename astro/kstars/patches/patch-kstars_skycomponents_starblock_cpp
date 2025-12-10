@@ -1,0 +1,13 @@
+Index: kstars/skycomponents/starblock.cpp
+--- kstars/skycomponents/starblock.cpp.orig
++++ kstars/skycomponents/starblock.cpp
+@@ -6,8 +6,8 @@
+ 
+ #include <QDebug>
+ 
+-#include "starblock.h"
+ #include "skyobjects/starobject.h"
++#include "starblock.h"
+ #include "starcomponent.h"
+ #include "skyobjects/stardata.h"
+ #include "skyobjects/deepstardata.h"

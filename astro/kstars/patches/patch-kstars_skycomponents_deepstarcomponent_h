@@ -1,0 +1,11 @@
+Index: kstars/skycomponents/deepstarcomponent.h
+--- kstars/skycomponents/deepstarcomponent.h.orig
++++ kstars/skycomponents/deepstarcomponent.h
+@@ -21,6 +21,7 @@
+ #include "starblockfactory.h"
+ #include "skyobjects/deepstardata.h"
+ #include "skyobjects/stardata.h"
++#include "skyobjects/starobject.h"
+ 
+ class SkyLabeler;
+ class SkyMesh;

@@ -97,6 +97,8 @@ share/kstars/earth.R4.vsop
 share/kstars/earth.R5.vsop
 share/kstars/earth.orbit
 share/kstars/ekoslive.png
+share/kstars/fr/
+share/kstars/fr/info_url.dat
 share/kstars/geomap.jpg
 share/kstars/glossary.xml
 share/kstars/image_url.dat
@@ -434,6 +436,8 @@ share/kstars/moonB.dat
 share/kstars/moonLR.dat
 share/kstars/moonless-night.colors
 share/kstars/namedstars.dat
+share/kstars/nds/
+share/kstars/nds/info_url.dat
 share/kstars/neptune.B0.vsop
 share/kstars/neptune.B1.vsop
 share/kstars/neptune.B2.vsop
@@ -578,6 +582,19 @@ share/kstars/smc.dat
 share/kstars/starlnum.idx
 share/kstars/starnames.dat
 share/kstars/stars.dat
+share/kstars/taskqueue/
+share/kstars/taskqueue/collections/
+share/kstars/taskqueue/collections/observatory_shutdown.json
+share/kstars/taskqueue/collections/observatory_startup.json
+share/kstars/taskqueue/templates/
+share/kstars/taskqueue/templates/README.md
+share/kstars/taskqueue/templates/system/
+share/kstars/taskqueue/templates/system/camera.json
+share/kstars/taskqueue/templates/system/delay.json
+share/kstars/taskqueue/templates/system/dome.json
+share/kstars/taskqueue/templates/system/dustcap.json
+share/kstars/taskqueue/templates/system/mount.json
+share/kstars/taskqueue/templates/system/script.json
 share/kstars/textures/
 share/kstars/textures/defaultflag.png
 share/kstars/textures/galaxy-cluster.png
