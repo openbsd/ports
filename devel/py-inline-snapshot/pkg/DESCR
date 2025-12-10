@@ -1,0 +1,12 @@
+inline-snapshot is a testing helper that lets you store expected
+values ("snapshots") directly inside your source code instead of
+in external files.
+
+During a test run, the library captures the actual output of an
+expression, converts it to a reproducible repr(), and compares it
+to the inline snapshot.  If they differ, it can automatically update
+the snapshot in place.
+
+This makes snapshot testing simpler for small values or codebases
+that prefer keeping expectations close to the tests themselves,
+without managing separate golden files.
