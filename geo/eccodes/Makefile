@@ -4,8 +4,8 @@ COMMENT =	API and tools for decoding and encoding GRIB and BUFR
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 VERSION =	2.44.0
-DISTNAME =	eccodes-$(VERSION)-Source
-PKGNAME =	eccodes-$(VERSION)
+DISTNAME =	eccodes-${VERSION}-Source
+PKGNAME =	eccodes-${VERSION}
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
