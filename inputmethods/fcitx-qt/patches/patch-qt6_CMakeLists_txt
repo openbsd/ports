@@ -1,0 +1,21 @@
+https://github.com/fcitx/fcitx5-qt/commit/1d07f7e8d6a7ae8651eda658f87ab0c9df08bef4
+https://github.com/fcitx/fcitx5-qt/commit/6ac4fdd8e90ff9c25a5219e15e83740fa38c9c71
+Index: qt6/CMakeLists.txt
+--- qt6/CMakeLists.txt.orig
++++ qt6/CMakeLists.txt
+@@ -1,10 +1,11 @@
+ 
+-find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED Core DBus Widgets)
+-find_package(Qt6Gui ${REQUIRED_QT6_VERSION} REQUIRED Private)
++set(QT6_REQUIRED_COMPONENTS Core Gui GuiPrivate DBus Widgets)
++
+ if (ENABLE_QT6_WAYLAND_WORKAROUND)
+-  find_package(Qt6WaylandClient ${REQUIRED_QT6_VERSION} REQUIRED Private)
+-  find_package(Qt6WaylandGlobalPrivate ${REQUIRED_QT6_VERSION} REQUIRED)
++  list(APPEND QT6_REQUIRED_COMPONENTS WaylandClient WaylandClientPrivate WaylandGlobalPrivate)
+ endif()
++find_package(Qt6 ${REQUIRED_QT6_VERSION} CONFIG REQUIRED COMPONENTS ${QT6_REQUIRED_COMPONENTS})
++
+ 
+ add_subdirectory(dbusaddons)
+ add_subdirectory(platforminputcontext)

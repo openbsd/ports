@@ -1,0 +1,14 @@
+https://github.com/fcitx/fcitx5-qt/commit/1d07f7e8d6a7ae8651eda658f87ab0c9df08bef4
+https://github.com/fcitx/fcitx5-qt/commit/6ac4fdd8e90ff9c25a5219e15e83740fa38c9c71
+Index: qt6/immodule-probing/CMakeLists.txt
+--- qt6/immodule-probing/CMakeLists.txt.orig
++++ qt6/immodule-probing/CMakeLists.txt
+@@ -1,5 +1,4 @@
+ add_executable(fcitx5-qt6-immodule-probing main.cpp)
+-target_include_directories(fcitx5-qt6-immodule-probing PRIVATE ${Qt6Gui_PRIVATE_INCLUDE_DIRS})
+-target_link_libraries(fcitx5-qt6-immodule-probing Qt6::Gui)
++target_link_libraries(fcitx5-qt6-immodule-probing Qt6::Gui Qt6::GuiPrivate)
+ 
+-install(TARGETS fcitx5-qt6-immodule-probing DESTINATION "${CMAKE_INSTALL_BINDIR}")
+\ No newline at end of file
++install(TARGETS fcitx5-qt6-immodule-probing DESTINATION "${CMAKE_INSTALL_BINDIR}")
