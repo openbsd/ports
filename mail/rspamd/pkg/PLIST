@@ -169,6 +169,8 @@ share/examples/rspamd/modules.d/trie.conf
 @sample ${ETC}/rspamd/modules.d/trie.conf
 share/examples/rspamd/modules.d/url_redirector.conf
 @sample ${ETC}/rspamd/modules.d/url_redirector.conf
+share/examples/rspamd/modules.d/url_suspect.conf
+@sample ${ETC}/rspamd/modules.d/url_suspect.conf
 share/examples/rspamd/modules.d/whitelist.conf
 @sample ${ETC}/rspamd/modules.d/whitelist.conf
 share/examples/rspamd/modules.local.d/
@@ -207,6 +209,8 @@ share/examples/rspamd/scores.d/subject_group.conf
 @sample ${ETC}/rspamd/scores.d/subject_group.conf
 share/examples/rspamd/scores.d/surbl_group.conf
 @sample ${ETC}/rspamd/scores.d/surbl_group.conf
+share/examples/rspamd/scores.d/url_suspect_group.conf
+@sample ${ETC}/rspamd/scores.d/url_suspect_group.conf
 share/examples/rspamd/scores.d/whitelist_group.conf
 @sample ${ETC}/rspamd/scores.d/whitelist_group.conf
 share/examples/rspamd/settings.conf
@@ -344,9 +348,16 @@ share/rspamd/lualib/lua_selectors/init.lua
 share/rspamd/lualib/lua_selectors/maps.lua
 share/rspamd/lualib/lua_selectors/transforms.lua
 share/rspamd/lualib/lua_settings.lua
+share/rspamd/lualib/lua_shape/
+share/rspamd/lualib/lua_shape/core.lua
+share/rspamd/lualib/lua_shape/docs.lua
+share/rspamd/lualib/lua_shape/jsonschema.lua
+share/rspamd/lualib/lua_shape/plugin_schema.lua
+share/rspamd/lualib/lua_shape/registry.lua
 share/rspamd/lualib/lua_smtp.lua
 share/rspamd/lualib/lua_stat.lua
 share/rspamd/lualib/lua_tcp_sync.lua
+share/rspamd/lualib/lua_url_filter.lua
 share/rspamd/lualib/lua_urls_compose.lua
 share/rspamd/lualib/lua_util.lua
 share/rspamd/lualib/lua_verdict.lua
@@ -379,6 +390,7 @@ share/rspamd/lualib/rspamadm/classifier_test.lua
 share/rspamd/lualib/rspamadm/clickhouse.lua
 share/rspamd/lualib/rspamadm/configgraph.lua
 share/rspamd/lualib/rspamadm/confighelp.lua
+share/rspamd/lualib/rspamadm/confighelp_plugins.lua
 share/rspamd/lualib/rspamadm/configwizard.lua
 share/rspamd/lualib/rspamadm/cookie.lua
 share/rspamd/lualib/rspamadm/corpus_test.lua
@@ -399,7 +411,6 @@ share/rspamd/lualib/rspamadm/stat_convert.lua
 share/rspamd/lualib/rspamadm/statistics_dump.lua
 share/rspamd/lualib/rspamadm/template.lua
 share/rspamd/lualib/rspamadm/vault.lua
-share/rspamd/lualib/tableshape.lua
 share/rspamd/plugins/
 share/rspamd/plugins/aliases.lua
 share/rspamd/plugins/antivirus.lua
@@ -453,6 +464,7 @@ share/rspamd/plugins/spamtrap.lua
 share/rspamd/plugins/spf.lua
 share/rspamd/plugins/trie.lua
 share/rspamd/plugins/url_redirector.lua
+share/rspamd/plugins/url_suspect.lua
 share/rspamd/plugins/whitelist.lua
 share/rspamd/rules/
 share/rspamd/rules/archives.lua
