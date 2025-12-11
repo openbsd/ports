@@ -4,11 +4,13 @@ MODPY_DISTV =	0.6.3
 
 DISTNAME =	stack_data-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/alexmojaki/stack_data
+
+MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes
