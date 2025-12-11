@@ -79,7 +79,6 @@ lib/python${MODPY_VERSION}/site-packages/smartcard/guid.py
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCCardConnection.py
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCCardRequest.py
-lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCContext.py
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCExceptions.py
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCPart10.py
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/PCSCReader.py
@@ -90,8 +89,6 @@ lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCCard
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCCardConnection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCCardRequest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCCardRequest.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCContext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCContext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCExceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCExceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smartcard/pcsc/${MODPY_PYCACHE}PCSCPart10.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
