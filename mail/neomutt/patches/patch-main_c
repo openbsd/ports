@@ -3,7 +3,7 @@ Pledge
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -1132,6 +1132,33 @@ int main(int argc, char *argv[], char *envp[])
+@@ -1115,6 +1115,33 @@ int main(int argc, char *argv[], char *envp[])
    if (!show_help(&cli->help))
      goto main_ok;
  

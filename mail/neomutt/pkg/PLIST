@@ -99,6 +99,7 @@ share/neomutt/mime.types
 share/neomutt/oauth2/
 share/neomutt/oauth2/README.md
 share/neomutt/oauth2/mutt_oauth2.py
+share/neomutt/smime.rc
 share/neomutt/vim-keys/
 share/neomutt/vim-keys/README.md
 share/neomutt/vim-keys/vim-keys.rc
