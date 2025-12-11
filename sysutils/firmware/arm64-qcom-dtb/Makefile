@@ -1,8 +1,7 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		2.5
-REVISION=	2
+FW_VER=		2.6
 
-DISTNAME=	devicetree-rebasing-6.15-dts
+DISTNAME=	devicetree-rebasing-6.17-dts
 
 # can be redistributed, but shouldn't be in normal packages directory as
 # this is only meant for use with fw_update.
@@ -21,10 +20,13 @@ MAKE_ENV +=	CPP=clang-cpp
 DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb \
 	sc8280xp-microsoft-blackrock.dtb \
 	x1e78100-lenovo-thinkpad-t14s.dtb \
+	x1e78100-lenovo-thinkpad-t14s-oled.dtb \
 	x1e80100-asus-vivobook-s15.dtb \
+	x1e80100-asus-zenbook-a14.dtb \
 	x1e80100-crd.dtb \
 	x1e80100-dell-xps13-9345.dtb \
 	x1e80100-honor-magicbook-art-14.dtb \
+	x1e80100-hp-elitebook-ultra-g1q.dtb \
 	x1e80100-hp-omnibook-x14.dtb \
 	x1e80100-lenovo-yoga-slim7x.dtb \
 	x1e80100-microsoft-romulus13.dtb \

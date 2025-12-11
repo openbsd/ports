@@ -18,7 +18,7 @@ Index: src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  };
  
  &pcie4 {
-@@ -1417,7 +1417,7 @@
+@@ -1411,7 +1411,7 @@
  };
  
  &usb_2 {
