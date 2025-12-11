@@ -1,6 +1,6 @@
 COMMENT =		tools to inspect type annotations at runtime
 
-MODPY_DISTV =		0.4.0
+MODPY_DISTV =		0.4.2
 DISTNAME =		typing_inspection-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
