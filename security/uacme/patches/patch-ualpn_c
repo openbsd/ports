@@ -19,7 +19,7 @@ Index: ualpn.c
      .max_auths = 100,
      .progname = NULL,
      .chroot = NULL,
-@@ -4072,6 +4076,7 @@ int main(int argc, char **argv)
+@@ -4020,6 +4024,7 @@ int main(int argc, char **argv)
      mode_t mask;
      struct rlimit rl;
      bool server_mode = false;
@@ -27,7 +27,7 @@ Index: ualpn.c
  
      g.argv = argv;
  
-@@ -4710,12 +4715,16 @@ int main(int argc, char **argv)
+@@ -4658,12 +4663,16 @@ int main(int argc, char **argv)
      memset(g_shm, 0, g_shm_size);
      for (size_t n = 0; n < g.max_auths; n++)
          SGLIB_DL_LIST_ADD(auth_t, g_shm->avail, g_shm->pool + n, left, right);
