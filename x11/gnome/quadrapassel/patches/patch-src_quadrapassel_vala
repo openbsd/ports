@@ -27,7 +27,7 @@ Index: src/quadrapassel.vala
          pause_action.set_enabled (false);
          new_game_button.set_sensitive (false);
      }
-@@ -533,103 +523,6 @@ public class Quadrapassel : Adw.Application
+@@ -534,103 +524,6 @@ public class Quadrapassel : Adw.Application
          }
  
          base.quit ();
