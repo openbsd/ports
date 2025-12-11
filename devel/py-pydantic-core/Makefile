@@ -3,6 +3,7 @@ COMMENT =		data validation using Python type hints
 MODPY_DISTV =		2.41.5
 DISTNAME =		pydantic_core-${MODPY_DISTV}
 PKGNAME =		py-pydantic-core-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,8 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
-# needs inline_snapshot
-MODPY_PYTEST_ARGS =	--ignore tests/validators/test_allow_partial.py
 
 WANTLIB +=		${MODCARGO_WANTLIB}
 MAKE_ENV +=		${MODCARGO_ENV}
@@ -27,6 +26,7 @@ TEST_DEPENDS =		devel/py-coverage \
 			devel/py-dateutil \
 			devel/py-dirty-equals \
 			devel/py-hypothesis \
+			devel/py-inline-snapshot \
 			devel/py-test-mock \
 			devel/py-test-timeout \
 			devel/py-test-run-parallel \
