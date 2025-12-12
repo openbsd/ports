@@ -808,6 +808,7 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/launcher/handlers.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/launcher/output.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/launcher/winapi.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/public_api.py
+lib/python${MODPY_VERSION}/site-packages/debugpy/py.typed
 lib/python${MODPY_VERSION}/site-packages/debugpy/server/
 lib/python${MODPY_VERSION}/site-packages/debugpy/server/__init__.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/server/${MODPY_PYCACHE}/
