@@ -1,7 +1,7 @@
 Index: make.lua
 --- make.lua.orig
 +++ make.lua
-@@ -118,5 +118,5 @@ lm:build 'unit-test' {
+@@ -121,5 +121,5 @@ lm:build 'unit-test' {
  }
  
  lm:default {

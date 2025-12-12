@@ -1,9 +1,9 @@
 Index: 3rd/luamake/compile/ninja/openbsd.ninja
 --- 3rd/luamake/compile/ninja/openbsd.ninja.orig
 +++ 3rd/luamake/compile/ninja/openbsd.ninja
-@@ -151,4 +151,4 @@ build copy_script: phony $bin/main.lua
- build test: phony $obj/test.stamp
+@@ -206,4 +206,4 @@ build copy_mainlua: phony $bin/main.lua
  build copy_luamake: phony luamake
- build notest: phony copy_luamake
--default test notest
+ build luamake_test: phony $builddir/_/luamake_test
+ build notest: phony copy_luamake copy_mainlua
+-default luamake_test notest
 +default notest

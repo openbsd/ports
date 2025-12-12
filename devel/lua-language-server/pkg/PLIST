@@ -255,9 +255,12 @@ share/lua-language-server/script/locale-loader.lua
 share/lua-language-server/script/log.lua
 share/lua-language-server/script/meta/
 share/lua-language-server/script/meta/bee/
+share/lua-language-server/script/meta/bee/channel.lua
 share/lua-language-server/script/meta/bee/filesystem.lua
 share/lua-language-server/script/meta/bee/filewatch.lua
+share/lua-language-server/script/meta/bee/select.lua
 share/lua-language-server/script/meta/bee/socket.lua
+share/lua-language-server/script/meta/bee/sys.lua
 share/lua-language-server/script/meta/bee/thread.lua
 share/lua-language-server/script/parser/
 share/lua-language-server/script/parser/compile.lua
