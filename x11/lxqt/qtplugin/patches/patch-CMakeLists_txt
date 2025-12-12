@@ -1,0 +1,15 @@
+https://github.com/lxqt/lxqt-qtplugin/commit/90473945206dbf21816a00dfba27426a5b5a9e25
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -27,6 +27,10 @@ find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSIO
+ find_package(dbusmenu-lxqt ${DBUSMENU_MINIMUM_VERSION} REQUIRED)
+ find_package(fm-qt6 ${FMQT_MINIMUM_VERSION} REQUIRED)
+ 
++if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
++    find_package(Qt6GuiPrivate REQUIRED)
++endif()
++
+ get_target_property(LIB_FM_QT_CONFIGURATIONS fm-qt6 IMPORTED_CONFIGURATIONS)
+ if (LIB_FM_QT_CONFIGURATIONS)
+     # Extract the .soname from the first configuration found.
