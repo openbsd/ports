@@ -1,0 +1,16 @@
+https://github.com/lxqt/screengrab/commit/1621ef5df9461cdd1dcef3faee36e9419f1ca08c
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -28,6 +28,11 @@ find_package(LayerShellQt ${SHELLQT_MINIMUM_VERSION} R
+ find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
+ find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+ 
++if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
++    find_package(Qt6GuiPrivate REQUIRED)
++    find_package(Qt6WaylandClientPrivate REQUIRED)
++endif()
++
+ # right now we declare it as required
+ find_package(X11 REQUIRED)
+ set(HAVE_X11 1)
