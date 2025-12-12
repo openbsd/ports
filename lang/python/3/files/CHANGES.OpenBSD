@@ -22,5 +22,7 @@ which results in loading an incorrect version in some cases.
 
 7.  Adjust #ifdef to use LibreSSL's version of X509_STORE_get1_objects().
 
+8.  Work around expat_config.h missing from base.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.
