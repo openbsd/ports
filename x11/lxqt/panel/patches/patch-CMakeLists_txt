@@ -1,0 +1,16 @@
+https://github.com/lxqt/lxqt-panel/commit/fce8cd99a1de0e637e8539c4d8ac68832a40fa6d
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -42,6 +42,11 @@ find_package(lxqt-menu-data ${LXQT_MINIMUM_VERSION} RE
+ 
+ find_package(LayerShellQt REQUIRED)
+ 
++if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
++    find_package(Qt6GuiPrivate REQUIRED)
++    find_package(Qt6WaylandClientPrivate REQUIRED)
++endif()
++
+ # Patch Version
+ set(LXQT_PANEL_PATCH_VERSION 2)
+ set(LXQT_PANEL_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PANEL_PATCH_VERSION})
