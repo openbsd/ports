@@ -2,7 +2,7 @@ COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
 COMMENT-webview =	wxWebView class for wxWidgets
 
-V =			3.2.8.1
+V =			3.2.9
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}

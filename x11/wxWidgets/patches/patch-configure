@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -44576,6 +44576,11 @@ fi
+@@ -44578,6 +44578,11 @@ fi
          USE_SOVERSION=1
          USE_SOVERLINUX=1
          USE_SOTWOSYMLINKS=1
