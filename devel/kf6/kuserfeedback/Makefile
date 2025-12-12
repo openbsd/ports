@@ -10,7 +10,8 @@ WANTLIB += Qt6Widgets c m
 
 CATEGORIES =	productivity
 
-BUILD_DEPENDS =	devel/bison
+BUILD_DEPENDS =	devel/bison \
+		x11/qt6/qttools
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
