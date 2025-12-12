@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/frame/browser_view.cc
    std::vector<ContentsWebView*> contents_web_views =
        GetAllVisibleContentsWebViews();
  
-@@ -5919,7 +5919,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+@@ -5920,7 +5920,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/frame/browser_view.cc
    if (!ShouldShowAvatarToolbarIPH()) {
      return;
    }
-@@ -5929,7 +5929,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
+@@ -5930,7 +5930,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
  }
  
  void BrowserView::MaybeShowSignInBenefitsIPH() {
