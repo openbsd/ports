@@ -1,7 +1,7 @@
 Index: src/log.c
 --- src/log.c.orig
 +++ src/log.c
-@@ -543,8 +543,8 @@ i_process_time_ms (struct stringbuf *sb, struct http_l
+@@ -575,8 +575,8 @@ i_process_time_ms (struct stringbuf *sb, struct http_l
  		   POUND_HTTP *phttp)
  {
    struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
@@ -12,7 +12,7 @@ Index: src/log.c
  }
  
  static void
-@@ -552,8 +552,8 @@ i_process_time_us (struct stringbuf *sb, struct http_l
+@@ -584,8 +584,8 @@ i_process_time_us (struct stringbuf *sb, struct http_l
  		   POUND_HTTP *phttp)
  {
    struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
@@ -23,7 +23,7 @@ Index: src/log.c
  }
  
  static void
-@@ -561,7 +561,7 @@ i_process_time_s (struct stringbuf *sb, struct http_lo
+@@ -593,7 +593,7 @@ i_process_time_s (struct stringbuf *sb, struct http_lo
  		  POUND_HTTP *phttp)
  {
    struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
@@ -32,7 +32,7 @@ Index: src/log.c
  }
  
  static void
-@@ -569,7 +569,7 @@ i_process_time_f (struct stringbuf *sb, struct http_lo
+@@ -601,7 +601,7 @@ i_process_time_f (struct stringbuf *sb, struct http_lo
  		  POUND_HTTP *phttp)
  {
    struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);

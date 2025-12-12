@@ -10,7 +10,7 @@ Index: src/pound.c
  /* common variables */
  char *user;			/* user to run as */
  char *group;			/* group to run as */
-@@ -164,7 +166,7 @@ abend (struct locus_range const *range, char const *fm
+@@ -176,7 +178,7 @@ pound_uptime (void)
  /*
   * OpenSSL thread support stuff
   */
