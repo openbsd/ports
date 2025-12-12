@@ -9,7 +9,7 @@ Index: tclpkg/tcldot/demo/doted.tcl
  	set saveFill [list $item [lindex [$c itemconfigure 1$item -fill] 4]]
  	$c itemconfigure 1$item -fill black \
 -		-stipple @$tk_library/demos/images/gray25.xbm
-+		-stipple @${LOCALBASE}/share/examples/tk${MODTCL_VERSION}/images/gray25.xbm
++		-stipple @${LOCALBASE}/share/examples/tk${MODTK_VERSION}/images/gray25.xbm
  }
  
  # as the mouse moves out of an object restore its shading
@@ -18,7 +18,7 @@ Index: tclpkg/tcldot/demo/doted.tcl
  	-foreground green \
  	-activeforeground green\
 -	-bitmap @$tk_library/demos/images/gray25.xbm \
-+	-bitmap @${LOCALBASE}/share/examples/tk${MODTCL_VERSION}/images/gray25.xbm \
++	-bitmap @${LOCALBASE}/share/examples/tk${MODTK_VERSION}/images/gray25.xbm \
  	-command "layout $c"
  
  # initialize zoom state

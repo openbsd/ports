@@ -6,7 +6,7 @@ DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
 CATEGORIES=	math devel graphics
-REVISION=	0
+REVISION=	1
 
 MULTI_PACKAGES=	-main -tcl
 
@@ -49,14 +49,14 @@ WANTLIB-main += gmp guile-2.2 lcms2 openjp2 perl poppler poppler-glib
 WANTLIB-main += rsvg-2 unistring wayland-client wayland-cursor wayland-egl
 WANTLIB-main += xkbcommon xml2
 
-WANTLIB-tcl += ${WANTLIB}
-WANTLIB-tcl += cdt cgraph gvc pathplan xdot
+WANTLIB-tcl +=	${WANTLIB}
+WANTLIB-tcl +=	cdt cgraph gvc pathplan xdot
 
 COMPILER=	base-clang ports-gcc
 
-MODULES=	lang/tcl \
+MODULES=	x11/tk \
 		perl
-MODTCL_VERSION=	8.6
+MODTK_VERSION=	8.6
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
@@ -75,7 +75,7 @@ BUILD_DEPENDS=	devel/swig \
 TEST_DEPENDS=	${FULLPKGNAME}:math/graphviz
 
 LIB_DEPENDS-tcl=math/graphviz,-main
-RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
+RUN_DEPENDS-tcl=${MODTK_RUN_DEPENDS}
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
@@ -87,7 +87,7 @@ AUTORECONF=	autoreconf --force --install --no-recursive
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
 
-LIBTOOL_FLAGS +=	--tag=disable-static
+LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-man-pdfs \
 		--enable-swig \
@@ -150,7 +150,7 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
 
 # Ensure plugin version check works.
-SUBST_VARS +=	GVPLUGIN_VERSION
+SUBST_VARS=	GVPLUGIN_VERSION MODTK_VERSION
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} \
