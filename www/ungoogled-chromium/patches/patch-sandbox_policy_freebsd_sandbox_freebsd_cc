@@ -122,7 +122,7 @@ Index: sandbox/policy/freebsd/sandbox_freebsd.cc
 +      base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +      base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+      cache_directory = cache_directory.AppendASCII("chromium");
++      cache_directory = cache_directory.AppendASCII("ungoogled-chromium");
 +      local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +      if (!base::CreateDirectory(cache_directory)) {
