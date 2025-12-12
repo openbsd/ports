@@ -1,7 +1,4 @@
 @option is-branch
-@conflict gcc-libs->=9
-@conflict g++-<9
-@pkgpath lang/gcc/4.9,-c++
 @bin bin/ec++
 @bin bin/eg++
 @bin bin/${CONFIG}-ec++

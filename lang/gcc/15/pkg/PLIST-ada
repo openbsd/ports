@@ -1,6 +1,6 @@
 @option is-branch
-@conflict gnat-<16
 @pkgpath lang/gcc/4.9,-ada
+@pkgpath lang/gcc/8,-ada
 @bin bin/gnat
 @bin bin/gnatbind
 @bin bin/gnatchop

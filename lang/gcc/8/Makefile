@@ -23,7 +23,8 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 30
+GCC_PKGSPEC = >=8,<9
+REVISION = 31
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
@@ -36,12 +37,17 @@ ADASTRAP-powerpc = adastrap-powerpc-$V-3.tar.xz
 #ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
+PKGSPEC-main =	gcc-${GCC_PKGSPEC}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
+PKGSPEC-libs =	gcc-libs-${GCC_PKGSPEC}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
-PKGNAME-f95 =   g95-${FULL_PKGVERSION}
+PKGSPEC-c++ =	g++-${GCC_PKGSPEC}
+PKGNAME-f95 =   gfortran-${FULL_PKGVERSION}
+PKGSPEC-f95 =	gfortran-${GCC_PKGSPEC}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
+PKGSPEC-objc =	gobjc-${GCC_PKGSPEC}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
-PKGSPEC-main = gcc->=8,<9
+PKGSPEC-ada =	gnat-${GCC_PKGSPEC}
 
 SHARED_LIBS =	estdc++		19.0 \
 		gfortran	8.0 \

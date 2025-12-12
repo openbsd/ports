@@ -9,4 +9,4 @@ developers, to ensure that GCC and the GNU system work on multiple
 architectures and diverse environments, and to more thoroughly test and
 extend the features of GCC.
 
-This package contains the f95 compiler.
+This package contains the Fortran compiler.

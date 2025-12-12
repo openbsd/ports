@@ -1,6 +1,6 @@
 @option is-branch
-@conflict gcc-<16
 @pkgpath lang/gcc/4.9,-main
+@pkgpath lang/gcc/8,-main
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcc-ar

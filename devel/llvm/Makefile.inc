@@ -175,7 +175,7 @@ MODPY_ADJ_FILES +=	\
 	../clang/utils/hmaptool/hmaptool
 
 # XXX sync
-GCC_VER =		8.4.0
+GCC_VER =		15.2.0
 # do not include OSREV
 GCC_CONFIG =		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
 

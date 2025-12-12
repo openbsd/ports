@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.113 2025/11/14 17:46:39 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.114 2025/12/12 18:19:46 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -61,7 +61,7 @@ LIBCXX = c++ c++abi pthread
 LIBECXX = c++ c++abi pthread
 .else
 LIBCXX = stdc++ pthread
-LIBECXX = estdc++>=17 pthread
+LIBECXX = estdc++>=21 pthread
 .endif
 
 .if ${PROPERTIES:Mlld} || defined(USE_LLD) && ${USE_LLD:L} == yes
@@ -85,7 +85,7 @@ LLD_EMUL =
 .endif
 
 # system version wide specifics
-_SYSTEM_VERSION = 2
+_SYSTEM_VERSION = 3
 _SYSTEM_VERSION-aarch64 = 8
 _SYSTEM_VERSION-amd64 = 9
 _SYSTEM_VERSION-arm = 6

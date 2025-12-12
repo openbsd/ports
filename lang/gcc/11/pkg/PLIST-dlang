@@ -1,3 +1,4 @@
+@option is-branch
 @bin bin/egdc
 @bin bin/${CONFIG}-egdc
 @info info/gdc.info

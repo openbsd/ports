@@ -1,8 +1,8 @@
 @option is-branch
-@conflict gfortran-*
+@conflict g95-*
 @conflict libgfortran-*
-@conflict g95-<16
 @pkgpath lang/gcc/4.9,-f95
+@pkgpath lang/gcc/8,-f95
 @bin bin/egfortran
 @bin bin/${CONFIG}-egfortran
 @info info/gfortran.info

@@ -1,6 +1,6 @@
 @option is-branch
-@conflict gobjc-<16
 @pkgpath lang/gcc/4.9,-objc
+@pkgpath lang/gcc/8,-objc
 lib/gcc/${CONFIG}/${V}/include/objc/
 lib/gcc/${CONFIG}/${V}/include/objc/NXConstStr.h
 lib/gcc/${CONFIG}/${V}/include/objc/Object.h

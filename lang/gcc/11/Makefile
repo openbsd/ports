@@ -15,7 +15,8 @@ USE_NOEXECONLY = Yes
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 21
+GCC_PKGSPEC = >=11,<12
+REVISION = 22
 
 # aarch64 bootstrap contains only gdc
 ADASTRAP-aarch64 = adastrap-aarch64-$V-0.tar.xz
@@ -30,13 +31,19 @@ ADASTRAP-powerpc = adastrap-powerpc-$V-4.tar.xz
 #ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
+PKGSPEC-main =	gcc-${GCC_PKGSPEC}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
+PKGSPEC-libs =	gcc-libs-${GCC_PKGSPEC}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
-PKGNAME-f95 =   g95-${FULL_PKGVERSION}
+PKGSPEC-c++ =	g++-${GCC_PKGSPEC}
+PKGNAME-f95 =   gfortran-${FULL_PKGVERSION}
+PKGSPEC-f95 =	gfortran-${GCC_PKGSPEC}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
+PKGSPEC-objc =	gobjc-${GCC_PKGSPEC}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
+PKGSPEC-ada =	gnat-${GCC_PKGSPEC}
 PKGNAME-dlang = gdc-${FULL_PKGVERSION}
-PKGSPEC-main = gcc->=11,<12
+PKGSPEC-dlang =	gdc-${GCC_PKGSPEC}
 
 SHARED_LIBS =	estdc++		20.0 \
 		gfortran	9.0 \
