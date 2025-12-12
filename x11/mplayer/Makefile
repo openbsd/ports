@@ -1,9 +1,9 @@
 COMMENT=	movie player supporting many formats
 
 V=		20240803
-FFMPEG_V=	8.0
+FFMPEG_V=	8.0.1
 DISTNAME=	mplayer-${V}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	x11 multimedia
 SITES=		https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
