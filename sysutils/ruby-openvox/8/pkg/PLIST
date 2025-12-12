@@ -202,6 +202,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/bolt.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/cfpropertylist.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/dbus.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/eventlog.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/hiera_eyaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/feature/hocon.rb
