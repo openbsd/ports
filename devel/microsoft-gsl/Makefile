@@ -1,5 +1,5 @@
 COMMENT =		guidelines support library
-DIST_TUPLE =		github	microsoft	GSL	v4.2.0	.
+DIST_TUPLE =		github	microsoft	GSL	v4.2.1	.
 CATEGORIES =		devel
 
 # MIT
