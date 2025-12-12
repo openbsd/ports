@@ -3,6 +3,7 @@ COMMENT=		dynamic pixel format conversion library
 V=			0.1.118
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -36,6 +37,9 @@ BUILD_DEPENDS=		x11/gnome/librsvg
 BUILD_DEPENDS +=	devel/git
 
 LIB_DEPENDS=		graphics/lcms2
+
+# needs /proc/self/exe
+CONFIGURE_ARGS +=	-Drelocatable=disabled
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \
