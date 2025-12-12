@@ -1,0 +1,22 @@
+From 51043c3ef889e36c8232280581598b875073ded7 Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz93@gmail.com>
+Date: Mon, 28 Apr 2025 17:40:21 -0400
+Subject: [PATCH] avoid third-party backports dependency on sufficiently new
+ python
+
+Index: hotdoc/utils/utils.py
+--- hotdoc/utils/utils.py.orig
++++ hotdoc/utils/utils.py
+@@ -35,7 +35,11 @@ import importlib.util
+ from urllib.request import urlretrieve
+ from pathlib import Path
+ 
+-from backports.entry_points_selectable import entry_points
++if sys.version_info >= (3, 10):
++    from importlib.metadata import entry_points
++else:
++    from backports.entry_points_selectable import entry_points
++
+ try:
+     import importlib.metadata as meta
+ except ImportError:

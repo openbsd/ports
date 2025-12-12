@@ -2,7 +2,7 @@ COMMENT=		documentation tool micro-framework
 
 MODPY_DISTV=		0.17.4
 DISTNAME=		hotdoc-${MODPY_DISTV}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -19,6 +19,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
+MODPY_TEST_LINK_SO=	Yes
 
 BUILD_DEPENDS=		devel/cmake/core
 
@@ -37,14 +38,4 @@ RUN_DEPENDS=		devel/py-appdirs \
 			textproc/py-lxml \
 			textproc/py-yaml
 
-# XXX only include what we need from backports (unported)
-SITES.pybackports=	https://files.pythonhosted.org/packages/fc/25/dae014b114397a6f60578d7358bf5fcb103f71556e5363a50d7b42e9bc51/
-DISTFILES.pybackports=	backports.entry_points_selectable-1.3.0.tar.gz
-post-install:
-	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
-	cp -a ${WRKDIR}/backports.entry_points_selectable-1.3.0/backports/ \
-		${WRKINST}/${MODPY_SITEPKG}
-	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}/backports/
-
-# LGPLv2.1+
 .include <bsd.port.mk>
