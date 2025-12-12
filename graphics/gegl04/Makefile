@@ -2,7 +2,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.64
+V=			0.4.66
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
@@ -23,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} OpenEXR-3_4 babl-0.1 c cairo gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl jasper
-WANTLIB += jpeg json-glib-1.0 lcms2 m pango-1.0 pangocairo-1.0
+WANTLIB += jpeg json-glib-1.0 lcms2 m nsgif pango-1.0 pangocairo-1.0
 WANTLIB += png poppler-glib raw rsvg-2 tiff umfpack webp
 
 COMPILER=		base-clang ports-gcc base-gcc
@@ -37,8 +37,7 @@ MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			graphics/libgexiv2 \
-			shells/bash \
-			www/netsurf/libnsgif
+			shells/bash
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/babl \
@@ -48,6 +47,7 @@ LIB_DEPENDS=		devel/json-glib \
 			graphics/openexr \
 			math/suitesparse \
 			print/poppler \
+			www/netsurf/libnsgif \
 			x11/gnome/librsvg
 
 CONFIGURE_ARGS=		-Ddocs=false \
@@ -63,6 +63,9 @@ CONFIGURE_ARGS=		-Ddocs=false \
 			-Dopenmp=disabled \
 			-Dsdl1=disabled \
 			-Dsdl2=disabled
+
+# needs /proc/self/exe
+CONFIGURE_ARGS +=	-Drelocatable=disabled
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS +=		-Damd64=1
