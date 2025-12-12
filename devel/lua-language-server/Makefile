@@ -9,13 +9,13 @@ PKGNAME =		lua-language-server-${V}
 
 DIST_TUPLE +=		github LuaLS lua-language-server ${V} . \
 	github CppCXY EmmyLuaCodeStyle 8500f3af178f097331d938378648078d023f4c7c 3rd/EmmyLuaCodeStyle \
-	github actboy168 bee.lua dd7853f1bd010c701fb5fc4ee0d4082cdbc07ae8 3rd/bee.lua \
-	github actboy168 json.lua aff2a3d90dd35b5761301de0e2af700266aec41a 3rd/json.lua \
+	github actboy168 bee.lua ee7efd07155c33c2c95f4a66d17b2f3ef122896a 3rd/bee.lua \
+	github actboy168 json.lua f94860ef551036490c5b3db6098325267f42ef28 3rd/json.lua \
 	github love2d-community love-api 853639288547618dece86c3a8e52348fe304eba2 3rd/love-api \
 	github bjornbytes lovr-docs e89c753e1c2849b7533481fcf058095f8e050b9f 3rd/lovr-api \
 	github sqmedeiros lpeglabel 912b0b9e8641074408ffc2259e069b188e0c717b 3rd/lpeglabel \
-	github actboy168 luamake 0e90778390fb11d917c6e4c5cb963356a0780fb0 3rd/luamake \
-	github actboy168 bee.lua f242926e41b15b78dd554cec409deb5c7327c1c4 3rd/luamake/bee.lua
+	github actboy168 luamake a83fa224d083ad5ee4d39367621ee8c8c8db379b 3rd/luamake \
+	github actboy168 bee.lua 973fd8a0ba2d3a0f1988ac03c1817e8c932a7b82 3rd/luamake/bee.lua
 
 CATEGORIES =		devel
 
