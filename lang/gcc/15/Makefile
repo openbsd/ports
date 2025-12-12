@@ -32,19 +32,19 @@ ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
 ADASTRAP-powerpc = adastrap-powerpc-11.2.0-3.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
-PKGNAME-main =  gcc-${FULL_PKGVERSION}
+PKGNAME-main =	gcc-${FULL_PKGVERSION}
 PKGSPEC-main =	gcc-${GCC_PKGSPEC}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
 PKGSPEC-libs =	gcc-libs-${GCC_PKGSPEC}
-PKGNAME-c++ =   g++-${FULL_PKGVERSION}
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}
 PKGSPEC-c++ =	g++-${GCC_PKGSPEC}
-PKGNAME-f95 =   gfortran-${FULL_PKGVERSION}
+PKGNAME-f95 =	gfortran-${FULL_PKGVERSION}
 PKGSPEC-f95 =	gfortran-${GCC_PKGSPEC}
-PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
+PKGNAME-objc =	gobjc-${FULL_PKGVERSION}
 PKGSPEC-objc =	gobjc-${GCC_PKGSPEC}
-PKGNAME-ada =   gnat-${FULL_PKGVERSION}
+PKGNAME-ada =	gnat-${FULL_PKGVERSION}
 PKGSPEC-ada =	gnat-${GCC_PKGSPEC}
-PKGNAME-dlang = gdc-${FULL_PKGVERSION}
+PKGNAME-dlang =	gdc-${FULL_PKGVERSION}
 PKGSPEC-dlang =	gdc-${GCC_PKGSPEC}
 
 SHARED_LIBS =	estdc++		21.0 \
