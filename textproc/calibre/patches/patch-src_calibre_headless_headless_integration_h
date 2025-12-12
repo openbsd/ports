@@ -1,0 +1,12 @@
+https://github.com/kovidgoyal/calibre/commit/30b66dc452d3c08c7e10cc95498e131348d7bbfb
+Index: src/calibre/headless/headless_integration.h
+--- src/calibre/headless/headless_integration.h.orig
++++ src/calibre/headless/headless_integration.h
+@@ -3,7 +3,6 @@
+ #include <qpa/qplatformintegration.h>
+ #include <qpa/qplatformscreen.h>
+ #include <qpa/qplatformservices.h>
+-#include <QtGui/private/qgenericunixservices_p.h>
+ #include <QScopedPointer>
+ 
+ QT_BEGIN_NAMESPACE
