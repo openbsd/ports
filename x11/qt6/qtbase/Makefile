@@ -4,7 +4,7 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		0
+REVISION-main =		1
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
@@ -58,8 +58,7 @@ MODULES =		lang/python
 CONFIGURE_STYLE =	cmake
 MODPY_RUNDEP =		No
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			archivers/brotli \
+LIB_DEPENDS-main =	archivers/brotli \
 			archivers/zstd \
 			databases/iodbc \
 			databases/sqlite3 \
@@ -73,6 +72,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			print/cups,-libs \
 			security/libb2 \
 			textproc/icu4c \
+			wayland/wayland \
 			x11/dbus \
 			x11/gnome/at-spi2-core \
 			x11/gtk+3 \
