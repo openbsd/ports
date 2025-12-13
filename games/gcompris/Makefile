@@ -5,6 +5,7 @@ DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -17,11 +18,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickControls2Basic Qt6QuickTemplates2 Qt6Sensors
-WANTLIB += Qt6Svg Qt6WaylandClient Qt6Widgets c m wayland-client
-WANTLIB += wayland-cursor xkbcommon
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6QuickControls2Basic
+WANTLIB += Qt6QuickTemplates2 Qt6Sensors Qt6Svg Qt6WaylandClient
+WANTLIB += Qt6Widgets c m wayland-client wayland-cursor xkbcommon
 
 SITES=		http://gcompris.net/download/qt/src/
 
@@ -34,8 +34,7 @@ LIB_DEPENDS=	x11/qt6/qtcharts \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtsensors \
-		x11/qt6/qtsvg \
-		x11/qt6/qtwayland
+		x11/qt6/qtsvg
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
