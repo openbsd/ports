@@ -25,10 +25,12 @@ do-install:
 # - fix Copyright, release-date, eol-date
 # cd ../../../tests/isodata/openbsd/
 # mkdir openbsdX.Y+1 && cd openbsdX.Y+1
-# - fetch i386 and amd64 install and boot-only ISOs
-# isoinfo -d -i cd75.iso >openbsd-7.5-amd64-bootonly.iso.txt
-# isoinfo -d -i install75.iso >openbsd-7.5-amd64.iso.txt
-# isoinfo -d -i cd75.iso >openbsd-7.5-i386-bootonly.iso.txt
-# isoinfo -d -i install75.iso >openbsd-7.5-i386.iso.txt
+# - fetch amd64, arm64 and i386 install and boot-only ISOs
+# isoinfo -d -i cd79.iso >openbsd-7.9-arm64-bootonly.iso.txt
+# isoinfo -d -i install79.iso >openbsd-7.9-arm64.iso.txt
+# isoinfo -d -i cd79.iso >openbsd-7.9-amd64-bootonly.iso.txt
+# isoinfo -d -i install79.iso >openbsd-7.9-amd64.iso.txt
+# isoinfo -d -i cd79.iso >openbsd-7.9-i386-bootonly.iso.txt
+# isoinfo -d -i install79.iso >openbsd-7.9-i386.iso.txt
 
 .include <bsd.port.mk>
