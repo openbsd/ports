@@ -1,0 +1,14 @@
+Index: models/streamsmodel.cpp
+--- models/streamsmodel.cpp.orig
++++ models/streamsmodel.cpp
+@@ -1300,8 +1300,8 @@ QList<StreamsModel::Item*> StreamsModel::parseIceCastR
+ 
+ 	if (isGZipped) {
+ 		compressor = new KCompressionDevice(dev, false, KCompressionDevice::GZip);
+-		compressor->open(QIODevice::ReadOnly);
+-		readDev = compressor;
++		if (compressor->open(QIODevice::ReadOnly))
++			readDev = compressor;
+ 	}
+ 	QXmlStreamReader doc(readDev);
+ 
