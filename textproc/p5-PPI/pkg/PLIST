@@ -45,6 +45,7 @@ ${P5SITE}/PPI/Structure/Constructor.pm
 ${P5SITE}/PPI/Structure/For.pm
 ${P5SITE}/PPI/Structure/Given.pm
 ${P5SITE}/PPI/Structure/List.pm
+${P5SITE}/PPI/Structure/Signature.pm
 ${P5SITE}/PPI/Structure/Subscript.pm
 ${P5SITE}/PPI/Structure/Unknown.pm
 ${P5SITE}/PPI/Structure/When.pm
@@ -144,6 +145,7 @@ ${P5SITE}/PPI/XSAccessor.pm
 @man man/man3p/PPI::Structure::For.3p
 @man man/man3p/PPI::Structure::Given.3p
 @man man/man3p/PPI::Structure::List.3p
+@man man/man3p/PPI::Structure::Signature.3p
 @man man/man3p/PPI::Structure::Subscript.3p
 @man man/man3p/PPI::Structure::Unknown.3p
 @man man/man3p/PPI::Structure::When.3p
