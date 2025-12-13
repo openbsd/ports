@@ -7,8 +7,8 @@ COMMENT =	cross-platform library for building Telegram clients
 # "unofficial minor versions" which are only present as commit hashes.
 GH_ACCOUNT =	tdlib
 GH_PROJECT =	td
-GH_COMMIT =	dd1b761fda7e47f4e0275c4d319f80a04db1997f
-DISTNAME =	tdlib-1.8.56
+GH_COMMIT =	282f96ca66421c348ed75aaca84471b3e39e64dd
+DISTNAME =	tdlib-1.8.58
 
 CATEGORIES =	net
 
