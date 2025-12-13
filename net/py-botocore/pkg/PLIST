@@ -1857,6 +1857,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/endpoint-r
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migration-hub-refactor-spaces/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migration-hub-refactor-spaces/2021-10-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migration-hub-refactor-spaces/2021-10-26/endpoint-rule-set-1.json
@@ -2282,6 +2283,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53-recovery-cluster/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53-recovery-cluster/2019-12-02/
