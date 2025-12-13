@@ -1,6 +1,6 @@
 COMMENT=	event-driven IRC-client module
 
-DISTNAME=	POE-Component-IRC-6.93
+DISTNAME =	POE-Component-IRC-6.95
 CATEGORIES=	net
 
 # perl
