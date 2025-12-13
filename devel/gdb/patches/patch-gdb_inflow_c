@@ -1,0 +1,17 @@
+Pass SIGINT to attached inferior
+
+Index: gdb/inflow.c
+--- gdb/inflow.c.orig
++++ gdb/inflow.c
+@@ -872,7 +872,10 @@ static void
+ pass_signal (int signo)
+ {
+ #ifndef _WIN32
+-  kill (inferior_ptid.pid (), SIGINT);
++  if (inferior_ptid.pid ())
++    kill (inferior_ptid.pid (), SIGINT);
++  else
++    kill (current_inferior ()->pid, SIGINT);
+ #endif
+ }
+ 

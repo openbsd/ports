@@ -1,12 +1,13 @@
-Add support for thread_name.
+Add support for thread_name and thread_alive.
 
 Index: gdb/obsd-nat.h
 --- gdb/obsd-nat.h.orig
 +++ gdb/obsd-nat.h
-@@ -27,6 +27,7 @@ class obsd_nat_target : public inf_ptrace_target
+@@ -27,6 +27,8 @@ class obsd_nat_target : public inf_ptrace_target
    /* Override some methods to support threads.  */
    std::string pid_to_str (ptid_t) override;
    void update_thread_list () override;
++  bool thread_alive (ptid_t ptid) override;
 +  const char *thread_name (struct thread_info *thr) override;
    ptid_t wait (ptid_t, struct target_waitstatus *, target_wait_flags) override;
  

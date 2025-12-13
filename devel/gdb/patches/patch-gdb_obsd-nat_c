@@ -1,15 +1,9 @@
-Add support for thread_name.
+Add support for thread_name and thread_alive using ptrace.
 
 Index: gdb/obsd-nat.c
 --- gdb/obsd-nat.c.orig
 +++ gdb/obsd-nat.c
-@@ -23,11 +23,13 @@
- 
- #include <sys/types.h>
- #include <sys/ptrace.h>
-+#include <sys/sysctl.h>
- #include "gdbsupport/gdb_wait.h"
- 
+@@ -28,6 +28,7 @@
  #include "inf-ptrace.h"
  #include "obsd-nat.h"
  #include "gdbsupport/eintr.h"
@@ -17,48 +11,129 @@ Index: gdb/obsd-nat.c
  
  /* OpenBSD 5.2 and later include rthreads which uses a thread model
     that maps userland threads directly onto kernel threads in a 1:1
-@@ -183,4 +185,69 @@ int
+@@ -42,34 +43,78 @@ obsd_nat_target::pid_to_str (ptid_t ptid)
+   return normal_pid_to_str (ptid);
+ }
+ 
+-void
+-obsd_nat_target::update_thread_list ()
++/* Generic thread lister within a specified PID.  The CALLBACK
++   parameters is a C++ function that is called for each detected thread.
++   When the CALLBACK function returns true, the iteration is interrupted.
++
++   This function assumes internally that the queried process is stopped. */
++
++static bool
++obsd_thread_lister (const pid_t pid,
++		      gdb::function_view<bool (const struct ptrace_thread_state *)>
++		      callback)
+ {
+-  pid_t pid = inferior_ptid.pid ();
+   struct ptrace_thread_state pts;
+ 
+-  prune_threads ();
+-
+   if (ptrace (PT_GET_THREAD_FIRST, pid, (caddr_t)&pts, sizeof pts) == -1)
+     perror_with_name (("ptrace"));
+ 
+   while (pts.pts_tid != -1)
+     {
+-      ptid_t ptid = ptid_t (pid, pts.pts_tid, 0);
+-
+-      if (!in_thread_list (this, ptid))
+-	{
+-	  if (inferior_ptid.lwp () == 0)
+-	    thread_change_ptid (this, inferior_ptid, ptid);
+-	  else
+-	    add_thread (this, ptid);
+-	}
+-
++      if (callback (&pts))
++	return true;
+       if (ptrace (PT_GET_THREAD_NEXT, pid, (caddr_t)&pts, sizeof pts) == -1)
+ 	perror_with_name (("ptrace"));
+     }
++
++  return false;
+ }
+ 
++/* Fuction to support executing callback for each alive thread */
++
++static void
++for_each_thread (pid_t pid, gdb::function_view<void (ptid_t)> callback)
++{
++  auto fn
++    = [=, &callback] (const struct ptrace_thread_state *pts)
++      {
++	ptid_t ptid = ptid_t (pid, pts->pts_tid, 0);
++	callback (ptid);
++	return false;
++      };
++
++  obsd_thread_lister (pid, fn);
++}
++
++/* Implement the "post_attach" target_ops method.  */
++
++static void
++obsd_add_threads (obsd_nat_target *target, pid_t pid)
++{
++  auto fn
++    = [&target] (ptid_t ptid)
++      {
++	if (!in_thread_list (target, ptid))
++	  {
++	    if (inferior_ptid.lwp () == 0)
++	      thread_change_ptid (target, inferior_ptid, ptid);
++	    else
++	      add_thread (target, ptid);
++	  }
++      };
++
++  for_each_thread (pid, fn);
++}
++
++void
++obsd_nat_target::update_thread_list ()
++{
++  pid_t pid = inferior_ptid.pid ();
++
++  prune_threads ();
++  obsd_add_threads (this, pid);
++}
++
+ /* Enable additional event reporting on a new or existing process.  */
+ 
+ static void
+@@ -143,6 +188,7 @@ void
+ obsd_nat_target::post_attach (int pid)
+ {
+   obsd_enable_proc_events (pid);
++  obsd_add_threads (this, pid);
+ }
+ 
+ /* Implement the virtual inf_ptrace_target::post_startup_inferior method.  */
+@@ -183,4 +229,48 @@ int
  obsd_nat_target::remove_fork_catchpoint (int pid)
  {
    return 0;
 +}
 +
-+/* Generic thread lister within a specified PID.  The CALLBACK
-+   parameters is a C++ function that is called for each detected thread.
-+   When the CALLBACK function returns true, the iteration is interrupted.
++/* See obsd-nat.h.  */
 +
-+   This function assumes internally that the queried process is stopped
-+   and the number of threads does not change between two sysctl () calls.  */
-+
-+static bool
-+obsd_thread_lister (const pid_t pid,
-+		      gdb::function_view<bool (const struct kinfo_proc *)>
-+		      callback)
++bool
++obsd_nat_target::thread_alive (ptid_t ptid)
 +{
-+  int mib[6] = {CTL_KERN, KERN_PROC, KERN_PROC_PID | KERN_PROC_SHOW_THREADS,
-+      pid, sizeof(struct kinfo_proc), 0};
-+  size_t size;
++  pid_t pid = ptid.pid ();
++  ptid_t::lwp_type tid = ptid.lwp ();
 +
-+  if (sysctl (mib, ARRAY_SIZE (mib), NULL, &size, NULL, 0) == -1 || size == 0)
-+    perror_with_name (("sysctl"));
++  auto fn
++    = [=] (const struct ptrace_thread_state *pts)
++      {
++	return pts->pts_tid == tid;
++      };
 +
-+  mib[5] = size / sizeof (struct kinfo_proc);
-+
-+  gdb::unique_xmalloc_ptr<struct kinfo_proc[]> ki
-+    ((struct kinfo_proc *) xcalloc (mib[5], sizeof (struct kinfo_proc)));
-+
-+  if (sysctl (mib, ARRAY_SIZE (mib), ki.get (), &size, NULL, 0) == -1
-+      || size == 0)
-+    perror_with_name (("sysctl"));
-+
-+  for (size_t i = 0; i < size / sizeof (struct kinfo_proc); i++)
-+    {
-+      struct kinfo_proc *l = &ki[i];
-+      if (callback (l))
-+	return true;
-+    }
-+
-+  return false;
++  return obsd_thread_lister (pid, fn);
 +}
 +
 +/* See obsd-nat.h.  */
@@ -69,14 +144,14 @@ Index: gdb/obsd-nat.c
 +  pid_t pid = thr->ptid.pid ();
 +  ptid_t::lwp_type tid = thr->ptid.lwp ();
 +
-+  static char buf[KI_MAXCOMLEN] = {};
++  static char buf[PT_PTS_NAMELEN] = {};
 +
 +  auto fn
-+    = [=] (const struct kinfo_proc *ki)
++    = [=] (const struct ptrace_thread_state *pts)
 +      {
-+	if (ki->p_tid == tid)
++	if (pts->pts_tid == tid)
 +	  {
-+	    xsnprintf (buf, sizeof buf, "%s", ki->p_name);
++	    xsnprintf (buf, sizeof buf, "%s", pts->pts_name);
 +	    return true;
 +	  }
 +	return false;

@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-16.3
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
