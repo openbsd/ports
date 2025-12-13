@@ -309,7 +309,7 @@ SHA256 (cargo/toml_edit-0.22.23.tar.gz) = Aqi0ctGj18GOLWGkia7jRT/ZAxwz5PVb1TP0p6
 SHA256 (cargo/ttf-parser-0.25.1.tar.gz) = 0t+QaweFZ0j6P24K0MuqBHBS1KfdYJ4jHE9yzujDbzE=
 SHA256 (cargo/two-face-0.4.3.tar.gz) = OE7aQ43fYuLG85oXRFLZUtnZ31qK1a3iIZhgn43K+FI=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
-SHA256 (cargo/typst-assets-0.14.1.tar.gz) = mLJQ9sHd0PQ12yKDx+s2qbcr7jTWOXYlv3+BfGStfGI=
+SHA256 (cargo/typst-assets-0.14.2.tar.gz) = VhPLcZpiIv6bdAJ8NiXRB3Z+wYe/8muPyTHPWJQsg08=
 SHA256 (cargo/unic-langid-0.9.6.tar.gz) = ooulLJsFMR9PbmLV2dRvCUvW6Ey433s++VJ0jXUqfQU=
 SHA256 (cargo/unic-langid-impl-0.9.6.tar.gz) = 3OG/CARNS3qUAoyTeG+FZgR+3BERBZWRTekzYlWbxlg=
 SHA256 (cargo/unic-langid-macros-0.9.6.tar.gz) = 1ZV+uC40bXrdFBgqMxWn4pjwThukuqw29/Db/tul/CU=
@@ -344,10 +344,10 @@ SHA256 (cargo/wasm-bindgen-backend-0.2.100.tar.gz) = LwoGUaXCvCFIe94R7oAsyvTFGTX
 SHA256 (cargo/wasm-bindgen-macro-0.2.100.tar.gz) = f+Y/xtCe03kr0Il7MU9T3o4WVowrP3mC9GjAv5vQtAc=
 SHA256 (cargo/wasm-bindgen-macro-support-0.2.100.tar.gz) = iuh+pAyfaJ/CPyCZZbb7ipmtaa7rAjFAi+JJIGBDld4=
 SHA256 (cargo/wasm-bindgen-shared-0.2.100.tar.gz) = GgXXO5M6hH1szN2o+DiiL/EBrZv5PjNoTznB9fDuzj0=
-SHA256 (cargo/wasmi-0.51.2.tar.gz) = EYAwstElvIk+DMWxzhVutBRh9DczCMtfLjxphTO15Uc=
-SHA256 (cargo/wasmi_collections-0.51.2.tar.gz) = ZT+iDvyWaBiTRSTc61SxuB5vhFu8wuFV1un8Mr7PZn4=
-SHA256 (cargo/wasmi_core-0.51.2.tar.gz) = ZXAfYDCMfkbMqF8nOtF+gMYJmMxj0/oWisOT9isSMDg=
-SHA256 (cargo/wasmi_ir-0.51.2.tar.gz) = plOfY78qaDjyeHbih38LAKCI6E+R6SRFYgzGuXf94DI=
+SHA256 (cargo/wasmi-0.51.5.tar.gz) = uzIUA85ZQnSCdlepCOE9HZkYqgIle4v4ORlJ2XZAI/8=
+SHA256 (cargo/wasmi_collections-0.51.5.tar.gz) = 6bjpjkWipTRIn4Il52XL8cuaMHgHJgXlgViRDPR0kXI=
+SHA256 (cargo/wasmi_core-0.51.5.tar.gz) = wl83XAzfFIEOqwf1MvYfFNSWbwnHR6VQZ/3zGW6FEuY=
+SHA256 (cargo/wasmi_ir-0.51.5.tar.gz) = Yk4qaKQpPsuPVkJgtoOUspzzs+26a841UyiJosszw9k=
 SHA256 (cargo/wasmparser-0.228.0.tar.gz) = Sr8RMsH990fVa7wbtSFSQAxw8zaHD5aLheiepCIZiuM=
 SHA256 (cargo/web-sys-0.3.77.tar.gz) = M7bdLvkYbx8gcuQJ6ZzSKpdTMaazWRsSx2Tg5Vxg1dI=
 SHA256 (cargo/weezl-0.1.8.tar.gz) = U6hbhqdxschwWBlhcHad0mT2bAeCrPGubMUb/WSzkII=
@@ -396,8 +396,8 @@ SHA256 (cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZD
 SHA256 (cargo/zune-core-0.5.0.tar.gz) = ER99mCDwX9cV3zFE4lTW/ALuQIiwZEwP/Q78nm2dJ3M=
 SHA256 (cargo/zune-jpeg-0.4.14.tar.gz) = maW6uNfe34FAXEux8rg+oFdkPZyyh3jOqe7N3u3S4Cg=
 SHA256 (cargo/zune-jpeg-0.5.5.tar.gz) = 3G+3cD4y6aB/s/dXNgM4s6VnpQVPIbX1KmZnUuMz1Y4=
-SHA256 (typst-typst-dev-assets-v0.14.1.tar.gz) = 3OIfeJ+xFF63BTGQ5+mi6yrU3VSKnsLf19uq/g25Y3M=
-SHA256 (typst-typst-v0.14.1.tar.gz) = g9EyNIqMlIGopIPN+CPVCDukVkZkEJNfJSQPbCbiPDg=
+SHA256 (typst-typst-dev-assets-v0.14.2.tar.gz) = WDRKsIYpenPXYQEvGX1nA66RDE4vUU1bO1Sma6ZSKSY=
+SHA256 (typst-typst-v0.14.2.tar.gz) = cKVkRQIMoF78Vxx7B6Gp9S65OELUIFGGk8B3rnTlQUI=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -709,7 +709,7 @@ SIZE (cargo/toml_edit-0.22.23.tar.gz) = 106376
 SIZE (cargo/ttf-parser-0.25.1.tar.gz) = 201121
 SIZE (cargo/two-face-0.4.3.tar.gz) = 3390549
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
-SIZE (cargo/typst-assets-0.14.1.tar.gz) = 6376952
+SIZE (cargo/typst-assets-0.14.2.tar.gz) = 6376954
 SIZE (cargo/unic-langid-0.9.6.tar.gz) = 9031
 SIZE (cargo/unic-langid-impl-0.9.6.tar.gz) = 90020
 SIZE (cargo/unic-langid-macros-0.9.6.tar.gz) = 6517
@@ -744,10 +744,10 @@ SIZE (cargo/wasm-bindgen-backend-0.2.100.tar.gz) = 32111
 SIZE (cargo/wasm-bindgen-macro-0.2.100.tar.gz) = 9663
 SIZE (cargo/wasm-bindgen-macro-support-0.2.100.tar.gz) = 26243
 SIZE (cargo/wasm-bindgen-shared-0.2.100.tar.gz) = 8570
-SIZE (cargo/wasmi-0.51.2.tar.gz) = 244288
-SIZE (cargo/wasmi_collections-0.51.2.tar.gz) = 19338
-SIZE (cargo/wasmi_core-0.51.2.tar.gz) = 50291
-SIZE (cargo/wasmi_ir-0.51.2.tar.gz) = 34476
+SIZE (cargo/wasmi-0.51.5.tar.gz) = 244287
+SIZE (cargo/wasmi_collections-0.51.5.tar.gz) = 19341
+SIZE (cargo/wasmi_core-0.51.5.tar.gz) = 50471
+SIZE (cargo/wasmi_ir-0.51.5.tar.gz) = 34479
 SIZE (cargo/wasmparser-0.228.0.tar.gz) = 249009
 SIZE (cargo/web-sys-0.3.77.tar.gz) = 638246
 SIZE (cargo/weezl-0.1.8.tar.gz) = 42175
@@ -796,5 +796,5 @@ SIZE (cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (cargo/zune-core-0.5.0.tar.gz) = 27393
 SIZE (cargo/zune-jpeg-0.4.14.tar.gz) = 63388
 SIZE (cargo/zune-jpeg-0.5.5.tar.gz) = 77168
-SIZE (typst-typst-dev-assets-v0.14.1.tar.gz) = 29513390
-SIZE (typst-typst-v0.14.1.tar.gz) = 4122919
+SIZE (typst-typst-dev-assets-v0.14.2.tar.gz) = 29513419
+SIZE (typst-typst-v0.14.2.tar.gz) = 4124613
