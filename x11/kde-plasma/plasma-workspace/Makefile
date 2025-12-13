@@ -47,6 +47,7 @@ MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
+		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/kwin>=${VERSION} \
 		x11/qt6/qtlocation \
