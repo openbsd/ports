@@ -1,8 +1,7 @@
 COMMENT =	read and manage your digital comic collection
 
-V =		9.15.0
+V =		9.16.1
 DISTNAME =	yacreader-${V}
-REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -15,9 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
 WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Svg Qt6Widgets
-WANTLIB += c m poppler-qt6 unarr
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql
+WANTLIB += Qt6Svg Qt6Widgets c m poppler-qt6 unarr
 
 SITES = 	https://github.com/YACReader/yacreader/releases/download/${V}/
 
