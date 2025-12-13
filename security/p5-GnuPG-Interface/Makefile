@@ -2,7 +2,7 @@ COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	GnuPG-Interface-1.04
+DISTNAME =	GnuPG-Interface-1.05
 CATEGORIES=	security
 
 # Perl
