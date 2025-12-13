@@ -1,0 +1,30 @@
+https://github.com/lxqt/libfm-qt/commit/3bcbae5831f5ce3d2f06dc370f0c2ad0026ae82a
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -132,14 +132,17 @@ install(EXPORT
+ )
+ 
+ target_link_libraries(${LIBFM_QT_LIBRARY_NAME}
+-    Qt6::Widgets
+-    ${GLIB_LIBRARIES}
+-    ${GLIB_GIO_LIBRARIES}
+-    ${GLIB_GOBJECT_LIBRARIES}
+-    ${GLIB_GTHREAD_LIBRARIES}
+-    ${MENUCACHE_LIBRARIES}
+-    ${XCB_LIBRARIES}
+-    ${EXIF_LIBRARIES}
++    PRIVATE
++        Qt6::GuiPrivate
++    PUBLIC
++        Qt6::Widgets
++        ${GLIB_LIBRARIES}
++        ${GLIB_GIO_LIBRARIES}
++        ${GLIB_GOBJECT_LIBRARIES}
++        ${GLIB_GTHREAD_LIBRARIES}
++        ${MENUCACHE_LIBRARIES}
++        ${XCB_LIBRARIES}
++        ${EXIF_LIBRARIES}
+ )
+ 
+ # set libtool soname
