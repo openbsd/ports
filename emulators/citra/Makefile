@@ -9,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 
@@ -25,6 +25,9 @@ WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Widgets SoundTouch boost_iostreams-mt crypto openal
 WANTLIB += ssl SDL2 boost_serialization-mt
 WANTLIB += c cryptopp enet fmt m usb-1.0
+WANTLIB += GL Qt6Network boost_chrono-mt boost_container-mt boost_locale-mt
+WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
+WANTLIB += xkbcommon
 
 SITES =		https://archive.org/download/citra-latest-stuff/Nightly%20build%20%2B%20source%20-%200ff3440/
 EXTRACT_SUFX =	.tar.xz
@@ -82,7 +85,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME}
 
 CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
 
-post-extract:
+ppost-extract:
 	rm -r ${WRKSRC}/externals/cryptopp-cmake \
 		${WRKSRC}/externals/dynarmic/externals/catch/src/catch2 \
 		${WRKSRC}/externals/dynarmic/externals/fmt

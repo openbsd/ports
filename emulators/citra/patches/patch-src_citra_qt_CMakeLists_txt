@@ -1,0 +1,23 @@
+Index: src/citra_qt/CMakeLists.txt
+--- src/citra_qt/CMakeLists.txt.orig
++++ src/citra_qt/CMakeLists.txt
+@@ -303,6 +303,19 @@ target_link_libraries(citra-qt PRIVATE audio_core citr
+ target_link_libraries(citra-qt PRIVATE Boost::boost nihstro-headers Qt6::Widgets Qt6::Multimedia Qt6::Concurrent)
+ target_link_libraries(citra-qt PRIVATE ${PLATFORM_LIBRARIES} Threads::Threads)
+ 
++if (Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++  # GuiPrivate is needed to #include qplatformnativeinterface.h in bootmanager.cpp with Qt 6.10+.
++  set(NEED_QT_GUI_PRIVATE_COMPONENT ON)
++  find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
++endif()
++
++if (NEED_QT_GUI_PRIVATE_COMPONENT)
++  target_link_libraries(citra-qt
++  PRIVATE
++    Qt6::GuiPrivate
++  )
++endif()
++
+ if (ENABLE_OPENGL)
+     target_link_libraries(citra-qt PRIVATE glad)
+ endif()

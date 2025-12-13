@@ -1,0 +1,9 @@
+Index: externals/cmake-modules/Findcryptopp.cmake
+--- externals/cmake-modules/Findcryptopp.cmake.orig
++++ externals/cmake-modules/Findcryptopp.cmake
+@@ -1,4 +1,5 @@
+ if(NOT CRYPTOPP_FOUND)
++    include(FindPkgConfig)
+     pkg_search_module(CRYPTOPP_TMP crypto++ cryptopp)
+ 
+     find_path(CRYPTOPP_INCLUDE_DIRS NAMES cryptlib.h
