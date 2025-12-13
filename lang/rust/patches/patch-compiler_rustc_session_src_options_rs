@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -2034,6 +2034,25 @@ pub mod parse {
+@@ -2038,6 +2038,26 @@ pub mod parse {
      }
  }
  
@@ -22,6 +22,7 @@ Index: compiler/rustc_session/src/options.rs
 +        pc: false,
 +        key: PAuthKey::A,
 +    }),
++    gcs: false,
 +});
 +
 +#[cfg(not(all(target_os="openbsd", target_arch="aarch64")))]
@@ -30,7 +31,7 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      CodegenOptions, CodegenOptionsTargetModifiers, CG_OPTIONS, cgopts, "C", "codegen",
  
-@@ -2220,11 +2239,11 @@ options! {
+@@ -2224,11 +2244,11 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),

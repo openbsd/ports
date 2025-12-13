@@ -37,7 +37,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBRUST_HASH}16.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd_detect-${LIBRUST_HASH}17.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libsysroot-${LIBRUST_HASH}18.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}19.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1b.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
 @man man/man1/cargo-add.1
 @man man/man1/cargo-bench.1
 @man man/man1/cargo-build.1
