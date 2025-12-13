@@ -1,11 +1,11 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.13
+VERSION =	5.2.14
 DISTNAME =	krita-${VERSION}
 
-SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
+SHARED_LIBS +=  kritabasicflakes          4.2 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                14.0 # 16.0
+SHARED_LIBS +=  kritaflake                14.1 # 16.0
 SHARED_LIBS +=  kritapigment              9.1 # 16.0
 SHARED_LIBS +=  kritaplugin               3.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
@@ -28,11 +28,11 @@ SHARED_LIBS +=  kritamultiarch            0.1 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
-SHARED_LIBS +=  kritaglobal               7.0 # 14.0
+SHARED_LIBS +=  kritaglobal               7.1 # 14.0
 SHARED_LIBS +=  kritaimage                69.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             59.2 # 0.0
 SHARED_LIBS +=  kritalibpaintop           60.0 # 0.0
-SHARED_LIBS +=  kritaui                   73.0 # 0.0
+SHARED_LIBS +=  kritaui                   73.1 # 0.0
 
 CATEGORIES =	graphics
 
@@ -54,7 +54,7 @@ WANTLIB += Qt5Network Qt5PrintSupport Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SDL2 SM X11 Xext Xi bz2 c exiv2
 WANTLIB += fftw3 fontconfig freetype fribidi gif glib-2.0 gobject-2.0
 WANTLIB += gsl gslcblas harfbuzz heif intl jpeg json-c jxl jxl_threads
-WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler-qt5
+WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler poppler-qt5
 WANTLIB += quazip1-qt5 tiff turbojpeg unibreak webp webpdemux
 WANTLIB += webpmux z
 
