@@ -57,6 +57,7 @@ ${P5SITE}/Mojo/Reactor/
 ${P5SITE}/Mojo/Reactor.pm
 ${P5SITE}/Mojo/Reactor/EV.pm
 ${P5SITE}/Mojo/Reactor/Poll.pm
+${P5SITE}/Mojo/SSE.pm
 ${P5SITE}/Mojo/Server/
 ${P5SITE}/Mojo/Server.pm
 ${P5SITE}/Mojo/Server/CGI.pm
@@ -224,6 +225,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Reactor.3p
 @man man/man3p/Mojo::Reactor::EV.3p
 @man man/man3p/Mojo::Reactor::Poll.3p
+@man man/man3p/Mojo::SSE.3p
 @man man/man3p/Mojo::Server.3p
 @man man/man3p/Mojo::Server::CGI.3p
 @man man/man3p/Mojo::Server::Daemon.3p
