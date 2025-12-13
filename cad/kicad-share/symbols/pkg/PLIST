@@ -154,10 +154,7 @@ share/kicad/symbols/MCU_Texas.kicad_sym
 share/kicad/symbols/MCU_Texas_MSP430.kicad_sym
 share/kicad/symbols/MCU_Texas_SimpleLink.kicad_sym
 share/kicad/symbols/MCU_Trident.kicad_sym
-share/kicad/symbols/MCU_WCH_CH32V0.kicad_sym
-share/kicad/symbols/MCU_WCH_CH32V2.kicad_sym
-share/kicad/symbols/MCU_WCH_CH32V3.kicad_sym
-share/kicad/symbols/MCU_WCH_CH32X0.kicad_sym
+share/kicad/symbols/MCU_WCH_RiscV.kicad_sym
 share/kicad/symbols/Mechanical.kicad_sym
 share/kicad/symbols/Memory_EEPROM.kicad_sym
 share/kicad/symbols/Memory_EPROM.kicad_sym

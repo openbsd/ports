@@ -17,7 +17,7 @@ Index: libs/kiplatform/os/unix/io.cpp
  
      return fp;
  }
-@@ -78,4 +80,4 @@ bool KIPLATFORM::IO::IsFileHidden( const wxString& aFi
+@@ -93,4 +95,4 @@ bool KIPLATFORM::IO::IsFileHidden( const wxString& aFi
  void KIPLATFORM::IO::LongPathAdjustment( wxFileName& aFilename )
  {
      // no-op
