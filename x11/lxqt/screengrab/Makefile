@@ -1,6 +1,7 @@
 COMMENT =	tool for fast making screenshots
 
 VERSION =	3.0.0
+REVISION =	0
 
 NAME =		screengrab
 
@@ -21,7 +22,6 @@ LIB_DEPENDS =	devel/kf6/kwindowsystem \
 		x11/kde-plasma/layer-shell-qt \
 		x11/lxqt/libqtxdg \
 		x11/qt6/qtsvg \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
