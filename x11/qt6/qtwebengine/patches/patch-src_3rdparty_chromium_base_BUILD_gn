@@ -18,14 +18,17 @@ Index: src/3rdparty/chromium/base/BUILD.gn
  
  # Base and everything it depends on should be a static library rather than
  # a source set. Base is more of a "library" in the classic sense in that many
-@@ -1111,11 +1112,27 @@ jumbo_component("base") {
+@@ -1111,11 +1112,29 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
 -  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
 +  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
-     libs += [ "atomic" ]
+-    libs += [ "atomic" ]
++    if (!is_clang) {
++      libs += [ "atomic" ]
++    }
    }
  
 +  # *BSD needs libkvm
@@ -47,7 +50,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1135,7 +1152,7 @@ jumbo_component("base") {
+@@ -1135,7 +1154,7 @@ jumbo_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -56,7 +59,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2153,6 +2170,22 @@ jumbo_component("base") {
+@@ -2153,6 +2172,22 @@ jumbo_component("base") {
      ]
    }
  
@@ -79,7 +82,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    # iOS
    if (is_ios) {
      sources += [
-@@ -2298,6 +2331,33 @@ jumbo_component("base") {
+@@ -2298,6 +2333,33 @@ jumbo_component("base") {
      }
    }
  
@@ -113,7 +116,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2650,7 +2710,7 @@ buildflag_header("protected_memory_buildflags") {
+@@ -2650,7 +2712,7 @@ buildflag_header("protected_memory_buildflags") {
    header = "protected_memory_buildflags.h"
    header_dir = "base/memory"
  
@@ -122,7 +125,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
                               (is_win || is_linux || is_android || is_mac)
  
    flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
-@@ -3129,7 +3189,7 @@ if (is_apple) {
+@@ -3129,7 +3191,7 @@ if (is_apple) {
    }
  }
  
@@ -131,7 +134,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3825,7 +3885,7 @@ test("base_unittests") {
+@@ -3825,7 +3887,7 @@ test("base_unittests") {
      ]
    }
  
@@ -140,7 +143,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3853,7 +3913,7 @@ test("base_unittests") {
+@@ -3853,7 +3915,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -149,7 +152,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3864,7 +3924,7 @@ test("base_unittests") {
+@@ -3864,7 +3926,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -158,7 +161,7 @@ Index: src/3rdparty/chromium/base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -4052,7 +4112,7 @@ test("base_unittests") {
+@@ -4052,7 +4114,7 @@ test("base_unittests") {
      deps += [ ":base_profiler_test_support_library" ]
    }
  
