@@ -10,7 +10,6 @@ share/cppcheck/cfg/cairo.cfg
 share/cppcheck/cfg/cppcheck-cfg.rng
 share/cppcheck/cfg/cppcheck-lib.cfg
 share/cppcheck/cfg/cppunit.cfg
-share/cppcheck/cfg/daca.cfg
 share/cppcheck/cfg/dpdk.cfg
 share/cppcheck/cfg/embedded_sql.cfg
 share/cppcheck/cfg/emscripten.cfg
@@ -37,10 +36,12 @@ share/cppcheck/cfg/openmp.cfg
 share/cppcheck/cfg/openssl.cfg
 share/cppcheck/cfg/pcre.cfg
 share/cppcheck/cfg/posix.cfg
+share/cppcheck/cfg/protobuf.cfg
 share/cppcheck/cfg/python.cfg
 share/cppcheck/cfg/qt.cfg
 share/cppcheck/cfg/ruby.cfg
 share/cppcheck/cfg/sdl.cfg
+share/cppcheck/cfg/selinux.cfg
 share/cppcheck/cfg/sfml.cfg
 share/cppcheck/cfg/sqlite3.cfg
 share/cppcheck/cfg/std.cfg
@@ -50,4 +51,5 @@ share/cppcheck/cfg/windows.cfg
 share/cppcheck/cfg/wxsqlite3.cfg
 share/cppcheck/cfg/wxsvg.cfg
 share/cppcheck/cfg/wxwidgets.cfg
+share/cppcheck/cfg/zephyr.cfg
 share/cppcheck/cfg/zlib.cfg
