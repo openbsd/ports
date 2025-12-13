@@ -48,6 +48,11 @@ lib/qt6/qml/org/kde/i18n/localeData/kde-qmlmodule.version
 lib/qt6/qml/org/kde/i18n/localeData/ki18nlocaledataqmlplugin.qmltypes
 @so lib/qt6/qml/org/kde/i18n/localeData/libki18nlocaledataqmlplugin.so
 lib/qt6/qml/org/kde/i18n/localeData/qmldir
+lib/qt6/qml/org/kde/ki18n/
+lib/qt6/qml/org/kde/ki18n/KF6I18nQml.qmltypes
+lib/qt6/qml/org/kde/ki18n/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/ki18n/libKF6I18nQmlplugin.so
+lib/qt6/qml/org/kde/ki18n/qmldir
 share/locale/af/LC_MESSAGES/ki18n6.mo
 share/locale/ar/LC_MESSAGES/ki18n6.mo
 share/locale/as/LC_MESSAGES/ki18n6.mo

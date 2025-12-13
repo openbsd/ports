@@ -10,8 +10,7 @@ WANTLIB += xcb xcb-sync
 BUILD_DEPENDS =	wayland/plasma-wayland-protocols \
 		wayland/wayland-protocols
 
-LIB_DEPENDS =	wayland/wayland \
-		x11/qt6/qtwayland
+LIB_DEPENDS =	wayland/wayland
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

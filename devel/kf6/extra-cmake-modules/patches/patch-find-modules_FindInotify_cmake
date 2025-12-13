@@ -1,24 +1,36 @@
 Index: find-modules/FindInotify.cmake
 --- find-modules/FindInotify.cmake.orig
 +++ find-modules/FindInotify.cmake
-@@ -30,7 +30,11 @@ Since 5.32.0.
- 
- cmake_policy(VERSION 3.16)
- 
+@@ -34,19 +34,25 @@ cmake_policy(VERSION 3.16)
+ # This is required, because on systems with native inotify we reset Inotify_INCLUDE_DIRS
+ # to an empty string. Rerunning CMake in this case will reuse the empty variable
+ # and we will not get into if(Inotify_INCLUDE_DIRS) the second time
+-unset(Inotify_INCLUDE_DIRS CACHE)
+-find_path(Inotify_INCLUDE_DIRS sys/inotify.h PATHS /usr/include NO_DEFAULT_PATH)
+-find_path(Inotify_INCLUDE_DIRS sys/inotify.h)
 +if(CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-+find_path(Inotify_INCLUDE_DIRS NAME sys/inotify.h PATHS ${LOCALBASE}/include/inotify)
++    find_path(Inotify_INCLUDE_DIRS NAME sys/inotify.h PATHS ${LOCALBASE}/include/inotify NO_DEFAULT_PATH)
 +else()
- find_path(Inotify_INCLUDE_DIRS sys/inotify.h)
++    unset(Inotify_INCLUDE_DIRS CACHE)
++    find_path(Inotify_INCLUDE_DIRS sys/inotify.h PATHS /usr/include NO_DEFAULT_PATH)
++    find_path(Inotify_INCLUDE_DIRS sys/inotify.h)
 +endif()
  
  if(Inotify_INCLUDE_DIRS)
- # On Linux and SunOS, there is no library to link against, on the BSDs there is.
-@@ -40,7 +44,7 @@ if(Inotify_INCLUDE_DIRS)
-         set(Inotify_LIBRARIES "")
-         set(Inotify_INCLUDE_DIRS "")
+     # On OSes with a kernel implementation, there is no library to link against.
+     # On some others inotify is implemented through a library, libinotify.
+     # If we found a header, but not a library, assume a kernel implementation
+-    find_library(Inotify_LIBRARIES NAMES inotify)
+-    if(NOT Inotify_LIBRARIES)
++    if(CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++        find_library(Inotify_LIBRARIES NAMES inotify PATHS ${LOCALBASE}/lib/inotify/ NO_DEFAULT_PATH)
++    else()
++        find_library(Inotify_LIBRARIES NAMES inotify)
++    endif()
++    if(Inotify_LIBRARIES)
+         set(Inotify_FOUND TRUE)
+-        set(Inotify_LIBRARIES "" CACHE STRING "" FORCE)
+-        set(Inotify_INCLUDE_DIRS "" CACHE STRING "" FORCE)
      else()
--        find_library(Inotify_LIBRARIES NAMES inotify)
-+        find_library(Inotify_LIBRARIES NAMES inotify PATHS ${LOCALBASE}/lib/inotify/)
-         include(FindPackageHandleStandardArgs)
-         find_package_handle_standard_args(Inotify
-             FOUND_VAR
+         # On FreeBSD 15+ we may end up with both in-kernel and libinotify
+         # implementation. To discern between them, compare prefixes of

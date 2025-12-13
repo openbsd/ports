@@ -148,6 +148,7 @@ lib/qt6/qml/org/kde/kirigami/private/PullDownIndicator.qml
 lib/qt6/qml/org/kde/kirigami/private/SwipeItemEventFilter.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/BreadcrumbControl.qml
+lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/HandleButton.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/NavigationButtons.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/PageRowGlobalToolBarStyleGroup.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/PageRowGlobalToolBarUI.qml
@@ -182,10 +183,7 @@ lib/qt6/qml/org/kde/kirigami/templates/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/templates/libKirigamiTemplatesplugin.so
 lib/qt6/qml/org/kde/kirigami/templates/private/
 lib/qt6/qml/org/kde/kirigami/templates/private/BorderPropertiesGroup.qml
-lib/qt6/qml/org/kde/kirigami/templates/private/ContextIcon.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/DrawerHandle.qml
-lib/qt6/qml/org/kde/kirigami/templates/private/GenericDrawerIcon.qml
-lib/qt6/qml/org/kde/kirigami/templates/private/MenuIcon.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/PassiveNotificationsManager.qml
 lib/qt6/qml/org/kde/kirigami/templates/qmldir
 share/kdevappwizard/

@@ -9,10 +9,9 @@ WANTLIB += xcb xkbcommon
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-BUILD_DEPENDS =		wayland/plasma-wayland-protocols>=1.15.0
+BUILD_DEPENDS =		wayland/plasma-wayland-protocols
 
-LIB_DEPENDS =		x11/qt6/qtwayland  \
-			x11/qt6/qtdeclarative \
+LIB_DEPENDS =		x11/qt6/qtdeclarative \
 			wayland/wayland \
 			x11/xkbcommon
 
