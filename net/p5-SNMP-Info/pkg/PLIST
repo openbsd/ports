@@ -79,6 +79,7 @@ ${P5SITE}/SNMP/Info/Layer3/Aruba.pm
 ${P5SITE}/SNMP/Info/Layer3/ArubaCX.pm
 ${P5SITE}/SNMP/Info/Layer3/BayRS.pm
 ${P5SITE}/SNMP/Info/Layer3/BlueCoatSG.pm
+${P5SITE}/SNMP/Info/Layer3/C1300.pm
 ${P5SITE}/SNMP/Info/Layer3/C3550.pm
 ${P5SITE}/SNMP/Info/Layer3/C4000.pm
 ${P5SITE}/SNMP/Info/Layer3/C6500.pm
@@ -93,8 +94,10 @@ ${P5SITE}/SNMP/Info/Layer3/Cumulus.pm
 ${P5SITE}/SNMP/Info/Layer3/DLink.pm
 ${P5SITE}/SNMP/Info/Layer3/Dell.pm
 ${P5SITE}/SNMP/Info/Layer3/ERX.pm
+${P5SITE}/SNMP/Info/Layer3/EdgeSwitch.pm
 ${P5SITE}/SNMP/Info/Layer3/Enterasys.pm
 ${P5SITE}/SNMP/Info/Layer3/Extreme.pm
+${P5SITE}/SNMP/Info/Layer3/ExtremeWing.pm
 ${P5SITE}/SNMP/Info/Layer3/F5.pm
 ${P5SITE}/SNMP/Info/Layer3/Force10.pm
 ${P5SITE}/SNMP/Info/Layer3/Fortinet.pm
@@ -107,6 +110,7 @@ ${P5SITE}/SNMP/Info/Layer3/IBMGbTor.pm
 ${P5SITE}/SNMP/Info/Layer3/Juniper.pm
 ${P5SITE}/SNMP/Info/Layer3/Lantronix.pm
 ${P5SITE}/SNMP/Info/Layer3/Lenovo.pm
+${P5SITE}/SNMP/Info/Layer3/Meraki.pm
 ${P5SITE}/SNMP/Info/Layer3/Microsoft.pm
 ${P5SITE}/SNMP/Info/Layer3/Mikrotik.pm
 ${P5SITE}/SNMP/Info/Layer3/N1600.pm
@@ -122,6 +126,7 @@ ${P5SITE}/SNMP/Info/Layer3/Pf.pm
 ${P5SITE}/SNMP/Info/Layer3/Pica8.pm
 ${P5SITE}/SNMP/Info/Layer3/Redlion.pm
 ${P5SITE}/SNMP/Info/Layer3/Scalance.pm
+${P5SITE}/SNMP/Info/Layer3/SilverPeak.pm
 ${P5SITE}/SNMP/Info/Layer3/SonicWALL.pm
 ${P5SITE}/SNMP/Info/Layer3/Steelfusion.pm
 ${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
@@ -143,6 +148,7 @@ ${P5SITE}/SNMP/Info/Layer7/HWGroup.pm
 ${P5SITE}/SNMP/Info/Layer7/Liebert.pm
 ${P5SITE}/SNMP/Info/Layer7/Neoteris.pm
 ${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
+${P5SITE}/SNMP/Info/Layer7/Stormshield.pm
 ${P5SITE}/SNMP/Info/MAU.pm
 ${P5SITE}/SNMP/Info/MRO.pm
 ${P5SITE}/SNMP/Info/NortelStack.pm
@@ -226,6 +232,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::ArubaCX.3p
 @man man/man3p/SNMP::Info::Layer3::BayRS.3p
 @man man/man3p/SNMP::Info::Layer3::BlueCoatSG.3p
+@man man/man3p/SNMP::Info::Layer3::C1300.3p
 @man man/man3p/SNMP::Info::Layer3::C3550.3p
 @man man/man3p/SNMP::Info::Layer3::C4000.3p
 @man man/man3p/SNMP::Info::Layer3::C6500.3p
@@ -240,8 +247,10 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::DLink.3p
 @man man/man3p/SNMP::Info::Layer3::Dell.3p
 @man man/man3p/SNMP::Info::Layer3::ERX.3p
+@man man/man3p/SNMP::Info::Layer3::EdgeSwitch.3p
 @man man/man3p/SNMP::Info::Layer3::Enterasys.3p
 @man man/man3p/SNMP::Info::Layer3::Extreme.3p
+@man man/man3p/SNMP::Info::Layer3::ExtremeWing.3p
 @man man/man3p/SNMP::Info::Layer3::F5.3p
 @man man/man3p/SNMP::Info::Layer3::Force10.3p
 @man man/man3p/SNMP::Info::Layer3::Fortinet.3p
@@ -254,6 +263,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Juniper.3p
 @man man/man3p/SNMP::Info::Layer3::Lantronix.3p
 @man man/man3p/SNMP::Info::Layer3::Lenovo.3p
+@man man/man3p/SNMP::Info::Layer3::Meraki.3p
 @man man/man3p/SNMP::Info::Layer3::Microsoft.3p
 @man man/man3p/SNMP::Info::Layer3::Mikrotik.3p
 @man man/man3p/SNMP::Info::Layer3::N1600.3p
@@ -269,6 +279,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Pica8.3p
 @man man/man3p/SNMP::Info::Layer3::Redlion.3p
 @man man/man3p/SNMP::Info::Layer3::Scalance.3p
+@man man/man3p/SNMP::Info::Layer3::SilverPeak.3p
 @man man/man3p/SNMP::Info::Layer3::SonicWALL.3p
 @man man/man3p/SNMP::Info::Layer3::Steelfusion.3p
 @man man/man3p/SNMP::Info::Layer3::Steelhead.3p
@@ -289,6 +300,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer7::Liebert.3p
 @man man/man3p/SNMP::Info::Layer7::Neoteris.3p
 @man man/man3p/SNMP::Info::Layer7::Netscaler.3p
+@man man/man3p/SNMP::Info::Layer7::Stormshield.3p
 @man man/man3p/SNMP::Info::MAU.3p
 @man man/man3p/SNMP::Info::MRO.3p
 @man man/man3p/SNMP::Info::NortelStack.3p
