@@ -2,6 +2,7 @@ COMMENT=	losslessly convert images to PDF
 
 MODPY_DISTV=	0.6.3
 DISTNAME=	img2pdf-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -11,7 +12,7 @@ HOMEPAGE=	https://gitlab.mister-muffin.de/josch/img2pdf/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	graphics/py-Pillow \
