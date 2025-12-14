@@ -12,10 +12,10 @@ include/nanomsg/survey.h
 include/nanomsg/tcp.h
 include/nanomsg/ws.h
 lib/cmake/
-lib/cmake/nanomsg-1.1.5/
-lib/cmake/nanomsg-1.1.5/nanomsg-config-version.cmake
-lib/cmake/nanomsg-1.1.5/nanomsg-config.cmake
-lib/cmake/nanomsg-1.1.5/nanomsg-target-release.cmake
-lib/cmake/nanomsg-1.1.5/nanomsg-target.cmake
+lib/cmake/nanomsg-1.2.1/
+lib/cmake/nanomsg-1.2.1/nanomsg-config-version.cmake
+lib/cmake/nanomsg-1.2.1/nanomsg-config.cmake
+lib/cmake/nanomsg-1.2.1/nanomsg-target${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/nanomsg-1.2.1/nanomsg-target.cmake
 @lib lib/libnanomsg.so.${LIBnanomsg_VERSION}
 lib/pkgconfig/nanomsg.pc
