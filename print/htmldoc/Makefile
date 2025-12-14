@@ -3,6 +3,7 @@ COMMENT =		convert HTML pages to PDF/PS format
 V =			1.9.21
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
+REVISION =		0
 
 HOMEPAGE =		https://www.msweet.org/htmldoc/
 
@@ -23,7 +24,8 @@ LIB_DEPENDS =		graphics/jpeg \
 			print/cups,-libs
 
 CONFIGURE_STYLE =	gnu dest
-CONFIGURE_ARGS +=	--without-gui --disable-gnutls
+CONFIGURE_ARGS +=	--without-gui --disable-gnutls \
+			--datadir=${WRKINST}${PREFIX}/share
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include"
