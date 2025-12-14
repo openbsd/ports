@@ -2,7 +2,7 @@ COMMENT-main=	IMAP4 webmail client
 COMMENT-classic=classic skin for Roundcube webmail
 COMMENT-larry=	larry skin for Roundcube webmail
 
-V=		1.6.11
+V=		1.6.12
 DISTNAME=	roundcubemail-$V
 DISTFILES.skins= ${DISTNAME}-skins.tar.xz
 EXTRACT_SUFX=	-complete.tar.gz
@@ -10,9 +10,6 @@ EXTRACT_SUFX=	-complete.tar.gz
 PKGNAME-main=	roundcubemail-${VS}
 PKGNAME-classic=rcube-skin-classic-${VS}
 PKGNAME-larry=	rcube-skin-larry-${VS}
-REVISION-classic=	0
-REVISION-larry=	0
-REVISION-main=	0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 

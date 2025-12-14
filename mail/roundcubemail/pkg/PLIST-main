@@ -2759,6 +2759,7 @@ roundcubemail/vendor/guzzlehttp/guzzle/LICENSE
 roundcubemail/vendor/guzzlehttp/guzzle/README.md
 roundcubemail/vendor/guzzlehttp/guzzle/UPGRADING.md
 roundcubemail/vendor/guzzlehttp/guzzle/composer.json
+roundcubemail/vendor/guzzlehttp/guzzle/package-lock.json
 roundcubemail/vendor/guzzlehttp/guzzle/src/
 roundcubemail/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 roundcubemail/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
@@ -3094,10 +3095,8 @@ roundcubemail/vendor/ralouphie/getallheaders/src/
 roundcubemail/vendor/ralouphie/getallheaders/src/getallheaders.php
 roundcubemail/vendor/roundcube/
 roundcubemail/vendor/roundcube/plugin-installer/
-roundcubemail/vendor/roundcube/plugin-installer/.php-cs-fixer.dist.php
 roundcubemail/vendor/roundcube/plugin-installer/README.md
 roundcubemail/vendor/roundcube/plugin-installer/composer.json
-roundcubemail/vendor/roundcube/plugin-installer/phpstan.neon.dist
 roundcubemail/vendor/roundcube/plugin-installer/src/
 roundcubemail/vendor/roundcube/plugin-installer/src/ExtensionInstaller.php
 roundcubemail/vendor/roundcube/plugin-installer/src/PluginInstaller.php
