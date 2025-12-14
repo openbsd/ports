@@ -1,7 +1,7 @@
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
 GNOME_PROJECT=	xdg-user-dirs-gtk
-GNOME_VERSION=	0.14
+GNOME_VERSION=	0.16
 
 CATEGORIES=	x11 devel
 

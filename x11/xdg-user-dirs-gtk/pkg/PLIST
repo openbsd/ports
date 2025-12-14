@@ -1,4 +1,5 @@
 @bin bin/xdg-user-dirs-gtk-update
+lib/systemd/user/user-dirs-update-gtk.service
 share/applications/user-dirs-update-gtk.desktop
 share/examples/xdg-user-dirs-gtk/
 share/examples/xdg-user-dirs-gtk/xdg/
