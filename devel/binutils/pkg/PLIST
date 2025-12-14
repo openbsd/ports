@@ -26,5 +26,6 @@
 @man man/man1/gsize.1
 @man man/man1/gstrings.1
 @man man/man1/gstrip.1
+%%ld%%
 @comment @man man/man1/gwindmc.1
 @comment @man man/man1/gwindres.1
