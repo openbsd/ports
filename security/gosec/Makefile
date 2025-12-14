@@ -1,7 +1,7 @@
 COMMENT =	security checker for Go projects
 
 MODGO_MODNAME =	github.com/securego/gosec/v2
-MODGO_VERSION =	v2.22.9
+MODGO_VERSION =	v2.22.11
 
 DISTNAME =	gosec-${MODGO_VERSION}
 
@@ -24,7 +24,7 @@ MODGO_LDFLAGS =	-X main.Version=${MODGO_VERSION:S/v//}
 # === RUN   TestRules
 # Running Suite: Rules Suite
 # Summarizing 8 Failures:
-# FAIL! -- 34 Passed | 8 Failed | 0 Pending | 0 Skipped
+# FAIL! -- 35 Passed | 8 Failed | 0 Pending | 0 Skipped
 # [FAIL] gosec rules report correct errors for all samples [It] should detect of ssh.InsecureIgnoreHostKey function
 # github.com/securego/gosec/v2/rules/rules_test.go:41
 # [FAIL] gosec rules report correct errors for all samples [It] should detect sql injection via format strings
