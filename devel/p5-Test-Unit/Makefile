@@ -1,6 +1,6 @@
 COMMENT =	Perl unit testing framework
 
-DISTNAME =	Test-Unit-0.28
+DISTNAME =	Test-Unit-0.29
 
 CATEGORIES =	devel
 
