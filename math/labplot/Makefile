@@ -1,6 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.12.1
+REVISION =	0
 
 CATEGORIES =	math x11
 

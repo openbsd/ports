@@ -1,7 +1,20 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -121,7 +121,7 @@ endif()
+@@ -51,7 +51,11 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} N
+ )
+ 
+ # building QADS or Xlsx requires Qt${QT_VERSION_MAJOR}GuiPrivate (QADS is required, Xlsx is optional)
+-find_package(Qt${QT_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
++if (Qt6Gui_VERSION VERSION_GREATER_EQUAL 6.10.0)
++    find_package(Qt6GuiPrivate ${QT_MIN_VERSION} CONFIG REQUIRED)
++else()
++    find_package(Qt${QT_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
++endif()
+ 
+ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+     Archive
+@@ -121,7 +125,7 @@ endif()
  set (GENERIC_FLAGS "-Wall -Wextra -Wundef -Wpointer-arith -Wunreachable-code -Wunused -Wdeprecated-declarations -fno-omit-frame-pointer -fstack-protector-strong")
  #set (GENERIC_GNU_FLAGS "${COMPILER_OPTIMIZATION_FLAG} -Wcast-align -Wswitch-enum -fvisibility=default -pedantic")
  set (GENERIC_GNU_FLAGS "${COMPILER_OPTIMIZATION_FLAG} -Wcast-align -Wswitch-enum -fvisibility=default -pedantic -ffunction-sections -fdata-sections -pipe")
@@ -10,7 +23,7 @@ Index: CMakeLists.txt
      set (GENERIC_GNU_LINK_FLAGS "-Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined")
  endif()
  set (GENERIC_C_FLAGS "${GENERIC_FLAGS} -fno-exceptions")
-@@ -705,11 +705,11 @@ else()
+@@ -705,11 +709,11 @@ else()
  endif()
  
  # Qt Advanced Docking System (required) #####################
