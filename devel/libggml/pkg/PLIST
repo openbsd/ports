@@ -13,6 +13,7 @@ include/ggml-rpc.h
 include/ggml-sycl.h
 include/ggml-vulkan.h
 include/ggml-webgpu.h
+include/ggml-zendnn.h
 include/ggml.h
 include/gguf.h
 lib/cmake/ggml/

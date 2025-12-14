@@ -1,7 +1,7 @@
 Index: src/ggml-backend-reg.cpp
 --- src/ggml-backend-reg.cpp.orig
 +++ src/ggml-backend-reg.cpp
-@@ -524,7 +524,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
+@@ -531,7 +531,9 @@ static ggml_backend_reg_t ggml_backend_load_best(const
          search_paths.push_back(fs::u8path(GGML_BACKEND_DIR));
  #endif
          // default search paths: executable directory, current directory

@@ -2,12 +2,12 @@ COMMENT=		tensor library for machine learning
 
 GH_ACCOUNT=		ggml-org
 GH_PROJECT=		ggml
-GH_COMMIT=		781baf2a14d9e0aaee542b2e1bb918bfc4132199
-DISTNAME=		ggml-0.9.4pl20251120
+GH_COMMIT=		f5425c0ee5e582a7d64411f06139870bff3e52e0
+DISTNAME=		ggml-0.9.4pl20251211
 PKGNAME=		lib${DISTNAME}
 
-SHARED_LIBS +=		ggml 3.1
-SHARED_LIBS +=		ggml-base 3.1
+SHARED_LIBS +=		ggml 3.2
+SHARED_LIBS +=		ggml-base 3.2
 
 CATEGORIES=		devel
 
@@ -24,11 +24,11 @@ COMPILER=	base-clang
 EXTRA_ports-gcc= -lstdc++fs
 MODCMAKE_LDFLAGS= ${EXTRA_${CHOSEN_COMPILER}}
 
-CONFIGURE_ARGS=	-DGGML_CCACHE=off \
-		-DGGML_LTO=on \
-		-DGGML_NATIVE=off \
-		-DGGML_RVV=off \
-		-DGGML_BACKEND_DL=on \
+CONFIGURE_ARGS=	-DGGML_CCACHE=OFF \
+		-DGGML_LTO=ON \
+		-DGGML_NATIVE=OFF \
+		-DGGML_RVV=OFF \
+		-DGGML_BACKEND_DL=ON \
 		-DGGML_BACKEND_DIR=${PREFIX}/lib
 
 .if ${MACHINE_ARCH:Mamd64}
