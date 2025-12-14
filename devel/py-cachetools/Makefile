@@ -1,6 +1,6 @@
 COMMENT=	extensible memoizing collections and decorators
 
-MODPY_DISTV=	6.2.2
+MODPY_DISTV =	6.2.3
 DISTNAME=	cachetools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
