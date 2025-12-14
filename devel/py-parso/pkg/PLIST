@@ -46,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}grammar_par
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/${MODPY_PYCACHE}grammar_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/generator.py
 lib/python${MODPY_VERSION}/site-packages/parso/pgen2/grammar_parser.py
+lib/python${MODPY_VERSION}/site-packages/parso/py.typed
 lib/python${MODPY_VERSION}/site-packages/parso/python/
 lib/python${MODPY_VERSION}/site-packages/parso/python/__init__.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}/
@@ -73,6 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/python/grammar310.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar311.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar312.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar313.txt
+lib/python${MODPY_VERSION}/site-packages/parso/python/grammar314.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar36.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar37.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar38.txt
