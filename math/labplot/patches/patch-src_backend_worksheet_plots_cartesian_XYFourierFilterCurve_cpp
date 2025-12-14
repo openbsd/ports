@@ -1,0 +1,12 @@
+https://github.com/KDE/labplot/commit/c2db2ec28aa8958f7041ae5cd03ddae9f44e5aa3
+Index: src/backend/worksheet/plots/cartesian/XYFourierFilterCurve.cpp
+--- src/backend/worksheet/plots/cartesian/XYFourierFilterCurve.cpp.orig
++++ src/backend/worksheet/plots/cartesian/XYFourierFilterCurve.cpp
+@@ -24,6 +24,7 @@ extern "C" {
+ #include "backend/nsl/nsl_sf_poly.h"
+ }
+ 
++#include <QElapsedTimer>
+ #include <QDebug> // qWarning()
+ #include <QIcon>
+ #include <QThreadPool>
