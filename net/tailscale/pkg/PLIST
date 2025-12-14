@@ -2,6 +2,7 @@
 @comment bin/addlicense
 @comment bin/build-webclient
 @comment bin/checkmetrics
+@comment bin/cigocacher
 @comment bin/cloner
 @comment bin/connector-gen
 @bin bin/derper
@@ -12,6 +13,7 @@
 @comment bin/get-authkey
 @comment bin/gitops-pusher
 @comment bin/hello
+@comment bin/jsonimports
 @comment bin/k8s-nameserver
 @comment bin/k8s-operator
 @comment bin/k8s-proxy
@@ -42,6 +44,7 @@
 @comment bin/tsconnect
 @bin bin/tsidp
 @comment bin/tta
+@comment bin/vet
 @comment bin/viewer
 @comment bin/vnet
 @comment bin/xdpderper
