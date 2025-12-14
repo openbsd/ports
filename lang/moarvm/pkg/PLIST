@@ -219,8 +219,6 @@ include/moar/strings/ops.h
 include/moar/strings/parse_num.h
 include/moar/strings/shiftjis.h
 include/moar/strings/shiftjis_codeindex.h
-include/moar/strings/siphash/
-include/moar/strings/siphash/csiphash.h
 include/moar/strings/unicode.h
 include/moar/strings/unicode_gen.h
 include/moar/strings/unicode_ops.h

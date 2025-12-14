@@ -1,7 +1,7 @@
 Index: build/Makefile.in
 --- build/Makefile.in.orig
 +++ build/Makefile.in
-@@ -612,7 +612,7 @@ clangcheck gcccheck:
+@@ -609,7 +609,7 @@ clangcheck gcccheck:
  
  moar@exe@: $(MAIN_OBJECTS) @moar@
  	$(MSG) linking $@
