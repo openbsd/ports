@@ -1,15 +1,12 @@
-pyml tries to lookup the correct libpython for the binary by
-parsing ldd output but doesn't handle OpenBSD's ldd
-
 Index: bundles/pyml/pyml-current/py.ml
 --- bundles/pyml/pyml-current/py.ml.orig
 +++ bundles/pyml/pyml-current/py.ml
-@@ -191,7 +191,7 @@ let uninit_pythonpath () =
-       end
+@@ -376,7 +376,7 @@ let library_suffix =
  
- let ldd executable =
--  let command = Printf.sprintf "ldd %s" executable in
-+  let command = Printf.sprintf "ldd %s | awk '/libpython/ {print $7}'" executable in
+ let libpython_from_pkg_config version_major version_minor =
+   let command =
+-    Printf.sprintf "pkg-config --libs python-%d.%d" version_major
++    Printf.sprintf "pkg-config --libs python-%d.%d-embed" version_major
+       version_minor in
    match run_command_opt command false with
-     None -> []
-   | Some lines ->
+     Some (words :: _) ->

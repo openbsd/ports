@@ -1,6 +1,3 @@
-BROKEN-sparc64 ="/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
-		"/usr/bin/ld: cannot find -lpyml_stubs"
-# ocamlfind: Not supported in your configuration: ocamlopt
 ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
 
 COMMENT =	program matching and transformation engine
@@ -10,8 +7,7 @@ COMMENT =	program matching and transformation engine
 
 GH_ACCOUNT =	coccinelle
 GH_PROJECT =	coccinelle
-GH_TAGNAME =	1.1.1
-REVISION =	9
+GH_TAGNAME =	1.3.1
 
 CATEGORIES =	devel
 
@@ -46,22 +42,13 @@ AUTOMAKE_VERSION =	1.16
 CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
 CONFIGURE_ENV +=	ac_cv_path_PATCH="patch -z.ccorig"
 CONFIGURE_ARGS =	--with-python=${MODPY_BIN} \
-			--libdir=${PREFIX}/lib \
-			--enable-ocaml
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-CONFIGURE_ARGS +=	--enable-opt
-.else
-CONFIGURE_ARGS +=	--disable-opt
-.endif
+			--libdir=${PREFIX}/lib
 
 USE_GMAKE =	Yes
 PORTHOME =	${WRKDIR}
 
 ALL_TARGET =	all-release
 
-TEST_TARGET =	test
 TEST_DEPENDS =	${FULLPKGPATH}
 TEST_ENV =	COCCINELLE_HOME=${TRUEPREFIX}/lib/coccinelle
 

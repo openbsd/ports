@@ -21,7 +21,7 @@ Index: cocci.ml
  	  (String.concat "|" tokens)
  	  (String.concat " " (List.map fst cfiles)) in
        (match Sys.command com with
-@@ -2357,7 +2357,7 @@ let check_duplicate_modif2 xs =
+@@ -2356,7 +2356,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->

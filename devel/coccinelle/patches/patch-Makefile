@@ -1,12 +1,12 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -320,7 +320,7 @@ install-man :
+@@ -338,7 +338,7 @@ install-man :
  	$(INSTALL_DATA) docs/spatch.1 $(DESTDIR)$(MANDIR)/man1/
  	$(INSTALL_DATA) docs/pycocci.1 $(DESTDIR)$(MANDIR)/man1/
  	$(INSTALL_DATA) docs/spgen.1 $(DESTDIR)$(MANDIR)/man1/
 -	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/
 +	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/Coccilib.3
  
- .PHONY : install-spgen
- install-spgen : tools/spgen/source/spgen$(TOOLS_SUFFIX)
+ .PHONY: install-metainfo
+ install-metainfo:

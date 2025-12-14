@@ -1,7 +1,7 @@
 Index: parsing_c/compare_c.ml
 --- parsing_c/compare_c.ml.orig
 +++ parsing_c/compare_c.ml
-@@ -211,9 +211,9 @@ let is_normal_space_or_comment to_expected = function
+@@ -143,9 +143,9 @@ let is_normal_space_or_comment to_expected = function
  let get_diff filename1 filename2 bs =
    let com =
      match !Flag_parsing_c.diff_lines with

@@ -1,7 +1,7 @@
 Index: commons/common.ml
 --- commons/common.ml.orig
 +++ commons/common.ml
-@@ -3308,7 +3308,7 @@ let glob pattern =
+@@ -2654,7 +2654,7 @@ let glob pattern =
  let files_of_dir_or_files ext xs =
    xs +> List.map (fun x ->
      if is_directory x
@@ -10,7 +10,7 @@ Index: commons/common.ml
      else [x]
    ) +> List.concat
  
-@@ -3318,7 +3318,7 @@ let files_of_dir_or_files_no_vcs ext xs =
+@@ -2664,7 +2664,7 @@ let files_of_dir_or_files_no_vcs ext xs =
      if is_directory x
      then
        cmd_to_list
@@ -19,27 +19,18 @@ Index: commons/common.ml
              "| grep -v /.hg/ |grep -v /CVS/ | grep -v /.git/ |grep -v /_darcs/"
          )
      else [x]
-@@ -3331,7 +3331,7 @@ let files_of_dir_or_files_no_vcs_post_filter regex xs 
-     then
-       cmd_to_list
-         ("find " ^ x  ^
--         " -noleaf -type f | grep -v /.hg/ |grep -v /CVS/ | grep -v /.git/ |grep -v /_darcs/"
-+         " -type f | grep -v /.hg/ |grep -v /CVS/ | grep -v /.git/ |grep -v /_darcs/"
-         )
-         +> List.filter (fun s -> s =~ regex)
-     else [x]
-@@ -5305,7 +5305,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
-     write_file file1 (unwords xs);
-     write_file file2 (unwords ys);
+@@ -4248,7 +4248,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
+     write_file ~file:file1 (unwords xs);
+     write_file ~file:file2 (unwords ys);
      command2
 -      ("diff --side-by-side -W 1 " ^ file1 ^ " " ^ file2 ^ " > " ^ fileresult);
 +      ("gdiff --side-by-side -W 1 " ^ file1 ^ " " ^ file2 ^ " > " ^ fileresult);
      let res = cat fileresult in
      let a = ref 0 in
      let b = ref 0 in
-@@ -5333,7 +5333,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
-     write_file "/tmp/diff1" xstr;
-     write_file "/tmp/diff2" ystr;
+@@ -4276,7 +4276,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
+     write_file ~file:"/tmp/diff1" xstr;
+     write_file ~file:"/tmp/diff2" ystr;
      command2
 -     ("diff --side-by-side --left-column -W 1 " ^
 +     ("gdiff --side-by-side --left-column -W 1 " ^
