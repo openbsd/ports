@@ -1,6 +1,6 @@
 COMMENT=	library to write SQL queries
 
-MODPY_DISTV=	1.6.0
+MODPY_DISTV=	1.7.0
 DISTNAME=	python_sql-${MODPY_DISTV}
 PKGNAME=	py-sql-${MODPY_DISTV}
 
