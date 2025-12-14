@@ -6,6 +6,7 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-batched-bench
 @bin bin/llama-bench
 @bin bin/llama-cli
+@bin bin/llama-completion
 @bin bin/llama-diffusion-cli
 @bin bin/llama-embedding
 @bin bin/llama-eval-callback
@@ -14,6 +15,7 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-gguf
 @bin bin/llama-gguf-hash
 @bin bin/llama-gguf-split
+@bin bin/llama-idle
 @bin bin/llama-imatrix
 @bin bin/llama-logits
 @bin bin/llama-lookahead

@@ -2,7 +2,7 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggml-org
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b7086
+GH_TAGNAME =		b7360
 PKGNAME =		llama.cpp-0.0.${GH_TAGNAME:S/b//}
 
 SHARED_LIBS +=		llama 3.0
