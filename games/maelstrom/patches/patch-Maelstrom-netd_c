@@ -14,3 +14,12 @@ Index: Maelstrom-netd.c
  #include <unistd.h>
  
  /* We wait in a loop for players to connect and tell us how many people
+@@ -181,7 +183,7 @@ void I_Crashed(int sig)
+ 	exit(sig);
+ }
+ 
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+ 	int netfd, i, slot;
+ 	struct sockaddr_in serv_addr;

@@ -2,7 +2,7 @@ COMMENT =		asteroid-like game
 
 DISTNAME =		Maelstrom-3.0.6
 PKGNAME = 		${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		games x11
 HOMEPAGE =		http://www.devolution.com/~slouken/Maelstrom/
 SITES =			${HOMEPAGE}/src/
