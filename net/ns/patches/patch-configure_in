@@ -1,0 +1,12 @@
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -52,7 +52,7 @@ touch confdefs.h
+ AC_TRY_RUN([#include <stdlib.h>
+ #include "confdefs.h"
+ long random() { return 1; }
+-main() { exit(0); }
++int main(void) { exit(0); }
+ ],
+ AC_MSG_RESULT(long)
+ AC_DEFINE(RANDOM_RETURN_TYPE,long)
