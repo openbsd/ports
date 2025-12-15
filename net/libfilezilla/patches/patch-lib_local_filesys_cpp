@@ -1,0 +1,13 @@
+error: 'PATH_MAX' was not declared in this scope
+
+Index: lib/local_filesys.cpp
+--- lib/local_filesys.cpp.orig
++++ lib/local_filesys.cpp
+@@ -10,6 +10,7 @@
+ #include <winternl.h>
+ #else
+ #include <errno.h>
++#include <limits.h>
+ #include <sys/fcntl.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
