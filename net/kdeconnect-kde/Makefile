@@ -27,6 +27,10 @@ WANTLIB += wayland-cursor xkbcommon
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
 
+# needs python and c++
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c c++
+
 MODULES =	x11/kde \
 		lang/python
 
