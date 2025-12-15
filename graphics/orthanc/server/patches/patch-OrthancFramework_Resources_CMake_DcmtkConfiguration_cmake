@@ -1,11 +1,12 @@
 Index: OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
 --- OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake.orig
 +++ OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
-@@ -309,6 +309,7 @@ if (NOT DCMTK_USE_EMBEDDED_DICTIONARIES)
+@@ -309,6 +309,8 @@ if (NOT DCMTK_USE_EMBEDDED_DICTIONARIES)
        /usr/share/libdcmtk20
        /usr/local/share/dcmtk
        /usr/local/share/dcmtk-3.6.8
 +      /usr/local/share/dcmtk-3.6.9
++      /usr/local/share/dcmtk-3.7.0
        )
  
      if (${DCMTK_DICTIONARY_DIR_AUTO} MATCHES "DCMTK_DICTIONARY_DIR_AUTO-NOTFOUND")

@@ -1,0 +1,12 @@
+Index: OrthancServer/Resources/RunCppCheck-2.17.0.sh
+--- OrthancServer/Resources/RunCppCheck-2.17.0.sh.orig
++++ OrthancServer/Resources/RunCppCheck-2.17.0.sh
+@@ -49,7 +49,7 @@ ${CPPCHECK} --enable=all --std=gnu++11 --library=boost
+             -DBOOST_HAS_REGEX=1 \
+             -DCIVETWEB_HAS_DISABLE_KEEP_ALIVE=1 \
+             -DCIVETWEB_HAS_WEBDAV_WRITING=1 \
+-            -DDCMTK_VERSION_NUMBER=369 \
++            -DDCMTK_VERSION_NUMBER=370 \
+             -DJCONFIG_INCLUDED \
+             -DHAVE_MALLOPT=1 \
+             -DMONGOOSE_USE_CALLBACKS=1 \
