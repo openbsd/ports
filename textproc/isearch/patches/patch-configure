@@ -1,0 +1,48 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -634,7 +634,7 @@ else
+ cat > conftest.$ac_ext <<EOF
+ #line 636 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(void){return(0);}
+ EOF
+ eval $ac_link
+ if test -s conftest && (./conftest; exit) 2>/dev/null; then
+@@ -660,7 +660,7 @@ cat > conftest.$ac_ext <<EOF
+ #line 661 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
+-main()
++int main(void)
+ {
+   FILE *f=fopen("conftestval", "w");
+   if (!f) exit(1);
+@@ -694,7 +694,7 @@ cat > conftest.$ac_ext <<EOF
+ #line 695 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
+-main()
++int main(void)
+ {
+   FILE *f=fopen("conftestval", "w");
+   if (!f) exit(1);
+@@ -728,7 +728,7 @@ cat > conftest.$ac_ext <<EOF
+ #line 729 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
+-main()
++int main(void)
+ {
+   FILE *f=fopen("conftestval", "w");
+   if (!f) exit(1);
+@@ -762,7 +762,7 @@ cat > conftest.$ac_ext <<EOF
+ #line 763 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
+-main()
++int main(void)
+ {
+   FILE *f=fopen("conftestval", "w");
+   if (!f) exit(1);

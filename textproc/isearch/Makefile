@@ -2,7 +2,7 @@ COMMENT=	text search engine by CNIDR
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	textproc databases
 
 # BSD
