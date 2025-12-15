@@ -14,6 +14,9 @@ WANTLIB += c fftw3f m portaudio portmidi pthread sndio
 
 SITES =			http://msp.ucsd.edu/Software/
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		x11/tk
 
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
