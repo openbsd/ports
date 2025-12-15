@@ -102,6 +102,15 @@ Index: py-rcsparse.c
  }
  
  static PyGetSetDef pyrcsfile_getseters[] = {
+@@ -745,7 +770,7 @@ static PyMethodDef pyrcsfile_methods[] = {
+ };
+ 
+ static PyTypeObject pyrcsfile_type = {
+-	PyObject_HEAD_INIT(&PyType_Type)
++	PyVarObject_HEAD_INIT(&PyType_Type, 0)
+ 	.tp_name=		"rcsparse.rcsfile",
+ 	.tp_basicsize=		sizeof(struct pyrcsfile),
+ 	.tp_dealloc=		(destructor)pyrcsfile_dealloc,
 @@ -761,21 +786,48 @@ static PyMethodDef pyrcsparse_methods[] = {
  	{NULL}
  };
