@@ -30,7 +30,8 @@ RUN_DEPENDS +=	shells/bash
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	--with-packager="OpenBSD Ports" \
-		--enable-ucs4
+		--enable-ucs4 \
+		--without-yaml
 
 BUILD_DEPENDS +=	devel/m4
 pre-configure:
