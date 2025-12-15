@@ -4,22 +4,22 @@
 
 rbldnsd runs chrooted
 =====================
-By default, the rbldnsd package will chroot to ${VARBASE}/rbldnsd, and the
+By default, the rbldnsd package will chroot to ${RBLDNSD_BASE}, and the
 package will create two subdirectories underneath:
 
-	${VARBASE}/rbldnsd/             # rbldnsd chroot path
-	${VARBASE}/rbldnsd/etc/         # zonefiles
-	${VARBASE}/rbldnsd/var/         # scratch/work (-w) directory
+	${RBLDNSD_BASE}/             # rbldnsd chroot path
+	${RBLDNSD_BASE}/etc/         # zonefiles
+	${RBLDNSD_BASE}/var/         # scratch/work (-w) directory
 
 Because of the chroot(), all paths given to rbldnsd are relative to
-to the chroot path (${VARBASE}/rbldnsd).  Thus, with this line in
+to the chroot path (${RBLDNSD_BASE}).  Thus, with this line in
 /etc/rc.conf.local:
 
 rbldnsd_flags=-b 127.0.0.1/53 rbl.invalid:ip4tset:/etc/rbl.invalid.zone
 
 rbldnsd will load the "rbl.invalid" zone from
-${VARBASE}/rbldnsd/etc/rbl.invalid.zone and do any processing in
-${VARBASE}/rbldnsd/var/
+${RBLDNSD_BASE}/etc/rbl.invalid.zone and do any processing in
+${RBLDNSD_BASE}/var/
 
 Note that rbldnsd will refuse to start if you do not supply the "-b"
 option and an "IP address <forward slash> port number" argument for
