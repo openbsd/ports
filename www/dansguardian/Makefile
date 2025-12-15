@@ -14,9 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pcre pcreposix ${COMPILER_LIBCXX} z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=c++14
+CXXFLAGS =		-std=c++14
 
 SITES =			${SITE_SOURCEFORGE:=dansguardian/}
 

@@ -12,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_regex-mt c icudata icui18n
 WANTLIB += icuuc m
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=gnu++11
+CXXFLAGS =	-std=gnu++11
 
 SITES=		${SITE_GNU:=src-highlite/}
 

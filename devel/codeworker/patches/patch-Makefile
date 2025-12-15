@@ -1,13 +1,22 @@
---- Makefile.orig	Thu May 13 18:12:11 2010
-+++ Makefile	Thu May 13 18:12:19 2010
-@@ -150,8 +150,8 @@ all: build lib
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -141,7 +141,7 @@ OBJECTS = ASTCommand.o BNFAndOrJunction.o BNFBreak.o B
+ 		  GrfWriteTextOnce.o HTTPRequest.o JNIExternalHandling.o md5.o\
+ 		  NetSocket.o ScpStream.o UtlDate.o UtlDirectory.o\
+ 		  UtlException.o UtlString.o UtlTimer.o UtlTrace.o\
+-		  UtlXMLStream.o Workspace.o
++		  UtlXMLStream.o Workspace.o generator.o
+ ###end##"OBJECTS"
+ 
+ 
+@@ -150,8 +150,7 @@ all: build lib
  build: codeworker
  
  codeworker: $(OBJECTS)
 -	$(CC) -c generator.cpp
 -	$(CC) -o codeworker $(OBJECTS) generator.o $(LFLAGS) 
-+	$(CXX) -c generator.cpp
-+	$(CXX) -o codeworker $(OBJECTS) generator.o $(LDFLAGS) 
++	$(CXX) -o codeworker $(OBJECTS) $(LDFLAGS) 
  
  lib: $(OBJECTS)
  	ar -r libcodeworker.a $(OBJECTS)

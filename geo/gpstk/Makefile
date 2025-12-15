@@ -28,7 +28,7 @@ CXXFLAGS+=             -O0
 
 COMPILER=		base-clang ports-gcc
 
-CXXFLAGS_base-clang +=	-std=c++14
+CXXFLAGS +=		-std=c++14
 
 CONFIGURE_ARGS=		-DBUILD_EXT=on
 

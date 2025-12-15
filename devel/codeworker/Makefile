@@ -13,10 +13,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-CXXFLAGS_base-clang =	-std=c++14 \
-			-Wno-error=dynamic-exception-spec
+CXXFLAGS =		-std=c++14
 
 SITES =			${SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/
