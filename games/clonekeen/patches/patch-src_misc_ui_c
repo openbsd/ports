@@ -10,3 +10,12 @@ Index: src/misc_ui.c
  
  // pops up a message (used by youseeinyourmind and VorticonElder)
  int twirly_timer, twirly_frame, twirl_x=-1, twirl_y=-1;
+@@ -133,7 +133,7 @@ void ShipEp3(void)
+ {
+ char msgname[20];
+ uchar pick;
+-static lastpick = -1;
++static int lastpick = -1;
+ 	
+ 	// display one of four random strings
+ 	do { pick = (rnd()%4)+1; } while(pick == lastpick);

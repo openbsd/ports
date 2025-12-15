@@ -1,7 +1,7 @@
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
-REVISION =		6
+REVISION =		7
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen
