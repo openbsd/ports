@@ -2,7 +2,7 @@ COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007
 PKGNAME=		${DISTNAME:L:S/-Dec//}
-REVISION =		4
+REVISION =		5
 
 SITES=			${HOMEPAGE}/download/
 

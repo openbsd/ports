@@ -1,0 +1,12 @@
+Index: mace4.src/select.c
+--- mace4.src/select.c.orig
++++ mace4.src/select.c
+@@ -232,7 +232,7 @@ int select_concentric(void)
+  *
+  *************/
+ 
+-int select_concentric_band(max_constrained)
++int select_concentric_band(int max_constrained)
+ {
+   int max = -1;
+   int id_of_max = -1;
