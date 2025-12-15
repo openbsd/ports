@@ -1,11 +1,10 @@
 COMMENT =	QML and QtQuick benchmark tool
 
 # YYYYMMDD
-COMMIT_DATE =	20241908
+COMMIT_DATE =	20252805
 DISTNAME =	qmlbench-0.${COMMIT_DATE}
-REVISION =	1
 
-KDE_COMMIT =	5cf6dc79bb9f246f910739f8d5596a7567f66668
+KDE_COMMIT =	8432321769adee6d7e7c1a36ef1474f8914910a5
 DIST_TUPLE +=	kde qt/qt-labs qmlbench ${KDE_COMMIT} .
 
 CATEGORIES =	benchmarks
@@ -27,8 +26,11 @@ BUILD_DEPENDS =	graphics/vulkan-loader
 RUN_DEPENDS =	graphics/vulkan-loader
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative \
+		x11/qt6/qtshadertools \
 		x11/qt6/qtquick3d \
 		x11/qt6/qt5compat
+
+CONFIGURE_ARGS =	-DQT_GENERATE_SBOM=OFF
 
 WRKDIST =	${WRKDIR}/qmlbench-${KDE_COMMIT}
 

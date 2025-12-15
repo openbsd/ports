@@ -14,6 +14,13 @@ share/qmlbench/benchmarks/auto/animations/comparison/moving-images-animations.qm
 share/qmlbench/benchmarks/auto/animations/comparison/moving-images-animators.qml
 share/qmlbench/benchmarks/auto/animations/comparison/moving-images-script.qml
 share/qmlbench/benchmarks/auto/animations/comparison/moving-images-simple.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape_cosmetic_pen.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape_cosmetic_pen_curve_renderer.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape_curve_renderer.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape_gradient.qml
+share/qmlbench/benchmarks/auto/animations/quick.shapes/shape_gradient_curve_renderer.qml
 share/qmlbench/benchmarks/auto/bindings/
 share/qmlbench/benchmarks/auto/bindings/compositesingleton.qml
 share/qmlbench/benchmarks/auto/canvas/
@@ -136,6 +143,13 @@ share/qmlbench/benchmarks/auto/creation/quick.rectangle/delegates_rect_blended.q
 share/qmlbench/benchmarks/auto/creation/quick.rectangle/delegates_rect_border.qml
 share/qmlbench/benchmarks/auto/creation/quick.rectangle/delegates_rect_gradient.qml
 share/qmlbench/benchmarks/auto/creation/quick.rectangle/delegates_rect_radius.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape_cosmetic_pen.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape_cosmetic_pen_curve_renderer.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape_curve_renderer.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape_gradient.qml
+share/qmlbench/benchmarks/auto/creation/quick.shapes/delegates_shape_gradient_curve_renderer.qml
 share/qmlbench/benchmarks/auto/creation/quick.text/
 share/qmlbench/benchmarks/auto/creation/quick.text/comparison/
 share/qmlbench/benchmarks/auto/creation/quick.text/comparison/delegates_kerning.qml
@@ -170,6 +184,9 @@ share/qmlbench/benchmarks/auto/creation/quick.validators/
 share/qmlbench/benchmarks/auto/creation/quick.validators/delegates_doublevalidator.qml
 share/qmlbench/benchmarks/auto/creation/quick.validators/delegates_intvalidator.qml
 share/qmlbench/benchmarks/auto/creation/quick.validators/delegates_regexpvalidator.qml
+share/qmlbench/benchmarks/auto/creation/quick.vectorimage/
+share/qmlbench/benchmarks/auto/creation/quick.vectorimage/delegates_vectorimage_lottie.qml
+share/qmlbench/benchmarks/auto/creation/quick.vectorimage/delegates_vectorimage_svg.qml
 share/qmlbench/benchmarks/auto/creation/quick/compile.bat
 share/qmlbench/benchmarks/auto/creation/quick/delegates_flickable.qml
 share/qmlbench/benchmarks/auto/creation/quick/delegates_flipable.qml
