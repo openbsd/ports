@@ -1,6 +1,6 @@
 COMMENT =		completion input-method to speed up typing
 
-VERSION =		2.28.6
+VERSION =		2.29.0
 DISTNAME =		ibus-typing-booster-${VERSION}
 
 CATEGORIES =		inputmethods productivity
@@ -21,9 +21,13 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			inputmethods/ibus
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-gobject3 \
+			devel/py-xdg \
 			inputmethods/ibus \
 			misc/m17n/db \
 			misc/m17n/lib \
+			textproc/py-enchant \
+			x11/gtk+4 \
 			x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
