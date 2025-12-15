@@ -578,7 +578,7 @@
      SUBDIR += py-cbor2
      SUBDIR += py-curl
      SUBDIR += py-cymruwhois
-     SUBDIR += py-dns			# py2
+     SUBDIR += py-dns
      SUBDIR += py-dnslib
      SUBDIR += py-dnspython
      SUBDIR += py-dpkt

@@ -1,26 +1,18 @@
 COMMENT =	Python DNS library
 
-# only used by rbldnsd
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-MODPY_DISTV =	2.3.6
-DISTNAME =	pydns-${MODPY_DISTV}
+MODPY_DISTV =	4.0.2
+DISTNAME =	py3dns-${MODPY_DISTV}
 PKGNAME =	py-dns-${MODPY_DISTV}
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://pydns.sourceforge.net/
 
 # Python License
 PERMIT_PACKAGE =	Yes
 
-SITES =		${SITE_SOURCEFORGE:=pydns/}
-
+# tests need network
 MODULES =	lang/python
-
-do-test:
-	cd ${WRKSRC}/tests && for test in *.py; do \
-	    PYTHONPATH=.. ${MODPY_BIN} $$test; \
-	done
+MODPY_PYBUILD =	flit_core
+MODPY_PI =	Yes
 
 .include <bsd.port.mk>
