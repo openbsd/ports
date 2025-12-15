@@ -2,7 +2,7 @@ COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
-DIST_TUPLE =	github marcespie random_run 2.15 .
+DIST_TUPLE =	github marcespie random_run 2.16 .
 
 COMPILER =	base-clang ports-gcc
 
@@ -16,6 +16,7 @@ EXTRA_ports-gcc =	-lstdc++fs
 EXTRA_base-clang =	
 LDLIBS += 	${EXTRA_${CHOSEN_COMPILER}}
 
+# uses pledge()
 WANTLIB =	${COMPILER_LIBCXX} c m
 
 MAKE_FLAGS =	OPTIMIZE="${CXXFLAGS}" LDFLAGS="${DEBUG} ${LDFLAGS}" LDLIBS="${LDLIBS}"
