@@ -9,11 +9,13 @@
 @bin bin/dcmcjpls
 @bin bin/dcmconv
 @bin bin/dcmcrle
+@bin bin/dcmdecap
 @bin bin/dcmdjpeg
 @bin bin/dcmdjpls
 @bin bin/dcmdrle
 @bin bin/dcmdspfn
 @bin bin/dcmdump
+@bin bin/dcmencap
 @bin bin/dcmftest
 @bin bin/dcmgpdir
 @bin bin/dcmicmp
@@ -50,6 +52,7 @@
 @bin bin/findscu
 @bin bin/getscu
 @bin bin/img2dcm
+@bin bin/json2dcm
 @bin bin/mkcsmapper
 @bin bin/mkesdb
 @bin bin/movescu
@@ -78,6 +81,7 @@ include/dcmtk/dcmdata/dcdicdir.h
 include/dcmtk/dcmdata/dcdicent.h
 include/dcmtk/dcmdata/dcdict.h
 include/dcmtk/dcmdata/dcdirrec.h
+include/dcmtk/dcmdata/dcdocdec.h
 include/dcmtk/dcmdata/dcelem.h
 include/dcmtk/dcmdata/dcencdoc.h
 include/dcmtk/dcmdata/dcerror.h
@@ -92,6 +96,7 @@ include/dcmtk/dcmdata/dcistrms.h
 include/dcmtk/dcmdata/dcistrmz.h
 include/dcmtk/dcmdata/dcitem.h
 include/dcmtk/dcmdata/dcjson.h
+include/dcmtk/dcmdata/dcjsonrd.h
 include/dcmtk/dcmdata/dclist.h
 include/dcmtk/dcmdata/dcmatch.h
 include/dcmtk/dcmdata/dcmetinf.h
@@ -216,6 +221,7 @@ include/dcmtk/dcmfg/fgseg.h
 include/dcmtk/dcmfg/fgtemporalposition.h
 include/dcmtk/dcmfg/fgtypes.h
 include/dcmtk/dcmfg/fgusimagedescription.h
+include/dcmtk/dcmfg/framesorter.h
 include/dcmtk/dcmfg/stack.h
 include/dcmtk/dcmfg/stackinterface.h
 include/dcmtk/dcmimage/
@@ -309,6 +315,7 @@ include/dcmtk/dcmimgle/ditranst.h
 include/dcmtk/dcmimgle/diutils.h
 include/dcmtk/dcmiod/
 include/dcmtk/dcmiod/cielabutil.h
+include/dcmtk/dcmiod/iccexample.h
 include/dcmtk/dcmiod/iodcommn.h
 include/dcmtk/dcmiod/iodcontentitemmacro.h
 include/dcmtk/dcmiod/ioddef.h
@@ -331,11 +338,13 @@ include/dcmtk/dcmiod/modgeneralimage.h
 include/dcmtk/dcmiod/modgeneralseries.h
 include/dcmtk/dcmiod/modgeneralstudy.h
 include/dcmtk/dcmiod/modhelp.h
+include/dcmtk/dcmiod/modiccprofile.h
 include/dcmtk/dcmiod/modimagepixel.h
 include/dcmtk/dcmiod/modimagepixelbase.h
 include/dcmtk/dcmiod/modimagepixelvariant.h
 include/dcmtk/dcmiod/modmultiframedimension.h
 include/dcmtk/dcmiod/modmultiframefg.h
+include/dcmtk/dcmiod/modpalettecolorlut.h
 include/dcmtk/dcmiod/modpatient.h
 include/dcmtk/dcmiod/modpatientstudy.h
 include/dcmtk/dcmiod/modsegmentationseries.h
@@ -768,6 +777,7 @@ include/dcmtk/dcmrt/seq/drtwrsrs.h
 include/dcmtk/dcmrt/seq/drtws.h
 include/dcmtk/dcmrt/seq/drtxrs.h
 include/dcmtk/dcmseg/
+include/dcmtk/dcmseg/overlaputil.h
 include/dcmtk/dcmseg/segdef.h
 include/dcmtk/dcmseg/segdoc.h
 include/dcmtk/dcmseg/segment.h
@@ -1039,6 +1049,7 @@ include/dcmtk/ofstd/
 include/dcmtk/ofstd/diag/
 include/dcmtk/ofstd/diag/arrybnds.def
 include/dcmtk/ofstd/diag/asincond.def
+include/dcmtk/ofstd/diag/clangprg.def
 include/dcmtk/ofstd/diag/cnvrsn.def
 include/dcmtk/ofstd/diag/constexp.def
 include/dcmtk/ofstd/diag/ignrattr.def
@@ -1060,6 +1071,7 @@ include/dcmtk/ofstd/diag/unarymin.def
 include/dcmtk/ofstd/diag/unreachb.def
 include/dcmtk/ofstd/diag/unrefprm.def
 include/dcmtk/ofstd/diag/useafree.def
+include/dcmtk/ofstd/diag/vsconstexp.def
 include/dcmtk/ofstd/diag/vsdeclpd.def
 include/dcmtk/ofstd/diag/vsobjdes.def
 include/dcmtk/ofstd/diag/vsprfw.def
@@ -1090,6 +1102,7 @@ include/dcmtk/ofstd/offname.h
 include/dcmtk/ofstd/ofglobal.h
 include/dcmtk/ofstd/ofgrp.h
 include/dcmtk/ofstd/ofipc.h
+include/dcmtk/ofstd/ofjsmn.h
 include/dcmtk/ofstd/oflimits.h
 include/dcmtk/ofstd/oflist.h
 include/dcmtk/ofstd/ofmap.h
@@ -1101,11 +1114,13 @@ include/dcmtk/ofstd/ofpwd.h
 include/dcmtk/ofstd/ofrand.h
 include/dcmtk/ofstd/ofset.h
 include/dcmtk/ofstd/ofsetit.h
+include/dcmtk/ofstd/ofsha256.h
 include/dcmtk/ofstd/ofsockad.h
 include/dcmtk/ofstd/ofstack.h
 include/dcmtk/ofstd/ofstd.h
 include/dcmtk/ofstd/ofstdinc.h
 include/dcmtk/ofstd/ofstream.h
+include/dcmtk/ofstd/ofstrhlp.h
 include/dcmtk/ofstd/ofstring.h
 include/dcmtk/ofstd/ofstrutl.h
 include/dcmtk/ofstd/ofstub.h
@@ -1176,11 +1191,13 @@ lib/pkgconfig/dcmtk.pc
 @man man/man1/dcmcjpls.1
 @man man/man1/dcmconv.1
 @man man/man1/dcmcrle.1
+@man man/man1/dcmdecap.1
 @man man/man1/dcmdjpeg.1
 @man man/man1/dcmdjpls.1
 @man man/man1/dcmdrle.1
 @man man/man1/dcmdspfn.1
 @man man/man1/dcmdump.1
+@man man/man1/dcmencap.1
 @man man/man1/dcmftest.1
 @man man/man1/dcmgpdir.1
 @man man/man1/dcmicmp.1
@@ -1217,6 +1234,7 @@ lib/pkgconfig/dcmtk.pc
 @man man/man1/findscu.1
 @man man/man1/getscu.1
 @man man/man1/img2dcm.1
+@man man/man1/json2dcm.1
 @man man/man1/mkcsmapper.1
 @man man/man1/mkesdb.1
 @man man/man1/movescu.1
@@ -1402,6 +1420,7 @@ share/doc/dcmtk-${V}/CHANGES.366
 share/doc/dcmtk-${V}/CHANGES.367
 share/doc/dcmtk-${V}/CHANGES.368
 share/doc/dcmtk-${V}/CHANGES.369
+share/doc/dcmtk-${V}/CHANGES.370
 share/doc/dcmtk-${V}/COPYRIGHT
 share/doc/dcmtk-${V}/CREDITS
 share/doc/dcmtk-${V}/FAQ
@@ -1415,7 +1434,6 @@ share/doc/dcmtk-${V}/dcmqrcnf.txt
 share/doc/dcmtk-${V}/dcmqrset.txt
 share/doc/dcmtk-${V}/dirstruc.txt
 share/doc/dcmtk-${V}/envvars.txt
-share/doc/dcmtk-${V}/html/
 share/doc/dcmtk-${V}/macros.txt
 share/doc/dcmtk-${V}/modules.txt
 share/doc/dcmtk-${V}/randseed.txt
