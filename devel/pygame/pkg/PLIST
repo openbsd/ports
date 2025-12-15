@@ -1,3 +1,4 @@
+@pkgpath devel/py2-pygame
 @pkgpath devel/pygame,python3
 include/python${MODPY_VERSION}/pygame/
 include/python${MODPY_VERSION}/pygame/_blit_info.h
