@@ -1,0 +1,8 @@
+Click is a package for creating powerful and beautiful command line
+interfaces (CLI) in Python, but it has no the functionality for
+creating option groups.
+
+Option groups are convenient mechanism for logical structuring CLI,
+also it allows you to set the specific behavior and set the
+relationship among grouped options (mutually exclusive options for
+example).
