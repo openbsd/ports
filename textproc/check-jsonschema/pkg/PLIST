@@ -64,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/dependabot.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/drone-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-actions.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-discussion.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-config.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-forms.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-workflows.json
