@@ -2,10 +2,11 @@ COMMENT =		URI parsing library
 
 GH_ACCOUNT =		uriparser
 GH_PROJECT =		uriparser
-GH_TAGNAME =		uriparser-0.9.9
+GH_TAGNAME =		uriparser-1.0.0
 PKGNAME =		${GH_TAGNAME}
 
-SHARED_LIBS +=  uriparser 4.0 # 2.0.1 (see CMakeLists.txt)
+# (ver from CMakeLists.txt URIPARSER_SO_CURRENT and URIPARSER_SO_REVISION)
+SHARED_LIBS +=  uriparser 4.1	# 3.0
 
 CATEGORIES =		www
 
@@ -15,6 +16,9 @@ HOMEPAGE =		https://uriparser.github.io/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		devel/cmake
 SUBST_VARS +=		GH_TAGNAME
