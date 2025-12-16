@@ -1,0 +1,2 @@
+Flask-Compress allows you to easily compress your Flask application's
+responses with gzip, deflate, brotli or zstd.
