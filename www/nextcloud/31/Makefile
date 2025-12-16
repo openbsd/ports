@@ -1,2 +1,3 @@
-NC_VERSION=	31.0.11
+NC_VERSION=	31.0.12
+
 .include <bsd.port.mk>
