@@ -1,7 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_DISTV =	1.141.0
-REVISION =	0
+MODPY_DISTV =	1.144.0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -32,6 +31,7 @@ BUILD_DEPENDS += devel/py-setuptools-rust>=1.3.0
 
 # in same order as in pyproject.toml: mandatory section
 RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
+		devel/py-rpds-py>=0.25.0 \
 		devel/py-immutabledict \
 		textproc/py-unpaddedbase64>=2.1.0 \
 		textproc/py-canonicaljson<3.0.0,>=2.0.0 \
@@ -55,7 +55,7 @@ RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
 		net/py-netaddr \
 		www/py-jinja2 \
 		www/py-bleach \
-		devel/py-typing-extensions>=4.3.0 \
+		devel/py-typing-extensions>=4.14.1 \
 		security/py-cryptography \
 		textproc/py-ijson \
 		devel/py-matrix-common>=1.3.0,<2.0.0 \
