@@ -1,0 +1,3 @@
+Polyline is a Python implementation of Google's Encoded Polyline
+Algorithm Format. It is essentially a port of Mapbox polyline with
+some additional features.
