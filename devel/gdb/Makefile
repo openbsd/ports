@@ -1,3 +1,6 @@
+# builds many files and is on the path to lang/rust
+DPB_PROPERTIES=	parallel
+
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
