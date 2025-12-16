@@ -324,6 +324,7 @@
      SUBDIR += py-command_runner
      SUBDIR += py-consul
      SUBDIR += py-cpuinfo
+     SUBDIR += py-cron-descriptor
      SUBDIR += py-croniter
      SUBDIR += py-daemon
      SUBDIR += py-daemonize

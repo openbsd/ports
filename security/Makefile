@@ -295,6 +295,7 @@
      SUBDIR += py-fastecdsa
      SUBDIR += py-fickling
      SUBDIR += py-fido2
+     SUBDIR += py-google-auth
      SUBDIR += py-gnupg
      SUBDIR += py-gssapi
      SUBDIR += py-hkdf
@@ -318,6 +319,7 @@
      SUBDIR += py-pykeepass
      SUBDIR += py-pyotp
      SUBDIR += py-pyscard
+     SUBDIR += py-pyu2f
      SUBDIR += py-requests-aws4auth
      SUBDIR += py-ropper
      SUBDIR += py-rsa

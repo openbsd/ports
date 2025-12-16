@@ -1391,6 +1391,7 @@
      SUBDIR += py-awscrt
      SUBDIR += py-babel
      SUBDIR += py-backcall
+     SUBDIR += py-backoff
      SUBDIR += py-bencode
      SUBDIR += py-beniget
      SUBDIR += py-billiard
@@ -1422,6 +1423,7 @@
      SUBDIR += py-click
      SUBDIR += py-click-didyoumean
      SUBDIR += py-click-log
+     SUBDIR += py-click-option-group
      SUBDIR += py-click-plugins
      SUBDIR += py-click-repl
      SUBDIR += py-click-threading
@@ -1507,6 +1509,7 @@
      SUBDIR += py-gobject3
      SUBDIR += py-greenlet
      SUBDIR += py-hamcrest
+     SUBDIR += py-hashids
      SUBDIR += py-hatch-fancy-pypi-readme
      SUBDIR += py-hatch-jupyter-builder
      SUBDIR += py-hatch-nodejs-version
@@ -1514,6 +1517,7 @@
      SUBDIR += py-hatch-vcs
      SUBDIR += py-hatchling
      SUBDIR += py-helpdev
+     SUBDIR += py-holidays
      SUBDIR += py-html5lib
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesmith
@@ -1581,6 +1585,7 @@
      SUBDIR += py-modulegraph
      SUBDIR += py-more-itertools
      SUBDIR += py-mox3
+     SUBDIR += py-msgspec
      SUBDIR += py-mulpyplexer
      SUBDIR += py-multiprocess
      SUBDIR += py-multitasking

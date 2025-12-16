@@ -55,8 +55,10 @@
      SUBDIR += py-cligj
      SUBDIR += py-fiona
      SUBDIR += py-geofilter
+     SUBDIR += py-geographiclib
      SUBDIR += py-geoif
      SUBDIR += py-geojson
+     SUBDIR += py-geopy
      SUBDIR += py-google-i18n-address
      SUBDIR += py-laspy
      SUBDIR += py-mercantile
@@ -64,6 +66,7 @@
      SUBDIR += py-osmium
      SUBDIR += py-owslib
      SUBDIR += py-planet
+     SUBDIR += py-polyline
      SUBDIR += py-proj
      SUBDIR += py-rasterio
      SUBDIR += py-rio-cogeo

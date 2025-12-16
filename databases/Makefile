@@ -168,6 +168,7 @@
      SUBDIR += py-borgstore
      SUBDIR += py-bsddb3
      SUBDIR += py-carbon
+     SUBDIR += py-flask-migrate
      SUBDIR += py-flask-sqlalchemy
      SUBDIR += py-influxdb
      SUBDIR += py-influxdb_client
@@ -183,12 +184,14 @@
      SUBDIR += py-odbc
      SUBDIR += py-peewee
      SUBDIR += py-pg_activity
+     SUBDIR += py-pgsanity
      SUBDIR += py-pickleshare
      SUBDIR += py-psycopg2
      SUBDIR += py-puppetdb
      SUBDIR += py-pygresql
      SUBDIR += py-pymysql
      SUBDIR += py-redis
+     SUBDIR += py-shillelagh
      SUBDIR += py-sql
      SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlalchemy-utils

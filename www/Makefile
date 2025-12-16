@@ -443,11 +443,13 @@
      SUBDIR += py-flask-apscheduler
      SUBDIR += py-flask-babel
      SUBDIR += py-flask-caching
+     SUBDIR += py-flask-compress
      SUBDIR += py-flask-cors
      SUBDIR += py-flask-jwt-extended
      SUBDIR += py-flask-limiter
      SUBDIR += py-flask-login
      SUBDIR += py-flask-principal
+     SUBDIR += py-flask-session
      SUBDIR += py-flask-wtf
      SUBDIR += py-flup
      SUBDIR += py-formencode
