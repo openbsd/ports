@@ -27,6 +27,10 @@ SITES =			https://ftp.exim.org/pub/exim/exim4/ \
 			ftp://ftp.exim.org/pub/exim/exim4/fixes/ \
 			ftp://ftp.exim.org/pub/exim/exim4/old/
 
+# needs C11 _Generic
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # only used for exim_id_update (which is run as part of the build,
 # ./exim_id_update -v 2>&1 >/dev/null)
 BUILD_DEPENDS =		devel/p5-File-FcntlLock
