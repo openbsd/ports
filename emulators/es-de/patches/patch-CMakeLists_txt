@@ -3,7 +3,15 @@ Don't strip debug symbols.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -225,7 +225,7 @@ else()
+@@ -155,6 +155,7 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
+     find_package(Libgit2 REQUIRED)
+     find_package(Pugixml REQUIRED)
+     find_package(SDL2 REQUIRED)
++    use_pkgconfig(lunasvg lunasvg)
+ endif()
+ 
+ # Add libCEC support.
+@@ -225,7 +226,7 @@ else()
          if(APPLE)
              set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
          else()
@@ -12,3 +20,41 @@ Index: CMakeLists.txt
          endif()
      endif()
  endif()
+@@ -540,7 +541,8 @@ else()
+                             ${HarfBuzz_INCLUDE_DIRS}
+                             ${ICU_INCLUDE_DIRS}
+                             ${PUGIXML_INCLUDE_DIRS}
+-                            ${SDL2_INCLUDE_DIR})
++                            ${SDL2_INCLUDE_DIR}
++                            ${lunasvg_INCLUDE_DIRS})
+ endif()
+ 
+ # Add libCEC include directory.
+@@ -694,7 +696,8 @@ else()
+                          ${HarfBuzz_LIBRARIES}
+                          ${ICU_LIBRARIES}
+                          ${PUGIXML_LIBRARIES}
+-                         ${SDL2_LIBRARY})
++                         ${SDL2_LIBRARY}
++                         ${lunasvg_LINK_LIBRARIES})
+     if(Intl_LIBRARY)
+         # On Unix systems where the gettext functions are not part of the C standard library
+         # we need to explicitly link with the libintl library.
+@@ -711,7 +714,6 @@ if(NOT WIN32)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/liblunasvg.a)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/librlottie.a)
+     else()
+-        set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/liblunasvg.a)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/librlottie.a)
+     endif()
+ endif()
+@@ -769,9 +771,6 @@ add_subdirectory(es-pdf-converter)
+ add_subdirectory(external)
+ add_subdirectory(es-core)
+ add_subdirectory(es-app)
+-
+-# Make sure that es-pdf-convert is built first, and then that rlottie is built before es-core.
+-add_dependencies(lunasvg es-pdf-convert)
+ 
+ if(COMPILE_LOCALIZATIONS)
+     add_dependencies(es-pdf-convert localization)

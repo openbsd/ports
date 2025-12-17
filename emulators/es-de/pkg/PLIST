@@ -228,6 +228,9 @@ share/es-de/resources/graphics/textinput_focused.svg
 share/es-de/resources/graphics/white.png
 share/es-de/resources/graphics/window_icon_256.png
 share/es-de/resources/locale/
+share/es-de/resources/locale/ar_SA/
+share/es-de/resources/locale/ar_SA/LC_MESSAGES/
+share/es-de/resources/locale/ar_SA/LC_MESSAGES/ar_SA.mo
 share/es-de/resources/locale/bs_BA/
 share/es-de/resources/locale/bs_BA/LC_MESSAGES/
 share/es-de/resources/locale/bs_BA/LC_MESSAGES/bs_BA.mo

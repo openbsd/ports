@@ -1,0 +1,23 @@
+Index: external/CMakeLists.txt
+--- external/CMakeLists.txt.orig
++++ external/CMakeLists.txt
+@@ -33,8 +33,6 @@ else()
+     set(BUILD_SHARED_LIBS OFF)
+ endif()
+ 
+-add_subdirectory(lunasvg EXCLUDE_FROM_ALL)
+-
+ # Disable LunaSVG DLL interface warnings and narrowing conversion warnings.
+ if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+     target_compile_options(lunasvg PRIVATE "/wd4251" "/wd4267")
+@@ -70,10 +68,3 @@ if(ANDROID)
+     set_target_properties(rlottie PROPERTIES ARCHIVE_OUTPUT_DIRECTORY
+                           ${PROJECT_SOURCE_DIR}/android_${ANDROID_ABI})
+ endif()
+-
+-if(NOT WIN32)
+-    add_dependencies(plutovg lunasvg)
+-endif()
+-
+-# Build LunaSVG before rlottie.
+-add_dependencies(rlottie lunasvg)
