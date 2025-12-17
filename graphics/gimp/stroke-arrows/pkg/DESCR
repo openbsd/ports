@@ -1,0 +1,5 @@
+Plugin for gimp: stroke one or several paths as arrow,
+it will be placed at the bottom of the "Edit" menu.
+
+A few styles are available for the arrowhead and tail,
+the body is a standard line stroke with configureable with.
