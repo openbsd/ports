@@ -34,6 +34,7 @@
      SUBDIR += cmark
      SUBDIR += codesearch
      SUBDIR += codespell
+     SUBDIR += cookcli
      SUBDIR += cooklang-chef
      SUBDIR += crossfire
      SUBDIR += crunch
