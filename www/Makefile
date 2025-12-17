@@ -529,6 +529,7 @@
      SUBDIR += py-wstools
      SUBDIR += py-wtforms
      SUBDIR += py-yarl
+     SUBDIR += py-yt-dlp-ejs
      SUBDIR += qobuz-dl
      SUBDIR += qutebrowser
      SUBDIR += racktables
