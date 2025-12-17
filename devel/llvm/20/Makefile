@@ -1,5 +1,5 @@
-# this is only used for lang/zig at the moment
-ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
+# this is only used for lang/rust and lang/zig at the moment
+ONLY_FOR_ARCHS =	amd64 arm64 powerpc64 riscv64 sparc64
 
 LLVM_MAJOR =	20
 LLVM_VERSION =	${LLVM_MAJOR}.1.8
