@@ -1,8 +1,5 @@
-PHP_VERSION=	8.3.28
+PHP_VERSION=	8.3.29
 AUTOCONF_VERSION= 2.71
-
-# keep about 7.8-stable
-REVISION=	0
 
 DEFAULT_PHP=	Yes
 
