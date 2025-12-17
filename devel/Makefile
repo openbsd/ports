@@ -244,7 +244,6 @@
      SUBDIR += jadx
      SUBDIR += jam
      SUBDIR += jansson
-     SUBDIR += javahelp
      SUBDIR += jd-gui
      SUBDIR += jdk
      SUBDIR += jenkins
