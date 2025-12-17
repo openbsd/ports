@@ -3,7 +3,7 @@
 Index: dxf2gcode/globals/config.py
 --- dxf2gcode/globals/config.py.orig
 +++ dxf2gcode/globals/config.py
-@@ -53,7 +53,7 @@ old versions are recognized and skipped"
+@@ -53,12 +53,12 @@ old versions are recognized and skipped"
  """
  
  # Paths change whether platform is Linux or Windows
@@ -12,3 +12,10 @@ Index: dxf2gcode/globals/config.py
      #Declare here the path that are specific to Linux
      IMPORT_DIR = "~/Documents"
      OUTPUT_DIR = "~/Documents"
+-    PDFTOPS_CMD = "/usr/bin/pdftops"
+-    PSTOEDIT_CMD = "/usr/bin/pstoedit"
++    PDFTOPS_CMD = "/usr/local/bin/pdftops"
++    PSTOEDIT_CMD = "/usr/local/bin/pstoedit"
+ else:
+     #Declare here the path that are specific to Windows
+     IMPORT_DIR = "D:/Eclipse_Workspace/DXF2GCODE/trunk/dxf"
