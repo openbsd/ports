@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.476 2025/11/28 18:25:53 kn Exp $
+$OpenBSD: user.list,v 1.477 2025/12/17 18:04:08 pascal Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -116,7 +116,7 @@ id  user		group		port
 605 _pm2		_pm2		www/pm2
 606 _ladvd		_ladvd		net/ladvd
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
-#608 _cherokee		_cherokee	www/cherokee
+608 _cook		_cook		textproc/cookcli
 609 _powerdns		_powerdns	net/powerdns
 610 _squeezecenter	_squeezecenter	audio/squeezecenter
 611 _icecast		_icecast	net/icecast
