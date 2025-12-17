@@ -1,0 +1,12 @@
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -42,7 +42,7 @@ OPTIMIZE ?= -O2
+ CFLAGS  = $(OPTIMIZE) -g2 $(INCL) $(CDEBUG) $(MACHINECFLAGS) $(ARCHCFLAGS) $(EXTRACFLAGS) $(VERSIONCFLAGS) -DHOST_$(HOST) $(PFLAGS)
+ MFLAGS  = $(OPTIMIZE) -g2 $(INCL) $(CDEBUG) $(MACHINECFLAGS) $(EXTRACFLAGS) $(VERSIONCFLAGS) -DHOST_$(HOST) $(PFLAGS)
+ LDFLAGS += $(PFLAGS) $(ARCHLDFLAGS)
+-CONLYFLAGS =  -std=gnu99 -Wall -Werror -Wno-format
++CONLYFLAGS =  -std=gnu99 -Wall -Wno-format
+ 
+ SOBJS	= charset.o dtnetsubs.o
+ 
