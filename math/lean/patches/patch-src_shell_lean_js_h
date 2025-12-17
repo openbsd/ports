@@ -1,0 +1,11 @@
+Index: src/shell/lean_js.h
+--- src/shell/lean_js.h.orig
++++ src/shell/lean_js.h
+@@ -6,6 +6,7 @@ Author: Leonardo de Moura
+ */
+ #pragma once
+ #include <string>
++#include <cstdint>
+ void initialize_emscripten();
+ void finalize_emscripten();
+ int emscripten_process_request(uintptr_t msg);

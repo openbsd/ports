@@ -1,0 +1,11 @@
+Index: src/shell/lean_js.cpp
+--- src/shell/lean_js.cpp.orig
++++ src/shell/lean_js.cpp
+@@ -5,6 +5,7 @@ Released under Apache 2.0 license as described in the 
+ Author: Leonardo de Moura
+ */
+ #include <string>
++#include <cstdint>
+ #include "library/module_mgr.h"
+ #include "library/st_task_queue.h"
+ #include "library/module.h"
