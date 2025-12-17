@@ -1,0 +1,10 @@
+@newgroup _cook:608
+@newuser _cook:608:_cook::cookcli server:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/cook_server
+@bin bin/cook
+share/doc/pkg-readmes/${PKGSTEM}
+@mode 770
+@owner _cook
+@group _cook
+@sample ${LOCALSTATEDIR}/cook/
+@sample ${LOCALSTATEDIR}/cook/config/

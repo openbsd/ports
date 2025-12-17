@@ -1,0 +1,18 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+This package provides an rc script for the integrated "cook server" web
+server, which serves content from a system-wide recipe directory located
+at ${LOCALSTATEDIR}/cook.  Write permission can be granted by adding a user
+to the _cook group.
+
+Sample recipes and config files can be seeded using:
+
+$ cd ${LOCALSTATEDIR}/cook && cook seed
+
+Then, start the server:
+
+# rcctl start cook_server
+
+The web interface will be served on port 9080 to the local network.
