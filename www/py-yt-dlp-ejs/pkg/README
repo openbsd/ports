@@ -1,0 +1,12 @@
+Running ${PKGSTEM} on OpenBSD
+=============================
+
+For YouTube support, one of the following JS runtimes is required to be
+installed:
+* deno
+* quickjs
+* node
+
+deno is used by default on amd64/aarch64 as it is the default upstream option.
+An alternative can be selected by passing the --js-runtimes <runtime> flag.
+This will also be required on other architectures.

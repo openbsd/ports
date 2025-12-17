@@ -1,0 +1,21 @@
+Index: pnpm.py
+--- pnpm.py.orig
++++ pnpm.py
+@@ -13,17 +13,6 @@ except ImportError:
+ 
+ class CustomBuildHook(BuildHookInterface):
+     def initialize(self, version, build_data):
+-        name, pnpm = build_pnpm()
+-        if pnpm is None:
+-            raise RuntimeError(
+-                "One of 'deno', 'bun', or 'npm' could not be found. "
+-                "Please install one of them to proceed with the build."
+-            )
+-        print(f"Building with {name}...")
+-
+-        pnpm(["install", "--frozen-lockfile"])
+-        pnpm(["run", "bundle"])
+-
+         build_data["force_include"].update(
+             {
+                 "dist/yt.solver.core.min.js": "yt_dlp_ejs/yt/solver/core.min.js",
