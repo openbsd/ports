@@ -1,9 +1,0 @@
-#!/bin/sh
-
-JAVACMD=$(javaPathHelper -c javahelp)
-
-if [ -z "${JAVACMD}" ]; then
-  exit 1
-fi
-
-exec ${JAVACMD} -jar ${TRUEPREFIX}/share/java/classes/javahelp/bin/jhsearch.jar "$@"
