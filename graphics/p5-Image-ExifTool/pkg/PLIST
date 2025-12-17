@@ -112,6 +112,7 @@ ${P5SITE}/Image/ExifTool/JPEGDigest.pm
 ${P5SITE}/Image/ExifTool/JSON.pm
 ${P5SITE}/Image/ExifTool/JVC.pm
 ${P5SITE}/Image/ExifTool/Jpeg2000.pm
+${P5SITE}/Image/ExifTool/Kandao.pm
 ${P5SITE}/Image/ExifTool/Kodak.pm
 ${P5SITE}/Image/ExifTool/KyoceraRaw.pm
 ${P5SITE}/Image/ExifTool/LIF.pm
@@ -322,6 +323,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::JSON.3p
 @man man/man3p/Image::ExifTool::JVC.3p
 @man man/man3p/Image::ExifTool::Jpeg2000.3p
+@man man/man3p/Image::ExifTool::Kandao.3p
 @man man/man3p/Image::ExifTool::Kodak.3p
 @man man/man3p/Image::ExifTool::KyoceraRaw.3p
 @man man/man3p/Image::ExifTool::LIF.3p
