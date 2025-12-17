@@ -6,5 +6,6 @@
      SUBDIR += resynthesizer
      SUBDIR += snapshot
      SUBDIR += stable
+     SUBDIR += stroke-arrows
 
 .include <bsd.port.subdir.mk>
