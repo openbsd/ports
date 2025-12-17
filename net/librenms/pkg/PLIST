@@ -164,6 +164,7 @@ librenms/LibreNMS/Enum/MaintenanceStatus.php
 librenms/LibreNMS/Enum/PortAssociationMode.php
 librenms/LibreNMS/Enum/PortSecurityStatus.php
 librenms/LibreNMS/Enum/PowerState.php
+librenms/LibreNMS/Enum/ProcessType.php
 librenms/LibreNMS/Enum/Sensor.php
 librenms/LibreNMS/Enum/Severity.php
 librenms/LibreNMS/Enum/SyslogSeverity.php
@@ -575,6 +576,7 @@ librenms/LibreNMS/OS/Sonicwall.php
 librenms/LibreNMS/OS/Speedtouch.php
 librenms/LibreNMS/OS/Stellar.php
 librenms/LibreNMS/OS/Svos.php
+librenms/LibreNMS/OS/Swos.php
 librenms/LibreNMS/OS/Symbol.php
 librenms/LibreNMS/OS/Tachyon.php
 librenms/LibreNMS/OS/TaitInfra93.php
@@ -834,6 +836,7 @@ librenms/LibreNMS/Util/Laravel.php
 librenms/LibreNMS/Util/Mac.php
 librenms/LibreNMS/Util/Mail.php
 librenms/LibreNMS/Util/Module.php
+librenms/LibreNMS/Util/ModuleList.php
 librenms/LibreNMS/Util/ModuleTestHelper.php
 librenms/LibreNMS/Util/Notifications.php
 librenms/LibreNMS/Util/Number.php
@@ -913,6 +916,7 @@ librenms/app/Actions/Device/
 librenms/app/Actions/Device/CheckDeviceAvailability.php
 librenms/app/Actions/Device/DeviceIsPingable.php
 librenms/app/Actions/Device/DeviceIsSnmpable.php
+librenms/app/Actions/Device/DeviceMtuTest.php
 librenms/app/Actions/Device/SetDeviceAvailability.php
 librenms/app/Actions/Device/TracerouteToDevice.php
 librenms/app/Actions/Device/UpdateDeviceGroupsAction.php
@@ -942,6 +946,7 @@ librenms/app/Console/Commands/ConfigListCommand.php
 librenms/app/Console/Commands/DevCheckCommand.php
 librenms/app/Console/Commands/DevSimulate.php
 librenms/app/Console/Commands/DeviceAdd.php
+librenms/app/Console/Commands/DeviceDiscover.php
 librenms/app/Console/Commands/DevicePing.php
 librenms/app/Console/Commands/DevicePoll.php
 librenms/app/Console/Commands/DeviceRemove.php
@@ -953,6 +958,7 @@ librenms/app/Console/Commands/MaintenanceCleanupNetworks.php
 librenms/app/Console/Commands/MaintenanceCleanupSyslog.php
 librenms/app/Console/Commands/MaintenanceDatabaseCleanup.php
 librenms/app/Console/Commands/MaintenanceFetchOuis.php
+librenms/app/Console/Commands/MaintenanceFetchRSS.php
 librenms/app/Console/Commands/PluginAddCommand.php
 librenms/app/Console/Commands/PluginDisable.php
 librenms/app/Console/Commands/PluginEnable.php
@@ -971,6 +977,7 @@ librenms/app/Console/Commands/SnmpWalk.php
 librenms/app/Console/Commands/Traits/
 librenms/app/Console/Commands/Traits/CompletesConfigArgument.php
 librenms/app/Console/Commands/Traits/CompletesPluginArgument.php
+librenms/app/Console/Commands/Traits/ProcessesDevices.php
 librenms/app/Console/Commands/TranslationGenerateCommand.php
 librenms/app/Console/DynamicInputOption.php
 librenms/app/Console/LnmsCommand.php
@@ -978,7 +985,9 @@ librenms/app/Console/SyntheticDeviceField.php
 librenms/app/Discovery/
 librenms/app/Discovery/Sensor.php
 librenms/app/Events/
+librenms/app/Events/DeviceDiscovered.php
 librenms/app/Events/DevicePolled.php
+librenms/app/Events/DiscoveringDevice.php
 librenms/app/Events/PollingDevice.php
 librenms/app/Events/UserCreated.php
 librenms/app/Exceptions/
@@ -1236,6 +1245,7 @@ librenms/app/Http/ViewComposers/
 librenms/app/Http/ViewComposers/LayoutComposer.php
 librenms/app/Http/ViewComposers/MenuComposer.php
 librenms/app/Jobs/
+librenms/app/Jobs/DiscoverDevice.php
 librenms/app/Jobs/PingCheck.php
 librenms/app/Jobs/PollDevice.php
 librenms/app/Listeners/
@@ -1278,6 +1288,10 @@ librenms/app/Models/Availability.php
 librenms/app/Models/BaseModel.php
 librenms/app/Models/BgpPeer.php
 librenms/app/Models/Bill.php
+librenms/app/Models/BillData.php
+librenms/app/Models/BillHistory.php
+librenms/app/Models/BillPortCounter.php
+librenms/app/Models/BillRelatedModel.php
 librenms/app/Models/Callback.php
 librenms/app/Models/CefSwitching.php
 librenms/app/Models/Component.php
@@ -1297,6 +1311,7 @@ librenms/app/Models/DeviceGraph.php
 librenms/app/Models/DeviceGroup.php
 librenms/app/Models/DeviceOutage.php
 librenms/app/Models/DeviceRelatedModel.php
+librenms/app/Models/DeviceStats.php
 librenms/app/Models/DiskIo.php
 librenms/app/Models/EntPhysical.php
 librenms/app/Models/EntityState.php
@@ -1404,6 +1419,7 @@ librenms/app/Observers/StpObserver.php
 librenms/app/Observers/UserObserver.php
 librenms/app/Observers/VminfoObserver.php
 librenms/app/Observers/WirelessSensorObserver.php
+librenms/app/PerDeviceProcess.php
 librenms/app/Plugins/
 librenms/app/Plugins/ExamplePlugin/
 librenms/app/Plugins/ExamplePlugin/DeviceOverview.php
@@ -1894,6 +1910,7 @@ librenms/database/migrations/2025_05_03_152418_remove_invalid_sensor_classes.php
 librenms/database/migrations/2025_05_07_103301_fix_ipv4_addresses_id_type.php
 librenms/database/migrations/2025_05_20_084533_dashboard_admin_move_full_shared.php
 librenms/database/migrations/2025_05_25_183627_drop_view_port_mac_link.php
+librenms/database/migrations/2025_05_28_092148_create_device_stats.php
 librenms/database/migrations/2025_06_11_025425_hr_device_table_add_status_default.php
 librenms/database/migrations/2025_06_11_173916_drop_alert_rule.php
 librenms/database/migrations/2025_06_19_165621_add_behavior_to_alert_schedule_table.php
@@ -1910,6 +1927,9 @@ librenms/database/migrations/2025_09_17_101816_add_timestamp_indexes_to_device_o
 librenms/database/migrations/2025_09_18_132019_add_basic_roles.php
 librenms/database/migrations/2025_09_24_145502_add_port_security_table.php
 librenms/database/migrations/2025_10_17_112553_bgp_peers_cbgp_bigint.php
+librenms/database/migrations/2025_11_25_102228_increase_increase_port_descr_speed_length.php
+librenms/database/migrations/2025_11_26_170658_set_device_stats_timestamp_nullable.php
+librenms/database/migrations/2025_12_05_205509_devices_add_mtu_status.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.sql
 librenms/database/schema/testing-schema.sql
@@ -1924,7 +1944,6 @@ librenms/delhost.php
 librenms/discovery-wrapper.py
 librenms/discovery.php
 librenms/dist/
-librenms/dist-pollers.php
 librenms/dist/librenms-scheduler.cron
 librenms/dist/librenms-scheduler.service
 librenms/dist/librenms-scheduler.timer
@@ -3602,6 +3621,14 @@ librenms/includes/html/graphs/application/hv-monitor_snaps_size.inc.php
 librenms/includes/html/graphs/application/hv-monitor_status-int.inc.php
 librenms/includes/html/graphs/application/hv-monitor_status.inc.php
 librenms/includes/html/graphs/application/hv-monitor_time.inc.php
+librenms/includes/html/graphs/application/i2pd_bw_15s.inc.php
+librenms/includes/html/graphs/application/i2pd_bw_1s.inc.php
+librenms/includes/html/graphs/application/i2pd_net_status.inc.php
+librenms/includes/html/graphs/application/i2pd_peers.inc.php
+librenms/includes/html/graphs/application/i2pd_total_bytes.inc.php
+librenms/includes/html/graphs/application/i2pd_tunnels_participating.inc.php
+librenms/includes/html/graphs/application/i2pd_tunnels_successrate.inc.php
+librenms/includes/html/graphs/application/i2pd_uptime.inc.php
 librenms/includes/html/graphs/application/icecast_cpuload.inc.php
 librenms/includes/html/graphs/application/icecast_memoryusage.inc.php
 librenms/includes/html/graphs/application/icecast_openfiles.inc.php
@@ -5297,6 +5324,7 @@ librenms/includes/html/pages/device/apps/freeswitch.inc.php
 librenms/includes/html/pages/device/apps/gpsd.inc.php
 librenms/includes/html/pages/device/apps/http_access_log_combined.inc.php
 librenms/includes/html/pages/device/apps/hv-monitor.inc.php
+librenms/includes/html/pages/device/apps/i2pd.inc.php
 librenms/includes/html/pages/device/apps/icecast.inc.php
 librenms/includes/html/pages/device/apps/linux_config_files.inc.php
 librenms/includes/html/pages/device/apps/linux_softnet_stat.inc.php
@@ -5677,6 +5705,7 @@ librenms/includes/polling/applications/freeswitch.inc.php
 librenms/includes/polling/applications/gpsd.inc.php
 librenms/includes/polling/applications/http_access_log_combined.inc.php
 librenms/includes/polling/applications/hv-monitor.inc.php
+librenms/includes/polling/applications/i2pd.inc.php
 librenms/includes/polling/applications/icecast.inc.php
 librenms/includes/polling/applications/linux_config_files.inc.php
 librenms/includes/polling/applications/linux_softnet_stat.inc.php
@@ -6721,8 +6750,10 @@ librenms/mibs/ats/ATS-MIB
 librenms/mibs/audiocodes/
 librenms/mibs/audiocodes/AC-ALARM-MIB
 librenms/mibs/audiocodes/AC-ANALOG-MIB
+librenms/mibs/audiocodes/AC-BOARD-MIB
 librenms/mibs/audiocodes/AC-CONTROL-MIB
 librenms/mibs/audiocodes/AC-FAULT-TC
+librenms/mibs/audiocodes/AC-GATEWAY-MIB
 librenms/mibs/audiocodes/AC-MEDIA-MIB
 librenms/mibs/audiocodes/AC-MODULARGATEWAY-MIB
 librenms/mibs/audiocodes/AC-PMANALOG-MIB
@@ -6740,9 +6771,8 @@ librenms/mibs/audiocodes/AC-SYSTEM-MIB
 librenms/mibs/audiocodes/AC-TYPES
 librenms/mibs/audiocodes/AC-V5-MIB
 librenms/mibs/audiocodes/ALARM-MIB
+librenms/mibs/audiocodes/AUDIOCODES-TYPES-MIB
 librenms/mibs/audiocodes/AcAtm
-librenms/mibs/audiocodes/AcBoard
-librenms/mibs/audiocodes/AcGateway
 librenms/mibs/audiocodes/AcPerfH323SIPGateway
 librenms/mibs/audiocodes/AcPerfMediaGateway
 librenms/mibs/audiocodes/AcPerfMediaServices

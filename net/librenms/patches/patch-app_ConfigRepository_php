@@ -3,12 +3,12 @@ OpenBSD whereis doesn't support -b
 Index: app/ConfigRepository.php
 --- app/ConfigRepository.php.orig
 +++ app/ConfigRepository.php
-@@ -526,7 +526,7 @@ class ConfigRepository
+@@ -532,7 +532,7 @@ class ConfigRepository
      public function locateBinary($binary): mixed
      {
          if (! Str::contains($binary, '/')) {
--            $output = `whereis -b $binary`;
-+            $output = `whereis $binary`;
+-            $output = shell_exec("whereis -b $binary");
++            $output = shell_exec("whereis $binary");
              $list = trim(substr((string) $output, strpos((string) $output, ':') + 1));
              $targets = explode(' ', $list);
              foreach ($targets as $target) {

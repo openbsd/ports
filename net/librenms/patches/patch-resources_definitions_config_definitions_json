@@ -1,7 +1,7 @@
 Index: resources/definitions/config_definitions.json
 --- resources/definitions/config_definitions.json.orig
 +++ resources/definitions/config_definitions.json
-@@ -5424,7 +5424,7 @@
+@@ -5444,7 +5444,7 @@
          },
          "nfsen_rrds": {
              "default": [
