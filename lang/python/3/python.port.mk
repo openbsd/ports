@@ -155,6 +155,11 @@ MODULES +=		devel/cargo
 .endif
 
 .if ${MODPY_PYBUILD:Msetuptools*}
+# Disable warning from coherent.licensed if installed when building any
+# project that doesn't specify that it's required. "If the target ecosystem
+# expects build artifacts to be installed to a shared environment, the
+# warning can be disabled"
+MAKE_ENV +=		COHERENT_LICENSED_UNUSED_ACTION=ignore
 # Setuptools opportunistically picks up plugins. If it picks one up that
 # uses finalize_distribution_options (usually setuptools_scm), junking
 # that plugin will cause failure at the end of build.
