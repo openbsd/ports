@@ -2,6 +2,7 @@ COMMENT =	GNU dictionary server
 
 V =		2.12
 DISTNAME =	dico-$V
+REVISION =	0
 
 SHARED_LIBS +=  dico                      1.0 # 2.0
 
@@ -44,6 +45,8 @@ CONFIGURE_ARGS =	--without-wordnet
 LIBTOOL_FLAGS =		--tag=disable-static
 
 SUBST_VARS +=		V
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dico
