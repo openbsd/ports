@@ -1004,6 +1004,7 @@ share/taisei/00-taisei.pkgdir/shader/lib/pbr_features.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/pbr_generic.frag.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/pbr_generic.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/render_context.glslh
+share/taisei/00-taisei.pkgdir/shader/lib/sdlgpu.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/sprite_default.vert.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/sprite_main.frag.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/util.glslh

@@ -8,7 +8,7 @@ USE_NOBTCFI =		Yes
 
 COMMENT =		clone of the touhou games
 
-VERSION =		1.4.2
+VERSION =		1.4.4
 DISTNAME =		taisei-${VERSION}
 
 CATEGORIES =		games
@@ -23,8 +23,9 @@ PERMIT_PACKAGE =	Yes
 
 # Somehow, even if it links with c++, c++abi and pthread don't end up
 # here.  Maybe the -Wl,--as-needed.
-WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto freetype m opusfile png
-WANTLIB += shaderc_shared spirv-cross-c-shared webpdecoder z zstd
+WANTLIB += ${COMPILER_LIBCXX} SDL3 c crypto freetype glslang
+WANTLIB += glslang-default-resource-limits m opusfile png
+WANTLIB += spirv-cross-c-shared webpdecoder z zstd
 
 SITES =	https://github.com/taisei-project/taisei/releases/download/v${VERSION}/
 
@@ -37,20 +38,25 @@ MODULES =		devel/meson \
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		math/cglm
+BUILD_DEPENDS =		devel/cmake/core \
+			graphics/shaderc \
+			graphics/spirv-tools \
+			math/cglm
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/opusfile \
-			devel/sdl2>=2.0.5 \
+			devel/sdl3 \
+			graphics/glslang \
 			graphics/libwebp>=0.5 \
 			graphics/png>=1.5.0 \
-			graphics/shaderc \
 			graphics/spirv-cross
 
-CONFIGURE_ARGS +=	-Ddefault_library=shared \
+CONFIGURE_ARGS +=	-Dallocator=libc \
+			-Ddefault_library=shared \
+			-Dkoishi:default_library=static \
 			-Ddocs=disabled \
 			-Dgamemode=disabled \
 			-Dinstall_macos_bundle=disabled \
@@ -69,5 +75,6 @@ CONFIGURE_ARGS +=	-D${lib}:default_library=shared
 .endfor
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+CONFIGURE_ARGS +=	-Ddebug=true -Dstrip=false
 
 .include <bsd.port.mk>
