@@ -2,8 +2,7 @@ COMMENT=		framework for granting privileged operations to users
 
 GH_ACCOUNT=		polkit-org
 GH_PROJECT=		polkit
-GH_TAGNAME=		126
-REVISION=		3
+GH_TAGNAME=		127
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
 SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
