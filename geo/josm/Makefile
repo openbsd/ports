@@ -1,17 +1,16 @@
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		14824
+SVN_REV=		19439
 DISTNAME=		josm-snapshot-${SVN_REV}
 EXTRACT_SUFX =		.jar
 EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
 PKGNAME=		josm-${SVN_REV}
-REVISION=		1
 
 PKG_ARCH=		*
 
 CATEGORIES=		geo
 
-HOMEPAGE=		http://josm.openstreetmap.de/
+HOMEPAGE=		https://josm.openstreetmap.de/
 SITES=			${HOMEPAGE}/download/
 
 MAINTAINER=		Holger Mikolon <holger@mikolon.com>
@@ -21,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		java \
 			textproc/intltool
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		17+
 BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
