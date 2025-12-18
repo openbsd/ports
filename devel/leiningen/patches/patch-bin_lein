@@ -1,0 +1,14 @@
+Use javaPathHelper for setting default JAVA_CMD
+
+Index: bin/lein
+--- bin/lein.orig
++++ bin/lein
+@@ -415,6 +415,8 @@ else
+     fi
+ fi
+ 
++export JAVA_CMD=$(javaPathHelper -c leiningen)
++
+ if [ ! -x "$JAVA_CMD" ] && ! type -f java >/dev/null
+ then
+     msg "Leiningen couldn't find 'java' executable, which is required."

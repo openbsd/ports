@@ -3,6 +3,7 @@ bin/lein
 share/bash_completion.d/
 share/bash_completion.d/lein
 share/doc/leiningen/
+share/doc/leiningen/BEGINNER_MISTAKES.md
 share/doc/leiningen/DEPLOY.md
 share/doc/leiningen/FAQ.md
 share/doc/leiningen/GPG.md

@@ -1,6 +1,6 @@
 COMMENT =		Clojure project automation
 
-V =			2.11.2
+V =			2.12.0
 DIST_TUPLE =		codeberg leiningen leiningen $V .
 
 JAR_FILE =		${DISTNAME}-standalone.jar
@@ -17,8 +17,9 @@ EXTRACT_ONLY =		${ALL_DISTFILES:N*.jar}
 PERMIT_PACKAGE =	Yes
 
 MODULES =		java
-# upstream recommends OpenJDK 8, do not use + since JAVA_HOME is used
-MODJAVA_VER =		1.8
+MODJAVA_VER =		11+
+
+RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -29,8 +30,7 @@ LEIN_DIR =		${PREFIX}/share/leiningen
 BASH_DIR =		${PREFIX}/share/bash_completion.d
 ZSH_DIR =		${PREFIX}/share/zsh/site-functions
 
-SUBST_VARS +=		JAR_FILE \
-			JAVA_HOME
+SUBST_VARS +=		JAR_FILE
 
 WRKDIST =		${WRKDIR}/leiningen
 

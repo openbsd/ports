@@ -1,7 +1,7 @@
 - fix shebang
 - fix syntax so it runs with ksh (x2)
 - set path to standalone jar
-- set path to java executable
+- use javaPathHelper for JAVA_CMD
 
 Index: bin/lein-pkg
 --- bin/lein-pkg.orig
@@ -39,7 +39,7 @@ Index: bin/lein-pkg
      add_path CLASSPATH "$LEIN_JAR"
  
      if [ "$LEIN_USE_BOOTCLASSPATH" != "no" ]; then
-@@ -198,7 +200,7 @@ BIN_DIR="$(dirname "$SCRIPT")"
+@@ -197,7 +199,7 @@ BIN_DIR="$(dirname "$SCRIPT")"
  # If you're not using an uberjar you'll need to list each dependency
  # and add them individually to the classpath/bootclasspath as well.
  
@@ -48,11 +48,12 @@ Index: bin/lein-pkg
  
  export LEIN_JVM_OPTS="${LEIN_JVM_OPTS-"-XX:+TieredCompilation -XX:TieredStopAtLevel=1"}"
  
-@@ -221,6 +223,7 @@ grep -E -q '^\s*:eval-in\s+:classloader\s*$' project.c
+@@ -219,6 +221,8 @@ grep -E -q '^\s*:eval-in\s+:classloader\s*$' project.c
+     export LEIN_JVM_OPTS="$LEIN_JVM_OPTS -Xms64m -Xmx512m"
  
  run_from_checkout "$1"
++
++export JAVA_CMD=$(javaPathHelper -c leiningen)
  
-+JAVA_CMD=${JAVA_CMD:-"${JAVA_HOME}/bin/java"}
  if [ ! -x "$JAVA_CMD" ] && ! type -f java >/dev/null
  then
-     msg "Leiningen couldn't find 'java' executable, which is required."
