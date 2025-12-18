@@ -117,6 +117,7 @@ MODCARGO_CARGO_BIN =	maturin
 _MODPY_WHEELSDIR =	target/wheels
 _MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == mesonpy
+MODPY_PYBUILD_ARGS +=	--config-setting=compile-args=-j${MAKE_JOBS}
 BUILD_DEPENDS +=	devel/meson-python
 .  elif ${MODPY_PYBUILD} == pbr
 BUILD_DEPENDS +=	devel/py-pbr \
