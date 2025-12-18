@@ -13,6 +13,8 @@ DIST_TUPLE= \
 
 PKGNAME=	${DISTNAME:S/flare/flare-messenger/}
 
+REVISION =	0
+
 CATEGORIES=	net
 
 HOMEPAGE=	https://mobile.schmidhuberj.de/flare
@@ -37,6 +39,7 @@ MAKE_ENV=	${MODCARGO_ENV}
 MAKE_FLAGS=	V=1
 
 BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/protobuf \
 		x11/blueprint-compiler \
 		x11/gnome/libsecret
 RUN_DEPENDS=	x11/gnome/libsecret \
