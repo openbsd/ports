@@ -102,6 +102,7 @@
      SUBDIR += exabgp
      SUBDIR += ezstream
      SUBDIR += filezilla
+     SUBDIR += flare-messenger
      SUBDIR += flickcurl
      SUBDIR += flow-tools
      SUBDIR += flowd
