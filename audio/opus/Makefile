@@ -1,9 +1,8 @@
 COMMENT=	IETF audio codec
 
-VERSION=	1.5.2
+VERSION=	1.6
 DISTNAME=	opus-${VERSION}
-REVISION=	0
-SHARED_LIBS=	opus		1.5	# 10.1
+SHARED_LIBS=	opus		1.6	# 11.0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://opus-codec.org/
@@ -21,9 +20,10 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-doc	# requires doxygen
-# enable machine learning features
+# enable machine learning features and HD support
 CONFIGURE_ARGS+=--enable-dred \
-		--enable-osce
+		--enable-osce \
+		--enable-qext
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
