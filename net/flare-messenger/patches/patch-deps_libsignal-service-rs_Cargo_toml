@@ -1,0 +1,22 @@
+Index: deps/libsignal-service-rs/Cargo.toml
+--- deps/libsignal-service-rs/Cargo.toml.orig
++++ deps/libsignal-service-rs/Cargo.toml
+@@ -7,9 +7,9 @@ license = "AGPL-3.0-only"
+ readme = "README.md"
+ 
+ [dependencies]
+-libsignal-protocol = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
+-libsignal-core = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
+-zkgroup = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
++libsignal-protocol = { path = "../libsignal/rust/protocol" }
++libsignal-core = { path = "../libsignal/rust/core" }
++zkgroup = { path = "../libsignal/rust/zkgroup" }
+ 
+ aes = "0.8"
+ aes-gcm = "0.10"
+@@ -53,4 +53,4 @@ anyhow = "1.0"
+ tokio = { version = "1.0", features = ["macros", "rt"] }
+ 
+ [patch.crates-io]
+-curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.1.3' }
++curve25519-dalek = { path = "../signal-curve25519/curve25519-dalek" }

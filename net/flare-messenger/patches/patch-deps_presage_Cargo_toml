@@ -1,0 +1,14 @@
+Index: deps/presage/Cargo.toml
+--- deps/presage/Cargo.toml.orig
++++ deps/presage/Cargo.toml
+@@ -3,8 +3,8 @@ members = ["presage", "presage-cli", "presage-store-sl
+ resolver = "2"
+ 
+ [patch.crates-io]
+-curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.1.3' }
+-quickcheck_async = { git = 'https://github.com/nytopop/quickcheck_async', rev = '76b13525ca93e0725e757f841fc6ccab8bae1913' }
++curve25519-dalek = { path = "../signal-curve25519/curve25519-dalek" }
++quickcheck_async = { path = "../quickcheck_async" }
+ 
+ # [patch."https://github.com/whisperfish/libsignal-service-rs.git"]
+ # libsignal-service = { path = "../libsignal-service-rs" }

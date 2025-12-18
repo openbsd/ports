@@ -1,0 +1,4 @@
+Flare is an unofficial app that lets you chat with your friends on
+Signal. It is still in development and doesn't include as many features
+as the official Signal applications, but unlike those it doesn't rely
+on Electron.

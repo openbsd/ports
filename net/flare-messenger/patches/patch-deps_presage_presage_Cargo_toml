@@ -1,0 +1,12 @@
+Index: deps/presage/presage/Cargo.toml
+--- deps/presage/presage/Cargo.toml.orig
++++ deps/presage/presage/Cargo.toml
+@@ -7,7 +7,7 @@ edition = "2021"
+ license = "AGPL-3.0-only"
+ 
+ [dependencies]
+-libsignal-service = { git = "https://github.com/whisperfish/libsignal-service-rs", rev = "0a3bea3fb81599590bf3a54dc00f0a93f36f56e6" }
++libsignal-service = { path = "../../libsignal-service-rs" }
+ 
+ base64 = "0.22"
+ futures = "0.3"

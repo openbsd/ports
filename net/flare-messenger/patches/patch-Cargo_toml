@@ -1,0 +1,31 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -24,9 +24,9 @@ tokio = { version = "1.44.0", features = ["rt", "macro
+ regex = "1.11.1"
+ lazy_static = "1.5.0"
+ 
+-presage = { git = "https://github.com/whisperfish/presage.git", rev = "194148f88ccf595c089474294bc3ff685b4e1b00" }
+-presage-store-sqlite = { git = "https://github.com/whisperfish/presage.git", rev = "194148f88ccf595c089474294bc3ff685b4e1b00" }
+-libsignal-service = { git = "https://github.com/whisperfish/libsignal-service-rs.git", rev = "0a3bea3fb81599590bf3a54dc00f0a93f36f56e6" }
++presage = { path = "deps/presage/presage" }
++presage-store-sqlite = { path = "deps/presage/presage-store-sqlite" }
++libsignal-service = { path = "deps/libsignal-service-rs" }
+ 
+ oo7 = { version = "0.4.1", default-features = false, features = ["native_crypto", "tokio"] }
+ rand = "0.9.0"
+@@ -41,7 +41,7 @@ env_logger = "0.11.6"
+ tracing = { version = "0.1.41", features = ["log-always"] }
+ sourceview5 = "0.9.1"
+ libspelling = { version = "0.3.0", optional = true }
+-blurhash = { git = "https://github.com/whisperfish/blurhash-rs", rev = "2135e10", features = ["gdk-pixbuf"] }
++blurhash = { path = "deps/blurhash-rs", features = ["gdk-pixbuf"] }
+ image = "0.25.5"
+ chrono = "0.4.40"
+ 
+@@ -54,4 +54,4 @@ screenshot-setup = [ "screenshot" ]
+ libspelling = [ "dep:libspelling" ]
+ 
+ [patch.crates-io]
+-curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.1.3' }
++curve25519-dalek = { path = "deps/signal-curve25519/curve25519-dalek" }

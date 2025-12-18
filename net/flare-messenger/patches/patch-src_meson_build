@@ -1,0 +1,12 @@
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -25,7 +25,7 @@ cargo_options = [ '--manifest-path', meson.project_sou
+ cargo_options += [ '--target-dir', meson.project_build_root() / 'target' ]
+ 
+ if get_option('profile') == 'default'
+-  cargo_options += [ '--release', '--locked' ]
++  cargo_options += [ '--release' ]
+   rust_target = 'release'
+   message('Building in release mode')
+ elif get_option('profile') == 'screenshot'
