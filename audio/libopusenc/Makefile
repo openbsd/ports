@@ -1,6 +1,7 @@
 COMMENT=	high-level API for encoding .opus files
 
 DISTNAME=	libopusenc-0.2.1
+REVISION=	0
 SHARED_LIBS=	opusenc		0.0	# 4.2
 CATEGORIES=	audio
 
