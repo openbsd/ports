@@ -3,6 +3,7 @@ COMMENT=	visual tool integrating commandline JDK tools and profiling
 V=		2.2
 DISTNAME=	visualvm_${V:S/.//g}
 PKGNAME=	visualvm-${V}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,7 +18,7 @@ SITES=		https://github.com/oracle/visualvm/releases/download/${V}/
 EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 RUN_DEPENDS=	java/javaPathHelper
 RUN_DEPENDS+=	devel/desktop-file-utils
 
