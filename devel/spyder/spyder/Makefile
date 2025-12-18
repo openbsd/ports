@@ -4,7 +4,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 # stick to qt5 and qtwebengine. (See issue #20201).
 
 MODULES =	lang/python
-MODPY_DISTV =	6.1.1
+MODPY_DISTV =	6.1.2
 DISTNAME =	spyder-${MODPY_DISTV}
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
@@ -25,13 +25,13 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		devel/py-python-lsp-black>=2.0.0,<3.0.0 \
 		devel/py-pylint_venv>=3.0.2 \
 		devel/py-pyls-spyder>=0.4.0 \
-		devel/py-python-lsp-server>=1.13.2,<1.14.0 \
+		devel/py-python-lsp-server>=1.14.0,<1.15.0 \
 		devel/py-python-lsp-ruff>=2.3.0,<3.0.0 \
 		devel/py-qdarkstyle>=3.2.0,<3.3.0 \
 		devel/py-qstylizer>=0.2.2 \
 		devel/py-rtree>=0.9.7 \
 		devel/py-three-merge>=0.1.1 \
-		devel/pylint>=3.1,<4 \
+		devel/pylint>=3.1,<5 \
 		net/py-zmq>=24.0.0 \
 		shells/py-qtconsole>=5.7.0,<5.8.0 \
 		security/py-asyncssh>=2.14.0,<3.0.0 \

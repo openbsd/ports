@@ -29,8 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}asyncdispatcher.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}asyncdispatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,7 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}translations
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}translations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/spyder/api/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder/api/_version.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/asyncdispatcher.py
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/
 lib/python${MODPY_VERSION}/site-packages/spyder/api/config/__init__.py
@@ -3417,6 +3414,9 @@ lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/api.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/container.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/plugin.py
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/scripts/
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/scripts/updater.bat
+lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/scripts/updater.sh
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/utils.py
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/
 lib/python${MODPY_VERSION}/site-packages/spyder/plugins/updatemanager/widgets/__init__.py
