@@ -62,6 +62,15 @@ COMPILER_LANGS ?= c c++
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 .endif
 
+# https://wiki.qt.io/SBOM
+MODQT6_GENERATE_SBOM ?=	No
+
+.if ${MODQT6_GENERATE_SBOM:L} == "yes"
+CONFIGURE_ARGS +=	-DQT_GENERATE_SBOM=ON
+.else
+CONFIGURE_ARGS +=	-DQT_GENERATE_SBOM=OFF
+.endif
+
 # Detected locale "C" with character encoding "US-ASCII", which is not UTF-8.
 # Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
 CONFIGURE_ENV +=	LC_CTYPE=C.UTF-8
