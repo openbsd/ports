@@ -1,8 +1,7 @@
 COMMENT =		detects when files bit-rot
 
-MODPY_DISTV =	1.0.0
+MODPY_DISTV =		1.0.1
 DISTNAME =		bitrot-${MODPY_DISTV}
-REVISION =		4
 
 CATEGORIES =		sysutils
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 NO_TEST =		Yes
 
