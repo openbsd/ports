@@ -2,12 +2,12 @@ COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
+REVISION-main=		4
 REVISION-bogofilter=	0
 REVISION-pdfviewer=	0
 REVISION-spamassassin=	0
 
 V=			4.3.1
-REVISION-main=		3
 DISTNAME=		claws-mail-${V}
 
 CATEGORIES=		mail news

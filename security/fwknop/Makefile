@@ -1,7 +1,7 @@
 COMMENT =	firewall knock operator
 
 DISTNAME =	fwknop-2.6.11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	fko	0.0 # 3.0
 

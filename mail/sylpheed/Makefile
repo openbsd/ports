@@ -1,7 +1,7 @@
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.7.0
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS += 	 	sylph-0                   4.1 # 4.0
 SHARED_LIBS += 		sylpheed-plugin-0         4.0 # 4.0

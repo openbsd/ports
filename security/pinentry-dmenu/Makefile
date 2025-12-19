@@ -3,7 +3,7 @@ COMMENT =	pinentry for tiling window manager
 GH_ACCOUNT =	ritze
 GH_PROJECT =	pinentry-dmenu
 GH_TAGNAME =	0.2.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

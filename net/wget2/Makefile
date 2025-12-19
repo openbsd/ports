@@ -1,6 +1,7 @@
 COMMENT =	successor of GNU Wget, a file and website downloader
 
 DISTNAME =	wget2-2.2.0
+REVISION =	0
 SHARED_LIBS +=	wget 0.1	# 3.0
 CATEGORIES =	net
 

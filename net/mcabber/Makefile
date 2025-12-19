@@ -1,7 +1,7 @@
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.1.2
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://mcabber.com/
 

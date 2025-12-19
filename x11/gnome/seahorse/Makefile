@@ -2,7 +2,7 @@ COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		47.0.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -17,7 +17,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache vala yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
