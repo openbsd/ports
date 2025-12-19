@@ -15,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	lang/gcc/11,-dlang
+RUN_DEPENDS =	lang/gcc/15,-dlang
 
 USE_GMAKE =	Yes
 
