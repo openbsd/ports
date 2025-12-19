@@ -6,7 +6,7 @@ Index: clang/tools/clang-shlib/CMakeLists.txt
  # Optimize function calls for default visibility definitions to avoid PLT and
  # reduce dynamic relocations.
 -if (NOT APPLE AND LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS)
-+if (NOT APPLE AND LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS AND TRUE)
++if (NOT APPLE AND LLVM_LINKER_SUPPORTS_B_SYMBOLIC_FUNCTIONS AND ${OPENBSD_LD_IS_LLD})
    target_link_options(clang-cpp PRIVATE LINKER:-Bsymbolic-functions)
  endif()
  if (MINGW OR CYGWIN)
