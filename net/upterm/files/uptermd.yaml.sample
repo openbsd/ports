@@ -1,0 +1,5 @@
+ssh-addr: 0.0.0.0:2222
+#ws-addr: 0.0.0.0:8443
+#metric-addr: 0.0.0.0:9000
+#ssh-proxy-protocol: true
+private-key: ${LOCALSTATEDIR}/uptermd/etc/ssh/ssh_host_ed25519_key

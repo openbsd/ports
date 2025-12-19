@@ -1,0 +1,27 @@
+@newgroup _uptermd:618
+@newuser _uptermd:618:_uptermd::upterm server:/var/uptermd:/sbin/nologin
+@rcscript ${RCDIR}/uptermd
+@bin bin/upterm
+@bin bin/uptermd
+@man man/man1/upterm-config-edit.1
+@man man/man1/upterm-config-path.1
+@man man/man1/upterm-config-view.1
+@man man/man1/upterm-config.1
+@man man/man1/upterm-host.1
+@man man/man1/upterm-proxy.1
+@man man/man1/upterm-session-current.1
+@man man/man1/upterm-session-info.1
+@man man/man1/upterm-session-list.1
+@man man/man1/upterm-session.1
+@man man/man1/upterm-upgrade.1
+@man man/man1/upterm-version.1
+@man man/man1/upterm.1
+share/examples/uptermd/
+share/examples/uptermd/uptermd.yaml.sample
+@sample ${SYSCONFDIR}/uptermd.yaml
+@mode 700
+@owner _uptermd
+@group _uptermd
+@sample ${LOCALSTATEDIR}/uptermd/
+@sample ${LOCALSTATEDIR}/uptermd/etc/
+@sample ${LOCALSTATEDIR}/uptermd/etc/ssh/

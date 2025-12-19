@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/uptermd --config=${SYSCONFDIR}/uptermd.yaml"
+daemon_user="_uptermd"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg=YES
+rc_reload=NO
+
+rc_pre() {
+	test -f ${LOCALSTATEDIR}/uptermd/etc/ssh/ssh_ed25519_key || \
+		rc_exec "ssh-keygen -A -f ${LOCALSTATEDIR}/uptermd"
+}
+
+rc_cmd $1
