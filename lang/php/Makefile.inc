@@ -103,8 +103,6 @@ RUN_DEPENDS-main=	mail/femail,-chroot
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
 
-ZEND_EXTENSIONS+=	-opcache
-
 # new subpackages must be added to devel/quirks $cve tables
 # and the pkg-readme extensions/SAPI list as applicable.
 PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl \
@@ -529,11 +527,13 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp.so ${PREFIX}/${SAPI_DIR}
 .endif
 
-.for m in ${ZEND_EXTENSIONS:S/-//g}
+.if defined(ZEND_EXTENSIONS)
+.  for m in ${ZEND_EXTENSIONS:S/-//g}
 	cd ${PREFIX}; \
 	${INSTALL_DATA} ${WRKBUILD}/modules/$m.so ${MODULES_SUBDIR}/$m.so; \
 	echo "zend_extension=$m.so" > share/examples/php-${PV}/$m.ini
-.endfor
+.  endfor
+.endif
 
 .for m in ${PHP_EXTENSIONS:S/-//g}
 .    if ${BUILD_PACKAGES:M-$m}
