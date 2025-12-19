@@ -777,6 +777,7 @@
      SUBDIR += unifi
      SUBDIR += unison
      SUBDIR += unworkable
+     SUBDIR += upterm
      SUBDIR += usockets
      SUBDIR += uucp
      SUBDIR += validns
