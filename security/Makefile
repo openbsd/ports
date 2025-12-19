@@ -66,6 +66,7 @@
      SUBDIR += gosec
      SUBDIR += gpa
      SUBDIR += gpgme
+     SUBDIR += gpgmepp
      SUBDIR += gringotts
      SUBDIR += hashdeep
      SUBDIR += hashid
@@ -337,6 +338,7 @@
      SUBDIR += qca-qt5
      SUBDIR += qca-qt6
      SUBDIR += qdigidoc4
+     SUBDIR += qgpgme
      SUBDIR += qtkeychain
      SUBDIR += qtpass
      SUBDIR += radiusniff
