@@ -1,6 +1,6 @@
 COMMENT=	modern CSS selector implementation for Beautiful Soup
 
-MODPY_DISTV =	2.8
+MODPY_DISTV =	2.8.1
 DISTNAME=	soupsieve-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
