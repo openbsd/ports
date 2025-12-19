@@ -122,9 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/modified.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/monkey.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/msvc.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/namespaces.pyi
-lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/package_index.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/py.typed
-lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/sandbox.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/unicode_utils.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/version.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/warnings.pyi
