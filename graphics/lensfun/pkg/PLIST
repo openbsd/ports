@@ -6,7 +6,15 @@ include/lensfun/
 include/lensfun/lensfun.h
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
 lib/pkgconfig/lensfun.pc
-lib/python${MODPY_VERSION}/site-packages/lensfun-0.3.4-py${MODPY_VERSION}.egg
+lib/python${MODPY_VERSION}/site-packages/lensfun/
+lib/python${MODPY_VERSION}/site-packages/lensfun-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/lensfun-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/lensfun-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/lensfun-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/lensfun-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lensfun/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lensfun/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lensfun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/doc/lensfun/
 share/doc/lensfun/README.md
 share/doc/lensfun/cc-by-sa-3.0.txt
