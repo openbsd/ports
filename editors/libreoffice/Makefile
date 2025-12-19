@@ -23,7 +23,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		25.8
-VERSION=	${BV}.3.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -87,7 +87,7 @@ DISTFILES.a += NotoSerifGeorgian-v2.003.zip
 DISTFILES.a += NotoSerifHebrew-v2.004.zip
 DISTFILES.a += NotoSerifLao-v2.003.zip
 DISTFILES.a += NotoNaskhArabic-v2.019.zip
-DISTFILES.a += ReemKufi-1.8.zip
+DISTFILES.a += ReemKufi-2.0.zip
 DISTFILES.a += Scheherazade-2.100.zip
 DISTFILES.a += a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
 DISTFILES.a += ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip
@@ -138,7 +138,7 @@ DISTFILES.a += noto-fonts-20171024.tar.gz
 DISTFILES.a += pdfium-7012.tar.bz2
 DISTFILES.a += phc-winner-argon2-20190702.tar.gz
 DISTFILES.a += skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz
-DISTFILES.a += xmlsec1-1.3.8.tar.gz
+DISTFILES.a += xmlsec1-1.3.9.tar.gz
 DISTFILES.a += zxcvbn-c-2.6.tar.gz
 DISTFILES.a += zxing-cpp-2.3.0.tar.gz
 
