@@ -6,6 +6,7 @@ COMMENT-java =		Java bindings for OpenCV
 
 V =			4.12.0
 REVISION-main =		2
+REVISION-java =		0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -107,7 +108,7 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
