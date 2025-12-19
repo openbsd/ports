@@ -5,7 +5,7 @@ get the debug package without bloating the size of the jdk package.
 Index: make/common/NativeCompilation.gmk
 --- make/common/NativeCompilation.gmk.orig
 +++ make/common/NativeCompilation.gmk
-@@ -1066,9 +1066,8 @@ define SetupNativeCompilationBody
+@@ -1080,9 +1080,8 @@ define SetupNativeCompilationBody
            # so we can run it after strip is called, since strip can sometimes mangle the
            # embedded debuglink, which we want to avoid.
            $1_CREATE_DEBUGINFO_CMDS := \
