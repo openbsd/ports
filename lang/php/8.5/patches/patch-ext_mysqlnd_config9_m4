@@ -1,0 +1,11 @@
+Index: ext/mysqlnd/config9.m4
+--- ext/mysqlnd/config9.m4.orig
++++ ext/mysqlnd/config9.m4
+@@ -27,6 +27,7 @@ PHP_ARG_ENABLE([mysqlnd-compression-support],
+   [no])
+ 
+ dnl If some extension uses mysqlnd it will get compiled in PHP core
++PHP_MYSQLND_ENABLED="yes"
+ if test "$PHP_MYSQLND" != "no" || test "$PHP_MYSQLND_ENABLED" = "yes"; then
+   AS_VAR_IF([PHP_MYSQLND_COMPRESSION_SUPPORT], [no],,
+     [PHP_SETUP_ZLIB([MYSQLND_SHARED_LIBADD],

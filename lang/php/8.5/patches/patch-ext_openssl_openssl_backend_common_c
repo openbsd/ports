@@ -1,0 +1,12 @@
+Index: ext/openssl/openssl_backend_common.c
+--- ext/openssl/openssl_backend_common.c.orig
++++ ext/openssl/openssl_backend_common.c
+@@ -1433,7 +1433,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
+ 
+ EVP_PKEY *php_openssl_generate_private_key(struct php_x509_request * req)
+ {
+-	if (req->priv_key_bits < MIN_KEY_LENGTH) {
++	if (req->priv_key_type != OPENSSL_KEYTYPE_EC && req->priv_key_bits < MIN_KEY_LENGTH) {
+ 		php_error_docref(NULL, E_WARNING, "Private key length must be at least %d bits, configured to %d",
+ 			MIN_KEY_LENGTH, req->priv_key_bits);
+ 		return NULL;
