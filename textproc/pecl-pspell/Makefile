@@ -12,7 +12,7 @@ WANTLIB += aspell iconv intl pspell pthread
 
 MODULES=	lang/php/pecl
 # not for pre-8.4
-FLAVORS=	php84
+FLAVORS=	php84 php85
 FLAVOR?=	php84
 
 MODPHP_DO_SAMPLE= pspell
