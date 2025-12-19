@@ -1,0 +1,13 @@
+Use javaPathHelper
+
+Index: d2j-apk-sign.sh
+--- d2j-apk-sign.sh.orig
++++ d2j-apk-sign.sh
+@@ -45,4 +45,6 @@ else
+     done
+ fi
+ 
+-java -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.ApkSign" "$@"
++JAVA_CMD=$(javaPathHelper -c dex2jar)
++
++${JAVA_CMD} -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.ApkSign" "$@"

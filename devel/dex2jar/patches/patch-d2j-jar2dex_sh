@@ -1,0 +1,13 @@
+Use javaPathHelper
+
+Index: d2j-jar2dex.sh
+--- d2j-jar2dex.sh.orig
++++ d2j-jar2dex.sh
+@@ -45,4 +45,6 @@ else
+     done
+ fi
+ 
+-java -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.Jar2Dex" "$@"
++JAVA_CMD=$(javaPathHelper -c dex2jar)
++
++${JAVA_CMD} -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.Jar2Dex" "$@"

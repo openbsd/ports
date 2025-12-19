@@ -1,0 +1,13 @@
+Use javaPathHelper
+
+Index: d2j-class-version-switch.sh
+--- d2j-class-version-switch.sh.orig
++++ d2j-class-version-switch.sh
+@@ -45,4 +45,6 @@ else
+     done
+ fi
+ 
+-java -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.ClassVersionSwitch" "$@"
++JAVA_CMD=$(javaPathHelper -c dex2jar)
++
++${JAVA_CMD} -Xms512m -Xmx2048m -classpath "${_classpath}" "com.googlecode.dex2jar.tools.ClassVersionSwitch" "$@"
