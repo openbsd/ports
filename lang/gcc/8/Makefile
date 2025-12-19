@@ -1,3 +1,5 @@
+UNLINKED =	"old gcc version; keeping the ports dir around in case of problems with 15 on less well tested archs"
+
 USE_NOBTCFI-aarch64 =	Yes
 
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \

@@ -1,5 +1,4 @@
-# When updating/switching to a new version, remember to adapt devel/llvm!
-#
+UNLINKED =	"old gcc version; keeping the ports dir around in case of problems with 15 on less well tested archs"
 
 # tested: aarch64 amd64 arm hppa i386 powerpc
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
