@@ -1340,6 +1340,7 @@
      SUBDIR += pecl-xdebug,php82
      SUBDIR += pecl-xdebug,php83
      SUBDIR += pecl-xdebug,php84
+     SUBDIR += pecl-xdebug,php85
      SUBDIR += perltidy
      SUBDIR += physfs
      SUBDIR += pkgconfig

@@ -57,6 +57,7 @@
      SUBDIR += pecl-lzf,php82
      SUBDIR += pecl-lzf,php83
      SUBDIR += pecl-lzf,php84
+     SUBDIR += pecl-lzf,php85
      SUBDIR += pigz
      SUBDIR += pixz
      SUBDIR += py-backports-zstd
