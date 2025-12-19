@@ -1,11 +1,12 @@
 COMMENT=	GnuPG Made Easy
 
 VERSION =	2.0.1
+REVISION =	0
 DISTNAME =	gpgme-${VERSION}
 
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  gpgme                25.0     # 44.1
+SHARED_LIBS +=  gpgme                25.0     # 45.1
 
 HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
