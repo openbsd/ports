@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM messaging library
 DISTNAME =	mimetreeparser-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6MimeTreeParserCore    1.0 # 0.0
 SHARED_LIBS +=	KPim6MimeTreeParserWidgets 0.0 # 0.0
@@ -22,7 +23,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
 		devel/kf6/kwidgetsaddons \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		x11/kde-applications/kmbox>=${VERSION} \
 		x11/kde-applications/kmime>=${VERSION} \

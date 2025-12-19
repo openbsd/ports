@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
@@ -84,7 +85,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kxmlgui \
 		devel/kf6/prison \
 		devel/kf6/syntax-highlighting \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/discount \
 		textproc/ktextaddons \

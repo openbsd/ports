@@ -1,6 +1,7 @@
 COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6Libkleo              2.0 # 0.0
 
@@ -24,7 +25,7 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/ki18n \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		security/libgpg-error \
 

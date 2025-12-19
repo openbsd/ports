@@ -1,6 +1,7 @@
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6AkonadiCalendar      1.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiCalendarCore  0.0 # 0.0
@@ -43,7 +44,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcrash \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

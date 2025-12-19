@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/akregator
 
@@ -78,7 +79,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kguiaddons \
 		x11/kde-plasma/plasma-activities \
 		devel/kf6/syndication \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

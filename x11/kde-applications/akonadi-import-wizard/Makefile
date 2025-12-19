@@ -1,6 +1,7 @@
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6ImportWizard         0.0 # 0.0
 
@@ -47,7 +48,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kiconthemes \
 		devel/kf6/kxmlgui \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \

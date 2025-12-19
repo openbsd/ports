@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
@@ -52,7 +53,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kxmlgui \
 		devel/kf6/kguiaddons \
 		devel/kf6/syntax-highlighting \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

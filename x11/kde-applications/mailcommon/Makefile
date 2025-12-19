@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
+REVISION =	0
 
 SHARED_LIBS +=	KPim6MailCommon           0.1 # 0.0
 
@@ -50,7 +51,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kxmlgui \
 		devel/kf6/syntax-highlighting \
 		x11/kde-plasma/plasma-activities  \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

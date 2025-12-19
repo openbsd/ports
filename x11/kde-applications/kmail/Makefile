@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
@@ -92,7 +93,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \

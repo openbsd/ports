@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  pimdataexporterprivate    1.0 # 0.0
 
@@ -52,7 +53,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \

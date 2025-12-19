@@ -1,6 +1,7 @@
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
 
@@ -49,7 +50,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/sonnet \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \

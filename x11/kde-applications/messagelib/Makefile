@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6MessageComposer      2.0 # 0.0
 SHARED_LIBS +=	KPim6MessageCore          2.0 # 0.0
@@ -67,7 +68,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

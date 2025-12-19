@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	calendar email todo and task application
 
 DISTNAME =	merkuro-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -82,7 +83,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		security/libassuan \
 		textproc/ktextaddons \
 		devel/kf6/kcrash \
-		security/gpgme,-qt \
+		security/qgpgme \
 		x11/kde-applications/akonadi-search>=${VERSION} \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

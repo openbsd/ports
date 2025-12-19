@@ -1,6 +1,7 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kget
 
@@ -62,7 +63,7 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf6/solid \
 		multimedia/libmms \
 		net/libktorrent \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		security/libgcrypt \
 		x11/qt6/qt5compat \

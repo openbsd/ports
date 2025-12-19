@@ -4,6 +4,7 @@ COMMENT =	personal finance manager
 
 V =		5.2.1
 DISTNAME =	kmymoney-${V}
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -109,7 +110,7 @@ LIB_DEPENDS =		databases/db/v4 \
 			graphics/kdiagram-qt6 \
 			productivity/libalkimia>=8.2.1 \
 			security/qtkeychain,qt6 \
-			security/gpgme,-qt \
+			security/qgpgme \
 			security/libassuan \
 			textproc/icu4c \
 			textproc/libical \

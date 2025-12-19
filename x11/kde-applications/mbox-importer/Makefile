@@ -1,7 +1,9 @@
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
+
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
 WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemModels
@@ -36,7 +38,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemmodels \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
-		security/gpgme,-qt \
+		security/qgpgme \
 		security/libassuan \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
