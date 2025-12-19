@@ -1,6 +1,6 @@
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.9.0
+DISTNAME =		apktool_2.12.1
 PKGNAME =		${DISTNAME:S/_/-/}
 
 CATEGORIES =		devel security java
@@ -20,7 +20,7 @@ EXTRACT_SUFX =		.jar
 SUBST_VARS +=		DISTNAME
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 
 RUN_DEPENDS =		java/javaPathHelper
 
