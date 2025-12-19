@@ -35,9 +35,7 @@ CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-SUBST_VARS =		WISH_BIN
-
-WISH_BIN =		${MODTK_BIN:T}
+SUBST_VARS =		MODTK_VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gui.c
