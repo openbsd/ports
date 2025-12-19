@@ -4,6 +4,9 @@ share/doc/uw-ttyp0/CheckRendering.txt
 share/doc/uw-ttyp0/DesignNotes.html
 share/doc/uw-ttyp0/FAQ.html
 share/doc/uw-ttyp0/Thanks.txt
+share/doc/uw-ttyp0/img/
+share/doc/uw-ttyp0/img/gmn-6x12-mod.png
+share/doc/uw-ttyp0/img/gmn-6x12-orig.png
 share/fonts/
 @fontdir share/fonts/uw-ttyp0/
 share/fonts/uw-ttyp0/UW-Ttyp0-11-Bold.otb
