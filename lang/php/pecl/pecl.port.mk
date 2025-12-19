@@ -3,7 +3,7 @@
 MODULES +=	lang/php
 DIST_SUBDIR ?=	pecl
 
-FLAVORS ?=	php82 php83 php84
+FLAVORS ?=	php82 php83 php84 php85
 FLAVOR ?=	php83
 
 DIST_SUBDIR ?=	pecl
