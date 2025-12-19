@@ -1,7 +1,7 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-MODPY_DISTV=		79.0.1
+MODPY_DISTV=		80.9.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 

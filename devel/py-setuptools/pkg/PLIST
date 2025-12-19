@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_core_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_core_metadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_discovery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_entry_points.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_entry_points.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_imp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_path.${MODP
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_reqs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_reqs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_scripts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_scripts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_shutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_shutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_static.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,10 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}msvc.${MODPY
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}msvc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}package_index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}package_index.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}sandbox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}sandbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}unicode_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}unicode_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -95,6 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}wheel.${MODP
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}windows_support.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}windows_support.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/_core_metadata.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_discovery.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_distutils/${MODPY_PYCACHE}/
@@ -299,6 +300,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_itertools.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_normalization.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_path.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_reqs.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_scripts.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_shutil.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_static.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/
@@ -652,8 +654,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/modified.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/monkey.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/msvc.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/namespaces.py
-lib/python${MODPY_VERSION}/site-packages/setuptools/package_index.py
-lib/python${MODPY_VERSION}/site-packages/setuptools/sandbox.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/script (dev).tmpl
 lib/python${MODPY_VERSION}/site-packages/setuptools/script.tmpl
 lib/python${MODPY_VERSION}/site-packages/setuptools/unicode_utils.py
