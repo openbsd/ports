@@ -1,6 +1,6 @@
 COMMENT =	dex to java decompiler
 
-VERSION =	1.4.7
+VERSION =	1.5.3
 DISTNAME =	jadx-${VERSION}
 
 CATEGORIES =	devel security
@@ -17,7 +17,7 @@ SITES =		https://github.com/skylot/jadx/releases/download/v${VERSION}/
 EXTRACT_SUFX =	.zip
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11+
 
 RUN_DEPENDS =	java/javaPathHelper \
 		shells/bash
