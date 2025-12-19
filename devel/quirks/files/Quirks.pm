@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1772 2025/12/17 22:30:18 kurt Exp $
+# $OpenBSD: Quirks.pm,v 1.1773 2025/12/19 13:40:49 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -499,6 +499,7 @@ my $stem_extensions = {
 	'g95' => 'gfortran',
 	'py-dns' => 'py3-dns',
 	'py-game' => 'py3-game',
+	'gpgme-qt' => 'qgpgme',
 };
 
 my $obsolete_reason = {};
