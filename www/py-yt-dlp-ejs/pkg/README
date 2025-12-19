@@ -1,5 +1,6 @@
-Running ${PKGSTEM} on OpenBSD
-=============================
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
 
 For YouTube support, one of the following JS runtimes is required to be
 installed:
