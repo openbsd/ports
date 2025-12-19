@@ -11,7 +11,7 @@ MODPY_PYBUILD =	setuptools
 
 WANTLIB +=	${COMPILER_LIBCXX} m
 
-WRKDIST =	${WRKDIR}/${DISTNAME}/bindings/python
+WRKSRC =	${WRKDIST}/bindings/python
 
 COMPILER =	base-clang ports-gcc
 
