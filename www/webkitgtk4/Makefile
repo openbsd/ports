@@ -145,11 +145,6 @@ CXXFLAGS +=		$$(pkg-config --cflags epoll-shim)
 
 .include <bsd.port.arch.mk>
 
-# if we are using ports-gcc then use gcc 11
-.if !${PROPERTIES:Mclang} && !${PROPERTIES:Mllvm}
-MODGCC4_VERSION =	11
-.endif
-
 # disable thin archives for bfd;
 # and set DEBUG=-g1 for GNU ar(1) arches (libWebCoreGTK.a is too big (4.1G)):
 # ../../lib/libWebCoreGTK.a: could not read symbols: Malformed archive
