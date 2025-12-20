@@ -106,6 +106,7 @@ share/gpsd/doc/AUTHORS
 share/gpsd/doc/COPYING
 share/gpsd/doc/NEWS
 share/gpsd/doc/README.adoc
+share/gpsd/doc/SECURITY.md
 share/gpsd/doc/SUPPORT.adoc
 share/gpsd/doc/build.adoc
 share/gpsd/doc/example1.c.txt
