@@ -2,13 +2,14 @@ COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Module-Starter-1.54
-REVISION =		4
+DISTNAME =		Module-Starter-1.77
 CATEGORIES =		devel
 CPAN_AUTHOR =		PETDANCE
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
+
+RUN_DEPENDS =		devel/p5-Software-License
 
 DOC_DIR =	${PREFIX}/share/doc/p5-Module-Starter/
 
