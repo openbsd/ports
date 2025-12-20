@@ -1,4 +1,5 @@
 @pkgpath devel/py-incremental,python3
+bin/incremental
 lib/python${MODPY_VERSION}/site-packages/incremental/
 lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/METADATA
@@ -7,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/WH
 lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/incremental-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/incremental/__init__.py
 lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/incremental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
