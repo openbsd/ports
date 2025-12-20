@@ -1,8 +1,7 @@
 COMMENT=	process and decode WWW forms and cookies
 
-DISTNAME =	CGI-Lite-3.02
+DISTNAME =	CGI-Lite-3.03
 CATEGORIES=	www
-REVISION =	0
 
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
