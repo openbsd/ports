@@ -1,6 +1,6 @@
 COMMENT=	non-validating SQL parser
 
-MODPY_DISTV=	0.5.4
+MODPY_DISTV=	0.5.5
 DISTNAME=	sqlparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
