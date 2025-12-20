@@ -124,9 +124,9 @@ MODGO_MODULES =	\
 	dmitri.shuralyov.com/gpu/mtl									 v0.0.0-20190408044501-666a987793e9 \
 	github.com/!alec!aivazis/survey/v2								 v2.3.6 \
 	github.com/!azure!a!d/microsoft-authentication-extensions-for-go/cache				 v0.1.1 \
-	github.com/!azure!a!d/microsoft-authentication-library-for-go					 v1.5.0 \
-	github.com/!azure/azure-sdk-for-go/sdk/azcore							 v1.19.1 \
-	github.com/!azure/azure-sdk-for-go/sdk/azidentity						 v1.13.0 \
+	github.com/!azure!a!d/microsoft-authentication-library-for-go					 v1.6.0 \
+	github.com/!azure/azure-sdk-for-go/sdk/azcore							 v1.20.0 \
+	github.com/!azure/azure-sdk-for-go/sdk/azidentity						 v1.13.1 \
 	github.com/!azure/azure-sdk-for-go/sdk/azidentity/cache						 v0.3.2 \
 	github.com/!azure/azure-sdk-for-go/sdk/internal							 v1.11.2 \
 	github.com/!azure/azure-sdk-for-go/sdk/resourcemanager/internal/v2				 v2.0.0 \
@@ -619,10 +619,13 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/translate							 v1.10.3 \
 	github.com/!azure!a!d/microsoft-authentication-library-for-go			 v1.1.1 \
 	github.com/!azure!a!d/microsoft-authentication-library-for-go			 v1.4.2 \
+	github.com/!azure!a!d/microsoft-authentication-library-for-go			 v1.5.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azcore					 v1.18.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azcore					 v1.18.1 \
+	github.com/!azure/azure-sdk-for-go/sdk/azcore					 v1.19.1 \
 	github.com/!azure/azure-sdk-for-go/sdk/azcore					 v1.9.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azidentity				 v1.10.1 \
+	github.com/!azure/azure-sdk-for-go/sdk/azidentity				 v1.13.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azidentity				 v1.4.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/azidentity				 v1.8.2 \
 	github.com/!azure/azure-sdk-for-go/sdk/internal					 v1.11.1 \
