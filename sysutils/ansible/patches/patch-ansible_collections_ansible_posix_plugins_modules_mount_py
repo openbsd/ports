@@ -1,0 +1,24 @@
+https://github.com/ansible-collections/ansible.posix/pull/690
+
+Index: ansible_collections/ansible/posix/plugins/modules/mount.py
+--- ansible_collections/ansible/posix/plugins/modules/mount.py.orig
++++ ansible_collections/ansible/posix/plugins/modules/mount.py
+@@ -225,8 +225,7 @@ import platform
+ 
+ from ansible.module_utils.basic import AnsibleModule
+ from ansible_collections.ansible.posix.plugins.module_utils.mount import ismount
+-from ansible.module_utils.six import iteritems
+-from ansible.module_utils._text import to_bytes, to_native
++from ansible.module_utils.common.text.converters import to_bytes, to_native
+ from ansible.module_utils.parsing.convert_bool import boolean
+ 
+ 
+@@ -279,7 +278,7 @@ def _set_mount_save_old(module, args):
+     old_lines = []
+     exists = False
+     changed = False
+-    escaped_args = dict([(k, _escape_fstab(v)) for k, v in iteritems(args) if k != 'warnings'])
++    escaped_args = dict([(k, _escape_fstab(v)) for k, v in args.items() if k != 'warnings'])
+     new_line = '%(src)s %(name)s %(fstype)s %(opts)s %(dump)s %(passno)s\n'
+ 
+     if platform.system() == 'SunOS':

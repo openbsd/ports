@@ -1,0 +1,18 @@
+(https://github.com/ansible-collections/ansible.posix/pull/690)
+
+Index: ansible_collections/ansible/posix/plugins/modules/synchronize.py
+--- ansible_collections/ansible/posix/plugins/modules/synchronize.py.orig
++++ ansible_collections/ansible/posix/plugins/modules/synchronize.py
+@@ -366,10 +366,10 @@ EXAMPLES = r'''
+ 
+ import os
+ import errno
++from shlex import quote as shlex_quote
+ 
+ from ansible.module_utils.basic import AnsibleModule
+-from ansible.module_utils._text import to_bytes, to_native
+-from ansible.module_utils.six.moves import shlex_quote
++from ansible.module_utils.common.text.converters import to_bytes, to_native
+ 
+ 
+ client_addr = None

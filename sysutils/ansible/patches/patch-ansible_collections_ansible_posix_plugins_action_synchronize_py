@@ -1,0 +1,30 @@
+https://github.com/ansible-collections/ansible.posix/pull/690
+
+Index: ansible_collections/ansible/posix/plugins/action/synchronize.py
+--- ansible_collections/ansible/posix/plugins/action/synchronize.py.orig
++++ ansible_collections/ansible/posix/plugins/action/synchronize.py
+@@ -18,12 +18,11 @@ from __future__ import (absolute_import, division, pri
+ __metaclass__ = type
+ 
+ import os.path
++from collections.abc import MutableSequence
++from shlex import quote as shlex_quote
+ 
+ from ansible import constants as C
+-from ansible.module_utils.six import string_types
+-from ansible.module_utils.six.moves import shlex_quote
+-from ansible.module_utils._text import to_text
+-from ansible.module_utils.common._collections_compat import MutableSequence
++from ansible.module_utils.common.text.converters import to_text
+ from ansible.module_utils.parsing.convert_bool import boolean
+ from ansible.plugins.action import ActionBase
+ from ansible.plugins.loader import connection_loader
+@@ -417,7 +416,7 @@ class ActionModule(ActionBase):
+             # Replicate what we do in the module argumentspec handling for lists
+             if not isinstance(_tmp_args.get('rsync_opts'), MutableSequence):
+                 tmp_rsync_opts = _tmp_args.get('rsync_opts', [])
+-                if isinstance(tmp_rsync_opts, string_types):
++                if isinstance(tmp_rsync_opts, str):
+                     tmp_rsync_opts = tmp_rsync_opts.split(',')
+                 elif isinstance(tmp_rsync_opts, (int, float)):
+                     tmp_rsync_opts = [to_text(tmp_rsync_opts)]
