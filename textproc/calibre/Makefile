@@ -61,6 +61,7 @@ LIB_DEPENDS +=		graphics/ffmpeg \
 			x11/xkbcommon
 
 BUILD_DEPENDS =		${COMMON_DEPENDS} \
+			devel/cmake/core \
 			devel/py-qt-builder \
 			sysutils/py-packaging
 
