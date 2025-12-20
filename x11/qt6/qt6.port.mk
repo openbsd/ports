@@ -66,9 +66,11 @@ ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 MODQT6_GENERATE_SBOM ?=	No
 
 .if ${MODQT6_GENERATE_SBOM:L} == "yes"
+.if ${CONFIGURE_STYLE:Mcmake}
 CONFIGURE_ARGS +=	-DQT_GENERATE_SBOM=ON
 .else
 CONFIGURE_ARGS +=	-DQT_GENERATE_SBOM=OFF
+.endif
 .endif
 
 # Detected locale "C" with character encoding "US-ASCII", which is not UTF-8.
