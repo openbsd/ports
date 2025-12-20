@@ -18,6 +18,4 @@ share/locale/sv/LC_MESSAGES/gpa.mo
 share/locale/tr/LC_MESSAGES/gpa.mo
 share/locale/zh_CN/LC_MESSAGES/gpa.mo
 share/locale/zh_TW/LC_MESSAGES/gpa.mo
-share/pixmaps/
-share/pixmaps/gpa.png
 @tag update-desktop-database

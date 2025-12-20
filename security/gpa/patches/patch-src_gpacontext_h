@@ -1,0 +1,16 @@
+From b6ba8bcc6db7765667cd6c49b7edc9a2073bc74f Mon Sep 17 00:00:00 2001
+From: Werner Koch <wk@gnupg.org>
+Date: Fri, 18 Jul 2025 09:45:23 +0200
+Subject: [PATCH] Remove trust_item stuff to make it build with gpgme 2.x
+
+Index: src/gpacontext.h
+--- src/gpacontext.h.orig
++++ src/gpacontext.h
+@@ -63,7 +63,6 @@ struct _GpaContextClass {
+   void (*start) (GpaContext *context);
+   void (*done) (GpaContext *context, gpg_error_t err);
+   void (*next_key) (GpaContext *context, gpgme_key_t key);
+-  void (*next_trust_item) (GpaContext *context, gpgme_trust_item_t item);
+   void (*progress) (GpaContext *context, int current, int total);
+ };
+ 

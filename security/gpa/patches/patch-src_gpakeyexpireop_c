@@ -1,0 +1,25 @@
+From 45fc64a4ac9f73457bf610ce76cca087c0d0d09a Mon Sep 17 00:00:00 2001
+From: Sam James via Gnupg-devel <gnupg-devel@gnupg.org>
+Date: Sun, 10 Aug 2025 03:36:11 +0100
+Subject: [PATCH] Fix incorrect callback arguments
+
+Index: src/gpakeyexpireop.c
+--- src/gpakeyexpireop.c.orig
++++ src/gpakeyexpireop.c
+@@ -31,6 +31,7 @@
+ #endif
+ 
+ #include "gpa.h"
++#include "gpa-marshal.h"
+ #include "gpakeyexpireop.h"
+ #include "expirydlg.h"
+ #include "gpgmeedit.h"
+@@ -114,7 +115,7 @@ gpa_key_expire_operation_class_init (GpaKeyExpireOpera
+ 		  G_SIGNAL_RUN_FIRST,
+ 		  G_STRUCT_OFFSET (GpaKeyExpireOperationClass, new_expiration),
+ 		  NULL, NULL,
+-		  g_cclosure_marshal_VOID__POINTER,
++		  gpa_marshal_VOID__POINTER_POINTER,
+ 		  G_TYPE_NONE, 2,
+ 		  G_TYPE_POINTER,
+ 		  G_TYPE_POINTER);
