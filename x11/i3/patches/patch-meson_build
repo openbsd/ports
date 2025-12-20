@@ -3,17 +3,15 @@ OpenBSD will not implement wordexp(3); use glob(3) instead
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -52,7 +52,9 @@ endif
+@@ -52,6 +52,7 @@ endif
  
  cdata.set('HAVE_STRNDUP', cc.has_function('strndup'))
  cdata.set('HAVE_MKDIRP', cc.has_function('mkdirp'))
 +cdata.set('HAVE_WORDEXP', cc.has_function('wordexp'))
  
-+
  # Instead of generating config.h directly, make vcs_tag generate it so that
  # @VCS_TAG@ is replaced.
- config_h_in = configure_file(
-@@ -612,7 +614,7 @@ install_headers(
+@@ -613,7 +614,7 @@ install_headers(
  # because configure_file strips the backslash in e.g. \@display,
  # resulting in @display, breaking our Perl code:
  # https://github.com/mesonbuild/meson/issues/7165
