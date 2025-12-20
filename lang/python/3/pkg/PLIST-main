@@ -7,6 +7,8 @@
 @pkgpath lang/python/3.10,-main
 @pkgpath lang/python/3.11,-main
 @pkgpath meta/python3
+@pkgpath devel/glade
+@conflict glade-*
 bin/pydoc3
 bin/pydoc3.13
 bin/python3

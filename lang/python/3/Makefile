@@ -8,6 +8,10 @@ SHARED_LIBS =		python3.13 0.0
 VERSION_SPEC =		>=3.13,<3.14
 PORTROACH =		limit:^3\.12
 
+# XXX keep REVISION-main above 7.8-stable and do not sync the
+# XXX @conflict or @pkgpath for glade
+REVISION-main =		0
+
 AUTOCONF_VERSION =	2.71
 
 # XXX - should come from expat_config.h, which isn't installed in base

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1773 2025/12/19 13:40:49 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1774 2025/12/20 16:46:45 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1020,7 +1020,6 @@ setup_obsolete_reason(
 	1 => 'rdp',
 	71 => 'mininet',
 	6 => 'dovecot-fts-xapian',
-	3 => 'glade',
 	3 => 'javahelp',
 );
 
