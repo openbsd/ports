@@ -1,6 +1,6 @@
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
-DISTNAME =	Net-OpenSSH-0.80
+DISTNAME =	Net-OpenSSH-0.84
 CATEGORIES =	net security
 MODULES =	cpan
 PKG_ARCH =	*
