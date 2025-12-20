@@ -1,0 +1,13 @@
+Do not use broken --default-symver on ld.bfd archs
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -140,7 +140,6 @@ common_ldflags = cc.get_supported_link_arguments([
+   '-Wl,-Bsymbolic',
+   '-Wl,-z,relro',
+   '-Wl,-z,now',
+-  '-Wl,--default-symver',
+ ])
+ 
+ root_dir = include_directories('.')
