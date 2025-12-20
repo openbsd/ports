@@ -333,6 +333,15 @@ share/c2sp-testvectors/age/testdata/x25519_no_match
 share/c2sp-testvectors/age/testdata/x25519_not_canonical_body
 share/c2sp-testvectors/age/testdata/x25519_not_canonical_share
 share/c2sp-testvectors/age/testdata/x25519_short_share
+share/c2sp-testvectors/cocktail-dkg/
+share/c2sp-testvectors/cocktail-dkg/README.md
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-ed25519-sha512.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-ed448-shake256.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-jubjub-blake2b512.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-p256-sha256.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-pallas-blake2b512.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-ristretto255-sha512.json
+share/c2sp-testvectors/cocktail-dkg/cocktail-dkg-secp256k1-sha256.json
 share/c2sp-testvectors/ed25519/
 share/c2sp-testvectors/ed25519/LICENSE
 share/c2sp-testvectors/ed25519/README.md
