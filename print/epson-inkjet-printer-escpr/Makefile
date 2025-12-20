@@ -1,5 +1,5 @@
 # SITES changes at each version; when looking for updates, try searching
-# ${HOMEPAGE} for a linux driver, for e.g. sx200
+# ${HOMEPAGE} for a Linux RPM(x64) driver, for e.g. sx200
 PORTROACH=		ignore:1
 SITES=			https://download3.ebz.epson.net/dsc/f/03/00/16/21/79/6d53e6ec3f8c1e55733eb7860e992a425883bf88/
 
@@ -10,12 +10,13 @@ DISTNAME=		epson-inkjet-printer-escpr-${V}-1
 EXTRACT_SUFX=		.src.rpm
 WRKDIST=		${WRKDIR}/epson-inkjet-printer-escpr-${V}
 PKGNAME=		epson-inkjet-printer-escpr-${V}
+REVISION=		0
 
 SHARED_LIBS +=  escpr                0.0      # 1.0
 
 CATEGORIES=		print
 
-HOMEPAGE=		http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
+HOMEPAGE=		https://download-center.epson.com/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
