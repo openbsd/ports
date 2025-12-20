@@ -1,7 +1,7 @@
 COMMENT =		prometheus exporter for unbound
 
 MODGO_MODNAME =		github.com/letsencrypt/unbound_exporter
-MODGO_VERSION =		v0.4.6
+MODGO_VERSION =		v0.5.0
 
 DISTNAME =		unbound_exporter-${MODGO_VERSION}
 
