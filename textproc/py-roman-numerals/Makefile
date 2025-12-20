@@ -1,7 +1,6 @@
 COMMENT=	manipulate well-formed Roman nunerals
 
-MODPY_DISTV=	3.1.0
-REVISION=	0
+MODPY_DISTV=	4.1.0
 DISTNAME=	roman_numerals-${MODPY_DISTV}
 PKGNAME=	py-roman-numerals-${MODPY_DISTV}
 
