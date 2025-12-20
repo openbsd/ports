@@ -1,7 +1,7 @@
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.3
-PKGNAME=	bash-5.3.8
+PKGNAME=	bash-5.3.9
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -15,7 +15,7 @@ SITES.p=	${SITE_GNU:=bash/bash-5.3-patches/}
 DIST_SUBDIR=	bash
 # 5.3 was re-rolled
 DISTFILES=	bash-5.3-0{bash-5.3}.tar.gz
-.for i in 001 002 003 004 005 006 007 008
+.for i in 001 002 003 004 005 006 007 008 009
 PATCHFILES.p +=	bash53-$i
 .endfor
 
