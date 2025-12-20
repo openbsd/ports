@@ -2768,6 +2768,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-3
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wellarchitected/2020-03-31/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/2024-02-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/2024-02-01/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/2024-02-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/2024-02-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/wickr/2024-02-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wisdom/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wisdom/2020-10-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/wisdom/2020-10-19/endpoint-rule-set-1.json
