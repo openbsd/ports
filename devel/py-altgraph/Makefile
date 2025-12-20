@@ -1,9 +1,8 @@
 COMMENT=	Python graph (network) package
 
-MODPY_DISTV =	0.17.4
+MODPY_DISTV =	0.17.5
 DISTNAME=	altgraph-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	devel
 
