@@ -1,2 +1,8 @@
 ${GIMP3_PLUGINS}/pl_stroke_arrows/
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/fr/
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/fr/LC_MESSAGES/
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/fr/LC_MESSAGES/pl_stroke_arrows.mo
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/fr/LC_MESSAGES/pl_stroke_arrows.po
+${GIMP3_PLUGINS}/pl_stroke_arrows/locale/pl_stroke_arrows.pot
 ${GIMP3_PLUGINS}/pl_stroke_arrows/pl_stroke_arrows.py
