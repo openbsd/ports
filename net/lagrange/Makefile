@@ -1,5 +1,5 @@
 COMMENT =	SDL multi protocol (gemini, gopher) navigator
-VERSION =	1.19.3
+VERSION =	1.19.4
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB +=	ICE SDL2 SM X11 Xext c crypto curses fribidi harfbuzz jxl
 WANTLIB +=	jxl_threads m mpg123 opusfile pcre2-8 pthread ssl unistring
-WANTLIB +=	webp z
+WANTLIB +=	webpdecoder z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
