@@ -1,6 +1,6 @@
 COMMENT =		minimal CGI library for web applications
 
-DISTNAME =		kcgi-1.0.0
+DISTNAME =		kcgi-1.0.1
 CATEGORIES =		www
 
 SHARED_LIBS +=		kcgi		1.1 # 1.1
