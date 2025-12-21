@@ -82,8 +82,12 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}stash.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}stash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}stepwise.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}stepwise.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}subtests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}subtests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}terminalprogress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}terminalprogress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}threadexception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}threadexception.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}timing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -218,7 +222,9 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/setupplan.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/skipping.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/stash.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/stepwise.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/subtests.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/terminal.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/terminalprogress.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/threadexception.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/timing.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/tmpdir.py
@@ -235,7 +241,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/licenses/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest/__init__.py

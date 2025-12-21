@@ -1,7 +1,9 @@
+disable some unported plugins, we're only building manpages
+
 Index: doc/en/conf.py
 --- doc/en/conf.py.orig
 +++ doc/en/conf.py
-@@ -27,24 +27,11 @@ release = ".".join(version.split(".")[:2])
+@@ -27,25 +27,11 @@ release = ".".join(version.split(".")[:2])
  
  root_doc = "index"
  extensions = [
@@ -12,6 +14,7 @@ Index: doc/en/conf.py
      "sphinx.ext.todo",
      "sphinx.ext.viewcode",
 -    "sphinx_removed_in",
+-    "sphinx_inline_tabs",
 -    "sphinxcontrib_trio",
 -    "sphinxcontrib.towncrier.ext",  # provides `towncrier-draft-entries` directive
 -    "sphinx_issues",  # implements `:issue:`, `:pr:` and other GH-related roles
