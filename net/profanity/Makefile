@@ -1,7 +1,7 @@
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.15.0
 CATEGORIES =	net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://profanity-im.github.io/
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS +=	devel/cmocka
 USE_GMAKE = Yes
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.72
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
