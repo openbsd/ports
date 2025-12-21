@@ -1,10 +1,9 @@
 COMMENT=	discovery-based unittest extension
 
-MODPY_DISTV=	1.5.4
+MODPY_DISTV=	1.5.5
 DISTNAME=	pynose-${MODPY_DISTV}
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	py-nose-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/mdmintz/pynose
 
