@@ -2,9 +2,9 @@ COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Module-Starter-1.77
+DISTNAME =		Module-Starter-1.78
 CATEGORIES =		devel
-CPAN_AUTHOR =		PETDANCE
+CPAN_AUTHOR =		DBOOK
 
 # Perl
 PERMIT_PACKAGE =	Yes
