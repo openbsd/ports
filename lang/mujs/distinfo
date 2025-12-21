@@ -1,2 +1,6 @@
+SHA256 (SpecialCasing.txt) = jV3jVO73nyOVpUycfc67rz0w/JYtD4VhHql6qXOgxFE=
+SHA256 (UnicodeData.txt) = /1jlgjvQlRZlZKAG5H0RETCBPc+L8jTvefpRqHDttI8=
 SHA256 (mujs-1.3.8.tar.gz) = UG00iC8mIKL96222Pbt6j/2Y9BdonY88hPL+rCdeOak=
+SIZE (SpecialCasing.txt) = 16809
+SIZE (UnicodeData.txt) = 2175362
 SIZE (mujs-1.3.8.tar.gz) = 130858

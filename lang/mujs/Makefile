@@ -17,6 +17,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m readline
 
 SITES =			https://mujs.com/downloads/
+DISTFILES.txt =		SpecialCasing.txt UnicodeData.txt
+SITES.txt =		https://www.unicode.org/Public/16.0.0/ucd/
+
+EXTRACT_CASES =		*.txt) cp ${FULLDISTDIR}/$$archive ${WRKSRC} ;;
 
 MAKE_FLAGS =		OPTIM="${CFLAGS}" SO="so.${LIBmujs_VERSION}"
 
