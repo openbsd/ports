@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		3.2.0
+V =		3.4.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
@@ -43,13 +43,13 @@ do-build:
 		 -type f -exec sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' {} +
 	find ${WRKSRC}/{bin,plugins/opensearch-security/tools} \
 		 -type f -exec chmod 755 {} +
+	mv ${WRKSRC}/config/opensearch-security-analytics ${WRKSRC}/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/opensearch/ \
-		${PREFIX}/opensearch/extensions \
 		${PREFIX}/share/{doc,examples}/opensearch/
 	cp -R ${WRKSRC}/config/* ${PREFIX}/share/examples/opensearch/
-	cp -R ${WRKSRC}/{agent,bin,lib,manifest.yml,modules,plugins} \
+	cp -R ${WRKSRC}/{agent,bin,lib,manifest.yml,modules,opensearch-security-analytics,plugins} \
 		${PREFIX}/opensearch/
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,NOTICE}.txt ${WRKSRC}/README.md \
 		${PREFIX}/share/doc/opensearch/
