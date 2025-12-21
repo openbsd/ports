@@ -1,9 +1,8 @@
 COMMENT=		IPC library used by GnuPG and gpgme
 
-DISTNAME=		libassuan-2.5.5
-REVISION=		0
+DISTNAME=		libassuan-3.0.2
 
-SHARED_LIBS +=  assuan            2.1      # 8.1
+SHARED_LIBS +=  assuan            3.0      # 9.2
 
 CATEGORIES=		security devel
 
