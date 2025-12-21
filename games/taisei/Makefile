@@ -75,6 +75,9 @@ CONFIGURE_ARGS +=	-D${lib}:default_library=shared
 .endfor
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-CONFIGURE_ARGS +=	-Ddebug=true -Dstrip=false
 
 .include <bsd.port.mk>
+
+.if empty(INSTALL_STRIP)
+CONFIGURE_ARGS +=	-Ddebug=true -Dstrip=false
+.endif
