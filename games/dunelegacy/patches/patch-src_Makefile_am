@@ -1,10 +1,19 @@
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
-@@ -42,16 +42,6 @@ dunelegacy_SOURCES =	AStarSearch.cpp\
+@@ -4,6 +4,7 @@ dunelegacy_SOURCES =	AStarSearch.cpp\
+ 						Choam.cpp\
+ 						Command.cpp\
+ 						CommandManager.cpp\
++						CursorManager.cpp \
+ 						Explosion.cpp\
+ 						Game.cpp\
+ 						GameInitSettings.cpp\
+@@ -41,16 +42,6 @@ dunelegacy_SOURCES =	AStarSearch.cpp\
+ 						CutScenes/CrossBlendVideoEvent.cpp\
  						CutScenes/TextEvent.cpp\
  						CutScenes/CutSceneTrigger.cpp\
- 						$(NULL)\
+-						$(NULL)\
 -						enet/callbacks.c\
 -						enet/compress.c\
 -						enet/host.c\
@@ -14,7 +23,6 @@ Index: src/Makefile.am
 -						enet/protocol.c\
 -						enet/unix.c\
 -						enet/win32.c\
--						$(NULL)\
+ 						$(NULL)\
  						fixmath/fix16.c\
  						fixmath/fix16_exp.c\
- 						fixmath/fix16_sqrt.c\

@@ -1,6 +1,6 @@
 COMMENT =		improved opensource version of Dune 2
 
-DISTNAME =		dunelegacy-0.98.2
+DISTNAME =		dunelegacy-0.98.5
 
 CATEGORIES =		games x11
 
