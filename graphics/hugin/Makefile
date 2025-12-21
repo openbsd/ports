@@ -2,7 +2,7 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2025.0.0
+DISTNAME =	hugin-2025.0.1
 
 EXTRACT_SUFX =	.tar.bz2
 
