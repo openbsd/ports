@@ -3,7 +3,7 @@ COMMENT =	GNU binary utilities
 # keep version synchronized with devel/gas
 V =		2.45.1
 DISTNAME =	binutils-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -40,7 +40,7 @@ SEPARATE_BUILD =	Yes
 # XXX arm64 sporadically fails, rerunning make eventually builds
 LD_ARCHS =		amd64
 SUBST_VARS =		LD_ARCHS
-.if ${LD_ARCHS:M${MACHINE_ARCH}}
+.if !empty(${LD_ARCHS:M${MACHINE_ARCH}})
 PKG_ARGS =		-Dld=1
 .else
 CONFIGURE_ARGS +=	--disable-ld
