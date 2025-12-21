@@ -47,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_getHierarchy.${M
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_getHierarchy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_getcellvars.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_getcellvars.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_hdlclass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_hdlclass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_instance.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_instance.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_intbv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -84,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_enum.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_extractHierarchy.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_getHierarchy.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_getcellvars.py
+lib/python${MODPY_VERSION}/site-packages/myhdl/_hdlclass.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_instance.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_intbv.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_join.py
@@ -249,6 +252,7 @@ share/myhdl/cosimulation/icarus/myhdl_20030518.c
 share/myhdl/cosimulation/icarus/myhdl_table.c
 share/myhdl/cosimulation/icarus/test/
 share/myhdl/cosimulation/icarus/test/bin2gray.py
+share/myhdl/cosimulation/icarus/test/const_1.py
 share/myhdl/cosimulation/icarus/test/dff.py
 share/myhdl/cosimulation/icarus/test/dff_clkout.py
 share/myhdl/cosimulation/icarus/test/inc.py
@@ -256,6 +260,7 @@ share/myhdl/cosimulation/icarus/test/tb_test.v
 share/myhdl/cosimulation/icarus/test/test.py
 share/myhdl/cosimulation/icarus/test/test_all.py
 share/myhdl/cosimulation/icarus/test/test_gray.py
+share/myhdl/cosimulation/icarus/test/test_initial_value_bug.py
 share/myhdl/cosimulation/modelsim/
 share/myhdl/cosimulation/modelsim-win/
 share/myhdl/cosimulation/modelsim-win/Makefile
@@ -281,13 +286,16 @@ share/myhdl/cosimulation/test/dff_clkout.py
 share/myhdl/cosimulation/test/inc.py
 share/myhdl/cosimulation/test/test_all.py
 share/myhdl/cosimulation/test/test_bin2gray.py
+share/myhdl/cosimulation/test/test_const_1.py
 share/myhdl/cosimulation/test/test_dff.py
 share/myhdl/cosimulation/test/test_inc.py
 share/myhdl/cosimulation/test/verilog/
 share/myhdl/cosimulation/test/verilog/bin2gray.v
+share/myhdl/cosimulation/test/verilog/const_1.v
 share/myhdl/cosimulation/test/verilog/dff.v
 share/myhdl/cosimulation/test/verilog/dff_clkout.v
 share/myhdl/cosimulation/test/verilog/dut_bin2gray.v
+share/myhdl/cosimulation/test/verilog/dut_const_1.v
 share/myhdl/cosimulation/test/verilog/dut_dff.v
 share/myhdl/cosimulation/test/verilog/dut_dff_clkout.v
 share/myhdl/cosimulation/test/verilog/dut_inc.v
