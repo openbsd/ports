@@ -1,12 +1,12 @@
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
 
-V = 			2.15.0
+V = 			2.16.0
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
 
-SHARED_LIBS += 		zint	7.0
+SHARED_LIBS += 		zint	8.0
 
 CATEGORIES =		graphics
 
@@ -28,7 +28,7 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS += 	-DDATA_INSTALL_DIR=OFF \
 			-DMAN_INSTALL_DIR=${PREFIX}/man
 
-LIB_DEPENDS-main = 		graphics/png
+LIB_DEPENDS-main = 	graphics/png
 
 MULTI_PACKAGES = 	-main
 

@@ -1,9 +1,10 @@
 @bin bin/zint
 include/zint.h
+lib/cmake/
+lib/cmake/zint/
+lib/cmake/zint/zint-config.cmake
+lib/cmake/zint/zint-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/zint/zint-targets.cmake
 @lib lib/libzint.so.${LIBzint_VERSION}
 @man man/man1/zint.1
 @comment share/applications/
-share/zint/
-share/zint/zint-config.cmake
-share/zint/zint-targets${MODCMAKE_BUILD_SUFFIX}
-share/zint/zint-targets.cmake
