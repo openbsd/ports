@@ -1,0 +1,14 @@
+https://gitlab.gnome.org/GNOME/seahorse/-/commit/aa68522cc696fa491ccfdff735b77bcf113168d0
+Index: pgp/seahorse-gpgme.c
+--- pgp/seahorse-gpgme.c.orig
++++ pgp/seahorse-gpgme.c
+@@ -484,7 +484,9 @@ on_gpgme_event (void *user_data,
+ 		break;
+ 
+ 	case GPGME_EVENT_NEXT_KEY:
++#if GPGME_VERSION_NUMBER < 0x020000
+ 	case GPGME_EVENT_NEXT_TRUSTITEM:
++#endif
+ 	default:
+ 		/* Ignore unsupported event types */
+ 		break;
