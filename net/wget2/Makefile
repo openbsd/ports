@@ -1,7 +1,7 @@
 COMMENT =	successor of GNU Wget, a file and website downloader
 
 DISTNAME =	wget2-2.2.0
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=	wget 0.1	# 3.0
 CATEGORIES =	net
 
@@ -20,15 +20,11 @@ BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		archivers/brotli \
 			archivers/bzip2 \
 			archivers/lzip/lzlib \
-			archivers/xz \
 			archivers/zstd \
-			converters/libunistring \
-			devel/gettext,-runtime \
 			devel/libidn2 \
 			devel/pcre2 \
 			net/libpsl \
 			security/gpgme \
-			security/libassuan \
 			www/nghttp2
 
 CONFIGURE_STYLE =	gnu
