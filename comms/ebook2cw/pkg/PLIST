@@ -1,0 +1,9 @@
+@bin bin/ebook2cw
+@man man/man1/ebook2cw.1
+share/doc/ebook2cw/
+share/doc/ebook2cw/README
+share/doc/ebook2cw/examples/
+share/doc/ebook2cw/examples/ebook2cw.conf
+share/doc/ebook2cw/examples/isomap.txt
+share/doc/ebook2cw/examples/utf8map.txt
+share/locale/de/LC_MESSAGES/ebook2cw.mo

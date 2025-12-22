@@ -1,0 +1,37 @@
+share/doc/ebook2cw/examples is used in manual and the code (to copy
+across a default) so not patching to use share/examples here
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -22,6 +22,9 @@ UNAME := $(shell uname)
+ 
+ ifeq ($(UNAME), Darwin)
+ 	LDFLAGS += -lintl
++else ifeq ($(UNAME), OpenBSD)
++        LDFLAGS += -lintl -L/usr/local/lib
++        CFLAGS += -I/usr/local/include
+ endif
+ 
+ all: ebook2cw
+@@ -40,13 +43,13 @@ static:
+ 	$(CC) -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -o ebook2cw
+ 
+ install:
+-	install -d -v                      $(DESTDIR)/share/man/man1/
+-	install -d -v                      $(DESTDIR)/bin/
+-	install -d -v                      $(DESTDIR)/share/doc/ebook2cw/
+-	install -d -v                      $(DESTDIR)/share/doc/ebook2cw/examples/
+-	install -d -v                      $(DESTDIR)/share/locale/de/LC_MESSAGES/
+-	install -s -m 0755 ebook2cw        $(DESTDIR)/bin/
+-	install    -m 0644 ebook2cw.1      $(DESTDIR)/share/man/man1/
++	install -d                         $(DESTDIR)/man/man1/
++	install -d                         $(DESTDIR)/bin/
++	install -d                         $(DESTDIR)/share/doc/ebook2cw/
++	install -d                         $(DESTDIR)/share/doc/ebook2cw/examples/
++	install -d                         $(DESTDIR)/share/locale/de/LC_MESSAGES/
++	install $(INSTALL_STRIP) -m 0755 ebook2cw        $(DESTDIR)/bin/
++	install    -m 0644 ebook2cw.1      $(DESTDIR)/man/man1/
+ 	install    -m 0644 README          $(DESTDIR)/share/doc/ebook2cw/
+ 	install    -m 0644 ebook2cw.conf   $(DESTDIR)/share/doc/ebook2cw/examples/
+ 	install    -m 0644 isomap.txt      $(DESTDIR)/share/doc/ebook2cw/examples/

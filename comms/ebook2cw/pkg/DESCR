@@ -1,0 +1,5 @@
+ebook2cw is a command line program which converts a plain text ebook to
+morse code MP3 or OGG files. It works on several platforms, including
+Windows, Linux, FreeBSD and OpenBSD.
+
+It automatically splits and numbers the output files by chapters.
