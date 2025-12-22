@@ -31,7 +31,7 @@ MULTI_PACKAGES =	-main -media -webview
 PSEUDO_FLAVORS =	no_webview
 FLAVOR ?=
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
-	${MACHINE_ARCH} == "hppa"
+	${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "i386"
 FLAVOR +=		no_webview
 .endif
 
