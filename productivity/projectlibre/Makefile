@@ -1,10 +1,9 @@
 COMMENT=		open source alternative to Microsoft Project
 
-DISTNAME=		projectlibre-1.9.3
+DISTNAME=		projectlibre-1.9.8
 CATEGORIES=		productivity
-REVISION=		0
 
-HOMEPAGE=		http://www.projectlibre.org/
+HOMEPAGE=		https://www.projectlibre.com/
 
 # Common Public Attribution License; see license/index.html
 # Includes anti patent litigation terms etc (similar to Mozilla Public License
@@ -14,9 +13,9 @@ PERMIT_PACKAGE=	Yes
 SITES=		${SITE_SOURCEFORGE:=projectlibre/}
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	21
 
-RUN_DEPENDS=	java/javaPathHelper
+SUBST_VARS=	JAVA_HOME
 
 NO_BUILD=       Yes
 NO_TEST=	Yes
