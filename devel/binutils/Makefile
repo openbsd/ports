@@ -3,7 +3,7 @@ COMMENT =	GNU binary utilities
 # keep version synchronized with devel/gas
 V =		2.45.1
 DISTNAME =	binutils-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -28,23 +28,13 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--disable-gas \
 			--disable-gprof \
+			--disable-ld \
 			--disable-libctf \
 			--disable-nls \
 			--disable-install-libbfd \
 			--program-prefix=g \
 			--without-msgpack \
 			--with-system-zlib
-
-SEPARATE_BUILD =	Yes
-
-# XXX arm64 sporadically fails, rerunning make eventually builds
-LD_ARCHS =		amd64
-SUBST_VARS =		LD_ARCHS
-.if !empty(${LD_ARCHS:M${MACHINE_ARCH}})
-PKG_ARGS =		-Dld=1
-.else
-CONFIGURE_ARGS +=	--disable-ld
-.endif
 
 USE_GMAKE =	Yes
 
