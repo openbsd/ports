@@ -1,6 +1,6 @@
 COMMENT=		library for counting CPU cycles
 
-V=			20240318
+V=			20250925
 DISTNAME=		libcpucycles-${V}
 SHARED_LIBS+=		cpucycles	0.0	# 1.0
 CATEGORIES=		misc
