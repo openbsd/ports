@@ -118,7 +118,6 @@ CONFIGURE_ARGS +=	-DBUILD_WITH_PCH=OFF \
 			-DFEATURE_libinput=OFF \
 			-DFEATURE_libproxy=ON \
 			-DFEATURE_libudev=OFF \
-			-DFEATURE_no_direct_extern_access=ON \
 			-DFEATURE_openssl_linked=ON \
 			-DFEATURE_system_sqlite=ON \
 			-DFEATURE_system_xcb_xinput=ON \
