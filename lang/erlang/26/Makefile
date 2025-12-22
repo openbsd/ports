@@ -49,8 +49,8 @@ WANTLIB-wx += glib-2.0 intl
 LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
 LIB_DEPENDS-wx +=devel/glib2
 
-.if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" && \
-	${MACHINE_ARCH} != "hppa"
+.if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" \
+	&& ${MACHINE_ARCH} != "hppa" && ${MACHINE_ARCH} != "i386"
 LIB_DEPENDS-wx +=x11/wxWidgets,-webview
 WANTLIB-wx += wx_gtk3u_webview-3.2
 .endif
