@@ -1,6 +1,6 @@
 COMMENT =		client library for executing notebooks
 
-MODPY_DISTV =		0.10.2
+MODPY_DISTV =		0.10.3
 DISTNAME =		nbclient-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -21,7 +21,7 @@ MODPY_PYBUILD =		hatchling
 RUN_DEPENDS =		devel/py-traitlets>=5.4 \
 			devel/py-jupyter_client>=6.1.12 \
 			devel/py-jupyter_core>=5.1 \
-			devel/py-nbformat>=5.1 \
+			devel/py-nbformat>=5.1.3 \
 			devel/py-nest-asyncio
 
 # needs ipywidgets
