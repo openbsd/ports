@@ -12,6 +12,7 @@
      SUBDIR += conserver,net
      SUBDIR += dfu-util
      SUBDIR += dump1090
+     SUBDIR += ebook2cw
      SUBDIR += efax
      SUBDIR += ems-flasher
      SUBDIR += fldigi
