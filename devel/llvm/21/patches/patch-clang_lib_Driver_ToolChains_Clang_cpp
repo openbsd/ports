@@ -1,25 +1,7 @@
 Index: clang/lib/Driver/ToolChains/Clang.cpp
 --- clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ clang/lib/Driver/ToolChains/Clang.cpp
-@@ -2730,6 +2730,17 @@ static void CollectArgsForIntegratedAssembler(Compilat
-     CmdArgs.push_back(MipsTargetFeature);
-   }
- 
-+  // Those OSes default to enabling VIS on 64-bit SPARC.
-+  // See also the corresponding code for external assemblers in
-+  // sparc::getSparcAsmModeForCPU().
-+  bool IsSparcV9ATarget =
-+      (C.getDefaultToolChain().getArch() == llvm::Triple::sparcv9) &&
-+      (Triple.isOSLinux() || Triple.isOSFreeBSD() || Triple.isOSOpenBSD());
-+  if (IsSparcV9ATarget && SparcTargetFeatures.empty()) {
-+    CmdArgs.push_back("-target-feature");
-+    CmdArgs.push_back("+vis");
-+  }
-+
-   for (const char *Feature : SparcTargetFeatures) {
-     CmdArgs.push_back("-target-feature");
-     CmdArgs.push_back(Feature);
-@@ -3111,6 +3122,11 @@ static void RenderFloatingPointOptions(const ToolChain
+@@ -3111,6 +3111,11 @@ static void RenderFloatingPointOptions(const ToolChain
                << LastFpContractOverrideOption
                << Args.MakeArgString("-ffp-contract=" + Val);
          }
@@ -31,7 +13,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
          FPContract = Val;
          LastSeenFfpContractOption = Val;
-@@ -5822,9 +5838,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5822,9 +5827,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're Windows MSVC since MSVC
    // doesn't do any TBAA.
@@ -46,7 +28,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (Args.hasFlag(options::OPT_fno_pointer_tbaa, options::OPT_fpointer_tbaa,
                     false))
-@@ -6896,7 +6915,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6896,7 +6904,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -106,7 +88,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -7508,6 +7578,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7508,6 +7567,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
