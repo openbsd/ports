@@ -1,11 +1,10 @@
 COMMENT=		GNU dbm
 
-DISTNAME=		gdbm-1.24
-REVISION=		0
+DISTNAME=		gdbm-1.26
 
 CATEGORIES=		databases
 
-SHARED_LIBS +=  gdbm                 7.0      # 6.0
+SHARED_LIBS +=  gdbm                 7.1      # 6.0
 
 HOMEPAGE=		https://www.gnu.org/software/gdbm/
 
