@@ -2026,6 +2026,7 @@
      SUBDIR += vanessa
      SUBDIR += vim-command-t
      SUBDIR += vim-taglist
+     SUBDIR += vineflower
      SUBDIR += visualvm
      SUBDIR += vtags
      SUBDIR += vtcl
