@@ -1,7 +1,6 @@
 COMMENT=	Tanuki Java Service Wrapper
 
-V=		3.5.49
-REVISION=	0
+V=		3.6.3
 DISTNAME=	wrapper_${V}_src
 PKGNAME=	java-tanukiwrapper-${V}
 CATEGORIES=	java
@@ -14,8 +13,11 @@ SITES=		https://download.tanukisoftware.com/wrapper/${V}/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	11
 MODJAVA_BUILD=	ant
+
+# The application which uses this defines what jdk it will run with
+MODJAVA_RUN_DEPENDS=
 
 .if ${MACHINE_ARCH} == "i386"
 BITS=32
@@ -44,17 +46,17 @@ USE_GMAKE=	Yes
 SUBST_VARS+=	CC CFLAGS
 
 post-extract:
-	cp ${FILESDIR}/Makefile-openbsd-${MAKE_ARCH}.gmake ${WRKSRC}/src/c/
+	cp ${FILESDIR}/Makefile-openbsd-*.gmake ${WRKSRC}/src/c/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/c/Makefile-openbsd-${MAKE_ARCH}.gmake
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/  \
-		${PREFIX}/lib/tanukuwrapper/
+		${PREFIX}/lib/tanukiwrapper/
 	${INSTALL_DATA} ${WRKSRC}/lib/wrapper.jar \
 		${PREFIX}/share/java/classes/tanukiwrapper.jar
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libwrapper.so ${PREFIX}/lib/tanukuwrapper/
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libwrapper.so ${PREFIX}/lib/tanukiwrapper/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/wrapper ${PREFIX}/sbin/tanukiwrapper
 
 do-test:

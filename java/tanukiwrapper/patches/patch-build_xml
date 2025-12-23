@@ -1,4 +1,5 @@
 define OpenBSD property
+Suppress deprecation warnings
 
 Index: build.xml
 --- build.xml.orig
@@ -13,7 +14,7 @@ Index: build.xml
          <property name="dist.os" value="${os.name}"/>
          
          <!-- Resolve an architecture to use in release names. -->
-@@ -427,6 +430,7 @@
+@@ -440,6 +443,7 @@
          <condition property="make.name" value="gmake">
              <or>
                  <isset property="is.freebsd"/>
@@ -21,7 +22,7 @@ Index: build.xml
                  <isset property="is.solaris"/>
              </or>
          </condition>
-@@ -444,6 +448,7 @@
+@@ -457,6 +461,7 @@
              <or>
                  <isset property="is.linux"/>
                  <isset property="is.freebsd"/>
@@ -29,7 +30,16 @@ Index: build.xml
                  <isset property="is.solaris"/>
              </or>
          </condition>
-@@ -1846,6 +1851,10 @@ wrapper.filter.action.999=NONE]]></replacevalue>
+@@ -633,7 +638,7 @@
+                excludes="testmodule/**/*,module-info.java"
+                destdir="${build.classes}"
+                nativeheaderdir="${build.headers}"
+-               deprecation="on"
++               deprecation="off"
+                debug="on"
+                optimize="on"
+                includeantruntime="false"
+@@ -2105,6 +2110,10 @@ wrapper.filter.action.999=NONE]]></replacevalue>
          <release-delta-extract-platform osname="linux"   osarch="armel"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
          <release-delta-extract-platform osname="linux"   osarch="armhf"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
          <release-delta-extract-platform osname="linux"   osarch="arm"       bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>

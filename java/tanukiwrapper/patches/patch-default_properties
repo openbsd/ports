@@ -1,0 +1,14 @@
+Bump up source/target version
+
+Index: default.properties
+--- default.properties.orig
++++ default.properties
+@@ -28,7 +28,7 @@ build.compress = false
+ junit.failonerror = true
+ 
+ #  Minimum version of Java required to build the Wrapper
+-javac.target.version=1.4
++javac.target.version=1.6
+ 
+ #  Location of java to build the pre-release
+ javac.dir=E:\\j2sdk1.4.2_19

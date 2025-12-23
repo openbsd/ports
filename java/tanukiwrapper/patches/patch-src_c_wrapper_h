@@ -1,18 +1,22 @@
 OpenBSD doesn't support timeb api
 
---- src/c/wrapper.h.orig	Fri Jul 31 18:19:37 2020
-+++ src/c/wrapper.h	Fri Jul 31 18:21:15 2020
-@@ -51,7 +51,12 @@
+Index: src/c/wrapper.h
+--- src/c/wrapper.h.orig
++++ src/c/wrapper.h
+@@ -52,7 +52,16 @@
  #define DWORD unsigned long
  #endif
  
--#include <sys/timeb.h>
++#ifndef OPENBSD
+ #include <sys/timeb.h>
++#else
 +struct timeb {
 +	time_t  time;                   /* seconds since the Epoch */
 +	unsigned short millitm;         /* + milliseconds since the Epoch */
 +	short   timezone;               /* minutes west of UTC */
 +	short   dstflag;                /* DST == non-zero */
 +};
++#endif
  
  #include "property.h"
  #include "wrapper_jvminfo.h"
