@@ -269,6 +269,7 @@
      SUBDIR += luaunbound,lua52
      SUBDIR += luaunbound,lua53
      SUBDIR += luaunbound,lua54
+     SUBDIR += lyrebird
      SUBDIR += mac-telnet
      SUBDIR += maclookup
      SUBDIR += magic-wormhole
