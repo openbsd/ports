@@ -1,6 +1,6 @@
 COMMENT=		RSI prevention tool
 
-V=			1.10.53
+V=			1.10.54
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
@@ -15,21 +15,27 @@ HOMEPAGE=		http://www.workrave.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xss Xtst atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo
-WANTLIB += cairo-gobject cairo-script-interpreter cairomm-1.0
-WANTLIB += dbus-1 epoxy execinfo expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE LLVM Lerc SM X11 X11-xcb
+WANTLIB += Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += atkmm-1.6 atspi avahi-client avahi-common c cairo cairo-gobject
+WANTLIB += cairo-script-interpreter cairomm-1.0 crypto cups dav1d
+WANTLIB += dbus-1 drm drm_amdgpu drm_intel elf epoll-shim epoxy
+WANTLIB += execinfo expat ffi fontconfig freetype fribidi gbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glapi
 WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphene-1.0
-WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3 gtk-4 gtkmm-3.0
-WANTLIB += harfbuzz iconv intl jpeg lzma lzo2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0
-WANTLIB += tiff xcb xcb-render xcb-shm z zstd
-WANTLIB += Lerc epoll-shim harfbuzz-subset vulkan wayland-client
-WANTLIB += wayland-cursor wayland-egl xkbcommon
+WANTLIB += graphite2 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstgl-1.0 gstpbutils-1.0 gstplay-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtk-4 gtkmm-3.0
+WANTLIB += harfbuzz harfbuzz-subset iconv intl jpeg lzma lzo2
+WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
+WANTLIB += pciaccess pcre2-8 pixman-1 png rsvg-2 sigc-2.0 ssl
+WANTLIB += tiff vulkan wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xkbcommon xml2
+WANTLIB += xshmfence z zstd
 
-SITES=	https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
+SITES=			https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
 
 MODULES=		lang/python \
 			textproc/intltool
