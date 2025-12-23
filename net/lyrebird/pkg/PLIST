@@ -1,0 +1,3 @@
+@bin bin/lyrebird
+@man man/man1/lyrebird.1
+share/doc/pkg-readmes/${PKGSTEM}
