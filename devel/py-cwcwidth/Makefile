@@ -1,9 +1,8 @@
 COMMENT=	Python bindings for C wc(s)width
 
-MODPY_DISTV=	0.1.10
+MODPY_DISTV =	0.1.12
 DISTNAME=	cwcwidth-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
