@@ -157,6 +157,8 @@ share/liblouis/tables/el.ctb
 share/liblouis/tables/en-GB-g2.ctb
 share/liblouis/tables/en-chardefs.cti
 share/liblouis/tables/en-chess.ctb
+share/liblouis/tables/en-g3-patterns.dic
+share/liblouis/tables/en-g3.ctb
 share/liblouis/tables/en-gb-comp8.ctb
 share/liblouis/tables/en-gb-g1.utb
 share/liblouis/tables/en-in-g1.ctb
@@ -322,6 +324,7 @@ share/liblouis/tables/malayalam.cti
 share/liblouis/tables/mao-nz-g1.ctb
 share/liblouis/tables/marburg_single_cell_defs.cti
 share/liblouis/tables/marburg_unicode_defs.cti
+share/liblouis/tables/mk-g1.utb
 share/liblouis/tables/ml-in-g1.utb
 share/liblouis/tables/ml.tbl
 share/liblouis/tables/mn-MN-common.cti
