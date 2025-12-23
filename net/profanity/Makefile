@@ -1,7 +1,6 @@
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.15.0
+DISTNAME =	profanity-0.15.1
 CATEGORIES =	net
-REVISION =	2
 
 HOMEPAGE =	https://profanity-im.github.io/
 
