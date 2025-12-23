@@ -1,0 +1,11 @@
+Vineflower is a modern general purpose Java & JVM language decompiler
+focused on providing the best quality, speed, and usability.
+
+Vineflower's features include:
+
+- Java 21+ support, including records, sealed classes, switch expressions,
+  pattern matching, and more
+- Clean code generation and output, with automatic output formatting
+- Multithreaded decompilation
+
+Vineflower can be used from the command line or as a library.

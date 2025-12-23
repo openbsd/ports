@@ -1,0 +1,3 @@
+#!/bin/sh
+JAVACMD=$(javaPathHelper -c vineflower)
+exec ${JAVACMD} -jar ${TRUEPREFIX}/share/vineflower/vineflower.jar "$@"
