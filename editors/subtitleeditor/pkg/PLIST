@@ -23,6 +23,7 @@ lib/subtitleeditor/plugins/actions/
 @so lib/subtitleeditor/plugins/actions/libextendlength.so
 @so lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
 @so lib/subtitleeditor/plugins/actions/libfindandreplace.so
+@so lib/subtitleeditor/plugins/actions/libfindbytime.so
 @so lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
 @so lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
 @so lib/subtitleeditor/plugins/actions/libitalicize.so
@@ -37,6 +38,8 @@ lib/subtitleeditor/plugins/actions/
 @so lib/subtitleeditor/plugins/actions/libreversetextandtranslation.so
 @so lib/subtitleeditor/plugins/actions/libscalesubtitles.so
 @so lib/subtitleeditor/plugins/actions/libselection.so
+@so lib/subtitleeditor/plugins/actions/libslidetimings.so
+@so lib/subtitleeditor/plugins/actions/libslidewords.so
 @so lib/subtitleeditor/plugins/actions/libsortsubtitles.so
 @so lib/subtitleeditor/plugins/actions/libspellchecking.so
 @so lib/subtitleeditor/plugins/actions/libsplitdocument.so
@@ -72,13 +75,18 @@ lib/subtitleeditor/plugins/subtitleformats/
 @so lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.so
 @so lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.so
 @man man/man1/subtitleeditor.1
-share/appdata/
-share/appdata/subtitleeditor.appdata.xml
-share/applications/subtitleeditor.desktop
+share/applications/org.kitone.subtitleeditor.desktop
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/subtitleeditor.png
+share/icons/hicolor/128x128/apps/subtitleeditor.png
 share/icons/hicolor/16x16/apps/subtitleeditor.png
 share/icons/hicolor/22x22/apps/subtitleeditor.png
 share/icons/hicolor/24x24/apps/subtitleeditor.png
+share/icons/hicolor/256x256/apps/subtitleeditor.png
 share/icons/hicolor/32x32/apps/subtitleeditor.png
+share/icons/hicolor/512x512/apps/subtitleeditor.png
+share/icons/hicolor/64x64/apps/subtitleeditor.png
 share/icons/hicolor/scalable/apps/subtitleeditor.svg
 share/locale/bg/LC_MESSAGES/subtitleeditor.mo
 share/locale/ca/LC_MESSAGES/subtitleeditor.mo
@@ -89,6 +97,7 @@ share/locale/el/LC_MESSAGES/subtitleeditor.mo
 share/locale/en_GB/LC_MESSAGES/subtitleeditor.mo
 share/locale/eo/LC_MESSAGES/subtitleeditor.mo
 share/locale/es/LC_MESSAGES/subtitleeditor.mo
+share/locale/eu/LC_MESSAGES/subtitleeditor.mo
 share/locale/fr/LC_MESSAGES/subtitleeditor.mo
 share/locale/gl/LC_MESSAGES/subtitleeditor.mo
 share/locale/hu/LC_MESSAGES/subtitleeditor.mo
@@ -106,8 +115,8 @@ share/locale/sr/LC_MESSAGES/subtitleeditor.mo
 share/locale/tr/LC_MESSAGES/subtitleeditor.mo
 share/locale/zh_CN/LC_MESSAGES/subtitleeditor.mo
 share/locale/zh_TW/LC_MESSAGES/subtitleeditor.mo
-share/pixmaps/
-share/pixmaps/subtitleeditor.svg
+share/metainfo/
+share/metainfo/org.kitone.subtitleeditor.appdata.xml
 share/subtitleeditor/
 share/subtitleeditor/menubar.xml
 share/subtitleeditor/plugins-description/
@@ -130,6 +139,7 @@ share/subtitleeditor/plugins-description/actions/errorchecking.se-plugin
 share/subtitleeditor/plugins-description/actions/extendlength.se-plugin
 share/subtitleeditor/plugins-description/actions/externalvideoplayer.se-plugin
 share/subtitleeditor/plugins-description/actions/findandreplace.se-plugin
+share/subtitleeditor/plugins-description/actions/findbytime.se-plugin
 share/subtitleeditor/plugins-description/actions/insertsubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
 share/subtitleeditor/plugins-description/actions/italicize.se-plugin
@@ -144,6 +154,8 @@ share/subtitleeditor/plugins-description/actions/removesubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/reversetextandtranslation.se-plugin
 share/subtitleeditor/plugins-description/actions/scalesubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/selection.se-plugin
+share/subtitleeditor/plugins-description/actions/slidetimings.se-plugin
+share/subtitleeditor/plugins-description/actions/slidewords.se-plugin
 share/subtitleeditor/plugins-description/actions/sortsubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/spellchecking.se-plugin
 share/subtitleeditor/plugins-description/actions/splitdocument.se-plugin

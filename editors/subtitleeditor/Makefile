@@ -1,36 +1,31 @@
-COMMENT=		GTK+ subtitles editor
+COMMENT=		GTK subtitles editor
 
-V=			0.54.0
-DISTNAME=		subtitleeditor-${V}
-REVISION=		9
+DIST_TUPLE=		github subtitleeditor subtitleeditor 0.55.0 .
 
 CATEGORIES=		graphics editors
 
 SHARED_LIBS +=  subtitleeditor       0.0      # unknown
 
-HOMEPAGE=		http://kitone.github.io/subtitleeditor/
+HOMEPAGE=		https://subtitleeditor.github.io/subtitleeditor/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender aspell atk-1.0 atk-bridge-2.0
-WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1
-WANTLIB += drm enchant-2 epoll-shim epoxy execinfo expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
-WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstallocators-1.0 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstcheck-1.0 gstcontroller-1.0 gstfft-1.0
-WANTLIB += gstnet-1.0 gstpbutils-1.0 gstreamer-1.0 gstreamermm-1.0
-WANTLIB += gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl jpeg
-WANTLIB += lzma m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0 wayland-client
-WANTLIB += wayland-cursor wayland-egl xcb xcb-render xcb-shm xkbcommon
-WANTLIB += xml++-2.6 xml2 z
-
-SITES=	https://github.com/kitone/subtitleeditor/releases/download/${V}/
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender aspell
+WANTLIB += atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo cairo-gobject
+WANTLIB += cairomm-1.0 dbus-1 drm enchant-2 epoll-shim epoxy execinfo
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstcheck-1.0 gstcontroller-1.0
+WANTLIB += gstfft-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gstreamermm-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0
+WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 gtkmm-3.0
+WANTLIB += harfbuzz iconv intl jpeg m orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render
+WANTLIB += xcb-shm xkbcommon xml++-2.6 xml2 z
 
 BUILD_DEPENDS=		devel/iso-codes
 
@@ -48,17 +43,17 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 MODULES=		textproc/intltool
 
-# c++11
+# c++14
 COMPILER =		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.18
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-std=c++11" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		--with-default-video-sink=autovideosink \
