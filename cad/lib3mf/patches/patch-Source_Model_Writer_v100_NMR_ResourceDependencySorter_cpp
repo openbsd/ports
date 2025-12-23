@@ -1,0 +1,21 @@
+error: 'find' is not a member of 'std';
+
+Index: Source/Model/Writer/v100/NMR_ResourceDependencySorter.cpp
+--- Source/Model/Writer/v100/NMR_ResourceDependencySorter.cpp.orig
++++ Source/Model/Writer/v100/NMR_ResourceDependencySorter.cpp
+@@ -30,6 +30,8 @@ NMR_ResourcDependencySorter resolves the dependencies 
+ sorting them topologically.
+ --*/
+ 
++#include <algorithm>
++
+ #include "Model/Writer/v100/NMR_ResourceDependencySorter.h"
+ 
+ #include "Common/Graph/DirectedGraph.h"
+@@ -122,4 +124,4 @@ namespace NMR
+         return m_resourceIDToIndex.at(resourceID);
+     }
+ 
+-}  // namespace NMR
+\ No newline at end of file
++}  // namespace NMR

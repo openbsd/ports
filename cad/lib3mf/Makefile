@@ -1,5 +1,6 @@
 
 V =		2.4.1
+REVISION =	0
 
 COMMENT =	implementation of the 3D Manufacturing Format file standard
 GH_ACCOUNT =	3MFConsortium

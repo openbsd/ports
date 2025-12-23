@@ -1,0 +1,12 @@
+Index: Tests/CPP_Bindings/Source/Volumetric.cpp
+--- Tests/CPP_Bindings/Source/Volumetric.cpp.orig
++++ Tests/CPP_Bindings/Source/Volumetric.cpp
+@@ -30,6 +30,8 @@ Vulometric.cpp: Defines Unittests for the Volumetric e
+ 
+ --*/
+ 
++#include <algorithm>
++
+ #include "UnitTest_Utilities.h"
+ #include "lib3mf_implicit.hpp"
+ 
