@@ -3,6 +3,7 @@ COMMENT=	i2p routing protocol
 V =		2.10.0
 DISTNAME =	i2psource_${V}
 PKGNAME =	i2p-${V}
+REVISION =	0
 
 CATEGORIES=	net
 
@@ -21,13 +22,13 @@ WANTLIB +=	gmp
 SITES =		https://files.i2p-projekt.de/${V}/
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	17
 MODJAVA_BUILD=	ant
-MODJAVA_BUILD_TARGET_NAME= pkg
+MODJAVA_BUILD_TARGET_NAME=distclean updater preppkg
 
 BUILD_DEPENDS=	devel/gettext,-tools
 RUN_DEPENDS=	devel/gettext,-runtime \
-		java/tanukiwrapper
+		java/tanukiwrapper>=3.6.3
 LIB_DEPENDS=	devel/gmp
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

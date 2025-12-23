@@ -3,8 +3,9 @@ set proper path for log and temp dirs
 remove link to internal wrapper - doesn't work
 set link to tanukiwrapper
 
---- installer/resources/i2prouter.orig	Mon May 25 18:07:52 2020
-+++ installer/resources/i2prouter	Sat Aug  1 01:12:28 2020
+Index: installer/resources/i2prouter
+--- installer/resources/i2prouter.orig
++++ installer/resources/i2prouter
 @@ -28,7 +28,7 @@
  # Note that (percent)INSTALL_PATH, (percent)USER_HOME,  and (percent)SYSTEM_java_io_tmpdir
  # should have been replaced by the izpack installer.
@@ -35,20 +36,3 @@ set link to tanukiwrapper
  WRAPPER_CONF="$I2P/wrapper.config"
  
  # Priority at which to run the wrapper.  See "man nice" for valid priorities.
-@@ -548,14 +548,14 @@ outputFile() {
- }
- 
- setup_openbsd() {
--    if ! pkg_info -qe 'java-tanukiwrapper->=3.5.19'; then
-+    if ! pkg_info -qe 'tanukiwrapper->=3.5.19'; then
-         echo "Java wrapper not found. Either:"
-         echo "- install the package java-tanukiwrapper then start I2P again; or"
-         echo "- start I2P with $I2P/runplain.sh"
-         exit 1
-     else
-         # Wrapper package is installed so let's try copying the bits into the proper places
--        pkg_path=$(pkg_info -v java-tanukiwrapper   | awk '/^@cwd/{print $2}')
-+        pkg_path=$(pkg_info -v tanukiwrapper   | awk '/^@cwd/{print $2}')
-         if [ -z $pkg_path ]; then
-             # Fallback, but we shouldn't end up here
-             echo "Unable to locate ${WRAPPER_CMD} in ${I2P}!"

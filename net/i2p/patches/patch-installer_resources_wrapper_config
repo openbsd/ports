@@ -2,6 +2,7 @@ path to java binary
 add proper classpaths for i2p and wrapper
 add library path for wrapper
 set runtime dirs
+remove stripquotes for newer wrapper
 
 Index: installer/resources/wrapper.config
 --- installer/resources/wrapper.config.orig
@@ -15,7 +16,7 @@ Index: installer/resources/wrapper.config
  #  Specify a specific java binary:
  #set.JAVA_HOME=/java/path
  #wrapper.java.command=%JAVA_HOME%/bin/java
-@@ -60,13 +60,13 @@ wrapper.java.mainclass=org.tanukisoftware.wrapper.Wrap
+@@ -60,22 +60,23 @@ wrapper.java.mainclass=org.tanukisoftware.wrapper.Wrap
  # classes, or all the classes of i2p.jar, are in a different directory).
  # Be sure there are no other duplicate classes.
  #
@@ -28,24 +29,37 @@ Index: installer/resources/wrapper.config
  # Java Library Path (location of Wrapper.DLL or libwrapper.so)
 -wrapper.java.library.path.1=$INSTALL_PATH
 -wrapper.java.library.path.2=$INSTALL_PATH/lib
-+wrapper.java.library.path.1=${LOCALBASE}/lib/tanukuwrapper
++wrapper.java.library.path.1=${LOCALBASE}/lib/tanukiwrapper
 +wrapper.java.library.path.2=${LOCALBASE}/share/i2p/lib
  
  # Java Bits.  On applicable platforms, tells the JVM to run in 32 or 64-bit mode.
  wrapper.java.additional.auto_bits=FALSE
-@@ -74,8 +74,14 @@ wrapper.java.additional.auto_bits=FALSE
+ 
  # Java Additional Parameters
- # Numbers must be consecutive (except for stripquotes)
+-# Numbers must be consecutive (except for stripquotes)
  wrapper.java.additional.1=-DloggerFilenameOverride=logs/log-router-@.txt
 -wrapper.java.additional.2=-Di2p.dir.base="$INSTALL_PATH"
-+wrapper.java.additional.2=-Di2p.dir.base="${LOCALBASE}/share/i2p"
- wrapper.java.additional.2.stripquotes=TRUE
-+wrapper.java.additional.3=-Di2p.dir.app="${DB_DIR}"
-+wrapper.java.additional.3.stripquotes=TRUE
-+wrapper.java.additional.4=-Di2p.dir.config="${DB_DIR}"
-+wrapper.java.additional.4.stripquotes=TRUE
-+wrapper.java.additional.5=-Di2p.dir.router="${DB_DIR}"
-+wrapper.java.additional.5.stripquotes=TRUE
+-wrapper.java.additional.2.stripquotes=TRUE
++wrapper.java.additional.2=-Di2p.dir.base=${LOCALBASE}/share/i2p
++wrapper.java.additional.3=-Di2p.dir.app=${DB_DIR}
++wrapper.java.additional.4=-Di2p.dir.config=${DB_DIR}
++wrapper.java.additional.5=-Di2p.dir.router=${DB_DIR}
  
  # Suppress JNI warning in JRE 24+, and eventual restriction
  # See https://openjdk.org/jeps/472
+@@ -106,12 +107,9 @@ wrapper.java.additional.2.stripquotes=TRUE
+ # wrapper.java.additional.8=-Dorg.mortbay.util.FileResource.checkAliases=false
+ # PORTABLE installation:
+ # uncomment the following
+-#wrapper.java.additional.3=-Di2p.dir.pid="$INSTALL_PATH"
+-#wrapper.java.additional.3.stripquotes=TRUE
+-#wrapper.java.additional.4=-Di2p.dir.temp="$INSTALL_PATH"
+-#wrapper.java.additional.4.stripquotes=TRUE
+-#wrapper.java.additional.5=-Di2p.dir.config="$INSTALL_PATH"
+-#wrapper.java.additional.5.stripquotes=TRUE
++#wrapper.java.additional.3=-Di2p.dir.pid=$INSTALL_PATH
++#wrapper.java.additional.4=-Di2p.dir.temp=$INSTALL_PATH
++#wrapper.java.additional.5=-Di2p.dir.config=$INSTALL_PATH
+ #
+ # Uncomment this for better performance.
+ # If it doesn't work, server mode is not available in your JVM.

@@ -1,0 +1,14 @@
+Dont try to read /proc/cpuinfo and set opt to ARMV8 on aarch64
+
+Index: core/java/src/net/i2p/util/NativeBigInteger.java
+--- core/java/src/net/i2p/util/NativeBigInteger.java.orig
++++ core/java/src/net/i2p/util/NativeBigInteger.java
+@@ -441,6 +441,8 @@ public class NativeBigInteger extends BigInteger {
+         } else if (_isArm) {
+             if (_isWin)
+                 return null;
++            if (_isOpenbsd && _is64)
++                return JBIGI_OPTIMIZATION_ARM_ARMV8;
+             Map<String, String> cpuinfo = getCPUInfo();
+             String implementer = cpuinfo.get("cpu implementer");
+             String part = cpuinfo.get("cpu part");
