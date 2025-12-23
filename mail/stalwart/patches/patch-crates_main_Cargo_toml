@@ -1,7 +1,7 @@
 Index: crates/main/Cargo.toml
 --- crates/main/Cargo.toml.orig
 +++ crates/main/Cargo.toml
-@@ -36,7 +36,7 @@ utils = { path = "../utils" }
+@@ -35,7 +35,7 @@ utils = { path = "../utils" }
  migration = { path = "../migration" }
  tokio = { version = "1.47", features = ["full"] }
  
