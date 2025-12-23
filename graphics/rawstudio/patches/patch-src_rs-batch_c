@@ -1,0 +1,11 @@
+Index: src/rs-batch.c
+--- src/rs-batch.c.orig
++++ src/rs-batch.c
+@@ -22,6 +22,7 @@
+ #include <gtk/gtk.h>
+ #include <config.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "rawstudio.h"
+ #include "rs-batch.h"

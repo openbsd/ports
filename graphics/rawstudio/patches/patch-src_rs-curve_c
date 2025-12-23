@@ -1,0 +1,11 @@
+Index: src/rs-curve.c
+--- src/rs-curve.c.orig
++++ src/rs-curve.c
+@@ -20,6 +20,7 @@
+ 
+ #include <math.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include <string.h> /* memset() */
+ #include "color.h"

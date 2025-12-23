@@ -1,0 +1,11 @@
+Index: src/rs-cache.c
+--- src/rs-cache.c.orig
++++ src/rs-cache.c
+@@ -19,6 +19,7 @@
+ 
+ #include <glib.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "rawstudio.h"
+ #include "rs-cache.h"

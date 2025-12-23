@@ -1,0 +1,11 @@
+Index: src/rs-metadata.c
+--- src/rs-metadata.c.orig
++++ src/rs-metadata.c
+@@ -20,6 +20,7 @@
+ #include <glib/gstdio.h> /* g_unlink() */
+ #include <config.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "gettext.h"
+ #include "rs-metadata.h"

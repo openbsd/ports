@@ -1,7 +1,7 @@
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	24
+REVISION =	25
 
 CATEGORIES =	graphics
 
