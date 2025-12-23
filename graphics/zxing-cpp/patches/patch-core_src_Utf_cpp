@@ -6,7 +6,15 @@ instantiation for other types will fail.
 Index: core/src/Utf.cpp
 --- core/src/Utf.cpp.orig
 +++ core/src/Utf.cpp
-@@ -20,7 +20,7 @@ namespace ZXing {
+@@ -13,6 +13,7 @@
+ #include <iomanip>
+ #include <cstdint>
+ #include <sstream>
++#include <vector>
+ 
+ namespace ZXing {
+ 
+@@ -20,7 +21,7 @@ namespace ZXing {
  #if __cplusplus <= 201703L
  using char8_t = uint8_t;
  #endif
@@ -15,7 +23,7 @@ Index: core/src/Utf.cpp
  
  using state_t = uint8_t;
  constexpr state_t kAccepted = 0;
-@@ -118,7 +118,8 @@ static void AppendFromUtf8(utf8_t utf8, std::wstring& 
+@@ -118,7 +119,8 @@ static void AppendFromUtf8(utf8_t utf8, std::wstring& 
  std::wstring FromUtf8(std::string_view utf8)
  {
  	std::wstring str;
