@@ -5,7 +5,7 @@ GH_PROJECT =	grive2
 GH_COMMIT =	548ea362f319cd1f7fcbad0344fde8449fa14255
 
 DISTNAME =	grive2-0.5.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

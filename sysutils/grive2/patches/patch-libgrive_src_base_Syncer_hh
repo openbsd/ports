@@ -1,0 +1,14 @@
+Syncer.hh:58:22: error: 'unique_ptr' in namespace 'std' does not name
+a template type
+
+Index: libgrive/src/base/Syncer.hh
+--- libgrive/src/base/Syncer.hh.orig
++++ libgrive/src/base/Syncer.hh
+@@ -21,6 +21,7 @@
+ 
+ #include "util/FileSystem.hh"
+ 
++#include <memory>
+ #include <string>
+ #include <vector>
+ #include <iosfwd>
