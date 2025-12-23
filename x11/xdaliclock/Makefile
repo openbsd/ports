@@ -1,6 +1,6 @@
 COMMENT=	rather neat animated clock
 
-DISTNAME=	xdaliclock-2.48
+DISTNAME=	xdaliclock-2.49
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.jwz.org/xdaliclock/
@@ -25,6 +25,8 @@ RUN_DEPENDS=		devel/desktop-file-utils
 MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}
 WRKSRC=			${WRKDIST}/X11
 CONFIGURE_STYLE=	gnu
+
+FAKE_FLAGS=		install_prefix=${WRKINST}
 
 NO_TEST=		Yes
 
