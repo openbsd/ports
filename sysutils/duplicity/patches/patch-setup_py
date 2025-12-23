@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -108,21 +108,9 @@ def get_data_files():
+@@ -107,21 +107,9 @@ def get_data_files():
      # static data files
      data_files = [
          (
