@@ -5,14 +5,13 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.12.6
-REVISION =		0
+VERSION =		5.13.0
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
 
-SHARED_LIBS +=  link-grammar         11.0      # 17.5
+SHARED_LIBS +=  link-grammar         11.1      # 17.5
 SHARED_LIBS +=  link-grammar-java    9.0       # 17.5
 
 CATEGORIES =		textproc
