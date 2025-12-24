@@ -19254,6 +19254,7 @@ share/wesnoth/data/test/scenarios/lua_tests/filesystem/temp.txt
 share/wesnoth/data/test/scenarios/lua_tests/functional/
 share/wesnoth/data/test/scenarios/lua_tests/functional/lua_functional.cfg
 share/wesnoth/data/test/scenarios/lua_tests/gui/
+share/wesnoth/data/test/scenarios/lua_tests/gui/show_dialog.cfg
 share/wesnoth/data/test/scenarios/lua_tests/gui/widget/
 share/wesnoth/data/test/scenarios/lua_tests/gui/widget/temp.txt
 share/wesnoth/data/test/scenarios/lua_tests/location_set/
@@ -19992,7 +19993,6 @@ share/wesnoth/fonts/DejaVuSans.ttf
 share/wesnoth/fonts/DejaVuSansMono-Bold.ttf
 share/wesnoth/fonts/DejaVuSansMono.ttf
 share/wesnoth/fonts/DroidSansFallbackFull.ttf
-share/wesnoth/fonts/DroidSansJapanese.ttf
 share/wesnoth/fonts/Lato-Black.ttf
 share/wesnoth/fonts/Lato-BlackItalic.ttf
 share/wesnoth/fonts/Lato-Bold.ttf
@@ -20010,6 +20010,7 @@ share/wesnoth/fonts/Lato-SemiboldItalic.ttf
 share/wesnoth/fonts/Lato-Thin.ttf
 share/wesnoth/fonts/Lato-ThinItalic.ttf
 share/wesnoth/fonts/Lohit-Bengali.ttf
+share/wesnoth/fonts/NotoSansJP-VariableFont_wght.ttf
 share/wesnoth/fonts/OldaniaADFStd-Bold.otf
 share/wesnoth/fonts/OldaniaADFStd-BoldItalic.otf
 share/wesnoth/fonts/OldaniaADFStd-Italic.otf
