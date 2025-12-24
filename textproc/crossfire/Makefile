@@ -3,17 +3,16 @@ CATEGORIES =	textproc games
 
 HOMEPAGE =	http://beekeeperlabs.com/crossfire
 SITES =		http://beekeeperlabs.com/download/
-V =				1.3.1
+V =				1.3.2
 PKGNAME =	crossfire-${V}
 DISTNAME =	CrossFire-${V:S/./_/g}-linux
 EXTRACT_SUFX =	.tgz
 WRKDIST =	${WRKDIR}/CrossFire
-REVISION =	0
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11+
 
 # "Linux" version is distributed as a binary jar
 PKG_ARCH =	*

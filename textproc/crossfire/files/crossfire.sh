@@ -8,5 +8,5 @@ if [ ! -d ~/crossfire -a ! -f ~/crossfire/default.dict ]; then
 fi
 
 cd ~/crossfire
-
-$(javaPathHelper -c crossfire) -jar ${TRUEPREFIX}/lib/crossfire/CrossFire.jar
+JAVACMD=$(javaPathHelper -c crossfire)
+exec ${JAVACMD} -jar ${TRUEPREFIX}/lib/crossfire/CrossFire.jar
