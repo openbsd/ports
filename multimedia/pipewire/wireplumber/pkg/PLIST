@@ -64,6 +64,7 @@ lib/wireplumber-0.5/
 @so lib/wireplumber-0.5/libwireplumber-module-si-node.so
 @so lib/wireplumber-0.5/libwireplumber-module-si-standard-link.so
 @so lib/wireplumber-0.5/libwireplumber-module-standard-event-source.so
+share/bash-completion/completions/wpctl
 share/doc/wireplumber/
 share/doc/wireplumber/examples/
 share/doc/wireplumber/examples/wireplumber.conf.d/
@@ -71,6 +72,7 @@ share/doc/wireplumber/examples/wireplumber.conf.d/access.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/alsa.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/bluetooth.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/device.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/filter-graph.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/libcamera.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/linking.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/log.conf
@@ -179,6 +181,7 @@ share/wireplumber/scripts/linking/find-best-target.lua
 share/wireplumber/scripts/linking/find-default-target.lua
 share/wireplumber/scripts/linking/find-defined-target.lua
 share/wireplumber/scripts/linking/find-filter-target.lua
+share/wireplumber/scripts/linking/find-media-role-sink-target.lua
 share/wireplumber/scripts/linking/find-media-role-target.lua
 share/wireplumber/scripts/linking/find-user-target.lua.example
 share/wireplumber/scripts/linking/get-filter-from-target.lua
@@ -209,6 +212,8 @@ share/wireplumber/scripts/node/
 share/wireplumber/scripts/node/audio-group.lua
 share/wireplumber/scripts/node/create-item.lua
 share/wireplumber/scripts/node/filter-forward-format.lua
+share/wireplumber/scripts/node/filter-graph.lua
+share/wireplumber/scripts/node/find-media-role-default-volume.lua
 share/wireplumber/scripts/node/software-dsp.lua
 share/wireplumber/scripts/node/state-stream.lua
 share/wireplumber/scripts/node/suspend-node.lua
