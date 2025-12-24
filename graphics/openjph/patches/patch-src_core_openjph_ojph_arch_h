@@ -1,6 +1,6 @@
-Index: src/core/common/ojph_arch.h
---- src/core/common/ojph_arch.h.orig
-+++ src/core/common/ojph_arch.h
+Index: src/core/openjph/ojph_arch.h
+--- src/core/openjph/ojph_arch.h.orig
++++ src/core/openjph/ojph_arch.h
 @@ -108,6 +108,8 @@ namespace ojph {
  #define OJPH_OS_ANDROID
  #elif (defined __linux)
