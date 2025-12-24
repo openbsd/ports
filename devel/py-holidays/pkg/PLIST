@@ -969,6 +969,9 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/be/LC_MESSAGES/BY.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bg/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bg/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bg/LC_MESSAGES/BG.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/bn/
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/bn/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/bn/LC_MESSAGES/BD.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bs/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bs/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/bs/LC_MESSAGES/BA.mo
@@ -1142,6 +1145,7 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/AW.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/AX.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/AZ.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/BA.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/BD.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/BE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/BG.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/BH.mo
@@ -1434,6 +1438,9 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/fr_SN/LC_MESSAGES/SN.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/fy/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/fy/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/fy/LC_MESSAGES/NL.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/IN.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/LC_MESSAGES/IL.mo
