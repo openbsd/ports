@@ -200,6 +200,7 @@
      SUBDIR += lugaru
      SUBDIR += lwjgl
      SUBDIR += lwjgl3
+     SUBDIR += lzdoom
      SUBDIR += maelstrom
      SUBDIR += manaplus
      SUBDIR += mars
