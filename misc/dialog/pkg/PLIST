@@ -58,6 +58,9 @@ share/locale/is/LC_MESSAGES/dialog.mo
 share/locale/it/LC_MESSAGES/dialog.mo
 share/locale/ja/LC_MESSAGES/dialog.mo
 share/locale/ka/LC_MESSAGES/dialog.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/dialog.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/dialog.mo
