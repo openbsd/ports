@@ -4,7 +4,7 @@ PKGNAME =	subsurface-6.0.5459
 DIST_TUPLE +=	github subsurface subsurface e0fbda77ef203a5a2539465e9fa44df56e2f5a9e .
 DIST_TUPLE +=	github subsurface libdc 64ecef5b3ee7342159349391c8b55281bebad2c2 libdivecomputer
 DIST_TUPLE +=	github subsurface googlemaps 7ce7124b385b2ebac0f72c38b094f436d4fe5c58 gmaps
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	misc
 HOMEPAGE =	https://subsurface-divelog.org
@@ -72,11 +72,18 @@ NO_TEST =	Yes
 do-gen:
 	${AUTOCONF_ENV} autoreconf -f -i ${WRKSRC}/libdivecomputer
 
+# dirty fix to populate autoconf cache; if this is not done we miss
+# protection done by gnu.port.mk for configure detecting gmkdir, etc
+# (otherwise we could split libdivecomputer off to a separate port)
+CONFIGURE_SCRIPT= /usr/bin/true
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/libdivecomputer/build
+
 pre-configure:
 	cd ${WRKSRC}; mkdir -p libdivecomputer/build gmaps/build
+	${MODGNU_configure}
 	cd ${WRKSRC}/gmaps/build && ${MODQT_QMAKE} -r ..
 	cd ${WRKSRC}/libdivecomputer/build && \
-		${XXCONFIGURE_ENV} ../configure \
+		${CONFIGURE_ENV} ../configure \
 		--without-libusb \
 		--without-hidapi \
 		--without-bluez \
