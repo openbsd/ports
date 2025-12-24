@@ -628,6 +628,7 @@
      SUBDIR += validate
      SUBDIR += vgrind
      SUBDIR += vislcg3
+     SUBDIR += voikko
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += wkhtmltopdf
