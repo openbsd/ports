@@ -1,0 +1,18 @@
+@bin bin/voikkogc
+@bin bin/voikkohyphenate
+@bin bin/voikkospell
+@bin bin/voikkovfstc
+include/libvoikko/
+include/libvoikko/voikko.h
+include/libvoikko/voikko_defines.h
+include/libvoikko/voikko_deprecated.h
+include/libvoikko/voikko_enums.h
+include/libvoikko/voikko_structs.h
+@static-lib lib/libvoikko.a
+lib/libvoikko.la
+@lib lib/libvoikko.so.${LIBvoikko_VERSION}
+lib/pkgconfig/libvoikko.pc
+@man man/man1/voikkogc.1
+@man man/man1/voikkohyphenate.1
+@man man/man1/voikkospell.1
+@man man/man1/voikkovfstc.1

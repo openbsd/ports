@@ -1,0 +1,5 @@
+This package provides very extensive vocabulary for Finnish with links.
+
+It also adds additional information needed in morphological analysis
+including links to Joukahainen (www-based Finnish language word
+database) for libvoikko.

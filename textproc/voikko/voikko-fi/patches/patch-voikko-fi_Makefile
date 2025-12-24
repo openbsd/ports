@@ -1,0 +1,12 @@
+Index: voikko-fi/Makefile
+--- voikko-fi/Makefile.orig
++++ voikko-fi/Makefile
+@@ -21,7 +21,7 @@ SM_VERSION=2.5
+ ifdef SOURCE_DATE_EPOCH
+ 	SM_BUILDDATE=$(shell date -R -u -d "@$(SOURCE_DATE_EPOCH)")
+ else
+-	SM_BUILDDATE=$(shell date -R -u)
++	SM_BUILDDATE=$(shell date -u)
+ endif
+ 
+ VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukusanat.lexc \

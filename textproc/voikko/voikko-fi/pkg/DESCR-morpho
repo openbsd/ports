@@ -1,0 +1,4 @@
+This package provides very extensive vocabulary for Finnish.
+
+It also adds additional information needed in morphological
+analysis for libvoikko.

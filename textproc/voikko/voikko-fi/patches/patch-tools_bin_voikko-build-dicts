@@ -1,0 +1,64 @@
+Index: tools/bin/voikko-build-dicts
+--- tools/bin/voikko-build-dicts.orig
++++ tools/bin/voikko-build-dicts
+@@ -139,18 +139,13 @@ INDEX_FILE_NAME = WORK_DIR + "/index.html"
+ 
+ # === Initialization ===
+ 
+-runCmd("git pull -r")
+-startTime = datetime.now()
+-indexFile = codecs.open(INDEX_FILE_NAME, "w", "UTF-8")
+-indexHeader(indexFile)
+-
+ # === Phase 1: build the dictionaries ===
+ 
+ DICT_DIR_PREFIX="dict"
+ 
+ for dict in allDicts:
+-	runCmd('make clean')
+-	runCmd('make vvfst-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX
++	runCmd('gmake clean')
++	runCmd('gmake vvfst-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX
+ 	                                       + dict.idSuffix + '" '
+ 	       + dict.smOptions
+ 	       + ' VOIKKO_VARIANT=' + dict.variant
+@@ -192,39 +187,5 @@ if access(oxtdir + OXT_DESCRIPTION, F_OK):
+ 		descIn.close()
+ 		descOut.close()
+ 		move(oxtdir + OXT_DESCRIPTION + ".new", oxtdir + OXT_DESCRIPTION)
+-		runCmd('cd ' + oxtdir + ' && zip -r ../voikko' + dict.idSuffix + '.oxt *')
+ 
+-# === Phase 3: build zip packages ===
+ 
+-indexFile.write("<h2>Sanastot</h2>")
+-indexFile.write("<table>")
+-for dict in allDicts:
+-	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
+-	zipFile = DICT_DIR_PREFIX + dict.idSuffix + '.zip'
+-	runCmd('cd ' + dirName + ' && zip -r ../' + zipFile + ' *')
+-	indexDict(indexFile, dict)
+-indexFile.write("</table>")
+-
+-# === Phase 4: build source package ===
+-
+-runCmd('make clean')
+-runCmd('make dist-gzip SM_VERSION=snapshot')
+-runCmd('cp voikko-fi-snapshot.tar.gz ' + WORK_DIR)
+-runCmd('make clean SM_VERSION=snapshot')
+-indexFile.write("<h2>Lähdekoodi</h2>")
+-indexFile.write("<p><a href='voikko-fi-snapshot.tar.gz'>voikko-fi-snapshot.tar.gz</a></p>")
+-
+-# === Finalisation ===
+-
+-indexFile.write("<h2>Lähdekoodin versiotiedot</h2><pre>")
+-out = getoutput("git log --format=short HEAD^1..HEAD")
+-indexFile.write(out)
+-indexFile.write("</pre><p>Viimeisin päivitys Joukahaisesta")
+-out = getoutput("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'")
+-indexFile.write(out)
+-indexFile.write("</p>")
+-endTime = datetime.now()
+-indexFile.write("<p class='small'>Generointi valmis " + endTime.isoformat() + "<br />")
+-indexFile.write("Aikaa kului " + repr((endTime - startTime).seconds) + " sekuntia</p>")
+-indexFooter(indexFile)
+-indexFile.close()

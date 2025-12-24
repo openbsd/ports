@@ -1,0 +1,12 @@
+Libvoikko provides spell checking, hyphenation, grammar checking and
+morphological analysis for Finnish language. Only spell checking is
+supported for other languages through HFST backend.
+
+Libvoikko aims to provide support for languages that are not well
+served by Hunspell or other existing free linguistic tools. This can
+be done because we do not care about compatibility with legacy
+dictionary formats and we support only actively maintained languages.
+Pushing new features to Hunspell where they would need to be
+maintained essentially indefinitely should not be done until we have
+gained enough experience to know which solutions work in the real
+world.

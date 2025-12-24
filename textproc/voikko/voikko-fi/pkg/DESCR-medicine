@@ -1,0 +1,4 @@
+This package adds an additional medicine dictionary for libvoikko.
+
+This package provides support for medicine words in the Finnish
+dictionary that can be used by libvoikko.

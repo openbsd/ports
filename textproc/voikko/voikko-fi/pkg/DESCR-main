@@ -1,0 +1,9 @@
+This package provides the basic vocabulary of Finnish for libvoikko.
+
+Voikko-fi (previously know as Suomi-malaga) is a description of Finnish
+morphology written for libvoikko. The implementation uses unweighted
+VFST format and provides format 5 Finnish dictionary for libvoikko 4.0
+or later.
+
+For Voikko the morphology supports spell checking, hyphenation and
+grammar checking.

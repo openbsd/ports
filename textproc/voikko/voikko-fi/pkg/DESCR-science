@@ -1,0 +1,4 @@
+This package adds an additional science dictionary for libvoikko.
+
+This package provides support for scientific words in the Finnish
+dictionary that can be used by libvoikko.
