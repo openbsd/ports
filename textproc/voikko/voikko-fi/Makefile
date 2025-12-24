@@ -20,6 +20,7 @@ V =			2.5
 PKGNAME =		voikko-fi-${V}
 GH_TAGNAME =		rel-${PKGNAME}
 WRKSRC =		${WRKDIST}/voikko-fi
+REVISION-dialects =	0
 
 PKG_ARCH-dialects =	*
 PKG_ARCH-education =	*

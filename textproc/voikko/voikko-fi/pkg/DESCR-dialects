@@ -1,4 +1,4 @@
-This package adds an additional dialets dictionary for libvoikko.
+This package adds an additional dialects dictionary for libvoikko.
 
 This package provides support for Finnish dialects in the dictionary
 that can be used by libvoikko. The dictionary includes old and rare
