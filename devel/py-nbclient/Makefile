@@ -1,6 +1,6 @@
 COMMENT =		client library for executing notebooks
 
-MODPY_DISTV =		0.10.3
+MODPY_DISTV =		0.10.4
 DISTNAME =		nbclient-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
