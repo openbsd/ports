@@ -1,0 +1,14 @@
+Use javaPathHelper for JAVA_HOME default value
+
+Index: bin/ec2-cmd
+--- bin/ec2-cmd.orig
++++ bin/ec2-cmd
+@@ -15,7 +15,7 @@ __RPM_PREFIX__EC2_HOME=/usr/local/aes/cmdline
+ LIBDIR="${EC2_HOME}/lib"
+ 
+ # Check our Java env
+-JAVA_HOME=${JAVA_HOME:?JAVA_HOME is not set}
++JAVA_HOME=$(javaPathHelper -h ec2-api-tools)
+ 
+ # If a classpath exists preserve it
+ CP="${CLASSPATH}"

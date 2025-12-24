@@ -1,7 +1,7 @@
 COMMENT=		API tools for Amazon EC2 web service
 
 DISTNAME=		ec2-api-tools-1.7.5.1
-REVISION=		6
+REVISION=		7
 
 EXTRACT_SUFX=		.zip
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 SITES=			http://s3.amazonaws.com/ec2-downloads/
 
 MODULES=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11+
 
 RUN_DEPENDS=		java/javaPathHelper \
 			shells/bash
