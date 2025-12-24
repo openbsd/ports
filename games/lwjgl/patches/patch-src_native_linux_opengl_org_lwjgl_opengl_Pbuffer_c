@@ -1,0 +1,13 @@
+Build with jdk-11
+
+Index: src/native/linux/opengl/org_lwjgl_opengl_Pbuffer.c
+--- src/native/linux/opengl/org_lwjgl_opengl_Pbuffer.c.orig
++++ src/native/linux/opengl/org_lwjgl_opengl_Pbuffer.c
+@@ -42,6 +42,7 @@
+ #include <stdlib.h>
+ #include "org_lwjgl_opengl_LinuxPbufferPeerInfo.h"
+ #include "org_lwjgl_opengl_Pbuffer.h"
++#include "org_lwjgl_opengl_LinuxDisplay.h"
+ #include "extgl.h"
+ #include "context.h"
+ #include "common_tools.h"

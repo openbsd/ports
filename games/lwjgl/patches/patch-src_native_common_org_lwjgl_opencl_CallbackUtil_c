@@ -1,0 +1,13 @@
+Build with jdk-11
+
+Index: src/native/common/org_lwjgl_opencl_CallbackUtil.c
+--- src/native/common/org_lwjgl_opencl_CallbackUtil.c.orig
++++ src/native/common/org_lwjgl_opencl_CallbackUtil.c
+@@ -39,7 +39,6 @@
+ #include <jni.h>
+ #include "common_tools.h"
+ #include "extcl.h"
+-#include "org_lwjgl_opencl_CallbackUtil.h"
+ 
+ static jmethodID contextCallbackJ;
+ static jmethodID memObjectDestructorCallbackJ;

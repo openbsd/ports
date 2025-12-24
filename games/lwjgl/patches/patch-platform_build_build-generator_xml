@@ -1,0 +1,14 @@
+Build with jdk-11
+
+Index: platform_build/build-generator.xml
+--- platform_build/build-generator.xml.orig
++++ platform_build/build-generator.xml
+@@ -32,7 +32,7 @@
+ 		</javac>
+ 
+ 		<!-- Compile helper classes used by the templates -->
+-        <javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" source="1.5" target="1.5" taskname="generator">
++        <javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" source="1.6" target="1.6" taskname="generator">
+             <include name="org/lwjgl/PointerWrapper.java"/>
+             <include name="org/lwjgl/PointerBuffer.java"/>
+             <!-- OpenGL -->

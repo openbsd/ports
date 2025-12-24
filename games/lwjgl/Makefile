@@ -6,7 +6,7 @@ GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
 DISTNAME=	lwjgl${V}
 PKGNAME=	lwjgl-${V}
-REVISION=	5
+REVISION=	6
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""
@@ -27,7 +27,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += GL X11 Xcursor Xext Xrandr Xxf86vm m pthread
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	11
 MODJAVA_BUILD=	ant
 
 BUILD_DEPENDS=	audio/openal
@@ -35,6 +35,10 @@ BUILD_DEPENDS=	audio/openal
 NO_TEST=	Yes
 
 SUBST_VARS+=	M_ARCH
+
+FIX_CRLF_FILES= platform_build/build-generator.xml \
+		src/native/common/org_lwjgl_BufferUtils.c \
+		src/native/common/org_lwjgl_opencl_CallbackUtil.c
 
 pre-configure:
 	perl -pi -e 's,/usr/X11R6,${X11BASE},g' \

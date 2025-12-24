@@ -1,0 +1,68 @@
+Build with jdk-11
+
+Index: build.xml
+--- build.xml.orig
++++ build.xml
+@@ -295,6 +295,7 @@
+ 
+ 	<!-- Generates the native headers from source files -->
+ 	<target name="headers" description="invokes javah on java classes" depends="compile">
++		<!--
+ 		<javah classpath="${lwjgl.bin}" destdir="${lwjgl.src.native}/linux">
+ 			<class name="org.lwjgl.LinuxSysImplementation" />
+ 			<class name="org.lwjgl.opengl.LinuxEvent" />
+@@ -371,6 +372,7 @@
+ 			<class name="org.lwjgl.opengles.GLContext"/>
+ 			<class name="org.lwjgl.opengles.CallbackUtil"/>
+ 		</javah>
++		-->
+ 	</target>
+ 
+ 	<target name="touch-version">
+@@ -401,21 +403,21 @@
+ 				</tokenfilter>
+ 			</filterchain>
+ 		</loadfile>
+-		<loadfile srcfile="${lwjgl.src.native}/windows/org_lwjgl_WindowsSysImplementation.h" property="lwjgl.native.windows.version">
++		<loadfile srcfile="${lwjgl.src.native}/org_lwjgl_WindowsSysImplementation.h" property="lwjgl.native.windows.version">
+ 			<filterchain>
+ 				<tokenfilter>
+ 	    		<containsstring contains="#define org_lwjgl_WindowsSysImplementation_JNI_VERSION"/>
+ 				</tokenfilter>
+ 			</filterchain>
+ 		</loadfile>
+-		<loadfile srcfile="${lwjgl.src.native}/linux/org_lwjgl_LinuxSysImplementation.h" property="lwjgl.native.linux.version">
++		<loadfile srcfile="${lwjgl.src.native}/org_lwjgl_LinuxSysImplementation.h" property="lwjgl.native.linux.version">
+ 			<filterchain>
+ 				<tokenfilter>
+ 	    		<containsstring contains="#define org_lwjgl_LinuxSysImplementation_JNI_VERSION"/>
+ 				</tokenfilter>
+ 			</filterchain>
+ 		</loadfile>
+-		<loadfile srcfile="${lwjgl.src.native}/macosx/org_lwjgl_MacOSXSysImplementation.h" property="lwjgl.native.macosx.version">
++		<loadfile srcfile="${lwjgl.src.native}/org_lwjgl_MacOSXSysImplementation.h" property="lwjgl.native.macosx.version">
+ 			<filterchain>
+ 				<tokenfilter>
+ 	    		<containsstring contains="#define org_lwjgl_MacOSXSysImplementation_JNI_VERSION"/>
+@@ -462,7 +464,9 @@
+ 
+ 	<!-- Compiles the Java source code -->
+ 	<target name="compile" description="Compiles the java source code" depends="-initialize">
+-		<javac debug="yes" destdir="${lwjgl.bin}" source="1.5" target="1.5" classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-debug-all.jar" taskname="core">
++		<javac debug="yes" destdir="${lwjgl.bin}" source="1.6" target="1.6"
++			   classpath="${lwjgl.lib}/jinput.jar:${lwjgl.lib}/AppleJavaExtensions.jar:${lwjgl.lib}/asm-debug-all.jar"
++			   taskname="core" nativeHeaderDir="${lwjgl.src.native}">
+             <!--<compilerarg value="-Xlint:unchecked"/>-->
+ 			<src path="${lwjgl.src}/java/"/>
+ 			<src path="${lwjgl.src}/generated/"/>
+@@ -475,8 +479,8 @@
+ 			<include name="org/lwjgl/util/**"/>
+ 			<exclude name="org/lwjgl/util/generator/**"/>
+ 		</javac>
+-		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/test/**" source="1.5" target="1.5" taskname="test" />
+-		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/examples/**" source="1.5" target="1.5" taskname="examples" />
++		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/test/**" source="1.6" target="1.6" taskname="test" />
++		<javac debug="yes" srcdir="${lwjgl.src}/java/" destdir="${lwjgl.bin}" includes="org/lwjgl/examples/**" source="1.6" target="1.6" taskname="examples" />
+ 	</target>
+ 
+ 	<target name="compile_native" depends="-initialize, headers, touch-version, version-mismatch" description="Compiles the native files">

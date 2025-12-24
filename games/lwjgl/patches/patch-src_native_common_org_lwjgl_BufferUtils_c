@@ -1,0 +1,10 @@
+Build with jdk-11
+
+Index: src/native/common/org_lwjgl_BufferUtils.c
+--- src/native/common/org_lwjgl_BufferUtils.c.orig
++++ src/native/common/org_lwjgl_BufferUtils.c
+@@ -1,4 +1,3 @@
+-#include "org_lwjgl_BufferUtils.h"
+ #include "common_tools.h"
+ 
+ JNIEXPORT void JNICALL Java_org_lwjgl_BufferUtils_zeroBuffer0(JNIEnv *env, jclass clazz, jobject buffer, jlong offset, jlong size) {

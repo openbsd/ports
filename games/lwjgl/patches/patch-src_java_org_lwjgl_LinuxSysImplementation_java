@@ -1,0 +1,13 @@
+Build with jdk-11
+
+Index: src/java/org/lwjgl/LinuxSysImplementation.java
+--- src/java/org/lwjgl/LinuxSysImplementation.java.orig
++++ src/java/org/lwjgl/LinuxSysImplementation.java
+@@ -43,6 +43,7 @@ import java.lang.UnsatisfiedLinkError;
+  * $Id: patch-src_java_org_lwjgl_LinuxSysImplementation_java,v 1.1 2025/12/24 15:40:31 kurt Exp $
+  */
+ final class LinuxSysImplementation extends J2SESysImplementation {
++	@java.lang.annotation.Native
+ 	private static final int JNI_VERSION = 19;
+ 
+ 	static {

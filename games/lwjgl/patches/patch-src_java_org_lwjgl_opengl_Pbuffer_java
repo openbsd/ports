@@ -1,0 +1,13 @@
+Build with jdk-11
+
+Index: src/java/org/lwjgl/opengl/Pbuffer.java
+--- src/java/org/lwjgl/opengl/Pbuffer.java.orig
++++ src/java/org/lwjgl/opengl/Pbuffer.java
+@@ -52,6 +52,7 @@ public final class Pbuffer extends DrawableGL {
+ 	/**
+ 	 * Indicates that Pbuffers can be created.
+ 	 */
++	@java.lang.annotation.Native
+ 	public static final int PBUFFER_SUPPORTED = 1 << 0;
+ 
+ 	/**
