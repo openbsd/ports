@@ -1,9 +1,8 @@
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_DISTV =	8.6.3
+MODPY_DISTV =		8.7.0
 DISTNAME =		jupyter_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -21,10 +20,10 @@ MODPY_PYBUILD =		hatchling
 MODPY_PYTEST_ARGS =	jupyter_client
 
 RUN_DEPENDS =		devel/py-dateutil>=2.8.2 \
-			devel/py-jupyter_core>=4.12 \
+			devel/py-jupyter_core>=5.1 \
 			devel/py-traitlets>=5.3 \
-			net/py-zmq>=23.0 \
-			www/py-tornado>=6.2
+			net/py-zmq>=25.0 \
+			www/py-tornado>=6.4.1
 
 TEST_DEPENDS =		devel/ipython \
 			devel/pre-commit \
@@ -34,6 +33,7 @@ TEST_DEPENDS =		devel/ipython \
 			devel/py-test-cov \
 			devel/py-test-jupyter \
 			devel/py-test-timeout \
+			net/py-anyio \
 			shells/bash
 
 PORTHOME =		${WRKDIR}

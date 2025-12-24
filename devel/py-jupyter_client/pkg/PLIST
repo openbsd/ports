@@ -1,5 +1,5 @@
-@pkgpath devel/py-jupyter_client,python3
 @conflict py-jupyter_client-*
+@pkgpath devel/py-jupyter_client,python3
 bin/jupyter-kernel
 bin/jupyter-kernelspec
 bin/jupyter-run
