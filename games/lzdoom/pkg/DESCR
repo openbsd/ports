@@ -1,0 +1,3 @@
+LZDoom is a fork of the GZDoom source port centered around lower-end
+computers. LZDoom follows GZDoom's feature set and has a few
+enhancements of its own. It employs an OpenGL 2 based renderer.

@@ -1,0 +1,60 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Installing Data Files
+=====================
+
+You will need an IWAD for lzdoom to be fully functional. An IWAD is
+the main data file containing the graphics and levels for Doom. If
+you have a copy of one of the original Doom games, or any other game,
+based on the same engine, you can copy them to the following locations
+for lzdoom to find:
+
+- System wide: ${PREFIX}/share/doom/
+- User wide: ~/.local/share/doom/
+- via environment variable DOOMWADDIR
+
+See ~/.config/lzdoom/lzdoom.ini for a complete list of locations.
+
+Some known to work data files are:
+- Doom 1 (doom1.wad) and 2 (doom2.wad)
+- Freedoom (freedoom1.wad, freedoom2.wad)
+- Heretic (heretic.wad)
+- Hexen (hexen.wad)
+
+If you do not possess any of those, you can install the freedoom
+package or use the shareware IWAD which is available at:
+
+ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/idstuff/doom/doom-1.8.wad.gz
+SHA256 (doom-1.8.wad.gz) = 58cf6a563b631a47561630afa6276d853c27079342f7969ec3006965da8557a1
+
+Rename the file to "doom.wad" and move it to one of the above-mentioned
+locations.
+
+You can find more data files and how to obtain them in the official
+documentation: https://zdoom.org/wiki/IWAD
+
+Optional Dependencies
+=====================
+
+In case fluidsynth backend is needed the user needs to setup soundfont for it.
+
+Known Problems
+==============
+
+LZDoom supports three GL backends (OpenGL, OpenGL ES, Vulkan). Some work
+better than others depending on the graphic hardware in the system.
+
+In case lzdoom freezes or crashes before you can reach the in-game menu
+to select a different backend, you can modify ~/.config/lzdoom/lzdoom.ini
+manually and change the vid_preferbackend value:
+
+[GlobalSettings]
+vid_preferbackend=0
+
+or try:
+
+$ lzdoom +vid_preferbackend 0
+
+Supported values are: 0 (OpenGL), 1 (Vulkan), 2 (SoftPoly) or 3 (GLES2)

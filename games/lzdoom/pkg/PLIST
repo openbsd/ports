@@ -1,0 +1,36 @@
+@bin bin/lzdoom
+share/applications/org.zdoom.LZDoom.desktop
+share/doc/lzdoom/
+share/doc/lzdoom/console.css
+share/doc/lzdoom/console.html
+share/doc/lzdoom/licenses/
+share/doc/lzdoom/licenses/README.TXT
+share/doc/lzdoom/licenses/bsd.txt
+share/doc/lzdoom/licenses/bzip2.txt
+share/doc/lzdoom/licenses/dumb.txt
+share/doc/lzdoom/licenses/fxaa.txt
+share/doc/lzdoom/licenses/gdtoa.txt
+share/doc/lzdoom/licenses/gpl.txt
+share/doc/lzdoom/licenses/lgpl.txt
+share/doc/lzdoom/rh-log.txt
+share/doc/lzdoom/skins.txt
+share/doc/pkg-readmes/${PKGSTEM}
+share/games/
+share/games/lzdoom/
+share/games/lzdoom/brightmaps.pk3
+share/games/lzdoom/fm_banks/
+share/games/lzdoom/fm_banks/GENMIDI.GS.wopl
+share/games/lzdoom/fm_banks/gs-by-papiezak-and-sneakernets.wopn
+share/games/lzdoom/game_support.pk3
+share/games/lzdoom/game_widescreen_gfx.pk3
+share/games/lzdoom/lights.pk3
+share/games/lzdoom/lzdoom.pk3
+share/games/lzdoom/soundfonts/
+share/games/lzdoom/soundfonts/lzdoom.sf2
+share/icons/hicolor/scalable/apps/org.zdoom.LZDoom.svg
+share/metainfo/
+share/metainfo/org.zdoom.LZDoom.metainfo.xml
+@tag update-mime-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
+share/mime/packages/org.zdoom.LZDoom-mime.xml
