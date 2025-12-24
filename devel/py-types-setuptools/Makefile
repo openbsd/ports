@@ -1,7 +1,7 @@
 COMMENT=	typing stubs for setuptools
 
 # https://pypi.org/project/types-setuptools/#history
-MODPY_DISTV=	80.9.0.20251221
+MODPY_DISTV=	80.9.0.20251223
 DISTNAME=	types_setuptools-${MODPY_DISTV}
 PKGNAME=	py-types-setuptools-${MODPY_DISTV}
 
