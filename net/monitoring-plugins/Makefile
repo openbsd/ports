@@ -13,6 +13,8 @@ GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins
 GH_COMMIT=	828a9720b10814c5836d03aa35af05d196c4104b
 V=		3.0pre20251217
+REVISION-snmp=	0
+REVISION-radius= 0
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -96,13 +98,13 @@ RUN_DEPENDS-fping=	${RUN_DEPENDS} net/fping
 RUN_DEPENDS-game=	${RUN_DEPENDS} games/qstat
 
 LIB_DEPENDS-radius=	net/radcli
-WANTLIB-radius+=	${WANTLIB} gmp gnutls hogweed idn2 nettle
-WANTLIB-radius+=	p11-kit radcli tasn1 unistring
+WANTLIB-radius+=	${WANTLIB} gmp gnutls hogweed iconv idn2 intl
+WANTLIB-radius+=	nettle p11-kit radcli tasn1 unistring
 
 BUILD_DEPENDS+=		net/p5-Net-SNMP
 RUN_DEPENDS-snmp=	${RUN_DEPENDS} net/p5-Net-SNMP
 LIB_DEPENDS-snmp=	net/net-snmp
-WANTLIB-snmp=		m netsnmp ssl
+WANTLIB-snmp=		c crypto m netsnmp pthread ssl
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}
