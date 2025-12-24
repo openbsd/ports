@@ -8,8 +8,11 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.4.0
-REVISION=	6
+#SITES=		https://www.monitoring-plugins.org/download/
+GH_ACCOUNT=	monitoring-plugins
+GH_PROJECT=	monitoring-plugins
+GH_COMMIT=	828a9720b10814c5836d03aa35af05d196c4104b
+V=		3.0pre20251217
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -31,25 +34,15 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto iconv intl pthread
+WANTLIB=	c crypto pthread
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-SITES=		https://www.monitoring-plugins.org/download/
-
-LIB_DEPENDS=	devel/gettext,-runtime
-
-WANTLIB-main=	${WANTLIB} curl m nghttp2 ssl uriparser z \
-		nghttp3 ngtcp2 ngtcp2_crypto_libressl
-
-LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		net/curl \
-		www/uriparser
-
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoreconf
 AUTOCONF_VERSION= 2.71
-CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
+AUTOMAKE_VERSION= 1.16
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 FAKE_FLAGS=	setuid_root_mode=0555
 
 # cgiurl is only used to produce an href to traceroute.cgi in check_ping output
@@ -78,9 +71,17 @@ PSEUDO_FLAVORS=	no_db
 FLAVOR?=
 
 MULTI_PACKAGES= -main -fping -game -snmp -dbi -ldap -mysql -pgsql -radius
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # many broken tests, but...
 TEST_IS_INTERACTIVE=Yes
+
+WANTLIB-main=	${WANTLIB} curl m nghttp2 ssl uriparser z \
+		nghttp3 ngtcp2 ngtcp2_crypto_libressl
+
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		net/curl \
+		www/uriparser
 
 .include <bsd.port.arch.mk>
 
@@ -90,18 +91,18 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-dbi:N-ldap:N-mysql:N-pgsql}
 
 # don't bother with no_XX for those with no build dependencies, or
 # lightweight/common build dependencies
-BUILD_DEPENDS+=		net/p5-Net-SNMP
 
 RUN_DEPENDS-fping=	${RUN_DEPENDS} net/fping
 RUN_DEPENDS-game=	${RUN_DEPENDS} games/qstat
 
-RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
-			net/net-snmp \
-			net/p5-Net-SNMP
-
 LIB_DEPENDS-radius=	net/radcli
 WANTLIB-radius+=	${WANTLIB} gmp gnutls hogweed idn2 nettle
 WANTLIB-radius+=	p11-kit radcli tasn1 unistring
+
+BUILD_DEPENDS+=		net/p5-Net-SNMP
+RUN_DEPENDS-snmp=	${RUN_DEPENDS} net/p5-Net-SNMP
+LIB_DEPENDS-snmp=	net/net-snmp
+WANTLIB-snmp=		m netsnmp ssl
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}

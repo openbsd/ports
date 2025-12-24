@@ -1,0 +1,35 @@
+https://github.com/monitoring-plugins/monitoring-plugins/pull/2211
+
+on OpenBSD, time_t is always 64-bit, even on 32-bit archs.
+%lld format string with a cast is portable (as long as %lld is supported).
+
+Index: plugins/check_snmp.c
+--- plugins/check_snmp.c.orig
++++ plugins/check_snmp.c
+@@ -97,7 +97,7 @@ gen_state_string_type gen_state_string(check_snmp_stat
+ 	if (verbose > 1) {
+ 		printf("%s:\n", __FUNCTION__);
+ 		for (size_t i = 0; i < num_of_entries; i++) {
+-			printf("Entry timestamp %lu: %s", entries[i].timestamp, ctime(&entries[i].timestamp));
++			printf("Entry timestamp %lld: %s", (long long)entries[i].timestamp, ctime(&entries[i].timestamp));
+ 			switch (entries[i].type) {
+ 			case ASN_GAUGE:
+ 				printf("Type GAUGE\n");
+@@ -197,7 +197,7 @@ recover_state_data_type recover_state_data(char *state
+ 			   (size_t)outlen / sizeof(check_snmp_state_entry), outlen);
+ 
+ 		for (size_t i = 0; i < (size_t)outlen / sizeof(check_snmp_state_entry); i++) {
+-			printf("Entry timestamp %lu: %s", result.state[i].timestamp,
++			printf("Entry timestamp %lld: %s", (long long)result.state[i].timestamp,
+ 				   ctime(&result.state[i].timestamp));
+ 			switch (result.state[i].type) {
+ 			case ASN_GAUGE:
+@@ -286,7 +286,7 @@ int main(int argc, char **argv) {
+ 	time(&current_time);
+ 
+ 	if (verbose > 2) {
+-		printf("current time: %s (timestamp: %lu)\n", ctime(&current_time), current_time);
++		printf("current time: %s (timestamp: %lld)\n", ctime(&current_time), (long long)current_time);
+ 	}
+ 
+ 	snmp_responces response = do_snmp_query(config.snmp_params);

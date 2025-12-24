@@ -1,0 +1,107 @@
+fix curl types; curl_easy_setopt parameters should be either long,
+a function pointer, an object pointer, or curl_off_t.
+
+see https://curl.se/libcurl/c/curl_easy_setopt.html
+
+(there's also an issue with CURLINFO_CERTINFO not fixed here)
+
+Index: plugins/check_curl.d/check_curl_helpers.c
+--- plugins/check_curl.d/check_curl_helpers.c.orig
++++ plugins/check_curl.d/check_curl_helpers.c
+@@ -19,7 +19,7 @@ bool add_sslctx_verify_fun = false;
+ check_curl_configure_curl_wrapper
+ check_curl_configure_curl(const check_curl_static_curl_config config,
+ 						  check_curl_working_state working_state, bool check_cert,
+-						  bool on_redirect_dependent, int follow_method, int max_depth) {
++						  bool on_redirect_dependent, int follow_method, long max_depth) {
+ 	check_curl_configure_curl_wrapper result = {
+ 		.errorcode = OK,
+ 		.curl_state =
+@@ -57,7 +57,7 @@ check_curl_configure_curl(const check_curl_static_curl
+ 	result.curl_state.curl_easy_initialized = true;
+ 
+ 	if (verbose >= 1) {
+-		handle_curl_option_return_code(curl_easy_setopt(result.curl_state.curl, CURLOPT_VERBOSE, 1),
++		handle_curl_option_return_code(curl_easy_setopt(result.curl_state.curl, CURLOPT_VERBOSE, 1L),
+ 									   "CURLOPT_VERBOSE");
+ 	}
+ 
+@@ -214,10 +214,10 @@ check_curl_configure_curl(const check_curl_static_curl
+ 	if (working_state.http_method) {
+ 		if (!strcmp(working_state.http_method, "POST")) {
+ 			handle_curl_option_return_code(
+-				curl_easy_setopt(result.curl_state.curl, CURLOPT_POST, 1), "CURLOPT_POST");
++				curl_easy_setopt(result.curl_state.curl, CURLOPT_POST, 1L), "CURLOPT_POST");
+ 		} else if (!strcmp(working_state.http_method, "PUT")) {
+ 			handle_curl_option_return_code(
+-				curl_easy_setopt(result.curl_state.curl, CURLOPT_UPLOAD, 1), "CURLOPT_UPLOAD");
++				curl_easy_setopt(result.curl_state.curl, CURLOPT_UPLOAD, 1L), "CURLOPT_UPLOAD");
+ 		} else {
+ 			handle_curl_option_return_code(curl_easy_setopt(result.curl_state.curl,
+ 															CURLOPT_CUSTOMREQUEST,
+@@ -300,10 +300,10 @@ check_curl_configure_curl(const check_curl_static_curl
+ 		/* per default if we have a CA verify both the peer and the
+ 		 * hostname in the certificate, can be switched off later */
+ 		handle_curl_option_return_code(
+-			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYPEER, 1),
++			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYPEER, 1L),
+ 			"CURLOPT_SSL_VERIFYPEER");
+ 		handle_curl_option_return_code(
+-			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYHOST, 2),
++			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYHOST, 2L),
+ 			"CURLOPT_SSL_VERIFYHOST");
+ 	} else {
+ 		/* backward-compatible behaviour, be tolerant in checks
+@@ -311,10 +311,10 @@ check_curl_configure_curl(const check_curl_static_curl
+ 		 * to be less tolerant about ssl verfications
+ 		 */
+ 		handle_curl_option_return_code(
+-			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYPEER, 0),
++			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYPEER, 0L),
+ 			"CURLOPT_SSL_VERIFYPEER");
+ 		handle_curl_option_return_code(
+-			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYHOST, 0),
++			curl_easy_setopt(result.curl_state.curl, CURLOPT_SSL_VERIFYHOST, 0L),
+ 			"CURLOPT_SSL_VERIFYHOST");
+ 	}
+ 
+@@ -438,7 +438,7 @@ check_curl_configure_curl(const check_curl_static_curl
+ 	if (on_redirect_dependent) {
+ 		if (follow_method == FOLLOW_LIBCURL) {
+ 			handle_curl_option_return_code(
+-				curl_easy_setopt(result.curl_state.curl, CURLOPT_FOLLOWLOCATION, 1),
++				curl_easy_setopt(result.curl_state.curl, CURLOPT_FOLLOWLOCATION, 1L),
+ 				"CURLOPT_FOLLOWLOCATION");
+ 
+ 			/* default -1 is infinite, not good, could lead to zombie plugins!
+@@ -474,7 +474,7 @@ check_curl_configure_curl(const check_curl_static_curl
+ 	}
+ 	/* no-body */
+ 	if (working_state.no_body) {
+-		handle_curl_option_return_code(curl_easy_setopt(result.curl_state.curl, CURLOPT_NOBODY, 1),
++		handle_curl_option_return_code(curl_easy_setopt(result.curl_state.curl, CURLOPT_NOBODY, 1L),
+ 									   "CURLOPT_NOBODY");
+ 	}
+ 
+@@ -796,15 +796,17 @@ mp_subcheck check_document_dates(const curlhelp_write_
+ 						  ((float)last_modified) / (60 * 60 * 24));
+ 				sc_document_dates = mp_set_subcheck_state(sc_document_dates, STATE_CRITICAL);
+ 			} else {
+-				xasprintf(&sc_document_dates.output, _("Last modified %ld:%02ld:%02ld ago"),
+-						  last_modified / (60 * 60), (last_modified / 60) % 60, last_modified % 60);
++				xasprintf(&sc_document_dates.output, _("Last modified %lld:%02d:%02d ago"),
++						  (long long)last_modified / (60 * 60), (int)(last_modified / 60) % 60,
++						  (int)last_modified % 60);
+ 				sc_document_dates = mp_set_subcheck_state(sc_document_dates, STATE_CRITICAL);
+ 			}
+ 		} else {
+ 			// TODO is this the OK case?
+ 			time_t last_modified = (srv_data - doc_data);
+-			xasprintf(&sc_document_dates.output, _("Last modified %ld:%02ld:%02ld ago"),
+-					  last_modified / (60 * 60), (last_modified / 60) % 60, last_modified % 60);
++			xasprintf(&sc_document_dates.output, _("Last modified %lld:%02d:%02d ago"),
++					  (long long)last_modified / (60 * 60), (int)(last_modified / 60) % 60,
++					  (int)last_modified % 60);
+ 			sc_document_dates = mp_set_subcheck_state(sc_document_dates, STATE_OK);
+ 		}
+ 	}

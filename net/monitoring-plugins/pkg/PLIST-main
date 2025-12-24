@@ -39,13 +39,9 @@ libexec/nagios/check_mssql
 @bin libexec/nagios/check_nagios
 libexec/nagios/check_nntp
 libexec/nagios/check_nntps
-@bin libexec/nagios/check_nt
-@bin libexec/nagios/check_ntp
 @bin libexec/nagios/check_ntp_peer
 @bin libexec/nagios/check_ntp_time
-@bin libexec/nagios/check_nwstat
 libexec/nagios/check_oracle
-@bin libexec/nagios/check_overcr
 @bin libexec/nagios/check_ping
 libexec/nagios/check_pop
 @bin libexec/nagios/check_procs
