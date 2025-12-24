@@ -4,6 +4,7 @@ COMMENT =	EPUB validator
 
 V =		5.3.0
 DISTNAME =	epubcheck-$V
+REVISION =	0
 
 CATEGORIES =	textproc
 
@@ -19,7 +20,7 @@ SITES =			https://github.com/w3c/epubcheck/releases/download/v$V/
 EXTRACT_SUFX =		.zip
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes

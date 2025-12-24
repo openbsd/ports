@@ -1,2 +1,3 @@
 #!/bin/sh
-`javaPathHelper -c epubcheck` -jar /usr/local/share/epubcheck/epubcheck.jar $@
+JAVACMD=$(javaPathHelper -c epubcheck)
+exec ${JAVACMD} -jar /usr/local/share/epubcheck/epubcheck.jar "$@"
