@@ -1,6 +1,6 @@
 COMMENT=	retrieve system information and utilisation
 
-MODPY_DISTV=	7.1.3
+MODPY_DISTV=	7.2.0
 DISTNAME=	psutil-${MODPY_DISTV}
 PKGNAME=	py-psutil-${MODPY_DISTV}
 CATEGORIES=	sysutils
@@ -17,7 +17,8 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 MODPY_TEST_LINK_SO= Yes
-
+# needs https://github.com/giampaolo/psleak
+MODPY_PYTEST_ARGS= --ignore tests/test_memleaks.py
 TEST_DEPENDS=	devel/py-test-instafail \
 		devel/py-test-subtests \
 		devel/py-test-xdist
