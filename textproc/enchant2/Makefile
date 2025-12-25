@@ -3,6 +3,7 @@ COMMENT=		generic spell checking library
 V=			2.8.14
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
+REVISION=		0
 
 SHARED_LIBS +=  enchant-2            1.2      # 10.13
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aspell c curses ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 hunspell-1.7 iconv intl m pcre2-8
-WANTLIB += z
+WANTLIB += voikko z
 
 SITES=			https://github.com/AbiWord/enchant/releases/download/v${V}/
 
@@ -30,7 +31,8 @@ BUILD_DEPENDS=		lang/vala
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \
-			textproc/hunspell
+			textproc/hunspell \
+			textproc/voikko/libvoikko
 
 CONFIGURE_STYLE=	gnu
 
@@ -39,7 +41,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_VALGRIND=
 
 CONFIGURE_ARGS=		--without-applespell \
-			--without-voikko \
 			--without-zemberek \
 			--without-nuspell
 

@@ -6,6 +6,7 @@ include/enchant-2/enchant.h
 lib/enchant-2/
 @so lib/enchant-2/enchant_aspell.so
 @so lib/enchant-2/enchant_hunspell.so
+@so lib/enchant-2/enchant_voikko.so
 @static-lib lib/libenchant-2.a
 lib/libenchant-2.la
 @lib lib/libenchant-2.so.${LIBenchant-2_VERSION}
