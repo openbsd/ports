@@ -10,9 +10,9 @@ Index: Makefile.top
  SED		= @SED@
  LN_S		= @LN_S@
  AUTOCONF	= @AUTOCONF@
-@@ -86,7 +88,7 @@ LIBCURRENT  = 42
- LIBAGE      = 2
- LIBREVISION = 1
+@@ -86,7 +88,7 @@ LIBCURRENT  = 45
+ LIBAGE      = 0
+ LIBREVISION = 0
  
 -LIB_LD_CMD      = $(LIBTOOL) --mode=link $(LINKCC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) @LD_NO_UNDEFINED@ -o
 +LIB_LD_CMD      = $(LIBTOOL) --mode=link $(LINKCC) $(CFLAGS) -rpath $(libdir) @LD_NO_UNDEFINED@ -o

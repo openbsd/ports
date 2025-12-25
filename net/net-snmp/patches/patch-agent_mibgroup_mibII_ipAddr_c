@@ -1,7 +1,7 @@
 Index: agent/mibgroup/mibII/ipAddr.c
 --- agent/mibgroup/mibII/ipAddr.c.orig
 +++ agent/mibgroup/mibII/ipAddr.c
-@@ -752,10 +752,10 @@ static int      nifs;
+@@ -755,10 +755,10 @@ static int      nifs;
  static void
  get_iflist(void)
  {
@@ -14,7 +14,7 @@ Index: agent/mibgroup/mibII/ipAddr.c
      size_t          len;
      struct rt_msghdr *rtm;
      struct if_msghdr *ifm;
-@@ -781,63 +781,57 @@ get_iflist(void)
+@@ -784,63 +784,57 @@ get_iflist(void)
          return;
      }
  
