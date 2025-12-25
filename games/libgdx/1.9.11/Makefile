@@ -1,5 +1,6 @@
 VERSION =	1.9.11
 REVISION =	7
+PKGSPEC =       libgdx->=${VERSION},<1.9.12
 
 WANTLIB += ${COMPILER_LIBCXX} X11 m
 
