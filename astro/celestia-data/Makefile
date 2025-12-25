@@ -2,9 +2,9 @@ COMMENT=		data files for the Celestia space simulator
 
 GH_ACCOUNT=		CelestiaProject
 GH_PROJECT=		CelestiaContent
-GH_COMMIT=		059a5351b2fc8727cbc98620454e42e701d7eb8e
+GH_COMMIT=		bbcc3cfd02db523dbb2e700607b634320a376aae
 
-DISTNAME=		celestia-data-0.20250807
+DISTNAME=		celestia-data-0.20251225
 
 CATEGORIES=		astro
 

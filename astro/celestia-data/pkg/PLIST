@@ -14,6 +14,8 @@ share/celestia/data/extrasolar.stc
 share/celestia/data/galaxies.dsc
 share/celestia/data/globulars.dsc
 share/celestia/data/hdxindex.dat
+share/celestia/data/hdxindex.dat.license
+share/celestia/data/interstellar.ssc
 share/celestia/data/jupitermoons_locs.ssc
 share/celestia/data/mars_locs.ssc
 share/celestia/data/marsmoons_locs.ssc
@@ -28,10 +30,12 @@ share/celestia/data/pulsars.stc
 share/celestia/data/revised.stc
 share/celestia/data/ring_locs.ssc
 share/celestia/data/saoxindex.dat
+share/celestia/data/saoxindex.dat.license
 share/celestia/data/saturnmoons_locs.ssc
 share/celestia/data/solarsys.ssc
 share/celestia/data/spectbins.stc
 share/celestia/data/starnames.dat
+share/celestia/data/starnames.dat.license
 share/celestia/data/stars.dat
 share/celestia/data/stars.dat.license
 share/celestia/data/uranusmoons_locs.ssc
@@ -120,6 +124,12 @@ share/celestia/extras-standard/skylab/models/
 share/celestia/extras-standard/skylab/models/skylab.3ds
 share/celestia/extras-standard/skylab/skylab.ssc
 share/celestia/models/
+share/celestia/models/153591alpha.cmod
+share/celestia/models/153591alpha.cmod.license
+share/celestia/models/153591beta.cmod
+share/celestia/models/153591beta.cmod.license
+share/celestia/models/153591gamma.cmod
+share/celestia/models/153591gamma.cmod.license
 share/celestia/models/E0.png
 share/celestia/models/MilkyWay.png
 share/celestia/models/S0.png
@@ -169,6 +179,7 @@ share/celestia/models/hygiea.cmod
 share/celestia/models/hygiea.cmod.license
 share/celestia/models/hyperion.cmod
 share/celestia/models/ida.cmod
+share/celestia/models/ida.cmod.license
 share/celestia/models/interamnia.cmod
 share/celestia/models/interamnia.cmod.license
 share/celestia/models/iris.cmod
@@ -186,6 +197,8 @@ share/celestia/models/larissa.cmod
 share/celestia/models/mathilde.cmod
 share/celestia/models/mathilde.cmod.license
 share/celestia/models/mimas.cmod
+share/celestia/models/moshup.cmod
+share/celestia/models/moshup.cmod.license
 share/celestia/models/nix.cmod
 share/celestia/models/nix.cmod.license
 share/celestia/models/pallas.cmod
@@ -202,6 +215,8 @@ share/celestia/models/puck.cmod
 share/celestia/models/roughsphere.cms
 share/celestia/models/ryugu.cmod
 share/celestia/models/ryugu.cmod.license
+share/celestia/models/squannit.cmod
+share/celestia/models/squannit.cmod.license
 share/celestia/models/sylvia.cmod
 share/celestia/models/sylvia.cmod.license
 share/celestia/models/telesto.cmod
@@ -364,7 +379,8 @@ share/celestia/textures/lores/fstar.jpg.license
 share/celestia/textures/lores/ganymede-lok-mask.png
 share/celestia/textures/lores/ganymede.jpg
 share/celestia/textures/lores/ganymede.jpg.license
-share/celestia/textures/lores/gaspramosaic.jpg
+share/celestia/textures/lores/gaspra.jpg
+share/celestia/textures/lores/gaspra.jpg.license
 share/celestia/textures/lores/gstar.jpg
 share/celestia/textures/lores/gstar.jpg.license
 share/celestia/textures/lores/haumea-rings.png
@@ -377,7 +393,8 @@ share/celestia/textures/lores/iapetus.jpg
 share/celestia/textures/lores/icy.jpg
 share/celestia/textures/lores/icy.jpg.license
 share/celestia/textures/lores/icymoon.jpg
-share/celestia/textures/lores/idamosaic.jpg
+share/celestia/textures/lores/ida.jpg
+share/celestia/textures/lores/ida.jpg.license
 share/celestia/textures/lores/io-lok-mask.png
 share/celestia/textures/lores/io.jpg
 share/celestia/textures/lores/itokawa.jpg
@@ -508,6 +525,8 @@ share/celestia/textures/medres/fstar.jpg
 share/celestia/textures/medres/fstar.jpg.license
 share/celestia/textures/medres/ganymede.jpg
 share/celestia/textures/medres/ganymede.jpg.license
+share/celestia/textures/medres/gaspra.jpg
+share/celestia/textures/medres/gaspra.jpg.license
 share/celestia/textures/medres/gstar.jpg
 share/celestia/textures/medres/gstar.jpg.license
 share/celestia/textures/medres/hyperion-lok.jpg
@@ -515,6 +534,8 @@ share/celestia/textures/medres/hyperion.jpg
 share/celestia/textures/medres/iapetus.jpg
 share/celestia/textures/medres/icy.jpg
 share/celestia/textures/medres/icy.jpg.license
+share/celestia/textures/medres/ida.jpg
+share/celestia/textures/medres/ida.jpg.license
 share/celestia/textures/medres/io.jpg
 share/celestia/textures/medres/itokawa.jpg
 share/celestia/textures/medres/itokawa.jpg.license
