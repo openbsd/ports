@@ -2,7 +2,7 @@ BROKEN-sparc64 = undefined reference to std::filesystem::__cxx11::path::_M_split
 
 COMMENT =	engine recreation for Heroes of Might and Magic 2
 
-DIST_TUPLE =	github ihhub fheroes2 1.1.12 .
+DIST_TUPLE =	github ihhub fheroes2 1.1.13 .
 CATEGORIES =	games
 HOMEPAGE =	https://ihhub.github.io/fheroes2/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
