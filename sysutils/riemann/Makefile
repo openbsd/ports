@@ -3,6 +3,7 @@ COMMENT =	network event stream processing system
 V =		0.3.12
 DISTNAME =	riemann-${V}
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	http://riemann.io
 
@@ -16,7 +17,7 @@ SITES =		https://github.com/riemann/riemann/releases/download/${V}/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11+
 
 RUN_DEPENDS =	java/javaPathHelper
 
