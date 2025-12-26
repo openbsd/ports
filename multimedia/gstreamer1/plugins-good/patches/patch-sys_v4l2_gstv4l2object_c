@@ -1,7 +1,7 @@
 Index: sys/v4l2/gstv4l2object.c
 --- sys/v4l2/gstv4l2object.c.orig
 +++ sys/v4l2/gstv4l2object.c
-@@ -529,7 +529,7 @@ v4l2_mmap_wrapper (gpointer start, gsize length, gint 
+@@ -571,7 +571,7 @@ v4l2_mmap_wrapper (gpointer start, gsize length, gint 
  
  #endif /* SIZEOF_OFF_T < 8 */
  
@@ -10,7 +10,7 @@ Index: sys/v4l2/gstv4l2object.c
  /* v4l2_ioctl always takes request as unsigned long int, not ioctl_req_t */
  static gint
  v4l2_ioctl_wrapper (gint fd, ioctl_req_t request, ...)
-@@ -5343,7 +5343,9 @@ gst_v4l2_object_probe_caps (GstV4l2Object * v4l2object
+@@ -5383,7 +5383,9 @@ gst_v4l2_object_probe_caps (GstV4l2Object * v4l2object
      if (v4l2object->ioctl (v4l2object->video_fd, VIDIOC_CROPCAP, &cropcap) < 0) {
  
        switch (errno) {
