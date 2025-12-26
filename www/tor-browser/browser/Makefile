@@ -12,6 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-140.6.0esr-15.0-1-build5
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -130,7 +131,7 @@ post-patch:
 	ln -fs ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
 
 	# add default bridges for Pluggable Transports that we support
-.for pt in meek-azure obfs4 snowflake
+.for pt in meek obfs4 snowflake
 	I=1; \
 	jq ".[\"bridges\"][\"${pt}\"].[]" ${WRKDIR}/tor/pluggable_transports/pt_config.json | while read -r line ; do \
 		echo "pref(\"extensions.torlauncher.default_bridge.${pt}.$$I\", $$line);" >>${WRKSRC}/browser/app/profile/000-tor-browser.js; \
