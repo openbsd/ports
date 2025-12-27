@@ -1,3 +1,5 @@
+@conflict ruby34-openfact-*
+@pkgpath sysutils/ruby-openfact,ruby34
 ${GEM_BIN}/facter
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

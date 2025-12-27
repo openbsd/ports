@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1775 2025/12/22 13:32:15 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.1776 2025/12/27 12:49:59 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1050,6 +1050,7 @@ my $obsolete_suggestion = {
 	'opensmtpd-extras-redis' => 'opensmtpd-table-redis',
 # 7.9
 	'dovecot-fts-xapian' => 'dovecot-fts-flatcurve',
+	'ruby34-openfact' => 'openfact',
 };
 
 # reasons for obsolete packages

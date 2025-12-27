@@ -3,6 +3,7 @@
 
 COMMENT =		system inventory tool
 DISTNAME =		openfact-5.2.1
+REVISION =		0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/OpenVoxProject/openfact/
@@ -13,6 +14,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
+MODRUBY_HANDLE_FLAVORS =No
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-ffi,${MODRUBY_FLAVOR}>=1.15.5 \
