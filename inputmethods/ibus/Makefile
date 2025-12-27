@@ -7,7 +7,10 @@ GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
 GH_TAGNAME =		1.5.33
 
-REVISION-gtk4 =		0
+REVISION-main =		0
+REVISION-gtk2 =		0
+REVISION-gtk3 =		0
+REVISION-gtk4 =		1
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}

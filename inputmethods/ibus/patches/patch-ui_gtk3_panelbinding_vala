@@ -1,0 +1,28 @@
+From 7885035a3de594120ae9d570d4ebbba4080710c5 Mon Sep 17 00:00:00 2001
+From: fujiwarat <takao.fujiwara1@gmail.com>
+Date: Tue, 14 Oct 2025 09:00:24 +0900
+Subject: [PATCH] Fix memory leaks #2
+
+Index: ui/gtk3/panelbinding.vala
+--- ui/gtk3/panelbinding.vala.orig
++++ ui/gtk3/panelbinding.vala
+@@ -910,6 +910,9 @@ class PanelBinding : IBus.PanelService {
+                         "is-enabled", false,
+                         "is-extension", true);
+                 panel_extension(close_event);
++                // Vala calls event.ref_sink() and panel_extension() does not
++                // unref the event and need to call event.unref() here.
++                close_event.unref();
+             });
+             m_emojier.send_message.connect((m) => {
+                 send_message(m);
+@@ -1175,6 +1178,9 @@ class PanelBinding : IBus.PanelService {
+                     "is-enabled", false,
+                     "is-extension", true);
+             panel_extension(event);
++            // Vala calls event.ref_sink() and panel_extension() does not unref
++            // the event and need to call event.unref() here.
++            event.unref();
+             return;
+         }
+         if (m_emojier == null)

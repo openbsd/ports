@@ -1,0 +1,22 @@
+From 313f24f18bcc0b9cd5cdea3e6727d21c6b49f250 Mon Sep 17 00:00:00 2001
+From: fujiwarat <takao.fujiwara1@gmail.com>
+Date: Wed, 26 Nov 2025 14:55:28 +0900
+Subject: [PATCH] util/IMdkit: Fix memory leaks with fail safe
+
+Index: client/x11/main.c
+--- client/x11/main.c.orig
++++ client/x11/main.c
+@@ -1309,7 +1309,12 @@ _atexit_cb ()
+ static void
+ _sighandler (int sig)
+ {
+-    exit(EXIT_FAILURE);
++    /* rhbz#1767691 _sighandler() is called with SIGTERM
++     * and exit() causes SEGV during calling atexit functions.
++     * _atexit_cb() might be broken. _exit() does not call
++     * atexit functions.
++     */
++    _exit (EXIT_FAILURE);
+ }
+ 
+ static void

@@ -1,0 +1,16 @@
+From 7885035a3de594120ae9d570d4ebbba4080710c5 Mon Sep 17 00:00:00 2001
+From: fujiwarat <takao.fujiwara1@gmail.com>
+Date: Tue, 14 Oct 2025 09:00:24 +0900
+Subject: [PATCH] Fix memory leaks #2
+
+Index: client/wayland/ibuswaylandim.c
+--- client/wayland/ibuswaylandim.c.orig
++++ client/wayland/ibuswaylandim.c
+@@ -924,6 +924,7 @@ _bus_global_engine_changed_cb (IBusBus       *bus,
+     keymap = create_user_xkb_keymap (priv->xkb_context, desc);
+     if (keymap && !ibus_wayland_im_update_xkb_state (wlim, keymap))
+         xkb_keymap_unref (keymap);
++    g_object_unref (desc);
+ }
+ 
+ 
