@@ -1,0 +1,48 @@
+Using -mbranch-protection=standard to build with BTI support on aarch64.
+
+Don't use -A -n flags to strip (broken by default due to ports infrastructure).
+
+Set correct shared library name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -11106,7 +11106,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+         if test "x$rb_cv_libunwind_broken_ra_signing" = "xno"
+ then :
+ 
+-            for opt in -mbranch-protection=pac-ret -msign-return-address=all
++            for opt in -mbranch-protection=standard -msign-return-address=all
+ do :
+ 
+                 # Try these flags in the _prepended_ position - i.e. we want to try building a program
+@@ -31848,7 +31848,7 @@ main (void)
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"
+ then :
+-  if "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
++  if false # "${STRIP}" -A -n conftest$ac_exeext 2>/dev/null
+ then :
+ 
+             { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
+@@ -32396,7 +32396,7 @@ fi
+ 	 ;; #(
+   openbsd*|mirbsd*) :
+ 
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby40_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -34645,7 +34645,7 @@ then :
+ 
+ else $as_nop
+ 
+-        arch="${target_cpu}-${target_os}"
++        arch="${target_cpu}-openbsd"
+ 
+ fi
+     printf "%s\n" "#define RUBY_PLATFORM \"$arch\"" >>confdefs.h

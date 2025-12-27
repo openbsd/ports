@@ -1,0 +1,13 @@
+Skip spec that requires network access.
+
+Index: spec/ruby/library/socket/socket/connect_spec.rb
+--- spec/ruby/library/socket/socket/connect_spec.rb.orig
++++ spec/ruby/library/socket/socket/connect_spec.rb
+@@ -73,6 +73,6 @@ describe 'Socket#connect' do
+       }.should raise_error(IO::TimeoutError)
+     ensure
+       client.close
+-    end
++    end if false
+   end
+ end
