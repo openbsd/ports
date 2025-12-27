@@ -12,7 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-140.6.0esr-15.0-1-build5
-REVISION =		0
+REVISION =		1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -125,9 +125,6 @@ post-patch:
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/configure
 	${SUBST_PROGRAM} ${FILESDIR}/configure ${WRKSRC}/js/src/configure
 	${SUBST_CMD} ${WRKSRC}/browser/app/profile/000-tor-browser.js
-	# Not using a patch for this; patch context would contain UTF-8
-	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
-	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
 	ln -fs ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
 
 	# add default bridges for Pluggable Transports that we support
