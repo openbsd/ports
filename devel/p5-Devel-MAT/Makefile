@@ -1,7 +1,7 @@
 COMMENT =	perl memory analysis tool
 
-DISTNAME =	Devel-MAT-0.53
-REVISION =	0
+DISTNAME =	Devel-MAT-0.54
+CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
 

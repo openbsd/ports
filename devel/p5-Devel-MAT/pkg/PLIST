@@ -40,8 +40,6 @@ ${P5ARCH}/Devel/MAT/UserGuide.pod
 ${P5ARCH}/Devel/MAT/UserGuide/IdentifyingAnSV.pod
 @comment ${P5ARCH}/auto/Devel/MAT/MAT.bs
 @so ${P5ARCH}/auto/Devel/MAT/MAT.so
-${P5ARCH}/auto/share/
-${P5ARCH}/auto/share/module/
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/reachable-internal.svg
