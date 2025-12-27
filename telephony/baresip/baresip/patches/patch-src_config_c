@@ -1,7 +1,7 @@
 Index: src/config.c
 --- src/config.c.orig
 +++ src/config.c
-@@ -728,7 +728,7 @@ static const char *default_cafile(void)
+@@ -730,7 +730,7 @@ static const char *default_cafile(void)
  {
  #if defined (DEFAULT_CAFILE)
  	return DEFAULT_CAFILE;
@@ -10,7 +10,7 @@ Index: src/config.c
  	return "/etc/ssl/cert.pem";
  #else
  	return "/etc/ssl/certs/ca-certificates.crt";
-@@ -780,7 +780,7 @@ static const char *default_video_device(void)
+@@ -782,7 +782,7 @@ static const char *default_video_device(void)
  #elif defined (WIN32)
  	return "dshow,nil";
  #else
@@ -19,7 +19,7 @@ Index: src/config.c
  #endif
  }
  
-@@ -845,7 +845,7 @@ static int core_config_template(struct re_printf *pf, 
+@@ -847,7 +847,7 @@ static int core_config_template(struct re_printf *pf, 
  		return 0;
  
  #if defined (DEFAULT_CAFILE) || defined (DARWIN) || defined (LINUX) \
@@ -28,7 +28,7 @@ Index: src/config.c
  	have_cafile = true;
  #endif
  
-@@ -1116,11 +1116,11 @@ int config_write_template(const char *file, const stru
+@@ -1119,11 +1119,11 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "#module\t\t\t" "httpd" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Audio codec Modules (in order)\n");
@@ -43,7 +43,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" "g726" MOD_EXT "\n");
  	(void)re_fprintf(f, "module\t\t\t" "g711" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" "l16" MOD_EXT "\n");
-@@ -1169,16 +1169,16 @@ int config_write_template(const char *file, const stru
+@@ -1172,16 +1172,16 @@ int config_write_template(const char *file, const stru
  		(void)re_fprintf(f, "#module\t\t\t" "pipewire" MOD_EXT "\n");
  	}
  #endif
@@ -65,7 +65,7 @@ Index: src/config.c
  
  	(void)re_fprintf(f, "\n# Video filter Modules (in encoding order)\n");
  	(void)re_fprintf(f, "#module\t\t\t" "selfview" MOD_EXT "\n");
-@@ -1204,7 +1204,7 @@ int config_write_template(const char *file, const stru
+@@ -1207,7 +1207,7 @@ int config_write_template(const char *file, const stru
  #ifdef LINUX
  	(void)re_fprintf(f, "#module\t\t\t" "directfb" MOD_EXT "\n");
  #endif
@@ -74,7 +74,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" "sdl" MOD_EXT "\n");
  	(void)re_fprintf(f, "#module\t\t\t" "fakevideo" MOD_EXT "\n");
  
-@@ -1225,8 +1225,8 @@ int config_write_template(const char *file, const stru
+@@ -1228,8 +1228,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "#module\t\t\t" "pcp" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Media encryption modules\n");
@@ -85,7 +85,7 @@ Index: src/config.c
  	(void)re_fprintf(f, "#module\t\t\t" "gzrtp" MOD_EXT "\n");
  	(void)re_fprintf(f, "\n");
  
-@@ -1272,8 +1272,8 @@ int config_write_template(const char *file, const stru
+@@ -1275,8 +1275,8 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "ctrl_tcp_listen\t\t0.0.0.0:4444 # ctrl_tcp - "
  				"TCP interface JSON\n");
  

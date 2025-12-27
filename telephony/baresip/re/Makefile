@@ -2,7 +2,7 @@ COMMENT =		portable library for real-time communications
 
 GH_PROJECT =	re
 
-SHARED_LIBS =		re	23.1 # 24.0
+SHARED_LIBS =		re	23.2 # 24.0
 CATEGORIES +=		devel
 
 WANTLIB = crypto execinfo m pthread ssl z
