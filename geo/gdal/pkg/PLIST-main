@@ -221,6 +221,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-vector-check-geometry.1
 @man man/man1/gdal-vector-clean-coverage.1
 @man man/man1/gdal-vector-clip.1
+@man man/man1/gdal-vector-concat.1
 @man man/man1/gdal-vector-convert.1
 @man man/man1/gdal-vector-edit.1
 @man man/man1/gdal-vector-explode-collections.1
@@ -242,7 +243,6 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-vector-sql.1
 @man man/man1/gdal-vector-swap-xy.1
 @man man/man1/gdal-vector.1
-@man man/man1/gdal-vector_concat.1
 @man man/man1/gdal-vsi-copy.1
 @man man/man1/gdal-vsi-delete.1
 @man man/man1/gdal-vsi-list.1
