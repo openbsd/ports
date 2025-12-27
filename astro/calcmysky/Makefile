@@ -3,11 +3,10 @@ BROKEN-i386=		broken after Qt6 update
 
 COMMENT=		simulator of light scattering by planetary atmospheres
 
-GH_TAGNAME=		v0.3.5
+GH_TAGNAME=		v0.4.0
 GH_ACCOUNT=		10110111
 GH_PROJECT=		CalcMySky
 PKGNAME=		${DISTNAME:L}
-REVISION=		0
 
 SHARED_LIBS +=	ShowMySky-Qt6             0.0 # 0.0
 
@@ -15,7 +14,7 @@ CATEGORIES=		astro
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv3
+# GPLv2+
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6OpenGL Qt6OpenGLWidgets
