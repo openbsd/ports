@@ -40,6 +40,8 @@ PKGNAME-securelink=	nginx-securelink-${VERSION}
 PKGNAME-stream=		nginx-stream-${VERSION}
 PKGNAME-xslt=		nginx-xslt-${VERSION}
 
+REVISION-mailproxy=	0
+
 SITES=	https://nginx.org/download/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
 	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
@@ -204,6 +206,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_v3_module \
 			--with-http_xslt_module=dynamic \
 			--with-mail=dynamic \
+			--with-mail_ssl_module \
 			--with-stream=dynamic \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
