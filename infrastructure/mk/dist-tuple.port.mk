@@ -46,7 +46,7 @@ HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:${_subst}}
 MODDIST-TUPLE_post-extract += \
 	t=${WRKDIST}/${_targetdir}; [[ -d $$t ]] && rmdir $$t \
 	|| mkdir -p `dirname $$t` ; \
-	mv ${WRKDIR}/${_project:T}-${_id:S/refs\/tags\///:S/^v//} $$t;
+	mv ${WRKDIR}/${_project:T}-${_id:S/refs\/tags\///:C/^v([0-9])/\1/} $$t;
 .      endif
 .    endfor
 
