@@ -2,7 +2,7 @@ COMMENT=	flexible I/O tester
 
 GH_ACCOUNT=	axboe
 GH_PROJECT=	fio
-GH_TAGNAME=	fio-3.38
+GH_TAGNAME=	fio-3.41
 PKGNAME=	${GH_TAGNAME}
 
 CATEGORIES=	benchmarks
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB=	c m nfs pthread z
+WANTLIB += c gnutls m nfs pthread z
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD= Yes
@@ -32,6 +32,7 @@ MAKE_FLAGS=	V=1 \
 CONFIGURE_ARGS=	--disable-optimizations \
 		--disable-native
 
-LIB_DEPENDS=	devel/libnfs
+LIB_DEPENDS=	devel/libnfs \
+		security/gnutls
 
 .include <bsd.port.mk>

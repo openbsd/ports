@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -486,7 +486,7 @@ endif
+ prefix = $(INSTALL_PREFIX)
+ bindir = $(prefix)/bin
+ libdir = $(prefix)/lib/fio
+-mandir = $(prefix)/share/man
++mandir = $(prefix)/man
+ sharedir = $(prefix)/share/fio
+ 
+ all: $(PROGS) $(T_TEST_PROGS) $(UT_PROGS) $(SCRIPTS) $(ENGS_OBJS) FORCE
