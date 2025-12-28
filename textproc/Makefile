@@ -610,7 +610,6 @@
      SUBDIR += sphinx
      SUBDIR += sphinx,pgsql
      SUBDIR += spiff
-     SUBDIR += stringtemplate
      SUBDIR += svndumptool
      SUBDIR += sword
      SUBDIR += syrics
