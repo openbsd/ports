@@ -244,7 +244,6 @@
      SUBDIR += jadx
      SUBDIR += jam
      SUBDIR += jansson
-     SUBDIR += jd-gui
      SUBDIR += jdk
      SUBDIR += jenkins
      SUBDIR += jimarc4random
