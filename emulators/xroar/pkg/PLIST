@@ -2,7 +2,19 @@
 @info info/xroar.info
 @man man/man1/xroar.1
 share/doc/xroar/
-share/doc/xroar/xroar-screens.png
-share/doc/xroar/xroar-timebandit-af.png
+share/doc/xroar/drive-control.png
+share/doc/xroar/file-run.png
+share/doc/xroar/gamepad.png
+share/doc/xroar/hardware-cartridge.png
+share/doc/xroar/hardware-machine.png
+share/doc/xroar/menubar.png
+share/doc/xroar/printer-control.png
+share/doc/xroar/tape-input.png
+share/doc/xroar/tool-kbd-lang.png
+share/doc/xroar/trouble-cross-colour.png
+share/doc/xroar/trouble-no-basic.png
+share/doc/xroar/tv-controls.png
+share/doc/xroar/view-composite-rendering.png
+share/doc/xroar/view-tv-input.png
 share/doc/xroar/xroar.html
 share/doc/xroar/xroar.pdf

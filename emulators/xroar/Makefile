@@ -1,6 +1,6 @@
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-1.2
+DISTNAME =		xroar-1.10
 
 CATEGORIES =		emulators
 
@@ -36,7 +36,11 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-gtk2 \
 			--with-gtkgl \
 			--with-sdl2 \
-			--without-pulse
+			--without-pulse \
+			--enable-dragon \
+			--enable-coco3 \
+			--enable-mc10 \
+			--enable-ui-sdl
 CONFIGURE_ENV =		GL_LIBS="-L${X11BASE}/lib" CC="${CC}" OBJC="${CC}" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
