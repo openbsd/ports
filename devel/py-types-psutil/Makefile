@@ -1,6 +1,6 @@
 COMMENT=	typing stubs for psutil
 
-MODPY_DISTV=	7.1.3.20251211
+MODPY_DISTV=	7.2.0.20251228
 DISTNAME=	types_psutil-${MODPY_DISTV}
 PKGNAME=	py-types-psutil-${MODPY_DISTV}
 

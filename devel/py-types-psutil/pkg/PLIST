@@ -3,6 +3,7 @@ lib/python${MODPY_VERSION}/site-packages/psutil-stubs/
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/METADATA.toml
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_common.pyi
+lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_ntuples.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psaix.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_psbsd.pyi
 lib/python${MODPY_VERSION}/site-packages/psutil-stubs/_pslinux.pyi
