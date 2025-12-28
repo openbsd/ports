@@ -1,5 +1,0 @@
-bin/minecraft
-share/applications/minecraft.desktop
-share/icons/hicolor/scalable/apps/minecraft.svg
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
