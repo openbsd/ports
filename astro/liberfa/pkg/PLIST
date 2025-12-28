@@ -1,0 +1,10 @@
+include/erfa.h
+include/erfadatextra.h
+include/erfaextra.h
+include/erfam.h
+@lib lib/liberfa.so.${LIBerfa_VERSION}
+lib/pkgconfig/erfa.pc
+share/doc/liberfa/
+share/doc/liberfa/INFO
+share/doc/liberfa/LICENSE
+share/doc/liberfa/README.rst
