@@ -1,0 +1,2 @@
+Parse GML 3.1, 3.2, compact encoded GML 3.3 and GeoRSS geometries to a
+Geo Interface compliant class.
