@@ -301,6 +301,7 @@
      SUBDIR += ruby-chunky_png
      SUBDIR += ruby-rmagick,ruby33
      SUBDIR += ruby-rmagick,ruby34
+     SUBDIR += ruby-rmagick,ruby40
      SUBDIR += ruby-rqrcode
      SUBDIR += ruby-rqrcode-core
      SUBDIR += s10sh

@@ -390,14 +390,17 @@
      SUBDIR += rtty
      SUBDIR += ruby-augeas,ruby33
      SUBDIR += ruby-augeas,ruby34
+     SUBDIR += ruby-augeas,ruby40
      SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby33
      SUBDIR += ruby-libvirt,ruby34
+     SUBDIR += ruby-libvirt,ruby40
      SUBDIR += ruby-openfact
      SUBDIR += ruby-openvox
      SUBDIR += ruby-pdk
      SUBDIR += ruby-posix-spawn,ruby33
      SUBDIR += ruby-posix-spawn,ruby34
+     SUBDIR += ruby-posix-spawn,ruby40
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
@@ -406,6 +409,7 @@
      SUBDIR += ruby-serverengine
      SUBDIR += ruby-shadow,ruby33
      SUBDIR += ruby-shadow,ruby34
+     SUBDIR += ruby-shadow,ruby40
      SUBDIR += ruby-sigdump
      SUBDIR += ruby-tty-color
      SUBDIR += ruby-tty-cursor
