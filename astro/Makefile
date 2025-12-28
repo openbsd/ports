@@ -9,6 +9,7 @@
      SUBDIR += jday
      SUBDIR += kosmorro
      SUBDIR += kstars
+     SUBDIR += liberfa
      SUBDIR += libnova
      SUBDIR += phoon
      SUBDIR += py-astral
