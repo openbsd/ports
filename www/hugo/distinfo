@@ -471,8 +471,8 @@ SHA256 (go_modules/github.com/bep/goportabletext/@v/v0.1.0.zip) = ii93mLz+yeYv5i
 SHA256 (go_modules/github.com/bep/helpers/@v/v0.4.0.mod) = 6f9vZcmK0e5cu246+zq7wnxGKc1vd4SuPtKJdNFw/Uk=
 SHA256 (go_modules/github.com/bep/helpers/@v/v0.6.0.mod) = FSArF37fnh69gzlnCQfHKFSCvJzdJfd8ae/vbr7CYks=
 SHA256 (go_modules/github.com/bep/helpers/@v/v0.6.0.zip) = z37WwMiCSSWyMlE0MzGTau3Avr5l811G9Vz8SfqZOag=
-SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.12.0.mod) = nRkbnpKzdgdxF67EuDMldXG87WZ6yRqumIw7AEgz7bM=
-SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.12.0.zip) = FQLfnYeXaPQ8ON+NeNMurn5S0embsuZG3FC3L4pnztw=
+SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.12.1.mod) = nRkbnpKzdgdxF67EuDMldXG87WZ6yRqumIw7AEgz7bM=
+SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.12.1.zip) = gEgJBO2WrwTA8IldRJPtQkdo/VZdDw+ckSLo7NVeIBk=
 SHA256 (go_modules/github.com/bep/lazycache/@v/v0.8.0.mod) = RSK8O3pI7/K9p7eZlzzSj7z0EvgGqQzCybbKMJYTnIk=
 SHA256 (go_modules/github.com/bep/lazycache/@v/v0.8.0.zip) = yV6VFHJP8asVw74L5z5dgilcI5w3pfLzZjK2cfxEMzY=
 SHA256 (go_modules/github.com/bep/logg/@v/v0.4.0.mod) = QVjQvc9oWMHc8EokNHCc9OHQeSCniQAFswTLTugxKC4=
@@ -1538,7 +1538,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.153.2.zip) = Q7AifQK7IjgtSOVdgYbokYNfCgLHSfFF4r9Gjx9M/kg=
+SHA256 (hugo-v0.153.4.zip) = Jym7dkf6c+G21BBCChn97VsqV9M9UU1Tg5HhpkvHGMQ=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.19.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
@@ -2012,8 +2012,8 @@ SIZE (go_modules/github.com/bep/goportabletext/@v/v0.1.0.zip) = 18002
 SIZE (go_modules/github.com/bep/helpers/@v/v0.4.0.mod) = 276
 SIZE (go_modules/github.com/bep/helpers/@v/v0.6.0.mod) = 307
 SIZE (go_modules/github.com/bep/helpers/@v/v0.6.0.zip) = 16797
-SIZE (go_modules/github.com/bep/imagemeta/@v/v0.12.0.mod) = 363
-SIZE (go_modules/github.com/bep/imagemeta/@v/v0.12.0.zip) = 14452111
+SIZE (go_modules/github.com/bep/imagemeta/@v/v0.12.1.mod) = 363
+SIZE (go_modules/github.com/bep/imagemeta/@v/v0.12.1.zip) = 14452079
 SIZE (go_modules/github.com/bep/lazycache/@v/v0.8.0.mod) = 395
 SIZE (go_modules/github.com/bep/lazycache/@v/v0.8.0.zip) = 9880
 SIZE (go_modules/github.com/bep/logg/@v/v0.4.0.mod) = 522
@@ -3079,4 +3079,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.153.2.zip) = 6850868
+SIZE (hugo-v0.153.4.zip) = 6851289
