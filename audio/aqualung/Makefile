@@ -4,11 +4,14 @@ VERSION=	2.0
 DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
 CATEGORIES=	audio
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/jeremyevans/aqualung
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
+
+FLAVORS=	cdda
+FLAVOR?=
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -83,12 +86,20 @@ CONFIGURE_ARGS=	--with-cddb \
 		--with-vorbisenc \
 		--with-wavpack \
 		--without-alsa \
-		--without-cdda \
 		--without-ifp \
 		--without-jack \
 		--without-oss \
 		--without-pulse \
 		--without-winmm
+
+.if ${FLAVOR:Mcdda}
+WANTLIB +=	cdio cdio_cdda cdio_paranoia
+LIB_DEPENDS +=	audio/libcdio \
+		audio/libcdio-paranoia
+CONFIGURE_ARGS += --with-cdda
+.else
+CONFIGURE_ARGS += --without-cdda
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
