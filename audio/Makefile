@@ -5,6 +5,7 @@
      SUBDIR += alac_decoder
      SUBDIR += amused
      SUBDIR += aqualung
+     SUBDIR += aqualung,cdda
      SUBDIR += ario
      SUBDIR += ascd
      SUBDIR += aucatctl
