@@ -1,6 +1,6 @@
 COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 
-MODPY_DISTV =	6.0.0
+MODPY_DISTV =	7.0.1
 DISTNAME =	rio_cogeo-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PYBUILD =	flit_core
+MODPY_PYBUILD =	hatchling
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	geo/py-rasterio \
