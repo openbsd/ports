@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		fast, encrypted, deduplicated backups
 
-DIST_TUPLE =		github rustic-rs rustic v0.10.2 .
+DIST_TUPLE =		github rustic-rs rustic v0.10.3 .
 
 CATEGORIES =		sysutils
 
