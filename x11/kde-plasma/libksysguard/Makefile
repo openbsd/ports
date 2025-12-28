@@ -1,5 +1,6 @@
 COMMENT =	KSysGuard library
 DISTNAME =	libksysguard-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KSysGuardFormatter         1.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSensorFaces       1.0 # 5.22.5
