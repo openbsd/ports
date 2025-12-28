@@ -1,0 +1,22 @@
+Fix incorrect pessismistic versioning requirement.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -16,14 +16,14 @@ dependencies:
+   name: bigdecimal
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">"
+       - !ruby/object:Gem::Version
+         version: '3'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">"
+       - !ruby/object:Gem::Version
+         version: '3'
+ - !ruby/object:Gem::Dependency

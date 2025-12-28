@@ -3,6 +3,11 @@ ${GEM_BIN}/tsql-ttds${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
+${GEM_LIB}/gems/${DISTNAME}/.devcontainer/
+${GEM_LIB}/gems/${DISTNAME}/.devcontainer/Dockerfile
+${GEM_LIB}/gems/${DISTNAME}/.devcontainer/boot.sh
+${GEM_LIB}/gems/${DISTNAME}/.devcontainer/compose.yaml
+${GEM_LIB}/gems/${DISTNAME}/.devcontainer/devcontainer.json
 ${GEM_LIB}/gems/${DISTNAME}/.gitattributes
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
@@ -17,10 +22,10 @@ ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/VERSION
+${GEM_LIB}/gems/${DISTNAME}/astyle.conf
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/defncopy-ttds
 ${GEM_LIB}/gems/${DISTNAME}/bin/tsql-ttds
-${GEM_LIB}/gems/${DISTNAME}/docker-compose.yml
 ${GEM_LIB}/gems/${DISTNAME}/exe/
 ${GEM_LIB}/gems/${DISTNAME}/exe/.keep
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -41,8 +46,6 @@ ${GEM_LIB}/gems/${DISTNAME}/patches/freetds/1.00.27/0002-Don-t-use-MSYS2-file-li
 ${GEM_LIB}/gems/${DISTNAME}/patches/libiconv/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libiconv/1.14/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libiconv/1.14/1-avoid-gets-error.patch
-${GEM_LIB}/gems/${DISTNAME}/setup_cimgruby_dev.sh
-${GEM_LIB}/gems/${DISTNAME}/start_dev.sh
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/native_gem.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/package.rake
@@ -51,12 +54,7 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/test.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/bin/
 ${GEM_LIB}/gems/${DISTNAME}/test/bin/install-freetds.sh
-${GEM_LIB}/gems/${DISTNAME}/test/bin/install-mssql.ps1
-${GEM_LIB}/gems/${DISTNAME}/test/bin/install-mssqltools.sh
-${GEM_LIB}/gems/${DISTNAME}/test/bin/install-openssl.sh
 ${GEM_LIB}/gems/${DISTNAME}/test/bin/restore-from-native-gem.ps1
-${GEM_LIB}/gems/${DISTNAME}/test/bin/setup_tinytds_db.sh
-${GEM_LIB}/gems/${DISTNAME}/test/bin/setup_volume_permissions.sh
 ${GEM_LIB}/gems/${DISTNAME}/test/client_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gem_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/result_test.rb
