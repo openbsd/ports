@@ -42,7 +42,7 @@ Index: doc/CMakeLists.txt
  
  if (doxygen_BINARY_DIR)
      set(DOXYGEN_EXECUTABLE ${doxygen_BINARY_DIR}/bin/doxygen)
-@@ -210,91 +187,3 @@ add_custom_command(
+@@ -215,91 +192,3 @@ add_custom_command(
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
  )
  set_source_files_properties(config.dox PROPERTIES GENERATED 1)

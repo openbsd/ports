@@ -1,14 +1,8 @@
-# Memory hog, stuck for days on the same file (configoptions.cpp) during build.
-# XXX check with different optimizer level? see doc/install.doc
-NOT_FOR_ARCHS=	m88k sh
-BROKEN-alpha=	.got subsegment exceeds 64K
-
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.14.0
+VERSION=	1.15.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
-REVISION=	0
 
 CATEGORIES=	devel textproc
 
@@ -22,7 +16,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets Qt6Xml
 WANTLIB += c m
 
-COMPILER =	base-clang ports-gcc base-gcc
+# C++20
+COMPILER =	base-clang ports-gcc
 
 SITES=		https://doxygen.nl/files/
 

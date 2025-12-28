@@ -1,11 +1,6 @@
-# Memory hog, stuck for days on the same file (configoptions.cpp) during build.
-# XXX check with different optimizer level? see doc/install.doc
-NOT_FOR_ARCHS=	m88k sh
-BROKEN-alpha=	.got subsegment exceeds 64K
-
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.14.0
+VERSION=	1.15.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
@@ -18,9 +13,11 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv m xapian z
+WANTLIB += ${COMPILER_LIBCXX} c fmt iconv m spdlog sqlite3 xapian
+WANTLIB += z
 
-COMPILER =	base-clang ports-gcc base-gcc
+# C++20
+COMPILER =	base-clang ports-gcc
 
 SITES=		https://doxygen.nl/files/
 
@@ -30,7 +27,10 @@ MODULES=	devel/cmake \
 MODPY_RUNDEP=	No
 
 LIB_DEPENDS=	converters/libiconv \
-		databases/xapian-core
+		databases/sqlite3 \
+		databases/xapian-core \
+		devel/fmt \
+		devel/spdlog
 
 
 BUILD_DEPENDS=	devel/bison \
@@ -44,6 +44,12 @@ CONFIGURE_ARGS=		-Dbuild_doc=ON \
 			-Dbuild_search=ON
 
 CONFIGURE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Javacc=ON
+
+CONFIGURE_ARGS+=	-Duse_sys_fmt=ON \
+			-Duse_sys_spdlog=ON \
+			-Duse_sys_sqlite3=ON
+
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS+=	-mxgot
