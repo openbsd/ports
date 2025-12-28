@@ -1,6 +1,6 @@
 COMMENT =	construct and use map tile grids
 
-MODPY_DISTV =	6.2.0
+MODPY_DISTV =	7.0.1
 DISTNAME =	morecantile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PYBUILD =	flit_core
+MODPY_PYBUILD =	hatchling
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	geo/py-proj \
