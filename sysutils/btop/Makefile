@@ -2,7 +2,7 @@ COMMENT=	resource monitor
 
 GH_ACCOUNT=	aristocratos
 GH_PROJECT=	btop
-GH_TAGNAME=	v1.4.5
+GH_TAGNAME=	v1.4.6
 
 CATEGORIES=	sysutils
 
