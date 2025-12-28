@@ -68,6 +68,7 @@
      SUBDIR += py-planet
      SUBDIR += py-polyline
      SUBDIR += py-proj
+     SUBDIR += py-pygml
      SUBDIR += py-rasterio
      SUBDIR += py-rio-cogeo
      SUBDIR += py-shapely
