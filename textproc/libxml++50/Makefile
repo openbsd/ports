@@ -1,9 +1,9 @@
 COMMENT=		C++ bindings for libxml2
 
-GNOME_VERSION=		5.4.0
-GNOME_PROJECT=		libxml++
-PKGNAME=		libxml++50-${GNOME_VERSION}
-REVISION=		0
+V=			5.6.0
+DISTNAME=		libxml++-${V}
+PKGNAME=		libxml++50-${V}
+EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS += xml++-5.0                 0.1 # 1.0.0
 
@@ -18,14 +18,15 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} xml2
 
-MODULES=		devel/meson \
-			x11/gnome
+SITES=			https://github.com/libxmlplusplus/libxmlplusplus/releases/download/${V}/
 
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
+MODULES=		devel/meson
 
 # c++11
 COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		textproc/libxml
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
