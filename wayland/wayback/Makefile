@@ -1,6 +1,6 @@
 COMMENT =	X11 compat layer for running full X11 desktop environments
 
-V =		0.2
+V =		0.3
 DISTNAME =	wayback-${V}
 CATEGORIES =	wayland
 
