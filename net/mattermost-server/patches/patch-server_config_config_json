@@ -10,7 +10,7 @@ Index: server/config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -100,7 +100,7 @@
+@@ -101,7 +101,7 @@
      "PersistentNotificationMaxRecipients": 5,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
@@ -19,7 +19,7 @@ Index: server/config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -168,14 +168,14 @@
+@@ -169,14 +169,14 @@
      "ReplicaMonitorIntervalSeconds": 5
    },
    "LogSettings": {
@@ -36,7 +36,7 @@ Index: server/config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -209,7 +209,7 @@
+@@ -210,7 +210,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -45,7 +45,7 @@ Index: server/config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -230,7 +230,7 @@
+@@ -231,7 +231,7 @@
      "AmazonS3StorageClass": "",
      "DedicatedExportStore": false,
      "ExportDriverName": "local",
@@ -54,7 +54,7 @@ Index: server/config/config.json
      "ExportAmazonS3AccessKeyId": "",
      "ExportAmazonS3SecretAccessKey": "",
      "ExportAmazonS3Bucket": "",
-@@ -260,11 +260,11 @@
+@@ -261,11 +261,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -69,7 +69,7 @@ Index: server/config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -304,7 +304,7 @@
+@@ -305,7 +305,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -78,7 +78,7 @@ Index: server/config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -411,7 +411,7 @@
+@@ -412,7 +412,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -87,7 +87,7 @@ Index: server/config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -592,8 +592,8 @@
+@@ -593,8 +593,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -98,8 +98,8 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -674,11 +674,11 @@
-     "MobileSSOCodeExchange": true
+@@ -678,11 +678,11 @@
+     "EnableAIPluginBridge": false
    },
    "ImportSettings": {
 -    "Directory": "./import",
@@ -112,8 +112,8 @@ Index: server/config/config.json
      "RetentionDays": 30
    },
    "WranglerSettings": {
-@@ -745,4 +745,4 @@
-       "HideFlaggedContent": true
+@@ -760,4 +760,4 @@
+       "APIKey": ""
      }
    }
 -}
