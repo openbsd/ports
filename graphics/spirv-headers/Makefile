@@ -1,6 +1,6 @@
 COMMENT =	SPIRV-Headers
 
-V =		1.4.321.0
+V =		1.4.335.0
 DISTNAME =	spirv-headers-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Headers
