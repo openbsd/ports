@@ -1,6 +1,7 @@
 COMMENT =	Victor Shoup's Number Theory Library
 
 DISTNAME =	ntl-11.6.0
+REVISION =	0
 SHARED_LIBS =	ntl	10.1	# 0.0
 CATEGORIES =	math
 
@@ -21,24 +22,28 @@ LIB_DEPENDS =		devel/gmp
 
 MAKE_FILE =		makefile
 
-CONFIGURE_STYLE = 	simple
-CONFIGURE_ARGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}" \
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	CXX="${CXX}" \
+			CXXFLAGS="${CXXFLAGS}" \
+			DEF_PREFIX="${LOCALBASE}" \
+			GMP_PREFIX="${LOCALBASE}" \
+			LIBTOOL=${LIBTOOL} \
 			LIBntl_VERSION=${LIBntl_VERSION} \
-			SHARED=on DEF_PREFIX="${LOCALBASE}" \
+			NTL_GMP_LIP=on \
+			SHARED=on \
 			NATIVE=off
 
-WRKBUILD =		${WRKSRC}/src
+WRKSRC =		${WRKDIST}/src
 
 TEST_TARGET =	check
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/NTL
-	@cd ${WRKSRC}/include/NTL; ${INSTALL_DATA} *.h ${PREFIX}/include/NTL
+	@cd ${WRKDIST}/include/NTL; ${INSTALL_DATA} *.h ${PREFIX}/include/NTL
 	@cd ${WRKBUILD}; ${INSTALL_DATA} .libs/libntl.a  ${PREFIX}/lib/libntl.a
 	@cd ${WRKBUILD}; ${INSTALL_DATA} .libs/libntl.so.${LIBntl_VERSION} \
 		${PREFIX}/lib/libntl.so.${LIBntl_VERSION}
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/NTL
-	@cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${PREFIX}/share/doc/NTL
+	@cd ${WRKDIST}/doc; ${INSTALL_DATA} * ${PREFIX}/share/doc/NTL
 
 .include <bsd.port.mk>
