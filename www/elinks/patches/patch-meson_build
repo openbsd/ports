@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -693,7 +693,7 @@ else
+@@ -713,7 +713,7 @@ else
  endif
  
  if conf_data.get('CONFIG_TERMINFO')

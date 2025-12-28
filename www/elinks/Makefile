@@ -1,10 +1,9 @@
 COMMENT =		advanced text mode web browser
 
-V =			0.18.0
+V =			0.19.0
 GH_ACCOUNT =		rkd77
 GH_PROJECT =		elinks
 GH_TAGNAME =		v$V
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -16,8 +15,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto css curl curses dom execinfo expat idn2 mujs
-WANTLIB += perl sqlite3 ssl tre wapcaplet z
+WANTLIB += ${COMPILER_LIBCXX} c crypto css curl curses dom execinfo
+WANTLIB += expat idn2 mujs perl sqlite3 ssl tre wapcaplet z
 
 COMPILER =		base-clang ports-gcc
 
