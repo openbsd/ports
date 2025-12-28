@@ -1,6 +1,7 @@
 VERSION =		0.10.2
 USE_LUAJIT =		No
 REVISION =		3
+PKGSPEC =		love->=${VERSION},<0.11
 
 SHARED_LIBS=		love-${VERSION}	0.0
 

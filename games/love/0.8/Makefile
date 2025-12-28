@@ -1,6 +1,7 @@
 VERSION =		0.8.0
 USE_LUAJIT =		No
 REVISION =		19
+PKGSPEC =		love->=${VERSION},<0.9
 
 WANTLIB += ${COMPILER_LIBCXX} GL IL Iex-3_4 IlmThread-3_4 Imath-3_2
 WANTLIB += OpenEXR-3_4 OpenEXRCore-3_4 OpenEXRUtil-3_4 SDL X11

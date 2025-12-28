@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS}
 
 VERSION =		11.5
 REVISION =		2
+PKGSPEC =		love->=${VERSION},<12
 
 SHARED_LIBS =		love-${VERSION}	0.0
 
