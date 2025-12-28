@@ -7,7 +7,9 @@ DISTNAME =		notmuch-$V
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 PKGNAME-mutt =		notmuch-mutt-${V}
-REVISION =		0
+REVISION-main =		1
+REVISION-emacs =	0
+REVISION-mutt =		0
 
 SHARED_LIBS +=		notmuch	1.2
 
@@ -52,8 +54,7 @@ RUN_DEPENDS-mutt =	devel/p5-Term-ReadLine-Gnu \
 # this builds, though does not currently install, cffi-based Python
 # bindings using its own Makefile rather than the standard ports
 # Python build infra.
-BUILD_DEPENDS =		devel/doxygen \
-			devel/py-cffi \
+BUILD_DEPENDS =		devel/py-cffi \
 			devel/py-setuptools \
 			editors/emacs,gtk3 \
 			security/gnupg>=2.2.23p1 \
@@ -73,7 +74,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--infodir=${PREFIX}/info \
 			--sysconfdir=${SYSCONFDIR} \
-			--bashcompletiondir=${PREFIX}/share/notmuch/bash_completion.d
+			--bashcompletiondir=${PREFIX}/share/notmuch/bash_completion.d \
+			--without-api-docs
 CONFIGURE_ENV =		PYTHON=${MODPY_BIN}
 
 MAKE_FLAGS =	V=1

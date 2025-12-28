@@ -40,7 +40,6 @@ include/notmuch.h
 @man man/man1/notmuch-show.1
 @man man/man1/notmuch-tag.1
 @man man/man1/notmuch.1
-@man man/man3/notmuch.3
 @man man/man5/notmuch-hooks.5
 @man man/man7/notmuch-properties.7
 @man man/man7/notmuch-search-terms.7
