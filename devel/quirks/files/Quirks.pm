@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1776 2025/12/27 12:49:59 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1777 2025/12/28 20:49:58 kurt Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1022,6 +1022,9 @@ setup_obsolete_reason(
 	71 => 'mininet',
 	6 => 'dovecot-fts-xapian',
 	3 => 'javahelp',
+	3 => 'jd-gui',
+	6 => 'minecraft',
+	1 => 'stringtemplate',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
@@ -1051,6 +1054,8 @@ my $obsolete_suggestion = {
 # 7.9
 	'dovecot-fts-xapian' => 'dovecot-fts-flatcurve',
 	'ruby34-openfact' => 'openfact',
+	'jd-gui' => 'vineflower',
+	'minecraft' => 'multimc',
 };
 
 # reasons for obsolete packages
