@@ -1,9 +1,8 @@
 COMMENT =		pure Python parser implementation of OGC filtering standards
 
-MODPY_DISTV =	0.3.1
+MODPY_DISTV =	0.3.3
 DISTNAME =		pygeofilter-${MODPY_DISTV}
 PKGNAME =		py-geofilter-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		geo devel
 
@@ -19,6 +18,8 @@ MODPY_PI =		Yes
 #NO_TEST =	Yes
 RUN_DEPENDS =	textproc/py-lark \
 		textproc/py-dateparser \
+		devel/py-click \
+		geo/py-pygml \
 		geo/py-geoif \
 		geo/py-shapely
 

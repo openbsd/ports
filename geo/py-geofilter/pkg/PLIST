@@ -1,9 +1,11 @@
 @pkgpath geo/py-geofilter,python3
+bin/pygeofilter
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pygeofilter-${MODPY_DISTV}.dist-info/top_level.txt
@@ -13,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}cql2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}cql2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -101,6 +105,17 @@ lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/evaluate.py
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/evaluate.py
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/solr/util.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/${MODPY_PYCACHE}/
@@ -120,6 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sqlalchemy/${MODPY
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sqlalchemy/${MODPY_PYCACHE}filters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sqlalchemy/evaluate.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sqlalchemy/filters.py
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/cli.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/cql2.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/parsers/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/parsers/__init__.py
