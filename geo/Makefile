@@ -26,6 +26,7 @@
      SUBDIR += mapserver
      SUBDIR += mdal
      SUBDIR += merkaartor
+     SUBDIR += ncview
      SUBDIR += openbsd-developers
      SUBDIR += osm-gps-map
      SUBDIR += osm2pgrouting
