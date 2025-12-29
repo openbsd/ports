@@ -1,10 +1,9 @@
-PORTROACH =	limitw:1,even
+PORTROACH =	limit:^4\.4\.
 
 # override ../Makefile.inc; 4.4 build fails on aarch64
 ONLY_FOR_ARCHS = amd64
 
-V =		4.4.29
-REVISION =	6
+V =		4.4.30
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
