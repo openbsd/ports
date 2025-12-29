@@ -5,6 +5,7 @@ GH_ACCOUNT =	Uberi
 GH_PROJECT =	speech_recognition
 GH_TAGNAME =	${MODPY_DISTV}
 PKGNAME =	py-speechrecognition-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -34,5 +35,8 @@ RUN_DEPENDS =	audio/flac \
 TEST_DEPENDS =	math/py-numpy \
 		www/py-httpx \
 		www/py-respx
+
+post-install:
+	rm -Rf ${WRKINST}${MODPY_SITEPKG}/tests
 
 .include <bsd.port.mk>

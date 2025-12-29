@@ -81,17 +81,3 @@ lib/python${MODPY_VERSION}/site-packages/speechrecognition-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/speechrecognition-${MODPY_DISTV}.dist-info/licenses/LICENSE-FLAC.txt
 lib/python${MODPY_VERSION}/site-packages/speechrecognition-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/speechrecognition-${MODPY_DISTV}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/tests/
-lib/python${MODPY_VERSION}/site-packages/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_audio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_audio.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_recognition.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_recognition.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_special_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_special_features.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_audio.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_recognition.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_special_features.py
