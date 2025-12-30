@@ -1,0 +1,46 @@
+Keep the same lib and stub lib naming conventions as in the other Tk ports.
+Set here to propagate through everything.
+Get -I for cups.h. (https://core.tcl-lang.org/tk/tktview/3ac12ff34c)
+
+Index: unix/configure
+--- unix/configure.orig
++++ unix/configure
+@@ -8510,7 +8510,7 @@ printf "%s\n" "$enable_libcups" >&6; }
+ 	    found_cups=no
+ 	else
+ 	    found_cups=yes
+-	    CUPS_CFLAGS="-DHAVE_CUPS"
++	    CUPS_CFLAGS="-DHAVE_CUPS `cups-config --cflags`"
+ 	    CUPS_LIBS=`cups-config --libs`
+ 	fi
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $found_cups" >&5
+@@ -8772,7 +8772,7 @@ if test "$ac_cv_cygwin" = "yes" -a "$SHARED_BUILD" != 
+ eval "TK_LIB_FILE_TCL9=cygtcl9tk${LIB_SUFFIX}"
+ EXTRA_INSTALL_BINARIES='$(INSTALL_LIBRARY) $(patsubst cyg%.dll,lib%.dll.a,${LIB_FILE}) "$(LIB_INSTALL_DIR)"'
+ else
+-eval "TK_LIB_FILE_TCL9=libtcl9tk${LIB_SUFFIX}"
++eval "TK_LIB_FILE_TCL9=libtk${LIB_SUFFIX}"
+ fi
+ if test ${TCL_MAJOR_VERSION} = 8 ; then
+ eval "TK_LIB_FILE=${TK_LIB_FILE_TCL8}"
+@@ -8918,9 +8918,6 @@ else
+     # libdir must be a fully qualified path and not ${exec_prefix}/lib
+     eval libdir="$libdir"
+     TK_LIB_FLAG="-l"
+-    if test "${TCL_MAJOR_VERSION}" -gt 8 ; then
+-	TK_LIB_FLAG="${TK_LIB_FLAG}tcl9"
+-    fi
+     if test "${ac_cv_cygwin}" = "yes" -a "$SHARED_BUILD" = "1"; then
+ 	TK_LIB_FLAG="${TK_LIB_FLAG}tk`echo ${TK_VERSION} | tr -d .`"
+ 	TK_BUILD_LIB_SPEC="-L\$(TOP_DIR)/win ${TK_LIB_FLAG}"
+@@ -9145,8 +9142,8 @@ fi
+ #--------------------------------------------------------------------
+ 
+ # Replace ${VERSION} with contents of ${TK_VERSION}
+-    TK_STUB_LIB_FILE="libtkstub.a"
+-    TK_STUB_LIB_FLAG="-ltkstub"
++    TK_STUB_LIB_FILE="libtkstub90.a"
++    TK_STUB_LIB_FLAG="-ltkstub90"
+ eval "TK_STUB_LIB_DIR=\"${libdir}\""
+ 
+ TK_BUILD_STUB_LIB_SPEC="-L`pwd | sed -e 's/ /\\\\ /g'` ${TK_STUB_LIB_FLAG}"
