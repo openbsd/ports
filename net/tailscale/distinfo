@@ -2811,7 +2811,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.1.zip) = UVmE
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = ls01XNT8EFcJEXpXnTm9ba+iNZHtIEug4S8FLJT4cVQ=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = GcGueolLJMUcGaFPICznsg9pahAlIJQ7/cKE2s770T4=
 SHA256 (go_modules/tailscale.com/@v/v1.73.0-pre.0.20240822193108-696711cc17c4.mod) = oL4n5UGP7E/MrZ8FpIABm+q/DinsipIyPThn5Y/Fl+8=
-SHA256 (tailscale.com-v1.92.2.zip) = FVXvjWTKMrm4Boy04NiR5v9OjDOWjzbclpJ4k8Blbog=
+SHA256 (tailscale.com-v1.92.4.zip) = MquYrg2iHEjXU5jEeBR4+MMpCpYywcEKP3dz7QHq2Rg=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.mod) = 173
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.zip) = 7059
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.1.mod) = 77
@@ -5625,4 +5625,4 @@ SIZE (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.1.zip) = 99928
 SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = 65
 SIZE (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = 6671
 SIZE (go_modules/tailscale.com/@v/v1.73.0-pre.0.20240822193108-696711cc17c4.mod) = 20014
-SIZE (tailscale.com-v1.92.2.zip) = 5478927
+SIZE (tailscale.com-v1.92.4.zip) = 5479020
