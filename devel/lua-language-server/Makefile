@@ -4,18 +4,18 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =		language server for Lua
 
-V =			3.16.1
+V =			3.16.4
 PKGNAME =		lua-language-server-${V}
 
 DIST_TUPLE +=		github LuaLS lua-language-server ${V} . \
-	github CppCXY EmmyLuaCodeStyle 8500f3af178f097331d938378648078d023f4c7c 3rd/EmmyLuaCodeStyle \
-	github actboy168 bee.lua ee7efd07155c33c2c95f4a66d17b2f3ef122896a 3rd/bee.lua \
-	github actboy168 json.lua f94860ef551036490c5b3db6098325267f42ef28 3rd/json.lua \
+	github CppCXY EmmyLuaCodeStyle 8c4289b7617ccdb0b247a6171f111f28ac7ae969 3rd/EmmyLuaCodeStyle \
+	github actboy168 bee.lua f55b6988e8d9564816a555118b0e76564ef9a283 3rd/bee.lua \
+	github actboy168 json.lua 08095fd2cdfde8f49a5f5b54b35ec7b3d4906a36 3rd/json.lua \
 	github love2d-community love-api 853639288547618dece86c3a8e52348fe304eba2 3rd/love-api \
 	github bjornbytes lovr-docs e89c753e1c2849b7533481fcf058095f8e050b9f 3rd/lovr-api \
 	github sqmedeiros lpeglabel 912b0b9e8641074408ffc2259e069b188e0c717b 3rd/lpeglabel \
-	github actboy168 luamake a83fa224d083ad5ee4d39367621ee8c8c8db379b 3rd/luamake \
-	github actboy168 bee.lua 973fd8a0ba2d3a0f1988ac03c1817e8c932a7b82 3rd/luamake/bee.lua
+	github actboy168 luamake 4c4bd16c9b0c1d773402fc15c76367f7899a1f91 3rd/luamake \
+	github actboy168 bee.lua 466c4f071a17ab7c31e402383b0a2097b03535ba 3rd/luamake/bee.lua
 
 CATEGORIES =		devel
 
