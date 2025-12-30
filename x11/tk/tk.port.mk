@@ -7,12 +7,15 @@ CATEGORIES +=		x11/tk
 MODTK_VERSION ?= 	8.5
 MODTCL_VERSION ?= 	${MODTK_VERSION}
 
-.if ${MODTK_VERSION} == 8.5
-_MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.6
+.if "${MODTK_VERSION}" == "8.5"
+_MODTK_SPEC = 		tk->=8.5,<8.6
 MODTK_LIB ?=		tk85
-.elif ${MODTK_VERSION} == 8.6
-_MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.7
+.elif "${MODTK_VERSION}" == "8.6"
+_MODTK_SPEC = 		tk->=8.6,<8.7
 MODTK_LIB ?=		tk86
+.elif "${MODTK_VERSION}" == "9"
+_MODTK_SPEC = 		tk->=9.0
+MODTK_LIB ?=		tk90
 .endif
 
 MODTK_BIN ?=		${LOCALBASE}/bin/wish${MODTK_VERSION}
