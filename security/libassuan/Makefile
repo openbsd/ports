@@ -1,12 +1,15 @@
 COMMENT=		IPC library used by GnuPG and gpgme
 
 DISTNAME=		libassuan-3.0.2
+REVISION=		0
 
 SHARED_LIBS +=  assuan            3.0      # 9.2
 
 CATEGORIES=		security devel
 
 HOMEPAGE=		https://www.gnupg.org/software/libassuan/index.html
+
+MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
