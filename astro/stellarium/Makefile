@@ -2,9 +2,8 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-V=			25.3
+V=			25.4
 DISTNAME=		stellarium-${V}
-REVISION=		0
 
 CATEGORIES=		astro x11
 
