@@ -17,6 +17,7 @@
      SUBDIR += axel
      SUBDIR += balance
      SUBDIR += barrier
+     SUBDIR += bgp-perf
      SUBDIR += bgpq3
      SUBDIR += bgpq4
      SUBDIR += bindgraph
