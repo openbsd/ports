@@ -1,0 +1,9 @@
+The OpenBGPD performance test suite contains two applications for
+performance measurements.
+
+The bgp-blaster tool can load mrtdump files into a table and emulate
+many peers using that table.
+
+The bgp-canary tool sends special UPDATE messages to the system under
+test and measures the latency through the system. The statistics for
+these measurements are available as an openmetric file.
