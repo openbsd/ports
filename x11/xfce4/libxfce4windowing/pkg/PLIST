@@ -28,6 +28,8 @@ lib/pkgconfig/libxfce4windowing-x11-0.pc
 lib/pkgconfig/libxfce4windowingui-0.pc
 share/gir-1.0/Libxfce4windowing-0.0.gir
 share/gir-1.0/Libxfce4windowingui-0.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libxfce4windowing/
 share/gtk-doc/html/libxfce4windowing/XfwApplication.html
 share/gtk-doc/html/libxfce4windowing/XfwMonitor.html
@@ -82,6 +84,7 @@ share/locale/de/LC_MESSAGES/libxfce4windowing.mo
 share/locale/el/LC_MESSAGES/libxfce4windowing.mo
 share/locale/en_CA/LC_MESSAGES/libxfce4windowing.mo
 share/locale/en_GB/LC_MESSAGES/libxfce4windowing.mo
+share/locale/eo/LC_MESSAGES/libxfce4windowing.mo
 share/locale/es/LC_MESSAGES/libxfce4windowing.mo
 share/locale/et/LC_MESSAGES/libxfce4windowing.mo
 share/locale/fi/LC_MESSAGES/libxfce4windowing.mo
@@ -112,7 +115,10 @@ share/locale/sl/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sq/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sr/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sv/LC_MESSAGES/libxfce4windowing.mo
+share/locale/th/LC_MESSAGES/libxfce4windowing.mo
 share/locale/tr/LC_MESSAGES/libxfce4windowing.mo
+share/locale/ug/LC_MESSAGES/libxfce4windowing.mo
 share/locale/uk/LC_MESSAGES/libxfce4windowing.mo
+share/locale/vi/LC_MESSAGES/libxfce4windowing.mo
 share/locale/zh_CN/LC_MESSAGES/libxfce4windowing.mo
 share/locale/zh_TW/LC_MESSAGES/libxfce4windowing.mo
