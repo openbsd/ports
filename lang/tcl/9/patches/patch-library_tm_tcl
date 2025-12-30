@@ -1,0 +1,20 @@
+Index: library/tm.tcl
+--- library/tm.tcl.orig
++++ library/tm.tcl
+@@ -321,10 +321,12 @@ proc ::tcl::tm::Defaults {} {
+ 
+     # Note that we're using [::list], not [list] because [list] means
+     # something other than [::list] in this namespace.
+-    roots [::list \
+-	    [file dirname [info library]] \
+-	    [file join [file dirname [file dirname $exe]] lib] \
+-	    ]
++
++    # OpenBSD layout
++    add [file join [info library] modules] \
++	[file join [lindex $::tcl_pkgPath 0] modules  9] \
++	[file join [lindex $::tcl_pkgPath 0] modules 86] \
++	[file join [lindex $::tcl_pkgPath 0] modules 85]
+ 
+     for {set n $minor} {$n >= 0} {incr n -1} {
+ 	foreach ev [::list \

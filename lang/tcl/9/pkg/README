@@ -1,0 +1,102 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+The OpenBSD port of the Tcl dynamic language was designed to balance
+deriving the maximum value from the original software while keeping
+any modifications to a minimum.
+
+Install locations and file names differ from the default to enable
+installing multiple versions of Tcl and Tk on OpenBSD without conflict.
+
+
+Files and Directories
+=====================
+
+Tclsh and Wish
+--------------
+normally
+${TRUEPREFIX}/lib/tclsh, ${TRUEPREFIX}/lib/wish
+now
+${TRUEPREFIX}/bin/tclsh9, ${TRUEPREFIX}/bin/wish9
+
+Library files
+-------------
+scripts, encoding files, etc.
+normally in
+${TRUEPREFIX}/lib/tcl9.0, ${TRUEPREFIX}/lib/tk9.0
+now in
+${TRUEPREFIX}/lib/tcl/tcl9, ${TRUEPREFIX}/lib/tcl/tk9
+
+Configuration Files
+-------------------
+tclConfig.sh, tkConfig.sh
+normally in
+${TRUEPREFIX}/lib
+now in
+${TRUEPREFIX}/lib/tcl/tcl9, ${TRUEPREFIX}/lib/tcl/tk9
+
+Pkg-config Names
+----------------
+normally
+tcl, tk
+now
+tcl9, tk9
+
+Header Files
+------------
+*.h
+normally in
+${TRUEPREFIX}/include
+now in
+${TRUEPREFIX}/include/tcl9, ${TRUEPREFIX}/include/tk9
+
+Manual Pages
+------------
+*.1, *.3, *.n
+normally in
+${TRUEPREFIX}/man
+now in
+${TRUEPREFIX}/lib/tcl/tcl9/man, ${TRUEPREFIX}/lib/tcl/tk9/man
+
+Demos
+-----
+*.tcl, *
+normally in
+${TRUEPREFIX}/lib/tk9.0/demos
+now in
+${TRUEPREFIX}/share/examples/tk9
+
+Bundled Tcl Modules
+-------------------
+*.tm
+normally in
+${TRUEPREFIX}/lib/tcl9.0/...
+now in
+${TRUEPREFIX}/lib/tcl/tcl9/modules
+
+Tcl Module Paths
+----------------
+normally
+${TRUEPREFIX}/lib/tcl9.0/...
+now
+${TRUEPREFIX}/lib/tcl/modules/{85,86,9}
+
+Manual Page Configuration
+=========================
+Adding the following lines to /etc/man.conf will enable man(1)
+and related commands can find the Tcl and Tk manual pages.
+
+manpath ${TRUEPREFIX}/lib/tcl/tcl9/man
+manpath ${TRUEPREFIX}/lib/tcl/tk9/man
+
+Tcl/Tk Resources
+================
+Newsgroup: nntp://comp.lang.tcl
+Wiki:      http://wiki.tcl-lang.org
+Tutorial:  http://www.tcl-lang.org/man/tcl8.5/tutorial/tcltutorial.html
+Wikibook:  http://en.wikibooks.org/wiki/Programming:Tcl
+Books:     The Tcl Programming Language: A Comprehensive Guide
+             ISBN-13: 9798316640539
+           Practical Programming in Tcl and Tk, 4th Edition
+             ISBN: 0-13-038560-3

@@ -1,0 +1,14 @@
+Don't misrename manpages. Tk bug 3604346.
+
+Index: unix/installManPage
+--- unix/installManPage.orig
++++ unix/installManPage
+@@ -82,7 +82,7 @@ Names=`sed -n '
+ 
+ 	    # Convert all non-space non-alphanum sequences
+ 	    # to single underscores.
+-	    s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
++	    #s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
+ 	    p
+ 	    g
+ 	    /^\./{
