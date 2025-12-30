@@ -2,12 +2,15 @@ CATEGORIES +=		lang/tcl
 
 MODTCL_VERSION ?=	8.5
 
-.if ${MODTCL_VERSION} == 8.5
-_MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.6
+.if "${MODTCL_VERSION}" == "8.5"
+_MODTCL_SPEC = 		tcl->=8.5,<8.6
 MODTCL_LIB ?=		tcl85
-.elif ${MODTCL_VERSION} == 8.6
-_MODTCL_SPEC = 		tcl->=${MODTCL_VERSION},<8.7
+.elif "${MODTCL_VERSION}" == "8.6"
+_MODTCL_SPEC = 		tcl->=8.6,<8.7
 MODTCL_LIB ?=		tcl86
+.elif "${MODTCL_VERSION}" == "9"
+_MODTCL_SPEC = 		tcl->=9.0
+MODTCL_LIB ?=		tcl90
 .endif
 
 MODTCL_BIN ?=		${LOCALBASE}/bin/tclsh${MODTCL_VERSION}
