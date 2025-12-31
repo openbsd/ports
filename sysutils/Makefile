@@ -350,6 +350,7 @@
      SUBDIR += py-pushover
      SUBDIR += py-pynetbox
      SUBDIR += py-pyperclip
+     SUBDIR += py-shtab
      SUBDIR += py-schedule
      SUBDIR += py-statgrab
      SUBDIR += py-subprocess-tee
