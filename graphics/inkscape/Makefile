@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.4.2
+VERSION =	1.4.3
 DISTNAME =	inkscape-${VERSION}
-REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -10,7 +9,7 @@ HOMEPAGE =	https://www.inkscape.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  inkscape_base             2.0 # 0.0
+SHARED_LIBS +=  inkscape_base             3.0 # 0.0
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE =	Yes
@@ -87,7 +86,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2025-05-08_ebf0e940d0
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2025-12-25_0d15f75042
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
