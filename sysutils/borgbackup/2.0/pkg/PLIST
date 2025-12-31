@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}fuse.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}fuse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}fuse_impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}fuse_impl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}hlfuse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}hlfuse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}legacyremote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}legacyremote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}legacyrepository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,6 +72,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}check_cmd
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}check_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}compact_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}compact_cmd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}completion_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}completion_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}create_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}create_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}debug_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -127,6 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/archiver/analyze_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/benchmark_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/check_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/compact_cmd.py
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/completion_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/create_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/debug_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/delete_cmd.py
@@ -173,6 +178,27 @@ lib/python${MODPY_VERSION}/site-packages/borg/chunkers/failing.py
 lib/python${MODPY_VERSION}/site-packages/borg/chunkers/fixed.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/chunkers/reader.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/borg/chunkers/reader.pyi
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/__init__.py
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}theme.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}theme.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}translator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}translator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/app.py
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/cockpit.tcss
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/runner.py
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/theme.py
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/translator.py
+lib/python${MODPY_VERSION}/site-packages/borg/cockpit/widgets.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/compress.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/borg/compress.pyi
 lib/python${MODPY_VERSION}/site-packages/borg/conftest.py
@@ -192,6 +218,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/crypto/file_integrity.py
 lib/python${MODPY_VERSION}/site-packages/borg/crypto/key.py
 lib/python${MODPY_VERSION}/site-packages/borg/crypto/keymanager.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/crypto/low_level.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/borg/crypto/low_level.pyi
 lib/python${MODPY_VERSION}/site-packages/borg/fslocking.py
 lib/python${MODPY_VERSION}/site-packages/borg/fuse.py
 lib/python${MODPY_VERSION}/site-packages/borg/fuse_impl.py
@@ -247,6 +274,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/helpers/progress.py
 lib/python${MODPY_VERSION}/site-packages/borg/helpers/shellpattern.py
 lib/python${MODPY_VERSION}/site-packages/borg/helpers/time.py
 lib/python${MODPY_VERSION}/site-packages/borg/helpers/yes_no.py
+lib/python${MODPY_VERSION}/site-packages/borg/hlfuse.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/item.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/borg/item.pyi
 lib/python${MODPY_VERSION}/site-packages/borg/legacyremote.py
@@ -262,10 +290,16 @@ lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}posix_ug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}posix_ug.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}windows_ug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}windows_ug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}xattr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/platform/${MODPY_PYCACHE}xattr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/platform/base.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/platform/posix.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/borg/platform/posix_ug.py
+lib/python${MODPY_VERSION}/site-packages/borg/platform/windows_ug.py
 lib/python${MODPY_VERSION}/site-packages/borg/platform/xattr.py
 lib/python${MODPY_VERSION}/site-packages/borg/platformflags.py
 lib/python${MODPY_VERSION}/site-packages/borg/remote.py
@@ -332,6 +366,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}checks_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}compact_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}compact_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}completion_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}completion_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}corruption_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}corruption_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}create_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -364,6 +400,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}prune_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}recreate_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}recreate_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}remote_repo_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}remote_repo_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}rename_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}rename_cmd_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/${MODPY_PYCACHE}repo_compress_cmd_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -398,6 +436,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/benchmark_cmd_t
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/check_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/checks_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/compact_cmd_test.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/completion_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/corruption_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/create_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/debug_cmds_test.py
@@ -415,6 +454,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/mount_cmds_test
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/patterns_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/prune_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/recreate_cmd_test.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/remote_repo_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/rename_cmd_test.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/repo12.tar.gz
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/archiver/repo_compress_cmd_test.py
@@ -587,6 +627,7 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_DISTV}.dist-info/top
 @man man/man1/borg-check.1
 @man man/man1/borg-common.1
 @man man/man1/borg-compact.1
+@man man/man1/borg-completion.1
 @man man/man1/borg-compression.1
 @man man/man1/borg-config.1
 @man man/man1/borg-create.1
