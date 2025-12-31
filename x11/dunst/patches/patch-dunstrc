@@ -1,7 +1,7 @@
 Index: dunstrc
 --- dunstrc.orig
 +++ dunstrc
-@@ -238,7 +238,7 @@
+@@ -240,7 +240,7 @@
      max_icon_size = 128
  
      # Paths to default icons (only necessary when not using recursive icon lookup)
@@ -10,7 +10,7 @@ Index: dunstrc
  
      ### History ###
  
-@@ -252,10 +252,10 @@
+@@ -254,10 +254,10 @@
      ### Misc/Advanced ###
  
      # dmenu path.

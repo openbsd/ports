@@ -1,0 +1,16 @@
+Index: docs/dunst.1.pod.in
+--- docs/dunst.1.pod.in.orig
++++ docs/dunst.1.pod.in
+@@ -92,9 +92,9 @@ Set notification timeout time.
+ 
+ =head1 CONFIGURATION
+ 
+-A default configuration file is included (usually @sysconfdir@/dunst/dunstrc)
+-and serves as the least important configuration file. Note: this was previously
+-/usr/share/dunst/dunstrc. You can edit this file to change the system-wide
++A default configuration file is @sysconfdir@/dunst/dunstrc
++and serves as the least important configuration file. Note: a sample config is provided in
++${LOCALBASE}/dunst/dunstrc. You can edit this file to change the system-wide
+ defaults or copy it to a more important location to override its settings. See
+ the FILES section for more details on where dunst searches for its
+ configuration files and how settings get applied.

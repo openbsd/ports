@@ -10,5 +10,5 @@ Index: config.mk
 +DEFAULT_CFLAGS   = -g -std=gnu11 -pedantic -Wall -Wno-overlength-strings ${EXTRA_CFLAGS}
 +DEFAULT_LDFLAGS  = -lm
  
- CPPFLAGS_DEBUG := -DDEBUG_BUILD
+ CPPFLAGS_DEBUG :=
  CFLAGS_DEBUG   := -O0

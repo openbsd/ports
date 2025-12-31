@@ -1,25 +1,25 @@
 Index: docs/dunst.5.pod
 --- docs/dunst.5.pod.orig
 +++ docs/dunst.5.pod
-@@ -463,7 +463,7 @@ Hide the count of stacked duplicate notifications.
+@@ -475,7 +475,7 @@ Hide the count of stacked duplicate notifications.
  Show an indicator if a notification contains actions and/or open-able URLs. See
  ACTIONS below for further details.
  
 -=item B<icon_path> (default: "/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/")
-+=item B<icon_path> (default: "${PREFIX}/share/icons/gnome/16x16/status/:${PREFIX}/share/icons/gnome/16x16/devices/")
++=item B<icon_path> (default: "${LOCALBASE}/share/icons/gnome/16x16/status/:${LOCALBASE}/share/icons/gnome/16x16/devices/")
  
  Can be set to a colon-separated list of paths to search for icons to use with
  notifications.
-@@ -477,7 +477,7 @@ replace icon_path search.
+@@ -489,7 +489,7 @@ replace icon_path search.
  Comma-separated list of names of the themes to use for looking up icons. This
  has to be the name of the directory in which the theme is located, not the
  human-friendly name of the theme. So for example, the theme B<Breeze Dark> is
 -located in F</usr/share/icons/breeze-dark>. In this case you have to set the
-+located in F<${PREFIX}/share/icons/breeze-dark>. In this case you have to set the
++located in F<${LOCALBASE}/share/icons/breeze-dark>. In this case you have to set the
  theme to B<breeze-dark>.
  
  The first theme in the list is the most important. Only if the icon cannot be
-@@ -515,12 +515,12 @@ Maximum number of notifications that will be kept in h
+@@ -527,12 +527,12 @@ Maximum number of notifications that will be kept in h
  is reached, older notifications will be deleted once a new one arrives. See
  HISTORY.
  

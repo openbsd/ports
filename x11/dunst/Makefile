@@ -2,7 +2,7 @@ COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.12.2
+GH_TAGNAME =	v1.13.0
 
 CATEGORIES =	x11
 
@@ -38,21 +38,20 @@ RUN_DEPENDS +=	x11/dbus
 
 TEST_DEPENDS =	shells/bash
 
-MAKE_FLAGS =	WAYLAND=0
-
-FAKE_FLAGS =	PREFIX="${PREFIX}" \
+MAKE_FLAGS =	PREFIX="${PREFIX}" \
 		MANPREFIX="${PREFIX}/man" \
 		DATADIR="${PREFIX}/share/examples" \
-		SYSCONFDIR="/etc"
+		SYSCONFDIR="/etc" \
+		BASHCOMPLETIONDIR="${LOCALBASE}/share/bash-completion/completions" \
+		FISHCOMPLETIONDIR="${LOCALBASE}/share/fish/vendor_completions.d" \
+		ZSHCOMPLETIONDIR="${LOCALBASE}/share/zsh/site-functions" \
+		WAYLAND=0
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/dunst.1.pod \
+	${SUBST_CMD} ${WRKSRC}/docs/dunst.1.pod.in \
 		${WRKSRC}/docs/dunst.5.pod ${WRKSRC}/dunstrc
 
 post-install:
 	mv ${WRKINST}/${SYSCONFDIR}/dunst ${PREFIX}/share
-	mv ${PREFIX}/share/examples/bash-completion ${PREFIX}/share/bash-completion
-	mv ${PREFIX}/share/examples/fish ${PREFIX}/share/fish
-	mv ${PREFIX}/share/examples/zsh ${PREFIX}/share/zsh
 
 .include <bsd.port.mk>
