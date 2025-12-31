@@ -1,0 +1,9 @@
+Kapsul is a tool that allows you to run most plakar sub-commands directly on
+.ptar archives. It transparently mounts the archive as an in-memory, read-only
+Plakar repository, enabling inspection, restoration, and diffing operations
+without extracting the archive.
+
+Features:
+Efficient access to .ptar archives
+Supports most plakar commands
+No persistent state or extraction required
