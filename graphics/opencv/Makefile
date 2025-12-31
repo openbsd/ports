@@ -4,9 +4,7 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.12.0
-REVISION-main =		2
-REVISION-java =		0
+V =			4.13.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -22,15 +20,15 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 15.0
+SHARED_LIBS += $i 16.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_4 absl_hash absl_log_internal_message
-WANTLIB-main += avcodec avformat avif avutil c cairo gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
-WANTLIB-main += gtk-3 jpeg lapack m openjp2 png protobuf swscale tiff
-WANTLIB-main += webp webpdemux webpmux z
+WANTLIB-main += avcodec avdevice avformat avif avutil c cairo gdk-3
+WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
+WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
+WANTLIB-main += gstvideo-1.0 gtk-3 jpeg lapack m openjp2 png protobuf
+WANTLIB-main += swscale tiff utf8_validity webp webpdemux webpmux z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc

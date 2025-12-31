@@ -27,6 +27,7 @@ include/opencv4/opencv2/core/cuda/block.hpp
 include/opencv4/opencv2/core/cuda/border_interpolate.hpp
 include/opencv4/opencv2/core/cuda/color.hpp
 include/opencv4/opencv2/core/cuda/common.hpp
+include/opencv4/opencv2/core/cuda/cuda_compat.hpp
 include/opencv4/opencv2/core/cuda/datamov_utils.hpp
 include/opencv4/opencv2/core/cuda/detail/
 include/opencv4/opencv2/core/cuda/detail/color_detail.hpp
@@ -343,6 +344,8 @@ lib/python${MODPY_VERSION}/site-packages/cv2/fisheye/
 lib/python${MODPY_VERSION}/site-packages/cv2/fisheye/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cv2/flann/
 lib/python${MODPY_VERSION}/site-packages/cv2/flann/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/cv2/instr/
+lib/python${MODPY_VERSION}/site-packages/cv2/instr/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cv2/ipp/
 lib/python${MODPY_VERSION}/site-packages/cv2/ipp/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py2.py
@@ -388,12 +391,15 @@ lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/fs/
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/fs/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/cv2/utils/logging/
+lib/python${MODPY_VERSION}/site-packages/cv2/utils/logging/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/nested/
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/nested/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cv2/videoio_registry/
 lib/python${MODPY_VERSION}/site-packages/cv2/videoio_registry/__init__.pyi
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt
+share/licenses/opencv4/dlpack-LICENSE
 share/licenses/opencv4/flatbuffers-LICENSE.txt
 share/licenses/opencv4/mscr-chi_table_LICENSE.txt
 share/opencv4/
