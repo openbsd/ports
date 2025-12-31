@@ -1,10 +1,9 @@
 COMMENT =		messagepack (de)serializer
 
-MODPY_DISTV =	1.1.0
+MODPY_DISTV =		1.1.2
 EPOCH =			0
 DISTNAME =		msgpack-${MODPY_DISTV}
 PKGNAME =		py-msgpack-${MODPY_DISTV}
-REVISION =		1
 
 CATEGORIES =		net textproc
 
