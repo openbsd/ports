@@ -4,11 +4,12 @@ PORTROACH =	limit:^4\.4\.
 ONLY_FOR_ARCHS = amd64
 
 V =		4.4.30
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
 WANTLIB += boost_program_options-mt  boost_system-mt boost_thread-mt
-WANTLIB += c crypto curl execinfo icudata icui18n icuuc kvm m
+WANTLIB += c crypto execinfo icudata icui18n icuuc kvm m
 WANTLIB += pcre pcrecpp snappy ssl stemmer yaml-cpp z zstd
 
 MODSCONS_ENV +=	  PREFIX="${PREFIX}"
@@ -18,11 +19,11 @@ MODSCONS_FLAGS += --use-system-pcre
 
 ALL_TARGET =	install-core
 LIB_DEPENDS =	archivers/zstd \
-		devel/pcre \
-		net/curl
+		devel/pcre
 
 post-extract:
 	cd ${WRKSRC}/src/third_party/mozjs-60/platform/x86_64/ && cp -R freebsd openbsd
+	rm -rf ${WRKSRC}/src/mongo/db/modules/enterprise
 
 do-install:
 .for bin in mongo mongod mongos

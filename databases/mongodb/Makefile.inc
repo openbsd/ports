@@ -7,7 +7,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	scalable, high-performance document-oriented database
 PKGNAME =	mongodb-$V
 
-.if ${V:M3*}
+.if ${V:M4*}
 SITES =		https://fastdl.mongodb.org/src/
 DISTNAME =	mongodb-src-r$V
 .else
