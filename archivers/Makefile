@@ -22,6 +22,7 @@
      SUBDIR += ha
      SUBDIR += heatshrink
      SUBDIR += innoextract
+     SUBDIR += kapsul
      SUBDIR += laszip
      SUBDIR += lha
      SUBDIR += lhasa
