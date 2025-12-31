@@ -4,6 +4,7 @@
 @bin bin/pekwm_dialog
 @bin bin/pekwm_panel
 @bin bin/pekwm_screenshot
+@bin bin/pekwm_sys
 bin/pekwm_theme
 @bin bin/pekwm_wm
 @man man/man1/pekwm.1
@@ -16,6 +17,8 @@ share/examples/pekwm/
 @sample ${SYSCONFDIR}/pekwm/
 share/examples/pekwm/autoproperties
 @sample ${SYSCONFDIR}/pekwm/autoproperties
+share/examples/pekwm/autoproperties_clientrules
+@sample ${SYSCONFDIR}/pekwm/autoproperties_clientrules
 share/examples/pekwm/autoproperties_typerules
 @sample ${SYSCONFDIR}/pekwm/autoproperties_typerules
 share/examples/pekwm/config
@@ -24,8 +27,16 @@ share/examples/pekwm/config_system
 @sample ${SYSCONFDIR}/pekwm/config_system
 share/examples/pekwm/keys
 @sample ${SYSCONFDIR}/pekwm/keys
+share/examples/pekwm/keys_inputdialog
+@sample ${SYSCONFDIR}/pekwm/keys_inputdialog
+share/examples/pekwm/keys_menu
+@sample ${SYSCONFDIR}/pekwm/keys_menu
+share/examples/pekwm/keys_moveresize
+@sample ${SYSCONFDIR}/pekwm/keys_moveresize
 share/examples/pekwm/menu
 @sample ${SYSCONFDIR}/pekwm/menu
+share/examples/pekwm/menu_windowmenu
+@sample ${SYSCONFDIR}/pekwm/menu_windowmenu
 share/examples/pekwm/mouse
 @sample ${SYSCONFDIR}/pekwm/mouse
 share/examples/pekwm/mouse_click
@@ -41,82 +52,35 @@ share/examples/pekwm/start
 share/examples/pekwm/vars
 @sample ${SYSCONFDIR}/pekwm/vars
 share/pekwm/
+share/pekwm/icons/
+share/pekwm/icons/battery-ac.png
+share/pekwm/icons/battery-battery.png
+share/pekwm/icons/battery.png
+share/pekwm/icons/flag-de.png
+share/pekwm/icons/flag-dk.png
+share/pekwm/icons/flag-fi.png
+share/pekwm/icons/flag-fr.png
+share/pekwm/icons/flag-hu.png
+share/pekwm/icons/flag-is.png
+share/pekwm/icons/flag-no.png
+share/pekwm/icons/flag-pl.png
+share/pekwm/icons/flag-pt.png
+share/pekwm/icons/flag-se.png
+share/pekwm/icons/flag-us.png
+share/pekwm/icons/flag.png
 share/pekwm/scripts/
+share/pekwm/scripts/pekwm_audio_ctrl.sh
+share/pekwm/scripts/pekwm_lock.sh
+share/pekwm/scripts/pekwm_panel_battery.sh
+@bin share/pekwm/scripts/pekwm_panel_sysinfo
 share/pekwm/scripts/pekwm_themeset.sh
+share/pekwm/scripts/pekwm_toggle_kbd_layout.sh
 share/pekwm/scripts/pekwm_ws_menu.sh
 share/pekwm/themes/
 share/pekwm/themes/default/
-share/pekwm/themes/default-plain/
-share/pekwm/themes/default-plain/theme
-share/pekwm/themes/default/arrow.png
-share/pekwm/themes/default/arrow_focus.png
-share/pekwm/themes/default/backgrounds/
-share/pekwm/themes/default/backgrounds/pekwm_generated-1920x1080.png
-share/pekwm/themes/default/backgrounds/pekwm_generated-2560x1440.png
-share/pekwm/themes/default/bottom-border.png
-share/pekwm/themes/default/bottom-border_unfocus.png
-share/pekwm/themes/default/bottom-left.png
-share/pekwm/themes/default/bottom-left_unfocus.png
-share/pekwm/themes/default/bottom-right.png
-share/pekwm/themes/default/bottom-right_unfocus.png
-share/pekwm/themes/default/button-close.png
-share/pekwm/themes/default/button-close_hover.png
-share/pekwm/themes/default/button-close_press.png
-share/pekwm/themes/default/button-max.png
-share/pekwm/themes/default/button-max_hover.png
-share/pekwm/themes/default/button-max_press.png
-share/pekwm/themes/default/button-min.png
-share/pekwm/themes/default/button-min_hover.png
-share/pekwm/themes/default/button-min_press.png
-share/pekwm/themes/default/button.png
-share/pekwm/themes/default/button_hover.png
-share/pekwm/themes/default/button_press.png
-share/pekwm/themes/default/button_unfocus.png
-share/pekwm/themes/default/item.png
-share/pekwm/themes/default/item_focus.png
-share/pekwm/themes/default/left-border.png
-share/pekwm/themes/default/left-border_unfocus.png
-share/pekwm/themes/default/menu-bottom.png
-share/pekwm/themes/default/menu-bottom_unfocus.png
-share/pekwm/themes/default/menuline.png
-share/pekwm/themes/default/panel.png
-share/pekwm/themes/default/right-border.png
-share/pekwm/themes/default/right-border_unfocus.png
-share/pekwm/themes/default/tab-separator.png
-share/pekwm/themes/default/tab-separator_unfocus.png
+share/pekwm/themes/default/template
 share/pekwm/themes/default/theme
-share/pekwm/themes/default/title.png
-share/pekwm/themes/default/title_unfocus.png
-share/pekwm/themes/default/top-border.png
-share/pekwm/themes/default/top-border_unfocus.png
-share/pekwm/themes/default/top-left.png
-share/pekwm/themes/default/top-left_unfocus.png
-share/pekwm/themes/default/top-right-no-buttons.png
-share/pekwm/themes/default/top-right.png
-share/pekwm/themes/default/top-right_unfocus.png
-share/pekwm/themes/winter/
-share/pekwm/themes/winter/backgrounds/
-share/pekwm/themes/winter/backgrounds/background-2560x1440.jpg
-share/pekwm/themes/winter/bd-b-un.png
-share/pekwm/themes/winter/bd-b.png
-share/pekwm/themes/winter/bd-bl-un.png
-share/pekwm/themes/winter/bd-bl.png
-share/pekwm/themes/winter/bd-br-un.png
-share/pekwm/themes/winter/bd-br.png
-share/pekwm/themes/winter/bd-lr-un.png
-share/pekwm/themes/winter/bd-lr.png
-share/pekwm/themes/winter/bd-t-un.png
-share/pekwm/themes/winter/bd-t.png
-share/pekwm/themes/winter/bd-tl-un.png
-share/pekwm/themes/winter/bd-tl.png
-share/pekwm/themes/winter/bd-tr-un.png
-share/pekwm/themes/winter/bd-tr.png
-share/pekwm/themes/winter/panel-sep.png
-share/pekwm/themes/winter/panel.png
-share/pekwm/themes/winter/sep-un.png
-share/pekwm/themes/winter/sep.png
-share/pekwm/themes/winter/theme
-share/pekwm/themes/winter/title-fo.png
-share/pekwm/themes/winter/title-sel-un.png
-share/pekwm/themes/winter/title-sel.png
-share/pekwm/themes/winter/title-un.png
+share/pekwm/themes/default/theme-dark
+share/pekwm/themes/default/theme-dawn
+share/pekwm/themes/default/theme-dusk
+share/pekwm/themes/default/theme-light

@@ -1,13 +1,12 @@
 COMMENT=	aewm++ based pretty themable window manager
 
-V=		0.3.2
-PKGNAME=	pekwm-${V}
-DISTNAME=	pekwm-release-${V}
+V=		0.4.1
+DISTNAME=	pekwm-${V}
 
-DIST_TUPLE=	github pekwm pekwm release-${V} .
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.se/
+SITES=		https://github.com/pekdon/pekwm/releases/download/release-${V}/
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
 
@@ -16,15 +15,17 @@ PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xft Xinerama Xpm
-WANTLIB += Xrandr c cairo fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += harfbuzz intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 png
+WANTLIB += Xrandr c cairo curl fontconfig freetype glib-2.0
+WANTLIB += gobject-2.0 harfbuzz intl jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangoxft-1.0 png udev
 
 COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	devel/pango \
 		graphics/jpeg \
-		graphics/png
+		graphics/png \
+		net/curl \
+		sysutils/libudev-openbsd
 
 MODULES=	devel/cmake
 
