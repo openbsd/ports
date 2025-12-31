@@ -1,0 +1,15 @@
+Index: plugins/cmake/Utils.cmake
+--- plugins/cmake/Utils.cmake.orig
++++ plugins/cmake/Utils.cmake
+@@ -155,11 +155,6 @@ macro(NMC_CREATE_TARGETS)
+             PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${NOMACS_BUILD_DIRECTORY}/nomacs-plugins
+         )
+         install(TARGETS ${PROJECT_NAME} RUNTIME LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/nomacs-plugins)
+-        set_property(
+-            TARGET ${PROJECT_NAME}
+-            PROPERTY VERSION ${NOMACS_VERSION_MAJOR}.${NOMACS_VERSION_MINOR}.${NOMACS_VERSION_PATCH}
+-        )
+-        set_property(TARGET ${PROJECT_NAME} PROPERTY SOVERSION ${NOMACS_VERSION_MAJOR})
+     endif(MSVC)
+ endmacro(NMC_CREATE_TARGETS)
+ 

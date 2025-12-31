@@ -1,5 +1,11 @@
 @bin bin/nomacs
 @lib lib/libnomacsCore.so.${LIBnomacsCore_VERSION}
+lib/nomacs-plugins/
+@so lib/nomacs-plugins/libCompositePlugin.so
+@so lib/nomacs-plugins/libaffineTransformPlugin.so
+@so lib/nomacs-plugins/libfakeMiniaturesPlugin.so
+@so lib/nomacs-plugins/libpageExtractionPlugin.so
+@so lib/nomacs-plugins/libpaintPlugin.so
 @man man/man1/nomacs.1
 share/applications/org.nomacs.ImageLounge.desktop
 share/icons/hicolor/scalable/apps/org.nomacs.ImageLounge.svg
@@ -14,7 +20,6 @@ share/nomacs/Image Lounge/themes/System.css
 share/nomacs/Image Lounge/translations/
 share/nomacs/Image Lounge/translations/nomacs_ar.qm
 share/nomacs/Image Lounge/translations/nomacs_bg.qm
-share/nomacs/Image Lounge/translations/nomacs_br_pt.qm
 share/nomacs/Image Lounge/translations/nomacs_bs.qm
 share/nomacs/Image Lounge/translations/nomacs_ca.qm
 share/nomacs/Image Lounge/translations/nomacs_cs.qm
@@ -33,13 +38,14 @@ share/nomacs/Image Lounge/translations/nomacs_ko.qm
 share/nomacs/Image Lounge/translations/nomacs_nl.qm
 share/nomacs/Image Lounge/translations/nomacs_pl.qm
 share/nomacs/Image Lounge/translations/nomacs_pt.qm
+share/nomacs/Image Lounge/translations/nomacs_pt_BR.qm
 share/nomacs/Image Lounge/translations/nomacs_ru.qm
 share/nomacs/Image Lounge/translations/nomacs_sk.qm
 share/nomacs/Image Lounge/translations/nomacs_sr.qm
 share/nomacs/Image Lounge/translations/nomacs_sv.qm
 share/nomacs/Image Lounge/translations/nomacs_tr.qm
-share/nomacs/Image Lounge/translations/nomacs_tw_zh.qm
 share/nomacs/Image Lounge/translations/nomacs_uk.qm
 share/nomacs/Image Lounge/translations/nomacs_zh_CN.qm
+share/nomacs/Image Lounge/translations/nomacs_zh_TW.qm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
