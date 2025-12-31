@@ -1,0 +1,3 @@
+Automagic shell tab completion for Python CLI applications, supporting
+argparse and docopt, and able to output tab completion scripts for bash, zsh
+and tcsh.
