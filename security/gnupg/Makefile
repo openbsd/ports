@@ -2,7 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.4.9
+DISTNAME =	gnupg-2.5.16
 
 CATEGORIES =	security
 
@@ -30,7 +30,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			devel/libusb1 \
 			devel/npth>=1.5 \
 			security/gnutls \
-			security/libassuan>=2.4.3 \
+			security/libassuan>=3.0.0 \
 			security/libgcrypt \
 			security/libksba>=1.3.4
 
@@ -53,5 +53,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 CONFIGURE_ARGS +=	--enable-gpgtar \
 			--enable-wks-tools
+
+post-install:
+	# needs osslsigncode
+	rm -f ${PREFIX}/bin/gpg-authcode-sign.sh
 
 .include <bsd.port.mk>

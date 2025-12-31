@@ -1,7 +1,7 @@
 Index: agent/protect.c
 --- agent/protect.c.orig
 +++ agent/protect.c
-@@ -513,24 +513,47 @@ do_encryption (const unsigned char *hashbegin, size_t 
+@@ -516,24 +516,47 @@ do_encryption (const unsigned char *hashbegin, size_t 
       and dummy values as placeholders.  */
    {
      char countbuf[35];

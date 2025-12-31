@@ -100,7 +100,10 @@ share/gnupg/help.tr.txt
 share/gnupg/help.txt
 share/gnupg/help.zh_CN.txt
 share/gnupg/help.zh_TW.txt
-share/gnupg/sks-keyservers.netCA.pem
+share/gnupg/mail-tube.de.txt
+share/gnupg/mail-tube.txt
+share/gnupg/wks-utils.de.txt
+share/gnupg/wks-utils.txt
 share/locale/ca/LC_MESSAGES/gnupg2.mo
 share/locale/cs/LC_MESSAGES/gnupg2.mo
 share/locale/da/LC_MESSAGES/gnupg2.mo
@@ -118,6 +121,7 @@ share/locale/hu/LC_MESSAGES/gnupg2.mo
 share/locale/id/LC_MESSAGES/gnupg2.mo
 share/locale/it/LC_MESSAGES/gnupg2.mo
 share/locale/ja/LC_MESSAGES/gnupg2.mo
+share/locale/ka/LC_MESSAGES/gnupg2.mo
 share/locale/nb/LC_MESSAGES/gnupg2.mo
 share/locale/nl/LC_MESSAGES/gnupg2.mo
 share/locale/pl/LC_MESSAGES/gnupg2.mo
