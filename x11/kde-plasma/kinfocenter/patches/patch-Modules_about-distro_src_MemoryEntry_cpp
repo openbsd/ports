@@ -1,3 +1,4 @@
+https://invent.kde.org/plasma/kinfocenter/-/commit/9251fa9a6846594db60cc6d3537c429ee8fd2092
 Index: kcms/about-distro/src/MemoryEntry.cpp
 --- kcms/about-distro/src/MemoryEntry.cpp.orig
 +++ kcms/about-distro/src/MemoryEntry.cpp
@@ -12,15 +13,34 @@ Index: kcms/about-distro/src/MemoryEntry.cpp
  #include <sys/types.h>
  #include <sys/sysctl.h>
  // clang-format on
-@@ -58,6 +59,11 @@ std::optional<qlonglong> MemoryEntry::calculateTotalRa
+@@ -58,6 +59,13 @@ std::optional<qlonglong> MemoryEntry::calculateTotalRa
      }
  
      return totalBytes;
 +#elif defined(Q_OS_OPENBSD)
-+    long phys_pages = sysconf(_SC_PHYS_PAGES);
-+    long pagesize = sysconf(_SC_PAGESIZE);
-+    if (phys_pages != -1 && pagesize != -1)
-+        return ((uint64_t)phys_pages * (uint64_t)pagesize);
++    int64_t memSize = 0;
++    int mib[] = {CTL_HW, HW_PHYSMEM64};
++    size_t sz = sizeof(memSize);
++    if (sysctl(mib, 2, &memSize, &sz, NULL, 0) == 0) {
++        return memSize;
++    }
  #endif
  
      /*
+@@ -79,6 +87,16 @@ std::optional<qlonglong> MemoryEntry::calculateAvailab
+         // manpage: "sizes are given as multiples of mem_unit bytes"
+         return qlonglong(info.totalram) * info.mem_unit;
+     }
++#elif defined(Q_OS_OPENBSD)
++    struct uvmexp uvmexp;
++    int mib[] = {CTL_VM, VM_UVMEXP};
++    size_t sz = sizeof(uvmexp);
++    if (sysctl(mib, 2, &uvmexp, &sz, NULL, 0) == 0) {
++        int64_t pagesize = uvmexp.pagesize;
++        int64_t available = (int64_t)(uvmexp.free + uvmexp.inactive) * pagesize;
++        return available;
++    }
++
+ #elif defined(Q_OS_FREEBSD)
+     /* Stuff for sysctl */
+     unsigned long memory;

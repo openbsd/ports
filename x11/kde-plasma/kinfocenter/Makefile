@@ -1,5 +1,6 @@
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	kinfocenter-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
