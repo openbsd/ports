@@ -20,7 +20,7 @@ MAKE_FLAGS =		BINDIR="${TRUEPREFIX}/bin" \
 
 # -lm needed for fmax on at least i386, sparc64;
 # uses llvm.maxnum intrinsic on amd64/aarch64 and maybe RISC-V
-MAKE_FLAGS =		LDFLAGS="-lm"
+MAKE_FLAGS +=		LDFLAGS="-lm"
 
 NO_TEST =		Yes
 
