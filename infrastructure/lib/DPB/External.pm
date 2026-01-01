@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.32 2023/10/17 08:03:53 espie Exp $
+# $OpenBSD: External.pm,v 1.33 2026/01/01 08:36:40 rsadowski Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -134,6 +134,22 @@ sub stub_out($self, $fh, $p)
 	}
 }
 
+sub wipe_all($self, $fh)
+{
+	my $state = $self->{state};
+	my $engine = $state->engine;
+	my $errors = $engine->{errors};
+
+	if (@$errors == 0) {
+		$fh->print("No packages in error state\n");
+		return;
+	}
+
+	for my $v (@$errors) {
+		$self->wipe($fh, $v->fullpkgpath);
+	}
+}
+
 sub wipehost($self, $fh, $h)
 {
 	# kill the stuff that's running
@@ -211,6 +227,8 @@ sub handle_command($self, $line, $fh)
 			    join(" ", @{$state->{bad_paths}}), "\n");
 			delete $state->{bad_paths};
 		}
+	} elsif ($line =~ m/^wipe-all\b/) {
+		$self->wipe_all($fh);
 	} elsif ($line =~ m/^wipe\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			$self->wipe($fh, $p);
@@ -245,6 +263,7 @@ sub handle_command($self, $line, $fh)
 		    "\tstub <fullpkgpath>...\n",
 		    "\tsummary [<logname>]\n",
 		    "\twipe <fullpkgpath>...\n",
+		    "\twipe-all\n",
 		    "\twipehost <hostname>...\n"
 		);
 	} else {
