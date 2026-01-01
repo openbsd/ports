@@ -1,0 +1,20 @@
+Remove canonical import path that prevents successful build.
+
+This has been fixed upstream [1] and, when released, will
+make this patch obsolete.
+
+[1] https://github.com/syncthing/syncthing/commit/1843cac6d9cb1e3c8b7dd96e5ec4fcb28f554275
+
+
+Index: internal/db/interface.go
+--- internal/db/interface.go.orig
++++ internal/db/interface.go
+@@ -4,7 +4,7 @@
+ // License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ // You can obtain one at https://mozilla.org/MPL/2.0/.
+ 
+-package db // import "github.com/syncthing/syncthing/internal/db/sqlite"
++package db
+ 
+ import (
+ 	"iter"

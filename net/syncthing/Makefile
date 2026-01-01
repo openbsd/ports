@@ -1,6 +1,6 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.30.0
+V =		2.0.12
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -22,7 +22,6 @@ WRKDIST =		${WRKDIR}/syncthing
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing
 
 MODULES =		lang/go
-MODGO_TYPE =		bin
 
 # Syncthing contains a lot of stuff that end users wouldn't be interested in,
 # so we package only these binaries.

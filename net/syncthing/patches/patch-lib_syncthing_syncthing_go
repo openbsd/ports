@@ -1,0 +1,21 @@
+Disable usage reporting on startup if set to "Undecided" (default value).
+
+This should be enough to avoid the telemetry nag screen on first launch,
+while still allowing the user to change the setting, if desired.
+
+
+Index: lib/syncthing/syncthing.go
+--- lib/syncthing/syncthing.go.orig
++++ lib/syncthing/syncthing.go
+@@ -279,6 +279,11 @@ func (a *App) startup() error {
+ 				// Unique ID will be set and config saved below if necessary.
+ 			}
+ 		}
++
++		if cfg.Options.URAccepted == 0 {
++			cfg.Options.URAccepted = -1
++			cfg.Options.URSeen = ur.Version
++		}
+ 	})
+ 
+ 	usageReportingSvc := ur.New(a.cfg, m, connectionsService, a.opts.NoUpgrade)

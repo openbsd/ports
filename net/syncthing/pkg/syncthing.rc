@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/syncthing"
-daemon_flags="-no-browser"
+daemon_flags="--no-browser"
 daemon_user="_syncthing"
 
 . /etc/rc.d/rc.subr

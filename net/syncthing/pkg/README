@@ -21,8 +21,8 @@ Starting via RC script
 
 Syncthing can be started via the included RC script, thus running
 Syncthing as a system service. This is fine for single user
-configurations. Under this mode of operation, Syncthing will run as the
-_syncthing user and store the default 'Sync' folder under
+configurations. Under this mode of operation, Syncthing runs as the
+_syncthing user, and the default location for folders is
 ${LOCALSTATEDIR}/syncthing.
 
 Starting Manually
@@ -31,7 +31,7 @@ Starting Manually
 The other way is to simply invoke ${TRUEPREFIX}/bin/syncthing manually.
 This is a better choice for situations where several users all want to
 run their own instances of Syncthing. Under this mode, the default
-'Sync' folder will be stored in the user's home directory. Users will
+location for folders is the user's home directory. Users will
 have to configure Syncthing to listen on different TCP ports for this
 method to work.
 
