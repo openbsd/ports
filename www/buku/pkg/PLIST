@@ -59,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/bookmar
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/buku_filter.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/filters_fix.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/last_page.js
+lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/order_filter.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/bookmark_create.html
@@ -85,3 +86,6 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/translations/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/bukuserver/util.py
 lib/python${MODPY_VERSION}/site-packages/bukuserver/views.py
 @man man/man1/buku.1
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/buku.1
