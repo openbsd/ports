@@ -2,7 +2,7 @@ COMMENT =		unicode library
 
 GH_ACCOUNT =		JuliaStrings
 GH_PROJECT =		utf8proc
-GH_TAGNAME =		v2.11.2
+GH_TAGNAME =		v2.11.3
 PKGNAME =		lib${DISTNAME}
 
 HOMEPAGE =		https://juliastrings.github.io/utf8proc/
