@@ -1,0 +1,21 @@
+Index: librz/arch/p/analysis/analysis_mips_cs.c
+--- librz/arch/p/analysis/analysis_mips_cs.c.orig
++++ librz/arch/p/analysis/analysis_mips_cs.c
+@@ -61,7 +61,7 @@ static void opex(RzStrBuf *buf, csh handle, cs_insn *i
+ 	}
+ 	pj_o(pj);
+ 	pj_ka(pj, "operands");
+-	cs_mips *x = &insn->detail->mips;
++	cs_mips *x = &insn->detail->mipsen;
+ 	for (i = 0; i < x->op_count; i++) {
+ 		cs_mips_op *op = x->operands + i;
+ 		pj_o(pj);
+@@ -767,7 +767,7 @@ static int mips_analyze_op(RzAnalysis *analysis, RzAna
+ 		}
+ 		op->type = RZ_ANALYSIS_OP_TYPE_RJMP;
+ 		// register is $ra, so jmp is a return
+-		if (insn->detail->mips.operands[0].reg == MIPS_REG_RA) {
++		if (insn->detail->mipsen.operands[0].reg == MIPS_REG_RA) {
+ 			op->type = RZ_ANALYSIS_OP_TYPE_RET;
+ 			ctx->t9_pre = UT64_MAX;
+ 		}

@@ -6,7 +6,7 @@ Error at runtime if you leave it on:
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -197,7 +197,7 @@ endif
+@@ -212,7 +212,7 @@ endif
  
  # Handle PCRE2
  cpu_jit_supported = [ 'aarch64', 'arm', 'mips', 'mips64', 'ppc', 'ppc64', 'riscv32', 'riscv64', 's390x', 'x86', 'x86_64' ]

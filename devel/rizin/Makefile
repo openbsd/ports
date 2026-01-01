@@ -4,20 +4,19 @@ ONLY_FOR_ARCHS = aarch64 amd64 i386
 
 COMMENT =	free and open source reverse engineering framework
 
-V =		0.7.2
+V =		0.8.1
 DISTNAME =	rizin-src-v${V}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME =	rizin-${V}
-REVISION =	1
 
 SITES =		https://github.com/rizinorg/rizin/releases/download/v${V}/
 
 # Upstream shared lib versions are the same as the rizin release version.
-LIBV =			1.0	# ${V}
-.for _lib in rz_analysis rz_asm rz_bin rz_bp rz_config rz_cons rz_core \
-	rz_crypto rz_debug rz_demangler rz_diff rz_egg rz_flag rz_hash \
-	rz_il rz_io rz_lang rz_magic rz_main rz_parse rz_reg rz_search \
-	rz_sign rz_socket rz_syscall rz_type rz_util
+LIBV =			2.0	# ${V}
+.for _lib in rz_analysis rz_asm rz_arch rz_bin rz_bp rz_config rz_cons \
+	rz_core rz_crypto rz_debug rz_demangler rz_diff rz_egg rz_flag \
+	rz_hash rz_il rz_io rz_lang rz_magic rz_main rz_parse rz_reg \
+	rz_search rz_sign rz_socket rz_syscall rz_type rz_util
 SHARED_LIBS+=		${_lib} ${LIBV}
 .endfor
 
@@ -50,8 +49,9 @@ LIB_DEPENDS =		devel/capstone/main \
 BUILD_DEPENDS =		textproc/py-yaml
 
 # The release tarball is vendored and has a lot of dependencies bundled. We
-# "unbundle" them where possible with `-Duse_sys_*=enabled`. When updating, the
-# port, check `meson.build` for new dependencies that cen be unbundled.
+# "unbundle" them where possible with `-Duse_sys_*=enabled`. When updating,
+# check the report printed at the end of the configure stage for other deps
+# that could be unbundled.
 #
 # We don't use the system treesitter, as upstream inform me that rizin is quite
 # sensitive to treesitter versions.

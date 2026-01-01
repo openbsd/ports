@@ -1,0 +1,68 @@
+Our capstone port renames a mips struct member to avoid a name clash.
+
+Index: librz/arch/isa/mips/mips_esil.c
+--- librz/arch/isa/mips/mips_esil.c.orig
++++ librz/arch/isa/mips/mips_esil.c
+@@ -5,10 +5,10 @@
+ #include <capstone/capstone.h>
+ #include <capstone/mips.h>
+ 
+-#define OPCOUNT() insn->detail->mips.op_count
+-#define REGID(x)  insn->detail->mips.operands[x].reg
+-#define REG(x)    cs_reg_name(*handle, insn->detail->mips.operands[x].reg)
+-#define IMM(x)    insn->detail->mips.operands[x].imm
++#define OPCOUNT() insn->detail->mipsen.op_count
++#define REGID(x)  insn->detail->mipsen.operands[x].reg
++#define REG(x)    cs_reg_name(*handle, insn->detail->mipsen.operands[x].reg)
++#define IMM(x)    insn->detail->mipsen.operands[x].imm
+ 
+ // ESIL macros:
+ // put the sign bit on the stack
+@@ -80,30 +80,30 @@ static inline void es_add_ck(RzAnalysisOp *op, const c
+ 
+ static const char *arg(csh *handle, cs_insn *insn, char *buf, int n) {
+ 	*buf = 0;
+-	switch (insn->detail->mips.operands[n].type) {
++	switch (insn->detail->mipsen.operands[n].type) {
+ 	case MIPS_OP_INVALID:
+ 		break;
+ 	case MIPS_OP_REG:
+ 		sprintf(buf, "%s",
+ 			cs_reg_name(*handle,
+-				insn->detail->mips.operands[n].reg));
++				insn->detail->mipsen.operands[n].reg));
+ 		break;
+ 	case MIPS_OP_IMM: {
+-		st64 x = (st64)insn->detail->mips.operands[n].imm;
++		st64 x = (st64)insn->detail->mipsen.operands[n].imm;
+ 		sprintf(buf, "%" PFMT64d, x);
+ 	} break;
+ 	case MIPS_OP_MEM: {
+-		int disp = insn->detail->mips.operands[n].mem.disp;
++		int disp = insn->detail->mipsen.operands[n].mem.disp;
+ 		if (disp < 0) {
+ 			sprintf(buf, "%" PFMT64d ",%s,-",
+-				(ut64)-insn->detail->mips.operands[n].mem.disp,
++				(ut64)-insn->detail->mipsen.operands[n].mem.disp,
+ 				cs_reg_name(*handle,
+-					insn->detail->mips.operands[n].mem.base));
++					insn->detail->mipsen.operands[n].mem.base));
+ 		} else {
+ 			sprintf(buf, "0x%" PFMT64x ",%s,+",
+-				(ut64)insn->detail->mips.operands[n].mem.disp,
++				(ut64)insn->detail->mipsen.operands[n].mem.disp,
+ 				cs_reg_name(*handle,
+-					insn->detail->mips.operands[n].mem.base));
++					insn->detail->mipsen.operands[n].mem.base));
+ 		}
+ 	} break;
+ 	}
+@@ -123,7 +123,7 @@ RZ_IPI int analyze_op_esil(RzAnalysis *a, RzAnalysisOp
+ 	}
+ 
+ 	// caching operands
+-	for (int i = 0; i < insn->detail->mips.op_count && i < 8; i++) {
++	for (int i = 0; i < insn->detail->mipsen.op_count && i < 8; i++) {
+ 		*str[i] = 0;
+ 		ARG(i);
+ 	}

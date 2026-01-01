@@ -12,6 +12,7 @@
 include/librz/
 include/librz/rz_agraph.h
 include/librz/rz_analysis.h
+include/librz/rz_arch.h
 include/librz/rz_asm.h
 include/librz/rz_basefind.h
 include/librz/rz_bin.h
@@ -28,7 +29,9 @@ include/librz/rz_constructor.h
 include/librz/rz_core.h
 include/librz/rz_crypto/
 include/librz/rz_crypto.h
+include/librz/rz_crypto/rz_aes.h
 include/librz/rz_crypto/rz_des.h
+include/librz/rz_crypto/rz_sm4.h
 include/librz/rz_debug.h
 include/librz/rz_demangler.h
 include/librz/rz_diff.h
@@ -69,6 +72,7 @@ include/librz/rz_pdb.h
 include/librz/rz_platform.h
 include/librz/rz_project.h
 include/librz/rz_reg.h
+include/librz/rz_rop.h
 include/librz/rz_search.h
 include/librz/rz_sign.h
 include/librz/rz_skiplist.h
@@ -86,6 +90,9 @@ include/librz/rz_util.h
 include/librz/rz_util/ht_inc.h
 include/librz/rz_util/ht_pp.h
 include/librz/rz_util/ht_pu.h
+include/librz/rz_util/ht_sp.h
+include/librz/rz_util/ht_ss.h
+include/librz/rz_util/ht_su.h
 include/librz/rz_util/ht_up.h
 include/librz/rz_util/ht_uu.h
 include/librz/rz_util/rz_alloc.h
@@ -129,6 +136,7 @@ include/librz/rz_util/rz_range.h
 include/librz/rz_util/rz_rbtree.h
 include/librz/rz_util/rz_regex.h
 include/librz/rz_util/rz_serialize.h
+include/librz/rz_util/rz_set.h
 include/librz/rz_util/rz_signal.h
 include/librz/rz_util/rz_spaces.h
 include/librz/rz_util/rz_stack.h
@@ -145,12 +153,12 @@ include/librz/rz_util/rz_th_ht.h
 include/librz/rz_util/rz_time.h
 include/librz/rz_util/rz_tree.h
 include/librz/rz_util/rz_uleb128.h
+include/librz/rz_util/rz_unicode.h
 include/librz/rz_util/rz_utf16.h
 include/librz/rz_util/rz_utf32.h
 include/librz/rz_util/rz_utf8.h
 include/librz/rz_util/rz_version.h
 include/librz/rz_util/rz_x509.h
-include/librz/rz_util/set.h
 include/librz/rz_vector.h
 include/librz/rz_windows.h
 include/librz/rz_windows_heap.h
@@ -158,7 +166,6 @@ include/librz/sdb/
 include/librz/sdb/buffer.h
 include/librz/sdb/cdb.h
 include/librz/sdb/cdb_make.h
-include/librz/sdb/ls.h
 include/librz/sdb/sdb.h
 include/librz/sdb/sdbht.h
 include/librz/sflib/
@@ -195,10 +202,8 @@ include/librz/sflib/linux-x86-64/sfsyscall.h
 include/librz/sflib/linux-x86-64/sfsysnr.h
 lib/cmake/Rizin/
 lib/cmake/Rizin/RizinConfig.cmake
-lib/cmake/rz_analysis/
-lib/cmake/rz_analysis/rz_analysisConfig.cmake
-lib/cmake/rz_asm/
-lib/cmake/rz_asm/rz_asmConfig.cmake
+lib/cmake/rz_arch/
+lib/cmake/rz_arch/rz_archConfig.cmake
 lib/cmake/rz_bin/
 lib/cmake/rz_bin/rz_binConfig.cmake
 lib/cmake/rz_bp/
@@ -233,8 +238,6 @@ lib/cmake/rz_magic/
 lib/cmake/rz_magic/rz_magicConfig.cmake
 lib/cmake/rz_main/
 lib/cmake/rz_main/rz_mainConfig.cmake
-lib/cmake/rz_parse/
-lib/cmake/rz_parse/rz_parseConfig.cmake
 lib/cmake/rz_reg/
 lib/cmake/rz_reg/rz_regConfig.cmake
 lib/cmake/rz_search/
@@ -249,8 +252,7 @@ lib/cmake/rz_type/
 lib/cmake/rz_type/rz_typeConfig.cmake
 lib/cmake/rz_util/
 lib/cmake/rz_util/rz_utilConfig.cmake
-@lib lib/librz_analysis.so.${LIBrz_analysis_VERSION}
-@lib lib/librz_asm.so.${LIBrz_asm_VERSION}
+@lib lib/librz_arch.so.${LIBrz_arch_VERSION}
 @lib lib/librz_bin.so.${LIBrz_bin_VERSION}
 @lib lib/librz_bp.so.${LIBrz_bp_VERSION}
 @lib lib/librz_config.so.${LIBrz_config_VERSION}
@@ -268,7 +270,6 @@ lib/cmake/rz_util/rz_utilConfig.cmake
 @lib lib/librz_lang.so.${LIBrz_lang_VERSION}
 @lib lib/librz_magic.so.${LIBrz_magic_VERSION}
 @lib lib/librz_main.so.${LIBrz_main_VERSION}
-@lib lib/librz_parse.so.${LIBrz_parse_VERSION}
 @lib lib/librz_reg.so.${LIBrz_reg_VERSION}
 @lib lib/librz_search.so.${LIBrz_search_VERSION}
 @lib lib/librz_sign.so.${LIBrz_sign_VERSION}
@@ -276,8 +277,7 @@ lib/cmake/rz_util/rz_utilConfig.cmake
 @lib lib/librz_syscall.so.${LIBrz_syscall_VERSION}
 @lib lib/librz_type.so.${LIBrz_type_VERSION}
 @lib lib/librz_util.so.${LIBrz_util_VERSION}
-lib/pkgconfig/rz_analysis.pc
-lib/pkgconfig/rz_asm.pc
+lib/pkgconfig/rz_arch.pc
 lib/pkgconfig/rz_bin.pc
 lib/pkgconfig/rz_bp.pc
 lib/pkgconfig/rz_config.pc
@@ -295,7 +295,6 @@ lib/pkgconfig/rz_io.pc
 lib/pkgconfig/rz_lang.pc
 lib/pkgconfig/rz_magic.pc
 lib/pkgconfig/rz_main.pc
-lib/pkgconfig/rz_parse.pc
 lib/pkgconfig/rz_reg.pc
 lib/pkgconfig/rz_search.pc
 lib/pkgconfig/rz_sign.pc
@@ -315,6 +314,12 @@ lib/pkgconfig/rz_util.pc
 @man man/man1/rz-sign.1
 @man man/man7/rz-esil.7
 share/rizin/
+share/rizin/arch/
+share/rizin/arch/platforms/
+share/rizin/arch/platforms/arm-arm1176-bcm2835.sdb
+share/rizin/arch/platforms/arm-cortexA72-bcm2711.sdb
+share/rizin/arch/platforms/arm-cortexA8-omap3430.sdb
+share/rizin/arch/platforms/x86-generic-generic.sdb
 share/rizin/asm/
 share/rizin/asm/cpus/
 share/rizin/asm/cpus/avr-ATTiny48.sdb
@@ -329,11 +334,6 @@ share/rizin/asm/cpus/avr-ATmega640.sdb
 share/rizin/asm/cpus/avr-ATmega8.sdb
 share/rizin/asm/cpus/avr-ATmega88.sdb
 share/rizin/asm/cpus/avr-ATxmega128a4u.sdb
-share/rizin/asm/platforms/
-share/rizin/asm/platforms/arm-arm1176-bcm2835.sdb
-share/rizin/asm/platforms/arm-cortexA72-bcm2711.sdb
-share/rizin/asm/platforms/arm-cortexA8-omap3430.sdb
-share/rizin/asm/platforms/x86-generic-generic.sdb
 share/rizin/cons/
 share/rizin/cons/ayu
 share/rizin/cons/basic
@@ -591,6 +591,8 @@ share/rizin/opcodes/pic18c.sdb
 share/rizin/opcodes/ppc.sdb
 share/rizin/opcodes/propeller.sdb
 share/rizin/opcodes/riscv.sdb
+share/rizin/opcodes/rl78.sdb
+share/rizin/opcodes/rx.sdb
 share/rizin/opcodes/sh.sdb
 share/rizin/opcodes/sparc.sdb
 share/rizin/opcodes/sysz.sdb
