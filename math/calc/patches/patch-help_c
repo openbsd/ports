@@ -1,7 +1,7 @@
 Index: help.c
 --- help.c.orig
 +++ help.c
-@@ -29,7 +29,7 @@
+@@ -28,7 +28,7 @@
  #include <ctype.h>
  #include <sys/types.h>
  #include <signal.h>

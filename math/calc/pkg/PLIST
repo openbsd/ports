@@ -66,6 +66,7 @@ share/calc/custhelp/
 share/calc/custhelp/argv
 share/calc/custhelp/devnull
 share/calc/custhelp/help
+share/calc/custhelp/pfe
 share/calc/custhelp/pmodm127
 share/calc/custhelp/pzasusb8
 share/calc/custhelp/register
@@ -73,6 +74,7 @@ share/calc/custhelp/sysinfo
 share/calc/custom/
 share/calc/custom/argv.cal
 share/calc/custom/halflen.cal
+share/calc/custom/pfe.cal
 share/calc/custom/pmodm127.cal
 share/calc/custom/pzasusb8.cal
 share/calc/custom/register.cal

@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -535,7 +535,7 @@ calc.1: calc.man ${MK_SET}
+@@ -536,7 +536,7 @@ calc.1: calc.man ${MK_SET}
  calc.usage: calc.1
  	${Q} echo forming $@ from calc.1
  	${RM} -f $@

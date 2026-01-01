@@ -1,0 +1,12 @@
+Index: custom/u_pfe.c
+--- custom/u_pfe.c.orig
++++ custom/u_pfe.c
+@@ -53,7 +53,7 @@ int u_pfe_allowed = 0; /* CUSTOM undefined */
+ 
+ #  include <sys/wait.h>
+ #  include <sys/time.h>
+-#  include <sys/errno.h>
++#  include <errno.h>
+ #  include <sys/param.h> /* MAXPATHLEN attow */
+ #  include <sys/types.h>
+ #  include <sys/wait.h>
