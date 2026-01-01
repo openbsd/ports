@@ -1,9 +1,8 @@
 COMMENT =		convert HTML pages to PDF/PS format
 
-V =			1.9.21
+V =			1.9.22
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
-REVISION =		0
 
 HOMEPAGE =		https://www.msweet.org/htmldoc/
 
