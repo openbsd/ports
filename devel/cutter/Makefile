@@ -1,10 +1,9 @@
 COMMENT =	RE platform powered by rizin
 
-V =		2.3.4
+V =		2.4.1
 PKGNAME =	cutter-${V}
 DISTNAME =	Cutter-v${V}-src
 WRKDIST =	${WRKDIR}/Cutter-v${V}
-REVISION =	1
 
 SITES =		https://github.com/rizinorg/cutter/releases/download/v${V}/
 
@@ -15,22 +14,25 @@ HOMEPAGE =	https://cutter.re/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5SyntaxHighlighting Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Svg Qt5Widgets c cdt cgraph gvc m ${MODPY_WANTLIB}
-WANTLIB += rz_analysis rz_asm rz_bin rz_bp rz_config rz_cons rz_core
-WANTLIB += rz_crypto rz_debug rz_demangler rz_diff rz_egg rz_flag
-WANTLIB += rz_hash rz_il rz_io rz_lang rz_magic rz_parse rz_reg
+WANTLIB += ${COMPILER_LIBCXX} GL KF6SyntaxHighlighting Qt6Core
+WANTLIB += Qt6Core5Compat Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Widgets c cdt cgraph gvc intl
+WANTLIB += m ${MODPY_WANTLIB} rz_arch rz_bin rz_bp rz_config rz_cons
+WANTLIB += rz_core rz_crypto rz_debug rz_demangler rz_diff rz_egg
+WANTLIB += rz_flag rz_hash rz_il rz_io rz_lang rz_magic rz_reg
 WANTLIB += rz_search rz_sign rz_socket rz_syscall rz_type rz_util
+WANTLIB += util
 
 MODULES =	devel/cmake \
 		lang/python \
-		x11/qt5
+		x11/qt6
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/rizin>=0.4.0
-LIB_DEPENDS =	devel/kf5/syntax-highlighting \
+LIB_DEPENDS =	devel/kf6/syntax-highlighting \
+		devel/rizin>=0.8.1 \
 		math/graphviz \
-		x11/qt5/qtsvg
+		x11/qt6/qt5compat \
+		x11/qt6/qtsvg
 
 # XXX: Python-based plugins don't work yet, this needs
 # CUTTER_ENABLE_PYTHON_BINDINGS which requires (unported) Shiboken2.
