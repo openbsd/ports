@@ -1,10 +1,13 @@
 COMMENT =	fuzzy text selector for the terminal
 
-V =		1.0
+V =		1.1
 DISTNAME =	fzy-$V
-REVISION =	1
 
 CATEGORIES =	textproc
+
+GH_ACCOUNT =		jhawthorn
+GH_PROJECT =		fzy
+GH_TAGNAME =		v$V
 
 HOMEPAGE =	https://github.com/jhawthorn/fzy
 
@@ -12,8 +15,6 @@ HOMEPAGE =	https://github.com/jhawthorn/fzy
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
-
-SITES =		https://github.com/jhawthorn/fzy/releases/download/$V/
 
 MAKE_ENV =	CC=${CC} BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man"
 

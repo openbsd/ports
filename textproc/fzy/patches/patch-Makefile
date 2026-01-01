@@ -1,11 +1,11 @@
---- Makefile.orig	Mon Apr 17 17:00:52 2017
-+++ Makefile	Mon Apr 17 17:01:18 2017
+--- Makefile.orig.port	Sat Jul 12 08:54:23 2025
++++ Makefile	Thu Jan  1 15:31:07 2026
 @@ -1,7 +1,7 @@
- VERSION=0.9
+ VERSION=1.1
  
  CPPFLAGS=-DVERSION=\"${VERSION}\" -D_GNU_SOURCE
--CFLAGS+=-Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps
-+CFLAGS+=-Wall -Wextra -std=c99 -pedantic -Ideps
+-CFLAGS+=-MD -Wall -Wextra -g -std=c99 -O3 -pedantic -Ideps -Werror=vla
++CFLAGS+=-MD -Wall -Wextra -std=c99 -pedantic -Ideps -Werror=vla
  PREFIX?=/usr/local
  MANDIR?=$(PREFIX)/share/man
  BINDIR?=$(PREFIX)/bin
