@@ -1,6 +1,6 @@
 COMMENT=	quickly ping N hosts w/o flooding the network
 
-DISTNAME=	fping-5.4
+DISTNAME=	fping-5.5
 
 CATEGORIES=	net
 
@@ -17,7 +17,6 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 SITES=		https://fping.org/dist/
 
 CONFIGURE_STYLE= gnu
-SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin
 
 # some dependent programs want fping/fping6 separation e.g. net/zabbix,
