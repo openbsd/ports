@@ -16,7 +16,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread
 
 SITES=		https://download.libsodium.org/libsodium/releases/ \
-		https://download.libsodium.org/libsodium/releases/old/
+		https://spacehopper.org/mirrors/
+#		https://download.libsodium.org/libsodium/releases/old/
 
 SEPARATE_BUILD=	Yes
 
