@@ -1,31 +1,39 @@
+https://invent.kde.org/plasma/kpipewire/-/merge_requests/229
 Index: src/pipewireproduce.cpp
 --- src/pipewireproduce.cpp.orig
 +++ src/pipewireproduce.cpp
-@@ -25,6 +25,9 @@
+@@ -24,6 +24,10 @@
+ #include "libx264encoder_p.h"
  
  #include "logging_frame_statistics.h"
- 
++#if defined(Q_OS_OPENBSD)
 +#include <pthread.h>
 +#include <pthread_np.h>
-+
++#endif
+ 
  extern "C" {
  #include <fcntl.h>
- }
-@@ -174,7 +177,7 @@ void PipeWireProduce::setupStream()
+@@ -174,7 +178,11 @@ void PipeWireProduce::setupStream()
              m_outputCondition.notify_all();
          }
      });
--    pthread_setname_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
++#if defined(Q_OS_OPENBSD)
 +    pthread_set_name_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
++#else
+     pthread_setname_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
++#endif
  
      m_outputThread = std::thread([this]() {
          m_outputRunning = true;
-@@ -196,7 +199,7 @@ void PipeWireProduce::setupStream()
+@@ -196,7 +204,11 @@ void PipeWireProduce::setupStream()
              QMetaObject::invokeMethod(this, &PipeWireProduce::handleEncodedFramesChanged, Qt::QueuedConnection);
          }
      });
--    pthread_setname_np(m_outputThread.native_handle(), "PipeWireProduce::output");
++#if defined(Q_OS_OPENBSD)
 +    pthread_set_name_np(m_outputThread.native_handle(), "PipeWireProduce::output");
++#else
+     pthread_setname_np(m_outputThread.native_handle(), "PipeWireProduce::output");
++#endif
  
      if (m_frameStatisticsTimer) {
          m_frameStatisticsTimer->start();
