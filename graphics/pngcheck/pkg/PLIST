@@ -1,6 +1,2 @@
-@bin bin/png-fix-IDAT-windowsize
 @bin bin/pngcheck
-@bin bin/pngsplit
-@man man/man1/png-fix-IDAT-windowsize.1
 @man man/man1/pngcheck.1
-@man man/man1/pngsplit.1

@@ -1,10 +1,9 @@
-Index: pngcheck.1
---- pngcheck.1.orig
-+++ pngcheck.1
+--- pngcheck.1.orig.port	Wed Dec 10 21:54:41 2025
++++ pngcheck.1	Fri Jan  2 10:44:24 2026
 @@ -1,6 +1,6 @@
- .TH PNGCHECK "1" "March 2025" "pngcheck 4.0.0" "User Commands"
+ .TH PNGCHECK "1" "March 2025" "pngcheck 4.0.1" "User Commands"
  .SH NAME
--pngcheck \- manual page for pngcheck 4.0.0
+-pngcheck \- manual page for pngcheck 4.0.1
 +pngcheck \- check PNG/JNG/MNG file integrity
  .SH SYNOPSIS
  .B pngcheck
