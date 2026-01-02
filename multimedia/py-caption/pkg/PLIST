@@ -41,7 +41,6 @@ lib/python${MODPY_VERSION}/site-packages/pycaption/dfxp/${MODPY_PYCACHE}extras.$
 lib/python${MODPY_VERSION}/site-packages/pycaption/dfxp/${MODPY_PYCACHE}extras.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycaption/dfxp/base.py
 lib/python${MODPY_VERSION}/site-packages/pycaption/dfxp/extras.py
-lib/python${MODPY_VERSION}/site-packages/pycaption/english.pickle
 lib/python${MODPY_VERSION}/site-packages/pycaption/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pycaption/geometry.py
 lib/python${MODPY_VERSION}/site-packages/pycaption/microdvd.py
