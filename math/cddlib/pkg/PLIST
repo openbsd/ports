@@ -41,6 +41,7 @@ lib/libcdd.la
 @static-lib lib/libcddgmp.a
 lib/libcddgmp.la
 @lib lib/libcddgmp.so.${LIBcddgmp_VERSION}
+lib/pkgconfig/cddgmp.pc
 lib/pkgconfig/cddlib.pc
 share/doc/cddlib/
 share/doc/cddlib/examples/
