@@ -21,7 +21,7 @@ MAKE_FLAGS =		LIBINTL="-L${LOCALBASE}/lib -liconv -lintl"
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	EMACS=no
+CONFIGURE_ENV =		EMACS=no
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
