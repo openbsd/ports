@@ -1,6 +1,7 @@
 COMMENT =	open decentralized synchronization utility
 
 V =		2.0.12
+REVISION =	0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -28,6 +29,9 @@ MODULES =		lang/go
 ST_CMDS =	syncthing stdiscosrv strelaysrv
 
 MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/cmd/syncthing/main.go
 
 # If at any point quic is busted for our in-tree go version, then you can
 # temporarily add `-tags noquic` to at least get syncthing building (albeit

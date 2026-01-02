@@ -23,11 +23,11 @@ Index: cmd/syncthing/main.go
 +		panic(err)
 +	}
 +
-+	if err := unix.Unveil("/usr/local/bin/syncthing", "rx"); err != nil {
++	if err := unix.Unveil("${PREFIX}/bin/syncthing", "rx"); err != nil {
 +		panic(err)
 +	}
 +
-+	if err := unix.Unveil("/usr/local/bin/xdg-open", "rx"); err != nil {
++	if err := unix.Unveil("${LOCALBASE}/bin/xdg-open", "rx"); err != nil {
 +		panic(err)
 +	}
 +
