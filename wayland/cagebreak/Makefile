@@ -1,6 +1,7 @@
 COMMENT =	wayland tiling compositor inspired by ratpoison
 
 V =		3.1.0
+REVISION =	0
 DISTNAME =	release_${V}
 PKGNAME =	cagebreak-${V}
 
@@ -28,6 +29,8 @@ BUILD_DEPENDS =		textproc/scdoc \
 			wayland/wayland-protocols
 LIB_DEPENDS =		devel/pango \
 			wayland/libevdev-openbsd
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE =	meson
 CONFIGURE_ARGS =	-Dman-pages=true \
