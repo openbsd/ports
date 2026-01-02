@@ -3,7 +3,7 @@ Avoid explicit optimization overriding CXXFLAGS
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -620,7 +620,7 @@ if(NOT MSVC)
+@@ -607,7 +607,7 @@ if(NOT MSVC)
    set(CMAKE_CXX_FLAGS_DEBUG
        "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -DDEBUG -Wall ${M32_FLAG} ${CXX_EXTRA}")
    set(CMAKE_CXX_FLAGS_RELEASE

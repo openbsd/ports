@@ -1,7 +1,9 @@
 COMMENT =	fast in-process analytical database
 
-V =		1.3.2
-DIST_TUPLE +=	github duckdb duckdb v${V} .
+V =		1.4.3
+GH_ACCOUNT =	duckdb
+GH_PROJECT =	duckdb
+GH_TAGNAME =	v${V}
 
 SHARED_LIBS =	duckdb	0.0
 
@@ -22,7 +24,7 @@ MODULES =	devel/cmake
 CONFIGURE_ARGS =	-DOVERRIDE_GIT_DESCRIBE="v${V}" \
 			-DENABLE_SANITIZER=OFF \
 			-DENABLE_UBSAN=OFF \
-			-DBUILD_EXTENSIONS="autocomplete;icu;json" \
+			-DBUILD_EXTENSIONS="autocomplete;icu;json;parquet" \
 			-DSKIP_EXTENSIONS="jemalloc"
 
 do-test:
