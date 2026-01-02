@@ -2,9 +2,8 @@ COMMENT=	convert profilers output into a dot(1) graph
 
 GH_ACCOUNT=	jrfonseca
 GH_PROJECT=	gprof2dot
-GH_TAGNAME=	2024.06.06
+GH_TAGNAME =	2025.04.14
 MODPY_DISTV=	${GH_TAGNAME:C/\.0/./g}
-REVISION=	0
 
 CATEGORIES=	graphics
 
