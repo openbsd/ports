@@ -123,3 +123,16 @@ Index: greetd/src/terminal/mod.rs
      }
  
      /// Hook up stdin, stdout and stderr of the current process ot this
+@@ -228,11 +156,6 @@ impl Terminal {
+ 
+     // Forcibly take control of the terminal referred to by this fd.
+     pub fn term_take_ctty(&self) -> Result<(), Error> {
+-        let res = unsafe { ioctl::term_tiocsctty(self.fd, 1) };
+-
+-        match res {
+-            Err(e) => Err(format!("terminal: unable to take controlling terminal: {}", e).into()),
+-            Ok(_) => Ok(()),
+-        }
++        Ok(())
+     }
+ }
