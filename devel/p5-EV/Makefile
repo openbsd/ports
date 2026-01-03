@@ -2,6 +2,7 @@ COMMENT =	perl interface to libev
 
 DISTNAME =	EV-4.36
 CPAN_AUTHOR =	MLEHMANN
+REVISION =	0
 
 CATEGORIES =	devel
 

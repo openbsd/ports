@@ -1,0 +1,24 @@
+Index: typemap
+--- typemap.orig
++++ typemap
+@@ -37,9 +37,9 @@ T_LOOP
+ 
+ T_WATCHER
+ 	if (!(SvROK ($arg) && SvOBJECT (SvRV ($arg))
+-              && (SvSTASH (SvRV ($arg)) == stash_${ \($type =~ /ev_(\S+)/, \"$1\") }
+-                  || sv_derived_from ($arg, \"EV::${ \($type =~ /ev_(\S+)/, ucfirst \"$1\") }\"))))
+-          croak (\"object is not of type EV::${ \($type =~ /ev_(\S+)/, ucfirst \"$1\") }\");
++              && (SvSTASH (SvRV ($arg)) == stash_${ ($type =~ /ev_(\S+)/, \"$1") }
++                  || sv_derived_from ($arg, \"EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\"))))
++          croak (\"object is not of type EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\");
+ 	$var = ($type)SvPVX (SvRV ($arg));
+ 
+ OUTPUT
+@@ -48,6 +48,6 @@ T_PVbyte
+ 	sv_setpv ((SV *)$arg, $var);
+ 
+ T_WATCHER
+-	$arg = e_bless ((struct ev_watcher *)$var, stash_${ \($type =~ /ev_(\S+)/, "$1") });
++	$arg = e_bless ((struct ev_watcher *)$var, stash_${ ($type =~ /ev_(\S+)/, \"$1") });
+ 
+ 
