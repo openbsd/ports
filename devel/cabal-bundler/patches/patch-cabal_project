@@ -3,11 +3,14 @@ Avoid building the parts we don't use that drag in extra dependencies.
 Index: cabal.project
 --- cabal.project.orig
 +++ cabal.project
-@@ -1,19 +1,4 @@
--with-compiler: ghc-9.2.5
--tests: True
--
+@@ -1,21 +1,9 @@
+-with-compiler: ghc-9.8.4
++with-compiler: ghc
+ index-state: 2024-07-03T13:49:27Z
+ tests: True
+ 
  packages: cabal-bundler
+-packages: cabal-core-inspection
 -packages: cabal-deps
 -packages: cabal-diff
 -packages: cabal-docspec
@@ -15,27 +18,21 @@ Index: cabal.project
 -packages: cabal-haddock-server
 -packages: cabal-hasklint
 -packages: cabal-hie
---- packages: cabal-iface-query
--
+-packages: cabal-iface-query
+ 
 -packages: cabal-store-check
 -packages: cabal-store-gc
 -
  packages: peura
  
- package *
-@@ -41,7 +26,6 @@ constraints: transformers  installed
+ -- compatibility with new directory
+@@ -47,8 +35,7 @@ constraints: transformers  installed
+ --   tag: 66ef795dd4d13d54aa5be5e13a07e9f495950e5e
  
  -- For local dev these can be used:
- packages: extras/gentle-introduction-*.tar.gz
+-packages: extras/gentle-introduction-*.tar.gz
 -packages: extras/hooglite-*.tar.gz
++packages: gentle-introduction-2024.4.1
  
  -- Always use ghc-lib-parser.
  constraints: ghc-lib-parser-ex -no-ghc-lib -auto
-@@ -49,6 +33,4 @@ constraints: ghc-lib-parser-ex -no-ghc-lib -auto
- -- Never depend on cryptonite. Aptly named package.
- constraints: cryptonite <0
- 
---- Warp without x509
--constraints: warp -x509
--
-+packages: ../gentle-introduction-2023.4
