@@ -1,5 +1,6 @@
 bin/clazy
 @bin bin/clazy-standalone
+@so lib/ClazyClangTidy.so
 @so lib/ClazyPlugin.so
 @man man/man1/clazy.1
 share/doc/clazy/
