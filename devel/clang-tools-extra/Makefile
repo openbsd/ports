@@ -15,6 +15,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	21.1.8
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
+REVISION=	0
 
 CATEGORIES =	devel
 
@@ -101,6 +102,7 @@ ALL_TARGET =	clang-change-namespace clang-apply-replacements
 ALL_TARGET +=	clang-doc clang-format clang-include-fixer clang-move
 ALL_TARGET +=	clang-query clang-reorder-fields clang-tidy clangd
 ALL_TARGET +=	modularize pp-trace tool-template find-all-symbols
+ALL_TARGET +=	clang-tidy-headers
 
 MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 MODCMAKE_LDFLAGS += -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
