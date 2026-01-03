@@ -1,6 +1,6 @@
 COMMENT =	Google authentication library
 
-MODPY_DISTV =	2.42.0
+MODPY_DISTV =	2.45.0
 DISTNAME =	google_auth-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/_/-/}
 
