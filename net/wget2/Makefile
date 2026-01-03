@@ -1,8 +1,7 @@
 COMMENT =	successor of GNU Wget, a file and website downloader
 
-DISTNAME =	wget2-2.2.0
-REVISION =	1
-SHARED_LIBS +=	wget 0.1	# 3.0
+DISTNAME =	wget2-2.2.1
+SHARED_LIBS +=	wget 1.0	# 4.0
 CATEGORIES =	net
 
 HOMEPAGE =	https://gitlab.com/gnuwget/wget2

@@ -6,6 +6,7 @@ include/wgetver.h
 lib/libwget.la
 @lib lib/libwget.so.${LIBwget_VERSION}
 lib/pkgconfig/libwget.pc
+share/locale/ar/LC_MESSAGES/wget2.mo
 share/locale/ca/LC_MESSAGES/wget2.mo
 share/locale/cs/LC_MESSAGES/wget2.mo
 share/locale/de/LC_MESSAGES/wget2.mo
