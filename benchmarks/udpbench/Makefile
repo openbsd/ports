@@ -1,6 +1,6 @@
 COMMENT =	udp network benchmarking tool
 
-VERSION =	1.12
+VERSION =	1.13
 DISTNAME =	udpbench-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
 
