@@ -1,4 +1,4 @@
-V =		3.8
+V =		3.8.3
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
 
@@ -31,7 +31,7 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/${MODCABAL_STEM}-${V}/man/pandoc-lua.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/${MODCABAL_STEM}-${V}/man/pandoc-server.1 ${PREFIX}/man/man1
 
-
+# cabal-bundler --openbsd pandoc-cli-3.8.3 --executable pandoc
 MODCABAL_MANIFEST	= \
 	Glob	0.10.2	3	\
 	HUnit	1.6.2.0	0	\
@@ -43,9 +43,10 @@ MODCABAL_MANIFEST	= \
 	aeson	2.2.3.0	4	\
 	aeson-pretty	0.8.10	0	\
 	alex	3.5.4.0	0	\
-	ansi-terminal	1.1.3	0	\
+	ansi-terminal	1.1.4	0	\
 	ansi-terminal-types	1.1.3	0	\
 	appar	0.1.8	0	\
+	asciidoc	0.1	0	\
 	asn1-encoding	0.9.6	2	\
 	asn1-parse	0.9.5	0	\
 	asn1-types	0.3.4	0	\
@@ -67,14 +68,14 @@ MODCABAL_MANIFEST	= \
 	boring	0.2.2	1	\
 	bsb-http-chunked	0.0.0.4	4	\
 	byteorder	1.0.4	0	\
-	cabal-doctest	1.0.11	0	\
+	cabal-doctest	1.0.12	0	\
 	call-stack	0.4.0	0	\
 	case-insensitive	1.2.1.0	0	\
 	cassava	0.5.4.1	0	\
 	cborg	0.2.10.0	3	\
 	cereal	0.5.8.3	0	\
 	character-ps	0.1	0	\
-	citeproc	0.10	0	\
+	citeproc	0.12	0	\
 	colour	2.3.6	0	\
 	commonmark	0.2.6.1	0	\
 	commonmark-extensions	0.2.6	0	\
@@ -89,7 +90,7 @@ MODCABAL_MANIFEST	= \
 	crypton-connection	0.4.5	0	\
 	crypton-socks	0.6.2	0	\
 	crypton-x509	1.7.7	0	\
-	crypton-x509-store	1.6.11	0	\
+	crypton-x509-store	1.6.12	1	\
 	crypton-x509-system	1.6.7	0	\
 	crypton-x509-validation	1.6.14	0	\
 	data-default	0.8.0.1	0	\
@@ -98,7 +99,7 @@ MODCABAL_MANIFEST	= \
 	dec	0.0.6	1	\
 	digest	0.0.2.1	0	\
 	distributive	0.6.2.1	1	\
-	djot	0.1.2.2	0	\
+	djot	0.1.2.4	0	\
 	dlist	1.0	2	\
 	doclayout	0.5.0.1	0	\
 	doctemplates	0.11.0.1	0	\
@@ -111,7 +112,7 @@ MODCABAL_MANIFEST	= \
 	generics-sop	0.5.1.4	2	\
 	gridtables	0.1.1.0	0	\
 	haddock-library	1.11.0	5	\
-	half	0.3.3	0	\
+	half	0.3.3	1	\
 	happy	2.1.7	0	\
 	happy-lib	2.1.7	0	\
 	hashable	1.5.0.0	1	\
@@ -128,10 +129,10 @@ MODCABAL_MANIFEST	= \
 	hslua-marshalling	2.3.1	0	\
 	hslua-module-doclayout	1.2.0.1	0	\
 	hslua-module-path	1.1.1	0	\
-	hslua-module-system	1.2.3	0	\
+	hslua-module-system	1.2.3	1	\
 	hslua-module-text	1.1.1	0	\
 	hslua-module-version	1.1.1	0	\
-	hslua-module-zip	1.1.4	0	\
+	hslua-module-zip	1.1.4	1	\
 	hslua-objectorientation	2.4.0	0	\
 	hslua-packaging	2.3.2	0	\
 	hslua-repl	0.1.2	0	\
@@ -141,9 +142,9 @@ MODCABAL_MANIFEST	= \
 	http-client-tls	0.3.6.4	2	\
 	http-date	0.0.11	0	\
 	http-media	0.8.1.1	2	\
-	http-semantics	0.3.0	0	\
+	http-semantics	0.4.0	0	\
 	http-types	0.12.4	0	\
-	http2	5.3.10	0	\
+	http2	5.4.0	0	\
 	indexed-traversable	0.1.4	1	\
 	indexed-traversable-instances	0.1.2	1	\
 	integer-conversion	0.1.1	1	\
@@ -155,10 +156,10 @@ MODCABAL_MANIFEST	= \
 	libyaml	0.1.4	0	\
 	libyaml-clib	0.2.5	0	\
 	lpeg	1.1.0	0	\
-	lua	2.3.3	0	\
+	lua	2.3.4	0	\
 	memory	0.18.0	1	\
 	mime-types	0.1.2.0	0	\
-	mmorph	1.2.1	0	\
+	mmorph	1.2.1	1	\
 	monad-control	1.0.3.1	0	\
 	mono-traversable	1.0.21.0	0	\
 	network	3.2.8.0	0	\
@@ -170,11 +171,11 @@ MODCABAL_MANIFEST	= \
 	optparse-applicative	0.19.0.0	0	\
 	ordered-containers	0.2.4	0	\
 	os-string	2.0.8	0	\
-	pandoc	3.8	0	\
-	pandoc-lua-engine	0.5	0	\
+	pandoc	3.8.3	0	\
+	pandoc-lua-engine	0.5.0.2	0	\
 	pandoc-lua-marshal	0.3.1	0	\
 	pandoc-server	0.1.1	0	\
-	pandoc-types	1.23.1	3	\
+	pandoc-types	1.23.1	4	\
 	pem	0.2.4	0	\
 	pretty-show	1.10	0	\
 	prettyprinter	1.7.1	0	\
@@ -184,7 +185,7 @@ MODCABAL_MANIFEST	= \
 	random	1.3.1	0	\
 	recv	0.1.1	0	\
 	regex-base	0.94.0.3	0	\
-	regex-tdfa	1.3.2.4	0	\
+	regex-tdfa	1.3.2.5	0	\
 	resourcet	1.3.0	0	\
 	safe	0.3.21	1	\
 	scientific	0.3.8.0	2	\
@@ -206,14 +207,14 @@ MODCABAL_MANIFEST	= \
 	sop-core	0.5.0.2	5	\
 	split	0.2.5	0	\
 	splitmix	0.1.2	0	\
-	streaming-commons	0.2.3.0	0	\
+	streaming-commons	0.2.3.1	0	\
 	strict	0.5.1	1	\
 	syb	0.7.3	0	\
-	tagged	0.8.9	0	\
+	tagged	0.8.10	0	\
 	tagsoup	0.14.8	0	\
 	tasty	1.5.3	2	\
 	temporary	1.3	0	\
-	texmath	0.13	0	\
+	texmath	0.13.0.2	0	\
 	text-conversions	0.3.1.1	0	\
 	text-iso8601	0.1.1	2	\
 	text-short	0.1.6	3	\
@@ -223,22 +224,22 @@ MODCABAL_MANIFEST	= \
 	th-lift-instances	0.1.20	0	\
 	these	1.2.1	2	\
 	time-compat	1.9.8	0	\
-	time-manager	0.2.3	0	\
-	tls	2.1.11	0	\
-	toml-parser	2.0.1.2	1	\
+	time-manager	0.2.4	0	\
+	tls	2.1.13	0	\
+	toml-parser	2.0.2.0	0	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.2	0	\
 	typed-process	0.2.13.0	0	\
-	typst	0.8.0.2	0	\
-	typst-symbols	0.1.8.1	0	\
+	typst	0.8.1	0	\
+	typst-symbols	0.1.9.1	0	\
 	unicode-collation	0.1.3.6	2	\
-	unicode-data	0.6.0	2	\
-	unicode-transforms	0.4.0.1	7	\
+	unicode-data	0.8.0	0	\
+	unicode-transforms	0.4.0.1	8	\
 	uniplate	1.6.13	1	\
 	unix-compat	0.7.4.1	0	\
 	unix-time	0.4.17	0	\
 	unliftio-core	0.2.1.0	4	\
-	unordered-containers	0.2.20	4	\
+	unordered-containers	0.2.21	1	\
 	utf8-string	1.0.2	0	\
 	uuid-types	1.0.6	3	\
 	vault	0.3.1.5	10	\
@@ -250,15 +251,15 @@ MODCABAL_MANIFEST	= \
 	wai-cors	0.2.7	0	\
 	wai-extra	3.1.18	0	\
 	wai-logger	2.5.0	0	\
-	warp	3.4.9	0	\
+	warp	3.4.11	0	\
 	witherable	0.5	1	\
 	word8	0.1.3	0	\
 	xml	1.3.14	2	\
-	xml-conduit	1.10.0.1	0	\
+	xml-conduit	1.10.1.0	0	\
 	xml-types	0.3.8	0	\
 	yaml	0.11.11.2	2	\
 	zip-archive	0.4.3.2	1	\
-	zlib	0.7.1.0	2	\
+	zlib	0.7.1.1	0	\
 
 # XXX test target is broken
 # Error: [Cabal-7107]
