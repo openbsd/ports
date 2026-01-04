@@ -2,7 +2,7 @@ COMMENT-main=		Document Viewer
 COMMENT-nautilus=	Papers extension for Nautilus
 
 GNOME_PROJECT=		papers
-GNOME_VERSION=		49.2
+GNOME_VERSION=		49.3
 PKGNAME-nautilus=	papers-nautilus-${GNOME_VERSION}
 
 SHARED_LIBS += ppsdocument-4.0           0.0 # 6.0.0

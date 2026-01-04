@@ -1,6 +1,6 @@
+@conflict evince-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,light
-@conflict evince-*
 @bin bin/papers
 @bin bin/papers-previewer
 @bin bin/papers-thumbnailer
