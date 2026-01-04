@@ -1,6 +1,6 @@
 COMMENT=	loaders and dumpers for PyYAML
 
-MODPY_DISTV=	1.5.1
+MODPY_DISTV =	1.6.0
 DISTNAME=	yamlloader-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
