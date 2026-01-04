@@ -5,26 +5,26 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -221,9 +221,6 @@ library('pcscspy',
- install_data('src/spy/pcsc-spy',
-   install_dir : get_option('bindir'))
+@@ -206,9 +206,6 @@ if get_option('default_library') != 'static'
+   install_data('src/spy/pcsc-spy',
+     install_dir : get_option('bindir'))
  
--install_data('src/spy/setup_spy.sh',
--  install_dir : 'share/doc/pcsc-lite')
+-  install_data('src/spy/setup_spy.sh',
+-    install_dir : 'share/doc/pcsc-lite')
 -
- run_command('pod2man',
-   ['--date=2024-01-01', 'src/spy/pcsc-spy.pod', 'pcsc-spy.1'],
-   check : true)
-@@ -309,7 +306,7 @@ endif
- pkg = import('pkgconfig')
+   run_command('pod2man',
+     ['--date=2024-01-01', 'src/spy/pcsc-spy.pod', 'pcsc-spy.1'],
+     check : true)
+@@ -323,7 +320,7 @@ pkg = import('pkgconfig')
  pkg.generate(
+   extra_cflags : '-pthread',
    libraries : '-L${libdir} -lpcsclite',
 -  libraries_private : '-pthread',
 +  extra_cflags : '-pthread',
    subdirs : 'PCSC',
    version : meson.project_version(),
    name : 'PCSC Lite',
-@@ -324,7 +321,7 @@ configure_file(output : 'doxygen.conf',
+@@ -338,7 +335,7 @@ configure_file(output : 'doxygen.conf',
    input : 'doc/doxygen.conf.in',
    configuration : confgen_data)
  doxygen = find_program('doxygen', required : false)
