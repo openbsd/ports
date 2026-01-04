@@ -1,6 +1,6 @@
 COMMENT=		Unicode character map for the GNOME project
 
-# XXX keep in sync major with textproc/unicode/ucd
+# !!! keep in sync major with textproc/unicode/ucd
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		17.0.1
 

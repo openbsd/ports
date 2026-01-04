@@ -1,6 +1,6 @@
 COMMENT =		Unicode Character Database (UCD)
 
-# XXX keep in sync major $V with x11/gnome/gucharmap
+# !!! keep in sync major $V with x11/gnome/gucharmap
 V =			17.0.0
 UNICODE_DATA_NAME =	ucd
 
