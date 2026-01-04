@@ -369,7 +369,7 @@ MODGO_MODULES =	\
 	github.com/tdewolff/minify/v2								 v2.24.8 \
 	github.com/tdewolff/parse/v2								 v2.8.5 \
 	github.com/tdewolff/test								 v1.0.11 \
-	github.com/tetratelabs/wazero								 v1.10.1 \
+	github.com/tetratelabs/wazero								 v1.11.0 \
 	github.com/ugorji/go/codec								 v1.2.7 \
 	github.com/woodsbury/decimal128								 v1.3.0 \
 	github.com/yuin/goldmark								 v1.7.13 \

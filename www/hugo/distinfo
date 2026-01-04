@@ -942,8 +942,8 @@ SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.mod) = tlUXEpe2E8ieC/C
 SHA256 (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.zip) = gygHIglW2WxS4UkvHpUbcxQAaTyXq8x4Un1QR+lqc2U=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 9EefOv0J+7kaIZNIpSIgfv+uc4muXaMR/YZv9IuGFus=
 SHA256 (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = /t2vBdFIMFJd7rKD7rpBEO4clOhNeVH/lSO+zyH2w00=
-SHA256 (go_modules/github.com/tetratelabs/wazero/@v/v1.10.1.mod) = sosFivJx4E6D9pBRQDdRNcG3rUGtAv7lshTruizHYVI=
-SHA256 (go_modules/github.com/tetratelabs/wazero/@v/v1.10.1.zip) = siTsd1UIxth0Pjhw5fYrtPXZ+QHUejaNoMpaDCvNlgs=
+SHA256 (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.mod) = KljGdTabSFGvqwqZcLyQD4pnyvOzrXALs6IYclSotSo=
+SHA256 (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.zip) = v8+aE9b8A4rBITFfaRWQUqWDEyvGNUuzWdh5RJnvsH0=
 SHA256 (go_modules/github.com/ugorji/go/codec/@v/v1.2.7.mod) = RUPyDhMLj//7IlE15zM/TyIUScCCReGtYwZww+DEA0Q=
 SHA256 (go_modules/github.com/ugorji/go/codec/@v/v1.2.7.zip) = OGFq84Iz5sdKxnRmpHMTTjRqGoZIVZM6XofmOX9rFIM=
 SHA256 (go_modules/github.com/woodsbury/decimal128/@v/v1.3.0.mod) = 4zuVhygae6Frcrcd1wMXQZMk9PPHzBtxwnFRMrSlCF0=
@@ -1538,7 +1538,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.153.4.zip) = Jym7dkf6c+G21BBCChn97VsqV9M9UU1Tg5HhpkvHGMQ=
+SHA256 (hugo-v0.154.2.zip) = aAI5yu9cgy8/4UPJlWMcIkynu0M6MCwymluN/UNxN/c=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.19.0.mod) = 231
 SIZE (go_modules/cel.dev/expr/@v/v0.24.0.mod) = 231
@@ -2483,8 +2483,8 @@ SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.mod) = 87
 SIZE (go_modules/github.com/tdewolff/parse/v2/@v/v2.8.5.zip) = 148736
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.mod) = 41
 SIZE (go_modules/github.com/tdewolff/test/@v/v1.0.11.zip) = 4421
-SIZE (go_modules/github.com/tetratelabs/wazero/@v/v1.10.1.mod) = 295
-SIZE (go_modules/github.com/tetratelabs/wazero/@v/v1.10.1.zip) = 7656301
+SIZE (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.mod) = 329
+SIZE (go_modules/github.com/tetratelabs/wazero/@v/v1.11.0.zip) = 7623716
 SIZE (go_modules/github.com/ugorji/go/codec/@v/v1.2.7.mod) = 80
 SIZE (go_modules/github.com/ugorji/go/codec/@v/v1.2.7.zip) = 342778
 SIZE (go_modules/github.com/woodsbury/decimal128/@v/v1.3.0.mod) = 48
@@ -3079,4 +3079,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.153.4.zip) = 6851289
+SIZE (hugo-v0.154.2.zip) = 6996544
