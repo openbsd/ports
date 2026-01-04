@@ -1,0 +1,33 @@
+Highly customizable Wayland bar for Sway and Wlroots based compositors.
+Current features
+
+    Sway (Workspaces, Binding mode, Focused window name)
+    River (Mapping mode, Tags, Focused window name)
+    Hyprland (Window Icons, Workspaces, Focused window name)
+    Niri (Workspaces, Focused window name, Language)
+    DWL (Tags, Focused window name) requires dwl ipc patch
+    Tray #21
+    Local time
+    Battery
+    UPower
+    Power profiles daemon
+    Network
+    Pulseaudio
+    Privacy Info
+    Disk
+    Memory
+    Cpu load average
+    Temperature
+    MPD
+    Custom scripts
+    Custom image
+    Multiple output configuration
+    And many more customizations
+
+To enable waybar in sway, put:
+
+bar {
+    swaybar_command waybar
+}
+
+in ~/.config/sway/config

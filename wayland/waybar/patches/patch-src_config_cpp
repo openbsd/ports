@@ -1,0 +1,23 @@
+use GLOB_TILDE to find ~/.config/waybar 
+
+Index: src/config.cpp
+--- src/config.cpp.orig
++++ src/config.cpp
+@@ -19,7 +19,7 @@ namespace fs = std::filesystem;
+ namespace waybar {
+ 
+ const std::vector<std::string> Config::CONFIG_DIRS = {
+-    "$XDG_CONFIG_HOME/waybar/", "$HOME/.config/waybar/",   "$HOME/waybar/",
++    "$XDG_CONFIG_HOME/waybar/", "~/.config/waybar/",   "~/waybar/",
+     "/etc/xdg/waybar/",         SYSCONFDIR "/xdg/waybar/", "./resources/",
+ };
+ 
+@@ -51,7 +51,7 @@ std::vector<std::string> Config::tryExpandPath(const s
+   }
+ #else
+   glob_t p;
+-  if (glob(path.c_str(), 0, NULL, &p) == 0) {
++  if (glob(path.c_str(), GLOB_TILDE, NULL, &p) == 0) {
+     for (size_t i = 0; i < p.gl_pathc; i++) {
+       if (access(p.gl_pathv[i], F_OK) == 0) {
+         results.emplace_back(p.gl_pathv[i]);

@@ -1,0 +1,53 @@
+Tweak configuration for OpenBSD 
+
+Index: resources/config.jsonc
+--- resources/config.jsonc.orig
++++ resources/config.jsonc
+@@ -17,21 +17,23 @@
+     ],
+     "modules-right": [
+         "mpd",
+-        "idle_inhibitor",
+-        "pulseaudio",
+-        "network",
+-        "power-profiles-daemon",
++        // "idle_inhibitor",
++        // "pulseaudio",
++	"sndio",
++        // "network",
++        // "power-profiles-daemon",
+         "cpu",
+         "memory",
+-        "temperature",
+-        "backlight",
+-        "keyboard-state",
++        // "temperature",
++        // "backlight",
++        // "keyboard-state",
+         "sway/language",
+-        "battery",
+-        "battery#bat2",
++	"upower",
++        // "battery",
++        // "battery#bat2",
+         "clock",
+-        "tray",
+-        "custom/power"
++        "tray"
++        // "custom/power"
+     ],
+     // Modules configuration
+     // "sway/workspaces": {
+@@ -68,6 +70,12 @@
+         "format-icons": ["", ""],
+         "tooltip": true,
+         "tooltip-format": "{app}: {title}"
++    },
++    "sndio": {
++       "sroll-step": "10",
++       "format": "   {volume}% ",
++       // "on-scroll-down": "sndioctl output.level=-0.1",
++       // "on-scroll-up": "sndioctl output.level=+0.1"
+     },
+     "mpd": {
+         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
