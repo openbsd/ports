@@ -1,6 +1,6 @@
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
-DISTNAME =	ccid-1.6.2
+DISTNAME =	ccid-1.7.0
 
 CATEGORIES =	security
 
@@ -23,7 +23,8 @@ LIB_DEPENDS =	devel/libusb1 \
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-CONFIGURE_ARGS = -Dserial=true
+CONFIGURE_ARGS = -Dserial=true \
+		 -Dudev-rules=false
 
 NO_TEST =	Yes
 
