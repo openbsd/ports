@@ -1,13 +1,13 @@
 @rcscript ${RCDIR}/dinit
+@bin bin/dinit
+@bin bin/dinit-check
+@bin bin/dinit-monitor
+@bin bin/dinitctl
 @man man/man5/dinit-service.5
+@man man/man8/dinit-check.8
 @man man/man8/dinit-monitor.8
 @man man/man8/dinit.8
-@man man/man8/dinitcheck.8
 @man man/man8/dinitctl.8
-@bin sbin/dinit
-@bin sbin/dinit-monitor
-@bin sbin/dinitcheck
-@bin sbin/dinitctl
 share/doc/dinit/
 share/doc/dinit/COMPARISON
 share/doc/dinit/DESIGN

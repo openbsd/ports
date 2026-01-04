@@ -1,4 +1,4 @@
-V =		0.18.0
+V =		0.20.0
 COMMENT =	service monitoring / "init" system
 DISTNAME =	dinit-${V}
 SITES =		https://github.com/davmac314/dinit/releases/download/v${V}/
@@ -18,7 +18,7 @@ COMPILER =		base-clang ports-gcc
 USE_GMAKE =		Yes
 MAKE_FLAGS +=		CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS}" \
-			SBINDIR=${TRUEPREFIX}/sbin \
+			BINDIR=${TRUEPREFIX}/bin \
 			MANDIR=${TRUEPREFIX}/man \
 			SYSCONTROLSOCKET=${VARBASE}/run/dinit.sock
 

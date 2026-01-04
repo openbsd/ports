@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/sbin/dinit"
+daemon="${TRUEPREFIX}/bin/dinit"
 
 . /etc/rc.d/rc.subr
 
