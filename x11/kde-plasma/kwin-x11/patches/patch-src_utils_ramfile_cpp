@@ -1,3 +1,4 @@
+https://invent.kde.org/plasma/kwin/-/merge_requests/8601
 Index: src/utils/ramfile.cpp
 --- src/utils/ramfile.cpp.orig
 +++ src/utils/ramfile.cpp
@@ -5,7 +6,7 @@ Index: src/utils/ramfile.cpp
      m_tmp->unmap(data);
  #endif
  
-+    /*
++#if !defined(__OpenBSD__)
      int seals = F_SEAL_SHRINK | F_SEAL_GROW | F_SEAL_SEAL;
      if (flags.testFlag(RamFile::Flag::SealWrite)) {
          seals |= F_SEAL_WRITE;
@@ -13,7 +14,7 @@ Index: src/utils/ramfile.cpp
      if (fcntl(fd(), F_ADD_SEALS, seals) != 0) {
          qCDebug(KWIN_CORE).nospace() << name << ": Failed to seal RamFile: " << strerror(errno);
      }
-+    */
++#endif
  
      guard.dismiss();
  }
@@ -21,14 +22,14 @@ Index: src/utils/ramfile.cpp
  {
      Flags flags = {};
  
-+    /*
++#if !defined(__OpenBSD__)
      const int seals = fcntl(fd(), F_GET_SEALS);
      if (seals > 0) {
          if (seals & F_SEAL_WRITE) {
              flags.setFlag(Flag::SealWrite);
          }
      }
-+    */
++#endif
  
      return flags;
  }

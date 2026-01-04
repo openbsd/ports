@@ -1,5 +1,6 @@
 COMMENT =		X11 window manager for KDE Plasma Desktops
 DISTNAME =		kwin-x11-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kcmkwincommon-x11         0.0 # 0.0
 SHARED_LIBS +=  kwin-x11                  0.0 # 0.0
@@ -84,11 +85,12 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/qt6/qtsensors \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
-CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
+CXXFLAGS +=		-I${LOCALBASE}/include/libepoll-shim/
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -lepoll-shim
+#CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
+#MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
