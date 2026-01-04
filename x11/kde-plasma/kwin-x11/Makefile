@@ -1,6 +1,6 @@
 COMMENT =		X11 window manager for KDE Plasma Desktops
 DISTNAME =		kwin-x11-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  kcmkwincommon-x11         0.0 # 0.0
 SHARED_LIBS +=  kwin-x11                  0.0 # 0.0
@@ -11,17 +11,16 @@ WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6GlobalAccel
 WANTLIB += KF6GuiAddons KF6I18n KF6I18nQml KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6Notifications KF6Package KF6Service KF6Svg KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KGlobalAccelD KScreenLocker
-WANTLIB += PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6Sensors
-WANTLIB += Qt6Svg Qt6UiTools Qt6WaylandClient Qt6Widgets Qt6Xml
-WANTLIB += SM X11 Xext Xi c canberra display-info drm epoll-shim
-WANTLIB += epoxy gbm kdecorations3 kdecorations3private lcms2
-WANTLIB += m qaccessibilityclient-qt6 udev wayland-client wayland-cursor
-WANTLIB += wayland-server xcb xcb-composite xcb-cursor xcb-damage
-WANTLIB += xcb-glx xcb-icccm xcb-keysyms xcb-randr xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
+WANTLIB += KF6WindowSystem KF6XmlGui KGlobalAccelD KNightTime
+WANTLIB += KScreenLocker PlasmaActivities Qt6Concurrent Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Qml Qt6Quick Qt6Sensors Qt6Svg Qt6UiTools Qt6WaylandClient
+WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xi c canberra display-info
+WANTLIB += drm epoll-shim epoxy gbm kdecorations3 kdecorations3private
+WANTLIB += lcms2 m qaccessibilityclient-qt6 udev wayland-client
+WANTLIB += wayland-cursor wayland-server xcb xcb-composite xcb-cursor
+WANTLIB += xcb-damage xcb-glx xcb-icccm xcb-keysyms xcb-randr
+WANTLIB += xcb-render xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
 WANTLIB += xcb-xkb xkbcommon xkbcommon-x11
 
 MODKDE_TRANSLATIONS =	Yes
