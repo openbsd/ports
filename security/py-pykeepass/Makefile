@@ -1,10 +1,9 @@
 COMMENT=	interact with keepass databases from Python
 
-MODPY_DISTV=	4.1.0.post1
+MODPY_DISTV =	4.1.1.post1
 DISTNAME=	pykeepass-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/.post/pl/}
 CATEGORIES=	security
-REVISION=	0
 
 GH_ACCOUNT=	libkeepass
 GH_PROJECT=	pykeepass
