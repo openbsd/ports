@@ -1,3 +1,4 @@
+https://invent.kde.org/plasma/kwin/-/merge_requests/8601
 Index: src/utils/executable_path_sysctl.cpp
 --- src/utils/executable_path_sysctl.cpp.orig
 +++ src/utils/executable_path_sysctl.cpp
@@ -5,13 +6,13 @@ Index: src/utils/executable_path_sysctl.cpp
  
  QString executablePathFromPid(pid_t pid)
  {
-+    /*
++#if !defined(__OpenBSD__)
      const int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, static_cast<int>(pid)};
      char buf[MAXPATHLEN];
      size_t cb = sizeof(buf);
      if (sysctl(mib, 4, buf, &cb, nullptr, 0) == 0) {
          return QString::fromLocal8Bit(realpath(buf, nullptr));
      }
-+    */
++#endif
      return QString();
  }

@@ -1,5 +1,6 @@
 COMMENT =		Wayland window manager for KDE Plasma Desktops
 DISTNAME =		kwin-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -95,7 +96,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/qt6/qtsensors \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/

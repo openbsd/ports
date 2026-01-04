@@ -1,0 +1,14 @@
+https://invent.kde.org/plasma/kwin/-/merge_requests/8601
+Index: src/core/session.cpp
+--- src/core/session.cpp.orig
++++ src/core/session.cpp
+@@ -17,7 +17,9 @@ static const struct
+     Session::Type type;
+     std::function<std::unique_ptr<Session>()> createFunc;
+ } s_availableSessions[] = {
++#if defined(Q_OS_LINUX)
+     {Session::Type::Logind, &LogindSession::create},
++#endif
+     {Session::Type::ConsoleKit, &ConsoleKitSession::create},
+     {Session::Type::Noop, &NoopSession::create},
+ };

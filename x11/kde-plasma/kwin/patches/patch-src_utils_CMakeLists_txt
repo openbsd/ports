@@ -1,3 +1,4 @@
+https://invent.kde.org/plasma/kwin/-/merge_requests/8601
 Index: src/utils/CMakeLists.txt
 --- src/utils/CMakeLists.txt.orig
 +++ src/utils/CMakeLists.txt
