@@ -216,6 +216,7 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1298.co
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1483a.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1483b.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1483c.conf
+lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-1596.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-291a.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-550.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/tests/fixtures/issue-565.conf
