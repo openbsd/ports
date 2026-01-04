@@ -1,10 +1,9 @@
 COMMENT =	source of XYZ tiles providers
 
-MODPY_DISTV =	2024.9.0
+MODPY_DISTV =	2025.11.0
 
 DISTNAME =	xyzservices-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	geo devel
 
