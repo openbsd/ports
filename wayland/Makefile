@@ -22,6 +22,7 @@
      SUBDIR += swayimg
      SUBDIR += swaylock
      SUBDIR += wayback
+     SUBDIR += waybar
      SUBDIR += wayfire
      SUBDIR += wayland
      SUBDIR += wayland-protocols
