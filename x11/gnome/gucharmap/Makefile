@@ -2,7 +2,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 # XXX keep in sync major with textproc/unicode/ucd
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		17.0.0
+GNOME_VERSION=		17.0.1
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0
 
