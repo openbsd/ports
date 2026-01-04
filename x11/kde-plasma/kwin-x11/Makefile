@@ -1,6 +1,6 @@
 COMMENT =		X11 window manager for KDE Plasma Desktops
 DISTNAME =		kwin-x11-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  kcmkwincommon-x11         0.0 # 0.0
 SHARED_LIBS +=  kwin-x11                  0.0 # 0.0

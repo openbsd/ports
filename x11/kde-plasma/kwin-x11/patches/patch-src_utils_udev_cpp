@@ -1,0 +1,13 @@
+https://invent.kde.org/plasma/kwin/-/merge_requests/8601
+Index: src/utils/udev.cpp
+--- src/utils/udev.cpp.orig
++++ src/utils/udev.cpp
+@@ -115,7 +115,7 @@ std::vector<std::unique_ptr<UdevDevice>> Udev::listGPU
+     if (!m_udev) {
+         return {};
+     }
+-#if defined(Q_OS_FREEBSD)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+     std::vector<std::unique_ptr<UdevDevice>> r;
+     r.push_back(deviceFromSyspath("/dev/dri/card0"));
+     return r;
