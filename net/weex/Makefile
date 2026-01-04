@@ -1,9 +1,8 @@
 COMMENT=		noninteractive FTP/FTPS client for updating web pages
 
-VERSION=		2.8.3
+VERSION =		2.8.4
 DISTNAME=		weex-${VERSION}
 CATEGORIES=		net
-REVISION=		0
 
 HOMEPAGE=		https://weex.sourceforge.net
 
