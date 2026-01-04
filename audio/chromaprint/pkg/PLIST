@@ -1,4 +1,9 @@
 @bin bin/fpcalc
 include/chromaprint.h
+lib/cmake/Chromaprint/
+lib/cmake/Chromaprint/ChromaprintConfig.cmake
+lib/cmake/Chromaprint/ChromaprintConfigVersion.cmake
+lib/cmake/Chromaprint/ChromaprintTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Chromaprint/ChromaprintTargets.cmake
 @lib lib/libchromaprint.so.${LIBchromaprint_VERSION}
 lib/pkgconfig/libchromaprint.pc
