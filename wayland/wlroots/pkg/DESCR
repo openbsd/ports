@@ -14,7 +14,7 @@ anyway.
    portable extensions across many compositors.
 
  * wlroots provides several powerful, standalone, and optional tools
-   that implement components common to many compo53sitors, such as the
+   that implement components common to many compositors, such as the
    arrangement of outputs in physical space.
 
  * wlroots provides an Xwayland abstraction that allows you to have
@@ -26,7 +26,7 @@ anyway.
    way when your needs demand custom rendering code.
 
 wlroots implements a huge variety of Wayland compositor features and
-implementsthem right, so you can focus on the features that make your
+implements them right, so you can focus on the features that make your
 compositor unique. By using wlroots, you get high performance,
 excellent hardware compatibility, broad support for many wayland
 interfaces, and comfortable development tools - or any subset of these
