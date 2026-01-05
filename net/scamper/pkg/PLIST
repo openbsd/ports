@@ -46,6 +46,7 @@ include/scamper_http.h
 include/scamper_icmpext.h
 include/scamper_list.h
 include/scamper_neighbourdisc.h
+include/scamper_owamp.h
 include/scamper_ping.h
 include/scamper_sniff.h
 include/scamper_sting.h
