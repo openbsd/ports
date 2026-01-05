@@ -1,13 +1,13 @@
 COMMENT=		humanist sans-serif font family
 
-GNOME_VERSION=		0.310
+GNOME_VERSION=		0.311
 GNOME_PROJECT=		cantarell-fonts
 
-# XXX https://cantarell.gnome.org/releases/cantarell-fonts-0.310.tar.xz does not
-# contain the prebuilt assets 
+# XXX https://cantarell.gnome.org/releases/cantarell-fonts-0.311.tar.xz does not
+# contain the prebuilt fonts
 DISTFILES=		download
 DIST_SUBDIR=		${DISTNAME}
-SITES=			https://gitlab.gnome.org/GNOME/cantarell-fonts/-/package_files/1260/
+SITES=			https://gitlab.gnome.org/GNOME/cantarell-fonts/-/package_files/1276/
 EXTRACT_CASES +=	*) xz -T${MAKE_JOBS} -d <${FULLDISTDIR}/$$archive | ${TAR} -xf - -- ${EXTRACT_FILES};;
 
 CATEGORIES=		fonts x11
