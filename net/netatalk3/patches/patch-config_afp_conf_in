@@ -1,7 +1,7 @@
 Index: config/afp.conf.in
 --- config/afp.conf.in.orig
 +++ config/afp.conf.in
-@@ -5,6 +5,15 @@
+@@ -7,6 +7,15 @@
  [Global]
  ; Global server settings
  
@@ -17,7 +17,7 @@ Index: config/afp.conf.in
  [Homes]
  basedir regex = @homedir@
  
-@@ -15,4 +24,5 @@ basedir regex = @homedir@
+@@ -17,4 +26,5 @@ basedir regex = @homedir@
  ; [my backup]
  ; path = /path/to/backup
  ; time machine = yes
