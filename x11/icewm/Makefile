@@ -1,12 +1,11 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		3.9.0
+V=		4.0.0
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
-REVISION=	0
 
 # https://github.com/ice-wm/icewm
 HOMEPAGE=	https://ice-wm.org/
@@ -17,14 +16,14 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += FLAC ICE Imlib2 SM X11 X11-xcb XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xft Xinerama Xrandr
-WANTLIB += Xrender ao c cairo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 harfbuzz iconv intl jpeg lzma m mp3lame mpg123
-WANTLIB += ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
-WANTLIB += pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += Xrender ao c cairo dav1d expat ffi fontconfig freetype
+WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl jpeg m mp3lame
+WANTLIB += mpg123 ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre2-8 pixman-1 png rsvg-2 sndfile vorbis vorbisenc
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 SITES=		https://github.com/ice-wm/icewm/releases/download/${V}/
 
