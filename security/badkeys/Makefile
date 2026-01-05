@@ -1,7 +1,7 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
 # standalone; intentionally no py- prefix
-MODPY_DISTV=	0.0.15
+MODPY_DISTV=	0.0.16
 DISTNAME=	badkeys-${MODPY_DISTV}
 
 CATEGORIES=	security
