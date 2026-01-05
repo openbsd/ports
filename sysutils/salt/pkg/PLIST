@@ -5184,7 +5184,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.py
 @man man/man1/salt-syndic.1
 @man man/man1/salt.1
 @man man/man1/spm.1
-@man man/man7/salt.7
 share/examples/login.conf.d/salt_master
 @sample ${SYSCONFDIR}/login.conf.d/salt_master
 share/examples/salt/
