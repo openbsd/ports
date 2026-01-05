@@ -4,7 +4,7 @@ COMMENT=	Bootloader for Apple Silicon
 
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	m1n1
-GH_TAGNAME=	v1.4.17
+GH_TAGNAME=	v1.5.2
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/AsahiLinux/m1n1

@@ -1,8 +1,9 @@
 Index: data/makelogo.sh
 --- data/makelogo.sh.orig
 +++ data/makelogo.sh
-@@ -1,3 +1,3 @@
+@@ -1,4 +1,4 @@
 -#!/usr/bin/env sh
 +#!/bin/sh
+ convert bootlogo_48.png -background black -flatten -depth 8 rgba:bootlogo_48.bin
  convert bootlogo_128.png -background black -flatten -depth 8 rgba:bootlogo_128.bin
  convert bootlogo_256.png -background black -flatten -depth 8 rgba:bootlogo_256.bin

@@ -1,0 +1,12 @@
+Index: src/uart.c
+--- src/uart.c.orig
++++ src/uart.c
+@@ -87,7 +87,7 @@ void uart_write(const void *buf, size_t count)
+     const u8 *p = buf;
+ 
+     while (count--)
+-        uart_putbyte(*p++);
++        uart_putchar(*p++);
+ }
+ 
+ size_t uart_read(void *buf, size_t count)
