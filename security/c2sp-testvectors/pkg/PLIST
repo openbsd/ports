@@ -360,4 +360,6 @@ share/c2sp-testvectors/jq255/test-jq255s.json
 share/c2sp-testvectors/keygen/
 share/c2sp-testvectors/keygen/README.md
 share/c2sp-testvectors/keygen/rsa.bench.2048.txt
+share/c2sp-testvectors/keygen/rsa.bench.3072.txt
+share/c2sp-testvectors/keygen/rsa.bench.4096.txt
 share/c2sp-testvectors/keygen/rsa.bench.py
