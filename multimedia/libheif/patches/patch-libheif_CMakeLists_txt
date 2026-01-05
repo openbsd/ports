@@ -3,7 +3,7 @@ gcc8: undefined reference to `std::filesystem::__cxx11::path::_M_split_cmpts()'
 Index: libheif/CMakeLists.txt
 --- libheif/CMakeLists.txt.orig
 +++ libheif/CMakeLists.txt
-@@ -180,6 +180,8 @@ target_compile_definitions(heif
+@@ -243,6 +243,8 @@ target_compile_definitions(heif
          LIBHEIF_EXPORTS
          HAVE_VISIBILITY)
  
