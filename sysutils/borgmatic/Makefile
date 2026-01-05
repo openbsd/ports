@@ -1,6 +1,6 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_DISTV=	2.0.12
+MODPY_DISTV=	2.0.13
 DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -30,7 +30,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODPY_PYTEST_ARGS= --ignore tests/unit/hooks/test_apprise.py
 TEST_DEPENDS=	devel/py-flexmock \
-		devel/py-test-cov
+		devel/py-test-cov \
+		net/py-apprise
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/borgmatic/
