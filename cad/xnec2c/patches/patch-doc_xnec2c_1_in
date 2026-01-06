@@ -1,0 +1,14 @@
+Point the user to the correct location of the html documentation.
+
+Index: doc/xnec2c.1.in
+--- doc/xnec2c.1.in.orig
++++ doc/xnec2c.1.in
+@@ -57,7 +57,7 @@ is maintained as an html document.  If the
+ program is properly installed at your site, a command like
+ .PD 1
+ .IP
+-.B firefox /usr/share/doc/xnec2c/xnec2c.html
++.B firefox /usr/local/share/doc/xnec2c/xnec2c.html
+ .PP
+ should give you access to the complete manual.
+ 

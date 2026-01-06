@@ -1,0 +1,17 @@
+xnec2c is a high-performance multi-threaded electromagnetic simulation
+package to model antenna near- and far-field radiation patterns for
+Linux and UNIX operating systems. The original FORTRAN version of NEC2
+was ported to C by Neoklis Kyriazis, 5B4AZ and released as nec2c. The
+same author wrote xnec2c, a graphical interface for ease of use with
+many more features.
+
+xnec2c has a built-in editor for NEC2 input files which can be used to
+edit geometry or command "card" data, as well as a set of visual pop-up
+editor windows that open when appropriate buttons are clicked or when a
+selected row is right-clicked with the mouse. These editors allow
+easier, more convenient entry and editing of individual rows, with no
+need for detailed knowledge of NEC2 "card" formats.
+
+xnec2c can simulate and visualise 3D radiation plots, near-field plots,
+and frequency data plots. It comes with an extensive set of example
+files, containing NEC2 models for a variety of antennas.
