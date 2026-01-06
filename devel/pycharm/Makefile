@@ -1,6 +1,7 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
 V=			2025.2.2
+REVISION=		0
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -15,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://download.jetbrains.com/python/
 
 MODULES=		java
-MODJAVA_VER=		21
+MODJAVA_VER=		21+
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
