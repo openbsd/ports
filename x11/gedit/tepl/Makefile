@@ -1,8 +1,8 @@
 COMMENT=		Text Editor Product Line
 
-DIST_TUPLE=		gnome World/gedit libgedit-tepl 6.13.0 .
+DIST_TUPLE=		gnome World/gedit libgedit-tepl 6.14.0 .
 
-SHARED_LIBS += gedit-tepl-6              0.1 # 3
+SHARED_LIBS += gedit-tepl-6              0.1 # 4
 
 CATEGORIES=		devel
 
