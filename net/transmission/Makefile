@@ -2,8 +2,8 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		4.1.0beta4
-DISTNAME=	transmission-4.1.0-beta.4+rc92b42de9c
+VER=		4.1.0beta5
+DISTNAME=	transmission-4.1.0-beta.5+r11d3fc6f5a
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
@@ -19,7 +19,7 @@ DEBUG_PACKAGES=${BUILD_PACKAGES}
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://github.com/transmission/transmission/releases/download/4.1.0-beta.4/
+SITES=	https://github.com/transmission/transmission/releases/download/4.1.0-beta.5/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
