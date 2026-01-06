@@ -1,7 +1,7 @@
 COMMENT=		GNOME calendar
 
 GNOME_PROJECT=		gnome-calendar
-GNOME_VERSION=		49.0.1
+GNOME_VERSION=		49.1
 
 HOMEPAGE=		https://apps.gnome.org/Calendar/
 
