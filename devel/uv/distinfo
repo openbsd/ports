@@ -21,7 +21,7 @@ SHA256 (cargo/assert_cmd-2.0.17.tar.gz) = K9OJpLKXCgEoLuRVKUkTwKQ3JNrtzRokw+sOwc
 SHA256 (cargo/assert_fs-1.1.3.tar.gz) = plL2yx9RaIb8/uXnpcB4ua3mLPy4iVJO/lpk1oLdJ6k=
 SHA256 (cargo/astral-pubgrub-0.3.3.tar.gz) = 1ssVtPUJajobQf3Cc2ocM9h8ePNNPB7CtmnnZu2t1Vk=
 SHA256 (cargo/astral-reqwest-middleware-0.4.2.tar.gz) = Y40C4krrkvlTeJfNH/guK8mP2ayVdaUD4nuwfN9k1Nc=
-SHA256 (cargo/astral-reqwest-retry-0.7.0.tar.gz) = y3VJvQD2L3Py5+dvP3fM2rsxhz9PAvdY7Yitc51SKGc=
+SHA256 (cargo/astral-reqwest-retry-0.8.0.tar.gz) = eKshD2zfj9MlTUfl7ifOYO00pCj/cbSulHexyEtJSYw=
 SHA256 (cargo/astral-tl-0.7.11.tar.gz) = 2Qkz/7D5fi/C4N4h2p0/IFl7gEAS0ZmEOm/nwoENKPM=
 SHA256 (cargo/astral-tokio-tar-0.5.6.tar.gz) = 7BeaBsF2mx5C4eLL50x9zbPWODyDhFTQY+qsW7t+u+U=
 SHA256 (cargo/astral-version-ranges-0.1.3.tar.gz) = 563CMIpWb6ud4CvA4F0YxaIcsOeTaE5PZMjrlWlpsHQ=
@@ -100,6 +100,7 @@ SHA256 (cargo/crc-3.3.0.tar.gz) = lxDTs3OcLjSetE/oSK0LfIyx5CvYfuSTcd8vesrz5nU=
 SHA256 (cargo/crc-catalog-2.4.0.tar.gz) = GdN0J2tA+4u97pWu98f6a1MW7HZFEOtkuN0OLtDX5/U=
 SHA256 (cargo/crc32fast-1.5.0.tar.gz) = lIHByQy/KslT8HyNSliqOUXEJbcYXJFU1npl5CMNpRE=
 SHA256 (cargo/criterion-plot-0.5.0.tar.gz) = a1CCY0J4alGoni2joo8cMrBuOHIBvC0ZeR9iLGc3BrE=
+SHA256 (cargo/crossbeam-channel-0.5.15.tar.gz) = grj4+GizaWf5YGeQ0ZA1cN6c6vhwp7+fu9MBbWNqLLI=
 SHA256 (cargo/crossbeam-deque-0.8.6.tar.gz) = ndERt7f31VtywKauNhZg7lhTya9z9ww8LvaFi5UOLlE=
 SHA256 (cargo/crossbeam-epoch-0.9.18.tar.gz) = W4KsSjwsqcNGCWTwIOFALt1XU0EddzeqOcNxStG1Qg4=
 SHA256 (cargo/crossbeam-utils-0.8.21.tar.gz) = 0KXEAN8oNLgKTDMns6rTpMTNTeBikGOWKwMjVpdQaig=
@@ -122,6 +123,7 @@ SHA256 (cargo/difflib-0.4.0.tar.gz) = YYTjNUMWJDdRXC4rSHFHlON4ReyYUXEZFO7J0wj26+
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
 SHA256 (cargo/dirs-6.0.0.tar.gz) = w+iqlNdRQSKEgClafQ5/62ILGlrZ8SvEC+YkEeOMzk4=
 SHA256 (cargo/dirs-sys-0.5.0.tar.gz) = 4BozZtJ+6YkAIkUu5hsrY6Z+bxP1iQC2Uf9WZfC7H6s=
+SHA256 (cargo/diskus-0.9.0.tar.gz) = 7Ac3nAFveOfdzZU2Y7ntF5KP84SSjTTYJO1+RjvT2Qg=
 SHA256 (cargo/dispatch2-0.3.0.tar.gz) = iaCfIqbGBpoYRw65LSKYrPJUY/FCVtJHeOEjDXiaKuw=
 SHA256 (cargo/displaydoc-0.2.5.tar.gz) = lzacu8BBvDZpSbx000ZY1s2lYhA5cxxjEFIYkqOiCuA=
 SHA256 (cargo/dlv-list-0.5.2.tar.gz) = RCA59RR0gLoxBnywCtoa2uaJICjkDkX8Xee3323MG18=
@@ -352,8 +354,8 @@ SHA256 (cargo/rand_chacha-0.3.1.tar.gz) = 5sEKY6D6MiUr5J0h53CdTUuvjSMcLbzh6qgUG5
 SHA256 (cargo/rand_chacha-0.9.0.tar.gz) = 0wIrXx32Dybh/93Wxm6KoV3jgq5js6DBv8Dk0+PzJcs=
 SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
 SHA256 (cargo/rand_core-0.9.3.tar.gz) = mdmhOYLc8hAFeop4VysiF7Znw76svzoNi0VPb4KDfTg=
-SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
-SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
+SHA256 (cargo/rayon-1.11.0.tar.gz) = No8B0AW/j9mxIG+2+mU+bEqBzrFGZAa4F5LYfFZ3pY8=
+SHA256 (cargo/rayon-core-1.13.0.tar.gz) = IuGLDwBi0w1CMLLoX/d/3+Qyb+sFS5eDo0YNhDXIq5E=
 SHA256 (cargo/rcgen-0.14.5.tar.gz) = X65DDGso8a1gEnTni33/oFRt4Lc7TNMvRnI8DCoW96U=
 SHA256 (cargo/rctree-0.5.0.tar.gz) = O0LifveMNdOZhAPB0m8+/Z4TXT5RIbCkhFzFzCdUf08=
 SHA256 (cargo/redox_syscall-0.5.15.tar.gz) = forw3eCUAGAR5qdA1IeTGUOUiYE70LzcfYIb6u7/SOw=
@@ -373,7 +375,7 @@ SHA256 (cargo/reqsign-file-read-tokio-2.0.1.tar.gz) = Zp6mYDYmaprDcdLmPMfTReaZlN
 SHA256 (cargo/reqsign-http-send-reqwest-2.0.1.tar.gz) = RhhrznaWdPkgCtAa9vLKQt4+gZ3cAC//HtrhNb+2zZw=
 SHA256 (cargo/reqwest-0.12.22.tar.gz) = y8kxk35so6BuO2wKp4QYSbFgqQNR1qtGeoubmVl2dTE=
 SHA256 (cargo/resvg-0.29.0.tar.gz) = doiCGcCIHiKwzqsG/dz+gxY82BZCvWDHhCOH+clopy4=
-SHA256 (cargo/retry-policies-0.4.0.tar.gz) = WHVHHmyrKHG8FQ7LjHJ9tRE8kzjMM1TcXuNCW2qkChw=
+SHA256 (cargo/retry-policies-0.5.1.tar.gz) = RqS9YCffZ2vLdS03JNsOo8DF/B3QN2/sUax9yvnMab4=
 SHA256 (cargo/rgb-0.8.52.tar.gz) = DGqITSmYNSu02vAYNYmuyIPxam2h9N3oTY4umlQJoc4=
 SHA256 (cargo/ring-0.17.14.tar.gz) = pGiebCKU2B6I3GJhx2i2O8T824Ur5tE1JJixFPYTg7c=
 SHA256 (cargo/rkyv-0.8.12.tar.gz) = NaZAsm8AdxOBjpqbZdNNoc9YU4IHsFKRaoPYDkPz/6Q=
@@ -438,7 +440,7 @@ SHA256 (cargo/smawk-0.3.2.tar.gz) = t8OIwbXpN1bQx0CWXEHogi+GZiHUGsvfYzamoWj4hAw=
 SHA256 (cargo/socket2-0.5.10.tar.gz) = 4iN2q+01DXPdHNEZtX/8ytlbTlhafNpD4oYkXOI8Bng=
 SHA256 (cargo/socket2-0.6.0.tar.gz) = IzUEr0ZAdPnQZte1QWxfm4lKWGKmUG4wb3uBbN1vGAc=
 SHA256 (cargo/spdx-0.10.9.tar.gz) = w+F+iAuvrrNip7dR7Ea9xbYURaGI+A4GBuaBZ81UD6M=
-SHA256 (cargo/spdx-0.12.0.tar.gz) = Qc+HwO//wVi53eTW4FZ6Q+Q4OtxMlJ5oeiA5cy2y8jo=
+SHA256 (cargo/spdx-0.13.2.tar.gz) = NRB7HIGPTpy55sRETKVgugO07hKI3OzG14MMICOnYJ4=
 SHA256 (cargo/stable_deref_trait-1.2.0.tar.gz) = qPEScpUS+ORC2B+VqKfd8rfGuKGm9QmpWGQUKzDKstM=
 SHA256 (cargo/static_assertions-1.1.0.tar.gz) = ouuTSbZESzJocuFA6xz158UiFU1p56D/sPuBwGs3VD8=
 SHA256 (cargo/statrs-0.18.0.tar.gz) = Kj/nwoxlEudmsIdDNdszyUrXuPkFQiiuHCq9R859M14=
@@ -645,7 +647,7 @@ SHA256 (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 64EYPd2X0MdM7fHVDYXI0Iwbi2juh
 SHA256 (cargo/zvariant-5.6.0.tar.gz) = 2Rs2gLszkhar2EcUFytROKTtrGd+ZB7xfh2MsbPKbm8=
 SHA256 (cargo/zvariant_derive-5.6.0.tar.gz) = OoxoUBvkWajb//vl15Ks3SO0lZlA/Id4X7ATsy7bwgg=
 SHA256 (cargo/zvariant_utils-3.2.0.tar.gz) = 4W7f7kPl17VTt3hy2ZvDav3adcIjynrV4/vs2Cyl/DQ=
-SHA256 (uv-0.9.17.tar.gz) = 6pSNxxQcVseY/2A/cXkzUZF/nHdzAtQohAhIUVmZ+yk=
+SHA256 (uv-0.9.21.tar.gz) = 1XTIcXsHnKbwBlBtUzj9SF3GJta9D+KbQoMoJjToMic=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -669,7 +671,7 @@ SIZE (cargo/assert_cmd-2.0.17.tar.gz) = 26914
 SIZE (cargo/assert_fs-1.1.3.tar.gz) = 20176
 SIZE (cargo/astral-pubgrub-0.3.3.tar.gz) = 71621
 SIZE (cargo/astral-reqwest-middleware-0.4.2.tar.gz) = 27676
-SIZE (cargo/astral-reqwest-retry-0.7.0.tar.gz) = 27224
+SIZE (cargo/astral-reqwest-retry-0.8.0.tar.gz) = 26557
 SIZE (cargo/astral-tl-0.7.11.tar.gz) = 44281
 SIZE (cargo/astral-tokio-tar-0.5.6.tar.gz) = 64648
 SIZE (cargo/astral-version-ranges-0.1.3.tar.gz) = 23615
@@ -748,6 +750,7 @@ SIZE (cargo/crc-3.3.0.tar.gz) = 13905
 SIZE (cargo/crc-catalog-2.4.0.tar.gz) = 10155
 SIZE (cargo/crc32fast-1.5.0.tar.gz) = 40723
 SIZE (cargo/criterion-plot-0.5.0.tar.gz) = 22706
+SIZE (cargo/crossbeam-channel-0.5.15.tar.gz) = 92716
 SIZE (cargo/crossbeam-deque-0.8.6.tar.gz) = 22471
 SIZE (cargo/crossbeam-epoch-0.9.18.tar.gz) = 46875
 SIZE (cargo/crossbeam-utils-0.8.21.tar.gz) = 42691
@@ -770,6 +773,7 @@ SIZE (cargo/difflib-0.4.0.tar.gz) = 7638
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
 SIZE (cargo/dirs-6.0.0.tar.gz) = 14190
 SIZE (cargo/dirs-sys-0.5.0.tar.gz) = 10157
+SIZE (cargo/diskus-0.9.0.tar.gz) = 20814
 SIZE (cargo/dispatch2-0.3.0.tar.gz) = 54606
 SIZE (cargo/displaydoc-0.2.5.tar.gz) = 24219
 SIZE (cargo/dlv-list-0.5.2.tar.gz) = 22373
@@ -1000,8 +1004,8 @@ SIZE (cargo/rand_chacha-0.3.1.tar.gz) = 15251
 SIZE (cargo/rand_chacha-0.9.0.tar.gz) = 18258
 SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
 SIZE (cargo/rand_core-0.9.3.tar.gz) = 24543
-SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
-SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
+SIZE (cargo/rayon-1.11.0.tar.gz) = 182470
+SIZE (cargo/rayon-core-1.13.0.tar.gz) = 73151
 SIZE (cargo/rcgen-0.14.5.tar.gz) = 63824
 SIZE (cargo/rctree-0.5.0.tar.gz) = 8298
 SIZE (cargo/redox_syscall-0.5.15.tar.gz) = 29646
@@ -1021,7 +1025,7 @@ SIZE (cargo/reqsign-file-read-tokio-2.0.1.tar.gz) = 11019
 SIZE (cargo/reqsign-http-send-reqwest-2.0.1.tar.gz) = 19746
 SIZE (cargo/reqwest-0.12.22.tar.gz) = 200283
 SIZE (cargo/resvg-0.29.0.tar.gz) = 94880
-SIZE (cargo/retry-policies-0.4.0.tar.gz) = 12127
+SIZE (cargo/retry-policies-0.5.1.tar.gz) = 14368
 SIZE (cargo/rgb-0.8.52.tar.gz) = 22449
 SIZE (cargo/ring-0.17.14.tar.gz) = 1502610
 SIZE (cargo/rkyv-0.8.12.tar.gz) = 169611
@@ -1086,7 +1090,7 @@ SIZE (cargo/smawk-0.3.2.tar.gz) = 13831
 SIZE (cargo/socket2-0.5.10.tar.gz) = 58169
 SIZE (cargo/socket2-0.6.0.tar.gz) = 57974
 SIZE (cargo/spdx-0.10.9.tar.gz) = 1050181
-SIZE (cargo/spdx-0.12.0.tar.gz) = 1051034
+SIZE (cargo/spdx-0.13.2.tar.gz) = 3022393
 SIZE (cargo/stable_deref_trait-1.2.0.tar.gz) = 8054
 SIZE (cargo/static_assertions-1.1.0.tar.gz) = 18480
 SIZE (cargo/statrs-0.18.0.tar.gz) = 156842
@@ -1293,4 +1297,4 @@ SIZE (cargo/zstd-sys-2.0.15+zstd.1.5.7.tar.gz) = 774847
 SIZE (cargo/zvariant-5.6.0.tar.gz) = 90550
 SIZE (cargo/zvariant_derive-5.6.0.tar.gz) = 14278
 SIZE (cargo/zvariant_utils-3.2.0.tar.gz) = 14779
-SIZE (uv-0.9.17.tar.gz) = 4774663
+SIZE (uv-0.9.21.tar.gz) = 4799580
