@@ -392,6 +392,10 @@
      SUBDIR += p5-libwww
      SUBDIR += p5-pQuery
      SUBDIR += pear
+     SUBDIR += pecl-apcu,php82
+     SUBDIR += pecl-apcu,php83
+     SUBDIR += pecl-apcu,php84
+     SUBDIR += pecl-apcu,php85
      SUBDIR += pecl-memcached,php82
      SUBDIR += pecl-memcached,php83
      SUBDIR += pecl-memcached,php84
