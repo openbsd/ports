@@ -2,8 +2,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20251211
-REVISION=	0
+GH_TAGNAME=	20260105
 
 DIST_TUPLE=	github neomutt neomutt-test-files \
 		    7404f4423b11cd5da2d123b3636c7a310bbbed9f neomutt-test-files
