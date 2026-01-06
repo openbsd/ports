@@ -1,6 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
 V=			2025.2.6
+REVISION=		0
 DIST_VER=		252.28539.13
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
@@ -16,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 SITES=			https://download.jetbrains.com/idea/
 
 MODULES=		java
-MODJAVA_VER=		21
+MODJAVA_VER=		21+
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
