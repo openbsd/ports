@@ -1,6 +1,6 @@
 COMMENT=	Python last.fm library
 
-MODPY_DISTV=	7.0.0
+MODPY_DISTV =	7.0.1
 DISTNAME=	pylast-${MODPY_DISTV}
 PKGNAME=	py-last-${MODPY_DISTV}
 CATEGORIES=	audio net
