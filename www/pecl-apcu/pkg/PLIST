@@ -1,0 +1,18 @@
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
+@so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_api.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_arginfo.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_cache.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_globals.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_iterator.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_lock.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_mutex.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_serializer.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_sma.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/apc_stack.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_apc.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_apc_legacy_arginfo.h
