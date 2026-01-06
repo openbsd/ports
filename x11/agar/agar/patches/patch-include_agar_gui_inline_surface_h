@@ -1,0 +1,15 @@
+inline_surface.h: In function 'ag_surface_get32_at':
+inline_surface.h:424: error: expected ')' before ';' token
+
+Index: include/agar/gui/inline_surface.h
+--- include/agar/gui/inline_surface.h.orig
++++ include/agar/gui/inline_surface.h
+@@ -415,7 +415,7 @@ ag_surface_get32_at(const AG_Surface *S, const Uint8 *
+ 			AG_Color c;
+ 
+ # if AG_BYTEORDER == AG_BIG_ENDIAN
+-			px = (((Uint64)p[0] << 32) |
++			px =  ((Uint64)p[0] << 32) |
+ 			      ((Uint64)p[1] << 24) |
+ 			      ((Uint64)p[2] << 16) |
+ 			      ((Uint64)p[3] <<  8) |
