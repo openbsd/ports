@@ -4,7 +4,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 V =		1.9.0
 JV =		1
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -19,8 +19,6 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
-
-CFLAGS_base-clang =	-Wno-error=int-conversion
 
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 smime3
 WANTLIB += nssutil3 ssl ssl3 z
@@ -43,7 +41,7 @@ WRKSRC =		${WRKDIST}/src
 
 COPTFLAGS :=		${CFLAGS}
 CFLAGS +=		-c -DHAVE_NSS `pkg-config --cflags nss` \
-			-DJOHN_SYSTEMWIDE=1 \
+			-DJOHN_SYSTEMWIDE=1 -D_BSD_SOURCE=1 \
 			-DJOHN_SYSTEMWIDE_HOME='\"${SYSCONFDIR}/john\"'
 LDFLAGS +=		-lssl -lcrypto -lm -lz `pkg-config --libs nss`
 
