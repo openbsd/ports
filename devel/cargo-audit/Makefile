@@ -3,12 +3,11 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
-V =			0.21.2
+V =			0.22.0
 CRATE =			cargo-audit
-PKGNAME =		${CRATE}-${V}
-REVISION =		0
+DISTNAME =		${CRATE}-${V}
 
-DISTFILES =		${PKGNAME}${EXTRACT_SUFX}{${CRATE}/${V}/download}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${CRATE}/${V}/download}
 
 SITES =			https://crates.io/api/v1/crates/
 
@@ -28,7 +27,7 @@ MODCARGO_CRATES_UPDATE =	cc libc
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-WRKSRC =		${WRKDIR}/${PKGNAME}
+#WRKSRC =		${WRKDIR}/${PKGNAME}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/modcargo-crates/canonical-path-2.0.2/src/lib.rs

@@ -1,6 +1,6 @@
-Index: cargo-audit-0.21.2/modcargo-crates/canonical-path-2.0.2/src/lib.rs
---- cargo-audit-0.21.2/modcargo-crates/canonical-path-2.0.2/src/lib.rs.orig
-+++ cargo-audit-0.21.2/modcargo-crates/canonical-path-2.0.2/src/lib.rs
+Index: modcargo-crates/canonical-path-2.0.2/src/lib.rs
+--- modcargo-crates/canonical-path-2.0.2/src/lib.rs.orig
++++ modcargo-crates/canonical-path-2.0.2/src/lib.rs
 @@ -327,7 +327,13 @@ impl ToOwned for CanonicalPath {
  /// Returns the full, canonicalized filesystem path of the current running
  /// executable.
