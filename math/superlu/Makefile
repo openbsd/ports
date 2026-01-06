@@ -5,10 +5,9 @@ COMMENT =	library for solving sparse linear equation systems
 
 GH_ACCOUNT =	xiaoyeli
 GH_PROJECT =	superlu
-GH_TAGNAME =	v6.0.1
-REVISION =	1
+GH_TAGNAME =	v7.0.1
 
-SHARED_LIBS +=	superlu	1.0	# 6.0.0
+SHARED_LIBS +=	superlu	2.0	# 6.0.0
 
 CATEGORIES =	math
 
