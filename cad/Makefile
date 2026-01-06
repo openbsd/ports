@@ -35,6 +35,7 @@
      SUBDIR += solvespace
      SUBDIR += tkgate
      SUBDIR += xcircuit
+     SUBDIR += xnec2c
      SUBDIR += xnecview
      SUBDIR += xschem
      SUBDIR += xtrkcad
