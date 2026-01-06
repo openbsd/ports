@@ -3,7 +3,7 @@ https://gitlab.gnome.org/GNOME/gtksourceview/-/commit/6c1e9f06f892407f667da6bd0c
 Index: gtksourceview/gtksourcebufferoutputstream.c
 --- gtksourceview/gtksourcebufferoutputstream.c.orig
 +++ gtksourceview/gtksourcebufferoutputstream.c
-@@ -656,7 +656,8 @@ validate_and_insert (GtkSourceBufferOutputStream *stre
+@@ -548,7 +548,8 @@ validate_and_insert (GtkSourceBufferOutputStream *stre
  
  			apply_error_tag (stream);
  

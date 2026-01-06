@@ -4,6 +4,9 @@ include/libgedit-gtksourceview-300/gtksourceview/
 include/libgedit-gtksourceview-300/gtksourceview/completion-providers/
 include/libgedit-gtksourceview-300/gtksourceview/completion-providers/words/
 include/libgedit-gtksourceview-300/gtksourceview/completion-providers/words/gtksourcecompletionwords.h
+include/libgedit-gtksourceview-300/gtksourceview/file-loading-and-saving/
+include/libgedit-gtksourceview-300/gtksourceview/file-loading-and-saving/gtksourceiconv.h
+include/libgedit-gtksourceview-300/gtksourceview/file-loading-and-saving/gtksourceinputstream.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksource-enumtypes.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksource.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourceautocleanups.h
@@ -23,6 +26,7 @@ include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrenderer.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrendererpixbuf.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrenderertext.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourceinit.h
+include/libgedit-gtksourceview-300/gtksourceview/gtksourceiter.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcelanguage.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcelanguagemanager.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcemark.h
@@ -44,6 +48,8 @@ lib/girepository-1.0/GtkSource-300.typelib
 @lib lib/libgedit-gtksourceview-300.so.${LIBgedit-gtksourceview-300_VERSION}
 lib/pkgconfig/libgedit-gtksourceview-300.pc
 share/gir-1.0/GtkSource-300.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libgedit-gtksourceview-300/
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceBuffer.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceCompletion.html
@@ -86,6 +92,7 @@ share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-4.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-8.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-2.html
+share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-6.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-10.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-12.html
@@ -111,15 +118,20 @@ share/gtk-doc/html/libgedit-gtksourceview-300/lang-reference.html
 share/gtk-doc/html/libgedit-gtksourceview-300/lang-tutorial.html
 share/gtk-doc/html/libgedit-gtksourceview-300/left-insensitive.png
 share/gtk-doc/html/libgedit-gtksourceview-300/left.png
+share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300-GtkSourceIconv.html
+share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300-GtkSourceInputStream.html
+share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300-GtkSourceIter.html
 share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300-GtkSourceUtils.html
 share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300-GtkSourceView-Initialization-and-Finalization.html
 share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300.devhelp2
+share/gtk-doc/html/libgedit-gtksourceview-300/low-level-file-loading-and-saving.html
 share/gtk-doc/html/libgedit-gtksourceview-300/main-classes.html
 share/gtk-doc/html/libgedit-gtksourceview-300/misc.html
 share/gtk-doc/html/libgedit-gtksourceview-300/object-tree.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-0-to-299-2.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-2-to-299-3.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-3-to-299-4.html
+share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-5-to-299-6.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-3-to-4.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-gtksourceview-4-to-libgedit-gtksourceview-299-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guides.html
