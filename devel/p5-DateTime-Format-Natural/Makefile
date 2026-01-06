@@ -1,11 +1,13 @@
 COMMENT =	parse informal natural language date/time strings
 
-DISTNAME =	DateTime-Format-Natural-1.22
+DISTNAME =	DateTime-Format-Natural-1.23
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		SCHUBIGER
 
 MODULES =		cpan
 
