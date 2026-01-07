@@ -21,8 +21,7 @@ MODPY_PI =	Yes
 MODPY_PYTEST_ARGS =	tests
 MODPY_TEST_LINK_SO =	Yes
 
-BUILD_DEPENDS +=${RUN_DEPENDS} \
-		math/py-oldest-supported-numpy \
+BUILD_DEPENDS =	${RUN_DEPENDS} \
 		math/py-numpy \
 		lang/cython
 

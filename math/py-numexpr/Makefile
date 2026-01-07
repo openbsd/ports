@@ -21,7 +21,6 @@ MODPY_TEST_DIR=	${WRKSRC}/build/lib*
 
 RUN_DEPENDS=	math/py-numpy \
 		sysutils/py-packaging
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		math/py-oldest-supported-numpy
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
+WANTLIB=	netcdf
+
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
@@ -19,15 +21,12 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
-WANTLIB+=	netcdf
-
-BUILD_DEPENDS+=	archivers/blosc \
+BUILD_DEPENDS=	archivers/blosc \
 		archivers/libzip \
 		archivers/snappy \
 		lang/cython \
 		math/hdf5 \
 		math/netcdf \
-		math/py-oldest-supported-numpy \
 		math/py-numpy
 
 RUN_DEPENDS+=	lang/cython \

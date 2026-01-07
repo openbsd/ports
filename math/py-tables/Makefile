@@ -24,16 +24,14 @@ MODPY_PI=	Yes
 WANTLIB=	blosc blosc2 bz2 hdf5 lzo2
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-BUILD_DEPENDS+=	lang/cython \
+BUILD_DEPENDS=	lang/cython \
 		devel/py-typing-extensions \
 		math/py-numpy \
-		math/py-oldest-supported-numpy \
 		sysutils/py-cpuinfo \
 		sysutils/py-packaging
 
-LIB_DEPENDS+=	archivers/lzo2 \
+LIB_DEPENDS=	archivers/lzo2 \
 		archivers/bzip2 \
 		archivers/blosc \
 		archivers/blosc2 \
