@@ -1,6 +1,6 @@
 COMMENT =		fork of prboom+ with a focus on speedrunning
 
-DIST_TUPLE =		github kraflab dsda-doom v0.28.2 .
+DIST_TUPLE =		github kraflab dsda-doom v0.29.4 .
 
 CATEGORIES =		games x11
 MAINTAINER =		Lucas de Sena <lucas@seninha.org>
@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX}
 WANTLIB +=		GL GLU SDL2 SDL2_mixer SDL2_image c fluidsynth m
-WANTLIB +=		mad portmidi pthread ogg vorbis vorbisfile z zip
+WANTLIB +=		mad portmidi pthread sndfile vorbisfile xmp z zip
 
 COMPILER =		base-clang ports-gcc
 
@@ -22,15 +22,12 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		archivers/libzip \
 			audio/fluidsynth \
 			audio/libmad \
+			audio/libsndfile \
 			audio/libvorbis \
+			audio/libxmp \
 			audio/portmidi \
 			devel/sdl2-mixer \
 			devel/sdl2-image
-
-CONFIGURE_ARGS =	-DWITH_DUMB=OFF
-
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
-CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

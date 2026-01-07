@@ -1,0 +1,19 @@
+Ports that provide DOOM data files (WADs), like games/doomdata (with
+shareware game data) and games/freedoom (with free game data), install
+them at /usr/local/share/doom/.
+
+Ports for other DOOM engines, like games/crispy-doom, also expect WADs
+to be there.
+
+Index: prboom2/cmake/DsdaOptions.cmake
+--- prboom2/cmake/DsdaOptions.cmake.orig
++++ prboom2/cmake/DsdaOptions.cmake
+@@ -7,7 +7,7 @@ if(WIN32)
+ else()
+   include(GNUInstallDirs)
+   set(default_bin_dir "${CMAKE_INSTALL_BINDIR}")
+-  set(default_wad_dir "${CMAKE_INSTALL_DATAROOTDIR}/games/doom")
++  set(default_wad_dir "${CMAKE_INSTALL_DATAROOTDIR}/doom")
+   set(default_copyright_dir "${CMAKE_INSTALL_DATAROOTDIR}/doc/${PROJECT_NAME}")
+ endif()
+ 
