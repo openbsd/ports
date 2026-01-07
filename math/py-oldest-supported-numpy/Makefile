@@ -1,9 +1,8 @@
-COMMENT=	pypi meta-package to depend on numpy
+COMMENT=	deprecated pypi meta-package to depend on numpy
 
-MODPY_DISTV=	2022.8.16
+MODPY_DISTV=	2023.12.21
 DISTNAME=	oldest-supported-numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	3
 
 CATEGORIES=	math
 
