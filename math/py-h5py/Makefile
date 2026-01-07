@@ -25,7 +25,6 @@ WANTLIB =	hdf5 hdf5_hl
 MAKE_ENV =	HDF5_DIR=${PREFIX}
 
 BUILD_DEPENDS = lang/cython \
-		math/py-oldest-supported-numpy \
 		math/py-numpy \
 		devel/py-pkgconfig
 

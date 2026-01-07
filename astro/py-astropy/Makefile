@@ -27,7 +27,6 @@ BUILD_DEPENDS=	devel/py-extension-helpers \
 		devel/py-wheel \
 		lang/cython \
 		math/py-numpy \
-		math/py-oldest-supported-numpy \
 		www/py-jinja2
 
 RUN_DEPENDS=	astro/py-astropy-iers-data \

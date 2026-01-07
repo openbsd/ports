@@ -29,7 +29,6 @@ MAKE_ENV=	PYERFA_USE_SYSTEM_LIBERFA=1 \
 		CPPFLAGS=-I${LOCALBASE}/include
 
 BUILD_DEPENDS=	math/py-numpy \
-		math/py-oldest-supported-numpy \
 		sysutils/py-packaging \
 		www/py-jinja2
 RUN_DEPENDS=	math/py-numpy
