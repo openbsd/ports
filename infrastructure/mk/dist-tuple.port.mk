@@ -42,7 +42,12 @@ EXTRACT_SUFX.${_template} ?=		${TEMPLATE_EXTRACT_SUFX}
 TEMPLATE_HOMEPAGE.${_template} ?=	${TEMPLATE_HOMEPAGE}
 HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:${_subst}}
 
-.      if "${_targetdir}" != "."
+.      if "${_targetdir}" != "." && "${_template}" == "codeberg"
+MODDIST-TUPLE_post-extract += \
+	t=${WRKDIST}/${_targetdir}; [[ -d $$t ]] && rmdir $$t \
+	|| mkdir -p `dirname $$t` ; \
+	mv ${WRKDIR}/${_project:T} $$t;
+.      elif "${_targetdir}" != "."
 MODDIST-TUPLE_post-extract += \
 	t=${WRKDIST}/${_targetdir}; [[ -d $$t ]] && rmdir $$t \
 	|| mkdir -p `dirname $$t` ; \
