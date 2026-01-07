@@ -1,6 +1,6 @@
 COMMENT=		GTK+-based electronic waveform viewer
 
-V=			3.3.125
+V =			3.3.126
 DISTNAME=		gtkwave-gtk3-${V}
 PKGNAME=		gtkwave-${V}
 
