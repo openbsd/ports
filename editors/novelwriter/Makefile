@@ -1,5 +1,5 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_DISTV =		2.7.5
+MODPY_DISTV =		2.8.1
 DISTNAME =		novelwriter-${MODPY_DISTV}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
@@ -12,7 +12,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		textproc/py-enchant \
-			textproc/py-lxml \
 			x11/py-qt6
 TEST_DEPENDS =		${RUN_DEPENDS}
 # tests not included in pypi tarball
