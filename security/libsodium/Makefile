@@ -1,23 +1,21 @@
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.20-stable
-WRKDIST=	${WRKDIR}/libsodium-stable
-PKGNAME=	libsodium-1.0.20pl20251231
+DISTNAME=	libsodium-1.0.21
 
-SHARED_LIBS +=  sodium               10.2     # 28.0
+SHARED_LIBS +=  sodium               11.0     # 29.0
 
 CATEGORIES=	security net
 
 HOMEPAGE=	https://github.com/jedisct1/libsodium
+SITES=		https://download.libsodium.org/libsodium/releases/ \
+		https://download.libsodium.org/libsodium/releases/old/
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # ISC
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
-
-SITES=		https://download.libsodium.org/libsodium/releases/ \
-		https://spacehopper.org/mirrors/
-#		https://download.libsodium.org/libsodium/releases/old/
 
 SEPARATE_BUILD=	Yes
 
