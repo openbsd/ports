@@ -46,6 +46,10 @@ BUILD_DEPENDS=	archivers/p7zip \
 		textproc/asciidoc \
 		textproc/asciidoctor \
 		textproc/nlohmann-json
+# XXX ZipIOProvider target is run if libzip is found, and build fails if
+# libzip is junked, however it doesn't seem to be linked into anything
+# which actually gets installed?
+BUILD_DEPENDS+=	archivers/libzip
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
