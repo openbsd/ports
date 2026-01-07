@@ -1,11 +1,10 @@
 COMMENT =		download videos from YLE Areena
 
-# GH_* doesn't handle tags containing /
 MODPY_DISTV =		20250730
-PKGNAME =		yle-dl-${MODPY_DISTV}
-DISTNAME =		yle-dl-releases-${MODPY_DISTV}
-DISTFILES =		${DISTNAME}{${MODPY_DISTV}}.tar.gz
-SITES =			https://github.com/aajanki/yle-dl/archive/refs/tags/releases/
+GH_ACCOUNT =		aajanki
+GH_PROJECT =		yle-dl
+GH_TAGNAME =		releases/${MODPY_DISTV}
+DISTNAME =		yle-dl-${MODPY_DISTV}
 
 CATEGORIES =		multimedia
 
