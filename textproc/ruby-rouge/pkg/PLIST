@@ -79,11 +79,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gdscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ghc-cmm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ghc-core
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gherkin
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gjs
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/glsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/go
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gradle
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/graphql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/groovy
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gts
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hack
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/haml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/handlebars
@@ -334,11 +336,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ghc_core.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/keywords.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gjs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/glsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/go.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gradle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/graphql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/groovy.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/haml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/handlebars.rb
