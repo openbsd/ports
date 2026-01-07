@@ -12,7 +12,7 @@ include/lo/lo_osc_types.h
 include/lo/lo_serverthread.h
 include/lo/lo_throw.h
 include/lo/lo_types.h
-lib/liblo.a
+@static-lib lib/liblo.a
 lib/liblo.la
 @lib lib/liblo.so.${LIBlo_VERSION}
 lib/pkgconfig/liblo.pc
