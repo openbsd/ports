@@ -117,11 +117,10 @@ MODCABAL_INSTALL_TARGET = true
 .if defined(MODCABAL_DATA_DIR)
 _MODCABAL_LIBEXEC = libexec/cabal
 MODCABAL_INSTALL_TARGET += \
-	&& mkdir -p ${PREFIX}/${_MODCABAL_LIBEXEC}
-
-MODCABAL_INSTALL_TARGET +=  \
-	&& ${INSTALL_DATA_DIR} ${WRKSRC}/${MODCABAL_DATA_DIR} ${PREFIX}/share/${DISTNAME} \
-	&& cd ${WRKSRC}/${MODCABAL_DATA_DIR} && umask 022 && pax -rw . ${PREFIX}/share/${DISTNAME}
+	&& mkdir -p ${PREFIX}/${_MODCABAL_LIBEXEC} \
+	&& ${INSTALL_DATA_DIR} ${PREFIX}/share/${DISTNAME} \
+	&& ${SETENV} ${MAKE_ENV} WRKSRC=${WRKSRC} DISTNAME=${DISTNAME} \
+		perl ${PORTSDIR}/devel/cabal/populate-datadir.pl
 .endif
 
 # Appends installation fragments for each executable.
@@ -138,7 +137,7 @@ MODCABAL_INSTALL_TARGET += \
 		${MODCABAL_BUILT_EXECUTABLE_${_exe}} \
 		${PREFIX}/${_MODCABAL_LIBEXEC}/${_exe} \
 	&& echo '\#!/bin/sh' > ${PREFIX}/bin/${_exe} \
-	&& echo 'export ${_exe}_datadir=${LOCALBASE}/share/${DISTNAME}' >> ${PREFIX}/bin/${_exe} \
+	&& cat ${PREFIX}/share/${DISTNAME}/env >> ${PREFIX}/bin/${_exe} \
 	&& echo 'exec ${LOCALBASE}/${_MODCABAL_LIBEXEC}/${_exe} "$$@"' >> ${PREFIX}/bin/${_exe} \
 	&& chmod +x ${STAGEDIR}${PREFIX}/bin/${_exe}
 .  else
@@ -147,6 +146,11 @@ MODCABAL_INSTALL_TARGET += \
 	&& ${INSTALL_PROGRAM} ${MODCABAL_BUILT_EXECUTABLE_${_exe}} ${PREFIX}/bin
 .  endif
 .endfor
+
+.if defined(MODCABAL_DATA_DIR)
+MODCABAL_INSTALL_TARGET += \
+	&& rm -f ${PREFIX}/share/${DISTNAME}/env
+.endif
 
 .if !target(do-build)
 do-build:

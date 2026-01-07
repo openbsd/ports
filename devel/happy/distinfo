@@ -1,2 +1,4 @@
-SHA256 (hackage/happy-1.20.1.1.tar.gz) = i059xabF/WZvj3FjIykxqyh0bQ0X2o+hy9aL6eh4iBs=
-SIZE (hackage/happy-1.20.1.1.tar.gz) = 183409
+SHA256 (hackage/happy-2.1.7.tar.gz) = njkPCrCC0R1GWY9iFbL26CUwWXIYYPgQgkCQkVMtfio=
+SHA256 (hackage/happy-lib-2.1.7.tar.gz) = 9iWyxKPytfr6PFYPqHV1AsyN6D2ahMJpL8lDOAkA8mk=
+SIZE (hackage/happy-2.1.7.tar.gz) = 62023
+SIZE (hackage/happy-lib-2.1.7.tar.gz) = 94227

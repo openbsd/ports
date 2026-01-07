@@ -2,5 +2,6 @@ bin/${MODCABAL_STEM}
 libexec/cabal/
 @bin libexec/cabal/${MODCABAL_STEM}
 share/${PKGNAME}/
-share/${PKGNAME}/AlexTemplate.hs
-share/${PKGNAME}/AlexWrappers.hs
+share/${PKGNAME}/${MODCABAL_STEM}_datadir/
+share/${PKGNAME}/${MODCABAL_STEM}_datadir/AlexTemplate.hs
+share/${PKGNAME}/${MODCABAL_STEM}_datadir/AlexWrappers.hs

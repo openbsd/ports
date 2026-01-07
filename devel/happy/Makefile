@@ -1,8 +1,8 @@
 COMMENT=		parser generator for Haskell
 
 MODCABAL_STEM=		happy
-MODCABAL_VERSION=	1.20.1.1
-MODCABAL_DATA_DIR=	data
+MODCABAL_VERSION=	2.1.7
+MODCABAL_DATA_DIR=	data  # unused
 
 CATEGORIES=		devel
 
@@ -19,26 +19,15 @@ LIB_DEPENDS=		converters/libiconv \
 			devel/gmp \
 			devel/libffi
 
-BUILD_DEPENDS+=		textproc/docbook-xsl
-
 # Required for building the documentation and for the regression tests:
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.69
-AUTOCONF_DIR=		${WRKSRC}/doc
-WRKCONF=		${AUTOCONF_DIR}
 
-post-build:
-	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} html
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
-	cd ${WRKBUILD}/doc && umask 022 && pax -rw happy ${PREFIX}/share/doc
+MODCABAL_MANIFEST	= \
+	happy-lib	2.1.7	0	\
 
 do-test:
 	@cd ${WRKBUILD}/tests && exec ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} -j${MAKE_JOBS} HAPPY=${MODCABAL_BUILT_EXECUTABLE_happy} \
-		TEST_HAPPY_OPTS="-t ${WRKBUILD}/data --strict"
+		TEST_HAPPY_OPTS="--ghc -t ${WRKDIR}/happy-lib-${MODCABAL_VERSION}/data --strict" all
 
 .include <bsd.port.mk>
