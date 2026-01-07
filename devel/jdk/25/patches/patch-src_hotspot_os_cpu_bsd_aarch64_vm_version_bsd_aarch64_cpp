@@ -2,11 +2,34 @@ Get hardware capablilites using elf_aux_info(3).
 Detect CPU, model, variant and revision using READ_SPECIALREG
 when HWCAP_CPUID is set, otherwise parse sysctl hw.model to
 get needed info.
+Support SVE vector length at minimum 128 bits/16 bytes.
+Only allow SVE2 when SVE is supported (not needed on -current
+but including because this is what I will commit upstream)
 
 Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
 --- src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp.orig
 +++ src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
-@@ -135,91 +135,84 @@ bool VM_Version::is_cpu_emulated() {
+@@ -34,6 +34,9 @@ void VM_Version::get_compatible_board(char *buf, int b
+   *buf = '\0';
+ }
+ 
++#ifdef __APPLE__
++#include <sys/sysctl.h>
++
+ int VM_Version::get_current_sve_vector_length() {
+   ShouldNotCallThis();
+   return -1;
+@@ -44,9 +47,6 @@ int VM_Version::set_and_get_current_sve_vector_length(
+   return -1;
+ }
+ 
+-#ifdef __APPLE__
+-#include <sys/sysctl.h>
+-
+ static bool cpu_has(const char* optional) {
+   uint32_t val;
+   size_t len = sizeof(val);
+@@ -135,91 +135,97 @@ bool VM_Version::is_cpu_emulated() {
  #else // __APPLE__
  
  #include <machine/armreg.h>
@@ -27,30 +50,40 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
 -#ifndef HWCAP_AES
 -#define HWCAP_AES   (1<<3)
 -#endif
++// XXX: FreeBSD 15+ has sysarch(2) w/ARM64_GET_SVE_VL but the man page
++// says not to call sysarch(2) directly. A libsys function is not yet
++// available. When it does become available FreeBSD can call it instead
++// of using the minimum (128 bits/16 bytes) in the following two functions.
+ 
+-#ifndef HWCAP_PMULL
+-#define HWCAP_PMULL (1<<4)
+-#endif
++int VM_Version::get_current_sve_vector_length() {
++  return FloatRegister::sve_vl_min;
++}
+ 
+-#ifndef HWCAP_SHA1
+-#define HWCAP_SHA1  (1<<5)
+-#endif
++int VM_Version::set_and_get_current_sve_vector_length(int length) {
++  return FloatRegister::sve_vl_min;
++}
+ 
+-#ifndef HWCAP_SHA2
+-#define HWCAP_SHA2  (1<<6)
+-#endif
 +#ifdef __OpenBSD__
 +// For older processors on OpenBSD READ_SPECIALREG is not supported.
 +// These constants and tables allow for looking up the cpu and model.
  
--#ifndef HWCAP_PMULL
--#define HWCAP_PMULL (1<<4)
+-#ifndef HWCAP_CRC32
+-#define HWCAP_CRC32 (1<<7)
 -#endif
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
 +#include <string.h>
 +#include <stdio.h>
  
--#ifndef HWCAP_SHA1
--#define HWCAP_SHA1  (1<<5)
--#endif
--
--#ifndef HWCAP_SHA2
--#define HWCAP_SHA2  (1<<6)
--#endif
--
--#ifndef HWCAP_CRC32
--#define HWCAP_CRC32 (1<<7)
--#endif
--
 -#ifndef HWCAP_ATOMICS
 -#define HWCAP_ATOMICS (1<<8)
 -#endif
@@ -151,7 +184,7 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
  
  /* Cavium Part numbers */
  #define	CPU_PART_THUNDERX	0x0A1
-@@ -232,21 +225,35 @@ bool VM_Version::is_cpu_emulated() {
+@@ -232,21 +238,35 @@ bool VM_Version::is_cpu_emulated() {
  
  #define	CPU_REV_THUNDERX2_0	0x00
  
@@ -200,7 +233,7 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
  struct cpu_parts {
  	u_int		part_id;
  	const char	*part_name;
-@@ -267,136 +274,212 @@ struct cpu_implementers {
+@@ -267,136 +287,216 @@ struct cpu_implementers {
  /*
   * Per-implementer table of (PartNum, CPU Name) pairs.
   */
@@ -469,6 +502,10 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
 -  uint64_t auxv = os_get_processor_features();
 +  /*
 +   * Step 1: setup _features using elf_aux_info(3). Keep in sync with Linux.
++   * Some CPU's (Apple's M4) implement SME, but not SVE. Those CPUs report
++   * SVE2 support without reporting support for SVE. To ensure we don't
++   * assume SVE support for those CPUs we only enable SVE2 features if SVE
++   * is also supported.
 +   */
 +  unsigned long auxv = 0;
 +  unsigned long auxv2 = 0;
@@ -494,7 +531,7 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
    _features = auxv & (
        HWCAP_FP      |
        HWCAP_ASIMD   |
-@@ -410,9 +493,42 @@ void VM_Version::get_os_cpu_info() {
+@@ -410,9 +510,45 @@ void VM_Version::get_os_cpu_info() {
        HWCAP_DCPOP   |
        HWCAP_SHA3    |
        HWCAP_SHA512  |
@@ -505,8 +542,11 @@ Index: src/hotspot/os_cpu/bsd_aarch64/vm_version_bsd_aarch64.cpp
 +      HWCAP_FPHP    |
 +      HWCAP_ASIMDHP);
  
-+  if (auxv2 & HWCAP2_SVE2) _features |= CPU_SVE2;
-+  if (auxv2 & HWCAP2_SVEBITPERM) _features |= CPU_SVEBITPERM;
++  // Only allow SVE2 features if SVE is also available
++  if (auxv & HWCAP_SVE) {
++    if (auxv2 & HWCAP2_SVE2) _features |= CPU_SVE2;
++    if (auxv2 & HWCAP2_SVEBITPERM) _features |= CPU_SVEBITPERM;
++  }
 +
 +  /*
 +   * Step 2: setup _cpu, _model, _variant and _revision using READ_SPECIALREG on
