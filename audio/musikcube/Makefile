@@ -2,9 +2,8 @@ COMMENT =	terminal-based music player
 
 GH_ACCOUNT =	clangen
 GH_PROJECT =	musikcube
-GH_TAGNAME =	3.0.4
+GH_TAGNAME =	3.0.5
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://musikcube.com/
 
