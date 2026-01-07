@@ -17,19 +17,17 @@ WANTLIB +=	${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	other
+MODPY_PYBUILD=	mesonpy
 # test_dst.py: ValueError: could not convert string to float: '2022.2.1'
 MODPY_PYTEST_ARGS=pandas \
 		--ignore pandas/tests/tseries/offsets/test_dst.py
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=	devel/meson-python \
-		devel/py-versioneer \
+BUILD_DEPENDS=	devel/py-versioneer \
 		devel/py-wheel \
 		lang/cython \
-		math/py-numpy \
-		math/py-oldest-supported-numpy
+		math/py-numpy
 
 RUN_DEPENDS=	devel/py-dateutil>=2.8.2 \
 		devel/py-tzdata>=2022.7 \
