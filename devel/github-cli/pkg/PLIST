@@ -1,4 +1,8 @@
 @bin bin/gh
+@man man/man1/gh-agent-task-create.1
+@man man/man1/gh-agent-task-list.1
+@man man/man1/gh-agent-task-view.1
+@man man/man1/gh-agent-task.1
 @man man/man1/gh-alias-delete.1
 @man man/man1/gh-alias-import.1
 @man man/man1/gh-alias-list.1
@@ -100,6 +104,7 @@
 @man man/man1/gh-pr-merge.1
 @man man/man1/gh-pr-ready.1
 @man man/man1/gh-pr-reopen.1
+@man man/man1/gh-pr-revert.1
 @man man/man1/gh-pr-review.1
 @man man/man1/gh-pr-status.1
 @man man/man1/gh-pr-unlock.1
@@ -135,6 +140,8 @@
 @man man/man1/gh-release-edit.1
 @man man/man1/gh-release-list.1
 @man man/man1/gh-release-upload.1
+@man man/man1/gh-release-verify-asset.1
+@man man/man1/gh-release-verify.1
 @man man/man1/gh-release-view.1
 @man man/man1/gh-release.1
 @man man/man1/gh-repo-archive.1
