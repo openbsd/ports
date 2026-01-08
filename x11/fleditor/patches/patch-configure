@@ -1,5 +1,6 @@
---- configure.orig	Mon Apr 22 18:23:58 2002
-+++ configure	Sat May 22 16:29:40 2010
+Index: configure
+--- configure.orig
++++ configure
 @@ -20,7 +20,7 @@ ac_help="$ac_help
  ac_help="$ac_help
    --with-fltk=DIR         fltk root (for lib and include) [default=/usr/local]"
@@ -17,6 +18,15 @@
  # Extract the first word of "gcc", so it can be a program name with args.
  set dummy gcc; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -661,7 +662,7 @@ cat > conftest.$ac_ext << EOF
+ #line 663 "configure"
+ #include "confdefs.h"
+ 
+-main(){return(0);}
++int main(void){return(0);}
+ EOF
+ if { (eval echo configure:668: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   ac_cv_prog_cc_works=yes
 @@ -997,7 +998,7 @@ else
  fi
  

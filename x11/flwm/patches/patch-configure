@@ -1,11 +1,21 @@
---- configure.orig	Wed Jan  5 11:14:02 2000
-+++ configure	Fri Apr 28 01:18:56 2017
+Index: configure
+--- configure.orig
++++ configure
+@@ -612,7 +612,7 @@ cross_compiling=$ac_cv_prog_cc_cross
+ cat > conftest.$ac_ext <<EOF
+ #line 614 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(void){return(0);}
+ EOF
+ if { (eval echo configure:618: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cc_works=yes
 @@ -738,7 +738,7 @@ cross_compiling=$ac_cv_prog_cxx_cross
  cat > conftest.$ac_ext <<EOF
  #line 740 "configure"
  #include "confdefs.h"
 -main(){return(0);}
-+int main(){return(0);}
++int main(void){return(0);}
  EOF
  if { (eval echo configure:744: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
    ac_cv_prog_cxx_works=yes
