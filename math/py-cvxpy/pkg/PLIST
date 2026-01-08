@@ -137,6 +137,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}bina
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}binary_operators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}bmat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}bmat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}broadcast_to.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}broadcast_to.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}concatenate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}concatenate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/${MODPY_PYCACHE}conj.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -187,6 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/add_expr.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/affine_atom.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/binary_operators.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/bmat.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/broadcast_to.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/concatenate.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/conj.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/atoms/affine/conv.py
@@ -569,10 +572,13 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCACHE}exotic2common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCACHE}soc2psd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCACHE}soc2psd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCACHE}soc_dim3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/${MODPY_PYCACHE}soc_dim3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/affine2direct.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/approximations.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/exotic2common.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/soc2psd.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cone2cone/soc_dim3.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/cvx_attr2constr.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/dcp2cone/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/dcp2cone/__init__.py
@@ -897,6 +903,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}solver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}solving_chain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}solving_chain.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}solving_chain_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}solving_chain_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}utilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/${MODPY_PYCACHE}utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/bisection.py
@@ -916,6 +924,10 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}copt_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cplex_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cplex_conif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cuclarabel_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cuclarabel_conif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cuopt_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cuopt_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cvxopt_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}cvxopt_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}diffcp_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -934,12 +946,16 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}gurobi_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}highs_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}highs_conif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}moreau_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}moreau_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}mosek_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}mosek_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}nag_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}nag_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}pdlp_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}pdlp_conif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}qoco_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}qoco_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}scip_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}scip_conif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/${MODPY_PYCACHE}scipy_conif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -955,6 +971,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/conic_solver.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/copt_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/cplex_conif.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/cuclarabel_conif.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/cuopt_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/cvxopt_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/diffcp_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/ecos_bb_conif.py
@@ -964,9 +982,11 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/glpk_mi_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/gurobi_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/highs_conif.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/moreau_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/mosek_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/nag_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/pdlp_conif.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/qoco_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/scip_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/scipy_conif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/conic_solvers/scs_conif.py
@@ -976,11 +996,6 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/constant_solve
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/defines.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/intermediate_chain.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/kktsolver.py
-lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/lp_solvers/
-lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/lp_solvers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/lp_solvers/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/lp_solvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/lp_solvers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}/
@@ -996,6 +1011,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${M
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}gurobi_qpif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}highs_qpif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}highs_qpif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}mpax_qpif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}mpax_qpif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}osqp_qpif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}osqp_qpif.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/${MODPY_PYCACHE}piqp_qpif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1011,6 +1028,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/cpl
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/daqp_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/gurobi_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/highs_qpif.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/mpax_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/osqp_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/piqp_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/proxqp_qpif.py
@@ -1018,6 +1036,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/qp_
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/qp_solvers/xpress_qpif.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/solver.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/solving_chain.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/solving_chain_utils.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/solvers/utilities.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/reductions/utilities.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/settings.py
@@ -1066,12 +1085,16 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_curvat
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_curvature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_custom_solver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_custom_solver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_cvxpygen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_cvxpygen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_derivative.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_derivative.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp2dcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp2dcp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp_dpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dgp_dpp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_domain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_domain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_dpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1102,6 +1125,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_linear
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_linear_cone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_matrices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_matrices.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_matrix_utilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_matrix_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_mip_vars.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_mip_vars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_monotonicity.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1138,6 +1163,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_shape.
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_shape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_sign.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_sign.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_soc_dim3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_soc_dim3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_suppfunc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_suppfunc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/${MODPY_PYCACHE}test_valinvec2mixedint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1166,9 +1193,11 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_copt_write.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_copy.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_curvature.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_custom_solver.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_cvxpygen.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_derivative.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_dgp.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_dgp2dcp.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_dgp_dpp.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_domain.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_dpp.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_dqcp.py
@@ -1184,6 +1213,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_lin_ops.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_linalg_utils.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_linear_cone.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_matrices.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_matrix_utilities.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_mip_vars.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_monotonicity.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_nonlinear_atoms.py
@@ -1202,6 +1232,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_scalarize.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_semidefinite_vars.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_shape.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_sign.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_soc_dim3.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_suppfunc.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_valinvec2mixedint.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/tests/test_versioning.py
@@ -1233,6 +1264,8 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}canonical.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}canonical.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}citations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}citations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}coeff_extractor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}coeff_extractor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}coo_array_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1266,6 +1299,7 @@ lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}sign.${
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/canonical.py
+lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/citations.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/coeff_extractor.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/coo_array_compat.py
 lib/python${MODPY_VERSION}/site-packages/cvxpy/utilities/cpp/

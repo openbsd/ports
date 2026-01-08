@@ -1,10 +1,9 @@
 COMMENT =		modeling language for convex optimization problems
 
-MODPY_DISTV =		1.6.2
+MODPY_DISTV =		1.7.5
 DISTNAME =		cvxpy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
