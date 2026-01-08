@@ -132,6 +132,7 @@
      SUBDIR += py-affine
      SUBDIR += py-bottleneck
      SUBDIR += py-cftime
+     SUBDIR += py-clarabel
      SUBDIR += py-contourpy
      SUBDIR += py-cvxopt
      SUBDIR += py-cvxpy
