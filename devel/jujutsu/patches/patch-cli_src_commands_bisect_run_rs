@@ -11,7 +11,7 @@ Index: cli/src/commands/bisect/run.rs
  use crate::command_error::user_error;
  use crate::command_error::user_error_with_message;
  use crate::complete;
-@@ -237,9 +236,7 @@ fn evaluate_commit(
+@@ -233,9 +232,7 @@ fn evaluate_commit(
          format!("Updated to revision {commit_id_hex} for bisection"),
      )?;
  

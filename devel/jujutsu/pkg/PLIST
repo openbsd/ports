@@ -30,6 +30,7 @@
 @man man/man1/jj-file-annotate.1
 @man man/man1/jj-file-chmod.1
 @man man/man1/jj-file-list.1
+@man man/man1/jj-file-search.1
 @man man/man1/jj-file-show.1
 @man man/man1/jj-file-track.1
 @man man/man1/jj-file-untrack.1
