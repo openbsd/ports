@@ -1,8 +1,7 @@
 COMMENT =	simple, modern and secure file encryption tool
 
 MODGO_MODNAME =	filippo.io/age
-MODGO_VERSION =	v1.2.1
-REVISION =	0
+MODGO_VERSION =	v1.3.1
 
 DISTNAME =	age-${MODGO_VERSION}
 

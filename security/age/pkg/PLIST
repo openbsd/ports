@@ -1,4 +1,8 @@
 @bin bin/age
+@bin bin/age-inspect
 @bin bin/age-keygen
+@bin bin/age-plugin-batchpass
+@man man/man1/age-inspect.1
 @man man/man1/age-keygen.1
+@man man/man1/age-plugin-batchpass.1
 @man man/man1/age.1
