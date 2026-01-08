@@ -1,0 +1,17 @@
+Python bindings for Clarabel.rs
+
+Clarabel.rs is a Rust implementation of an interior point numerical
+solver for convex optimization problems using a novel homogeneous
+embedding.
+
+Clarabel.rs solves linear programs, quadratic programs, second-order
+cone programs and semidefinite programs. It also solves problems with
+exponential, power cone and generalized power cone constraints.
+
+Unlike interior point solvers based on the standard homogeneous
+self-dual embedding (HDSE), Clarabel.rs handles quadratic objectives
+without requiring any epigraphical reformulation of the objective. It
+can therefore be significantly faster than other HSDE-based solvers
+for problems with quadratic objective functions.
+
+Infeasible problems are detected using a homogeneous embedding technique.
