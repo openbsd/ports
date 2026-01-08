@@ -2,7 +2,7 @@ COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
-GH_TAGNAME =		3.25.1
+GH_TAGNAME =		3.26.0
 CATEGORIES =		devel
 HOMEPAGE =		https://www.rebar3.org
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
