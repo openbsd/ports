@@ -1,3 +1,8 @@
+BROKEN=		problems with py3.13 and with newer numpy
+# 3.13: 'import imp' in some plugins
+# numpy: uses removed API; builds with https://github.com/makehumancommunity/makehuman/pull/271
+#  but this isn't enough (fails during startup)
+
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 GH_ACCOUNT=	makehumancommunity
