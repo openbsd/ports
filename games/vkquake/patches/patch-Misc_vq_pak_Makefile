@@ -1,0 +1,11 @@
+gcc -> cc
+
+Index: Misc/vq_pak/Makefile
+--- Misc/vq_pak/Makefile.orig
++++ Misc/vq_pak/Makefile
+@@ -1,4 +1,4 @@
+-HOST_CC = gcc
++HOST_CC = cc
+ INPUT := vq_pak_contents.txt
+ OUTPUT_NAME := vkquake.pak
+ OUTPUT := ../../Quake/$(OUTPUT_NAME)

@@ -1,6 +1,7 @@
 disable -Werror and hardcoded optimization flag
 gcc -> cc
 remove unsupported flags -fweb and -frename-registers
+make -> gmake
 
 Index: Quake/common.make
 --- Quake/common.make.orig
@@ -39,3 +40,12 @@ Index: Quake/common.make
  #CFLAGS += $(call CHECK_GCC,-fno-asynchronous-unwind-tables,)
  CFLAGS += $(call CHECK_GCC,-fno-ident,)
  CMD_STRIP=$(STRIP) $(1)
+@@ -239,7 +236,7 @@ OBJS := strlcat.o \
+ 	$(SYSOBJ_SYS) $(SYSOBJ_MAIN)
+ 
+ $(BINTOC_EXE): ../Shaders/bintoc.c
+-	make -B -C ../Misc/vq_pak
++	gmake -B -C ../Misc/vq_pak
+ 
+ .SECONDARY:
+ ../Shaders/Compiled/$(GLSLANG_OUT_FOLDER)/%_frag.spv: ../Shaders/%.frag
