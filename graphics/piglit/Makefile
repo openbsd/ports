@@ -2,7 +2,7 @@ COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
 DISTNAME =	piglit-20250507
-REVISION =	0
+REVISION =	1
 
 DIST_TUPLE =	fdo mesa piglit 1767af745ed96f77b16c0c205015366d1fbbdb22 ${WRKDIST}/
 

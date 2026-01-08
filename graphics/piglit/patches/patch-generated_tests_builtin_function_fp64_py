@@ -1,0 +1,28 @@
+TypeError: reshape() got an unexpected keyword argument 'newshape'
+
+The newshape parameter was deprecated in NumPy 2.1.0 and has been removed from
+numpy.reshape. Pass it positionally or use shape= on newer NumPy versions.
+
+https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/1063
+
+Index: generated_tests/builtin_function_fp64.py
+--- generated_tests/builtin_function_fp64.py.orig
++++ generated_tests/builtin_function_fp64.py
+@@ -254,7 +254,7 @@ def column_major_values(value):
+     """Given a native numpy value, return a list of the scalar values
+     comprising it, in column-major order."""
+     if isinstance(value, np.ndarray):
+-        return list(np.reshape(value, newshape=-1, order='F'))
++        return list(np.reshape(value, shape=-1, order='F'))
+     else:
+         return [value]
+ 
+@@ -262,7 +262,7 @@ def column_major_values(value):
+ def glsl_constant(value):
+     """Given a native numpy value, return GLSL code that constructs
+     it."""
+-    column_major = np.reshape(np.array(value), newshape=-1, order='F')
++    column_major = np.reshape(np.array(value), shape=-1, order='F')
+     if column_major.dtype == bool:
+         values = ['true' if x else 'false' for x in column_major]
+     else:
