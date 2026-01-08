@@ -4,7 +4,7 @@ MODPY_DISTV =		1.6.2
 DISTNAME =		cvxpy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
@@ -24,7 +24,6 @@ BUILD_DEPENDS =		devel/py-pybind11 \
 			math/py-numpy \
 			math/py-scipy
 
-# XXX: needs port for clarabel
 RUN_DEPENDS =		math/py-numpy \
 			math/py-scipy \
 			math/py-osqp \
@@ -32,5 +31,10 @@ RUN_DEPENDS =		math/py-numpy \
 			math/py-scs
 
 TEST_DEPENDS =		devel/py-hypothesis
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mrust}
+RUN_DEPENDS +=		math/py-clarabel
+.endif
 
 .include <bsd.port.mk>
