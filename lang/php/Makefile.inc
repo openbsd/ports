@@ -74,9 +74,6 @@ CONFIGURE_ARGS+=	--disable-rpath \
 # is fetched from mysql_config instead)
 CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 
-# zend extensions
-CONFIGURE_ARGS+=	--enable-opcache
-
 # default included php extensions
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \

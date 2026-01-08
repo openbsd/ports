@@ -4,5 +4,6 @@ AUTOCONF_VERSION= 2.72
 PHP_PKGSPEC=	>=8.2,<8.3
 PHP_EXTENSIONS=	-imap -pspell
 ZEND_EXTENSIONS= -opcache
+CONFIGURE_ARGS=	--enable-opcache
 
 .include <bsd.port.mk>
