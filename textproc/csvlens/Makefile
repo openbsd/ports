@@ -2,7 +2,7 @@ COMMENT =		command line csv viewer
 
 GH_ACCOUNT =		YS-L
 GH_PROJECT =		csvlens
-GH_TAGNAME =		v0.14.0
+GH_TAGNAME =		v0.15.0
 
 CATEGORIES =		textproc
 
