@@ -5,7 +5,7 @@ DISTNAME =		liquibase-${VERSION}-bin
 PKGNAME =		liquibase-${VERSION}
 WRKDIST =		${WRKDIR}
 CATEGORIES =		databases
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://liquibase.org/
 
@@ -17,8 +17,7 @@ RUN_DEPENDS =		java/javaPathHelper
 SITES =			https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${VERSION}/
 
 MODULES =		java
-# XXX when updating please confirm if this is 1.8 only or if 11 is also ok (in which case, switch to 1.8+)
-MODJAVA_VER =		1.8
+MODJAVA_VER =		11+
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
