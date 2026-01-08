@@ -9,7 +9,7 @@ PKGNAME=		architect-${V}
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}/architect-${V}
 
-REVISION=		9
+REVISION=		10
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
@@ -19,16 +19,18 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		21
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
+
+SUBST_VARS=		JAVA_HOME
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/architect/jdbc
 	${INSTALL_DATA} ${WRKDIST}/jdbc/* ${PREFIX}/architect/jdbc
 	${INSTALL_DATA} ${WRKDIST}/architect.jar ${WRKDIST}/lib/* ${PREFIX}/architect/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/architect
-	${INSTALL_PROGRAM} ${FILESDIR}/architect ${PREFIX}/bin
+	${SUBST_PROGRAM} ${FILESDIR}/architect ${PREFIX}/bin/architect
 
 .include <bsd.port.mk>

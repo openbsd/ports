@@ -4,10 +4,10 @@
 
 ARCHITECT_HOME=/usr/local/architect
 
-JAVA_CMD=`javaPathHelper -c architect`
+JAVA_CMD="${JAVA_HOME}/bin/java"
 
-if [ -z ${JAVA_CMD} ]; then
-	echo "$0: JAVA_CMD is not set, please check installation" >&2
+if [ ! -x ${JAVA_CMD} ]; then
+	echo "$0: JAVA_CMD is not set correctly (not found)" >&2
 	exit 1
 fi
 
