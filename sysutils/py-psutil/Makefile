@@ -1,6 +1,6 @@
 COMMENT=	retrieve system information and utilisation
 
-MODPY_DISTV=	7.2.0
+MODPY_DISTV=	7.2.1
 DISTNAME=	psutil-${MODPY_DISTV}
 PKGNAME=	py-psutil-${MODPY_DISTV}
 CATEGORIES=	sysutils
