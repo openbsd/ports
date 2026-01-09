@@ -52,12 +52,15 @@ lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}metadata.${
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}packaging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}packaging.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}versions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pbr/_compat/${MODPY_PYCACHE}versions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/command_hooks.py
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/commands.py
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/easy_install.py
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/five.py
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pbr/_compat/packaging.py
+lib/python${MODPY_VERSION}/site-packages/pbr/_compat/versions.py
 lib/python${MODPY_VERSION}/site-packages/pbr/build.py
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/__init__.py
