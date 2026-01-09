@@ -1688,6 +1688,7 @@
      SUBDIR += py-rx
      SUBDIR += py-sarif-tools
      SUBDIR += py-schema
+     SUBDIR += py-scikit-build-core
      SUBDIR += py-semantic-version
      SUBDIR += py-send2trash
      SUBDIR += py-serial
