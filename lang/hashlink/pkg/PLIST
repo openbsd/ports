@@ -6,6 +6,7 @@ include/hl/hlc_main.c
 include/hl/hlmodule.h
 include/hl/opcodes.h
 @bin lib/fmt.hdll
+@bin lib/heaps.hdll
 @lib lib/libhl.so.${LIBhl_VERSION}
 @lib lib/libhl_module.so.${LIBhl_module_VERSION}
 @bin lib/mysql.hdll

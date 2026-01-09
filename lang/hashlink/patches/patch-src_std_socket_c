@@ -3,7 +3,7 @@ add OpenBSD to ifdef
 Index: src/std/socket.c
 --- src/std/socket.c.orig
 +++ src/std/socket.c
-@@ -199,7 +199,7 @@ HL_PRIM int hl_host_resolve( vbyte *host ) {
+@@ -201,7 +201,7 @@ HL_PRIM int hl_host_resolve( vbyte *host ) {
  	ip = inet_addr((char*)host);
  	if( ip == INADDR_NONE ) {
  		struct hostent *h;
@@ -12,7 +12,7 @@ Index: src/std/socket.c
  		h = gethostbyname((char*)host);
  #	else
  		struct hostent hbase;
-@@ -226,7 +226,7 @@ HL_PRIM vbyte *hl_host_to_string( int ip ) {
+@@ -228,7 +228,7 @@ HL_PRIM vbyte *hl_host_to_string( int ip ) {
  HL_PRIM vbyte *hl_host_reverse( int ip ) {
  	struct hostent *h;
  	hl_blocking(true);

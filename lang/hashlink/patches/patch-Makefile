@@ -9,7 +9,7 @@ install headers (and hlc_main.c) in include/hl/
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,21 +1,20 @@
+@@ -1,22 +1,21 @@
  
 -LBITS := $(shell getconf LONG_BIT)
 -MARCH ?= $(LBITS)
@@ -20,24 +20,25 @@ Index: Makefile
 -INSTALL_INCLUDE_DIR ?= $(PREFIX)/include
 +INSTALL_INCLUDE_DIR ?= $(PREFIX)/include/hl
  
- LIBS=fmt sdl ssl openal ui uv mysql sqlite
+ LIBS=fmt sdl ssl openal ui uv mysql sqlite heaps
  ARCH ?= $(shell uname -m)
  
 -CFLAGS = -Wall -O3 -I src -std=c11 -D LIBHL_EXPORTS
-+CFLAGS = ${CFLAGS} -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
++CFLAGS = ${CFLAGS} -I src -std=c11 -D LIBHL_EXPORTS
  LFLAGS = -L. -lhl
  EXTRA_LFLAGS ?=
 -LIBFLAGS =
++LIBFLAGS = ${LDFLAGS}
+ LIBHL_LDLIBS = -lm -lpthread
 -HLFLAGS = -ldl
 -LIBEXT = so
-+LIBFLAGS = -L/usr/local/lib -L/usr/X11R6/lib
 +HLFLAGS =
 +LIBEXT = so.${LIBhl_VERSION}
 +LIBEXT_MODULE = so.${LIBhl_module_VERSION}
  LIBTURBOJPEG = -lturbojpeg
  
  LHL_LINK_FLAGS =
-@@ -40,6 +39,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
+@@ -41,6 +40,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
  	src/std/track.o
  
  HL = src/code.o src/jit.o src/main.o src/module.o src/debugger.o src/profile.o
@@ -45,7 +46,7 @@ Index: Makefile
  
  FMT_INCLUDE = -I include/mikktspace -I include/minimp3
  
-@@ -75,8 +75,6 @@ RELEASE_NAME=win
+@@ -134,8 +134,6 @@ RELEASE_NAME=win
  VS_RUNTIME_LIBRARY ?= c:/windows/system32/vcruntime140.dll
  
  ifeq ($(MARCH),32)
@@ -54,14 +55,14 @@ Index: Makefile
  BUILD_DIR = Release
  VS_SDL_LIBRARY ?= include/sdl/lib/x86/SDL2.dll
  VS_OPENAL_LIBRARY ?= include/openal/bin/Win32/soft_oal.dll
-@@ -144,16 +142,9 @@ LHL_LINK_FLAGS += -install_name @rpath/libhl.dylib
+@@ -198,16 +196,8 @@ LHL_LINK_FLAGS += -install_name @rpath/libhl.dylib
  else
  
  # Linux
--CFLAGS += -m$(MARCH) -fPIC -pthread -fno-omit-frame-pointer
-+CFLAGS += -fPIC -pthread -fno-omit-frame-pointer
+-CFLAGS += -m$(MARCH) -fPIC -pthread -fno-omit-frame-pointer $(shell pkg-config --cflags sdl2)
++CFLAGS += -fPIC -pthread -fno-omit-frame-pointer $(shell pkg-config --cflags sdl2)
  LFLAGS += -lm -Wl,-rpath,.:'$$ORIGIN':$(INSTALL_LIB_DIR) -Wl,--export-dynamic -Wl,--no-undefined
- 
+-
 -ifeq ($(MARCH),32)
 -CFLAGS += -I /usr/include/i386-linux-gnu -msse2 -mfpmath=sse
 -LIBFLAGS += -L/opt/libjpeg-turbo/lib
@@ -69,20 +70,27 @@ Index: Makefile
 -LIBFLAGS += -L/opt/libjpeg-turbo/lib64
 -endif
 -
+ SDL_LINK_FLAGS = $(shell pkg-config --libs sdl2)
  LIBOPENAL = -lopenal
  LIBOPENGL = -lGL
- RELEASE_NAME = linux
-@@ -169,17 +160,18 @@ ifdef DEBUG
+@@ -224,7 +214,7 @@ ifdef DEBUG
  CFLAGS += -g
  endif
  
--all: libhl hl libs
-+all: libhl libhl_module hl libs
+-all: libhl libs
++all: libhl libhl_module libs
+ ifeq ($(ARCH),arm64)
+ 	$(warning HashLink vm is not supported on arm64, skipping)
+ else
+@@ -232,7 +222,6 @@ all: hl
+ endif
  
  install:
 -	$(UNAME)==Darwin && ${MAKE} uninstall
+ ifneq ($(ARCH),arm64)
  	mkdir -p $(INSTALL_BIN_DIR)
  	cp hl $(INSTALL_BIN_DIR)
+@@ -240,8 +229,10 @@ endif
  	mkdir -p $(INSTALL_LIB_DIR)
  	cp *.hdll $(INSTALL_LIB_DIR)
  	cp libhl.${LIBEXT} $(INSTALL_LIB_DIR)
@@ -93,7 +101,7 @@ Index: Makefile
  
  uninstall:
  	rm -f $(INSTALL_BIN_DIR)/hl $(INSTALL_LIB_DIR)/libhl.${LIBEXT} $(INSTALL_LIB_DIR)/*.hdll
-@@ -188,46 +180,49 @@ uninstall:
+@@ -250,71 +241,74 @@ uninstall:
  libs: $(LIBS)
  
  ./include/pcre/%.o: include/pcre/%.c
@@ -105,12 +113,12 @@ Index: Makefile
 +	${CC} $(CFLAGS) -o $@ -c $< ${PCRE_FLAGS}
  
  libhl: ${LIB}
--	${CC} ${CFLAGS} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared ${LIB} -lpthread -lm
-+	${CC} $(CFLAGS) -o libhl.$(LIBEXT) ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared ${LIB} -lpthread -lm
+-	${CC} ${CFLAGS} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared $^ ${LIBHL_LDLIBS}
++	${CC} $(CFLAGS) -o libhl.$(LIBEXT) ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared $^ ${LIBHL_LDLIBS}
  
  hlc: ${BOOT}
--	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
-+	${CC} $(CFLAGS) -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
+-	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS} ${HLC_LDLIBS}
++	${CC} $(CFLAGS) -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS} ${HLC_LDLIBS}
  
  hl: ${HL} libhl
 -	${CC} ${CFLAGS} -o hl ${HL} ${LFLAGS} ${EXTRA_LFLAGS} ${HLFLAGS}
@@ -128,16 +136,26 @@ Index: Makefile
 +	${CC} $(CFLAGS) -shared -o fmt.hdll ${FMT} ${LIBFLAGS} -L. -lhl -lpng $(LIBTURBOJPEG) -lz -lvorbisfile
  
  sdl: ${SDL} libhl
--	${CC} ${CFLAGS} -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
-+	${CC} $(CFLAGS) -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl -lSDL2 $(LIBOPENGL)
+-	${CC} ${CFLAGS} -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl $(SDL_LINK_FLAGS) $(LIBOPENGL)
++	${CC} $(CFLAGS) -shared -o sdl.hdll ${SDL} ${LIBFLAGS} -L. -lhl $(SDL_LINK_FLAGS) $(LIBOPENGL)
  
  openal: ${OPENAL} libhl
 -	${CC} ${CFLAGS} -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
 +	${CC} $(CFLAGS) -shared -o openal.hdll ${OPENAL} ${LIBFLAGS} -L. -lhl $(LIBOPENAL)
  
+ ./include/mbedtls/%.o: ./include/mbedtls/%.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${SSL_CFLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${SSL_CFLAGS}
+ 
+ # force rebuild ssl.o in case we mix SSL_STATIC with normal build
+ .PHONY: libs/ssl/ssl.o
+ libs/ssl/ssl.o: libs/ssl/ssl.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${SSL_CFLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${SSL_CFLAGS}
+ 
  ssl: ${SSL} libhl
--	${CC} ${CFLAGS} -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
-+	${CC} $(CFLAGS) -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl -lmbedtls -lmbedx509 -lmbedcrypto $(LIBSSL)
+-	${CC} ${CFLAGS} ${SSL_CFLAGS} -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl ${SSL_LDLIBS} $(LIBSSL)
++	${CC} $(CFLAGS) ${SSL_CFLAGS} -shared -o ssl.hdll ${SSL} ${LIBFLAGS} -L. -lhl ${SSL_LDLIBS} $(LIBSSL)
  
  ui: ${UI} libhl
 -	${CC} ${CFLAGS} -shared -o ui.hdll ${UI} ${LIBFLAGS} -L. -lhl
@@ -148,16 +166,38 @@ Index: Makefile
 +	${CC} $(CFLAGS) -shared -o uv.hdll ${UV} ${LIBFLAGS} -L. -lhl -luv
  
  mysql: ${MYSQL} libhl
--	${CC} ${CFLAGS} -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
-+	${CC} $(CFLAGS) -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl
+-	${CC} ${CFLAGS} -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl ${MYSQL_LDLIBS}
++	${CC} $(CFLAGS) -shared -o mysql.hdll ${MYSQL} ${LIBFLAGS} -L. -lhl ${MYSQL_LDLIBS}
  
  sqlite: ${SQLITE} libhl
 -	${CC} ${CFLAGS} -shared -o sqlite.hdll ${SQLITE} ${LIBFLAGS} -L. -lhl -lsqlite3
 +	${CC} $(CFLAGS) -shared -o sqlite.hdll ${SQLITE} ${LIBFLAGS} -L. -lhl -lsqlite3
  
+ CXXFLAGS:=$(filter-out -std=c11,$(CFLAGS)) -std=c++11
+ 
+ ./include/mikktspace/%.o: ./include/mikktspace/%.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${HEAPS_CFLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${HEAPS_CFLAGS}
+ 
+ ./include/meshoptimizer/%.o: ./include/meshoptimizer/%.cpp
+-	${CC} ${CXXFLAGS} -o $@ -c $< ${HEAPS_CFLAGS}
++	${CC} $(CXXFLAGS) -o $@ -c $< ${HEAPS_CFLAGS}
+ 
+ ./libs/heaps/%.o: ./libs/heaps/%.c
+-	${CC} ${CFLAGS} -o $@ -c $< ${HEAPS_CFLAGS}
++	${CC} $(CFLAGS) -o $@ -c $< ${HEAPS_CFLAGS}
+ 
+ ./libs/heaps/%.o: ./libs/heaps/%.cpp
+-	${CC} ${CXXFLAGS} -o $@ -c $< ${HEAPS_CFLAGS}
++	${CC} $(CXXFLAGS) -o $@ -c $< ${HEAPS_CFLAGS}
+ 
+ heaps: ${HEAPS} libhl
+-	${CXX} ${CFLAGS} ${HEAPS_CFLAGS} -shared -o heaps.hdll ${HEAPS} ${LIBFLAGS} -L. -lhl
++	${CXX} $(CFLAGS) ${HEAPS_CFLAGS} -shared -o heaps.hdll ${HEAPS} ${LIBFLAGS} -L. -lhl
+ 
  mesa:
  	(cd libs/mesa && ${MAKE})
-@@ -288,7 +283,7 @@ codesign_osx:
+@@ -387,7 +381,7 @@ codesign_osx:
  .SUFFIXES : .c .o
  
  .c.o :
@@ -165,4 +205,4 @@ Index: Makefile
 +	${CC} $(CFLAGS) -o $@ -c $<
  
  clean_o:
- 	rm -f ${STD} ${BOOT} ${RUNTIME} ${PCRE} ${HL} ${FMT} ${SDL} ${SSL} ${OPENAL} ${UI} ${UV} ${MYSQL} ${SQLITE} ${HL_DEBUG}
+ 	rm -f ${STD} ${BOOT} ${RUNTIME} ${PCRE} ${HL} ${FMT} ${SDL} ${SSL} ${OPENAL} ${UI} ${UV} ${MYSQL} ${SQLITE} ${HEAPS} ${HL_DEBUG}

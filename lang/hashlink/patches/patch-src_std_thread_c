@@ -4,7 +4,7 @@ pthread_setname_np -> pthread_set_name_np
 Index: src/std/thread.c
 --- src/std/thread.c.orig
 +++ src/std/thread.c
-@@ -25,6 +25,11 @@
+@@ -26,6 +26,11 @@
  typedef struct _hl_semaphore hl_semaphore;
  typedef struct _hl_condition hl_condition;
  
@@ -16,7 +16,7 @@ Index: src/std/thread.c
  #if !defined(HL_THREADS)
  
  struct _hl_mutex {
-@@ -839,6 +844,8 @@ HL_PRIM int hl_thread_id() {
+@@ -840,6 +845,8 @@ HL_PRIM int hl_thread_id() {
  	return (pid_t)tid64;
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
@@ -25,8 +25,8 @@ Index: src/std/thread.c
  #else
  	return -1;
  #endif
-@@ -973,7 +980,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
- #elif defined(HL_MAC)
+@@ -977,7 +984,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+ #elif defined(HL_MAC) || defined(HL_IOS)
  	// pthread_setname_np only possible for current thread
  #else
 -	pthread_setname_np((pthread_t)t,name);
