@@ -1,0 +1,18 @@
+Disable the update check, it makes no sense on an officially
+unsupported platform.
+
+Index: cli/tools/upgrade.rs
+--- cli/tools/upgrade.rs.orig
++++ cli/tools/upgrade.rs
+@@ -309,10 +309,7 @@ async fn print_release_notes(
+ }
+ 
+ pub fn upgrade_check_enabled() -> bool {
+-  matches!(
+-    env::var("DENO_NO_UPDATE_CHECK"),
+-    Err(env::VarError::NotPresent)
+-  )
++  false
+ }
+ 
+ pub fn check_for_upgrades(

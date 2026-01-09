@@ -15,4 +15,4 @@ Index: cli/tools/bundle/esbuild.rs
 +    ("aarch64", "openbsd") => "openbsd-arm64",
      ("x86_64", "windows") => "win32-x64",
      ("aarch64", "windows") => "win32-arm64",
-     _ => panic!(
+     ("x86_64", "android") => "android-x64",

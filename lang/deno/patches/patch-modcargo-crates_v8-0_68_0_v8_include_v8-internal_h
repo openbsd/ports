@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-137.2.1/v8/include/v8-internal.h
---- modcargo-crates/v8-137.2.1/v8/include/v8-internal.h.orig
-+++ modcargo-crates/v8-137.2.1/v8/include/v8-internal.h
+Index: modcargo-crates/v8-142.2.0/v8/include/v8-internal.h
+--- modcargo-crates/v8-142.2.0/v8/include/v8-internal.h.orig
++++ modcargo-crates/v8-142.2.0/v8/include/v8-internal.h
 @@ -232,7 +232,7 @@ using SandboxedPointer_t = Address;
  #ifdef V8_ENABLE_SANDBOX
  

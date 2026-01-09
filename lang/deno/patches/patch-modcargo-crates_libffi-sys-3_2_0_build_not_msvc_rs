@@ -1,7 +1,7 @@
-Index: modcargo-crates/libffi-sys-3.2.0/build/not_msvc.rs
---- modcargo-crates/libffi-sys-3.2.0/build/not_msvc.rs.orig
-+++ modcargo-crates/libffi-sys-3.2.0/build/not_msvc.rs
-@@ -62,7 +62,8 @@ pub fn configure_libffi(prefix: PathBuf, build_dir: &P
+Index: modcargo-crates/libffi-sys-3.3.3/build/not_msvc.rs
+--- modcargo-crates/libffi-sys-3.3.3/build/not_msvc.rs.orig
++++ modcargo-crates/libffi-sys-3.3.3/build/not_msvc.rs
+@@ -69,7 +69,8 @@ pub fn configure_libffi(prefix: PathBuf, build_dir: &P
          .arg("./configure")
          .arg("--with-pic")
          .arg("--disable-shared")

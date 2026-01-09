@@ -1,7 +1,7 @@
 Index: runtime/js/99_main.js
 --- runtime/js/99_main.js.orig
 +++ runtime/js/99_main.js
-@@ -717,10 +717,6 @@ const NOT_IMPORTED_OPS = [
+@@ -539,10 +539,6 @@ const NOT_IMPORTED_OPS = [
    "op_set_exit_code",
    "op_napi_open",
  

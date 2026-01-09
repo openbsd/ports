@@ -1,10 +1,10 @@
 Index: ext/os/lib.rs
 --- ext/os/lib.rs.orig
 +++ ext/os/lib.rs
-@@ -4,6 +4,7 @@ use std::borrow::Cow;
- use std::collections::HashMap;
- use std::collections::HashSet;
+@@ -5,6 +5,7 @@ use std::collections::HashMap;
  use std::env;
+ use std::ffi::OsString;
+ use std::ops::ControlFlow;
 +use std::path::PathBuf;
  use std::sync::Arc;
  use std::sync::atomic::AtomicI32;

@@ -6,9 +6,8 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.4.5
+VERSION =		2.6.4
 HOMEPAGE =		https://deno.com
-REVISION =		0
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
@@ -22,10 +21,11 @@ CATEGORIES =		lang
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo lang/clang
+
+MODCLANG_VERSION =	21
+
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
-
-MODCARGO_CRATES_UPDATE += aws-lc-rs aws-lc-sys
 
 MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \
@@ -40,6 +40,7 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			is_clang=true \
 			use_custom_libcxx=true \
 			use_custom_libunwind=true \
+			use_libcxx_modules=false \
 			use_udev=true \
 			use_sysroot=false \
 			use_glib=false \
@@ -80,7 +81,7 @@ WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.74.0
-V8_CARGO_V =		137.2.1
+V8_CARGO_V =		142.2.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo

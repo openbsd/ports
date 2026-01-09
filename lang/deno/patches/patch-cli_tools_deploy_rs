@@ -1,7 +1,7 @@
 Index: cli/tools/deploy.rs
 --- cli/tools/deploy.rs.orig
 +++ cli/tools/deploy.rs
-@@ -56,23 +56,10 @@ pub async fn deploy(mut flags: Flags) -> Result<i32, A
+@@ -66,24 +66,10 @@ pub async fn deploy(
      .map_err(ResolveUrlOrPathError::UrlParse)?
    };
  
@@ -9,6 +9,7 @@ Index: cli/tools/deploy.rs
 -    .create_custom_worker(
 -      WorkerExecutionMode::Deploy,
 -      specifier,
+-      vec![],
 -      vec![],
 -      PermissionsContainer::allow_all(
 -        factory.permission_desc_parser()?.clone(),

@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-137.2.1/v8/src/execution/isolate.cc
---- modcargo-crates/v8-137.2.1/v8/src/execution/isolate.cc.orig
-+++ modcargo-crates/v8-137.2.1/v8/src/execution/isolate.cc
-@@ -173,6 +173,10 @@
+Index: modcargo-crates/v8-142.2.0/v8/src/execution/isolate.cc
+--- modcargo-crates/v8-142.2.0/v8/src/execution/isolate.cc.orig
++++ modcargo-crates/v8-142.2.0/v8/src/execution/isolate.cc
+@@ -176,6 +176,10 @@
  #include "src/execution/simulator-base.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: modcargo-crates/v8-137.2.1/v8/src/execution/isolate.cc
  extern "C" const uint8_t v8_Default_embedded_blob_code_[];
  extern "C" uint32_t v8_Default_embedded_blob_code_size_;
  extern "C" const uint8_t v8_Default_embedded_blob_data_[];
-@@ -5110,6 +5114,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
+@@ -5235,6 +5239,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
    uint32_t code_size = DefaultEmbeddedBlobCodeSize();
    const uint8_t* data = DefaultEmbeddedBlobData();
    uint32_t data_size = DefaultEmbeddedBlobDataSize();
