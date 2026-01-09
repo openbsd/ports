@@ -1,0 +1,13 @@
+Fix build with poppler-26.01.0.
+
+Index: src/extension/internal/pdfinput/pdf-input.cpp
+--- src/extension/internal/pdfinput/pdf-input.cpp.orig
++++ src/extension/internal/pdfinput/pdf-input.cpp
+@@ -28,6 +28,7 @@
+ #include <poppler/PDFDoc.h>
+ #include <poppler/Page.h>
+ #include <poppler/goo/GooString.h>
++#include <poppler/goo/gmem.h>
+ 
+ #ifdef HAVE_POPPLER_CAIRO
+ #include <poppler/glib/poppler.h>
