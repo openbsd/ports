@@ -128,6 +128,9 @@ BUILD_DEPENDS +=	devel/py-pdm-backend
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	py3-poetry-core->=2.2.0:devel/py-poetry-core
 _MODPY_EXPECTED_BACKEND = poetry.core
+.  elif ${MODPY_PYBUILD} == scikit-build-core
+BUILD_DEPENDS +=	devel/py-scikit-build-core
+_MODPY_EXPECTED_BACKEND = poetry.core
 .  elif ${MODPY_PYBUILD} == setuptools || \
 	${MODPY_PYBUILD} == setuptools_scm || \
 	${MODPY_PYBUILD} == setuptools-rust
