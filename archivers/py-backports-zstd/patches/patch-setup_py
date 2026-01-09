@@ -1,0 +1,14 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -52,8 +52,8 @@ def build_extension():
+     if _PLATFORM_IS_WIN:
+         kwargs["extra_compile_args"] += ["/Ob3", "/GF", "/Gy"]
+     else:
+-        kwargs["extra_compile_args"] += ["-g0", "-flto"]
+-        kwargs["extra_link_args"] += ["-g0", "-flto"]
++        kwargs["extra_compile_args"] += ["-g0"]
++        kwargs["extra_link_args"] += ["-g0"]
+ 
+     if _SYSTEM_ZSTD:
+         kwargs["libraries"].append("zstd")

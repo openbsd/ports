@@ -1,6 +1,7 @@
 COMMENT =		backport of zstd support in Python 3.14
 
 MODPY_DISTV =		1.2.0
+REVISION =		0
 DISTNAME =		backports_zstd-${MODPY_DISTV}
 PKGNAME =		py-backports-zstd-${MODPY_DISTV}
 CATEGORIES =		archivers
