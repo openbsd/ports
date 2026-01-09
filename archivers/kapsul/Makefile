@@ -6,6 +6,10 @@ COMMENT=	manage .ptar archives
 MODGO_MODNAME=	github.com/PlakarKorp/kapsul
 MODGO_VERSION=	v0.0.0-beta.10
 DISTNAME=	kapsul-0.0.0beta10
+REVISION=	0
+
+# for patches
+WRKDIST=	${WRKDIR}/github.com/PlakarKorp/kapsul@${MODGO_VERSION}
 
 HOMEPAGE=	https://plakar.io/
 

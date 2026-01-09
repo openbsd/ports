@@ -41,7 +41,7 @@ MODGO_MODULES =	\
 	github.com/cockroachdb/metamorphic			 v0.0.0-20231108215700-4ba948b56895 \
 	github.com/cockroachdb/pebble/v2			 v2.0.6 \
 	github.com/cockroachdb/redact				 v1.1.6 \
-	github.com/cockroachdb/swiss				 v0.0.0-20250624142022-d6e517c1d961 \
+	github.com/cockroachdb/swiss				 v0.0.0-20251224182025-b0f6560f979b \
 	github.com/cockroachdb/tokenbucket			 v0.0.0-20250429170803-42689b6311bb \
 	github.com/creack/pty					 v1.1.9 \
 	github.com/davecgh/go-spew				 v1.1.2-0.20180830191138-d8f796af33cc \
