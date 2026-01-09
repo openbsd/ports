@@ -36,14 +36,18 @@ MODGO_MODULES =	\
 	github.com/sahilm/fuzzy			 v0.1.1 \
 	github.com/stretchr/objx		 v0.5.2 \
 	github.com/stretchr/testify		 v1.11.1 \
+	github.com/tailscale/peercred		 v0.0.0-20250107143737-35a0c7bd7edc \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	github.com/yuin/gopher-lua		 v1.1.1 \
+	golang.org/x/crypto			 v0.46.0 \
 	golang.org/x/exp			 v0.0.0-20231006140011-7918f672742d \
-	golang.org/x/mod			 v0.29.0 \
-	golang.org/x/sync			 v0.18.0 \
-	golang.org/x/sys			 v0.38.0 \
-	golang.org/x/text			 v0.31.0 \
-	golang.org/x/tools			 v0.38.0 \
+	golang.org/x/mod			 v0.30.0 \
+	golang.org/x/net			 v0.47.0 \
+	golang.org/x/sync			 v0.19.0 \
+	golang.org/x/sys			 v0.39.0 \
+	golang.org/x/term			 v0.38.0 \
+	golang.org/x/text			 v0.32.0 \
+	golang.org/x/tools			 v0.39.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.1
 
@@ -69,6 +73,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20190204203706-41f3e6584952 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
+	golang.org/x/sys			 v0.29.1-0.20250107080300-1c14dcadc3ab \
 	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/sys			 v0.36.0 \
 	golang.org/x/sys			 v0.37.0 \
