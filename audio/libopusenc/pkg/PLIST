@@ -1,5 +1,5 @@
 include/opus/opusenc.h
-lib/libopusenc.a
+@static-lib lib/libopusenc.a
 lib/libopusenc.la
 @lib lib/libopusenc.so.${LIBopusenc_VERSION}
 lib/pkgconfig/libopusenc.pc

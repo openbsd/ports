@@ -1,8 +1,7 @@
 COMMENT=	high-level API for encoding .opus files
 
-DISTNAME=	libopusenc-0.2.1
-REVISION=	0
-SHARED_LIBS=	opusenc		0.0	# 4.2
+DISTNAME=	libopusenc-0.3
+SHARED_LIBS=	opusenc		0.0	# 4.3
 CATEGORIES=	audio
 
 HOMEPAGE=	https://opus-codec.org/
@@ -14,11 +13,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m opus
 
-SITES=		https://archive.mozilla.org/pub/opus/
+SITES=		https://downloads.xiph.org/releases/opus/
 
 LIB_DEPENDS=	audio/opus
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-maintainer-mode	# avoid autotools cascade
 CONFIGURE_ARGS+=--disable-doc			# requires doxygen
