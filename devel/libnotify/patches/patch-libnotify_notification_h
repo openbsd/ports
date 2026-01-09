@@ -3,7 +3,7 @@ Comma at end of list isn't valid c++, and c++ code might use libnotify.
 Index: libnotify/notification.h
 --- libnotify/notification.h.orig
 +++ libnotify/notification.h
-@@ -82,7 +82,7 @@ typedef enum
+@@ -84,7 +84,7 @@ typedef enum
  {
          NOTIFY_URGENCY_LOW,
          NOTIFY_URGENCY_NORMAL,

@@ -1,5 +1,6 @@
 @bin bin/notify-send
 include/libnotify/
+include/libnotify/notification-hints.h
 include/libnotify/notification.h
 include/libnotify/notify-enum-types.h
 include/libnotify/notify-features.h
@@ -45,6 +46,21 @@ share/doc/libnotify-0/class.Notification.html
 share/doc/libnotify-0/classes_hierarchy.html
 share/doc/libnotify-0/const.EXPIRES_DEFAULT.html
 share/doc/libnotify-0/const.EXPIRES_NEVER.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_ACTION_ICONS.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_CATEGORY.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_DESKTOP_ENTRY.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_IMAGE_DATA.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_IMAGE_DATA_LEGACY.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_IMAGE_PATH.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_IMAGE_PATH_LEGACY.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_RESIDENT.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_SOUND_FILE.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_SOUND_NAME.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_SUPPRESS_SOUND.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_TRANSIENT.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_URGENCY.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_X.html
+share/doc/libnotify-0/const.NOTIFICATION_HINT_Y.html
 share/doc/libnotify-0/const.VERSION_MAJOR.html
 share/doc/libnotify-0/const.VERSION_MICRO.html
 share/doc/libnotify-0/const.VERSION_MINOR.html
