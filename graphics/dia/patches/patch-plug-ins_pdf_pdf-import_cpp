@@ -1,4 +1,4 @@
-Fix build with poppler-25.09.1 and poppler-25.10.0.
+Fix build with poppler-25.09.1, 25.10.0 and 26.01.0.
 
 Index: plug-ins/pdf/pdf-import.cpp
 --- plug-ins/pdf/pdf-import.cpp.orig
@@ -21,3 +21,12 @@ Index: plug-ins/pdf/pdf-import.cpp
    DiaObject *obj;
    gchar *utf8 = NULL;
    DiaFont *font;
+@@ -900,7 +900,7 @@ DiaOutputDev::drawImage (GfxState         *state,
+       unsigned char *pixels = gdk_pixbuf_get_pixels (pixbuf);
+       int y;
+ 
+-      imgStr.reset(); // otherwise getLine() is crashing right away
++      imgStr.rewind(); // otherwise getLine() is crashing right away
+       line = imgStr.getLine ();
+       for (y = 0; y < height && line; ++y) {
+ 	unsigned char *dest = pixels + y * rowstride;
