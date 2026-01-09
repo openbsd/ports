@@ -1,0 +1,11 @@
+Index: info/CMakeLists.txt
+--- info/CMakeLists.txt.orig
++++ info/CMakeLists.txt
+@@ -18,7 +18,6 @@ else()
+ 	message(STATUS "po4a not found. Disable the generation of localized documentation.")
+ endif()
+ 
+-find_program(PANDOC pandoc)
+ if(PANDOC)
+ 	execute_process(
+ 		COMMAND ${PANDOC} --version
