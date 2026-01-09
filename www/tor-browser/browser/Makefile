@@ -12,7 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-140.6.0esr-15.0-1-build5
-REVISION =		1
+REVISION =		2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -87,7 +87,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			NSS_ENABLE_ECC=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
-RUN_DEPENDS +=		net/obfs4proxy>=0.0.14 \
+RUN_DEPENDS +=		net/lyrebird \
 			net/snowflake_proxy>=2.4.1 \
 			net/tor>=0.4.8.7
 

@@ -12,8 +12,8 @@ CookieAuthentication 1
 GeoIPFile ${LOCALBASE}/share/tor/geoip
 GeoIPv6File ${LOCALBASE}/share/tor/geoip6
 
-## obfs4proxy configuration
-ClientTransportPlugin meek_lite,obfs2,obfs3,obfs4,scramblesuit exec /usr/local/bin/obfs4proxy
+## lyrebird configuration
+ClientTransportPlugin meek_lite,obfs2,obfs3,obfs4,scramblesuit,webtunnel exec /usr/local/bin/lyrebird
 
 ## snowflake configuration
 ClientTransportPlugin snowflake exec /usr/local/bin/snowflake_client

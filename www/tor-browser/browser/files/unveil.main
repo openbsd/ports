@@ -13,7 +13,7 @@
 # normally "pledge dns" exempts this from unveil, but pledge might be disabled
 /etc/resolv.conf r
 
-/usr/local/bin/obfs4proxy rx
+/usr/local/bin/lyrebird rx
 /usr/local/bin/tor rx
 /usr/local/lib r
 /usr/local/lib/tor-browser rx
