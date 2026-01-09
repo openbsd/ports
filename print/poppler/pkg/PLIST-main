@@ -41,6 +41,7 @@ include/poppler/PDFDoc.h
 include/poppler/PDFDocBuilder.h
 include/poppler/PDFDocEncoding.h
 include/poppler/PDFDocFactory.h
+include/poppler/PDFRectangle.h
 include/poppler/PSOutputDev.h
 include/poppler/Page.h
 include/poppler/PageTransition.h
