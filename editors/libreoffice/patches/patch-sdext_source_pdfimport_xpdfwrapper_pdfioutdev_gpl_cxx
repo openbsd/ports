@@ -1,0 +1,32 @@
+Fix build with poppler-26.01.0.
+
+Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+@@ -232,7 +232,7 @@ static void writeJpeg_( OutputBuffer& o_rOutputBuf, St
+     str = ((DCTStream *)str)->getRawStream();
+ #endif
+ #if POPPLER_CHECK_VERSION(25, 2, 0)
+-    if (!str->reset())
++    if (!str->rewind())
+         return;
+ #else
+     str->reset();
+@@ -273,7 +273,7 @@ static void writePbm_(OutputBuffer& o_rOutputBuf, Stre
+ 
+     // initialize stream
+ #if POPPLER_CHECK_VERSION(25, 2, 0)
+-    if (!str->reset())
++    if (!str->rewind())
+         return;
+ #else
+     str->reset();
+@@ -335,7 +335,7 @@ static void writePpm_( OutputBuffer&     o_rOutputBuf,
+                         colorMap->getNumPixelComps(),
+                         colorMap->getBits()));
+ #if POPPLER_CHECK_VERSION(25, 2, 0)
+-    if (!imgStr->reset())
++    if (!imgStr->rewind())
+         return;
+ #else
+     imgStr->reset();
