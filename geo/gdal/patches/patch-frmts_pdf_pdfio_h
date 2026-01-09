@@ -1,0 +1,34 @@
+Fix build with poppler-26.01.0.
+
+See also upstream PR https://github.com/OSGeo/gdal/pull/13664
+
+Index: frmts/pdf/pdfio.h
+--- frmts/pdf/pdfio.h.orig
++++ frmts/pdf/pdfio.h
+@@ -57,7 +57,7 @@ class VSIPDFFileStream final : public BaseStream
+ 
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
+-    bool reset() override;
++    bool rewind() override;
+ #else
+     void reset() override;
+ #endif
+@@ -66,7 +66,7 @@ class VSIPDFFileStream final : public BaseStream
+     {
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
+-        CPL_IGNORE_RET_VAL(str->reset());
++        CPL_IGNORE_RET_VAL(str->rewind());
+ #else
+         str->reset();
+ #endif
+@@ -74,7 +74,7 @@ class VSIPDFFileStream final : public BaseStream
+ 
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 3)
+-    bool unfilteredReset() override;
++    bool unfilteredRewind() override;
+ #else
+     void unfilteredReset() override;
+ #endif

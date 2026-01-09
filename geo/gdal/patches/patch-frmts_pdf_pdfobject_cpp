@@ -1,0 +1,25 @@
+Fix build with poppler-26.01.0.
+
+See also upstream PR https://github.com/OSGeo/gdal/pull/13664
+
+Index: frmts/pdf/pdfobject.cpp
+--- frmts/pdf/pdfobject.cpp.orig
++++ frmts/pdf/pdfobject.cpp
+@@ -1411,7 +1411,7 @@ int64_t GDALPDFStreamPoppler::GetLength(int64_t nMaxSi
+ 
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
+-    if (!m_poStream->reset())
++    if (!m_poStream->rewind())
+         return 0;
+ #else
+     m_poStream->reset();
+@@ -1490,7 +1490,7 @@ int64_t GDALPDFStreamPoppler::GetRawLength()
+     auto undecodeStream = m_poStream->getUndecodedStream();
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
+-    if (!undecodeStream->reset())
++    if (!undecodeStream->rewind())
+         return 0;
+ #else
+     undecodeStream->reset();

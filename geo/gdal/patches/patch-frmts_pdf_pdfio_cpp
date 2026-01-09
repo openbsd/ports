@@ -1,0 +1,28 @@
+Fix build with poppler-26.01.0.
+
+See also upstream PR https://github.com/OSGeo/gdal/pull/13664
+
+Index: frmts/pdf/pdfio.cpp
+--- frmts/pdf/pdfio.cpp.orig
++++ frmts/pdf/pdfio.cpp
+@@ -252,7 +252,7 @@ int VSIPDFFileStream::lookChar()
+ 
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
+-bool VSIPDFFileStream::reset()
++bool VSIPDFFileStream::rewind()
+ #else
+ void VSIPDFFileStream::reset()
+ #endif
+@@ -274,9 +274,9 @@ void VSIPDFFileStream::reset()
+ 
+ #if POPPLER_MAJOR_VERSION > 25 ||                                              \
+     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 3)
+-bool VSIPDFFileStream::unfilteredReset()
++bool VSIPDFFileStream::unfilteredRewind()
+ {
+-    return reset();
++    return rewind();
+ }
+ #else
+ void VSIPDFFileStream::unfilteredReset()
