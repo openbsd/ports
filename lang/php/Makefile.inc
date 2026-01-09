@@ -119,17 +119,14 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_
 PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
-# BDEP needed as well as LIB_DEPENDS-main because -main is knocked
-# out for "embed" builds.
 # xxhash is used as a header-only library here; the file is included in
 # the PHP distribution in a subdir but /usr/local/include is ahead in the
 # -I path so that gets picked up in preference. make it explicit by
 # adding the dep.
-BUILD_DEPENDS+=		devel/capstone/main \
-			sysutils/xxhash
+BUILD_DEPENDS+=		sysutils/xxhash
 CONFIGURE_ARGS+=	--with-capstone
-LIB_DEPENDS-main+=	devel/capstone/main
-WANTLIB-main+=		capstone
+LIB_DEPENDS+=		devel/capstone/main
+WANTLIB-main=		capstone
 
 # where the main php module is stored (outside the chroot)
 .if ${FLAVOR:Membed}
@@ -189,19 +186,22 @@ COMMENT-embed=		embeddable php library
 CONFIGURE_ARGS+=	--enable-embed
 .endif
 
-.for i in ${SAPI:N-apache:N-embed}
-WANTLIB$i +=		c
-.endfor
-
-.for i in ${SAPI}
-WANTLIB$i +=		argon2 crypto curses iconv intl m onig
-WANTLIB$i +=		pcre2-8 pthread readline sodium ssl util xml2 z
-LIB_DEPENDS$i +=	devel/gettext,-runtime \
+# default for SAPI subpackages
+WANTLIB +=		argon2 crypto curses iconv intl m onig
+WANTLIB +=		pcre2-8 pthread readline sodium ssl util xml2 z
+LIB_DEPENDS +=		devel/gettext,-runtime \
 			devel/pcre2 \
 			security/argon2 \
 			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
+
+# explicitly add rather than using implicit default, so subdirs can add more
+.for i in ${SAPI}
+WANTLIB$i +=		${WANTLIB}
+.endfor
+.for i in ${SAPI:N-apache:N-embed}
+WANTLIB$i +=		c
 .endfor
 
 #
