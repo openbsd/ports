@@ -1,5 +1,6 @@
 COMMENT =		Tool Command Language
 
+REVISION=0
 P =			3
 
 DISTNAME =		tcl9.0.${P}
