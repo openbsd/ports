@@ -1,0 +1,5 @@
+Scikit-build-core is a build backend for Python that uses CMake to build
+extension modules. It has a simple yet powerful static configuration system
+in pyproject.toml, and supports almost unlimited flexibility via CMake. It
+was initially developed to support the demanding needs of scientific users,
+but can build any sort of package that uses CMake.
