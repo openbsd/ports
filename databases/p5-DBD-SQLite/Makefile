@@ -1,9 +1,12 @@
 COMMENT=		SQLite drivers for the Perl DBI
 
 MODULES=		cpan
-DISTNAME=		DBD-SQLite-1.76
+
+DISTNAME=		DBD-SQLite-1.78
 CATEGORIES=		databases
 EPOCH=			0
+
+CPAN_AUTHOR=		ISHIGAKI
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
