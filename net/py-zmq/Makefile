@@ -1,6 +1,6 @@
 COMMENT =		Python bindings for ZeroMQ
 
-# 26+ requires scikit-build-core
+# 26+ uses MODPY_PYBUILD=scikit-build-core
 MODPY_DISTV =		25.1.2
 REVISION =		0
 DISTNAME =		pyzmq-${MODPY_DISTV}
