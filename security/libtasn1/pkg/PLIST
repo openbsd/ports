@@ -2,7 +2,7 @@
 @bin bin/asn1Decoding
 @bin bin/asn1Parser
 include/libtasn1.h
-@info info/libtasn1.info
+info/libtasn1.info
 @static-lib lib/libtasn1.a
 lib/libtasn1.la
 @lib lib/libtasn1.so.${LIBtasn1_VERSION}
