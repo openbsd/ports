@@ -31,6 +31,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	c crypto curses kvm m perl ssl
+# SNMP.xs build fails with base-gcc
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 FLAVORS=	readonly
 FLAVOR?=
