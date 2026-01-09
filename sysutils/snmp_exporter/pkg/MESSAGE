@@ -1,2 +1,0 @@
-snmp_exporter configuration syntax had an incompatible change in 0.23.0.
-See the pkg-readme file or upstream docs for details.

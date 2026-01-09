@@ -1,0 +1,13 @@
+needed for net-snmp 5.9.5.x (struct must match snmplib/parse.c)
+
+Index: generator/net_snmp.go
+--- generator/net_snmp.go.orig
++++ generator/net_snmp.go
+@@ -41,6 +41,7 @@ struct tc {
+   struct enum_list *enums;
+   struct range_list *ranges;
+   char           *description;
++  int             lineno;
+ #if !defined(NETSNMP_DS_LIB_ADD_FORWARDER_INFO)
+ } tclist[MAXTC];
+ int tc_alloc = MAXTC;
