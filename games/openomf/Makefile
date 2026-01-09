@@ -1,6 +1,6 @@
 COMMENT =	free remake of One Must Fall 2097 game engine
 
-V =		0.8.4
+V =		0.8.5
 PKGNAME =	openomf-${V}
 DIST_TUPLE +=	github omf2097 openomf ${V} .
 
