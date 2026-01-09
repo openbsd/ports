@@ -1,0 +1,23 @@
+Fix build with poppler-26.01.0.
+
+Index: src/lib/pdf/pdfimage.cpp
+--- src/lib/pdf/pdfimage.cpp.orig
++++ src/lib/pdf/pdfimage.cpp
+@@ -34,7 +34,7 @@ QImage PdfImagePrivate::load(Stream* str, GfxImageColo
+ {
+     if (m_format == QImage::Format_Mono) { // bitmasks are not stored as image streams
+         auto img = QImage(m_sourceWidth, m_sourceHeight, QImage::Format_Mono); // TODO implicit Format_Grayscale8 conversion
+-        str->reset();
++        str->rewind();
+         const int rowSize = (m_sourceWidth + 7) / 8;
+         for (int y = 0; y < m_sourceHeight; ++y) {
+             auto imgData = img.scanLine(y);
+@@ -55,7 +55,7 @@ QImage PdfImagePrivate::load(Stream* str, GfxImageColo
+     auto img = QImage(m_sourceWidth, m_sourceHeight, (m_loadingHints & PdfImage::ConvertToGrayscaleHint) ? QImage::Format_Grayscale8 : m_format);
+     const auto bytesPerPixel = colorMap->getNumPixelComps();
+     std::unique_ptr<ImageStream> imgStream(new ImageStream(str, m_sourceWidth, bytesPerPixel, colorMap->getBits()));
+-    imgStream->reset();
++    imgStream->rewind();
+ 
+     switch (m_format) {
+         case QImage::Format_RGB888:
