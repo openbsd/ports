@@ -1,6 +1,6 @@
 COMMENT=		Python library for manipulating pages of PDF files
 
-MODPY_DISTV=		6.5.0
+MODPY_DISTV=		6.6.0
 DISTNAME=		pypdf-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
