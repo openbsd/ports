@@ -1,0 +1,12 @@
+Reactive programming & data binding in C++
+
+From plain C++ you get:
+
+ - Signals + Slots.
+ - Properties templated on the contained type.
+ - Property bindings allowing reactive code to be written without having to do
+   all the low-level, error prone plumbing by hand.
+ - Lazy evaluation of property bindings.
+ - No more broken bindings.
+ - Totally stand-alone header-only library. No heavy Qt dependency.
+ - Can still be used with Qt if you so wish.
