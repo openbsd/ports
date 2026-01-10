@@ -8,5 +8,4 @@ lib/python${MODPY_VERSION}/site-packages/pytest_datafiles-${MODPY_DISTV}.dist-in
 lib/python${MODPY_VERSION}/site-packages/pytest_datafiles-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_datafiles-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/pytest_datafiles-${MODPY_DISTV}.dist-info/licenses/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pytest_datafiles-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_datafiles.py
