@@ -147,6 +147,7 @@
      SUBDIR += iwidgets
      SUBDIR += jgmenu
      SUBDIR += jwm
+     SUBDIR += kddockwidgets
      SUBDIR += kde-applications
      SUBDIR += kde-plasma
      SUBDIR += kdsingleapplication

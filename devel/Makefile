@@ -254,6 +254,7 @@
      SUBDIR += jsonrpc-glib
      SUBDIR += jujutsu
      SUBDIR += kainjow-mustache
+     SUBDIR += kdbindings
      SUBDIR += kdevelop
      SUBDIR += kdiff3
      SUBDIR += keystone
