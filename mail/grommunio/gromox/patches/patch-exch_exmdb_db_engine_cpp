@@ -9,4 +9,4 @@ Index: exch/exmdb/db_engine.cpp
 +
  using LLD = long long;
  using LLU = unsigned long long;
- using namespace gromox;
+ using GCV_ARRAY = LONGLONG_ARRAY;

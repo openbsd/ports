@@ -172,12 +172,13 @@ man/man8/event.8gx
 @man man/man8/gromox-e2ghelper.8
 @man man/man8/gromox-eml2mbox.8
 @man man/man8/gromox-eml2mt.8
-@man man/man8/gromox-exm2eml.8
 @man man/man8/gromox-exm2ical.8
 @man man/man8/gromox-exm2mt.8
 @man man/man8/gromox-exm2tnef.8
 @man man/man8/gromox-exm2vcf.8
+@man man/man8/gromox-export.8
 @man man/man8/gromox-ical2mt.8
+@man man/man8/gromox-import.8
 @man man/man8/gromox-kdb2mt.8
 @man man/man8/gromox-mailq.8
 @man man/man8/gromox-mbck.8
@@ -186,7 +187,6 @@ man/man8/event.8gx
 @man man/man8/gromox-mkmidb.8
 @man man/man8/gromox-mkprivate.8
 @man man/man8/gromox-mkpublic.8
-@man man/man8/gromox-mt2exm.8
 @man man/man8/gromox-snapshot.8
 @man man/man8/gromox-vcf2mt.8
 man/man8/http.8gx
@@ -206,12 +206,14 @@ sbin/gromox-abktpull
 @bin sbin/gromox-e2ghelper
 @bin sbin/gromox-eml2mbox
 @bin sbin/gromox-eml2mt
-@bin sbin/gromox-exm2eml
+sbin/gromox-exm2eml
 sbin/gromox-exm2ical
 sbin/gromox-exm2mt
 sbin/gromox-exm2tnef
 sbin/gromox-exm2vcf
+@bin sbin/gromox-export
 sbin/gromox-ical2mt
+@bin sbin/gromox-import
 @bin sbin/gromox-kdb2mt
 @bin sbin/gromox-mailq
 @bin sbin/gromox-mbck
@@ -221,7 +223,7 @@ sbin/gromox-mbox2mt
 @bin sbin/gromox-mkmidb
 @bin sbin/gromox-mkprivate
 @bin sbin/gromox-mkpublic
-@bin sbin/gromox-mt2exm
+sbin/gromox-mt2exm
 sbin/gromox-tnef2mt
 sbin/gromox-vcf2mt
 share/doc/pkg-readmes/${PKGSTEM}

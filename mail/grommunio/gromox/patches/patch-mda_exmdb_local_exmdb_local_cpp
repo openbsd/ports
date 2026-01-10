@@ -8,6 +8,6 @@ Index: mda/exmdb_local/exmdb_local.cpp
  	}
  	auto home_dir = mres.maildir.c_str();
 +	mlog(LV_DEBUG, "<%s> mailbox is in %s", address, home_dir);
- 	if (*znul(tmzone) == '\0')
- 		strcpy(tmzone, GROMOX_FALLBACK_TIMEZONE);
- 	
+ 	auto pmail = &pcontext->mail;
+ 	gx_strlcpy(hostname, get_host_ID(), std::size(hostname));
+ 	if ('\0' == hostname[0]) {
