@@ -1,6 +1,6 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_DISTV=	1.3.0
+MODPY_DISTV=	1.4.0
 DISTNAME=	build-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -13,9 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-
-# contains tests, but not clear how to run
-NO_TEST=	Yes
+MODPY_PYTEST=	Yes
 
 BUILD_DEPENDS=	devel/py-installer \
 		devel/py-flit_core \
@@ -24,6 +22,8 @@ BUILD_DEPENDS=	devel/py-installer \
 
 RUN_DEPENDS=	devel/py-pyproject_hooks \
 		sysutils/py-packaging
+
+TEST_DEPENDS=	devel/py-flaky
 
 # point to the copy of py-build in WRKSRC for a self-hosting build
 # replicate most of MODPY_PYBUILD steps because we can't use it directly
