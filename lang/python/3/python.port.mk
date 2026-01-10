@@ -346,10 +346,9 @@ do-build:
 do-install:
 	@${MODPY_INSTALL_TARGET}
 .  endif
+.endif
 
-.  if !target(do-test) && ${MODPY_PYTEST:L} == "yes"
+.if !target(do-test) && ${MODPY_PYTEST:L} == "yes"
 do-test:
 	@${MODPY_TEST_TARGET}
-.  endif
-
 .endif
