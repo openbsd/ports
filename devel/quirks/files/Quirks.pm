@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1777 2025/12/28 20:49:58 kurt Exp $
+# $OpenBSD: Quirks.pm,v 1.1778 2026/01/10 15:37:43 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -501,6 +501,8 @@ my $stem_extensions = {
 	'py-game' => 'py3-game',
 	'gpgme-qt' => 'qgpgme',
 	'GSL' => 'microsoft-gsl',
+	'kdegraphics-mobipocket-kf5' => 'kf6-kdegraphics-mobipocket',
+	'libkdcraw-kf5' => 'kf6-libkdcraw',
 };
 
 my $obsolete_reason = {};
