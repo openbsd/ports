@@ -90,6 +90,7 @@ lib/qt6/qml/org/kde/kirigami/delegates/RadioSubtitleDelegate.qml
 lib/qt6/qml/org/kde/kirigami/delegates/SubtitleDelegate.qml
 lib/qt6/qml/org/kde/kirigami/delegates/SwitchSubtitleDelegate.qml
 lib/qt6/qml/org/kde/kirigami/delegates/TitleSubtitle.qml
+lib/qt6/qml/org/kde/kirigami/delegates/TitleSubtitleWithActions.qml
 lib/qt6/qml/org/kde/kirigami/delegates/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/delegates/libKirigamiDelegatesplugin.so
 lib/qt6/qml/org/kde/kirigami/delegates/qmldir
@@ -206,6 +207,7 @@ share/locale/et/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/eu/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/fi/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/fr/LC_MESSAGES/libkirigami6_qt.qm
+share/locale/ga/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/he/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/hi/LC_MESSAGES/libkirigami6_qt.qm

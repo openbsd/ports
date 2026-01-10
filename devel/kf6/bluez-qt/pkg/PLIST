@@ -3,6 +3,7 @@ include/KF6/BluezQt/
 include/KF6/BluezQt/BluezQt/
 include/KF6/BluezQt/BluezQt/Adapter
 include/KF6/BluezQt/BluezQt/Agent
+include/KF6/BluezQt/BluezQt/Battery
 include/KF6/BluezQt/BluezQt/Device
 include/KF6/BluezQt/BluezQt/DevicesModel
 include/KF6/BluezQt/BluezQt/GattApplication
@@ -43,6 +44,7 @@ include/KF6/BluezQt/BluezQt/Types
 include/KF6/BluezQt/bluezqt/
 include/KF6/BluezQt/bluezqt/adapter.h
 include/KF6/BluezQt/bluezqt/agent.h
+include/KF6/BluezQt/bluezqt/battery.h
 include/KF6/BluezQt/bluezqt/bluezqt_export.h
 include/KF6/BluezQt/bluezqt/device.h
 include/KF6/BluezQt/bluezqt/devicesmodel.h
