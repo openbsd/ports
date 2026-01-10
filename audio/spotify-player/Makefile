@@ -4,7 +4,7 @@ COMMENT =		Spotify TUI client
 
 GH_ACCOUNT =		aome510
 GH_PROJECT =		spotify-player
-GH_TAGNAME =		v0.21.2
+GH_TAGNAME =		v0.21.3
 
 CATEGORIES =		audio
 
