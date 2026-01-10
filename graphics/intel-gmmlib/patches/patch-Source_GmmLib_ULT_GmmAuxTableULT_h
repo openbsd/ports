@@ -19,7 +19,7 @@ Index: Source/GmmLib/ULT/GmmAuxTableULT.h
  
  #ifndef ALIGN
  #define ALIGN(v, a) (((v) + ((a)-1)) & ~((a)-1))
-@@ -249,4 +248,4 @@ class CTestAuxTable : public CTestGen10Resource (publi
+@@ -252,4 +251,4 @@ class CTestAuxTable : public CTestGen10Resource (publi
      };
  };
  

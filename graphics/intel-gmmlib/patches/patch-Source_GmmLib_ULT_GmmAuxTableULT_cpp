@@ -11,7 +11,7 @@ Index: Source/GmmLib/ULT/GmmAuxTableULT.cpp
  
  #include "GmmAuxTableULT.h"
  
-@@ -262,4 +262,4 @@ TEST_F(CTestAuxTable, TestAuxTableContent)
+@@ -266,4 +266,4 @@ TEST_F(CTestAuxTable, TestAuxTableContent)
      pGmmULTClientContext->DestroyPageTblMgrObject(mgr);
  }
  

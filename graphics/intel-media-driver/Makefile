@@ -3,7 +3,7 @@ BROKEN-i386 =	ld: error: [...] is incompatible with /usr/lib/crtbeginS.o
 
 COMMENT =	VAAPI driver for Intel HD 5000 (Gen8) or newer
 
-VERSION =	25.2.6
+VERSION =	25.3.4
 GH_ACCOUNT =	intel
 GH_PROJECT =	media-driver
 GH_TAGNAME =	intel-media-${VERSION}

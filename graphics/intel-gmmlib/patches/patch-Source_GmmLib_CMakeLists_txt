@@ -3,7 +3,7 @@ https://github.com/intel/gmmlib/pull/67
 Index: Source/GmmLib/CMakeLists.txt
 --- Source/GmmLib/CMakeLists.txt.orig
 +++ Source/GmmLib/CMakeLists.txt
-@@ -508,10 +508,6 @@ bs_set_extra_target_properties(${GMM_LIB_DLL_NAME}
+@@ -513,10 +513,6 @@ bs_set_extra_target_properties(${GMM_LIB_DLL_NAME}
  	  GMM_UNIFY_DAF_API
  	  )
  
