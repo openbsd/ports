@@ -1,3 +1,3 @@
-@so lib/libreoffice/program/libkf5be1lo.so
-@so lib/libreoffice/program/libvclplug_kf5lo.so
-@so lib/libreoffice/program/libvclplug_qt5lo.so
+@so lib/libreoffice/program/libavmediaqt6.so
+@so lib/libreoffice/program/libvclplug_kf6lo.so
+@so lib/libreoffice/program/libvclplug_qt6lo.so

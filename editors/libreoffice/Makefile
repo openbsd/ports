@@ -30,21 +30,19 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+REVISION =	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-HOMEPAGE=	http://www.libreoffice.org/
+HOMEPAGE=	https://www.libreoffice.org/
 
-SITES=		http://download.documentfoundation.org/libreoffice/src/${VERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
-		http://humppa.hu/libreoffice/ \
-		http://download.go-oo.org/src/
-SITES.a=	http://dev-www.libreoffice.org/src/ \
-		http://dev-www.libreoffice.org/extern/ \
-		http://hg.services.openoffice.org/binaries/ \
-		http://download.go-oo.org/src/ \
-		http://download.go-oo.org/extern/ \
-		http://www.numbertext.org/linux/ \
-		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
+SITES=		https://download.documentfoundation.org/libreoffice/src/${VERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
+		https://download.go-oo.org/src/ \
+		http://humppa.hu/libreoffice/
+SITES.a=	https://dev-www.libreoffice.org/src/ \
+		https://dev-www.libreoffice.org/extern/ \
+		https://download.go-oo.org/src/ \
+		https://download.go-oo.org/extern/
 
 TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-${VERSION}.tar.xz
@@ -198,51 +196,43 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES+=	lang/python
 
 LIB_DEPENDS-main= \
+		${MODGCC4_CPPLIBDEP} \
 		archivers/zstd \
-		databases/openldap \
 		databases/mariadb \
+		databases/openldap \
 		databases/postgresql \
 		devel/boost \
 		devel/harfbuzz,-icu \
 		devel/pango \
-		graphics/lcms2 \
 		graphics/graphite2 \
+		graphics/lcms2 \
 		graphics/libwebp \
 		graphics/tiff \
-		${MODGCC4_CPPLIBDEP} \
 		multimedia/gstreamer1/plugins-base \
+		net/curl \
 		print/cups,-libs \
 		print/poppler \
+		textproc/hunspell \
+		textproc/icu4c \
 		textproc/libwpd \
 		textproc/libxslt \
 		textproc/raptor \
-		net/curl \
-		textproc/icu4c \
-		textproc/redland \
-		textproc/hunspell
+		textproc/redland
 
-WANTLIB-main=	${COMPILER_LIBCXX}
-WANTLIB-main+=	xslt>=3 curl>=7 pq>=2 icuuc>=0 icui18n rdf>=0
-WANTLIB-main+=	ICE SM X11
-WANTLIB-main+=	Xext Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB-main+=	crypto expat fontconfig freetype gio-2.0 glib-2.0
-WANTLIB-main+=	gobject-2.0 iconv intl util
-WANTLIB-main+=	jpeg m pthread ssl xml2 z gdk_pixbuf-2.0 poppler
-WANTLIB-main+=	pango-1.0 pangocairo-1.0 hunspell-1.7
-WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
-WANTLIB-main+=	cups exslt lcms2 raptor2 harfbuzz harfbuzz-icu
-WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
-WANTLIB-main+=	lzma cairo-gobject gmodule-2.0 dconf gdk-3 gtk-3
-WANTLIB-main+=	bz2 graphite2 epoxy mariadb png boost_locale-mt
-WANTLIB-main+=	boost_filesystem boost_iostreams-mt
-WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
-WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
-WANTLIB-main+=	X11-xcb
-WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
-WANTLIB-main+=	gstvideo-1.0
-WANTLIB-main+=	poppler-cpp
-WANTLIB-main+=	tiff webp revenge-0.0 wpd-0.10
-WANTLIB-main+=	boost_random-mt boost_regex-mt icudata zstd
+WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xext Xinerama
+WANTLIB-main += Xrandr Xrender atk-1.0 boost_date_time-mt boost_filesystem
+WANTLIB-main += boost_iostreams-mt boost_locale-mt boost_random-mt
+WANTLIB-main += boost_regex-mt boost_system boost_system-mt bz2 c cairo
+WANTLIB-main += cairo-gobject clucene-contribs-lib clucene-core clucene-shared
+WANTLIB-main += crypto cups curl dconf epoxy expat exslt fontconfig
+WANTLIB-main += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB-main += gobject-2.0 graphite2 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB-main += gstreamer-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB-main += hunspell-1.7 iconv icudata icui18n icuuc intl jpeg
+WANTLIB-main += lber lcms2 ldap m mariadb nspr4 nss3 nssutil3 pango-1.0
+WANTLIB-main += pangocairo-1.0 plc4 plds4 png poppler poppler-cpp pq
+WANTLIB-main += python3.13 raptor2 rdf revenge-0.0 smime3 ssl ssl3
+WANTLIB-main += tiff util webp wpd-0.10 xml2 xslt z zstd
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -254,22 +244,28 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			x11/gtk+3 \
 			x11/gtk+4,-guic
 
-MODULES+=		x11/qt5
-LIB_DEPENDS-kde=	devel/kf5/kcoreaddons \
-			devel/kf5/kio \
+MODULES+=		x11/qt6
+
+# Only in -kde
+MODQT_DEPS =		No
+
+WANTLIB-kde += ${COMPILER_LIBCXX} KF6ConfigCore KF6CoreAddons KF6I18n
+WANTLIB-kde += KF6KIOCore KF6KIOFileWidgets KF6KIOWidgets KF6WindowSystem
+WANTLIB-kde += Qt6Core Qt6Gui Qt6Multimedia Qt6MultimediaWidgets Qt6Widgets
+WANTLIB-kde += cairo epoxy graphite2 harfbuzz harfbuzz-icu icuuc m
+WANTLIB-kde += xcb
+WANTLIB-kde +=	lib/libreoffice/program/uno_cppu \
+		lib/libreoffice/program/uno_cppuhelpergcc3 \
+		lib/libreoffice/program/uno_sal \
+		lib/libreoffice/program/uno_salhelpergcc3
+
+LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
+			${MODGCC4_CPPLIBDEP} \
+			devel/kf6/kcoreaddons \
+			devel/kf6/kio \
+			devel/harfbuzz,-icu \
 			editors/libreoffice \
-			${MODQT_LIB_DEPENDS} \
-			${MODGCC4_CPPLIBDEP}
-WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb
-WANTLIB-kde+=		cairo graphite2 epoxy harfbuzz harfbuzz-icu
-WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
-WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
-WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
-WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
-WANTLIB-kde+=		lib/libreoffice/program/uno_cppu \
-			lib/libreoffice/program/uno_cppuhelpergcc3 \
-			lib/libreoffice/program/uno_sal \
-			lib/libreoffice/program/uno_salhelpergcc3
+			x11/qt6/qtmultimedia
 
 .include <bsd.port.arch.mk>
 
@@ -301,11 +297,21 @@ CXXFLAGS +=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--threads=${MAKE_JOBS}" \
-		KDE5INC="${LOCALBASE}/include/kde5" KDE5LIB="${LOCALBASE}/lib/kde5/libs"\
-		KF5INC="${LOCALBASE}/include" KF5LIB="${LOCALBASE}/lib" \
-		QT5DIR="${LOCALBASE}/lib/qt5" QT5LIB="${LOCALBASE}/qt5" \
-		QT5INC="${LOCALBASE}/include/X11/qt5"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--threads=${MAKE_JOBS}"
+
+# KDE
+CONFIGURE_ARGS+=	--disable-kf5 \
+			--disable-qt5 \
+			--enable-kf6 \
+			--enable-qt6
+
+CONFIGURE_ENV+=	KDE6INC="${LOCALBASE}/include/kde6" \
+		KDE6LIB="${LOCALBASE}/lib/kde6/libs" \
+		KF6INC="${LOCALBASE}/include" \
+		KF6LIB="${LOCALBASE}/lib" \
+		QT6DIR="${MODQT_LIBDIR}" \
+		QT6INC="${MODQT_INCDIR}" \
+		QT6LIB="${LOCALBASE}"
 
 CONFIGURE_ARGS+=\
 		--disable-coinmp \
@@ -320,9 +326,7 @@ CONFIGURE_ARGS+=\
 		--disable-scripting-javascript \
 		--enable-mergelibs \
 		--enable-gio \
-		--enable-kf5 \
 		--enable-lto \
-		--enable-qt5 \
 		--enable-release-build \
 		--enable-cairo-canvas \
 		--with-compat-oowrappers \
