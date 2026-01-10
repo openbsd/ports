@@ -10,4 +10,4 @@ Index: vendor/autoload.php
 +
  require_once __DIR__ . '/composer/autoload_real.php';
  
- return ComposerAutoloaderInitc975b6680c2c098dd3e9273a01df8d08::getLoader();
+ return ComposerAutoloaderInit77e0a56886907409518852c12b239c04::getLoader();

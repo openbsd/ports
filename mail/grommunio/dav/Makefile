@@ -1,12 +1,11 @@
 COMMENT=	CalDAV and CardDAV interface for grommunio
 
-V=		1.5
+V=		1.6
 DISTNAME=	grommunio-dav-${V}
-REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-dav
-GH_COMMIT=	800a8a8d1bedf815eaa5ef32c789a1d4a0d45fda
+GH_COMMIT=	2b0a89070618fc383412fd475c3dfe18fd6834ac
 
 DISTFILES=	${GH_DISTFILE}
 DISTFILES.a = 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz

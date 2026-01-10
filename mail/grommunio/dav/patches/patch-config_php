@@ -1,7 +1,7 @@
 Index: config.php
 --- config.php.orig
 +++ config.php
-@@ -16,7 +16,7 @@ define('SABRE_AUTH_REALM', 'grommunio dav');
+@@ -17,7 +17,7 @@ define('SABRE_AUTH_REALM', 'grommunio dav');
  define('DAV_ROOT_URI', '/dav/');
  
  // Location of the sync database (PDO syntax)

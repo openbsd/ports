@@ -1,30 +1,45 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -6,16 +6,16 @@ $vendorDir = dirname(__DIR__);
+@@ -6,23 +6,23 @@ $vendorDir = dirname(__DIR__);
  $baseDir = dirname($vendorDir);
  
  return array(
 -    'BaseException' => '/var/www/grommunio-mapi-header-php/class.baseexception.php',
+-    'BaseExceptionTest' => '/var/www/grommunio-mapi-header-php/tests/BaseExceptionTest.php',
 -    'BaseRecurrence' => '/var/www/grommunio-mapi-header-php/class.baserecurrence.php',
 +    'BaseException' => UMAPI_PATH . '/class.baseexception.php',
++    'BaseExceptionTest' => UMAPI_PATH . '/tests/BaseExceptionTest.php',
 +    'BaseRecurrence' => UMAPI_PATH . '/class.baserecurrence.php',
      'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+-    'ExtendedTokenTest' => '/var/www/grommunio-mapi-header-php/tests/ExtendedTokenTest.php',
 -    'FreeBusy' => '/var/www/grommunio-mapi-header-php/class.freebusy.php',
+-    'FreeBusyTest' => '/var/www/grommunio-mapi-header-php/tests/FreeBusyTest.php',
 -    'KeyCloak' => '/var/www/grommunio-mapi-header-php/class.keycloak.php',
+-    'KeyCloakTest' => '/var/www/grommunio-mapi-header-php/tests/KeyCloakTest.php',
 -    'MAPIException' => '/var/www/grommunio-mapi-header-php/class.mapiexception.php',
+-    'MAPIExceptionTest' => '/var/www/grommunio-mapi-header-php/tests/MAPIExceptionTest.php',
 -    'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
 -    'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
 -    'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
 -    'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
 -    'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
+-    'TokenTest' => '/var/www/grommunio-mapi-header-php/tests/TokenTest.php',
+-    'UtilityFunctionsTest' => '/var/www/grommunio-mapi-header-php/tests/UtilityFunctionsTest.php',
+-    'resource' => '/var/www/grommunio-mapi-header-php/dev/php-mapi-stub.php',
++    'ExtendedTokenTest' => UMAPI_PATH . '/tests/ExtendedTokenTest.php',
 +    'FreeBusy' => UMAPI_PATH . '/class.freebusy.php',
++    'FreeBusyTest' => UMAPI_PATH . '/tests/FreeBusyTest.php',
 +    'KeyCloak' => UMAPI_PATH . '/class.keycloak.php',
++    'KeyCloakTest' => UMAPI_PATH . '/tests/KeyCloakTest.php',
 +    'MAPIException' => UMAPI_PATH . '/class.mapiexception.php',
++    'MAPIExceptionTest' => UMAPI_PATH . '/tests/MAPIExceptionTest.php',
 +    'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
 +    'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
 +    'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +    'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
 +    'Token' => UMAPI_PATH . '/class.token.php',
-     'resource' => '/var/www/grommunio-mapi-header-php/dev/php-mapi-stub.php',
++    'TokenTest' => UMAPI_PATH . '/tests/TokenTest.php',
++    'UtilityFunctionsTest' => UMAPI_PATH . '/tests/UtilityFunctionsTest.php',
++    'resource' => UMAPI_PATH . '/dev/php-mapi-stub.php',
  );
