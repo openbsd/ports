@@ -3,7 +3,6 @@ COMMENT =	liberalised reimplementation of cpp in Haskell
 MODCABAL_STEM =		cpphs
 MODCABAL_VERSION	= 1.20.9.1
 MODCABAL_REVISION	= 1
-MODCABAL_MANIFEST	= polyparse	1.13	9
 REVISION =		3
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -21,5 +20,7 @@ LIB_DEPENDS =		converters/libiconv \
 
 post-install:
 	${INSTALL_MAN}     ${WRKSRC}/docs/cpphs.1 ${PREFIX}/man/man1
+
+.include "cabal.inc"
 
 .include <bsd.port.mk>
