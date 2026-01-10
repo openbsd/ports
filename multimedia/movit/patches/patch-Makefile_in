@@ -1,0 +1,12 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -92,7 +92,7 @@ TESTS=effect_chain_test fp16_test $(TESTED_INPUTS:=_te
+ LIB_OBJS=effect_util.o util.o effect.o effect_chain.o init.o resource_pool.o ycbcr.o bundled_shaders.o $(INPUTS:=.o) $(EFFECTS:=.o)
+ 
+ # Default target:
+-all: libmovit.la $(TESTS)
++all: libmovit.la
+ 
+ ifeq ($(with_demo_app),yes)
+ all: demo

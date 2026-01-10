@@ -1,0 +1,4 @@
+Movit is a library that provides high-performance, high-quality video filters
+for the GPU. It is designed for real-time video processing and offers
+GPU-accelerated filters for scaling, color correction and various other video
+transformations.

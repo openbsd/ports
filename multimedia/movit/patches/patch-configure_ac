@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -14,7 +14,7 @@ PKG_CHECK_MODULES([FFTW3], [fftw3])
+ 
+ # Needed for unit tests and the demo app.
+ with_demo_app=yes
+-PKG_CHECK_MODULES([SDL2], [sdl2])
++PKG_CHECK_MODULES([SDL2], [sdl2], [], [x=x])
+ 
+ # This is only needed for the demo app.
+ PKG_CHECK_MODULES([SDL2_image], [SDL2_image], [], [with_demo_app=no; AC_MSG_WARN([SDL2_image not found, demo program will not be built])])
