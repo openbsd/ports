@@ -10,6 +10,7 @@ include/mlt-7/framework/mlt_chain.h
 include/mlt-7/framework/mlt_consumer.h
 include/mlt-7/framework/mlt_deque.h
 include/mlt-7/framework/mlt_events.h
+include/mlt-7/framework/mlt_export.h
 include/mlt-7/framework/mlt_factory.h
 include/mlt-7/framework/mlt_field.h
 include/mlt-7/framework/mlt_filter.h
@@ -76,11 +77,10 @@ lib/mlt-7/
 @so lib/mlt-7/libmltdecklink.so
 @so lib/mlt-7/libmltfrei0r.so
 @so lib/mlt-7/libmltgdk.so
-@so lib/mlt-7/libmltjackrack.so
 @so lib/mlt-7/libmltkdenlive.so
+@so lib/mlt-7/libmltmovit.so
 @so lib/mlt-7/libmltoldfilm.so
 @so lib/mlt-7/libmltplus.so
-@so lib/mlt-7/libmltsdl.so
 @so lib/mlt-7/libmltsdl2.so
 @so lib/mlt-7/libmltsox.so
 @so lib/mlt-7/libmltvorbis.so
@@ -165,14 +165,32 @@ share/mlt-7/gdk/
 share/mlt-7/gdk/filter_rescale.yml
 share/mlt-7/gdk/producer_pango.yml
 share/mlt-7/gdk/producer_pixbuf.yml
-share/mlt-7/jackrack/
-share/mlt-7/jackrack/consumer_jack.yml
 share/mlt-7/kdenlive/
 share/mlt-7/kdenlive/filter_boxblur.yml
 share/mlt-7/kdenlive/filter_freeze.yml
 share/mlt-7/kdenlive/filter_wave.yml
 share/mlt-7/kdenlive/producer_framebuffer.yml
 share/mlt-7/metaschema.yaml
+share/mlt-7/movit/
+share/mlt-7/movit/filter_movit_blur.yml
+share/mlt-7/movit/filter_movit_convert.yml
+share/mlt-7/movit/filter_movit_crop.yml
+share/mlt-7/movit/filter_movit_deconvolution_sharpen.yml
+share/mlt-7/movit/filter_movit_diffusion.yml
+share/mlt-7/movit/filter_movit_flip.yml
+share/mlt-7/movit/filter_movit_glow.yml
+share/mlt-7/movit/filter_movit_lift_gamma_gain.yml
+share/mlt-7/movit/filter_movit_mirror.yml
+share/mlt-7/movit/filter_movit_opacity.yml
+share/mlt-7/movit/filter_movit_rect.yml
+share/mlt-7/movit/filter_movit_resample.yml
+share/mlt-7/movit/filter_movit_resize.yml
+share/mlt-7/movit/filter_movit_saturation.yml
+share/mlt-7/movit/filter_movit_vignette.yml
+share/mlt-7/movit/filter_movit_white_balance.yml
+share/mlt-7/movit/transition_movit_luma.yml
+share/mlt-7/movit/transition_movit_mix.yml
+share/mlt-7/movit/transition_movit_overlay.yml
 share/mlt-7/oldfilm/
 share/mlt-7/oldfilm/dust1.svg
 share/mlt-7/oldfilm/dust2.svg
@@ -450,15 +468,8 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
-share/mlt-7/qt/filter_dropshadow.yml
-share/mlt-7/qt6/filter_dropshadow.yml
 share/mlt-7/resample/
 share/mlt-7/resample/link_resample.yml
-share/mlt-7/sdl/
-share/mlt-7/sdl/consumer_sdl.yml
-share/mlt-7/sdl/consumer_sdl_audio.yml
-share/mlt-7/sdl/consumer_sdl_preview.yml
-share/mlt-7/sdl/consumer_sdl_still.yml
 share/mlt-7/sdl2/
 share/mlt-7/sdl2/consumer_sdl2.yml
 share/mlt-7/sdl2/consumer_sdl2_audio.yml
