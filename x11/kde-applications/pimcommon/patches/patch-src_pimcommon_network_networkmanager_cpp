@@ -4,7 +4,7 @@ avoid nullptr access
 Index: src/pimcommon/network/networkmanager.cpp
 --- src/pimcommon/network/networkmanager.cpp.orig
 +++ src/pimcommon/network/networkmanager.cpp
-@@ -14,9 +14,11 @@ Q_GLOBAL_STATIC(NetworkManager, s_pNetworkManagerSelf)
+@@ -13,9 +13,11 @@ Q_GLOBAL_STATIC(NetworkManager, s_pNetworkManagerSelf)
  NetworkManager::NetworkManager(QObject *parent)
      : QObject(parent)
  {

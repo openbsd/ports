@@ -139,6 +139,8 @@ share/locale/ar/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ar/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ar/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ar/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ar/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/ar/LC_MESSAGES/kaichat_calendar.mo
 share/locale/ar/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ar/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ar/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -219,6 +221,8 @@ share/locale/bg/LC_MESSAGES/customtoolsplugin.mo
 share/locale/bg/LC_MESSAGES/importwizard_plugins.mo
 share/locale/bg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/bg/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/bg/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/bg/LC_MESSAGES/kaichat_calendar.mo
 share/locale/bg/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/bg/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/bg/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -256,6 +260,8 @@ share/locale/ca/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ca/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ca/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ca/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ca/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/ca/LC_MESSAGES/kaichat_calendar.mo
 share/locale/ca/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -282,6 +288,8 @@ share/locale/ca@valencia/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/ca@valencia/LC_MESSAGES/kaichat_calendar.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -360,6 +368,8 @@ share/locale/de/LC_MESSAGES/customtoolsplugin.mo
 share/locale/de/LC_MESSAGES/importwizard_plugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/de/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/de/LC_MESSAGES/kaichat_calendar.mo
 share/locale/de/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -442,6 +452,8 @@ share/locale/es/LC_MESSAGES/customtoolsplugin.mo
 share/locale/es/LC_MESSAGES/importwizard_plugins.mo
 share/locale/es/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/es/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/es/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/es/LC_MESSAGES/kaichat_calendar.mo
 share/locale/es/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -492,6 +504,7 @@ share/locale/eu/LC_MESSAGES/customtoolsplugin.mo
 share/locale/eu/LC_MESSAGES/importwizard_plugins.mo
 share/locale/eu/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/eu/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/eu/LC_MESSAGES/kaichat_addressbook.mo
 share/locale/eu/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/eu/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/eu/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -522,6 +535,8 @@ share/locale/fi/LC_MESSAGES/customtoolsplugin.mo
 share/locale/fi/LC_MESSAGES/importwizard_plugins.mo
 share/locale/fi/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/fi/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/fi/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/fi/LC_MESSAGES/kaichat_calendar.mo
 share/locale/fi/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -548,6 +563,8 @@ share/locale/fr/LC_MESSAGES/customtoolsplugin.mo
 share/locale/fr/LC_MESSAGES/importwizard_plugins.mo
 share/locale/fr/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/fr/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/fr/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/fr/LC_MESSAGES/kaichat_calendar.mo
 share/locale/fr/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -610,6 +627,8 @@ share/locale/he/LC_MESSAGES/customtoolsplugin.mo
 share/locale/he/LC_MESSAGES/importwizard_plugins.mo
 share/locale/he/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/he/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/he/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/he/LC_MESSAGES/kaichat_calendar.mo
 share/locale/he/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/he/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/he/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -707,6 +726,8 @@ share/locale/it/LC_MESSAGES/customtoolsplugin.mo
 share/locale/it/LC_MESSAGES/importwizard_plugins.mo
 share/locale/it/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/it/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/it/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/it/LC_MESSAGES/kaichat_calendar.mo
 share/locale/it/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -758,6 +779,8 @@ share/locale/ka/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ka/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ka/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ka/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ka/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/ka/LC_MESSAGES/kaichat_calendar.mo
 share/locale/ka/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ka/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ka/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -830,6 +853,7 @@ share/locale/lt/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/lt/LC_MESSAGES/kmail_plugins.mo
 share/locale/lt/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/lt/LC_MESSAGES/korganizer_plugins.mo
+share/locale/lt/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/lt/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/lt/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/lt/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -883,6 +907,8 @@ share/locale/nl/LC_MESSAGES/customtoolsplugin.mo
 share/locale/nl/LC_MESSAGES/importwizard_plugins.mo
 share/locale/nl/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/nl/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/nl/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/nl/LC_MESSAGES/kaichat_calendar.mo
 share/locale/nl/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -919,6 +945,8 @@ share/locale/pl/LC_MESSAGES/customtoolsplugin.mo
 share/locale/pl/LC_MESSAGES/importwizard_plugins.mo
 share/locale/pl/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/pl/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/pl/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/pl/LC_MESSAGES/kaichat_calendar.mo
 share/locale/pl/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/pl/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/pl/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -970,6 +998,8 @@ share/locale/pt_BR/LC_MESSAGES/customtoolsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/importwizard_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/pt_BR/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/pt_BR/LC_MESSAGES/kaichat_calendar.mo
 share/locale/pt_BR/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1014,7 +1044,6 @@ share/locale/ru/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ru/LC_MESSAGES/kmail_plugins.mo
 share/locale/ru/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ru/LC_MESSAGES/korganizer_plugins.mo
-share/locale/ru/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ru/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1085,6 +1114,8 @@ share/locale/sl/LC_MESSAGES/customtoolsplugin.mo
 share/locale/sl/LC_MESSAGES/importwizard_plugins.mo
 share/locale/sl/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/sl/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/sl/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/sl/LC_MESSAGES/kaichat_calendar.mo
 share/locale/sl/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/sl/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/sl/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1193,6 +1224,7 @@ share/locale/sv/LC_MESSAGES/customtoolsplugin.mo
 share/locale/sv/LC_MESSAGES/importwizard_plugins.mo
 share/locale/sv/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/sv/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/sv/LC_MESSAGES/kaichat_addressbook.mo
 share/locale/sv/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1252,6 +1284,8 @@ share/locale/tr/LC_MESSAGES/customtoolsplugin.mo
 share/locale/tr/LC_MESSAGES/importwizard_plugins.mo
 share/locale/tr/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/tr/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/tr/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/tr/LC_MESSAGES/kaichat_calendar.mo
 share/locale/tr/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/tr/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/tr/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1284,6 +1318,8 @@ share/locale/uk/LC_MESSAGES/customtoolsplugin.mo
 share/locale/uk/LC_MESSAGES/importwizard_plugins.mo
 share/locale/uk/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/uk/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/uk/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/uk/LC_MESSAGES/kaichat_calendar.mo
 share/locale/uk/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1322,6 +1358,8 @@ share/locale/zh_CN/LC_MESSAGES/customtoolsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/importwizard_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/zh_CN/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/zh_CN/LC_MESSAGES/kaichat_calendar.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -1348,6 +1386,8 @@ share/locale/zh_TW/LC_MESSAGES/customtoolsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/importwizard_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/zh_TW/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/zh_TW/LC_MESSAGES/kaichat_calendar.mo
 share/locale/zh_TW/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kmail_editorconvertertext_plugins.mo

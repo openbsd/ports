@@ -245,6 +245,7 @@
      SUBDIR += libkdepim
      SUBDIR += libkeduvocdocument
      SUBDIR += libkleo
+     SUBDIR += libkgapi
      SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      SUBDIR += libksane
@@ -260,25 +261,13 @@
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
 
-     # apps and libs which are needed as Qt 5 and Qt 6 Builds
      SUBDIR += kf6-libkexiv2
-
      SUBDIR += kf6-ksanecore
-
-     SUBDIR += libkdcraw
      SUBDIR += kf6-libkdcraw
-
      SUBDIR += kf6-kaccounts-integration
-
-     SUBDIR += libkgapi
-
      SUBDIR += kf6-kio-extras
-
      SUBDIR += kf6-libkcompactdisc
-
      SUBDIR += kf6-libkcddb
-
-     SUBDIR += kdegraphics-mobipocket
      SUBDIR += kf6-kdegraphics-mobipocket
 
      # XXX keep in sync

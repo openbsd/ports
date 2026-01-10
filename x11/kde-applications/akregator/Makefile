@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/akregator
 
@@ -26,9 +25,8 @@ WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MessageCore KPim6MessageViewer
 WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6WebEngineViewer PlasmaActivities Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml c gpg-error gpgme gpgmepp m qgpgmeqt6
 
 
 MODKDE_TRANSLATIONS = yes
@@ -80,7 +78,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/kde-plasma/plasma-activities \
 		devel/kf6/syndication \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \

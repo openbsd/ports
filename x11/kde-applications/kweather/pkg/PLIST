@@ -1,7 +1,7 @@
 @bin bin/kweather
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/applets/
-@so lib/qt6/plugins/plasma/applets/plasma_applet_kweather_1x4.so
+@so lib/qt6/plugins/plasma/applets/org.kde.plasma.kweather_1x4.so
 share/applications/org.kde.kweather.desktop
 share/dbus-1/services/org.kde.kweather.service
 share/icons/hicolor/scalable/apps/org.kde.kweather.svg
@@ -51,13 +51,4 @@ share/locale/zh_CN/LC_MESSAGES/kweather.mo
 share/locale/zh_TW/LC_MESSAGES/kweather.mo
 share/metainfo/
 share/metainfo/org.kde.kweather.appdata.xml
-share/plasma/plasmoids/
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/LocationSelector.qml
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/WeatherContainer.qml
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/metadata.json
-share/plasma/plasmoids/org.kde.plasma.kweather_1x4/metadata.json.license
 @tag gtk-update-icon-cache %D/share/icons/hicolor

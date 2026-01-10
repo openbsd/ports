@@ -52,6 +52,8 @@ LIB_DEPENDS =	devel/abseil-cpp \
 		x11/kde-applications/kpkpass>=${VERSION} \
 		x11/qt6/qtdeclarative
 
+CXXFLAGS =   -I${LOCALBASE}/include/KPim6
+
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

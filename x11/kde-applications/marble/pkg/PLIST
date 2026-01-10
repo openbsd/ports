@@ -252,8 +252,14 @@ lib/plugins/designer/
 lib/qt6/mkspecs/modules/qt_Marble.pri
 lib/qt6/plugins/kf6/krunner/
 @so lib/qt6/plugins/kf6/krunner/plasma_runner_marble.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_geojson.so
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_gpx.so
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_kml.so
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_kmz.so
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_osm.so
+@so lib/qt6/plugins/kf6/thumbcreator/marble_thumbnail_shp.so
 @so lib/qt6/plugins/libmarble_part.so
-@so lib/qt6/plugins/marblethumbnail.so
 lib/qt6/qml/org/kde/marble/
 lib/qt6/qml/org/kde/marble/imageprovider/
 lib/qt6/qml/org/kde/marble/imageprovider/kde-qmlmodule.version
@@ -264,17 +270,11 @@ lib/qt6/qml/org/kde/marble/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/marble/libmarbledeclarative.so
 lib/qt6/qml/org/kde/marble/marbledeclarative.qmltypes
 lib/qt6/qml/org/kde/marble/qmldir
-share/applications/marble_geo.desktop
 share/applications/marble_geojson.desktop
 share/applications/marble_gpx.desktop
 share/applications/marble_kml.desktop
 share/applications/marble_kmz.desktop
 share/applications/marble_shp.desktop
-share/applications/marble_thumbnail_kml.desktop
-share/applications/marble_thumbnail_kmz.desktop
-share/applications/marble_thumbnail_osm.desktop
-share/applications/marble_thumbnail_shp.desktop
-share/applications/marble_worldwind.desktop
 share/applications/org.kde.marble.behaim.desktop
 share/applications/org.kde.marble.desktop
 share/applications/org.kde.marble.maps.desktop
@@ -642,6 +642,7 @@ share/locale/ko/LC_MESSAGES/marble_qt.qm
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/ko/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
+share/locale/lt/LC_MESSAGES/marble-behaim.mo
 share/locale/lt/LC_MESSAGES/marble-maps.mo
 share/locale/lt/LC_MESSAGES/marble.mo
 share/locale/lt/LC_MESSAGES/marble_qt.qm

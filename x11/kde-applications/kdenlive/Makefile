@@ -15,11 +15,11 @@ WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
 WANTLIB += KF6NotifyConfig KF6Purpose KF6PurposeWidgets KF6Service
 WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6NetworkAuth Qt6OpenGL Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickWidgets Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml
-WANTLIB += avcodec avformat avutil c m mlt++-7 mlt-7 opentime
-WANTLIB += opentimelineio swresample
+WANTLIB += Qt6MultimediaWidgets Qt6Network Qt6NetworkAuth Qt6OpenGL
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Svg
+WANTLIB += Qt6SvgWidgets Qt6Widgets Qt6Xml avcodec avformat avutil
+WANTLIB += c kddockwidgets-qt6 m mlt++-7 mlt-7 opentime opentimelineio
+WANTLIB += swresample
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -28,7 +28,7 @@ MODKDE_DOCS = yes
 
 MODULES +=	lang/python
 
-BILD_DEPENDS =	multimedia/mlt7,-gpl2>=7.28.0
+BILD_DEPENDS =	multimedia/mlt7,-gpl2>=7.34.1
 
 RUN_DEPENDS =	devel/kf6/breeze-icons \
 		devel/kf6/qqc2-desktop-style \
@@ -36,7 +36,7 @@ RUN_DEPENDS =	devel/kf6/breeze-icons \
 		misc/shared-mime-info \
 		multimedia/dvdauthor \
 		multimedia/frei0r-plugins \
-		multimedia/mlt7,-gpl2>=7.28.0 \
+		multimedia/mlt7,-gpl2>=7.24.1 \
 		sysutils/cdrtools
 
 LIB_DEPENDS =	devel/kf6/attica \
@@ -67,10 +67,11 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/purpose \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		multimedia/mlt7>=7.28.0 \
+		multimedia/mlt7>=7.34.1 \
 		multimedia/opentimelineio \
 		graphics/ffmpeg \
 		math/imath \
+		x11/kddockwidgets \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtnetworkauth \

@@ -3,7 +3,7 @@ Disable KUnifiedPush
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -66,20 +66,21 @@ set_package_properties(Qt6Keychain PROPERTIES
+@@ -60,20 +60,21 @@ set_package_properties(Qt6Keychain PROPERTIES
      PURPOSE "Secure storage of account secrets"
  )
  

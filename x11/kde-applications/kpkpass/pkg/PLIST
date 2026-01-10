@@ -6,6 +6,7 @@ include/KPim6/KPkPass/BoardingPass
 include/KPim6/KPkPass/Field
 include/KPim6/KPkPass/Location
 include/KPim6/KPkPass/Pass
+include/KPim6/KPkPass/Passes
 include/KPim6/KPkPass/barcode.h
 include/KPim6/KPkPass/boardingpass.h
 include/KPim6/KPkPass/field.h
@@ -13,10 +14,19 @@ include/KPim6/KPkPass/kpkpass_export.h
 include/KPim6/KPkPass/kpkpass_version.h
 include/KPim6/KPkPass/location.h
 include/KPim6/KPkPass/pass.h
+include/KPim6/KPkPass/passes.h
 lib/cmake/KPim6PkPass/
 lib/cmake/KPim6PkPass/KPim6PkPassConfig.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassConfigVersion.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake
 @lib lib/libKPim6PkPass.so.${LIBKPim6PkPass_VERSION}
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/pkpass/
+lib/qt6/qml/org/kde/pkpass/kde-qmlmodule.version
+lib/qt6/qml/org/kde/pkpass/kpkpassqmlplugin.qmltypes
+@so lib/qt6/qml/org/kde/pkpass/libkpkpassqmlplugin.so
+lib/qt6/qml/org/kde/pkpass/qmldir
+share/mime/packages/application-vnd-apple-pkpasses.xml
 share/qlogging-categories6/org_kde_kpkpass.categories

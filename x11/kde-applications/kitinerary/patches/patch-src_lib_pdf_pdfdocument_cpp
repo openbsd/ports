@@ -1,4 +1,4 @@
-Fix build with poppler-25.02.0 and 26.01.0.
+Fix build with 26.01.0.
 
 Index: src/lib/pdf/pdfdocument.cpp
 --- src/lib/pdf/pdfdocument.cpp.orig
@@ -21,15 +21,3 @@ Index: src/lib/pdf/pdfdocument.cpp
      return QString::fromUtf8(s.c_str());
  #endif
  }
-@@ -328,9 +328,8 @@ QString gooStringToUnicode(const std::unique_ptr<GooSt
-         const auto utf16Data = pdfDocEncodingToUTF16(s->toStr());
-         return QString::fromUtf16(reinterpret_cast<const char16_t *>(utf16Data.c_str()), utf16Data.size() / 2);
- #else
--        int len = 0;
--        std::unique_ptr<const char[]> utf16Data(pdfDocEncodingToUTF16(s->toStr(), &len));
--        return QString::fromUtf16(reinterpret_cast<const char16_t*>(utf16Data.get()), len / 2);
-+        std::string utf16Data = pdfDocEncodingToUTF16(s->toStr());
-+        return QString::fromUtf16(reinterpret_cast<const char16_t*>(utf16Data.c_str()), utf16Data.length() / 2);
- #endif
-     }
- 

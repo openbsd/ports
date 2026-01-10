@@ -1,3 +1,5 @@
+@conflict libkdcraw-kf5-*
+@pkgpath x11/kde-applications/libkdcraw
 include/KDcrawQt6/
 include/KDcrawQt6/KDCRAW/
 include/KDcrawQt6/KDCRAW/DcrawInfoContainer

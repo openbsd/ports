@@ -71,6 +71,7 @@ LIB_DEPENDS =	devel/kf6/baloo \
 		x11/kde-plasma/plasma-activities \
 		x11/qt6/qtsvg \
 		x11/qt6/qtmultimedia \
+		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11

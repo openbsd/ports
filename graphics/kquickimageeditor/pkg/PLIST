@@ -1,18 +1,41 @@
+include/KQuickImageEditor/
+include/KQuickImageEditor/AnnotationDocument
+include/KQuickImageEditor/AnnotationTool
+include/KQuickImageEditor/AnnotationViewport
+include/KQuickImageEditor/kquickimageeditor_version.h
+include/kquickimageeditor/
+include/kquickimageeditor/annotationdocument.h
+include/kquickimageeditor/annotationtool.h
+include/kquickimageeditor/annotationviewport.h
+include/kquickimageeditor/kquickimageeditor_export.h
 lib/cmake/KQuickImageEditor/
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfig.cmake
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
+lib/cmake/KQuickImageEditor/KQuickImageEditorTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KQuickImageEditor/KQuickImageEditorTargets.cmake
+@lib lib/libKQuickImageEditor.so.${LIBKQuickImageEditor_VERSION}
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/kquickimageeditor/
+lib/qt6/qml/org/kde/kquickimageeditor/AnnotationSelectionTool.qml
 lib/qt6/qml/org/kde/kquickimageeditor/BasicResizeHandle.qml
 lib/qt6/qml/org/kde/kquickimageeditor/CropBackground.qml
+lib/qt6/qml/org/kde/kquickimageeditor/CropTool.qml
+lib/qt6/qml/org/kde/kquickimageeditor/HoverOutline.qml
+lib/qt6/qml/org/kde/kquickimageeditor/KQuickImageEditor.qmltypes
 lib/qt6/qml/org/kde/kquickimageeditor/RectangleCutout.qml
 lib/qt6/qml/org/kde/kquickimageeditor/SelectionBackground.qml
 lib/qt6/qml/org/kde/kquickimageeditor/SelectionHandle.qml
 lib/qt6/qml/org/kde/kquickimageeditor/SelectionTool.qml
+lib/qt6/qml/org/kde/kquickimageeditor/TextTool.qml
 lib/qt6/qml/org/kde/kquickimageeditor/kde-qmlmodule.version
-lib/qt6/qml/org/kde/kquickimageeditor/kquickimageeditorplugin.qmltypes
-@so lib/qt6/qml/org/kde/kquickimageeditor/libkquickimageeditorplugin.so
+@so lib/qt6/qml/org/kde/kquickimageeditor/libKQuickImageEditorplugin.so
+lib/qt6/qml/org/kde/kquickimageeditor/private/
+lib/qt6/qml/org/kde/kquickimageeditor/private/AnimatedLoader.qml
+lib/qt6/qml/org/kde/kquickimageeditor/private/DashedOutline.qml
+lib/qt6/qml/org/kde/kquickimageeditor/private/Handle.qml
+lib/qt6/qml/org/kde/kquickimageeditor/private/Outline.qml
+lib/qt6/qml/org/kde/kquickimageeditor/private/TextContextMenu.qml
 lib/qt6/qml/org/kde/kquickimageeditor/qmldir
 share/kf6/
 share/kf6/mkspecs/

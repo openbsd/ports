@@ -8,10 +8,10 @@ WANTLIB += KF6Holidays KF6I18n KF6I18nLocaleData KF6I18nQml KF6KIOCore
 WANTLIB += KF6KIOGui KF6Notifications KF6Service KF6UnitConversion
 WANTLIB += KF6WindowSystem KOSM KOSMIndoorMap KPim6Itinerary KPim6Mime
 WANTLIB += KPim6PkPass KPublicTransport KPublicTransportOnboard
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Widgets QuotientQt6 X11
-WANTLIB += c m olm qt6keychain z
+WANTLIB += QCoro6Core QCoro6Network Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Sql Qt6Widgets QuotientQt6 X11 c m olm qt6keychain
+WANTLIB += z
 
 HOMEPAGE =	https://apps.kde.org/itinerary/
 
@@ -46,6 +46,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kservice \
 		devel/kf6/kunitconversion \
 		devel/kf6/kwindowsystem \
+		devel/qcoro \
 		devel/olm \
 		security/qtkeychain,qt6 \
 		x11/kde-applications/kitinerary>=${VERSION} \

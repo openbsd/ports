@@ -131,7 +131,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-PLUGIN_V =	63
+PLUGIN_V =	64
 SUBST_VARS =	PLUGIN_V
 
 TEST_IS_INTERACTIVE =	X11

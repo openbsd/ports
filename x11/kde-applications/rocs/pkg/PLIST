@@ -2,8 +2,11 @@
 @bin bin/rocs
 include/rocs/
 include/rocs/edge.h
+include/rocs/edgetype.h
 include/rocs/graphdocument.h
+include/rocs/graphtheory_export.h
 include/rocs/node.h
+include/rocs/nodetype.h
 @lib lib/librocsgraphtheory.so.${LIBrocsgraphtheory_VERSION}
 lib/qt5/plugins/rocs/
 lib/qt5/plugins/rocs/editorplugins/
@@ -11,13 +14,6 @@ lib/qt5/plugins/rocs/editorplugins/
 @so lib/qt5/plugins/rocs/editorplugins/generategraphplugin.so
 @so lib/qt5/plugins/rocs/editorplugins/graphlayoutplugin.so
 @so lib/qt5/plugins/rocs/editorplugins/transformedgesplugin.so
-lib/qt5/plugins/rocs/fileformats/
-@so lib/qt5/plugins/rocs/fileformats/dotfileformat.so
-@so lib/qt5/plugins/rocs/fileformats/gmlfileformat.so
-@so lib/qt5/plugins/rocs/fileformats/rocs1fileformat.so
-@so lib/qt5/plugins/rocs/fileformats/rocs2fileformat.so
-@so lib/qt5/plugins/rocs/fileformats/tgffileformat.so
-@so lib/qt5/plugins/rocs/fileformats/tikzfileformat.so
 share/applications/org.kde.rocs.desktop
 share/config.kcfg/
 share/config.kcfg/rocs.kcfg
@@ -150,6 +146,8 @@ share/locale/ga/LC_MESSAGES/libgraphtheory.mo
 share/locale/ga/LC_MESSAGES/rocs.mo
 share/locale/gl/LC_MESSAGES/libgraphtheory.mo
 share/locale/gl/LC_MESSAGES/rocs.mo
+share/locale/he/LC_MESSAGES/libgraphtheory.mo
+share/locale/he/LC_MESSAGES/rocs.mo
 share/locale/hr/LC_MESSAGES/libgraphtheory.mo
 share/locale/hr/LC_MESSAGES/rocs.mo
 share/locale/hu/LC_MESSAGES/libgraphtheory.mo

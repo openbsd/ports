@@ -1,7 +1,6 @@
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6ImportWizard         0.0 # 0.0
 
@@ -19,7 +18,7 @@ WANTLIB += KPim6MailImporterAkonadi KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
 WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += assuan c gpgme gpgmepp m qgpgmeqt6 qt6keychain
+WANTLIB += c gpg-error gpgme gpgmepp m qgpgmeqt6 qt6keychain
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_ICON_CACHE = yes
@@ -49,7 +48,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kiconthemes \
 		devel/kf6/kxmlgui \
 		security/qgpgme \
-		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

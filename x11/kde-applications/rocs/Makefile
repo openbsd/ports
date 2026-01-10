@@ -4,20 +4,17 @@ CATEGORIES =	games education
 
 MODKDE_KF5 =	Yes
 
-HOMEPAGE =	https://www.kde.org/applications/education/rocs/
+HOMEPAGE =	https://apps.kde.org/rocs/
 
-SHARED_LIBS +=  rocsgraphtheory        5.0 # 0.0
+SHARED_LIBS +=  rocsgraphtheory        7.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5I18n KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Script
-WANTLIB += Qt5ScriptTools Qt5Widgets Qt5Xml Qt5XmlPatterns X11
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6ItemViews KF6KIOCore
+WANTLIB += KF6Parts KF6SonnetUi KF6SyntaxHighlighting KF6TextEditor
+WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -27,34 +24,27 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/boost \
-		x11/qt5/qtsvg
-RUN_DEPENDS =	x11/qt5/qtsvg
+		x11/qt6/qtsvg
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktexteditor \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/syntax-highlighting \
-		x11/grantlee-qt5 \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtscript \
-		x11/qt5/qtxmlpatterns
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kparts \
+		devel/kf6/ktexteditor \
+		devel/kf6/ktexttemplate \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

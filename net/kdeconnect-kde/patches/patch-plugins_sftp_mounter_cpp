@@ -10,7 +10,7 @@ https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdeconnect-openssh-8
 Index: plugins/sftp/mounter.cpp
 --- plugins/sftp/mounter.cpp.orig
 +++ plugins/sftp/mounter.cpp
-@@ -94,7 +94,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+@@ -69,7 +69,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
  
      QDir().mkpath(m_mountPoint);
  
@@ -18,8 +18,8 @@ Index: plugins/sftp/mounter.cpp
 +    const QString program = QStringLiteral("/usr/bin/doas");
  
      QString path;
-     if (np.has(QStringLiteral("multiPaths")))
-@@ -115,7 +115,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+     if (np.has(QStringLiteral("multiPaths"))) {
+@@ -91,7 +91,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
  
      // clang-format off
      const QStringList arguments =
@@ -28,7 +28,7 @@ Index: plugins/sftp/mounter.cpp
                        << m_mountPoint << QStringLiteral("-p") << np.get<QString>(QStringLiteral("port"))
                        << QStringLiteral("-s") // This fixes a bug where file chunks are sent out of order and get corrupted on reception
                        << QStringLiteral("-f") << QStringLiteral("-F") << QStringLiteral("/dev/null") // Do not use ~/.ssh/config
-@@ -135,8 +135,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+@@ -111,8 +111,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
      m_proc->start();
  
      // qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();

@@ -1,7 +1,6 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kget
 
@@ -15,9 +14,9 @@ WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6NotifyConfig
 WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6Wallet
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Qml
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml X11 assuan c gcrypt gmp gpgme
-WANTLIB += gpgmepp m mms qgpgmeqt6
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml X11 c gcrypt gmp gpg-error gpgme gpgmepp m mms
+WANTLIB += qgpgmeqt6
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -64,9 +63,7 @@ LIB_DEPENDS =	devel/gmp \
 		multimedia/libmms \
 		net/libktorrent \
 		security/qgpgme \
-		security/libassuan \
 		security/libgcrypt \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative
 
 

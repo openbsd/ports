@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	calendar email todo and task application
 
 DISTNAME =	merkuro-${VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -34,9 +33,8 @@ WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
 WANTLIB += KPim6Mbox KPim6MessageComposer KPim6MessageCore KPim6Mime
 WANTLIB += KPim6MimeTreeParserCore KPim6PimCommon KPim6PimCommonAkonadi
 WANTLIB += KPim6TextEdit KirigamiAddonsStatefulApp Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Widgets
-WANTLIB += Qt6Xml X11 assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Widgets Qt6Xml X11 c gpg-error gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
@@ -80,7 +78,6 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		security/gpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		devel/kf6/kcrash \
 		security/qgpgme \

@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
@@ -18,10 +17,9 @@ WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
 WANTLIB += KPim6AkonadiPrivate KPim6GrantleeTheme KPim6Libkleo
 WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
 WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml assuan c gpgme
-WANTLIB += gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += c gpg-error gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -54,7 +52,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kguiaddons \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

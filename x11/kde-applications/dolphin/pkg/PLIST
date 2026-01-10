@@ -21,13 +21,13 @@ lib/qt6/plugins/dolphin/
 lib/qt6/plugins/dolphin/kcms/
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so
+@so lib/qt6/plugins/kf6/kfileitemaction/hidefileitemaction.so
 @so lib/qt6/plugins/kf6/kfileitemaction/movetonewfolderitemaction.so
 @so lib/qt6/plugins/kf6/kfileitemaction/setfoldericonitemaction.so
 @so lib/qt6/plugins/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
 share/config.kcfg/dolphin_compactmodesettings.kcfg
-share/config.kcfg/dolphin_contentdisplaysettings.kcfg
 share/config.kcfg/dolphin_contextmenusettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg

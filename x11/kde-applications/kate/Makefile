@@ -4,8 +4,7 @@ CATEGORIES =	editors
 
 HOMEPAGE =	https://kate-editor.org/
 
-SHARED_LIBS +=  kateprivate               5.1 # 0.0
-
+SHARED_LIBS +=  kateprivate               6.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6Bookmarks
 WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
@@ -16,12 +15,14 @@ WANTLIB += KF6Parts KF6Service KF6Solid KF6SyntaxHighlighting
 WANTLIB += KF6TextEditor KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml X11 c intl m qt6keychain xkbcommon
+WANTLIB += Qt6Xml X11 c gpgmepp intl m qt6keychain xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
+
+BUILD_DEPENDS =	security/qgpgme
 
 RUN_DEPENDS =	devel/kf6/sonnet,-aspell \
 		x11/kde-applications/kf6-kio-extras>=${VERSION} \
@@ -54,6 +55,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/syntax-highlighting \
+		security/gpgmepp \
 		security/qtkeychain,qt6 \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon

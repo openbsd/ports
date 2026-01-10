@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
@@ -47,10 +46,10 @@ WANTLIB += KPim6MessageViewer KPim6Mime KPim6MimeTreeParser KPim6PimCommon
 WANTLIB += KPim6PimCommonActivities KPim6PimCommonAkonadi KPim6PkPass
 WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += assuan gpgme gpgmepp m markdown qgpgmeqt6
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml gpg-error gpgme gpgmepp m markdown
+WANTLIB += qgpgmeqt6
 
 
 MODKDE_TRANSLATIONS = yes
@@ -86,7 +85,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/prison \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
-		security/libassuan \
 		textproc/discount \
 		textproc/ktextaddons \
 		devel/kf6/kcmutils \

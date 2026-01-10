@@ -10,14 +10,13 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6IconThemes KF6JobWidgets
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6Solid
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6TextAddonsWidgets
 WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6GrantleeTheme KPim6KontactInterface
 WANTLIB += KPim6Libkdepim KPim6PimCommon Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE_ICON_CACHE = yes

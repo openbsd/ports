@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
 SHARED_LIBS +=	KPim6MailCommon           0.1 # 0.0
 
@@ -21,8 +20,8 @@ WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
 WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6Widgets Qt6Xml assuan gpgme gpgmepp m
-WANTLIB += qgpgmeqt6
+WANTLIB += Qt6Network Qt6Widgets Qt6Xml gpg-error gpgme gpgmepp
+WANTLIB += m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -52,7 +51,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/syntax-highlighting \
 		x11/kde-plasma/plasma-activities  \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

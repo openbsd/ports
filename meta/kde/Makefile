@@ -105,7 +105,7 @@ RUN_DEPENDS-graphics = \
 	x11/kde-applications/gwenview \
 	x11/kde-applications/kamera \
 	x11/kde-applications/kcolorchooser \
-	x11/kde-applications/kdegraphics-mobipocket \
+	x11/kde-applications/kf6-kdegraphics-mobipocket \
 	x11/kde-applications/kdegraphics-thumbnailers \
 	x11/kde-applications/kolourpaint \
 	x11/kde-applications/kruler \
@@ -292,7 +292,7 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/ksmtp \
 	x11/kde-applications/ktnef \
 	x11/kde-applications/libgravatar \
-	x11/kde-applications/libkdcraw \
+	x11/kde-applications/kf6-libkdcraw \
 	x11/kde-applications/libkdegames \
 	x11/kde-applications/libkdepim \
 	x11/kde-applications/libkeduvocdocument \
@@ -322,7 +322,6 @@ RUN_DEPENDS-development += \
 	x11/kde-applications/kf6-kdegraphics-mobipocket
 
 RUN_DEPENDS-development += \
-	x11/kde-applications/okteta \
 	x11/kde-applications/kaccounts-providers
 
 # Not yet ported

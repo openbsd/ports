@@ -44,7 +44,6 @@ lib/qt6/plugins/kf6/thumbcreator/
 @so lib/qt6/plugins/kf6/thumbcreator/textthumbnail.so
 @so lib/qt6/plugins/kf6/thumbcreator/windowsexethumbnail.so
 @so lib/qt6/plugins/kf6/thumbcreator/windowsimagethumbnail.so
-@so lib/qt6/plugins/kfileaudiopreview.so
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
@@ -612,6 +611,9 @@ share/doc/HTML/pt_BR/kioworker6/thumbnail/index.docbook
 share/doc/HTML/pt_BR/kioworker6/xz/
 share/doc/HTML/pt_BR/kioworker6/xz/index.cache.bz2
 share/doc/HTML/pt_BR/kioworker6/xz/index.docbook
+share/doc/HTML/pt_BR/kioworker6/zstd/
+share/doc/HTML/pt_BR/kioworker6/zstd/index.cache.bz2
+share/doc/HTML/pt_BR/kioworker6/zstd/index.docbook
 share/doc/HTML/ru/kcontrol6/
 share/doc/HTML/ru/kcontrol6/netpref/
 share/doc/HTML/ru/kcontrol6/netpref/index.cache.bz2
@@ -950,7 +952,6 @@ share/konqueror/dirtree/
 share/konqueror/dirtree/remote/
 share/konqueror/dirtree/remote/mtp-network.desktop
 share/konqueror/dirtree/remote/smb-network.desktop
-share/locale/af/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/af/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/af/LC_MESSAGES/kio6_archive.mo
 share/locale/af/LC_MESSAGES/kio6_fish.mo
@@ -959,7 +960,6 @@ share/locale/af/LC_MESSAGES/kio6_nfs.mo
 share/locale/af/LC_MESSAGES/kio6_sftp.mo
 share/locale/af/LC_MESSAGES/kio6_smb.mo
 share/locale/af/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ar/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ar/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ar/LC_MESSAGES/kio6_activities.mo
 share/locale/ar/LC_MESSAGES/kio6_afc.mo
@@ -974,7 +974,6 @@ share/locale/ar/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ar/LC_MESSAGES/kio6_sftp.mo
 share/locale/ar/LC_MESSAGES/kio6_smb.mo
 share/locale/ar/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ast/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ast/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ast/LC_MESSAGES/kio6_activities.mo
 share/locale/ast/LC_MESSAGES/kio6_afc.mo
@@ -988,7 +987,6 @@ share/locale/ast/LC_MESSAGES/kio6_sftp.mo
 share/locale/ast/LC_MESSAGES/kio6_smb.mo
 share/locale/ast/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/az/LC_MESSAGES/kio-extras_kcms.mo
-share/locale/be/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/be/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/be/LC_MESSAGES/kio6_activities.mo
 share/locale/be/LC_MESSAGES/kio6_afc.mo
@@ -1010,7 +1008,6 @@ share/locale/be@latin/LC_MESSAGES/kio6_man.mo
 share/locale/be@latin/LC_MESSAGES/kio6_nfs.mo
 share/locale/be@latin/LC_MESSAGES/kio6_smb.mo
 share/locale/be@latin/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/bg/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/bg/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/bg/LC_MESSAGES/kio6_activities.mo
 share/locale/bg/LC_MESSAGES/kio6_afc.mo
@@ -1025,7 +1022,6 @@ share/locale/bg/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/bg/LC_MESSAGES/kio6_sftp.mo
 share/locale/bg/LC_MESSAGES/kio6_smb.mo
 share/locale/bg/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/bn/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/bn/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/bn/LC_MESSAGES/kio6_fish.mo
 share/locale/bn/LC_MESSAGES/kio6_man.mo
@@ -1037,7 +1033,6 @@ share/locale/bn_IN/LC_MESSAGES/kio6_nfs.mo
 share/locale/bn_IN/LC_MESSAGES/kio6_sftp.mo
 share/locale/bn_IN/LC_MESSAGES/kio6_smb.mo
 share/locale/bn_IN/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/br/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/br/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/br/LC_MESSAGES/kio6_fish.mo
 share/locale/br/LC_MESSAGES/kio6_man.mo
@@ -1045,7 +1040,6 @@ share/locale/br/LC_MESSAGES/kio6_nfs.mo
 share/locale/br/LC_MESSAGES/kio6_sftp.mo
 share/locale/br/LC_MESSAGES/kio6_smb.mo
 share/locale/br/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/bs/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/bs/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/bs/LC_MESSAGES/kio6_activities.mo
 share/locale/bs/LC_MESSAGES/kio6_archive.mo
@@ -1057,7 +1051,6 @@ share/locale/bs/LC_MESSAGES/kio6_nfs.mo
 share/locale/bs/LC_MESSAGES/kio6_sftp.mo
 share/locale/bs/LC_MESSAGES/kio6_smb.mo
 share/locale/bs/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ca/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ca/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ca/LC_MESSAGES/kio6_activities.mo
 share/locale/ca/LC_MESSAGES/kio6_afc.mo
@@ -1072,7 +1065,6 @@ share/locale/ca/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ca/LC_MESSAGES/kio6_sftp.mo
 share/locale/ca/LC_MESSAGES/kio6_smb.mo
 share/locale/ca/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ca@valencia/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ca@valencia/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_activities.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_afc.mo
@@ -1087,7 +1079,6 @@ share/locale/ca@valencia/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_sftp.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_smb.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/cs/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/cs/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/cs/LC_MESSAGES/kio6_activities.mo
 share/locale/cs/LC_MESSAGES/kio6_afc.mo
@@ -1102,7 +1093,6 @@ share/locale/cs/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/cs/LC_MESSAGES/kio6_sftp.mo
 share/locale/cs/LC_MESSAGES/kio6_smb.mo
 share/locale/cs/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/csb/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/csb/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/csb/LC_MESSAGES/kio6_archive.mo
 share/locale/csb/LC_MESSAGES/kio6_fish.mo
@@ -1111,14 +1101,12 @@ share/locale/csb/LC_MESSAGES/kio6_nfs.mo
 share/locale/csb/LC_MESSAGES/kio6_sftp.mo
 share/locale/csb/LC_MESSAGES/kio6_smb.mo
 share/locale/csb/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/cy/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/cy/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/cy/LC_MESSAGES/kio6_fish.mo
 share/locale/cy/LC_MESSAGES/kio6_man.mo
 share/locale/cy/LC_MESSAGES/kio6_nfs.mo
 share/locale/cy/LC_MESSAGES/kio6_sftp.mo
 share/locale/cy/LC_MESSAGES/kio6_smb.mo
-share/locale/da/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/da/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/da/LC_MESSAGES/kio6_activities.mo
 share/locale/da/LC_MESSAGES/kio6_archive.mo
@@ -1130,7 +1118,6 @@ share/locale/da/LC_MESSAGES/kio6_nfs.mo
 share/locale/da/LC_MESSAGES/kio6_sftp.mo
 share/locale/da/LC_MESSAGES/kio6_smb.mo
 share/locale/da/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/de/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/de/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/de/LC_MESSAGES/kio6_activities.mo
 share/locale/de/LC_MESSAGES/kio6_afc.mo
@@ -1145,7 +1132,6 @@ share/locale/de/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/de/LC_MESSAGES/kio6_sftp.mo
 share/locale/de/LC_MESSAGES/kio6_smb.mo
 share/locale/de/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/el/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/el/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/el/LC_MESSAGES/kio6_activities.mo
 share/locale/el/LC_MESSAGES/kio6_archive.mo
@@ -1157,7 +1143,6 @@ share/locale/el/LC_MESSAGES/kio6_nfs.mo
 share/locale/el/LC_MESSAGES/kio6_sftp.mo
 share/locale/el/LC_MESSAGES/kio6_smb.mo
 share/locale/el/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/en_GB/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/en_GB/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/en_GB/LC_MESSAGES/kio6_activities.mo
 share/locale/en_GB/LC_MESSAGES/kio6_afc.mo
@@ -1172,7 +1157,6 @@ share/locale/en_GB/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/en_GB/LC_MESSAGES/kio6_sftp.mo
 share/locale/en_GB/LC_MESSAGES/kio6_smb.mo
 share/locale/en_GB/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/eo/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/eo/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/eo/LC_MESSAGES/kio6_activities.mo
 share/locale/eo/LC_MESSAGES/kio6_afc.mo
@@ -1187,7 +1171,6 @@ share/locale/eo/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/eo/LC_MESSAGES/kio6_sftp.mo
 share/locale/eo/LC_MESSAGES/kio6_smb.mo
 share/locale/eo/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/es/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/es/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/es/LC_MESSAGES/kio6_activities.mo
 share/locale/es/LC_MESSAGES/kio6_afc.mo
@@ -1202,7 +1185,6 @@ share/locale/es/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/es/LC_MESSAGES/kio6_sftp.mo
 share/locale/es/LC_MESSAGES/kio6_smb.mo
 share/locale/es/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/et/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/et/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/et/LC_MESSAGES/kio6_activities.mo
 share/locale/et/LC_MESSAGES/kio6_archive.mo
@@ -1214,7 +1196,6 @@ share/locale/et/LC_MESSAGES/kio6_nfs.mo
 share/locale/et/LC_MESSAGES/kio6_sftp.mo
 share/locale/et/LC_MESSAGES/kio6_smb.mo
 share/locale/et/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/eu/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/eu/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/eu/LC_MESSAGES/kio6_activities.mo
 share/locale/eu/LC_MESSAGES/kio6_afc.mo
@@ -1229,7 +1210,6 @@ share/locale/eu/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/eu/LC_MESSAGES/kio6_sftp.mo
 share/locale/eu/LC_MESSAGES/kio6_smb.mo
 share/locale/eu/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/fa/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/fa/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/fa/LC_MESSAGES/kio6_archive.mo
 share/locale/fa/LC_MESSAGES/kio6_fish.mo
@@ -1239,7 +1219,6 @@ share/locale/fa/LC_MESSAGES/kio6_nfs.mo
 share/locale/fa/LC_MESSAGES/kio6_sftp.mo
 share/locale/fa/LC_MESSAGES/kio6_smb.mo
 share/locale/fa/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/fi/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/fi/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/fi/LC_MESSAGES/kio6_activities.mo
 share/locale/fi/LC_MESSAGES/kio6_afc.mo
@@ -1254,7 +1233,6 @@ share/locale/fi/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/fi/LC_MESSAGES/kio6_sftp.mo
 share/locale/fi/LC_MESSAGES/kio6_smb.mo
 share/locale/fi/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/fr/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/fr/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/fr/LC_MESSAGES/kio6_activities.mo
 share/locale/fr/LC_MESSAGES/kio6_afc.mo
@@ -1269,7 +1247,6 @@ share/locale/fr/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/fr/LC_MESSAGES/kio6_sftp.mo
 share/locale/fr/LC_MESSAGES/kio6_smb.mo
 share/locale/fr/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/fy/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/fy/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/fy/LC_MESSAGES/kio6_archive.mo
 share/locale/fy/LC_MESSAGES/kio6_fish.mo
@@ -1279,7 +1256,6 @@ share/locale/fy/LC_MESSAGES/kio6_nfs.mo
 share/locale/fy/LC_MESSAGES/kio6_sftp.mo
 share/locale/fy/LC_MESSAGES/kio6_smb.mo
 share/locale/fy/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ga/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ga/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ga/LC_MESSAGES/kio6_activities.mo
 share/locale/ga/LC_MESSAGES/kio6_archive.mo
@@ -1291,7 +1267,6 @@ share/locale/ga/LC_MESSAGES/kio6_sftp.mo
 share/locale/ga/LC_MESSAGES/kio6_smb.mo
 share/locale/ga/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/gd/LC_MESSAGES/kio6_activities.mo
-share/locale/gl/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/gl/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/gl/LC_MESSAGES/kio6_activities.mo
 share/locale/gl/LC_MESSAGES/kio6_afc.mo
@@ -1306,7 +1281,6 @@ share/locale/gl/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/gl/LC_MESSAGES/kio6_sftp.mo
 share/locale/gl/LC_MESSAGES/kio6_smb.mo
 share/locale/gl/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/gu/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/gu/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/gu/LC_MESSAGES/kio6_activities.mo
 share/locale/gu/LC_MESSAGES/kio6_archive.mo
@@ -1317,7 +1291,6 @@ share/locale/gu/LC_MESSAGES/kio6_nfs.mo
 share/locale/gu/LC_MESSAGES/kio6_sftp.mo
 share/locale/gu/LC_MESSAGES/kio6_smb.mo
 share/locale/gu/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/he/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/he/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/he/LC_MESSAGES/kio6_activities.mo
 share/locale/he/LC_MESSAGES/kio6_afc.mo
@@ -1332,7 +1305,6 @@ share/locale/he/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/he/LC_MESSAGES/kio6_sftp.mo
 share/locale/he/LC_MESSAGES/kio6_smb.mo
 share/locale/he/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/hi/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/hi/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/hi/LC_MESSAGES/kio6_activities.mo
 share/locale/hi/LC_MESSAGES/kio6_afc.mo
@@ -1354,7 +1326,6 @@ share/locale/hne/LC_MESSAGES/kio6_nfs.mo
 share/locale/hne/LC_MESSAGES/kio6_sftp.mo
 share/locale/hne/LC_MESSAGES/kio6_smb.mo
 share/locale/hne/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/hr/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/hr/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/hr/LC_MESSAGES/kio6_activities.mo
 share/locale/hr/LC_MESSAGES/kio6_archive.mo
@@ -1365,7 +1336,6 @@ share/locale/hr/LC_MESSAGES/kio6_nfs.mo
 share/locale/hr/LC_MESSAGES/kio6_sftp.mo
 share/locale/hr/LC_MESSAGES/kio6_smb.mo
 share/locale/hr/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/hsb/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/hsb/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/hsb/LC_MESSAGES/kio6_archive.mo
 share/locale/hsb/LC_MESSAGES/kio6_fish.mo
@@ -1374,7 +1344,6 @@ share/locale/hsb/LC_MESSAGES/kio6_nfs.mo
 share/locale/hsb/LC_MESSAGES/kio6_sftp.mo
 share/locale/hsb/LC_MESSAGES/kio6_smb.mo
 share/locale/hsb/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/hu/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/hu/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/hu/LC_MESSAGES/kio6_activities.mo
 share/locale/hu/LC_MESSAGES/kio6_afc.mo
@@ -1389,9 +1358,7 @@ share/locale/hu/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/hu/LC_MESSAGES/kio6_sftp.mo
 share/locale/hu/LC_MESSAGES/kio6_smb.mo
 share/locale/hu/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/hy/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/hy/LC_MESSAGES/kio6_fish.mo
-share/locale/ia/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ia/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ia/LC_MESSAGES/kio6_activities.mo
 share/locale/ia/LC_MESSAGES/kio6_afc.mo
@@ -1406,7 +1373,6 @@ share/locale/ia/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ia/LC_MESSAGES/kio6_sftp.mo
 share/locale/ia/LC_MESSAGES/kio6_smb.mo
 share/locale/ia/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/id/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/id/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/id/LC_MESSAGES/kio6_activities.mo
 share/locale/id/LC_MESSAGES/kio6_archive.mo
@@ -1418,24 +1384,23 @@ share/locale/id/LC_MESSAGES/kio6_nfs.mo
 share/locale/id/LC_MESSAGES/kio6_sftp.mo
 share/locale/id/LC_MESSAGES/kio6_smb.mo
 share/locale/id/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ie/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ie/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ie/LC_MESSAGES/kio6_archive.mo
 share/locale/ie/LC_MESSAGES/kio6_mtp.mo
-share/locale/is/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/is/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/is/LC_MESSAGES/kio6_activities.mo
 share/locale/is/LC_MESSAGES/kio6_afc.mo
 share/locale/is/LC_MESSAGES/kio6_archive.mo
+share/locale/is/LC_MESSAGES/kio6_filenamesearch.mo
 share/locale/is/LC_MESSAGES/kio6_fish.mo
 share/locale/is/LC_MESSAGES/kio6_info.mo
 share/locale/is/LC_MESSAGES/kio6_man.mo
 share/locale/is/LC_MESSAGES/kio6_mtp.mo
 share/locale/is/LC_MESSAGES/kio6_nfs.mo
+share/locale/is/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/is/LC_MESSAGES/kio6_sftp.mo
 share/locale/is/LC_MESSAGES/kio6_smb.mo
 share/locale/is/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/it/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/it/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/it/LC_MESSAGES/kio6_activities.mo
 share/locale/it/LC_MESSAGES/kio6_afc.mo
@@ -1450,7 +1415,6 @@ share/locale/it/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/it/LC_MESSAGES/kio6_sftp.mo
 share/locale/it/LC_MESSAGES/kio6_smb.mo
 share/locale/it/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ja/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ja/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ja/LC_MESSAGES/kio6_activities.mo
 share/locale/ja/LC_MESSAGES/kio6_afc.mo
@@ -1463,7 +1427,6 @@ share/locale/ja/LC_MESSAGES/kio6_nfs.mo
 share/locale/ja/LC_MESSAGES/kio6_sftp.mo
 share/locale/ja/LC_MESSAGES/kio6_smb.mo
 share/locale/ja/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ka/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ka/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ka/LC_MESSAGES/kio6_activities.mo
 share/locale/ka/LC_MESSAGES/kio6_afc.mo
@@ -1478,7 +1441,6 @@ share/locale/ka/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ka/LC_MESSAGES/kio6_sftp.mo
 share/locale/ka/LC_MESSAGES/kio6_smb.mo
 share/locale/ka/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/kk/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/kk/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/kk/LC_MESSAGES/kio6_activities.mo
 share/locale/kk/LC_MESSAGES/kio6_archive.mo
@@ -1489,7 +1451,6 @@ share/locale/kk/LC_MESSAGES/kio6_nfs.mo
 share/locale/kk/LC_MESSAGES/kio6_sftp.mo
 share/locale/kk/LC_MESSAGES/kio6_smb.mo
 share/locale/kk/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/km/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/km/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/km/LC_MESSAGES/kio6_activities.mo
 share/locale/km/LC_MESSAGES/kio6_archive.mo
@@ -1500,7 +1461,6 @@ share/locale/km/LC_MESSAGES/kio6_nfs.mo
 share/locale/km/LC_MESSAGES/kio6_sftp.mo
 share/locale/km/LC_MESSAGES/kio6_smb.mo
 share/locale/km/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/kn/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/kn/LC_MESSAGES/kio6_activities.mo
 share/locale/kn/LC_MESSAGES/kio6_archive.mo
 share/locale/kn/LC_MESSAGES/kio6_fish.mo
@@ -1510,7 +1470,6 @@ share/locale/kn/LC_MESSAGES/kio6_nfs.mo
 share/locale/kn/LC_MESSAGES/kio6_sftp.mo
 share/locale/kn/LC_MESSAGES/kio6_smb.mo
 share/locale/kn/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ko/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ko/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ko/LC_MESSAGES/kio6_activities.mo
 share/locale/ko/LC_MESSAGES/kio6_afc.mo
@@ -1525,7 +1484,6 @@ share/locale/ko/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ko/LC_MESSAGES/kio6_sftp.mo
 share/locale/ko/LC_MESSAGES/kio6_smb.mo
 share/locale/ko/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ku/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ku/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ku/LC_MESSAGES/kio6_archive.mo
 share/locale/ku/LC_MESSAGES/kio6_fish.mo
@@ -1534,23 +1492,22 @@ share/locale/ku/LC_MESSAGES/kio6_nfs.mo
 share/locale/ku/LC_MESSAGES/kio6_sftp.mo
 share/locale/ku/LC_MESSAGES/kio6_smb.mo
 share/locale/ku/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/lb/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/lb/LC_MESSAGES/kio6_archive.mo
 share/locale/lb/LC_MESSAGES/kio6_nfs.mo
-share/locale/lt/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/lt/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/lt/LC_MESSAGES/kio6_activities.mo
 share/locale/lt/LC_MESSAGES/kio6_afc.mo
 share/locale/lt/LC_MESSAGES/kio6_archive.mo
+share/locale/lt/LC_MESSAGES/kio6_filenamesearch.mo
 share/locale/lt/LC_MESSAGES/kio6_fish.mo
 share/locale/lt/LC_MESSAGES/kio6_info.mo
 share/locale/lt/LC_MESSAGES/kio6_man.mo
 share/locale/lt/LC_MESSAGES/kio6_mtp.mo
 share/locale/lt/LC_MESSAGES/kio6_nfs.mo
+share/locale/lt/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/lt/LC_MESSAGES/kio6_sftp.mo
 share/locale/lt/LC_MESSAGES/kio6_smb.mo
 share/locale/lt/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/lv/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/lv/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/lv/LC_MESSAGES/kio6_activities.mo
 share/locale/lv/LC_MESSAGES/kio6_afc.mo
@@ -1565,7 +1522,6 @@ share/locale/lv/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/lv/LC_MESSAGES/kio6_sftp.mo
 share/locale/lv/LC_MESSAGES/kio6_smb.mo
 share/locale/lv/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/mai/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/mai/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/mai/LC_MESSAGES/kio6_archive.mo
 share/locale/mai/LC_MESSAGES/kio6_fish.mo
@@ -1575,7 +1531,6 @@ share/locale/mai/LC_MESSAGES/kio6_nfs.mo
 share/locale/mai/LC_MESSAGES/kio6_sftp.mo
 share/locale/mai/LC_MESSAGES/kio6_smb.mo
 share/locale/mai/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/mk/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/mk/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/mk/LC_MESSAGES/kio6_archive.mo
 share/locale/mk/LC_MESSAGES/kio6_fish.mo
@@ -1584,7 +1539,6 @@ share/locale/mk/LC_MESSAGES/kio6_nfs.mo
 share/locale/mk/LC_MESSAGES/kio6_sftp.mo
 share/locale/mk/LC_MESSAGES/kio6_smb.mo
 share/locale/mk/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ml/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ml/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ml/LC_MESSAGES/kio6_archive.mo
 share/locale/ml/LC_MESSAGES/kio6_fish.mo
@@ -1594,7 +1548,6 @@ share/locale/ml/LC_MESSAGES/kio6_nfs.mo
 share/locale/ml/LC_MESSAGES/kio6_sftp.mo
 share/locale/ml/LC_MESSAGES/kio6_smb.mo
 share/locale/ml/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/mr/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/mr/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/mr/LC_MESSAGES/kio6_activities.mo
 share/locale/mr/LC_MESSAGES/kio6_archive.mo
@@ -1605,7 +1558,6 @@ share/locale/mr/LC_MESSAGES/kio6_nfs.mo
 share/locale/mr/LC_MESSAGES/kio6_sftp.mo
 share/locale/mr/LC_MESSAGES/kio6_smb.mo
 share/locale/mr/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ms/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ms/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ms/LC_MESSAGES/kio6_activities.mo
 share/locale/ms/LC_MESSAGES/kio6_archive.mo
@@ -1617,7 +1569,6 @@ share/locale/ms/LC_MESSAGES/kio6_sftp.mo
 share/locale/ms/LC_MESSAGES/kio6_smb.mo
 share/locale/ms/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/my/LC_MESSAGES/kio-extras_kcms.mo
-share/locale/nb/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/nb/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/nb/LC_MESSAGES/kio6_activities.mo
 share/locale/nb/LC_MESSAGES/kio6_archive.mo
@@ -1628,7 +1579,6 @@ share/locale/nb/LC_MESSAGES/kio6_nfs.mo
 share/locale/nb/LC_MESSAGES/kio6_sftp.mo
 share/locale/nb/LC_MESSAGES/kio6_smb.mo
 share/locale/nb/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/nds/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/nds/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/nds/LC_MESSAGES/kio6_activities.mo
 share/locale/nds/LC_MESSAGES/kio6_archive.mo
@@ -1639,7 +1589,6 @@ share/locale/nds/LC_MESSAGES/kio6_nfs.mo
 share/locale/nds/LC_MESSAGES/kio6_sftp.mo
 share/locale/nds/LC_MESSAGES/kio6_smb.mo
 share/locale/nds/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ne/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ne/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ne/LC_MESSAGES/kio6_archive.mo
 share/locale/ne/LC_MESSAGES/kio6_fish.mo
@@ -1648,7 +1597,6 @@ share/locale/ne/LC_MESSAGES/kio6_nfs.mo
 share/locale/ne/LC_MESSAGES/kio6_sftp.mo
 share/locale/ne/LC_MESSAGES/kio6_smb.mo
 share/locale/ne/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/nl/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/nl/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/nl/LC_MESSAGES/kio6_activities.mo
 share/locale/nl/LC_MESSAGES/kio6_afc.mo
@@ -1663,7 +1611,6 @@ share/locale/nl/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/nl/LC_MESSAGES/kio6_sftp.mo
 share/locale/nl/LC_MESSAGES/kio6_smb.mo
 share/locale/nl/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/nn/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/nn/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/nn/LC_MESSAGES/kio6_activities.mo
 share/locale/nn/LC_MESSAGES/kio6_afc.mo
@@ -1693,7 +1640,6 @@ share/locale/or/LC_MESSAGES/kio6_nfs.mo
 share/locale/or/LC_MESSAGES/kio6_sftp.mo
 share/locale/or/LC_MESSAGES/kio6_smb.mo
 share/locale/or/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/pa/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/pa/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/pa/LC_MESSAGES/kio6_activities.mo
 share/locale/pa/LC_MESSAGES/kio6_afc.mo
@@ -1706,7 +1652,6 @@ share/locale/pa/LC_MESSAGES/kio6_nfs.mo
 share/locale/pa/LC_MESSAGES/kio6_sftp.mo
 share/locale/pa/LC_MESSAGES/kio6_smb.mo
 share/locale/pa/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/pl/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/pl/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/pl/LC_MESSAGES/kio6_activities.mo
 share/locale/pl/LC_MESSAGES/kio6_afc.mo
@@ -1721,7 +1666,6 @@ share/locale/pl/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/pl/LC_MESSAGES/kio6_sftp.mo
 share/locale/pl/LC_MESSAGES/kio6_smb.mo
 share/locale/pl/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/pt/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/pt/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/pt/LC_MESSAGES/kio6_activities.mo
 share/locale/pt/LC_MESSAGES/kio6_afc.mo
@@ -1734,7 +1678,6 @@ share/locale/pt/LC_MESSAGES/kio6_nfs.mo
 share/locale/pt/LC_MESSAGES/kio6_sftp.mo
 share/locale/pt/LC_MESSAGES/kio6_smb.mo
 share/locale/pt/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/pt_BR/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/pt_BR/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_activities.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_afc.mo
@@ -1749,7 +1692,6 @@ share/locale/pt_BR/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_sftp.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_smb.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ro/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ro/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ro/LC_MESSAGES/kio6_activities.mo
 share/locale/ro/LC_MESSAGES/kio6_archive.mo
@@ -1763,7 +1705,6 @@ share/locale/ro/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ro/LC_MESSAGES/kio6_sftp.mo
 share/locale/ro/LC_MESSAGES/kio6_smb.mo
 share/locale/ro/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ru/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ru/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ru/LC_MESSAGES/kio6_activities.mo
 share/locale/ru/LC_MESSAGES/kio6_afc.mo
@@ -1778,7 +1719,6 @@ share/locale/ru/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ru/LC_MESSAGES/kio6_sftp.mo
 share/locale/ru/LC_MESSAGES/kio6_smb.mo
 share/locale/ru/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sa/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sa/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sa/LC_MESSAGES/kio6_activities.mo
 share/locale/sa/LC_MESSAGES/kio6_afc.mo
@@ -1793,7 +1733,6 @@ share/locale/sa/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/sa/LC_MESSAGES/kio6_sftp.mo
 share/locale/sa/LC_MESSAGES/kio6_smb.mo
 share/locale/sa/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/se/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/se/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/se/LC_MESSAGES/kio6_activities.mo
 share/locale/se/LC_MESSAGES/kio6_fish.mo
@@ -1810,7 +1749,6 @@ share/locale/si/LC_MESSAGES/kio6_nfs.mo
 share/locale/si/LC_MESSAGES/kio6_sftp.mo
 share/locale/si/LC_MESSAGES/kio6_smb.mo
 share/locale/si/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sk/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sk/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sk/LC_MESSAGES/kio6_activities.mo
 share/locale/sk/LC_MESSAGES/kio6_afc.mo
@@ -1825,7 +1763,6 @@ share/locale/sk/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/sk/LC_MESSAGES/kio6_sftp.mo
 share/locale/sk/LC_MESSAGES/kio6_smb.mo
 share/locale/sk/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sl/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sl/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sl/LC_MESSAGES/kio6_activities.mo
 share/locale/sl/LC_MESSAGES/kio6_afc.mo
@@ -1840,7 +1777,6 @@ share/locale/sl/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/sl/LC_MESSAGES/kio6_sftp.mo
 share/locale/sl/LC_MESSAGES/kio6_smb.mo
 share/locale/sl/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sq/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sq/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sq/LC_MESSAGES/kio6_archive.mo
 share/locale/sq/LC_MESSAGES/kio6_fish.mo
@@ -1850,7 +1786,6 @@ share/locale/sq/LC_MESSAGES/kio6_nfs.mo
 share/locale/sq/LC_MESSAGES/kio6_sftp.mo
 share/locale/sq/LC_MESSAGES/kio6_smb.mo
 share/locale/sq/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sr/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sr/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sr/LC_MESSAGES/kio6_activities.mo
 share/locale/sr/LC_MESSAGES/kio6_archive.mo
@@ -1862,7 +1797,6 @@ share/locale/sr/LC_MESSAGES/kio6_nfs.mo
 share/locale/sr/LC_MESSAGES/kio6_sftp.mo
 share/locale/sr/LC_MESSAGES/kio6_smb.mo
 share/locale/sr/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_activities.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_archive.mo
@@ -1874,7 +1808,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/kio6_nfs.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_sftp.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_smb.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_activities.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_archive.mo
@@ -1886,7 +1819,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_nfs.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_sftp.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_smb.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sr@latin/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sr@latin/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_activities.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_archive.mo
@@ -1898,7 +1830,6 @@ share/locale/sr@latin/LC_MESSAGES/kio6_nfs.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_sftp.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_smb.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/sv/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sv/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sv/LC_MESSAGES/kio6_activities.mo
 share/locale/sv/LC_MESSAGES/kio6_afc.mo
@@ -1913,7 +1844,6 @@ share/locale/sv/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/sv/LC_MESSAGES/kio6_sftp.mo
 share/locale/sv/LC_MESSAGES/kio6_smb.mo
 share/locale/sv/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ta/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ta/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ta/LC_MESSAGES/kio6_activities.mo
 share/locale/ta/LC_MESSAGES/kio6_afc.mo
@@ -1926,7 +1856,6 @@ share/locale/ta/LC_MESSAGES/kio6_nfs.mo
 share/locale/ta/LC_MESSAGES/kio6_sftp.mo
 share/locale/ta/LC_MESSAGES/kio6_smb.mo
 share/locale/ta/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/te/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/te/LC_MESSAGES/kio6_archive.mo
 share/locale/te/LC_MESSAGES/kio6_fish.mo
 share/locale/te/LC_MESSAGES/kio6_man.mo
@@ -1934,7 +1863,6 @@ share/locale/te/LC_MESSAGES/kio6_nfs.mo
 share/locale/te/LC_MESSAGES/kio6_sftp.mo
 share/locale/te/LC_MESSAGES/kio6_smb.mo
 share/locale/te/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/tg/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/tg/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/tg/LC_MESSAGES/kio6_activities.mo
 share/locale/tg/LC_MESSAGES/kio6_archive.mo
@@ -1945,7 +1873,6 @@ share/locale/tg/LC_MESSAGES/kio6_nfs.mo
 share/locale/tg/LC_MESSAGES/kio6_sftp.mo
 share/locale/tg/LC_MESSAGES/kio6_smb.mo
 share/locale/tg/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/th/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/th/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/th/LC_MESSAGES/kio6_activities.mo
 share/locale/th/LC_MESSAGES/kio6_archive.mo
@@ -1957,7 +1884,6 @@ share/locale/th/LC_MESSAGES/kio6_sftp.mo
 share/locale/th/LC_MESSAGES/kio6_smb.mo
 share/locale/th/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/tok/LC_MESSAGES/kio-extras_kcms.mo
-share/locale/tr/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/tr/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/tr/LC_MESSAGES/kio6_activities.mo
 share/locale/tr/LC_MESSAGES/kio6_afc.mo
@@ -1972,7 +1898,6 @@ share/locale/tr/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/tr/LC_MESSAGES/kio6_sftp.mo
 share/locale/tr/LC_MESSAGES/kio6_smb.mo
 share/locale/tr/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/ug/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/ug/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ug/LC_MESSAGES/kio6_activities.mo
 share/locale/ug/LC_MESSAGES/kio6_archive.mo
@@ -1983,7 +1908,6 @@ share/locale/ug/LC_MESSAGES/kio6_nfs.mo
 share/locale/ug/LC_MESSAGES/kio6_sftp.mo
 share/locale/ug/LC_MESSAGES/kio6_smb.mo
 share/locale/ug/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/uk/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/uk/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/uk/LC_MESSAGES/kio6_activities.mo
 share/locale/uk/LC_MESSAGES/kio6_afc.mo
@@ -1998,7 +1922,6 @@ share/locale/uk/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/uk/LC_MESSAGES/kio6_sftp.mo
 share/locale/uk/LC_MESSAGES/kio6_smb.mo
 share/locale/uk/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/uz/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/uz/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/uz/LC_MESSAGES/kio6_archive.mo
 share/locale/uz/LC_MESSAGES/kio6_fish.mo
@@ -2007,7 +1930,6 @@ share/locale/uz/LC_MESSAGES/kio6_nfs.mo
 share/locale/uz/LC_MESSAGES/kio6_sftp.mo
 share/locale/uz/LC_MESSAGES/kio6_smb.mo
 share/locale/uz/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/uz@cyrillic/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio6_archive.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio6_fish.mo
@@ -2016,7 +1938,6 @@ share/locale/uz@cyrillic/LC_MESSAGES/kio6_nfs.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio6_sftp.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio6_smb.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/vi/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/vi/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/vi/LC_MESSAGES/kio6_activities.mo
 share/locale/vi/LC_MESSAGES/kio6_afc.mo
@@ -2029,7 +1950,6 @@ share/locale/vi/LC_MESSAGES/kio6_nfs.mo
 share/locale/vi/LC_MESSAGES/kio6_sftp.mo
 share/locale/vi/LC_MESSAGES/kio6_smb.mo
 share/locale/vi/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/wa/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/wa/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/wa/LC_MESSAGES/kio6_activities.mo
 share/locale/wa/LC_MESSAGES/kio6_archive.mo
@@ -2045,7 +1965,6 @@ share/locale/xh/LC_MESSAGES/kio6_man.mo
 share/locale/xh/LC_MESSAGES/kio6_nfs.mo
 share/locale/xh/LC_MESSAGES/kio6_sftp.mo
 share/locale/xh/LC_MESSAGES/kio6_smb.mo
-share/locale/zh_CN/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/zh_CN/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_activities.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_afc.mo
@@ -2060,8 +1979,6 @@ share/locale/zh_CN/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_sftp.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_smb.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_thumbnail.mo
-share/locale/zh_HK/LC_MESSAGES/kfileaudiopreview6.mo
-share/locale/zh_TW/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/zh_TW/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/zh_TW/LC_MESSAGES/kio6_activities.mo
 share/locale/zh_TW/LC_MESSAGES/kio6_afc.mo

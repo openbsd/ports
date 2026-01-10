@@ -3,10 +3,9 @@ DISTNAME =	kontrast-${VERSION}
 CATEGORIES =	x11 graphics
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
-WANTLIB += QCoro6Core Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Svg Qt6Widgets c futuresql6
-WANTLIB += m
+WANTLIB += KF6I18nQml QCoro6Core Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Sql
+WANTLIB += Qt6Svg Qt6Widgets c futuresql6 m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes

@@ -1,6 +1,5 @@
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -16,7 +15,7 @@ WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailCommon KPim6MailImporter KPim6MailImporterAkonadi
 WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Widgets assuan c gpgme gpgmepp
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets c gpg-error gpgme gpgmepp
 WANTLIB += m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
@@ -39,7 +38,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \

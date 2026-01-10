@@ -2,7 +2,7 @@ Not try to find libinput
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -36,7 +36,7 @@ else()
+@@ -29,7 +29,7 @@ else()
  endif()
  configure_file(mlt_config.h.in ${CMAKE_BINARY_DIR}/mlt_config.h)
  

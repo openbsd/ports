@@ -2,6 +2,7 @@ include/KPim6/
 include/KPim6/Libkleo/
 include/KPim6/Libkleo/Libkleo/
 include/KPim6/Libkleo/Libkleo/Algorithm
+include/KPim6/Libkleo/Libkleo/AnimatedExpander
 include/KPim6/Libkleo/Libkleo/ApplicationPaletteWatcher
 include/KPim6/Libkleo/Libkleo/Assuan
 include/KPim6/Libkleo/Libkleo/AuditLogEntry
@@ -30,6 +31,7 @@ include/KPim6/Libkleo/Libkleo/ExpiryCheckerConfig
 include/KPim6/Libkleo/Libkleo/ExpiryCheckerSettings
 include/KPim6/Libkleo/Libkleo/FileNameRequester
 include/KPim6/Libkleo/Libkleo/FileSystemWatcher
+include/KPim6/Libkleo/Libkleo/FormTextInput
 include/KPim6/Libkleo/Libkleo/Formatting
 include/KPim6/Libkleo/Libkleo/GnuPG
 include/KPim6/Libkleo/Libkleo/Hex
@@ -81,6 +83,7 @@ include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/Libkleo/Validation
 include/KPim6/Libkleo/libkleo/
 include/KPim6/Libkleo/libkleo/algorithm.h
+include/KPim6/Libkleo/libkleo/animatedexpander.h
 include/KPim6/Libkleo/libkleo/applicationpalettewatcher.h
 include/KPim6/Libkleo/libkleo/assuan.h
 include/KPim6/Libkleo/libkleo/auditlogentry.h
@@ -112,6 +115,7 @@ include/KPim6/Libkleo/libkleo/expirycheckersettings.h
 include/KPim6/Libkleo/libkleo/filenamerequester.h
 include/KPim6/Libkleo/libkleo/filesystemwatcher.h
 include/KPim6/Libkleo/libkleo/formatting.h
+include/KPim6/Libkleo/libkleo/formtextinput.h
 include/KPim6/Libkleo/libkleo/gnupg.h
 include/KPim6/Libkleo/libkleo/hex.h
 include/KPim6/Libkleo/libkleo/kconfigbasedkeyfilter.h

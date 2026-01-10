@@ -48,16 +48,6 @@ lib/qt6/plugins/kf6/parts/
 @so lib/qt6/plugins/kf6/parts/webenginepart.so
 lib/qt6/plugins/kf6/thumbcreator/
 @so lib/qt6/plugins/kf6/thumbcreator/webarchivethumbnail.so
-lib/qt6/plugins/khtml/
-lib/qt6/plugins/khtml/kpartplugins/
-@so lib/qt6/plugins/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/autorefreshkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/babelfishpluginkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/khtmlsettingspluginkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/konqueror_kget_browser_integrationkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/temporarysavedirkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/uachangerpluginkhtml_kpartplugins.so
-@so lib/qt6/plugins/khtml/kpartplugins/webarchiverpluginkhtml_kpartplugins.so
 @so lib/qt6/plugins/khtmlsettingsplugin.so
 lib/qt6/plugins/konqueror/
 lib/qt6/plugins/konqueror/kpartplugins/
@@ -83,16 +73,6 @@ lib/qt6/plugins/konqueror_kcms/
 @so lib/qt6/plugins/konqueror_kcms/khtml_tabs.so
 @so lib/qt6/plugins/konqueror_kcms/khtml_useragent.so
 @so lib/qt6/plugins/konqueror_kget_browser_integration.so
-lib/qt6/plugins/kwebkitpart/
-lib/qt6/plugins/kwebkitpart/kpartplugins/
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/babelfishpluginkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/khtmlsettingspluginkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/konqueror_kget_browser_integrationkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/temporarysavedirkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/uachangerpluginkwebkitpart_kpartplugins.so
-@so lib/qt6/plugins/kwebkitpart/kpartplugins/webarchiverpluginkwebkitpart_kpartplugins.so
 @so lib/qt6/plugins/temporarysavedir.so
 @so lib/qt6/plugins/uachangerplugin.so
 @so lib/qt6/plugins/webarchiverplugin.so
@@ -1880,10 +1860,12 @@ share/locale/lt/LC_MESSAGES/kgetplugin.mo
 share/locale/lt/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/lt/LC_MESSAGES/khtmltts.mo
 share/locale/lt/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/lt/LC_MESSAGES/konqsidebar.mo
 share/locale/lt/LC_MESSAGES/konqueror.mo
 share/locale/lt/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lt/LC_MESSAGES/libkonq.mo
 share/locale/lt/LC_MESSAGES/searchbarplugin.mo
+share/locale/lt/LC_MESSAGES/temporarysavedir.mo
 share/locale/lt/LC_MESSAGES/uachangerplugin.mo
 share/locale/lt/LC_MESSAGES/webarchiver.mo
 share/locale/lt/LC_MESSAGES/webenginepart.mo

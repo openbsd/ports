@@ -1,7 +1,8 @@
 COMMENT =	KDE image editing components
 
-DISTNAME =	kquickimageeditor-0.4.0
-REVISION =	0
+DISTNAME =	kquickimageeditor-0.6.0
+
+SHARED_LIBS +=	KQuickImageEditor         0.0 # 0.0
 
 CATEGORIES =	graphics x11
 
@@ -13,12 +14,13 @@ HOMEPAGE =	https://invent.kde.org/libraries/kquickimageeditor/
 # GPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick m Qt6QmlMeta Qt6QmlWorkerScript
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui Qt6Core
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick m
 
 MODULES =	devel/kf6
 
-LIB_DEPENDS =	x11/qt6/qtdeclarative
+LIB_DEPENDS =	devel/kf6/kconfig \
+		x11/qt6/qtdeclarative
 
 CONFIGURE_ARGS =	-DQT_MAJOR_VERSION=6
 

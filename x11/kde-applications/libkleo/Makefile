@@ -1,7 +1,6 @@
 COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6Libkleo              2.0 # 0.0
 

@@ -10,15 +10,14 @@ MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons
-WANTLIB += KF6I18n KF6I18nQml KF6IconThemes KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Purpose
-WANTLIB += KF6Service KF6WidgetsAddons KF6WindowSystem Kirigami
-WANTLIB += KirigamiAddonsStatefulApp KirigamiPlatform QCoro6Core
-WANTLIB += QCoro6Network Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6WebSockets
-WANTLIB += Qt6WebView Qt6Widgets X11 c m qt6keychain
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6I18n KF6I18nQml KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Purpose KF6Service
+WANTLIB += KF6WidgetsAddons KF6WindowSystem Kirigami KirigamiAddonsStatefulApp
+WANTLIB += KirigamiApp KirigamiPlatform QCoro6Core QCoro6Network
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6WebSockets Qt6WebView
+WANTLIB += Qt6Widgets X11 c m qt6keychain
 
 BUILD_DEPENDS =	devel/kf6/qqc2-desktop-style
 
@@ -28,10 +27,8 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
-		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \
-		devel/kf6/kiconthemes \
 		devel/kf6/kio \
 		devel/kf6/kirigami \
 		devel/kf6/kjobwidgets \

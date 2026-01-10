@@ -1,3 +1,5 @@
+@conflict kdegraphics-mobipocket-kf5-*
+@pkgpath x11/kde-applications/kdegraphics-mobipocket
 include/QMobipocket6/
 include/QMobipocket6/qmobipocket/
 include/QMobipocket6/qmobipocket/mobipocket.h
