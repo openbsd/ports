@@ -22,6 +22,9 @@ SITES.txt =		https://www.unicode.org/Public/16.0.0/ucd/
 
 EXTRACT_CASES =		*.txt) cp ${FULLDISTDIR}/$$archive ${WRKSRC} ;;
 
+MODULES =		lang/python
+MODPY_RUNDEP =		No
+
 MAKE_FLAGS =		OPTIM="${CFLAGS}" SO="so.${LIBmujs_VERSION}"
 
 USE_GMAKE =		Yes
