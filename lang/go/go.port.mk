@@ -110,7 +110,7 @@ ALL_TARGET ?=          github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .  endif
 .endif
 
-MODGO_TEST_TARGET ?=	cd ${WRKSRC} && ${MODGO_CMD} test ${ALL_TARGET}
+MODGO_TEST_TARGET ?=	cd ${WRKSRC} && ${MODGO_TEST_CMD} ${ALL_TARGET}
 
 SEPARATE_BUILD ?=	Yes
 
