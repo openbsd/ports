@@ -1,7 +1,7 @@
 Index: src/target/mod.rs
 --- src/target/mod.rs.orig
 +++ src/target/mod.rs
-@@ -139,7 +139,7 @@ impl Arch {
+@@ -145,7 +145,7 @@ impl Arch {
              Arch::Powerpc | Arch::Powerpc64Le | Arch::Powerpc64 => "powerpc",
              Arch::X86 => "i386",
              Arch::X86_64 => "amd64",
