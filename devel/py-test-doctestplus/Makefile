@@ -1,6 +1,6 @@
 COMMENT=	pytest plugin with advanced doctest features
 
-MODPY_DISTV=	1.6.0
+MODPY_DISTV=	1.7.0
 DISTNAME=	pytest_doctestplus-${MODPY_DISTV}
 PKGNAME=	py-test-doctestplus-${MODPY_DISTV}
 
