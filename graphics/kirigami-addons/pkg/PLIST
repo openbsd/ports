@@ -1,3 +1,9 @@
+include/KirigamiAddons/
+include/KirigamiAddons/App/
+include/KirigamiAddons/App/KirigamiApp
+include/KirigamiAddons/App/kirigamiapp.h
+include/KirigamiAddons/App/kirigamiapp_export.h
+include/KirigamiAddons/App/kirigamiapp_version.h
 include/KirigamiAddonsStatefulApp/
 include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
 include/KirigamiAddonsStatefulApp/KirigamiActionCollection
@@ -11,6 +17,7 @@ lib/cmake/KF6KirigamiAddons/KirigamiAddonsMacros.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
 @lib lib/libKirigamiAddonsStatefulApp.so.${LIBKirigamiAddonsStatefulApp_VERSION}
+@lib lib/libKirigamiApp.so.${LIBKirigamiApp_VERSION}
 lib/qt6/qml/org/kde/kirigamiaddons/
 lib/qt6/qml/org/kde/kirigamiaddons/components/
 lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml
