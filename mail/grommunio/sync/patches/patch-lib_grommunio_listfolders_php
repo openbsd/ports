@@ -1,7 +1,7 @@
 Index: lib/grommunio/listfolders.php
 --- lib/grommunio/listfolders.php.orig
 +++ lib/grommunio/listfolders.php
-@@ -42,7 +42,6 @@ function listfolders_configure() {
+@@ -43,7 +43,6 @@ function listfolders_configure() {
  	}
  
  	// include PHP-MAPI classes

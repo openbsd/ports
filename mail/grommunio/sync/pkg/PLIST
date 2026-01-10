@@ -1,5 +1,5 @@
 grommunio-sync/
-grommunio-sync/.phpcs
+grommunio-sync/.php-cs-fixer.dist.php
 grommunio-sync/.scrutinizer.yml
 grommunio-sync/LICENSE
 grommunio-sync/README.rst
@@ -37,6 +37,7 @@ grommunio-sync/lib/core/asdevice.php
 grommunio-sync/lib/core/bodypartpreference.php
 grommunio-sync/lib/core/bodypreference.php
 grommunio-sync/lib/core/changesmemorywrapper.php
+grommunio-sync/lib/core/connectiontracking.php
 grommunio-sync/lib/core/contentparameters.php
 grommunio-sync/lib/core/devicemanager.php
 grommunio-sync/lib/core/gsync.php

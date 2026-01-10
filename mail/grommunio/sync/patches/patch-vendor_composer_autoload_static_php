@@ -12,7 +12,7 @@ Index: vendor/composer/autoload_static.php
          'BodyPartPreference' => __DIR__ . '/../..' . '/lib/core/bodypartpreference.php',
          'BodyPreference' => __DIR__ . '/../..' . '/lib/core/bodypreference.php',
          'ChangesMemoryWrapper' => __DIR__ . '/../..' . '/lib/core/changesmemorywrapper.php',
-@@ -31,7 +31,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -32,7 +32,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'Find' => __DIR__ . '/../..' . '/lib/request/find.php',
          'FolderChange' => __DIR__ . '/../..' . '/lib/request/folderchange.php',
          'FolderSync' => __DIR__ . '/../..' . '/lib/request/foldersync.php',
@@ -21,7 +21,7 @@ Index: vendor/composer/autoload_static.php
          'GSync' => __DIR__ . '/../..' . '/lib/core/gsync.php',
          'GSyncException' => __DIR__ . '/../..' . '/lib/exceptions/gsyncexception.php',
          'GetAttachment' => __DIR__ . '/../..' . '/lib/request/getattachment.php',
-@@ -53,14 +53,14 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -54,14 +54,14 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'ItemOperations' => __DIR__ . '/../..' . '/lib/request/itemoperations.php',
          'Log' => __DIR__ . '/../..' . '/lib/log/log.php',
          'LoopDetection' => __DIR__ . '/../..' . '/lib/core/loopdetection.php',
@@ -38,7 +38,7 @@ Index: vendor/composer/autoload_static.php
          'MoveItems' => __DIR__ . '/../..' . '/lib/request/moveitems.php',
          'NoHierarchyCacheAvailableException' => __DIR__ . '/../..' . '/lib/exceptions/nohierarchycacheavailableexception.php',
          'NoPostRequestException' => __DIR__ . '/../..' . '/lib/exceptions/nopostrequestexception.php',
-@@ -72,7 +72,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -73,7 +73,7 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'Provisioning' => __DIR__ . '/../..' . '/lib/request/provisioning.php',
          'ProvisioningManager' => __DIR__ . '/../..' . '/lib/core/provisioningmanager.php',
          'ProvisioningRequiredException' => __DIR__ . '/../..' . '/lib/exceptions/provisioningrequiredexception.php',
@@ -47,7 +47,7 @@ Index: vendor/composer/autoload_static.php
          'RedisConnection' => __DIR__ . '/../..' . '/lib/core/redisconnection.php',
          'ReplaceNullcharFilter' => __DIR__ . '/../..' . '/lib/wbxml/replacenullcharfilter.php',
          'Request' => __DIR__ . '/../..' . '/lib/request/request.php',
-@@ -147,8 +147,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
+@@ -148,8 +148,8 @@ class ComposerStaticInit153a56a781a72686b71399955d9820
          'SyncUserInformation' => __DIR__ . '/../..' . '/lib/syncobjects/syncuserinformation.php',
          'SyncValidateCert' => __DIR__ . '/../..' . '/lib/syncobjects/syncvalidatecert.php',
          'Syslog' => __DIR__ . '/../..' . '/lib/log/syslog.php',
