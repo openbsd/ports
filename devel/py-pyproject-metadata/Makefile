@@ -1,6 +1,6 @@
 COMMENT=	PEP 621 metadata parsing
 
-MODPY_DISTV=	0.9.1
+MODPY_DISTV=	0.10.0
 DISTNAME=	pyproject_metadata-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
@@ -16,5 +16,6 @@ MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	sysutils/py-packaging
+TEST_DEPENDS=	devel/py-exceptiongroup
 
 .include <bsd.port.mk>
