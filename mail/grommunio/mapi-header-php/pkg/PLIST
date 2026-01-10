@@ -5,7 +5,6 @@ grommunio-mapi-header-php/README.rst
 @comment grommunio-mapi-header-php/apparmor/
 @comment grommunio-mapi-header-php/apparmor/usr.sbin.php-fpm
 grommunio-mapi-header-php/bootstrap.php
-grommunio-mapi-header-php/changelog.rst
 grommunio-mapi-header-php/class.baseexception.php
 grommunio-mapi-header-php/class.baserecurrence.php
 grommunio-mapi-header-php/class.freebusy.php
@@ -19,7 +18,24 @@ grommunio-mapi-header-php/class.token.php
 grommunio-mapi-header-php/dev/
 grommunio-mapi-header-php/dev/generate_php-mapi-stub.php
 grommunio-mapi-header-php/dev/php-mapi-stub.php
+grommunio-mapi-header-php/doc/
+grommunio-mapi-header-php/doc/API.rst
+grommunio-mapi-header-php/doc/changelog.rst
 grommunio-mapi-header-php/mapi.util.php
 grommunio-mapi-header-php/mapidefs.php
 grommunio-mapi-header-php/mapiguid.php
 grommunio-mapi-header-php/mapitags.php
+grommunio-mapi-header-php/phpstan-baseline.neon
+grommunio-mapi-header-php/phpstan.neon
+grommunio-mapi-header-php/phpunit.xml
+grommunio-mapi-header-php/rector.php
+grommunio-mapi-header-php/tests/
+grommunio-mapi-header-php/tests/BaseExceptionTest.php
+grommunio-mapi-header-php/tests/ExtendedTokenTest.php
+grommunio-mapi-header-php/tests/FreeBusyTest.php
+grommunio-mapi-header-php/tests/KeyCloakTest.php
+grommunio-mapi-header-php/tests/MAPIExceptionTest.php
+grommunio-mapi-header-php/tests/README.md
+grommunio-mapi-header-php/tests/TokenTest.php
+grommunio-mapi-header-php/tests/UtilityFunctionsTest.php
+grommunio-mapi-header-php/tests/bootstrap.php
