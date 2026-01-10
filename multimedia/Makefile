@@ -50,6 +50,7 @@
      SUBDIR += motion
      SUBDIR += motion,mysql
      SUBDIR += motion,pgsql
+     SUBDIR += movit
      SUBDIR += mpgtx
      SUBDIR += mpv
      SUBDIR += mpvqt
