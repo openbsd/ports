@@ -28,6 +28,10 @@ Nextcloud which will break background jobs run by cron(8) (see below).
 A symlink can be created to workaround this issue:
     # ln -sf ${TINSTDIR} /nextcloud
 
+This also means that you must specify "--data-dir" during occ installation.
+    # cd /nextcloud
+    # doas -u www php occ maintenance:install --data-dir "/nextcloud/data"
+
 OpenBSD HTTP daemon
 -------------------
 httpd(8) example configuration for Nextcloud:

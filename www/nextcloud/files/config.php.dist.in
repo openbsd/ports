@@ -1,3 +1,5 @@
+<?php
 $CONFIG = array (
   'integrity.check.disabled' => true,
+  'datadirectory' => '/nextcloud/data',
 );
