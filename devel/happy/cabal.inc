@@ -1,0 +1,1 @@
+MODCABAL_MANIFEST =	happy-lib	2.1.7	0

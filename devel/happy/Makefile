@@ -22,12 +22,11 @@ LIB_DEPENDS=		converters/libiconv \
 # Required for building the documentation and for the regression tests:
 USE_GMAKE=		Yes
 
-MODCABAL_MANIFEST	= \
-	happy-lib	2.1.7	0	\
-
 do-test:
 	@cd ${WRKBUILD}/tests && exec ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} -j${MAKE_JOBS} HAPPY=${MODCABAL_BUILT_EXECUTABLE_happy} \
 		TEST_HAPPY_OPTS="--ghc -t ${WRKDIR}/happy-lib-${MODCABAL_VERSION}/data --strict" all
+
+.include "cabal.inc"
 
 .include <bsd.port.mk>
