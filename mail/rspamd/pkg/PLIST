@@ -493,6 +493,7 @@ share/rspamd/rules/regexp/urls.lua
 share/rspamd/rules/rspamd.lua
 share/rspamd/rules/subject_checks.lua
 share/rspamd/www/
+share/rspamd/www/ARCHITECTURE.md
 share/rspamd/www/README.md
 share/rspamd/www/apple-touch-icon.png
 share/rspamd/www/browserconfig.xml
