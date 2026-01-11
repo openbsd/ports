@@ -1,0 +1,32 @@
+Index: orm/users.py
+--- orm/users.py.orig
++++ orm/users.py
+@@ -16,7 +16,7 @@ from sqlalchemy.exc import IntegrityError
+ from sqlalchemy.ext.hybrid import hybrid_property
+ from sqlalchemy.orm import column_property, relationship, selectinload, validates
+ 
+-import crypt
++import bcrypt
+ import json
+ import sys
+ 
+@@ -354,15 +354,12 @@ class Users(DataModel, DB.Base, NotifyTable):
+ 
+     @password.setter
+     def password(self, pw):
+-        # On OpenBSD only blowfish is supported
+-        if sys.platform.startswith("openbsd"):
+-            _method = crypt.METHOD_BLOWFISH
+-        else:
+-            _method = crypt.METHOD_SHA512
+-        self._password = crypt.crypt(pw, crypt.mksalt(_method))
++        _salt = bcrypt.gensalt(prefix=b"2b")
++        pw = pw.encode('utf-8')
++        self._password = bcrypt.hashpw(pw, _salt)
+ 
+     def chkPw(self, pw):
+-        return crypt.crypt(pw, self.password) == self.password
++        return bcrypt.checkpw(pw.encode('utf-8'), self.password.encode('utf-8'))
+ 
+     @property
+     def propmap_id(self):
