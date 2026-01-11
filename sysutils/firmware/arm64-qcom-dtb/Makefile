@@ -1,5 +1,5 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		2.6
+FW_VER=		2.7
 
 DISTNAME=	devicetree-rebasing-6.17-dts
 
@@ -19,6 +19,7 @@ MAKE_ENV +=	CPP=clang-cpp
 
 DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb \
 	sc8280xp-microsoft-blackrock.dtb \
+	x1p42100-asus-zenbook-a14.dtb \
 	x1e78100-lenovo-thinkpad-t14s.dtb \
 	x1e78100-lenovo-thinkpad-t14s-oled.dtb \
 	x1e80100-asus-vivobook-s15.dtb \
