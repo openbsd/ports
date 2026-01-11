@@ -2,6 +2,7 @@ COMMENT =	KDE Calligra project management application
 
 VERSION =	4.0.1
 DISTNAME =	calligraplan-${VERSION}
+REVISION =	0
 
 CATEGORIES =	editors x11
 
@@ -83,7 +84,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		graphics/kdiagram-qt6 \
+		graphics/kdiagram \
 		security/qca-qt6
 
 # Running D-Bus daemon is required

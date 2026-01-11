@@ -3,6 +3,7 @@ COMMENT =	KDE office suite
 HOMEPAGE =	https://www.calligra.org
 
 DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -116,7 +117,7 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		multimedia/phonon,qt6 \
-		graphics/kdiagram-qt6 \
+		graphics/kdiagram \
 		graphics/lcms2 \
 		math/imath \
 		print/poppler,-qt6 \

@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6EventViews           0.1 # 0.0
 
@@ -37,7 +38,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kitemmodels \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
-		graphics/kdiagram-qt6 \
+		graphics/kdiagram \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/calendarsupport>=${VERSION} \

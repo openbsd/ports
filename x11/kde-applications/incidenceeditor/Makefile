@@ -1,5 +1,6 @@
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
+REVISION =	0
 CATEGORIES =	devel
 
 SHARED_LIBS +=	KPim6IncidenceEditor      0.0 # 0.0
@@ -25,7 +26,7 @@ MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-LIB_DEPENDS =	graphics/kdiagram-qt6 \
+LIB_DEPENDS =	graphics/kdiagram \
 		devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \
 		devel/kf6/kcolorscheme \
