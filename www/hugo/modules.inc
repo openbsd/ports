@@ -255,7 +255,7 @@ MODGO_MODULES =	\
 	github.com/go-test/deep									 v1.0.8 \
 	github.com/gobuffalo/flect								 v1.0.3 \
 	github.com/gobwas/glob									 v0.2.3 \
-	github.com/goccy/go-yaml								 v1.19.1 \
+	github.com/goccy/go-yaml								 v1.19.2 \
 	github.com/gohugoio/go-i18n/v2								 v2.1.3-0.20251018145728-cfcc22d823c6 \
 	github.com/gohugoio/go-radix								 v1.2.0 \
 	github.com/gohugoio/hashstructure							 v0.6.0 \
@@ -372,7 +372,7 @@ MODGO_MODULES =	\
 	github.com/tetratelabs/wazero								 v1.11.0 \
 	github.com/ugorji/go/codec								 v1.2.7 \
 	github.com/woodsbury/decimal128								 v1.3.0 \
-	github.com/yuin/goldmark								 v1.7.13 \
+	github.com/yuin/goldmark								 v1.7.16 \
 	github.com/yuin/goldmark-emoji								 v1.0.6 \
 	github.com/zeebo/errs									 v1.4.0 \
 	go.opencensus.io									 v0.24.0 \
@@ -651,6 +651,7 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark							 v1.4.13 \
 	github.com/yuin/goldmark							 v1.7.10 \
 	github.com/yuin/goldmark							 v1.7.12 \
+	github.com/yuin/goldmark							 v1.7.13 \
 	github.com/yuin/goldmark							 v1.7.8 \
 	go.opencensus.io								 v0.21.0 \
 	go.opencensus.io								 v0.22.0 \
