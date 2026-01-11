@@ -1,6 +1,6 @@
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.86.0
+DISTNAME=	leptonica-1.87.0
 
 SHARED_LIBS +=  leptonica            0.3      # 6.0
 
