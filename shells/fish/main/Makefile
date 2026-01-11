@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			4.2.1
+V =			4.3.3
 
 DISTNAME =		fish-${V}
 
@@ -52,7 +52,8 @@ PORTHOME =		${WRKDIR}
 # Test #96: check-completions.fish fails on systems without synaptics
 # driver loaded.
 
-TEST_DEPENDS =		sysutils/coreutils \
+TEST_DEPENDS =		devel/py-pexpect \
+			sysutils/coreutils \
 			${PKGPATH}=${V}
 
 TEST_TARGET =		fish_run_tests

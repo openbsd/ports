@@ -26,11 +26,13 @@ share/doc/fish/.buildinfo
 share/doc/fish/CHANGELOG.rst
 share/doc/fish/_sources/
 share/doc/fish/_static/
+share/doc/fish/_static/base-stemmer.js
 share/doc/fish/_static/basic.css
 share/doc/fish/_static/classic.css
 share/doc/fish/_static/default.css
 share/doc/fish/_static/doctools.js
 share/doc/fish/_static/documentation_options.js
+share/doc/fish/_static/english-stemmer.js
 share/doc/fish/_static/file.png
 share/doc/fish/_static/fish.png
 share/doc/fish/_static/language_data.js
@@ -100,7 +102,6 @@ share/doc/fish/cmds/fish_status_to_signal.html
 share/doc/fish/cmds/fish_svn_prompt.html
 share/doc/fish/cmds/fish_tab_title.html
 share/doc/fish/cmds/fish_title.html
-share/doc/fish/cmds/fish_title.inc.html
 share/doc/fish/cmds/fish_update_completions.html
 share/doc/fish/cmds/fish_vcs_prompt.html
 share/doc/fish/cmds/fish_vi_key_bindings.html
@@ -260,6 +261,7 @@ share/fish/completions/apt-zip-inst.fish
 share/fish/completions/apt-zip-list.fish
 share/fish/completions/apt.fish
 share/fish/completions/aptitude.fish
+share/fish/completions/aqua.fish
 share/fish/completions/ar.fish
 share/fish/completions/arc.fish
 share/fish/completions/archlinux-java.fish
@@ -267,6 +269,7 @@ share/fish/completions/arepack.fish
 share/fish/completions/argocd.fish
 share/fish/completions/argparse.fish
 share/fish/completions/ark.fish
+share/fish/completions/arp-scan.fish
 share/fish/completions/arp.fish
 share/fish/completions/arping.fish
 share/fish/completions/as.fish
@@ -1137,6 +1140,7 @@ share/fish/completions/wajig.fish
 share/fish/completions/warp-cli.fish
 share/fish/completions/watch.fish
 share/fish/completions/watchexec.fish
+share/fish/completions/waydroid.fish
 share/fish/completions/wc.fish
 share/fish/completions/web-ext.fish
 share/fish/completions/wesnoth.fish
@@ -1249,6 +1253,7 @@ share/fish/functions/__fish_anypython.fish
 share/fish/functions/__fish_append.fish
 share/fish/functions/__fish_apropos.fish
 share/fish/functions/__fish_argcomplete_complete.fish
+share/fish/functions/__fish_backup_config_files.fish
 share/fish/functions/__fish_cache_put.fish
 share/fish/functions/__fish_cache_sourced_completions.fish
 share/fish/functions/__fish_cached.fish
@@ -1302,14 +1307,14 @@ share/fish/functions/__fish_complete_zfs_ro_properties.fish
 share/fish/functions/__fish_complete_zfs_rw_properties.fish
 share/fish/functions/__fish_complete_zfs_write_once_properties.fish
 share/fish/functions/__fish_concat_completions.fish
+share/fish/functions/__fish_config_files.fish
 share/fish/functions/__fish_config_interactive.fish
+share/fish/functions/__fish_config_with_file.fish
 share/fish/functions/__fish_contains_opt.fish
 share/fish/functions/__fish_crux_packages.fish
 share/fish/functions/__fish_cursor_konsole.fish
 share/fish/functions/__fish_cursor_xterm.fish
-share/fish/functions/__fish_data_list_files.fish
 share/fish/functions/__fish_data_with_directory.fish
-share/fish/functions/__fish_data_with_file.fish
 share/fish/functions/__fish_describe_command.fish
 share/fish/functions/__fish_echo.fish
 share/fish/functions/__fish_edit_command_if_at_cursor.fish
@@ -1322,7 +1327,6 @@ share/fish/functions/__fish_is_first_arg.fish
 share/fish/functions/__fish_is_first_token.fish
 share/fish/functions/__fish_is_git_repository.fish
 share/fish/functions/__fish_is_nth_token.fish
-share/fish/functions/__fish_is_standalone.fish
 share/fish/functions/__fish_is_switch.fish
 share/fish/functions/__fish_is_token_n.fish
 share/fish/functions/__fish_is_zfs_feature_enabled.fish
@@ -1331,8 +1335,10 @@ share/fish/functions/__fish_locale_vars.fish
 share/fish/functions/__fish_macos_set_env.fish
 share/fish/functions/__fish_make_cache_dir.fish
 share/fish/functions/__fish_make_completion_signals.fish
+share/fish/functions/__fish_man1_pages.fish
 share/fish/functions/__fish_man_page.fish
 share/fish/functions/__fish_md5.fish
+share/fish/functions/__fish_migrate.fish
 share/fish/functions/__fish_mktemp_relative.fish
 share/fish/functions/__fish_move_last.fish
 share/fish/functions/__fish_no_arguments.fish
@@ -1343,6 +1349,9 @@ share/fish/functions/__fish_number_of_cmd_args_wo_opts.fish
 share/fish/functions/__fish_paginate.fish
 share/fish/functions/__fish_parent_directories.fish
 share/fish/functions/__fish_paste.fish
+share/fish/functions/__fish_per_os_bind.fish
+share/fish/functions/__fish_posix_quote.fish
+share/fish/functions/__fish_posix_shell.fish
 share/fish/functions/__fish_prepend_sudo.fish
 share/fish/functions/__fish_prev_arg_in.fish
 share/fish/functions/__fish_preview_current_file.fish
@@ -1404,14 +1413,27 @@ share/fish/functions/__fish_systemctl.fish
 share/fish/functions/__fish_systemctl_services.fish
 share/fish/functions/__fish_systemd_machine_images.fish
 share/fish/functions/__fish_systemd_machines.fish
+share/fish/functions/__fish_theme_cat.fish
+share/fish/functions/__fish_theme_dir.fish
+share/fish/functions/__fish_theme_export_for_webconfig.fish
+share/fish/functions/__fish_theme_for_each.fish
+share/fish/functions/__fish_theme_freeze.fish
+share/fish/functions/__fish_theme_names.fish
+share/fish/functions/__fish_theme_paths.fish
+share/fish/functions/__fish_theme_variable_filter.fish
+share/fish/functions/__fish_theme_variables.fish
 share/fish/functions/__fish_toggle_comment_commandline.fish
 share/fish/functions/__fish_tokenizer_state.fish
+share/fish/functions/__fish_tried_to_embed_manpages.fish
 share/fish/functions/__fish_uname.fish
+share/fish/functions/__fish_unexpand_tilde.fish
 share/fish/functions/__fish_use_subcommand.fish
 share/fish/functions/__fish_vcs_prompt.fish
+share/fish/functions/__fish_webconfig_update_color_hook.fish
 share/fish/functions/__fish_whatis.fish
 share/fish/functions/__fish_whatis_current_token.fish
 share/fish/functions/__fish_with_status.fish
+share/fish/functions/__fish_without_manpager.fish
 share/fish/functions/__ssh_history_completions.fish
 share/fish/functions/__terlar_git_prompt.fish
 share/fish/functions/_validate_int.fish
@@ -1442,6 +1464,7 @@ share/fish/functions/fish_git_prompt.fish
 share/fish/functions/fish_greeting.fish
 share/fish/functions/fish_hg_prompt.fish
 share/fish/functions/fish_hybrid_key_bindings.fish
+share/fish/functions/fish_in_macos_terminal.fish
 share/fish/functions/fish_is_root_user.fish
 share/fish/functions/fish_jj_prompt.fish
 share/fish/functions/fish_job_summary.fish
@@ -1486,8 +1509,6 @@ share/fish/functions/trap.fish
 share/fish/functions/umask.fish
 share/fish/functions/up-or-search.fish
 share/fish/functions/vared.fish
-share/fish/groff/
-share/fish/groff/fish.tmac
 @mandir share/fish/man/
 share/fish/man/man1/
 @man share/fish/man/man1/_.1
@@ -1623,6 +1644,43 @@ share/fish/man/man1/
 @man share/fish/man/man1/vared.1
 @man share/fish/man/man1/wait.1
 @man share/fish/man/man1/while.1
+share/fish/prompts/
+share/fish/prompts/acidhub.fish
+share/fish/prompts/arrow.fish
+share/fish/prompts/astronaut.fish
+share/fish/prompts/default.fish
+share/fish/prompts/disco.fish
+share/fish/prompts/informative.fish
+share/fish/prompts/informative_vcs.fish
+share/fish/prompts/minimalist.fish
+share/fish/prompts/nim.fish
+share/fish/prompts/pythonista.fish
+share/fish/prompts/scales.fish
+share/fish/prompts/simple.fish
+share/fish/prompts/terlar.fish
+share/fish/themes/
+share/fish/themes/ayu-mirage.theme
+share/fish/themes/ayu.theme
+share/fish/themes/base16-default.theme
+share/fish/themes/base16-eighties.theme
+share/fish/themes/bay-cruise.theme
+share/fish/themes/coolbeans.theme
+share/fish/themes/default-rgb.theme
+share/fish/themes/default.theme
+share/fish/themes/dracula.theme
+share/fish/themes/fairground.theme
+share/fish/themes/just-a-touch.theme
+share/fish/themes/lava.theme
+share/fish/themes/mono-lace.theme
+share/fish/themes/mono-smoke.theme
+share/fish/themes/none.theme
+share/fish/themes/nord.theme
+share/fish/themes/old-school.theme
+share/fish/themes/seaweed.theme
+share/fish/themes/snow-day.theme
+share/fish/themes/solarized.theme
+share/fish/themes/tomorrow-night-bright.theme
+share/fish/themes/tomorrow.theme
 share/fish/tools/
 share/fish/tools/${MODPY_PYCACHE}/
 share/fish/tools/${MODPY_PYCACHE}create_manpage_completions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1640,46 +1698,6 @@ share/fish/tools/web_config/js/
 share/fish/tools/web_config/js/alpine.js
 share/fish/tools/web_config/js/colorutils.js
 share/fish/tools/web_config/js/main.js
-share/fish/tools/web_config/sample_prompts/
-share/fish/tools/web_config/sample_prompts/acidhub.fish
-share/fish/tools/web_config/sample_prompts/arrow.fish
-share/fish/tools/web_config/sample_prompts/astronaut.fish
-share/fish/tools/web_config/sample_prompts/default.fish
-share/fish/tools/web_config/sample_prompts/disco.fish
-share/fish/tools/web_config/sample_prompts/informative.fish
-share/fish/tools/web_config/sample_prompts/informative_vcs.fish
-share/fish/tools/web_config/sample_prompts/minimalist.fish
-share/fish/tools/web_config/sample_prompts/nim.fish
-share/fish/tools/web_config/sample_prompts/pythonista.fish
-share/fish/tools/web_config/sample_prompts/scales.fish
-share/fish/tools/web_config/sample_prompts/simple.fish
-share/fish/tools/web_config/sample_prompts/terlar.fish
-share/fish/tools/web_config/themes/
-share/fish/tools/web_config/themes/Base16 Default Dark.theme
-share/fish/tools/web_config/themes/Base16 Default Light.theme
-share/fish/tools/web_config/themes/Base16 Eighties.theme
-share/fish/tools/web_config/themes/Bay Cruise.theme
-share/fish/tools/web_config/themes/Dracula.theme
-share/fish/tools/web_config/themes/Fairground.theme
-share/fish/tools/web_config/themes/Just a Touch.theme
-share/fish/tools/web_config/themes/Lava.theme
-share/fish/tools/web_config/themes/Mono Lace.theme
-share/fish/tools/web_config/themes/Mono Smoke.theme
-share/fish/tools/web_config/themes/None.theme
-share/fish/tools/web_config/themes/Nord.theme
-share/fish/tools/web_config/themes/Old School.theme
-share/fish/tools/web_config/themes/Seaweed.theme
-share/fish/tools/web_config/themes/Snow Day.theme
-share/fish/tools/web_config/themes/Solarized Dark.theme
-share/fish/tools/web_config/themes/Solarized Light.theme
-share/fish/tools/web_config/themes/Tomorrow Night Bright.theme
-share/fish/tools/web_config/themes/Tomorrow Night.theme
-share/fish/tools/web_config/themes/Tomorrow.theme
-share/fish/tools/web_config/themes/ayu Dark.theme
-share/fish/tools/web_config/themes/ayu Light.theme
-share/fish/tools/web_config/themes/ayu Mirage.theme
-share/fish/tools/web_config/themes/coolbeans.theme
-share/fish/tools/web_config/themes/fish default.theme
 share/fish/tools/web_config/webconfig.py
 share/fish/vendor_completions.d/
 share/fish/vendor_conf.d/
