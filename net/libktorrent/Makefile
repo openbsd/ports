@@ -4,7 +4,7 @@ DISTNAME =	libktorrent-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	net
 
-SHARED_LIBS +=	KTorrent6                 1.0 # 0.0
+SHARED_LIBS +=	KTorrent6                 2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Completion KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui

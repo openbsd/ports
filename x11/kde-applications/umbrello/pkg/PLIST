@@ -169,6 +169,7 @@ share/doc/HTML/pt_BR/umbrello/index.docbook
 share/doc/HTML/pt_BR/umbrello/introduction.docbook
 share/doc/HTML/pt_BR/umbrello/other_features.docbook
 share/doc/HTML/pt_BR/umbrello/sequence-diagram.png
+share/doc/HTML/pt_BR/umbrello/settings.docbook
 share/doc/HTML/pt_BR/umbrello/state-diagram.png
 share/doc/HTML/pt_BR/umbrello/umbrello-main-screen.png
 share/doc/HTML/pt_BR/umbrello/umbrello-ui.png
@@ -288,6 +289,7 @@ share/locale/ga/LC_MESSAGES/umbrello.mo
 share/locale/ga/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/gl/LC_MESSAGES/umbrello.mo
 share/locale/gl/LC_MESSAGES/umbrello_kdevphp5.mo
+share/locale/he/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/hi/LC_MESSAGES/umbrello.mo
 share/locale/hne/LC_MESSAGES/umbrello.mo
 share/locale/hr/LC_MESSAGES/umbrello.mo

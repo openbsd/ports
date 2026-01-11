@@ -82,7 +82,6 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtconnectivity \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py

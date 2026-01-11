@@ -4,7 +4,7 @@ CATEGORIES =	geo
 
 HOMEPAGE =	https://invent.kde.org/libraries/kpublictransport
 
-SHARED_LIBS +=	KPublicTransport          1.0 # 0.0
+SHARED_LIBS +=	KPublicTransport          2.0 # 0.0
 SHARED_LIBS +=	KPublicTransportOnboard   0.0 # 0.0
 
 MODKDE_TRANSLATIONS = yes

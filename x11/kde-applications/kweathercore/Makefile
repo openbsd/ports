@@ -4,7 +4,7 @@ CATEGORIES =	x11 geo
 
 HOMEPAGE =	https://invent.kde.org/libraries/kweathercore
 
-SHARED_LIBS +=	KWeatherCore              0.0 # 0.0
+SHARED_LIBS +=	KWeatherCore              0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF6Holidays KF6I18n KF6I18nLocaleData
 WANTLIB += Qt6Core Qt6Network Qt6Positioning Qt6Qml m

@@ -12,15 +12,15 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
-WANTLIB += KF6I18n KF6I18nQml KF6ItemModels KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Purpose
-WANTLIB += KF6Service KF6SonnetCore KF6StatusNotifierItem KF6SyntaxHighlighting
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KUnifiedPush Kirigami
-WANTLIB += KirigamiApp KirigamiPlatform QCoro6Core QCoro6Network
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Sql Qt6TextToSpeech
-WANTLIB += Qt6WebView Qt6Widgets QuotientQt6 X11 c cmark icuuc
-WANTLIB += m olm qt6keychain
+WANTLIB += KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Purpose KF6Service KF6SonnetCore KF6StatusNotifierItem
+WANTLIB += KF6SyntaxHighlighting KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KUnifiedPush Kirigami KirigamiApp KirigamiPlatform
+WANTLIB += QCoro6Core QCoro6Network Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Sql Qt6TextToSpeech Qt6WebView Qt6Widgets QuotientQt6
+WANTLIB += X11 c cmark icuuc m olm qt6keychain
 
 MODULES =	x11/kde
 
@@ -57,6 +57,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kwindowsystem \
 		devel/kf6/purpose \
 		devel/kf6/sonnet \
+		devel/kf6/kiconthemes \
 		devel/kf6/syntax-highlighting \
 		graphics/kirigami-addons \
 		devel/olm \

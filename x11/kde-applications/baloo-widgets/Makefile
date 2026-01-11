@@ -3,7 +3,7 @@ DISTNAME =	baloo-widgets-${VERSION}
 PKGNAME =	kf6-baloo-widgets-${VERSION}
 CATEGORIES =	devel x11
 
-SHARED_LIBS +=	KF6BalooWidgets           0.0 # 0.0
+SHARED_LIBS +=	KF6BalooWidgets           0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Baloo KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6FileMetaData KF6I18n

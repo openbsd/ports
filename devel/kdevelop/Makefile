@@ -8,17 +8,17 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      8.0 # 6.0
+SHARED_LIBS +=  KDevPlatformDebugger      9.0 # 6.0
 SHARED_LIBS +=  KDevPlatformDocumentation 4.1 # 6.0
-SHARED_LIBS +=  KDevPlatformInterfaces    5.0 # 6.0
+SHARED_LIBS +=  KDevPlatformInterfaces    6.0 # 6.0
 SHARED_LIBS +=  KDevPlatformLanguage      9.0 # 6.0
 SHARED_LIBS +=  KDevPlatformOutputView    4.0 # 6.0
 SHARED_LIBS +=  KDevPlatformProject       5.0 # 6.0
 SHARED_LIBS +=  KDevPlatformSerialization 6.0 # 6.0
-SHARED_LIBS +=  KDevPlatformShell         9.0 # 6.0
+SHARED_LIBS +=  KDevPlatformShell         10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformSublime       6.0 # 6.0
 SHARED_LIBS +=  KDevPlatformTests         5.0 # 6.0
-SHARED_LIBS +=  KDevPlatformUtil          5.0 # 6.0
+SHARED_LIBS +=  KDevPlatformUtil          5.1 # 6.0
 SHARED_LIBS +=  KDevPlatformVcs           5.0 # 6.0
 SHARED_LIBS +=  KDevClangPrivate          4.0 # 6.0
 SHARED_LIBS +=  KDevCMakeCommon           3.0 # 6.0
