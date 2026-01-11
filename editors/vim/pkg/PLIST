@@ -585,6 +585,7 @@ share/vim/${P}/compiler/pip_compile.vim
 share/vim/${P}/compiler/podchecker.vim
 share/vim/${P}/compiler/powershell.vim
 share/vim/${P}/compiler/pylint.vim
+share/vim/${P}/compiler/pyright.vim
 share/vim/${P}/compiler/pytest.vim
 share/vim/${P}/compiler/pyunit.vim
 share/vim/${P}/compiler/raco.vim
@@ -619,6 +620,7 @@ share/vim/${P}/compiler/tidy.vim
 share/vim/${P}/compiler/tombi.vim
 share/vim/${P}/compiler/ts-node.vim
 share/vim/${P}/compiler/tsc.vim
+share/vim/${P}/compiler/ty.vim
 share/vim/${P}/compiler/typedoc.vim
 share/vim/${P}/compiler/typst.vim
 share/vim/${P}/compiler/vimdoc.vim
@@ -824,9 +826,12 @@ share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
 share/vim/${P}/ftplugin/bdf.vim
+share/vim/${P}/ftplugin/bicep-params.vim
+share/vim/${P}/ftplugin/bicep.vim
 share/vim/${P}/ftplugin/bindzone.vim
 share/vim/${P}/ftplugin/bitbake.vim
 share/vim/${P}/ftplugin/bp.vim
+share/vim/${P}/ftplugin/bpftrace.vim
 share/vim/${P}/ftplugin/brighterscript.vim
 share/vim/${P}/ftplugin/brightscript.vim
 share/vim/${P}/ftplugin/bst.vim
@@ -1238,6 +1243,7 @@ share/vim/${P}/indent/bash.vim
 share/vim/${P}/indent/basic.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bitbake.vim
+share/vim/${P}/indent/bpftrace.vim
 share/vim/${P}/indent/bst.vim
 share/vim/${P}/indent/bzl.vim
 share/vim/${P}/indent/c.vim
@@ -1904,6 +1910,14 @@ share/vim/${P}/pack/dist/opt/netrw/syntax/netrw.vim
 share/vim/${P}/pack/dist/opt/nohlsearch/
 share/vim/${P}/pack/dist/opt/nohlsearch/plugin/
 share/vim/${P}/pack/dist/opt/nohlsearch/plugin/nohlsearch.vim
+share/vim/${P}/pack/dist/opt/osc52/
+share/vim/${P}/pack/dist/opt/osc52/autoload/
+share/vim/${P}/pack/dist/opt/osc52/autoload/osc52.vim
+share/vim/${P}/pack/dist/opt/osc52/doc/
+share/vim/${P}/pack/dist/opt/osc52/doc/osc52.txt
+share/vim/${P}/pack/dist/opt/osc52/doc/tags
+share/vim/${P}/pack/dist/opt/osc52/plugin/
+share/vim/${P}/pack/dist/opt/osc52/plugin/osc52.vim
 share/vim/${P}/pack/dist/opt/shellmenu/
 share/vim/${P}/pack/dist/opt/shellmenu/plugin/
 share/vim/${P}/pack/dist/opt/shellmenu/plugin/shellmenu.vim
@@ -2040,6 +2054,7 @@ share/vim/${P}/syntax/bib.vim
 share/vim/${P}/syntax/bindzone.vim
 share/vim/${P}/syntax/bitbake.vim
 share/vim/${P}/syntax/blank.vim
+share/vim/${P}/syntax/bpftrace.vim
 share/vim/${P}/syntax/bsdl.vim
 share/vim/${P}/syntax/bst.vim
 share/vim/${P}/syntax/btm.vim

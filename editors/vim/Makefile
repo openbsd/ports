@@ -1,11 +1,14 @@
 COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
-V=		9.1.1952
+V=		9.1.2077
 
-DIST_TUPLE=	\
-	github vim vim v$V . \
-	github vim colorschemes	7506b51cb70b74338d55850e62be0608a9e12cd1 .
+GH_ACCOUNT=	vim
+GH_PROJECT=	vim
+GH_TAGNAME=	v$V
+
+DIST_TUPLE=	github vim colorschemes	\
+			7506b51cb70b74338d55850e62be0608a9e12cd1 .
 
 PKGNAME=	vim-${V:C/\.0+/./}
 CATEGORIES=	editors

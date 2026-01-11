@@ -10,7 +10,7 @@ Index: runtime/filetype.vim
  	\ if getline(1) =~# '^From [0-9a-f]\{40,\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
  	\ else |
-@@ -680,6 +680,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+@@ -681,6 +681,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  " Makefile
  au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak	call dist#ft#FTmake()
  au BufNewFile,BufRead Kbuild			setf make
