@@ -2,7 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME=	sqlite-src-3510200
 EXTRACT_SUFX=	.zip
-PKGNAME=	sqlite3-3.51.0
+PKGNAME=	sqlite3-3.51.2
 
 # XXX needs bumps every time :-/
 SHARED_LIBS +=  sqlite3                   37.36 # 8.6
