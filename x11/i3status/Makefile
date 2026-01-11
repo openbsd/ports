@@ -4,6 +4,7 @@ COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
 DISTNAME=		i3status-2.15
 CATEGORIES=		x11 sysutils
+REVISION=		0
 
 HOMEPAGE=		https://i3wm.org/i3status/
 
