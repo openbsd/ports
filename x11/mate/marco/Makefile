@@ -5,7 +5,7 @@ SHARED_LIBS +=  marco-private             1.0 # 1.0
 MATE_PROJECT=		marco
 MATE_VERSION=		1.28.1
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -39,7 +39,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_TOOLS=		yelp
+MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_STYLE=	gnu
 
