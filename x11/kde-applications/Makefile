@@ -263,6 +263,7 @@
 
      SUBDIR += kf6-libkexiv2
      SUBDIR += kf6-ksanecore
+     SUBDIR += libkdcraw
      SUBDIR += kf6-libkdcraw
      SUBDIR += kf6-kaccounts-integration
      SUBDIR += kf6-kio-extras
