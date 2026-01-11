@@ -4,6 +4,8 @@ COMMENT-nautilus=	GNOME Terminal extension for Nautilus
 GNOME_PROJECT=		gnome-terminal
 GNOME_VERSION=		3.58.1
 
+REVISION-main=		0
+
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
 # GPLv3+
@@ -31,7 +33,8 @@ LIB_DEPENDS-main=	devel/vte3 \
 			sysutils/e2fsprogs \
 			x11/libhandy
 
-RUN_DEPENDS-main=	devel/gsettings-desktop-schemas
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			devel/gsettings-desktop-schemas
 
 LIB_DEPENDS-nautilus=	x11/gnome/nautilus
 
