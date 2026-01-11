@@ -1,3 +1,4 @@
+@rcscript ${RCDIR}/svscan
 @bin bin/anonidentd
 @bin bin/dumblog
 @bin bin/envdir
@@ -13,4 +14,3 @@ bin/mkservice
 @bin bin/svok
 @bin bin/svscan
 @bin bin/svstat
-@rcscript ${RCDIR}/svscan

@@ -1,19 +1,17 @@
-COMMENT=		reimplementation of Dan Bernstein's daemontools#'
+COMMENT=	reimplementation of Dan Bernstein's daemontools
 
-DISTNAME=		freedt-23
-CATEGORIES=		sysutils
-REVISION=		2
+DISTNAME=	freedt-24
+CATEGORIES=	sysutils
 
-HOMEPAGE=		http://offog.org/code/freedt.html
+HOMEPAGE=	https://offog.org/code/freedt.html
+SITES=		https://offog.org/files/
 
 # ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
-SITES=			http://offog.org/files/
-
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
 post-install:
 	rm -f ${PREFIX}/bin/recordio
