@@ -4,6 +4,7 @@ bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/libCmdBridgeClient.so.${LIBCmdBridgeClient_VERSION}
+@lib lib/libDevContainer.so.${LIBDevContainer_VERSION}
 @lib lib/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/libKSyntaxHighlighting.so.${LIBKSyntaxHighlighting_VERSION}
@@ -17,6 +18,7 @@ bin/qtcreator.sh
 @lib lib/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/libSqlite.so.${LIBSqlite_VERSION}
+@lib lib/libTasking.so.${LIBTasking_VERSION}
 @lib lib/libTerminalLib.so.${LIBTerminalLib_VERSION}
 @lib lib/libTracing.so.${LIBTracing_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
@@ -148,7 +150,7 @@ lib/qtcreator/plugins/qmldesigner/
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qmlpuppet-18.0.0
+@bin libexec/qtcreator/qmlpuppet-18.0.1
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtpromaker
@@ -198,6 +200,7 @@ share/qtcreator/changelog/changes-17.0.0.md
 share/qtcreator/changelog/changes-17.0.1.md
 share/qtcreator/changelog/changes-17.0.2.md
 share/qtcreator/changelog/changes-18.0.0.md
+share/qtcreator/changelog/changes-18.0.1.md
 share/qtcreator/changelog/changes-2.0.0
 share/qtcreator/changelog/changes-2.0.1
 share/qtcreator/changelog/changes-2.1.0

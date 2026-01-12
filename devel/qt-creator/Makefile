@@ -3,7 +3,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			18.0.0
+V =			18.0.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -61,7 +61,6 @@ SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
 MODULES =	x11/qt6 \
 		lang/python \
 		devel/cmake
-
 
 CONFIGURE_STYLE = cmake
 
