@@ -28,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}application_properties_utilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}application_properties_yaml_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}application_properties_yaml_loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}multisource_configuration_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}multisource_configuration_loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/application_properties/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/application_properties/application_properties.py
@@ -38,5 +40,6 @@ lib/python${MODPY_VERSION}/site-packages/application_properties/application_prop
 lib/python${MODPY_VERSION}/site-packages/application_properties/application_properties_toml_loader.py
 lib/python${MODPY_VERSION}/site-packages/application_properties/application_properties_utilities.py
 lib/python${MODPY_VERSION}/site-packages/application_properties/application_properties_yaml_loader.py
+lib/python${MODPY_VERSION}/site-packages/application_properties/multisource_configuration_loader.py
 lib/python${MODPY_VERSION}/site-packages/application_properties/py.typed
 lib/python${MODPY_VERSION}/site-packages/application_properties/version.py
