@@ -50,6 +50,7 @@ MODULES =	devel/kf6
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kdoctools \
 		x11/kde-plasma/plasma-activities \
+		devel/kf6/kitemmodels \
 		devel/kf6/threadweaver
 
 RUN_DEPENDS =	devel/desktop-file-utils \
