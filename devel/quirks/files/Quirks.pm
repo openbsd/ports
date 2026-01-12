@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1780 2026/01/11 20:26:16 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1781 2026/01/12 16:45:01 kurt Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1027,6 +1027,9 @@ setup_obsolete_reason(
 	3 => 'jd-gui',
 	6 => 'minecraft',
 	1 => 'stringtemplate',
+	4 => 'deskzilla-lite',
+	4 => 'processing',
+	4 => 'thinkingrock',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
