@@ -1,3 +1,6 @@
+#2 Don't require boost::system to vix build with Boost 1.89
+https://github.com/prusa3d/PrusaSlicer/issues/14899#issuecomment-3365217679
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -10,6 +13,15 @@ Index: CMakeLists.txt
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
+@@ -370,7 +370,7 @@ endif()
+ # boost::process was introduced first in version 1.64.0,
+ # boost::beast::detail::base64 was introduced first in version 1.66.0
+ set(MINIMUM_BOOST_VERSION "1.83.0")
+-set(_boost_components "system;filesystem;thread;log;locale;regex;chrono;atomic;date_time;iostreams;nowide")
++set(_boost_components "filesystem;thread;log;locale;regex;chrono;atomic;date_time;iostreams;nowide")
+ find_package(Boost ${MINIMUM_BOOST_VERSION} REQUIRED COMPONENTS ${_boost_components})
+ 
+ find_package(Eigen3 3.3.7 REQUIRED)
 @@ -644,7 +644,6 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )

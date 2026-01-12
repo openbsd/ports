@@ -1,0 +1,21 @@
+Fix build with boost 1.88
+https://github.com/gentoo/gentoo/blob/master/media-gfx/prusaslicer/files/prusaslicer-2.9.2-boost-1.88.patch
+
+Index: src/libslic3r/GCode/PostProcessor.cpp
+--- src/libslic3r/GCode/PostProcessor.cpp.orig
++++ src/libslic3r/GCode/PostProcessor.cpp
+@@ -152,7 +152,14 @@ static int run_script(const std::string &script, const
+ 
+ #include <cstdlib>   // getenv()
+ #include <sstream>
++#if BOOST_VERSION >= 108800 // v2 is now default
++#define BOOST_PROCESS_VERSION 1
++#include <boost/process/v1/child.hpp>
++#include <boost/process/v1/io.hpp>
++#include <boost/process/v1/pipe.hpp>
++#else
+ #include <boost/process.hpp>
++#endif
+ 
+ namespace process = boost::process;
+ 

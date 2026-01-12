@@ -786,6 +786,7 @@ share/PrusaSlicer/profiles/Print4Taste/MC2.0_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/
 share/PrusaSlicer/profiles/PrusaResearch.idx
 share/PrusaSlicer/profiles/PrusaResearch.ini
+share/PrusaSlicer/profiles/PrusaResearch/COREONEMMU3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/COREONE_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MINIIS_ALPHA_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MINIIS_BETA_thumbnail.png
@@ -893,20 +894,39 @@ share/PrusaSlicer/profiles/Rigid3D/zero_bed.stl
 share/PrusaSlicer/profiles/Snapmaker/
 share/PrusaSlicer/profiles/Snapmaker.idx
 share/PrusaSlicer/profiles/Snapmaker.ini
+share/PrusaSlicer/profiles/Snapmaker/A250_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/A250_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/A250_thumbnail.png
+share/PrusaSlicer/profiles/Snapmaker/A350_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/A350_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/A350_thumbnail.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 BKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual BKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual QS+B Kit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual QSKit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 QS+B Kit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 QSKit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 QSKit_texture.svg
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_bed.stl
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 BKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual BKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual QS+B Kit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual QSKit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 QS+B Kit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 QSKit_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 QSKit_texture.svg
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_bed.stl
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker Artisan_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker Artisan_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker Artisan_texture.svg
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_bed.stl
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_cover.png
 share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_texture.svg

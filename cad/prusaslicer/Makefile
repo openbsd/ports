@@ -2,7 +2,7 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.9.2
+V =		2.9.3
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -49,7 +49,8 @@ BUILD_DEPENDS =		devel/cereal \
 			graphics/nanosvg \
 			math/cgal \
 			math/eigen3 \
-			devel/catch2
+			devel/catch2 \
+			textproc/nlohmann-json
 
 LIB_DEPENDS = 		cad/opencascade \
 			comms/libhidapi \
