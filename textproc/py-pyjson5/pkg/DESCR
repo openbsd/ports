@@ -1,0 +1,11 @@
+JSON5 serializer and parser library for Python 3 written in Cython.
+
+The serializer returns ASCII data that can safely be used in an HTML
+template. Apostrophes, ampersands, greater-than, and less-then signs are
+encoded as unicode escaped sequences.
+
+Unless the input contains infinite or NaN values, the result will be
+valid JSON data.
+
+The parser can handle all valid JSON5 1.0.0 and JSON data can be read,
+unless the nesting level is absurdly high.

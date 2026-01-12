@@ -1,0 +1,11 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -4,7 +4,6 @@ from setuptools import setup, Extension
+ 
+ extra_compile_args = [
+     "-std=c++11",
+-    "-O3",
+     "-fPIC",
+     "-g0",
+     "-pipe",

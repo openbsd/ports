@@ -1,0 +1,12 @@
+Index: third-party/fast_double_parser/include/fast_double_parser.h
+--- third-party/fast_double_parser/include/fast_double_parser.h.orig
++++ third-party/fast_double_parser/include/fast_double_parser.h
+@@ -10,7 +10,7 @@
+ #include <cstdlib>
+ #include <cstring>
+ #include <locale.h>
+-#if (defined(sun) || defined(__sun)) 
++#if (defined(sun) || defined(__sun) || defined(__OpenBSD__))
+ #define FAST_DOUBLE_PARSER_SOLARIS
+ #endif
+ 
