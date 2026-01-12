@@ -5,7 +5,7 @@ https://github.com/numpy/numpy/issues/27699#issuecomment-2692261936
 Index: numpy/_core/src/umath/loops_autovec.dispatch.c.src
 --- numpy/_core/src/umath/loops_autovec.dispatch.c.src.orig
 +++ numpy/_core/src/umath/loops_autovec.dispatch.c.src
-@@ -104,11 +104,13 @@ NPY_NO_EXPORT void NPY_CPU_DISPATCH_CURFX(@TYPE@_right
+@@ -99,11 +99,13 @@ NPY_NO_EXPORT void NPY_CPU_DISPATCH_CURFX(@TYPE@_right
  #endif
  }
  

@@ -1,10 +1,8 @@
 COMMENT=	fast array and numeric programming library for Python
 
-# numpy 2.3.x needs gcc 9.3 or newer
-MODPY_DISTV=	2.2.6
+MODPY_DISTV=	2.4.1
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	math devel
 
@@ -18,9 +16,6 @@ COMPILER=	base-clang ports-gcc
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} ${MODFORTRAN_WANTLIB} blas
 WANTLIB += cblas lapack m
 
-# Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
-# Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH
-DWZ=		:
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/python \

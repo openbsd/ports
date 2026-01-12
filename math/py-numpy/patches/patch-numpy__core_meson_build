@@ -5,7 +5,7 @@ with unresolved symbols.
 Index: numpy/_core/meson.build
 --- numpy/_core/meson.build.orig
 +++ numpy/_core/meson.build
-@@ -291,7 +291,6 @@ endforeach
+@@ -313,7 +313,6 @@ endforeach
  
  # Other optional functions
  optional_misc_funcs = [
