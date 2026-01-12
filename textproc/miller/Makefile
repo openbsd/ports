@@ -16,6 +16,9 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
+TEST_TARGET =	./pkg/... \
+		regession_test.go
+
 # zip file contains a UTF-8 character; rename it, but allow the rename to fail in
 # case the iconv flavour of unzip is already installed
 post-extract:
@@ -23,12 +26,6 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} build ${MODGO_FLAGS} ./cmd/mlr
-
-do-test:
-	cd ${WRKSRC} && \
-		${MODGO_CMD} test ${MODGO_FLAGS} ${MODGO_TEST_FLAGS} ./pkg/...
-	cd ${WRKSRC} && \
-		${MODGO_CMD} test ${MODGO_FLAGS} ${MODGO_TEST_FLAGS} regression_test.go
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mlr ${PREFIX}/bin

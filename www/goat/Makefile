@@ -17,5 +17,7 @@ WANTLIB += c pthread
 
 MODULES =	lang/go
 
+TEST_TARGET =	./...
+
 .include "modules.inc"
 .include <bsd.port.mk>

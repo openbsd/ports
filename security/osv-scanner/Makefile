@@ -24,8 +24,7 @@ MODULES =		lang/go
 WANTLIB += c pthread
 
 # Tests fail => try to request infos via network
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET =	./...
 
 .include "modules.inc"
 

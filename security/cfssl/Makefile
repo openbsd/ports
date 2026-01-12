@@ -21,6 +21,7 @@ MODULES=	lang/go
 
 MODGO_LDFLAGS=	-X github.com/cloudflare/cfssl/cli/version.version=$V
 TEST_DEPENDS=	${BUILD_PKGPATH}
+TEST_TARGET=	github.com/cloudflare/cfssl/...
 
 do-build:
 	rm -r ${WRKSRC}/vendor
@@ -29,8 +30,5 @@ do-build:
 post-build:
 	rm ${MODGO_WORKSPACE}/bin/example
 	mv ${MODGO_WORKSPACE}/bin/mkbundle ${MODGO_WORKSPACE}/bin/cfssl-mkbundle
-
-do-test:
-	cd ${WRKSRC}; ${MODGO_CMD} test github.com/cloudflare/cfssl/...
 
 .include <bsd.port.mk>
