@@ -1,10 +1,8 @@
 COMMENT=	maths, science and engineering modules for Python
 
-# newer versions require gcc >= 9.1
-MODPY_DISTV=	1.13.1
+MODPY_DISTV=	1.16.3
 DISTNAME=	scipy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	7
 
 CATEGORIES=	math devel
 
@@ -14,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 WANTLIB += blas cblas lapack m pthread ${COMPILER_LIBCXX} util
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 HOMEPAGE=	https://scipy.org/
 

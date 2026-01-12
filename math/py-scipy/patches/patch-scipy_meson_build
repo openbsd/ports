@@ -1,7 +1,7 @@
 Index: scipy/meson.build
 --- scipy/meson.build.orig
 +++ scipy/meson.build
-@@ -145,8 +145,8 @@ fortranobject_dep = declare_dependency(
+@@ -232,8 +232,8 @@ f2py_gen = generator(generate_f2pymod,
  # For MKL and for auto-detecting one of multiple libs, we'll need a custom
  # dependency in Meson (like is done for scalapack) - see
  # https://github.com/mesonbuild/meson/issues/2835
@@ -10,5 +10,5 @@ Index: scipy/meson.build
 +blas_name = 'blas'
 +lapack_name = 'lapack'
  
- # First try scipy-openblas, and if found don't look for cblas or lapack, we
- # know what's inside the scipy-openblas wheels already.
+ macOS13_3_or_later = false
+ if host_machine.system() == 'darwin'
