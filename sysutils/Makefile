@@ -237,6 +237,7 @@
      SUBDIR += modlogan
      SUBDIR += monit
      SUBDIR += monitord
+     SUBDIR += moor
      SUBDIR += moreutils
      SUBDIR += msktutil
      SUBDIR += mtools
