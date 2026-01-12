@@ -18,8 +18,7 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET =	./...
 
 .include "modules.inc"
 .include <bsd.port.mk>
