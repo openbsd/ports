@@ -66,6 +66,8 @@ share/u-boot/rock-pi-n10-rk3399pro/u-boot-rockchip.bin
 @comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.bin
 @comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.img
 share/u-boot/rock-pi-n10-rk3399pro/u-boot.itb
+share/u-boot/rock960-rk3399/
+share/u-boot/rock960-rk3399/idbloader.img
 @comment share/u-boot/rock960-rk3399/u-boot
 share/u-boot/rock960-rk3399/u-boot-rockchip.bin
 @comment share/u-boot/rock960-rk3399/u-boot-spl.bin
