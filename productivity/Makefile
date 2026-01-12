@@ -3,7 +3,6 @@
      SUBDIR += baikal
      SUBDIR += calcurse
      SUBDIR += davical
-     SUBDIR += deskzilla
      SUBDIR += devtodo
      SUBDIR += epr-reader
      SUBDIR += fet
@@ -51,7 +50,6 @@
      SUBDIR += taskwarrior
      SUBDIR += tdl
      SUBDIR += teapot
-     SUBDIR += thinkingrock
      SUBDIR += tickrs
      SUBDIR += timewarrior
      SUBDIR += topydo
