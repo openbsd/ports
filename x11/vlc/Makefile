@@ -1,15 +1,13 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.21
+V=		3.0.23
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-jack=	1
-REVISION-main=	10
 
 USE_NOBTCFI=	Yes
 
@@ -68,10 +66,10 @@ WANTLIB-main += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB-main += gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz
 WANTLIB-main += hogweed icudata icui18n icuuc idn2 jpeg lz4 lzma matroska
 WANTLIB-main += mp3lame nettle nfs notify ogg opus p11-kit pango-1.0
-WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-16 pcre2-8
+WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pcre2-16 pcre2-8
 WANTLIB-main += pixman-1 png protobuf-lite rsvg-2 sharpyuv
 WANTLIB-main += smb2 sndio soxr speex speexdsp ssl swresample swscale
-WANTLIB-main += tag tar tasn1 theoradec theoraenc tiff udfread unibreak
+WANTLIB-main += tag tasn1 theoradec theoraenc tiff udfread unibreak
 WANTLIB-main += unistring usbhid utf8_range utf8_validity va va-drm
 WANTLIB-main += va-x11 vorbis vorbisenc vpx wayland-client wayland-cursor
 WANTLIB-main += wayland-egl webp webpmux x264 x265 xcb xcb-composite
@@ -88,7 +86,7 @@ WANTLIB-main+=	v4l2
 
 WANTLIB-jack=	db execinfo jack vlccore ${WANTLIB-common}
 
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
 AUTORECONF=	./bootstrap
 
@@ -109,13 +107,12 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		x11/qt5/qtsvg,-main \
 		x11/qt5/qtx11extras \
 		archivers/libarchive \
-		archivers/libtar \
 		audio/libcddb \
 		audio/libsoxr \
 		audio/libvorbis \
 		audio/opus \
 		audio/speex \
-		audio/taglib>=2.0.2 \
+		audio/taglib \
 		devel/fribidi \
 		devel/gettext,-runtime \
 		devel/harfbuzz \
@@ -160,8 +157,7 @@ USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoreconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools
-CONFIGURE_ARGS+=--disable-a52 \
-		--disable-alsa \
+CONFIGURE_ARGS+=--disable-alsa \
 		--disable-altivec \
 		--disable-aom \
 		--disable-aribb25 \
@@ -172,7 +168,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-crystalhd \
 		--disable-dav1d \
 		--disable-dc1394 \
-		--disable-dca \
 		--disable-decklink \
 		--disable-dsm \
 		--disable-dv1394 \
@@ -186,9 +181,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-gst-decode \
 		--disable-kate \
 		--disable-kwallet \
-		--disable-libmpeg2 \
 		--disable-libplacebo \
-		--disable-libva \
 		--disable-linsys \
 		--disable-live555 \
 		--disable-mad \
