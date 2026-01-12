@@ -1,0 +1,12 @@
+Index: internal/reader/reader_test.go
+--- internal/reader/reader_test.go.orig
++++ internal/reader/reader_test.go
+@@ -19,7 +19,7 @@ import (
+ 	"github.com/walles/moor/v2/internal/linemetadata"
+ )
+ 
+-const samplesDir = "../../sample-files"
++const samplesDir = "${WRKSRC}/sample-files"
+ 
+ func init() {
+ 	// Info logs clutter at least benchmark output

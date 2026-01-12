@@ -1,0 +1,4 @@
+Pager which "does the right thing" out of the box, including but
+not limited to automatic syntax highlighting, incremental search
+and filter, transparent decompression including on stdin, output
+following, and smart case search
