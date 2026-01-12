@@ -65,10 +65,13 @@ include/qpdf/Types.h
 include/qpdf/auto_job_c_att.hh
 include/qpdf/auto_job_c_copy_att.hh
 include/qpdf/auto_job_c_enc.hh
+include/qpdf/auto_job_c_global.hh
+include/qpdf/auto_job_c_limits.hh
 include/qpdf/auto_job_c_main.hh
 include/qpdf/auto_job_c_pages.hh
 include/qpdf/auto_job_c_set_page_labels.hh
 include/qpdf/auto_job_c_uo.hh
+include/qpdf/global.hh
 include/qpdf/qpdf-c.h
 include/qpdf/qpdfjob-c.h
 include/qpdf/qpdflogger-c.h
