@@ -1,0 +1,19 @@
+From 3c209c6bdf524869d18d00119aeae4962740c3b3 Mon Sep 17 00:00:00 2001
+From: Martin Kroeker <martin@ruby.chemie.uni-freiburg.de>
+Date: Sun, 19 Jan 2025 22:59:21 +0100
+Subject: [PATCH 3/3] Fix line reflow on addition of _64 symbol suffix
+
+Index: SRC/DEPRECATED/sgeqpf.f
+--- SRC/DEPRECATED/sgeqpf.f.orig
++++ SRC/DEPRECATED/sgeqpf.f
+@@ -218,8 +218,8 @@
+          MA = MIN( ITEMP, M )
+          CALL SGEQR2( M, MA, A, LDA, TAU, WORK, INFO )
+          IF( MA.LT.N ) THEN
+-            CALL SORM2R( 'Left', 'Transpose', M, N-MA, MA, A, LDA, TAU,
+-     $                   A( 1, MA+1 ), LDA, WORK, INFO )
++            CALL SORM2R( 'Left', 'Transpose', M, N-MA, MA, A, LDA,
++     $                   TAU, A( 1, MA+1 ), LDA, WORK, INFO )
+          END IF
+       END IF
+ *

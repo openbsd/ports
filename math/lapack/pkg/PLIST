@@ -1,6 +1,6 @@
 @conflict cblas-*
-@pkgpath math/cblas
 @conflict blas-*
+@pkgpath math/cblas
 @pkgpath math/blas
 include/cblas.h
 include/cblas_64.h
@@ -12,21 +12,21 @@ include/lapacke_config.h
 include/lapacke_mangling.h
 include/lapacke_utils.h
 lib/cmake/
-lib/cmake/cblas-${V}/
-lib/cmake/cblas-${V}/cblas-config-version.cmake
-lib/cmake/cblas-${V}/cblas-config.cmake
-lib/cmake/cblas-${V}/cblas-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/cblas-${V}/cblas-targets.cmake
-lib/cmake/lapack-${V}/
-lib/cmake/lapack-${V}/lapack-config-version.cmake
-lib/cmake/lapack-${V}/lapack-config.cmake
-lib/cmake/lapack-${V}/lapack-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/lapack-${V}/lapack-targets.cmake
-lib/cmake/lapacke-${V}/
-lib/cmake/lapacke-${V}/lapacke-config-version.cmake
-lib/cmake/lapacke-${V}/lapacke-config.cmake
-lib/cmake/lapacke-${V}/lapacke-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/lapacke-${V}/lapacke-targets.cmake
+lib/cmake/cblas-3.12.0/
+lib/cmake/cblas-3.12.0/cblas-config-version.cmake
+lib/cmake/cblas-3.12.0/cblas-config.cmake
+lib/cmake/cblas-3.12.0/cblas-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cblas-3.12.0/cblas-targets.cmake
+lib/cmake/lapack-3.12.0/
+lib/cmake/lapack-3.12.0/lapack-config-version.cmake
+lib/cmake/lapack-3.12.0/lapack-config.cmake
+lib/cmake/lapack-3.12.0/lapack-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/lapack-3.12.0/lapack-targets.cmake
+lib/cmake/lapacke-3.12.0/
+lib/cmake/lapacke-3.12.0/lapacke-config-version.cmake
+lib/cmake/lapacke-3.12.0/lapacke-config.cmake
+lib/cmake/lapacke-3.12.0/lapacke-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/lapacke-3.12.0/lapacke-targets.cmake
 @lib lib/libblas.so.${LIBblas_VERSION}
 @lib lib/libcblas.so.${LIBcblas_VERSION}
 @lib lib/liblapack.so.${LIBlapack_VERSION}
