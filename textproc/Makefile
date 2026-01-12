@@ -487,6 +487,7 @@
      SUBDIR += py-pyaml
      SUBDIR += py-pygfm
      SUBDIR += py-pygments
+     SUBDIR += py-pyjson5
      SUBDIR += py-pykwalify
      SUBDIR += py-pypandoc
      SUBDIR += py-pyphen
