@@ -1,4 +1,4 @@
-SHA256 (JohnnyMorganz-StyLua-v2.3.0.tar.gz) = 4d/a4vy+6uYNHiUQLRhFoJUB4K+pin0x8eik9jZpWtw=
+SHA256 (JohnnyMorganz-StyLua-v2.3.1.tar.gz) = q6Yo1yE4ApCjNK6Jnv8a7J09FDAtKvM29n2NevctNeM=
 SHA256 (cargo/aho-corasick-1.1.2.tar.gz) = spady5WLNmVUcfxh9+QW+nYDO91L/tBnjY/uHi0HofA=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstyle-1.0.4.tar.gz) = cHkHW0H1M7jGHSpNBzxGduH4skn/lKOTsFldswTg3Yc=
@@ -145,7 +145,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.35.tar.gz) = GTHXipxzhh2gE09FO7H3kM5JsuMOuoQQtLebrHK0ai0=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (JohnnyMorganz-StyLua-v2.3.0.tar.gz) = 451745
+SIZE (JohnnyMorganz-StyLua-v2.3.1.tar.gz) = 452079
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstyle-1.0.4.tar.gz) = 13998
