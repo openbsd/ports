@@ -2,7 +2,7 @@ COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.52
+GH_TAGNAME =            v0.5.2
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
@@ -15,10 +15,8 @@ WANTLIB += ${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 
-# for riscv64 and powerpc64, please keep: libc >= 0.2.113
-MODCARGO_CRATES_UPDATE =	libc
-
 CONFIGURE_STYLE =	cargo
+
 SEPARATE_BUILD =	Yes
 
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
