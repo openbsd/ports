@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = aarch64 amd64 mips64 riscv64
 
 COMMENT =       Certificate Transparency log monitor
 
-V =		0.22.0
+V =		0.24.0
 MODGO_MODNAME =	software.sslmate.com/src/certspotter
 MODGO_VERSION =	v${V}
 
