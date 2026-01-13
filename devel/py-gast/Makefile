@@ -1,5 +1,6 @@
 COMMENT=	Python AST that abstracts the underlying Python version
 
+# Pythran has fairly tight version spec on beniget and gast.
 MODPY_DISTV=	0.6.0
 DISTNAME=	gast-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
