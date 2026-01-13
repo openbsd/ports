@@ -23,14 +23,13 @@ WANTLIB +=		c pthread
 MODGO_LDFLAGS =	\
 	-X github.com/hetznercloud/cli/internal/version.Version=${MODGO_VERSION}
 
+TEST_TARGET =		./...
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hcloud
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/hcloud
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hcloud
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/hcloud/README.md
-
-do-test:
-	cd  ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
