@@ -21,7 +21,7 @@ TEST_DEPENDS=	lang/python/3
 
 do-test:
 	ln -fs ${LOCALBASE}/bin/python3 ${WRKDIR}/bin/python
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MODGO_CMD} test ${MODGO_FLAGS:N-v} -count 1 ./...
+	cd ${WRKSRC}; ${MODGO_CMD} test ${MODGO_FLAGS:N-v} -count 1 ./...
 
 do-install:
 	${MODGO_INSTALL_TARGET}
