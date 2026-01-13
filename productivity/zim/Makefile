@@ -1,8 +1,7 @@
 COMMENT =		desktop wiki
 
-MODPY_DISTV =	0.76.1
+MODPY_DISTV =	0.76.3
 DISTNAME =		zim-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		productivity
 
