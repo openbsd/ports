@@ -1,7 +1,6 @@
 COMMENT=	extract semantic information about static Python code
 
-# pythran needs updating for beniget-0.5.0 (beniget~=0.4.0 in deps;
-# try building e.g. scikit-image to test)
+# Pythran has fairly tight version spec on beniget (and gast).
 MODPY_DISTV=	0.4.2.post1
 DISTNAME=	beniget-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
