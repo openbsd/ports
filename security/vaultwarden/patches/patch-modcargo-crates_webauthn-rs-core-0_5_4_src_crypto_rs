@@ -1,0 +1,72 @@
+Index: modcargo-crates/webauthn-rs-core-0.5.4/src/crypto.rs
+--- modcargo-crates/webauthn-rs-core-0.5.4/src/crypto.rs.orig
++++ modcargo-crates/webauthn-rs-core-0.5.4/src/crypto.rs
+@@ -202,7 +202,7 @@ impl EDDSACurve {
+     fn to_openssl_nid(&self) -> nid::Nid {
+         match self {
+             EDDSACurve::ED25519 => nid::Nid::X9_62_PRIME256V1,
+-            EDDSACurve::ED448 => nid::Nid::SECP384R1,
++            // EDDSACurve::ED448 => nid::Nid::SECP384R1,
+         }
+     }
+ }
+@@ -545,7 +545,7 @@ impl COSEKey {
+             COSEKeyType::EC_OKP(edk) => {
+                 let id = match &edk.curve {
+                     EDDSACurve::ED25519 => pkey::Id::ED25519,
+-                    EDDSACurve::ED448 => pkey::Id::ED448,
++                    // EDDSACurve::ED448 => pkey::Id::ED448,
+                 };
+ 
+                 pkey::PKey::public_key_from_raw_bytes(edk.x.as_ref(), id)
+@@ -719,27 +719,27 @@ mod tests {
+         }
+     }
+ 
+-    #[test]
+-    fn cbor_ed448() {
+-        let hex_data = hex!(
+-            "A4"         // Map - 4 elements
+-            "01 01"      //   1:   1,  ; kty: OKP key type
+-            "03 27"      //   3:  -8,  ; alg: EDDSA signature algorithm
+-            "20 07"      //  -1:   7,  ; crv: Ed448 curve
+-            "21 58 39   0c04658f79c3fd86c4b3d676057b76353126e9b905a7e204c07846c1a2ab3791b02fc5e9c6930345ea7bf8524b944220d4bd711c010c9b2a80" // -2:   x,  ; Y-coordinate
+-        );
+-        let val: Value = serde_cbor_2::from_slice(&hex_data).unwrap();
+-        let key = COSEKey::try_from(&val).unwrap();
+-        assert_eq!(key.type_, COSEAlgorithm::EDDSA);
+-        match key.key {
+-            COSEKeyType::EC_OKP(pkey) => {
+-                assert_eq!(
+-                    pkey.x.as_ref(),
+-                    hex!("0c04658f79c3fd86c4b3d676057b76353126e9b905a7e204c07846c1a2ab3791b02fc5e9c6930345ea7bf8524b944220d4bd711c010c9b2a80")
+-                );
+-                assert_eq!(pkey.curve, EDDSACurve::ED448);
+-            }
+-            _ => panic!("Key should be parsed OKP key"),
+-        }
+-    }
++//    #[test]
++//    fn cbor_ed448() {
++//        let hex_data = hex!(
++//            "A4"         // Map - 4 elements
++//            "01 01"      //   1:   1,  ; kty: OKP key type
++//            "03 27"      //   3:  -8,  ; alg: EDDSA signature algorithm
++//            "20 07"      //  -1:   7,  ; crv: Ed448 curve
++//            "21 58 39   0c04658f79c3fd86c4b3d676057b76353126e9b905a7e204c07846c1a2ab3791b02fc5e9c6930345ea7bf8524b944220d4bd711c010c9b2a80" // -2:   x,  ; Y-coordinate
++//        );
++//        let val: Value = serde_cbor_2::from_slice(&hex_data).unwrap();
++//        let key = COSEKey::try_from(&val).unwrap();
++//        assert_eq!(key.type_, COSEAlgorithm::EDDSA);
++//        match key.key {
++//            COSEKeyType::EC_OKP(pkey) => {
++//                assert_eq!(
++//                    pkey.x.as_ref(),
++//                    hex!("0c04658f79c3fd86c4b3d676057b76353126e9b905a7e204c07846c1a2ab3791b02fc5e9c6930345ea7bf8524b944220d4bd711c010c9b2a80")
++//                );
++//                assert_eq!(pkey.curve, EDDSACurve::ED448);
++//            }
++//            _ => panic!("Key should be parsed OKP key"),
++//        }
++//    }
+ }

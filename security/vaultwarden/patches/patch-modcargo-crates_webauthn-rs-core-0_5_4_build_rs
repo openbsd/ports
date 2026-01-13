@@ -1,0 +1,10 @@
+Index: modcargo-crates/webauthn-rs-core-0.5.4/build.rs
+--- modcargo-crates/webauthn-rs-core-0.5.4/build.rs.orig
++++ modcargo-crates/webauthn-rs-core-0.5.4/build.rs
+@@ -26,5 +26,5 @@ OpenSSL version string: {version}
+         }
+     }
+ 
+-    panic!("No version of OpenSSL is found.");
++    // panic!("No version of OpenSSL is found.");
+ }

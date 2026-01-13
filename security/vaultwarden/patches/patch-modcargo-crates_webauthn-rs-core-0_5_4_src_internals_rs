@@ -1,0 +1,12 @@
+Index: modcargo-crates/webauthn-rs-core-0.5.4/src/internals.rs
+--- modcargo-crates/webauthn-rs-core-0.5.4/src/internals.rs.orig
++++ modcargo-crates/webauthn-rs-core-0.5.4/src/internals.rs
+@@ -257,7 +257,7 @@ impl TryFrom<i128> for EDDSACurve {
+     fn try_from(u: i128) -> Result<Self, Self::Error> {
+         match u {
+             6 => Ok(EDDSACurve::ED25519),
+-            7 => Ok(EDDSACurve::ED448),
++            //7 => Ok(EDDSACurve::ED448),
+             _ => Err(WebauthnError::COSEKeyEDDSAInvalidCurve),
+         }
+     }

@@ -1,0 +1,23 @@
+Index: modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs
+--- modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs.orig
++++ modcargo-crates/webauthn-rs-core-0.5.4/src/interface.rs
+@@ -81,8 +81,8 @@ pub enum EDDSACurve {
+     // X448 = 5,
+     /// Identifies this OKP as ED25519
+     ED25519 = 6,
+-    /// Identifies this OKP as ED448
+-    ED448 = 7,
++    // /// Identifies this OKP as ED448
++    // ED448 = 7,
+ }
+ 
+ impl EDDSACurve {
+@@ -90,7 +90,7 @@ impl EDDSACurve {
+     pub(crate) fn coordinate_size(&self) -> usize {
+         match self {
+             Self::ED25519 => 32,
+-            Self::ED448 => 57,
++            //Self::ED448 => 57,
+         }
+     }
+ }
