@@ -21,6 +21,8 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS +=	-X main.version=${MODGO_VERSION}
 
+TEST_TARGET =	./...
+
 DOCDIR =	${PREFIX}/share/doc/gopls
 
 post-install:
@@ -31,9 +33,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/design/*.md ${DOCDIR}/design
 	${INSTALL_DATA} ${WRKSRC}/doc/editor/*.md ${DOCDIR}/editor
 	${INSTALL_DATA} ${WRKSRC}/doc/features/*.md ${DOCDIR}/features
-
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 

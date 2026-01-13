@@ -31,6 +31,11 @@ WRKDIST =	${WRKSRC}
 VIMFILES =	${PREFIX}/share/vim/vimfiles
 SUBST_VARS +=	VIMFILES
 
+TEST_TARGET =	github.com/junegunn/fzf/src \
+		github.com/junegunn/fzf/src/algo \
+		github.com/junegunn/fzf/src/tui \
+		github.com/junegunn/fzf/src/util
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/* ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
@@ -41,13 +46,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${VIMFILES}/doc
 	${INSTALL_DATA} ${WRKSRC}/plugin/fzf.vim ${VIMFILES}/plugin/fzf.vim
 	${INSTALL_DATA} ${WRKSRC}/doc/fzf.txt ${VIMFILES}/doc/fzf.txt
-
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} \
-		github.com/junegunn/fzf/src \
-		github.com/junegunn/fzf/src/algo \
-		github.com/junegunn/fzf/src/tui \
-		github.com/junegunn/fzf/src/util
 
 .include "modules.inc"
 

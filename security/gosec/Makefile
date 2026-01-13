@@ -41,8 +41,7 @@ MODGO_LDFLAGS =	-X main.Version=${MODGO_VERSION:S/v//}
 # github.com/securego/gosec/v2/rules/rules_test.go:41
 # [FAIL] gosec rules report correct errors for all samples [It] should detect blocklisted imports - RIPEMD160
 # github.com/securego/gosec/v2/rules/rules_test.go:41
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET =	./...
 
 .include "modules.inc"
 
