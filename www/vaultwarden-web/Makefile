@@ -1,14 +1,15 @@
 COMMENT =	Web vault builds for vaultwarden
 
-VERSION =	2025.7.0
+VERSION =	2025.12.1+build.3
 DISTNAME =	bw_web_v${VERSION}
-PKGNAME =	vaultwarden-web-${VERSION}
+PKGNAME =	vaultwarden-web-${VERSION:S/+build//}
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/dani-garcia/bw_web_builds
 
-MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>, \
+		Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
