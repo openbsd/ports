@@ -1,0 +1,32 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -18466,23 +18466,23 @@ distclean-local:
+ # above.
+ libarchive/test/list.h: $(libarchive_test_SOURCES)
+ 	$(MKDIR_P) libarchive/test
+-	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	grep -h '^DEFINE_TEST(' $(libarchive_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ tar/test/list.h: $(bsdtar_test_SOURCES)
+ 	$(MKDIR_P) tar/test
+-	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	grep -h '^DEFINE_TEST(' $(bsdtar_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ cpio/test/list.h: $(bsdcpio_test_SOURCES)
+ 	$(MKDIR_P) cpio/test
+-	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	grep -h '^DEFINE_TEST(' $(bsdcpio_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ cat/test/list.h: $(bsdcat_test_SOURCES)
+ 	$(MKDIR_P) cat/test
+-	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	grep -h '^DEFINE_TEST(' $(bsdcat_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ unzip/test/list.h: $(bsdunzip_test_SOURCES)
+ 	$(MKDIR_P) unzip/test
+-	grep -h '^DEFINE_TEST(' $^ | LC_COLLATE=C sort > $@
++	grep -h '^DEFINE_TEST(' $(bsdunzip_test_SOURCES) | LC_COLLATE=C sort > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
