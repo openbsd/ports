@@ -1,7 +1,7 @@
 COMMENT-main =		Unicode Common Locale Data Repository
 COMMENT-annotations =	Unicode Common Locale Data Repository (annotations only)
 
-V =			48
+V =			48.1
 UNICODE_DATA_NAME =	cldr
 
 PKGNAME-main =		unicode-${UNICODE_DATA_NAME}-${V}
