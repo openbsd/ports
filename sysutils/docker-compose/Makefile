@@ -18,15 +18,14 @@ WANTLIB +=		c pthread
 MODULES =		lang/go
 MODGO_LDFLAGS =		-X ${MODGO_MODNAME}/internal.Version=${MODGO_VERSION}
 
+TEST_TARGET =		./...
+
 do-install:
 	ln -s ${TRUEPREFIX}/libexec/docker/cli-plugins/docker-compose \
 		${PREFIX}/bin/docker-compose
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/docker/cli-plugins
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/cmd \
 		${PREFIX}/libexec/docker/cli-plugins/docker-compose
-
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 .include <bsd.port.mk>
