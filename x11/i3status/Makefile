@@ -33,10 +33,9 @@ LIB_DEPENDS=		devel/libconfuse \
 CONFIGURE_ARGS+=	-Dsndio=true \
 			-Dpulseaudio=false
 
-#FAKE_FLAGS +=		sysconfdir=${PREFIX}/share/examples/i3status/
-
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i3status
-	@mv ${WRKINST}/etc/i3status.conf ${PREFIX}/share/examples/i3status
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i3status
+	mv ${WRKINST}/etc/i3status.conf ${PREFIX}/share/examples/i3status
+	rm ${WRKINST}/etc/i3status.conf${PATCHORIG}
 
 .include <bsd.port.mk>
