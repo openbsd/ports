@@ -3,6 +3,9 @@
 @rcscript ${RCDIR}/mdnsd
 @bin bin/mdnsctl
 @bin bin/mdnsd
+@comment lib/libmdns.a
+@lib lib/libmdns.so.${LIBmdns_VERSION}
+@comment lib/libmdns_p.a
 @man man/man8/mdnsctl.8
 @man man/man8/mdnsd.8
 share/doc/pkg-readmes/${PKGSTEM}

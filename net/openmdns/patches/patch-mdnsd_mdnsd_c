@@ -4,16 +4,16 @@ https://svnweb.freebsd.org/ports?view=revision&revision=549579
 Index: mdnsd/mdnsd.c
 --- mdnsd/mdnsd.c.orig
 +++ mdnsd/mdnsd.c
-@@ -45,6 +45,8 @@ int		mdns_sock(void);
- void		fetchmyname(char [MAXHOSTNAMELEN]);
- void		fetchhinfo(struct hinfo *);
+@@ -51,6 +51,8 @@ void			 fetchmyname(char [MAXHOSTNAMELEN]);
+ void			 fetchhinfo(struct hinfo *);
+ struct reflect_rule	*parse_reflect_rule(char *);
  
 +ctl_conns_t	ctl_conns;
 +
  struct mdnsd_conf	*conf = NULL;
  extern char		*malloc_options;
  
-@@ -361,12 +363,12 @@ void
+@@ -455,12 +457,12 @@ void
  imsg_event_add(struct imsgev *iev)
  {
  	if (iev->handler == NULL) {

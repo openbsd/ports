@@ -1,6 +1,8 @@
-Index: mdnsctl/mdnsl.c
---- mdnsctl/mdnsl.c.orig
-+++ mdnsctl/mdnsl.c
+Fix imsg API usage.
+
+Index: libmdns/mdnsl.c
+--- libmdns/mdnsl.c.orig
++++ libmdns/mdnsl.c
 @@ -59,7 +59,8 @@ mdns_open(struct mdns *m)
  	bzero(m, sizeof(*m));
  	if ((sockfd = mdns_connect()) == -1)

@@ -1,0 +1,17 @@
+Fix build by not outputting to obj directory.
+
+Index: mdnsctl/Makefile
+--- mdnsctl/Makefile.orig
++++ mdnsctl/Makefile
+@@ -12,11 +12,7 @@ CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
+ CFLAGS+= -Wsign-compare
+ CFLAGS+= -I${.CURDIR} -I${.CURDIR}/../mdnsd
+ 
+-.if exists(${.CURDIR}/../libmdns/${__objdir})
+-LDADD+= -L${.CURDIR}/../libmdns/${__objdir} -lmdns
+-.else
+ LDADD+= -L${.CURDIR}/../libmdns -lmdns
+-.endif
+ LDADD+= -lutil
+ DPADD+=  ${LIBUTIL}
+ 

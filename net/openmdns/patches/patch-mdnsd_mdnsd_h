@@ -18,7 +18,7 @@ Index: mdnsd/mdnsd.h
  
  struct kif {
  	char			ifname[IF_NAMESIZE];
-@@ -397,7 +399,8 @@ int		 rr_send_an(struct rr *);
+@@ -425,7 +427,8 @@ int		 rr_send_an(struct rr *);
  void		 conflict_resolve_by_rr(struct rr *);
  
  /* control.c */
