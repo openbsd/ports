@@ -14,8 +14,6 @@ lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
 lib/cmake/KQuickImageEditor/KQuickImageEditorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KQuickImageEditor/KQuickImageEditorTargets.cmake
 @lib lib/libKQuickImageEditor.so.${LIBKQuickImageEditor_VERSION}
-lib/qt6/qml/org/
-lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/kquickimageeditor/
 lib/qt6/qml/org/kde/kquickimageeditor/AnnotationSelectionTool.qml
 lib/qt6/qml/org/kde/kquickimageeditor/BasicResizeHandle.qml

@@ -15,11 +15,13 @@ HOMEPAGE =	https://invent.kde.org/libraries/kquickimageeditor/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui Qt6Core
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick m
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick m opencv_core
+WANTLIB += opencv_imgproc
 
 MODULES =	devel/kf6
 
 LIB_DEPENDS =	devel/kf6/kconfig \
+		graphics/opencv \
 		x11/qt6/qtdeclarative
 
 CONFIGURE_ARGS =	-DQT_MAJOR_VERSION=6
