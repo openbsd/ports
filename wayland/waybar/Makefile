@@ -1,6 +1,7 @@
 COMMENT =	Customizable Wayland bar for wlroots based compositors
 
 V =		0.14.0
+REVISION =	0
 
 DIST_TUPLE=	github  Alexays Waybar ${V} .
 PKGNAME=	waybar-${V}
@@ -21,6 +22,7 @@ WANTLIB =	cairomm-1.0 dbusmenu-gtk3 epoll-shim fmt gdk-3 gdkmm-3.0 \
 		gtk-3 gtk-layer-shell gtkmm-3.0 \
 		jsoncpp mpdclient sigc-2.0 spdlog udev \
 		upower-glib wayland-client xkbregistry \
+		lib/inotify/inotify \
 		${COMPILER_LIBCXX} c m sndio
 
 BUILD_DEPENDS = devel/catch2 \
@@ -30,6 +32,7 @@ BUILD_DEPENDS = devel/catch2 \
 
 LIB_DEPENDS =	audio/libmpdclient \
 		devel/glib2 \
+		devel/libinotify \
 		devel/jsoncpp \
 		devel/spdlog \
 		devel/libsigc++-2 \
