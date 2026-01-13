@@ -137,6 +137,10 @@ icinga-php/ipl/vendor/brick/math/src/Internal/Calculator/GmpCalculator.php
 icinga-php/ipl/vendor/brick/math/src/Internal/Calculator/NativeCalculator.php
 icinga-php/ipl/vendor/brick/math/src/Internal/CalculatorRegistry.php
 icinga-php/ipl/vendor/brick/math/src/RoundingMode.php
+icinga-php/ipl/vendor/brick/math/tools/
+icinga-php/ipl/vendor/brick/math/tools/ecs/
+icinga-php/ipl/vendor/brick/math/tools/ecs/composer.json
+icinga-php/ipl/vendor/brick/math/tools/ecs/ecs.php
 icinga-php/ipl/vendor/composer/
 icinga-php/ipl/vendor/composer/ClassLoader.php
 icinga-php/ipl/vendor/composer/InstalledVersions.php
