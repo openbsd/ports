@@ -20,10 +20,9 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 MODGO_LDFLAGS +=	-X "${MODGO_MODNAME}/internal/build.Version=$V"
 
-PORTHOME =	${WRKDIR}
+TEST_TARGET =	./...
 
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+PORTHOME =	${WRKDIR}
 
 post-install:
 	${WRKDIR}/go/bin/gen-docs --doc-path ${PREFIX}/man/man1 --man-page

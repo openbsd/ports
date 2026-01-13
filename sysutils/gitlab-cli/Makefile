@@ -21,8 +21,7 @@ MODULES =		lang/go
 BUILD_DEPENDS =		lang/go>=1.24.2
 MODGO_LDFLAGS =		-X main.version=${V}
 
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+TEST_TARGET =		./...
 
 post-install:
 	${WRKDIR}/go/bin/gen-docs --path ${PREFIX}/man/man1 --manpage
