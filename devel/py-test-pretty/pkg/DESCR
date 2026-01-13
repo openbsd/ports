@@ -1,0 +1,10 @@
+pytest plugin to make output slightly easier to read and errors easy to
+find and fix.
+
+- Realtime error summary: One-line info on which test has failed while
+tests are running.
+
+- Table of failures with both test line number and error line number,
+easier to see where errors occur than scrolling through backtraces.
+
+- Prettier summary of a test run, including time taken.
