@@ -17,6 +17,8 @@ PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
 
+REVISION-server=	0
+
 CATEGORIES=		sysutils
 
 SHARED_LIBS +=  bac                  11.1
