@@ -16,7 +16,8 @@ COMPILER=	base-clang ports-gcc
 
 HOMEPAGE=	https://scipy.org/
 
-MODULES=	lang/python fortran
+MODULES=	lang/python \
+		fortran
 
 MODFORTRAN_COMPILER=	gfortran
 
@@ -36,13 +37,10 @@ LIB_DEPENDS=	math/lapack \
 RUN_DEPENDS=	math/py-numpy \
 		devel/swig
 
-# requires py-pooch
-NO_TEST=	Yes
-# TEST_DEPENDS=	devel/py-hypothesis \
-#		devel/py-pooch
-
-do-test: fake
-	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} -c 'import scipy ; scipy.test("full")'
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-hypothesis
+MODPY_TEST_DIR=	${WRKINST}/${MODPY_SITEPKG}
+# this test needs pooch (not ported) to download data files at runtime
+MODPY_PYTEST_ARGS= --ignore scipy/datasets/tests/test_data.py
 
 .include <bsd.port.mk>
