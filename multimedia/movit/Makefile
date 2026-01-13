@@ -1,6 +1,7 @@
 COMMENT =	video filter library for GPU-accelerated processing
 
 DISTNAME =	movit-1.7.2
+REVISION =	0
 
 SHARED_LIBS +=  movit                     0.0 # 8.6
 
@@ -21,9 +22,9 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 
-BUILD_DEPENDS =	 	devel/sdl2 \
+BUILD_DEPENDS =		devel/sdl2 \
 			math/eigen3
-
-LIB_DEPENDS =	 	math/fftw3
+RUN_DEPENDS =		math/eigen3
+LIB_DEPENDS =		math/fftw3
 
 .include <bsd.port.mk>
