@@ -629,5 +629,19 @@ share/remind/site/README
 @tag update-desktop-database
 share/remind/solar-eclipses.rem
 share/remind/sun.rem
+share/remind/translations/
+share/remind/translations/README.txt
+share/remind/translations/de/
+share/remind/translations/de/holidays/
+share/remind/translations/de/holidays/chinese-new-year.rem
+share/remind/translations/de/moonphases.rem
+share/remind/translations/de/seasons.rem
+share/remind/translations/de/sun.rem
+share/remind/translations/nl/
+share/remind/translations/nl/holidays/
+share/remind/translations/nl/holidays/chinese-new-year.rem
+share/remind/translations/nl/moonphases.rem
+share/remind/translations/nl/seasons.rem
+share/remind/translations/nl/sun.rem
 share/remind/utils/
 share/remind/utils/add-html-anchors.rem
