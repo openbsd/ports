@@ -1,10 +1,9 @@
 COMMENT=	high performance, concurrent HTTP client library
 
-MODPY_DISTV=	2.3.3
+MODPY_DISTV =	2.3.7
 DISTNAME=	geventhttpclient-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net devel
-REVISION=	0
 
 # sdist is missing various files under tests/ without which tests cannot run.
 # overlaying rather than using a github distfile directly due to submodule.
