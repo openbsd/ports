@@ -34,10 +34,11 @@ share/locale/it/LC_MESSAGES/lxrandr.mo
 share/locale/ja/LC_MESSAGES/lxrandr.mo
 share/locale/kk/LC_MESSAGES/lxrandr.mo
 share/locale/ko/LC_MESSAGES/lxrandr.mo
-share/locale/lg/
-share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/lxrandr.mo
 share/locale/lt/LC_MESSAGES/lxrandr.mo
+share/locale/ltg/
+share/locale/ltg/LC_MESSAGES/
+share/locale/ltg/LC_MESSAGES/lxrandr.mo
 share/locale/ml/LC_MESSAGES/lxrandr.mo
 share/locale/ms/LC_MESSAGES/lxrandr.mo
 share/locale/nb/LC_MESSAGES/lxrandr.mo
