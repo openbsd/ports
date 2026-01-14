@@ -1,11 +1,11 @@
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.54
+GNOME_VERSION=		1.14.55
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  gsf-1                114.12   # 114.54
+SHARED_LIBS +=  gsf-1                114.12   # 114.55
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
