@@ -1,29 +1,25 @@
-COMMENT =	ahead of time compiler for numeric kernels
+COMMENT=	ahead of time compiler for numeric kernels
 
-# updates >=0.16.0 need testing/updating scipy, py-scikit-image
-MODPY_DISTV =	0.15.0
+MODPY_DISTV=	0.18.1
+DISTNAME=	pythran-${MODPY_DISTV}
 
-DISTNAME =	pythran-${MODPY_DISTV}
-REVISION =	6
+CATEGORIES=	lang
 
-CATEGORIES =	lang
-
-HOMEPAGE =	https://github.com/serge-sans-paille/pythran
+HOMEPAGE=	https://github.com/serge-sans-paille/pythran
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # There are tests in the github tarball; they take hours to run.
-NO_TEST =	Yes
+NO_TEST=	Yes
 
-RUN_DEPENDS =	devel/py-ply \
-		devel/py-gast \
-		devel/py-beniget \
+RUN_DEPENDS=	devel/py-ply>=3.4 \
+		devel/py-gast>=0.6.0,<0.7 \
+		devel/py-beniget>=0.4.0,<0.5 \
 		math/py-numpy
 
 .include <bsd.port.mk>
