@@ -3,6 +3,7 @@
 @bin bin/kwin_wayland_wrapper
 @bin bin/kwindowprop
 include/kwin/
+include/kwin/a11ykeyboardmonitor.h
 include/kwin/activities.h
 include/kwin/appmenu.h
 include/kwin/atoms.h
@@ -659,7 +660,6 @@ share/doc/HTML/pt/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/pt/kcontrol/windowspecific/
 share/doc/HTML/pt/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/pt/kcontrol/windowspecific/index.docbook
-share/doc/HTML/pt_BR/kcontrol/
 share/doc/HTML/pt_BR/kcontrol/desktop/
 share/doc/HTML/pt_BR/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/desktop/index.docbook
@@ -667,12 +667,21 @@ share/doc/HTML/pt_BR/kcontrol/kwindecoration/
 share/doc/HTML/pt_BR/kcontrol/kwindecoration/configure.png
 share/doc/HTML/pt_BR/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/pt_BR/kcontrol/kwineffects/
+share/doc/HTML/pt_BR/kcontrol/kwineffects/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/kwineffects/index.docbook
 share/doc/HTML/pt_BR/kcontrol/kwinscreenedges/
 share/doc/HTML/pt_BR/kcontrol/kwinscreenedges/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kwinscreenedges/index.docbook
 share/doc/HTML/pt_BR/kcontrol/kwintabbox/
 share/doc/HTML/pt_BR/kcontrol/kwintabbox/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kwintabbox/index.docbook
+share/doc/HTML/pt_BR/kcontrol/kwintouchscreen/
+share/doc/HTML/pt_BR/kcontrol/kwintouchscreen/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/kwintouchscreen/index.docbook
+share/doc/HTML/pt_BR/kcontrol/kwinvirtualkeyboard/
+share/doc/HTML/pt_BR/kcontrol/kwinvirtualkeyboard/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/kwinvirtualkeyboard/index.docbook
 share/doc/HTML/pt_BR/kcontrol/windowbehaviour/
 share/doc/HTML/pt_BR/kcontrol/windowbehaviour/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/windowbehaviour/index.docbook
@@ -1329,11 +1338,16 @@ share/locale/fy/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/fy/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/fy/LC_MESSAGES/kcmkwm.mo
 share/locale/fy/LC_MESSAGES/kwin.mo
+share/locale/ga/LC_MESSAGES/kcm_animations.mo
+share/locale/ga/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/ga/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/ga/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ga/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ga/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/ga/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ga/LC_MESSAGES/kcm_kwinxwayland.mo
+share/locale/ga/LC_MESSAGES/kcm_virtualkeyboard.mo
+share/locale/ga/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ga/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ga/LC_MESSAGES/kcmkwm.mo
 share/locale/ga/LC_MESSAGES/kwin.mo
