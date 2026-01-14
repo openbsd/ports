@@ -28,6 +28,7 @@
      SUBDIR += wayland-protocols
      SUBDIR += wayland-utils
      SUBDIR += wcm
+     SUBDIR += wdisplays
      SUBDIR += wev
      SUBDIR += wf-config
      SUBDIR += wf-recorder
