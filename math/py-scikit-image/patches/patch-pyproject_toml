@@ -1,0 +1,20 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -190,7 +190,7 @@ convention = 'numpy'
+ 
+ [tool.pytest.ini_options]
+ minversion = "6.0"
+-addopts = ["-ra", "--strict-config", "--strict-markers", "--maxfail=5"]
++addopts = ["-ra", "--strict-config", "--strict-markers"]
+ log_cli_level = "INFO"
+ xfail_strict = true
+ testpaths = ["tests"]
+@@ -202,6 +202,7 @@ filterwarnings = [
+     # Pyodide warning coming via threadpoolctl, remove when
+     # https://github.com/joblib/threadpoolctl/pull/201 is released
+     "ignore:.*JsProxy\\.as_object_map.*:RuntimeWarning",
++    "ignore:.*Image.*:DeprecationWarning",
+ ]
+ norecursedirs = ["io/_plugins"]
+ 

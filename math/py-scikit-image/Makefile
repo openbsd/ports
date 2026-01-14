@@ -1,14 +1,10 @@
 COMMENT =		image processing routines for SciPy
 
-# Newer versions need an update of pythran, but scipy is
-# a blocker due to lack of gcc 9+
-MODPY_DISTV =		0.24.0
+MODPY_DISTV =		0.26.0
 DISTNAME =		scikit_image-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 
 CATEGORIES =		math
-
-MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -19,11 +15,11 @@ WANTLIB +=		${COMPILER_LIBCXX} m
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		mesonpy
-MODPY_ADJ_FILES =	skimage/_build_utils/*.py
-MODPY_TEST_DIR =	${WRKINST}/${MODPY_SITEPKG}
+MODPY_PI =		Yes
+
+# s/python/python3/ needed during build
+MODPY_ADJ_FILES =	src/skimage/_build_utils/*.py
 
 BUILD_DEPENDS =		lang/cython \
 			lang/pythran \
@@ -41,7 +37,14 @@ RUN_DEPENDS =		math/py-numpy \
 			sysutils/py-packaging \
 			devel/py-lazy-loader
 
-TEST_DEPENDS =		devel/py-test-cov \
-			devel/py-test-localserver
+TEST_DEPENDS =		astro/py-astropy \
+			devel/py-test-cov \
+			devel/py-test-doctestplus \
+			devel/py-test-localserver \
+			devel/py-test-pretty \
+			graphics/py-matplotlib \
+			math/py-PyWavelets \
+			math/py-scikit-learn \
+			textproc/py-numpydoc
 
 .include <bsd.port.mk>
