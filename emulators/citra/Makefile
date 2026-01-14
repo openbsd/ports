@@ -9,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators
 
@@ -20,14 +20,15 @@ PERMIT_PACKAGE =	Yes
 
 USE_NOBTCFI =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} 
-WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Widgets SoundTouch boost_iostreams-mt crypto openal
-WANTLIB += ssl SDL2 boost_serialization-mt
-WANTLIB += c cryptopp enet fmt m usb-1.0
-WANTLIB += GL Qt6Network boost_chrono-mt boost_container-mt boost_locale-mt
-WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
-WANTLIB += xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Widgets SDL2 SoundTouch
+WANTLIB += boost_chrono-mt boost_container-mt boost_iostreams-mt
+WANTLIB += boost_locale-mt boost_random-mt boost_regex-mt boost_serialization-mt
+WANTLIB += boost_system-mt boost_thread-mt c crypto cryptopp enet
+WANTLIB += fmt m openal ssl usb-1.0 xkbcommon
+
+# ffmpeg is loaded via dlopen(3) when dumping recorded gameplay video
+WANTLIB += avcodec avdevice avfilter avformat avutil swresample swscale
 
 SITES =		https://archive.org/download/citra-latest-stuff/Nightly%20build%20%2B%20source%20-%200ff3440/
 EXTRACT_SUFX =	.tar.xz
@@ -40,13 +41,12 @@ COMPILER =	base-clang ports-clang
 
 BUILD_DEPENDS =	devel/catch2 \
 		devel/git \
-		devel/robin-map \
+		devel/robin-map
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-# ffmpeg is loaded via dlopen(3) when dumping recorded gameplay video
 LIB_DEPENDS =	audio/openal \
 		audio/soundtouch \
 		devel/boost \
@@ -83,7 +83,7 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 
-CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
+CXXFLAGS +=		-I${LOCALBASE}/include
 
 ppost-extract:
 	rm -r ${WRKSRC}/externals/cryptopp-cmake \
