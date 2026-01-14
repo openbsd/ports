@@ -1,11 +1,13 @@
 COMMENT =	determine file types
 
-DISTNAME =	File-MimeInfo-0.35
+DISTNAME =	File-MimeInfo-0.36
 
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =		MICHIELB
 
 MODULES =		cpan
 
