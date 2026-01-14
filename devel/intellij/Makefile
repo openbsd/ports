@@ -1,9 +1,8 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2025.2.6
-REVISION=		0
-DIST_VER=		252.28539.13
-DISTNAME=		ideaIC-${V}
+V=			2025.3.1.1
+DIST_VER=		253.29346.240
+DISTNAME=		idea-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
@@ -14,27 +13,21 @@ MAINTAINER=		Kirill A. Korinsky <kirill@korins.ky>
 # Apache v2.0
 PERMIT_PACKAGE=		Yes
 
-SITES=			https://download.jetbrains.com/idea/
+SITES=			https://github.com/JetBrains/intellij-community/releases/download/idea%2F${V}/
 
 MODULES=		java
 MODJAVA_VER=		21+
 
-BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
-
-RUN_DEPENDS=		devel/desktop-file-utils \
+RUN_DEPENDS+=		devel/desktop-file-utils \
 			java/javaPathHelper
 
+NO_BUILD=		Yes
 NO_TEST=		Yes
 
 SUBST_VARS+=		DIST_VER
 
 WRKDIST=		${WRKDIR}/idea-IC-${DIST_VER}
 IJ=			${PREFIX}/intellij
-
-# If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
-# a no-op for do-build.
-do-build:
-	@true
 
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
@@ -46,13 +39,6 @@ do-install:
 	find ${IJ}/lib ${IJ}/plugins -name '*.exe' -delete
 	find ${IJ}/lib ${IJ}/plugins -type d -empty -delete
 
-	@rm ${IJ}/plugins/fullLine/full-line-native-server-linux-x86_64.zip
-.for PLUGIN in aarch64-unknown-linux x86_64-unknown-linux
-	@rm -rf ${IJ}/plugins/platform-ijent-impl/ijent-${PLUGIN}-musl-release
-.endfor
-.for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
-	@rm -rf ${IJ}/plugins/cwm-plugin/quiche-native/${PLUGIN}
-.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 .for PROG in idea idea-lightedit
 	@${SUBST_PROGRAM} ${FILESDIR}/${PROG} ${PREFIX}/bin/${PROG}
