@@ -1,0 +1,14 @@
+Fix printf format.
+
+Index: src/exif.c
+--- src/exif.c.orig
++++ src/exif.c
+@@ -468,7 +468,7 @@ static void ProcessExifDir(unsigned char * DirStart, u
+             }
+         }
+         if (DumpExifMap){
+-            printf("Map: %05d-%05d: Directory\n",DirStart-OffsetBase, DirEnd+4-OffsetBase);
++            printf("Map: %05td-%05td: Directory\n",DirStart-OffsetBase, DirEnd+4-OffsetBase);
+         }
+ 
+ 
