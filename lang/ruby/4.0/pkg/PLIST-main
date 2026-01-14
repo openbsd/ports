@@ -769,6 +769,7 @@ lib/ruby/${REV}/prism/dsl.rb
 lib/ruby/${REV}/prism/ffi.rb
 lib/ruby/${REV}/prism/inspect_visitor.rb
 lib/ruby/${REV}/prism/lex_compat.rb
+lib/ruby/${REV}/prism/lex_ripper.rb
 lib/ruby/${REV}/prism/mutation_compiler.rb
 lib/ruby/${REV}/prism/node.rb
 lib/ruby/${REV}/prism/node_ext.rb
@@ -796,14 +797,11 @@ lib/ruby/${REV}/prism/translation/parser.rb
 lib/ruby/${REV}/prism/translation/parser/builder.rb
 lib/ruby/${REV}/prism/translation/parser/compiler.rb
 lib/ruby/${REV}/prism/translation/parser/lexer.rb
-lib/ruby/${REV}/prism/translation/parser33.rb
-lib/ruby/${REV}/prism/translation/parser34.rb
-lib/ruby/${REV}/prism/translation/parser35.rb
-lib/ruby/${REV}/prism/translation/parser40.rb
-lib/ruby/${REV}/prism/translation/parser41.rb
 lib/ruby/${REV}/prism/translation/parser_current.rb
+lib/ruby/${REV}/prism/translation/parser_versions.rb
 lib/ruby/${REV}/prism/translation/ripper/
 lib/ruby/${REV}/prism/translation/ripper.rb
+lib/ruby/${REV}/prism/translation/ripper/lexer.rb
 lib/ruby/${REV}/prism/translation/ripper/sexp.rb
 lib/ruby/${REV}/prism/translation/ripper/shim.rb
 lib/ruby/${REV}/prism/translation/ruby_parser.rb
@@ -2031,7 +2029,7 @@ lib/ruby/gems/${REV}/gems/prime-0.1.4/sig/
 lib/ruby/gems/${REV}/gems/prime-0.1.4/sig/integer-extension.rbs
 lib/ruby/gems/${REV}/gems/prime-0.1.4/sig/manifest.yaml
 lib/ruby/gems/${REV}/gems/prime-0.1.4/sig/prime.rbs
-lib/ruby/gems/${REV}/gems/prism-1.7.0/
+lib/ruby/gems/${REV}/gems/prism-1.8.0/
 lib/ruby/gems/${REV}/gems/pstore-0.2.0/
 lib/ruby/gems/${REV}/gems/pstore-0.2.0/BSDL
 lib/ruby/gems/${REV}/gems/pstore-0.2.0/COPYING
@@ -3497,7 +3495,7 @@ lib/ruby/gems/${REV}/specifications/default/openssl-4.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/optparse-0.8.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/pp-0.6.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/prettyprint-0.2.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/prism-1.7.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/prism-1.8.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-5.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/resolv-0.7.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/ruby2_keywords-0.0.5.gemspec

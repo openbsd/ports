@@ -6942,6 +6942,7 @@ share/ri/${REV}/system/Prism/AliasGlobalVariableNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/copy-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AliasGlobalVariableNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/keyword-i.ri
 share/ri/${REV}/system/Prism/AliasGlobalVariableNode/keyword_loc-i.ri
@@ -6961,6 +6962,7 @@ share/ri/${REV}/system/Prism/AliasMethodNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/copy-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AliasMethodNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/keyword-i.ri
 share/ri/${REV}/system/Prism/AliasMethodNode/keyword_loc-i.ri
@@ -6980,6 +6982,7 @@ share/ri/${REV}/system/Prism/AlternationPatternNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/copy-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AlternationPatternNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/left-i.ri
 share/ri/${REV}/system/Prism/AlternationPatternNode/new-c.ri
@@ -6999,6 +7002,7 @@ share/ri/${REV}/system/Prism/AndNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AndNode/copy-i.ri
 share/ri/${REV}/system/Prism/AndNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AndNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AndNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AndNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AndNode/left-i.ri
 share/ri/${REV}/system/Prism/AndNode/new-c.ri
@@ -7024,6 +7028,7 @@ share/ri/${REV}/system/Prism/ArgumentsNode/contains_splat%3f-i.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/copy-i.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ArgumentsNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/new-c.ri
 share/ri/${REV}/system/Prism/ArgumentsNode/type-c.ri
@@ -7043,6 +7048,7 @@ share/ri/${REV}/system/Prism/ArrayNode/contains_splat%3f-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/copy-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ArrayNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/elements-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ArrayNode/new-c.ri
@@ -7067,6 +7073,7 @@ share/ri/${REV}/system/Prism/ArrayPatternNode/constant-i.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/copy-i.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ArrayPatternNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/new-c.ri
 share/ri/${REV}/system/Prism/ArrayPatternNode/opening-i.ri
@@ -7088,6 +7095,7 @@ share/ri/${REV}/system/Prism/AssocNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AssocNode/copy-i.ri
 share/ri/${REV}/system/Prism/AssocNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AssocNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AssocNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AssocNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AssocNode/key-i.ri
 share/ri/${REV}/system/Prism/AssocNode/new-c.ri
@@ -7107,6 +7115,7 @@ share/ri/${REV}/system/Prism/AssocSplatNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/copy-i.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/AssocSplatNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/inspect-i.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/new-c.ri
 share/ri/${REV}/system/Prism/AssocSplatNode/operator-i.ri
@@ -7125,6 +7134,7 @@ share/ri/${REV}/system/Prism/BackReferenceReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BackReferenceReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/name-i.ri
 share/ri/${REV}/system/Prism/BackReferenceReadNode/new-c.ri
@@ -7147,6 +7157,7 @@ share/ri/${REV}/system/Prism/BeginNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BeginNode/copy-i.ri
 share/ri/${REV}/system/Prism/BeginNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BeginNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BeginNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BeginNode/else_clause-i.ri
 share/ri/${REV}/system/Prism/BeginNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/BeginNode/end_keyword_loc-i.ri
@@ -7169,6 +7180,7 @@ share/ri/${REV}/system/Prism/BlockArgumentNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/copy-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BlockArgumentNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/expression-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BlockArgumentNode/new-c.ri
@@ -7187,6 +7199,7 @@ share/ri/${REV}/system/Prism/BlockLocalVariableNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/copy-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BlockLocalVariableNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/name-i.ri
 share/ri/${REV}/system/Prism/BlockLocalVariableNode/new-c.ri
@@ -7206,6 +7219,7 @@ share/ri/${REV}/system/Prism/BlockNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BlockNode/copy-i.ri
 share/ri/${REV}/system/Prism/BlockNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BlockNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BlockNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BlockNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BlockNode/locals-i.ri
 share/ri/${REV}/system/Prism/BlockNode/new-c.ri
@@ -7226,6 +7240,7 @@ share/ri/${REV}/system/Prism/BlockParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BlockParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/BlockParameterNode/name_loc-i.ri
@@ -7249,6 +7264,7 @@ share/ri/${REV}/system/Prism/BlockParametersNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/copy-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BlockParametersNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/locals-i.ri
 share/ri/${REV}/system/Prism/BlockParametersNode/new-c.ri
@@ -7270,6 +7286,7 @@ share/ri/${REV}/system/Prism/BreakNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/BreakNode/copy-i.ri
 share/ri/${REV}/system/Prism/BreakNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/BreakNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/BreakNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/BreakNode/inspect-i.ri
 share/ri/${REV}/system/Prism/BreakNode/keyword-i.ri
 share/ri/${REV}/system/Prism/BreakNode/keyword_loc-i.ri
@@ -7290,6 +7307,7 @@ share/ri/${REV}/system/Prism/CallAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CallAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/CallAndWriteNode/message-i.ri
@@ -7325,6 +7343,7 @@ share/ri/${REV}/system/Prism/CallNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CallNode/copy-i.ri
 share/ri/${REV}/system/Prism/CallNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CallNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CallNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CallNode/equal-i.ri
 share/ri/${REV}/system/Prism/CallNode/equal_loc-i.ri
 share/ri/${REV}/system/Prism/CallNode/full_message_loc-i.ri
@@ -7363,6 +7382,7 @@ share/ri/${REV}/system/Prism/CallOperatorWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CallOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/CallOperatorWriteNode/message-i.ri
@@ -7394,6 +7414,7 @@ share/ri/${REV}/system/Prism/CallOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CallOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/CallOrWriteNode/message-i.ri
@@ -7425,6 +7446,7 @@ share/ri/${REV}/system/Prism/CallTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CallTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/CallTargetNode/message-i.ri
@@ -7448,6 +7470,7 @@ share/ri/${REV}/system/Prism/CapturePatternNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/copy-i.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CapturePatternNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/inspect-i.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/new-c.ri
 share/ri/${REV}/system/Prism/CapturePatternNode/operator-i.ri
@@ -7471,6 +7494,7 @@ share/ri/${REV}/system/Prism/CaseMatchNode/consequent-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/copy-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CaseMatchNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/else_clause-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/CaseMatchNode/end_keyword_loc-i.ri
@@ -7495,6 +7519,7 @@ share/ri/${REV}/system/Prism/CaseNode/consequent-i.ri
 share/ri/${REV}/system/Prism/CaseNode/copy-i.ri
 share/ri/${REV}/system/Prism/CaseNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/CaseNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/CaseNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/CaseNode/else_clause-i.ri
 share/ri/${REV}/system/Prism/CaseNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/CaseNode/end_keyword_loc-i.ri
@@ -7519,6 +7544,7 @@ share/ri/${REV}/system/Prism/ClassNode/constant_path-i.ri
 share/ri/${REV}/system/Prism/ClassNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/ClassNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/ClassNode/inheritance_operator-i.ri
@@ -7543,6 +7569,7 @@ share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableAndWriteNode/name_loc-i.ri
@@ -7566,6 +7593,7 @@ share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/compact_child_nodes-
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOperatorWriteNode/name_loc-i.ri
@@ -7587,6 +7615,7 @@ share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableOrWriteNode/name_loc-i.ri
@@ -7608,6 +7637,7 @@ share/ri/${REV}/system/Prism/ClassVariableReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableReadNode/new-c.ri
@@ -7623,6 +7653,7 @@ share/ri/${REV}/system/Prism/ClassVariableTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableTargetNode/new-c.ri
@@ -7638,6 +7669,7 @@ share/ri/${REV}/system/Prism/ClassVariableWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ClassVariableWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ClassVariableWriteNode/name_loc-i.ri
@@ -7825,6 +7857,7 @@ share/ri/${REV}/system/Prism/ConstantAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ConstantAndWriteNode/name_loc-i.ri
@@ -7848,6 +7881,7 @@ share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ConstantOperatorWriteNode/name_loc-i.ri
@@ -7869,6 +7903,7 @@ share/ri/${REV}/system/Prism/ConstantOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/ConstantOrWriteNode/name_loc-i.ri
@@ -7890,6 +7925,7 @@ share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/new-c.ri
 share/ri/${REV}/system/Prism/ConstantPathAndWriteNode/operator-i.ri
@@ -7916,6 +7952,7 @@ share/ri/${REV}/system/Prism/ConstantPathNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/delimiter-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/delimiter_loc-i.ri
+share/ri/${REV}/system/Prism/ConstantPathNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/full_name-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/full_name_parts-i.ri
 share/ri/${REV}/system/Prism/ConstantPathNode/inspect-i.ri
@@ -7939,6 +7976,7 @@ share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/compact_child_nodes-i
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/new-c.ri
 share/ri/${REV}/system/Prism/ConstantPathOperatorWriteNode/operator-i.ri
@@ -7958,6 +7996,7 @@ share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/new-c.ri
 share/ri/${REV}/system/Prism/ConstantPathOrWriteNode/operator-i.ri
@@ -7980,6 +8019,7 @@ share/ri/${REV}/system/Prism/ConstantPathTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/delimiter-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/delimiter_loc-i.ri
+share/ri/${REV}/system/Prism/ConstantPathTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/full_name-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/full_name_parts-i.ri
 share/ri/${REV}/system/Prism/ConstantPathTargetNode/inspect-i.ri
@@ -8001,6 +8041,7 @@ share/ri/${REV}/system/Prism/ConstantPathWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantPathWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/new-c.ri
 share/ri/${REV}/system/Prism/ConstantPathWriteNode/operator-i.ri
@@ -8020,6 +8061,7 @@ share/ri/${REV}/system/Prism/ConstantReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/full_name-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/full_name_parts-i.ri
 share/ri/${REV}/system/Prism/ConstantReadNode/inspect-i.ri
@@ -8037,6 +8079,7 @@ share/ri/${REV}/system/Prism/ConstantTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/full_name-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/full_name_parts-i.ri
 share/ri/${REV}/system/Prism/ConstantTargetNode/inspect-i.ri
@@ -8054,6 +8097,7 @@ share/ri/${REV}/system/Prism/ConstantWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ConstantWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/full_name-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/full_name_parts-i.ri
 share/ri/${REV}/system/Prism/ConstantWriteNode/inspect-i.ri
@@ -8256,6 +8300,7 @@ share/ri/${REV}/system/Prism/DefNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/DefNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/DefNode/def_keyword-i.ri
 share/ri/${REV}/system/Prism/DefNode/def_keyword_loc-i.ri
+share/ri/${REV}/system/Prism/DefNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/DefNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/DefNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/DefNode/equal-i.ri
@@ -8292,6 +8337,7 @@ share/ri/${REV}/system/Prism/DefinedNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/copy-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/DefinedNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/inspect-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/keyword-i.ri
 share/ri/${REV}/system/Prism/DefinedNode/keyword_loc-i.ri
@@ -8665,6 +8711,7 @@ share/ri/${REV}/system/Prism/ElseNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ElseNode/copy-i.ri
 share/ri/${REV}/system/Prism/ElseNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ElseNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ElseNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ElseNode/else_keyword-i.ri
 share/ri/${REV}/system/Prism/ElseNode/else_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/ElseNode/end_keyword-i.ri
@@ -8692,6 +8739,7 @@ share/ri/${REV}/system/Prism/EmbeddedStatementsNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/copy-i.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/EmbeddedStatementsNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/inspect-i.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/new-c.ri
 share/ri/${REV}/system/Prism/EmbeddedStatementsNode/opening-i.ri
@@ -8711,6 +8759,7 @@ share/ri/${REV}/system/Prism/EmbeddedVariableNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/copy-i.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/EmbeddedVariableNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/inspect-i.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/new-c.ri
 share/ri/${REV}/system/Prism/EmbeddedVariableNode/operator-i.ri
@@ -8731,6 +8780,7 @@ share/ri/${REV}/system/Prism/EnsureNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/copy-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/EnsureNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/EnsureNode/ensure_keyword-i.ri
@@ -8752,6 +8802,7 @@ share/ri/${REV}/system/Prism/FalseNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/FalseNode/copy-i.ri
 share/ri/${REV}/system/Prism/FalseNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/FalseNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/FalseNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/FalseNode/inspect-i.ri
 share/ri/${REV}/system/Prism/FalseNode/new-c.ri
 share/ri/${REV}/system/Prism/FalseNode/type-c.ri
@@ -8769,6 +8820,7 @@ share/ri/${REV}/system/Prism/FindPatternNode/constant-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/copy-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/FindPatternNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/inspect-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/left-i.ri
 share/ri/${REV}/system/Prism/FindPatternNode/new-c.ri
@@ -8790,6 +8842,7 @@ share/ri/${REV}/system/Prism/FlipFlopNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/copy-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/FlipFlopNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/exclude_end%3f-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/inspect-i.ri
 share/ri/${REV}/system/Prism/FlipFlopNode/left-i.ri
@@ -8810,6 +8863,7 @@ share/ri/${REV}/system/Prism/FloatNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/FloatNode/copy-i.ri
 share/ri/${REV}/system/Prism/FloatNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/FloatNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/FloatNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/FloatNode/inspect-i.ri
 share/ri/${REV}/system/Prism/FloatNode/new-c.ri
 share/ri/${REV}/system/Prism/FloatNode/type-c.ri
@@ -8828,6 +8882,7 @@ share/ri/${REV}/system/Prism/ForNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ForNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/ForNode/do_keyword-i.ri
 share/ri/${REV}/system/Prism/ForNode/do_keyword_loc-i.ri
+share/ri/${REV}/system/Prism/ForNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ForNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/ForNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/ForNode/for_keyword-i.ri
@@ -8854,6 +8909,7 @@ share/ri/${REV}/system/Prism/ForwardingArgumentsNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/copy-i.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ForwardingArgumentsNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/new-c.ri
 share/ri/${REV}/system/Prism/ForwardingArgumentsNode/type-c.ri
@@ -8868,6 +8924,7 @@ share/ri/${REV}/system/Prism/ForwardingParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ForwardingParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/new-c.ri
 share/ri/${REV}/system/Prism/ForwardingParameterNode/type-c.ri
@@ -8883,6 +8940,7 @@ share/ri/${REV}/system/Prism/ForwardingSuperNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/copy-i.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ForwardingSuperNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/new-c.ri
 share/ri/${REV}/system/Prism/ForwardingSuperNode/type-c.ri
@@ -8897,6 +8955,7 @@ share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableAndWriteNode/name_loc-i.ri
@@ -8920,6 +8979,7 @@ share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/compact_child_nodes
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOperatorWriteNode/name_loc-i.ri
@@ -8941,6 +9001,7 @@ share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableOrWriteNode/name_loc-i.ri
@@ -8962,6 +9023,7 @@ share/ri/${REV}/system/Prism/GlobalVariableReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableReadNode/new-c.ri
@@ -8977,6 +9039,7 @@ share/ri/${REV}/system/Prism/GlobalVariableTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableTargetNode/new-c.ri
@@ -8992,6 +9055,7 @@ share/ri/${REV}/system/Prism/GlobalVariableWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/GlobalVariableWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/GlobalVariableWriteNode/name_loc-i.ri
@@ -9015,6 +9079,7 @@ share/ri/${REV}/system/Prism/HashNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/HashNode/copy-i.ri
 share/ri/${REV}/system/Prism/HashNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/HashNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/HashNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/HashNode/elements-i.ri
 share/ri/${REV}/system/Prism/HashNode/inspect-i.ri
 share/ri/${REV}/system/Prism/HashNode/new-c.ri
@@ -9037,6 +9102,7 @@ share/ri/${REV}/system/Prism/HashPatternNode/constant-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/copy-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/HashPatternNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/elements-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/inspect-i.ri
 share/ri/${REV}/system/Prism/HashPatternNode/new-c.ri
@@ -9058,6 +9124,7 @@ share/ri/${REV}/system/Prism/IfNode/consequent-i.ri
 share/ri/${REV}/system/Prism/IfNode/copy-i.ri
 share/ri/${REV}/system/Prism/IfNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IfNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IfNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IfNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/IfNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/IfNode/if_keyword-i.ri
@@ -9084,6 +9151,7 @@ share/ri/${REV}/system/Prism/ImaginaryNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/copy-i.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ImaginaryNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/new-c.ri
 share/ri/${REV}/system/Prism/ImaginaryNode/numeric-i.ri
@@ -9100,6 +9168,7 @@ share/ri/${REV}/system/Prism/ImplicitNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ImplicitNode/copy-i.ri
 share/ri/${REV}/system/Prism/ImplicitNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ImplicitNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ImplicitNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ImplicitNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ImplicitNode/new-c.ri
 share/ri/${REV}/system/Prism/ImplicitNode/type-c.ri
@@ -9115,6 +9184,7 @@ share/ri/${REV}/system/Prism/ImplicitRestNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/copy-i.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ImplicitRestNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/new-c.ri
 share/ri/${REV}/system/Prism/ImplicitRestNode/type-c.ri
@@ -9129,6 +9199,7 @@ share/ri/${REV}/system/Prism/InNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InNode/copy-i.ri
 share/ri/${REV}/system/Prism/InNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InNode/in-i.ri
 share/ri/${REV}/system/Prism/InNode/in_loc-i.ri
 share/ri/${REV}/system/Prism/InNode/inspect-i.ri
@@ -9158,6 +9229,7 @@ share/ri/${REV}/system/Prism/IndexAndWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IndexAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/IndexAndWriteNode/new-c.ri
@@ -9194,6 +9266,7 @@ share/ri/${REV}/system/Prism/IndexOperatorWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IndexOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/IndexOperatorWriteNode/new-c.ri
@@ -9228,6 +9301,7 @@ share/ri/${REV}/system/Prism/IndexOrWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IndexOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/IndexOrWriteNode/new-c.ri
@@ -9260,6 +9334,7 @@ share/ri/${REV}/system/Prism/IndexTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IndexTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/ignore_visibility%3f-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/IndexTargetNode/new-c.ri
@@ -9446,6 +9521,7 @@ share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/compact_child_nodes-i.
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableAndWriteNode/name_loc-i.ri
@@ -9469,6 +9545,7 @@ share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/compact_child_nod
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOperatorWriteNode/name_loc-i.ri
@@ -9490,6 +9567,7 @@ share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/compact_child_nodes-i.r
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableOrWriteNode/name_loc-i.ri
@@ -9511,6 +9589,7 @@ share/ri/${REV}/system/Prism/InstanceVariableReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableReadNode/new-c.ri
@@ -9526,6 +9605,7 @@ share/ri/${REV}/system/Prism/InstanceVariableTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableTargetNode/new-c.ri
@@ -9541,6 +9621,7 @@ share/ri/${REV}/system/Prism/InstanceVariableWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InstanceVariableWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/InstanceVariableWriteNode/name_loc-i.ri
@@ -9566,6 +9647,7 @@ share/ri/${REV}/system/Prism/IntegerNode/copy-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/decimal%3f-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/IntegerNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/hexadecimal%3f-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/inspect-i.ri
 share/ri/${REV}/system/Prism/IntegerNode/new-c.ri
@@ -9586,6 +9668,7 @@ share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/compact_child_nodes-i
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/copy-i.ri
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/euc_jp%3f-i.ri
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/extended%3f-i.ri
 share/ri/${REV}/system/Prism/InterpolatedMatchLastLineNode/forced_binary_encoding%3f-i.ri
@@ -9618,6 +9701,7 @@ share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/compact_child_nod
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/copy-i.ri
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/euc_jp%3f-i.ri
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/extended%3f-i.ri
 share/ri/${REV}/system/Prism/InterpolatedRegularExpressionNode/forced_binary_encoding%3f-i.ri
@@ -9649,6 +9733,7 @@ share/ri/${REV}/system/Prism/InterpolatedStringNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/copy-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InterpolatedStringNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/frozen%3f-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InterpolatedStringNode/mutable%3f-i.ri
@@ -9674,6 +9759,7 @@ share/ri/${REV}/system/Prism/InterpolatedSymbolNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/copy-i.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InterpolatedSymbolNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/new-c.ri
 share/ri/${REV}/system/Prism/InterpolatedSymbolNode/opening-i.ri
@@ -9695,6 +9781,7 @@ share/ri/${REV}/system/Prism/InterpolatedXStringNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/copy-i.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/InterpolatedXStringNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/inspect-i.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/new-c.ri
 share/ri/${REV}/system/Prism/InterpolatedXStringNode/opening-i.ri
@@ -9714,6 +9801,7 @@ share/ri/${REV}/system/Prism/ItLocalVariableReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ItLocalVariableReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/new-c.ri
 share/ri/${REV}/system/Prism/ItLocalVariableReadNode/type-c.ri
@@ -9728,6 +9816,7 @@ share/ri/${REV}/system/Prism/ItParametersNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ItParametersNode/copy-i.ri
 share/ri/${REV}/system/Prism/ItParametersNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ItParametersNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ItParametersNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ItParametersNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ItParametersNode/new-c.ri
 share/ri/${REV}/system/Prism/ItParametersNode/type-c.ri
@@ -9742,6 +9831,7 @@ share/ri/${REV}/system/Prism/KeywordHashNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/copy-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/KeywordHashNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/elements-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/inspect-i.ri
 share/ri/${REV}/system/Prism/KeywordHashNode/new-c.ri
@@ -9760,6 +9850,7 @@ share/ri/${REV}/system/Prism/KeywordRestParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/KeywordRestParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/KeywordRestParameterNode/name_loc-i.ri
@@ -9784,6 +9875,7 @@ share/ri/${REV}/system/Prism/LambdaNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/copy-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/LambdaNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/locals-i.ri
 share/ri/${REV}/system/Prism/LambdaNode/new-c.ri
@@ -9836,6 +9928,7 @@ share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableAndWriteNode/name_loc-i.ri
@@ -9860,6 +9953,7 @@ share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOperatorWriteNode/name_loc-i.ri
@@ -9882,6 +9976,7 @@ share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableOrWriteNode/name_loc-i.ri
@@ -9904,6 +9999,7 @@ share/ri/${REV}/system/Prism/LocalVariableReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableReadNode/new-c.ri
@@ -9920,6 +10016,7 @@ share/ri/${REV}/system/Prism/LocalVariableTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableTargetNode/new-c.ri
@@ -9936,6 +10033,7 @@ share/ri/${REV}/system/Prism/LocalVariableWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/depth-i.ri
+share/ri/${REV}/system/Prism/LocalVariableWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/name-i.ri
 share/ri/${REV}/system/Prism/LocalVariableWriteNode/name_loc-i.ri
@@ -10013,6 +10111,7 @@ share/ri/${REV}/system/Prism/MatchLastLineNode/content_loc-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/copy-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MatchLastLineNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/euc_jp%3f-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/extended%3f-i.ri
 share/ri/${REV}/system/Prism/MatchLastLineNode/forced_binary_encoding%3f-i.ri
@@ -10043,6 +10142,7 @@ share/ri/${REV}/system/Prism/MatchPredicateNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/copy-i.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MatchPredicateNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/new-c.ri
 share/ri/${REV}/system/Prism/MatchPredicateNode/operator-i.ri
@@ -10062,6 +10162,7 @@ share/ri/${REV}/system/Prism/MatchRequiredNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/copy-i.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MatchRequiredNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/new-c.ri
 share/ri/${REV}/system/Prism/MatchRequiredNode/operator-i.ri
@@ -10082,6 +10183,7 @@ share/ri/${REV}/system/Prism/MatchWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MatchWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/new-c.ri
 share/ri/${REV}/system/Prism/MatchWriteNode/targets-i.ri
@@ -10097,6 +10199,7 @@ share/ri/${REV}/system/Prism/MissingNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MissingNode/copy-i.ri
 share/ri/${REV}/system/Prism/MissingNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MissingNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MissingNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MissingNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MissingNode/new-c.ri
 share/ri/${REV}/system/Prism/MissingNode/type-c.ri
@@ -10113,6 +10216,7 @@ share/ri/${REV}/system/Prism/ModuleNode/constant_path-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/copy-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ModuleNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/ModuleNode/inspect-i.ri
@@ -10135,6 +10239,7 @@ share/ri/${REV}/system/Prism/MultiTargetNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/copy-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MultiTargetNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/lefts-i.ri
 share/ri/${REV}/system/Prism/MultiTargetNode/lparen-i.ri
@@ -10158,6 +10263,7 @@ share/ri/${REV}/system/Prism/MultiWriteNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/copy-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/MultiWriteNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/inspect-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/lefts-i.ri
 share/ri/${REV}/system/Prism/MultiWriteNode/lparen-i.ri
@@ -10339,6 +10445,7 @@ share/ri/${REV}/system/Prism/NextNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/NextNode/copy-i.ri
 share/ri/${REV}/system/Prism/NextNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/NextNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/NextNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/NextNode/inspect-i.ri
 share/ri/${REV}/system/Prism/NextNode/keyword-i.ri
 share/ri/${REV}/system/Prism/NextNode/keyword_loc-i.ri
@@ -10356,6 +10463,7 @@ share/ri/${REV}/system/Prism/NilNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/NilNode/copy-i.ri
 share/ri/${REV}/system/Prism/NilNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/NilNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/NilNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/NilNode/inspect-i.ri
 share/ri/${REV}/system/Prism/NilNode/new-c.ri
 share/ri/${REV}/system/Prism/NilNode/type-c.ri
@@ -10370,6 +10478,7 @@ share/ri/${REV}/system/Prism/NoKeywordsParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/NoKeywordsParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/keyword-i.ri
 share/ri/${REV}/system/Prism/NoKeywordsParameterNode/keyword_loc-i.ri
@@ -10393,6 +10502,7 @@ share/ri/${REV}/system/Prism/Node/comment_targets-i.ri
 share/ri/${REV}/system/Prism/Node/comments-i.ri
 share/ri/${REV}/system/Prism/Node/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/Node/deconstruct-i.ri
+share/ri/${REV}/system/Prism/Node/each_child_node-i.ri
 share/ri/${REV}/system/Prism/Node/end_character_column-i.ri
 share/ri/${REV}/system/Prism/Node/end_character_offset-i.ri
 share/ri/${REV}/system/Prism/Node/end_column-i.ri
@@ -10436,6 +10546,7 @@ share/ri/${REV}/system/Prism/NumberedParametersNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/copy-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/NumberedParametersNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/inspect-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/maximum-i.ri
 share/ri/${REV}/system/Prism/NumberedParametersNode/new-c.ri
@@ -10451,6 +10562,7 @@ share/ri/${REV}/system/Prism/NumberedReferenceReadNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/copy-i.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/NumberedReferenceReadNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/inspect-i.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/new-c.ri
 share/ri/${REV}/system/Prism/NumberedReferenceReadNode/number-i.ri
@@ -10466,6 +10578,7 @@ share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/compact_child_nodes-i.
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/OptionalKeywordParameterNode/name_loc-i.ri
@@ -10485,6 +10598,7 @@ share/ri/${REV}/system/Prism/OptionalParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/OptionalParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/OptionalParameterNode/name_loc-i.ri
@@ -10507,6 +10621,7 @@ share/ri/${REV}/system/Prism/OrNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/OrNode/copy-i.ri
 share/ri/${REV}/system/Prism/OrNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/OrNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/OrNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/OrNode/inspect-i.ri
 share/ri/${REV}/system/Prism/OrNode/left-i.ri
 share/ri/${REV}/system/Prism/OrNode/new-c.ri
@@ -10550,6 +10665,7 @@ share/ri/${REV}/system/Prism/ParametersNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/copy-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ParametersNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/keyword_rest-i.ri
 share/ri/${REV}/system/Prism/ParametersNode/keywords-i.ri
@@ -10574,6 +10690,7 @@ share/ri/${REV}/system/Prism/ParenthesesNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/copy-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ParenthesesNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/multiple_statements%3f-i.ri
 share/ri/${REV}/system/Prism/ParenthesesNode/new-c.ri
@@ -10668,6 +10785,7 @@ share/ri/${REV}/system/Prism/PinnedExpressionNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/copy-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/PinnedExpressionNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/expression-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/inspect-i.ri
 share/ri/${REV}/system/Prism/PinnedExpressionNode/lparen-i.ri
@@ -10692,6 +10810,7 @@ share/ri/${REV}/system/Prism/PinnedVariableNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/copy-i.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/PinnedVariableNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/inspect-i.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/new-c.ri
 share/ri/${REV}/system/Prism/PinnedVariableNode/operator-i.ri
@@ -10712,6 +10831,7 @@ share/ri/${REV}/system/Prism/PostExecutionNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/copy-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/PostExecutionNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/inspect-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/keyword-i.ri
 share/ri/${REV}/system/Prism/PostExecutionNode/keyword_loc-i.ri
@@ -10736,6 +10856,7 @@ share/ri/${REV}/system/Prism/PreExecutionNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/copy-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/PreExecutionNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/inspect-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/keyword-i.ri
 share/ri/${REV}/system/Prism/PreExecutionNode/keyword_loc-i.ri
@@ -10758,6 +10879,7 @@ share/ri/${REV}/system/Prism/ProgramNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/copy-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ProgramNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/locals-i.ri
 share/ri/${REV}/system/Prism/ProgramNode/new-c.ri
@@ -10776,6 +10898,7 @@ share/ri/${REV}/system/Prism/RangeNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RangeNode/copy-i.ri
 share/ri/${REV}/system/Prism/RangeNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RangeNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RangeNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RangeNode/exclude_end%3f-i.ri
 share/ri/${REV}/system/Prism/RangeNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RangeNode/left-i.ri
@@ -10799,6 +10922,7 @@ share/ri/${REV}/system/Prism/RationalNode/decimal%3f-i.ri
 share/ri/${REV}/system/Prism/RationalNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RationalNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/RationalNode/denominator-i.ri
+share/ri/${REV}/system/Prism/RationalNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RationalNode/hexadecimal%3f-i.ri
 share/ri/${REV}/system/Prism/RationalNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RationalNode/new-c.ri
@@ -10818,6 +10942,7 @@ share/ri/${REV}/system/Prism/RedoNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RedoNode/copy-i.ri
 share/ri/${REV}/system/Prism/RedoNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RedoNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RedoNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RedoNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RedoNode/new-c.ri
 share/ri/${REV}/system/Prism/RedoNode/type-c.ri
@@ -10872,6 +10997,7 @@ share/ri/${REV}/system/Prism/RegularExpressionNode/content_loc-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/copy-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RegularExpressionNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/euc_jp%3f-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/extended%3f-i.ri
 share/ri/${REV}/system/Prism/RegularExpressionNode/forced_binary_encoding%3f-i.ri
@@ -11011,6 +11137,7 @@ share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/compact_child_nodes-i.
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/RequiredKeywordParameterNode/name_loc-i.ri
@@ -11029,6 +11156,7 @@ share/ri/${REV}/system/Prism/RequiredParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RequiredParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/RequiredParameterNode/new-c.ri
@@ -11045,6 +11173,7 @@ share/ri/${REV}/system/Prism/RescueModifierNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/copy-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RescueModifierNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/expression-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RescueModifierNode/keyword-i.ri
@@ -11065,6 +11194,7 @@ share/ri/${REV}/system/Prism/RescueNode/consequent-i.ri
 share/ri/${REV}/system/Prism/RescueNode/copy-i.ri
 share/ri/${REV}/system/Prism/RescueNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RescueNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RescueNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RescueNode/exceptions-i.ri
 share/ri/${REV}/system/Prism/RescueNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RescueNode/keyword-i.ri
@@ -11092,6 +11222,7 @@ share/ri/${REV}/system/Prism/RestParameterNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/copy-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RestParameterNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/name-i.ri
 share/ri/${REV}/system/Prism/RestParameterNode/name_loc-i.ri
@@ -11127,6 +11258,7 @@ share/ri/${REV}/system/Prism/RetryNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/RetryNode/copy-i.ri
 share/ri/${REV}/system/Prism/RetryNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/RetryNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/RetryNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/RetryNode/inspect-i.ri
 share/ri/${REV}/system/Prism/RetryNode/new-c.ri
 share/ri/${REV}/system/Prism/RetryNode/type-c.ri
@@ -11142,6 +11274,7 @@ share/ri/${REV}/system/Prism/ReturnNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/copy-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ReturnNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/inspect-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/keyword-i.ri
 share/ri/${REV}/system/Prism/ReturnNode/keyword_loc-i.ri
@@ -11164,6 +11297,7 @@ share/ri/${REV}/system/Prism/SelfNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SelfNode/copy-i.ri
 share/ri/${REV}/system/Prism/SelfNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SelfNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SelfNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SelfNode/inspect-i.ri
 share/ri/${REV}/system/Prism/SelfNode/new-c.ri
 share/ri/${REV}/system/Prism/SelfNode/type-c.ri
@@ -11184,6 +11318,7 @@ share/ri/${REV}/system/Prism/ShareableConstantNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/copy-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/ShareableConstantNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/experimental_copy%3f-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/experimental_everything%3f-i.ri
 share/ri/${REV}/system/Prism/ShareableConstantNode/inspect-i.ri
@@ -11207,6 +11342,7 @@ share/ri/${REV}/system/Prism/SingletonClassNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/copy-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SingletonClassNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/end_keyword_loc-i.ri
 share/ri/${REV}/system/Prism/SingletonClassNode/expression-i.ri
@@ -11253,6 +11389,7 @@ share/ri/${REV}/system/Prism/SourceEncodingNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/copy-i.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SourceEncodingNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/inspect-i.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/new-c.ri
 share/ri/${REV}/system/Prism/SourceEncodingNode/type-c.ri
@@ -11267,6 +11404,7 @@ share/ri/${REV}/system/Prism/SourceFileNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/copy-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SourceFileNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/filepath-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/forced_binary_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/SourceFileNode/forced_utf8_encoding%3f-i.ri
@@ -11286,6 +11424,7 @@ share/ri/${REV}/system/Prism/SourceLineNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SourceLineNode/copy-i.ri
 share/ri/${REV}/system/Prism/SourceLineNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SourceLineNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SourceLineNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SourceLineNode/inspect-i.ri
 share/ri/${REV}/system/Prism/SourceLineNode/new-c.ri
 share/ri/${REV}/system/Prism/SourceLineNode/type-c.ri
@@ -11300,6 +11439,7 @@ share/ri/${REV}/system/Prism/SplatNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SplatNode/copy-i.ri
 share/ri/${REV}/system/Prism/SplatNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SplatNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SplatNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SplatNode/expression-i.ri
 share/ri/${REV}/system/Prism/SplatNode/inspect-i.ri
 share/ri/${REV}/system/Prism/SplatNode/new-c.ri
@@ -11319,6 +11459,7 @@ share/ri/${REV}/system/Prism/StatementsNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/StatementsNode/copy-i.ri
 share/ri/${REV}/system/Prism/StatementsNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/StatementsNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/StatementsNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/StatementsNode/inspect-i.ri
 share/ri/${REV}/system/Prism/StatementsNode/new-c.ri
 share/ri/${REV}/system/Prism/StatementsNode/type-c.ri
@@ -11339,6 +11480,7 @@ share/ri/${REV}/system/Prism/StringNode/content_loc-i.ri
 share/ri/${REV}/system/Prism/StringNode/copy-i.ri
 share/ri/${REV}/system/Prism/StringNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/StringNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/StringNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/StringNode/forced_binary_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/StringNode/forced_utf8_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/StringNode/frozen%3f-i.ri
@@ -11377,6 +11519,7 @@ share/ri/${REV}/system/Prism/SuperNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SuperNode/copy-i.ri
 share/ri/${REV}/system/Prism/SuperNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SuperNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SuperNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SuperNode/inspect-i.ri
 share/ri/${REV}/system/Prism/SuperNode/keyword-i.ri
 share/ri/${REV}/system/Prism/SuperNode/keyword_loc-i.ri
@@ -11404,6 +11547,7 @@ share/ri/${REV}/system/Prism/SymbolNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/copy-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/SymbolNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/forced_binary_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/forced_us_ascii_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/SymbolNode/forced_utf8_encoding%3f-i.ri
@@ -11672,6 +11816,10 @@ share/ri/${REV}/system/Prism/Translation/Parser41/cdesc-Parser41.ri
 share/ri/${REV}/system/Prism/Translation/ParserCurrent/
 share/ri/${REV}/system/Prism/Translation/ParserCurrent/cdesc-ParserCurrent.ri
 share/ri/${REV}/system/Prism/Translation/Ripper/
+share/ri/${REV}/system/Prism/Translation/Ripper/Lexer/
+share/ri/${REV}/system/Prism/Translation/Ripper/Lexer/State/
+share/ri/${REV}/system/Prism/Translation/Ripper/Lexer/State/cdesc-State.ri
+share/ri/${REV}/system/Prism/Translation/Ripper/Lexer/cdesc-Lexer.ri
 share/ri/${REV}/system/Prism/Translation/Ripper/SexpBuilder/
 share/ri/${REV}/system/Prism/Translation/Ripper/SexpBuilder/cdesc-SexpBuilder.ri
 share/ri/${REV}/system/Prism/Translation/Ripper/SexpBuilderPP/
@@ -12054,6 +12202,7 @@ share/ri/${REV}/system/Prism/TrueNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/TrueNode/copy-i.ri
 share/ri/${REV}/system/Prism/TrueNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/TrueNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/TrueNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/TrueNode/inspect-i.ri
 share/ri/${REV}/system/Prism/TrueNode/new-c.ri
 share/ri/${REV}/system/Prism/TrueNode/type-c.ri
@@ -12068,6 +12217,7 @@ share/ri/${REV}/system/Prism/UndefNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/UndefNode/copy-i.ri
 share/ri/${REV}/system/Prism/UndefNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/UndefNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/UndefNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/UndefNode/inspect-i.ri
 share/ri/${REV}/system/Prism/UndefNode/keyword-i.ri
 share/ri/${REV}/system/Prism/UndefNode/keyword_loc-i.ri
@@ -12087,6 +12237,7 @@ share/ri/${REV}/system/Prism/UnlessNode/consequent-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/copy-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/UnlessNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/else_clause-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/end_keyword-i.ri
 share/ri/${REV}/system/Prism/UnlessNode/end_keyword_loc-i.ri
@@ -12118,6 +12269,7 @@ share/ri/${REV}/system/Prism/UntilNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/UntilNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/UntilNode/do_keyword-i.ri
 share/ri/${REV}/system/Prism/UntilNode/do_keyword_loc-i.ri
+share/ri/${REV}/system/Prism/UntilNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/UntilNode/inspect-i.ri
 share/ri/${REV}/system/Prism/UntilNode/keyword-i.ri
 share/ri/${REV}/system/Prism/UntilNode/keyword_loc-i.ri
@@ -12293,6 +12445,7 @@ share/ri/${REV}/system/Prism/WhenNode/conditions-i.ri
 share/ri/${REV}/system/Prism/WhenNode/copy-i.ri
 share/ri/${REV}/system/Prism/WhenNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/WhenNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/WhenNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/WhenNode/inspect-i.ri
 share/ri/${REV}/system/Prism/WhenNode/keyword-i.ri
 share/ri/${REV}/system/Prism/WhenNode/keyword_loc-i.ri
@@ -12319,6 +12472,7 @@ share/ri/${REV}/system/Prism/WhileNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/WhileNode/deconstruct_keys-i.ri
 share/ri/${REV}/system/Prism/WhileNode/do_keyword-i.ri
 share/ri/${REV}/system/Prism/WhileNode/do_keyword_loc-i.ri
+share/ri/${REV}/system/Prism/WhileNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/WhileNode/inspect-i.ri
 share/ri/${REV}/system/Prism/WhileNode/keyword-i.ri
 share/ri/${REV}/system/Prism/WhileNode/keyword_loc-i.ri
@@ -12344,6 +12498,7 @@ share/ri/${REV}/system/Prism/XStringNode/content_loc-i.ri
 share/ri/${REV}/system/Prism/XStringNode/copy-i.ri
 share/ri/${REV}/system/Prism/XStringNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/XStringNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/XStringNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/XStringNode/forced_binary_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/XStringNode/forced_utf8_encoding%3f-i.ri
 share/ri/${REV}/system/Prism/XStringNode/inspect-i.ri
@@ -12368,6 +12523,7 @@ share/ri/${REV}/system/Prism/YieldNode/compact_child_nodes-i.ri
 share/ri/${REV}/system/Prism/YieldNode/copy-i.ri
 share/ri/${REV}/system/Prism/YieldNode/deconstruct-i.ri
 share/ri/${REV}/system/Prism/YieldNode/deconstruct_keys-i.ri
+share/ri/${REV}/system/Prism/YieldNode/each_child_node-i.ri
 share/ri/${REV}/system/Prism/YieldNode/inspect-i.ri
 share/ri/${REV}/system/Prism/YieldNode/keyword-i.ri
 share/ri/${REV}/system/Prism/YieldNode/keyword_loc-i.ri
