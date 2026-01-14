@@ -21,6 +21,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
+# tries to build if sdl2-image is found, but fails
+MAKE_FLAGS =		with_demo_app=no
 
 BUILD_DEPENDS =		devel/sdl2 \
 			math/eigen3
