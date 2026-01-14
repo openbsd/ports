@@ -1,7 +1,6 @@
 COMMENT =		handle .desktop files
 
-DISTNAME =		File-DesktopEntry-0.22
-REVISION =		1
+DISTNAME =		File-DesktopEntry-0.23
 CATEGORIES =		devel 
 
 # perl
