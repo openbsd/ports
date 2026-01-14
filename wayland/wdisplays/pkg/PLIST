@@ -1,0 +1,6 @@
+@conflict wcm-<0.10
+@bin bin/wdisplays
+share/applications/network.cycles.wdisplays.desktop
+share/icons/hicolor/scalable/apps/network.cycles.wdisplays.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
