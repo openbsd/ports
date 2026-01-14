@@ -7,7 +7,7 @@ COMMENT =		2D animation software studio
 V =			1.5.3
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  synfigapp                 3.0 # 0.0
 
@@ -52,9 +52,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		multimedia/synfig>=${V} \
-			graphics/libraw \
+LIB_DEPENDS =		audio/jack \
+			databases/db/v4 \
 			graphics/jasper \
+			graphics/libraw \
+			multimedia/synfig>=${V} \
 			x11/gtk3mm
 
 USE_GMAKE =		Yes
