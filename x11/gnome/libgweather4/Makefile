@@ -1,11 +1,10 @@
 COMMENT=		location, timezone and weather-lookup library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		4.4.4
+GNOME_VERSION=		4.5.0
 PKGNAME=		libgweather4-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS += gweather-4                0.1 # 0.400.4
+SHARED_LIBS += gweather-4                0.1 # 0.500.0
 
 CATEGORIES=		net
 
@@ -21,10 +20,15 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	gi-docgen gobject-introspection vala
 
-BUILD_DEPENDS=		devel/py-gobject3
+BUILD_DEPENDS=		devel/py-gobject3 \
+			textproc/libxml \
+			x11/gnome/gweather-locations
 
 LIB_DEPENDS=		devel/libsoup3 \
-			geo/geocode-glib
+			geo/geocode-glib \
+			textproc/libxml
+
+RUN_DEPENDS=		x11/gnome/gweather-locations
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
