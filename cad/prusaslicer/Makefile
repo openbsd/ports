@@ -4,6 +4,7 @@ DPB_PROPERTIES = parallel
 
 V =		2.9.3
 PKGNAME =	prusaslicer-${V}
+REVISION =	0
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer
@@ -24,8 +25,8 @@ WANTLIB += TKLCAF TKMath TKMesh TKPrim TKService TKShHealing TKTopAlgo
 WANTLIB += TKV3d TKVCAF TKXCAF TKXSBase TKernel X11 atk-1.0 bgcode_binarize
 WANTLIB += bgcode_convert bgcode_core boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_log-mt boost_log_setup-mt boost_nowide-mt
-WANTLIB += boost_process boost_regex-mt boost_system-mt boost_thread-mt c cairo
+WANTLIB += boost_locale-mt boost_log-mt boost_nowide-mt boost_random-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c cairo
 WANTLIB += cairo-gobject crypto curl dbus-1 execinfo expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gmpxx gobject-2.0 gtk-3 harfbuzz hidapi-libusb
@@ -54,7 +55,7 @@ BUILD_DEPENDS =		devel/cereal \
 
 LIB_DEPENDS = 		cad/opencascade \
 			comms/libhidapi \
-			devel/boost,-md \
+			devel/boost \
 			devel/gmp,-cxx \
 			devel/libbgcode \
 			devel/mpfr \
