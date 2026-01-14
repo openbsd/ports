@@ -42,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}circuits.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}circuits.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}dcim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}dcim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}extras.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}virtual
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}wireless.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/${MODPY_PYCACHE}wireless.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/circuits.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/models/core.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/dcim.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/extras.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/models/ipam.py
