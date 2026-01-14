@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6I18n KF6I18nLocaleData Qt6Core
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick m z
 
 BUILD_DEPENDS =	devel/protobuf \
-		qt6/qtlocation \
+		x11/qt6/qtlocation \
 		graphics/kirigami-addons
 
 RUN_DEPENDS =	graphics/kirigami-addons
