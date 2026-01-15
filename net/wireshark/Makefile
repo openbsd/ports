@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
-V =		4.4.12
+V =		4.4.13
 PORTROACH =	limit:^4\.4\.
 #PORTROACH =	limitw:1,even	# 4.6 needs newer libpcap
 DISTNAME =	wireshark-$V
