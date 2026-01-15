@@ -3,6 +3,8 @@ lib/cmake/boost_context-${VERSION}/boost_context-config-version.cmake
 lib/cmake/boost_context-${VERSION}/boost_context-config.cmake
 lib/cmake/boost_context-${VERSION}/libboost_context-variant-mt-shared.cmake
 lib/cmake/boost_context-${VERSION}/libboost_context-variant-mt-static.cmake
+lib/cmake/boost_context-${VERSION}/libboost_context-variant-shared.cmake
+lib/cmake/boost_context-${VERSION}/libboost_context-variant-static.cmake
 lib/cmake/boost_coroutine-${VERSION}/
 lib/cmake/boost_coroutine-${VERSION}/boost_coroutine-config-version.cmake
 lib/cmake/boost_coroutine-${VERSION}/boost_coroutine-config.cmake
@@ -15,6 +17,8 @@ lib/cmake/boost_fiber-${VERSION}/boost_fiber-config-version.cmake
 lib/cmake/boost_fiber-${VERSION}/boost_fiber-config.cmake
 lib/cmake/boost_fiber-${VERSION}/libboost_fiber-variant-mt-shared.cmake
 lib/cmake/boost_fiber-${VERSION}/libboost_fiber-variant-mt-static.cmake
+lib/cmake/boost_fiber-${VERSION}/libboost_fiber-variant-shared.cmake
+lib/cmake/boost_fiber-${VERSION}/libboost_fiber-variant-static.cmake
 @static-lib lib/libboost_context-mt.a
 @lib lib/libboost_context-mt.so.${LIBboost_context-mt_VERSION}
 @static-lib lib/libboost_coroutine-mt.a

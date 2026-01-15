@@ -5,8 +5,7 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.87.0
-REVISION=	0
+VERSION=	1.88.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 EPOCH=		0
@@ -14,7 +13,7 @@ CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 
-SO_VERSION=	24.0
+SO_VERSION=	25.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_charconv-mt boost_charconv \
 		boost_chrono-mt boost_chrono \
@@ -97,7 +96,6 @@ LIB_DEPENDS-md=	devel/boost
 TOOLSET=	clang
 .else
 TOOLSET=	gcc
-CXXFLAGS+=	-std=gnu++17
 .endif
 
 BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
