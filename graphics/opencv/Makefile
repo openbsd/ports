@@ -132,6 +132,10 @@ CONFIGURE_ARGS +=	-DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
+.if ${MACHINE_ARCH} == "aarch64"
+CONFIGURE_ARGS +=	-DWITH_KLEIDICV=OFF
+.endif
+
 post-patch:
 	perl -pi -e 's@^.*(#\s*include)@$$1@' \
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
