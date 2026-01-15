@@ -14,7 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	lang/rust,-src \
 		lang/rust,-rustfmt
-BUILD_DEPENDS =	textproc/mdbook
+BUILD_DEPENDS =	lang/rust,-rustfmt \
+		textproc/mdbook
 TEST_DEPENDS =	lang/rust,-rustfmt
 
 WANTLIB += ${MODCARGO_WANTLIB} m
