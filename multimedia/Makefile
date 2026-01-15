@@ -58,6 +58,7 @@
      SUBDIR += ogmtools
      SUBDIR += openh264
      SUBDIR += opentimelineio
+     SUBDIR += openwv
      SUBDIR += p5-AMF-Connection
      SUBDIR += p5-Data-AMF
      SUBDIR += p5-Mac-iTunes-Library
