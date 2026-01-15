@@ -22,8 +22,4 @@ CFLAGS +=		-I${LOCALBASE}/include
 BUILD_DEPENDS =		lang/cython
 LIB_DEPENDS =		textproc/libstemmer
 
-# avoid loop:
-# devel/cmake -> textproc/py-sphinx -> textproc/py-snowballstemmer -> textproc/py-stemmer -> lang/pythran -> math/py-numpy -> math/lapack -> devel/cmake
-MODPY_CYTHON_PYTHRAN_RDEP = No
-
 .include <bsd.port.mk>
