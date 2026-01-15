@@ -3,7 +3,7 @@ Add OpenBSD/arm native support.
 Index: gdb/arm-obsd-nat.c
 --- gdb/arm-obsd-nat.c.orig
 +++ gdb/arm-obsd-nat.c
-@@ -0,0 +1,427 @@
+@@ -0,0 +1,425 @@
 +/* Native-dependent code for BSD Unix running on ARM's, for GDB.
 +
 +   Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -425,9 +425,7 @@ Index: gdb/arm-obsd-nat.c
 +  return arm_read_description (ARM_FP_TYPE_VFPV3, false);
 +}
 +
-+void _initialize_arm_openbsd_nat ();
-+void
-+_initialize_arm_openbsd_nat ()
++INIT_GDB_FILE (arm_openbsd_nat)
 +{
 +  add_inf_child_target (&the_arm_openbsd_nat_target);
 +}
