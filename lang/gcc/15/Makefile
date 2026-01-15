@@ -21,6 +21,7 @@ FULL_PKGVERSION = $V
 GCC_PKGSPEC = >=15,<16
 
 REVISION = 5
+REVISION-f95 = 6
 
 # aarch64 bootstrap contains only gdc
 ADASTRAP-aarch64 = adastrap-aarch64-11.2.0-0.tar.xz
@@ -286,6 +287,9 @@ post-install:
 .if ${BUILD_PACKAGES:M-ada}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
+.endif
+.if ${BUILD_PACKAGES:M-f95}
+	ln -s egfortran ${PREFIX}/bin/gfortran
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed

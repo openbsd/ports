@@ -4,6 +4,7 @@
 @pkgpath lang/gcc/4.9,-f95
 @pkgpath lang/gcc/8,-f95
 @bin bin/egfortran
+bin/gfortran
 @bin bin/${CONFIG}-egfortran
 @info info/gfortran.info
 lib/gcc/${CONFIG}/${V}/finclude/

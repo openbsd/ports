@@ -3,6 +3,7 @@
 @conflict libgfortran-*
 @bin bin/egfortran
 @bin bin/${CONFIG}-egfortran
+@bin bin/gfortran
 @info info/gfortran.info
 lib/gcc/${CONFIG}/${V}/finclude/
 lib/gcc/${CONFIG}/${V}/finclude/ieee_arithmetic.mod
