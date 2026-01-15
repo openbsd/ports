@@ -43,7 +43,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring
 FLAVORS=	maintainer_mode
-FLAVOR?=	no_ruby
+FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
 .endif
@@ -55,7 +55,7 @@ WANTLIB=	expat iconv intl lz4 m pthread z
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/py3c
 
-MULTI_PACKAGES = -main -ap2 -perl -python -gnome-keyring
+MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
