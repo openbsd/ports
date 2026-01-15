@@ -13,6 +13,7 @@ V=		3.0.0rc2
 GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins
 GH_TAGNAME=	v${V:S/rc/-rc/}
+REVISION-main=	0
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/}
 PKGNAME-main=	monitoring-plugins-$V

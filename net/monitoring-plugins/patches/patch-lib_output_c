@@ -1,0 +1,17 @@
+From 3e8cef3721533b124a765f7f320312434611afc3 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Lorenz=20K=C3=A4stle?= <lorenz.kaestle@netways.de>
+Date: Wed, 14 Jan 2026 17:28:51 +0100
+Subject: [PATCH] Compute numbers in output summary correctly
+
+Index: lib/output.c
+--- lib/output.c.orig
++++ lib/output.c
+@@ -175,7 +175,7 @@ char *get_subcheck_summary(mp_check check) {
+ 	unsigned int critical = 0;
+ 	unsigned int unknown = 0;
+ 	while (subchecks != NULL) {
+-		switch (subchecks->subcheck.state) {
++		switch (mp_compute_subcheck_state(subchecks->subcheck)) {
+ 		case STATE_OK:
+ 			ok++;
+ 			break;
