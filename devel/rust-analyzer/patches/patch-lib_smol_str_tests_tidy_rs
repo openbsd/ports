@@ -1,0 +1,14 @@
+Fix cargo command for tests
+
+Index: lib/smol_str/tests/tidy.rs
+--- lib/smol_str/tests/tidy.rs.orig
++++ lib/smol_str/tests/tidy.rs
+@@ -42,7 +42,7 @@ fn check_code_formatting() {
+              please run `rustup component add rustfmt --toolchain stable` to install it.",
+         );
+     }
+-    if run("cargo +stable fmt -- --check", &dir).is_err() {
++    if run("cargo fmt -- --check", &dir).is_err() {
+         panic!("code is not properly formatted; please format the code by running `cargo fmt`")
+     }
+ }

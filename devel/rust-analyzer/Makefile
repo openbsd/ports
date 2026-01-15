@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2025-05-12
+GH_TAGNAME =	2026-01-12
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 
@@ -31,15 +31,16 @@ CONFIGURE_STYLE =	cargo
 # (otherwise it reports itself as version 0.0.0)
 MAKE_ENV += CFG_RELEASE=${GH_TAGNAME}
 
-# generate manual.html
+# generate HTML docs
 post-build:
+	${MODCARGO_CARGO_RUN} xtask codegen
 	cd ${WRKSRC}/docs/book && ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/mdbook build
 
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	cd ${WRKSRC}/docs/book && pax -rw book ${DOCDIR}
+	cd ${WRKSRC}/docs/book/book && pax -rw . ${DOCDIR}
 
 .include "crates.inc"
 
