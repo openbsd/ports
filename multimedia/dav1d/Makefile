@@ -4,7 +4,7 @@ COMMENT=	small and fast AV1 decoder
 #  /!\ DO NOT UPDATE WITHOUT RUNNING TESTS ON ARM64 (XONLY) and AMD64 (IBT) /!\ #
 #################################################################################
 
-VER=		1.5.1
+VER=		1.5.3
 DISTNAME=	dav1d-${VER}
 CATEGORIES=	multimedia
 SITES=		https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
@@ -34,15 +34,10 @@ BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+=-Ddefault_library=both \
 		-Dxxhash_muxer=disabled
 
-# riscv64 RVV asm code needs llvm>=17
-# Revisit when our kernel starts supporting the Vector extension
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "riscv64"
-CONFIGURE_ARGS+=-Denable_asm=false
-.endif
 .if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=-Denable_asm=false
 # XXX SIGBUS otherwise
 CFLAGS+=	-O1
-#CFLAGS+=	-fno-slp-vectorize
 .endif
 
 .include <bsd.port.mk>

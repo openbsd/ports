@@ -83,7 +83,7 @@ Index: src/x86/refmvs.asm
      movq      [aq+116], m0
      movd      [aq+124], m2
      dec           bh4d
-@@ -650,17 +661,20 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+@@ -648,17 +659,20 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
      jg .loop_y
      RET
  .write1:
@@ -104,7 +104,7 @@ Index: src/x86/refmvs.asm
      pshufb         xm1, xm0, xm8
      movu   [rpq+xq+ 0], xm1
      psrlq          xm1, 8
-@@ -668,6 +682,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+@@ -666,6 +680,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
      add             xq, 5*4
      ret
  .write8:
@@ -112,7 +112,7 @@ Index: src/x86/refmvs.asm
      vinserti128     m1, m0, xm0, 1
      pshufb          m1, m8
      movu   [rpq+xq+ 0], m1
-@@ -676,6 +691,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
+@@ -674,6 +689,7 @@ cglobal save_tmvs, 4, 13, 10, rp, stride, rr, ref_sign
      add             xq, 5*8
      ret
  .write16:
@@ -120,7 +120,7 @@ Index: src/x86/refmvs.asm
      vinserti128     m1, m0, xm0, 1
      pshufb          m2, m1, m8
      movu   [rpq+xq+ 0], m2
-@@ -704,6 +720,7 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+@@ -702,6 +718,7 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
      lea             aq, [aq+bx4q*4]
      jmp           bw4q
  .w32:
@@ -128,7 +128,7 @@ Index: src/x86/refmvs.asm
      mova     [aq-32*8], m0
      mova     [aq-32*7], m1
      mova     [aq-32*6], m2
-@@ -711,10 +728,12 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+@@ -709,10 +726,12 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
      mova     [aq-32*4], m1
      mova     [aq-32*3], m2
  .w16:
@@ -141,7 +141,7 @@ Index: src/x86/refmvs.asm
      mova     [aq+32*1], m0
      mova     [aq+32*2], m1
      mova     [aq+32*3], m2
-@@ -722,18 +741,21 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
+@@ -720,18 +739,21 @@ cglobal splat_mv, 4, 5, 3, rr, a, bx4, bw4, bh4
      jg .loop
      RET
  .w4:
@@ -163,7 +163,7 @@ Index: src/x86/refmvs.asm
      movq      [aq+116], xm0
      movd      [aq+124], xm1
      dec           bh4d
-@@ -833,25 +855,30 @@ cglobal save_tmvs, 4, 15, 10, rp, stride, rr, ref_sign
+@@ -831,25 +853,30 @@ cglobal save_tmvs, 4, 15, 10, rp, stride, rr, ref_sign
      jg .loop_y
      RET
  .write1:
@@ -194,7 +194,7 @@ Index: src/x86/refmvs.asm
      vpermb          m1, m8, m0
      movu   [rpq+xq+ 0], m1
      pshufb         xm0, xm9
-@@ -875,24 +902,28 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+@@ -873,24 +900,28 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
      kmovb              k1, r1d
      jmp              bw4q
  .w1:
@@ -223,7 +223,7 @@ Index: src/x86/refmvs.asm
      pshufd            ym1, ym0, q1021
  .w8_loop:
      mov                r1, [rrq+r6*8+0]
-@@ -905,6 +936,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+@@ -903,6 +934,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
      jl .w8_loop
      RET
  .w16:
@@ -231,7 +231,7 @@ Index: src/x86/refmvs.asm
      pshufd             m1, m0, q1021
      pshufd             m2, m0, q2102
  .w16_loop:
-@@ -920,6 +952,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
+@@ -918,6 +950,7 @@ cglobal splat_mv, 4, 7, 3, rr, a, bx4, bw4, bh4
      jl .w16_loop
      RET
  .w32:
