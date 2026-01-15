@@ -1,0 +1,14 @@
+@sample ${SYSCONFDIR}/openwv/
+lib/openwv/
+lib/openwv/chromium/
+lib/openwv/chromium/_platform_specific/
+lib/openwv/chromium/_platform_specific/linux_${TARGET}/
+@so lib/openwv/chromium/_platform_specific/linux_${TARGET}/libwidevinecdm.so
+lib/openwv/chromium/manifest.json
+lib/openwv/firefox/
+@so lib/openwv/firefox/libwidevinecdm.so
+lib/openwv/firefox/manifest.json
+@so lib/openwv/libwidevinecdm.so
+lib/openwv/manifest-chromium.json
+lib/openwv/manifest-firefox.json
+share/doc/pkg-readmes/${PKGSTEM}

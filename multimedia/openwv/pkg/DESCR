@@ -1,0 +1,5 @@
+OpenWV is a free and open-source reimplementation of Google's Widevine Content 
+Decryption Module (CDM), the portion of the Widevine DRM system that runs in 
+your browser, obtains content keys for protected media, and decrypts the media 
+using those keys. OpenWV is a drop-in replacement for Google's official, 
+proprietary CDM and implements the same shared library API.

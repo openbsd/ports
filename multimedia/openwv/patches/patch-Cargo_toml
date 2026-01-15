@@ -1,0 +1,21 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -10,7 +10,7 @@ repository = "https://github.com/tchebb/openwv"
+ edition = "2024"
+ 
+ [dependencies]
+-autocxx = { git = "https://github.com/tchebb/autocxx.git", branch = "openwv-fixes" }
++autocxx = { path = "../autocxx" }
+ cxx = "1"
+ prost = "0.14.1"
+ thiserror = "2"
+@@ -31,7 +31,7 @@ cbc = { version = "0.2.0-rc", features = ["alloc"] }
+ ctr = "0.10.0-rc"
+ 
+ [build-dependencies]
+-autocxx-build = { git = "https://github.com/tchebb/autocxx.git", branch = "openwv-fixes" }
++autocxx-build = { path = "../autocxx/gen/build" }
+ prost-build = "0.14.1"
+ thiserror = "2"
+ 

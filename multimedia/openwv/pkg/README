@@ -1,0 +1,20 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenWV does _not_ come with a device identity and will not work without one.
+A device identity, typically stored as a [.wvd] file, contains metadata about
+a Widevine client as well as a private key that authenticates that client to
+Widevine license servers.
+If you want to use OpenWV, you must obtain an appropriate wvd file yourself,
+and copy it to /etc/openwv/widevine_device.wvd
+
+Please refer to the project's homepage for more information.
+
+Cheat sheet
+===========
+
+Chromium
+--------
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium \
+	~/.config/chromium/.config/chromium/WidevineCdm/9999
