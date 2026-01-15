@@ -199,10 +199,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
 		${PREFIX}/bin/python${VERSION}-2to3
 .else
-	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip for default Python version
-	perl -pi -e \
-		's@#!/usr/local/bin/python@#!${PREFIX}/bin/python${VERSION}@' \
-		${PREFIX}/bin/pip${VERSION}
+	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip
 .endif
 	if [ -e ${FILESDIR}/EXTERNALLY-MANAGED ]; then \
 		${INSTALL_DATA} ${FILESDIR}/EXTERNALLY-MANAGED \
