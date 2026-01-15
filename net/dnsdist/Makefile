@@ -3,6 +3,7 @@ COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 DISTNAME=		dnsdist-2.0.2
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -40,8 +41,8 @@ CONFIGURE_ARGS=		-Dyaml=disabled
 _MODCARGO_DIST_SUBDIR=	cargo/
 .endif
 
-WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} cdb crypto edit \
-			lmdb fstrm nghttp2 pthread sodium 
+WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} c cdb crypto edit \
+			lmdb fstrm nghttp2 pthread re2 sodium 
 
 .if ${PROPERTIES:Mluajit}
 CONFIGURE_ARGS+=	-Dlua=luajit
