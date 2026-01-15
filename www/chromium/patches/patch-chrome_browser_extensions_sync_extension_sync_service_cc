@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/sync/extension_sync_service.cc
 --- chrome/browser/extensions/sync/extension_sync_service.cc.orig
 +++ chrome/browser/extensions/sync/extension_sync_service.cc
-@@ -593,7 +593,7 @@ void ExtensionSyncService::ApplySyncData(
+@@ -594,7 +594,7 @@ void ExtensionSyncService::ApplySyncData(
      AccountExtensionTracker::Get(profile_)->OnExtensionSyncDataReceived(id);
    }
  

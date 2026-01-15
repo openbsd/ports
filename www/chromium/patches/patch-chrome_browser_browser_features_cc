@@ -19,7 +19,7 @@ Index: chrome/browser/browser_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -198,7 +198,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
+@@ -180,7 +180,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlocked, base::FE
  BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               base::FEATURE_ENABLED_BY_DEFAULT);
  

@@ -12,19 +12,23 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			143.0.7499.192
+V=			144.0.7559.59
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
+			${PROFILE_DISTFILES} \
 			${REGRESS_DISTFILES}
-DISTFILES.a=		${REGRESS_DISTFILES.a}
+DISTFILES.a=		${PROFILE_DISTFILES.a} \
+			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}-lite${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
-EXTRACT_ONLY=		${CHROMIUM_DISTFILES}
+EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
+			${PROFILE_DISTFILES.a}
 
 CATEGORIES=		www
 
@@ -76,6 +80,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		devel/rust-bindgen \
+		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
 		shells/bash \
@@ -283,11 +288,13 @@ post-patch:
 do-configure:
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
+		${LOCALBASE}/bin/llvm-profdata-${MODCLANG_VERSION} merge $${_p}.txt --output=$${_p}
 	@cd ${WRKSRC}/media/ffmpeg && \
 		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	@cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	@${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+.for _e in config.h config.asm config_components.h config_components.asm libavcodec libavformat libavutil
 	@-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \

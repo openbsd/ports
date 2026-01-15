@@ -10,7 +10,7 @@ Index: chrome/browser/process_singleton_posix.cc
  #include "chrome/browser/ui/process_singleton_dialog_linux.h"
  #endif
  
-@@ -360,7 +360,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -365,7 +365,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return g_user_opted_unlock_in_use_profile;
  

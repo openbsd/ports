@@ -19,7 +19,7 @@ Index: components/embedder_support/user_agent_utils_unittest.cc
          "X11; Linux x86_64";
  #elif BUILDFLAG(IS_MAC)
          "Macintosh; Intel Mac OS X 10_15_7";
-@@ -720,7 +720,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -722,7 +722,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");
