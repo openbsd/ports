@@ -2,14 +2,14 @@ BROKEN-sparc64= attempted static link of dynamic object libglib-2.0.so.4201.13
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-11.10.0
+DISTNAME=		libvirt-12.0.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.6 # 0.11010.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.11010.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.11010.0
-SHARED_LIBS += virt-admin                2.2 # 0.11010.0
+SHARED_LIBS += virt                      2.6 # 0.12000.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.12000.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.12000.0
+SHARED_LIBS += virt-admin                2.2 # 0.12000.0
 
 HOMEPAGE=		https://libvirt.org/
 
