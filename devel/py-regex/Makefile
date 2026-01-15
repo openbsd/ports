@@ -1,6 +1,6 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_DISTV=	2025.9.18
+MODPY_DISTV=	2026.1.15
 DISTNAME=	regex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -15,5 +15,6 @@ WANTLIB += pthread
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+MODPY_TEST_LINK_SO=	Yes
 
 .include <bsd.port.mk>
