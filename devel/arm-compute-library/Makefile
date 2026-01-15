@@ -4,7 +4,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	Arm compute library
 
-V =		52.3.0
+V =		52.7.0
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -18,7 +18,7 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 
 GRAPH_SO_V =	2.7
-COMPUTE_SO_V =	4.3
+COMPUTE_SO_V =	4.4
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
 SHARED_LIBS +=	arm_compute_graph ${GRAPH_SO_V}

@@ -39,6 +39,7 @@ include/arm_compute/core/CL/CLTypes.h
 include/arm_compute/core/CL/ICLArray.h
 include/arm_compute/core/CL/ICLTensor.h
 include/arm_compute/core/CL/OpenCL.h
+include/arm_compute/core/CL/cl_definitions.h
 include/arm_compute/core/CPP/
 include/arm_compute/core/CPP/CPPKernels.h
 include/arm_compute/core/CPP/CPPTypes.h
