@@ -6,6 +6,7 @@ SITES.gitlab ?=	https://gitlab.com/
 SITES.kde ?=	https://invent.kde.org/
 SITES.srht ?=	https://git.sr.ht/
 SITES.gnome ?=	https://gitlab.gnome.org/
+SITES.chromium ?= https://chromium.googlesource.com/
 
 # set EXTRACT_SUFX.x if different from TEMPLATE_EXTRACT_SUFX
 TEMPLATE_EXTRACT_SUFX ?=	.tar.gz
@@ -35,6 +36,9 @@ TEMPLATE_DISTFILES.kde ?= \
 
 TEMPLATE_DISTFILES.srht ?= \
 	<account>-<project>-{~<account>/<project>/archive/}<id>${EXTRACT_SUFX.srht}
+
+TEMPLATE_DISTFILES.chromium ?= \
+	<account>-<project>-{<account>/<project>/+archive/}<id>${EXTRACT_SUFX.chromium}
 
 # template for HOMEPAGE; same substitutions as for DISTFILES.x
 # Defaults to TEMPLATE_HOMEPAGE. Set TEMPLATE_HOMEPAGE.x to use different pattern.
