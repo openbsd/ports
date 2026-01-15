@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	video editor
 
-V =		25.10.31
+V =		25.12.31
 
 DIST_TUPLE =	github mltframework shotcut v${V} .
 PKGNAME =	shotcut-${V}
@@ -18,9 +18,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6WebSockets
-WANTLIB += Qt6Widgets Qt6Xml X11 c fftw3 m mlt++-7 mlt-7
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql
+WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml X11 c fftw3 m mlt++-7
+WANTLIB += mlt-7
 
 MODULES =		devel/cmake \
 			x11/qt6
@@ -38,7 +38,7 @@ RUN_DEPENDS =		audio/jack \
 			x11/qt6/qtwebsockets
 
 LIB_DEPENDS =		math/fftw3 \
-			multimedia/mlt7 \
+			multimedia/mlt7,-main \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtcharts \
 			x11/qt6/qtmultimedia
