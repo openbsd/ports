@@ -1,14 +1,12 @@
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		78.1
+VERSION=		78.2
 DISTNAME=		icu4c-${VERSION}-sources
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 EPOCH-main=		0
 EPOCH-wwwdata=		0
-
-REVISION-main=		0
 
 # XXX libicudata is not recognized as a SHARED_LIBS by the ports tools because
 # it's missing the '.note.openbsd.ident' section ("-nodefaultlibs -nostdlib" in
