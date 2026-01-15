@@ -2,8 +2,8 @@ BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=	server-side HTML-embedded scripting language
 
-PV=		${PHP_VERSION:R}
-SV=		${PV:S/.//}
+PV=			${PHP_VERSION:R}
+SV=			${PV:S/.//}
 
 PKGNAME-main?=		php-${PHP_VERSION:L}
 PKGSTEM=		php-${PV}
@@ -20,8 +20,11 @@ MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 HOMEPAGE=		https://www.php.net/
 SITES?=			https://www.php.net/distributions/
 
-# UPGRADERS: please read BOTH the PHP and Zend licenses
-# and make sure they are safe before an upgrade
+# PHP License, version 3.01 ${WRKSRC}/LICENSE +
+# Zend Engine License, version 2.00 ${WRKSRC}/Zend/LICENSE
+#
+# Next major release expected to change:
+# https://wiki.php.net/rfc/php_license_update
 PERMIT_PACKAGE=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
@@ -125,7 +128,7 @@ FLAVOR ?=
 # adding the dep.
 BUILD_DEPENDS+=		sysutils/xxhash
 CONFIGURE_ARGS+=	--with-capstone
-LIB_DEPENDS+=		devel/capstone/main
+LIB_DEPENDS-main+=	devel/capstone/main
 WANTLIB-main=		capstone
 
 # where the main php module is stored (outside the chroot)
@@ -199,6 +202,7 @@ LIB_DEPENDS +=		devel/gettext,-runtime \
 # explicitly add rather than using implicit default, so subdirs can add more
 .for i in ${SAPI}
 WANTLIB$i +=		${WANTLIB}
+LIB_DEPENDS$i +=	${LIB_DEPENDS}
 .endfor
 .for i in ${SAPI:N-apache:N-embed}
 WANTLIB$i +=		c
