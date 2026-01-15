@@ -1,6 +1,6 @@
 COMMENT=	convert a Python dictionary into an XML file
 
-MODPY_DISTV=	1.7.7
+MODPY_DISTV=	1.7.8
 DISTNAME=	dict2xml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

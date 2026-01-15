@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/dict2xml-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/dict2xml-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/dict2xml-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dict2xml/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dict2xml/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,4 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}logic.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dict2xml/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dict2xml/logic.py
+lib/python${MODPY_VERSION}/site-packages/dict2xml/logic.pyi
+lib/python${MODPY_VERSION}/site-packages/dict2xml/py.typed
 lib/python${MODPY_VERSION}/site-packages/dict2xml/version.py
+lib/python${MODPY_VERSION}/site-packages/dict2xml/version.pyi
