@@ -1,7 +1,7 @@
 Index: gdb/riscv-obsd-nat.c
 --- gdb/riscv-obsd-nat.c.orig
 +++ gdb/riscv-obsd-nat.c
-@@ -0,0 +1,136 @@
+@@ -0,0 +1,134 @@
 +/* Native-dependent code for OpenBSD/riscv64.
 +
 +   Copyright (C) 2018-2021 Free Software Foundation, Inc.
@@ -132,9 +132,7 @@ Index: gdb/riscv-obsd-nat.c
 +    }
 +}
 +
-+void _initialize_riscv_obsd_nat ();
-+void
-+_initialize_riscv_obsd_nat ()
++INIT_GDB_FILE (riscv_obsd_nat)
 +{
 +  add_inf_child_target (&the_riscv_obsd_nat_target);
 +}

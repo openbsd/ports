@@ -1,7 +1,7 @@
 Index: bfd/elf.c
 --- bfd/elf.c.orig
 +++ bfd/elf.c
-@@ -11994,6 +11994,11 @@ elfcore_grok_solaris_note (bfd *abfd, Elf_Internal_Not
+@@ -11876,6 +11876,11 @@ elfcore_grok_solaris_note (bfd *abfd, Elf_Internal_Not
  static bool
  elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Note *note)
  {
@@ -13,7 +13,7 @@ Index: bfd/elf.c
    if (note->type == NT_OPENBSD_PROCINFO)
      return elfcore_grok_openbsd_procinfo (abfd, note);
  
-@@ -12022,6 +12027,9 @@ elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Not
+@@ -11904,6 +11909,9 @@ elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Not
  
        return true;
      }

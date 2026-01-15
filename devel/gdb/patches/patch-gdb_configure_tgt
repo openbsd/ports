@@ -3,7 +3,7 @@ Add support for aarch64, powerpc64 and riscv64.
 Index: gdb/configure.tgt
 --- gdb/configure.tgt.orig
 +++ gdb/configure.tgt
-@@ -154,6 +154,13 @@ aarch64*-*-linux*)
+@@ -155,6 +155,13 @@ aarch64*-*-linux*)
  			symfile-mem.o linux-record.o"
  	;;
  
@@ -17,7 +17,7 @@ Index: gdb/configure.tgt
  alpha*-*-linux*)
  	# Target: Little-endian Alpha running Linux
  	gdb_target_obs="alpha-mdebug-tdep.o alpha-linux-tdep.o \
-@@ -494,6 +501,12 @@ powerpc-*-openbsd*)
+@@ -503,6 +510,12 @@ powerpc-*-openbsd*)
  	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc-obsd-tdep.o \
  			ravenscar-thread.o ppc-ravenscar-thread.o"
  	;;
@@ -29,17 +29,17 @@ Index: gdb/configure.tgt
 + 	;;
  powerpc-*-aix* | rs6000-*-* | powerpc64-*-aix*)
  	# Target: PowerPC running AIX
- 	gdb_target_obs="rs6000-tdep.o rs6000-aix-tdep.o xcoffread.o \
-@@ -536,6 +549,12 @@ riscv*-*-linux*)
- 	# Target: Linux/RISC-V
- 	gdb_target_obs="riscv-linux-tdep.o glibc-tdep.o \
-  			linux-tdep.o solib-svr4.o symfile-mem.o linux-record.o"
-+	;;
+ 	gdb_target_obs="rs6000-tdep.o rs6000-aix-tdep.o \
+@@ -551,6 +564,12 @@ riscv*-*-linux*)
+ 			symfile-mem.o \
+ 			linux-record.o svr4-tls-tdep.o"
+ 	;;
 +
 +riscv*-*-openbsd*)
 +	# Target: OpenBSD/riscv
 +	# XXX is that list enough?
 +	gdb_target_obs="riscv-obsd-tdep.o"
- 	;;
++ 	;;
  
  riscv*-*-*)
+ 	# Target: RISC-V architecture

@@ -3,7 +3,7 @@ Pass SIGINT to attached inferior
 Index: gdb/inflow.c
 --- gdb/inflow.c.orig
 +++ gdb/inflow.c
-@@ -872,7 +872,10 @@ static void
+@@ -899,7 +899,10 @@ static void
  pass_signal (int signo)
  {
  #ifndef _WIN32

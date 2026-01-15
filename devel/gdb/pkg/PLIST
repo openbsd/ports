@@ -87,6 +87,8 @@ share/gdb/python/gdb/dap/${MODPY_PYCACHE}breakpoint.${MODPY_PYC_MAGIC_TAG}${MODP
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}breakpoint.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}bt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}bt.${MODPY_PYC_MAGIC_TAG}pyc
+share/gdb/python/gdb/dap/${MODPY_PYCACHE}completions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/gdb/python/gdb/dap/${MODPY_PYCACHE}completions.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}disassemble.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}disassemble.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -129,6 +131,7 @@ share/gdb/python/gdb/dap/${MODPY_PYCACHE}varref.${MODPY_PYC_MAGIC_TAG}${MODPY_PY
 share/gdb/python/gdb/dap/${MODPY_PYCACHE}varref.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/dap/breakpoint.py
 share/gdb/python/gdb/dap/bt.py
+share/gdb/python/gdb/dap/completions.py
 share/gdb/python/gdb/dap/disassemble.py
 share/gdb/python/gdb/dap/evaluate.py
 share/gdb/python/gdb/dap/events.py

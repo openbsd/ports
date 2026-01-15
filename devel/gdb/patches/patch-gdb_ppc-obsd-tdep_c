@@ -6,7 +6,7 @@ Avoid clash with ppc64-obsd-tdep.c:
 Index: gdb/ppc-obsd-tdep.c
 --- gdb/ppc-obsd-tdep.c.orig
 +++ gdb/ppc-obsd-tdep.c
-@@ -268,7 +268,7 @@ _initialize_ppcobsd_tdep ()
+@@ -266,7 +266,7 @@ INIT_GDB_FILE (ppcobsd_tdep)
  {
    gdbarch_register_osabi (bfd_arch_rs6000, 0, GDB_OSABI_OPENBSD,
  			  ppcobsd_init_abi);

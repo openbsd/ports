@@ -1,7 +1,7 @@
 Index: gdb/riscv-obsd-tdep.c
 --- gdb/riscv-obsd-tdep.c.orig
 +++ gdb/riscv-obsd-tdep.c
-@@ -0,0 +1,220 @@
+@@ -0,0 +1,216 @@
 +/* Target-dependent code for OpenBSD on RISC-V processors.
 +   Copyright (C) 2018-2021 Free Software Foundation, Inc.
 +
@@ -198,26 +198,22 @@ Index: gdb/riscv-obsd-tdep.c
 +  /* Generic OpenBSD support.  */
 +  obsd_init_abi (info, gdbarch);
 +
-+  set_gdbarch_software_single_step (gdbarch, riscv_software_single_step);
++  set_gdbarch_get_next_pcs (gdbarch, riscv_software_single_step);
 +
-+  set_solib_svr4_fetch_link_map_offsets (gdbarch, svr4_lp64_fetch_link_map_offsets);
++  set_solib_svr4_ops (gdbarch, make_svr4_lp64_solib_ops);
 +
 +  tramp_frame_prepend_unwinder (gdbarch, &riscv_obsd_sigframe);
 +
 +  set_gdbarch_iterate_over_regset_sections
 +    (gdbarch, riscv_obsd_iterate_over_regset_sections);
 +
-+  set_gdbarch_fetch_tls_load_module_address (gdbarch,
-+					     svr4_fetch_objfile_link_map);
 +#if 0
 +  set_gdbarch_get_thread_local_address (gdbarch,
 +					riscv_obsd_get_thread_local_address);
 +#endif
 +}
 +
-+void _initialize_riscv_obsd_tdep ();
-+void
-+_initialize_riscv_obsd_tdep ()
++INIT_GDB_FILE (riscv_obsd_tdep)
 +{
 +  gdbarch_register_osabi (bfd_arch_riscv, 0, GDB_OSABI_OPENBSD,
 +			  riscv_obsd_init_abi);

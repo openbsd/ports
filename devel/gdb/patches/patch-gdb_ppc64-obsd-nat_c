@@ -1,7 +1,7 @@
 Index: gdb/ppc64-obsd-nat.c
 --- gdb/ppc64-obsd-nat.c.orig
 +++ gdb/ppc64-obsd-nat.c
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,211 @@
 +/* Native-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004-2020 Free Software Foundation, Inc.
@@ -185,9 +185,7 @@ Index: gdb/ppc64-obsd-nat.c
 +#endif
 +
 +
-+void _initialize_ppc64obsd_nat ();
-+void
-+_initialize_ppc64obsd_nat ()
++INIT_GDB_FILE (ppc64obsd_nat)
 +{
 +  add_inf_child_target (&the_ppc64_obsd_nat_target);
 +

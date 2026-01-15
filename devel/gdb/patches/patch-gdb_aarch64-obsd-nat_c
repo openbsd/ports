@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-nat.c
 --- gdb/aarch64-obsd-nat.c.orig
 +++ gdb/aarch64-obsd-nat.c
-@@ -0,0 +1,170 @@
+@@ -0,0 +1,169 @@
 +/* Native-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2017-2020 Free Software Foundation, Inc.
@@ -167,8 +167,7 @@ Index: gdb/aarch64-obsd-nat.c
 +  return aarch64_read_description (features);
 +}
 +
-+void
-+_initialize_aarch64_obsd_nat ()
++INIT_GDB_FILE (aarch64_obsd_nat)
 +{
 +  add_inf_child_target (&the_aarch64_obsd_nat_target);
 +}

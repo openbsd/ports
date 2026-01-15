@@ -345,9 +345,10 @@ Index: gdb/ppc64-obsd-tdep.c
 +  return trad_frame_get_register (cache, this_frame, regnum);
 +}
 +
-+static const struct frame_unwind ppc64obsd_sigtramp_frame_unwind = {
++static const struct frame_unwind_legacy ppc64obsd_sigtramp_frame_unwind = {
 +  "ppc64 openbsd sigtramp",
 +  SIGTRAMP_FRAME,
++  FRAME_UNWIND_ARCH,
 +  default_frame_unwind_stop_reason,
 +  ppc64obsd_sigtramp_frame_this_id,
 +  ppc64obsd_sigtramp_frame_prev_register,
@@ -366,8 +367,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +  set_gdbarch_long_double_format (gdbarch, floatformats_ieee_double);
 +
 +  /* OpenBSD uses SVR4-style shared libraries.  */
-+  set_solib_svr4_fetch_link_map_offsets
-+    (gdbarch, svr4_lp64_fetch_link_map_offsets);
++  set_solib_svr4_ops (gdbarch, make_svr4_lp64_solib_ops);
 +
 +  set_gdbarch_iterate_over_regset_sections
 +    (gdbarch, ppc64obsd_iterate_over_regset_sections);

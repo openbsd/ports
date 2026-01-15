@@ -1,0 +1,24 @@
+
+Avoid using GNU-only \b grep escape sequence
+
+Index: gdb/make-init-c
+--- gdb/make-init-c.orig
++++ gdb/make-init-c
+@@ -46,7 +46,7 @@ echo "#include <algorithm>"
+ echo ""
+ echo "#undef INIT_GDB_FILE"
+ echo "#define INIT_GDB_FILE(NAME) extern void _initialize_ ## NAME ();"
+-grep -h '^[ 	]*INIT_GDB_FILE\b' "$@"
++grep -h '^[ 	]*INIT_GDB_FILE[ 	]*(' "$@"
+ echo ""
+ echo "void initialize_all_files ();"
+ echo "void"
+@@ -58,7 +58,7 @@ echo "  std::vector<initialize_file_ftype *> functions
+ echo "    {"
+ echo "#undef INIT_GDB_FILE"
+ echo "#define INIT_GDB_FILE(NAME) _initialize_ ## NAME,"
+-grep -h '^[ 	]*INIT_GDB_FILE\b' "$@"
++grep -h '^[ 	]*INIT_GDB_FILE[ 	]*(' "$@"
+ echo "    };"
+ echo ""
+ echo "  /* If GDB_REVERSE_INIT_FUNCTIONS is set (any value), reverse the"

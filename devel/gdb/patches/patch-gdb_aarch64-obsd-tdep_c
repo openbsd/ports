@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-tdep.c
 --- gdb/aarch64-obsd-tdep.c.orig
 +++ gdb/aarch64-obsd-tdep.c
-@@ -0,0 +1,339 @@
+@@ -0,0 +1,336 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -208,9 +208,10 @@ Index: gdb/aarch64-obsd-tdep.c
 +  return trad_frame_get_register (cache, this_frame, regnum);
 +}
 +
-+static const struct frame_unwind aarch64obsd_sigtramp_frame_unwind = {
++static const struct frame_unwind_legacy aarch64obsd_sigtramp_frame_unwind = {
 +  "aarch64 openbsd tramp",
 +  SIGTRAMP_FRAME,
++  FRAME_UNWIND_ARCH,
 +  default_frame_unwind_stop_reason,
 +  aarch64obsd_sigtramp_frame_this_id,
 +  aarch64obsd_sigtramp_frame_prev_register,
@@ -317,8 +318,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +  obsd_init_abi (info, gdbarch);
 +
 +  /* OpenBSD/aarch64 uses SVR4-style shared libraries.  */
-+  set_solib_svr4_fetch_link_map_offsets
-+    (gdbarch, svr4_lp64_fetch_link_map_offsets);
++  set_solib_svr4_ops (gdbarch, make_svr4_lp64_solib_ops);
 +  set_gdbarch_skip_solib_resolver (gdbarch, obsd_skip_solib_resolver);
 +
 +  frame_unwind_append_unwinder (gdbarch, &aarch64obsd_sigtramp_frame_unwind);
@@ -333,10 +333,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +
-+void _initialize_aarch64_obsd_tdep ();
-+
-+void
-+_initialize_aarch64_obsd_tdep ()
++INIT_GDB_FILE (aarch64_obsd_tdep)
 +{
 +  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_OPENBSD,
 +			  aarch64obsd_init_abi);
