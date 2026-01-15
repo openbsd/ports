@@ -2,30 +2,30 @@ BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=	server-side HTML-embedded scripting language
 
-PV=			${PHP_VERSION:R}
-SV=			${PV:S/.//}
+PV=		${PHP_VERSION:R}
+SV=		${PV:S/.//}
 
-PKGNAME-main?=		php-${PHP_VERSION:L}
-PKGSTEM=		php-${PV}
-PKGSTEM-main=		php-${PV}
-PORTROACH?=		limit:^${PV}
+PKGNAME-main?=	php-${PHP_VERSION:L}
+PKGSTEM=	php-${PV}
+PKGSTEM-main=	php-${PV}
+PORTROACH?=	limit:^${PV}
 
-DISTNAME?=		php-${PHP_VERSION}
-EXTRACT_SUFX?=		.tar.xz
+DISTNAME?=	php-${PHP_VERSION}
+EXTRACT_SUFX?=	.tar.xz
 
-CATEGORIES=		lang www
+CATEGORIES=	lang www
 
-MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-HOMEPAGE=		https://www.php.net/
-SITES?=			https://www.php.net/distributions/
+HOMEPAGE=	https://www.php.net/
+SITES?=		https://www.php.net/distributions/
 
 # PHP License, version 3.01 ${WRKSRC}/LICENSE +
 # Zend Engine License, version 2.00 ${WRKSRC}/Zend/LICENSE
 #
 # Next major release expected to change:
 # https://wiki.php.net/rfc/php_license_update
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 
