@@ -22,3 +22,15 @@
 @so lib/babl-${API_VERSION}/x86-64-v3-u16.so
 @so lib/babl-${API_VERSION}/x86-64-v3-u32.so
 @so lib/babl-${API_VERSION}/x86-64-v3-ycbcr.so
+@so lib/babl-${API_VERSION}/x86-64-v4-CIE.so
+@so lib/babl-${API_VERSION}/x86-64-v4-cairo.so
+@so lib/babl-${API_VERSION}/x86-64-v4-double.so
+@so lib/babl-${API_VERSION}/x86-64-v4-float.so
+@so lib/babl-${API_VERSION}/x86-64-v4-gegl-fixups.so
+@so lib/babl-${API_VERSION}/x86-64-v4-gggl-lies.so
+@so lib/babl-${API_VERSION}/x86-64-v4-gggl.so
+@so lib/babl-${API_VERSION}/x86-64-v4-grey.so
+@so lib/babl-${API_VERSION}/x86-64-v4-simple.so
+@so lib/babl-${API_VERSION}/x86-64-v4-u16.so
+@so lib/babl-${API_VERSION}/x86-64-v4-u32.so
+@so lib/babl-${API_VERSION}/x86-64-v4-ycbcr.so
