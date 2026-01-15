@@ -14,6 +14,8 @@ COMMENT=		Chromium browser
 
 V=			144.0.7559.59
 
+REVISION=		0
+
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
@@ -159,6 +161,7 @@ GN_ARGS=	is_official_build=true \
 		optimize_webui=true \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
+		enable_widevine=true \
 		use_kerberos=false \
 		use_sndio=true \
 		use_pulseaudio=true \
@@ -359,7 +362,8 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chromium
 .for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
-    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
+    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video \
+    unveil.cdm
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
 

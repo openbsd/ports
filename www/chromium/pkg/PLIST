@@ -479,6 +479,8 @@ share/examples/chromium/pledge.utility_network
 @sample ${SYSCONFDIR}/chromium/pledge.utility_network
 share/examples/chromium/pledge.utility_video
 @sample ${SYSCONFDIR}/chromium/pledge.utility_video
+share/examples/chromium/unveil.cdm
+@sample ${SYSCONFDIR}/chromium/unveil.cdm
 share/examples/chromium/unveil.gpu
 @sample ${SYSCONFDIR}/chromium/unveil.gpu
 share/examples/chromium/unveil.main
