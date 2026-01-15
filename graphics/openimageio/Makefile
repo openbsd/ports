@@ -5,12 +5,11 @@ COMMENT =		library for reading and writing images
 
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
-GH_TAGNAME =		v3.0.8.1
+GH_TAGNAME =		v3.1.9.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 
-SHARED_LIBS +=		OpenImageIO		18.0
-SHARED_LIBS +=		OpenImageIO_Util	11.1
+SHARED_LIBS +=		OpenImageIO		19.0
+SHARED_LIBS +=		OpenImageIO_Util	12.0
 
 CATEGORIES =		graphics devel
 
@@ -23,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_4 IlmThread-3_4 Imath-3_2
 WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 Qt6Core Qt6Gui
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
 WANTLIB += avutil bz2 c freetype gif heif jpeg jxl jxl_threads
-WANTLIB += m openjp2 png pugixml raw_r sharpyuv swscale tbb tiff
+WANTLIB += m openjp2 openjph png pugixml raw_r sharpyuv swscale tbb tiff
 WANTLIB += webp webpdemux z
 
 MODULES =		devel/cmake \
@@ -32,7 +31,7 @@ MODULES =		devel/cmake \
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/fmt>=10.2.1 \
+BUILD_DEPENDS =		devel/fmt \
 			devel/py-pybind11 \
 			devel/robin-map \
 			textproc/txt2man
@@ -44,10 +43,11 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/jpeg \
 			graphics/libjxl \
 			graphics/libraw \
-			graphics/libwebp>=1.5.0 \
+			graphics/libwebp \
 			graphics/opencolorio \
 			graphics/openexr \
 			graphics/openjp2 \
+			graphics/openjph \
 			graphics/png \
 			graphics/tiff \
 			math/imath \

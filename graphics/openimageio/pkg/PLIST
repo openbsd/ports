@@ -21,6 +21,7 @@ include/OpenImageIO/detail/
 include/OpenImageIO/detail/farmhash.h
 include/OpenImageIO/detail/fmt/
 include/OpenImageIO/detail/fmt.h
+include/OpenImageIO/detail/fmt/base.h
 include/OpenImageIO/detail/fmt/chrono.h
 include/OpenImageIO/detail/fmt/core.h
 include/OpenImageIO/detail/fmt/format-inl.h
@@ -37,6 +38,7 @@ include/OpenImageIO/fstream_mingw.h
 include/OpenImageIO/function_view.h
 include/OpenImageIO/half.h
 include/OpenImageIO/hash.h
+include/OpenImageIO/image_span.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
 include/OpenImageIO/imagebufalgo.h
@@ -45,6 +47,7 @@ include/OpenImageIO/imagebufalgo_util.h
 include/OpenImageIO/imagecache.h
 include/OpenImageIO/imageio.h
 include/OpenImageIO/memory.h
+include/OpenImageIO/nsversions.h
 include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
 include/OpenImageIO/parallel.h
@@ -82,6 +85,8 @@ lib/pkgconfig/OpenImageIO.pc
 lib/python${MODPY_VERSION}/site-packages/OpenImageIO/
 @so lib/python${MODPY_VERSION}/site-packages/OpenImageIO/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/OpenImageIO/__init__.py
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO/py.typed
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1

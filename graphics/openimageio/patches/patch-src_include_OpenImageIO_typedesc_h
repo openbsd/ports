@@ -1,0 +1,15 @@
+fix(build): Fix building on OpenBSD
+342da8ee6ea9f914b61e5dc5f3242f0ced501fb7
+
+Index: src/include/OpenImageIO/typedesc.h
+--- src/include/OpenImageIO/typedesc.h.orig
++++ src/include/OpenImageIO/typedesc.h
+@@ -409,7 +409,7 @@ template<> struct BaseTypeFromC<uint64_t> { static con
+ template<> struct BaseTypeFromC<const uint64_t> { static constexpr TypeDesc::BASETYPE value = TypeDesc::UINT64; };
+ template<> struct BaseTypeFromC<int64_t> { static constexpr TypeDesc::BASETYPE value = TypeDesc::INT64; };
+ template<> struct BaseTypeFromC<const int64_t> { static constexpr TypeDesc::BASETYPE value = TypeDesc::INT64; };
+-#if defined(__GNUC__) && (ULONG_MAX == 0xffffffffffffffff) && !(defined(__APPLE__) && defined(__MACH__)) || defined(__NetBSD__)
++#if defined(__GNUC__) && (ULONG_MAX == 0xffffffffffffffff) && !(defined(__APPLE__) && defined(__MACH__)) && !defined(__OpenBSD__) || defined(__NetBSD__)
+ // Some platforms consider int64_t and long long to be different types, even
+ // though they are actually the same size.
+ static_assert(!std::is_same_v<unsigned long long, uint64_t>);
