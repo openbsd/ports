@@ -5,6 +5,7 @@ DPB_PROPERTIES=	parallel
 GH_ACCOUNT=	Reference-LAPACK
 GH_PROJECT=	lapack
 GH_TAGNAME=	v3.12.1
+REVISION=	0
 
 SHARED_LIBS +=  blas                      2.2
 SHARED_LIBS +=  cblas                     2.1
@@ -23,7 +24,7 @@ WANTLIB += ${MODFORTRAN_WANTLIB} m
 
 MODULES=	devel/cmake \
 		fortran
-
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_ARGS=	-DBUILD_TESTING=ON \
 		-DCMAKE_Fortran_COMPILER=${MODFORTRAN_COMPILER} \
 		-DBUILD_SHARED_LIBS=ON \
