@@ -2,7 +2,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		0
+REVISION =		1
 
 USE_NOBTCFI =		Yes
 
@@ -10,7 +10,7 @@ SO_VERSION =		0.0
 SHARED_LIBS +=		mozjs115-release        ${SO_VERSION}
 
 WANTLIB += ${MODRUST_WANTLIB} ${COMPILER_LIBCXX} SDL2 X11 boost_filesystem
-WANTLIB += boost_system crypto curl enet execinfo fmt freetype gloox iconv
+WANTLIB += crypto curl enet execinfo fmt freetype gloox iconv
 WANTLIB += icudata icui18n icuuc idn m miniupnpc ogg openal
 WANTLIB += png sodium ssl vorbis vorbisfile wx_gtk3u_gl-3.2 wx_gtk3u_xrc-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_core-3.2 wx_baseu-3.2
