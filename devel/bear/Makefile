@@ -3,7 +3,7 @@ COMMENT =	clang database generator
 V =		3.1.6
 DIST_TUPLE +=	github rizsotto Bear ${V} .
 DISTNAME =	bear-${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
@@ -36,7 +36,7 @@ WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c execinfo fmt gpr grpc grpc++

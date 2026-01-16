@@ -4,8 +4,8 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		11
-REVISION-server =	11
+REVISION-main =		12
+REVISION-server =	12
 
 CATEGORIES =		audio net
 
@@ -58,11 +58,11 @@ WANTLIB-main += absl_random_internal_randen_slow absl_random_internal_seed_mater
 WANTLIB-main += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB-main += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB-main += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB-main += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB-main += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
 WANTLIB-main += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB-main += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB-main += absl_vlog_config_internal c crypto kvm m protobuf sndfile
-WANTLIB-main += speex speexdsp ssl
+WANTLIB-main += speex speexdsp ssl utf8_validity
 
 # dlopen()'ed
 WANTLIB-main += opus portaudio
@@ -92,10 +92,10 @@ WANTLIB-server += absl_random_internal_randen_slow absl_random_internal_seed_mat
 WANTLIB-server += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB-server += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB-server += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB-server += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB-server += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
 WANTLIB-server += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB-server += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB-server += absl_vlog_config_internal c crypto m protobuf ssl
+WANTLIB-server += absl_vlog_config_internal c crypto m protobuf ssl utf8_validity
 
 WRKDIST =		${WRKDIR}/mumble-${VERSION}.src
 

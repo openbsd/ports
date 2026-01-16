@@ -8,6 +8,7 @@ V =			4.13.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
+REVISION-java =		0
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
@@ -33,7 +34,7 @@ WANTLIB-main += swscale tiff utf8_validity webp webpdemux webpmux z
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc
 WANTLIB-java += opencv_ml opencv_objdetect opencv_photo opencv_video
-WANTLIB-java += opencv_videoio
+WANTLIB-java += opencv_videoio pthread
 
 COMPILER =		base-clang ports-gcc
 

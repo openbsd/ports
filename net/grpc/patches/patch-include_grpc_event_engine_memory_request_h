@@ -1,0 +1,16 @@
+Fix build with abseil-cpp>=20260107.0 after which it's string_view.h
+no longer includes C++ headers required by std::to_string() in this file
+(probably an oversight in gRPC and unrelated to abseil).
+
+Index: include/grpc/event_engine/memory_request.h
+--- include/grpc/event_engine/memory_request.h.orig
++++ include/grpc/event_engine/memory_request.h
+@@ -16,6 +16,8 @@
+ 
+ #include <grpc/support/port_platform.h>
+ #include <stddef.h>
++#include <cstdio>
++#include <string>
+ 
+ #include "absl/strings/string_view.h"
+ 

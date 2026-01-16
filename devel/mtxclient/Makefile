@@ -6,6 +6,7 @@ SHARED_LIBS +=  matrix_client	4.0
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
 GH_TAGNAME =	v0.10.1
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -28,7 +29,7 @@ WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
 WANTLIB += absl_log_internal_structured_proto absl_log_severity
 WANTLIB += absl_log_sink absl_malloc_internal absl_raw_hash_set
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_str_format_internal absl_strerror absl_borrowed_fixup_buffer
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal

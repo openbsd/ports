@@ -9,6 +9,7 @@ COMMENT =	desktop geographical information system
 DPB_PROPERTIES =	parallel parallel2
 
 DISTNAME =	qgis-3.44.6
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -139,7 +140,7 @@ WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
 WANTLIB += absl_log_severity absl_log_sink
 WANTLIB += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
 WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
-WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_str_format_internal absl_strerror absl_borrowed_fixup_buffer
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone
 WANTLIB += absl_log_internal_fnmatch absl_vlog_config_internal

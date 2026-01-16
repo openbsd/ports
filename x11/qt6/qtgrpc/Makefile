@@ -1,6 +1,7 @@
 QT6NAME =	QtgRPC
 COMMENT =	gRPC support for Qt6
 PKGSPEC =	qt6-qtgrpc-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Grpc                   3.0 # 0.0
 SHARED_LIBS +=  Qt6Protobuf               2.0 # 0.0
@@ -35,7 +36,7 @@ WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c m protobuf protoc utf8_range

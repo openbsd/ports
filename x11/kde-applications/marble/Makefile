@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -36,7 +37,7 @@ WANTLIB += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
 WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_str_format_internal absl_strerror absl_borrowed_fixup_buffer
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal

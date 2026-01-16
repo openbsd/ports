@@ -5,21 +5,22 @@ COMMENT =	HTTP/2-based RPC framework
 
 V =		1.75.1
 DISTNAME =	grpc-${V}
+REVISION =	0
 
 DIST_TUPLE +=	github grpc grpc v${V} .
 
 SHARED_LIBS +=	address_sorting           0.0 # 0.0
-SHARED_LIBS +=	gpr                       2.0 # 0.0
-SHARED_LIBS +=	grpc++                    3.0 # 0.0
+SHARED_LIBS +=	gpr                       3.0 # 0.0
+SHARED_LIBS +=	grpc++                    4.0 # 0.0
 SHARED_LIBS +=	grpc++_alts               1.0 # 0.0
 SHARED_LIBS +=	grpc++_error_details      0.0 # 0.0
-SHARED_LIBS +=	grpc++_reflection         2.0 # 0.0
-SHARED_LIBS +=	grpc++_unsecure           3.0 # 0.0
+SHARED_LIBS +=	grpc++_reflection         3.0 # 0.0
+SHARED_LIBS +=	grpc++_unsecure           4.0 # 0.0
 SHARED_LIBS +=	grpc                      5.0 # 0.0
-SHARED_LIBS +=	grpc_authorization_provider 5.0 # 0.0
-SHARED_LIBS +=	grpc_plugin_support       2.0 # 0.0
-SHARED_LIBS +=	grpc_unsecure             5.0 # 0.0
-SHARED_LIBS +=	grpcpp_channelz           4.0 # 0.0
+SHARED_LIBS +=	grpc_authorization_provider 6.0 # 0.0
+SHARED_LIBS +=	grpc_plugin_support       3.0 # 0.0
+SHARED_LIBS +=	grpc_unsecure             6.0 # 0.0
+SHARED_LIBS +=	grpcpp_channelz           5.0 # 0.0
 SHARED_LIBS +=	upb_base_lib              0.0 # 0.0
 SHARED_LIBS +=	upb_json_lib              1.0 # 0.0
 SHARED_LIBS +=	upb_mem_lib               0.1 # 0.0
@@ -66,11 +67,11 @@ WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c cares crypto m protobuf
-WANTLIB += protoc re2 ssl utf8_range z
+WANTLIB += protoc re2 ssl utf8_range utf8_validity z
 
 # C++17
 COMPILER =		base-clang ports-gcc

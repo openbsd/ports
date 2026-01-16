@@ -22,11 +22,11 @@ include/absl/base/internal/errno_saver.h
 include/absl/base/internal/exception_safety_testing.h
 include/absl/base/internal/exception_testing.h
 include/absl/base/internal/hide_ptr.h
-include/absl/base/internal/identity.h
 include/absl/base/internal/iterator_traits.h
 include/absl/base/internal/iterator_traits_test_helper.h
 include/absl/base/internal/low_level_alloc.h
 include/absl/base/internal/low_level_scheduling.h
+include/absl/base/internal/nullability_traits.h
 include/absl/base/internal/per_thread_tls.h
 include/absl/base/internal/poison.h
 include/absl/base/internal/pretty_function.h
@@ -66,6 +66,7 @@ include/absl/container/
 include/absl/container/btree_map.h
 include/absl/container/btree_set.h
 include/absl/container/btree_test.h
+include/absl/container/chunked_queue.h
 include/absl/container/fixed_array.h
 include/absl/container/flat_hash_map.h
 include/absl/container/flat_hash_set.h
@@ -74,6 +75,7 @@ include/absl/container/inlined_vector.h
 include/absl/container/internal/
 include/absl/container/internal/btree.h
 include/absl/container/internal/btree_container.h
+include/absl/container/internal/chunked_queue.h
 include/absl/container/internal/common.h
 include/absl/container/internal/common_policy_traits.h
 include/absl/container/internal/compressed_tuple.h
@@ -86,6 +88,7 @@ include/absl/container/internal/hashtable_control_bytes.h
 include/absl/container/internal/hashtable_debug.h
 include/absl/container/internal/hashtable_debug_hooks.h
 include/absl/container/internal/hashtablez_sampler.h
+include/absl/container/internal/heterogeneous_lookup_testing.h
 include/absl/container/internal/inlined_vector.h
 include/absl/container/internal/layout.h
 include/absl/container/internal/node_slot_policy.h
@@ -103,6 +106,8 @@ include/absl/container/internal/unordered_set_constructor_test.h
 include/absl/container/internal/unordered_set_lookup_test.h
 include/absl/container/internal/unordered_set_members_test.h
 include/absl/container/internal/unordered_set_modifiers_test.h
+include/absl/container/linked_hash_map.h
+include/absl/container/linked_hash_set.h
 include/absl/container/node_hash_map.h
 include/absl/container/node_hash_set.h
 include/absl/crc/
@@ -123,6 +128,7 @@ include/absl/debugging/failure_signal_handler.h
 include/absl/debugging/internal/
 include/absl/debugging/internal/address_is_readable.h
 include/absl/debugging/internal/addresses.h
+include/absl/debugging/internal/borrowed_fixup_buffer.h
 include/absl/debugging/internal/bounded_utf8_length_sequence.h
 include/absl/debugging/internal/decode_rust_punycode.h
 include/absl/debugging/internal/demangle.h
@@ -205,6 +211,7 @@ include/absl/log/internal/check_impl.h
 include/absl/log/internal/check_op.h
 include/absl/log/internal/conditions.h
 include/absl/log/internal/config.h
+include/absl/log/internal/container.h
 include/absl/log/internal/flags.h
 include/absl/log/internal/fnmatch.h
 include/absl/log/internal/globals.h
@@ -235,6 +242,9 @@ include/absl/log/vlog_is_on.h
 include/absl/memory/
 include/absl/memory/memory.h
 include/absl/meta/
+include/absl/meta/internal/
+include/absl/meta/internal/constexpr_testing.h
+include/absl/meta/internal/requires.h
 include/absl/meta/type_traits.h
 include/absl/numeric/
 include/absl/numeric/bits.h
@@ -320,6 +330,7 @@ include/absl/strings/escaping.h
 include/absl/strings/has_absl_stringify.h
 include/absl/strings/has_ostream_operator.h
 include/absl/strings/internal/
+include/absl/strings/internal/append_and_overwrite.h
 include/absl/strings/internal/charconv_bigint.h
 include/absl/strings/internal/charconv_parse.h
 include/absl/strings/internal/cord_data_edge.h
@@ -341,6 +352,8 @@ include/absl/strings/internal/cordz_update_tracker.h
 include/absl/strings/internal/damerau_levenshtein_distance.h
 include/absl/strings/internal/escaping.h
 include/absl/strings/internal/escaping_test_common.h
+include/absl/strings/internal/generic_printer.h
+include/absl/strings/internal/generic_printer_internal.h
 include/absl/strings/internal/memutil.h
 include/absl/strings/internal/numbers_test_common.h
 include/absl/strings/internal/ostringstream.h
@@ -363,6 +376,7 @@ include/absl/strings/internal/stringify_sink.h
 include/absl/strings/internal/utf8.h
 include/absl/strings/match.h
 include/absl/strings/numbers.h
+include/absl/strings/resize_and_overwrite.h
 include/absl/strings/str_cat.h
 include/absl/strings/str_format.h
 include/absl/strings/str_join.h
@@ -408,6 +422,7 @@ include/absl/time/internal/cctz/src/time_zone_if.h
 include/absl/time/internal/cctz/src/time_zone_impl.h
 include/absl/time/internal/cctz/src/time_zone_info.h
 include/absl/time/internal/cctz/src/time_zone_libc.h
+include/absl/time/internal/cctz/src/time_zone_name_win.h
 include/absl/time/internal/cctz/src/time_zone_posix.h
 include/absl/time/internal/cctz/src/tzfile.h
 include/absl/time/internal/get_current_time_chrono.inc
@@ -431,6 +446,7 @@ lib/cmake/absl/abslTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_atomic_hook_test_helper.so.${LIBabsl_atomic_hook_test_helper_VERSION}
 @lib lib/libabsl_base.so.${LIBabsl_base_VERSION}
+@lib lib/libabsl_borrowed_fixup_buffer.so.${LIBabsl_borrowed_fixup_buffer_VERSION}
 @lib lib/libabsl_city.so.${LIBabsl_city_VERSION}
 @lib lib/libabsl_civil_time.so.${LIBabsl_civil_time_VERSION}
 @lib lib/libabsl_cord.so.${LIBabsl_cord_VERSION}
@@ -463,6 +479,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_flags_reflection.so.${LIBabsl_flags_reflection_VERSION}
 @lib lib/libabsl_flags_usage.so.${LIBabsl_flags_usage_VERSION}
 @lib lib/libabsl_flags_usage_internal.so.${LIBabsl_flags_usage_internal_VERSION}
+@lib lib/libabsl_generic_printer_internal.so.${LIBabsl_generic_printer_internal_VERSION}
 @lib lib/libabsl_graphcycles_internal.so.${LIBabsl_graphcycles_internal_VERSION}
 @lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
 @lib lib/libabsl_hash_generator_testing.so.${LIBabsl_hash_generator_testing_VERSION}
@@ -520,7 +537,6 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_statusor.so.${LIBabsl_statusor_VERSION}
 @lib lib/libabsl_str_format_internal.so.${LIBabsl_str_format_internal_VERSION}
 @lib lib/libabsl_strerror.so.${LIBabsl_strerror_VERSION}
-@lib lib/libabsl_string_view.so.${LIBabsl_string_view_VERSION}
 @lib lib/libabsl_strings.so.${LIBabsl_strings_VERSION}
 @lib lib/libabsl_strings_internal.so.${LIBabsl_strings_internal_VERSION}
 @lib lib/libabsl_symbolize.so.${LIBabsl_symbolize_VERSION}
@@ -549,11 +565,13 @@ lib/pkgconfig/absl_base.pc
 lib/pkgconfig/absl_base_internal.pc
 lib/pkgconfig/absl_bind_front.pc
 lib/pkgconfig/absl_bits.pc
+lib/pkgconfig/absl_borrowed_fixup_buffer.pc
 lib/pkgconfig/absl_bounded_utf8_length_sequence.pc
 lib/pkgconfig/absl_btree.pc
 lib/pkgconfig/absl_btree_test_common.pc
 lib/pkgconfig/absl_charset.pc
 lib/pkgconfig/absl_check.pc
+lib/pkgconfig/absl_chunked_queue.pc
 lib/pkgconfig/absl_city.pc
 lib/pkgconfig/absl_civil_time.pc
 lib/pkgconfig/absl_cleanup.pc
@@ -562,6 +580,7 @@ lib/pkgconfig/absl_common_policy_traits.pc
 lib/pkgconfig/absl_compare.pc
 lib/pkgconfig/absl_compressed_tuple.pc
 lib/pkgconfig/absl_config.pc
+lib/pkgconfig/absl_constexpr_testing_internal.pc
 lib/pkgconfig/absl_container_common.pc
 lib/pkgconfig/absl_container_memory.pc
 lib/pkgconfig/absl_cord.pc
@@ -613,6 +632,7 @@ lib/pkgconfig/absl_flags_usage_internal.pc
 lib/pkgconfig/absl_flat_hash_map.pc
 lib/pkgconfig/absl_flat_hash_set.pc
 lib/pkgconfig/absl_function_ref.pc
+lib/pkgconfig/absl_generic_printer_internal.pc
 lib/pkgconfig/absl_graphcycles_internal.pc
 lib/pkgconfig/absl_has_ostream_operator.pc
 lib/pkgconfig/absl_hash.pc
@@ -627,6 +647,7 @@ lib/pkgconfig/absl_hashtable_debug.pc
 lib/pkgconfig/absl_hashtable_debug_hooks.pc
 lib/pkgconfig/absl_hashtable_profiler.pc
 lib/pkgconfig/absl_hashtablez_sampler.pc
+lib/pkgconfig/absl_heterogeneous_lookup_testing.pc
 lib/pkgconfig/absl_inlined_vector.pc
 lib/pkgconfig/absl_inlined_vector_internal.pc
 lib/pkgconfig/absl_int128.pc
@@ -635,6 +656,8 @@ lib/pkgconfig/absl_iterator_traits_test_helper_internal.pc
 lib/pkgconfig/absl_kernel_timeout_internal.pc
 lib/pkgconfig/absl_layout.pc
 lib/pkgconfig/absl_leak_check.pc
+lib/pkgconfig/absl_linked_hash_map.pc
+lib/pkgconfig/absl_linked_hash_set.pc
 lib/pkgconfig/absl_log.pc
 lib/pkgconfig/absl_log_entry.pc
 lib/pkgconfig/absl_log_flags.pc
@@ -645,6 +668,7 @@ lib/pkgconfig/absl_log_internal_check_impl.pc
 lib/pkgconfig/absl_log_internal_check_op.pc
 lib/pkgconfig/absl_log_internal_conditions.pc
 lib/pkgconfig/absl_log_internal_config.pc
+lib/pkgconfig/absl_log_internal_container.pc
 lib/pkgconfig/absl_log_internal_flags.pc
 lib/pkgconfig/absl_log_internal_fnmatch.pc
 lib/pkgconfig/absl_log_internal_format.pc
@@ -677,6 +701,7 @@ lib/pkgconfig/absl_node_slot_policy.pc
 lib/pkgconfig/absl_non_temporal_arm_intrinsics.pc
 lib/pkgconfig/absl_non_temporal_memcpy.pc
 lib/pkgconfig/absl_nullability.pc
+lib/pkgconfig/absl_nullability_traits_internal.pc
 lib/pkgconfig/absl_numeric.pc
 lib/pkgconfig/absl_numeric_representation.pc
 lib/pkgconfig/absl_optional.pc
@@ -723,6 +748,7 @@ lib/pkgconfig/absl_raw_hash_map.pc
 lib/pkgconfig/absl_raw_hash_set.pc
 lib/pkgconfig/absl_raw_hash_set_resize_impl.pc
 lib/pkgconfig/absl_raw_logging_internal.pc
+lib/pkgconfig/absl_requires_internal.pc
 lib/pkgconfig/absl_sample_recorder.pc
 lib/pkgconfig/absl_scoped_mock_log.pc
 lib/pkgconfig/absl_scoped_set_env.pc
@@ -740,7 +766,9 @@ lib/pkgconfig/absl_str_format_internal.pc
 lib/pkgconfig/absl_strerror.pc
 lib/pkgconfig/absl_string_view.pc
 lib/pkgconfig/absl_strings.pc
+lib/pkgconfig/absl_strings_append_and_overwrite.pc
 lib/pkgconfig/absl_strings_internal.pc
+lib/pkgconfig/absl_strings_resize_and_overwrite.pc
 lib/pkgconfig/absl_symbolize.pc
 lib/pkgconfig/absl_synchronization.pc
 lib/pkgconfig/absl_test_allocator.pc

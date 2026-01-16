@@ -13,12 +13,13 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			5c5c71258777d0196dbb3a09cc37d2f56ead28ab	.
 PKGNAME =		tg_owt-0.0.0.20250913
+REVISION =		0
 
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	12.0	# upstream is static only
+SHARED_LIBS =		tg_owt	13.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -50,7 +51,7 @@ WANTLIB += absl_flags_usage_internal absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
 WANTLIB += absl_log_severity absl_malloc_internal absl_raw_hash_set
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_string_view absl_strings
+WANTLIB += absl_str_format_internal absl_borrowed_fixup_buffer absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point avcodec avformat avutil crc32c
