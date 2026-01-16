@@ -8,12 +8,12 @@ include/rocs/graphtheory_export.h
 include/rocs/node.h
 include/rocs/nodetype.h
 @lib lib/librocsgraphtheory.so.${LIBrocsgraphtheory_VERSION}
-lib/qt5/plugins/rocs/
-lib/qt5/plugins/rocs/editorplugins/
-@so lib/qt5/plugins/rocs/editorplugins/assignvaluesplugin.so
-@so lib/qt5/plugins/rocs/editorplugins/generategraphplugin.so
-@so lib/qt5/plugins/rocs/editorplugins/graphlayoutplugin.so
-@so lib/qt5/plugins/rocs/editorplugins/transformedgesplugin.so
+lib/qt6/plugins/rocs/
+lib/qt6/plugins/rocs/editorplugins/
+@so lib/qt6/plugins/rocs/editorplugins/assignvaluesplugin.so
+@so lib/qt6/plugins/rocs/editorplugins/generategraphplugin.so
+@so lib/qt6/plugins/rocs/editorplugins/graphlayoutplugin.so
+@so lib/qt6/plugins/rocs/editorplugins/transformedgesplugin.so
 share/applications/org.kde.rocs.desktop
 share/config.kcfg/
 share/config.kcfg/rocs.kcfg
