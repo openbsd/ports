@@ -12,8 +12,10 @@ AUTOCXX =	1fca5acd26f533576f98da45075d5498a1731d92
 # Chromium CDM headers
 CDM =		9920660ea0162f88c44a648de177e6f8cb976d07
 
+DISTFILES.a +=	chromium-cdm-${CDM}.tar.gz
+SITES.a +=	https://nerd.hu/distfiles/
+
 DIST_TUPLE +=	github tchebb autocxx ${AUTOCXX} ../autocxx
-DIST_TUPLE +=	chromium chromium cdm ${CDM} .
 
 CATEGORIES =	multimedia
 
@@ -66,7 +68,6 @@ do-install:
 		${PREFIX}/lib/openwv/firefox/libwidevinecdm.so
 	ln -sf ${TRUEPREFIX}/lib/openwv/manifest-firefox.json \
 		${PREFIX}/lib/openwv/firefox/manifest.json
-		
 
 .include "crates.inc"
 .include <bsd.port.mk>
