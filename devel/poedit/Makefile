@@ -1,6 +1,6 @@
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
-V=		3.6.3
+V=		3.8.1
 DISTNAME=	poedit-${V}
 CATEGORIES=	devel textproc
 
@@ -13,7 +13,7 @@ SITES=		https://github.com/vslavik/poedit/releases/download/v${V}-oss/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} atk-1.0 boost_system boost_thread-mt
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 boost_thread-mt
 WANTLIB += c cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtkspell3-3 harfbuzz
 WANTLIB += icudata icui18n icuuc intl lucene++ m pango-1.0 pangocairo-1.0

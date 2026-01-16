@@ -81,6 +81,7 @@ share/poedit/icons/AccountLocalazy.png
 share/poedit/icons/CrowdinLogo.png
 share/poedit/icons/CrowdinLogoDark.png
 share/poedit/icons/DownvoteTemplate.png
+share/poedit/icons/EmptyMultiSelectionTemplate.png
 share/poedit/icons/ExtractorsGNUgettext.png
 share/poedit/icons/ItemCommentTemplate.png
 share/poedit/icons/LocalazyLogo.png
@@ -91,22 +92,27 @@ share/poedit/icons/StatusWarningBlack.png
 share/poedit/icons/SuggestionErrorTemplate.png
 share/poedit/icons/SuggestionPerfectMatch.png
 share/poedit/icons/SuggestionTMTemplate.png
-share/poedit/icons/document-open.png
-share/poedit/icons/document-save.png
+share/poedit/icons/Yaru/
+share/poedit/icons/Yaru/scalable/
+share/poedit/icons/Yaru/scalable/actions/
+share/poedit/icons/Yaru/scalable/actions/poedit-pretranslate-symbolic.svg
+share/poedit/icons/Yaru/scalable/actions/poedit-sidebar-symbolic.svg
+share/poedit/icons/Yaru/scalable/actions/poedit-sync-symbolic.svg
+share/poedit/icons/Yaru/scalable/actions/poedit-update-symbolic.svg
+share/poedit/icons/Yaru/scalable/actions/poedit-upload-symbolic.svg
+share/poedit/icons/Yaru/scalable/actions/poedit-validate-symbolic.svg
 share/poedit/icons/hicolor/
 share/poedit/icons/hicolor/scalable/
 share/poedit/icons/hicolor/scalable/actions/
+share/poedit/icons/hicolor/scalable/actions/poedit-pretranslate-symbolic.svg
+share/poedit/icons/hicolor/scalable/actions/poedit-sidebar-symbolic.svg
 share/poedit/icons/hicolor/scalable/actions/poedit-sync-symbolic.svg
 share/poedit/icons/hicolor/scalable/actions/poedit-update-symbolic.svg
+share/poedit/icons/hicolor/scalable/actions/poedit-upload-symbolic.svg
 share/poedit/icons/hicolor/scalable/actions/poedit-validate-symbolic.svg
-share/poedit/icons/hicolor/scalable/actions/sidebar-symbolic.svg
 share/poedit/icons/poedit-status-cat-mid.png
 share/poedit/icons/poedit-status-cat-no.png
 share/poedit/icons/poedit-status-cat-ok.png
-share/poedit/icons/poedit-sync.png
-share/poedit/icons/poedit-update.png
-share/poedit/icons/poedit-validate.png
-share/poedit/icons/sidebar.png
 share/poedit/icons/window-close.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
