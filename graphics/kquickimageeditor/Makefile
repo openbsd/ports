@@ -1,7 +1,7 @@
 COMMENT =	KDE image editing components
 
 DISTNAME =	kquickimageeditor-0.6.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	KQuickImageEditor         0.0 # 0.0
 
