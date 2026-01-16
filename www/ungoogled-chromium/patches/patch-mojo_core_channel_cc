@@ -22,7 +22,7 @@ Index: mojo/core/channel.cc
  
  namespace {
  
-@@ -1306,7 +1310,7 @@ bool Channel::OnControlMessage(Message::MessageType me
+@@ -1309,7 +1313,7 @@ bool Channel::OnControlMessage(Message::MessageType me
  }
  
  // Currently only CrOs, Linux, and Android support upgrades.

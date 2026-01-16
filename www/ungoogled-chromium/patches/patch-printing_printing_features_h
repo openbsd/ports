@@ -1,9 +1,9 @@
 Index: printing/printing_features.h
 --- printing/printing_features.h.orig
 +++ printing/printing_features.h
-@@ -24,7 +24,7 @@ COMPONENT_EXPORT(PRINTING_BASE)
- BASE_DECLARE_FEATURE(kApiPrintingMarginsAndScale);
- #endif  // BUILDFLAG(IS_CHROMEOS)
+@@ -27,7 +27,7 @@ BASE_DECLARE_FEATURE(kApiPrintingMarginsAndScale);
+ COMPONENT_EXPORT(PRINTING_BASE)
+ BASE_DECLARE_FEATURE(kAlignPdfDefaultPrintSettingsWithHTML);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

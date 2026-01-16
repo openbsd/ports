@@ -1,7 +1,7 @@
 Index: net/dns/public/resolv_reader.cc
 --- net/dns/public/resolv_reader.cc.orig
 +++ net/dns/public/resolv_reader.cc
-@@ -34,7 +34,7 @@ std::unique_ptr<ScopedResState> ResolvReader::GetResSt
+@@ -30,7 +30,7 @@ std::unique_ptr<ScopedResState> ResolvReader::GetResSt
  }
  
  bool ResolvReader::IsLikelySystemdResolved() {

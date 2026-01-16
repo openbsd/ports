@@ -10,7 +10,7 @@ Index: chrome/browser/browser_features.h
  BASE_DECLARE_FEATURE(kDbusSecretPortal);
  #endif
  
-@@ -89,7 +89,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServiceUnsandboxed
+@@ -85,7 +85,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServiceUnsandboxed
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlocked);
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlockedWarning);
  

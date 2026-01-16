@@ -10,8 +10,8 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  #include "content/public/browser/child_process_security_policy.h"
  #include "storage/browser/file_system/isolated_context.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
-@@ -305,7 +305,7 @@ void WebRtcLoggingController::StartEventLogging(
-       web_app_id, callback);
+@@ -310,7 +310,7 @@ WebRtcLoggingController::GetLogMessageCallback() {
+   return text_log_handler_->GetLogMessageCallback();
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

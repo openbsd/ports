@@ -1,7 +1,7 @@
 Index: ui/gtk/gtk_compat.cc
 --- ui/gtk/gtk_compat.cc.orig
 +++ ui/gtk/gtk_compat.cc
-@@ -64,27 +64,47 @@ auto DlCast(void* symbol) {
+@@ -74,27 +74,47 @@ auto DlSym(void* library, const char* name) {
  }
  
  void* GetLibGio() {

@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			143.0.7499.192
+V=			144.0.7559.59
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -82,6 +82,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		devel/rust-bindgen \
+		lang/rust,-rustfmt \
 		lang/node \
 		lang/rust \
 		shells/bash \
@@ -305,7 +306,7 @@ do-configure:
 		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+.for _e in config.h config.asm config_components.h config_components.asm libavcodec libavformat libavutil
 	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \

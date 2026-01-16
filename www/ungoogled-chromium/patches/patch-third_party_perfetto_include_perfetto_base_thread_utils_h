@@ -9,7 +9,7 @@ Index: third_party/perfetto/include/perfetto/base/thread_utils.h
  #else
  #include <pthread.h>
  #endif
-@@ -49,6 +50,11 @@ namespace base {
+@@ -52,6 +53,11 @@ namespace base {
  using PlatformThreadId = pid_t;
  inline PlatformThreadId GetThreadId() {
    return gettid();
