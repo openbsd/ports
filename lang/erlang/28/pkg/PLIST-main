@@ -3032,7 +3032,6 @@ lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_eventp.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_html.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_lib.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_otpsgml.beam
-lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_regexp.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_sax_old_dom.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_sax_parser.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_sax_parser_latin1.beam
@@ -3058,6 +3057,8 @@ lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xpath_pred.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xpath_scan.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xs.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xsd.beam
+lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xsd_re.beam
+lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xsd_re_parse.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/ebin/xmerl_xsd_type.beam
 lib/${ERLANG_V}/lib/${ERL_XMERL}/include/
 lib/${ERLANG_V}/lib/${ERL_XMERL}/include/xmerl.hrl
@@ -3075,7 +3076,6 @@ lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_html.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_internal.hrl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_lib.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_otpsgml.erl
-lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_regexp.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_sax_old_dom.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_sax_old_dom.hrl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_sax_parser.erl
@@ -3104,6 +3104,8 @@ lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xpath_pred.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xpath_scan.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xs.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xsd.erl
+lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xsd_re.erl
+lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xsd_re_parse.erl
 lib/${ERLANG_V}/lib/${ERL_XMERL}/src/xmerl_xsd_type.erl
 @mandir lib/${ERLANG_V}/man/
 lib/${ERLANG_V}/man/man1/
