@@ -1,6 +1,6 @@
 COMMENT=		meson PEP 517 Python build backend
 
-MODPY_DISTV=		0.18.0
+MODPY_DISTV=		0.19.0
 DIST_TUPLE=		github mesonbuild meson-python ${MODPY_DISTV} .
 
 CATEGORIES=		devel
