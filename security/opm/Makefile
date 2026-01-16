@@ -2,7 +2,7 @@ COMMENT =	minimalistic password manager written in shell
 
 GH_ACCOUNT =    rnagy
 GH_PROJECT =    opm
-GH_TAGNAME =    1.3
+GH_TAGNAME =    1.4
 
 CATEGORIES =	security
 
