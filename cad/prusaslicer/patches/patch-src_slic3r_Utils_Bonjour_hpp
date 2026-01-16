@@ -4,7 +4,15 @@ https://github.com/prusa3d/PrusaSlicer/issues/13799
 Index: src/slic3r/Utils/Bonjour.hpp
 --- src/slic3r/Utils/Bonjour.hpp.orig
 +++ src/slic3r/Utils/Bonjour.hpp
-@@ -155,11 +155,11 @@ class UdpSocket (public)
+@@ -13,6 +13,7 @@
+ #include <functional>
+ 
+ #include <boost/asio.hpp>
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/asio/ip/address.hpp>
+ #include <boost/optional.hpp>
+ #include <boost/system/error_code.hpp>
+@@ -155,11 +156,11 @@ class UdpSocket (public)
  	UdpSocket(Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
  		, const boost::asio::ip::address& interface_address
@@ -18,7 +26,7 @@ Index: src/slic3r/Utils/Bonjour.hpp
  
  	void send();
  	void async_receive();
-@@ -172,7 +172,7 @@ class UdpSocket (public)
+@@ -172,7 +173,7 @@ class UdpSocket (public)
  	boost::asio::ip::address					    multicast_address;
  	boost::asio::ip::udp::socket					socket;
  	boost::asio::ip::udp::endpoint					mcast_endpoint;
@@ -27,7 +35,7 @@ Index: src/slic3r/Utils/Bonjour.hpp
  	std::vector<BonjourRequest>						requests;
  };
  
-@@ -186,8 +186,8 @@ class LookupSocket : public UdpSocket (public)
+@@ -186,8 +187,8 @@ class LookupSocket : public UdpSocket (public)
  		, Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
  		, const boost::asio::ip::address& interface_address
@@ -38,7 +46,7 @@ Index: src/slic3r/Utils/Bonjour.hpp
  		, txt_keys(txt_keys)
  		, service(service)
  		, service_dn(service_dn)
-@@ -203,8 +203,8 @@ class LookupSocket : public UdpSocket (public)
+@@ -203,8 +204,8 @@ class LookupSocket : public UdpSocket (public)
  		, std::string protocol
  		, Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
@@ -49,7 +57,7 @@ Index: src/slic3r/Utils/Bonjour.hpp
  		, txt_keys(txt_keys)
  		, service(service)
  		, service_dn(service_dn)
-@@ -241,8 +241,8 @@ class ResolveSocket : public UdpSocket (public)
+@@ -241,8 +242,8 @@ class ResolveSocket : public UdpSocket (public)
  		, Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
  		, const boost::asio::ip::address& interface_address
@@ -60,7 +68,7 @@ Index: src/slic3r/Utils/Bonjour.hpp
  		, hostname(hostname)
  
  	{
-@@ -253,8 +253,8 @@ class ResolveSocket : public UdpSocket (public)
+@@ -253,8 +254,8 @@ class ResolveSocket : public UdpSocket (public)
  	ResolveSocket(const std::string& hostname
  		, Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
