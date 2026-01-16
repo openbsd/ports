@@ -1,14 +1,13 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		6
-PROTOBUF_VERSION =	33.2
+PROTOBUF_VERSION =	33.4
 
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-${PROTOBUF_VERSION}
 PKGNAME =		protobuf-${V:S/-//g}
 DISTFILES =		protobuf-${PROTOBUF_VERSION}.tar.gz
-REVISION =		0
 
 PROTOC_VERSION =	${PROTOBUF_VERSION}.0
 SUBST_VARS +=		PROTOC_VERSION
@@ -28,9 +27,10 @@ SITES =	https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
 # New BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} absl_base absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} absl_base absl_borrowed_fixup_buffer
+WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
 WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
@@ -52,9 +52,9 @@ WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
-WANTLIB += absl_strerror absl_borrowed_fixup_buffer absl_strings absl_strings_internal
-WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
+WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
+WANTLIB += absl_synchronization absl_throw_delegate absl_time
+WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c m z
 
 LIB_DEPENDS +=		devel/abseil-cpp
