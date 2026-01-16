@@ -1,32 +1,32 @@
---- geogebra.orig	Fri Oct  4 16:11:17 2013
-+++ geogebra	Fri Dec 20 08:55:47 2013
+Remove bash depend
+Set port default locations / java
+Default to 2D (3D not working)
+
+Index: geogebra/geogebra
+--- geogebra/geogebra.orig
++++ geogebra/geogebra
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #---------------------------------------------
  # Script to start GeoGebra
  #---------------------------------------------
-@@ -9,7 +9,7 @@
+@@ -8,8 +8,7 @@
+ #
  # GG_SCRIPTNAME=<name of originally called script to start GeoGebra> # If unset, name of this script will be used.
  #
- # GG_PATH=<path of directory containing geogebra.jar> # If unset, path of this script will be used.
+-# GG_PATH=<path of directory containing geogebra.jar> # If unset, path of this script will be used.
 -# In this case if the path of script does not contain the geogebra.jar file, /usr/share/geogebra will be used.
-+# In this case if the path of script does not contain the geogebra.jar file, ${TRUEPREFIX}/share/geogebra will be used.
++# GG_PATH=<path of directory containing geogebra.jar> # Set to ${TRUEPREFIX}/share/java/classes/geogebra
  #
  # GG_SYS_CONFIG_PATH=<path of system directory containing geogebra.conf>
  #
-@@ -19,7 +19,7 @@
- #
- # GG_XMS=<initial Java heap size> # If unset, 32m will be used.
- #
--# GG_XMX=<maximum Java heap size> # If unset, 1024m will be used.
-+# GG_XMX=<maximum Java heap size> # If unset, 256m will be used.
- #
- # GG_DJAVA_LIBRARY_PATH=<native library path>
- #
-@@ -45,19 +45,7 @@ fi
+@@ -43,22 +42,9 @@ if [ -z "$GG_SCRIPTNAME" ]; then
+ fi
+ 
  #---------------------------------------------
- # If $GG_PATH not set, use path of this script.
+-# If $GG_PATH not set, use path of this script.
++# Set $GG_PATH
  
 -if [ -z "$GG_PATH" ]; then
 -	GG_PATH="${BASH_SOURCE[0]}"
@@ -36,47 +36,39 @@
 -		done
 -	fi
 -	pushd . > /dev/null
--	cd `dirname ${GG_PATH}` > /dev/null
+-        DIRNAME=`dirname "${GG_PATH}"`
+-	cd "$DIRNAME" > /dev/null
 -	GG_PATH=`pwd`
 -	popd > /dev/null
 -	test -r "${GG_PATH}/geogebra_main.jar" || GG_PATH='/usr/share/geogebra'
 -fi
-+GG_PATH='${TRUEPREFIX}/share/geogebra'
++GG_PATH="${TRUEPREFIX}/share/java/classes/geogebra"
  
  #---------------------------------------------
  # If $GG_CONFIG_PATH not set, use $HOME.
-@@ -70,7 +58,7 @@ fi
- # If $JAVACMD not set, use java.
+@@ -68,19 +54,10 @@ if [ -z "$GG_CONFIG_PATH" ]; then
+ fi
  
+ #---------------------------------------------
+-# If $JAVACMD not set, use java or (preferred) GeoGebra's Java or Oracle's Java 7.
++# If $JAVACMD not set, use javaPathHelper
+ 
+-ORACLE_JAVA=/usr/lib/jvm/java-7-oracle/jre/bin/java
+-GEOGEBRA_JAVA=/usr/lib/jvm/java-geogebra/bin/java
+-
  if [ -z "$JAVACMD" ]; then
--	JAVACMD='java'
-+	JAVACMD=`javaPathHelper -c geogebra`
+-	if [ -x $GEOGEBRA_JAVA ]; then
+-		JAVACMD="$GEOGEBRA_JAVA"
+-	elif [ -x $ORACLE_JAVA ]; then
+-		JAVACMD="$ORACLE_JAVA"
+-	else
+-		JAVACMD='java'
+-	fi
++	JAVACMD=$(javaPathHelper -c geogebra)
  fi
  
  #---------------------------------------------
-@@ -81,10 +69,10 @@ if [ -z "$GG_XMS" ]; then
- fi
- 
- #---------------------------------------------
--# If $GG_XMX not set, use 1024m.
-+# If $GG_XMX not set, use 256m.
- 
- if [ -z "$GG_XMX" ]; then
--	GG_XMX='1024m'
-+	GG_XMX='256m'
- fi
- 
- #---------------------------------------------
-@@ -193,7 +181,7 @@ if [ -w "$GG_CONFIG_FILE" ]; then
- #
- `if [ ! -n "$DEFAULT_GG_XMS" ]; then echo "#DEFAULT_GG_XMS='$GG_XMS'"; else echo "DEFAULT_GG_XMS='$DEFAULT_GG_XMS'"; fi`
- 
--# Set maximum Java heap size, e.g '512m'.
-+# Set maximum Java heap size, e.g '256m'.
- #
- `if [ ! -n "$DEFAULT_GG_XMX" ]; then echo "#DEFAULT_GG_XMX='$GG_XMX'"; else echo "DEFAULT_GG_XMX='$DEFAULT_GG_XMX'"; fi`
- 
-@@ -282,7 +270,7 @@ fi
+@@ -292,7 +269,7 @@ fi
  #---------------------------------------------
  # Define usage function.
  
@@ -85,16 +77,20 @@
  {
  	cat << _USAGE
  Usage: $GG_SCRIPTNAME [Java-options] [GeoGebra-options] [FILE]
-@@ -324,48 +312,48 @@ _USAGE
+@@ -337,8 +314,8 @@ _USAGE
  #---------------------------------------------
- # Check for option --help and pass Java options to Java, others to GeoGebra.
+ # Check for options --help, --2, and pass Java options to Java, others to GeoGebra.
  
+-CLASS=org.geogebra.desktop.GeoGebra3D # by default 3D is used
 -GG_OPTS=()
++CLASS=org.geogebra.desktop.GeoGebra # by default 2D
 +GG_OPTS=""
  for i in "$@"; do
  	case "$i" in
- 	--help | --hel | --he | --h )
- 		func_usage; exit 0 ;;
+ 	--help | --he | --h )
+@@ -346,42 +323,42 @@ for i in "$@"; do
+         --2 )
+ 		CLASS=org.geogebra.desktop.GeoGebra ;;
  	esac
 -	if [ $(expr match "$i" '.*--') -ne 0 ]; then
 -		if [ $(expr match "$i" '.*--showSplash=') -ne 0 ]; then
@@ -147,21 +143,37 @@
  		JAVACMD=${i:9}
  		shift $((1))
  	fi
-@@ -381,9 +369,9 @@ if [ -n "$GG_VERSIONCHECKALLOW" ]; then
+@@ -397,15 +374,15 @@ if [ -n "$GG_VERSIONCHECKALLOW" ]; then
  	GG_OPTS[${#GG_OPTS[*]}]="--versionCheckAllow=$GG_VERSIONCHECKALLOW"
  fi
  GG_OPTS[${#GG_OPTS[*]}]="--settingsfile=$GG_SETTINGS_FILE"
--JAVA_OPTS=("-Xms$GG_XMS" "-Xmx$GG_XMX")
-+JAVA_OPTS="-Xms$GG_XMS -Xmx$GG_XMX"
+-JAVA_OPTS=("-Xms$GG_XMS" "-Xmx$GG_XMX" "-Dawt.useSystemAAFontSettings=on")
++JAVA_OPTS="-Xms$GG_XMS -Xmx$GG_XMX -Dawt.useSystemAAFontSettings=on"
  if [ -n "$GG_DJAVA_LIBRARY_PATH" ]; then
 -	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Djava.library.path=$GG_DJAVA_LIBRARY_PATH"
-+	JAVA_OPTS="-Djava.library.path=$GG_DJAVA_LIBRARY_PATH"
++	JAVA_OPTS="${JAVA_OPTS} -Djava.library.path=$GG_DJAVA_LIBRARY_PATH"
  fi
  if [ -n "$GG_DSUN_JAVA2D_XRENDER" ]; then
- 	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Dsun.java2d.xrender=$GG_DSUN_JAVA2D_XRENDER"
-@@ -395,4 +383,4 @@ fi
+-	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Dsun.java2d.xrender=$GG_DSUN_JAVA2D_XRENDER"
++	JAVA_OPTS="${JAVA_OPTS} -Dsun.java2d.xrender=$GG_DSUN_JAVA2D_XRENDER"
+ fi
+ if [ -n "$GG_DSUN_JAVA2D_OPENGL" ]; then
+-	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Dsun.java2d.opengl=$GG_DSUN_JAVA2D_OPENGL"
++	JAVA_OPTS="${JAVA_OPTS} -Dsun.java2d.opengl=$GG_DSUN_JAVA2D_OPENGL"
+ fi
+ 
+ # Reading font size. xdpyinfo returns 96x96 on most screens
+@@ -427,10 +404,7 @@ unset JAVA_TOOL_OPTIONS
  #---------------------------------------------
  # Run
  
--exec "$JAVACMD" "${JAVA_OPTS[@]}" -jar "$GG_PATH/geogebra.jar" "${GG_OPTS[@]}" "$@"
-+exec $JAVACMD ${JAVA_OPTS[@]} -jar $GG_PATH/geogebra.jar ${GG_OPTS[@]} $@
+-JFXRT=`dirname "$JAVACMD"`/../lib/jfxrt.jar
+-
+-exec "$JAVACMD" "${JAVA_OPTS[@]}" \
+- -cp "$GG_PATH/geogebra.jar" \
+- "-Xbootclasspath/a:$JFXRT" \
++exec $JAVACMD ${JAVA_OPTS[@]} \
++ -cp $GG_PATH/geogebra.jar \
+  $CLASS \
+- "${GG_OPTS[@]}" "$@"
++ ${GG_OPTS[@]} "$@"

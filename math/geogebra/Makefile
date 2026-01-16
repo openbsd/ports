@@ -1,50 +1,35 @@
 COMMENT=	educational mathematical software
 
-V=		4.2.60.0
-DISTNAME=	GeoGebra-Unixlike-Installer-${V}
-PKGNAME=	geogebra-${V}
-REVISION=	8
+V=		5-2-909-9
+DISTNAME=	GeoGebra-Linux-Portable-${V}
+PKGNAME=	geogebra-${V:S/-/./g}
 
-CATEGORIES=	math java
+CATEGORIES=	math
 
-HOMEPAGE=	http://www.geogebra.org
+HOMEPAGE=	https://www.geogebra.org
 
-# Apache Software License
-# GPLv3, LGPLv3, BSD, Public Domain
-# GeoGebra Non-Commercial License
-# Creative Commons Attribution-Share Alike 3.0
-# See: http://www.geogebra.org/download/license.txt
+# GeoGebra Non-Commercial License + EUPL v1.2
+# Creative Commons Attribution-Share Alike 4.0
+# See: https://www.geogebra.org/license
 PERMIT_PACKAGE=	Yes
 
-SITES=			${SITE_GOOGLECODE:=geogebra/}
+SITES=			http://download.geogebra.org/installers/5.2/
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		17+
 
-RUN_DEPENDS=		java/javaPathHelper \
-			devel/desktop-file-utils \
-			misc/shared-mime-info \
-			x11/gtk+4,-guic
+RUN_DEPENDS=		java/javaPathHelper
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
-WRKDIST=		${WRKDIR}/geogebra-${V}
-
-pre-configure:
-	sed -i 's,/usr,${WRKINST}${TRUEPREFIX},g' ${WRKSRC}/install.sh
-	sed -i 's,/usr,${TRUEPREFIX},g' ${WRKSRC}/geogebra.desktop
-	${SUBST_CMD} ${WRKSRC}/geogebra
 
 do-install:
-	mkdir -p ${PREFIX}/share/mime/packages
-	mkdir -p ${PREFIX}/share/applications
-	cd ${WRKBUILD} && ./install.sh
-	gzip -d ${PREFIX}/share/icons/hicolor/scalable/apps/geogebra.svgz \
-		 -o ${PREFIX}/share/icons/hicolor/scalable/apps/geogebra.svg
-	gzip -d ${PREFIX}/share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.file.svgz \
-		-o ${PREFIX}/share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.file.svg
-	gzip -d ${PREFIX}/share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.tool.svgz \
-		-o ${PREFIX}/share/icons/hicolor/scalable/mimetypes/application-vnd.geogebra.tool.svg
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}/geogebra
+	cd ${WRKSRC}/geogebra && \
+		${INSTALL_DATA} *.jar *.txt ${MODJAVA_JAR_DIR}/geogebra/
+	rm ${MODJAVA_JAR_DIR}/geogebra/*-natives-linux-*.jar
+	$(SUBST_PROGRAM) ${WRKSRC}/geogebra/geogebra $(PREFIX)/bin/geogebra
 
 .include <bsd.port.mk>
