@@ -10,7 +10,7 @@ Index: chrome/browser/headless/headless_mode_util.cc
  
  #include "base/base_switches.h"
  #include "base/files/file_path.h"
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  #include "chrome/common/chrome_switches.h"
  #include "content/public/common/content_switches.h"
  
@@ -19,7 +19,7 @@ Index: chrome/browser/headless/headless_mode_util.cc
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -113,7 +113,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+@@ -117,7 +117,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
        command_line->AppendSwitchPath(switches::kUserDataDir, user_data_dir);
      }
  

@@ -19,7 +19,7 @@ Index: ipc/ipc_channel.cc
    if (int global_pid = Channel::GetGlobalPid()) {
      return global_pid;
    }
-@@ -123,7 +123,7 @@ std::string Channel::GenerateUniqueRandomChannelID() {
+@@ -120,7 +120,7 @@ std::string Channel::GenerateUniqueRandomChannelID() {
        base::RandInt(0, std::numeric_limits<int32_t>::max()));
  }
  

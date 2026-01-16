@@ -12,7 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1177,6 +1177,7 @@ component("net") {
+@@ -1182,6 +1182,7 @@ component("net") {
      ":net_deps",
      "//components/network_time/time_tracker",
      "//components/unexportable_keys",
@@ -20,7 +20,7 @@ Index: net/BUILD.gn
      "//net/http:transport_security_state_generated_files",
      "//third_party/simdutf",
    ]
-@@ -1379,6 +1380,19 @@ component("net") {
+@@ -1384,6 +1385,19 @@ component("net") {
      ]
    }
  
@@ -40,7 +40,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1544,7 +1558,7 @@ component("net") {
+@@ -1549,7 +1563,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -49,7 +49,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2290,7 +2304,7 @@ static_library("test_support") {
+@@ -2296,7 +2310,7 @@ static_library("test_support") {
      ]
    }
  
@@ -58,7 +58,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3091,14 +3105,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3099,14 +3113,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -75,7 +75,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3204,6 +3218,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3216,6 +3230,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -86,7 +86,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3260,7 +3278,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3272,7 +3290,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -95,7 +95,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3390,7 +3408,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3402,7 +3420,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

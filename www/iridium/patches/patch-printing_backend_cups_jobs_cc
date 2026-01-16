@@ -1,7 +1,7 @@
 Index: printing/backend/cups_jobs.cc
 --- printing/backend/cups_jobs.cc.orig
 +++ printing/backend/cups_jobs.cc
-@@ -31,7 +31,7 @@
+@@ -26,7 +26,7 @@
  #include "printing/backend/cups_ipp_helper.h"
  #include "printing/printer_status.h"
  

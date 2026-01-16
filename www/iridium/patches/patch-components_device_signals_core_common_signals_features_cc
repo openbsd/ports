@@ -1,7 +1,7 @@
 Index: components/device_signals/core/common/signals_features.cc
 --- components/device_signals/core/common/signals_features.cc.orig
 +++ components/device_signals/core/common/signals_features.cc
-@@ -61,7 +61,7 @@ bool IsSystemSignalCollectionImprovementEnabled() {
+@@ -63,7 +63,7 @@ bool IsPolicyDataCollectionEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

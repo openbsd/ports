@@ -10,7 +10,7 @@ Index: services/screen_ai/screen_ai_service_impl.cc
  #include "partition_alloc/buildflags.h"
  
  #if PA_BUILDFLAG( \
-@@ -237,7 +237,7 @@ ScreenAIService::ScreenAIService(
+@@ -240,7 +240,7 @@ ScreenAIService::ScreenAIService(
      : factory_receiver_(this, std::move(receiver)),
        ocr_receiver_(this),
        main_content_extraction_receiver_(this) {
