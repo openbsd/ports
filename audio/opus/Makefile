@@ -1,8 +1,8 @@
 COMMENT=	IETF audio codec
 
-VERSION=	1.6
+VERSION=	1.6.1
 DISTNAME=	opus-${VERSION}
-SHARED_LIBS=	opus		1.6	# 11.0
+SHARED_LIBS=	opus		1.6	# 11.1
 CATEGORIES=	audio
 
 HOMEPAGE=	https://opus-codec.org/
