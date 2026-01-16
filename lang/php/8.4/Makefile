@@ -6,5 +6,7 @@ ZEND_EXTENSIONS= -opcache
 CONFIGURE_ARGS=	--enable-opcache
 
 WANTLIB-pdo_odbc += iodbcinst
+# for -embed
+BUILD_DEPENDS=	devel/capstone/main
 
 .include <bsd.port.mk>
