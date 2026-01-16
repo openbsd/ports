@@ -1,5 +1,3 @@
-BROKEN-sparc64 = is not a constant expression
-
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
@@ -8,6 +6,8 @@ DISTNAME =	abseil-cpp-${V}
 
 HOMEPAGE =	https://abseil.io/
 SITES =		https://github.com/abseil/abseil-cpp/releases/download/${V}/
+
+DPB_PROPERTIES = parallel
 
 MAINTAINER =	Andrew Krasavin <noiseless-ak@yandex.ru>, \
 		Klemens Nanni <kn@openbsd.org>
@@ -57,6 +57,8 @@ WANTLIB += ${COMPILER_LIBCXX} execinfo gmock gtest m
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c++
 MODULES =		devel/cmake
+
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DABSL_USE_EXTERNAL_GOOGLETEST=${LOCALBASE}/include/gtest \
