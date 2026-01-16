@@ -1,6 +1,6 @@
 COMMENT =	tool to indent and reformat perl scripts
 
-V =		20250912
+V =		20260109
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
@@ -9,6 +9,8 @@ HOMEPAGE =	https://perltidy.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =	SHANCOCK
 
 MODULES =	cpan
 
