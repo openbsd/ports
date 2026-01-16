@@ -12,6 +12,8 @@ EXTRACT_SUFX=		.tar.gz
 MODULES=		devel/meson \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/py-gobject3
+
 # xmllint
 BUILD_DEPENDS +=	textproc/libxml
 
