@@ -1,7 +1,7 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -237,8 +237,7 @@ api_version_minor = 16
+@@ -237,8 +237,7 @@ api_version_minor = 1
  libgps_version_current = 32
  libgps_version_revision = 0
  libgps_version_age = 0
