@@ -1,7 +1,7 @@
 COMMENT=		python bindings for at-spi2
 
 GNOME_PROJECT=		pyatspi
-GNOME_VERSION=		2.58.0
+GNOME_VERSION=		2.58.1
 PKGNAME=		py-atspi-${GNOME_VERSION}
 
 # LGPLv2
