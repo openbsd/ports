@@ -1,7 +1,8 @@
-@bin bin/vad-speech-segments
 @bin bin/whisper-bench
 @bin bin/whisper-cli
+@bin bin/whisper-quantize
 @bin bin/whisper-server
+@bin bin/whisper-vad-speech-segments
 bin/whisper.cpp-download-ggml-model
 include/whisper.h
 lib/cmake/whisper/
