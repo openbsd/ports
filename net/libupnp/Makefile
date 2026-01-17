@@ -1,6 +1,6 @@
 COMMENT=	Universal Plug and Play SDK
 
-V =		1.14.24
+V =		1.14.25
 DISTNAME=	libupnp-${V}
 
 CATEGORIES=	net devel
