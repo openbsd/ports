@@ -1,0 +1,8 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Beginning with OpenBSD 7.8, you will not be able to use the "Yubico OTP
+security key" MFA option with Bitwarden. You must add or use a different
+authenticator which doesn't rely on OTP functionality prior to adding or
+synchronizing an account.
