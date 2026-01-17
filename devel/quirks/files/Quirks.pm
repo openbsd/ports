@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1781 2026/01/12 16:45:01 kurt Exp $
+# $OpenBSD: Quirks.pm,v 1.1782 2026/01/17 15:13:06 kurt Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1030,6 +1030,7 @@ setup_obsolete_reason(
 	4 => 'deskzilla-lite',
 	4 => 'processing',
 	4 => 'thinkingrock',
+	13 => 'tls-attacker',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
@@ -1061,6 +1062,7 @@ my $obsolete_suggestion = {
 	'ruby34-openfact' => 'openfact',
 	'jd-gui' => 'vineflower',
 	'minecraft' => 'multimc',
+	'tls-attacker' => 'py3-tlsfuzzer',
 };
 
 # reasons for obsolete packages
