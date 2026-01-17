@@ -1,7 +1,7 @@
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser/v2
-MODGO_VERSION =	v2.13.2
+MODGO_VERSION =	v2.13.3
 
 DISTNAME =	goreleaser-${MODGO_VERSION}
 
@@ -21,6 +21,9 @@ MODULES =	lang/go
 
 MODGO_LDFLAGS =	-X main.version=${MODGO_VERSION:S/v//}
 
+# Some tests fail due to lack of network and WRKSRC is not a Git repository
+TEST_TARGET =	./...
+
 # Generate shells completion
 pre-install:
 	${MODGO_WORKSPACE}/bin/goreleaser completion bash > ${WRKSRC}/completion.bash
@@ -37,10 +40,6 @@ post-install:
 		${PREFIX}/share/fish/vendor_completions.d/goreleaser.fish
 	${INSTALL_DATA} ${WRKSRC}/completion.zsh \
 		${PREFIX}/share/zsh/site-functions/_goreleaser
-
-# Some tests fail due to lack of network and WRKSRC is not a Git repository
-do-test:
-	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
