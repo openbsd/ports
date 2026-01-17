@@ -1,10 +1,10 @@
 Index: help/Makefile.in
 --- help/Makefile.in.orig
 +++ help/Makefile.in
-@@ -648,7 +648,7 @@ C/figures/%.png:
- 	-cp -f ../src/icons/$(notdir $@) C/figures/
+@@ -654,7 +654,7 @@ C/figures/%.png:
  
- %.1: %.xml
+ # man pages now shares some detail with main Help
+ %.1: %.xml C/refsynopsis.xml C/commandline_details.xml C/extending.xml C/userconfig.xml
 -	$(XSLTPROC) -o $@ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
 +	$(XSLTPROC) -o $@ $(prefix)/share/xsl/docbook/manpages/docbook.xsl $<
  

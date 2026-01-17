@@ -1,7 +1,7 @@
 Index: src/vikmapniklayer.c
 --- src/vikmapniklayer.c.orig
 +++ src/vikmapniklayer.c
-@@ -236,7 +236,7 @@ static VikLayerParamData plugins_default ( void )
+@@ -244,7 +244,7 @@ static VikLayerParamData plugins_default ( void )
  	else if ( g_file_test ( "/usr/lib/mapnik/2.2/input", G_FILE_TEST_EXISTS ) )
  		data.s = g_strdup ( "/usr/lib/mapnik/2.2/input" );
  	else
@@ -10,7 +10,7 @@ Index: src/vikmapniklayer.c
  #endif
  	return data;
  }
-@@ -250,7 +250,7 @@ static VikLayerParamData fonts_default ( void )
+@@ -258,7 +258,7 @@ static VikLayerParamData fonts_default ( void )
  #elif defined __APPLE__
  	data.s = g_strdup ( "/Library/Fonts" );
  #else
