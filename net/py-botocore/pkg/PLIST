@@ -910,6 +910,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/datazone/2018-05-10/endpo
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datazone/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datazone/2018-05-10/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datazone/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/datazone/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/endpoint-rule-set-1.json
@@ -1629,6 +1630,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/2017-04-19/endpoint-rule-set-1.json
@@ -2701,6 +2703,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/end
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/transcribe/2017-10-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/endpoint-rule-set-1.json
