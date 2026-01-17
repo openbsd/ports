@@ -15079,6 +15079,7 @@ go/test/fixedbugs/issue7648.dir/b.go
 go/test/fixedbugs/issue7648.go
 go/test/fixedbugs/issue7675.go
 go/test/fixedbugs/issue7690.go
+go/test/fixedbugs/issue76950.go
 go/test/fixedbugs/issue7740.go
 go/test/fixedbugs/issue7742.go
 go/test/fixedbugs/issue7746.go

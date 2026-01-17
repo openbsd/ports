@@ -7,7 +7,7 @@ COMMENT =		Go programming language
 
 # increment _MODGO_SYSTEM_VERSION in go.port.mk after updating to a new
 # version, to trigger updates of go-compiled ports
-VERSION =		1.25.5
+VERSION =		1.25.6
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -120,7 +120,7 @@ do-test:
 		CXX="${CXX}" \
 		GOCACHE=${WRKDIST}/go-cache \
 		GOPATH=${WRKDIR} \
-		GO_TEST_TIMEOUT_SCALE=3 \
+		GO_TEST_TIMEOUT_SCALE=5 \
 		HOME=${WRKDIR} \
 		PATH=${WRKDIST}/bin:${PATH} \
 		    /bin/ksh -c "exec 3>&-; exec 4>&-; ./run.bash"
