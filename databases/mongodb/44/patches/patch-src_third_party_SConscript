@@ -1,3 +1,5 @@
+Fix build with Boost 1.89
+
 Index: src/third_party/SConscript
 --- src/third_party/SConscript.orig
 +++ src/third_party/SConscript
