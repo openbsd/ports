@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1646 2025/10/24 14:25:34 rsadowski Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1647 2026/01/17 22:30:08 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -133,11 +133,7 @@ FIX_EXTRACT_PERMISSIONS ?= No
 FIX_CLEANUP_PERMISSIONS ?= No
 
 .if !exists(${X11BASE}/man/mandoc.db)
-.  if exists(${X11BASE}/man/whatis.db)
-ERRORS += "Your X11/system is not current"
-.  else
 ERRORS += "Fatal: building ports requires correctly installed X11"
-.  endif
 .endif
 
 # stuff common to bsd.port.mk and bsd.port.subdir.mk
