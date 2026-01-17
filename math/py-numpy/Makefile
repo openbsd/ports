@@ -4,6 +4,8 @@ MODPY_DISTV=	2.4.1
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
+REVISION=	0
+
 CATEGORIES=	math devel
 
 HOMEPAGE=	https://numpy.org/
@@ -78,6 +80,9 @@ pre-build:
 # https://github.com/numpy/numpy/issues/20799
 .if ${MACHINE_ARCH} == i386
 	sed -i '/^option.*disable-optim/ s/false/true/' ${WRKSRC}/meson.options
+.endif
+.if ${MACHINE_ARCH} == amd64
+MODPY_PYBUILD_ARGS += -Csetup-args=-Dcpu-baseline="none"
 .endif
 
 do-test:
