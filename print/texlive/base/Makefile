@@ -16,7 +16,7 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 
 DISTFILES =		texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.zoo =		${DISTNAME}${EXTRACT_SUFX} \

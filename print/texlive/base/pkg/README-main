@@ -109,18 +109,4 @@ Notes for Developers
  * If a non-texlive port installs texmf files then they should be installed
    into share/texmf-local, NOT share/texmf or share/texmf-dist.
 
-ConTeXt Broken
---------------
-
-I was unable to get the new ConTeXt with LuaMetaTeX working on OpenBSD.
-
-After trying to debug it myself with no joy, I tried asking upstream, but got
-no reponse:
-
-  - https://www.mail-archive.com/ntg-context@ntg.nl/msg105219.html
-  - https://github.com/contextgarden/luametatex/issues/7
-
-Note to devs: if fixing context, please regen the pregen tarball after these
-steps: https://texdoc.org/serve/tiptrick.pdf/0
-
 Have fun TeXing.
