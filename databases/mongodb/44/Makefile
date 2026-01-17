@@ -4,11 +4,11 @@ PORTROACH =	limit:^4\.4\.
 ONLY_FOR_ARCHS = amd64
 
 V =		4.4.30
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
-WANTLIB += boost_program_options-mt  boost_system-mt boost_thread-mt
+WANTLIB += boost_program_options-mt boost_thread-mt
 WANTLIB += c crypto execinfo icudata icui18n icuuc kvm m
 WANTLIB += pcre pcrecpp snappy ssl stemmer yaml-cpp z zstd
 

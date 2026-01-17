@@ -10,6 +10,15 @@ Index: SConstruct
  
  # Options TODOs:
  #
+@@ -1119,7 +1119,7 @@ def printLocalInfo():
+ 
+ printLocalInfo()
+ 
+-boostLibs = [ "filesystem", "program_options", "system", "iostreams", "thread", "log" ]
++boostLibs = [ "filesystem", "program_options", "iostreams", "thread", "log" ]
+ 
+ onlyServer = len( COMMAND_LINE_TARGETS ) == 0 or ( len( COMMAND_LINE_TARGETS ) == 1 and str( COMMAND_LINE_TARGETS[0] ) in [ "mongod" , "mongos" , "test" ] )
+ 
 @@ -1189,6 +1189,7 @@ envDict = dict(BUILD_ROOT=buildDir,
                 CONFIGURELOG='$BUILD_ROOT/scons/config.log',
                 CONFIG_HEADER_DEFINES={},
