@@ -2,7 +2,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
 V=		3.0.23
-REVISION-main=	0
+REVISION-main=	1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -65,13 +65,13 @@ WANTLIB-main += dvdread ebml elf epoll-shim epoxy execinfo expat ffi
 WANTLIB-main += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB-main += gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz
-WANTLIB-main += hogweed icudata icui18n icuuc idn2 jpeg lz4 lzma matroska
+WANTLIB-main += hogweed icudata icui18n icuuc idn2 ixml jpeg lz4 lzma matroska
 WANTLIB-main += mp3lame nettle nfs notify ogg opus p11-kit pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pciaccess pcre2-16 pcre2-8
 WANTLIB-main += pixman-1 png protobuf-lite rsvg-2 sharpyuv
 WANTLIB-main += smb2 sndio soxr speex speexdsp ssl swresample swscale
 WANTLIB-main += tag tasn1 theoradec theoraenc tiff udfread unibreak
-WANTLIB-main += unistring usbhid utf8_range utf8_validity va va-drm
+WANTLIB-main += unistring upnp usbhid utf8_range utf8_validity va va-drm
 WANTLIB-main += va-x11 vorbis vorbisenc vpx wayland-client wayland-cursor
 WANTLIB-main += wayland-egl webp webpmux x264 x265 xcb xcb-composite
 WANTLIB-main += xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
@@ -136,6 +136,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		multimedia/x264 \
 		multimedia/x265 \
 		net/avahi,-libs \
+		net/libupnp \
 		security/gnutls \
 		security/libgcrypt \
 		textproc/libebml \
@@ -212,7 +213,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-tiger \
 		--disable-twolame \
 		--disable-udev \
-		--disable-upnp \
 		--disable-vdpau \
 		--disable-vnc \
 		--disable-vpx \
