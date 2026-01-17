@@ -1,0 +1,11 @@
+Index: auxil/zeek-aux/adtrace/adtrace.c
+--- auxil/zeek-aux/adtrace/adtrace.c.orig
++++ auxil/zeek-aux/adtrace/adtrace.c
+@@ -3,7 +3,6 @@
+ #include <sys/types.h>
+ /* clang-format on */
+ #include <arpa/inet.h>
+-#include <net/ethernet.h>
+ #include <netinet/in.h>
+ #include <netinet/ip.h>
+ #include <pcap.h>

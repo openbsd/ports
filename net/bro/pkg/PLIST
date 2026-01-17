@@ -5,15 +5,16 @@
 @bin bin/bifcl
 @bin bin/binpac
 @bin bin/capstats
-@bin bin/gen-zam
 @bin bin/paraglob-test
 @bin bin/rst
 bin/trace-summary
 @bin bin/zeek
 @bin bin/zeek-archiver
 bin/zeek-client
+@bin bin/zeek-cluster-layout-generator
 bin/zeek-config
 @bin bin/zeek-cut
+@bin bin/zeek-systemd-generator
 bin/zeekctl
 bin/zkg
 include/binpac/
@@ -44,7 +45,6 @@ include/broker/data_envelope.hh
 include/broker/defaults.hh
 include/broker/detail/
 include/broker/detail/abstract_backend.hh
-include/broker/detail/algorithms.hh
 include/broker/detail/appliers.hh
 include/broker/detail/assert.hh
 include/broker/detail/comparable.hh
@@ -55,9 +55,7 @@ include/broker/detail/hash.hh
 include/broker/detail/inspect_enum.hh
 include/broker/detail/make_backend.hh
 include/broker/detail/memory_backend.hh
-include/broker/detail/monotonic_buffer_resource.hh
 include/broker/detail/native_socket.hh
-include/broker/detail/next_tick.hh
 include/broker/detail/opaque_type.hh
 include/broker/detail/overload.hh
 include/broker/detail/peer_status_map.hh
@@ -240,7 +238,6 @@ include/zeek/ScriptProfile.h
 include/zeek/ScriptValidation.h
 include/zeek/SerializationFormat.h
 include/zeek/SmithWaterman.h
-include/zeek/Span.h
 include/zeek/Stats.h
 include/zeek/Stmt.h
 include/zeek/StmtBase.h
@@ -659,6 +656,7 @@ include/zeek/cluster/OnLoop.h
 include/zeek/cluster/Serializer.h
 include/zeek/cluster/Telemetry.h
 include/zeek/cluster/backend/
+include/zeek/cluster/backend/none/
 include/zeek/cluster/backend/zeromq/
 include/zeek/cluster/backend/zeromq/Plugin.h
 include/zeek/cluster/backend/zeromq/ZeroMQ-Proxy.h
@@ -858,6 +856,9 @@ include/zeek/iosource/Manager.h
 include/zeek/iosource/Packet.h
 include/zeek/iosource/PktDumper.h
 include/zeek/iosource/PktSrc.h
+include/zeek/iosource/af_packet/
+include/zeek/iosource/af_packet/AF_Packet.h
+include/zeek/iosource/af_packet/RX_Ring.h
 include/zeek/iosource/pcap/
 include/zeek/iosource/pcap/Dumper.h
 include/zeek/iosource/pcap/Source.h
@@ -1359,6 +1360,8 @@ share/examples/zeek/site/
 @sample ${SYSCONFDIR}/zeek/site/
 share/examples/zeek/site/local.zeek
 @sample ${SYSCONFDIR}/zeek/site/local.zeek
+share/examples/zeek/zeek/
+share/examples/zeek/zeek/zeek.conf
 share/examples/zeek/zeekctl.cfg
 @sample ${SYSCONFDIR}/zeek/zeekctl.cfg
 share/examples/zeek/zkg/
@@ -1568,9 +1571,7 @@ share/zeek/base/frameworks/broker/main.zeek
 share/zeek/base/frameworks/broker/store.zeek
 share/zeek/base/frameworks/cluster/
 share/zeek/base/frameworks/cluster/__load__.zeek
-share/zeek/base/frameworks/cluster/broker-backpressure.zeek
 share/zeek/base/frameworks/cluster/broker-stores.zeek
-share/zeek/base/frameworks/cluster/broker-telemetry.zeek
 share/zeek/base/frameworks/cluster/main.zeek
 share/zeek/base/frameworks/cluster/nodes/
 share/zeek/base/frameworks/cluster/nodes/logger.zeek
@@ -1578,9 +1579,12 @@ share/zeek/base/frameworks/cluster/nodes/manager.zeek
 share/zeek/base/frameworks/cluster/nodes/proxy.zeek
 share/zeek/base/frameworks/cluster/nodes/worker.zeek
 share/zeek/base/frameworks/cluster/pools.zeek
+share/zeek/base/frameworks/cluster/pubsub.zeek
 share/zeek/base/frameworks/cluster/setup-connections.zeek
+share/zeek/base/frameworks/cluster/setup-subscriptions.zeek
 share/zeek/base/frameworks/cluster/supervisor.zeek
 share/zeek/base/frameworks/cluster/telemetry.zeek
+share/zeek/base/frameworks/cluster/types.zeek
 share/zeek/base/frameworks/config/
 share/zeek/base/frameworks/config/__load__.zeek
 share/zeek/base/frameworks/config/input.zeek
@@ -2111,11 +2115,15 @@ share/zeek/policy/files/x509/disable-certificate-events-known-certs.zeek
 share/zeek/policy/frameworks/
 share/zeek/policy/frameworks/analyzer/
 share/zeek/policy/frameworks/analyzer/debug-logging.zeek
-share/zeek/policy/frameworks/analyzer/deprecated-dpd-log.zeek
 share/zeek/policy/frameworks/analyzer/detect-protocols.zeek
 share/zeek/policy/frameworks/analyzer/packet-segment-logging.zeek
 share/zeek/policy/frameworks/cluster/
 share/zeek/policy/frameworks/cluster/backend/
+share/zeek/policy/frameworks/cluster/backend/broker/
+share/zeek/policy/frameworks/cluster/backend/broker/__load__.zeek
+share/zeek/policy/frameworks/cluster/backend/broker/backpressure.zeek
+share/zeek/policy/frameworks/cluster/backend/broker/main.zeek
+share/zeek/policy/frameworks/cluster/backend/broker/telemetry.zeek
 share/zeek/policy/frameworks/cluster/backend/zeromq/
 share/zeek/policy/frameworks/cluster/backend/zeromq/__load__.zeek
 share/zeek/policy/frameworks/cluster/backend/zeromq/connect.zeek
@@ -2123,14 +2131,13 @@ share/zeek/policy/frameworks/cluster/backend/zeromq/main.zeek
 share/zeek/policy/frameworks/cluster/experimental.zeek
 share/zeek/policy/frameworks/cluster/nodes-experimental/
 share/zeek/policy/frameworks/cluster/nodes-experimental/manager.zeek
+share/zeek/policy/frameworks/cluster/websocket/
+share/zeek/policy/frameworks/cluster/websocket/server.zeek
 share/zeek/policy/frameworks/conn_key/
 share/zeek/policy/frameworks/conn_key/vlan_fivetuple.zeek
 share/zeek/policy/frameworks/control/
 share/zeek/policy/frameworks/control/controllee.zeek
 share/zeek/policy/frameworks/control/controller.zeek
-share/zeek/policy/frameworks/dpd/
-share/zeek/policy/frameworks/dpd/detect-protocols.zeek
-share/zeek/policy/frameworks/dpd/packet-segment-logging.zeek
 share/zeek/policy/frameworks/files/
 share/zeek/policy/frameworks/files/detect-MHR.zeek
 share/zeek/policy/frameworks/files/entropy-test-all-files.zeek
@@ -2233,6 +2240,7 @@ share/zeek/policy/misc/dump-events.zeek
 share/zeek/policy/misc/loaded-scripts.zeek
 share/zeek/policy/misc/profiling.zeek
 share/zeek/policy/misc/stats.zeek
+share/zeek/policy/misc/systemd-generator.zeek
 share/zeek/policy/misc/trim-trace-file.zeek
 share/zeek/policy/misc/unknown-protocols.zeek
 share/zeek/policy/misc/weird-stats.zeek
@@ -2256,6 +2264,7 @@ share/zeek/policy/protocols/dhcp/sub-opts.zeek
 share/zeek/policy/protocols/dns/
 share/zeek/policy/protocols/dns/auth-addl.zeek
 share/zeek/policy/protocols/dns/detect-external-names.zeek
+share/zeek/policy/protocols/dns/disable-opcode-log-fields.zeek
 share/zeek/policy/protocols/dns/log-original-query-case.zeek
 share/zeek/policy/protocols/ftp/
 share/zeek/policy/protocols/ftp/detect-bruteforcing.zeek
@@ -2263,7 +2272,6 @@ share/zeek/policy/protocols/ftp/detect.zeek
 share/zeek/policy/protocols/ftp/software.zeek
 share/zeek/policy/protocols/http/
 share/zeek/policy/protocols/http/detect-sql-injection.zeek
-share/zeek/policy/protocols/http/detect-sqli.zeek
 share/zeek/policy/protocols/http/detect-webapps.sig
 share/zeek/policy/protocols/http/detect-webapps.zeek
 share/zeek/policy/protocols/http/header-names.zeek
@@ -2272,6 +2280,7 @@ share/zeek/policy/protocols/http/software.zeek
 share/zeek/policy/protocols/http/var-extraction-cookies.zeek
 share/zeek/policy/protocols/http/var-extraction-uri.zeek
 share/zeek/policy/protocols/krb/
+share/zeek/policy/protocols/krb/md5-ticket-logging.zeek
 share/zeek/policy/protocols/krb/ticket-logging.zeek
 share/zeek/policy/protocols/modbus/
 share/zeek/policy/protocols/modbus/known-masters-slaves.zeek
@@ -2291,6 +2300,7 @@ share/zeek/policy/protocols/ssh/
 share/zeek/policy/protocols/ssh/detect-bruteforcing.zeek
 share/zeek/policy/protocols/ssh/geo-data.zeek
 share/zeek/policy/protocols/ssh/interesting-hostnames.zeek
+share/zeek/policy/protocols/ssh/md5-host-key-logging.zeek
 share/zeek/policy/protocols/ssh/software.zeek
 share/zeek/policy/protocols/ssl/
 share/zeek/policy/protocols/ssl/certificate-request-info.zeek

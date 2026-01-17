@@ -1,10 +1,9 @@
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-8.0.4
-REVISION =		0
+DISTNAME =		zeek-8.1.0
 
 SHARED_LIBS +=		binpac		3.0
-SHARED_LIBS +=		broker		9.0
+SHARED_LIBS +=		broker		10.0
 # only used at configure+build time; these libs aren't installed
 SHARED_LIBS +=		caf_core	4.1
 
@@ -79,6 +78,15 @@ CXXFLAGS +=		-DAI_NUMERICSERV=NI_NUMERICSERV
 
 # XXX Some files don't see PRIu64 et al. despite the right headers being there
 CXXFLAGS +=		-include cinttypes
+
+# XXX our <arpa/nameser.h> is too old
+.for rr in A AAAA PTR TXT
+CXXFLAGS +=		-Dns_t_${rr:L}=T_${rr}
+.endfor
+# copied from libbind
+CXXFLAGS +=		-DNS_HFIXEDSZ=12 \
+			-DNS_QFIXEDSZ=4 \
+			-DNS_RRFIXEDSZ=10
 
 CONFIGURE_ARGS =	-DBINARY_PACKAGING_MODE=ON \
 			-DCMAKE_INSTALL_PREFIX=${PREFIX} \

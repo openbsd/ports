@@ -1,0 +1,13 @@
+Index: auxil/zeek-aux/adtrace/ethertype.h
+--- auxil/zeek-aux/adtrace/ethertype.h.orig
++++ auxil/zeek-aux/adtrace/ethertype.h
+@@ -33,7 +33,8 @@
+  * <netinet/if_ether.h> if all it needs are ETHERTYPE_ values.
+  */
+ 
+-#include <net/ethernet.h>
++#include <net/if_arp.h>
++#include <netinet/if_ether.h>
+ 
+ #ifndef ETHERTYPE_PUP
+ #define ETHERTYPE_PUP 0x0200 /* PUP protocol */
