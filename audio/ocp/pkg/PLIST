@@ -18,6 +18,7 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/95-playmp2.so
 @so lib/ocp/autoload/95-playogg.so
 @so lib/ocp/autoload/95-playopl.so
+@so lib/ocp/autoload/95-playqoa.so
 @so lib/ocp/autoload/95-playsid.so
 @so lib/ocp/autoload/95-playtimidity.so
 @so lib/ocp/autoload/95-playwav.so
