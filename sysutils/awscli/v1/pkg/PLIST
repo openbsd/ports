@@ -633,6 +633,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/$
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}caseconflict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}caseconflict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}exacttimestamps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -642,6 +644,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/$
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}sizeonly.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}sizeonly.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/base.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/caseconflict.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/delete.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/exacttimestamps.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/register.py
@@ -849,6 +852,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-rest-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage-plan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-vpc-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/delete-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/get-connection.rst
@@ -6751,6 +6755,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/text.py
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/config-vars.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/return-codes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/topics/s3-case-insensitivity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/s3-config.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/s3-faq.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/topic-tags.json
