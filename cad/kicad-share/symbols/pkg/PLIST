@@ -19,6 +19,7 @@ share/kicad/symbols/Analog_ADC.kicad_sym
 share/kicad/symbols/Analog_DAC.kicad_sym
 share/kicad/symbols/Analog_Switch.kicad_sym
 share/kicad/symbols/Audio.kicad_sym
+share/kicad/symbols/Auxiliary_Items.kicad_sym
 share/kicad/symbols/Battery_Management.kicad_sym
 share/kicad/symbols/Buffer.kicad_sym
 share/kicad/symbols/CPLD_Altera.kicad_sym

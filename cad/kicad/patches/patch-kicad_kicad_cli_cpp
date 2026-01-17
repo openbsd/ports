@@ -1,7 +1,7 @@
 Index: kicad/kicad_cli.cpp
 --- kicad/kicad_cli.cpp.orig
 +++ kicad/kicad_cli.cpp
-@@ -532,7 +532,7 @@ struct APP_KICAD_CLI : public wxAppConsole
+@@ -530,7 +530,7 @@ struct APP_KICAD_CLI : public wxAppConsole
      {
          program.OnPgmExit();
  
