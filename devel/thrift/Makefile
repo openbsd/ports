@@ -2,6 +2,7 @@ COMMENT =	software stack for point-to-point RPC implementation
 
 V =		0.21.0
 DISTNAME =	thrift-${V}
+REVISION =	0
 
 CATEGORIES=	devel
 
