@@ -5,6 +5,7 @@ COMMENT =	planetarium simulator for KDE
 V =		3.8.0
 DISTNAME =	kstars-${V}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	astro education
 
@@ -17,18 +18,17 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
+WANTLIB += KF6CoreAddons KF6GuiAddons KF6I18n KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
 WANTLIB += KF6NotifyConfig KF6Plotting KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6DataVisualization
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Sql Qt6Svg Qt6SvgWidgets Qt6WebSockets Qt6Widgets
-WANTLIB += Qt6Xml c cfitsio curl gsl gslcblas indiclient m nova
-WANTLIB += opencv_calib3d opencv_core opencv_features2d opencv_flann
-WANTLIB += opencv_highgui opencv_imgcodecs opencv_imgproc opencv_photo
-WANTLIB += opencv_videoio qt6keychain raw stellarsolver6 wcs z
+WANTLIB += Qt6Quick Qt6Sql Qt6Svg Qt6SvgWidgets Qt6WebSockets
+WANTLIB += Qt6Widgets Qt6Xml c cfitsio curl gsl gslcblas indiclient
+WANTLIB += m nova opencv_calib3d opencv_core opencv_features2d
+WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_photo
+WANTLIB += qt6keychain raw stellarsolver6 wcs z
 
 SITES =			${SITE_KDE:=stable/kstars/${V}/}
 EXTRACT_SUFX =		.tar.xz
@@ -59,7 +59,6 @@ LIB_DEPENDS =		astro/libnova \
 			devel/kf6/kconfig \
 			devel/kf6/kconfigwidgets \
 			devel/kf6/kcoreaddons \
-			devel/kf6/kcrash \
 			devel/kf6/kguiaddons \
 			devel/kf6/ki18n \
 			devel/kf6/kio \
