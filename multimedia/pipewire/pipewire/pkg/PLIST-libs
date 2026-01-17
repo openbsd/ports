@@ -57,6 +57,7 @@ include/pipewire-0.3/pipewire/resource.h
 include/pipewire-0.3/pipewire/stream.h
 include/pipewire-0.3/pipewire/thread-loop.h
 include/pipewire-0.3/pipewire/thread.h
+include/pipewire-0.3/pipewire/timer-queue.h
 include/pipewire-0.3/pipewire/type.h
 include/pipewire-0.3/pipewire/utils.h
 include/pipewire-0.3/pipewire/version.h
