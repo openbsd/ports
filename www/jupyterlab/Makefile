@@ -1,6 +1,6 @@
 COMMENT =		Jupyterlab computational environment
 
-MODPY_DISTV =		4.5.1
+MODPY_DISTV =		4.5.2
 DISTNAME =		jupyterlab-${MODPY_DISTV}
 
 CATEGORIES =		www devel
