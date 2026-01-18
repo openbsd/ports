@@ -1,14 +1,15 @@
 COMMENT =	KDE plugin framework for user interface components
 DISTNAME =	kparts-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Parts                  0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml m
+WANTLIB += KF6KIOWidgets KF6Service KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		archivers/gtar

@@ -1,5 +1,6 @@
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  Kirigami                  0.0 # 0.0
 SHARED_LIBS +=  KirigamiDelegates         0.1 # 0.0
@@ -13,8 +14,8 @@ SHARED_LIBS +=	KirigamiPolyfill          0.0 # 0.0
 SHARED_LIBS +=	KirigamiTemplates         0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 m xkbcommon
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += m xkbcommon
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \

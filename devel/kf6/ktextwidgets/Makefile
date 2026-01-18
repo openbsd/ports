@@ -1,12 +1,13 @@
 COMMENT =	text editing widgets for KDE
 DISTNAME =	ktextwidgets-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6TextWidgets            0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6I18n KF6SonnetCore KF6SonnetUi
-WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Multimedia Qt6Network
-WANTLIB += Qt6TextToSpeech Qt6Widgets m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6I18n KF6SonnetCore KF6SonnetUi KF6WidgetsAddons
+WANTLIB += Qt6Core Qt6Gui Qt6Multimedia Qt6Network Qt6TextToSpeech
+WANTLIB += Qt6Widgets m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt6/qtwebengine

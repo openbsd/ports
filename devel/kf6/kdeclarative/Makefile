@@ -1,13 +1,14 @@
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6CalendarEvents         0.0 # 0.0
 SHARED_LIBS +=	kquickcontrolsprivate     0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6GlobalAccel
 WANTLIB += KF6GuiAddons KF6I18n KF6WidgetsAddons Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Widgets m
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets
+WANTLIB += m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt6/qtshadertools

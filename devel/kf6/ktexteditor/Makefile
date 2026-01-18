@@ -1,5 +1,6 @@
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6TextEditor             1.0 # 0.0
 
@@ -7,11 +8,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6AuthCore KF6Codecs
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetCore KF6SonnetUi
-WANTLIB += KF6SyntaxHighlighting KF6WidgetsAddons KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6TextToSpeech Qt6Widgets Qt6Xml c editorconfig
-WANTLIB += m
+WANTLIB += KF6Parts KF6Service KF6SonnetCore KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6PrintSupport Qt6Qml Qt6TextToSpeech Qt6Widgets
+WANTLIB += Qt6Xml c editorconfig m
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools

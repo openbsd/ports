@@ -1,10 +1,10 @@
 COMMENT =	QtQuickControls 2 style for painting
 DISTNAME =	qqc2-desktop-style-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6IconThemes KirigamiPlatform Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Widgets m
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets m
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme>=${MODKF6_VERSION} \
 		devel/kf6/kconfig>=${MODKF6_VERSION} \

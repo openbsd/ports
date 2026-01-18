@@ -1,19 +1,19 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6KIOCore                1.0 # 0.0
 SHARED_LIBS +=  KF6KIOFileWidgets         0.1 # 0.0
 SHARED_LIBS +=  KF6KIOGui                 0.2 # 0.0
 SHARED_LIBS +=  KF6KIOWidgets             0.1 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6AuthCore KF6Bookmarks
-WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons KF6DocTools
-WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
-WANTLIB += KF6JobWidgets KF6Service KF6Solid KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6Widgets Qt6Xml X11 c exslt m xkbcommon
-WANTLIB += xml2 xslt
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6BookmarksWidgets
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6DocTools KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews KF6JobWidgets
+WANTLIB += KF6Service KF6Solid KF6Wallet KF6WidgetsAddons KF6WindowSystem
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml X11 c exslt m xkbcommon xml2
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \
