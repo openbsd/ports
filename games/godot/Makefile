@@ -4,11 +4,10 @@ COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 COMMENT-sharp=	.NET libs for mono/C# module of Godot
 
-V =		3.6
+V =		3.6.2
 SHARPFILES_V =	3.5.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	0
 
 CATEGORIES =	games
 
@@ -23,11 +22,11 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -tools -sharp
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
-WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
+WANTLIB += GL LinearMath X11 Xcursor Xext
+WANTLIB += Xi Xinerama Xrandr Xrender c enet execinfo
 WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
-WANTLIB += opusfile pcre2-32 sharpyuv sndio steam_api theora theoradec
-WANTLIB += usbhid vorbis vorbisfile vpx webp xcb xcb-dri2 xcb-glx
+WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
+WANTLIB += usbhid vorbis vorbisfile vpx webp
 WANTLIB += zstd
 
 WANTLIB-main =	${WANTLIB} Xss
@@ -36,14 +35,14 @@ WANTLIB-tools =	${WANTLIB}
 # C++14
 COMPILER =	base-clang ports-gcc
 
-SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
+SITES =	https://github.com/godotengine/godot/releases/download/${V}-stable/
 EXTRACT_SUFX =	.tar.xz
 
 SITES.sharp =		https://thfr.info/distfiles/
 DISTFILES.sharp =	godot-${SHARPFILES_V}-mono-glue.tar.gz \
 			godot-${SHARPFILES_V}-nuget-packages.tar.xz
 
-DIST_TUPLE +=	github CoaguCo-Industries GodotSteam v3.20 godotsteam # MIT
+DIST_TUPLE +=	codeberg godotsteam godotsteam v3.20 godotsteam # MIT
 
 MODULES =	devel/scons
 
