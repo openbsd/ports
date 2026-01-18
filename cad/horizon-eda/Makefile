@@ -2,9 +2,8 @@ COMMENT =	electronic design automation package
 
 GH_ACCOUNT =	horizon-eda
 GH_PROJECT =	horizon
-GH_TAGNAME =	v2.6.0
+GH_TAGNAME =	v2.7.2
 PKGNAME =	${DISTNAME:S/horizon/horizon-eda/}
-REVISION =	3
 
 CATEGORIES =	cad
 
@@ -30,6 +29,7 @@ MODULES =		devel/meson
 
 BUILD_DEPENDS =		devel/cmake/core \
 			graphics/glm \
+			graphics/py-cairo \
 			net/cppzmq
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
