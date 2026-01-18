@@ -127,7 +127,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (jjui-v0.9.9.zip) = ku1V2zCA264FjFpXnlQ1pn9aqys0cSCTjaGVCYCEfAk=
+SHA256 (jjui-v0.9.10.zip) = O2bwVq3b3rV5ZqrmNXy0vPXgieIRQWcHMEW+UKOcVjk=
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.mod) = 43
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.5.0.zip) = 352548
 SIZE (go_modules/github.com/!make!now!just/heredoc/@v/v1.0.0.mod) = 47
@@ -257,4 +257,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = 39844
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (jjui-v0.9.9.zip) = 226694
+SIZE (jjui-v0.9.10.zip) = 234336
