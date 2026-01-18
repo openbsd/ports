@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.9 2023/05/16 13:59:17 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.10 2026/01/18 10:02:28 tb Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -312,6 +312,7 @@ sub prepare_backsubst($self, $f, $p)
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
+		$p->subst->{used_var_libs}{$k} = 1;
 		# XXX redo backsubst on the variable name
 		my $s = $p->subst->do_backsubst(
 		    "\@lib ${path}lib$name.so.\$\{$k\}", $self->unsubst, $self);

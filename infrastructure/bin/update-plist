@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.215 2024/04/14 17:24:37 phessler Exp $
+# $OpenBSD: update-plist,v 1.216 2026/01/18 10:02:28 tb Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1225,6 +1225,29 @@ sub report_issues($self)
 	$self->report_per_list("oldcomments", "Warning: #1 still contains:");
 }
 
+sub report_shared_libs_issues($self)
+{
+	for my $k (sort keys %{$self->{seen_var_libs}}) {
+		next if $self->{used_var_libs}{$k};
+		print "Warning: $k unused ? (check SHARED_LIBS)\n";
+	}
+}
+
+sub log_variables($self, $s)
+{
+	# XXX we do it for all subpackages, even though the lib variables
+	# will likely be the same but you never know
+	# for now, we only log stuff related to SHARED_LIBS
+
+	for my $k (keys %{$s->hash}) {
+		next unless $k =~ m/^LIB.*_VERSION$/;
+		$self->{seen_var_libs}{$k} = 1;
+	}
+	for my $k (keys %{$s->{used_var_libs}}) {
+		$self->{used_var_libs}{$k} = 1;
+	}
+}
+
 sub write_new_files($self)
 {
 	for my $p (@{$self->{lists}}) {
@@ -1233,8 +1256,8 @@ sub write_new_files($self)
 		    $self->{state}{extnew});
 		$p->nlist->redistribute($p);
 		$p->{tracker}->write_all($p);
-		# TODO   old make-plist noticed libraries with a 
-		# LIB*_VERSION but no matching file
+
+		$self->log_variables($p->subst);
 	}
 }
 
@@ -1389,6 +1412,10 @@ if (defined $ports_gid) {
 # this is the step responsible for adjusting mode AND backsubstituting
 # variables!
 $self->write_new_files;
+
+# XXX need write_new_files first to report on backsubst issues
+# should I move report_issues so late ?
+$self->report_shared_libs_issues;
 
 # and now, we figure out where to move the new files
 my @towrite = ();
