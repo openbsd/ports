@@ -1,9 +1,12 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -99,7 +99,7 @@ build-backend = "mesonpy"
+@@ -97,9 +97,9 @@ maintenance = ["conda-lock==3.0.1"]
+ build-backend = "mesonpy"
+ # Minimum requirements for the build system to execute.
  requires = [
-     "meson-python>=0.16.0,<0.19.0",
+-    "meson-python>=0.16.0,<0.19.0",
++    "meson-python",
      "Cython>=3.0.10,<3.2.0",
 -    "numpy>=2,<2.4.0",
 +    "numpy>=2",

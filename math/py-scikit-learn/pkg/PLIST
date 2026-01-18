@@ -67,6 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/tempita.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/version.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_built_with_meson.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_config.py
+@so lib/python${MODPY_VERSION}/site-packages/sklearn/_cyutility.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/_distributor_init.py
 @so lib/python${MODPY_VERSION}/site-packages/sklearn/_isotonic.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/sklearn/_isotonic.pyx
