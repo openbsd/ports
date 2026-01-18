@@ -1,6 +1,7 @@
 COMMENT =	libmpv wrapper for QtQuick2 and QML
 
 DISTNAME =	mpvqt-1.1.1
+REVISION =	0
 
 CATEGORIES =	multimedia
 
@@ -15,8 +16,7 @@ SHARED_LIBS +=  MpvQt                     2.0 # 0.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += m mpv
+WANTLIB += Qt6Qml Qt6Quick m mpv
 
 SITES =		${SITE_KDE:=stable/mpvqt/}
 EXTRACT_SUFX =	.tar.xz

@@ -1,6 +1,7 @@
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-97.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 
@@ -13,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Svg Qt6Widgets boost_filesystem
-WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
-WANTLIB += m matroska ogg pugixml vorbis z
+WANTLIB += c cmark dvdread ebml fmt gmp iconv intl m matroska
+WANTLIB += ogg pugixml vorbis z
 
 SITES=		https://mkvtoolnix.download/sources/
 
