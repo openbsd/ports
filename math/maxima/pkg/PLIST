@@ -14,6 +14,7 @@ info/maxima.info
 info/maxima.info-1
 info/maxima.info-2
 info/maxima.info-3
+info/maxima.info-4
 @info info/nelder_mead.info
 @info info/raddenest.info
 @info info/symplectic_ode.info
@@ -340,7 +341,6 @@ share/maxima/${VERSION}/doc/html/figures/dynamics5.png
 share/maxima/${VERSION}/doc/html/figures/dynamics6.png
 share/maxima/${VERSION}/doc/html/figures/dynamics7.png
 share/maxima/${VERSION}/doc/html/figures/dynamics8.png
-share/maxima/${VERSION}/doc/html/figures/favicon.ico
 share/maxima/${VERSION}/doc/html/figures/graphs01.png
 share/maxima/${VERSION}/doc/html/figures/graphs02.png
 share/maxima/${VERSION}/doc/html/figures/graphs03.png
@@ -362,7 +362,6 @@ share/maxima/${VERSION}/doc/html/figures/introduction3.png
 share/maxima/${VERSION}/doc/html/figures/jacobi_am.png
 share/maxima/${VERSION}/doc/html/figures/maxima-unicode-display-variety-1-ascii.png
 share/maxima/${VERSION}/doc/html/figures/maxima-unicode-display-variety-1.png
-share/maxima/${VERSION}/doc/html/figures/maxima.svg
 share/maxima/${VERSION}/doc/html/figures/orthopoly1.png
 share/maxima/${VERSION}/doc/html/figures/plotdf1.png
 share/maxima/${VERSION}/doc/html/figures/plotdf2.png
@@ -370,6 +369,8 @@ share/maxima/${VERSION}/doc/html/figures/plotdf3.png
 share/maxima/${VERSION}/doc/html/figures/plotdf4.png
 share/maxima/${VERSION}/doc/html/figures/plotdf5.png
 share/maxima/${VERSION}/doc/html/figures/plotdf6.png
+share/maxima/${VERSION}/doc/html/figures/plotrk.png
+share/maxima/${VERSION}/doc/html/figures/plotrk2.png
 share/maxima/${VERSION}/doc/html/figures/plotting10.png
 share/maxima/${VERSION}/doc/html/figures/plotting11.png
 share/maxima/${VERSION}/doc/html/figures/plotting12.png
@@ -416,6 +417,9 @@ share/maxima/${VERSION}/doc/html/figures/worldmap_make_poly_country.png
 share/maxima/${VERSION}/doc/html/figures/worldmap_make_polygon.png
 share/maxima/${VERSION}/doc/html/figures/worldmap_region_boundaries.png
 share/maxima/${VERSION}/doc/html/figures/worldmap_region_boundaries_plus.png
+share/maxima/${VERSION}/doc/html/figures/wrstcse_ewc_2.png
+share/maxima/${VERSION}/doc/html/figures/wrstcse_ewc_3.png
+share/maxima/${VERSION}/doc/html/figures/wrstcse_montecarlo.png
 share/maxima/${VERSION}/doc/html/index.html
 share/maxima/${VERSION}/doc/html/intromax.html
 share/maxima/${VERSION}/doc/html/js_licenses.html
@@ -874,10 +878,13 @@ share/maxima/${VERSION}/share/contrib/gentran/test/
 share/maxima/${VERSION}/share/contrib/gentran/test/README
 share/maxima/${VERSION}/share/contrib/gentran/test/array.mac
 share/maxima/${VERSION}/share/contrib/gentran/test/array.output
+share/maxima/${VERSION}/share/contrib/gentran/test/compare_var_translations.mac
 share/maxima/${VERSION}/share/contrib/gentran/test/datatest.mac
 share/maxima/${VERSION}/share/contrib/gentran/test/datatest.out
 share/maxima/${VERSION}/share/contrib/gentran/test/det.mac
 share/maxima/${VERSION}/share/contrib/gentran/test/det.tem
+share/maxima/${VERSION}/share/contrib/gentran/test/foo-fortran.template
+share/maxima/${VERSION}/share/contrib/gentran/test/foo-ratfor.template
 share/maxima/${VERSION}/share/contrib/gentran/test/for.mac
 share/maxima/${VERSION}/share/contrib/gentran/test/graeffe.f
 share/maxima/${VERSION}/share/contrib/gentran/test/graeffe.mac
@@ -1148,7 +1155,6 @@ share/maxima/${VERSION}/share/diffequations/desoln.mac
 share/maxima/${VERSION}/share/diffequations/desoln.usg
 share/maxima/${VERSION}/share/diffequations/drawdf.mac
 share/maxima/${VERSION}/share/diffequations/exampl.mac
-share/maxima/${VERSION}/share/diffequations/hstep.lisp
 share/maxima/${VERSION}/share/diffequations/linde1.mac
 share/maxima/${VERSION}/share/diffequations/ode2.mac
 share/maxima/${VERSION}/share/diffequations/ode2.usg
@@ -1519,6 +1525,7 @@ share/maxima/${VERSION}/share/lapack/eigensys.lisp
 share/maxima/${VERSION}/share/lapack/lapack/
 share/maxima/${VERSION}/share/lapack/lapack-lisp.system
 share/maxima/${VERSION}/share/lapack/lapack-package.lisp
+share/maxima/${VERSION}/share/lapack/lapack.asd
 share/maxima/${VERSION}/share/lapack/lapack.mac
 share/maxima/${VERSION}/share/lapack/lapack.system
 share/maxima/${VERSION}/share/lapack/lapack/dbdsdc.lisp
@@ -1756,7 +1763,6 @@ share/maxima/${VERSION}/share/matrix/pfaff.mac
 share/maxima/${VERSION}/share/matrix/pfaff.usg
 share/maxima/${VERSION}/share/matrix/rateig.mac
 share/maxima/${VERSION}/share/matrix/rtest_eigen.mac
-share/maxima/${VERSION}/share/maxima-init.lisp
 share/maxima/${VERSION}/share/minpack/
 share/maxima/${VERSION}/share/minpack/disclaimer
 share/maxima/${VERSION}/share/minpack/lisp/
@@ -1886,6 +1892,7 @@ share/maxima/${VERSION}/share/odepack/dlsode-interface.lisp
 share/maxima/${VERSION}/share/odepack/dlsode.mac
 share/maxima/${VERSION}/share/odepack/load-dlsode.lisp
 share/maxima/${VERSION}/share/odepack/load-odepack.lisp
+share/maxima/${VERSION}/share/odepack/maxima-dlsode.asd
 share/maxima/${VERSION}/share/odepack/maxima-odepack.lisp
 share/maxima/${VERSION}/share/odepack/odepack-lisp.system
 share/maxima/${VERSION}/share/odepack/odepack.asd
@@ -2384,6 +2391,7 @@ share/maxima/${VERSION}/src/gnuplot_def.lisp
 share/maxima/${VERSION}/src/grind.lisp
 share/maxima/${VERSION}/src/hayat.lisp
 share/maxima/${VERSION}/src/homog.lisp
+share/maxima/${VERSION}/src/hstep.lisp
 share/maxima/${VERSION}/src/hyp.lisp
 share/maxima/${VERSION}/src/hypergeometric.lisp
 share/maxima/${VERSION}/src/hypgeo.lisp
@@ -2672,6 +2680,7 @@ share/maxima/${VERSION}/tests/rtest_algebraic.mac
 share/maxima/${VERSION}/tests/rtest_algsys.mac
 share/maxima/${VERSION}/tests/rtest_allnummod.mac
 share/maxima/${VERSION}/tests/rtest_ask1.mac
+share/maxima/${VERSION}/tests/rtest_atan2.mac
 share/maxima/${VERSION}/tests/rtest_boolean.mac
 share/maxima/${VERSION}/tests/rtest_carg.mac
 share/maxima/${VERSION}/tests/rtest_diff_invtrig.mac
@@ -2688,6 +2697,7 @@ share/maxima/${VERSION}/tests/rtest_gcd.mac
 share/maxima/${VERSION}/tests/rtest_great.mac
 share/maxima/${VERSION}/tests/rtest_great_slow.mac
 share/maxima/${VERSION}/tests/rtest_hg.mac
+share/maxima/${VERSION}/tests/rtest_hstep.mac
 share/maxima/${VERSION}/tests/rtest_hypgeo.mac
 share/maxima/${VERSION}/tests/rtest_ilt.mac
 share/maxima/${VERSION}/tests/rtest_index_properties.mac
@@ -2743,6 +2753,7 @@ share/maxima/${VERSION}/tests/rtestparser_continuations_crnl.mac
 share/maxima/${VERSION}/tests/rtestparser_continuations_nl.mac
 share/maxima/${VERSION}/tests/rtestsum.mac
 share/maxima/${VERSION}/tests/test_limits_wester.mac
+share/maxima/${VERSION}/tests/test_matrix_display.mac
 share/maxima/${VERSION}/tests/test_readbase_lisp.lisp
 share/maxima/${VERSION}/tests/test_readbase_lisp_autoload.lisp
 share/maxima/${VERSION}/tests/test_readbase_maxima.mac
