@@ -131,6 +131,7 @@ share/corsix-th/Lua/dialogs/resizables/file_browsers/save_map.lua
 share/corsix-th/Lua/dialogs/resizables/folder_settings.lua
 share/corsix-th/Lua/dialogs/resizables/hotkey_assign.lua
 share/corsix-th/Lua/dialogs/resizables/lua_console.lua
+share/corsix-th/Lua/dialogs/resizables/machine_menu.lua
 share/corsix-th/Lua/dialogs/resizables/main_menu.lua
 share/corsix-th/Lua/dialogs/resizables/map_editor.lua
 share/corsix-th/Lua/dialogs/resizables/menu_list_dialog.lua
@@ -181,6 +182,8 @@ share/corsix-th/Lua/diseases/transparency.lua
 share/corsix-th/Lua/diseases/tv_personalities.lua
 share/corsix-th/Lua/diseases/uncommon_cold.lua
 share/corsix-th/Lua/diseases/unexpected_swelling.lua
+share/corsix-th/Lua/earthquake.lua
+share/corsix-th/Lua/endconditions.lua
 share/corsix-th/Lua/entities/
 share/corsix-th/Lua/entities/humanoid.lua
 share/corsix-th/Lua/entities/humanoids/
@@ -254,6 +257,7 @@ share/corsix-th/Lua/languages/greek.lua
 share/corsix-th/Lua/languages/hungarian.lua
 share/corsix-th/Lua/languages/iberic_portuguese.lua
 share/corsix-th/Lua/languages/italian.lua
+share/corsix-th/Lua/languages/japanese.lua
 share/corsix-th/Lua/languages/korean.lua
 share/corsix-th/Lua/languages/norwegian.lua
 share/corsix-th/Lua/languages/original_strings.lua
@@ -263,6 +267,7 @@ share/corsix-th/Lua/languages/simplified_chinese.lua
 share/corsix-th/Lua/languages/spanish.lua
 share/corsix-th/Lua/languages/swedish.lua
 share/corsix-th/Lua/languages/traditional_chinese.lua
+share/corsix-th/Lua/languages/ukrainian.lua
 share/corsix-th/Lua/map.lua
 share/corsix-th/Lua/movie_player.lua
 share/corsix-th/Lua/objects/
@@ -356,7 +361,6 @@ share/corsix-th/Lua/rooms/training.lua
 share/corsix-th/Lua/rooms/ultrascan.lua
 share/corsix-th/Lua/rooms/ward.lua
 share/corsix-th/Lua/rooms/x_ray_room.lua
-share/corsix-th/Lua/run_debugger.lua
 share/corsix-th/Lua/sprite_viewer.lua
 share/corsix-th/Lua/staff_profile.lua
 share/corsix-th/Lua/strict.lua

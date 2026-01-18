@@ -1,4 +1,4 @@
-V =		0.67
+V =		0.69.1
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
@@ -32,10 +32,8 @@ RUN_DEPENDS =	audio/timidity \
 		devel/luafs,${MODLUA_FLAVOR} \
 		x11/gtk+4,-guic
 
-NO_TEST =	Yes
+CONFIGURE_ARGS =	-DWITH_UPDATE_CHECK=OFF
 
-# Remove the ${PATCHORIG} file
-post-install:
-	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua${PATCHORIG}
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
