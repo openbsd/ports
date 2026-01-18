@@ -4,7 +4,7 @@ MODPY_DISTV=	2.4.1
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	math devel
 
@@ -71,18 +71,23 @@ pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
 	ln -sf ${LOCALBASE}/bin/gas ${WRKDIR}/bin/as
 
-# cpu optimizations (where supported) are runtime detected, but there's
-# some problem on i386 where they trigger segfaults in numpy's regression
-# tests, and in other programs using numpy (e.g. building makehuman).
-# tests look good on amd64 arm64 riscv64 as-is.
-# numpy's regressions tests result in segv on powerpc (and also did in
-# 1.19.5) but at least some normal runtime seems ok (makehuman builds).
-# https://github.com/numpy/numpy/issues/20799
-.if ${MACHINE_ARCH} == i386
-	sed -i '/^option.*disable-optim/ s/false/true/' ${WRKSRC}/meson.options
-.endif
+# numpy has both compiled-in cpu optimizations ("baseline") used on all
+# code, and also runtime-selected optimizations ("dispatch") which use
+# runtime detection (however these are not used in all codepaths).
+# the lowest level of optimization supported by numpy is what it calls
+# X86_V2 (which requires at least SSE4.2 support; 2008+ for intel, 2011+
+# for amd), so disable that completely for baseline to allow running
+# on more machines.
+
 .if ${MACHINE_ARCH} == amd64
 MODPY_PYBUILD_ARGS += -Csetup-args=-Dcpu-baseline="none"
+.endif
+
+.if ${MACHINE_ARCH} == i386
+# https://github.com/numpy/numpy/issues/20799
+# any optimisations are causing segfaults in regression tests on i386
+MODPY_PYBUILD_ARGS += -Csetup-args=-Dcpu-baseline="none"
+MODPY_PYBUILD_ARGS += -Csetup-args=-Dcpu-dispatch="none"
 .endif
 
 do-test:
