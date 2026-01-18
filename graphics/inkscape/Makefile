@@ -2,6 +2,7 @@ COMMENT =	SVG vector drawing application
 
 VERSION =	1.4.3
 DISTNAME =	inkscape-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -78,6 +79,7 @@ LIB_DEPENDS =	converters/libiconv \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/liberation-fonts \
+		graphics/py-Pillow \
 		math/py-numpy \
 		print/transfig \
 		textproc/py-cssselect \
