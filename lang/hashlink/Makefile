@@ -8,6 +8,7 @@ COMMENT =	virtual machine for Haxe
 V =		1.15pl0
 COMMIT =	109f831769ab26a6fa0cf08ef1b926776a77c372
 PKGNAME =	hashlink-${V}
+REVISION =	0
 
 # commit from 2026-01-05; tagged as 'latest'
 DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .
@@ -38,6 +39,9 @@ LIB_DEPENDS =	audio/libvorbis \
 		security/polarssl
 
 USE_GMAKE =	Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
+
 SUBST_VARS +=	CFLAGS LDFLAGS
 
 FIX_CRLF_FILES = libs/uv/uv.c \
