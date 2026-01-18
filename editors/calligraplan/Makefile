@@ -2,7 +2,7 @@ COMMENT =	KDE Calligra project management application
 
 VERSION =	4.0.1
 DISTNAME =	calligraplan-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors x11
 
@@ -35,15 +35,15 @@ PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	parallel
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KChart6 KF6Archive KF6Bookmarks
-WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
-WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6DBusAddons KF6GuiAddons
-WANTLIB += KF6Holidays KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6Parts KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KGantt6 Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6PrintSupport Qt6Widgets Qt6Xml SM X11
-WANTLIB += Xext c m qca-qt6
+WANTLIB += KF6CalendarCore KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6IconThemes KF6IconWidgets
+WANTLIB += KF6ItemModels KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
+WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += KGantt6 PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml SM X11 Xext c m qca-qt6
 
 MODULES =	devel/kf6
 
@@ -62,6 +62,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kbookmarks \
+		devel/kf6/kcalendarcore \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
@@ -73,6 +74,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
+		devel/kf6/kitemmodels \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \

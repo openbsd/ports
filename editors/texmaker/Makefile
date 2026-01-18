@@ -1,5 +1,6 @@
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-6.0.1
+REVISION =		0
 CATEGORIES=		editors
 
 HOMEPAGE=		https://www.xm1math.net/texmaker/
@@ -12,8 +13,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 m
 
 MODULES=		devel/cmake \

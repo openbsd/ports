@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
+REVISION =	0
 
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
@@ -17,10 +18,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 intl m pcre2-16 ${MODPY_WANTLIB}
-WANTLIB += util z
+WANTLIB += Qt6Qml Qt6Quick Qt6Svg Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c hunspell-1.7
+WANTLIB += intl m pcre2-16 ${MODPY_WANTLIB} util z
 
 MODULES =		devel/cmake \
 			lang/python \

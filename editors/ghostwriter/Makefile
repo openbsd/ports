@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	distraction-free Markdown editor
 
 DISTNAME =	ghostwriter-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -16,9 +17,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
 WANTLIB += KF6SonnetCore KF6SonnetUi KF6WidgetsAddons KF6XmlGui
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Svg Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Svg
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz

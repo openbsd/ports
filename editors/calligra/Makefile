@@ -3,7 +3,7 @@ COMMENT =	KDE office suite
 HOMEPAGE =	https://www.calligra.org
 
 DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors
 
@@ -65,12 +65,11 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
 WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Okular6Core Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c crypto
-WANTLIB += fontconfig freetype gsl gslcblas lcms2 m phonon4qt6
-WANTLIB += phonon4qt6experimental poppler poppler-qt6 qca-qt6
-WANTLIB += qt6keychain ssl z
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c crypto fontconfig freetype gsl gslcblas lcms2
+WANTLIB += m phonon4qt6 phonon4qt6experimental poppler poppler-qt6
+WANTLIB += qca-qt6 qt6keychain ssl z
 
 MODULES =	x11/kde
 
