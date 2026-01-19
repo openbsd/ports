@@ -1,21 +1,24 @@
-Add PowerPC CPU feature detection support for OpenBSD.
-
 Index: aom_ports/ppc_cpudetect.c
 --- aom_ports/ppc_cpudetect.c.orig
 +++ aom_ports/ppc_cpudetect.c
-@@ -9,11 +9,8 @@
+@@ -9,7 +9,6 @@
   * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
   */
  
 -#include <fcntl.h>
  #include <unistd.h>
  #include <stdint.h>
+ 
+@@ -18,8 +17,6 @@
+ #include "aom_ports/ppc.h"
+ 
+ #if CONFIG_RUNTIME_CPU_DETECT
 -#include <asm/cputable.h>
 -#include <linux/auxvec.h>
  
- #include "config/aom_config.h"
- 
-@@ -37,6 +34,12 @@ static int cpu_env_mask(void) {
+ static int cpu_env_flags(int *flags) {
+   char *env;
+@@ -38,6 +35,12 @@ static int cpu_env_mask(void) {
    return env && *env ? (int)strtol(env, NULL, 0) : ~0;
  }
  
@@ -28,7 +31,7 @@ Index: aom_ports/ppc_cpudetect.c
  int ppc_simd_caps(void) {
    int flags;
    int mask;
-@@ -75,7 +78,40 @@ out_close:
+@@ -76,7 +79,40 @@ out_close:
    close(fd);
    return flags & mask;
  }

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -861,7 +861,7 @@ if(BUILD_SHARED_LIBS)
+@@ -905,7 +905,7 @@ if(BUILD_SHARED_LIBS)
    # https://clang.llvm.org/docs/AddressSanitizer.html#usage. Similarly, see
    # https://clang.llvm.org/docs/MemorySanitizer.html#usage.
    if(NOT
