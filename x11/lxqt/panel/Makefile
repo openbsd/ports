@@ -2,6 +2,7 @@ COMMENT =	desktop panel for LXQt
 
 NAME =		lxqt-panel
 VERSION =	2.2.2
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Solid KF6WindowSystem LayerShellQtInterface
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets
@@ -24,7 +25,6 @@ LIB_DEPENDS =	audio/pulseaudio \
 		x11/lxqt/libqtxdg \
 		x11/lxqt/libsysstat \
 		x11/qt6/qtsvg \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 BUILD_DEPENDS +=	x11/lxqt/menu-data
