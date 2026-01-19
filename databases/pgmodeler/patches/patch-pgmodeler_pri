@@ -1,7 +1,29 @@
 Index: pgmodeler.pri
 --- pgmodeler.pri.orig
 +++ pgmodeler.pri
-@@ -149,7 +149,7 @@ unix {
+@@ -84,10 +84,10 @@ INCLUDEPATH+=$$PLUGINS_SRC_ROOT/src
+ 
+ # Properly defining build number/date constant
+ unix {
+- BUILDNUM=$$system("$$PWD/getbuildnum.sh")
++ BUILDNUM=1.1.4
+  BUILDDATE=$$system("date '+%Y%m%d'")
+ } else {
+- BUILDNUM=$$system("$$PWD/getbuildnum.bat")
++ BUILDNUM=1.1.4
+  BUILDDATE=$$system("$$PWD/getbuildnum.bat")
+ }
+ 
+@@ -113,7 +113,7 @@ DEFINES+=BUILDDATE=\\\"$${BUILDDATE}\\\"
+ 
+ 
+ # Linux custom variables settings
+-linux {
++unix {
+   CONFIG += x11
+ 
+   # If the AppImage generation option is set
+@@ -149,7 +149,7 @@ linux {
  
    # Specifies where to find the libraries at runtime
    RELATIVE_PRIVATELIBDIR = $$relative_path($$PRIVATELIBDIR, $$BINDIR)
@@ -10,7 +32,16 @@ Index: pgmodeler.pri
  
    # Forcing the display of some warnings
    CONFIG(debug, debug|release): QMAKE_CXXFLAGS += "-Wall -Wextra -Wuninitialized"
-@@ -234,6 +234,7 @@ unix: {
+@@ -218,7 +218,7 @@ DEFINES += BINDIR=\\\"$${BINDIR}\\\" \
+ # XML_LIB   -> Full path to libxml2.(so | dll | dylib)
+ # XML_INC   -> Root path where XML2 includes can be found
+ 
+-linux: {
++unix: {
+   # If all custom variables PGSQL_??? and XML_??? are defined
+   # Then we use them instead of discovering the paths via pkg-config
+   dep_paths = "$$PGSQL_LIB" "$$XML_LIB" "$$PGSQL_INC" "$$XML_INC"
+@@ -234,6 +234,7 @@ linux: {
  	PKGCONFIG = libpq libxml-2.0
  	PGSQL_LIB = -lpq
  	XML_LIB = -lxml2
@@ -18,3 +49,12 @@ Index: pgmodeler.pri
    }
  }
  
+@@ -253,7 +254,7 @@ windows {
+   INCLUDEPATH += "$$PGSQL_INC" "$$XML_INC"
+ }
+ 
+-linux:defined(has_dep_paths,var) | macx | windows : {
++unix:defined(has_dep_paths,var) | macx | windows : {
+   !exists($$PGSQL_LIB) {
+     PKG_ERROR = "PostgreSQL libraries"
+     VARIABLE = "PGSQL_LIB"
