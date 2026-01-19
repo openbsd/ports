@@ -1,5 +1,6 @@
 COMMENT =	Breeze KDE desktop theme
 DISTNAME =	breeze-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
@@ -9,8 +10,7 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
 WANTLIB += KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6Style KF6WidgetsAddons KF6WindowSystem KirigamiPlatform
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Svg Qt6Widgets X11 c kdecorations3 m
+WANTLIB += Qt6Quick Qt6Svg Qt6Widgets X11 c kdecorations3 m
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/breeze-icons

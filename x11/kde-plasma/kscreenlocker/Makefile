@@ -1,5 +1,6 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
@@ -12,9 +13,8 @@ WANTLIB += KF6IdleTime KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6Notifications KF6Package KF6ScreenDpms KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui LayerShellQtInterface Plasma
 WANTLIB += PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Widgets Qt6Xml X11 Xext Xi c m pam wayland-client
-WANTLIB += wayland-server xcb xcb-keysyms xkbcommon
+WANTLIB += Qt6Qml Qt6Quick Qt6Widgets Qt6Xml X11 Xext Xi c m pam
+WANTLIB += wayland-client wayland-server xcb xcb-keysyms
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/consolekit
@@ -45,8 +45,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \
-		x11/qt6/qtdeclarative \
-		x11/xkbcommon
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
 SHARED_LIBS +=	plasmaweatherdata         0.0 # 0.0
@@ -12,13 +13,11 @@ WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6DBusAddons KF6GlobalAccel
 WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6JobWidgets KF6KCMUtils
 WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Notifications KF6Package KF6Runner
-WANTLIB += KF6Service KF6Solid KF6SonnetCore KF6UnitConversion
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Plasma Plasma5Support
-WANTLIB += PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore
-WANTLIB += Qt6WebEngineQuick Qt6Widgets Qt6Xml X11 c icui18n icuuc
-WANTLIB += m
+WANTLIB += KF6Service KF6SonnetCore KF6Svg KF6UnitConversion KF6WidgetsAddons
+WANTLIB += KF6XmlGui Plasma Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
+WANTLIB += Qt6Widgets Qt6Xml c icui18n icuuc m
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE = Yes
@@ -54,9 +53,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kunitconversion \
 		devel/kf6/kguiaddons \
 		devel/kf6/kwidgetsaddons \
-		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/sonnet \
 		textproc/icu4c \
 		x11/kde-plasma/libplasma>=${VERSION} \

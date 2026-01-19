@@ -1,13 +1,13 @@
 COMMENT =	themeable window decoration for KWin
 DISTNAME =	aurorae-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6Package
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6UiTools Qt6Widgets kdecorations3
-WANTLIB += m
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6UiTools
+WANTLIB += Qt6Widgets kdecorations3 m
 
 MODKDE_TRANSLATIONS = Yes
 

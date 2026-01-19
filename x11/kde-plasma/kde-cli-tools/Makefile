@@ -1,6 +1,7 @@
 COMMENT =	KDE krameworks tools
 
 DISTNAME =	kde-cli-tools-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_DOCS = Yes
@@ -10,8 +11,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6JobWidgets
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty KF6Service
-WANTLIB += KF6Solid KF6Su KF6WidgetsAddons KF6WindowSystem KF6XmlGui
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Svg Qt6Widgets
+WANTLIB += KF6Su KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Svg Qt6Widgets
 WANTLIB += Qt6Xml X11 c m xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils
@@ -34,7 +35,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kguiaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsvg \
 		x11/xkbcommon

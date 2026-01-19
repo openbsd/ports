@@ -1,5 +1,6 @@
 COMMENT =	style for Qt/KDE Applications
 DISTNAME =	oxygen-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =   oxygenstyle5              1.0 # 0.0
 SHARED_LIBS +=  oxygenstyleconfig5        0.0 # 0.0
@@ -16,8 +17,8 @@ WANTLIB += KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6Style KF6WidgetsAddons KF6WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Widgets X11 c kdecorations3 m xcb xkbcommon
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6Widgets X11 c kdecorations3
+WANTLIB += m xcb xkbcommon
 
 MODKDE_TRANSLATIONS = Yes
 

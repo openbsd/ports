@@ -1,5 +1,6 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -10,9 +11,9 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6Runner KF6Screen
 WANTLIB += KF6ScreenDpms KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6XmlGui Kirigami KirigamiPlatform Plasma PlasmaActivities
 WANTLIB += QCoro6Core QCoro6DBus Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WaylandClient Qt6Widgets Qt6Xml c kworkspace6
-WANTLIB += m udev wayland-client wayland-cursor xcb xcb-dpms xkbcommon
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6WaylandClient Qt6Widgets
+WANTLIB += Qt6Xml c kworkspace6 m udev wayland-client wayland-cursor
+WANTLIB += xcb xcb-dpms xkbcommon
 
 SHARED_LIBS +=  powerdevilconfigcommonprivate 1.0 # 0.0
 SHARED_LIBS +=  powerdevilcore                1.0 # 0.0
@@ -59,7 +60,6 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

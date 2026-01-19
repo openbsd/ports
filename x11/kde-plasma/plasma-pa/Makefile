@@ -1,5 +1,6 @@
 COMMENT =	KDE Plasma PulseAudio support
 DISTNAME =	plasma-pa-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	plasma-volume             0.0 # 0.0
 
@@ -10,9 +11,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6PulseAudioQt KF6StatusNotifierItem
 WANTLIB += Plasma Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Widgets canberra gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += m pulse pulse-mainloop-glib
+WANTLIB += Qt6Qml Qt6Quick Qt6Widgets canberra gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 intl m pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	devel/kf6/kitemmodels \
 		devel/kf6/kdeclarative \

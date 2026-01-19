@@ -1,13 +1,13 @@
 COMMENT =	Plasma browser integration
 DISTNAME =	plasma-browser-integration-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6FileMetaData KF6I18n KF6ItemModels
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6Purpose KF6PurposeWidgets
 WANTLIB += KF6Runner KF6Service KF6StatusNotifierItem PlasmaActivities
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Widgets c m taskmanager
+WANTLIB += Qt6Quick Qt6Widgets c m taskmanager
 
 MODKDE_TRANSLATIONS =	Yes
 

@@ -1,6 +1,7 @@
 COMMENT =	screen management library for KDE Plasma Workspaces
 DISTNAME =	libkscreen-${VERSION}
 PKGNAME =	kf6-libkscreen-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Screen                 0.0 # 0.0
 SHARED_LIBS +=  KF6ScreenDpms             0.0 # 0.0
@@ -12,8 +13,7 @@ WANTLIB += xkbcommon
 BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
-LIB_DEPENDS =	x11/qt6/qtwayland \
-		wayland/wayland \
+LIB_DEPENDS =	wayland/wayland \
 		x11/xkbcommon
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

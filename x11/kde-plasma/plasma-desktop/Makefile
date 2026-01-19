@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -20,12 +21,11 @@ WANTLIB += KF6Service KF6Solid KF6SonnetCore KF6SonnetUi KF6Svg
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KSysGuardFormatter
 WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml SDL2 X11 Xext
-WANTLIB += Xi accounts-qt6 c gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += ibus-1.0 icui18n icuuc intl kaccounts6 kworkspace6
-WANTLIB += m notificationmanager processcore taskmanager xcb xcb-keysyms
-WANTLIB += xcb-xkb xkbcommon xkbfile xkbregistry
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml
+WANTLIB += SDL2 X11 Xext Xi accounts-qt6 c gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gthread-2.0 ibus-1.0 intl kaccounts6 klookandfeel kworkspace6
+WANTLIB += m notificationmanager processcore taskmanager udev
+WANTLIB += xcb xcb-keysyms xcb-xkb xkbcommon xkbfile xkbregistry
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \
@@ -78,7 +78,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/sdl2 \
 		inputmethods/ibus \
 		net/libaccounts-qt \
-		textproc/icu4c \
 		x11/kde-applications/kf6-kaccounts-integration \
 		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/libksysguard>=${VERSION} \
