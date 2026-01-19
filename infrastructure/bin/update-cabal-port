@@ -1,0 +1,170 @@
+#!/usr/bin/perl
+#
+# Update a cabal port to a new version
+#
+# Usage: update-cabal-port.pl <port-directory> [options]
+#
+# Options:
+#   --version <ver>    Update to specific version (default: latest from Hackage)
+#   --package          Run 'make package' after update
+#   --help             Show this help message
+#
+
+use v5.36;
+use Getopt::Long qw(:config no_ignore_case);
+
+sub usage($exit_code = 0) {
+    open my $fh, '<', $0 or die "Cannot read $0: $!\n";
+    while (<$fh>) {
+        last if /^$/;
+        next unless s/^# ?//;
+        print;
+    }
+    exit $exit_code;
+}
+
+my %opt = (version => '', package => 0, help => 0);
+
+GetOptions(
+    'version=s'  => \$opt{version},
+    'package'    => \$opt{package},
+    'help|h'     => \$opt{help},
+) or usage(1);
+
+usage(0) if $opt{help};
+
+my $port_dir = shift @ARGV or do { say STDERR "Error: Port directory required"; usage(1) };
+
+chdir $port_dir or die "Cannot chdir to $port_dir: $!\n";
+
+# Extract configuration via make show=
+my $stem = make_show('MODCABAL_STEM') or die "MODCABAL_STEM not set\n";
+my $current_version = make_show('MODCABAL_VERSION');
+my $executables = make_show('MODCABAL_EXECUTABLES');
+
+# Determine target version
+my $target_version = $opt{version} || get_latest_version($stem);
+die "Error: Could not determine version for $stem\n" unless $target_version;
+
+if ($current_version && $current_version eq $target_version) {
+    say "==> $port_dir: already at $target_version";
+    exit 0;
+}
+
+say "==> $port_dir: $current_version -> $target_version";
+
+# Build cabal-bundler command
+my @bundler_args = ('--openbsd', "$stem-$target_version");
+if ($executables) {
+    my $exec = $executables =~ s/\$\{[^}]+\}//gr;
+    $exec =~ s/^\s+|\s+$//g;
+    if ($exec) {
+        push @bundler_args, '--executable', $_ for split /\s+/, $exec;
+    }
+}
+
+my $bundler_cmd = "cabal-bundler " . join(' ', @bundler_args);
+my $output = `$bundler_cmd 2>&1`;
+die "$bundler_cmd failed:\n$output\n" if $?;
+
+# Parse cabal-bundler output for MODCABAL_MANIFEST and MODCABAL_REVISION
+my (@deps, $revision);
+my $in_manifest = 0;
+for (split /\n/, $output) {
+    if (/^MODCABAL_REVISION\s*=\s*(\d+)/) {
+        $revision = $1;
+    } elsif (/^MODCABAL_MANIFEST\s*=\s*(.*)/) {
+        $in_manifest = 1;
+        push @deps, extract_deps($1);
+    } elsif ($in_manifest && /^\s+(.*)/) {
+        push @deps, extract_deps($1);
+        $in_manifest = 0 unless /\\$/;
+    } else {
+        $in_manifest = 0;
+    }
+}
+
+if (@deps) {
+    open my $fh, '>', 'cabal.inc' or die "Cannot write cabal.inc: $!\n";
+    say $fh "MODCABAL_MANIFEST\t= \\";
+    while (@deps >= 3) {
+        my ($pkg, $ver, $rev) = splice(@deps, 0, 3);
+        if (@deps) {
+            say $fh "\t$pkg\t$ver\t$rev\t\\";
+        } else {
+            say $fh "\t$pkg\t$ver\t$rev";
+        }
+    }
+    close $fh;
+}
+
+# Update Makefile: set MODCABAL_VERSION, MODCABAL_REVISION, remove REVISION
+open my $in, '<', 'Makefile' or die "Cannot read Makefile: $!\n";
+my @lines = <$in>;
+close $in;
+
+my $found_version = 0;
+my $found_revision = 0;
+for (@lines) {
+    if (/^MODCABAL_VERSION\s*=/) {
+        $_ = "MODCABAL_VERSION =\t$target_version\n";
+        $found_version = 1;
+    } elsif (/^MODCABAL_REVISION\s*=/) {
+        if (defined $revision) {
+            $_ = "MODCABAL_REVISION =\t$revision\n";
+        } else {
+            $_ = '';  # Remove if no revision in new version
+        }
+        $found_revision = 1;
+    } elsif (/^REVISION\s*=/) {
+        $_ = '';  # Remove REVISION on update
+    }
+}
+
+# Add MODCABAL_REVISION after MODCABAL_VERSION if needed
+if (defined $revision && !$found_revision) {
+    for my $i (0..$#lines) {
+        if ($lines[$i] =~ /^MODCABAL_VERSION\s*=/) {
+            splice @lines, $i+1, 0, "MODCABAL_REVISION =\t$revision\n";
+            last;
+        }
+    }
+}
+
+open my $out, '>', 'Makefile' or die "Cannot write Makefile: $!\n";
+print $out grep { $_ ne '' } @lines;
+close $out;
+
+# Run make makesum
+system('make', 'makesum') == 0 or die "make makesum failed\n";
+
+# Run make package
+if ($opt{package}) {
+    system('make', 'clean=all') == 0 or warn "make clean failed\n";
+    system('make', 'package') == 0 or warn "make package failed\n";
+}
+
+#
+# Helpers
+#
+
+sub make_show($var) {
+    my $val = `make show=$var`;
+    die "make show=$var failed\n" if $?;
+    chomp $val;
+    return $val eq '' ? undef : $val;
+}
+
+sub get_latest_version($package) {
+    my $output = `cabal list --simple-output '^$package\$' 2>/dev/null`;
+    return unless $? == 0 && $output;
+
+    my @lines = split /\n/, $output;
+    return $1 if @lines && $lines[-1] =~ /^\Q$package\E\s+(\S+)$/i;
+    return;
+}
+
+sub extract_deps($line) {
+    $line =~ s/\s*\\$//;
+    return split /\s+/, $line;
+}
