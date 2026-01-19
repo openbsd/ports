@@ -1,0 +1,13 @@
+https://github.com/Project-OSRM/osrm-backend/pull/7220
+
+Index: include/server/connection.hpp
+--- include/server/connection.hpp.orig
++++ include/server/connection.hpp
+@@ -8,6 +8,7 @@
+ 
+ #include <boost/array.hpp>
+ #include <boost/asio.hpp>
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/config.hpp>
+ #include <boost/version.hpp>
+ 

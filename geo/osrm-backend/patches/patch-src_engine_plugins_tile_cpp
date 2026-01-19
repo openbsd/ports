@@ -1,0 +1,15 @@
+https://github.com/Project-OSRM/osrm-backend/pull/7220
+
+Index: src/engine/plugins/tile.cpp
+--- src/engine/plugins/tile.cpp.orig
++++ src/engine/plugins/tile.cpp
+@@ -10,7 +10,9 @@
+ #include <boost/geometry.hpp>
+ #include <boost/geometry/geometries/geometries.hpp>
+ #include <boost/geometry/geometries/point_xy.hpp>
++#if __has_include(<boost/geometry/multi/geometries/multi_linestring.hpp>)
+ #include <boost/geometry/multi/geometries/multi_linestring.hpp>
++#endif
+ 
+ #include <vtzero/builder.hpp>
+ #include <vtzero/geometry.hpp>
