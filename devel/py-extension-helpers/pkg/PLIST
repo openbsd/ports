@@ -33,12 +33,15 @@ lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}py311_backports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}py311_backports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_openmp_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_openmp_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_setup_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_setup_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/py311_backports.py
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/test_openmp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/test_setup_helpers.py
 lib/python${MODPY_VERSION}/site-packages/extension_helpers/tests/test_utils.py
