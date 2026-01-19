@@ -1,44 +1,236 @@
+@conflict kismet-gpsmap-*
 @pkgpath net/kismet
 @pkgpath net/kismet,-main
 @pkgpath net/kismet,-gpsmap
-@conflict kismet-gpsmap-*
 @newgroup _kismet:547
-@newuser _kismet:547:_kismet::Kismet WLAN detector:/nonexistent:/sbin/nologin
-bin/kismet
+@newuser _kismet:547:_kismet::Kismet Wireless detector:/nonexistent:/sbin/nologin
+@bin bin/kismet
+@bin bin/kismet_cap_antsdr_droneid
 @mode 4550
 @group _kismet
-@bin bin/kismet_capture
+@bin bin/kismet_cap_freaklabs_zigbee
 @mode
 @group
-@bin bin/kismet_client
-@bin bin/kismet_drone
-@bin bin/kismet_server
-@man man/man1/kismet.1
-@man man/man1/kismet_drone.1
-@man man/man5/kismet.conf.5
-@man man/man5/kismet_drone.conf.5
+@bin bin/kismet_cap_kismetdb
+@mode 4550
+@group _kismet
+@bin bin/kismet_cap_nrf_51822
+@bin bin/kismet_cap_nrf_52840
+@bin bin/kismet_cap_nrf_mousejack
+@bin bin/kismet_cap_nxp_kw41z
+@bin bin/kismet_cap_openbsd_wifi
+@mode
+@group
+@bin bin/kismet_cap_pcapfile
+@mode 4550
+@group _kismet
+@bin bin/kismet_cap_radiacode_usb
+@bin bin/kismet_cap_rz_killerbee
+@bin bin/kismet_cap_sdr_rtl433
+@bin bin/kismet_cap_sdr_rtladsb
+@mode
+@group
+@bin bin/kismet_cap_serial_radview
+@mode 4550
+@group _kismet
+@bin bin/kismet_cap_ti_cc_2531
+@bin bin/kismet_cap_ti_cc_2540
+@mode
+@group
+@bin bin/kismet_discovery
+bin/kismet_server
+@bin bin/kismetdb_clean
+@bin bin/kismetdb_dump_devices
+@bin bin/kismetdb_statistics
+@bin bin/kismetdb_strip_packets
+@bin bin/kismetdb_to_gpx
+@bin bin/kismetdb_to_kml
+@bin bin/kismetdb_to_pcap
+@bin bin/kismetdb_to_wiglecsv
+lib/pkgconfig/kismet.pc
 share/doc/kismet/
-share/doc/kismet/README
+share/doc/kismet/README.SSL
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/kismet/
 @mode 770
-@sample ${CONFDIR}/
+@sample ${SYSCONFDIR}/
 @mode
 share/examples/kismet/kismet.conf
-@sample ${CONFDIR}/kismet.conf
-share/examples/kismet/kismet_drone.conf
-@sample ${CONFDIR}/kismet_drone.conf
+@sample ${SYSCONFDIR}/kismet.conf
+share/examples/kismet/kismet_80211.conf
+@sample ${SYSCONFDIR}/kismet_80211.conf
+share/examples/kismet/kismet_alerts.conf
+@sample ${SYSCONFDIR}/kismet_alerts.conf
+share/examples/kismet/kismet_filter.conf
+@sample ${SYSCONFDIR}/kismet_filter.conf
+share/examples/kismet/kismet_httpd.conf
+@sample ${SYSCONFDIR}/kismet_httpd.conf
+share/examples/kismet/kismet_logging.conf
+@sample ${SYSCONFDIR}/kismet_logging.conf
+share/examples/kismet/kismet_memory.conf
+@sample ${SYSCONFDIR}/kismet_memory.conf
+share/examples/kismet/kismet_uav.conf
+@sample ${SYSCONFDIR}/kismet_uav.conf
+share/examples/kismet/kismet_wardrive.conf
+@sample ${SYSCONFDIR}/kismet_wardrive.conf
 share/kismet/
-share/kismet/wav/
-share/kismet/wav/alert.wav
 @mode 770
 @owner _kismet
 @group _kismet
 @sample /var/log/kismet/
+@extraunexec rm -rf ${LOCALSTATEDIR}/log/kismet
 @mode
 @owner
 @group
-share/kismet/wav/gpslock.wav
-share/kismet/wav/gpslost.wav
-share/kismet/wav/new.wav
-share/kismet/wav/packet.wav
-@extraunexec rm -rf ${LOCALSTATEDIR}/log/kismet
+share/kismet/httpd/
+share/kismet/httpd/channels.html
+share/kismet/httpd/credit.html
+share/kismet/httpd/css/
+share/kismet/httpd/css/Control.Loading.css
+share/kismet/httpd/css/dark.css
+share/kismet/httpd/css/fontawesome.min.css
+share/kismet/httpd/css/grid.css
+share/kismet/httpd/css/ie.css
+share/kismet/httpd/css/ie6.css
+share/kismet/httpd/css/images/
+share/kismet/httpd/css/images/collapsed.gif
+share/kismet/httpd/css/images/expanded.gif
+share/kismet/httpd/css/images/ui-icons_222222_256x240.png
+share/kismet/httpd/css/images/ui-icons_444444_256x240.png
+share/kismet/httpd/css/images/ui-icons_4b8e0b_256x240.png
+share/kismet/httpd/css/images/ui-icons_555555_256x240.png
+share/kismet/httpd/css/images/ui-icons_777620_256x240.png
+share/kismet/httpd/css/images/ui-icons_777777_256x240.png
+share/kismet/httpd/css/images/ui-icons_a83300_256x240.png
+share/kismet/httpd/css/images/ui-icons_cc0000_256x240.png
+share/kismet/httpd/css/images/ui-icons_cccccc_256x240.png
+share/kismet/httpd/css/images/ui-icons_ffffff_256x240.png
+share/kismet/httpd/css/images/uiTabsArrow.png
+share/kismet/httpd/css/jquery-ui.min.css
+share/kismet/httpd/css/jquery.contextMenu.min.css
+share/kismet/httpd/css/jquery.jspanel.min.css
+share/kismet/httpd/css/jquery.kismet.alert.css
+share/kismet/httpd/css/jquery.kismet.auth.css
+share/kismet/httpd/css/jquery.kismet.battery.css
+share/kismet/httpd/css/jquery.kismet.channeldisplay.css
+share/kismet/httpd/css/jquery.kismet.gps.css
+share/kismet/httpd/css/jquery.kismet.messagebus.css
+share/kismet/httpd/css/jqueryui-editable.css
+share/kismet/httpd/css/kismet-dark.css
+share/kismet/httpd/css/kismet.adsb.css
+share/kismet/httpd/css/kismet.css
+share/kismet/httpd/css/kismet.ui.base.css
+share/kismet/httpd/css/kismet.ui.datasources.css
+share/kismet/httpd/css/kismet.ui.gadgets.css
+share/kismet/httpd/css/kismet.ui.iconbar.css
+share/kismet/httpd/css/kismet.ui.radiation.css
+share/kismet/httpd/css/kismet.ui.settings.css
+share/kismet/httpd/css/kismet.ui.sidebar.css
+share/kismet/httpd/css/kismet.ui.tabpane.css
+share/kismet/httpd/css/layout-default-1.4.0.css
+share/kismet/httpd/css/layout.css
+share/kismet/httpd/css/leaflet.css
+share/kismet/httpd/css/light.css
+share/kismet/httpd/css/morris.css
+share/kismet/httpd/css/nav.css
+share/kismet/httpd/css/pushmenu.css
+share/kismet/httpd/css/regular.min.css
+share/kismet/httpd/css/reset.css
+share/kismet/httpd/css/solid.min.css
+share/kismet/httpd/css/spectrum.css
+share/kismet/httpd/css/tabulator.min.css
+share/kismet/httpd/css/tabulator_midnight.min.css
+share/kismet/httpd/css/text.css
+share/kismet/httpd/css/tooltipster.bundle.min.css
+share/kismet/httpd/css/v4-font-face.min.css
+share/kismet/httpd/css/v4-shims.min.css
+share/kismet/httpd/favicon.ico
+share/kismet/httpd/fonts/
+share/kismet/httpd/fonts/jsglyph.eot
+share/kismet/httpd/fonts/jsglyph.svg
+share/kismet/httpd/fonts/jsglyph.ttf
+share/kismet/httpd/fonts/jsglyph.woff
+share/kismet/httpd/images/
+share/kismet/httpd/images/bluetooth-solid-icon-dark.svg
+share/kismet/httpd/images/bluetooth-solid-icon.svg
+share/kismet/httpd/images/collapsed.gif
+share/kismet/httpd/images/expanded.gif
+share/kismet/httpd/images/icon_no_battery_power.svg
+share/kismet/httpd/images/sort_asc.png
+share/kismet/httpd/images/sort_asc_disabled.png
+share/kismet/httpd/images/sort_both.png
+share/kismet/httpd/images/sort_desc.png
+share/kismet/httpd/images/sort_desc_disabled.png
+share/kismet/httpd/images/uiTabsArrow.png
+share/kismet/httpd/images/zigbee-icon-dark.svg
+share/kismet/httpd/images/zigbee-icon-light.svg
+share/kismet/httpd/index.html
+share/kismet/httpd/js/
+share/kismet/httpd/js/Control.Loading.js
+share/kismet/httpd/js/Leaflet.MultiOptionsPolyline.min.js
+share/kismet/httpd/js/chart.umd.js
+share/kismet/httpd/js/chroma.min.js
+share/kismet/httpd/js/clipboard.min.js
+share/kismet/httpd/js/d3.v3.min.js
+share/kismet/httpd/js/jcanvas.min.js
+share/kismet/httpd/js/jquery-3.7.1.min.js
+share/kismet/httpd/js/jquery-fluid16.js
+share/kismet/httpd/js/jquery-ui.min.js
+share/kismet/httpd/js/jquery.ajax.binary.js
+share/kismet/httpd/js/jquery.contextMenu.min.js
+share/kismet/httpd/js/jquery.debounce.min.js
+share/kismet/httpd/js/jquery.jspanel-compiled.min.js
+share/kismet/httpd/js/jquery.kismet.alert.js
+share/kismet/httpd/js/jquery.kismet.battery.js
+share/kismet/httpd/js/jquery.kismet.channeldisplay.js
+share/kismet/httpd/js/jquery.kismet.devicedata.js
+share/kismet/httpd/js/jquery.kismet.gps.js
+share/kismet/httpd/js/jquery.kismet.messagebus.js
+share/kismet/httpd/js/jquery.kismet.packetrate.js
+share/kismet/httpd/js/jquery.layout-latest.js
+share/kismet/httpd/js/jquery.sparkline.min.js
+share/kismet/httpd/js/jquery.storageapi.min.js
+share/kismet/httpd/js/jquery.ui.position.min.js
+share/kismet/httpd/js/jquery.ui.touch-punch.min.js
+share/kismet/httpd/js/jqueryui-editable.min.js
+share/kismet/httpd/js/js.storage.min.js
+share/kismet/httpd/js/kismet.ui.802_15_4.js
+share/kismet/httpd/js/kismet.ui.adsb.js
+share/kismet/httpd/js/kismet.ui.alerts.js
+share/kismet/httpd/js/kismet.ui.base.js
+share/kismet/httpd/js/kismet.ui.bluetooth.js
+share/kismet/httpd/js/kismet.ui.btle.js
+share/kismet/httpd/js/kismet.ui.datasources.js
+share/kismet/httpd/js/kismet.ui.dot11.js
+share/kismet/httpd/js/kismet.ui.gadgets.js
+share/kismet/httpd/js/kismet.ui.iconbar.js
+share/kismet/httpd/js/kismet.ui.js
+share/kismet/httpd/js/kismet.ui.meter.js
+share/kismet/httpd/js/kismet.ui.radiation.js
+share/kismet/httpd/js/kismet.ui.sensor.js
+share/kismet/httpd/js/kismet.ui.settings.js
+share/kismet/httpd/js/kismet.ui.sidebar.js
+share/kismet/httpd/js/kismet.ui.tabpane.js
+share/kismet/httpd/js/kismet.ui.theme.js
+share/kismet/httpd/js/kismet.ui.uav.js
+share/kismet/httpd/js/kismet.ui.walkthrough.js
+share/kismet/httpd/js/kismet.ui.zwave.js
+share/kismet/httpd/js/kismet.units.js
+share/kismet/httpd/js/kismet.utils.js
+share/kismet/httpd/js/leaflet.js
+share/kismet/httpd/js/msgpack.js
+share/kismet/httpd/js/pushmenu.js
+share/kismet/httpd/js/raphael.min.js
+share/kismet/httpd/js/simple-expand.min.js
+share/kismet/httpd/js/spectrum.js
+share/kismet/httpd/js/tabulator.min.js
+share/kismet/httpd/js/tooltipster.bundle.min.js
+share/kismet/httpd/webfonts/
+share/kismet/httpd/webfonts/fa-regular-400.ttf
+share/kismet/httpd/webfonts/fa-regular-400.woff2
+share/kismet/httpd/webfonts/fa-solid-900.ttf
+share/kismet/httpd/webfonts/fa-solid-900.woff2
+share/kismet/httpd/webfonts/fa-v4compatibility.ttf
+share/kismet/httpd/webfonts/fa-v4compatibility.woff2
+share/kismet/kismet_adsb_icao.txt.gz
+share/kismet/kismet_manuf.txt.gz

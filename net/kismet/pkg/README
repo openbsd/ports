@@ -1,0 +1,18 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+known to work capture drivers
+=============================
+
+The following capture drivers are known to work:
+  * openbsd_wifi (autodetected)
+  * sdr_rtladsb (autodetected)
+  * sdr_rtl433 (autodetected)
+  * nrf_51822 (not autodetected)
+    * use with:
+       * -c nrf51822:type=nrf51822,device=/dev/cuaU0,name=adafruit
+
+
+Many other capture drivers are enabled. They are untested,
+but may work as well.

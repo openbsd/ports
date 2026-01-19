@@ -1,9 +1,6 @@
-Kismet is an 802.11 layer2 wireless network detector, sniffer, and
-intrusion detection system.  Kismet will work with any wireless card
-which supports raw monitoring (rfmon) mode, and can sniff 802.11b,
-802.11a, and 802.11g traffic.
+Kismet is an open source sniffer, WIDS, wardriver, and packet capture
+tool for Wi-Fi, Bluetooth, BTLE, wireless thermometers, airplanes, power
+meters, Zigbee, and more.
 
-Kismet identifies networks by passively collecting packets and detecting
-standard named networks, detecting (and given time, decloaking) hidden
-networks, and infering the presence of nonbeaconing networks via data
-traffic.
+Kismet can operate both headless as a standalone capture and WIDS
+system, or with a full modern web-based UI.

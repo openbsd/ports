@@ -1,0 +1,61 @@
+- don't force -O3
+- GCC's libatomic should not be pulled in just because it exists
+- libstdc++ should n9t be explicitly linked (use "c++" as a linker instead)
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -228,9 +228,6 @@ AS_IF([test x"$GCC_MAJOR" = x"13" -o x"$GCC_MAJOR" = x
+ 
+ AC_SUBST(PLUGINLDFLAGS)
+ 
+-CXXFLAGS="$CXXFLAGS -O3"
+-CFLAGS="$CFLAGS -O3"
+-
+ AC_CONFIG_SRCDIR([kismet_server.cc])
+ AC_CONFIG_HEADERS([config.h])
+ 
+@@ -637,22 +634,6 @@ AC_CHECK_LIB([z], [deflate],
+              AC_MSG_ERROR([libz is required and could not be found]))
+ LIBS="$LIBS -lz"
+ 
+-# Do we need -latomic
+-AC_MSG_CHECKING([for libatomic])
+-OLIBS="$LIBS"
+-LIBS="$LIBS -latomic"
+-AC_LINK_IFELSE([AC_LANG_PROGRAM([[
+-                ]],
+-                [[
+-                 return 0;
+-                ]] )], [have_atomic=yes], [have_atomic=no])
+-if test "$have_atomic" = "yes"; then
+-    AC_MSG_RESULT([yes])
+-else
+-    AC_MSG_RESULT([no])
+-    LIBS="$OLIBS"
+-fi
+-
+ # We need threads
+ PTHREAD_CFLAGS="-pthread"
+ PTHREAD_LIBS="-lpthread"
+@@ -700,19 +681,7 @@ else
+     AC_SUBST(LIBMLIB)
+ fi
+ 
+-# Do we use libstdc++?
+-# We need to swap to the g++ compiler here
+-oCC="$CC"
+-CC="$CXX"
+-AC_CHECK_LIB([stdc++], [main],
+-        foundcxxl="stdc++" CXXLIBS="$CXXLIBS -lstdc++")
+-
+-AS_IF([test "$foundcxxl"x = "x" -a "$caponly"x != "yes"x],
+-      [
+-       AC_MSG_ERROR(No standard stdc++ libraries found.)
+-      ], []
+-)
+-CC="$oCC"
++CXXLIBS=
+ AC_SUBST(CXXLIBS)
+ 
+ # Does the compiler handle various std::foo namespaces properly?
