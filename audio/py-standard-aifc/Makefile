@@ -1,6 +1,7 @@
 COMMENT=	read/write AIFF audio files
 
 MODPY_DISTV=	3.13.0
+REVISION=	0
 DISTNAME=	standard_aifc-${MODPY_DISTV}
 PKGNAME=	py-standard-aifc-${MODPY_DISTV}
 CATEGORIES=	audio
