@@ -2,7 +2,7 @@ COMMENT =	KDE Calligra project management application
 
 VERSION =	4.0.1
 DISTNAME =	calligraplan-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	editors x11
 
@@ -49,16 +49,17 @@ MODULES =	devel/kf6
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kdoctools \
-		x11/kde-plasma/plasma-activities \
 		devel/kf6/kitemmodels \
-		devel/kf6/threadweaver
+		devel/kf6/threadweaver \
+		x11/kde-plasma/plasma-activities
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
-		x11/kde-plasma/plasma-activities \
+		devel/kf6/kcmutils \
 		devel/kf6/threadweaver \
 		misc/shared-mime-info \
-		x11/gtk+4,-guic
+		x11/gtk+4,-guic \
+		x11/kde-plasma/plasma-activities
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kbookmarks \
