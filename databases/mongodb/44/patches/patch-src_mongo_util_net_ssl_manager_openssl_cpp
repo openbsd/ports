@@ -1,0 +1,62 @@
+Index: src/mongo/util/net/ssl_manager_openssl.cpp
+--- src/mongo/util/net/ssl_manager_openssl.cpp.orig
++++ src/mongo/util/net/ssl_manager_openssl.cpp
+@@ -1433,7 +1433,7 @@ SSLX509Name getCertificateSubjectX509Name(X509* cert) 
+ 
+         const auto* str = X509_NAME_ENTRY_get_data(entry);
+         rdn.emplace_back(
+-            buffer, str->type, std::string(reinterpret_cast<const char*>(str->data), str->length));
++            buffer, ASN1_STRING_type(str), std::string(reinterpret_cast<const char*>(ASN1_STRING_get0_data(str)), ASN1_STRING_length(str)));
+     }
+     if (!rdn.empty()) {
+         entries.push_back(std::move(rdn));
+@@ -2904,7 +2904,7 @@ Future<SSLPeerInfo> SSLManagerOpenSSL::parseAndValidat
+             const GENERAL_NAME* currentName = sk_GENERAL_NAME_value(sanNames, i);
+             if (currentName && currentName->type == GEN_DNS) {
+                 std::string dnsName(
+-                    reinterpret_cast<char*>(ASN1_STRING_data(currentName->d.dNSName)));
++                    reinterpret_cast<const char*>(ASN1_STRING_get0_data(currentName->d.dNSName)));
+                 auto swCIDRDNSName = CIDR::parse(dnsName);
+                 if (swCIDRDNSName.isOK()) {
+                     LOGV2_WARNING(23237,
+@@ -2925,14 +2925,14 @@ Future<SSLPeerInfo> SSLManagerOpenSSL::parseAndValidat
+                 auto ipAddrStruct = currentName->d.iPAddress;
+                 struct sockaddr_storage ss;
+                 memset(&ss, 0, sizeof(ss));
+-                if (ipAddrStruct->length == 4) {
++                if (ASN1_STRING_length(ipAddrStruct) == 4) {
+                     struct sockaddr_in* sa = reinterpret_cast<struct sockaddr_in*>(&ss);
+                     sa->sin_family = AF_INET;
+-                    memcpy(&(sa->sin_addr), ipAddrStruct->data, ipAddrStruct->length);
+-                } else if (ipAddrStruct->length == 16) {
++                    memcpy(&(sa->sin_addr), ASN1_STRING_get0_data(ipAddrStruct), ASN1_STRING_length(ipAddrStruct));
++                } else if (ASN1_STRING_length(ipAddrStruct) == 16) {
+                     struct sockaddr_in6* sa = reinterpret_cast<struct sockaddr_in6*>(&ss);
+                     sa->sin6_family = AF_INET6;
+-                    memcpy(&(sa->sin6_addr), ipAddrStruct->data, ipAddrStruct->length);
++                    memcpy(&(sa->sin6_addr), ASN1_STRING_get0_data(ipAddrStruct), ASN1_STRING_length(ipAddrStruct));
+                 }
+                 auto ipAddress =
+                     SockAddr(reinterpret_cast<struct sockaddr*>(&ss), sizeof(ss)).getAddr();
+@@ -3033,8 +3033,8 @@ StatusWith<stdx::unordered_set<RoleName>> SSLManagerOp
+             ASN1_OCTET_STRING* data = X509_EXTENSION_get_data(ex);
+ 
+             return parsePeerRoles(
+-                ConstDataRange(reinterpret_cast<char*>(data->data),
+-                               reinterpret_cast<char*>(data->data) + data->length));
++                ConstDataRange(reinterpret_cast<const char*>(ASN1_STRING_get0_data(data)),
++                               reinterpret_cast<const char*>(ASN1_STRING_get0_data(data)) + ASN1_STRING_length(data)));
+         }
+     }
+ 
+@@ -3060,8 +3060,8 @@ StatusWith<boost::optional<std::vector<DERInteger>>> S
+             // We've found an extension which has the features OID
+             ASN1_OCTET_STRING* data = X509_EXTENSION_get_data(ex);
+             return parseTLSFeature(
+-                ConstDataRange(reinterpret_cast<char*>(data->data),
+-                               reinterpret_cast<char*>(data->data) + data->length));
++                ConstDataRange(reinterpret_cast<const char*>(ASN1_STRING_get0_data(data)),
++                               reinterpret_cast<const char*>(ASN1_STRING_get0_data(data)) + ASN1_STRING_length(data)));
+         }
+     }
+     return boost::none;

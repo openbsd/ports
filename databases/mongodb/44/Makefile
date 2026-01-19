@@ -4,7 +4,7 @@ PORTROACH =	limit:^4\.4\.
 ONLY_FOR_ARCHS = amd64
 
 V =		4.4.30
-REVISION =	1
+REVISION =	2
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
