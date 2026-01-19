@@ -4,6 +4,7 @@ COMMENT =	simple offline API documentation browser
 
 V =		0.7.0
 DISTNAME =	zeal-${V}
+REVISION =	0
 
 # fix build with Qt6
 SITES.qt =		https://github.com/zealdocs/zeal/commit/
@@ -20,8 +21,8 @@ MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Concurrent Qt6Core Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets SM X11 Xext archive c m sqlite3 xcb xcb-keysyms
 WANTLIB += xkbcommon
 
