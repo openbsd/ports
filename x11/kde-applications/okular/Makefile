@@ -1,23 +1,23 @@
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
+REVISION =	0
 
 HOMEPAGE =	https://okular.kde.org/
 
 SHARED_LIBS +=	Okular6Core               2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6Archive KF6Bookmarks
-WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty
-WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6SonnetUi
-WANTLIB += KF6TextWidgets KF6ThreadWeaver KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities QMobipocket6
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6Svg Qt6TextToSpeech Qt6Widgets Qt6Xml X11
-WANTLIB += c djvulibre epub freetype m markdown phonon4qt6 poppler
-WANTLIB += poppler-qt6 spectre tiff xkbcommon z
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Parts KF6Purpose KF6PurposeWidgets
+WANTLIB += KF6Service KF6SonnetUi KF6TextWidgets KF6ThreadWeaver
+WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += QMobipocket6 Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Svg Qt6TextToSpeech Qt6Widgets
+WANTLIB += Qt6Xml X11 c djvulibre epub freetype m markdown phonon4qt6
+WANTLIB += poppler poppler-qt6 spectre tiff xkbcommon z
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -44,10 +44,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
-		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kparts \
-		devel/kf6/kpty \
 		devel/kf6/kservice \
 		devel/kf6/ktextwidgets \
 		devel/kf6/kguiaddons \
@@ -67,7 +65,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		textproc/ebook-tools \
 		x11/kde-applications/kf6-kdegraphics-mobipocket>=${VERSION} \
 		x11/kde-applications/kf6-libkexiv2>=${VERSION} \
-		x11/kde-plasma/plasma-activities \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtspeech \

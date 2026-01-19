@@ -80,6 +80,10 @@ share/doc/HTML/pl/kioworker6/audiocd/index.docbook
 share/doc/HTML/pt/kioworker6/audiocd/
 share/doc/HTML/pt/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/pt/kioworker6/audiocd/index.docbook
+share/doc/HTML/pt_BR/kcontrol/
+share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/
+share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/pt_BR/kioworker6/audiocd/
 share/doc/HTML/pt_BR/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/pt_BR/kioworker6/audiocd/index.docbook

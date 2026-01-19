@@ -1,6 +1,7 @@
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 SHARED_LIBS +=  artikulatecore            4.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  3.0 # 0.0
@@ -8,8 +9,7 @@ SHARED_LIBS +=  artikulatelearnerprofile  3.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6I18n KF6ItemModels
 WANTLIB += KF6NewStuffCore Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c m xml2
+WANTLIB += Qt6Qml Qt6Quick Qt6Sql Qt6Widgets Qt6Xml c m xml2
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes

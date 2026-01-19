@@ -1,12 +1,12 @@
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
 WANTLIB += KF6I18nQml KF6KIOCore KF6Service KF6WindowSystem Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Widgets X11 avcodec c m
+WANTLIB += Qt6Quick Qt6Widgets X11 avcodec c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

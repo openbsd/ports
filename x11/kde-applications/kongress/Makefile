@@ -1,6 +1,7 @@
 COMMENT =	companion application for conference attendees
 DISTNAME =	kongress-${VERSION}
 CATEGORIES =	x11 productivity
+REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/utilities/kongress
 
@@ -11,8 +12,8 @@ MODKDE_TRANSLATIONS = yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6I18nQml
 WANTLIB += KF6Notifications Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets c m
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Svg
+WANTLIB += Qt6Widgets c m
 
 BUILD_DEPENDS =	graphics/kirigami-addons \
 		x11/kde-applications/kosmindoormap

@@ -1,6 +1,7 @@
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 
@@ -8,10 +9,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6IconThemes KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
-WANTLIB += KF6NewStuffWidgets KF6Plotting KF6Service KF6Solid
-WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Widgets Qt6Xml c gsl gslcblas m qalculate
+WANTLIB += KF6NewStuffWidgets KF6Plotting KF6Service KF6SonnetUi
+WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets
+WANTLIB += Qt6Xml c gsl gslcblas m qalculate
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -42,7 +43,6 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf6/ktextwidgets \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/sonnet \
 		math/libqalculate
 

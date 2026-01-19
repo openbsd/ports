@@ -1,13 +1,14 @@
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kfind-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6FileMetaData KF6GuiAddons KF6I18n KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6Solid
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml c m
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6Core5Compat Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -31,7 +32,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		x11/qt6/qt5compat
 
 .include <bsd.port.mk>

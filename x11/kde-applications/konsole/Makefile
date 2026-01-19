@@ -1,6 +1,7 @@
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
+REVISION =	0
 
 SHARED_LIBS +=  konsoleprivate            11.0 # 17.08
 SHARED_LIBS +=  konsoleapp                3.1  # 21
@@ -11,11 +12,10 @@ WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
 WANTLIB += KF6NewStuffWidgets KF6Notifications KF6NotifyConfig
-WANTLIB += KF6Parts KF6Pty KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
+WANTLIB += KF6Parts KF6Pty KF6Service KF6SonnetUi KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
-WANTLIB += Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml X11 c icui18n icuuc
-WANTLIB += m z
+WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Widgets Qt6Xml X11 c icui18n icuuc m z
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -47,10 +47,8 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		devel/kf6/sonnet \
 		textproc/icu4c \
-		x11/qt6/qt5compat \
 		x11/qt6/qtmultimedia
 
 TEST_IS_INTERACTIVE =	X11

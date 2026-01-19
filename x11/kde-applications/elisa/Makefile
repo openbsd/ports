@@ -1,6 +1,7 @@
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
@@ -13,8 +14,8 @@ WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Widgets Qt6Xml c m vlc
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml c m vlc
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

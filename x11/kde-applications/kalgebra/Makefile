@@ -3,15 +3,15 @@ USE_WXNEEDED =	Yes
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets GL KF6ColorScheme KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6KIOCore KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c ereadline m
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c ereadline m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

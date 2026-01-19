@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  kontactprivate       3.0 # 5.13.2
 
@@ -51,7 +52,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		textproc/ktextaddons \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kontactinterface>=${VERSION} \

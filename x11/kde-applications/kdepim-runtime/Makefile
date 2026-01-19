@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           2.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  3.0 # 5.13.2
@@ -31,10 +32,9 @@ WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6MailTransport
 WANTLIB += KPim6Mbox KPim6Mime KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi PlasmaActivities Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6TextToSpeech Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += X11 c m qca-qt6 qt6keychain sasl2
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6TextToSpeech
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml X11 c m qca-qt6 qt6keychain sasl2
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes

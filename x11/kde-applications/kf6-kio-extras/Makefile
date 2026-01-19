@@ -1,6 +1,7 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity net
 
@@ -12,13 +13,11 @@ WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
 WANTLIB += KF6DNSSD KF6I18n KF6ItemViews KF6JobWidgets KF6KCMUtils
 WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6SonnetUi
-WANTLIB += KF6SyntaxHighlighting KF6TextWidgets KF6WidgetsAddons
-WANTLIB += OpenEXR-3_4 OpenEXRCore-3_4 PlasmaActivities PlasmaActivitiesStats
-WANTLIB += QCoro6Core Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
-WANTLIB += m mtp phonon4qt6 phonon4qt6experimental smbclient ssh
-WANTLIB += tag util xkbcommon
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6SyntaxHighlighting
+WANTLIB += KF6WidgetsAddons OpenEXR-3_4 OpenEXRCore-3_4 PlasmaActivities
+WANTLIB += PlasmaActivitiesStats QCoro6Core Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Network Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor
+WANTLIB += c kdsoap-qt6 m mtp smbclient ssh tag util
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
@@ -49,16 +48,13 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
-		devel/kf6/ktextwidgets \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/solid \
-		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/libmtp \
 		devel/qcoro \
 		graphics/openexr \
 		math/imath \
-		multimedia/phonon,qt6 \
 		net/kdsoap \
 		net/kdsoap-ws-discovery-client \
 		net/samba \
@@ -66,10 +62,8 @@ LIB_DEPENDS =	audio/taglib \
 		x11/kde-applications/kf6-libkexiv2>=${VERSION} \
 		x11/kde-plasma/plasma-activities \
 		x11/kde-plasma/plasma-activities-stats \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtsvg \
-		x11/xkbcommon
+		x11/qt6/qtsvg
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

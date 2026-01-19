@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
@@ -35,10 +36,9 @@ WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
 WANTLIB += KPim6Tnef KPim6WebEngineViewer PlasmaActivities Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpg-error gpgme gpgmepp
-WANTLIB += m qgpgmeqt6 qt6keychain
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c gpg-error
+WANTLIB += gpgme gpgmepp m qgpgmeqt6 qt6keychain
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -84,7 +84,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/ktexttemplate \
-		devel/kf6/ktextwidgets \
 		devel/kf6/kuserfeedback \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
@@ -93,7 +92,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
-		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
 		security/libgpg-error \

@@ -1,15 +1,16 @@
 COMMENT =	graphical equivalent of du
 DISTNAME =	filelight-${VERSION}
 CATEGORIES =	x11 sysutils
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/filelight
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6CoreAddons KF6Crash KF6I18n KF6I18nQml
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets c m
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -19,7 +20,6 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf6/kitemviews \
-		devel/kf6/solid \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/kirigami \
 		graphics/kirigami-addons \
@@ -40,7 +40,6 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
-		devel/kf6/solid \
 		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

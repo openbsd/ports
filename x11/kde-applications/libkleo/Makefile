@@ -1,12 +1,13 @@
 COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6Libkleo              2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels
-WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Widgets assuan gpg-error
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Widgets gpg-error
 WANTLIB += gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
@@ -25,7 +26,6 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
 		security/qgpgme \
-		security/libassuan \
 		security/libgpg-error \
 
 .include <bsd.port.mk>

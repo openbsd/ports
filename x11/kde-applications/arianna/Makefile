@@ -1,6 +1,7 @@
 COMMENT =	eBook reader
 DISTNAME =	arianna-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/arianna/
 
@@ -8,10 +9,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Baloo KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6FileMetaData KF6I18n KF6WindowSystem Kirigami KirigamiPlatform
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6HttpServer Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg Qt6WebChannel
-WANTLIB += Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
-WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml X11 c m
+WANTLIB += Qt6Positioning Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Sql
+WANTLIB += Qt6Svg Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore
+WANTLIB += Qt6WebEngineQuick Qt6WebSockets Qt6Widgets Qt6Xml X11
+WANTLIB += c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

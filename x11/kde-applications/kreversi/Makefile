@@ -1,6 +1,7 @@
 COMMENT =	reversi board game
 DISTNAME =	kreversi-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kreversi
 
@@ -10,9 +11,8 @@ WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6I18nQml KF6IconThemes KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
-WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

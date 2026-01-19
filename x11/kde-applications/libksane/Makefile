@@ -1,6 +1,7 @@
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 CATEGORIES =	graphics devel
+REVISION =	0
 
 SHARED_LIBS +=	KSaneWidgets6             0.0 # 0.0
 

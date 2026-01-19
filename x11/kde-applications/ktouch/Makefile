@@ -1,15 +1,16 @@
 COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6ItemViews KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml SM X11 Xext c m xcb xcb-xkb xkbcommon xml2
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6QuickWidgets
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml SM X11 Xext c m xcb xcb-xkb
+WANTLIB += xkbcommon xml2
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

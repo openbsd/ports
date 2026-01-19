@@ -1,14 +1,15 @@
 COMMENT =	app template generator for KDE development
 DISTNAME =	kapptemplate-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kapptemplate
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
 WANTLIB += KF6IconThemes KF6WidgetsAddons Qt6Core Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets c m
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

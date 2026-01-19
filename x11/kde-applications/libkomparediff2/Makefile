@@ -2,6 +2,7 @@ COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
 PKGNAME =	kf6-libkomparediff2-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  komparediff2              2.1 # 5.2
 

@@ -1,13 +1,13 @@
 COMMENT =	weather application for Plasma Mobile
 DISTNAME =	kweather-${VERSION}
 CATEGORIES =	x11 geo
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6I18nQml KF6Notifications KWeatherCore
 WANTLIB += Plasma Qt6Charts Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Widgets
-WANTLIB += c m
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

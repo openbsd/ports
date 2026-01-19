@@ -1,6 +1,7 @@
 COMMENT =	library for reading and writing vocabulary
 DISTNAME =	libkeduvocdocument-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 SHARED_LIBS +=  KEduVocDocument           3.0 # 5.0
 

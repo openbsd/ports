@@ -4,16 +4,16 @@ USE_NOBTCFI =		Yes
 COMMENT =	cross-platform Qt-based web browser
 DISTNAME =	falkon-${VERSION}
 CATEGORIES =	www
+REVISION =	0
 
 SHARED_LIBS +=  FalkonPrivate             3.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Completion KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6Crash KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Purpose KF6PurposeWidgets KF6Service
-WANTLIB += KF6Solid KF6Wallet KF6WidgetsAddons Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Sql Qt6WebChannel Qt6WebEngineCore
+WANTLIB += KF6Wallet KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Sql Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets c crypto execinfo intl
 WANTLIB += m pyside6.abi3 ${MODPY_WANTLIB} shiboken6.abi3 util xcb
 
@@ -35,10 +35,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/purpose \
-		devel/kf6/solid \
 		x11/qt6/pyside6/pyside \
 		x11/qt6/pyside6/shiboken \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

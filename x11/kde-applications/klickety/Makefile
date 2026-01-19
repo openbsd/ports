@@ -1,6 +1,7 @@
 COMMENT =	adaptation of clickomania game
 DISTNAME =	klickety-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/klickety
 
@@ -8,8 +9,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml c m
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -32,7 +33,6 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		x11/kde-applications/libkdegames>=${VERSION} \
 		x11/qt6/qtdeclarative
 

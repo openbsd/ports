@@ -1,6 +1,7 @@
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
@@ -10,8 +11,8 @@ WANTLIB += KF6DBusAddons KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels
 WANTLIB += KF6KIOCore KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiPrivate
 WANTLIB += KPim6AkonadiWidgets KPim6IdentityManagementCore KPim6MailTransport
 WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 Qt6Widgets Qt6Xml
+WANTLIB += c m
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

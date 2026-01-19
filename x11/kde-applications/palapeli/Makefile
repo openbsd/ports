@@ -1,6 +1,7 @@
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/palapeli
 
@@ -11,9 +12,8 @@ WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
-WANTLIB += KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Svg Qt6Widgets Qt6Xml c
-WANTLIB += m
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -41,7 +41,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
 		x11/kde-applications/libkdegames>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsvg
