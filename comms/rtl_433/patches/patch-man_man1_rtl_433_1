@@ -1,0 +1,12 @@
+Index: man/man1/rtl_433.1
+--- man/man1/rtl_433.1.orig
++++ man/man1/rtl_433.1
+@@ -40,7 +40,7 @@ Detailed information on some options follows.
+ 
+ 
+   A "rtl_433.conf" file is searched in "./", XDG_CONFIG_HOME e.g. "$HOME/.config/rtl_433/",
+-  SYSCONFDIR e.g. "/usr/local/etc/rtl_433/", then command line args will be parsed in order.
++  SYSCONFDIR e.g. "${SYSCONFDIR}/rtl_433/", then command line args will be parsed in order.
+ .SS "General options"
+ .TP
+ [ \fB\-V\fI\fP ]

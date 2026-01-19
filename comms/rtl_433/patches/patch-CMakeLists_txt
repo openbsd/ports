@@ -1,0 +1,10 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -390,5 +390,5 @@ INSTALL(
+ )
+ 
+ install(DIRECTORY man
+-    DESTINATION share
++    DESTINATION ${prefix}
+     PATTERN ".md" EXCLUDE)

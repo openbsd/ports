@@ -1,0 +1,20 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuration examples
+======================
+
+Sample configurations and decoders for various RF devices are available in
+${TRUEPREFIX}/share/examples/rtl_433
+
+Tuning and Performance
+======================
+
+The default sample rate used by rtl_433 may be too high for some hardware or
+environments, potentially preventing capturing any packets.
+
+Testing has shown that a sample rate of 1024k is generally stable and sufficient
+for most supported devices. You can specify this rate using the -s flag:
+
+# rtl_433 -s 1024k
