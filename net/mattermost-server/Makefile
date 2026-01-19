@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT-main =	open source Slack-alternative
 COMMENT-mmctl =	command-line tool for managing Mattermost
 
-V =		11.2.1
+V =		11.3.0
 
 # ftp https://github.com/mattermost/mattermost/archive/refs/tags/v{$V}.tar.gz
 # tar xvvzf v{$V}.tar.gz

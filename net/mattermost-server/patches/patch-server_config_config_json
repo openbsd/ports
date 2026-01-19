@@ -10,16 +10,16 @@ Index: server/config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -101,7 +101,7 @@
-     "PersistentNotificationMaxRecipients": 5,
+@@ -105,7 +105,7 @@
+     "BurnOnReadSchedulerFrequencySeconds": 600,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
 -    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket",
 +    "LocalModeSocketLocation": "${LOCALSTATEDIR}/mattermost/mattermost_local.socket",
      "EnableAWSMetering": false,
+     "AWSMeteringTimeoutSeconds": 30,
      "SplitKey": "",
-     "FeatureFlagSyncIntervalSeconds": 30,
-@@ -169,14 +169,14 @@
+@@ -174,14 +174,14 @@
      "ReplicaMonitorIntervalSeconds": 5
    },
    "LogSettings": {
@@ -36,7 +36,7 @@ Index: server/config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -210,7 +210,7 @@
+@@ -215,7 +215,7 @@
      "MaxImageResolution": 33177600,
      "MaxImageDecoderConcurrency": -1,
      "DriverName": "local",
@@ -45,7 +45,7 @@ Index: server/config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -231,7 +231,7 @@
+@@ -236,7 +236,7 @@
      "AmazonS3StorageClass": "",
      "DedicatedExportStore": false,
      "ExportDriverName": "local",
@@ -54,7 +54,7 @@ Index: server/config/config.json
      "ExportAmazonS3AccessKeyId": "",
      "ExportAmazonS3SecretAccessKey": "",
      "ExportAmazonS3Bucket": "",
-@@ -261,11 +261,11 @@
+@@ -266,11 +266,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -69,7 +69,7 @@ Index: server/config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -305,7 +305,7 @@
+@@ -310,7 +310,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -78,7 +78,7 @@ Index: server/config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -412,7 +412,7 @@
+@@ -417,7 +417,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -87,7 +87,7 @@ Index: server/config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -593,8 +593,8 @@
+@@ -605,8 +605,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -98,7 +98,7 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -678,11 +678,11 @@
+@@ -691,11 +691,11 @@
      "EnableAIPluginBridge": false
    },
    "ImportSettings": {
@@ -112,7 +112,7 @@ Index: server/config/config.json
      "RetentionDays": 30
    },
    "WranglerSettings": {
-@@ -760,4 +760,4 @@
+@@ -773,4 +773,4 @@
        "APIKey": ""
      }
    }
