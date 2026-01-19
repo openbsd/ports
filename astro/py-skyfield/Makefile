@@ -1,9 +1,8 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
-MODPY_DISTV =	1.53
+MODPY_DISTV=	1.54
 DISTNAME=	skyfield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 # wants git head of "assay" for tests
 DIST_TUPLE=	github brandon-rhodes assay 74617d70e77afa09f58b3169cf496679ac5d5621 assay_src
