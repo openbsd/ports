@@ -70,14 +70,13 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	cd -; \
 	rsync -av $$t/ m27:$$t/; \
 	ssh m27 "cd $$t/${WRKDIST:C,^.*/,,}; \
-	npm install -dd --include=dev --cache=$$t/npm-cache; \
-	npm run build -dd --cache=$$t/npm-cache; \
-	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links"; \
+	  npm install -dd --include=dev --cache=$$t/npm-cache; \
+	  npm run build -dd --cache=$$t/npm-cache; \
+	  npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links"; \
 	rsync -av m27:$$t/ $$t/; \
 	rm -r npm-cache/_logs; \
 	tar cf - npm-cache | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	rm -rf $$t
-# maybe use nfs rather than rsync?
 
 .include <bsd.port.mk>
