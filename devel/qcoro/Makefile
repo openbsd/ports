@@ -6,7 +6,7 @@ GH_PROJECT =	qcoro
 GH_TAGNAME =	v${V}
 
 FULLPKGNAME=	qcoro-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES =	devel
 
@@ -25,8 +25,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebSockets m
+WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6WebSockets m
 
 # Coroutines are part of C++ 20 and implemented in GCC 10
 COMPILER =	base-clang ports-clang
