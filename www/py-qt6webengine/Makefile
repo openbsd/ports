@@ -3,6 +3,7 @@ COMMENT =	python Qt6WebEngine bindings
 MODPY_DISTV =	6.10.0
 DISTNAME =	pyqt6_webengine-${MODPY_DISTV}
 PKGNAME =	py-qt6webengine-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -12,9 +13,9 @@ HOMEPAGE =	https://www.riverbankcomputing.com/software/pyqtwebengine/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore
-WANTLIB += Qt6WebEngineQuick Qt6WebEngineWidgets Qt6Widgets m
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets m
 
 MODULES =	lang/python \
 		x11/qt6
