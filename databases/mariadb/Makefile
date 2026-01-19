@@ -36,7 +36,13 @@ WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 MULTI_PACKAGES=	-main -server -tests
 
 # C++11, atomic ops
+.if ${MACHINE_ARCH} == "mips64"
+# "error: out of range PC16 fixup"
+# https://github.com/llvm/llvm-project/issues/112010 
+COMPILER=	ports-gcc
+.else
 COMPILER=	base-clang ports-gcc
+.endif
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
