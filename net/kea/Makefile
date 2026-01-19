@@ -1,7 +1,7 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	2.4.2
-REVISION=	2
+REVISION=	3
 PORTROACH=	limitw:1,even
 
 # 2.6 update notes so far;
@@ -25,7 +25,7 @@ HOMEPAGE=	https://kea.isc.org/
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += boost_system c crypto log4cplus m pthread ssl ${COMPILER_LIBCXX}
+WANTLIB += c crypto log4cplus m pthread ssl ${COMPILER_LIBCXX}
 
 SITES=		${SITE_ISC:=kea/${VERSION}/}
 
@@ -43,7 +43,6 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-openssl=/usr \
-                 --with-boost-libs=-lboost_system \
                  --with-boost-lib-dir=${LOCALBASE}/lib \
 		 --enable-generate-parser \
 		 --enable-perfdhcp

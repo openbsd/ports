@@ -1,0 +1,11 @@
+Index: src/lib/asiolink/interval_timer.cc
+--- src/lib/asiolink/interval_timer.cc.orig
++++ src/lib/asiolink/interval_timer.cc
+@@ -9,6 +9,7 @@
+ #include <asiolink/interval_timer.h>
+ #include <asiolink/io_service.h>
+ 
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/enable_shared_from_this.hpp>
+ #include <boost/noncopyable.hpp>
+ #include <boost/shared_ptr.hpp>

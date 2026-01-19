@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -23169,7 +23169,7 @@ if test ${enable_boost_headers_only+y}
+ then :
+   enableval=$enable_boost_headers_only; enable_boost_header="yes"; BOOST_LIBS=""
+ else $as_nop
+-  BOOST_LIBS="${BOOST_LIBS} -lboost_system"
++  BOOST_LIBS="${BOOST_LIBS}"
+ fi
+ 
+ 

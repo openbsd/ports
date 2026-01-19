@@ -1,0 +1,11 @@
+Index: src/lib/asiodns/io_fetch.cc
+--- src/lib/asiodns/io_fetch.cc.orig
++++ src/lib/asiodns/io_fetch.cc
+@@ -22,6 +22,7 @@
+ #include <dns/rcode.h>
+ #include <util/buffer.h>
+ 
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/scoped_ptr.hpp>
+ #include <boost/date_time/posix_time/posix_time_types.hpp>
+ 
