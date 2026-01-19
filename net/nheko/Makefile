@@ -3,6 +3,7 @@ COMMENT =	desktop client for Matrix
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
 GH_TAGNAME =	v0.12.1
+REVISION =	0
 
 CATEGORIES=	net
 
@@ -10,12 +11,11 @@ CATEGORIES=	net
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6Quick Qt6QuickControls2
 WANTLIB += Qt6Svg Qt6Widgets c cmark coeurl crypto fmt glib-2.0
 WANTLIB += gobject-2.0 gstbase-1.0 gstgl-1.0 gstreamer-1.0 gstsdp-1.0
 WANTLIB += gstvideo-1.0 gstwebrtc-1.0 intl kdsingleapplication-qt6
 WANTLIB += lmdb m matrix_client olm qt6keychain spdlog ssl xkbcommon
-WANTLIB += Qt6QmlMeta Qt6QmlWorkerScript
 
 MODULES =	devel/cmake \
 		x11/qt6
