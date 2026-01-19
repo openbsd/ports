@@ -7,13 +7,12 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	Zigbee to MQTT bridge
 
-V=		2.7.1
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
-GH_TAGNAME=	$V
+GH_TAGNAME=	2.7.2
 
 SITES.dep=	https://spacehopper.org/mirrors/
-DISTFILES.dep=	zigbee2mqtt-$V-vendor.tar.xz
+DISTFILES.dep=	zigbee2mqtt-${GH_TAGNAME}-vendor.tar.xz
 
 CATEGORIES=	comms
 
@@ -60,7 +59,7 @@ do-install:
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	@set -x; \
 	t=`mktemp -d /tmp/zigbee2mqtt.XXXXXXXXXX`; \
-	f=$$t/zigbee2mqtt-$V-vendor.tar.xz; \
+	f=$$t/zigbee2mqtt-${GH_TAGNAME}-vendor.tar.xz; \
 	export HOME=$$t LC_CTYPE=C; \
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
