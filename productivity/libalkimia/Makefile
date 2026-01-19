@@ -7,6 +7,7 @@ CATEGORIES =	productivity x11
 V =		8.2.1
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
+REVISION =	0
 
 SHARED_LIBS +=	alkimia6                  0.1 # 0.0
 
@@ -15,9 +16,9 @@ WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes KF6NewStuffCore
 WANTLIB += KF6NewStuffWidgets KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c gmp m
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += c gmp m
 
 HOMEPAGE =	https://community.kde.org/Alkimia/libalkimia
 
