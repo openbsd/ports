@@ -1,6 +1,6 @@
-COMMENT=	community-developed python astronomy tools
+COMMENT=	community-developed Python astronomy tools
 
-MODPY_DISTV=	7.1.1
+MODPY_DISTV=	7.2.0
 DISTNAME=	astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
