@@ -1,6 +1,6 @@
 COMMENT=	lightweight pipelining: using Python functions as pipeline
 
-MODPY_DISTV=	1.5.2
+MODPY_DISTV=	1.5.3
 DISTNAME=	joblib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
