@@ -1,6 +1,7 @@
 QT6NAME =	QtQuick3d
 COMMENT =	Quick 3D support for Qt6
 PKGSPEC =	qt6-qtquick3d-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Quick3D                6.0 # 6.7
 SHARED_LIBS +=  Qt6Quick3DAssetImport     2.0 # 6.7
@@ -20,10 +21,7 @@ WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
 WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6ShaderTools Qt6Widgets
 WANTLIB += assimp c m xkbcommon z
 
-WANTLIB += lib/inotify/inotify
-
 LIB_DEPENDS =	multimedia/assimp \
-		devel/libinotify \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtshadertools \
 		x11/xkbcommon
