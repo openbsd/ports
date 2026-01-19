@@ -1,6 +1,6 @@
 COMMENT=	serialize/deserialize most Python types
 
-MODPY_DISTV=	0.4.0
+MODPY_DISTV=	0.4.1
 DISTNAME=	dill-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
