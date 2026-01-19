@@ -1,11 +1,12 @@
 COMMENT=	Poetry's PEP517 build backend
 
-MODPY_DISTV=	2.2.1
+MODPY_DISTV=	2.3.0
 DISTNAME=	poetry_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
 CATEGORIES=	devel
 
+# https://github.com/python-poetry/poetry-core/releases/
 HOMEPAGE=	https://github.com/python-poetry/poetry-core
 
 # BSD
