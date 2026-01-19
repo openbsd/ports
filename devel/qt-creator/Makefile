@@ -6,6 +6,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			18.0.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=  Aggregation               4.1 # 0.0
 SHARED_LIBS +=  CPlusPlus                 12.0 # 0.0
@@ -42,11 +43,10 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Concurrent Qt6Core
-WANTLIB += Qt6Core5Compat Qt6DBus Qt6Designer Qt6DesignerComponents
-WANTLIB += Qt6Gui Qt6Help Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlCompiler
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Quick3D Qt6Quick3DAssetImport Qt6Quick3DAssetUtils
+WANTLIB += Qt6DBus Qt6Designer Qt6DesignerComponents Qt6Gui Qt6Help
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DAssetImport Qt6Quick3DAssetUtils
 WANTLIB += Qt6Quick3DParticles Qt6Quick3DRuntimeRender Qt6Quick3DUtils
 WANTLIB += Qt6QuickWidgets Qt6SerialPort Qt6ShaderTools Qt6Sql
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6WebChannel Qt6WebEngineCore
@@ -80,7 +80,6 @@ LIB_DEPENDS = 	archivers/libarchive \
 		devel/glib2 \
 		devel/yaml-cpp \
 		x11/gnome/libsecret \
-		x11/qt6/qt5compat \
 		x11/qt6/qtcharts \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
