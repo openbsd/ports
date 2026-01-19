@@ -10,6 +10,9 @@ share/icons/hicolor/scalable/apps/org.rncbc.qsynth.svg
 share/metainfo/
 share/metainfo/org.rncbc.qsynth.metainfo.xml
 share/qsynth/
+share/qsynth/palette/
+share/qsynth/palette/KXStudio.conf
+share/qsynth/palette/Wonton Soup.conf
 share/qsynth/translations/
 share/qsynth/translations/qsynth_cs.qm
 share/qsynth/translations/qsynth_de.qm
