@@ -3,7 +3,7 @@ COMMENT=		next-generation build system
 MODPY_DISTV=		${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
-GH_TAGNAME=		1.10.0
+GH_TAGNAME=		1.10.1
 EPOCH=			0
 
 CATEGORIES=		devel
