@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.9.24
+MODPY_DISTV =		0.9.26
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
@@ -35,6 +35,8 @@ CONFIGURE_STYLE =	cargo
 MODCARGO_CRATES_KEEP =	lzma-sys
 
 SEPARATE_BUILD =	Yes
+
+TEST_ENV +=		TMPDIR=/tmp
 
 post-build:
 	cd ${WRKSRC}/crates/uv-build && env HOME=${WRKSRC} maturin build \
