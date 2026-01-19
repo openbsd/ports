@@ -1,7 +1,7 @@
 COMMENT =		Qt6 configuration tool
 
 DIST_TUPLE =		github	ilya-fedin	qt6ct	0.10	.
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 
@@ -11,8 +11,7 @@ SHARED_LIBS =		qt6ct-common              1.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6IconThemes Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Widgets c m xkbcommon
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets c m xkbcommon
 
 # BSD
 PERMIT_PACKAGE =	Yes
