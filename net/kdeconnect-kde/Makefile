@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		7.0 # 1.4
 
@@ -19,9 +20,8 @@ WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6People
 WANTLIB += KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Bluetooth Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6WaylandClient Qt6Widgets Qt6Xml
-WANTLIB += SM X11 Xext Xtst c crypto dbus-1 fakekey m wayland-client
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
+WANTLIB += Qt6Xml SM X11 Xext Xtst c crypto dbus-1 fakekey m wayland-client
 WANTLIB += wayland-cursor xkbcommon
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
