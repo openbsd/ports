@@ -16,5 +16,4 @@ Cheat sheet
 
 Chromium
 --------
-$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium \
-	~/.config/chromium/.config/chromium/WidevineCdm/9999
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.chromium/WidevineCdm/9999
