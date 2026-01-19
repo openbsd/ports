@@ -1,0 +1,68 @@
+Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c
+--- src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c.orig
++++ src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/ppc_cpudetect.c
+@@ -9,11 +9,8 @@
+  * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
+  */
+ 
+-#include <fcntl.h>
+ #include <unistd.h>
+ #include <stdint.h>
+-#include <asm/cputable.h>
+-#include <linux/auxvec.h>
+ 
+ #include "config/aom_config.h"
+ 
+@@ -37,6 +34,12 @@ static int cpu_env_mask(void) {
+   return env && *env ? (int)strtol(env, NULL, 0) : ~0;
+ }
+ 
++#if defined(__linux__)
++
++#include <fcntl.h>
++#include <asm/cputable.h>
++#include <linux/auxvec.h>
++
+ int ppc_simd_caps(void) {
+   int flags;
+   int mask;
+@@ -75,6 +78,39 @@ out_close:
+   close(fd);
+   return flags & mask;
+ }
++#elif defined(__OpenBSD__)
++
++#include <sys/auxv.h>
++
++// Define hwcap values ourselves: building with an old auxv header where thes
++// hwcap values are not defined should not prevent features from being enable
++#define AOM_PPC_HWCAP_VSX (1 << 7)
++
++int ppc_simd_caps(void) {
++  int flags;
++  int mask;
++
++  // If AOM_SIMD_CAPS_MASK is set then allow only those capabilities.
++  if (!cpu_env_flags(&flags)) {
++    return flags;
++  }
++
++  mask = cpu_env_mask();
++
++#ifdef __OpenBSD__
++  unsigned long hwcap = 0;
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#else
++  unsigned long hwcap = getauxval(AT_HWCAP);
++#endif
++#if HAVE_VSX
++  if (hwcap & AOM_PPC_HWCAP_VSX) {
++    flags |= HAS_VSX;
++  }
++#endif  // HAVE_VSX
++  return flags & mask;
++}
++#endif
+ #else
+ // If there is no RTCD the function pointers are not used and can not be
+ // changed.

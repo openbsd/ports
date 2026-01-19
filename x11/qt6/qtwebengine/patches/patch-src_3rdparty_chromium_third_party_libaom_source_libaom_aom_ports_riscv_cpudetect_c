@@ -1,0 +1,16 @@
+Index: src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/riscv_cpudetect.c
+--- src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/riscv_cpudetect.c.orig
++++ src/3rdparty/chromium/third_party/libaom/source/libaom/aom_ports/riscv_cpudetect.c
+@@ -26,7 +26,12 @@
+ int riscv_simd_caps(void) {
+   int flags = 0;
+ #if HAVE_RVV
++#ifdef __OpenBSD__
++  unsigned long hwcap = 0;
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#else
+   unsigned long hwcap = getauxval(AT_HWCAP);
++#endif
+   if (hwcap & HWCAP_RVV) flags |= HAS_RVV;
+ #endif
+   return flags;
