@@ -1,5 +1,5 @@
 SHA256 (CppCXY-EmmyLuaCodeStyle-8c4289b7617ccdb0b247a6171f111f28ac7ae969.tar.gz) = oXlwBtahf8geqVDMdc4uMYwWbOkCRNFkKGCabFQSJLw=
-SHA256 (LuaLS-lua-language-server-3.16.4.tar.gz) = 0hTvQ7WTpnHBqxf7/zP8irx2b6gk7r8ZBpB3hDIlPhs=
+SHA256 (LuaLS-lua-language-server-3.17.0.tar.gz) = FaYt1mT9HxfpdzLJfdBBDQZWAxJMAUDxtK8sAn5Pmbc=
 SHA256 (actboy168-bee.lua-466c4f071a17ab7c31e402383b0a2097b03535ba.tar.gz) = lhbkln0l8GFC3UevjL7Da07NXFkNe9GcVjXuHzjlTxw=
 SHA256 (actboy168-bee.lua-f55b6988e8d9564816a555118b0e76564ef9a283.tar.gz) = YfJXUJEPzlT45NweMRjoMaR5ux9lRXPozuV95EA7svQ=
 SHA256 (actboy168-json.lua-08095fd2cdfde8f49a5f5b54b35ec7b3d4906a36.tar.gz) = Yl/JJ5jifYxll7WbH40BR0RJbcLhxRF7ql4aTShse34=
@@ -8,7 +8,7 @@ SHA256 (bjornbytes-lovr-docs-e89c753e1c2849b7533481fcf058095f8e050b9f.tar.gz) = 
 SHA256 (love2d-community-love-api-853639288547618dece86c3a8e52348fe304eba2.tar.gz) = 6w6kWqvqub5SGI86ahesNkxHWZNzsDMlUkoUuRQcPKc=
 SHA256 (sqmedeiros-lpeglabel-912b0b9e8641074408ffc2259e069b188e0c717b.tar.gz) = 8w+AObiaVxvfRQ0bgnJ927OQXliyBd3QQh+tUJg7mR8=
 SIZE (CppCXY-EmmyLuaCodeStyle-8c4289b7617ccdb0b247a6171f111f28ac7ae969.tar.gz) = 5427063
-SIZE (LuaLS-lua-language-server-3.16.4.tar.gz) = 3096158
+SIZE (LuaLS-lua-language-server-3.17.0.tar.gz) = 3101302
 SIZE (actboy168-bee.lua-466c4f071a17ab7c31e402383b0a2097b03535ba.tar.gz) = 814252
 SIZE (actboy168-bee.lua-f55b6988e8d9564816a555118b0e76564ef9a283.tar.gz) = 815237
 SIZE (actboy168-json.lua-08095fd2cdfde8f49a5f5b54b35ec7b3d4906a36.tar.gz) = 27668
