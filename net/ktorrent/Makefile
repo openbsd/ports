@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    5.0 # 0.0
 
@@ -26,10 +27,9 @@ WANTLIB += KF6NotifyConfig KF6Parts KF6Plotting KF6Service KF6Solid
 WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6Syndication KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c gcrypt
-WANTLIB += gmp m maxminddb phonon4qt6 tag
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c gcrypt gmp m maxminddb phonon4qt6 tag
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
