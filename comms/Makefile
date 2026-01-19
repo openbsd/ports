@@ -44,6 +44,7 @@
      SUBDIR += qodem
      SUBDIR += qpage
      SUBDIR += rtl-sdr
+     SUBDIR += rtl_433
      SUBDIR += scmxx
      SUBDIR += sigrok
      SUBDIR += smstools
