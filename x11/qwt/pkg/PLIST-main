@@ -5,5 +5,4 @@
 lib/${QTVER}/mkspecs/features/qwt.prf
 lib/${QTVER}/mkspecs/features/qwtconfig.pri
 lib/${QTVER}/mkspecs/features/qwtfunctions.pri
-lib/${QTVER}/plugins/designer/
-lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so
+@so lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so

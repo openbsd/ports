@@ -1,5 +1,7 @@
 COMMENT-main=		Qt widgets for technical applications
 COMMENT-common =	common files for the qwt packages
+REVISION-main=		0
+REVISION-common =	0
 
 VERSION =	6.3.0
 DISTNAME =	qwt-${VERSION}
