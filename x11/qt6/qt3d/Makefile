@@ -1,6 +1,7 @@
 QT6NAME =	Qt3D
 COMMENT =	Qt6 components for 3D graphics
 PKGSPEC =	qt6-qt3d-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt63DAnimation            1.0 # 6.6
 SHARED_LIBS +=  Qt63DCore                 1.2 # 6.6
@@ -19,8 +20,8 @@ SHARED_LIBS +=	Qt63DQuickLogic           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6ShaderTools assimp c
-WANTLIB += m xkbcommon z
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6ShaderTools assimp m
+WANTLIB += xkbcommon z
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=      -Dx86=1

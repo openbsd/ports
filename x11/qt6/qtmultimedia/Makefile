@@ -1,7 +1,7 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Qt6Multimedia             9.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        6.0 # 6.7
@@ -9,8 +9,8 @@ SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7
 SHARED_LIBS +=	Qt6Quick3DSpatialAudio    0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Concurrent Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
 WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender
 WANTLIB += Qt6Quick3DUtils Qt6ShaderTools Qt6Widgets X11 X11-xcb
 WANTLIB += Xext Xrandr avcodec avformat avutil drm glib-2.0 gobject-2.0

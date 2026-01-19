@@ -1,11 +1,12 @@
 QT6NAME =	QtWebChannel
 COMMENT =	Qt6 seamless HTML/JavaScript integration
 PKGSPEC =	qt6-qtwebchannel-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6WebChannel             2.1 # 0.0
 SHARED_LIBS +=  Qt6WebChannelQuick        0.1 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml c m
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml m
 
 BUILD_DEPENDS =	x11/qt6/qtwebsockets
 RUN_DEPENDS =	x11/qt6/qtwebsockets
