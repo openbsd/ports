@@ -1,7 +1,24 @@
 #!/bin/ksh
 
-daemon=$(${LOCALBASE}/bin/javaPathHelper -c rundeck)
-daemon_flags="-XX:MaxPermSize=256m -Xmx1024m -Djava.io.tmpdir=/var/cache/rundeck -jar ${RDECK_BASE}/rundeck-launcher.jar -b ${RDECK_BASE}"
+RDECK_BASE=${TRUEPREFIX}/rundeck
+
+# Source installation profile
+[ -f "${RDECK_BASE}/etc/profile" ] && . ${RDECK_BASE}/etc/profile
+
+# lookup the server port from the tools config file
+RDECK_PORT=$(awk '/framework.server.port/ {print $3}' ${RDECK_BASE}/etc/framework.properties)
+
+SSL_OPTS=
+proto=$(awk '/framework.server.url = / {split($3, a, ":"); print a[1]}' ${RDECK_BASE}/etc/framework.properties)
+[ "${proto:-http}" == "https" ] && {
+   SSL_OPTS="-Drundeck.ssl.config=${RDECK_BASE}/server/config/ssl.properties -Dserver.https.port=${RDECK_PORT:=4443}"
+}
+
+LOG4J_CONFIG="${RDECK_BASE}/server/config/log4j2.properties"
+logging="-Dlogging.config=file:${LOG4J_CONFIG} -Dlog4j.configurationFile=${LOG4J_CONFIG}"
+
+daemon_flags="${logging} ${RDECK_JVM} -Dserver.http.port=${RDECK_PORT:=4440} ${SSL_OPTS} -jar ${RDECK_BASE}/rundeck.war --skipinstall -b ${RDECK_BASE}"
+daemon="${JAVA_HOME}/bin/java"
 daemon_user="_rundeck"
 
 . /etc/rc.d/rc.subr

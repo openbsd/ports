@@ -1,43 +1,54 @@
 @newgroup _rundeck:780
 @newuser _rundeck:780:_rundeck::RunDeck user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/rundeck
+@extraunexec rm -rf ${PREFIX}/rundeck/libext
+@extraunexec rm -rf ${PREFIX}/rundeck/projects
+@extraunexec rm -rf ${PREFIX}/rundeck/repository
+@extraunexec rm -rf ${PREFIX}/rundeck/server/data/*
+@extraunexec rm -rf ${PREFIX}/rundeck/server/logs/*
+@extraunexec rm -rf ${PREFIX}/rundeck/var/* ${PREFIX}/rundeck/var/.first*
+@extra rundeck/server/config/artifact-repositories.yaml
 @mode 0750
 @owner _rundeck
 @group _rundeck
 rundeck/
+rundeck/.ssh/
 rundeck/etc/
 rundeck/etc/admin.aclpolicy.dist
 @sample rundeck/etc/admin.aclpolicy
-rundeck/etc/apitoken.aclpolicy.dist
-@sample rundeck/etc/apitoken.aclpolicy
 rundeck/etc/framework.properties.dist
 @sample rundeck/etc/framework.properties
-rundeck/etc/log4j.properties.dist
-@sample rundeck/etc/cli-log4j.properties
-@sample rundeck/etc/log4j.properties
 rundeck/etc/profile.dist
 @sample rundeck/etc/profile
 rundeck/etc/project.properties.dist
 @sample rundeck/etc/project.properties
-rundeck/rundeck-launcher.jar
+rundeck/etc/system-job_reader.aclpolicy_template.dist
+@sample rundeck/etc/system-job_reader.aclpolicy_template
+rundeck/etc/system-job_runner.aclpolicy_template.dist
+@sample rundeck/etc/system-job_runner.aclpolicy_template
+rundeck/etc/system-job_viewer.aclpolicy_template.dist
+@sample rundeck/etc/system-job_viewer.aclpolicy_template
+rundeck/etc/system-job_writer.aclpolicy_template.dist
+@sample rundeck/etc/system-job_writer.aclpolicy_template
+rundeck/etc/system-project_admin.aclpolicy_template.dist
+@sample rundeck/etc/system-project_admin.aclpolicy_template
+rundeck/rundeck.war
 rundeck/server/
+rundeck/server/addons/
 rundeck/server/config/
-rundeck/server/config/jaas-loginmodule.conf
-rundeck/server/config/rundeck-config.properties
-rundeck/server/exp/
-rundeck/server/exp/webapp/
-rundeck/server/exp/webapp/WEB-INF/
-rundeck/server/exp/webapp/WEB-INF/classes/
-rundeck/server/exp/webapp/WEB-INF/classes/log4j.properties
-rundeck/tools/
-rundeck/tools/bin/
-rundeck/tools/bin/dispatch
-rundeck/tools/bin/rd-acl
-rundeck/tools/bin/rd-jobs
-rundeck/tools/bin/rd-project
-rundeck/tools/bin/rd-queue
-rundeck/tools/bin/rd-setup
-rundeck/tools/bin/run
-@group
-@owner
-@mode
-@rcscript ${RCDIR}/rundeck
+rundeck/server/config/jaas-loginmodule.conf.dist
+@sample rundeck/server/config/jaas-loginmodule.conf
+rundeck/server/config/log4j2.properties.dist
+@sample rundeck/server/config/log4j2.properties
+rundeck/server/config/realm.properties.dist
+@sample rundeck/server/config/realm.properties
+rundeck/server/config/rundeck-config.properties.dist
+@sample rundeck/server/config/rundeck-config.properties
+rundeck/server/config/ssl.properties.dist
+@sample rundeck/server/config/ssl.properties
+rundeck/server/data/
+rundeck/server/lib/
+rundeck/server/logs/
+rundeck/server/work/
+rundeck/user-assets/
+rundeck/var/
