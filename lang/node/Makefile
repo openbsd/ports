@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v22.21.1
+NODE_VERSION =		v22.22.0
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
 DIST_TUPLE =		github qbit node-pledge 1.1.3 \
@@ -28,7 +28,7 @@ MODULES =		lang/python
 
 WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
 WANTLIB += z brotlienc brotlidec
-WANTLIB += icudata icui18n icuuc cares nghttp2 nghttp3 uv
+WANTLIB += icudata icui18n icuuc cares nghttp2 nghttp3 uv simdutf
 WANTLIB += lib/${EOPENSSL_VSN}/ssl lib/${EOPENSSL_VSN}/crypto
 
 COMPILER =		base-clang ports-gcc
@@ -50,6 +50,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--shared-libuv \
 			--shared-nghttp2 \
 			--shared-nghttp3 \
+			--shared-simdutf \
 			--shared-zlib \
 			--shared-openssl \
 			--shared-openssl-libpath=${EOPENSSL_LIB} \
@@ -68,6 +69,7 @@ LIB_DEPENDS +=		archivers/brotli \
 			net/libcares \
 			security/openssl/${OPENSSL_VSN} \
 			textproc/icu4c \
+			textproc/simdutf \
 			www/nghttp2 \
 			www/nghttp3
 
