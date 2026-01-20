@@ -8,12 +8,12 @@ COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		3.0.0rc2
+V=		3.0.0rc2pl1
 #SITES=		https://www.monitoring-plugins.org/download/
 GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins
-GH_TAGNAME=	v${V:S/rc/-rc/}
-REVISION-main=	0
+#GH_TAGNAME=	v${V:S/rc/-rc/}
+GH_COMMIT=	bccb38dc9d56ca5cecce8f2f9a988ec5d31626db
 
 DISTNAME=	monitoring-plugins-${V:S/rc/-rc/}
 PKGNAME-main=	monitoring-plugins-$V
@@ -58,8 +58,7 @@ CONFIGURE_ARGS+= \
 # proot on a nosuid filesystem can't run ping)
 CONFIGURE_ARGS+= \
 		--with-dig-command=/usr/bin/dig \
-		--with-fping-command="${LOCALBASE}/sbin/fping -4" \
-		--with-fping6-command="${LOCALBASE}/sbin/fping -6" \
+		--with-fping-command="${LOCALBASE}/sbin/fping" \
 		--with-nslookup-command=/usr/bin/nslookup \
 		--with-ping-command="/sbin/ping -n -c %d %s" \
 		--with-ping6-command="/sbin/ping6 -n -c %d %s" \

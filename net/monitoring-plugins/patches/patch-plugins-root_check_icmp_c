@@ -6,7 +6,7 @@ on OpenBSD, time_t is always 64-bit, even on 32-bit archs.
 Index: plugins-root/check_icmp.c
 --- plugins-root/check_icmp.c.orig
 +++ plugins-root/check_icmp.c
-@@ -941,15 +941,15 @@ int main(int argc, char **argv) {
+@@ -940,15 +940,15 @@ int main(int argc, char **argv) {
  
  	if (debug) {
  		if (max_completion_time > (timeout * 1000000)) {
@@ -27,7 +27,7 @@ Index: plugins-root/check_icmp.c
  		printf("icmp_pkt_size: %u  timeout: %u\n", config.icmp_data_size + ICMP_MINLEN, timeout);
  	}
  
-@@ -1050,8 +1050,8 @@ static void run_checks(unsigned short icmp_pkt_size, t
+@@ -1049,8 +1049,8 @@ static void run_checks(unsigned short icmp_pkt_size, t
  		time_t final_wait = max_completion_time - time_passed;
  
  		if (debug) {
@@ -38,7 +38,7 @@ Index: plugins-root/check_icmp.c
  		}
  		if (time_passed > max_completion_time) {
  			if (debug) {
-@@ -1063,7 +1063,7 @@ static void run_checks(unsigned short icmp_pkt_size, t
+@@ -1062,7 +1062,7 @@ static void run_checks(unsigned short icmp_pkt_size, t
  		/* catch the packets that might come in within the timeframe, but
  		 * haven't yet */
  		if (debug) {
@@ -47,7 +47,7 @@ Index: plugins-root/check_icmp.c
  				   (float)final_wait / 1000);
  		}
  		if (targets_alive(number_of_targets, program_state->targets_down) ||
-@@ -1126,7 +1126,7 @@ static int wait_for_reply(check_icmp_socket_set sockse
+@@ -1125,7 +1125,7 @@ static int wait_for_reply(check_icmp_socket_set sockse
  						 &loop_time_interval, &packet_received_timestamp);
  		if (!recv_foo.received) {
  			if (debug > 1) {

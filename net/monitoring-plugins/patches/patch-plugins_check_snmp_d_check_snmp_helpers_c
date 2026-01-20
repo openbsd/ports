@@ -6,7 +6,7 @@ on OpenBSD, time_t is always 64-bit, even on 32-bit archs.
 Index: plugins/check_snmp.d/check_snmp_helpers.c
 --- plugins/check_snmp.d/check_snmp_helpers.c.orig
 +++ plugins/check_snmp.d/check_snmp_helpers.c
-@@ -668,7 +668,7 @@ void np_state_write_string(state_key stateKey, time_t 
+@@ -670,7 +670,7 @@ void np_state_write_string(state_key stateKey, time_t 
  	fprintf(temp_file_pointer, "# NP State file\n");
  	fprintf(temp_file_pointer, "%d\n", NP_STATE_FORMAT_VERSION);
  	fprintf(temp_file_pointer, "%d\n", stateKey.data_version);
@@ -15,7 +15,7 @@ Index: plugins/check_snmp.d/check_snmp_helpers.c
  	fprintf(temp_file_pointer, "%s\n", stringToStore);
  
  	fchmod(temp_file_desc, S_IRUSR | S_IWUSR | S_IRGRP);
-@@ -752,7 +752,7 @@ bool _np_state_read_file(FILE *state_file, state_key s
+@@ -754,7 +754,7 @@ bool _np_state_read_file(FILE *state_file, state_key s
  		} break;
  		case STATE_DATA_TIME: {
  			/* If time > now, error */
