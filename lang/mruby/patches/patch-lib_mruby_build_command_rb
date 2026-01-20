@@ -1,0 +1,12 @@
+Index: lib/mruby/build/command.rb
+--- lib/mruby/build/command.rb.orig
++++ lib/mruby/build/command.rb
+@@ -249,7 +249,7 @@ module MRuby
+ 
+     def initialize(build)
+       super
+-      @command = "ruby #{MRUBY_ROOT}/tools/lrama/exe/lrama"
++      @command = "${RUBY} #{MRUBY_ROOT}/tools/lrama/exe/lrama"
+       @compile_options = %q[-o "%{outfile}" "%{infile}"]
+     end
+ 

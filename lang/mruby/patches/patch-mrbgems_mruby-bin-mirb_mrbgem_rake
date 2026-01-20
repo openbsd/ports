@@ -1,0 +1,17 @@
+Do not link against libtinfo, which is not used on OpenBSD.
+
+Not sent upstream, as mirb build configuration changes in mruby 3.5.0
+make this unnecessary.
+
+Index: mrbgems/mruby-bin-mirb/mrbgem.rake
+--- mrbgems/mruby-bin-mirb/mrbgem.rake.orig
++++ mrbgems/mruby-bin-mirb/mrbgem.rake
+@@ -32,7 +32,7 @@ MRuby::Gem::Specification.new('mruby-bin-mirb') do |sp
+         spec.linker.library_paths << lib_path if lib_path
+       elsif spec.build.cc.search_header_path 'curses.h'
+         spec.linker.libraries << 'ncurses'
+-        if spec.build.cc.search_header_path 'term.h'
++        if spec.build.cc.search_header_path 'term.h' && !MRUBY_BUILD_HOST_IS_OPENBSD
+           spec.linker.libraries << 'tinfo'
+         end
+       elsif spec.build.cc.search_header_path 'ncursesw/curses.h'
