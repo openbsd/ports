@@ -1,8 +1,7 @@
 COMMENT =	Qt-based directory statistics
-
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
-GH_TAGNAME =	1.9
+GH_TAGNAME =	2.0
 
 CATEGORIES =	x11
 
@@ -11,14 +10,19 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
+WANTLIB += Qt6Widgets c intl m z
 
 MODULES =	devel/qmake \
-		x11/qt5
+		x11/qt6
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
+
+LIB_DEPENDS =	x11/qt6/qt5compat \
+		devel/gettext,-runtime
+
+LDFLAGS +=	-lintl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/qdirstat ${PREFIX}/bin/qdirstat
