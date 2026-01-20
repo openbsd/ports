@@ -1,0 +1,14 @@
+Run with java depend (don't require java in path).
+
+Index: bin/kawa.c
+--- bin/kawa.c.orig
++++ bin/kawa.c
+@@ -517,7 +517,7 @@ main(int argc, char** argv)
+   out_argv[out_argc++] = get_command (argv[0]);
+ #else
+   putenv (get_classpath(argv[0]));
+-  out_argv[out_argc++] = "java";
++  out_argv[out_argc++] = "${JAVA_HOME}/bin/java";
+ #endif
+ 
+   /* Calculate and set the kawa.command.line property. */

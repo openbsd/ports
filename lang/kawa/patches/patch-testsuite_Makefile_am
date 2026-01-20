@@ -1,0 +1,22 @@
+Skip tests using jaxb which was removed in jdk11
+
+Index: testsuite/Makefile.am
+--- testsuite/Makefile.am.orig
++++ testsuite/Makefile.am
+@@ -18,7 +18,7 @@ SERVLET_TESTS = check-HelloCgiS check-HelloCgiK
+ endif
+ endif
+ if WITH_SAX2
+-SAX2_TESTS = check-MySAXApp check-jaxb-annotations3
++SAX2_TESTS = check-MySAXApp
+ endif
+ 
+ WARN_FLAGS = --warn-undefined-variable --warn-invoke-unknown-method --warn-as-error
+@@ -48,7 +48,6 @@ check1:  check-num check-arr check-java-array check-la
+   check-srfi-101 check-srfi-108 check-srfi-109 check-resolve-uri \
+   check-format check-ppfile check-system check-strings check-text check-regex \
+   check-xml scribble.class check-run-test-scripts check-moduleM \
+-  check-annotations1 check-annotations2\
+   check-binarytrees check-chameneosredux check-fannkuch check-fannkuchredux check-fasta \
+   check-knucleotide check-mandelbrot check-meteor check-nbody \
+   check-nsieve check-pidigits check-regexdna check-revcomp \
