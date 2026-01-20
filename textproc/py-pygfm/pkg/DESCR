@@ -1,3 +1,6 @@
 This is an implementation of GitHub-Flavored Markdown written as an
-extension to the Python Markdown library. It aims for maximal
-compatibility with GitHub's rendering.
+extension to the Python Markdown library.
+
+This library has well-known consistency issues with rendering and will
+not receive bug fixes. Consider instead using pycmarkgfm, a lightweight
+Python wrapper for GitHub's own implementation of GFM instead.

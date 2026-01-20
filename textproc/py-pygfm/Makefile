@@ -1,20 +1,20 @@
-COMMENT =		GitHub Flavored Markdown extension
+COMMENT=	deprecated GitHub Flavored Markdown extension
 
-MODPY_DISTV =	1.0.2
-DISTNAME =		py-gfm-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:S/py-/py/}
-REVISION =		4
+MODPY_DISTV=	2.0.0
+GH_ACCOUNT=	zopieux
+GH_PROJECT=	py-gfm
+GH_TAGNAME=	${MODPY_DISTV}
 
-CATEGORIES =		textproc
+PKGNAME=	py-pygfm-${MODPY_DISTV}
 
-HOMEPAGE =		https://github.com/zopieux/py-gfm
+CATEGORIES=	textproc
+
+HOMEPAGE=	https://github.com/zopieux/py-gfm
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>
