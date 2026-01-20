@@ -47,7 +47,7 @@ LIB_DEPENDS =		devel/harfbuzz \
 			graphics/libmypaint \
 			x11/gtk+3
 
-TEST_DEPENDS =		devel/py-nose
+NO_TEST =		Yes
 
 PORTHOME =		${WRKSRC}
 
