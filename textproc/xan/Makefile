@@ -22,5 +22,9 @@ SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	cargo
 
+# some tests want files from tests/resources
+pre-test:
+	ln -fs ${WRKDIST}/tests ${WRKBUILD}/
+
 .include "crates.inc"
 .include <bsd.port.mk>
