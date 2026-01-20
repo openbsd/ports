@@ -1,10 +1,10 @@
 COMMENT =	retry decorator in python
 
 MODPY_DISTV =	0.9.5
-
-# pypi distribution is lacking an sdist
-DIST_TUPLE +=	github eSAMTrade retry ${MODPY_DISTV} .
-
+REVISION =	0
+GH_ACCOUNT =	eSAMTrade
+GH_PROJECT =	retry
+GH_TAGNAME =	${MODPY_DISTV}
 PKGNAME =	py-retry2-${MODPY_DISTV}
 
 CATEGORIES =	sysutils devel

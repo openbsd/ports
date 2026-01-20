@@ -1,0 +1,20 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -2,12 +2,12 @@
+ name = retry2
+ version = 0.9.5
+ author = Andrei Suiu | eSAMTrade
+-author-email = andrei.suiu@gmail.com
++author_email = andrei.suiu@gmail.com
+ summary = Easy to use retry decorator.
+ license = Apache License 2.0
+-description-file = README.rst
+-home-page = https://github.com/eSAMTrade/retry
+-requires-python = >=2.6
++description_file = README.rst
++home_page = https://github.com/eSAMTrade/retry
++requires_python = >=2.6
+ classifier =
+     Development Status :: 4 - Beta
+     Intended Audience :: Developers
