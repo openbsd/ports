@@ -10,12 +10,16 @@ HOMEPAGE =	https://capnproto.org
 MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 COMPILER =	base-clang ports-gcc
-MODULES +=	devel/cmake
 
-TEST_DEPENDS +=	lang/tcl/8.6
+MODULES =	devel/cmake \
+		lang/tcl
+
+MODTCL_VERSION =8.6
+
+TEST_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
