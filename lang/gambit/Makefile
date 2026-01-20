@@ -2,8 +2,7 @@ BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.9.5
-REVISION=	0
+V=		4.9.7
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -26,6 +25,7 @@ WANTLIB +=	c crypto m ssl util
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
+# gambit 4.9.7 doesn't build on amd64 without --enable-trust-c-tco
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-cplusplus \
 		--disable-absolute-shared-libs \
@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--libdir=${PREFIX}/lib/gambit/ \
 		--enable-c-opt="${CFLAGS}" \
 		--enable-openssl \
-		--enable-poll
+		--enable-poll \
+		--enable-trust-c-tco
 
 CONFIGURE_ENV=	CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 

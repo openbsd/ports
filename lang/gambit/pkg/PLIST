@@ -25,7 +25,7 @@ bin/six-script
 include/gambit/
 include/gambit/gambit-not${API_V}.h
 include/gambit/gambit.h
-@info info/gambit.info
+info/gambit.info
 lib/gambit/
 lib/gambit/_arm#.scm
 lib/gambit/_asm#.scm
@@ -43,6 +43,18 @@ lib/gambit/_base64/_base64@gambit${API_V}@js/_base64.o1
 lib/gambit/_base64/test/
 lib/gambit/_base64/test/test.scm
 lib/gambit/_codegen#.scm
+lib/gambit/_csv/
+lib/gambit/_csv/_csv#.scm
+lib/gambit/_csv/_csv.scm
+lib/gambit/_csv/_csv.sld
+lib/gambit/_csv/_csv@gambit${API_V}@C/
+lib/gambit/_csv/_csv@gambit${API_V}@C/_csv.c
+@bin lib/gambit/_csv/_csv@gambit${API_V}@C/_csv.o1
+lib/gambit/_csv/_csv@gambit${API_V}@js/
+lib/gambit/_csv/_csv@gambit${API_V}@js/_csv.js
+lib/gambit/_csv/_csv@gambit${API_V}@js/_csv.o1
+lib/gambit/_csv/test/
+lib/gambit/_csv/test/test.scm
 lib/gambit/_define-library/
 lib/gambit/_define-library/_define-library#.scm
 lib/gambit/_define-library/_define-library.scm
@@ -138,6 +150,36 @@ lib/gambit/_http/_http@gambit${API_V}@js/_http.o1
 lib/gambit/_http/test/
 lib/gambit/_http/test/test.scm
 lib/gambit/_io#.scm
+lib/gambit/_irregex/
+lib/gambit/_irregex/_irregex#.scm
+lib/gambit/_irregex/_irregex.scm
+lib/gambit/_irregex/_irregex.sld
+lib/gambit/_irregex/_irregex@gambit${API_V}@C/
+lib/gambit/_irregex/_irregex@gambit${API_V}@C/_irregex.c
+@bin lib/gambit/_irregex/_irregex@gambit${API_V}@C/_irregex.o1
+lib/gambit/_irregex/_irregex@gambit${API_V}@js/
+lib/gambit/_irregex/_irregex@gambit${API_V}@js/_irregex.js
+lib/gambit/_irregex/_irregex@gambit${API_V}@js/_irregex.o1
+lib/gambit/_irregex/irregex.scm
+lib/gambit/_irregex/test/
+lib/gambit/_irregex/test/irregex-utils.scm
+lib/gambit/_irregex/test/test-irregex-from-gauche.scm
+lib/gambit/_irregex/test/test-irregex-pcre.scm
+lib/gambit/_irregex/test/test-irregex-scsh.scm
+lib/gambit/_irregex/test/test-irregex-utf8.scm
+lib/gambit/_irregex/test/test.scm
+lib/gambit/_json/
+lib/gambit/_json/_json#.scm
+lib/gambit/_json/_json.scm
+lib/gambit/_json/_json.sld
+lib/gambit/_json/_json@gambit${API_V}@C/
+lib/gambit/_json/_json@gambit${API_V}@C/_json.c
+@bin lib/gambit/_json/_json@gambit${API_V}@C/_json.o1
+lib/gambit/_json/_json@gambit${API_V}@js/
+lib/gambit/_json/_json@gambit${API_V}@js/_json.js
+lib/gambit/_json/_json@gambit${API_V}@js/_json.o1
+lib/gambit/_json/test/
+lib/gambit/_json/test/test.scm
 lib/gambit/_kernel#.scm
 lib/gambit/_match/
 lib/gambit/_match/_match#.scm
@@ -369,6 +411,7 @@ lib/gambit/gambit/prim/bytevector@gambit${API_V}@js/
 lib/gambit/gambit/prim/bytevector@gambit${API_V}@js/bytevector.js
 lib/gambit/gambit/prim/bytevector@gambit${API_V}@js/bytevector.o1
 lib/gambit/gambit/prim/char#.scm
+lib/gambit/gambit/prim/char-gambit#.scm
 lib/gambit/gambit/prim/char-r4rs#.scm
 lib/gambit/gambit/prim/char-r7rs#.scm
 lib/gambit/gambit/prim/char.sld
