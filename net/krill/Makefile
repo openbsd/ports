@@ -5,7 +5,7 @@ COMMENT =	RPKI Certification Authority and Publication Server
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	krill
-GH_TAGNAME =	v0.15.0
+GH_TAGNAME =	v0.15.1
 
 HOMEPAGE =	https://nlnetlabs.nl/projects/routing/krill/
 CATEGORIES =	net
@@ -13,9 +13,9 @@ CATEGORIES =	net
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${MODCARGO_WANTLIB} crypto m ssl
+WANTLIB =	${MODCARGO_WANTLIB} crypto m ssl
 
-MODULES =		devel/cargo
+MODULES =	devel/cargo
 
 # disable hsm feature to sidestep cryptoki dep
 MODCARGO_NO_DEFAULT_FEATURES = Yes
