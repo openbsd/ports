@@ -644,6 +644,7 @@
      SUBDIR += wdiff
      SUBDIR += wkhtmltopdf
      SUBDIR += xalan-c
+     SUBDIR += xan
      SUBDIR += xerces-c
      SUBDIR += xlsx2csv
      SUBDIR += xml2rfc
