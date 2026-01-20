@@ -1,0 +1,32 @@
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
+
+Index: plugins/check_tcp.c
+--- plugins/check_tcp.c.orig
++++ plugins/check_tcp.c
+@@ -89,6 +89,14 @@ const int DEFAULT_NNTPS_PORT = 563;
+ const int DEFAULT_CLAMD_PORT = 3310;
+ 
+ int main(int argc, char **argv) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts (given up later)
++	 * - inet is required for sockets
++	 * - unix is required for Unix domain sockets
++	 * - dns is required for name lookups */
++	pledge("stdio rpath inet unix dns", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -215,6 +223,10 @@ int main(int argc, char **argv) {
+ 	if (paw.errorcode == ERROR) {
+ 		usage4(_("Could not parse arguments"));
+ 	}
++
++#ifdef __OpenBSD__
++	pledge("stdio inet unix dns", NULL);
++#endif // __OpenBSD__
+ 
+ 	config = paw.config;
+ 

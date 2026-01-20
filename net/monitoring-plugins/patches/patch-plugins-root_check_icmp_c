@@ -1,12 +1,52 @@
-https://github.com/monitoring-plugins/monitoring-plugins/pull/2211
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
 
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2211
 on OpenBSD, time_t is always 64-bit, even on 32-bit archs.
 %lld format string with a cast is portable (as long as %lld is supported).
 
 Index: plugins-root/check_icmp.c
 --- plugins-root/check_icmp.c.orig
 +++ plugins-root/check_icmp.c
-@@ -940,15 +940,15 @@ int main(int argc, char **argv) {
+@@ -812,6 +812,15 @@ void parse_address(const struct sockaddr_storage *addr
+ }
+ 
+ int main(int argc, char **argv) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts (given up later)
++	 * - inet is required for sockets
++	 * - dns is required for name lookups (given up later)
++	 * - id is required for temporary privilege drops in configparsing and for
++	 *   permanent privilege dropping after opening the socket (given up later) */
++	pledge("stdio rpath inet dns id", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -836,6 +845,10 @@ int main(int argc, char **argv) {
+ 		crash("failed to parse config");
+ 	}
+ 
++#ifdef __OpenBSD__
++	pledge("stdio inet dns id", NULL);
++#endif // __OpenBSD__
++
+ 	const check_icmp_config config = tmp_config.config;
+ 
+ 	if (config.output_format_is_set) {
+@@ -898,6 +911,10 @@ int main(int argc, char **argv) {
+ 		return 1;
+ 	}
+ 
++#ifdef __OpenBSD__
++	pledge("stdio inet", NULL);
++#endif // __OpenBSD__
++
+ 	if (sockset.socket4) {
+ 		int result = setsockopt(sockset.socket4, SOL_IP, IP_TTL, &config.ttl, sizeof(config.ttl));
+ 		if (debug) {
+@@ -940,15 +957,15 @@ int main(int argc, char **argv) {
  
  	if (debug) {
  		if (max_completion_time > (timeout * 1000000)) {
@@ -27,7 +67,7 @@ Index: plugins-root/check_icmp.c
  		printf("icmp_pkt_size: %u  timeout: %u\n", config.icmp_data_size + ICMP_MINLEN, timeout);
  	}
  
-@@ -1049,8 +1049,8 @@ static void run_checks(unsigned short icmp_pkt_size, t
+@@ -1049,8 +1066,8 @@ static void run_checks(unsigned short icmp_pkt_size, t
  		time_t final_wait = max_completion_time - time_passed;
  
  		if (debug) {
@@ -38,7 +78,7 @@ Index: plugins-root/check_icmp.c
  		}
  		if (time_passed > max_completion_time) {
  			if (debug) {
-@@ -1062,7 +1062,7 @@ static void run_checks(unsigned short icmp_pkt_size, t
+@@ -1062,7 +1079,7 @@ static void run_checks(unsigned short icmp_pkt_size, t
  		/* catch the packets that might come in within the timeframe, but
  		 * haven't yet */
  		if (debug) {
@@ -47,7 +87,7 @@ Index: plugins-root/check_icmp.c
  				   (float)final_wait / 1000);
  		}
  		if (targets_alive(number_of_targets, program_state->targets_down) ||
-@@ -1125,7 +1125,7 @@ static int wait_for_reply(check_icmp_socket_set sockse
+@@ -1125,7 +1142,7 @@ static int wait_for_reply(check_icmp_socket_set sockse
  						 &loop_time_interval, &packet_received_timestamp);
  		if (!recv_foo.received) {
  			if (debug > 1) {

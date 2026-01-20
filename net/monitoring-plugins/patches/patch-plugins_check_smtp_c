@@ -1,0 +1,32 @@
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
+
+Index: plugins/check_smtp.c
+--- plugins/check_smtp.c.orig
++++ plugins/check_smtp.c
+@@ -100,6 +100,14 @@ static int my_close(int /*socket_descriptor*/);
+ static int verbose = 0;
+ 
+ int main(int argc, char **argv) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts (given up later)
++	 * - inet is required for sockets
++	 * - unix is required for Unix domain sockets
++	 * - dns is required for name lookups */
++	pledge("stdio rpath inet unix dns", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -112,6 +120,10 @@ int main(int argc, char **argv) {
+ 	if (tmp_config.errorcode == ERROR) {
+ 		usage4(_("Could not parse arguments"));
+ 	}
++
++#ifdef __OpenBSD__
++	pledge("stdio inet unix dns", NULL);
++#endif // __OpenBSD__
+ 
+ 	const check_smtp_config config = tmp_config.config;
+ 

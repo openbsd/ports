@@ -1,0 +1,32 @@
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
+
+Index: plugins/check_ssh.c
+--- plugins/check_ssh.c.orig
++++ plugins/check_ssh.c
+@@ -61,6 +61,14 @@ static int ssh_connect(mp_check *overall, char *haddr,
+ 					   char *remote_protocol);
+ 
+ int main(int argc, char **argv) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts (given up later)
++	 * - inet is required for sockets
++	 * - unix is required for Unix domain sockets
++	 * - dns is required for name lookups */
++	pledge("stdio rpath inet unix dns", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -73,6 +81,10 @@ int main(int argc, char **argv) {
+ 	if (tmp_config.errorcode == ERROR) {
+ 		usage4(_("Could not parse arguments"));
+ 	}
++
++#ifdef __OpenBSD__
++	pledge("stdio inet unix dns", NULL);
++#endif // __OpenBSD__
+ 
+ 	check_ssh_config config = tmp_config.config;
+ 

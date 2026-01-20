@@ -1,0 +1,32 @@
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
+
+Index: plugins/check_ntp_time.c
+--- plugins/check_ntp_time.c.orig
++++ plugins/check_ntp_time.c
+@@ -661,6 +661,14 @@ static check_ntp_time_config_wrapper process_arguments
+ }
+ 
+ int main(int argc, char *argv[]) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts (given up later)
++	 * - inet is required for sockets
++	 * - unix is required for Unix domain sockets
++	 * - dns is required for name lookups */
++	pledge("stdio rpath inet unix dns", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -673,6 +681,10 @@ int main(int argc, char *argv[]) {
+ 	if (tmp_config.errorcode == ERROR) {
+ 		usage4(_("Could not parse arguments"));
+ 	}
++
++#ifdef __OpenBSD__
++	pledge("stdio inet unix dns", NULL);
++#endif // __OpenBSD__
+ 
+ 	const check_ntp_time_config config = tmp_config.config;
+ 

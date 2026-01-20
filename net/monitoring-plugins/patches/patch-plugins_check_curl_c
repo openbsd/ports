@@ -1,0 +1,37 @@
+- https://github.com/monitoring-plugins/monitoring-plugins/pull/2225
+add pledge()
+
+Index: plugins/check_curl.c
+--- plugins/check_curl.c.orig
++++ plugins/check_curl.c
+@@ -120,6 +120,14 @@ mp_state_enum np_net_ssl_check_certificate(X509 *certi
+ #endif /* defined(HAVE_SSL) && defined(USE_OPENSSL) */
+ 
+ int main(int argc, char **argv) {
++#ifdef __OpenBSD__
++	/* - rpath is required to read --extra-opts, CA and/or client certs
++	 * - wpath is required to write --cookie-jar (possibly given up later)
++	 * - inet is required for sockets
++	 * - dns is required for name lookups */
++	pledge("stdio rpath wpath inet dns", NULL);
++#endif // __OpenBSD__
++
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+@@ -134,6 +142,15 @@ int main(int argc, char **argv) {
+ 	}
+ 
+ 	const check_curl_config config = tmp_config.config;
++
++#ifdef __OpenBSD__
++	if (!config.curl_config.cookie_jar_file) {
++		if (verbose >= 2) {
++			printf(_("* No \"--cookie-jar\" is used, giving up \"wpath\" pledge(2)\n"));
++		}
++		pledge("stdio rpath inet dns", NULL);
++	}
++#endif // __OpenBSD__
+ 
+ 	if (config.output_format_is_set) {
+ 		mp_set_format(config.output_format);
