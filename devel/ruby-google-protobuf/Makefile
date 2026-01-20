@@ -1,5 +1,5 @@
 COMMENT =	protocol buffer classes in Ruby
-DISTNAME =	google-protobuf-4.32.1
+DISTNAME =	google-protobuf-4.33.4
 CATEGORIES =	net devel
 
 HOMEPAGE =	https://protobuf.dev
