@@ -1,0 +1,20 @@
+From 1d9f04ad83ca5b0140b35bb6995637c6fc6d39b7 Mon Sep 17 00:00:00 2001
+From: Bart Van Assche <bvanassche@acm.org>
+Date: Tue, 6 Jan 2026 06:45:19 -0700
+Subject: [PATCH] libsnmp: Fix a stack buffer overflow
+
+Do not read past the end of the stack array ourEngineID.
+
+Index: snmplib/snmptsm.c
+--- snmplib/snmptsm.c.orig
++++ snmplib/snmptsm.c
+@@ -416,7 +416,8 @@ tsm_process_in_msg(struct snmp_secmod_incoming_params 
+     ourEngineID_len =
+         snmpv3_get_engineID((u_char*) ourEngineID, ourEngineID_len);
+     netsnmp_assert_or_return(ourEngineID_len != 0 &&
+-                             ourEngineID_len <= *parms->secEngineIDLen,
++                             ourEngineID_len <= *parms->secEngineIDLen &&
++			     *parms->secEngineIDLen <= sizeof(ourEngineID),
+                              SNMPERR_GENERR);
+     memcpy(parms->secEngineID, ourEngineID, *parms->secEngineIDLen);
+ 

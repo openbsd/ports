@@ -2,6 +2,7 @@ COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.9.5.2
+REVISION-main=	0
 DISTNAME=	net-snmp-${V:S/pre/.pre/}
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V

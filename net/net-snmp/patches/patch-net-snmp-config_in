@@ -1,0 +1,53 @@
+From ffb86569d3bd5f3d5727b1d7562a26d9774ba1ce Mon Sep 17 00:00:00 2001
+From: Bart Van Assche <bvanassche@acm.org>
+Date: Mon, 5 Jan 2026 03:32:18 -0800
+Subject: [PATCH] net-snmp-config.in: Filter compiler flags
+
+Index: net-snmp-config.in
+--- net-snmp-config.in.orig
++++ net-snmp-config.in
+@@ -27,6 +27,22 @@ check_build_dir()
+       fi
+ }
+ 
++filter_cflags()
++{
++    read -r all_cflags
++    for cflag in ${all_cflags}; do
++	case "$cflag" in
++	    -fsanitize*)
++		echo -n "$cflag ";;
++	    -f*|-g*|-O*|-pipe|-W*|-I.)
++	        ;;
++	    *)
++		echo -n "$cflag ";;
++	esac
++    done
++    echo
++}
++
+ # usage: index n arguments
+ # effect: returns the (n+1)th argument
+ index()
+@@ -143,10 +159,10 @@ else
+       ;;
+     #################################################### compile
+     --base-cflags)
+-      echo @CFLAGS@ @CPPFLAGS@ -I${NSC_INCLUDEDIR}
++      echo @CFLAGS@ @CPPFLAGS@ -I${NSC_INCLUDEDIR} | filter_cflags
+       ;;
+     --cflags|--cf*)
+-      echo @CFLAGS@ @DEVFLAGS@ @CPPFLAGS@ -I. -I${NSC_INCLUDEDIR}
++      echo @CFLAGS@ @DEVFLAGS@ @CPPFLAGS@ -I. -I${NSC_INCLUDEDIR} | filter_cflags
+       ;;
+     --srcdir)
+       echo $NSC_SRCDIR
+@@ -188,7 +204,7 @@ else
+       echo $result
+       ;;
+     --build-command)
+-      echo "@CC@ @CFLAGS@ @DEVFLAGS@ @CPPFLAGS@"
++      echo "@CC@ @CFLAGS@ @DEVFLAGS@ @CPPFLAGS@" | filter_cflags
+       ;;
+     #################################################### client lib
+     --libs)
