@@ -1,7 +1,10 @@
 COMMENT =	open source video transcoder
 
+# IBT issues in svt-av1
+USE_NOBTCFI-amd64 = Yes
+
 V =		1.10.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
 EXTRACT_SUFX =	.tar.bz2
