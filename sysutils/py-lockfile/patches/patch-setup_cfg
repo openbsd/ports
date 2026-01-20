@@ -1,0 +1,18 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,11 +1,11 @@
+ [metadata]
+ name = lockfile
+ summary = Platform-independent file locking module
+-description-file = 
++description_file = 
+ 	README.rst
+ author = OpenStack
+-author-email = openstack-dev@lists.openstack.org
+-home-page = http://launchpad.net/pylockfile
++author_email = openstack-dev@lists.openstack.org
++home_page = http://launchpad.net/pylockfile
+ classifier = 
+ 	Intended Audience :: Developers
+ 	License :: OSI Approved :: MIT License
