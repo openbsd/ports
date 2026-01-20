@@ -1,3 +1,7 @@
+# JIT not working on aarch64; ongoing work at
+# https://github.com/HaxeFoundation/hashlink/pull/857
+NOT_FOR_ARCHS =	aarch64
+
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
 
