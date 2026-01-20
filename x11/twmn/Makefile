@@ -4,7 +4,7 @@ V =		1.2pl20220125
 GH_ACCOUNT =	sboli
 GH_PROJECT =	twmn
 GH_COMMIT =	58ca77dde5a007ef0edb7c6e2312310adaf68c7d
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	${GH_PROJECT}-${V}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	devel/qmake x11/qt5
 
 WANTLIB += ${COMPILER_LIBCXX} GL c m GL Qt5DBus Qt5Core Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets boost_program_options boost_system
+WANTLIB += Qt5Network Qt5Widgets boost_program_options
 
 LIB_DEPENDS =	devel/boost
 

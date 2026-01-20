@@ -1,0 +1,14 @@
+Fix build with Boost 1.89
+
+Index: twmnc/twmnc.pro
+--- twmnc/twmnc.pro.orig
++++ twmnc/twmnc.pro
+@@ -8,7 +8,7 @@ TARGET = twmnc
+ DEPENDPATH += .
+ INCLUDEPATH += .
+ DESTDIR = ../bin/
+-LIBS += -lboost_program_options -lboost_system -lpthread
++LIBS += -lboost_program_options -lpthread
+ target.path += /usr/local/bin
+ INSTALLS += target
+ # Input
