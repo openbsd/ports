@@ -1,1 +1,7 @@
 Pyghmi is a pure Python (mostly IPMI) server management library.
+
+A couple of sample applications are provided, but these are really
+more of a demonstration than anything directly usable.
+
+It is required for a couple of Ansible community modules, "ipmi_power"
+and "ipmi_boot".
