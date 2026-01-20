@@ -4,9 +4,7 @@ COMMENT =		lightweight, embeddable implementation of ruby
 
 GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
-GH_TAGNAME =		3.3.0
-
-REVISION =		2
+GH_TAGNAME =		3.4.0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/
@@ -27,6 +25,7 @@ NO_CONFIGURE =		Yes
 SUBST_VARS =		RUBY
 
 do-build:
+	${SUBST_CMD} ${WRKSRC}/lib/mruby/build/command.rb
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} --verbose
 
 do-install:

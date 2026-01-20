@@ -25,6 +25,7 @@ include/mruby/internal.h
 include/mruby/irep.h
 include/mruby/istruct.h
 include/mruby/khash.h
+include/mruby/mempool.h
 include/mruby/numeric.h
 include/mruby/object.h
 include/mruby/opcode.h
@@ -159,6 +160,8 @@ lib/mruby/mrbgems/mruby-compar-ext/
 lib/mruby/mrbgems/mruby-compar-ext/mrbgem.rake
 lib/mruby/mrbgems/mruby-compar-ext/mrblib/
 lib/mruby/mrbgems/mruby-compar-ext/mrblib/compar.rb
+lib/mruby/mrbgems/mruby-compar-ext/test/
+lib/mruby/mrbgems/mruby-compar-ext/test/compar.rb
 lib/mruby/mrbgems/mruby-compiler/
 lib/mruby/mrbgems/mruby-compiler/core/
 lib/mruby/mrbgems/mruby-compiler/core/codegen.c
@@ -194,6 +197,13 @@ lib/mruby/mrbgems/mruby-dir/src/dir.c
 lib/mruby/mrbgems/mruby-dir/test/
 lib/mruby/mrbgems/mruby-dir/test/dir.rb
 lib/mruby/mrbgems/mruby-dir/test/dirtest.c
+lib/mruby/mrbgems/mruby-encoding/
+lib/mruby/mrbgems/mruby-encoding/mrbgem.rake
+lib/mruby/mrbgems/mruby-encoding/src/
+lib/mruby/mrbgems/mruby-encoding/src/encoding.c
+lib/mruby/mrbgems/mruby-encoding/test/
+lib/mruby/mrbgems/mruby-encoding/test/numeric.rb
+lib/mruby/mrbgems/mruby-encoding/test/string.rb
 lib/mruby/mrbgems/mruby-enum-chain/
 lib/mruby/mrbgems/mruby-enum-chain/mrbgem.rake
 lib/mruby/mrbgems/mruby-enum-chain/mrblib/
@@ -330,6 +340,7 @@ lib/mruby/mrbgems/mruby-object-ext/src/object.c
 lib/mruby/mrbgems/mruby-object-ext/test/
 lib/mruby/mrbgems/mruby-object-ext/test/nil.rb
 lib/mruby/mrbgems/mruby-object-ext/test/object.rb
+lib/mruby/mrbgems/mruby-object-ext/test/object-ext.c
 lib/mruby/mrbgems/mruby-objectspace/
 lib/mruby/mrbgems/mruby-objectspace/mrbgem.rake
 lib/mruby/mrbgems/mruby-objectspace/src/
@@ -349,12 +360,6 @@ lib/mruby/mrbgems/mruby-pack/src/
 lib/mruby/mrbgems/mruby-pack/src/pack.c
 lib/mruby/mrbgems/mruby-pack/test/
 lib/mruby/mrbgems/mruby-pack/test/pack.rb
-lib/mruby/mrbgems/mruby-print/
-lib/mruby/mrbgems/mruby-print/mrbgem.rake
-lib/mruby/mrbgems/mruby-print/mrblib/
-lib/mruby/mrbgems/mruby-print/mrblib/print.rb
-lib/mruby/mrbgems/mruby-print/src/
-lib/mruby/mrbgems/mruby-print/src/print.c
 lib/mruby/mrbgems/mruby-proc-binding/
 lib/mruby/mrbgems/mruby-proc-binding/mrbgem.rake
 lib/mruby/mrbgems/mruby-proc-binding/src/
