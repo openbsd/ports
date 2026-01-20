@@ -1,0 +1,15 @@
+
+Disable mips64-specific asm code that clang fails to assemble.
+
+Index: libavcodec/cabac_functions.h
+--- libavcodec/cabac_functions.h.orig
++++ libavcodec/cabac_functions.h
+@@ -48,7 +48,7 @@
+ #if ARCH_X86
+ #   include "x86/cabac.h"
+ #endif
+-#if ARCH_MIPS
++#if 0
+ #   include "mips/cabac.h"
+ #endif
+ #if ARCH_LOONGARCH64
