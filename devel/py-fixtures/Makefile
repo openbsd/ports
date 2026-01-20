@@ -1,9 +1,8 @@
 COMMENT =		reusable state for writing clean Python tests
 
-MODPY_DISTV =		3.0.0
+MODPY_DISTV =		4.2.8
 DISTNAME =		fixtures-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		8
 
 CATEGORIES =		devel
 
@@ -15,16 +14,9 @@ MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
+MODPY_PYBUILD =		hatch-vcs
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	fixtures
 
-BUILD_DEPENDS =		devel/py-pbr
-
-RUN_DEPENDS =		devel/py-six \
-			devel/py-testtools
-
-TEST_DEPENDS =		devel/py-mock
+TEST_DEPENDS =		devel/py-testtools
 
 .include <bsd.port.mk>
