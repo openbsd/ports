@@ -22,7 +22,8 @@ MODPY_TEST_LINK_SO= Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-BUILD_DEPENDS=	devel/py-extension-helpers \
+BUILD_DEPENDS=	astro/py-erfa \
+		devel/py-extension-helpers \
 		devel/py-setuptools_scm \
 		devel/py-wheel \
 		lang/cython \
