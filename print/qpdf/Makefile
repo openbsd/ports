@@ -2,7 +2,7 @@
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-12.3.0
+DISTNAME=	qpdf-12.3.1
 
 SHARED_LIBS +=  qpdf 11.1
 
