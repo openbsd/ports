@@ -17,6 +17,12 @@ WANTLIB += ${COMPILER_LIBCXX} Lerc bz2 c cfitsio crypto curl git2
 WANTLIB += gsl gslcblas jpeg llhttp lzma m nghttp2 nghttp3 ngtcp2
 WANTLIB += ngtcp2_crypto_libressl pcre2-8 ssh2 ssl tiff wcs z zstd
 
+.if ${MACHINE_ARCH} == "mips64"
+# "error: out of range PC16 fixup"
+# https://github.com/llvm/llvm-project/issues/112010 
+COMPILER =	ports-gcc
+.endif
+
 SITES =		${SITE_GNU:=gnuastro/}
 
 # Claimed to be too old; uses it anyway.
