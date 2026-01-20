@@ -1,0 +1,12 @@
+Index: lib/puppet/module_tool/tar/gnu.rb
+--- lib/puppet/module_tool/tar/gnu.rb.orig
++++ lib/puppet/module_tool/tar/gnu.rb
+@@ -8,7 +8,7 @@ class Puppet::ModuleTool::Tar::Gnu
+     destdir = File.expand_path(destdir)
+     safe_destdir = Shellwords.shellescape(destdir)
+ 
+-    Puppet::Util::Execution.execute("gzip -dc #{safe_sourcefile} | tar --extract --no-same-owner --directory #{safe_destdir} --file -")
++    Puppet::Util::Execution.execute("gzip -dc #{safe_sourcefile} | tar -xf - -C #{safe_destdir}")
+     Puppet::Util::Execution.execute(['find', destdir, '-type', 'd', '-exec', 'chmod', '755', '{}', '+'])
+     Puppet::Util::Execution.execute(['find', destdir, '-type', 'f', '-exec', 'chmod', 'u+rw,g+r,a-st', '{}', '+'])
+     Puppet::Util::Execution.execute(['chown', '-R', owner, destdir])
