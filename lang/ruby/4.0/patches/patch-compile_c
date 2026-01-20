@@ -1,17 +1,34 @@
 Disable peephole optimizer on mips64 and sparc64, since it occasionally
 segfaults.
 
+Avoid unaligned accesses on mips64 and sparc64.
+
 Index: compile.c
 --- compile.c.orig
 +++ compile.c
-@@ -3358,6 +3358,10 @@ static int
+@@ -3358,7 +3358,11 @@ static int
  iseq_peephole_optimize(rb_iseq_t *iseq, LINK_ELEMENT *list, const int do_tailcallopt)
  {
      INSN *const iobj = (INSN *)list;
 +#if defined(__mips64__) || defined(__sparc64__)
 +    return COMPILE_OK;
 +#endif
-+
  
++
    again:
      optimize_checktype(iseq, iobj);
+ 
+@@ -14436,8 +14440,11 @@ static VALUE
+ ibf_load_object_complex_rational(const struct ibf_load *load, const struct ibf_object_header *header, ibf_offset_t offset)
+ {
+     const struct ibf_object_complex_rational *nums = IBF_OBJBODY(struct ibf_object_complex_rational, offset);
+-    VALUE a = ibf_load_object(load, nums->a);
+-    VALUE b = ibf_load_object(load, nums->b);
++    long aidx, bidx;
++    memcpy(&aidx, &nums->a, sizeof(aidx));
++    VALUE a = ibf_load_object(load, aidx);
++    memcpy(&bidx, &nums->b, sizeof(bidx));
++    VALUE b = ibf_load_object(load, bidx);
+     VALUE obj = header->type == T_COMPLEX ?
+       rb_complex_new(a, b) : rb_rational_new(a, b);
+ 

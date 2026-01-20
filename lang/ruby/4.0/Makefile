@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	miniruby SIGBUS during build
-
 VERSION =		4.0.1
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
