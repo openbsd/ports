@@ -1,9 +1,8 @@
 COMMENT=	offline data for py-skyfield
 
-MODPY_DISTV=	6.0.0
-REVISION=	0
-DISTNAME=	skyfield-data-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	7.0.0
+DISTNAME=	skyfield_data-${MODPY_DISTV}
+PKGNAME=	py-skyfield-data-${MODPY_DISTV}
 
 CATEGORIES=	astro
 

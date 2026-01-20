@@ -1,0 +1,19 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -2,11 +2,11 @@
+ name = skyfield-data
+ version = 7.0.0
+ author = Bruno Bord
+-author-email = bruno@jehaisleprintemps.net
+-home-page = https://github.com/brunobord/skyfield-data
++author_email = bruno@jehaisleprintemps.net
++home_page = https://github.com/brunobord/skyfield-data
+ description = Data package for Skyfield
+-long-description = file: README.md
+-long-description-content-type = text/markdown
++long_description = file: README.md
++long_description_content_type = text/markdown
+ license = MIT
+ license-file = COPYING
+ platform = any
