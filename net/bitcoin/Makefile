@@ -2,7 +2,7 @@ BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
 COMMENT =		P2P payment system
 
-V =			30.0
+V =			30.2
 
 DISTNAME =		bitcoin-${V}
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS +=	-DWITH_ZMQ=ON
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	-DBUILD_GUI=OFF
 .else
-WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Test Qt6Widgets
+WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += qrencode
 
 MODULES +=		x11/qt6
