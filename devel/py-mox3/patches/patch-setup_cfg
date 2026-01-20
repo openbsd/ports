@@ -1,0 +1,20 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,12 +1,12 @@
+ [metadata]
+ name = mox3
+ summary = Mock object framework for Python
+-description-file = 
++description_file = 
+ 	README.rst
+ author = OpenStack
+-author-email = openstack-discuss@lists.openstack.org
+-home-page = https://docs.openstack.org/mox3/latest/
+-python-requires = >=3.6
++author_email = openstack-discuss@lists.openstack.org
++home_page = https://docs.openstack.org/mox3/latest/
++python_requires = >=3.6
+ classifiers = 
+ 	Environment :: OpenStack
+ 	Programming Language :: Python

@@ -1,0 +1,18 @@
+Index: mox3/tests/test_mox.py
+--- mox3/tests/test_mox.py.orig
++++ mox3/tests/test_mox.py
+@@ -316,12 +316,12 @@ class RegexTest(testtools.TestCase):
+     def testReprWithoutFlags(self):
+         """repr should return the regular expression pattern."""
+         self.assertTrue(
+-            repr(mox.Regex(r"a\s+b")) == "<regular expression 'a\s+b'>")
++            repr(mox.Regex(r"a\s+b")) == r"<regular expression 'a\s+b'>")
+ 
+     def testReprWithFlags(self):
+         """repr should return the regular expression pattern and flags."""
+         self.assertTrue(repr(mox.Regex(r"a\s+b", flags=2)) ==
+-                        "<regular expression 'a\s+b', flags=2>")
++                        r"<regular expression 'a\s+b', flags=2>")
+ 
+ 
+ class IsTest(testtools.TestCase):

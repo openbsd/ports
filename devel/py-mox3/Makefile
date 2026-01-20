@@ -4,17 +4,14 @@ MODPY_DISTV =	1.1.0
 DISTNAME =	mox3-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	9
+REVISION =	10
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
+MODPY_PYBUILD =	pbr
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
-
-BUILD_DEPENDS =	devel/py-pbr
 
 RUN_DEPENDS =	devel/py-fixtures \
 		devel/py-pbr
