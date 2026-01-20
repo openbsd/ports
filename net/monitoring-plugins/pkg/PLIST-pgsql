@@ -1,3 +1,1 @@
-@conflict nagios-plugins-pgsql-*
-@pkgpath net/nagios/plugins,-pgsql
 @bin libexec/nagios/check_pgsql

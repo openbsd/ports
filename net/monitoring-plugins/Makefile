@@ -9,7 +9,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		3.0.0rc2pl1
-REVISION-main=	0
+REVISION=	1
 #SITES=		https://www.monitoring-plugins.org/download/
 GH_ACCOUNT=	monitoring-plugins
 GH_PROJECT=	monitoring-plugins

@@ -1,4 +1,2 @@
-@conflict nagios-plugins-ldap-*
-@pkgpath net/nagios/plugins,-ldap
 @bin libexec/nagios/check_ldap
 libexec/nagios/check_ldaps

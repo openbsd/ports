@@ -1,13 +1,5 @@
 @conflict monitoring-plugins-samba-*
-@conflict nagios-plugins-*
-@conflict nagios-plugins-ntp-*
-@conflict nagios-plugins-samba-*
 @pkgpath net/monitoring-plugins,-samba
-@pkgpath net/nagios/plugins,-samba
-@pkgpath net/nagios/plugins
-@pkgpath net/nagios/plugins,-ntp
-@pkgpath net/nagios/plugins,-main
-@comment lib/charset.alias
 libexec/nagios/
 @bin libexec/nagios/check_apt
 @bin libexec/nagios/check_by_ssh

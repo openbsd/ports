@@ -1,5 +1,3 @@
-@conflict nagios-plugins-snmp-*
-@pkgpath net/nagios/plugins,-snmp
 libexec/nagios/check_breeze
 @bin libexec/nagios/check_hpjd
 libexec/nagios/check_ifoperstatus
