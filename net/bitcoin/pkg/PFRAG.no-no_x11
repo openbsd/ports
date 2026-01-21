@@ -1,5 +1,8 @@
 @bin bin/bitcoin-qt
+@bin libexec/bitcoin-gui
 @man man/man1/bitcoin-qt.1
+@comment @bin bin/test_bitcoin-qt
+@comment @bin libexec/test_bitcoin-qt
 share/pixmaps/
 share/pixmaps/bitcoin128.png
 share/pixmaps/bitcoin128.xpm

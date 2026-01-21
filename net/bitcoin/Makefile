@@ -5,6 +5,7 @@ COMMENT =		P2P payment system
 V =			30.2
 
 DISTNAME =		bitcoin-${V}
+REVISION =		0
 
 SITES =			https://bitcoincore.org/bin/bitcoin-core-${V}/
 

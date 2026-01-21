@@ -15,11 +15,8 @@
 @bin bin/bitcoin-wallet
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
-@comment @bin bin/test_bitcoin-qt
-@bin libexec/bitcoin-gui
 @bin libexec/bitcoin-node
 @bin libexec/test_bitcoin
-@comment @bin libexec/test_bitcoin-qt
 @man man/man1/bitcoin-cli.1
 @man man/man1/bitcoin-tx.1
 @man man/man1/bitcoin-util.1
