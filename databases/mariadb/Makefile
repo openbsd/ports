@@ -8,6 +8,8 @@ VERSION=	11.4.9
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
+REVISION=	0
+
 CATEGORIES=	databases
 SITES=		https://archive.mariadb.org/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
