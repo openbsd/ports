@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1782 2026/01/17 15:13:06 kurt Exp $
+# $OpenBSD: Quirks.pm,v 1.1783 2026/01/21 14:15:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1031,6 +1031,8 @@ setup_obsolete_reason(
 	4 => 'processing',
 	4 => 'thinkingrock',
 	13 => 'tls-attacker',
+	17 => 'onionshare',
+	17 => 'onionshare-gui',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
@@ -1084,6 +1086,7 @@ my $obsolete_message = {
 	14 => "horrible ecosystem",
 	15 => "use rspamd's internal milter support instead",
 	16 => "dependencies for recent versions can't be met",
+	17 => "outdated port, security problems in the last ported version",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
 	51 => "no longer maintained upstream, consider using socat or SSH",
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
@@ -1324,18 +1327,6 @@ my $cve = {
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
-
-for my $sub (qw(calendar http_post ldap odbc pgsql snmp speex tds)) {
-	$cve->{"telephony/asterisk,-$sub"} = "asterisk-$sub-<13.23.1";
-}
-
-for my $sub (qw(apache cgi dbg bz2 curl dba gd gmp intl imap ldap mysqli
-    odbc pcntl pdo_mysql pdo_odbc pdo_pgsql pdo_sqlite pgsql pspell
-    shmop soap snmp sqlite3 pdo_dblib tidy xmlrpc xsl zip mysql
-    sybase_ct mssql mcrypt)) {
-	$cve->{"lang/php/7.1,-$sub"} = "php-$sub->7.1,<7.1.22";
-	$cve->{"lang/php/7.2,-$sub"} = "php-$sub->7.2,<7.2.10";
-}
 
 
 # ->check_security($path)
