@@ -355,7 +355,6 @@
      SUBDIR += oinkmaster
      SUBDIR += olsrd
      SUBDIR += onioncat
-     SUBDIR += onionshare
      SUBDIR += openconnect
      SUBDIR += openconnect,light
      SUBDIR += openfire
