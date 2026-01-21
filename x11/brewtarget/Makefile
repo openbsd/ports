@@ -1,6 +1,6 @@
 COMMENT =		brewing software
 
-V =			4.2.1
+V =			5.0.1
 DISTNAME =		brewtarget-$V
 
 CATEGORIES =		x11
@@ -32,8 +32,16 @@ LIB_DEPENDS =		textproc/xalan-c \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include"
+CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
+			-DDO_RELEASE_BUILD=ON \
+			-DNO_MESSING_WITH_FLAGS=ON
 
 NO_TEST =		Yes
+
+post-build:
+	sed \
+		-e 's,@CONFIG_APPLICATION_NAME_LC@,brewtarget,' \
+		-e 's,@CONFIG_APPLICATION_NAME_UC@,Brewtarget,' \
+		${WRKSRC}/linux/desktop.in >${WRKSRC}/linux/brewtarget.desktop
 
 .include <bsd.port.mk>
