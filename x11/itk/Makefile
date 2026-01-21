@@ -3,20 +3,23 @@ COMMENT=	build mega-widgets using the Itcl object system
 VERSION=	3.3
 DISTNAME=	itk${VERSION}
 PKGNAME=	itk-${VERSION}
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	itk33	0.0
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://incrtcl.sourceforge.net/itk/
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE=	Yes
 
-MODULES =	x11/tk
 WANTLIB +=	X11 ${MODTK_WANTLIB} itcl34
 
 SITES=		${SITE_SOURCEFORGE:=incrtcl/}
+
+MODULES =	x11/tk
+MODTK_VERSION=	8.5
 
 LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		devel/itcl
