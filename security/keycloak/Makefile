@@ -2,7 +2,7 @@ COMMENT =	Identity and Access Management solution
 
 CATEGORIES =	security
 
-VERSION =	26.4.7
+VERSION =	26.5.1
 DISTNAME =	keycloak-${VERSION}
 
 SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
