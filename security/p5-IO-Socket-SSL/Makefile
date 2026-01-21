@@ -1,6 +1,7 @@
 COMMENT =	Perl SSL sockets with IO::Socket interface
 
-DISTNAME =	IO-Socket-SSL-2.095
+DISTNAME =	IO-Socket-SSL-2.098
+CPAN_AUTHOR =	SULLR
 
 CATEGORIES =	security
 
