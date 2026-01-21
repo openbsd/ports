@@ -19,6 +19,7 @@ SITES=		https://wordnetcode.princeton.edu/3.0/
 SITES.dict=	https://wordnetcode.princeton.edu/
 
 MODULES=	x11/tk
+MODTK_VERSION=	8.5
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
