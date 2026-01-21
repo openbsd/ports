@@ -5,11 +5,12 @@ COMMENT=	Iwidgets Mega Widget Set
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
 PKGNAME=	iwidgets-${VERSION}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	https://incrtcl.sourceforge.net/iwidgets/
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE=	Yes
@@ -17,6 +18,8 @@ PERMIT_PACKAGE=	Yes
 SITES=		${SITE_SOURCEFORGE:=incrtcl/}
 
 MODULES=	x11/tk
+MODTK_VERSION=	8.5
+
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
 		itcl->=3.4,<3.5v0:devel/itcl \
