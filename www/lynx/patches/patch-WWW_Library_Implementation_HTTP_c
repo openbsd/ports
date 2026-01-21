@@ -1,0 +1,13 @@
+Index: WWW/Library/Implementation/HTTP.c
+--- WWW/Library/Implementation/HTTP.c.orig
++++ WWW/Library/Implementation/HTTP.c
+@@ -57,6 +57,9 @@
+ #if LIBRESSL_VERSION_NUMBER >= 0x2060100fL
+ #define SSL_set_no_TLSV1()		SSL_set_min_proto_version(handle, TLS1_1_VERSION)
+ #endif
++#if LIBRESSL_VERSION_NUMBER >= 0x2090000fL
++#define ASN1_STRING_data		ASN1_STRING_get0_data
++#endif
+ 
+ #elif defined(OPENSSL_VERSION_NUMBER) && (OPENSSL_VERSION_NUMBER >= 0x10100000L)
+ 

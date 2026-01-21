@@ -5,6 +5,8 @@ PKGNAME =	lynx-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
+REVISION =	0
+
 HOMEPAGE =	https://lynx.invisible-island.net/
 
 # GPLv2 only
