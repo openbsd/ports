@@ -1,5 +1,7 @@
 COMMENT =	cross-platform password manager
 
+REVISION =	0
+
 V =		1.5.3.7
 GH_ACCOUNT =	zdia
 GH_PROJECT =	gorilla
@@ -7,13 +9,14 @@ GH_TAGNAME =	v${V}
 DISTNAME =	password-gorilla-${V}
 CATEGORIES =	security
 
-HOMEPAGE =	http://wiki.github.com/zdia/gorilla/
+HOMEPAGE =	https://github.com/zdia/gorilla/wiki
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
 USE_X11 =	Yes
 MODULES =	x11/tk
+MODTK_VERSION =	8.5
 
 RUN_DEPENDS =	devel/itcl \
 		devel/tcllib \
