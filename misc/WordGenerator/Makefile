@@ -15,6 +15,7 @@ SITES =			http://www.arcane-labs.net/download/OpenBSD/ \
 			http://billposer.org/Software/Downloads/
 
 MODULES =		x11/tk
+MODTK_VERSION=		8.5
 
 RUN_DEPENDS =		devel/tcllib>=1.8 \
 			x11/iwidgets
