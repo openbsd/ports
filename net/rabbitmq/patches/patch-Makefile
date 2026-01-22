@@ -3,7 +3,7 @@ quieten upstream's tar check
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -162,9 +162,9 @@ ZIP_V_1 =
+@@ -165,9 +165,9 @@ ZIP_V_1 =
  ZIP_V_2 =
  ZIP_V = $(ZIP_V_$(V))
  
