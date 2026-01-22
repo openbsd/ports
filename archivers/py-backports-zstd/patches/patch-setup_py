@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -52,8 +52,8 @@ def build_extension():
+@@ -56,8 +56,8 @@ def build_extension():
      if _PLATFORM_IS_WIN:
          kwargs["extra_compile_args"] += ["/Ob3", "/GF", "/Gy"]
      else:
