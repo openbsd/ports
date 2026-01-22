@@ -37,6 +37,7 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 # tiff/xcb: they'd be picked up anyway but set to enable to fail
 # if libs aren't found
 MODPY_PYBUILD_ARGS= -C tiff=enable \
+		    -C webp=enable \
 		    -C xcb=enable \
 		    -C parallel=${MAKE_JOBS}
 # can also use -C debug=true

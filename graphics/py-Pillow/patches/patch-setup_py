@@ -1,10 +1,11 @@
 hunk 1: allow finding X libs
 
-hunk 2: find_library_file (which comes from distutils via setuptools)
+hunks 2-3: find_library_file (which comes from distutils via setuptools)
 has a hardcoded 'shared_lib_extension = ".so"' and only searches for the
 full filename, so it misses OpenBSD-style libfoo.so.X.Y unless there's
-also a static library with a matching name (but that was removed in an
-update of graphics/tiff). Patch to workaround.
+also a static library with a matching name. updates to graphics/tiff and
+graphics/libwebp removes static libraries; patch to workaround.
+https://github.com/pypa/distutils/issues/396
 
 Index: setup.py
 --- setup.py.orig
@@ -22,12 +23,21 @@ Index: setup.py
          elif sys.platform.startswith("netbsd"):
              _add_directory(library_dirs, "/usr/pkg/lib")
              _add_directory(include_dirs, "/usr/pkg/include")
-@@ -793,6 +799,8 @@ class pil_build_ext(build_ext):
-                 ):
+@@ -794,6 +800,8 @@ class pil_build_ext(build_ext):
                      feature.set("tiff", "libtiff")
                  elif _find_library_file(self, "tiff"):
-+                    feature.set("tiff", "tiff")
-+                elif sys.platform.startswith("openbsd"):
                      feature.set("tiff", "tiff")
++                elif sys.platform.startswith("openbsd"):
++                    feature.set("tiff", "tiff")
  
          if feature.want("freetype"):
+             _dbg("Looking for freetype")
+@@ -874,6 +882,8 @@ class pil_build_ext(build_ext):
+                     ):
+                         feature.set("webp", prefix + "webp")
+                         break
++                    elif sys.platform.startswith("openbsd"):
++                        feature.set("webp", "webp")
+ 
+         if feature.want("xcb"):
+             _dbg("Looking for xcb")
