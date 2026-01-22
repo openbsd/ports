@@ -1,17 +1,17 @@
 COMMENT=	C parser in pure Python
 
-MODPY_DISTV=	2.22
+MODPY_DISTV=	3.0
 DISTNAME=	pycparser-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel textproc
-REVISION=	1
+
+HOMEPAGE=	https://github.com/eliben/pycparser
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
-
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
