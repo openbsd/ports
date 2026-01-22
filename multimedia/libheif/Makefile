@@ -1,6 +1,6 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.21.1
+V=		1.21.2
 DISTNAME=	libheif-$V
 
 SHARED_LIBS +=  heif 3.0
@@ -31,10 +31,10 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		graphics/jpeg \
 		multimedia/x264 \
 		multimedia/x265
-# examples (if heif-view is enabled, also pulls in SDL2).
+# examples (if heif-view is enabled, also pulls in SDL2, and needs
+# CXXFLAGS+= -I/usr/local/include)
 LIB_DEPENDS+=	graphics/png
 
-CXXFLAGS+=	-I/usr/local/include
 CONFIGURE_ARGS=	-DCMAKE_COMPILE_WARNING_AS_ERROR=Off \
 		-DWITH_DAV1D=On \
 		-DWITH_EXAMPLE_HEIF_VIEW=Off \
