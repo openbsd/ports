@@ -6,6 +6,7 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
 GH_TAGNAME =		v3.1.9.0
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
 
 SHARED_LIBS +=		OpenImageIO		19.0
@@ -23,7 +24,7 @@ WANTLIB += OpenColorIO OpenEXR-3_4 OpenEXRCore-3_4 Qt6Core Qt6Gui
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
 WANTLIB += avutil bz2 c freetype gif heif jpeg jxl jxl_threads
 WANTLIB += m openjp2 openjph png pugixml raw_r sharpyuv swscale tbb tiff
-WANTLIB += webp webpdemux z
+WANTLIB += webp webpdemux webpmux z
 
 MODULES =		devel/cmake \
 			lang/python \
