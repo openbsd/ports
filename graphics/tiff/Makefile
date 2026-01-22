@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://libtiff.gitlab.io/libtiff/
 
+# BSD
+PERMIT_PACKAGE=	Yes
+
 MODULES =	devel/cmake
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/lerc \
@@ -18,19 +21,17 @@ LIB_DEPENDS=	graphics/jpeg \
 		archivers/zstd
 WANTLIB=	Lerc c ${COMPILER_LIBCXX} jpeg lzma m z zstd
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-
-# BSD
-PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS=	-Djbig=OFF \
 		-Dlibdeflate=OFF \
-		-Dwebp=OFF \
 		-Dtiff-contrib=OFF \
 		-Dtiff-docs=OFF \
 		-Dtiff-opengl=OFF \
 		-Djpeg=${LOCALBASE}
+
+CONFIGURE_ARGS += -Dwebp=OFF # avoid build loop
 
 #		-Dtiff-tools-unsupported=ON \ # comms/hylafax needs tiff2ps and tiff2pdf
 
