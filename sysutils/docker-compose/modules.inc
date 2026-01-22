@@ -67,13 +67,13 @@ MODGO_MODULES =	\
 	github.com/cloudflare/circl							 v1.6.0 \
 	github.com/cncf/xds/go								 v0.0.0-20251022180443-0feb69152e9f \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.10.0 \
+	github.com/compose-spec/compose-go/v2						 v2.10.1 \
 	github.com/containerd/accelerated-container-image				 v1.3.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
-	github.com/containerd/cgroups/v3						 v3.1.0 \
+	github.com/containerd/cgroups/v3						 v3.1.2 \
 	github.com/containerd/console							 v1.0.5 \
 	github.com/containerd/containerd/api						 v1.10.0 \
-	github.com/containerd/containerd/v2						 v2.2.1-0.20251115011841-efd86f2b0bc2 \
+	github.com/containerd/containerd/v2						 v2.2.1 \
 	github.com/containerd/continuity						 v0.4.5 \
 	github.com/containerd/errdefs							 v1.0.0 \
 	github.com/containerd/errdefs/pkg						 v0.3.0 \
@@ -83,7 +83,7 @@ MODGO_MODULES =	\
 	github.com/containerd/go-runc							 v1.1.0 \
 	github.com/containerd/imgcrypt/v2						 v2.0.1 \
 	github.com/containerd/log							 v0.1.0 \
-	github.com/containerd/nri							 v0.10.0 \
+	github.com/containerd/nri							 v0.11.0 \
 	github.com/containerd/nydus-snapshotter						 v0.15.4 \
 	github.com/containerd/otelttrpc							 v0.1.0 \
 	github.com/containerd/platforms							 v1.0.0-rc.2 \
@@ -92,13 +92,14 @@ MODGO_MODULES =	\
 	github.com/containerd/stargz-snapshotter/estargz				 v0.17.0 \
 	github.com/containerd/ttrpc							 v1.2.7 \
 	github.com/containerd/typeurl/v2						 v2.2.3 \
-	github.com/containerd/zfs/v2							 v2.0.0-rc.0 \
+	github.com/containerd/zfs/v2							 v2.0.0 \
 	github.com/containernetworking/cni						 v1.3.0 \
 	github.com/containernetworking/plugins						 v1.9.0 \
 	github.com/containers/ocicrypt							 v1.2.1 \
 	github.com/coreos/go-systemd/v22						 v22.6.0 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.7 \
 	github.com/creack/pty								 v1.1.24 \
+	github.com/cyphar/filepath-securejoin						 v0.5.1 \
 	github.com/danieljoos/wincred							 v1.2.2 \
 	github.com/davecgh/go-spew							 v1.1.1 \
 	github.com/denisenkom/go-mssqldb						 v0.0.0-20191128021309-1d7a30a10f73 \
@@ -144,7 +145,7 @@ MODGO_MODULES =	\
 	github.com/go-openapi/swag							 v0.23.0 \
 	github.com/go-sql-driver/mysql							 v1.3.0 \
 	github.com/go-stack/stack							 v1.8.0 \
-	github.com/go-viper/mapstructure/v2						 v2.4.0 \
+	github.com/go-viper/mapstructure/v2						 v2.5.0 \
 	github.com/godbus/dbus/v5							 v5.1.0 \
 	github.com/gofrs/flock								 v0.13.0 \
 	github.com/gogo/protobuf							 v1.3.2 \
@@ -199,7 +200,7 @@ MODGO_MODULES =	\
 	github.com/keybase/go-keychain							 v0.0.1 \
 	github.com/kisielk/errcheck							 v1.5.0 \
 	github.com/kisielk/gotool							 v1.0.0 \
-	github.com/klauspost/compress							 v1.18.1 \
+	github.com/klauspost/compress							 v1.18.2 \
 	github.com/knqyf263/go-plugin							 v0.9.0 \
 	github.com/konsorten/go-windows-terminal-sequences				 v1.0.2 \
 	github.com/kr/logfmt								 v0.0.0-20140226030751-b84e30acd515 \
@@ -257,7 +258,7 @@ MODGO_MODULES =	\
 	github.com/opencontainers/image-spec						 v1.1.1 \
 	github.com/opencontainers/runtime-spec						 v1.3.0 \
 	github.com/opencontainers/runtime-tools						 v0.9.1-0.20251114084447-edf4cb3d2116 \
-	github.com/opencontainers/selinux						 v1.12.0 \
+	github.com/opencontainers/selinux						 v1.13.1 \
 	github.com/opentracing/opentracing-go						 v1.1.0 \
 	github.com/otiai10/copy								 v1.14.1 \
 	github.com/otiai10/mint								 v1.6.3 \
@@ -285,7 +286,7 @@ MODGO_MODULES =	\
 	github.com/secure-systems-lab/go-securesystemslib				 v0.9.1 \
 	github.com/serialx/hashring							 v0.0.0-20200727003509-22c0c7ab6b1b \
 	github.com/shibumi/go-pathspec							 v1.3.0 \
-	github.com/sirupsen/logrus							 v1.9.3 \
+	github.com/sirupsen/logrus							 v1.9.4 \
 	github.com/skratchdot/open-golang						 v0.0.0-20200116055534-eef842397966 \
 	github.com/smallstep/pkcs7							 v0.1.1 \
 	github.com/spdx/tools-golang							 v0.5.5 \
@@ -299,7 +300,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx							 v0.5.2 \
 	github.com/stretchr/testify							 v1.11.1 \
 	github.com/tchap/go-patricia/v2							 v2.3.3 \
-	github.com/tetratelabs/wazero							 v1.9.0 \
+	github.com/tetratelabs/wazero							 v1.10.1 \
 	github.com/theupdateframework/notary						 v0.7.0 \
 	github.com/tilt-dev/fsnotify							 v1.4.8-0.20220602155310-fff9c274a375 \
 	github.com/tonistiigi/dchapes-mode						 v0.0.0-20250318174251-73d941a28323 \
@@ -353,7 +354,7 @@ MODGO_MODULES =	\
 	golang.org/x/net								 v0.47.0 \
 	golang.org/x/oauth2								 v0.32.0 \
 	golang.org/x/sync								 v0.19.0 \
-	golang.org/x/sys								 v0.39.0 \
+	golang.org/x/sys								 v0.40.0 \
 	golang.org/x/term								 v0.37.0 \
 	golang.org/x/text								 v0.31.0 \
 	golang.org/x/time								 v0.14.0 \
@@ -361,9 +362,9 @@ MODGO_MODULES =	\
 	golang.org/x/xerrors								 v0.0.0-20200804184101-5ec99f83aff1 \
 	gonum.org/v1/gonum								 v0.16.0 \
 	google.golang.org/genproto							 v0.0.0-20230223222841-637eb2293923 \
-	google.golang.org/genproto/googleapis/api					 v0.0.0-20251022142026-3a174f9686a8 \
-	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20251022142026-3a174f9686a8 \
-	google.golang.org/grpc								 v1.77.0 \
+	google.golang.org/genproto/googleapis/api					 v0.0.0-20251029180050-ab9386a59fda \
+	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20251029180050-ab9386a59fda \
+	google.golang.org/grpc								 v1.78.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc					 v1.5.1 \
 	google.golang.org/protobuf							 v1.36.10 \
 	gopkg.in/airbrake/gobrake.v2							 v2.0.9 \
@@ -405,13 +406,14 @@ MODGO_MODFILES =	\
 	github.com/beorn7/perks								 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks								 v1.0.0 \
 	github.com/compose-spec/compose-go/v2						 v2.9.1 \
+	github.com/containerd/cgroups/v3						 v3.1.0 \
 	github.com/containerd/containerd/v2						 v2.2.0 \
+	github.com/containerd/containerd/v2						 v2.2.1-0.20251115011841-efd86f2b0bc2 \
 	github.com/containerd/continuity						 v0.4.1 \
 	github.com/containerd/errdefs							 v0.3.0 \
 	github.com/containerd/ttrpc							 v1.2.5 \
 	github.com/containerd/typeurl/v2						 v2.1.1 \
 	github.com/containerd/typeurl/v2						 v2.2.0 \
-	github.com/containernetworking/plugins						 v1.8.0 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.2 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.6 \
 	github.com/creack/pty								 v1.1.17 \
@@ -433,6 +435,7 @@ MODGO_MODFILES =	\
 	github.com/go-jose/go-jose/v4							 v4.1.2 \
 	github.com/go-logfmt/logfmt							 v0.3.0 \
 	github.com/go-logr/logr								 v1.2.2 \
+	github.com/go-viper/mapstructure/v2						 v2.4.0 \
 	github.com/gogo/protobuf							 v1.0.0 \
 	github.com/gogo/protobuf							 v1.1.1 \
 	github.com/golang-jwt/jwt/v5							 v5.2.2 \
@@ -455,6 +458,7 @@ MODGO_MODFILES =	\
 	github.com/json-iterator/go							 v1.1.7 \
 	github.com/julienschmidt/httprouter						 v1.2.0 \
 	github.com/klauspost/compress							 v1.18.0 \
+	github.com/klauspost/compress							 v1.18.1 \
 	github.com/konsorten/go-windows-terminal-sequences				 v1.0.1 \
 	github.com/kr/pretty								 v0.1.0 \
 	github.com/kr/pretty								 v0.2.0 \
@@ -481,6 +485,7 @@ MODGO_MODFILES =	\
 	github.com/opencontainers/runtime-spec						 v1.2.1 \
 	github.com/opencontainers/runtime-tools						 v0.9.1-0.20250523060157-0ea5ed0382a2 \
 	github.com/opencontainers/selinux						 v1.10.0 \
+	github.com/opencontainers/selinux						 v1.12.0 \
 	github.com/pkg/errors								 v0.8.0 \
 	github.com/pkg/errors								 v0.8.1 \
 	github.com/planetscale/vtprotobuf						 v0.6.0 \
@@ -508,6 +513,7 @@ MODGO_MODFILES =	\
 	github.com/sirupsen/logrus							 v1.4.1 \
 	github.com/sirupsen/logrus							 v1.8.1 \
 	github.com/sirupsen/logrus							 v1.9.0 \
+	github.com/sirupsen/logrus							 v1.9.3 \
 	github.com/spf13/cobra								 v0.0.1 \
 	github.com/spf13/cobra								 v1.10.1 \
 	github.com/spf13/cobra								 v1.7.0 \
@@ -554,7 +560,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.0.0-20201117144127-c1f2f97bffc9 \
 	golang.org/x/crypto								 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto								 v0.40.0 \
-	golang.org/x/crypto								 v0.41.0 \
 	golang.org/x/crypto								 v0.42.0 \
 	golang.org/x/crypto								 v0.44.0 \
 	golang.org/x/crypto								 v0.8.0 \
@@ -582,7 +587,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.42.0 \
 	golang.org/x/net								 v0.43.0 \
 	golang.org/x/net								 v0.44.0 \
-	golang.org/x/net								 v0.46.1-0.20251013234738-63d1a5100f82 \
 	golang.org/x/net								 v0.9.0 \
 	golang.org/x/oauth2								 v0.30.0 \
 	golang.org/x/sync								 v0.0.0-20180314180146-1d60e4601c6f \
@@ -615,12 +619,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.0.0-20210616094352-59db8d763f22 \
 	golang.org/x/sys								 v0.0.0-20220412211240-33da011f77ad \
 	golang.org/x/sys								 v0.0.0-20220520151302-bc2c85ada10a \
-	golang.org/x/sys								 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys								 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys								 v0.1.0 \
 	golang.org/x/sys								 v0.10.0 \
 	golang.org/x/sys								 v0.11.0 \
 	golang.org/x/sys								 v0.12.0 \
+	golang.org/x/sys								 v0.13.0 \
 	golang.org/x/sys								 v0.18.0 \
 	golang.org/x/sys								 v0.19.0 \
 	golang.org/x/sys								 v0.20.0 \
@@ -641,7 +645,6 @@ MODGO_MODFILES =	\
 	golang.org/x/term								 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term								 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term								 v0.0.0-20210927222741-03fcf44c2211 \
-	golang.org/x/term								 v0.34.0 \
 	golang.org/x/term								 v0.35.0 \
 	golang.org/x/text								 v0.12.0 \
 	golang.org/x/text								 v0.14.0 \
@@ -652,7 +655,6 @@ MODGO_MODFILES =	\
 	golang.org/x/text								 v0.3.0 \
 	golang.org/x/text								 v0.3.3 \
 	golang.org/x/text								 v0.3.7 \
-	golang.org/x/text								 v0.30.0 \
 	golang.org/x/text								 v0.4.0 \
 	golang.org/x/text								 v0.9.0 \
 	golang.org/x/tools								 v0.0.0-20180917221912-90fa682c2a6e \
