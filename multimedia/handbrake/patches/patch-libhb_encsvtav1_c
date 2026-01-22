@@ -1,19 +1,7 @@
 Index: libhb/encsvtav1.c
 --- libhb/encsvtav1.c.orig
 +++ libhb/encsvtav1.c
-@@ -99,7 +99,11 @@ int encsvtInit(hb_work_object_t *w, hb_job_t *job)
-     EbErrorType svt_ret;
-     int ret;
- 
-+#if SVT_AV1_CHECK_VERSION(3, 0, 0)
-     svt_ret = svt_av1_enc_init_handle(&pv->svt_handle, &pv->enc_params);
-+#else
-+    svt_ret = svt_av1_enc_init_handle(&pv->svt_handle, pv, &pv->enc_params);
-+#endif
-     if (svt_ret != EB_ErrorNone)
-     {
-         hb_error("encsvtav1: error initializing encoder handle");
-@@ -448,7 +452,9 @@ static int read_in_data(EbSvtAv1EncConfiguration *para
+@@ -448,7 +448,9 @@ static int read_in_data(EbSvtAv1EncConfiguration *para
  static int send(hb_work_object_t *w, hb_buffer_t *in)
  {
      hb_work_private_t *pv = w->private_data;
@@ -23,7 +11,7 @@ Index: libhb/encsvtav1.c
  
      EbBufferHeaderType *headerPtr = pv->in_buf;
      int ret;
-@@ -481,6 +487,7 @@ static int send(hb_work_object_t *w, hb_buffer_t *in)
+@@ -481,6 +483,7 @@ static int send(hb_work_object_t *w, hb_buffer_t *in)
          svt_metadata_array_free(&headerPtr->metadata);
      }
  
@@ -31,7 +19,7 @@ Index: libhb/encsvtav1.c
      if (job->passthru_dynamic_hdr_metadata)
      {
          for (int i = 0; i < in->nb_side_data; i++)
-@@ -509,6 +516,7 @@ static int send(hb_work_object_t *w, hb_buffer_t *in)
+@@ -509,6 +512,7 @@ static int send(hb_work_object_t *w, hb_buffer_t *in)
  
          }
      }

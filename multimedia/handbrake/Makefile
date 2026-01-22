@@ -4,7 +4,7 @@ COMMENT =	open source video transcoder
 USE_NOBTCFI-amd64 = Yes
 
 V =		1.10.2
-REVISION =	1
+REVISION =	2
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
 EXTRACT_SUFX =	.tar.bz2
@@ -45,9 +45,9 @@ LIB_DEPENDS =	audio/libogg \
 		multimedia/libbluray \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
-		multimedia/svt-av1 \
+		multimedia/svt-av1>=3.1.2 \
 		multimedia/x264 \
-		multimedia/x265>=4.1 \
+		multimedia/x265 \
 		textproc/libxml \
 		x11/gtk+4
 
