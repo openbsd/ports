@@ -13,7 +13,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			144.0.7559.59
+V=			144.0.7559.96
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -278,9 +278,6 @@ pre-patch:
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libaom/source/libaom
 	cd ${WRKDIR}/multimedia/libvpx/libvpx-* && \
 		pax -rw -s '/^.*${PATCHORIG}$$//' . ${WRKSRC}/third_party/libvpx/source/libvpx 
-	perl -pi -e 's#const uint8_t \*p,#uint8_t \*p,#g' \
-		${WRKSRC}/third_party/libaom/source/config/linux/arm64-cpu-detect/config/av1_rtcd.h \
-		${WRKSRC}/third_party/libaom/source/config/linux/x64/config/av1_rtcd.h
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
