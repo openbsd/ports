@@ -1,6 +1,6 @@
 COMMENT =		Perl interface to Tcl interpreters
 
-DISTNAME =		Tcl-1.50
+DISTNAME =		Tcl-1.53
 
 CATEGORIES =		devel lang
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
