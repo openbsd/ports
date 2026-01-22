@@ -915,6 +915,7 @@ share/doc/py-sqlalchemy/_modules/index.html
 share/doc/py-sqlalchemy/_static/
 share/doc/py-sqlalchemy/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/py-sqlalchemy/_static/annotated.png
+share/doc/py-sqlalchemy/_static/base-stemmer.js
 share/doc/py-sqlalchemy/_static/basic.css
 share/doc/py-sqlalchemy/_static/changelog.css
 share/doc/py-sqlalchemy/_static/clipboard.min.js
@@ -928,6 +929,7 @@ share/doc/py-sqlalchemy/_static/doctools.js
 share/doc/py-sqlalchemy/_static/documentation_options.js
 share/doc/py-sqlalchemy/_static/dragons.png
 share/doc/py-sqlalchemy/_static/dragons_original.png
+share/doc/py-sqlalchemy/_static/english-stemmer.js
 share/doc/py-sqlalchemy/_static/file.png
 share/doc/py-sqlalchemy/_static/init.js
 share/doc/py-sqlalchemy/_static/jquery.js
