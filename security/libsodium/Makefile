@@ -1,6 +1,7 @@
 COMMENT=	library for network communications and cryptography
 
 DISTNAME=	libsodium-1.0.21
+REVISION=	0
 
 SHARED_LIBS +=  sodium               11.0     # 29.0
 
