@@ -117,9 +117,18 @@ MODCARGO_CARGO_BIN =	maturin
 _MODPY_WHEELSDIR =	target/wheels
 _MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == mesonpy
-MODPY_PYBUILD_ARGS +=	--config-setting=compile-args=-j${MAKE_JOBS} \
-			--config-setting=compile-args=-v
 BUILD_DEPENDS +=	devel/meson-python
+MODPY_PYBUILD_ARGS +=	--config-setting=setup-args=--wrap-mode=nodownload \
+			--config-setting=setup-args=--auto-features=enabled \
+			--config-setting=compile-args=-j${MAKE_JOBS} \
+			--config-setting=compile-args=-v
+# duplicate some settings from meson.port.mk
+MAKE_ENV +=		AR="ar" # base installs llvm-ar as ar(1) without a link
+.    if !empty(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/cmake/core*}
+# don't allow meson to fallback to cmake to find deps unless listed as a BDEP;
+# it may have been junked
+_MODPY_PRE_BUILD_STEPS += ; ln -sf /usr/bin/false ${WRKDIR}/bin/cmake
+.    endif
 .  elif ${MODPY_PYBUILD} == pbr
 BUILD_DEPENDS +=	devel/py-pbr \
 			py3-setuptools->=79v0:devel/py-setuptools \
