@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1783 2026/01/21 14:15:44 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1784 2026/01/22 11:27:56 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -503,6 +503,7 @@ my $stem_extensions = {
 	'GSL' => 'microsoft-gsl',
 	'kdegraphics-mobipocket-kf5' => 'kf6-kdegraphics-mobipocket',
 	'kdiagram-qt6' => 'kdiagram',
+	'wycheproof-testvectors' => 'wycheproof',
 };
 
 my $obsolete_reason = {};
