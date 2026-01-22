@@ -3,6 +3,13 @@ ld: error: undefined symbol: _Unwind_Resume
 
 Should match b_lundef in meson(1).
 
+Skip -Wl,-no_warn_duplicate_libraries on octeon/mips64 to unbreak build:
+/usr/bin/ld: attempted static link of dynamic object `/usr/local/lib/libglib-2.0.so.4201.15'
+
+Skip -Wl,--version-script= on octeon/mips64 to unbreak fake:
+RuntimeError: Tried to read past the end of the file
+    This is a Meson bug and should be reported!
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -26,7 +33,22 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -872,7 +866,7 @@ if not get_option('driver_remote').disabled()
+@@ -573,10 +567,13 @@ libvirt_no_indirect = cc.get_supported_link_arguments(
+ libvirt_no_warn_duplicate_libraries = cc.get_supported_link_arguments([
+   '-Wl,-no_warn_duplicate_libraries',
+ ])
++if host_machine.system() == 'openbsd' and host_machine.cpu_family() == 'mips64'
++libvirt_no_warn_duplicate_libraries = ''
++endif
+ 
+ if host_machine.system() == 'windows'
+   version_script_flags = '-Wl,'
+-elif host_machine.system() == 'darwin'
++elif host_machine.system() == 'darwin' or (host_machine.system() == 'openbsd' and host_machine.cpu_family() == 'mips64')
+   # macOS libraries don't support symbol versioning
+   version_script_flags = ''
+ else
+@@ -872,7 +869,7 @@ if not get_option('driver_remote').disabled()
      xdr_dep = cc.find_library('portablexdr', required: get_option('driver_remote'))
    elif host_machine.system() in [ 'linux', 'gnu' ]
      xdr_dep = dependency('libtirpc', required: get_option('driver_remote'))
@@ -35,7 +57,7 @@ Index: meson.build
      xdr_dep = cc.find_library('c', required: get_option('driver_remote'))
    else
      xdr_dep = dependency('', required: false)
-@@ -960,15 +954,18 @@ if devmapper_dep.found()
+@@ -960,15 +957,18 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
@@ -62,7 +84,7 @@ Index: meson.build
  fuse_version = '3.1.0'
  fuse_dep = dependency('fuse3', version: '>=' + fuse_version, required: false)
  if fuse_dep.found()
-@@ -1906,7 +1903,7 @@ endif
+@@ -1906,7 +1906,7 @@ endif
  
  driver_modules_flags = []
  if conf.has('WITH_LIBVIRTD')
