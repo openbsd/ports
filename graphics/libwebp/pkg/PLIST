@@ -14,20 +14,10 @@ include/webp/sharpyuv/
 include/webp/sharpyuv/sharpyuv.h
 include/webp/sharpyuv/sharpyuv_csp.h
 include/webp/types.h
-@static-lib lib/libsharpyuv.a
-lib/libsharpyuv.la
 @lib lib/libsharpyuv.so.${LIBsharpyuv_VERSION}
-@static-lib lib/libwebp.a
-lib/libwebp.la
 @lib lib/libwebp.so.${LIBwebp_VERSION}
-@static-lib lib/libwebpdecoder.a
-lib/libwebpdecoder.la
 @lib lib/libwebpdecoder.so.${LIBwebpdecoder_VERSION}
-@static-lib lib/libwebpdemux.a
-lib/libwebpdemux.la
 @lib lib/libwebpdemux.so.${LIBwebpdemux_VERSION}
-@static-lib lib/libwebpmux.a
-lib/libwebpmux.la
 @lib lib/libwebpmux.so.${LIBwebpmux_VERSION}
 lib/pkgconfig/libsharpyuv.pc
 lib/pkgconfig/libwebp.pc
@@ -40,3 +30,9 @@ lib/pkgconfig/libwebpmux.pc
 @man man/man1/img2webp.1
 @man man/man1/webpinfo.1
 @man man/man1/webpmux.1
+share/WebP/
+share/WebP/cmake/
+share/WebP/cmake/WebPConfig.cmake
+share/WebP/cmake/WebPConfigVersion.cmake
+share/WebP/cmake/WebPTargets${MODCMAKE_BUILD_SUFFIX}
+share/WebP/cmake/WebPTargets.cmake
