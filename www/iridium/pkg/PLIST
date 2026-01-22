@@ -478,6 +478,8 @@ share/examples/iridium/pledge.utility_network
 @sample ${SYSCONFDIR}/iridium/pledge.utility_network
 share/examples/iridium/pledge.utility_video
 @sample ${SYSCONFDIR}/iridium/pledge.utility_video
+share/examples/iridium/unveil.cdm
+@sample ${SYSCONFDIR}/iridium/unveil.cdm
 share/examples/iridium/unveil.gpu
 @sample ${SYSCONFDIR}/iridium/unveil.gpu
 share/examples/iridium/unveil.main

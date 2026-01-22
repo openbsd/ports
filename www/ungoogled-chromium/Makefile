@@ -16,6 +16,8 @@ COMMENT=		Chromium browser sans integration with Google
 V=			144.0.7559.96
 UGV=			${V}-1
 
+REVISION=		0
+
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
@@ -253,6 +255,7 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		clang_use_chrome_plugins=false \
 		disable_fieldtrial_testing_config=true \
 		enable_hangout_services_extension=false \
+		enable_widevine=true \
 		enable_mdns=false \
 		enable_remoting=false \
 		enable_reporting=false \
@@ -368,7 +371,8 @@ do-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ungoogled-chromium
 .for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
-    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
+    unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video \
+    unveil.cdm
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/ungoogled-chromium
 .endfor
 

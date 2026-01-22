@@ -13,6 +13,8 @@ share/examples/ungoogled-chromium/pledge.utility_network
 @sample ${SYSCONFDIR}/ungoogled-chromium/pledge.utility_network
 share/examples/ungoogled-chromium/pledge.utility_video
 @sample ${SYSCONFDIR}/ungoogled-chromium/pledge.utility_video
+share/examples/ungoogled-chromium/unveil.cdm
+@sample ${SYSCONFDIR}/ungoogled-chromium/unveil.cdm
 share/examples/ungoogled-chromium/unveil.gpu
 @sample ${SYSCONFDIR}/ungoogled-chromium/unveil.gpu
 share/examples/ungoogled-chromium/unveil.main
