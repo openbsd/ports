@@ -13,7 +13,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	12
+REVISION =	13
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -47,7 +47,7 @@ MODULES =	devel/cmake \
 		java \
 		x11/qt5
 
-MODJAVA_VER =	1.8+
+MODJAVA_VER =	11+
 
 # Needed for gwt to build all the web pages.
 # Not sure MODJAVA_BUILD=ant is appropriate here.
