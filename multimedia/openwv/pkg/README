@@ -17,3 +17,11 @@ Cheat sheet
 Chromium
 --------
 $ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.chromium/WidevineCdm/9999
+
+Iridium
+--------
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.iridium/WidevineCdm/9999
+
+Ungoogled Chromium
+--------
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.ungoogled-chromium/WidevineCdm/9999
