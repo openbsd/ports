@@ -1,7 +1,7 @@
 COMMENT =	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES =	cpan
-DISTNAME =	Net-SSH-Perl-2.143
+DISTNAME =	Net-SSH-Perl-2.144
 CPAN_AUTHOR =	BRIANDFOY
 CATEGORIES =	net security
 
