@@ -11,20 +11,29 @@ Index: src/ocpasswd/ocpasswd.c
 +#include <pwd.h>
  #include <unistd.h>
  #include <gnutls/gnutls.h>
- #include <gnutls/crypto.h>	/* for random */
-@@ -46,9 +47,8 @@ static void
- crypt_int(const char *fpasswd, const char *username, const char *groupname,
- 	  const char *passwd)
+ #include <gnutls/crypto.h> /* for random */
+@@ -38,18 +39,12 @@
+ 
+ #define DEFAULT_OCPASSWD "/etc/ocserv/ocpasswd"
+ 
+-static const char alphabet[] =
+-	"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ./";
+-
+-#define SALT_SIZE 16
+ static void crypt_int(const char *fpasswd, const char *username,
+ 		      const char *groupname, const char *passwd)
  {
 -	uint8_t _salt[SALT_SIZE];
--	char salt[SALT_SIZE+16];
+-	char salt[SALT_SIZE + 16];
 -	char *p, *cr_passwd;
 +	char cr_passwd[_PASSWORD_LEN];
 +	char *p;
  	char *tmp_passwd;
- 	unsigned i;
- 	unsigned fpasswd_len = strlen(fpasswd);
-@@ -64,36 +64,8 @@ crypt_int(const char *fpasswd, const char *username, c
+-	unsigned int i;
+ 	unsigned int fpasswd_len = strlen(fpasswd);
+ 	unsigned int tmp_passwd_len;
+ 	unsigned int username_len = strlen(username);
+@@ -63,36 +58,9 @@ static void crypt_int(const char *fpasswd, const char 
  	setlocale(LC_CTYPE, "C");
  	setlocale(LC_COLLATE, "C");
  
@@ -58,7 +67,8 @@ Index: src/ocpasswd/ocpasswd.c
 -	}
 -	if (cr_passwd == NULL) {
 -		fprintf(stderr, "Error in crypt().\n");
-+	if (crypt_newhash(passwd, "blowfish,a", cr_passwd, sizeof(cr_passwd)) != 0) {
++	if (crypt_newhash(passwd, "blowfish,a", cr_passwd,
++			  sizeof(cr_passwd)) != 0) {
 +		fprintf(stderr, "Error in crypt_newhash().\n");
  		exit(EXIT_FAILURE);
  	}

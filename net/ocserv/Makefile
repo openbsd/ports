@@ -1,8 +1,8 @@
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-1.3.0
-EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+VERSION = 	1.4.0
+DISTNAME=	ocserv-${VERSION}
+EXTRACT_SUFX=	.tar.gz
 
 CATEGORIES=	net
 
@@ -16,11 +16,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	c curses ev gnutls llhttp lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
 
-SITES=		https://www.infradead.org/ocserv/download/
+SITES=		https://gitlab.com/openconnect/ocserv/-/archive/${VERSION}/
 
 MODULES=	lang/ruby
 
-BUILD_DEPENDS=	textproc/groff \
+BUILD_DEPENDS=	devel/gperf \
+		textproc/groff \
 		textproc/gsed \
 		textproc/ruby-ronn
 LIB_DEPENDS=	archivers/lz4 \
@@ -37,7 +38,9 @@ TEST_DEPENDS=	net/openconnect \
 		sysutils/coreutils \
 		textproc/gsed
 
-CONFIGURE_STYLE=	autoconf
+USE_GMAKE=		Yes
+
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-namespaces \
 			--without-docker-tests \
 			--without-geoip \
@@ -54,6 +57,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+=	IPCALC=false
 
 AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 
 post-extract:
 	find ${WRKSRC}/tests -type f -perm -+x -exec \
