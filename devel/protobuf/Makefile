@@ -64,6 +64,8 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 CONFIGURE_ARGS +=	-Dprotobuf_ABSL_PROVIDER=package
 CONFIGURE_ARGS +=	-DABSL_ROOT_DIR=${LOCALBASE}/include/absl
 CONFIGURE_ARGS +=	-Dprotobuf_BUILD_SHARED_LIBS=ON
