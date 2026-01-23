@@ -1,4 +1,4 @@
-# Set MODJAVA_VER to 1.8, 11, 17, 21 or 25 based on the version of the jdk
+# Set MODJAVA_VER to 11, 17, 21 or 25 based on the version of the jdk
 # needed for the port. Append a + (e.g., 11+) if any higher version is
 # acceptable.
 
@@ -17,19 +17,20 @@ MODJAVA_VER?=
 # NOTE: All source built java ports must properly set javac -source and
 # -target build arguments. Depending on the architecture an older level
 # port may be built by a newer jdk. The JAVA_HOME variable points to the
-# build jdk not the default RUN_DEPEND jdk, so it should not be used to
-# set a default jdk to run with. The javaPathHelper port should be used
-# to set the default JAVA_HOME or JAVACMD vars for a package.
+# build jdk not the default RUN_DEPEND jdk. It should only be used to
+# set the jdk to run with when a port requires a fixed jdk version
+# (e.g. no + in MODJAVA_VER). The javaPathHelper port should be used
+# to set the default JAVA_HOME or JAVACMD vars for ports with
+# MODJAVA_VER containing a +.
 #
 
-.if ${MODJAVA_VER:S/+//} != "1.8" && ${MODJAVA_VER:S/+//} != "11" && \
-  ${MODJAVA_VER:S/+//} != "17" && ${MODJAVA_VER:S/+//} != "21" && \
-  ${MODJAVA_VER:S/+//} != "25"
-    ERRORS+="Fatal: MODJAVA_VER must be one of 1.8, 11, 17, 21 or 25"
+.if ${MODJAVA_VER:S/+//} != "11" && ${MODJAVA_VER:S/+//} != "17" && \
+  ${MODJAVA_VER:S/+//} != "21" && ${MODJAVA_VER:S/+//} != "25"
+    ERRORS+="Fatal: MODJAVA_VER must be one of 11, 17, 21 or 25"
     ERRORS+="with an optional + suffix."
 .endif
 
-.if ${MODJAVA_VER:S/+//} == "1.8" || ${MODJAVA_VER:S/+//} == "11"
+.if ${MODJAVA_VER:S/+//} == "11"
     ONLY_FOR_ARCHS?= i386 amd64 aarch64 sparc64
 .elif ${MODJAVA_VER:S/+//} == "25"
     ONLY_FOR_ARCHS?= amd64 aarch64
@@ -37,10 +38,7 @@ MODJAVA_VER?=
     ONLY_FOR_ARCHS?= i386 amd64 aarch64
 .endif
 
-.if ${MODJAVA_VER:S/+//} == "1.8"
-    JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
-    MODJAVA_BUILD_DEPENDS= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.elif ${MODJAVA_VER:S/+//} == "11"
+.if ${MODJAVA_VER:S/+//} == "11"
     JAVA_HOME= ${LOCALBASE}/jdk-11
     MODJAVA_BUILD_DEPENDS+= jdk->=11v0,<12v0:devel/jdk/11
 .elif ${MODJAVA_VER:S/+//} == "17"
