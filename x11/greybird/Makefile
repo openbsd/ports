@@ -4,6 +4,7 @@ GH_TAGNAME =		v3.23.4
 GH_ACCOUNT =		shimmerproject
 GH_PROJECT =		Greybird
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		x11
 
@@ -15,8 +16,7 @@ MODULES =		devel/meson
 BUILD_DEPENDS =		www/sassc \
 			x11/gnome/librsvg
 
-RUN_DEPENDS =		x11/gtk+4,-guic \
-			x11/gtk2-murrine-engine
+RUN_DEPENDS =		x11/gtk+4,-guic
 
 PKG_ARCH =		*
 
