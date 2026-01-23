@@ -3,6 +3,7 @@ COMMENT =		personal and small-business financial-accounting software
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		5.14
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 SHARED_LIBS +=  gnc-core-utils       1.2      # unknown
 SHARED_LIBS +=  gnc-module           1.1      # unknown
@@ -43,8 +44,12 @@ BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
 			devel/gtest \
 			devel/swig
 
-RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
-			productivity/gnucash-docs
+RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3
+
+# make sure we can open the documentation, as gnucash-docs does not depend on
+# yelp (the x11/gnome MODULE does not add the dependency for non-gui apps)
+RUN_DEPENDS +=		productivity/gnucash-docs \
+			x11/gnome/yelp
 
 # gnc-fq-helper(1)
 RUN_DEPENDS +=		converters/p5-DateManip \
