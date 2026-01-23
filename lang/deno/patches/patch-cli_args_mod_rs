@@ -3,7 +3,7 @@ Ignore unstable-tsgo flag
 Index: cli/args/mod.rs
 --- cli/args/mod.rs.orig
 +++ cli/args/mod.rs
-@@ -1250,7 +1250,7 @@ impl CliOptions {
+@@ -1242,7 +1242,7 @@ impl CliOptions {
    }
  
    pub fn unstable_tsgo(&self) -> bool {
