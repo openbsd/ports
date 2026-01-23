@@ -273,6 +273,7 @@ share/locale/vi/LC_MESSAGES/thunar.mo
 share/locale/zh_CN/LC_MESSAGES/thunar.mo
 share/locale/zh_HK/LC_MESSAGES/thunar.mo
 share/locale/zh_TW/LC_MESSAGES/thunar.mo
+share/metainfo/
 share/metainfo/org.xfce.thunar.appdata.xml
 share/polkit-1/
 share/polkit-1/actions/
