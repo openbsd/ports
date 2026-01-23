@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
-
 # at least in svt_dav1d_blend_v_8bpc_avx2.w4
 # sync in dependent ports if changing
 USE_NOBTCFI-amd64= Yes
