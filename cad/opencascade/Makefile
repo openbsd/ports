@@ -78,6 +78,9 @@ SUBST_VARS += BITS COMP V
 # Some tests require an active X11 display to work. When using
 # PORTS_PRIVSEP=Yes, the following can be used:
 # xhost +si:localuser:_pbuild; make test; xhost -si:localuser:_pbuild
+#
+# However more tests may fail when running them like this than if you run
+# them by hand as your own user.
 TEST_IS_INTERACTIVE =	X11
 TEST_DIR =		${WRKDIR}/tests_openbsd
 
