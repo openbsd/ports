@@ -5,7 +5,7 @@ COMMENT =	open reimplementation of Google's Widevine CDM
 GH_ACCOUNT =	tchebb
 GH_PROJECT =	openwv
 GH_TAGNAME =	v1.1.3
-REVISION =	1
+REVISION =	2
 
 # Rust crates downloaded via git
 AUTOCXX =	1fca5acd26f533576f98da45075d5498a1731d92

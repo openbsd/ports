@@ -16,12 +16,15 @@ Cheat sheet
 
 Chromium
 --------
-$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.chromium/WidevineCdm/9999
+$ mkdir -p ~/.config/chromium/WidevineCdm
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.config/chromium/WidevineCdm/9999
 
 Iridium
---------
-$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.iridium/WidevineCdm/9999
+-------
+$ mkdir -p ~/.config/iridium/WidevineCdm
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.config/iridium/WidevineCdm/9999
 
 Ungoogled Chromium
---------
-$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.ungoogled-chromium/WidevineCdm/9999
+------------------
+$ mkdir -p ~/.config/ungoogled-chromium/WidevineCdm
+$ ln -sf ${TRUEPREFIX}/lib/openwv/chromium ~/.config/ungoogled-chromium/WidevineCdm/9999
