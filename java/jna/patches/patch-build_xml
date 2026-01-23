@@ -1,11 +1,38 @@
---- build.xml.orig	Sat Jan 14 17:15:07 2017
-+++ build.xml	Sat Feb 25 14:58:20 2017
-@@ -126,7 +126,7 @@
-   <!-- Miscellaneous -->
-   <property name="build.compiler.emacs" value="true"/>
+Add openbsd-aarch64 and openbsd-sparc64 to jna.jar
+
+Index: build.xml
+--- build.xml.orig
++++ build.xml
+@@ -405,6 +405,10 @@ com/sun/jna/openbsd-x86/libjnidispatch.so;
+ processor=x86;osname=openbsd,
+ com/sun/jna/openbsd-x86-64/libjnidispatch.so;
+ processor=x86-64;osname=openbsd,
++com/sun/jna/openbsd-aarch64/libjnidispatch.so;
++processor=aarch64;osname=openbsd,
++com/sun/jna/openbsd-sparcv9/libjnidispatch.so;
++processor=sparcv9;osname=openbsd,
  
--  <target name="default" depends="test" description="Build and Test."/>
-+  <target name="default" depends="-enable-native,jar,javadoc" description="Build and Test."/>
- 
-   <target name="init" depends="-setup"/>
-   <target name="compile-test-single" depends="compile-tests"/>
+ com/sun/jna/darwin-ppc/libjnidispatch.jnilib;
+ osname=macosx;processor=ppc,
+@@ -551,6 +555,12 @@ osname=macosx;processor=aarch64
+       <zipfileset src="${lib.native}/openbsd-x86-64.jar"
+                   includes="*jnidispatch*"
+                   prefix="com/sun/jna/openbsd-x86-64"/>
++      <zipfileset src="${lib.native}/openbsd-aarch64.jar"
++                  includes="*jnidispatch*"
++                  prefix="com/sun/jna/openbsd-aarch64"/>
++      <zipfileset src="${lib.native}/openbsd-sparcv9.jar"
++                  includes="*jnidispatch*"
++                  prefix="com/sun/jna/openbsd-sparcv9"/>
+       <zipfileset src="${lib.native}/win32-x86-64.jar"
+                   includes="*jnidispatch*"
+                   prefix="com/sun/jna/win32-x86-64"/>
+@@ -739,6 +749,8 @@ osname=macosx;processor=aarch64
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/freebsd-ppc64.jar" overwrite="true"/>
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/openbsd-x86.jar" overwrite="true"/>
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/openbsd-x86-64.jar" overwrite="true"/>
++    <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/openbsd-aarch64.jar" overwrite="true"/>
++    <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/openbsd-sparcv9.jar" overwrite="true"/>
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/sunos-x86.jar" overwrite="true"/>
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/sunos-x86-64.jar" overwrite="true"/>
+     <copy file="${lib.native}/out-of-date.jar" tofile="${lib.native}/sunos-sparc.jar" overwrite="true"/>

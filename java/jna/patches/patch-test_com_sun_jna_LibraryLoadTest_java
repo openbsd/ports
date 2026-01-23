@@ -1,6 +1,7 @@
---- test/com/sun/jna/LibraryLoadTest.java.orig	Sat Jan 14 17:15:07 2017
-+++ test/com/sun/jna/LibraryLoadTest.java	Sat Feb 25 14:58:20 2017
-@@ -171,7 +171,8 @@ public class LibraryLoadTest extends TestCase implemen
+Index: test/com/sun/jna/LibraryLoadTest.java
+--- test/com/sun/jna/LibraryLoadTest.java.orig
++++ test/com/sun/jna/LibraryLoadTest.java
+@@ -172,7 +172,8 @@ public class LibraryLoadTest extends TestCase implemen
              dst.deleteOnExit();
          }
          catch(UnsatisfiedLinkError e) {

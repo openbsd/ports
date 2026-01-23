@@ -2,10 +2,8 @@ COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
-GH_TAGNAME=	5.11.0
+GH_TAGNAME=	5.18.1
 CATEGORIES=	devel
-
-REVISION=	3
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 
@@ -13,11 +11,12 @@ HOMEPAGE=	https://github.com/java-native-access/jna
 PERMIT_PACKAGE=	Yes
 
 MODULES=	java
-MODJAVA_VER=	11
+MODJAVA_VER=	11+
 MODJAVA_BUILD=	ant
 
-# use the system libffi
-MODJAVA_BUILD_ARGS +=-Ddynlink.native=true
+# use the system libffi, do a release build
+MODJAVA_BUILD_ARGS += -Ddynlink.native=true -Drelease=true
+MODJAVA_BUILD_TARGET_NAME = native jar contrib-jars
 
 # build.xml specifically wants gmake (and ggrep)
 USE_GMAKE=	Yes
@@ -31,18 +30,20 @@ TEST_DEPENDS=	${BASE_PKGPATH} \
 MAKE_ENV=	CC="${CC}" \
 		PORTS_CFLAGS="${CFLAGS}"
 
-GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86-64/:S/i386/x86/:S/sparc64/sparcv9/}
+# Inorder to update aarch64 and sparc64 native libs, we need placeholders
+# for the missing jars.
+MISSING_JARS=	${WRKSRC}/lib/native/openbsd-aarch64.jar \
+		${WRKSRC}/lib/native/openbsd-sparcv9.jar
 
-pre-configure:
-	sed -i -e 's,-Wno-unknown-warning-option,,' \
-		-e 's,-Wno-clobbered,,' ${WRKSRC}/native/Makefile
+post-extract:
+	for f in ${MISSING_JARS} ; do \
+		[ -e $$f ] || cp ${WRKSRC}/lib/native/out-of-date.jar $$f ; done
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
-	${INSTALL_DATA} ${WRKSRC}/build/openbsd-${GNU_ARCH}.jar \
-		${MODJAVA_JAR_DIR}/jna-platform.jar
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/platform/dist/jna-platform*.jar \
+		${MODJAVA_JAR_DIR}
 	${INSTALL_DATA} ${WRKSRC}/build/jna*.jar ${MODJAVA_JAR_DIR}
-	cp -r ${WRKSRC}/doc/javadoc ${MODJAVA_DOC_DIR}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
