@@ -1,4 +1,6 @@
 @conflict qwt-*-!qt6
 @pkgpath x11/qwt
+include/QwtPlotGLCanvas
+include/qwt_plot_glcanvas.h
 @lib lib/libqwt${QTLIBSUFFIX}.so.${LIBqwt_VERSION}
 lib/pkgconfig/Qt5Qwt6.pc

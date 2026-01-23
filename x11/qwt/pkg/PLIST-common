@@ -73,7 +73,6 @@ include/QwtPlotCanvas
 include/QwtPlotCurve
 include/QwtPlotDict
 include/QwtPlotDirectPainter
-include/QwtPlotGLCanvas
 include/QwtPlotGraphicItem
 include/QwtPlotGrid
 include/QwtPlotHistogram
@@ -218,7 +217,6 @@ include/qwt_plot_canvas.h
 include/qwt_plot_curve.h
 include/qwt_plot_dict.h
 include/qwt_plot_directpainter.h
-include/qwt_plot_glcanvas.h
 include/qwt_plot_graphicitem.h
 include/qwt_plot_grid.h
 include/qwt_plot_histogram.h
