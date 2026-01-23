@@ -1,10 +1,10 @@
-COMMENT =		convert rst to ansi-decorated console output
+COMMENT =		convert rst to ANSI-decorated console output
 
 MODPY_DISTV =		0.1.5
 DISTNAME =		rst2ansi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		2
+REVISION =		3
 
 # MIT
 PERMIT_PACKAGE =	Yes

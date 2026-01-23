@@ -1,0 +1,10 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,5 +1,5 @@
+ [bdist_wheel]
+-python-tag = py3
++python_tag = py3
+ 
+ [egg_info]
+ tag_build = 
