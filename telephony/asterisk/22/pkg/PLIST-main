@@ -161,6 +161,7 @@ include/asterisk/res_pjsip_cli.h
 include/asterisk/res_pjsip_outbound_publish.h
 include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
+include/asterisk/res_pjsip_redirect.h
 include/asterisk/res_pjsip_session.h
 include/asterisk/res_pjsip_session_caps.h
 include/asterisk/res_prometheus.h
@@ -685,6 +686,7 @@ share/examples/asterisk/default/cel_sqlite3_custom.conf
 @comment share/examples/asterisk/default/cel_tds.conf
 @comment share/examples/asterisk/default/chan_dahdi.conf
 @comment share/examples/asterisk/default/chan_mobile.conf
+share/examples/asterisk/default/chan_websocket.conf
 share/examples/asterisk/default/cli.conf
 @sample ${SYSCONFDIR}/asterisk/cli.conf
 share/examples/asterisk/default/cli_aliases.conf

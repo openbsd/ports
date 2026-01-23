@@ -1,4 +1,4 @@
-VER=		22.7.0
+VER=		22.8.0
 
 # keep above 7.8-stable
 REVISION-main=	0
