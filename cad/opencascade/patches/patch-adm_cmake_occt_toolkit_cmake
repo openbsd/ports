@@ -1,13 +1,13 @@
 Index: adm/cmake/occt_toolkit.cmake
 --- adm/cmake/occt_toolkit.cmake.orig
 +++ adm/cmake/occt_toolkit.cmake
-@@ -450,6 +450,11 @@ if (APPLE)
+@@ -251,6 +251,11 @@ if (APPLE)
    endif()
  endif()
  
 +if (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
 +  find_package (Backtrace REQUIRED)
-+  target_link_libraries (${PROJECT_NAME} ${Backtrace_LIBRARIES})
++  target_link_libraries (${PROJECT_NAME} PUBLIC ${Backtrace_LIBRARIES})
 +endif()
 +
  # Update list of used VTK libraries if OpenGL2 Rendering BackEnd is used.

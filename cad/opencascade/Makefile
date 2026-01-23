@@ -1,9 +1,12 @@
 COMMENT =		platform for 3D CAD, CAM, and CAE
 DPB_PROPERTIES =	parallel
 
-V =			7.8.1
-DISTNAME =		opencascade-${V}
-REVISION =		1
+V =			7.9.3
+PKGNAME =		opencascade-${V}
+
+GH_ACCOUNT =		Open-Cascade-SAS
+GH_PROJECT =		OCCT
+GH_TAGNAME =		V${V:S/./_/g}
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
 	TKDCAF TKDE TKDECascade TKDEGLTF TKDEIGES TKDEOBJ TKDEPLY TKDESTEP \
@@ -17,7 +20,6 @@ REVISION =		1
 SHARED_LIBS +=		${LIB} 3.0
 .endfor
 
-
 CATEGORIES =		cad
 HOMEPAGE =		https://www.opencascade.com/
 MAINTAINER = 		Johannes Thyssen Tishman <jtt@openbsd.org>
@@ -27,12 +29,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODTK_WANTLIB} ${COMPILER_LIBCXX} GL X11 c execinfo fontconfig
 WANTLIB += freetype m
-
-# See https://dev.opencascade.org/content/packaging-again-debian
-SITES = 		https://git.dev.opencascade.org/gitweb/
-DISTQUERY = 		?p=occt.git;a=snapshot;h=refs/tags/V${V:S/./_/g};sf=tgz
-DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{${DISTQUERY}}
-WRKDIST = 		${WRKDIR}/occt-V${V:S/./_/g}
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -44,8 +40,10 @@ LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			shells/bash
 
-CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src" \
-			-DUSE_TK=ON \
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			fonts/noto/cjk
+
+CONFIGURE_ARGS +=	-DUSE_TK=ON \
 			-DUSE_FREETYPE=ON \
 			-DUSE_OPENGL=ON \
 			-DUSE_TBB=OFF \
@@ -57,6 +55,7 @@ CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src" \
 			-DUSE_RAPIDJSON=OFF \
 			-DUSE_DRACO=OFF \
 			-DBUILD_SAMPLES_QT=OFF \
+			-DINSTALL_DIR_RESOURCE="share/opencascade/src" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 CXXFLAGS +=             -I${X11BASE}/include
@@ -76,16 +75,20 @@ COMP=gcc
 
 SUBST_VARS += BITS COMP V
 
+# Some tests require an active X11 display to work. When using
+# PORTS_PRIVSEP=Yes, the following can be used:
+# xhost +si:localuser:_pbuild; make test; xhost -si:localuser:_pbuild
+TEST_IS_INTERACTIVE =	X11
+TEST_DIR =		${WRKDIR}/tests_openbsd
+
+PORTHOME =		${WRKDIR}
+
 # fix bash and make installed script names less generic
 pre-configure:
 	sed -i "s,env\.sh,occt_env\.sh,g" \
 		${WRKSRC}/adm/templates/*.sh*
 	sed -i "s,custom\.sh,occt_custom\.sh,g" \
 		${WRKSRC}/adm/templates/*.sh*
-	sed -i "s,env\.sh,occt_env\.sh,g" \
-		${WRKSRC}/gen*
-	sed -i "s,custom\.sh,occt_custom\.sh,g" \
-		${WRKSRC}/gen*
 	sed -i "s,env\.,occt_env\.,g" \
 		${WRKSRC}/CMakeLists.txt
 	sed -i "s,custom\.,occt_custom\.,g" \
@@ -99,5 +102,13 @@ pre-configure:
 	for i in ${WRKSRC}/adm/templates/{custom,draw,env}*.sh*; do \
 		mv $$i ${WRKSRC}/adm/templates/occt_$${i##*/}; \
 	done
+
+do-test:
+	rm -rf ${TEST_DIR}
+	mkdir ${TEST_DIR}
+	${LOCALBASE}/bin/bash -c " \
+		source ${LOCALBASE}/bin/occt_env.sh && \
+		CSF_TestScriptsPath=${WRKSRC}/tests \
+		${LOCALBASE}/bin/DRAWEXE -b -c 'pload ALL; testgrid -outdir ${TEST_DIR}; exit'"
 
 .include <bsd.port.mk>

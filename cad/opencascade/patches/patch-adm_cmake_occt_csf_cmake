@@ -1,7 +1,7 @@
 Index: adm/cmake/occt_csf.cmake
 --- adm/cmake/occt_csf.cmake.orig
 +++ adm/cmake/occt_csf.cmake
-@@ -134,7 +134,7 @@ else()
+@@ -153,7 +153,7 @@ else()
      set (CSF_OpenGlesLibs "EGL GLESv2")
      set (CSF_androidlog  "log")
    elseif (UNIX)
@@ -10,7 +10,7 @@ Index: adm/cmake/occt_csf.cmake
      if (USE_XLIB)
        set (CSF_OpenGlLibs "GL")
        set (CSF_XwLibs     "X11")
-@@ -142,7 +142,6 @@ else()
+@@ -161,7 +161,6 @@ else()
        set (CSF_OpenGlLibs "GL EGL")
      endif()
      set (CSF_OpenGlesLibs "EGL GLESv2")

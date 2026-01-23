@@ -1,12 +1,12 @@
 Index: adm/templates/env.install.sh.in
 --- adm/templates/env.install.sh.in.orig
 +++ adm/templates/env.install.sh.in
-@@ -4,7 +4,7 @@ aScriptPath=${BASH_SOURCE%/*}; if [ -d "${aScriptPath}
+@@ -34,7 +34,7 @@ shopt -u nocasematch
  
- # ----- For compatibility with external application using CASROOT -----
- if [ "${CASROOT}" == "" ]; then
--  export CASROOT="@INSTALL_DIR@"
-+  export CASROOT="@INSTALL_DIR@/share/opencascade"
- fi
- 
- # ----- Define path to 3rdparty products -----
+ # ----- Set path to 3rd party and OCCT libraries -----
+ anArch=`uname -m`
+-if [ "$anArch" != "x86_64" ] && [ "$anArch" != "ia64" ] && [ "$anArch" != "aarch64" ] && [ "$anArch" != "arm64" ]; then
++if [ "$anArch" != "x86_64" ] && [ "$anArch" != "ia64" ] && [ "$anArch" != "aarch64" ] && [ "$anArch" != "arm64" ] && [ "$anArch" != "amd64" ]; then
+   export ARCH="32";
+ else
+   export ARCH="64";
