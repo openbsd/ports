@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1784 2026/01/22 11:27:56 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1785 2026/01/23 18:56:21 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -504,6 +504,7 @@ my $stem_extensions = {
 	'kdegraphics-mobipocket-kf5' => 'kf6-kdegraphics-mobipocket',
 	'kdiagram-qt6' => 'kdiagram',
 	'wycheproof-testvectors' => 'wycheproof',
+	'ruby34-openfact' => 'openfact',
 };
 
 my $obsolete_reason = {};
@@ -1062,7 +1063,6 @@ my $obsolete_suggestion = {
 	'opensmtpd-extras-redis' => 'opensmtpd-table-redis',
 # 7.9
 	'dovecot-fts-xapian' => 'dovecot-fts-flatcurve',
-	'ruby34-openfact' => 'openfact',
 	'jd-gui' => 'vineflower',
 	'minecraft' => 'multimc',
 	'tls-attacker' => 'py3-tlsfuzzer',
