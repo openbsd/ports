@@ -5,3 +5,10 @@ well suited for larger grammars.
 PLY provides most of the standard lex/yacc features including support
 for empty productions, precedence rules, error recovery, and support for
 ambiguous grammars.
+
+It's been abandoned upstream and not expected to be maintained any more.
+
+Note: do *not* use the undocumented 'picklefile' parameter with untrusted
+or externally writable files - Python's pickle module permits execution
+of embedded code during deserialization, so a malicious pickle file can
+execute arbitrary code during parser setup.

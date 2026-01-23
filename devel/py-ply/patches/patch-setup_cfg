@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -2,7 +2,7 @@
+ universal = 1
+ 
+ [metadata]
+-description-file = README.md
++description_file = README.md
+ 
+ [egg_info]
+ tag_build = 

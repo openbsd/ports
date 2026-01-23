@@ -1,20 +1,19 @@
-COMMENT =		Python lex/yacc
+COMMENT=	Python lex/yacc
 
-MODPY_DISTV =	3.11
-DISTNAME =		ply-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		devel
-REVISION =		8
+MODPY_DISTV=	3.11
+DISTNAME=	ply-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	devel
+REVISION=	9
 
-HOMEPAGE =		https://www.dabeaz.com/ply/
+HOMEPAGE=	https://www.dabeaz.com/ply/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 do-test:
 	cd ${WRKSRC}/test && \
