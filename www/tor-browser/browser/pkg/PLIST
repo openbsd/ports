@@ -28,8 +28,11 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.gpu
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.rdd
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.socket
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.utility
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
@@ -37,8 +40,11 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.rdd
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.socket
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
 lib/${BROWSER_NAME}/browser/omni.ja
