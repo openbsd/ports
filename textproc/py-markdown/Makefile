@@ -1,6 +1,6 @@
 COMMENT=	text-to-HTML conversion tool
 
-MODPY_DISTV=	3.10
+MODPY_DISTV=	3.10.1
 DISTNAME=	markdown-${MODPY_DISTV}
 PKGNAME=	py-markdown-${MODPY_DISTV}
 
@@ -16,7 +16,8 @@ MODPY_PYBUILD=	setuptools
 TEST_DEPENDS=	devel/py-coverage \
 		textproc/py-yaml
 
-# pytest.PytestCollectionWarning: cannot collect test class 'TestSuite' because it has a __init__ constructor
+# "cannot collect test class 'TestSuite' because it has a __init__ constructor"
+# blocks other tests from running
 MODPY_PYTEST_ARGS=	--ignore tests/test_syntax/extensions/test_md_in_html.py
 
 .include <bsd.port.mk>
