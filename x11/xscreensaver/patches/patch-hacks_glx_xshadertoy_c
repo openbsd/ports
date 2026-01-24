@@ -1,0 +1,41 @@
+Index: hacks/glx/xshadertoy.c
+--- hacks/glx/xshadertoy.c.orig
++++ hacks/glx/xshadertoy.c
+@@ -732,7 +732,7 @@ init_xshadertoy (ModeInfo *mi)
+ # ifndef HAVE_ANDROID /* X11, Cocoa and iOS read files with fopen. */
+   {
+     int j;
+-    FILE *in = 0, *stdin = 0;
++    FILE *in = 0, *xs_stdin = 0;
+     Bool nl_p = True;
+     int order[] = { 5, 0, 1, 2, 3, 4 };    /* Read "common" first on stdin */
+ 
+@@ -757,8 +757,8 @@ init_xshadertoy (ModeInfo *mi)
+           in = fopen (fn, "r");
+         else
+           {
+-            in = (stdin ? stdin : fdopen (STDIN_FILENO, "r"));
+-            stdin = in;
++            in = (xs_stdin ? xs_stdin : fdopen (STDIN_FILENO, "r"));
++            xs_stdin = in;
+           }
+ 
+         if (!in)
+@@ -773,7 +773,7 @@ init_xshadertoy (ModeInfo *mi)
+         while (fgets (buf, sizeof(buf)-1, in))
+           {
+             res = strlen (buf);
+-            if (nl_p && stdin &&
++            if (nl_p && xs_stdin &&
+                 !strcmp (buf, ".\n"))	/* "." alone on a line is EOF */
+               break;
+             nl_p = (res > 0 && buf[res-1] == '\n');
+@@ -791,7 +791,7 @@ init_xshadertoy (ModeInfo *mi)
+             bp->shader_program[i][len] = 0;
+           }
+ 
+-        if (!stdin)
++        if (!xs_stdin)
+           {
+             fclose (in);
+             in = 0;
