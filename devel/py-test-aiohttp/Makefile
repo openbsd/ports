@@ -1,10 +1,9 @@
 COMMENT=	pytest plugin for aiohttp
 
-MODPY_DISTV=	1.0.5
-DISTNAME=	pytest-aiohttp-${MODPY_DISTV}
-PKGNAME=	${DISTNAME:S/py/py-/}
+MODPY_DISTV=	1.1.0
+DISTNAME=	pytest_aiohttp-${MODPY_DISTV}
+PKGNAME=	py-test-aiohttp-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://github.com/aio-libs/pytest-aiohttp
 

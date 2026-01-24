@@ -18,3 +18,4 @@ lib/python${MODPY_VERSION}/site-packages/pytest_aiohttp/${MODPY_PYCACHE}plugin.$
 lib/python${MODPY_VERSION}/site-packages/pytest_aiohttp/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_aiohttp/_version.py
 lib/python${MODPY_VERSION}/site-packages/pytest_aiohttp/plugin.py
+lib/python${MODPY_VERSION}/site-packages/pytest_aiohttp/py.typed
