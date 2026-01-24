@@ -1,8 +1,8 @@
 COMMENT=	fast and thorough lazy object proxy
 
-MODPY_DISTV=	1.10.0
-DISTNAME=	lazy-object-proxy-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	1.12.0
+DISTNAME=	lazy_object_proxy-${MODPY_DISTV}
+PKGNAME=	py-lazy-object-proxy-${MODPY_DISTV}
 CATEGORIES=	devel
 REVISION=	1
 
@@ -14,9 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-test-benchmark
 
