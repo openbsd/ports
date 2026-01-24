@@ -1,8 +1,7 @@
 COMMENT =	argon2 password hashing for Python
 
-MODPY_DISTV =	21.2.0
-REVISION =	1
-DISTNAME =	argon2-cffi-bindings-${MODPY_DISTV}
+MODPY_DISTV =	25.1.0
+DISTNAME =	argon2_cffi_bindings-${MODPY_DISTV}
 PKGNAME =	py-argon2-cffi-bindings-${MODPY_DISTV}
 
 CATEGORIES =	security
