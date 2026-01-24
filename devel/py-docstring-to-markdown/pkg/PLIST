@@ -4,6 +4,7 @@ lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.di
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown-${MODPY_DISTV}.dist-info/top_level.txt
@@ -21,9 +22,12 @@ lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}p
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}plain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}rst.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}rst.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/_utils.py
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/cpython.py
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/google.py
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/plain.py
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/py.typed
 lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/rst.py
+lib/python${MODPY_VERSION}/site-packages/docstring_to_markdown/types.py
