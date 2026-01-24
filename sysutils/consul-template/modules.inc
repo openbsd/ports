@@ -26,6 +26,7 @@ MODGO_MODULES =	\
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-stack/stack				 v1.8.0 \
 	github.com/go-test/deep					 v1.0.2 \
+	github.com/go-viper/mapstructure/v2			 v2.4.0 \
 	github.com/godbus/dbus/v5				 v5.0.4 \
 	github.com/gogo/protobuf				 v1.1.1 \
 	github.com/golang/protobuf				 v1.3.2 \
@@ -34,8 +35,8 @@ MODGO_MODULES =	\
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/google/uuid					 v1.6.0 \
 	github.com/gorilla/websocket				 v1.5.0 \
-	github.com/hashicorp/consul/api				 v1.32.1 \
-	github.com/hashicorp/consul/sdk				 v0.16.2 \
+	github.com/hashicorp/consul/api				 v1.33.2 \
+	github.com/hashicorp/consul/sdk				 v0.17.1 \
 	github.com/hashicorp/cronexpr				 v1.1.1 \
 	github.com/hashicorp/errwrap				 v1.1.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
@@ -106,17 +107,17 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify				 v1.10.0 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
 	github.com/yuin/goldmark				 v1.3.5 \
-	golang.org/x/crypto					 v0.40.0 \
-	golang.org/x/exp					 v0.0.0-20250711185948-6ae5c78190dc \
-	golang.org/x/mod					 v0.26.0 \
-	golang.org/x/net					 v0.42.0 \
-	golang.org/x/sync					 v0.16.0 \
-	golang.org/x/sys					 v0.34.0 \
-	golang.org/x/term					 v0.33.0 \
-	golang.org/x/text					 v0.27.0 \
+	golang.org/x/crypto					 v0.45.0 \
+	golang.org/x/exp					 v0.0.0-20250808145144-a408d31f581a \
+	golang.org/x/mod					 v0.29.0 \
+	golang.org/x/net					 v0.47.0 \
+	golang.org/x/sync					 v0.18.0 \
+	golang.org/x/sys					 v0.38.0 \
+	golang.org/x/term					 v0.37.0 \
+	golang.org/x/text					 v0.31.0 \
 	golang.org/x/time					 v0.12.0 \
-	golang.org/x/tools					 v0.35.0 \
-	golang.org/x/tools/go/expect				 v0.1.0-deprecated \
+	golang.org/x/tools					 v0.38.0 \
+	golang.org/x/tools/go/expect				 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest		 v0.1.1-deprecated \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
 	gopkg.in/alecthomas/kingpin.v2				 v2.2.6 \
@@ -150,7 +151,6 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp			 v0.4.0 \
 	github.com/google/go-cmp			 v0.5.9 \
 	github.com/google/uuid				 v1.1.2 \
-	github.com/hashicorp/consul/sdk			 v0.16.1 \
 	github.com/hashicorp/errwrap			 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.0 \
 	github.com/hashicorp/go-hclog			 v1.5.0 \
@@ -233,8 +233,8 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.26.0 \
 	golang.org/x/crypto				 v0.36.0 \
 	golang.org/x/crypto				 v0.39.0 \
-	golang.org/x/exp				 v0.0.0-20250305212735-054e65f0b394 \
-	golang.org/x/mod				 v0.25.0 \
+	golang.org/x/crypto				 v0.44.0 \
+	golang.org/x/mod				 v0.27.0 \
 	golang.org/x/mod				 v0.4.2 \
 	golang.org/x/net				 v0.0.0-20181114220301-adae6a3d119a \
 	golang.org/x/net				 v0.0.0-20190404232315-eb5bcb51f2a3 \
@@ -246,13 +246,13 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20210410081132-afb366fc7cd1 \
 	golang.org/x/net				 v0.0.0-20210726213435-c6fcb2dbf985 \
 	golang.org/x/net				 v0.37.0 \
-	golang.org/x/net				 v0.38.0 \
-	golang.org/x/net				 v0.41.0 \
+	golang.org/x/net				 v0.43.0 \
 	golang.org/x/sync				 v0.0.0-20181108010431-42b317875d0f \
 	golang.org/x/sync				 v0.0.0-20181221193216-37e7f081c4d4 \
 	golang.org/x/sync				 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync				 v0.0.0-20190911185100-cd5d95a43a6e \
 	golang.org/x/sync				 v0.0.0-20210220032951-036812b2e83c \
+	golang.org/x/sync				 v0.16.0 \
 	golang.org/x/sys				 v0.0.0-20180823144017-11551d06cbcc \
 	golang.org/x/sys				 v0.0.0-20180905080454-ebe1bf3edb33 \
 	golang.org/x/sys				 v0.0.0-20181116152217-5ac8a444bdc5 \
@@ -279,8 +279,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.15.0 \
 	golang.org/x/sys				 v0.18.0 \
 	golang.org/x/sys				 v0.20.0 \
-	golang.org/x/sys				 v0.29.0 \
 	golang.org/x/sys				 v0.31.0 \
+	golang.org/x/sys				 v0.35.0 \
 	golang.org/x/sys				 v0.6.0 \
 	golang.org/x/term				 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text				 v0.23.0 \
@@ -293,7 +293,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools				 v0.0.0-20190907020128-2ca718005c18 \
 	golang.org/x/tools				 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools				 v0.1.6-0.20210726203631-07bc1bf47fb2 \
-	golang.org/x/tools				 v0.34.0 \
+	golang.org/x/tools				 v0.36.0 \
 	golang.org/x/xerrors				 v0.0.0-20190717185122-a985d3407aa7 \
 	golang.org/x/xerrors				 v0.0.0-20191011141410-1b5146add898 \
 	golang.org/x/xerrors				 v0.0.0-20191204190536-9bdfabe68543 \
