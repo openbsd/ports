@@ -1472,6 +1472,7 @@
      SUBDIR += py-doit
      SUBDIR += py-dtfabric
      SUBDIR += py-dulwich
+     SUBDIR += py-dunamai
      SUBDIR += py-easyprocess
      SUBDIR += py-editables
      SUBDIR += py-elftools
@@ -1794,6 +1795,7 @@
      SUBDIR += py-untangle
      SUBDIR += py-urwid
      SUBDIR += py-urwid_readline
+     SUBDIR += py-uv-dynamic-versioning
      SUBDIR += py-uvloop
      SUBDIR += py-validators
      SUBDIR += py-vcversioner
