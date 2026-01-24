@@ -3,6 +3,7 @@ COMMENT =	i3-compatible Wayland compositor
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
 GH_TAGNAME =	1.11
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -20,21 +21,20 @@ WANTLIB +=	wayland-server
 WANTLIB +=	xcb-icccm xcb xkbcommon
 WANTLIB +=	c m
 
-BUILD_DEPENDS = graphics/gdk-pixbuf2 \
-		textproc/scdoc \
+BUILD_DEPENDS = textproc/scdoc \
 		wayland/wayland-protocols
 
 LIB_DEPENDS =	devel/json-c \
 		devel/pango \
 		devel/pcre2 \
+		graphics/gdk-pixbuf2 \
 		wayland/libevdev-openbsd \
 		wayland/libinput-openbsd>=1.26 \
 		wayland/wayland \
 		x11/xkbcommon
 
 RUN_DEPENDS =	wayland/wmenu>=0.1.9 \
-		wayland/swaybg \
-		x11/gnome/themes-extra
+		wayland/swaybg
 
 CONFIGURE_ARGS = -Dtray=disabled
 
