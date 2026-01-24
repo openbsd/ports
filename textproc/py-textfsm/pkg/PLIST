@@ -27,8 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}clitable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}clitable.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}copyable_regex_object.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}copyable_regex_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,7 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}terminal.${MODP
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}texttable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/textfsm/${MODPY_PYCACHE}texttable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textfsm/clitable.py
-lib/python${MODPY_VERSION}/site-packages/textfsm/copyable_regex_object.py
 lib/python${MODPY_VERSION}/site-packages/textfsm/parser.py
 lib/python${MODPY_VERSION}/site-packages/textfsm/terminal.py
 lib/python${MODPY_VERSION}/site-packages/textfsm/texttable.py

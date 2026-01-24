@@ -1,0 +1,10 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,5 +1,5 @@
+ [metadata]
+-description-file = README.md
++description_file = README.md
+ 
+ [aliases]
+ test = pytest

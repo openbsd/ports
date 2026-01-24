@@ -1,9 +1,8 @@
 COMMENT=	parse semi-structured text into Python table
 
-MODPY_DISTV=	1.1.3
+MODPY_DISTV=	2.1.0
 DISTNAME=	textfsm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	4
 
 CATEGORIES=	textproc
 
@@ -13,12 +12,7 @@ HOMEPAGE=	https://github.com/google/textfsm
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-future \
-			devel/py-six
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
