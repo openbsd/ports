@@ -229,6 +229,7 @@ webapps/docs/api/org/apache/catalina/ant/package-summary.html
 webapps/docs/api/org/apache/catalina/ant/package-tree.html
 webapps/docs/api/org/apache/catalina/authenticator/
 webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.AllowCorsPreflight.html
+webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.SsoReauthenticationMode.html
 webapps/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
 webapps/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.BasicCredentials.html
 webapps/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.html
