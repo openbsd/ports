@@ -48,6 +48,8 @@ WANTLIB += utf8_range utf8_validity z
 COMPILER =		base-clang ports-gcc
 CXXFLAGS +=		-std=gnu++17
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 LIB_DEPENDS =		devel/protobuf
 
 CONFIGURE_STYLE =	autoconf
