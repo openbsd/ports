@@ -1,10 +1,9 @@
 COMMENT=	pytest fixture for benchmarking code
 
-MODPY_DISTV=	5.1.0
-DISTNAME=	pytest-benchmark-${MODPY_DISTV}
-PKGNAME=	${DISTNAME:S/py/py-/}
+MODPY_DISTV=	5.2.3
+DISTNAME=	pytest_benchmark-${MODPY_DISTV}
+PKGNAME=	py-test-benchmark-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://pytest-benchmark.readthedocs.io/en/stable/
 
