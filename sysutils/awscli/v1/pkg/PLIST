@@ -3650,6 +3650,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-findings
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-invitations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-ip-sets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-members.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/update-detector.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/describe-affected-entities.rst
