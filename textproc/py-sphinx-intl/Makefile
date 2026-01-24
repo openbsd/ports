@@ -1,25 +1,21 @@
-COMMENT =		internationalization helper for Sphinx
+COMMENT=	internationalization helper for Sphinx
 
-MODPY_DISTV =	2.1.0
-PKGNAME =		py-sphinx-intl-${MODPY_DISTV}
-DISTNAME =		sphinx-intl-${MODPY_DISTV}
-REVISION =		3
+MODPY_DISTV=	2.3.2
+DISTNAME=	sphinx_intl-${MODPY_DISTV}
+PKGNAME=	py-sphinx-intl-${MODPY_DISTV}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		devel/py-babel \
-			devel/py-click \
-			devel/py-setuptools \
-			textproc/py-sphinx
-
-NO_TEST =		Yes
+RUN_DEPENDS=	devel/py-babel \
+		devel/py-click \
+		textproc/py-sphinx
+#NO_TEST=	Yes
 
 .include <bsd.port.mk>
