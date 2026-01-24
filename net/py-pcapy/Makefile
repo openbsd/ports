@@ -1,8 +1,11 @@
 COMMENT =		libpcap module for Python
 
-MODPY_DISTV =		1.0.9
-DISTNAME =		pcapy-ng-${MODPY_DISTV}
+MODPY_DISTV =		1.1.0
+DISTNAME =		pcapy_ng-${MODPY_DISTV}
 PKGNAME =		py-pcapy-${MODPY_DISTV}
+WRKDIST =		${WRKDIR}/pcapy-ng-${MODPY_DISTV}
+
+HOMEPAGE =		https://github.com/stamparm/pcapy-ng/
 
 CATEGORIES =		net devel
 
