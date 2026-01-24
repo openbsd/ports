@@ -1,9 +1,10 @@
 COMMENT=	Python FFmpeg progress wrapper
 
-MODPY_DISTV=	0.10.0
-DISTNAME=	ffmpeg-progress-yield-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
-REVISION=	0
+MODPY_DISTV=	1.1.1
+GH_ACCOUNT=	slhck
+GH_PROJECT=	ffmpeg-progress-yield
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	py-ffmpeg-progress-yield-${MODPY_DISTV}
 
 CATEGORIES=	multimedia
 
@@ -15,9 +16,7 @@ PERMIT_PACKAGE=	Yes
 RUN_DEPENDS=	graphics/ffmpeg
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
-MODPY_PI=	Yes
-
-MODPY_PYTEST_ARGS=	test/test.py
+MODPY_PYBUILD=	uv_build
+TEST_DEPENDS=	devel/py-test-asyncio
 
 .include <bsd.port.mk>
