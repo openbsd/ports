@@ -1,6 +1,6 @@
 COMMENT=	CIM operations over HTTP in Python
 
-MODPY_DISTV=	1.8.0
+MODPY_DISTV=	1.9.0
 DISTNAME=	pywbem-${MODPY_DISTV}
 PKGNAME=	py-wbem-${MODPY_DISTV}
 CATEGORIES=	devel
