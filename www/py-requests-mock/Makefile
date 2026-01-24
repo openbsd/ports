@@ -1,9 +1,8 @@
-MODPY_DISTV =	1.5.2
 COMMENT =	mock out responses from py-requests
+MODPY_DISTV =	1.12.1
 DISTNAME =	requests-mock-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
+PKGNAME =	py-requests-mock-${MODPY_DISTV}
 CATEGORIES =	www
-REVISION =	9
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -12,15 +11,15 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	setuptools_scm
 
-BUILD_DEPENDS =	devel/py-pbr
-RUN_DEPENDS =	devel/py-six \
-		www/py-requests
+RUN_DEPENDS =	www/py-requests
 
-#TEST_DEPENDS =	devel/py-testtools
-
-# Requires py-testrepository
+TEST_DEPENDS =	devel/py-fixtures \
+		devel/py-testtools \
+		textproc/py-sphinx \
+		www/py-requests-futures
+# Requires https://pypi.org/project/purl/
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
