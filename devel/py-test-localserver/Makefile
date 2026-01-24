@@ -1,9 +1,8 @@
 COMMENT=	py.test plugin to test server connections locally
 
-MODPY_DISTV=	0.8.1
-DISTNAME=	pytest-localserver-${MODPY_DISTV}
+MODPY_DISTV=	0.10.0
+DISTNAME=	pytest_localserver-${MODPY_DISTV}
 PKGNAME=	py-test-localserver-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
