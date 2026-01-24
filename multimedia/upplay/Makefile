@@ -2,8 +2,7 @@ USE_NOBTCFI =		Yes
 USE_WXNEEDED =		Yes
 
 COMMENT =		UPnP audio control point
-DISTNAME =		upplay-1.9.7
-REVISION=		0
+DISTNAME =		upplay-1.9.8
 
 CATEGORIES =		multimedia net
 
@@ -16,10 +15,10 @@ SITES =			https://www.lesbonscomptes.com/upplay/downloads/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets c jsoncpp
-WANTLIB += m upnpp
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets c jsoncpp m upnpp
 
 MODULES =		devel/qmake \
 			x11/qt6
