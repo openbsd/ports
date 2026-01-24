@@ -1,8 +1,10 @@
 COMMENT =		audio normalization
 
-MODPY_DISTV =	1.27.7
-DISTNAME =		ffmpeg-normalize-${MODPY_DISTV}
-REVISION =		2
+MODPY_DISTV =		1.36.1
+GH_ACCOUNT =		slhck
+GH_PROJECT =		ffmpeg-normalize
+GH_TAGNAME =		v${MODPY_DISTV}
+PKGNAME =		ffmpeg-normalize-${MODPY_DISTV}
 
 CATEGORIES =		audio multimedia
 
@@ -12,15 +14,16 @@ MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	test/test.py
+MODPY_PYBUILD =		uv_build
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 RUN_DEPENDS =		devel/py-colorama \
 			devel/py-colorlog \
-			multimedia/py-ffmpeg-progress-yield>=0.7.4 \
+			multimedia/py-ffmpeg-progress-yield>=1 \
 			devel/py-tqdm \
 			graphics/ffmpeg
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
