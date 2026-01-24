@@ -1,9 +1,8 @@
 COMMENT=	LDAP client API for Python
 
-MODPY_DISTV =	3.4.4
-DISTNAME=	python-ldap-${MODPY_DISTV}
+MODPY_DISTV =	3.4.5
+DISTNAME=	python_ldap-${MODPY_DISTV}
 PKGNAME=	py-ldap-${MODPY_DISTV}
-REVISION=	2
 
 CATEGORIES=	databases
 
@@ -17,7 +16,7 @@ WANTLIB += lber ldap pthread ${MODPY_WANTLIB}
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		databases/openldap
@@ -32,10 +31,5 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		databases/openldap,-server
 TEST_ENV=	SBIN=${LOCALBASE}/libexec:${LOCALBASE}/sbin \
 		PATH=${PORTPATH}:${LOCALBASE}/sbin
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-ldap
-	cd ${WRKSRC}; tar cf - Demo | tar xf - -C \
-		${PREFIX}/share/examples/py-ldap
 
 .include <bsd.port.mk>
