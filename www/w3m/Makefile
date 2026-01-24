@@ -1,6 +1,6 @@
 COMMENT=	pager/text-based web browser
 
-V=		0.5.5
+V=		0.5.6
 DIST_TUPLE=	srht rkta w3m v$V .
 WRKDIST=	${WRKDIR}/w3m-v$V
 
