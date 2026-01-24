@@ -1,26 +1,23 @@
-COMMENT =		WebSocket client for Python
+COMMENT=	WebSocket client for Python
 
-MODPY_DISTV =	1.7.0
-DISTNAME =		websocket-client-${MODPY_DISTV}
-PKGNAME =		py-websocket-client-${MODPY_DISTV}
-REVISION =		2
+MODPY_DISTV=	1.9.0
+DISTNAME=	websocket_client-${MODPY_DISTV}
+PKGNAME=	py-websocket-client-${MODPY_DISTV}
 
-CATEGORIES =		net
+CATEGORIES=	net
 
-HOMEPAGE =		https://github.com/websocket-client/websocket-client/
+HOMEPAGE=	https://github.com/websocket-client/websocket-client/
 
 # Apache 2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
-MODPY_PI_DIR =		w/websocket-client
-MODPY_PYBUILD =		setuptools
-
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 # optional (also optional: wsaccel, not ported)
-RUN_DEPENDS =		net/py-socks
+RUN_DEPENDS=	net/py-socks
 
-TEST_DEPENDS =		net/py-websockets
+TEST_DEPENDS=	net/py-websockets
 
 .include <bsd.port.mk>
