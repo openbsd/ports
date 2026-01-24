@@ -1,8 +1,7 @@
 COMMENT =	reverse differential backup tool, over a network or locally
 
-MODPY_DISTV =	2.2.5
+MODPY_DISTV =	2.2.6
 DISTNAME =	rdiff-backup-${MODPY_DISTV}
-REVISION =	2
 
 CATEGORIES =	sysutils
 
