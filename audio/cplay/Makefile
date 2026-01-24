@@ -1,24 +1,23 @@
-COMMENT =	simple curses audio player
+BROKEN=		'_curses.window' object has no attribute 'get_wch'
 
-MODPY_DISTV =	5.0.1
+COMMENT=	simple curses audio player
 
-DISTNAME =	cplay-ng-${MODPY_DISTV}
-PKGNAME =	cplay-${MODPY_DISTV}
-REVISION =	5
+MODPY_DISTV=	5.4.0
+DISTNAME=	cplay_ng-${MODPY_DISTV}
+PKGNAME=	cplay-${MODPY_DISTV}
 
-CATEGORIES =	audio
+CATEGORIES=	audio
 
-HOMEPAGE =	https://github.com/xi/cplay-ng
+HOMEPAGE=	https://github.com/xi/cplay-ng
 
 # GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		multimedia/mpv
+RUN_DEPENDS=	multimedia/mpv
 
 post-install:
 	ln -s cplay-ng ${PREFIX}/bin/cplay
