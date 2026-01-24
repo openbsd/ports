@@ -1,7 +1,7 @@
 COMMENT =	modular Wayland compositor library
 
 V =		${MODWLROOTS_VERSION}.2
-REVISION =	0
+REVISION =	1
 EPOCH =		0
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
@@ -29,11 +29,7 @@ WANTLIB +=	xcb-res xcb-shm xcb-xfixes xcb-xinput
 WANTLIB +=	xkbcommon
 
 BUILD_DEPENDS = \
-		devel/ninja \
-		graphics/cairo \
-		graphics/ffmpeg \
 		graphics/glslang \
-		graphics/png \
 		graphics/vulkan-headers \
 		misc/hwdata \
 		wayland/wayland-protocols \
@@ -51,13 +47,10 @@ LIB_DEPENDS = \
 		x11/xcb-util-errors \
 		x11/xkbcommon
 
-RUN_DEPENDS = \
-		graphics/cairo \
-		graphics/ffmpeg \
-		graphics/png \
-		wayland/xwayland
+RUN_DEPENDS =	wayland/xwayland
 
 CONFIGURE_ARGS = \
+		-Dexamples=false \
 		-Dallocators=gbm
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
