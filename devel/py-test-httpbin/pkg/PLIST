@@ -5,6 +5,8 @@ lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/${MODPY_PYCACHE}/
@@ -20,9 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/${MODPY_PYCACHE}version.
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs.py
-lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/cacert.pem
-lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/cert.pem
-lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/key.pem
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/README.md
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/client.pem
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/server.key
+lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/certs/server.pem
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/plugin.py
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/serve.py
 lib/python${MODPY_VERSION}/site-packages/pytest_httpbin/version.py
