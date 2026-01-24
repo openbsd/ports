@@ -9,6 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-
 lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/licenses/CHANGELOG.rst
 lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/licenses/CODE_OF_CONDUCT.rst
 lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/licenses/NOTICE
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/licenses/README.rst
 lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/licenses/apache-2.0.LICENSE
 lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/license_expression/__init__.py
