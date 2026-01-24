@@ -1,10 +1,9 @@
 COMMENT=	thin wrapper around mock package for easier use with pytest
 
-MODPY_DISTV=	3.14.0
-DISTNAME=	pytest-mock-${MODPY_DISTV}
-PKGNAME=	${DISTNAME:S/py/py-/}
+MODPY_DISTV=	3.15.1
+DISTNAME=	pytest_mock-${MODPY_DISTV}
+PKGNAME=	py-test-mock-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://github.com/pytest-dev/pytest-mock/
 
