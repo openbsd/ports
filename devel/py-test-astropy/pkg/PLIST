@@ -1,4 +1,7 @@
 @pkgpath devel/py-test-astropy,python3
+@pkgpath devel/py-test-openfiles,python3
+@pkgpath devel/py-test-openfiles
+@conflict py3-test-openfiles-*
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy/
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy-${MODPY_DISTV}.dist-info/METADATA
