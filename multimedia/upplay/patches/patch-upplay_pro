@@ -1,0 +1,14 @@
+https://framagit.org/medoc92/upplay/-/commit/849e3e5ff469a864ac8a6a91f867d8fe6698da73
+
+Index: upplay.pro
+--- upplay.pro.orig
++++ upplay.pro
+@@ -214,7 +214,7 @@ unix:!mac {
+   # because of possible conflict with a system lib if we installed them. Also have to use single
+   # process make (no -j) when this is enabled, for some yet unelucidated reason.
+   equals(QT_MAJOR_VERSION, 6) {
+-  config += dbus
++    QT += dbus
+     LIB_NAME = ambermpris6
+     LIB_SRCDIR = $$PWD/amber-mpris
+     LIB_DIR  = $$OUT_PWD/amber-mpris
