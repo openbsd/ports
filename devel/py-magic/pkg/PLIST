@@ -1,8 +1,17 @@
 @pkgpath devel/py-magic,python3
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/magic.py
+lib/python${MODPY_VERSION}/site-packages/magic/
+lib/python${MODPY_VERSION}/site-packages/magic/__init__.py
+lib/python${MODPY_VERSION}/site-packages/magic/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/magic/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/magic/compat.py
+lib/python${MODPY_VERSION}/site-packages/magic/loader.py
+lib/python${MODPY_VERSION}/site-packages/magic/py.typed
 lib/python${MODPY_VERSION}/site-packages/python_magic-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/python_magic-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_magic-${MODPY_DISTV}.dist-info/RECORD
