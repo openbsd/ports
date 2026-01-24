@@ -1,13 +1,13 @@
 COMMENT=	Python module for GnuPG interface
 
-MODPY_DISTV=	0.5.5
-DISTNAME=	python-gnupg-${MODPY_DISTV}
+MODPY_DISTV=	0.5.6
+DISTNAME=	python_gnupg-${MODPY_DISTV}
+WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/}
 PKGNAME=	py-gnupg-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	security devel
 
-HOMEPAGE=	https://bitbucket.org/vinay.sajip/python-gnupg
+HOMEPAGE=	https://github.com/vsajip/python-gnupg
 
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
