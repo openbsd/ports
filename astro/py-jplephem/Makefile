@@ -1,8 +1,6 @@
-FIX_EXTRACT_PERMISSIONS=	Yes
-
 COMMENT=	use a JPL ephemeris to predict planet positions
 
-MODPY_DISTV =	2.23
+MODPY_DISTV =	2.24
 DISTNAME=	jplephem-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
