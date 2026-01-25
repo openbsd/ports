@@ -1,7 +1,7 @@
 COMMENT =		graphics data for OpenTTD
 
 OPENTTD_PROJECT =	opengfx
-V =			7.1
+V =			8.0
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openttd/data
