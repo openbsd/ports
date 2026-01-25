@@ -1,0 +1,7 @@
+@bin bin/niri
+bin/startniri.sh
+share/applications/niri.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/niri/
+share/examples/niri/default-config.kdl
+@tag update-desktop-database
