@@ -66,6 +66,14 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}tokens.${MO
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/anchor.py
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/clibz/setup.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/comments.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/compat.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/composer.py
