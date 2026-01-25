@@ -2046,6 +2046,7 @@
      SUBDIR += vtcl
      SUBDIR += vte3
      SUBDIR += woboq_codebrowser
+     SUBDIR += x86_64-elf
      SUBDIR += xa
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
