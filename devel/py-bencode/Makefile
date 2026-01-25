@@ -1,24 +1,18 @@
 COMMENT =	bencoding and bdecoding implementation
 
-MODPY_DISTV =	2.1.0
+MODPY_DISTV =	4.0.0
 DISTNAME =	bencode.py-${MODPY_DISTV}
 PKGNAME =	py-bencode-${MODPY_DISTV}
-REVISION =	6
 
 CATEGORIES =	devel
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+HOMEPAGE =	https://github.com/fuzeman/bencode.py
 
-# BitTorrent Open Source License
-# BTOSL http://www.bittorrent.com/license
+# BitTorrent Open Source License, see LICENSE
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-BUILD_DEPENDS =		devel/py-pbr
-
-NO_TEST =		Yes
+MODPY_PYBUILD =		pbr
 
 .include <bsd.port.mk>

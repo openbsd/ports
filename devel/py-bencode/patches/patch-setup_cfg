@@ -1,0 +1,17 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -1,10 +1,10 @@
+ [metadata]
+ name = bencode.py
+ author = Dean Gardiner
+-author-email = me@dgardiner.net
++author_email = me@dgardiner.net
+ summary = Simple bencode parser (for Python 2, Python 3 and PyPy)
+-description-file = README.rst
+-home-page = https://github.com/fuzeman/bencode.py
++description_file = README.rst
++home_page = https://github.com/fuzeman/bencode.py
+ license = BitTorrent Open Source License
+ classifier = 
+ 	Development Status :: 5 - Production/Stable
