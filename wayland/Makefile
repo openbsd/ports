@@ -13,6 +13,7 @@
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
      SUBDIR += libinput-openbsd
+     SUBDIR += niri
      SUBDIR += plasma-wayland-protocols
      SUBDIR += regreet
      SUBDIR += slurp
