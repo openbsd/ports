@@ -1,6 +1,6 @@
 COMMENT =		cargo helper to build and install c-like libraries
 
-V =			0.10.19
+V =			0.10.20
 PKGNAME =		cargo-c-$V
 GH_ACCOUNT =		lu-zero
 GH_PROJECT =		cargo-c
@@ -15,7 +15,7 @@ CATEGORIES =		devel
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${MODCARGO_WANTLIB} crypto curl git2 m ssh2 ssl z
+WANTLIB +=		${MODCARGO_WANTLIB} curl git2 m ssh2
 
 MODULES =		devel/cargo
 
