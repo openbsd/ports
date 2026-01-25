@@ -6,7 +6,7 @@ COMMENT=	GNU Image Manipulation Program
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
 V=		3.0
-DISTNAME=	gimp-${V}.6
+DISTNAME=	gimp-${V}.8
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -67,6 +67,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		lang/vala \
 		misc/shared-mime-info \
 		shells/bash \
+		shells/bash-completion \
 		textproc/libxslt
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \

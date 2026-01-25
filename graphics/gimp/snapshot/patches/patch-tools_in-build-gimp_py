@@ -4,9 +4,9 @@ And we don't want to BDEP on egdb.
 Index: tools/in-build-gimp.py
 --- tools/in-build-gimp.py.orig
 +++ tools/in-build-gimp.py
-@@ -33,12 +33,8 @@ try:
-       subprocess.run(["install_name_tool", "-add_rpath", f"{GIMP_GLOBAL_BUILD_ROOT}/libgimpthumb", binary], check=True)
-       subprocess.run(["install_name_tool", "-add_rpath", f"{GIMP_GLOBAL_BUILD_ROOT}/libgimpwidgets", binary], check=True)
+@@ -59,12 +59,8 @@ try:
+       os.symlink(os.environ.get("GIMP_PYTHON_WITH_GI"), tmp_symlink)
+     os.environ["PATH"] = tmp_path + os.pathsep + os.environ.get("PATH", "")
  
 -  if "GIMP_DEBUG_SELF" in os.environ and shutil.which("gdb"):
 -    print(f"RUNNING: gdb --batch -x {os.environ['GIMP_GLOBAL_SOURCE_ROOT']}/tools/debug-in-build-gimp.py --args {os.environ['GIMP_SELF_IN_BUILD']} {' '.join(sys.argv[1:])}")
@@ -17,5 +17,5 @@ Index: tools/in-build-gimp.py
 +  print(f"RUNNING: {os.environ['GIMP_SELF_IN_BUILD']} {' '.join(sys.argv[1:])}")
 +  subprocess.run([os.environ["GIMP_SELF_IN_BUILD"]] + sys.argv[1:],stdin=sys.stdin, check=True)
  
-   if "GIMP_TEMP_UPDATE_RPATH" in os.environ:
-     for binary in os.environ["GIMP_TEMP_UPDATE_RPATH"].split(":"):
+   if different_python:
+     os.environ["PATH"] = os.pathsep.join([p for p in os.environ["PATH"].split(os.pathsep) if p != tmp_path])
