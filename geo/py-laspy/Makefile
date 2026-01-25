@@ -1,6 +1,6 @@
 COMMENT=	library for reading, modifying and creating LAS LiDAR files
 
-MODPY_DISTV =	2.6.1
+MODPY_DISTV =	2.7.0
 DISTNAME=	laspy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
