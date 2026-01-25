@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
+REVISION =	0
 MOZILLA_VERSION =	147.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
@@ -116,6 +117,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${FILESDIR}/firefox.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
+
+	# install policies.json
+	${INSTALL_DATA} ${FILESDIR}/policies.json \
+		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/policies.json
 
 	# make sure TwemojiMozilla.ttf is found
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/

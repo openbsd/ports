@@ -56,6 +56,7 @@ lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}/dependentlibs.list
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
+lib/${MOZILLA_PROJECT}/distribution/policies.json
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 @bin lib/${MOZILLA_PROJECT}/glxtest
