@@ -7,7 +7,7 @@ share/doc/openttd/COPYING.md
 share/doc/openttd/CREDITS.md
 share/doc/openttd/README.md
 share/doc/openttd/admin_network.md
-share/doc/openttd/changelog.txt
+share/doc/openttd/changelog.md
 share/doc/openttd/company_colour_indexes.html
 share/doc/openttd/compiling_lang_files.md
 share/doc/openttd/debugging_desyncs.md
@@ -19,6 +19,7 @@ share/doc/openttd/docs/debugging_desyncs.md
 share/doc/openttd/docs/desync.md
 share/doc/openttd/docs/directory_structure.md
 share/doc/openttd/docs/eints.md
+share/doc/openttd/docs/fonts.md
 share/doc/openttd/docs/game_coordinator.md
 share/doc/openttd/docs/linkgraph.md
 share/doc/openttd/docs/logging_and_performance_metrics.md
@@ -32,8 +33,10 @@ share/doc/openttd/eints.md
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
+share/doc/openttd/fonts.md
 share/doc/openttd/game_coordinator.md
-share/doc/openttd/known-bugs.txt
+share/doc/openttd/importing_town_data.md
+share/doc/openttd/known-bugs.md
 share/doc/openttd/landscape.html
 share/doc/openttd/landscape_externals.html
 share/doc/openttd/landscape_grid.html
@@ -163,6 +166,7 @@ share/openttd/lang/luxembourgish.lng
 share/openttd/lang/macedonian.lng
 share/openttd/lang/malay.lng
 share/openttd/lang/maltese.lng
+share/openttd/lang/maori.lng
 share/openttd/lang/marathi.lng
 share/openttd/lang/norwegian_bokmal.lng
 share/openttd/lang/norwegian_nynorsk.lng
@@ -210,6 +214,9 @@ share/openttd/media/baseset/openttd/aqueduct.nfo
 share/openttd/media/baseset/openttd/aqueduct.png
 share/openttd/media/baseset/openttd/autorail.nfo
 share/openttd/media/baseset/openttd/autorail.png
+share/openttd/media/baseset/openttd/bridge_decks.nfo
+share/openttd/media/baseset/openttd/bridge_decks.png
+share/openttd/media/baseset/openttd/bridge_decks_toyland.png
 share/openttd/media/baseset/openttd/canal_locks.png
 share/openttd/media/baseset/openttd/canals.nfo
 share/openttd/media/baseset/openttd/canals.png
@@ -230,7 +237,15 @@ share/openttd/media/baseset/openttd/openttdgui_build_tram.png
 share/openttd/media/baseset/openttd/openttdgui_convert_road.png
 share/openttd/media/baseset/openttd/openttdgui_convert_tram.png
 share/openttd/media/baseset/openttd/openttdgui_group_livery.png
+share/openttd/media/baseset/openttd/overlay_rocks.nfo
+share/openttd/media/baseset/openttd/overlay_rocks.png
+share/openttd/media/baseset/openttd/overlay_snowy_rocks_1.png
+share/openttd/media/baseset/openttd/overlay_snowy_rocks_2.png
+share/openttd/media/baseset/openttd/overlay_snowy_rocks_3.png
+share/openttd/media/baseset/openttd/overlay_snowy_rocks_4.png
 share/openttd/media/baseset/openttd/palette.nfo
+share/openttd/media/baseset/openttd/road_waypoints.nfo
+share/openttd/media/baseset/openttd/road_waypoints.png
 share/openttd/media/baseset/openttd/roadstops.nfo
 share/openttd/media/baseset/openttd/roadstops.png
 share/openttd/media/baseset/openttd/signals.nfo
