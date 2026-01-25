@@ -25,6 +25,9 @@ lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}overlay.${M
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}overlay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}py310.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}py310.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}py313.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zipp/compat/${MODPY_PYCACHE}py313.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/overlay.py
 lib/python${MODPY_VERSION}/site-packages/zipp/compat/py310.py
+lib/python${MODPY_VERSION}/site-packages/zipp/compat/py313.py
 lib/python${MODPY_VERSION}/site-packages/zipp/glob.py
