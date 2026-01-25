@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/greetd"
+daemon_logger="auth.notice"
 
 . /etc/rc.d/rc.subr
 

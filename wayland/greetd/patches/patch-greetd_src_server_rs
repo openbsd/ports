@@ -1,5 +1,9 @@
 use /dev/ttyC everywhere
 
+"vt <num>" and "next" should work, but "current" is probably broken.
+
+Fix path to socket, we don't have /run
+
 Index: greetd/src/server.rs
 --- greetd/src/server.rs.orig
 +++ greetd/src/server.rs
@@ -17,7 +21,7 @@ Index: greetd/src/server.rs
                  // We don't have a usable terminal, so we have to jump through some hoops
                  _ => {
 -                    let sys_term = Terminal::open("/dev/tty0")
-+                    let sys_term = Terminal::open("/dev/ttyC0")
++                    let sys_term = Terminal::open("/dev/tty")
                          .map_err(|e| format!("unable to open terminal: {}", e))?;
                      let vt = sys_term
                          .vt_get_current()
@@ -28,11 +32,12 @@ Index: greetd/src/server.rs
                          vt,
                          switch: false,
                      }
-@@ -148,20 +148,20 @@ fn get_tty(config: &Config) -> Result<TerminalMode, Er
+@@ -148,20 +148,21 @@ fn get_tty(config: &Config) -> Result<TerminalMode, Er
              }
          }
          VtSelection::Next => {
 -            let term = Terminal::open("/dev/tty0")
++            // hardcoding ttyC0 is ok here, we have no equivalent to Linux tty0
 +            let term = Terminal::open("/dev/ttyC0")
                  .map_err(|e| format!("unable to open terminal: {}", e))?;
              let vt = term
@@ -40,7 +45,7 @@ Index: greetd/src/server.rs
                  .map_err(|e| format!("unable to get next VT: {}", e))?;
              TerminalMode::Terminal {
 -                path: format!("/dev/tty{}", vt),
-+                path: format!("/dev/ttyC{}", vt),
++                path: format!("/dev/ttyC{}", vt - 1),
                  vt,
                  switch: config.file.terminal.switch,
              }
@@ -48,11 +53,11 @@ Index: greetd/src/server.rs
          VtSelection::None => TerminalMode::Stdin,
          VtSelection::Specific(vt) => TerminalMode::Terminal {
 -            path: format!("/dev/tty{}", vt),
-+            path: format!("/dev/ttyC{}", vt),
++            path: format!("/dev/ttyC{}", vt - 1),
              vt,
              switch: config.file.terminal.switch,
          },
-@@ -175,7 +175,7 @@ struct Listener(UnixListener);
+@@ -175,7 +176,7 @@ struct Listener(UnixListener);
  
  impl Listener {
      fn create(uid: Uid, gid: Gid) -> Result<(String, Listener), Error> {

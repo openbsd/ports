@@ -1,13 +1,16 @@
 Index: config.toml
 --- config.toml.orig
 +++ config.toml
-@@ -1,16 +1,25 @@
+@@ -1,16 +1,28 @@
  [terminal]
  # The VT to run the greeter on. Can be "next", "current" or a number
  # designating the VT.
 -vt = 1
-+# XXX hardcoded to 0 for now on OpenBSD
-+vt = 0
++# XXX On OpenBSD ttyC0 corresponds to vt 1
++# XXX On OpenBSD "next" should work, but "current" is likely broken
++# By default the first tty with no getty(8) should be ttyC4,
++# which maps to vt 5
++vt = 5
  
 +[general]
 +# use /etc/pam.d/system

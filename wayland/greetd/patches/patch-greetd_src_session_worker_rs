@@ -27,11 +27,13 @@ Index: greetd/src/session/worker.rs
  use nix::{
      sys::wait::waitpid,
      unistd::{execve, fork, initgroups, setgid, setsid, setuid, ForkResult},
-@@ -163,6 +175,11 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -163,6 +175,13 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
  
      let user = nix::unistd::User::from_name(&pam_username)?.ok_or("unable to get user info")?;
  
 +    // call login_fbtab with the user logging in for login.conf limits
++    // hardcode ttyC0 here, by default fbtab has no ttyC4/etc entry
++    // one may wonder how xenodm somehow ends up with the correct value
 +    let ttyc_str = CString::new("ttyC0").unwrap();
 +    let ttyptr: *const c_char = ttyc_str.as_ptr() as *const c_char;
 +    unsafe { login_fbtab(ttyptr, user.uid.into(), user.gid.into()) };
@@ -39,16 +41,16 @@ Index: greetd/src/session/worker.rs
      // Make this process a session leader.
      setsid().map_err(|e| format!("unable to become session leader: {}", e))?;
  
-@@ -170,7 +187,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -170,7 +189,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
          TerminalMode::Stdin => (),
          TerminalMode::Terminal { path, vt, switch } => {
              // Tell PAM what TTY we're targetting, which is used by logind.
 -            pam.set_item(PamItemType::TTY, &format!("tty{}", vt))?;
-+            pam.set_item(PamItemType::TTY, &format!("ttyC{}", vt))?;
++            pam.set_item(PamItemType::TTY, &format!("ttyC{}", vt))?; // FIXME On OpenBSD ttyC0 == vt 1
              pam.putenv(&format!("XDG_VTNR={}", vt))?;
  
              // Opening our target terminal.
-@@ -204,6 +221,8 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -204,6 +223,8 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
      // and set all environment variables later.
      let prepared_env = [
          "XDG_SEAT=seat0".to_string(),
@@ -57,7 +59,7 @@ Index: greetd/src/session/worker.rs
          format!("XDG_SESSION_CLASS={}", class.as_str()),
          format!("USER={}", user.name),
          format!("LOGNAME={}", user.name),
-@@ -225,7 +244,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -225,7 +246,7 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
      _ = pam.putenv(&"XDG_SESSION_CLASS");
  
      // Prepare some strings in C format that we'll need.
@@ -66,7 +68,7 @@ Index: greetd/src/session/worker.rs
      let command = if source_profile {
          format!(
              "[ -f /etc/profile ] && . /etc/profile; [ -f $HOME/.profile ] && . $HOME/.profile; exec {}",
-@@ -250,10 +269,35 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -250,10 +271,35 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
              // this match arm.
  
              // Drop privileges to target user
@@ -105,7 +107,7 @@ Index: greetd/src/session/worker.rs
              // Set our parent death signal. setuid/setgid above resets the
              // death signal, which is why we do this here.
              prctl(PrctlOption::SET_PDEATHSIG(libc::SIGTERM)).expect("unable to set death signal");
-@@ -308,6 +352,9 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
+@@ -308,6 +354,9 @@ fn worker(sock: &UnixDatagram) -> Result<(), Error> {
      pam.close_session(PamFlag::NONE)?;
      pam.setcred(PamFlag::DELETE_CRED)?;
      pam.end()?;
