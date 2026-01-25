@@ -60,7 +60,7 @@ SHA256 (cargo/cooklang-0.17.4.tar.gz) = kLO1CvRHuekKQ4lI44/Z6BPMmNJ5Vd1NvqQq9SbB
 SHA256 (cargo/cooklang-find-0.4.0.tar.gz) = 9X9fCXqswtfCzMJWVnZ+JgQJAT/lWdMFh7Ow/otU8GM=
 SHA256 (cargo/cooklang-find-0.5.0.tar.gz) = jhbeAVL7gs1aZFw78xOenl3H9ry+0amewQvUZ9ammtw=
 SHA256 (cargo/cooklang-import-0.8.7.tar.gz) = mr+rRBjA27sGyu89WoBaueM76u1Gmbo/QG7hBOmJupQ=
-SHA256 (cargo/cooklang-language-server-0.1.0.tar.gz) = VYmiooXVY5BM0SNI3KH4SMBD7FWMXpzyZ3RrsDldB38=
+SHA256 (cargo/cooklang-language-server-0.1.2.tar.gz) = iMyCB015VxRKbbcalziKpi5tIqBv3NjEZkpRwr8SuHc=
 SHA256 (cargo/cooklang-reports-0.2.0.tar.gz) = E5rXzE0mUfpvfYIRIfQeoSG+8ZS4+ArWQy4LsmVRitE=
 SHA256 (cargo/core-foundation-0.9.4.tar.gz) = keGV4JGpPEb3EC7HgYoqo5Th4XccOrSCWWP6A+Ra+48=
 SHA256 (cargo/core-foundation-sys-0.8.7.tar.gz) = dzZIuU0OXWIPZPKAd3RFdA5h/nAQJQh+yLV/RceRiIs=
@@ -77,6 +77,7 @@ SHA256 (cargo/curve25519-dalek-4.1.3.tar.gz) = l/uLfEUD3n1q57QqtypaWYV7TJN+wno9R
 SHA256 (cargo/curve25519-dalek-derive-0.1.1.tar.gz) = 9GiC4XmZxsxZCvWSKQQyvjvOBCjLDV+LZxXk3Hs4PrM=
 SHA256 (cargo/dashmap-5.5.3.tar.gz) = l4dHwdhJp9LuXorcAVmWHEj7fl2y8Gr2cjuAEju1OFY=
 SHA256 (cargo/dashmap-6.1.0.tar.gz) = UEHMSZFEiR83kClyEvMqdPuTjlE2oUlD8zjvngrids8=
+SHA256 (cargo/data-encoding-2.9.0.tar.gz) = KiMw2l3iLoo8tjJSziq7MBFr9SZeicDgG8FwFc4wpHY=
 SHA256 (cargo/der-0.7.10.tar.gz) = 58GDKDe5Bbv7UQHgfMJMje3fUvkyJe7m6tX01j1T3cs=
 SHA256 (cargo/deranged-0.5.3.tar.gz) = 1jC8zUKaW7WmS16U9pO/xIyfhWZBj9pMSUzJT5Efh8w=
 SHA256 (cargo/derive_arbitrary-1.4.2.tar.gz) = HlZ72C3P+XnksDRgwwezzcnpb949c77RSW0rx12d1io=
@@ -321,6 +322,7 @@ SHA256 (cargo/serde_spanned-1.0.0.tar.gz) = QHNMQZiPcwa7BPDs9g7A8/HKo0KQ5OjqRx3N
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
 SHA256 (cargo/serde_yaml-0.9.34+deprecated.tar.gz) = aosaGi6/Z0AVzALtzM51KH8aATDTlDB7NnQ8L11QS0c=
 SHA256 (cargo/servo_arc-0.3.0.tar.gz) = 0DbXGpWeAMd6Y1OLkKbCOQlp+XcrCW6oNyBca9BJGkQ=
+SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
 SHA256 (cargo/sha2-0.10.9.tar.gz) = p1B9gZdp0Bo2WrcHeUpAhDksgk9Up6anhi+MPQiSsoM=
 SHA256 (cargo/sharded-slab-0.1.7.tar.gz) = 9AyjxGgjcT4NQglZLo1ugmqlfpKPCXUmGfxpbEmWN/Y=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
@@ -376,6 +378,7 @@ SHA256 (cargo/tokio-1.45.0.tar.gz) = JRPKaU757eD7I/5xpO5BB8sQK53Bkw9tD9d6rgaK4WU
 SHA256 (cargo/tokio-macros-2.5.0.tar.gz) = bgbUPxNFo7zTn2pW27fcqyukfmjorBNIVefivbr4yrg=
 SHA256 (cargo/tokio-native-tls-0.3.1.tar.gz) = u652q5M8hXdu+ryXFWndYRnFgNj11Eh2newXZL95bvI=
 SHA256 (cargo/tokio-rustls-0.26.2.tar.gz) = jnJ7NqGg6LdMN2rCIR5AwsivCftAE8YNkQSVgQ8Ajps=
+SHA256 (cargo/tokio-tungstenite-0.24.0.tar.gz) = 7cX3TiSNyXPg27e3TH4Nb8wwHGlP9QBJUEAE700M3Nk=
 SHA256 (cargo/tokio-util-0.7.15.tar.gz) = ZqU5qa1tXSgVENW9NoyXPWNsAtv4pnMAv7a5UGlq198=
 SHA256 (cargo/toml-0.8.23.tar.gz) = 3BvrmWudg1KannXBehaGdn0UjXBmMUPHhU2LSgnO02I=
 SHA256 (cargo/toml-0.9.5.tar.gz) = dRKeHcUAC/uqn+6dGyH5dPn7rZ2uxVelIe5uCAgl9ug=
@@ -399,6 +402,7 @@ SHA256 (cargo/tracing-core-0.1.33.tar.gz) = 5nLJV3nPlHxTEfg3h69PqP/9Evsn5JkyEahL
 SHA256 (cargo/tracing-log-0.2.0.tar.gz) = 7oVfH0AL0OXALRUK5d44QAOaP1SwJRVkBONMI8A/R8M=
 SHA256 (cargo/tracing-subscriber-0.3.20.tar.gz) = IFShT1MH1gH4ja8FU+HL9HKsxPLFGvq2MkMc3NchJNU=
 SHA256 (cargo/try-lock-0.2.5.tar.gz) = 5CGrrdQaQiUnVQTqTWVmkjQYt/BVBvvJwP6GunOWEUs=
+SHA256 (cargo/tungstenite-0.24.0.tar.gz) = GOW4Nm7nqVsW0yGX0LJgS0OgvoncX6yfjpbMr7rt2oo=
 SHA256 (cargo/type-map-0.5.1.tar.gz) = yzDbvZA2FV50ra1oEumJjQPsN0lGI0+869Xfx7kYe5A=
 SHA256 (cargo/typenum-1.18.0.tar.gz) = Hcz/484Hr5OGv9KegMCrGoIFovw05LzUA2TfkCz6jz8=
 SHA256 (cargo/ucd-trie-0.1.7.tar.gz) = KJbZXAKoDG1qXW6VPUefXd8t/baiREQQEONzrA+4iXE=
@@ -500,8 +504,8 @@ SHA256 (cargo/zerovec-0.11.2.tar.gz) = SgXrCA4BW6OcyeI7vl5/sE1fsEA1D5nzTjONX90pR
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
 SHA256 (cargo/zip-2.4.2.tar.gz) = +r5jJOkI+FocUgY856omto3LfrbbyDotFIQDybw+ulA=
 SHA256 (cargo/zipsign-api-0.1.5.tar.gz) = 26YGP/gs29mnZa3RbTaavoHlIPg2BU6ZfC2yF87KQMA=
-SHA256 (cookcli-0.20.0-output.css) = T1TaxJAtjKD/KJguAnJADa3LTNTPZUEOej5kcKkOOto=
-SHA256 (cookcli-0.20.0.tar.gz) = 9wVhJR0M0p425JMTIPS7HFjNuvD64aE6+LKFnH42/EE=
+SHA256 (cookcli-0.21.0-output.css) = QJUhq4H9eqIXHDgjndBca3jwrMLWf4dCrGCtu67Vf2U=
+SHA256 (cookcli-0.21.0.tar.gz) = tPes4NLSlK0WyYmpmTfa20A+hBAQaqbwXnFkCY1/qMw=
 SIZE (cargo/accept-language-3.1.0.tar.gz) = 9269
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -564,7 +568,7 @@ SIZE (cargo/cooklang-0.17.4.tar.gz) = 158397
 SIZE (cargo/cooklang-find-0.4.0.tar.gz) = 22620
 SIZE (cargo/cooklang-find-0.5.0.tar.gz) = 26125
 SIZE (cargo/cooklang-import-0.8.7.tar.gz) = 105670
-SIZE (cargo/cooklang-language-server-0.1.0.tar.gz) = 35339
+SIZE (cargo/cooklang-language-server-0.1.2.tar.gz) = 35783
 SIZE (cargo/cooklang-reports-0.2.0.tar.gz) = 41734
 SIZE (cargo/core-foundation-0.9.4.tar.gz) = 27743
 SIZE (cargo/core-foundation-sys-0.8.7.tar.gz) = 37712
@@ -581,6 +585,7 @@ SIZE (cargo/curve25519-dalek-4.1.3.tar.gz) = 306017
 SIZE (cargo/curve25519-dalek-derive-0.1.1.tar.gz) = 11723
 SIZE (cargo/dashmap-5.5.3.tar.gz) = 24061
 SIZE (cargo/dashmap-6.1.0.tar.gz) = 24828
+SIZE (cargo/data-encoding-2.9.0.tar.gz) = 21564
 SIZE (cargo/der-0.7.10.tar.gz) = 90111
 SIZE (cargo/deranged-0.5.3.tar.gz) = 24353
 SIZE (cargo/derive_arbitrary-1.4.2.tar.gz) = 12290
@@ -825,6 +830,7 @@ SIZE (cargo/serde_spanned-1.0.0.tar.gz) = 10956
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
 SIZE (cargo/serde_yaml-0.9.34+deprecated.tar.gz) = 65290
 SIZE (cargo/servo_arc-0.3.0.tar.gz) = 12738
+SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
 SIZE (cargo/sha2-0.10.9.tar.gz) = 29271
 SIZE (cargo/sharded-slab-0.1.7.tar.gz) = 58227
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
@@ -880,6 +886,7 @@ SIZE (cargo/tokio-1.45.0.tar.gz) = 800721
 SIZE (cargo/tokio-macros-2.5.0.tar.gz) = 12617
 SIZE (cargo/tokio-native-tls-0.3.1.tar.gz) = 20676
 SIZE (cargo/tokio-rustls-0.26.2.tar.gz) = 31655
+SIZE (cargo/tokio-tungstenite-0.24.0.tar.gz) = 28904
 SIZE (cargo/tokio-util-0.7.15.tar.gz) = 124255
 SIZE (cargo/toml-0.8.23.tar.gz) = 36050
 SIZE (cargo/toml-0.9.5.tar.gz) = 56833
@@ -903,6 +910,7 @@ SIZE (cargo/tracing-core-0.1.33.tar.gz) = 63434
 SIZE (cargo/tracing-log-0.2.0.tar.gz) = 17561
 SIZE (cargo/tracing-subscriber-0.3.20.tar.gz) = 212274
 SIZE (cargo/try-lock-0.2.5.tar.gz) = 4314
+SIZE (cargo/tungstenite-0.24.0.tar.gz) = 61527
 SIZE (cargo/type-map-0.5.1.tar.gz) = 8606
 SIZE (cargo/typenum-1.18.0.tar.gz) = 74871
 SIZE (cargo/ucd-trie-0.1.7.tar.gz) = 46795
@@ -1004,5 +1012,5 @@ SIZE (cargo/zerovec-0.11.2.tar.gz) = 124500
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
 SIZE (cargo/zip-2.4.2.tar.gz) = 110773
 SIZE (cargo/zipsign-api-0.1.5.tar.gz) = 17451
-SIZE (cookcli-0.20.0-output.css) = 37578
-SIZE (cookcli-0.20.0.tar.gz) = 2921247
+SIZE (cookcli-0.21.0-output.css) = 39951
+SIZE (cookcli-0.21.0.tar.gz) = 3066149
