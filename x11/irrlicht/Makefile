@@ -1,8 +1,7 @@
 COMMENT =		fast, real time 3D engine
-DISTNAME =		irrlicht-1.8.4
-REVISION =		4
+DISTNAME =		irrlicht-1.8.5
 
-SO_VERSION =		3.0
+SO_VERSION =		4.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
 
 CATEGORIES =		x11 games

@@ -1,15 +1,16 @@
---- source/Irrlicht/Makefile.orig	Thu Sep  1 11:06:31 2016
-+++ source/Irrlicht/Makefile	Thu Sep  1 11:07:07 2016
+Index: source/Irrlicht/Makefile
+--- source/Irrlicht/Makefile.orig
++++ source/Irrlicht/Makefile
 @@ -2,7 +2,7 @@ VERSION_MAJOR = 1
  VERSION_MINOR = 8
- VERSION_RELEASE = 4
- # Irrlicht Engine 1.8.4
+ VERSION_RELEASE = 5
+ # Irrlicht Engine 1.8.5
 -# Makefile for Linux
 +# Makefile for OpenBSD
  #
  # To use, just run:
  #
-@@ -46,18 +46,17 @@ IRRSWRENDEROBJ = CSoftwareDriver.o CSoftwareTexture.o 
+@@ -48,18 +48,17 @@ IRRSWRENDEROBJ = CSoftwareDriver.o CSoftwareTexture.o 
  IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CWADReader.o CZipReader.o CPakReader.o CNPKReader.o CTarReader.o CMountPointReader.o irrXML.o CAttributes.o lzma/LzmaDec.o
  IRROTHEROBJ = CIrrDeviceSDL.o CIrrDeviceLinux.o CIrrDeviceConsole.o CIrrDeviceStub.o CIrrDeviceWin32.o CIrrDeviceFB.o CLogger.o COSOperator.o Irrlicht.o os.o
  IRRGUIOBJ = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISpinBox.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUITable.o CGUIToolBar.o CGUIWindow.o CGUIColorSelectDialog.o CDefaultGUIElementFactory.o CGUISpriteBank.o CGUIImageList.o CGUITreeView.o
@@ -33,7 +34,7 @@
  
  ###############
  #Compiler flags
-@@ -67,12 +66,12 @@ CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fst
+@@ -69,12 +68,12 @@ CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fst
  ifndef NDEBUG
  CXXFLAGS += -g -D_DEBUG
  else
@@ -48,7 +49,7 @@
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
-@@ -82,14 +81,14 @@ ifeq ($(HOSTTYPE), x86_64)
+@@ -84,14 +83,14 @@ ifeq ($(HOSTTYPE), x86_64)
  LIBSELECT=64
  endif
  
@@ -68,7 +69,7 @@
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -112,16 +111,16 @@ sharedlib_win32 staticlib_win32: CPPFLAGS += -DIRR_COM
+@@ -114,16 +113,16 @@ sharedlib_win32 staticlib_win32: CPPFLAGS += -DIRR_COM
  staticlib_win32: CPPFLAGS += -D_IRR_STATIC_LIB_
  
  VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
@@ -89,7 +90,7 @@
  	mkdir -p $(LIB_PATH)
  	cp $(SHARED_FULLNAME) $(LIB_PATH)
  
-@@ -129,7 +128,7 @@ sharedlib: $(LINKOBJ)
+@@ -131,7 +130,7 @@ sharedlib: $(LINKOBJ)
  $(STATIC_LIB): $(LINKOBJ)
  	$(AR) rs $@ $^
  
@@ -98,7 +99,7 @@
  staticlib staticlib_osx: $(STATIC_LIB)
  	mkdir -p $(LIB_PATH)
  	cp $^ $(LIB_PATH)
-@@ -179,8 +178,8 @@ endif
+@@ -181,8 +180,8 @@ endif
  
  help:
  	@echo "Available targets for Irrlicht"

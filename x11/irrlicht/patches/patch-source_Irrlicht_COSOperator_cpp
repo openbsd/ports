@@ -1,10 +1,11 @@
---- source/Irrlicht/COSOperator.cpp.orig	Sun Dec 26 20:30:20 2010
-+++ source/Irrlicht/COSOperator.cpp	Sun Dec 26 20:30:20 2010
+Index: source/Irrlicht/COSOperator.cpp
+--- source/Irrlicht/COSOperator.cpp.orig
++++ source/Irrlicht/COSOperator.cpp
 @@ -12,6 +12,7 @@
  #include <string.h>
  #include <unistd.h>
  #ifndef _IRR_SOLARIS_PLATFORM_
 +#include <sys/param.h>
  #include <sys/types.h>
+ #ifdef _IRR_OSX_PLATFORM_
  #include <sys/sysctl.h>
- #endif

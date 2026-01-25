@@ -181,7 +181,7 @@ include/irrlicht/rect.h
 include/irrlicht/triangle3d.h
 include/irrlicht/vector2d.h
 include/irrlicht/vector3d.h
-lib/libIrrlicht.a
+@static-lib lib/libIrrlicht.a
 @lib lib/libIrrlicht.so.${LIBIrrlicht_VERSION}
 share/doc/irrlicht/
 share/doc/irrlicht/doc/
