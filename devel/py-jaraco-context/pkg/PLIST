@@ -1,9 +1,11 @@
 @pkgpath devel/py-jaraco-context,python3
 lib/python${MODPY_VERSION}/site-packages/jaraco/
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jaraco/context.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jaraco/context/py.typed
 lib/python${MODPY_VERSION}/site-packages/jaraco_context-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/jaraco_context-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/jaraco_context-${MODPY_DISTV}.dist-info/RECORD
