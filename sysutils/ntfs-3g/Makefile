@@ -1,6 +1,7 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
 V =		2022.10.3
+REVISION = 	0
 
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
@@ -14,7 +15,7 @@ MAINTAINER =	Paul Irofti <paul@irofti.net>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c execinfo uuid fuse pthread
+WANTLIB += c execinfo uuid fuse>=4 pthread
 
 SITES =		https://tuxera.com/opensource/
 EXTRACT_SUFX =	.tgz

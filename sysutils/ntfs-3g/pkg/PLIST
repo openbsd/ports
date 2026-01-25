@@ -1,3 +1,4 @@
+@bin bin/lowntfs-3g
 @bin bin/ntfs-3g
 @bin bin/ntfs-3g.probe
 @bin bin/ntfscat
