@@ -398,7 +398,7 @@ SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd
 SHA256 (cargo/zerotrie-0.2.2.tar.gz) = NvC71HhYP3ntrZeLQHkU9hspcvWvb6CJaGAWvo+a9ZU=
 SHA256 (cargo/zerovec-0.11.4.tar.gz) = 56or1VCG8atSZpPsvkRCBdpX4l9EiYedqAY1pG2Q5zs=
 SHA256 (cargo/zerovec-derive-0.11.1.tar.gz) = W5YjfvoMh4xkvYnENvZhvk5GsvPv8eu5dvfvIyHS9Y8=
-SHA256 (notify_push-1.2.0.tar.gz) = f9QK6102CHkQgejezzBhzwMAmJxfswi5s+uuX79csEw=
+SHA256 (notify_push-1.3.0.tar.gz) = lVwOy6Z1ayElBSY9d0MWvT/x8hJzDA4UW0/6bIvjGbo=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -799,4 +799,4 @@ SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerotrie-0.2.2.tar.gz) = 74423
 SIZE (cargo/zerovec-0.11.4.tar.gz) = 125080
 SIZE (cargo/zerovec-derive-0.11.1.tar.gz) = 21294
-SIZE (notify_push-1.2.0.tar.gz) = 139273
+SIZE (notify_push-1.3.0.tar.gz) = 139531
