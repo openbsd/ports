@@ -1,0 +1,12 @@
+Index: gcc/common.opt
+--- gcc/common.opt.orig
++++ gcc/common.opt
+@@ -2017,7 +2017,7 @@ Common Var(flag_ivopts) Init(1) Optimization
+ Optimize induction variables on trees.
+ 
+ fjump-tables
+-Common Var(flag_jump_tables) Init(1) Optimization
++Common Var(flag_jump_tables) Init(0) Optimization
+ Use jump tables for sufficiently large switch statements.
+ 
+ fbit-tests
