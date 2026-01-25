@@ -1,0 +1,13 @@
+include/vvdec/
+include/vvdec/sei.h
+include/vvdec/version.h
+include/vvdec/vvdec.h
+include/vvdec/vvdecDecl.h
+lib/cmake/
+lib/cmake/vvdec/
+lib/cmake/vvdec/vvdecConfig.cmake
+lib/cmake/vvdec/vvdecConfigVersion.cmake
+lib/cmake/vvdec/vvdecTargets-shared${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/vvdec/vvdecTargets-shared.cmake
+@lib lib/libvvdec.so.${LIBvvdec_VERSION}
+lib/pkgconfig/libvvdec.pc
