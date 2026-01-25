@@ -5,7 +5,6 @@ lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}accelerators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}actiongutter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}build_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}chunkmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,7 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}vcview.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}windowstate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/accelerators.py
 lib/python${MODPY_VERSION}/site-packages/meld/actiongutter.py
-lib/python${MODPY_VERSION}/site-packages/meld/build_helpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/chunkmap.py
 lib/python${MODPY_VERSION}/site-packages/meld/conf.py
 lib/python${MODPY_VERSION}/site-packages/meld/const.py
@@ -353,11 +351,12 @@ share/locale/vi/LC_MESSAGES/meld.mo
 share/locale/zh_CN/LC_MESSAGES/meld.mo
 share/locale/zh_TW/LC_MESSAGES/meld.mo
 share/meld/
+share/meld/COPYING
 share/meld/org.gnome.Meld.gresource
 share/meld/styles/
 share/meld/styles/meld-base.style-scheme.xml
 share/meld/styles/meld-dark.style-scheme.xml
-share/metainfo/org.gnome.Meld.appdata.xml
+share/metainfo/org.gnome.Meld.metainfo.xml
 share/mime/packages/org.gnome.Meld.xml
 @tag glib-compile-schemas
 @tag update-mime-database
