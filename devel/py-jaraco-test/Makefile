@@ -1,9 +1,8 @@
 COMMENT=	functions and fixtures for facilitating tests
 
-MODPY_DISTV=	5.5.1
+MODPY_DISTV=	5.6.0
 DISTNAME=	jaraco_test-${MODPY_DISTV}
 PKGNAME=	py-jaraco-test-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-MODPY_PYTEST_ARGS= tests
 
+BUILD_DEPENDS=	misc/py-coherent.licensed
 RUN_DEPENDS=	devel/py-jaraco-collections \
 		devel/py-jaraco-context \
 		devel/py-jaraco-functools

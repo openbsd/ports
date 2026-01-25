@@ -5,9 +5,12 @@ lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}cpython.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}cpython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/cpython.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/test/git.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/http.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/test/py.typed
 lib/python${MODPY_VERSION}/site-packages/jaraco_test-${MODPY_DISTV}.dist-info/
