@@ -85,6 +85,7 @@
      SUBDIR += synfigstudio
      SUBDIR += upplay
      SUBDIR += vitunes
+     SUBDIR += vvdec
      SUBDIR += vvenc
      SUBDIR += x264
      SUBDIR += x265
