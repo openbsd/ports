@@ -1,6 +1,6 @@
 COMMENT =	geospatial raster data API and CLI
 
-MODPY_DISTV =	1.4.4
+MODPY_DISTV =	1.5.0
 DISTNAME =	rasterio-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -30,8 +30,9 @@ BUILD_DEPENDS +=	lang/cython \
 RUN_DEPENDS =	geo/py-cligj>=0.5 \
 		net/py-boto3 \
 		devel/py-attrs \
+		devel/py-certifi \
 		devel/py-click \
-		devel/py-click-plugins \
+		devel/py-parsing \
 		math/py-numpy \
 		math/py-affine
 
@@ -45,8 +46,7 @@ pre-test:
 		exit 1; \
 	fi
 
-TEST_DEPENDS =	devel/py-certifi \
-		devel/py-hypothesis \
+TEST_DEPENDS =	devel/py-hypothesis \
 		devel/py-mock \
 		devel/py-test \
 		devel/py-test-cov \
