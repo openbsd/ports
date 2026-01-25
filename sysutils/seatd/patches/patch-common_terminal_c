@@ -1,29 +1,39 @@
-OpenBSD console support 
+OpenBSD console support
 
 Index: common/terminal.c
 --- common/terminal.c.orig
 +++ common/terminal.c
-@@ -26,6 +26,12 @@
+@@ -26,6 +26,13 @@
  #define K_ENABLE  K_XLATE
  #define K_DISABLE K_RAW
  #define FRSIG     0 // unimplemented
 +#elif defined(__OpenBSD__)
 +#include <dev/wscons/wsconsio.h>
 +#include <dev/wscons/wsdisplay_usl_io.h>
++#include <termios.h>
 +#define K_ENABLE  K_XLATE
 +#define K_DISABLE K_RAW
 +#define FRSIG     SIGUSR2
  #else
  #error Unsupported platform
  #endif
-@@ -147,12 +153,25 @@ static int get_tty_path(int tty, char path[static TTYP
+@@ -147,6 +154,23 @@ static int get_tty_path(int tty, char path[static TTYP
  	}
  	return 0;
  }
 +#elif defined(__OpenBSD__)
 +static int get_tty_path(int tty, char path[static TTYPATHLEN]) {
 +	assert(tty >= 0);
-+	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty - 1) == -1) {
++
++	// On OpenBSD ttyC0 maps to VT 1.
++	// We subtract one from the requested TTY number to compensate. If the
++	// user asked for TTY 0 (which is special on Linux), we just give them
++	// the first tty.
++	if (tty > 0) {
++		tty--;
++	}
++
++	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty) == -1) {
 +		return -1;
 +	}
 +	return 0;
@@ -31,18 +41,7 @@ Index: common/terminal.c
  #else
  #error Unsupported platform
  #endif
- 
- int terminal_open(int vt) {
- 	char path[TTYPATHLEN];
-+#ifdef __OpenBSD__
-+	if (vt == 0) {
-+		snprintf(path, sizeof(path), "/dev/ttyC0");
-+	} else
-+#endif
- 	if (get_tty_path(vt, path) == -1) {
- 		log_errorf("Could not generate tty path: %s", strerror(errno));
- 		return -1;
-@@ -166,7 +185,7 @@ int terminal_open(int vt) {
+@@ -166,7 +190,7 @@ int terminal_open(int vt) {
  }
  
  int terminal_current_vt(int fd) {
@@ -51,7 +50,17 @@ Index: common/terminal.c
  	struct vt_stat st;
  	int res = ioctl(fd, VT_GETSTATE, &st);
  	if (res == -1) {
-@@ -201,7 +220,19 @@ int terminal_set_process_switching(int fd, bool enable
+@@ -193,7 +217,8 @@ int terminal_current_vt(int fd) {
+ }
+ 
+ int terminal_set_process_switching(int fd, bool enable) {
+-	log_debugf("Setting process switching to %d", enable);
++	char *debugstr = enable ? "process" : "auto";
++	log_debugf("Setting process switching to %s", debugstr);
+ 	struct vt_mode mode = {
+ 		.mode = enable ? VT_PROCESS : VT_AUTO,
+ 		.waitv = 0,
+@@ -201,10 +226,22 @@ int terminal_set_process_switching(int fd, bool enable
  		.acqsig = enable ? SIGUSR2 : 0,
  		.frsig = FRSIG,
  	};
@@ -70,9 +79,14 @@ Index: common/terminal.c
 +		return 0;
 +	}
  	if (ioctl(fd, VT_SETMODE, &mode) == -1) {
- 		log_errorf("Could not set VT mode to %s process switching: %s",
- 			   enable ? "enable" : "disable", strerror(errno));
-@@ -241,12 +272,23 @@ int terminal_ack_acquire(int fd) {
+-		log_errorf("Could not set VT mode to %s process switching: %s",
+-			   enable ? "enable" : "disable", strerror(errno));
++		log_errorf("Could not set VT mode to %s switching: %s",
++			   debugstr, strerror(errno));
+ 		return -1;
+ 	}
+ 	return 0;
+@@ -241,19 +278,38 @@ int terminal_ack_acquire(int fd) {
  }
  
  int terminal_set_keyboard(int fd, bool enable) {
@@ -84,19 +98,34 @@ Index: common/terminal.c
  		return -1;
  	}
 +#else
-+	int mode = enable ? WSKBD_RAW : WSKBD_TRANSLATED;
++	int mode = enable ? WSKBD_TRANSLATED : WSKBD_RAW;
++	char *debugstr = enable ? "translated" : "raw";
 +
-+	log_debugf("Setting KD keyboard state to %d", enable);
-+	if (ioctl(fd, WSKBDIO_SETMODE, &mode) == -1) {
++	if (mode == WSKBD_RAW) {
++		/* XXX ignore for now */;
++		log_debugf("NOT setting KD keyboard state to %s", debugstr);
++	} else if (ioctl(fd, WSKBDIO_SETMODE, &mode) == -1) {
 +		log_errorf("Could not set keyboard mode to %s: %s",
-+		    enable ? "translated" : "raw", strerror(errno));
-+		return -1;
++		    debugstr, strerror(errno));
 +	}
 +#endif
  #if defined(__FreeBSD__)
++	/* XXX enable code path on OpenBSD */
  	struct termios tios;
  	if (tcgetattr(fd, &tios) == -1) {
-@@ -268,11 +310,22 @@ int terminal_set_keyboard(int fd, bool enable) {
+ 		log_errorf("Could not set get terminal mode: %s", strerror(errno));
+ 		return -1;
+ 	}
+ 	if (enable) {
++		/*
++		 * We could save the initial terminal state instead of
++		 * using new function cfmakesane.
++		 */
++		extern void cfmakesane(struct termios *);
+ 		cfmakesane(&tios);
+ 	} else {
+ 		cfmakeraw(&tios);
+@@ -268,11 +324,23 @@ int terminal_set_keyboard(int fd, bool enable) {
  }
  
  int terminal_set_graphics(int fd, bool enable) {
@@ -109,8 +138,9 @@ Index: common/terminal.c
  	}
 +#else
 +	int mode = enable ? WSDISPLAYIO_MODE_MAPPED : WSDISPLAYIO_MODE_EMUL;
++	char *debugstr = enable ? "mapped" : "emul";
 +
-+	log_debugf("Setting KD graphics state to %d", enable);
++	log_debugf("Setting KD graphics state to %s", debugstr);
 +	if (ioctl(fd, WSDISPLAYIO_SMODE, &mode) == -1) {
 +		log_errorf("Could not set graphics mode to %s: %s",
 +		    enable ? "mapped" : "emul", strerror(errno));

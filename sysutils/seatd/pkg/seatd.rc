@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/seatd"
+daemon_args="-g _seatd"
+daemon_logger="auth.notice"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_cmd $1

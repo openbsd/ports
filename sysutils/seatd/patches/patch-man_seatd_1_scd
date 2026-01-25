@@ -1,0 +1,14 @@
+Bring documentation in line with code.
+
+Index: man/seatd.1.scd
+--- man/seatd.1.scd.orig
++++ man/seatd.1.scd
+@@ -26,7 +26,7 @@ seatd - A seat management daemon
+ 
+ *-l <loglevel>*
+ 	Log-level to use. Must be one of debug, info, error or silent. Defaults
+-	to error.
++	to info.
+ 
+ *-v*
+ 	Show the version number and quit.

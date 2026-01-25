@@ -1,3 +1,5 @@
+@rcscript ${RCDIR}/seatd
+@newgroup _seatd:564
 @bin bin/seatd
 @bin bin/seatd-launch
 include/libseat.h
@@ -5,3 +7,4 @@ include/libseat.h
 lib/pkgconfig/libseat.pc
 @man man/man1/seatd-launch.1
 @man man/man1/seatd.1
+share/doc/pkg-readmes/${PKGSTEM}

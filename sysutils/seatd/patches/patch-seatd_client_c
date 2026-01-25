@@ -1,4 +1,5 @@
-OpenBSD support for socket peer credentials 
+Hunk 1: OpenBSD support for socket peer credentials
+Hunk 2: avoid logging errors for non-existing devices
 
 Index: seatd/client.c
 --- seatd/client.c.orig
@@ -27,3 +28,14 @@ Index: seatd/client.c
  #elif defined(__FreeBSD__)
  	struct xucred cred;
  	socklen_t len = sizeof cred;
+@@ -226,7 +243,9 @@ static int handle_open_device(struct client *client, c
+ 
+ 	struct seat_device *device = seat_open_device(client, path);
+ 	if (device == NULL) {
+-		log_errorf("Could not open device: %s", strerror(errno));
++		if (errno != ENXIO) {
++			log_errorf("Could not open device: %s", strerror(errno));
++		}
+ 		goto fail;
+ 	}
+ 

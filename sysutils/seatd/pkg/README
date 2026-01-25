@@ -1,0 +1,29 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+seatd provides VT switching and device access to clients
+using libseat.  It is particularly useful for wlroots-based
+applications.
+
+Setup
+=====
+
+By default seatd's UNIX socket is only accessible by root.
+The OpenBSD rc script tells it to allow access to members of the _seatd
+group.  Users of wayland compositors making use of seatd should be added
+to this _seatd group.
+
+  # user mod -G _seatd _greetd
+  # user mod -G _seatd jdoe
+
+Remember to start seatd before the services that may use it.
+
+Debugging
+=========
+
+To debug or report issues, start seatd in the foreground with
+a more verbose log level.
+
+  # rcctl stop seatd
+  # seatd -g _seatd -l debug
