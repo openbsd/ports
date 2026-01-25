@@ -1,8 +1,9 @@
 COMMENT=	C based reader/scanner and emitter for ruamel.yaml
 
-MODPY_DISTV=	0.2.14
-DISTNAME=	ruamel.yaml.clib-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	0.2.15
+DISTNAME=	ruamel_yaml_clib-${MODPY_DISTV}
+WRKDIST=	${WRKDIR}/ruamel.yaml.clib-${MODPY_DISTV}
+PKGNAME=	py-ruamel.yaml.clib-${MODPY_DISTV}
 
 # https://sourceforge.net/p/ruamel-yaml-clib/code/
 HOMEPAGE=	https://yaml.dev/doc/ruamel.yaml/
