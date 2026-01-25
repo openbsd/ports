@@ -1,7 +1,6 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.2.16
-REVISION=	0
+DISTNAME=	mutt-2.3.0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -16,9 +15,8 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl pthread qdbm ssl unistring z
 
-SITES=		http://ftp.mutt.org/pub/mutt/ \
-		https://ftp.osuosl.org/pub/mutt/ \
-		https://bitbucket.org/mutt/mutt/downloads/ \
+SITES=		https://ftp.osuosl.org/pub/mutt/ \
+		http://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/
 
 LIB_DEPENDS=	databases/qdbm \
