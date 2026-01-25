@@ -1,0 +1,12 @@
+Index: gas/Makefile.in
+--- gas/Makefile.in.orig
++++ gas/Makefile.in
+@@ -270,7 +270,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = doc/as.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/../texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/..
+ DVIS = doc/as.dvi

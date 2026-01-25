@@ -1,0 +1,21 @@
+Index: ld/Makefile.in
+--- ld/Makefile.in.orig
++++ ld/Makefile.in
+@@ -301,7 +301,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = ld.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)/../texinfo
+ DVIS = ld.dvi
+ PDFS = ld.pdf
+@@ -1042,7 +1042,7 @@ libldtestplug4_la_SOURCES = testplug4.c
+ libldtestplug4_la_CFLAGS = -g -O2
+ libldtestplug4_la_LDFLAGS = -no-undefined -rpath /nowhere
+ bfdplugindir = $(libdir)/bfd-plugins
+-bfdplugin_LTLIBRARIES = libdep.la
++bfdplugin_LTLIBRARIES =
+ libdep_la_SOURCES = libdep_plugin.c
+ libdep_la_LDFLAGS = -no-undefined -rpath /nowhere -module -avoid-version
+ libdep_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \

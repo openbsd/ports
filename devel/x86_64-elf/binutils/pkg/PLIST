@@ -1,0 +1,136 @@
+@bin bin/${CONFIG}-addr2line
+@bin bin/${CONFIG}-ar
+@bin bin/${CONFIG}-as
+@bin bin/${CONFIG}-c++filt
+@bin bin/${CONFIG}-elfedit
+@bin bin/${CONFIG}-gprof
+@bin bin/${CONFIG}-ld
+@bin bin/${CONFIG}-ld.bfd
+@bin bin/${CONFIG}-nm
+@bin bin/${CONFIG}-objcopy
+@bin bin/${CONFIG}-objdump
+@bin bin/${CONFIG}-ranlib
+@bin bin/${CONFIG}-readelf
+@bin bin/${CONFIG}-size
+@bin bin/${CONFIG}-strings
+@bin bin/${CONFIG}-strip
+@man man/man1/${CONFIG}-addr2line.1
+@man man/man1/${CONFIG}-ar.1
+@man man/man1/${CONFIG}-as.1
+@man man/man1/${CONFIG}-c++filt.1
+@man man/man1/${CONFIG}-dlltool.1
+@man man/man1/${CONFIG}-elfedit.1
+@man man/man1/${CONFIG}-gprof.1
+@man man/man1/${CONFIG}-ld.1
+@man man/man1/${CONFIG}-nm.1
+@man man/man1/${CONFIG}-objcopy.1
+@man man/man1/${CONFIG}-objdump.1
+@man man/man1/${CONFIG}-ranlib.1
+@man man/man1/${CONFIG}-readelf.1
+@man man/man1/${CONFIG}-size.1
+@man man/man1/${CONFIG}-strings.1
+@man man/man1/${CONFIG}-strip.1
+@man man/man1/${CONFIG}-windmc.1
+@man man/man1/${CONFIG}-windres.1
+${CONFIG}/
+${CONFIG}/bin/
+@bin ${CONFIG}/bin/ar
+@bin ${CONFIG}/bin/as
+@bin ${CONFIG}/bin/ld
+@bin ${CONFIG}/bin/ld.bfd
+@bin ${CONFIG}/bin/nm
+@bin ${CONFIG}/bin/objcopy
+@bin ${CONFIG}/bin/objdump
+@bin ${CONFIG}/bin/ranlib
+@bin ${CONFIG}/bin/readelf
+@bin ${CONFIG}/bin/strip
+${CONFIG}/lib/
+${CONFIG}/lib/ldscripts/
+${CONFIG}/lib/ldscripts/elf32_x86_64.x
+${CONFIG}/lib/ldscripts/elf32_x86_64.xbn
+${CONFIG}/lib/ldscripts/elf32_x86_64.xc
+${CONFIG}/lib/ldscripts/elf32_x86_64.xce
+${CONFIG}/lib/ldscripts/elf32_x86_64.xd
+${CONFIG}/lib/ldscripts/elf32_x86_64.xdc
+${CONFIG}/lib/ldscripts/elf32_x86_64.xdce
+${CONFIG}/lib/ldscripts/elf32_x86_64.xde
+${CONFIG}/lib/ldscripts/elf32_x86_64.xdw
+${CONFIG}/lib/ldscripts/elf32_x86_64.xdwe
+${CONFIG}/lib/ldscripts/elf32_x86_64.xe
+${CONFIG}/lib/ldscripts/elf32_x86_64.xn
+${CONFIG}/lib/ldscripts/elf32_x86_64.xr
+${CONFIG}/lib/ldscripts/elf32_x86_64.xs
+${CONFIG}/lib/ldscripts/elf32_x86_64.xsc
+${CONFIG}/lib/ldscripts/elf32_x86_64.xsce
+${CONFIG}/lib/ldscripts/elf32_x86_64.xse
+${CONFIG}/lib/ldscripts/elf32_x86_64.xsw
+${CONFIG}/lib/ldscripts/elf32_x86_64.xswe
+${CONFIG}/lib/ldscripts/elf32_x86_64.xu
+${CONFIG}/lib/ldscripts/elf32_x86_64.xw
+${CONFIG}/lib/ldscripts/elf32_x86_64.xwe
+${CONFIG}/lib/ldscripts/elf_i386.x
+${CONFIG}/lib/ldscripts/elf_i386.xbn
+${CONFIG}/lib/ldscripts/elf_i386.xc
+${CONFIG}/lib/ldscripts/elf_i386.xce
+${CONFIG}/lib/ldscripts/elf_i386.xd
+${CONFIG}/lib/ldscripts/elf_i386.xdc
+${CONFIG}/lib/ldscripts/elf_i386.xdce
+${CONFIG}/lib/ldscripts/elf_i386.xde
+${CONFIG}/lib/ldscripts/elf_i386.xdw
+${CONFIG}/lib/ldscripts/elf_i386.xdwe
+${CONFIG}/lib/ldscripts/elf_i386.xe
+${CONFIG}/lib/ldscripts/elf_i386.xn
+${CONFIG}/lib/ldscripts/elf_i386.xr
+${CONFIG}/lib/ldscripts/elf_i386.xs
+${CONFIG}/lib/ldscripts/elf_i386.xsc
+${CONFIG}/lib/ldscripts/elf_i386.xsce
+${CONFIG}/lib/ldscripts/elf_i386.xse
+${CONFIG}/lib/ldscripts/elf_i386.xsw
+${CONFIG}/lib/ldscripts/elf_i386.xswe
+${CONFIG}/lib/ldscripts/elf_i386.xu
+${CONFIG}/lib/ldscripts/elf_i386.xw
+${CONFIG}/lib/ldscripts/elf_i386.xwe
+${CONFIG}/lib/ldscripts/elf_iamcu.x
+${CONFIG}/lib/ldscripts/elf_iamcu.xbn
+${CONFIG}/lib/ldscripts/elf_iamcu.xc
+${CONFIG}/lib/ldscripts/elf_iamcu.xce
+${CONFIG}/lib/ldscripts/elf_iamcu.xd
+${CONFIG}/lib/ldscripts/elf_iamcu.xdc
+${CONFIG}/lib/ldscripts/elf_iamcu.xdce
+${CONFIG}/lib/ldscripts/elf_iamcu.xde
+${CONFIG}/lib/ldscripts/elf_iamcu.xdw
+${CONFIG}/lib/ldscripts/elf_iamcu.xdwe
+${CONFIG}/lib/ldscripts/elf_iamcu.xe
+${CONFIG}/lib/ldscripts/elf_iamcu.xn
+${CONFIG}/lib/ldscripts/elf_iamcu.xr
+${CONFIG}/lib/ldscripts/elf_iamcu.xs
+${CONFIG}/lib/ldscripts/elf_iamcu.xsc
+${CONFIG}/lib/ldscripts/elf_iamcu.xsce
+${CONFIG}/lib/ldscripts/elf_iamcu.xse
+${CONFIG}/lib/ldscripts/elf_iamcu.xsw
+${CONFIG}/lib/ldscripts/elf_iamcu.xswe
+${CONFIG}/lib/ldscripts/elf_iamcu.xu
+${CONFIG}/lib/ldscripts/elf_iamcu.xw
+${CONFIG}/lib/ldscripts/elf_iamcu.xwe
+${CONFIG}/lib/ldscripts/elf_x86_64.x
+${CONFIG}/lib/ldscripts/elf_x86_64.xbn
+${CONFIG}/lib/ldscripts/elf_x86_64.xc
+${CONFIG}/lib/ldscripts/elf_x86_64.xce
+${CONFIG}/lib/ldscripts/elf_x86_64.xd
+${CONFIG}/lib/ldscripts/elf_x86_64.xdc
+${CONFIG}/lib/ldscripts/elf_x86_64.xdce
+${CONFIG}/lib/ldscripts/elf_x86_64.xde
+${CONFIG}/lib/ldscripts/elf_x86_64.xdw
+${CONFIG}/lib/ldscripts/elf_x86_64.xdwe
+${CONFIG}/lib/ldscripts/elf_x86_64.xe
+${CONFIG}/lib/ldscripts/elf_x86_64.xn
+${CONFIG}/lib/ldscripts/elf_x86_64.xr
+${CONFIG}/lib/ldscripts/elf_x86_64.xs
+${CONFIG}/lib/ldscripts/elf_x86_64.xsc
+${CONFIG}/lib/ldscripts/elf_x86_64.xsce
+${CONFIG}/lib/ldscripts/elf_x86_64.xse
+${CONFIG}/lib/ldscripts/elf_x86_64.xsw
+${CONFIG}/lib/ldscripts/elf_x86_64.xswe
+${CONFIG}/lib/ldscripts/elf_x86_64.xu
+${CONFIG}/lib/ldscripts/elf_x86_64.xw
+${CONFIG}/lib/ldscripts/elf_x86_64.xwe

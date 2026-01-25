@@ -1,0 +1,12 @@
+Index: libctf/Makefile.in
+--- libctf/Makefile.in.orig
++++ libctf/Makefile.in
+@@ -306,7 +306,7 @@ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+ am__dirstamp = $(am__leading_dot)dirstamp
+-INFO_DEPS = doc/ctf-spec.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = doc/ctf-spec.dvi
+ PDFS = doc/ctf-spec.pdf

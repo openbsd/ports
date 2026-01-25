@@ -1,0 +1,12 @@
+Index: libiberty/Makefile.in
+--- libiberty/Makefile.in.orig
++++ libiberty/Makefile.in
+@@ -376,7 +376,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ install-strip: install
+ 
+ .PHONY: install install-strip
