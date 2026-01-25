@@ -1,12 +1,11 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/grafana-server"
+daemon="${TRUEPREFIX}/bin/grafana server"
 daemon_user="_grafana"
 daemon_flags="-homepath ${TRUEPREFIX}/share/grafana -config ${SYSCONFDIR}/grafana/config.ini"
 
 . /etc/rc.d/rc.subr
 
-pexp="grafana server ${daemon_flags}"
 rc_bg=YES
 rc_reload=NO
 
