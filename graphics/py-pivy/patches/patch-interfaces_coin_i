@@ -1,0 +1,19 @@
+Function signature changed in SWIG 4.4:
+https://github.com/coin3d/pivy/pull/139
+
+
+Index: interfaces/coin.i
+--- interfaces/coin.i.orig
++++ interfaces/coin.i
+@@ -80,7 +80,11 @@ static int init_file_emulator(void)
+ %init %{
+ #if PY_MAJOR_VERSION >= 3
+ if (init_file_emulator() < 0) {
++  #if (SWIG_VERSION < 0x040400)
+     return NULL;
++  #else
++    return 0;
++  #endif
+ }
+ #endif
+ %}
