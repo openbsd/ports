@@ -2,7 +2,7 @@ USE_NOBTCFI =		Yes
 USE_WXNEEDED =		Yes
 
 COMMENT =		UPnP audio control point
-DISTNAME =		upplay-1.9.8
+DISTNAME =		upplay-1.9.9
 
 CATEGORIES =		multimedia net
 
