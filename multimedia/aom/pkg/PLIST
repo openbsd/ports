@@ -11,6 +11,12 @@ include/aom/aom_image.h
 include/aom/aom_integer.h
 include/aom/aomcx.h
 include/aom/aomdx.h
+lib/cmake/
+lib/cmake/AOM/
+lib/cmake/AOM/AOMConfig.cmake
+lib/cmake/AOM/AOMConfigVersion.cmake
+lib/cmake/AOM/AOMTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/AOM/AOMTargets.cmake
 @static-lib lib/libaom.a
 @lib lib/libaom.so.${LIBaom_VERSION}
 lib/pkgconfig/aom.pc
