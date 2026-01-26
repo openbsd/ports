@@ -851,6 +851,8 @@ lib/python${MODPY_VERSION}/site-packages/holidays/financial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}bombay_stock_exchange.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}bombay_stock_exchange.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}brasil_bolsa_balcao.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}brasil_bolsa_balcao.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}european_central_bank.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -861,6 +863,7 @@ lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}nati
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}national_stock_exchange_of_india.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}ny_stock_exchange.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/${MODPY_PYCACHE}ny_stock_exchange.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/holidays/financial/bombay_stock_exchange.py
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/brasil_bolsa_balcao.py
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/european_central_bank.py
 lib/python${MODPY_VERSION}/site-packages/holidays/financial/ice_futures_europe.py
@@ -1070,6 +1073,7 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_HK/LC_MESSAGES/HK.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_IN/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_IN/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_IN/LC_MESSAGES/IN.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_IN/LC_MESSAGES/XBOM.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_IN/LC_MESSAGES/XNSE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_KE/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_KE/LC_MESSAGES/
@@ -1332,6 +1336,7 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/VG.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/VI.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/VN.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/WF.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/XBOM.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/XNSE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/YE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/en_US/LC_MESSAGES/YT.mo
@@ -1441,12 +1446,15 @@ lib/python${MODPY_VERSION}/site-packages/holidays/locale/fy/LC_MESSAGES/NL.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/IN.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/XBOM.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/gu/LC_MESSAGES/XNSE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/he/LC_MESSAGES/IL.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hi/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hi/LC_MESSAGES/IN.mo
+lib/python${MODPY_VERSION}/site-packages/holidays/locale/hi/LC_MESSAGES/XBOM.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hi/LC_MESSAGES/XNSE.mo
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hr/
 lib/python${MODPY_VERSION}/site-packages/holidays/locale/hr/LC_MESSAGES/
