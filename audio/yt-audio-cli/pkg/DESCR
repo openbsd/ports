@@ -1,0 +1,11 @@
+yt-audio-cli is an opinionated wrapper around yt-dlp and FFmpeg,
+designed specifically for audio downloads. It provides sensible defaults
+and a streamlined interface for common audio extraction tasks.
+
+- yt-dlp handles all video/audio downloading and site support
+- FFmpeg handles audio conversion and processing
+- yt-audio-cli ties them together with audio-focused defaults
+and a simplified CLI
+
+If you need advanced features like video downloads, custom format
+selection, or fine-grained control, use yt-dlp directly.
