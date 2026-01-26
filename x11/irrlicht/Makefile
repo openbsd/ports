@@ -1,5 +1,6 @@
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.5
+REVISION =		0
 
 SO_VERSION =		4.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
