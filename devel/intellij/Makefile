@@ -1,7 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2025.3.1.1
-DIST_VER=		253.29346.240
+V=			2025.3.2
+DIST_VER=		253.30387.90
 DISTNAME=		idea-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
