@@ -1,0 +1,16 @@
+https://github.com/parallaxsw/OpenSTA/issues/357
+https://github.com/The-OpenROAD-Project/OpenSTA/commit/0772eaaf6af9b6644d47b72c0ff78d9b3e09a31f
+
+
+Index: tcl/Exception.i
+--- tcl/Exception.i.orig
++++ tcl/Exception.i
+@@ -19,7 +19,7 @@
+ %}
+ 
+ %exception {
+-  try { $function }
++  try { $action }
+   catch (std::bad_alloc &) {
+     fprintf(stderr, "Error: out of memory.\n");
+     exit(0);

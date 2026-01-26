@@ -3,7 +3,7 @@ COMMENT =	Parallax Static Timing Analyzer
 GH_ACCOUNT =	The-OpenROAD-Project
 GH_PROJECT =	OpenSTA
 GH_TAGNAME =	v2.2.0
-REVISION =	0
+REVISION =	1
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	cad
