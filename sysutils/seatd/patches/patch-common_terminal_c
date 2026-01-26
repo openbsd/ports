@@ -17,7 +17,7 @@ Index: common/terminal.c
  #else
  #error Unsupported platform
  #endif
-@@ -147,6 +154,23 @@ static int get_tty_path(int tty, char path[static TTYP
+@@ -147,6 +154,26 @@ static int get_tty_path(int tty, char path[static TTYP
  	}
  	return 0;
  }
@@ -28,9 +28,12 @@ Index: common/terminal.c
 +	// On OpenBSD ttyC0 maps to VT 1.
 +	// We subtract one from the requested TTY number to compensate. If the
 +	// user asked for TTY 0 (which is special on Linux), we just give them
-+	// the first tty.
++	// ttyCcfg.
 +	if (tty > 0) {
 +		tty--;
++	} else {
++		strncpy(path, "/dev/ttyCcfg", TTYPATHLEN);
++		return 0;
 +	}
 +
 +	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty) == -1) {
@@ -41,7 +44,15 @@ Index: common/terminal.c
  #else
  #error Unsupported platform
  #endif
-@@ -166,7 +190,7 @@ int terminal_open(int vt) {
+@@ -157,6 +184,7 @@ int terminal_open(int vt) {
+ 		log_errorf("Could not generate tty path: %s", strerror(errno));
+ 		return -1;
+ 	}
++	log_debugf("for vt %d open(%s)", vt, path);
+ 	int fd = open(path, O_RDWR | O_NOCTTY);
+ 	if (fd == -1) {
+ 		log_errorf("Could not open target tty: %s", strerror(errno));
+@@ -166,7 +194,7 @@ int terminal_open(int vt) {
  }
  
  int terminal_current_vt(int fd) {
@@ -50,7 +61,7 @@ Index: common/terminal.c
  	struct vt_stat st;
  	int res = ioctl(fd, VT_GETSTATE, &st);
  	if (res == -1) {
-@@ -193,7 +217,8 @@ int terminal_current_vt(int fd) {
+@@ -193,7 +221,8 @@ int terminal_current_vt(int fd) {
  }
  
  int terminal_set_process_switching(int fd, bool enable) {
@@ -60,7 +71,7 @@ Index: common/terminal.c
  	struct vt_mode mode = {
  		.mode = enable ? VT_PROCESS : VT_AUTO,
  		.waitv = 0,
-@@ -201,10 +226,22 @@ int terminal_set_process_switching(int fd, bool enable
+@@ -201,10 +230,22 @@ int terminal_set_process_switching(int fd, bool enable
  		.acqsig = enable ? SIGUSR2 : 0,
  		.frsig = FRSIG,
  	};
@@ -86,7 +97,7 @@ Index: common/terminal.c
  		return -1;
  	}
  	return 0;
-@@ -241,19 +278,38 @@ int terminal_ack_acquire(int fd) {
+@@ -241,19 +282,38 @@ int terminal_ack_acquire(int fd) {
  }
  
  int terminal_set_keyboard(int fd, bool enable) {
@@ -125,7 +136,7 @@ Index: common/terminal.c
  		cfmakesane(&tios);
  	} else {
  		cfmakeraw(&tios);
-@@ -268,11 +324,23 @@ int terminal_set_keyboard(int fd, bool enable) {
+@@ -268,11 +328,23 @@ int terminal_set_keyboard(int fd, bool enable) {
  }
  
  int terminal_set_graphics(int fd, bool enable) {
