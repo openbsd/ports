@@ -21,12 +21,16 @@ SHA256 (cargo/clap_builder-4.5.50.tar.gz) = CkwFuegMXM06fvCArXtrp9b8AKmFuLFXGXB1
 SHA256 (cargo/clap_derive-4.5.49.tar.gz) = KgtUh6/qst6y/04DqAetGgOsUy/1os7l2GiERAx/dnE=
 SHA256 (cargo/clap_lex-0.7.6.tar.gz) = odcozInPOu6f+SsF5isZ7mWgK1cCz/fVo3fjLGrinY0=
 SHA256 (cargo/colorchoice-1.0.4.tar.gz) = sFth3FESy7F+S2zWF5DZhF0TiINWORYky+fkHv6sHnU=
+SHA256 (cargo/console-0.15.11.tar.gz) = BUzLWxD58sv1HrNVyh0FwtJ5zhgEaI0Nt0tHM6Wur9g=
 SHA256 (cargo/core-foundation-sys-0.8.7.tar.gz) = dzZIuU0OXWIPZPKAd3RFdA5h/nAQJQh+yLV/RceRiIs=
 SHA256 (cargo/crc32fast-1.5.0.tar.gz) = lIHByQy/KslT8HyNSliqOUXEJbcYXJFU1npl5CMNpRE=
 SHA256 (cargo/derive_arbitrary-1.4.2.tar.gz) = HlZ72C3P+XnksDRgwwezzcnpb949c77RSW0rx12d1io=
 SHA256 (cargo/derive_more-0.99.20.tar.gz) = bttLZKQ9l3uOmXiP46BNSDg0+6EhWn4CyqQVtiZJf38=
+SHA256 (cargo/derive_more-2.1.1.tar.gz) = 11Hp5JFWsCtE+cGBW8uUuYTNzEOW7MMlIcc5RSgIsTQ=
+SHA256 (cargo/derive_more-impl-2.1.1.tar.gz) = eZqXJkkh2GI6lX9sO5AR87VJL1V7u3paGbf6bQa6jcs=
 SHA256 (cargo/diffy-imara-0.3.2.tar.gz) = RCn5IF7iNcyqxjVADhlQckBHe+YVxGMePxigaQiB1ts=
 SHA256 (cargo/either-1.15.0.tar.gz) = SMdXlIxe3g5GF3t63S5nFV9w4zwH/qgoTfZXbacLNxk=
+SHA256 (cargo/encode_unicode-1.0.0.tar.gz) = NKpzZG/7AGuPUUfz3Bgr1LyxkCJ86GH8SkhEv448ssA=
 SHA256 (cargo/equivalent-1.0.2.tar.gz) = h3pKzocTsLzypOfuyCUpwCnx0GGYhtGBRf6pbD/+XA8=
 SHA256 (cargo/errno-0.3.14.tar.gz) = Ocq3FheuDWP1GjbWn4ZjkXNbUWkdvaY89vltBCtj7+s=
 SHA256 (cargo/etcetera-0.10.0.tar.gz) = JsexPQeAy4JyL9Wfb1f5JeFDQn5KdTE6bHckO/UyauY=
@@ -48,6 +52,7 @@ SHA256 (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 8xgnogb1avMuWQulbV0tCF9VhQgZJ
 SHA256 (cargo/imara-diff-0.1.8.tar.gz) = F9NLfUIXiUX3dehLxMNt3nwcbN/qZW0zVNAJBW8rs9I=
 SHA256 (cargo/indexmap-1.9.3.tar.gz) = vQcOOTNTeW6AHSCa0znolZbrTI1DDRjt5qHM7Y+vvZk=
 SHA256 (cargo/indexmap-2.12.0.tar.gz) = Zxeo0qWpKaGi60OhKBJJjtFBoLz7fo94RPvb5DA7up8=
+SHA256 (cargo/insta-1.43.2.tar.gz) = Rv22R+veAA9DtbU/dzwwz5sMtDAEUyCHE/o4sscJNaA=
 SHA256 (cargo/integer-sqrt-0.1.5.tar.gz) = J27DG8tKnuRfWL7G+exwCuTPT0+PL6fgbLQGvV/913A=
 SHA256 (cargo/is-terminal-0.4.17.tar.gz) = NkDBw4uOTkNYTY3xi+X8awqjFM5uv1G1MxPUMGzKjkY=
 SHA256 (cargo/is_terminal_polyfill-1.70.2.tar.gz) = pssTi7eaFGwb1GAAViPhQu8BgePQIZy0k+AvfQijVpU=
@@ -95,6 +100,7 @@ SHA256 (cargo/serde_derive-1.0.228.tar.gz) = 1UDyINMYcXPaIg+IWrZmCDZ7ZXTpJQEak1P
 SHA256 (cargo/serde_json-1.0.145.tar.gz) = QCpvZtjHCRFs8i9VjqshD1pQGH9wLrTX5e842afxx5w=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/simd-adler32-0.3.7.tar.gz) = 1m3BQ+axHB7dwG1cQjz8lwYoZbrymZFKtkyqOBggeP4=
+SHA256 (cargo/similar-2.7.0.tar.gz) = u7tdllkUFkauZHtC/glNr2xhktFiCHC0SdlVf3SLLao=
 SHA256 (cargo/stderrlog-0.6.0.tar.gz) = YckQdy+ZKrF9MtZ2DhZ9I1P0Ew7VDnlnUmiVVq8H3Gs=
 SHA256 (cargo/streaming-iterator-0.1.9.tar.gz) = KyIxt8MFfV5K0BVvs9yAfZAIBgIMX/o+5v8sjHb7hSA=
 SHA256 (cargo/strsim-0.11.1.tar.gz) = fai1c2hF2fL8uDfqXZ4mKFZLOwQ6cJSKPwt3iDjF+08=
@@ -140,7 +146,7 @@ SHA256 (cargo/tree-sitter-rust-orchard-0.14.0.tar.gz) = 3w84KzaxhdjnhdDxKd2o154i
 SHA256 (cargo/tree-sitter-scala-0.24.0.tar.gz) = dRaus9H0Dt6OMEWxY+hpk7NDRRTdBsNMC3XngtmgslE=
 SHA256 (cargo/tree-sitter-solidity-1.2.13.tar.gz) = Tqz4h1twh58MtnDGCyM60LaHUtnhR05sPvFo7qipCyU=
 SHA256 (cargo/tree-sitter-starlark-1.3.0.tar.gz) = iTTygtCFzEue4oqmiKo/voqjdmIBwqYlL0EdRbTDpyE=
-SHA256 (cargo/tree-sitter-systemverilog-0.3.1.tar.gz) = SLLFaM/2a1x3OqG1sc4acct2PCp5u9lLssrJ21fzl0E=
+SHA256 (cargo/tree-sitter-systemverilog-0.2.1.tar.gz) = a7xrBxHxumyiUxpzeuwVDT7ndhRrgfGgLWEi94bQUX8=
 SHA256 (cargo/tree-sitter-toml-ng-0.7.0.tar.gz) = 6a3CyJiuSXMOhX11vkA9o/kruB2ON6L5GKCN0Q3l67E=
 SHA256 (cargo/tree-sitter-typescript-0.23.2.tar.gz) = bF927Y2UenXMRG1fzNi2AuvwzeZMzy/6Q02HPXpXXv8=
 SHA256 (cargo/tree-sitter-xml-0.7.0.tar.gz) = 5nAEH1kdmU9U1ZfdzY9OvJMOKCxMdqQiaHQ7cfDItrM=
@@ -188,7 +194,7 @@ SHA256 (cargo/zerocopy-derive-0.8.27.tar.gz) = iNK42caK0rnkNA14MnFqTSGiKhFUd3rVb
 SHA256 (cargo/zip-6.0.0.tar.gz) = 6yoFx8Nv3mwJsIV2yff7TNpwWZD3O1j+ARq/ffskFos=
 SHA256 (cargo/zlib-rs-0.5.2.tar.gz) = LwaukvQvXlxCRD/QlPJF62Vqv1bdfM6biyYyNlZeAPI=
 SHA256 (cargo/zopfli-0.8.2.tar.gz) = 7fxe5AX1BM1JhOzG8U0C1Vz9pg+ktolDTvQQKq4VDNc=
-SHA256 (mergiraf-mergiraf-v0.16.1.tar.gz) = FocR4/e8f9HfDl1xVABAYMmqaC/66QknJcCeEZptp7I=
+SHA256 (mergiraf-mergiraf-v0.16.3.tar.gz) = wvP2tQSWy6232crrbPxODauPmartXZpWCzAgjLaBCPA=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -212,12 +218,16 @@ SIZE (cargo/clap_builder-4.5.50.tar.gz) = 171137
 SIZE (cargo/clap_derive-4.5.49.tar.gz) = 33559
 SIZE (cargo/clap_lex-0.7.6.tar.gz) = 13466
 SIZE (cargo/colorchoice-1.0.4.tar.gz) = 8196
+SIZE (cargo/console-0.15.11.tar.gz) = 37822
 SIZE (cargo/core-foundation-sys-0.8.7.tar.gz) = 37712
 SIZE (cargo/crc32fast-1.5.0.tar.gz) = 40723
 SIZE (cargo/derive_arbitrary-1.4.2.tar.gz) = 12290
 SIZE (cargo/derive_more-0.99.20.tar.gz) = 55041
+SIZE (cargo/derive_more-2.1.1.tar.gz) = 88632
+SIZE (cargo/derive_more-impl-2.1.1.tar.gz) = 99094
 SIZE (cargo/diffy-imara-0.3.2.tar.gz) = 41997
 SIZE (cargo/either-1.15.0.tar.gz) = 20114
+SIZE (cargo/encode_unicode-1.0.0.tar.gz) = 56986
 SIZE (cargo/equivalent-1.0.2.tar.gz) = 7419
 SIZE (cargo/errno-0.3.14.tar.gz) = 12002
 SIZE (cargo/etcetera-0.10.0.tar.gz) = 14734
@@ -239,6 +249,7 @@ SIZE (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 7185
 SIZE (cargo/imara-diff-0.1.8.tar.gz) = 155787
 SIZE (cargo/indexmap-1.9.3.tar.gz) = 54653
 SIZE (cargo/indexmap-2.12.0.tar.gz) = 100446
+SIZE (cargo/insta-1.43.2.tar.gz) = 102183
 SIZE (cargo/integer-sqrt-0.1.5.tar.gz) = 2609
 SIZE (cargo/is-terminal-0.4.17.tar.gz) = 7458
 SIZE (cargo/is_terminal_polyfill-1.70.2.tar.gz) = 7548
@@ -286,6 +297,7 @@ SIZE (cargo/serde_derive-1.0.228.tar.gz) = 59605
 SIZE (cargo/serde_json-1.0.145.tar.gz) = 155748
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/simd-adler32-0.3.7.tar.gz) = 12086
+SIZE (cargo/similar-2.7.0.tar.gz) = 53928
 SIZE (cargo/stderrlog-0.6.0.tar.gz) = 25914
 SIZE (cargo/streaming-iterator-0.1.9.tar.gz) = 18482
 SIZE (cargo/strsim-0.11.1.tar.gz) = 14266
@@ -331,7 +343,7 @@ SIZE (cargo/tree-sitter-rust-orchard-0.14.0.tar.gz) = 610141
 SIZE (cargo/tree-sitter-scala-0.24.0.tar.gz) = 1190329
 SIZE (cargo/tree-sitter-solidity-1.2.13.tar.gz) = 188062
 SIZE (cargo/tree-sitter-starlark-1.3.0.tar.gz) = 138822
-SIZE (cargo/tree-sitter-systemverilog-0.3.1.tar.gz) = 2701505
+SIZE (cargo/tree-sitter-systemverilog-0.2.1.tar.gz) = 2498312
 SIZE (cargo/tree-sitter-toml-ng-0.7.0.tar.gz) = 22919
 SIZE (cargo/tree-sitter-typescript-0.23.2.tar.gz) = 829457
 SIZE (cargo/tree-sitter-xml-0.7.0.tar.gz) = 75507
@@ -379,4 +391,4 @@ SIZE (cargo/zerocopy-derive-0.8.27.tar.gz) = 89827
 SIZE (cargo/zip-6.0.0.tar.gz) = 128541
 SIZE (cargo/zlib-rs-0.5.2.tar.gz) = 194342
 SIZE (cargo/zopfli-0.8.2.tar.gz) = 51842
-SIZE (mergiraf-mergiraf-v0.16.1.tar.gz) = 1220556
+SIZE (mergiraf-mergiraf-v0.16.3.tar.gz) = 1224487
