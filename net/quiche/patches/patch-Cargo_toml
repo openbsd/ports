@@ -1,0 +1,11 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -7,7 +7,6 @@ members = [
+   "netlog",
+   "octets",
+   "qlog",
+-  "qlog-dancer",
+   "quiche",
+   "task-killswitch",
+   "tokio-quiche",
