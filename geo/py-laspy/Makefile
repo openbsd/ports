@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
 
 # bin/laspy needs typer and lazrs
 BUILD_DEPENDS=	math/py-numpy
