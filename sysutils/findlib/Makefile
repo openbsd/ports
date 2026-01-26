@@ -11,7 +11,7 @@ HOMEPAGE=	http://projects.camlcity.org/projects/findlib.html
 # MIT/X11
 PERMIT_PACKAGE=	Yes
 
-MODULES+=	lang/ocaml x11/tk
+MODULES=	lang/ocaml
 
 WANTLIB =  c m pthread
 
