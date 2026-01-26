@@ -36,7 +36,6 @@ WANTLIB +=	c pthread
 
 MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
-MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
 
 do-build:
 	mkdir -p ${WRKDIR}/go/src/github.com/grafana
