@@ -1,6 +1,7 @@
 COMMENT=	Python library implementing a Zigbee stack
 
 MODPY_DISTV=	0.82.3
+REVISION=	0
 DISTNAME=	zigpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
