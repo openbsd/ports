@@ -3,7 +3,7 @@ COMMENT=	Google WebP image format conversion tool
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
 GH_TAGNAME=	v1.6.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics
 
 SHARED_LIBS +=  sharpyuv             0.1      # 0.0
