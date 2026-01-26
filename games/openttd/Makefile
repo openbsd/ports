@@ -3,6 +3,7 @@ BROKEN-sparc64=	fatal error: bit: No such file or directory
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		15.1
+REVISION =	0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
 
@@ -16,8 +17,8 @@ HOMEPAGE=	https://www.openttd.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c curl fluidsynth fontconfig freetype harfbuzz icudata icui18n icuuc
-WANTLIB += lzma lzo2 m png z
+WANTLIB += c curl fluidsynth fontconfig freetype harfbuzz icudata
+WANTLIB += icui18n icuuc lzma lzo2 m ogg opus opusfile png z
 
 COMPILER =		base-clang ports-gcc
 
@@ -31,6 +32,7 @@ MODULES =		devel/cmake
 LIB_DEPENDS=		archivers/lzo2 \
 			archivers/xz \
 			audio/fluidsynth \
+			audio/opusfile \
 			devel/harfbuzz \
 			graphics/png \
 			net/curl \
