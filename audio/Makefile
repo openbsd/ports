@@ -291,6 +291,7 @@
      SUBDIR += ympd
      SUBDIR += ymuse
      SUBDIR += yt-audio
+     SUBDIR += yt-audio-cli
      SUBDIR += zmusic
      SUBDIR += zynaddsubfx
 
