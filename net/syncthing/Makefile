@@ -27,8 +27,6 @@ MODULES =		lang/go
 # so we package only these binaries.
 ST_CMDS =	syncthing stdiscosrv strelaysrv
 
-MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
-
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/cmd/syncthing/main.go
 
@@ -37,7 +35,7 @@ pre-build:
 # without quic support obviously). When you do that, some more tests will fail.
 do-build:
 .for cmd in ${ST_CMDS}
-	cd ${WRKSRC} && ${MODGO_CMD} run build.go -version v${V} \
+	cd ${WRKSRC} && ${MODGO_CMD} run ${MODGO_FLAGS} build.go -version v${V} \
 		-no-upgrade install ${cmd}
 .endfor
 
