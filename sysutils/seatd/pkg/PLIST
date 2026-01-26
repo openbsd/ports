@@ -1,5 +1,5 @@
-@rcscript ${RCDIR}/seatd
 @newgroup _seatd:564
+@rcscript ${RCDIR}/seatd
 @bin bin/seatd
 @bin bin/seatd-launch
 include/libseat.h

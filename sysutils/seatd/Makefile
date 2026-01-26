@@ -1,7 +1,6 @@
 COMMENT	=	minimal seat management daemon and universal library
 
-V =		0.9.1
-REVISION =	2
+V =		0.9.2
 DISTNAME =	seatd-$V
 CATEGORIES =	sysutils
 
@@ -22,7 +21,8 @@ MODULES	=	devel/meson
 
 BUILD_DEPENDS =	textproc/scdoc
 
-CONFIGURE_ARGS = -Dlibseat-logind=disabled -Dlibseat-builtin=enabled
+CONFIGURE_ARGS = -Dlibseat-logind=disabled \
+		-Dlibseat-builtin=enabled
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
