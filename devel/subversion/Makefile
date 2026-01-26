@@ -5,13 +5,13 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
+REVISION=		1
+
 VERSION=		1.14.5
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
-REVISION-main=		0
 PKGNAME-perl=		p5-SVN-${VERSION}
 PKGNAME-python=		py3-subversion-${VERSION}
-REVISION-python=	0
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
 PKGNAME-ap2=		ap2-subversion-${VERSION}
 PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}
