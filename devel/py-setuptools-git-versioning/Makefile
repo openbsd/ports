@@ -1,10 +1,8 @@
 COMMENT=	use git repo data to build a version number
 
-# zigpy wants <2
-MODPY_DISTV=	1.13.6
-REVISION=	2
-DISTNAME=	setuptools-git-versioning-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	3.0.1
+DISTNAME=	setuptools_git_versioning-${MODPY_DISTV}
+PKGNAME=	py-setuptools-git-versioning-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
