@@ -1,0 +1,12 @@
+Index: doc/man/man5/slapd-config.5
+--- doc/man/man5/slapd-config.5.orig
++++ doc/man/man5/slapd-config.5
+@@ -2210,7 +2210,7 @@ Here is a short example of a configuration in LDIF sui
+ dn: cn=config
+ objectClass: olcGlobal
+ cn: config
+-olcPidFile: LOCALSTATEDIR/run/slapd.pid
++olcPidFile: LOCALSTATEDIR/run/openldap/slapd.pid
+ olcAttributeOptions: x\-hidden lang\-
+ 
+ dn: cn=schema,cn=config

@@ -1,0 +1,14 @@
+Index: servers/slapd/slapd.ldif
+--- servers/slapd/slapd.ldif.orig
++++ servers/slapd/slapd.ldif
+@@ -9,8 +9,8 @@ cn: config
+ #
+ # Define global ACLs to disable default read access.
+ #
+-olcArgsFile: %LOCALSTATEDIR%/run/slapd.args
+-olcPidFile: %LOCALSTATEDIR%/run/slapd.pid
++olcArgsFile: %LOCALSTATEDIR%/run/openldap/slapd.args
++olcPidFile: %LOCALSTATEDIR%/run/openldap/slapd.pid
+ #
+ # Do not enable referrals until AFTER you have a working directory
+ # service AND an understanding of referrals.

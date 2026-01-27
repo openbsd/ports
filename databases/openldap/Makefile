@@ -1,66 +1,67 @@
-COMMENT-main =	  LDAP client library and tools
-COMMENT-server =  LDAP directory server
+COMMENT-main=	LDAP client library and tools
+COMMENT-server=	LDAP directory server
 
-DISTNAME =	  openldap-2.6.10
+DISTNAME=	openldap-2.6.10
+REVISION=	0
 
-MULTI_PACKAGES =  -main -server
-PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
-EXTRACT_SUFX =		.tgz
+MULTI_PACKAGES=	-main -server
+PKGNAME-main=	${DISTNAME:S/-/-client-/}
+EXTRACT_SUFX=	.tgz
 # aci only affects the server; override pkgname/path for the client
-FULLPKGNAME-main = ${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
-FULLPKGPATH-main = databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
-EPOCH =		0
+FULLPKGNAME-main= ${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
+FULLPKGPATH-main= databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
+EPOCH=		0
 
 SHARED_LIBS +=	lber	16.0
 SHARED_LIBS +=	ldap	16.0
 
-CATEGORIES =	databases net
+CATEGORIES=	databases net
 
-HOMEPAGE =	https://www.openldap.org/
+HOMEPAGE=	https://www.openldap.org/
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # OpenLDAP Public License
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto pthread sasl2 ssl
 WANTLIB-server=	${WANTLIB} lber ldap ltdl m perl sodium
 
-SITES =		https://openldap.org/software/download/OpenLDAP/openldap-release/ \
+SITES=		https://openldap.org/software/download/OpenLDAP/openldap-release/ \
 		https://mirror.eu.oneandone.net/software/openldap/ \
 		https://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-DPB_PROPERTIES =	parallel
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+DPB_PROPERTIES=	parallel
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-AUTOCONF_VERSION =	2.71
-CONFIGURE_STYLE =	autoconf
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
-USE_GMAKE =		Yes
+AUTOCONF_VERSION= 2.71
+CONFIGURE_STYLE=  autoconf
+USE_GMAKE=	  Yes
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/build
 
-FLAVOR ?=
-FLAVORS =		aci gssapi
+FLAVOR?=
+FLAVORS=	aci gssapi
 
-CONFIGURE_ARGS +=	--enable-dynamic \
-			--enable-ipv6 \
-			--with-tls=openssl
+CONFIGURE_ARGS=	--enable-dynamic \
+		--enable-ipv6 \
+		--with-tls=openssl
 
 # lloadd needs the ports version of libevent, autoconf check
-# needs tweaking for this
-CONFIGURE_ARGS +=	--disable-balancer
+# needs tweaking for this. (manuals @commented, too).
+CONFIGURE_ARGS += --disable-balancer
 # --enable-balancer / --enable-balancer=mod
 
 # options
-CONFIGURE_ARGS +=	--enable-argon2 \
-			--enable-cleartext \
-			--enable-crypt \
-			--enable-modules \
-			--enable-spasswd \
-			--with-argon2=libsodium \
-			--with-cyrus-sasl
+CONFIGURE_ARGS += --enable-argon2 \
+		--enable-cleartext \
+		--enable-crypt \
+		--enable-modules \
+		--enable-spasswd \
+		--with-argon2=libsodium \
+		--with-cyrus-sasl
 
 # default to using modules rather than linked in to slapd directly
 # doing this enables everything by default rather than having a mix of
@@ -68,21 +69,21 @@ CONFIGURE_ARGS +=	--enable-argon2 \
 # directly. link in the mdb backend and syncprov overlay to slapd
 # itself so in the common case there's no need to change config to
 # load modules.
-CONFIGURE_ARGS +=	--enable-backends=mod \
-			--enable-mdb=yes \
-			--enable-overlays=mod \
-			--enable-syncprov=yes
+CONFIGURE_ARGS += --enable-backends=mod \
+		--enable-mdb=yes \
+		--enable-overlays=mod \
+		--enable-syncprov=yes
 
 # disabled backends (other available backends are built as modules)
-CONFIGURE_ARGS +=	--disable-passwd \
-			--disable-sock \
-			--disable-sql \
-			--disable-wt
+CONFIGURE_ARGS += --disable-passwd \
+		--disable-sock \
+		--disable-sql \
+		--disable-wt
 
 # aci cannot be built as a module
 .if ${FLAVOR:Maci}
-CONFIGURE_ARGS +=	--enable-dynacl \
-			--enable-aci
+CONFIGURE_ARGS += --enable-dynacl \
+		--enable-aci
 .endif
 
 .if ${FLAVOR:Mgssapi}
@@ -94,13 +95,13 @@ WANTLIB += heimdal/lib/heimsqlite
 .endif
 
 LIB_DEPENDS +=		security/cyrus-sasl2
-LIB_DEPENDS-server =	${LIB_DEPENDS} \
+LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main \
 			devel/libtool,-ltdl \
 			security/libsodium
 
-CPPFLAGS =		-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include
-LDFLAGS =		-L${LOCALBASE}/lib -Wl,--export-dynamic
+CPPFLAGS=		-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include
+LDFLAGS=		-L${LOCALBASE}/lib -Wl,--export-dynamic
 CFLAGS +=		-Wno-format-extra-args
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -130,9 +131,9 @@ post-install:
 	${SETENV} ${MAKE_ENV} ${FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 	mandir=${TRUEPREFIX}/man install
 
-TEST_TARGET =		test
-TEST_DEPENDS =		shells/bash \
-			sysutils/coreutils
+TEST_TARGET=	test
+TEST_DEPENDS=	shells/bash \
+		sysutils/coreutils
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
