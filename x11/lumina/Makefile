@@ -4,7 +4,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11
 
@@ -47,7 +47,7 @@ pre-configure:
 		${WRKSRC}/src-qt5/OS-detect.pri
 
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake-qt5 \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/qmake-qt5 \
 		CONFIG+="configure WITH_I18N NO_XINPUT"
 
 post-install:
