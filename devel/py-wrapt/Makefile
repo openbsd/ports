@@ -1,10 +1,9 @@
 COMMENT=	Python module for decorators, wrappers and monkey patching
 
-MODPY_DISTV=	1.17.2
+MODPY_DISTV=	2.0.1
 DISTNAME=	wrapt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 # https://github.com/GrahamDumpleton/wrapt
 HOMEPAGE=	https://wrapt.readthedocs.org/en/latest/
@@ -17,5 +16,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
+MODPY_PYTEST_ARGS= --ignore tests/conftest.py
 
 .include <bsd.port.mk>
