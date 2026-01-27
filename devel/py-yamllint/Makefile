@@ -1,6 +1,6 @@
 COMMENT =	linter for YAML files
 
-MODPY_DISTV =	1.37.1
+MODPY_DISTV =	1.38.0
 DISTNAME =	yamllint-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
