@@ -1,7 +1,7 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
 V =		2022.10.3
-REVISION = 	0
+REVISION = 	1
 
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
@@ -10,7 +10,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://www.tuxera.com/company/open-source/
 
-MAINTAINER =	Paul Irofti <paul@irofti.net>
+MAINTAINER =	Helg Bredow <helg@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
