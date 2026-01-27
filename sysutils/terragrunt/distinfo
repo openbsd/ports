@@ -1248,8 +1248,8 @@ SHA256 (go_modules/github.com/gruntwork-io/boilerplate/@v/v0.10.1.zip) = znNc2MT
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.mod) = eDRmsv0nib9jiF+WelhjwS2ayrzLMjrnAXZ104BPzUY=
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.zip) = Z2VlY99JdoeYVGgPmE032Y1T6TskwWRKLKDW0bxs9xY=
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.8.0.mod) = fYjph2vP8nkhVOW+0l1zgxlK6YOAl6ZIKGByf9g4qUY=
-SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.16.mod) = XuW+4lezq7MXr4qJH20Boc4j8h/a3ZlXrOfBSrvwJC4=
-SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.16.zip) = onxbiXjBZzXlH7r/JeFoXDEky+VADFZJLDoD6/0eAqQ=
+SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.1.0.mod) = kqui9WiUCNzto6Rxi23V0EZteRiAfn/RvGby4N3qjpQ=
+SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.1.0.zip) = TSvW8tNJc57/FIR2dGjrm8qVIQNtUoYEJuyLLWxbxos=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = AzyWVIfqU3LsgjZ+j63irQRkCHKLyePBriikc5NmG1U=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = ehFFmg2Sz0RsZjgm0dfh0ET7kV7Bj9eJN+oyq3xp3h4=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.51.0.mod) = QBhXNr5UuCDw5Wtn931Be6eq4LTvSr9lwaP/G4xHGPc=
@@ -2820,7 +2820,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7u
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKtjzEZyGzwC/ZzKmF4=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
-SHA256 (terragrunt-v0.98.0.zip) = by+tZYY2ryW8uX4JI6ie0C6c0ThpU122vnfNwiui55k=
+SHA256 (terragrunt-v0.99.0.zip) = U40c9JYqgHSbkkxdUAf4zxhkR7QaqhIIoZha3+5rEyE=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -4071,8 +4071,8 @@ SIZE (go_modules/github.com/gruntwork-io/boilerplate/@v/v0.10.1.zip) = 1467572
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.mod) = 6294
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.zip) = 126304
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.8.0.mod) = 304
-SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.16.mod) = 898
-SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.16.zip) = 28915
+SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.1.0.mod) = 898
+SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.1.0.zip) = 34993
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = 6850
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = 6838
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.51.0.mod) = 12004
@@ -5643,4 +5643,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = 162
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = 60719
-SIZE (terragrunt-v0.98.0.zip) = 10340565
+SIZE (terragrunt-v0.99.0.zip) = 10769057

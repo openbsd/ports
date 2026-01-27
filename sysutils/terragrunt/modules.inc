@@ -422,7 +422,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/grpc-gateway/v2							 v2.27.4 \
 	github.com/gruntwork-io/boilerplate								 v0.10.1 \
 	github.com/gruntwork-io/go-commons								 v0.17.2 \
-	github.com/gruntwork-io/terragrunt-engine-go							 v0.0.16 \
+	github.com/gruntwork-io/terragrunt-engine-go							 v0.1.0 \
 	github.com/gruntwork-io/terratest								 v0.51.0 \
 	github.com/hashicorp/aws-sdk-go-base								 v0.6.0 \
 	github.com/hashicorp/aws-sdk-go-base/v2								 v2.0.0-beta.70 \
