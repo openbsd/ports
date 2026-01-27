@@ -1,6 +1,6 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION=	3.7.4
+VERSION=	3.8.1
 
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/:S/-RC/rc/}
@@ -16,8 +16,6 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://github.com/scala/scala3/releases/download/${VERSION}/
 
 MODULES=	java
-# Offically scala requires 1.8+, but on OpenBSD it needs 17+
-# https://github.com/scala/scala3/issues/21526
 MODJAVA_VER=	17+
 
 RUN_DEPENDS=	java/javaPathHelper \
