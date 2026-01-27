@@ -48,6 +48,8 @@ SITES =			https://webkitgtk.org/releases/
 
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 MODULES =		devel/cmake \
 			lang/python \
 			lang/ruby \
