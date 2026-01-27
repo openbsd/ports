@@ -27,8 +27,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6Quick Qt6WebSockets m
 
-# Coroutines are part of C++ 20 and implemented in GCC 10
-COMPILER =	base-clang ports-clang
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		x11/qt6
