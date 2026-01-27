@@ -11,6 +11,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 
+COMPILER =		base-clang ports-gcc
+
 NO_BUILD =		Yes
 
 pre-test:
