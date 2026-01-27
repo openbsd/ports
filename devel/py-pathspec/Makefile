@@ -1,6 +1,6 @@
 COMMENT=	utility for gitignore style pattern matching of file paths
 
-MODPY_DISTV=	1.0.3
+MODPY_DISTV=	1.0.4
 DISTNAME=	pathspec-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
