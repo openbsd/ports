@@ -13,7 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}params.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}params.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/deprecated/classic.py
+lib/python${MODPY_VERSION}/site-packages/deprecated/params.py
 lib/python${MODPY_VERSION}/site-packages/deprecated/sphinx.py

@@ -1,10 +1,8 @@
 COMMENT=	decorator to deprecate old python classes, etc
 
-MODPY_DISTV=	1.2.14
-
-DISTNAME=	Deprecated-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
-REVISION=	2
+MODPY_DISTV=	1.3.1
+DISTNAME=	deprecated-${MODPY_DISTV}
+PKGNAME=	py-deprecated-${MODPY_DISTV}
 
 CATEGORIES=	devel
 
@@ -18,7 +16,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-wrapt<2
+RUN_DEPENDS=	devel/py-wrapt<3
 
 # for pkg_resources
 TEST_DEPENDS=	devel/py-setuptools
