@@ -41,6 +41,8 @@ MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 BUILD_DEPENDS =		devel/gtest
 
 LIB_DEPENDS =		devel/abseil-cpp \
