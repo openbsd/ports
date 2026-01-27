@@ -1,6 +1,6 @@
 COMMENT =	network transparent access to files and data in KDE
+VERSION =	6.22.1
 DISTNAME =	kio-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6KIOCore                1.0 # 0.0
 SHARED_LIBS +=  KF6KIOFileWidgets         0.1 # 0.0
