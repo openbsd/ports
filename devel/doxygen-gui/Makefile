@@ -3,6 +3,7 @@ COMMENT=	GUI front-end for doxygen
 VERSION=	1.15.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
+REVISION=	0
 
 CATEGORIES=	devel textproc
 
