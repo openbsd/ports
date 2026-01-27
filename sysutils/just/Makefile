@@ -1,6 +1,6 @@
 COMMENT =	tool for running project-specific commands
 
-V =		1.44.1
+V =		1.46.0
 PKGNAME =	just-${V}
 
 DIST_TUPLE +=	github casey just ${V} .
