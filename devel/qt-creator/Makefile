@@ -3,10 +3,9 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			18.0.1
+V =			18.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
 SHARED_LIBS +=  Aggregation               4.1 # 0.0
 SHARED_LIBS +=  CPlusPlus                 12.0 # 0.0
