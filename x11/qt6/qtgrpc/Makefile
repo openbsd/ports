@@ -42,6 +42,8 @@ WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_poi
 WANTLIB += absl_vlog_config_internal c m protobuf protoc utf8_range
 WANTLIB += utf8_validity
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 BUILD_DEPENDS =	graphics/glslang
 
 LIB_DEPENDS =	devel/abseil-cpp \

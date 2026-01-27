@@ -61,6 +61,8 @@ WANTLIB += Qt6Sql Qt6Svg Qt6Test Qt6Widgets c m xkbcommon
 MODULES =	lang/python
 CONFIGURE_STYLE = cmake
 
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
 MODQT6_DEPS =	No
 
 BUILD_DEPENDS =	graphics/vulkan-loader \
