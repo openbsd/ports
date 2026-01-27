@@ -18,8 +18,8 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread ${COMPILER_LIBCXX} z harfbuzz
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=c++14
+COMPILER =	base-clang ports-gcc
+CXXFLAGS =	-std=c++14
 
 BUILD_DEPENDS =	devel/gettext,-tools
 RUN_DEPENDS =	devel/desktop-file-utils
