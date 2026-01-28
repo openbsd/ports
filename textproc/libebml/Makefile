@@ -1,6 +1,6 @@
 COMMENT=	Extensible Binary Meta Language library
 
-DISTNAME=	libebml-1.4.4
+DISTNAME=	libebml-1.4.5
 CATEGORIES=	textproc
 SITES=		https://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.xz
