@@ -9,7 +9,7 @@ HOMEPAGE=	https://exiftool.org/
 PERMIT_PACKAGE=	Yes
 
 SITES=		${SITE_PERL_CPAN:=Image/} \
-		${HOMEPAGE}
+		${SITE_SOURCEFORGE:=exiftool/}
 
 MODULES=	cpan
 PKG_ARCH=	*
