@@ -1,23 +1,11 @@
 ONLY_FOR_ARCHS=	amd64
 
-COMPILER=	ports-gcc
-COMPILER_LANGS=	c
-
-# XXX errors with clang - same with/without integrated assembler
-# error: invalid output size for constraint '=Qi'
-# error: invalid input size for constraint 'Q'
-# etc. in various files, coming from __GET_VAR / __SET_VAR.
-#
-# XXX fails self-check with LLD -
-# The version of LD on this system (ld -nopie -znorelro) does not properly handle
-# alignments.  As a result, this project can not be built.
-
 FW_DRIVER=	vmm
 FW_VER=		1.16.3
 SB_VER=		20180715
 DISTNAME=	seabios-${FW_VER}
 DIST_TUPLE=	github qemu sgabios 72f39d48bedf044e202fd51fecf3e2218fc2ae66 sgabios
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.seabios.org/
 
@@ -32,7 +20,7 @@ NO_BUILD=	No
 UPDATE_PLIST_ARGS= -i PERMIT_PACKAGE
 
 MODULES=	lang/python
-CONFIGURE_STYLE= x # workaround python.port.mk
+BUILD_DEPENDS=	devel/x86_64-elf/gcc
 MODPY_RUNDEP=	No
 USE_GMAKE=	Yes
 
@@ -44,8 +32,8 @@ EXTRAVERSION=	-OpenBSD-vmm
 
 MAKE_FLAGS=	V=1 \
 		EXTRAVERSION="${EXTRAVERSION}" \
-		LD32BIT_FLAG=-melf_i386_obsd \
-		LD="ld.bfd -nopie -znorelro" \
+		HOSTCC="${CC}" \
+		CROSS_PREFIX=x86_64-none-elf- \
 		PYTHON="${MODPY_BIN}"
 
 post-extract:
@@ -55,7 +43,10 @@ post-build:
 	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
 	    ${WRKSRC}/sgabios/sgabios.S
 	cd ${WRKSRC}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
-	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' LD="ld.bfd"
+	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"' \
+	    CC="x86_64-none-elf-gcc -Wa,--divide" LD=x86_64-none-elf-ld \
+	    AS="x86_64-none-elf-as --divide" OBJCOPY=x86_64-none-elf-objcopy \
+	    HOSTCC="${CC}"
 	dd if=/dev/zero of=${WRKDIR}/space bs=1 count=196608
 	cat ${WRKSRC}/sgabios/sgabios.bin ${WRKDIR}/space \
 	    ${WRKSRC}/out/bios.bin > ${WRKDIR}/vmm-bios
