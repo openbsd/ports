@@ -1,5 +1,5 @@
-@pkgpath security/wycheproof-testvectors
 @conflict wycheproof-testvectors-*
+@pkgpath security/wycheproof-testvectors
 share/wycheproof/
 share/wycheproof/CONTRIBUTING.md
 share/wycheproof/LICENSE
