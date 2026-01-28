@@ -5,11 +5,14 @@ lib/gcc/${CONFIG}/${V}/include/bmiintrin.h
 lib/gcc/${CONFIG}/${V}/include/emmintrin.h
 lib/gcc/${CONFIG}/${V}/include/htmintrin.h
 lib/gcc/${CONFIG}/${V}/include/htmxlintrin.h
+lib/gcc/${CONFIG}/${V}/include/immintrin.h
 lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
 lib/gcc/${CONFIG}/${V}/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/include/nmmintrin.h
 lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
 lib/gcc/${CONFIG}/${V}/include/ppc-asm.h
 lib/gcc/${CONFIG}/${V}/include/ppu_intrinsics.h
+lib/gcc/${CONFIG}/${V}/include/rs6000-vecdefines.h
 lib/gcc/${CONFIG}/${V}/include/si2vmx.h
 lib/gcc/${CONFIG}/${V}/include/smmintrin.h
 lib/gcc/${CONFIG}/${V}/include/spu2vmx.h
@@ -29,9 +32,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/option-defaults.h
-lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000-builtin.def
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000-cpus.def
-lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000-modes.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000-opts.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000-protos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/rs6000/rs6000.h

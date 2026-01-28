@@ -2372,8 +2372,6 @@ lib/gcc/${CONFIG}/${V}/adalib/s-vs_int.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-vs_lli.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-vs_llu.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-vs_uns.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vsllli.ali
-lib/gcc/${CONFIG}/${V}/adalib/s-vslllu.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-wchcnv.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-wchcon.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-wchjis.ali

@@ -1,7 +1,7 @@
 Index: gcc/ada/Makefile.rtl
 --- gcc/ada/Makefile.rtl.orig
 +++ gcc/ada/Makefile.rtl
-@@ -1828,6 +1828,239 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
+@@ -1828,6 +1828,240 @@ ifeq ($(strip $(filter-out x86_64 pc gnu,$(target_cpu)
  endif
  endif
  
@@ -128,6 +128,7 @@ Index: gcc/ada/Makefile.rtl
 +  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
 +  s-oslock.ads<libgnat/s-oslock__posix.ads \
 +  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-parame.ads<libgnat/s-parame__posix2008.ads \
 +  s-taprop.adb<libgnarl/s-taprop__posix.adb \
 +  s-taspri.ads<libgnarl/s-taspri__posix.ads \
 +  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
@@ -241,7 +242,7 @@ Index: gcc/ada/Makefile.rtl
  # aarch64 FreeBSD
  ifeq ($(SELECTED_PAIRS),PAIRS_NONE)
  ifeq ($(strip $(filter-out %aarch64 freebsd%,$(target_cpu) $(target_os))),)
-@@ -3209,7 +3442,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
+@@ -3209,7 +3443,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
  #  from ADA_INCLUDE_SRCS.
  
  LIBGNAT_SRCS = $(patsubst %.o,%.c,$(LIBGNAT_OBJS))			\

@@ -21,6 +21,7 @@ FULL_PKGVERSION = $V
 GCC_PKGSPEC = >=15,<16
 
 REVISION = 5
+REVISION-ada = 6
 REVISION-f95 = 6
 
 # aarch64 bootstrap contains only gdc
@@ -30,7 +31,7 @@ ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-8.3.0-1.tar.xz
 ADASTRAP-i386 = adastrap-i386-11.2.0-4.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-8.4.0-5.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-11.2.0-3.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-11.2.0-4.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =	gcc-${FULL_PKGVERSION}

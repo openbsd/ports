@@ -79,5 +79,7 @@ lib/gcc/${CONFIG}/${V}/adalib/s-vade128.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-vafi128.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-valllli.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-vallllu.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-vsllli.ali
+lib/gcc/${CONFIG}/${V}/adalib/s-vslllu.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-widllli.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-widlllu.ali
