@@ -29,3 +29,6 @@ CONFIGURE_ARGS +=	--enable-cider \
 			--with-readline=yes
 
 CONFIGURE_ARGS +=	--disable-openmp
+
+CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib

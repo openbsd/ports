@@ -1,14 +1,16 @@
 COMMENT =	ngspice shared library, based on Berkeley SPICE
 
 PKGNAME =	libngspice-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  ngspice                0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} m pthread
+WANTLIB += ${COMPILER_LIBCXX} fftw3 m pthread
 
 CONFIGURE_ARGS +=	--with-ngshared \
 			--enable-shared
+
+LIB_DEPENDS =	math/fftw3
 
 # same tests as cad/ngspice/ngspice, but they assume you've built a binary
 NO_TEST =	Yes
