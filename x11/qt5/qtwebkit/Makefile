@@ -14,7 +14,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH =			0
-REVISION =		16
+REVISION =		17
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
 SHARED_LIBS +=  Qt5WebKitWidgets        3.1 # 5.9
@@ -39,6 +39,12 @@ WANTLIB += gstvideo-1.0 hyphen icui18n icuuc jpeg m png sqlite3
 WANTLIB += webp xml2 xslt z
 
 SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
+
+# needs python and c++
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c c++
+
+CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
 
 MODULES =		devel/cmake \
 			lang/python \
