@@ -3,6 +3,7 @@ COMMENT=	audio/video converter and streamer
 # keep it synced with x11/mplayer
 V=		8.0.1
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -38,12 +39,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 # LGPLv2.1 and GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
-WANTLIB += freetype fribidi gsm harfbuzz iconv lzma m mp3lame opus
-WANTLIB += pthread sndio speex ssl theoradec theoraenc v4l2 va
-WANTLIB += va-drm va-x11 vidstab vorbis vorbisenc vpx webp webpmux
-WANTLIB += x264 x265 xcb xcb-shape xcb-shm xcb-xfixes xml2 xvidcore
-WANTLIB += z zimg
+WANTLIB += SDL2 SvtAv1Enc X11 Xext Xv aom ass bz2 c crypto dav1d
+WANTLIB += fontconfig freetype fribidi gsm harfbuzz iconv lzma m
+WANTLIB += mp3lame opus pthread sndio speex ssl theoradec theoraenc
+WANTLIB += v4l2 va va-drm va-x11 vidstab vorbis vorbisenc vpx webp
+WANTLIB += webpmux x264 x265 xcb xcb-shape xcb-shm xcb-xfixes xml2
+WANTLIB += xvidcore z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -71,6 +72,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/zimg \
 		multimedia/aom \
 		multimedia/dav1d \
+		multimedia/svt-av1 \
 		multimedia/libass \
 		multimedia/libtheora \
 		multimedia/libv4l \
@@ -83,9 +85,9 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -laom -ldav1d -lgsm -liconv -llzma
-LIBavcodec_EXTRALIBS+=-lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis
-LIBavcodec_EXTRALIBS+=-lvorbisenc -lvpx -lwebp -lwebpmux -lx264 -lx265 -lxvidcore
-LIBavcodec_EXTRALIBS+=-lm -lz -lva -lva-drm -pthread
+LIBavcodec_EXTRALIBS+=-lmp3lame -lopus -lspeex -lSvtAv1Enc -ltheoradec -ltheoraenc -lvorbis
+LIBavcodec_EXTRALIBS+=-lvorbisenc -lvpx -lwebp -lwebpmux -lx264 -lx265 -lxvidcore -lm -lz
+LIBavcodec_EXTRALIBS+=-lva -lva-drm -pthread
 
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv
 LIBavdevice_EXTRALIBS+=-lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
@@ -137,6 +139,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libmp3lame \
 		--enable-libopus \
 		--enable-libspeex \
+		--enable-libsvtav1 \
 		--enable-libtheora \
 		--enable-libv4l2 \
 		--enable-libvorbis \
