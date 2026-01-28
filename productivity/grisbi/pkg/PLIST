@@ -25,6 +25,7 @@ share/doc/grisbi/en/topic.dat
 share/doc/grisbi/en/translation.html
 share/doc/grisbi/fr/
 share/doc/grisbi/fr/contents_motif.gif
+share/doc/grisbi/fr/grisbi-manuel-1page.html
 share/doc/grisbi/fr/grisbi-manuel.css
 share/doc/grisbi/fr/grisbi-manuel.html
 share/doc/grisbi/fr/grisbi-manuel.pdf
@@ -548,7 +549,7 @@ share/pixmaps/grisbi/gtk-copy-24.png
 share/pixmaps/grisbi/gtk-corbeille-32.png
 share/pixmaps/grisbi/gtk-delete-16.png
 share/pixmaps/grisbi/gtk-delete-24.png
-share/pixmaps/grisbi/gtk-dialog-warning-16.png
+share/pixmaps/grisbi/gtk-dialog-warning.png
 share/pixmaps/grisbi/gtk-edit-16.png
 share/pixmaps/grisbi/gtk-edit-24.png
 share/pixmaps/grisbi/gtk-execute-16.png

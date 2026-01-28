@@ -1,9 +1,8 @@
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-3.0.4
-REVISION=	3
+DISTNAME=	grisbi-3.90.1
 
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 SITES=		${SITE_SOURCEFORGE:=grisbi/}
 
 CATEGORIES=	productivity x11
@@ -15,20 +14,13 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 atk-bridge-2.0 avahi-common bz2 c cairo cairo-gobject
-WANTLIB += crypto dbus-1 epoxy execinfo expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 goffice-0.10 graphite2 gs gsf-1 gtk-3 harfbuzz
-WANTLIB += iconv intl jpeg lzma m ofx osp pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png rsvg-2 spectre xcb xcb-render
-WANTLIB += xcb-shm xkbcommon xml2 xslt z
-WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += c cairo crypto gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 goffice-0.10 gtk-3 intl m ofx pango-1.0
+WANTLIB += pangocairo-1.0 xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MODULES =	devel/dconf
+MODULES =	devel/dconf devel/meson
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+3 \
@@ -39,15 +31,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-BUILD_DEPENDS=	devel/cunit \
-		devel/gettext,-tools
-USE_GMAKE=	Yes
+BUILD_DEPENDS=	devel/gettext,-tools
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
-
-CONFIGURE_ARGS=	--with-openssl \
-		--disable-config-file
+CONFIGURE_ARGS=	-Dgoffice=true
 
 .include <bsd.port.mk>
