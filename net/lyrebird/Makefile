@@ -2,9 +2,9 @@ COMMENT =		look-like-nothing obfuscation protocol
 
 MODGO_MODNAME =		gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/lyrebird
 
-MODGO_VERSION =		v0.0.0-20251209174042-451c02db6504
+MODGO_VERSION =		v0.0.0-20260115133752-0b10edbb61e0
 
-V =			0.8.0
+V =			0.8.1
 
 DISTNAME =		lyrebird-${MODGO_VERSION}
 

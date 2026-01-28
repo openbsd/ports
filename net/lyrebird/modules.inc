@@ -86,7 +86,7 @@ MODGO_MODULES =	\
 	github.com/xyproto/randomstring							 v1.0.5 \
 	github.com/yuin/goldmark							 v1.4.13 \
 	gitlab.com/yawning/edwards25519-extra						 v0.0.0-20231005122941-2149dcafc266 \
-	gitlab.torproject.org/shelikhoo/utls-temporary					 v0.0.0-20251015130924-2828941a9a48 \
+	gitlab.torproject.org/shelikhoo/utls-temporary					 v0.0.0-20260114141111-0f042ad603ef \
 	gitlab.torproject.org/tpo/anti-censorship/geoip					 v0.0.0-20210928150955-7ce4b3d98d01 \
 	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib		 v1.6.0 \
 	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil		 v0.0.0-20250130151315-efaf4e0ec0d3 \

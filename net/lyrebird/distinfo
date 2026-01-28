@@ -214,8 +214,8 @@ SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.13.mod) = 7n/kRmIDoB06wZrcE0
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = u0GmArF0NF/aOSyK2D/MkyF8KFx2NplndjC+kP63peM=
 SHA256 (go_modules/gitlab.com/yawning/edwards25519-extra/@v/v0.0.0-20231005122941-2149dcafc266.mod) = TnvC6LKrOA0e64f3HWoXphuLHwOQ6/SpKBxXbav2tM4=
 SHA256 (go_modules/gitlab.com/yawning/edwards25519-extra/@v/v0.0.0-20231005122941-2149dcafc266.zip) = Uo3WIQ1S+J79w+OXpcqsFKT5tE241LKcsGEGwoDBapU=
-SHA256 (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20251015130924-2828941a9a48.mod) = vpk/cfw1zwzmoK4m2CF40iG2hX/ysATaYdQOzmtpaBo=
-SHA256 (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20251015130924-2828941a9a48.zip) = ctT8UD6U9J4ioOlN+PeMcO6CsiJbOoIVXxdm0kAJ+tk=
+SHA256 (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20260114141111-0f042ad603ef.mod) = vpk/cfw1zwzmoK4m2CF40iG2hX/ysATaYdQOzmtpaBo=
+SHA256 (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20260114141111-0f042ad603ef.zip) = zvplhyARCplFAXz8c9l23KlSEAaT2oAUNWu4+mHBrKQ=
 SHA256 (go_modules/gitlab.torproject.org/tpo/anti-censorship/geoip/@v/v0.0.0-20210928150955-7ce4b3d98d01.mod) = 1kLEg8mxWtADWFju5fuy8aPOE+l9WaKdHfv5iHnCKlg=
 SHA256 (go_modules/gitlab.torproject.org/tpo/anti-censorship/geoip/@v/v0.0.0-20210928150955-7ce4b3d98d01.zip) = Lm0s8fD+KdE1ok4Sd/wRu92VSjTDwzNzkJb6wGKf2hQ=
 SHA256 (go_modules/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib/@v/v1.5.0.mod) = mfQcpp18tOow1mHj88FOKe7VC1F0lHqBqWS26LWAtNc=
@@ -383,7 +383,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (lyrebird-v0.0.0-20251209174042-451c02db6504.zip) = B7lDLy9y128L3f4Q0vwW4B5HUTprsbGV6FWrYSVU8lU=
+SHA256 (lyrebird-v0.0.0-20260115133752-0b10edbb61e0.zip) = kTZmR/FRt2cXF8uzOpgnEqIU9CbCBY031P7Hu0IAcYs=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = 2508208
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.0.0.mod) = 40
@@ -600,8 +600,8 @@ SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.13.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = 229017
 SIZE (go_modules/gitlab.com/yawning/edwards25519-extra/@v/v0.0.0-20231005122941-2149dcafc266.mod) = 128
 SIZE (go_modules/gitlab.com/yawning/edwards25519-extra/@v/v0.0.0-20231005122941-2149dcafc266.zip) = 54165
-SIZE (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20251015130924-2828941a9a48.mod) = 380
-SIZE (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20251015130924-2828941a9a48.zip) = 989542
+SIZE (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20260114141111-0f042ad603ef.mod) = 380
+SIZE (go_modules/gitlab.torproject.org/shelikhoo/utls-temporary/@v/v0.0.0-20260114141111-0f042ad603ef.zip) = 989545
 SIZE (go_modules/gitlab.torproject.org/tpo/anti-censorship/geoip/@v/v0.0.0-20210928150955-7ce4b3d98d01.mod) = 114
 SIZE (go_modules/gitlab.torproject.org/tpo/anti-censorship/geoip/@v/v0.0.0-20210928150955-7ce4b3d98d01.zip) = 22082
 SIZE (go_modules/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib/@v/v1.5.0.mod) = 87
@@ -769,4 +769,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (lyrebird-v0.0.0-20251209174042-451c02db6504.zip) = 177823
+SIZE (lyrebird-v0.0.0-20260115133752-0b10edbb61e0.zip) = 177864
