@@ -1,9 +1,9 @@
 COMMENT=	testing library for Python
 
-MODPY_DISTV=	0.12.2
+MODPY_DISTV =	0.13.0
 DISTNAME=	flexmock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+
 
 CATEGORIES=	devel
 
