@@ -12,9 +12,8 @@ MODGO_MODULES =	\
 	github.com/elliotchance/orderedmap/v3		 v3.1.0 \
 	github.com/godbus/dbus/v5			 v5.0.4 \
 	github.com/golang/protobuf			 v1.5.0 \
-	github.com/google/go-cmp			 v0.6.0 \
+	github.com/google/go-cmp			 v0.7.0 \
 	github.com/google/uuid				 v1.6.0 \
-	github.com/gorilla/websocket			 v1.5.0 \
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/pty				 v1.1.1 \
 	github.com/kr/text				 v0.2.0 \
@@ -38,34 +37,33 @@ MODGO_MODULES =	\
 	github.com/tidwall/sjson			 v1.2.5 \
 	github.com/vektah/gqlparser/v2			 v2.5.27 \
 	github.com/yuin/goldmark			 v1.7.13 \
-	go.mau.fi/libsignal				 v0.2.0 \
-	go.mau.fi/util					 v0.9.1 \
+	go.mau.fi/libsignal				 v0.2.1 \
+	go.mau.fi/util					 v0.9.3 \
 	go.mau.fi/webp					 v0.2.0 \
-	go.mau.fi/whatsmeow				 v0.0.0-20250916115455-914d640cc83c \
+	go.mau.fi/whatsmeow				 v0.0.0-20251116104239-3aca43070cd4 \
 	go.mau.fi/zeroconfig				 v0.2.0 \
-	golang.org/x/crypto				 v0.42.0 \
-	golang.org/x/exp				 v0.0.0-20250911091902-df9299821621 \
-	golang.org/x/image				 v0.31.0 \
-	golang.org/x/mod				 v0.28.0 \
-	golang.org/x/net				 v0.44.0 \
-	golang.org/x/sync				 v0.17.0 \
-	golang.org/x/sys				 v0.36.0 \
-	golang.org/x/term				 v0.35.0 \
-	golang.org/x/text				 v0.29.0 \
-	golang.org/x/tools				 v0.37.0 \
+	golang.org/x/crypto				 v0.44.0 \
+	golang.org/x/exp				 v0.0.0-20251113190631-e25ba8c21ef6 \
+	golang.org/x/image				 v0.33.0 \
+	golang.org/x/mod				 v0.30.0 \
+	golang.org/x/net				 v0.47.0 \
+	golang.org/x/sync				 v0.18.0 \
+	golang.org/x/sys				 v0.38.0 \
+	golang.org/x/term				 v0.37.0 \
+	golang.org/x/text				 v0.31.0 \
+	golang.org/x/tools				 v0.39.0 \
 	golang.org/x/tools/go/expect			 v0.1.1-deprecated \
 	golang.org/x/tools/go/packages/packagestest	 v0.1.1-deprecated \
-	golang.org/x/xerrors				 v0.0.0-20191204190536-9bdfabe68543 \
-	google.golang.org/protobuf			 v1.36.9 \
+	google.golang.org/protobuf			 v1.36.10 \
 	gopkg.in/check.v1				 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/natefinch/lumberjack.v2		 v2.2.1 \
 	gopkg.in/yaml.v3				 v3.0.1 \
 	maunium.net/go/mauflag				 v1.0.0 \
-	maunium.net/go/mautrix				 v0.25.1
+	maunium.net/go/mautrix				 v0.26.0
 
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
-	github.com/google/go-cmp	 v0.5.5 \
+	github.com/google/go-cmp	 v0.6.0 \
 	github.com/kr/pretty		 v0.2.1 \
 	github.com/kr/text		 v0.1.0 \
 	github.com/mattn/go-colorable	 v0.1.13 \
@@ -76,16 +74,15 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify	 v1.7.1 \
 	github.com/tidwall/gjson	 v1.14.2 \
 	github.com/tidwall/pretty	 v1.2.0 \
-	golang.org/x/crypto		 v0.38.0 \
+	golang.org/x/crypto		 v0.42.0 \
 	golang.org/x/image		 v0.23.0 \
-	golang.org/x/mod		 v0.27.0 \
-	golang.org/x/net		 v0.43.0 \
+	golang.org/x/mod		 v0.29.0 \
+	golang.org/x/net		 v0.46.0 \
 	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys		 v0.12.0 \
 	golang.org/x/sys		 v0.29.0 \
 	golang.org/x/sys		 v0.6.0 \
-	golang.org/x/tools		 v0.36.0 \
-	google.golang.org/protobuf	 v1.36.6 \
+	golang.org/x/tools		 v0.38.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
 
