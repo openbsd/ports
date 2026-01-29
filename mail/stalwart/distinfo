@@ -195,7 +195,7 @@ SHA256 (cargo/event-listener-strategy-0.5.4.tar.gz) = i+nz36r/2uKXKIAHmkkaGou3y+
 SHA256 (cargo/fallible-iterator-0.2.0.tar.gz) = REMXap8sFiaSvT01LXRe+UE+7FeCqA2P1vihrGkqB/c=
 SHA256 (cargo/fallible-iterator-0.3.0.tar.gz) = KszkoQ8S3C+xSiGFidTx9i7wEbLQzEs8sbuo6U2hRkk=
 SHA256 (cargo/fallible-streaming-iterator-0.1.9.tar.gz) = c2BJHOZ2o2v5uzxWwap5FlgYOlTSdEEg8nKFc42QRlo=
-SHA256 (cargo/fancy-regex-0.14.0.tar.gz) = biTLWpS8rh5UCLDv/KXNcXLqPFdVBJxfOvTNKDoWUpg=
+SHA256 (cargo/fancy-regex-0.17.0.tar.gz) = cs9GH4Zchiu33Fc/ZD3WoraEL3wwsHiCtWvRSMwnYbg=
 SHA256 (cargo/farmhash-1.1.5.tar.gz) = 81zpyPuYkcdc6tvDMHUpUaTjabUK8Qd1lVrrmvPu40s=
 SHA256 (cargo/fast-float-0.2.0.tar.gz) = lXZfZ7SxiGOWi0ob1btXb3MrKaSijHzYTAn6Pih18zw=
 SHA256 (cargo/fastbloom-0.14.0.tar.gz) = GMHduSMdhVTC1r30z6q/DFklFljGi2yVzVLdDFE6kSo=
@@ -622,7 +622,7 @@ SHA256 (cargo/sha3-0.10.8.tar.gz) = dYctJ4qPN++H+g3b2ngCYFyxg0RJeUmGLA1NyykeumA=
 SHA256 (cargo/sharded-slab-0.1.7.tar.gz) = 9AyjxGgjcT4NQglZLo1ugmqlfpKPCXUmGfxpbEmWN/Y=
 SHA256 (cargo/shellexpand-3.1.1.tar.gz) = ix/fZd1jMYMUlN1hazA1HDjpbkWSGid0XPmEkEWLkLs=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
-SHA256 (cargo/sieve-rs-0.7.0.tar.gz) = mtpRbq1q30+RXmn8sSNkC88jqbKfxLU3FFSH6Rr3pZQ=
+SHA256 (cargo/sieve-rs-0.7.1.tar.gz) = N7rr56Iq9z+IHBhWxiBoBET26plIKnc0oT9/xXDRcCg=
 SHA256 (cargo/signal-hook-registry-1.4.7.tar.gz) = dmSgmLjmFr38wtwOmsROsjHu30HbTp/pXY0y7HKN7a0=
 SHA256 (cargo/signatory-0.27.1.tar.gz) = weMD+CBXFAdPYGh3Pw4pUn4EU5N/6DfJcX0GZjW2XzE=
 SHA256 (cargo/signature-2.2.0.tar.gz) = d1STmVUt5FqJilgMG0HURb9zDfhnzETmwCM7vEuDKd4=
@@ -1056,7 +1056,7 @@ SIZE (cargo/event-listener-strategy-0.5.4.tar.gz) = 16179
 SIZE (cargo/fallible-iterator-0.2.0.tar.gz) = 18509
 SIZE (cargo/fallible-iterator-0.3.0.tar.gz) = 19639
 SIZE (cargo/fallible-streaming-iterator-0.1.9.tar.gz) = 9249
-SIZE (cargo/fancy-regex-0.14.0.tar.gz) = 86969
+SIZE (cargo/fancy-regex-0.17.0.tar.gz) = 109054
 SIZE (cargo/farmhash-1.1.5.tar.gz) = 1822795
 SIZE (cargo/fast-float-0.2.0.tar.gz) = 41609
 SIZE (cargo/fastbloom-0.14.0.tar.gz) = 23827
@@ -1483,7 +1483,7 @@ SIZE (cargo/sha3-0.10.8.tar.gz) = 858216
 SIZE (cargo/sharded-slab-0.1.7.tar.gz) = 58227
 SIZE (cargo/shellexpand-3.1.1.tar.gz) = 25904
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
-SIZE (cargo/sieve-rs-0.7.0.tar.gz) = 218139
+SIZE (cargo/sieve-rs-0.7.1.tar.gz) = 218738
 SIZE (cargo/signal-hook-registry-1.4.7.tar.gz) = 19491
 SIZE (cargo/signatory-0.27.1.tar.gz) = 126464
 SIZE (cargo/signature-2.2.0.tar.gz) = 15531

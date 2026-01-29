@@ -12,6 +12,8 @@ PERMIT_PACKAGE =	Yes
 GH_TAGNAME =		v0.15.4
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
+REVISION =		0
+
 HOMEPAGE =	https://stalw.art/
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
@@ -23,6 +25,11 @@ SEPARATE_BUILD =	Yes
 DPB_PROPERTIES =	parallel
 
 .include "crates.inc"
+
+# XXX - remove on next update.
+# keep sieve-rs >= 0.7.1 and its dep fancy-regex >= 0.17.0 for Rust 1.93
+# https://github.com/stalwartlabs/sieve/issues/14
+MODCARGO_CRATES_UPDATE = sieve-rs fancy-regex
 
 # otherwise blows because rocksdb wants to statically links against libz ?
 MODCARGO_CRATES_KEEP +=	libz-sys
