@@ -3,6 +3,7 @@ COMMENT-extras =	Xfce desktop meta-package (full installation)
 
 V =		4.20.0
 PKGNAME=	xfce-${V}
+REVISION-main =	0
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
@@ -20,7 +21,7 @@ RUN_DEPENDS-main += \
 		x11/xfce4/xfce4-settings \
 		x11/xfce4/xfconf \
 		x11/xfce4/xfdesktop \
-		x11/xfce4/xfwm4
+		xfwm4-*|labwc-*:x11/xfce4/xfwm4
 
 # theme packages
 RUN_DEPENDS-main += \
