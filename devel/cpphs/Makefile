@@ -1,9 +1,7 @@
 COMMENT =	liberalised reimplementation of cpp in Haskell
 
 MODCABAL_STEM =		cpphs
-MODCABAL_VERSION	= 1.20.9.1
-MODCABAL_REVISION	= 1
-REVISION =		3
+MODCABAL_VERSION =	1.20.10
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 

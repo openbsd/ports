@@ -1,1 +1,2 @@
-MODCABAL_MANIFEST =	polyparse	1.13	9
+MODCABAL_MANIFEST	= \
+	polyparse	1.13.1	0
