@@ -1,7 +1,7 @@
 COMMENT=		parser generator for Haskell
 
 MODCABAL_STEM=		happy
-MODCABAL_VERSION=	2.1.7
+MODCABAL_VERSION =	2.2
 MODCABAL_DATA_DIR=	data  # unused
 
 CATEGORIES=		devel
