@@ -1,22 +1,12 @@
 COMMENT=		terminal/X11 MPD client
 
 V=			2.1.1
-V.liberty=		969a4cfc3ea1c4d7c0327907385fc64906ed5d4c
-V.termo=		2518b53e5ae4579bf84ed58fa7a62806f64e861c
-
 DISTNAME=		nncmpp-${V}
-DISTFILES=		nncmpp-1-{v}${V}${EXTRACT_SUFX}
-
+EXTRACT_SUFX=		.tar.zst
 CATEGORIES=		audio
 
 HOMEPAGE=		https://git.janouch.name/p/nncmpp
-SITES=			${HOMEPAGE}/archive/
-
-DISTFILES.liberty=	liberty-1-{}${V.liberty}.tar.gz
-SITES.liberty=		https://git.janouch.name/p/liberty/archive/
-
-DISTFILES.termo=	termo-1-{}${V.termo}.tar.gz
-SITES.termo=		https://git.janouch.name/p/termo/archive/
+SITES=			https://git.janouch.name/p/nncmpp/releases/download/v$V/
 
 # ISC
 PERMIT_PACKAGE=		Yes
@@ -40,10 +30,5 @@ LIB_DEPENDS =		converters/libunistring \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
-
-WRKDIST=		${WRKDIR}/nncmpp
-
-post-extract:
-	cd ${WRKSRC} && mv -f ../liberty ./ && mv -f ../termo ./
 
 .include <bsd.port.mk>
