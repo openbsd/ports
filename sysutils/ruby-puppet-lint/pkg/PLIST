@@ -94,6 +94,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_block.p
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_line.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/issue_254_overwriting_yaml/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/issue_254_overwriting_yaml/class_with_dash.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/issue_254_overwriting_yaml/class_with_dash.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/mismatched_control_comment.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/parseable.yaml
