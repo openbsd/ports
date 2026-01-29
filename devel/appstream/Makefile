@@ -9,17 +9,15 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt6 interface for AppStream
 
-V=			1.1.1
+V=			1.1.2
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
-REVISION-main=		1
-REVISION-qt6=		1
 
-SHARED_LIBS += appstream                 1.2 # 1.1.1
-SHARED_LIBS += appstream-compose         1.1 # 1.1.1
-SHARED_LIBS += AppStreamQt               1.1 # 1.1.1
+SHARED_LIBS += appstream                 1.2 # 1.1.2
+SHARED_LIBS += appstream-compose         1.1 # 1.1.2
+SHARED_LIBS += AppStreamQt               1.1 # 1.1.2
 
 CATEGORIES=		devel
 
@@ -48,6 +46,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
 			devel/gperf \
 			lang/vala \
+			shells/bash-completion \
 			textproc/gi-docgen \
 			textproc/gtk-doc \
 			textproc/itstool

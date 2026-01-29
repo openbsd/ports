@@ -63,6 +63,7 @@ lib/pkgconfig/appstream.pc
 @man man/man1/appstreamcli.1
 share/appstream/
 share/appstream/appstream.conf
+share/bash-completion/completions/appstreamcli
 share/doc/appstream/
 share/doc/appstream/html/
 share/doc/appstream/html/api/
@@ -1272,6 +1273,9 @@ share/locale/it/LC_MESSAGES/appstream.mo
 share/locale/ja/LC_MESSAGES/appstream.mo
 share/locale/ka/LC_MESSAGES/appstream.mo
 share/locale/ko/LC_MESSAGES/appstream.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/appstream.mo
 share/locale/lt/LC_MESSAGES/appstream.mo
 share/locale/nb/LC_MESSAGES/appstream.mo
 share/locale/nl/LC_MESSAGES/appstream.mo
