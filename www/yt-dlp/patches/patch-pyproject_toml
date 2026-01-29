@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -135,7 +135,7 @@ exclude = [
+@@ -141,7 +141,7 @@ exclude = [
  "completions/zsh/_yt-dlp" = "share/zsh/site-functions/_yt-dlp"
  "completions/fish/yt-dlp.fish" = "share/fish/vendor_completions.d/yt-dlp.fish"
  "README.txt" = "share/doc/yt_dlp/README.txt"
