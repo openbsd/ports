@@ -1,13 +1,13 @@
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	telephony
-SITES=		${HOMEPAGE}downloads/spandsp/
+SITES=		https://www.soft-switch.org/downloads/spandsp/
 
 SHARED_LIBS=	spandsp	7.0
 
-HOMEPAGE=	http://www.soft-switch.org/
+HOMEPAGE=	https://www.soft-switch.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
