@@ -1,6 +1,6 @@
 COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 
-MODPY_DISTV =	2025.10.4
+MODPY_DISTV =	2026.1.28
 DISTNAME=	tifffile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,6 +17,7 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS=	math/py-numpy
 FIX_CRLF_FILES=	tests/test_tifffile.py
+MODPY_PYTEST_ARGS=	-v -m 'not SKIP_LARGE'
 
 pre-test:
 	# avoids creating large files in /tmp
