@@ -28,7 +28,8 @@ EXTRACT_SUFX =		.tar.bz2
 # C++2b
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake \
+			lang/python
 
 BUILD_DEPENDS =		devel/utfcpp
 LIB_DEPENDS =		textproc/icu4c \
