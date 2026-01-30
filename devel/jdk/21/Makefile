@@ -12,6 +12,7 @@ PACKAGE_VER=	${BASE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-21
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -23,10 +24,10 @@ CATEGORIES=	devel/jdk java
 PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
-HOMEPAGE=	http://openjdk.java.net/
+HOMEPAGE=	https://openjdk.java.net/
 
 SITES=		https://github.com/battleblow/jdk21u/archive/
-SITES.boot=	http://www.intricatesoftware.com/distfiles/ \
+SITES.boot=	https://www.intricatesoftware.com/distfiles/ \
 		https://spacehopper.org/mirrors/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>

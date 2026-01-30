@@ -1,0 +1,15 @@
+Use restartable closefrom(2)
+
+Index: src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c
+--- src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c.orig
++++ src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c
+@@ -67,6 +67,9 @@ closeDescriptors(void)
+ {
+ #if defined(__FreeBSD__)
+     closefrom(STDERR_FILENO + 1);
++#elif defined(_BSDONLY_SOURCE)
++    int err;
++    RESTARTABLE(closefrom(STDERR_FILENO + 1), err);
+ #else
+     DIR *dp;
+     struct dirent *dirp;
