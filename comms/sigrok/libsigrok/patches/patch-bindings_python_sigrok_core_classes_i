@@ -1,11 +1,26 @@
-Fix build with Python 3.13:
+Function signature changed in SWIG 4.4:
+https://github.com/sigrokproject/libsigrok/pull/280
 
+Fix build with Python 3.13:
 https://github.com/sigrokproject/libsigrok/commit/5bc8174531df86991ba8aa6d12942923925d9e72
+
 
 Index: bindings/python/sigrok/core/classes.i
 --- bindings/python/sigrok/core/classes.i.orig
 +++ bindings/python/sigrok/core/classes.i
-@@ -131,7 +131,7 @@ typedef guint pyg_flags_type;
+@@ -85,7 +85,11 @@ typedef guint pyg_flags_type;
+     if (!GLib) {
+         fprintf(stderr, "Import of gi.repository.GLib failed.\n");
+ #if PY_VERSION_HEX >= 0x03000000
++  #if (SWIG_VERSION < 0x040400)
+         return nullptr;
++  #else
++        return 0;
++  #endif
+ #else
+         return;
+ #endif
+@@ -131,7 +135,7 @@ typedef guint pyg_flags_type;
  
          auto arglist = Py_BuildValue("(OO)", log_obj, string_obj);
  
@@ -14,7 +29,7 @@ Index: bindings/python/sigrok/core/classes.i
  
          Py_XDECREF(arglist);
          Py_XDECREF(log_obj);
-@@ -174,7 +174,7 @@ typedef guint pyg_flags_type;
+@@ -174,7 +178,7 @@ typedef guint pyg_flags_type;
      $1 = [=] () {
          const auto gstate = PyGILState_Ensure();
  
@@ -23,7 +38,7 @@ Index: bindings/python/sigrok/core/classes.i
          const bool completed = !PyErr_Occurred();
          const bool valid_result = (completed && result == Py_None);
  
-@@ -218,7 +218,7 @@ typedef guint pyg_flags_type;
+@@ -218,7 +222,7 @@ typedef guint pyg_flags_type;
  
          auto arglist = Py_BuildValue("(OO)", device_obj, packet_obj);
  
