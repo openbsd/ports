@@ -1,7 +1,8 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-DISTNAME=	Net-RDAP-0.40
+DISTNAME=	Net-RDAP-0.41
+CPAN_AUTHOR=	GBROWN
 CATEGORIES=	net
 PKG_ARCH=	*
 
