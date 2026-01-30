@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -395,10 +395,6 @@ endif()
+@@ -412,10 +412,6 @@ endif()
  
  # handle rpath correctly
  if( VVENC_ENABLE_INSTALL )
