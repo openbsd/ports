@@ -1,6 +1,6 @@
 COMMENT =		asyncio bridge to the standard sqlite3 module
 
-MODPY_DISTV =		0.22.0
+MODPY_DISTV =		0.22.1
 DISTNAME =		aiosqlite-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
