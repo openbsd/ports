@@ -10,7 +10,7 @@ PORTROACH =		limit:^3\.12
 
 # XXX keep REVISION-main above 7.8-stable and do not sync the
 # XXX @conflict or @pkgpath for glade
-REVISION-main =		0
+REVISION-main =		1
 
 AUTOCONF_VERSION =	2.71
 
