@@ -19,10 +19,14 @@ lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}escape_sequence
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}escape_sequences.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}grapheme.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}grapheme.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}sgr_state.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}sgr_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_ambiguous.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_ambiguous.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_grapheme.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_grapheme.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_mc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_mc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_vs16.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_vs16.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wcwidth/${MODPY_PYCACHE}table_wide.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,8 +44,10 @@ lib/python${MODPY_VERSION}/site-packages/wcwidth/control_codes.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/escape_sequences.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/grapheme.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/py.typed
+lib/python${MODPY_VERSION}/site-packages/wcwidth/sgr_state.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_ambiguous.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_grapheme.py
+lib/python${MODPY_VERSION}/site-packages/wcwidth/table_mc.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_vs16.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_wide.py
 lib/python${MODPY_VERSION}/site-packages/wcwidth/table_zero.py
