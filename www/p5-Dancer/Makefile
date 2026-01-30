@@ -2,11 +2,13 @@ COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-1.3521
+DISTNAME =	Dancer-1.3522
 CATEGORIES =	www
 
 # perl
 PERMIT_PACKAGE =	Yes
+
+CPAN_AUTHOR =	BIGPRESH
 
 RUN_DEPENDS =	devel/p5-Hash-Merge-Simple \
 		devel/p5-Module-Runtime \
