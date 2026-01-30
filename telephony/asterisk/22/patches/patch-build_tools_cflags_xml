@@ -1,7 +1,7 @@
 Index: build_tools/cflags.xml
 --- build_tools/cflags.xml.orig
 +++ build_tools/cflags.xml
-@@ -125,7 +125,7 @@
+@@ -127,7 +127,7 @@
  		</member>
  		<member name="BUILD_NATIVE" displayname="Allow compiler to generate code optimized for the CPU on which the build is performed.">
  			<support_level>core</support_level>

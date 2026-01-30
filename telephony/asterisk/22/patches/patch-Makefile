@@ -4,7 +4,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -144,7 +144,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+@@ -148,7 +148,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -13,7 +13,7 @@ Index: Makefile
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -237,7 +237,7 @@ ifeq ($(OSARCH),NetBSD)
+@@ -241,7 +241,7 @@ ifeq ($(OSARCH),NetBSD)
  endif
  
  ifeq ($(OSARCH),OpenBSD)

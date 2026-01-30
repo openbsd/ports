@@ -1,7 +1,7 @@
 Index: Makefile.rules
 --- Makefile.rules.orig
 +++ Makefile.rules
-@@ -213,10 +213,10 @@ endif
+@@ -217,10 +217,10 @@ endif
  # extern const size_t _binary_abc_def_xml_size;
  %.o: %.xml
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
