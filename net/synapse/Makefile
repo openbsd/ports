@@ -19,13 +19,7 @@ MODULES =	lang/python
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
 MODPY_PYBUILD =	maturin
-
-MODCARGO_BUILD =	No
-MODCARGO_INSTALL =	No
-MODCARGO_TEST =		No
 MODCARGO_CARGOTOML =	${WRKSRC}/rust/Cargo.toml
-
-MAKE_ENV +=		${MODCARGO_ENV}
 
 BUILD_DEPENDS += devel/py-setuptools-rust>=1.3.0
 
@@ -70,16 +64,12 @@ RUN_DEPENDS +=	textproc/py-lxml
 RUN_DEPENDS +=	www/py-requests \
 		devel/py-parsing
 
-
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-mock \
 		devel/py-parameterized \
 		devel/py-parsing \
 		devel/py-pyrsistent \
 		www/py-jwt
-
-do-configure:
-	@${MODCARGO_configure}
 
 # remove source synapse directory so tests use the installed package from fake
 pre-test:
