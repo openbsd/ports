@@ -167,7 +167,6 @@
      SUBDIR += py-alembic
      SUBDIR += py-apsw
      SUBDIR += py-borgstore
-     SUBDIR += py-bsddb3
      SUBDIR += py-carbon
      SUBDIR += py-flask-migrate
      SUBDIR += py-flask-sqlalchemy

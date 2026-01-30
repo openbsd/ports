@@ -8,7 +8,7 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
-REVISION-main=	12
+REVISION-main=	13
 REVISION-mapi=	9
 
 CATEGORIES=	mail www productivity
@@ -68,7 +68,6 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
-		databases/py-bsddb3 \
 		devel/py-dateutil \
 		devel/py-magic \
 		devel/py-tzlocal \
