@@ -426,6 +426,7 @@
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-HTTP
      SUBDIR += p5-Net-ICal
+     SUBDIR += p5-Net-IDN-PP
      SUBDIR += p5-Net-IMP
      SUBDIR += p5-Net-IMP-HTTP
      SUBDIR += p5-Net-INET6Glue
