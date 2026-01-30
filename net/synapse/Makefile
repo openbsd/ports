@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_DISTV =	1.144.0
+MODPY_DISTV =	1.146.0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -14,16 +14,16 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes
 
-MODULES =	devel/cargo \
-		lang/python
+MODULES =	lang/python
 
 WANTLIB +=	${MODCARGO_WANTLIB} m
 
-MODPY_PYBUILD =	poetry-core
+MODPY_PYBUILD =	maturin
 
 MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_TEST =		No
+MODCARGO_CARGOTOML =	${WRKSRC}/rust/Cargo.toml
 
 MAKE_ENV +=		${MODCARGO_ENV}
 
@@ -67,20 +67,23 @@ RUN_DEPENDS +=	devel/py-setuptools
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml
 # not listed but used in some scripts/ files
-RUN_DEPENDS +=	www/py-requests
+RUN_DEPENDS +=	www/py-requests \
+		devel/py-parsing
+
 
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-mock \
 		devel/py-parameterized \
+		devel/py-parsing \
+		devel/py-pyrsistent \
 		www/py-jwt
 
 do-configure:
 	@${MODCARGO_configure}
 
-# this symlink makes sure that the rust library is found, since by default the source is used to run the tests
-# another option would be to rm -Rf ${WRKSRC}/synapse/ to make sure the one under build/ is used
+# remove source synapse directory so tests use the installed package from fake
 pre-test:
-	ln -sf ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/synapse/synapse_rust.abi3.so ${WRKSRC}/synapse/
+	rm -rf ${WRKSRC}/synapse
 
 do-test:
 	cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} -m twisted.trial tests
