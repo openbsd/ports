@@ -7,6 +7,9 @@ share/postgresql/extension/plr--8.4.3--8.4.4.sql
 share/postgresql/extension/plr--8.4.4--8.4.5.sql
 share/postgresql/extension/plr--8.4.5--8.4.6.sql
 share/postgresql/extension/plr--8.4.6--8.4.7.sql
-share/postgresql/extension/plr--8.4.7.sql
-share/postgresql/extension/plr--unpackaged--8.4.7.sql
+share/postgresql/extension/plr--8.4.7--8.4.8.sql
+share/postgresql/extension/plr--8.4.8--8.4.8.1.sql
+share/postgresql/extension/plr--8.4.8.1--8.4.8.2.sql
+share/postgresql/extension/plr--8.4.8.2.sql
+share/postgresql/extension/plr--unpackaged--8.4.8.2.sql
 share/postgresql/extension/plr.control
