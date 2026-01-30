@@ -1,7 +1,12 @@
+Apply unmerged pull request from upstream:
+    
+8286562: GCC 12 reports some compiler warnings
+https://github.com/openjdk/jdk11u-dev/pull/3091
+
 Index: src/java.desktop/share/classes/sun/print/PSPrinterJob.java
 --- src/java.desktop/share/classes/sun/print/PSPrinterJob.java.orig
 +++ src/java.desktop/share/classes/sun/print/PSPrinterJob.java
-@@ -1620,7 +1620,7 @@ public class PSPrinterJob extends RasterPrinterJob {
+@@ -1621,7 +1621,7 @@ public class PSPrinterJob extends RasterPrinterJob {
  
          String osname = System.getProperty("os.name");
          if (osname.equals("Linux") || osname.contains("OS X") || osname.endsWith("BSD")) {

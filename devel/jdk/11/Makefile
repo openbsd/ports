@@ -4,19 +4,18 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.29
-PATCH_VER=	7
+BASE_VER=	11.0.30
+BUILD_VER=	7
 BSD_PORT_REL=	1
-VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
-PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
+VERSION_STR=	${BASE_VER}+${BUILD_VER}-${BSD_PORT_REL}
+PACKAGE_VER=	${BASE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
-REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
-WRKDIST=	${WRKDIR}/jdk11u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
+WRKDIST=	${WRKDIR}/jdk11u-jdk-${BASE_VER}-${BUILD_VER}-${BSD_PORT_REL}
 BOOTJDK_DATE=	20251101
 
 CATEGORIES=	devel/jdk java
@@ -24,10 +23,10 @@ CATEGORIES=	devel/jdk java
 PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
-HOMEPAGE=	http://openjdk.java.net/
+HOMEPAGE=	https://openjdk.java.net/
 
 SITES=		https://github.com/battleblow/jdk11u/archive/
-SITES.boot=	http://www.intricatesoftware.com/distfiles/ \
+SITES.boot=	https://www.intricatesoftware.com/distfiles/ \
 		https://spacehopper.org/mirrors/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>

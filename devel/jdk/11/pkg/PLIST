@@ -2,6 +2,7 @@
 @option is-branch
 @conflict jdk->=11v0,<12v0
 @pkgpath devel/jdk/11
+@pkgpath devel/jdk/1.8
 jdk-11/
 jdk-11/bin/
 @bin jdk-11/bin/jar

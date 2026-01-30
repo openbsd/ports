@@ -1,0 +1,18 @@
+Apply unmerged pull request from upstream:
+    
+8286562: GCC 12 reports some compiler warnings
+https://github.com/openjdk/jdk11u-dev/pull/3091
+
+Index: make/lib/Awt2dLibraries.gmk
+--- make/lib/Awt2dLibraries.gmk.orig
++++ make/lib/Awt2dLibraries.gmk
+@@ -578,7 +578,8 @@ else
+   # noexcept-type required for GCC 7 builds. Not required for GCC 8+.
+   # expansion-to-defined required for GCC 9 builds. Not required for GCC 10+.
+   HARFBUZZ_DISABLED_WARNINGS_CXX_gcc := reorder delete-non-virtual-dtor strict-overflow \
+-       maybe-uninitialized class-memaccess unused-result extra noexcept-type expansion-to-defined
++       maybe-uninitialized class-memaccess unused-result extra use-after-free noexcept-type \
++       expansion-to-defined
+   HARFBUZZ_DISABLED_WARNINGS_clang := unused-value incompatible-pointer-types \
+        tautological-constant-out-of-range-compare int-to-pointer-cast \
+        undef missing-field-initializers deprecated-declarations c++11-narrowing range-loop-analysis

@@ -1,0 +1,41 @@
+Use restartable closefrom(2)
+
+Index: src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c
+--- src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c.orig
++++ src/jdk.jdwp.agent/unix/native/libjdwp/exec_md.c
+@@ -38,6 +38,12 @@
+   #define FORK() fork1()
+ #endif
+ 
++#define RESTARTABLE(_cmd, _result) do { \
++  do { \
++    _result = _cmd; \
++  } while((_result == -1) && (errno == EINTR)); \
++} while(0)
++
+ static char *skipWhitespace(char *p) {
+     while ((*p != '\0') && isspace(*p)) {
+         p++;
+@@ -102,6 +108,14 @@ dbgsysExec(char *cmdLine)
+ 
+     if ((pid = FORK()) == 0) {
+         /* Child process */
++#if defined(_BSDONLY_SOURCE)
++#if defined(__FreeBSD__)
++     closefrom(STDERR_FILENO + 1);
++#else
++    int err;
++    RESTARTABLE(closefrom(STDERR_FILENO + 1), err);
++#endif
++#else // _BSDONLY_SOURCE
+         int i;
+         long max_fd;
+ 
+@@ -111,6 +125,7 @@ dbgsysExec(char *cmdLine)
+         for (i = 3; i < (int)max_fd; i++) {
+             (void)close(i);
+         }
++#endif
+ 
+         (void)execvp(argv[0], argv);
+ 
