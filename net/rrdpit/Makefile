@@ -5,7 +5,7 @@ COMMENT =		produce RRDP notification, snapshot and delta files
 
 GH_ACCOUNT =		NLNetLabs
 GH_PROJECT =		rrdpit
-GH_TAGNAME =		v0.1.1
+GH_TAGNAME =		v0.1.2
 
 CATEGORIES =		net
 
