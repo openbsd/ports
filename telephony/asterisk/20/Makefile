@@ -1,4 +1,4 @@
-VER=		20.18.0
+VER=		20.18.1
 
 # keep above 7.8-stable
 REVISION-main=	0
