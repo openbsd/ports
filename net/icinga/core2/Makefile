@@ -2,8 +2,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.15.1
-REVISION-main =	0
+V =		2.15.2
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -14,25 +13,8 @@ DPB_PROPERTIES =parallel
 
 EPOCH =		0
 
-SHARED_LIBS +=	base                      0.0 # 2.6
-SHARED_LIBS +=	checker                   0.0 # 2.6
-SHARED_LIBS +=	cli                       0.0 # 2.6
-SHARED_LIBS +=	compat                    0.0 # 2.6
-SHARED_LIBS +=	config                    0.0 # 2.6
-SHARED_LIBS +=	db_ido                    0.0 # 2.6
-SHARED_LIBS +=	db_ido_mysql              0.0 # 2.6
-SHARED_LIBS +=	db_ido_pgsql              0.0 # 2.6
-SHARED_LIBS +=	execvpe                   0.0 # 2.6
-SHARED_LIBS +=	icinga                    0.0 # 2.6
-SHARED_LIBS +=	livestatus                0.0 # 2.6
-SHARED_LIBS +=	methods                   0.0 # 2.6
-SHARED_LIBS +=	mmatch                    0.0 # 2.6
-SHARED_LIBS +=	mysql_shim                0.0 # 2.9
-SHARED_LIBS +=	notification              0.0 # 2.6
-SHARED_LIBS +=	perfdata                  0.0 # 2.6
-SHARED_LIBS +=	pgsql_shim                0.0 # 2.9
-SHARED_LIBS +=	remote                    0.0 # 2.6
-SHARED_LIBS +=	socketpair                0.0 # 2.6
+SHARED_LIBS +=	mysql_shim                0.0
+SHARED_LIBS +=	pgsql_shim                0.0
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE =	Yes
