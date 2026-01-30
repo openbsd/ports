@@ -1,0 +1,4 @@
+${P5SITE}/Net/
+${P5SITE}/Net/IDN/
+${P5SITE}/Net/IDN/PP.pm
+@man man/man3p/Net::IDN::PP.3p
