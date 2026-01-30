@@ -7,9 +7,9 @@ Index: CMakeLists.txt
  endif()
 +cmake_policy(SET CMP0167 OLD)
  
- #=======================================================================================================================
- #================================================ Other preliminaries =================================================
-@@ -339,7 +340,7 @@ if(WIN32)
+ # find_package() uses upper-case <PACKAGENAME>_ROOT variables
+ cmake_policy(SET CMP0144 NEW)
+@@ -342,7 +343,7 @@ if(WIN32)
  #   set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
  endif()
  
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
     # As explained at https://stackoverflow.com/questions/5582211/what-does-define-gnu-source-imply, defining _GNU_SOURCE
     # gives access to various non-standard GNU/Linux extension functions and changes the behaviour of some POSIX
     # functions.
-@@ -707,9 +708,9 @@ message(STATUS "Using Qt version " ${Qt6Core_VERSION})
+@@ -710,9 +711,9 @@ message(STATUS "Using Qt version " ${Qt6Core_VERSION})
  set(Boost_USE_STATIC_LIBS ON)
  if(WIN32)
     find_package(Boost 1.79.0 REQUIRED)
