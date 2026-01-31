@@ -1,7 +1,9 @@
 # for uuid generation?
 /dev/urandom r
-/dev/video rw
 /dev/video0 rw
+/dev/video1 rw
+/dev/video2 rw
+/dev/video3 rw
 /dev/fido rw
 # for webgl info in about:support
 /dev/dri rw
@@ -24,6 +26,9 @@
 /usr/X11R6/lib r
 /usr/X11R6/share r
 /var/run r
+
+# security devices, e.g. OpenSC's PKCS #11 module, may talk to this socket
+/var/run/pcscd/pcscd.comm rw
 
 # printing
 /usr/bin/lpr rx
@@ -55,6 +60,7 @@
 # given variable if it exists in the environment, otherwise defaulting to
 # ~/.cache, ~/.config, and ~/.local/share
 $XDG_RUNTIME_DIR/dconf rwc
+$XDG_CACHE_HOME/at-spi rw
 $XDG_CACHE_HOME/thumbnails rwc
 $XDG_CACHE_HOME/gvfsd r
 $XDG_CACHE_HOME/dconf rwc
