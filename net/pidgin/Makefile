@@ -4,6 +4,7 @@ COMMENT-libpurple= multi-protocol instant messaging library
 COMMENT-bonjour= Bonjour protocol support for libpurple
 
 VERSION=	2.14.14
+REVISION=	1
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -16,10 +17,6 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-bonjour=0
-REVISION-finch=	0
-REVISION-libpurple=0
-REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \

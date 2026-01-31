@@ -5,6 +5,7 @@ COMMENT=	libre SCP firmware for Allwinner sunxi SoCs
 GH_ACCOUNT=	crust-firmware
 GH_PROJECT=	crust
 GH_TAGNAME=	v0.6
+REVISION=	0
 
 CATEGORIES=	sysutils
 

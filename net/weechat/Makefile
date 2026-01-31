@@ -5,6 +5,7 @@ COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
 V=		4.8.1
+REVISION-main=	0
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}

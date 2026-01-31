@@ -1,6 +1,7 @@
 COMMENT=	GNU watch command
 
 DISTNAME=	procps-ng-4.0.5
+REVISION=	0
 PKGNAME=	${DISTNAME:S/procps-ng/gnuwatch/}
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	misc

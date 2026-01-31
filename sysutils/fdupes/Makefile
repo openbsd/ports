@@ -3,6 +3,7 @@ COMMENT=	identify or delete duplicate files
 V=		2.4.0
 DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/adrianlopezroche/fdupes
 SITES=		${HOMEPAGE}/releases/download/v$V/

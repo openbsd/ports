@@ -1,11 +1,13 @@
 COMMENT=	text-based calendar and scheduling application
 
 DISTNAME=	calcurse-4.8.2
-EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	productivity
 
 HOMEPAGE=	https://calcurse.org/
+
+EPOCH=		0
 
 # BSD
 PERMIT_PACKAGE=	Yes

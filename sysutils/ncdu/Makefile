@@ -4,6 +4,7 @@ COMMENT=		ncurses-based du(1)
 
 DISTNAME=		ncdu-1.22
 CATEGORIES=		sysutils
+REVISION=		0
 
 HOMEPAGE=		https://dev.yorhel.nl/ncdu/
 

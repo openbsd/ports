@@ -2,6 +2,7 @@ COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 
 V=			2.12.0
+REVISION-main=		0
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus

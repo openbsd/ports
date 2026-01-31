@@ -1,6 +1,7 @@
 COMMENT =	SDL multi protocol (gemini, gopher) navigator
-VERSION =	1.19.4
 
+VERSION =	1.19.4
+REVISION =	0
 DISTNAME =	lagrange-${VERSION}
 
 CATEGORIES =	net x11

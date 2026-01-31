@@ -3,7 +3,7 @@ COMMENT =	monitor GPU utilization for R600 and up
 GH_ACCOUNT =	clbr
 GH_PROJECT =	radeontop
 GH_TAGNAME =	v1.4
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	radeontop_xcb		0.0	# 1.3
 

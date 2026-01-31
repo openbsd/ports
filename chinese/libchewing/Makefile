@@ -1,6 +1,7 @@
 COMMENT =	intelligent phonetic input method library
 
 V =		0.7.0
+REVISION =	0
 DISTNAME =	libchewing-$V
 PKGNAME =	zh-libchewing-$V
 

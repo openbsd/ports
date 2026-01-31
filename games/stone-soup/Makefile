@@ -1,17 +1,17 @@
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
-COMMENT = 	dungeon crawl stone soup
+COMMENT =	dungeon crawl stone soup
 
-VERSION = 	0.32.0
+VERSION =	0.32.0
+REVISION=	2
 TAGNAME =	Gods and Makers
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	1
 
-CATEGORIES = 	games
+CATEGORIES =	games
 
-HOMEPAGE = 	https://crawl.develz.org/
+HOMEPAGE =	https://crawl.develz.org/
 
 MAINTAINER =	Stefan Moran <ssm@howdoesmycode.work>
 
@@ -24,16 +24,16 @@ SITES =		https://github.com/crawl/crawl/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 COMPILER =	base-clang ports-gcc
-MODULES = 	lang/python \
+MODULES =	lang/python \
 		lang/lua
 
-MODLUA_VERSION = 	5.1
+MODLUA_VERSION =	5.1
 
 BUILD_DEPENDS = graphics/pngcrush \
 		textproc/py-yaml
-LIB_DEPENDS = 	databases/sqlite3
+LIB_DEPENDS =	databases/sqlite3
 
-MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
+MAKE_FLAGS =	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		CXX="${CXX}" HOSTCXX="${CXX}" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		LUA_LIB=${MODLUA_LIB} \
@@ -45,30 +45,30 @@ MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		NO_YACC=1 V=1 \
 		SRC_VERSION=${VERSION} RECENT_TAG="${TAGNAME}"
 
-USE_GMAKE = 	Yes
+USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
 
-MODPY_RUN_DEPENDS = 	No
+MODPY_RUN_DEPENDS =	No
 MODPY_ADJ_FILES =	util/species-gen.py \
 			util/tag-35-upgrade.py
 
-FLAVORS = 	no_x11
+FLAVORS =	no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_x11}
-WANTLIB += 	curses pthread z
-MAKE_FLAGS += 	USE_UNICODE=y UNICODE_LOCALE=y
+WANTLIB +=	curses pthread z
+MAKE_FLAGS +=	USE_UNICODE=y UNICODE_LOCALE=y
 .else
 # This should be automatically set during "gmake -C rltiles..." but isn't...
 CFLAGS +=	-DUSE_TILE
 CXXFLAGS +=	-DUSE_TILE
 
-MAKE_FLAGS += 	TILES=y \
+MAKE_FLAGS +=	TILES=y \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
 		-lSDL2 -lSDL2_image -lpng -pthread"
-WANTLIB += 	GL GLU SDL2 SDL2_image freetype png pthread z
+WANTLIB +=	GL GLU SDL2 SDL2_image freetype png pthread z
 RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS += 	devel/sdl2 \
+LIB_DEPENDS +=	devel/sdl2 \
 		devel/sdl2-image \
 		databases/sqlite3 \
 		graphics/png
@@ -76,11 +76,11 @@ LIB_DEPENDS += 	devel/sdl2 \
 
 NO_TEST =	Yes
 
-CFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
-CXXFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
 
-WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
-WRKSRC = 	${WRKDIST}/source
+WRKDIST =	${WRKDIR}/stone_soup-${VERSION}
+WRKSRC =	${WRKDIST}/source
 
 post-install:
 	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss

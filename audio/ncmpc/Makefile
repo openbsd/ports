@@ -3,12 +3,14 @@ BROKEN-sparc64= SocketAddress.hxx:16:10: fatal error: span: No such file or dire
 COMMENT=		curses based frontend for mpd
 
 VER=			0.52
+REVISION=		0
 DISTNAME=		ncmpc-${VER}
-EPOCH=			0
 CATEGORIES=		audio
 
 MAINTAINER =		Landry Breuil <landry@openbsd.org>
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
+
+EPOCH=			0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

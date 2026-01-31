@@ -1,5 +1,6 @@
 COMMENT=	VI Editor Like Emacs
 DISTNAME=	vile-9.8y
+REVISION=	0
 CATEGORIES=	editors
 HOMEPAGE=	https://invisible-island.net/vile/
 

@@ -2,6 +2,7 @@ COMMENT =		ncurses BitTorrent client based on libTorrent
 
 DISTNAME =		rtorrent-0.15.7
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		https://rakshasa.github.io/rtorrent/
 

@@ -1,8 +1,8 @@
 COMMENT =		vi-like editor with sam-style structural regex support
-REVISION =		0
 
 DIST_TUPLE =		github martanne vis      v0.9	.
 DIST_TUPLE +=		github martanne vis-test v0.5	test
+REVISION =		1
 
 CATEGORIES =		editors
 

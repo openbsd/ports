@@ -8,7 +8,7 @@ DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
-REVISION-main =	1
+REVISION-main =	2
 REVISION-qt5 =	0
 REVISION-qt6 =	0
 
