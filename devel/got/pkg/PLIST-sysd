@@ -3,12 +3,12 @@
 @rcscript ${RCDIR}/gotsysd
 @bin libexec/gotsys-apply
 @bin libexec/gotsys-apply-conf
+@bin libexec/gotsys-apply-webconf
 @bin libexec/gotsys-check
 @bin libexec/gotsys-groupadd
 @bin libexec/gotsys-read-conf
 @bin libexec/gotsys-repo-create
 @bin libexec/gotsys-rmkeys
-@bin libexec/gotsys-sshdconfig
 @bin libexec/gotsys-useradd
 @bin libexec/gotsys-userhome
 @bin libexec/gotsys-userkeys

@@ -25,5 +25,7 @@ htdocs/gotwebd/safari-pinned-tab.svg
 htdocs/gotwebd/site.webmanifest
 @cwd ${LOCALBASE}
 @man man/man5/gotwebd.conf.5
+@man man/man8/gotwebctl.8
 @man man/man8/gotwebd.8
+@bin sbin/gotwebctl
 @bin sbin/gotwebd
