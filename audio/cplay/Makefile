@@ -1,5 +1,3 @@
-BROKEN=		'_curses.window' object has no attribute 'get_wch'
-
 COMMENT=	simple curses audio player
 
 MODPY_DISTV=	5.4.0
