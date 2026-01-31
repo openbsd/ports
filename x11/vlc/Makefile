@@ -2,7 +2,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
 V=		3.0.23
-REVISION-main=	1
+REVISION-main=	2
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -59,7 +59,7 @@ WANTLIB-main += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB-main += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB-main += absl_vlog_config_internal aom archive ass atk-1.0 atk-bridge-2.0
 WANTLIB-main += atspi avahi-client avahi-common avcodec avformat avutil
-WANTLIB-main += b2 bluray bz2 c cairo cairo-gobject cddb crypto dav1d
+WANTLIB-main += b2 bluray bz2 c cairo cairo-gobject cddb crypto curses dav1d
 WANTLIB-main += double-conversion drm drm_amdgpu dvbpsi dvdnav
 WANTLIB-main += dvdread ebml elf epoll-shim epoxy execinfo expat ffi
 WANTLIB-main += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
