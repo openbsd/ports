@@ -1,7 +1,7 @@
 COMMENT =	wayland login manager daemon
 
 DIST_TUPLE =	srht kennylevinsen greetd 0.10.3 .
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	wayland
 
@@ -30,7 +30,7 @@ post-install:
 	cp ${WRKSRC}/config.toml ${PREFIX}/share/examples/greetd/config.toml
 	# cheat by not having it in MODCARGO_INSTALL_TARGET_PATHS, as it fails to rebuild ?
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/agreety ${PREFIX}/bin/agreety
-	echo "startxfce4 --wayland\nlabwc\nsway\nwayfire\nwayback\n" > ${PREFIX}/share/examples/greetd/environments
+	echo "startxfce4 --wayland\nlabwc\nsway\nwayfire\nniri\nwayback-session" > ${PREFIX}/share/examples/greetd/environments
 
 .include "crates.inc"
 
