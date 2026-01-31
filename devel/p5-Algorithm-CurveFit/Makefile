@@ -1,16 +1,16 @@
 COMMENT =	nonlinear least squares curve fitting
 
-DISTNAME =	Algorithm-CurveFit-1.05
+DISTNAME =	Algorithm-CurveFit-1.06
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-CPAN_AUTHOR =	SMUELLER
+CPAN_AUTHOR =	PTC
 
 MODULES =	cpan
 PKG_ARCH =	*
+
 RUN_DEPENDS =	math/p5-Math-MatrixReal \
 		math/p5-Math-Symbolic
 
