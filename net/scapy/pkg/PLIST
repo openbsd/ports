@@ -50,6 +50,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}error.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}fwdmachine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}fwdmachine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -313,6 +315,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ppi_cace.
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ppi_cace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ppi_geotag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ppi_geotag.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}psp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}psp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ripng.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}ripng.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/${MODPY_PYCACHE}roce.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -654,6 +658,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/portmap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/postgres.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ppi_cace.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ppi_geotag.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/psp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ripng.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/roce.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rpl.py
@@ -717,6 +722,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/dadict.py
 lib/python${MODPY_VERSION}/site-packages/scapy/data.py
 lib/python${MODPY_VERSION}/site-packages/scapy/error.py
 lib/python${MODPY_VERSION}/site-packages/scapy/fields.py
+lib/python${MODPY_VERSION}/site-packages/scapy/fwdmachine.py
 lib/python${MODPY_VERSION}/site-packages/scapy/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/__init__.py
@@ -781,6 +787,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}mgcp.${MOD
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}mgcp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}mobileip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}mobileip.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ms_nrtp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ms_nrtp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}netbios.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}netbios.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}netflow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -797,6 +805,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ppp.${MODP
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ppp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}pptp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}pptp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}quic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}quic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}radius.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}radius.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}rip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -825,6 +835,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ssh.${MODP
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tftp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tftp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tpm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tpm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tuntap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}tuntap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/${MODPY_PYCACHE}usb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -866,6 +878,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/llmnr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/lltd.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mgcp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mobileip.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/ms_nrtp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}/
@@ -879,6 +892,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msd
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msdcom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msdrsr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msdrsr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}mseerr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}mseerr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msnrpc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}msnrpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/${MODPY_PYCACHE}mspac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -891,6 +906,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/all.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/ept.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/msdcom.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/msdrsr.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/mseerr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/msnrpc.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/mspac.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/
@@ -904,6 +920,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_dcom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_drsr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_drsr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_eerr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_eerr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_nrpc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_nrpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE}ms_samr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -915,6 +933,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ept.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_dcom.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_drsr.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_eerr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_nrpc.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_samr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/msrpce/raw/ms_srvs.py
@@ -929,6 +948,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/pflog.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/ppi.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/ppp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/pptp.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/quic.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/radius.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rip.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rtp.py
@@ -970,6 +990,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}keyexc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}keyexchange.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}keyexchange_tls13.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}keyexchange_tls13.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}quic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}quic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}record.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}record.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/${MODPY_PYCACHE}record_sslv2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1044,11 +1066,13 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/handshake.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/handshake_sslv2.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/keyexchange.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/keyexchange_tls13.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/quic.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/record.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/record_sslv2.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/record_tls13.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/session.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/tools.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tpm.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tuntap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/usb.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/vrrp.py
@@ -1060,6 +1084,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/libs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}bluetoothids.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}bluetoothids.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}ethertypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}ethertypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}extcap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1076,6 +1102,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}test_pyx.${M
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}test_pyx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}winpcapy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/${MODPY_PYCACHE}winpcapy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/libs/bluetoothids.py
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/ethertypes.py
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/extcap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/libs/manuf.py
@@ -1090,6 +1117,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}ldaphero.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}ldaphero.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}nmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}nmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/${MODPY_PYCACHE}p0f.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1111,6 +1140,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}cry
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/${MODPY_PYCACHE}crypto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/automaton.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/krack/crypto.py
+lib/python${MODPY_VERSION}/site-packages/scapy/modules/ldaphero.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/nmap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/p0f.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/p0fv2.py
@@ -1138,6 +1168,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}check_asdis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}check_asdis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}generate_bluetooth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}generate_bluetooth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}generate_ethertypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}generate_ethertypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/${MODPY_PYCACHE}generate_manuf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1159,6 +1191,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/isotpscanner.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/obdscanner.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/automotive/xcpscanner.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/check_asdis.py
+lib/python${MODPY_VERSION}/site-packages/scapy/tools/generate_bluetooth.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/generate_ethertypes.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/generate_manuf.py
 lib/python${MODPY_VERSION}/site-packages/scapy/tools/scapy_pyannotate.py
@@ -1166,6 +1199,3 @@ lib/python${MODPY_VERSION}/site-packages/scapy/utils.py
 lib/python${MODPY_VERSION}/site-packages/scapy/utils6.py
 lib/python${MODPY_VERSION}/site-packages/scapy/volatile.py
 @man man/man1/scapy.1
-share/examples/scapy/
-share/examples/scapy/ethertypes
-@sample ${SYSCONFDIR}/ethertypes

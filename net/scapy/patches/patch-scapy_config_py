@@ -1,0 +1,21 @@
+Index: scapy/config.py
+--- scapy/config.py.orig
++++ scapy/config.py
+@@ -1219,17 +1219,6 @@ if not Conf.ipv6_enabled:
+ conf = Conf()  # type: Conf
+ 
+ 
+-if not isCryptographyBackendCompatible():
+-    conf.crypto_valid = False
+-    conf.crypto_valid_advanced = False
+-    log_scapy.error(
+-        "Scapy does not support LibreSSL as a backend to cryptography ! "
+-        "See https://cryptography.io/en/latest/installation/#static-wheels "
+-        "for instructions on how to recompile cryptography with another "
+-        "backend."
+-    )
+-
+-
+ def crypto_validator(func):
+     # type: (DecoratorCallable) -> DecoratorCallable
+     """
