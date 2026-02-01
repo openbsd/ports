@@ -1,12 +1,12 @@
 Index: man/watch.1
 --- man/watch.1.orig
 +++ man/watch.1
-@@ -11,16 +11,16 @@
+@@ -11,15 +11,16 @@
  .\" (at your option) any later version.
  .\"
  .\"
--.TH WATCH 1 2024-07-19 procps-ng
-+.TH GNUWATCH 1 2024-07-19 procps-ng
+-.TH WATCH 1 2025-04-16 procps-ng
++.TH GNUWATCH 1 2025-04-16 procps-ng
  .SH NAME
 -watch \- execute a program periodically, showing output fullscreen
 +gnuwatch \- execute a program periodically, showing output fullscreen
@@ -17,13 +17,12 @@ Index: man/watch.1
  .I command
  .SH DESCRIPTION
 -.B watch
--runs
 +.B gnuwatch
-+(renamed from watch for the OpenBSD package) runs
++(renamed from watch for the OpenBSD package)
+ runs
  .I command
  repeatedly, displaying its output and errors (the first screenful). This
- allows you to watch the program output change over time. By default,
-@@ -146,23 +146,23 @@ part of the command pipeline if you want to see them.
+@@ -153,23 +154,23 @@ part of the command pipeline if you want to see them.
  .PP
  To watch the contents of a directory change, you could use
  .IP
