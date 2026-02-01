@@ -1,7 +1,7 @@
 Index: emacs/Makefile.local
 --- emacs/Makefile.local.orig
 +++ emacs/Makefile.local
-@@ -126,7 +126,6 @@ endif
+@@ -137,7 +137,6 @@ endif
  ifeq ($(WITH_DESKTOP),1)
  	mkdir -p "$(DESTDIR)$(desktop_dir)"
  	desktop-file-install --mode 0644 --dir "$(DESTDIR)$(desktop_dir)" $(emacs_mua_desktop)

@@ -2,16 +2,14 @@ COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
 COMMENT-mutt =		Mutt integration for notmuch
 
-V =			0.39
-DISTNAME =		notmuch-$V
+V =			0.40
+MODPY_DISTV =		${V}
+DISTNAME =		notmuch-${V}
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 PKGNAME-mutt =		notmuch-mutt-${V}
-REVISION-main =		1
-REVISION-emacs =	0
-REVISION-mutt =		0
 
-SHARED_LIBS +=		notmuch	1.2
+SHARED_LIBS +=		notmuch	1.3
 
 CATEGORIES =		mail databases
 
@@ -33,12 +31,14 @@ EXTRACT_SUFX =		.tar.xz
 COMPILER=		base-clang ports-gcc
 
 MODULES =		lang/python
-MODPY_RUNDEP =		No
 MODPY_PYTEST =		Yes
 
 LIB_DEPENDS =		databases/xapian-core \
 			devel/libtalloc \
 			mail/gmime30
+
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			devel/py-cffi
 
 RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 			databases/xapian-core \
@@ -93,7 +93,12 @@ post-extract:
 	cd ${WRKSRC}/test; [ -r test-lib-OPENBSD.sh ] || \
 	    cp test-lib-FREEBSD.sh test-lib-OPENBSD.sh
 
+MODPY_BUILD_DIR =	${WRKSRC}/bindings/python-cffi
+post-build:
+	cd ${WRKSRC}/bindings/python-cffi; ${MODPY_BUILD_TARGET}
+
 post-install:
+	cd ${WRKSRC}/bindings/python-cffi; ${MODPY_INSTALL_TARGET}
 	rm ${PREFIX}/man/man1/notmuch-setup.1.gz
 	gunzip ${PREFIX}/man/*/*gz
 	ln -s notmuch.1 ${PREFIX}/man/man1/notmuch-setup.1

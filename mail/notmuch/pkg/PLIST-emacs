@@ -4,10 +4,14 @@ bin/notmuch-emacs-mua
 @info info/notmuch-emacs.info
 @man man/man1/notmuch-emacs-mua.1
 share/applications/notmuch-emacs-mua.desktop
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/notmuch-autoloads.el
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/coolj.elc
 share/emacs/site-lisp/notmuch-address.el
 share/emacs/site-lisp/notmuch-address.elc
+share/emacs/site-lisp/notmuch-autoloads.el
 share/emacs/site-lisp/notmuch-company.el
 share/emacs/site-lisp/notmuch-company.elc
 share/emacs/site-lisp/notmuch-compat.el

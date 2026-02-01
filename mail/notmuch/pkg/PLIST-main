@@ -23,6 +23,35 @@ include/notmuch.h
 @info info/notmuch-tag.info
 @info info/notmuch.info
 @lib lib/libnotmuch.so.${LIBnotmuch_VERSION}
+lib/python${MODPY_VERSION}/site-packages/notmuch2/
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/notmuch2-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/notmuch2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_database.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_message.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_query.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/${MODPY_PYCACHE}_thread.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_base.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_build.py
+@so lib/python${MODPY_VERSION}/site-packages/notmuch2/_capi${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_config.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_database.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_errors.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_message.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_query.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_tags.py
+lib/python${MODPY_VERSION}/site-packages/notmuch2/_thread.py
 @man man/man1/nmbug.1
 @man man/man1/notmuch-address.1
 @man man/man1/notmuch-compact.1
@@ -45,8 +74,6 @@ include/notmuch.h
 @man man/man7/notmuch-search-terms.7
 @man man/man7/notmuch-sexp-queries.7
 share/applications/
-share/emacs/
-share/emacs/site-lisp/
 share/notmuch/
 share/notmuch/bash_completion.d/
 share/notmuch/bash_completion.d/notmuch
