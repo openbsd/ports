@@ -1,0 +1,9 @@
+OpenVox is configured in an agent-server architecture, in which a
+primary server node manages the configuration information for a fleet of
+agent nodes. OpenVox Server acts as the primary server node. OpenVox
+Server is a Ruby and Clojure application that runs on the Java Virtual
+Machine (JVM). OpenVox Server runs Ruby code for compiling Puppet
+catalogs and for serving files in several JRuby interpreters. It also
+provides a certificate authority through Clojure.
+
+It is a drop in replacement for Puppetserver.
