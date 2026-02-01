@@ -1,0 +1,15 @@
+--- ext/config/conf.d/config.ini.orig	Fri Jul 17 19:09:34 2015
++++ ext/config/conf.d/config.ini	Fri Jul 17 19:13:00 2015
+@@ -3,10 +3,10 @@
+ 
+ [global]
+ # Store mq/db data in a custom directory
+-vardir = /opt/puppetlabs/server/data/puppetdb
++vardir = /var/puppetlabs/puppetdb/data
+ 
+ # Use an external logback config file
+-logging-config = /etc/puppetlabs/puppetdb/logback.xml
++logging-config = ${SYSCONFDIR}/puppetlabs/puppetdb/logback.xml
+ 
+ [command-processing]
+ # How many command-processing threads to use, defaults to (CPUs / 2)
