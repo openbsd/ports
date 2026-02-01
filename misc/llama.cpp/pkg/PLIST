@@ -7,17 +7,18 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-bench
 @bin bin/llama-cli
 @bin bin/llama-completion
+@bin bin/llama-debug
 @bin bin/llama-diffusion-cli
 @bin bin/llama-embedding
 @bin bin/llama-eval-callback
 @bin bin/llama-finetune
+@bin bin/llama-fit-params
 @bin bin/llama-gen-docs
 @bin bin/llama-gguf
 @bin bin/llama-gguf-hash
 @bin bin/llama-gguf-split
 @bin bin/llama-idle
 @bin bin/llama-imatrix
-@bin bin/llama-logits
 @bin bin/llama-lookahead
 @bin bin/llama-lookup
 @bin bin/llama-lookup-create
@@ -29,7 +30,6 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-perplexity
 @bin bin/llama-quantize
 @bin bin/llama-retrieval
-@bin bin/llama-run
 @bin bin/llama-save-load-state
 @bin bin/llama-server
 @bin bin/llama-simple
