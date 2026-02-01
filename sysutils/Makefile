@@ -399,6 +399,7 @@
      SUBDIR += ruby-libvirt,ruby40
      SUBDIR += ruby-openfact
      SUBDIR += ruby-openvox
+     SUBDIR += ruby-openvoxserver-ca
      SUBDIR += ruby-pdk
      SUBDIR += ruby-posix-spawn,ruby33
      SUBDIR += ruby-posix-spawn,ruby34
