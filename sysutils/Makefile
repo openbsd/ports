@@ -263,6 +263,7 @@
      SUBDIR += openpoppassd
      SUBDIR += opensbi
      SUBDIR += opentofu
+     SUBDIR += openvox-server
      SUBDIR += openwsman
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-Data-Entropy
