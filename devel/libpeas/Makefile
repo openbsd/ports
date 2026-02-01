@@ -3,21 +3,12 @@ PORTROACH=	limit:^1
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.36.0
-REVISION=	6
-
-# girepository: port libpeas ABI to girepository
-SITES.gnome=		https://gitlab.gnome.org/GNOME/libpeas/-/commit/
-PATCHFILES.gnome=	15f75945d3081672c093b7d24f9279a9f4493f9f.diff \
-			4613accc2e22395bb77bdf612fcdf90bf65f230f.diff \
-			73e25b6059d2fdc090a3feb8341ff902c3ec0d16.diff \
-			53657c06fe31871bd3d050c6c5668611f928f8e3.diff
-PATCH_DIST_STRIP=	-p1
+GNOME_VERSION=	1.38.1
 
 CATEGORIES=	devel
 
-SHARED_LIBS += peas-1.0                  401.0 # 0.3600.0
-SHARED_LIBS += peas-gtk-1.0              401.0 # 0.3600.0
+SHARED_LIBS += peas-1.0                  401.0 # 1.3800.1
+SHARED_LIBS += peas-gtk-1.0              401.0 # 1.3800.1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
