@@ -5,6 +5,8 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 V=		2025-09-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
+REVISION=	0
+
 CATEGORIES=	net security
 
 HOMEPAGE=	https://www.kismetwireless.net/
@@ -43,6 +45,7 @@ USE_GMAKE=	Yes
 FAKE_FLAGS+=	ETC="${WRKINST}${PREFIX}/share/examples/kismet"
 
 LIB_DEPENDS=	comms/rtl-sdr \
+		devel/pcre2 \
 		net/mosquitto \
 		www/libwebsockets
 RUN_DEPENDS=	comms/rtl_433 \
