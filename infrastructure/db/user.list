@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.480 2026/01/25 17:24:41 jca Exp $
+$OpenBSD: user.list,v 1.481 2026/02/01 21:21:31 sebastia Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -227,7 +227,7 @@ id  user		group		port
 716 _c-icap		_c-icap		www/c-icap/c-icap
 717 _uptimed		_uptimed	sysutils/uptimed
 718 _stuntman		_stuntman	telephony/stuntman
-719 _puppetdb		_puppetdb	databases/puppetdb
+719 _puppetdb		_puppetdb	databases/{puppetdb,openvoxdb}
 #720 _lldpd		_lldpd		net/lldpd
 721 _dkimproxy		_dkimproxy	mail/dkimproxy
 722 _salt		_salt		sysutils/salt
