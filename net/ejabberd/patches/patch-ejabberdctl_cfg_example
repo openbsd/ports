@@ -3,7 +3,7 @@ Do not use epmd out of the box to prevent killing system's epmd
 Index: ejabberdctl.cfg.example
 --- ejabberdctl.cfg.example.orig
 +++ ejabberdctl.cfg.example
-@@ -62,7 +62,7 @@
+@@ -50,7 +50,7 @@
  #
  # Default: not defined
  #
@@ -11,4 +11,4 @@ Index: ejabberdctl.cfg.example
 +ERL_DIST_PORT=5210
  
  #.
- #' ERL_EPMD_ADDRESS: IP addresses where EPMD listens for connections
+ #' FIREWALL_WINDOW: Range of allowed ports to pass through a firewall

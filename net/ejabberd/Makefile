@@ -1,6 +1,6 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
-V =			25.10
+V =			26.01
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
 CATEGORIES =		net
@@ -8,6 +8,11 @@ CATEGORIES =		net
 HOMEPAGE =		https://www.process-one.net/ejabberd/
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
+
+# Workaround for https://github.com/erlydtl/erlydtl/issues/285
+DIST_TUPLE += github erlydtl erlydtl 0.15.0 ./_checkouts/erlydtl
+MODERL_MODULE_erlydtl_VERSION = 0.14.0
+SUBST_VARS += MODERL_MODULE_erlydtl_VERSION
 
 # Apache2:
 #   cache_tab, eimp, fast_xml, fast_yml, mqtree, p1_acme, p1_utils,
@@ -17,7 +22,7 @@ MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 # GPLv2+:
 #   eJabberd
 # MIT:
-#   base64url, p1_oauth2, jiffy, idna, jose
+#   base64url, erlydtl, p1_oauth2, jiffy, idna, jose
 # Erlang 1.1:
 #   sqlite3
 PERMIT_PACKAGE = 	Yes
