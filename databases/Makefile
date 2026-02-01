@@ -48,6 +48,7 @@
      SUBDIR += openldap,aci
      SUBDIR += openldap,aci,gssapi
      SUBDIR += openldap,gssapi
+     SUBDIR += openvoxdb
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
