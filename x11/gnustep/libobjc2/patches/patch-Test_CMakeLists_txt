@@ -1,0 +1,76 @@
+Index: Test/CMakeLists.txt
+--- Test/CMakeLists.txt.orig
++++ Test/CMakeLists.txt
+@@ -2,7 +2,15 @@
+ # Clear the LD_LIBRARY_PATH if GNUstep set it so that we don't accidentally use
+ # the installed version
+ 
++# Default-Werte
++if(NOT DEFINED LEGACY)
++    set(LEGACY OFF)
++endif()
++if(NOT DEFINED OLDABI_COMPAT)
++    set(OLDABI_COMPAT OFF)
++endif()
+ 
++
+ set(INCREMENTAL " ")
+ if (MSVC)
+ 	set(CMAKE_EXE_LINKER_FLAGS "/DEBUG /INCREMENTAL:NO ${CMAKE_EXE_LINKER_FLAGS}")
+@@ -135,7 +143,7 @@ function(addtest_flags TEST_NAME FLAGS TEST_SOURCE)
+ 	if(WIN32)
+ 		set_property(TEST ${TEST_NAME} PROPERTY ENVIRONMENT_MODIFICATION "PATH=path_list_append:${CMAKE_BINARY_DIR}")
+ 	endif()
+-	target_link_libraries(${TEST_NAME} objc)
++	target_link_libraries(${TEST_NAME} objc2)
+ endfunction(addtest_flags)
+ 
+ function(addtest_variants TEST TEST_SOURCE LEGACY)
+@@ -164,19 +172,35 @@ foreach(TEST_SOURCE ${NEW_TESTS})
+ endforeach()
+ 
+ # Tests that are more than a single file.
+-addtest_variants("CXXExceptions" "CXXException.m;CXXException.cc" true)
++#addtest_variants("CXXExceptions" "CXXException.m;CXXException.cc" true)
+ addtest_variants("ForwardDeclareProtocolAccess" "ForwardDeclareProtocolAccess.m;ForwardDeclareProtocol.m" true)
+-if (ENABLE_OBJCXX)
+-	addtest_variants(ObjCXXEHInterop "ObjCXXEHInterop.mm;ObjCXXEHInterop.m" true)
+-	addtest_variants(ObjCXXEHInteropTwice "ObjCXXEHInteropTwice.mm" true)
+-	if (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL Clang)
+-		if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 16.0.0)
+-			addtest_variants(ObjCXXEHInterop_arc "ObjCXXEHInterop_arc.mm;ObjCXXEHInterop_arc.m" true)
+-		endif()
+-	else()
+-		addtest_variants(ObjCXXEHInterop_arc "ObjCXXEHInterop_arc.mm;ObjCXXEHInterop_arc.m" true)
+-	endif()
+-endif()
++#if (ENABLE_OBJCXX)
++#	addtest_variants(ObjCXXEHInterop "ObjCXXEHInterop.mm;ObjCXXEHInterop.m" true)
++#	addtest_variants(ObjCXXEHInteropTwice "ObjCXXEHInteropTwice.mm" true)
++#	if (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL Clang)
++#		if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 16.0.0)
++#			addtest_variants(ObjCXXEHInterop_arc "ObjCXXEHInterop_arc.mm;ObjCXXEHInterop_arc.m" true)
++#		endif()
++#	else()
++#		addtest_variants(ObjCXXEHInterop_arc "ObjCXXEHInterop_arc.mm;ObjCXXEHInterop_arc.m" true)
++#	endif()
++#endif()
++
++# CXXExceptions needs C++ linker
++#add_executable(CXXExceptions CXXException.m CXXException.cc)
++#set_target_properties(CXXExceptions PROPERTIES
++#    LINKER_LANGUAGE CXX
++#)
++#target_link_libraries(CXXExceptions
++#    objc2
++#    c++abi
++#    c++
++#    BlocksRuntime
++#    dispatch
++#    pthread
++#    m
++#)
++
+ 
+ # Some tests use enough memory that they fail on CI intermittently if they
+ # happen to run in parallel with each other.

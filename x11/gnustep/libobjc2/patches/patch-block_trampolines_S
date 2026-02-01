@@ -14,6 +14,6 @@ Index: block_trampolines.S
  ////////////////////////////////////////////////////////////////////////////////
  .macro trampoline arg0, arg1
 +	bti c
- 	adr x17, #-4096
+ 	adr x17, #-0x1000
  	mov \arg1, \arg0
  	ldp \arg0, x17, [x17]

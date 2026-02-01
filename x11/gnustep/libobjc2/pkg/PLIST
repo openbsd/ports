@@ -1,12 +1,8 @@
 include/gnustep/
-include/gnustep/Block.h
-include/gnustep/Block_private.h
 include/gnustep/objc/
 include/gnustep/objc/Availability.h
 include/gnustep/objc/Object.h
 include/gnustep/objc/Protocol.h
-include/gnustep/objc/blocks_private.h
-include/gnustep/objc/blocks_runtime.h
 include/gnustep/objc/capabilities.h
 include/gnustep/objc/developer.h
 include/gnustep/objc/encoding.h
@@ -16,6 +12,7 @@ include/gnustep/objc/objc-api.h
 include/gnustep/objc/objc-arc.h
 include/gnustep/objc/objc-auto.h
 include/gnustep/objc/objc-class.h
+include/gnustep/objc/objc-config.h
 include/gnustep/objc/objc-exception.h
 include/gnustep/objc/objc-runtime.h
 include/gnustep/objc/objc-visibility.h
@@ -23,6 +20,12 @@ include/gnustep/objc/objc.h
 include/gnustep/objc/runtime-deprecated.h
 include/gnustep/objc/runtime.h
 include/gnustep/objc/slot.h
+lib/cmake/
+lib/cmake/libobjc/
+lib/cmake/libobjc/libobjcConfig.cmake
+lib/cmake/libobjc/libobjcConfigVersion.cmake
+lib/cmake/libobjc/libobjcTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libobjc/libobjcTargets.cmake
 @static-lib lib/libobjc2.a
 @lib lib/libobjc2.so.${LIBobjc2_VERSION}
 lib/pkgconfig/libobjc.pc
