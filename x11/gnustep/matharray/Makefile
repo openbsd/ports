@@ -1,7 +1,7 @@
 COMMENT =	GNUstep library to manipulate matrices
 
 VERSION =	1.3
-REVISION =	12
+REVISION =	13
 DISTNAME =	MathArray-${VERSION}
 PKGNAME =	gnustep-matharray-${VERSION}
 CATEGORIES =	math
@@ -10,7 +10,7 @@ SHARED_LIBS +=  MathArray	0.0
 HOMEPAGE =	http://wiki.gnustep.org/index.php/MathArray
 SITES =		${SITE_GNUSTEP:=contrib/}
 
-WANTLIB += 		pthread
+WANTLIB += 		pthread c++abi objc2
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
 

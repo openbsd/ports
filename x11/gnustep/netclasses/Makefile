@@ -1,7 +1,7 @@
 COMMENT =	asynchronous networking framework for GNUstep
 
 VERSION =	1.1.0
-REVISION =	10
+REVISION =	11
 EPOCH =		0
 DISTNAME =	netclasses-${VERSION}
 PKGNAME =	gnustep-netclasses-${VERSION}
@@ -13,7 +13,7 @@ SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
-WANTLIB += 		pthread
+WANTLIB += 		pthread c++abi objc2
 
 CONFIGURE_STYLE =	gnu
 MAKE_FLAGS +=	netclasses_INTERFACE_VERSION=${LIBnetclasses_VERSION}

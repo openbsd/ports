@@ -1,6 +1,6 @@
 COMMENT =	framework for highlighting and coloring syntax
 
-REVISION =	11
+REVISION =	12
 DISTNAME =	HighlighterKit-0.1.3
 SHARED_LIBS =	HighlighterKit 0.1
 
@@ -9,7 +9,7 @@ SITES =		http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
-WANTLIB += 	pthread
+WANTLIB += 	pthread c++abi objc2
 
 BUILD_DEPENDS +=	x11/gnustep/gui
 

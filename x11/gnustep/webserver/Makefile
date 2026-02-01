@@ -3,7 +3,7 @@ COMMENT =	GNUstep webserver framework
 VERSION =	1.6.0
 DISTNAME =	WebServer-${VERSION}
 PKGNAME =	gnustep-webserver-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  WebServer	2.2
 
@@ -15,7 +15,7 @@ SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
-WANTLIB +=		Performance pthread
+WANTLIB +=		Performance pthread c++abi objc2
 LIB_DEPENDS +=		x11/gnustep/performance
 
 MAKE_FLAGS +=	WebServer_INTERFACE_VERSION=${LIBWebServer_VERSION}

@@ -5,7 +5,7 @@ GH_ACCOUNT=     gnustep
 GH_PROJECT=     apps-projectcenter
 DISTNAME=       ProjectCenter-${GH_TAGNAME}
 CATEGORIES=	devel
-REVISION=       0
+REVISION=       1
 
 HOMEPAGE=	http://www.gnustep.org/experience/ProjectCenter.html
 
@@ -16,7 +16,6 @@ SHARED_LIBS=	ProjectCenter 1.2
 
 RUN_DEPENDS +=	devel/gmake devel/gdb
 MODULES=	x11/gnustep
-WANTLIB +=	util
 WANTLIB += ${COMPILER_LIBCXX}
 
 LIBDIR =	lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${GH_TAGNAME}

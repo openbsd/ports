@@ -40,6 +40,7 @@ MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/base
 MODGNUSTEP_NEEDS_BASE ?=	No
 MODGNUSTEP_NEEDS_GUI ?=		No
 MODGNUSTEP_NEEDS_BACK ?=	No
+MODGNUSTEP_WANTLIB +=		BlocksRuntime
 .else
 MODGNUSTEP_NEEDS_BASE ?=	Yes
 MODGNUSTEP_NEEDS_GUI ?=		Yes
@@ -57,7 +58,7 @@ MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back
 .  endif
 .endif
 .if ${MODGNUSTEP_NEEDS_BASE:L} == yes
-MODGNUSTEP_WANTLIB +=		objc2 m
+MODGNUSTEP_WANTLIB +=		objc2 m BlocksRuntime
 MODGNUSTEP_WANTLIB +=		gnustep-base pthread
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/base
 .endif

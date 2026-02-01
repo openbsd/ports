@@ -1,7 +1,7 @@
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.4
-REVISION =		3
+REVISION =		5
 GH_ACCOUNT =		threerings
 GH_PROJECT =		openvpn-auth-ldap
 GH_TAGNAME =		auth-ldap-${VERSION}

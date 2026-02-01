@@ -4,11 +4,11 @@ DISTNAME =	GNUMail-1.4.0
 SHLIB_VERSION =	3.0
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 
-WANTLIB +=	crypto ssl AddressView Addresses Pantomime
+WANTLIB +=	AddressView Addresses Pantomime
 WANTLIB += ${COMPILER_LIBCXX}
 
 SITES=		https://download.savannah.nongnu.org/releases/gnustep-nonfsf/

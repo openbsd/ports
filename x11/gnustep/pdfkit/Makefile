@@ -1,7 +1,7 @@
 COMMENT =	framework for accessing and rendering PDF content
 
 DISTNAME =	PDFKit-1.2.0
-REVISION =	1
+REVISION =	2
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit
@@ -9,7 +9,7 @@ SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK	= Yes
-WANTLIB += 		pthread freetype m z
+WANTLIB += 		pthread freetype m c++abi objc2
 WANTLIB += ${COMPILER_LIBCXX}
 BUILD_DEPENDS =		x11/gnustep/gui
 

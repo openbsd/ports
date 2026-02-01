@@ -1,5 +1,6 @@
 COMMENT=	GNUstep base library
 
+REVISION =	0
 GH_TAGNAME=     1.31.1
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-base
@@ -15,7 +16,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += avahi-client avahi-common c ffi gmp gnutls iberty iconv icudata
 WANTLIB += curl icui18n icuuc m objc2 pthread xml2 xslt z zstd
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} BlocksRuntime dispatch
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 WANTLIB += iberty
@@ -42,8 +43,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
-CONFIGURE_ARGS +=	--disable-libdispatch \
-			--disable-procfs \
+CONFIGURE_ARGS += 	--disable-procfs \
 			--disable-procfs-psinfo
 MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}
 

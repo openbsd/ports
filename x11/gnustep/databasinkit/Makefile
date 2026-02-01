@@ -1,7 +1,7 @@
 COMMENT =	GNUstep client framework for salesforce.com
 
 VERSION =	1.0
-REVISION =	5
+REVISION =	6
 DISTNAME =	DataBasinKit-${VERSION}
 SHARED_LIBS +=  DataBasinKit	0.2
 
@@ -12,7 +12,7 @@ SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =			x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = 	Yes
-WANTLIB +=			pthread WebServices
+WANTLIB +=			pthread WebServices c++abi objc2
 BUILD_DEPENDS +=		x11/gnustep/gui
 LIB_DEPENDS +=			x11/gnustep/webservices
 

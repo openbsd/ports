@@ -3,7 +3,7 @@ COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 V=		0.10.1
 DISTNAME=	libPropList-${V}
 PKGNAME=	libproplist-${V}
-REVISION=	3
+REVISION=	4
 SHARED_LIBS=		PropList 2.2
 MODGNU_SHARED_LIBS=	PropList ''
 

@@ -1,7 +1,7 @@
 COMMENT =	GNUstep wrapper around libpcap
 
 V =		0.2
-REVISION =	11
+REVISION =	12
 DISTNAME =	PcapKit-${V}
 PKGNAME =	gnustep-pcapkit-${V}
 CATEGORIES =	net
@@ -12,7 +12,7 @@ HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf
 SITES =		http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
-WANTLIB =	pthread pcap
+WANTLIB =	pthread pcap c++abi objc2
 MODGNUSTEP_IS_FRAMEWORK = Yes
 
 MAKE_ENV +=	PcapKit_INTERFACE_VERSION=${LIBPcapKit_VERSION}

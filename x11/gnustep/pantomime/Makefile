@@ -1,7 +1,7 @@
 COMMENT=	framework to major mail protocols
 
 DISTNAME=	Pantomime-1.4.0
-REVISION=	0
+REVISION=	1
 
 SHLIB_VERSION = 2.0
 SHARED_LIBS=	Pantomime ${SHLIB_VERSION}
@@ -15,7 +15,7 @@ SITES=		https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
-WANTLIB += 	pthread gnustep-base objc2
+WANTLIB += 	pthread gnustep-base objc2 c++abi
 
 MAKE_FLAGS +=	Pantomime_INTERFACE_VERSION=${LIBPantomime_VERSION}
 

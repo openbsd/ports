@@ -4,6 +4,7 @@ USE_NOBTCFI-aarch64 =	Yes
 
 COMMENT=	GNUstep makefile package
 
+REVISION =	0
 CATEGORIES=	devel x11/gnustep
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	tools-make
@@ -41,9 +42,7 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 # base-clang
 LIBRARY_COMBO =		"ng-gnu-gnu"
 CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as CPP="clang -E"
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -lc++abi -lobjc2 -lpthread"
-# XXX ports-gcc?
-#LIBRARY_COMBO =	"gnu-gnu-gnu"
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -lobjc2 -lpthread -lBlocksRuntime"
 
 pre-configure:
 	${SUBST_CMD} -c -m 444 ${FILESDIR}/openbsd \
