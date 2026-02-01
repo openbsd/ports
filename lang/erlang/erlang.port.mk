@@ -179,35 +179,43 @@ SITES.erl ?= 		${SITE_HEX}
 MODERL_DIST_SUBDIR ?=	hex_modules
 
 .  for _m _v in ${MODERL_PLUGINS}
+.    if "${_v}" != "_none"
 MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
+.    endif
 .  endfor
 
 .  if ! empty(MODERL_PLUGINS)
 .    for _m _v in ${MODERL_PLUGINS}
+.      if "${_v}" != "_none"
 MODERL_SETUP_WORKSPACE_PLUGINS += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
 		mkdir -p ${WRKSRC}/_build/default/plugins; \
-		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}; \
-		ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/plugins/${_m};
+		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m};
+.      endif
+MODERL_SETUP_WORKSPACE_PLUGINS += ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/plugins/${_m};
 .    endfor
 MODERLANG_post-extract += ${MODERL_SETUP_WORKSPACE_PLUGINS}
 .  endif
 
 .  for _m _v in ${MODERL_MODULES}
+.    if "${_v}" != "_none"
 MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
+.    endif
 .  endfor
 
 .  if ! empty(MODERL_MODULES)
 .    for _m _v in ${MODERL_MODULES}
+.      if "${_v}" != "_none"
 MODERL_MODULE_${_m}_VERSION = ${_v}
 SUBST_VARS += MODERL_MODULE_${_m}_VERSION
 MODERL_SETUP_WORKSPACE += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
 		mkdir -p ${WRKSRC}/_build/default/lib; \
-		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}; \
-		ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/${_m};
+		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m};
+.      endif
+MODERL_SETUP_WORKSPACE += ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/${_m};
 MODERL_COPY_EBINS += if [ -d ${WRKSRC}/_build/default/checkouts/${_m}/ebin ]; then \
 		cp -r ${WRKSRC}/_build/default/checkouts/${_m}/ebin \
 			${WRKSRC}/_build/default/lib/${_m}/ebin; fi;
