@@ -1,8 +1,14 @@
 @so lib/libggml-cpu-alderlake.so
+@so lib/libggml-cpu-cannonlake.so
+@so lib/libggml-cpu-cascadelake.so
+@so lib/libggml-cpu-cooperlake.so
 @so lib/libggml-cpu-haswell.so
 @so lib/libggml-cpu-icelake.so
+@so lib/libggml-cpu-ivybridge.so
+@so lib/libggml-cpu-piledriver.so
 @so lib/libggml-cpu-sandybridge.so
 @so lib/libggml-cpu-sapphirerapids.so
 @so lib/libggml-cpu-skylakex.so
 @so lib/libggml-cpu-sse42.so
 @so lib/libggml-cpu-x64.so
+@so lib/libggml-cpu-zen4.so

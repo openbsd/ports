@@ -11,6 +11,7 @@ include/ggml-metal.h
 include/ggml-opt.h
 include/ggml-rpc.h
 include/ggml-sycl.h
+include/ggml-virtgpu.h
 include/ggml-vulkan.h
 include/ggml-webgpu.h
 include/ggml-zendnn.h
