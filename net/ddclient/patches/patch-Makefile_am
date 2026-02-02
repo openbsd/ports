@@ -1,0 +1,13 @@
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -42,9 +42,6 @@ bin_SCRIPTS = ddclient
+ 
+ conf_DATA = ddclient.conf
+ 
+-install-data-local:
+-	$(MKDIR_P) '$(DESTDIR)$(localstatedir)'/cache/ddclient
+-
+ AM_TESTS_ENVIRONMENT = \
+ 	abs_top_srcdir='$(abs_top_srcdir)'; export abs_top_srcdir;
+ LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) \

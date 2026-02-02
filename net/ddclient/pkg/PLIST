@@ -1,24 +1,13 @@
 @newgroup _ddclient:750
 @newuser _ddclient:750:_ddclient::DynDNS Client:/nonexistent:/sbin/nologin
-sbin/ddclient
-share/doc/ddclient/
-share/doc/ddclient/README.cisco
-share/doc/ddclient/README.md
-share/doc/ddclient/README.ssl
+@rcscript ${RCDIR}/ddclient
+bin/ddclient
 share/examples/ddclient/
 @sample ${SYSCONFDIR}/ddclient/
-share/examples/ddclient/sample-ddclient-wrapper.sh
-share/examples/ddclient/sample-etc_cron.d_ddclient
-share/examples/ddclient/sample-etc_ddclient.conf
-@mode 0640
+share/examples/ddclient/ddclient.conf
+@mode 640
 @group _ddclient
 @sample ${SYSCONFDIR}/ddclient/ddclient.conf
 @mode
-@group
-share/examples/ddclient/sample-etc_dhclient-exit-hooks
-share/examples/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
-share/examples/ddclient/sample-etc_ppp_ip-up.local
 @owner _ddclient
 @sample /var/db/ddclient/
-@owner
-@rcscript ${RCDIR}/ddclient

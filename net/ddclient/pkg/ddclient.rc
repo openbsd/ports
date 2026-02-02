@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/sbin/ddclient"
+daemon="${TRUEPREFIX}/bin/ddclient"
 daemon_user="_ddclient"
 
 . /etc/rc.d/rc.subr
