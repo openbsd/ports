@@ -1,6 +1,7 @@
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME =		zeek-8.1.0
+V =			8.1.1
+DISTNAME =		zeek-${V}
 
 SHARED_LIBS +=		binpac		3.0
 SHARED_LIBS +=		broker		10.0
@@ -19,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += c cares crypto m maxminddb pcap ssl z zmq
 
-SITES =			https://download.zeek.org/
+SITES =			https://github.com/zeek/zeek/releases/download/v${V}/
 
 MODULES =		devel/cmake \
 			lang/python
@@ -43,7 +44,7 @@ BUILD_DEPENDS =		databases/libhiredis \
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/libcares \
 			net/libmaxminddb \
-			net/zeromq
+			net/zeromq>=4.3.0
 
 RUN_DEPENDS =		devel/py-gitpython \
 			devel/py-semantic-version \
