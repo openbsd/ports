@@ -1,0 +1,12 @@
+The request rate limiter using Leaky-bucket algorithm.
+
+Features
+ - Tracks any number of rate limits and intervals you want to define
+ - Independently tracks rate limits for multiple services or resources
+ - Handles exceeded rate limits by either raising errors or adding delays
+ - Several usage options including a normal function call, a decorator,
+   or a contextmanager
+ - Async support
+ - Includes optional SQLite and Redis backends, which can be used to
+   persist limit tracking across multiple threads, processes, or
+   application restarts
