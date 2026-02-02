@@ -1768,6 +1768,7 @@
      SUBDIR += py-three-merge
      SUBDIR += py-thrift
      SUBDIR += py-timelib
+     SUBDIR += py-timeout-decorator
      SUBDIR += py-tokenize-rt
      SUBDIR += py-toolz
      SUBDIR += py-toposort
