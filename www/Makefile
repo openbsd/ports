@@ -523,6 +523,7 @@
      SUBDIR += py-treq
      SUBDIR += py-uri-template
      SUBDIR += py-uritemplate
+     SUBDIR += py-url-normalize
      SUBDIR += py-urlgrabber
      SUBDIR += py-urllib3
      SUBDIR += py-uvicorn
