@@ -4,7 +4,7 @@ DISTNAME =	GNUMail-1.4.0
 SHLIB_VERSION =	3.0
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 

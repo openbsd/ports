@@ -1,6 +1,6 @@
 COMMENT=	GNUstep rdesktop frontend
 
-REVISION =	16
+REVISION =	17
 DISTNAME=	RemoteDesk-0.1
 
 CATEGORIES=	x11

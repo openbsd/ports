@@ -1,7 +1,7 @@
 COMMENT =	GNUstep frontent to libgphoto2
 
 DISTNAME =	Camera-0.8
-REVISION =	12
+REVISION =	13
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	graphics
 

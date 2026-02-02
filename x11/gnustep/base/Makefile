@@ -1,6 +1,6 @@
 COMMENT=	GNUstep base library
 
-REVISION =	0
+REVISION =	1
 GH_TAGNAME=     1.31.1
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-base

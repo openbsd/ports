@@ -5,7 +5,7 @@ DISTNAME =	Performance-${VERSION}
 PKGNAME =	gnustep-performance-${VERSION}
 CATEGORIES =	devel
 SHARED_LIBS +=  Performance               0.3
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Performance
 SITES =		${SITE_GNUSTEP:=libs/}

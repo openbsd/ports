@@ -1,7 +1,7 @@
 COMMENT =	GNUstep theme with silvered controls
 
 V =		3.1
-REVISION =	12
+REVISION =	13
 DISTNAME =	Silver.theme-${V}
 PKGNAME =	gnustep-silver-theme-${V}
 

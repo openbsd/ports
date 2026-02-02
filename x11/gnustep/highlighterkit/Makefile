@@ -1,6 +1,6 @@
 COMMENT =	framework for highlighting and coloring syntax
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	HighlighterKit-0.1.3
 SHARED_LIBS =	HighlighterKit 0.1
 

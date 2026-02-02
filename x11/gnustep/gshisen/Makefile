@@ -1,6 +1,6 @@
 COMMENT=	little board game
 
-REVISION =	16
+REVISION =	17
 DISTNAME=	GShisen-1.3.0
 CATEGORIES=	games
 

@@ -2,6 +2,7 @@ COMMENT=	GNUstep address book
 
 VERSION =	0.5.0
 DISTNAME=	Addresses-${VERSION}
+REVISION=	0
 
 SHARED_LIBS+=	Addresses 0.2	# .0.1
 SHARED_LIBS+=	AddressView 0.1	# .0.1

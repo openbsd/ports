@@ -1,7 +1,7 @@
 COMMENT=	view images and do slideshows
 
 DISTNAME =	LaternaMagica-0.5
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE=	http://gap.nongnu.org/laternamagica/
 SITES=		${SITE_SAVANNAH:=gap/}

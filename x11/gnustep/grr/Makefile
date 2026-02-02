@@ -1,6 +1,6 @@
 COMMENT =	Guenthers RSS reader
 
-REVISION =	15
+REVISION =	16
 DISTNAME =	Grr-1.0
 
 HOMEPAGE =	http://gap.nongnu.org/grr/

@@ -1,6 +1,6 @@
 COMMENT =	web cookies sniffer and providing proxy
 
-REVISION =	11
+REVISION =	12
 DISTNAME =	ImpersonatorToolKit-0.3
 CATEGORIES =	net security
 

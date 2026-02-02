@@ -1,6 +1,6 @@
 COMMENT =	manage settings of the gnustep environment
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	SystemPreferences-1.2.0
 CATEGORIES =	sysutils
 SHARED_LIBS =	PreferencePanes 0.0

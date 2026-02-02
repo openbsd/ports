@@ -1,6 +1,6 @@
 COMMENT =	tetris like puzzle game
 
-REVISION =	16
+REVISION =	17
 DISTNAME =	LapisPuzzle-1.2
 CATEGORIES =	games
 

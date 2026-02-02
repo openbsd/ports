@@ -1,7 +1,7 @@
 COMMENT =	framework for accessing and rendering PDF content
 
 DISTNAME =	PDFKit-1.2.0
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit

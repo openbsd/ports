@@ -1,6 +1,6 @@
 COMMENT =	GNUstep based trace visualization tool
 
-REVISION =	17
+REVISION =	18
 DISTNAME =	Paje-1.98
 SHARED_LIBS +=	General	0.0
 

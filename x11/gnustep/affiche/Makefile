@@ -1,7 +1,7 @@
 COMMENT =	GNUstep sticky notes
 
 DISTNAME =	Affiche-0.6.0
-REVISION =	15
+REVISION =	16
 
 HOMEPAGE =	http://www.collaboration-world.com/affiche/
 SITES =		http://www.collaboration-world.com/affiche.data/releases/Stable/

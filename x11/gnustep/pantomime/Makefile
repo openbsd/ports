@@ -1,7 +1,7 @@
 COMMENT=	framework to major mail protocols
 
 DISTNAME=	Pantomime-1.4.0
-REVISION=	1
+REVISION=	2
 
 SHLIB_VERSION = 2.0
 SHARED_LIBS=	Pantomime ${SHLIB_VERSION}

@@ -1,6 +1,6 @@
 COMMENT=	GNUstep gui backend
 
-REVISION=	0
+REVISION=	1
 GH_TAGNAME=     0.32.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-back
