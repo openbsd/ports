@@ -1,0 +1,22 @@
+https://github.com/sabre-io/Baikal/issues/1241
+https://github.com/sabre-io/Baikal/issues/1325
+
+Index: vendor/sabre/dav/lib/CalDAV/Plugin.php
+--- vendor/sabre/dav/lib/CalDAV/Plugin.php.orig
++++ vendor/sabre/dav/lib/CalDAV/Plugin.php
+@@ -508,14 +508,7 @@ class Plugin extends DAV\ServerPlugin
+             $tzProp = '{'.self::NS_CALDAV.'}calendar-timezone';
+             $tzResult = $this->server->getProperties($path, [$tzProp]);
+             if (isset($tzResult[$tzProp])) {
+-                // This property contains a VCALENDAR with a single
+-                // VTIMEZONE.
+-                $vtimezoneObj = VObject\Reader::read($tzResult[$tzProp]);
+-                $calendarTimeZone = $vtimezoneObj->VTIMEZONE->getTimeZone();
+-
+-                // Destroy circular references so PHP will garbage collect the
+-                // object.
+-                $vtimezoneObj->destroy();
++                $calendarTimeZone = new DateTimeZone($tzResult[$tzProp]);
+             } else {
+                 // Defaulting to UTC.
+                 $calendarTimeZone = new DateTimeZone('UTC');
