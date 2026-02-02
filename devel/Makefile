@@ -1674,6 +1674,7 @@
      SUBDIR += py-qt-builder
      SUBDIR += py-r2pipe
      SUBDIR += py-radix
+     SUBDIR += py-pyrate-limiter
      SUBDIR += py-rcsparse
      SUBDIR += py-regex
      SUBDIR += py-rencode
