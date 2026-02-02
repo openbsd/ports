@@ -21,7 +21,7 @@ Index: nzbget.conf
  #
 @@ -456,7 +456,7 @@ UpdateCheck=stable
  # NOTE: If DaemonUsername is not "root" and doesn't exist the daemon will not start.
- # NOTE: If the daemon is running as root (superuser) and DaemonUsername exists, 
+ # NOTE: If the daemon is running as root (superuser) and DaemonUsername exists,
  # nzbget will drop root privileges to the user specified by DaemonUsername.
 -DaemonUsername=root
 +DaemonUsername=_nzbget

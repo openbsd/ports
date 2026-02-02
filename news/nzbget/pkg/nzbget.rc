@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/nzbget -D"
+daemon_execdir="${LOCALSTATEDIR}/nzbget"
 
 . /etc/rc.d/rc.subr
 

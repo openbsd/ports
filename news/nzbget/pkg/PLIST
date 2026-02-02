@@ -29,14 +29,18 @@ share/nzbget/webui/fasttable.js
 share/nzbget/webui/feed.js
 share/nzbget/webui/history.js
 share/nzbget/webui/img/
+share/nzbget/webui/img/discord.svg
 share/nzbget/webui/img/download-16.ico
 share/nzbget/webui/img/download-anim-green-2x.png
 share/nzbget/webui/img/download-anim-orange-2x.png
 share/nzbget/webui/img/favicon-256x256-opaque.png
 share/nzbget/webui/img/favicon-256x256.png
 share/nzbget/webui/img/favicon.ico
+share/nzbget/webui/img/github.svg
 share/nzbget/webui/img/icons-2x.png
 share/nzbget/webui/img/icons.png
+share/nzbget/webui/img/nzbget.svg
+share/nzbget/webui/img/reddit.svg
 share/nzbget/webui/img/transmit-file.gif
 share/nzbget/webui/img/transmit-reload-2x.gif
 share/nzbget/webui/img/transmit.gif
@@ -58,6 +62,7 @@ share/nzbget/webui/messages.js
 share/nzbget/webui/statistics.js
 share/nzbget/webui/status.js
 share/nzbget/webui/style.css
+share/nzbget/webui/system-health.js
 share/nzbget/webui/system-info.js
 share/nzbget/webui/upload.js
 share/nzbget/webui/util.js
