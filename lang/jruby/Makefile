@@ -9,7 +9,7 @@ PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES.jffi =jffi-1.3.10.tar.gz
 DISTFILES.gem =	${JRUBY_LAUNCHER_GEM}
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -81,9 +81,10 @@ do-install:
 	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	for file in ast bundle bundler erb irb gem jgem jirb jirb_swing jruby jrubyc racc rake rdoc ri; \
+	for file in ast bundle bundler erb irb gem jgem jirb jirb_swing jrubyc racc rake rdoc ri; \
 	  do ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
 	done
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/jruby ${JRUBY_HOME}/bin/jruby # not a shell script; used in #! lines
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
@@ -93,6 +94,7 @@ do-install:
 	mv ${JRUBY_HOME}/lib/ruby/gems/{shared,1.8}
 	ln -s 1.8 ${JRUBY_HOME}/lib/ruby/gems/shared
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib
+	rm -f ${PREFIX}/jruby/lib/jruby-java*.jsa # tied to exact jdk build; may need jruby.sh to use?
 
 # JRuby doesn't ship tests in the binary distribution
 # Try running the database/ruby-sequel,jruby tests after an update
