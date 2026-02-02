@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -599,12 +599,14 @@ if nsl_lib.found()
+@@ -601,12 +601,14 @@ if nsl_lib.found()
    network_deps += nsl_lib
  endif
  
@@ -14,5 +14,5 @@ Index: meson.build
  platform_deps += atomic_dep
 +endif
  
- gir = find_program('g-ir-scanner', required : get_option('introspection'))
- gnome = import('gnome')
+ gir = find_program('g-ir-scanner', required : get_option('introspection'),
+     default_options: {'cairo': 'disabled'})

@@ -2,18 +2,18 @@ COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 
-SHARED_LIBS += gsttag-1.0                7.3 # 0.2610.0
-SHARED_LIBS += gstfft-1.0                7.3 # 0.2610.0
-SHARED_LIBS += gstvideo-1.0              7.3 # 0.2610.0
-SHARED_LIBS += gstaudio-1.0              7.3 # 0.2610.0
-SHARED_LIBS += gstrtp-1.0                7.3 # 0.2610.0
-SHARED_LIBS += gstpbutils-1.0            7.3 # 0.2610.0
-SHARED_LIBS += gstsdp-1.0                7.3 # 0.2610.0
-SHARED_LIBS += gstrtsp-1.0               7.3 # 0.2610.0
-SHARED_LIBS += gstriff-1.0               7.3 # 0.2610.0
-SHARED_LIBS += gstapp-1.0                7.3 # 0.2610.0
-SHARED_LIBS += gstallocators-1.0         6.3 # 0.2610.0
-SHARED_LIBS += gstgl-1.0                 6.3 # 0.2610.0
+SHARED_LIBS += gstallocators-1.0         6.5 # 0.2800.0
+SHARED_LIBS += gsttag-1.0                7.5 # 0.2800.0
+SHARED_LIBS += gstfft-1.0                7.5 # 0.2800.0
+SHARED_LIBS += gstvideo-1.0              7.5 # 0.2800.0
+SHARED_LIBS += gstaudio-1.0              7.5 # 0.2800.0
+SHARED_LIBS += gstrtp-1.0                7.5 # 0.2800.0
+SHARED_LIBS += gstpbutils-1.0            7.5 # 0.2800.0
+SHARED_LIBS += gstsdp-1.0                7.5 # 0.2800.0
+SHARED_LIBS += gstrtsp-1.0               7.5 # 0.2800.0
+SHARED_LIBS += gstriff-1.0               7.5 # 0.2800.0
+SHARED_LIBS += gstapp-1.0                7.5 # 0.2800.0
+SHARED_LIBS += gstgl-1.0                 6.5 # 0.2800.0
 
 SITES=			${SITE_GST:=gst-plugins-base/}
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/opus \
-			devel/orc \
+			devel/orc>=0.4.42 \
 			devel/pango \
 			graphics/graphene \
 			graphics/jpeg \

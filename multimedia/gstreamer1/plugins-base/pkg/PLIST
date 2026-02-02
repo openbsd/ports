@@ -11,6 +11,7 @@ include/gstreamer-${API}/gst/allocators/gstdrmdumb.h
 include/gstreamer-${API}/gst/allocators/gstfdmemory.h
 include/gstreamer-${API}/gst/allocators/gstphysmemory.h
 include/gstreamer-${API}/gst/allocators/gstshmallocator.h
+include/gstreamer-${API}/gst/allocators/gstudmabufallocator.h
 include/gstreamer-${API}/gst/app/
 include/gstreamer-${API}/gst/app/app-enumtypes.h
 include/gstreamer-${API}/gst/app/app-prelude.h
@@ -188,6 +189,7 @@ include/gstreamer-${API}/gst/video/gstvideoaffinetransformationmeta.h
 include/gstreamer-${API}/gst/video/gstvideoaggregator.h
 include/gstreamer-${API}/gst/video/gstvideocodecalphameta.h
 include/gstreamer-${API}/gst/video/gstvideodecoder.h
+include/gstreamer-${API}/gst/video/gstvideodmabufpool.h
 include/gstreamer-${API}/gst/video/gstvideoencoder.h
 include/gstreamer-${API}/gst/video/gstvideofilter.h
 include/gstreamer-${API}/gst/video/gstvideometa.h
@@ -319,6 +321,7 @@ share/gst-plugins-base/
 share/gst-plugins-base/${API}/
 share/gst-plugins-base/${API}/license-translations.dict
 share/locale/af/LC_MESSAGES/gst-plugins-base-${API}.mo
+share/locale/ar/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/ca/LC_MESSAGES/gst-plugins-base-${API}.mo

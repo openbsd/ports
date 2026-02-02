@@ -62,6 +62,7 @@ include/gstreamer-${API}/gst/gstconfig.h
 include/gstreamer-${API}/gst/gstcontext.h
 include/gstreamer-${API}/gst/gstcontrolbinding.h
 include/gstreamer-${API}/gst/gstcontrolsource.h
+include/gstreamer-${API}/gst/gstcpuid.h
 include/gstreamer-${API}/gst/gstdatetime.h
 include/gstreamer-${API}/gst/gstdebugutils.h
 include/gstreamer-${API}/gst/gstdevice.h
@@ -84,6 +85,7 @@ include/gstreamer-${API}/gst/gstmacros.h
 include/gstreamer-${API}/gst/gstmemory.h
 include/gstreamer-${API}/gst/gstmessage.h
 include/gstreamer-${API}/gst/gstmeta.h
+include/gstreamer-${API}/gst/gstmetafactory.h
 include/gstreamer-${API}/gst/gstminiobject.h
 include/gstreamer-${API}/gst/gstobject.h
 include/gstreamer-${API}/gst/gstpad.h
@@ -167,7 +169,7 @@ share/bash-completion/helpers/
 share/bash-completion/helpers/gst
 share/cmake/
 share/cmake/FindGStreamer.cmake
-share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2610.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2800.0-gdb.py
 share/gir-${API}/Gst-${API}.gir
 share/gir-${API}/GstBase-${API}.gir
 share/gir-${API}/GstCheck-${API}.gir
@@ -178,6 +180,7 @@ share/gstreamer-${API}/gdb/
 share/gstreamer-${API}/gdb/glib_gobject_helper.py
 share/gstreamer-${API}/gdb/gst_gdb.py
 share/locale/af/LC_MESSAGES/gstreamer-${API}.mo
+share/locale/ar/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/ast/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/az/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/be/LC_MESSAGES/gstreamer-${API}.mo

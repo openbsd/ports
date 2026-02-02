@@ -9,6 +9,7 @@
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstX264Enc.prs
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-${API}.mo
+share/locale/ar/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/ast/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-ugly-${API}.mo

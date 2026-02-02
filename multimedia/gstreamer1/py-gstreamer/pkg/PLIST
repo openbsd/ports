@@ -1,5 +1,7 @@
 @pkgpath multimedia/gstreamer1/py-gstreamer,python3
 @so lib/gstreamer-${API}/libgstpython.so
+lib/gstreamer-${API}/python/
+lib/gstreamer-${API}/python/gesotioformatter.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstAnalytics.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstApp.py

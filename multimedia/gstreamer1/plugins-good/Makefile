@@ -32,8 +32,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 
 # dlopen()
 WANTLIB += soup-3.0
-BUILD_DEPENDS +=	devel/libsoup3
-RUN_DEPENDS +=		devel/libsoup3
+LIB_DEPENDS +=		devel/libsoup3
 
 CONFIGURE_ARGS=		-Daalib=disabled \
 			-Ddirectsound=disabled \

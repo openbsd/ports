@@ -1,6 +1,6 @@
-Index: meson_options.txt
---- meson_options.txt.orig
-+++ meson_options.txt
+Index: meson.options
+--- meson.options.orig
++++ meson.options
 @@ -56,6 +56,7 @@ option('volume', type : 'feature', value : 'auto')
  
  # Feature options for plugins with external deps
