@@ -1,0 +1,11 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -64,7 +64,6 @@ build-backend = "setuptools.build_meta"
+ addopts = [
+   "--cov-report=term-missing:skip-covered",
+   "--cov=url_normalize",
+-  "--disable-socket",
+   "-v",
+ ]
+ python_files = ["tests.py", "test_*.py", "*_tests.py"]
