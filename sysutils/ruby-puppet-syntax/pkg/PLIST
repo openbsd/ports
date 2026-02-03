@@ -2,6 +2,7 @@ ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
@@ -36,8 +37,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/hiera_4.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badkey.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badvalue.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_good.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_key_empty.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_key_no_value.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/deprecation_notice.pp

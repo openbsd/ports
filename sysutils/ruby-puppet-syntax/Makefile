@@ -1,7 +1,6 @@
 COMMENT=		syntax checks for Puppet manifests and templates
 
-REVISION=		0
-DISTNAME=		puppet-syntax-4.1.1
+DISTNAME=		puppet-syntax-7.0.1
 CATEGORIES=		sysutils
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -12,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/ruby
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		sysutils/ruby-puppet/8
+RUN_DEPENDS +=		sysutils/ruby-openvox/8
 
 CONFIGURE_STYLE=	ruby gem
 
