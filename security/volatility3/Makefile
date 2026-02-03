@@ -1,9 +1,8 @@
 COMMENT =		volatile memory extraction framework
 
-MODPY_DISTV =	2.7.0
+MODPY_DISTV =	2.27.0
 DISTNAME =		volatility3-${MODPY_DISTV}
 PKGNAME =		${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		security
 HOMEPAGE =		https://www.volatilityfoundation.org/
@@ -21,7 +20,9 @@ PORTHOME =		${WRKDIR}
 # fixture 'image' not found
 NO_TEST =		Yes
 
-RUN_DEPENDS =		devel/capstone/python \
+RUN_DEPENDS =		devel/py-arrow \
+			devel/capstone/python \
+			graphics/py-Pillow \
 			security/py-cryptodome \
 			security/py-pefile \
 			security/yara/python
