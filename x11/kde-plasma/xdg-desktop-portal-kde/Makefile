@@ -1,6 +1,6 @@
-COMMENT =	xdg-desktop-portal Qt/KF6 backend
+COMMENT=	KDE backend implementation for xdg-desktop-portal
 DISTNAME =	xdg-desktop-portal-kde-${VERSION}
-REVISION =	0
+REVISION =	1
 
 MODKDE_TRANSLATIONS =	Yes
 
@@ -15,7 +15,8 @@ WANTLIB += Qt6Qml Qt6Quick Qt6QuickWidgets Qt6WaylandClient Qt6Widgets
 WANTLIB += Qt6Xml X11 c m wayland-client wayland-cursor xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf6/kirigami
+		devel/kf6/kirigami \
+		sysutils/flatpak/xdg-desktop-portal
 
 BUILD_DEPENDS =	devel/kf6/kirigami
 
