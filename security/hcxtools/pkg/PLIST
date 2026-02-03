@@ -3,6 +3,7 @@
 @bin bin/hcxhashtool
 @bin bin/hcxpcapngtool
 @bin bin/hcxpmktool
+@bin bin/hcxpottool
 @bin bin/hcxpsktool
 @bin bin/hcxwltool
 @bin bin/whoismac
