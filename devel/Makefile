@@ -1715,6 +1715,7 @@
      SUBDIR += py-spark-parser
      SUBDIR += py-speg
      SUBDIR += py-stack_data
+     SUBDIR += py-stdlib-list
      SUBDIR += py-stdnum
      SUBDIR += py-straight.plugin
      SUBDIR += py-strict_rfc3339
