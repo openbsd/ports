@@ -1,0 +1,15 @@
+REVERT (only works on Linux):
+From 4eff235e2bc433519fecbaf136ab95b00a60b1c2 Mon Sep 17 00:00:00 2001
+From: Ondrej Holy <oholy@redhat.com>
+Date: Tue, 20 Jan 2026 09:02:50 +0100
+Subject: [PATCH] file: Do not count children for autofs mountpoints
+
+Index: src/nautilus-file-utilities.h
+--- src/nautilus-file-utilities.h.orig
++++ src/nautilus-file-utilities.h
+@@ -133,3 +133,5 @@ GList *
+ nautilus_location_list_from_file_list (GList *files);
+ 
+ gboolean nautilus_location_is_autofs_mountpoint (GFile *location);
++
++gboolean nautilus_location_is_autofs_mountpoint (GFile *location);

@@ -1,0 +1,27 @@
+REVERT (only works on Linux):
+From 4eff235e2bc433519fecbaf136ab95b00a60b1c2 Mon Sep 17 00:00:00 2001
+From: Ondrej Holy <oholy@redhat.com>
+Date: Tue, 20 Jan 2026 09:02:50 +0100
+Subject: [PATCH] file: Do not count children for autofs mountpoints
+
+Index: src/nautilus-file.c
+--- src/nautilus-file.c.orig
++++ src/nautilus-file.c
+@@ -5121,17 +5121,6 @@ nautilus_file_should_show_directory_item_count (Nautil
+ {
+     g_return_val_if_fail (NAUTILUS_IS_FILE (file), FALSE);
+ 
+-    /* Don't count items in autofs directories to avoid triggering automount. */
+-    if (file->details->is_mountpoint)
+-    {
+-        g_autoptr (GFile) location = nautilus_file_get_location (file);
+-
+-        if (nautilus_location_is_autofs_mountpoint (location))
+-        {
+-            return FALSE;
+-        }
+-    }
+-
+     return get_speed_tradeoff_preference_for_file (file, show_directory_item_count);
+ }
+ 
