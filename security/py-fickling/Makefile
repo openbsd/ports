@@ -1,6 +1,6 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_DISTV =	0.1.5
+MODPY_DISTV =	0.1.7
 DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
@@ -15,5 +15,7 @@ MODPY_PYBUILD =		hatchling
 MODPY_PI =		Yes
 
 NO_TEST =		Yes
+
+RUN_DEPENDS =		devel/py-stdlib-list
 
 .include <bsd.port.mk>
