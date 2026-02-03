@@ -31,6 +31,8 @@ lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}pageutils.$
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}pageutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}pdfarranger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}pdfarranger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}splitter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}splitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}undo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/pdfarranger/image_exporter.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/pageutils.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/pdfarranger.py
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/search.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/splitter.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/undo.py
 @man man/man1/pdfarranger.1
@@ -71,6 +74,7 @@ share/locale/id/LC_MESSAGES/pdfarranger.mo
 share/locale/is/LC_MESSAGES/pdfarranger.mo
 share/locale/it/LC_MESSAGES/pdfarranger.mo
 share/locale/ja/LC_MESSAGES/pdfarranger.mo
+share/locale/ka/LC_MESSAGES/pdfarranger.mo
 share/locale/ko/LC_MESSAGES/pdfarranger.mo
 share/locale/nl/LC_MESSAGES/pdfarranger.mo
 share/locale/oc/LC_MESSAGES/pdfarranger.mo
@@ -86,6 +90,7 @@ share/locale/sl/LC_MESSAGES/pdfarranger.mo
 share/locale/sv/LC_MESSAGES/pdfarranger.mo
 share/locale/tr/LC_MESSAGES/pdfarranger.mo
 share/locale/uk/LC_MESSAGES/pdfarranger.mo
+share/locale/vi/LC_MESSAGES/pdfarranger.mo
 share/locale/zh_CN/LC_MESSAGES/pdfarranger.mo
 share/locale/zh_TW/LC_MESSAGES/pdfarranger.mo
 share/metainfo/

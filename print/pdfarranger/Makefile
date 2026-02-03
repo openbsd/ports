@@ -1,6 +1,6 @@
 COMMENT=	GUI tool to rearrange and modify PDF files
 
-MODPY_DISTV=	1.12.1
+MODPY_DISTV=	1.13.0
 GH_ACCOUNT=	pdfarranger
 GH_PROJECT=	pdfarranger
 GH_TAGNAME=	${MODPY_DISTV}
