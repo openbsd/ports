@@ -3,6 +3,7 @@
 bin/coverage
 bin/coverage-${MODPY_VERSION}
 bin/coverage3
+lib/python${MODPY_VERSION}/site-packages/a1_coverage.pth
 lib/python${MODPY_VERSION}/site-packages/coverage/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/METADATA
@@ -73,6 +74,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}plugin.${MODPY
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}plugin_support.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}plugin_support.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}pth_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}pth_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}pytracer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -136,6 +139,7 @@ lib/python${MODPY_VERSION}/site-packages/coverage/patch.py
 lib/python${MODPY_VERSION}/site-packages/coverage/phystokens.py
 lib/python${MODPY_VERSION}/site-packages/coverage/plugin.py
 lib/python${MODPY_VERSION}/site-packages/coverage/plugin_support.py
+lib/python${MODPY_VERSION}/site-packages/coverage/pth_file.py
 lib/python${MODPY_VERSION}/site-packages/coverage/py.typed
 lib/python${MODPY_VERSION}/site-packages/coverage/python.py
 lib/python${MODPY_VERSION}/site-packages/coverage/pytracer.py
