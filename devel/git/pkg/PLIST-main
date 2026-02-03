@@ -410,6 +410,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitcore-tutorial.7
 @man man/man7/gitcredentials.7
 @man man/man7/gitcvs-migration.7
+@man man/man7/gitdatamodel.7
 @man man/man7/gitdiffcore.7
 @man man/man7/giteveryday.7
 @man man/man7/gitfaq.7
