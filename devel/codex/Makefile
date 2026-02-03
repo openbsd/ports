@@ -3,7 +3,7 @@ NOT_FOR_ARCHS = 	sparc64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.93.0
+V =			0.94.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -28,7 +28,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} crypto dbus-1 m ssl util
 
-BUILD_DEPENDS =		devel/git \
+BUILD_DEPENDS =		devel/cmake/core \
+			devel/git \
 			databases/sqlite3
 
 LIB_DEPENDS =		x11/dbus
