@@ -93,6 +93,7 @@
      SUBDIR += codeblocks
      SUBDIR += codechecker
      SUBDIR += codeworker
+     SUBDIR += codex
      SUBDIR += coeurl
      SUBDIR += colordiff
      SUBDIR += commoncpp
