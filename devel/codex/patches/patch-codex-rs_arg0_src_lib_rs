@@ -1,0 +1,24 @@
+Index: codex-rs/arg0/src/lib.rs
+--- codex-rs/arg0/src/lib.rs.orig
++++ codex-rs/arg0/src/lib.rs
+@@ -99,6 +99,10 @@ where
+     runtime.block_on(async move {
+         let codex_linux_sandbox_exe: Option<PathBuf> = if cfg!(target_os = "linux") {
+             std::env::current_exe().ok()
++        } else if cfg!(target_os = "openbsd") {
++            std::env::current_exe()
++                .ok()
++                .or(Some(PathBuf::from("${PREFIX}/bin/codex")))
+         } else {
+             None
+         };
+@@ -188,7 +192,8 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+         #[cfg(target_os = "linux")]
+         LINUX_SANDBOX_ARG0,
+     ] {
+-        let exe = std::env::current_exe()?;
++        let exe = std::env::current_exe()
++            .unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/codex"));
+ 
+         #[cfg(unix)]
+         {

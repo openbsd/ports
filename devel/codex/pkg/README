@@ -1,0 +1,15 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+You may use OpenAI commercial services or misc/llama.cpp, for the last
+one you should add into ~/.codex/config.toml:
+
+	model_provider = "local"
+	model = "local"
+	web_search = "disabled"
+
+	[model_providers.local]
+	name = "llama-server"
+	base_url = "http://127.0.0.1:8080/v1"
+	wire_api = "responses"

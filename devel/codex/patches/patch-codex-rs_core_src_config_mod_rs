@@ -1,0 +1,21 @@
+Index: codex-rs/core/src/config/mod.rs
+--- codex-rs/core/src/config/mod.rs.orig
++++ codex-rs/core/src/config/mod.rs
+@@ -1513,7 +1513,7 @@ impl Config {
+ 
+         let review_model = override_review_model.or(cfg.review_model);
+ 
+-        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(true);
++        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(false);
+ 
+         // Ensure that every field of ConfigRequirements is applied to the final
+         // Config.
+@@ -3824,7 +3824,7 @@ model_verbosity = "high"
+                 active_project: ProjectConfig { trust_level: None },
+                 windows_wsl_setup_acknowledged: false,
+                 notices: Default::default(),
+-                check_for_update_on_startup: true,
++                check_for_update_on_startup: false,
+                 disable_paste_burst: false,
+                 tui_notifications: Default::default(),
+                 tui_notification_method: Default::default(),

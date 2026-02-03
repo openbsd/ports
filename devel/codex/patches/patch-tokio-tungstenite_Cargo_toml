@@ -1,0 +1,13 @@
+Index: tokio-tungstenite/Cargo.toml
+--- tokio-tungstenite/Cargo.toml.orig
++++ tokio-tungstenite/Cargo.toml
+@@ -35,8 +35,7 @@ futures-util = { version = "0.3.28", default-features 
+ tokio = { version = "1.0.0", default-features = false, features = ["io-util"] }
+ 
+ [dependencies.tungstenite]
+-git = "ssh://git@github.com/JakkuSakura/tungstenite-rs.git"
+-branch = "proxy-support"
++path = "../tungstenite"
+ default-features = false
+ 
+ [dependencies.native-tls-crate]
