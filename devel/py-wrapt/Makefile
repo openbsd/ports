@@ -1,6 +1,6 @@
 COMMENT=	Python module for decorators, wrappers and monkey patching
 
-MODPY_DISTV=	2.0.1
+MODPY_DISTV=	2.1.1
 DISTNAME=	wrapt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
