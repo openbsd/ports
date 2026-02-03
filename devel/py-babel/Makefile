@@ -1,10 +1,9 @@
 COMMENT=	I18N/L10N tools for Python
 
-MODPY_DISTV=	2.17.0
+MODPY_DISTV=	2.18.0
 DISTNAME=	babel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://babel.pocoo.org/
 
