@@ -1,6 +1,7 @@
 COMMENT=	manage remote serial consoles via TCP/IP
 
 V=		8.3.0
+REVISION=	0
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
 
