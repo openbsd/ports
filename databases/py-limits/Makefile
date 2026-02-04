@@ -1,6 +1,6 @@
 COMMENT =		rate limiting utilities
 
-MODPY_DISTV =		5.6.0
+MODPY_DISTV =		5.7.0
 DISTNAME =		limits-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,8 +20,8 @@ RUN_DEPENDS =		devel/py-deprecated \
 			devel/py-typing-extensions \
 			sysutils/py-packaging
 
-# XXX: py-test-lazy-fixture is marked BROKEN
+# needs pymemcache and py-test-lazy-fixtures (not in ports; the latter
+# is not py-test-lazy-fixture)
 NO_TEST =		Yes
-# TEST_DEPENDS =	devel/py-test-lazy-fixture
 
 .include <bsd.port.mk>
