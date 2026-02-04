@@ -1,6 +1,6 @@
 # increment after rust compiler update to trigger updates of
 # all compiled rust packages (see arch-defines.mk)
-_SYSTEM_VERSION-rust =	19
+_SYSTEM_VERSION-rust =	20
 
 CATEGORIES +=		lang/rust
 

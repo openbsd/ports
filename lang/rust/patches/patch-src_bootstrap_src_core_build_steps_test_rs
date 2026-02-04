@@ -3,12 +3,21 @@ Disable "Bootstrap" test by default (it requires network).
 Index: src/bootstrap/src/core/build_steps/test.rs
 --- src/bootstrap/src/core/build_steps/test.rs.orig
 +++ src/bootstrap/src/core/build_steps/test.rs
-@@ -50,7 +50,7 @@ pub struct CrateBootstrap {
+@@ -48,7 +48,7 @@ pub struct CrateBootstrap {
+ 
  impl Step for CrateBootstrap {
      type Output = ();
-     const IS_HOST: bool = true;
--    const DEFAULT: bool = true;
-+    const DEFAULT: bool = false;
+-    const IS_HOST: bool = true;
++    const IS_HOST: bool = false;
  
      fn should_run(run: ShouldRun<'_>) -> ShouldRun<'_> {
          // This step is responsible for several different tool paths.
+@@ -64,7 +64,7 @@ impl Step for CrateBootstrap {
+     }
+ 
+     fn is_default_step(_builder: &Builder<'_>) -> bool {
+-        true
++        false
+     }
+ 
+     fn make_run(run: RunConfig<'_>) {
