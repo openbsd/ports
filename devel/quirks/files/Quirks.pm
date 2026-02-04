@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1785 2026/01/23 18:56:21 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1786 2026/02/04 15:33:58 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1035,6 +1035,7 @@ setup_obsolete_reason(
 	13 => 'tls-attacker',
 	17 => 'onionshare',
 	17 => 'onionshare-gui',
+	48 => 'phpldapadmin',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
@@ -1089,6 +1090,7 @@ my $obsolete_message = {
 	16 => "dependencies for recent versions can't be met",
 	17 => "outdated port, security problems in the last ported version",
 	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
+	48 => "1.x does not support current PHP, 2.x is tricky to package, see https://github.com/leenooks/phpLDAPadmin/wiki/Installation-Instructions#install-from-the-source-code",
 	51 => "no longer maintained upstream, consider using socat or SSH",
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
 	64 => "no longer maintained upstream, crashes when showing the Syncthing web interface, use a browser",
