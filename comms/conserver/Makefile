@@ -1,9 +1,8 @@
 COMMENT=	manage remote serial consoles via TCP/IP
 
-V=		8.2.7
+V=		8.3.0
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
-REVISION=	2
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -20,6 +19,7 @@ FLAVOR?=
 SITES=		https://github.com/bstansell/conserver/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
+USE_GMAKE=	Yes
 CONFIGURE_ARGS=	--with-master=localhost \
 		--with-pidfile=${LOCALSTATEDIR}/run/conserver/conserver.pid
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

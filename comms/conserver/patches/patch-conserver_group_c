@@ -1,7 +1,7 @@
 Index: conserver/group.c
 --- conserver/group.c.orig
 +++ conserver/group.c
-@@ -753,7 +753,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
+@@ -754,7 +754,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
      struct spwd *spwd;
  # endif
  

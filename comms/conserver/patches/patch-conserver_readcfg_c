@@ -3,7 +3,7 @@ handle usb serial devices via ucomnames
 Index: conserver/readcfg.c
 --- conserver/readcfg.c.orig
 +++ conserver/readcfg.c
-@@ -57,6 +57,7 @@ GRPENT *pGEstage = (GRPENT *)0;
+@@ -58,6 +58,7 @@ GRPENT *pGEstage = (GRPENT *)0;
  GRPENT *pGE = (GRPENT *)0;
  static unsigned int groupID = 1;
  REMOTE **ppRC = (REMOTE **)0;
@@ -11,7 +11,7 @@ Index: conserver/readcfg.c
  
  /* 'task' handling (plus) */
  void
-@@ -2456,6 +2457,7 @@ CheckSubst(char *label, char *subst)
+@@ -2527,6 +2528,7 @@ CheckSubst(char *label, char *subst)
  void
  ConsoleEnd(void)
  {
@@ -19,7 +19,7 @@ Index: conserver/readcfg.c
      int invalid = 0;
  
      CONSENT *c = (CONSENT *)0;
-@@ -2506,6 +2508,14 @@ ConsoleEnd(void)
+@@ -2577,6 +2579,14 @@ ConsoleEnd(void)
  		    parserConsoleTemp->devicesubst = (char *)0;
  		}
  	    }
@@ -34,7 +34,7 @@ Index: conserver/readcfg.c
  	    break;
  #if HAVE_FREEIPMI
  	case IPMI:
-@@ -5057,7 +5067,10 @@ ReadCfg(char *filename, FILE *fp)
+@@ -5153,7 +5163,10 @@ ReadCfg(char *filename, FILE *fp)
      InitSubstCallback();
  
      /* ready to read in the data */

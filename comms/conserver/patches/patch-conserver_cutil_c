@@ -12,8 +12,8 @@ Index: conserver/cutil.c
 +#include <sys/sysctl.h>
  
  #include <cutil.h>
- #include <version.h>
-@@ -1852,7 +1853,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+ #include <time.h>
+@@ -1853,7 +1854,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  {
  # ifdef SIOCGIFCONF
      struct ifconf ifc;
@@ -22,7 +22,7 @@ Index: conserver/cutil.c
  #  ifdef SIOCGIFFLAGS
      struct ifreq ifrcopy;
  #  endif
-@@ -1921,7 +1922,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1922,7 +1923,7 @@ ProbeInterfaces(in_addr_t bindAddr)
       * than loop through looking for valid interfaces that are up
       * twice, huh?
       */
@@ -31,7 +31,7 @@ Index: conserver/cutil.c
      CONDDEBUG((1, "ProbeInterfaces(): ifc_len==%d max_count==%d",
  	       ifc.ifc_len, count));
  
-@@ -1940,21 +1941,21 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1941,21 +1942,21 @@ ProbeInterfaces(in_addr_t bindAddr)
  
      for (m = r = 0; r < ifc.ifc_len;) {
  	struct sockaddr *sa;
@@ -60,7 +60,7 @@ Index: conserver/cutil.c
  
  	if (sa->sa_family == AF_INET) {
  	    struct sockaddr_in *sin = (struct sockaddr_in *)sa;
-@@ -1975,14 +1976,14 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1976,14 +1977,14 @@ ProbeInterfaces(in_addr_t bindAddr)
  
  #  ifdef SIOCGIFFLAGS
  	    /* make sure the interface is up */
@@ -77,7 +77,7 @@ Index: conserver/cutil.c
  
  #  if HAVE_MEMCPY
  	    memcpy(&myAddrs[m], &(sin->sin_addr), sizeof(struct in_addr));
-@@ -1991,7 +1992,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1992,7 +1993,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  #  endif
  
  	    Verbose("interface address %s (%s)", inet_ntoa(myAddrs[m]),
@@ -86,7 +86,7 @@ Index: conserver/cutil.c
  	    m++;
  	}
      }
-@@ -3101,4 +3102,74 @@ Sleep(useconds_t usec)
+@@ -3108,4 +3109,74 @@ Sleep(useconds_t usec)
  #else
      usleep(usec);
  #endif

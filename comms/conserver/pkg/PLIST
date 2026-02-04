@@ -4,8 +4,8 @@
 @extraunexec rm -rf /var/consoles/*
 @rcscript ${RCDIR}/conserver
 @bin bin/console
-lib/conserver/
-@bin lib/conserver/convert
+libexec/conserver/
+@bin libexec/conserver/convert
 @man man/man1/console.1
 @man man/man5/conserver.cf.5
 @man man/man5/conserver.passwd.5
