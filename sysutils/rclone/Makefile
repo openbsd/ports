@@ -1,6 +1,7 @@
 COMMENT =	rsync for cloud storage
 
 V =		1.73.0
+REVISION =	0
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
@@ -13,15 +14,19 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	c pthread
+# fuse is dlopen'd
+WANTLIB =	c fuse pthread
 
 SITES =		https://downloads.rclone.org/v${V}/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-vendor${EXTRACT_SUFX}
 
 MODULES =	lang/go
+MODGO_FLAGS +=	-tags cmount
 
 NO_TEST =	Yes
+
+MAKE_ENV +=	CGO_CFLAGS=-I/usr/include/fuse
 
 ALL_TARGET =	github.com/rclone/rclone
 
