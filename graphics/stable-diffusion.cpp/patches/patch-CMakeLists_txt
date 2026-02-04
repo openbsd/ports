@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -92,7 +92,7 @@ file(GLOB SD_LIB_SOURCES
+     "*.hpp"
+ )
+ 
+-find_program(GIT_EXE NAMES git git.exe NO_CMAKE_FIND_ROOT_PATH)
++#find_program(GIT_EXE NAMES git git.exe NO_CMAKE_FIND_ROOT_PATH)
+ if(GIT_EXE)
+     execute_process(COMMAND ${GIT_EXE} describe --tags --abbrev=7 --dirty=+
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}

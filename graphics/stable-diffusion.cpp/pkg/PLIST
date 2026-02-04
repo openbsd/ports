@@ -1,0 +1,29 @@
+@bin bin/sd-cli
+@bin bin/sd-server
+include/stable-diffusion.h
+@static-lib lib/libstable-diffusion.a
+share/doc/stable-diffusion.cpp/
+share/doc/stable-diffusion.cpp/build.md
+share/doc/stable-diffusion.cpp/caching.md
+share/doc/stable-diffusion.cpp/chroma.md
+share/doc/stable-diffusion.cpp/chroma_radiance.md
+share/doc/stable-diffusion.cpp/distilled_sd.md
+share/doc/stable-diffusion.cpp/docker.md
+share/doc/stable-diffusion.cpp/esrgan.md
+share/doc/stable-diffusion.cpp/flux.md
+share/doc/stable-diffusion.cpp/flux2.md
+share/doc/stable-diffusion.cpp/hipBLAS_on_Windows.md
+share/doc/stable-diffusion.cpp/kontext.md
+share/doc/stable-diffusion.cpp/lcm.md
+share/doc/stable-diffusion.cpp/lora.md
+share/doc/stable-diffusion.cpp/ovis_image.md
+share/doc/stable-diffusion.cpp/performance.md
+share/doc/stable-diffusion.cpp/photo_maker.md
+share/doc/stable-diffusion.cpp/quantization_and_gguf.md
+share/doc/stable-diffusion.cpp/qwen_image.md
+share/doc/stable-diffusion.cpp/qwen_image_edit.md
+share/doc/stable-diffusion.cpp/sd.md
+share/doc/stable-diffusion.cpp/sd3.md
+share/doc/stable-diffusion.cpp/taesd.md
+share/doc/stable-diffusion.cpp/wan.md
+share/doc/stable-diffusion.cpp/z_image.md
