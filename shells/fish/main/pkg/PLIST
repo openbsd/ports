@@ -357,6 +357,7 @@ share/fish/completions/cjxl.fish
 share/fish/completions/clang++.fish
 share/fish/completions/clang.fish
 share/fish/completions/clasp.fish
+share/fish/completions/claude.fish
 share/fish/completions/clean.fish
 share/fish/completions/cleanmgr.fish
 share/fish/completions/climate.fish
@@ -627,6 +628,7 @@ share/fish/completions/ifdata.fish
 share/fish/completions/ifdown.fish
 share/fish/completions/iftop.fish
 share/fish/completions/ifup.fish
+share/fish/completions/ijq.fish
 share/fish/completions/ikdasm.fish
 share/fish/completions/ilasm.fish
 share/fish/completions/import.fish
@@ -1664,6 +1666,9 @@ share/fish/themes/ayu.theme
 share/fish/themes/base16-default.theme
 share/fish/themes/base16-eighties.theme
 share/fish/themes/bay-cruise.theme
+share/fish/themes/catppuccin-frappe.theme
+share/fish/themes/catppuccin-macchiato.theme
+share/fish/themes/catppuccin-mocha.theme
 share/fish/themes/coolbeans.theme
 share/fish/themes/default-rgb.theme
 share/fish/themes/default.theme
