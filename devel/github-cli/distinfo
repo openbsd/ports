@@ -1,4 +1,4 @@
-SHA256 (cli-v2.85.0.zip) = gVyt0iBy9A4DPti57A2kGOv4ehzlK1rEOHvS8iiFhlY=
+SHA256 (cli-v2.86.0.zip) = IDqzb2V8lQ6ZuLv19JwxZwEiGcm5OJNPyLXB7N51Eno=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = fW3oKR7t4TYCgXcER8PoYsrLbEot39+WoKs40YzeHLw=
 SHA256 (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.zip) = PCUVnGc5TF0v5PxOnneq1BBW/s8kkDDRbGOZrRgVj8I=
@@ -1292,7 +1292,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.mod) = Tjw8HUmmZSRA/3D7R15Urka+LKt
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.6.0.zip) = z4hkikcVgYF7AKQu6NJP1z6w41A5mM9G2OY3h+EeUFI=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
-SIZE (cli-v2.85.0.zip) = 15467803
+SIZE (cli-v2.86.0.zip) = 15478803
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.6.0.zip) = 16137

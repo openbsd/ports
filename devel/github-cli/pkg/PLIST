@@ -47,6 +47,7 @@
 @man man/man1/gh-config-list.1
 @man man/man1/gh-config-set.1
 @man man/man1/gh-config.1
+@man man/man1/gh-copilot.1
 @man man/man1/gh-extension-browse.1
 @man man/man1/gh-extension-create.1
 @man man/man1/gh-extension-exec.1
