@@ -1,6 +1,6 @@
 COMMENT =		pure Python ML-KEM / CRYSTALS-Kyber implementation
 
-MODPY_DISTV =		1.0.1
+MODPY_DISTV =		1.2.0
 DISTNAME = 		kyber_py-${MODPY_DISTV}
 PKGNAME = 		py-${DISTNAME:S/_py//}
 CATEGORIES = 		security
