@@ -6,7 +6,6 @@ bin/notmuch-emacs-mua
 share/applications/notmuch-emacs-mua.desktop
 share/emacs/
 share/emacs/site-lisp/
-share/emacs/site-lisp/notmuch-autoloads.el
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/coolj.elc
 share/emacs/site-lisp/notmuch-address.el
