@@ -322,6 +322,8 @@
      SUBDIR += spirv-cross
      SUBDIR += spirv-headers
      SUBDIR += spirv-tools
+     SUBDIR += stable-diffusion.cpp
+     SUBDIR += stable-diffusion.cpp,vulkan
      SUBDIR += termtosvg
      SUBDIR += tesseract
      SUBDIR += tgif
