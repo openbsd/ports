@@ -414,7 +414,6 @@
      SUBDIR += pecl-ssh2,php85
      SUBDIR += pelican
      SUBDIR += perlbal
-     SUBDIR += phpldapadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
