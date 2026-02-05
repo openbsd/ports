@@ -733,7 +733,10 @@ lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}strptime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}strptime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}time_spans.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dateparser/utils/${MODPY_PYCACHE}time_spans.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateparser/utils/strptime.py
+lib/python${MODPY_VERSION}/site-packages/dateparser/utils/time_spans.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dateparser_cli/${MODPY_PYCACHE}/
