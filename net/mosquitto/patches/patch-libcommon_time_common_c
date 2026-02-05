@@ -1,0 +1,13 @@
+Index: libcommon/time_common.c
+--- libcommon/time_common.c.orig
++++ libcommon/time_common.c
+@@ -23,6 +23,9 @@ Contributors:
+ #include <mach/mach_time.h>
+ #include <sys/time.h>
+ #endif
++#ifdef __OpenBSD__
++#include <sys/time.h>
++#endif
+ 
+ #ifdef WIN32
+ #if !(defined(_MSC_VER) && _MSC_VER <= 1500)

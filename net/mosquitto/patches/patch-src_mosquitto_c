@@ -1,9 +1,9 @@
 Index: src/mosquitto.c
 --- src/mosquitto.c.orig
 +++ src/mosquitto.c
-@@ -102,10 +102,10 @@ int drop_privileges(struct mosquitto__config *config)
+@@ -202,10 +202,10 @@ static int drop_privileges(struct mosquitto__config *c
  					log__printf(NULL, MOSQ_LOG_ERR, "Error: Unable to drop privileges to '%s' because this user does not exist.", config->user);
- 					return 1;
+ 					return MOSQ_ERR_INVAL;
  				}else{
 -					log__printf(NULL, MOSQ_LOG_ERR, "Warning: Unable to drop privileges to '%s' because this user does not exist. Trying 'nobody' instead.", config->user);
 -					pwd = getpwnam("nobody");
@@ -12,6 +12,6 @@ Index: src/mosquitto.c
  					if(!pwd){
 -						log__printf(NULL, MOSQ_LOG_ERR, "Error: Unable to drop privileges to 'nobody'.");
 +						log__printf(NULL, MOSQ_LOG_ERR, "Error: Unable to drop privileges to '_mosquitto'.");
- 						return 1;
+ 						return MOSQ_ERR_ERRNO;
  					}
  				}

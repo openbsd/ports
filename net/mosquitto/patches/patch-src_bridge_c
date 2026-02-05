@@ -1,0 +1,26 @@
+Index: src/bridge.c
+--- src/bridge.c.orig
++++ src/bridge.c
+@@ -205,12 +205,17 @@ static int bridge__set_tcp_keepalive(struct mosquitto 
+ 			setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPINTVL, (char *)&interval, sizeof(interval)) ||
+ 			setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPCNT, (char *)&counter, sizeof(counter));
+ #else
+-	ret = setsockopt(context->sock, SOL_SOCKET, SO_KEEPALIVE, (const void *)&enabled, sizeof(enabled)) ||
+-#ifndef __APPLE__
+-			setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPIDLE, (const void *)&idle, sizeof(idle)) ||
++	ret = setsockopt(context->sock, SOL_SOCKET, SO_KEEPALIVE, (const void *)&enabled, sizeof(enabled))
++#ifdef TCP_KEEPIDLE
++			|| setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPIDLE, (const void *)&idle, sizeof(idle))
+ #endif
+-			setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPINTVL, (const void *)&interval, sizeof(interval)) ||
+-			setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPCNT, (const void *)&counter, sizeof(counter));
++#ifdef TCP_KEEPINTVL
++			|| setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPINTVL, (const void *)&interval, sizeof(interval))
++#endif
++#ifdef TCP_KEEPCNT
++			|| setsockopt(context->sock, IPPROTO_TCP, TCP_KEEPCNT, (const void *)&counter, sizeof(counter))
++#endif
++			;
+ #endif
+ 
+ 	if(ret){

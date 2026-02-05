@@ -1,0 +1,11 @@
+Index: lib/connect.c
+--- lib/connect.c.orig
++++ lib/connect.c
+@@ -24,6 +24,7 @@ Contributors:
+ #  include <winsock2.h>
+ #  include <ws2tcpip.h>
+ #else
++#  include <netinet/in.h>
+ #  include <arpa/inet.h>
+ #endif
+ 

@@ -1,7 +1,7 @@
 Index: test/broker/Makefile
 --- test/broker/Makefile.orig
 +++ test/broker/Makefile
-@@ -56,7 +56,7 @@ msg_sequence_test:
+@@ -66,7 +66,7 @@ msg_sequence_test:
  	./02-subpub-qos1-oversize-payload.py
  	./02-subpub-qos1.py
  	./02-subpub-qos2-1322.py
@@ -10,9 +10,9 @@ Index: test/broker/Makefile
  	./02-subpub-qos2-pubrec-error.py
  	./02-subpub-qos2-receive-maximum-1.py
  	./02-subpub-qos2-receive-maximum-2.py
-@@ -156,7 +156,7 @@ ifeq ($(WITH_TLS),yes)
- 	./08-ssl-connect-cert-auth-without.py
+@@ -174,7 +174,7 @@ ifeq ($(WITH_TLS),yes)
  	./08-ssl-connect-cert-auth.py
+ 	./08-ssl-connect-dhparam.py
  	./08-ssl-connect-identity.py
 -	./08-ssl-connect-no-auth-wrong-ca.py
 +	#./08-ssl-connect-no-auth-wrong-ca.py		# doesn't exit, holding onto port?

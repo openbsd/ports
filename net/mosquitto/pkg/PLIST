@@ -1,30 +1,75 @@
 @newgroup _mosquitto:753
 @newuser _mosquitto:753:753::Mosquitto MQTT Broker:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mosquitto
+bin/mosquitto-migrate_to_dynsec.py
+bin/mosquitto-migrate_to_persist_sqlite.py
 @bin bin/mosquitto_ctrl
+@bin bin/mosquitto_db_dump
 @bin bin/mosquitto_passwd
 @bin bin/mosquitto_pub
 @bin bin/mosquitto_rr
+@bin bin/mosquitto_signal
 @bin bin/mosquitto_sub
+include/mosquitto/
 include/mosquitto.h
+include/mosquitto/broker.h
+include/mosquitto/broker_control.h
+include/mosquitto/broker_plugin.h
+include/mosquitto/defs.h
+include/mosquitto/libcommon.h
+include/mosquitto/libcommon_base64.h
+include/mosquitto/libcommon_cjson.h
+include/mosquitto/libcommon_file.h
+include/mosquitto/libcommon_memory.h
+include/mosquitto/libcommon_password.h
+include/mosquitto/libcommon_properties.h
+include/mosquitto/libcommon_random.h
+include/mosquitto/libcommon_string.h
+include/mosquitto/libcommon_time.h
+include/mosquitto/libcommon_topic.h
+include/mosquitto/libcommon_utf8.h
+include/mosquitto/libmosquitto.h
+include/mosquitto/libmosquitto_auth.h
+include/mosquitto/libmosquitto_callbacks.h
+include/mosquitto/libmosquitto_connect.h
+include/mosquitto/libmosquitto_create_delete.h
+include/mosquitto/libmosquitto_helpers.h
+include/mosquitto/libmosquitto_loop.h
+include/mosquitto/libmosquitto_message.h
+include/mosquitto/libmosquitto_options.h
+include/mosquitto/libmosquitto_publish.h
+include/mosquitto/libmosquitto_socks.h
+include/mosquitto/libmosquitto_subscribe.h
+include/mosquitto/libmosquitto_tls.h
+include/mosquitto/libmosquitto_unsubscribe.h
+include/mosquitto/libmosquitto_will.h
+include/mosquitto/libmosquittopp.h
+include/mosquitto/mqtt_protocol.h
 include/mosquitto_broker.h
 include/mosquitto_plugin.h
 include/mosquittopp.h
 include/mqtt_protocol.h
 @lib lib/libmosquitto.so.${LIBmosquitto_VERSION}
 @lib lib/libmosquittopp.so.${LIBmosquittopp_VERSION}
+@so lib/mosquitto_acl_file.so
 @so lib/mosquitto_dynamic_security.so
+@so lib/mosquitto_password_file.so
+@so lib/mosquitto_persist_sqlite.so
+@so lib/mosquitto_sparkplug_aware.so
 lib/pkgconfig/libmosquitto.pc
 lib/pkgconfig/libmosquittopp.pc
 @man man/man1/mosquitto_ctrl.1
 @man man/man1/mosquitto_ctrl_dynsec.1
+@man man/man1/mosquitto_ctrl_shell.1
 @man man/man1/mosquitto_passwd.1
 @man man/man1/mosquitto_pub.1
 @man man/man1/mosquitto_rr.1
+@man man/man1/mosquitto_signal.1
 @man man/man1/mosquitto_sub.1
 @man man/man3/libmosquitto.3
 @man man/man5/mosquitto.conf.5
 @man man/man7/mosquitto-tls.7
+@man man/man7/mosquitto.7
 @man man/man7/mqtt.7
 @man man/man8/mosquitto.8
 @bin sbin/mosquitto
@@ -35,7 +80,7 @@ share/examples/mosquitto/
 @mode
 @group
 share/examples/mosquitto/aclfile.example
-share/examples/mosquitto/mosquitto.conf
+share/examples/mosquitto/mosquitto.conf.example
 @mode 640
 @group _mosquitto
 @sample ${SYSCONFDIR}/mosquitto/mosquitto.conf

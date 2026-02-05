@@ -1,19 +1,21 @@
 COMMENT=	opensource MQTT broker
 
-DISTNAME=	mosquitto-2.0.23
+DISTNAME=	mosquitto-2.1.1
 
-SHARED_LIBS +=  mosquitto                 2.1
-SHARED_LIBS +=  mosquittopp               2.0
+SHARED_LIBS +=  mosquitto                 3.0
+SHARED_LIBS +=  mosquittopp               3.0
 
 CATEGORIES=	net
+
 HOMEPAGE=	https://mosquitto.org/
+SITES=		https://mosquitto.org/files/source/
 
 # EPL/EDL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c cjson crypto m pthread ssl websockets ${COMPILER_LIBCXX}
-
-SITES=		https://mosquitto.org/files/source/
+WANTLIB += ${COMPILER_LIBCXX} argon2 c cjson crypto m
+# microhttpd
+WANTLIB += readline sqlite3 ssl
 
 COMPILER=	base-clang ports-gcc
 
@@ -22,39 +24,31 @@ MODULES=	devel/cmake \
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
+MODPY_ADJ_FILES= ${WRKSRC}/plugins/*/*.py
 
-BUILD_DEPENDS=	devel/uthash
-LIB_DEPENDS=	devel/cjson \
-		www/libwebsockets
+BUILD_DEPENDS=	devel/uthash \
+		devel/cunit
+LIB_DEPENDS=	databases/sqlite3 \
+		devel/cjson \
+		security/argon2
+#		www/libmicrohttpd (after committing update; drop WITH_HTTP_API=no)
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=	-DWITH_SRV=no \
+		-DWITH_HTTP_API=no \
+		-DWITH_TLS_PSK=no \
 		-DWITH_WEBSOCKETS=yes \
 		-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-
 CFLAGS +=	-I${LOCALBASE}/include
 
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS} \
-		${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/cunit \
-		devel/gmake \
 		sysutils/py-psutil
 
-pre-test:
-	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/
-	ln -fs ${WRKBUILD}/client/mosquitto_{p,s}ub ${WRKSRC}/client/
-	${SUBST_CMD} ${WRKSRC}/test/unit/Makefile
-
-# Pre-shared key support was intentionally removed from libressl
-do-test:
-	ln -fs ${WRKBUILD}/plugins/dynamic-security/mosquitto_dynamic_security.so \
-		${WRKSRC}/plugins/dynamic-security/
-	cd ${WRKSRC}/test; env ${MAKE_ENV} \
-	    WRKLIB=${WRKBUILD}/lib/libmosquitto.so.${LIBmosquitto_VERSION} \
-	    WRKLIBPP=${WRKBUILD}/lib/cpp/libmosquittopp.so.${LIBmosquittopp_VERSION} \
-	    LDFLAGS="-L${LOCALBASE}/lib" CXX="${CXX}" \
-	    gmake -i WITH_TLS_PSK=no test
+post-install:
+	for i in ${WRKSRC}/plugins/*/*.py; do \
+		${INSTALL_SCRIPT} $$i ${PREFIX}/bin/mosquitto-`basename $$i`; \
+	done
 
 .include <bsd.port.mk>
