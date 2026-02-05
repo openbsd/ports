@@ -1,7 +1,13 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -19,8 +19,7 @@ if(WIN32)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.13)
++Cmake_minimum_required(VERSION 3.13)
+ 
+ # project name
+ project(choria)
+@@ -35,8 +35,7 @@ if(WIN32)
  	# disable console window
  	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-subsystem,windows")
  elseif(UNIX)
@@ -10,8 +16,8 @@ Index: CMakeLists.txt
 +	add_definitions("-DLUA_USE_MACOSX")
  endif()
  
- # enable editor
-@@ -147,7 +146,7 @@ if(NOT WIN32)
+ # handle dev mode
+@@ -194,7 +193,7 @@ if(NOT WIN32)
  			list(APPEND DATA_SCRIPTS "${SCRIPT_OUTPUT}")
  			add_custom_command(
  				OUTPUT "${SCRIPT_OUTPUT}"
@@ -20,3 +26,14 @@ Index: CMakeLists.txt
  				DEPENDS luac "${SCRIPT_PATH}"
  			)
  		endforeach()
+@@ -260,8 +259,8 @@ add_subdirectory(src)
+ if(NOT WIN32)
+ 
+ 	# linux installation
+-	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ DESTINATION share/games/${CMAKE_PROJECT_NAME} PATTERN working/${CMAKE_PROJECT_NAME} EXCLUDE PATTERN "working/*")
++	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ DESTINATION share/${CMAKE_PROJECT_NAME} PATTERN working/${CMAKE_PROJECT_NAME} EXCLUDE PATTERN "working/*")
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.png DESTINATION share/icons/hicolor/256x256/apps)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.desktop DESTINATION share/applications)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.xml DESTINATION share/metainfo)

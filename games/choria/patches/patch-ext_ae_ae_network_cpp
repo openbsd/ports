@@ -1,7 +1,7 @@
 Index: ext/ae/ae/network.cpp
 --- ext/ae/ae/network.cpp.orig
 +++ ext/ae/ae/network.cpp
-@@ -23,6 +23,7 @@
+@@ -22,6 +22,7 @@
  #include <ae/buffer.h>
  #include <enet/enet.h>
  #include <stdexcept>

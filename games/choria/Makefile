@@ -1,12 +1,11 @@
 COMMENT =	2D MMORPG focused on grinding
 
-V =		1.0.2
-COMMIT = 	4a83c4cd
+V =		1.1.1
+COMMIT = 	f11082f6
 DISTNAME =	choria-${V}-${COMMIT}-src
 PKGNAME =	choria-${V}
 CATEGORIES =	games x11
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =	0
 
 HOMEPAGE =	https://choria.gitlab.io/
 
@@ -15,28 +14,25 @@ HOMEPAGE =	https://choria.gitlab.io/
 PERMIT_PACKAGE =		Yes
 
 WANTLIB += c m pthread SDL2_image sqlite3 ${COMPILER_LIBCXX}
-WANTLIB += GL GLU SDL2 freetype jsoncpp ogg tinyxml2 vorbis vorbisfile
-WANTLIB += z openal ${MODLUA_WANTLIB}
+WANTLIB += GL GLU SDL2 freetype ogg vorbis vorbisfile
+WANTLIB += z openal
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
-MODLUA_VERSION =	5.3
 
 SITES =		https://gitlab.com/jazztickets/uploads/-/raw/main/
 
-MODULES =	devel/cmake lang/lua
+MODULES =	devel/cmake
 
 BUILD_DEPENDS =	graphics/glm \
 		shells/bash
 LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis \
 		audio/openal \
-		devel/jsoncpp \
 		devel/sdl2 \
 		devel/sdl2-image \
-		databases/sqlite3 \
-		textproc/tinyxml2
+		databases/sqlite3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
