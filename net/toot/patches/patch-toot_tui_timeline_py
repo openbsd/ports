@@ -1,0 +1,18 @@
+From 64f8e19fb691f6b7ecc811198f73b1092549fed9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jakub=20Klinkovsk=C3=BD?=
+ <1289205+lahwaacz@users.noreply.github.com>
+Date: Sun, 21 Dec 2025 08:42:37 +0100
+Subject: [PATCH] Fix compatibility with urwid 3.0.4
+
+Index: toot/tui/timeline.py
+--- toot/tui/timeline.py.orig
++++ toot/tui/timeline.py
+@@ -20,7 +20,7 @@ from toot.tui.widgets import SelectableText, Selectabl
+ 
+ 
+ logger = logging.getLogger("toot")
+-screen = urwid.raw_display.Screen()
++screen = urwid.display.raw.Screen()
+ 
+ 
+ class Timeline(urwid.Columns):
