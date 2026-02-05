@@ -1,8 +1,7 @@
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	5.5.1
-REVISION=	0
+GH_TAGNAME=	5.5.2
 
 SHARED_LIBS +=  tesseract            8.0      # 5.5
 
@@ -13,7 +12,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
 WANTLIB += iconv icudata icui18n icuuc intl jpeg leptonica lz4
 WANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_libressl
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
-WANTLIB += pixman-1 png sharpyuv ssl tiff webp webpmux xcb xcb-render
+WANTLIB += pixman-1 png ssl tiff webp webpmux xcb xcb-render
 WANTLIB += xcb-shm z zstd
 
 # c++11: needed to build the training tools
