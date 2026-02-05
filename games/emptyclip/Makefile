@@ -1,8 +1,8 @@
 BROKEN-sparc64 = framelimit.h:53 :105: error: no match for operator-
 COMMENT =	top-down shooter RPG
 
-V =		2.0.2
-COMMIT = 	adc6abf
+V =		2.0.3
+COMMIT = 	0d97724f
 DISTNAME =	emptyclip-${V}-${COMMIT}-src
 PKGNAME =	emptyclip-${V}
 CATEGORIES =	games x11
