@@ -1,6 +1,6 @@
 COMMENT=	Python 3.14+ spec-compliant tokenizer
 
-MODPY_DISTV=	0.4.0
+MODPY_DISTV=	0.4.1
 DISTNAME=	pytokens-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
