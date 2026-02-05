@@ -64,6 +64,7 @@
 @man man/man1/jj-next.1
 @man man/man1/jj-operation-abandon.1
 @man man/man1/jj-operation-diff.1
+@man man/man1/jj-operation-integrate.1
 @man man/man1/jj-operation-log.1
 @man man/man1/jj-operation-restore.1
 @man man/man1/jj-operation-revert.1
