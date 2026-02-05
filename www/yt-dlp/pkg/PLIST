@@ -121,6 +121,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}rtmp.
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}rtmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}rtsp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}rtsp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}soop.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}soop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/${MODPY_PYCACHE}youtube_live_chat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -139,6 +141,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/mhtml.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/niconico.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/rtmp.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/rtsp.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/soop.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/websocket.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/downloader/youtube_live_chat.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/
