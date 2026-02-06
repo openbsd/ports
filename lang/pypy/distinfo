@@ -1,6 +1,0 @@
-SHA256 (pypy/pypy-bootstrap-aarch64-7.3.1-0.tar.xz) = vlk4mwPJWsxG2IK47TuX3dm/nTZMJt4DaG+p8wJB3h4=
-SHA256 (pypy/pypy-bootstrap-amd64-7.3.1-0.tar.xz) = uj5BNRBV3f7hQU9kWm542RDLCOiXLm6ffgVVOzvX/VY=
-SHA256 (pypy/pypy2.7-v7.3.1-src.tar.bz2) = +jdxUUyKNUlpvpvTsm1lpInDDij5HTUOStL0CBqckyE=
-SIZE (pypy/pypy-bootstrap-aarch64-7.3.1-0.tar.xz) = 23746688
-SIZE (pypy/pypy-bootstrap-amd64-7.3.1-0.tar.xz) = 26091316
-SIZE (pypy/pypy2.7-v7.3.1-src.tar.bz2) = 21053306

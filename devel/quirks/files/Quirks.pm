@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1786 2026/02/04 15:33:58 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1787 2026/02/06 16:10:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1036,6 +1036,7 @@ setup_obsolete_reason(
 	17 => 'onionshare',
 	17 => 'onionshare-gui',
 	48 => 'phpldapadmin',
+	9 => 'pypy',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later

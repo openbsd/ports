@@ -94,7 +94,6 @@
      SUBDIR += pfe
      SUBDIR += php
      SUBDIR += polyml
-     SUBDIR += pypy
      SUBDIR += python
      SUBDIR += pythran
      SUBDIR += qbe
