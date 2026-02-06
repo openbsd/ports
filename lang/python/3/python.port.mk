@@ -32,6 +32,11 @@ MODPY_PYOEXTENSION ?=	opt-1.pyc
 
 MODPY_PYBUILD ?=	No
 MODPY_PI ?=
+.if defined(MODPY_BUILD_DIR)
+_MODPY_ADD_TARGETS =	No
+.else
+_MODPY_ADD_TARGETS =	Yes
+.endif
 MODPY_BUILD_DIR ?=	${WRKSRC}
 
 MODPY_SETUPTOOLS ?=	default
@@ -313,7 +318,7 @@ MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${_MODPY_RUNBIN} -sBm build -w --no-isolation ${MODPY_PYBUILD_ARGS}
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/${_MODPY_WHEELSDIR}/*.whl
+	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${MODPY_BUILD_DIR}/${_MODPY_WHEELSDIR}/*.whl
 MODPY_TEST_TARGET +=	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
@@ -333,7 +338,7 @@ MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 
 MODPY_INSTALL_TARGET += ; if [ -r ${WRKDIR}/.modpy-warn ]; then cat ${WRKDIR}/.modpy-warn; fi
 
-.if ${MODPY_PYBUILD} != No
+.if ${MODPY_PYBUILD} != No && ${_MODPY_ADD_TARGETS} == Yes
 .  if !target(do-configure) && ${_MODPY_USE_CARGO} == Yes
 do-configure:
 	@${MODCARGO_configure}
