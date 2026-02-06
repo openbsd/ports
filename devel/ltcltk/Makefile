@@ -10,7 +10,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # MIT/X11
 PERMIT_PACKAGE =Yes
 
-WANTLIB =	${MODTCL_LIB} pthread
+WANTLIB =	${MODTCL_WANTLIB} pthread
 MODULES =	lang/lua x11/tk
 MODTK_VERSION =	8.6
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS}
