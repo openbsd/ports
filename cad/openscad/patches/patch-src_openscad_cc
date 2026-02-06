@@ -1,4 +1,4 @@
-IZZndex: src/openscad.cc
+Index: src/openscad.cc
 --- src/openscad.cc.orig
 +++ src/openscad.cc
 @@ -60,6 +60,7 @@
