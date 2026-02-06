@@ -1,0 +1,14 @@
+https://src.fedoraproject.org/rpms/lib3mf/pull-request/6
+
+Index: SDK/Examples/CppDynamic/CMakeLists.txt
+--- SDK/Examples/CppDynamic/CMakeLists.txt.orig
++++ SDK/Examples/CppDynamic/CMakeLists.txt
+@@ -34,7 +34,7 @@ Interface version: 2.2.0
+ 
+ ]]
+ 
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.5...4.0)
+ 
+ project(Example_ExtractInfo)
+ set(CMAKE_CXX_STANDARD 17)
