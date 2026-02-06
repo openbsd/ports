@@ -1,6 +1,6 @@
 COMMENT =		WHATWG compliant and fast URL parser in modern C++
 
-DIST_TUPLE =		github	ada-url	ada	v3.4.1	.
+DIST_TUPLE =		github	ada-url	ada	v3.4.2	.
 
 SHARED_LIBS =		ada	4.0
 
@@ -24,7 +24,7 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS =	-DADA_TESTING=OFF \
 			-DADA_TOOLS=OFF \
 			-DBUILD_SHARED_LIBS=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
+			-DCCACHE_FOUND=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON
 
 .include <bsd.port.mk>
