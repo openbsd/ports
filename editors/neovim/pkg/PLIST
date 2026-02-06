@@ -982,6 +982,8 @@ share/nvim/runtime/indent/testdir/krl.in
 share/nvim/runtime/indent/testdir/krl.ok
 share/nvim/runtime/indent/testdir/lua.in
 share/nvim/runtime/indent/testdir/lua.ok
+share/nvim/runtime/indent/testdir/make.in
+share/nvim/runtime/indent/testdir/make.ok
 share/nvim/runtime/indent/testdir/matlab.in
 share/nvim/runtime/indent/testdir/matlab.ok
 share/nvim/runtime/indent/testdir/python.in
