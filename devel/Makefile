@@ -1635,6 +1635,7 @@
      SUBDIR += py-plugnplay
      SUBDIR += py-ply
      SUBDIR += py-poetry-core
+     SUBDIR += py-poetry-dynamic-versioning
      SUBDIR += py-portalocker
      SUBDIR += py-prance
      SUBDIR += py-pretend
