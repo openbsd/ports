@@ -1,6 +1,6 @@
-Index: codex-rs/modcargo-crates/rama-boring-sys-0.5.9/build/main.rs
---- codex-rs/modcargo-crates/rama-boring-sys-0.5.9/build/main.rs.orig
-+++ codex-rs/modcargo-crates/rama-boring-sys-0.5.9/build/main.rs
+Index: codex-rs/modcargo-crates/rama-boring-sys-0.5.10/build/main.rs
+--- codex-rs/modcargo-crates/rama-boring-sys-0.5.10/build/main.rs.orig
++++ codex-rs/modcargo-crates/rama-boring-sys-0.5.10/build/main.rs
 @@ -667,7 +667,7 @@ fn get_cpp_runtime_libs(config: &Config) -> Vec<String
      if env::var_os("CARGO_CFG_UNIX").is_some() {
          match env::var("CARGO_CFG_TARGET_OS").unwrap().as_ref() {

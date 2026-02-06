@@ -1,7 +1,7 @@
 Index: codex-rs/Cargo.toml
 --- codex-rs/Cargo.toml.orig
 +++ codex-rs/Cargo.toml
-@@ -166,7 +166,7 @@ maplit = "1.0.2"
+@@ -171,7 +171,7 @@ maplit = "1.0.2"
  mime_guess = "2.0.5"
  multimap = "0.10.0"
  notify = "8.2.0"
@@ -10,7 +10,7 @@ Index: codex-rs/Cargo.toml
  once_cell = "1.20.2"
  openssl-sys = "*"
  opentelemetry = "0.31.0"
-@@ -190,7 +190,7 @@ regex = "1.12.2"
+@@ -195,7 +195,7 @@ regex = "1.12.2"
  regex-lite = "0.1.8"
  reqwest = "0.12"
  rmcp = { version = "0.12.0", default-features = false }
@@ -19,7 +19,7 @@ Index: codex-rs/Cargo.toml
  schemars = "0.8.22"
  seccompiler = "0.5.0"
  sentry = "0.46.0"
-@@ -308,13 +308,9 @@ opt-level = 0
+@@ -314,13 +314,9 @@ opt-level = 0
  
  [patch.crates-io]
  # Uncomment to debug local changes.

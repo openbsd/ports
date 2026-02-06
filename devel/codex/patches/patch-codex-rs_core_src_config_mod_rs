@@ -1,16 +1,16 @@
 Index: codex-rs/core/src/config/mod.rs
 --- codex-rs/core/src/config/mod.rs.orig
 +++ codex-rs/core/src/config/mod.rs
-@@ -1517,7 +1517,7 @@ impl Config {
+@@ -1565,7 +1565,7 @@ impl Config {
  
          let review_model = override_review_model.or(cfg.review_model);
  
 -        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(true);
 +        let check_for_update_on_startup = cfg.check_for_update_on_startup.unwrap_or(false);
  
-         // Ensure that every field of ConfigRequirements is applied to the final
-         // Config.
-@@ -3828,7 +3828,7 @@ model_verbosity = "high"
+         let log_dir = cfg
+             .log_dir
+@@ -3887,7 +3887,7 @@ model_verbosity = "high"
                  active_project: ProjectConfig { trust_level: None },
                  windows_wsl_setup_acknowledged: false,
                  notices: Default::default(),

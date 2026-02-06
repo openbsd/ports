@@ -21,6 +21,9 @@ share/doc/codex/slash_commands.md
 share/doc/codex/tui-alternate-screen.md
 share/doc/codex/tui-chat-composer.md
 share/doc/codex/tui-request-user-input.md
+share/doc/codex/tui-stream-chunking-review.md
+share/doc/codex/tui-stream-chunking-tuning.md
+share/doc/codex/tui-stream-chunking-validation.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/rustic/
 share/fish/
