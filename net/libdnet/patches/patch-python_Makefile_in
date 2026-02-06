@@ -1,12 +1,22 @@
+remove in favour of building via MODPY_PYBUILD + MODPY_BUILD_DIR
+(otherwise would need patching anyway)
+
 Index: python/Makefile.in
 --- python/Makefile.in.orig
 +++ python/Makefile.in
-@@ -855,7 +855,7 @@ uninstall-am:
+@@ -885,7 +885,6 @@ uninstall-am:
+ 
+ 
+ @PYTHON_TRUE@python-build:
+-@PYTHON_TRUE@	$(PYTHON) -m pip install -e .
+ @PYTHON_TRUE@	touch python-build
+ 
+ @PYTHON_TRUE@python-clean:
+@@ -895,7 +894,6 @@ uninstall-am:
  @PYTHON_TRUE@distclean: clean
  
  @PYTHON_TRUE@python-install:
--@PYTHON_TRUE@	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix)
-+@PYTHON_TRUE@	$(PYTHON) setup.py install --prefix=$(prefix) --single-version-externally-managed --root=$(DESTDIR)
+-@PYTHON_TRUE@	$(PYTHON) -m pip install --prefix=$(DESTDIR)$(prefix) .
  
  @PYTHON_TRUE@install-exec-local: python-install
  
