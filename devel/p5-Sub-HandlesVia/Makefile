@@ -1,6 +1,6 @@
 COMMENT =	alternative handles_via implementation
 
-DISTNAME =	Sub-HandlesVia-0.052000
+DISTNAME =	Sub-HandlesVia-0.053005
 
 CATEGORIES =	devel
 
