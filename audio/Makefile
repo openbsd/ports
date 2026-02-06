@@ -30,6 +30,7 @@
      SUBDIR += cmus
      SUBDIR += cozy
      SUBDIR += cplay
+     SUBDIR += csound
      SUBDIR += cuetools
      SUBDIR += curseradio
      SUBDIR += d11amp
