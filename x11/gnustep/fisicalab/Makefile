@@ -1,9 +1,8 @@
 COMMENT=	educational application to solve physics problems
 
-VERSION =	0.3.5
-REVISION =	11
-DISTNAME =	fisicalab-${VERSION}-1
-PKGNAME =	fisicalab-${VERSION}.1
+VERSION =	0.4.0
+DISTNAME =	fisicalab-${VERSION}
+PKGNAME =	fisicalab-${VERSION}
 
 HOMEPAGE=	http://www.nongnu.org/fisicalab/
 SITES=		${SITE_GNU:=fisicalab/}
@@ -17,7 +16,7 @@ LIB_DEPENDS=	devel/gsl
 
 CONFIGURE_STYLE =	gnu
 
-WRKSRC =	${WRKDIR}/fisicalab-${VERSION}
+WRKSRC =	${WRKDIR}/trunk
 
 pre-configure:
 	cd ${WRKBUILD} && \
