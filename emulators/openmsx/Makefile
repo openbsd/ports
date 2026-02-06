@@ -15,7 +15,7 @@ HOMEPAGE =	https://openmsx.org/
 PERMIT_PACKAGE =	claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES =	claims GPLv2, but no copyright notices in source files
 
-WANTLIB += ${MODTCL_LIB}
+WANTLIB += ${MODTCL_WANTLIB}
 WANTLIB += GL GLEW SDL2 SDL2_ttf c freetype m ogg png
 WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis z
 
