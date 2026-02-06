@@ -1524,6 +1524,7 @@
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesmith
      SUBDIR += py-icalendar
+     SUBDIR += py-icalendar-searcher
      SUBDIR += py-identify
      SUBDIR += py-immutabledict
      SUBDIR += py-importlib-metadata
