@@ -2,7 +2,7 @@ COMMENT =		library for handling data matrix barcodes
 
 GH_ACCOUNT =		dmtx
 GH_PROJECT =		libdmtx
-GH_TAGNAME =		v0.7.5
+GH_TAGNAME =		v0.7.8
 
 CATEGORIES =		devel graphics
 SHARED_LIBS +=		dmtx	0.1
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		m
 
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	autoreconf automake
 AUTORECONF =		./autogen.sh
 AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
