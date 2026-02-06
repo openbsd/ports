@@ -6,7 +6,7 @@ V=		25.03
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
 WRKSRC=		${WRKDIR}/codeblocks_${V}
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -21,7 +21,6 @@ SHARED_LIBS +=  wxcustombutton       0.1      # 0.1
 SHARED_LIBS +=  wximagepanel         0.1      # 0.1
 SHARED_LIBS +=  wxspeedbutton        0.1      # 0.1
 SHARED_LIBS +=  wxkwic               0.1      # 0.1
-SHARED_LIBS +=  wxtreelist           0.1      # 0.1
 SHARED_LIBS +=  wxled                0.1      # 0.1
 SHARED_LIBS +=  wxsmithlib           0.1      # 0.1
 SHARED_LIBS +=  wxmathplot           0.1      # 0.1
@@ -38,7 +37,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += boost_system bz2 c cairo cairo-gobject crypto curl
+WANTLIB += bz2 c cairo cairo-gobject crypto curl
 WANTLIB += curses dbus-1 enchant-2 epoll-shim epoxy execinfo expat ffi
 WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
@@ -53,10 +52,10 @@ WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
 WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_xrc-3.2 xcb xcb-render
 WANTLIB += xcb-shm z zstd xkbcommon
 
-BUILD_DEPENDS=	archivers/zip
+BUILD_DEPENDS=	archivers/zip \
+		devel/boost
 
 LIB_DEPENDS=	archivers/bzip2 \
-		devel/boost \
 		textproc/hunspell \
 		x11/wxWidgets>=3.0.4
 
@@ -81,7 +80,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all,-FileManager
 CONFIGURE_ARGS += --enable-debug
-CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp

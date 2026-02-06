@@ -1,0 +1,16 @@
+Cherry pick trunk@13760 to remove boost::system
+per https://marc.info/?l=openbsd-ports&m=177038373917003&w=2
+
+Index: src/plugins/contrib/NassiShneiderman/Makefile.am
+--- src/plugins/contrib/NassiShneiderman/Makefile.am.orig
++++ src/plugins/contrib/NassiShneiderman/Makefile.am
+@@ -1,8 +1,7 @@
+ AM_CPPFLAGS = $(WX_CXXFLAGS) \
+ 		-I$(top_srcdir)/src/include \
+ 		-I$(top_srcdir)/src/sdk/wxscintilla/include \
+-		$(BOOST_CPPFLAGS) \
+-		-DBOOST_SYSTEM_NO_DEPRECATED
++		$(BOOST_CPPFLAGS)
+ 
+ pluginlibdir = $(pkglibdir)/plugins
+ 
