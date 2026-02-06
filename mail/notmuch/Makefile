@@ -3,6 +3,7 @@ COMMENT-emacs =		Emacs bindings for notmuch
 COMMENT-mutt =		Mutt integration for notmuch
 
 V =			0.40
+REVISION-main =		0
 MODPY_DISTV =		${V}
 DISTNAME =		notmuch-${V}
 PKGNAME-main =		notmuch-${V}
@@ -32,6 +33,7 @@ COMPILER=		base-clang ports-gcc
 
 MODULES =		lang/python
 MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 LIB_DEPENDS =		databases/xapian-core \
 			devel/libtalloc \
@@ -55,7 +57,6 @@ RUN_DEPENDS-mutt =	devel/p5-Term-ReadLine-Gnu \
 # bindings using its own Makefile rather than the standard ports
 # Python build infra.
 BUILD_DEPENDS =		devel/py-cffi \
-			devel/py-setuptools \
 			editors/emacs,gtk3 \
 			security/gnupg>=2.2.23p1 \
 			shells/bash \
@@ -95,10 +96,10 @@ post-extract:
 
 MODPY_BUILD_DIR =	${WRKSRC}/bindings/python-cffi
 post-build:
-	cd ${WRKSRC}/bindings/python-cffi; ${MODPY_BUILD_TARGET}
+	${MODPY_BUILD_TARGET}
 
 post-install:
-	cd ${WRKSRC}/bindings/python-cffi; ${MODPY_INSTALL_TARGET}
+	${MODPY_INSTALL_TARGET}
 	rm ${PREFIX}/man/man1/notmuch-setup.1.gz
 	gunzip ${PREFIX}/man/*/*gz
 	ln -s notmuch.1 ${PREFIX}/man/man1/notmuch-setup.1
