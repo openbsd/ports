@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ICE SM X11 Xft Xrender c expat fontconfig freetype
 WANTLIB += fribidi glib-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += pthread tcl85 tk85 xcb z ${MODTK_WANTLIB}
+WANTLIB += pthread ${MODTK_WANTLIB} xcb z
 
 
 MODULES =		x11/tk
