@@ -1,7 +1,9 @@
 COMMENT=	vi clone with many additional features
 
 # careful with PLISTs if updating; normally use a gui flavour, not no_x11
-V=		9.1.2077
+# if there are new languages for manpages, "make fix-plist" will add the
+# ${GUI_ONLY} markers as needed for gui-only tools.
+V=		9.1.2135
 
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
@@ -152,5 +154,13 @@ post-install:
 .if ${FLAVOR:Mno_x11}
 	rm -f ${PREFIX}/man/{*/,}man1/{e,g,rg}{view,vim,vimdiff}.1
 .endif
+
+fix-plist:
+	@cp pkg/PLIST pkg/PLIST.orig
+	@for i in {e,g,rg}{view,vim,vimdiff}.1; do \
+	    echo sed -i -E "s,^(@man .*/man1/$$i),\$${GUI_ONLY}\1," pkg/PLIST; \
+	    sed -i -E "s,^(@man .*/man1/$$i),\$${GUI_ONLY}\1," pkg/PLIST; \
+	done
+	-@diff -u0 pkg/PLIST.orig pkg/PLIST
 
 .include <bsd.port.mk>

@@ -310,6 +310,57 @@ ${GUI_ONLY}@man man/ru.UTF-8/man1/rgvim.1
 @man man/ru.UTF-8/man1/vimdiff.1
 @man man/ru.UTF-8/man1/vimtutor.1
 @man man/ru.UTF-8/man1/xxd.1
+man/sv/
+man/sv.ISO8859-1/
+man/sv.ISO8859-1/man1/
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/eview.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/evim.1
+@man man/sv.ISO8859-1/man1/ex.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/gview.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/gvim.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/gvimdiff.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/rgview.1
+${GUI_ONLY}@man man/sv.ISO8859-1/man1/rgvim.1
+@man man/sv.ISO8859-1/man1/rview.1
+@man man/sv.ISO8859-1/man1/rvim.1
+@man man/sv.ISO8859-1/man1/view.1
+@man man/sv.ISO8859-1/man1/vim.1
+@man man/sv.ISO8859-1/man1/vimdiff.1
+@man man/sv.ISO8859-1/man1/vimtutor.1
+@man man/sv.ISO8859-1/man1/xxd.1
+man/sv.UTF-8/
+man/sv.UTF-8/man1/
+${GUI_ONLY}@man man/sv.UTF-8/man1/eview.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/evim.1
+@man man/sv.UTF-8/man1/ex.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/gview.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/gvim.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/gvimdiff.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/rgview.1
+${GUI_ONLY}@man man/sv.UTF-8/man1/rgvim.1
+@man man/sv.UTF-8/man1/rview.1
+@man man/sv.UTF-8/man1/rvim.1
+@man man/sv.UTF-8/man1/view.1
+@man man/sv.UTF-8/man1/vim.1
+@man man/sv.UTF-8/man1/vimdiff.1
+@man man/sv.UTF-8/man1/vimtutor.1
+@man man/sv.UTF-8/man1/xxd.1
+man/sv/man1/
+${GUI_ONLY}@man man/sv/man1/eview.1
+${GUI_ONLY}@man man/sv/man1/evim.1
+@man man/sv/man1/ex.1
+${GUI_ONLY}@man man/sv/man1/gview.1
+${GUI_ONLY}@man man/sv/man1/gvim.1
+${GUI_ONLY}@man man/sv/man1/gvimdiff.1
+${GUI_ONLY}@man man/sv/man1/rgview.1
+${GUI_ONLY}@man man/sv/man1/rgvim.1
+@man man/sv/man1/rview.1
+@man man/sv/man1/rvim.1
+@man man/sv/man1/view.1
+@man man/sv/man1/vim.1
+@man man/sv/man1/vimdiff.1
+@man man/sv/man1/vimtutor.1
+@man man/sv/man1/xxd.1
 man/tr/
 man/tr.ISO8859-9/
 man/tr.ISO8859-9/man1/
@@ -451,6 +502,7 @@ share/vim/${P}/bugreport.vim
 share/vim/${P}/colors/
 share/vim/${P}/colors/README.txt
 share/vim/${P}/colors/blue.vim
+share/vim/${P}/colors/catppuccin.vim
 share/vim/${P}/colors/darkblue.vim
 share/vim/${P}/colors/default.vim
 share/vim/${P}/colors/delek.vim
@@ -507,6 +559,7 @@ share/vim/${P}/compiler/bash.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
 share/vim/${P}/compiler/biome.vim
+share/vim/${P}/compiler/cabal.vim
 share/vim/${P}/compiler/cargo.vim
 share/vim/${P}/compiler/checkstyle.vim
 share/vim/${P}/compiler/cm3.vim
@@ -666,6 +719,7 @@ share/vim/${P}/doc/gui_w32.txt
 share/vim/${P}/doc/gui_x11.txt
 share/vim/${P}/doc/hangulin.txt
 share/vim/${P}/doc/hebrew.txt
+share/vim/${P}/doc/help.svx
 share/vim/${P}/doc/help.txt
 share/vim/${P}/doc/helphelp.txt
 share/vim/${P}/doc/howto.txt
@@ -732,6 +786,7 @@ share/vim/${P}/doc/starting.txt
 share/vim/${P}/doc/syntax.txt
 share/vim/${P}/doc/tabpage.txt
 share/vim/${P}/doc/tags
+share/vim/${P}/doc/tags-sv
 share/vim/${P}/doc/tagsrch.txt
 share/vim/${P}/doc/term.txt
 share/vim/${P}/doc/terminal.txt
@@ -983,6 +1038,7 @@ share/vim/${P}/ftplugin/karel.vim
 share/vim/${P}/ftplugin/kconfig.vim
 share/vim/${P}/ftplugin/kdl.vim
 share/vim/${P}/ftplugin/kerml.vim
+share/vim/${P}/ftplugin/kitty.vim
 share/vim/${P}/ftplugin/kivy.vim
 share/vim/${P}/ftplugin/kotlin.vim
 share/vim/${P}/ftplugin/kwt.vim
@@ -1137,6 +1193,7 @@ share/vim/${P}/ftplugin/sgml.vim
 share/vim/${P}/ftplugin/sh.vim
 share/vim/${P}/ftplugin/shaderslang.vim
 share/vim/${P}/ftplugin/sieve.vim
+share/vim/${P}/ftplugin/skhd.vim
 share/vim/${P}/ftplugin/slint.vim
 share/vim/${P}/ftplugin/slpconf.vim
 share/vim/${P}/ftplugin/slpreg.vim
@@ -1756,6 +1813,9 @@ share/vim/${P}/lang/sr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/sv/
 share/vim/${P}/lang/sv/LC_MESSAGES/
 share/vim/${P}/lang/sv/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/ta/
+share/vim/${P}/lang/ta/LC_MESSAGES/
+share/vim/${P}/lang/ta/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/tr/
 share/vim/${P}/lang/tr/LC_MESSAGES/
 share/vim/${P}/lang/tr/LC_MESSAGES/vim.mo
@@ -2580,10 +2640,6 @@ share/vim/${P}/syntax/sh.vim
 share/vim/${P}/syntax/shaderslang.vim
 share/vim/${P}/syntax/shared/
 share/vim/${P}/syntax/shared/README.txt
-share/vim/${P}/syntax/shared/context-data-context.vim
-share/vim/${P}/syntax/shared/context-data-interfaces.vim
-share/vim/${P}/syntax/shared/context-data-metafun.vim
-share/vim/${P}/syntax/shared/context-data-tex.vim
 share/vim/${P}/syntax/shared/debarchitectures.vim
 share/vim/${P}/syntax/shared/debversions.vim
 share/vim/${P}/syntax/shared/hgcommitDiff.vim
@@ -2596,6 +2652,7 @@ share/vim/${P}/syntax/sinda.vim
 share/vim/${P}/syntax/sindacmp.vim
 share/vim/${P}/syntax/sindaout.vim
 share/vim/${P}/syntax/sisu.vim
+share/vim/${P}/syntax/skhd.vim
 share/vim/${P}/syntax/skill.vim
 share/vim/${P}/syntax/sl.vim
 share/vim/${P}/syntax/slang.vim
@@ -2788,6 +2845,7 @@ share/vim/${P}/tools/emoji_list.vim
 share/vim/${P}/tools/mve.awk
 share/vim/${P}/tools/mve.txt
 share/vim/${P}/tools/pltags.pl
+share/vim/${P}/tools/preproc_indent.vim
 share/vim/${P}/tools/ref
 share/vim/${P}/tools/shtags.1
 share/vim/${P}/tools/shtags.pl
@@ -2801,6 +2859,7 @@ share/vim/${P}/tools/xcmdsrv_client.c
 share/vim/${P}/tutor/
 share/vim/${P}/tutor/README.el.txt
 share/vim/${P}/tutor/README.ru.txt
+share/vim/${P}/tutor/README.sv.txt
 share/vim/${P}/tutor/README.txt
 share/vim/${P}/tutor/en/
 share/vim/${P}/tutor/en/vim-01-beginner.tutor
@@ -2820,6 +2879,11 @@ share/vim/${P}/tutor/sr/vim-01-beginner.tutor
 share/vim/${P}/tutor/sr/vim-01-beginner.tutor.json
 share/vim/${P}/tutor/sr/vim-02-beginner.tutor
 share/vim/${P}/tutor/sr/vim-02-beginner.tutor.json
+share/vim/${P}/tutor/sv/
+share/vim/${P}/tutor/sv/vim-01-beginner.tutor
+share/vim/${P}/tutor/sv/vim-01-beginner.tutor.json
+share/vim/${P}/tutor/sv/vim-02-beginner.tutor
+share/vim/${P}/tutor/sv/vim-02-beginner.tutor.json
 share/vim/${P}/tutor/tutor.tutor
 share/vim/${P}/tutor/tutor.tutor.json
 share/vim/${P}/tutor/tutor.vim
@@ -2861,8 +2925,10 @@ share/vim/${P}/tutor/tutor2.es
 share/vim/${P}/tutor/tutor2.fr
 share/vim/${P}/tutor/tutor2.gl
 share/vim/${P}/tutor/tutor2.it
+share/vim/${P}/tutor/tutor2.ja
 share/vim/${P}/tutor/tutor2.ru
 share/vim/${P}/tutor/tutor2.sr
+share/vim/${P}/tutor/tutor2.sv
 share/vim/${P}/vimrc_example.vim
 share/vim/vimfiles/
 share/vim/vimfiles/doc/
