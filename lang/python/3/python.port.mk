@@ -141,6 +141,9 @@ BUILD_DEPENDS +=	devel/py-pbr \
 			devel/py-wheel
 .  elif ${MODPY_PYBUILD} == pdm
 BUILD_DEPENDS +=	devel/py-pdm-backend
+.  elif ${MODPY_PYBUILD} == poetry-dynamic-versioning
+BUILD_DEPENDS +=	devel/py-poetry-dynamic-versioning
+_MODPY_EXPECTED_BACKEND = poetry_dynamic_versioning
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	py3-poetry-core->=2.2.0:devel/py-poetry-core
 _MODPY_EXPECTED_BACKEND = poetry.core
