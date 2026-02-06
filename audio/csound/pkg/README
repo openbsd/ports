@@ -1,0 +1,21 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Plugin Directories
+==================
+
+The plugin binaries are installed under ${TRUEPREFIX}/lib/csound/plugins64-7.0.
+Please set the environment variable "OPCODE7DIR64" to this directory before
+starting csound.
+
+$ export OPCODE7DIR64=${TRUEPREFIX}/lib/csound/plugins64-7.0
+
+Utility Programs
+==================
+
+Due to name conflicts, the utilities are not installed as standalone programs.
+Nevertheless, you can run the utility programs through the csound executable:
+
+$ csound [-U utilname] [flags] [filenames]
+

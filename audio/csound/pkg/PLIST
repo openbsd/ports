@@ -1,0 +1,108 @@
+@comment @bin bin/atsa
+@comment @bin bin/cs
+@comment @bin bin/csanalyze
+@bin bin/csb64enc
+@bin bin/csbeats
+@bin bin/csdebugger
+@bin bin/csound
+@comment @bin bin/cvanal
+@comment @bin bin/dnoise
+@comment @bin bin/envext
+@comment @bin bin/extract
+@comment @bin bin/extractor
+@comment @bin bin/het_export
+@comment @bin bin/het_import
+@comment @bin bin/hetro
+@comment @bin bin/lpanal
+@comment @bin bin/lpc_export
+@comment @bin bin/lpc_import
+@bin bin/makecsd
+@comment @bin bin/mixer
+@comment @bin bin/pv_export
+@comment @bin bin/pv_import
+@comment @bin bin/pvanal
+@comment @bin bin/pvlook
+@comment @bin bin/scale
+@comment @bin bin/scot
+@comment @bin bin/scsort
+@comment @bin bin/sdif2ad
+@comment @bin bin/smf_conv
+@comment @bin bin/sndinfo
+@comment @bin bin/src_conv
+@comment @bin bin/srconv
+include/csound/
+include/csound/arrays.h
+include/csound/cfgvar.h
+include/csound/coreDefs.h
+include/csound/csPerfThread.h
+include/csound/csPerfThread.hpp
+include/csound/cs_par_structs.h
+include/csound/csdebug.h
+include/csound/csdl.h
+include/csound/csound.h
+include/csound/csound.hpp
+include/csound/csoundCore.h
+include/csound/csound_circular_buffer.h
+include/csound/csound_compiler.h
+include/csound/csound_data_structures.h
+include/csound/csound_files.h
+include/csound/csound_graph_display.h
+include/csound/csound_misc.h
+include/csound/csound_rtaudio.h
+include/csound/csound_rtmidi.h
+include/csound/csound_server.h
+include/csound/csound_threads.h
+include/csound/csound_type_system.h
+include/csound/cwindow.h
+include/csound/float-version.h
+include/csound/interlocks.h
+include/csound/modload.h
+include/csound/msg_attr.h
+include/csound/plugin.h
+include/csound/pstream.h
+include/csound/pvfileio.h
+include/csound/soundfile.h
+include/csound/soundio.h
+include/csound/sysdep.h
+include/csound/text.h
+include/csound/ugen.h
+include/csound/version.h
+lib/csound/
+lib/csound/plugins64-7.0/
+@so lib/csound/plugins64-7.0/libdeprecated.so
+@so lib/csound/plugins64-7.0/libipmidi.so
+@so lib/csound/plugins64-7.0/libpmidi.so
+@so lib/csound/plugins64-7.0/librtpa.so
+@so lib/csound/plugins64-7.0/librtpulse.so
+@so lib/csound/plugins64-7.0/libstdutil.so
+@static-lib lib/libcsound64.a
+@lib lib/libcsound64.so.${LIBcsound64_VERSION}
+lib/pkgconfig/csound.pc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ctcsound.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ctcsound.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ctcsound.py
+share/csound/
+share/csound/CsoundConfig${MODCMAKE_BUILD_SUFFIX}
+share/csound/CsoundConfig.cmake
+share/doc/pkg-readmes/${PKGSTEM}
+share/locale/de/LC_MESSAGES/csound7.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/csound7.mo
+share/locale/es/LC_MESSAGES/csound7.mo
+share/locale/es_CO/
+share/locale/es_CO/LC_MESSAGES/
+share/locale/es_CO/LC_MESSAGES/csound7.mo
+share/locale/fr/LC_MESSAGES/csound7.mo
+share/locale/it/LC_MESSAGES/csound7.mo
+share/locale/ru/LC_MESSAGES/csound7.mo
+@comment share/samples/
+@comment share/samples/README
+@comment share/samples/hrtf-44100-left.dat
+@comment share/samples/hrtf-44100-right.dat
+@comment share/samples/hrtf-48000-left.dat
+@comment share/samples/hrtf-48000-right.dat
+@comment share/samples/hrtf-96000-left.dat
+@comment share/samples/hrtf-96000-right.dat
+@comment share/samples/sf_GMbank.sf2
