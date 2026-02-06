@@ -32,7 +32,7 @@ Index: platform/x11/x11_main.c
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -977,6 +976,16 @@ int main(int argc, char **argv)
+@@ -989,6 +988,16 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;

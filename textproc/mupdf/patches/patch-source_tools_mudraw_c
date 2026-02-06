@@ -12,7 +12,7 @@ Index: source/tools/mudraw.c
  #include <string.h>
  #include <limits.h>
  #include <stdlib.h>
-@@ -2166,6 +2168,12 @@ int mudraw_main(int argc, char **argv)
+@@ -2208,6 +2210,12 @@ int mudraw_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		return usage();
@@ -23,5 +23,5 @@ Index: source/tools/mudraw.c
 +		exit(1);
 +	}
  
- 	if (num_workers > 0)
+ 	if (max_num_workers > 0)
  	{

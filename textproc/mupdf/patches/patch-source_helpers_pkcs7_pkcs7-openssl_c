@@ -4,7 +4,7 @@
 Index: source/helpers/pkcs7/pkcs7-openssl.c
 --- source/helpers/pkcs7/pkcs7-openssl.c.orig
 +++ source/helpers/pkcs7/pkcs7-openssl.c
-@@ -203,7 +203,7 @@ static int stream_free(BIO *b)
+@@ -209,7 +209,7 @@ static int stream_free(BIO *b)
  	return 1;
  }
  
@@ -13,7 +13,7 @@ Index: source/helpers/pkcs7/pkcs7-openssl.c
  {
  	return 1;
  }
-@@ -518,6 +518,9 @@ check_certificate(fz_context *ctx, pdf_pkcs7_verifier 
+@@ -524,6 +524,9 @@ check_certificate(fz_context *ctx, pdf_pkcs7_verifier 
  			X509_STORE_add_cert(st, c);
  		}
  	}

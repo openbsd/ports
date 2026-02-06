@@ -1,9 +1,8 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-SHARED_LIBS +=  mupdf                 14.3
+SHARED_LIBS +=  mupdf                 15.0
 
-V =		1.26.12
-REVISION =	0
+V =		1.27.1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -49,7 +48,6 @@ NO_TEST =	Yes
 LDFLAGS =	-L${WRKSRC}/build/shared-release \
 		-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
-#		-lgumbo
 
 CPPFLAGS =	-I$(WRKSRC)/include \
 		-I${X11BASE}/include \
@@ -86,7 +84,8 @@ pre-configure:
 	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
 	ln -fs /bin/ksh ${WRKDIR}/bin/bash
 .if !${FLAVOR:Mjs}
-	rm -r ${WRKSRC}/thirdparty/mujs
+	# be sure that js isn't built - exceptions because of reacharound in source/fitz/regexp.c
+	rm -r ${WRKSRC}/thirdparty/mujs/!(regexp.c|regexp.h|utf.c|utf.h|utfdata.h)
 .endif
 
 post-install:
