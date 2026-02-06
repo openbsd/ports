@@ -25,10 +25,14 @@ lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}davclient.${MODP
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}davclient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}davobject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}davobject.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/caldav/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caldav/_version.py
 lib/python${MODPY_VERSION}/site-packages/caldav/calendarobjectresource.py
 lib/python${MODPY_VERSION}/site-packages/caldav/collection.py
@@ -36,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/caldav/compatibility_hints.py
 lib/python${MODPY_VERSION}/site-packages/caldav/config.py
 lib/python${MODPY_VERSION}/site-packages/caldav/davclient.py
 lib/python${MODPY_VERSION}/site-packages/caldav/davobject.py
+lib/python${MODPY_VERSION}/site-packages/caldav/discovery.py
 lib/python${MODPY_VERSION}/site-packages/caldav/elements/
 lib/python${MODPY_VERSION}/site-packages/caldav/elements/__init__.py
 lib/python${MODPY_VERSION}/site-packages/caldav/elements/${MODPY_PYCACHE}/
@@ -79,3 +84,4 @@ lib/python${MODPY_VERSION}/site-packages/caldav/lib/vcal.py
 lib/python${MODPY_VERSION}/site-packages/caldav/objects.py
 lib/python${MODPY_VERSION}/site-packages/caldav/py.typed
 lib/python${MODPY_VERSION}/site-packages/caldav/requests.py
+lib/python${MODPY_VERSION}/site-packages/caldav/search.py

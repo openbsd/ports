@@ -1,15 +1,15 @@
 COMMENT=	caldav client library for Python
 
 # N.B. https://github.com/python-caldav/caldav/issues/530
-# 2.x.0 releases are expected to done using "requests" as a dep
-# 2.x.1 releases are expected to done using "niquests"
-# niquests depends on urllib3-future which *overrides* urllib3 in
-# a default install. either stick to py-caldav versions using
-# "requests", or if porting niquests, be sure to set the env var
-# during urllib3-future build to stop it overriding urllib3.
+# some 2.x releases are done using "requests" as a dep, some using
+# "niquests". check CHANGELOG.md to see which, we only want ones with
+# "requests" for now.
+# sthen has wip ports of niquests+deps but there are segfaults in
+# some of the new deps (and a hidden gotcha in urllib3-future with a
+# var to set to avoid it _overriding_ requests if installed).
 #
-# python-caldav 3.x hoping to move to httpx, avoiding these problems
-MODPY_DISTV=	2.1.0
+# python-caldav 3.x may move to httpx, which would avoid these problems
+MODPY_DISTV=	2.2.4
 GH_ACCOUNT=	python-caldav
 GH_PROJECT=	caldav
 GH_TAGNAME=	v${MODPY_DISTV}
@@ -26,10 +26,14 @@ MODPY_PYBUILD=	hatch-vcs
 # yes, even though it's hatch
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${MODPY_DISTV}
 
-RUN_DEPENDS=	devel/py-icalendar \
+RUN_DEPENDS=	textproc/py-lxml \
+		www/py-requests \
 		productivity/py-recurring-ical-events \
-		textproc/py-lxml \
-		www/py-requests
+		devel/py-icalendar \
+		devel/py-icalendar-searcher<2 \
+		net/py-dnspython \
+		devel/py-dateutil \
+		textproc/py-yaml
 
 TEST_DEPENDS=	devel/py-tzlocal \
 		textproc/py-vobject
