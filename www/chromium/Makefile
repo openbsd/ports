@@ -12,12 +12,11 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			144.0.7559.109
+V=			144.0.7559.132
 
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
-			${PROFILE_DISTFILES} \
 			${REGRESS_DISTFILES}
 DISTFILES.a=		${PROFILE_DISTFILES.a} \
 			${REGRESS_DISTFILES.a}
@@ -27,8 +26,9 @@ REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 PROFILE_DISTFILES.a=	chromium-${V}-profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a=	test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz
 
-EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
-			${PROFILE_DISTFILES.a}
+DIST_TUPLE+=		github rollup rollup v4.22.4 rollup
+
+EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
 CATEGORIES=		www
 
@@ -48,7 +48,13 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	https://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5 x11/qt6
+MODULES=	devel/cargo lang/clang lang/python x11/qt5 x11/qt6
+
+MODCARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
+MODCARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
+MODCARGO_BUILD=		No
+MODCARGO_INSTALL=	No
+MODCARGO_TEST=		No
 
 MODCLANG_VERSION=	21
 MODQT5_DEPS=		No
@@ -77,8 +83,10 @@ RUN_DEPENDS=	devel/xdg-utils \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
 		audio/pulseaudio \
-		devel/gperf \
 		devel/bison \
+		devel/esbuild \
+		devel/esbuild:patch \
+		devel/gperf \
 		devel/rust-bindgen \
 		lang/rust,-rustfmt \
 		lang/node \
@@ -271,6 +279,7 @@ post-patch:
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
@@ -284,6 +293,14 @@ post-patch:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	@${MODCARGO_configure}
+	(cd ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/ && \
+		${LOCALBASE}/bin/node scripts/esbuild.js \
+		/usr/local/bin/esbuild --neutral && \
+		rm -rf ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
+		ln -sf ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/npm/esbuild \
+		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
+	)
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
@@ -303,6 +320,13 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
+	@${MODCARGO_BUILD_TARGET}
+	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
+		mkdir -p rollup-openbsd && \
+		cp ${MODCARGO_TARGET_DIR}/release/libbindings_napi.so \
+			rollup-openbsd/rollup.openbsd.node && \
+		echo '{ "main": "./rollup.openbsd.node" }' \
+			> rollup-openbsd/package.json)
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
@@ -378,4 +402,5 @@ do-test:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${TEST_TARGET}
 
+.include "crates.inc"
 .include <bsd.port.mk>

@@ -60,7 +60,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
    bool show_custom_chrome_frame = ui::OzonePlatform::GetInstance()
                                        ->GetPlatformRuntimeProperties()
                                        .supports_server_side_window_decorations;
-@@ -1771,7 +1771,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
+@@ -1768,7 +1768,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
            g_browser_process->GetApplicationLocale())
            .spec();
  
