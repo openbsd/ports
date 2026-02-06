@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Python package and project manager
 
-MODPY_DISTV =		0.9.28
+MODPY_DISTV =		0.10.0
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}

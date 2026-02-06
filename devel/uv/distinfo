@@ -2,7 +2,7 @@ SHA256 (cargo/adler2-2.0.1.tar.gz) = MgEZV5/K2cIYhPXEhh0WF00OBiUGJSZvUP5omDQKvvo
 SHA256 (cargo/aes-0.8.4.tar.gz) = sWn3ptR0IjagoAxUG4RZkdCsQ+VGgxrxJJdTq0w6o6A=
 SHA256 (cargo/aho-corasick-1.1.3.tar.gz) = jmDTQw06aUeK0Jk/GSONLfl8UHAJpSs8EK3c1/a8uRY=
 SHA256 (cargo/allocator-api2-0.2.21.tar.gz) = aD15EOdDUYsONPEYb5JJS+yssEfHtr9hbJZ3IYD++SM=
-SHA256 (cargo/ambient-id-0.0.7.tar.gz) = uMrQIu1yrSF2SYvhwJe7RuWYGT6S80keoHZpgO3u4Wg=
+SHA256 (cargo/ambient-id-0.0.8.tar.gz) = QcIRY3Vo2saIX+EGKKrejDNAxRbkdGBnG8r+4KP7jUM=
 SHA256 (cargo/anes-0.1.6.tar.gz) = S0bLs2Krh1KSHJfgQfXjZu5il71CijEnW5/PHjgPcpk=
 SHA256 (cargo/anstream-0.6.21.tar.gz) = Q9Wygec3VEOE6WmlzK0/HN0ktICGoPwbKlJiomuPT0o=
 SHA256 (cargo/anstyle-1.0.11.tar.gz) = hi7ZbKSH6AnxyOWoRH9u4s8QL4Rok4ALIM699UH8a70=
@@ -59,7 +59,7 @@ SHA256 (cargo/bytecheck_derive-0.8.2.tar.gz) = iThegrXRgh0iGeCwle+izB8kbL+ZCA875
 SHA256 (cargo/bytemuck-1.23.1.tar.gz) = XHaleS5E5KvjTTq/FWNneSYdRadFBhIFkpPR0s/GNCI=
 SHA256 (cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (cargo/byteorder-lite-0.1.0.tar.gz) = jx/pSP8H9L0GwwmE5p9bSJnFFqPvdPNN+Sot8qtTVJU=
-SHA256 (cargo/bytes-1.10.1.tar.gz) = 1xthJ76G/c/dthD3GCrFchHUsYo+nILrLRdmLyInrWo=
+SHA256 (cargo/bytes-1.11.1.tar.gz) = HnSHM7fLx5jhQ0tqxSTwwf8qtFb+IBUB5kl8hBek/DM=
 SHA256 (cargo/bzip2-0.5.2.tar.gz) = Sez7ItkG+ADU/oM7YoLPTcHCmPUFfKC1RF5cIJc1ykc=
 SHA256 (cargo/bzip2-sys-0.1.13+1.0.8.tar.gz) = Ilv/M7IUGHT+gNceB9buxPhcXCFkU92WOIJA+W4azBQ=
 SHA256 (cargo/camino-1.1.10.tar.gz) = DaRbwxFx2NaWASLiIqZ3QN+GfB3VO01RyqKXCEwYXKs=
@@ -208,7 +208,7 @@ SHA256 (cargo/httparse-1.10.1.tar.gz) = bb89555R89WGq0y51cPiwUqijtI9GAz4m03wRUpp
 SHA256 (cargo/httpdate-1.0.3.tar.gz) = 3ztGQCqdWttMhqDPRj9C4ZmU4+6JEQGxhB8wpUXLSak=
 SHA256 (cargo/hyper-1.8.1.tar.gz) = KrLU8lDD17HJ/N/xzs6U6k4t++xoYU97h8sgXyTKnRE=
 SHA256 (cargo/hyper-rustls-0.27.7.tar.gz) = 48k+thFoGyB+H+VdWnHs+RVy7IpnBc22hX99jVJCz1g=
-SHA256 (cargo/hyper-util-0.1.19.tar.gz) = cngF1g55OLdrgmpu8gnrcOqhgSeU+UJNSk4tdAZi318=
+SHA256 (cargo/hyper-util-0.1.20.tar.gz) = llR8JVbsnRL7FXjE6vRIsEmT5/t5y6rZMKZWiApr36A=
 SHA256 (cargo/icu_collections-2.0.0.tar.gz) = IABy9dDjYUVW+UqZMNXcPgZiplKCOQTDp13DsK9/7kc=
 SHA256 (cargo/icu_locale_core-2.0.0.tar.gz) = DN4nAMyu04cgeaZfsaePbAo2yRVw8odV3aZ7yPfZ8Ao=
 SHA256 (cargo/icu_normalizer-2.0.0.tar.gz) = Q2iA6OGN9Ne7wG1YQyMp1kWMyEUx96xfAk6T3q2zeXk=
@@ -477,7 +477,7 @@ SHA256 (cargo/syn-2.0.114.tar.gz) = 1NEH3yY6MBPvmxh5sN+H1wb/gPZahuqHm9nDH5swfCo=
 SHA256 (cargo/sync_wrapper-1.0.2.tar.gz) = C/JWzl79+jcCE8HaurWTWhLknyxY0V6erChw07TycmM=
 SHA256 (cargo/synstructure-0.13.2.tar.gz) = copw89uvW6t/DEsayNeuXqYKS1VJyKWRQ2HJkUenCdI=
 SHA256 (cargo/sys-info-0.9.1.tar.gz) = CzoNCrqL+WoOHd/cNS/FOz3385MYxxhUkQw8SwJK5Sw=
-SHA256 (cargo/system-configuration-0.6.1.tar.gz) = PIedRI6dmGtmF0J2MkfTaT7RNglDjPPQBvUfU2ilums=
+SHA256 (cargo/system-configuration-0.7.0.tar.gz) = oT89DaugMTLAqpdn+YNRs0iO3CwQDNotLsKwTz2NPIs=
 SHA256 (cargo/system-configuration-sys-0.6.0.tar.gz) = jh0bEM7VypI6H8uNA+lrjTJoBl1yRUjAIRQV/2rGusQ=
 SHA256 (cargo/tagu-0.1.6.tar.gz) = 7dtrBtIPup7SH8o9aW7htuhwvKC8+fopcfauJDbeV2o=
 SHA256 (cargo/tar-0.4.44.tar.gz) = HYY4eNISyHoZwaYQ61O7Af4SlRwFAc9aDWX3JJFKZno=
@@ -653,12 +653,12 @@ SHA256 (cargo/zune-jpeg-0.5.10.tar.gz) = 6i25GGwKatGqcBIEbz+tyNuQAWkbNnxRD1hn8X+
 SHA256 (cargo/zvariant-5.6.0.tar.gz) = 2Rs2gLszkhar2EcUFytROKTtrGd+ZB7xfh2MsbPKbm8=
 SHA256 (cargo/zvariant_derive-5.6.0.tar.gz) = OoxoUBvkWajb//vl15Ks3SO0lZlA/Id4X7ATsy7bwgg=
 SHA256 (cargo/zvariant_utils-3.2.0.tar.gz) = 4W7f7kPl17VTt3hy2ZvDav3adcIjynrV4/vs2Cyl/DQ=
-SHA256 (uv-0.9.28.tar.gz) = mWUWljBO+00rJJUHY+8RtX9+xVNpuXCzc6YmMz2vj/U=
+SHA256 (uv-0.10.0.tar.gz) = PC9bBtuZUBX5xJ/tGBiQ5CqIiR1LAenGcYmfjEipL70=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/allocator-api2-0.2.21.tar.gz) = 63622
-SIZE (cargo/ambient-id-0.0.7.tar.gz) = 25369
+SIZE (cargo/ambient-id-0.0.8.tar.gz) = 26110
 SIZE (cargo/anes-0.1.6.tar.gz) = 23857
 SIZE (cargo/anstream-0.6.21.tar.gz) = 29516
 SIZE (cargo/anstyle-1.0.11.tar.gz) = 15880
@@ -715,7 +715,7 @@ SIZE (cargo/bytecheck_derive-0.8.2.tar.gz) = 8933
 SIZE (cargo/bytemuck-1.23.1.tar.gz) = 52585
 SIZE (cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (cargo/byteorder-lite-0.1.0.tar.gz) = 15909
-SIZE (cargo/bytes-1.10.1.tar.gz) = 76779
+SIZE (cargo/bytes-1.11.1.tar.gz) = 78584
 SIZE (cargo/bzip2-0.5.2.tar.gz) = 38314
 SIZE (cargo/bzip2-sys-0.1.13+1.0.8.tar.gz) = 633818
 SIZE (cargo/camino-1.1.10.tar.gz) = 42306
@@ -864,7 +864,7 @@ SIZE (cargo/httparse-1.10.1.tar.gz) = 45190
 SIZE (cargo/httpdate-1.0.3.tar.gz) = 10639
 SIZE (cargo/hyper-1.8.1.tar.gz) = 157353
 SIZE (cargo/hyper-rustls-0.27.7.tar.gz) = 35435
-SIZE (cargo/hyper-util-0.1.19.tar.gz) = 112744
+SIZE (cargo/hyper-util-0.1.20.tar.gz) = 112807
 SIZE (cargo/icu_collections-2.0.0.tar.gz) = 83033
 SIZE (cargo/icu_locale_core-2.0.0.tar.gz) = 74430
 SIZE (cargo/icu_normalizer-2.0.0.tar.gz) = 61543
@@ -1133,7 +1133,7 @@ SIZE (cargo/syn-2.0.114.tar.gz) = 304636
 SIZE (cargo/sync_wrapper-1.0.2.tar.gz) = 6958
 SIZE (cargo/synstructure-0.13.2.tar.gz) = 18950
 SIZE (cargo/sys-info-0.9.1.tar.gz) = 20589
-SIZE (cargo/system-configuration-0.6.1.tar.gz) = 17935
+SIZE (cargo/system-configuration-0.7.0.tar.gz) = 18064
 SIZE (cargo/system-configuration-sys-0.6.0.tar.gz) = 11090
 SIZE (cargo/tagu-0.1.6.tar.gz) = 12714
 SIZE (cargo/tar-0.4.44.tar.gz) = 61020
@@ -1309,4 +1309,4 @@ SIZE (cargo/zune-jpeg-0.5.10.tar.gz) = 85686
 SIZE (cargo/zvariant-5.6.0.tar.gz) = 90550
 SIZE (cargo/zvariant_derive-5.6.0.tar.gz) = 14278
 SIZE (cargo/zvariant_utils-3.2.0.tar.gz) = 14779
-SIZE (uv-0.9.28.tar.gz) = 4901290
+SIZE (uv-0.10.0.tar.gz) = 4924383
