@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1448,7 +1448,7 @@ libatomic_ops/src/atomic_ops_sysdeps.lo:  \
+@@ -1447,7 +1447,7 @@ libatomic_ops/src/atomic_ops_sysdeps.lo:  \
  	libatomic_ops/src/$(am__dirstamp) \
  	libatomic_ops/src/$(DEPDIR)/$(am__dirstamp)
  

@@ -1,8 +1,8 @@
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
-VERSION=	8.2.10
-LIBAO_VERSION=	7.8.4
+VERSION=	8.2.12
+LIBAO_VERSION=	7.10.0
 
 # has various machine-dependent parts; updates definitely need
 # tests on more than just amd64.
@@ -17,9 +17,9 @@ DISTFILES.lib = libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
 MULTI_PACKAGES=	-main -atomic
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-SHARED_LIBS +=	atomic_ops           3.0      # 3.0
-SHARED_LIBS +=	atomic_ops_gpl       3.0      # 3.1
-SHARED_LIBS +=	gc                   8.0      # 6.5
+SHARED_LIBS +=	atomic_ops           4.0      # 4.0
+SHARED_LIBS +=	atomic_ops_gpl       4.0      # 4.0
+SHARED_LIBS +=	gc                   8.0      # 6.6
 SHARED_LIBS +=	gccpp                1.0      # 6.0
 SHARED_LIBS +=	gctba                0.0      # 6.0
 SHARED_LIBS +=	cord                 3.0      # 6.1
