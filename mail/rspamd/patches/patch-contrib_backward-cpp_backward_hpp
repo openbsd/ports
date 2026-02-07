@@ -1,0 +1,13 @@
+fix gcc build
+
+Index: contrib/backward-cpp/backward.hpp
+--- contrib/backward-cpp/backward.hpp.orig
++++ contrib/backward-cpp/backward.hpp
+@@ -79,6 +79,7 @@
+ #include <algorithm>
+ #include <cctype>
+ #include <cstdio>
++#include <cstdint>
+ #include <cstdlib>
+ #include <cstring>
+ #include <fstream>
