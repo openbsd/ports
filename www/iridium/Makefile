@@ -11,14 +11,17 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2026.01.144.2
+V=			2026.02.144.3
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES+=		${IRIDIUM_DISTFILES}
 
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=		${IRIDIUM_DISTFILES}
+
+DIST_TUPLE+=		github rollup rollup v4.22.4 rollup
+
+EXTRACT_ONLY=		${ALL_DISTFILES:N*test*}
 
 CATEGORIES=		www
 
@@ -38,7 +41,13 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://downloads.iridiumbrowser.de/source/
 SITES.u=	http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5 x11/qt6
+MODULES=	devel/cargo lang/clang lang/python x11/qt5 x11/qt6
+
+MODCARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
+MODCARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
+MODCARGO_BUILD=		No
+MODCARGO_INSTALL=	No
+MODCARGO_TEST=		No
 
 MODCLANG_VERSION=	21
 MODQT5_DEPS=		No
@@ -69,8 +78,10 @@ RUN_DEPENDS=	devel/xdg-utils \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
 		audio/pulseaudio \
-		devel/gperf \
 		devel/bison \
+		devel/esbuild \
+		devel/esbuild:patch \
+		devel/gperf \
 		devel/rust-bindgen \
 		lang/rust,-rustfmt \
 		lang/node \
@@ -244,6 +255,7 @@ post-patch:
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	@ln -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
@@ -257,6 +269,14 @@ post-patch:
 # 2. bootstrap gn, the tool to generate ninja files
 # 3. run gn with the appropriate configuration arguments
 do-configure:
+	@${MODCARGO_configure}
+	(cd ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/ && \
+		${LOCALBASE}/bin/node scripts/esbuild.js \
+		/usr/local/bin/esbuild --neutral && \
+		rm -rf ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
+		ln -sf ${WRKDIR}/devel/esbuild/github.com/evanw/esbuild@*/npm/esbuild \
+		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
+	)
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC}/media/ffmpeg && \
@@ -274,6 +294,13 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 do-build:
+	@${MODCARGO_BUILD_TARGET}
+	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
+		mkdir -p rollup-openbsd && \
+		cp ${MODCARGO_TARGET_DIR}/release/libbindings_napi.so \
+			rollup-openbsd/rollup.openbsd.node && \
+		echo '{ "main": "./rollup.openbsd.node" }' \
+			> rollup-openbsd/package.json)
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
@@ -332,4 +359,5 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/iridium
 .endfor
 
+.include "crates.inc"
 .include <bsd.port.mk>
