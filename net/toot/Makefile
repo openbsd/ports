@@ -1,7 +1,6 @@
 COMMENT=	CLI and TUI tool to interact with Mastodon instances
 
-MODPY_DISTV=	0.51.0
-REVISION=	0
+MODPY_DISTV=	0.51.1
 DISTNAME=	toot-${MODPY_DISTV}
 
 CATEGORIES=	net
