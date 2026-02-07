@@ -1,5 +1,7 @@
 COMMENT=	GNU versions of grep pattern matching utilities
 
+# Update to 3.12 blocked by regression
+# https://debbugs.gnu.org/cgi/bugreport.cgi?bug=71471
 DISTNAME=	grep-3.11
 REVISION=	0
 PKGNAME=	g${DISTNAME}
