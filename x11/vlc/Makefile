@@ -2,7 +2,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
 V=		3.0.23
-REVISION-main=	2
+REVISION-main=	3
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -228,8 +228,6 @@ CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
 		RCC="${LOCALBASE}/bin/rcc-qt5" \
 		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
-
-CFLAGS+=	-Wno-unreachable-code-generic-assoc
 
 PSEUDO_FLAVORS=	no_jack
 FLAVOR?=

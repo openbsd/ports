@@ -1,0 +1,34 @@
+- demux: mp4: refactor extradata copy
+  249d247d895e9e730c8921b0a9b1b549ce6d0b13
+- demux: mp4: map VVC
+  2790be79e54a0b4c6c036711f52275b6cf225845
+
+Index: modules/demux/mp4/libmp4.h
+--- modules/demux/mp4/libmp4.h.orig
++++ modules/demux/mp4/libmp4.h
+@@ -254,6 +254,8 @@ typedef int64_t stime_t;
+ #define ATOM_av1C VLC_FOURCC( 'a', 'v', '1', 'C' )
+ #define ATOM_avcC VLC_FOURCC( 'a', 'v', 'c', 'C' )
+ #define ATOM_vpcC VLC_FOURCC( 'v', 'p', 'c', 'C' )
++#define ATOM_vvc1 VLC_FOURCC( 'v', 'v', 'c', '1' )
++#define ATOM_vvcC VLC_FOURCC( 'v', 'v', 'c', 'C' )
+ #define ATOM_m4ds VLC_FOURCC( 'm', '4', 'd', 's' )
+ 
+ #define ATOM_fiel VLC_FOURCC( 'f', 'i', 'e', 'l' )
+@@ -1322,14 +1324,14 @@ typedef struct
+ {
+     WAVEFORMATEX Format;
+     uint32_t i_extra;
+-    char    *p_extra;
++    uint8_t *p_extra;
+ } MP4_Box_data_WMA2_t;
+ 
+ typedef struct
+ {
+     VLC_BITMAPINFOHEADER bmiHeader;
+     uint32_t i_extra;
+-    char    *p_extra;
++    uint8_t *p_extra;
+ } MP4_Box_data_strf_t;
+ 
+ typedef struct
