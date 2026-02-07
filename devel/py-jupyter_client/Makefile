@@ -1,6 +1,6 @@
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_DISTV =		8.7.0
+MODPY_DISTV =		8.8.0
 DISTNAME =		jupyter_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
