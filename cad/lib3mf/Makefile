@@ -1,11 +1,10 @@
 
-V =		2.4.1
-REVISION =	1
-
 COMMENT =	implementation of the 3D Manufacturing Format file standard
+
 GH_ACCOUNT =	3MFConsortium
 GH_PROJECT =	lib3mf
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v2.4.1
+REVISION =	1
 
 CATEGORIES =	cad
 
