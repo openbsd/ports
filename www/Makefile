@@ -108,6 +108,7 @@
      SUBDIR += lynx
      SUBDIR += mhonarc
      SUBDIR += mimetex
+     SUBDIR += minify
      SUBDIR += minitube
      SUBDIR += moinmoin
      SUBDIR += mozilla-firefox
