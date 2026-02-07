@@ -1,5 +1,5 @@
 COMMENT=	game interpreter
-V=		2.9.1
+V=		2026.1.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 SITES=		https://downloads.scummvm.org/frs/scummvm/${V}/
@@ -12,17 +12,22 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL2 a52 c faad fluidsynth freetype fribidi gif iconv jpeg
-WANTLIB += m mad mpeg2 png ogg sndio ${COMPILER_LIBCXX} theoradec vorbis
-WANTLIB += vorbisfile z
+WANTLIB += m mad mikmod mpeg2 png ogg sndio ${COMPILER_LIBCXX} theoradec
+WANTLIB += vorbis vorbisfile z
 
 # C++11
 COMPILER=	base-clang ports-gcc
+
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS=	devel/nasm
+.endif
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 LIB_DEPENDS=	audio/fluidsynth \
 		audio/liba52 \
 		audio/libmad \
+		audio/libmikmod \
 		audio/libvorbis \
 		audio/flac \
 		audio/faad>=2.7 \
@@ -48,13 +53,12 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-libcurl \
 		--disable-libunity \
 		--disable-mpcdec \
-		--disable-nasm \
 		--disable-sdlnet \
 		--disable-system-dialogs \
 		--disable-tts \
 		--disable-enet \
-		--disable-mikmod \
 		--disable-vpx \
+		--disable-tinygl \
 		--enable-release \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
