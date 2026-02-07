@@ -1,0 +1,18 @@
+wxMaxima should not rely on PWD being set
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -220,7 +220,11 @@ add_definitions(-DwxNO_UNSAFE_WXSTRING_CONV)
+ if(WIN32 OR CYGWIN)
+     file(RELATIVE_PATH RELPATH_TO_PO4A_PO_DIRECTORY "${CMAKE_BINARY_DIR}" "${CMAKE_SOURCE_DIR}/locales/manual")
+ else()
+-    file(RELATIVE_PATH RELPATH_TO_PO4A_PO_DIRECTORY "$ENV{PWD}" "${CMAKE_SOURCE_DIR}/locales/manual")
++    set(_pwd "$ENV{PWD}")
++    if(NOT _pwd OR NOT IS_ABSOLUTE "${_pwd}" OR NOT IS_DIRECTORY "${_pwd}")
++        set(_pwd "${CMAKE_BINARY_DIR}")
++    endif()
++    file(RELATIVE_PATH RELPATH_TO_PO4A_PO_DIRECTORY "${_pwd}" "${CMAKE_SOURCE_DIR}/locales/manual")
+ endif()
+ file(GLOB MANUAL_LANGUAGES "${CMAKE_CURRENT_SOURCE_DIR}/locales/manual/*.po")
+ list(TRANSFORM MANUAL_LANGUAGES REPLACE ".*/(.*).po$" "\\1")

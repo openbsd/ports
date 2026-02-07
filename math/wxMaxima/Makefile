@@ -1,15 +1,16 @@
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
-V =			24.05.0
+V =			26.01.0
 GH_ACCOUNT =		wxMaxima-developers
 GH_PROJECT =		wxmaxima
 GH_TAGNAME =		Version-$V
 PKGNAME =		wxMaxima-$V
-REVISION =		0
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://wxmaxima-developers.github.io/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
