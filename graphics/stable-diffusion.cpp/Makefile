@@ -1,3 +1,6 @@
+# not enough RAM to compile
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		diffusion model inference system
 
 GH_ACCOUNT =		leejet
