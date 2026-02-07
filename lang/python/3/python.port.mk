@@ -194,12 +194,10 @@ DPB_PROPERTIES +=	nojunk
 .endif
 
 # cython picks up pythran at run time in some cases, resulting in
-# DPB failure if junking occurs. Add a dep to avoid this. This is
-# conditional to avoid loops (currently seen with py-numpy).
+# DPB failure if junking occurs. Set DPB_PROPERTIES to avoid this.
 MODPY_CYTHON_PYTHRAN_RDEP ?= Yes
-.if defined(BUILD_DEPENDS) && ${BUILD_DEPENDS:Mlang/cython*} && \
-	${MODPY_CYTHON_PYTHRAN_RDEP} == Yes
-BUILD_DEPENDS +=	lang/pythran
+.if defined(BUILD_DEPENDS) && ${BUILD_DEPENDS:Mlang/cython*}
+DPB_PROPERTIES +=	nojunk
 .endif
 
 .if ${MODPY_PI:L} == "yes"
