@@ -1,0 +1,50 @@
+- demux: mp4: refactor extradata copy
+  249d247d895e9e730c8921b0a9b1b549ce6d0b13
+- demux: mp4: map VVC
+  2790be79e54a0b4c6c036711f52275b6cf225845
+
+Index: modules/demux/mp4/essetup.c
+--- modules/demux/mp4/essetup.c.orig
++++ modules/demux/mp4/essetup.c
+@@ -35,8 +35,20 @@
+ #include <assert.h>
+ 
+ 
++static void CopyExtradata( const uint8_t *p_extra, size_t i_extra,
++                           es_format_t *fmt )
++{
++    if( i_extra > 0 && !fmt->i_extra )
++    {
++        fmt->p_extra = malloc( i_extra );
++        if( i_extra )
++        {
++            fmt->i_extra = i_extra;
++            memcpy( fmt->p_extra, p_extra, i_extra );
++        }
++    }
++}
+ 
+-
+ static void SetupGlobalExtensions( mp4_track_t *p_track, MP4_Box_t *p_sample )
+ {
+     if( !p_track->fmt.i_bitrate )
+@@ -548,6 +560,19 @@ int SetupVideoES( demux_t *p_demux, mp4_track_t *p_tra
+                     if (p_track->fmt.i_extra <= 4)
+                         p_track->fmt.b_packetized = false; // force full extradata by the packetizer
+                 }
++            }
++            break;
++        }
++
++        case VLC_FOURCC( 'v', 'v', 'c', '1' ):
++        {
++            MP4_Box_t *p_vvcC = MP4_BoxGet( p_sample, "vvcC" );
++            if( p_vvcC && p_vvcC->data.p_binary &&
++                p_vvcC->data.p_binary->i_blob > 4 )
++            {
++                CopyExtradata( ((uint8_t *)p_vvcC->data.p_binary->p_blob) + 4,
++                               p_vvcC->data.p_binary->i_blob - 4,
++                               &p_track->fmt );
+             }
+             break;
+         }
