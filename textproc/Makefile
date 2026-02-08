@@ -622,6 +622,7 @@
      SUBDIR += the_silver_searcher
      SUBDIR += tinyxml
      SUBDIR += tinyxml2
+     SUBDIR += tomlplusplus
      SUBDIR += trdsql
      SUBDIR += tre
      SUBDIR += tree-sitter
