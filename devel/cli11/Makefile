@@ -4,7 +4,7 @@ PKGNAME =		${DISTNAME:L}
 
 GH_ACCOUNT =		CLIUtils
 GH_PROJECT =		CLI11
-GH_TAGNAME =		v2.6.0
+GH_TAGNAME =		v2.6.1
 
 CATEGORIES =		devel
 HOMEPAGE =		https://cliutils.github.io/CLI11/book/
