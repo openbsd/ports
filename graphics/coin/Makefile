@@ -1,6 +1,6 @@
 COMMENT =		3D graphics library based on the Open Inventor API
 
-V = 			4.0.6
+V = 			4.0.7
 DISTNAME =		coin-${V}-src
 PKGNAME =		${DISTNAME:S/-src$//}
 
