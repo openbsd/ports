@@ -1,0 +1,18 @@
+avoid noisy errors:
+
+"RuntimeError: llvmlite.binding.initialize() is deprecated and will be
+removed. LLVM initialization is now handled automatically. Please remove
+calls to this function from your code and check for other behavioral
+changes that may have occurred due to LLVM updates."
+
+Index: miasm/jitter/llvmconvert.py
+--- miasm/jitter/llvmconvert.py.orig
++++ miasm/jitter/llvmconvert.py
+@@ -84,7 +84,6 @@ class LLVMContext(object):
+     def __init__(self, name="mod"):
+         "Initialize a context with a module named 'name'"
+         # Initialize llvm
+-        llvm.initialize()
+         llvm.initialize_native_target()
+         llvm.initialize_native_asmprinter()
+ 
