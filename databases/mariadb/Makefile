@@ -4,17 +4,16 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	11.4.9
+VERSION=	11.4.10
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
-REVISION=	0
 
 CATEGORIES=	databases
 SITES=		https://archive.mariadb.org/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
-FMT_V=		12.0.0
+FMT_V=		12.1.0
 DISTFILES.fmt=	fmt-${FMT_V}.zip
 SITES.fmt=	https://github.com/fmtlib/fmt/releases/download/${FMT_V}/
 

@@ -378,6 +378,7 @@ include/mysql/server/private/sql_cache.h
 include/mysql/server/private/sql_callback.h
 include/mysql/server/private/sql_class.h
 include/mysql/server/private/sql_cmd.h
+include/mysql/server/private/sql_command.h
 include/mysql/server/private/sql_connect.h
 include/mysql/server/private/sql_const.h
 include/mysql/server/private/sql_crypt.h
