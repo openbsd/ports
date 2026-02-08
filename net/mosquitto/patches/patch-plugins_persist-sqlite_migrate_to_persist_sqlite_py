@@ -1,12 +1,7 @@
 Index: plugins/persist-sqlite/migrate_to_persist_sqlite.py
 --- plugins/persist-sqlite/migrate_to_persist_sqlite.py.orig
 +++ plugins/persist-sqlite/migrate_to_persist_sqlite.py
-@@ -1,3 +1,4 @@
-+#!/usr/bin/env python3
- """
- Migration script to migrate from Snapshot persistence to Persist SQLite Plugin.
- """
-@@ -32,7 +33,7 @@ class SnapshotPersistence:
+@@ -33,7 +33,7 @@ class SnapshotPersistence:
  class SQLite3Persistence:
      def __init__(self):
          self.__store_id_topic_map: dict[int, str] = {}
@@ -15,21 +10,3 @@ Index: plugins/persist-sqlite/migrate_to_persist_sqlite.py
          self.__conn: sqlite3.Connection = None
          self.__cursor: sqlite3.Cursor = None
  
-@@ -283,7 +284,7 @@ class SQLite3Persistence:
-             # self.__add_base_msgs must be executed before self.__add_retained_messages gets invoked
-             self.__add_base_msgs(snapshot_persistence.base_messages)
-             self.__add_retained_messages(snapshot_persistence.retained_messages)
--            self.__add_subscriptions(snapshot_persistence.retained_messages)
-+            self.__add_subscriptions(snapshot_persistence.subscriptions)
-             self.__add_clients(snapshot_persistence.clients)
-             self.__add_client_msgs(snapshot_persistence.client_messages)
-         except (sqlite3.Error, TypeError) as err:
-@@ -295,7 +296,7 @@ class SQLite3Persistence:
- 
- 
- def find_mosquitto_dump_tool() -> str:
--    mosquitto_dump_tool = shutil.which("mosquitto_dump_tool")
-+    mosquitto_dump_tool = shutil.which("mosquitto_db_dump")
-     if mosquitto_dump_tool is None:
-         raise RuntimeError(
-             'Could not find mosquitto_dump_tool. Provide the path via the "--dump-tool" argument '

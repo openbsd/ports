@@ -1,0 +1,21 @@
+Index: src/conf.c
+--- src/conf.c.orig
++++ src/conf.c
+@@ -643,7 +643,7 @@ int config__parse_args(struct mosquitto__config *confi
+ 
+ 	/* Default to drop to mosquitto user if we are privileged and no user specified. */
+ 	if(!config->user){
+-		config->user = mosquitto_strdup("mosquitto");
++		config->user = mosquitto_strdup("_mosquitto");
+ 		if(config->user == NULL){
+ 			return MOSQ_ERR_NOMEM;
+ 		}
+@@ -846,7 +846,7 @@ int config__read(struct mosquitto__config *config, boo
+ 	 * remain here even though it is covered in config__parse_args() because this
+ 	 * function may be called on its own. */
+ 	if(!config->user){
+-		config->user = mosquitto_strdup("mosquitto");
++		config->user = mosquitto_strdup("_mosquitto");
+ 	}
+ 
+ #ifdef WITH_BRIDGE

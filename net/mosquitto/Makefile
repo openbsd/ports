@@ -1,6 +1,10 @@
 COMMENT=	opensource MQTT broker
 
-DISTNAME=	mosquitto-2.1.1
+GH_ACCOUNT=	eclipse-mosquitto
+GH_PROJECT=	mosquitto
+GH_COMMIT=	a7f3f4c362713d6e35ed75745f38ae8aaac78443
+
+DISTNAME=	mosquitto-2.1.1pl20260207
 
 SHARED_LIBS +=  mosquitto                 3.0
 SHARED_LIBS +=  mosquittopp               3.0
@@ -8,7 +12,7 @@ SHARED_LIBS +=  mosquittopp               3.0
 CATEGORIES=	net
 
 HOMEPAGE=	https://mosquitto.org/
-SITES=		https://mosquitto.org/files/source/
+#SITES=		https://mosquitto.org/files/source/
 
 # EPL/EDL
 PERMIT_PACKAGE=	Yes
@@ -27,7 +31,8 @@ MODPY_RUNDEP=	No
 MODPY_ADJ_FILES= ${WRKSRC}/plugins/*/*.py
 
 BUILD_DEPENDS=	devel/uthash \
-		devel/cunit
+		devel/cunit \
+		textproc/libxslt
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/cjson \
 		security/argon2

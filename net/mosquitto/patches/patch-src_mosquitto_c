@@ -1,7 +1,12 @@
 Index: src/mosquitto.c
 --- src/mosquitto.c.orig
 +++ src/mosquitto.c
-@@ -202,10 +202,10 @@ static int drop_privileges(struct mosquitto__config *c
+@@ -198,14 +198,14 @@ static int drop_privileges(struct mosquitto__config *c
+ 		}else if(config->user && strcmp(config->user, "root")){
+ 			pwd = getpwnam(config->user);
+ 			if(!pwd){
+-				if(strcmp(config->user, "mosquitto")){
++				if(strcmp(config->user, "_mosquitto")){
  					log__printf(NULL, MOSQ_LOG_ERR, "Error: Unable to drop privileges to '%s' because this user does not exist.", config->user);
  					return MOSQ_ERR_INVAL;
  				}else{

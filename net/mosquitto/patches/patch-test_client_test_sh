@@ -1,9 +1,0 @@
-Index: test/client/test.sh
---- test/client/test.sh.orig
-+++ test/client/test.sh
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/ksh
- 
- # Very basic client testing.
- 
