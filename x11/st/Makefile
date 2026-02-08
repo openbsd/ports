@@ -1,6 +1,6 @@
 COMMENT=		simple X terminal
 
-V=			0.9.2
+V=			0.9.3
 DISTNAME=		st-${V}
 SUPDISTFILES.p=		st-scrollback-0.9.2.diff
 
