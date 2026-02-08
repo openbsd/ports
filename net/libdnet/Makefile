@@ -29,7 +29,8 @@ MAKE_FLAGS=		PYTHON=${MODPY_BIN}
 
 MODULES=		lang/python
 MODPY_PYBUILD=		setuptools
-BUILD_DEPENDS=		lang/cython
+BUILD_DEPENDS=		devel/check \
+			lang/cython
 
 MODPY_RUNDEP=		No
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
