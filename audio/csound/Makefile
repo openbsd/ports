@@ -1,8 +1,8 @@
 COMMENT =		sound and music computing system
 
-DIST_TUPLE =		github csound csound 7.0.0-beta.12 .
+DIST_TUPLE =		github csound csound 7.0.0-beta.13 .
 
-PKGNAME =		csound-7.0.0beta12
+PKGNAME =		csound-7.0.0beta13
 
 CATEGORIES =		audio
 
@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
+# BUILD_STATIC_LIBRARY is needed for tests
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
 			-DBUILD_STATIC_LIBRARY=ON \
 			-DUSE_JACK=OFF \
