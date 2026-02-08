@@ -17,6 +17,7 @@ V=		3.6.1
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.6v0,<3.7v0
 EPOCH=		0
+REVISION=	0
 
 SHLIBVER=	42.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -65,6 +66,9 @@ LDFLAGS+=	-Wl,-rpath,${TRUEPREFIX}/lib/eopenssl36
 post-patch:
 	sed -i 's,^SHLIB_VERSION=.*,SHLIB_VERSION=${SHLIBVER},' \
 	    ${WRKSRC}/VERSION.dat
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/exporters/cmake/OpenSSLConfig.cmake.in
 
 post-configure:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
