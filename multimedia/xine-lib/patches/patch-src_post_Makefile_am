@@ -1,0 +1,21 @@
+Index: src/post/Makefile.am
+--- src/post/Makefile.am.orig
++++ src/post/Makefile.am
+@@ -97,7 +97,7 @@ libdeinterlaceplugins_O1_la_SOURCES = \
+ 	deinterlace/plugins/kdetv_greedyh.c \
+ 	$(debug_sources)
+ libdeinterlaceplugins_O1_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(top_srcdir)/src/post/deinterlace
+-libdeinterlaceplugins_O1_la_CFLAGS = $(O1_CFLAGS) $(VISIBILITY_FLAG)
++libdeinterlaceplugins_O1_la_CFLAGS = $(DEFAULT_OCFLAGS) $(VISIBILITY_FLAG)
+ libdeinterlaceplugins_O1_la_LDFLAGS =
+ 
+ libdeinterlaceplugins_la_SOURCES = \
+@@ -147,7 +147,7 @@ endif
+ if ARCH_X86
+ PLANAR_X86_LIB = libpost_planar_x86.la
+ libpost_planar_x86_la_SOURCES = planar/x86/noise.c planar/x86/noise.h
+-libpost_planar_x86_la_CFLAGS  = $(O1_CFLAGS) -fomit-frame-pointer $(VISIBILITY_FLAG)
++libpost_planar_x86_la_CFLAGS  = $(DEFAULT_OCFLAGS) -fomit-frame-pointer $(VISIBILITY_FLAG)
+ libpost_planar_x86_la_LDFLAGS =
+ noinst_LTLIBRARIES += $(PLANAR_X86_LIB)
+ endif

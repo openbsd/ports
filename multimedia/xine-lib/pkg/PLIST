@@ -91,6 +91,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_slave.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_video.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_flac.so
+@so lib/xine/plugins/${XINEAPI_REV}/xineplug_hw_frame_vaapi.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_bluray.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_cdda.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_crypto.so
@@ -105,6 +106,8 @@ lib/xine/plugins/${XINEAPI_REV}/post/
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_nsf.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_sputext.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_tls_openssl.so
+@so lib/xine/plugins/${XINEAPI_REV}/xineplug_va_display_drm.so
+@so lib/xine/plugins/${XINEAPI_REV}/xineplug_va_display_x11.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vdr.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_gl_egl_x11.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_gl_glx.so
@@ -112,6 +115,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl2.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_sdl.so
+@so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_vaapi.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xcbshm.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xcbxv.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xshm.so
@@ -161,6 +165,7 @@ share/locale/eu/LC_MESSAGES/libxine2.mo
 share/locale/fr/LC_MESSAGES/libxine2.mo
 share/locale/it/LC_MESSAGES/libxine2.mo
 share/locale/ja/LC_MESSAGES/libxine2.mo
+share/locale/nl/LC_MESSAGES/libxine2.mo
 share/locale/pl/LC_MESSAGES/libxine2.mo
 share/locale/pt_BR/LC_MESSAGES/libxine2.mo
 share/locale/sk/LC_MESSAGES/libxine2.mo

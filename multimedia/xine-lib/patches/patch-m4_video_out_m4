@@ -1,0 +1,16 @@
+Enable VA-API support.
+
+Index: m4/video_out.m4
+--- m4/video_out.m4.orig
++++ m4/video_out.m4
+@@ -49,6 +49,10 @@ AC_DEFUN([XINE_VIDEO_OUT_PLUGINS], [
+             default_enable_vaapi=yes
+             ;;
+ 
++        openbsd*)
++            default_enable_vaapi=yes
++            ;;
++
+         gnu*)
+             default_enable_vdpau=yes
+             ;;
