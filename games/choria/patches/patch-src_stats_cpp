@@ -1,0 +1,12 @@
+Index: src/stats.cpp
+--- src/stats.cpp.orig
++++ src/stats.cpp
+@@ -570,7 +570,7 @@ void _Stats::LoadBuilds() {
+ 				continue;
+ 
+ 			if(Item->Type == ItemType::UNLOCKABLE) {
+-				if(Unlocks.find(Item->UnlockID) != Unlocks.end(Item->UnlockID)) {
++				if(Unlocks.find(Item->UnlockID) != Unlocks.end()) {
+ 					std::string &UnlockName = Unlocks.at(Item->UnlockID);
+ 					if(UnlockName.find("Belt") == 0)
+ 						Object->Character->BeltSize++;
