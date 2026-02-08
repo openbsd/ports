@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the ESE and EDB format
 VERSION = 	20191220
 DISTNAME =	libesedb-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  esedb                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libesedb/wiki
 
 SITES =		https://github.com/libyal/libesedb/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

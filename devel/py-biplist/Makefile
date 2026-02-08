@@ -1,22 +1,19 @@
-COMMENT =	binary plist parser/generator for Python
+COMMENT=	binary plist parser/generator for Python
 
-MODPY_DISTV =	1.0.3
-DISTNAME =		biplist-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		9
+MODPY_DISTV=	1.0.3
+DISTNAME=	biplist-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	10
 
-CATEGORIES =		devel
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
+CATEGORIES=	devel
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-TEST_DEPENDS =		devel/py-nose \
-			devel/py-coverage
+TEST_DEPENDS=	devel/py-coverage
 
 .include <bsd.port.mk>

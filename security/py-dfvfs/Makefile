@@ -3,15 +3,13 @@ COMMENT =	Digital Forensics Virtual File System (dfVFS)
 MODPY_DISTV =	20200625
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/dfvfs/wiki
 
 SITES =		https://github.com/log2timeline/dfvfs/releases/download/${MODPY_DISTV}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE =	Yes

@@ -1,9 +1,9 @@
 COMMENT =	library to access the LVM volume system format
 
-VERSION = 	20200102
+VERSION =	20200102
 DISTNAME =	libvslvm-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  vslvm                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libvslvm/wiki
 
 SITES =		https://github.com/libyal/libvslvm/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

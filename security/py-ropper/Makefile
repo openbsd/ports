@@ -3,13 +3,11 @@ COMMENT =	ROP gadget finder and binary information tool
 MODPY_DISTV =	1.13.8
 DISTNAME =	ropper-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://scoding.de/ropper/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # BSD 3-clauses
 PERMIT_PACKAGE =	Yes

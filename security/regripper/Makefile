@@ -1,12 +1,11 @@
 COMMENT =		Windows Registry data extraction tool
 
 DISTNAME =		regripper-3.0
+REVISION =		0
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://regripper.wordpress.com/
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

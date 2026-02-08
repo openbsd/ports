@@ -3,13 +3,11 @@ COMMENT =	Digital Forensics date and time
 MODPY_DISTV =	20200824
 DISTNAME =	dfdatetime-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security devel
 
 HOMEPAGE =	https://github.com/log2timeline/dfdatetime/wiki
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 SITES =		https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_DISTV}/
 

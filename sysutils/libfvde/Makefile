@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access FileVault Drive Encryption
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libfvde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  fvde                       0.1 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libfvde/wiki
 
 SITES =		https://github.com/libyal/libfvde/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

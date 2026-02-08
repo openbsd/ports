@@ -1,23 +1,21 @@
-COMMENT =		engine and tools to automate creation of super timeline
+COMMENT =	engine and tools to automate creation of super timeline
 
 MODPY_DISTV =	20200717
-REVISION =		6
-DISTNAME =		plaso-${MODPY_DISTV}
+REVISION =	7
+DISTNAME =	plaso-${MODPY_DISTV}
 
-CATEGORIES =		security
+CATEGORIES =	security
 
-HOMEPAGE =		https://github.com/log2timeline/plaso/wiki
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
+HOMEPAGE =	https://github.com/log2timeline/plaso/wiki
 
 # Apachev2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 DISTNAME =	plaso-${MODPY_DISTV}
 
 SITES =		https://github.com/log2timeline/plaso/releases/download/${MODPY_DISTV}/
 
-MODULES =		lang/python
+MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS +=	archivers/py-lz4 \
@@ -69,7 +67,6 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 		textproc/py-yaml \
 		www/py-requests \
 		www/py-urllib3
-		
 
 TEST_DEPENDS +=	devel/py-test \
 		devel/py-mock

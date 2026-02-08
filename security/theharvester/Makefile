@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	7
+REVISION =	8
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -11,8 +11,6 @@ GH_TAGNAME =	${VERSION}
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.edge-security.com/theharvester.php
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

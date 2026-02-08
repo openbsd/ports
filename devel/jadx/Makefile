@@ -2,12 +2,11 @@ COMMENT =	dex to java decompiler
 
 VERSION =	1.5.3
 DISTNAME =	jadx-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel security
 
 HOMEPAGE =	https://github.com/skylot/jadx
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE =	Yes

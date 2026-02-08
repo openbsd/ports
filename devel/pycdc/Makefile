@@ -1,15 +1,13 @@
 COMMENT =	python bytecode disassembler and decompiler
 
 DISTNAME =	pycdc-0.0.20180428
-REVISION =	7
+REVISION =	8
 
 GH_ACCOUNT =	zrax
 GH_PROJECT =	pycdc
 GH_COMMIT =	1c01ca7ee626f6794b879c5690eb741a64711625
 
 CATEGORIES =	devel
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

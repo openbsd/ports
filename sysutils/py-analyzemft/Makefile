@@ -8,11 +8,9 @@ GH_COMMIT =	16d12822563cd5cae8675788134ac0ff6e9f5c01
 
 DISTNAME =	analyzeMFT-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils security
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Common Public License 1.0
 PERMIT_PACKAGE =	Yes

@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access the Windows NT Registry File
 
-VERSION = 	20200805
+VERSION =	20200805
 DISTNAME =	libregf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  regf                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libregf/wiki
 
 SITES =		https://github.com/libyal/libregf/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

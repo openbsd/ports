@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access the VHD image format
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libvhdi-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  vhdi                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libvhdi/wiki
 
 SITES =		https://github.com/libyal/libvhdi/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

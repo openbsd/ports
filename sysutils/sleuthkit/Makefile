@@ -2,12 +2,11 @@ COMMENT=		forensic toolkit based on TCT
 
 DISTNAME=		sleuthkit-4.10.1
 CATEGORIES=		sysutils security
+REVISION=		0
 
 SHARED_LIBS +=		tsk 3.0 # 20.3
 
 HOMEPAGE=		https://www.sleuthkit.org/
-
-MAINTAINER=		Remi Pointel <rpointel@openbsd.org>
 
 # CPLv1 & IBM & GPLv2 & Apache2 & BSD & MIT
 PERMIT_PACKAGE=	Yes
@@ -22,7 +21,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 CONFIGURE_STYLE =	autoreconf
 
-CONFIGURE_ARGS += 	--mandir='${PREFIX}/man' \
+CONFIGURE_ARGS +=	--mandir='${PREFIX}/man' \
 			--disable-java \
 			--without-afflib \
 			--without-libewf

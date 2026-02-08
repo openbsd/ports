@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access the Windows Prefetch File
 
-VERSION = 	20191222
+VERSION =	20191222
 DISTNAME =	libscca-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  scca                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libscca/wiki
 
 SITES =		https://github.com/libyal/libscca/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

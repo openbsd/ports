@@ -3,19 +3,17 @@ COMMENT =	ForensicArtifacts.com Artifact Repository
 MODPY_DISTV =	20200118
 DISTNAME =	artifacts-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/ForensicArtifacts/artifacts
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
-
 # Apachev2
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	textproc/py-yaml

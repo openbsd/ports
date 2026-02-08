@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access the OLE 2 Compound File
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libolecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  olecf                       0.1 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libolecf/wiki
 
 SITES =		https://github.com/libyal/libolecf/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

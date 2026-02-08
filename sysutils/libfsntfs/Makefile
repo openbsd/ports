@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access NTFS
 
-VERSION = 	20200805
+VERSION =	20200805
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libfsntfs/wiki
 
 SITES =	https://github.com/libyal/libfsntfs/releases/download/${VERSION}/
-
-MAINTAINER = 	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

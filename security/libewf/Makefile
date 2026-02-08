@@ -3,15 +3,13 @@ COMMENT =		access the Expert Witness Compression Format
 VERSION =		20140808
 DISTNAME =		libewf-${VERSION}
 EPOCH =			0
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		ewf                       1.0 # 3.0
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/libyal/libewf-legacy/
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

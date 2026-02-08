@@ -1,23 +1,21 @@
-COMMENT =		text progressbar library for python
+COMMENT=	text progressbar library for python
 
-MODPY_DISTV =	2.5
+MODPY_DISTV=	2.5
 
-DISTNAME =		progressbar-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		devel
-REVISION =		9
+DISTNAME=	progressbar-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	devel
+REVISION=	10
 
-HOMEPAGE =		https://github.com/niltonvolpato/python-progressbar
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
+HOMEPAGE=	https://github.com/niltonvolpato/python-progressbar
 
 # LGPLv2.1
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

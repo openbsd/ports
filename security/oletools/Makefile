@@ -3,13 +3,11 @@ COMMENT =	python tools to analyze OLE files
 MODPY_DISTV =	0.60.2
 DISTNAME =	oletools-${MODPY_DISTV}
 EXTRACT_SUFX =	.zip
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://www.decalage.info/python/oletools
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # BSD
 # oletools/thirdparty files have their own licenses

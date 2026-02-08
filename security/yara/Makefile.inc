@@ -9,5 +9,3 @@ GH_TAGNAME ?=		v${VERSION}
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
-
-MAINTAINER ?=		Remi Pointel <rpointel@openbsd.org>

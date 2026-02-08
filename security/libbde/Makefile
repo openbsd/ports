@@ -1,19 +1,17 @@
-COMMENT =		access the BitLocker Drive Encryption encrypted volumes
+COMMENT =	access the BitLocker Drive Encryption encrypted volumes
 
-VERSION =		20191221
-DISTNAME =		libbde-alpha-${VERSION}
-PKGNAME =		libbde-${VERSION}
-REVISION =		5
+VERSION =	20191221
+DISTNAME =	libbde-alpha-${VERSION}
+PKGNAME =	libbde-${VERSION}
+REVISION =	6
 
 SHARED_LIBS +=  bde                       0.1 # 1.0
 
-CATEGORIES =		security
+CATEGORIES =	security
 
-HOMEPAGE =		https://github.com/libyal/libbde/
+HOMEPAGE =	https://github.com/libyal/libbde/
 
 SITES =		https://github.com/libyal/libbde/releases/download/${VERSION}/
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
@@ -26,14 +24,14 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--enable-python3 \
 			AWK=/usr/bin/awk
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/py-setuptools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/py-setuptools
 
-LIB_DEPENDS +=		devel/libbfio
+LIB_DEPENDS +=	devel/libbfio
 
 TEST_DEPENDS += shells/bash
 

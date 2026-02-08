@@ -1,15 +1,15 @@
 COMMENT =		Python interface to Redis
 
-MODPY_DISTV =	5.0.9
-DIST_TUPLE =		github redis redis-py v${MODPY_DISTV} .
+MODPY_DISTV =		5.0.9
+GH_ACCOUNT =		redis
+GH_PROJECT =		redis-py
+GH_TAGNAME =		v${MODPY_DISTV}
+PKGNAME =		py-redis-${MODPY_DISTV}
 
-PKGNAME =		py-${DISTNAME:S/-py//}
 CATEGORIES =		databases
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/redis/redis-py
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

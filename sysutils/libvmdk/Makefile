@@ -1,9 +1,9 @@
 COMMENT =	library and tools to access the VMware Virtual Disk format
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libvmdk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  vmdk                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libvmdk/wiki
 
 SITES =		https://github.com/libyal/libvmdk/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

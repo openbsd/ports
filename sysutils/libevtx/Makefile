@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 VERSION = 	20191221
 DISTNAME =	libevtx-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  evtx                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libevtx/wiki
 
 SITES =		https://github.com/libyal/libevtx/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

@@ -1,9 +1,9 @@
 COMMENT =	library for Windows NT data types
 
-VERSION = 	20191222
+VERSION =	20191222
 DISTNAME =	libfwnt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  fwnt                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libfwnt/wiki
 
 SITES =		https://github.com/libyal/libfwnt/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

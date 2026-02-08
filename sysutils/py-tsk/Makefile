@@ -3,13 +3,11 @@ COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 MODPY_DISTV =	20200117
 DISTNAME =	pytsk3-${MODPY_DISTV}
 PKGNAME =	py-tsk-${MODPY_DISTV}
-REVISION =	10
+REVISION =	11
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/py4n6/pytsk/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
 PERMIT_PACKAGE =	Yes

@@ -1,9 +1,9 @@
 COMMENT =	library for binary signature scanning
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libsigscan-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  sigscan                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libsigscan/wiki
 
 SITES =	https://github.com/libyal/libsigscan/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
@@ -25,7 +23,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python3
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
-			
+
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/gettext,-tools \

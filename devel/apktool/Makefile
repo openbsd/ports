@@ -2,12 +2,11 @@ COMMENT =		tool for reverse engineering Android apk files
 
 DISTNAME =		apktool_2.12.1
 PKGNAME =		${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel security java
 
 HOMEPAGE =		http://ibotpeaches.github.io/Apktool/
-
-MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
 PERMIT_PACKAGE =	Yes

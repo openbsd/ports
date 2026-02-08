@@ -3,13 +3,11 @@ COMMENT =	analyze MIME files
 MODPY_DISTV =	0.0.13
 DISTNAME =	emldump_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	emldump-${MODPY_DISTV}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
 HOMEPAGE =	http://blog.didierstevens.com/my-software/#emldump
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE =	Yes

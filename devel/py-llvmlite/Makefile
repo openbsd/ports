@@ -8,12 +8,11 @@ GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>, \
-		Aisha Tammy <aisha@openbsd.org>
+MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 
 HOMEPAGE =	http://llvmlite.pydata.org/
 

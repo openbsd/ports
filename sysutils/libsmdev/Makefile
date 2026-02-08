@@ -1,9 +1,9 @@
 COMMENT =	library to access to storage media devices
 
-VERSION = 	20200210
+VERSION =	20200210
 DISTNAME =	libsmdev-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  smdev                      0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libsmdev/wiki
 
 SITES =		https://github.com/libyal/libsmdev/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

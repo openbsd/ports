@@ -3,7 +3,7 @@ COMMENT =	library to access the Windows Shell Item format
 VERSION =	20191221
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=  fwsi                       0.0 # 1.0
 
@@ -12,8 +12,6 @@ CATEGORIES =	sysutils security
 HOMEPAGE =	https://github.com/libyal/libfwsi/wiki
 
 SITES =		https://github.com/libyal/libfwsi/releases/download/${VERSION}/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
