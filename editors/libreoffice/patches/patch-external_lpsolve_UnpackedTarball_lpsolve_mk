@@ -1,7 +1,7 @@
 Index: external/lpsolve/UnpackedTarball_lpsolve.mk
 --- external/lpsolve/UnpackedTarball_lpsolve.mk.orig
 +++ external/lpsolve/UnpackedTarball_lpsolve.mk
-@@ -23,6 +23,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
+@@ -31,6 +31,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
  else
  
  $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\

@@ -1,16 +1,16 @@
 Index: external/liborcus/ExternalProject_liborcus.mk
 --- external/liborcus/ExternalProject_liborcus.mk.orig
 +++ external/liborcus/ExternalProject_liborcus.mk
-@@ -39,7 +39,7 @@ ifneq ($(SYSTEM_ZLIB),)
+@@ -38,7 +38,7 @@ ifneq ($(SYSTEM_ZLIB),)
  liborcus_LIBS+=-lz
  endif
  ifneq ($(SYSTEM_BOOST),)
--liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB)
-+liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB) -lpthread
+-liborcus_LIBS+=$(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB)
++liborcus_LIBS+=$(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB) -lpthread
  else
- liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams -lboost_filesystem
+ liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_iostreams -lboost_filesystem
  endif
-@@ -51,6 +51,9 @@ liborcus_CPPFLAGS=$(CPPFLAGS)
+@@ -50,6 +50,9 @@ liborcus_CPPFLAGS=$(CPPFLAGS)
  ifeq ($(SYSTEM_ZLIB),)
  liborcus_CPPFLAGS+=$(ZLIB_CFLAGS)
  endif
@@ -20,7 +20,7 @@ Index: external/liborcus/ExternalProject_liborcus.mk
  #
  # OSes that use the GNU C++ library need to use -D_GLIBCXX_DEBUG in
  # sync with the rest of LibreOffice, i.e. depending on
-@@ -75,6 +78,9 @@ endif
+@@ -73,6 +76,9 @@ endif
  ifneq (,$(PTHREAD_LIBS))
  liborcus_LDFLAGS+=$(PTHREAD_LIBS)
  endif

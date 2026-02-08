@@ -39,8 +39,6 @@ lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/uk/
 lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/uk/OptLanguagesPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/uk/
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/uk/OptSecurityPage.png
-lib/libreoffice/help/media/screenshots/cui/ui/optviewpage/uk/
-lib/libreoffice/help/media/screenshots/cui/ui/optviewpage/uk/OptViewPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/pageformatpage/uk/
 lib/libreoffice/help/media/screenshots/cui/ui/pageformatpage/uk/PageFormatPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/slantcornertabpage/uk/
@@ -655,7 +653,6 @@ lib/libreoffice/help/uk/text/scalc/01/05120200.html
 lib/libreoffice/help/uk/text/scalc/01/05120300.html
 lib/libreoffice/help/uk/text/scalc/01/05120400.html
 lib/libreoffice/help/uk/text/scalc/01/05120500.html
-lib/libreoffice/help/uk/text/scalc/01/06020000.html
 lib/libreoffice/help/uk/text/scalc/01/06030000.html
 lib/libreoffice/help/uk/text/scalc/01/06030100.html
 lib/libreoffice/help/uk/text/scalc/01/06030200.html
@@ -796,11 +793,13 @@ lib/libreoffice/help/uk/text/scalc/01/func_dollar.html
 lib/libreoffice/help/uk/text/scalc/01/func_drop.html
 lib/libreoffice/help/uk/text/scalc/01/func_eastersunday.html
 lib/libreoffice/help/uk/text/scalc/01/func_edate.html
+lib/libreoffice/help/uk/text/scalc/01/func_encodeurl.html
 lib/libreoffice/help/uk/text/scalc/01/func_eomonth.html
 lib/libreoffice/help/uk/text/scalc/01/func_error_type.html
 lib/libreoffice/help/uk/text/scalc/01/func_exact.html
 lib/libreoffice/help/uk/text/scalc/01/func_expand.html
 lib/libreoffice/help/uk/text/scalc/01/func_filter.html
+lib/libreoffice/help/uk/text/scalc/01/func_filterxml.html
 lib/libreoffice/help/uk/text/scalc/01/func_find.html
 lib/libreoffice/help/uk/text/scalc/01/func_findb.html
 lib/libreoffice/help/uk/text/scalc/01/func_fixed.html
@@ -833,6 +832,7 @@ lib/libreoffice/help/uk/text/scalc/01/func_leftb.html
 lib/libreoffice/help/uk/text/scalc/01/func_len.html
 lib/libreoffice/help/uk/text/scalc/01/func_lenb.html
 lib/libreoffice/help/uk/text/scalc/01/func_let.html
+lib/libreoffice/help/uk/text/scalc/01/func_lookup.html
 lib/libreoffice/help/uk/text/scalc/01/func_lower.html
 lib/libreoffice/help/uk/text/scalc/01/func_maxifs.html
 lib/libreoffice/help/uk/text/scalc/01/func_mid.html
@@ -1034,6 +1034,7 @@ lib/libreoffice/help/uk/text/scalc/guide/print_exact.html
 lib/libreoffice/help/uk/text/scalc/guide/print_landscape.html
 lib/libreoffice/help/uk/text/scalc/guide/print_title_row.html
 lib/libreoffice/help/uk/text/scalc/guide/printranges.html
+lib/libreoffice/help/uk/text/scalc/guide/r1c1syntax.html
 lib/libreoffice/help/uk/text/scalc/guide/relativ_absolut_ref.html
 lib/libreoffice/help/uk/text/scalc/guide/remove_duplicates.html
 lib/libreoffice/help/uk/text/scalc/guide/rename_table.html
@@ -1640,6 +1641,7 @@ lib/libreoffice/help/uk/text/shared/01/graphic_size_check.html
 lib/libreoffice/help/uk/text/shared/01/graphic_styles.html
 lib/libreoffice/help/uk/text/shared/01/grid_and_helplines.html
 lib/libreoffice/help/uk/text/shared/01/guides.html
+lib/libreoffice/help/uk/text/shared/01/hyphenation.html
 lib/libreoffice/help/uk/text/shared/01/image_compression.html
 lib/libreoffice/help/uk/text/shared/01/image_external_tool.html
 lib/libreoffice/help/uk/text/shared/01/insert_chart.html
@@ -2015,7 +2017,6 @@ lib/libreoffice/help/uk/text/shared/guide/export_ms.html
 lib/libreoffice/help/uk/text/shared/guide/fax.html
 lib/libreoffice/help/uk/text/shared/guide/filternavigator.html
 lib/libreoffice/help/uk/text/shared/guide/find_attributes.html
-lib/libreoffice/help/uk/text/shared/guide/flat_icons.html
 lib/libreoffice/help/uk/text/shared/guide/floating_toolbar.html
 lib/libreoffice/help/uk/text/shared/guide/fontwork.html
 lib/libreoffice/help/uk/text/shared/guide/formfields.html
@@ -2276,7 +2277,6 @@ lib/libreoffice/help/uk/text/simpress/01/05250000.html
 lib/libreoffice/help/uk/text/simpress/01/05250500.html
 lib/libreoffice/help/uk/text/simpress/01/05250600.html
 lib/libreoffice/help/uk/text/simpress/01/05250700.html
-lib/libreoffice/help/uk/text/simpress/01/06030000.html
 lib/libreoffice/help/uk/text/simpress/01/06040000.html
 lib/libreoffice/help/uk/text/simpress/01/06050000.html
 lib/libreoffice/help/uk/text/simpress/01/06060000.html
@@ -2308,6 +2308,7 @@ lib/libreoffice/help/uk/text/simpress/01/effectoptionstext.html
 lib/libreoffice/help/uk/text/simpress/01/effectoptionstiming.html
 lib/libreoffice/help/uk/text/simpress/01/new_slide.html
 lib/libreoffice/help/uk/text/simpress/01/remoteconnections.html
+lib/libreoffice/help/uk/text/simpress/01/sidebarslidebackground.html
 lib/libreoffice/help/uk/text/simpress/01/slide_properties.html
 lib/libreoffice/help/uk/text/simpress/01/slidesorter.html
 lib/libreoffice/help/uk/text/simpress/02/
@@ -2617,7 +2618,6 @@ lib/libreoffice/help/uk/text/swriter/01/05150300.html
 lib/libreoffice/help/uk/text/swriter/01/05170000.html
 lib/libreoffice/help/uk/text/swriter/01/05190000.html
 lib/libreoffice/help/uk/text/swriter/01/05200000.html
-lib/libreoffice/help/uk/text/swriter/01/06030000.html
 lib/libreoffice/help/uk/text/swriter/01/06040000.html
 lib/libreoffice/help/uk/text/swriter/01/06060000.html
 lib/libreoffice/help/uk/text/swriter/01/06060100.html

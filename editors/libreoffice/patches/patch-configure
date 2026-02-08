@@ -3,7 +3,7 @@ Putting openbsd*aarch64 in non-alphabetical order for patch/diff context
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7312,6 +7312,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
+@@ -7401,6 +7401,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
  
  openbsd*)
      using_freetype_fontconfig=yes
@@ -13,7 +13,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -15847,6 +15850,11 @@ openbsd*)
+@@ -15965,6 +15968,11 @@ openbsd*)
          RTL_ARCH=X86_64
          PLATFORMID=openbsd_x86_64
          ;;
@@ -25,7 +25,7 @@ Index: configure
      *)
          as_fn_error $? "Unsupported host_cpu $host_cpu for host_os $host_os" "$LINENO" 5
          ;;
-@@ -22845,9 +22853,6 @@ _ACEOF
+@@ -23101,9 +23109,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  printf "%s\n" "$gccvisinlineshiddenok" >&6; }
@@ -35,7 +35,7 @@ Index: configure
      fi
  
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -30233,7 +30238,7 @@ then :
+@@ -30579,7 +30584,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -44,7 +44,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -30631,7 +30636,7 @@ then :
+@@ -30977,7 +30982,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -53,7 +53,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -31074,7 +31079,7 @@ then :
+@@ -31420,7 +31425,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -62,7 +62,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -41393,7 +41398,7 @@ printf "%s\n" "internal" >&6; }
+@@ -41372,7 +41377,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB='$(gb_StaticLibrary_WORKDIR)/hyphen.lib'
      else
@@ -71,7 +71,7 @@ Index: configure
      fi
  fi
  
-@@ -41596,7 +41601,7 @@ printf "%s\n" "internal" >&6; }
+@@ -41575,7 +41580,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS='$(gb_StaticLibrary_WORKDIR)/mythes.lib'
      else
@@ -80,7 +80,7 @@ Index: configure
      fi
  fi
  
-@@ -42647,7 +42652,7 @@ else
+@@ -42626,7 +42631,7 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -89,7 +89,7 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -47336,7 +47341,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -47505,7 +47510,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt6 libraries... " >&6; }
      qt6_libdir="no"
      for lib_dir in $qt6_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              qt6_libdir="$lib_dir"
              break
          fi
-@@ -47722,7 +47727,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
+@@ -47891,7 +47896,7 @@ printf "%s\n" "$kf6_incdir" >&6; }
  printf %s "checking for KF6 libraries... " >&6; }
      kf6_libdir="no"
      for kf6_check in $kf6_libdirs; do
@@ -107,7 +107,7 @@ Index: configure
              kf6_libdir="$kf6_check"
              break
          fi
-@@ -48272,16 +48277,7 @@ if test "$USING_X11" = TRUE; then
+@@ -48789,16 +48794,7 @@ if test "$USING_X11" = TRUE; then
      else
          XINERAMALIB="$x_libraries"
      fi
@@ -125,7 +125,7 @@ Index: configure
          # we have only the dynamic version
          USE_XINERAMA=TRUE
          XINERAMA_LINK=dynamic
-@@ -49744,7 +49740,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -50427,7 +50423,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then

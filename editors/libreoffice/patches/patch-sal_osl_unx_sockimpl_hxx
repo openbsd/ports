@@ -1,7 +1,7 @@
 Index: sal/osl/unx/sockimpl.hxx
 --- sal/osl/unx/sockimpl.hxx.orig
 +++ sal/osl/unx/sockimpl.hxx
-@@ -26,7 +26,7 @@
+@@ -25,7 +25,7 @@
  #include <sys/un.h>
  #include <mutex>
  

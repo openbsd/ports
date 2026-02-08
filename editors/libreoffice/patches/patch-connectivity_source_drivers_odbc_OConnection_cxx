@@ -1,7 +1,7 @@
 Index: connectivity/source/drivers/odbc/OConnection.cxx
 --- connectivity/source/drivers/odbc/OConnection.cxx.orig
 +++ connectivity/source/drivers/odbc/OConnection.cxx
-@@ -97,7 +97,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+@@ -95,7 +95,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
      (void)nTimeOut; /* WaE */
  #endif
  
@@ -10,7 +10,7 @@ Index: connectivity/source/drivers/odbc/OConnection.cxx
      bSilent = true;
  #endif //LINUX
      SQLUSMALLINT nSilent =  bSilent ? SQL_DRIVER_NOPROMPT : SQL_DRIVER_COMPLETE;
-@@ -130,7 +130,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+@@ -128,7 +128,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
                            &cbConnStrOut,
                            nSilent);
      }

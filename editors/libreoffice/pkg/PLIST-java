@@ -45,7 +45,6 @@ lib/libreoffice/program/jvmfwk3rc
 @so lib/libreoffice/program/libofficebean.so
 @so lib/libreoffice/program/librptlo.so
 @so lib/libreoffice/program/librptuilo.so
-@so lib/libreoffice/program/librptxmllo.so
 lib/libreoffice/program/services/scriptproviderforbeanshell.rdb
 lib/libreoffice/share/Scripts/beanshell/
 lib/libreoffice/share/Scripts/beanshell/Calc/

@@ -5,8 +5,8 @@ Index: sal/osl/unx/process.cxx
  #include <machine/param.h>
  #endif
  
--#ifdef IOS
-+#if defined(IOS) || defined(__OpenBSD__)
+-#if defined(IOS) || defined(FREEBSD)
++#if defined(IOS) || defined(FREEBSD) || defined(OPENBSD)
  #include <signal.h>
  #endif
  
