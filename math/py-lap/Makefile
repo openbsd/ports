@@ -20,7 +20,8 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_TEST_LINK_SO =	Yes
 
-BUILD_DEPENDS=		lang/cython
+BUILD_DEPENDS=		lang/cython \
+			math/py-numpy
 RUN_DEPENDS =		math/py-numpy
 TEST_DEPENDS =		devel/py-test-timeout
 
