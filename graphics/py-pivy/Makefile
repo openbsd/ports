@@ -2,7 +2,7 @@ COMMENT =		Python bindings for coin
 
 MODPY_DISTV =		0.6.10
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 DIST_TUPLE +=		github coin3d pivy ${MODPY_DISTV} .
 
