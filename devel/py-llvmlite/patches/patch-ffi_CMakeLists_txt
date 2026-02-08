@@ -1,0 +1,11 @@
+Index: ffi/CMakeLists.txt
+--- ffi/CMakeLists.txt.orig
++++ ffi/CMakeLists.txt
+@@ -328,7 +328,6 @@ target_link_libraries(llvmlite ${llvm_libs})
+ # TODO: these options are just set, they should really be tested for
+ # suitability.
+ if(UNIX AND NOT APPLE)
+-    set(FORCED_LINK_FLAGS "-Wl,--exclude-libs,ALL -Wl,--no-undefined")
+     if(NOT LLVMLITE_SHARED)
+         # If LLVM is statically linked, we specify -Bsymbolic to prevent
+         # that LLVM symbols can be interposed upon by previously
