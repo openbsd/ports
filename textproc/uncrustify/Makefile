@@ -1,7 +1,8 @@
 COMMENT =	source code beautifier
 
-DISTNAME =	uncrustify-0.78.1
-REVISION =	1
+V =		0.82.0
+DISTNAME =	uncrustify-$V
+WRKDIST =	${WRKDIR}/uncrustify-${DISTNAME}
 
 CATEGORIES =	textproc devel
 
@@ -12,7 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-SITES =		${SITE_SOURCEFORGE:=uncrustify/}
+SITES =		https://github.com/uncrustify/uncrustify/releases/download/uncrustify-$V/ \
+		${SITE_SOURCEFORGE:=uncrustify/}
 
 COMPILER =	base-clang ports-gcc
 
