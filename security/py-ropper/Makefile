@@ -1,22 +1,24 @@
-COMMENT =	ROP gadget finder and binary information tool
+COMMENT=	ROP gadget finder and binary information tool
 
-MODPY_DISTV =	1.13.8
-DISTNAME =	ropper-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+MODPY_DISTV=	1.13.13
+GH_ACCOUNT=	sashs
+GH_PROJECT=	Ropper
+GH_TAGNAME=	v${MODPY_DISTV}
 
-CATEGORIES =	security
+DISTNAME=	ropper-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-HOMEPAGE =	https://scoding.de/ropper/
+CATEGORIES=	security
+
+HOMEPAGE=	https://scoding.de/ropper/
 
 # BSD 3-clauses
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
-MODPY_PI =	Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =	devel/py-filebytes \
+RUN_DEPENDS=	devel/py-filebytes \
 		devel/capstone/python \
 		devel/keystone/python
 

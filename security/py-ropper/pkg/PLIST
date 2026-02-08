@@ -1,5 +1,5 @@
-@pkgpath security/py-ropper,python3
 @conflict ${MODPY_PY_PREFIX}ropper-<1.12.5p2
+@pkgpath security/py-ropper,python3
 bin/ropper
 lib/python${MODPY_VERSION}/site-packages/ropper/
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/
@@ -7,6 +7,9 @@ lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/METADAT
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ropper/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ropper/__main__.py
@@ -121,3 +124,32 @@ lib/python${MODPY_VERSION}/site-packages/ropper/search.py
 lib/python${MODPY_VERSION}/site-packages/ropper/semantic.py
 lib/python${MODPY_VERSION}/site-packages/ropper/service.py
 lib/python${MODPY_VERSION}/site-packages/ropper/z3helper.py
+lib/python${MODPY_VERSION}/site-packages/testcases/
+lib/python${MODPY_VERSION}/site-packages/testcases/__init__.py
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_arm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_arm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_arm64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_arm64.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_console.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_general.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_general.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_mips.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_mips.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_ppc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_ppc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_x86.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_x86.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_x86_64.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/testcases/${MODPY_PYCACHE}test_x86_64.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/testcases/test_arm.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_arm64.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_console.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_general.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_mips.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_ppc.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_x86.py
+lib/python${MODPY_VERSION}/site-packages/testcases/test_x86_64.py
