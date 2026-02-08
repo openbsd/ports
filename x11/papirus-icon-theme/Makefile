@@ -2,9 +2,9 @@ COMMENT=	papirus icon theme
 DIST_TUPLE=	github PapirusDevelopmentTeam papirus-icon-theme 20250501  .
 CATEGORIES=	x11
 
-REVISION=	0
+REVISION=	1
 
-MAINTAINER=	Rafael Sadowski <rasdowski@openbsd.org>
+MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
