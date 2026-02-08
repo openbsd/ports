@@ -1,6 +1,7 @@
 COMMENT =	Berkeley DB module
 
-DISTNAME =	BerkeleyDB-0.66
+DISTNAME =	BerkeleyDB-0.67
+CPAN_AUTHOR =	PMQS
 
 CATEGORIES =	databases
 
