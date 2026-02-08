@@ -7,19 +7,19 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v1.3.2
+GH_TAGNAME =		v1.3.3
 
 CATEGORIES =		audio
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${MODCARGO_WANTLIB} crypto curses dbus-1 m portaudio ssl
+WANTLIB +=		${MODCARGO_WANTLIB} crypto m portaudio ssl
 
 MODULES =		devel/cargo
 
-LIB_DEPENDS=		audio/portaudio-svn \
-			x11/dbus,-main
+BUILD_DEPENDS =		devel/cmake/core
+LIB_DEPENDS=		audio/portaudio-svn
 
 SEPARATE_BUILD =	Yes
 NO_TEST =		Yes
