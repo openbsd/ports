@@ -37,7 +37,7 @@ Index: config.def.h
  };
  
  /* layout(s) */
-@@ -58,7 +61,7 @@ static const Layout layouts[] = {
+@@ -59,7 +62,7 @@ static const Layout layouts[] = {
  /* commands */
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
  static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
@@ -46,7 +46,7 @@ Index: config.def.h
  
  static const Key keys[] = {
  	/* modifier                     key        function        argument */
-@@ -66,7 +69,9 @@ static const Key keys[] = {
+@@ -67,7 +70,9 @@ static const Key keys[] = {
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
  	{ MODKEY,                       XK_b,      togglebar,      {0} },
  	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
