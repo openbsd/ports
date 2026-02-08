@@ -2,14 +2,14 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
 V=		3.0.23
-REVISION-main=	4
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	5
+REVISION-jack=	1
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-jack=	0
 
 USE_NOBTCFI=	Yes
 
@@ -24,7 +24,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+ and GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-common=	dbus-1 iconv idn intl m pthread
+WANTLIB-common=	dbus-1 execinfo iconv idn intl m pthread
 
 WANTLIB-main += ${WANTLIB-common} ${MODLUA_WANTLIB}
 
@@ -62,7 +62,7 @@ WANTLIB-main += absl_vlog_config_internal aom archive ass atk-1.0 atk-bridge-2.0
 WANTLIB-main += atspi avahi-client avahi-common avcodec avformat avutil
 WANTLIB-main += b2 bluray bz2 c cairo cairo-gobject cddb crypto curses dav1d
 WANTLIB-main += double-conversion drm drm_amdgpu dvbpsi dvdnav
-WANTLIB-main += dvdread ebml elf epoll-shim epoxy execinfo expat ffi
+WANTLIB-main += dvdread ebml elf epoll-shim epoxy expat ffi
 WANTLIB-main += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB-main += gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz
@@ -86,7 +86,7 @@ WANTLIB-main += drm_intel
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
 
-WANTLIB-jack=	db execinfo jack vlccore ${WANTLIB-common}
+WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
