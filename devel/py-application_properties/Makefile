@@ -1,6 +1,6 @@
 COMMENT =	interface to access properties in a Python script or program
 
-MODPY_DISTV =	0.9.0
+MODPY_DISTV =	0.9.2
 GH_ACCOUNT =	jackdewinter
 GH_PROJECT =	application_properties
 GH_TAGNAME =	v${MODPY_DISTV}
