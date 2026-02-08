@@ -1,6 +1,6 @@
 COMMENT=	Python FFmpeg progress wrapper
 
-MODPY_DISTV=	1.1.1
+MODPY_DISTV=	1.1.2
 GH_ACCOUNT=	slhck
 GH_PROJECT=	ffmpeg-progress-yield
 GH_TAGNAME=	v${MODPY_DISTV}
