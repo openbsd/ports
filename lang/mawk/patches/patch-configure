@@ -4,7 +4,7 @@ srandom_deterministic(3).
 Index: configure
 --- configure.orig
 +++ configure
-@@ -8373,7 +8373,7 @@ if test "${cf_cv_srand_func+set}" = set; then
+@@ -8384,7 +8384,7 @@ if test "${cf_cv_srand_func+set}" = set; then
  else
  
  cf_cv_srand_func=unknown
