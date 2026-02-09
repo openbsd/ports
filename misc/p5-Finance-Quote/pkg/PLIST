@@ -7,7 +7,6 @@ ${P5SITE}/Finance/Quote/ASX.pm
 ${P5SITE}/Finance/Quote/AlphaVantage.pm
 ${P5SITE}/Finance/Quote/BSEIndia.pm
 ${P5SITE}/Finance/Quote/BVB.pm
-${P5SITE}/Finance/Quote/Bloomberg.pm
 ${P5SITE}/Finance/Quote/BorsaItaliana.pm
 ${P5SITE}/Finance/Quote/Bourso.pm
 ${P5SITE}/Finance/Quote/CSE.pm
@@ -30,7 +29,6 @@ ${P5SITE}/Finance/Quote/Fondsweb.pm
 ${P5SITE}/Finance/Quote/Fool.pm
 ${P5SITE}/Finance/Quote/GoldMoney.pm
 ${P5SITE}/Finance/Quote/GoogleWeb.pm
-${P5SITE}/Finance/Quote/HU.pm
 ${P5SITE}/Finance/Quote/IndiaMutual.pm
 ${P5SITE}/Finance/Quote/MarketWatch.pm
 ${P5SITE}/Finance/Quote/MorningstarCH.pm
@@ -39,20 +37,18 @@ ${P5SITE}/Finance/Quote/MorningstarUK.pm
 ${P5SITE}/Finance/Quote/NSEIndia.pm
 ${P5SITE}/Finance/Quote/NZX.pm
 ${P5SITE}/Finance/Quote/OnVista.pm
-${P5SITE}/Finance/Quote/Oslobors.pm
-${P5SITE}/Finance/Quote/SEB.pm
 ${P5SITE}/Finance/Quote/SIX.pm
 ${P5SITE}/Finance/Quote/Sinvestor.pm
 ${P5SITE}/Finance/Quote/StockData.pm
 ${P5SITE}/Finance/Quote/Stooq.pm
+${P5SITE}/Finance/Quote/SwissFundData.pm
 ${P5SITE}/Finance/Quote/TMX.pm
 ${P5SITE}/Finance/Quote/TSP.pm
 ${P5SITE}/Finance/Quote/TesouroDireto.pm
-${P5SITE}/Finance/Quote/Tiaacref.pm
 ${P5SITE}/Finance/Quote/Tradegate.pm
 ${P5SITE}/Finance/Quote/TreasuryDirect.pm
-${P5SITE}/Finance/Quote/Troweprice.pm
 ${P5SITE}/Finance/Quote/TwelveData.pm
+${P5SITE}/Finance/Quote/USBonds.pm
 ${P5SITE}/Finance/Quote/Union.pm
 ${P5SITE}/Finance/Quote/UserAgent.pm
 ${P5SITE}/Finance/Quote/XETRA.pm
@@ -66,7 +62,6 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::AlphaVantage.3p
 @man man/man3p/Finance::Quote::BSEIndia.3p
 @man man/man3p/Finance::Quote::BVB.3p
-@man man/man3p/Finance::Quote::Bloomberg.3p
 @man man/man3p/Finance::Quote::BorsaItaliana.3p
 @man man/man3p/Finance::Quote::Bourso.3p
 @man man/man3p/Finance::Quote::CSE.3p
@@ -88,7 +83,6 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::Fool.3p
 @man man/man3p/Finance::Quote::GoldMoney.3p
 @man man/man3p/Finance::Quote::GoogleWeb.3p
-@man man/man3p/Finance::Quote::HU.3p
 @man man/man3p/Finance::Quote::IndiaMutual.3p
 @man man/man3p/Finance::Quote::MarketWatch.3p
 @man man/man3p/Finance::Quote::MorningstarCH.3p
@@ -97,20 +91,18 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::NSEIndia.3p
 @man man/man3p/Finance::Quote::NZX.3p
 @man man/man3p/Finance::Quote::OnVista.3p
-@man man/man3p/Finance::Quote::Oslobors.3p
-@man man/man3p/Finance::Quote::SEB.3p
 @man man/man3p/Finance::Quote::SIX.3p
 @man man/man3p/Finance::Quote::Sinvestor.3p
 @man man/man3p/Finance::Quote::StockData.3p
 @man man/man3p/Finance::Quote::Stooq.3p
+@man man/man3p/Finance::Quote::SwissFundData.3p
 @man man/man3p/Finance::Quote::TMX.3p
 @man man/man3p/Finance::Quote::TSP.3p
 @man man/man3p/Finance::Quote::TesouroDireto.3p
-@man man/man3p/Finance::Quote::Tiaacref.3p
 @man man/man3p/Finance::Quote::Tradegate.3p
 @man man/man3p/Finance::Quote::TreasuryDirect.3p
-@man man/man3p/Finance::Quote::Troweprice.3p
 @man man/man3p/Finance::Quote::TwelveData.3p
+@man man/man3p/Finance::Quote::USBonds.3p
 @man man/man3p/Finance::Quote::Union.3p
 @man man/man3p/Finance::Quote::XETRA.3p
 @man man/man3p/Finance::Quote::YahooJSON.3p

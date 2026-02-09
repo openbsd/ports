@@ -2,7 +2,7 @@ COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Finance-Quote-1.65
+DISTNAME =	Finance-Quote-1.68
 CATEGORIES=	misc
 
 HOMEPAGE=	https://finance-quote.sourceforge.net
@@ -28,6 +28,8 @@ TEST_DEPENDS=	devel/p5-Date-Range \
 		devel/p5-Date-Simple \
 		devel/p5-DateTime-Format-ISO8601 \
 		devel/p5-Test-Perl-Critic
+
+CPAN_AUTHOR =	BPSCHUCK
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	Examples
