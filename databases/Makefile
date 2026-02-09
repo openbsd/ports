@@ -206,13 +206,9 @@
      SUBDIR += ruby-amalgalite,ruby33
      SUBDIR += ruby-amalgalite,ruby34
      SUBDIR += ruby-amalgalite,ruby40
-     SUBDIR += ruby-hiera-eyaml,ruby33
-     SUBDIR += ruby-hiera-eyaml,ruby34
-     SUBDIR += ruby-hiera-eyaml-gpg,ruby33
-     SUBDIR += ruby-hiera-eyaml-gpg,ruby34
-     SUBDIR += ruby-hiera-file,ruby33
-     SUBDIR += ruby-hiera-file,ruby34
-     SUBDIR += ruby-hiera-file,ruby40
+     SUBDIR += ruby-hiera-eyaml
+     SUBDIR += ruby-hiera-eyaml-gpg
+     SUBDIR += ruby-hiera-file
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-ldap,ruby33
      SUBDIR += ruby-ldap,ruby34
