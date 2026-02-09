@@ -2,10 +2,9 @@ COMMENT=	calendaring application based on GNUstep
 
 GH_ACCOUNT =	poroussel
 GH_PROJECT =	simpleagenda
-GH_TAGNAME =	v0.46
+GH_TAGNAME =	v0.47
 #DISTNAME=	SimpleAgenda-${VERSION}
 CATEGORIES+=	productivity
-REVISION =	1
 
 MODULES =	x11/gnustep
 
