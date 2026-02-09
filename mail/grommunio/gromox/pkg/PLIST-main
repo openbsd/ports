@@ -122,7 +122,10 @@ libexec/gromox/
 @bin libexec/gromox/istore
 libexec/gromox/kdb-uidextract
 libexec/gromox/kdb-uidextract-limited
+@bin libexec/gromox/lda
 @bin libexec/gromox/midb
+@bin libexec/gromox/oab
+@bin libexec/gromox/oxdisco
 @bin libexec/gromox/pop3
 @bin libexec/gromox/textmapquery
 @bin libexec/gromox/timer
@@ -188,6 +191,7 @@ man/man8/event.8gx
 @man man/man8/gromox-mkprivate.8
 @man man/man8/gromox-mkpublic.8
 @man man/man8/gromox-snapshot.8
+@man man/man8/gromox-tnef2mt.8
 @man man/man8/gromox-vcf2mt.8
 man/man8/http.8gx
 man/man8/imap.8gx

@@ -3,11 +3,11 @@ avoid UB where mres is optimized away
 Index: mda/exmdb_local/exmdb_local.cpp
 --- mda/exmdb_local/exmdb_local.cpp.orig
 +++ mda/exmdb_local/exmdb_local.cpp
-@@ -265,6 +265,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
+@@ -281,6 +281,7 @@ delivery_status exmdb_local_deliverquota(MESSAGE_CONTE
  		return delivery_status::no_user;
  	}
  	auto home_dir = mres.maildir.c_str();
 +	mlog(LV_DEBUG, "<%s> mailbox is in %s", address, home_dir);
  	auto pmail = &pcontext->mail;
+ 	bool deliver_to_junk = should_move_to_junk(*pmail);
  	gx_strlcpy(hostname, get_host_ID(), std::size(hostname));
- 	if ('\0' == hostname[0]) {

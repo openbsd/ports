@@ -10,3 +10,12 @@ Index: exch/exmdb/db_engine.cpp
  using LLD = long long;
  using LLU = unsigned long long;
  using GCV_ARRAY = LONGLONG_ARRAY;
+@@ -98,7 +100,7 @@ static gromox::atomic_bool g_dbeng_stop; /* stop signa
+ static pthread_t g_scan_tid;
+ static gromox::time_duration g_cache_interval; /* maximum living interval in table */
+ static std::vector<pthread_t> g_thread_ids;
+-static std::mutex g_list_lock, g_hash_lock, g_maint_lock;
++static thread_local std::mutex g_list_lock, g_hash_lock, g_maint_lock;
+ static std::condition_variable g_waken_cond, g_maint_cv, g_maint_ref_cv;
+ static std::unordered_map<std::string, db_base> g_hash_table; /* protected by g_hash_lock */
+ static std::unordered_map<std::string, db_maint_mode> g_maint_table; /* protected by g_maint_lock */
