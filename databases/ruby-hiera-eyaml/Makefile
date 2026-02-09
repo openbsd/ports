@@ -1,5 +1,6 @@
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
+REVISION =	0
 DISTNAME =	hiera-eyaml-4.2.0
 CATEGORIES =	databases
 
@@ -9,6 +10,8 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
+MODRUBY_HANDLE_FLAVORS =No
+GEM_FLAGS =		--no-format-executable
 
 CONFIGURE_STYLE =	ruby gem
 

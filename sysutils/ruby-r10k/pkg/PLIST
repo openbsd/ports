@@ -1,4 +1,6 @@
-${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
+@conflict ruby34-r10k-*
+@pkgpath sysutils/ruby-r10k,ruby34
+${GEM_BIN}/r10k
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitattributes

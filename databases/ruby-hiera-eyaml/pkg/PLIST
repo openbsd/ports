@@ -1,4 +1,6 @@
-${GEM_BIN}/eyaml${GEM_BIN_SUFFIX}
+@conflict ruby34-hiera-eyaml-*
+@pkgpath databases/ruby-hiera-eyaml,ruby34
+${GEM_BIN}/eyaml
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/

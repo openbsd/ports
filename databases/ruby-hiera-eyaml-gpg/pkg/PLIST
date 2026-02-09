@@ -1,3 +1,5 @@
+@conflict ruby34-hiera-eyaml-gpg-*
+@pkgpath databases/ruby-hiera-eyaml-gpg,ruby34
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore

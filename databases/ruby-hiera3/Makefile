@@ -1,5 +1,6 @@
 COMMENT=		simple pluggable hierarchical database
 
+REVISION =		0
 V=			3.12.0
 DISTNAME=		hiera-${V}
 PKGNAME=		hiera3-${V}
@@ -14,6 +15,8 @@ MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
+MODRUBY_HANDLE_FLAVORS =No
+GEM_FLAGS =		--no-format-executable
 
 CONFIGURE_STYLE=	ruby gem
 

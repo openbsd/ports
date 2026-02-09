@@ -1,5 +1,6 @@
 COMMENT =	Puppet module management
 
+REVISION =	0
 DISTNAME =	r10k-5.0.2
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
@@ -9,6 +10,8 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
+MODRUBY_HANDLE_FLAVORS =No
+GEM_FLAGS =		--no-format-executable
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS += archivers/ruby-minitar,${MODRUBY_FLAVOR}>=0.9,<2 \

@@ -1,4 +1,6 @@
-${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
+@conflict ruby34-puppet-lint-*
+@pkgpath sysutils/ruby-puppet-lint,ruby34
+${GEM_BIN}/puppet-lint
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE

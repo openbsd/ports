@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1787 2026/02/06 16:10:48 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1788 2026/02/09 08:09:46 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -505,6 +505,12 @@ my $stem_extensions = {
 	'kdiagram-qt6' => 'kdiagram',
 	'wycheproof-testvectors' => 'wycheproof',
 	'ruby34-openfact' => 'openfact',
+	'ruby34-hiera3' => 'hiera3',
+	'ruby34-hiera-eyaml' => 'hiera-eyaml',
+	'ruby34-hiera-eyaml-gpg' => 'hiera-eyaml-gpg',
+	'ruby34-hiera-file' => 'hiera-file',
+	'ruby34-puppet-lint' => 'puppet-lint',
+	'ruby34-r10k' => 'r10k',
 };
 
 my $obsolete_reason = {};

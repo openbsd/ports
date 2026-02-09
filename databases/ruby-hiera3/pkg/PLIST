@@ -1,5 +1,6 @@
-@conflict ruby22-hiera-<3.0.0
-${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
+@conflict ruby34-hiera3-*
+@pkgpath databases/ruby-hiera3,ruby34
+${GEM_BIN}/hiera
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
