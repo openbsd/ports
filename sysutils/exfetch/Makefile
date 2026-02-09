@@ -1,6 +1,6 @@
 COMMENT =	shell-extensible fetching program
 
-DIST_TUPLE +=	codeberg izder456 exfetch 1.5 .
+DIST_TUPLE +=	codeberg izder456 exfetch 1.5.1 .
 DIST_TUPLE +=	github schovi baked_file_system \
 		f4f658812c5b8b404437d8cf34b72a0eb5fe7701 \
 		lib/baked_file_system
@@ -26,7 +26,5 @@ WANTLIB += pthread z
 
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX} \
 		MANDIR=${TRUEPREFIX}/man/man1
-
-NO_TEST =	Yes
 
 .include <bsd.port.mk>
