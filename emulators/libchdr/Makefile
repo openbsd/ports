@@ -2,14 +2,14 @@ BROKEN-aarch64 = looks for sys/auxv.h
 
 COMMENT =	library for reading MAME's CHDv1-v5 formats
 
-V =		1.0pl20230220
+V =		1.0pl20251226
 DISTNAME =	libchdr-$V
 
 GH_ACCOUNT =	rtissera
 GH_PROJECT =	libchdr
-GH_COMMIT =	fec8ab94212cc65d9d9a62cb3da924f5830c04b0
+GH_COMMIT =	07a7dad23378b001f4ab174ef51bd6553f883edd
 
-SHARED_LIBS +=	chdr	1.0 # 0.1
+SHARED_LIBS +=	chdr	2.0 # 0.1
 
 CATEGORIES =	emulators devel games
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS +=	-DWITH_SYSTEM_ZLIB=ON
 # zlib (zlib)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	z
+WANTLIB += pthread z
 
 MODULES =		devel/cmake
 
