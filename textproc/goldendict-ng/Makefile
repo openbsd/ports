@@ -7,6 +7,7 @@ CATEGORIES =		textproc education x11
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
 				v25.05.0-Release.2a2b0e16	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -27,6 +28,8 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			x11/qt6
+
+BUILD_DEPENDS =		textproc/tomlplusplus
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/libzim \
@@ -51,6 +54,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
 			-DUSE_ALTERNATIVE_NAME=ON \
 			-DUSE_SYSTEM_FMT=ON \
+			-DUSE_SYSTEM_TOML=ON \
 			-DWITH_TTS=ON
 
 # ${WRKSRC}/CMakeLists.txt =OFF does not require it, but
