@@ -58,8 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}_codecs.$
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}_codecs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}adobe_glyphs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}adobe_glyphs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}core_fontmetrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}core_fontmetrics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}core_font_metrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}core_font_metrics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}pdfdoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}pdfdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}std.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}zapfding.
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/${MODPY_PYCACHE}zapfding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/_codecs.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/adobe_glyphs.py
-lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/core_fontmetrics.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/core_font_metrics.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/pdfdoc.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/std.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_codecs/symbol.py
