@@ -1,22 +1,24 @@
-COMMENT=		programming font focused on source code legibility
+COMMENT-main =	programming font focused on source code legibility
+COMMENT-web =	programming (web)font focused on source code legibility
 
-V=			2.201
-DISTNAME=		0xProto_${V:S/./_/}
-PKGNAME=		0xProto-${V}
-EXTRACT_SUFX=		.zip
+MULTI_PACKAGES =	-main -web
 
-CATEGORIES=		fonts x11
+MODFONT_VERSION =	2.502
+MODFONT_FAMILY =	0xProto
+DISTNAME=		0xProto_${MODFONT_VERSION:S/./_/}
+
+MODULES =	font
 
 # OFL-1.1
 PERMIT_PACKAGE=		Yes
 
-SITES=			https://github.com/0xType/0xProto/releases/download/${V}/
+SITES =		https://github.com/0xType/0xProto/releases/download/${MODFONT_VERSION}/
+
+MODFONT_FONTFILES =	*.otf *.ttf
+MODFONT_WEBFILES =	*.woff2
 
 NO_BUILD=		Yes
-PKG_ARCH=		*
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/0xProto
-	${INSTALL_DATA} ${WRKDIR}/0xProto-* ${PREFIX}/share/fonts/0xProto/
+WRKDIST =		${WRKDIR}
 
 .include <bsd.port.mk>
