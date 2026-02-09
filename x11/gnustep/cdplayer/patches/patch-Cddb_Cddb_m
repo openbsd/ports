@@ -1,0 +1,12 @@
+Index: Cddb/Cddb.m
+--- Cddb/Cddb.m.orig
++++ Cddb/Cddb.m
+@@ -570,7 +570,7 @@ int cddb_sum (int n)
+ - (id) init
+ {
+   self = [super init];
+-  defaultSite = [NSURL URLWithString: @"cddbp://freedb.freedb.org:8880"];
++  defaultSite = [NSURL URLWithString: @"cddbp://gnudb.gnudb.org:8880"];
+   fileHandler = nil;
+   level = 5;
+   return self;

@@ -1,0 +1,15 @@
+Index: AudioCD/AudioCD.h
+--- AudioCD/AudioCD.h.orig
++++ AudioCD/AudioCD.h
+@@ -27,9 +27,9 @@
+ #include <Foundation/Foundation.h>
+ #include "AudioCDProtocol.h"
+ #include <cdio/cdio.h>
+-#include <cdio/cdda.h>
++#include <cdio/paranoia/cdda.h>
+ #include <cdio/cd_types.h>
+-#include <cdio/paranoia.h>
++#include <cdio/paranoia/paranoia.h>
+ #include <cdio/bytesex.h>
+ #include <cdio/audio.h>
+ #include <cdio/logging.h>

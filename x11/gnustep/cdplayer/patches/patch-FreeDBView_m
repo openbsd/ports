@@ -1,0 +1,12 @@
+Index: FreeDBView.m
+--- FreeDBView.m.orig
++++ FreeDBView.m
+@@ -138,7 +138,7 @@ static FreeDBView *singleInstance = nil;
+    
+ 	[siteList removeAllObjects];
+ 	// Always get list from main site (www.freedb.org).
+-	[cddb setDefaultSite: @"http://freedb.freedb.org:80/~cddb/cddb.cgi"];
++	[cddb setDefaultSite: @"https://gnudb.gnudb.org/~cddb/cddb.cgi"];
+ 
+ 	if([cddb connect]) {
+ 		siteArray = [cddb sites];

@@ -1,21 +1,17 @@
 COMMENT =	GNUstep based CD player
 
-VERSION =	0.5.1
-REVISION =	18
+VERSION =	0.6.0
+GH_ACCOUNT =	schik
+GH_PROJECT =	cdplayer
+GH_TAGNAME =	v${VERSION}
 DISTNAME =	cdplayer-${VERSION}
 
-HOMEPAGE =	https://gsburn.sourceforge.net/
-SITES =		${SITE_SOURCEFORGE:=gsburn/}
-EXTRACT_SUFX =	.tar.bz2
-
 MODULES =	x11/gnustep
-WANTLIB +=	cdaudio PreferencePanes
-WANTLIB += ${COMPILER_LIBCXX}
-LIB_DEPENDS +=	audio/libcdaudio \
-		x11/gnustep/systempreferences
+WANTLIB +=	cdio cdio_cdda cdio_paranoia DBusKit
+WANTLIB += 	${COMPILER_LIBCXX}
+LIB_DEPENDS +=	audio/libcdio-paranoia \
+		x11/gnustep/dbuskit
 
-WRKDIST =	${WRKDIR}/CDPlayer-${VERSION}
-
-MAKE_FLAGS +=	prefs=sysprefs
+RUN_DEPENDS +=	x11/gnustep/cynthiune
 
 .include <bsd.port.mk>
