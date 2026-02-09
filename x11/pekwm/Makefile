@@ -1,12 +1,12 @@
 COMMENT=	aewm++ based pretty themable window manager
 
-V=		0.4.1
+V=		0.4.2
 DISTNAME=	pekwm-${V}
 
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.se/
-SITES=		https://github.com/pekdon/pekwm/releases/download/release-${V}/
+SITES=		https://www.pekwm.se/pekwm/uv/
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
 
