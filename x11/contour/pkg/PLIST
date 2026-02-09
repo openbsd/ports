@@ -1,0 +1,26 @@
+@bin bin/contour
+share/applications/org.contourterminal.Contour.desktop
+share/contour/
+share/contour/LICENSE.txt
+share/contour/README.md
+share/contour/shell-integration/
+share/contour/shell-integration/shell-integration.bash
+share/contour/shell-integration/shell-integration.fish
+share/contour/shell-integration/shell-integration.tcsh
+share/contour/shell-integration/shell-integration.zsh
+share/icons/hicolor/128x128/apps/org.contourterminal.Contour.png
+share/icons/hicolor/256x256/apps/org.contourterminal.Contour.png
+share/icons/hicolor/32x32/apps/org.contourterminal.Contour.png
+share/icons/hicolor/512x512/apps/org.contourterminal.Contour.png
+share/icons/hicolor/64x64/apps/org.contourterminal.Contour.png
+share/kservices5/
+share/kservices5/ServiceMenus/
+share/kservices5/ServiceMenus/org.contourterminal.Contour.OpenHere.desktop
+share/kservices5/ServiceMenus/org.contourterminal.Contour.RunIn.desktop
+share/metainfo/
+share/metainfo/org.contourterminal.Contour.metainfo.xml
+share/terminfo/
+share/terminfo/c/
+share/terminfo/c/contour
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
