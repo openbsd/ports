@@ -1,12 +1,10 @@
 COMMENT =	tiny embeddable httpd library written in C
-DISTNAME =	libmicrohttpd-0.9.70
-REVISION =	0
+DISTNAME =	libmicrohttpd-1.0.2
 CATEGORIES =	www
 
-SHARED_LIBS +=	microhttpd                0.4 # 65.0
+SHARED_LIBS +=	microhttpd                0.5 # 74.2
 
 HOMEPAGE =	https://www.gnu.org/software/libmicrohttpd/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
