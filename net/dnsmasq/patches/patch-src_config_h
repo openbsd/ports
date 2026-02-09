@@ -1,7 +1,7 @@
 Index: src/config.h
 --- src/config.h.orig
 +++ src/config.h
-@@ -48,8 +48,8 @@
+@@ -49,8 +49,8 @@
  #define ETHERSFILE "/etc/ethers"
  #define DEFLEASE 3600 /* default DHCPv4 lease time, one hour */
  #define DEFLEASE6 (3600*24) /* default lease time for DHCPv6. One day. */
@@ -10,9 +10,9 @@ Index: src/config.h
 +#define CHUSER "_dnsmasq"
 +#define CHGRP "_dnsmasq"
  #define TFTP_MAX_CONNECTIONS 50 /* max simultaneous connections */
- #define LOG_MAX 5 /* log-queue length */
- #define RANDFILE "/dev/urandom"
-@@ -218,7 +218,7 @@ RESOLVFILE
+ #define TFTP_MAX_WINDOW 32 /* max window size to negotiate */
+ #define TFTP_TRANSFER_TIME 120 /* Abandon TFTP transfers after this long. Two mins. */
+@@ -222,7 +222,7 @@ RESOLVFILE
  #   if defined(__FreeBSD__)
  #      define CONFFILE "/usr/local/etc/dnsmasq.conf"
  #   else
