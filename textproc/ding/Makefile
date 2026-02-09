@@ -1,6 +1,7 @@
 COMMENT =	dictionary lookup program for X11
 
 DISTNAME =	ding-1.9
+REVISION =	0
 
 CATEGORIES =	textproc
 
