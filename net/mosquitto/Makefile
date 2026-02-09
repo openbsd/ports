@@ -5,6 +5,7 @@ GH_PROJECT=	mosquitto
 GH_COMMIT=	a7f3f4c362713d6e35ed75745f38ae8aaac78443
 
 DISTNAME=	mosquitto-2.1.1pl20260207
+REVISION=	0
 
 SHARED_LIBS +=  mosquitto                 3.0
 SHARED_LIBS +=  mosquittopp               3.0
@@ -32,16 +33,16 @@ MODPY_ADJ_FILES= ${WRKSRC}/plugins/*/*.py
 
 BUILD_DEPENDS=	devel/uthash \
 		devel/cunit \
+		devel/gtest \
 		textproc/libxslt
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/cjson \
-		security/argon2
-#		www/libmicrohttpd (after committing update; drop WITH_HTTP_API=no)
+		security/argon2 \
+		www/libmicrohttpd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=	-DWITH_SRV=no \
-		-DWITH_HTTP_API=no \
 		-DWITH_TLS_PSK=no \
 		-DWITH_WEBSOCKETS=yes \
 		-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples
