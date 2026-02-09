@@ -1,0 +1,33 @@
+drop calls to get_executable_dir, we use the standard paths
+
+Index: src/lib/path.c
+--- src/lib/path.c.orig
++++ src/lib/path.c
+@@ -106,9 +106,6 @@ static char *srn_try_to_find_data_file(const char *nam
+     char *path;
+     char *prefix[] = {
+         g_build_filename(PACKAGE_DATA_DIR, PACKAGE, NULL),
+-        g_build_filename(srn_get_executable_dir(), "share", PACKAGE, NULL),
+-        g_build_filename(srn_get_executable_dir(), "..", "share", PACKAGE, NULL),
+-        srn_get_executable_dir(),
+         NULL
+     };
+ 
+@@ -122,9 +119,6 @@ static char *srn_try_to_find_config_file(const char *n
+     char *path;
+     char *prefix[] = {
+         g_build_filename(PACKAGE_CONFIG_DIR, PACKAGE, NULL),
+-        g_build_filename(srn_get_executable_dir(), "etc", PACKAGE, NULL),
+-        g_build_filename(srn_get_executable_dir(), "..", "etc", PACKAGE, NULL),
+-        srn_get_executable_dir(),
+         NULL
+     };
+ 
+@@ -138,7 +132,6 @@ static char *srn_try_to_find_user_file(const char *nam
+     char *path;
+     char *prefix[] = {
+         g_build_filename(g_get_user_config_dir(), PACKAGE, NULL),
+-        srn_get_executable_dir(),
+         NULL
+     };
+ 

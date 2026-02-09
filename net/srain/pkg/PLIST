@@ -4,10 +4,14 @@ share/examples/srain/
 @sample ${SYSCONFDIR}/srain/
 share/examples/srain/builtin.cfg
 @sample ${SYSCONFDIR}/srain/builtin.cfg
+share/icons/hicolor/128x128/apps/im.srain.Srain.Red.png
 share/icons/hicolor/128x128/apps/im.srain.Srain.png
+share/locale/fr/LC_MESSAGES/srain.mo
 share/locale/nl/LC_MESSAGES/srain.mo
 share/locale/ru/LC_MESSAGES/srain.mo
+share/locale/uk/LC_MESSAGES/srain.mo
 share/locale/zh_CN/LC_MESSAGES/srain.mo
+share/locale/zh_TW/LC_MESSAGES/srain.mo
 share/metainfo/
 share/metainfo/im.srain.Srain.metainfo.xml
 share/srain/
