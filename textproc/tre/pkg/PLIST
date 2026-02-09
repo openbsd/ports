@@ -4,10 +4,11 @@ include/tre/
 include/tre/regex.h
 include/tre/tre-config.h
 include/tre/tre.h
-lib/libtre.a
+@static-lib lib/libtre.a
 lib/libtre.la
 @lib lib/libtre.so.${LIBtre_VERSION}
 lib/pkgconfig/tre.pc
 @man man/man1/agrep.1
 share/locale/fi/LC_MESSAGES/tre.mo
 share/locale/sv/LC_MESSAGES/tre.mo
+share/locale/zh_CN/LC_MESSAGES/tre.mo
