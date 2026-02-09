@@ -1,10 +1,10 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -169,3 +169,52 @@ gst-tag = { package = "gstreamer-tag", git = "https://
- gst-utils = { package = "gstreamer-utils", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
- gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
- gst-webrtc = { package = "gstreamer-webrtc", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.24", version = "0.24" }
+@@ -187,3 +187,53 @@ gst-plugin-isobmff = { path="mux/isobmff", version = "
+ gst-plugin-gtk4 = { path="video/gtk4", version = "0.15.0-alpha" }
+ gst-plugin-rtp = { path="net/rtp", version = "0.15.0-alpha" }
+ gst-plugin-hlssink3 = { path="net/hlssink3", version = "0.15.0-alpha" }
 +
 +[patch."https://gitlab.freedesktop.org/gstreamer/gstreamer-rs"]
 +gstreamer = {path = "../gstreamer-rs/gstreamer" }
@@ -26,6 +26,7 @@ Index: Cargo.toml
 +gstreamer-gl-wayland = {path = "../gstreamer-rs/gstreamer-gl/wayland" }
 +gstreamer-gl-x11 = {path = "../gstreamer-rs/gstreamer-gl/x11" }
 +gstreamer-analytics = {path = "../gstreamer-rs/gstreamer-analytics" }
++gstreamer-validate = {path = "../gstreamer-rs/gstreamer-validate" }
 +
 +[patch."https://github.com/gtk-rs/gtk-rs-core"]
 +glib = {path = "../gtk-rs-core/glib" }
