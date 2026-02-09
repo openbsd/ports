@@ -2,8 +2,8 @@ COMMENT-main=	Python bindings for wxWidgets C++ class library
 COMMENT-media=	wxMedia support for wxPython
 COMMENT-webview=wxWebView support for wxPython
 
-V=		4.2.4
-DISTNAME=	wxPython-${V}
+V=		4.2.5
+DISTNAME=	wxpython-${V}
 PKGNAME=	py-${DISTNAME}
 
 # python.port.mk cannot cope with py -> py3 with subpackages
