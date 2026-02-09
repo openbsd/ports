@@ -2,8 +2,7 @@ COMMENT=	displays the status of multi-player Internet Game servers
 
 GH_ACCOUNT=	Unity-Technologies
 GH_PROJECT=	qstat
-GH_TAGNAME=	v2.17
-REVISION=	1
+GH_TAGNAME=	v2.18
 
 CATEGORIES=	games
 MAINTAINER=	Tom Murphy <openbsd@pertho.net>
