@@ -1,6 +1,6 @@
 COMMENT =		key/value store implementation in Python
 
-MODPY_DISTV =		0.3.0
+MODPY_DISTV =		0.3.1
 DISTNAME =		borgstore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
