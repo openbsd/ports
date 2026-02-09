@@ -12,6 +12,7 @@
 @man man/man1/timew-gaps.1
 @man man/man1/timew-get.1
 @man man/man1/timew-help.1
+@man man/man1/timew-import.1
 @man man/man1/timew-join.1
 @man man/man1/timew-lengthen.1
 @man man/man1/timew-modify.1

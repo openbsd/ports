@@ -1,6 +1,6 @@
 COMMENT =	command line tracking time tool
 
-VERSION =	1.8.0
+VERSION =	1.9.1
 DISTNAME =	timew-${VERSION}
 PKGNAME =	timewarrior-${VERSION}
 CATEGORIES =	productivity
