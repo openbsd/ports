@@ -1,8 +1,7 @@
 COMMENT =	console-based OPL2 audio player
 
-V =		1.8.1
+V =		1.9
 DISTNAME =	adplay-${V}
-REVISION =	2
 
 CATEGORIES =	audio
 

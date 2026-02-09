@@ -3,50 +3,56 @@ Stop hardcoding -lstdc++.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17017,47 +17017,6 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
+@@ -20041,53 +20041,6 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
 -# Nothing works without these libraries...
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lstdc++" >&5
--$as_echo_n "checking for main in -lstdc++... " >&6; }
--if ${ac_cv_lib_stdcpp_main+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
--  ac_check_lib_save_LIBS=$LIBS
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for main in -lstdc++" >&5
+-printf %s "checking for main in -lstdc++... " >&6; }
+-if test ${ac_cv_lib_stdcpp_main+y}
+-then :
+-  printf %s "(cached) " >&6
+-else case e in #(
+-  e) ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lstdc++  $LIBS"
 -cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -
--
+-namespace conftest {
+-  extern "C" int main ();
+-}
 -int
--main ()
+-main (void)
 -{
--return main ();
+-return conftest::main ();
 -  ;
 -  return 0;
 -}
 -_ACEOF
--if ac_fn_cxx_try_link "$LINENO"; then :
+-if ac_fn_cxx_try_link "$LINENO"
+-then :
 -  ac_cv_lib_stdcpp_main=yes
--else
--  ac_cv_lib_stdcpp_main=no
+-else case e in #(
+-  e) ac_cv_lib_stdcpp_main=no ;;
+-esac
 -fi
--rm -f core conftest.err conftest.$ac_objext \
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
--LIBS=$ac_check_lib_save_LIBS
+-LIBS=$ac_check_lib_save_LIBS ;;
+-esac
 -fi
--{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_stdcpp_main" >&5
--$as_echo "$ac_cv_lib_stdcpp_main" >&6; }
--if test "x$ac_cv_lib_stdcpp_main" = xyes; then :
--  cat >>confdefs.h <<_ACEOF
--#define HAVE_LIBSTDC__ 1
--_ACEOF
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_stdcpp_main" >&5
+-printf "%s\n" "$ac_cv_lib_stdcpp_main" >&6; }
+-if test "x$ac_cv_lib_stdcpp_main" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_LIBSTDC__ 1" >>confdefs.h
 -
 -  LIBS="-lstdc++ $LIBS"
 -
--else
--  as_fn_error $? "libstdc++ not installed" "$LINENO" 5
+-else case e in #(
+-  e) as_fn_error $? "libstdc++ not installed" "$LINENO" 5 ;;
+-esac
 -fi
  
  
