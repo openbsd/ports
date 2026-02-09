@@ -4,14 +4,14 @@ USE_NOBTCFI-amd64= Yes
 
 COMMENT=	scalable AV1 encoder
 
-VER=		3.1.2
+VER=		4.0.1
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
 SITES=		https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	SvtAv1Enc	5.0
+SHARED_LIBS=	SvtAv1Enc	6.0
 
 HOMEPAGE=	https://gitlab.com/AOMediaCodec/SVT-AV1
 
