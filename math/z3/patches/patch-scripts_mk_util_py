@@ -5,15 +5,15 @@
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2635,7 +2635,6 @@ def mk_config():
+@@ -2685,7 +2685,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
 -            CXXFLAGS     = '%s -O3' % CXXFLAGS
-             if GPROF:
-                 CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2660,7 +2659,7 @@ def mk_config():
+         if is_CXX_clangpp():
+             CXXFLAGS   = '%s -Wno-unknown-pragmas -Wno-overloaded-virtual -Wno-unused-value' % CXXFLAGS
+@@ -2708,7 +2707,7 @@ def mk_config():
              SO_EXT         = '.so'
              SLIBFLAGS      = '-shared'
          elif sysname == 'OpenBSD':
@@ -22,7 +22,7 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
          elif sysname  == 'SunOS':
              SO_EXT         = '.so'
-@@ -2676,7 +2675,7 @@ def mk_config():
+@@ -2728,7 +2727,7 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)
