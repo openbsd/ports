@@ -42,6 +42,7 @@
      SUBDIR += clipmenu
      SUBDIR += clipnotify
      SUBDIR += coma
+     SUBDIR += contour
      SUBDIR += cool-retro-term
      SUBDIR += copyq
      SUBDIR += ctwm
