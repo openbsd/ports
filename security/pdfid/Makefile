@@ -1,9 +1,8 @@
 COMMENT =	tool to test a PDF file
 
-MODPY_DISTV =	0.2.7
+MODPY_DISTV =	0.2.10
 DISTNAME =	pdfid_v${MODPY_DISTV:S/./_/g}
 PKGNAME =	pdfid-${MODPY_DISTV}
-REVISION =	5
 
 CATEGORIES =	security
 
