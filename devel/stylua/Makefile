@@ -4,6 +4,8 @@ V =			2.3.1
 DIST_TUPLE +=		github JohnnyMorganz StyLua v${V} .
 DISTNAME =		stylua-${V}
 
+REVISION = 0
+
 CATEGORIES =		devel textproc
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -14,6 +16,9 @@ WANTLIB +=		${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
+
+MODCARGO_FEATURES =	lua52 lua53 lua54 luajit luau
+
 SEPARATE_BUILD =	Yes
 WRKSRC =		${WRKDIR}/StyLua-${V}
 
