@@ -1,7 +1,6 @@
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
-REVISION =	0
-DISTNAME =	hiera-eyaml-4.2.0
+DISTNAME =	hiera-eyaml-4.3.0
 CATEGORIES =	databases
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
