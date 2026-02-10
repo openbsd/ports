@@ -27,8 +27,11 @@ MODPY_ADJ_FILES= ${WRKSRC}/plugins/*/*.py
 
 BUILD_DEPENDS=	devel/uthash \
 		devel/cunit \
-		devel/gtest \
-		textproc/libxslt
+		devel/gtest
+# for xml->manpages; releases include generated files, but the cmake
+# build regenerates them if xsltproc is present.
+BUILD_DEPENDS+=	textproc/libxslt \
+		textproc/docbook-xsl
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/cjson \
 		security/argon2 \
