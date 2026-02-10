@@ -1,0 +1,8 @@
+Luit is a filter that can be run between an arbitrary application and
+a UTF-8 terminal emulator. It will convert application output from the
+locale's encoding into UTF-8, and convert terminal input from UTF-8 into
+the locale's encoding.
+
+Note that luit(1) support is not present in xterm(1) on OpenBSD, so this
+is only useful in special cases - e.g. as a wrapper for telnet(1) or
+an SSH client when connecting to systems without UTF-8 support.
