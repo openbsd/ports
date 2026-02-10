@@ -1,7 +1,6 @@
 COMMENT =	KDE thumbnail generators for development files
 DISTNAME =	kdesdk-thumbnailers-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/
 

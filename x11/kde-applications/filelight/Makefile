@@ -1,7 +1,6 @@
 COMMENT =	graphical equivalent of du
 DISTNAME =	filelight-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/filelight
 

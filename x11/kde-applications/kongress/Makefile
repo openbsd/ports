@@ -1,7 +1,6 @@
 COMMENT =	companion application for conference attendees
 DISTNAME =	kongress-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/utilities/kongress
 

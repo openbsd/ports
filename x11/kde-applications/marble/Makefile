@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
-REVISION =	1
 
 HOMEPAGE =	https://marble.kde.org/
 

@@ -2,7 +2,6 @@ COMMENT =	KDE wrapper around the LibRaw library
 
 DISTNAME =	libkdcraw-${VERSION}
 PKGNAME =	kf6-libkdcraw-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel graphics
 

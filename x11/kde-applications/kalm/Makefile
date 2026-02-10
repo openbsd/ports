@@ -1,7 +1,6 @@
 COMMENT =	breathing techniques application
 DISTNAME =	kalm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
 
 HOMEPAGE =	https://invent.kde.org/utilities/kalm
 

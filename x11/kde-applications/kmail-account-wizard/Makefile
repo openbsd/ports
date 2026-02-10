@@ -1,9 +1,6 @@
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
-
-SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash

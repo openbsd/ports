@@ -4,7 +4,6 @@ USE_NOBTCFI =		Yes
 COMMENT =	cross-platform Qt-based web browser
 DISTNAME =	falkon-${VERSION}
 CATEGORIES =	www
-REVISION =	0
 
 SHARED_LIBS +=  FalkonPrivate             3.0 # 0.0
 

@@ -1,7 +1,6 @@
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kdialog-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets

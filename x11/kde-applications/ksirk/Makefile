@@ -4,8 +4,6 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 
-SHARED_LIBS +=  iris_ksirk                2.0 # 2.0
-
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KDEGames6Private KF6Attica
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DBusAddons

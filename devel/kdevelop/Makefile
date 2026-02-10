@@ -4,7 +4,6 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
 DISTNAME =	kdevelop-${MODKDE_GEAR_VERSION}
-REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -17,7 +16,6 @@ SHARED_LIBS +=  KDevPlatformProject       5.0 # 6.0
 SHARED_LIBS +=  KDevPlatformSerialization 6.0 # 6.0
 SHARED_LIBS +=  KDevPlatformShell         10.0 # 6.0
 SHARED_LIBS +=  KDevPlatformSublime       6.0 # 6.0
-SHARED_LIBS +=  KDevPlatformTests         5.0 # 6.0
 SHARED_LIBS +=  KDevPlatformUtil          5.1 # 6.0
 SHARED_LIBS +=  KDevPlatformVcs           5.0 # 6.0
 SHARED_LIBS +=  KDevClangPrivate          4.0 # 6.0

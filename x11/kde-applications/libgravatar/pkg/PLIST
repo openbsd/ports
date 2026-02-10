@@ -1,3 +1,4 @@
+include/KPim6/
 include/KPim6/Gravatar/
 include/KPim6/Gravatar/Gravatar/
 include/KPim6/Gravatar/Gravatar/GravatarCache

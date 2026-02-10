@@ -4,8 +4,6 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kolf
 
-SHARED_LIBS +=  kolfprivate               2.0 # 5.0
-
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes

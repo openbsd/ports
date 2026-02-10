@@ -1,7 +1,6 @@
 COMMENT =	KDE mathematical features
 DISTNAME =	analitza-${VERSION}
 CATEGORIES =	devel math
-REVISION =	0
 
 SHARED_LIBS +=  Analitza                  2.0 # 8.0
 SHARED_LIBS +=  AnalitzaGui               2.0 # 8.0

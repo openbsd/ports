@@ -1,7 +1,6 @@
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 

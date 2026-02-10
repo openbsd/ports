@@ -1,7 +1,6 @@
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6MailTransport        1.1 # 0.0
 

@@ -3,14 +3,11 @@ COMMENT =	KDE office suite
 HOMEPAGE =	https://www.calligra.org
 
 DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
-REVISION =	1
 
 CATEGORIES =	editors
 
 SHARED_LIBS =   RtfReader                 52.0 # 0.0
 SHARED_LIBS +=  basicflakes               51.0 # 0.0
-SHARED_LIBS +=  calligrasheetscommon      52.0 # 9.0
-SHARED_LIBS +=  calligrasheetsodf         52.0 # 9.0
 SHARED_LIBS +=  calligrastageprivate      52.0 # 0.0
 SHARED_LIBS +=  flake                     52.0 # 0.0
 SHARED_LIBS +=  karboncommon              51.0 # 0.0
@@ -25,16 +22,13 @@ SHARED_LIBS +=  koplugin                  51.0 # 0.0
 SHARED_LIBS +=  kotext                    53.0 # 0.0
 SHARED_LIBS +=  kotextlayout              52.0 # 13.0
 SHARED_LIBS +=  kovectorimage             52.0 # 13.0
-SHARED_LIBS +=  koversion                 1.0 # 14.0
 SHARED_LIBS +=  kowidgets                 52.0 # 0.0
 SHARED_LIBS +=  kowidgetutils             52.0 # 0.0
-SHARED_LIBS +=  kowv2                     52.0 # 0.0
 SHARED_LIBS +=  kundo2                    53.0 # 0.0
 SHARED_LIBS +=  pigmentcms                51.0 # 0.0
 SHARED_LIBS +=  wordsprivate              16.0 # 1.0
 SHARED_LIBS +=  koformula                 16.0 # 1.0
 SHARED_LIBS +=  kostore                   17.0 # 1.0
-SHARED_LIBS +=  gemini                    1.0 # 16.0
 # 4.0.0
 SHARED_LIBS +=  autocorrection            0.0 # 0.0
 SHARED_LIBS +=  braindumpcore             0.0 # 0.0

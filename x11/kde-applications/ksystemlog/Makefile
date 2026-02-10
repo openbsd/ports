@@ -1,7 +1,6 @@
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/system/ksystemlog/
 

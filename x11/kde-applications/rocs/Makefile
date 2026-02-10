@@ -1,7 +1,6 @@
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
 CATEGORIES =	games education
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/rocs/
 

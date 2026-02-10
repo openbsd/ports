@@ -1,7 +1,6 @@
 COMMENT =	libraries provides gravatar support
 DISTNAME =	libgravatar-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6Gravatar             0.0 # 0.0
 

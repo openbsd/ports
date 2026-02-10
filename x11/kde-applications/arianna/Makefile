@@ -1,7 +1,6 @@
 COMMENT =	eBook reader
 DISTNAME =	arianna-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/arianna/
 

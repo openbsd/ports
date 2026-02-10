@@ -2,7 +2,6 @@ COMMENT =	KDE CDDB library
 
 DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	kf6-libkcddb-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel multimedia
 

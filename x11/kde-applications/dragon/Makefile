@@ -1,7 +1,6 @@
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
 WANTLIB += KF6I18nQml KF6KIOCore KF6Service KF6WindowSystem Qt6Core

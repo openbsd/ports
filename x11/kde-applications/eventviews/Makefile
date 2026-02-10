@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6EventViews           0.1 # 0.0
 

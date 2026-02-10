@@ -2,7 +2,6 @@ COMMENT =	collection of plugins to handle mobipocket files
 
 DISTNAME =	kdegraphics-mobipocket-${VERSION}
 PKGNAME =	kf6-kdegraphics-mobipocket-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 

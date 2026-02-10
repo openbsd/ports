@@ -2,9 +2,6 @@ COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
 
-SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
-SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
-
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
