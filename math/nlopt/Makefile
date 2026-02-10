@@ -2,16 +2,16 @@ COMMENT =		library for nonlinear optimization
 
 GH_ACCOUNT =		stevengj
 GH_PROJECT =		nlopt
-GH_TAGNAME =		v2.7.1
+GH_TAGNAME =		v2.10.1
 
-SHARED_LIBS =		nlopt	1.0	# 0.11.0
+SHARED_LIBS =		nlopt	2.0
 
 CATEGORIES =		math
 
 # LGPL 2.1+
 PERMIT_PACKAGE =	Yes
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 WANTLIB =		${COMPILER_LIBCXX} m
 

@@ -1,4 +1,3 @@
-include/nlopt.f
 include/nlopt.h
 include/nlopt.hpp
 lib/cmake/
