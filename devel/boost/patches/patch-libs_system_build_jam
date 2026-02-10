@@ -1,0 +1,11 @@
+https://github.com/boostorg/system/issues/132#issuecomment-3657346748
+
+Index: libs/system/build.jam
+--- libs/system/build.jam.orig
++++ libs/system/build.jam
+@@ -21,4 +21,5 @@ explicit
+     ;
+ 
+ call-if : boost-library system
++    : install boost_system
+     ;
