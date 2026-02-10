@@ -313,6 +313,14 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tt
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_telnet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_telnet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/${MODPY_PYCACHE}telnetlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/${MODPY_PYCACHE}telnetlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/_telnetlib/telnetlib.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_netconf.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_serial.py
