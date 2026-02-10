@@ -1,17 +1,16 @@
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
-MODPY_DISTV =	3.1.68
+MODPY_DISTV =		3.2.35
 DISTNAME =		fs-uae-launcher-${MODPY_DISTV}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators x11
 HOMEPAGE =		http://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
-REVISION =		3
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =		${HOMEPAGE}files/FS-UAE-Launcher/Stable/${MODPY_DISTV}/
+SITES =	https://github.com/FrodeSolheim/fs-uae-launcher/releases/download/v${MODPY_DISTV}/
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
@@ -36,12 +35,15 @@ RUN_DEPENDS =		emulators/fs-uae \
 # a custom location and patch the top-level script to update the PYTHONPATH.
 #
 # https://github.com/FrodeSolheim/fs-uae-launcher/issues/85
-FS_PYTHONPATH=${TRUEPREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}
+FS_SHARE=${TRUEPREFIX}/share/fs-uae-launcher
+FS_PYTHONPATH=${FS_SHARE}/python${MODPY_VERSION}
 SUBST_VARS += FS_PYTHONPATH
 
 post-install:
 	${INSTALL_DATA_DIR} `dirname ${WRKINST}${FS_PYTHONPATH}`
 	mv ${WRKINST}${MODPY_SITEPKG} ${WRKINST}${FS_PYTHONPATH}
+	cp -r ${WRKSRC}/share/fs-uae-launcher/resources/ ${WRKINST}${FS_SHARE}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${FS_SHARE}/resources
 	${SUBST_CMD} ${PREFIX}/bin/fs-uae-launcher
 	rm -rf ${PREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/input/{windows,macos}
 	find ${PREFIX}/share/fs-uae-launcher/python${MODPY_VERSION} \
