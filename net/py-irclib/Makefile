@@ -1,10 +1,12 @@
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
-MODPY_DISTV=	0.6.0
+MODPY_DISTV=	0.8.1
 DISTNAME=	py_irclib-${MODPY_DISTV}
 PKGNAME=	py-irclib-${MODPY_DISTV}
 
 CATEGORIES=	net
+
+HOMEPAGE=	https://github.com/TotallyNotRobots/py-irclib
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
