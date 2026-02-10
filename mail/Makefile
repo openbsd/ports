@@ -206,6 +206,8 @@
      SUBDIR += rcube-dovecot_ident
      SUBDIR += rcube-html5-notifier
      SUBDIR += rcube-ldapAliasSync
+     SUBDIR += rcube-skin-classic
+     SUBDIR += rcube-skin-larry
      SUBDIR += relaydb
      SUBDIR += rmail
      SUBDIR += roundcubemail

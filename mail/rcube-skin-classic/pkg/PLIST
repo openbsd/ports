@@ -1,13 +1,9 @@
 @conflict roundcubemail-<1.6
+@pkgpath mail/roundcubemail,-classic
 roundcubemail/skins/classic/
 roundcubemail/skins/classic/README.md
 roundcubemail/skins/classic/addressbook.css
 roundcubemail/skins/classic/addressbook.min.css
-roundcubemail/skins/classic/bin/
-roundcubemail/skins/classic/bin/build.sh
-roundcubemail/skins/classic/bin/cssimages.sh
-roundcubemail/skins/classic/bin/cssshrink.sh
-roundcubemail/skins/classic/bin/jsshrink.sh
 roundcubemail/skins/classic/common.css
 roundcubemail/skins/classic/common.min.css
 roundcubemail/skins/classic/composer.json
@@ -89,7 +85,7 @@ roundcubemail/skins/classic/images/taskbar.png
 roundcubemail/skins/classic/images/taskicons.gif
 roundcubemail/skins/classic/images/taskicons.png
 roundcubemail/skins/classic/images/tree.gif
-roundcubemail/skins/classic/images/watermark.gif
+roundcubemail/skins/classic/images/watermark.png
 roundcubemail/skins/classic/includes/
 roundcubemail/skins/classic/includes/header.html
 roundcubemail/skins/classic/includes/links.html

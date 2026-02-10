@@ -1,13 +1,9 @@
 @conflict roundcubemail-<1.6
+@pkgpath mail/roundcubemail,-larry
 roundcubemail/skins/larry/
 roundcubemail/skins/larry/README.md
 roundcubemail/skins/larry/addressbook.css
 roundcubemail/skins/larry/addressbook.min.css
-roundcubemail/skins/larry/bin/
-roundcubemail/skins/larry/bin/build.sh
-roundcubemail/skins/larry/bin/cssimages.sh
-roundcubemail/skins/larry/bin/cssshrink.sh
-roundcubemail/skins/larry/bin/jsshrink.sh
 roundcubemail/skins/larry/composer.json
 roundcubemail/skins/larry/embed.css
 roundcubemail/skins/larry/embed.min.css

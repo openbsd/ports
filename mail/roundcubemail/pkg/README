@@ -64,7 +64,7 @@ server {
 
     rewrite "^/[a-zA-Z0-9]{16}/(.*)" /$1; # allow use of 'use_secure_urls'
     location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
-    location ~* \.php$ { 
+    location ~* \.php$ {
         try_files       $uri =404;
         fastcgi_pass    unix:run/php-fpm.sock;
         fastcgi_param   SCRIPT_FILENAME $document_root/$fastcgi_script_name;

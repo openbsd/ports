@@ -1,4 +1,3 @@
-@pkgpath mail/roundcubemail
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
