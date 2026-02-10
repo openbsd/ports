@@ -8,7 +8,6 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
 V=		3.2.6
-REVISION-python3= 0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,9 +22,7 @@ PKGNAME-python3= freeradius-python3-$V
 
 CATEGORIES=	net security
 
-SITES=		https://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
-		ftp://ftp.freeradius.org/pub/freeradius/ \
-		ftp://ftp.freeradius.org/pub/freeradius/old/
+SITES=		https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${V:S/./_/g}/
 
 HOMEPAGE=	https://freeradius.org/
 
