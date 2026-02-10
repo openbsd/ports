@@ -1,9 +1,8 @@
 COMMENT =	analyze OLE files
 
-MODPY_DISTV =	0.0.60
+MODPY_DISTV =	0.0.79
 DISTNAME =	oledump_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	oledump-${MODPY_DISTV}
-REVISION =	5
 
 CATEGORIES =	security
 
