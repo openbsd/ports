@@ -96,36 +96,38 @@ pre-configure:
 		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/lldb/rmi/LldbConnectorsTest.java
 
 # build-dependencies is a maintainer target intended to be run when upgrading
-# to a new version of ghidra. The process is; bump the VERSION, comment
-# out DISTFILES.a, make makesum and finish with make build-dependencies.
+# to a new version of ghidra or when protobuf or jna version changes. The
+# process is; bump the VERSION, comment out DISTFILES.a, make makesum and finish
+# with make build-dependencies clean
 #
 # Note that build-dependencies is run as a regular user, with access to the
-# network for downloading the build dependencies. It cleans up after due
-# to changing permissions on WRKSRC.
+# network for downloading the build dependencies. It deletes everything under
+# WRKSRC because of the permission changes.
 
 # Adapted from the instructions here:
 # https://github.com/NationalSecurityAgency/ghidra/blob/master/DevGuide.md#offline-development-environment
 
 build-dependencies: configure
-	cd ${WRKDIR} && \
-		doas chown -R ${USER} ${WRKSRC}
-	cd ${WRKSRC} && \
-		rm -rf dependencies && \
-		env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		    gradle --no-daemon --stacktrace \
-		    -g ${WRKSRC}/dependencies/gradle \
-		    -I ${WRKSRC}/gradle/support/fetchDependencies.gradle && \
-		env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
-		     gradle --no-daemon --stacktrace \
-		     -g ${WRKSRC}/dependencies/gradle \
-		     prepDev && \
-		rm -rf dependencies/downloads && \
-		find dependencies -path '*/.tmp*' -o -name '*.log' -delete && \
-		find dependencies -name net.java.dev.jna | xargs rm -rf
+	set -x; cd ${WRKSRC}; \
+	    ${_PBUILD} rm -rf dependencies; \
+	    ${_PBUILD} mkdir dependencies; \
+	    ${_PBUILD} chmod -R ug=rwX,o=rX .; \
+	    umask 007; \
+	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
+		gradle --no-daemon --stacktrace \
+		-g ${WRKSRC}/dependencies/gradle \
+		-I ${WRKSRC}/gradle/support/fetchDependencies.gradle; \
+	    env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
+		gradle --no-daemon --stacktrace \
+		-g ${WRKSRC}/dependencies/gradle \
+		prepDev; \
+	    rm -rf dependencies/downloads; \
+	    find dependencies -path '*/.tmp*' -o -name '*.log' -delete; \
+	    find dependencies -name net.java.dev.jna | xargs rm -rf
 	cd ${WRKDIR} && \
 		tar czf ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz \
 		    ghidra-Ghidra_${VERSION}_build/dependencies
-	doas rm -rf ${WRKDIR}
+	rm -rf ${WRKSRC}/*
 	@echo ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz has been created
 
 do-build:
