@@ -1,5 +1,6 @@
 COMMENT =	OpenVox server
 
+REVISION =	0
 VERSION =	8.12.1
 DISTNAME =	openvox-server-${VERSION}
 

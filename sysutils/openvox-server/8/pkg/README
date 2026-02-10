@@ -20,3 +20,20 @@ into Puppetservers Puppet lib directory:
 
 cp -r ${LOCALBASE}/share/puppetlabs/puppet/puppet/ \
 	${LOCALSTATEDIR}/puppetlabs/puppetserver/data/jruby-gems/gems/openvox-8*/lib/
+
+
+Serialization Formats
+=====================
+
+This port defaults to Ruby 3.4. At the time of release, the standard
+JSON format may fail during metadata sync (e.g., file_metadatas/plugins).
+It is highly recommended to use msgpack for improved performance and to
+avoid Ruby 3.4 JSON generator state conflicts.
+
+Ensure puppet.conf, agent and server side, contains:
+
+[main]
+preferred_serialization_format = msgpack
+
+The 'msgpack' gem is provided by this port's dependencies; no further gem
+installation is required.
