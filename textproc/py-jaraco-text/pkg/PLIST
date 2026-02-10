@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/jaraco/text/${MODPY_PYCACHE}to-dvorak.$
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/${MODPY_PYCACHE}to-qwerty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/${MODPY_PYCACHE}to-qwerty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/layouts.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/text/py.typed
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/show-newlines.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/strip-prefix.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/to-dvorak.py

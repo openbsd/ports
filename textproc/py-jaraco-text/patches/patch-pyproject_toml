@@ -1,0 +1,15 @@
+typer-slim conflicts with typer, and is essentially the same but it
+skips some runtime deps.
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -26,7 +26,7 @@ dependencies = [
+ 	"jaraco.context >= 4.1",
+ 	"jaraco.functools",
+ 	"more_itertools",
+-	"typer-slim",
++	"typer",
+ ]
+ dynamic = ["version"]
+ 
