@@ -1,6 +1,6 @@
 COMMENT =		rate limiting utilities
 
-MODPY_DISTV =		5.7.0
+MODPY_DISTV =		5.8.0
 DISTNAME =		limits-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 

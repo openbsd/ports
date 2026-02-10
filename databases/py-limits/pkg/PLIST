@@ -9,6 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/limits/__init__.py
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}_storage_scheme.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}_storage_scheme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}typing.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/limits/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/limits/_storage_scheme.py
 lib/python${MODPY_VERSION}/site-packages/limits/_version.py
 lib/python${MODPY_VERSION}/site-packages/limits/_version.pyi
 lib/python${MODPY_VERSION}/site-packages/limits/aio/
@@ -107,8 +110,6 @@ lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}redis_cl
 lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}redis_cluster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}redis_sentinel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}redis_sentinel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/limits/storage/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/limits/storage/base.py
 lib/python${MODPY_VERSION}/site-packages/limits/storage/memcached.py
 lib/python${MODPY_VERSION}/site-packages/limits/storage/memory.py
@@ -116,7 +117,6 @@ lib/python${MODPY_VERSION}/site-packages/limits/storage/mongodb.py
 lib/python${MODPY_VERSION}/site-packages/limits/storage/redis.py
 lib/python${MODPY_VERSION}/site-packages/limits/storage/redis_cluster.py
 lib/python${MODPY_VERSION}/site-packages/limits/storage/redis_sentinel.py
-lib/python${MODPY_VERSION}/site-packages/limits/storage/registry.py
 lib/python${MODPY_VERSION}/site-packages/limits/strategies.py
 lib/python${MODPY_VERSION}/site-packages/limits/typing.py
 lib/python${MODPY_VERSION}/site-packages/limits/util.py
