@@ -1,9 +1,8 @@
 COMMENT =	parse a PDF document
 
-MODPY_DISTV =	0.7.5
+MODPY_DISTV =	0.7.13
 DISTNAME =	pdf-parser_V${MODPY_DISTV:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_DISTV}
-REVISION =	4
 
 CATEGORIES =	security
 
