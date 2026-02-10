@@ -5,7 +5,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
 GH_TAGNAME =		v0.21.4
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bitcoinconsensus          3.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -55,7 +55,7 @@ FLAVOR ?=
 CONFIGURE_ARGS +=	--without-gui \
 			--with-miniupnpc=no
 
-WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_system boost_thread-mt
+WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_thread-mt
 WANTLIB += boost_unit_test_framework-mt c crypto db_cxx event_core
 WANTLIB += event_extra event_pthreads fmt m sodium sqlite3 z zmq
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS +=	--with-gui=qt5
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Test Qt5Widgets X11 X11-xcb Xau Xdmcp Xext Xfixes
-WANTLIB += Xxf86vm boost_filesystem boost_system boost_thread-mt
+WANTLIB += Xxf86vm boost_filesystem boost_thread-mt
 WANTLIB += boost_unit_test_framework-mt c crypto db_cxx dbus-1
 WANTLIB += double-conversion drm event_core event_extra event_pthreads
 WANTLIB += execinfo expat fmt freetype glapi glib-2.0 graphite2

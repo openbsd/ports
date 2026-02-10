@@ -1,10 +1,22 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -322,32 +322,6 @@ INCLUDE(CPackConfig)
+@@ -166,7 +166,7 @@ ENDIF()
  
- ##################################################
+ IF(WITH_BOOST_THREAD)
+     set(WITH_BOOST "ON")
+-    set(WITH_BOOST_COMPONENTS ${WITH_BOOST_COMPONENTS} thread system date_time chrono)
++    set(WITH_BOOST_COMPONENTS ${WITH_BOOST_COMPONENTS} thread date_time chrono)
+     set(BOOST_MINIMUM_VERSION "1.55.0")
+ ENDIF()
+ 
+@@ -322,32 +322,6 @@ INSTALL(DIRECTORY ${PROJECT_SOURCE_DIR}/include/vigra
  #
+ ##################################################
+ INCLUDE(CPackConfig)
+-
+-##################################################
+-#
 -#     add target vigra-$version-src.tar.gz
 -#
 -##################################################
@@ -28,9 +40,6 @@ Index: CMakeLists.txt
 -IF(WITH_VIGRANUMPY AND PYTHON_SPHINX)
 -    ADD_DEPENDENCIES(PACKAGE_SRC_TAR doc_python)
 -ENDIF()
--
--##################################################
--#
- #  enable other non-CMake projects to find Vigra
- #
+ 
  ##################################################
+ #

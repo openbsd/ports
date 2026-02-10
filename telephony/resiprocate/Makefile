@@ -4,7 +4,7 @@ COMMENT-return =	reSIProcate STUN/TURN client and server
 
 V =			1.12.0
 DISTNAME =		resiprocate-${V}
-REVISION =		6
+REVISION =		7
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
@@ -30,7 +30,7 @@ WANTLIB-main += brotlidec brotlienc z zstd
 
 WANTLIB-repro += ${WANTLIB-main} c db_cxx dum mariadb pq resip rutil
 
-WANTLIB-return += ${WANTLIB-main} boost_system c rutil
+WANTLIB-return += ${WANTLIB-main} c rutil
 
 SITES =		https://www.resiprocate.org/files/pub/reSIProcate/releases/
 

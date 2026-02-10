@@ -3,7 +3,7 @@ COMMENT =	Jagged Alliance 2 turn-based strategy game engine
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	games
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://ja2-stracciatella.github.io/
 # SFI-SCLA / public domain
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${COMPILER_LIBCXX}
+WANTLIB +=	boost_filesystem c m pthread SDL ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 CXXFLAGS_base-clang =	-std=c++14

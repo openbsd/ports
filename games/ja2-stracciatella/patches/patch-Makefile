@@ -40,7 +40,7 @@ Index: Makefile
  
  CFLAGS += $(CFLAGS_SDL)
  LDFLAGS += $(LDFLAGS_SDL)
-+LDFLAGS += -lboost_filesystem -lboost_system
++LDFLAGS += -lboost_filesystem
  
  ############################################################
  # MinGW settings for building on Windows and for

@@ -4,7 +4,7 @@ COMMENT =		purely functional package manager for Unix
 DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		sysutils
-REVISION =		3
+REVISION =		4
 
 LIBVER =		0.0
 .for _lib in expr main store util
@@ -19,7 +19,7 @@ MAINAINER =		Aaron Bieber <abieber@openbsd.org> \
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system boost_thread-mt
+WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_thread-mt
 WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
 WANTLIB += sodium sqlite3
 
