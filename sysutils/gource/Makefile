@@ -3,7 +3,7 @@ COMMENT =	software version control visualization tool
 DISTNAME =	gource-0.55
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -12,7 +12,10 @@ PERMIT_PACKAGE =	Yes
 
 SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.16
+
 COMPILER =		base-clang ports-gcc
 
 
