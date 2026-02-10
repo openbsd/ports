@@ -1,6 +1,6 @@
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.13
+DISTNAME=	pflogsumm-1.1.14
 CATEGORIES=	mail
 
 SITES=		http://jimsun.linxnet.com/downloads/
