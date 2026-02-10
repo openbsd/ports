@@ -4163,8 +4163,6 @@ share/mysql-test/plugin/query_response_time/query_response_time/query_response_t
 share/mysql-test/plugin/query_response_time/query_response_time/query_response_time.test
 share/mysql-test/plugin/query_response_time/query_response_time/suite.opt
 share/mysql-test/plugin/query_response_time/query_response_time/suite.pm
-share/mysql-test/plugin/rocksdb/rocksdb/r/pause_background_work.result
-share/mysql-test/plugin/rocksdb/rocksdb/t/pause_background_work.test
 share/mysql-test/plugin/sequence/
 share/mysql-test/plugin/sequence/sequence/
 share/mysql-test/plugin/sequence/sequence/group_by.result

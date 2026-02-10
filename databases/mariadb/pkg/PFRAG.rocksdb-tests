@@ -217,6 +217,7 @@ share/mysql-test/plugin/rocksdb/rocksdb/r/optimize_myrocks_replace_into_lock.res
 share/mysql-test/plugin/rocksdb/rocksdb/r/optimize_table.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/optimizer_loose_index_scans.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/partition.result
+share/mysql-test/plugin/rocksdb/rocksdb/r/pause_background_work.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/percona_nonflushing_analyze_debug.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/perf_context.result
 share/mysql-test/plugin/rocksdb/rocksdb/r/persistent_cache.result
@@ -599,6 +600,7 @@ share/mysql-test/plugin/rocksdb/rocksdb/t/optimize_table.inc
 share/mysql-test/plugin/rocksdb/rocksdb/t/optimize_table.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/optimizer_loose_index_scans.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/partition.test
+share/mysql-test/plugin/rocksdb/rocksdb/t/pause_background_work.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/percona_nonflushing_analyze_debug.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/perf_context.test
 share/mysql-test/plugin/rocksdb/rocksdb/t/persistent_cache.test
