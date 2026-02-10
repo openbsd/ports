@@ -1,5 +1,8 @@
 Fix relative path to ${LOCALBASE}/include in boost_*-config.cmake files.
 
+Install boost_system as header-only
+https://github.com/boostorg/system/issues/132#issuecomment-3657346748
+
 Index: tools/boost_install/boost-install.jam
 --- tools/boost_install/boost-install.jam.orig
 +++ tools/boost_install/boost-install.jam
@@ -12,3 +15,12 @@ Index: tools/boost_install/boost-install.jam
  
      if $(library-type) = INTERFACE
      {
+@@ -1015,7 +1015,7 @@ local rule install-cmake-config- ( install-or-stage : 
+ 
+         local library-type = UNKNOWN ;
+ 
+-        if $(name) = boost_headers || $(name) = boost_math || $(name) = boost_exception
++        if $(name) = boost_headers || $(name) = boost_math || $(name) = boost_exception || $(name) = boost_system
+         {
+             library-type = INTERFACE ;
+         }

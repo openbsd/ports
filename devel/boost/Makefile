@@ -5,7 +5,7 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.88.0
+VERSION=	1.89.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 EPOCH=		0
@@ -44,7 +44,6 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_stacktrace_addr2line-mt boost_stacktrace_addr2line \
 		boost_stacktrace_basic-mt boost_stacktrace_basic \
 		boost_stacktrace_noop-mt boost_stacktrace_noop \
-		boost_system-mt boost_system \
 		boost_thread-mt \
 		boost_timer-mt boost_timer \
 		boost_type_erasure-mt boost_type_erasure \
@@ -72,8 +71,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} bz2 c iconv icudata icui18n icuuc m z
 WANTLIB-md+=	${COMPILER_LIBCXX} boost_date_time-mt boost_date_time
-WANTLIB-md+=	boost_filesystem-mt boost_filesystem boost_system-mt
-WANTLIB-md+=	boost_system kvm m
+WANTLIB-md+=	boost_filesystem-mt boost_filesystem kvm m
 
 COMPILER=	base-clang ports-gcc
 
