@@ -1,0 +1,11 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -364,6 +364,7 @@ AS_IF([test "x$have_crypto" = "xno"],
+   ])
+ 
+ 
++build_authenticode_module=false # uses removed X509at_* API
+ 
+ AM_CONDITIONAL([GCC], [test "x$GCC" = xyes])
+ AM_CONDITIONAL([PROTOC], [test "x${PROTOC}" != "x"])

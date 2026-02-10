@@ -26,6 +26,7 @@ include/yara/re.h
 include/yara/rules.h
 include/yara/scan.h
 include/yara/scanner.h
+include/yara/simple_str.h
 include/yara/sizedstr.h
 include/yara/stack.h
 include/yara/stopwatch.h
@@ -33,6 +34,7 @@ include/yara/stream.h
 include/yara/strutils.h
 include/yara/threading.h
 include/yara/types.h
+include/yara/unaligned.h
 include/yara/utils.h
 @static-lib lib/libyara.a
 lib/libyara.la

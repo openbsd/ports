@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -137,7 +137,7 @@ class BuildExtCommand(build_ext):
+@@ -140,7 +140,7 @@ class BuildExtCommand(build_ext):
    def initialize_options(self):
  
      build_ext.initialize_options(self)
@@ -9,8 +9,8 @@ Index: setup.py
 +    self.dynamic_linking = True
      self.enable_magic = None
      self.enable_cuckoo = None
-     self.enable_dotnet = None
-@@ -244,6 +244,10 @@ class BuildExtCommand(build_ext):
+     self.enable_dex = None
+@@ -266,6 +266,10 @@ class BuildExtCommand(build_ext):
  
      if has_header('stdbool.h'):
        module.define_macros.append(('HAVE_STDBOOL_H', '1'))

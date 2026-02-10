@@ -1,12 +1,16 @@
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -15,7 +15,7 @@ AM_CFLAGS+=-g
+@@ -43,12 +43,6 @@ if DEBUG
+ AM_CFLAGS+=-g -fno-omit-frame-pointer
  endif
  
- if OPTIMIZATION
+-if OPTIMIZATION
 -AM_CFLAGS+=-O3
-+#AM_CFLAGS+=-O3
- else
- AM_CFLAGS+=-O0
+-else
+-AM_CFLAGS+=-O0
+-endif
+-
  endif
+ 
+ if ADDRESS_SANITIZER

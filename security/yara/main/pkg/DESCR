@@ -2,3 +2,7 @@ YARA is a tool aimed at (but not limited to) helping malware researchers
 to identify and classify malware samples. With YARA you can create
 descriptions of malware families (or whatever you want to describe)
 based on textual or binary patterns.
+
+Note that YARA is in maintenance mode, and will only get critical fixes.
+The replacement is YARA-X:
+https://virustotal.github.io/yara-x/blog/yara-x-is-stable/

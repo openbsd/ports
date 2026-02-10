@@ -1,5 +1,3 @@
-VERSION ?=		4.2.2
-
 CATEGORIES =		security
 
 HOMEPAGE =		https://virustotal.github.io/yara/

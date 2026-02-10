@@ -2,10 +2,9 @@ COMMENT =	Python extension that gives access to YARA
 
 GH_PROJECT =	yara-python
 
-MODPY_DISTV =	4.2.0
+MODPY_DISTV =	4.5.2
 PKGNAME =	py-yara-${MODPY_DISTV}
 GH_TAGNAME =	v${MODPY_DISTV}
-REVISION =	8
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
@@ -17,8 +16,7 @@ MODPY_PYBUILD =	setuptools
 
 MAKE_FLAG +=	CPPFLAGS="-I${LOCALBASE}/include/yara/"
 
-BUILD_DEPENDS = security/yara/main>=${VERSION}
-RUN_DEPENDS =	security/yara/main>=${VERSION}
+LIB_DEPENDS =	security/yara/main
 TEST_DEPENDS =	security/yara/python=${MODPY_DISTV}
 
 pre-configure:
