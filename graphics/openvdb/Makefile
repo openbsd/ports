@@ -7,6 +7,7 @@ COMMENT=	tools for storage and manipulation of volumetric data
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	openvdb
 GH_TAGNAME=	v12.0.1
+REVISION=	0
 
 SHARED_LIBS +=  openvdb                   6.0 # 9.0
 
@@ -18,7 +19,7 @@ HOMEPAGE=	https://www.openvdb.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} blosc boost_iostreams-mt boost_random-mt
-WANTLIB += boost_regex-mt boost_system-mt c m tbb tbbmalloc z
+WANTLIB += boost_regex-mt c m tbb tbbmalloc z
 
 COMPILER=	base-clang ports-gcc
 

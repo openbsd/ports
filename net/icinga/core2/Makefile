@@ -3,6 +3,7 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.15.2
+REVISION-main =	0
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -22,7 +23,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_context-mt
 WANTLIB += boost_coroutine-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c curses
+WANTLIB += boost_regex-mt boost_thread-mt c curses
 WANTLIB += edit execinfo m crypto ssl
 
 MODULES =		devel/cmake

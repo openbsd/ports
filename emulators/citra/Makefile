@@ -9,7 +9,7 @@ DISTNAME =	citra-unified-source-20240303-0ff3440
 
 V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	emulators
 
@@ -24,7 +24,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Widgets SDL2 SoundTouch
 WANTLIB += boost_chrono-mt boost_container-mt boost_iostreams-mt
 WANTLIB += boost_locale-mt boost_random-mt boost_regex-mt boost_serialization-mt
-WANTLIB += boost_system-mt boost_thread-mt c crypto cryptopp enet
+WANTLIB += boost_thread-mt c crypto cryptopp enet
 WANTLIB += fmt m openal ssl usb-1.0 xkbcommon
 
 # ffmpeg is loaded via dlopen(3) when dumping recorded gameplay video

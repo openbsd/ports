@@ -30,6 +30,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+REVISION =	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -225,7 +226,7 @@ LIB_DEPENDS-main= \
 WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xext Xinerama
 WANTLIB-main += Xrandr Xrender atk-1.0 boost_date_time-mt boost_filesystem
 WANTLIB-main += boost_iostreams-mt boost_locale-mt boost_random-mt
-WANTLIB-main += boost_regex-mt boost_system boost_system-mt bz2 c cairo
+WANTLIB-main += boost_regex-mt bz2 c cairo
 WANTLIB-main += cairo-gobject clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main += crypto cups curl dconf epoxy expat exslt fontconfig
 WANTLIB-main += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0

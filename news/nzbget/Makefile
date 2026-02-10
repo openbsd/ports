@@ -13,7 +13,7 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} boost_atomic-mt boost_container-mt
-WANTLIB +=	boost_filesystem-mt boost_json-mt boost_system-mt c
+WANTLIB +=	boost_filesystem-mt boost_json-mt c
 WANTLIB +=	crypto curses form m ssl xml2 z
 
 # C++17

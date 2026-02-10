@@ -7,7 +7,7 @@ COMMENT =		general purpose parametric 3D CAD modeler
 V =			1.0.2
 DISTNAME =		freecad_source
 PKGNAME =		freecad-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		OndselSolver              1.0 # 0.0
 
@@ -28,7 +28,7 @@ WANTLIB += TKOffset TKPrim TKRWMesh TKService TKShHealing TKTopAlgo
 WANTLIB += TKV3d TKVCAF TKXCAF TKXSBase TKernel X11 boost_atomic-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += boost_serialization-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_serialization-mt boost_thread-mt
 WANTLIB += c execinfo fmt fontconfig freetype hdf5 hdf5_hl m medC
 WANTLIB += pcl_common pcl_features pcl_filters pcl_kdtree pcl_ml
 WANTLIB += pcl_octree pcl_sample_consensus pcl_search pcl_segmentation

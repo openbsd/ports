@@ -2,7 +2,7 @@ BROKEN =		needs fixing for orthanc 1.12.7
 COMMENT =		web viewer plugin for Orthanc
 
 VERSION =		2.8
-REVISION =		3
+REVISION =		4
 
 PLUGIN =		WebViewer
 
@@ -23,7 +23,7 @@ SITES.f =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt jsoncpp
+WANTLIB += boost_regex-mt boost_thread-mt jsoncpp
 WANTLIB += m sqlite3 uuid
 
 MODULES =		lang/python

@@ -1,11 +1,11 @@
 COMMENT =		programming-focused real-time strategy game
 
 DISTNAME =		colobot-$V
-REVISION =		0
+REVISION =		1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW SDL2 SDL2_image SDL2_ttf boost_filesystem-mt
-WANTLIB += boost_regex-mt boost_system-mt c intl m openal physfs png
+WANTLIB += boost_regex-mt c intl m openal physfs png
 WANTLIB += pthread sndfile z boost_atomic-mt
 
 GH_PROJECT =		colobot

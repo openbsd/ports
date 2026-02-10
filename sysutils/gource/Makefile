@@ -3,7 +3,7 @@ COMMENT =	software version control visualization tool
 DISTNAME =	gource-0.55
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -19,7 +19,7 @@ AUTOMAKE_VERSION=	1.16
 COMPILER =		base-clang ports-gcc
 
 
-WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem boost_system
+WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem
 WANTLIB += c freetype m pcre2-8 png pthread ${COMPILER_LIBCXX}
 WANTLIB += X11 Xext Xi Xmu
 

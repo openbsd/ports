@@ -7,7 +7,7 @@ GH_TAGNAME=		v1.0
 DISTFILES=		${DISTNAME}.tar.gz
 DISTFILES.gfx=		gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://www.oskusoft.com/programs/gfract/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 boost_filesystem
-WANTLIB += boost_regex boost_system c cairo fontconfig freetype
+WANTLIB += boost_regex c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 png z

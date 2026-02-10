@@ -1,6 +1,7 @@
 COMMENT =		COLLADA Document Object Model
 
 DISTNAME =		collada-dom-2.4.0
+REVISION =		0
 
 SHARED_LIBS +=  collada-dom2.4-dp         0.0 # 0.0
 
@@ -14,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_filesystem-mt
-WANTLIB += boost_system-mt m minizip pcre pcrecpp xml2 z
+WANTLIB += m minizip pcre pcrecpp xml2 z
 
 SITES =			${SITE_SOURCEFORGE:=collada-dom/}
 EXTRACT_SUFX =		.tgz

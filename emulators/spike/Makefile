@@ -10,6 +10,7 @@ GH_TAGNAME =	v1.1.0
 GH_ACCOUNT =	riscv-software-src
 GH_PROJECT =	riscv-isa-sim
 PKGNAME =	spike-${GH_TAGNAME:S/v//}
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -18,7 +19,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m boost_regex-mt boost_system-mt
+WANTLIB += ${COMPILER_LIBCXX} c m boost_regex-mt
 
 # C++11
 COMPILER =	base-clang ports-gcc

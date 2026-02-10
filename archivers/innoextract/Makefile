@@ -10,7 +10,6 @@ MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 # pthread req'd by lzma and boost at runtime
-# boost_system-mt req'd by boost_filesystem-mt at runtime
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB+=	c iconv lzma m ${COMPILER_LIBCXX}
 

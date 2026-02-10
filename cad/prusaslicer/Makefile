@@ -4,7 +4,7 @@ DPB_PROPERTIES = parallel
 
 V =		2.9.3
 PKGNAME =	prusaslicer-${V}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer
@@ -26,7 +26,7 @@ WANTLIB += TKV3d TKVCAF TKXCAF TKXSBase TKernel X11 atk-1.0 bgcode_binarize
 WANTLIB += bgcode_convert bgcode_core boost_atomic-mt boost_charconv-mt
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_nowide-mt
-WANTLIB += boost_random-mt boost_regex-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_random-mt boost_regex-mt boost_thread-mt
 WANTLIB += c cairo cairo-gobject crypto curl dbus-1 execinfo expat
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gmpxx gobject-2.0 gtk-3 harfbuzz hidapi-libusb

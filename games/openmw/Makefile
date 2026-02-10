@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.50.0
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
@@ -28,7 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += OpenThreads Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
 WANTLIB += Qt6Svg Qt6Widgets SDL2 avcodec avformat avutil boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += boost_system-mt c collada-dom2.4-dp icudata icui18n icuuc luajit-5.1
+WANTLIB += c collada-dom2.4-dp icudata icui18n icuuc luajit-5.1
 WANTLIB += lz4 m openal osg osgAnimation osgDB osgFX osgGA osgParticle
 WANTLIB += osgShadow osgSim osgText osgUtil osgViewer sqlite3
 WANTLIB += swresample swscale unshield yaml-cpp z

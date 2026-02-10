@@ -3,6 +3,7 @@ COMMENT =	turn-based space empire and galactic conquest computer game
 PKGNAME =	freeorion-${V}
 DIST_TUPLE +=	github freeorion freeorion 783080a1f40c3b2cba3690299fcf5b5ce6ce55f2 .
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.freeorion.org/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -13,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 boost_atomic-mt
 WANTLIB += boost_chrono-mt boost_filesystem-mt
-WANTLIB += boost_container-mt boost_graph-mt boost_random-mt boost_system-mt
+WANTLIB += boost_container-mt boost_graph-mt boost_random-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_log_setup-mt
 WANTLIB += boost_python${MODPY_VERSION:C/\.//g}-mt boost_regex-mt
 WANTLIB += boost_serialization-mt boost_thread-mt c freetype m ogg openal

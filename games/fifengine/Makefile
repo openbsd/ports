@@ -10,6 +10,7 @@ GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_COMMIT =	be64c707dea6b3250bd4355bf5c825d25920087d
 DISTNAME =	fifengine-0.4.2pl20220725
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += GL GLEW SDL2 SDL2_image SDL2_ttf boost_atomic-mt boost_filesystem-mt
-WANTLIB += boost_system-mt fifechan fifechan_opengl fifechan_sdl
+WANTLIB += fifechan fifechan_opengl fifechan_sdl
 WANTLIB += m openal png tinyxml vorbis vorbisfile z
 
 COMPILER =		base-clang ports-gcc

@@ -4,7 +4,7 @@ COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.12.7
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
@@ -14,7 +14,7 @@ SHARED_LIBS =		MultitenantDicom	0.0
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_regex-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_locale-mt boost_regex-mt boost_thread-mt
 WANTLIB += c civetweb cmr crypto curl dcmdata dcmdsig dcmect dcmfg
 WANTLIB += dcmimage dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap
 WANTLIB += dcmpstat dcmqrdb dcmrt dcmseg dcmsr dcmtkcharls dcmtls

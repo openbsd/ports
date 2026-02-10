@@ -1,6 +1,7 @@
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 
@@ -27,7 +28,7 @@ WANTLIB += absl_str_format_internal absl_strerror absl_borrowed_fixup_buffer
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_date_time-mt boost_thread-mt
 WANTLIB += c crypto icui18n icuuc m phonenumber poppler protobuf
 WANTLIB += xml2 z
 

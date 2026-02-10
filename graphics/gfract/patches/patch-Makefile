@@ -13,7 +13,7 @@ Index: Makefile
  #CXXFLAGS := $(DEFS) -g
  
 -LDFLAGS := -lz -lpthread -lboost_regex -lboost_filesystem
-+LDFLAGS := -lz -lpthread -lboost_regex -lboost_filesystem -lboost_system
++LDFLAGS := -lz -lpthread -lboost_regex -lboost_filesystem
  LDFLAGS := $(shell pkg-config --libs gtk+-2.0 libpng) $(LDFLAGS)
  
  HEADERS := $(wildcard *.h)

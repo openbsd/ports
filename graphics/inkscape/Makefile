@@ -2,7 +2,7 @@ COMMENT =	SVG vector drawing application
 
 VERSION =	1.4.3
 DISTNAME =	inkscape-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} 2geom ICE Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_atomic-mt
-WANTLIB += boost_filesystem-mt boost_system-mt c cairo cairo-gobject
+WANTLIB += boost_filesystem-mt c cairo cairo-gobject
 WANTLIB += cairomm-1.0 enchant-2 epoxy fontconfig freetype gc
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 gsl gslcblas gspell-1

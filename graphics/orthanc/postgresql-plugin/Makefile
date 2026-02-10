@@ -3,7 +3,7 @@ COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		4.0
 PLUGIN =		PostgreSQL
-REVISION =		4
+REVISION =		5
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -13,7 +13,7 @@ SITES.f =		https://orthanc.uclouvain.be/downloads/sources/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt crypto
+WANTLIB += boost_regex-mt boost_thread-mt crypto
 WANTLIB += jsoncpp m pq ssl uuid z
 
 # __int128, zero-sized arrays (hard failure with base gcc)

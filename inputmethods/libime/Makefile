@@ -1,7 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.1.9
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	IMECore		0.2 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_regex-mt c m zstd
-WANTLIB += boost_atomic-mt boost_random-mt boost_system-mt
+WANTLIB += boost_atomic-mt boost_random-mt
 
 SITES =			https://download.fcitx-im.org/fcitx5/libime/
 

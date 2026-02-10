@@ -3,6 +3,7 @@ COMMENT =	client for the I2P anonymous network
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
 GH_TAGNAME =	2.58.0
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -13,7 +14,7 @@ MAINTAINER =	SystemFailure <openbsd@systemfailure.net>
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_atomic-mt c crypto m miniupnpc ssl z
 
 COMPILER =	base-clang ports-gcc

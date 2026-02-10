@@ -3,7 +3,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 GH_TAGNAME =	v3.10.11.0
 GH_ACCOUNT =	gnuradio
 GH_PROJECT =	gnuradio
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  gnuradio-analog           1.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             1.0 # 3.7
@@ -40,7 +40,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_unit_test_framework-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
+WANTLIB += boost_regex-mt boost_thread-mt c fftw3f
 WANTLIB += fftw3f_threads fmt gmp gmpxx gsl gslcblas gsm iconv jack
 WANTLIB += m portaudio qwt sndfile spdlog volk zmq
 

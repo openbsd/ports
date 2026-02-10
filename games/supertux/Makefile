@@ -3,7 +3,7 @@ COMMENT =		jump 'n' run game
 V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games
 
@@ -15,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt
 WANTLIB += c curl freetype m ogg openal physfs png vorbis vorbisfile
 WANTLIB += z boost_atomic-mt boost_chrono-mt boost_thread-mt
 

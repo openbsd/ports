@@ -6,7 +6,7 @@ COMMENT =		ncurses mpd client inspired by ncmpc
 GH_ACCOUNT =		ncmpcpp
 GH_PROJECT =		ncmpcpp
 GH_TAGNAME =		0.10.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
@@ -16,9 +16,9 @@ HOMEPAGE =		https://rybczak.net/ncmpcpp/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_charconv-mt
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c crypto curl curses
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_thread-mt c crypto curl curses
 WANTLIB += ereadline iconv icudata icui18n icuuc m mpdclient nghttp2
 WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_libressl ssl tag z
 

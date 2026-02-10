@@ -2,7 +2,7 @@ COMMENT =		widgets library for graphics engines
 
 V =			0.8.7
 DISTNAME =		cegui-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	CEGUIBase-0			2.0 # 3.1
 SHARED_LIBS +=	CEGUICommonDialogs-0		2.0 # 3.1
@@ -21,7 +21,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
+WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image-mt
 WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre 
 WANTLIB += pthread ${COMPILER_LIBCXX}
 

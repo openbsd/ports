@@ -2,6 +2,7 @@ COMMENT =		programmers solid 3D CAD modeller
 
 V =			2025.10.14
 DISTNAME =		openscad-${V}
+REVISION =		0
 
 CATEGORIES =		cad
 
@@ -27,7 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} 3mf Clipper2 EGL GL GLEW GLU Qt6Concurrent
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets
 WANTLIB += boost_atomic-mt boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt c cairo double-conversion
+WANTLIB += boost_regex-mt c cairo double-conversion
 WANTLIB += fontconfig freetype glib-2.0 gmp gmpxx harfbuzz intl
 WANTLIB += m manifold mpfr opencsg qscintilla2_qt6 tbb xml2 zip
 

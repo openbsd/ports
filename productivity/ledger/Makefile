@@ -3,7 +3,7 @@ COMMENT =		command line double-entry accounting ledger
 GH_TAGNAME =		v3.3.2
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  ledger                    1.0 # 3.0
 
@@ -17,7 +17,7 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_nowide-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_iostreams-mt boost_nowide-mt boost_regex-mt
 WANTLIB += boost_unit_test_framework-mt c gmp m mpfr
 
 MODULES =		devel/cmake \

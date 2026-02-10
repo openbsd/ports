@@ -4,6 +4,7 @@ V =			v2.2.0
 DISTNAME =		SFCGAL-${V}
 PKGNAME =		${DISTNAME:L:S/v//}
 SHARED_LIBS +=	SFCGAL	0.1 # 0.0
+REVISION =		0
 
 CATEGORIES =		geo math
 
@@ -28,7 +29,7 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_serialization-mt
-WANTLIB += boost_system-mt boost_thread-mt boost_timer-mt boost_unit_test_framework-mt
+WANTLIB += boost_thread-mt boost_timer-mt boost_unit_test_framework-mt
 WANTLIB += gmp gmpxx m mpfr
 
 CONFIGURE_ARGS +=	-DSFCGAL_BUILD_TESTS:BOOL=ON

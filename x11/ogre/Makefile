@@ -12,8 +12,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		6
-REVISION-samples =	6
+REVISION-main =		7
+REVISION-samples =	7
 
 MULTI_PACKAGES =	-main -samples
 
@@ -36,7 +36,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC4_ATOMICWANTLIB)
 WANTLIB += boost_atomic-mt boost_date_time-mt
-WANTLIB += boost_chrono-mt boost_system-mt boost_thread-mt c
+WANTLIB += boost_chrono-mt boost_thread-mt c
 WANTLIB += freeimage freetype m pthread z zzip
 WANTLIB += ${COMPILER_LIBCXX}
 

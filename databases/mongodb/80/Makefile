@@ -3,6 +3,7 @@ PORTROACH=	limitw:1,even
 BROKEN=		SIGSEGV or SIGILL at runtime unless --noscripting is used
 
 V=		8.0.12
+REVISION =	0
 
 # mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
 # Also tested it with 82aac6af18abcd5bf188afbc821779ccb0ca0902 (mongodb60
@@ -12,7 +13,7 @@ DIST_TUPLE=	github mongodb-forks spidermonkey ${MOZJS_TAG} \
 		    src/third_party/mozjs/mozilla-release
 
 WANTLIB += ${COMPILER_LIBCXX} boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_log-mt boost_program_options-mt boost_system-mt
+WANTLIB += boost_log-mt boost_program_options-mt
 WANTLIB += boost_thread-mt c crypto curl execinfo icudata icui18n
 WANTLIB += icuuc kvm m snappy ssl stemmer yaml-cpp z zstd
 

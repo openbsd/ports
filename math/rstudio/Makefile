@@ -29,7 +29,7 @@ WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
 WANTLIB += Qt5Xml Qt5XmlPatterns boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c crypto m pam ssl
+WANTLIB += boost_thread-mt c crypto m pam ssl
 WANTLIB += util uuid z lib/R/lib/R lib/inotify/inotify
 
 # XXX: Ports does not permit GH_* and SITES together.

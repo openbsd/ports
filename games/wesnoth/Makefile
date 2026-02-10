@@ -4,6 +4,7 @@ BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.18.6
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -22,7 +23,7 @@ WANTLIB += boost_atomic-mt boost_chrono-mt boost_thread-mt
 WANTLIB += boost_coroutine-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
-WANTLIB += boost_system-mt c cairo crypto curl dbus-1
+WANTLIB += c cairo crypto curl dbus-1
 WANTLIB += fontconfig glib-2.0 gobject-2.0
 WANTLIB += harfbuzz icudata icui18n icuuc intl m pango-1.0
 WANTLIB += pangocairo-1.0 ssl vorbisfile ${COMPILER_LIBCXX}

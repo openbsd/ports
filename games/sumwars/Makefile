@@ -5,7 +5,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		6
+REVISION =		7
 
 SUBST_VARS +=		V
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_filesystem-mt boost_thread-mt
 WANTLIB += c enet iconv intl m ogg openal physfs pthread tinyxml vorbis
 WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
