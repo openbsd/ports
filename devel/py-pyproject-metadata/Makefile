@@ -1,6 +1,6 @@
 COMMENT=	PEP 621 metadata parsing
 
-MODPY_DISTV=	0.10.0
+MODPY_DISTV=	0.11.0
 DISTNAME=	pyproject_metadata-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
 
