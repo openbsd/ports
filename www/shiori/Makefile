@@ -4,14 +4,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		simple bookmarks manager
 
 MODGO_MODNAME =		github.com/go-shiori/shiori
-MODGO_VERSION =		v1.7.4
+MODGO_VERSION =		v1.8.0
 
 DISTNAME =		shiori-${MODGO_VERSION}
-REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/go-shiori/shiori
+
+MAINTAINER =		Igor Zornik <mocheryl@mocheryl.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

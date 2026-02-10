@@ -1,7 +1,7 @@
 @newgroup _shiori:892
 @newuser _shiori:892:892::Shiori Account:${LOCALSTATEDIR}/shiori:/sbin/nologin
 @rcscript ${RCDIR}/shiori
-@mode 770
+@mode 750
 @owner _shiori
 @group _shiori
 @sample ${LOCALSTATEDIR}/shiori/
