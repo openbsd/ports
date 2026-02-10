@@ -1,8 +1,8 @@
 Index: tests/qtest/meson.build
 --- tests/qtest/meson.build.orig
 +++ tests/qtest/meson.build
-@@ -385,14 +385,6 @@ qtests = {
-   'ast2700-smc-test': files('aspeed-smc-utils.c', 'ast2700-smc-test.c'),
+@@ -394,14 +394,6 @@ qtests = {
+   'netdev-socket': files('netdev-socket.c', '../unit/socket-helpers.c'),
  }
  
 -if vnc.found()

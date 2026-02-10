@@ -3,7 +3,7 @@
 Index: block/nfs.c
 --- block/nfs.c.orig
 +++ block/nfs.c
-@@ -271,8 +271,13 @@ static int coroutine_fn nfs_co_preadv(BlockDriverState
+@@ -270,8 +270,13 @@ static int coroutine_fn nfs_co_preadv(BlockDriverState
      task.iov = iov;
  
      WITH_QEMU_LOCK_GUARD(&client->mutex) {
@@ -17,7 +17,7 @@ Index: block/nfs.c
              return -ENOMEM;
          }
  
-@@ -317,9 +322,15 @@ static int coroutine_fn nfs_co_pwritev(BlockDriverStat
+@@ -314,9 +319,15 @@ static int coroutine_fn nfs_co_pwritev(BlockDriverStat
      }
  
      WITH_QEMU_LOCK_GUARD(&client->mutex) {

@@ -5,7 +5,7 @@ Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
 Index: qga/qapi-schema.json
 --- qga/qapi-schema.json.orig
 +++ qga/qapi-schema.json
-@@ -775,7 +775,7 @@
+@@ -762,7 +762,7 @@
    'data': {'logical-id': 'int',
             'online': 'bool',
             '*can-offline': 'bool'},
@@ -14,7 +14,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-get-vcpus:
-@@ -791,7 +791,7 @@
+@@ -778,7 +778,7 @@
  ##
  { 'command': 'guest-get-vcpus',
    'returns': ['GuestLogicalProcessor'],
@@ -23,16 +23,16 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-set-vcpus:
-@@ -887,7 +887,7 @@
+@@ -874,7 +874,7 @@
    'data': [ 'ide', 'fdc', 'scsi', 'virtio', 'xen', 'usb', 'uml', 'sata',
              'sd', 'unknown', 'ieee1394', 'ssa', 'fibre', 'raid', 'iscsi',
              'sas', 'mmc', 'virtual', 'file-backed-virtual', 'nvme' ],
 -  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
 +  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
  
- 
  ##
-@@ -906,7 +906,7 @@
+ # @GuestPCIAddress:
+@@ -892,7 +892,7 @@
  { 'struct': 'GuestPCIAddress',
    'data': {'domain': 'int', 'bus': 'int',
             'slot': 'int', 'function': 'int'},
@@ -41,7 +41,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestCCWAddress:
-@@ -926,7 +926,7 @@
+@@ -912,7 +912,7 @@
             'ssid': 'int',
             'subchno': 'int',
             'devno': 'int'},
@@ -50,7 +50,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestDiskAddress:
-@@ -956,7 +956,7 @@
+@@ -942,7 +942,7 @@
             'bus': 'int', 'target': 'int', 'unit': 'int',
             '*serial': 'str', '*dev': 'str',
             '*ccw-address': 'GuestCCWAddress'},
@@ -59,7 +59,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestNVMeSmart:
-@@ -1076,7 +1076,7 @@
+@@ -1063,7 +1063,7 @@
    'data': {'name': 'str', 'mountpoint': 'str', 'type': 'str',
             '*used-bytes': 'uint64', '*total-bytes': 'uint64',
             '*total-bytes-privileged': 'uint64', 'disk': ['GuestDiskAddress']},
@@ -68,7 +68,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-get-fsinfo:
-@@ -1090,7 +1090,7 @@
+@@ -1077,7 +1077,7 @@
  ##
  { 'command': 'guest-get-fsinfo',
    'returns': ['GuestFilesystemInfo'],

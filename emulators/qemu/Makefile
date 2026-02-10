@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
 
 USE_NOBTCFI=	Yes
@@ -6,7 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	10.0.2
+VERSION=	10.2.0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/

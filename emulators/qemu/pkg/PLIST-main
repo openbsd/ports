@@ -50,6 +50,7 @@ share/doc/qemu/.buildinfo
 share/doc/qemu/_sources/
 share/doc/qemu/_static/
 share/doc/qemu/_static/_sphinx_javascript_frameworks_compat.js
+share/doc/qemu/_static/base-stemmer.js
 share/doc/qemu/_static/basic.css
 share/doc/qemu/_static/css/
 share/doc/qemu/_static/css/badge_only.css
@@ -75,6 +76,7 @@ share/doc/qemu/_static/css/theme.css
 share/doc/qemu/_static/custom.js
 share/doc/qemu/_static/doctools.js
 share/doc/qemu/_static/documentation_options.js
+share/doc/qemu/_static/english-stemmer.js
 share/doc/qemu/_static/file.png
 share/doc/qemu/_static/jquery.js
 share/doc/qemu/_static/js/
@@ -106,6 +108,7 @@ share/doc/qemu/devel/build-environment.html
 share/doc/qemu/devel/build-system.html
 share/doc/qemu/devel/clocks.html
 share/doc/qemu/devel/code-of-conduct.html
+share/doc/qemu/devel/code-provenance.html
 share/doc/qemu/devel/codebase.html
 share/doc/qemu/devel/conflict-resolution.html
 share/doc/qemu/devel/control-flow-integrity.html
@@ -167,7 +170,6 @@ share/doc/qemu/devel/tcg-plugins.html
 share/doc/qemu/devel/tcg.html
 share/doc/qemu/devel/testing/
 share/doc/qemu/devel/testing/acpi-bits.html
-share/doc/qemu/devel/testing/avocado.html
 share/doc/qemu/devel/testing/blkdebug.html
 share/doc/qemu/devel/testing/blkverify.html
 share/doc/qemu/devel/testing/ci.html
@@ -199,9 +201,12 @@ share/doc/qemu/interop/nbd.html
 share/doc/qemu/interop/parallels.html
 share/doc/qemu/interop/pr-helper.html
 share/doc/qemu/interop/prl-xml.html
+share/doc/qemu/interop/qcow2.html
+share/doc/qemu/interop/qed_spec.html
 share/doc/qemu/interop/qemu-qmp-ref.html
 share/doc/qemu/interop/qemu-storage-daemon-qmp-ref.html
 share/doc/qemu/interop/qmp-spec.html
+share/doc/qemu/interop/vfio-user.html
 share/doc/qemu/interop/vhost-user-gpu.html
 share/doc/qemu/interop/vhost-user.html
 share/doc/qemu/interop/vhost-vdpa.html
@@ -267,6 +272,7 @@ share/doc/qemu/system/arm/imx25-pdk.html
 share/doc/qemu/system/arm/imx8mp-evk.html
 share/doc/qemu/system/arm/integratorcp.html
 share/doc/qemu/system/arm/kzm.html
+share/doc/qemu/system/arm/max78000.html
 share/doc/qemu/system/arm/mcimx6ul-evk.html
 share/doc/qemu/system/arm/mcimx7d-sabre.html
 share/doc/qemu/system/arm/mps2.html
@@ -301,6 +307,7 @@ share/doc/qemu/system/devices/can.html
 share/doc/qemu/system/devices/canokey.html
 share/doc/qemu/system/devices/ccid.html
 share/doc/qemu/system/devices/cxl.html
+share/doc/qemu/system/devices/emmc.html
 share/doc/qemu/system/devices/igb.html
 share/doc/qemu/system/devices/ivshmem-flat.html
 share/doc/qemu/system/devices/ivshmem.html
@@ -309,12 +316,14 @@ share/doc/qemu/system/devices/net.html
 share/doc/qemu/system/devices/nvme.html
 share/doc/qemu/system/devices/usb-u2f.html
 share/doc/qemu/system/devices/usb.html
-share/doc/qemu/system/devices/vhost-user-input.html
-share/doc/qemu/system/devices/vhost-user-rng.html
-share/doc/qemu/system/devices/vhost-user.html
-share/doc/qemu/system/devices/virtio-gpu.html
-share/doc/qemu/system/devices/virtio-pmem.html
-share/doc/qemu/system/devices/virtio-snd.html
+share/doc/qemu/system/devices/vfio-user.html
+share/doc/qemu/system/devices/virtio/
+share/doc/qemu/system/devices/virtio/index.html
+share/doc/qemu/system/devices/virtio/vhost-user-contrib.html
+share/doc/qemu/system/devices/virtio/vhost-user.html
+share/doc/qemu/system/devices/virtio/virtio-gpu.html
+share/doc/qemu/system/devices/virtio/virtio-pmem.html
+share/doc/qemu/system/devices/virtio/virtio-snd.html
 share/doc/qemu/system/gdb.html
 share/doc/qemu/system/generic-loader.html
 share/doc/qemu/system/guest-loader.html
@@ -327,8 +336,10 @@ share/doc/qemu/system/i386/microvm.html
 share/doc/qemu/system/i386/nitro-enclave.html
 share/doc/qemu/system/i386/pc.html
 share/doc/qemu/system/i386/sgx.html
+share/doc/qemu/system/i386/tdx.html
 share/doc/qemu/system/i386/xen.html
 share/doc/qemu/system/i386/xenpvh.html
+share/doc/qemu/system/igvm.html
 share/doc/qemu/system/images.html
 share/doc/qemu/system/index.html
 share/doc/qemu/system/introduction.html
@@ -365,6 +376,7 @@ share/doc/qemu/system/riscv/microchip-icicle-kit.html
 share/doc/qemu/system/riscv/shakti-c.html
 share/doc/qemu/system/riscv/sifive_u.html
 share/doc/qemu/system/riscv/virt.html
+share/doc/qemu/system/riscv/xiangshan-kunminghu.html
 share/doc/qemu/system/s390x/
 share/doc/qemu/system/s390x/3270.html
 share/doc/qemu/system/s390x/bootdevices.html
@@ -376,6 +388,7 @@ share/doc/qemu/system/s390x/vfio-ap.html
 share/doc/qemu/system/s390x/vfio-ccw.html
 share/doc/qemu/system/secrets.html
 share/doc/qemu/system/security.html
+share/doc/qemu/system/sriov.html
 share/doc/qemu/system/target-arm.html
 share/doc/qemu/system/target-avr.html
 share/doc/qemu/system/target-i386.html
@@ -440,11 +453,17 @@ share/locale/zh_CN/LC_MESSAGES/qemu.mo
 share/qemu/
 share/qemu/QEMU,cgthree.bin
 share/qemu/QEMU,tcx.bin
-share/qemu/bamboo.dtb
+share/qemu/ast27x0_bootrom.bin
 share/qemu/bios-256k.bin
 share/qemu/bios-microvm.bin
 share/qemu/bios.bin
-share/qemu/canyonlands.dtb
+share/qemu/dtb/
+share/qemu/dtb/bamboo.dtb
+share/qemu/dtb/canyonlands.dtb
+share/qemu/dtb/pegasos1.dtb
+share/qemu/dtb/pegasos2.dtb
+share/qemu/dtb/petalogix-ml605.dtb
+share/qemu/dtb/petalogix-s3adsp1800.dtb
 share/qemu/edk2-aarch64-code.fd
 share/qemu/edk2-arm-code.fd
 share/qemu/edk2-arm-vars.fd
@@ -525,8 +544,6 @@ share/qemu/openbios-sparc64
 share/qemu/opensbi-riscv32-generic-fw_dynamic.bin
 share/qemu/opensbi-riscv64-generic-fw_dynamic.bin
 share/qemu/palcode-clipper
-share/qemu/petalogix-ml605.dtb
-share/qemu/petalogix-s3adsp1800.dtb
 share/qemu/pnv-pnor.bin
 share/qemu/pvh.bin
 share/qemu/pxe-e1000.rom
@@ -542,7 +559,7 @@ share/qemu/s390-ccw.img
 share/qemu/skiboot.lid
 share/qemu/slof.bin
 share/qemu/trace-events-all
-share/qemu/u-boot-sam460-20100605.bin
+share/qemu/u-boot-sam460.bin
 share/qemu/u-boot.e500
 share/qemu/vgabios-ati.bin
 share/qemu/vgabios-bochs-display.bin
