@@ -1,0 +1,16 @@
+Use system jna - copied into dependencies/flatRepo
+
+Index: Ghidra/Framework/Pty/build.gradle
+--- Ghidra/Framework/Pty/build.gradle.orig
++++ Ghidra/Framework/Pty/build.gradle
+@@ -25,8 +25,8 @@ apply plugin: 'eclipse'
+ eclipse.project.name = 'Framework Pty'
+ 
+ dependencies {
+-	api "net.java.dev.jna:jna:5.14.0"
+-	api "net.java.dev.jna:jna-platform:5.14.0"
++	api "net.java.dev.jna:jna:${JNA_VER}"
++	api "net.java.dev.jna:jna-platform:${JNA_VER}"
+ 	api project(":Docking")
+ 
+ 	testImplementation project(":Generic")

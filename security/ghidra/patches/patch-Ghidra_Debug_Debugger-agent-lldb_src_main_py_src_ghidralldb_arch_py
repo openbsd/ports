@@ -1,0 +1,13 @@
+Add OpenBSD
+
+Index: Ghidra/Debug/Debugger-agent-lldb/src/main/py/src/ghidralldb/arch.py
+--- Ghidra/Debug/Debugger-agent-lldb/src/main/py/src/ghidralldb/arch.py.orig
++++ Ghidra/Debug/Debugger-agent-lldb/src/main/py/src/ghidralldb/arch.py
+@@ -135,6 +135,7 @@ default_compiler_map: Dict[Optional[str], str] = {
+     'freebsd': 'gcc',
+     'linux': 'gcc',
+     'netbsd': 'gcc',
++    'openbsd': 'gcc',
+     'ps4': 'gcc',
+     'ios': 'gcc',
+     'macosx': 'gcc',

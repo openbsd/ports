@@ -1,0 +1,26 @@
+Force get_register_descs() to query gdb for register list and filter
+out registers that are "<unavailable>". Corrects issues with working
+with expected but unavailable registers such as fs_base and gs_base
+on OpenBSD/amd64.
+
+Index: Ghidra/Debug/Debugger-agent-gdb/src/main/py/src/ghidragdb/util.py
+--- Ghidra/Debug/Debugger-agent-gdb/src/main/py/src/ghidragdb/util.py.orig
++++ Ghidra/Debug/Debugger-agent-gdb/src/main/py/src/ghidragdb/util.py
+@@ -410,7 +410,7 @@ class RegisterDesc:
+ 
+ def get_register_descs(arch: gdb.Architecture, group: str = 'all') -> List[
+         Union[RegisterDesc, gdb.RegisterDescriptor]]:
+-    if hasattr(arch, "registers"):
++    if hasattr(arch, "registers") and False:
+         try:
+             return list(arch.registers(group))
+         except ValueError:  # No such group, or version too old
+@@ -424,7 +424,7 @@ def get_register_descs(arch: gdb.Architecture, group: 
+             regset = gdb.execute(
+                 f"info registers", to_string=True).strip().split('\n')
+         for line in regset:
+-            if not line.startswith(" "):
++            if not line.startswith(" ") and "<unavailable>" not in line:
+                 tokens = line.strip().split()
+                 descs.append(RegisterDesc(tokens[0]))
+         return descs

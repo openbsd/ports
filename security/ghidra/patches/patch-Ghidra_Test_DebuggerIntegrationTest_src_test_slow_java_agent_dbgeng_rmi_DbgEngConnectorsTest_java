@@ -1,0 +1,14 @@
+Use protobuf provided by ports
+
+Index: Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java
+--- Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java.orig
++++ Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java
+@@ -52,7 +52,7 @@ public class DbgEngConnectorsTest extends AbstractRmiC
+ 		// Make sure system doesn't cause path failures to pass
+ 		unpip("ghidradbg", "ghidratrace");
+ 		// Ensure a compatible version of protobuf
+-		pip("protobuf==6.31.0");
++		pip("protobuf==${PROTOBUF_VER}");
+ 	}
+ 
+ 	@Test

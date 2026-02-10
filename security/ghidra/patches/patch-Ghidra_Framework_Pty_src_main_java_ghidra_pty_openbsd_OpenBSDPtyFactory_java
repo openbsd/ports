@@ -1,0 +1,37 @@
+Add pty support for OpenBSD
+
+Index: Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtyFactory.java
+--- Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtyFactory.java.orig
++++ Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtyFactory.java
+@@ -13,7 +13,7 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-package ghidra.pty.linux;
++package ghidra.pty.openbsd;
+ 
+ import java.io.IOException;
+ 
+@@ -21,12 +21,12 @@ import ghidra.pty.Pty;
+ import ghidra.pty.PtyFactory;
+ import ghidra.pty.unix.UnixPty;
+ 
+-public enum LinuxPtyFactory implements PtyFactory {
++public enum OpenBSDPtyFactory implements PtyFactory {
+ 	INSTANCE;
+ 
+ 	@Override
+ 	public Pty openpty(short cols, short rows) throws IOException {
+-		UnixPty pty = UnixPty.openpty(LinuxIoctls.INSTANCE);
++		UnixPty pty = UnixPty.openpty(OpenBSDIoctls.INSTANCE);
+ 		if (cols != 0 && rows != 0) {
+ 			pty.getChild().setWindowSize(cols, rows);
+ 		}
+@@ -35,6 +35,6 @@ public enum LinuxPtyFactory implements PtyFactory {
+ 
+ 	@Override
+ 	public String getDescription() {
+-		return "local (Linux)";
++		return "local (OpenBSD)";
+ 	}
+ }

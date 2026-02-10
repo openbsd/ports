@@ -1,0 +1,14 @@
+Use protobuf provided by ports
+
+Index: Ghidra/Debug/Debugger-rmi-trace/build.gradle
+--- Ghidra/Debug/Debugger-rmi-trace/build.gradle.orig
++++ Ghidra/Debug/Debugger-rmi-trace/build.gradle
+@@ -73,7 +73,7 @@ tasks.assemblePyPackage {
+ 	}
+ }
+ 
+-distributePyDep("protobuf-6.31.0-py3-none-any.whl")
++distributePyDep("protobuf-${PROTOBUF_VER}-py3-none-any.whl")
+ distributePyDep("psutil-5.9.8.tar.gz")
+ distributePyDep("setuptools-80.9.0-py3-none-any.whl")
+ distributePyDep("wheel-0.45.1-py3-none-any.whl")

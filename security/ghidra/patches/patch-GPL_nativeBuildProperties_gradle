@@ -1,31 +1,16 @@
-Adapted from https://github.com/NationalSecurityAgency/ghidra/pull/490
-
-Force use of Clang and honor CXX.
+Add OpenBSD
 
 Index: GPL/nativeBuildProperties.gradle
 --- GPL/nativeBuildProperties.gradle.orig
 +++ GPL/nativeBuildProperties.gradle
-@@ -39,7 +39,23 @@ model {
- 			architecture 'x86_64'
- 			operatingSystem 'osx'
+@@ -49,6 +49,10 @@ model {
+ 			gcc(Gcc).target(current)
+ 			clang(Clang).target(current)
  		}
-+		openbsd64 {
-+			architecture 'x86_64'
-+			operatingSystem 'openbsd'
++		if (isOpenBSD(current)) {
++			gcc(Gcc).target(current)
++			clang(Clang).target(current)
 +		}
- 	}	
-+
-+	toolChains {
-+		// Force use of Clang
-+		clang(Clang) {
-+			eachPlatform { tools ->
-+				tools.cppCompiler.executable = "${CXX}"
-+				tools.linker.executable = "${CXX}"
-+				println "C++ compiler is [${tools.cppCompiler.executable}]"
-+				println "Linker is [${tools.linker.executable}]"
-+			}
-+		}
-+	}
- }
- 
- /*******************************************************************************************
+ 		if (isWindows(current) && VISUAL_STUDIO_INSTALL_DIR) {
+ 			// https://github.com/gradle/gradle-native/issues/617#issuecomment-575735288
+ 			visualCpp(VisualCpp) {

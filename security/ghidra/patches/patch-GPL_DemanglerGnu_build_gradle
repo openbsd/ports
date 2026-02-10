@@ -3,22 +3,21 @@ From https://github.com/NationalSecurityAgency/ghidra/pull/490
 Index: GPL/DemanglerGnu/build.gradle
 --- GPL/DemanglerGnu/build.gradle.orig
 +++ GPL/DemanglerGnu/build.gradle
-@@ -32,6 +32,10 @@ model {
- 			architecture 'x86_64'
- 			operatingSystem 'osx'
- 		}
-+		openbsd64 {
-+			architecture 'x86_64'
-+			operatingSystem 'openbsd'
-+		}
- 	}	
- }
- 
-@@ -72,6 +76,7 @@ model {
- 			targetPlatform "win64"
- 			targetPlatform "linux64"
- 			targetPlatform "osx64"
-+			targetPlatform "openbsd64"
+@@ -83,6 +83,8 @@ model {
+ 			targetPlatform "mac_arm_64"
+ 			targetPlatform "freebsd_x86_64"
+ 			targetPlatform "freebsd_arm_64"
++			targetPlatform "openbsd_x86_64"
++			targetPlatform "openbsd_arm_64"
+ 			sources {
+ 				c {
+ 					source {
+@@ -106,6 +108,8 @@ model {
+ 			targetPlatform "mac_arm_64"
+ 			targetPlatform "freebsd_x86_64"
+ 			targetPlatform "freebsd_arm_64"
++			targetPlatform "openbsd_x86_64"
++			targetPlatform "openbsd_arm_64"
  			sources {
  				c {
  					source {

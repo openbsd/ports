@@ -1,0 +1,14 @@
+Use protobuf provided by ports
+
+Index: Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java
+--- Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java.orig
++++ Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java
+@@ -53,7 +53,7 @@ public class GdbConnectorsTest extends AbstractRmiConn
+ 		// Make sure system doesn't cause path failures to pass
+ 		unpip("ghidragdb", "ghidratrace");
+ 		// Ensure a compatible version of protobuf
+-		pip("protobuf==6.31.0");
++		pip("protobuf==${PROTOBUF_VER}");
+ 	}
+ 
+ 	@Test

@@ -1,0 +1,23 @@
+Use installed protoc package
+
+Index: gradle/hasProtobuf.gradle
+--- gradle/hasProtobuf.gradle.orig
++++ gradle/hasProtobuf.gradle
+@@ -33,6 +33,7 @@ dependencies {
+ 	allProtocArtifacts "com.google.protobuf:protoc:${version}:linux-aarch_64@exe"
+ 	allProtocArtifacts "com.google.protobuf:protoc:${version}:osx-x86_64@exe"
+ 	allProtocArtifacts "com.google.protobuf:protoc:${version}:osx-aarch_64@exe"
++	implementation files('/usr/local/bin/protoc')
+ 
+ 	if (isCurrentWindows()) {
+ 		protocArtifact "com.google.protobuf:protoc:${version}:windows-x86_64@exe"
+@@ -52,6 +53,9 @@ dependencies {
+ 		else {
+ 			protocArtifact "com.google.protobuf:protoc:${version}:osx-aarch_64@exe"
+ 		}
++	}
++	if (isCurrentOpenBSD()) {
++		protocArtifact files('/usr/local/bin/protoc')
+ 	}
+ }
+ 

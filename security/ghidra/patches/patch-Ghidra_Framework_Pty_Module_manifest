@@ -1,0 +1,11 @@
+Use system jna - copied into dependencies/flatRepo
+
+Index: Ghidra/Framework/Pty/Module.manifest
+--- Ghidra/Framework/Pty/Module.manifest.orig
++++ Ghidra/Framework/Pty/Module.manifest
+@@ -1,2 +1,2 @@
+-MODULE FILE LICENSE: lib/jna-5.14.0.jar Apache License 2.0
+-MODULE FILE LICENSE: lib/jna-platform-5.14.0.jar Apache License 2.0
+\ No newline at end of file
++MODULE FILE LICENSE: lib/jna-${JNA_VER}.jar Apache License 2.0
++MODULE FILE LICENSE: lib/jna-platform-${JNA_VER}.jar Apache License 2.0

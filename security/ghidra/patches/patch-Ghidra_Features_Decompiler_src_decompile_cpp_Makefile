@@ -3,17 +3,17 @@ From https://github.com/NationalSecurityAgency/ghidra/pull/490
 Index: Ghidra/Features/Decompiler/src/decompile/cpp/Makefile
 --- Ghidra/Features/Decompiler/src/decompile/cpp/Makefile.orig
 +++ Ghidra/Features/Decompiler/src/decompile/cpp/Makefile
-@@ -33,6 +33,13 @@ ifeq ($(OS),Darwin)
-   OSDIR=osx64
+@@ -35,6 +35,13 @@ ifeq ($(OS),Darwin)
+   OSDIR=mac_x86_64
  endif
  
 +ifeq ($(OS),OpenBSD)
-+ifeq ($(ARCH),x86_64)
++ifeq ($(ARCH),amd64)
 +  ARCH_TYPE=-m64
-+  OSDIR=openbsd64
++  OSDIR=openbsd_x86_64
 +endif
 +endif
 +
- CC=gcc
- CXX=g++
+ CXX=g++ -std=c++11
  
+ # Debug flags

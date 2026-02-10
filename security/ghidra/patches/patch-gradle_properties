@@ -1,0 +1,11 @@
+Match OpenBSD protbuf version in makefile with s/6/4/
+
+Index: gradle.properties
+--- gradle.properties.orig
++++ gradle.properties
+@@ -6,4 +6,4 @@ org.gradle.jvmargs=-Xmx2G -Duser.language=en -Duser.co
+ org.gradle.archives.use-file-system-permissions=true
+ 
+ # Set Ghidra protobuf version
+-ghidra.protobuf.java.version=4.31.0
++ghidra.protobuf.java.version=${PROTOBUF_JAVA_VER}

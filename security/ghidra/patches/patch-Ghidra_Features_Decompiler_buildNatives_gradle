@@ -1,0 +1,23 @@
+Add OpenBSD
+
+Inde: Ghidra/Features/Decompiler/buildNatives.gradle
+--- Ghidra/Features/Decompiler/buildNatives.gradle.orig
++++ Ghidra/Features/Decompiler/buildNatives.gradle
+@@ -44,6 +44,8 @@ model {
+ 			targetPlatform "mac_arm_64"
+ 			targetPlatform "freebsd_x86_64"
+ 			targetPlatform "freebsd_arm_64"
++			targetPlatform "openbsd_x86_64"
++			targetPlatform "openbsd_arm_64"
+ 			sources {
+ 				cpp {
+ 					// NOTE: The bison/flex generated files are assumed to be up-to-date.
+@@ -154,6 +156,8 @@ model {
+ 			targetPlatform "mac_arm_64"
+ 			targetPlatform "freebsd_x86_64"
+ 			targetPlatform "freebsd_arm_64"
++			targetPlatform "openbsd_x86_64"
++			targetPlatform "openbsd_arm_64"
+ 			sources {
+ 				cpp {
+ 					// NOTE: The bison/flex generated files are assumed to be up-to-date.

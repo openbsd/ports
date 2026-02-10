@@ -1,13 +1,9 @@
-BROKEN =	non-trivial to update to the latest version
-
-# bundled jython has amd64 components for OpenBSD
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =	software reverse engineering (SRE) framework
 
-VERSION = 	9.1.2
-GHIDRA_DATE =	20200212
-REVISION =	1
+VERSION = 	12.0.2
+GHIDRA_DATE =	20260129
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -18,71 +14,55 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://www.ghidra-sre.org/
 
-MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
-
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m ${COMPILER_LIBCXX}
 
-SITES.a =		${HOMEPAGE}
-SITES.b =		https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-${YAJSW_VER}/
-SITES.c =		https://repo.maven.apache.org/maven2/
-SITES.d =		https://dlcdn.apache.org/logging/log4j/${LOG4J_VER}/
+SITES.a =		https://www.intricatesoftware.com/distfiles/
 
-EXTRACT_SUFX =		.zip
+# Keep these in sync with java/jna and devel/protobuf
+JNA_VER =		5.18.1
+PROTOBUF_VER =		6.33.4
+PROTOBUF_JAVA_VER =	4.33.4
 
-ST4_VER =		4.1
-HAMCREST_VER =		1.3
-JAVACC_VER =		5.0
-JMOCKIT_VER =		1.44
-JSON_SIMPLE_VER =	1.1.1
-JUNIT_VER =		4.12
-YAJSW_VER =		12.12
-LOG4J_VER =		2.17.0
+DISTFILES.a +=		ghidra-Ghidra_${VERSION}_build_dependencies${EXTRACT_SUFX}
 
-# Note that ST4-${ST4_VER}.jar is only needed during build for antlr; it is not
-# needed at runtime and therefore does not need to be packed.
-JAR_DISTFILES +=	ST4{org/antlr/ST4/${ST4_VER}/ST4}-${ST4_VER}.jar
-JAR_DISTFILES +=	hamcrest{org/hamcrest/hamcrest-all/${HAMCREST_VER}/hamcrest}-all-${HAMCREST_VER}.jar
-JAR_DISTFILES +=	javacc{net/java/dev/javacc/javacc/${JAVACC_VER}/javacc}-${JAVACC_VER}.jar
-JAR_DISTFILES +=	jmockit{org/jmockit/jmockit/${JMOCKIT_VER}/jmockit}-${JMOCKIT_VER}.jar
-JAR_DISTFILES +=	json-simple{com/googlecode/json-simple/json-simple/${JSON_SIMPLE_VER}/json-simple}-${JSON_SIMPLE_VER}.jar
-JAR_DISTFILES +=	junit{junit/junit/${JUNIT_VER}/junit}-${JUNIT_VER}.jar
-
-DISTFILES =		${DISTNAME}.tar.gz
-DISTFILES.a +=		ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}${EXTRACT_SUFX}
-DISTFILES.b +=		yajsw-stable-${YAJSW_VER}${EXTRACT_SUFX}
-DISTFILES.c +=		${JAR_DISTFILES}
-DISTFILES.d +=		apache-log4j-${LOG4J_VER}-bin.tar.gz
-
-EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.d}
-
-COMPILER =		base-clang ports-clang
-
-MODULES =		java
-MODJAVA_VER =		11+
+MODULES =		java lang/python
+MODJAVA_VER =		21+
 
 BUILD_DEPENDS =		archivers/unzip \
 			devel/bison \
+			devel/protobuf>=${PROTOBUF_VER} \
+			devel/py-pip \
 			java/gradle \
+			java/jna>=${JNA_VER} \
 			shells/bash
 
-RUN_DEPENDS =		shells/bash \
-			java/javaPathHelper
+RUN_DEPENDS +=		devel/gdb \
+			devel/py-protobuf>=${PROTOBUF_VER} \
+			java/javaPathHelper \
+			shells/bash \
+			sysutils/py-psutil
+
+# Task :Docking:buildHelpFiles/GHelpBuilder.java writes log files
+# under $HOME so point user.home inside ${WRKSRC}
+MAKE_ENV +=		JDK_JAVA_OPTIONS="-Duser.home='${WRKSRC}/home'"
+
+.if ${MACHINE_ARCH} == "amd64"
+GHIDRA_ARCH =		openbsd_x86_64
+.else
+GHIDRA_ARCH =		openbsd_arm_64
+.endif
 
 NO_TEST =		Yes
 
-SUBST_VARS +=		CXX GHIDRA_DATE VERSION WRKDIR
+SUBST_VARS +=		CXX GHIDRA_DATE GHIDRA_ARCH VERSION WRKDIR \
+			JNA_VER PROTOBUF_VER PROTOBUF_JAVA_VER
 
-JAR_DIRS +=		Features-FileFormats
-JAR_DIRS +=		Features-Python
-JAR_DIRS +=		Framework-Docking
-JAR_DIRS +=		Framework-FileSystem
-JAR_DIRS +=		Framework-Generic
-JAR_DIRS +=		Framework-Graph
-JAR_DIRS +=		Framework-Project
-JAR_DIRS +=		Framework-SoftwareModeling
+EXTENSIONS =		BSimElasticPlugin GnuDisassembler Lisa \
+			MachineLearning SampleTablePlugin SleighDevTools \
+			SymbolicSummaryZ3 bundle_examples sample
 
 post-extract:
 	@perl -pi -e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
@@ -93,59 +73,85 @@ post-extract:
 		${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh
 	@perl -pi -e 's,(application.version)=.*,\1=${VERSION},' \
 		${WRKSRC}/Ghidra/application.properties
+	@mkdir -p ${WRKSRC}/Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd
+	@cd ${WRKSRC}/Ghidra/Framework/Pty/src/main/java/ghidra/pty/linux/ && \
+		for f in Linux* ; do \
+			cp $$f ../openbsd/OpenBSD$${f#Linux} ; done
+	@mkdir -p ${WRKSRC}/dependencies/flatRepo
+	@cp ${TRUEPREFIX}/share/java/classes/jna.jar \
+		${WRKSRC}/dependencies/flatRepo/jna-${JNA_VER}.jar
+	@cp ${TRUEPREFIX}/share/java/classes/jna-platform.jar \
+		${WRKSRC}/dependencies/flatRepo/jna-platform-${JNA_VER}.jar
 
-# Steps derived from:
-# https://github.com/NationalSecurityAgency/ghidra/blob/master/DevGuide.md
-pre-build:
-	cp ${FILESDIR}/repos.gradle ${WRKDIR}
-	${SUBST_CMD} ${WRKDIR}/repos.gradle \
-		${WRKSRC}/GPL/nativeBuildProperties.gradle \
-		${WRKSRC}/Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java
-	mkdir ${WRKDIR}/{gradle,home}
-	mkdir ${WRKSRC}/flatRepo
-.for dir in ${JAR_DIRS}
-	unzip -j ${DISTDIR}/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}.zip \
-		-d ${WRKSRC}/flatRepo \
-		ghidra_${VERSION}_PUBLIC/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/*.jar \
-		-x ghidra_${VERSION}_PUBLIC/Ghidra/${dir:C/-.*$//}/${dir:C/^.*-//}/lib/${dir:C/^.*-//}.jar
-.endfor
-.for name in csframework hfsx_dmglib hfsx iharder-base64
-	cp ${WRKSRC}/GPL/DMG/data/lib/catacombae_${name}.jar \
-		${WRKSRC}/flatRepo/${name}.jar
-.endfor
-.for jar_file in ${JAR_DISTFILES:C/{.*}//}
-	cp ${DISTDIR}/${jar_file} ${WRKSRC}/flatRepo
-.endfor
-	mkdir -p ${WRKDIR}/ghidra.bin/Ghidra/Features/GhidraServer
-	cp ${DISTDIR}/yajsw-stable-${YAJSW_VER}.zip \
-		${WRKDIR}/ghidra.bin/Ghidra/Features/GhidraServer
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle -g ${WRKDIR}/gradle \
-		--no-daemon --offline --stacktrace -I ${WRKDIR}/repos.gradle \
-		yajswDevUnpack
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/gradle.properties \
+		${WRKSRC}/Ghidra/Framework/Pty/Module.manifest \
+		${WRKSRC}/Ghidra/Framework/Pty/build.gradle \
+		${WRKSRC}/Ghidra/Debug/ProposedUtils/Module.manifest \
+		${WRKSRC}/Ghidra/Debug/Debugger-rmi-trace/Module.manifest \
+		${WRKSRC}/Ghidra/Debug/Debugger-rmi-trace/build.gradle \
+		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/dbgeng/rmi/DbgEngConnectorsTest.java \
+		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/drgn/rmi/DrgnConnectorsTest.java \
+		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/gdb/rmi/GdbConnectorsTest.java \
+		${WRKSRC}/Ghidra/Test/DebuggerIntegrationTest/src/test.slow/java/agent/lldb/rmi/LldbConnectorsTest.java
+
+# build-dependencies is a maintainer target intended to be run when upgrading
+# to a new version of ghidra. The process is; bump the VERSION, comment
+# out DISTFILES.a, make makesum and finish with make build-dependencies.
+#
+# Note that build-dependencies is run as a regular user, with access to the
+# network for downloading the build dependencies. It cleans up after due
+# to changing permissions on WRKSRC.
+
+# Adapted from the instructions here:
+# https://github.com/NationalSecurityAgency/ghidra/blob/master/DevGuide.md#offline-development-environment
+
+build-dependencies: configure
+	cd ${WRKDIR} && \
+		doas chown -R ${USER} ${WRKSRC}
+	cd ${WRKSRC} && \
+		rm -rf dependencies && \
+		env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
+		    gradle --no-daemon --stacktrace \
+		    -g ${WRKSRC}/dependencies/gradle \
+		    -I ${WRKSRC}/gradle/support/fetchDependencies.gradle && \
+		env HOME='/ghidra-writes_to_HOME' JAVA_HOME=${JAVA_HOME} \
+		     gradle --no-daemon --stacktrace \
+		     -g ${WRKSRC}/dependencies/gradle \
+		     prepDev && \
+		rm -rf dependencies/downloads && \
+		find dependencies -path '*/.tmp*' -o -name '*.log' -delete && \
+		find dependencies -name net.java.dev.jna | xargs rm -rf
+	cd ${WRKDIR} && \
+		tar czf ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz \
+		    ghidra-Ghidra_${VERSION}_build/dependencies
+	doas rm -rf ${WRKDIR}
+	@echo ~/ghidra-Ghidra_${VERSION}_build_dependencies.tar.gz has been created
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle -g ${WRKDIR}/gradle \
-		--no-daemon --offline --stacktrace -I ${WRKDIR}/repos.gradle \
-		buildGhidra
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon --stacktrace \
+		-g ${WRKSRC}/dependencies/gradle --offline buildGhidra
+
+# not yet: requires networking, prepDev does not download test gradle/maven deps
+#do-test:
+#	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gradle --no-daemon --stacktrace \
+#		-g ${WRKSRC}/dependencies/gradle --offline unitTestReport
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java
 	unzip -d ${PREFIX}/share/java \
-		${WRKSRC}/build/dist/ghidra_${VERSION}_DEV_*_openbsd64.zip
+		${WRKSRC}/build/dist/ghidra_${VERSION}_DEV_*_${GHIDRA_ARCH}.zip \
+		-x *.orig.port
 	mv ${PREFIX}/share/java/ghidra_${VERSION}_DEV ${PREFIX}/share/java/ghidra
-.for name in GnuDisassembler SampleTablePlugin SleighDevTools sample
-	mv ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_DEV_*_${name}.zip \
-		${PREFIX}/share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_DEV_${GHIDRA_DATE}_${name}.zip
+.for name in ${EXTENSIONS}
+	cd ${PREFIX}/share/java/ghidra/Extensions/Ghidra/ && \
+		mv ghidra_${VERSION}_DEV_*_${name}.zip \
+			ghidra_${VERSION}_DEV_${GHIDRA_DATE}_${name}.zip
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/ghidraRun \
 		${PREFIX}/share/java/ghidra/ghidraRun
 	ln -s ${TRUEPREFIX}/share/java/ghidra/ghidraRun ${PREFIX}/bin/ghidraRun
 	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh \
 		${PREFIX}/share/java/ghidra/support/launch.sh
-	rm -f ${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-{api,core}-*.jar
-	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${LOG4J_VER}-bin/log4j-api-${LOG4J_VER}.jar \
-		${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/
-	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${LOG4J_VER}-bin/log4j-core-${LOG4J_VER}.jar \
-		${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/
 
 .include <bsd.port.mk>

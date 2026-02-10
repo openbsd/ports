@@ -1,0 +1,31 @@
+Add pty support for OpenBSD
+
+Index: Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtySessionLeader.java
+--- Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtySessionLeader.java.orig
++++ Ghidra/Framework/Pty/src/main/java/ghidra/pty/openbsd/OpenBSDPtySessionLeader.java
+@@ -13,21 +13,21 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-package ghidra.pty.linux;
++package ghidra.pty.openbsd;
+ 
+ import ghidra.pty.unix.PosixC.Ioctls;
+ import ghidra.pty.unix.UnixPtySessionLeader;
+ 
+-public class LinuxPtySessionLeader extends UnixPtySessionLeader {
++public class OpenBSDPtySessionLeader extends UnixPtySessionLeader {
+ 
+ 	public static void main(String[] args) throws Exception {
+-		LinuxPtySessionLeader leader = new LinuxPtySessionLeader();
++		OpenBSDPtySessionLeader leader = new OpenBSDPtySessionLeader();
+ 		leader.parseArgs(args);
+ 		leader.run();
+ 	}
+ 
+ 	@Override
+ 	protected Ioctls ioctls() {
+-		return LinuxIoctls.INSTANCE;
++		return OpenBSDIoctls.INSTANCE;
+ 	}
+ }

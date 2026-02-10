@@ -1,0 +1,13 @@
+Add OpenBSD 
+
+Index: GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/AppConfig.java
+--- GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/AppConfig.java.orig
++++ GhidraBuild/LaunchSupport/src/main/java/ghidra/launch/AppConfig.java
+@@ -438,6 +438,7 @@ public class AppConfig {
+ 					new File(localAppDataDirPath, appName + "/" + userSettingsDirName);
+ 				break;
+ 			case LINUX:
++			case OPEN_BSD:
+ 				userSettingsDir =
+ 					new File(userHomeDir, ".config/" + appName + "/" + userSettingsDirName);
+ 				break;

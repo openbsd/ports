@@ -3,17 +3,28 @@ From https://github.com/NationalSecurityAgency/ghidra/pull/490
 Index: Ghidra/Features/FunctionID/build.gradle
 --- Ghidra/Features/FunctionID/build.gradle.orig
 +++ Ghidra/Features/FunctionID/build.gradle
-@@ -97,10 +97,10 @@ task buildFidDocumentationPdf(type: Exec) {
+@@ -113,9 +113,10 @@ task buildFidHelpPdf(type: Exec) {
+ 	// Check the OS before executing command.
+ 	doFirst {
+ 		if ( !(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-			|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
++			|| org.gradle.internal.os.OperatingSystem.current().isMacOsX()
++			|| org.gradle.internal.os.OperatingSystem.current().isOpenBSD())) {
+ 			throw new TaskExecutionException( it,
+-				new Exception( "The '$it.name' task only works on Linux or Mac Os X" ))
++				new Exception( "The '$it.name' task only works on Linux, Mac Os X or OpenBSD" ))
+ 		}
+ 	}
+ 
+@@ -177,8 +178,9 @@ task buildFidHelpHtml(type: Exec) {
  
  	// Check the OS before executing command.
  	doFirst {
--		if ( !(org.gradle.internal.os.OperatingSystem.current().isLinux() 
--			|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
-+		String osName = System.getProperty("os.name")
-+		if ( !(isLinux(osName) || isMac(osName) || isOpenBSD(osName))) {
- 			throw new TaskExecutionException( it,
--				new Exception( "The '$it.name' task only works on Linux or Mac Os X" ))
-+				new Exception( "The '$it.name' task only works on Linux, Mac OS X, or OpenBSD" ))
+-		if (!getCurrentPlatformName().startsWith("linux")) {
+-			throw new TaskExecutionException( it, new Exception("The '$it.name' task only works on Linux."))
++		if (!(getCurrentPlatformName().startsWith("linux")
++		    || getCurrentPlatformName().startsWith("openbsd"))) {
++			throw new TaskExecutionException( it, new Exception("The '$it.name' task only works on Linux or OpenBSD."))
  		}
  	}
  

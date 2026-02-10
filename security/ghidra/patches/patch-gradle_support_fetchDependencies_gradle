@@ -1,0 +1,19 @@
+Download py3-protobuf to make the build happy, but we have a run depend on
+this too. Keep the version here in sync with PROTOBUF_VER in makefile.
+
+Index: gradle/support/fetchDependencies.gradle
+--- gradle/support/fetchDependencies.gradle.orig
++++ gradle/support/fetchDependencies.gradle
+@@ -212,9 +212,9 @@ ext.deps = [
+ 		}
+ 	],
+ 	[
+-		name: "protobuf-6.31.0-py3-none-any.whl",
+-		url: "https://files.pythonhosted.org/packages/ee/01/1ed1d482960a5718fd99c82f6d79120181947cfd4667ec3944d448ed44a3/protobuf-6.31.0-py3-none-any.whl",
+-		sha256: "6ac2e82556e822c17a8d23aa1190bbc1d06efb9c261981da95c71c9da09e9e23",
++		name: "protobuf-6.33.4-py3-none-any.whl",
++		url: "https://files.pythonhosted.org/packages/75/b1/1dc83c2c661b4c62d56cc081706ee33a4fc2835bd90f965baa2663ef7676/protobuf-6.33.4-py3-none-any.whl",
++		sha256: "1fe3730068fcf2e595816a6c34fe66eeedd37d51d0400b72fabc848811fdc1bc",
+ 		destination: file("${DEPS_DIR}/Debugger-rmi-trace/")
+ 	],
+ 	[
