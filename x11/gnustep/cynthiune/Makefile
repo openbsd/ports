@@ -1,7 +1,7 @@
 COMMENT =	audio player for GNUstep
 
 DISTNAME =	Cynthiune-1.0.0
-REVISION =	18
+REVISION =	19
 CATEGORIES +=	audio
 
 HOMEPAGE =	http://gap.nongnu.org/cynthiune/
