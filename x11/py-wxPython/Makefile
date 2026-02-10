@@ -3,8 +3,10 @@ COMMENT-media=	wxMedia support for wxPython
 COMMENT-webview=wxWebView support for wxPython
 
 V=		4.2.5
-DISTNAME=	wxpython-${V}
+DISTNAME=	wxPython-${V}
 PKGNAME=	py-${DISTNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME:L}
+REVISION=	0
 
 # python.port.mk cannot cope with py -> py3 with subpackages
 FULLPKGNAME-main=	py3-${DISTNAME}
