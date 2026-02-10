@@ -12,9 +12,9 @@ EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
-SO_VERSION=	25.0
+SO_VERSION=	26.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_charconv-mt boost_charconv \
 		boost_chrono-mt boost_chrono \
