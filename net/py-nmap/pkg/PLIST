@@ -18,5 +18,5 @@ lib/python${MODPY_VERSION}/site-packages/python_nmap-${MODPY_DISTV}.dist-info/ME
 lib/python${MODPY_VERSION}/site-packages/python_nmap-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/python_nmap-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/python_nmap-${MODPY_DISTV}.dist-info/top_level.txt
-share/examples/${MODPY_PY_PREFIX}nmap/
-share/examples/${MODPY_PY_PREFIX}nmap/example.py
+share/examples/py-nmap/
+share/examples/py-nmap/example.py
