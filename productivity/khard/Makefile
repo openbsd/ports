@@ -2,12 +2,11 @@ COMMENT =		console vCard address book
 
 MODPY_DISTV =	0.19.1
 DISTNAME =		khard-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		productivity
 
 HOMEPAGE =		https://github.com/lucc/khard
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

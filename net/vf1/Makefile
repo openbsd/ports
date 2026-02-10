@@ -3,12 +3,11 @@ COMMENT =		command line gopher client
 MODPY_DISTV =	0.0.11
 DISTNAME =		VF-1-${MODPY_DISTV}
 PKGNAME =		vf1-${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/solderpunk/VF-1
-MAINTAINER =		Paco Esteban <paco@onna.be>
 
 # BSD
 PERMIT_PACKAGE =	Yes

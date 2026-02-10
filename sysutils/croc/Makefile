@@ -4,12 +4,11 @@ MODGO_VERSION =		v10.0.13
 MODGO_MODNAME =		github.com/schollz/croc/v10
 
 DISTNAME =		croc-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://schollz.com/tinker/croc6/
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

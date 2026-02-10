@@ -7,12 +7,11 @@ MODGO_MODNAME =		github.com/go-shiori/shiori
 MODGO_VERSION =		v1.7.4
 
 DISTNAME =		shiori-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/go-shiori/shiori
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

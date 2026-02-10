@@ -5,12 +5,11 @@ MODGO_VERSION =		v0.14.1
 
 DISTNAME =		go-sendxmpp-${MODGO_VERSION}
 PKGNAME =		${DISTNAME:S/-v/-/}
+REVISION =		0
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://salsa.debian.org/mdosch/go-sendxmpp
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # BSD-2
 PERMIT_PACKAGE =	Yes

@@ -3,11 +3,9 @@ COMMENT =		Gajim's fork of py-axolotl
 MODPY_DISTV =	1.0.1
 DISTNAME =		omemo-dr-${MODPY_DISTV}
 PKGNAME =		py-omemo-dr-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

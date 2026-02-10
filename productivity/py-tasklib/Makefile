@@ -4,12 +4,11 @@ MODPY_DISTV =	2.5.1
 
 DISTNAME =		tasklib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		productivity
 
 HOMEPAGE =		https://github.com/GothenburgBitFactory/tasklib
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

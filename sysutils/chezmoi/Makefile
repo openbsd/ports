@@ -4,12 +4,11 @@ MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
 MODGO_VERSION =		v2.62.4
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.chezmoi.io/
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

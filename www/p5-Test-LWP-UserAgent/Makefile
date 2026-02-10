@@ -3,10 +3,9 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 COMMENT =		LWP::UserAgent for simulating and testing network calls
 
 DISTNAME =		Test-LWP-UserAgent-0.036
+REVISION =		0
 
 CATEGORIES =		www devel
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

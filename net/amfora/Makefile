@@ -4,10 +4,9 @@ MODGO_MODNAME=	github.com/makeworld-the-better-one/amfora
 MODGO_VERSION=	v1.10.0
 
 DISTNAME=	amfora-${MODGO_VERSION}
+REVISION=	0
 
 CATEGORIES=	net
-
-MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
 HOMEPAGE=	https://github.com/makeworld-the-better-one/amfora
 
