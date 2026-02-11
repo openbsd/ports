@@ -2,10 +2,9 @@ COMMENT =		calculate and print calendars
 
 DISTNAME =		gcal-4.1
 CATEGORIES =		astro
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.gnu.org/software/gcal/
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes

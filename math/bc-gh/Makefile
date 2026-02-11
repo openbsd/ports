@@ -4,9 +4,9 @@ DISTNAME =	bc-${V}
 PKGNAME =	bc-gh-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
+REVISION =	0
 
 HOMEPAGE =	https://github.com/gavinhoward/bc
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

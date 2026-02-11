@@ -4,8 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
 GH_TAGNAME =	v7.4.2
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -5,12 +5,11 @@ GH_ACCOUNT =	robhagemans
 GH_PROJECT =	pcbasic
 GH_TAGNAME =	v${MODPY_DISTV}
 DISTNAME =	pcbasic-${MODPY_DISTV}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	lang
 
 HOMEPAGE =	http://www.pc-basic.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

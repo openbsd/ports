@@ -6,9 +6,9 @@ DISTFILES =	${DISTNAME}.otf \
 		unifont_jp-${V}.otf \
 		unifont_upper-${V}.otf
 CATEGORIES =	fonts
+REVISION =	0
 
 HOMEPAGE =	https://unifoundry.com/unifont/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Dual licensed:
 # SIL OFL 1.1 or

@@ -16,10 +16,9 @@ DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://openrct2.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

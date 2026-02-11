@@ -3,8 +3,7 @@ MODPY_DISTV =	1.12.1
 DISTNAME =	requests-mock-${MODPY_DISTV}
 PKGNAME =	py-requests-mock-${MODPY_DISTV}
 CATEGORIES =	www
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

@@ -1,7 +1,7 @@
 BROKEN-sparc64 = error: expected primary-expression before else
 
 V =		1.0.3
-REVISION =	0
+REVISION =	1
 COMMENT =	open source retro-style 2D scrolling platform shooter game
 DISTFILES =	davegnukem_${V}.orig.tar.xz \
 		davegnukem_${V}.orig-data.tar.xz
@@ -9,7 +9,6 @@ PKGNAME =	gnukem-${V}
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://djoffe.com/gnukem/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Dual licensed: MIT or GPLv2 only
 # Data assets: CC-BY-3.0, CC0

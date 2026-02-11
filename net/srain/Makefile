@@ -4,9 +4,9 @@ CATEGORIES =	net
 GH_ACCOUNT =	SrainApp
 GH_PROJECT =	srain
 GH_TAGNAME =	1.8.1
+REVISION =	0
 
 HOMEPAGE =	https://srain.silverrainz.me/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

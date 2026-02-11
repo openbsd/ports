@@ -1,9 +1,9 @@
 COMMENT =	NASE A60 Algol interpreter
 DISTNAME =	a60-0.23a
 CATEGORIES =	lang
+REVISION =	0
 
 HOMEPAGE =	https://www.bertnase.de/a60/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+

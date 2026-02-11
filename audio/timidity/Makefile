@@ -4,7 +4,7 @@ V=		2.15.0
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
 CATEGORIES=	audio
-REVISION=	2
+REVISION=	3
 
 SITES=		${SITE_SOURCEFORGE:=timidity/}
 SITES.nycbug=	https://mirrors.nycbug.org/pub/distfiles/
@@ -13,7 +13,6 @@ DISTFILES.nycbug=	TimGM6mb-20170802.tar.gz
 DISTFILES=		${DISTNAME}.tar.gz
 
 HOMEPAGE=	https://timidity.sourceforge.net/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # timidity: GPLv2+
 # TimGM6mb: https://musescore.org/en/handbook/soundfonts#list

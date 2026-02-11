@@ -1,9 +1,9 @@
 COMMENT =	small and easy to use console text editor
 DISTNAME =	dte-1.11.1
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	https://craigbarnes.gitlab.io/dte/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

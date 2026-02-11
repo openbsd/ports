@@ -2,8 +2,7 @@ COMMENT =		file, shell and text manipulation utilities
 
 DISTNAME =		coreutils-9.7
 CATEGORIES =		sysutils
-
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
+REVISION =		0
 
 HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
 

@@ -1,6 +1,6 @@
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-8.0.1.20200707
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	flang                     2.1 # 8.0
 SHARED_LIBS +=	flangrti                  5.0 # 8.0

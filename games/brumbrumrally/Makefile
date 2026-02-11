@@ -3,13 +3,12 @@ BROKEN-alpha =		OOM on src/hqx/hq4x.cpp
 COMMENT =		racing game with randomized tracks
 
 DISTNAME =		brumbrumrally-0.7
-REVISION =		3
+REVISION =		4
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://dataapa.net/brumbrumrally/
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

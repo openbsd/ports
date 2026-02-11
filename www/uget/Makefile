@@ -1,10 +1,9 @@
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.2.2
 CATEGORIES =	www net x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://ugetdm.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

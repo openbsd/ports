@@ -5,11 +5,10 @@ V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
 DISTNAME =	postal-1-open-source-${V}
 PKGNAME =	postal-${V}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://runningwithscissors.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

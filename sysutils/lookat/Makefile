@@ -3,9 +3,9 @@ COMMENT =	user-friendly text pager
 DISTNAME =	lookat_bekijk-${V}
 PKGNAME =	lookat-${V}
 CATEGORIES =	sysutils textproc
+REVISION =	0
 
 HOMEPAGE =	http://www.wagemakers.be/english/programs/lookat
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -5,10 +5,9 @@ CATEGORIES =	www x11
 GH_ACCOUNT =	GeopJr
 GH_PROJECT =	Tuba
 GH_TAGNAME =	v0.8.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://tuba.geopjr.dev/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3 only
 PERMIT_PACKAGE =	Yes

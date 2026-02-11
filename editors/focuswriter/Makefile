@@ -2,13 +2,12 @@ COMMENT =	simple, distraction-free writing environment
 
 DISTNAME =	focuswriter-1.8.12
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
 SITES =		${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

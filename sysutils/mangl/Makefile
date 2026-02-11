@@ -4,8 +4,7 @@ CATEGORIES =	sysutils x11
 GH_ACCOUNT =	zigalenarcic
 GH_PROJECT =	mangl
 GH_TAGNAME =	v1.1.5
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

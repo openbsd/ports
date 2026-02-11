@@ -1,11 +1,10 @@
 V =		1.61
 COMMENT =	game of cute bunnies jumping on each other's heads
 DISTNAME =	jumpnbump-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://gitlab.com/LibreGames/jumpnbump
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

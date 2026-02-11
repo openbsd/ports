@@ -1,12 +1,11 @@
 COMMENT =	game where you are a constantly falling ball
 PKGNAME =	fallingtime-${GH_TAGNAME}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	cxong
 GH_PROJECT =	FallingTime
 GH_TAGNAME =	1.0.2
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

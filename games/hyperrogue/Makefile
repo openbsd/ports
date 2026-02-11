@@ -3,13 +3,13 @@ BROKEN-sparc64 = cc1plus: out of memory allocating 883432 bytes after a total of
 V =		13.0i
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
 GH_TAGNAME =	v${V}
 
 HOMEPAGE =	https://roguetemple.com/z/hyper/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

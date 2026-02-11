@@ -1,13 +1,12 @@
 COMMENT=		library for reading, creating and modifying zip archives
 
 DISTNAME=		libzip-1.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		archivers
 SHARED_LIBS +=  zip                  4.2      # 5.0
 
 HOMEPAGE=		https://libzip.org/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

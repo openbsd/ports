@@ -2,13 +2,12 @@ COMMENT=	GNU awk
 
 V=		5.1.0
 DISTNAME=	gawk-$V
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
 SITES=		${SITE_GNU:=gawk/}
 
 HOMEPAGE=	https://www.gnu.org/software/gawk/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

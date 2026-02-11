@@ -1,11 +1,10 @@
 V =		0.24.0
-REVISION =	1
+REVISION =	2
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://launchpad.net/dibuja
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -2,11 +2,10 @@ V =		1.0.2
 COMMENT =	library for bitwise operations in Lua
 DISTNAME =	LuaBitOp-${V}
 PKGNAME =	lua-bitop-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	https://bitop.luajit.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

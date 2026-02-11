@@ -9,11 +9,10 @@ COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz
 DISTFILES.boot= ldc-${V}-bootstrap.tar.gz
 PKGNAME =	ldc-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LDC: BSD
 # Runtime libraries: Boost Software License 1.0

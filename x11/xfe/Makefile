@@ -2,11 +2,10 @@ COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME=	xfe-1.46.2
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

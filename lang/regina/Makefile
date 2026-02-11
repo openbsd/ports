@@ -3,11 +3,11 @@ COMMENT =	ANSI-compliant interpreter for REXX language (regina-rexx)
 DISTNAME =	regina-rexx-${V}
 PKGNAME =	regina-${V}
 CATEGORIES =	lang
+REVISION =	0
 
 SHARED_LIBS +=	regina                    2.0 # 2.0
 
 HOMEPAGE =	https://regina-rexx.sourceforge.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

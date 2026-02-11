@@ -3,9 +3,9 @@ COMMENT =	simple dd(1) replacement utility from Sortix
 DISTNAME =	rw-portable-${V}
 PKGNAME =	rw-${V}
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://sortix.org/rw/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

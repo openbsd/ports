@@ -4,9 +4,9 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
 GH_TAGNAME =	v0.10.12
+REVISION =	0
 
 HOMEPAGE =	https://endless-sky.github.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Game: GPLv3+
 # Assets: Combination of CC-BY-SA 4.0, 3.0, and Public Domain

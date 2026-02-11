@@ -4,8 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	NanXiao
 GH_PROJECT =	free
 GH_TAGNAME =	v1.1
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

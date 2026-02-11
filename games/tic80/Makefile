@@ -8,9 +8,9 @@ DISTNAME =	TIC-80-${V}
 PKGNAME =	${DISTNAME:S/TIC-80/tic80/}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://tic80.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # TIC-80 itself: MIT
 # Built-in dependencies:

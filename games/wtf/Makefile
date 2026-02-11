@@ -2,9 +2,9 @@ COMMENT =	translate common internet acronyms
 
 DISTNAME =	wtf-20230906
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://sourceforge.net/projects/bsdwtf/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE =	Yes

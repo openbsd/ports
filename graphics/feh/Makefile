@@ -4,9 +4,9 @@ DISTNAME=	feh-3.10.3
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 HOMEPAGE=	https://feh.finalrewind.org/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

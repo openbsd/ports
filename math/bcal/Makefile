@@ -7,9 +7,9 @@ COMMENT =	storage and general-purpose calculator (Byte CALculator)
 DISTNAME =	bcal-v${V}
 PKGNAME =	bcal-${V}
 CATEGORIES =	math sysutils
+REVISION =	0
 
 HOMEPAGE =	https://github.com/jarun/bcal
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

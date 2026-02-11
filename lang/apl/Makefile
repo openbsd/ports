@@ -1,13 +1,12 @@
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.9pl20250903
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
 SHARED_LIBS +=	emacs                     1.0 # 1.0
 
 HOMEPAGE =	https://www.gnu.org/software/apl/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

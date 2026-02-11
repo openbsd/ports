@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS =	amd64 arm i386
 COMMENT =	C99 parser and frontend for libFirm
 DISTNAME =	${GH_PROJECT}-1.22.1pl3
 CATEGORIES =	lang
+REVISION =	0
 
 # Upstream expects you to use tags.
 GH_ACCOUNT =	libfirm
@@ -12,7 +13,6 @@ GH_PROJECT =	cparser
 GH_COMMIT =	51b173e673d80bc219ec898f5255d0cb9304ce80
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

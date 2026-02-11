@@ -11,7 +11,6 @@ SHARED_LIBS +=  quazip1-qt5               0.1 # 0.0
 SHARED_LIBS +=  quazip1-qt6               0.0 # 0.0
 
 HOMEPAGE =	https://stachenov.github.io/quazip/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 FLAVORS=	qt6
 FLAVOR ?=
@@ -33,7 +32,7 @@ MODULES +=	x11/qt6
 LIB_DEPENDS +=	x11/qt6/qt5compat
 CONFIGURE_ARGS +=	-DQUAZIP_QT_MAJOR_VERSION=6
 .else
-REVISION =	0
+REVISION =	1
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core bz2 m z
 MODULES +=	x11/qt5
 CONFIGURE_ARGS +=	-DQUAZIP_QT_MAJOR_VERSION=5

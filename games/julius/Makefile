@@ -3,9 +3,9 @@ COMMENT =	open source re-implementation of Caesar III game engine
 DISTNAME =	julius-${V}
 EXTRACT_SUFX =	-source.tar.gz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://github.com/bvschaik/julius
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes

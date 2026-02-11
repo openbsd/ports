@@ -1,10 +1,9 @@
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.20
 CATEGORIES =	graphics x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://drawpile.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Override kf5.port.mk
 EXTRACT_SUFX =	.tar.gz

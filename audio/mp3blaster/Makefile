@@ -1,10 +1,9 @@
 COMMENT=	text console audio player with an interactive interface
 
 DISTNAME=	mp3blaster-3.2.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 HOMEPAGE=	https://mp3blaster.sourceforge.net/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

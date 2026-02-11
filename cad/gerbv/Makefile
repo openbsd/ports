@@ -1,10 +1,9 @@
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.7.0
-REVISION=		3
+REVISION=		4
 CATEGORIES=		cad graphics
 
 HOMEPAGE=		http://gerbv.geda-project.org/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 SHARED_LIBS +=  gerbv                     1.0 # 1.5
 

@@ -1,9 +1,9 @@
 COMMENT =	client program for playing muds with advanced features
 DISTNAME =	tintin-2.02.20
 CATEGORIES =	net games
+REVISION =	0
 
 HOMEPAGE =	https://tintin.sourceforge.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

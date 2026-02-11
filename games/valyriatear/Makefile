@@ -5,10 +5,9 @@ COMMENT =	free J-RPG game
 DISTNAME =	ValyriaTear-src-with-deps-${V}
 PKGNAME =	valyriatear-${V}
 CATEGORIES =	games x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://valyriatear.blogspot.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Main game is GPLv2+
 # Art/music a variety of CC and GPL.

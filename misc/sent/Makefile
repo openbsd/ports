@@ -1,13 +1,11 @@
 COMMENT=		simple plaintext presentation tool
 
 DISTNAME=		sent-1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc productivity
 
 HOMEPAGE=		http://tools.suckless.org/sent
-
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE=	Yes

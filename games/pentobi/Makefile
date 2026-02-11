@@ -2,10 +2,9 @@ COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-18.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://pentobi.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

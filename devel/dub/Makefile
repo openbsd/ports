@@ -4,8 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
 GH_TAGNAME =	v1.37.0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE =	Yes

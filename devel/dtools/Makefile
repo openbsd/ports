@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =	ancillary tools for the D programming language compiler
 DISTNAME =	d${GH_PROJECT}-${GH_TAGNAME:S/^v//}
 CATEGORIES =	devel
+REVISION =	0
 
 # Keep GH_TAGNAME in sync with lang/dmd
 GH_ACCOUNT =	dlang
@@ -11,7 +12,6 @@ GH_PROJECT =	tools
 GH_TAGNAME =	v2.108.1
 
 HOMEPAGE =	https://dlang.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Boost Software License 1.0
 PERMIT_PACKAGE =	Yes

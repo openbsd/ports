@@ -5,9 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	jorio
 GH_PROJECT =	CandyCrisis
 GH_TAGNAME =	v3.0.1
-REVISION =	0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	1
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

@@ -13,11 +13,10 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	13
+REVISION =	14
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes

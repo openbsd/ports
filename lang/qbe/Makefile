@@ -4,9 +4,9 @@ ONLY_FOR_ARCHS =	amd64 arm64 riscv64
 COMMENT =	small, quick compiler backend
 DISTNAME =	qbe-1.2
 CATEGORIES =	lang devel
+REVISION =	0
 
 HOMEPAGE =	https://c9x.me/compile/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

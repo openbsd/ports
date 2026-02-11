@@ -1,5 +1,6 @@
 COMMENT =	calculator from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
+REVISION =	0
 
 GH_PROJECT =	calculator
 GH_TAGNAME =	1.5.5

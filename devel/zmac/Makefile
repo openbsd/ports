@@ -1,9 +1,9 @@
 COMMENT =	Z-80 macro cross assembler and ld80 CP/M linker
 DISTNAME =	zmac-20221018
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://48k.ca/zmac.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE =	Yes

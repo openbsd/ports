@@ -3,12 +3,11 @@ P =		4
 COMMENT =	application matching library
 DISTNAME =	bamf-${V}.${P}
 CATEGORIES =	devel
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	bamf3                     0.0 # 2.0
 
 HOMEPAGE =	https://launchpad.net/bamf
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

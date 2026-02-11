@@ -1,12 +1,11 @@
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
 CATEGORIES =	editors x11
+REVISION =	0
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
 GH_TAGNAME =	V1.5.1
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

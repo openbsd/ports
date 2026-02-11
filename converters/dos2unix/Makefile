@@ -1,11 +1,11 @@
 COMMENT=	convert DOS/MAC files to UNIX (line-endings/charset)
 
 DISTNAME =	dos2unix-7.5.2
+REVISION =	0
 
 CATEGORIES=	converters
 
 HOMEPAGE=	https://waterlan.home.xs4all.nl/dos2unix.html
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

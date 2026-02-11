@@ -4,9 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
 GH_TAGNAME =	3.0.4
-REVISION =	0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	1
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -4,9 +4,9 @@ DISTNAME =	azpainter-v${V}
 PKGNAME =	azpainter-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	graphics multimedia x11
+REVISION =	0
 
 HOMEPAGE =	http://azsky2.html.xdomain.jp/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

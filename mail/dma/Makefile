@@ -1,9 +1,9 @@
 COMMENT =	DragonFly Mail Agent
 DISTNAME =	dma-0.12
 CATEGORIES =	mail
+REVISION =	0
 
 HOMEPAGE =	https://www.dragonflybsd.org/handbook/mta/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

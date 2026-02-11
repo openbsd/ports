@@ -2,12 +2,11 @@ V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
 DISTNAME =	parlatype-${V}
 CATEGORIES =	audio x11
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS +=	parlatype                 0.0 # 1.6
 
 HOMEPAGE =	https://gkarsay.github.io/parlatype/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

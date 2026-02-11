@@ -1,14 +1,13 @@
 COMMENT =		elegant unit testing framework for C
 
 DISTNAME =		cmocka-1.1.5
+REVISION =		0
 
 SHARED_LIBS +=		cmocka                    0.4 # 0.5
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://cmocka.org/
-
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # Apache License v2
 PERMIT_PACKAGE =	Yes

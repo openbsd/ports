@@ -2,10 +2,9 @@ BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
 DISTNAME =	worker-5.0.2
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.boomerangsworld.de/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -3,13 +3,12 @@ ONLY_FOR_ARCHS =	amd64 arm64
 
 COMMENT =	port of POSIX asynchronous I/O routines from DragonFly BSD
 DISTNAME =	libaio_compat-5.2.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 SHARED_LIBS +=	aio_compat                0.0 # 0.0
 
 HOMEPAGE =	https://www.dragonflybsd.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

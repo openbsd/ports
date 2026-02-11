@@ -3,12 +3,11 @@ COMMENT =	small, embeddable JavaScript engine in C
 V =		2024.01.13
 DISTNAME =	quickjs-${V:S/./-/g}
 PKGNAME =	quickjs-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
 HOMEPAGE =	https://bellard.org/quickjs/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

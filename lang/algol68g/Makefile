@@ -1,10 +1,9 @@
 COMMENT =	Algol 68 Genie compiler-interpreter
 DISTNAME =	algol68g-3.5.14
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -4,9 +4,9 @@ DISTNAME =	SpaceTraderSource${V:S/.//g}
 PKGNAME =	spacetrader-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://www.spronck.net/spacetrader/index.html
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

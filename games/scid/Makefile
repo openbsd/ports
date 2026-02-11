@@ -9,10 +9,9 @@ DISTNAME =	scid_src_${V}
 PKGNAME =	scid-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://scid.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

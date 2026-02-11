@@ -2,7 +2,7 @@ GAME =		tanglet
 COMMENT =	word finding game
 DISTNAME =	${GAME}-1.5.6-src
 WANTLIB +=	z
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS +=	misc/shared-mime-info
 

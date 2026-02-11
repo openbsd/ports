@@ -6,8 +6,7 @@ SHARED_LIBS +=	zimg                      0.1 # 2.0
 GH_ACCOUNT =	sekrit-twc
 GH_PROJECT =	zimg
 GH_TAGNAME =	release-3.0.5
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # WTFPL
 PERMIT_PACKAGE =	Yes

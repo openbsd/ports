@@ -9,9 +9,9 @@ MODGO_VERSION =	v0.16.3
 GH_ACCOUNT =	elves
 GH_PROJECT =	elvish
 GH_TAGNAME =	${MODGO_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://elv.sh/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

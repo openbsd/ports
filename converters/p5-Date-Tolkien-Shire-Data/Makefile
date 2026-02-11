@@ -1,8 +1,7 @@
 COMMENT =	Data functionality for Shire calendars
 DISTNAME =	Date-Tolkien-Shire-Data-0.009
 CATEGORIES =	converters
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

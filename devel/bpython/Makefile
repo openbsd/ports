@@ -3,10 +3,9 @@ COMMENT=	fancy interface to the Python interpreter
 MODPY_DISTV=	0.24
 DISTNAME=	bpython-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://bpython-interpreter.org/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

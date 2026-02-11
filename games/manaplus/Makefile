@@ -1,12 +1,11 @@
 V =		2.1.3.17
-REVISION =	3
+REVISION =	4
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://manaplus.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

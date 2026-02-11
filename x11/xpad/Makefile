@@ -3,9 +3,9 @@ COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	https://launchpad.net/xpad
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

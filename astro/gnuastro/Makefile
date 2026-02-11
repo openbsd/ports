@@ -3,12 +3,11 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

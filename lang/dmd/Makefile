@@ -11,13 +11,13 @@ BOOTSTRAP =	2.109.0
 COMMENT =	reference compiler for the D programming language
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
+REVISION =	0
 
 DISTFILES =		dmd-${V}{v${V}}.tar.gz
 DISTFILES.boot =	dmd-${BOOTSTRAP}-bootstrap.tar.gz
 DISTFILES.phobos =	phobos-${V}{v${V}}.tar.gz
 
 HOMEPAGE =	https://dlang.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Boost Software License 1.0
 PERMIT_PACKAGE =	Yes

@@ -1,13 +1,12 @@
 COMMENT =	simple ADS-B Mode-S decoder for RTLSDR devices
 DISTNAME =	${GH_PROJECT}-0.0.0.20200203
 CATEGORIES =	comms
+REVISION =	0
 
 # No releases...
 GH_ACCOUNT =	antirez
 GH_PROJECT =	dump1090
 GH_COMMIT =	de61bd564f1aa929bae414a70e421acd0b81789a
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

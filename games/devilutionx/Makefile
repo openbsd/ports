@@ -1,12 +1,11 @@
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
 GH_TAGNAME =	1.5.4
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 SITES =		${SITES_GITHUB}
 SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/

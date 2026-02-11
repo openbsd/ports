@@ -1,14 +1,13 @@
 BROKEN-sparc64=	relocation truncated to fit: R_SPARC_GOT13 against symbol
 
 V =			2.54
-REVISION=		0
+REVISION=		1
 COMMENT=		interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-${V}
 CATEGORIES=		games
 
 HOMEPAGE=		https://davidgriffith.gitlab.io/frotz/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

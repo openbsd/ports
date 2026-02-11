@@ -6,10 +6,9 @@ SHARED_LIBS +=	assimp                    3.0 # 5.0
 GH_ACCOUNT =	assimp
 GH_PROJECT =	assimp
 GH_TAGNAME =	v5.4.3
+REVISION =	0
 
 HOMEPAGE =	https://www.assimp.org/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

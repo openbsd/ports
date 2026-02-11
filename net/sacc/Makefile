@@ -1,9 +1,9 @@
 COMMENT =	simple console gopher client
 DISTNAME =	sacc-1.06
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	gopher://bitreich.org/1/scm/sacc
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

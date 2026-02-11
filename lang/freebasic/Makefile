@@ -7,11 +7,10 @@ V =		1.05.0
 COMMENT =	open-source, multi-platform BASIC compiler
 DISTNAME =	FreeBASIC-${V}-source-openbsd
 PKGNAME =	freebasic-${V}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.freebasic.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Compiler: GPLv2+
 # Runtime and Graphics libs: LGPLv2+ with static linking exception

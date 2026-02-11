@@ -1,12 +1,11 @@
 COMMENT =	lightweight Qt5 notes manager
 DISTNAME =	feathernotes-${GH_TAGNAME:S/^V//}
 CATEGORIES =	misc x11
+REVISION =	0
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherNotes
 GH_TAGNAME =	V1.1.0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

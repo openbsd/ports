@@ -1,10 +1,9 @@
 COMMENT =	convert dates into the Shire Calendar
 
 DISTNAME =	Date-Tolkien-Shire-1.905
+REVISION =	0
 
 CATEGORIES =	converters
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

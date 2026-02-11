@@ -3,6 +3,7 @@
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
 DISTNAME =	flang-driver-8.0.1.20190819
+REVISION =	0
 
 GH_PROJECT =	flang-driver
 GH_COMMIT =	ea411daaafc7ec5b85be1cd7857c0ceab42e54aa

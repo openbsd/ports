@@ -1,13 +1,12 @@
 COMMENT =	iconic bitmap font based on Stlarch with additional glyphs
 DISTNAME =	${GH_PROJECT}-0.0.0.20190218
 CATEGORIES =	fonts
+REVISION =	0
 
 # No releases... use GH_COMMIT
 GH_ACCOUNT =	stark
 GH_PROJECT =	siji
 GH_COMMIT =	c691f200c1c66e76daa2afc9cbbd1aa39045c906
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

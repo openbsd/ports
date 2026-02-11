@@ -5,12 +5,11 @@ V =		8.1
 COMMENT =	tactical action game focusing on controlling Clonks
 DISTNAME =	openclonk-${V}-src
 PKGNAME =	openclonk-${V}
-REVISION =	6
+REVISION =	7
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://openclonk.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # engine: ISC
 # content: CC BY-SA, CC BY, CC0

@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	amd64 arm i386
 COMMENT =	graph based intermediate representation and backend
 DISTNAME =	${GH_PROJECT}-1.22.1pl3
 CATEGORIES =	devel
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	firm                      3.0 # 3.0
 
@@ -15,7 +15,6 @@ GH_PROJECT =	libfirm
 GH_COMMIT =	95a238ce4b6868abf9ce50ece0bde65832bf7e58
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

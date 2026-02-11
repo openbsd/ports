@@ -6,9 +6,9 @@ V =		1.3.0
 COMMENT =	command line interface for Repology.org
 DISTNAME =	repology-${V}
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://github.com/ibara/repology
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

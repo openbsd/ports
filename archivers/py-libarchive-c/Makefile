@@ -3,9 +3,7 @@ COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	archivers devel
-REVISION =	1
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	2
 
 # CC0
 PERMIT_PACKAGE =	Yes

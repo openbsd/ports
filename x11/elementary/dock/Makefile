@@ -3,7 +3,7 @@
 COMMENT =	dock from elementary OS
 DISTNAME =	dock-0.11.89
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	plank                     0.0 # 1.0.0
 

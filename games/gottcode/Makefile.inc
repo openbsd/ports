@@ -5,8 +5,6 @@ EXTRACT_SUFX ?=	.tar.bz2
 HOMEPAGE ?=	https://gottcode.org/${GAME}/
 SITES ?=	${HOMEPAGE}
 
-MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
-
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 

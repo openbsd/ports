@@ -1,5 +1,5 @@
 COMMENT =	command line audio player for VGM files
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio
 
 GH_ACCOUNT =	vgmrips
@@ -7,7 +7,6 @@ GH_PROJECT =	vgmplay
 GH_TAGNAME =	0.40.9
 
 HOMEPAGE =	https://vgmrips.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

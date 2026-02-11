@@ -3,10 +3,9 @@ COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-${V}{v${V}}
 PKGNAME =	liberalcrimesquad-${V}
 CATEGORIES =	games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://lcs.wikidot.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

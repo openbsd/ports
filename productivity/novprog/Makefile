@@ -3,9 +3,9 @@ COMMENT =	graphical wordcount grapher
 DISTNAME =	novprog-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	productivity x11
+REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/novprog/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

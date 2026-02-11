@@ -1,12 +1,11 @@
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 SHARED_LIBS +=	cim                       0.0 # 3.0
 
 HOMEPAGE =	https://www.gnu.org/software/cim/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

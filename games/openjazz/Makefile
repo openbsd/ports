@@ -4,9 +4,9 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	AlisterT
 GH_PROJECT =	openjazz
 GH_TAGNAME =	20231028
+REVISION =	0
 
 HOMEPAGE =	http://www.alister.eu/jazz/oj/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

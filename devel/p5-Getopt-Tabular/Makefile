@@ -1,9 +1,7 @@
 COMMENT =	table-driven argument parsing for Perl 5
 DISTNAME =	Getopt-Tabular-0.3
 CATEGORIES =	devel
-REVISION =	0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes

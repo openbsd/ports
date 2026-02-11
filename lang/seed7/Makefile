@@ -3,12 +3,11 @@ COMMENT =	high-level, extensible programming language
 V =		20210130
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	lang
 
 HOMEPAGE =	https://seed7.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Interpreter and example programs: GPLv2+
 # Runtime libraries: LGPLv2.1

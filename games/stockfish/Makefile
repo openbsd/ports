@@ -4,9 +4,9 @@ PKGNAME =	stockfish-${V}
 NNUE_BIG =	nn-b1a57edbea57.nnue
 NNUE_SMALL =	nn-baff1ede1f90.nnue
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://stockfishchess.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

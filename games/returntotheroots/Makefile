@@ -10,7 +10,6 @@ REVISION =	6
 ONLY_FOR_ARCHS =	i386 amd64
 
 HOMEPAGE =	https://www.siedler25.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -4,12 +4,11 @@ XXHASH_V =	0.8.3
 DISTFILES =	${PKGNAME}.tar.gz
 DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://sourceware.org/dwz/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -4,8 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	NanXiao
 GH_PROJECT =	lscpu
 GH_TAGNAME =	1.3.0
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

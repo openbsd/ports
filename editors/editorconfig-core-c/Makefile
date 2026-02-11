@@ -6,9 +6,9 @@ SHARED_LIBS +=  editorconfig              0.0 # 0.0
 GH_ACCOUNT =	editorconfig
 GH_PROJECT =	editorconfig-core-c
 GH_TAGNAME =	v0.12.5
+REVISION =	0
 
 HOMEPAGE =	https://editorconfig.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

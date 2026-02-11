@@ -4,7 +4,7 @@ DISTNAME =	halibut-1.3
 CATEGORIES =	textproc
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/halibut/
 SITES =		${HOMEPAGE}${DISTNAME}/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

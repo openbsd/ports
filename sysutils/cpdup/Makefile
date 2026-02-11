@@ -1,9 +1,9 @@
 COMMENT =	utility to mirror filesystems, directories, and files
 DISTNAME =	cpdup-5.4.0
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://www.dragonflybsd.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

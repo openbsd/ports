@@ -3,9 +3,9 @@ COMMENT =	enhanced port of Thompson shell from Sixth Edition Unix
 DISTNAME =	etsh-${V}
 EPOCH =		0
 CATEGORIES =	shells
+REVISION =	0
 
 HOMEPAGE =	https://etsh.nl/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

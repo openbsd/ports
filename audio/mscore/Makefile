@@ -1,7 +1,7 @@
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
 V =		3.6.2
-REVISION =	1
+REVISION =	2
 COMMENT =	WYSIWYG music notation software (MuseScore)
 GH_ACCOUNT =	musescore
 GH_PROJECT =	MuseScore
@@ -10,7 +10,6 @@ PKGNAME =	musescore-${V}
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://musescore.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

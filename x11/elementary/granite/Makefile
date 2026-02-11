@@ -4,7 +4,7 @@ SHARED_LIBS +=	granite                   0.0 # 5.5.0
 
 GH_PROJECT =	granite
 GH_TAGNAME =	5.5.0
-REVISION =	0
+REVISION =	1
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

@@ -4,8 +4,7 @@ CATEGORIES =	editors
 GH_ACCOUNT =	vigna
 GH_PROJECT =	ne
 GH_TAGNAME =	3.3.4
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

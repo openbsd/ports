@@ -6,9 +6,9 @@ CATEGORIES =	www x11
 GH_ACCOUNT =	textbrowser
 GH_PROJECT =	dooble
 GH_TAGNAME =	2025.07.04
+REVISION =	0
 
 HOMEPAGE =	https://textbrowser.github.io/dooble/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -1,10 +1,9 @@
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
-REVISION =	6
+REVISION =	7
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

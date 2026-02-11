@@ -4,9 +4,9 @@ VERSION =	0.8
 PKGNAME =	freesynd-${VERSION}
 DISTNAME =	Freesynd-${VERSION}-Source
 CATEGORIES = 	games x11
+REVISION =	0
 
 HOMEPAGE =	https://freesynd.sourceforge.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =  Yes

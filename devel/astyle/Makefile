@@ -2,10 +2,9 @@ COMMENT=		indenter and formatter of C/C++/Java source files
 DISTNAME=		astyle-3.5.2
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES=		devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://astyle.sourceforge.net/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

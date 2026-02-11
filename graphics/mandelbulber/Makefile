@@ -3,12 +3,11 @@ COMMENT =		3D fractal renderer
 V =			1.21
 DISTNAME =		mandelbulber${V}-1.orig
 PKGNAME =		mandelbulber-${V}.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://mandelbulber.com
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

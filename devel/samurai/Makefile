@@ -2,10 +2,8 @@ COMMENT =	ninja-compatible build tool written in C
 
 V =		1.2
 DISTNAME =	samurai-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 HOMEPAGE =	https://github.com/michaelforney/samurai
 

@@ -3,10 +3,9 @@ COMMENT =	Python library for the ISO 639 language code standard
 DISTNAME =	iso-639-${MODPY_DISTV}
 PKGNAME =	py-iso639-${MODPY_DISTV}
 CATEGORIES =	devel
-REVISION =	10
+REVISION =	11
 
 HOMEPAGE =	https://github.com/noumar/iso639
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes

@@ -4,12 +4,11 @@ COMMENT =		3D light cycle game
 
 DISTNAME =		armagetronad-${V}.${P}
 EXTRACT_SUFX =		.tbz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games x11
 
 HOMEPAGE =		http://armagetronad.org/
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =		Yes

@@ -1,12 +1,11 @@
 COMMENT =	combinatorics library/utility from FreeBSD
 DISTNAME =	cmb-3.9.5
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	cmb                       0.0 # 0.0
 
 HOMEPAGE =	https://github.com/ibara/cmb
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
