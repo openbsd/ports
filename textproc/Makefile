@@ -510,6 +510,7 @@
      SUBDIR += py-spdx
      SUBDIR += py-spdx-lookup
      SUBDIR += py-sphinx
+     SUBDIR += py-sphinx-argparse
      SUBDIR += py-sphinx-automodapi
      SUBDIR += py-sphinx-intl
      SUBDIR += py-sphinx-notfound-page
