@@ -1,0 +1,16 @@
+Use only the provided config location instead of searching and selecting
+the config of the lowest version of Tcl that can be found.
+https://github.com/openMSX/openMSX/commit/88f68f4d375818df38c449f106933e8f7c8f236e
+
+
+Index: build/libraries.py
+--- build/libraries.py.orig
++++ build/libraries.py
+@@ -357,6 +357,7 @@ class TCL(Library):
+ 			tclpath = environ.get('TCL_CONFIG')
+ 			if tclpath is not None:
+ 				yield tclpath
++				return
+ 
+ 			if distroRoot is None or cls.isSystemLibrary(platform):
+ 				if msysActive():

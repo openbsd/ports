@@ -20,7 +20,9 @@ WANTLIB += GL GLEW SDL2 SDL2_ttf c freetype m ogg png
 WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis z
 
 SITES =		https://github.com/openMSX/openMSX/releases/download/RELEASE_${V:S/./_/g}/
-CONFIGURE_STYLE =	simple
+
+CONFIGURE_STYLE =simple
+CONFIGURE_ENV =	TCL_CONFIG=${MODTCL_LIBDIR}
 
 MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_BINARY_DIR=${PREFIX}/bin \
