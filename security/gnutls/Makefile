@@ -1,6 +1,6 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.11
+V=			3.8.12
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -69,6 +69,10 @@ LDFLAGS+=		-Wl,-z,notext
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CCASFLAGS="${CCASFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+
+# our makeinfo(1) is too old to build info files
+BUILD_DEPENDS +=	print/texinfo
+CONFIGURE_ENV +=	MAKEINFO="${LOCALBASE}/bin/gmakeinfo"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
