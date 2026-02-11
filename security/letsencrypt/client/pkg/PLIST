@@ -62,8 +62,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}renew
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}renewal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}san.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}san.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}san_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}san_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}snap_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}snap_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,7 +150,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/standalone.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/plugins/webroot.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/renewal.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/san.py
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/san_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/snap_config.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/storage.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/
@@ -200,6 +197,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}renewupdater_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}reverter_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}reverter_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}san_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}san_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}storage_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}storage_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}util_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -296,6 +295,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/webroot
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/renewal_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/renewupdater_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/reverter_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/san_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/storage_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/updater.py
