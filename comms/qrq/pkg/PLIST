@@ -1,0 +1,9 @@
+@bin bin/qrq
+bin/qrqscore
+@man man/man1/qrq.1
+share/qrq/
+share/qrq/callbase.qcb
+share/qrq/cwops.qcb
+share/qrq/english.qcb
+share/qrq/qrqrc
+share/qrq/toplist

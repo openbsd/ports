@@ -1,0 +1,13 @@
+qrq is an open source Morse telegraphy trainer which runs on several
+operating systems (Linux, Unix, OS X and Windows), similar to the
+classic DOS version of Rufz by DL4MM.
+
+This tool is not intended for learning telegraphy (check out
+https://lcwo.net for that!), but to improve the ability to copy
+callsigns at high speeds, as needed for example for contesting or
+for High-Speed Telegraphy (HST) competitions.
+
+This port includes the Perl script qrqscore, that downloads and
+uploads the global qrq toplist from the author's website.  qrqscore
+requires p5-libwww, which is not included as an explicit dependency.
+Use it at your own risk.

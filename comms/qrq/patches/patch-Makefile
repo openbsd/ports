@@ -1,0 +1,31 @@
+hostname(1) doesn't take -f, install(1) doesn't take -v
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -36,7 +36,7 @@ INSTALL ?= install
+ # build information may be added by CI scripts and will be
+ # displayed in the help text (qrq -h)
+ 
+-BUILD_INFO=" Date: $(shell date +%Y-%m-%dT%H:%M:%S%z)\n git branch/commit: $(shell if [ x${CI_COMMIT_REF_NAME} != x ]; then echo ${CI_COMMIT_REF_NAME} ; elif [ -e .git ] || [ -e ../.git ]; then git symbolic-ref --short HEAD ; else echo not built from git repository ; fi) / $(shell if [ x${CI_COMMIT_SHA} != x ]; then echo ${CI_COMMIT_SHA}; elif [ -e .git ] || [ -e ../.git ] ; then git rev-parse --verify HEAD ; else echo - ; fi )\n by $(USER)@$(shell hostname -f)\n OS: $(shell uname -s -r -p)\n Compiler: $(shell $(CC) --version | head -1)"
++BUILD_INFO=" Date: $(shell date +%Y-%m-%dT%H:%M:%S%z)\n git branch/commit: $(shell if [ x${CI_COMMIT_REF_NAME} != x ]; then echo ${CI_COMMIT_REF_NAME} ; elif [ -e .git ] || [ -e ../.git ]; then git symbolic-ref --short HEAD ; else echo not built from git repository ; fi) / $(shell if [ x${CI_COMMIT_SHA} != x ]; then echo ${CI_COMMIT_SHA}; elif [ -e .git ] || [ -e ../.git ] ; then git rev-parse --verify HEAD ; else echo - ; fi )\n by $(USER)@$(shell hostname)\n OS: $(shell uname -s -r -p)\n Compiler: $(shell $(CC) --version | head -1)"
+ 
+ CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D BUILD_INFO=\"$(BUILD_INFO)\" -D VERSION=\"$(VERSION)\" -I.
+ 
+@@ -109,12 +109,11 @@ uninstall:
+ else
+ 
+ install: qrq
+-	${INSTALL} -d -v                      $(DESTDIR)/share/qrq/
+-	${INSTALL} -d -v                      $(DESTDIR)/share/man/man1/
+-	${INSTALL} -d -v                      $(DESTDIR)/bin/
+-	${INSTALL} -s -m 0755 qrq             $(DESTDIR)/bin/
++	${INSTALL} -d                       $(DESTDIR)/share/qrq/
++	${INSTALL} -d                       $(DESTDIR)/bin/
++	${INSTALL} ${INSTALL_STRIP} -m 0755 qrq             $(DESTDIR)/bin/
+ 	${INSTALL}    -m 0755 qrqscore        $(DESTDIR)/bin/
+-	${INSTALL}    -m 0644 qrq.1           $(DESTDIR)/share/man/man1/
++	${INSTALL}    -m 0644 qrq.1           $(DESTDIR)/man/man1/
+ 	${INSTALL}    -m 0644 callbase.qcb    $(DESTDIR)/share/qrq/
+ 	${INSTALL}    -m 0644 english.qcb     $(DESTDIR)/share/qrq/
+ 	${INSTALL}    -m 0644 cwops.qcb       $(DESTDIR)/share/qrq/
