@@ -1,6 +1,6 @@
 COMMENT=	pure python IPMI protocol library
 
-MODPY_DISTV=	1.6.11
+MODPY_DISTV=	1.6.12
 DISTNAME=	pyghmi-${MODPY_DISTV}
 PKGNAME=	py-ghmi-${MODPY_DISTV}
 
