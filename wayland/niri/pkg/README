@@ -6,7 +6,7 @@ Running
 =======
 
 On OpenBSD, use the provided ${PREFIX}/bin/startniri.sh script to
-launch niri from an text VT (xenodm must be stopped.
+launch niri from an text VT (xenodm must be stopped).
 
 Configuration
 =============

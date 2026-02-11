@@ -513,7 +513,8 @@ SHA256 (cargo/zvariant-5.7.0.tar.gz) = mZ3TvnPFKx/M0QmkqB5PzSD6sdNZnIEhs40E4UGUm
 SHA256 (cargo/zvariant_derive-5.7.0.tar.gz) = ZkP9CyakbSJr2Q0/B8G1Mh/pu38EZzyzesbWiDiFto4=
 SHA256 (cargo/zvariant_utils-3.2.1.tar.gz) = xpSdFC+J9pFt7KIjLPJqivrPK5/cNc52YQXhBEeL5Zk=
 SHA256 (drm-rs-e32b22b5.tar.gz) = jnV6NxxDpDmCc0wxRDSXE0IDgx8067cJhZvWg2MZQR0=
-SHA256 (niri-25.11.20251130-e2f087ea.tar.gz) = yNLLH4sCnJVoJrpOdOfEfbMJJ1c6u+JkHkhVDsv+DU0=
+SHA256 (niri-25.11.20260211-f541ac5d.tar.gz) = nJC+rI+MD/sHNZx4uPCzU3RU5rYQmLvkb5V1r8qklKs=
+SHA256 (polling-ade9e509.tar.gz) = W1GxqTjUAB2ihNaHoZtYrNR3o37zJJDZ8XtS3ei0xd8=
 SHA256 (smithay-95c73b3e.tar.gz) = cZLnEqyNPT1HQ/lpDsJUDl7lGhsyreNS6IDpz77bRXM=
 SIZE (cargo/accesskit-0.21.0.tar.gz) = 34158
 SIZE (cargo/accesskit_atspi_common-0.14.0.tar.gz) = 25918
@@ -1030,5 +1031,6 @@ SIZE (cargo/zvariant-5.7.0.tar.gz) = 90643
 SIZE (cargo/zvariant_derive-5.7.0.tar.gz) = 14214
 SIZE (cargo/zvariant_utils-3.2.1.tar.gz) = 14678
 SIZE (drm-rs-e32b22b5.tar.gz) = 67689
-SIZE (niri-25.11.20251130-e2f087ea.tar.gz) = 915580
+SIZE (niri-25.11.20260211-f541ac5d.tar.gz) = 915573
+SIZE (polling-ade9e509.tar.gz) = 59487
 SIZE (smithay-95c73b3e.tar.gz) = 798203

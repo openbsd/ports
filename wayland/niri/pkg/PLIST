@@ -1,5 +1,6 @@
 @bin bin/niri
 bin/startniri.sh
+share/applications/
 share/applications/niri.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/niri/

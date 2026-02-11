@@ -1,12 +1,12 @@
 COMMENT =	A scrollable-tiling Wayland compositor
 
-V =		25.11.20251130
+V =		25.11.20260211
 
 # Use https://github.com/tobhe/niri/tree/openbsd-port until all
 # the dependency fixes have propagated to the actual rust packages
 GH_ACCOUNT = tobhe
 GH_PROJECT = niri
-GH_COMMIT = e2f087ea98acd5859ab86904ca558854702d01b4
+GH_COMMIT = f541ac5db09db311ec5444d8e4293588f10f1b8f
 DISTNAME = ${GH_PROJECT}-${V}
 
 # Bundled dependencies
@@ -22,6 +22,10 @@ DISTFILES.drm = drm-rs-${DRM_COMMIT:C/(........).*/\1/}{${DRM_COMMIT}}${EXTRACT_
 SMITHAY_COMMIT = 95c73b3e06ab9f83f7a1a886f31e8da2215ee1cd
 SITES.smithay = https://github.com/tobhe/smithay/archive/
 DISTFILES.smithay += smithay-${SMITHAY_COMMIT:C/(........).*/\1/}{${SMITHAY_COMMIT}}${EXTRACT_SUFX}
+
+POLLING_COMMIT = ade9e50967a17e32228597ad756fff8965a42a01
+SITES.polling = https://github.com/tobhe/polling/archive/
+DISTFILES.polling += polling-${POLLING_COMMIT:C/(........).*/\1/}{${POLLING_COMMIT}}${EXTRACT_SUFX}
 
 MODCARGO_NO_DEFAULT_FEATURES = Yes
 MODCARGO_FEATURES =
