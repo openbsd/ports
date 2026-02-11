@@ -1,7 +1,7 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -17,7 +17,6 @@ qt_webengine_set_version(gcc 10.0)
+@@ -19,7 +19,6 @@ qt_webengine_set_version(gcc 10.0)
  qt_webengine_set_version(clang 17.0)
  qt_webengine_set_version(gcc_for_pdf 9.0)
  qt_webengine_set_version(glib 2.32.0)
@@ -9,7 +9,7 @@ Index: configure.cmake
  qt_webengine_set_version(harfbuzz 4.3.0)
  qt_webengine_set_version(libpng 1.6.0)
  qt_webengine_set_version(libtiff 4.5.0)
-@@ -116,7 +115,7 @@ if(Python3_EXECUTABLE)
+@@ -118,7 +117,7 @@ if(Python3_EXECUTABLE)
      )
  endif()
  
@@ -18,7 +18,7 @@ Index: configure.cmake
     qt_webengine_configure_check_for_ulimit()
  endif()
  
-@@ -227,29 +226,7 @@ int main() {
+@@ -229,29 +228,7 @@ int main() {
  }"
  )
  
@@ -48,7 +48,7 @@ Index: configure.cmake
  # "Unmodified ffmpeg >= 5.0 is not supported."
  qt_config_compile_test(libavformat
      LABEL "libavformat"
-@@ -302,16 +279,16 @@ unset(targets_to_check)
+@@ -304,16 +281,16 @@ unset(targets_to_check)
  
  qt_webengine_configure_check("supported-platform"
      MODULES QtWebEngine
@@ -68,7 +68,7 @@ Index: configure.cmake
      set(supported_targets "arm" "arm64" "armv7-a" "x86_64")
      qt_webengine_configure_check("supported-arch"
          MODULES QtWebEngine QtPdf
-@@ -381,51 +358,37 @@ qt_webengine_configure_check("flex"
+@@ -383,51 +360,37 @@ qt_webengine_configure_check("flex"
  )
  qt_webengine_configure_check("pkg-config"
      MODULES QtWebEngine QtPdf
@@ -130,7 +130,7 @@ Index: configure.cmake
          (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
      MESSAGE
          "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
-@@ -433,8 +396,8 @@ qt_webengine_configure_check("compiler"
+@@ -435,8 +398,8 @@ qt_webengine_configure_check("compiler"
  qt_webengine_configure_check("compiler"
      MODULES QtPdf
      CONDITION MSVC OR
@@ -141,7 +141,7 @@ Index: configure.cmake
          (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang") OR
          (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
          (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
-@@ -466,29 +429,29 @@ qt_webengine_configure_check("msvc-2022"
+@@ -468,29 +431,29 @@ qt_webengine_configure_check("msvc-2022"
  
  qt_webengine_configure_check("gcc"
      MODULES QtWebEngine
@@ -176,8 +176,8 @@ Index: configure.cmake
 +    TAGS UNIX_PLATFORM
  )
  
- if(WIN32)
-@@ -516,10 +479,10 @@ foreach(x_lib ${x_libs})
+ qt_webengine_configure_check("android-ndk"
+@@ -536,10 +499,10 @@ foreach(x_lib ${x_libs})
      string(TOLOWER ${x_lib} lib)
      qt_webengine_configure_check("${lib}"
          MODULES QtWebEngine
@@ -190,7 +190,7 @@ Index: configure.cmake
          OPTIONAL
      )
      if(qpa_xcb_support_check AND NOT QT_CONFIGURE_CHECK_${lib})
-@@ -743,7 +706,7 @@ qt_feature("webengine-system-openh264" PRIVATE
+@@ -763,7 +726,7 @@ qt_feature("webengine-system-openh264" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support X11 on qpa-xcb"

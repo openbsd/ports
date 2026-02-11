@@ -1,7 +1,6 @@
 QT6NAME =	QtDataVis3D
 COMMENT =	Qt6 3D data visualization components
 PKGSPEC =	qt6-qtdatavis3d-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6DataVisualization      2.0 # 6.7
 SHARED_LIBS +=  Qt6DataVisualizationQml   1.0 # 6.7

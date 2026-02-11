@@ -1,7 +1,6 @@
 QT6NAME =	QtWebChannel
 COMMENT =	Qt6 seamless HTML/JavaScript integration
 PKGSPEC =	qt6-qtwebchannel-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6WebChannel             2.1 # 0.0
 SHARED_LIBS +=  Qt6WebChannelQuick        0.1 # 0.0

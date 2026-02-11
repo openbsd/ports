@@ -10,7 +10,7 @@ Index: src/core/CMakeLists.txt
      setup_toolchains()
  endif()
  
-@@ -212,7 +212,7 @@ foreach(arch ${archs})
+@@ -213,7 +213,7 @@ foreach(arch ${archs})
                  accessibility_activation_observer.cpp accessibility_activation_observer.h
          )
  
@@ -19,7 +19,7 @@ Index: src/core/CMakeLists.txt
              SOURCES
                  ozone/gl_ozone_qt.cpp ozone/gl_ozone_qt.h
                  ozone/ozone_util_qt.cpp ozone/ozone_util_qt.h
-@@ -220,17 +220,17 @@ foreach(arch ${archs})
+@@ -221,17 +221,17 @@ foreach(arch ${archs})
                  ozone/surface_factory_qt.cpp ozone/surface_factory_qt.h
          )
  
@@ -40,7 +40,7 @@ Index: src/core/CMakeLists.txt
              SOURCES
                  ozone/egl_helper.cpp ozone/egl_helper.h
          )
-@@ -461,7 +461,7 @@ foreach(arch ${archs})
+@@ -462,7 +462,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
@@ -49,7 +49,7 @@ Index: src/core/CMakeLists.txt
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -534,6 +534,10 @@ foreach(arch ${archs})
+@@ -535,6 +535,10 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_gbm
              )
              extend_gn_list(gnArgArg
@@ -60,7 +60,7 @@ Index: src/core/CMakeLists.txt
                  ARGS rtc_system_openh264
                  CONDITION QT_FEATURE_webengine_webrtc_system_openh264
              )
-@@ -657,9 +661,9 @@ add_gn_build_artifacts_to_target(
+@@ -658,9 +662,9 @@ add_gn_build_artifacts_to_target(
      ${dataStampOption}
  )
  add_dependencies(WebEngineCore run_core_NinjaDone)

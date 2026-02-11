@@ -1,7 +1,7 @@
 Index: src/gui/configure.cmake
 --- src/gui/configure.cmake.orig
 +++ src/gui/configure.cmake
-@@ -76,7 +76,7 @@ qt_find_package(GLESv2 MODULE
+@@ -79,7 +79,7 @@ qt_find_package(GLESv2 MODULE
  qt_find_package(Tslib MODULE PROVIDED_TARGETS PkgConfig::Tslib MODULE_NAME gui QMAKE_LIB tslib)
  qt_find_package(WrapVulkanHeaders MODULE PROVIDED_TARGETS WrapVulkanHeaders::WrapVulkanHeaders
      MODULE_NAME gui QMAKE_LIB vulkan MARK_OPTIONAL)
@@ -10,7 +10,7 @@ Index: src/gui/configure.cmake
      qt_find_package(Wayland MODULE PROVIDED_TARGETS Wayland::Server
                      MODULE_NAME gui QMAKE_LIB wayland_server)
      qt_find_package(Wayland MODULE PROVIDED_TARGETS Wayland::Client
-@@ -192,7 +192,7 @@ endif()
+@@ -195,7 +195,7 @@ endif()
  qt_add_qmake_lib_dependency(xrender xlib)
  
  # qt wayland client
@@ -19,7 +19,7 @@ Index: src/gui/configure.cmake
      # EGL
      if(NOT TARGET EGL::EGL)
          qt_find_package(EGL MODULE
-@@ -429,7 +429,7 @@ PVRGrfxServerInit();
+@@ -432,7 +432,7 @@ PVRGrfxServerInit();
  qt_config_compile_test(evdev
      LABEL "evdev"
      CODE

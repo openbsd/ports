@@ -1,9 +1,8 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
-REVISION =	1
 
-SHARED_LIBS +=  Qt6Multimedia             9.0 # 6.7
+SHARED_LIBS +=  Qt6Multimedia             9.1 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        6.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7
@@ -49,4 +48,5 @@ CFLAGS +=	-msse
 CXXFLAGS +=	-msse
 .endif
 
+LIB_DEPENDS += devel/gettext,-runtime wayland/wayland 
 .include <bsd.port.mk>

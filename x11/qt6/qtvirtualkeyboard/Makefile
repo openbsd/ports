@@ -1,7 +1,6 @@
 QT6NAME =	QtVirtualKeyboard
 COMMENT =	Qt6 virtual keyboard plugin
 PKGSPEC =	qt6-qtvirtualkeyboard-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6HunspellInputMethod     3.0 # 6.7
 SHARED_LIBS +=  Qt6VirtualKeyboard         4.0 # 6.7

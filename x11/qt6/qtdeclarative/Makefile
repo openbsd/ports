@@ -4,10 +4,9 @@ USE_WXNEEDED =	Yes
 QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS =   Qt6Qml                    7.0 # 6.7
-SHARED_LIBS +=  Qt6Quick                  8.0 # 6.7
+SHARED_LIBS +=  Qt6Quick                  8.1 # 6.7
 SHARED_LIBS +=  Qt6QuickParticles         3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickTest              3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickWidgets           5.0 # 6.7
@@ -26,11 +25,11 @@ SHARED_LIBS +=  Qt6QmlXmlListModel        2.0 # 6.7
 SHARED_LIBS +=  Qt6QuickControls2         3.0 # 6.7
 SHARED_LIBS +=  Qt6QuickControls2Impl     2.0 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2          3.0 # 6.7
-SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 4.0 # 6.7
+SHARED_LIBS +=  Qt6QuickDialogs2QuickImpl 4.1 # 6.7
 SHARED_LIBS +=  Qt6QuickDialogs2Utils     2.0 # 6.7
 SHARED_LIBS +=  Qt6QuickLayouts           4.0 # 6.7
 SHARED_LIBS +=  Qt6QuickTemplates2        7.0 # 6.7
-SHARED_LIBS +=  Qt6QmlCompiler            4.0 # 6.7
+SHARED_LIBS +=  Qt6QmlCompiler            5.0 # 6.7
 SHARED_LIBS +=  Qt6QuickEffects           2.0 # 6.7
 SHARED_LIBS +=	Qt6QmlNetwork             2.0 # 6.7
 
@@ -49,7 +48,7 @@ SHARED_LIBS +=  Qt6LabsPlatform           0.0 # 0.0
 SHARED_LIBS +=  Qt6QmlMeta                0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickControls2FluentWinUI3StyleImpl 0.0 # 0.0
 SHARED_LIBS +=  Qt6QuickVectorImage       0.0 # 0.0
-SHARED_LIBS +=  Qt6QuickVectorImageGenerator 0.0 # 0.0
+SHARED_LIBS +=  Qt6QuickVectorImageGenerator 1.0 # 0.0
 
 SHARED_LIBS +=	Qt6LabsSynchronizer       0.0 # 0.0
 SHARED_LIBS +=	Qt6QuickShapesDesignHelpers 0.0 # 0.0
@@ -62,6 +61,8 @@ MODULES =	lang/python
 CONFIGURE_STYLE = cmake
 
 CXXFLAGS_ports-gcc =	-fdelete-null-pointer-checks
+
+#CONFIGURE_ARGS +=	-DQT_BUILD_TESTS=ON
 
 MODQT6_DEPS =	No
 

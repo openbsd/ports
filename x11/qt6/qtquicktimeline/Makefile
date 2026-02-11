@@ -1,7 +1,6 @@
 QT6NAME =	QtQuickTimeline
 COMMENT =	Qt6 module for keyframe-based timeline construction.
 PKGSPEC =	qt6-qtquicktimeline-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6QuickTimeline           2.0 # 6.7
 SHARED_LIBS +=	Qt6QuickTimelineBlendTrees 0.0 # 0.0

@@ -4578,6 +4578,7 @@ lib/qt6/qml/QtQuick/Controls/Imagine/RoundButton.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/ScrollBar.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/ScrollIndicator.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/ScrollView.qml
+lib/qt6/qml/QtQuick/Controls/Imagine/SearchField.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/SelectionRectangle.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/Slider.qml
 lib/qt6/qml/QtQuick/Controls/Imagine/SpinBox.qml

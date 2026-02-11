@@ -1,7 +1,6 @@
 QT6NAME =	QtQuick3d
 COMMENT =	Quick 3D support for Qt6
 PKGSPEC =	qt6-qtquick3d-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6Quick3D                6.0 # 6.7
 SHARED_LIBS +=  Qt6Quick3DAssetImport     2.0 # 6.7

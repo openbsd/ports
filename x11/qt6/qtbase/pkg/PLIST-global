@@ -187,8 +187,8 @@ share/qt6/wayland/protocols/appmenu/appmenu.xml
 share/qt6/wayland/protocols/appmenu/qt_attribution.json
 share/qt6/wayland/protocols/color-management/
 share/qt6/wayland/protocols/color-management/REUSE.toml
+share/qt6/wayland/protocols/color-management/color-management-v1.xml
 share/qt6/wayland/protocols/color-management/qt_attribution.json
-share/qt6/wayland/protocols/color-management/xx-color-management-v4.xml
 share/qt6/wayland/protocols/cursor-shape/
 share/qt6/wayland/protocols/cursor-shape/REUSE.toml
 share/qt6/wayland/protocols/cursor-shape/cursor-shape-v1.xml

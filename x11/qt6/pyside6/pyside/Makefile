@@ -21,6 +21,7 @@ WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6UiTools
 WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
 WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6WebView Qt6Widgets
 WANTLIB += Qt6Xml m shiboken6.abi3
+WANTLIB += Qt6Multimedia
 
 MODULES +=		lang/python
 

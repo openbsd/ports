@@ -2171,6 +2171,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qtwaylandclient-config_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qtwaylandclientglobal_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-appmenu.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-color-management-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-cursor-shape-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-fractional-scale-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-hardware-integration.h
@@ -2191,7 +2192,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-shell.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-system-bell-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xx-color-management-v4.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandappmenu_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandbuffer_p.h
@@ -2212,7 +2212,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddecor
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddecorationplugin_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddisplay_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylanddnd_p.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandeventdispatcher_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandfractionalscale_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandhardwareintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputcontext_p.h
@@ -2253,6 +2252,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandvulka
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandwindow_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandwindowmanagerintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-appmenu-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-color-management-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-cursor-shape-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-fractional-scale-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-hardware-integration-client-protocol.h
@@ -2273,7 +2273,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-o
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-system-bell-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xx-color-management-v4-client-protocol.h
 include/X11/qt6/QtWaylandClient/QWaylandClientExtension
 include/X11/qt6/QtWaylandClient/QWaylandClientExtensionTemplate
 include/X11/qt6/QtWaylandClient/QtWaylandClient
@@ -2395,6 +2394,7 @@ include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtoolbararealayout_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtoolbarextension_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtoolbarlayout_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtoolbarseparator_p.h
+include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtooltip_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtreeview_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtreewidget_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qtreewidgetitemiterator_p.h
@@ -2963,9 +2963,13 @@ lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake
@@ -3767,6 +3771,8 @@ lib/qt6/libexec/${MODPY_PYCACHE}qt-android-runner.${MODPY_PYC_MAGIC_TAG}${MODPY_
 lib/qt6/libexec/${MODPY_PYCACHE}qt-android-runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/qt6/libexec/${MODPY_PYCACHE}qt_cyclonedx_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/qt6/libexec/${MODPY_PYCACHE}qt_cyclonedx_generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
 @bin lib/qt6/libexec/cmake_automoc_parser
@@ -3780,6 +3786,7 @@ lib/qt6/libexec/qt-cmake-standalone-test
 lib/qt6/libexec/qt-internal-configure-examples
 lib/qt6/libexec/qt-internal-configure-tests
 lib/qt6/libexec/qt-testrunner.py
+lib/qt6/libexec/qt_cyclonedx_generator.py
 @bin lib/qt6/libexec/qtwaylandscanner
 @bin lib/qt6/libexec/qvkgen
 @bin lib/qt6/libexec/rcc

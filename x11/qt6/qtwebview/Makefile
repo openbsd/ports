@@ -1,7 +1,6 @@
 QT6NAME =	QtWebView
 COMMENT =	simple web viewing component for Qt6
 PKGSPEC =	qt6-qtwebview-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6WebView                0.0 # 0.0
 SHARED_LIBS +=  Qt6WebViewQuick           0.0 # 0.0

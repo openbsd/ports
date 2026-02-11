@@ -1,7 +1,7 @@
 Index: cmake/Functions.cmake
 --- cmake/Functions.cmake.orig
 +++ cmake/Functions.cmake
-@@ -129,7 +129,7 @@ function(add_linker_options target buildDir completeSt
+@@ -143,7 +143,7 @@ function(add_linker_options target buildDir completeSt
      set(libs_rsp "${buildDir}/${ninjaTarget}_libs.rsp")
      set(ldir_rsp "${buildDir}/${ninjaTarget}_ldir.rsp")
      set_target_properties(${cmakeTarget} PROPERTIES STATIC_LIBRARY_OPTIONS "@${objects_rsp}")
@@ -10,7 +10,7 @@ Index: cmake/Functions.cmake
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -505,6 +505,7 @@ function(addSyncTargets module)
+@@ -570,6 +570,7 @@ function(addSyncTargets module)
      add_custom_target(run_${module}_GnReady)
      add_custom_target(run_${module}_GnDone)
      add_custom_target(run_${module}_NinjaReady)

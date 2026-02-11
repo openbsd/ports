@@ -1,7 +1,6 @@
 QT6NAME =	QtLocation
 COMMENT =	Geo positioning APIs
 PKGSPEC =	qt6-qtlocation-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=	Qt6Location               3.0 # 0.0
 

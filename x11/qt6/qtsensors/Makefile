@@ -1,7 +1,6 @@
 QT6NAME =	QtSensors
 COMMENT =	Qt6 hardware sensors support
 PKGSPEC =	qt6-qtsensors-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6Sensors                2.0 # 6.7
 SHARED_LIBS +=  Qt6SensorsQuick           1.1 # 6.7
