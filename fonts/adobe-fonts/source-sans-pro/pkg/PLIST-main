@@ -1,0 +1,33 @@
+@pkgpath fonts/adobe-source-sans-pro
+share/fonts/
+@fontdir share/fonts/adobe-source-sans/
+share/fonts/adobe-source-sans/SourceSans3-Black.otf
+share/fonts/adobe-source-sans/SourceSans3-Black.ttf
+share/fonts/adobe-source-sans/SourceSans3-BlackIt.otf
+share/fonts/adobe-source-sans/SourceSans3-BlackIt.ttf
+share/fonts/adobe-source-sans/SourceSans3-Bold.otf
+share/fonts/adobe-source-sans/SourceSans3-Bold.ttf
+share/fonts/adobe-source-sans/SourceSans3-BoldIt.otf
+share/fonts/adobe-source-sans/SourceSans3-BoldIt.ttf
+share/fonts/adobe-source-sans/SourceSans3-ExtraLight.otf
+share/fonts/adobe-source-sans/SourceSans3-ExtraLight.ttf
+share/fonts/adobe-source-sans/SourceSans3-ExtraLightIt.otf
+share/fonts/adobe-source-sans/SourceSans3-ExtraLightIt.ttf
+share/fonts/adobe-source-sans/SourceSans3-It.otf
+share/fonts/adobe-source-sans/SourceSans3-It.ttf
+share/fonts/adobe-source-sans/SourceSans3-Light.otf
+share/fonts/adobe-source-sans/SourceSans3-Light.ttf
+share/fonts/adobe-source-sans/SourceSans3-LightIt.otf
+share/fonts/adobe-source-sans/SourceSans3-LightIt.ttf
+share/fonts/adobe-source-sans/SourceSans3-Medium.otf
+share/fonts/adobe-source-sans/SourceSans3-Medium.ttf
+share/fonts/adobe-source-sans/SourceSans3-MediumIt.otf
+share/fonts/adobe-source-sans/SourceSans3-MediumIt.ttf
+share/fonts/adobe-source-sans/SourceSans3-Regular.otf
+share/fonts/adobe-source-sans/SourceSans3-Regular.ttf
+share/fonts/adobe-source-sans/SourceSans3-Semibold.otf
+share/fonts/adobe-source-sans/SourceSans3-Semibold.ttf
+share/fonts/adobe-source-sans/SourceSans3-SemiboldIt.otf
+share/fonts/adobe-source-sans/SourceSans3-SemiboldIt.ttf
+share/fonts/adobe-source-sans/SourceSans3VF-Italic.otf
+share/fonts/adobe-source-sans/SourceSans3VF-Upright.otf

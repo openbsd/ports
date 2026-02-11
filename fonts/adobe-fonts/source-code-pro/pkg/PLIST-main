@@ -1,10 +1,4 @@
 @pkgpath fonts/adobe-source-code-pro
-share/doc/adobe-source-code-pro/
-share/doc/adobe-source-code-pro/LICENSE.md
-share/doc/adobe-source-code-pro/README.md
-share/doc/adobe-source-code-pro/package.json
-share/doc/adobe-source-code-pro/source-code-pro.css
-share/doc/adobe-source-code-pro/source-code-variable.css
 share/fonts/
 @fontdir share/fonts/adobe-source-code-pro/
 share/fonts/adobe-source-code-pro/SourceCodePro-Black.otf
@@ -35,3 +29,5 @@ share/fonts/adobe-source-code-pro/SourceCodePro-Semibold.otf
 share/fonts/adobe-source-code-pro/SourceCodePro-Semibold.ttf
 share/fonts/adobe-source-code-pro/SourceCodePro-SemiboldIt.otf
 share/fonts/adobe-source-code-pro/SourceCodePro-SemiboldIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodeVF-Italic.otf
+share/fonts/adobe-source-code-pro/SourceCodeVF-Upright.otf
