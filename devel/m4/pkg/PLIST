@@ -3,6 +3,7 @@
 @comment lib/charset.alias
 @man man/man1/gm4.1
 share/examples/gm4/
+share/examples/gm4/barem4.m4
 share/examples/gm4/capitalize.m4
 share/examples/gm4/capitalize2.m4
 share/examples/gm4/comments.m4
@@ -40,6 +41,7 @@ share/examples/gm4/stack.m4
 share/examples/gm4/stack_sep.m4
 share/examples/gm4/sync-lines.m4
 share/examples/gm4/sysv-args.m4
+share/examples/gm4/testbarem4.m4
 share/examples/gm4/trace.m4
 share/examples/gm4/translit.m4
 share/examples/gm4/undivert.m4

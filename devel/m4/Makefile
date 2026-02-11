@@ -1,7 +1,6 @@
-COMMENT=	GNU m4
+COMMENT=	GNU m4 (general-purpose macro processor)
 
-DISTNAME=	m4-1.4.20
-REVISION=	0
+DISTNAME=	m4-1.4.21
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=m4/}
 EXTRACT_SUFX=	.tar.xz

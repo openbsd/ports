@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -2452,7 +2452,7 @@ SUFFIXES = .1
+@@ -2476,7 +2476,7 @@ SUFFIXES = .1
  
  # The customization variable CHECK_NORMAL_MENU_STRUCTURE is necessary with
  # makeinfo versions ≥ 6.8.
