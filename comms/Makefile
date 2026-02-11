@@ -43,6 +43,7 @@
      SUBDIR += py-serial-asyncio
      SUBDIR += qodem
      SUBDIR += qpage
+     SUBDIR += qrq
      SUBDIR += rtl-sdr
      SUBDIR += rtl_433
      SUBDIR += scmxx
