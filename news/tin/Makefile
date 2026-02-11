@@ -5,13 +5,14 @@ MAJORVERSION=	2.6
 PATCHLEVEL=	4
 CATEGORIES=	news
 
-SITES=		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
-		http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
-		http://ftp.lip6.fr/pub/unix/news/readers/tin-unoff/ \
-		ftp://ftp.karlsruhe.org:/pub/news/clients/tin/ \
-		ftp://ftp.cuhk.edu.hk:/pub/packages/news/tin/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/news/tin/ \
-		ftp://ftp.tin.org/pub/news/clients/tin/v${MAJORVERSION}/
+REVISION=	0
+
+# stable first will allow pprtroach to find updates for a new major version,
+# v${MAJORVERSION} as a fallback allows fetching distfiles from an old stable
+SITES=		https://sunsite.icm.edu.pl/pub/unix/news/tin/stable/ \
+		https://sunsite.icm.edu.pl/pub/unix/news/tin/v${MAJORVERSION}/ \
+		ftp://ftp.tin.org/pub/news/clients/tin/v${MAJORVERSION}/ \
+		ftp://ftp.karlsruhe.org/pub/news/clients/tin/v${MAJORVERSION}/
 
 HOMEPAGE=	http://www.tin.org/
 
@@ -20,7 +21,7 @@ HOMEPAGE=	http://www.tin.org/
 # vms/vms.c
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c>=58.2 curses iconv icui18n icuuc idn2 intl pcre z
+WANTLIB += c curses iconv icui18n icuuc idn2 intl pcre2-8 uriparser z
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69
@@ -36,7 +37,7 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-slrnface \
 			--disable-gsasl \
 			--with-screen=ncurses \
-			--with-pcre=${LOCALBASE} \
+			--with-pcre2-config=${LOCALBASE}/bin/pcre2-config \
 			--with-libdir=${PREFIX}/lib/news \
 			--with-spooldir=${VARBASE}/spool/news \
 			--enable-break-long-lines \
@@ -46,10 +47,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS+=	devel/pcre \
+LIB_DEPENDS+=	devel/pcre2 \
 		devel/gettext,-runtime \
 		devel/libidn2 \
-		textproc/icu4c
+		textproc/icu4c \
+		www/uriparser
 
 ALL_TARGET=	build
 
