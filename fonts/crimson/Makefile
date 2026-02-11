@@ -1,24 +1,25 @@
-COMMENT=	oldstyle book font
+COMMENT-main =	oldstyle book font
+COMMENT-web =	oldstyle book font (web fonts)
+
+MULTI_PACKAGES =	-main -web
+
+MODFONT_FAMILY =	crimson
 
 GH_ACCOUNT=	skosch
 GH_PROJECT=	Crimson
 GH_TAGNAME=	fonts-october2014
-PKGNAME=	crimson-2014.10
+MODFONT_VERSION =	2014.10
+REVISION =	0
 
-CATEGORIES=	fonts
+MODULES =	font
 
 # SIL OFL 1.1
 PERMIT_PACKAGE=	Yes
 
-PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-FONTSDIR=	${PREFIX}/share/fonts/crimson
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	cd "${WRKSRC}/Desktop Fonts/OTF"; \
-	    ${INSTALL_DATA} *.otf ${FONTSDIR}
+MODFONT_FONTFILES =	Desktop*Fonts/OTF/*.otf
+MODFONT_WEBFILES =	Web*Fonts/*.woff
 
 .include <bsd.port.mk>
