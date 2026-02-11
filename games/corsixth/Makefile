@@ -2,13 +2,14 @@ V =		0.69.1
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	CorsixTH
 GH_PROJECT =	CorsixTH
 GH_TAGNAME =	v${V}
 
 HOMEPAGE =	https://corsixth.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

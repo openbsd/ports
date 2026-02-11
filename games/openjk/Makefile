@@ -2,13 +2,14 @@
 COMMENT =	open source reimplementation of Jedi Academy game
 DISTNAME =	openjk-0.0.0.20210505
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	JACoders
 GH_PROJECT =	OpenJK
 GH_COMMIT =	5ce940643748eb6b11a84281b201001fbdc665fe
 
 HOMEPAGE =	https://openjk.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

@@ -3,11 +3,12 @@ COMMENT =	free remake of One Must Fall 2097 game engine
 V =		0.8.5
 PKGNAME =	openomf-${V}
 DIST_TUPLE +=	github omf2097 openomf ${V} .
+REVISION =	0
 
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.openomf.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
