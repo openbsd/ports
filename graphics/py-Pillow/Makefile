@@ -1,6 +1,6 @@
 COMMENT=	Python Imaging Library (friendly fork of PIL)
 
-MODPY_DISTV=	12.1.0
+MODPY_DISTV=	12.1.1
 DISTNAME=	pillow-${MODPY_DISTV}
 PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
@@ -15,7 +15,9 @@ WANTLIB += webp webpdemux webpmux xcb z
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-# uses own in-tree backend which wraps setuptools
+# uses own in-tree backend which wraps setuptools; not setting to
+# "other" to hide this as it would also hide changes to another
+# build system
 MODPY_PYBUILD=	setuptools
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
