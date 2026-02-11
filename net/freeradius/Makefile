@@ -7,7 +7,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
-V=		3.2.6
+V=		3.2.8
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -75,11 +75,11 @@ LIB_DEPENDS-main=	databases/gdbm \
 			net/libunbound \
 			security/yubico/yubico-c \
 			security/yubico/yubico-c-client \
-			devel/pcre \
+			devel/pcre2 \
 			net/curl
 
 WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m
-WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc
+WANTLIB-main += pcap pcre2-8 perl pthread readline sqlite3 ssl talloc
 WANTLIB-main += unbound ykclient yubikey
 
 .for i in ${MULTI_PACKAGES:N-main}

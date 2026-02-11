@@ -1,0 +1,20 @@
+Index: src/main/command.c
+--- src/main/command.c.orig
++++ src/main/command.c
+@@ -2727,11 +2727,11 @@ static int command_stats_pool(rad_listen_t *listener, 
+ 		return CMD_FAIL;
+ 	}
+ 
+-	cprintf(listener, "last_checked\t\t%zu\n", stats->last_checked);
+-	cprintf(listener, "last_opened\t\t%zu\n", stats->last_opened);
+-	cprintf(listener, "last_closed\t\t%zu\n", stats->last_closed);
+-	cprintf(listener, "last_failed\t\t%zu\n", stats->last_failed);
+-	cprintf(listener, "last_throttled\t\t%zu\n", stats->last_throttled);
++	cprintf(listener, "last_checked\t\t%" PRIu64 "\n", (long long)stats->last_checked);
++	cprintf(listener, "last_opened\t\t%" PRIu64 "\n", (long long)stats->last_opened);
++	cprintf(listener, "last_closed\t\t%" PRIu64 "\n", (long long)stats->last_closed);
++	cprintf(listener, "last_failed\t\t%" PRIu64 "\n", (long long)stats->last_failed);
++	cprintf(listener, "last_throttled\t\t%" PRIu64 "\n", (long long)stats->last_throttled);
+ 	cprintf(listener, "total_opened\t\t%" PRIu64 "\n", stats->opened);
+ 	cprintf(listener, "total_closed\t\t%" PRIu64 "\n", stats->closed);
+ 	cprintf(listener, "total_failed\t\t%" PRIu64 "\n", stats->failed);

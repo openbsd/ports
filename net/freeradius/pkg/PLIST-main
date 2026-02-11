@@ -137,6 +137,7 @@ lib/freeradius/
 @so lib/freeradius/rlm_passwd.so
 @so lib/freeradius/rlm_perl.so
 @so lib/freeradius/rlm_preprocess.so
+@so lib/freeradius/rlm_proxy_rate_limit.so
 @so lib/freeradius/rlm_radutmp.so
 @so lib/freeradius/rlm_realm.so
 @so lib/freeradius/rlm_redis.so
@@ -331,7 +332,6 @@ share/doc/freeradius/rfc/rfc6930.txt
 share/doc/freeradius/rfc/rfc7055.txt
 share/doc/freeradius/rfc/rfc7268.txt
 share/doc/freeradius/rfc/rfc7542.txt
-share/doc/freeradius/rfc/rfc7599.txt
 share/doc/freeradius/schemas/
 share/doc/freeradius/schemas/logstash/
 share/doc/freeradius/schemas/logstash/README
@@ -459,6 +459,10 @@ share/examples/freeradius/mods-available/ippool
 @sample ${FREERADIUS_ETC}/mods-available/ippool
 share/examples/freeradius/mods-available/json
 @sample ${FREERADIUS_ETC}/mods-available/json
+share/examples/freeradius/mods-available/kafka
+@sample ${FREERADIUS_ETC}/mods-available/kafka
+share/examples/freeradius/mods-available/kafka_async
+@sample ${FREERADIUS_ETC}/mods-available/kafka_async
 share/examples/freeradius/mods-available/krb5
 @sample ${FREERADIUS_ETC}/mods-available/krb5
 share/examples/freeradius/mods-available/linelog
@@ -486,6 +490,8 @@ share/examples/freeradius/mods-available/perl
 @sample ${FREERADIUS_ETC}/mods-available/perl
 share/examples/freeradius/mods-available/preprocess
 @sample ${FREERADIUS_ETC}/mods-available/preprocess
+share/examples/freeradius/mods-available/proxy_rate_limit
+@sample ${FREERADIUS_ETC}/mods-available/proxy_rate_limit
 share/examples/freeradius/mods-available/radutmp
 @sample ${FREERADIUS_ETC}/mods-available/radutmp
 share/examples/freeradius/mods-available/realm
@@ -557,6 +563,10 @@ share/examples/freeradius/mods-config/files/dhcp
 @sample ${FREERADIUS_ETC}/mods-config/files/dhcp
 share/examples/freeradius/mods-config/files/pre-proxy
 @sample ${FREERADIUS_ETC}/mods-config/files/pre-proxy
+share/examples/freeradius/mods-config/kafka/
+@sample ${FREERADIUS_ETC}/mods-config/kafka/
+share/examples/freeradius/mods-config/kafka/messages-json.conf
+@sample ${FREERADIUS_ETC}/mods-config/kafka/messages-json.conf
 share/examples/freeradius/mods-config/perl/
 @sample ${FREERADIUS_ETC}/mods-config/perl/
 share/examples/freeradius/mods-config/perl/example.pl
@@ -673,6 +683,7 @@ share/examples/freeradius/mods-enabled/ntlm_auth
 share/examples/freeradius/mods-enabled/pap
 share/examples/freeradius/mods-enabled/passwd
 share/examples/freeradius/mods-enabled/preprocess
+share/examples/freeradius/mods-enabled/proxy_rate_limit
 share/examples/freeradius/mods-enabled/radutmp
 share/examples/freeradius/mods-enabled/realm
 share/examples/freeradius/mods-enabled/replicate
@@ -885,9 +896,11 @@ share/freeradius/dictionary.h3c
 share/freeradius/dictionary.hillstone
 share/freeradius/dictionary.hp
 share/freeradius/dictionary.huawei
+share/freeradius/dictionary.huawei.v2
 share/freeradius/dictionary.iana
 share/freeradius/dictionary.iea
 share/freeradius/dictionary.infinera
+share/freeradius/dictionary.infinera.broken
 share/freeradius/dictionary.infoblox
 share/freeradius/dictionary.infonet
 share/freeradius/dictionary.ipunplugged

@@ -1,0 +1,50 @@
+fix types passed to curl_easy_setopt()
+
+Index: src/modules/rlm_rest/rest.c
+--- src/modules/rlm_rest/rest.c.orig
++++ src/modules/rlm_rest/rest.c
+@@ -409,11 +409,11 @@ void *mod_conn_create(TALLOC_CTX *ctx, void *instance)
+ 		 *  done on the first request, but we do it here to minimise
+ 		 *  latency.
+ 		 */
+-		SET_OPTION(CURLOPT_SSL_VERIFYPEER, 0);
+-		SET_OPTION(CURLOPT_SSL_VERIFYHOST, 0);
+-		SET_OPTION(CURLOPT_CONNECT_ONLY, 1);
++		SET_OPTION(CURLOPT_SSL_VERIFYPEER, 0L);
++		SET_OPTION(CURLOPT_SSL_VERIFYHOST, 0L);
++		SET_OPTION(CURLOPT_CONNECT_ONLY, 1L);
+ 		SET_OPTION(CURLOPT_URL, inst->connect_uri);
+-		SET_OPTION(CURLOPT_NOSIGNAL, 1);
++		SET_OPTION(CURLOPT_NOSIGNAL, 1L);
+ 
+ 		DEBUG("rlm_rest (%s): Connecting to \"%s\"", inst->xlat_name, inst->connect_uri);
+ 
+@@ -1974,7 +1974,7 @@ static int rest_request_config_body(UNUSED rlm_rest_t 
+ 	 *  no body should be sent.
+ 	 */
+ 	if (!func) {
+-		SET_OPTION(CURLOPT_POSTFIELDSIZE, 0);
++		SET_OPTION(CURLOPT_POSTFIELDSIZE, 0L);
+ 		return 0;
+ 	}
+ 
+@@ -2062,7 +2062,7 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
+ 	 *	Setup any header options and generic headers.
+ 	 */
+ 	SET_OPTION(CURLOPT_URL, uri);
+-	SET_OPTION(CURLOPT_NOSIGNAL, 1);
++	SET_OPTION(CURLOPT_NOSIGNAL, 1L);
+ 	SET_OPTION(CURLOPT_USERAGENT, "FreeRADIUS " RADIUSD_VERSION_STRING);
+ 
+ 	/*
+@@ -2253,8 +2253,8 @@ int rest_request_config(rlm_rest_t *instance, rlm_rest
+ 	}
+ #endif
+ 
+-	SET_OPTION(CURLOPT_SSL_VERIFYPEER, (section->tls_check_cert == true) ? 1 : 0);
+-	SET_OPTION(CURLOPT_SSL_VERIFYHOST, (section->tls_check_cert_cn == true) ? 2 : 0);
++	SET_OPTION(CURLOPT_SSL_VERIFYPEER, (long)(section->tls_check_cert == true) ? 1 : 0);
++	SET_OPTION(CURLOPT_SSL_VERIFYHOST, (long)(section->tls_check_cert_cn == true) ? 2 : 0);
+ 
+ 	/*
+ 	 *	Tell CURL how to get HTTP body content, and how to process incoming data.

@@ -1,7 +1,7 @@
 Index: src/main/cb.c
 --- src/main/cb.c.orig
 +++ src/main/cb.c
-@@ -61,7 +61,7 @@ void cbtls_info(SSL const *s, int where, int ret)
+@@ -62,7 +62,7 @@ void cbtls_info(SSL const *s, int where, int ret)
  			/*
  			 *	After a ClientHello, list all the proposed ciphers from the client
  			 */
@@ -10,7 +10,7 @@ Index: src/main/cb.c
  			if (SSL_get_state(s) == TLS_ST_SR_CLNT_HELLO) {
  				int i;
  				int num_ciphers;
-@@ -121,7 +121,7 @@ void cbtls_info(SSL const *s, int where, int ret)
+@@ -122,7 +122,7 @@ void cbtls_info(SSL const *s, int where, int ret)
  				return;
  			}
  			RERROR("(TLS) %s - %s: Error in %s", conf->name, role, state);
@@ -19,7 +19,7 @@ Index: src/main/cb.c
  			if (RDEBUG_ENABLED3 && (SSL_get_state(s) == TLS_ST_SR_CLNT_HELLO)) goto report_ciphers;
  #endif
  		}
-@@ -208,7 +208,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
+@@ -209,7 +209,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
  		state->info.alert_level = 0x00;
  		state->info.alert_description = 0x00;
  
