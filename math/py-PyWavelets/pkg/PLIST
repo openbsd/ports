@@ -1,9 +1,13 @@
 @pkgpath math/py-PyWavelets,python3
 lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/licenses/licenses_bundled/
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/licenses/licenses_bundled/LICENSE_numpy.txt
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/licenses/licenses_bundled/LICENSE_scipy.txt
 lib/python${MODPY_VERSION}/site-packages/pywt/
 lib/python${MODPY_VERSION}/site-packages/pywt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}/
@@ -70,16 +74,13 @@ lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}_readers.${MO
 lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}_readers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}_wavelab_signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}_wavelab_signals.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}create_dat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pywt/data/${MODPY_PYCACHE}create_dat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/data/_readers.py
 lib/python${MODPY_VERSION}/site-packages/pywt/data/_wavelab_signals.py
 lib/python${MODPY_VERSION}/site-packages/pywt/data/aero.npz
 lib/python${MODPY_VERSION}/site-packages/pywt/data/ascent.npz
 lib/python${MODPY_VERSION}/site-packages/pywt/data/camera.npz
-lib/python${MODPY_VERSION}/site-packages/pywt/data/create_dat.py
-lib/python${MODPY_VERSION}/site-packages/pywt/data/ecg.npy
-lib/python${MODPY_VERSION}/site-packages/pywt/data/sst_nino3.npy
+lib/python${MODPY_VERSION}/site-packages/pywt/data/ecg.npz
+lib/python${MODPY_VERSION}/site-packages/pywt/data/sst_nino3.npz
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test__pywt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
