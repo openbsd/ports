@@ -1,11 +1,14 @@
 COMMENT =	faithfully remade Amiga fonts
 
-GH_ACCOUNT =	rewtnull
-GH_PROJECT =	amigafonts
-GH_TAGNAME =	1.02
-REVISION =	2
+MODFONT_FAMILY =	amigafonts
+MODFONT_VERSION =	1.02
 
-CATEGORIES =	fonts
+GH_ACCOUNT =	rewtnull
+GH_PROJECT =	${MODFONT_FAMILY}
+GH_TAGNAME =	${MODFONT_VERSION}
+REVISION =	3
+
+MODULES =	font
 
 # GPL-FE
 PERMIT_PACKAGE =	Yes
@@ -13,18 +16,11 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-PKG_ARCH =	*
-
-FONTDIR =	${PREFIX}/share/fonts/amigafonts
-DOCDIR =	${PREFIX}/share/doc/amigafonts
-
 do-patch:
-	cd ${WRKDIST}/ttf && for i in `ls *.ttf`; do \
+	cd ${WRKDIST}/ttf && for i in *.ttf; do \
 		mv $$i `echo $$i | sed -e 's/_v1.0//;s/_/-/'`; done
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/ttf/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/README ${DOCDIR}
+MODFONT_FONTFILES =	ttf/*.ttf
+MODFONT_DOCFILES =	README
 
 .include <bsd.port.mk>
