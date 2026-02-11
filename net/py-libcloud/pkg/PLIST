@@ -408,8 +408,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/container/utils/docker.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/data/
 lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json
-lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha256
-lib/python${MODPY_VERSION}/site-packages/libcloud/data/pricing.json.sha512
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/${MODPY_PYCACHE}/
@@ -645,8 +643,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}connecti
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}dist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}dist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}escape.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}escape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -671,7 +667,6 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}xml.${MO
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/decorators.py
-lib/python${MODPY_VERSION}/site-packages/libcloud/utils/dist.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/escape.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/files.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/iso8601.py

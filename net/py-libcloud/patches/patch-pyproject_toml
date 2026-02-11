@@ -5,8 +5,8 @@ Index: pyproject.toml
  
  [build-system]
  requires = [
--    "setuptools~=66.1",
--    "wheel~=0.37.1"
+-    "setuptools~=75.3.0",
+-    "wheel~=0.45.1"
 +    "setuptools",
 +    "wheel"
  ]
