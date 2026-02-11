@@ -3,7 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes
 
 BROKEN-powerpc64 =	needs new bootstrap
 
-DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel parallel2
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-gdb =		Rust debugger through gdb and lldb
