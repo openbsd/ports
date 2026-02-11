@@ -90,7 +90,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/terraform-exec							 v0.24.0 \
 	github.com/hashicorp/terraform-json							 v0.27.2 \
 	github.com/hashicorp/terraform-registry-address						 v0.4.0 \
-	github.com/hashicorp/terraform-schema							 v0.0.0-20251124065812-a4dd8fbff2ba \
+	github.com/hashicorp/terraform-schema							 v0.0.0-20260205102753-cd082b91e422 \
 	github.com/hashicorp/terraform-svchost							 v0.1.1 \
 	github.com/hexops/autogold								 v1.3.1 \
 	github.com/hexops/gotextdiff								 v1.0.3 \
