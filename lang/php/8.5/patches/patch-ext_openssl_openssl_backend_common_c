@@ -1,7 +1,11 @@
+This check doesn't make sense for EC keys. (Also it ignores the default
+key size compiled into libcrypto, only looks at default_bits in openssl.cnf
+and any settings in the php file, which results in bogus failures).
+
 Index: ext/openssl/openssl_backend_common.c
 --- ext/openssl/openssl_backend_common.c.orig
 +++ ext/openssl/openssl_backend_common.c
-@@ -1433,7 +1433,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
+@@ -1436,7 +1436,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
  
  EVP_PKEY *php_openssl_generate_private_key(struct php_x509_request * req)
  {
