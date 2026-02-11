@@ -1,6 +1,9 @@
 COMMENT=	database migration tool for sqlalchemy
 
-MODPY_DISTV=	1.18.3
+# docs/build/changelog.rst keeps ending up 0600 in distfiles
+FIX_EXTRACT_PERMISSIONS= Yes
+
+MODPY_DISTV=	1.18.4
 DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
