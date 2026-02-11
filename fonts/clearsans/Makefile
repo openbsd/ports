@@ -1,10 +1,11 @@
-COMMENT =		versatile font for on-screen legibility
+COMMENT-main =		versatile font for on-screen legibility
+COMMENT-web =		versatile font for on-screen legibility (web fonts)
+
+MULTI_PACKAGES =	-main -web
 
 MODFONT_FAMILY =	clearsans
 DISTNAME =		clearsans-1.00
-CATEGORIES =		fonts
-
-EXTRACT_SUFX =		.zip
+REVISION =		0
 
 HOMEPAGE =		https://01.org/clear-sans
 
@@ -19,8 +20,9 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
-WRKSRC =		${WRKDIST}/TTF
 
-MODFONT_DOCFILES =	../*.txt
+MODFONT_FONTFILES =	TTF/*.ttf
+MODFONT_DOCFILES =	*.txt
+MODFONT_WEBFILES =	WOFF/*.woff
 
 .include <bsd.port.mk>
