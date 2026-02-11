@@ -1283,6 +1283,7 @@ netbeans/ide/config/Modules/org-netbeans-modules-team-ide.xml
 netbeans/ide/config/Modules/org-netbeans-modules-terminal-nb.xml
 netbeans/ide/config/Modules/org-netbeans-modules-terminal.xml
 netbeans/ide/config/Modules/org-netbeans-modules-textmate-lexer.xml
+netbeans/ide/config/Modules/org-netbeans-modules-texttools.xml
 netbeans/ide/config/Modules/org-netbeans-modules-usersguide.xml
 netbeans/ide/config/Modules/org-netbeans-modules-utilities-project.xml
 netbeans/ide/config/Modules/org-netbeans-modules-utilities.xml
@@ -1681,6 +1682,7 @@ netbeans/ide/modules/org-netbeans-modules-team-ide.jar
 netbeans/ide/modules/org-netbeans-modules-terminal-nb.jar
 netbeans/ide/modules/org-netbeans-modules-terminal.jar
 netbeans/ide/modules/org-netbeans-modules-textmate-lexer.jar
+netbeans/ide/modules/org-netbeans-modules-texttools.jar
 netbeans/ide/modules/org-netbeans-modules-usersguide.jar
 netbeans/ide/modules/org-netbeans-modules-utilities-project.jar
 netbeans/ide/modules/org-netbeans-modules-utilities.jar
@@ -1963,6 +1965,7 @@ netbeans/ide/update_tracking/org-netbeans-modules-team-ide.xml
 netbeans/ide/update_tracking/org-netbeans-modules-terminal-nb.xml
 netbeans/ide/update_tracking/org-netbeans-modules-terminal.xml
 netbeans/ide/update_tracking/org-netbeans-modules-textmate-lexer.xml
+netbeans/ide/update_tracking/org-netbeans-modules-texttools.xml
 netbeans/ide/update_tracking/org-netbeans-modules-usersguide.xml
 netbeans/ide/update_tracking/org-netbeans-modules-utilities-project.xml
 netbeans/ide/update_tracking/org-netbeans-modules-utilities.xml
@@ -2781,7 +2784,6 @@ netbeans/licenses/EPL-v10-with-commons
 netbeans/licenses/EPL-v10-with-osgi
 netbeans/licenses/EPL-v20
 netbeans/licenses/GPL-2-CP
-netbeans/licenses/Gradle
 netbeans/licenses/Gradle-icon
 netbeans/licenses/HTML5DOC
 netbeans/licenses/JavaCUP
@@ -2794,7 +2796,6 @@ netbeans/licenses/MIT-html5-parser
 netbeans/licenses/MIT-icu4j
 netbeans/licenses/MIT-icu4j-74
 netbeans/licenses/MIT-isorelax
-netbeans/licenses/MIT-java-grammar
 netbeans/licenses/MIT-jquery
 netbeans/licenses/MIT-jruby
 netbeans/licenses/MIT-jsoup
@@ -2809,6 +2810,7 @@ netbeans/licenses/MIT-vscode
 netbeans/licenses/MIT-vscode-material-icon-theme
 netbeans/licenses/Maven-EPL-v10
 netbeans/licenses/OSGi
+netbeans/licenses/PublicDomain-TangoProject
 netbeans/licenses/UPL
 netbeans/licenses/UPL-Apache-2.0
 netbeans/licenses/UPL-MIT-jcodings
@@ -3128,14 +3130,13 @@ netbeans/platform/config/Modules/org-openide-filesystems-nb.xml
 netbeans/platform/config/Modules/org-openide-io.xml
 netbeans/platform/config/Modules/org-openide-loaders.xml
 netbeans/platform/config/Modules/org-openide-nodes.xml
-netbeans/platform/config/Modules/org-openide-options.xml
 netbeans/platform/config/Modules/org-openide-text.xml
 netbeans/platform/config/Modules/org-openide-util-ui-svg.xml
 netbeans/platform/config/Modules/org-openide-windows.xml
 netbeans/platform/core/
-netbeans/platform/core/asm-9.8.jar
-netbeans/platform/core/asm-commons-9.8.jar
-netbeans/platform/core/asm-tree-9.8.jar
+netbeans/platform/core/asm-9.9.jar
+netbeans/platform/core/asm-commons-9.9.jar
+netbeans/platform/core/asm-tree-9.9.jar
 netbeans/platform/core/core-base.jar
 netbeans/platform/core/core.jar
 netbeans/platform/core/org-netbeans-libs-asm.jar
@@ -3150,6 +3151,8 @@ netbeans/platform/docs/junit-jupiter-engine-5.10.3-javadoc.jar
 netbeans/platform/docs/junit-jupiter-engine-5.10.3-sources.jar
 netbeans/platform/docs/junit-jupiter-params-5.10.3-javadoc.jar
 netbeans/platform/docs/junit-jupiter-params-5.10.3-sources.jar
+netbeans/platform/docs/opentest4j-1.3.0-javadoc.jar
+netbeans/platform/docs/opentest4j-1.3.0-sources.jar
 netbeans/platform/docs/testng-6.13.1-javadoc.jar
 netbeans/platform/lib/
 netbeans/platform/lib/boot.jar
@@ -3161,7 +3164,7 @@ netbeans/platform/lib/org-openide-util.jar
 netbeans/platform/modules/
 netbeans/platform/modules/ext/
 netbeans/platform/modules/ext/commons-io-2.18.0.jar
-netbeans/platform/modules/ext/flatlaf-3.6.1.jar
+netbeans/platform/modules/ext/flatlaf-3.6.2.jar
 netbeans/platform/modules/ext/hamcrest-core-1.3.jar
 netbeans/platform/modules/ext/jcommander-1.78.jar
 netbeans/platform/modules/ext/jersey2/
@@ -3173,6 +3176,7 @@ netbeans/platform/modules/ext/junit-4.13.2.jar
 netbeans/platform/modules/ext/junit-jupiter-api-5.10.3.jar
 netbeans/platform/modules/ext/junit-jupiter-engine-5.10.3.jar
 netbeans/platform/modules/ext/junit-jupiter-params-5.10.3.jar
+netbeans/platform/modules/ext/opentest4j-1.3.0.jar
 netbeans/platform/modules/ext/org.apache.felix.main-7.0.5.jar
 netbeans/platform/modules/ext/org.eclipse.osgi_3.9.1.nb9.jar
 netbeans/platform/modules/ext/osgi.cmpn-7.0.0.jar
@@ -3295,7 +3299,6 @@ netbeans/platform/modules/org-openide-filesystems-nb.jar
 netbeans/platform/modules/org-openide-io.jar
 netbeans/platform/modules/org-openide-loaders.jar
 netbeans/platform/modules/org-openide-nodes.jar
-netbeans/platform/modules/org-openide-options.jar
 netbeans/platform/modules/org-openide-text.jar
 netbeans/platform/modules/org-openide-util-ui-svg.jar
 netbeans/platform/modules/org-openide-windows.jar
@@ -3409,7 +3412,6 @@ netbeans/platform/update_tracking/org-openide-io.xml
 netbeans/platform/update_tracking/org-openide-loaders.xml
 netbeans/platform/update_tracking/org-openide-modules.xml
 netbeans/platform/update_tracking/org-openide-nodes.xml
-netbeans/platform/update_tracking/org-openide-options.xml
 netbeans/platform/update_tracking/org-openide-text.xml
 netbeans/platform/update_tracking/org-openide-util-lookup.xml
 netbeans/platform/update_tracking/org-openide-util-ui-svg.xml
