@@ -1,0 +1,3 @@
+sphinx-argparse is an extension for Sphinx that allows for easy
+generation of documentation for command line tools using Python's
+argparse library.
