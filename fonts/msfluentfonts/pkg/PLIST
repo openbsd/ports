@@ -1,0 +1,12 @@
+share/doc/msfluentfonts/
+share/doc/msfluentfonts/Microsoft_Fluent_Fonts_EULA.rtf
+share/fonts/
+@fontdir share/fonts/msfluentfonts/
+share/fonts/msfluentfonts/Fluent_Calibri-Bold.ttf
+share/fonts/msfluentfonts/Fluent_Calibri-BoldItalic.ttf
+share/fonts/msfluentfonts/Fluent_Calibri-Italic.ttf
+share/fonts/msfluentfonts/Fluent_Calibri.ttf
+share/fonts/msfluentfonts/Fluent_SitkaSmall-Bold.ttf
+share/fonts/msfluentfonts/Fluent_SitkaSmall-BoldItalic.ttf
+share/fonts/msfluentfonts/Fluent_SitkaSmall-Italic.ttf
+share/fonts/msfluentfonts/Fluent_SitkaSmall.ttf
