@@ -2,7 +2,7 @@ COMMENT =		standards based terminal calendar
 
 MODPY_DISTV =		0.11.2
 DISTNAME =		khal-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		productivity
 
@@ -28,10 +28,10 @@ RUN_DEPENDS =		devel/py-atomicwrites \
 			devel/py-tz \
 			devel/py-tzlocal \
 			devel/py-urwid \
-			devel/py-xdg \
-			productivity/vdirsyncer
+			devel/py-xdg
 TEST_DEPENDS =		devel/py-hypothesis \
 			devel/py-freezegun \
+			productivity/vdirsyncer \
 			sysutils/py-packaging
 
 .include <bsd.port.mk>
