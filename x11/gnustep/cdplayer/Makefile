@@ -1,5 +1,6 @@
 COMMENT =	GNUstep based CD player
 
+REVISION =	0
 VERSION =	0.6.0
 GH_ACCOUNT =	schik
 GH_PROJECT =	cdplayer
@@ -9,6 +10,7 @@ DISTNAME =	cdplayer-${VERSION}
 MODULES =	x11/gnustep
 WANTLIB +=	cdio cdio_cdda cdio_paranoia DBusKit
 WANTLIB += 	${COMPILER_LIBCXX}
+BUILD_DEPENDS +=x11/gnustep/cynthiune
 LIB_DEPENDS +=	audio/libcdio-paranoia \
 		x11/gnustep/dbuskit
 
