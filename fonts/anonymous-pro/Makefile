@@ -1,10 +1,10 @@
 COMMENT = 	fixed width sans font designed especially for coders
-PKG_ARCH =	*
-VERSION =	1.002
-PKGNAME =	anonymous-pro-${VERSION}
-DISTNAME =	AnonymousPro-${VERSION}
-REVISION =	4
-EXTRACT_SUFX =	.zip
+MODFONT_FAMILY =	anonymous-pro
+MODFONT_VERSION =	1.002
+DISTNAME =	AnonymousPro-${MODFONT_VERSION:S/./_/}
+REVISION =	5
+
+MODULES =	font
 CATEGORIES =	fonts x11
 
 SITES =		https://www.marksimonson.com/assets/content/fonts/
@@ -15,14 +15,13 @@ PERMIT_PACKAGE =		Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-FONTSDIR =	${PREFIX}/share/fonts/anonymous-pro
 
-WRKDIST =	${WRKDIR}/${DISTNAME}.001
+WRKDIST =	${WRKDIR}/AnonymousPro-${MODFONT_VERSION}.001
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/anonymous-pro
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	cd ${WRKDIST} ; /bin/pax -rw '-s/ //g' *.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/doc/anonymous-pro
+MODFONT_DOCFILES =	*.txt
+
+do-patch:
+	cd ${WRKDIST} && for f in *.ttf; do \
+		mv "$$f" `echo $$f | sed -e 's/ //g'`; done
 
 .include <bsd.port.mk>
