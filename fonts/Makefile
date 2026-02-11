@@ -79,7 +79,9 @@
      SUBDIR += monaspace
      SUBDIR += mononoki
      SUBDIR += mplus-fonts
+     SUBDIR += msaptosfonts
      SUBDIR += msctfonts
+     SUBDIR += msfluentfonts
      SUBDIR += msttcorefonts
      SUBDIR += msttcorefonts,no_comic
      SUBDIR += nerd-fonts
