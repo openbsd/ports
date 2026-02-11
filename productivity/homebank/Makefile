@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.9.5
+DISTNAME =	homebank-5.9.7
 
 CATEGORIES =	productivity x11
 
@@ -27,6 +27,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/libsoup3 \
 		devel/pango graphics/cairo \
 		graphics/gdk-pixbuf2 \
+		x11/gnome/at-spi2-core \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \

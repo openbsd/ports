@@ -1,16 +1,16 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5532,7 +5532,7 @@ then :
+@@ -5755,7 +5755,7 @@ then :
    printf %s "(cached) " >&6
- else $as_nop
-   ac_check_lib_save_LIBS=$LIBS
+ else case e in #(
+   e) ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lofx  $LIBS"
 +LIBS="`pkg-config --libs libofx`  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5565,7 +5565,7 @@ then :
+@@ -5796,7 +5796,7 @@ then :
    OFX_0_7="-DOFX_ENABLE"
  fi
  
