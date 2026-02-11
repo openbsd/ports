@@ -1,28 +1,28 @@
-Fix build with poppler-26.01.0.
+Fix build with poppler-26.02.0.
 
-See also upstream PR https://github.com/OSGeo/gdal/pull/13664
+Upstream commit 831295894d225b7d6098a5b8ccb51d33da52ef0c.
 
 Index: frmts/pdf/pdfio.cpp
 --- frmts/pdf/pdfio.cpp.orig
 +++ frmts/pdf/pdfio.cpp
-@@ -252,7 +252,7 @@ int VSIPDFFileStream::lookChar()
+@@ -68,11 +68,20 @@ VSIPDFFileStream::~VSIPDFFileStream()
+ /*                                  copy()                              */
+ /************************************************************************/
  
- #if POPPLER_MAJOR_VERSION > 25 ||                                              \
-     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 2)
--bool VSIPDFFileStream::reset()
-+bool VSIPDFFileStream::rewind()
- #else
- void VSIPDFFileStream::reset()
- #endif
-@@ -274,9 +274,9 @@ void VSIPDFFileStream::reset()
- 
- #if POPPLER_MAJOR_VERSION > 25 ||                                              \
-     (POPPLER_MAJOR_VERSION == 25 && POPPLER_MINOR_VERSION >= 3)
--bool VSIPDFFileStream::unfilteredReset()
-+bool VSIPDFFileStream::unfilteredRewind()
++#if POPPLER_MAJOR_VERSION > 26 ||                                              \
++    (POPPLER_MAJOR_VERSION == 26 && POPPLER_MINOR_VERSION >= 2)
++std::unique_ptr<BaseStream> VSIPDFFileStream::copy()
++{
++    return std::make_unique<VSIPDFFileStream>(poParent, nStart, bLimited,
++                                              nLength, dict.copy());
++}
++#else
+ BaseStream *VSIPDFFileStream::copy()
  {
--    return reset();
-+    return rewind();
+     return new VSIPDFFileStream(poParent, nStart, bLimited, nLength,
+                                 dict.copy());
  }
- #else
- void VSIPDFFileStream::unfilteredReset()
++#endif
+ 
+ /************************************************************************/
+ /*                             makeSubStream()                          */
