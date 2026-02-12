@@ -9,7 +9,7 @@ GH_TAGNAME =	2.0.76
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://munin-monitoring.org/
 
@@ -73,7 +73,7 @@ FAKE_FLAGS +=		HTMLDIR=${WRKINST}/${PREFIX}/share/examples/munin/www \
 			DOCDIR=${WRKINST}/${PREFIX}/share/doc/munin \
 			CONFDIR=${WRKINST}/${PREFIX}/share/examples/munin
 
-MUNIN_PLUGINS =		bgpd if_pps_ intr iostat_ pf_changes pf_searches \
+MUNIN_PLUGINS =		bgpd if_pps_ intr iostat pf_changes pf_searches \
 			pf_states sensors_ vmstat
 
 .for i in ${MUNIN_PLUGINS}
@@ -86,7 +86,6 @@ post-extract:
 	cp -p ${WRKSRC}/plugins/node.d.netbsd/memory.in ${WRKSRC}/plugins/node.d.openbsd
 	${SUBST_CMD} -m 444 -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
-	rm ${WRKSRC}/plugins/node.d.openbsd/iostat.in # not yet ported
 	rm ${WRKSRC}/plugins/node.d.openbsd/swap.in # we have no in/out fields
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,

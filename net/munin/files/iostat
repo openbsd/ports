@@ -1,0 +1,132 @@
+#!/bin/sh
+# -*- sh -*-
+# Copyright (c) 2026 Job Snijders <job@bsd.nl>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# Munin multigraph plugin to monitor disk activity on OpenBSD systems.
+#
+# Magic markers:
+#
+#%# family=auto
+#%# capabilities=autoconf
+
+if [ "$1" = "autoconf" ]; then
+	if [ -x /usr/sbin/iostat -a -x /sbin/sysctl ]; then
+		echo yes
+		exit 0
+	else
+		echo no
+		exit 0
+	fi
+fi
+
+DISKS=$(/sbin/sysctl -n hw.disknames \
+	| /usr/bin/tr ',' '\n' | /usr/bin/grep -v ':$' | /usr/bin/cut -d: -f1)
+
+if [ "$1" = "config" ]; then
+	echo 'multigraph iostat_throughput'
+	echo 'graph_title Disk throughput per device'
+	echo 'graph_args --base 1024'
+	echo 'graph_vlabel Bytes/${graph_period}'
+	echo 'graph_category disk'
+	echo 'graph_info This graph shows averaged throughput in bytes per device.'
+	echo ''
+
+	for DISK in ${DISKS}; do
+		echo "${DISK}_kb.label $DISK"
+		echo "${DISK}_kb.cdef ${DISK}_kb,1024,*"
+		echo "${DISK}_kb.type DERIVE"
+		echo "${DISK}_kb.min 0"
+		echo "${DISK}_kb.draw LINE1"
+		echo ''
+	done
+
+	for DISK in ${DISKS}; do
+		echo "multigraph iostat_throughput.${DISK}"
+		echo "graph_title Disk throughput for ${DISK}"
+		echo 'graph_args --base 1024'
+		echo 'graph_category disk'
+		echo 'graph_info This graph shows disk throughput in bytes.'
+		echo ''
+		echo 'kb.label Bytes'
+		echo 'kb.cdef kb,1024,*'
+		echo 'kb.type DERIVE'
+		echo 'kb.min 0'
+		echo 'kb.draw LINE1'
+		echo ''
+	done
+
+	echo 'multigraph iostat_iops'
+	echo 'graph_title Disk IOs per device'
+	echo 'graph_vlabel IOs/${graph_period}'
+	echo 'graph_args --base 1000'
+	echo 'graph_category disk'
+	echo 'graph_info This graph shows averaged IO operations per device.'
+	echo ''
+
+	for DISK in ${DISKS}; do
+		echo "${DISK}_xfr.label ${DISK}"
+		echo "${DISK}_xfr.type DERIVE"
+		echo "${DISK}_xfr.min 0"
+		echo "${DISK}_xfr.draw LINE1"
+		echo ''
+	done
+
+	for DISK in ${DISKS}; do
+		echo "multigraph iostat_iops.${DISK}"
+		echo "graph_title Disk IOs for ${DISK}"
+		echo 'graph_args --base 1000'
+		echo 'graph_category disk'
+		echo 'graph_info This graph shows the number of IOPS.'
+		echo ''
+		echo 'xfr.label IO/sec'
+		echo 'xfr.type DERIVE'
+		echo 'xfr.min 0'
+		echo 'xfr.draw LINE1'
+		echo ''
+	done
+
+	# TODO: implement tracking IO busy as a percentage.
+	# To convert 'Seconds spent in disk activity' into a busy percentage, state
+	# tracking via $MUNIN_PLUGSTATE or $MUNIN_STATEFILE should be implemented.
+	# CDEF $cur,$prev,-,300,/,100,*
+
+	exit 0
+fi
+
+echo 'multigraph iostat_throughput'
+for DISK in $DISKS; do
+	echo -n "${DISK}_kb.value "
+	/usr/sbin/iostat -ID "${DISK}" | tail -1 | /usr/bin/awk '{ print $1 }'
+done
+echo ''
+
+echo 'multigraph iostat_iops'
+for DISK in $DISKS; do
+	echo -n "${DISK}_xfr.value "
+	/usr/sbin/iostat -ID "${DISK}" | tail -1 | /usr/bin/awk '{ print $2 }'
+done
+echo ''
+
+for DISK in ${DISKS}; do
+	/usr/sbin/iostat -ID "${DISK}" | tail -1 | /usr/bin/awk '
+	{
+		print "multigraph iostat_throughput.@DISK@";
+		print "kb.value", $1;
+		print "";
+		print "multigraph iostat_iops.@DISK@";
+		print "xfr.value", $2;
+		print "";
+	}' | /usr/bin/sed "s/@DISK@/${DISK}/"
+done
