@@ -1,0 +1,32 @@
+pkg_resources will go away
+
+Index: src/wfuzz/helpers/file_func.py
+--- src/wfuzz/helpers/file_func.py.orig
++++ src/wfuzz/helpers/file_func.py
+@@ -1,7 +1,6 @@
+ import os
+ import sys
+ import re
+-import pkg_resources
+ 
+ from chardet.universaldetector import UniversalDetector
+ import chardet
+@@ -10,15 +9,9 @@ from ..exception import FuzzExceptInternalError
+ 
+ 
+ def get_filter_help_file():
+-    FILTER_HELP_FILE = "advanced.rst"
+-    FILTER_HELP_DEV_FILE = "../../../docs/user/advanced.rst"
+-
+-    filter_help_text = None
+-    try:
+-        fname = pkg_resources.resource_filename("wfuzz", FILTER_HELP_FILE)
+-        filter_help_text = open(fname).read()
+-    except IOError:
+-        filter_help_text = open(get_path(FILTER_HELP_DEV_FILE)).read()
++    ref = importlib.resources.files('wfuzz') / 'advanced.rst'
++    with importlib.resources.as_file(ref) as path:
++        filter_help_text = open(path).read()
+ 
+     return filter_help_text
+ 
