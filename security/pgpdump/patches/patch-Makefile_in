@@ -1,12 +1,12 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -3,7 +3,7 @@ exec_prefix = @exec_prefix@
- bindir = @bindir@
- mandir = @mandir@
- LIBS = @LIBS@
--CFLAGS  = @CFLAGS@ -O -Wall
-+CFLAGS  = @CFLAGS@ -Wall
- LDFLAGS = @LDFLAGS@
- CC = @CC@
- VERSION = `git tag | tail -1 | sed -e 's/v//'`
+@@ -498,7 +498,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CFLAGS = -O -Wall
++AM_CFLAGS = -Wall
+ EXTRA_DIST = $(TESTS) $(TESTS:.res=) test/test \
+ 	build-aux/git-version-gen
+ pgpdump_SOURCES = \
