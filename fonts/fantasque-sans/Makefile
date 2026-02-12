@@ -1,29 +1,29 @@
-COMMENT =			programming font designed with functionality in mind
+COMMENT-main =	programming font designed with functionality in mind
+COMMENT-web =	programming (web)font designed with functionality in mind
 
-V =				1.8.0
-DISTNAME =			fantasque-sans-$V
-DISTFILES =			${DISTNAME}{FantasqueSansMono-Normal}.tar.gz
-REVISION =			1
+MULTI_PACKAGES =	-main -web
 
-CATEGORIES =			fonts
+MODFONT_FAMILY =	fantasque-sans
+MODFONT_VERSION =	1.8.0
+DIST_SUBDIR =		${PKGNAME}
+DISTNAME =		FantasqueSansMono-Normal
+REVISION =		2
+
+MODULES =		font
 
 HOMEPAGE =			https://fontlibrary.org/en/font/fantasque-sans-mono
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =		Yes
 
-SITES =	https://github.com/belluzj/fantasque-sans/releases/download/v$V/
+SITES =	https://github.com/belluzj/fantasque-sans/releases/download/v${MODFONT_VERSION}/
 
 NO_BUILD =			Yes
 NO_TEST =			Yes
 
-PKG_ARCH =			*
+WRKDIST =	${WRKDIR}
 
-FONTDIR =			${PREFIX}/share/fonts/fantasque-sans
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/OTF/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/TTF/*.ttf ${FONTDIR}
+MODFONT_FONTFILES =	OTF/*.otf TTF/*.ttf
+MODFONT_WEBFILES =	Webfonts/*.woff2
 
 .include <bsd.port.mk>
