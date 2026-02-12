@@ -1,7 +1,7 @@
-Index: device/fido/features.cc
---- device/fido/features.cc.orig
-+++ device/fido/features.cc
-@@ -37,7 +37,7 @@ namespace device {
+Index: device/fido/public/features.cc
+--- device/fido/public/features.cc.orig
++++ device/fido/public/features.cc
+@@ -40,7 +40,7 @@ namespace device {
  // comment.
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

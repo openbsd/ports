@@ -164,9 +164,9 @@ SHA256 (cargo/wyz-0.5.1.tar.gz) = BfNg/AskKWMpx4/ahSoemugt6c97J9rkt/YvEY93ue0=
 SHA256 (cargo/xxhash-rust-0.8.12.tar.gz) = aly/dQQAlYgZ+2F46qg77lzZwpompAzCQd+McP3UaYQ=
 SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbBZvA=
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
-SHA256 (chromium-144.0.7559.132-lite.tar.xz) = QcxgORg2V19KQP/VdvZHwLkQUhmstJTnOcnqLGb13bk=
-SHA256 (chromium-144.0.7559.132-profdata.tar.xz) = qSshIuxzvFmihL/nNCebXOy3In0BDZDD7i+GWs5jfok=
-SHA256 (chromium-144.0.7559.132-testdata.tar.xz) = JbnpPPsmWi1w9v4nyz7+X4izxsTxVZoaerBtC3QpJ3M=
+SHA256 (chromium-145.0.7632.45-lite.tar.xz) = p86L2F025sAdOC5xyQGLDRGFU6hI4y3Tma6i5DdHa+E=
+SHA256 (chromium-145.0.7632.45-profdata.tar.xz) = 76QN3P6aBpytyfDRqC7sDvpRGk24FuhvMlvoIjcDv90=
+SHA256 (chromium-145.0.7632.45-testdata.tar.xz) = jDaBVwFkMoxqLYoPrdVa0IHnWh0tVt9v3dYQDLmmezg=
 SHA256 (rollup-rollup-v4.22.4.tar.gz) = p+XAnwD+UK2r4n/vhFVRDxVs9z/uiu8frzgEtlOYjkw=
 SHA256 (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = oosiK3mFFxb4NY0oABV9n/4RezVFAxrlH2m34eG5qWk=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
@@ -335,8 +335,8 @@ SIZE (cargo/wyz-0.5.1.tar.gz) = 18790
 SIZE (cargo/xxhash-rust-0.8.12.tar.gz) = 21329
 SIZE (cargo/zerocopy-0.7.35.tar.gz) = 152645
 SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
-SIZE (chromium-144.0.7559.132-lite.tar.xz) = 1292631752
-SIZE (chromium-144.0.7559.132-profdata.tar.xz) = 14850172
-SIZE (chromium-144.0.7559.132-testdata.tar.xz) = 1310786880
+SIZE (chromium-145.0.7632.45-lite.tar.xz) = 1416448168
+SIZE (chromium-145.0.7632.45-profdata.tar.xz) = 15042256
+SIZE (chromium-145.0.7632.45-testdata.tar.xz) = 1319076104
 SIZE (rollup-rollup-v4.22.4.tar.gz) = 1732642
 SIZE (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = 33233004

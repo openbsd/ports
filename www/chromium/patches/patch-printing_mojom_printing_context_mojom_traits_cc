@@ -25,6 +25,6 @@ Index: printing/mojom/printing_context_mojom_traits.cc
      }
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     // The dictionary must contain three strings.
-     const base::Value* value = system_print_dialog_data.Find(
-         printing::kLinuxSystemPrintDialogDataPrinter);
+     // The dictionary should either contain the GTK print dialog data or the
+     // portal print dialog data, but not a mix of both.
+     if (system_print_dialog_data.size() == 3) {

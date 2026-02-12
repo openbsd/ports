@@ -1,7 +1,7 @@
 Index: media/gpu/chromeos/mailbox_video_frame_converter.cc
 --- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig
 +++ media/gpu/chromeos/mailbox_video_frame_converter.cc
-@@ -226,7 +226,7 @@ MailboxVideoFrameConverter::GenerateSharedImage(
+@@ -224,7 +224,7 @@ MailboxVideoFrameConverter::GenerateSharedImage(
                             VideoPixelFormatToString(origin_frame->format()));
      return nullptr;
    }

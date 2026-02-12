@@ -23,12 +23,12 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
 +#endif
 +    }
 +#else
-     if (!GetPCIDevicesWithLibPCI(&(info->gpus)))
+     if (!GetPCIDevicesWithLibPCI(&(info->gpus)) || info->gpus.size() == 0)
      {
  #if defined(ANGLE_USE_VULKAN_SYSTEM_INFO)
-@@ -85,6 +103,7 @@ bool GetSystemInfo(SystemInfo *info)
-     {
+@@ -80,6 +98,7 @@ bool GetSystemInfo(SystemInfo *info)
          return false;
+ #endif  // defined(ANGLE_HAS_VULKAN_SYSTEM_INFO)
      }
 +#endif
  

@@ -11,7 +11,7 @@ Index: build/config/rust.gni
  
    # Whether artifacts produced by the Rust compiler can participate in ThinLTO.
    #
-@@ -152,6 +153,13 @@ if (enable_rust) {
+@@ -161,6 +162,13 @@ if (enable_rust) {
    } else {
      toolchain_has_rust = custom_toolchain_supports_platform
      rustc_revision = rustc_version
