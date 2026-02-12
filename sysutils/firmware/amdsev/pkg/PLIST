@@ -4,3 +4,5 @@ firmware/amdsev/amd_sev_fam17h_model0xh.sbin
 firmware/amdsev/amd_sev_fam17h_model3xh.sbin
 firmware/amdsev/amd_sev_fam19h_model0xh.sbin
 firmware/amdsev/amd_sev_fam19h_model1xh.sbin
+firmware/amdsev/amd_sev_fam19h_modelaxh.sbin
+firmware/amdsev/amd_sev_fam1ah_model0xh.sbin

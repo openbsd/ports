@@ -1,7 +1,6 @@
 COMMENT=	AMD SEV firmware binaries
 FW_DRIVER=	amdsev
-FW_VER=		20241017
-REVISION=	0
+FW_VER=		20260110
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,amd}
