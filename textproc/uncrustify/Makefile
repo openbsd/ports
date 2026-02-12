@@ -4,9 +4,13 @@ V =		0.82.0
 DISTNAME =	uncrustify-$V
 WRKDIST =	${WRKDIR}/uncrustify-${DISTNAME}
 
+REVISION =	0
+
 CATEGORIES =	textproc devel
 
-HOMEPAGE =	https://uncrustify.sourceforge.net/
+HOMEPAGE =	https://github.com/uncrustify/uncrustify/
+
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -24,7 +28,7 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP =	No
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/uncrustify/
-	${INSTALL_DATA} ${WRKSRC}/etc/*.cfg ${PREFIX}/share/uncrustify/
+	mv ${PREFIX}/share/doc/uncrustify/examples \
+		${PREFIX}/share/examples/uncrustify
 
 .include <bsd.port.mk>
