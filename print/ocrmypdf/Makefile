@@ -1,7 +1,7 @@
 COMMENT=	add an OCR text layer to scanned PDF files
 
-MODPY_DISTV=	 16.11.1
-# standalone; no py- prefix
+# 17.x has new deps
+MODPY_DISTV=	16.13.0
 DISTNAME=	ocrmypdf-${MODPY_DISTV}
 
 CATEGORIES=	print
