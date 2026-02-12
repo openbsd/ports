@@ -1,0 +1,4 @@
+ebook2cwgui is a graphical user interface to ebook2cw based on the
+wx graphical library.  The GUI allows to set all the options available
+in ebook2cw, and uses the actual ebook2cw executable to generate
+the audio files.

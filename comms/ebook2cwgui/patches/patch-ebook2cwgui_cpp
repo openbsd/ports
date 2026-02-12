@@ -1,0 +1,15 @@
+Fix compatibility issue with wx3
+
+Index: ebook2cwgui.cpp
+--- ebook2cwgui.cpp.orig
++++ ebook2cwgui.cpp
+@@ -679,8 +679,7 @@ wxString Ebook2cw::FindConfigFile () {
+ 	/* Otherwise where it "should" be; create if not there */
+ 
+ 	wxString dir;
+-	wxStandardPaths stdPaths;
+-	dir = stdPaths.GetUserConfigDir();
++	dir = wxStandardPaths::Get().GetUserConfigDir();
+ 
+ #ifdef __WXMSW__
+ 	if (!wxDirExists(dir + wxT("\\ebook2cw"))) {

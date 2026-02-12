@@ -1,0 +1,34 @@
+Replace g++ with CXX, fix manpage folder.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -8,22 +8,21 @@ DESTDIR ?= /usr
+ all: ebook2cwgui
+ 
+ ebook2cwgui:
+-	g++ ebook2cwgui.cpp about.cpp main.cpp \
++	$(CXX) $(CXXFLAGS) ebook2cwgui.cpp about.cpp main.cpp \
+ 	       	-Wall `wx-config --libs --cxxflags` -o ebook2cwgui
+ 
+ win32:
+-	g++ -static ebook2cwgui.cpp about.cpp main.cpp \
++	$(CXX) -static ebook2cwgui.cpp about.cpp main.cpp \
+ 	       	-Wall `/wx/wx-config --libs --cxxflags` -o ebook2cwgui
+ 
+ install:
+-	install -d -v                      $(DESTDIR)/bin/
+-	install -d -v                      $(DESTDIR)/share/man/man1/
+-	install -s -m 0755 ebook2cwgui     $(DESTDIR)/bin/
+-	install    -m 0644 ebook2cwgui.1   $(DESTDIR)/share/man/man1/
++	install -d                       $(DESTDIR)/bin/
++	install $(INSTALL_STRIP) -m 0755 ebook2cwgui     $(DESTDIR)/bin/
++	install    -m 0644 ebook2cwgui.1   $(DESTDIR)/man/man1/
+ 	
+ uninstall:
+ 	rm -f $(DESTDIR)/bin/ebook2cwgui
+-	rm -f $(DESTDIR)/share/man/man1/ebook2cwgui.1
++	rm -f $(DESTDIR)/man/man1/ebook2cwgui.1
+ 
+ clean:
+ 	rm -f ebook2cwgui ebook2cwgui.exe *~ *.mp3 *.ogg
