@@ -1,29 +1,30 @@
 COMMENT =	DNS and DNSSEC zone file validator
 
-DISTNAME =	validns-0.8
-REVISION =	1
+V =		0.9.0
+PKGNAME =	validns-${V}
 
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.validns.net/
+DIST_TUPLE =	codeberg DNS-OARC validns v${V} .
+
+MAINTAINER =	Caspar Schutijser <caspar@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	Judy c crypto pthread
-
-SITES =		${HOMEPAGE}download/
+WANTLIB +=	Judy c crypto pthread ssl
 
 LIB_DEPENDS =	devel/libJudy
 
 TEST_DEPENDS =	devel/p5-Test-Command-Simple
 
-MAKE_ENV =	CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.18
+AUTORECONF =		./autogen.sh
 
-ALL_TARGET =	validns
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/validns ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/validns.1 ${PREFIX}/man/man1
+WRKSRC = 	${WRKDIR}/validns
 
 .include <bsd.port.mk>

@@ -1,2 +1,7 @@
 @bin bin/validns
 @man man/man1/validns.1
+share/doc/validns/
+share/doc/validns/CHANGELOG.md
+share/doc/validns/LICENSE
+share/doc/validns/README.md
+share/doc/validns/TECHNICAL.md
