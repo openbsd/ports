@@ -1,6 +1,6 @@
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_DISTV =		9.8.1
+MODPY_DISTV =		10.3.0
 DISTNAME =		pikepdf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/.post/pl/}
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m qpdf
 
-# C++14
+# C++20
 COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
