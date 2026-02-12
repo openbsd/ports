@@ -162,20 +162,6 @@ MODPY_COMPILEALL = ${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0
 .endif
 
 MODPY_TEST_TARGET =
-MODPY_TEST_LINK_SO ?=	No
-.if ${MODPY_TEST_LINK_SO:L} == "yes" && !empty(MODPY_TEST_LIBDIR)
-MODPY_TEST_LINK_SRC ?=	${WRKSRC}
-MODPY_TEST_SO_CMD = for _dir in ${MODPY_TEST_LIBDIR:S,:, ,g}; do \
-	if [ -d $${_dir} ]; then \
-		if [ $${_dir} != ${MODPY_TEST_LINK_SRC} ]; then \
-			cd $${_dir} && \
-			find . -name '*.so' -type f \
-				-exec ln -sf $${_dir}/{} \
-					${MODPY_TEST_LINK_SRC}/{} \; ;\
-		fi; \
-	fi; done
-MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
-.endif
 
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
