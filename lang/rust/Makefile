@@ -20,7 +20,7 @@ BV-aarch64 =		1.92.0
 BV-amd64 =		1.93.0
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.93.0
-BV-sparc64 =		1.92.0
+BV-sparc64 =		1.93.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
