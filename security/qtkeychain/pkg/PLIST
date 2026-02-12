@@ -3,12 +3,16 @@
 include/${LIBNAME_L}/
 include/${LIBNAME_L}/keychain.h
 include/${LIBNAME_L}/qkeychain_export.h
+lib/cmake/
 lib/cmake/${LIBNAME}/
 lib/cmake/${LIBNAME}/${LIBNAME}Config.cmake
 lib/cmake/${LIBNAME}/${LIBNAME}ConfigVersion.cmake
 lib/cmake/${LIBNAME}/${LIBNAME}LibraryDepends${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/${LIBNAME}/${LIBNAME}LibraryDepends.cmake
 @lib lib/lib${LIBNAME_L}.so.${LIB${LIBNAME_L}_VERSION}
+lib/${QT}/
+lib/${QT}/mkspecs/
+lib/${QT}/mkspecs/modules/
 lib/${QT}/mkspecs/modules/qt_${LIBNAME}.pri
 share/${LIBNAME_L}/
 share/${LIBNAME_L}/translations/

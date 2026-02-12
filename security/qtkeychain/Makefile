@@ -1,9 +1,9 @@
+Warning: LIBqt6keychain_VERSION unused ? (check SHARED_LIBS)
 COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
-GH_TAGNAME =		0.14.2
-REVISION =		0
+GH_TAGNAME =		0.15.0
 
 SHARED_LIBS +=		qt5keychain	2.1
 SHARED_LIBS +=		qt6keychain	0.0
