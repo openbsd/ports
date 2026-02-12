@@ -1,0 +1,9 @@
+Index: scripts/build/build-doc-tree.sh
+--- scripts/build/build-doc-tree.sh.orig
++++ scripts/build/build-doc-tree.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ DEST="$1"
+ shift
