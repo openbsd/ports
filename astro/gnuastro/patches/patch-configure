@@ -3,16 +3,17 @@ Remove hardcoded -O3
 Index: configure
 --- configure.orig
 +++ configure
-@@ -21353,7 +21353,7 @@ if test "x$enable_debug" = "xyes"
+@@ -24035,9 +24035,6 @@ fi
+ if test "x$enable_debug" = "xyes"
  then :
    cflags_add="-g -O0"; enable_shared=no
- else $as_nop
--  cflags_add="-O3"
-+  cflags_add=""
+-else case e in #(
+-  e) cflags_add="-O3" ;;
+-esac
  fi
  CFLAGS="-Wall $cflags_add $CFLAGS"
  CXXFLAGS="-Wall $cflags_add $CXXFLAGS"
-@@ -30660,7 +30660,7 @@ printf %s "checking for shell to use with libtool... "
+@@ -33322,7 +33319,7 @@ printf %s "checking for shell to use with libtool... "
          cprog=libtool_shell_test.c
          printf "%s\n" "#include <stdio.h>"                                 > $cprog
          printf "%s\n" "int main(void){printf(\"success\\n\"); return 0;}" >> $cprog

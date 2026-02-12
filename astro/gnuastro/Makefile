@@ -1,11 +1,11 @@
 USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.18
+DISTNAME =	gnuastro-0.24
 CATEGORIES =	astro
-REVISION =	8
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
+SHARED_LIBS +=	gnuastro_make             0.0 # 21.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
 
@@ -18,13 +18,12 @@ WANTLIB += ngtcp2_crypto_libressl pcre2-8 ssh2 ssl tiff wcs z zstd
 
 .if ${MACHINE_ARCH} == "mips64"
 # "error: out of range PC16 fixup"
-# https://github.com/llvm/llvm-project/issues/112010 
+# https://github.com/llvm/llvm-project/issues/112010
 COMPILER =	ports-gcc
 .endif
 
 SITES =		${SITE_GNU:=gnuastro/}
 
-# Claimed to be too old; uses it anyway.
 BUILD_DEPENDS =	print/ghostscript/gnu
 
 LIB_DEPENDS =	archivers/bzip2 \
@@ -40,7 +39,7 @@ CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =	Yes
 
-FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/gnuastro"
+FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples"
 
 # Move bash completion file to the appropriate directory.
 # Also, rename it to something more identifiable.
