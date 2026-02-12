@@ -2,8 +2,7 @@
 @pkgpath devel/bpython,python3
 bin/bpdb
 bin/bpython
-bin/bpython-curses
-bin/bpython-urwid
+@comment bin/bpython-urwid
 lib/python${MODPY_VERSION}/site-packages/bpdb/
 lib/python${MODPY_VERSION}/site-packages/bpdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpdb/__main__.py
@@ -41,8 +40,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}args.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}autocomplete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}autocomplete.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}curtsies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,7 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/_typing_compat.py
 lib/python${MODPY_VERSION}/site-packages/bpython/_version.py
 lib/python${MODPY_VERSION}/site-packages/bpython/args.py
 lib/python${MODPY_VERSION}/site-packages/bpython/autocomplete.py
-lib/python${MODPY_VERSION}/site-packages/bpython/cli.py
 lib/python${MODPY_VERSION}/site-packages/bpython/config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsies.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/

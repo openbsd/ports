@@ -1,9 +1,8 @@
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_DISTV=	0.24
+MODPY_DISTV=	0.26
 DISTNAME=	bpython-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://bpython-interpreter.org/
 
@@ -24,7 +23,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-xdg \
 		www/py-requests \
 		devel/py-jedi \
-		devel/py-urwid \
 		sysutils/py-pyperclip \
 		sysutils/py-watchdog
 BUILD_DEPENDS=	devel/py-babel \
