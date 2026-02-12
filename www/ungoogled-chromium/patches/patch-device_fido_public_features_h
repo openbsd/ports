@@ -1,6 +1,6 @@
-Index: device/fido/features.h
---- device/fido/features.h.orig
-+++ device/fido/features.h
+Index: device/fido/public/features.h
+--- device/fido/public/features.h.orig
++++ device/fido/public/features.h
 @@ -13,7 +13,7 @@
  namespace device {
  
@@ -8,5 +8,5 @@ Index: device/fido/features.h
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // Enables the Passkey Unlock Manager.
- COMPONENT_EXPORT(DEVICE_FIDO)
+ COMPONENT_EXPORT(FIDO_PUBLIC)
  BASE_DECLARE_FEATURE(kPasskeyUnlockManager);

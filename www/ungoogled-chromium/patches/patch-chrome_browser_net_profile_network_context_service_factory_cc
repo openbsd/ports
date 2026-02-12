@@ -10,7 +10,7 @@ Index: chrome/browser/net/profile_network_context_service_factory.cc
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #endif
  
-@@ -75,7 +75,7 @@ ProfileNetworkContextServiceFactory::ProfileNetworkCon
+@@ -79,7 +79,7 @@ ProfileNetworkContextServiceFactory::ProfileNetworkCon
  #if BUILDFLAG(CHROME_ROOT_STORE_CERT_MANAGEMENT_UI)
    DependsOn(net::ServerCertificateDatabaseServiceFactory::GetInstance());
  #endif

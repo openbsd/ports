@@ -1,7 +1,7 @@
 Index: media/mojo/mojom/video_frame_mojom_traits.h
 --- media/mojo/mojom/video_frame_mojom_traits.h.orig
 +++ media/mojo/mojom/video_frame_mojom_traits.h
-@@ -21,7 +21,7 @@
+@@ -20,7 +20,7 @@
  
  namespace mojo {
  

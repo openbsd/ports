@@ -1,7 +1,7 @@
 Index: base/system/sys_info.h
 --- base/system/sys_info.h.orig
 +++ base/system/sys_info.h
-@@ -354,6 +354,8 @@ class BASE_EXPORT SysInfo {
+@@ -381,6 +381,8 @@ class BASE_EXPORT SysInfo {
    static void ResetCpuSecurityMitigationsEnabledForTesting();
  #endif
  
@@ -10,12 +10,12 @@ Index: base/system/sys_info.h
   private:
    friend class test::ScopedAmountOfPhysicalMemoryOverride;
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
-@@ -366,7 +368,7 @@ class BASE_EXPORT SysInfo {
+@@ -393,7 +395,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
 -    BUILDFLAG(IS_AIX)
 +    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
-   static ByteCount AmountOfAvailablePhysicalMemory(
+   static ByteSize AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfo& meminfo);
  #endif

@@ -33,12 +33,12 @@ Index: chrome/browser/ui/accelerator_table.cc
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -310,7 +310,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -309,7 +309,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+                          std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  
-     if (features::IsSideBySideKeyboardShortcutEnabled()) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       accelerators->emplace_back(
-           AcceleratorMapping({ui::VKEY_N, ui::EF_SHIFT_DOWN | ui::EF_ALT_DOWN,
-                               IDC_NEW_SPLIT_TAB}));
+     accelerators->emplace_back(AcceleratorMapping(
+         {ui::VKEY_N, ui::EF_SHIFT_DOWN | ui::EF_ALT_DOWN, IDC_NEW_SPLIT_TAB}));
+ #elif BUILDFLAG(IS_CHROMEOS)

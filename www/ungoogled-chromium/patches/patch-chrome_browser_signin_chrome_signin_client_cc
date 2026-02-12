@@ -1,7 +1,7 @@
 Index: chrome/browser/signin/chrome_signin_client.cc
 --- chrome/browser/signin/chrome_signin_client.cc.orig
 +++ chrome/browser/signin/chrome_signin_client.cc
-@@ -164,7 +164,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
+@@ -165,7 +165,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
  std::string HatsSurveyTriggerForAccessPoint(
      signin_metrics::AccessPoint access_point) {
    switch (access_point) {

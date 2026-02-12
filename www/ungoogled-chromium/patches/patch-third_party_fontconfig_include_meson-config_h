@@ -10,7 +10,7 @@ Index: third_party/fontconfig/include/meson-config.h
  
  #define FC_FONTPATH ""
  
-@@ -98,10 +98,13 @@
+@@ -96,10 +96,13 @@
  
  #define HAVE_RANDOM 1
  

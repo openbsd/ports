@@ -1,7 +1,7 @@
 Index: net/url_request/url_request_context.h
 --- net/url_request/url_request_context.h.orig
 +++ net/url_request/url_request_context.h
-@@ -89,7 +89,7 @@ class NET_EXPORT URLRequestContext final {
+@@ -90,7 +90,7 @@ class NET_EXPORT URLRequestContext final {
    // session.
    const HttpNetworkSessionContext* GetNetworkSessionContext() const;
  

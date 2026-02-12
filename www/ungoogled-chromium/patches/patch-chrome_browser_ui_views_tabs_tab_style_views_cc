@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/tabs/tab_style_views.cc
 --- chrome/browser/ui/views/tabs/tab_style_views.cc.orig
 +++ chrome/browser/ui/views/tabs/tab_style_views.cc
-@@ -567,7 +567,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
+@@ -557,7 +557,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
    if (!IsHoverAnimationActive()) {
      return base_opacity;
    }
@@ -9,4 +9,4 @@ Index: chrome/browser/ui/views/tabs/tab_style_views.cc
 +  return std::lerp(base_opacity, GetHoverOpacity(), static_cast<float>(GetHoverAnimationValue()));
  }
  
- TabActive TabStyleViewsImpl::GetApparentActiveState() const {
+ bool TabStyleViewsImpl::IsApparentlyActive() const {

@@ -1,7 +1,7 @@
 Index: ui/views/widget/widget.cc
 --- ui/views/widget/widget.cc.orig
 +++ ui/views/widget/widget.cc
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  #include "ui/views/widget/widget_removals_observer.h"
  #include "ui/views/window/dialog_delegate.h"
  
@@ -10,7 +10,7 @@ Index: ui/views/widget/widget.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2545,7 +2545,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2559,7 +2559,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
      return parent_->GetNativeTheme();
    }
  

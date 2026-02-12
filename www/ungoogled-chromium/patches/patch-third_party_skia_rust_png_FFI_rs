@@ -9,7 +9,7 @@ Index: third_party/skia/rust/png/FFI.rs
      }
  }
  
-@@ -928,4 +929,12 @@ fn new_writer(
+@@ -940,4 +941,12 @@ fn new_writer(
  /// See also https://docs.rs/png/latest/png/struct.StreamWriter.html#method.finish
  fn finish_encoding(stream_writer: Box<StreamWriter>) -> ffi::EncodingResult {
      stream_writer.0.finish().as_ref().err().into()
