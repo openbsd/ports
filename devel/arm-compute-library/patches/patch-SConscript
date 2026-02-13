@@ -1,7 +1,7 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -743,7 +743,7 @@ Export('bootcode_o')
+@@ -745,7 +745,7 @@ Export('bootcode_o')
  if (env['multi_isa']):
      lib_static_objs, lib_shared_objs = build_multiisa_lib_objects()
      # STATIC library build.
@@ -10,7 +10,7 @@ Index: SConscript
  
      if(env['os'] == 'linux' and not env['opencl']):
          # -static suffix in static libraries is deprecated, and will be removed in COMPMID-8696.
-@@ -758,7 +758,7 @@ else:
+@@ -760,7 +760,7 @@ else:
      elif 'sve' in env['arch']:
          lib_files += lib_files_sve
  
@@ -19,7 +19,7 @@ Index: SConscript
  
  Export('arm_compute_a')
  
-@@ -782,7 +782,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
+@@ -784,7 +784,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
  # Build graph libraries
  arm_compute_graph_env.Append(CXXFLAGS = ['-Wno-redundant-move', '-Wno-pessimizing-move'])
  
