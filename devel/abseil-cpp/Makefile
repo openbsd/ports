@@ -16,8 +16,8 @@ MAINTAINER =	Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 ABSL_LIBS = \
-    atomic_hook_test_helper bad_any_cast_impl bad_optional_access \
-    bad_variant_access base borrowed_fixup_buffer city civil_time cord \
+    atomic_hook_test_helper \
+    base borrowed_fixup_buffer city civil_time cord \
     cord_internal cordz_functions cordz_handle cordz_info cordz_sample_token \
     crc32c crc_cord_state crc_cpu_detect crc_internal debugging_internal \
     decode_rust_punycode demangle_internal demangle_rust die_if_null \
@@ -37,7 +37,7 @@ ABSL_LIBS = \
     malloc_internal per_thread_sem_test_common periodic_sampler poison \
     pow10_helper profile_builder random_distributions \
     random_internal_distribution_test_util random_internal_entropy_pool \
-    random_internal_platform random_internal_pool_urbg random_internal_randen \
+    random_internal_platform random_internal_randen \
     random_internal_randen_hwaes random_internal_randen_hwaes_impl \
     random_internal_randen_slow random_internal_seed_material \
     random_seed_gen_exception random_seed_sequences raw_hash_set \
