@@ -1,7 +1,7 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.3.8
+VERSION=	1.3.9
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
@@ -9,7 +9,7 @@ PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	7.0 \
 		xmlsec1-openssl	7.0 \
-		xmlsec1		10.0
+		xmlsec1		11.0
 
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
