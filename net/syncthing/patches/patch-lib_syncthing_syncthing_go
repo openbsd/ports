@@ -7,7 +7,7 @@ while still allowing the user to change the setting, if desired.
 Index: lib/syncthing/syncthing.go
 --- lib/syncthing/syncthing.go.orig
 +++ lib/syncthing/syncthing.go
-@@ -279,6 +279,11 @@ func (a *App) startup() error {
+@@ -286,6 +286,11 @@ func (a *App) startup() error {
  				// Unique ID will be set and config saved below if necessary.
  			}
  		}

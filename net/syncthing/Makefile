@@ -1,6 +1,6 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		2.0.13
+V =		2.0.14
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
