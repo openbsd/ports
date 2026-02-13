@@ -2,12 +2,11 @@ COMMENT =	zip manipulation library
 
 GH_ACCOUNT =	zlib-ng
 GH_PROJECT =	minizip-ng
-GH_TAGNAME =	4.0.8
+GH_TAGNAME =	4.1.0
 
 PKGNAME =	minizip-${GH_TAGNAME}
-REVISION =	0
 
-SHARED_LIBS +=	minizip 3.2 # 4
+SHARED_LIBS +=	minizip 3.3 # 4
 
 CATEGORIES =	archivers
 
