@@ -11,6 +11,9 @@ share/doc/nano/faq.html
 share/doc/nano/nano.html
 share/examples/nano/
 share/examples/nano/sample.nanorc
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/nano.mo
 share/locale/bg/LC_MESSAGES/nano.mo
 share/locale/ca/LC_MESSAGES/nano.mo
 share/locale/cs/LC_MESSAGES/nano.mo
