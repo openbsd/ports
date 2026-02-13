@@ -2,11 +2,11 @@ PORTROACH=	limit:^2\.28
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-GH_ACCOUNT=	ARMmbed
+GH_ACCOUNT=	Mbed-TLS
 GH_PROJECT=	mbedtls
 GH_TAGNAME=	mbedtls-2.28.0
 DISTNAME=	${GH_TAGNAME}
-REVISION=	1
+REVISION=	2
 
 # check SOVERSION
 SHARED_LIBS +=  mbedtls		7.0
@@ -15,7 +15,7 @@ SHARED_LIBS +=  mbedx509	3.2
 
 CATEGORIES=	security
 
-HOMEPAGE=	https://tls.mbed.org/
+HOMEPAGE=	https://www.trustedfirmware.org/projects/mbed-tls/
 
 # Apache v2 (or commercial license)
 PERMIT_PACKAGE=	Yes
