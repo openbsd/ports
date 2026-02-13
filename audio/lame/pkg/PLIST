@@ -4,9 +4,10 @@
 @bin bin/mp3rtp
 include/lame/
 include/lame/lame.h
-lib/libmp3lame.a
+@static-lib lib/libmp3lame.a
 lib/libmp3lame.la
 @lib lib/libmp3lame.so.${LIBmp3lame_VERSION}
+lib/pkgconfig/lame.pc
 @man man/man1/lame.1
 share/doc/lame/
 share/doc/lame/about.html

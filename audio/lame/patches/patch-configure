@@ -6,12 +6,12 @@ builds.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17563,7 +17563,7 @@ $as_echo "$as_me: WARNING: LAME doesn't know about you
+@@ -19245,7 +19245,7 @@ printf "%s\n" "$as_me: WARNING: LAME doesn't know abou
  	esac
  
  
 -	if test "x${HAVE_CLANG}" = "xyes"; then
 +	if false && test "x${HAVE_CLANG}" = "xyes"; then
  		case "${CLANG_VERSION}" in
- 		3.89*|45.*)
+ 		3.[89]*|[45].*|1[0-9].*)
  			OPTIMIZATION="-Ofast"
