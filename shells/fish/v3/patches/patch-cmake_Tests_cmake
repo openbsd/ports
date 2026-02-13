@@ -1,0 +1,22 @@
+Index: cmake/Tests.cmake
+--- cmake/Tests.cmake.orig
++++ cmake/Tests.cmake
+@@ -43,12 +43,12 @@ add_custom_target(fish_run_tests
+ 
+ # If CMP0037 is available, also make an alias "test" target.
+ # Note that this policy may not be available, in which case definining such a target silently fails.
+-cmake_policy(PUSH)
+-if(POLICY CMP0037)
+-  cmake_policy(SET CMP0037 OLD)
+-  add_custom_target(test DEPENDS fish_run_tests)
+-endif()
+-cmake_policy(POP)
++#cmake_policy(PUSH)
++#if(POLICY CMP0037)
++#  cmake_policy(SET CMP0037 OLD)
++#  add_custom_target(test DEPENDS fish_run_tests)
++#endif()
++#cmake_policy(POP)
+ 
+ # Build the low-level tests code
+ add_executable(fish_tests EXCLUDE_FROM_ALL

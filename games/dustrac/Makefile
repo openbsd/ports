@@ -33,4 +33,7 @@ CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

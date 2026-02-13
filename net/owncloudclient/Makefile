@@ -60,4 +60,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ownCloud/
 	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

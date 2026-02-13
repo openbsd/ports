@@ -30,11 +30,18 @@ RUN_DEPENDS=		archivers/innoextract \
 
 CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKDIST=		${WRKDIR}/wargus-${V}
 
 FIX_CRLF_FILES=		StormLib/src/FileStream.cpp
+
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 
 # XXX Depends on StormLib, use bundled version
 pre-build:

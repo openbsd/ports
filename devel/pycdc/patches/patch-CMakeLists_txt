@@ -13,3 +13,12 @@ Index: CMakeLists.txt
  endif()
  
  set(PYTHON_VERSIONS
+@@ -63,7 +63,7 @@ install(TARGETS pycdc
+ # For tests
+ if(POLICY CMP0037)
+     # Don't complain about adding a target named "test"
+-    cmake_policy(SET CMP0037 OLD)
++    cmake_policy(SET CMP0037 NEW)
+ endif()
+ 
+ add_custom_target(test "${CMAKE_CURRENT_SOURCE_DIR}/pycdc_test.sh"

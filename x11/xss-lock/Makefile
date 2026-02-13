@@ -22,4 +22,6 @@ LIB_DEPENDS=	devel/glib2
 BUILD_DEPENDS=	textproc/py-docutils
 NO_TEST=	Yes
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

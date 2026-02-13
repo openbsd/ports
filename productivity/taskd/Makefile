@@ -25,6 +25,8 @@ CONFIGURE_ARGS +=	-DTASKD_DOCDIR=share/taskd \
 			-DTASKD_MAN1DIR=man/man1 \
 			-DTASKD_MAN5DIR=man/man5
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 post-install:
@@ -37,5 +39,8 @@ post-install:
 		${PREFIX}/share/examples/taskd/pki/vars.dist
 	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
+
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

@@ -24,4 +24,7 @@ NO_TEST =		Yes
 post-configure:
 	cd ${WRKSRC}/i18n/ && ${MODQT_LRELEASE} *.ts
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

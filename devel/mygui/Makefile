@@ -37,6 +37,8 @@ CONFIGURE_ARGS += 	-DMYGUI_BUILD_DEMOS=false \
 			-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
 			-Wno-dev
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 pre-configure:

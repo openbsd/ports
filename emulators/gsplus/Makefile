@@ -33,4 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/gsplusmanual.pdf ${PREFIX}/share/doc/gsplus
 	${INSTALL_DATA} ${WRKSRC}/doc/README.txt ${PREFIX}/share/doc/gsplus
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

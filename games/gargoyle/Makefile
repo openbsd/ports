@@ -35,4 +35,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/garglk/garglk.ini \
 	    ${PREFIX}/share/examples/gargoyle
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

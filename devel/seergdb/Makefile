@@ -27,6 +27,8 @@ LIB_DEPENDS = 		x11/qt6/qtcharts \
 
 WRKSRC=			${WRKDIST}/src
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Seer{GdbConfigPage,GdbWidget,MainWindow}.cpp
 

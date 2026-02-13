@@ -51,11 +51,18 @@ CONFIGURE_ARGS=		-DWANT_ALSA=OFF \
 # Disable Doxygen
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-extract:
 	cp ${FILESDIR}/Sndio{Audio,Midi}Driver.h \
 		${WRKSRC}/src/core/include/hydrogen/IO
 	cp ${FILESDIR}/sndio_{audio,midi}_driver.cpp \
 		${WRKSRC}/src/core/src/IO
+
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/CMAKE_MINIMUM_REQUIRED\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 
 post-install:
 	cp -rp ${WRKSRC}/data/doc ${PREFIX}/share/doc/hydrogen

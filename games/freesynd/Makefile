@@ -4,7 +4,6 @@ VERSION =	0.8
 PKGNAME =	freesynd-${VERSION}
 DISTNAME =	Freesynd-${VERSION}-Source
 CATEGORIES = 	games x11
-REVISION =	0
 
 HOMEPAGE =	https://freesynd.sourceforge.io/
 
@@ -24,9 +23,10 @@ LIB_DEPENDS =	devel/sdl2 \
 		devel/sdl2-mixer \
 		graphics/png
 
-CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCMAKE_INSTALL_DOCDIR=${LOCALBASE}/share/doc/freesynd
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =	Yes
 

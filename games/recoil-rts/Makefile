@@ -108,6 +108,8 @@ CXXFLAGS +=		-ffp-exception-behavior=strict
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 SUBST_VARS +=		V
 
 pre-configure:

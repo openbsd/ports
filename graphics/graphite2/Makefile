@@ -27,6 +27,8 @@ COMPILER=	base-clang ports-gcc
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 # XXX needs py-fontTools (not ported)
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 

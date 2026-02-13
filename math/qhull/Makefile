@@ -26,4 +26,6 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DMAN_INSTALL_DIR=${PREFIX}/man/man1
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

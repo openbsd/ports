@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	-DGuiModule=zest \
 		-DPaEnable=OFF \
 		-DSndioEnable=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-patch:
 	sed -i s,/usr/X11R6,${X11BASE}, ${WRKSRC}/src/CMakeLists.txt
 	sed -i s,/usr/local,${TRUEPREFIX}, ${WRKSRC}/src/main.cpp \

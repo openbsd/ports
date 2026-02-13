@@ -55,4 +55,7 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/openclonk-release-${V}-src
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -24,6 +24,8 @@ LIB_DEPENDS =	${MODLUA_LIB_DEPENDS} \
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/luaposix
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 TESTS =	churn-direct churn-rsyncssh exclude-rsyncssh schedule \
 	churn-rsync exclude-rsync l4rsyncdata
 

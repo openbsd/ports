@@ -26,4 +26,6 @@ LIB_DEPENDS+=	converters/libiconv \
 
 CONFIGURE_ARGS +=-DLIBwv2_VERSION=${LIBwv2_VERSION}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

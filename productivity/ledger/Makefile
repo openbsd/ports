@@ -52,4 +52,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/share/doc/ledger/
 .endfor
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

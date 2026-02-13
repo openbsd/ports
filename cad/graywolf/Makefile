@@ -18,6 +18,8 @@ WANTLIB +=	ICE SM X11 Xext c gsl gslcblas m
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS =	devel/gsl
 
 # Really really not C99

@@ -70,4 +70,7 @@ CONFIGURE_ARGS +=	-DWITH_NEON=OFF
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/{,winpr/libwinpr/}CMakeLists.txt
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

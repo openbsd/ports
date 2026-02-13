@@ -76,6 +76,8 @@ RUN_DEPENDS-gtk +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 RUN_DEPENDS-qt +=	${PKGNAME-main}:${BUILD_PKGPATH} \
 			devel/desktop-file-utils
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 CONFIGURE_ARGS +=	-DENABLE_CLI=ON \
 			-DENABLE_TESTS=OFF \
 			-DRUN_CLANG_TIDY=OFF
@@ -99,5 +101,10 @@ CONFIGURE_ARGS +=	-DENABLE_QT=ON \
 .else
 CONFIGURE_ARGS +=	-DENABLE_QT=OFF
 .endif
+
+pre-configure:
+	find ${WRKSRC} -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 
 .include <bsd.port.mk>

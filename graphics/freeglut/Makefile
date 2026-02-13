@@ -17,6 +17,8 @@ WANTLIB += GL X11 Xi Xrandr Xxf86vm m
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

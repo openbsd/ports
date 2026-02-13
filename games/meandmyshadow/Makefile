@@ -31,6 +31,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CXXFLAGS +=	-Wno-narrowing
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/meandmyshadow.desktop \

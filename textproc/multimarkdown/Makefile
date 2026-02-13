@@ -17,6 +17,8 @@ WANTLIB +=	c
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-install:
 	rm ${PREFIX}/{LICENSE.txt,README.txt}
 	mv ${PREFIX}/bin/{mmd,mmd2xhtml} # avoid conflict with mtools

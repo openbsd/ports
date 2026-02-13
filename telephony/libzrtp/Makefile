@@ -16,4 +16,6 @@ MODULES =		devel/cmake
 # C++ static lib
 COMPILER =		base-clang ports-gcc
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

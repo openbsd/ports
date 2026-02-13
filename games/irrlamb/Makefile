@@ -48,4 +48,7 @@ post-patch:
 				  ${WRKSRC}/deployment/irrlamb
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

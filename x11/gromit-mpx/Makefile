@@ -32,4 +32,7 @@ post-install:
 	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.active.png
 	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.png
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

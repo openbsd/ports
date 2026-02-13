@@ -1,4 +1,4 @@
-VER =		3.31.8
+VER =		4.1.2
 DISTNAME =	cmake-${VER}
 CATEGORIES ?=	devel
 

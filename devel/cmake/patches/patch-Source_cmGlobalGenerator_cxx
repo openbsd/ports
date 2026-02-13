@@ -1,13 +1,16 @@
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2988,6 +2988,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+@@ -2856,6 +2856,12 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+   }
    cmCustomCommandLine singleLine;
    singleLine.push_back(cmSystemTools::GetCTestCommand());
-   singleLine.push_back("--force-new-ctest-process");
-+  // Skip tests requiring internet access
-+  singleLine.push_back("--exclude-regex");
-+  singleLine.push_back("\"CMake.FileDownload|CTestTestUpload|RunCMake.ctest_submit\"");
++  std::string openbsd_build;
++  if ((cmSystemTools::GetEnv("MODCMAKE_PORT_BUILD", openbsd_build))) {
++    // Skip tests requiring internet access
++    singleLine.push_back("--exclude-regex");
++    singleLine.push_back("\"CMake.FileDownload|CTestTestUpload|RunCMake.ctest_submit\"");
++  }
    cmList args(mf->GetDefinition("CMAKE_CTEST_ARGUMENTS"));
    for (auto const& arg : args) {
      singleLine.push_back(arg);

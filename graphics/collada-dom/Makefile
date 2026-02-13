@@ -31,6 +31,8 @@ LIB_DEPENDS =		devel/boost \
 
 CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++14 -Wno-int-conversion"
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

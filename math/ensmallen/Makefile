@@ -20,4 +20,6 @@ RUN_DEPENDS += math/armadillo
 
 CONFIGURE_STYLE = cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -32,6 +32,8 @@ CONFIGURE_ARGS +=	-DTASK_DOCDIR=share/doc/taskwarrior \
 			-DTASK_MAN5DIR=man/man5 \
 			-Ddoc_FILES="README.md"
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 pre-configure:

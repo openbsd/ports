@@ -29,6 +29,8 @@ LIB_DEPENDS =		devel/boost
 # devel/gtest is too new for this
 CONFIGURE_ARGS +=	-DENABLE_TEST=FALSE
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 do-test:

@@ -18,6 +18,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes

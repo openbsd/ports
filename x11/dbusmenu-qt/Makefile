@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	-DUSE_QT4=OFF \
 		-DWITH_DOC=OFF \
 		-DCMAKE_DISABLE_FIND_PACKAGE_QJSON=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # XXX "!icon.isNull()" failed tests are normal, they do mean that
 # mentioned icon is not installed; e.g., these are the test bugs.

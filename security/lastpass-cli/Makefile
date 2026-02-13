@@ -24,6 +24,8 @@ LIB_DEPENDS =	net/curl \
 TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 do-test:
 	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/test/*
 	chmod +x ${WRKSRC}/test/tests ${WRKSRC}/test/*.sh

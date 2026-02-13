@@ -45,4 +45,7 @@ pre-configure:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/choria
 	
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

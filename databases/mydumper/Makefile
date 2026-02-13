@@ -23,4 +23,7 @@ LIB_DEPENDS =	databases/mariadb \
 
 NO_TEST =	Yes
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

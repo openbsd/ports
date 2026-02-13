@@ -32,6 +32,8 @@ CONFIGURE_ARGS =	-DNEKO_JIT_DISABLE=ON \
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/neko-${V:S/./-/g}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 

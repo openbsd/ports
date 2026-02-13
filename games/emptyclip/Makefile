@@ -42,4 +42,7 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/emptyclip-${V}-${COMMIT}
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

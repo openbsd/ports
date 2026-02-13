@@ -18,6 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc base-gcc
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=yes
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -29,6 +29,7 @@ CONFIGURE_ARGS +=	-DSSE2_FOUND=OFF -DSSE3_FOUND=OFF \
 .endif
 # And yet, some old amd64 machines have no SSE4.1
 CONFIGURE_ARGS +=	-DSSE4_1_FOUND=OFF
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # seems tests require a full extra configuration pass
 NO_TEST =	Yes

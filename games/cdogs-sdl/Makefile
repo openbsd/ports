@@ -33,4 +33,7 @@ post-build:
 	@cp ${WRKBUILD}/src/cdogs-sdl ${WRKSRC}/src/cdogs-sdl
 	@cp ${WRKBUILD}/src/cdogs-sdl-editor ${WRKSRC}/src/cdogs-sdl-editor
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

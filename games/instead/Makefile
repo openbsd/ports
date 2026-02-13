@@ -31,4 +31,7 @@ CONFIGURE_ARGS =	-DMANDIR=man
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

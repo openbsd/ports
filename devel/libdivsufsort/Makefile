@@ -22,4 +22,6 @@ MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DBUILD_DIVSUFSORT64=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

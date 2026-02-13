@@ -63,4 +63,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libretro
 	mv ${PREFIX}/lib/mgba_libretro.so ${PREFIX}/lib/libretro
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

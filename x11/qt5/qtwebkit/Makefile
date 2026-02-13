@@ -86,6 +86,8 @@ LIB_DEPENDS =		databases/sqlite3 \
 			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 CONFIGURE_ARGS +=	-DENABLE_API_TESTS=OFF \
 			-DENABLE_QT_WEBCHANNEL=ON \
 			-DENABLE_TOOLS=OFF \
@@ -132,6 +134,8 @@ DWZ = :
 .if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 post-install:
 	find ${WRKINST} -type f -exec perl -pi -e 's,${WRKINST},,g;' {} +

@@ -21,6 +21,8 @@ SITES=		https://www.freedesktop.org/software/uchardet/releases/
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

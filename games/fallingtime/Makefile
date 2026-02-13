@@ -25,4 +25,7 @@ post-install:
 		${WRKSRC}/fallingtime
 	${SUBST_CMD} -c -m 555 ${WRKSRC}/fallingtime ${PREFIX}/bin/fallingtime
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

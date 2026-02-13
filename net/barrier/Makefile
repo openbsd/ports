@@ -46,4 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/barriers.1 \
 		${PREFIX}/man/man1/barriers.1
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

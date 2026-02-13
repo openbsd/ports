@@ -34,4 +34,7 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/mars-game
 FIX_CRLF_FILES = src/Shaders/postFX.cpp src/System/window.cpp
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

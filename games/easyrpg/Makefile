@@ -40,4 +40,7 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/Player-${GH_TAGNAME}
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

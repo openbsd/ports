@@ -1,8 +1,10 @@
 Fix static linking and tests
 (from gentoo linux)
+- https://github.com/lloyd/yajl/pull/256
 
---- reformatter/CMakeLists.txt.orig	Wed Mar 19 05:58:29 2014
-+++ reformatter/CMakeLists.txt	Sun Jul 12 19:16:24 2015
+Index: reformatter/CMakeLists.txt
+--- reformatter/CMakeLists.txt.orig
++++ reformatter/CMakeLists.txt
 @@ -26,7 +26,7 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/../${YAJL
  
  ADD_EXECUTABLE(json_reformat ${SRCS})
@@ -12,3 +14,15 @@ Fix static linking and tests
  
  # In some environments, we must explicitly link libm (like qnx,
  # thanks @shahbag)
+@@ -34,10 +34,7 @@ IF (NOT WIN32)
+     TARGET_LINK_LIBRARIES(json_reformat m)
+ ENDIF (NOT WIN32)
+ 
+-# copy the binary into the output directory
+-GET_TARGET_PROPERTY(binPath json_reformat LOCATION)
+-
+ ADD_CUSTOM_COMMAND(TARGET json_reformat POST_BUILD
+-    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${binPath} ${binDir})
++    COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:json_reformat> ${binDir})
+ 
+ INSTALL(TARGETS json_reformat RUNTIME DESTINATION bin)

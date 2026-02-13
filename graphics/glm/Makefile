@@ -18,7 +18,9 @@ COMPILER=	base-clang ports-gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't
 # run the tests.
-CONFIGURE_ARGS +=      -DGLM_BUILD_TESTS=ON
+CONFIGURE_ARGS +=	-DGLM_BUILD_TESTS=ON
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 PKG_ARCH=	*
 

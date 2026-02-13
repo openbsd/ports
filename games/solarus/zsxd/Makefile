@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	games/solarus/solarus>=1.5.0

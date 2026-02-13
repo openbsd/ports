@@ -26,10 +26,11 @@ CFLAGS+=               -O0
 CXXFLAGS+=             -O0
 .endif
 
+CONFIGURE_ARGS=		-DBUILD_EXT=on
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 COMPILER=		base-clang ports-gcc
 
 CXXFLAGS +=		-std=c++14
-
-CONFIGURE_ARGS=		-DBUILD_EXT=on
 
 .include <bsd.port.mk>

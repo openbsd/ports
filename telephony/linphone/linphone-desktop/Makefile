@@ -11,7 +11,9 @@ DIST_TUPLE +=	gitlab external ispell 05574fe160222c3d0b6283c1433c9b087271fad1 ex
 MODULES +=	x11/qt5
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_QT_KEYCHAIN=NO \
-		-DENABLE_UNIT_TESTS=NO
+		-DENABLE_UNIT_TESTS=NO 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox \
 		telephony/linphone/mediastreamer2 \

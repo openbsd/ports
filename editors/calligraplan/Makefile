@@ -91,6 +91,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		graphics/kdiagram \
 		security/qca-qt6
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
 

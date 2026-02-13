@@ -36,6 +36,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

@@ -23,6 +23,8 @@ RUN_DEPENDS =	devel/protobuf-c
 CONFIGURE_ARGS =	-DBUILD_TESTING=ON \
 			-DBUILD_SHARED_LIBS=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-extract:
 	mv ${WRKSRC}/src/utarray.h ${WRKSRC}/src/utarray_local.h
 	mv ${WRKSRC}/src/uthash.h ${WRKSRC}/src/uthash_local.h

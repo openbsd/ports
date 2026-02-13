@@ -1,0 +1,19 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -19,13 +19,13 @@
+ # THE SOFTWARE.
+ 
+ project(STP)
+-cmake_minimum_required(VERSION 2.8.8 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5)
+ 
+ 
+ if (CMAKE_MAJOR_VERSION GREATER 2)
+     # FIXME: We need to find a proper way to get the LOCATION property of a target
+     # when using CMake >= 3.0
+-    cmake_policy(SET CMP0026 OLD) # See cmake --help-policy CMP0026
++    cmake_policy(SET CMP0026 NEW) # See cmake --help-policy CMP0026
+ endif()
+ 
+ # Search paths for custom CMake modules

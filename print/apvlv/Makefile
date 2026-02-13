@@ -24,4 +24,7 @@ LIB_DEPENDS=	x11/gtk+3 \
 
 CONFIGURE_ARGS=-DMANDIR=${PREFIX}/man
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

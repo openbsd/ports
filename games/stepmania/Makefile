@@ -64,4 +64,7 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Va=On
 post-install:
 	cd ${PREFIX}/bin && ln -s ../$(DATADIR)/stepmania
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

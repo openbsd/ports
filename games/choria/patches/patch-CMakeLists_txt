@@ -1,12 +1,6 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1,4 +1,4 @@
--cmake_minimum_required(VERSION 3.13)
-+Cmake_minimum_required(VERSION 3.13)
- 
- # project name
- project(choria)
 @@ -35,8 +35,7 @@ if(WIN32)
  	# disable console window
  	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-subsystem,windows")

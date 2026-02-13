@@ -18,6 +18,8 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/mustache.hpp ${PREFIX}/include

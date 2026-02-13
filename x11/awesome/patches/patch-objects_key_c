@@ -1,7 +1,6 @@
 Fix -fno-common build failure. Taken from
 https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
 
-Index: objects/drawin.h
 Index: objects/key.c
 --- objects/key.c.orig
 +++ objects/key.c

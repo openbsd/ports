@@ -21,4 +21,6 @@ NO_TEST =	Yes
 CONFIGURE_ARGS =-DXDG_CONFIG_DIR=${PREFIX}/share/examples \
 		-DMAN_PATH=${PREFIX}/man
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

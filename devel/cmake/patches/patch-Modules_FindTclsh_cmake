@@ -1,8 +1,8 @@
 Index: Modules/FindTclsh.cmake
 --- Modules/FindTclsh.cmake.orig
 +++ Modules/FindTclsh.cmake
-@@ -17,18 +17,30 @@ library is.  This code sets the following variables:
-   TCL_TCLSH = the path to the tclsh executable
+@@ -42,18 +42,30 @@ See Also
+ * The :module:`FindTclStub` module to find the Tcl Stubs Library.
  #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})

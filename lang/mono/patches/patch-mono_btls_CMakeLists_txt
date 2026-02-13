@@ -1,21 +1,12 @@
 Index: mono/btls/CMakeLists.txt
 --- mono/btls/CMakeLists.txt.orig
 +++ mono/btls/CMakeLists.txt
-@@ -12,10 +12,10 @@ endif()
- enable_language(C)
- enable_language(CXX)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 2.8.10)
++cmake_minimum_required(VERSION 2.8.12...3.20)
  
--find_program(CCACHE_PROGRAM ccache)
--if(CCACHE_PROGRAM)
--    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
--endif()
-+#find_program(CCACHE_PROGRAM ccache)
-+#if(CCACHE_PROGRAM)
-+#    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
-+#endif()
+ project (mono-btls)
  
- if (MSVC OR CYGWIN)
- 	set(BTLS_HOST_WIN32 1)
 @@ -129,4 +129,4 @@ endif ()
  
  if (CYGWIN)

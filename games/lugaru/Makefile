@@ -1,6 +1,7 @@
 COMMENT =	third-person rabbit combat action game
 
-DISTNAME =	lugaru-1.2
+V =		1.2
+DISTNAME =	lugaru-${V}
 REVISION =	2
 
 CATEGORIES =	games
@@ -15,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += GL GLU SDL2 c jpeg m ogg openal png pthread vorbisfile
 WANTLIB += z ${COMPILER_LIBCXX}
 
-SITES =			https://bitbucket.org/osslugaru/lugaru/downloads/
+SITES =			https://github.com/osslugaru/lugaru/releases/download/${V}/
 
 EXTRACT_SUFX =		.tar.xz
 

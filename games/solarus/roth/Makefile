@@ -16,4 +16,6 @@ BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	games/solarus/solarus>=1.5.0
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

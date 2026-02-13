@@ -14,6 +14,7 @@
 @man man/man7/cmake-file-api.7
 @man man/man7/cmake-generator-expressions.7
 @man man/man7/cmake-generators.7
+@man man/man7/cmake-instrumentation.7
 @man man/man7/cmake-language.7
 @man man/man7/cmake-modules.7
 @man man/man7/cmake-packages.7

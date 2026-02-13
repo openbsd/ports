@@ -28,6 +28,8 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DWITH_JAVASCRIPT=OFF \
 			-DWITH_NODEJS=OFF
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 BUILD_DEPENDS =	devel/boost \
 		devel/bison
 # some headers include boost headers

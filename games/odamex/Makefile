@@ -46,6 +46,11 @@ BUILD_DEPENDS =		archivers/deutex
 
 NO_TEST =		Yes
 
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
+
 EXAMPLES_DIR =	${PREFIX}/share/examples/odamex
 post-install:
 	mv ${PREFIX}/share/odamex/config-samples ${EXAMPLES_DIR}

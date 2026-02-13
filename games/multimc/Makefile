@@ -34,4 +34,7 @@ CONFIGURE_ARGS =	-DMultiMC_LAYOUT="lin-system"
 
 WRKDIST =		${WRKDIR}/MultiMC5
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

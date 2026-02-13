@@ -35,4 +35,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 WRKDIST =	${WRKDIR}/solarus-${V}
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

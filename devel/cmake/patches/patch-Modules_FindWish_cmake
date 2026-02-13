@@ -1,8 +1,8 @@
 Index: Modules/FindWish.cmake
 --- Modules/FindWish.cmake.orig
 +++ Modules/FindWish.cmake
-@@ -20,14 +20,21 @@ library is.  This code sets the following variables:
- if UNIX is defined, then it will look for the cygwin version first
+@@ -33,14 +33,21 @@ Finding ``wish``:
+   message(STATUS "Found wish at: ${TK_WISH}")
  #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
@@ -25,7 +25,7 @@ Index: Modules/FindWish.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -66,16 +73,22 @@ if(WIN32)
+@@ -79,16 +86,22 @@ if(WIN32)
      )
  endif()
  

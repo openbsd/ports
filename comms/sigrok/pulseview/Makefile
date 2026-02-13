@@ -31,4 +31,6 @@ NO_TEST =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

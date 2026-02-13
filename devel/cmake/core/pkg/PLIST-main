@@ -250,6 +250,7 @@ share/cmake/Modules/Compiler/ARMClang-CXX.cmake
 share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/ARMClang.cmake
 share/cmake/Modules/Compiler/Absoft-Fortran.cmake
+share/cmake/Modules/Compiler/Apple-Swift.cmake
 share/cmake/Modules/Compiler/AppleClang-ASM.cmake
 share/cmake/Modules/Compiler/AppleClang-C-FeatureTests.cmake
 share/cmake/Modules/Compiler/AppleClang-C.cmake
@@ -293,6 +294,12 @@ share/cmake/Modules/Compiler/CrayPrgEnv-C.cmake
 share/cmake/Modules/Compiler/CrayPrgEnv-CXX.cmake
 share/cmake/Modules/Compiler/CrayPrgEnv-Fortran.cmake
 share/cmake/Modules/Compiler/CrayPrgEnv.cmake
+share/cmake/Modules/Compiler/Diab-ASM.cmake
+share/cmake/Modules/Compiler/Diab-C.cmake
+share/cmake/Modules/Compiler/Diab-CXX.cmake
+share/cmake/Modules/Compiler/Diab-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/Diab-FindBinUtils.cmake
+share/cmake/Modules/Compiler/Diab.cmake
 share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/Flang-FindBinUtils.cmake
 share/cmake/Modules/Compiler/Flang-Fortran.cmake
@@ -342,6 +349,7 @@ share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/IBMClang-C.cmake
 share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/IBMClang-CXX.cmake
+share/cmake/Modules/Compiler/IBMClang-FindBinUtils.cmake
 share/cmake/Modules/Compiler/IBMClang.cmake
 share/cmake/Modules/Compiler/Intel-ASM.cmake
 share/cmake/Modules/Compiler/Intel-C-FeatureTests.cmake
@@ -413,6 +421,12 @@ share/cmake/Modules/Compiler/QCC-C.cmake
 share/cmake/Modules/Compiler/QCC-CXX-FeatureTests.cmake
 share/cmake/Modules/Compiler/QCC-CXX.cmake
 share/cmake/Modules/Compiler/QCC.cmake
+share/cmake/Modules/Compiler/Renesas-ASM.cmake
+share/cmake/Modules/Compiler/Renesas-C-FeatureTests.cmake
+share/cmake/Modules/Compiler/Renesas-C.cmake
+share/cmake/Modules/Compiler/Renesas-CXX.cmake
+share/cmake/Modules/Compiler/Renesas-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/Renesas.cmake
 share/cmake/Modules/Compiler/SCO-C.cmake
 share/cmake/Modules/Compiler/SCO-CXX.cmake
 share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake
@@ -757,6 +771,7 @@ share/cmake/Modules/Internal/CMakeNVCCFilterImplicitInfo.cmake
 share/cmake/Modules/Internal/CMakeNVCCParseImplicitInfo.cmake
 share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake
 share/cmake/Modules/Internal/CMakeOBJCXXLinkerInformation.cmake
+share/cmake/Modules/Internal/CMakeParseCompilerArchitectureId.cmake
 share/cmake/Modules/Internal/CMakeSwiftLinkerInformation.cmake
 share/cmake/Modules/Internal/CMakeTryCompilerOrLinkerFlag.cmake
 share/cmake/Modules/Internal/CPack/
@@ -839,6 +854,14 @@ share/cmake/Modules/Linker/MOLD-Fortran.cmake
 share/cmake/Modules/Linker/MOLD-HIP.cmake
 share/cmake/Modules/Linker/MOLD-OBJC.cmake
 share/cmake/Modules/Linker/MOLD-OBJCXX.cmake
+share/cmake/Modules/Linker/MOLD.cmake
+share/cmake/Modules/Linker/MSVC-ASM.cmake
+share/cmake/Modules/Linker/MSVC-C.cmake
+share/cmake/Modules/Linker/MSVC-CUDA.cmake
+share/cmake/Modules/Linker/MSVC-CXX.cmake
+share/cmake/Modules/Linker/MSVC-Fortran.cmake
+share/cmake/Modules/Linker/MSVC-HIP.cmake
+share/cmake/Modules/Linker/MSVC.cmake
 share/cmake/Modules/Linker/Solaris-ASM.cmake
 share/cmake/Modules/Linker/Solaris-C.cmake
 share/cmake/Modules/Linker/Solaris-CXX.cmake
@@ -915,6 +938,7 @@ share/cmake/Modules/Platform/Android/abi-mips-Clang.cmake
 share/cmake/Modules/Platform/Android/abi-mips-GNU.cmake
 share/cmake/Modules/Platform/Android/abi-mips64-Clang.cmake
 share/cmake/Modules/Platform/Android/abi-mips64-GNU.cmake
+share/cmake/Modules/Platform/Android/abi-riscv64-Clang.cmake
 share/cmake/Modules/Platform/Android/abi-x86-Clang.cmake
 share/cmake/Modules/Platform/Android/abi-x86-GNU.cmake
 share/cmake/Modules/Platform/Android/abi-x86_64-Clang.cmake
@@ -1042,6 +1066,10 @@ share/cmake/Modules/Platform/Fuchsia-Initialize.cmake
 share/cmake/Modules/Platform/Fuchsia.cmake
 share/cmake/Modules/Platform/GHS-MULTI-Determine.cmake
 share/cmake/Modules/Platform/GHS-MULTI.cmake
+share/cmake/Modules/Platform/GNU-GNU-C.cmake
+share/cmake/Modules/Platform/GNU-GNU-CXX.cmake
+share/cmake/Modules/Platform/GNU-GNU-Fortran.cmake
+share/cmake/Modules/Platform/GNU-GNU.cmake
 share/cmake/Modules/Platform/GNU-Initialize.cmake
 share/cmake/Modules/Platform/GNU.cmake
 share/cmake/Modules/Platform/GNUtoMS_lib.bat.in
@@ -1562,8 +1590,6 @@ share/cmake/Modules/Platform/gas.cmake
 share/cmake/Modules/Platform/iOS-Determine-CXX.cmake
 share/cmake/Modules/Platform/iOS-Initialize.cmake
 share/cmake/Modules/Platform/iOS.cmake
-share/cmake/Modules/Platform/kFreeBSD-Initialize.cmake
-share/cmake/Modules/Platform/kFreeBSD.cmake
 share/cmake/Modules/Platform/syllable-Initialize.cmake
 share/cmake/Modules/Platform/syllable.cmake
 share/cmake/Modules/Platform/tvOS-Determine-CXX.cmake
@@ -1588,7 +1614,7 @@ share/cmake/Modules/SystemInformation.cmake
 share/cmake/Modules/SystemInformation.in
 share/cmake/Modules/TestBigEndian.cmake
 share/cmake/Modules/TestCXXAcceptsFlag.cmake
-share/cmake/Modules/TestEndianess.c.in
+share/cmake/Modules/TestEndianness.c.in
 share/cmake/Modules/TestForANSIForScope.cmake
 share/cmake/Modules/TestForANSIStreamHeaders.cmake
 share/cmake/Modules/TestForANSIStreamHeaders.cxx
@@ -1627,6 +1653,7 @@ share/cmake/Templates/CPack.GenericDescription.txt
 share/cmake/Templates/CPack.GenericLicense.txt
 share/cmake/Templates/CPack.GenericWelcome.txt
 share/cmake/Templates/CPackConfig.cmake.in
+share/cmake/Templates/CTestScript.cmake.in
 share/cmake/Templates/MSBuild/
 share/cmake/Templates/MSBuild/CustomBuildDepFile.targets
 share/cmake/Templates/MSBuild/FlagTables/
@@ -1679,10 +1706,9 @@ share/cmake/Templates/Windows/SmallLogo44x44.png
 share/cmake/Templates/Windows/SplashScreen.png
 share/cmake/Templates/Windows/StoreLogo.png
 share/cmake/Templates/Windows/Windows_TemporaryKey.pfx
-share/cmake/include/
-share/cmake/include/cmCPluginAPI.h
 share/doc/cmake/
-share/doc/cmake/Copyright.txt
+share/doc/cmake/CONTRIBUTORS.rst
+share/doc/cmake/LICENSE.rst
 share/doc/cmake/cmcppdap/
 share/doc/cmake/cmcppdap/NOTICE
 share/doc/cmake/cmsys/

@@ -1,7 +1,7 @@
 Index: Modules/FindXMLRPC.cmake
 --- Modules/FindXMLRPC.cmake.orig
 +++ Modules/FindXMLRPC.cmake
-@@ -98,6 +98,8 @@ if(XMLRPC_C_FOUND)
+@@ -141,6 +141,8 @@ if(XMLRPC_C_FOUND)
        endif()
      endforeach()
  

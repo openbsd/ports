@@ -136,6 +136,8 @@ CONFIGURE_ARGS +=	-DENABLE_ALSA=OFF \
 			-DUSE_SYSTEM_LIBMGBA=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 FIX_CRLF_FILES =	Externals/soundtouch/SoundTouch.cpp \
 			Externals/soundtouch/SoundTouch.h \
 			Source/Core/Common/MinizipUtil.h

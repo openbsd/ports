@@ -21,4 +21,6 @@ MODULES=	devel/cmake
 
 WRKDIST=	${WRKDIR}/physfs-release-${V}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -19,5 +19,6 @@ MODULES=	devel/cmake
 
 # disable -march=native
 CONFIGURE_ARGS=	-DRAPIDJSON_ENABLE_INSTRUMENTATION_OPT=OFF
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

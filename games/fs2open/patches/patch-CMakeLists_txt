@@ -18,7 +18,7 @@ Index: CMakeLists.txt
  set_policy(CMP0051 NEW)
  set_policy(CMP0053 NEW)
  set_policy(CMP0054 NEW)
-+set_policy(CMP0026 OLD)	# to avoid get_target_property error
++set_policy(CMP0026 NEW)	# to avoid get_target_property error
  
  SET(FSO_PROJECT_DESCRIPTION "Open source project based on the original FreeSpace 2 source code.")
  

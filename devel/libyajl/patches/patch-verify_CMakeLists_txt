@@ -1,14 +1,22 @@
 Fix static linking and tests
 (from gentoo linux)
+- https://github.com/lloyd/yajl/pull/256
 
---- verify/CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011
-+++ verify/CMakeLists.txt	Thu Jun 28 10:09:59 2012
-@@ -26,7 +26,7 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/../${YAJL
+Index: verify/CMakeLists.txt
+--- verify/CMakeLists.txt.orig
++++ verify/CMakeLists.txt
+@@ -26,12 +26,10 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/../${YAJL
  
  ADD_EXECUTABLE(json_verify ${SRCS})
  
 -TARGET_LINK_LIBRARIES(json_verify yajl_s)
 +TARGET_LINK_LIBRARIES(json_verify yajl)
  
- # copy in the binary
- GET_TARGET_PROPERTY(binPath json_verify LOCATION)
+-# copy in the binary
+-GET_TARGET_PROPERTY(binPath json_verify LOCATION)
+ 
+ ADD_CUSTOM_COMMAND(TARGET json_verify POST_BUILD
+-    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${binPath} ${binDir})
++    COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:json_verify> ${binDir})
+ 
+ INSTALL(TARGETS json_verify RUNTIME DESTINATION bin)

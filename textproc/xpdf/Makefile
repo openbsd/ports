@@ -45,4 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-xpdfrc \
 		${PREFIX}/share/examples/xpdf/xpdfrc
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

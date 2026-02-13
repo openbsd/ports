@@ -24,6 +24,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS =	-DDATADIR="${PREFIX}/share/freeblocks"
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

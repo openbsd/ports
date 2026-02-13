@@ -41,4 +41,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/psn-account-id.py \
 		${PREFIX}/share/examples/chiaki/
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

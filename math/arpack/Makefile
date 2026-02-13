@@ -31,6 +31,8 @@ MODULES =	fortran \
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS:BOOL=ON \
 			-D ICB=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS-main = 	math/lapack
 
 WANTLIB +=	lapack blas m

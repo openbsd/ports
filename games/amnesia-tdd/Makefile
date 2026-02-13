@@ -50,4 +50,7 @@ post-install:
 # rename binary to avoid name conflict with other amnesia ports
 	@mv ${PREFIX}/bin/Amnesia{,-tdd}
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

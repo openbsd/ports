@@ -25,6 +25,8 @@ BUILD_DEPENDS=	devel/boost
 
 CONFIGURE_ARGS=	-DBUILD_CONTRIBS_LIB:BOOL=ON
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 CXXFLAGS +=	-std=c++03

@@ -79,4 +79,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/flycast \
 		${PREFIX}/bin/
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

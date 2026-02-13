@@ -18,6 +18,8 @@ LIB_DEPENDS +=	net/curl \
 		databases/sqlite3 \
 		devel/glib2
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

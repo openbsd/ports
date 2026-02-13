@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	-DBUILD_DOC=No \
 		-DBUILD_LENSTOOL=Yes \
 		-DBUILD_TESTS=Yes
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 DOC_DIR=	${PREFIX}/share/doc/lensfun
 
 post-install:

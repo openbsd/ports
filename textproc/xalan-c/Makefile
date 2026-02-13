@@ -29,4 +29,6 @@ LIB_DEPENDS =		textproc/xerces-c
 
 CONFIGURE_ARGS =	-Ddoxygen=off
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

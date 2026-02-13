@@ -20,6 +20,7 @@ LIB_DEPENDS =		devel/libconfig \
 			devel/protobuf-c>=1.0.1
 
 CONFIGURE_ARGS =	-DSSL=openssl
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =		Yes
 

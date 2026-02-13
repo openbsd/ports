@@ -25,4 +25,12 @@ RUN_DEPENDS=	math/py-numpy	\
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
+pre-configure:
+	find ${WRKSRC} -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required \([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
+
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

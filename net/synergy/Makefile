@@ -23,6 +23,8 @@ LIB_DEPENDS=		net/curl
 
 MODULES=		devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST=		Yes
 
 CXXFLAGS +=		-std=c++03

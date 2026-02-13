@@ -38,4 +38,7 @@ CONFIGURE_ARGS =	-DMETAINFO_ITS="${LOCALBASE}/share/gettext/its/appdata.its" \
 
 NO_TEST =	Yes
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

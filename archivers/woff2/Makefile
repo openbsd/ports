@@ -20,6 +20,8 @@ WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc c m
 COMPILER=		base-clang ports-gcc base-gcc
 MODULES=		devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS=		archivers/brotli
 
 NO_TEST=		Yes

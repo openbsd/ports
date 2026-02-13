@@ -19,6 +19,8 @@ WANTLIB +=	m
 MODULES =	devel/cmake
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 # everything except tests (needs changing or removing if building cJSON_Utils)
 ALL_TARGET =	cjson
 

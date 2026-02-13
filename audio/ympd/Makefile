@@ -15,4 +15,6 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	audio/libmpdclient
 WANTLIB +=	c crypto mpdclient pthread ssl
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

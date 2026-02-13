@@ -16,6 +16,8 @@ MODULES =	devel/cmake
 
 NO_TEST =	Yes
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/brainfuck
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/brainfuck/

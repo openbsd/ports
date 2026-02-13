@@ -31,6 +31,8 @@ LIB_DEPENDS=		net/neon \
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/cmake/modules/FindNeon.cmake

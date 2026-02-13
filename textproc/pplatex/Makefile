@@ -24,6 +24,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m pcre pcreposix
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS =	devel/pcre
 
 do-install:

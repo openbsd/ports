@@ -17,6 +17,7 @@ SITES =			https://s3.amazonaws.com/json-c_releases/releases/
 MODULES=		devel/cmake
 
 CONFIGURE_ARGS=		-DDISABLE_WERROR=ON
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # evertyhing except tests
 ALL_TARGET =		json-c json-c-static

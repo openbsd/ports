@@ -25,8 +25,9 @@ LIB_DEPENDS =	audio/freealut \
 		audio/openal \
 		devel/sdl2
 
-CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
-			-DDATADIR=${LOCALBASE}/share/astromenace
+CONFIGURE_ARGS =	-DDATADIR=${LOCALBASE}/share/astromenace
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =		Yes
 

@@ -23,4 +23,7 @@ LIB_DEPENDS =	devel/olm
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

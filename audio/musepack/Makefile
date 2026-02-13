@@ -20,6 +20,8 @@ WANTLIB += c cue m
 
 MODULES =		devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS =		audio/libcue
 
 NO_TEST =		Yes

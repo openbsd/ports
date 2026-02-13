@@ -50,6 +50,8 @@ CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=OFF \
 # It fails to build with docs enabled on sparc64
 CONFIGURE_ARGS+=	-DGENERATE_DOC=OFF
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST=		Yes
 
 pre-configure:

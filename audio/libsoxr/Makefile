@@ -21,4 +21,7 @@ SITES=		${SITE_SOURCEFORGE:=soxr/}
 
 MODULES=	devel/cmake
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

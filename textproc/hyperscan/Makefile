@@ -58,4 +58,7 @@ post-install:
 do-test:
 	${WRKBUILD}/bin/unit-hyperscan
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

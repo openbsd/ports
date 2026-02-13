@@ -23,7 +23,10 @@ BUILD_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		graphics/freeglut \
 			graphics/png
 
-MODCMAKE_LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 
 TEST_IS_INTERACTIVE =	x11
 

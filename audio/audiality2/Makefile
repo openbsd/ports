@@ -23,6 +23,8 @@ LIB_DEPENDS =		devel/sdl2
 
 CONFIGURE_ARGS =	-DUSE_JACK=OFF
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

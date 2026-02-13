@@ -46,4 +46,9 @@ LIB_DEPENDS =		archivers/libarchive \
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
+
 .include <bsd.port.mk>

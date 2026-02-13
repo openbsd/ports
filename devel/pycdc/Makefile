@@ -19,6 +19,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 pre-test:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKSRC}/pycdc_test.sh
 

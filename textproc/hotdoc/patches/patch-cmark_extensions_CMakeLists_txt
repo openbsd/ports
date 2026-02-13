@@ -1,0 +1,9 @@
+Index: cmark/extensions/CMakeLists.txt
+--- cmark/extensions/CMakeLists.txt.orig
++++ cmark/extensions/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 2.8...3.10)
+ set(LIBRARY "cmarkextensions")
+ set(LIBRARY_SOURCES
+     core-extensions.c

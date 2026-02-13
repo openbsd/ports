@@ -97,4 +97,7 @@ post-install:
 		${PREFIX}/share/metainfo/
 
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

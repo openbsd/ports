@@ -51,4 +51,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/fonts/{GPL,OFL-1.1}.txt ${PREFIX}/share/doc/valyriatear
 	${INSTALL_MAN} ${WRKSRC}/doc/valyriatear.6 ${PREFIX}/man/man6
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -14,6 +14,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	devel/cmake
 TEST_DEPENDS=	devel/boost
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 do-test:
 	cd ${WRKSRC}/tests && mkdir -p build && cd build && \
 		export CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \

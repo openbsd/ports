@@ -77,6 +77,8 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:

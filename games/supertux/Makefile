@@ -41,9 +41,14 @@ LIB_DEPENDS =		devel/sdl2-image \
 CONFIGURE_ARGS +=	-DINSTALL_SUBDIR_BIN="${LOCALBASE}/bin" \
 			-DBUILD_SHARED_LIBS=OFF
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =		Yes
 
 pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 	${SUBST_CMD} ${WRKSRC}/src/supertux/main.cpp
 
 .include <bsd.port.mk>

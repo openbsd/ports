@@ -62,6 +62,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-release \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 

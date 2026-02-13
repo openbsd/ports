@@ -5,4 +5,6 @@ ATH9K_FIRMWARE =	magpie
 
 CONFIGURE_ARGS +=	-DTARGET_MAGPIE=On
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ MODULES =	devel/cmake
 
 BUILD_DEPENDS =	archivers/zip
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 RUN_DEPENDS =	games/solarus/solarus>=1.5.0
 
 .include <bsd.port.mk>

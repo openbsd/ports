@@ -19,6 +19,8 @@ WANTLIB =	c curses
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
 

@@ -28,5 +28,6 @@ LIB_DEPENDS =	astro/wcslib \
 		math/cfitsio
 
 CONFIGURE_ARGS =	-DUSE_QT5=OFF
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

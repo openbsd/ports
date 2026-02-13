@@ -20,4 +20,12 @@ CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=ON
 
 NO_TEST =	Yes
 
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_policy\(SET CMP0051 OLD\)/cmake_policy(SET CMP0051 NEW)/' \
+	{} \;
+
 .include <bsd.port.mk>

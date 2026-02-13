@@ -27,6 +27,8 @@ LIB_DEPENDS =	converters/libiconv \
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 DOCDIR =	${PREFIX}/share/doc/hidapi
 
 NO_TEST =	Yes

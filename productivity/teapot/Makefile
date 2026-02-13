@@ -23,6 +23,8 @@ MODULES =	devel/cmake
 # disable LaTeX documentation compilation
 CONFIGURE_ARGS +=	-DENABLE_HELP=no
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 NO_TEST =	Yes
 
 pre-configure:

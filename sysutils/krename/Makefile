@@ -48,4 +48,6 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

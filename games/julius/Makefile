@@ -22,6 +22,8 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 # Talk to upstream about this?
 pre-configure:
 	sed -i 's,--coverage,,g' ${WRKSRC}/test/CMakeLists.txt

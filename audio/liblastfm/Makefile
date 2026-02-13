@@ -31,4 +31,6 @@ LIB_DEPENDS =	audio/libsamplerate \
 # network access
 TEST_IS_INTERACTIVE =	Yes
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

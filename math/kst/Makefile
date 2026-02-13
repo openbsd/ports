@@ -46,3 +46,6 @@ NO_TEST =	Yes
 CONFIGURE_ARGS +=	-Dkst_clang=ON
 .endif
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
+

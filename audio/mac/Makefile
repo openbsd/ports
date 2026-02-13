@@ -24,6 +24,8 @@ SITES=		https://monkeysaudio.com/files/
 WRKDIST=	${WRKDIR}/mac-${VERSION}
 FIX_CRLF_FILES=	Shared/*.h
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 post-extract:
 	mkdir ${WRKSRC}
 	mv ${WRKDIR}/!(mac-${VERSION}|bin) ${WRKSRC}

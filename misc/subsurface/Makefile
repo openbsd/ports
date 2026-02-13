@@ -61,6 +61,8 @@ CONFIGURE_ARGS +=	-DBTSUPPORT=OFF \
 CONFIGURE_ARGS +=	-DLIBGIT2_FROM_PKGCONFIG=ON
 CONFIGURE_ARGS +=	-DWRKINST=${WRKINST}
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 # It's possible to run the tests, but they fail.
 # First, add the subsurface/large-anonymous-sample-data repo to DISTFILES.
 # Add archive/xz to the TEST_DEPENDS.

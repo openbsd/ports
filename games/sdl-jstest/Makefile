@@ -16,6 +16,8 @@ WANTLIB += SDL SDL2 c curses form pthread
 
 MODULES =	devel/cmake
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 LIB_DEPENDS =	devel/sdl \
 		devel/sdl2
 

@@ -1,7 +1,18 @@
 Check for compiler flags not available with gcc < 4.
+- https://github.com/lloyd/yajl/pull/256
 
---- CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011
-+++ CMakeLists.txt	Sat Nov  2 11:38:51 2013
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -12,7 +12,7 @@
+ # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0...3.10)
+ 
+ PROJECT(YetAnotherJSONParser C)
+ 
 @@ -54,9 +54,14 @@ ELSE (WIN32)
      IF(HAVE_GCC_VISIBILITY)
        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")

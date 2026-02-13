@@ -26,4 +26,7 @@ post-install:
 	cd ${WRKSRC}/example; pax -vrw -s '@.*/\..*@@' . \
 		${PREFIX}/share/examples/mygpo-qt
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

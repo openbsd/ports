@@ -22,4 +22,8 @@ LIB_DEPENDS =		textproc/libxml \
 
 NO_TEST =		Yes
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

@@ -1,5 +1,15 @@
---- CMakeLists.txt.orig	Tue Nov 10 15:44:28 2015
-+++ CMakeLists.txt	Tue Nov 10 15:44:54 2015
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1,7 +1,7 @@
+ cmake_minimum_required (VERSION 2.8)
+ set(CMAKE_LEGACY_CYGWIN_WIN32 0) # Remove when CMake >= 2.8.4 is required
+ if(POLICY CMP0037)
+-  cmake_policy(SET CMP0037 OLD)
++  cmake_policy(SET CMP0037 NEW)
+ endif()
+ 
+ include (CheckFunctionExists)
 @@ -115,10 +115,10 @@ if (GNUTLS_FOUND)
  endif (GNUTLS_FOUND)
  

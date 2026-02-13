@@ -15,6 +15,8 @@ MODULES =	devel/cmake
 #c++11
 COMPILER =	base-clang ports-gcc
 
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 PROGS =	laszip lasinfo lasprecision las2txt txt2las las2las lasdiff lasmerge lasindex
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lastools/

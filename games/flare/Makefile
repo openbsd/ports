@@ -57,4 +57,7 @@ post-install:
 	cd ${WRKDIR}/flare-game-v${V}/mods \
 		&& pax -rw . ${PREFIX}/share/flare/mods/
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>

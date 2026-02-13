@@ -21,4 +21,7 @@ BUILD_DEPENDS =	devel/boost \
 		geo/gdal \
 		geo/geos
 
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+
 .include <bsd.port.mk>
