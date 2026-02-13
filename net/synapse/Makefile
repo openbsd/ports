@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_DISTV =	1.146.0
+MODPY_DISTV =	1.147.1
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -55,8 +55,7 @@ RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
 		devel/py-matrix-common>=1.3.0,<2.0.0 \
 		sysutils/py-packaging \
 		www/py-python-multipart
-# still relying on pkg_resources, see comments in
-# https://github.com/matrix-org/synapse/pull/12542
+
 RUN_DEPENDS +=	devel/py-setuptools
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml
@@ -71,6 +70,10 @@ TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-pyrsistent \
 		www/py-jwt
 
+# Cargo.lock is at workspace root, but MODCARGO_CARGOTOML points to rust/
+post-extract:
+	ln -sf ../Cargo.lock ${WRKSRC}/rust/Cargo.lock
+
 # remove source synapse directory so tests use the installed package from fake
 pre-test:
 	rm -rf ${WRKSRC}/synapse
@@ -79,6 +82,6 @@ do-test:
 	cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} -m twisted.trial tests
 
 # to generate rust modules.inc:
-#  make modcargo-gen-crates and modcargo-gen-crates-licenses
+#  make extract && make modcargo-gen-crates && make modcargo-gen-crates-licenses
 .include "modules.inc"
 .include <bsd.port.mk>
