@@ -1,7 +1,7 @@
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
-V =		20260107.0
+V =		20260107.1
 DISTNAME =	abseil-cpp-${V}
 
 HOMEPAGE =	https://abseil.io/
