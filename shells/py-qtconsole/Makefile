@@ -1,6 +1,6 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_DISTV =		5.7.0
+MODPY_DISTV =		5.7.1
 DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
