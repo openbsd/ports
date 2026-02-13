@@ -1,6 +1,6 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_DISTV=	1.8.19
+MODPY_DISTV=	1.8.20
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,8 +15,9 @@ COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+
 MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 # no tests in pypi sdist, only in git
 NO_TEST=	Yes
