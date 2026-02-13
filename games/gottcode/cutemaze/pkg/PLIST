@@ -12,6 +12,7 @@ share/cutemaze/translations/cutemaze_es.qm
 share/cutemaze/translations/cutemaze_fi.qm
 share/cutemaze/translations/cutemaze_fr.qm
 share/cutemaze/translations/cutemaze_he.qm
+share/cutemaze/translations/cutemaze_it.qm
 share/cutemaze/translations/cutemaze_lt.qm
 share/cutemaze/translations/cutemaze_nl.qm
 share/cutemaze/translations/cutemaze_pl.qm
@@ -36,7 +37,5 @@ share/icons/hicolor/64x64/apps/cutemaze.png
 share/icons/hicolor/scalable/apps/cutemaze.svg
 share/metainfo/
 share/metainfo/cutemaze.appdata.xml
-share/pixmaps/
-share/pixmaps/cutemaze.xpm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

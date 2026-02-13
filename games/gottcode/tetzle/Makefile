@@ -1,7 +1,6 @@
 GAME =		tetzle
 COMMENT =	tetromino puzzle game
-DISTNAME =	${GAME}-2.1.6-src
+DISTNAME =	${GAME}-3.0.3
 WANTLIB +=	GL
-REVISION =	1
 
 .include <bsd.port.mk>

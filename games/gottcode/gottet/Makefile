@@ -1,9 +1,5 @@
 GAME =		gottet
 COMMENT =	Tetris clone game
-DISTNAME =	${GAME}-1.1.9-src
-REVISION =	1
-
-pre-configure:
-	sed -i 's,share/man,man,g' ${WRKSRC}/gottet.pro
+DISTNAME =	${GAME}-1.2.7
 
 .include <bsd.port.mk>

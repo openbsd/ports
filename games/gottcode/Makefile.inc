@@ -1,5 +1,4 @@
 CATEGORIES =	games
-PKGNAME ?=	${DISTNAME:S/-src//}
 EXTRACT_SUFX ?=	.tar.bz2
 
 HOMEPAGE ?=	https://gottcode.org/${GAME}/
@@ -9,17 +8,10 @@ SITES ?=	${HOMEPAGE}
 PERMIT_PACKAGE =	Yes
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
-MODULES +=	devel/qmake x11/qt5
-MODGCC4_ARCHS =	i386 amd64 powerpc sparc64
-WANTLIB +=	GL Qt5Core Qt5Gui Qt5Widgets
+MODULES +=	devel/cmake x11/qt6
+WANTLIB +=	GL Qt6Core Qt6Gui Qt6Widgets
 WANTLIB +=	c m pthread ${COMPILER_LIBCXX}
 RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+4,-guic
-
-MAKE_FLAGS +=	CXX=${CXX} \
-		QMAKE_CXXFLAGS="${CXXFLAGS}"
-
-pre-configure:
-	sed -i.qmfix -e 's/\(qm\.files =\).*/\1 $$$$replace(TRANSLATIONS, .ts, .qm)/' \
-		${WRKSRC}/*.pro
+BUILD_DEPENDS +=devel/gettext,-tools
 
 NO_TEST =	Yes

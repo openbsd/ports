@@ -45,6 +45,7 @@ share/peg-e/translations/pege_cs.qm
 share/peg-e/translations/pege_de.qm
 share/peg-e/translations/pege_el.qm
 share/peg-e/translations/pege_en.qm
+share/peg-e/translations/pege_eo.qm
 share/peg-e/translations/pege_es.qm
 share/peg-e/translations/pege_fr.qm
 share/peg-e/translations/pege_he.qm
@@ -55,9 +56,9 @@ share/peg-e/translations/pege_pl.qm
 share/peg-e/translations/pege_pt.qm
 share/peg-e/translations/pege_ro.qm
 share/peg-e/translations/pege_ru.qm
+share/peg-e/translations/pege_sv.qm
+share/peg-e/translations/pege_te.qm
 share/peg-e/translations/pege_tr.qm
 share/peg-e/translations/pege_zh.qm
-share/pixmaps/
-share/pixmaps/peg-e.xpm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

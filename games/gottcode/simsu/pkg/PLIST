@@ -16,8 +16,6 @@ share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
 share/metainfo/
 share/metainfo/simsu.appdata.xml
-share/pixmaps/
-share/pixmaps/simsu.xpm
 share/simsu/
 share/simsu/translations/
 share/simsu/translations/simsu_bg.qm
@@ -39,6 +37,7 @@ share/simsu/translations/simsu_pl.qm
 share/simsu/translations/simsu_pt.qm
 share/simsu/translations/simsu_ro.qm
 share/simsu/translations/simsu_ru.qm
+share/simsu/translations/simsu_te.qm
 share/simsu/translations/simsu_tr.qm
 share/simsu/translations/simsu_uk.qm
 share/simsu/translations/simsu_zh.qm

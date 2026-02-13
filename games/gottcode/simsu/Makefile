@@ -1,10 +1,7 @@
 GAME =		simsu
 COMMENT =	basic sudoku game
-DISTNAME =	${GAME}-1.3.9-src
-REVISION =	1
+DISTNAME =	${GAME}-1.4.7
 
-post-install:
-	mv ${PREFIX}/share/man/man6/${GAME}.6 ${PREFIX}/man/man6
-	rm -Rf ${PREFIX}/share/man/
+WANTLIB += Qt6Concurrent Qt6PrintSupport
 
 .include <bsd.port.mk>

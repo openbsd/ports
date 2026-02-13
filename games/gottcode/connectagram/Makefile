@@ -1,7 +1,5 @@
 GAME =		connectagram
 COMMENT =	word unscrambling game
-DISTNAME =	${GAME}-1.2.11-src
-WANTLIB +=	Qt5Network
-REVISION =	1
+DISTNAME =	${GAME}-1.3.9
 
 .include <bsd.port.mk>

@@ -9,8 +9,10 @@ share/gottet/translations/gottet_de.qm
 share/gottet/translations/gottet_el.qm
 share/gottet/translations/gottet_en.qm
 share/gottet/translations/gottet_es.qm
+share/gottet/translations/gottet_et.qm
 share/gottet/translations/gottet_fr.qm
 share/gottet/translations/gottet_he.qm
+share/gottet/translations/gottet_it.qm
 share/gottet/translations/gottet_ko.qm
 share/gottet/translations/gottet_lt.qm
 share/gottet/translations/gottet_ms.qm
@@ -38,7 +40,5 @@ share/icons/hicolor/64x64/apps/gottet.png
 share/icons/hicolor/scalable/apps/gottet.svg
 share/metainfo/
 share/metainfo/gottet.appdata.xml
-share/pixmaps/
-share/pixmaps/gottet.xpm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
