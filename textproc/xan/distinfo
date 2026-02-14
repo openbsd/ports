@@ -128,8 +128,8 @@ SHA256 (cargo/itertools-0.13.0.tar.gz) = QT7n38Uu4aSUnO6328ijPy1sCIGU2fki+4MY+vH
 SHA256 (cargo/itoa-1.0.15.tar.gz) = Sl8TuFjI0xTuPo9jkBH3zO/nH5f5blAVH7mR8meSjiw=
 SHA256 (cargo/jemalloc-sys-0.5.4+5.3.0-patched.tar.gz) = rGwZRuHOoXiMv94ByZO1KhDi2gf0usYIIo0b7SC/6/I=
 SHA256 (cargo/jemallocator-0.5.4.tar.gz) = oN43Sp+OYxUOb16KYMwUxmgibXo0fYruGkV2bjxN07w=
-SHA256 (cargo/jiff-0.2.15.tar.gz) = vh+TuLHracd/JLuwr99m9UtjLuOa9AyiHENlodc0fkk=
-SHA256 (cargo/jiff-static-0.2.15.tar.gz) = AzQ0Uf+Jl2cmLsMhRvbVWd11n9rfQv8OInx8SPcllLQ=
+SHA256 (cargo/jiff-0.2.18.tar.gz) = 5n6NpMSdbZkJ/gM2H5tiD1iJiFn1x63taDUehecez1A=
+SHA256 (cargo/jiff-static-0.2.18.tar.gz) = 4MhO5/GX7KmobG/Wy3ceVeuZFjLxXyvDym7IOJKebng=
 SHA256 (cargo/jiff-tzdb-0.1.4.tar.gz) = wSg3BesKIUBNK/1u7yp1k9JAvEKgvbOdsK1vouwCZSQ=
 SHA256 (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = h1paaawrqxqJFxHPXsy+wc4DQeqAVWDc2Qt6LpJRMug=
 SHA256 (cargo/jobserver-0.1.34.tar.gz) = mvs95Dldaz5np4C23mS1HJeOzxHLmkYsZr59TKkDnTM=
@@ -333,7 +333,7 @@ SHA256 (cargo/zopfli-0.8.2.tar.gz) = 7fxe5AX1BM1JhOzG8U0C1Vz9pg+ktolDTvQQKq4VDNc
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (xan-0.54.1.tar.gz) = 5fqO7y0usBaxwdOaDrLErH1FHNn0FyremeHrLVLr04E=
+SHA256 (xan-0.55.0.tar.gz) = VO5wmXNEjXadCbgFc0BRG+8PEspvgi+HX92MBTrtmx0=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -464,8 +464,8 @@ SIZE (cargo/itertools-0.13.0.tar.gz) = 146261
 SIZE (cargo/itoa-1.0.15.tar.gz) = 11231
 SIZE (cargo/jemalloc-sys-0.5.4+5.3.0-patched.tar.gz) = 884321
 SIZE (cargo/jemallocator-0.5.4.tar.gz) = 13088
-SIZE (cargo/jiff-0.2.15.tar.gz) = 712996
-SIZE (cargo/jiff-static-0.2.15.tar.gz) = 76146
+SIZE (cargo/jiff-0.2.18.tar.gz) = 764726
+SIZE (cargo/jiff-static-0.2.18.tar.gz) = 83381
 SIZE (cargo/jiff-tzdb-0.1.4.tar.gz) = 62435
 SIZE (cargo/jiff-tzdb-platform-0.1.3.tar.gz) = 3179
 SIZE (cargo/jobserver-0.1.34.tar.gz) = 29013
@@ -669,4 +669,4 @@ SIZE (cargo/zopfli-0.8.2.tar.gz) = 51842
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (xan-0.54.1.tar.gz) = 5933938
+SIZE (xan-0.55.0.tar.gz) = 5948090
