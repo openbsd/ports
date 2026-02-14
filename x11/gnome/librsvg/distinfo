@@ -161,7 +161,7 @@ SHA256 (gnome/../cargo/nom_locate-5.0.0.tar.gz) = C1d+LWmCfEdAy6K1LvqtHEzHxzBChg
 SHA256 (gnome/../cargo/normalize-line-endings-0.3.0.tar.gz) = YYB/d4Av8wl14B9PBxyLoQwCIFL5izKUEZ8+YV0T5b4=
 SHA256 (gnome/../cargo/num-bigint-0.4.6.tar.gz) = peRPcj8RM8nerGRnY1ef2zrHReQY8qevnNDEMdofILk=
 SHA256 (gnome/../cargo/num-complex-0.4.6.tar.gz) = c/iKEwdjgVZoK62p12BBNVUpV7eBgFfc7yJwW01QlJU=
-SHA256 (gnome/../cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzsdk=
+SHA256 (gnome/../cargo/num-conv-0.2.0.tar.gz) = z5fsV5w8QvlT73bb+NVayR+yGd3nDkmqSmt9dOmRkFA=
 SHA256 (gnome/../cargo/num-derive-0.4.2.tar.gz) = 7TlV8anHwMFeCS+ciH2wix/GgzBf3262aE8iVVNV4gI=
 SHA256 (gnome/../cargo/num-integer-0.1.46.tar.gz) = eWlmH9KVilywluVsjhrQRErCu80AYb0oZgSFpEh5hY8=
 SHA256 (gnome/../cargo/num-rational-0.4.2.tar.gz) = +D0U2jkFYtymn8hAguc+VI4a0wjSSsze3ScgAXyzeCQ=
@@ -264,9 +264,9 @@ SHA256 (gnome/../cargo/tendril-0.4.3.tar.gz) = 0koSDF/EZKNFgkDuAsKZ68udZ7UknIhIs
 SHA256 (gnome/../cargo/termtree-0.5.1.tar.gz) = j1D+vsg/XuHfMBU0HYvUKfLRzGK8un6iB2dZ0xUIRoM=
 SHA256 (gnome/../cargo/thiserror-2.0.17.tar.gz) = 9jWHyg8StyoGALy6HUAIH4MIdgALtG3SM3owUWGPT8g=
 SHA256 (gnome/../cargo/thiserror-impl-2.0.17.tar.gz) = P/Fcjs1944SdtjLhTRjSVx+gnfxe2TR5vESFx6UXyRM=
-SHA256 (gnome/../cargo/time-0.3.44.tar.gz) = kefZ47thE053veIN1IJbl8AQFVcJll/t8PSbsTjlKp0=
-SHA256 (gnome/../cargo/time-core-0.1.6.tar.gz) = QIaOfB0vC41z5KjH8P9jr09tGb4RfpC9c+sdYs+DHGs=
-SHA256 (gnome/../cargo/time-macros-0.2.24.tar.gz) = MM+wEl8S2cJ381ZjoKM/jDAZD05FdIaKMwWVQS006/M=
+SHA256 (gnome/../cargo/time-0.3.47.tar.gz) = dDvUjCg6/AOI+biCe5dpBfshetnmR/rjo3mpKDxN7yw=
+SHA256 (gnome/../cargo/time-core-0.1.8.tar.gz) = dpThz+eR+NMQJpUqvwnGnKb2+k4aEinhiYjwagShLco=
+SHA256 (gnome/../cargo/time-macros-0.2.27.tar.gz) = LnDkxaDgqKSCOtZd/hppMOT011bc2d15OQIrXoxQEhU=
 SHA256 (gnome/../cargo/tinystr-0.8.2.tar.gz) = QtPpxFwJ3hXQbdis9fTg45noWSe38AcRAk63rhD6SGk=
 SHA256 (gnome/../cargo/tinytemplate-1.2.1.tar.gz) = vk1rXxn/dmToyY0D4hOctRDbmwpgtV+Ohwm2idk5trw=
 SHA256 (gnome/../cargo/tinyvec-1.10.0.tar.gz) = v6X9w7zmGRodvIwC1ci//PVXuvoXwSTFJkpFjxsGE/o=
@@ -348,7 +348,7 @@ SHA256 (gnome/../cargo/zerovec-derive-0.11.2.tar.gz) = 6tzjlTnKXLOYVZAQJnHyVn5ln
 SHA256 (gnome/../cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (gnome/../cargo/zune-jpeg-0.4.21.tar.gz) = Kc4sipOErTI89WS2fahuIdPP3/h5CLwSI+1cmbx5JxM=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.61.3.tar.xz) = pW0sgNdErS8nGPhd9Gb+cdJP8fm8Pl71iL3k1+h4FfI=
+SHA256 (gnome/librsvg-2.61.4.tar.xz) = /KDqKNHyj5XIQH0lefRwLawIXnx1hkTayotA0eByygw=
 SIZE (gnome/../cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (gnome/../cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (gnome/../cargo/ahash-0.8.12.tar.gz) = 43413
@@ -512,7 +512,7 @@ SIZE (gnome/../cargo/nom_locate-5.0.0.tar.gz) = 18236
 SIZE (gnome/../cargo/normalize-line-endings-0.3.0.tar.gz) = 5737
 SIZE (gnome/../cargo/num-bigint-0.4.6.tar.gz) = 102801
 SIZE (gnome/../cargo/num-complex-0.4.6.tar.gz) = 30352
-SIZE (gnome/../cargo/num-conv-0.1.0.tar.gz) = 7444
+SIZE (gnome/../cargo/num-conv-0.2.0.tar.gz) = 7034
 SIZE (gnome/../cargo/num-derive-0.4.2.tar.gz) = 14709
 SIZE (gnome/../cargo/num-integer-0.1.46.tar.gz) = 22331
 SIZE (gnome/../cargo/num-rational-0.4.2.tar.gz) = 28159
@@ -615,9 +615,9 @@ SIZE (gnome/../cargo/tendril-0.4.3.tar.gz) = 37210
 SIZE (gnome/../cargo/termtree-0.5.1.tar.gz) = 8498
 SIZE (gnome/../cargo/thiserror-2.0.17.tar.gz) = 28857
 SIZE (gnome/../cargo/thiserror-impl-2.0.17.tar.gz) = 21344
-SIZE (gnome/../cargo/time-0.3.44.tar.gz) = 143200
-SIZE (gnome/../cargo/time-core-0.1.6.tar.gz) = 9105
-SIZE (gnome/../cargo/time-macros-0.2.24.tar.gz) = 24715
+SIZE (gnome/../cargo/time-0.3.47.tar.gz) = 225161
+SIZE (gnome/../cargo/time-core-0.1.8.tar.gz) = 9634
+SIZE (gnome/../cargo/time-macros-0.2.27.tar.gz) = 25144
 SIZE (gnome/../cargo/tinystr-0.8.2.tar.gz) = 23942
 SIZE (gnome/../cargo/tinytemplate-1.2.1.tar.gz) = 26490
 SIZE (gnome/../cargo/tinyvec-1.10.0.tar.gz) = 51996
@@ -699,4 +699,4 @@ SIZE (gnome/../cargo/zerovec-derive-0.11.2.tar.gz) = 21421
 SIZE (gnome/../cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (gnome/../cargo/zune-jpeg-0.4.21.tar.gz) = 68268
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.61.3.tar.xz) = 6761572
+SIZE (gnome/librsvg-2.61.4.tar.xz) = 6761524

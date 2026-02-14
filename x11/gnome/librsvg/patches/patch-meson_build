@@ -4,7 +4,7 @@ might be because the version map created by nm excludes unwind symbols
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -199,6 +199,9 @@ library_dependencies_sole = [
+@@ -200,6 +200,9 @@ library_dependencies_sole = [
    cairo_dep,
  ]
  private_libraries = []
