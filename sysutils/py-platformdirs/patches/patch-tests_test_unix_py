@@ -1,15 +1,15 @@
 Index: tests/test_unix.py
 --- tests/test_unix.py.orig
 +++ tests/test_unix.py
-@@ -155,7 +155,10 @@ def test_platform_on_bsd(monkeypatch: pytest.MonkeyPat
+@@ -178,7 +178,10 @@ def test_platform_on_bsd(monkeypatch: pytest.MonkeyPat
      assert Unix().site_runtime_dir == "/var/run"
  
-     mocker.patch("pathlib.Path.exists", return_value=True)
+     mocker.patch("os.access", return_value=True)
 -    assert Unix().user_runtime_dir == "/var/run/user/1234"
 +    if sys.platform.startswith(("freebsd", "netbsd")):
 +        assert Unix().user_runtime_dir == "/var/run/user/1234"
 +    elif sys.platform.startswith(("openbsd")):
 +        assert Unix().user_runtime_dir == "/tmp/run/user/1234"
  
-     mocker.patch("pathlib.Path.exists", return_value=False)
+     mocker.patch("os.access", return_value=False)
      assert Unix().user_runtime_dir == "/tmp/runtime-1234"  # noqa: S108
