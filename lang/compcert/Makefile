@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		high assurance C compiler
 
-V =			3.16
+V =			3.17
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
