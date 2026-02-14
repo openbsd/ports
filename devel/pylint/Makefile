@@ -1,7 +1,8 @@
 COMMENT=		lint-like code checker for Python code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_DISTV=	3.3.7
+# devel/py-python-lsp-server needs < 4
+MODPY_DISTV=	3.3.9
 DISTNAME=	pylint-${MODPY_DISTV}
 PKGNAME=	pylint3-${MODPY_DISTV}
 
