@@ -1,6 +1,5 @@
 COMMENT =	KDE implementation of Status Notifier Items
 DISTNAME =	kstatusnotifieritem-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6StatusNotifierItem     0.0 # 0.0
 

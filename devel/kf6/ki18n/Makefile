@@ -3,7 +3,7 @@ DISTNAME =	ki18n-${VERSION}
 
 SHARED_LIBS +=  KF6I18n                   0.0 # 0.0
 SHARED_LIBS +=  KF6I18nLocaleData         0.0 # 0.0
-SHARED_LIBS +=  KF6I18nQml                0.0 # 0.0
+SHARED_LIBS +=  KF6I18nQml                1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml intl m
 

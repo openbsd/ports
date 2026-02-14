@@ -1,7 +1,7 @@
 COMMENT =	KDE item models extending the Qt model-view framework
 DISTNAME =	kitemmodels-${VERSION}
 
-SHARED_LIBS +=  KF6ItemModels             0.0 # 0.0
+SHARED_LIBS +=  KF6ItemModels             0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml m
 

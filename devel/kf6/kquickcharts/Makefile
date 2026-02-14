@@ -1,6 +1,5 @@
 COMMENT =	QtQuick module providing high-performance charts
 DISTNAME =	kquickcharts-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6Quick Qt6QuickControls2 m

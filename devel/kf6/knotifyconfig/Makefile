@@ -1,6 +1,5 @@
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6NotifyConfig           0.0 # 0.0
 

@@ -1,8 +1,7 @@
 COMMENT =	utilities for graphical user interfaces
-VERSION =	6.22.1
 DISTNAME =	kguiaddons-${VERSION}
 
-SHARED_LIBS +=  KF6GuiAddons              0.0 # 0.0
+SHARED_LIBS +=  KF6GuiAddons              0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6WaylandClient X11 c m wayland-client wayland-cursor

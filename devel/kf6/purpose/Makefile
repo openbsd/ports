@@ -1,6 +1,5 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Purpose                0.0 # 0.0
 SHARED_LIBS +=  KF6PurposeWidgets         0.0 # 0.0

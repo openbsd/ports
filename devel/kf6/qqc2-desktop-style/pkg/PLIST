@@ -39,6 +39,7 @@ lib/qt6/qml/org/kde/desktop/RangeSlider.qml
 lib/qt6/qml/org/kde/desktop/RoundButton.qml
 lib/qt6/qml/org/kde/desktop/ScrollBar.qml
 lib/qt6/qml/org/kde/desktop/ScrollView.qml
+lib/qt6/qml/org/kde/desktop/SearchField.qml
 lib/qt6/qml/org/kde/desktop/Slider.qml
 lib/qt6/qml/org/kde/desktop/SpinBox.qml
 lib/qt6/qml/org/kde/desktop/SplitView.qml

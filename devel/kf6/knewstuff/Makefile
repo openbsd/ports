@@ -1,6 +1,5 @@
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6NewStuffCore           1.0 # 0.0
 SHARED_LIBS +=  KF6NewStuffWidgets        0.0 # 0.0

@@ -1,6 +1,5 @@
 COMMENT =	KDE framework for aggregating and accessing people contacts
 DISTNAME =	kpeople-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6People                 0.0 # 0.0
 SHARED_LIBS +=  KF6PeopleBackend          0.0 # 0.0

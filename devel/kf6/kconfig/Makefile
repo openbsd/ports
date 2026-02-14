@@ -1,9 +1,8 @@
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  KF6ConfigCore             0.0 # 0.0
-SHARED_LIBS +=  KF6ConfigGui              0.0 # 0.0
+SHARED_LIBS +=  KF6ConfigCore             0.1 # 0.0
+SHARED_LIBS +=  KF6ConfigGui              0.1 # 0.0
 SHARED_LIBS +=  KF6ConfigQml              0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network

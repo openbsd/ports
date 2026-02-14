@@ -1,6 +1,5 @@
 COMMENT =	KDE framework for collecting user feedback
 DISTNAME =	kuserfeedback-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6UserFeedbackCore       0.0 # 0.0
 SHARED_LIBS +=  KF6UserFeedbackWidgets    0.0 # 0.0

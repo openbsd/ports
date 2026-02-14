@@ -2,7 +2,7 @@ COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 
 SHARED_LIBS +=  KF6Baloo                  0.0 # 0.0
-SHARED_LIBS +=  KF6BalooEngine            0.0 # 0.0
+SHARED_LIBS +=  KF6BalooEngine            1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6FileMetaData KF6I18n KF6IdleTime KF6KIOCore

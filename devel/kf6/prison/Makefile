@@ -1,6 +1,5 @@
 COMMENT =	bar code generator
 DISTNAME =	prison-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Prison                 0.0 # 0.0
 SHARED_LIBS +=  KF6PrisonScanner          0.0 # 0.0

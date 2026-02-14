@@ -1,7 +1,7 @@
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
 
-SHARED_LIBS +=  KF6AuthCore               0.0 # 0.0
+SHARED_LIBS +=  KF6AuthCore               0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6WindowSystem
 WANTLIB += Qt6Core Qt6DBus Qt6Gui X11 c m polkit-qt6-core-1

@@ -1,6 +1,5 @@
 COMMENT =	highlighting engine for structured text and code
 DISTNAME =	syntax-highlighting-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6SyntaxHighlighting     0.0 # 0.0
 
