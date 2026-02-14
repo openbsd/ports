@@ -4,6 +4,11 @@ COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
 REVISION=	3
+
+# shouldn't be needed after updating
+MODCMAKE_POLICY_VERSION_OVERRIDE= Yes
+CONFIGURE_ENV=	CMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
 SITES=		https://github.com/Warzone2100/warzone2100/releases/download/$V/
@@ -21,7 +26,6 @@ WANTLIB += ogg openal opus physfs png samplerate sndio sodium
 WANTLIB += sqlite3 theoradec usbhid vorbis vorbisfile z
 
 MODULES=	devel/cmake
-MODCMAKE_POLICY_VERSION_OVERRIDE= Yes
 
 COMPILER=	base-clang ports-gcc
 
