@@ -1,10 +1,9 @@
 COMMENT =		IPython kernel for Jupyter
 
 # spyder-kernels needs < 7
-MODPY_DISTV =		6.30.1
+MODPY_DISTV =		6.31.0
 DISTNAME =		ipykernel-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
