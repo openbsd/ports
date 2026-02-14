@@ -34,7 +34,7 @@ SHA256 (hex_modules/unicode_util_compat-0.7.1.tar) = s6kXhUzjriM2GXRK0eAQLgVnMTZ
 SHA256 (hex_modules/verl-1.1.1.tar) = CSXlHNkqCovicXZbAkMLLiz/isMO8k0SO9DVhRHo+xg=
 SHA256 (hex_modules/xmpp-1.12.0.tar) = AUuuc2WfuiVncesAe8U0hhiscn3R0QuasVqf74cWIsg=
 SHA256 (hex_modules/yconf-1.0.22.tar) = rKg0V86r5wdWSEtch7p7GVX1EdSZFoaH6uqnwwDoV/E=
-SHA256 (processone-ejabberd-26.01.tar.gz) = zNuO/J6ak9VHhI343xDH1JUxh+hAmiDjiaD7NaTXF2w=
+SHA256 (processone-ejabberd-26.02.tar.gz) = Z2/uqe6K6zwbw8GEQwing5QVSNm+/DslLNH/C3UyhC8=
 SIZE (erlydtl-erlydtl-0.15.0.tar.gz) = 120544
 SIZE (hex_modules/base64url-1.0.1.tar) = 7168
 SIZE (hex_modules/cache_tab-1.0.33.tar) = 23552
@@ -71,4 +71,4 @@ SIZE (hex_modules/unicode_util_compat-0.7.1.tar) = 104960
 SIZE (hex_modules/verl-1.1.1.tar) = 15360
 SIZE (hex_modules/xmpp-1.12.0.tar) = 389120
 SIZE (hex_modules/yconf-1.0.22.tar) = 22016
-SIZE (processone-ejabberd-26.01.tar.gz) = 2908713
+SIZE (processone-ejabberd-26.02.tar.gz) = 2918404
