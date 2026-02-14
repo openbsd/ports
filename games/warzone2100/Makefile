@@ -21,6 +21,7 @@ WANTLIB += ogg openal opus physfs png samplerate sndio sodium
 WANTLIB += sqlite3 theoradec usbhid vorbis vorbisfile z
 
 MODULES=	devel/cmake
+MODCMAKE_POLICY_VERSION_OVERRIDE= Yes
 
 COMPILER=	base-clang ports-gcc
 
