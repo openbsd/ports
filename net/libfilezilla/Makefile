@@ -1,8 +1,8 @@
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.52.0
+DISTNAME =	libfilezilla-0.54.1
 
-SHARED_LIBS =	filezilla	24.0
+SHARED_LIBS =	filezilla	25.0
 
 CATEGORIES =	net
 
