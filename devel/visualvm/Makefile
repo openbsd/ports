@@ -1,9 +1,8 @@
 COMMENT=	visual tool integrating commandline JDK tools and profiling
 
-V=		2.2
+V=		2.2.1
 DISTNAME=	visualvm_${V:S/.//g}
 PKGNAME=	visualvm-${V}
-REVISION=	0
 
 CATEGORIES=	devel
 
