@@ -1,7 +1,7 @@
 Index: ui/gfx/x/connection.cc
 --- ui/gfx/x/connection.cc.orig
 +++ ui/gfx/x/connection.cc
-@@ -410,7 +410,7 @@ bool Connection::HasNextEvent() {
+@@ -411,7 +411,7 @@ bool Connection::HasNextEvent() {
      }
      events_.pop_front();
    }

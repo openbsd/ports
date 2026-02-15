@@ -3,7 +3,7 @@ iridium ninja build order fix
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -88,6 +88,7 @@ source_set("browser") {
+@@ -87,6 +87,7 @@ source_set("browser") {
    frameworks = []
    ldflags = []
  
@@ -27,7 +27,7 @@ Index: content/browser/BUILD.gn
      "//components/payments/content/icon",
      "//components/payments/mojom",
      "//components/performance_manager/scenario_api",
-@@ -2607,6 +2610,14 @@ source_set("browser") {
+@@ -2601,6 +2604,14 @@ source_set("browser") {
      ]
    }
  
@@ -42,7 +42,7 @@ Index: content/browser/BUILD.gn
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2656,6 +2667,15 @@ source_set("browser") {
+@@ -2650,6 +2661,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]

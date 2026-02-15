@@ -1,7 +1,7 @@
 Index: base/process/process_metrics_unittest.cc
 --- base/process/process_metrics_unittest.cc.orig
 +++ base/process/process_metrics_unittest.cc
-@@ -62,7 +62,8 @@
+@@ -59,7 +59,8 @@
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

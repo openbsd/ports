@@ -156,10 +156,10 @@ Index: base/process/process_metrics_freebsd.cc
 +      != 0 || length != sizeof(swap_used))
 +    return false;
 +
-+  meminfo->total = ByteCount::FromUnsigned(mem_total * pagesize);
-+  meminfo->free = ByteCount::FromUnsigned(mem_free * pagesize);
-+  meminfo->swap_total = ByteCount::FromUnsigned(swap_total * pagesize);
-+  meminfo->swap_free = ByteCount::FromUnsigned((swap_total - swap_used) * pagesize);
++  meminfo->total = ByteSize(mem_total * pagesize);
++  meminfo->free = ByteSize(mem_free * pagesize);
++  meminfo->swap_total = ByteSize(swap_total * pagesize);
++  meminfo->swap_free = ByteSize((swap_total - swap_used) * pagesize);
 +
 +  return true;
 +}
