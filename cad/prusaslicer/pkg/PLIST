@@ -7,6 +7,7 @@ share/PrusaSlicer/data/embossed_text.obj
 share/PrusaSlicer/data/hints.ini
 share/PrusaSlicer/data/printer_gantries/
 share/PrusaSlicer/data/printer_gantries/geometries.json
+share/PrusaSlicer/data/printer_gantries/prusa3d_coreoneL_gantry.stl
 share/PrusaSlicer/data/printer_gantries/prusa3d_coreone_gantry.stl
 share/PrusaSlicer/data/printer_gantries/prusa3d_ht90_actuator.stl
 share/PrusaSlicer/data/printer_gantries/prusa3d_mini_gantry.stl
@@ -786,6 +787,7 @@ share/PrusaSlicer/profiles/Print4Taste/MC2.0_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/
 share/PrusaSlicer/profiles/PrusaResearch.idx
 share/PrusaSlicer/profiles/PrusaResearch.ini
+share/PrusaSlicer/profiles/PrusaResearch/COREONEL_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/COREONEMMU3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/COREONE_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MINIIS_ALPHA_thumbnail.png
@@ -829,6 +831,8 @@ share/PrusaSlicer/profiles/PrusaResearch/XLIS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/coreone.svg
 share/PrusaSlicer/profiles/PrusaResearch/coreone_bed.stl
+share/PrusaSlicer/profiles/PrusaResearch/coreonel.svg
+share/PrusaSlicer/profiles/PrusaResearch/coreonel_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mini.svg
 share/PrusaSlicer/profiles/PrusaResearch/miniIS.svg
 share/PrusaSlicer/profiles/PrusaResearch/miniISbeta.svg
@@ -857,8 +861,25 @@ share/PrusaSlicer/profiles/PrusaResearchSLA/sl1.svg
 share/PrusaSlicer/profiles/PrusaResearchSLA/sl1_bed.stl
 share/PrusaSlicer/profiles/PrusaResearchSLA/sl1s.svg
 share/PrusaSlicer/profiles/PrusaResearchSLA/sl1s_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/
 share/PrusaSlicer/profiles/QIDITechnology.idx
 share/PrusaSlicer/profiles/QIDITechnology.ini
+share/PrusaSlicer/profiles/QIDITechnology/Q1 Pro.svg
+share/PrusaSlicer/profiles/QIDITechnology/Q1 Pro_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/Q1 Pro_thumbnail.png
+share/PrusaSlicer/profiles/QIDITechnology/X-MAX 3.svg
+share/PrusaSlicer/profiles/QIDITechnology/X-MAX 3_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/X-MAX 3_thumbnail.png
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 3.svg
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 3_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 3_thumbnail.png
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 4 + BOX_thumbnail.png
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 4.svg
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 4_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/X-Plus 4_thumbnail.png
+share/PrusaSlicer/profiles/QIDITechnology/X-smart 3.svg
+share/PrusaSlicer/profiles/QIDITechnology/X-smart 3_bed.stl
+share/PrusaSlicer/profiles/QIDITechnology/X-smart 3_thumbnail.png
 share/PrusaSlicer/profiles/RatRig/
 share/PrusaSlicer/profiles/RatRig.idx
 share/PrusaSlicer/profiles/RatRig.ini

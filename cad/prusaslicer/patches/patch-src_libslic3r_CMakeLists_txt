@@ -1,0 +1,11 @@
+Index: src/libslic3r/CMakeLists.txt
+--- src/libslic3r/CMakeLists.txt.orig
++++ src/libslic3r/CMakeLists.txt
+@@ -606,6 +606,7 @@ endif ()
+ 
+ encoding_check(libslic3r)
+ 
++target_compile_definitions(libslic3r PUBLIC SLIC3R_FHS_LIBDIR="${CMAKE_INSTALL_FULL_LIBDIR}")
+ target_compile_definitions(libslic3r PUBLIC -DUSE_TBB -DTBB_USE_CAPTURED_EXCEPTION=0)
+ target_include_directories(libslic3r PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR})
+ target_include_directories(libslic3r PUBLIC ${EXPAT_INCLUDE_DIRS})

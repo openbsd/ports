@@ -2,9 +2,8 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.9.3
+V =		2.9.4
 PKGNAME =	prusaslicer-${V}
-REVISION =	2
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer
