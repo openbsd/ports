@@ -6,46 +6,45 @@ MODCABAL_MANIFEST	= \
 	aeson	2.2.3.0	4	\
 	ansi-terminal	1.1.5	0	\
 	ansi-terminal-types	1.1.3	0	\
-	assoc	1.1.1	1	\
-	base-orphans	0.9.3	0	\
-	bifunctors	5.6.2	2	\
+	assoc	1.1.1	2	\
+	base-orphans	0.9.4	0	\
+	bifunctors	5.6.3	1	\
 	character-ps	0.1	0	\
 	colour	2.3.6	0	\
-	comonad	5.0.9	1	\
-	contravariant	1.5.5	0	\
+	comonad	5.0.10	0	\
+	contravariant	1.5.6	0	\
 	data-fix	0.3.4	2	\
-	distributive	0.6.2.1	1	\
+	distributive	0.6.3	0	\
 	dlist	1.0	2	\
 	fgl	5.8.3.0	2	\
-	generically	0.1.1	4	\
+	generically	0.1.1	5	\
 	hashable	1.5.1.0	0	\
 	indexed-traversable	0.1.4	1	\
 	indexed-traversable-instances	0.1.2	1	\
-	integer-conversion	0.1.1	1	\
-	integer-logarithms	1.0.4	0	\
+	integer-conversion	0.1.1	2	\
+	integer-logarithms	1.0.5	0	\
 	network-uri	2.6.4.2	1	\
 	optparse-applicative	0.19.0.0	0	\
-	os-string	2.0.8	0	\
 	prettyprinter	1.7.1	0	\
 	prettyprinter-ansi-terminal	1.1.3	0	\
 	primitive	0.9.1.0	1	\
 	random	1.3.1	0	\
 	regex-base	0.94.0.3	0	\
 	regex-tdfa	1.3.2.5	0	\
-	scientific	0.3.8.0	2	\
+	scientific	0.3.8.1	0	\
 	semialign	1.3.1	2	\
-	semigroupoids	6.0.1	2	\
-	splitmix	0.1.2	0	\
+	semigroupoids	6.0.2	1	\
+	splitmix	0.1.3.2	0	\
 	strict	0.5.1	1	\
-	tagged	0.8.10	0	\
+	tagged	0.8.10	1	\
 	tasty	1.5.3	2	\
 	text-iso8601	0.1.1	2	\
-	text-short	0.1.6	3	\
-	th-abstraction	0.7.1.0	1	\
-	th-compat	0.1.6	0	\
+	text-short	0.1.6.1	0	\
+	th-abstraction	0.7.2.0	0	\
+	th-compat	0.1.7	0	\
 	these	1.2.1	2	\
 	time-compat	1.9.8	0	\
-	transformers-compat	0.7.2	0	\
+	transformers-compat	0.8	0	\
 	unordered-containers	0.2.21	2	\
 	uuid-types	1.0.6	3	\
 	vector	0.13.2.0	2	\

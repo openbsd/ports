@@ -6,6 +6,7 @@ MODCABAL_EXECUTABLES =	shellcheck
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		devel
 HOMEPAGE =		https://www.shellcheck.net/
+REVISION =		0
 
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 
