@@ -1,6 +1,6 @@
 COMMENT =	parse informal natural language date/time strings
 
-DISTNAME =	DateTime-Format-Natural-1.24
+DISTNAME =	DateTime-Format-Natural-1.25
 
 CATEGORIES =	devel
 
