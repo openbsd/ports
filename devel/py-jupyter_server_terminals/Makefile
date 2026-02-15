@@ -1,9 +1,8 @@
 COMMENT =		Jupyter server extension providing terminals
 
-MODPY_DISTV =	0.5.3
+MODPY_DISTV =		0.5.4
 DISTNAME =		jupyter_server_terminals-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
