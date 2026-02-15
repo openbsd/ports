@@ -1,4 +1,5 @@
 COMMENT =	ctags-like tool for Haskell sources
+REVISION =	0
 
 MODCABAL_STEM =		hasktags
 MODCABAL_VERSION =	0.73.0
