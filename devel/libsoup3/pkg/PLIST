@@ -767,8 +767,12 @@ share/locale/it/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ka/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/kab/LC_MESSAGES/libsoup-${API_VERSION}.mo
+share/locale/kk/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/kn/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/libsoup-${API_VERSION}.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/lt/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ml/LC_MESSAGES/libsoup-${API_VERSION}.mo
@@ -797,6 +801,7 @@ share/locale/th/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ug/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/libsoup-${API_VERSION}.mo
+share/locale/uz/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/libsoup-${API_VERSION}.mo
