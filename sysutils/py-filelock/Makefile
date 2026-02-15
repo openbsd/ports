@@ -1,6 +1,6 @@
 COMMENT=	platform independent file lock
 
-MODPY_DISTV =	3.20.3
+MODPY_DISTV =	3.24.0
 DISTNAME=	filelock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	hatch-vcs
+MODPY_PYTEST_ARGS= -v
 MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-test-asyncio \

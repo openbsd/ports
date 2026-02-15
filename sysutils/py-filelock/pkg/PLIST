@@ -14,6 +14,8 @@ lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_api.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_read_write.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_read_write.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_soft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_soft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}_unix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}version.${MODP
 lib/python${MODPY_VERSION}/site-packages/filelock/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/filelock/_api.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_error.py
+lib/python${MODPY_VERSION}/site-packages/filelock/_read_write.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_soft.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_unix.py
 lib/python${MODPY_VERSION}/site-packages/filelock/_util.py
