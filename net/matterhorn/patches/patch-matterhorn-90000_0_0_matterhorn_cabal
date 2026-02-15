@@ -1,0 +1,39 @@
+Index: matterhorn-90000.0.0/matterhorn.cabal
+--- matterhorn-90000.0.0/matterhorn.cabal.orig
++++ matterhorn-90000.0.0/matterhorn.cabal
+@@ -175,7 +175,7 @@ library
+                      , unordered-containers >= 0.2     && < 0.3
+                      , containers           >= 0.5.7   && < 0.7
+                      , split                >= 0.2     && < 0.3
+-                     , data-clist           >= 0.1.2   && < 0.2
++                     , data-clist           >= 0.1.2   && < 0.3
+                      , semigroups           >= 0.18    && < 0.20
+                      , crypton-connection   >= 0.3.1   && < 0.4
+                      , text                 >= 1.2.5.0 && < 2.1
+@@ -184,10 +184,10 @@ library
+                      , config-ini           >= 0.2.2.0 && < 0.3
+                      , process              >= 1.4     && < 1.7
+                      , microlens-platform   >= 0.3     && < 0.5
+-                     , brick                >= 2.0     && < 2.1
++                     , brick                >= 2.8     && < 2.9
+                      , brick-skylighting    >= 1.0     && < 1.1
+-                     , vty                  >= 6.0     && < 6.1
+-                     , vty-crossplatform    >= 0.2.0.0 && < 0.3.0.0
++                     , vty                  >= 6.0     && < 6.6
++                     , vty-crossplatform    >= 0.2.0.0 && < 0.6.0.0
+                      , word-wrap            >= 0.4.0   && < 0.5
+                      , transformers         >= 0.4     && < 0.7
+                      , text-zipper          >= 0.13    && < 0.14
+@@ -212,10 +212,10 @@ library
+                      , skylighting-core     >= 0.12    && < 0.13
+                      , timezone-olson       >= 0.2     && < 0.3
+                      , timezone-series      >= 0.1.6.1 && < 0.2
+-                     , aeson                >= 1.2.3.0 && < 2.2
++                     , aeson                >= 1.2.3.0 && < 2.3
+                      , async                >= 2.2     && < 2.3
+                      , uuid                 >= 1.3     && < 1.4
+-                     , random               >= 1.1     && < 1.2
++                     , random               >= 1.1     && < 1.4
+                      , network-uri          >= 2.6     && < 2.7
+                      , bimap                >= 0.5     && < 0.6
+   default-language:    Haskell2010

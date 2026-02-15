@@ -1,0 +1,12 @@
+Index: mattermost-api-90000.0.0/mattermost-api.cabal
+--- mattermost-api-90000.0.0/mattermost-api.cabal.orig
++++ mattermost-api-90000.0.0/mattermost-api.cabal
+@@ -49,7 +49,7 @@ library
+   build-depends:       base >=4.4 && <5
+                      , websockets >= 0.11.0.0
+                      , stm
+-                     , aeson >= 2.0.1.0 && < 2.2.0.0
++                     , aeson >= 2.0.1.0 && < 2.3.0.0
+                      , crypton-connection
+                      , memory
+                      , resource-pool >= 0.2.3
