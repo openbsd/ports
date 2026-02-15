@@ -1,4 +1,5 @@
-V =		3.8.3
+MODCABAL_VERSION =	3.9
+V =		${MODCABAL_VERSION}
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
 
@@ -23,7 +24,6 @@ NO_TEST =		Yes
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	embed_data_files
 MODCABAL_STEM =		pandoc-cli
-MODCABAL_VERSION =	${V}
 MODCABAL_EXECUTABLES =	pandoc
 
 post-install:
