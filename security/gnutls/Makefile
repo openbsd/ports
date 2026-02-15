@@ -3,6 +3,7 @@ COMMENT=		GNU Transport Layer Security library
 V=			3.8.12
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -70,9 +71,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CCASFLAGS="${CCASFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
-# our makeinfo(1) is too old to build info files
-BUILD_DEPENDS +=	print/texinfo
-CONFIGURE_ENV +=	MAKEINFO="${LOCALBASE}/bin/gmakeinfo"
+# XXX multiple errors probably due to our makeinfo(1) being too old:
+# gnutls-3.8.12/gnutls-3.8.12/doc//functions/gnutls_transport_set_fastopen:25:
+# warning: @strong{Note...} produces a spurious cross-reference in Info; reword to avoid that.
+# depending on print/texinfo would create a big dependency loop for other ports
+CONFIGURE_ENV +=	MAKEINFO="/usr/bin/true"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

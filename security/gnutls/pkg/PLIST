@@ -35,7 +35,6 @@ info/gnutls-layers.png
 info/gnutls-logo.png
 info/gnutls-modauth.png
 info/gnutls-x509.png
-@info info/gnutls.info
 info/pkcs11-vision.png
 @static-lib lib/libgnutls-dane.a
 lib/libgnutls-dane.la
