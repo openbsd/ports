@@ -1,28 +1,27 @@
-COMMENT=		port of http_parser to llparse
+COMMENT=	port of http_parser to llparse
 
-V=			9.3.0
-DISTNAME=		llhttp-${V}
-REVISION=		0
+V=		9.3.1
+DISTNAME=	llhttp-release-v$V
+DISTFILES=	${DISTNAME}{v$V}.tar.gz
+PKGNAME=	llhttp-$V
+#WRKDIST=	${WRKDIR}/llhttp-release-v${V}
+#GH_ACCOUNT=	nodejs
+#GH_PROJECT=	llhttp
+SITES=		https://github.com/nodejs/llhttp/archive/refs/tags/release/
 
 SHARED_LIBS +=	llhttp                    0.0 # 0.0
 
-DIST_SUBDIR=		llhttp
-DISTFILES=		v${V}${EXTRACT_SUFX}
-WRKDIST=		${WRKDIR}/llhttp-release-v${V}
+CATEGORIES=	www
 
-CATEGORIES=		www
-
-HOMEPAGE=		https://llhttp.org/
+HOMEPAGE=	https://llhttp.org/
 
 # MIT
-PERMIT_PACKAGE=		Yes
-
-SITES=			https://github.com/nodejs/llhttp/archive/refs/tags/release/
+PERMIT_PACKAGE=	Yes
 
 # __builtin_unreachable() only available from gcc >= 4.6
-COMPILER=		base-clang ports-gcc
-COMPILER_LANGS=		c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
-MODULES=		devel/cmake
+MODULES=	devel/cmake
 
 .include <bsd.port.mk>

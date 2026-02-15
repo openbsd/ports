@@ -1,1 +1,5 @@
-This project is a port of http_parser to TypeScript.
+llhttp is a state machine-based parser for HTTP messages, handling
+request and response lines, headers, message bodies, special protocol
+features like chunked encoding and connection management.
+
+It is written in TypeScript and compiled to C using llparse.
