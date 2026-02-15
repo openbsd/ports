@@ -100,6 +100,7 @@ include/pdal/filters/LabelDuplicatesFilter.hpp
 include/pdal/filters/LiTreeFilter.hpp
 include/pdal/filters/LloydKMeansFilter.hpp
 include/pdal/filters/LocateFilter.hpp
+include/pdal/filters/M3C2Filter.hpp
 include/pdal/filters/MADFilter.hpp
 include/pdal/filters/MergeFilter.hpp
 include/pdal/filters/MiniballFilter.hpp
@@ -142,6 +143,7 @@ include/pdal/filters/VoxelCentroidNearestNeighborFilter.hpp
 include/pdal/filters/VoxelDownsizeFilter.hpp
 include/pdal/filters/ZsmoothFilter.hpp
 include/pdal/filters/private/
+include/pdal/filters/private/Comparison.hpp
 include/pdal/filters/private/DimRange.hpp
 include/pdal/filters/private/DisjointSet.hpp
 include/pdal/filters/private/Point.hpp
@@ -181,7 +183,6 @@ include/pdal/filters/private/mongoexpression/Expression.hpp
 include/pdal/filters/private/mongoexpression/LogicGate.hpp
 include/pdal/filters/private/mongoexpression/Support.hpp
 include/pdal/filters/private/pnp/
-include/pdal/filters/private/pnp/Comparison.hpp
 include/pdal/filters/private/pnp/Grid.hpp
 include/pdal/filters/private/pnp/GridPnp.hpp
 include/pdal/filters/private/pnp/VoxelRayTrace.hpp
@@ -328,6 +329,7 @@ include/pdal/private/FileSpecHelper.hpp
 include/pdal/private/KDImpl.hpp
 include/pdal/private/MathUtils.hpp
 include/pdal/private/OGRSpec.hpp
+include/pdal/private/PointGrid.hpp
 include/pdal/private/Raster.hpp
 include/pdal/private/SrsTransform.hpp
 include/pdal/private/StageRunner.hpp
