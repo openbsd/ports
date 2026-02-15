@@ -2,6 +2,7 @@ COMMENT =		minimalistic text based status bar
 
 MODCABAL_STEM =		xmobar
 MODCABAL_VERSION =	0.50
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		https://xmobar.org
 
@@ -16,7 +17,6 @@ WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
 
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	with_xft with_mpd with_mpris with_inotify
-MODCABAL_BUILD_ARGS =	--allow-newer
 
 # % cabal get xmobar-0.50
 # % cd ./xmobar-0.50
