@@ -1,7 +1,6 @@
 COMMENT =	Data functionality for Shire calendars
-DISTNAME =	Date-Tolkien-Shire-Data-0.009
+DISTNAME =	Date-Tolkien-Shire-Data-0.010
 CATEGORIES =	converters
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
