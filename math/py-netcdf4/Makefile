@@ -1,6 +1,6 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_DISTV=	1.7.3
+MODPY_DISTV=	1.7.4
 DISTNAME=	netcdf4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	math
