@@ -1,0 +1,38 @@
+@bin bin/ncatted
+@bin bin/ncbo
+bin/ncchecker
+bin/ncclimo
+bin/ncdiff
+bin/ncea
+@bin bin/ncecat
+bin/nces
+@bin bin/ncflint
+@bin bin/ncks
+@bin bin/ncpdq
+@bin bin/ncra
+bin/ncrcat
+bin/ncremap
+@bin bin/ncrename
+@bin bin/ncwa
+bin/ncz2psx
+@info info/nco.info
+@static-lib lib/libnco.a
+lib/libnco.la
+@lib lib/libnco.so.${LIBnco_VERSION}
+@man man/man1/ncap2.1
+@man man/man1/ncatted.1
+@man man/man1/ncbo.1
+@man man/man1/ncchecker.1
+@man man/man1/ncclimo.1
+@man man/man1/ncecat.1
+@man man/man1/nces.1
+@man man/man1/ncflint.1
+@man man/man1/ncks.1
+@man man/man1/nco.1
+@man man/man1/ncpdq.1
+@man man/man1/ncra.1
+@man man/man1/ncrcat.1
+@man man/man1/ncremap.1
+@man man/man1/ncrename.1
+@man man/man1/ncwa.1
+@man man/man1/ncz2psx.1

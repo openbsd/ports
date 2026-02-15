@@ -1,0 +1,8 @@
+The netCDF Operators (NCO) comprise about a dozen standalone, command-line
+programs that take netCDF, HDF, and/or DAP files as input, then operate
+(e.g., derive new fields, compute statistics, print, hyperslab, manipulate
+metadata, regrid) and output the results to screen or files in text, binary,
+or netCDF formats. NCO aids analysis of gridded and unstructured scientific
+data. The shell-command style of NCO allows users to manipulate and analyze
+files interactively, or with expressive scripts that avoid some overhead of
+higher-level programming environments.
