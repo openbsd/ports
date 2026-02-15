@@ -1,9 +1,9 @@
 COMMENT =	use cabal solver to build standalone installation
 
 # https://github.com/phadej/cabal-extras/issues/37
-V =		0.1.20251226
+V =		0.1.20260207
 GH_ACCOUNT = 	blackgnezdo
-GH_COMMIT =	3648f389ed6b90b76d0fa69ec9f3a0a4f75fbd04
+GH_COMMIT =	8cf734b8b4486b7f624ce6589faf50ea27092ce8
 GH_PROJECT =	cabal-extras
 
 # Overrides cabal.port.mk which would otherwise preempt bsd.port.mk
@@ -30,11 +30,8 @@ MODULES =		devel/cabal
 MODCABAL_STEM =		${GH_PROJECT}
 MODCABAL_VERSION =	${V}
 MODCABAL_EXECUTABLES =	cabal-bundler
-MODCABAL_BUILD_ARGS =	--allow-newer
 
 post-patch:
-	# https://github.com/haskell-hvr/paths/pull/16
-	cd ${WRKDIR}/paths-0.2.0.0  && perl -i -pne 's/LANGUAGE Safe/LANGUAGE Trustworthy/' $$(find . -name \*.hs)
 	cd ${WRKSRC} && tar zxf extras/gentle-introduction-2024.4.1.tar.gz
 
 # After the workaround in https://github.com/phadej/cabal-extras/issues/83,
