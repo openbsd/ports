@@ -18,6 +18,7 @@ MODCABAL_MANIFEST	= \
 	assoc	1.1.1	2	\
 	async	2.2.6	0	\
 	attoparsec	0.14.4	6	\
+	attoparsec-aeson	2.2.2.0	0	\
 	authenticate-oauth	1.7	1	\
 	base-compat	0.15.0	0	\
 	base-orphans	0.9.4	0	\
@@ -47,7 +48,7 @@ MODCABAL_MANIFEST	= \
 	cookie	0.5.1	0	\
 	crypto-api	0.13.3	1	\
 	crypto-pubkey-types	0.4.3	0	\
-	crypton	1.0.5	0	\
+	crypton	1.0.6	0	\
 	crypton-asn1-encoding	0.10.0	0	\
 	crypton-asn1-parse	0.10.0	0	\
 	crypton-asn1-types	0.4.1	0	\
@@ -108,7 +109,6 @@ MODCABAL_MANIFEST	= \
 	old-locale	1.0.0.7	2	\
 	old-time	1.1.0.5	0	\
 	optparse-applicative	0.19.0.0	0	\
-	os-string	2.0.8	0	\
 	parser-combinators	1.3.1	0	\
 	pretty-simple	4.1.4.0	0	\
 	prettyprinter	1.7.1	0	\
@@ -122,7 +122,7 @@ MODCABAL_MANIFEST	= \
 	regex-compat	0.95.2.2	0	\
 	regex-posix	0.96.0.2	0	\
 	regex-tdfa	1.3.2.5	0	\
-	req	3.13.4	6	\
+	req	3.13.4	7	\
 	retry	0.9.3.1	0	\
 	safe	0.3.21	1	\
 	scientific	0.3.8.1	0	\
@@ -151,7 +151,7 @@ MODCABAL_MANIFEST	= \
 	time-compat	1.9.8	0	\
 	time-hourglass	0.3.0	0	\
 	timeit	2.0	2	\
-	tls	2.2.0	0	\
+	tls	2.2.2	0	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.2	0	\
 	uglymemo	0.1.0.1	0	\

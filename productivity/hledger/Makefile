@@ -1,4 +1,5 @@
 COMMENT =		command-line interface for the hledger accounting system
+REVISION =		0
 
 CATEGORIES =		productivity
 

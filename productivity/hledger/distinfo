@@ -24,6 +24,7 @@ SHA256 (hackage/assoc-1.1.1_2.cabal) = dmsQQO2lJVv88Q4amFnAbQ7WrQ4qyH7ZFbsDVXTRC
 SHA256 (hackage/async-2.2.6.tar.gz) = FIVxvBiAAxASQdpsSRMdBzJOY6iO0oOoTe8ulpRZlhk=
 SHA256 (hackage/attoparsec-0.14.4.tar.gz) = PzN/5YYkVl3hJCb2B8I+YMewnIa04638gnyhiMmXnmw=
 SHA256 (hackage/attoparsec-0.14.4_6.cabal) = NRKdCrF0HwAPGn0vyDlUSRnub7uPLW5/CmKcQfkQNfM=
+SHA256 (hackage/attoparsec-aeson-2.2.2.0.tar.gz) = /pssI6Fv4f+PQcMplAzMyArKesap6jFPenfPFC2Pnt0=
 SHA256 (hackage/authenticate-oauth-1.7.tar.gz) = dG/2lf7BvXx7kPGVKEfONFP63w8Yox2yBnUzYLMhm3g=
 SHA256 (hackage/authenticate-oauth-1.7_1.cabal) = rysDaYdWsru0K40wI2tNAS4x2yt85jdTFY9j1bCoHaU=
 SHA256 (hackage/base-compat-0.15.0.tar.gz) = WapJ13eaIKgIkkaQWDZTwr37DlS1Fi34DfWoFjKCRTE=
@@ -63,7 +64,7 @@ SHA256 (hackage/cookie-0.5.1.tar.gz) = Gt3mJybjo7vhR8AlFP4MT18sWi/2OELerBDEUaKm9
 SHA256 (hackage/crypto-api-0.13.3.tar.gz) = KYqep86XyMz0v+RtSGQJLDoAela+3nNWAHDbO/GseqU=
 SHA256 (hackage/crypto-api-0.13.3_1.cabal) = 5XLAzcWLpnc+ogDqUmHWv1/BFtkQtSzxxnHYW5QO1vw=
 SHA256 (hackage/crypto-pubkey-types-0.4.3.tar.gz) = ftn1IoHsTjQCGpGBj+RSiOM9Zb/5N/YDNKP0W+WnHGA=
-SHA256 (hackage/crypton-1.0.5.tar.gz) = s/FZVkch9Et/S4uggn8yBIV1g8sxHmSnidsG3ZqCPYQ=
+SHA256 (hackage/crypton-1.0.6.tar.gz) = nGUj5/Rt8L2nMeUAeh9rQ7HuHw3NFZvthwq7/3UrguY=
 SHA256 (hackage/crypton-asn1-encoding-0.10.0.tar.gz) = SYE6DuJT9ijLgQLdaFeQVgm1LkkMc8VU183wy84pJtI=
 SHA256 (hackage/crypton-asn1-parse-0.10.0.tar.gz) = NcDyeNj8tyC0rYnCp/JW9/sJi59xoK60k6TDwP53KNk=
 SHA256 (hackage/crypton-asn1-types-0.4.1.tar.gz) = Ye/GOHeg0925kqeTg52UJ8FZfglabh9jwE4F/T5OMC0=
@@ -144,7 +145,6 @@ SHA256 (hackage/old-locale-1.0.0.7.tar.gz) = 26+L9riI+5iEVwUHkpaiPD9A7i9EnfcxL39
 SHA256 (hackage/old-locale-1.0.0.7_2.cabal) = +pmL4sfgDNJqbpB1vqeQyq85Msqj6Ul61pvCA4DdaRE=
 SHA256 (hackage/old-time-1.1.0.5.tar.gz) = CRZ2hLf42xJqrVlGMwPSque0dN1l5rAWs+oEOa02qZ8=
 SHA256 (hackage/optparse-applicative-0.19.0.0.tar.gz) = zxau79ghcwx3OER/p8a3rafKHJzCVADWTvKDKU00WHE=
-SHA256 (hackage/os-string-2.0.8.tar.gz) = AnlCed0wKC57DUWoYN2lDuJqkrFGH12kVF9i2rQXJoY=
 SHA256 (hackage/parser-combinators-1.3.1.tar.gz) = nFBsw4+d8PwjqULnOe0fB5n8bFRRXXcN4EQWjs/3QL8=
 SHA256 (hackage/pretty-simple-4.1.4.0.tar.gz) = OlGqXJh7unnCvHWxSyiyvLp4YvGBYkMYEUdlEr4trh8=
 SHA256 (hackage/prettyprinter-1.7.1.tar.gz) = Xm6mkDEU+hGPzDWWM9+37N3suSwGyFPQKne3KyUfC0U=
@@ -161,7 +161,7 @@ SHA256 (hackage/regex-compat-0.95.2.2.tar.gz) = 4n7R2MNhanvUccZpUMfdO73+Q12oMZ1k
 SHA256 (hackage/regex-posix-0.96.0.2.tar.gz) = flcEYMNcXe7FTRukYwXdtGecfUquhPYx3Qxh2q6qgVA=
 SHA256 (hackage/regex-tdfa-1.3.2.5.tar.gz) = Lj37RJpUhIT307TiobEECzm+JsTzGCpHAE3F7d8Cing=
 SHA256 (hackage/req-3.13.4.tar.gz) = 83/EjRX7Y6btxUZAPqomExAljXJze0LALqOdlQSdAGk=
-SHA256 (hackage/req-3.13.4_6.cabal) = kB5WrCX2t8J+3E51//nDrcG6kpKdgPIMgwgaelLbN3E=
+SHA256 (hackage/req-3.13.4_7.cabal) = nY6yZqiizOxv1GzIF4qgqb/zRO6ooiKSatM74FBSC1Q=
 SHA256 (hackage/retry-0.9.3.1.tar.gz) = Yi41EUuSD3b6LhrmUVV1uZc/rBnGefVCbqZXSl0LftY=
 SHA256 (hackage/safe-0.3.21.tar.gz) = LIH+pCu+eexIh3QEPB7FTzDvugWd+aTzaBzoPYUAfwE=
 SHA256 (hackage/safe-0.3.21_1.cabal) = uSjqFkWHZ4gVWzjOhcfkbRV6G7QdKwX1dwsT1gvGo/c=
@@ -203,7 +203,7 @@ SHA256 (hackage/time-compat-1.9.8.tar.gz) = UC74aUpbExtHwOXfLpBT0AWjs0WzD1IlrwTw
 SHA256 (hackage/time-hourglass-0.3.0.tar.gz) = nHx8dN2lAzFgMoYGyz6HJCAaut+aFAJxxzyJomErnSI=
 SHA256 (hackage/timeit-2.0.tar.gz) = oU305XjbNx5cYJ8HhCCRRFRfnK6QAm0kozmAQvfFkeo=
 SHA256 (hackage/timeit-2.0_2.cabal) = NdfDzmS0WLuxIAMgID8hKByXXIWsxjamNFAGAcR0/e0=
-SHA256 (hackage/tls-2.2.0.tar.gz) = 2Hs2RSDY7tM6JZXiw8fpDWkA6k7t2GMN+WCdUJkYpO8=
+SHA256 (hackage/tls-2.2.2.tar.gz) = 2VNqJZJf3WhyyA+lUGkWNhZ+/aSCzRCF46uByRzTMuE=
 SHA256 (hackage/transformers-base-0.4.6.tar.gz) = Mjv4aJ62kbEiZhz/pBol4A/qenaEM/4t3jXT2n0yz5A=
 SHA256 (hackage/transformers-compat-0.7.2.tar.gz) = tixzBMnzy8lGPQc5qoXLlInyF+oJK51iXUF1FPvMnWo=
 SHA256 (hackage/uglymemo-0.1.0.1.tar.gz) = /onvScDLFYZ8WIFbBQsz8X05TUxIqbckCjl4Clp5uEc=
@@ -251,6 +251,7 @@ SIZE (hackage/assoc-1.1.1_2.cabal) = 1437
 SIZE (hackage/async-2.2.6.tar.gz) = 18996
 SIZE (hackage/attoparsec-0.14.4.tar.gz) = 160701
 SIZE (hackage/attoparsec-0.14.4_6.cabal) = 5914
+SIZE (hackage/attoparsec-aeson-2.2.2.0.tar.gz) = 8081
 SIZE (hackage/authenticate-oauth-1.7.tar.gz) = 9632
 SIZE (hackage/authenticate-oauth-1.7_1.cabal) = 1640
 SIZE (hackage/base-compat-0.15.0.tar.gz) = 32422
@@ -290,7 +291,7 @@ SIZE (hackage/cookie-0.5.1.tar.gz) = 6680
 SIZE (hackage/crypto-api-0.13.3.tar.gz) = 48346
 SIZE (hackage/crypto-api-0.13.3_1.cabal) = 2366
 SIZE (hackage/crypto-pubkey-types-0.4.3.tar.gz) = 11234
-SIZE (hackage/crypton-1.0.5.tar.gz) = 651030
+SIZE (hackage/crypton-1.0.6.tar.gz) = 653743
 SIZE (hackage/crypton-asn1-encoding-0.10.0.tar.gz) = 18349
 SIZE (hackage/crypton-asn1-parse-0.10.0.tar.gz) = 4114
 SIZE (hackage/crypton-asn1-types-0.4.1.tar.gz) = 8635
@@ -371,7 +372,6 @@ SIZE (hackage/old-locale-1.0.0.7.tar.gz) = 3384
 SIZE (hackage/old-locale-1.0.0.7_2.cabal) = 1071
 SIZE (hackage/old-time-1.1.0.5.tar.gz) = 75642
 SIZE (hackage/optparse-applicative-0.19.0.0.tar.gz) = 67629
-SIZE (hackage/os-string-2.0.8.tar.gz) = 44896
 SIZE (hackage/parser-combinators-1.3.1.tar.gz) = 11684
 SIZE (hackage/pretty-simple-4.1.4.0.tar.gz) = 40964
 SIZE (hackage/prettyprinter-1.7.1.tar.gz) = 56907
@@ -388,7 +388,7 @@ SIZE (hackage/regex-compat-0.95.2.2.tar.gz) = 4658
 SIZE (hackage/regex-posix-0.96.0.2.tar.gz) = 13343
 SIZE (hackage/regex-tdfa-1.3.2.5.tar.gz) = 83371
 SIZE (hackage/req-3.13.4.tar.gz) = 41953
-SIZE (hackage/req-3.13.4_6.cabal) = 3831
+SIZE (hackage/req-3.13.4_7.cabal) = 3831
 SIZE (hackage/retry-0.9.3.1.tar.gz) = 18717
 SIZE (hackage/safe-0.3.21.tar.gz) = 11778
 SIZE (hackage/safe-0.3.21_1.cabal) = 2400
@@ -430,7 +430,7 @@ SIZE (hackage/time-compat-1.9.8.tar.gz) = 63414
 SIZE (hackage/time-hourglass-0.3.0.tar.gz) = 32660
 SIZE (hackage/timeit-2.0.tar.gz) = 2117
 SIZE (hackage/timeit-2.0_2.cabal) = 1197
-SIZE (hackage/tls-2.2.0.tar.gz) = 187907
+SIZE (hackage/tls-2.2.2.tar.gz) = 188723
 SIZE (hackage/transformers-base-0.4.6.tar.gz) = 2902
 SIZE (hackage/transformers-compat-0.7.2.tar.gz) = 46485
 SIZE (hackage/uglymemo-0.1.0.1.tar.gz) = 887
