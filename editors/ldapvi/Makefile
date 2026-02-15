@@ -1,8 +1,7 @@
 COMMENT=		update LDAP entries with a text editor
 
-DISTNAME=		ldapvi-1.7
+DISTNAME=		ldapvi-1.8
 CATEGORIES=		editors
-REVISION=		7
 
 HOMEPAGE=		http://www.lichteblau.com/ldapvi.html
 
@@ -32,18 +31,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 NO_TEST=		Yes
 
-pre-build:
+pre-configure:
 	sed -i "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
 
-do-install:
-	cd ${WRKSRC}/manual && ${MAKE_PROGRAM} ${MAKE_FILE} manual.html
-	${INSTALL_DATA_DIR} ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ldapvi
-	${INSTALL_PROGRAM} ${WRKSRC}/ldapvi ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/ldapvi.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/manual/bg.png \
-		${WRKSRC}/manual/manual.css \
-		${WRKSRC}/manual/manual.html ${PREFIX}/share/doc/ldapvi
+post-install:
+# empty dir
+	rmdir ${PREFIX}/share/doc/ldapvi/
 
 .include <bsd.port.mk>

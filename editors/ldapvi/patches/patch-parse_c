@@ -1,9 +1,22 @@
+OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
+
 unbreak hash generation
 http://lists.askja.de/pipermail/ldapvi/2007-October/000041.html
 
---- parse.c.orig	Thu Mar  1 22:16:15 2012
-+++ parse.c	Thu Mar  1 22:16:24 2012
-@@ -144,7 +144,7 @@ static char *
+Index: parse.c
+--- parse.c.orig
++++ parse.c
+@@ -16,7 +16,9 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
+ #include <unistd.h>
++#ifndef __OpenBSD__
+ #include <crypt.h>
++#endif
+ #include "common.h"
+ 
+ #define fast_g_string_append_c(gstring, c)				\
+@@ -144,7 +146,7 @@ static char *
  cryptdes(char *key)
  {
  	unsigned char salt[2];
@@ -12,7 +25,7 @@ http://lists.askja.de/pipermail/ldapvi/2007-October/000041.html
  	if (fd == -1) {
  		puts("Sorry, crypt not available: Cannot open /dev/random.");
  		return 0;
-@@ -162,7 +162,7 @@ cryptmd5(char *key)
+@@ -162,7 +164,7 @@ cryptmd5(char *key)
  	char *result;
  	unsigned char salt[11];
  	int i;
@@ -21,7 +34,7 @@ http://lists.askja.de/pipermail/ldapvi/2007-October/000041.html
  	if (fd == -1) {
  		puts("Sorry, MD5 not available: Cannot open /dev/random.");
  		return 0;
-@@ -261,21 +261,29 @@ read_line1(FILE *s, GString *name, GString *value)
+@@ -261,21 +263,29 @@ read_line1(FILE *s, GString *name, GString *value)
  		g_string_assign(value, "{CRYPT}");
  		g_string_append(value, hash);
  	} else if (!strcasecmp(encoding, "sha")) {
