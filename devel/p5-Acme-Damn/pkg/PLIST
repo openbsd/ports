@@ -4,5 +4,5 @@ ${P5ARCH}/Acme/Damn.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Acme/
 ${P5ARCH}/auto/Acme/Damn/
-${P5ARCH}/auto/Acme/Damn/Damn.so
+@so ${P5ARCH}/auto/Acme/Damn/Damn.so
 @man man/man3p/Acme::Damn.3p
