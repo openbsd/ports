@@ -1,4 +1,3 @@
-${P5SITE}/Net/
 ${P5SITE}/Net/OAuth/
 ${P5SITE}/Net/OAuth.pm
 ${P5SITE}/Net/OAuth/AccessToken.pm

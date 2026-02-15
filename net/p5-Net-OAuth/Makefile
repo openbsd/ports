@@ -1,23 +1,21 @@
-COMMENT=	implementation of the OAuth protocol
+COMMENT =	implementation of the OAuth 1.0 protocol
 
-DISTNAME =	Net-OAuth-0.28
-REVISION =	0
+DISTNAME =	Net-OAuth-0.31
 
-CATEGORIES=	net
+CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES=	cpan
-PKG_ARCH=	*
-RUN_DEPENDS=	devel/p5-Class-Accessor \
-		devel/p5-Class-Data-Inheritable \
-		devel/p5-Universal-require \
-		security/p5-Digest-HMAC \
-		security/p5-Digest-SHA1 \
-		www/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES =		cpan
 
-CONFIGURE_STYLE=	modbuild
+RUN_DEPENDS =		devel/p5-Class-Accessor>=0.31 \
+			devel/p5-Class-Data-Inheritable>=0.06 \
+			security/p5-Crypt-URandom>=0.37 \
+			www/p5-URI>=5.15 \
+			www/p5-libwww
+TEST_DEPENDS =		devel/p5-Test-Warn>=0.21
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
