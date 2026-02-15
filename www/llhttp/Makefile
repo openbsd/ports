@@ -1,12 +1,11 @@
-COMMENT=	port of http_parser to llparse
+COMMENT=	HTTP request/response parser
 
 V=		9.3.1
+REVISION=	0
 DISTNAME=	llhttp-release-v$V
 DISTFILES=	${DISTNAME}{v$V}.tar.gz
 PKGNAME=	llhttp-$V
-#WRKDIST=	${WRKDIR}/llhttp-release-v${V}
-#GH_ACCOUNT=	nodejs
-#GH_PROJECT=	llhttp
+# tag names contain '/' which is not handled by GH_* etc
 SITES=		https://github.com/nodejs/llhttp/archive/refs/tags/release/
 
 SHARED_LIBS +=	llhttp                    0.0 # 0.0
