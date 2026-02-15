@@ -1,0 +1,23 @@
+GHC 9.10 fix - need to import Prelude for ~
+
+In GHC 9.10, the ~ type operator must be explicitly imported from Prelude.
+
+Index: src/Darcs/Patch/RepoPatch.hs
+--- src/Darcs/Patch/RepoPatch.hs.orig
++++ src/Darcs/Patch/RepoPatch.hs
+@@ -1,3 +1,6 @@
++-- Darcs.Prelude import only needed for ~ for GHC 9.10+, so will generate
++-- a warning on older GHCs
++{-# OPTIONS_GHC -Wno-unused-imports #-}
+ module Darcs.Patch.RepoPatch
+     ( RepoPatch
+     , AnnotateRP
+@@ -22,6 +25,8 @@ module Darcs.Patch.RepoPatch
+     , ToPrim(..)
+     , Unwind(..)
+     ) where
++
++import Darcs.Prelude
+
+ import Darcs.Patch.Annotate ( AnnotateRP )
+ import Darcs.Patch.Apply ( Apply(..) )

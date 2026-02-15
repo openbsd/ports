@@ -1,0 +1,30 @@
+Support GHC 9.10 and Cabal 3.12
+
+Bump base version constraint to allow GHC 9.10 (which uses base-4.20).
+Bump Cabal version constraint to allow building with cabal-3.12.
+Relax filepath constraint to allow 1.5.x (shipped with GHC 9.10).
+
+Index: darcs.cabal
+--- darcs.cabal.orig
++++ darcs.cabal
+@@ -123,8 +123,8 @@ flag warn-as-error
+ -- ----------------------------------------------------------------------
+
+ custom-setup
+-    setup-depends: base      >= 4.10 && < 4.20,
+-                   Cabal     >= 2.4 && < 3.11,
++    setup-depends: base      >= 4.10 && < 4.21,
++                   Cabal     >= 2.4 && < 3.13,
+                    process   >= 1.2.3.0 && < 1.7,
+-                   filepath  >= 1.4.1 && < 1.5.0.0,
++                   filepath  >= 1.4.1 && < 1.6,
+                    directory >= 1.2.7 && < 1.4
+@@ -416,7 +416,7 @@ Library
+       build-depends:  unix              >= 2.7.1.0 && < 2.9,
+                       directory         >= 1.2.7 && < 1.4
+
+-    build-depends:    base              >= 4.10 && < 4.20,
++    build-depends:    base              >= 4.10 && < 4.21,
+                       safe              >= 0.3.20 && < 0.4,
+                       stm               >= 2.1 && < 2.6,
+                       binary            >= 0.5 && < 0.11,

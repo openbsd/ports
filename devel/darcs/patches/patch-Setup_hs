@@ -1,0 +1,16 @@
+Support building with Cabal 3.12
+
+Add buildDir import required for Cabal 3.12 compatibility.
+
+Index: Setup.hs
+--- Setup.hs.orig
++++ Setup.hs
+@@ -8,7 +8,7 @@ import Distribution.PackageDescription ( PackageDescr
+ import Distribution.Package ( packageVersion )
+ import Distribution.Version( Version )
+ import Distribution.Simple.LocalBuildInfo
+-         ( LocalBuildInfo(..), absoluteInstallDirs )
++         ( LocalBuildInfo(..), absoluteInstallDirs, buildDir )
+ import Distribution.Simple.InstallDirs (mandir, CopyDest (NoCopyDest))
+ import Distribution.Simple.Setup
+     (buildVerbosity, copyDest, copyVerbosity, fromFlag,

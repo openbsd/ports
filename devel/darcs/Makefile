@@ -1,4 +1,5 @@
 COMMENT =		advanced revision control system written in Haskell
+REVISION =		0
 
 MODCABAL_STEM =		darcs
 MODCABAL_VERSION =	2.18.5
