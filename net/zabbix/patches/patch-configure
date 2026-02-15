@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7634,6 +7634,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -7919,6 +7919,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -9,7 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main (void)
-@@ -19891,16 +19892,16 @@ fi
+@@ -20397,16 +20398,16 @@ fi
  RANLIB="ranlib"
  
  
