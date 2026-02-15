@@ -1,7 +1,6 @@
 COMMENT =	convert dates into the Shire Calendar
 
-DISTNAME =	Date-Tolkien-Shire-1.905
-REVISION =	0
+DISTNAME =	Date-Tolkien-Shire-1.906
 
 CATEGORIES =	converters
 
