@@ -4,12 +4,12 @@ that use FFI and contain some code compiled from C sources.
 Index: libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs
 --- libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs.orig
 +++ libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs
-@@ -55,6 +55,8 @@ stripLib verbosity (Platform arch os) progdb path = do
+@@ -58,6 +58,8 @@ stripLib verbosity (Platform arch os) progdb path = do
+       return ()
      IOS -> return ()
      AIX -> return ()
-     Solaris -> return ()
 +    OpenBSD -> -- '--strip-unneeded' sometimes strips too much on OpenBSD.
 +           return ()
-     Windows -> -- Stripping triggers a bug in 'strip.exe' for
-                -- libraries with lots identically named modules. See
-                -- #1784.
+     Solaris -> return ()
+     Windows ->
+       -- Stripping triggers a bug in 'strip.exe' for
