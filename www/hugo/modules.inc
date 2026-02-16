@@ -235,7 +235,7 @@ MODGO_MODULES =	\
 	github.com/envoyproxy/go-control-plane/envoy						 v1.32.4 \
 	github.com/envoyproxy/go-control-plane/ratelimit					 v0.1.0 \
 	github.com/envoyproxy/protoc-gen-validate						 v1.2.1 \
-	github.com/evanw/esbuild								 v0.27.2 \
+	github.com/evanw/esbuild								 v0.27.3 \
 	github.com/fatih/color									 v1.18.0 \
 	github.com/felixge/httpsnoop								 v1.0.4 \
 	github.com/fortytw2/leaktest								 v1.3.0 \
